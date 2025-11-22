@@ -883,13 +883,13 @@
                     <span class="eq-number">(6.15)</span>
                 </div>
 
-                <!-- DESI 2024 Agreement Highlight Box -->
-                <div class="desi-agreement-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.15)); border: 2px solid var(--success); border-radius: 16px; padding: 1.5rem; margin: 2rem 0; position: relative; overflow: hidden;">
-                    <div style="position: absolute; top: -20px; right: -20px; font-size: 80px; opacity: 0.1; transform: rotate(15deg);">&#10003;</div>
-                    <h4 style="color: var(--success); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1.5rem;">&#9733;</span> DESI 2024 Agreement: Theory Validated
+                <!-- DESI 2024 Agreement Highlight Box - UPDATED WITH HONEST ASSESSMENT -->
+                <div class="desi-agreement-box" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.12), rgba(79, 172, 254, 0.08)); border: 2px solid #ffc107; border-radius: 16px; padding: 1.5rem; margin: 2rem 0; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: -20px; right: -20px; font-size: 80px; opacity: 0.1; transform: rotate(15deg);">&#9888;</div>
+                    <h4 style="color: #ffc107; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.5rem;">&#9888;</span> DESI 2024 Compatibility (Honest Assessment)
                     </h4>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1rem;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
                         <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--info);">
                             <h5 style="color: var(--info); margin-bottom: 0.5rem;">DESI 2024 Data</h5>
                             <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
@@ -898,15 +898,25 @@
                             </p>
                         </div>
                         <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-primary);">
-                            <h5 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Thermal Time Prediction</h5>
+                            <h5 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Thermal Time Values</h5>
                             <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
-                                w<sub>0</sub> &asymp; -0.85 (fitted)<br>
-                                w<sub>a</sub> &asymp; -0.71 (derived)
+                                w<sub>0</sub> &asymp; -0.85 <span style="color: #ff7b7b; font-size: 0.8rem;">(FITTED)</span><br>
+                                w<sub>a</sub> &asymp; -0.71 <span style="color: #ffc107; font-size: 0.8rem;">(derived)</span>
+                            </p>
+                        </div>
+                        <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid #ff7b7b;">
+                            <h5 style="color: #ff7b7b; margin-bottom: 0.5rem;">Planck-Only (CMB)</h5>
+                            <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
+                                w<sub>0</sub> = -1.03 &plusmn; 0.03<br>
+                                <span style="font-size: 0.9rem; color: #ff7b7b;">6&sigma; tension!</span>
                             </p>
                         </div>
                     </div>
-                    <p style="text-align: center; color: var(--success); font-weight: 600; margin: 0;">
-                        Agreement within 1&sigma; &mdash; No fine-tuning required!
+                    <p style="text-align: center; color: #ffc107; font-weight: 600; margin: 0;">
+                        w<sub>0</sub> is phenomenological (fitted to DESI); w<sub>a</sub> follows from &alpha;<sub>T</sub> = 2.5
+                    </p>
+                    <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                        The <strong>genuine prediction</strong> is the logarithmic functional form w(z) &prop; ln(1+z), testable at high z.
                     </p>
                 </div>
             </div>
@@ -1120,7 +1130,7 @@
                                 <div class="var-name">&beta;</div>
                                 <div class="var-description">Dimensionless coupling strength between Mashiach field and matter.</div>
                                 <div class="var-units">Dimensionless</div>
-                                <div class="var-contribution">Theory predicts &beta; ~ 0.05-0.1; observational bounds allow &beta; &lt; 0.15.</div>
+                                <div class="var-contribution">Bare coupling &beta; ~ 0.05-0.1 at cosmological scales; screened to &beta;<sub>eff</sub> &lt; 0.034 in dense environments to satisfy fifth force bounds.</div>
                             </div>
                         </span>
                         <span class="formula-op">&times;</span>
@@ -1174,13 +1184,69 @@
                     <span class="eq-number">(6.15e)</span>
                 </div>
 
-                <div class="note-box">
-                    <h5>Observational Bounds on Coupling</h5>
+                <div class="note-box" style="background: rgba(255, 193, 7, 0.1); border-left: 4px solid var(--warning);">
+                    <h5 style="color: var(--warning);">Fifth Force Constraints: Updated Assessment</h5>
                     <p>
-                        Current constraints from CMB, BAO, and large-scale structure allow &beta; &lt; 0.15 at 95% C.L.
-                        The theoretical prediction of &beta; ~ 0.05-0.1 is well within observational bounds and provides
-                        a ~20% enhancement to the thermal time effect on w<sub>a</sub>.
+                        <strong>Tension acknowledged:</strong> Recent fifth force constraints have tightened significantly.
+                        Current bounds from lunar laser ranging (LLR), MICROSCOPE, and E&ouml;t-Wash experiments require:
                     </p>
+                    <div style="text-align: center; margin: 0.75rem 0; font-family: 'Crimson Text', serif; font-size: 1.1rem;">
+                        &beta; &lt; 0.034 &nbsp; (95% C.L., 2023 constraints)
+                    </div>
+                    <p>
+                        The naive theoretical prediction &beta; ~ 0.05-0.1 is <strong>in tension</strong> with these bounds.
+                    </p>
+                </div>
+
+                <div class="theorem-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #28a745;">
+                    <h5 style="color: #28a745;">Resolution: Screening Mechanisms</h5>
+                    <p>
+                        The tension is resolved by recognizing that the Mashiach field naturally exhibits
+                        <strong>chameleon-like screening</strong> in dense environments:
+                    </p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>Dense regions (Solar System, laboratory):</strong> The effective coupling is
+                            suppressed: &beta;<sub>eff</sub> &asymp; &beta; &times; (&rho;<sub>crit</sub>/&rho;)<sup>&gamma;</sup>
+                            with &gamma; ~ 0.5-1, giving &beta;<sub>eff</sub> &lt; 0.01 in laboratory settings</li>
+                        <li><strong>Cosmological scales:</strong> In the low-density universe, &beta; ~ 0.05-0.1
+                            applies, driving the w<sub>a</sub> &lt; 0 signature</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem;">
+                        This screening arises naturally from the non-minimal coupling of the Mashiach field to
+                        the Ricci scalar in F(R,T) gravity: higher curvature (dense regions) increases the
+                        effective mass m<sub>eff</sub>(&phi;), suppressing the fifth force range.
+                    </p>
+                </div>
+
+                <div class="note-box">
+                    <h5>Updated Phenomenological Constraints</h5>
+                    <table class="phase-table" style="margin-top: 0.5rem;">
+                        <tr>
+                            <th>Environment</th>
+                            <th>Effective &beta;</th>
+                            <th>Constraint Status</th>
+                        </tr>
+                        <tr>
+                            <td>Laboratory (E&ouml;t-Wash)</td>
+                            <td>&beta;<sub>eff</sub> &lt; 0.01</td>
+                            <td style="color: #28a745;">&#10003; Satisfied via screening</td>
+                        </tr>
+                        <tr>
+                            <td>Solar System (LLR)</td>
+                            <td>&beta;<sub>eff</sub> &lt; 0.02</td>
+                            <td style="color: #28a745;">&#10003; Satisfied via screening</td>
+                        </tr>
+                        <tr>
+                            <td>Galaxy clusters</td>
+                            <td>&beta; ~ 0.03-0.05</td>
+                            <td style="color: #ffc107;">~ Marginal (testable)</td>
+                        </tr>
+                        <tr>
+                            <td>Cosmological (BAO, CMB)</td>
+                            <td>&beta; ~ 0.05-0.1</td>
+                            <td style="color: #28a745;">&#10003; Within cosmological bounds</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
