@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Principia Metaphysica - Complete paper sections navigation and overview">
+    <title>Paper Sections - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Horizontal Tabs Component */
+        .tabs-container {
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .tab-list {
+            display: flex;
+            gap: 0.25rem;
+            border-bottom: 2px solid var(--border-primary);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+            background: var(--bg-secondary);
+        }
+
+        .tab {
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+            background: rgba(139, 127, 255, 0.1);
+        }
+
+        .tab.active {
+            color: var(--accent-primary);
+            background: var(--bg-card);
+            border-bottom-color: var(--accent-primary);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Section Cards */
+        .section-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .section-card {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .section-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
+            border-color: var(--accent-primary);
+        }
+
+        .section-card:hover::before {
+            opacity: 1;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .section-card h3 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-size: 1.15rem;
+        }
+
+        .section-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .section-card .topics {
+            margin-top: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .topic-tag {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--accent-primary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Group Headers */
+        .group-header {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .group-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-nav h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: rgba(139, 127, 255, 0.2);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .quick-link .num {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Overview Section */
+        .overview-box {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--glass-border);
+        }
+
+        .overview-box h2 {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .overview-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Downloads */
+        .downloads {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .download-btn:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principia Metaphysica</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#foundations">Foundations</a></li>
+                    <li><a href="#physics">Physics</a></li>
+                    <li><a href="#experimental">Experimental</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Paper Sections</span>
+        </nav>
+
+        <div class="overview-box">
+            <h2>Principia Metaphysica: Full Paper</h2>
+            <p>
+                Navigate through all sections of the unified physics framework. The paper is organized into
+                three main parts: Theoretical Foundations establishing the mathematical framework,
+                Physical Mechanisms deriving the Standard Model and cosmology, and Experimental Tests
+                providing falsifiable predictions.
+            </p>
+            <div class="downloads">
+                <a href="../Philosophiæ Metaphysicæ Principia Mathematica.pdf" class="download-btn">
+                    <span>PDF</span> Full Paper
+                </a>
+                <a href="../(12,1) Spacetime, Pneuma, Time_.pdf" class="download-btn">
+                    <span>PDF</span> Thermal Time
+                </a>
+            </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div class="quick-nav">
+            <h3>Quick Navigation</h3>
+            <div class="quick-links">
+                <a href="introduction.html" class="quick-link"><span class="num">1</span> Introduction</a>
+                <a href="geometric-framework.html" class="quick-link"><span class="num">2</span> Geometry</a>
+                <a href="gauge-unification.html" class="quick-link"><span class="num">3</span> Gauge</a>
+                <a href="fermion-sector.html" class="quick-link"><span class="num">4</span> Fermions</a>
+                <a href="thermal-time.html" class="quick-link"><span class="num">5</span> Time</a>
+                <a href="cosmology.html" class="quick-link"><span class="num">6</span> Cosmology</a>
+                <a href="predictions.html" class="quick-link"><span class="num">7</span> Predictions</a>
+                <a href="conclusion.html" class="quick-link"><span class="num">8</span> Conclusion</a>
+            </div>
+        </div>
+
+        <!-- Horizontal Tabs -->
+        <div class="tabs-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab active" role="tab" data-tab="foundations" aria-selected="true" aria-controls="foundations" id="foundations">
+                    Theoretical Foundations
+                </button>
+                <button class="tab" role="tab" data-tab="physics" aria-selected="false" aria-controls="physics" id="physics">
+                    Physical Mechanisms
+                </button>
+                <button class="tab" role="tab" data-tab="experimental" aria-selected="false" aria-controls="experimental" id="experimental">
+                    Experimental Tests
+                </button>
+            </div>
+
+            <!-- Foundations Tab -->
+            <div class="tab-content active" id="tab-foundations" role="tabpanel" aria-labelledby="foundations">
+                <h2 class="group-header">Theoretical Foundations</h2>
+                <p class="group-description">
+                    The mathematical and geometric foundations of the framework, establishing the
+                    (12,1)-dimensional bulk structure, the Pneuma field, and the Kaluza-Klein reduction
+                    that produces 4D physics.
+                </p>
+                <div class="section-grid">
+                    <a href="introduction.html" class="section-card">
+                        <div class="section-number">1</div>
+                        <h3>Introduction</h3>
+                        <p>
+                            The quest for unification, geometrization of forces, and the fermionic
+                            foundation for geometry. Motivation and overview of the framework.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Unification</span>
+                            <span class="topic-tag">Geometry</span>
+                            <span class="topic-tag">Pneuma</span>
+                        </div>
+                    </a>
+                    <a href="geometric-framework.html" class="section-card">
+                        <div class="section-number">2</div>
+                        <h3>Geometric Framework</h3>
+                        <p>
+                            Kaluza-Klein reduction on the Pneuma manifold K<sub>Pneuma</sub>,
+                            the EFT paradigm, and derivation of the 4D effective action.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Kaluza-Klein</span>
+                            <span class="topic-tag">K<sub>Pneuma</sub></span>
+                            <span class="topic-tag">EFT</span>
+                        </div>
+                    </a>
+                    <a href="thermal-time.html" class="section-card">
+                        <div class="section-number">5</div>
+                        <h3>Thermal Time Hypothesis</h3>
+                        <p>
+                            Emergent time from thermodynamics via Tomita-Takesaki modular theory.
+                            KMS states and the connection between time and entropy.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Modular Theory</span>
+                            <span class="topic-tag">KMS</span>
+                            <span class="topic-tag">Entropy</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Physics Tab -->
+            <div class="tab-content" id="tab-physics" role="tabpanel" aria-labelledby="physics">
+                <h2 class="group-header">Physical Mechanisms</h2>
+                <p class="group-description">
+                    Derivation of the Standard Model gauge structure, fermion spectrum, and cosmological
+                    dynamics from the geometric framework. How the abstract mathematics connects to observable physics.
+                </p>
+                <div class="section-grid">
+                    <a href="gauge-unification.html" class="section-card">
+                        <div class="section-number">3</div>
+                        <h3>Gauge Unification</h3>
+                        <p>
+                            SO(10) grand unified framework emerging from isometries, symmetry breaking
+                            chains to the Standard Model, and doublet-triplet splitting.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">SO(10)</span>
+                            <span class="topic-tag">GUT</span>
+                            <span class="topic-tag">Symmetry Breaking</span>
+                        </div>
+                    </a>
+                    <a href="fermion-sector.html" class="section-card">
+                        <div class="section-number">4</div>
+                        <h3>Fermion Sector</h3>
+                        <p>
+                            Fermions in 12D, the Pneuma mechanism for generating chirality,
+                            and embedding of three generations in SO(10) representations.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Chirality</span>
+                            <span class="topic-tag">Spinors</span>
+                            <span class="topic-tag">16-plet</span>
+                        </div>
+                    </a>
+                    <a href="cosmology.html" class="section-card">
+                        <div class="section-number">6</div>
+                        <h3>Cosmological Dynamics</h3>
+                        <p>
+                            Modified F(R,T) gravity, the Mashiach field attractor mechanism,
+                            and dynamical explanation for dark energy and cosmic acceleration.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Dark Energy</span>
+                            <span class="topic-tag">Mashiach</span>
+                            <span class="topic-tag">F(R,T)</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Experimental Tab -->
+            <div class="tab-content" id="tab-experimental" role="tabpanel" aria-labelledby="experimental">
+                <h2 class="group-header">Experimental Tests</h2>
+                <p class="group-description">
+                    Concrete, falsifiable predictions that connect the theoretical framework to
+                    experimental physics. Current constraints and future experimental prospects.
+                </p>
+                <div class="section-grid">
+                    <a href="predictions.html" class="section-card">
+                        <div class="section-number">7</div>
+                        <h3>Predictions &amp; Tests</h3>
+                        <p>
+                            Proton decay, gravitational wave signatures, SME coefficients,
+                            Lorentz violation bounds, and experimental constraints from GWTC-3.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Proton Decay</span>
+                            <span class="topic-tag">SME</span>
+                            <span class="topic-tag">GW Dispersion</span>
+                            <span class="topic-tag">LIGO/Virgo</span>
+                        </div>
+                    </a>
+                    <a href="conclusion.html" class="section-card">
+                        <div class="section-number">8</div>
+                        <h3>Conclusion</h3>
+                        <p>
+                            Summary of results, unification of concepts, falsifiability criteria,
+                            and future research directions in phenomenology and cosmology.
+                        </p>
+                        <div class="topics">
+                            <span class="topic-tag">Summary</span>
+                            <span class="topic-tag">Future Work</span>
+                            <span class="topic-tag">Falsifiability</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                Contact: <a href="mailto:AndrewKWatts@Gmail.com" style="color: var(--accent-primary);">AndrewKWatts@Gmail.com</a>
+            </span>
+        </p>
+    </footer>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                const tabsContainer = tab.closest('.tabs-container');
+
+                // Remove active from all tabs and content
+                tabsContainer.querySelectorAll('.tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.setAttribute('aria-selected', 'false');
+                });
+                tabsContainer.querySelectorAll('.tab-content').forEach(c => {
+                    c.classList.remove('active');
+                });
+
+                // Add active to selected tab and content
+                tab.classList.add('active');
+                tab.setAttribute('aria-selected', 'true');
+                document.getElementById('tab-' + tabId).classList.add('active');
+            });
+        });
+
+        // Handle hash navigation
+        function handleHash() {
+            const hash = window.location.hash.substring(1);
+            if (hash) {
+                const tab = document.querySelector(`.tab[data-tab="${hash}"]`);
+                if (tab) {
+                    tab.click();
+                }
+            }
+        }
+
+        window.addEventListener('hashchange', handleHash);
+        window.addEventListener('load', handleHash);
+    </script>
+</body>
+</html>
