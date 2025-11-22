@@ -696,6 +696,109 @@
                 </p>
             </div>
 
+            <!-- SVG Diagram: Dimensional Reduction -->
+            <div class="diagram-container">
+                <div class="diagram-title">Dimensional Reduction: 13D &rarr; 4D Spacetime</div>
+                <svg class="diagram-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Definitions for gradients and arrows -->
+                    <defs>
+                        <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(139,127,255,0.15)" />
+                            <stop offset="100%" style="stop-color:rgba(255,126,182,0.1)" />
+                        </linearGradient>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#ff7eb6"/>
+                        </marker>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Background boxes for each stage -->
+                    <!-- 13D Bulk -->
+                    <g class="node">
+                        <rect x="30" y="50" width="200" height="300" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                        <text x="130" y="85" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="16">13D Bulk Spacetime</text>
+                        <text x="130" y="110" text-anchor="middle" fill="#adb5bd" font-size="12">(12,1) signature</text>
+
+                        <!-- Inner elements for 13D -->
+                        <rect x="50" y="130" width="160" height="50" rx="8" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1.5"/>
+                        <text x="130" y="150" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">M*</text>
+                        <text x="130" y="168" text-anchor="middle" fill="#adb5bd" font-size="11">Fundamental Scale</text>
+
+                        <rect x="50" y="195" width="160" height="50" rx="8" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1.5"/>
+                        <text x="130" y="215" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">&Psi;<tspan baseline-shift="sub" font-size="10">P</tspan></text>
+                        <text x="130" y="233" text-anchor="middle" fill="#adb5bd" font-size="11">Pneuma Field</text>
+
+                        <rect x="50" y="260" width="160" height="50" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
+                        <text x="130" y="280" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">G<tspan baseline-shift="sub" font-size="10">MN</tspan></text>
+                        <text x="130" y="298" text-anchor="middle" fill="#adb5bd" font-size="11">13D Metric</text>
+                    </g>
+
+                    <!-- Arrow 1: KK Reduction -->
+                    <path d="M 240 200 L 290 200" stroke="#ff7eb6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="265" y="185" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="500">KK</text>
+                    <text x="265" y="220" text-anchor="middle" fill="#adb5bd" font-size="10">Compactify</text>
+
+                    <!-- Internal Manifold -->
+                    <g class="node">
+                        <rect x="300" y="100" width="200" height="200" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                        <text x="400" y="130" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="15">K<tspan baseline-shift="sub" font-size="11">Pneuma</tspan></text>
+                        <text x="400" y="152" text-anchor="middle" fill="#adb5bd" font-size="12">8D Internal Manifold</text>
+
+                        <!-- Inner details -->
+                        <ellipse cx="400" cy="210" rx="70" ry="60" fill="none" stroke="rgba(139,127,255,0.3)" stroke-width="1" stroke-dasharray="4 2"/>
+                        <text x="400" y="195" text-anchor="middle" fill="#adb5bd" font-size="11">CY4</text>
+                        <text x="400" y="212" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">&chi; = 72</text>
+                        <text x="400" y="232" text-anchor="middle" fill="#51cf66" font-size="11">3 generations</text>
+
+                        <text x="400" y="275" text-anchor="middle" fill="#ff7eb6" font-size="12">D<tspan baseline-shift="sub" font-size="9">5</tspan> singularity &rarr; SO(10)</text>
+                    </g>
+
+                    <!-- Arrow 2: to 4D -->
+                    <path d="M 510 200 L 560 200" stroke="#ff7eb6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="535" y="185" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="500">Integrate</text>
+                    <text x="535" y="220" text-anchor="middle" fill="#adb5bd" font-size="10">over K</text>
+
+                    <!-- 4D Effective -->
+                    <g class="node">
+                        <rect x="570" y="50" width="200" height="300" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                        <text x="670" y="85" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="16">4D Effective Theory</text>
+                        <text x="670" y="110" text-anchor="middle" fill="#adb5bd" font-size="12">(3,1) observable universe</text>
+
+                        <!-- 4D components -->
+                        <rect x="590" y="125" width="160" height="40" rx="8" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1.5"/>
+                        <text x="670" y="150" text-anchor="middle" fill="#f8f9fa" font-size="12">Einstein Gravity</text>
+
+                        <rect x="590" y="175" width="160" height="40" rx="8" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1.5"/>
+                        <text x="670" y="200" text-anchor="middle" fill="#f8f9fa" font-size="12">SO(10) Yang-Mills</text>
+
+                        <rect x="590" y="225" width="160" height="40" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
+                        <text x="670" y="250" text-anchor="middle" fill="#f8f9fa" font-size="12">3 Fermion Families</text>
+
+                        <rect x="590" y="275" width="160" height="40" rx="8" fill="rgba(255,212,59,0.15)" stroke="rgba(255,212,59,0.4)" stroke-width="1.5"/>
+                        <text x="670" y="300" text-anchor="middle" fill="#f8f9fa" font-size="12">Moduli + Mashiach</text>
+                    </g>
+
+                    <!-- Volume relation annotation -->
+                    <text x="400" y="380" text-anchor="middle" fill="#adb5bd" font-size="12" font-family="Crimson Text, serif" font-style="italic">
+                        M<tspan baseline-shift="sub" font-size="10">Pl</tspan><tspan baseline-shift="super" font-size="10">2</tspan> = M<tspan baseline-shift="sub" font-size="10">*</tspan><tspan baseline-shift="super" font-size="10">11</tspan> &middot; V<tspan baseline-shift="sub" font-size="10">8</tspan>
+                    </text>
+                </svg>
+                <div class="diagram-caption">
+                    The 13-dimensional bulk spacetime compactifies on the 8-dimensional Pneuma manifold K<sub>Pneuma</sub>,
+                    yielding 4D Einstein-Yang-Mills theory with SO(10) gauge group and 3 fermion generations from topology.
+                </div>
+            </div>
+
             <!-- Energy Scale Ladder Diagram -->
             <div class="scale-ladder">
                 <h4>Energy Scale Hierarchy</h4>

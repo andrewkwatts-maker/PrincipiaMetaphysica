@@ -1668,3 +1668,484 @@ ul li::marker {
     color: #ffd43b;
     font-size: 1.2rem;
 }
+
+/* ================================
+   ENHANCED SVG DIAGRAM SYSTEM
+   ================================ */
+
+/* Main diagram container */
+.diagram-container {
+    background: linear-gradient(135deg, var(--bg-card), rgba(139, 127, 255, 0.05));
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.diagram-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+.diagram-title {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed var(--border-primary);
+}
+
+.diagram-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border-primary);
+    font-style: italic;
+}
+
+/* SVG Styling */
+.diagram-svg {
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.diagram-svg text {
+    font-family: 'Inter', sans-serif;
+    fill: var(--text-primary);
+}
+
+.diagram-svg .label {
+    font-size: 12px;
+    fill: var(--text-secondary);
+}
+
+.diagram-svg .label-bold {
+    font-size: 13px;
+    font-weight: 600;
+    fill: var(--text-primary);
+}
+
+.diagram-svg .math-text {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+}
+
+/* SVG Interactive elements */
+.diagram-svg .node {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.diagram-svg .node:hover {
+    filter: brightness(1.2);
+}
+
+.diagram-svg .node-bg {
+    fill: rgba(139, 127, 255, 0.15);
+    stroke: rgba(139, 127, 255, 0.5);
+    stroke-width: 2;
+    transition: all 0.3s ease;
+}
+
+.diagram-svg .node:hover .node-bg {
+    fill: rgba(139, 127, 255, 0.3);
+    stroke: var(--accent-primary);
+    stroke-width: 3;
+}
+
+.diagram-svg .node-accent {
+    fill: rgba(255, 126, 182, 0.15);
+    stroke: rgba(255, 126, 182, 0.5);
+}
+
+.diagram-svg .node:hover .node-accent {
+    fill: rgba(255, 126, 182, 0.3);
+    stroke: var(--accent-secondary);
+}
+
+.diagram-svg .arrow {
+    stroke: var(--accent-secondary);
+    stroke-width: 2;
+    fill: none;
+    marker-end: url(#arrowhead);
+}
+
+.diagram-svg .arrow-primary {
+    stroke: var(--accent-primary);
+}
+
+.diagram-svg .arrow-dashed {
+    stroke-dasharray: 8 4;
+}
+
+.diagram-svg .connector {
+    stroke: var(--border-accent);
+    stroke-width: 1.5;
+    fill: none;
+}
+
+/* Dimension hierarchy specific */
+.dimension-box {
+    rx: 12;
+    ry: 12;
+}
+
+.dimension-label {
+    font-size: 14px;
+    text-anchor: middle;
+    dominant-baseline: middle;
+}
+
+/* Flow diagram styles */
+.flow-box {
+    rx: 8;
+    ry: 8;
+}
+
+.flow-circle {
+    stroke-width: 2;
+}
+
+/* Animated elements */
+@keyframes pulse-glow {
+    0%, 100% { filter: drop-shadow(0 0 4px rgba(139, 127, 255, 0.3)); }
+    50% { filter: drop-shadow(0 0 12px rgba(139, 127, 255, 0.6)); }
+}
+
+.diagram-svg .highlight-element {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+@keyframes flow-animation {
+    0% { stroke-dashoffset: 20; }
+    100% { stroke-dashoffset: 0; }
+}
+
+.diagram-svg .animated-arrow {
+    stroke-dasharray: 10 5;
+    animation: flow-animation 1s linear infinite;
+}
+
+/* Interactive slider controls */
+.slider-control {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: rgba(139, 127, 255, 0.08);
+    border-radius: 12px;
+    margin: 1rem 0;
+}
+
+.slider-control label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-width: 120px;
+}
+
+.slider-control input[type="range"] {
+    flex: 1;
+    height: 6px;
+    background: var(--border-primary);
+    border-radius: 3px;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.slider-control input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(139, 127, 255, 0.3);
+    transition: transform 0.2s ease;
+}
+
+.slider-control input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+}
+
+.slider-value {
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+    color: var(--accent-primary);
+    min-width: 80px;
+    text-align: right;
+}
+
+/* Interactive formula calculator */
+.formula-calculator {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.formula-calculator h4 {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.calc-inputs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.calc-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.calc-input-group label {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.calc-input-group input {
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-primary);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-family: 'Crimson Text', serif;
+    font-size: 1rem;
+}
+
+.calc-input-group input:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+.calc-result {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1));
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 12px;
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.calc-result-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.calc-result-value {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.5rem;
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+/* Hierarchy tree diagram */
+.hierarchy-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.hierarchy-level {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.hierarchy-node {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(139, 127, 255, 0.08));
+    border: 2px solid rgba(139, 127, 255, 0.4);
+    border-radius: 12px;
+    padding: 0.75rem 1.25rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.hierarchy-node:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(139, 127, 255, 0.25);
+    border-color: var(--accent-primary);
+}
+
+.hierarchy-node.primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border: none;
+    color: white;
+}
+
+.hierarchy-node.secondary {
+    background: rgba(255, 126, 182, 0.15);
+    border-color: rgba(255, 126, 182, 0.4);
+}
+
+.hierarchy-connector {
+    width: 2px;
+    height: 20px;
+    background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+    margin: 0 auto;
+}
+
+.hierarchy-branch {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.hierarchy-branch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+}
+
+/* Phase diagram */
+.phase-diagram {
+    position: relative;
+    min-height: 300px;
+}
+
+.phase-region {
+    position: absolute;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.phase-region:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+/* Tooltip for diagrams */
+.diagram-tooltip {
+    position: absolute;
+    background: var(--bg-card);
+    border: 1px solid var(--border-accent);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    max-width: 250px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.diagram-tooltip.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Summary cards grid */
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.summary-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.summary-card:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(139, 127, 255, 0.15);
+}
+
+.summary-card-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.summary-card h4 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.summary-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.summary-card .value {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    margin-top: 0.75rem;
+}
+
+/* Responsive adjustments for diagrams */
+@media (max-width: 768px) {
+    .diagram-container {
+        padding: 1rem;
+    }
+
+    .diagram-svg {
+        max-width: 100%;
+    }
+
+    .slider-control {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .slider-control label {
+        min-width: auto;
+    }
+
+    .calc-inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .hierarchy-level {
+        flex-direction: column;
+        align-items: center;
+    }
+}
