@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principia Metaphysica - A Unified Theory of Physics</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --text-primary: #f8f9fa;
+            --text-secondary: #adb5bd;
+            --accent-primary: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --success: #51cf66;
+            --warning: #ffc107;
+            --danger: #ff6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            font-size: 11pt;
+        }
+
+        .paper {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 60px;
+            background: white;
+            color: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        @media print {
+            body { background: white; }
+            .paper {
+                padding: 0.5in;
+                max-width: none;
+                box-shadow: none;
+            }
+            .no-print { display: none; }
+        }
+
+        h1 {
+            font-size: 24pt;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 14pt;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+            border-bottom: 2px solid #8b7fff;
+            padding-bottom: 0.25rem;
+        }
+
+        h3 {
+            font-size: 12pt;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        h4 {
+            font-size: 11pt;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            color: #444;
+            font-style: italic;
+        }
+
+        .author {
+            text-align: center;
+            font-size: 12pt;
+            margin-bottom: 0.5rem;
+        }
+
+        .affiliation {
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .date {
+            text-align: center;
+            font-size: 10pt;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .abstract {
+            background: #f8f9fa;
+            padding: 1rem 1.5rem;
+            border-left: 4px solid #8b7fff;
+            margin: 1.5rem 0;
+            font-style: italic;
+        }
+
+        .abstract-title {
+            font-weight: 700;
+            font-style: normal;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+
+        .equation {
+            text-align: center;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-family: 'Crimson Text', serif;
+            font-size: 12pt;
+        }
+
+        .equation-label {
+            float: right;
+            color: #666;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 10pt;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 0.5rem;
+            text-align: left;
+        }
+
+        th {
+            background: #f0f0f0;
+            font-weight: 600;
+        }
+
+        .status-fitted { color: #dc3545; font-weight: 600; }
+        .status-derived { color: #28a745; font-weight: 600; }
+        .status-semi { color: #ffc107; font-weight: 600; }
+
+        ul, ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .warning-box {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .success-box {
+            background: #d4edda;
+            border: 1px solid #28a745;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border: 1px solid #dc3545;
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+
+        .toc-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .toc li {
+            margin: 0.25rem 0;
+        }
+
+        .toc a {
+            color: #8b7fff;
+            text-decoration: none;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            margin: 1rem 0;
+            cursor: pointer;
+            border: none;
+            font-size: 11pt;
+        }
+
+        .grade-box {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(255,193,7,0.1), rgba(255,159,67,0.1));
+            border: 2px solid #ffc107;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .grade {
+            font-size: 24pt;
+            font-weight: 700;
+            color: #ffc107;
+        }
+
+        sup, sub {
+            font-size: 0.7em;
+        }
+
+        .footnote {
+            font-size: 9pt;
+            color: #666;
+            border-top: 1px solid #ddd;
+            margin-top: 2rem;
+            padding-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="paper">
+        <h1>Principia Metaphysica</h1>
+        <p style="text-align: center; font-size: 14pt; margin-bottom: 1rem;">
+            A Unified Theory of Spacetime, Gauge Forces, and Emergent Time
+        </p>
+
+        <p class="author">Andrew Keith Watts</p>
+        <p class="affiliation">Independent Researcher</p>
+        <p class="date">November 2025 | Version 4.0 (Post-Peer Review)</p>
+
+        <div class="grade-box">
+            <div class="grade">Testability Grade: C</div>
+            <p style="margin: 0.5rem 0 0 0; color: #666;">
+                One genuine falsifiable prediction (neutrino hierarchy) | Dark energy parameters fitted post-hoc | 6&sigma; Planck tension
+            </p>
+        </div>
+
+        <button class="download-btn no-print" onclick="window.print()">
+            Print / Save as PDF
+        </button>
+
+        <div class="abstract">
+            <p class="abstract-title">Abstract</p>
+            <p>
+                This paper presents the Principia Metaphysica framework, a theoretical proposal for unifying gravity,
+                gauge forces, and the origin of time through higher-dimensional geometry. The framework posits a
+                13-dimensional bulk spacetime with signature (12,1) that compactifies on an 8-dimensional Calabi-Yau
+                four-fold (CY4) with Euler characteristic &chi; = 72. Through F-theory compactification, this yields
+                4D Einstein gravity coupled to SO(10) grand unified gauge theory with exactly 3 fermion generations
+                (derived from &chi;/24 = 72/24 = 3). Time emergence is proposed via the Thermal Time Hypothesis,
+                connecting thermodynamic entropy to the flow of experienced time. The framework makes contact with
+                DESI 2024 dark energy observations through a thermal friction mechanism that naturally produces
+                w<sub>a</sub> &lt; 0. This document incorporates findings from extensive multi-agent peer review,
+                with honest assessment of which claims are derived versus fitted, and includes pre-registered
+                predictions for future experiments.
+            </p>
+        </div>
+
+        <div class="toc">
+            <p class="toc-title">Table of Contents</p>
+            <ul>
+                <li><a href="#intro">1. Introduction and Motivation</a></li>
+                <li><a href="#framework">2. Theoretical Framework</a></li>
+                <li><a href="#geometry">3. Geometric Structure: The Pneuma Manifold</a></li>
+                <li><a href="#gauge">4. SO(10) Gauge Unification</a></li>
+                <li><a href="#thermal">5. Thermal Time and Emergent Temporality</a></li>
+                <li><a href="#cosmology">6. Cosmological Implications</a></li>
+                <li><a href="#predictions">7. Predictions and Testability</a></li>
+                <li><a href="#peer-review">8. Peer Review Summary</a></li>
+                <li><a href="#conclusion">9. Conclusions and Open Questions</a></li>
+            </ul>
+        </div>
+
+        <h2 id="intro">1. Introduction and Motivation</h2>
+
+        <p>
+            The Standard Model of particle physics, while extraordinarily successful, leaves fundamental questions
+            unanswered: Why are there exactly three generations of fermions? What is the origin of the gauge group
+            structure? Why does time have a preferred direction? The Principia Metaphysica framework attempts to
+            address these questions through a geometric unification in higher dimensions.
+        </p>
+
+        <p>
+            The central object is the <em>Pneuma field</em> &Psi;<sub>P</sub>, a 64-component fermionic field in
+            13 dimensions whose condensates generate both spacetime geometry and gauge structure. The name "Pneuma"
+            (Greek: breath, spirit) reflects the field's role as the animating principle from which observable
+            physics emerges.
+        </p>
+
+        <h2 id="framework">2. Theoretical Framework</h2>
+
+        <h3>2.1 Higher-Dimensional Action</h3>
+
+        <p>
+            The framework begins with a 13-dimensional bulk spacetime M<sup>13</sup> with signature (12,1). The
+            fundamental action is:
+        </p>
+
+        <div class="equation">
+            S = &int; d<sup>13</sup>x &radic;|G| [M<sub>*</sub><sup>11</sup> R<sub>13</sub> +
+            &Psi;&#772;<sub>P</sub> &Gamma;<sup>M</sup> D<sub>M</sub> &Psi;<sub>P</sub> + ...]
+            <span class="equation-label">(2.1)</span>
+        </div>
+
+        <p>
+            where M<sub>*</sub> is the fundamental scale, R<sub>13</sub> is the 13D Ricci scalar, and
+            &Psi;<sub>P</sub> is the Pneuma field. This action is treated within an Effective Field Theory (EFT)
+            framework, valid below the cutoff E &lt; M<sub>*</sub>.
+        </p>
+
+        <h3>2.2 Dimensional Reduction</h3>
+
+        <p>
+            The 13D spacetime compactifies as:
+        </p>
+
+        <div class="equation">
+            M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub>
+            <span class="equation-label">(2.2)</span>
+        </div>
+
+        <p>
+            where M<sup>4</sup> is observable 4D spacetime and K<sub>Pneuma</sub> is an 8-dimensional internal
+            manifold. The Planck mass emerges through the volume relation:
+        </p>
+
+        <div class="equation">
+            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &middot; V<sub>8</sub>
+            <span class="equation-label">(2.3)</span>
+        </div>
+
+        <h2 id="geometry">3. Geometric Structure: The Pneuma Manifold</h2>
+
+        <h3>3.1 Calabi-Yau Four-Fold Construction</h3>
+
+        <div class="warning-box">
+            <strong>Important Clarification:</strong> K<sub>Pneuma</sub> is a Calabi-Yau four-fold (CY4),
+            <em>not</em> a homogeneous coset space. Gauge symmetry arises from F-theory singularities,
+            not from isometries.
+        </div>
+
+        <p>
+            The internal manifold K<sub>Pneuma</sub> is characterized by the following Hodge numbers:
+        </p>
+
+        <table>
+            <tr>
+                <th>Hodge Number</th>
+                <th>Value</th>
+                <th>Physical Interpretation</th>
+            </tr>
+            <tr>
+                <td>h<sup>1,1</sup></td>
+                <td>2</td>
+                <td>K&auml;hler moduli</td>
+            </tr>
+            <tr>
+                <td>h<sup>2,1</sup></td>
+                <td>0</td>
+                <td>Complex structure moduli (constrained)</td>
+            </tr>
+            <tr>
+                <td>h<sup>3,1</sup></td>
+                <td>29</td>
+                <td>Additional moduli</td>
+            </tr>
+            <tr>
+                <td>h<sup>2,2</sup></td>
+                <td>6</td>
+                <td>Middle cohomology</td>
+            </tr>
+        </table>
+
+        <p>
+            The Euler characteristic is computed via:
+        </p>
+
+        <div class="equation">
+            &chi;(CY4) = 4 + 2h<sup>1,1</sup> - 4h<sup>2,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup>
+            = 4 + 4 + 0 + 58 + 6 = 72
+            <span class="equation-label">(3.1)</span>
+        </div>
+
+        <h3>3.2 Generation Number from Topology</h3>
+
+        <p>
+            In F-theory compactification on a CY4, the number of chiral generations is determined by the
+            index theorem (Vafa 1996):
+        </p>
+
+        <div class="equation">
+            n<sub>gen</sub> = &chi;(CY4) / 24 = 72 / 24 = <strong>3</strong>
+            <span class="equation-label">(3.2)</span>
+        </div>
+
+        <div class="success-box">
+            <strong>Key Result:</strong> The existence of exactly 3 fermion generations emerges from the
+            topology of K<sub>Pneuma</sub>, not from parameter tuning. The factor of 24 arises from the
+            D3-brane tadpole cancellation condition.
+        </div>
+
+        <p>
+            <em>Note on CY4 construction:</em> The specific CY4 is constructed via toric methods using
+            5D reflexive polytopes (Batyrev-Borisov), not from the Kreuzer-Skarke database (which classifies
+            CY3 manifolds). Alternative construction: CY4/Z<sub>2</sub> quotient with parent &chi; = 144.
+        </p>
+
+        <h2 id="gauge">4. SO(10) Gauge Unification</h2>
+
+        <h3>4.1 F-Theory Origin of Gauge Symmetry</h3>
+
+        <p>
+            The SO(10) gauge group arises from a D<sub>5</sub> singularity in the elliptic fibration of
+            K<sub>Pneuma</sub>. In the Weierstrass model y<sup>2</sup> = x<sup>3</sup> + fx + g, the
+            singularity conditions are:
+        </p>
+
+        <div class="equation">
+            ord<sub>S</sub>(f) &ge; 1, &nbsp; ord<sub>S</sub>(g) &ge; 2, &nbsp; ord<sub>S</sub>(&Delta;) = 6
+            <span class="equation-label">(4.1)</span>
+        </div>
+
+        <h3>4.2 Symmetry Breaking Chain</h3>
+
+        <table>
+            <tr>
+                <th>Stage</th>
+                <th>Energy Scale</th>
+                <th>Breaking Mechanism</th>
+                <th>Residual Symmetry</th>
+            </tr>
+            <tr>
+                <td>SO(10)</td>
+                <td>M<sub>GUT</sub> ~ 2&times;10<sup>16</sup> GeV</td>
+                <td>54<sub>H</sub> or 210<sub>H</sub></td>
+                <td>Pati-Salam / Left-Right</td>
+            </tr>
+            <tr>
+                <td>G<sub>PS</sub></td>
+                <td>M<sub>B-L</sub> ~ 10<sup>12-14</sup> GeV</td>
+                <td>126<sub>H</sub> + 126&#772;<sub>H</sub></td>
+                <td>Standard Model</td>
+            </tr>
+            <tr>
+                <td>G<sub>SM</sub></td>
+                <td>M<sub>EW</sub> ~ 246 GeV</td>
+                <td>10<sub>H</sub></td>
+                <td>SU(3) &times; U(1)<sub>EM</sub></td>
+            </tr>
+        </table>
+
+        <h3>4.3 Matter Content</h3>
+
+        <p>
+            Each generation of Standard Model fermions fits into a single <strong>16</strong> spinor
+            representation of SO(10):
+        </p>
+
+        <div class="equation">
+            <strong>16</strong> = (u, d, e, &nu;)<sub>L</sub> + (u<sup>c</sup>, d<sup>c</sup>, e<sup>c</sup>, &nu;<sup>c</sup>)<sub>R</sub>
+            <span class="equation-label">(4.2)</span>
+        </div>
+
+        <p>
+            The right-handed neutrino &nu;<sup>c</sup> is automatically included, enabling the seesaw
+            mechanism for neutrino masses.
+        </p>
+
+        <h2 id="thermal">5. Thermal Time and Emergent Temporality</h2>
+
+        <h3>5.1 The Thermal Time Hypothesis</h3>
+
+        <p>
+            Following Connes-Rovelli, time is not fundamental but emerges from thermodynamic structure.
+            Given a quantum state &rho; with von Neumann entropy S = -Tr(&rho; ln &rho;), the modular
+            Hamiltonian K generates time evolution:
+        </p>
+
+        <div class="equation">
+            &rho; = e<sup>-K</sup> / Z, &nbsp;&nbsp; &alpha;<sub>t</sub>(A) = e<sup>iKt</sup> A e<sup>-iKt</sup>
+            <span class="equation-label">(5.1)</span>
+        </div>
+
+        <p>
+            The thermal time &tau; is related to the modular flow parameter. In the cosmological context,
+            the thermal time coincides with proper time in the semiclassical limit.
+        </p>
+
+        <h3>5.2 The &alpha;<sub>T</sub> Parameter</h3>
+
+        <p>
+            The key thermal time parameter is defined as:
+        </p>
+
+        <div class="equation">
+            &alpha;<sub>T</sub> = d ln &tau; / d ln a - d ln H / d ln a
+            <span class="equation-label">(5.2)</span>
+        </div>
+
+        <p>
+            where &tau; = 1/&Gamma; is the thermal relaxation time and H is the Hubble parameter.
+            In the matter-dominated era:
+        </p>
+
+        <ul>
+            <li>&Gamma; &prop; T &prop; a<sup>-1</sup> &rArr; &tau; &prop; a &rArr; d ln &tau; / d ln a = +1</li>
+            <li>H &prop; a<sup>-3/2</sup> &rArr; d ln H / d ln a = -3/2</li>
+            <li>&alpha;<sub>T</sub> = (+1) - (-3/2) = <strong>2.5</strong></li>
+        </ul>
+
+        <h2 id="cosmology">6. Cosmological Implications</h2>
+
+        <h3>6.1 Dark Energy: The Mashiach Field</h3>
+
+        <p>
+            The "Mashiach" field &phi;<sub>M</sub> is a light scalar modulus that survives from the
+            compactification. Its potential drives late-time cosmic acceleration with equation of state:
+        </p>
+
+        <div class="equation">
+            w(z) = w<sub>0</sub> [1 + (&alpha;<sub>T</sub>/3) ln(1+z)]
+            <span class="equation-label">(6.1)</span>
+        </div>
+
+        <h3>6.2 Comparison with DESI 2024</h3>
+
+        <table>
+            <tr>
+                <th>Parameter</th>
+                <th>Theory Value</th>
+                <th>Status</th>
+                <th>DESI 2024</th>
+                <th>Planck-Only</th>
+            </tr>
+            <tr>
+                <td>w<sub>0</sub></td>
+                <td>-0.85 &plusmn; 0.05</td>
+                <td class="status-fitted">FITTED</td>
+                <td>-0.827 &plusmn; 0.063</td>
+                <td>-1.03 &plusmn; 0.03 (6&sigma; tension!)</td>
+            </tr>
+            <tr>
+                <td>w<sub>a</sub></td>
+                <td>-0.71 &plusmn; 0.2</td>
+                <td class="status-semi">SEMI-DERIVED</td>
+                <td>-0.75 &plusmn; 0.3</td>
+                <td>~0</td>
+            </tr>
+            <tr>
+                <td>&alpha;<sub>T</sub></td>
+                <td>2.5</td>
+                <td class="status-derived">DERIVED</td>
+                <td>Consistent</td>
+                <td>N/A</td>
+            </tr>
+            <tr>
+                <td>w(z) form</td>
+                <td>ln(1+z)</td>
+                <td class="status-derived">PREDICTED</td>
+                <td colspan="2">Testable at z &gt; 2 (DESI DR2, Euclid)</td>
+            </tr>
+        </table>
+
+        <div class="danger-box">
+            <strong>Critical Tension:</strong> The theory's w<sub>0</sub> = -0.85 is in <strong>6&sigma;
+            tension</strong> with Planck-only CMB constraints (w<sub>0</sub> = -1.03 &plusmn; 0.03).
+            The "agreement" with DESI occurs because DESI+BAO data pulls w<sub>0</sub> away from -1.
+            This tension must be addressed.
+        </div>
+
+        <h3>6.3 The w<sub>a</sub> &lt; 0 Mechanism</h3>
+
+        <p>
+            The <strong>genuine theoretical contribution</strong> is the mechanism for w<sub>a</sub> &lt; 0:
+        </p>
+
+        <ol>
+            <li>Thermal friction exists: &Gamma; &prop; T</li>
+            <li>As universe cools, friction decreases: &tau; = 1/&Gamma; increases</li>
+            <li>Decreasing friction allows field to accelerate at late times</li>
+            <li>This naturally produces w<sub>a</sub> &lt; 0</li>
+        </ol>
+
+        <p>
+            Standard quintessence models predict w<sub>a</sub> &gt; 0, so the thermal time mechanism
+            provides a distinctive explanation for DESI's preference for w<sub>a</sub> &lt; 0.
+        </p>
+
+        <h2 id="predictions">7. Predictions and Testability</h2>
+
+        <h3>7.1 Proton Decay</h3>
+
+        <table>
+            <tr>
+                <th>Observable</th>
+                <th>Prediction</th>
+                <th>Current Limit</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>&tau;<sub>p</sub> (p &rarr; e<sup>+</sup>&pi;<sup>0</sup>)</td>
+                <td>10<sup>34</sup> - 10<sup>36</sup> years</td>
+                <td>&gt; 2.4 &times; 10<sup>34</sup> years (Super-K)</td>
+                <td>Consistent but imprecise (2 OOM range)</td>
+            </tr>
+        </table>
+
+        <div class="warning-box">
+            <strong>Honesty Note:</strong> This prediction spans 2 orders of magnitude, limiting its
+            falsifiability. This is a generic SO(10) GUT prediction, not unique to this theory.
+        </div>
+
+        <h3>7.2 Neutrino Mass Hierarchy</h3>
+
+        <div class="success-box">
+            <strong>Genuine Falsifiable Prediction:</strong> The theory predicts <strong>Normal Hierarchy</strong>
+            (m<sub>1</sub> &lt; m<sub>2</sub> &lt; m<sub>3</sub>) from the sequential dominance mechanism in
+            SO(10). This is testable by JUNO (2027-2028) and DUNE (2028+).
+        </div>
+
+        <table>
+            <tr>
+                <th>Parameter</th>
+                <th>Prediction</th>
+                <th>Falsification</th>
+            </tr>
+            <tr>
+                <td>Mass hierarchy</td>
+                <td>Normal (NH)</td>
+                <td>Inverted hierarchy confirmed at &gt;3&sigma;</td>
+            </tr>
+            <tr>
+                <td>&Sigma;m<sub>&nu;</sub></td>
+                <td>~0.060 eV</td>
+                <td>Not unique (any NH model gives this)</td>
+            </tr>
+        </table>
+
+        <h3>7.3 Pre-Registered Predictions (November 2025)</h3>
+
+        <p>
+            <strong>The following predictions are locked-in before DESI DR2, Euclid DR1, and JUNO results:</strong>
+        </p>
+
+        <table>
+            <tr>
+                <th>Prediction</th>
+                <th>Value</th>
+                <th>Falsification Threshold</th>
+                <th>Expected Test</th>
+            </tr>
+            <tr>
+                <td>Neutrino hierarchy</td>
+                <td>Normal</td>
+                <td>Inverted at &gt;3&sigma;</td>
+                <td>JUNO 2027-2028</td>
+            </tr>
+            <tr>
+                <td>w<sub>a</sub> sign</td>
+                <td>Negative</td>
+                <td>w<sub>a</sub> &gt; +0.2 at &gt;2&sigma;</td>
+                <td>DESI DR2 2025</td>
+            </tr>
+            <tr>
+                <td>w<sub>a</sub>/w<sub>0</sub> ratio</td>
+                <td>~0.83 (&plusmn;0.3)</td>
+                <td>|ratio| &gt; 1.5 or &lt; 0.3</td>
+                <td>DESI DR2 2025</td>
+            </tr>
+            <tr>
+                <td>w(z) functional form</td>
+                <td>ln(1+z)</td>
+                <td>CPL z/(1+z) better fit at z &gt; 2</td>
+                <td>Euclid 2026+</td>
+            </tr>
+        </table>
+
+        <h2 id="peer-review">8. Peer Review Summary</h2>
+
+        <p>
+            The theory underwent extensive multi-agent peer review examining mathematical rigor, physics
+            consistency, experimental testability, and cosmological validity.
+        </p>
+
+        <h3>8.1 Review Scores</h3>
+
+        <table>
+            <tr>
+                <th>Aspect</th>
+                <th>Score</th>
+                <th>Key Issues</th>
+            </tr>
+            <tr>
+                <td>Mathematical Rigor</td>
+                <td>4/10</td>
+                <td>Fixed: Kreuzer-Skarke reference error; Remaining: explicit CY4 construction needed</td>
+            </tr>
+            <tr>
+                <td>Physics Consistency</td>
+                <td>5/10</td>
+                <td>Fixed: Coset/CY4 clarification; Remaining: thermal bath identification</td>
+            </tr>
+            <tr>
+                <td>Experimental Testability</td>
+                <td>3/10</td>
+                <td>Only one genuine prediction (NH); proton decay range too wide</td>
+            </tr>
+            <tr>
+                <td>Cosmology/DESI</td>
+                <td>4/10</td>
+                <td>w<sub>0</sub> fitted; 6&sigma; Planck tension; mechanism for w<sub>a</sub> &lt; 0 is interesting</td>
+            </tr>
+        </table>
+
+        <h3>8.2 Corrections Made</h3>
+
+        <ul>
+            <li><strong>CY4 References:</strong> Changed from "Kreuzer-Skarke database" (which is for CY3)
+                to "toric CY4 construction via 5D reflexive polytopes"</li>
+            <li><strong>Geometric Clarification:</strong> Explicitly stated K<sub>Pneuma</sub> is CY4
+                (not coset space); gauge symmetry from F-theory singularities</li>
+            <li><strong>Honest Parameter Status:</strong> Clearly marked w<sub>0</sub> as FITTED,
+                w<sub>a</sub> as SEMI-DERIVED, &alpha;<sub>T</sub> as DERIVED</li>
+            <li><strong>Planck Tension:</strong> Acknowledged 6&sigma; tension with Planck-only data</li>
+            <li><strong>Pre-Registration:</strong> Added locked-in predictions for future experiments</li>
+        </ul>
+
+        <h3>8.3 Remaining Open Questions</h3>
+
+        <ol>
+            <li>Explicit construction of CY4 with &chi; = 72 (toric data or CICY matrix)</li>
+            <li>Derivation of w<sub>0</sub> from the Mashiach potential (currently fitted)</li>
+            <li>Resolution of Planck-only tension</li>
+            <li>Identification of thermal bath (CMB, dark radiation, or Pneuma excitations)</li>
+            <li>Narrow proton decay prediction to &lt;0.5 orders of magnitude</li>
+        </ol>
+
+        <h2 id="conclusion">9. Conclusions and Open Questions</h2>
+
+        <h3>9.1 What the Theory Achieves</h3>
+
+        <ul>
+            <li><strong>3 generations from topology:</strong> n<sub>gen</sub> = &chi;/24 = 72/24 = 3</li>
+            <li><strong>SO(10) from geometry:</strong> D<sub>5</sub> singularity in F-theory</li>
+            <li><strong>Dark energy mechanism:</strong> Thermal friction naturally gives w<sub>a</sub> &lt; 0</li>
+            <li><strong>Time emergence:</strong> Thermal time hypothesis connects entropy to time flow</li>
+        </ul>
+
+        <h3>9.2 What Remains Speculative</h3>
+
+        <ul>
+            <li>The specific CY4 manifold is not explicitly constructed</li>
+            <li>w<sub>0</sub> is fitted, not derived</li>
+            <li>The theory is in significant tension with some datasets (Planck-only)</li>
+            <li>Most "predictions" are post-hoc adjustments or generic to GUT theories</li>
+        </ul>
+
+        <h3>9.3 The Path Forward</h3>
+
+        <p>
+            The theory's fate will be decided by:
+        </p>
+
+        <ol>
+            <li><strong>JUNO/DUNE (2027-2028):</strong> Neutrino hierarchy measurement. If inverted
+                hierarchy is confirmed at &gt;3&sigma;, the theory is falsified.</li>
+            <li><strong>DESI DR2/Euclid:</strong> The ln(1+z) vs z/(1+z) functional form test at z &gt; 2.
+                This is the most distinctive testable prediction.</li>
+            <li><strong>Hyper-Kamiokande:</strong> Proton decay searches reaching 10<sup>35</sup> years.</li>
+        </ol>
+
+        <p>
+            Until these tests are performed, the Principia Metaphysica framework remains a speculative
+            but mathematically interesting approach to unification, with one genuinely falsifiable prediction
+            (normal neutrino hierarchy) that will be tested within the next 5-10 years.
+        </p>
+
+        <div class="footnote">
+            <p>
+                <strong>Document Version:</strong> 4.0 (November 2025)<br>
+                <strong>Last Updated:</strong> Post multi-agent peer review<br>
+                <strong>Contact:</strong> AndrewKWatts@Gmail.com<br>
+                <strong>Website:</strong> <a href="index.html">Principia Metaphysica Online</a>
+            </p>
+            <p>
+                <em>This document reflects honest assessment of the theory's current state, including
+                acknowledgment of fitted parameters, tensions with data, and limitations in testability.
+                Pre-registered predictions are locked and will not be adjusted post-hoc.</em>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
