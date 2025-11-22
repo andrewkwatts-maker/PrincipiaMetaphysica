@@ -256,6 +256,31 @@
             </p>
         </div>
 
+        <!-- Bridging Note: Connection to Thermal Time -->
+        <div class="definition-box" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.1), rgba(139, 127, 255, 0.08)); border-left: 4px solid var(--accent-secondary); margin-bottom: 2rem;">
+            <h5 style="color: var(--accent-secondary);">Building on the Thermal Time Hypothesis (Section 5)</h5>
+            <p style="margin-bottom: 0.75rem;">
+                This section applies the <strong>Thermal Time Hypothesis</strong> developed in Section 5 to
+                cosmological dynamics. Recall the key insight: <em>time is not a fundamental coordinate but
+                emerges from thermodynamic flow</em> in the Pneuma sector.
+            </p>
+            <p style="margin-bottom: 0.75rem;">
+                <strong>What this means for cosmology:</strong>
+            </p>
+            <ul style="margin: 0 0 0.75rem 1.5rem; color: var(--text-secondary);">
+                <li>The cosmic arrow of time follows from the Tomita-Takesaki modular flow of Section 5.3</li>
+                <li>The Mashiach field &chi; (introduced here) couples to the thermal Pneuma bath, inheriting
+                    temperature-dependent dynamics from the thermal time structure</li>
+                <li>The dark energy equation of state w(z) acquires distinctive features from thermal
+                    friction&mdash;particularly w<sub>a</sub> &lt; 0&mdash;that are <em>derived</em>
+                    from Section 5, not fitted to data</li>
+            </ul>
+            <p style="margin: 0; color: var(--text-muted); font-style: italic;">
+                Readers unfamiliar with the thermal time formulation should review Section 5.2-5.3 for the
+                foundation of the cosmological results presented here.
+            </p>
+        </div>
+
         <div class="toc">
             <h4>Table of Contents</h4>
             <ul>
@@ -379,11 +404,49 @@
                     The effective 4D gravitational action takes the form:
                 </p>
 
-                <div class="equation-box numbered">
-                    <span class="eq-content">
-                        S = (1/16&pi;G) &int; d<sup>4</sup>x &radic;(-g) F(R,T) + S<sub>matter</sub>
-                    </span>
-                    <span class="eq-number">(6.5)</span>
+                <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.2); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                    <span class="formula-hint">Hover for variable definitions</span>
+                    <div class="formula-display" style="justify-content: center; gap: 0.5rem; flex-wrap: wrap;">
+                        <span class="formula-var">S
+                            <div class="var-tooltip">
+                                <div class="var-name">S</div>
+                                <div class="var-description">The gravitational action - determines equations of motion via variation</div>
+                                <div class="var-units">Dimensionless (in natural units)</div>
+                            </div>
+                        </span>
+                        <span class="formula-op">=</span>
+                        <span class="formula-var">(1/16&pi;G)
+                            <div class="var-tooltip">
+                                <div class="var-name">1/16&pi;G</div>
+                                <div class="var-description">Gravitational coupling - inverse of Newton's constant</div>
+                                <div class="var-units">M<sub>Pl</sub><sup>2</sup>/2 in natural units</div>
+                            </div>
+                        </span>
+                        <span class="formula-var">&int;d<sup>4</sup>x&radic;(-g)
+                            <div class="var-tooltip">
+                                <div class="var-name">&int;d<sup>4</sup>x&radic;(-g)</div>
+                                <div class="var-description">Covariant volume element - ensures coordinate independence</div>
+                                <div class="var-units">Length<sup>4</sup></div>
+                            </div>
+                        </span>
+                        <span class="formula-var" style="color: #8b7fff; font-weight: 600;">F(R,T)
+                            <div class="var-tooltip">
+                                <div class="var-name">F(R,T)</div>
+                                <div class="var-description">Modified gravity function - depends on Ricci scalar R and stress-energy trace T</div>
+                                <div class="var-units">Length<sup>-2</sup></div>
+                                <div class="var-contribution">F = R gives Einstein gravity; F(R,T) generalizes to include matter-geometry coupling</div>
+                            </div>
+                        </span>
+                        <span class="formula-op">+</span>
+                        <span class="formula-var">S<sub>matter</sub>
+                            <div class="var-tooltip">
+                                <div class="var-name">S<sub>matter</sub></div>
+                                <div class="var-description">Matter action - describes fermions, gauge fields, scalars</div>
+                                <div class="var-units">Dimensionless</div>
+                            </div>
+                        </span>
+                    </div>
+                    <div class="formula-label" style="text-align: center; color: var(--text-muted); margin-top: 0.5rem;">(6.5) Myrzakulov F(R,T) modified gravity action</div>
                 </div>
 
                 <div class="definition-box">
@@ -931,6 +994,48 @@
                         w(z) = w<sub>0</sub> + w<sub>a</sub>(z/(1+z))
                     </span>
                     <span class="eq-number">(6.15)</span>
+                </div>
+
+                <!-- Parameter Status: Fitted vs Derived -->
+                <div class="note-box" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 159, 67, 0.08)); border-left: 4px solid #ffc107; margin: 1.5rem 0;">
+                    <h5 style="color: #ffc107;">Parameter Status: What is Derived vs. Fitted</h5>
+                    <p style="margin-bottom: 0.75rem;">
+                        For transparency, we distinguish parameters that are <em>derived from theory</em> versus
+                        those that require observational input:
+                    </p>
+                    <table style="width: 100%; border-collapse: collapse; margin: 0.75rem 0;">
+                        <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.3);">
+                            <th style="text-align: left; padding: 0.5rem; color: #ffc107;">Parameter</th>
+                            <th style="text-align: left; padding: 0.5rem; color: #ffc107;">Status</th>
+                            <th style="text-align: left; padding: 0.5rem; color: #ffc107;">Origin</th>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.2);">
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>0</sub> &asymp; -0.85</td>
+                            <td style="padding: 0.5rem; color: #ff7b7b;"><strong>FITTED</strong></td>
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">Phenomenological; requires DESI/Planck input (or MEP conjecture)</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.2);">
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">&alpha;<sub>T</sub> = 2.5</td>
+                            <td style="padding: 0.5rem; color: #51cf66;"><strong>DERIVED</strong></td>
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">From thermal time: &alpha;<sub>T</sub> = d ln &tau;/d ln a &minus; d ln H/d ln a</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.2);">
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub>/3</td>
+                            <td style="padding: 0.5rem; color: #51cf66;"><strong>DERIVED</strong></td>
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">Follows once w<sub>0</sub> and &alpha;<sub>T</sub> are known</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &lt; 0 (sign)</td>
+                            <td style="padding: 0.5rem; color: #51cf66;"><strong>PREDICTED</strong></td>
+                            <td style="padding: 0.5rem; color: var(--text-secondary);">Generic consequence of decreasing thermal friction</td>
+                        </tr>
+                    </table>
+                    <p style="margin: 0; font-size: 0.9rem; color: var(--text-muted);">
+                        <strong>Key distinction:</strong> The <em>functional form</em> w(z) &prop; ln(1+z) and the
+                        <em>sign</em> w<sub>a</sub> &lt; 0 are genuine predictions. The normalization w<sub>0</sub>
+                        currently requires observational input, though the MEP conjecture (w<sub>0</sub> = -11/13)
+                        offers a possible theoretical derivation under investigation.
+                    </p>
                 </div>
 
                 <!-- DESI 2024 Agreement Highlight Box - UPDATED WITH HONEST ASSESSMENT -->
