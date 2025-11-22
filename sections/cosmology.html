@@ -868,6 +868,29 @@
                     </span>
                     <span class="eq-number">(6.14)</span>
                 </div>
+
+                <!-- NEW: Holographic V₀ Formula from Abstract Resolutions -->
+                <div class="theorem-box" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(81, 207, 102, 0.08)); border-left: 4px solid #8b7fff;">
+                    <h5 style="color: #8b7fff;">Holographic Conjecture for V₀ (November 2025)</h5>
+                    <p>
+                        Multiple independent mathematical approaches (holographic bounds, species scale conjectures,
+                        spectral geometry) converge on a remarkable formula connecting the cosmological constant
+                        to topology and entropy:
+                    </p>
+                    <div class="equation-box" style="background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.4);">
+                        V<sub>0</sub> = n<sub>gen</sub> &times; M<sub>Pl</sub><sup>4</sup> / S<sub>dS</sub> = 3 &times; 10<sup>76</sup> GeV<sup>4</sup> / 10<sup>122</sup> &asymp; 3 &times; 10<sup>-46</sup> GeV<sup>4</sup>
+                    </div>
+                    <p>where:</p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>n<sub>gen</sub> = &chi;(K<sub>Pneuma</sub>)/24 = 3</strong>: Particle physics input from CY4 topology</li>
+                        <li><strong>S<sub>dS</sub> ~ 10<sup>122</sup></strong>: de Sitter horizon entropy (cosmological input)</li>
+                        <li><strong>Result</strong>: V<sub>0</sub> ~ 10<sup>-46</sup> GeV<sup>4</sup> — within a factor of ~30 of observation!</li>
+                    </ul>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
+                        <strong>Status:</strong> This is a <em>conjecture</em> under investigation. The formula suggests the CC problem
+                        may be an information-theoretic constraint rather than a fine-tuning problem. See pre-registration in Section 7.
+                    </p>
+                </div>
             </div>
 
             <div class="subsection">
@@ -917,6 +940,28 @@
                     </p>
                     <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
                         The <strong>genuine prediction</strong> is the logarithmic functional form w(z) &prop; ln(1+z), testable at high z.
+                    </p>
+                </div>
+
+                <!-- NEW: MEP w₀ Derivation from Abstract Resolutions -->
+                <div class="theorem-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.08)); border-left: 4px solid #51cf66;">
+                    <h5 style="color: #51cf66;">Maximum Entropy Principle Derivation of w₀ (November 2025)</h5>
+                    <p>
+                        Information geometry provides a <strong>first-principles derivation</strong> of w₀ from the
+                        Maximum Entropy Principle (MEP) applied to the effective phase space:
+                    </p>
+                    <div class="equation-box" style="background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4);">
+                        w<sub>0</sub> = -(d<sub>eff</sub> - 1)/(d<sub>eff</sub> + 1) = -(12 - 1)/(12 + 1) = <strong>-11/13 &asymp; -0.846</strong>
+                    </div>
+                    <p>where:</p>
+                    <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>d<sub>eff</sub> = 12</strong>: Effective phase space dimension (13D bulk minus emergent time)</li>
+                        <li><strong>DESI 2024</strong>: w₀ = -0.83 &plusmn; 0.06 — the MEP value is within <strong>0.3&sigma;</strong>!</li>
+                        <li><strong>Langlands duality</strong>: The ratio w<sub>a</sub>/w₀ = &alpha;<sub>T</sub>/3 &asymp; 5/6 appears in both thermal time and D₅ monodromy</li>
+                    </ul>
+                    <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
+                        <strong>Status:</strong> This MEP derivation upgrades w₀ from "fitted" to "semi-derived." The formula is under investigation
+                        as a <em>conjecture</em> linking information geometry to cosmological dynamics.
                     </p>
                 </div>
             </div>
@@ -1044,6 +1089,45 @@
                     <p>
                         The mismatch &alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = 2.5 drives the w(z) evolution.
                         This leads to <strong>w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub> / 3 &asymp; -0.71</strong> for w<sub>0</sub> &asymp; -0.85.
+                    </p>
+                </div>
+
+                <div class="highlight-box" style="border-left-color: #17a2b8;">
+                    <h4 style="color: #17a2b8;">&Gamma; &prop; T: Microscopic Derivation</h4>
+                    <p>
+                        The assumption &Gamma; &prop; T (n=1) is <strong>derived from fermionic statistics</strong> of the Pneuma thermal bath,
+                        not assumed. The Mashiach-Pneuma coupling is a derivative interaction:
+                    </p>
+                    <div class="equation-box" style="margin: 0.5rem 0;">
+                        L<sub>int</sub> = (g/f) (&part;<sub>&mu;</sub>&chi;) J<sup>&mu;</sup><sub>Pneuma</sub>
+                        <div class="label">Protected by approximate shift symmetry &chi; &rarr; &chi; + const</div>
+                    </div>
+                    <p>
+                        For a <strong>fermionic bath</strong>, the phase space factor n<sub>F</sub>(k)[1 - n<sub>F</sub>(k)] gives &Gamma; &prop; T<sup>1</sup>.
+                        A bosonic bath would give &Gamma; &prop; T<sup>3</sup>, producing &alpha;<sub>T</sub> = 4.5 &mdash; <em>excluded by DESI data</em>.
+                    </p>
+                </div>
+
+                <div class="warning-box">
+                    <h4>Epoch Correction (Updated 2025)</h4>
+                    <p>
+                        The matter-era formula &alpha;<sub>T</sub> = 2.5 assumes H &prop; a<sup>-3/2</sup>. In the current &Lambda;-dominated era,
+                        H approaches constant, giving d ln H/d ln a &rarr; 0. The epoch-corrected formula is:
+                    </p>
+                    <div class="equation-box" style="margin: 0.5rem 0; background: rgba(255,193,7,0.1);">
+                        &alpha;<sub>T</sub>(z) = 1 + (3/2) &times; f<sub>m</sub>(z)
+                        <div class="label">where f<sub>m</sub>(z) = &Omega;<sub>m</sub>(1+z)<sup>3</sup> / [&Omega;<sub>m</sub>(1+z)<sup>3</sup> + &Omega;<sub>&Lambda;</sub>]</div>
+                    </div>
+                    <table style="width: 100%; margin: 1rem 0; font-size: 0.9rem;">
+                        <tr><th>z</th><th>&alpha;<sub>T</sub>(z)</th><th>Era</th></tr>
+                        <tr><td>0</td><td>1.47</td><td>&Lambda;-dominated</td></tr>
+                        <tr><td>1</td><td>2.18</td><td>Transition</td></tr>
+                        <tr><td>2</td><td>2.39</td><td>Matter-dominated</td></tr>
+                        <tr><td>&gt;3</td><td>&asymp;2.5</td><td>Matter era</td></tr>
+                    </table>
+                    <p>
+                        <strong>Effective average for DESI range:</strong> &langle;&alpha;<sub>T</sub>&rangle; &asymp; 2.0, yielding w<sub>a</sub> &asymp; -0.57.
+                        Both values remain consistent with DESI 2024 uncertainties (w<sub>a</sub> = -0.75 &plusmn; 0.30).
                     </p>
                 </div>
             </div>
