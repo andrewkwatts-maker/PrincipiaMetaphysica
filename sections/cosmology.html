@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Section 6: Cosmological Dynamics - Modified gravity, Mashiach field attractors, and dark energy in Principia Metaphysica">
+    <title>Section 6: Cosmological Dynamics - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Section page specific styles */
+        .equation-box {
+            background: rgba(139, 127, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            overflow-x: auto;
+        }
+
+        .equation-box.numbered {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .equation-box .eq-number {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            min-width: 60px;
+            text-align: right;
+        }
+
+        .equation-box .eq-content {
+            flex: 1;
+            text-align: center;
+        }
+
+        .subsection {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .subsection:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .subsection h4 {
+            color: var(--accent-primary);
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .definition-box {
+            background: rgba(79, 172, 254, 0.1);
+            border-left: 4px solid var(--info);
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .definition-box h5 {
+            color: var(--info);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .theorem-box {
+            background: rgba(81, 207, 102, 0.1);
+            border-left: 4px solid var(--success);
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .theorem-box h5 {
+            color: var(--success);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .note-box {
+            background: rgba(255, 212, 59, 0.1);
+            border-left: 4px solid var(--warning);
+            padding: 1.25rem;
+            margin: 1.25rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .note-box h5 {
+            color: var(--warning);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .section-nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-primary);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            min-width: 200px;
+        }
+
+        .nav-link:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.15);
+        }
+
+        .nav-link .direction {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .nav-link .title {
+            color: var(--accent-primary);
+            font-weight: 600;
+            margin-top: 0.25rem;
+        }
+
+        .toc {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .toc h4 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            padding: 0.4rem 0;
+        }
+
+        .toc a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: var(--accent-primary);
+        }
+
+        p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        ul, ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        .phase-diagram {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .phase-diagram h5 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .phase-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .phase-table th, .phase-table td {
+            padding: 0.75rem;
+            text-align: center;
+            border: 1px solid var(--border-primary);
+        }
+
+        .phase-table th {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+        }
+
+        .phase-table td {
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principia Metaphysica</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#abstract">Abstract</a></li>
+                    <li><a href="../index.html#sections">Sections</a></li>
+                    <li><a href="predictions.html">Predictions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="../index.html#sections">Sections</a>
+            <span class="separator">/</span>
+            <span style="color: var(--text-primary);">Section 6: Cosmological Dynamics</span>
+        </div>
+
+        <div class="detail-header">
+            <h2>Section 6: Cosmological Dynamics</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 0.5rem;">
+                Modified Gravity, the Mashiach Field, and the Late-Time Cosmic Attractor
+            </p>
+        </div>
+
+        <div class="toc">
+            <h4>Table of Contents</h4>
+            <ul>
+                <li><a href="#kaluza-klein">6.1 Deriving 4D Gravity from Kaluza-Klein Reduction</a></li>
+                <li><a href="#frt-gravity">6.2 Myrzakulov F(R,T) Gravity</a></li>
+                <li><a href="#mashiach-field">6.3 The Mashiach Field as a Modulus</a></li>
+                <li><a href="#dynamical-systems">6.4 Dynamical Systems Analysis</a></li>
+                <li><a href="#late-time-attractor">6.5 The Late-Time Attractor</a></li>
+                <li><a href="#consistency">6.6 Causality, Unitarity, and Holographic Consistency</a></li>
+            </ul>
+        </div>
+
+        <section class="detail-section" id="kaluza-klein">
+            <h3>6.1 Deriving 4D Gravity from Kaluza-Klein Reduction</h3>
+
+            <p>
+                The Principia Metaphysica framework begins with a (12,1)-dimensional spacetime that reduces
+                to our observed 4D universe through <strong>Kaluza-Klein compactification</strong>. This
+                dimensional reduction naturally generates both gravity and gauge fields from pure geometry.
+            </p>
+
+            <div class="subsection">
+                <h4>The Higher-Dimensional Metric</h4>
+                <p>
+                    The 13-dimensional metric G<sub>MN</sub> decomposes according to the product structure
+                    M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub>:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        ds<sup>2</sup><sub>13</sub> = g<sub>&mu;&nu;</sub>(x)dx<sup>&mu;</sup>dx<sup>&nu;</sup> +
+                        g<sub>mn</sub>(x,y)dy<sup>m</sup>dy<sup>n</sup> + 2A<sub>&mu;</sub><sup>a</sup>(x)K<sub>a</sub><sup>m</sup>dx<sup>&mu;</sup>dy<sub>m</sub>
+                    </span>
+                    <span class="eq-number">(6.1)</span>
+                </div>
+
+                <p>
+                    Here x<sup>&mu;</sup> are coordinates on M<sup>4</sup>, y<sup>m</sup> are coordinates on
+                    K<sub>Pneuma</sub>, and K<sub>a</sub> are Killing vectors generating the SO(10) isometry.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Dimensional Reduction of the Einstein-Hilbert Action</h4>
+                <p>
+                    Starting from the 13D Einstein-Hilbert action:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        S<sub>13</sub> = (1/2&kappa;<sub>13</sub><sup>2</sup>) &int; d<sup>13</sup>x &radic;(-G) R<sub>13</sub>
+                    </span>
+                    <span class="eq-number">(6.2)</span>
+                </div>
+
+                <p>
+                    Integration over the compact dimensions K<sub>Pneuma</sub> yields the 4D effective action:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        S<sub>4</sub> = &int; d<sup>4</sup>x &radic;(-g) [M<sub>Pl</sub><sup>2</sup>R/2 -
+                        (1/4)F<sup>a</sup><sub>&mu;&nu;</sub>F<sup>a&mu;&nu;</sup> - V(&phi;)]
+                    </span>
+                    <span class="eq-number">(6.3)</span>
+                </div>
+
+                <p>
+                    The key results of the reduction are:
+                </p>
+                <ul>
+                    <li><strong>4D gravity:</strong> The 4D Planck mass M<sub>Pl</sub><sup>2</sup> = V<sub>8</sub>M<sub>13</sub><sup>11</sup>
+                        where V<sub>8</sub> is the volume of K<sub>Pneuma</sub></li>
+                    <li><strong>Gauge fields:</strong> The off-diagonal metric components become SO(10) gauge
+                        bosons A<sub>&mu;</sub><sup>a</sup></li>
+                    <li><strong>Scalar moduli:</strong> The internal metric fluctuations become scalar fields
+                        &phi;<sup>i</sup> in 4D</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>The Breathing Mode</h4>
+                <p>
+                    A particularly important modulus is the <strong>breathing mode</strong> &sigma;, which
+                    controls the overall volume of K<sub>Pneuma</sub>:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        g<sub>mn</sub>(x,y) = e<sup>2&sigma;(x)</sup> g<sub>mn</sub><sup>(0)</sup>(y)
+                    </span>
+                    <span class="eq-number">(6.4)</span>
+                </div>
+
+                <p>
+                    The breathing mode &sigma; couples universally to all matter and plays a crucial role
+                    in the cosmological dynamics of the theory.
+                </p>
+            </div>
+        </section>
+
+        <section class="detail-section" id="frt-gravity">
+            <h3>6.2 Myrzakulov F(R,T) Gravity</h3>
+
+            <p>
+                The dimensional reduction from (12,1) dimensions, combined with quantum corrections from the
+                Pneuma field, naturally leads to a <strong>modified gravity theory</strong> of the Myrzakulov
+                F(R,T) type, where the action depends on both the Ricci scalar R and the trace of the
+                stress-energy tensor T.
+            </p>
+
+            <div class="subsection">
+                <h4>The F(R,T) Action</h4>
+                <p>
+                    The effective 4D gravitational action takes the form:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        S = (1/16&pi;G) &int; d<sup>4</sup>x &radic;(-g) F(R,T) + S<sub>matter</sub>
+                    </span>
+                    <span class="eq-number">(6.5)</span>
+                </div>
+
+                <div class="definition-box">
+                    <h5>Myrzakulov F(R,T) Gravity</h5>
+                    <p>
+                        A class of modified gravity theories where the gravitational Lagrangian is an arbitrary
+                        function F of both the Ricci scalar R and the trace T = g<sup>&mu;&nu;</sup>T<sub>&mu;&nu;</sub>
+                        of the matter stress-energy tensor.
+                    </p>
+                </div>
+
+                <p>
+                    In the Principia Metaphysica framework, the specific form of F(R,T) emerges from:
+                </p>
+                <ul>
+                    <li><strong>Classical reduction:</strong> Tree-level Kaluza-Klein gives F = R</li>
+                    <li><strong>Quantum corrections:</strong> Loop effects from Pneuma field add R<sup>2</sup> and T-dependent terms</li>
+                    <li><strong>Non-minimal coupling:</strong> The moduli fields couple to curvature and matter</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h4>Scalar-Tensor Formulation</h4>
+                <p>
+                    F(R,T) gravity can be recast as a <strong>scalar-tensor theory</strong> via a conformal
+                    transformation. Introducing auxiliary fields &phi; and &psi;:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        S = &int; d<sup>4</sup>x &radic;(-g) [&phi;R + &psi;T - V(&phi;,&psi;)]
+                    </span>
+                    <span class="eq-number">(6.6)</span>
+                </div>
+
+                <p>
+                    This formulation makes manifest the additional scalar degrees of freedom and facilitates
+                    the analysis of cosmological solutions.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Torsion and the Pneuma Condensate</h4>
+                <p>
+                    The fermionic Pneuma condensate naturally introduces <strong>torsion</strong> into the
+                    spacetime geometry. In the Einstein-Cartan formulation:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        T<sup>&lambda;</sup><sub>&mu;&nu;</sub> = &Gamma;<sup>&lambda;</sup><sub>[&mu;&nu;]</sub> &ne; 0
+                    </span>
+                    <span class="eq-number">(6.7)</span>
+                </div>
+
+                <p>
+                    The torsion is sourced by the spin density of the Pneuma field:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        T<sup>&lambda;</sup><sub>&mu;&nu;</sub> &sim; &kappa;<sup>2</sup>
+                        &langle;&Psi;<sub>P</sub>&gamma;<sup>&lambda;</sup>&gamma;<sub>[&mu;</sub>&gamma;<sub>&nu;]</sub>&Psi;<sub>P</sub>&rangle;
+                    </span>
+                    <span class="eq-number">(6.8)</span>
+                </div>
+
+                <p>
+                    This torsion contributes additional terms to the effective gravitational dynamics,
+                    particularly important at high densities in the early universe.
+                </p>
+            </div>
+        </section>
+
+        <section class="detail-section" id="mashiach-field">
+            <h3>6.3 The Mashiach Field as a Modulus</h3>
+
+            <p>
+                Central to the cosmological dynamics of Principia Metaphysica is the <strong>Mashiach field</strong>
+                &chi;, a scalar modulus arising from the geometry of the internal space K<sub>Pneuma</sub>.
+                This field drives cosmic acceleration and provides a dynamical explanation for dark energy.
+            </p>
+
+            <div class="subsection">
+                <h4>Volume and Shape Moduli</h4>
+                <p>
+                    The moduli space of the internal manifold K<sub>Pneuma</sub> decomposes into:
+                </p>
+
+                <ul>
+                    <li><strong>Volume modulus (&sigma;):</strong> Controls the overall size of K<sub>Pneuma</sub></li>
+                    <li><strong>Shape moduli (&chi;<sup>i</sup>):</strong> Control the shape/geometry at fixed volume</li>
+                    <li><strong>Wilson line moduli:</strong> Gauge field configurations on K<sub>Pneuma</sub></li>
+                </ul>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        M<sub>moduli</sub> = {(&sigma;, &chi;<sup>i</sup>, A<sub>m</sub><sup>a</sup>) : g<sub>mn</sub>
+                        satisfies Einstein equations on K<sub>Pneuma</sub>}
+                    </span>
+                    <span class="eq-number">(6.9)</span>
+                </div>
+
+                <p>
+                    The Mashiach field &chi; represents a specific combination of these moduli that remains
+                    dynamical at late cosmological times.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Modulus Stabilization</h4>
+                <p>
+                    A crucial requirement for any extra-dimensional theory is <strong>modulus stabilization</strong>:
+                    the extra dimensions must be fixed at phenomenologically acceptable values. In the Principia
+                    Metaphysica framework, stabilization occurs through:
+                </p>
+
+                <div class="theorem-box">
+                    <h5>Stabilization Mechanisms</h5>
+                    <ul>
+                        <li><strong>Flux compactification:</strong> Background fluxes on K<sub>Pneuma</sub> generate
+                            a potential for the moduli</li>
+                        <li><strong>Casimir energy:</strong> Quantum fluctuations of the Pneuma field contribute
+                            to the moduli potential</li>
+                        <li><strong>Gaugino condensation:</strong> Non-perturbative effects in the SO(10) sector
+                            break supersymmetry and lift flat directions</li>
+                    </ul>
+                </div>
+
+                <p>
+                    The combined potential has the form:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        V(&sigma;, &chi;) = V<sub>flux</sub>(&sigma;) + V<sub>Casimir</sub>(&sigma;) +
+                        V<sub>np</sub>(&chi;)e<sup>-a&sigma;</sup>
+                    </span>
+                    <span class="eq-number">(6.10)</span>
+                </div>
+
+                <p>
+                    While &sigma; is stabilized at high mass, the Mashiach field &chi; acquires a very flat
+                    potential, allowing it to remain dynamical and drive late-time acceleration.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>The Mashiach Potential</h4>
+                <p>
+                    The effective potential for the Mashiach field takes a quintessence-like form:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        V(&chi;) = V<sub>0</sub>[1 + (&chi;/M<sub>Pl</sub>)<sup>-&alpha;</sup>] &nbsp;&nbsp;
+                        (tracker potential)
+                    </span>
+                    <span class="eq-number">(6.11)</span>
+                </div>
+
+                <p>
+                    This potential has the characteristic "runaway" form of quintessence models, with a
+                    cosmological constant-like minimum at &chi; &rarr; &infin;.
+                </p>
+            </div>
+        </section>
+
+        <section class="detail-section" id="dynamical-systems">
+            <h3>6.4 Dynamical Systems Analysis</h3>
+
+            <p>
+                The cosmological evolution in F(R,T) gravity with the Mashiach field can be analyzed using
+                <strong>dynamical systems techniques</strong>, revealing the global structure of solutions
+                and identifying critical points (attractors, saddles, sources).
+            </p>
+
+            <div class="subsection">
+                <h4>Autonomous System Formulation</h4>
+                <p>
+                    Introducing dimensionless variables:
+                </p>
+
+                <div class="equation-box">
+                    x = &chi;'/(&radic;6 H) &nbsp;&nbsp;&nbsp;
+                    y = &radic;(V/3H<sup>2</sup>M<sub>Pl</sub><sup>2</sup>) &nbsp;&nbsp;&nbsp;
+                    z = &radic;(&rho;<sub>m</sub>/3H<sup>2</sup>M<sub>Pl</sub><sup>2</sup>)
+                </div>
+
+                <p>
+                    where prime denotes d/dN with N = ln(a) the e-folding number. The Friedmann constraint becomes:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> + &Omega;<sub>F</sub> = 1
+                    </span>
+                    <span class="eq-number">(6.12)</span>
+                </div>
+
+                <p>
+                    where &Omega;<sub>F</sub> encodes the modification from standard gravity.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Fixed Points and Stability</h4>
+                <p>
+                    The autonomous system dx/dN = f(x,y,z), dy/dN = g(x,y,z), etc. admits several critical
+                    points:
+                </p>
+
+                <div class="phase-diagram">
+                    <h5>Critical Points of the Cosmological System</h5>
+                    <table class="phase-table">
+                        <tr>
+                            <th>Point</th>
+                            <th>(x, y, z)</th>
+                            <th>w<sub>eff</sub></th>
+                            <th>&Omega;<sub>&chi;</sub></th>
+                            <th>Stability</th>
+                        </tr>
+                        <tr>
+                            <td>A (Radiation)</td>
+                            <td>(0, 0, 0)</td>
+                            <td>1/3</td>
+                            <td>0</td>
+                            <td>Unstable node</td>
+                        </tr>
+                        <tr>
+                            <td>B (Matter)</td>
+                            <td>(0, 0, 1)</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>Saddle</td>
+                        </tr>
+                        <tr>
+                            <td>C (Scaling)</td>
+                            <td>(x<sub>s</sub>, y<sub>s</sub>, z<sub>s</sub>)</td>
+                            <td>w<sub>m</sub></td>
+                            <td>&Omega;<sub>s</sub></td>
+                            <td>Saddle</td>
+                        </tr>
+                        <tr>
+                            <td>D (de Sitter)</td>
+                            <td>(0, 1, 0)</td>
+                            <td>-1</td>
+                            <td>1</td>
+                            <td>Stable attractor</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    The stability is determined by the eigenvalues of the Jacobian matrix evaluated at each
+                    fixed point. Point D (de Sitter) is the late-time attractor.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Phase Space Trajectories</h4>
+                <p>
+                    Generic trajectories in the phase space follow a characteristic evolution:
+                </p>
+
+                <ol>
+                    <li><strong>Early universe:</strong> Trajectories originate near Point A (radiation domination)</li>
+                    <li><strong>Matter era:</strong> Pass through the neighborhood of Point B (matter domination)</li>
+                    <li><strong>Transition:</strong> May spend time near scaling solution C</li>
+                    <li><strong>Late time:</strong> All trajectories approach the de Sitter attractor D</li>
+                </ol>
+
+                <div class="note-box">
+                    <h5>Tracker Behavior</h5>
+                    <p>
+                        The Mashiach field exhibits <strong>tracker behavior</strong>: for a wide range of
+                        initial conditions, the field evolution converges to a common trajectory, alleviating
+                        fine-tuning problems associated with dark energy initial conditions.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section" id="late-time-attractor">
+            <h3>6.5 The Late-Time Attractor</h3>
+
+            <p>
+                The most significant cosmological prediction of the Principia Metaphysica framework is the
+                existence of a <strong>late-time de Sitter attractor</strong> driven by the Mashiach field.
+                This provides a dynamical explanation for the observed cosmic acceleration.
+            </p>
+
+            <div class="subsection">
+                <h4>The de Sitter Phase</h4>
+                <p>
+                    At the attractor point D, the universe approaches an exponentially expanding de Sitter phase:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        a(t) &sim; e<sup>H<sub>&infin;</sub>t</sup> &nbsp;&nbsp; where &nbsp;&nbsp;
+                        H<sub>&infin;</sub><sup>2</sup> = V<sub>0</sub>/(3M<sub>Pl</sub><sup>2</sup>)
+                    </span>
+                    <span class="eq-number">(6.13)</span>
+                </div>
+
+                <p>
+                    The Hubble parameter approaches a constant value determined by the minimum of the Mashiach
+                    potential V<sub>0</sub>, which is related to the observed dark energy density:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        &rho;<sub>&Lambda;</sub> = V<sub>0</sub> &approx; (2.3 &times; 10<sup>-3</sup> eV)<sup>4</sup>
+                    </span>
+                    <span class="eq-number">(6.14)</span>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>Dark Energy Equation of State</h4>
+                <p>
+                    During the approach to the attractor, the effective equation of state parameter w(z) evolves:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        w(z) = w<sub>0</sub> + w<sub>a</sub>(z/(1+z))
+                    </span>
+                    <span class="eq-number">(6.15)</span>
+                </div>
+
+                <p>
+                    The model predicts:
+                </p>
+                <ul>
+                    <li>w<sub>0</sub> &asymp; -1 + O(10<sup>-2</sup>): very close to cosmological constant</li>
+                    <li>w<sub>a</sub> &asymp; O(10<sup>-2</sup>): small time evolution</li>
+                    <li>w &rarr; -1 as z &rarr; -1: asymptotic de Sitter</li>
+                </ul>
+
+                <div class="theorem-box">
+                    <h5>Observational Consistency</h5>
+                    <p>
+                        Current observations (Planck, BAO, SNe Ia) constrain w<sub>0</sub> = -1.03 &plusmn; 0.03
+                        and w<sub>a</sub> consistent with zero, in agreement with the attractor prediction.
+                        Future surveys (DESI, Euclid, Roman) will test the predicted small deviation from w = -1.
+                    </p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>Resolution of the Coincidence Problem</h4>
+                <p>
+                    The tracker behavior of the Mashiach field naturally addresses the <strong>cosmic coincidence
+                    problem</strong>: why are the dark energy and matter densities comparable today?
+                </p>
+
+                <p>
+                    In the Principia Metaphysica framework:
+                </p>
+                <ul>
+                    <li>The Mashiach field tracks the dominant energy component during matter domination</li>
+                    <li>The tracker solution maintains &Omega;<sub>&chi;</sub>/&Omega;<sub>m</sub> &sim; O(1)</li>
+                    <li>The exit from tracking and transition to domination is determined by the potential shape</li>
+                </ul>
+
+                <p>
+                    This provides a dynamical explanation for the observed coincidence rather than requiring
+                    fine-tuned initial conditions.
+                </p>
+            </div>
+        </section>
+
+        <section class="detail-section" id="consistency">
+            <h3>6.6 Causality, Unitarity, and Holographic Consistency</h3>
+
+            <p>
+                Any proposed modification of gravity must satisfy fundamental consistency requirements.
+                We examine how the Principia Metaphysica framework addresses causality, unitarity, and
+                holographic bounds.
+            </p>
+
+            <div class="subsection">
+                <h4>The Quantum Focusing Conjecture (QFC)</h4>
+                <p>
+                    The <strong>Quantum Focusing Conjecture</strong> generalizes the classical focusing theorem
+                    to include quantum effects:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        &Theta;' &le; -(&Theta;<sup>2</sup>/2) - 8&pi;G&langle;T<sub>kk</sub>&rangle;<sub>ren</sub>
+                    </span>
+                    <span class="eq-number">(6.16)</span>
+                </div>
+
+                <p>
+                    where &Theta; is the expansion of null geodesics and T<sub>kk</sub> is the null-null
+                    component of the stress tensor. The QFC implies:
+                </p>
+                <ul>
+                    <li>Generalized Second Law of thermodynamics</li>
+                    <li>Quantum Null Energy Condition</li>
+                    <li>Bounds on quantum information transfer</li>
+                </ul>
+
+                <div class="definition-box">
+                    <h5>QFC in F(R,T) Gravity</h5>
+                    <p>
+                        In modified gravity, the QFC must be reformulated to account for the additional
+                        scalar degrees of freedom. The Principia Metaphysica framework satisfies the
+                        generalized QFC provided the Mashiach potential satisfies V'' > 0 (convexity).
+                    </p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>BRST Symmetry and Unitarity</h4>
+                <p>
+                    The quantum consistency of the gauge sector requires <strong>BRST symmetry</strong>
+                    (Becchi-Rouet-Stora-Tyutin). The BRST transformation generates the physical state
+                    space as the cohomology of the BRST operator Q:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        H<sub>phys</sub> = Ker(Q)/Im(Q) &nbsp;&nbsp;&nbsp; Q<sup>2</sup> = 0
+                    </span>
+                    <span class="eq-number">(6.17)</span>
+                </div>
+
+                <p>
+                    For the SO(10) gauge theory arising from Kaluza-Klein reduction, BRST symmetry ensures:
+                </p>
+                <ul>
+                    <li><strong>Unitarity:</strong> Negative-norm states decouple from physical amplitudes</li>
+                    <li><strong>Gauge invariance:</strong> Physical observables are independent of gauge choice</li>
+                    <li><strong>Renormalizability:</strong> Ward identities control divergences</li>
+                </ul>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        [Q, H] = 0 &nbsp;&nbsp; &rArr; &nbsp;&nbsp; S-matrix is unitary on H<sub>phys</sub>
+                    </span>
+                    <span class="eq-number">(6.18)</span>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h4>Holographic Consistency</h4>
+                <p>
+                    The <strong>holographic principle</strong> suggests that gravitational physics in (d+1)
+                    dimensions can be encoded in a d-dimensional boundary theory. Consistency requires:
+                </p>
+
+                <div class="theorem-box">
+                    <h5>Holographic Bounds</h5>
+                    <ul>
+                        <li><strong>Bekenstein bound:</strong> S &le; 2&pi;ER (entropy bounded by energy and size)</li>
+                        <li><strong>Covariant entropy bound:</strong> S[L] &le; A[B]/4G (entropy through light sheet
+                            bounded by boundary area)</li>
+                        <li><strong>Generalized second law:</strong> S<sub>gen</sub> = S<sub>matter</sub> + A/4G
+                            is non-decreasing</li>
+                    </ul>
+                </div>
+
+                <p>
+                    The fermionic nature of the Pneuma field is crucial for satisfying these bounds: the
+                    Pauli exclusion principle naturally limits the entropy density, preventing violations
+                    of holographic bounds that could occur with unbounded bosonic entropy.
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        S<sub>Pneuma</sub>/V &le; N<sub>modes</sub> &times; log(2)/V &sim; 1/l<sub>Pneuma</sub><sup>3</sup>
+                    </span>
+                    <span class="eq-number">(6.19)</span>
+                </div>
+
+                <p>
+                    This bound is automatically compatible with the covariant entropy bound for regions
+                    larger than the Pneuma length scale l<sub>Pneuma</sub>.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Absence of Ghosts and Tachyons</h4>
+                <p>
+                    Physical consistency requires the absence of:
+                </p>
+                <ul>
+                    <li><strong>Ghosts:</strong> Negative kinetic energy states that would lead to vacuum instability</li>
+                    <li><strong>Tachyons:</strong> Imaginary mass states signaling vacuum instability</li>
+                </ul>
+
+                <p>
+                    In F(R,T) gravity, the conditions for ghost-freedom are:
+                </p>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        F<sub>R</sub> > 0 &nbsp;&nbsp; (no graviton ghost) &nbsp;&nbsp;&nbsp;
+                        F<sub>RR</sub> > 0 &nbsp;&nbsp; (no scalaron ghost)
+                    </span>
+                    <span class="eq-number">(6.20)</span>
+                </div>
+
+                <p>
+                    The Mashiach potential V(&chi;) satisfies V'' > 0, ensuring no tachyonic instabilities.
+                    Combined with the positive definiteness conditions on the F(R,T) function derived from
+                    the Kaluza-Klein reduction, the theory is free from pathological degrees of freedom.
+                </p>
+            </div>
+        </section>
+
+        <div class="section-nav-links">
+            <a href="thermal-time.html" class="nav-link">
+                <span class="direction">&larr; Previous</span>
+                <span class="title">Section 5: Thermal Time Hypothesis</span>
+            </a>
+            <a href="predictions.html" class="nav-link" style="text-align: right;">
+                <span class="direction">Next &rarr;</span>
+                <span class="title">Section 7: Predictions & Tests</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                Contact: <a href="mailto:AndrewKWatts@Gmail.com" style="color: var(--accent-primary);">AndrewKWatts@Gmail.com</a>
+            </span>
+        </p>
+    </footer>
+</body>
+</html>
