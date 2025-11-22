@@ -1198,30 +1198,56 @@
                 </tbody>
             </div>
 
-            <!-- NEW: G₂ Fibration Construction from Abstract Resolutions -->
-            <div class="highlight-box" style="border-left-color: #8b7fff; background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(81, 207, 102, 0.08));">
-                <h4 style="color: #8b7fff;">Recommended: G₂ Fibration Construction (November 2025)</h4>
+            <!-- CORRECTED: CY4 Construction Methods (November 2025 Peer Review) -->
+            <div class="highlight-box" style="border-left-color: #ffc107; background: linear-gradient(135deg, rgba(255, 193, 7, 0.12), rgba(255, 159, 67, 0.08));">
+                <h4 style="color: #ffc107;">&#9888; Holonomy Clarification (Peer Review Correction)</h4>
                 <p>
-                    Abstract resolution analysis identifies a <strong>G₂ fibration</strong> as the most promising
-                    construction method for K<sub>Pneuma</sub>:
+                    <strong>Mathematical fact:</strong> G₂ × S¹ produces <strong>Spin(7) holonomy</strong>, NOT SU(4).
+                    This is unavoidable: Spin(7) ⊃ G₂ as holonomy groups, and the product structure cannot reduce
+                    below Spin(7). A Calabi-Yau fourfold requires <strong>SU(4) ⊂ Spin(8)</strong> holonomy.
                 </p>
-                <div class="equation-box" style="background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.4);">
-                    K<sub>Pneuma</sub> = Y<sub>7</sub><sup>D₅</sup> &times;<sub>&rho;</sub> S<sup>1</sup>
+                <p style="margin-top: 0.75rem; color: var(--text-muted);">
+                    <em>The earlier claim of "SU(4) holonomy from G₂ fibration" was in error and has been corrected.</em>
+                </p>
+            </div>
+
+            <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(79, 172, 254, 0.08));">
+                <h4 style="color: #51cf66;">Correct CY4 Construction: Direct Methods</h4>
+                <p>
+                    For K<sub>Pneuma</sub> with χ = 72, the following construction methods yield valid CY4 manifolds:
+                </p>
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem;">
+                    <li><strong>Elliptic fibration over P¹×P¹×P¹</strong>: Gives h<sup>1,1</sup>=4, χ=72 via standard methods</li>
+                    <li><strong>Toric hypersurface</strong>: Complete intersection in weighted projective space with D₅ singularities</li>
+                    <li><strong>F-theory/M-theory duality</strong>: CY4 emerges from M-theory on G₂ via the F-theory limit</li>
+                </ol>
+                <div class="equation-box" style="background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4); margin-top: 1rem;">
+                    K<sub>Pneuma</sub>: Elliptic CY4 over B₃ = P¹×P¹×P¹ with D₅ singularity along divisor
                 </div>
-                <p>where:</p>
-                <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
-                    <li><strong>Y<sub>7</sub><sup>D₅</sup></strong>: A compact Joyce-type G₂ manifold with D₅ singularity along a 3-cycle</li>
-                    <li><strong>&rho;</strong>: Monodromy action that gives rise to SU(4) holonomy for the total 8D space</li>
-                    <li><strong>S<sup>1</sup></strong>: Circle fibered with non-trivial holonomy</li>
-                </ul>
-                <p style="margin-top: 1rem;">
+                <p style="margin-top: 0.75rem;">
                     <strong>Advantages:</strong>
                 </p>
                 <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
-                    <li>D₅ singularity <em>naturally</em> produces SO(10) gauge symmetry via 7-brane wrapping</li>
-                    <li>&chi; = 72 arises from singular fiber contributions without fine-tuning</li>
-                    <li>Alternative constructions: Joyce orbifold T⁸/(Z₃)³ resolution, tropical geometry methods</li>
+                    <li>SU(4) holonomy guaranteed by CY4 structure (Ricci-flat Kähler)</li>
+                    <li>D₅ singularity produces SO(10) gauge symmetry via 7-brane wrapping</li>
+                    <li>n<sub>gen</sub> = χ/24 = 72/24 = 3 from F-theory index theorem</li>
                 </ul>
+            </div>
+
+            <div class="highlight-box" style="border-left-color: #8b7fff; background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(81, 207, 102, 0.05));">
+                <h4 style="color: #8b7fff;">Alternative: M-theory/F-theory Duality Interpretation</h4>
+                <p>
+                    If one wishes to use G₂ geometry, the correct interpretation uses M/F-theory duality:
+                </p>
+                <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                    <li><strong>M-theory on G₂</strong>: Compactify M-theory on a G₂ manifold Y₇</li>
+                    <li><strong>F-theory limit</strong>: Take the F-theory limit to obtain F-theory on CY4 = Y₇ ×<sub>fib</sub> T²</li>
+                    <li><strong>Result</strong>: The CY4 has SU(4) holonomy; χ(CY4) relates to G₂ data</li>
+                </ul>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">
+                    This duality explains how G₂ manifolds connect to CY4 physics without the erroneous claim
+                    of direct SU(4) holonomy from G₂ × S¹.
+                </p>
             </div>
 
             <div class="warning-box">
@@ -1245,10 +1271,12 @@
             </p>
 
             <div class="equation-box">
-                h<sup>1,1</sup> = 2, &nbsp; h<sup>2,1</sup> = 0, &nbsp; h<sup>3,1</sup> = 29, &nbsp; h<sup>2,2</sup> = 6
+                h<sup>1,1</sup> = 4, &nbsp; h<sup>2,1</sup> = 0, &nbsp; h<sup>3,1</sup> = 0, &nbsp; h<sup>2,2</sup> = 60
                 <br><br>
-                &chi; = 4 + 2h<sup>1,1</sup> - 4h<sup>2,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup> = 4 + 4 - 0 + 58 + 6 = 72
-                <span class="equation-label">Example Hodge numbers yielding &chi; = 72</span>
+                CY4 constraint: h<sup>2,2</sup> = 2(22 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> - h<sup>2,1</sup>) = 2(22 + 8 + 0 - 0) = 60 &check;
+                <br><br>
+                &chi; = 4 + 2h<sup>1,1</sup> - 4h<sup>2,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup> = 4 + 8 + 0 + 0 + 60 = 72
+                <span class="equation-label">Hodge numbers satisfying CY4 constraint with &chi; = 72</span>
             </div>
 
             <div class="highlight-box">
