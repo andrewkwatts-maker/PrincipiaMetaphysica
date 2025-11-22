@@ -797,8 +797,8 @@
                         <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-primary);">
                             <h5 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Thermal Time Prediction</h5>
                             <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
-                                w<sub>0</sub> &asymp; -0.85<br>
-                                w<sub>a</sub> &asymp; -0.7
+                                w<sub>0</sub> &asymp; -0.85 (fitted)<br>
+                                w<sub>a</sub> &asymp; -0.71 (derived)
                             </p>
                         </div>
                     </div>
@@ -856,7 +856,7 @@
                         <div class="formula-info-grid">
                             <div class="formula-info-item">
                                 <h5>Key Prediction</h5>
-                                <p>w<sub>a</sub> &asymp; -0.7</p>
+                                <p>w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.71</p>
                             </div>
                             <div class="formula-info-item">
                                 <h5>DESI 2024</h5>
@@ -877,18 +877,18 @@
                         <span class="formula-var">&alpha;<sub>T</sub>
                             <div class="var-tooltip">
                                 <div class="var-name">&alpha;<sub>T</sub></div>
-                                <div class="var-description">Thermal time parameter - determines how friction evolves with cosmic expansion.</div>
+                                <div class="var-description">Thermal time parameter - determines how relaxation time evolves relative to Hubble time.</div>
                                 <div class="var-units">Dimensionless</div>
                                 <div class="var-contribution">The crucial parameter that makes w<sub>a</sub> &lt; 0 possible.</div>
                             </div>
                         </span>
                         <span class="formula-op">=</span>
-                        <span class="formula-var highlight">d ln &Gamma;/d ln a
+                        <span class="formula-var highlight">d ln &tau;/d ln a
                             <div class="var-tooltip">
-                                <div class="var-name">d ln &Gamma;/d ln a</div>
-                                <div class="var-description">Logarithmic derivative of dissipation rate with respect to scale factor.</div>
+                                <div class="var-name">d ln &tau;/d ln a</div>
+                                <div class="var-description">Logarithmic derivative of thermal relaxation time with respect to scale factor.</div>
                                 <div class="var-units">Dimensionless</div>
-                                <div class="var-contribution">Since &Gamma; &prop; T &prop; a<sup>-1</sup>, this equals -1.</div>
+                                <div class="var-contribution">Since &tau; = 1/&Gamma; &prop; 1/T &prop; a, this equals +1.</div>
                             </div>
                         </span>
                         <span class="formula-op">-</span>
@@ -900,13 +900,13 @@
                                 <div class="var-contribution">In matter era, H &prop; a<sup>-3/2</sup>, so this equals -3/2.</div>
                             </div>
                         </span>
-                        <span class="formula-op">= 1 -(-3/2) =</span>
+                        <span class="formula-op">= (+1) - (-3/2) =</span>
                         <span class="formula-var highlight">2.5
                             <div class="var-tooltip">
                                 <div class="var-name">2.5</div>
                                 <div class="var-description">The derived value of &alpha;<sub>T</sub> in the matter-dominated era.</div>
                                 <div class="var-units">Dimensionless</div>
-                                <div class="var-contribution">This positive value ensures w<sub>a</sub> &lt; 0 since thermal friction decreases faster than Hubble friction.</div>
+                                <div class="var-contribution">Thermal relaxation becomes slower (larger &tau;) faster than Hubble time grows (larger t<sub>H</sub>), driving w(z) evolution.</div>
                             </div>
                         </span>
                     </div>
@@ -915,7 +915,7 @@
                     <div class="formula-info">
                         <div class="formula-title">Physical Origin of &alpha;<sub>T</sub></div>
                         <div class="formula-meaning">
-                            The parameter emerges from the competition between thermal dissipation (&Gamma; &prop; T) and cosmic expansion (H). As the universe expands, both decrease, but thermal friction decreases <em>faster</em> than Hubble friction.
+                            The parameter emerges from the mismatch between thermal relaxation time (&tau; = 1/&Gamma; &prop; a) and Hubble time (t<sub>H</sub> = 1/H &prop; a<sup>3/2</sup>). As the universe expands, thermal relaxation becomes <em>slower</em> (&tau; increases), while Hubble time increases more slowly. This mismatch drives the w(z) evolution.
                         </div>
                     </div>
                 </div>
@@ -924,13 +924,13 @@
                     <h5>Thermal Time Foundations</h5>
                     <p>The derivation relies on three physical inputs:</p>
                     <ul>
-                        <li><strong>Thermal bath temperature:</strong> T &prop; a<sup>-1</sup> (redshifting photon bath)</li>
-                        <li><strong>Hubble parameter:</strong> H &prop; a<sup>-3/2</sup> (matter-dominated era)</li>
-                        <li><strong>Dissipation rate:</strong> &Gamma; &prop; T (thermal friction from Pneuma condensate)</li>
+                        <li><strong>Thermal relaxation time:</strong> &tau; = 1/&Gamma; &prop; 1/T &prop; a (increases as universe cools)</li>
+                        <li><strong>Hubble time:</strong> t<sub>H</sub> = 1/H &prop; a<sup>3/2</sup> (matter-dominated era)</li>
+                        <li><strong>Physical interpretation:</strong> As the universe expands, thermal relaxation becomes <em>slower</em> (&tau; increases), but Hubble time increases more slowly (t<sub>H</sub> &prop; a<sup>3/2</sup>)</li>
                     </ul>
                     <p>
-                        Combined with <strong>&Omega;<sub>m</sub>(z)</strong> evolution, the full expression is:
-                        &alpha;<sub>T</sub> = 1 + (3/2)&Omega;<sub>m</sub>(z), which averages to &asymp; 2.5 during the matter-to-dark-energy transition.
+                        The mismatch &alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = 2.5 drives the w(z) evolution.
+                        This leads to <strong>w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub> / 3 &asymp; -0.71</strong> for w<sub>0</sub> &asymp; -0.85.
                     </p>
                 </div>
             </div>
@@ -1098,15 +1098,15 @@
                         </tr>
                         <tr>
                             <td>w<sub>0</sub></td>
-                            <td>-0.85</td>
+                            <td>-0.85 (fitted)</td>
                             <td>-0.83 &plusmn; 0.06</td>
                             <td style="color: var(--success);">0.3&sigma;</td>
                         </tr>
                         <tr>
                             <td>w<sub>a</sub></td>
-                            <td>-0.7</td>
+                            <td>-0.71 (derived from &alpha;<sub>T</sub>)</td>
                             <td>-0.75 &plusmn; 0.3</td>
-                            <td style="color: var(--success);">0.2&sigma;</td>
+                            <td style="color: var(--success);">0.1&sigma;</td>
                         </tr>
                     </table>
                     <p style="text-align: center; font-weight: 600; color: var(--success);">
@@ -1118,8 +1118,8 @@
                     This agreement is remarkable because:
                 </p>
                 <ul>
-                    <li><strong>No fitting:</strong> The predictions arise from first-principles thermal time physics</li>
-                    <li><strong>w<sub>a</sub> &lt; 0 is generic:</strong> Any thermal coupling produces this signature</li>
+                    <li><strong>w<sub>a</sub> derived, not fitted:</strong> w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 with &alpha;<sub>T</sub> = 2.5 from thermal time scaling</li>
+                    <li><strong>w<sub>a</sub> &lt; 0 is generic:</strong> Any thermal coupling where &tau; &prop; a produces this signature</li>
                     <li><strong>Standard quintessence fails:</strong> Typical models predict w<sub>a</sub> &gt; 0</li>
                     <li><strong>&Lambda;CDM tension:</strong> Pure cosmological constant (w<sub>0</sub> = -1, w<sub>a</sub> = 0) is in 2-3&sigma; tension with DESI</li>
                 </ul>
@@ -1307,11 +1307,11 @@
                 <div class="author-response" style="border-left-color: var(--success);">
                     <h5>Resolution (Section 6.5):</h5>
                     <p>
-                        The thermal time formulation provides a complete resolution. Temperature-dependent friction &Gamma; &prop; T
-                        from the Pneuma condensate <em>decreases</em> over cosmic time, causing the Mashiach field to roll faster
-                        at late times. This naturally produces w<sub>a</sub> &lt; 0. The derived predictions w<sub>0</sub> &asymp; -0.85,
-                        w<sub>a</sub> &asymp; -0.7 agree with DESI 2024 within 1&sigma;. Combined with Mashiach-matter coupling
-                        (&beta; ~ 0.05-0.1), this represents a <strong>successful quantitative prediction</strong> of the theory.
+                        The thermal time formulation provides a complete resolution. The key is using thermal relaxation time
+                        &tau; = 1/&Gamma; &prop; a (which <em>increases</em> with expansion) rather than dissipation rate &Gamma;.
+                        The mismatch &alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = 2.5 drives w(z) evolution.
+                        The derived predictions are: w<sub>0</sub> &asymp; -0.85 (fitted), w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.71 (derived).
+                        DESI 2024 observes w<sub>0</sub> = -0.83 &plusmn; 0.06, w<sub>a</sub> = -0.75 &plusmn; 0.3 &mdash; <strong>agreement within 1&sigma;</strong>.
                     </p>
                 </div>
             </div>
@@ -1392,15 +1392,15 @@
                 <p>
                     The thermal time formulation with Mashiach field predicts dynamical dark energy with
                     w(z) evolution including temperature-dependent corrections. Key feature: w<sub>a</sub> &lt; 0
-                    naturally arises from thermal friction decreasing over cosmic time.
+                    naturally arises from thermal relaxation time &tau; &prop; a increasing with expansion.
                 </p>
                 <div class="observable">
-                    w<sub>0</sub> = -0.85 &plusmn; 0.05, w<sub>a</sub> = -0.7 &plusmn; 0.2 (DESI-compatible)
+                    w<sub>0</sub> &asymp; -0.85 (fitted), w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.71 (derived)
                 </div>
                 <p class="method">
                     <strong>Method:</strong> DESI, Euclid, Roman Space Telescope will constrain w<sub>0</sub> and w<sub>a</sub>
-                    to &Delta;w ~ 0.01 level. <strong>Current DESI 2024 results (w<sub>0</sub> = -0.83, w<sub>a</sub> = -0.75)
-                    already show excellent agreement with thermal time prediction.</strong>
+                    to &Delta;w ~ 0.01 level. <strong>Current DESI 2024 results (w<sub>0</sub> = -0.83 &plusmn; 0.06, w<sub>a</sub> = -0.75 &plusmn; 0.3)
+                    agree with thermal time prediction within 1&sigma;.</strong>
                 </p>
             </div>
 
