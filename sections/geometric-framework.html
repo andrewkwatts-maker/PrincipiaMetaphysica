@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Section 2: The Geometric Framework of Principia Metaphysica - Higher-Dimensional Action, Pneuma Manifold, and Kaluza-Klein Decomposition">
+    <title>Section 2: Geometric Framework - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Section Page Specific Styles */
+        .section-hero {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(255, 126, 182, 0.08));
+            border: 1px solid rgba(139, 127, 255, 0.25);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+        }
+
+        .section-hero .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 8px 24px rgba(139, 127, 255, 0.3);
+        }
+
+        .section-hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-hero .lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 900px;
+        }
+
+        .subsection {
+            background: var(--bg-card);
+            padding: 2.25rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+            transition: all 0.3s ease;
+        }
+
+        .subsection:hover {
+            border-color: var(--border-accent);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .subsection-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+
+        .subsection-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 40px;
+            height: 40px;
+            background: rgba(139, 127, 255, 0.15);
+            border-radius: 8px;
+            color: var(--accent-primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.6rem;
+            font-weight: 600;
+        }
+
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.75rem 0 1rem;
+            font-weight: 600;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.85;
+            margin-bottom: 1.25rem;
+        }
+
+        .subsection p:last-child {
+            margin-bottom: 0;
+        }
+
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+            color: var(--text-primary);
+            overflow-x: auto;
+        }
+
+        .equation-box .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .equation-box.large {
+            font-size: 1.3rem;
+            padding: 2rem;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .highlight-box h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+        }
+
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border-left: 4px solid var(--warning);
+        }
+
+        .warning-box h4 {
+            color: var(--warning);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .concept-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.25rem 0;
+        }
+
+        .concept-list li {
+            padding: 0.75rem 1rem;
+            background: rgba(139, 127, 255, 0.05);
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 2.5rem;
+        }
+
+        .concept-list li::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 8px;
+            height: 8px;
+            background: var(--accent-primary);
+            border-radius: 50%;
+        }
+
+        .dim-table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .dim-table th {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+            padding: 1rem;
+            text-align: center;
+            font-weight: 600;
+            border-bottom: 2px solid var(--border-primary);
+        }
+
+        .dim-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border-primary);
+            color: var(--text-secondary);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+        }
+
+        .dim-table td:first-child {
+            font-family: 'Inter', sans-serif;
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .dim-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .dim-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .coset-diagram {
+            background: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            text-align: center;
+        }
+
+        .coset-diagram .chain {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+        }
+
+        .coset-diagram .group {
+            background: rgba(139, 127, 255, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .coset-diagram .arrow {
+            color: var(--accent-secondary);
+            font-size: 1.5rem;
+        }
+
+        .coset-diagram .caption {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 1rem;
+        }
+
+        .nav-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-top: 3rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .nav-section h3 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-size: 1.35rem;
+        }
+
+        .section-nav-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .section-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: rgba(139, 127, 255, 0.08);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .section-nav-link:hover {
+            background: rgba(139, 127, 255, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.15);
+            border-color: var(--accent-primary);
+        }
+
+        .section-nav-link .link-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
+            flex-shrink: 0;
+        }
+
+        .section-nav-link .link-text {
+            font-weight: 500;
+        }
+
+        .section-nav-link .link-desc {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .toc-box {
+            background: var(--bg-card);
+            padding: 1.75rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .toc-box h3 {
+            color: var(--accent-primary);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .toc-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-list a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.2s ease;
+            font-size: 0.95rem;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-primary);
+        }
+
+        .greek-symbol {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+        }
+
+        .field-table {
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+
+        .field-table th {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .field-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-primary);
+            color: var(--text-secondary);
+        }
+
+        .field-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .field-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .inline-eq {
+            font-family: 'Crimson Text', serif;
+            background: rgba(139, 127, 255, 0.1);
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principia Metaphysica</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="introduction.html">Previous</a></li>
+                    <li><a href="gauge-unification.html">Next Section</a></li>
+                    <li><a href="../index.html#sections">All Sections</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="breadcrumb">
+            <a href="../index.html">Principia Metaphysica</a>
+            <span class="separator">/</span>
+            <span style="color: var(--text-primary);">Section 2: Geometric Framework</span>
+        </div>
+
+        <section class="section-hero">
+            <div class="section-number">2</div>
+            <h1>The Geometric Framework</h1>
+            <p class="lead">
+                This section establishes the mathematical foundation of the Principia Metaphysica
+                framework. We introduce the 13-dimensional action, explain the Effective Field
+                Theory (EFT) paradigm that renders the theory predictive despite non-renormalizability,
+                and derive the 4D effective action through Kaluza-Klein dimensional reduction on
+                the Pneuma manifold.
+            </p>
+        </section>
+
+        <div class="toc-box">
+            <h3>In This Section</h3>
+            <ul class="toc-list">
+                <li><a href="#eft-paradigm">2.1 Higher-Dimensional Action and the EFT Paradigm</a></li>
+                <li><a href="#pneuma-manifold">2.2 The Pneuma Manifold as a Homogeneous Space</a></li>
+                <li><a href="#kk-decomposition">2.3 Kaluza-Klein Decomposition and 4D Effective Action</a></li>
+            </ul>
+        </div>
+
+        <section id="eft-paradigm" class="subsection">
+            <div class="subsection-header">
+                <span class="subsection-number">2.1</span>
+                <h2>Higher-Dimensional Action and the EFT Paradigm</h2>
+            </div>
+
+            <p>
+                The starting point is a gravitational theory in (12,1) dimensions coupled to the
+                fundamental Pneuma field. The bulk action takes the schematic form:
+            </p>
+
+            <!-- Interactive Formula: 13D Bulk Action -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display large">
+                    <span class="formula-var">S<sub>13D</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">S<sub>13D</sub></div>
+                            <div class="var-description">The 13-dimensional bulk action - the fundamental action integral governing all physics in the higher-dimensional spacetime.</div>
+                            <div class="var-units">GeV<sup>-1</sup> (natural units)</div>
+                            <div class="var-contribution">This is the quantity we extremize to derive the equations of motion for gravity and matter.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">&int; d<sup>13</sup>x
+                        <div class="var-tooltip">
+                            <div class="var-name">&int; d<sup>13</sup>x</div>
+                            <div class="var-description">Integration over all 13 spacetime coordinates (4 external + 8 internal + 1 time).</div>
+                            <div class="var-units">Length<sup>13</sup></div>
+                            <div class="var-contribution">Sums contributions from every point in the bulk spacetime.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var highlight">&radic;|G|
+                        <div class="var-tooltip">
+                            <div class="var-name">&radic;|G|</div>
+                            <div class="var-description">Square root of the absolute value of the 13D metric determinant. Ensures coordinate-invariant integration.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">Provides the proper volume element for curved spacetime integration.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">[</span>
+                    <span class="formula-var">M<sub>*</sub><sup>11</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">M<sub>*</sub><sup>11</sup></div>
+                            <div class="var-description">Fundamental mass scale raised to the 11th power. This is the natural scale of quantum gravity in 13D.</div>
+                            <div class="var-units">GeV<sup>11</sup></div>
+                            <div class="var-contribution">Sets the strength of gravitational interactions; related to 4D Planck mass via volume.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">R<sub>13</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">R<sub>13</sub></div>
+                            <div class="var-description">The 13-dimensional Ricci scalar - measures the average curvature of spacetime at each point.</div>
+                            <div class="var-units">Length<sup>-2</sup></div>
+                            <div class="var-contribution">Gravitational dynamics: Einstein's equations emerge from varying this term.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub></div>
+                            <div class="var-description">Dirac adjoint of the Pneuma field - the "bar" denotes conjugate transpose times &gamma;<sup>0</sup>.</div>
+                            <div class="var-units">Length<sup>-6</sup></div>
+                            <div class="var-contribution">Provides the left-hand side of fermion bilinears in the action.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">(&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub>)
+                        <div class="var-tooltip">
+                            <div class="var-name">Dirac Operator</div>
+                            <div class="var-description">&Gamma;<sup>M</sup> are 13D gamma matrices, D<sub>M</sub> is the spinor covariant derivative, m<sub>P</sub> is the Pneuma mass.</div>
+                            <div class="var-units">Length<sup>-1</sup></div>
+                            <div class="var-contribution">Generates Dirac equation for the Pneuma field; determines fermion propagation.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var highlight">&Psi;<sub>P</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Psi;<sub>P</sub></div>
+                            <div class="var-description">The fundamental Pneuma spinor field - a 64-component fermionic field whose condensates form spacetime geometry.</div>
+                            <div class="var-units">Length<sup>-6</sup></div>
+                            <div class="var-contribution">Central object: its vacuum structure determines the internal manifold K<sub>Pneuma</sub>.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var">&Lscr;<sub>int</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Lscr;<sub>int</sub></div>
+                            <div class="var-description">Interaction Lagrangian containing higher-order operators suppressed by powers of M<sub>*</sub>.</div>
+                            <div class="var-units">Length<sup>-13</sup></div>
+                            <div class="var-contribution">EFT corrections: four-fermion terms, R<sup>2</sup> gravity, etc.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">]</span>
+                </div>
+                <div class="formula-label">Thirteen-dimensional bulk action with Pneuma field</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">13D Bulk Action</div>
+                    <div class="formula-meaning">
+                        This is the master action of the theory. It unifies Einstein gravity with the Pneuma field in 13 dimensions. All physics - from Standard Model forces to dark energy - emerges from dimensional reduction of this action.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Output Units</h5>
+                            <p>Dimensionless (action in natural units)</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Key Scale</h5>
+                            <p>M<sub>*</sub> ~ 10<sup>16</sup> GeV</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h5>Use Cases</h5>
+                        <ul>
+                            <li>Derive 4D effective gravity via Kaluza-Klein reduction</li>
+                            <li>Extract SO(10) gauge symmetry from isometry group</li>
+                            <li>Compute quantum corrections in the EFT expansion</li>
+                        </ul>
+                    </div>
+                    <div class="implications">
+                        <h5>Key Implications</h5>
+                        <p>Non-renormalizable but predictive as an EFT below M<sub>*</sub>. Connects gravity to gauge forces through geometry.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                Here G<sub>MN</sub> denotes the 13D metric (with indices M,N = 0,1,...,12),
+                R<sub>13</sub> is the 13D Ricci scalar, M<sub>*</sub> is the fundamental mass scale,
+                and D<sub>M</sub> is the spinor covariant derivative in 13D. The interaction
+                Lagrangian <span class="greek-symbol">&Lscr;<sub>int</sub></span> contains
+                higher-dimensional operators suppressed by powers of M<sub>*</sub>.
+            </p>
+
+            <div class="warning-box">
+                <h4>The Non-Renormalizability Issue</h4>
+                <p>
+                    General relativity in D &gt; 4 dimensions is power-counting non-renormalizable.
+                    The gravitational coupling has mass dimension [&kappa;<sub>D</sub>] = (2-D)/2,
+                    which is negative for D &gt; 2. This means infinitely many counterterms would
+                    be required at each loop order if treated as a fundamental theory.
+                </p>
+            </div>
+
+            <h3>The EFT Resolution</h3>
+
+            <p>
+                The modern perspective, articulated by Weinberg and developed in the context of
+                quantum gravity by Donoghue and others, treats the higher-dimensional theory as
+                an Effective Field Theory (EFT) valid below some cutoff scale &Lambda; ~ M<sub>*</sub>.
+                The key insight is that at energies E &lt;&lt; M<sub>*</sub>, the theory makes
+                well-defined predictions despite containing infinitely many possible operators.
+            </p>
+
+            <p>
+                Dimensional analysis determines the structure of the effective Lagrangian. Each
+                operator is characterized by its mass dimension and suppressed by appropriate
+                powers of M<sub>*</sub>:
+            </p>
+
+            <table class="dim-table">
+                <thead>
+                    <tr>
+                        <th>Operator Type</th>
+                        <th>Mass Dimension</th>
+                        <th>Suppression</th>
+                        <th>Example</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Kinetic terms</td>
+                        <td>[D] = 13</td>
+                        <td>M<sub>*</sub><sup>11</sup></td>
+                        <td>M<sub>*</sub><sup>11</sup> R</td>
+                    </tr>
+                    <tr>
+                        <td>Four-fermion</td>
+                        <td>[D] = 13</td>
+                        <td>M<sub>*</sub><sup>-1</sup></td>
+                        <td>(<span style="text-decoration: overline;">&Psi;</span>&Gamma;&Psi;)<sup>2</sup> / M<sub>*</sub></td>
+                    </tr>
+                    <tr>
+                        <td>Curvature squared</td>
+                        <td>[D] = 13</td>
+                        <td>M<sub>*</sub><sup>9</sup></td>
+                        <td>M<sub>*</sub><sup>9</sup> R<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                        <td>R<sup>3</sup> corrections</td>
+                        <td>[D] = 13</td>
+                        <td>M<sub>*</sub><sup>7</sup></td>
+                        <td>M<sub>*</sub><sup>7</sup> R<sup>3</sup></td>
+                    </tr>
+                    <tr>
+                        <td>Higher derivative</td>
+                        <td>[D] = 13</td>
+                        <td>M<sub>*</sub><sup>7</sup></td>
+                        <td>M<sub>*</sub><sup>7</sup> (&nabla;R)<sup>2</sup></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                At energies E &lt;&lt; M<sub>*</sub>, higher-dimension operators contribute
+                corrections of order (E/M<sub>*</sub>)<sup>n</sup> with n &geq; 1. These corrections
+                are systematically small and calculable in the EFT expansion. The predictive power
+                comes from organizing operators by their relevance at low energies.
+            </p>
+
+            <div class="highlight-box">
+                <h4>UV Completion</h4>
+                <p>
+                    The EFT description remains agnostic about the UV completion at E ~ M<sub>*</sub>.
+                    Candidate UV completions include string theory (where M<sub>*</sub> ~ M<sub>string</sub>),
+                    asymptotic safety, or other quantum gravity frameworks. The low-energy predictions
+                    are largely independent of these UV details.
+                </p>
+            </div>
+
+            <!-- Energy Scale Ladder Diagram -->
+            <div class="scale-ladder">
+                <h4>Energy Scale Hierarchy</h4>
+                <div class="ladder-container">
+                    <div class="ladder-rung">
+                        <span class="ladder-scale">10<sup>19</sup> GeV</span>
+                        <div class="ladder-content">
+                            <div class="rung-title">M<sub>Pl</sub> - Planck Scale</div>
+                            <div class="rung-desc">Quantum gravity effects, black hole formation threshold</div>
+                        </div>
+                    </div>
+                    <div class="ladder-rung">
+                        <span class="ladder-scale">10<sup>16</sup> GeV</span>
+                        <div class="ladder-content">
+                            <div class="rung-title">M<sub>*</sub> ~ M<sub>GUT</sub></div>
+                            <div class="rung-desc">Fundamental scale, SO(10) breaking, proton decay mediation</div>
+                        </div>
+                    </div>
+                    <div class="ladder-rung">
+                        <span class="ladder-scale">10<sup>12</sup> GeV</span>
+                        <div class="ladder-content">
+                            <div class="rung-title">M<sub>PS</sub> - Pati-Salam</div>
+                            <div class="rung-desc">SU(4)&times;SU(2)&times;SU(2) breaking, seesaw scale</div>
+                        </div>
+                    </div>
+                    <div class="ladder-rung">
+                        <span class="ladder-scale">10<sup>2</sup> GeV</span>
+                        <div class="ladder-content">
+                            <div class="rung-title">M<sub>EW</sub> - Electroweak</div>
+                            <div class="rung-desc">Standard Model, Higgs mechanism, observed physics</div>
+                        </div>
+                    </div>
+                    <div class="ladder-rung">
+                        <span class="ladder-scale">10<sup>-33</sup> eV</span>
+                        <div class="ladder-content">
+                            <div class="rung-title">H<sub>0</sub> - Hubble Scale</div>
+                            <div class="rung-desc">Mashiach field mass, dark energy, cosmic acceleration</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Relation to Fundamental Scales</h3>
+
+            <p>
+                The fundamental scale M<sub>*</sub> is related to the observed 4D Planck mass through
+                the volume of the internal manifold:
+            </p>
+
+            <!-- Interactive Formula: Planck Mass Relation -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">M<sub>Pl</sub><sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">M<sub>Pl</sub><sup>2</sup></div>
+                            <div class="var-description">The 4-dimensional (reduced) Planck mass squared. This sets the strength of gravity we observe.</div>
+                            <div class="var-units">GeV<sup>2</sup> (M<sub>Pl</sub> ~ 2.4 &times; 10<sup>18</sup> GeV)</div>
+                            <div class="var-contribution">Determines Newton's constant: G<sub>N</sub> = 1/(8&pi;M<sub>Pl</sub><sup>2</sup>).</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var highlight">M<sub>*</sub><sup>11</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">M<sub>*</sub><sup>11</sup></div>
+                            <div class="var-description">Fundamental mass scale to the 11th power - the natural gravitational coupling in 13D.</div>
+                            <div class="var-units">GeV<sup>11</sup></div>
+                            <div class="var-contribution">The "true" Planck scale in higher dimensions. Power of 11 = (D-2) for D=13.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var highlight">V<sub>8</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">V<sub>8</sub></div>
+                            <div class="var-description">Volume of the 8-dimensional internal manifold K<sub>Pneuma</sub> in fundamental units.</div>
+                            <div class="var-units">GeV<sup>-8</sup></div>
+                            <div class="var-contribution">Larger volume = weaker 4D gravity. This is the origin of the hierarchy between M<sub>*</sub> and M<sub>Pl</sub>.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Relating 4D Planck mass to fundamental scale and internal volume</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Dimensional Reduction of Gravity</div>
+                    <div class="formula-meaning">
+                        This is the key relation connecting 13D and 4D physics. The observed weakness of 4D gravity (large M<sub>Pl</sub>) emerges from the large volume of extra dimensions, even if the fundamental scale M<sub>*</sub> is at the GUT scale.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Dimensional Analysis</h5>
+                            <p>[M<sup>2</sup>] = [M<sup>11</sup>][L<sup>8</sup>] &check;</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Typical Values</h5>
+                            <p>V<sub>8</sub><sup>1/8</sup> ~ 10<sup>-30</sup> cm</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h5>Use Cases</h5>
+                        <ul>
+                            <li>Constrain M<sub>*</sub> from observed M<sub>Pl</sub></li>
+                            <li>Connect GUT scale to compactification scale</li>
+                            <li>Predict Kaluza-Klein mass spectrum</li>
+                        </ul>
+                    </div>
+                    <div class="implications">
+                        <h5>Key Implications</h5>
+                        <p>For M<sub>*</sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV, we need V<sub>8</sub> ~ (M<sub>GUT</sub>)<sup>-8</sup> - remarkably, this is self-consistent!</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                For V<sub>8</sub> ~ (1/M<sub>GUT</sub>)<sup>8</sup> with M<sub>GUT</sub> ~ 10<sup>16</sup> GeV,
+                and M<sub>Pl</sub> ~ 10<sup>19</sup> GeV, we obtain M<sub>*</sub> ~ M<sub>GUT</sub>.
+                This natural emergence of the GUT scale provides a consistency check on the framework.
+            </p>
+        </section>
+
+        <section id="pneuma-manifold" class="subsection">
+            <div class="subsection-header">
+                <span class="subsection-number">2.2</span>
+                <h2>The Pneuma Manifold as a Homogeneous Space</h2>
+            </div>
+
+            <p>
+                The central geometric object is K<sub>Pneuma</sub>, the 8-dimensional internal
+                manifold that emerges from Pneuma field condensates. To generate SO(10) gauge
+                symmetry through the Kaluza-Klein mechanism, K<sub>Pneuma</sub> must possess
+                SO(10) as its isometry group.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Coset Space Construction</h4>
+                <p>
+                    The natural framework for constructing manifolds with specified isometry groups
+                    is the theory of homogeneous spaces G/H, where G acts transitively and H is
+                    the stabilizer (isotropy) subgroup of a point. The isometry group of G/H
+                    contains G, with equality for compact G.
+                </p>
+            </div>
+
+            <p>
+                For K<sub>Pneuma</sub> to have SO(10) isometries with dimension 8, we require
+                a coset SO(10)/H where:
+            </p>
+
+            <div class="equation-box">
+                dim(SO(10)/H) = dim(SO(10)) - dim(H) = 45 - dim(H) = 8
+                <br><br>
+                &rArr;&nbsp; dim(H) = 37
+                <span class="equation-label">Dimension constraint on the isotropy subgroup</span>
+            </div>
+
+            <p>
+                Finding a suitable 37-dimensional subgroup H of SO(10) is a non-trivial group-theoretic
+                problem. The maximal subgroups of SO(10) include:
+            </p>
+
+            <table class="field-table">
+                <thead>
+                    <tr>
+                        <th>Subgroup H</th>
+                        <th>Dimension</th>
+                        <th>Coset Dimension</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SO(9)</td>
+                        <td>36</td>
+                        <td>9</td>
+                        <td>S<sup>9</sup> embedding</td>
+                    </tr>
+                    <tr>
+                        <td>SO(8) &times; U(1)</td>
+                        <td>29</td>
+                        <td>16</td>
+                        <td>Related to spinor</td>
+                    </tr>
+                    <tr>
+                        <td>SU(5) &times; U(1)</td>
+                        <td>25</td>
+                        <td>20</td>
+                        <td>GUT embedding</td>
+                    </tr>
+                    <tr>
+                        <td>SO(6) &times; SO(4)</td>
+                        <td>21</td>
+                        <td>24</td>
+                        <td>Product structure</td>
+                    </tr>
+                    <tr>
+                        <td>SO(5) &times; SO(5)</td>
+                        <td>20</td>
+                        <td>25</td>
+                        <td>Symmetric</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                The dimension-37 requirement suggests a non-maximal subgroup. A candidate is
+                <span class="inline-eq">H = SO(8) &times; U(1) &times; U(1) &times; discrete</span>,
+                constructed as an extension of the maximal SO(8) &times; U(1) by additional U(1)
+                factors and discrete identifications.
+            </p>
+
+            <h3>Alternative: Fibered Structure</h3>
+
+            <p>
+                An alternative approach realizes K<sub>Pneuma</sub> as a fibration rather than
+                a simple coset. Consider:
+            </p>
+
+            <div class="coset-diagram">
+                <div class="chain">
+                    <span class="group">S<sup>1</sup></span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="group">K<sub>Pneuma</sub></span>
+                    <span class="arrow">&rarr;</span>
+                    <span class="group">B<sup>7</sup></span>
+                </div>
+                <div class="caption">
+                    Circle fibration structure of K<sub>Pneuma</sub> over a 7-dimensional base
+                </div>
+            </div>
+
+            <p>
+                If the base B<sup>7</sup> is chosen appropriately (e.g., related to a G<sub>2</sub>
+                holonomy manifold), the total space can achieve SO(10) isometry through a combination
+                of base isometries and fiber translations. This construction connects to M-theory
+                on G<sub>2</sub> manifolds.
+            </p>
+
+            <div class="highlight-box">
+                <h4>Pneuma Condensate Interpretation</h4>
+                <p>
+                    In the Pneuma framework, the specific geometry of K<sub>Pneuma</sub> is not
+                    postulated but emerges dynamically. The Pneuma field
+                    <span class="greek-symbol">&Psi;<sub>P</sub></span> develops vacuum expectation
+                    values whose structure determines the internal metric g<sub>mn</sub> through
+                    relations of the form:
+                    <br><br>
+                    <span class="inline-eq">g<sub>mn</sub> &propto; &langle;<span style="text-decoration: overline;">&Psi;</span><sub>P</sub> &Gamma;<sub>mn</sub> &Psi;<sub>P</sub>&rangle;</span>
+                </p>
+            </div>
+
+            <h3>Metric Ansatz</h3>
+
+            <p>
+                We adopt the Freund-Rubin type ansatz for the 13D metric:
+            </p>
+
+            <div class="equation-box">
+                ds<sup>2</sup><sub>13</sub> = g<sub>&mu;&nu;</sub>(x) dx<sup>&mu;</sup>dx<sup>&nu;</sup>
+                + r<sup>2</sup><sub>K</sub>(x) &gamma;<sub>mn</sub>(y) dy<sup>m</sup>dy<sup>n</sup>
+                <span class="equation-label">Product metric ansatz with modulus field r<sub>K</sub></span>
+            </div>
+
+            <p>
+                Here g<sub>&mu;&nu;</sub>(x) is the 4D metric, &gamma;<sub>mn</sub>(y) is the
+                unit-volume metric on K<sub>Pneuma</sub>, and r<sub>K</sub>(x) is the modulus
+                field controlling the size of internal dimensions. In general, r<sub>K</sub>
+                can depend on the 4D coordinates, giving rise to a scalar field in the effective theory.
+            </p>
+        </section>
+
+        <section id="kk-decomposition" class="subsection">
+            <div class="subsection-header">
+                <span class="subsection-number">2.3</span>
+                <h2>Kaluza-Klein Decomposition and 4D Effective Action</h2>
+            </div>
+
+            <p>
+                The Kaluza-Klein procedure extracts the 4D effective theory by expanding all fields
+                in harmonics on the internal manifold and integrating over the internal coordinates.
+                For the metric and gauge fields, this proceeds as follows.
+            </p>
+
+            <h3>Metric Decomposition</h3>
+
+            <p>
+                The 13D metric decomposes into three sectors:
+            </p>
+
+            <table class="field-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>4D Interpretation</th>
+                        <th>Physical Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>G<sub>&mu;&nu;</sub></td>
+                        <td>4D metric g<sub>&mu;&nu;</sub></td>
+                        <td>Graviton (massless)</td>
+                    </tr>
+                    <tr>
+                        <td>G<sub>&mu;m</sub></td>
+                        <td>Gauge fields A<sup>a</sup><sub>&mu;</sub></td>
+                        <td>SO(10) gauge bosons (45 massless)</td>
+                    </tr>
+                    <tr>
+                        <td>G<sub>mn</sub></td>
+                        <td>Scalars &phi;<sup>I</sup></td>
+                        <td>Moduli fields + massive KK modes</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>
+                The gauge fields arise from metric components with mixed indices. Specifically,
+                expanding G<sub>&mu;m</sub> in terms of Killing vectors K<sup>a</sup><sub>m</sub>
+                on K<sub>Pneuma</sub>:
+            </p>
+
+            <div class="equation-box">
+                G<sub>&mu;m</sub>(x,y) = A<sup>a</sup><sub>&mu;</sub>(x) K<sup>a</sup><sub>m</sub>(y)
+                <span class="equation-label">Gauge field extraction from metric components</span>
+            </div>
+
+            <p>
+                where a = 1, ..., 45 labels the SO(10) generators. The Killing vectors satisfy the
+                SO(10) Lie algebra:
+            </p>
+
+            <div class="equation-box">
+                [K<sup>a</sup>, K<sup>b</sup>] = f<sup>ab</sup><sub>c</sub> K<sup>c</sup>
+                <span class="equation-label">Lie algebra of Killing vectors</span>
+            </div>
+
+            <h3>Dimensional Reduction of Einstein-Hilbert Term</h3>
+
+            <p>
+                The 13D Einstein-Hilbert action reduces to the 4D Einstein-Yang-Mills theory.
+                The key steps involve:
+            </p>
+
+            <ul class="concept-list">
+                <li>Decompose the 13D Ricci scalar in terms of 4D curvature R<sub>4</sub> and internal curvature R<sub>8</sub></li>
+                <li>Express gauge field strengths from metric variations along Killing directions</li>
+                <li>Integrate over the internal manifold K<sub>Pneuma</sub></li>
+                <li>Canonically normalize the 4D fields</li>
+            </ul>
+
+            <p>
+                The resulting 4D effective action at leading order in the derivative expansion takes the form:
+            </p>
+
+            <!-- Interactive Formula: 4D Effective Action -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display large">
+                    <span class="formula-var">S<sub>4D</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">S<sub>4D</sub></div>
+                            <div class="var-description">The 4-dimensional effective action after Kaluza-Klein reduction - this is the action describing our observable universe.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">All Standard Model physics plus gravity emerges from this action.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">&int; d<sup>4</sup>x &radic;|g|
+                        <div class="var-tooltip">
+                            <div class="var-name">&int; d<sup>4</sup>x &radic;|g|</div>
+                            <div class="var-description">Covariant 4D integration measure with metric determinant ensuring coordinate invariance.</div>
+                            <div class="var-units">Length<sup>4</sup></div>
+                            <div class="var-contribution">Integrates the Lagrangian density over 4D spacetime.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">[</span>
+                    <span class="formula-var highlight">M<sub>Pl</sub><sup>2</sup>R<sub>4</sub>/2
+                        <div class="var-tooltip">
+                            <div class="var-name">Einstein-Hilbert Term</div>
+                            <div class="var-description">Standard 4D gravity: M<sub>Pl</sub><sup>2</sup> is the reduced Planck mass, R<sub>4</sub> is the 4D Ricci scalar.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Generates Einstein's field equations for curved spacetime.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var">&frac14;F<sup>a</sup><sub>&mu;&nu;</sub>F<sup>a&mu;&nu;</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">Yang-Mills Term</div>
+                            <div class="var-description">Kinetic term for SO(10) gauge fields. Index a runs over all 45 generators. After breaking, gives SM gauge bosons.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Determines gauge boson propagation and self-interactions (gluon-gluon, W-W-Z, etc.).</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var">&frac12;(&part;&phi;)<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">Scalar Kinetic Term</div>
+                            <div class="var-description">Kinetic energy of moduli fields (&phi;) arising from internal metric fluctuations.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Allows moduli to propagate; includes the Mashiach field responsible for dark energy.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var highlight">V(&phi;)
+                        <div class="var-tooltip">
+                            <div class="var-name">Scalar Potential</div>
+                            <div class="var-description">Potential energy for moduli from flux, curvature, and non-perturbative effects.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Stabilizes internal dimensions; generates cosmological constant and dark energy dynamics.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var">&Lscr;<sub>fermion</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Lscr;<sub>fermion</sub></div>
+                            <div class="var-description">Fermion Lagrangian including Dirac terms, Yukawa couplings, and mass terms for quarks and leptons.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Gives rise to electron, quarks, neutrinos with their masses and interactions.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">]</span>
+                </div>
+                <div class="formula-label">Four-dimensional Einstein-Yang-Mills effective action</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">4D Effective Action</div>
+                    <div class="formula-meaning">
+                        This is the "output" of Kaluza-Klein reduction - the action governing all observable physics. It combines Einstein gravity, SO(10) gauge theory (which breaks to the Standard Model), and matter fields - all from pure 13D geometry.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Gauge Group</h5>
+                            <p>SO(10) &rarr; G<sub>SM</sub> via Higgs</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Gauge Coupling</h5>
+                            <p>&alpha;<sub>GUT</sub> &asymp; 1/25</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h5>Use Cases</h5>
+                        <ul>
+                            <li>Predict gauge coupling unification</li>
+                            <li>Calculate proton decay rates</li>
+                            <li>Derive cosmological evolution</li>
+                            <li>Extract Standard Model parameters</li>
+                        </ul>
+                    </div>
+                    <div class="implications">
+                        <h5>Key Implications</h5>
+                        <p>Single origin for gravity and gauge forces. Gauge coupling unification at M<sub>GUT</sub> ~ 10<sup>16</sup> GeV is a prediction, not an input.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                where F<sup>a</sup><sub>&mu;&nu;</sub> is the SO(10) field strength,
+                &phi; collectively denotes moduli fields, and V(&phi;) is the scalar potential
+                arising from internal curvature and flux contributions.
+            </p>
+
+            <h3>Gauge Coupling Unification</h3>
+
+            <p>
+                A key prediction of the KK framework is gauge coupling unification. At the
+                compactification scale, all gauge couplings arise from a single 13D gravitational
+                coupling:
+            </p>
+
+            <div class="equation-box">
+                g<sub>GUT</sub><sup>2</sup> = (16&pi;G<sub>N</sub>) / V<sub>8</sub>
+                &nbsp;&nbsp;&rArr;&nbsp;&nbsp;
+                &alpha;<sub>GUT</sub> &asymp; 1/25
+                <span class="equation-label">Unified gauge coupling from dimensional reduction</span>
+            </div>
+
+            <p>
+                Below the GUT scale, SO(10) breaks to the Standard Model gauge group, and the
+                couplings run separately according to their respective beta functions. The
+                observed approximate unification of SM couplings at ~10<sup>16</sup> GeV
+                provides empirical support for this picture.
+            </p>
+
+            <h3>Moduli Stabilization</h3>
+
+            <p>
+                The scalar potential V(&phi;) plays a crucial role in determining the vacuum
+                structure. Contributions include:
+            </p>
+
+            <table class="field-table">
+                <thead>
+                    <tr>
+                        <th>Source</th>
+                        <th>Contribution to V(&phi;)</th>
+                        <th>Effect</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Internal curvature</td>
+                        <td>-M<sub>*</sub><sup>11</sup>R<sub>8</sub>V<sub>8</sub></td>
+                        <td>Runaway to large volume (for R<sub>8</sub> &gt; 0)</td>
+                    </tr>
+                    <tr>
+                        <td>Form fluxes</td>
+                        <td>+&int;|F<sub>p</sub>|<sup>2</sup></td>
+                        <td>Stabilization at finite volume</td>
+                    </tr>
+                    <tr>
+                        <td>Casimir energy</td>
+                        <td>&plusmn; (contributions from loops)</td>
+                        <td>Quantum corrections to vacuum</td>
+                    </tr>
+                    <tr>
+                        <td>Non-perturbative</td>
+                        <td>~exp(-S<sub>inst</sub>)</td>
+                        <td>Exponentially suppressed corrections</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h4>The Mashiach Field</h4>
+                <p>
+                    In the Principia Metaphysica framework, the overall volume modulus r<sub>K</sub>
+                    is identified with the "Mashiach field" &phi;<sub>M</sub>. Its dynamics drive
+                    late-time cosmic acceleration through a quintessence-like mechanism, as
+                    elaborated in Section 6.
+                </p>
+            </div>
+        </section>
+
+        <!-- Peer Review Criticism Section -->
+        <section class="peer-review-section">
+            <div class="peer-review-header">
+                <div class="peer-review-icon">&#9888;</div>
+                <h3>Peer Review: Critical Analysis</h3>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Coset Space Dimension Mismatch</h4>
+                <p>
+                    The requirement dim(H) = 37 for the isotropy subgroup is problematic. No standard maximal subgroup
+                    of SO(10) has dimension 37. The largest maximal subgroups are SO(9) (dim=36) and SU(5)&times;U(1)
+                    (dim=25). The proposed construction H = SO(8)&times;U(1)&times;U(1)&times;discrete only reaches dim=30.
+                </p>
+                <p>
+                    This arithmetic gap must be resolved. Either the dimension counting is incorrect, or a non-standard
+                    coset construction is needed (e.g., via non-compact or non-semisimple groups), which introduces
+                    additional complications for compactness and stability.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The dimension-37 requirement can be satisfied by considering extensions with non-trivial
+                        centralizers. Specifically, SO(8)&times;U(1)&times;U(1) plus a 7-dimensional nilpotent extension
+                        achieves the required dimension. This structure is natural in fibered geometries where the base
+                        is a 7-dimensional G<sub>2</sub> manifold. Further geometric analysis is ongoing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Moduli Stabilization Mechanism</h4>
+                <p>
+                    The moduli stabilization sources listed (flux, Casimir, non-perturbative) are qualitative.
+                    A concrete stabilization mechanism with explicit potential and vacuum structure is essential for
+                    phenomenological viability. Without it, the internal dimensions could destabilize, leading to
+                    decompactification or runaway behavior.
+                </p>
+                <p>
+                    The relationship between the Mashiach field &phi;<sub>M</sub> and volume modulus requires explicit
+                    derivation showing why it remains light while other moduli are stabilized at high masses.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        We acknowledge this is the weakest point of the current framework. The Mashiach field's lightness
+                        is postulated to arise from an approximate shift symmetry broken only by non-perturbative effects,
+                        analogous to the KKLT scenario. Section 6 develops the cosmological consequences under this assumption.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-moderate">Moderate</span> EFT Validity Regime</h4>
+                <p>
+                    The EFT treatment of non-renormalizability is standard but glosses over important questions.
+                    At what energy scale does the EFT break down? How does the tower of higher-dimension operators
+                    affect precision predictions? The claimed 10<sup>16</sup> GeV unification scale is uncomfortably
+                    close to where EFT corrections become order unity.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The EFT expansion is controlled by E/M<sub>*</sub> where M<sub>*</sub> ~ M<sub>GUT</sub>.
+                        For E &lt;&lt; M<sub>*</sub>, corrections are suppressed as (E/M<sub>*</sub>)<sup>n</sup>.
+                        Precision predictions for low-energy observables include estimated uncertainties from
+                        truncation of the EFT expansion, typically at the percent level.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-moderate">Moderate</span> Pneuma Condensate Formation</h4>
+                <p>
+                    The claim that the metric g<sub>mn</sub> &propto; &langle;&Psi;<sub>P</sub>&Gamma;<sub>mn</sub>&Psi;<sub>P</sub>&rangle;
+                    is intriguing but requires justification. Fermion bilinears typically transform as tensors, but
+                    relating them to a metric requires a specific map between spinor bilinears and symmetric 2-tensors.
+                    This map should be explicitly constructed and shown to be consistent with required positivity and
+                    signature properties.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experimental Predictions for Geometric Framework -->
+        <section class="experimental-predictions">
+            <h3>Experimental Predictions from the Geometric Framework</h3>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-current">Currently Testable</span>
+                    4D Planck Mass Relation
+                </h4>
+                <p>
+                    The volume modulus relation M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &middot; V<sub>8</sub>
+                    constrains the fundamental scale given the observed Planck mass.
+                </p>
+                <div class="observable">
+                    M<sub>*</sub> = (1.5 - 3.0) &times; 10<sup>16</sup> GeV for V<sub>8</sub><sup>1/8</sup> ~ (10<sup>16</sup> GeV)<sup>-1</sup>
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Consistency check with proton decay bounds and gauge unification scale.
+                    Current Super-Kamiokande limits already constrain M<sub>*</sub> &gt; 10<sup>15.5</sup> GeV.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-near">Near-Term</span>
+                    Moduli Mass Spectrum
+                </h4>
+                <p>
+                    The framework predicts a specific hierarchy: one light modulus (Mashiach field, m ~ H<sub>0</sub>)
+                    with remaining moduli at m ~ M<sub>GUT</sub> scale. This mass gap is a distinctive prediction.
+                </p>
+                <div class="observable">
+                    m<sub>Mashiach</sub> ~ 10<sup>-33</sup> eV, m<sub>heavy</sub> ~ 10<sup>16</sup> GeV
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Fifth force searches, equivalence principle tests (MICROSCOPE, STEP),
+                    and cosmological constraints on light scalars from CMB and large-scale structure.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-future">Future</span>
+                    Gravitational Sector Higher-Derivative Corrections
+                </h4>
+                <p>
+                    The dimensional reduction generates R<sup>2</sup> and R<sup>3</sup> corrections to Einstein gravity.
+                    These modify strong-field predictions for black holes and neutron stars.
+                </p>
+                <div class="observable">
+                    &delta;M<sub>BH</sub>/M<sub>BH</sub> ~ (r<sub>s</sub>/L<sub>*</sub>)<sup>2</sup> where L<sub>*</sub> = M<sub>*</sub><sup>-1</sup>
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Precision black hole shadow measurements (EHT), gravitational wave
+                    ringdown spectroscopy (LISA, 3G detectors), and X-ray timing of neutron stars.
+                </p>
+            </div>
+
+            <div class="open-questions">
+                <h4>&#x2753; Open Questions for Section 2</h4>
+                <ul>
+                    <li>What is the explicit form of the 37-dimensional isotropy subgroup H?</li>
+                    <li>Can the Pneuma condensate &rarr; metric map be derived from first principles?</li>
+                    <li>What stabilizes the Mashiach field at its current value?</li>
+                    <li>How do quantum corrections modify the classical Freund-Rubin ansatz?</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="nav-section">
+            <h3>Related Sections</h3>
+            <div class="section-nav-links">
+                <a href="introduction.html" class="section-nav-link">
+                    <span class="link-number">1</span>
+                    <div>
+                        <div class="link-text">Introduction</div>
+                        <div class="link-desc">Quest for unification, fermionic geometry</div>
+                    </div>
+                </a>
+                <a href="gauge-unification.html" class="section-nav-link">
+                    <span class="link-number">3</span>
+                    <div>
+                        <div class="link-text">Gauge Unification</div>
+                        <div class="link-desc">SO(10) breaking chains and Higgs sector</div>
+                    </div>
+                </a>
+                <a href="fermion-sector.html" class="section-nav-link">
+                    <span class="link-number">4</span>
+                    <div>
+                        <div class="link-text">Fermion Sector</div>
+                        <div class="link-desc">Chirality and mass generation</div>
+                    </div>
+                </a>
+                <a href="cosmology.html" class="section-nav-link">
+                    <span class="link-number">6</span>
+                    <div>
+                        <div class="link-text">Cosmological Dynamics</div>
+                        <div class="link-desc">F(R,T) gravity and Mashiach attractor</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong> - Section 2: Geometric Framework<br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <a href="../index.html">Return to Main Page</a>
+        </p>
+    </footer>
+</body>
+</html>

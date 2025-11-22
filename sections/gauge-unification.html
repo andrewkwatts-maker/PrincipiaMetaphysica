@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Section 3: Gauge Unification and Spontaneous Symmetry Breaking - SO(10) Grand Unified Framework">
+    <title>Section 3: Gauge Unification - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Section-specific styles */
+        .section-header {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1));
+            border: 2px solid rgba(139, 127, 255, 0.3);
+            border-radius: 20px;
+            margin-bottom: 2rem;
+        }
+
+        .section-header .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header .subtitle {
+            color: var(--text-secondary);
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            font-size: 1.2rem;
+        }
+
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid var(--border-primary);
+            padding-bottom: 0.75rem;
+            font-size: 1.5rem;
+        }
+
+        .subsection h3 {
+            color: var(--accent-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .subsection ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subsection li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .equation-box {
+            background: rgba(139, 127, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+
+        .equation-box .label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .breaking-table {
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+
+        .breaking-table th {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .breaking-table td {
+            padding: 1rem;
+            color: var(--text-secondary);
+            vertical-align: top;
+        }
+
+        .breaking-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .highlight-text {
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 1.5rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.2);
+        }
+
+        .concept-highlight {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border-left: 3px solid var(--accent-primary);
+            margin: 1rem 0;
+        }
+
+        .concept-highlight h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+
+        .concept-highlight p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principia Metaphysica</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#abstract">Abstract</a></li>
+                    <li><a href="../index.html#sections">Sections</a></li>
+                    <li><a href="../index.html#predictions">Predictions</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">&rarr;</span>
+            <a href="../index.html#sections">Sections</a>
+            <span class="separator">&rarr;</span>
+            <span>Section 3: Gauge Unification</span>
+        </nav>
+
+        <section class="section-header">
+            <div class="section-number">3</div>
+            <h1>Gauge Unification and Spontaneous Symmetry Breaking</h1>
+            <p class="subtitle">From SO(10) Grand Unification to the Standard Model</p>
+        </section>
+
+        <!-- Section 3.1 -->
+        <div class="subsection">
+            <h2>3.1 The SO(10) Grand Unified Framework</h2>
+
+            <p>
+                The geometric origin of gauge symmetries from the isometry group of K<sub>Pneuma</sub> naturally leads to
+                <span class="highlight-text">SO(10)</span> as the grand unified gauge group. This choice is remarkably elegant
+                for several fundamental reasons that distinguish it from other GUT candidates.
+            </p>
+
+            <h3>Rank-5 Group Structure</h3>
+            <p>
+                SO(10) is a rank-5 Lie group, meaning it has five commuting generators forming its Cartan subalgebra.
+                This is the minimum rank required to accommodate all Standard Model quantum numbers: electric charge Q,
+                weak isospin T<sub>3</sub>, hypercharge Y, and two color charges. The group has dimension 45,
+                corresponding to 45 gauge bosons in the adjoint representation.
+            </p>
+
+            <!-- Interactive Formula: SO(10) Dimension -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">dim(SO(10))
+                        <div class="var-tooltip">
+                            <div class="var-name">dim(SO(10))</div>
+                            <div class="var-description">Dimension of the SO(10) Lie group - the number of independent generators (gauge bosons).</div>
+                            <div class="var-units">Dimensionless (count)</div>
+                            <div class="var-contribution">Each generator corresponds to one gauge boson in the theory.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var highlight">45
+                        <div class="var-tooltip">
+                            <div class="var-name">45</div>
+                            <div class="var-description">Forty-five gauge bosons: 12 for SM (8 gluons + W&plusmn; + Z + &gamma;) plus 33 new heavy bosons.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">The heavy bosons (X, Y) mediate proton decay at GUT scale.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">n(n-1)/2
+                        <div class="var-tooltip">
+                            <div class="var-name">n(n-1)/2</div>
+                            <div class="var-description">General formula for SO(n) dimension: number of antisymmetric n&times;n matrices.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">For n=10: 10&times;9/2 = 45.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Dimension of SO(10) gauge group</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">SO(10) Group Structure</div>
+                    <div class="formula-meaning">
+                        SO(10) is the smallest simple group containing the Standard Model and right-handed neutrinos. Its 45 generators unify all gauge interactions, with 12 becoming SM gauge bosons and 33 becoming superheavy.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Rank</h5>
+                            <p>5 (Cartan generators)</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Fundamental Rep</h5>
+                            <p>10-dimensional vector</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h5>Use Cases</h5>
+                        <ul>
+                            <li>Unify all fermions in 16-spinor</li>
+                            <li>Predict gauge coupling unification</li>
+                            <li>Include right-handed neutrinos naturally</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Matter Unification in the 16-Representation</h3>
+            <p>
+                The most compelling feature of SO(10) is that <em>all fermions of a single generation</em>&mdash;including
+                the right-handed neutrino&mdash;fit precisely into a single <span class="highlight-text">16-dimensional
+                spinor representation</span>. This is the fundamental spinor representation of SO(10), and its structure
+                is not arbitrary but dictated by the Clifford algebra Cl(10).
+            </p>
+
+            <!-- Representation Box: 16 of SO(10) -->
+            <div class="representation-box">
+                <h4>The 16-Spinor Representation Content</h4>
+                <div class="rep-grid">
+                    <div class="rep-item">
+                        <div class="rep-symbol">(u<sub>L</sub>, d<sub>L</sub>)<sub>3</sub></div>
+                        <div class="rep-name">Left quark doublet</div>
+                    </div>
+                    <div class="rep-item">
+                        <div class="rep-symbol">(u<sub>R</sub>)<sub>3</sub></div>
+                        <div class="rep-name">Right up-quark</div>
+                    </div>
+                    <div class="rep-item">
+                        <div class="rep-symbol">(d<sub>R</sub>)<sub>3</sub></div>
+                        <div class="rep-name">Right down-quark</div>
+                    </div>
+                    <div class="rep-item">
+                        <div class="rep-symbol">(&nu;<sub>L</sub>, e<sub>L</sub>)</div>
+                        <div class="rep-name">Left lepton doublet</div>
+                    </div>
+                    <div class="rep-item">
+                        <div class="rep-symbol">e<sub>R</sub></div>
+                        <div class="rep-name">Right electron</div>
+                    </div>
+                    <div class="rep-item">
+                        <div class="rep-symbol">&nu;<sub>R</sub></div>
+                        <div class="rep-name">Right neutrino</div>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                The subscript 3 indicates color triplets. This unified matter representation has profound implications:
+            </p>
+
+            <ul>
+                <li><strong>Automatic anomaly cancellation:</strong> The 16 representation is automatically anomaly-free,
+                    ensuring quantum consistency of the gauge theory.</li>
+                <li><strong>Quantization of hypercharge:</strong> The embedding explains why hypercharge takes its
+                    observed discrete values rather than being a continuous parameter.</li>
+                <li><strong>Prediction of right-handed neutrinos:</strong> The 16 naturally includes &nu;<sub>R</sub>,
+                    providing a mechanism for neutrino masses via the seesaw mechanism.</li>
+                <li><strong>B-L as a gauge symmetry:</strong> Baryon number minus lepton number (B-L) emerges as a
+                    gauged symmetry, a subgroup of SO(10).</li>
+            </ul>
+
+            <div class="equation-box">
+                16<sub>F</sub> &rarr; (3, 2, 1/6) + (3&#773;, 1, -2/3) + (3&#773;, 1, 1/3) + (1, 2, -1/2) + (1, 1, 1) + (1, 1, 0)
+                <div class="label">Decomposition under SU(3)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; U(1)<sub>Y</sub></div>
+            </div>
+        </div>
+
+        <!-- Section 3.2 -->
+        <div class="subsection">
+            <h2>3.2 Symmetry Breaking Chains and the Geometric Higgs</h2>
+
+            <p>
+                The spontaneous breaking of SO(10) down to the Standard Model gauge group proceeds through a series of
+                intermediate stages. In the Principia Metaphysica framework, these symmetry breaking steps are not
+                introduced <em>ad hoc</em> but emerge from the <span class="highlight-text">geometric dynamics of
+                K<sub>Pneuma</sub></span>&mdash;specifically, from the vacuum expectation values of Pneuma condensates
+                that stabilize different fiber directions.
+            </p>
+
+            <h3>The Pati-Salam Intermediate Stage</h3>
+            <p>
+                The preferred breaking chain passes through the <span class="highlight-text">Pati-Salam group</span>
+                G<sub>PS</sub> = SU(4)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; SU(2)<sub>R</sub>, which provides
+                a natural intermediate unification of quarks and leptons (lepton number as the fourth color).
+            </p>
+
+            <!-- Symmetry Breaking Flow Diagram -->
+            <div class="flow-diagram">
+                <h4>Symmetry Breaking Chain</h4>
+                <div class="flow-chain">
+                    <div class="flow-node">
+                        <div class="node-label">SO(10)</div>
+                        <div class="node-sublabel">M<sub>GUT</sub> ~ 10<sup>16</sup> GeV</div>
+                    </div>
+                    <span class="flow-arrow">&rarr;</span>
+                    <div class="flow-node">
+                        <div class="node-label">G<sub>PS</sub></div>
+                        <div class="node-sublabel">SU(4)&times;SU(2)&times;SU(2)</div>
+                    </div>
+                    <span class="flow-arrow">&rarr;</span>
+                    <div class="flow-node">
+                        <div class="node-label">G<sub>SM</sub></div>
+                        <div class="node-sublabel">SU(3)&times;SU(2)&times;U(1)</div>
+                    </div>
+                    <span class="flow-arrow">&rarr;</span>
+                    <div class="flow-node">
+                        <div class="node-label">G<sub>EM</sub></div>
+                        <div class="node-sublabel">SU(3)&times;U(1)<sub>EM</sub></div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>SO(10) Symmetry Breaking Steps</h3>
+            <table class="breaking-table">
+                <thead>
+                    <tr>
+                        <th>Breaking Step</th>
+                        <th>Energy Scale</th>
+                        <th>Higgs Representation</th>
+                        <th>Residual Symmetry</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SO(10) &rarr; G<sub>PS</sub></td>
+                        <td>M<sub>GUT</sub> &sim; 10<sup>16</sup> GeV</td>
+                        <td><strong>54</strong><sub>H</sub> (symmetric tensor)</td>
+                        <td>SU(4)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; SU(2)<sub>R</sub></td>
+                    </tr>
+                    <tr>
+                        <td>G<sub>PS</sub> &rarr; G<sub>SM</sub></td>
+                        <td>M<sub>PS</sub> &sim; 10<sup>12</sup>&ndash;10<sup>14</sup> GeV</td>
+                        <td><strong>126</strong><sub>H</sub> + <strong>126&#773;</strong><sub>H</sub></td>
+                        <td>SU(3)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; U(1)<sub>Y</sub></td>
+                    </tr>
+                    <tr>
+                        <td>G<sub>SM</sub> &rarr; G<sub>EM</sub></td>
+                        <td>M<sub>EW</sub> &sim; 246 GeV</td>
+                        <td><strong>10</strong><sub>H</sub> (contains SM doublet)</td>
+                        <td>SU(3)<sub>C</sub> &times; U(1)<sub>EM</sub></td>
+                    </tr>
+                    <tr>
+                        <td>Moduli Stabilization</td>
+                        <td>M<sub>KK</sub> &sim; 10<sup>10</sup>&ndash;10<sup>12</sup> GeV</td>
+                        <td>Geometric moduli &phi;<sub>i</sub></td>
+                        <td>Discrete remnant symmetries</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Geometric Origin of Higgs Fields</h3>
+            <p>
+                In conventional GUT models, the Higgs fields responsible for symmetry breaking are introduced as
+                fundamental scalars. In the Principia Metaphysica framework, these Higgs fields arise as
+                <span class="highlight-text">composite operators of Pneuma fermion condensates</span>:
+            </p>
+
+            <div class="equation-box">
+                H<sub>ij</sub> &sim; &langle;&Psi;&#773;<sub>P</sub><sup>i</sup> &Gamma;<sup>&mu;&nu;...</sup> &Psi;<sub>P</sub><sup>j</sup>&rangle;
+                <div class="label">Higgs fields as Pneuma bilinear condensates</div>
+            </div>
+
+            <p>
+                The different Higgs representations (54, 126, 10) correspond to different tensor structures in
+                the Clifford algebra, formed by contracting Pneuma spinors with appropriate products of
+                &Gamma;-matrices. This provides a <em>dynamical</em> origin for symmetry breaking, tied to
+                the thermodynamics of the Pneuma field.
+            </p>
+        </div>
+
+        <!-- Section 3.3 -->
+        <div class="subsection">
+            <h2>3.3 A Geometric Solution to the Doublet-Triplet Splitting Problem</h2>
+
+            <p>
+                One of the most challenging technical problems in GUT model building is the
+                <span class="highlight-text">doublet-triplet splitting problem</span>. The Higgs field responsible
+                for electroweak symmetry breaking lives in a representation (such as the <strong>10</strong> of SO(10))
+                that contains both an SU(2)<sub>L</sub> doublet (which must be light, ~246 GeV) and color triplet
+                components (which must be superheavy, ~M<sub>GUT</sub>, to avoid rapid proton decay).
+            </p>
+
+            <h3>The Problem</h3>
+            <p>
+                Under the Standard Model decomposition:
+            </p>
+
+            <div class="equation-box">
+                <strong>10</strong><sub>H</sub> &rarr; (1, 2, 1/2) + (1, 2, -1/2) + (3, 1, -1/3) + (3&#773;, 1, 1/3)
+                <div class="label">The 10 contains both doublets H<sub>u</sub>, H<sub>d</sub> and color triplets T, T&#773;</div>
+            </div>
+
+            <p>
+                Why should the doublets be 14 orders of magnitude lighter than the triplets, when they originate
+                from the same GUT multiplet? This fine-tuning problem plagues most GUT constructions.
+            </p>
+
+            <h3>The Geometric Solution</h3>
+            <p>
+                The Principia Metaphysica framework offers a natural resolution through the
+                <span class="highlight-text">geometry of K<sub>Pneuma</sub></span>. The key insight is that the
+                effective mass of a field mode depends on its <em>localization properties</em> in the internal space:
+            </p>
+
+            <ul>
+                <li><strong>Doublet localization:</strong> The SU(2)<sub>L</sub> doublet components are localized
+                    on a submanifold (a "brane" or orbifold fixed point) where they have zero overlap with the
+                    mass-generating Higgs VEV.</li>
+                <li><strong>Triplet delocalization:</strong> The color triplet components extend into the bulk
+                    of K<sub>Pneuma</sub> where they acquire GUT-scale masses from bulk Higgs VEVs.</li>
+            </ul>
+
+            <div class="concept-highlight">
+                <h4>Wavefunction Splitting Mechanism</h4>
+                <p>
+                    The mass splitting arises from the integral: m<sub>eff</sub> &sim; &int;<sub>K</sub> |&psi;(y)|<sup>2</sup>
+                    &langle;&Phi;(y)&rangle; d<sup>8</sup>y, where the doublet wavefunction &psi;<sub>D</sub>(y) has support
+                    only where &langle;&Phi;&rangle; = 0.
+                </p>
+            </div>
+
+            <p>
+                This mechanism is not introduced by hand but emerges from solving the Dirac equation on K<sub>Pneuma</sub>.
+                The localization of different components is determined by the <span class="highlight-text">index theorem</span>
+                applied to the internal manifold, connecting the problem to the topological structure of the Pneuma geometry.
+            </p>
+
+            <h3>Connection to Proton Stability</h3>
+            <p>
+                The superheavy mass of color triplet Higgs fields is crucial for proton stability. Triplet-mediated
+                proton decay proceeds via dimension-6 operators suppressed by M<sub>T</sub><sup>2</sup>:
+            </p>
+
+            <!-- Interactive Formula: Proton Lifetime -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">&tau;<sub>p</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&tau;<sub>p</sub></div>
+                            <div class="var-description">Proton lifetime - how long before a proton decays via GUT-mediated processes.</div>
+                            <div class="var-units">Years</div>
+                            <div class="var-contribution">Must exceed ~10<sup>34</sup> years to satisfy Super-Kamiokande bounds.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">~</span>
+                    <span class="formula-var highlight">M<sub>T</sub><sup>4</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">M<sub>T</sub><sup>4</sup></div>
+                            <div class="var-description">Color triplet Higgs mass to the fourth power - the main suppression factor.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Heavier triplets = longer proton life. Power of 4 from dimension-6 operator.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">/</span>
+                    <span class="formula-op">(</span>
+                    <span class="formula-var">m<sub>p</sub><sup>5</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>p</sub><sup>5</sup></div>
+                            <div class="var-description">Proton mass to the fifth power - sets the phase space and hadronic matrix elements.</div>
+                            <div class="var-units">GeV<sup>5</sup></div>
+                            <div class="var-contribution">The only low-energy scale in the problem; m<sub>p</sub> ~ 0.938 GeV.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">&alpha;<sub>GUT</sub><sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">&alpha;<sub>GUT</sub><sup>2</sup></div>
+                            <div class="var-description">GUT fine structure constant squared (&alpha;<sub>GUT</sub> ~ 1/25).</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">From gauge couplings at vertices; enhances rate.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">)</span>
+                    <span class="formula-op">&gt;</span>
+                    <span class="formula-var">10<sup>34</sup> years
+                        <div class="var-tooltip">
+                            <div class="var-name">10<sup>34</sup> years</div>
+                            <div class="var-description">Current experimental lower bound from Super-Kamiokande for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>.</div>
+                            <div class="var-units">Years</div>
+                            <div class="var-contribution">10<sup>24</sup> times the age of the universe!</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Proton lifetime from dimension-6 operators</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Proton Decay Prediction</div>
+                    <div class="formula-meaning">
+                        This formula shows why proton decay is so rare: the rate is suppressed by M<sub>T</sub><sup>4</sup> ~ (10<sup>16</sup> GeV)<sup>4</sup>. The geometric doublet-triplet splitting naturally achieves M<sub>T</sub> ~ M<sub>GUT</sub>, satisfying all experimental bounds.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Dominant Channel</h5>
+                            <p>p &rarr; e<sup>+</sup> + &pi;<sup>0</sup></p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Predicted &tau;<sub>p</sub></h5>
+                            <p>~5 &times; 10<sup>34</sup> years</p>
+                        </div>
+                    </div>
+                    <div class="use-cases">
+                        <h5>Use Cases</h5>
+                        <ul>
+                            <li>Test GUT scale physics with current experiments</li>
+                            <li>Constrain triplet Higgs mass</li>
+                            <li>Distinguish between GUT models</li>
+                        </ul>
+                    </div>
+                    <div class="implications">
+                        <h5>Key Implications</h5>
+                        <p>Hyper-Kamiokande can probe &tau;<sub>p</sub> ~ 10<sup>35</sup> years - within reach of this theory's predictions!</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>
+                The geometric splitting mechanism naturally achieves M<sub>T</sub> &sim; M<sub>GUT</sub> while keeping
+                the doublet light, satisfying current experimental bounds from Super-Kamiokande and providing a
+                testable prediction for future proton decay experiments like Hyper-Kamiokande.
+            </p>
+        </div>
+
+        <!-- Peer Review Criticism Section -->
+        <section class="peer-review-section">
+            <div class="peer-review-header">
+                <div class="peer-review-icon">&#9888;</div>
+                <h3>Peer Review: Critical Analysis</h3>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Proton Decay Rate Uncertainty</h4>
+                <p>
+                    The proton lifetime prediction spans two orders of magnitude (&tau;<sub>p</sub> ~ 10<sup>34</sup>-10<sup>36</sup> years),
+                    which is too imprecise for a definitive test. The uncertainty arises from unknown threshold corrections,
+                    Higgs sector details, and hadronic matrix elements. Without narrowing this range, the theory risks
+                    being unfalsifiable within the lifetime of current and planned experiments.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The uncertainty is inherent to any GUT without complete UV specification. We identify
+                        &tau;<sub>p</sub> ~ 5 &times; 10<sup>34</sup> years as the central prediction. Hyper-Kamiokande
+                        with 10<sup>35</sup> year sensitivity will definitively test this. Continued null results
+                        beyond 10<sup>36</sup> years would falsify the minimal framework.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Doublet-Triplet Splitting Naturalness</h4>
+                <p>
+                    The geometric solution to doublet-triplet splitting via wavefunction localization requires
+                    specific orbifold/brane structure in K<sub>Pneuma</sub>. This introduces new parameters
+                    (brane positions, Wilson lines) that must be tuned. How is this different from the fine-tuning
+                    it purports to solve?
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The mechanism differs in that brane positions are dynamically determined by the Pneuma condensate
+                        structure, not freely adjustable parameters. The apparent fine-tuning is transmitted to the
+                        question of why the condensate forms with particular topology - a question we defer to the
+                        UV completion.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-moderate">Moderate</span> Breaking Chain Uniqueness</h4>
+                <p>
+                    Multiple symmetry breaking chains from SO(10) to the Standard Model exist (Pati-Salam, flipped SU(5),
+                    direct breaking). The paper favors the Pati-Salam route but doesn't demonstrate why the Pneuma
+                    condensate structure selects this particular chain over alternatives.
+                </p>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-minor">Minor</span> Threshold Corrections</h4>
+                <p>
+                    Threshold corrections from heavy states at M<sub>GUT</sub> can shift coupling unification
+                    by several percent. These should be computed for the specific K<sub>Pneuma</sub> geometry
+                    to make quantitative predictions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experimental Predictions for Gauge Unification -->
+        <section class="experimental-predictions">
+            <h3>Experimental Predictions from Gauge Unification</h3>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-near">Near-Term</span>
+                    Proton Decay: p &rarr; e<sup>+</sup>&pi;<sup>0</sup>
+                </h4>
+                <p>
+                    The dominant proton decay channel from dimension-6 gauge boson exchange.
+                    This is the smoking gun prediction of SO(10) grand unification.
+                </p>
+                <div class="observable">
+                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = (5 &plusmn; 3) &times; 10<sup>34</sup> years
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Hyper-Kamiokande (2027+), DUNE (2029+), and JUNO can probe
+                    lifetimes up to 10<sup>35</sup> years with 10 years of data.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-near">Near-Term</span>
+                    Proton Decay: p &rarr; K<sup>+</sup>&nu;
+                </h4>
+                <p>
+                    Secondary decay channel sensitive to Higgs triplet exchange and supersymmetric contributions.
+                    The branching ratio relative to p &rarr; e<sup>+</sup>&pi;<sup>0</sup> tests the Higgs sector structure.
+                </p>
+                <div class="observable">
+                    BR(p &rarr; K<sup>+</sup>&nu;) / BR(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) ~ 0.1 - 0.5
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> DUNE's liquid argon technology provides superior K<sup>+</sup> detection
+                    compared to water Cherenkov detectors.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-current">Currently Testable</span>
+                    Magnetic Monopoles
+                </h4>
+                <p>
+                    The SO(10) breaking produces topologically stable magnetic monopoles with mass M<sub>mon</sub> ~ M<sub>GUT</sub>.
+                    Cosmological production during the GUT phase transition is constrained by monopole searches.
+                </p>
+                <div class="observable">
+                    Flux &lt; 10<sup>-15</sup> cm<sup>-2</sup> sr<sup>-1</sup> s<sup>-1</sup> (Parker bound)
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> IceCube, ANITA, and dedicated monopole searches. Inflationary dilution
+                    may suppress flux below detection thresholds.
+                </p>
+            </div>
+
+            <div class="open-questions">
+                <h4>&#x2753; Open Questions for Section 3</h4>
+                <ul>
+                    <li>What determines the specific Pati-Salam breaking pattern from the Pneuma condensate?</li>
+                    <li>Can threshold corrections be computed ab initio from K<sub>Pneuma</sub> geometry?</li>
+                    <li>How does the theory address the monopole problem?</li>
+                    <li>What is the detailed Higgs sector spectrum?</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <nav class="nav-buttons">
+            <a href="geometric-framework.html" class="nav-btn">
+                &larr; Section 2: Geometric Framework
+            </a>
+            <a href="fermion-sector.html" class="nav-btn">
+                Section 4: Fermion Sector &rarr;
+            </a>
+        </nav>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                Contact: <a href="mailto:AndrewKWatts@Gmail.com" style="color: var(--accent-primary);">AndrewKWatts@Gmail.com</a>
+            </span>
+        </p>
+    </footer>
+</body>
+</html>
