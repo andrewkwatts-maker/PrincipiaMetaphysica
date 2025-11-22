@@ -591,7 +591,7 @@
                         <h5>Use Cases</h5>
                         <ul>
                             <li>Derive 4D effective gravity via Kaluza-Klein reduction</li>
-                            <li>Extract SO(10) gauge symmetry from isometry group</li>
+                            <li>Extract SO(10) gauge symmetry from D<sub>5</sub> singularity in F-theory</li>
                             <li>Compute quantum corrections in the EFT expansion</li>
                         </ul>
                     </div>
@@ -823,113 +823,85 @@
 
             <p>
                 The central geometric object is K<sub>Pneuma</sub>, the 8-dimensional internal
-                manifold that emerges from Pneuma field condensates. To generate SO(10) gauge
-                symmetry through the Kaluza-Klein mechanism, K<sub>Pneuma</sub> must possess
-                SO(10) as its isometry group.
+                manifold that emerges from Pneuma field condensates. In the F-theory framework,
+                SO(10) gauge symmetry arises not from isometries of the internal space, but from
+                a <strong>D<sub>5</sub> singularity</strong> in the elliptic fibration of the
+                Calabi-Yau four-fold.
             </p>
 
             <div class="highlight-box">
-                <h4>Coset Space Construction</h4>
+                <h4>F-Theory Origin of SO(10)</h4>
                 <p>
-                    The natural framework for constructing manifolds with specified isometry groups
-                    is the theory of homogeneous spaces G/H, where G acts transitively and H is
-                    the stabilizer (isotropy) subgroup of a point. The isometry group of G/H
-                    contains G, with equality for compact G.
+                    In F-theory compactifications on an elliptically fibered CY4, gauge symmetries
+                    arise from singularities in the elliptic fiber over codimension-one loci in
+                    the base. An SO(10) gauge group corresponds to a <strong>D<sub>5</sub> singularity</strong>
+                    (type I*<sub>0</sub> in Kodaira's classification) where the elliptic fiber
+                    degenerates. This is fundamentally different from Kaluza-Klein gauge symmetry
+                    from isometries.
                 </p>
             </div>
 
             <p>
-                For K<sub>Pneuma</sub> to have SO(10) isometries with dimension 8, we require
-                a coset SO(10)/H where:
-            </p>
-
-            <div class="equation-box">
-                dim(SO(10)/H) = dim(SO(10)) - dim(H) = 45 - dim(H) = 8
-                <br><br>
-                &rArr;&nbsp; dim(H) = 37
-                <span class="equation-label">Dimension constraint on the isotropy subgroup</span>
-            </div>
-
-            <p>
-                Finding a suitable 37-dimensional subgroup H of SO(10) is a non-trivial group-theoretic
-                problem. The maximal subgroups of SO(10) include:
+                The D<sub>5</sub> singularity structure determines:
             </p>
 
             <table class="field-table">
                 <thead>
                     <tr>
-                        <th>Subgroup H</th>
-                        <th>Dimension</th>
-                        <th>Coset Dimension</th>
-                        <th>Notes</th>
+                        <th>Property</th>
+                        <th>F-Theory Realization</th>
+                        <th>Physical Consequence</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>SO(9)</td>
-                        <td>36</td>
-                        <td>9</td>
-                        <td>S<sup>9</sup> embedding</td>
+                        <td>Gauge Group</td>
+                        <td>D<sub>5</sub> &cong; SO(10)</td>
+                        <td>45 gauge bosons from 7-brane stack</td>
                     </tr>
                     <tr>
-                        <td>SO(8) &times; U(1)</td>
-                        <td>29</td>
-                        <td>16</td>
-                        <td>Related to spinor</td>
+                        <td>Matter Curves</td>
+                        <td>Codimension-2 enhancement</td>
+                        <td>Chiral fermions in <strong>16</strong> representation</td>
                     </tr>
                     <tr>
-                        <td>SU(5) &times; U(1)</td>
-                        <td>25</td>
-                        <td>20</td>
-                        <td>GUT embedding</td>
+                        <td>Yukawa Couplings</td>
+                        <td>Codimension-3 points</td>
+                        <td>Triple intersection of matter curves</td>
                     </tr>
                     <tr>
-                        <td>SO(6) &times; SO(4)</td>
-                        <td>21</td>
-                        <td>24</td>
-                        <td>Product structure</td>
-                    </tr>
-                    <tr>
-                        <td>SO(5) &times; SO(5)</td>
-                        <td>20</td>
-                        <td>25</td>
-                        <td>Symmetric</td>
+                        <td>GUT Breaking</td>
+                        <td>G-flux on D<sub>5</sub> locus</td>
+                        <td>SO(10) &rarr; G<sub>SM</sub> via hypercharge flux</td>
                     </tr>
                 </tbody>
             </table>
 
-            <p>
-                The dimension-37 requirement suggests a non-maximal subgroup. A candidate is
-                <span class="inline-eq">H = SO(8) &times; U(1) &times; U(1) &times; discrete</span>,
-                constructed as an extension of the maximal SO(8) &times; U(1) by additional U(1)
-                factors and discrete identifications.
-            </p>
-
-            <h3>Alternative: Fibered Structure</h3>
+            <h3>Elliptic Fibration Structure</h3>
 
             <p>
-                An alternative approach realizes K<sub>Pneuma</sub> as a fibration rather than
-                a simple coset. Consider:
+                The Calabi-Yau four-fold K<sub>Pneuma</sub> is realized as an elliptic fibration
+                over a three-fold base B<sub>3</sub>:
             </p>
 
             <div class="coset-diagram">
                 <div class="chain">
-                    <span class="group">S<sup>1</sup></span>
+                    <span class="group">T<sup>2</sup></span>
                     <span class="arrow">&rarr;</span>
                     <span class="group">K<sub>Pneuma</sub></span>
                     <span class="arrow">&rarr;</span>
-                    <span class="group">B<sup>7</sup></span>
+                    <span class="group">B<sub>3</sub></span>
                 </div>
                 <div class="caption">
-                    Circle fibration structure of K<sub>Pneuma</sub> over a 7-dimensional base
+                    Elliptic fibration of K<sub>Pneuma</sub> over a Fano three-fold base B<sub>3</sub>
                 </div>
             </div>
 
             <p>
-                If the base B<sup>7</sup> is chosen appropriately (e.g., related to a G<sub>2</sub>
-                holonomy manifold), the total space can achieve SO(10) isometry through a combination
-                of base isometries and fiber translations. This construction connects to M-theory
-                on G<sub>2</sub> manifolds.
+                The SO(10) gauge symmetry lives on a divisor S &sub; B<sub>3</sub> where the
+                elliptic fiber develops a D<sub>5</sub> singularity. Matter fields localize on
+                curves within S where the singularity enhances, and Yukawa couplings arise at
+                points where three matter curves meet.
             </p>
 
             <!-- Corrected CY4 Construction -->
@@ -1083,9 +1055,9 @@
             </p>
 
             <div class="equation-box">
-                h<sup>1,1</sup> = 2, &nbsp; h<sup>2,1</sup> = 0, &nbsp; h<sup>3,1</sup> = 2, &nbsp; h<sup>2,2</sup> = 44
+                h<sup>1,1</sup> = 2, &nbsp; h<sup>2,1</sup> = 0, &nbsp; h<sup>3,1</sup> = 29, &nbsp; h<sup>2,2</sup> = 6
                 <br><br>
-                &chi; = 4 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup> - 4h<sup>2,1</sup> = 4 + 4 + 4 + 44 + 16 = 72
+                &chi; = 4 + 2h<sup>1,1</sup> - 4h<sup>2,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup> = 4 + 4 - 0 + 58 + 6 = 72
                 <span class="equation-label">Example Hodge numbers yielding &chi; = 72</span>
             </div>
 
@@ -1418,29 +1390,6 @@
                     <p style="margin-top: 0.75rem;">
                         The mathematical derivation now appears in Section 2.2 with interactive formulas explaining
                         the index theorem origin of the factor 24.
-                    </p>
-                </div>
-            </div>
-
-            <div class="criticism-item">
-                <h4><span class="severity-badge severity-major">Major</span> Coset Space Dimension Mismatch</h4>
-                <p>
-                    The requirement dim(H) = 37 for the isotropy subgroup is problematic. No standard maximal subgroup
-                    of SO(10) has dimension 37. The largest maximal subgroups are SO(9) (dim=36) and SU(5)&times;U(1)
-                    (dim=25). The proposed construction H = SO(8)&times;U(1)&times;U(1)&times;discrete only reaches dim=30.
-                </p>
-                <p>
-                    This arithmetic gap must be resolved. Either the dimension counting is incorrect, or a non-standard
-                    coset construction is needed (e.g., via non-compact or non-semisimple groups), which introduces
-                    additional complications for compactness and stability.
-                </p>
-                <div class="author-response">
-                    <h5>Author Response:</h5>
-                    <p>
-                        The dimension-37 requirement can be satisfied by considering extensions with non-trivial
-                        centralizers. Specifically, SO(8)&times;U(1)&times;U(1) plus a 7-dimensional nilpotent extension
-                        achieves the required dimension. This structure is natural in fibered geometries where the base
-                        is a 7-dimensional G<sub>2</sub> manifold. Further geometric analysis is ongoing.
                     </p>
                 </div>
             </div>
