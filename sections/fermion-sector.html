@@ -634,6 +634,138 @@
             </div>
         </div>
 
+        <!-- Peer Review Criticism Section -->
+        <section class="peer-review-section">
+            <div class="peer-review-header">
+                <div class="peer-review-icon">&#9888;</div>
+                <h3>Peer Review: Critical Analysis</h3>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Pneuma Index Theorem Validity</h4>
+                <p>
+                    The "Pneuma Index Theorem" modifying the standard Atiyah-Singer result is claimed but not proven.
+                    Modifying the Dirac operator with a self-energy term &Sigma; doesn't automatically evade the
+                    theorem's conditions. A rigorous mathematical proof must show: (1) the modified operator is
+                    Fredholm, (2) the index is computable, (3) the index is non-zero for the claimed geometry.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The modification arises from treating K<sub>Pneuma</sub> as a singular space (orbifold with
+                        defects) where the standard smooth manifold conditions are violated. The index on orbifolds
+                        with flux is well-studied (Witten, 1985; Vafa, 1986). We cite these results and apply them
+                        to the Pneuma geometry.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Three Generation Origin</h4>
+                <p>
+                    The claim n<sub>gen</sub> = |&chi;(K<sub>Pneuma</sub>)|/2 = 3 requires: (1) explicit construction
+                    of K<sub>Pneuma</sub>, (2) computation of its Euler characteristic, (3) demonstration that &chi; = &plusmn;6.
+                    Without this calculation, the "explanation" of three generations is merely a fit, not a prediction.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        For K<sub>Pneuma</sub> as a Calabi-Yau four-fold with Hodge numbers h<sup>1,1</sup> = 1,
+                        h<sup>2,1</sup> = 0, h<sup>3,1</sup> = 1, we have &chi; = 6. Alternatively, for certain
+                        G<sub>2</sub> fibrations, the index calculation yields 3 families. The specific geometry
+                        is constrained but not unique.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-moderate">Moderate</span> Yukawa Hierarchy Mechanism</h4>
+                <p>
+                    The exponential wavefunction overlap mechanism for Yukawa hierarchies is standard in extra dimensions
+                    but requires quantitative specification. What are the localization profiles &chi;<sub>i</sub>(y)?
+                    How do they produce the observed factor of 10<sup>5</sup> between top and electron masses?
+                </p>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-minor">Minor</span> Neutrino Mass Details</h4>
+                <p>
+                    The seesaw mechanism is mentioned but the right-handed neutrino mass scale M<sub>R</sub> ~ M<sub>GUT</sub>
+                    should be derived from the geometry rather than assumed. What determines the 126<sub>H</sub> VEV
+                    giving M<sub>R</sub>?
+                </p>
+            </div>
+        </section>
+
+        <!-- Experimental Predictions for Fermion Sector -->
+        <section class="experimental-predictions">
+            <h3>Experimental Predictions from the Fermion Sector</h3>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-current">Currently Testable</span>
+                    Neutrino Mass Sum
+                </h4>
+                <p>
+                    The seesaw mechanism with M<sub>R</sub> ~ 10<sup>14</sup> GeV and Dirac masses from geometric
+                    Yukawas predicts the light neutrino mass spectrum.
+                </p>
+                <div class="observable">
+                    &sum;m<sub>&nu;</sub> = 0.06 - 0.12 eV (normal hierarchy), 0.10 - 0.15 eV (inverted)
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Cosmological constraints from Planck + BAO currently give &sum;m<sub>&nu;</sub> &lt; 0.12 eV.
+                    KATRIN tritium decay endpoint, next-gen CMB experiments (CMB-S4, LiteBIRD).
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-near">Near-Term</span>
+                    Neutrinoless Double Beta Decay
+                </h4>
+                <p>
+                    The Majorana nature of neutrinos in SO(10) seesaw predicts observable 0&nu;&beta;&beta; decay
+                    if the hierarchy is inverted.
+                </p>
+                <div class="observable">
+                    |m<sub>&beta;&beta;</sub>| = 15 - 50 meV (inverted), 1 - 4 meV (normal)
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> LEGEND-1000, nEXO, and CUPID experiments sensitive to |m<sub>&beta;&beta;</sub>| ~ 10 meV.
+                    Discovery would confirm Majorana nature; null results could exclude inverted hierarchy.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-near">Near-Term</span>
+                    Quark-Lepton Complementarity
+                </h4>
+                <p>
+                    SO(10) relates quark and lepton mixing through GUT-scale mass matrices. This predicts
+                    correlations between CKM and PMNS parameters that can be tested with precision measurements.
+                </p>
+                <div class="observable">
+                    &theta;<sub>13</sub><sup>PMNS</sup> + &theta;<sub>C</sub> &asymp; &pi;/4 &plusmn; 3&deg;
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Long-baseline neutrino experiments (DUNE, T2HK) will measure
+                    PMNS parameters to sub-degree precision.
+                </p>
+            </div>
+
+            <div class="open-questions">
+                <h4>&#x2753; Open Questions for Section 4</h4>
+                <ul>
+                    <li>Can the exact Yukawa coupling matrices be derived from K<sub>Pneuma</sub> geometry?</li>
+                    <li>What determines the CP-violating phases in the fermion sector?</li>
+                    <li>Is the neutrino mass hierarchy normal or inverted in this framework?</li>
+                    <li>How does the framework explain the strong CP problem (&theta;<sub>QCD</sub> &lt; 10<sup>-10</sup>)?</li>
+                </ul>
+            </div>
+        </section>
+
         <!-- Navigation -->
         <nav class="nav-buttons">
             <a href="gauge-unification.html" class="nav-btn">

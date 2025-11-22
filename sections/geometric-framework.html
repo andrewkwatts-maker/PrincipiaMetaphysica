@@ -930,6 +930,158 @@
             </div>
         </section>
 
+        <!-- Peer Review Criticism Section -->
+        <section class="peer-review-section">
+            <div class="peer-review-header">
+                <div class="peer-review-icon">&#9888;</div>
+                <h3>Peer Review: Critical Analysis</h3>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Coset Space Dimension Mismatch</h4>
+                <p>
+                    The requirement dim(H) = 37 for the isotropy subgroup is problematic. No standard maximal subgroup
+                    of SO(10) has dimension 37. The largest maximal subgroups are SO(9) (dim=36) and SU(5)&times;U(1)
+                    (dim=25). The proposed construction H = SO(8)&times;U(1)&times;U(1)&times;discrete only reaches dim=30.
+                </p>
+                <p>
+                    This arithmetic gap must be resolved. Either the dimension counting is incorrect, or a non-standard
+                    coset construction is needed (e.g., via non-compact or non-semisimple groups), which introduces
+                    additional complications for compactness and stability.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The dimension-37 requirement can be satisfied by considering extensions with non-trivial
+                        centralizers. Specifically, SO(8)&times;U(1)&times;U(1) plus a 7-dimensional nilpotent extension
+                        achieves the required dimension. This structure is natural in fibered geometries where the base
+                        is a 7-dimensional G<sub>2</sub> manifold. Further geometric analysis is ongoing.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-major">Major</span> Moduli Stabilization Mechanism</h4>
+                <p>
+                    The moduli stabilization sources listed (flux, Casimir, non-perturbative) are qualitative.
+                    A concrete stabilization mechanism with explicit potential and vacuum structure is essential for
+                    phenomenological viability. Without it, the internal dimensions could destabilize, leading to
+                    decompactification or runaway behavior.
+                </p>
+                <p>
+                    The relationship between the Mashiach field &phi;<sub>M</sub> and volume modulus requires explicit
+                    derivation showing why it remains light while other moduli are stabilized at high masses.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        We acknowledge this is the weakest point of the current framework. The Mashiach field's lightness
+                        is postulated to arise from an approximate shift symmetry broken only by non-perturbative effects,
+                        analogous to the KKLT scenario. Section 6 develops the cosmological consequences under this assumption.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-moderate">Moderate</span> EFT Validity Regime</h4>
+                <p>
+                    The EFT treatment of non-renormalizability is standard but glosses over important questions.
+                    At what energy scale does the EFT break down? How does the tower of higher-dimension operators
+                    affect precision predictions? The claimed 10<sup>16</sup> GeV unification scale is uncomfortably
+                    close to where EFT corrections become order unity.
+                </p>
+                <div class="author-response">
+                    <h5>Author Response:</h5>
+                    <p>
+                        The EFT expansion is controlled by E/M<sub>*</sub> where M<sub>*</sub> ~ M<sub>GUT</sub>.
+                        For E &lt;&lt; M<sub>*</sub>, corrections are suppressed as (E/M<sub>*</sub>)<sup>n</sup>.
+                        Precision predictions for low-energy observables include estimated uncertainties from
+                        truncation of the EFT expansion, typically at the percent level.
+                    </p>
+                </div>
+            </div>
+
+            <div class="criticism-item">
+                <h4><span class="severity-badge severity-moderate">Moderate</span> Pneuma Condensate Formation</h4>
+                <p>
+                    The claim that the metric g<sub>mn</sub> &propto; &langle;&Psi;<sub>P</sub>&Gamma;<sub>mn</sub>&Psi;<sub>P</sub>&rangle;
+                    is intriguing but requires justification. Fermion bilinears typically transform as tensors, but
+                    relating them to a metric requires a specific map between spinor bilinears and symmetric 2-tensors.
+                    This map should be explicitly constructed and shown to be consistent with required positivity and
+                    signature properties.
+                </p>
+            </div>
+        </section>
+
+        <!-- Experimental Predictions for Geometric Framework -->
+        <section class="experimental-predictions">
+            <h3>Experimental Predictions from the Geometric Framework</h3>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-current">Currently Testable</span>
+                    4D Planck Mass Relation
+                </h4>
+                <p>
+                    The volume modulus relation M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &middot; V<sub>8</sub>
+                    constrains the fundamental scale given the observed Planck mass.
+                </p>
+                <div class="observable">
+                    M<sub>*</sub> = (1.5 - 3.0) &times; 10<sup>16</sup> GeV for V<sub>8</sub><sup>1/8</sup> ~ (10<sup>16</sup> GeV)<sup>-1</sup>
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Consistency check with proton decay bounds and gauge unification scale.
+                    Current Super-Kamiokande limits already constrain M<sub>*</sub> &gt; 10<sup>15.5</sup> GeV.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-near">Near-Term</span>
+                    Moduli Mass Spectrum
+                </h4>
+                <p>
+                    The framework predicts a specific hierarchy: one light modulus (Mashiach field, m ~ H<sub>0</sub>)
+                    with remaining moduli at m ~ M<sub>GUT</sub> scale. This mass gap is a distinctive prediction.
+                </p>
+                <div class="observable">
+                    m<sub>Mashiach</sub> ~ 10<sup>-33</sup> eV, m<sub>heavy</sub> ~ 10<sup>16</sup> GeV
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Fifth force searches, equivalence principle tests (MICROSCOPE, STEP),
+                    and cosmological constraints on light scalars from CMB and large-scale structure.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4>
+                    <span class="testability-badge testability-future">Future</span>
+                    Gravitational Sector Higher-Derivative Corrections
+                </h4>
+                <p>
+                    The dimensional reduction generates R<sup>2</sup> and R<sup>3</sup> corrections to Einstein gravity.
+                    These modify strong-field predictions for black holes and neutron stars.
+                </p>
+                <div class="observable">
+                    &delta;M<sub>BH</sub>/M<sub>BH</sub> ~ (r<sub>s</sub>/L<sub>*</sub>)<sup>2</sup> where L<sub>*</sub> = M<sub>*</sub><sup>-1</sup>
+                </div>
+                <p class="method">
+                    <strong>Method:</strong> Precision black hole shadow measurements (EHT), gravitational wave
+                    ringdown spectroscopy (LISA, 3G detectors), and X-ray timing of neutron stars.
+                </p>
+            </div>
+
+            <div class="open-questions">
+                <h4>&#x2753; Open Questions for Section 2</h4>
+                <ul>
+                    <li>What is the explicit form of the 37-dimensional isotropy subgroup H?</li>
+                    <li>Can the Pneuma condensate &rarr; metric map be derived from first principles?</li>
+                    <li>What stabilizes the Mashiach field at its current value?</li>
+                    <li>How do quantum corrections modify the classical Freund-Rubin ansatz?</li>
+                </ul>
+            </div>
+        </section>
+
         <section class="nav-section">
             <h3>Related Sections</h3>
             <div class="section-nav-links">
