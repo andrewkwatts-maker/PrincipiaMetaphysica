@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Section 7: Falsifiable Predictions via the Standard-Model Extension (SME) - Principia Metaphysica">
+    <title>Section 7: Predictions &amp; Tests - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* Section-specific styles */
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .subsection h3 {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.25rem;
+            border-bottom: 2px solid var(--border-primary);
+            padding-bottom: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .subsection h4 {
+            color: var(--accent-primary);
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+            font-weight: 600;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .subsection ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .subsection li {
+            margin-bottom: 0.5rem;
+        }
+
+        .equation-box {
+            background: rgba(139, 127, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 1.5rem 0;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            overflow-x: auto;
+        }
+
+        .equation-box code {
+            font-family: 'Crimson Text', serif;
+            font-size: inherit;
+        }
+
+        .sme-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 1.5rem 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .sme-table th {
+            background: var(--bg-secondary);
+            color: var(--accent-primary);
+            font-weight: 600;
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+
+        .sme-table td {
+            padding: 0.85rem 1rem;
+            border-bottom: 1px solid var(--border-primary);
+            color: var(--text-secondary);
+        }
+
+        .sme-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .sme-table tr:hover {
+            background: var(--bg-card-hover);
+        }
+
+        .sme-table code {
+            background: rgba(139, 127, 255, 0.15);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--accent-primary);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1));
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box h4 {
+            margin-top: 0;
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.5rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principia Metaphysica</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Sections</a></li>
+                    <li><a href="cosmology.html">Previous</a></li>
+                    <li><a href="conclusion.html">Next</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Sections</a>
+            <span class="separator">/</span>
+            <span>Section 7: Predictions</span>
+        </nav>
+
+        <div class="detail-header">
+            <h2>Section 7: Falsifiable Predictions via the Standard-Model Extension (SME)</h2>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 1.1rem;">
+                Experimental tests and observational constraints that can validate or falsify the Principia Metaphysica framework.
+            </p>
+        </div>
+
+        <!-- 7.1 The Particle Spectrum and Kaluza-Klein Towers -->
+        <section class="subsection" id="particle-spectrum">
+            <h3>7.1 The Particle Spectrum and Kaluza-Klein Towers</h3>
+
+            <h4>Massless Sector</h4>
+            <p>
+                The dimensional reduction of the (12,1) bulk produces a characteristic spectrum of particles in 4D.
+                The massless sector contains precisely the Standard Model gauge bosons and graviton, arising from
+                the zero modes of the higher-dimensional fields:
+            </p>
+            <ul>
+                <li><strong>Graviton (g<sub>&mu;&nu;</sub>):</strong> Zero mode of the 13D metric tensor</li>
+                <li><strong>Gauge bosons:</strong> Components A<sub>&mu;</sub><sup>a</sup> from internal Killing vectors</li>
+                <li><strong>Scalar moduli:</strong> Shape and volume moduli of K<sub>Pneuma</sub></li>
+            </ul>
+
+            <h4>GUT Scale Physics</h4>
+            <p>
+                The SO(10) unification scale emerges naturally from the compactification radius:
+            </p>
+            <div class="equation-box">
+                M<sub>GUT</sub> ~ 1/R<sub>compact</sub> ~ 10<sup>16</sup> GeV
+            </div>
+            <p>
+                At this scale, the Standard Model gauge couplings unify with gravitational strength interactions,
+                consistent with precision gauge coupling running.
+            </p>
+
+            <h4>Kaluza-Klein States</h4>
+            <p>
+                The tower of Kaluza-Klein excitations follows a characteristic mass spectrum:
+            </p>
+            <div class="equation-box">
+                m<sub>n</sub><sup>2</sup> = m<sub>0</sub><sup>2</sup> + n<sup>2</sup>/R<sup>2</sup>, &nbsp;&nbsp; n = 0, 1, 2, ...
+            </div>
+            <p>
+                These massive states, while too heavy for direct detection at current colliders, influence
+                low-energy physics through loop corrections and provide signatures at future experiments.
+            </p>
+        </section>
+
+        <!-- 7.2 Proton Decay -->
+        <section class="subsection" id="proton-decay">
+            <h3>7.2 Proton Decay</h3>
+
+            <p>
+                A smoking-gun prediction of SO(10) grand unification is proton decay, mediated by
+                superheavy gauge bosons (X, Y) with masses at the GUT scale.
+            </p>
+
+            <h4>Dominant Decay Channel: p &rarr; e<sup>+</sup> + &pi;<sup>0</sup></h4>
+            <p>
+                The dimension-6 operators responsible for this channel arise from X and Y boson exchange:
+            </p>
+            <div class="equation-box">
+                &Gamma;(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) ~ &alpha;<sub>GUT</sub><sup>2</sup> m<sub>p</sub><sup>5</sup> / M<sub>X</sub><sup>4</sup>
+            </div>
+
+            <h4>Predicted Lifetime</h4>
+            <div class="highlight-box">
+                <h4>Theoretical Prediction</h4>
+                <p>
+                    <strong>&tau;<sub>p</sub> ~ 10<sup>34</sup> - 10<sup>36</sup> years</strong>
+                </p>
+                <p>
+                    The exact value depends on the compactification details of K<sub>Pneuma</sub> and
+                    the threshold corrections from heavy states.
+                </p>
+            </div>
+
+            <h4>Experimental Status</h4>
+            <table class="sme-table">
+                <thead>
+                    <tr>
+                        <th>Experiment</th>
+                        <th>Channel</th>
+                        <th>Current Limit</th>
+                        <th>Future Sensitivity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Super-Kamiokande</td>
+                        <td>p &rarr; e<sup>+</sup>&pi;<sup>0</sup></td>
+                        <td>&tau; > 2.4 &times; 10<sup>34</sup> years</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>Hyper-Kamiokande</td>
+                        <td>p &rarr; e<sup>+</sup>&pi;<sup>0</sup></td>
+                        <td>-</td>
+                        <td>&tau; ~ 10<sup>35</sup> years</td>
+                    </tr>
+                    <tr>
+                        <td>DUNE</td>
+                        <td>p &rarr; K<sup>+</sup>&nu;</td>
+                        <td>-</td>
+                        <td>&tau; ~ 3 &times; 10<sup>34</sup> years</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                The framework predicts proton decay within reach of next-generation experiments,
+                providing a definitive test of the SO(10) GUT structure.
+            </p>
+        </section>
+
+        <!-- 7.3 Lorentz Violation from Compactification -->
+        <section class="subsection" id="lorentz-violation">
+            <h3>7.3 Lorentz Violation from Compactification</h3>
+
+            <p>
+                The reduction from the full SO(12,1) symmetry of the 13D bulk to the observed SO(3,1) Lorentz
+                symmetry in 4D generically introduces small residual Lorentz-violating effects.
+            </p>
+
+            <h4>Symmetry Breaking Chain</h4>
+            <div class="equation-box">
+                SO(12,1) &rarr; SO(3,1) &times; SO(8) &rarr; SO(3,1) &times; [SO(10) &sub; SO(8)]
+            </div>
+
+            <h4>Physical Origin</h4>
+            <p>
+                The compactification introduces preferred directions in the internal space, which can couple
+                to 4D physics through:
+            </p>
+            <ul>
+                <li><strong>Moduli vacuum expectation values:</strong> Non-trivial backgrounds break rotational invariance</li>
+                <li><strong>Warp factors:</strong> Position-dependent warping along extra dimensions</li>
+                <li><strong>Flux threading:</strong> Antisymmetric tensor fluxes stabilizing the compactification</li>
+            </ul>
+
+            <h4>Magnitude of Effects</h4>
+            <p>
+                The natural scale of Lorentz violation is set by the ratio of observable energies to the Planck scale:
+            </p>
+            <div class="equation-box">
+                &delta;<sub>LV</sub> ~ (E/M<sub>Pl</sub>)<sup>n</sup> ~ 10<sup>-17</sup> to 10<sup>-43</sup>
+            </div>
+            <p>
+                These tiny effects accumulate over cosmological distances, making astrophysical observations
+                particularly sensitive probes.
+            </p>
+        </section>
+
+        <!-- 7.4 The SME Framework -->
+        <section class="subsection" id="sme-framework">
+            <h3>7.4 The SME Framework</h3>
+
+            <p>
+                The Standard-Model Extension (SME) provides a comprehensive parameterization of all possible
+                Lorentz and CPT violating effects in particle physics and gravity.
+            </p>
+
+            <h4>General Structure</h4>
+            <p>
+                The SME Lagrangian extends the Standard Model with Lorentz-violating operators:
+            </p>
+            <div class="equation-box">
+                L<sub>SME</sub> = L<sub>SM</sub> + L<sub>gravity</sub> + &sum;<sub>d</sub> k<sup>(d)</sup><sub>&mu;&nu;...</sub> O<sup>(d)&mu;&nu;...</sup>
+            </div>
+            <p>
+                where k<sup>(d)</sup> are SME coefficients of mass dimension (4-d) controlling each operator.
+            </p>
+
+            <h4>Key SME Coefficient Classes</h4>
+            <table class="sme-table">
+                <thead>
+                    <tr>
+                        <th>Coefficient</th>
+                        <th>Sector</th>
+                        <th>Observable Effect</th>
+                        <th>Current Bound</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>c<sub>&mu;&nu;</sub></code></td>
+                        <td>Fermion</td>
+                        <td>Modified dispersion relations</td>
+                        <td>|c| < 10<sup>-15</sup></td>
+                    </tr>
+                    <tr>
+                        <td><code>a<sub>&mu;</sub></code></td>
+                        <td>Fermion (CPT-odd)</td>
+                        <td>Sidereal variations in atomic clocks</td>
+                        <td>|a| < 10<sup>-27</sup> GeV</td>
+                    </tr>
+                    <tr>
+                        <td><code>k<sub>F</sub></code></td>
+                        <td>Photon</td>
+                        <td>Birefringence in vacuum</td>
+                        <td>|k<sub>F</sub>| < 10<sup>-32</sup></td>
+                    </tr>
+                    <tr>
+                        <td><code>s<sub>&mu;&nu;</sub></code></td>
+                        <td>Gravity</td>
+                        <td>Gravitational wave dispersion</td>
+                        <td>|s| < 10<sup>-14</sup></td>
+                    </tr>
+                    <tr>
+                        <td><code>q<sub>&mu;&nu;&rho;&sigma;</sub></code></td>
+                        <td>Gravity (CPT-even)</td>
+                        <td>Short-range gravity tests</td>
+                        <td>|q| < 10<sup>-9</sup></td>
+                    </tr>
+                    <tr>
+                        <td><code>k<sub>AF</sub></code></td>
+                        <td>Photon (CPT-odd)</td>
+                        <td>Photon polarization rotation</td>
+                        <td>|k<sub>AF</sub>| < 10<sup>-43</sup> GeV</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Predictions from the Framework</h4>
+            <p>
+                The Principia Metaphysica compactification predicts specific relationships between SME coefficients,
+                arising from the geometric structure of K<sub>Pneuma</sub>:
+            </p>
+            <ul>
+                <li>CPT-even coefficients dominate over CPT-odd (from parity-even compactification)</li>
+                <li>Gravitational sector effects largest (direct coupling to extra dimensions)</li>
+                <li>Correlated signatures across multiple SME sectors</li>
+            </ul>
+        </section>
+
+        <!-- 7.5 Modified Gravitational Wave Dispersion -->
+        <section class="subsection" id="gw-dispersion">
+            <h3>7.5 Modified Gravitational Wave Dispersion</h3>
+
+            <p>
+                Gravitational waves provide an exceptionally clean probe of Lorentz invariance in the
+                gravitational sector, as they propagate over cosmological distances.
+            </p>
+
+            <h4>Modified Dispersion Relation</h4>
+            <p>
+                The framework predicts a modified dispersion relation for gravitational waves:
+            </p>
+            <div class="equation-box">
+                &omega;<sup>2</sup> = k<sup>2</sup>(1 + &xi;(k/M<sub>Pl</sub>)<sup>n</sup>)
+            </div>
+            <p>
+                where:
+            </p>
+            <ul>
+                <li><strong>&omega;:</strong> Angular frequency</li>
+                <li><strong>k:</strong> Wave number</li>
+                <li><strong>&xi;:</strong> Dimensionless coefficient (order unity from compactification)</li>
+                <li><strong>M<sub>Pl</sub>:</strong> Planck mass ~ 1.22 &times; 10<sup>19</sup> GeV</li>
+                <li><strong>n:</strong> Integer depending on operator dimension (typically n = 1 or 2)</li>
+            </ul>
+
+            <h4>Observable Consequences</h4>
+            <div class="highlight-box">
+                <h4>Frequency-Dependent Propagation Speed</h4>
+                <p>
+                    Different frequency components travel at different speeds:
+                </p>
+                <div class="equation-box" style="background: rgba(255, 255, 255, 0.1);">
+                    v<sub>g</sub>(k) = d&omega;/dk &asymp; 1 + (n+1)/2 &middot; &xi;(k/M<sub>Pl</sub>)<sup>n</sup>
+                </div>
+            </div>
+
+            <h4>Time Delay Between Frequencies</h4>
+            <p>
+                For a source at luminosity distance D:
+            </p>
+            <div class="equation-box">
+                &Delta;t ~ &xi; &middot; D/c &middot; ((&Delta;k)/M<sub>Pl</sub>)<sup>n</sup> &middot; k<sup>n</sup>/M<sub>Pl</sub><sup>n</sup>
+            </div>
+            <p>
+                For binary black hole mergers at z ~ 1, the accumulated phase shift can reach observable levels
+                in the frequency evolution of the gravitational wave signal.
+            </p>
+        </section>
+
+        <!-- 7.6 Constraints from GWTC-3 and Future Prospects -->
+        <section class="subsection" id="gwtc3-constraints">
+            <h3>7.6 Constraints from GWTC-3 and Future Prospects</h3>
+
+            <p>
+                The LIGO-Virgo-KAGRA Gravitational Wave Transient Catalog 3 (GWTC-3) contains 90 confident
+                detections that constrain Lorentz-violating effects.
+            </p>
+
+            <h4>Current Constraints from GWTC-3</h4>
+            <table class="sme-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Constraint</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GW speed (c<sub>GW</sub>/c - 1)</td>
+                        <td>< 10<sup>-15</sup></td>
+                        <td>From GW170817 + GRB 170817A</td>
+                    </tr>
+                    <tr>
+                        <td>Dispersion (A<sub>0</sub>)</td>
+                        <td>< 10<sup>-20</sup> eV</td>
+                        <td>Frequency-independent mass bound</td>
+                    </tr>
+                    <tr>
+                        <td>Lorentz violation (A<sub>&alpha;</sub>, &alpha; = 0.5)</td>
+                        <td>< 10<sup>-20</sup> eV<sup>1-&alpha;</sup></td>
+                        <td>Generic parameterization</td>
+                    </tr>
+                    <tr>
+                        <td>Lorentz violation (A<sub>&alpha;</sub>, &alpha; = 1)</td>
+                        <td>< 10<sup>-21</sup></td>
+                        <td>Linear dispersion</td>
+                    </tr>
+                    <tr>
+                        <td>Parity violation</td>
+                        <td>|&kappa;| < 0.1</td>
+                        <td>Circular polarization amplitude</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4>Future Experimental Prospects</h4>
+            <table class="sme-table">
+                <thead>
+                    <tr>
+                        <th>Experiment/Observatory</th>
+                        <th>Timeline</th>
+                        <th>Expected Improvement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>LIGO A+ Upgrade</td>
+                        <td>2025-2027</td>
+                        <td>2-3x sensitivity improvement</td>
+                    </tr>
+                    <tr>
+                        <td>Einstein Telescope</td>
+                        <td>2035+</td>
+                        <td>10x sensitivity, lower frequencies</td>
+                    </tr>
+                    <tr>
+                        <td>Cosmic Explorer</td>
+                        <td>2035+</td>
+                        <td>10x sensitivity, extended baseline</td>
+                    </tr>
+                    <tr>
+                        <td>LISA (Space-based)</td>
+                        <td>2037+</td>
+                        <td>mHz band, massive BH mergers</td>
+                    </tr>
+                    <tr>
+                        <td>Pulsar Timing Arrays</td>
+                        <td>Ongoing</td>
+                        <td>nHz band, complementary constraints</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="highlight-box">
+                <h4>Falsifiability Summary</h4>
+                <p>
+                    The Principia Metaphysica framework makes definite predictions that can be tested:
+                </p>
+                <ul>
+                    <li><strong>Proton decay:</strong> Observable at Hyper-K if &tau;<sub>p</sub> &lt; 10<sup>35</sup> years</li>
+                    <li><strong>GW dispersion:</strong> Sub-Planckian effects detectable with next-generation detectors</li>
+                    <li><strong>SME correlations:</strong> Specific patterns in coefficient ratios from geometry</li>
+                    <li><strong>Cosmic strings:</strong> Stochastic GW background from phase transitions</li>
+                </ul>
+                <p>
+                    Detection of any of these signatures would provide strong evidence for the framework;
+                    continued null results would progressively constrain the allowed parameter space.
+                </p>
+            </div>
+        </section>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-buttons">
+            <a href="cosmology.html" class="nav-btn">&larr; Section 6: Cosmology</a>
+            <a href="index.html" class="nav-btn">All Sections</a>
+            <a href="conclusion.html" class="nav-btn">Section 8: Conclusion &rarr;</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                Contact: <a href="mailto:AndrewKWatts@Gmail.com" style="color: var(--accent-primary);">AndrewKWatts@Gmail.com</a>
+            </span>
+        </p>
+    </footer>
+</body>
+</html>
