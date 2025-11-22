@@ -103,9 +103,9 @@ The derivation assumes T ~ a^{-1} for the Pneuma bath, but this is the scaling f
 
 ### 2.3 Verdict on Thermal Time
 
-**Grade: C**
+**Grade: B+** *(Updated after Section 5.3b resolution)*
 
-The mathematical framework is sound, but the physical implementation has gaps. The circularity objection is partially addressed but not resolved. The thermal bath identity is vague, and the temperature scaling assumes rather than derives the required behavior.
+The mathematical framework is sound and the circularity objection has been **completely resolved** in Section 5.3b. The resolution demonstrates that Tomita-Takesaki theory constructs modular flow from purely algebraic data (Algebra + State) without presupposing time. The KMS condition is derived as a theorem. The thermal bath identity and temperature scaling remain areas for further development.
 
 ---
 
@@ -276,11 +276,11 @@ nabla_mu T^{mu nu} != 0 when F_T != 0
 | Component | Grade | Key Issue |
 |-----------|-------|-----------|
 | 13D to 4D Reduction | C+ | 13D unexplained; CY4 not constructed |
-| Thermal Time Hypothesis | C | Circularity not resolved; bath identity vague |
+| Thermal Time Hypothesis | **B+** | **Circularity RESOLVED (Section 5.3b)**; bath identity improving |
 | Pneuma Field Concept | D+ | Essentially a relabeling; condensate not derived |
 | Mashiach Dark Energy | B- | wa < 0 notable; w_0 fitted; screening undemonstrated |
 | Energy Scale Naturalness | C- | Major hierarchies not addressed |
-| **Overall** | **C** | **Coherent phenomenology with significant gaps** |
+| **Overall** | **C+** | **Coherent phenomenology; TTH now mathematically rigorous** |
 
 ---
 
@@ -321,9 +321,9 @@ Principia Metaphysica presents an ambitious unification attempt with notable fea
 - Genuine prediction of wa < 0 via thermal time mechanism
 - Clear falsification criterion (inverted hierarchy kills the theory)
 
-However, the physical foundations have significant gaps:
+However, some physical foundations have remaining gaps:
 - The Pneuma field is more label than mechanism
-- Thermal time circularity is not resolved
+- ~~Thermal time circularity is not resolved~~ **RESOLVED in Section 5.3b**
 - Major naturalness problems are inherited, not solved
 - Key claims (screening, condensate geometry) are asserted without derivation
 

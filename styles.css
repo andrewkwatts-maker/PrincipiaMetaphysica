@@ -1008,6 +1008,7 @@ ul li::marker {
     position: relative;
     cursor: help;
     transition: all 0.3s ease;
+    overflow: visible; /* Allow tooltips to extend beyond container */
 }
 
 .interactive-formula:hover {
@@ -1085,23 +1086,42 @@ ul li::marker {
     font-size: 0.7em;
 }
 
-/* Variable tooltip */
+/* Variable tooltip - FIXED: prevent clipping by outer containers */
 .var-tooltip {
     position: absolute;
     bottom: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(-8px);
     width: 280px;
+    max-width: 90vw; /* Prevent overflow on mobile */
     background: var(--bg-card);
     border: 1px solid rgba(139, 127, 255, 0.4);
     border-radius: 12px;
     padding: 1rem;
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
-    z-index: 1000;
+    z-index: 9999; /* Higher z-index to appear above all containers */
     opacity: 0;
     visibility: hidden;
     transition: all 0.25s ease;
     pointer-events: none;
+}
+
+/* Ensure formula containers don't clip tooltips */
+.formula-var {
+    position: relative;
+    overflow: visible;
+}
+
+.formula-display {
+    overflow: visible;
+}
+
+/* Parent containers with formulas should allow tooltip overflow */
+.subsection,
+.theorem-box,
+.highlight-box,
+.equation-box {
+    overflow: visible;
 }
 
 .formula-var:hover .var-tooltip {
