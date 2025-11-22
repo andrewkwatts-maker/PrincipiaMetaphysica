@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beginner's Guide to Principia Metaphysica</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .guide-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .intro-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1));
+            border: 2px solid rgba(139, 127, 255, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .intro-box h1 {
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro-box .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .concept-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+        }
+
+        .concept-card .icon {
+            font-size: 2rem;
+        }
+
+        .simple-explanation {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .analogy-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1));
+            border-left: 4px solid #51cf66;
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analogy-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .expandable {
+            margin-top: 1.5rem;
+        }
+
+        .expand-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-secondary);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-primary);
+        }
+
+        .expand-header:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--accent-primary);
+        }
+
+        .expand-header h4 {
+            color: var(--accent-primary);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .expand-arrow {
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            color: var(--accent-primary);
+        }
+
+        .expand-content {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(139, 127, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+            margin-top: -1px;
+        }
+
+        .expand-content.active {
+            display: block;
+        }
+
+        .expand-header.active .expand-arrow {
+            transform: rotate(180deg);
+        }
+
+        .key-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            color: white;
+            font-weight: 700;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            margin: 0.25rem;
+        }
+
+        .visual-diagram {
+            text-align: center;
+            padding: 2rem;
+            background: var(--bg-secondary);
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .step-flow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .step-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.2));
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .step-arrow {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+        }
+
+        .prediction-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .prediction-card.testable {
+            border-left-color: #51cf66;
+        }
+
+        .prediction-card.fitted {
+            border-left-color: #ffc107;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+        }
+
+        .tag.testable {
+            background: rgba(81, 207, 102, 0.2);
+            color: #51cf66;
+        }
+
+        .tag.fitted {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+        }
+
+        .tag.derived {
+            background: rgba(139, 127, 255, 0.2);
+            color: #8b7fff;
+        }
+
+        .honest-note {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 159, 67, 0.1));
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .honest-note h3 {
+            color: #ffc107;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .download-section {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(139, 127, 255, 0.1));
+            border-radius: 16px;
+            margin: 3rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .download-btn-large {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .download-btn-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(139, 127, 255, 0.3);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.85rem 1.5rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .step-flow {
+                flex-direction: column;
+            }
+            .step-arrow {
+                transform: rotate(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Principia Metaphysica</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sections/index.html">Full Theory</a></li>
+                    <li><a href="principia-metaphysica-paper.html">Technical Paper</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="guide-container">
+        <div class="intro-box">
+            <h1>The Beginner's Guide</h1>
+            <p class="subtitle">Understanding the Universe's Deepest Secrets - No Physics Degree Required</p>
+            <p style="margin-top: 1rem; color: var(--text-muted);">
+                This guide explains the Principia Metaphysica theory in everyday language.
+                Click "Dig Deeper" on any section to see the actual physics.
+            </p>
+        </div>
+
+        <!-- What is this theory about? -->
+        <div class="concept-card">
+            <h2><span class="icon">&#x1F30C;</span> What Is This Theory About?</h2>
+
+            <p class="simple-explanation">
+                Imagine you're trying to solve a giant puzzle about the universe. Scientists have two pieces
+                that don't quite fit together: <strong>gravity</strong> (how planets orbit and apples fall) and
+                <strong>particle physics</strong> (how atoms work). This theory proposes they're both part of
+                the same picture - they just look different because we're only seeing part of the story.
+            </p>
+
+            <div class="analogy-box">
+                <h4>&#x1F4A1; Think of it like this:</h4>
+                <p>
+                    Imagine a 3D object casting a 2D shadow. The shadow looks flat and simple, but the
+                    real object is richer and more complex. This theory says our universe is like that
+                    shadow - we live in 4 dimensions (3 space + 1 time), but the "real" universe has
+                    <strong>13 dimensions</strong>. The extra dimensions are curled up so small we can't see them.
+                </p>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header" onclick="toggleExpand(this)">
+                    <h4>&#x1F52C; Dig Deeper: The Technical Details</h4>
+                    <span class="expand-arrow">&#x25BC;</span>
+                </div>
+                <div class="expand-content">
+                    <p>
+                        The theory proposes a 13-dimensional spacetime with signature (12,1) - meaning 12 space-like
+                        dimensions and 1 time-like dimension. This compactifies as:
+                    </p>
+                    <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0;">
+                        M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub>
+                    </p>
+                    <p>
+                        where M<sup>4</sup> is our observable 4D spacetime and K<sub>Pneuma</sub> is an 8-dimensional
+                        internal manifold (a Calabi-Yau four-fold with Euler characteristic &chi; = 72).
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why exactly 3 types of matter? -->
+        <div class="concept-card">
+            <h2><span class="icon">&#x1F9EC;</span> Why Are There Exactly 3 Types of Matter?</h2>
+
+            <p class="simple-explanation">
+                One of the biggest mysteries in physics: why do we have exactly 3 "generations" of particles?
+                We have the electron, muon, and tau - three versions of the same thing but with different masses.
+                The same pattern repeats for quarks and neutrinos. Why 3? Why not 2 or 5 or 100?
+            </p>
+
+            <p class="simple-explanation">
+                This theory says <strong>the number 3 comes from the shape of the hidden dimensions</strong>.
+                Just like how a donut has one hole and a pretzel has three, the curled-up extra dimensions
+                have a specific "shape" that mathematically forces exactly 3 generations.
+            </p>
+
+            <div class="visual-diagram">
+                <p style="margin-bottom: 1rem; color: var(--text-secondary);">The Shape of Hidden Dimensions Determines Particle Generations:</p>
+                <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <div style="text-align: center;">
+                        <div style="font-size: 3rem;">&#x1F369;</div>
+                        <p>Shape with<br>"Euler number" = 72</p>
+                    </div>
+                    <div style="font-size: 2rem; color: var(--accent-primary);">&#x27A1;</div>
+                    <div style="text-align: center;">
+                        <div class="key-number">72 &divide; 24 = 3</div>
+                        <p style="margin-top: 0.5rem;">Exactly 3 generations!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analogy-box">
+                <h4>&#x1F4A1; Analogy: Musical Instruments</h4>
+                <p>
+                    A guitar string can only vibrate in certain ways - it can make a C note or a D note, but
+                    not "C and a half." The shape of the string determines what notes are possible. Similarly,
+                    the shape of extra dimensions determines how many types of particles can exist. The math
+                    says: this particular shape only allows exactly 3 types.
+                </p>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header" onclick="toggleExpand(this)">
+                    <h4>&#x1F52C; Dig Deeper: The Index Theorem</h4>
+                    <span class="expand-arrow">&#x25BC;</span>
+                </div>
+                <div class="expand-content">
+                    <p>
+                        In F-theory compactification on a Calabi-Yau 4-fold, the number of chiral fermion
+                        generations is given by:
+                    </p>
+                    <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.3rem; margin: 1rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
+                        n<sub>gen</sub> = &chi;(CY4) / 24
+                    </p>
+                    <p>
+                        The Euler characteristic &chi; is computed from Hodge numbers:
+                    </p>
+                    <p style="text-align: center; font-family: 'Crimson Text', serif; margin: 1rem 0;">
+                        &chi; = 4 + 2h<sup>1,1</sup> - 4h<sup>2,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup>
+                    </p>
+                    <p>
+                        For K<sub>Pneuma</sub>: h<sup>1,1</sup>=2, h<sup>2,1</sup>=0, h<sup>3,1</sup>=29, h<sup>2,2</sup>=6
+                    </p>
+                    <p style="text-align: center;">
+                        &chi; = 4 + 4 + 0 + 58 + 6 = <strong>72</strong> &nbsp;&rarr;&nbsp; n<sub>gen</sub> = 72/24 = <strong>3</strong>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Where does time come from? -->
+        <div class="concept-card">
+            <h2><span class="icon">&#x23F0;</span> Where Does Time Come From?</h2>
+
+            <p class="simple-explanation">
+                Here's a strange idea: <strong>time might not be fundamental</strong>. Instead of being a
+                basic ingredient of reality, time might emerge from something deeper - like how "temperature"
+                isn't a fundamental thing but emerges from atoms bouncing around.
+            </p>
+
+            <p class="simple-explanation">
+                This theory connects time to <strong>entropy</strong> - the tendency of things to become
+                more disordered. Why does time seem to flow forward? Because entropy increases. The "arrow
+                of time" is really the "arrow of increasing disorder."
+            </p>
+
+            <div class="visual-diagram">
+                <p style="margin-bottom: 1rem; color: var(--text-secondary);">Time Emerges from Thermodynamics:</p>
+                <div class="step-flow">
+                    <div class="step-box">
+                        <div style="font-size: 1.5rem;">&#x1F525;</div>
+                        <p>Heat & Entropy</p>
+                    </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box">
+                        <div style="font-size: 1.5rem;">&#x2699;&#xFE0F;</div>
+                        <p>Mathematical Flow</p>
+                    </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box">
+                        <div style="font-size: 1.5rem;">&#x23F1;&#xFE0F;</div>
+                        <p>Experienced Time</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analogy-box">
+                <h4>&#x1F4A1; Analogy: River Flow</h4>
+                <p>
+                    Time is like a river's current. We don't need to explain the current separately - it
+                    emerges from water flowing downhill due to gravity. Similarly, time "flows" because
+                    the universe is moving toward higher entropy. The direction of time IS the direction
+                    of increasing disorder.
+                </p>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header" onclick="toggleExpand(this)">
+                    <h4>&#x1F52C; Dig Deeper: Thermal Time Hypothesis</h4>
+                    <span class="expand-arrow">&#x25BC;</span>
+                </div>
+                <div class="expand-content">
+                    <p>
+                        Following Connes-Rovelli, time emerges via the modular automorphism group of a
+                        thermal state. Given a quantum state &rho; with von Neumann entropy S, the modular
+                        Hamiltonian K generates time evolution:
+                    </p>
+                    <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0;">
+                        &rho; = e<sup>-K</sup>/Z &nbsp;&nbsp;;&nbsp;&nbsp; &alpha;<sub>t</sub>(A) = e<sup>iKt</sup>Ae<sup>-iKt</sup>
+                    </p>
+                    <p>
+                        The thermal time &tau; is identified with the modular parameter. In the cosmological
+                        context, thermal time coincides with proper time in the semiclassical limit, with
+                        corrections of order 10<sup>-61</sup>.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dark Energy -->
+        <div class="concept-card">
+            <h2><span class="icon">&#x1F31F;</span> What Is Dark Energy and Why Is the Universe Accelerating?</h2>
+
+            <p class="simple-explanation">
+                Scientists discovered something shocking in 1998: the universe isn't just expanding - it's
+                speeding up! Something is pushing galaxies apart faster and faster. We call this mysterious
+                force "dark energy," but nobody really knows what it is.
+            </p>
+
+            <p class="simple-explanation">
+                This theory proposes dark energy comes from a <strong>leftover field from the extra dimensions</strong> -
+                called the "Mashiach field." As the universe expands and cools, this field slowly rolls
+                down an energy hill, pushing space apart in the process.
+            </p>
+
+            <div class="analogy-box">
+                <h4>&#x1F4A1; Analogy: A Ball Rolling Down a Hill</h4>
+                <p>
+                    Imagine a ball rolling down a very gentle slope. As it rolls, it releases energy. The
+                    Mashiach field is like this ball - it's slowly rolling toward its lowest energy state,
+                    and as it rolls, it releases energy that pushes the universe apart.
+                </p>
+            </div>
+
+            <div class="honest-note">
+                <h3>&#x26A0;&#xFE0F; Honesty Note</h3>
+                <p>
+                    The theory matches recent dark energy measurements (DESI 2024), but we need to be honest:
+                </p>
+                <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
+                    <li><strong>w<sub>0</sub> = -0.85</strong> is <span class="tag fitted">FITTED</span> to match DESI data (not predicted from first principles)</li>
+                    <li>The theory is in <strong>6-sigma tension</strong> with older Planck satellite data</li>
+                    <li>What IS genuinely derived: why dark energy changes over time (w<sub>a</sub> &lt; 0)</li>
+                </ul>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header" onclick="toggleExpand(this)">
+                    <h4>&#x1F52C; Dig Deeper: The Thermal Time Mechanism</h4>
+                    <span class="expand-arrow">&#x25BC;</span>
+                </div>
+                <div class="expand-content">
+                    <p>The dark energy equation of state evolves as:</p>
+                    <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
+                        w(z) = w<sub>0</sub>[1 + (&alpha;<sub>T</sub>/3)ln(1+z)]
+                    </p>
+                    <p>Where &alpha;<sub>T</sub> = 2.5 is <strong>derived</strong> from thermal time scalings:</p>
+                    <ul style="margin: 1rem 0 1rem 1.5rem;">
+                        <li>Thermal relaxation time: &tau; &prop; a (increases as universe cools)</li>
+                        <li>Hubble time: H &prop; a<sup>-3/2</sup> (matter era)</li>
+                        <li>&alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = 2.5</li>
+                    </ul>
+                    <p>This naturally gives w<sub>a</sub> &lt; 0, which DESI observes but standard models can't explain.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Predictions -->
+        <div class="concept-card">
+            <h2><span class="icon">&#x1F52D;</span> Can We Test This Theory?</h2>
+
+            <p class="simple-explanation">
+                A good scientific theory must make predictions we can check. Here's what this theory predicts,
+                and how honest we should be about each one:
+            </p>
+
+            <div class="prediction-card testable">
+                <h4><span class="tag testable">GENUINE PREDICTION</span> Neutrino Mass Hierarchy</h4>
+                <p>
+                    <strong>Prediction:</strong> Neutrinos follow a "normal hierarchy" - the lightest one is much
+                    lighter than the heaviest.
+                </p>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                    <strong>Test:</strong> JUNO experiment (2027-2028) will measure this directly.
+                </p>
+                <p style="margin-top: 0.5rem; color: #51cf66;">
+                    <strong>If we're wrong:</strong> Finding "inverted hierarchy" would falsify this prediction.
+                </p>
+            </div>
+
+            <div class="prediction-card fitted">
+                <h4><span class="tag fitted">FITTED</span> Dark Energy Value (w<sub>0</sub>)</h4>
+                <p>
+                    <strong>Value:</strong> w<sub>0</sub> &asymp; -0.85
+                </p>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                    <strong>Honesty:</strong> This was adjusted to match DESI 2024 data. It's not a prediction -
+                    it's a parameter we tuned.
+                </p>
+            </div>
+
+            <div class="prediction-card testable">
+                <h4><span class="tag derived">DERIVED</span> Dark Energy Evolution (w<sub>a</sub> &lt; 0)</h4>
+                <p>
+                    <strong>Prediction:</strong> Dark energy changes over time in a specific way (w<sub>a</sub> &lt; 0).
+                </p>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                    <strong>Why this matters:</strong> Standard models predict the opposite sign! The thermal
+                    time mechanism naturally gives the right sign.
+                </p>
+            </div>
+
+            <div class="prediction-card">
+                <h4><span class="tag">TESTABLE</span> Proton Decay</h4>
+                <p>
+                    <strong>Prediction:</strong> Protons eventually decay (lifetime ~10<sup>34</sup>-10<sup>36</sup> years)
+                </p>
+                <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                    <strong>Caveat:</strong> This range is too wide to be definitive - most similar theories
+                    predict similar values.
+                </p>
+            </div>
+
+            <div class="expandable">
+                <div class="expand-header" onclick="toggleExpand(this)">
+                    <h4>&#x1F52C; Dig Deeper: Pre-Registered Predictions</h4>
+                    <span class="expand-arrow">&#x25BC;</span>
+                </div>
+                <div class="expand-content">
+                    <p><strong>Locked predictions (cannot be adjusted after data):</strong></p>
+                    <table style="width: 100%; margin: 1rem 0; border-collapse: collapse;">
+                        <tr style="background: var(--bg-secondary);">
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border-primary);">Prediction</th>
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border-primary);">Value</th>
+                            <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border-primary);">Test</th>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">Neutrino hierarchy</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">Normal</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">JUNO 2027</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">w<sub>a</sub> sign</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">Negative</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">DESI DR2 2025</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">w(z) form</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">ln(1+z)</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">Euclid 2026+</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="concept-card">
+            <h2><span class="icon">&#x1F3AF;</span> The Big Picture: Summary</h2>
+
+            <div class="visual-diagram">
+                <div class="step-flow" style="margin-bottom: 1.5rem;">
+                    <div class="step-box">
+                        <div style="font-size: 1.3rem;">13 Dimensions</div>
+                    </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box">
+                        <div style="font-size: 1.3rem;">Hidden Shape<br>(&chi; = 72)</div>
+                    </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box">
+                        <div style="font-size: 1.3rem;">3 Generations<br>+ Forces</div>
+                    </div>
+                </div>
+                <div class="step-flow">
+                    <div class="step-box">
+                        <div style="font-size: 1.3rem;">Entropy</div>
+                    </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box">
+                        <div style="font-size: 1.3rem;">Time Emerges</div>
+                    </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box">
+                        <div style="font-size: 1.3rem;">Universe<br>Accelerates</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="honest-note">
+                <h3>&#x2696;&#xFE0F; Final Honesty Assessment</h3>
+                <p><strong>What this theory does well:</strong></p>
+                <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
+                    <li>Explains why there are exactly 3 generations of particles (from topology)</li>
+                    <li>Connects gravity and particle physics in a unified framework</li>
+                    <li>Provides a mechanism for dark energy that matches observations</li>
+                    <li>Makes at least one genuinely testable prediction (neutrino hierarchy)</li>
+                </ul>
+                <p><strong>Where we're being honest about limitations:</strong></p>
+                <ul style="margin: 0.5rem 0 0 1.5rem; color: #ffc107;">
+                    <li>Some parameters are fitted to data, not predicted</li>
+                    <li>There's tension with some observations (Planck CMB)</li>
+                    <li>The specific shape of extra dimensions is assumed, not derived</li>
+                    <li>Many predictions are too imprecise to truly test</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Downloads -->
+        <div class="download-section">
+            <h2 style="margin-bottom: 1rem;">Download This Guide</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Save this explanation for offline reading or sharing
+            </p>
+            <a href="beginners-guide-printable.html" class="download-btn-large">
+                &#x1F4C4; Simple Guide (Print/PDF)
+            </a>
+            <a href="principia-metaphysica-paper.html" class="download-btn-large" style="background: linear-gradient(135deg, #51cf66, #40c057);">
+                &#x1F4DA; Full Technical Paper
+            </a>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-btn">&larr; Home</a>
+            <a href="sections/index.html" class="nav-btn">Full Theory Sections</a>
+            <a href="principia-metaphysica-paper.html" class="nav-btn">Technical Paper &rarr;</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong> - Beginner's Guide<br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                Contact: <a href="mailto:AndrewKWatts@Gmail.com" style="color: var(--accent-primary);">AndrewKWatts@Gmail.com</a>
+            </span>
+        </p>
+    </footer>
+
+    <script>
+        function toggleExpand(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
