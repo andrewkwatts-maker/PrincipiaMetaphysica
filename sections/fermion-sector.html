@@ -262,6 +262,28 @@
             <p class="subtitle">From 12-Dimensional Spinors to Chiral Standard Model Fermions</p>
         </section>
 
+        <!-- Continuity Note: Connection to Previous Sections -->
+        <div class="concept-highlight" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(139, 127, 255, 0.08)); border-left: 4px solid #4facfe; margin-bottom: 2rem; padding: 1.25rem; border-radius: 0 12px 12px 0;">
+            <h4 style="color: #4facfe; margin-bottom: 0.5rem;">Connection to Previous Sections</h4>
+            <p style="margin-bottom: 0.75rem; color: var(--text-secondary);">
+                This section continues the development of the Principia Metaphysica framework using the same
+                geometric structures introduced earlier:
+            </p>
+            <ul style="margin: 0 0 0.75rem 1.5rem; color: var(--text-secondary);">
+                <li><strong>K<sub>Pneuma</sub></strong> is the same 8-dimensional internal manifold from Sections 2 and 3,
+                    whose isometries give rise to the SO(10) gauge group.</li>
+                <li><strong>The 13D bulk</strong> M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub> &times; R (thermal time)
+                    is the complete spacetime framework established in Section 2.</li>
+                <li><strong>The Pneuma field</strong> &Psi;<sub>P</sub> that generates K<sub>Pneuma</sub> (Section 1)
+                    now enters as the source of Standard Model fermions.</li>
+            </ul>
+            <p style="margin: 0; color: var(--text-secondary);">
+                The key question we address: how does compactification on K<sub>Pneuma</sub> produce the
+                <em>chiral</em> fermion spectrum of the Standard Model, when generic Kaluza-Klein reduction
+                gives non-chiral (vector-like) fermions?
+            </p>
+        </div>
+
         <!-- Section 4.1 -->
         <div class="subsection">
             <h2>4.1 Fermions in 12 Dimensions</h2>
@@ -281,6 +303,30 @@
             <div class="equation-box">
                 {&Gamma;<sup>M</sup>, &Gamma;<sup>N</sup>} = 2&eta;<sup>MN</sup> &middot; I
                 <div class="label">M, N = 0, 1, 2, ..., 12 with signature (&minus;, +, +, ..., +)</div>
+            </div>
+
+            <!-- Anticommutator Notation Explanation -->
+            <div class="definition-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe; padding: 1.25rem; margin: 1rem 0 1.5rem 0; border-radius: 0 12px 12px 0;">
+                <h5 style="color: #4facfe; margin-bottom: 0.5rem;">Mathematical Notation: The Anticommutator {A, B}</h5>
+                <p style="margin-bottom: 0.75rem; color: var(--text-secondary);">
+                    The curly braces denote the <strong>anticommutator</strong> of two operators:
+                </p>
+                <div style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.15rem; margin: 0.75rem 0; color: var(--text-primary);">
+                    {A, B} &equiv; AB + BA
+                </div>
+                <p style="margin-bottom: 0.75rem; color: var(--text-secondary);">
+                    This is in contrast to the <strong>commutator</strong> [A, B] = AB &minus; BA. The distinction is crucial:
+                </p>
+                <ul style="margin: 0 0 0.75rem 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    <li><strong>Bosonic operators</strong> (like position and momentum) satisfy commutation relations: [x, p] = i&hbar;</li>
+                    <li><strong>Fermionic operators</strong> (like Dirac &gamma;-matrices) satisfy <em>anti</em>commutation relations</li>
+                    <li>The anticommutation {&Gamma;<sup>M</sup>, &Gamma;<sup>N</sup>} = 2&eta;<sup>MN</sup> ensures the Dirac equation
+                        squares to give the Klein-Gordon equation: (i&part;&#x338;)<sup>2</sup> = &minus;&part;<sup>2</sup></li>
+                </ul>
+                <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem; font-style: italic;">
+                    The factor of 2 and metric &eta;<sup>MN</sup> ensure proper Lorentz covariance. In (12,1) dimensions,
+                    &eta;<sup>MN</sup> = diag(&minus;1, +1, +1, ..., +1) with 12 positive entries and 1 negative (time).
+                </p>
             </div>
 
             <p>

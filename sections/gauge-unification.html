@@ -305,6 +305,31 @@
             </div>
 
             <h3>Matter Unification in the 16-Representation</h3>
+
+            <!-- Representation Explanation for Graduate Students -->
+            <div class="definition-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe; padding: 1.25rem; margin: 1rem 0 1.5rem 0; border-radius: 0 12px 12px 0;">
+                <h5 style="color: #4facfe; margin-bottom: 0.5rem;">What is a "Representation" in Group Theory?</h5>
+                <p style="margin-bottom: 0.75rem; color: var(--text-secondary);">
+                    A <strong>representation</strong> of a symmetry group G is a way to realize the abstract group
+                    elements as concrete matrices acting on a vector space. For physics, this means: given a symmetry
+                    transformation g &in; G, a representation tells us how fields transform: &phi; &rarr; D(g)&phi;,
+                    where D(g) is a matrix.
+                </p>
+                <p style="margin-bottom: 0.75rem; color: var(--text-secondary);">
+                    Different representations have different dimensions (sizes of the matrices):
+                </p>
+                <ul style="margin: 0 0 0.75rem 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
+                    <li>The <strong>10</strong> of SO(10): 10-dimensional (vector representation)</li>
+                    <li>The <strong>16</strong> of SO(10): 16-dimensional (spinor representation)</li>
+                    <li>The <strong>45</strong> of SO(10): 45-dimensional (adjoint representation, used for gauge bosons)</li>
+                </ul>
+                <p style="margin: 0; color: var(--text-secondary);">
+                    The 16-spinor is special because it is <em>irreducible</em> (cannot be decomposed further under SO(10))
+                    and <em>chiral</em> (the 16 and its conjugate <span style="text-decoration: overline;">16</span> are distinct).
+                    This mathematical structure perfectly matches one generation of Standard Model fermions.
+                </p>
+            </div>
+
             <p>
                 The most compelling feature of SO(10) is that <em>all fermions of a single generation</em>&mdash;including
                 the right-handed neutrino&mdash;fit precisely into a single <span class="highlight-text">16-dimensional
@@ -1804,6 +1829,28 @@
                 </ul>
             </div>
         </section>
+
+        <!-- Transition to Section 4: Chirality -->
+        <div class="concept-highlight" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.12), rgba(139, 127, 255, 0.08)); border-left: 4px solid var(--accent-secondary); margin: 2rem 0; padding: 1.5rem; border-radius: 0 12px 12px 0;">
+            <h4 style="color: var(--accent-secondary); margin-bottom: 0.75rem;">Looking Ahead: The Chirality Problem</h4>
+            <p style="margin-bottom: 0.75rem;">
+                Section 3 has established the SO(10) gauge structure and its breaking to the Standard Model.
+                However, a crucial question remains: <strong>how do we obtain chiral fermions?</strong>
+            </p>
+            <p style="margin-bottom: 0.75rem;">
+                The 16-dimensional spinor representation elegantly unifies all Standard Model fermions,
+                but standard Kaluza-Klein reduction produces <em>vector-like</em> spectra where left-handed
+                and right-handed fermions appear in equal numbers. The observed weak interactions, however,
+                couple <em>only</em> to left-handed fermions&mdash;a profound asymmetry called chirality.
+            </p>
+            <p style="margin-bottom: 0;">
+                <strong>Section 4</strong> addresses this challenge through the <em>Pneuma mechanism</em>:
+                the fermionic condensate that generates K<sub>Pneuma</sub> simultaneously breaks left-right
+                symmetry, producing the required chiral spectrum. The same topology that gives SO(10)
+                isometries also determines the number of generations through an index theorem, explaining
+                why we observe exactly three families of quarks and leptons.
+            </p>
+        </div>
 
         <!-- Navigation -->
         <nav class="nav-buttons">
