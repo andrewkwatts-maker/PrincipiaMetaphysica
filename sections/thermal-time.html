@@ -229,6 +229,7 @@
                 <li><a href="#tth">5.2 The Thermal Time Hypothesis (TTH)</a></li>
                 <li><a href="#tomita-takesaki">5.3 Tomita-Takesaki Modular Theory and KMS States</a></li>
                 <li><a href="#block-universe">5.4 Reconciling Block Universe with Subjective Time</a></li>
+                <li><a href="#thermal-cosmic-time">5.4b Thermal Time and Cosmic Time Approximation</a></li>
                 <li><a href="#statistical-mechanics">5.5 Statistical Mechanics of the Pneuma Field</a></li>
                 <li><a href="#unity-consciousness">5.6 A Physical Basis for Unity of Consciousness</a></li>
                 <li><a href="#alpha-derivation">5.7 First-Principles Derivation of the Thermal Time Parameter &alpha;<sub>T</sub></a></li>
@@ -715,6 +716,95 @@
             </div>
         </section>
 
+        <!-- NEW SECTION: Thermal Time vs Cosmic Time -->
+        <section class="detail-section" id="thermal-cosmic-time">
+            <h3>5.4b Thermal Time and Cosmic Time: Reconciling Emergence with Cosmology</h3>
+
+            <div class="note-box" style="background: rgba(79, 172, 254, 0.1); border-left: 4px solid var(--info);">
+                <h5 style="color: var(--info);">Addressing a Key Consistency Issue</h5>
+                <p>
+                    If time is emergent from modular flow, how can the Friedmann equations use cosmic time t
+                    as an independent variable? This apparent circularity is resolved by recognizing that
+                    <strong>cosmic time is an effective description</strong> valid in the semiclassical regime.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>The Semiclassical Approximation</h4>
+                <p>
+                    In the cosmological regime, three conditions conspire to make thermal time coincide
+                    with proper time along comoving worldlines:
+                </p>
+
+                <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>High occupation numbers:</strong> The Pneuma condensate involves macroscopic
+                        field amplitudes where quantum fluctuations are suppressed as 1/&radic;N.</li>
+                    <li><strong>Cosmological symmetry:</strong> Homogeneity and isotropy select a preferred
+                        foliation; the modular flow aligns with the cosmic rest frame.</li>
+                    <li><strong>Thermal equilibrium:</strong> The Pneuma bath temperature T tracks the
+                        cosmic expansion, maintaining quasi-static thermal states.</li>
+                </ol>
+
+                <div class="equation-box numbered">
+                    <span class="eq-content">
+                        t<sub>thermal</sub> = &alpha;<sub>T</sub> &times; t<sub>cosmic</sub> + O(l<sub>Pl</sub>/L<sub>Hubble</sub>)
+                    </span>
+                    <span class="eq-number">(5.4b.1)</span>
+                </div>
+
+                <p>
+                    The correction terms are of order (l<sub>Pl</sub>/L<sub>Hubble</sub>) ~ 10<sup>-61</sup>,
+                    utterly negligible for cosmological applications. Thus, using cosmic time t in the
+                    Friedmann equations is <strong>self-consistent</strong> within the semiclassical limit.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>Why the Friedmann Equations Work</h4>
+                <p>
+                    The Friedmann equations emerge from Einstein's field equations under the assumption
+                    of homogeneity and isotropy. In the thermal time picture:
+                </p>
+
+                <div class="theorem-box">
+                    <h5>Emergence of Friedmann Dynamics</h5>
+                    <ul>
+                        <li><strong>Fundamental level:</strong> Wheeler-DeWitt equation H&Psi; = 0 (timeless)</li>
+                        <li><strong>Semiclassical level:</strong> WKB approximation yields Hamilton-Jacobi
+                            form with emergent time parameter</li>
+                        <li><strong>Classical level:</strong> Friedmann equations with cosmic time t,
+                            where t is identified with the modular flow parameter</li>
+                    </ul>
+                </div>
+
+                <p>
+                    The key insight is that the <strong>modular Hamiltonian K = -log(&rho;)</strong> for a
+                    thermal state of the Pneuma field, when restricted to cosmological configurations,
+                    generates evolution equivalent to proper time flow along comoving geodesics.
+                </p>
+            </div>
+
+            <div class="subsection">
+                <h4>When the Approximation Breaks Down</h4>
+                <p>
+                    The identification t<sub>thermal</sub> &asymp; t<sub>cosmic</sub> fails when:
+                </p>
+                <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
+                    <li><strong>Near singularities:</strong> At the Big Bang, quantum gravity effects
+                        dominate and the semiclassical approximation fails</li>
+                    <li><strong>Black hole interiors:</strong> Near r = 0, thermal and geometric time
+                        decouple significantly</li>
+                    <li><strong>Extreme horizons:</strong> Accelerated observers (Unruh effect) experience
+                        different thermal time from inertial observers</li>
+                </ul>
+
+                <p>
+                    In these regimes, one must return to the full quantum treatment where the Wheeler-DeWitt
+                    equation or its Pneuma field generalization applies.
+                </p>
+            </div>
+        </section>
+
         <section class="detail-section" id="statistical-mechanics">
             <h3>5.5 Statistical Mechanics of the Pneuma Field</h3>
 
@@ -909,9 +999,38 @@
 
             <div class="subsection">
                 <h4>5.7.1 Physical Setup: Scalar Field in Thermal Bath</h4>
+
+                <!-- NEW: Thermal Bath Identification -->
+                <div class="definition-box" style="background: rgba(81, 207, 102, 0.1); border-left: 4px solid #28a745;">
+                    <h5 style="color: #28a745;">Thermal Bath Identification: Pneuma Condensate Excitations</h5>
+                    <p>
+                        The thermal bath that drives Mashiach field dissipation is identified as
+                        <strong>quasi-particle excitations of the Pneuma condensate</strong>. This identification
+                        is motivated by:
+                    </p>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li><strong>Geometric origin:</strong> Both the Mashiach field (volume modulus) and
+                            Pneuma excitations originate from K<sub>Pneuma</sub>, ensuring natural coupling</li>
+                        <li><strong>Late-time relevance:</strong> Unlike the CMB (decoupled at z ~ 1100),
+                            Pneuma excitations remain coupled to the dark sector at all redshifts</li>
+                        <li><strong>Fermionic statistics:</strong> The Pauli exclusion principle bounds the
+                            bath entropy, avoiding infrared divergences in dissipation calculations</li>
+                    </ul>
+                    <p style="margin-top: 0.75rem;">
+                        <strong>Why not CMB or dark radiation?</strong>
+                    </p>
+                    <ul style="margin-top: 0.25rem; padding-left: 1.5rem; color: var(--text-secondary);">
+                        <li><em>CMB photons:</em> Decouple at recombination; cannot drive late-time dissipation</li>
+                        <li><em>Dark radiation:</em> Constrained by N<sub>eff</sub> &lt; 3.3; would require
+                            fine-tuning to be relevant without violating bounds</li>
+                        <li><em>Pneuma excitations:</em> Naturally present in the dark sector; temperature
+                            tracks expansion via T &prop; a<sup>-1</sup></li>
+                    </ul>
+                </div>
+
                 <p>
-                    Consider a Mashiach field &chi; (scalar dark energy field) coupled to a thermal bath
-                    consisting of Pneuma field excitations. The temperature of this bath evolves with the
+                    Consider a Mashiach field &chi; (scalar dark energy field) coupled to this thermal bath
+                    of Pneuma excitations. The effective temperature of the bath evolves with the
                     cosmic scale factor as:
                 </p>
 
