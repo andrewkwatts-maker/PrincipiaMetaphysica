@@ -181,9 +181,9 @@
             <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 1.1rem;">
                 Experimental tests and observational constraints that can validate or falsify the Principia Metaphysica framework.
             </p>
-            <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.15)); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 8px;">
-                <span style="font-weight: 600; color: #51cf66;">Theory Grade: B+</span>
-                <span style="color: var(--text-muted); font-size: 0.9rem;">| Testable framework with resolved theoretical issues</span>
+            <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 1rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 159, 67, 0.15)); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 8px;">
+                <span style="font-weight: 600; color: #ffc107;">Theory Grade: B-</span>
+                <span style="color: var(--text-muted); font-size: 0.9rem;">| Some fitted parameters; limited unique predictions</span>
             </div>
         </div>
 
@@ -205,27 +205,27 @@
                     <tr>
                         <td>CY4 construction</td>
                         <td><span style="color: #51cf66; font-weight: 600;">&#10003; RESOLVED</span></td>
-                        <td>&chi; = 72 CY4 or quotient construction</td>
+                        <td>&chi; = 72 CY4 via F-theory exclusively</td>
                     </tr>
                     <tr>
-                        <td>Index formula</td>
+                        <td>Hodge number derivation</td>
                         <td><span style="color: #51cf66; font-weight: 600;">&#10003; RESOLVED</span></td>
-                        <td>n<sub>gen</sub> = &chi;/24 (F-theory formula)</td>
-                    </tr>
-                    <tr>
-                        <td>DESI tension</td>
-                        <td><span style="color: #51cf66; font-weight: 600;">&#10003; RESOLVED</span></td>
-                        <td>Thermal time w(z) with &alpha;<sub>T</sub> &asymp; 2.5</td>
-                    </tr>
-                    <tr>
-                        <td>Neutrino mass</td>
-                        <td><span style="color: #51cf66; font-weight: 600;">&#10003; RESOLVED</span></td>
-                        <td>Normal hierarchy via sequential dominance</td>
+                        <td>n<sub>gen</sub> = &chi;/24 = 72/24 = 3 (F-theory formula)</td>
                     </tr>
                     <tr>
                         <td>&alpha;<sub>T</sub> derivation</td>
                         <td><span style="color: #51cf66; font-weight: 600;">&#10003; RESOLVED</span></td>
-                        <td>First principles from &Gamma;/H scaling</td>
+                        <td>First principles from &Gamma;/H scaling (&alpha;<sub>T</sub> &asymp; 2.5)</td>
+                    </tr>
+                    <tr>
+                        <td>DESI tension</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">&#9888; PARTIAL</span></td>
+                        <td>w<sub>0</sub> fitted to data; w<sub>a</sub> semi-derived</td>
+                    </tr>
+                    <tr>
+                        <td>Neutrino mass</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">&#9888; PARTIAL</span></td>
+                        <td>Normal hierarchy predicted; mass sum not unique</td>
                     </tr>
                 </tbody>
             </table>
@@ -352,57 +352,62 @@
             </p>
         </section>
 
-        <!-- 7.2b Dark Energy Predictions - UPDATED -->
-        <section class="subsection" id="dark-energy-predictions" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.06), rgba(79, 172, 254, 0.04)); border: 1px solid rgba(81, 207, 102, 0.2);">
-            <h3>7.2b Dark Energy: Thermal Time Predictions
-                <span class="testability-badge testability-current" style="margin-left: 0.5rem;">DESI 2024 COMPATIBLE</span>
+        <!-- 7.2b Dark Energy Predictions - UPDATED with HONESTY -->
+        <section class="subsection" id="dark-energy-predictions" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.06), rgba(255, 159, 67, 0.04)); border: 1px solid rgba(255, 193, 7, 0.2);">
+            <h3>7.2b Dark Energy: Thermal Time Parameters
+                <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(255, 193, 7, 0.2); color: #ffc107;">PARTIALLY FITTED</span>
             </h3>
 
-            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 1px solid rgba(81, 207, 102, 0.3);">
-                <h4 style="color: #51cf66; margin-top: 0;">Corrected Prediction - Agreement within 1&sigma;!</h4>
+            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 159, 67, 0.1)); border: 1px solid rgba(255, 193, 7, 0.3);">
+                <h4 style="color: #ffc107; margin-top: 0;">Honesty Note: Fitted vs Derived Parameters</h4>
                 <p>
-                    The thermal time formulation of entropic gravity yields dark energy equation of state
-                    parameters in excellent agreement with DESI 2024 observations:
+                    The DESI 2024 compatibility is <strong>partial</strong>. The functional form w(z) is derived
+                    from first principles, but individual parameters have different epistemic status:
                 </p>
+                <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
+                    <li><strong>w<sub>0</sub> &asymp; -0.85:</strong> <span style="color: #ff7b7b;">FITTED</span> to DESI data (not derived from theory)</li>
+                    <li><strong>w<sub>a</sub> &asymp; -0.71:</strong> <span style="color: #ffc107;">SEMI-DERIVED</span> from &alpha;<sub>T</sub> once w<sub>0</sub> is fixed</li>
+                    <li><strong>&alpha;<sub>T</sub> &asymp; 2.5:</strong> <span style="color: #51cf66;">DERIVED</span> from &Gamma;/H scaling (genuine prediction)</li>
+                </ul>
             </div>
 
             <h4>Dark Energy Equation of State</h4>
             <p>
                 The redshift-dependent equation of state arises from thermal time scaling:
             </p>
-            <div class="equation-box" style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3);">
+            <div class="equation-box" style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3);">
                 w(z) = w<sub>0</sub>[1 + (&alpha;<sub>T</sub>/3)ln(1+z)]
             </div>
             <p>where &alpha;<sub>T</sub> &asymp; 2.5 is derived from first principles via &Gamma;/H scaling.</p>
 
-            <h4>Predicted Parameters</h4>
+            <h4>Parameter Status Table</h4>
             <table class="sme-table">
                 <thead>
                     <tr>
                         <th>Parameter</th>
-                        <th style="text-decoration: line-through; color: var(--text-muted);">Old (Wrong)</th>
-                        <th style="color: #51cf66;">New (Correct)</th>
-                        <th>DESI 2024 Observation</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                        <th>DESI 2024 Data</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>w<sub>0</sub></td>
-                        <td style="text-decoration: line-through; color: var(--text-muted);">-0.98</td>
-                        <td style="color: #51cf66; font-weight: 600;"><strong>-0.85 &plusmn; 0.05</strong></td>
+                        <td>-0.85 &plusmn; 0.05</td>
+                        <td><span style="color: #ff7b7b; font-weight: 600;">FITTED</span></td>
                         <td>-0.827 &plusmn; 0.063</td>
                     </tr>
                     <tr>
                         <td>w<sub>a</sub></td>
-                        <td style="text-decoration: line-through; color: var(--text-muted);">+0.05</td>
-                        <td style="color: #51cf66; font-weight: 600;"><strong>-0.7 &plusmn; 0.2</strong></td>
+                        <td>-0.71 &plusmn; 0.2</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">SEMI-DERIVED</span></td>
                         <td>-0.75<sup>+0.29</sup><sub>-0.25</sub></td>
                     </tr>
                     <tr>
                         <td>&alpha;<sub>T</sub></td>
-                        <td style="color: var(--text-muted);">-</td>
-                        <td style="color: #51cf66; font-weight: 600;"><strong>&asymp; 2.5</strong></td>
-                        <td>Derived from w(z) fit</td>
+                        <td>&asymp; 2.5</td>
+                        <td><span style="color: #51cf66; font-weight: 600;">DERIVED</span></td>
+                        <td>Consistent with w(z) fit</td>
                     </tr>
                 </tbody>
             </table>
@@ -415,56 +420,97 @@
                     creating an effective quintessence-like behavior without introducing new scalar fields.
                 </p>
                 <p style="margin-top: 0.5rem; font-style: italic; color: var(--text-muted);">
-                    This represents a <strong>post-diction</strong> rather than prediction, as the DESI data
-                    informed the parameter refinement, but the functional form w(z) was derived from first principles.
+                    <strong>Epistemic status:</strong> The w(z) functional form is a genuine theoretical prediction.
+                    However, w<sub>0</sub> was fitted to DESI data after the fact, making the overall agreement
+                    a <strong>post-diction</strong> rather than a prediction. Only &alpha;<sub>T</sub> represents
+                    a true first-principles derivation.
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(255, 87, 87, 0.08); border: 1px solid rgba(255, 87, 87, 0.25);">
+                <h4 style="color: #ff7b7b;">Falsification Criterion</h4>
+                <p>
+                    <strong>If w<sub>a</sub> &gt; 0 is confirmed by future observations, the thermal time mechanism is falsified.</strong>
+                </p>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    The thermal time formulation requires w<sub>a</sub> &lt; 0 (dark energy weakening with time).
+                    A confirmed positive w<sub>a</sub> would rule out this mechanism regardless of w<sub>0</sub>.
                 </p>
             </div>
         </section>
 
-        <!-- 7.2c Neutrino Mass Predictions - UPDATED -->
+        <!-- 7.2c Neutrino Mass Predictions - UPDATED with HONESTY -->
         <section class="subsection" id="neutrino-mass-predictions" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.06), rgba(139, 127, 255, 0.04)); border: 1px solid rgba(79, 172, 254, 0.2);">
             <h3>7.2c Neutrino Mass Hierarchy
-                <span class="testability-badge testability-near" style="margin-left: 0.5rem;">NORMAL HIERARCHY REQUIRED</span>
+                <span class="testability-badge testability-near" style="margin-left: 0.5rem;">GENUINE PREDICTION</span>
             </h3>
 
-            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(255, 87, 87, 0.1), rgba(255, 159, 67, 0.05)); border: 1px solid rgba(255, 87, 87, 0.25);">
-                <h4 style="color: #ff7b7b; margin-top: 0;">Inverted Hierarchy Excluded</h4>
+            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 1px solid rgba(81, 207, 102, 0.3);">
+                <h4 style="color: #51cf66; margin-top: 0;">The ONLY Genuinely Unique Falsifiable Prediction</h4>
                 <p>
-                    DESI 2024 + Planck data exclude inverted hierarchy at &gt;95% CL due to stringent
-                    upper bounds on &Sigma;m<sub>&nu;</sub>. The framework now exclusively predicts
-                    <strong>normal hierarchy</strong> via sequential dominance mechanism.
+                    The normal hierarchy requirement is the <strong>only truly unique falsifiable prediction</strong>
+                    of this theory. Unlike dark energy parameters (fitted) or neutrino mass sum (not unique),
+                    the hierarchy prediction can decisively confirm or falsify the framework.
                 </p>
             </div>
 
-            <h4>Predicted Mass Spectrum (Normal Hierarchy Only)</h4>
+            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 159, 67, 0.05)); border: 1px solid rgba(255, 193, 7, 0.25);">
+                <h4 style="color: #ffc107; margin-top: 0;">Honesty Note: Mass Sum Not Unique</h4>
+                <p>
+                    The prediction &Sigma;m<sub>&nu;</sub> = 0.060 eV is <strong>NOT unique to this theory</strong>.
+                    It follows from:
+                </p>
+                <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
+                    <li>Oscillation data (&Delta;m<sup>2</sup><sub>21</sub>, &Delta;m<sup>2</sup><sub>31</sub>) - established physics</li>
+                    <li>Assumption m<sub>1</sub> &rarr; 0 - common in many models</li>
+                    <li>Normal hierarchy assumption - this IS the unique prediction</li>
+                </ul>
+                <p style="margin-top: 0.5rem; font-style: italic; color: var(--text-muted);">
+                    Any theory predicting NH + minimal m<sub>1</sub> gives the same mass sum. The unique content
+                    is the <strong>mechanism</strong> (sequential dominance from SO(10) breaking) that requires NH.
+                </p>
+            </div>
+
+            <h4>Mass Spectrum (Normal Hierarchy Only)</h4>
             <table class="sme-table">
                 <thead>
                     <tr>
                         <th>Parameter</th>
-                        <th>Predicted Value</th>
+                        <th>Value</th>
+                        <th>Status</th>
                         <th>Current Constraint</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>&Sigma;m<sub>&nu;</sub></td>
-                        <td style="color: #4facfe; font-weight: 600;"><strong>0.060 &plusmn; 0.003 eV</strong></td>
+                        <td>0.060 &plusmn; 0.003 eV</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">NOT UNIQUE</span></td>
                         <td>&lt; 0.072 eV (DESI+Planck)</td>
                     </tr>
                     <tr>
                         <td>m<sub>1</sub></td>
                         <td>&asymp; 0.001 eV</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">ASSUMED</span></td>
                         <td>-</td>
                     </tr>
                     <tr>
                         <td>m<sub>2</sub></td>
                         <td>&asymp; 0.009 eV</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">FROM DATA</span></td>
                         <td>&Delta;m<sup>2</sup><sub>21</sub> = 7.5 &times; 10<sup>-5</sup> eV<sup>2</sup></td>
                     </tr>
                     <tr>
                         <td>m<sub>3</sub></td>
-                        <td style="color: #4facfe; font-weight: 600;"><strong>&asymp; 0.050 eV</strong></td>
+                        <td>&asymp; 0.050 eV</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">FROM DATA</span></td>
                         <td>&Delta;m<sup>2</sup><sub>31</sub> = 2.5 &times; 10<sup>-3</sup> eV<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Normal Hierarchy</strong></td>
+                        <td>m<sub>1</sub> &lt; m<sub>2</sub> &lt; m<sub>3</sub></td>
+                        <td><span style="color: #51cf66; font-weight: 600;">GENUINE PREDICTION</span></td>
+                        <td>Favored by DESI+Planck</td>
                     </tr>
                 </tbody>
             </table>
@@ -481,15 +527,16 @@
                 where the sequential dominance structure of M<sub>R</sub> ensures m<sub>1</sub> &Lt; m<sub>2</sub> &Lt; m<sub>3</sub>.
             </p>
 
-            <div class="highlight-box" style="background: rgba(255, 87, 87, 0.08); border: 1px solid rgba(255, 87, 87, 0.25);">
-                <h4 style="color: #ff7b7b;">Falsification Criterion</h4>
-                <p>
-                    <strong>If inverted hierarchy is experimentally confirmed, this theory is falsified.</strong>
+            <div class="highlight-box" style="background: rgba(255, 87, 87, 0.12); border: 2px solid rgba(255, 87, 87, 0.4);">
+                <h4 style="color: #ff7b7b;">Primary Falsification Criterion</h4>
+                <p style="font-size: 1.1rem;">
+                    <strong>If Inverted Hierarchy is experimentally confirmed: THEORY FALSIFIED</strong>
                 </p>
-                <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;">
-                    Upcoming experiments JUNO (2025+) and DUNE (2028+) will definitively determine the mass hierarchy.
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+                    This is the <strong>cleanest and most important</strong> test of the theory.
+                    JUNO (2025+) and DUNE (2028+) will definitively determine the mass hierarchy.
                     An inverted hierarchy measurement (m<sub>3</sub> &lt; m<sub>1</sub> &asymp; m<sub>2</sub>) would
-                    constitute a clean falsification of the Principia Metaphysica neutrino sector.
+                    constitute unambiguous falsification of the Principia Metaphysica framework.
                 </p>
             </div>
         </section>
@@ -750,43 +797,114 @@
                 </tbody>
             </table>
 
-            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08)); border: 1px solid rgba(81, 207, 102, 0.25);">
-                <h4 style="color: #51cf66;">Falsifiability Summary - Updated</h4>
+            <div class="highlight-box" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 159, 67, 0.08)); border: 1px solid rgba(255, 193, 7, 0.25);">
+                <h4 style="color: #ffc107;">Falsifiability Summary - Honest Assessment</h4>
                 <p>
-                    The Principia Metaphysica framework makes definite, falsifiable predictions:
+                    Honest categorization of predictions by epistemic status:
                 </p>
                 <ul>
-                    <li><strong>Proton decay:</strong> Observable at Hyper-K if &tau;<sub>p</sub> &lt; 10<sup>35</sup> years</li>
-                    <li><strong style="color: #51cf66;">Dark energy (CONFIRMED):</strong> w<sub>0</sub> = -0.85 &plusmn; 0.05 (DESI 2024 agreement within 1&sigma;)</li>
-                    <li><strong style="color: #ff7b7b;">Neutrino hierarchy (FALSIFIABLE):</strong> Normal hierarchy required - inverted hierarchy observation falsifies theory</li>
-                    <li><strong>GW dispersion:</strong> Sub-Planckian effects detectable with next-generation detectors</li>
-                    <li><strong>SME correlations:</strong> Specific patterns in coefficient ratios from geometry</li>
+                    <li><strong style="color: #51cf66;">n<sub>gen</sub> = 3 (DERIVED):</strong> Genuine prediction from &chi; = 72 via F-theory formula</li>
+                    <li><strong style="color: #51cf66;">Normal Hierarchy (PREDICTION):</strong> Only genuinely unique falsifiable prediction</li>
+                    <li><strong style="color: #ffc107;">w<sub>a</sub> &lt; 0 (SEMI-DERIVED):</strong> Follows from &alpha;<sub>T</sub> derivation</li>
+                    <li><strong style="color: #ff7b7b;">w<sub>0</sub> &asymp; -0.85 (FITTED):</strong> Adjusted to match DESI data</li>
+                    <li><strong style="color: #ff7b7b;">&Sigma;m<sub>&nu;</sub> = 0.060 eV (NOT UNIQUE):</strong> Standard result for NH + minimal m<sub>1</sub></li>
                 </ul>
-                <p>
-                    <strong>Key falsification criteria:</strong>
+                <p style="margin-top: 1rem;">
+                    <strong>Specific Falsification Criteria:</strong>
                 </p>
                 <ul style="margin-top: 0.5rem;">
-                    <li>Inverted neutrino hierarchy confirmed &rarr; Theory falsified</li>
-                    <li>&Sigma;m<sub>&nu;</sub> &gt; 0.08 eV measured &rarr; Theory falsified</li>
-                    <li>&tau;<sub>p</sub> &gt; 10<sup>37</sup> years established &rarr; Theory falsified</li>
-                    <li>w<sub>0</sub> &gt; -0.75 or w<sub>0</sub> &lt; -0.95 confirmed &rarr; Thermal time model falsified</li>
+                    <li style="color: #ff7b7b;"><strong>If Inverted Hierarchy confirmed &rarr; THEORY FALSIFIED</strong> (primary test)</li>
+                    <li style="color: #ff7b7b;"><strong>If w<sub>a</sub> &gt; 0 confirmed &rarr; THERMAL TIME MECHANISM FALSIFIED</strong></li>
+                    <li style="color: #ffc107;"><strong>If proton decay NOT seen by &tau; &gt; 10<sup>37</sup> years &rarr; Theory in tension</strong> (not immediate falsification)</li>
+                    <li style="color: var(--text-muted);">&Sigma;m<sub>&nu;</sub> constraints do not uniquely test this theory</li>
                 </ul>
             </div>
         </section>
 
-        <!-- PDF Analysis Update - REVISED -->
-        <section class="highlight-box" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1)); border: 1px solid rgba(81, 207, 102, 0.3);">
-            <h4 style="color: #51cf66; margin-bottom: 1rem;">Update: Round 2 Resolutions Applied</h4>
+        <!-- Honesty Note Section - Round 3 -->
+        <section class="subsection" id="honesty-note" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(255, 159, 67, 0.05)); border: 2px solid rgba(255, 193, 7, 0.3);">
+            <h3 style="background: linear-gradient(135deg, #ffc107, #ff9f43); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Honesty Note: Round 3 Peer Review Assessment</h3>
+
+            <p style="font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.5rem;">
+                In the interest of scientific integrity, we provide a transparent assessment of what this theory
+                actually predicts versus what has been fitted or derived from existing data.
+            </p>
+
+            <h4 style="color: #ffc107;">Parameter Classification</h4>
+            <table class="sme-table" style="margin-bottom: 1.5rem;">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                        <th>Status</th>
+                        <th>Explanation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>w<sub>0</sub></td>
+                        <td>&asymp; -0.85</td>
+                        <td><span style="color: #ff7b7b; font-weight: 600;">FITTED</span></td>
+                        <td>Adjusted to match DESI 2024 data; not derived from theory</td>
+                    </tr>
+                    <tr>
+                        <td>w<sub>a</sub></td>
+                        <td>&asymp; -0.71</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">SEMI-DERIVED</span></td>
+                        <td>Follows from &alpha;<sub>T</sub> once w<sub>0</sub> is fixed</td>
+                    </tr>
+                    <tr>
+                        <td>&Sigma;m<sub>&nu;</sub></td>
+                        <td>0.060 eV</td>
+                        <td><span style="color: #ffc107; font-weight: 600;">NOT UNIQUE</span></td>
+                        <td>From oscillation data + m<sub>1</sub> &rarr; 0; standard result</td>
+                    </tr>
+                    <tr>
+                        <td>n<sub>gen</sub> = 3</td>
+                        <td>&chi;/24 = 72/24</td>
+                        <td><span style="color: #51cf66; font-weight: 600;">DERIVED</span></td>
+                        <td>Genuine prediction from F-theory formula</td>
+                    </tr>
+                    <tr>
+                        <td>Normal Hierarchy</td>
+                        <td>m<sub>1</sub> &lt; m<sub>2</sub> &lt; m<sub>3</sub></td>
+                        <td><span style="color: #51cf66; font-weight: 600;">PREDICTION</span></td>
+                        <td>Only genuinely unique falsifiable prediction</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 style="color: #ffc107;">Key Clarifications</h4>
+            <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.9;">
+                <li><strong>DESI Compatibility is PARTIAL:</strong> The w(z) functional form is derived, but w<sub>0</sub> was fitted post-hoc. This is a post-diction, not a prediction.</li>
+                <li><strong>Neutrino Mass Sum is NOT Unique:</strong> Any model predicting NH + minimal m<sub>1</sub> gives &Sigma;m<sub>&nu;</sub> &asymp; 0.06 eV. This value has no discriminatory power.</li>
+                <li><strong>The ONLY Genuinely Unique Falsifiable Prediction:</strong> The normal neutrino mass hierarchy. If IH is confirmed, the theory is falsified. All other "predictions" are either fitted, derived from standard physics, or too imprecise to be decisive.</li>
+            </ul>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); margin-top: 1.5rem;">
+                <h4 style="color: var(--accent-primary);">What Would Strengthen the Theory</h4>
+                <ul style="color: var(--text-secondary); margin-left: 1rem; line-height: 1.8;">
+                    <li>Deriving w<sub>0</sub> from first principles (currently fitted)</li>
+                    <li>Making a unique prediction for &Sigma;m<sub>&nu;</sub> beyond the NH minimum</li>
+                    <li>Predicting specific proton decay lifetime (not a 2 order of magnitude range)</li>
+                    <li>Quantitative SME coefficient predictions (currently qualitative)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PDF Analysis Update - REVISED with Honest Assessment -->
+        <section class="highlight-box" style="margin-bottom: 2rem; background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(255, 159, 67, 0.1)); border: 1px solid rgba(255, 193, 7, 0.3);">
+            <h4 style="color: #ffc107; margin-bottom: 1rem;">Update: Round 3 Honest Assessment</h4>
             <p style="color: var(--text-secondary); line-height: 1.8;">
-                Critical theoretical issues identified in peer review have been systematically resolved:
+                Following peer review, we acknowledge the following limitations while noting genuine progress:
             </p>
             <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem; line-height: 1.8;">
-                <li><strong style="color: #51cf66;">Dark energy:</strong> w<sub>0</sub> = -0.85 &plusmn; 0.05, w<sub>a</sub> = -0.7 &plusmn; 0.2 (DESI 2024 compatible within 1&sigma;)</li>
-                <li><strong style="color: #51cf66;">Neutrino mass:</strong> Normal hierarchy only, &Sigma;m<sub>&nu;</sub> = 0.060 &plusmn; 0.003 eV via sequential dominance</li>
-                <li><strong style="color: #51cf66;">Generation number:</strong> n<sub>gen</sub> = &chi;/24 = 72/24 = 3 (F-theory formula corrected)</li>
-                <li><strong style="color: #51cf66;">&alpha;<sub>T</sub> derivation:</strong> First principles from &Gamma;/H scaling in thermal time formulation</li>
-                <li><strong style="color: #ffd43b;">SME coefficients:</strong> Qualitative correlations; explicit ratios remain future work</li>
-                <li><strong style="color: #ffd43b;">Proton decay:</strong> Range 10<sup>34</sup>-10<sup>36</sup> years (unavoidable theoretical uncertainty)</li>
+                <li><strong style="color: #51cf66;">Hodge number:</strong> n<sub>gen</sub> = &chi;/24 = 72/24 = 3 (F-theory) - <span style="color: #51cf66;">RESOLVED</span></li>
+                <li><strong style="color: #51cf66;">&alpha;<sub>T</sub> derivation:</strong> First principles from &Gamma;/H scaling - <span style="color: #51cf66;">RESOLVED</span></li>
+                <li><strong style="color: #51cf66;">CY4 construction:</strong> F-theory exclusively - <span style="color: #51cf66;">RESOLVED</span></li>
+                <li><strong style="color: #ffc107;">Dark energy w<sub>0</sub>:</strong> Fitted to DESI (not derived) - <span style="color: #ffc107;">ACKNOWLEDGED</span></li>
+                <li><strong style="color: #ffc107;">Neutrino mass sum:</strong> Not unique to this theory - <span style="color: #ffc107;">ACKNOWLEDGED</span></li>
+                <li><strong style="color: #ffc107;">Proton decay:</strong> Range 10<sup>34</sup>-10<sup>36</sup> years (imprecise) - <span style="color: #ffc107;">ACKNOWLEDGED</span></li>
             </ul>
             <p style="color: var(--text-secondary); margin-top: 1rem;">
                 See the <a href="theory-analysis.html" style="color: var(--accent-primary);">Theory Analysis</a> and
@@ -867,86 +985,90 @@
             </div>
         </section>
 
-        <!-- Summary of All Testable Predictions -->
+        <!-- Summary of All Testable Predictions - HONEST ASSESSMENT -->
         <section class="experimental-predictions">
-            <h3>Consolidated Prediction Summary</h3>
+            <h3>Consolidated Prediction Summary - Honest Assessment</h3>
 
             <div class="prediction-card" style="border-left: 4px solid #51cf66;">
                 <h4>
-                    <span class="testability-badge testability-current">Currently Testable</span>
-                    Tier 1: Existing Data Constraints
+                    <span class="testability-badge testability-current">Genuine Predictions</span>
+                    Tier 1: Derived or Unique to This Theory
                 </h4>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
-                    <li>Proton lifetime &tau;<sub>p</sub> &gt; 2.4 &times; 10<sup>34</sup> years (Super-K) <span style="color: #51cf66;">&#10003;</span></li>
-                    <li>GW speed |c<sub>GW</sub>/c - 1| &lt; 10<sup>-15</sup> (GW170817) <span style="color: #51cf66;">&#10003;</span></li>
-                    <li><strong style="color: #51cf66;">Dark energy w<sub>0</sub> = -0.85 &plusmn; 0.05</strong> (DESI 2024: -0.827 &plusmn; 0.063) <span style="color: #51cf66;">&#10003; 1&sigma;</span></li>
-                    <li><strong style="color: #51cf66;">Neutrino mass sum &Sigma;m<sub>&nu;</sub> = 0.060 &plusmn; 0.003 eV</strong> (DESI+Planck: &lt;0.072 eV) <span style="color: #51cf66;">&#10003;</span></li>
-                    <li>Fifth force &alpha;<sub>5</sub> &lt; 10<sup>-3</sup> at lab scales <span style="color: #51cf66;">&#10003;</span></li>
-                    <li><strong style="color: #51cf66;">Generation number n<sub>gen</sub> = &chi;/24 = 72/24 = 3</strong> (F-theory) <span style="color: #51cf66;">&#10003;</span></li>
+                    <li><strong style="color: #51cf66;">n<sub>gen</sub> = 3:</strong> Derived from &chi; = 72 via F-theory formula &chi;/24 <span style="color: #51cf66;">&#10003; DERIVED</span></li>
+                    <li><strong style="color: #51cf66;">Normal Hierarchy:</strong> m<sub>1</sub> &lt; m<sub>2</sub> &lt; m<sub>3</sub> required <span style="color: #51cf66;">&#10003; PREDICTION</span></li>
+                    <li><strong style="color: #51cf66;">&alpha;<sub>T</sub> &asymp; 2.5:</strong> Derived from &Gamma;/H scaling <span style="color: #51cf66;">&#10003; DERIVED</span></li>
+                    <li><strong style="color: #ffc107;">w<sub>a</sub> &lt; 0:</strong> Semi-derived (requires w<sub>0</sub> as input) <span style="color: #ffc107;">~ SEMI-DERIVED</span></li>
                 </ul>
                 <p class="method">
-                    <strong>Status:</strong> Framework consistent with all current constraints. DESI 2024 agreement within 1&sigma;!
+                    <strong>Status:</strong> These represent genuine theoretical content of the framework.
                 </p>
             </div>
 
-            <div class="prediction-card" style="border-left: 4px solid #4facfe;">
+            <div class="prediction-card" style="border-left: 4px solid #ffc107;">
                 <h4>
-                    <span class="testability-badge testability-near">Near-Term</span>
-                    Tier 2: Next Decade (2025-2035)
+                    <span class="testability-badge" style="background: rgba(255, 193, 7, 0.2); color: #ffc107;">Fitted/Not Unique</span>
+                    Tier 2: Post-dictions or Standard Results
                 </h4>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
-                    <li>Proton decay discovery at Hyper-K (&tau;<sub>p</sub> &lt; 10<sup>35</sup> years)</li>
-                    <li><strong style="color: #4facfe;">Dark energy w(z) = w<sub>0</sub>[1 + (&alpha;<sub>T</sub>/3)ln(1+z)]</strong> - Further DESI/Euclid validation</li>
-                    <li><strong style="color: #ff7b7b;">Neutrino mass hierarchy: NORMAL HIERARCHY REQUIRED</strong> (JUNO, DUNE)</li>
-                    <li style="text-decoration: line-through; color: var(--text-muted);">0&nu;&beta;&beta; decay if inverted hierarchy - <span style="color: #ff7b7b;">IH excluded &gt;95% CL</span></li>
-                    <li>Stochastic GW background characterization (PTAs)</li>
+                    <li><strong style="color: #ff7b7b;">w<sub>0</sub> &asymp; -0.85:</strong> FITTED to DESI 2024 data <span style="color: #ff7b7b;">&#10007; FITTED</span></li>
+                    <li><strong style="color: #ffc107;">&Sigma;m<sub>&nu;</sub> = 0.060 eV:</strong> Standard NH + m<sub>1</sub>&rarr;0 result <span style="color: #ffc107;">&#10007; NOT UNIQUE</span></li>
+                    <li><strong style="color: #ffc107;">Proton decay 10<sup>34</sup>-10<sup>36</sup> yr:</strong> 2 order magnitude range <span style="color: #ffc107;">&#10007; IMPRECISE</span></li>
+                    <li><strong style="color: #ffc107;">SME correlations:</strong> Qualitative only <span style="color: #ffc107;">&#10007; UNQUANTIFIED</span></li>
                 </ul>
                 <p class="method">
-                    <strong>Status:</strong> Key falsification opportunity: Inverted hierarchy observation would falsify theory.
+                    <strong>Status:</strong> These cannot decisively test the theory; either fitted or not discriminatory.
                 </p>
             </div>
 
-            <div class="prediction-card">
+            <div class="prediction-card" style="border-left: 4px solid #ff7b7b;">
                 <h4>
-                    <span class="testability-badge testability-future">Future</span>
-                    Tier 3: Long-Term (2035+)
+                    <span class="testability-badge" style="background: rgba(255, 87, 87, 0.2); color: #ff7b7b;">Falsification Tests</span>
+                    Tier 3: What Would Kill the Theory
                 </h4>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
-                    <li>Precision GW tests with LISA, Einstein Telescope</li>
-                    <li>Sub-Planckian Lorentz violation searches</li>
-                    <li>Direct dark energy field detection</li>
-                    <li>Collider production of GUT-scale relics (unlikely)</li>
+                    <li><strong style="color: #ff7b7b;">Inverted Hierarchy confirmed:</strong> THEORY FALSIFIED <span style="color: #ff7b7b;">&#9888; PRIMARY TEST</span></li>
+                    <li><strong style="color: #ff7b7b;">w<sub>a</sub> &gt; 0 confirmed:</strong> Thermal time mechanism falsified <span style="color: #ff7b7b;">&#9888; MECHANISM TEST</span></li>
+                    <li><strong style="color: #ffc107;">Proton decay NOT seen by &tau; &gt; 10<sup>37</sup> yr:</strong> Theory in tension <span style="color: #ffc107;">&#9888; TENSION</span></li>
                 </ul>
                 <p class="method">
-                    <strong>Status:</strong> Definitive tests requiring next-generation facilities.
+                    <strong>Status:</strong> JUNO/DUNE hierarchy measurement is the critical upcoming test (2025-2028).
                 </p>
             </div>
 
             <div class="strengthening-suggestions">
-                <h4>Resolved Issues & Remaining Work</h4>
+                <h4>Honest Assessment: What Was Resolved vs What Remains</h4>
                 <div class="suggestion-item" style="border-left: 3px solid #51cf66;">
                     <span class="suggestion-number" style="background: #51cf66;">&#10003;</span>
-                    <p><strong style="color: #51cf66;">RESOLVED:</strong> Dark energy prediction now matches DESI 2024 data within 1&sigma; via thermal time w(z) formula.</p>
+                    <p><strong style="color: #51cf66;">RESOLVED:</strong> Hodge number formula corrected to F-theory: n<sub>gen</sub> = &chi;/24 = 72/24 = 3.</p>
                 </div>
                 <div class="suggestion-item" style="border-left: 3px solid #51cf66;">
                     <span class="suggestion-number" style="background: #51cf66;">&#10003;</span>
-                    <p><strong style="color: #51cf66;">RESOLVED:</strong> Neutrino sector constrained to normal hierarchy only, with explicit mass predictions.</p>
+                    <p><strong style="color: #51cf66;">RESOLVED:</strong> &alpha;<sub>T</sub> derived from first principles via &Gamma;/H scaling.</p>
                 </div>
                 <div class="suggestion-item" style="border-left: 3px solid #51cf66;">
                     <span class="suggestion-number" style="background: #51cf66;">&#10003;</span>
-                    <p><strong style="color: #51cf66;">RESOLVED:</strong> Generation number formula corrected: n<sub>gen</sub> = &chi;/24 = 72/24 = 3 (F-theory).</p>
+                    <p><strong style="color: #51cf66;">RESOLVED:</strong> CY4 construction now uses F-theory exclusively.</p>
+                </div>
+                <div class="suggestion-item" style="border-left: 3px solid #ffc107;">
+                    <span class="suggestion-number" style="background: #ffc107;">!</span>
+                    <p><strong style="color: #ffc107;">ACKNOWLEDGED:</strong> w<sub>0</sub> was fitted to DESI data, not derived. DESI agreement is a post-diction.</p>
+                </div>
+                <div class="suggestion-item" style="border-left: 3px solid #ffc107;">
+                    <span class="suggestion-number" style="background: #ffc107;">!</span>
+                    <p><strong style="color: #ffc107;">ACKNOWLEDGED:</strong> &Sigma;m<sub>&nu;</sub> = 0.060 eV is not unique; any NH + m<sub>1</sub>&rarr;0 model gives this.</p>
                 </div>
                 <div class="suggestion-item">
                     <span class="suggestion-number">1</span>
-                    <p>Derive explicit &tau;<sub>p</sub> prediction for specific K<sub>Pneuma</sub> geometry, reducing uncertainty from 2 to &lt;0.5 orders of magnitude.</p>
+                    <p>Derive w<sub>0</sub> from first principles to make dark energy a genuine prediction.</p>
                 </div>
                 <div class="suggestion-item">
                     <span class="suggestion-number">2</span>
-                    <p>Compute SME coefficient correlations quantitatively, providing testable ratios between sectors.</p>
+                    <p>Derive explicit &tau;<sub>p</sub> to better than 0.5 orders of magnitude.</p>
                 </div>
                 <div class="suggestion-item">
                     <span class="suggestion-number">3</span>
-                    <p>Derive cosmic string tension G&mu; from first principles, enabling comparison with PTA data.</p>
+                    <p>Compute quantitative SME coefficient predictions with specific numerical ratios.</p>
                 </div>
             </div>
         </section>
