@@ -362,6 +362,120 @@
                 16<sub>F</sub> &rarr; (3, 2, 1/6) + (3&#773;, 1, -2/3) + (3&#773;, 1, 1/3) + (1, 2, -1/2) + (1, 1, 1) + (1, 1, 0)
                 <div class="label">Decomposition under SU(3)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; U(1)<sub>Y</sub></div>
             </div>
+
+            <!-- SVG Diagram: SO(10) Gauge Symmetry Hierarchy -->
+            <div class="diagram-container">
+                <div class="diagram-title">SO(10) Grand Unification Structure</div>
+                <svg class="diagram-svg" viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gutGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="smGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#51cf66;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#40c057;stop-opacity:1" />
+                        </linearGradient>
+                        <marker id="arrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#ff7eb6"/>
+                        </marker>
+                    </defs>
+
+                    <!-- SO(10) Top Level -->
+                    <g class="node">
+                        <rect x="300" y="20" width="200" height="70" rx="12" fill="url(#gutGrad)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                        <text x="400" y="50" text-anchor="middle" fill="white" font-weight="700" font-size="18">SO(10)</text>
+                        <text x="400" y="72" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="12">45 gauge bosons | Rank 5</text>
+                    </g>
+
+                    <!-- Energy scale label -->
+                    <text x="520" y="55" fill="#adb5bd" font-size="11">M<tspan baseline-shift="sub" font-size="9">GUT</tspan> ~ 10<tspan baseline-shift="super" font-size="9">16</tspan> GeV</text>
+
+                    <!-- Arrows down -->
+                    <path d="M 350 90 L 280 140" stroke="#ff7eb6" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+                    <path d="M 450 90 L 520 140" stroke="#ff7eb6" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+
+                    <!-- Breaking labels -->
+                    <text x="300" y="115" text-anchor="middle" fill="#adb5bd" font-size="10">54<tspan baseline-shift="sub" font-size="8">H</tspan></text>
+                    <text x="500" y="115" text-anchor="middle" fill="#adb5bd" font-size="10">45<tspan baseline-shift="sub" font-size="8">H</tspan></text>
+
+                    <!-- Two routes -->
+                    <!-- Left: Pati-Salam Route -->
+                    <g class="node">
+                        <rect x="150" y="145" width="180" height="60" rx="10" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="2"/>
+                        <text x="240" y="170" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="14">Pati-Salam</text>
+                        <text x="240" y="190" text-anchor="middle" fill="#adb5bd" font-size="11">SU(4)&times;SU(2)<tspan baseline-shift="sub" font-size="9">L</tspan>&times;SU(2)<tspan baseline-shift="sub" font-size="9">R</tspan></text>
+                    </g>
+
+                    <!-- Right: Left-Right Route -->
+                    <g class="node">
+                        <rect x="470" y="145" width="180" height="60" rx="10" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="2"/>
+                        <text x="560" y="170" text-anchor="middle" fill="#ff7eb6" font-weight="600" font-size="14">Left-Right</text>
+                        <text x="560" y="190" text-anchor="middle" fill="#adb5bd" font-size="11">SU(3)&times;SU(2)<tspan baseline-shift="sub" font-size="9">L</tspan>&times;SU(2)<tspan baseline-shift="sub" font-size="9">R</tspan>&times;U(1)</text>
+                    </g>
+
+                    <!-- Intermediate scales -->
+                    <text x="120" y="175" fill="#adb5bd" font-size="10">10<tspan baseline-shift="super" font-size="8">12</tspan> GeV</text>
+
+                    <!-- Arrows to Standard Model -->
+                    <path d="M 240 205 L 350 280" stroke="#ff7eb6" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+                    <path d="M 560 205 L 450 280" stroke="#ff7eb6" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+
+                    <!-- Intermediate labels -->
+                    <text x="280" y="248" text-anchor="middle" fill="#adb5bd" font-size="10">126<tspan baseline-shift="sub" font-size="8">H</tspan></text>
+                    <text x="520" y="248" text-anchor="middle" fill="#adb5bd" font-size="10">16<tspan baseline-shift="sub" font-size="8">H</tspan></text>
+
+                    <!-- Standard Model -->
+                    <g class="node">
+                        <rect x="300" y="285" width="200" height="60" rx="10" fill="url(#smGrad)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                        <text x="400" y="310" text-anchor="middle" fill="white" font-weight="600" font-size="14">Standard Model</text>
+                        <text x="400" y="330" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11">SU(3)<tspan baseline-shift="sub" font-size="9">C</tspan>&times;SU(2)<tspan baseline-shift="sub" font-size="9">L</tspan>&times;U(1)<tspan baseline-shift="sub" font-size="9">Y</tspan></text>
+                    </g>
+
+                    <!-- EW scale -->
+                    <text x="520" y="318" fill="#adb5bd" font-size="10">M<tspan baseline-shift="sub" font-size="8">EW</tspan> ~ 10<tspan baseline-shift="super" font-size="8">2</tspan> GeV</text>
+
+                    <!-- Arrow to broken phase -->
+                    <path d="M 400 345 L 400 380" stroke="#51cf66" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+                    <text x="420" y="365" fill="#adb5bd" font-size="10">10<tspan baseline-shift="sub" font-size="8">H</tspan></text>
+
+                    <!-- Broken phase -->
+                    <g class="node">
+                        <rect x="300" y="385" width="200" height="50" rx="10" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
+                        <text x="400" y="410" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="13">SU(3)<tspan baseline-shift="sub" font-size="10">C</tspan> &times; U(1)<tspan baseline-shift="sub" font-size="10">EM</tspan></text>
+                        <text x="400" y="427" text-anchor="middle" fill="#adb5bd" font-size="10">QCD + QED</text>
+                    </g>
+
+                    <!-- Gauge boson count sidebar -->
+                    <rect x="30" y="30" width="100" height="200" rx="8" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
+                    <text x="80" y="50" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="12">Gauge Bosons</text>
+                    <text x="80" y="75" text-anchor="middle" fill="#f8f9fa" font-size="22" font-weight="700">45</text>
+                    <text x="80" y="92" text-anchor="middle" fill="#adb5bd" font-size="10">SO(10)</text>
+                    <line x1="45" y1="105" x2="115" y2="105" stroke="rgba(139,127,255,0.3)" stroke-width="1"/>
+                    <text x="80" y="125" text-anchor="middle" fill="#f8f9fa" font-size="16">12</text>
+                    <text x="80" y="142" text-anchor="middle" fill="#adb5bd" font-size="10">SM</text>
+                    <text x="80" y="170" text-anchor="middle" fill="#ff7eb6" font-size="16">33</text>
+                    <text x="80" y="187" text-anchor="middle" fill="#adb5bd" font-size="10">Heavy (X,Y)</text>
+                    <text x="80" y="215" text-anchor="middle" fill="#adb5bd" font-size="9">Mediate p decay</text>
+
+                    <!-- 16 representation sidebar -->
+                    <rect x="670" y="30" width="100" height="200" rx="8" fill="rgba(255,126,182,0.08)" stroke="rgba(255,126,182,0.2)" stroke-width="1"/>
+                    <text x="720" y="50" text-anchor="middle" fill="#ff7eb6" font-weight="600" font-size="12">Matter Rep</text>
+                    <text x="720" y="75" text-anchor="middle" fill="#f8f9fa" font-size="22" font-weight="700">16</text>
+                    <text x="720" y="92" text-anchor="middle" fill="#adb5bd" font-size="10">spinor</text>
+                    <line x1="685" y1="105" x2="755" y2="105" stroke="rgba(255,126,182,0.3)" stroke-width="1"/>
+                    <text x="720" y="125" text-anchor="middle" fill="#adb5bd" font-size="9">Contains:</text>
+                    <text x="720" y="142" text-anchor="middle" fill="#f8f9fa" font-size="11">Q, u<tspan baseline-shift="sub" font-size="8">R</tspan>, d<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+                    <text x="720" y="160" text-anchor="middle" fill="#f8f9fa" font-size="11">L, e<tspan baseline-shift="sub" font-size="8">R</tspan>, &nu;<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+                    <line x1="685" y1="175" x2="755" y2="175" stroke="rgba(255,126,182,0.3)" stroke-width="1"/>
+                    <text x="720" y="195" text-anchor="middle" fill="#51cf66" font-size="11">&times;3 generations</text>
+                    <text x="720" y="215" text-anchor="middle" fill="#adb5bd" font-size="9">from topology</text>
+                </svg>
+                <div class="diagram-caption">
+                    SO(10) unifies all Standard Model gauge bosons (12) plus 33 heavy bosons mediating proton decay.
+                    All fermions of one generation fit into a single 16-spinor representation, including right-handed neutrinos.
+                </div>
+            </div>
         </div>
 
         <!-- Section 3.2 -->
