@@ -1270,13 +1270,58 @@
                 A CY4 with &chi; = 72 can be realized with the following Hodge diamond structure:
             </p>
 
-            <div class="equation-box">
-                h<sup>1,1</sup> = 4, &nbsp; h<sup>2,1</sup> = 0, &nbsp; h<sup>3,1</sup> = 0, &nbsp; h<sup>2,2</sup> = 60
-                <br><br>
-                CY4 constraint: h<sup>2,2</sup> = 2(22 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> - h<sup>2,1</sup>) = 2(22 + 8 + 0 - 0) = 60 &check;
-                <br><br>
-                &chi; = 4 + 2h<sup>1,1</sup> - 4h<sup>2,1</sup> + 2h<sup>3,1</sup> + h<sup>2,2</sup> = 4 + 8 + 0 + 0 + 60 = 72
-                <span class="equation-label">Hodge numbers satisfying CY4 constraint with &chi; = 72</span>
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for variable definitions</span>
+                <div class="formula-display" style="flex-direction: column; gap: 1rem;">
+                    <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                        <span class="formula-var">h<sup>1,1</sup> = 4
+                            <div class="var-tooltip">
+                                <div class="var-name">h<sup>1,1</sup></div>
+                                <div class="var-description">K&auml;hler moduli - counts independent ways to deform the manifold's size/shape</div>
+                                <div class="var-units">Dimensionless (topological invariant)</div>
+                                <div class="var-contribution">h<sup>1,1</sup>=4 gives 4 moduli fields in 4D effective theory</div>
+                            </div>
+                        </span>
+                        <span class="formula-var">h<sup>2,1</sup> = 0
+                            <div class="var-tooltip">
+                                <div class="var-name">h<sup>2,1</sup></div>
+                                <div class="var-description">Complex structure moduli - counts independent ways to deform the complex structure</div>
+                                <div class="var-units">Dimensionless (topological invariant)</div>
+                                <div class="var-contribution">h<sup>2,1</sup>=0 means rigid complex structure (no additional scalar fields)</div>
+                            </div>
+                        </span>
+                        <span class="formula-var">h<sup>3,1</sup> = 0
+                            <div class="var-tooltip">
+                                <div class="var-name">h<sup>3,1</sup></div>
+                                <div class="var-description">Additional CY4 Hodge number - absent in CY3</div>
+                                <div class="var-units">Dimensionless (topological invariant)</div>
+                                <div class="var-contribution">h<sup>3,1</sup>=0 simplifies the compactification; no 3-form deformations</div>
+                            </div>
+                        </span>
+                        <span class="formula-var">h<sup>2,2</sup> = 60
+                            <div class="var-tooltip">
+                                <div class="var-name">h<sup>2,2</sup></div>
+                                <div class="var-description">Middle cohomology - unique to 8D manifolds (CY4)</div>
+                                <div class="var-units">Dimensionless (topological invariant)</div>
+                                <div class="var-contribution">h<sup>2,2</sup>=60 is constrained by CY4 identity; dominates the Euler characteristic</div>
+                            </div>
+                        </span>
+                    </div>
+                    <div style="border-top: 1px solid rgba(139, 127, 255, 0.3); padding-top: 1rem;">
+                        <strong>CY4 constraint:</strong> h<sup>2,2</sup> = 2(22 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> - h<sup>2,1</sup>) = 2(22 + 8 + 0 - 0) = 60 &check;
+                    </div>
+                    <div style="font-size: 1.1rem;">
+                        <span class="formula-var">&chi;
+                            <div class="var-tooltip">
+                                <div class="var-name">&chi; (Euler characteristic)</div>
+                                <div class="var-description">Topological invariant that determines the number of fermion generations via F-theory index theorem</div>
+                                <div class="var-units">Dimensionless integer</div>
+                                <div class="var-contribution">n<sub>gen</sub> = &chi;/24 = 72/24 = 3 &rarr; exactly 3 generations!</div>
+                            </div>
+                        </span> = 4 + 2(4) - 4(0) + 2(0) + 60 = <strong style="color: var(--accent-primary);">72</strong>
+                    </div>
+                </div>
+                <div class="formula-label">Hodge numbers satisfying CY4 constraint with &chi; = 72 &rarr; n<sub>gen</sub> = 3</div>
             </div>
 
             <div class="highlight-box">
