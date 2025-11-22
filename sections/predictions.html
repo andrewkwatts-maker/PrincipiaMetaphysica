@@ -380,6 +380,73 @@
             </div>
             <p>where &alpha;<sub>T</sub> &asymp; 2.5 is derived from first principles via &Gamma;/H scaling.</p>
 
+            <!-- Interactive Dark Energy Calculator -->
+            <div class="formula-calculator" style="background: rgba(255, 193, 7, 0.05); border: 1px solid rgba(255, 193, 7, 0.2);">
+                <h4 style="color: #ffc107;">Interactive: Dark Energy Equation of State Calculator</h4>
+                <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1rem;">
+                    Adjust parameters to see how w(z) varies with redshift. The &alpha;<sub>T</sub> parameter is the theoretically derived value.
+                </p>
+                <div class="calc-inputs">
+                    <div class="calc-input-group">
+                        <label for="w0-input">w<sub>0</sub> (present day)</label>
+                        <input type="number" id="w0-input" value="-0.85" step="0.01" min="-2" max="0" onchange="updateWz()">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="alphaT-input">&alpha;<sub>T</sub> (thermal time)</label>
+                        <input type="number" id="alphaT-input" value="2.5" step="0.1" min="0" max="10" onchange="updateWz()">
+                    </div>
+                    <div class="calc-input-group">
+                        <label for="z-input">Redshift z</label>
+                        <input type="number" id="z-input" value="1.0" step="0.1" min="0" max="10" onchange="updateWz()">
+                    </div>
+                </div>
+                <div class="slider-control">
+                    <label for="z-slider">Redshift z:</label>
+                    <input type="range" id="z-slider" min="0" max="5" step="0.1" value="1.0" oninput="document.getElementById('z-input').value=this.value; updateWz()">
+                    <span class="slider-value" id="z-display">z = 1.0</span>
+                </div>
+                <div class="calc-result">
+                    <div class="calc-result-label">Equation of State w(z)</div>
+                    <div class="calc-result-value" id="wz-result">w(1.0) = -1.04</div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
+                    <div style="text-align: center; padding: 0.75rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">w(z=0)</div>
+                        <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; color: var(--accent-primary);" id="wz0-display">-0.85</div>
+                    </div>
+                    <div style="text-align: center; padding: 0.75rem; background: rgba(255, 126, 182, 0.1); border-radius: 8px;">
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">w(z=0.5)</div>
+                        <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; color: var(--accent-secondary);" id="wz05-display">-0.96</div>
+                    </div>
+                    <div style="text-align: center; padding: 0.75rem; background: rgba(81, 207, 102, 0.1); border-radius: 8px;">
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">w(z=2)</div>
+                        <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; color: #51cf66;" id="wz2-display">-1.24</div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                function calculateWz(w0, alphaT, z) {
+                    return w0 * (1 + (alphaT / 3) * Math.log(1 + z));
+                }
+                function updateWz() {
+                    const w0 = parseFloat(document.getElementById('w0-input').value) || -0.85;
+                    const alphaT = parseFloat(document.getElementById('alphaT-input').value) || 2.5;
+                    const z = parseFloat(document.getElementById('z-input').value) || 1.0;
+
+                    const wz = calculateWz(w0, alphaT, z);
+                    document.getElementById('wz-result').textContent = `w(${z.toFixed(1)}) = ${wz.toFixed(3)}`;
+                    document.getElementById('z-display').textContent = `z = ${z.toFixed(1)}`;
+                    document.getElementById('z-slider').value = z;
+
+                    // Update fixed redshift displays
+                    document.getElementById('wz0-display').textContent = calculateWz(w0, alphaT, 0).toFixed(2);
+                    document.getElementById('wz05-display').textContent = calculateWz(w0, alphaT, 0.5).toFixed(2);
+                    document.getElementById('wz2-display').textContent = calculateWz(w0, alphaT, 2).toFixed(2);
+                }
+                // Initialize on page load
+                document.addEventListener('DOMContentLoaded', updateWz);
+            </script>
+
             <h4>Parameter Status Table</h4>
             <table class="sme-table">
                 <thead>

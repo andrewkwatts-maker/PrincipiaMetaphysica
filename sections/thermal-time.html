@@ -318,6 +318,120 @@
                 </p>
             </div>
 
+            <!-- SVG Diagram: Thermal Time Emergence -->
+            <div class="diagram-container">
+                <div class="diagram-title">Emergence of Time from Thermodynamics</div>
+                <svg class="diagram-svg" viewBox="0 0 850 380" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="timeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="entropyGrad" x1="0%" y1="100%" x2="0%" y2="0%">
+                            <stop offset="0%" style="stop-color:rgba(81,207,102,0.2)" />
+                            <stop offset="100%" style="stop-color:rgba(81,207,102,0.8)" />
+                        </linearGradient>
+                        <marker id="timeArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#ff7eb6"/>
+                        </marker>
+                        <marker id="greenArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#51cf66"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Background sections -->
+                    <rect x="30" y="30" width="250" height="300" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.3)" stroke-width="1"/>
+                    <text x="155" y="55" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="14">Thermal State</text>
+
+                    <rect x="300" y="30" width="250" height="300" rx="12" fill="rgba(255,126,182,0.08)" stroke="rgba(255,126,182,0.3)" stroke-width="1"/>
+                    <text x="425" y="55" text-anchor="middle" fill="#ff7eb6" font-weight="600" font-size="14">Modular Theory</text>
+
+                    <rect x="570" y="30" width="250" height="300" rx="12" fill="rgba(81,207,102,0.08)" stroke="rgba(81,207,102,0.3)" stroke-width="1"/>
+                    <text x="695" y="55" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="14">Emergent Time</text>
+
+                    <!-- Step 1: Thermal State / Density Matrix -->
+                    <g class="node">
+                        <rect x="55" y="80" width="200" height="70" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.5)" stroke-width="2"/>
+                        <text x="155" y="105" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">&rho; = e<tspan baseline-shift="super" font-size="10">-&beta;H</tspan>/Z</text>
+                        <text x="155" y="130" text-anchor="middle" fill="#adb5bd" font-size="11">Density Matrix</text>
+                    </g>
+
+                    <!-- Entropy box -->
+                    <g class="node">
+                        <rect x="55" y="170" width="200" height="60" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.5)" stroke-width="2"/>
+                        <text x="155" y="195" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">S = -Tr(&rho; log &rho;)</text>
+                        <text x="155" y="215" text-anchor="middle" fill="#adb5bd" font-size="11">von Neumann Entropy</text>
+                    </g>
+
+                    <!-- Pneuma field -->
+                    <g class="node">
+                        <rect x="55" y="250" width="200" height="60" rx="8" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.5)" stroke-width="2"/>
+                        <text x="155" y="272" text-anchor="middle" fill="#f8f9fa" font-size="12">&Psi;<tspan baseline-shift="sub" font-size="10">P</tspan> Pneuma Field</text>
+                        <text x="155" y="292" text-anchor="middle" fill="#adb5bd" font-size="10">Provides thermal state</text>
+                    </g>
+
+                    <!-- Arrow to Step 2 -->
+                    <path d="M 265 115 L 295 115" stroke="#ff7eb6" stroke-width="2" fill="none" marker-end="url(#timeArrow)"/>
+                    <path d="M 265 200 L 295 200" stroke="#ff7eb6" stroke-width="2" fill="none" marker-end="url(#timeArrow)"/>
+
+                    <!-- Step 2: Modular Hamiltonian -->
+                    <g class="node">
+                        <rect x="315" y="80" width="220" height="70" rx="8" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.5)" stroke-width="2"/>
+                        <text x="425" y="105" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">K = -log(&rho;)</text>
+                        <text x="425" y="130" text-anchor="middle" fill="#adb5bd" font-size="11">Modular Hamiltonian</text>
+                    </g>
+
+                    <!-- Modular Automorphism -->
+                    <g class="node">
+                        <rect x="315" y="170" width="220" height="60" rx="8" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.5)" stroke-width="2"/>
+                        <text x="425" y="195" text-anchor="middle" fill="#f8f9fa" font-size="12" font-family="Crimson Text, serif" font-style="italic">&sigma;<tspan baseline-shift="sub" font-size="10">t</tspan> = e<tspan baseline-shift="super" font-size="10">iKt</tspan></text>
+                        <text x="425" y="215" text-anchor="middle" fill="#adb5bd" font-size="10">Modular Automorphism</text>
+                    </g>
+
+                    <!-- KMS condition -->
+                    <g class="node">
+                        <rect x="315" y="250" width="220" height="60" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.5)" stroke-width="2"/>
+                        <text x="425" y="272" text-anchor="middle" fill="#f8f9fa" font-size="11">KMS Condition</text>
+                        <text x="425" y="292" text-anchor="middle" fill="#adb5bd" font-size="10">&rho;(&sigma;<tspan baseline-shift="sub" font-size="8">t</tspan>(A)B) = &rho;(B&sigma;<tspan baseline-shift="sub" font-size="8">t+i&beta;</tspan>(A))</text>
+                    </g>
+
+                    <!-- Arrow to Step 3 -->
+                    <path d="M 545 115 L 575 115" stroke="#51cf66" stroke-width="2" fill="none" marker-end="url(#greenArrow)"/>
+                    <path d="M 545 200 L 575 200" stroke="#51cf66" stroke-width="2" fill="none" marker-end="url(#greenArrow)"/>
+
+                    <!-- Step 3: Emergent Time -->
+                    <g class="node">
+                        <rect x="590" y="80" width="210" height="70" rx="8" fill="rgba(81,207,102,0.2)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                        <text x="695" y="105" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">t = &alpha;<tspan baseline-shift="sub" font-size="10">T</tspan> &middot; s</text>
+                        <text x="695" y="130" text-anchor="middle" fill="#adb5bd" font-size="11">Thermal Time Parameter</text>
+                    </g>
+
+                    <!-- Time arrow -->
+                    <g class="node">
+                        <rect x="590" y="170" width="210" height="60" rx="8" fill="rgba(81,207,102,0.2)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                        <text x="695" y="195" text-anchor="middle" fill="#51cf66" font-size="13" font-weight="600">Arrow of Time</text>
+                        <text x="695" y="215" text-anchor="middle" fill="#adb5bd" font-size="10">&nabla;S &gt; 0 &rarr; dt &gt; 0</text>
+                    </g>
+
+                    <!-- Physical time -->
+                    <g class="node">
+                        <rect x="590" y="250" width="210" height="60" rx="8" fill="url(#timeGrad)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                        <text x="695" y="275" text-anchor="middle" fill="white" font-size="12" font-weight="600">Experienced Time Flow</text>
+                        <text x="695" y="295" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">From &Psi;<tspan baseline-shift="sub" font-size="8">P</tspan> entropy gradient</text>
+                    </g>
+
+                    <!-- Bottom equation bar -->
+                    <rect x="30" y="345" width="790" height="30" rx="6" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
+                    <text x="425" y="365" text-anchor="middle" fill="#adb5bd" font-size="12" font-family="Crimson Text, serif" font-style="italic">
+                        Key: &rho;(thermal state) &rarr; K(modular Hamiltonian) &rarr; &sigma;<tspan baseline-shift="sub" font-size="10">t</tspan>(time flow) &rarr; Emergent time from entropy gradient
+                    </text>
+                </svg>
+                <div class="diagram-caption">
+                    The Thermal Time Hypothesis: Time is not fundamental but emerges from the modular flow of a thermal state.
+                    The Pneuma field's statistical mechanics provides the thermal state; its entropy gradient determines the arrow of time.
+                </div>
+            </div>
+
             <div class="subsection">
                 <h4>From Thermodynamics to Time</h4>
                 <p>
