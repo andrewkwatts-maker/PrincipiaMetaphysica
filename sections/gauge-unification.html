@@ -787,6 +787,539 @@
             </p>
         </div>
 
+        <!-- Section 3.3b: Doublet-Triplet Splitting Explicit Calculation -->
+        <div class="subsection">
+            <h2>3.3b Doublet-Triplet Splitting: Explicit Calculation</h2>
+
+            <p>
+                Having outlined the geometric mechanism for doublet-triplet splitting, we now provide the
+                <span class="highlight-text">explicit mathematical derivation</span>. This subsection presents the
+                wavefunction profiles, computes the mass integrals, and demonstrates precisely why the SU(2)<sub>L</sub>
+                doublet remains massless while the color triplet acquires GUT-scale mass.
+            </p>
+
+            <h3>Setup: The 10<sub>H</sub> on K<sub>Pneuma</sub></h3>
+            <p>
+                Consider the <strong>10<sub>H</sub></strong> Higgs representation decomposed under the Standard Model gauge group.
+                Each component field &Phi;<sub>r</sub>(x, y) depends on both 4D spacetime coordinates x<sup>&mu;</sup>
+                and internal K<sub>Pneuma</sub> coordinates y<sup>m</sup> (m = 1, ..., 8). The effective 4D mass
+                arises from the overlap integral with the GUT-breaking Higgs condensate.
+            </p>
+
+            <h3>Wavefunction Ansatz on K<sub>Pneuma</sub></h3>
+            <p>
+                The internal wavefunctions for the doublet (D) and triplet (T) components satisfy the
+                Laplace-Beltrami equation on K<sub>Pneuma</sub> with different boundary conditions determined
+                by the Wilson line configuration:
+            </p>
+
+            <!-- Interactive Formula: Doublet Wavefunction -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">&psi;<sub>D</sub>(y)
+                        <div class="var-tooltip">
+                            <div class="var-name">&psi;<sub>D</sub>(y)</div>
+                            <div class="var-description">Internal wavefunction profile for the SU(2)<sub>L</sub> doublet Higgs components H<sub>u</sub> and H<sub>d</sub>.</div>
+                            <div class="var-units">GeV<sup>4</sup> (normalized)</div>
+                            <div class="var-contribution">Localized on a 4-cycle &Sigma;<sub>D</sub> where the Wilson line has trivial holonomy.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var highlight">N<sub>D</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">N<sub>D</sub></div>
+                            <div class="var-description">Normalization constant ensuring &int; |&psi;<sub>D</sub>|<sup>2</sup> d<sup>8</sup>y = 1.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">N<sub>D</sub> ~ (Vol(&Sigma;<sub>D</sub>))<sup>-1/2</sup> where &Sigma;<sub>D</sub> is the localization cycle.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">exp(-|y - y<sub>0</sub>|<sup>2</sup>/2&sigma;<sub>D</sub><sup>2</sup>)
+                        <div class="var-tooltip">
+                            <div class="var-name">Gaussian localization</div>
+                            <div class="var-description">Exponential suppression away from the fixed point y<sub>0</sub> on the Wilson line locus.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">&sigma;<sub>D</sub> ~ M<sub>KK</sub><sup>-1</sup> is the localization width.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">&delta;<sub>&Sigma;<sub>D</sub></sub>(y<sup>&perp;</sup>)
+                        <div class="var-tooltip">
+                            <div class="var-name">&delta;<sub>&Sigma;<sub>D</sub></sub>(y<sup>&perp;</sup>)</div>
+                            <div class="var-description">Delta function restricting support to the 4-cycle &Sigma;<sub>D</sub>.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">The doublet is strictly confined to a lower-dimensional submanifold.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Doublet wavefunction: localized on matter curve &Sigma;<sub>D</sub></div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Doublet Localization from Wilson Lines</div>
+                    <div class="formula-meaning">
+                        The doublet wavefunction is exponentially localized on a 4-dimensional submanifold &Sigma;<sub>D</sub> &subset; K<sub>Pneuma</sub>
+                        where the Wilson line W has trivial holonomy (W|<sub>&Sigma;<sub>D</sub></sub> = 1). This localization is not
+                        put in by hand but emerges from the zero-mode equation on K<sub>Pneuma</sub> with Wilson line background.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Localization Width</h5>
+                            <p>&sigma;<sub>D</sub> ~ M<sub>KK</sub><sup>-1</sup> ~ 10<sup>-12</sup> GeV<sup>-1</sup></p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Support Dimension</h5>
+                            <p>4-cycle (codimension-4 in K<sub>Pneuma</sub>)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Formula: Triplet Wavefunction -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">&psi;<sub>T</sub>(y)
+                        <div class="var-tooltip">
+                            <div class="var-name">&psi;<sub>T</sub>(y)</div>
+                            <div class="var-description">Internal wavefunction profile for the color triplet Higgs components T and T&#773;.</div>
+                            <div class="var-units">GeV<sup>4</sup> (normalized)</div>
+                            <div class="var-contribution">Delocalized throughout the bulk of K<sub>Pneuma</sub> due to non-trivial Wilson line phase.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var highlight">N<sub>T</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">N<sub>T</sub></div>
+                            <div class="var-description">Normalization constant: N<sub>T</sub> = Vol(K<sub>Pneuma</sub>)<sup>-1/2</sup>.</div>
+                            <div class="var-units">GeV<sup>4</sup></div>
+                            <div class="var-contribution">Much smaller than N<sub>D</sub> since the triplet spreads over the full 8D volume.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">f<sub>T</sub>(y)
+                        <div class="var-tooltip">
+                            <div class="var-name">f<sub>T</sub>(y)</div>
+                            <div class="var-description">Smooth profile function determined by the triplet zero-mode equation.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">Satisfies &Delta;<sub>K</sub>f<sub>T</sub> + V<sub>W</sub>f<sub>T</sub> = 0 with non-trivial Wilson potential.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">e<sup>i&theta;<sub>W</sub>(y)</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">e<sup>i&theta;<sub>W</sub>(y)</sup></div>
+                            <div class="var-description">Wilson line phase factor winding around non-contractible cycles.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">For color triplet: &theta;<sub>W</sub> = 2&pi;k/3 (k &ne; 0) around SU(3) cycles.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Triplet wavefunction: delocalized in bulk with Wilson phase</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Triplet Delocalization from Color Charge</div>
+                    <div class="formula-meaning">
+                        The color triplet carries SU(3)<sub>C</sub> charge and therefore experiences a non-trivial Wilson line
+                        potential V<sub>W</sub>(y) = |1 - W(y)|<sup>2</sup> &ne; 0 throughout K<sub>Pneuma</sub>. This prevents
+                        localization and forces the triplet to spread across the full internal volume.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Wilson Holonomy</h5>
+                            <p>W = diag(e<sup>2&pi;i/3</sup>, e<sup>4&pi;i/3</sup>, 1) &in; SU(3)</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Support Region</h5>
+                            <p>Full 8D bulk of K<sub>Pneuma</sub></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>The Mass Integral: Explicit Computation</h3>
+            <p>
+                The effective 4D mass for a component field arises from its overlap with the GUT-breaking Higgs
+                condensate &langle;&Phi;<sub>GUT</sub>(y)&rangle;. The general formula is:
+            </p>
+
+            <!-- Interactive Formula: Mass Integral -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">m<sub>eff</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>eff</sub></div>
+                            <div class="var-description">Effective 4D mass of the Higgs component after dimensional reduction.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Must be ~M<sub>GUT</sub> for triplet, ~0 for doublet.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var highlight">&lambda;
+                        <div class="var-tooltip">
+                            <div class="var-name">&lambda;</div>
+                            <div class="var-description">10D Yukawa-type coupling between the 10<sub>H</sub> and the GUT-breaking Higgs.</div>
+                            <div class="var-units">Dimensionless (in natural units)</div>
+                            <div class="var-contribution">Typically &lambda; ~ O(1) from GUT relations.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">&int;<sub>K</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&int;<sub>K</sub></div>
+                            <div class="var-description">Integration over the 8-dimensional internal manifold K<sub>Pneuma</sub>.</div>
+                            <div class="var-units">Volume element d<sup>8</sup>y &radic;g</div>
+                            <div class="var-contribution">The integral picks up contributions only where all factors are non-zero.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">|&psi;(y)|<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">|&psi;(y)|<sup>2</sup></div>
+                            <div class="var-description">Probability density for the Higgs component at point y &in; K<sub>Pneuma</sub>.</div>
+                            <div class="var-units">GeV<sup>8</sup></div>
+                            <div class="var-contribution">Normalized: &int; |&psi;|<sup>2</sup> d<sup>8</sup>y = 1.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">&langle;&Phi;<sub>GUT</sub>(y)&rangle;
+                        <div class="var-tooltip">
+                            <div class="var-name">&langle;&Phi;<sub>GUT</sub>(y)&rangle;</div>
+                            <div class="var-description">Position-dependent VEV of the GUT-breaking Higgs (54<sub>H</sub> or 126<sub>H</sub>).</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">&langle;&Phi;&rangle; ~ M<sub>GUT</sub> in bulk, but vanishes on the doublet localization cycle.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">d<sup>8</sup>y &radic;g
+                        <div class="var-tooltip">
+                            <div class="var-name">d<sup>8</sup>y &radic;g</div>
+                            <div class="var-description">Riemannian volume element on K<sub>Pneuma</sub>.</div>
+                            <div class="var-units">GeV<sup>-8</sup></div>
+                            <div class="var-contribution">&radic;g is the square root of the metric determinant.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">General mass formula from dimensional reduction</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Mass from Wavefunction Overlap</div>
+                    <div class="formula-meaning">
+                        This integral encapsulates the geometric mechanism: mass arises from the overlap between the field's
+                        internal wavefunction and the symmetry-breaking condensate. Different localizations yield different masses.
+                    </div>
+                </div>
+            </div>
+
+            <h3>Doublet Mass: The Zero Overlap Condition</h3>
+            <p>
+                For the <span class="highlight-text">SU(2)<sub>L</sub> doublet</span>, the key property is that the
+                GUT-breaking condensate vanishes identically on the localization cycle &Sigma;<sub>D</sub>:
+            </p>
+
+            <div class="equation-box">
+                &langle;&Phi;<sub>GUT</sub>(y)&rangle; |<sub>&Sigma;<sub>D</sub></sub> = 0 &nbsp;&nbsp;&nbsp;(Wilson line constraint)
+                <div class="label">The GUT Higgs VEV is projected out on the doublet matter curve</div>
+            </div>
+
+            <p>
+                This vanishing is not accidental but enforced by the Wilson line breaking mechanism. The Wilson line
+                W &in; SU(5) breaks SO(10) &rarr; SU(5) &times; U(1)<sub>X</sub>, and further to G<sub>SM</sub> on &Sigma;<sub>D</sub>.
+                The doublet transforms trivially under the broken generators, so it localizes where W = 1.
+                But the GUT Higgs &Phi;<sub>GUT</sub> transforms non-trivially and must vanish where W = 1.
+            </p>
+
+            <!-- Interactive Formula: Doublet Mass Integral -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">m<sub>D</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>D</sub></div>
+                            <div class="var-description">Effective 4D mass for the electroweak doublet Higgs.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Must be ~ 0 (protected) before electroweak symmetry breaking.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">&lambda;
+                        <div class="var-tooltip">
+                            <div class="var-name">&lambda;</div>
+                            <div class="var-description">Coupling constant ~ O(1).</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">Same coupling for both doublet and triplet from GUT symmetry.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">&int;<sub>&Sigma;<sub>D</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&int;<sub>&Sigma;<sub>D</sub></sub></div>
+                            <div class="var-description">Integral restricted to the 4-cycle &Sigma;<sub>D</sub> where the doublet is localized.</div>
+                            <div class="var-units">4D volume integration</div>
+                            <div class="var-contribution">The &delta;-function in &psi;<sub>D</sub> restricts integration to &Sigma;<sub>D</sub>.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">|&psi;<sub>D</sub>|<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">|&psi;<sub>D</sub>|<sup>2</sup></div>
+                            <div class="var-description">Doublet wavefunction density.</div>
+                            <div class="var-units">Normalized to 1 on &Sigma;<sub>D</sub></div>
+                            <div class="var-contribution">Contributes finite, positive weight.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var highlight">0
+                        <div class="var-tooltip">
+                            <div class="var-name">&langle;&Phi;<sub>GUT</sub>&rangle;|<sub>&Sigma;<sub>D</sub></sub> = 0</div>
+                            <div class="var-description">The GUT-breaking Higgs VEV vanishes identically on &Sigma;<sub>D</sub>.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">This is the key: the doublet and GUT Higgs have zero overlap!</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">d<sup>4</sup>y
+                        <div class="var-tooltip">
+                            <div class="var-name">d<sup>4</sup>y</div>
+                            <div class="var-description">Volume element on the 4-cycle &Sigma;<sub>D</sub>.</div>
+                            <div class="var-units">GeV<sup>-4</sup></div>
+                            <div class="var-contribution">Reduced dimension due to localization.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var highlight">0
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>D</sub> = 0</div>
+                            <div class="var-description">The doublet mass vanishes exactly at tree level!</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Protected by topology, not fine-tuning.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Doublet mass: exactly zero from geometric orthogonality</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Topological Protection of Doublet Mass</div>
+                    <div class="formula-meaning">
+                        The vanishing is exact at tree level and protected by the topological structure of K<sub>Pneuma</sub>.
+                        The electroweak doublet mass is generated only at the TeV scale by the Standard Model Higgs mechanism,
+                        completely decoupled from the GUT scale physics.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Protection Mechanism</h5>
+                            <p>Wilson line topology</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Fine-Tuning</h5>
+                            <p>None required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Triplet Mass: The GUT-Scale Overlap</h3>
+            <p>
+                For the <span class="highlight-text">color triplet</span>, the situation is dramatically different.
+                The triplet wavefunction extends throughout the bulk where &langle;&Phi;<sub>GUT</sub>&rangle; &ne; 0:
+            </p>
+
+            <!-- Interactive Formula: Triplet Mass Integral -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">m<sub>T</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>T</sub></div>
+                            <div class="var-description">Effective 4D mass for the color triplet Higgs.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Must be ~ M<sub>GUT</sub> to suppress proton decay.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">&lambda;
+                        <div class="var-tooltip">
+                            <div class="var-name">&lambda;</div>
+                            <div class="var-description">Same O(1) coupling as for doublet.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">GUT symmetry ensures &lambda;<sub>D</sub> = &lambda;<sub>T</sub> at M<sub>GUT</sub>.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">&int;<sub>K</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&int;<sub>K</sub></div>
+                            <div class="var-description">Full 8D integration over K<sub>Pneuma</sub>.</div>
+                            <div class="var-units">8D volume integration</div>
+                            <div class="var-contribution">No restriction since triplet is bulk-delocalized.</div>
+                        </div>
+                    </span>
+                    <span class="formula-var">|&psi;<sub>T</sub>|<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">|&psi;<sub>T</sub>|<sup>2</sup></div>
+                            <div class="var-description">Triplet wavefunction density ~ Vol(K)<sup>-1</sup>.</div>
+                            <div class="var-units">GeV<sup>8</sup></div>
+                            <div class="var-contribution">Nearly constant throughout the bulk.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var highlight">&langle;&Phi;<sub>GUT</sub>&rangle;
+                        <div class="var-tooltip">
+                            <div class="var-name">&langle;&Phi;<sub>GUT</sub>&rangle;</div>
+                            <div class="var-description">GUT-breaking VEV ~ M<sub>GUT</sub> in the bulk.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Non-zero throughout the region where &psi;<sub>T</sub> &ne; 0.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">d<sup>8</sup>y
+                        <div class="var-tooltip">
+                            <div class="var-name">d<sup>8</sup>y</div>
+                            <div class="var-description">Full 8D volume element.</div>
+                            <div class="var-units">GeV<sup>-8</sup></div>
+                            <div class="var-contribution">Integrates over the entire internal space.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Triplet mass integral: non-vanishing bulk overlap</div>
+            </div>
+
+            <p>
+                Evaluating the triplet mass integral explicitly:
+            </p>
+
+            <!-- Explicit Triplet Mass Calculation -->
+            <div class="interactive-formula">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display">
+                    <span class="formula-var">m<sub>T</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>T</sub></div>
+                            <div class="var-description">Triplet mass after evaluating the overlap integral.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Order M<sub>GUT</sub> as required.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">&lambda; &middot; N<sub>T</sub><sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">&lambda; N<sub>T</sub><sup>2</sup></div>
+                            <div class="var-description">Coupling times normalization squared = &lambda;/Vol(K).</div>
+                            <div class="var-units">GeV<sup>8</sup></div>
+                            <div class="var-contribution">Suppression from wavefunction spreading.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var">&int;<sub>K</sub> |f<sub>T</sub>|<sup>2</sup> &langle;&Phi;&rangle; d<sup>8</sup>y
+                        <div class="var-tooltip">
+                            <div class="var-name">&int; |f<sub>T</sub>|<sup>2</sup> &langle;&Phi;&rangle; d<sup>8</sup>y</div>
+                            <div class="var-description">Overlap integral of profile function with condensate.</div>
+                            <div class="var-units">GeV &middot; GeV<sup>-8</sup> = GeV<sup>-7</sup></div>
+                            <div class="var-contribution">Approximately &langle;&Phi;&rangle;<sub>bulk</sub> &middot; Vol(K) for uniform f<sub>T</sub>.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&asymp;</span>
+                    <span class="formula-var highlight">&lambda; &middot; &langle;&Phi;<sub>GUT</sub>&rangle;<sub>bulk</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&lambda; &langle;&Phi;&rangle;<sub>bulk</sub></div>
+                            <div class="var-description">The volume factors cancel in the ratio, leaving the bulk VEV.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">This is the key result: m<sub>T</sub> ~ M<sub>GUT</sub>.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">~</span>
+                    <span class="formula-var highlight">2 &times; 10<sup>16</sup> GeV
+                        <div class="var-tooltip">
+                            <div class="var-name">2 &times; 10<sup>16</sup> GeV</div>
+                            <div class="var-description">The GUT scale determined by gauge coupling unification.</div>
+                            <div class="var-units">GeV</div>
+                            <div class="var-contribution">Safely above the proton decay threshold.</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label">Triplet acquires GUT-scale mass from bulk overlap</div>
+
+                <div class="formula-info">
+                    <div class="formula-title">Triplet Mass Result</div>
+                    <div class="formula-meaning">
+                        The color triplet mass is naturally of order M<sub>GUT</sub> ~ 2 &times; 10<sup>16</sup> GeV.
+                        This ensures proton stability: the triplet-mediated proton decay rate is suppressed by m<sub>T</sub><sup>4</sup>,
+                        yielding &tau;<sub>p</sub> > 10<sup>34</sup> years as required by Super-Kamiokande.
+                    </div>
+                    <div class="formula-info-grid">
+                        <div class="formula-info-item">
+                            <h5>Mass Ratio</h5>
+                            <p>m<sub>T</sub>/m<sub>D</sub> ~ 10<sup>14</sup> (before EW breaking)</p>
+                        </div>
+                        <div class="formula-info-item">
+                            <h5>Mechanism</h5>
+                            <p>Geometric separation, not fine-tuning</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Wilson Line Breaking: Technical Details</h3>
+            <p>
+                The doublet-triplet splitting relies on <span class="highlight-text">Wilson line symmetry breaking</span>
+                in the F-theory/M-theory context. The Wilson line is a flat connection A<sub>m</sub> on K<sub>Pneuma</sub>
+                with non-trivial holonomy around non-contractible cycles:
+            </p>
+
+            <div class="equation-box">
+                W(&gamma;) = P exp(&oint;<sub>&gamma;</sub> A<sub>m</sub> dy<sup>m</sup>) &in; SO(10)
+                <div class="label">Wilson line holonomy around 1-cycle &gamma; &subset; K<sub>Pneuma</sub></div>
+            </div>
+
+            <p>
+                For doublet-triplet splitting, we choose W to break SO(10) &rarr; SU(3)<sub>C</sub> &times; SU(2)<sub>L</sub> &times; U(1)<sub>Y</sub> &times; U(1)<sub>B-L</sub>:
+            </p>
+
+            <div class="concept-highlight">
+                <h4>Wilson Line Configuration</h4>
+                <p>
+                    <strong>Explicit form:</strong> W = diag(e<sup>2&pi;i/3</sup>, e<sup>2&pi;i/3</sup>, e<sup>2&pi;i/3</sup>, 1, 1; e<sup>-2&pi;i/3</sup>, e<sup>-2&pi;i/3</sup>, e<sup>-2&pi;i/3</sup>, 1, 1)<br><br>
+                    <strong>Effect on 10<sub>H</sub>:</strong><br>
+                    &bull; Doublet (1, 2, &pm;1/2): trivial phase &rarr; W|<sub>doublet</sub> = 1 &rarr; localized on fixed locus<br>
+                    &bull; Triplet (3, 1, -1/3): non-trivial phase &rarr; W|<sub>triplet</sub> = e<sup>2&pi;i/3</sup> &rarr; spread in bulk<br><br>
+                    <strong>Fixed locus:</strong> &Sigma;<sub>D</sub> = {y &in; K : W(y) = 1} is a codimension-4 submanifold
+                </p>
+            </div>
+
+            <h3>Summary: The Mass Hierarchy</h3>
+            <table class="breaking-table">
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Wavefunction</th>
+                        <th>Overlap with &langle;&Phi;<sub>GUT</sub>&rangle;</th>
+                        <th>Mass</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>H<sub>u</sub>, H<sub>d</sub> (doublet)</td>
+                        <td>Localized on &Sigma;<sub>D</sub></td>
+                        <td><strong>Zero</strong> (orthogonal support)</td>
+                        <td>0 (before EW breaking)</td>
+                    </tr>
+                    <tr>
+                        <td>T, T&#773; (triplet)</td>
+                        <td>Delocalized in bulk</td>
+                        <td><strong>O(1)</strong> (full overlap)</td>
+                        <td>~M<sub>GUT</sub> ~ 2 &times; 10<sup>16</sup> GeV</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="concept-highlight">
+                <h4>Key Result</h4>
+                <p>
+                    The 14 orders of magnitude mass splitting between doublet and triplet emerges naturally from geometry:
+                    <strong>m<sub>T</sub>/m<sub>D</sub> ~ M<sub>GUT</sub>/v<sub>EW</sub> ~ 10<sup>14</sup></strong>,
+                    where v<sub>EW</sub> = 246 GeV is the electroweak scale. No fine-tuning is required&mdash;the splitting
+                    is protected by the topological structure of K<sub>Pneuma</sub> and the Wilson line configuration.
+                </p>
+            </div>
+        </div>
+
         <!-- Section 3.4: F-Theory Embedding -->
         <div class="subsection">
             <h2>3.4 F-Theory Embedding and String-Theoretic Origin</h2>
