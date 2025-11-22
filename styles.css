@@ -683,3 +683,988 @@ ul li::marker {
     transform: translateY(-4px) !important;
     box-shadow: 0 12px 32px rgba(var(--color-primary-rgb, 139, 127, 255), 0.4) !important;
 }
+
+/* ================================
+   PEER REVIEW CRITICISM SECTIONS
+   ================================ */
+.peer-review-section {
+    background: linear-gradient(135deg, rgba(255, 87, 87, 0.08), rgba(255, 159, 67, 0.05));
+    border: 1px solid rgba(255, 87, 87, 0.25);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.peer-review-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff5757, #ff9f43);
+    border-radius: 16px 16px 0 0;
+}
+
+.peer-review-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 87, 87, 0.2);
+}
+
+.peer-review-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #ff5757, #ff9f43);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 87, 87, 0.3);
+}
+
+.peer-review-section h3 {
+    background: linear-gradient(135deg, #ff5757, #ff9f43);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.4rem;
+    margin: 0;
+}
+
+.criticism-item {
+    background: rgba(255, 87, 87, 0.06);
+    border-left: 4px solid #ff5757;
+    padding: 1.25rem;
+    margin: 1rem 0;
+    border-radius: 0 12px 12px 0;
+}
+
+.criticism-item h4 {
+    color: #ff7b7b;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.criticism-item p {
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+}
+
+.criticism-item p:last-child {
+    margin-bottom: 0;
+}
+
+.author-response {
+    background: rgba(81, 207, 102, 0.08);
+    border-left: 4px solid #51cf66;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    border-radius: 0 8px 8px 0;
+}
+
+.author-response h5 {
+    color: #51cf66;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.author-response p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.severity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.severity-major {
+    background: rgba(255, 87, 87, 0.2);
+    color: #ff5757;
+    border: 1px solid rgba(255, 87, 87, 0.3);
+}
+
+.severity-moderate {
+    background: rgba(255, 159, 67, 0.2);
+    color: #ff9f43;
+    border: 1px solid rgba(255, 159, 67, 0.3);
+}
+
+.severity-minor {
+    background: rgba(255, 212, 59, 0.2);
+    color: #ffd43b;
+    border: 1px solid rgba(255, 212, 59, 0.3);
+}
+
+/* ================================
+   EXPERIMENTAL PREDICTIONS SECTIONS
+   ================================ */
+.experimental-predictions {
+    background: linear-gradient(135deg, rgba(79, 172, 254, 0.08), rgba(0, 242, 254, 0.05));
+    border: 1px solid rgba(79, 172, 254, 0.25);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.experimental-predictions::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    border-radius: 16px 16px 0 0;
+}
+
+.experimental-predictions h3 {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(79, 172, 254, 0.2);
+}
+
+.prediction-card {
+    background: rgba(79, 172, 254, 0.06);
+    border: 1px solid rgba(79, 172, 254, 0.15);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease;
+}
+
+.prediction-card:hover {
+    border-color: rgba(79, 172, 254, 0.3);
+    box-shadow: 0 4px 16px rgba(79, 172, 254, 0.1);
+}
+
+.prediction-card h4 {
+    color: #4facfe;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.prediction-card .observable {
+    display: inline-block;
+    background: rgba(79, 172, 254, 0.15);
+    color: #4facfe;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.1rem;
+    margin: 0.75rem 0;
+    border: 1px solid rgba(79, 172, 254, 0.25);
+}
+
+.prediction-card .method {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed rgba(79, 172, 254, 0.2);
+}
+
+.testability-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.testability-current {
+    background: rgba(81, 207, 102, 0.2);
+    color: #51cf66;
+    border: 1px solid rgba(81, 207, 102, 0.3);
+}
+
+.testability-near {
+    background: rgba(79, 172, 254, 0.2);
+    color: #4facfe;
+    border: 1px solid rgba(79, 172, 254, 0.3);
+}
+
+.testability-future {
+    background: rgba(139, 127, 255, 0.2);
+    color: #8b7fff;
+    border: 1px solid rgba(139, 127, 255, 0.3);
+}
+
+/* Open Questions Box */
+.open-questions {
+    background: rgba(255, 212, 59, 0.08);
+    border: 1px solid rgba(255, 212, 59, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.open-questions h4 {
+    color: #ffd43b;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.open-questions ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.open-questions li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+/* Theory Strengthening Suggestions */
+.strengthening-suggestions {
+    background: rgba(139, 127, 255, 0.08);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.strengthening-suggestions h4 {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+}
+
+.suggestion-item {
+    display: flex;
+    gap: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(139, 127, 255, 0.1);
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
+}
+
+.suggestion-number {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+}
+
+.suggestion-item p {
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* ================================
+   INTERACTIVE FORMULA SYSTEM
+   ================================ */
+
+/* Main formula container */
+.interactive-formula {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(255, 126, 182, 0.08));
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    position: relative;
+    cursor: help;
+    transition: all 0.3s ease;
+}
+
+.interactive-formula:hover {
+    border-color: rgba(139, 127, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(139, 127, 255, 0.15);
+}
+
+.interactive-formula::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 16px 16px 0 0;
+}
+
+/* Formula display area */
+.formula-display {
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    padding: 1rem 0;
+    line-height: 2.2;
+    position: relative;
+}
+
+.formula-display.large {
+    font-size: 1.75rem;
+}
+
+/* Interactive variable terms */
+.formula-var {
+    display: inline-block;
+    position: relative;
+    padding: 0.25rem 0.5rem;
+    margin: 0 0.15rem;
+    background: rgba(139, 127, 255, 0.15);
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-weight: 500;
+}
+
+.formula-var:hover {
+    background: rgba(139, 127, 255, 0.3);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 127, 255, 0.25);
+}
+
+.formula-var.highlight {
+    background: rgba(255, 126, 182, 0.2);
+    border-color: var(--accent-secondary);
+}
+
+.formula-var.highlight:hover {
+    background: rgba(255, 126, 182, 0.35);
+}
+
+/* Operator symbols (non-interactive) */
+.formula-op {
+    display: inline-block;
+    padding: 0 0.3rem;
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+/* Subscripts and superscripts within variables */
+.formula-var sub,
+.formula-var sup {
+    font-size: 0.7em;
+}
+
+/* Variable tooltip */
+.var-tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    width: 280px;
+    background: var(--bg-card);
+    border: 1px solid rgba(139, 127, 255, 0.4);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.formula-var:hover .var-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(-12px);
+}
+
+.var-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-top-color: rgba(139, 127, 255, 0.4);
+}
+
+.var-tooltip .var-name {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.var-tooltip .var-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+}
+
+.var-tooltip .var-units {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(81, 207, 102, 0.15);
+    color: #51cf66;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.var-tooltip .var-units::before {
+    content: 'Units:';
+    color: var(--text-muted);
+}
+
+.var-tooltip .var-contribution {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-style: italic;
+    border-top: 1px solid var(--border-primary);
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+/* Formula info (appears when hovering over formula container) */
+.formula-info {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+    width: 90%;
+    max-width: 450px;
+    background: var(--bg-card);
+    border: 1px solid rgba(139, 127, 255, 0.4);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.interactive-formula:hover .formula-info {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(12px);
+}
+
+.formula-info::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 10px solid transparent;
+    border-bottom-color: rgba(139, 127, 255, 0.4);
+}
+
+.formula-info .formula-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.formula-info .formula-title::before {
+    content: '';
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    border-radius: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z'/%3E%3C/svg%3E");
+    background-size: 14px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.formula-info .formula-meaning {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.formula-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.formula-info-item {
+    background: rgba(139, 127, 255, 0.08);
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-primary);
+}
+
+.formula-info-item h5 {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.35rem;
+}
+
+.formula-info-item p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.formula-info .use-cases {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-primary);
+}
+
+.formula-info .use-cases h5 {
+    font-size: 0.8rem;
+    color: var(--accent-secondary);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.formula-info .use-cases ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.formula-info .use-cases li {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0.35rem 0;
+    padding-left: 1.25rem;
+    position: relative;
+}
+
+.formula-info .use-cases li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7rem;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-secondary);
+    border-radius: 50%;
+}
+
+.formula-info .implications {
+    margin-top: 1rem;
+    background: rgba(255, 212, 59, 0.08);
+    padding: 0.75rem;
+    border-radius: 8px;
+    border-left: 3px solid #ffd43b;
+}
+
+.formula-info .implications h5 {
+    font-size: 0.8rem;
+    color: #ffd43b;
+    margin-bottom: 0.35rem;
+}
+
+.formula-info .implications p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Formula label */
+.formula-label {
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(139, 127, 255, 0.3);
+}
+
+/* Click indicator */
+.formula-hint {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    opacity: 0.7;
+}
+
+.formula-hint::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%236c757d'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/%3E%3C/svg%3E") no-repeat center;
+    background-size: contain;
+}
+
+/* ================================
+   DIAGRAM COMPONENTS
+   ================================ */
+
+/* Flow diagram */
+.flow-diagram {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+}
+
+.flow-diagram h4 {
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.flow-chain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.flow-node {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(139, 127, 255, 0.08));
+    border: 2px solid rgba(139, 127, 255, 0.4);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    min-width: 120px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.flow-node:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(139, 127, 255, 0.25);
+    border-color: var(--accent-primary);
+}
+
+.flow-node .node-label {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.flow-node .node-sublabel {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.35rem;
+}
+
+.flow-arrow {
+    font-size: 1.5rem;
+    color: var(--accent-secondary);
+    padding: 0 0.25rem;
+}
+
+.flow-arrow.down {
+    transform: rotate(90deg);
+}
+
+/* Dimension table with hover */
+.dimension-table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.dimension-table thead {
+    background: linear-gradient(135deg, var(--bg-secondary), rgba(139, 127, 255, 0.1));
+}
+
+.dimension-table th {
+    padding: 1rem 1.25rem;
+    color: var(--accent-primary);
+    font-weight: 600;
+    text-align: left;
+    border-bottom: 2px solid var(--border-primary);
+}
+
+.dimension-table td {
+    padding: 1rem 1.25rem;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-primary);
+    transition: all 0.2s ease;
+}
+
+.dimension-table tr:last-child td {
+    border-bottom: none;
+}
+
+.dimension-table tbody tr {
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.dimension-table tbody tr:hover {
+    background: rgba(139, 127, 255, 0.08);
+}
+
+.dimension-table tbody tr:hover td {
+    color: var(--text-primary);
+}
+
+.dimension-table .highlight-cell {
+    background: rgba(139, 127, 255, 0.15);
+    font-weight: 500;
+    color: var(--accent-primary);
+}
+
+/* Scale ladder diagram */
+.scale-ladder {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.scale-ladder h4 {
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.ladder-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+    padding-left: 80px;
+}
+
+.ladder-container::before {
+    content: '';
+    position: absolute;
+    left: 35px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
+    border-radius: 2px;
+}
+
+.ladder-rung {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    padding: 0.75rem 0;
+}
+
+.ladder-rung::before {
+    content: '';
+    position: absolute;
+    left: -45px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+    border: 3px solid var(--bg-card);
+    box-shadow: 0 0 0 2px var(--accent-primary);
+}
+
+.ladder-scale {
+    position: absolute;
+    left: -80px;
+    width: 60px;
+    text-align: right;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.ladder-content {
+    flex: 1;
+    background: rgba(139, 127, 255, 0.08);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border-left: 3px solid var(--accent-primary);
+    transition: all 0.3s ease;
+}
+
+.ladder-rung:hover .ladder-content {
+    background: rgba(139, 127, 255, 0.15);
+    transform: translateX(4px);
+}
+
+.ladder-content .rung-title {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.ladder-content .rung-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Representation box */
+.representation-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.representation-box h4 {
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.rep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+}
+
+.rep-item {
+    background: rgba(139, 127, 255, 0.08);
+    padding: 0.75rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.25s ease;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+.rep-item:hover {
+    background: rgba(139, 127, 255, 0.18);
+    border-color: rgba(139, 127, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.rep-item .rep-symbol {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    font-weight: 600;
+}
+
+.rep-item .rep-name {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* Comparison table */
+.comparison-table {
+    width: 100%;
+    margin: 2rem 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.comparison-table thead {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.15));
+}
+
+.comparison-table th {
+    padding: 1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-align: center;
+}
+
+.comparison-table th:first-child {
+    text-align: left;
+}
+
+.comparison-table td {
+    padding: 0.85rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-primary);
+}
+
+.comparison-table td:first-child {
+    text-align: left;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.comparison-table tbody tr:hover {
+    background: rgba(139, 127, 255, 0.05);
+}
+
+.comparison-table .check {
+    color: #51cf66;
+    font-size: 1.2rem;
+}
+
+.comparison-table .cross {
+    color: #ff6b6b;
+    font-size: 1.2rem;
+}
+
+.comparison-table .partial {
+    color: #ffd43b;
+    font-size: 1.2rem;
+}
