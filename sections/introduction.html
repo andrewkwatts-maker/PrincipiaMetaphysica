@@ -106,6 +106,13 @@
             font-weight: 600;
         }
 
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.75rem 0 1rem;
+            font-weight: 600;
+        }
+
         .subsection p {
             color: var(--text-secondary);
             line-height: 1.85;
@@ -357,7 +364,8 @@
                 <li><a href="#quest-unification">1.1 The Quest for Unification</a></li>
                 <li><a href="#geometrization">1.2 Geometrization of Forces</a></li>
                 <li><a href="#fermionic-foundation">1.3 A Fermionic Foundation for Geometry</a></li>
-                <li><a href="#outline">1.4 Outline of the Paper</a></li>
+                <li><a href="#division-algebra-origin">1.4 The Division Algebra Origin of D = 13</a></li>
+                <li><a href="#outline">1.5 Outline of the Paper</a></li>
             </ul>
         </div>
 
@@ -627,9 +635,289 @@
             </p>
         </section>
 
-        <section id="outline" class="subsection">
+        <section id="division-algebra-origin" class="subsection">
             <div class="subsection-header">
                 <span class="subsection-number">1.4</span>
+                <h2>The Division Algebra Origin of D = 13</h2>
+            </div>
+
+            <p>
+                A central question for any higher-dimensional theory is: why this particular dimension?
+                For string theory, D = 10 emerges from worldsheet conformal anomaly cancellation. For
+                M-theory, D = 11 is the maximum dimension admitting supergravity. For Principia Metaphysica,
+                <strong>D = 13 emerges uniquely from the mathematics of normed division algebras</strong>.
+            </p>
+
+            <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08));">
+                <h4 style="color: #51cf66;">The Hurwitz Theorem (1898)</h4>
+                <p>
+                    There exist exactly <strong>four</strong> normed division algebras over the real numbers:
+                </p>
+                <ul class="concept-list" style="margin-top: 1rem;">
+                    <li><strong>R</strong> (Real numbers): dimension 1 &mdash; associative, commutative, ordered</li>
+                    <li><strong>C</strong> (Complex numbers): dimension 2 &mdash; associative, commutative</li>
+                    <li><strong>H</strong> (Quaternions): dimension 4 &mdash; associative, non-commutative</li>
+                    <li><strong>O</strong> (Octonions): dimension 8 &mdash; non-associative, alternative</li>
+                </ul>
+                <p style="margin-top: 1rem; font-style: italic;">
+                    No other dimensions admit such algebraic structure. The dimensions 1, 2, 4, 8 are
+                    mathematically privileged.
+                </p>
+            </div>
+
+            <h3>The Unique Decomposition</h3>
+
+            <p>
+                The total dimension D = 13 admits a <em>unique</em> decomposition into division algebra
+                dimensions that satisfies the physical requirements of the theory:
+            </p>
+
+            <div class="equation-box" style="font-size: 1.3rem; padding: 2rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.08), rgba(139, 127, 255, 0.12)); border: 2px solid rgba(81, 207, 102, 0.4);">
+                D = 13 = 1 + 4 + 8 = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>)
+                <span class="equation-label" style="font-size: 0.95rem; margin-top: 1rem;">
+                    The unique division algebra decomposition of D = 13
+                </span>
+            </div>
+
+            <p>
+                Each component has a precise physical interpretation:
+            </p>
+
+            <table class="timeline-table">
+                <thead>
+                    <tr>
+                        <th>Algebra</th>
+                        <th>Dimension</th>
+                        <th>Physical Role</th>
+                        <th>Mathematical Property</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>R</strong> (Reals)</td>
+                        <td style="text-align: center;">1</td>
+                        <td>Emergent thermal time</td>
+                        <td>Ordered field; entropy flow is 1D</td>
+                    </tr>
+                    <tr>
+                        <td><strong>H</strong> (Quaternions)</td>
+                        <td style="text-align: center;">4</td>
+                        <td>Lorentzian spacetime</td>
+                        <td>Spin(3,1) &cong; SL(2,C)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>O</strong> (Octonions)</td>
+                        <td style="text-align: center;">8</td>
+                        <td>Internal manifold K<sub>Pneuma</sub></td>
+                        <td>Aut(O) = G<sub>2</sub>; E<sub>8</sub> lattice</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Why Not 1 + 3 + 9 = 13?</h3>
+
+            <p>
+                One might ask: why is the decomposition 1 + 4 + 8 preferred over alternatives like 1 + 3 + 9?
+                The answer is definitive:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(255, 107, 107, 0.08); border-left-color: #ff6b6b;">
+                <h4 style="color: #ff6b6b;">The Hurwitz Constraint</h4>
+                <p>
+                    <strong>Neither 3 nor 9 is a division algebra dimension.</strong> The Hurwitz theorem
+                    proves that no normed division algebra exists in dimension 3 or 9 (or any dimension
+                    other than 1, 2, 4, 8). Any decomposition using non-division-algebra dimensions lacks
+                    the algebraic structure necessary for consistent spinor physics and gauge theory.
+                </p>
+            </div>
+
+            <table class="timeline-table" style="margin-top: 1.5rem;">
+                <thead>
+                    <tr>
+                        <th>Proposed Decomposition</th>
+                        <th>Status</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>13 = 1 + 3 + 9</td>
+                        <td style="color: #ff6b6b;">Invalid</td>
+                        <td>3 and 9 are not division algebra dimensions</td>
+                    </tr>
+                    <tr>
+                        <td>13 = 1 + 2 + 10</td>
+                        <td style="color: #ff6b6b;">Invalid</td>
+                        <td>10 is not a division algebra dimension</td>
+                    </tr>
+                    <tr>
+                        <td>13 = 5 + 8</td>
+                        <td style="color: #ff6b6b;">Invalid</td>
+                        <td>5 is not a division algebra dimension; no time</td>
+                    </tr>
+                    <tr>
+                        <td style="background: rgba(81, 207, 102, 0.1);"><strong>13 = 1 + 4 + 8</strong></td>
+                        <td style="color: #51cf66; background: rgba(81, 207, 102, 0.1);"><strong>Valid</strong></td>
+                        <td style="background: rgba(81, 207, 102, 0.1);"><strong>R + H + O: all division algebras</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Comparison: D = 10, D = 11, and D = 13</h3>
+
+            <p>
+                The major candidates for fundamental theory&mdash;string theory (D = 10) and M-theory (D = 11)&mdash;also
+                have division algebra interpretations, but with crucial differences:
+            </p>
+
+            <div style="background: var(--bg-secondary); padding: 2rem; border-radius: 12px; margin: 1.5rem 0;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; text-align: left;">
+
+                    <!-- String Theory D=10 -->
+                    <div style="background: rgba(255, 193, 7, 0.1); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(255, 193, 7, 0.3);">
+                        <h4 style="color: #ffc107; margin-bottom: 0.75rem;">String Theory: D = 10</h4>
+                        <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin-bottom: 0.75rem;">
+                            D = 10 = 2 + 8 = <strong>C</strong> + <strong>O</strong>
+                        </p>
+                        <ul style="font-size: 0.9rem; color: var(--text-secondary); padding-left: 1.25rem; margin: 0;">
+                            <li><strong>C</strong>: Worldsheet coordinates</li>
+                            <li><strong>O</strong>: Transverse directions</li>
+                            <li>Requires supersymmetry</li>
+                            <li>Geometric time (not emergent)</li>
+                        </ul>
+                    </div>
+
+                    <!-- M-Theory D=11 -->
+                    <div style="background: rgba(139, 127, 255, 0.1); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(139, 127, 255, 0.3);">
+                        <h4 style="color: var(--accent-primary); margin-bottom: 0.75rem;">M-Theory: D = 11</h4>
+                        <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin-bottom: 0.75rem;">
+                            D = 11 = 1 + 2 + 8 = <strong>R</strong> + <strong>C</strong> + <strong>O</strong>
+                        </p>
+                        <ul style="font-size: 0.9rem; color: var(--text-secondary); padding-left: 1.25rem; margin: 0;">
+                            <li><strong>R</strong> + <strong>C</strong>: Mixed structure</li>
+                            <li><strong>O</strong>: 7D G<sub>2</sub> holonomy (partial)</li>
+                            <li>Requires supersymmetry</li>
+                            <li>Internal space is 7D, not 8D</li>
+                        </ul>
+                    </div>
+
+                    <!-- Principia Metaphysica D=13 -->
+                    <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 8px; border: 1px solid rgba(81, 207, 102, 0.3);">
+                        <h4 style="color: #51cf66; margin-bottom: 0.75rem;">Principia Metaphysica: D = 13</h4>
+                        <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin-bottom: 0.75rem;">
+                            D = 13 = 1 + 4 + 8 = <strong>R</strong> + <strong>H</strong> + <strong>O</strong>
+                        </p>
+                        <ul style="font-size: 0.9rem; color: var(--text-secondary); padding-left: 1.25rem; margin: 0;">
+                            <li><strong>R</strong>: Emergent thermal time</li>
+                            <li><strong>H</strong>: Quaternionic spacetime</li>
+                            <li><strong>O</strong>: Full 8D octonionic geometry</li>
+                            <li><strong>No supersymmetry required</strong></li>
+                        </ul>
+                    </div>
+
+                </div>
+                <p style="margin-top: 1.25rem; font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+                    Division algebra decompositions of competing dimensional choices
+                </p>
+            </div>
+
+            <h3>Why D = 13 Excludes Complex Structure</h3>
+
+            <p>
+                A key distinction is that D = 13 = <strong>R</strong> + <strong>H</strong> + <strong>O</strong>
+                excludes the complex numbers <strong>C</strong>, whereas D = 10 and D = 11 include it. This
+                exclusion is physically meaningful:
+            </p>
+
+            <ul class="concept-list">
+                <li>
+                    <strong>No worldsheet:</strong> The complex structure <strong>C</strong> in string theory
+                    represents the 2D worldsheet. Principia Metaphysica has no fundamental strings.
+                </li>
+                <li>
+                    <strong>Emergent time:</strong> Time emerges thermodynamically from <strong>R</strong>
+                    (real-valued entropy), not geometrically from <strong>C</strong>.
+                </li>
+                <li>
+                    <strong>Quaternionic spacetime:</strong> The 4D spacetime structure arises directly from
+                    <strong>H</strong>, preserving the natural quaternionic structure of the Lorentz group.
+                </li>
+                <li>
+                    <strong>Full octonionic geometry:</strong> The internal 8D manifold has full octonionic
+                    structure, not the reduced 7D G<sub>2</sub> geometry of M-theory.
+                </li>
+            </ul>
+
+            <h3>The Uniqueness Theorem</h3>
+
+            <div class="highlight-box">
+                <h4>Theorem (D = 13 Uniqueness)</h4>
+                <p>
+                    Let D be a spacetime dimension satisfying:
+                </p>
+                <ol style="margin: 1rem 0; padding-left: 1.5rem; color: var(--text-secondary);">
+                    <li>D can be expressed as a sum of normed division algebra dimensions</li>
+                    <li>The decomposition includes exactly one factor of dimension 1 (emergent time)</li>
+                    <li>The decomposition includes exactly one factor of dimension 4 (Lorentz spacetime)</li>
+                    <li>The decomposition includes exactly one factor of dimension 8 (maximal internal structure)</li>
+                    <li>Complex structure (dimension 2) is excluded (no worldsheet)</li>
+                </ol>
+                <p>
+                    Then <strong>D = 13 = 1 + 4 + 8</strong> is the <em>unique</em> solution.
+                </p>
+            </div>
+
+            <p>
+                The proof is immediate: given the constraints, the only possible sum is
+                D = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>) = 1 + 4 + 8 = 13.
+                This is a theorem, not a choice. The Hurwitz theorem constrains the building blocks, and
+                the physical requirements select exactly D = 13.
+            </p>
+
+            <h3>Mathematical Support: Exceptional Structures</h3>
+
+            <p>
+                The dimension D = 13 appears throughout exceptional mathematics, confirming its deep
+                structural significance:
+            </p>
+
+            <div class="equation-box" style="text-align: left; padding: 1.5rem;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2);">dim(F<sub>4</sub>) = 52 = 4 &times; 13</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-muted);">Automorphisms of J<sub>3</sub>(<strong>O</strong>)</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2);">dim(E<sub>6</sub>) = 78 = 6 &times; 13</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-muted);">Collineations of <strong>O</strong>P<sup>2</sup></td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2);">dim(J<sub>3</sub>(<strong>O</strong>)) - dim(G<sub>2</sub>) = 27 - 14 = 13</td>
+                        <td style="padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-muted);">Jordan algebra mod automorphisms</td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 0.5rem;">&Omega;<sub>13</sub><sup>Spin</sup> = &Omega;<sub>13</sub><sup>String</sup> = 0</td>
+                        <td style="padding: 0.5rem; color: var(--text-muted);">Both cobordism groups vanish (rare)</td>
+                    </tr>
+                </table>
+                <span class="equation-label">Occurrences of 13 in exceptional mathematics</span>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 2rem; border-left-color: var(--accent-secondary);">
+                <h4 style="color: var(--accent-secondary);">Key References</h4>
+                <p style="font-size: 0.95rem;">
+                    <strong>Baez, J.C.</strong> "The Octonions." <em>Bull. Amer. Math. Soc.</em> 39 (2002), 145-205.<br><br>
+                    <strong>Kugo, T. & Townsend, P.K.</strong> "Supersymmetry and the Division Algebras."
+                    <em>Nucl. Phys.</em> B221 (1983), 357-380.<br><br>
+                    <strong>Dray, T. & Manogue, C.A.</strong> <em>The Geometry of the Octonions.</em>
+                    World Scientific (2015).
+                </p>
+            </div>
+        </section>
+
+        <section id="outline" class="subsection">
+            <div class="subsection-header">
+                <span class="subsection-number">1.5</span>
                 <h2>Outline of the Paper</h2>
             </div>
             <p>
