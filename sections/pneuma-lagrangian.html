@@ -344,9 +344,32 @@
                 of the Clifford algebra Cl(12,1):
             </p>
 
-            <div class="equation-box">
-                {&Gamma;<sup>M</sup>, &Gamma;<sup>N</sup>} = 2G<sup>MN</sup>
-                <span class="equation-label">13D Clifford Algebra</span>
+            <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
+                    <span class="formula-op">{</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Gamma;<sup>M</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Gamma;<sup>M</sup> — Gamma Matrix</div>
+                            <div class="var-desc">13D gamma matrix with index M = 0,1,...,12</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">,</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Gamma;<sup>N</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Gamma;<sup>N</sup> — Gamma Matrix</div>
+                            <div class="var-desc">Second gamma matrix with index N</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">}</span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">2G<sup>MN</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">2G<sup>MN</sup> — Metric Anticommutator</div>
+                            <div class="var-desc">13D metric with signature (−,+,+,...,+) - 1 time, 12 space</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.1) 13D Clifford Algebra [Clifford 1878]</div>
             </div>
 
             <p>
@@ -375,9 +398,37 @@
                 and gauge connections:
             </p>
 
-            <div class="equation-box">
-                D<sub>M</sub> = &part;<sub>M</sub> + &frac14;&omega;<sub>M</sub><sup>AB</sup>&Gamma;<sub>AB</sub> + A<sub>M</sub><sup>a</sup>T<sup>a</sup>
-                <span class="equation-label">Full covariant derivative</span>
+            <div class="interactive-formula" style="background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.3rem; font-size: 1.2rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">D<sub>M</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">D<sub>M</sub> — Covariant Derivative</div>
+                            <div class="var-desc">Full derivative including all connections</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var" style="padding: 0.3rem 0.4rem;">&part;<sub>M</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&part;<sub>M</sub> — Partial Derivative</div>
+                            <div class="var-desc">Coordinate derivative in direction M</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&frac14;&omega;<sub>M</sub><sup>AB</sup>&Gamma;<sub>AB</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Spin Connection</div>
+                            <div class="var-desc">&omega;<sub>M</sub><sup>AB</sup> couples spinor to curvature; &Gamma;<sub>AB</sub> = ½[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>]</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">A<sub>M</sub><sup>a</sup>T<sup>a</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">Gauge Connection</div>
+                            <div class="var-desc">A<sub>M</sub><sup>a</sup> = gauge field; T<sup>a</sup> = SO(10) generators</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.2) Full Covariant Derivative</div>
             </div>
 
             <h3>Components</h3>
@@ -400,9 +451,23 @@
                 fundamental source of spacetime itself. Through its bilinear condensates:
             </p>
 
-            <div class="equation-box">
-                &langle;<span style="text-decoration: overline;">&Psi;</span><sub>P</sub>&Gamma;<sub>MN</sub>&Psi;<sub>P</sub>&rangle; &ne; 0
-                <span class="equation-label">Pneuma condensates generate geometry</span>
+            <div class="interactive-formula" style="background: rgba(255, 126, 182, 0.08); border: 1px solid rgba(255, 126, 182, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&langle;<span style="text-decoration: overline;">&Psi;</span><sub>P</sub>&Gamma;<sub>MN</sub>&Psi;<sub>P</sub>&rangle;
+                        <div class="var-tooltip">
+                            <div class="var-name">Pneuma Bilinear Condensate</div>
+                            <div class="var-desc">Vacuum expectation value of antisymmetric spinor bilinear - generates spacetime geometry</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&ne;</span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">0
+                        <div class="var-tooltip">
+                            <div class="var-name">Non-zero VEV</div>
+                            <div class="var-desc">Spontaneous symmetry breaking generates K<sub>Pneuma</sub> geometry</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.3) Pneuma Condensates Generate Geometry</div>
             </div>
 
             <p>
