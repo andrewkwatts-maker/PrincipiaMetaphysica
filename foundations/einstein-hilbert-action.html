@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Einstein-Hilbert Action - The variational principle behind General Relativity">
+    <title>Einstein-Hilbert Action - Foundational Physics</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Foundations</a></li>
+                    <li><a href="../sections/einstein-hilbert-term.html">13D Extension</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Foundations</a>
+            <span class="separator">/</span>
+            <span>Einstein-Hilbert Action</span>
+        </nav>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Physics (1915)</span>
+            <h1 style="background: linear-gradient(135deg, #51cf66, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Einstein-Hilbert Action</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The action principle from which Einstein's field equations of General Relativity are derived.
+            </p>
+            <div class="main-equation" style="background: rgba(81, 207, 102, 0.1);">
+                S = &frac{1}{16&pi;G} &int; d<sup>4</sup>x &radic;|g| R
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Formulated by David Hilbert (1915) | Basis of General Relativity
+            </p>
+        </div>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">S = &frac{1}{16&pi;G} &int; d<sup>4</sup>x &radic;|g| R</div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">S</div>
+                        <div class="component-name">Action</div>
+                        <div class="component-desc">The gravitational action - extremizing this gives the equations of motion.</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Variational Principle</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">G</div>
+                        <div class="component-name">Newton's Constant</div>
+                        <div class="component-desc">G &asymp; 6.67 &times; 10<sup>-11</sup> m<sup>3</sup>kg<sup>-1</sup>s<sup>-2</sup>. Sets the strength of gravity.</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Measured</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">d<sup>4</sup>x</div>
+                        <div class="component-name">Spacetime Volume Element</div>
+                        <div class="component-desc">Integration over all 4 spacetime coordinates (t, x, y, z).</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Calculus</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&radic;|g|</div>
+                        <div class="component-name">Metric Determinant</div>
+                        <div class="component-desc">Square root of the absolute value of det(g<sub>&mu;&nu;</sub>). Ensures coordinate invariance.</div>
+                        <a href="metric-tensor.html" class="component-link">Learn more &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">R</div>
+                        <div class="component-name">Ricci Scalar</div>
+                        <div class="component-desc">The trace of the Ricci tensor: R = g<sup>&mu;&nu;</sup>R<sub>&mu;&nu;</sub>. Measures spacetime curvature.</div>
+                        <a href="ricci-tensor.html" class="component-link">Learn more &rarr;</a>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Foundation Chain</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Riemannian Geometry (19th century)</span>
+                        <span class="foundation-badge established">Mathematics</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Principle of Least Action (Lagrangian mechanics)</span>
+                        <span class="foundation-badge established">Established 1788</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="einstein-field-equations.html">Einstein Field Equations</a>
+                        <span class="foundation-badge established">Derived from this action</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physical Interpretation -->
+        <section class="subsection">
+            <h2>Physical Interpretation</h2>
+            <p>
+                The Einstein-Hilbert action embodies the principle that <strong>matter tells spacetime how to curve,
+                and spacetime tells matter how to move</strong>. The action is proportional to the total curvature
+                integrated over spacetime.
+            </p>
+
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h4>Variational Principle</h4>
+                <p>
+                    Varying the action with respect to the metric g<sub>&mu;&nu;</sub> and setting &delta;S = 0 yields
+                    Einstein's field equations: G<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub>, where G<sub>&mu;&nu;</sub>
+                    is the Einstein tensor and T<sub>&mu;&nu;</sub> is the stress-energy tensor from matter.
+                </p>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                In Principia Metaphysica, the Einstein-Hilbert action is generalized to <strong>13 dimensions</strong>:
+            </p>
+
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">S = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R<sub>13</sub></div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge derived">Derived</span>
+                        <a href="../sections/einstein-hilbert-term.html" class="link-btn">Details &rarr;</a>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">M<sub>*</sub><sup>11</sup></div>
+                            <div class="component-name">Fundamental Mass Scale</div>
+                            <div class="component-desc">The 13D gravitational coupling. The power 11 ensures correct dimensions in 13D.</div>
+                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">d<sup>13</sup>x</div>
+                            <div class="component-name">13D Volume Element</div>
+                            <div class="component-desc">Integration over all 13 dimensions: 1 time + 4 large spatial + 8 compact.</div>
+                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">Generalized</span>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">G</div>
+                            <div class="component-name">13D Metric</div>
+                            <div class="component-desc">The full 13&times;13 metric tensor including both 4D spacetime and internal dimensions.</div>
+                            <a href="../sections/geometric-framework.html" class="component-link">Learn more &rarr;</a>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">R<sub>13</sub></div>
+                            <div class="component-name">13D Ricci Scalar</div>
+                            <div class="component-desc">Total curvature of the 13-dimensional bulk spacetime.</div>
+                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">Generalized</span>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Derivation Path</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <span>4D Einstein-Hilbert Action</span>
+                            <span class="foundation-badge established">This Page</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="kaluza-klein.html">Kaluza-Klein Theory</a>
+                            <span class="foundation-badge established">5D &rarr; 4D + gauge</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="../sections/einstein-hilbert-term.html">13D Einstein-Hilbert</a>
+                            <span class="foundation-badge derived">PM Generalization</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Dimensional Reduction</h3>
+            <p>
+                Upon compactification over the 8-dimensional internal manifold K<sub>Pneuma</sub>, the 13D action
+                reduces to 4D Einstein gravity with the Planck mass emerging as:
+            </p>
+            <div class="equation-box">
+                M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &sdot; V<sub>8</sub>
+                <span class="equation-label">4D Planck mass from extra dimensions</span>
+            </div>
+        </section>
+
+        <!-- References -->
+        <section class="subsection" style="background: rgba(81, 207, 102, 0.05);">
+            <h2>References & Further Reading</h2>
+            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
+                <li>
+                    <strong>Original Papers:</strong> Einstein (1915) & Hilbert (1915) "Die Feldgleichungen der Gravitation"
+                    <a href="https://einsteinpapers.press.princeton.edu/" target="_blank" style="color: var(--accent-primary);">[Einstein Papers]</a>
+                </li>
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action" target="_blank" style="color: var(--accent-primary);">Einstein-Hilbert Action</a> |
+                    <a href="https://en.wikipedia.org/wiki/Ricci_curvature" target="_blank" style="color: var(--accent-primary);">Ricci Curvature</a> |
+                    <a href="https://en.wikipedia.org/wiki/Einstein_field_equations" target="_blank" style="color: var(--accent-primary);">Einstein Field Equations</a>
+                </li>
+                <li>
+                    <strong>Textbook:</strong> Misner, Thorne & Wheeler, "Gravitation" (1973)
+                    <a href="https://en.wikipedia.org/wiki/Gravitation_(book)" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Variational Principle:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Palatini_variation" target="_blank" style="color: var(--accent-primary);">Palatini Variation</a> |
+                    <a href="https://en.wikipedia.org/wiki/Principle_of_least_action" target="_blank" style="color: var(--accent-primary);">Principle of Least Action</a>
+                </li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                <a href="../references.html#einstein1915" style="color: var(--accent-secondary);">See full references page &rarr;</a>
+            </p>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="../sections/einstein-hilbert-term.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                13D Einstein-Hilbert &rarr;
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #51cf66, #4facfe);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #51cf66;
+        }
+        .highlight-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+    </style>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the 13D gravitational action in Principia Metaphysica">
+    <title>Einstein-Hilbert Term - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
+    <style>
+        .equation-hero {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1));
+            border: 2px solid rgba(139, 127, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 20px 20px 0 0;
+        }
+
+        .equation-hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .term-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .term-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .term-card:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(139, 127, 255, 0.15);
+        }
+
+        .term-card .term-symbol {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.75rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .term-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .physics-note {
+            background: rgba(79, 172, 254, 0.08);
+            border-left: 4px solid #4facfe;
+            padding: 1.25rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .physics-note h4 {
+            color: #4facfe;
+            margin-bottom: 0.5rem;
+        }
+
+        .physics-note p {
+            margin: 0;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="geometric-framework.html">Geometric Framework</a></li>
+                    <li><a href="cosmology.html">Cosmology</a></li>
+                    <li><a href="../principia-metaphysica-paper.html">Full Paper</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Sections</a>
+            <span class="separator">/</span>
+            <span>Einstein-Hilbert Term</span>
+        </nav>
+
+        <div class="equation-hero">
+            <h1>The Einstein-Hilbert Term</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The 13-dimensional gravitational action that reduces to Einstein gravity in 4D upon compactification.
+            </p>
+            <div class="main-equation">
+                M<sub>*</sub><sup>11</sup>R
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                The gravitational sector of the 13D bulk action
+            </p>
+        </div>
+
+        <!-- Expandable Formula with Derivation Chain -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">
+                    S<sub>gravity</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R<sub>13</sub>
+                </div>
+                <div class="formula-controls">
+                    <span class="foundation-badge derived">Derived from GR</span>
+                    <button class="expand-btn" title="Expand to see derivation">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <a href="../foundations/einstein-hilbert-action.html" class="sub-component" style="text-decoration: none;">
+                        <div class="component-symbol">S = &frac{1}{16&pi;G} &int; d<sup>4</sup>x &radic;|g| R</div>
+                        <div class="component-name">4D Einstein-Hilbert Action</div>
+                        <div class="component-desc">The standard gravitational action from General Relativity.</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Established 1915</span>
+                    </a>
+                    <div class="sub-component">
+                        <div class="component-symbol">R</div>
+                        <div class="component-name">Ricci Scalar</div>
+                        <div class="component-desc">R = g<sup>&mu;&nu;</sup>R<sub>&mu;&nu;</sub>, the trace of the Ricci tensor measuring curvature.</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Riemannian Geometry</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&radic;|G|</div>
+                        <div class="component-name">Metric Determinant</div>
+                        <div class="component-desc">Ensures the volume element is coordinate-invariant.</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Diff. Geometry</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">M<sub>*</sub><sup>11</sup></div>
+                        <div class="component-name">13D Coupling</div>
+                        <div class="component-desc">Dimensional analysis requires mass<sup>11</sup> in 13D for correct units.</div>
+                        <span class="foundation-badge derived" style="margin-top: 0.5rem;">PM Extension</span>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Derivation Path to Established Physics</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="../foundations/einstein-hilbert-action.html">Einstein-Hilbert Action (1915)</a>
+                        <span class="foundation-badge established">Established</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Riemannian Geometry (Riemann, 1854)</span>
+                        <span class="foundation-badge established">Mathematics</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="../foundations/kaluza-klein.html">Kaluza-Klein Theory (1921)</a>
+                        <span class="foundation-badge established">Established</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Higher-Dimensional GR (String Theory, 1970s)</span>
+                        <span class="foundation-badge established">Established</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Term Breakdown -->
+        <section class="subsection">
+            <h2>Component Breakdown</h2>
+            <p>
+                The Einstein-Hilbert term is the standard gravitational action generalized to 13 dimensions.
+                It couples the fundamental mass scale to the curvature of the full bulk spacetime.
+            </p>
+
+            <div class="term-breakdown">
+                <div class="term-card">
+                    <div class="term-symbol">M<sub>*</sub></div>
+                    <h4>Fundamental Mass Scale</h4>
+                    <p>
+                        The single fundamental mass scale of the theory in 13D. All other scales (Planck mass,
+                        GUT scale, etc.) emerge from M<sub>*</sub> through dimensional reduction.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">M<sub>*</sub><sup>11</sup></div>
+                    <h4>Correct Dimensions</h4>
+                    <p>
+                        The power 11 ensures correct mass dimension: in 13D, [R] = mass<sup>2</sup>, and the action
+                        must be dimensionless, so we need mass<sup>11</sup> to compensate for d<sup>13</sup>x.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">R</div>
+                    <h4>Ricci Scalar</h4>
+                    <p>
+                        The 13D Ricci scalar R = G<sup>MN</sup>R<sub>MN</sub>, encoding the curvature of the full
+                        13-dimensional spacetime including both 4D and internal directions.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">R<sub>MN</sub></div>
+                    <h4>Ricci Tensor</h4>
+                    <p>
+                        The contraction of the Riemann tensor: R<sub>MN</sub> = R<sup>P</sup><sub>MPN</sub>.
+                        Contains second derivatives of the 13D metric G<sub>MN</sub>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Full Gravitational Action -->
+        <section class="subsection">
+            <h2>Full Gravitational Action</h2>
+            <p>
+                The complete 13D gravitational action, including the volume element, is:
+            </p>
+
+            <div class="equation-box">
+                S<sub>gravity</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R
+                <span class="equation-label">13D Einstein-Hilbert action</span>
+            </div>
+
+            <h3>Components of the Metric</h3>
+            <p>
+                For Kaluza-Klein reduction, the 13D metric G<sub>MN</sub> decomposes as:
+            </p>
+
+            <div class="equation-box">
+                ds<sup>2</sup><sub>13</sub> = g<sub>&mu;&nu;</sub>(x)dx<sup>&mu;</sup>dx<sup>&nu;</sup> + h<sub>ab</sub>(x,y)dy<sup>a</sup>dy<sup>b</sup>
+                <span class="equation-label">Metric ansatz for KK reduction</span>
+            </div>
+
+            <p>
+                Where g<sub>&mu;&nu;</sub> is the 4D metric, h<sub>ab</sub> is the metric on K<sub>Pneuma</sub>,
+                and we have omitted off-diagonal terms (gauge fields) for clarity.
+            </p>
+        </section>
+
+        <!-- Dimensional Reduction -->
+        <section class="subsection">
+            <h2>4D Effective Gravity</h2>
+            <p>
+                Upon compactification over the 8-dimensional internal manifold K<sub>Pneuma</sub>, the 13D action
+                reduces to 4D Einstein gravity:
+            </p>
+
+            <div class="equation-box">
+                S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> &int; d<sup>4</sup>x &radic;|g| R<sub>4</sub> + ...
+                <span class="equation-label">4D effective gravitational action</span>
+            </div>
+
+            <h3>The Planck Mass Relation</h3>
+            <p>
+                The 4D Planck mass emerges from the fundamental scale and internal volume:
+            </p>
+
+            <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);">
+                M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &sdot; V<sub>8</sub>
+                <span class="equation-label">Planck mass from extra dimensions</span>
+            </div>
+
+            <p>
+                Where V<sub>8</sub> = &int;<sub>K<sub>Pneuma</sub></sub> d<sup>8</sup>y &radic;|h| is the volume of the internal
+                manifold. This explains why M<sub>Pl</sub> ~ 10<sup>18</sup> GeV can emerge from a more fundamental
+                scale M<sub>*</sub> that could be much lower.
+            </p>
+
+            <div class="physics-note">
+                <h4>Key Relation</h4>
+                <p>
+                    With M<sub>*</sub> ~ 10<sup>16</sup> GeV (GUT scale) and V<sub>8</sub> ~ (M<sub>*</sub><sup>-1</sup>)<sup>8</sup>,
+                    one can recover M<sub>Pl</sub> ~ 10<sup>18</sup> GeV. The internal manifold size is thus naturally
+                    tied to the GUT scale.
+                </p>
+            </div>
+        </section>
+
+        <!-- Modifications from F(R,T) -->
+        <section class="subsection">
+            <h2>F(R,T) Modifications</h2>
+            <p>
+                The framework naturally includes modifications to Einstein gravity through the F(R,T) formalism,
+                where T is the trace of the stress-energy tensor:
+            </p>
+
+            <div class="equation-box">
+                S = &int; d<sup>4</sup>x &radic;|g| [M<sub>Pl</sub><sup>2</sup>R + f(R,T)]
+                <span class="equation-label">Modified gravity action</span>
+            </div>
+
+            <p>
+                These modifications arise from:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li>Higher-order curvature terms from the 13D action</li>
+                <li>Moduli stabilization effects from K<sub>Pneuma</sub></li>
+                <li>The Mashiach field dynamics driving dark energy</li>
+            </ul>
+
+            <p>
+                This provides a natural framework for cosmic acceleration without a cosmological constant,
+                with the equation of state w &rarr; -1 as a late-time attractor.
+            </p>
+        </section>
+
+        <!-- Connection to Pneuma -->
+        <section class="subsection">
+            <h2>Connection to the Pneuma Field</h2>
+            <p>
+                While the Einstein-Hilbert term appears as a separate contribution to the action, it is
+                fundamentally sourced by the Pneuma field. The metric G<sub>MN</sub> itself is determined
+                by Pneuma condensates:
+            </p>
+
+            <div class="equation-box">
+                G<sub>MN</sub> ~ &langle;<span style="text-decoration: overline;">&Psi;</span><sub>P</sub>&Gamma;<sub>(M</sub>&nabla;<sub>N)</sub>&Psi;<sub>P</sub>&rangle;
+                <span class="equation-label">Metric from Pneuma bilinears (schematic)</span>
+            </div>
+
+            <p>
+                This is the deep meaning of the fermionic geometry hypothesis: even the gravitational
+                degrees of freedom ultimately trace back to the fundamental Pneuma field.
+            </p>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a href="../index.html" class="nav-link">
+                &larr; Back to Home
+            </a>
+            <a href="geometric-framework.html" class="nav-link">
+                Geometric Framework &rarr;
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.<br>
+            <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                Contact: <a href="mailto:AndrewKWatts@Gmail.com" style="color: var(--accent-primary);">AndrewKWatts@Gmail.com</a>
+            </span>
+        </p>
+    </footer>
+</body>
+</html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beginner's Guide to Principia Metaphysica</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="js/formula-expansion.js" defer></script>
     <style>
         .guide-container {
             max-width: 900px;
@@ -350,13 +351,46 @@
                         The theory proposes a 13-dimensional spacetime with signature (12,1) - meaning 12 space-like
                         dimensions and 1 time-like dimension. This compactifies as:
                     </p>
-                    <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0;">
-                        M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub>
-                    </p>
-                    <p>
-                        where M<sup>4</sup> is our observable 4D spacetime and K<sub>Pneuma</sub> is an 8-dimensional
-                        internal manifold (a Calabi-Yau four-fold with Euler characteristic &chi; = 72).
-                    </p>
+                    <!-- Expandable Formula -->
+                    <div class="expandable-formula" style="margin: 1rem 0;">
+                        <div class="formula-header">
+                            <div class="formula-main">M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub></div>
+                            <div class="formula-controls">
+                                <a href="foundations/index.html" class="link-btn">Foundations &rarr;</a>
+                                <button class="expand-btn">&#x25BC;</button>
+                            </div>
+                        </div>
+                        <div class="formula-expansion">
+                            <div class="sub-components">
+                                <div class="sub-component">
+                                    <div class="component-symbol">M<sup>13</sup></div>
+                                    <div class="component-name">13D Bulk Spacetime</div>
+                                    <div class="component-desc">The full higher-dimensional universe (12 space + 1 time)</div>
+                                </div>
+                                <div class="sub-component">
+                                    <div class="component-symbol">M<sup>4</sup></div>
+                                    <div class="component-name">Observable Universe</div>
+                                    <div class="component-desc">The 4D spacetime we experience (3 space + 1 time)</div>
+                                </div>
+                                <div class="sub-component">
+                                    <div class="component-symbol">K<sub>Pneuma</sub></div>
+                                    <div class="component-name">Hidden Dimensions</div>
+                                    <div class="component-desc">8D Calabi-Yau manifold with &chi; = 72</div>
+                                </div>
+                                <div class="sub-component">
+                                    <div class="component-symbol">&times;</div>
+                                    <div class="component-name">Product Structure</div>
+                                    <div class="component-desc">Kaluza-Klein compactification (1921)</div>
+                                    <span class="foundation-badge established">Established</span>
+                                </div>
+                            </div>
+                            <div class="derivation-chain">
+                                <div class="chain-title">This builds on established physics:</div>
+                                <div class="chain-step"><span class="step-arrow">&rarr;</span> <a href="foundations/kaluza-klein.html">Kaluza-Klein Theory (1921)</a> <span class="foundation-badge established">Established</span></div>
+                                <div class="chain-step"><span class="step-arrow">&rarr;</span> <a href="foundations/calabi-yau.html">Calabi-Yau Geometry</a> <span class="foundation-badge established">Mathematics</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -714,6 +748,44 @@
             <a href="principia-metaphysica-paper.html" class="download-btn-large" style="background: linear-gradient(135deg, #51cf66, #40c057);">
                 &#x1F4DA; Full Technical Paper
             </a>
+        </div>
+
+        <!-- Learn More -->
+        <div class="subsection" style="background: rgba(81, 207, 102, 0.05); border-left: 4px solid #51cf66; margin-top: 2rem;">
+            <h2 style="color: #51cf66;">Learn More About the Physics</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                The concepts in Principia Metaphysica are built on established physics. Here are some accessible resources:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
+                <li>
+                    <strong>General Relativity:</strong>
+                    <a href="https://en.wikipedia.org/wiki/General_relativity" target="_blank" style="color: var(--accent-primary);">Wikipedia</a> |
+                    <a href="https://www.youtube.com/watch?v=DYq774z4dws" target="_blank" style="color: var(--accent-primary);">PBS SpaceTime</a>
+                </li>
+                <li>
+                    <strong>Standard Model:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Standard_Model" target="_blank" style="color: var(--accent-primary);">Wikipedia</a> |
+                    <a href="https://www.youtube.com/watch?v=Unl1jXFnzgo" target="_blank" style="color: var(--accent-primary);">Fermilab Video</a>
+                </li>
+                <li>
+                    <strong>Extra Dimensions:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" style="color: var(--accent-primary);">Kaluza-Klein</a> |
+                    <a href="foundations/kaluza-klein.html" style="color: var(--accent-primary);">PM Foundations</a>
+                </li>
+                <li>
+                    <strong>Grand Unification:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory" target="_blank" style="color: var(--accent-primary);">Wikipedia</a>
+                </li>
+                <li>
+                    <strong>Dark Energy:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Dark_energy" target="_blank" style="color: var(--accent-primary);">Wikipedia</a> |
+                    <a href="https://www.desi.lbl.gov/" target="_blank" style="color: var(--accent-primary);">DESI Experiment</a>
+                </li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                <a href="references.html" style="color: var(--accent-secondary);">Full academic references &rarr;</a> |
+                <a href="foundations/index.html" style="color: var(--accent-secondary);">Foundational physics explained &rarr;</a>
+            </p>
         </div>
 
         <!-- Navigation -->
