@@ -357,12 +357,20 @@
             <p class="toc-title">Table of Contents</p>
             <ul>
                 <li><a href="#intro">1. Introduction and Motivation</a></li>
-                <li><a href="#framework">2. Theoretical Framework</a></li>
+                <li><a href="#framework">2. Theoretical Framework</a>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem;">
+                        <li><a href="#four-brane-structure">2.2.1 The 1+3 Brane Hierarchy</a></li>
+                    </ul>
+                </li>
                 <li><a href="#geometry">3. Geometric Structure: The Pneuma Manifold</a></li>
                 <li><a href="#gauge">4. SO(10) Gauge Unification</a></li>
                 <li><a href="#thermal">5. Thermal Time and Emergent Temporality</a></li>
                 <li><a href="#cosmology">6. Cosmological Implications</a></li>
-                <li><a href="#predictions">7. Predictions and Testability</a></li>
+                <li><a href="#predictions">7. Predictions and Testability</a>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem;">
+                        <li><a href="#philosophical-implications">7.5 Speculative: Consciousness &amp; Hidden Variables</a></li>
+                    </ul>
+                </li>
                 <li><a href="#concerns">8. Concerns and Limitations</a></li>
                 <li><a href="#conclusion">9. Conclusions and Open Questions</a></li>
             </ul>
@@ -531,6 +539,284 @@
         <p>
             where M<sup>4</sup> is observable 4D spacetime and K<sub>Pneuma</sub> is an 8-dimensional internal
             manifold. The Planck mass emerges through the volume relation:
+        </p>
+
+        <h4 id="four-brane-structure">2.2.1 The 1 + 3 Brane Hierarchy</h4>
+
+        <p>
+            The 13-dimensional bulk with signature (12,1) admits a natural interpretation as <strong>one observable
+            plus three hidden 3-dimensional spatial branes, sharing a common time dimension</strong>:
+        </p>
+
+        <div class="equation">
+            M<sup>13</sup> = (B<sub>1</sub><sup>3</sup> &oplus; B<sub>2</sub><sup>3</sup> &oplus; B<sub>3</sub><sup>3</sup> &oplus; B<sub>4</sub><sup>3</sup>) &times; &Ropf;<sub>t</sub>
+            <span class="equation-label">(2.2a)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Dimensional Accounting</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>4 &times; 3 = 12</strong>
+                    <span>Four 3D spatial branes give 12 spatial dimensions</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>+ 1 = 13</strong>
+                    <span>One shared time dimension gives (12,1) signature</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            Each B<sub>i</sub><sup>3</sup> is a 3-dimensional spatial manifold. When combined with the shared
+            time dimension, each brane constitutes a complete 3+1 dimensional spacetime. The key features:
+        </p>
+
+        <ul>
+            <li><strong>Shared temporal evolution:</strong> All four branes evolve along the same time parameter,
+                ensuring causal consistency across the bulk.</li>
+            <li><strong>One experienced, three hidden:</strong> Observers localized on B<sub>1</sub> perceive only
+                their 3+1 dimensional slice; the other three branes (B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub>)
+                constitute "hidden sectors" accessible only through bulk-mediated interactions.</li>
+            <li><strong>Inter-brane correlations:</strong> The unified bulk dynamics creates quantum correlations
+                between fields on different branes, even though direct observation across branes is impossible.</li>
+        </ul>
+
+        <h5>Relation to K<sub>Pneuma</sub> and F-Theory</h5>
+        <p>
+            The 8-dimensional internal manifold K<sub>Pneuma</sub> arises from the compactification geometry.
+            The h<sup>1,1</sup> = 4 K&auml;hler moduli of K<sub>Pneuma</sub> correspond to the four independent
+            "size" parameters of the spatial branes:
+        </p>
+
+        <div class="equation">
+            Vol(B<sub>i</sub>) = &int;<sub>B<sub>i</sub></sub> J<sub>i</sub> &nbsp;&nbsp; (i = 1, 2, 3, 4)
+            <span class="equation-label">(2.2b)</span>
+        </div>
+
+        <p>
+            where J<sub>i</sub> is the K&auml;hler form restricted to each brane. The F-theory elliptic fibration
+            structure organizes how gauge fields propagate across the brane system, with the D<sub>5</sub> singularity
+            on one brane generating SO(10) while other singularity types may exist on hidden branes.
+        </p>
+
+        <h5>Hidden Variables from Inter-Brane States</h5>
+        <p>
+            The states of fields on the hidden sectors (&Sigma;<sub>2</sub>, &Sigma;<sub>3</sub>, &Sigma;<sub>4</sub>) act as
+            <strong>hidden variables</strong> from the perspective of observers in sector &Sigma;<sub>1</sub>. The reduced
+            density matrix on &Sigma;<sub>1</sub> is obtained by partial trace:
+        </p>
+
+        <div class="equation">
+            &rho;<sub>&Sigma;<sub>1</sub></sub> = Tr<sub>&Sigma;<sub>2</sub>,&Sigma;<sub>3</sub>,&Sigma;<sub>4</sub></sub>[|&Psi;&rangle;<sub>bulk</sub>&langle;&Psi;|]
+            <span class="equation-label">(2.2c)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Hilbert Space Structure</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>&Hscr;<sub>bulk</sub></strong>
+                    <span>&Hscr;<sub>&Sigma;<sub>1</sub></sub> &otimes; &Hscr;<sub>&Sigma;<sub>2</sub></sub> &otimes; &Hscr;<sub>&Sigma;<sub>3</sub></sub> &otimes; &Hscr;<sub>&Sigma;<sub>4</sub></sub></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Born Rule</strong>
+                    <span>P(a) = &langle;a|&rho;<sub>&Sigma;<sub>1</sub></sub>|a&rangle; (derived from trace)</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The quantum state accessible to &Sigma;<sub>1</sub> observers is a partial trace over hidden sector degrees
+            of freedom. Apparent quantum randomness on &Sigma;<sub>1</sub> arises from our inability to access the
+            complete bulk state—the underlying dynamics is deterministic across all sectors. This mechanism is
+            structurally similar to environment-induced decoherence, where hidden sectors act as "environment."
+        </p>
+
+        <div class="info-box">
+            <strong>Bell Inequality Consideration:</strong> This hidden variable structure evades Bell's theorem
+            because the theorem constrains <em>local</em> hidden variables. The inter-sector correlations are
+            fundamentally non-local in 3D space: the Pneuma field propagates through the full bulk, coupling
+            all sectors instantaneously (in the shared time). This is analogous to Bohmian mechanics, where the
+            quantum potential provides non-local guidance. The crucial difference: in PM, non-locality is
+            <em>geometric</em> (orthogonal spatial dimensions) rather than kinematic (configuration space).
+        </div>
+
+        <div class="warning-box">
+            <strong>Interpretational Status:</strong> This hidden variable interpretation is a <em>philosophical
+            framework</em> consistent with the mathematics, not experimentally distinguishable from standard quantum
+            mechanics. The partial trace construction is designed to reproduce Born rule statistics exactly.
+            No energy-scale at which deviations would appear has been identified.
+        </div>
+
+        <h5>Mathematical Precision: Division Algebra Decomposition</h5>
+        <p>
+            The "four 3D branes" language is a <em>physical interpretation</em>. The rigorous mathematical
+            structure follows from the <strong>division algebra decomposition</strong> of dimensions:
+        </p>
+
+        <div class="equation">
+            D = 13 = 1 + 4 + 8 = dim(&Ropf;) + dim(&Hopf;) + dim(&Oopf;)
+            <span class="equation-label">(2.2d)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Division Algebra Structure</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>&Ropf; (dim 1)</strong>
+                    <span>Real numbers &rarr; time dimension</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&Hopf; (dim 4)</strong>
+                    <span>Quaternions &rarr; 4D spacetime base</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&Oopf; (dim 8)</strong>
+                    <span>Octonions &rarr; K<sub>Pneuma</sub> internal space</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>h<sup>1,1</sup> = 4</strong>
+                    <span>K&auml;hler moduli &harr; four gauge sectors</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The h<sup>1,1</sup> = 4 K&auml;hler moduli of K<sub>Pneuma</sub> correspond to four <em>gauge sectors</em>
+            within a single CY4, not separate spatial manifolds. Each modulus controls the volume of a divisor class,
+            and the "four branes" interpretation emerges when these sectors decouple in the low-energy limit:
+        </p>
+
+        <div class="equation">
+            K<sub>Pneuma</sub> &supset; &Sigma;<sub>1</sub> &cup; &Sigma;<sub>2</sub> &cup; &Sigma;<sub>3</sub> &cup; &Sigma;<sub>4</sub> &nbsp;&nbsp; (divisor classes)
+            <span class="equation-label">(2.2e)</span>
+        </div>
+
+        <p>
+            Spinor content decomposes under Spin(3,1) &times; Spin(8) as <strong>64 = (4, 8<sub>s</sub>) &oplus; (4&#772;, 8<sub>c</sub>)</strong>,
+            where 64 is the Majorana spinor of Cl(12,1). This gives Weyl fermions localized at singularities
+            on different divisors, recovering the generation structure via &chi;/24 = 3.
+        </p>
+
+        <p>
+            The thermal time hypothesis provides the mechanism for shared temporal evolution across all sectors:
+            inter-sector thermalization through the Pneuma field (with rate &Gamma;<sub>therm</sub> &gt; H, where H is
+            the Hubble rate) ensures a single emergent time parameter across all gauge sectors.
+        </p>
+
+        <h5>The 1 + 3 Hierarchical Structure</h5>
+        <p>
+            A deeper elegance emerges when we recognize the sectors are <strong>not equivalent</strong>. The structure
+            is hierarchical: <strong>one observable sector plus three hidden sectors</strong> in a chain:
+        </p>
+
+        <div class="equation">
+            B<sub>1</sub> &xrarr;<sup>g<sub>12</sub></sup> B<sub>2</sub> &xrarr;<sup>g<sub>23</sub></sup> B<sub>3</sub> &xrarr;<sup>g<sub>34</sub></sup> B<sub>4</sub>
+            <span class="equation-label">(2.2f)</span>
+        </div>
+
+        <p>
+            where g<sub>ij</sub> denotes the inter-sector coupling strength. The <strong>1 + 3 pattern</strong> pervades physics:
+        </p>
+
+        <div class="formula-def">
+            <div class="formula-def-title">The Universal 1 + 3 Pattern</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>Spacetime</strong>
+                    <span>1 time + 3 space dimensions</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Quaternions</strong>
+                    <span>1 real + 3 imaginary units (i, j, k)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Forces</strong>
+                    <span>1 gravity + 3 gauge forces</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Branes</strong>
+                    <span>1 observable + 3 hidden</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            Each 3D brane corresponds to the <strong>imaginary quaternions</strong> Im(&Hopf;) = span{i, j, k}.
+            The observable sector B<sub>1</sub> inherits SU(2) structure from quaternion multiplication, while
+            the three hidden sectors form a <em>shadow chain</em> with geometrically decaying couplings:
+        </p>
+
+        <div class="equation">
+            g<sub>12</sub> : g<sub>23</sub> : g<sub>34</sub> = 1 : &alpha; : &alpha;<sup>2</sup>
+            <span class="equation-label">(2.2g)</span>
+        </div>
+
+        <p>
+            where &alpha; &lt; 1 is determined by the brane separation in K<sub>Pneuma</sub>.
+        </p>
+
+        <h5>Generation Mass Hierarchy from Brane Delocalization</h5>
+        <p>
+            The three fermion generations arise from states with different <strong>delocalization depths</strong>
+            into the hidden sector chain:
+        </p>
+
+        <div class="equation">
+            m<sub>gen</sub><sup>(n)</sup> = m<sub>0</sub> &middot; e<sup>&minus;n&middot;d/&ell;</sup> &nbsp;&nbsp; (n = 1, 2, 3)
+            <span class="equation-label">(2.2h)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Generation-Brane Correspondence</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>Generation 1 (e, u, d)</strong>
+                    <span>Localized on B<sub>1</sub>; lightest masses</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Generation 2 (&mu;, c, s)</strong>
+                    <span>Delocalized into B<sub>2</sub>; intermediate masses</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Generation 3 (&tau;, t, b)</strong>
+                    <span>Delocalized into B<sub>3</sub>; heaviest masses</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>B<sub>4</sub></strong>
+                    <span>Deepest hidden sector; possible dark matter source</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            This provides a <strong>geometric origin for mass hierarchy</strong>: heavier generations have
+            wavefunctions extending deeper into the hidden sector chain. The exponential suppression
+            naturally explains why m<sub>&tau;</sub>/m<sub>e</sub> &asymp; 3477 spans such a large range.
+        </p>
+
+        <div class="info-box">
+            <strong>Quaternion Structure:</strong> The observable 3D space B<sub>1</sub> = Im(&Hopf;) inherits
+            the quaternion multiplication table: i&middot;j = k, j&middot;k = i, k&middot;i = j (cyclic), with
+            anticommutativity i&middot;j = &minus;j&middot;i. This <strong>non-commutativity</strong> underlies
+            the SU(2) gauge structure of the electroweak force and explains why spatial rotations form SO(3) &cong; SU(2)/&Zopf;<sub>2</sub>.
+        </div>
+
+        <h5>Hierarchical Partial Trace</h5>
+        <p>
+            The 1 + 3 structure implies the partial trace has <strong>ordered composition</strong>:
+        </p>
+
+        <div class="equation">
+            &rho;<sub>B<sub>1</sub></sub> = Tr<sub>B<sub>2</sub></sub>[Tr<sub>B<sub>3</sub></sub>[Tr<sub>B<sub>4</sub></sub>[|&Psi;&rangle;&langle;&Psi;|]]]
+            <span class="equation-label">(2.2i)</span>
+        </div>
+
+        <p>
+            Tracing first over B<sub>4</sub> (most distant), then B<sub>3</sub>, then B<sub>2</sub> reflects
+            the hierarchical coupling. The deeper sectors contribute progressively less to the observable
+            quantum state, consistent with their weaker effective coupling.
         </p>
 
         <div class="equation">
@@ -1326,6 +1612,80 @@
             </tr>
         </table>
 
+        <!-- Section 7.5: Speculative Interpretations -->
+        <h3 id="philosophical-implications">7.5 Speculative Interpretations: Consciousness and Hidden Variables</h3>
+
+        <div class="warning-box" style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem;">
+            <strong style="color: #ffc107;">&#x26A0; Speculative Content:</strong>
+            The following interpretations are philosophical extensions that motivated the mathematical framework
+            but are <em>not</em> proven consequences of the physics. They represent one possible interpretation
+            of the multi-brane structure and thermal time formulation.
+        </div>
+
+        <h4>7.5.1 The Four-Brane Consciousness Model</h4>
+        <p>
+            The 13D bulk structure M<sup>13</sup> = (B<sub>1</sub> &oplus; B<sub>2</sub> &oplus; B<sub>3</sub> &oplus; B<sub>4</sub>) &times; &Ropf;<sub>t</sub>
+            (Eq. 2.2a) provides a framework for understanding consciousness and hidden variables:
+        </p>
+
+        <ol>
+            <li><strong>Inter-brane correlations as hidden variables:</strong> Fields on our brane (B<sub>1</sub>)
+                have correlated partners on B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub>. These correlations arise
+                from the unified bulk action. The states of "hidden" particles determine quantum measurement outcomes
+                on our brane (Eq. 2.2c), providing a deterministic mechanism underlying apparent quantum randomness
+                that respects Bell's theorem through non-locality in the extra dimensions.</li>
+
+            <li><strong>Consciousness from collective thermal dynamics:</strong> The thermal time mechanism
+                (Section 5) implies that subjective time experience emerges from the collective settling of
+                Pneuma field modes toward thermal equilibrium. Because all four branes share the same time
+                dimension, this settling occurs <em>synchronously across all branes</em>, suggesting consciousness
+                may arise from the collective dynamics of correlated particles across the brane system.</li>
+
+            <li><strong>Distributed identity:</strong> What appears as a unified conscious entity may actually be
+                a <em>consensus</em> of correlated particles across all four branes, collectively minimizing
+                their action integral. The "least action" principle drives agreement among these distributed
+                components, creating the subjective experience of unified will and agency.</li>
+        </ol>
+
+        <h4>7.5.2 Implications for Wave Function Collapse</h4>
+        <p>
+            In this interpretation, wave function "collapse" is not a mysterious non-unitary process but rather
+            the revelation of pre-existing inter-sector correlations. As derived in Eq. 2.2c:
+        </p>
+
+        <div class="equation">
+            &rho;<sub>&Sigma;<sub>1</sub></sub> = Tr<sub>&Sigma;<sub>2</sub>,&Sigma;<sub>3</sub>,&Sigma;<sub>4</sub></sub>[|&Psi;&rangle;<sub>bulk</sub>&langle;&Psi;|]
+            <span class="equation-label">(7.5)</span>
+        </div>
+
+        <p>
+            The quantum state accessible to &Sigma;<sub>1</sub> observers is a partial trace over hidden sector degrees
+            of freedom. What appears as "measurement collapse" is the correlation between our observation and
+            the pre-existing states in the three hidden sectors. The apparent randomness is epistemic, not ontological—the
+            full bulk state evolves deterministically according to the unified action principle. This is structurally
+            analogous to Bohmian mechanics (non-local hidden variables) and environment-induced decoherence (tracing
+            over environment).
+        </p>
+
+        <h4>7.5.3 Time as Collective Thermal Settling</h4>
+        <p>
+            The thermal time hypothesis acquires deeper meaning in this framework:
+        </p>
+
+        <ul>
+            <li>Time "flows" because Pneuma field excitations across all four branes are collectively relaxing
+                toward their ground state.</li>
+            <li>The "arrow of time" is the direction of decreasing collective free energy.</li>
+            <li>Conscious experience of temporal passage <em>is</em> the thermal entropy production of the
+                cross-brane Pneuma field configuration.</li>
+        </ul>
+
+        <div class="info-box">
+            <strong>Testability Note:</strong> These interpretations are currently not experimentally distinguishable
+            from standard quantum mechanics. They represent a philosophical framework consistent with the mathematics
+            but not uniquely implied by it. Future developments in quantum gravity phenomenology may provide tests.
+        </div>
+
         <h2 id="concerns">8. Concerns and Limitations</h2>
 
         <p>
@@ -1403,74 +1763,86 @@
             </tr>
             <tr>
                 <td>1</td>
+                <td>13D = (1+3)&times;3 spatial + 1 time</td>
+                <td>1+3 brane hierarchy (PM geometry)</td>
+                <td class="status-fitted">PM STRUCTURE</td>
+            </tr>
+            <tr>
+                <td>2</td>
                 <td>13D spinor has 64 components</td>
                 <td>Clifford algebra Cl(12,1) [Atiyah-Bott-Shapiro 1964]</td>
                 <td class="status-derived">ESTABLISHED MATH</td>
             </tr>
             <tr>
-                <td>2</td>
+                <td>3</td>
                 <td>M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup>V<sub>8</sub></td>
                 <td>Kaluza-Klein reduction [Kaluza 1921, Klein 1926]</td>
                 <td class="status-derived">ESTABLISHED</td>
             </tr>
             <tr>
-                <td>3</td>
+                <td>4</td>
                 <td>CY4 has h<sup>2,2</sup> = 2(22 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> - h<sup>2,1</sup>)</td>
                 <td>Hirzebruch-Riemann-Roch [Hirzebruch 1966]</td>
                 <td class="status-derived">ESTABLISHED MATH</td>
             </tr>
             <tr>
-                <td>4</td>
+                <td>5</td>
                 <td>n<sub>gen</sub> = &chi;(CY4)/24</td>
                 <td>F-theory index theorem [Vafa 1996, Sethi-Vafa-Witten 1996]</td>
                 <td class="status-derived">ESTABLISHED</td>
             </tr>
             <tr>
-                <td>5</td>
+                <td>6</td>
                 <td>D<sub>5</sub> singularity &rarr; SO(10)</td>
                 <td>Kodaira classification [Kodaira 1963], McKay correspondence</td>
                 <td class="status-derived">ESTABLISHED MATH</td>
             </tr>
             <tr>
-                <td>6</td>
+                <td>7</td>
                 <td>M<sub>GUT</sub> ~ 2&times;10<sup>16</sup> GeV</td>
                 <td>RG running [Georgi-Quinn-Weinberg 1974]</td>
                 <td class="status-derived">ESTABLISHED</td>
             </tr>
             <tr>
-                <td>7</td>
+                <td>8</td>
                 <td>Seesaw: m<sub>&nu;</sub> ~ m<sub>D</sub><sup>2</sup>/M<sub>R</sub></td>
                 <td>Type-I seesaw [Minkowski 1977, Yanagida 1979]</td>
                 <td class="status-derived">ESTABLISHED</td>
             </tr>
             <tr>
-                <td>8</td>
+                <td>9</td>
                 <td>Time from modular flow</td>
                 <td>Tomita-Takesaki theory [Tomita 1967, Takesaki 1970]</td>
                 <td class="status-derived">ESTABLISHED MATH</td>
             </tr>
             <tr>
-                <td>9</td>
+                <td>10</td>
                 <td>&alpha;<sub>T</sub> = 2.5</td>
                 <td>Friedmann equation + &Gamma; &prop; T</td>
                 <td class="status-semi">SEMI-DERIVED</td>
             </tr>
             <tr>
-                <td>10</td>
+                <td>11</td>
                 <td>K<sub>Pneuma</sub> is CY4 with &chi; = 72</td>
                 <td>PM-specific choice (yields n<sub>gen</sub> = 3)</td>
                 <td class="status-fitted">PM POSTULATE</td>
             </tr>
             <tr>
-                <td>11</td>
+                <td>12</td>
                 <td>w<sub>0</sub> &asymp; -0.85</td>
                 <td>Fitted to DESI 2024</td>
                 <td class="status-fitted">FITTED</td>
             </tr>
             <tr>
-                <td>12</td>
+                <td>13</td>
                 <td>w<sub>a</sub> &lt; 0</td>
                 <td>Thermal friction mechanism</td>
+                <td class="status-semi">SEMI-DERIVED</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>m<sub>gen</sub><sup>(n)</sup> ~ e<sup>-nd/&ell;</sup></td>
+                <td>Brane delocalization depth (1+3 hierarchy)</td>
                 <td class="status-semi">SEMI-DERIVED</td>
             </tr>
         </table>
@@ -1481,6 +1853,15 @@
             <span class="status-fitted">RED</span> = PM postulate or fitted parameter.
         </p>
 
+        <div class="info-box">
+            <strong>Human-Readable Summary:</strong> Starting from the 1+3 brane structure (step 1), the theory uses
+            established mathematics (Clifford algebras, Kaluza-Klein, Calabi-Yau geometry) to derive particle physics.
+            The CY4 topology with &chi;=72 gives exactly 3 generations (step 5). F-theory singularities give SO(10)
+            gauge symmetry (step 6). Thermal time emergence (step 9) explains why time flows forward. The mass
+            hierarchy (step 14) arises from how deeply particles extend into the hidden brane chain. Most steps
+            use established physics; PM's main contributions are the specific geometry and the brane hierarchy.
+        </div>
+
         <h2 id="conclusion">9. Conclusions and Open Questions</h2>
 
         <h3>9.1 What the Theory Achieves</h3>
@@ -1490,6 +1871,7 @@
             <li><strong>SO(10) from geometry:</strong> D<sub>5</sub> singularity in F-theory</li>
             <li><strong>Dark energy mechanism:</strong> Thermal friction naturally gives w<sub>a</sub> &lt; 0</li>
             <li><strong>Time emergence:</strong> Thermal time hypothesis connects entropy to time flow</li>
+            <li><strong>Mass hierarchy from geometry:</strong> 1+3 brane delocalization explains m<sub>&tau;</sub>/m<sub>e</sub> &asymp; 3477</li>
         </ul>
 
         <h3>9.2 What Remains Speculative</h3>
