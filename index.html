@@ -28,6 +28,7 @@
             height: 200%;
             background: radial-gradient(circle, rgba(139, 127, 255, 0.05) 0%, transparent 50%);
             animation: pulse 8s ease-in-out infinite;
+            pointer-events: none;
         }
 
         @keyframes pulse {
@@ -231,12 +232,39 @@
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            position: relative;
+            z-index: 10;
+            cursor: pointer;
         }
 
         .download-btn:hover {
             background: rgba(139, 127, 255, 0.2);
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(139, 127, 255, 0.2);
+        }
+
+        .downloads {
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Formula link hover effects */
+        .formula-info-item a:hover h5,
+        .formula-info-item a:hover p {
+            color: var(--accent-primary) !important;
+        }
+
+        .use-cases a:hover {
+            color: var(--accent-primary) !important;
+            text-decoration: underline;
+        }
+
+        .formula-var {
+            cursor: pointer;
+        }
+
+        a.formula-var:hover {
+            color: var(--accent-primary) !important;
         }
 
         /* Equation Display */
@@ -276,9 +304,9 @@
             <h1>Principia Metaphysica</h1>
             <p class="subtitle">Philosophiae Metaphysicae Principia Mathematica</p>
             <p>
-                A unified theory of gravity and the Standard Model forces based on a Kaluza-Klein
-                compactification of a 13-dimensional (12,1) spacetime, where time emerges as a thermodynamic
-                phenomenon from a fundamental fermionic "Pneuma" field.
+                A unified theory of gravity and the Standard Model forces based on a <strong>1 + 3 brane hierarchy</strong>
+                in 13-dimensional (12,1) spacetime: one observable universe plus three hidden "shadow" universes,
+                where time emerges thermodynamically from a fundamental fermionic "Pneuma" field.
             </p>
             <div class="author-info">
                 <div class="name">Andrew Keith Watts</div>
@@ -286,10 +314,13 @@
             </div>
             <div class="downloads">
                 <a href="beginners-guide.html" class="download-btn" style="background: linear-gradient(135deg, #ffc107, #ff9800);">
-                    <span>&#x1F393;</span> Beginner's Guide (No Physics Required)
+                    <span>&#x1F393;</span> Beginner's Guide
+                </a>
+                <a href="philosophical-implications.html" class="download-btn" style="background: linear-gradient(135deg, #ff7eb6, #8b7fff);">
+                    <span>&#x1F9E0;</span> Philosophical Implications
                 </a>
                 <a href="principia-metaphysica-paper.html" class="download-btn" style="background: linear-gradient(135deg, #8b7fff, #ff7eb6);">
-                    <span>&#x1F4C4;</span> Complete Theory Paper (v4.0)
+                    <span>&#x1F4C4;</span> Full Paper (v4.0)
                 </a>
                 <a href="sections/index.html" class="download-btn" style="background: linear-gradient(135deg, #51cf66, #40c057);">
                     <span>&#x1F4DA;</span> Interactive Sections
@@ -317,23 +348,25 @@
             <div class="interactive-formula" style="margin-top: 2rem; position: relative; z-index: 1;">
                 <span class="formula-hint">Hover for details</span>
                 <div class="formula-display large">
-                    <span class="formula-var">S
+                    <a href="principia-metaphysica-paper.html#framework" class="formula-var" style="text-decoration: none; color: inherit;">S
                         <div class="var-tooltip">
-                            <div class="var-name">S</div>
+                            <div class="var-name">S - Action</div>
                             <div class="var-description">The total action of the universe - the master quantity from which all physics derives.</div>
                             <div class="var-units">Dimensionless (natural units)</div>
                             <div class="var-contribution">Extremizing this action yields all equations of motion for gravity and matter.</div>
+                            <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to see full paper &rarr;</div>
                         </div>
-                    </span>
+                    </a>
                     <span class="formula-op">=</span>
-                    <span class="formula-var">&int; d<sup>13</sup>x &radic;|G|
+                    <a href="sections/geometric-framework.html" class="formula-var" style="text-decoration: none; color: inherit;">&int; d<sup>13</sup>x &radic;|G|
                         <div class="var-tooltip">
                             <div class="var-name">&int; d<sup>13</sup>x &radic;|G|</div>
                             <div class="var-description">Integration over all 13 dimensions with the proper covariant volume element.</div>
                             <div class="var-units">Length<sup>13</sup></div>
                             <div class="var-contribution">Sums physics from every point in the (12,1) dimensional bulk spacetime.</div>
+                            <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click for Geometric Framework &rarr;</div>
                         </div>
-                    </span>
+                    </a>
                     <span class="formula-op">[</span>
                     <a href="sections/einstein-hilbert-term.html" class="formula-var highlight" style="text-decoration: none; color: inherit;">M<sub>*</sub><sup>11</sup>R
                         <div class="var-tooltip">
@@ -365,36 +398,40 @@
                     </div>
                     <div class="formula-info-grid">
                         <div class="formula-info-item">
-                            <h5>Dimensions</h5>
-                            <p>(12,1) &rarr; 4D via K<sub>Pneuma</sub></p>
+                            <a href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+                                <h5>Dimensions</h5>
+                                <p>(12,1) &rarr; 4D via K<sub>Pneuma</sub></p>
+                            </a>
                         </div>
                         <div class="formula-info-item">
-                            <h5>Gauge Group</h5>
-                            <p>SO(10) &supset; G<sub>SM</sub></p>
+                            <a href="sections/gauge-unification.html" style="text-decoration: none; color: inherit;">
+                                <h5>Gauge Group</h5>
+                                <p>SO(10) &supset; G<sub>SM</sub></p>
+                            </a>
                         </div>
                     </div>
                     <div class="use-cases">
                         <h5>What Emerges</h5>
                         <ul>
-                            <li>Einstein gravity + cosmological dynamics</li>
-                            <li>SO(10) GUT &rarr; Standard Model</li>
-                            <li>Three fermion generations from topology</li>
-                            <li>Thermal time from Pneuma statistics</li>
+                            <li><a href="sections/cosmology.html" style="color: var(--text-secondary);">Einstein gravity + cosmological dynamics</a></li>
+                            <li><a href="sections/gauge-unification.html" style="color: var(--text-secondary);">SO(10) GUT &rarr; Standard Model</a></li>
+                            <li><a href="sections/fermion-sector.html" style="color: var(--text-secondary);">Three fermion generations from topology</a></li>
+                            <li><a href="sections/thermal-time.html" style="color: var(--text-secondary);">Thermal time from Pneuma statistics</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
 
             <!-- Expandable Formula Breakdown -->
-            <div class="expandable-formula" style="margin-top: 1.5rem;">
-                <div class="formula-header">
+            <div class="expandable-formula" style="margin-top: 1.5rem;" id="master-formula">
+                <div class="formula-header" style="cursor: pointer;">
                     <div class="formula-main">
-                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">Expand:</span>
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">&#x25BC; Click to Expand:</span>
                         S = &int; d<sup>13</sup>x &radic;|G| [M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>]
                     </div>
                     <div class="formula-controls">
                         <a href="foundations/index.html" class="link-btn">Foundations &rarr;</a>
-                        <button class="expand-btn" title="Expand to see sub-components">&#x25BC;</button>
+                        <button class="expand-btn" title="Expand to see sub-components" onclick="this.closest('.expandable-formula').classList.toggle('expanded'); this.innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '&#x25B2;' : '&#x25BC;';">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
@@ -622,28 +659,28 @@
             </div>
             <div class="concepts-grid">
                 <div class="concept-item">
-                    <h3>(12,1) Spacetime</h3>
-                    <p>A 13-dimensional bulk with 12 spatial and 1 temporal dimension, treated as an Effective Field Theory.</p>
+                    <h3>1 + 3 Brane Hierarchy</h3>
+                    <p>One observable universe + three hidden "shadow" universes in a chain, explaining the universal 1+3 pattern.</p>
                 </div>
                 <div class="concept-item">
                     <h3>Pneuma Field (&Psi;<sub>P</sub>)</h3>
                     <p>A fundamental 64-component fermionic spinor whose condensates form the internal geometry.</p>
                 </div>
                 <div class="concept-item">
-                    <h3>SO(10) Grand Unification</h3>
-                    <p>All Standard Model forces and fermions unified in the 16-dimensional spinor representation.</p>
+                    <h3>Generation Mass Hierarchy</h3>
+                    <p>Three particle generations arise from wavefunction delocalization into the hidden brane chain.</p>
                 </div>
                 <div class="concept-item">
                     <h3>Thermal Time Hypothesis</h3>
                     <p>Time emerges from thermodynamic flow via Tomita-Takesaki modular theory.</p>
                 </div>
                 <div class="concept-item">
-                    <h3>Mashiach Field</h3>
-                    <p>A modulus field driving cosmic acceleration and stabilizing extra dimensions.</p>
+                    <h3>Hidden Variables Interpretation</h3>
+                    <p>Quantum randomness arises from partial trace over hidden sector states&mdash;deterministic in the bulk.</p>
                 </div>
                 <div class="concept-item">
-                    <h3>Falsifiable Predictions</h3>
-                    <p>Modified gravitational wave dispersion testable via SME coefficients.</p>
+                    <h3>SO(10) Grand Unification</h3>
+                    <p>All Standard Model forces unified via F-theory D<sub>5</sub> singularity; &chi;/24 = 3 generations.</p>
                 </div>
             </div>
         </section>
