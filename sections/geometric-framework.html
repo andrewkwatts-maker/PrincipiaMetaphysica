@@ -1679,117 +1679,105 @@
                     and hypersurface degrees:
                 </p>
 
-                <div class="equation-box interactive-formula" style="background: rgba(40, 167, 69, 0.1); border: 1px solid rgba(40, 167, 69, 0.3); font-family: monospace; text-align: left; padding: 1.5rem;">
-                    <span class="formula-hint">Hover for details</span>
-                    <div style="margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.85rem;"><span class="formula-var" style="font-family: inherit;">CICY
-                        <div class="var-tooltip">
-                            <div class="var-name">CICY (Complete Intersection Calabi-Yau)</div>
-                            <div class="var-description">A Calabi-Yau manifold realized as the common zero locus of multiple polynomial equations in a product of projective spaces.</div>
-                            <div class="var-units">Algebraic variety</div>
-                            <div class="var-contribution">Provides explicit constructible examples of CY manifolds with computable Hodge numbers.</div>
-                        </div>
-                    </span> Configuration Matrix for <span class="formula-var" style="font-family: inherit;">K<sub>Pneuma</sub>
-                        <div class="var-tooltip">
-                            <div class="var-name">K<sub>Pneuma</sub></div>
-                            <div class="var-description">The 8-dimensional internal Calabi-Yau four-fold with Euler characteristic chi=72.</div>
-                            <div class="var-units">8-dimensional compact manifold</div>
-                            <div class="var-contribution">Hosts the internal geometry determining gauge symmetry and fermion generations.</div>
-                        </div>
-                    </span>:</div>
-                    <div style="display: flex; align-items: flex-start; gap: 0.5rem;">
-                        <div style="display: flex; flex-direction: column; justify-content: space-around; height: 5.5rem; padding-top: 1.5rem;">
-                            <span class="formula-var" style="font-family: monospace;">P<sup>1</sup>
-                                <div class="var-tooltip">
-                                    <div class="var-name">P<sup>1</sup> (Projective Line)</div>
-                                    <div class="var-description">The complex projective line, also known as the Riemann sphere - the simplest compact complex manifold.</div>
-                                    <div class="var-units">2 real dimensions (1 complex)</div>
-                                    <div class="var-contribution">Each P^1 factor adds one dimension to the ambient space; row sum must equal 2.</div>
-                                </div>
-                            </span>
-                            <span class="formula-var" style="font-family: monospace;">P<sup>1</sup>
-                                <div class="var-tooltip">
-                                    <div class="var-name">P<sup>1</sup> (Projective Line)</div>
-                                    <div class="var-description">Second projective line factor in the ambient product space.</div>
-                                    <div class="var-units">2 real dimensions (1 complex)</div>
-                                    <div class="var-contribution">Contributes to ambient dimension; constraint row sum = 2.</div>
-                                </div>
-                            </span>
-                            <span class="formula-var" style="font-family: monospace;">P<sup>1</sup>
-                                <div class="var-tooltip">
-                                    <div class="var-name">P<sup>1</sup> (Projective Line)</div>
-                                    <div class="var-description">Third projective line factor in the ambient product space.</div>
-                                    <div class="var-units">2 real dimensions (1 complex)</div>
-                                    <div class="var-contribution">Contributes to ambient dimension; constraint row sum = 2.</div>
-                                </div>
-                            </span>
-                            <span class="formula-var" style="font-family: monospace;">P<sup>3</sup>
-                                <div class="var-tooltip">
-                                    <div class="var-name">P<sup>3</sup> (Projective 3-space)</div>
-                                    <div class="var-description">Three-dimensional complex projective space - hypersurfaces here are degree-4 K3 surfaces.</div>
-                                    <div class="var-units">6 real dimensions (3 complex)</div>
-                                    <div class="var-contribution">Contributes 3 to ambient dimension; constraint row sum = 4.</div>
-                                </div>
-                            </span>
-                        </div>
-                        <pre style="margin: 0; font-size: 1rem; color: var(--text-primary);">
-         [ <span class="formula-var">d<sub>1</sub>
-                                <div class="var-tooltip">
-                                    <div class="var-name">d<sub>1</sub></div>
-                                    <div class="var-description">Degree of the first defining polynomial in each ambient projective space.</div>
-                                    <div class="var-units">Dimensionless (polynomial degree)</div>
-                                    <div class="var-contribution">Column entries specify how the first hypersurface intersects each P^n factor.</div>
-                                </div>
-                            </span>  <span class="formula-var">d<sub>2</sub>
-                                <div class="var-tooltip">
-                                    <div class="var-name">d<sub>2</sub></div>
-                                    <div class="var-description">Degree of the second defining polynomial in each ambient projective space.</div>
-                                    <div class="var-units">Dimensionless (polynomial degree)</div>
-                                    <div class="var-contribution">Specifies intersection pattern of second hypersurface.</div>
-                                </div>
-                            </span>  <span class="formula-var">d<sub>3</sub>
-                                <div class="var-tooltip">
-                                    <div class="var-name">d<sub>3</sub></div>
-                                    <div class="var-description">Degree of the third defining polynomial in each ambient projective space.</div>
-                                    <div class="var-units">Dimensionless (polynomial degree)</div>
-                                    <div class="var-contribution">Specifies intersection pattern of third hypersurface.</div>
-                                </div>
-                            </span>  <span class="formula-var">d<sub>4</sub>
-                                <div class="var-tooltip">
-                                    <div class="var-name">d<sub>4</sub></div>
-                                    <div class="var-description">Degree of the fourth defining polynomial in each ambient projective space.</div>
-                                    <div class="var-units">Dimensionless (polynomial degree)</div>
-                                    <div class="var-contribution">Four hypersurfaces reduce dimension 6 to 4 complex = 8 real.</div>
-                                </div>
-                            </span> ]
-   [  1    1    0    0  ]
-   [  0    0    1    1  ]
-   [  1    0    1    0  ]
-   [  1    1    1    1  ]</pre>
+                <!-- Clean CICY Matrix Display -->
+                <div style="background: rgba(40, 167, 69, 0.08); border: 1px solid rgba(40, 167, 69, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                    <div style="text-align: center; color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+                        <strong>CICY Configuration Matrix for K<sub>Pneuma</sub></strong>
                     </div>
-                    <span class="equation-label">Calabi-Yau condition: <span class="formula-var">&Sigma;<sub>j</sub> d<sub>ij</sub>
-                        <div class="var-tooltip">
-                            <div class="var-name">Row Sum Condition</div>
-                            <div class="var-description">Sum of degrees across each row must equal (dimension of that projective space) + 1 for the first Chern class to vanish.</div>
-                            <div class="var-units">Dimensionless constraint</div>
-                            <div class="var-contribution">Ensures Ricci-flatness and Calabi-Yau property of the complete intersection.</div>
+
+                    <!-- Matrix as clean table -->
+                    <div style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+                        <!-- Row labels -->
+                        <div style="display: flex; flex-direction: column; gap: 0.25rem; text-align: right;">
+                            <div style="background: rgba(139, 127, 255, 0.2); padding: 0.35rem 0.6rem; border-radius: 4px; font-family: 'Crimson Text', serif; font-size: 0.95rem;">P<sup>1</sup></div>
+                            <div style="background: rgba(139, 127, 255, 0.2); padding: 0.35rem 0.6rem; border-radius: 4px; font-family: 'Crimson Text', serif; font-size: 0.95rem;">P<sup>1</sup></div>
+                            <div style="background: rgba(139, 127, 255, 0.2); padding: 0.35rem 0.6rem; border-radius: 4px; font-family: 'Crimson Text', serif; font-size: 0.95rem;">P<sup>1</sup></div>
+                            <div style="background: rgba(139, 127, 255, 0.2); padding: 0.35rem 0.6rem; border-radius: 4px; font-family: 'Crimson Text', serif; font-size: 0.95rem;">P<sup>3</sup></div>
                         </div>
-                    </span> = n<sub>i</sub> + 1 for each row</span>
+
+                        <!-- Left bracket -->
+                        <div style="font-size: 4rem; color: var(--text-muted); line-height: 1; font-weight: 100;">[</div>
+
+                        <!-- Matrix content -->
+                        <table style="border-collapse: separate; border-spacing: 0.4rem;">
+                            <thead>
+                                <tr>
+                                    <th style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent-secondary);">d₁</th>
+                                    <th style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent-secondary);">d₂</th>
+                                    <th style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent-secondary);">d₃</th>
+                                    <th style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: var(--accent-secondary);">d₄</th>
+                                    <th style="padding: 0.3rem 0.5rem; font-size: 0.75rem; color: var(--text-muted);">=</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">0</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">0</td>
+                                    <td style="background: rgba(81, 207, 102, 0.2); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; color: #51cf66; font-weight: 600;">2</td>
+                                </tr>
+                                <tr>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">0</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">0</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(81, 207, 102, 0.2); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; color: #51cf66; font-weight: 600;">2</td>
+                                </tr>
+                                <tr>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">0</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">0</td>
+                                    <td style="background: rgba(81, 207, 102, 0.2); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; color: #51cf66; font-weight: 600;">2</td>
+                                </tr>
+                                <tr>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(255,255,255,0.05); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; font-family: monospace;">1</td>
+                                    <td style="background: rgba(81, 207, 102, 0.2); padding: 0.4rem 0.7rem; border-radius: 4px; text-align: center; color: #51cf66; font-weight: 600;">4</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- Right bracket -->
+                        <div style="font-size: 4rem; color: var(--text-muted); line-height: 1; font-weight: 100;">]</div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: var(--text-muted);">
+                        <strong>Calabi-Yau condition:</strong> Row sum = dim(P<sup>n</sup>) + 1 &nbsp;✓
+                    </div>
                 </div>
 
-                <p style="margin-top: 1rem;">
-                    <strong>Verification:</strong> Each row satisfies the CY condition:
-                </p>
-                <ul style="margin-left: 1.5rem; color: var(--text-secondary); font-size: 0.95rem;">
-                    <li>P<sup>1</sup>: 1+1+0+0 = 2 = 1+1 &check;</li>
-                    <li>P<sup>1</sup>: 0+0+1+1 = 2 = 1+1 &check;</li>
-                    <li>P<sup>1</sup>: 1+0+1+0 = 2 = 1+1 &check;</li>
-                    <li>P<sup>3</sup>: 1+1+1+1 = 4 = 3+1 &check;</li>
-                </ul>
+                <!-- Explanation grid -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                    <div style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-primary);">
+                        <strong style="color: var(--accent-primary);">Ambient Space</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);">
+                            P<sup>1</sup> × P<sup>1</sup> × P<sup>1</sup> × P<sup>3</sup><br>
+                            <span style="font-size: 0.8rem;">Dimension: 1+1+1+3 = 6 (complex)</span>
+                        </p>
+                    </div>
+                    <div style="background: rgba(255, 126, 182, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent-secondary);">
+                        <strong style="color: var(--accent-secondary);">Hypersurfaces</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);">
+                            4 polynomial equations (d₁-d₄)<br>
+                            <span style="font-size: 0.8rem;">Each column = one constraint</span>
+                        </p>
+                    </div>
+                    <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid #51cf66;">
+                        <strong style="color: #51cf66;">Result: CY4</strong>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; color: var(--text-secondary);">
+                            6 − 4 = 4 complex dim<br>
+                            <span style="font-size: 0.8rem;">= 8 real dimensions ✓</span>
+                        </p>
+                    </div>
+                </div>
 
-                <p style="margin-top: 1rem;">
-                    The ambient space is P<sup>1</sup> &times; P<sup>1</sup> &times; P<sup>1</sup> &times; P<sup>3</sup>
-                    (dimension 1+1+1+3=6), and the complete intersection of 4 hypersurfaces gives
-                    complex dimension 6&minus;4=4 (real dimension 8), confirming this is a CY4.
+                <p>
+                    The row sums (shown in green) must equal the dimension of that projective space plus one—this
+                    ensures the first Chern class vanishes (c₁ = 0), which is the defining property of a Calabi-Yau manifold.
                 </p>
             </div>
 
@@ -2251,76 +2239,118 @@
                 </table>
             </div>
 
-            <!-- Hodge Diamond Visualization -->
-            <div class="diagram-container" style="margin-top: 2rem;">
-                <div class="diagram-title">Hodge Diamond for K<sub>Pneuma</sub></div>
-                <svg class="diagram-svg" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Background -->
-                    <rect x="50" y="50" width="400" height="300" rx="16" fill="rgba(139,127,255,0.05)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
+            <!-- Hodge Numbers Visualization - Dual Display -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem;">
 
-                    <!-- Title -->
-                    <text x="250" y="30" text-anchor="middle" fill="#8b7fff" font-size="14" font-weight="600">CY4 Hodge Diamond (h<tspan baseline-shift="super" font-size="10">p,q</tspan>)</text>
+                <!-- Left: Compact Hodge Diamond -->
+                <div style="background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.2); border-radius: 12px; padding: 1.5rem;">
+                    <h5 style="text-align: center; color: var(--accent-primary); margin: 0 0 1rem 0; font-size: 0.95rem;">Hodge Diamond for K<sub>Pneuma</sub></h5>
 
-                    <!-- Row 0 -->
-                    <text x="250" y="85" text-anchor="middle" fill="#f8f9fa" font-size="16" font-weight="bold">1</text>
+                    <!-- Compact diamond using CSS grid -->
+                    <div style="display: grid; grid-template-columns: repeat(9, 1fr); gap: 2px; text-align: center; font-size: 0.85rem; line-height: 1.8;">
+                        <!-- Row 0 (p+q=0) -->
+                        <div></div><div></div><div></div><div></div>
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 4px; font-weight: bold;">1</div>
+                        <div></div><div></div><div></div><div></div>
 
-                    <!-- Row 1 -->
-                    <text x="215" y="115" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="285" y="115" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
+                        <!-- Row 1 (p+q=1) -->
+                        <div></div><div></div><div></div>
+                        <div style="color: #6c757d;">0</div><div></div><div style="color: #6c757d;">0</div>
+                        <div></div><div></div><div></div>
 
-                    <!-- Row 2 -->
-                    <text x="180" y="145" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="250" y="145" text-anchor="middle" fill="#28a745" font-size="16" font-weight="bold">4</text>
-                    <text x="320" y="145" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
+                        <!-- Row 2 (p+q=2) -->
+                        <div></div><div></div>
+                        <div style="color: #6c757d;">0</div><div></div>
+                        <div style="background: rgba(81, 207, 102, 0.3); border-radius: 4px; color: #51cf66; font-weight: bold;">4</div>
+                        <div></div><div style="color: #6c757d;">0</div>
+                        <div></div><div></div>
 
-                    <!-- Row 3 -->
-                    <text x="145" y="175" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="215" y="175" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="285" y="175" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="355" y="175" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
+                        <!-- Row 3 (p+q=3) -->
+                        <div></div>
+                        <div style="color: #6c757d;">0</div><div></div><div style="color: #6c757d;">0</div><div></div>
+                        <div style="color: #6c757d;">0</div><div></div><div style="color: #6c757d;">0</div>
+                        <div></div>
 
-                    <!-- Row 4 (middle) -->
-                    <text x="110" y="205" text-anchor="middle" fill="#f8f9fa" font-size="16" font-weight="bold">1</text>
-                    <text x="180" y="205" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="250" y="205" text-anchor="middle" fill="#ff7eb6" font-size="18" font-weight="bold">60</text>
-                    <text x="320" y="205" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="390" y="205" text-anchor="middle" fill="#f8f9fa" font-size="16" font-weight="bold">1</text>
+                        <!-- Row 4 (p+q=4) - middle -->
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 4px; font-weight: bold;">1</div>
+                        <div></div><div style="color: #6c757d;">0</div><div></div>
+                        <div style="background: rgba(255, 126, 182, 0.3); border-radius: 4px; color: #ff7eb6; font-weight: bold;">60</div>
+                        <div></div><div style="color: #6c757d;">0</div><div></div>
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 4px; font-weight: bold;">1</div>
 
-                    <!-- Row 5 -->
-                    <text x="145" y="235" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="215" y="235" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="285" y="235" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="355" y="235" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
+                        <!-- Row 5 (p+q=5) -->
+                        <div></div>
+                        <div style="color: #6c757d;">0</div><div></div><div style="color: #6c757d;">0</div><div></div>
+                        <div style="color: #6c757d;">0</div><div></div><div style="color: #6c757d;">0</div>
+                        <div></div>
 
-                    <!-- Row 6 -->
-                    <text x="180" y="265" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="250" y="265" text-anchor="middle" fill="#28a745" font-size="16" font-weight="bold">4</text>
-                    <text x="320" y="265" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
+                        <!-- Row 6 (p+q=6) -->
+                        <div></div><div></div>
+                        <div style="color: #6c757d;">0</div><div></div>
+                        <div style="background: rgba(81, 207, 102, 0.3); border-radius: 4px; color: #51cf66; font-weight: bold;">4</div>
+                        <div></div><div style="color: #6c757d;">0</div>
+                        <div></div><div></div>
 
-                    <!-- Row 7 -->
-                    <text x="215" y="295" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
-                    <text x="285" y="295" text-anchor="middle" fill="#adb5bd" font-size="14">0</text>
+                        <!-- Row 7 (p+q=7) -->
+                        <div></div><div></div><div></div>
+                        <div style="color: #6c757d;">0</div><div></div><div style="color: #6c757d;">0</div>
+                        <div></div><div></div><div></div>
 
-                    <!-- Row 8 -->
-                    <text x="250" y="325" text-anchor="middle" fill="#f8f9fa" font-size="16" font-weight="bold">1</text>
+                        <!-- Row 8 (p+q=8) -->
+                        <div></div><div></div><div></div><div></div>
+                        <div style="background: rgba(255,255,255,0.1); border-radius: 4px; font-weight: bold;">1</div>
+                        <div></div><div></div><div></div><div></div>
+                    </div>
 
-                    <!-- Annotations -->
-                    <text x="250" y="365" text-anchor="middle" fill="#adb5bd" font-size="11">
-                        Betti: b&sub0;=1, b&sub2;=4, b&sub4;=62, b&sub6;=4, b&sub8;=1 &rarr; &chi; = 1+4+62+4+1 = 72
-                    </text>
+                    <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: var(--text-muted);">
+                        &chi; = 1−0+4−0+62−0+4−0+1 = <strong style="color: #51cf66;">72</strong>
+                    </div>
+                </div>
 
-                    <!-- Labels -->
-                    <text x="420" y="145" fill="#28a745" font-size="10">h&sup1;&sup1;=4</text>
-                    <text x="420" y="205" fill="#ff7eb6" font-size="10">h&sup2;&sup2;=60</text>
-                </svg>
-                <div class="diagram-caption">
-                    <strong>The Hodge Diamond for K<sub>Pneuma</sub>:</strong> This diamond-shaped array displays the Hodge numbers h<sup>p,q</sup>,
-                    which count independent harmonic differential forms on the Calabi-Yau 4-fold. Each number represents a type of "shape mode"
-                    the extra dimensions can vibrate in. The key values are: <strong>h<sup>1,1</sup>=4</strong> (K&auml;hler moduli, controlling
-                    the size of 4 independent 2-cycles), and <strong>h<sup>2,2</sup>=60</strong> (4-form moduli, related to flux configurations).
-                    The Euler characteristic &chi;=72 sums these contributions, yielding exactly 3 fermion generations via &chi;/24
-                    <a href="fermion-sector.html" style="color: var(--accent-secondary);">[&rarr; See Fermion Sector]</a>.
-                    The diamond's vertical and horizontal symmetries encode deep mathematical dualities (Poincar&eacute; and complex conjugation).
+                <!-- Right: Physical Meaning Cards -->
+                <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                    <h5 style="color: var(--accent-primary); margin: 0 0 0.5rem 0; font-size: 0.95rem;">What the Hodge Numbers Mean</h5>
+
+                    <div style="background: rgba(81, 207, 102, 0.1); border-left: 3px solid #51cf66; padding: 0.75rem; border-radius: 0 8px 8px 0;">
+                        <div style="font-weight: 600; color: #51cf66; font-size: 0.9rem;">h<sup>1,1</sup> = 4 &nbsp;→&nbsp; Four Gauge Sectors</div>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            Counts 2-cycles (sizes of "holes"). These become the four K&auml;hler moduli &Sigma;<sub>1</sub>-&Sigma;<sub>4</sub>,
+                            corresponding to the <strong>1+3 brane hierarchy</strong>.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255, 126, 182, 0.1); border-left: 3px solid #ff7eb6; padding: 0.75rem; border-radius: 0 8px 8px 0;">
+                        <div style="font-weight: 600; color: #ff7eb6; font-size: 0.9rem;">h<sup>2,2</sup> = 60 &nbsp;→&nbsp; Flux Moduli</div>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            Counts 4-forms. These determine possible <strong>G-flux configurations</strong> for moduli stabilization.
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(139, 127, 255, 0.1); border-left: 3px solid var(--accent-primary); padding: 0.75rem; border-radius: 0 8px 8px 0;">
+                        <div style="font-weight: 600; color: var(--accent-primary); font-size: 0.9rem;">&chi; = 72 &nbsp;→&nbsp; 3 Generations</div>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            The index theorem gives n<sub>gen</sub> = &chi;/24 = 72/24 = <strong>3 fermion generations</strong> (electron, muon, tau families).
+                        </p>
+                    </div>
+
+                    <div style="background: rgba(255, 193, 7, 0.1); border-left: 3px solid #ffc107; padding: 0.75rem; border-radius: 0 8px 8px 0;">
+                        <div style="font-weight: 600; color: #ffc107; font-size: 0.9rem;">h<sup>2,1</sup> = h<sup>3,1</sup> = 0 &nbsp;→&nbsp; Rigid</div>
+                        <p style="margin: 0.25rem 0 0 0; font-size: 0.85rem; color: var(--text-secondary);">
+                            No complex structure deformations means K<sub>Pneuma</sub> is <strong>geometrically rigid</strong>—fewer free parameters.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Euler Characteristic Calculation -->
+            <div style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.08)); border-radius: 12px; padding: 1.25rem; margin-top: 1.5rem; text-align: center;">
+                <div style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0.5rem;">Euler Characteristic Formula for CY4:</div>
+                <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem;">
+                    &chi; = 2(1 + h<sup>1,1</sup> + h<sup>2,2</sup> + h<sup>3,3</sup>) − 4h<sup>2,1</sup> − 4h<sup>3,1</sup>
+                    = 2(1 + 4 + 60 + 4) − 4(0) − 4(0) = 2 × 36 + 0 = <strong style="color: #51cf66;">72</strong>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+                    <a href="fermion-sector.html" style="color: var(--accent-secondary);">→ See Fermion Sector for n<sub>gen</sub> = &chi;/24 derivation</a>
                 </div>
             </div>
 
