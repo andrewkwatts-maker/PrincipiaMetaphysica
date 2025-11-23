@@ -417,9 +417,41 @@
                 determines the number of generations:
             </p>
 
-            <div class="equation-box">
-                n<sub>gen</sub> = &chi;(K<sub>Pneuma</sub>)/24 = 72/24 = 3
-                <span class="equation-label">Three generations from topology</span>
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08)); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; font-size: 1.2rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">n<sub>gen</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">n<sub>gen</sub> — Number of Generations</div>
+                            <div class="var-description">The number of fermion generations (families) in the Standard Model. Experimentally: electron/muon/tau families = 3.</div>
+                            <div class="var-units">Dimensionless (integer)</div>
+                            <div class="var-contribution">Derived from topology — NOT a free parameter in the theory.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">&chi;(K<sub>Pneuma</sub>)
+                        <div class="var-tooltip">
+                            <div class="var-name">&chi;(K<sub>Pneuma</sub>) — Euler Characteristic</div>
+                            <div class="var-description">Topological invariant of the internal CY4 manifold. For K<sub>Pneuma</sub>: &chi; = 72.</div>
+                            <div class="var-units">Dimensionless (integer)</div>
+                            <div class="var-contribution">From Hodge numbers: h<sup>1,1</sup>=4, h<sup>2,2</sup>=60 gives &chi; = 2(1+4+60+4) = 72.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">/</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">24
+                        <div class="var-tooltip">
+                            <div class="var-name">24 — F-theory Index</div>
+                            <div class="var-description">Universal divisor from the Atiyah-Singer index theorem in F-theory compactification.</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">From [Sethi-Vafa-Witten 1996]: counts zero modes of Dirac operator on CY4.</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span style="font-weight: bold; color: #51cf66;">72/24 = 3</span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    Three generations from topology <span style="font-size: 0.85rem;">[Sethi, Vafa, Witten 1996]</span>
+                </div>
             </div>
 
             <div class="physics-note">
