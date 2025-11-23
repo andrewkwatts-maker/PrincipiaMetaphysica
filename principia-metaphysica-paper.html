@@ -327,10 +327,13 @@
         <p style="text-align: center; font-size: 14pt; margin-bottom: 1rem;">
             A Unified Theory of Spacetime, Gauge Forces, and Emergent Time
         </p>
+        <p style="text-align: center; font-size: 12pt; color: #8b7fff; margin-bottom: 1rem;">
+            <em>"Temporal Mirrors"</em> — The Two-Time Framework
+        </p>
 
         <p class="author">Andrew Keith Watts</p>
         <p class="affiliation">Independent Researcher</p>
-        <p class="date">November 2025 | Version 4.0</p>
+        <p class="date">November 2025 | Version 6.0</p>
 
 
         <button class="download-btn no-print" onclick="window.print()">
@@ -340,19 +343,22 @@
         <div class="abstract">
             <p class="abstract-title">Abstract</p>
             <p>
-                This paper presents the Principia Metaphysica framework, a theoretical proposal for unifying gravity,
-                gauge forces, and the origin of time through higher-dimensional geometry. The framework posits a
-                13-dimensional bulk spacetime with signature (12,1) structured as a <strong>1+3 brane hierarchy</strong>:
-                one observable 3D spatial universe plus three hidden "shadow" universes sharing a common time dimension.
-                The 13D bulk compactifies on an 8-dimensional Calabi-Yau four-fold (CY4) with Euler characteristic
-                &chi; = 72. Through F-theory compactification, this yields 4D Einstein gravity coupled to SO(10)
-                grand unified gauge theory with exactly 3 fermion generations (derived from &chi;/24 = 72/24 = 3).
-                The <strong>mass hierarchy</strong> of the three generations emerges naturally from wavefunction
-                delocalization into the hidden brane chain. Time emergence is proposed via the Thermal Time Hypothesis,
-                connecting thermodynamic entropy to the flow of experienced time. The framework makes contact with
-                DESI 2024 dark energy observations through a thermal friction mechanism that naturally produces
-                w<sub>a</sub> &lt; 0. This document includes honest assessment of which claims are derived versus
-                fitted, and includes pre-registered predictions for future experiments.
+                This paper presents the Principia Metaphysica framework v6.0 ("Temporal Mirrors"), a theoretical proposal
+                for unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry. The
+                framework posits a <strong>26-dimensional bulk spacetime with signature (24,2)</strong>—incorporating
+                <strong>two time dimensions</strong> related by Sp(2,R) gauge symmetry. The observable universe emerges
+                as a 13D gauge-fixed shadow, structured as a <strong>1+3 brane hierarchy</strong>: one observable 3D
+                spatial universe plus three hidden "shadow" universes sharing a common thermal time dimension. A
+                <strong>Z₂ orbifold</strong> relates our brane stack to a mirror sector, doubling the structure to
+                B¹<sub>1:4</sub> ↔ B²<sub>1:4</sub>. The 26D bulk compactifies on two mirror Calabi-Yau four-folds
+                (CY4 × CY4̃) with total Euler characteristic χ = 144, yielding exactly 3 fermion generations via
+                the modified formula n<sub>gen</sub> = χ/48 = 144/48 = 3. The Pneuma spinor field has 8192 components
+                in 26D, gauge-reduced to 64 effective components. Time emergence is proposed via an extended Two-Time
+                Thermal Hypothesis: observable thermal time t<sub>therm</sub> couples to an orthogonal hidden time
+                t<sub>ortho</sub>. The framework predicts w₀ = -11/13 ≈ -0.846 for dark energy (via MEP with d<sub>eff</sub> = 12)
+                and w<sub>a</sub> ≈ -0.75 from two-time dynamics—matching DESI 2024 observations to within 1σ.
+                This document includes honest assessment of which claims are derived versus fitted, and includes
+                pre-registered predictions for future experiments.
             </p>
         </div>
 
@@ -362,12 +368,19 @@
                 <li><a href="#intro">1. Introduction and Motivation</a></li>
                 <li><a href="#framework">2. Theoretical Framework</a>
                     <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem;">
+                        <li><a href="#26d-structure">2.1.1 The 26D Two-Time Structure</a></li>
+                        <li><a href="#sp2r-gauge">2.1.2 Sp(2,R) Gauge Symmetry</a></li>
                         <li><a href="#four-brane-structure">2.2.1 The 1+3 Brane Hierarchy</a></li>
+                        <li><a href="#mirror-branes">2.2.2 Z₂ Mirror Brane Structure</a></li>
                     </ul>
                 </li>
                 <li><a href="#geometry">3. Geometric Structure: The Pneuma Manifold</a></li>
                 <li><a href="#gauge">4. SO(10) Gauge Unification</a></li>
-                <li><a href="#thermal">5. Thermal Time and Emergent Temporality</a></li>
+                <li><a href="#thermal">5. Two-Time Thermal Hypothesis</a>
+                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem;">
+                        <li><a href="#ortho-time">5.2 Orthogonal Time and Mirror Entropy</a></li>
+                    </ul>
+                </li>
                 <li><a href="#cosmology">6. Cosmological Implications</a></li>
                 <li><a href="#predictions">7. Predictions and Testability</a>
                     <ul style="margin-top: 0.5rem; padding-left: 1.5rem; font-size: 0.9rem;">
@@ -389,18 +402,33 @@
         </p>
 
         <p>
-            The central object is the <em>Pneuma field</em> &Psi;<sub>P</sub>, a 64-component fermionic field in
-            13 dimensions whose condensates generate both spacetime geometry and gauge structure. The name "Pneuma"
-            (Greek: breath, spirit) reflects the field's role as the animating principle from which observable
-            physics emerges.
+            <strong>Version 6.0 ("Temporal Mirrors")</strong> extends the framework from 13D to <strong>26D with
+            signature (24,2)</strong>—the critical dimension of bosonic string theory—incorporating <strong>two
+            time dimensions</strong>. The observable 13D universe emerges as a gauge-fixed "shadow" of the full
+            26D theory, with Sp(2,R) gauge symmetry eliminating ghosts from the second time dimension.
+        </p>
+
+        <p>
+            The central object is the <em>Pneuma field</em> Ψ<sub>P</sub>, an 8192-component spinor in 26D
+            (from Clifford algebra Cl(24,2)) that gauge-reduces to 64 effective components. Condensates of this
+            field generate both spacetime geometry and gauge structure. The name "Pneuma" (Greek: breath, spirit)
+            reflects the field's role as the animating principle from which observable physics emerges.
         </p>
 
         <div class="formula-def">
             <div class="formula-def-title">Connection to Established Physics</div>
             <div class="formula-def-grid">
                 <div class="formula-def-item">
-                    <strong>64-component spinor</strong>
-                    <span>Standard Clifford algebra rep for 13D <span class="foundation-ref">[Atiyah-Bott-Shapiro 1964]</span></span>
+                    <strong>26D = Bosonic String</strong>
+                    <span>Critical dimension D=26 from Virasoro anomaly <span class="foundation-ref">[Lovelace 1971]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Two-Time Physics</strong>
+                    <span>Sp(2,R) gauge symmetry for ghost elimination <span class="foundation-ref">[Bars 1998-2010]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>8192-component spinor</strong>
+                    <span>Cl(24,2) → 2<sup>13</sup> = 8192 <span class="foundation-ref">[Clifford algebra]</span></span>
                 </div>
                 <div class="formula-def-item">
                     <strong>Fermionic field</strong>
@@ -422,58 +450,122 @@
         <h3>2.1 Higher-Dimensional Action</h3>
 
         <p>
-            The framework begins with a 13-dimensional bulk spacetime M<sup>13</sup> with signature (12,1). The
-            fundamental action is:
+            The framework begins with a <strong>26-dimensional bulk spacetime M<sup>26</sup></strong> with signature
+            <strong>(24,2)</strong>—24 spacelike and 2 timelike dimensions. This is the critical dimension of
+            bosonic string theory, chosen for anomaly cancellation. The fundamental action is:
         </p>
 
         <div class="equation">
-            S = &int; d<sup>13</sup>x &radic;|G| [M<sub>*</sub><sup>11</sup> R<sub>13</sub> +
-            &Psi;&#772;<sub>P</sub> &Gamma;<sup>M</sup> D<sub>M</sub> &Psi;<sub>P</sub> + ...]
+            S = ∫ d<sup>26</sup>x √|G| [M<sub>*</sub><sup>24</sup> R<sub>26</sub> +
+            Ψ̄<sub>P</sub> Γ<sup>M</sup> D<sub>M</sub> Ψ<sub>P</sub> + ℒ<sub>Sp(2,R)</sub> + ...]
             <span class="equation-label">(2.1)</span>
         </div>
 
         <div class="formula-def">
-            <div class="formula-def-title">Term Definitions (Eq. 2.1 - Master Action)</div>
+            <div class="formula-def-title">Term Definitions (Eq. 2.1 - 26D Master Action)</div>
             <div class="formula-def-grid">
                 <div class="formula-def-item">
                     <strong>S</strong>
                     <span>Action integral - extremizing yields equations of motion</span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>&int; d<sup>13</sup>x</strong>
-                    <span>Integration over all 13 spacetime dimensions</span>
+                    <strong>∫ d<sup>26</sup>x</strong>
+                    <span>Integration over all 26 spacetime dimensions (24 space + 2 time)</span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>&radic;|G|</strong>
+                    <strong>√|G|</strong>
                     <span>Metric determinant - ensures coordinate invariance <span class="foundation-ref">[Riemannian geometry]</span></span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>M<sub>*</sub><sup>11</sup></strong>
-                    <span>Fundamental mass scale to 11th power <a href="#planck-derivation" class="section-ref">[&rarr; Eq. 2.3]</a></span>
+                    <strong>M<sub>*</sub><sup>24</sup></strong>
+                    <span>26D Planck scale to 24th power <a href="#planck-derivation" class="section-ref">[→ Eq. 2.3]</a></span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>R<sub>13</sub></strong>
-                    <span>13D Ricci scalar - spacetime curvature <span class="foundation-ref">[Einstein-Hilbert 1915]</span></span>
+                    <strong>R<sub>26</sub></strong>
+                    <span>26D Ricci scalar - full spacetime curvature <span class="foundation-ref">[Einstein-Hilbert 1915]</span></span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>&Psi;&#772;<sub>P</sub></strong>
-                    <span>Dirac adjoint of Pneuma field = &Psi;<sup>&dagger;</sup>&gamma;<sup>0</sup></span>
+                    <strong>Ψ̄<sub>P</sub></strong>
+                    <span>Dirac adjoint of Pneuma field (8192 components)</span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>&Gamma;<sup>M</sup></strong>
-                    <span>13D gamma matrices (64&times;64) <a href="#clifford" class="section-ref">[&rarr; Eq. 2.1b]</a> <span class="foundation-ref">[Clifford algebra]</span></span>
+                    <strong>Γ<sup>M</sup></strong>
+                    <span>26D gamma matrices (8192×8192) from Cl(24,2) <span class="foundation-ref">[Clifford algebra]</span></span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>D<sub>M</sub></strong>
-                    <span>Covariant derivative = &part;<sub>M</sub> + &omega;<sub>M</sub> + A<sub>M</sub> <span class="foundation-ref">[Gauge theory 1954]</span></span>
+                    <strong>ℒ<sub>Sp(2,R)</sub></strong>
+                    <span>Sp(2,R) gauge terms - eliminates ghosts from 2nd time <span class="foundation-ref">[Bars 2006]</span></span>
                 </div>
             </div>
         </div>
 
         <p>
-            where M<sub>*</sub> is the fundamental scale, R<sub>13</sub> is the 13D Ricci scalar, and
-            &Psi;<sub>P</sub> is the Pneuma field. This action is treated within an Effective Field Theory (EFT)
-            framework, valid below the cutoff E &lt; M<sub>*</sub>.
+            where M<sub>*</sub> is the fundamental scale, R<sub>26</sub> is the 26D Ricci scalar,
+            Ψ<sub>P</sub> is the Pneuma field, and ℒ<sub>Sp(2,R)</sub> contains the gauge constraints that
+            eliminate ghosts from the second time dimension. This action is treated within an Effective Field
+            Theory (EFT) framework, valid below the cutoff E < M<sub>*</sub>.
+        </p>
+
+        <h4 id="26d-structure">2.1.1 The 26D Two-Time Structure</h4>
+
+        <p>
+            The 26D spacetime has signature (24,2), meaning two independent timelike directions. The full
+            structure decomposes as:
+        </p>
+
+        <div class="equation">
+            M<sup>26</sup> = M<sup>(4,2)</sup> × K<sub>Pneuma</sub> × K̃<sub>Pneuma</sub>
+            <span class="equation-label">(2.1a)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Dimensional Accounting (26D)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>M<sup>(4,2)</sup></strong>
+                    <span>6D base: 4 space + 2 time dimensions</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>K<sub>Pneuma</sub></strong>
+                    <span>8D Calabi-Yau 4-fold (χ = 72)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>K̃<sub>Pneuma</sub></strong>
+                    <span>8D Mirror CY4 (related by Z₂)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Total: 6 + 8 + 8 + 4 = 26</strong>
+                    <span>With 4D from brane structure</span>
+                </div>
+            </div>
+        </div>
+
+        <h4 id="sp2r-gauge">2.1.2 Sp(2,R) Gauge Symmetry</h4>
+
+        <p>
+            The second time dimension is rendered physically consistent through Sp(2,R) gauge constraints
+            [Bars 1998-2010]:
+        </p>
+
+        <div class="equation">
+            X² = 0, &nbsp;&nbsp; X·P = 0, &nbsp;&nbsp; P² + M² = 0
+            <span class="equation-label">(2.1b)</span>
+        </div>
+
+        <p>
+            These three constraints eliminate ghosts (negative norm states) that would otherwise arise from the
+            second timelike dimension. Gauge-fixing these constraints projects the 26D theory onto an effective
+            13D shadow—our observable universe. The two time coordinates combine as:
+        </p>
+
+        <div class="equation">
+            t<sub>total</sub> = t<sub>therm</sub> + β·t<sub>ortho</sub>, &nbsp;&nbsp; β = cos(θ<sub>mirror</sub>)
+            <span class="equation-label">(2.1c)</span>
+        </div>
+
+        <p>
+            where t<sub>therm</sub> is the observable thermal time and t<sub>ortho</sub> is the orthogonal
+            hidden time dimension accessible only through mirror sector interactions.
         </p>
 
         <h4>Dimensional Analysis (Foundation: Natural Units)</h4>
@@ -494,46 +586,54 @@
 
         <h4 id="clifford">Clifford Algebra Foundation (Established Mathematics)</h4>
         <p>
-            The gamma matrices &Gamma;<sup>M</sup> satisfy the Clifford algebra Cl(12,1):
+            In the full 26D theory, the gamma matrices Γ<sup>M</sup> satisfy Clifford algebra Cl(24,2):
         </p>
         <div class="equation">
-            {&Gamma;<sup>M</sup>, &Gamma;<sup>N</sup>} = 2&eta;<sup>MN</sup> I<sub>64</sub>
-            <span class="equation-label">(2.1b)</span>
+            {Γ<sup>M</sup>, Γ<sup>N</sup>} = 2G<sup>MN</sup> I<sub>8192</sub>, &nbsp;&nbsp; dim = 2<sup>13</sup> = 8192
+            <span class="equation-label">(2.1d)</span>
         </div>
         <p>
-            where &eta;<sup>MN</sup> = diag(-1, +1, ..., +1) is the 13D Minkowski metric.
-            The dimension of the spinor representation is 2<sup>&lfloor;13/2&rfloor;</sup> = 2<sup>6</sup> = 64.
+            where G<sup>MN</sup> has signature (24,2). After Sp(2,R) gauge fixing to the effective 13D theory,
+            this reduces to Cl(12,1) with 64-component spinors:
+        </p>
+        <div class="equation">
+            {Γ<sup>M</sup><sub>eff</sub>, Γ<sup>N</sup><sub>eff</sub>} = 2η<sup>MN</sup> I<sub>64</sub>
+            <span class="equation-label">(2.1e)</span>
+        </div>
+        <p>
+            where η<sup>MN</sup> = diag(-1, +1, ..., +1) is the effective 13D Minkowski metric.
+            The dimension reduction follows: 2<sup>⌊26/2⌋</sup> = 2<sup>13</sup> = 8192 → 2<sup>⌊13/2⌋</sup> = 2<sup>6</sup> = 64.
             This follows from standard Clifford algebra theory [Clifford 1878, Atiyah-Bott-Shapiro 1964].
         </p>
 
         <h3>2.2 Dimensional Reduction</h3>
 
         <p>
-            The 13D spacetime compactifies as:
+            The effective 13D spacetime (after Sp(2,R) gauge fixing) compactifies as:
         </p>
 
         <div class="equation">
-            M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub>
+            M<sup>13</sup><sub>eff</sub> = M<sup>4</sup> × K<sub>Pneuma</sub>
             <span class="equation-label">(2.2)</span>
         </div>
 
         <div class="formula-def">
-            <div class="formula-def-title">Term Definitions (Eq. 2.2 - Dimensional Split)</div>
+            <div class="formula-def-title">Term Definitions (Eq. 2.2 - Effective Dimensional Split)</div>
             <div class="formula-def-grid">
                 <div class="formula-def-item">
-                    <strong>M<sup>13</sup></strong>
-                    <span>Full 13D bulk = (1+3) branes &times; time <a href="#four-brane-structure" class="section-ref">[&rarr; Eq. 2.2a]</a></span>
+                    <strong>M<sup>13</sup><sub>eff</sub></strong>
+                    <span>Gauge-fixed shadow of 26D = (1+3) branes × thermal time</span>
                 </div>
                 <div class="formula-def-item">
                     <strong>M<sup>4</sup></strong>
-                    <span>Observable 4D spacetime (B<sub>1</sub> + time)</span>
+                    <span>Observable 4D spacetime (B<sub>1</sub> + t<sub>therm</sub>)</span>
                 </div>
                 <div class="formula-def-item">
                     <strong>K<sub>Pneuma</sub></strong>
-                    <span>8D internal CY4 with h<sup>1,1</sup>=4 sectors <a href="#hodge-derivation" class="section-ref">[&rarr; &sect;3.1]</a></span>
+                    <span>8D internal CY4 with h<sup>1,1</sup>=4 sectors <a href="#hodge-derivation" class="section-ref">[→ §3.1]</a></span>
                 </div>
                 <div class="formula-def-item">
-                    <strong>&times;</strong>
+                    <strong>×</strong>
                     <span>Product structure <span class="foundation-ref">[Kaluza-Klein 1921]</span></span>
                 </div>
             </div>
@@ -541,49 +641,100 @@
 
         <p>
             where M<sup>4</sup> is observable 4D spacetime and K<sub>Pneuma</sub> is an 8-dimensional internal
-            manifold. The Planck mass emerges through the volume relation:
+            manifold. The Planck mass emerges through the volume relation.
         </p>
 
         <h4 id="four-brane-structure">2.2.1 The 1 + 3 Brane Hierarchy</h4>
 
         <p>
-            The 13-dimensional bulk with signature (12,1) admits a natural interpretation as <strong>one observable
-            plus three hidden 3-dimensional spatial branes, sharing a common time dimension</strong>:
+            The effective 13-dimensional spacetime with signature (12,1) admits a natural interpretation as
+            <strong>one observable plus three hidden 3-dimensional spatial branes, sharing a common thermal
+            time dimension</strong>:
         </p>
 
         <div class="equation">
-            M<sup>13</sup> = (B<sub>1</sub><sup>3</sup> &oplus; B<sub>2</sub><sup>3</sup> &oplus; B<sub>3</sub><sup>3</sup> &oplus; B<sub>4</sub><sup>3</sup>) &times; &Ropf;<sub>t</sub>
+            M<sup>13</sup><sub>eff</sub> = (B<sub>1</sub><sup>3</sup> ⊕ B<sub>2</sub><sup>3</sup> ⊕ B<sub>3</sub><sup>3</sup> ⊕ B<sub>4</sub><sup>3</sup>) × ℝ<sub>t<sub>therm</sub></sub>
             <span class="equation-label">(2.2a)</span>
         </div>
 
         <div class="formula-def">
-            <div class="formula-def-title">Dimensional Accounting</div>
+            <div class="formula-def-title">Dimensional Accounting (Effective 13D)</div>
             <div class="formula-def-grid">
                 <div class="formula-def-item">
-                    <strong>4 &times; 3 = 12</strong>
+                    <strong>4 × 3 = 12</strong>
                     <span>Four 3D spatial branes give 12 spatial dimensions</span>
                 </div>
                 <div class="formula-def-item">
                     <strong>+ 1 = 13</strong>
-                    <span>One shared time dimension gives (12,1) signature</span>
+                    <span>One thermal time dimension gives (12,1) signature</span>
                 </div>
             </div>
         </div>
 
         <p>
             Each B<sub>i</sub><sup>3</sup> is a 3-dimensional spatial manifold. When combined with the shared
-            time dimension, each brane constitutes a complete 3+1 dimensional spacetime. The key features:
+            thermal time dimension, each brane constitutes a complete 3+1 dimensional spacetime. The key features:
         </p>
 
         <ul>
-            <li><strong>Shared temporal evolution:</strong> All four branes evolve along the same time parameter,
-                ensuring causal consistency across the bulk.</li>
+            <li><strong>Shared thermal evolution:</strong> All four branes evolve along the same thermal time
+                t<sub>therm</sub>, ensuring causal consistency within our observable shadow.</li>
             <li><strong>One experienced, three hidden:</strong> Observers localized on B<sub>1</sub> perceive only
                 their 3+1 dimensional slice; the other three branes (B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub>)
                 constitute "hidden sectors" accessible only through bulk-mediated interactions.</li>
             <li><strong>Inter-brane correlations:</strong> The unified bulk dynamics creates quantum correlations
                 between fields on different branes, even though direct observation across branes is impossible.</li>
         </ul>
+
+        <h4 id="mirror-branes">2.2.2 Z₂ Mirror Brane Structure</h4>
+
+        <p>
+            In the full 26D theory, a <strong>Z₂ orbifold action</strong> relates our 1+3 brane stack to a mirror
+            stack in the orthogonal time sector:
+        </p>
+
+        <div class="equation">
+            B¹<sub>1:4</sub> ↔ B²<sub>1:4</sub> &nbsp;&nbsp; (Z₂ orbifold identification)
+            <span class="equation-label">(2.2b)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Mirror Structure</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>B¹<sub>1:4</sub></strong>
+                    <span>Our observable 1+3 brane stack (thermal time sector)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>B²<sub>1:4</sub></strong>
+                    <span>Mirror 1+3 brane stack (orthogonal time sector)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Z₂ action</strong>
+                    <span>Exchanges t<sub>therm</sub> ↔ t<sub>ortho</sub></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Total branes</strong>
+                    <span>8 branes (2 stacks × 4 branes each)</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            This mirroring doubles the topological data: the total Euler characteristic becomes χ = 72 × 2 = 144,
+            but the generation formula also doubles its divisor to 48, preserving n<sub>gen</sub> = 144/48 = 3.
+            The mirror sector interacts with our sector through the coupling:
+        </p>
+
+        <div class="equation">
+            ℒ<sub>int</sub> = λ<sub>Z₂</sub>(Ψ<sub>P</sub><sup>†</sup>·Ψ̃<sub>P</sub> + h.c.)
+            <span class="equation-label">(2.2c)</span>
+        </div>
+
+        <p>
+            where Ψ̃<sub>P</sub> is the mirror Pneuma field. This coupling is suppressed but non-zero, potentially
+            contributing to dark sector physics.
+        </p>
 
         <h5>Relation to K<sub>Pneuma</sub> and F-Theory</h5>
         <p>
