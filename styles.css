@@ -685,9 +685,10 @@ ul li::marker {
 }
 
 /* ================================
-   PEER REVIEW CRITICISM SECTIONS
+   CONCERNS/CRITICISM SECTIONS
    ================================ */
-.peer-review-section {
+.peer-review-section,
+.concerns-section {
     background: linear-gradient(135deg, rgba(255, 87, 87, 0.08), rgba(255, 159, 67, 0.05));
     border: 1px solid rgba(255, 87, 87, 0.25);
     border-radius: 16px;
@@ -707,7 +708,8 @@ ul li::marker {
     border-radius: 16px 16px 0 0;
 }
 
-.peer-review-header {
+.peer-review-header,
+.concerns-header {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -716,7 +718,8 @@ ul li::marker {
     border-bottom: 1px solid rgba(255, 87, 87, 0.2);
 }
 
-.peer-review-icon {
+.peer-review-icon,
+.concerns-icon {
     width: 48px;
     height: 48px;
     background: linear-gradient(135deg, #ff5757, #ff9f43);
@@ -998,6 +1001,231 @@ ul li::marker {
    INTERACTIVE FORMULA SYSTEM
    ================================ */
 
+/* ---- EXPANDABLE FORMULA SYSTEM ---- */
+
+/* Expandable formula container */
+.expandable-formula {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05));
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 12px;
+    margin: 1.5rem 0;
+    overflow: visible;
+}
+
+.expandable-formula .formula-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.expandable-formula .formula-header:hover {
+    background: rgba(139, 127, 255, 0.1);
+}
+
+.expandable-formula .formula-main {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.expandable-formula .formula-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.expandable-formula .expand-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: rgba(139, 127, 255, 0.15);
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 8px;
+    color: var(--accent-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.expandable-formula .expand-btn:hover {
+    background: rgba(139, 127, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.expandable-formula .expand-btn.expanded {
+    transform: rotate(180deg);
+}
+
+.expandable-formula .link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.75rem;
+    background: rgba(81, 207, 102, 0.15);
+    border: 1px solid rgba(81, 207, 102, 0.3);
+    border-radius: 6px;
+    color: #51cf66;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.expandable-formula .link-btn:hover {
+    background: rgba(81, 207, 102, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Expansion content */
+.expandable-formula .formula-expansion {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.3s ease;
+    background: rgba(0, 0, 0, 0.15);
+    border-top: 1px solid rgba(139, 127, 255, 0.2);
+}
+
+.expandable-formula.expanded .formula-expansion {
+    max-height: 2000px;
+    padding: 1.5rem;
+}
+
+.expandable-formula .sub-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.expandable-formula .sub-component {
+    background: var(--bg-card);
+    border: 1px solid var(--border-primary);
+    border-radius: 10px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.expandable-formula .sub-component:hover {
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(139, 127, 255, 0.15);
+}
+
+.expandable-formula .sub-component .component-symbol {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.5rem;
+}
+
+.expandable-formula .sub-component .component-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+}
+
+.expandable-formula .sub-component .component-desc {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.expandable-formula .sub-component .component-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--accent-secondary);
+    text-decoration: none;
+}
+
+.expandable-formula .sub-component .component-link:hover {
+    text-decoration: underline;
+}
+
+/* Foundation badge for established physics */
+.foundation-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.2rem 0.6rem;
+    background: rgba(79, 172, 254, 0.15);
+    border: 1px solid rgba(79, 172, 254, 0.3);
+    border-radius: 12px;
+    font-size: 0.7rem;
+    color: #4facfe;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.foundation-badge.established {
+    background: rgba(81, 207, 102, 0.15);
+    border-color: rgba(81, 207, 102, 0.3);
+    color: #51cf66;
+}
+
+.foundation-badge.derived {
+    background: rgba(139, 127, 255, 0.15);
+    border-color: rgba(139, 127, 255, 0.3);
+    color: #8b7fff;
+}
+
+.foundation-badge.pm-specific {
+    background: rgba(255, 126, 182, 0.15);
+    border-color: rgba(255, 126, 182, 0.3);
+    color: #ff7eb6;
+}
+
+/* Formula derivation chain */
+.derivation-chain {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(139, 127, 255, 0.2);
+}
+
+.derivation-chain .chain-title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.derivation-chain .chain-step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(139, 127, 255, 0.05);
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+.derivation-chain .chain-step .step-arrow {
+    color: var(--accent-secondary);
+    font-size: 0.8rem;
+}
+
+.derivation-chain .chain-step a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.derivation-chain .chain-step a:hover {
+    text-decoration: underline;
+}
+
 /* Main formula container */
 .interactive-formula {
     background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(255, 126, 182, 0.08));
@@ -1120,8 +1348,28 @@ ul li::marker {
 .subsection,
 .theorem-box,
 .highlight-box,
-.equation-box {
-    overflow: visible;
+.equation-box,
+.section-hero,
+.hero,
+.interactive-formula,
+.dim-table,
+.detail-section,
+.abstract,
+.intro {
+    overflow: visible !important;
+}
+
+/* Tables with rounded corners need special handling */
+.dim-table,
+.dimension-table,
+.comparison-table {
+    overflow: visible !important;
+    border-radius: 12px;
+}
+
+/* Ensure diagram containers don't clip tooltips */
+.diagram-container {
+    overflow: visible !important;
 }
 
 .formula-var:hover .var-tooltip {

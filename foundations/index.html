@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foundational Physics - The established equations that underpin Principia Metaphysica">
+    <title>Foundational Physics - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../sections/index.html">Sections</a></li>
+                    <li><a href="../principia-metaphysica-paper.html">Full Paper</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Foundational Physics</span>
+        </nav>
+
+        <div class="intro">
+            <h2>Foundational Physics</h2>
+            <p>
+                Principia Metaphysica builds upon well-established physics. This section provides detailed explanations
+                of the foundational equations from which the framework derives. Each formula can be traced back to
+                experimentally verified physics.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <span class="foundation-badge established">Established Physics</span>
+                <span class="foundation-badge derived">Derived in PM</span>
+                <span class="foundation-badge pm-specific">PM-Specific</span>
+            </div>
+        </div>
+
+        <!-- Foundation Categories -->
+        <section class="detail-section">
+            <h3>General Relativity & Gravity</h3>
+            <div class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <a href="einstein-field-equations.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Einstein Field Equations</h3>
+                    <p>G<sub>&mu;&nu;</sub> + &Lambda;g<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub></p>
+                </a>
+                <a href="einstein-hilbert-action.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Einstein-Hilbert Action</h3>
+                    <p>S = &int; d<sup>4</sup>x &radic;|g| R</p>
+                </a>
+                <a href="ricci-tensor.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Ricci Tensor & Scalar</h3>
+                    <p>R<sub>&mu;&nu;</sub>, R = g<sup>&mu;&nu;</sup>R<sub>&mu;&nu;</sub></p>
+                </a>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h3>Quantum Field Theory</h3>
+            <div class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <a href="dirac-equation.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Dirac Equation</h3>
+                    <p>(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi; = 0</p>
+                </a>
+                <a href="dirac-lagrangian.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Dirac Lagrangian</h3>
+                    <p>&Lscr; = <span style="text-decoration: overline;">&psi;</span>(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi;</p>
+                </a>
+                <a href="clifford-algebra.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Clifford Algebra</h3>
+                    <p>{&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2g<sup>&mu;&nu;</sup></p>
+                </a>
+                <a href="yang-mills.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Yang-Mills Theory</h3>
+                    <p>&Lscr; = -&frac14;F<sub>&mu;&nu;</sub><sup>a</sup>F<sup>a&mu;&nu;</sup></p>
+                </a>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h3>Extra Dimensions & Unification</h3>
+            <div class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <a href="kaluza-klein.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Kaluza-Klein Theory</h3>
+                    <p>5D metric decomposition</p>
+                </a>
+                <a href="calabi-yau.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Calabi-Yau Manifolds</h3>
+                    <p>Ricci-flat K&auml;hler manifolds</p>
+                </a>
+                <a href="so10-gut.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">SO(10) Grand Unification</h3>
+                    <p>16-dimensional spinor representation</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h3>Thermodynamics & Statistical Mechanics</h3>
+            <div class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <a href="boltzmann-entropy.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Boltzmann Entropy</h3>
+                    <p>S = k<sub>B</sub> ln &Omega;</p>
+                </a>
+                <a href="kms-condition.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">KMS Condition</h3>
+                    <p>Thermal equilibrium states</p>
+                </a>
+                <a href="tomita-takesaki.html" class="section-card">
+                    <span class="foundation-badge established">Established</span>
+                    <h3 style="margin-top: 0.75rem;">Tomita-Takesaki Theory</h3>
+                    <p>Modular automorphisms</p>
+                </a>
+            </div>
+        </section>
+
+        <section class="detail-section">
+            <h3>PM-Derived Formulas</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                These formulas are derived within Principia Metaphysica from the foundational physics above.
+            </p>
+            <div class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <a href="../sections/pneuma-lagrangian.html" class="section-card">
+                    <span class="foundation-badge pm-specific">PM-Specific</span>
+                    <h3 style="margin-top: 0.75rem;">Pneuma Lagrangian</h3>
+                    <p><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub></p>
+                </a>
+                <a href="../sections/einstein-hilbert-term.html" class="section-card">
+                    <span class="foundation-badge derived">Derived</span>
+                    <h3 style="margin-top: 0.75rem;">13D Einstein-Hilbert</h3>
+                    <p>M<sub>*</sub><sup>11</sup>R</p>
+                </a>
+                <a href="generation-formula.html" class="section-card">
+                    <span class="foundation-badge derived">Derived</span>
+                    <h3 style="margin-top: 0.75rem;">Generation Formula</h3>
+                    <p>n<sub>gen</sub> = &chi;/24</p>
+                </a>
+                <a href="thermal-time-relation.html" class="section-card">
+                    <span class="foundation-badge pm-specific">PM-Specific</span>
+                    <h3 style="margin-top: 0.75rem;">Thermal Time Relation</h3>
+                    <p>t = &alpha;<sub>T</sub> &sdot; S</p>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>

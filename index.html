@@ -252,6 +252,7 @@
             border: 1px solid rgba(139, 127, 255, 0.2);
         }
     </style>
+    <script src="js/formula-expansion.js" defer></script>
 </head>
 <body>
     <header>
@@ -262,6 +263,8 @@
                     <li><a href="#abstract">Abstract</a></li>
                     <li><a href="beginners-guide.html">Beginner's Guide</a></li>
                     <li><a href="#sections">Sections</a></li>
+                    <li><a href="foundations/index.html">Foundations</a></li>
+                    <li><a href="references.html">References</a></li>
                     <li><a href="principia-metaphysica-paper.html">Download Paper</a></li>
                 </ul>
             </nav>
@@ -274,8 +277,8 @@
             <p class="subtitle">Philosophiae Metaphysicae Principia Mathematica</p>
             <p>
                 A unified theory of gravity and the Standard Model forces based on a Kaluza-Klein
-                compactification of a 12-dimensional spacetime, where time emerges as a thermodynamic
-                phenomenon from a fundamental fermionic "Pneuma" consciousness field.
+                compactification of a 13-dimensional (12,1) spacetime, where time emerges as a thermodynamic
+                phenomenon from a fundamental fermionic "Pneuma" field.
             </p>
             <div class="author-info">
                 <div class="name">Andrew Keith Watts</div>
@@ -293,7 +296,7 @@
                 </a>
             </div>
             <p style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem;">
-                <strong>Version 4.0</strong> | Post-Peer Review | Testability Grade: C | November 2025
+                <strong>Version 4.0</strong> | November 2025
             </p>
 
             <!-- Transparency Disclaimer -->
@@ -332,23 +335,25 @@
                         </div>
                     </span>
                     <span class="formula-op">[</span>
-                    <span class="formula-var highlight">M<sub>*</sub><sup>11</sup>R
+                    <a href="sections/einstein-hilbert-term.html" class="formula-var highlight" style="text-decoration: none; color: inherit;">M<sub>*</sub><sup>11</sup>R
                         <div class="var-tooltip">
                             <div class="var-name">Einstein-Hilbert Term</div>
                             <div class="var-description">13D gravity: M<sub>*</sub> is the fundamental mass scale, R is the Ricci curvature scalar.</div>
                             <div class="var-units">GeV<sup>4</sup> (13D)</div>
                             <div class="var-contribution">Generates Einstein's field equations; reduces to 4D GR upon compactification.</div>
+                            <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to learn more &rarr;</div>
                         </div>
-                    </span>
+                    </a>
                     <span class="formula-op">+</span>
-                    <span class="formula-var highlight"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>
+                    <a href="sections/pneuma-lagrangian.html" class="formula-var highlight" style="text-decoration: none; color: inherit;"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>
                         <div class="var-tooltip">
                             <div class="var-name">Pneuma Lagrangian</div>
                             <div class="var-description">The fundamental fermionic Pneuma field &Psi;<sub>P</sub> with Dirac kinetic term and mass.</div>
                             <div class="var-units">GeV<sup>4</sup> (13D)</div>
                             <div class="var-contribution">Source of everything: its condensates form K<sub>Pneuma</sub>, generating geometry and matter.</div>
+                            <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to learn more &rarr;</div>
                         </div>
-                    </span>
+                    </a>
                     <span class="formula-op">]</span>
                 </div>
                 <div class="formula-label">The Master Action: All Physics from One Equation</div>
@@ -379,6 +384,71 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Expandable Formula Breakdown -->
+            <div class="expandable-formula" style="margin-top: 1.5rem;">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">Expand:</span>
+                        S = &int; d<sup>13</sup>x &radic;|G| [M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>]
+                    </div>
+                    <div class="formula-controls">
+                        <a href="foundations/index.html" class="link-btn">Foundations &rarr;</a>
+                        <button class="expand-btn" title="Expand to see sub-components">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <a href="foundations/einstein-hilbert-action.html" class="sub-component" style="text-decoration: none;">
+                            <div class="component-symbol">M<sub>*</sub><sup>11</sup>R</div>
+                            <div class="component-name">Einstein-Hilbert Term</div>
+                            <div class="component-desc">13D gravity from the Ricci scalar. Reduces to 4D General Relativity.</div>
+                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">From GR</span>
+                        </a>
+                        <a href="sections/pneuma-lagrangian.html" class="sub-component" style="text-decoration: none;">
+                            <div class="component-symbol"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub></div>
+                            <div class="component-name">Pneuma Lagrangian</div>
+                            <div class="component-desc">64-component spinor field. Generalizes the Dirac equation to 13D.</div>
+                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
+                        </a>
+                        <a href="foundations/dirac-equation.html" class="sub-component" style="text-decoration: none;">
+                            <div class="component-symbol">&Gamma;<sup>M</sup></div>
+                            <div class="component-name">13D Gamma Matrices</div>
+                            <div class="component-desc">64&times;64 matrices from Clifford algebra Cl(12,1).</div>
+                            <span class="foundation-badge established" style="margin-top: 0.5rem;">Clifford Algebra</span>
+                        </a>
+                        <a href="sections/geometric-framework.html" class="sub-component" style="text-decoration: none;">
+                            <div class="component-symbol">&radic;|G|</div>
+                            <div class="component-name">13D Metric Determinant</div>
+                            <div class="component-desc">Covariant volume element ensuring coordinate invariance.</div>
+                            <span class="foundation-badge established" style="margin-top: 0.5rem;">Diff. Geometry</span>
+                        </a>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Derivation Path to Established Physics</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="foundations/dirac-equation.html">Dirac Equation (1928)</a>
+                            <span class="foundation-badge established">Established</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="foundations/einstein-hilbert-action.html">Einstein-Hilbert Action (1915)</a>
+                            <span class="foundation-badge established">Established</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="foundations/kaluza-klein.html">Kaluza-Klein Theory (1921)</a>
+                            <span class="foundation-badge established">Established</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="foundations/calabi-yau.html">Calabi-Yau Geometry</a>
+                            <span class="foundation-badge established">Mathematics</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section class="abstract" id="abstract">
@@ -387,10 +457,10 @@
                 This framework presents a unified theory of gravity and the Standard Model forces
                 based on a Kaluza-Klein compactification of a (12,1) dimensional bulk spacetime.
                 The central postulate is that the internal 8-dimensional manifold, K<sub>Pneuma</sub>,
-                is a dynamic geometric structure formed from condensates of a fundamental fermion,
-                &Psi;<sub>P</sub>. We demonstrate that K<sub>Pneuma</sub> can be modeled as a homogeneous
-                space with an SO(10) isometry group, which, upon dimensional reduction, yields a 4D
-                Einstein-Yang-Mills-Higgs theory with SO(10) as the gauge group.
+                is a Calabi-Yau four-fold (CY4) with Euler characteristic &chi;=72, formed from condensates
+                of a fundamental 64-component fermion, &Psi;<sub>P</sub>. The SO(10) gauge group emerges from
+                a D<sub>5</sub> singularity in the elliptic fibration (via F-theory), which upon dimensional
+                reduction yields a 4D Einstein-Yang-Mills-Higgs theory with SO(10) as the GUT group.
             </p>
             <p style="margin-top: 1rem;">
                 The framework introduces the <strong>Thermal Time Hypothesis (TTH)</strong>, linking

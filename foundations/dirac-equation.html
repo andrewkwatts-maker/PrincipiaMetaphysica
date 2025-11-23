@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Dirac Equation - Foundation of relativistic quantum mechanics and the basis for the Pneuma field">
+    <title>Dirac Equation - Foundational Physics</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Foundations</a></li>
+                    <li><a href="../sections/pneuma-lagrangian.html">Pneuma Lagrangian</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Foundations</a>
+            <span class="separator">/</span>
+            <span>Dirac Equation</span>
+        </nav>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Physics (1928)</span>
+            <h1 style="background: linear-gradient(135deg, #51cf66, #4facfe); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">The Dirac Equation</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The relativistic wave equation for spin-&frac12; particles, unifying quantum mechanics and special relativity.
+            </p>
+            <div class="main-equation" style="background: rgba(81, 207, 102, 0.1);">
+                (i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi; = 0
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Discovered by Paul Dirac in 1928 | Predicts antimatter
+            </p>
+        </div>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi; = 0</div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">i</div>
+                        <div class="component-name">Imaginary Unit</div>
+                        <div class="component-desc">The square root of -1. Essential for the wave-like nature of quantum mechanics.</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Mathematics</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&gamma;<sup>&mu;</sup></div>
+                        <div class="component-name">Gamma Matrices</div>
+                        <div class="component-desc">4&times;4 matrices satisfying the Clifford algebra {&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2&eta;<sup>&mu;&nu;</sup>.</div>
+                        <a href="clifford-algebra.html" class="component-link">Learn more &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&part;<sub>&mu;</sub></div>
+                        <div class="component-name">Four-Gradient</div>
+                        <div class="component-desc">Partial derivative with respect to spacetime coordinates: &part;<sub>&mu;</sub> = (&part;<sub>t</sub>/c, &nabla;).</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Calculus</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">m</div>
+                        <div class="component-name">Particle Mass</div>
+                        <div class="component-desc">The rest mass of the fermion (in natural units where &hbar; = c = 1).</div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Physics</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&psi;</div>
+                        <div class="component-name">Dirac Spinor</div>
+                        <div class="component-desc">A 4-component complex field describing spin-&frac12; particles like electrons.</div>
+                        <a href="dirac-spinor.html" class="component-link">Learn more &rarr;</a>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Foundation Chain</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Special Relativity (E<sup>2</sup> = p<sup>2</sup>c<sup>2</sup> + m<sup>2</sup>c<sup>4</sup>)</span>
+                        <span class="foundation-badge established">Established 1905</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Quantum Mechanics (E &rarr; i&hbar;&part;<sub>t</sub>, p &rarr; -i&hbar;&nabla;)</span>
+                        <span class="foundation-badge established">Established 1926</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="clifford-algebra.html">Clifford Algebra</a>
+                        <span class="foundation-badge established">Mathematics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physical Interpretation -->
+        <section class="subsection">
+            <h2>Physical Interpretation</h2>
+            <p>
+                The Dirac equation describes particles with spin-&frac12;, such as electrons, quarks, and neutrinos.
+                It was the first equation to successfully combine:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Quantum mechanics</strong> - Wave function description of particles</li>
+                <li><strong>Special relativity</strong> - Lorentz invariance and E = mc<sup>2</sup></li>
+                <li><strong>Spin</strong> - Intrinsic angular momentum of &hbar;/2</li>
+            </ul>
+
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h4>Key Prediction: Antimatter</h4>
+                <p>
+                    The Dirac equation naturally predicts the existence of antimatter. The equation has both
+                    positive and negative energy solutions - the negative energy states correspond to antiparticles.
+                    This prediction was confirmed with the discovery of the positron in 1932.
+                </p>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                The Pneuma Lagrangian in Principia Metaphysica is a <strong>13-dimensional generalization</strong>
+                of the Dirac Lagrangian:
+            </p>
+
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub>)&Psi;<sub>P</sub></div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge pm-specific">PM-Specific</span>
+                        <a href="../sections/pneuma-lagrangian.html" class="link-btn">Details &rarr;</a>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">&Gamma;<sup>M</sup></div>
+                            <div class="component-name">13D Gamma Matrices</div>
+                            <div class="component-desc">64&times;64 matrices generalizing 4D gammas to 13 dimensions.</div>
+                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">Generalized from Dirac</span>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">D<sub>M</sub></div>
+                            <div class="component-name">Covariant Derivative</div>
+                            <div class="component-desc">Includes gravity (spin connection) and gauge fields.</div>
+                            <span class="foundation-badge established" style="margin-top: 0.5rem;">Gauge Theory</span>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">&Psi;<sub>P</sub></div>
+                            <div class="component-name">Pneuma Spinor</div>
+                            <div class="component-desc">64-component spinor in 13D, generalizing the 4-component Dirac spinor.</div>
+                            <a href="../sections/pneuma-lagrangian.html" class="component-link">Learn more &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Derivation Path</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <span>Dirac Equation (4D, spin-&frac12;)</span>
+                            <span class="foundation-badge established">This Page</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="clifford-algebra.html">Clifford Algebra Cl(12,1)</a>
+                            <span class="foundation-badge established">Mathematics</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="../sections/pneuma-lagrangian.html">Pneuma Lagrangian (13D)</a>
+                            <span class="foundation-badge pm-specific">PM-Specific</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                The key differences in PM:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li>Dimensions: 4 &rarr; 13 (signature 12,1)</li>
+                <li>Spinor components: 4 &rarr; 64 (= 2<sup>6</sup>)</li>
+                <li>Gamma matrices: 4&times;4 &rarr; 64&times;64</li>
+                <li>Derivative: Partial &rarr; Covariant (includes gauge and gravity)</li>
+            </ul>
+        </section>
+
+        <!-- References -->
+        <section class="subsection" style="background: rgba(81, 207, 102, 0.05);">
+            <h2>References & Further Reading</h2>
+            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
+                <li>
+                    <strong>Original Paper:</strong> Dirac, P.A.M. (1928) "The Quantum Theory of the Electron"
+                    <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.1928.0023" target="_blank" style="color: var(--accent-primary);">[Proc. Roy. Soc. A]</a>
+                </li>
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Dirac_equation" target="_blank" style="color: var(--accent-primary);">Dirac Equation</a> |
+                    <a href="https://en.wikipedia.org/wiki/Gamma_matrices" target="_blank" style="color: var(--accent-primary);">Gamma Matrices</a> |
+                    <a href="https://en.wikipedia.org/wiki/Spinor" target="_blank" style="color: var(--accent-primary);">Spinors</a>
+                </li>
+                <li>
+                    <strong>Textbook:</strong> Peskin & Schroeder, "An Introduction to Quantum Field Theory" (1995) Ch. 3
+                    <a href="https://en.wikipedia.org/wiki/An_Introduction_to_Quantum_Field_Theory" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Historical:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Paul_Dirac" target="_blank" style="color: var(--accent-primary);">Paul Dirac biography</a> |
+                    <a href="https://en.wikipedia.org/wiki/Positron#Discovery" target="_blank" style="color: var(--accent-primary);">Positron discovery (1932)</a>
+                </li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                <a href="../references.html#dirac1928" style="color: var(--accent-secondary);">See full references page &rarr;</a>
+            </p>
+        </section>
+
+        <!-- Mathematical Details -->
+        <section class="subsection">
+            <h2>Mathematical Details</h2>
+
+            <h3>Gamma Matrix Representation</h3>
+            <p>In the Dirac (standard) representation:</p>
+            <div class="equation-box">
+                &gamma;<sup>0</sup> = <span style="font-size: 0.9em;">
+                    [<sup>I</sup><sub>0</sub> <sup>0</sup><sub>-I</sub>]
+                </span>, &nbsp;
+                &gamma;<sup>i</sup> = <span style="font-size: 0.9em;">
+                    [<sup>0</sup><sub>&sigma;<sup>i</sup></sub> <sup>-&sigma;<sup>i</sup></sup><sub>0</sub>]
+                </span>
+                <span class="equation-label">where &sigma;<sup>i</sup> are the Pauli matrices</span>
+            </div>
+
+            <h3>Lagrangian Form</h3>
+            <p>The Dirac equation follows from extremizing the action with Lagrangian:</p>
+            <div class="equation-box">
+                &Lscr; = <span style="text-decoration: overline;">&psi;</span>(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi;
+                <span class="equation-label">Dirac Lagrangian density</span>
+            </div>
+            <p>
+                where <span style="text-decoration: overline;">&psi;</span> = &psi;<sup>&dagger;</sup>&gamma;<sup>0</sup>
+                is the Dirac adjoint, ensuring Lorentz invariance.
+            </p>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="../sections/pneuma-lagrangian.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Pneuma Lagrangian &rarr;
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #51cf66, #4facfe);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #51cf66;
+        }
+        .highlight-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+    </style>
+</body>
+</html>

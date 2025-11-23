@@ -6,6 +6,7 @@
     <meta name="description" content="Section 2: The Geometric Framework of Principia Metaphysica - Higher-Dimensional Action, Pneuma Manifold, and Kaluza-Klein Decomposition">
     <title>Section 2: Geometric Framework - Principia Metaphysica</title>
     <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
     <style>
         /* Section Page Specific Styles */
         .section-hero {
@@ -704,6 +705,55 @@
                 </div>
             </div>
 
+            <!-- Expandable Formula Breakdown -->
+            <div class="expandable-formula" style="margin-top: 1rem;">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        <span style="color: var(--text-muted); font-size: 0.85rem;">Expand derivation:</span>
+                        S<sub>13D</sub> = &int; d<sup>13</sup>x &radic;|G| [M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(&Gamma;D - m)&Psi;<sub>P</sub>]
+                    </div>
+                    <div class="formula-controls">
+                        <a href="../foundations/index.html" class="link-btn">Foundations &rarr;</a>
+                        <button class="expand-btn">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <a href="../foundations/einstein-hilbert-action.html" class="sub-component" style="text-decoration: none;">
+                            <div class="component-symbol">M<sub>*</sub><sup>11</sup>R</div>
+                            <div class="component-name">Einstein-Hilbert Term</div>
+                            <div class="component-desc">Generalizes 4D GR action S = &int;R&radic;g to 13 dimensions.</div>
+                            <span class="foundation-badge established">From GR (1915)</span>
+                        </a>
+                        <a href="../foundations/dirac-equation.html" class="sub-component" style="text-decoration: none;">
+                            <div class="component-symbol"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(&Gamma;D-m)&Psi;<sub>P</sub></div>
+                            <div class="component-name">Pneuma Lagrangian</div>
+                            <div class="component-desc">13D Dirac Lagrangian. Reduces to standard (i&gamma;&part;-m)&psi; in 4D.</div>
+                            <span class="foundation-badge established">From Dirac (1928)</span>
+                        </a>
+                        <div class="sub-component">
+                            <div class="component-symbol">&radic;|G|</div>
+                            <div class="component-name">Metric Determinant</div>
+                            <div class="component-desc">Covariant volume element from differential geometry.</div>
+                            <span class="foundation-badge established">Riemannian Geometry</span>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">D<sub>M</sub></div>
+                            <div class="component-name">Covariant Derivative</div>
+                            <div class="component-desc">&part;<sub>M</sub> + &omega;<sub>M</sub> + A<sub>M</sub> (partial + spin connection + gauge).</div>
+                            <span class="foundation-badge established">Gauge Theory (1954)</span>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Derivation Path to Established Physics</div>
+                        <div class="chain-step"><span class="step-arrow">&rarr;</span> <a href="../foundations/einstein-hilbert-action.html">Einstein-Hilbert Action (1915)</a> <span class="foundation-badge established">Established</span></div>
+                        <div class="chain-step"><span class="step-arrow">&rarr;</span> <a href="../foundations/dirac-equation.html">Dirac Equation (1928)</a> <span class="foundation-badge established">Established</span></div>
+                        <div class="chain-step"><span class="step-arrow">&rarr;</span> <a href="../foundations/kaluza-klein.html">Kaluza-Klein Theory (1921)</a> <span class="foundation-badge established">Established</span></div>
+                        <div class="chain-step"><span class="step-arrow">&rarr;</span> <a href="../foundations/yang-mills.html">Yang-Mills Gauge Theory (1954)</a> <span class="foundation-badge established">Established</span></div>
+                    </div>
+                </div>
+            </div>
+
             <p>
                 Here G<sub>MN</sub> denotes the 13D metric (with indices M,N = 0,1,...,12),
                 R<sub>13</sub> is the 13D Ricci scalar, M<sub>*</sub> is the fundamental mass scale,
@@ -1055,12 +1105,16 @@
             <div class="highlight-box">
                 <h4>F-Theory Origin of SO(10)</h4>
                 <p>
-                    In F-theory compactifications on an elliptically fibered CY4, gauge symmetries
-                    arise from singularities in the elliptic fiber over codimension-one loci in
+                    In F-theory compactifications on an elliptically fibered CY4
+                    <a href="https://arxiv.org/abs/hep-th/9602022" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Vafa 1996]</a>,
+                    gauge symmetries arise from singularities in the elliptic fiber over codimension-one loci in
                     the base. An SO(10) gauge group corresponds to a <strong>D<sub>5</sub> singularity</strong>
                     (type I*<sub>0</sub> in Kodaira's classification) where the elliptic fiber
-                    degenerates. This is fundamentally different from Kaluza-Klein gauge symmetry
-                    from isometries.
+                    degenerates. This mechanism was developed for GUT model building by
+                    <a href="https://arxiv.org/abs/0802.3391" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Beasley-Heckman-Vafa 2009]</a>.
+                    This is fundamentally different from Kaluza-Klein gauge symmetry
+                    from isometries <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Kaluza 1921]</a>.
+                    <a href="gauge-unification.html" style="color: var(--accent-secondary); display: block; margin-top: 0.5rem;">[&rarr; Full SO(10) GUT details in Gauge Unification Section]</a>
                 </p>
             </div>
 
@@ -1133,7 +1187,10 @@
                 <p>
                     For F-theory compactifications on a Calabi-Yau four-fold (CY4), the number of
                     chiral generations is determined by the <strong>Euler characteristic</strong>
-                    via the corrected index formula:
+                    via the index formula derived from the Atiyah-Singer index theorem
+                    <a href="https://en.wikipedia.org/wiki/Atiyah%E2%80%93Singer_index_theorem" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Atiyah-Singer 1963]</a>.
+                    This was applied to string compactifications by
+                    <a href="https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold#String_theory" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Candelas et al. 1985]</a>:
                 </p>
             </div>
 
@@ -1259,7 +1316,7 @@
 
             <!-- CORRECTED: CY4 Construction Methods (November 2025 Peer Review) -->
             <div class="highlight-box" style="border-left-color: #ffc107; background: linear-gradient(135deg, rgba(255, 193, 7, 0.12), rgba(255, 159, 67, 0.08));">
-                <h4 style="color: #ffc107;">&#9888; Holonomy Clarification (Peer Review Correction)</h4>
+                <h4 style="color: #ffc107;">&#9888; Holonomy Clarification (Correction)</h4>
                 <p>
                     <strong>Mathematical fact:</strong> G₂ × S¹ produces <strong>Spin(7) holonomy</strong>, NOT SU(4).
                     This is unavoidable: Spin(7) ⊃ G₂ as holonomy groups, and the product structure cannot reduce
@@ -2083,7 +2140,8 @@
                     which count independent harmonic differential forms on the Calabi-Yau 4-fold. Each number represents a type of "shape mode"
                     the extra dimensions can vibrate in. The key values are: <strong>h<sup>1,1</sup>=4</strong> (K&auml;hler moduli, controlling
                     the size of 4 independent 2-cycles), and <strong>h<sup>2,2</sup>=60</strong> (4-form moduli, related to flux configurations).
-                    The Euler characteristic &chi;=72 sums these contributions, yielding exactly 3 fermion generations via &chi;/24.
+                    The Euler characteristic &chi;=72 sums these contributions, yielding exactly 3 fermion generations via &chi;/24
+                    <a href="fermion-sector.html" style="color: var(--accent-secondary);">[&rarr; See Fermion Sector]</a>.
                     The diamond's vertical and horizontal symmetries encode deep mathematical dualities (Poincar&eacute; and complex conjugation).
                 </div>
             </div>
@@ -2508,41 +2566,11 @@
             </div>
         </section>
 
-        <!-- Peer Review Criticism Section -->
+        <!-- Concerns Section - Key Open Questions -->
         <section class="peer-review-section">
             <div class="peer-review-header">
                 <div class="peer-review-icon">&#9888;</div>
-                <h3>Peer Review: Critical Analysis</h3>
-            </div>
-
-            <!-- RESOLVED: Index Formula Issue -->
-            <div class="criticism-item" style="border-left: 4px solid #28a745; background: linear-gradient(135deg, rgba(40, 167, 69, 0.08), rgba(139, 127, 255, 0.05));">
-                <h4><span class="severity-badge" style="background: #28a745;">RESOLVED</span> CY4 Generation Index Formula</h4>
-                <p>
-                    <strong>Original Issue:</strong> Early versions of this section incorrectly used the formula
-                    n<sub>gen</sub> = &chi;/2 (appropriate for CY3 heterotic compactifications) for the 8-dimensional
-                    Pneuma manifold. This led to the erroneous claim that &chi; = 6 yields 3 generations.
-                </p>
-                <p>
-                    <strong>Problem:</strong> For F-theory on CY4 (8 real dimensions), the Atiyah-Singer index
-                    theorem gives n<sub>gen</sub> = &chi;/24, not &chi;/2. Using &chi; = 6 would give
-                    n<sub>gen</sub> = 0.25 (non-integer and unphysical).
-                </p>
-                <div class="author-response" style="border-left-color: #28a745;">
-                    <h5 style="color: #28a745;">Resolution:</h5>
-                    <p>
-                        The framework now correctly uses the F-theory index formula <strong>n<sub>gen</sub> = &chi;/24</strong>.
-                        For 3 generations, we require <strong>&chi;(K<sub>Pneuma</sub>) = 72</strong>. This is achieved via:
-                    </p>
-                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
-                        <li>Direct CY4 with &chi; = 72 from toric construction (5D reflexive polytope), or</li>
-                        <li>CY4/Z<sub>2</sub> quotient where the parent CY4 has &chi; = 144 and a free Z<sub>2</sub> action halves the Euler characteristic</li>
-                    </ul>
-                    <p style="margin-top: 0.75rem;">
-                        The mathematical derivation now appears in Section 2.2 with interactive formulas explaining
-                        the index theorem origin of the factor 24.
-                    </p>
-                </div>
+                <h3>Concerns: Open Questions</h3>
             </div>
 
             <div class="criticism-item">
@@ -2695,6 +2723,44 @@
                     <li><del>How can &chi; = 6 give 3 generations?</del> <strong>&rarr;</strong> Corrected: &chi; = 72 required for 3 generations</li>
                 </ul>
             </div>
+        </section>
+
+        <!-- References -->
+        <section class="peer-review-section" style="background: rgba(81, 207, 102, 0.05); border-left: 4px solid #51cf66;">
+            <div class="peer-review-header">
+                <div class="peer-review-icon" style="color: #51cf66;">&#128218;</div>
+                <h3 style="color: #51cf66;">References & Further Reading</h3>
+            </div>
+            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
+                <li>
+                    <strong>Kaluza-Klein:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" style="color: var(--accent-primary);">Wikipedia</a> |
+                    <a href="../foundations/kaluza-klein.html" style="color: var(--accent-primary);">PM Foundations</a>
+                </li>
+                <li>
+                    <strong>Calabi-Yau Manifolds:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold" target="_blank" style="color: var(--accent-primary);">Wikipedia</a> |
+                    <a href="../foundations/calabi-yau.html" style="color: var(--accent-primary);">PM Foundations</a>
+                </li>
+                <li>
+                    <strong>F-Theory:</strong> Vafa (1996)
+                    <a href="https://arxiv.org/abs/hep-th/9602022" target="_blank" style="color: var(--accent-primary);">[arXiv]</a> |
+                    <a href="https://en.wikipedia.org/wiki/F-theory" target="_blank" style="color: var(--accent-primary);">Wikipedia</a>
+                </li>
+                <li>
+                    <strong>Coset Spaces:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Homogeneous_space" target="_blank" style="color: var(--accent-primary);">Homogeneous Spaces</a> |
+                    <a href="https://en.wikipedia.org/wiki/Freund%E2%80%93Rubin_compactification" target="_blank" style="color: var(--accent-primary);">Freund-Rubin</a>
+                </li>
+                <li>
+                    <strong>Spinor Representations:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Spinor" target="_blank" style="color: var(--accent-primary);">Spinors</a> |
+                    <a href="https://en.wikipedia.org/wiki/Clifford_algebra" target="_blank" style="color: var(--accent-primary);">Clifford Algebra</a>
+                </li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                <a href="../references.html" style="color: var(--accent-secondary);">See full references page &rarr;</a>
+            </p>
         </section>
 
         <section class="nav-section">
