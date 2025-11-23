@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the 13D gravitational action in Principia Metaphysica">
+    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the 26D → 13D gravitational action in Principia Metaphysica v6.0">
     <title>Einstein-Hilbert Term - Principia Metaphysica</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../js/formula-expansion.js" defer></script>
@@ -214,13 +214,13 @@
         <div class="equation-hero">
             <h1>The Einstein-Hilbert Term</h1>
             <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
-                The 13-dimensional gravitational action that reduces to Einstein gravity in 4D upon compactification.
+                The effective 13D gravitational action (from the 26D two-time framework) that reduces to Einstein gravity in 4D upon compactification.
             </p>
             <div class="main-equation">
                 M<sub>*</sub><sup>11</sup>R
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
-                The gravitational sector of the 13D bulk action
+                The gravitational sector of the effective 13D bulk action (26D → 13D via Sp(2,R) gauge fixing)
             </p>
         </div>
 
@@ -288,12 +288,30 @@
             </div>
         </div>
 
+        <!-- 26D Context -->
+        <section class="subsection">
+            <h2>26D Origin (v6.0 Framework)</h2>
+            <p>
+                In the full 26D theory with signature (24,2), the gravitational action includes contributions from both
+                time dimensions. The Sp(2,R) gauge symmetry reduces the two-time structure to an effective 13D shadow:
+            </p>
+            <div class="equation-box">
+                S<sub>26D</sub> = M<sub>26</sub><sup>24</sup> &int; d<sup>26</sup>x &radic;|G<sub>26</sub>| (R<sub>26</sub> + ℒ<sub>Sp(2,R)</sub>)
+                <span class="equation-label">Full 26D action before gauge fixing</span>
+            </div>
+            <p>
+                After imposing the Sp(2,R) constraints (X² = 0, X·P = 0, P² + M² = 0), the orthogonal time dimension
+                is gauge-fixed, leaving an effective 13D description. The Z₂ mirror structure creates two copies of
+                this 13D shadow, related by time-reversal symmetry.
+            </p>
+        </section>
+
         <!-- Term Breakdown -->
         <section class="subsection">
             <h2>Component Breakdown</h2>
             <p>
-                The Einstein-Hilbert term is the standard gravitational action generalized to 13 dimensions.
-                It couples the fundamental mass scale to the curvature of the full bulk spacetime.
+                The effective Einstein-Hilbert term is the standard gravitational action in the gauge-fixed 13D shadow.
+                It couples the fundamental mass scale to the curvature of the effective bulk spacetime.
             </p>
 
             <div class="term-breakdown">
@@ -319,8 +337,8 @@
                     <div class="term-symbol">R</div>
                     <h4>Ricci Scalar</h4>
                     <p>
-                        The 13D Ricci scalar R = G<sup>MN</sup>R<sub>MN</sub>, encoding the curvature of the full
-                        13-dimensional spacetime including both 4D and internal directions.
+                        The effective 13D Ricci scalar R = G<sup>MN</sup>R<sub>MN</sub>, encoding the curvature of the
+                        gauge-fixed spacetime including both 4D and internal directions.
                     </p>
                 </div>
 
@@ -337,14 +355,14 @@
 
         <!-- Full Gravitational Action -->
         <section class="subsection">
-            <h2>Full Gravitational Action</h2>
+            <h2>Effective 13D Gravitational Action</h2>
             <p>
-                The complete 13D gravitational action, including the volume element, is:
+                After Sp(2,R) gauge fixing, the complete effective 13D gravitational action is:
             </p>
 
             <div class="equation-box">
                 S<sub>gravity</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R
-                <span class="equation-label">13D Einstein-Hilbert action</span>
+                <span class="equation-label">Effective 13D Einstein-Hilbert action (gauge-fixed from 26D)</span>
             </div>
 
             <h3>Components of the Metric</h3>
@@ -419,9 +437,10 @@
                 These modifications arise from:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2;">
-                <li>Higher-order curvature terms from the 13D action</li>
+                <li>Higher-order curvature terms from the 26D → 13D reduction</li>
                 <li>Moduli stabilization effects from K<sub>Pneuma</sub></li>
                 <li>The Mashiach field dynamics driving dark energy</li>
+                <li>Z₂ mirror sector contributions from the orthogonal time direction</li>
             </ul>
 
             <p>
