@@ -218,10 +218,11 @@
                 The fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content.
             </p>
             <div class="main-equation">
-                <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>
+                &Lscr; = <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub> + g<sub>T</sub>&middot;t<sub>ortho</sub>)&Psi;<sub>P</sub>
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
-                The Dirac Lagrangian for the 64-component Pneuma spinor in 13 dimensions
+                <strong>Full 26D:</strong> 8192-component spinor, Cl(24,2) Clifford algebra<br>
+                <strong>Effective 13D:</strong> 64-component spinor via gauge fixing, Cl(12,1)
             </p>
         </div>
 
@@ -229,10 +230,10 @@
         <div class="expandable-formula">
             <div class="formula-header">
                 <div class="formula-main">
-                    <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub>)&Psi;<sub>P</sub>
+                    <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub> + g<sub>T</sub>&middot;t<sub>ortho</sub>)&Psi;<sub>P</sub>
                 </div>
                 <div class="formula-controls">
-                    <span class="foundation-badge pm-specific">PM-Specific</span>
+                    <span class="foundation-badge pm-specific">PM-Specific (26D)</span>
                     <button class="expand-btn" title="Expand to see derivation">&#x25BC;</button>
                 </div>
             </div>
@@ -246,8 +247,8 @@
                     </a>
                     <div class="sub-component">
                         <div class="component-symbol">&Gamma;<sup>M</sup></div>
-                        <div class="component-name">13D Gamma Matrices</div>
-                        <div class="component-desc">64&times;64 matrices satisfying Clifford algebra Cl(12,1).</div>
+                        <div class="component-name">26D/13D Gamma Matrices</div>
+                        <div class="component-desc">8192&times;8192 in 26D Cl(24,2); reduces to 64&times;64 in effective 13D Cl(12,1).</div>
                         <span class="foundation-badge derived" style="margin-top: 0.5rem;">From Clifford Algebra</span>
                     </div>
                     <div class="sub-component">
@@ -259,8 +260,14 @@
                     <div class="sub-component">
                         <div class="component-symbol">&Psi;<sub>P</sub></div>
                         <div class="component-name">Pneuma Spinor</div>
-                        <div class="component-desc">64-component spinor, generalizing 4-component Dirac spinor to 13D.</div>
+                        <div class="component-desc">8192-component in full 26D; 64-component effective after gauge fixing to 13D.</div>
                         <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">g<sub>T</sub>&middot;t<sub>ortho</sub></div>
+                        <div class="component-name">Orthogonal Time Coupling</div>
+                        <div class="component-desc">Coupling to orthogonal time direction unique to 26D (2 time dimensions).</div>
+                        <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">26D-Specific</span>
                     </div>
                 </div>
                 <div class="derivation-chain">
@@ -294,7 +301,8 @@
             <h2>Component Breakdown</h2>
             <p>
                 The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the
-                full 13-dimensional bulk spacetime. Each component has specific physical meaning:
+                full 26-dimensional spacetime with signature (24,2). After gauge fixing 13 dimensions, we obtain an
+                effective 13D theory. Each component has specific physical meaning:
             </p>
 
             <div class="term-breakdown">
@@ -311,26 +319,38 @@
                     <div class="term-symbol">&Psi;<sub>P</sub></div>
                     <h4>Pneuma Spinor Field</h4>
                     <p>
-                        A 64-component Dirac spinor in 13D. Decomposes as 64 = 8 &times; 8 under the split into
-                        4D spacetime spinor (4) and internal manifold spinor (8&times;2).
+                        An 8192-component Dirac spinor in full 26D (2<sup>13</sup> = 8192 from Cl(24,2)). Reduces to
+                        64-component effective spinor in 13D via gauge fixing. Further decomposes as 64 = 4 &times; 16
+                        under 4D spacetime &times; internal manifold split.
                     </p>
                 </div>
 
                 <div class="term-card">
-                    <div class="term-symbol">i&Gamma;&nabla;</div>
+                    <div class="term-symbol">i&Gamma;<sup>M</sup>D<sub>M</sub></div>
                     <h4>Kinetic Term</h4>
                     <p>
-                        The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over all 13 dimensions.
-                        &Gamma;<sup>M</sup> are 64&times;64 gamma matrices satisfying the Clifford algebra.
+                        The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over all 26 dimensions
+                        (effective 13D after gauge fixing). &Gamma;<sup>M</sup> are 8192&times;8192 matrices in 26D Cl(24,2),
+                        64&times;64 in effective 13D Cl(12,1).
                     </p>
                 </div>
 
                 <div class="term-card">
-                    <div class="term-symbol">m</div>
+                    <div class="term-symbol">m<sub>P</sub></div>
                     <h4>Bulk Mass</h4>
                     <p>
                         The fundamental mass parameter m<sub>P</sub> for the Pneuma field. Sets the scale for
                         Pneuma condensation and influences 4D fermion masses through dimensional reduction.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">g<sub>T</sub>&middot;t<sub>ortho</sub></div>
+                    <h4>Orthogonal Time Coupling</h4>
+                    <p>
+                        Unique to 26D with signature (24,2): coupling constant g<sub>T</sub> times the orthogonal time
+                        coordinate t<sub>ortho</sub>. The second time dimension enables thermal time emergence and
+                        resolves causality issues in lower-dimensional formulations.
                     </p>
                 </div>
             </div>
@@ -338,10 +358,11 @@
 
         <!-- The Gamma Matrices -->
         <section class="subsection">
-            <h2>The 13D Gamma Matrices</h2>
+            <h2>The Gamma Matrices: 26D to 13D</h2>
             <p>
-                In 13 dimensions with signature (12,1), the gamma matrices &Gamma;<sup>M</sup> form a representation
-                of the Clifford algebra Cl(12,1):
+                In full 26D with signature (24,2), the gamma matrices &Gamma;<sup>M</sup> form a representation
+                of the Clifford algebra Cl(24,2) with dimension 2<sup>13</sup> = 8192. Upon gauge fixing 13 dimensions,
+                we obtain the effective Cl(12,1) algebra:
             </p>
 
             <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
@@ -350,7 +371,7 @@
                     <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Gamma;<sup>M</sup>
                         <div class="var-tooltip">
                             <div class="var-name">&Gamma;<sup>M</sup> — Gamma Matrix</div>
-                            <div class="var-desc">13D gamma matrix with index M = 0,1,...,12</div>
+                            <div class="var-desc">26D: M = 0,1,...,25 (8192&times;8192); Effective 13D: M = 0,1,...,12 (64&times;64)</div>
                         </div>
                     </span>
                     <span class="formula-op">,</span>
@@ -365,16 +386,24 @@
                     <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">2G<sup>MN</sup>
                         <div class="var-tooltip">
                             <div class="var-name">2G<sup>MN</sup> — Metric Anticommutator</div>
-                            <div class="var-desc">13D metric with signature (−,+,+,...,+) - 1 time, 12 space</div>
+                            <div class="var-desc">26D: signature (24,2) with 2 times; Effective 13D: signature (12,1) with 1 time</div>
                         </div>
                     </span>
                 </div>
-                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.1) 13D Clifford Algebra [Clifford 1878]</div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.1) Clifford Algebra: Cl(24,2) &rarr; Cl(12,1) via gauge fixing</div>
+            </div>
+
+            <div class="physics-note">
+                <h4>Dimensional Reduction: Cl(24,2) &rarr; Cl(12,1)</h4>
+                <p>
+                    <strong>Full 26D:</strong> Spinor dimension = 2<sup>⌊26/2⌋</sup> = 2<sup>13</sup> = 8192 components<br>
+                    <strong>Effective 13D:</strong> After gauge fixing, spinor reduces to 2<sup>⌊13/2⌋</sup> = 2<sup>6</sup> = 64 components<br>
+                    The gauge fixing removes one time dimension, yielding signature (12,1) from (24,2).
+                </p>
             </div>
 
             <p>
-                The minimal spinor representation has dimension 2<sup>[13/2]</sup> = 2<sup>6</sup> = 64. The gamma matrices
-                can be constructed from tensor products:
+                In the effective 13D theory, the gamma matrices can be constructed from tensor products:
             </p>
 
             <div class="equation-box">
@@ -394,8 +423,9 @@
         <section class="subsection">
             <h2>The Covariant Derivative</h2>
             <p>
-                The full covariant derivative D<sub>M</sub> acting on the Pneuma spinor includes both gravitational
-                and gauge connections:
+                The full covariant derivative D<sub>M</sub> acting on the Pneuma spinor in 26D includes both gravitational
+                and gauge connections. In the full theory, M ranges over all 26 dimensions; in the effective 13D theory,
+                M = 0, 1, ..., 12:
             </p>
 
             <div class="interactive-formula" style="background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
@@ -403,7 +433,7 @@
                     <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">D<sub>M</sub>
                         <div class="var-tooltip">
                             <div class="var-name">D<sub>M</sub> — Covariant Derivative</div>
-                            <div class="var-desc">Full derivative including all connections</div>
+                            <div class="var-desc">Full derivative including all connections; M = 0,...,25 in 26D; M = 0,...,12 effective</div>
                         </div>
                     </span>
                     <span class="formula-op">=</span>
@@ -417,7 +447,7 @@
                     <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&frac14;&omega;<sub>M</sub><sup>AB</sup>&Gamma;<sub>AB</sub>
                         <div class="var-tooltip">
                             <div class="var-name">Spin Connection</div>
-                            <div class="var-desc">&omega;<sub>M</sub><sup>AB</sup> couples spinor to curvature; &Gamma;<sub>AB</sub> = ½[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>]</div>
+                            <div class="var-desc">&omega;<sub>M</sub><sup>AB</sup> couples spinor to curvature; &Gamma;<sub>AB</sub> = ½[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>]; generates Spin(24,2) in 26D, Spin(12,1) effective</div>
                         </div>
                     </span>
                     <span class="formula-op">+</span>
@@ -428,14 +458,14 @@
                         </div>
                     </span>
                 </div>
-                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.2) Full Covariant Derivative</div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.2) Full Covariant Derivative (26D/effective 13D)</div>
             </div>
 
             <h3>Components</h3>
             <ul style="color: var(--text-secondary); line-height: 2;">
-                <li><strong>&part;<sub>M</sub></strong> - Partial derivative in coordinate direction M</li>
-                <li><strong>&omega;<sub>M</sub><sup>AB</sup></strong> - Spin connection from 13D gravity</li>
-                <li><strong>&Gamma;<sub>AB</sub></strong> - Antisymmetric product &frac12;[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>], generators of Spin(12,1)</li>
+                <li><strong>&part;<sub>M</sub></strong> - Partial derivative in coordinate direction M (26 directions in full theory, 13 effective)</li>
+                <li><strong>&omega;<sub>M</sub><sup>AB</sup></strong> - Spin connection from 26D gravity (reduces to 13D effective spin connection)</li>
+                <li><strong>&Gamma;<sub>AB</sub></strong> - Antisymmetric product &frac12;[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>], generators of Spin(24,2) in 26D, Spin(12,1) effective</li>
                 <li><strong>A<sub>M</sub><sup>a</sup></strong> - Gauge connection (from isometries of K<sub>Pneuma</sub>)</li>
                 <li><strong>T<sup>a</sup></strong> - Gauge group generators (SO(10) in this framework)</li>
             </ul>
@@ -477,9 +507,9 @@
 
             <h3>Source of Matter</h3>
             <p>
-                Upon dimensional reduction over K<sub>Pneuma</sub>, the 64-component bulk spinor decomposes into
-                4D chiral fermions. The topological structure (zero modes of the Dirac operator on K<sub>Pneuma</sub>)
-                determines the number of generations:
+                Upon dimensional reduction over K<sub>Pneuma</sub>, the full 8192-component 26D spinor (or equivalently,
+                the 64-component effective 13D spinor) decomposes into 4D chiral fermions. The topological structure
+                (zero modes of the Dirac operator on K<sub>Pneuma</sub>) determines the number of generations:
             </p>
 
             <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08)); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
@@ -549,12 +579,59 @@
             </p>
         </section>
 
+        <!-- Orthogonal Time Coupling -->
+        <section class="subsection">
+            <h2>The Orthogonal Time Coupling: g<sub>T</sub>&middot;t<sub>ortho</sub></h2>
+            <p>
+                A distinguishing feature of the 26D formulation is the explicit presence of two time dimensions in the
+                signature (24,2). The term g<sub>T</sub>&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field
+                to the orthogonal time direction:
+            </p>
+
+            <div class="interactive-formula" style="background: rgba(255, 126, 182, 0.08); border: 1px solid rgba(255, 126, 182, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">g<sub>T</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">g<sub>T</sub> — Thermal Coupling</div>
+                            <div class="var-desc">Dimensionless coupling constant governing interaction with orthogonal time</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&middot;</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">t<sub>ortho</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">t<sub>ortho</sub> — Orthogonal Time</div>
+                            <div class="var-desc">Second time coordinate in (24,2) signature; becomes thermal/entropic time after gauge fixing</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.4) Orthogonal Time Coupling (26D-Specific)</div>
+            </div>
+
+            <h3>Physical Role</h3>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li><strong>Thermal Time Emergence:</strong> The orthogonal time coordinate provides the thermodynamic arrow of time through the TTH mechanism</li>
+                <li><strong>Causality Resolution:</strong> Two-time physics in 26D resolves apparent causality issues that arise in naive lower-dimensional formulations</li>
+                <li><strong>Gauge Fixing:</strong> When reducing from 26D to effective 13D, the orthogonal time is gauge-fixed, leaving its effects encoded in the thermal dynamics</li>
+                <li><strong>CPT Connection:</strong> The second time dimension relates to discrete CPT symmetries in the effective 4D theory</li>
+            </ul>
+
+            <div class="physics-note">
+                <h4>Why Two Time Dimensions?</h4>
+                <p>
+                    The signature (24,2) arises naturally from the requirement that the Pneuma field generate both spacetime
+                    geometry and matter content consistently. The second time dimension is not directly observable but manifests
+                    through thermodynamic and entropic phenomena in the effective 4D theory.
+                </p>
+            </div>
+        </section>
+
         <!-- 4D Reduction -->
         <section class="subsection">
             <h2>4D Effective Lagrangian</h2>
             <p>
-                After Kaluza-Klein reduction over the 8-dimensional internal manifold, the Pneuma Lagrangian yields
-                the 4D fermion sector:
+                Starting from the full 26D Lagrangian, we first gauge-fix to 13D (with the g<sub>T</sub>&middot;t<sub>ortho</sub>
+                term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional
+                internal manifold K<sub>Pneuma</sub>. This yields the 4D fermion sector:
             </p>
 
             <div class="equation-box" style="font-size: 1rem;">

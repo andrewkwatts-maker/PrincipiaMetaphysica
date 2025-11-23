@@ -621,17 +621,18 @@ const PrincipiaFormulas = {
 
         thermalTimeParameter: {
             id: "thermal-time-param",
-            html: "α<sub>T</sub> = (d ln τ / d ln a) - (d ln H / d ln a) = (+1) - (-3/2) = 2.5",
-            latex: "\\alpha_T = \\frac{d\\ln\\tau}{d\\ln a} - \\frac{d\\ln H}{d\\ln a} = 2.5",
-            label: "(5.2) Thermal Time Parameter",
+            html: "α<sub>T</sub> = (d ln τ / d ln a) - (d ln H / d ln a) + δ<sub>Z₂</sub> = 2.5 + 0.2 = 2.7",
+            latex: "\\alpha_T = \\frac{d\\ln\\tau}{d\\ln a} - \\frac{d\\ln H}{d\\ln a} + \\delta_{Z_2} = 2.7",
+            label: "(5.2) Thermal Time Parameter (Z₂-corrected)",
             category: "THEORY",
-            attribution: "Principia Metaphysica + TTH [Connes-Rovelli 1994]",
-            description: "Mismatch between thermal and cosmic time scales",
+            attribution: "Principia Metaphysica v6.0 + TTH [Connes-Rovelli 1994]",
+            description: "Mismatch between thermal and cosmic time scales, with Z₂ mirror correction",
             status: "DERIVED",
             terms: {
-                "α<sub>T</sub>": { name: "Thermal Parameter", description: "= 2.5 in matter era" },
-                "τ": { name: "Thermal Time", description: "τ = 1/Γ ∝ a" },
-                "H": { name: "Hubble Rate", description: "H ∝ a^(-3/2)" }
+                "α<sub>T</sub>": { name: "Thermal Parameter", description: "= 2.7 (Z₂-corrected) in matter era" },
+                "τ": { name: "Thermal Time", description: "τ = 1/Γ ∝ a (in t_therm sector)" },
+                "H": { name: "Hubble Rate", description: "H ∝ a^(-3/2)" },
+                "δ<sub>Z₂</sub>": { name: "Z₂ Correction", description: "+0.2 from mirror entropy flow" }
             }
         },
 

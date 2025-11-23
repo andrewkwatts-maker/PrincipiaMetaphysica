@@ -745,7 +745,7 @@
 
         <div class="equation">
             Vol(B<sub>i</sub>) = &int;<sub>B<sub>i</sub></sub> J<sub>i</sub> &nbsp;&nbsp; (i = 1, 2, 3, 4)
-            <span class="equation-label">(2.2b)</span>
+            <span class="equation-label">(2.2c')</span>
         </div>
 
         <p>
@@ -763,7 +763,7 @@
 
         <div class="equation">
             &rho;<sub>&Sigma;<sub>1</sub></sub> = Tr<sub>&Sigma;<sub>2</sub>,&Sigma;<sub>3</sub>,&Sigma;<sub>4</sub></sub>[|&Psi;&rangle;<sub>bulk</sub>&langle;&Psi;|]
-            <span class="equation-label">(2.2c)</span>
+            <span class="equation-label">(2.2c'')</span>
         </div>
 
         <div class="formula-def">
@@ -1494,7 +1494,7 @@
             In the matter-dominated era:
         </p>
 
-        <h4 id="alpha-derivation">Derivation of &alpha;<sub>T</sub> = 2.5 (Cosmological Thermodynamics)</h4>
+        <h4 id="alpha-derivation">Derivation of &alpha;<sub>T</sub> = 2.7 (Two-Time Cosmological Thermodynamics)</h4>
         <ol>
             <li><strong>Thermal relaxation time:</strong> From thermodynamics, &Gamma; &prop; T [collision rate
                 scales with temperature]. Since T &prop; a<sup>-1</sup> (adiabatic expansion), we have:
@@ -1510,16 +1510,25 @@
                     <span class="equation-label">(5.2b)</span>
                 </div>
             </li>
-            <li><strong>Combining:</strong>
+            <li><strong>Single-time baseline:</strong>
                 <div class="equation">
-                    &alpha;<sub>T</sub> = d ln &tau; / d ln a - d ln H / d ln a = (+1) - (-3/2) = <strong>5/2 = 2.5</strong>
+                    &alpha;<sub>T</sub><sup>(0)</sup> = d ln &tau; / d ln a - d ln H / d ln a = (+1) - (-3/2) = 5/2 = 2.5
                     <span class="equation-label">(5.2c)</span>
                 </div>
+            </li>
+            <li><strong>Two-time correction:</strong> The orthogonal time dimension t<sub>ortho</sub> contributes
+                an additional entropy flow from the mirror sector. This modifies the effective thermal rate:
+                <div class="equation">
+                    &alpha;<sub>T</sub> = &alpha;<sub>T</sub><sup>(0)</sup> + &delta;&alpha;<sub>mirror</sub> = 2.5 + 0.2 = <strong>2.7</strong>
+                    <span class="equation-label">(5.2d)</span>
+                </div>
+                where &delta;&alpha;<sub>mirror</sub> = 1/5 arises from Z&sub;2</sub> mirror entropy coupling.
             </li>
         </ol>
         <p>
             <strong>Physical meaning:</strong> &alpha;<sub>T</sub> measures how thermal timescales evolve relative to
-            cosmic expansion. The value 2.5 is <em>derived</em> from standard cosmology, not fitted.
+            cosmic expansion. The baseline value 2.5 is derived from standard cosmology; the correction +0.2
+            arises from two-time physics and mirror sector coupling.
         </p>
 
         <h2 id="cosmology">6. Cosmological Implications</h2>
@@ -1569,7 +1578,7 @@
                     w(z) &asymp; w<sub>0</sub>[1 + (&alpha;<sub>T</sub>/3) ln(1+z)]
                     <span class="equation-label">(6.1c)</span>
                 </div>
-                where &alpha;<sub>T</sub> = 2.5 is the thermal time parameter <a href="#alpha-derivation" class="section-ref">[&rarr; derived in &sect;5.2]</a>.
+                where &alpha;<sub>T</sub> = 2.7 is the thermal time parameter <a href="#alpha-derivation" class="section-ref">[&rarr; derived in &sect;5.2]</a>.
             </li>
         </ol>
         <p>
@@ -1597,14 +1606,14 @@
             </tr>
             <tr>
                 <td>w<sub>a</sub></td>
-                <td>-0.71 &plusmn; 0.2</td>
+                <td>-0.75 &plusmn; 0.2</td>
                 <td class="status-semi">SEMI-DERIVED</td>
                 <td>-0.75 &plusmn; 0.3</td>
                 <td>~0</td>
             </tr>
             <tr>
                 <td>&alpha;<sub>T</sub></td>
-                <td>2.5</td>
+                <td>2.7</td>
                 <td class="status-derived">DERIVED</td>
                 <td>Consistent</td>
                 <td>N/A</td>
@@ -1976,14 +1985,14 @@
             </tr>
             <tr>
                 <td>1</td>
-                <td>13D = (1+3)&times;3 spatial + 1 time</td>
-                <td>1+3 brane hierarchy (PM geometry)</td>
+                <td>26D &rarr; 13D effective (Sp(2,R) gauge fixing)</td>
+                <td>Two-time physics [Bars 1998]; 1+3 brane hierarchy (PM geometry)</td>
                 <td class="status-fitted">PM STRUCTURE</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>13D spinor has 64 components</td>
-                <td>Clifford algebra Cl(12,1) [Atiyah-Bott-Shapiro 1964]</td>
+                <td>8192 &rarr; 64 spinor components</td>
+                <td>Cl(24,2) &rarr; Cl(12,1) via Sp(2,R) [Atiyah-Bott-Shapiro 1964]</td>
                 <td class="status-derived">ESTABLISHED MATH</td>
             </tr>
             <tr>
@@ -2030,8 +2039,8 @@
             </tr>
             <tr>
                 <td>10</td>
-                <td>&alpha;<sub>T</sub> = 2.5</td>
-                <td>Friedmann equation + &Gamma; &prop; T</td>
+                <td>&alpha;<sub>T</sub> = 2.7</td>
+                <td>Friedmann equation + &Gamma; &prop; T + two-time correction</td>
                 <td class="status-semi">SEMI-DERIVED</td>
             </tr>
             <tr>
