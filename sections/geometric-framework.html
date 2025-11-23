@@ -1511,6 +1511,155 @@
                 </ul>
             </div>
 
+            <!-- Hidden Variables and Wavefunction Collapse Section -->
+            <div id="hidden-variables" class="subsection" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.08), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ffc107;">
+                <h3 style="color: #ffc107; margin-bottom: 1rem;">Hidden Variables and the Origin of Quantum Randomness</h3>
+
+                <div class="warning-box" style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); margin-bottom: 1.5rem;">
+                    <h4 style="color: #ffc107;">&#x26A0; Interpretational Framework</h4>
+                    <p>
+                        The following is a <strong>philosophical interpretation</strong> consistent with the mathematics,
+                        not a testable physical prediction. It provides one way to understand quantum mechanics within
+                        the Principia Metaphysica framework, but other interpretations (Copenhagen, Many-Worlds, etc.)
+                        remain viable.
+                    </p>
+                </div>
+
+                <p>
+                    The 1 + 3 brane structure provides a geometric mechanism for understanding quantum randomness.
+                    Fields on our brane (B<sub>1</sub>) have <strong>correlated partners</strong> on the hidden branes
+                    (B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub>). These correlations arise from the unified bulk action:
+                </p>
+
+                <div class="equation-box interactive-formula" style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3);">
+                    <span class="formula-hint">Hover for details</span>
+                    <span class="formula-var">&Hscr;<sub>bulk</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Hscr;<sub>bulk</sub></div>
+                            <div class="var-description">The full Hilbert space of the 13-dimensional bulk, containing all quantum states across all four branes.</div>
+                            <div class="var-units">Hilbert space</div>
+                            <div class="var-contribution">The arena for complete quantum mechanics - deterministic evolution occurs here.</div>
+                        </div>
+                    </span> = <span class="formula-var">&Hscr;<sub>B<sub>1</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Hscr;<sub>B<sub>1</sub></sub></div>
+                            <div class="var-description">Hilbert space of observable brane - contains all states we can directly measure.</div>
+                            <div class="var-units">Hilbert space</div>
+                            <div class="var-contribution">Our accessible quantum state space.</div>
+                        </div>
+                    </span> &otimes; <span class="formula-var">&Hscr;<sub>B<sub>2</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Hscr;<sub>B<sub>2</sub></sub></div>
+                            <div class="var-description">Hilbert space of first hidden brane - inaccessible to direct observation.</div>
+                            <div class="var-units">Hilbert space</div>
+                            <div class="var-contribution">First "hidden variable" sector.</div>
+                        </div>
+                    </span> &otimes; <span class="formula-var">&Hscr;<sub>B<sub>3</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Hscr;<sub>B<sub>3</sub></sub></div>
+                            <div class="var-description">Hilbert space of second hidden brane.</div>
+                            <div class="var-units">Hilbert space</div>
+                            <div class="var-contribution">Second "hidden variable" sector.</div>
+                        </div>
+                    </span> &otimes; <span class="formula-var">&Hscr;<sub>B<sub>4</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Hscr;<sub>B<sub>4</sub></sub></div>
+                            <div class="var-description">Hilbert space of deepest hidden brane.</div>
+                            <div class="var-units">Hilbert space</div>
+                            <div class="var-contribution">Third "hidden variable" sector - most weakly coupled.</div>
+                        </div>
+                    </span>
+                    <div class="label">Tensor product structure of bulk Hilbert space</div>
+                </div>
+
+                <h4 style="color: var(--accent-primary); margin-top: 1.5rem;">The Partial Trace Mechanism</h4>
+                <p>
+                    The quantum state accessible to observers on B<sub>1</sub> is obtained by <strong>partial trace</strong>
+                    over the hidden sector degrees of freedom:
+                </p>
+
+                <div class="equation-box interactive-formula" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3);">
+                    <span class="formula-hint">Hover for details</span>
+                    <span class="formula-var">&rho;<sub>B<sub>1</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&rho;<sub>B<sub>1</sub></sub></div>
+                            <div class="var-description">The reduced density matrix on our brane - the quantum state we actually observe.</div>
+                            <div class="var-units">Density operator</div>
+                            <div class="var-contribution">Generally a mixed state even when |&Psi;&rangle;<sub>bulk</sub> is pure, due to entanglement with hidden sectors.</div>
+                        </div>
+                    </span> = <span class="formula-var">Tr<sub>B<sub>2</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Tr<sub>B<sub>2</sub></sub></div>
+                            <div class="var-description">Partial trace over B₂ Hilbert space - "averages out" the first hidden sector.</div>
+                            <div class="var-units">Linear map on operators</div>
+                            <div class="var-contribution">First step of hierarchical tracing.</div>
+                        </div>
+                    </span>[<span class="formula-var">Tr<sub>B<sub>3</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Tr<sub>B<sub>3</sub></sub></div>
+                            <div class="var-description">Partial trace over B₃ Hilbert space.</div>
+                            <div class="var-units">Linear map</div>
+                            <div class="var-contribution">Second step of hierarchical tracing.</div>
+                        </div>
+                    </span>[<span class="formula-var">Tr<sub>B<sub>4</sub></sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Tr<sub>B<sub>4</sub></sub></div>
+                            <div class="var-description">Partial trace over B₄ Hilbert space - deepest hidden sector traced first.</div>
+                            <div class="var-units">Linear map</div>
+                            <div class="var-contribution">Third step; tracing order reflects coupling hierarchy.</div>
+                        </div>
+                    </span>[<span class="formula-var">|&Psi;&rangle;&langle;&Psi;|
+                        <div class="var-tooltip">
+                            <div class="var-name">|&Psi;&rangle;&langle;&Psi;|</div>
+                            <div class="var-description">Pure state density matrix of the full bulk - the "true" quantum state of the universe.</div>
+                            <div class="var-units">Projection operator</div>
+                            <div class="var-contribution">Evolves deterministically via bulk Schrödinger equation.</div>
+                        </div>
+                    </span>]]]
+                    <div class="label">Hierarchical partial trace: B₄ → B₃ → B₂ → Observable state</div>
+                </div>
+
+                <h4 style="color: var(--accent-primary); margin-top: 1.5rem;">Wavefunction "Collapse" as Correlation Revelation</h4>
+                <p>
+                    In this interpretation, wavefunction "collapse" is <strong>not a physical process</strong> but the
+                    <em>revelation of pre-existing correlations</em> with the hidden branes:
+                </p>
+                <ul class="concept-list">
+                    <li><strong>Before measurement:</strong> The bulk state |&Psi;&rangle; is entangled across all branes.
+                        From B<sub>1</sub>'s perspective, outcomes appear probabilistic (mixed state &rho;<sub>B<sub>1</sub></sub>).</li>
+                    <li><strong>During measurement:</strong> The measuring apparatus on B<sub>1</sub> becomes correlated with
+                        a specific hidden-brane configuration. No "collapse" occurs—only correlation establishment.</li>
+                    <li><strong>After measurement:</strong> The outcome was "determined" by the pre-existing hidden-brane state,
+                        but since we couldn't access that information, it <em>appeared</em> random to us.</li>
+                </ul>
+
+                <h4 style="color: var(--accent-primary); margin-top: 1.5rem;">Bell's Theorem Compatibility</h4>
+                <p>
+                    This hidden-variable structure <strong>evades Bell's theorem</strong> because Bell constrains
+                    <em>local</em> hidden variables. The inter-brane correlations are fundamentally <strong>non-local
+                    in 3D space</strong>:
+                </p>
+                <ul class="concept-list">
+                    <li>The Pneuma field propagates through the full 13D bulk, coupling all four branes simultaneously
+                        (in the shared time dimension).</li>
+                    <li>Non-locality is <em>geometric</em>: B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub> are spatially
+                        orthogonal to B<sub>1</sub>, not "far away" in our 3D space.</li>
+                    <li>This is structurally analogous to Bohmian mechanics (non-local quantum potential) but with
+                        geometric rather than configuration-space non-locality.</li>
+                </ul>
+
+                <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.08));">
+                    <h4 style="color: #51cf66;">Mathematical Consistency</h4>
+                    <p>
+                        The partial trace construction is <strong>designed to reproduce Born rule statistics exactly</strong>.
+                        This interpretation makes no different predictions from standard quantum mechanics—it provides
+                        a geometric picture of "where" the randomness comes from, not a way to circumvent it. The
+                        hidden-brane states are <em>in principle</em> inaccessible, not merely technologically difficult
+                        to access.
+                    </p>
+                </div>
+            </div>
+
             <!-- NEW: Explicit CY4 Construction Section (November 2025) -->
             <div id="explicit-cy4-construction" class="highlight-box" style="border-left-color: #17a2b8; background: linear-gradient(135deg, rgba(23, 162, 184, 0.12), rgba(139, 127, 255, 0.08));">
                 <h4 style="color: #17a2b8;">Explicit CY4 Construction for K<sub>Pneuma</sub> (&chi; = 72)</h4>
