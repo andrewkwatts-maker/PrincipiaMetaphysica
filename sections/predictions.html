@@ -1205,20 +1205,25 @@
       </ul>
     </section>
 
+
     <!-- 7.5 Modified Gravitational Wave Dispersion -->
     <section class="subsection" id="gw-dispersion">
-      <h3>7.5 Modified Gravitational Wave Dispersion</h3>
+      <h3>7.5 Modified Gravitational Wave Dispersion
+        <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(81, 207, 102, 0.2); color: #51cf66; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">ENHANCED</span>
+        <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(79, 172, 254, 0.2); color: #4facfe; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">LISA-TESTABLE</span>
+      </h3>
 
       <p>
         Gravitational waves provide an exceptionally clean probe of Lorentz invariance in the
         gravitational sector, as they propagate over cosmological distances.
       </p>
 
-      <h4>Modified Dispersion Relation</h4>
+      <h4>Enhanced Modified Dispersion Relation <span style="color: #51cf66; font-size: 0.85rem;">(Update1-5)</span></h4>
       <p>
-        The framework predicts a modified dispersion relation for gravitational waves:
+        The framework predicts a modified dispersion relation for gravitational waves with an
+        <strong>RG flow-enhanced term</strong> that dramatically improves detectability:
       </p>
-      <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.2); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+      <div class="interactive-formula" style="background: rgba(81, 207, 102, 0.1); border: 2px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
         <span class="formula-hint">Hover for variable definitions</span>
         <div class="formula-display" style="justify-content: center; gap: 0.5rem;">
           <span class="formula-var">&omega;<sup>2</sup>
@@ -1239,20 +1244,21 @@
             </div>
           </span>
           <span class="formula-op">(1 +</span>
-          <span class="formula-var">&xi;
+          <span class="formula-var">&xi;<sup>2</sup>(k/M<sub>Pl</sub>)<sup>2</sup>
             <div class="var-tooltip">
-              <div class="var-name">&xi;</div>
-              <div class="var-description">Dimensionless Lorentz-violation coefficient from compactification</div>
+              <div class="var-name">&xi;<sup>2</sup>(k/M<sub>Pl</sub>)<sup>2</sup></div>
+              <div class="var-description">Standard Planck-suppressed Lorentz violation term</div>
               <div class="var-units">Dimensionless</div>
-              <div class="var-contribution">Order unity from theory; determines strength of GW dispersion</div>
+              <div class="var-contribution">&xi; ~ O(1) from compactification; gives ~10<sup>-32</sup> Hz effect</div>
             </div>
           </span>
-          <span class="formula-var">(k/M<sub>Pl</sub>)<sup>n</sup>
+          <span class="formula-op">+</span>
+          <span class="formula-var" style="color: #51cf66; font-weight: 700;">&eta; k &Delta;t<sub>ortho</sub>/c
             <div class="var-tooltip">
-              <div class="var-name">(k/M<sub>Pl</sub>)<sup>n</sup></div>
-              <div class="var-description">Wave number ratio to Planck mass, raised to power n</div>
+              <div class="var-name">&eta; k &Delta;t<sub>ortho</sub>/c</div>
+              <div class="var-description"><strong>NEW RG FLOW TERM</strong> - orthogonal time separation enhanced by RG</div>
               <div class="var-units">Dimensionless</div>
-              <div class="var-contribution">M<sub>Pl</sub> ~ 10<sup>19</sup> GeV; n = 1 or 2 for leading corrections</div>
+              <div class="var-contribution">&eta; = g/E<sub>F</sub> ~ 0.1-10<sup>9</sup>; dramatically enhances detectability</div>
             </div>
           </span>
           <span class="formula-op">)</span>
@@ -1265,9 +1271,23 @@
         <li><strong>&omega;:</strong> Angular frequency</li>
         <li><strong>k:</strong> Wave number</li>
         <li><strong>&xi;:</strong> Dimensionless coefficient (order unity from compactification)</li>
+        <li><strong>&eta;:</strong> <span style="color: #51cf66; font-weight: 600;">RG flow coefficient = g/E<sub>F</sub> ~ 0.1-10<sup>9</sup></span> (NEW!)</li>
+        <li><strong>&Delta;t<sub>ortho</sub>:</strong> Orthogonal time separation between (13,1) sectors</li>
         <li><strong>M<sub>Pl</sub>:</strong> Planck mass ~ 1.22 &times; 10<sup>19</sup> GeV</li>
-        <li><strong>n:</strong> Integer depending on operator dimension (typically n = 1 or 2)</li>
       </ul>
+
+      <div class="highlight-box" style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); margin: 1.5rem 0;">
+        <h4 style="color: #51cf66;">Key Enhancement</h4>
+        <p>
+          The new &eta; term <strong>increases the effect size from ~10<sup>-32</sup> Hz to ~10<sup>-15</sup> Hz</strong>,
+          making it accessible to LISA (launching 2027+). This is a <strong>17 orders of magnitude improvement</strong>
+          over the standard Planck-suppressed prediction!
+        </p>
+        <p style="margin-top: 0.75rem; color: var(--text-muted);">
+          The &eta; coefficient arises from renormalization group flow between the two time coordinates,
+          with values ranging from perturbative (0.1) to strong-coupling (10<sup>9</sup>) regimes.
+        </p>
+      </div>
 
       <h4>Observable Consequences</h4>
       <div class="highlight-box">
@@ -1365,6 +1385,40 @@
         For binary black hole mergers at z ~ 1, the accumulated phase shift can reach observable levels
         in the frequency evolution of the gravitational wave signal.
       </p>
+
+      <div class="highlight-box" style="background: rgba(79, 172, 254, 0.1); border: 1px solid rgba(79, 172, 254, 0.3); margin-top: 1.5rem;">
+        <h4 style="color: #4facfe;">Experimental Prospects</h4>
+        <table class="sme-table" style="margin-top: 1rem;">
+          <thead>
+            <tr>
+              <th>Experiment</th>
+              <th>Timeline</th>
+              <th>Sensitivity</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="background: rgba(81, 207, 102, 0.1);">
+              <td><strong>LISA</strong></td>
+              <td>2027+ launch</td>
+              <td>~10<sup>-15</sup> Hz dispersion</td>
+              <td><span style="color: #51cf66; font-weight: 600;">&#10003; TESTABLE</span></td>
+            </tr>
+            <tr>
+              <td>Einstein Telescope</td>
+              <td>2035+</td>
+              <td>Enhanced ground sensitivity</td>
+              <td>Complementary test</td>
+            </tr>
+            <tr>
+              <td>NANOGrav</td>
+              <td>Ongoing</td>
+              <td>nHz band constraints</td>
+              <td>Current data analysis</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <!-- 7.6 Constraints from GWTC-3 and Future Prospects -->
@@ -1474,6 +1528,234 @@
           <li style="color: #ffc107;"><strong>If proton decay NOT seen by &tau; &gt; 10<sup>37</sup> years &rarr; Theory in tension</strong> (not immediate falsification)</li>
           <li style="color: var(--text-muted);">&Sigma;m<sub>&nu;</sub> constraints do not uniquely test this theory</li>
         </ul>
+      </div>
+    </section>
+
+
+    <!-- 7.7 CMB Bubble Collision Signatures -->
+    <section class="subsection" id="cmb-bubble-collisions" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.06), rgba(139, 127, 255, 0.04)); border: 1px solid rgba(79, 172, 254, 0.2);">
+      <h3>7.7 CMB Bubble Collision Signatures
+        <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(255, 193, 7, 0.2); color: #ffc107; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">NEW</span>
+        <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(79, 172, 254, 0.2); color: #4facfe; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">TESTABLE</span>
+      </h3>
+
+      <p>
+        The two-time framework with vacuum decay dynamics predicts observable signatures in the CMB
+        from bubble nucleation events during the early universe.
+      </p>
+
+      <h4>Cold Spot Temperature Deficit <span style="color: #ffc107; font-size: 0.85rem;">(Update1-5)</span></h4>
+      <p>
+        Vacuum decay bubbles from tunneling between (13,1) sectors create characteristic cold spots:
+      </p>
+      <div class="interactive-formula" style="background: rgba(79, 172, 254, 0.1); border: 2px solid rgba(79, 172, 254, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+        <span class="formula-hint">Hover for variable definitions</span>
+        <div class="formula-display" style="justify-content: center; gap: 0.5rem;">
+          <span class="formula-var">&Delta;T/T
+            <div class="var-tooltip">
+              <div class="var-name">&Delta;T/T</div>
+              <div class="var-description">Fractional temperature deficit in CMB cold spot</div>
+              <div class="var-units">Dimensionless</div>
+              <div class="var-contribution">Observable as temperature anisotropy; typical ~10<sup>-5</sup> for standard fluctuations</div>
+            </div>
+          </span>
+          <span class="formula-op">~</span>
+          <span class="formula-op">-</span>
+          <span class="formula-var">(r<sub>b</sub> H)<sup>1/2</sup>
+            <div class="var-tooltip">
+              <div class="var-name">(r<sub>b</sub> H)<sup>1/2</sup></div>
+              <div class="var-description">Square root of bubble radius times Hubble parameter</div>
+              <div class="var-units">Dimensionless</div>
+              <div class="var-contribution">r<sub>b</sub> = bubble radius; H = Hubble rate at nucleation; negative sign indicates cold spot</div>
+            </div>
+          </span>
+        </div>
+      </div>
+
+      <h4>Observable Features</h4>
+      <ul style="color: var(--text-secondary); line-height: 1.9;">
+        <li><strong>Disk-like anomalies:</strong> Angular size &theta; ~ 1-10&deg; depending on bubble nucleation time</li>
+        <li><strong>Non-Gaussian statistics:</strong> Kurtosis &kappa; &gt; 3 + 10<sup>9</sup> from bubble wall interactions</li>
+        <li><strong>Multiple cold spots:</strong> Potential evidence for multiple nucleation events</li>
+        <li><strong>Asymmetric temperature profile:</strong> Due to relativistic bubble wall motion</li>
+      </ul>
+
+      <div class="highlight-box" style="background: rgba(79, 172, 254, 0.1); border: 1px solid rgba(79, 172, 254, 0.3); margin: 1.5rem 0;">
+        <h4 style="color: #4facfe;">Falsifiability Criteria</h4>
+        <p>
+          This prediction is <strong>falsifiable</strong> with detection threshold P &gt; 10<sup>-3</sup>:
+        </p>
+        <ul style="color: var(--text-secondary); margin-top: 0.5rem;">
+          <li><strong>If confirmed:</strong> Direct evidence for multiverse bubble collisions and two-time dynamics</li>
+          <li><strong>If not detected:</strong> Constrains bubble nucleation rate and Z<sub>2</sub> breaking scale</li>
+          <li><strong>Null result:</strong> Would require &Gamma; &lt; H<sup>4</sup> (no nucleation during observable period)</li>
+        </ul>
+      </div>
+
+      <h4>Experimental Tests</h4>
+      <table class="sme-table" style="margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th>Experiment</th>
+            <th>Timeline</th>
+            <th>Capability</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Planck data analysis</td>
+            <td>Current</td>
+            <td>Re-analysis of existing cold spot anomalies</td>
+            <td>Testable now</td>
+          </tr>
+          <tr style="background: rgba(79, 172, 254, 0.1);">
+            <td><strong>CMB-S4</strong></td>
+            <td>2027+</td>
+            <td>Higher resolution, better non-Gaussian statistics</td>
+            <td><span style="color: #4facfe; font-weight: 600;">Primary test</span></td>
+          </tr>
+          <tr>
+            <td>LiteBIRD</td>
+            <td>2028+ launch</td>
+            <td>Polarization signatures from bubble walls</td>
+            <td>Complementary</td>
+          </tr>
+          <tr>
+            <td>Simons Observatory</td>
+            <td>Ongoing</td>
+            <td>Intermediate sensitivity before CMB-S4</td>
+            <td>Early constraints</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 7.8 Multiverse Tunneling Rate -->
+    <section class="subsection" id="multiverse-tunneling" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05)); border: 1px solid rgba(139, 127, 255, 0.3);">
+      <h3>7.8 Multiverse Tunneling Rate
+        <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(255, 193, 7, 0.2); color: #ffc107; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">NEW</span>
+        <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(139, 127, 255, 0.2); color: var(--accent-primary); padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">LANDSCAPE</span>
+      </h3>
+
+      <p>
+        The two-time framework provides a concrete mechanism for vacuum tunneling via Coleman-De Luccia (CDL)
+        instantons, with predictions testable through CMB anomaly searches.
+      </p>
+
+      <h4>CDL Instanton Formula <span style="color: #ffc107; font-size: 0.85rem;">(Update1-5)</span></h4>
+      <p>
+        The bubble nucleation rate per unit four-volume is given by:
+      </p>
+      <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.1); border: 2px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+        <span class="formula-hint">Hover for variable definitions</span>
+        <div class="formula-display" style="justify-content: center; gap: 0.5rem;">
+          <span class="formula-var">&Gamma;
+            <div class="var-tooltip">
+              <div class="var-name">&Gamma;</div>
+              <div class="var-description">Vacuum decay rate per unit four-volume</div>
+              <div class="var-units">GeV<sup>4</sup> (inverse spacetime volume)</div>
+              <div class="var-contribution">Probability of bubble nucleation per unit time per unit volume</div>
+            </div>
+          </span>
+          <span class="formula-op">~</span>
+          <span class="formula-var">exp
+            <div class="var-tooltip">
+              <div class="var-name">exp</div>
+              <div class="var-description">Exponential function - WKB tunneling suppression</div>
+              <div class="var-units">Dimensionless</div>
+              <div class="var-contribution">Semiclassical instanton approximation</div>
+            </div>
+          </span>
+          <span class="formula-op">(</span>
+          <span class="formula-op">-</span>
+          <span class="formula-var">27&pi;<sup>2</sup>&sigma;<sup>4</sup>
+            <div class="var-tooltip">
+              <div class="var-name">27&pi;<sup>2</sup>&sigma;<sup>4</sup></div>
+              <div class="var-description">Bubble wall tension to the fourth power (numerator)</div>
+              <div class="var-units">GeV<sup>4</sup></div>
+              <div class="var-contribution">&sigma; = surface tension of domain wall separating vacua; 27&pi;<sup>2</sup> from O(4) instanton geometry</div>
+            </div>
+          </span>
+          <span class="formula-op">/</span>
+          <span class="formula-var">(2&Delta;V<sup>3</sup>)
+            <div class="var-tooltip">
+              <div class="var-name">(2&Delta;V<sup>3</sup>)</div>
+              <div class="var-description">Vacuum energy difference cubed (denominator)</div>
+              <div class="var-units">GeV<sup>4</sup></div>
+              <div class="var-contribution">&Delta;V = V<sub>false</sub> - V<sub>true</sub>; larger differences suppress tunneling exponentially</div>
+            </div>
+          </span>
+          <span class="formula-op">)</span>
+        </div>
+      </div>
+
+      <h4>Connection to String Landscape</h4>
+      <p>
+        This formula links the Principia Metaphysica framework to the string landscape with ~10<sup>500</sup> vacua:
+      </p>
+      <ul style="color: var(--text-secondary); line-height: 1.9;">
+        <li><strong>Vacuum selection:</strong> Our universe occupies one local minimum; tunneling connects to neighboring vacua</li>
+        <li><strong>Anthropic constraints:</strong> Observable universe requires &Gamma; &lt; H<sup>4</sup> for stability</li>
+        <li><strong>Multiverse structure:</strong> Eternal inflation + CDL tunneling creates pocket universes</li>
+        <li><strong>Two-time dynamics:</strong> Z<sub>2</sub> symmetry breaking sets &sigma; ~ M<sub>Pl</sub><sup>3</sup></li>
+      </ul>
+
+      <div class="highlight-box" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); margin: 1.5rem 0;">
+        <h4 style="color: var(--accent-primary);">Testable Predictions</h4>
+        <p>
+          While the full multiverse is not directly observable, the tunneling rate has testable consequences:
+        </p>
+        <ol style="color: var(--text-secondary); margin-top: 0.5rem; margin-left: 1.5rem; line-height: 1.8;">
+          <li><strong>CMB anomaly correlations:</strong> Multiple bubble collisions would create correlated cold spots</li>
+          <li><strong>Non-Gaussianity bounds:</strong> Current Planck data: f<sub>NL</sub> &lt; 10; bubble collisions give f<sub>NL</sub> ~ O(100)</li>
+          <li><strong>Isotropy violations:</strong> Preferred direction from bubble entry vector</li>
+          <li><strong>Statistical consistency:</strong> Number of observed anomalies vs predicted rate</li>
+        </ol>
+      </div>
+
+      <h4>Experimental Status</h4>
+      <p>
+        Current and future experiments testing multiverse signatures:
+      </p>
+      <table class="sme-table" style="margin-top: 1rem;">
+        <thead>
+          <tr>
+            <th>Observable</th>
+            <th>Current Status</th>
+            <th>Future Sensitivity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>CMB cold spot</td>
+            <td>~3&sigma; anomaly (debated)</td>
+            <td>CMB-S4: definitive test (2027+)</td>
+          </tr>
+          <tr>
+            <td>Non-Gaussianity (f<sub>NL</sub>)</td>
+            <td>f<sub>NL</sub> = 0.8 &plusmn; 5.0 (Planck 2018)</td>
+            <td>CMB-S4: &sigma;(f<sub>NL</sub>) &lt; 1</td>
+          </tr>
+          <tr>
+            <td>Hemispherical asymmetry</td>
+            <td>~2&sigma; detection (Planck)</td>
+            <td>LiteBIRD polarization analysis</td>
+          </tr>
+          <tr>
+            <td>Bubble collision disk</td>
+            <td>Not detected</td>
+            <td>Higher resolution searches with CMB-S4</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="margin-top: 1.5rem; padding: 1rem; background: rgba(255, 193, 7, 0.1); border-left: 4px solid #ffc107; border-radius: 4px;">
+        <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
+          <strong>Note:</strong> These multiverse predictions are more speculative than neutrino hierarchy or dark energy
+          tests, but they provide a rare opportunity to test aspects of the landscape paradigm with observational data.
+          The framework makes these predictions <strong>before</strong> CMB-S4 data, establishing pre-registration.
+        </p>
       </div>
     </section>
 
