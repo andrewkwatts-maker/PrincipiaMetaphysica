@@ -218,10 +218,10 @@
                 The fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content.
             </p>
             <div class="main-equation">
-                &Lscr; = <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub> + g<sub>T</sub>&middot;t<sub>ortho</sub>)&Psi;<sub>P</sub>
+                &Lscr; = <span style="text-decoration: overline;">&Psi;</span>(i&Gamma;<sup>M</sup>D<sub>M</sub> + g&middot;t<sub>ortho</sub>)&Psi; + &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
-                <strong>Full 26D:</strong> 8192-component spinor, Cl(24,2) Clifford algebra<br>
+                <strong>Full 26D:</strong> 8192-component spinor, Cl(24,2) Clifford algebra, Sp(2,R) gauge<br>
                 <strong>Effective 13D:</strong> 64-component spinor via gauge fixing, Cl(12,1)
             </p>
         </div>
@@ -230,7 +230,7 @@
         <div class="expandable-formula">
             <div class="formula-header">
                 <div class="formula-main">
-                    <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub> + g<sub>T</sub>&middot;t<sub>ortho</sub>)&Psi;<sub>P</sub>
+                    <span style="text-decoration: overline;">&Psi;</span>(i&Gamma;<sup>M</sup>D<sub>M</sub> + g&middot;t<sub>ortho</sub>)&Psi; + &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
                 </div>
                 <div class="formula-controls">
                     <span class="foundation-badge pm-specific">PM-Specific (26D)</span>
@@ -264,10 +264,16 @@
                         <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
                     </div>
                     <div class="sub-component">
-                        <div class="component-symbol">g<sub>T</sub>&middot;t<sub>ortho</sub></div>
+                        <div class="component-symbol">g&middot;t<sub>ortho</sub></div>
                         <div class="component-name">Orthogonal Time Coupling</div>
                         <div class="component-desc">Coupling to orthogonal time direction unique to 26D (2 time dimensions).</div>
                         <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">26D-Specific</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;</div>
+                        <div class="component-name">Quartic Interaction</div>
+                        <div class="component-desc">Self-interaction term responsible for Pneuma condensation and mass generation.</div>
+                        <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
                     </div>
                 </div>
                 <div class="derivation-chain">
@@ -345,12 +351,21 @@
                 </div>
 
                 <div class="term-card">
-                    <div class="term-symbol">g<sub>T</sub>&middot;t<sub>ortho</sub></div>
+                    <div class="term-symbol">g&middot;t<sub>ortho</sub></div>
                     <h4>Orthogonal Time Coupling</h4>
                     <p>
-                        Unique to 26D with signature (24,2): coupling constant g<sub>T</sub> times the orthogonal time
+                        Unique to 26D with signature (24,2): coupling constant g times the orthogonal time
                         coordinate t<sub>ortho</sub>. The second time dimension enables thermal time emergence and
                         resolves causality issues in lower-dimensional formulations.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">&lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;</div>
+                    <h4>Quartic Interaction</h4>
+                    <p>
+                        Self-interaction term with coupling constant &lambda;. Responsible for Pneuma condensation
+                        and dynamical mass generation through spontaneous symmetry breaking.
                     </p>
                 </div>
             </div>
@@ -581,18 +596,18 @@
 
         <!-- Orthogonal Time Coupling -->
         <section class="subsection">
-            <h2>The Orthogonal Time Coupling: g<sub>T</sub>&middot;t<sub>ortho</sub></h2>
+            <h2>The Orthogonal Time Coupling: g&middot;t<sub>ortho</sub></h2>
             <p>
                 A distinguishing feature of the 26D formulation is the explicit presence of two time dimensions in the
-                signature (24,2). The term g<sub>T</sub>&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field
+                signature (24,2). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field
                 to the orthogonal time direction:
             </p>
 
             <div class="interactive-formula" style="background: rgba(255, 126, 182, 0.08); border: 1px solid rgba(255, 126, 182, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
                 <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
-                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">g<sub>T</sub>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">g
                         <div class="var-tooltip">
-                            <div class="var-name">g<sub>T</sub> — Thermal Coupling</div>
+                            <div class="var-name">g — Thermal Coupling</div>
                             <div class="var-desc">Dimensionless coupling constant governing interaction with orthogonal time</div>
                         </div>
                     </span>
@@ -629,7 +644,7 @@
         <section class="subsection">
             <h2>4D Effective Lagrangian</h2>
             <p>
-                Starting from the full 26D Lagrangian, we first gauge-fix to 13D (with the g<sub>T</sub>&middot;t<sub>ortho</sub>
+                Starting from the full 26D Lagrangian, we first gauge-fix to 13D (with the g&middot;t<sub>ortho</sub>
                 term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional
                 internal manifold K<sub>Pneuma</sub>. This yields the 4D fermion sector:
             </p>

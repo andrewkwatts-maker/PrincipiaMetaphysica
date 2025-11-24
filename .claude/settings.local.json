@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "Bash(dir:*)",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status --short sections/predictions.html)",
+      "Bash(findstr:*)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status sections/cosmology.html)",
+      "Bash(powershell:*)",
+      "Bash(git checkout:*)",
+      "Bash(git diff:*)",
+      "Bash(git stash:*)",
+      "Bash(node:*)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status sections/pneuma-lagrangian.html)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff sections/gauge-unification.html)",
+      "Bash(echo:*)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff --stat sections/gauge-unification.html)"
     ],
     "deny": [],
     "ask": []
