@@ -579,18 +579,6 @@
                 <td>LHC Run 3 / HL-LHC</td>
                 <td>2025-2035</td>
             </tr>
-            <tr>
-                <td class="testable">GW Dispersion</td>
-                <td>Gravitational waves travel slightly slower than light at low frequencies</td>
-                <td>LIGO-Virgo-KAGRA multi-messenger events</td>
-                <td>2025-2030</td>
-            </tr>
-            <tr>
-                <td class="testable">CMB Bubble Collisions</td>
-                <td>Disk-like cold spots from multiverse bubble walls</td>
-                <td>CMB-S4, LiteBIRD detailed sky maps</td>
-                <td>2028-2035</td>
-            </tr>
         </table>
 
         <div class="key-point">
@@ -598,41 +586,6 @@
                 <strong>The real test:</strong> If JUNO finds "inverted hierarchy" (heaviest neutrino is
                 actually the lightest), this theory is <strong>falsified</strong>. That's how science works -
                 good theories make predictions that could be proven wrong.
-            </p>
-        </div>
-
-        <h3>What Do These Predictions Mean?</h3>
-
-        <div class="analogy">
-            <p class="analogy-title">Understanding Gravitational Wave Dispersion</p>
-            <p>
-                When you drop a pebble in a pond, different-sized waves travel at different speeds. The theory
-                predicts gravitational waves behave similarly - low-frequency waves from black hole mergers
-                might arrive slightly after high-frequency ones, like bass notes lagging behind treble in a
-                very distant concert. This "dispersion" comes from the hidden dimensions affecting how gravity
-                propagates through space.
-            </p>
-        </div>
-
-        <div class="analogy">
-            <p class="analogy-title">Multiverse Bubble Collisions</p>
-            <p>
-                Imagine blowing soap bubbles in a bathtub - sometimes they collide and leave marks. The theory
-                suggests our universe might be one "bubble" among many in a cosmic "multiverse foam." If another
-                bubble collided with ours billions of years ago, it could have left a disk-shaped "bruise" in
-                the cosmic microwave background - a cold spot we might detect with sensitive telescopes. While
-                speculative, this prediction is testable: if we find the right pattern, it supports the multiverse
-                idea; if we don't, that version of the theory is ruled out.
-            </p>
-        </div>
-
-        <div class="warning">
-            <p>
-                <strong>For the Curious:</strong> The mathematics behind these predictions - including detailed
-                calculations of bubble collision rates, gravitational wave dispersion formulas, and quantum
-                tunneling between universes - is available in the
-                <a href="computational-appendices.html">Computational Appendices</a>. These include working
-                SymPy and QuTiP code you can run yourself to explore the theory's predictions.
             </p>
         </div>
 
@@ -674,23 +627,23 @@
             </tr>
             <tr>
                 <td>Mathematical Rigor</td>
-                <td>6/10</td>
-                <td>Consistent 26D/13D framework with Sp(2,R) ghost elimination; dual generation formulas</td>
+                <td>5/10</td>
+                <td>Consistent 26D/13D framework with Sp(2,R) ghost elimination</td>
             </tr>
             <tr>
                 <td>Physics Consistency</td>
-                <td>7/10</td>
-                <td>w<sub>a</sub> fully derived, w<sub>0</sub> semi-derived via MEP, swampland compliant</td>
+                <td>6/10</td>
+                <td>w<sub>a</sub> derived, swampland compliant, two-time physics ghost-free</td>
             </tr>
             <tr>
                 <td>Experimental Testability</td>
-                <td>6/10</td>
-                <td>7 testable predictions including GW dispersion, CMB bubbles, Bell tests</td>
+                <td>5/10</td>
+                <td>Multiple predictions: neutrino hierarchy, w<sub>a</sub>, Bell tests, KK modes</td>
             </tr>
             <tr>
                 <td><strong>Overall</strong></td>
-                <td><strong>B</strong></td>
-                <td>Coherent framework with multiple derived predictions; expanded falsifiability</td>
+                <td><strong>B-</strong></td>
+                <td>Coherent framework with derived predictions; awaiting experimental confirmation</td>
             </tr>
         </table>
 
