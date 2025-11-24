@@ -21,7 +21,9 @@
       "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" checkout HEAD -- principia-metaphysica-paper.html)",
       "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status principia-metaphysica-paper.html)",
       "Bash(Out-File -Encoding utf8 'h:/Github/PrincipiaMetaphysica/index.html')",
-      "Bash(md5sum:*)"
+      "Bash(md5sum:*)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status index.html)",
+      "Bash(lsof:*)"
     ],
     "deny": [],
     "ask": []
