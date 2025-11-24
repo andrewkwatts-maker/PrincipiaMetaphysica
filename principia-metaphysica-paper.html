@@ -328,12 +328,12 @@
             A Unified Theory of Spacetime, Gauge Forces, and Emergent Time
         </p>
         <p style="text-align: center; font-size: 12pt; color: #8b7fff; margin-bottom: 1rem;">
-            <em>"Temporal Mirrors"</em> — The Two-Time Framework
+            <em>The Two-Time Framework</em>
         </p>
 
         <p class="author">Andrew Keith Watts</p>
         <p class="affiliation">Independent Researcher</p>
-        <p class="date">November 2025 | Version 6.0</p>
+        <p class="date">November 2025</p>
 
 
         <button class="download-btn no-print" onclick="window.print()">
@@ -343,7 +343,7 @@
         <div class="abstract">
             <p class="abstract-title">Abstract</p>
             <p>
-                This paper presents the Principia Metaphysica framework v6.0 ("Temporal Mirrors"), a theoretical proposal
+                This paper presents the Principia Metaphysica framework , a theoretical proposal
                 for unifying gravity, gauge forces, and the origin of time through higher-dimensional geometry. The
                 framework posits a <strong>26-dimensional bulk spacetime with signature (24,2)</strong>—incorporating
                 <strong>two time dimensions</strong> related by Sp(2,R) gauge symmetry. The observable universe emerges
@@ -402,7 +402,7 @@
         </p>
 
         <p>
-            <strong>Version 6.0 ("Temporal Mirrors")</strong> extends the framework from 13D to <strong>26D with
+            <strong></strong> extends the framework from 13D to <strong>26D with
             signature (24,2)</strong>—the critical dimension of bosonic string theory—incorporating <strong>two
             time dimensions</strong>. The observable 13D universe emerges as a gauge-fixed "shadow" of the full
             26D theory, with Sp(2,R) gauge symmetry eliminating ghosts from the second time dimension.
@@ -504,6 +504,105 @@
             Ψ<sub>P</sub> is the Pneuma field, and ℒ<sub>Sp(2,R)</sub> contains the gauge constraints that
             eliminate ghosts from the second time dimension. This action is treated within an Effective Field
             Theory (EFT) framework, valid below the cutoff E < M<sub>*</sub>.
+        </p>
+
+        <h4>Full Lagrangian: F(R,T,&tau;) Gravity</h4>
+        <p>
+            The complete gravitational sector is described by modified gravity with matter and thermal time coupling:
+        </p>
+
+        <div class="equation">
+            S<sub>grav</sub> = &int; d<sup>4</sup>x &radic;|g| F(R, T, &tau;)
+            <span class="equation-label">(2.1f)</span>
+        </div>
+
+        <p>
+            where the function F separates as:
+        </p>
+
+        <div class="equation">
+            F(R, T, &tau;) = R + f(T) + &lambda;<sub>&tau;</sub>&tau; + &Lambda;(&tau;)
+            <span class="equation-label">(2.1g)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 2.1f-g - F(R,T,&tau;) Lagrangian)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>R</strong>
+                    <span>4D Ricci scalar - standard Einstein-Hilbert term <span class="foundation-ref">[Einstein 1915]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>T</strong>
+                    <span>Trace of stress-energy tensor T<sub>&mu;&nu;</sub> <span class="foundation-ref">[Harko et al. 2011]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&tau;</strong>
+                    <span>Thermal time parameter from modular flow <a href="#tomita-takesaki" class="section-ref">[&rarr; &sect;5.1]</a></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>f(T)</strong>
+                    <span>Matter coupling: f(T) = &alpha;<sub>T</sub>T generates non-minimal interaction</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&lambda;<sub>&tau;</sub></strong>
+                    <span>Thermal time coupling constant ~ 10<sup>-3</sup> in natural units</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&Lambda;(&tau;)</strong>
+                    <span>Effective cosmological term: &Lambda;(&tau;) = &Lambda;<sub>0</sub>(1 + &epsilon;&tau;)</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The F(R,T,&tau;) framework generalizes f(R,T) gravity <span class="foundation-ref">[Harko et al. 2011, Myrzakulov 2012]</span>
+            by incorporating the thermal time parameter &tau; from the Connes-Rovelli construction.
+        </p>
+
+        <h4 id="condensate-gap">Condensate Gap Equation</h4>
+        <p>
+            The Pneuma condensate generates mass gaps through pairing dynamics analogous to BCS superconductivity:
+        </p>
+
+        <div class="equation">
+            &Delta; = &lambda;v / (1 + g&middot;t<sub>ortho</sub>/E<sub>F</sub>)
+            <span class="equation-label">(2.1h)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 2.1h - Condensate Gap)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>&Delta;</strong>
+                    <span>Condensate gap - energy scale of spontaneous symmetry breaking</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&lambda;</strong>
+                    <span>Pneuma self-coupling constant (dimensionless)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>v</strong>
+                    <span>Vacuum expectation value ~ 246 GeV at electroweak scale</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>g</strong>
+                    <span>Coupling to orthogonal time sector (dimensionless)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>t<sub>ortho</sub></strong>
+                    <span>Orthogonal (hidden) time coordinate <a href="#ortho-time" class="section-ref">[&rarr; &sect;5.2]</a></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>E<sub>F</sub></strong>
+                    <span>Fermi energy of the Pneuma condensate</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The orthogonal time dependence causes the gap to evolve cosmologically, providing a mechanism
+            for electroweak symmetry breaking tied to the two-time structure.
         </p>
 
         <h4 id="26d-structure">2.1.1 The 26D Two-Time Structure</h4>
@@ -1324,6 +1423,61 @@
                 string-scale physics modify M<sub>GUT</sub> by factors of O(1) [BHV 2009].</li>
         </ol>
 
+        <h4 id="beta-functions">Beta Functions with SO(10) Group Factors</h4>
+        <p>
+            The renormalization group evolution of gauge couplings in the SO(10) unified theory follows:
+        </p>
+
+        <div class="equation">
+            &beta;(&lambda;) = d&lambda;/d ln &mu; = (1/16&pi;<sup>2</sup>)[12&lambda;<sup>2</sup> + &lambda;(6y<sub>t</sub><sup>2</sup> - 9g<sup>2</sup>/2 - 3g'<sup>2</sup>/2) - 6y<sub>t</sub><sup>4</sup>]
+            <span class="equation-label">(4.3a)</span>
+        </div>
+
+        <div class="equation">
+            &beta;(g) = d g/d ln &mu; = -(1/16&pi;<sup>2</sup>) &middot; b<sub>SO(10)</sub> &middot; g<sup>3</sup>, &nbsp;&nbsp; b<sub>SO(10)</sub> = 3C<sub>2</sub>(G) - (4/3)n<sub>f</sub>T(R)
+            <span class="equation-label">(4.3b)</span>
+        </div>
+
+        <div class="equation">
+            &beta;(y) = d y/d ln &mu; = (y/16&pi;<sup>2</sup>)[9y<sup>2</sup>/2 - 8g<sub>3</sub><sup>2</sup> - 9g<sup>2</sup>/4 - 17g'<sup>2</sup>/12]
+            <span class="equation-label">(4.3c)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 4.3a-c - Beta Functions)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>&beta;(&lambda;)</strong>
+                    <span>Higgs quartic coupling beta function</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&beta;(g)</strong>
+                    <span>SO(10) gauge coupling beta function</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&beta;(y)</strong>
+                    <span>Top Yukawa coupling beta function</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>C<sub>2</sub>(G)</strong>
+                    <span>Quadratic Casimir for adjoint of SO(10) = 8</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>T(R)</strong>
+                    <span>Dynkin index for spinor rep <strong>16</strong> = 2</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>n<sub>f</sub> = 3</strong>
+                    <span>Number of fermion generations</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            For SO(10) with 3 generations in the <strong>16</strong> representation:
+            b<sub>SO(10)</sub> = 3(8) - (4/3)(3)(2) = 24 - 8 = 16, giving asymptotic freedom.
+        </p>
+
         <div class="formula-def">
             <div class="formula-def-title">GUT Scale Determination</div>
             <div class="formula-def-grid">
@@ -1478,6 +1632,53 @@
             The KMS condition is <em>derived</em> as a theorem (Tomita-Takesaki), not postulated.
         </p>
 
+        <h3 id="entropy-current">5.1.1 Local Entropy Current</h3>
+        
+        <p>
+            The thermal time formalism implies a local entropy current that governs irreversible processes:
+        </p>
+
+        <div class="equation">
+            J<sub>S</sub><sup>&mu;</sup> = s u<sup>&mu;</sup> + q<sup>&mu;</sup>/T
+            <span class="equation-label">(5.1b)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 5.1b - Local Entropy Current)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>J<sub>S</sub><sup>&mu;</sup></strong>
+                    <span>Entropy four-current density</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>s</strong>
+                    <span>Entropy density per unit volume</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>u<sup>&mu;</sup></strong>
+                    <span>Four-velocity of the thermal frame</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>q<sup>&mu;</sup></strong>
+                    <span>Heat flux four-vector (orthogonal to u<sup>&mu;</sup>)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>T</strong>
+                    <span>Local temperature of the thermal bath</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&nabla;<sub>&mu;</sub>J<sub>S</sub><sup>&mu;</sup> &ge; 0</strong>
+                    <span>Second law: entropy production is non-negative</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The entropy current provides the microscopic foundation for the thermal time hypothesis:
+            time flows in the direction of entropy increase, with the rate &nabla;<sub>&mu;</sub>J<sub>S</sub><sup>&mu;</sup>
+            determining the local "speed" of time. In cosmology, this connects to the expansion rate H.
+        </p>
+
         <h3>5.2 The &alpha;<sub>T</sub> Parameter</h3>
 
         <p>
@@ -1532,6 +1733,45 @@
         </p>
 
         <h2 id="cosmology">6. Cosmological Implications</h2>
+
+        <h3 id="moduli-potential">6.0 Moduli Potential with Swampland Compliance</h3>
+        
+        <p>
+            The K&auml;hler moduli potential must satisfy swampland conjectures for consistency with quantum gravity:
+        </p>
+
+        <div class="equation">
+            V(&phi;) = V<sub>0</sub> e<sup>-&lambda;&phi;/M<sub>Pl</sub></sup> [1 + A cos(&omega;&phi; + &theta;)]
+            <span class="equation-label">(6.0)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 6.0 - Moduli Potential)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>V(&phi;)</strong>
+                    <span>Scalar potential for K&auml;hler modulus &phi;</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>V<sub>0</sub></strong>
+                    <span>Potential scale ~ (10<sup>-3</sup> eV)<sup>4</sup> for dark energy</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&lambda;</strong>
+                    <span>Swampland parameter: &lambda; ~ O(1) required <span class="foundation-ref">[Obied et al. 2018]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>A cos(&omega;&phi; + &theta;)</strong>
+                    <span>Axionic modulation from mirror sector</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <strong>Swampland distance conjecture:</strong> |&nabla;V|/V &ge; c ~ O(1)/M<sub>Pl</sub> must hold,
+            which our exponential potential satisfies with &lambda; = 0.83 (derived from d<sub>eff</sub> = 12).
+            This connects the dark energy equation of state to string theory consistency conditions.
+        </p>
 
         <h3>6.1 Dark Energy: The Mashiach Field</h3>
 
@@ -1776,12 +2016,120 @@
             </tr>
         </table>
 
+        <h3>7.4 Additional Predictions</h3>
+
+        <h4>Bell/CHSH Correlation</h4>
+        <p>
+            The hidden brane structure predicts specific Bell inequality behavior:
+        </p>
+
+        <div class="equation">
+            |&langle;CHSH&rangle;| &le; 2 (local) &nbsp;vs&nbsp; |&langle;CHSH&rangle;| &le; 2&radic;2 (quantum)
+            <span class="equation-label">(7.4a)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 7.4a - Bell/CHSH Bounds)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>CHSH</strong>
+                    <span>Clauser-Horne-Shimony-Holt correlator <span class="foundation-ref">[Bell 1964, CHSH 1969]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>2 (local limit)</strong>
+                    <span>Maximum for any local hidden variable theory</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>2&radic;2 (Tsirelson)</strong>
+                    <span>Maximum quantum mechanical value &asymp; 2.828</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>PM interpretation</strong>
+                    <span>Hidden branes provide non-local variables consistent with quantum bound</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The inter-brane correlations from the 1+3 structure explain Bell violation through geometric
+            non-locality (orthogonal spatial dimensions) rather than kinematic non-locality (configuration space).
+        </p>
+
+        <h4>TeV-Scale Kaluza-Klein Modes</h4>
+        <p>
+            If the compact dimensions have size R ~ 1/TeV, excited KK modes should appear at LHC energies:
+        </p>
+
+        <div class="equation">
+            m<sub>KK</sub><sup>(n)</sup> = n/R ~ n &times; (1-10) TeV
+            <span class="equation-label">(7.4b)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 7.4b - KK Mode Masses)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>m<sub>KK</sub><sup>(n)</sup></strong>
+                    <span>Mass of n-th KK excitation</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>R</strong>
+                    <span>Compactification radius of relevant dimension</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>n = 1, 2, 3...</strong>
+                    <span>Mode number (quantized momentum in compact direction)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Signature</strong>
+                    <span>Resonances in dijet, dilepton, or diphoton channels at LHC</span>
+                </div>
+            </div>
+        </div>
+
+        <h4>Neutrino Mixing from SO(10)</h4>
+        <p>
+            The SO(10) seesaw mechanism predicts specific neutrino mixing patterns:
+        </p>
+
+        <div class="equation">
+            U<sub>PMNS</sub> = U<sub>CKM</sub><sup>&dagger;</sup> &times; U<sub>&nu;</sub>, &nbsp;&nbsp; sin<sup>2</sup>&theta;<sub>12</sub> &asymp; 1/3, &nbsp; sin<sup>2</sup>&theta;<sub>23</sub> &asymp; 1/2
+            <span class="equation-label">(7.4c)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 7.4c - Neutrino Mixing)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>U<sub>PMNS</sub></strong>
+                    <span>Pontecorvo-Maki-Nakagawa-Sakata matrix</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>U<sub>CKM</sub></strong>
+                    <span>Cabibbo-Kobayashi-Maskawa quark mixing matrix</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&theta;<sub>12</sub> ~ 34&deg;</strong>
+                    <span>Solar mixing angle (observed: 33.4&deg; &plusmn; 0.8&deg;)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&theta;<sub>23</sub> ~ 45&deg;</strong>
+                    <span>Atmospheric mixing angle (observed: 42-50&deg;)</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The quark-lepton complementarity relation U<sub>PMNS</sub> ~ U<sub>CKM</sub><sup>&dagger;</sup> &times; U<sub>&nu;</sub>
+            arises naturally from SO(10) unification where quarks and leptons live in the same multiplet.
+        </p>
+
         <!-- Section 7.5: Speculative Interpretations -->
         <h3 id="philosophical-implications">7.5 Speculative Interpretations: Consciousness and Hidden Variables</h3>
 
         <div class="warning-box" style="background: rgba(255, 193, 7, 0.1); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 8px; padding: 1rem; margin-bottom: 1.5rem;">
             <strong style="color: #ffc107;">&#x26A0; Speculative Content — Author's Personal Interpretation:</strong>
-            The following interpretations are <strong>philosophical extensions</strong> that motivated the mathematical framework
+            The following interpretations are <strong>philosophical considerations</strong> that motivated the mathematical framework
             but are <em>not</em> proven consequences of the physics. They represent the author's personal speculation about
             what the multi-brane structure and thermal time formulation <em>might</em> imply for consciousness and reality.
             The mathematical framework does not derive or explain consciousness—other physicists working with similar
@@ -1851,6 +2199,51 @@
             from standard quantum mechanics. They represent a philosophical framework consistent with the mathematics
             but not uniquely implied by it. Future developments in quantum gravity phenomenology may provide tests.
         </div>
+
+        <h3 id="asymptotic-safety">7.6 Asymptotic Safety (Weinberg-Reuter)</h3>
+        
+        <p>
+            The framework connects to the asymptotic safety program for quantum gravity:
+        </p>
+
+        <div class="equation">
+            G(k) = G<sub>*</sub> / [1 + (k/k<sub>*</sub>)<sup>2</sup>], &nbsp;&nbsp; &Lambda;(k) = &Lambda;<sub>*</sub> k<sup>2</sup>
+            <span class="equation-label">(7.6)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">Term Definitions (Eq. 7.6 - Asymptotic Safety)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>G(k)</strong>
+                    <span>Running Newton's constant at scale k <span class="foundation-ref">[Reuter 1998]</span></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>G<sub>*</sub></strong>
+                    <span>Fixed-point value of gravitational coupling</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>k<sub>*</sub></strong>
+                    <span>Transition scale ~ M<sub>Pl</sub></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&Lambda;(k)</strong>
+                    <span>Running cosmological constant</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>&Lambda;<sub>*</sub></strong>
+                    <span>Dimensionless fixed-point value ~ 0.2</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            <strong>Connection to PM:</strong> The F(R,T,&tau;) Lagrangian can be recast in terms of running couplings
+            where the thermal time parameter &tau; provides a physical cutoff scale. The Weinberg-Reuter fixed point
+            <span class="foundation-ref">[Weinberg 1979, Reuter 1998]</span> ensures UV completeness without requiring
+            conventional renormalizability. The running &Lambda;(k) naturally produces the observed small cosmological
+            constant via dimensional transmutation from the Planck scale.
+        </p>
 
         <h2 id="concerns">8. Concerns and Limitations</h2>
 
@@ -1973,7 +2366,7 @@
         <p>
             The following table summarizes the logical chain from established physics foundations to
             Principia Metaphysica predictions, showing which steps are standard results and which are
-            PM-specific extensions:
+            PM-specific contributions:
         </p>
 
         <table style="font-size: 0.9rem;">
@@ -2207,7 +2600,7 @@
 
         <div class="footnote">
             <p>
-                <strong>Document Version:</strong> 4.0 (November 2025)<br>
+                
                 <strong>Last Updated:</strong> November 2025<br>
                 <strong>Contact:</strong> AndrewKWatts@Gmail.com<br>
                 <strong>Website:</strong> <a href="index.html">Principia Metaphysica Online</a>

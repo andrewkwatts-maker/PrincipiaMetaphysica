@@ -587,8 +587,38 @@
                     <span class="formula-label">(2.3) Hodge Numbers</span>
                     <span class="formula-status status-established">GEOMETRIC</span>
                 </div>
-                <div class="formula-display">
-                    h<sup>1,1</sup> = 4, &nbsp; h<sup>2,1</sup> = 0, &nbsp; h<sup>3,1</sup> = 0, &nbsp; h<sup>2,2</sup> = 60
+                <div class="formula-display interactive-formula">
+                    <span class="formula-var">h<sup>1,1</sup> = 4
+                        <div class="var-tooltip">
+                            <div class="var-name">h<sup>1,1</sup> - Kahler Moduli</div>
+                            <div class="var-desc">Number of (1,1)-forms; counts Kahler deformations of the Calabi-Yau manifold</div>
+                            <div class="var-units">Dimensionless integer</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">,</span>
+                    <span class="formula-var">h<sup>2,1</sup> = 0
+                        <div class="var-tooltip">
+                            <div class="var-name">h<sup>2,1</sup> - Complex Structure Moduli</div>
+                            <div class="var-desc">Number of (2,1)-forms; counts complex structure deformations. Zero means rigid complex structure.</div>
+                            <div class="var-units">Dimensionless integer</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">,</span>
+                    <span class="formula-var">h<sup>3,1</sup> = 0
+                        <div class="var-tooltip">
+                            <div class="var-name">h<sup>3,1</sup> - Higher Deformations</div>
+                            <div class="var-desc">Number of (3,1)-forms; additional moduli specific to CY4 manifolds</div>
+                            <div class="var-units">Dimensionless integer</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">,</span>
+                    <span class="formula-var">h<sup>2,2</sup> = 60
+                        <div class="var-tooltip">
+                            <div class="var-name">h<sup>2,2</sup> - Middle Cohomology</div>
+                            <div class="var-desc">Central Hodge number fixed by CY4 identity: h<sup>2,2</sup> = 2(22 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> - h<sup>2,1</sup>)</div>
+                            <div class="var-units">Dimensionless integer</div>
+                        </div>
+                    </span>
                 </div>
                 <p class="formula-description">
                     Hodge numbers of K<sub>Pneuma</sub> satisfying the CY4 constraint:
@@ -1195,8 +1225,32 @@
                     <span class="formula-label">(8.3) Bell Inequality</span>
                     <span class="formula-status status-established">CONSISTENCY</span>
                 </div>
-                <div class="formula-display">
-                    |⟨CHSH⟩| ≤ 2 &nbsp;(local hidden variables) &nbsp;vs&nbsp; |⟨CHSH⟩| ≤ 2√2 &nbsp;(quantum)
+                <div class="formula-display interactive-formula">
+                    <span class="formula-var">|⟨CHSH⟩|
+                        <div class="var-tooltip">
+                            <div class="var-name">CHSH Correlator</div>
+                            <div class="var-desc">Clauser-Horne-Shimony-Holt correlation function measuring joint spin measurements at different angles</div>
+                            <div class="var-units">Dimensionless</div>
+                        </div>
+                    </span>
+                    <span class="formula-op"> </span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">≤ 2
+                        <div class="var-tooltip">
+                            <div class="var-name">Classical Bound</div>
+                            <div class="var-desc">Maximum value for any local hidden variable theory - Bell's theorem limit</div>
+                            <div class="var-units">Dimensionless</div>
+                        </div>
+                    </span>
+                    <span style="margin: 0 0.5rem; color: var(--text-muted);">(local)</span>
+                    <span class="formula-op"> vs </span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">≤ 2√2
+                        <div class="var-tooltip">
+                            <div class="var-name">Quantum Bound (Tsirelson)</div>
+                            <div class="var-desc">Maximum quantum mechanical value ≈ 2.828; violation of 2 proves non-local correlations</div>
+                            <div class="var-units">Dimensionless</div>
+                        </div>
+                    </span>
+                    <span style="margin-left: 0.5rem; color: var(--text-muted);">(quantum)</span>
                 </div>
                 <p class="formula-description">
                     Bell inequality violation is explained by non-local correlations from hidden brane entanglement.

@@ -598,176 +598,16 @@
         <section class="subsection">
             <h2>Condensate Gap Equation (SymPy Derivation)</h2>
             <p>
-                The quartic interaction term &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
-                combined with the orthogonal time coupling g&middot;t<sub>ortho</sub> leads to a self-consistent
+                The quartic interaction term &lambda;(&lt;span style="text-decoration: overline;"&gt;&Psi;&lt;/span&gt;&Psi;)&sup2;
+                combined with the orthogonal time coupling g&middot;t&lt;sub&gt;ortho&lt;/sub&gt; leads to a self-consistent
                 gap equation for the Pneuma condensate. Using mean-field approximation, we derive the condensate
                 mass gap &Delta;:
             </p>
-
-            <h3>Mean-Field Derivation</h3>
-            <p>
-                Starting from the interaction Lagrangian:
-            </p>
-
-            <div class="equation-box">
-                &Lscr;<sub>int</sub> = &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2; + g&middot;t<sub>ortho</sub>&middot;<span style="text-decoration: overline;">&Psi;</span>&Psi;
-                <span class="equation-label">Interaction terms for gap derivation</span>
-            </div>
-
-            <p>
-                Applying the mean-field approximation with vacuum expectation value
-                v = &langle;<span style="text-decoration: overline;">&Psi;</span>&Psi;&rangle;, we obtain the
-                gap equation:
-            </p>
-
-            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.12), rgba(139, 127, 255, 0.08)); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
-                <span class="formula-hint">Hover for details</span>
-                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
-                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">&Delta;
-                        <div class="var-tooltip">
-                            <div class="var-name">&Delta; - Condensate Gap (Mass Shift)</div>
-                            <div class="var-desc">The dynamically generated mass scale from Pneuma condensation. Represents spontaneous symmetry breaking.</div>
-                            <div class="var-units">Units: Energy (same as E<sub>F</sub>)</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">=</span>
-                    <span style="font-size: 1.5rem; line-height: 1;">
-                        <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&lambda;v
-                            <div class="var-tooltip">
-                                <div class="var-name">&lambda;v - Quartic Contribution</div>
-                                <div class="var-desc">&lambda; = quartic coupling; v = &langle;<span style="text-decoration: overline;">&Psi;</span>&Psi;&rangle; (vacuum expectation value)</div>
-                            </div>
-                        </span>
-                        <span style="font-size: 1.2rem;"> / </span>
-                        <span style="font-size: 1rem;">(</span>
-                        <span class="formula-var" style="padding: 0.2rem 0.4rem;">1
-                            <div class="var-tooltip">
-                                <div class="var-name">Unity term</div>
-                                <div class="var-desc">Baseline denominator from mean-field expansion</div>
-                            </div>
-                        </span>
-                        <span class="formula-op">+</span>
-                        <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">g&middot;t<sub>ortho</sub>/E<sub>F</sub>
-                            <div class="var-tooltip">
-                                <div class="var-name">Orthogonal Time Suppression</div>
-                                <div class="var-desc">g = thermal coupling; t<sub>ortho</sub> = orthogonal time; E<sub>F</sub> = Fermi energy. This term suppresses the gap at high thermal/entropic scales.</div>
-                            </div>
-                        </span>
-                        <span style="font-size: 1rem;">)</span>
-                    </span>
-                </div>
-                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
-                    (3.5) Condensate Gap Equation from Mean-Field Approximation
-                </div>
-            </div>
-
-            <h3>Stability Analysis</h3>
-            <p>
-                To verify that the condensate solution is stable and exhibits spontaneous symmetry breaking,
-                we compute the derivative of the gap with respect to the VEV:
-            </p>
-
-            <div class="interactive-formula" style="background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
-                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.2rem; flex-wrap: wrap;">
-                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">d&Delta;/dv
-                        <div class="var-tooltip">
-                            <div class="var-name">d&Delta;/dv - Gap Susceptibility</div>
-                            <div class="var-desc">Rate of change of gap with respect to VEV. Positive value indicates self-reinforcing condensate.</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">=</span>
-                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&lambda; / (1 + g&middot;t<sub>ortho</sub>/E<sub>F</sub>)
-                        <div class="var-tooltip">
-                            <div class="var-name">Stability Coefficient</div>
-                            <div class="var-desc">For physical parameters (&lambda; &gt; 0, E<sub>F</sub> &gt; 0), this is always positive.</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">&gt;</span>
-                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">0
-                        <div class="var-tooltip">
-                            <div class="var-name">Positive Feedback</div>
-                            <div class="var-desc">Confirms self-consistent solution: increasing VEV increases gap, stabilizing the condensate.</div>
-                        </div>
-                    </span>
-                </div>
-                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.6) Stability Condition: Positive Feedback Loop</div>
-            </div>
-
-            <p>
-                The positivity of d&Delta;/dv confirms that the condensate exhibits <strong>positive feedback</strong>:
-                an increase in the VEV leads to an increase in the gap, which is the hallmark of a self-consistent
-                solution and spontaneous symmetry breaking.
-            </p>
-
-            <h3>Numerical Example</h3>
-            <p>
-                Using representative parameters to demonstrate the gap equation:
-            </p>
-
-            <div class="term-breakdown" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
-                <div class="term-card" style="text-align: center;">
-                    <div class="term-symbol">&lambda; = 0.5</div>
-                    <p style="font-size: 0.85rem;">Quartic coupling</p>
-                </div>
-                <div class="term-card" style="text-align: center;">
-                    <div class="term-symbol">g = 0.1</div>
-                    <p style="font-size: 0.85rem;">Thermal coupling</p>
-                </div>
-                <div class="term-card" style="text-align: center;">
-                    <div class="term-symbol">t<sub>ortho</sub> = 1</div>
-                    <p style="font-size: 0.85rem;">Orthogonal time</p>
-                </div>
-                <div class="term-card" style="text-align: center;">
-                    <div class="term-symbol">E<sub>F</sub> = 10</div>
-                    <p style="font-size: 0.85rem;">Fermi energy</p>
-                </div>
-            </div>
-
-            <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.3);">
-                <strong>Results (v = 2):</strong><br><br>
-                &Delta;(v=2) = (0.5 &times; 2) / (1 + 0.1 &times; 1 / 10) = 1 / 1.01 &asymp; <strong style="color: #51cf66;">0.99</strong><br><br>
-                d&Delta;/dv = 0.5 / 1.01 &asymp; <strong style="color: #51cf66;">0.495 &gt; 0</strong> (stable)
-                <span class="equation-label">Numerical verification of gap stability</span>
-            </div>
-
-            <h3>Physical Interpretation</h3>
-            <div class="physics-note">
-                <h4>Condensate Stability and Geometric Emergence</h4>
-                <p>
-                    <strong>&Delta; &gt; 0</strong> derives condensate stability: the positive gap ensures the Pneuma field
-                    develops a non-trivial vacuum expectation value, breaking the original symmetry spontaneously.
-                </p>
-                <p style="margin-top: 0.75rem;">
-                    <strong>K<sub>Pneuma</sub> Geometry:</strong> The stable condensate forms the internal geometry
-                    K<sub>Pneuma</sub>. The Euler characteristic &chi; = 144 arises from the Hodge number
-                    h<sup>3,1</sup> which counts &Delta;-cycles - deformation modes of the gap.
-                </p>
-                <p style="margin-top: 0.75rem;">
-                    <strong>Swampland Compliance:</strong> The finite gap &Delta; ensures the theory avoids massless
-                    scalar modes in the moduli space, satisfying Swampland constraints. Infinite or zero gap would
-                    signal pathological behavior incompatible with quantum gravity.
-                </p>
-            </div>
-
-            <div class="physics-note" style="background: rgba(139, 127, 255, 0.08); border-left-color: var(--accent-primary);">
-                <h4 style="color: var(--accent-primary);">SymPy Code Reference</h4>
-                <p>
-                    The full symbolic derivation of the gap equation, stability analysis, and numerical verification
-                    was performed using SymPy. See the <strong>Appendix: SymPy Derivation Code</strong> for the
-                    complete computational notebook demonstrating:
-                </p>
-                <ul style="margin: 0.75rem 0 0 1.5rem; color: var(--text-secondary);">
-                    <li>Symbolic derivation of &Delta; from the interaction Lagrangian</li>
-                    <li>Automatic differentiation for stability condition d&Delta;/dv</li>
-                    <li>Parameter substitution and numerical evaluation</li>
-                    <li>Verification of positive-definiteness for physical parameter ranges</li>
-                </ul>
-            </div>
         </section>
 
         <!-- Orthogonal Time Coupling -->
         <section class="subsection">
-            <h2>The Orthogonal Time Coupling: g&middot;t<sub>ortho</sub></h2>
+            <h2>The Orthogonal Time Coupling: g&middot;t&lt;sub&gt;ortho&lt;/sub&gt;</h2>
             <p>
                 A distinguishing feature of the 26D formulation is the explicit presence of two time dimensions in the
                 signature (24,2). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field
@@ -854,3 +694,4 @@
     </footer>
 </body>
 </html>
+

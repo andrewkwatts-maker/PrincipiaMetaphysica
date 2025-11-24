@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principia Metaphysica - Theory Diagrams</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* SVG Diagram Styles */
+        .diagram-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .diagram-section {
+            background: var(--bg-card, #1a1f3a);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-primary, #2a2f4a);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+
+        .diagram-section h2 {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #8b7fff 0%, #ff7eb6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .diagram-section p {
+            color: var(--text-secondary, #adb5bd);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .svg-wrapper {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.03));
+            border-radius: 12px;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: auto;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* Print-friendly styles */
+        @media print {
+            body {
+                background: white !important;
+                color: #1a1a1a !important;
+            }
+            .diagram-section {
+                background: #f8f9fa !important;
+                border-color: #dee2e6 !important;
+                box-shadow: none !important;
+                page-break-inside: avoid;
+            }
+            .svg-wrapper {
+                background: white !important;
+            }
+            .diagram-section h2 {
+                color: #333 !important;
+                -webkit-text-fill-color: #333 !important;
+            }
+            .diagram-section p {
+                color: #666 !important;
+            }
+        }
+
+        /* Light mode support */
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-card: #ffffff;
+                --border-primary: #e9ecef;
+                --text-secondary: #495057;
+            }
+            body {
+                background: #f8f9fa;
+                color: #212529;
+            }
+        }
+
+        /* Navigation */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary, #8b7fff);
+            text-decoration: none;
+            margin-bottom: 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: var(--accent-secondary, #ff7eb6);
+            transform: translateX(-4px);
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #8b7fff 0%, #ff7eb6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-title p {
+            color: var(--text-muted, #6c757d);
+            font-size: 1.1rem;
+        }
+
+        /* Diagram Grid for smaller diagrams */
+        .diagram-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .diagram-grid {
+                grid-template-columns: 1fr;
+            }
+            .diagram-section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="diagram-container">
+        <a href="../index.html" class="back-link">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Back to Main
+        </a>
+
+        <div class="page-title">
+            <h1>Principia Metaphysica</h1>
+            <p>Visual Guide to the Theory</p>
+        </div>
+
+        <!-- DIAGRAM 1: Dimensional Hierarchy -->
+        <section class="diagram-section" id="dimensional-hierarchy">
+            <h2>1. Dimensional Hierarchy</h2>
+            <p>The theory begins in a 26-dimensional spacetime with signature (24,2), which reduces through gauge fixing and compactification to our observable 4D universe.</p>
+            <div class="svg-wrapper">
+                <svg width="400" height="520" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <!-- Gradients -->
+                        <linearGradient id="purple26D" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="blue13D" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="green4D" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        <filter id="shadow">
+                            <feDropShadow dx="0" dy="4" stdDeviation="4" flood-opacity="0.3"/>
+                        </filter>
+                    </defs>
+
+                    <!-- 26D Box -->
+                    <rect x="50" y="30" width="300" height="100" rx="15" fill="url(#purple26D)" filter="url(#shadow)"/>
+                    <text x="200" y="70" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">26D Bulk</text>
+                    <text x="200" y="100" font-family="Inter, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Signature (24, 2)</text>
+
+                    <!-- Arrow 1 -->
+                    <path d="M200 130 L200 180" stroke="url(#arrowGrad)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <polygon points="200,195 193,175 207,175" fill="url(#arrowGrad)"/>
+
+                    <!-- Arrow 1 Label Box -->
+                    <rect x="220" y="140" width="130" height="45" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="1"/>
+                    <text x="285" y="160" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff" text-anchor="middle">Sp(2,R)</text>
+                    <text x="285" y="175" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff" text-anchor="middle">gauge fixing</text>
+
+                    <!-- 13D Box -->
+                    <rect x="75" y="200" width="250" height="100" rx="15" fill="url(#blue13D)" filter="url(#shadow)"/>
+                    <text x="200" y="240" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">13D Effective</text>
+                    <text x="200" y="268" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Shadow Theory</text>
+
+                    <!-- Arrow 2 -->
+                    <path d="M200 300 L200 350" stroke="url(#arrowGrad)" stroke-width="3" fill="none"/>
+                    <polygon points="200,365 193,345 207,345" fill="url(#arrowGrad)"/>
+
+                    <!-- Arrow 2 Label Box -->
+                    <rect x="220" y="310" width="120" height="35" rx="8" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.4)" stroke-width="1"/>
+                    <text x="280" y="333" font-family="Inter, sans-serif" font-size="11" fill="#ff7eb6" text-anchor="middle">Compactification</text>
+
+                    <!-- 4D Box -->
+                    <rect x="100" y="370" width="200" height="100" rx="15" fill="url(#green4D)" filter="url(#shadow)"/>
+                    <text x="200" y="412" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">4D Observable</text>
+                    <text x="200" y="438" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Universe</text>
+
+                    <!-- Dimension indicators -->
+                    <circle cx="40" cy="80" r="4" fill="#9b59b6"/>
+                    <circle cx="40" cy="250" r="4" fill="#3498db"/>
+                    <circle cx="40" cy="420" r="4" fill="#2ecc71"/>
+                    <line x1="40" y1="84" x2="40" y2="246" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,4"/>
+                    <line x1="40" y1="254" x2="40" y2="416" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,4"/>
+
+                    <!-- Labels for dimensions -->
+                    <text x="20" y="85" font-family="Inter, sans-serif" font-size="10" fill="#9b59b6" text-anchor="middle">26</text>
+                    <text x="20" y="255" font-family="Inter, sans-serif" font-size="10" fill="#3498db" text-anchor="middle">13</text>
+                    <text x="20" y="425" font-family="Inter, sans-serif" font-size="10" fill="#2ecc71" text-anchor="middle">4</text>
+
+                    <!-- Note -->
+                    <text x="200" y="500" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle" font-style="italic">Two time dimensions become one observable time</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- DIAGRAM 2: Two-Time Structure -->
+        <section class="diagram-section" id="two-time-structure">
+            <h2>2. Two-Time Structure</h2>
+            <p>The 26D bulk contains two time dimensions related by Sp(2,R) gauge symmetry. Observable time emerges as a specific gauge choice.</p>
+            <div class="svg-wrapper">
+                <svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="timeGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#a78bfa;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="timeGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#f472b6;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="emergeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:rgba(139,127,255,0.3)"/>
+                            <stop offset="100%" style="stop-color:rgba(139,127,255,0)"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- Central circle glow -->
+                    <circle cx="200" cy="180" r="140" fill="url(#centerGlow)"/>
+
+                    <!-- Main circle -->
+                    <circle cx="200" cy="180" r="120" fill="none" stroke="#4a4f6a" stroke-width="2" stroke-dasharray="8,4"/>
+
+                    <!-- Sp(2,R) symmetry arc -->
+                    <path d="M 80 180 A 120 120 0 0 1 320 180" fill="none" stroke="url(#timeGrad1)" stroke-width="4" opacity="0.6"/>
+                    <path d="M 320 180 A 120 120 0 0 1 80 180" fill="none" stroke="url(#timeGrad2)" stroke-width="4" opacity="0.6"/>
+
+                    <!-- t_therm arrow -->
+                    <line x1="200" y1="180" x2="200" y2="50" stroke="url(#timeGrad1)" stroke-width="3"/>
+                    <polygon points="200,40 194,55 206,55" fill="#8b7fff"/>
+                    <rect x="145" y="8" width="110" height="30" rx="6" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                    <text x="200" y="28" font-family="Georgia, serif" font-size="14" fill="#8b7fff" text-anchor="middle" font-style="italic">t_therm</text>
+
+                    <!-- Clock icon for thermal time -->
+                    <circle cx="150" cy="75" r="18" fill="none" stroke="#8b7fff" stroke-width="2"/>
+                    <line x1="150" y1="75" x2="150" y2="62" stroke="#8b7fff" stroke-width="2"/>
+                    <line x1="150" y1="75" x2="160" y2="80" stroke="#8b7fff" stroke-width="2"/>
+                    <text x="150" y="108" font-family="Inter, sans-serif" font-size="10" fill="#8b7fff" text-anchor="middle">Thermal</text>
+
+                    <!-- t_ortho arrow -->
+                    <line x1="200" y1="180" x2="330" y2="180" stroke="url(#timeGrad2)" stroke-width="3"/>
+                    <polygon points="340,180 325,174 325,186" fill="#ff7eb6"/>
+                    <rect x="345" y="165" width="100" height="30" rx="6" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1"/>
+                    <text x="395" y="185" font-family="Georgia, serif" font-size="14" fill="#ff7eb6" text-anchor="middle" font-style="italic">t_ortho</text>
+
+                    <!-- Clock icon for orthogonal time -->
+                    <circle cx="350" y1="230" cy="240" r="18" fill="none" stroke="#ff7eb6" stroke-width="2"/>
+                    <line x1="350" y1="240" x2="350" y2="227" stroke="#ff7eb6" stroke-width="2"/>
+                    <line x1="350" y1="240" x2="340" y2="250" stroke="#ff7eb6" stroke-width="2"/>
+                    <text x="350" y="273" font-family="Inter, sans-serif" font-size="10" fill="#ff7eb6" text-anchor="middle">Orthogonal</text>
+
+                    <!-- Center point -->
+                    <circle cx="200" cy="180" r="8" fill="white" stroke="#4a4f6a" stroke-width="2"/>
+
+                    <!-- Sp(2,R) label -->
+                    <rect x="80" y="250" width="90" height="30" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="1"/>
+                    <text x="125" y="270" font-family="Inter, sans-serif" font-size="13" fill="#a78bfa" text-anchor="middle" font-weight="600">Sp(2,R)</text>
+                    <text x="125" y="295" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">Gauge Symmetry</text>
+
+                    <!-- Observable time emergence -->
+                    <path d="M 200 300 L 200 350" stroke="url(#emergeGrad)" stroke-width="3" stroke-dasharray="6,3"/>
+                    <polygon points="200,360 194,345 206,345" fill="#2ecc71"/>
+
+                    <rect x="120" y="365" width="160" height="30" rx="8" fill="rgba(46,204,113,0.2)" stroke="rgba(46,204,113,0.5)" stroke-width="1"/>
+                    <text x="200" y="385" font-family="Georgia, serif" font-size="14" fill="#2ecc71" text-anchor="middle" font-weight="600">Observable Time</text>
+
+                    <!-- Angle indicator -->
+                    <path d="M 200 180 L 230 180 A 30 30 0 0 0 200 150" fill="none" stroke="#ffd93d" stroke-width="2"/>
+                    <text x="225" y="158" font-family="Inter, sans-serif" font-size="11" fill="#ffd93d" text-anchor="middle">theta</text>
+
+                    <!-- Note -->
+                    <text x="440" y="320" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">Gauge choice</text>
+                    <text x="440" y="335" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">determines</text>
+                    <text x="440" y="350" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">physical time</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- DIAGRAM 3: Generation Formula -->
+        <section class="diagram-section" id="generation-formula">
+            <h2>3. Generation Formula</h2>
+            <p>The three generations of matter arise from the topology of a Calabi-Yau fourfold with Euler characteristic 72, divided by the Sp(2,R) gauge factor of 24.</p>
+            <div class="svg-wrapper">
+                <svg width="600" height="450" viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="cyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gen1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gen2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#f39c12;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#d68910;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gen3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="torusShadow">
+                            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.4"/>
+                        </filter>
+                    </defs>
+
+                    <!-- CY4 Manifold (stylized torus representation) -->
+                    <g filter="url(#torusShadow)">
+                        <!-- Outer ellipse -->
+                        <ellipse cx="200" cy="100" rx="120" ry="50" fill="none" stroke="url(#cyGrad)" stroke-width="3"/>
+                        <!-- Inner structure -->
+                        <ellipse cx="200" cy="100" rx="60" ry="25" fill="none" stroke="url(#cyGrad)" stroke-width="2" stroke-dasharray="5,3"/>
+                        <!-- Cross-section curves -->
+                        <path d="M 140 100 Q 150 70 200 70 Q 250 70 260 100" fill="none" stroke="url(#cyGrad)" stroke-width="2"/>
+                        <path d="M 140 100 Q 150 130 200 130 Q 250 130 260 100" fill="none" stroke="url(#cyGrad)" stroke-width="2"/>
+                        <!-- Additional topology lines -->
+                        <path d="M 80 100 Q 100 60 140 70" fill="none" stroke="#8b7fff" stroke-width="1.5" opacity="0.6"/>
+                        <path d="M 320 100 Q 300 60 260 70" fill="none" stroke="#ff7eb6" stroke-width="1.5" opacity="0.6"/>
+                        <path d="M 80 100 Q 100 140 140 130" fill="none" stroke="#8b7fff" stroke-width="1.5" opacity="0.6"/>
+                        <path d="M 320 100 Q 300 140 260 130" fill="none" stroke="#ff7eb6" stroke-width="1.5" opacity="0.6"/>
+                    </g>
+
+                    <!-- CY4 Label -->
+                    <rect x="350" y="60" width="180" height="80" rx="10" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.3)" stroke-width="1"/>
+                    <text x="440" y="90" font-family="Georgia, serif" font-size="18" fill="#8b7fff" text-anchor="middle" font-weight="bold">Calabi-Yau</text>
+                    <text x="440" y="112" font-family="Georgia, serif" font-size="16" fill="#8b7fff" text-anchor="middle">Fourfold (CY4)</text>
+                    <text x="440" y="132" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Compact 9D space</text>
+
+                    <!-- Euler characteristic box -->
+                    <rect x="130" y="170" width="140" height="50" rx="10" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.5)" stroke-width="2"/>
+                    <text x="200" y="200" font-family="Georgia, serif" font-size="20" fill="#ff7eb6" text-anchor="middle" font-weight="bold">chi = 72</text>
+
+                    <!-- Division arrow and formula -->
+                    <line x1="200" y1="230" x2="200" y2="280" stroke="#ffd93d" stroke-width="3"/>
+                    <polygon points="200,290 194,275 206,275" fill="#ffd93d"/>
+
+                    <!-- Division box -->
+                    <rect x="240" y="240" width="140" height="40" rx="8" fill="rgba(255,217,61,0.15)" stroke="rgba(255,217,61,0.5)" stroke-width="1"/>
+                    <text x="310" y="265" font-family="Inter, sans-serif" font-size="14" fill="#ffd93d" text-anchor="middle" font-weight="600">divide by 24</text>
+
+                    <!-- Sp(2,R) note -->
+                    <text x="310" y="290" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">(Sp(2,R) gauge factor)</text>
+
+                    <!-- Result: 3 Generations -->
+                    <rect x="130" y="300" width="140" height="50" rx="10" fill="rgba(46,204,113,0.2)" stroke="rgba(46,204,113,0.5)" stroke-width="2"/>
+                    <text x="200" y="332" font-family="Georgia, serif" font-size="22" fill="#2ecc71" text-anchor="middle" font-weight="bold">= 3</text>
+
+                    <!-- Three generation boxes -->
+                    <g transform="translate(0, 370)">
+                        <!-- Generation 1 -->
+                        <rect x="70" y="0" width="140" height="65" rx="10" fill="url(#gen1Grad)" filter="url(#shadow)"/>
+                        <text x="140" y="22" font-family="Georgia, serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Generation 1</text>
+                        <text x="140" y="40" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">e, u, d</text>
+                        <text x="140" y="55" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">electron, up, down</text>
+
+                        <!-- Generation 2 -->
+                        <rect x="230" y="0" width="140" height="65" rx="10" fill="url(#gen2Grad)" filter="url(#shadow)"/>
+                        <text x="300" y="22" font-family="Georgia, serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Generation 2</text>
+                        <text x="300" y="40" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">mu, c, s</text>
+                        <text x="300" y="55" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">muon, charm, strange</text>
+
+                        <!-- Generation 3 -->
+                        <rect x="390" y="0" width="140" height="65" rx="10" fill="url(#gen3Grad)" filter="url(#shadow)"/>
+                        <text x="460" y="22" font-family="Georgia, serif" font-size="14" fill="white" text-anchor="middle" font-weight="bold">Generation 3</text>
+                        <text x="460" y="40" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">tau, t, b</text>
+                        <text x="460" y="55" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">tau, top, bottom</text>
+                    </g>
+
+                    <!-- Connecting arrows to generations -->
+                    <path d="M200 350 L140 370" stroke="#2ecc71" stroke-width="2"/>
+                    <path d="M200 350 L300 370" stroke="#2ecc71" stroke-width="2"/>
+                    <path d="M200 350 L460 370" stroke="#2ecc71" stroke-width="2"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- DIAGRAM 4: Dark Energy Evolution -->
+        <section class="diagram-section" id="dark-energy-evolution">
+            <h2>4. Dark Energy Evolution</h2>
+            <p>The equation of state parameter w(z) evolves dynamically, starting above -1 in the early universe and approaching the "Mashiach attractor" at w = -1 at late times.</p>
+            <div class="svg-wrapper">
+                <svg width="650" height="420" viewBox="0 0 650 420" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="curveGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="attractorGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:0.3" />
+                            <stop offset="100%" style="stop-color:#2ecc71;stop-opacity:0.1" />
+                        </linearGradient>
+                        <marker id="arrowEnd" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                            <path d="M0,0 L0,6 L9,3 z" fill="#6c757d"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Background grid -->
+                    <g stroke="#2a2f4a" stroke-width="1">
+                        <line x1="100" y1="50" x2="100" y2="350"/>
+                        <line x1="200" y1="50" x2="200" y2="350" stroke-dasharray="4,4"/>
+                        <line x1="300" y1="50" x2="300" y2="350" stroke-dasharray="4,4"/>
+                        <line x1="400" y1="50" x2="400" y2="350" stroke-dasharray="4,4"/>
+                        <line x1="500" y1="50" x2="500" y2="350" stroke-dasharray="4,4"/>
+                        <line x1="600" y1="50" x2="600" y2="350"/>
+
+                        <line x1="100" y1="100" x2="600" y2="100" stroke-dasharray="4,4"/>
+                        <line x1="100" y1="175" x2="600" y2="175" stroke-dasharray="4,4"/>
+                        <line x1="100" y1="250" x2="600" y2="250" stroke-dasharray="4,4"/>
+                        <line x1="100" y1="350" x2="600" y2="350"/>
+                    </g>
+
+                    <!-- Mashiach attractor zone -->
+                    <rect x="100" y="240" width="500" height="30" fill="url(#attractorGrad)"/>
+                    <line x1="100" y1="250" x2="600" y2="250" stroke="#2ecc71" stroke-width="2" stroke-dasharray="8,4"/>
+
+                    <!-- Attractor label -->
+                    <rect x="480" y="260" width="130" height="30" rx="6" fill="rgba(46,204,113,0.2)" stroke="rgba(46,204,113,0.5)" stroke-width="1"/>
+                    <text x="545" y="280" font-family="Georgia, serif" font-size="12" fill="#2ecc71" text-anchor="middle" font-weight="600">Mashiach Attractor</text>
+
+                    <!-- Axes -->
+                    <line x1="100" y1="350" x2="620" y2="350" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrowEnd)"/>
+                    <line x1="100" y1="370" x2="100" y2="30" stroke="#adb5bd" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+                    <!-- X-axis labels -->
+                    <text x="360" y="390" font-family="Inter, sans-serif" font-size="14" fill="#adb5bd" text-anchor="middle">Cosmic Time / Redshift z</text>
+                    <text x="120" y="370" font-family="Inter, sans-serif" font-size="11" fill="#6c757d">Past</text>
+                    <text x="580" y="370" font-family="Inter, sans-serif" font-size="11" fill="#6c757d">Future</text>
+                    <text x="550" y="370" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff">z=0</text>
+
+                    <!-- Y-axis labels -->
+                    <text x="50" y="200" font-family="Inter, sans-serif" font-size="14" fill="#adb5bd" text-anchor="middle" transform="rotate(-90, 50, 200)">w(z) Equation of State</text>
+                    <text x="85" y="255" font-family="Inter, sans-serif" font-size="12" fill="#2ecc71" text-anchor="end">-1</text>
+                    <text x="85" y="180" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">-0.8</text>
+                    <text x="85" y="105" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">-0.6</text>
+                    <text x="85" y="355" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="end">-1.2</text>
+
+                    <!-- Main evolution curve -->
+                    <path d="M 120 100
+                             Q 150 110 200 140
+                             Q 280 175 350 195
+                             Q 420 210 480 225
+                             Q 520 235 550 242
+                             Q 570 247 590 249"
+                          fill="none" stroke="url(#curveGrad)" stroke-width="4" stroke-linecap="round"/>
+
+                    <!-- w_0 marker at z=0 -->
+                    <circle cx="550" cy="197" r="8" fill="#8b7fff" stroke="white" stroke-width="2"/>
+                    <rect x="460" y="140" width="100" height="50" rx="8" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                    <text x="510" y="160" font-family="Georgia, serif" font-size="13" fill="#8b7fff" text-anchor="middle" font-weight="bold">w_0 = -0.846</text>
+                    <text x="510" y="180" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">at z = 0</text>
+                    <line x1="510" y1="190" x2="550" y2="197" stroke="#8b7fff" stroke-width="1" stroke-dasharray="3,2"/>
+
+                    <!-- w_a slope indicator -->
+                    <rect x="280" y="80" width="110" height="45" rx="8" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1"/>
+                    <text x="335" y="100" font-family="Georgia, serif" font-size="13" fill="#ff7eb6" text-anchor="middle" font-weight="bold">w_a = -0.75</text>
+                    <text x="335" y="117" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">slope parameter</text>
+
+                    <!-- Slope indicator arrow -->
+                    <path d="M 300 150 L 350 185" stroke="#ff7eb6" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+                    <!-- Phantom divide note -->
+                    <text x="150" y="320" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="start">Phantom region (w &lt; -1)</text>
+
+                    <!-- Legend -->
+                    <rect x="130" y="60" width="120" height="30" rx="6" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.3)" stroke-width="1"/>
+                    <line x1="145" y1="75" x2="175" y2="75" stroke="url(#curveGrad)" stroke-width="3"/>
+                    <text x="185" y="80" font-family="Inter, sans-serif" font-size="11" fill="#adb5bd">w(z) evolution</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- DIAGRAM 5: Full Lagrangian Structure -->
+        <section class="diagram-section" id="lagrangian-structure">
+            <h2>5. Full Lagrangian Structure</h2>
+            <p>The complete action consists of four interconnected components: modified gravity, the Pneuma field, the Standard Model, and hidden sector fields.</p>
+            <div class="svg-wrapper">
+                <svg width="700" height="450" viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gravGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="pneumaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="smGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="hiddenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#e74c3c;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#c0392b;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="boxShadow">
+                            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.3"/>
+                        </filter>
+                    </defs>
+
+                    <!-- Main equation bar -->
+                    <rect x="50" y="30" width="600" height="60" rx="12" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                    <text x="350" y="55" font-family="Georgia, serif" font-size="16" fill="#8b7fff" text-anchor="middle" font-weight="bold">S = integral d^26x sqrt(-g) [ F(R,T,tau) + L_Pneuma + L_SM + L_hidden ]</text>
+                    <text x="350" y="78" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Full 26-dimensional action</text>
+
+                    <!-- Box 1: F(R,T,tau) -->
+                    <g transform="translate(60, 130)">
+                        <rect width="140" height="160" rx="12" fill="url(#gravGrad)" filter="url(#boxShadow)"/>
+                        <text x="70" y="35" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">F(R,T,tau)</text>
+                        <line x1="20" y1="50" x2="120" y2="50" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                        <text x="70" y="75" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">Modified Gravity</text>
+                        <text x="70" y="95" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">R: Ricci scalar</text>
+                        <text x="70" y="110" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">T: Torsion</text>
+                        <text x="70" y="125" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">tau: Thermal time</text>
+                        <text x="70" y="148" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">Dark energy source</text>
+                    </g>
+
+                    <!-- Box 2: L_Pneuma -->
+                    <g transform="translate(220, 130)">
+                        <rect width="140" height="160" rx="12" fill="url(#pneumaGrad)" filter="url(#boxShadow)"/>
+                        <text x="70" y="35" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">L_Pneuma</text>
+                        <line x1="20" y1="50" x2="120" y2="50" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                        <text x="70" y="75" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">Pneuma Field</text>
+                        <text x="70" y="95" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">26D spinor Psi</text>
+                        <text x="70" y="110" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">8192 components</text>
+                        <text x="70" y="125" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Self-interaction</text>
+                        <text x="70" y="148" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">Condensate formation</text>
+                    </g>
+
+                    <!-- Box 3: L_SM -->
+                    <g transform="translate(380, 130)">
+                        <rect width="140" height="160" rx="12" fill="url(#smGrad)" filter="url(#boxShadow)"/>
+                        <text x="70" y="35" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">L_SM</text>
+                        <line x1="20" y1="50" x2="120" y2="50" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                        <text x="70" y="75" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">Standard Model</text>
+                        <text x="70" y="95" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Gauge: SU(3)xSU(2)xU(1)</text>
+                        <text x="70" y="110" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Fermions: 3 gen</text>
+                        <text x="70" y="125" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Higgs mechanism</text>
+                        <text x="70" y="148" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">Observed particles</text>
+                    </g>
+
+                    <!-- Box 4: L_hidden -->
+                    <g transform="translate(540, 130)">
+                        <rect width="140" height="160" rx="12" fill="url(#hiddenGrad)" filter="url(#boxShadow)"/>
+                        <text x="70" y="35" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">L_hidden</text>
+                        <line x1="20" y1="50" x2="120" y2="50" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+                        <text x="70" y="75" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">Hidden Sector</text>
+                        <text x="70" y="95" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Dark matter</text>
+                        <text x="70" y="110" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">candidates</text>
+                        <text x="70" y="125" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Massive partners</text>
+                        <text x="70" y="148" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">Not yet observed</text>
+                    </g>
+
+                    <!-- Interaction arrows -->
+                    <!-- F to Pneuma -->
+                    <path d="M 175 210 Q 190 180 205 210" fill="none" stroke="#ffd93d" stroke-width="2" marker-end="url(#arrowEnd)"/>
+                    <path d="M 205 210 Q 190 240 175 210" fill="none" stroke="#ffd93d" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+                    <!-- Pneuma to SM -->
+                    <path d="M 335 210 Q 350 180 365 210" fill="none" stroke="#ffd93d" stroke-width="2" marker-end="url(#arrowEnd)"/>
+                    <path d="M 365 210 Q 350 240 335 210" fill="none" stroke="#ffd93d" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+                    <!-- SM to Hidden -->
+                    <path d="M 495 210 Q 510 180 525 210" fill="none" stroke="#ffd93d" stroke-width="2" marker-end="url(#arrowEnd)"/>
+                    <path d="M 525 210 Q 510 240 495 210" fill="none" stroke="#ffd93d" stroke-width="2" marker-end="url(#arrowEnd)"/>
+
+                    <!-- Labels for interactions -->
+                    <text x="190" y="165" font-family="Inter, sans-serif" font-size="9" fill="#ffd93d" text-anchor="middle">gravity</text>
+                    <text x="350" y="165" font-family="Inter, sans-serif" font-size="9" fill="#ffd93d" text-anchor="middle">Yukawa</text>
+                    <text x="510" y="165" font-family="Inter, sans-serif" font-size="9" fill="#ffd93d" text-anchor="middle">portal</text>
+
+                    <!-- Bottom summary -->
+                    <rect x="100" y="320" width="500" height="100" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
+                    <text x="350" y="350" font-family="Georgia, serif" font-size="14" fill="#8b7fff" text-anchor="middle" font-weight="600">Physical Interpretation</text>
+                    <text x="350" y="375" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">Modified gravity provides dark energy</text>
+                    <text x="350" y="395" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">Pneuma condensate triggers symmetry breaking</text>
+                    <text x="350" y="415" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">SM emerges from higher-dimensional gauge fields</text>
+                </svg>
+            </div>
+        </section>
+
+        <!-- DIAGRAM 6: Pneuma Field -->
+        <section class="diagram-section" id="pneuma-field">
+            <h2>6. Pneuma Field Reduction</h2>
+            <p>The Pneuma field begins as an 8192-component spinor in 26D and reduces to 64 effective components through Sp(2,R) gauge fixing, forming a condensate that drives symmetry breaking.</p>
+            <div class="svg-wrapper">
+                <svg width="650" height="500" viewBox="0 0 650 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="spinorGrad26" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#8e44ad;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="spinorGrad13" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="condensateGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2ecc71;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#27ae60;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="componentGlow" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:rgba(155,89,182,0.4)"/>
+                            <stop offset="100%" style="stop-color:rgba(155,89,182,0)"/>
+                        </radialGradient>
+                    </defs>
+
+                    <!-- 26D Spinor representation -->
+                    <g transform="translate(80, 30)">
+                        <!-- Glow background -->
+                        <ellipse cx="120" cy="70" rx="130" ry="80" fill="url(#componentGlow)"/>
+
+                        <!-- Main box -->
+                        <rect x="0" y="20" width="240" height="100" rx="15" fill="url(#spinorGrad26)" filter="url(#shadow)"/>
+                        <text x="120" y="55" font-family="Georgia, serif" font-size="20" fill="white" text-anchor="middle" font-weight="bold">26D Spinor Psi</text>
+                        <text x="120" y="85" font-family="Inter, sans-serif" font-size="28" fill="white" text-anchor="middle" font-weight="bold">8192</text>
+                        <text x="120" y="107" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.8)" text-anchor="middle">components</text>
+
+                        <!-- Component visualization (small dots) -->
+                        <g transform="translate(260, 40)">
+                            <rect x="0" y="0" width="100" height="60" rx="8" fill="rgba(155,89,182,0.2)" stroke="rgba(155,89,182,0.4)" stroke-width="1"/>
+                            <!-- Grid of dots representing many components -->
+                            <g fill="#9b59b6">
+                                <circle cx="12" cy="12" r="2"/><circle cx="22" cy="12" r="2"/><circle cx="32" cy="12" r="2"/><circle cx="42" cy="12" r="2"/><circle cx="52" cy="12" r="2"/><circle cx="62" cy="12" r="2"/><circle cx="72" cy="12" r="2"/><circle cx="82" cy="12" r="2"/>
+                                <circle cx="12" cy="22" r="2"/><circle cx="22" cy="22" r="2"/><circle cx="32" cy="22" r="2"/><circle cx="42" cy="22" r="2"/><circle cx="52" cy="22" r="2"/><circle cx="62" cy="22" r="2"/><circle cx="72" cy="22" r="2"/><circle cx="82" cy="22" r="2"/>
+                                <circle cx="12" cy="32" r="2"/><circle cx="22" cy="32" r="2"/><circle cx="32" cy="32" r="2"/><circle cx="42" cy="32" r="2"/><circle cx="52" cy="32" r="2"/><circle cx="62" cy="32" r="2"/><circle cx="72" cy="32" r="2"/><circle cx="82" cy="32" r="2"/>
+                                <circle cx="12" cy="42" r="2"/><circle cx="22" cy="42" r="2"/><circle cx="32" cy="42" r="2"/><circle cx="42" cy="42" r="2"/><circle cx="52" cy="42" r="2"/><circle cx="62" cy="42" r="2"/><circle cx="72" cy="42" r="2"/><circle cx="82" cy="42" r="2"/>
+                                <circle cx="12" cy="52" r="2"/><circle cx="22" cy="52" r="2"/><circle cx="32" cy="52" r="2"/><circle cx="42" cy="52" r="2"/><circle cx="52" cy="52" r="2"/><circle cx="62" cy="52" r="2"/><circle cx="72" cy="52" r="2"/><circle cx="82" cy="52" r="2"/>
+                            </g>
+                            <text x="50" y="75" font-family="Inter, sans-serif" font-size="9" fill="#9b59b6" text-anchor="middle">2^13 = 8192</text>
+                        </g>
+
+                        <!-- Calculation note -->
+                        <text x="310" y="115" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">Dim = 2^(D/2)</text>
+                    </g>
+
+                    <!-- Sp(2,R) Reduction Arrow -->
+                    <g transform="translate(200, 155)">
+                        <line x1="0" y1="0" x2="0" y2="70" stroke="url(#arrowGrad)" stroke-width="4"/>
+                        <polygon points="0,80 -8,60 8,60" fill="url(#arrowGrad)"/>
+
+                        <!-- Label -->
+                        <rect x="20" y="15" width="160" height="50" rx="10" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="1"/>
+                        <text x="100" y="38" font-family="Inter, sans-serif" font-size="13" fill="#8b7fff" text-anchor="middle" font-weight="600">Sp(2,R) Reduction</text>
+                        <text x="100" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">factor of 128</text>
+                    </g>
+
+                    <!-- 13D Effective Spinor -->
+                    <g transform="translate(80, 250)">
+                        <rect x="0" y="0" width="200" height="90" rx="15" fill="url(#spinorGrad13)" filter="url(#shadow)"/>
+                        <text x="100" y="32" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">13D Effective</text>
+                        <text x="100" y="60" font-family="Inter, sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">64</text>
+                        <text x="100" y="80" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">components</text>
+
+                        <!-- Reduced component visualization -->
+                        <g transform="translate(220, 15)">
+                            <rect x="0" y="0" width="70" height="60" rx="8" fill="rgba(52,152,219,0.2)" stroke="rgba(52,152,219,0.4)" stroke-width="1"/>
+                            <g fill="#3498db">
+                                <circle cx="10" cy="10" r="3"/><circle cx="22" cy="10" r="3"/><circle cx="34" cy="10" r="3"/><circle cx="46" cy="10" r="3"/><circle cx="58" cy="10" r="3"/>
+                                <circle cx="10" cy="22" r="3"/><circle cx="22" cy="22" r="3"/><circle cx="34" cy="22" r="3"/><circle cx="46" cy="22" r="3"/><circle cx="58" cy="22" r="3"/>
+                                <circle cx="10" cy="34" r="3"/><circle cx="22" cy="34" r="3"/><circle cx="34" cy="34" r="3"/><circle cx="46" cy="34" r="3"/><circle cx="58" cy="34" r="3"/>
+                                <circle cx="10" cy="46" r="3"/><circle cx="22" cy="46" r="3"/><circle cx="34" cy="46" r="3"/><circle cx="46" cy="46" r="3"/><circle cx="58" cy="46" r="3"/>
+                            </g>
+                            <text x="35" y="75" font-family="Inter, sans-serif" font-size="9" fill="#3498db" text-anchor="middle">2^6 = 64</text>
+                        </g>
+                    </g>
+
+                    <!-- Condensate Formation Arrow -->
+                    <g transform="translate(180, 355)">
+                        <line x1="0" y1="0" x2="0" y2="50" stroke="url(#arrowGrad)" stroke-width="4"/>
+                        <polygon points="0,60 -8,40 8,40" fill="url(#arrowGrad)"/>
+
+                        <!-- Label -->
+                        <rect x="20" y="5" width="180" height="45" rx="10" fill="rgba(46,204,113,0.15)" stroke="rgba(46,204,113,0.4)" stroke-width="1"/>
+                        <text x="110" y="25" font-family="Inter, sans-serif" font-size="12" fill="#2ecc71" text-anchor="middle" font-weight="600">Condensate Formation</text>
+                        <text x="110" y="42" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle">&lt;Psi&gt; != 0</text>
+                    </g>
+
+                    <!-- Condensate Box -->
+                    <g transform="translate(70, 420)">
+                        <rect x="0" y="0" width="260" height="70" rx="15" fill="url(#condensateGrad)" filter="url(#shadow)"/>
+                        <text x="130" y="30" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">Pneuma Condensate</text>
+                        <text x="130" y="55" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Triggers gauge symmetry breaking</text>
+                    </g>
+
+                    <!-- Side panel: Physical effects -->
+                    <g transform="translate(400, 250)">
+                        <rect x="0" y="0" width="220" height="240" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
+                        <text x="110" y="30" font-family="Georgia, serif" font-size="14" fill="#8b7fff" text-anchor="middle" font-weight="600">Physical Effects</text>
+
+                        <!-- Effect 1 -->
+                        <circle cx="25" cy="60" r="6" fill="#9b59b6"/>
+                        <text x="40" y="65" font-family="Inter, sans-serif" font-size="11" fill="#adb5bd">Electroweak breaking</text>
+
+                        <!-- Effect 2 -->
+                        <circle cx="25" cy="95" r="6" fill="#3498db"/>
+                        <text x="40" y="100" font-family="Inter, sans-serif" font-size="11" fill="#adb5bd">Fermion mass generation</text>
+
+                        <!-- Effect 3 -->
+                        <circle cx="25" cy="130" r="6" fill="#2ecc71"/>
+                        <text x="40" y="135" font-family="Inter, sans-serif" font-size="11" fill="#adb5bd">Dark matter coupling</text>
+
+                        <!-- Effect 4 -->
+                        <circle cx="25" cy="165" r="6" fill="#e74c3c"/>
+                        <text x="40" y="170" font-family="Inter, sans-serif" font-size="11" fill="#adb5bd">CP violation source</text>
+
+                        <!-- Effect 5 -->
+                        <circle cx="25" cy="200" r="6" fill="#f39c12"/>
+                        <text x="40" y="205" font-family="Inter, sans-serif" font-size="11" fill="#adb5bd">Baryon asymmetry</text>
+
+                        <!-- Math note -->
+                        <text x="110" y="230" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle" font-style="italic">8192 / 128 = 64</text>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Navigation footer -->
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; border-top: 1px solid var(--border-primary, #2a2f4a);">
+            <p style="color: var(--text-muted, #6c757d); margin-bottom: 1rem;">These diagrams illustrate the key concepts of Principia Metaphysica.</p>
+            <a href="../principia-metaphysica-paper.html" style="color: var(--accent-primary, #8b7fff); text-decoration: none; font-weight: 500;">
+                Read the full paper &rarr;
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
