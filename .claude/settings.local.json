@@ -14,7 +14,13 @@
       "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status sections/pneuma-lagrangian.html)",
       "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff sections/gauge-unification.html)",
       "Bash(echo:*)",
-      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff --stat sections/gauge-unification.html)"
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff --stat sections/gauge-unification.html)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" stash pop)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" stash drop)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" checkout principia-metaphysica-paper.html)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" checkout HEAD -- principia-metaphysica-paper.html)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status principia-metaphysica-paper.html)",
+      "Bash(Out-File -Encoding utf8 'h:/Github/PrincipiaMetaphysica/index.html')"
     ],
     "deny": [],
     "ask": []
