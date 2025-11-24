@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the 26D → 13D gravitational action in Principia Metaphysica v6.0">
+    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the 26D → 13D gravitational action in Principia Metaphysica">
     <title>Einstein-Hilbert Term - Principia Metaphysica</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../js/formula-expansion.js" defer></script>
@@ -290,15 +290,29 @@
 
         <!-- 26D Context -->
         <section class="subsection">
-            <h2>26D Origin (v6.0 Framework)</h2>
+            <h2>26D Origin</h2>
             <p>
                 In the full 26D theory with signature (24,2), the gravitational action includes contributions from both
                 time dimensions. The Sp(2,R) gauge symmetry reduces the two-time structure to an effective 13D shadow:
             </p>
-            <div class="equation-box">
-                S<sub>26D</sub> = M<sub>26</sub><sup>24</sup> &int; d<sup>26</sup>x &radic;|G<sub>26</sub>| (R<sub>26</sub> + ℒ<sub>Sp(2,R)</sub>)
-                <span class="equation-label">Full 26D action before gauge fixing</span>
+            <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);">
+                S = &int; d<sup>26</sup>x &radic;|G| [F(R,T,&tau;) + ℒ<sub>Pneuma</sub> + ℒ<sub>SM</sub> + ℒ<sub>hidden</sub>]
+                <span class="equation-label">Full 26D action with signature (24,2)</span>
             </div>
+
+            <h3>The F(R,T,&tau;) Function</h3>
+            <p>
+                The gravitational sector is governed by a modified gravity function that depends on the Ricci scalar R,
+                the stress-energy trace T, and the torsion scalar &tau;:
+            </p>
+            <div class="equation-box" style="background: rgba(139, 127, 255, 0.12); border-color: rgba(139, 127, 255, 0.3);">
+                F(R,T,&tau;) = R + &alpha;T + &beta;T&sup2; + &gamma;&tau; + &delta;&tau;&sup2;
+                <span class="equation-label">Modified gravity function with torsion coupling</span>
+            </div>
+            <p>
+                Here &alpha;, &beta;, &gamma;, &delta; are coupling constants determined by the underlying 26D geometry.
+                The torsion terms (&gamma;&tau; + &delta;&tau;&sup2;) arise naturally from the Pneuma spinor condensates.
+            </p>
             <p>
                 After imposing the Sp(2,R) constraints (X² = 0, X·P = 0, P² + M² = 0), the orthogonal time dimension
                 is gauge-fixed, leaving an effective 13D description. The Z₂ mirror structure creates two copies of
@@ -420,31 +434,59 @@
             </div>
         </section>
 
-        <!-- Modifications from F(R,T) -->
+        <!-- Modifications from F(R,T,tau) -->
         <section class="subsection">
-            <h2>F(R,T) Modifications</h2>
+            <h2>F(R,T,&tau;) Modifications</h2>
             <p>
-                The framework naturally includes modifications to Einstein gravity through the F(R,T) formalism,
-                where T is the trace of the stress-energy tensor:
+                The framework naturally includes modifications to Einstein gravity through the F(R,T,&tau;) formalism,
+                where T is the trace of the stress-energy tensor and &tau; is the torsion scalar:
             </p>
 
-            <div class="equation-box">
-                S = &int; d<sup>4</sup>x &radic;|g| [M<sub>Pl</sub><sup>2</sup>R + f(R,T)]
-                <span class="equation-label">Modified gravity action</span>
+            <div class="equation-box" style="background: rgba(139, 127, 255, 0.12); border-color: rgba(139, 127, 255, 0.3);">
+                F(R,T,&tau;) = R + &alpha;T + &beta;T&sup2; + &gamma;&tau; + &delta;&tau;&sup2;
+                <span class="equation-label">Modified gravity function (canonical form)</span>
             </div>
+
+            <h3>Modified Einstein Equations</h3>
+            <p>
+                Varying the action with respect to the metric yields the modified Einstein field equations:
+            </p>
+            <div class="equation-box">
+                G<sub>&mu;&nu;</sub> + &Lambda;<sub>eff</sub>g<sub>&mu;&nu;</sub> = 8&pi;G<sub>eff</sub> T<sub>&mu;&nu;</sub> + &alpha;(T<sub>&mu;&nu;</sub> + &Theta;<sub>&mu;&nu;</sub>) + 2&beta;T T<sub>&mu;&nu;</sub> + S<sub>&mu;&nu;</sub><sup>(&tau;)</sup>
+                <span class="equation-label">Modified Einstein equations from F(R,T,&tau;) variation</span>
+            </div>
+            <p>
+                Here &Theta;<sub>&mu;&nu;</sub> contains matter-geometry coupling terms, and S<sub>&mu;&nu;</sub><sup>(&tau;)</sup>
+                encodes torsion contributions from the Pneuma spinor condensates.
+            </p>
+
+            <h3>Effective Cosmological Constant</h3>
+            <p>
+                The torsion terms generate an effective cosmological constant:
+            </p>
+            <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);">
+                &Lambda;<sub>eff</sub> = (&gamma;&tau; + &delta;&tau;&sup2;)/2
+                <span class="equation-label">Effective cosmological constant from torsion</span>
+            </div>
+            <p>
+                This provides a dynamical origin for dark energy: the effective cosmological constant arises from
+                torsion contributions rather than being a fixed parameter. As the universe evolves, &tau; varies,
+                yielding a dynamical dark energy component.
+            </p>
 
             <p>
                 These modifications arise from:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2;">
-                <li>Higher-order curvature terms from the 26D → 13D reduction</li>
+                <li>Higher-order curvature terms from the 26D &rarr; 13D reduction</li>
                 <li>Moduli stabilization effects from K<sub>Pneuma</sub></li>
                 <li>The Mashiach field dynamics driving dark energy</li>
-                <li>Z₂ mirror sector contributions from the orthogonal time direction</li>
+                <li>Z&sub;2</sub> mirror sector contributions from the orthogonal time direction</li>
+                <li>Torsion coupling from Pneuma spinor condensates</li>
             </ul>
 
             <p>
-                This provides a natural framework for cosmic acceleration without a cosmological constant,
+                This provides a natural framework for cosmic acceleration without a bare cosmological constant,
                 with the equation of state w &rarr; -1 as a late-time attractor.
             </p>
         </section>
