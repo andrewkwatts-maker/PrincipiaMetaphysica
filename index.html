@@ -280,7 +280,33 @@
             border: 1px solid rgba(139, 127, 255, 0.2);
         }
     </style>
+    <script src="js/theory-constants.js"></script>
     <script src="js/formula-expansion.js" defer></script>
+    <script>
+        // Populate values from TheoryConstants when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof TheoryConstants !== 'undefined') {
+                // Update dimensional values
+                const dimFull = document.getElementById('dim-full');
+                const dimEff = document.getElementById('dim-eff');
+                const sigSpace = document.getElementById('sig-space');
+                const sigTime = document.getElementById('sig-time');
+                const sigEffSpace = document.getElementById('sig-eff-space');
+                const sigEffTime = document.getElementById('sig-eff-time');
+                const spinorFull = document.getElementById('spinor-full');
+                const spinorEff = document.getElementById('spinor-eff');
+
+                if (dimFull) dimFull.textContent = TheoryConstants.dimensions.full;
+                if (dimEff) dimEff.textContent = TheoryConstants.dimensions.effective;
+                if (sigSpace) sigSpace.textContent = TheoryConstants.dimensions.signature.space;
+                if (sigTime) sigTime.textContent = TheoryConstants.dimensions.signature.time;
+                if (sigEffSpace) sigEffSpace.textContent = TheoryConstants.dimensions.effectiveSignature.space;
+                if (sigEffTime) sigEffTime.textContent = TheoryConstants.dimensions.effectiveSignature.time;
+                if (spinorFull) spinorFull.textContent = TheoryConstants.spinors.full26D;
+                if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D;
+            }
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -346,69 +372,90 @@
                 </p>
             </div>
 
-            <!-- Master Equation - Interactive Display -->
+            <!-- Master 26D Action - Interactive Display -->
             <div class="interactive-formula" style="margin-top: 2rem; position: relative; z-index: 1;">
                 <span class="formula-hint">Hover for details</span>
                 <div class="formula-display large">
-                    <a href="principia-metaphysica-paper.html#framework" class="formula-var" style="text-decoration: none; color: inherit;">S
+                    <a href="principia-metaphysica-paper.html#framework" class="formula-var" style="text-decoration: none; color: inherit;">S<sub>26D</sub>
                         <div class="var-tooltip">
-                            <div class="var-name">S - Action</div>
-                            <div class="var-description">The total action of the universe - the master quantity from which all physics derives.</div>
+                            <div class="var-name">S<sub>26D</sub> - Master Action</div>
+                            <div class="var-description">The total 26-dimensional action - the ultimate quantity from which ALL physics derives.</div>
                             <div class="var-units">Dimensionless (natural units)</div>
-                            <div class="var-contribution">Extremizing this action yields all equations of motion for gravity and matter.</div>
+                            <div class="var-contribution">Extremizing this action yields all equations of motion in the full (24,2) signature bulk.</div>
                             <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to see full paper &rarr;</div>
                         </div>
                     </a>
                     <span class="formula-op">=</span>
-                    <a href="sections/geometric-framework.html" class="formula-var" style="text-decoration: none; color: inherit;">&int; d<sup>13</sup>x &radic;|G|
+                    <a href="sections/geometric-framework.html" class="formula-var" style="text-decoration: none; color: inherit;">&int; d<sup>26</sup>X &radic;|G<sub>(24,2)</sub>|
                         <div class="var-tooltip">
-                            <div class="var-name">&int; d<sup>13</sup>x &radic;|G|</div>
-                            <div class="var-description">Integration over all 13 dimensions with the proper covariant volume element.</div>
-                            <div class="var-units">Length<sup>13</sup></div>
-                            <div class="var-contribution">Sums physics from every point in the (12,1) dimensional bulk spacetime.</div>
+                            <div class="var-name">&int; d<sup>26</sup>X &radic;|G<sub>(24,2)</sub>|</div>
+                            <div class="var-description">Integration over all 26 dimensions with signature (24,2) - two time dimensions!</div>
+                            <div class="var-units">Length<sup>26</sup></div>
+                            <div class="var-contribution">Sums physics from every point in the (24,2) dimensional bulk spacetime.</div>
                             <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click for Geometric Framework &rarr;</div>
                         </div>
                     </a>
                     <span class="formula-op">[</span>
-                    <a href="sections/einstein-hilbert-term.html" class="formula-var highlight" style="text-decoration: none; color: inherit;">M<sub>*</sub><sup>11</sup>R
+                    <a href="sections/einstein-hilbert-term.html" class="formula-var highlight" style="text-decoration: none; color: inherit;">M<sub>26</sub><sup>24</sup>R<sub>26</sub>
                         <div class="var-tooltip">
-                            <div class="var-name">Einstein-Hilbert Term</div>
-                            <div class="var-description">13D gravity: M<sub>*</sub> is the fundamental mass scale, R is the Ricci curvature scalar.</div>
-                            <div class="var-units">GeV<sup>4</sup> (13D)</div>
-                            <div class="var-contribution">Generates Einstein's field equations; reduces to 4D GR upon compactification.</div>
+                            <div class="var-name">26D Einstein-Hilbert Term</div>
+                            <div class="var-description">26D gravity with signature (24,2): M<sub>26</sub> is the fundamental mass scale, R<sub>26</sub> is the Ricci scalar.</div>
+                            <div class="var-units">GeV<sup>4</sup> (26D)</div>
+                            <div class="var-contribution">Generates Einstein-like field equations in the full bulk; gauge-fixes to 13D via Sp(2,ℝ).</div>
                             <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to learn more &rarr;</div>
                         </div>
                     </a>
                     <span class="formula-op">+</span>
-                    <a href="sections/pneuma-lagrangian.html" class="formula-var highlight" style="text-decoration: none; color: inherit;"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>
+                    <a href="sections/pneuma-lagrangian.html" class="formula-var highlight" style="text-decoration: none; color: inherit;"><span style="text-decoration: overline;">&Psi;</span><sub>26</sub>(i&Gamma;<sup>A</sup>&nabla;<sub>A</sub> - M)&Psi;<sub>26</sub>
                         <div class="var-tooltip">
-                            <div class="var-name">Pneuma Lagrangian</div>
-                            <div class="var-description">The fundamental fermionic Pneuma field &Psi;<sub>P</sub> with Dirac kinetic term and mass.</div>
-                            <div class="var-units">GeV<sup>4</sup> (13D)</div>
-                            <div class="var-contribution">Source of everything: its condensates form K<sub>Pneuma</sub>, generating geometry and matter.</div>
+                            <div class="var-name">26D Pneuma Lagrangian</div>
+                            <div class="var-description">The fundamental 8192-component fermionic Pneuma field in 26D with Clifford algebra Cl(24,2).</div>
+                            <div class="var-units">GeV<sup>4</sup> (26D)</div>
+                            <div class="var-contribution">Source of EVERYTHING: gauge-fixes to 64 components in 13D, generates geometry and all matter.</div>
                             <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to learn more &rarr;</div>
                         </div>
                     </a>
                     <span class="formula-op">]</span>
                 </div>
-                <div class="formula-label">The Master Action: All Physics from One Equation</div>
+                <div class="formula-label" style="font-size: 1.1rem; margin-top: 0.75rem;">
+                    <strong>The Master 26D Action</strong> with signature (24,2)<br>
+                    <span style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem; display: inline-block;">
+                        Sp(2,ℝ) gauge fixing → <span class="highlight" style="color: var(--accent-primary);">S<sub>13D</sub></span> →
+                        Compactification → <span class="highlight" style="color: var(--accent-secondary);">S<sub>4D</sub></span>
+                    </span>
+                </div>
 
                 <div class="formula-info">
-                    <div class="formula-title">Unified Action Principle</div>
+                    <div class="formula-title">Unified 26-Dimensional Action Principle</div>
                     <div class="formula-meaning">
-                        This single action encodes all of physics: Einstein gravity, SO(10) gauge forces (containing the Standard Model), three generations of fermions, dark energy via the Mashiach field, and emergent time through thermodynamics.
+                        This single 26D action with signature <strong>(24,2)</strong> encodes ALL of physics through dimensional reduction:
+                        <strong>26D bulk → 13D shadow → 4D observable universe</strong>. The two time dimensions emerge from the
+                        fermion parity structure, yielding Einstein gravity, SO(10) gauge forces (containing the Standard Model),
+                        three generations, dark energy, and thermal time.
                     </div>
                     <div class="formula-info-grid">
                         <div class="formula-info-item">
                             <a href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
-                                <h5>Dimensions</h5>
-                                <p>(12,1) &rarr; 4D via K<sub>Pneuma</sub></p>
+                                <h5>Full Bulk</h5>
+                                <p><span id="dim-full">26</span>D with signature (<span id="sig-space">24</span>,<span id="sig-time">2</span>)</p>
+                            </a>
+                        </div>
+                        <div class="formula-info-item">
+                            <a href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+                                <h5>Effective Shadow</h5>
+                                <p><span id="dim-eff">13</span>D with signature (<span id="sig-eff-space">12</span>,<span id="sig-eff-time">1</span>)</p>
                             </a>
                         </div>
                         <div class="formula-info-item">
                             <a href="sections/gauge-unification.html" style="text-decoration: none; color: inherit;">
                                 <h5>Gauge Group</h5>
                                 <p>SO(10) &supset; G<sub>SM</sub></p>
+                            </a>
+                        </div>
+                        <div class="formula-info-item">
+                            <a href="sections/pneuma-lagrangian.html" style="text-decoration: none; color: inherit;">
+                                <h5>Spinor Components</h5>
+                                <p><span id="spinor-full">8192</span> → <span id="spinor-eff">64</span> via Sp(2,ℝ)</p>
                             </a>
                         </div>
                     </div>
@@ -424,36 +471,47 @@
                 </div>
             </div>
 
-            <!-- Expandable Formula Breakdown -->
+            <!-- Expandable Formula Breakdown: 26D → 13D → 4D -->
             <div class="expandable-formula" style="margin-top: 1.5rem;" id="master-formula">
                 <div class="formula-header" style="cursor: pointer;">
                     <div class="formula-main">
-                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">&#x25BC; Click to Expand:</span>
-                        S = &int; d<sup>13</sup>x &radic;|G| [M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>]
+                        <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">&#x25BC; Dimensional Reduction:</span>
+                        S<sub>26D</sub> <span style="color: var(--accent-primary);">→</span> S<sub>13D</sub> <span style="color: var(--accent-primary);">→</span> S<sub>4D</sub>
                     </div>
                     <div class="formula-controls">
                         <a href="foundations/index.html" class="link-btn">Foundations &rarr;</a>
-                        <button class="expand-btn" title="Expand to see sub-components" onclick="this.closest('.expandable-formula').classList.toggle('expanded'); this.innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '&#x25B2;' : '&#x25BC;';">&#x25BC;</button>
+                        <button class="expand-btn" title="Expand to see dimensional hierarchy" onclick="this.closest('.expandable-formula').classList.toggle('expanded'); this.innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '&#x25B2;' : '&#x25BC;';">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
+                    <div style="background: rgba(139, 127, 255, 0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
+                        <h4 style="color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.1rem;">Level 1: 13D Shadow Action (Sp(2,ℝ) gauge fixed)</h4>
+                        <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; text-align: center; margin: 1rem 0;">
+                            S<sub>13D</sub> = &int; d<sup>13</sup>x &radic;|G<sub>(12,1)</sub>| [M<sub>*</sub><sup>11</sup>R<sub>13</sub> + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>&nabla;<sub>M</sub> - m)&Psi;<sub>P</sub>]
+                        </div>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
+                            The 8192-component 26D spinor reduces to 64 components via Sp(2,ℝ) gauge fixing.
+                            One time dimension emerges from fermion parity Z₂.
+                        </p>
+                    </div>
+
                     <div class="sub-components">
                         <a href="foundations/einstein-hilbert-action.html" class="sub-component" style="text-decoration: none;">
-                            <div class="component-symbol">M<sub>*</sub><sup>11</sup>R</div>
-                            <div class="component-name">Einstein-Hilbert Term</div>
-                            <div class="component-desc">13D gravity from the Ricci scalar. Reduces to 4D General Relativity.</div>
-                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">From GR</span>
+                            <div class="component-symbol">M<sub>*</sub><sup>11</sup>R<sub>13</sub></div>
+                            <div class="component-name">13D Einstein-Hilbert Term</div>
+                            <div class="component-desc">Gravity in (12,1) spacetime. Reduces to 4D Einstein gravity upon compactification.</div>
+                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">From 26D Bulk</span>
                         </a>
                         <a href="sections/pneuma-lagrangian.html" class="sub-component" style="text-decoration: none;">
-                            <div class="component-symbol"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub></div>
-                            <div class="component-name">Pneuma Lagrangian</div>
-                            <div class="component-desc">64-component spinor field. Generalizes the Dirac equation to 13D.</div>
+                            <div class="component-symbol"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>&nabla;<sub>M</sub> - m)&Psi;<sub>P</sub></div>
+                            <div class="component-name">13D Pneuma Lagrangian</div>
+                            <div class="component-desc">64-component spinor from Cl(12,1). Source of all matter and geometry.</div>
                             <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
                         </a>
                         <a href="foundations/dirac-equation.html" class="sub-component" style="text-decoration: none;">
                             <div class="component-symbol">&Gamma;<sup>M</sup></div>
                             <div class="component-name">13D Gamma Matrices</div>
-                            <div class="component-desc">64&times;64 matrices from Clifford algebra Cl(12,1).</div>
+                            <div class="component-desc">64×64 matrices from Clifford algebra Cl(12,1). M = 0,1,...,12.</div>
                             <span class="foundation-badge established" style="margin-top: 0.5rem;">Clifford Algebra</span>
                         </a>
                         <a href="sections/geometric-framework.html" class="sub-component" style="text-decoration: none;">
