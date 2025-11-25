@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # Automation Guide - Principia Metaphysica
 
 ## The Problem We Solved

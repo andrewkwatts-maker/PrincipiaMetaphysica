@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # How Parameter Values Work in Principia Metaphysica
 
 ## Quick Answer

@@ -1,3 +1,7 @@
+---
+render_with_liquid: false
+---
+
 # Automation Implementation - COMPLETE
 
 **Date:** 2025-11-25
