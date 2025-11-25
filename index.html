@@ -510,17 +510,41 @@
                 <strong>1 + 3 brane hierarchy</strong> (one observable + three hidden universes) with Z<sub>2</sub> mirror symmetry.
             </p>
             <p style="margin-top: 1rem;">
-                The complete Lagrangian:
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">&Lscr; = F(R,T,&tau;) + &Lscr;<sub>Pneuma</sub> + &Lscr;<sub>SM</sub> + &Lscr;<sub>hidden</sub>
-                    <span class="var-tooltip" style="width: 320px;">
-                        <span class="var-name">Full Theory Lagrangian</span>
-                        <span class="var-description">Modified gravity F(R,T,&tau;) couples to the Pneuma field, Standard Model, and hidden sector. The &tau; terms encode two-time physics.</span>
+                The 13D effective Lagrangian:
+                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">&Lscr;<sub>13D</sub> = M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>
+                    <span class="var-tooltip" style="width: 350px;">
+                        <span class="var-name">M<sup>13</sup> Bulk Lagrangian</span>
+                        <span class="var-description">The fundamental action in 13D spacetime (12,1 signature). M<sub>*</sub><sup>11</sup> is the 13D Planck scale raised to the 11th power. R is the 13D Ricci scalar. &Psi;<sub>P</sub> is the 64-component Pneuma field with Dirac kinetic term and mass m.</span>
+                        <span class="var-units" style="display: block; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                            <strong>Derivation:</strong> From 26D bulk via Sp(2,R) gauge fixing. The 8192-component 26D spinor reduces to 64 effective components in 13D.
+                        </span>
+                    </span>
+                </span>,
+                which upon compactification on K<sub>Pneuma</sub> yields the complete 4D Lagrangian:
+                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">&Lscr;<sub>4D</sub> = F(R,T,&tau;) + &Lscr;<sub>Pneuma</sub> + &Lscr;<sub>SM</sub> + &Lscr;<sub>hidden</sub>
+                    <span class="var-tooltip" style="width: 380px;">
+                        <span class="var-name">Complete 4D Effective Lagrangian</span>
+                        <span class="var-description">Modified gravity F(R,T,&tau;) couples to the Pneuma field, Standard Model, and hidden sector. The &tau; terms encode two-time physics residuals.</span>
+                        <span class="var-units" style="display: block; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                            <strong>Components:</strong><br>
+                            • F(R,T,&tau;): Modified gravity with matter coupling T and two-time invariant &tau;<br>
+                            • &Lscr;<sub>Pneuma</sub>: Condensate dynamics generating geometry<br>
+                            • &Lscr;<sub>SM</sub>: Standard Model from SO(10) breaking<br>
+                            • &Lscr;<sub>hidden</sub>: Three shadow brane sectors (B<sub>2,3,4</sub>)
+                        </span>
                     </span>
                 </span>, where
                 <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">F(R,T,&tau;) = R + &alpha;T + &beta;T&sup2; + &gamma;&tau; + &delta;&tau;&sup2;
-                    <span class="var-tooltip" style="width: 300px;">
+                    <span class="var-tooltip" style="width: 340px;">
                         <span class="var-name">Modified Gravity Function</span>
-                        <span class="var-description">Generalizes f(R) gravity with matter-trace T and two-time invariant &tau;. Parameters &alpha;, &beta;, &gamma;, &delta; are derived from compactification.</span>
+                        <span class="var-description">Generalizes f(R) gravity with matter-trace T and two-time invariant &tau;. All parameters derived from compactification (v6.1).</span>
+                        <span class="var-units" style="display: block; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
+                            <strong>Derived Parameters (v6.1):</strong><br>
+                            • &alpha; = N<sub>eff</sub>/(1440&pi;&sup2;M<sub>Pl</sub>&sup2;) &asymp; 4.5&times;10<sup>-3</sup>/M<sub>Pl</sub>&sup2;<br>
+                            • &beta; = 2&lang;&sigma;&rang; &asymp; 0.15<br>
+                            • &gamma; &asymp; 10<sup>-4</sup>/M<sub>Pl</sub>&sup2;<br>
+                            • &delta; = g&Delta;t<sub>ortho</sub> &asymp; 10<sup>-19</sup> s
+                        </span>
                     </span>
                 </span>.
                 The fundamental
