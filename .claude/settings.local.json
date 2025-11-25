@@ -23,7 +23,8 @@
       "Bash(Out-File -Encoding utf8 'h:/Github/PrincipiaMetaphysica/index.html')",
       "Bash(md5sum:*)",
       "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status index.html)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(python:*)"
     ],
     "deny": [],
     "ask": []
