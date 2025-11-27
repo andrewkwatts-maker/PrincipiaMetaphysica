@@ -1,0 +1,37 @@
+
+proton_decay_dimensional.py - Agent 4 Analysis: Dimensional Reduction Pathway
+Principia Metaphysica - Proton Decay Resolution
+
+OBJECTIVE:
+Calculate suppression factors from 26D to 13D to 4D compactification pathway
+to resolve the proton decay lifetime discrepancy.
+
+CURRENT PROBLEM:
+tau_p = 2.36e6 years << 2.4e34 years (28 orders of magnitude off)
+
+ANALYSIS APPROACH:
+1. Kaluza-Klein mode suppression
+2. Wavefunction overlap integrals
+3. Effective coupling renormalization
+4. Volume factor suppression
+5. Calculate required alpha parameter
+
+DEPENDENCIES: numpy, sympy
+
+
+================================================================================
+AGENT 4: DIMENSIONAL REDUCTION PATHWAY - PROTON DECAY ANALYSIS
+================================================================================
+
+[STEP 1] KALUZA-KLEIN MODE SUPPRESSION
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "H:\Github\PrincipiaMetaphysica\proton_decay_dimensional.py", line 740, in <module>
+    results = analyze_dimensional_suppression(verbose=True)
+  File "H:\Github\PrincipiaMetaphysica\proton_decay_dimensional.py", line 514, in analyze_dimensional_suppression
+    print(f"  n={n}: \u03b5_KK = (M_p/M_KK)^{n} = {kk_results[f'n={n}']['epsilon_KK']:.2e}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u03b5' in position 7: character maps to <undefined>
