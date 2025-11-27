@@ -129,6 +129,7 @@ theory-constants.js → index.html + sections/*.html
 **Con:** Requires automation script
 
 **Create a script:**
+{% raw %}
 ```python
 # generate_js_constants.py
 from config import *
@@ -144,6 +145,7 @@ const TheoryConstants = {{
 with open('js/theory-constants.js', 'w') as f:
     f.write(js_output)
 ```
+{% endraw %}
 
 **Workflow:**
 1. Edit `config.py`
