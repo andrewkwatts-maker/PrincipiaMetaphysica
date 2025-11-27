@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="G₂ Manifolds - 7-dimensional geometric foundations for M-theory compactification in Principia Metaphysica">
+    <title>G₂ Manifolds - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Foundations</a></li>
+                    <li><a href="../sections/index.html">Sections</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Foundations</a>
+            <span class="separator">/</span>
+            <span>G₂ Manifolds</span>
+        </nav>
+
+        <div class="intro">
+            <span class="foundation-badge established">Established Mathematics</span>
+            <h1 style="margin-top: 1rem;">G₂ Manifolds</h1>
+            <p>
+                G₂ manifolds are exceptional 7-dimensional Riemannian manifolds with holonomy group G₂,
+                the smallest of the five exceptional Lie groups. They provide the natural geometric framework
+                for M-theory compactifications and form the internal geometry of Principia Metaphysica.
+            </p>
+        </div>
+
+        <!-- What is G2? -->
+        <section class="detail-section">
+            <h3>What is G₂?</h3>
+            <p>
+                G₂ is the <strong>smallest exceptional Lie group</strong>, a 14-dimensional subgroup of SO(7).
+                It is the automorphism group of the octonions, the unique non-associative normed division algebra.
+            </p>
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                <h4 style="color: #51cf66;">Key Properties</h4>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
+                    <li><strong>Dimension:</strong> 14 (as a Lie group)</li>
+                    <li><strong>Rank:</strong> 2 (two Cartan generators)</li>
+                    <li><strong>Embedding:</strong> G₂ ⊂ SO(7) ⊂ GL(7, ℝ)</li>
+                    <li><strong>Connection to octonions:</strong> G₂ = Aut(𝕆), preserves octonionic multiplication</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Definition -->
+        <section class="detail-section">
+            <h3>G₂ Holonomy Manifolds</h3>
+            <p>
+                A <strong>G₂ manifold</strong> is a 7-dimensional Riemannian manifold (M⁷, g) whose holonomy group
+                is contained in G₂. This is equivalent to the existence of a globally defined, parallel associative 3-form.
+            </p>
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        dφ = 0 &nbsp;&nbsp;&amp;&nbsp;&nbsp; d(*φ) = 0
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">Mathematical</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">φ</div>
+                            <div class="component-name">Associative 3-Form</div>
+                            <div class="component-desc">A 3-form φ ∈ Ω³(M⁷) that defines the G₂ structure. Calibrates associative 3-cycles.</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">dφ = 0</div>
+                            <div class="component-name">Closure Condition</div>
+                            <div class="component-desc">The 3-form is closed, making it a calibration form</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">d(*φ) = 0</div>
+                            <div class="component-name">Co-closure Condition</div>
+                            <div class="component-desc">The Hodge dual *φ (a 4-form) is also closed. Together with dφ = 0, this implies Ricci-flatness.</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">*φ</div>
+                            <div class="component-name">Coassociative 4-Form</div>
+                            <div class="component-desc">Hodge dual of φ, calibrates coassociative 4-cycles</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Key Consequence</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Ricci-flat metric: Ric(g) = 0
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Exactly one parallel spinor (8 real components)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Metric g uniquely determined by φ
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comparison: G2 vs Calabi-Yau -->
+        <section class="detail-section">
+            <h3>G₂ Manifolds vs. Calabi-Yau Manifolds</h3>
+            <table class="breaking-table">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>G₂ Manifolds</th>
+                        <th>Calabi-Yau Manifolds</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Real Dimension</strong></td>
+                        <td>7</td>
+                        <td>2n (n = complex dim)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complex Structure</strong></td>
+                        <td>None (purely real)</td>
+                        <td>Required (Kähler)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Holonomy Group</strong></td>
+                        <td>G₂ ⊂ SO(7)</td>
+                        <td>SU(n) ⊂ SO(2n)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parallel Spinors</strong></td>
+                        <td>1 real spinor (8 components)</td>
+                        <td>1 complex spinor (2ⁿ components)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ricci Curvature</strong></td>
+                        <td>Ricci-flat (Ric = 0)</td>
+                        <td>Ricci-flat (Ric = 0)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Supersymmetry</strong></td>
+                        <td>N=1 in 4D (M-theory)</td>
+                        <td>N=1 in 4D (String theory)</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.1);">
+                        <td><strong>PM Application</strong></td>
+                        <td><strong>Internal 7D geometry</strong></td>
+                        <td>Previously used (CY4)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Topological Properties -->
+        <section class="detail-section">
+            <h3>Topological Invariants</h3>
+            <p>
+                The topology of a compact G₂ manifold is characterized by several invariants:
+            </p>
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        χ(M⁷) = 0 &nbsp;&nbsp;(generic)
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">Established</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">χ(M⁷)</div>
+                            <div class="component-name">Euler Characteristic</div>
+                            <div class="component-desc">For smooth compact G₂ manifolds, χ = 0 generically. Can be non-zero with singularities or flux dressing.</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">b₂(M⁷)</div>
+                            <div class="component-name">Second Betti Number</div>
+                            <div class="component-desc">Counts independent 2-cycles. Free parameter in G₂ construction.</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">b₃(M⁷)</div>
+                            <div class="component-name">Third Betti Number</div>
+                            <div class="component-desc">Counts associative 3-cycles. Also a free parameter.</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">PM Specification</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            χ_eff = 72 (flux-dressed effective Euler characteristic)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            n_gen = χ_eff / 24 = 3 (three fermion generations)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            ADE singularities: D₅ ≅ SO(10) for GUT gauge group
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Construction Methods -->
+        <section class="detail-section">
+            <h3>Construction of G₂ Manifolds</h3>
+            <p>
+                Explicit constructions of compact G₂ manifolds are challenging. Key methods include:
+            </p>
+
+            <h4 style="margin-top: 1.5rem;">1. Joyce Construction (1996)</h4>
+            <p style="color: var(--text-secondary);">
+                Dominic Joyce pioneered the first explicit constructions of compact G₂ manifolds by resolving
+                T⁷/Γ orbifolds. The orbifold singularities are resolved using Eguchi-Hanson-like ALE spaces.
+            </p>
+
+            <h4 style="margin-top: 1.5rem;">2. Twisted Connected Sum (Kovalev, 2003)</h4>
+            <p style="color: var(--text-secondary);">
+                More recent constructions glue together two asymptotically cylindrical G₂ manifolds along
+                a cylindrical neck. This "twisted connected sum" construction has produced thousands of
+                topologically distinct examples.
+            </p>
+            <div class="equation-box" style="margin-top: 1rem;">
+                M⁷ = M₁⁷ ∪_S³×S¹ M₂⁷
+                <span class="equation-label">Glued along common S³ × S¹ boundary</span>
+            </div>
+
+            <h4 style="margin-top: 1.5rem;">3. ADE Singularities</h4>
+            <p style="color: var(--text-secondary);">
+                G₂ manifolds can develop ADE singularities, which in M-theory lead to enhanced gauge symmetry.
+                For Principia Metaphysica, a D₅ singularity gives SO(10) unification:
+            </p>
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1rem;">
+                <h4 style="color: #8b7fff;">PM Application: D₅ Singularity</h4>
+                <p style="color: var(--text-secondary);">
+                    The internal G₂ manifold in PM has a conical D₅ singularity. In M-theory, this yields:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li>Gauge group: D₅ ≅ SO(10)</li>
+                    <li>Unifies all SM fermions in 16-dimensional spinor representation</li>
+                    <li>Singularity partially resolved by flux, yielding χ_eff = 72</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Physical Relevance -->
+        <section class="detail-section">
+            <h3>Physical Relevance: M-Theory Compactifications</h3>
+            <p>
+                G₂ manifolds are the natural compactification spaces for <strong>11-dimensional M-theory</strong>.
+                Unlike string theory (10D), M-theory has no free parameter and is conjectured to be the
+                fundamental theory underlying all string theories.
+            </p>
+
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        11D M-theory on M⁴ × M⁷ → 4D N=1 SUSY theory
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">M-Theory</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">M⁴</div>
+                            <div class="component-name">4D Spacetime</div>
+                            <div class="component-desc">Observable Minkowski space (or slowly varying cosmology)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">M⁷</div>
+                            <div class="component-name">G₂ Manifold</div>
+                            <div class="component-desc">Compact 7-dimensional internal space with G₂ holonomy</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">N=1 SUSY</div>
+                            <div class="component-name">Minimal Supersymmetry</div>
+                            <div class="component-desc">G₂ holonomy preserves exactly 1/8 of 11D supersymmetry → N=1 in 4D</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Supersymmetry Counting</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            11D: 32 supercharges
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            G₂ holonomy: preserves 1 spinor (8 components)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            4D effective: N=1 SUSY (4 supercharges)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="margin-top: 2rem;">Why G₂ for Principia Metaphysica?</h4>
+            <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2;">
+                <li><strong>Unique parallel spinor:</strong> The single real parallel spinor connects naturally to the Pneuma field (fundamental consciousness field)</li>
+                <li><strong>7-dimensional:</strong> Perfect arithmetic: 13D total = 4D observable + 7D internal + 2D shared</li>
+                <li><strong>ADE singularities:</strong> Natural mechanism for SO(10) gauge enhancement</li>
+                <li><strong>M-theory native:</strong> No need to invoke string dualities or F-theory uplift</li>
+                <li><strong>Flux dressing:</strong> G₄ flux on M⁷ can yield effective χ_eff ≠ 0, giving 3 generations</li>
+                <li><strong>Moduli stabilization:</strong> G₂ moduli more tractable than CY moduli</li>
+            </ul>
+        </section>
+
+        <!-- Generation Formula -->
+        <section class="detail-section">
+            <h3>Fermion Generations from G₂ Topology</h3>
+            <p>
+                In M-theory on G₂ manifolds with G₄ flux, the number of chiral fermion generations
+                is related to the effective Euler characteristic:
+            </p>
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        n_gen = χ_eff(M⁷)/24 = 72/24 = 3
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge derived">PM Formula</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">n_gen</div>
+                            <div class="component-name">Number of Generations</div>
+                            <div class="component-desc">Observed: 3 families (electron, muon, tau)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">χ_eff</div>
+                            <div class="component-name">Effective Euler Characteristic</div>
+                            <div class="component-desc">Modified by G₄ flux and singularity resolution. Pure G₂: χ = 0, but flux-dressed: χ_eff = 72 in PM.</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">24</div>
+                            <div class="component-name">Index Theorem Coefficient</div>
+                            <div class="component-desc">From M-theory index theorem on G₂ manifolds (analogous to CY4 F-theory formula)</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">PM Specification</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Bare G₂: χ = 0 → 0 generations (unacceptable)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Add G₄ flux threading 4-cycles
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Flux modifies index: χ_eff = 72
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            n_gen = 72/24 = 3 ✓
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Historical Context -->
+        <section class="detail-section">
+            <h3>Historical Development</h3>
+            <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
+                <li><strong>1914:</strong> Cartan discovers the five exceptional Lie groups, including G₂</li>
+                <li><strong>1987:</strong> Robert Bryant identifies G₂ holonomy as a special geometric structure</li>
+                <li><strong>1996:</strong> Dominic Joyce constructs first explicit compact G₂ manifolds</li>
+                <li><strong>1998:</strong> Bobby Acharya applies G₂ manifolds to M-theory phenomenology</li>
+                <li><strong>2003:</strong> Alexei Kovalev develops twisted connected sum construction</li>
+                <li><strong>2000s-present:</strong> Extensive study of G₂ moduli, singularities, and gauge theory</li>
+            </ul>
+        </section>
+
+        <!-- References -->
+        <section class="detail-section" style="background: rgba(81, 207, 102, 0.05);">
+            <h3>References & Further Reading</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
+                <li>
+                    <strong>Bryant's Lectures:</strong> Bryant, R. (1987) "Metrics with Exceptional Holonomy"
+                    <em>Annals of Mathematics</em> 126: 525-576
+                    <a href="https://en.wikipedia.org/wiki/G2_manifold" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Joyce's Book:</strong> Joyce, D. (2000) "Compact Manifolds with Special Holonomy"
+                    <em>Oxford University Press</em>
+                    <a href="https://en.wikipedia.org/wiki/Dominic_Joyce" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>M-theory Compactifications:</strong> Acharya, B. (1998) "M Theory, Joyce Orbifolds and Super Yang-Mills"
+                    <a href="https://arxiv.org/abs/hep-th/9812205" target="_blank" style="color: var(--accent-primary);">[arXiv]</a>
+                </li>
+                <li>
+                    <strong>Twisted Connected Sums:</strong> Kovalev, A. (2003) "Twisted connected sums and special Riemannian holonomy"
+                    <em>J. Reine Angew. Math.</em> 565: 125-160
+                </li>
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/G2_manifold" target="_blank" style="color: var(--accent-primary);">G₂ Manifold</a> |
+                    <a href="https://en.wikipedia.org/wiki/G2_(mathematics)" target="_blank" style="color: var(--accent-primary);">G₂ Lie Group</a> |
+                    <a href="https://en.wikipedia.org/wiki/M-theory" target="_blank" style="color: var(--accent-primary);">M-Theory</a>
+                </li>
+            </ul>
+            <p style="margin-top: 1rem;">
+                <a href="../references.html#g2-manifolds" style="color: var(--accent-secondary);">See full references page &rarr;</a>
+            </p>
+        </section>
+
+        <!-- Navigation -->
+        <div class="section-nav-links" style="margin-top: 3rem;">
+            <a href="kaluza-klein.html" class="nav-link">
+                <span class="direction">&larr; Previous</span>
+                <span class="title">Kaluza-Klein Theory</span>
+            </a>
+            <a href="dirac-equation.html" class="nav-link" style="text-align: right;">
+                <span class="direction">Next &rarr;</span>
+                <span class="title">Dirac Equation</span>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</body>
+</html>

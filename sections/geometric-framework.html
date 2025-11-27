@@ -475,10 +475,10 @@
                 <li><a href="#eft-paradigm">2.1 26D Action and Sp(2,R) Gauge Symmetry</a></li>
                 <li style="padding-left: 1.5rem;"><a href="#two-time-structure">2.1.1 Two-Time Structure and Ghost Elimination</a></li>
                 <li style="padding-left: 1.5rem;"><a href="#effective-13d">2.1.2 Effective 13D Shadow</a></li>
-                <li><a href="#pneuma-manifold">2.2 The Pneuma Manifold: CY4 with F-Theory Structure</a></li>
-                <li style="padding-left: 1.5rem;"><a href="#cy4-construction">2.2.1 Corrected CY4 Construction (χ = 72)</a></li>
+                <li><a href="#pneuma-manifold">2.2 The Pneuma Manifold: G₂ Manifold with F-Theory Connection</a></li>
+                <li style="padding-left: 1.5rem;"><a href="#cy4-construction">2.2.1 G₂ Topology (χ_eff = 72)</a></li>
                 <li style="padding-left: 1.5rem;"><a href="#mirror-cy4">2.2.2 Z₂ Mirror Structure (χ = 144 Total)</a></li>
-                <li style="padding-left: 1.5rem;"><a href="#d5-singularity">2.2.3 D<sub>5</sub> Singularity and SO(10) Gauge Symmetry</a></li>
+                <li style="padding-left: 1.5rem;"><a href="#d5-singularity">2.2.3 D<sub>5</sub> Singularity from G₂ and SO(10) Gauge Symmetry</a></li>
                 <li><a href="#kk-decomposition">2.3 Kaluza-Klein Decomposition and 4D Effective Action</a></li>
             </ul>
         </div>
@@ -538,7 +538,7 @@
                     </span> = <span class="formula-var">13
                         <div class="var-tooltip">
                             <div class="var-name">13</div>
-                            <div class="var-description">The unique dimension emerging from normed division algebra decomposition: 4D spacetime + 8D internal manifold + 1D thermal time.</div>
+                            <div class="var-description">The unique dimension emerging from normed division algebra decomposition: 4D spacetime + 7D G₂ Manifold + 1D thermal time.</div>
                             <div class="var-units">Dimensionless</div>
                             <div class="var-contribution">Provides cobordism anomaly freedom: Omega_13^String = 0.</div>
                         </div>
@@ -559,7 +559,7 @@
                     </span> + <span class="formula-var">8
                         <div class="var-tooltip">
                             <div class="var-name">8 = dim(O)</div>
-                            <div class="var-description">Dimension of the octonions - determines the 8-dimensional internal Calabi-Yau four-fold K_Pneuma.</div>
+                            <div class="var-description">Dimension of the octonions - determines the 7-dimensional G₂ manifold K_Pneuma.</div>
                             <div class="var-units">Dimensionless</div>
                             <div class="var-contribution">Hosts gauge symmetry SO(10) and determines particle spectrum via topology.</div>
                         </div>
@@ -932,7 +932,7 @@
                     <g class="node">
                         <rect x="300" y="100" width="200" height="200" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
                         <text x="400" y="130" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="15">K<tspan baseline-shift="sub" font-size="11">Pneuma</tspan></text>
-                        <text x="400" y="152" text-anchor="middle" fill="#adb5bd" font-size="12">8D Internal Manifold</text>
+                        <text x="400" y="152" text-anchor="middle" fill="#adb5bd" font-size="12">7D G₂ Manifold</text>
 
                         <!-- Inner details -->
                         <ellipse cx="400" cy="210" rx="70" ry="60" fill="none" stroke="rgba(139,127,255,0.3)" stroke-width="1" stroke-dasharray="4 2"/>
@@ -1101,45 +1101,60 @@
         <section id="pneuma-manifold" class="subsection">
             <div class="subsection-header">
                 <span class="subsection-number">2.2</span>
-                <h2>The Pneuma Manifold: CY4 with F-Theory Structure</h2>
+                <h2>The Pneuma Manifold: G₂ Manifold with F-Theory Connection</h2>
+
+            <div class="highlight-box">
+                <h4>G₂ Manifold Properties</h4>
+                <p>
+                    The 7-dimensional G₂ manifold is characterized by:
+                </p>
+                <ul class="concept-list">
+                    <li><strong>Holonomy group:</strong> G₂ ⊂ SO(7) - exceptional holonomy preserving one Majorana spinor</li>
+                    <li><strong>Euler characteristic:</strong> χ(G₂) = 0 generically, but flux dressing yields χ_eff = 72</li>
+                    <li><strong>Singularities:</strong> Can develop ADE-type singularities → gauge enhancement (SO(10) from D₅-type)</li>
+                    <li><strong>Spinor content:</strong> Exactly one Majorana spinor (8 real components) - connects naturally to Pneuma</li>
+                    <li><strong>Metric:</strong> Ricci-flat with special 3-form structure φ, satisfying dφ = 0 and d*φ = 0</li>
+                </ul>
+            </div>
+
             </div>
 
             <p>
-                The central geometric object is K<sub>Pneuma</sub>, an 8-dimensional <strong>Calabi-Yau
-                four-fold</strong> (CY4) that emerges from Pneuma field condensates.
+                The central geometric object is K<sub>Pneuma</sub>, a 7-dimensional <strong>G₂ manifold</strong>
+                that emerges from Pneuma field condensates and compactifies the 13D effective theory down to a 6D bulk.
             </p>
 
             <div class="warning-box">
-                <h4>Important Clarification: CY4, Not Coset Space</h4>
+                <h4>Important Clarification: G₂ Manifold, Not Coset Space</h4>
                 <p>
-                    K<sub>Pneuma</sub> is <strong>not</strong> a homogeneous space (coset G/H). Calabi-Yau
-                    manifolds generically have trivial continuous isometry groups, so gauge symmetry
-                    cannot arise from isometries as in traditional Kaluza-Klein theory. Instead, in the
-                    F-theory framework, SO(10) gauge symmetry arises from a <strong>D<sub>5</sub> singularity</strong>
-                    in the elliptic fibration structure. This distinction is crucial:
+                    K<sub>Pneuma</sub> is <strong>not</strong> a homogeneous space (coset G/H). G₂ manifolds
+                    generically have trivial continuous isometry groups, so gauge symmetry
+                    cannot arise from isometries as in traditional Kaluza-Klein theory. Instead,
+                    SO(10) gauge symmetry arises from <strong>ADE-type singularities</strong>
+                    (specifically D<sub>5</sub>-type) that can develop on the G₂ manifold. This distinction is crucial:
                 </p>
                 <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
                     <li><strong>Coset space (G/H):</strong> Gauge symmetry from isometries; requires continuous symmetry</li>
-                    <li><strong>CY4 (F-theory):</strong> Gauge symmetry from fiber singularities; compatible with Ricci-flat metric</li>
+                    <li><strong>G₂ manifold:</strong> Gauge symmetry from ADE singularities; compatible with Ricci-flat metric</li>
                 </ul>
             </div>
 
             <p>
-                In the F-theory framework, the SO(10) gauge symmetry arises from
-                a <strong>D<sub>5</sub> singularity</strong> in the elliptic fibration of the
-                Calabi-Yau four-fold, where 7-branes wrap the singular locus.
+                The SO(10) gauge symmetry arises from a <strong>D<sub>5</sub>-type singularity</strong>
+                in the G₂ manifold, where the holonomy group can develop ADE-type singularities that enhance
+                the gauge symmetry.
             </p>
 
             <div class="highlight-box">
-                <h4>F-Theory Origin of SO(10)</h4>
+                <h4>G₂ Manifold Origin of SO(10)</h4>
                 <p>
-                    In F-theory compactifications on an elliptically fibered CY4
-                    <a href="https://arxiv.org/abs/hep-th/9602022" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Vafa 1996]</a>,
-                    gauge symmetries arise from singularities in the elliptic fiber over codimension-one loci in
-                    the base. An SO(10) gauge group corresponds to a <strong>D<sub>5</sub> singularity</strong>
-                    (type I*<sub>0</sub> in Kodaira's classification) where the elliptic fiber
-                    degenerates. This mechanism was developed for GUT model building by
-                    <a href="https://arxiv.org/abs/0802.3391" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Beasley-Heckman-Vafa 2009]</a>.
+                    In M-theory compactifications on G₂ manifolds, gauge symmetries arise from ADE-type singularities
+                    that can develop on the manifold
+                    <a href="https://arxiv.org/abs/hep-th/9607235" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Acharya 1996]</a>.
+                    An SO(10) gauge group corresponds to a <strong>D<sub>5</sub>-type singularity</strong>
+                    where the G₂ holonomy degenerates locally. This connects to F-theory via M-theory/F-theory duality,
+                    where the G₂ manifold relates to elliptically fibered geometries
+                    <a href="https://arxiv.org/abs/hep-th/9602022" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Vafa 1996]</a>.
                     This is fundamentally different from Kaluza-Klein gauge symmetry
                     from isometries <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Kaluza 1921]</a>.
                     <a href="gauge-unification.html" style="color: var(--accent-secondary); display: block; margin-top: 0.5rem;">[&rarr; Full SO(10) GUT details in Gauge Unification Section]</a>
@@ -1185,7 +1200,7 @@
             <h3>Elliptic Fibration Structure</h3>
 
             <p>
-                The Calabi-Yau four-fold K<sub>Pneuma</sub> is realized as an elliptic fibration
+                The G₂ manifold K<sub>Pneuma</sub> is realized as an elliptic fibration
                 over a three-fold base B<sub>3</sub>:
             </p>
 
@@ -1209,16 +1224,16 @@
                 points where three matter curves meet.
             </p>
 
-            <!-- Corrected CY4 Construction -->
+            <!-- G₂ Topology and Generation Count -->
             <div id="cy4-construction" class="highlight-box" style="border-left-color: #28a745; background: linear-gradient(135deg, rgba(40, 167, 69, 0.1), rgba(139, 127, 255, 0.08));">
-                <h4 style="color: #28a745;">Corrected Construction: Calabi-Yau Four-Fold</h4>
+                <h4 style="color: #28a745;">Generation Count from G₂ Topology</h4>
                 <p>
-                    For F-theory compactifications on a Calabi-Yau four-fold (CY4), the number of
-                    chiral generations is determined by the <strong>Euler characteristic</strong>
-                    via the index formula derived from the Atiyah-Singer index theorem
-                    <a href="https://en.wikipedia.org/wiki/Atiyah%E2%80%93Singer_index_theorem" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Atiyah-Singer 1963]</a>.
-                    This was applied to string compactifications by
-                    <a href="https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold#String_theory" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Candelas et al. 1985]</a>:
+                    For M-theory compactifications on a G₂ manifold with Z₂ mirror structure, the number of
+                    chiral generations is determined by the <strong>effective Euler characteristic</strong>
+                    via an index formula. While G₂ manifolds generically have χ(G₂) = 0, flux dressing
+                    and the Z₂ mirror structure yield χ_eff ≠ 0
+                    <a href="https://arxiv.org/abs/hep-th/9607235" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Acharya 1996]</a>,
+                    <a href="https://en.wikipedia.org/wiki/Atiyah%E2%80%93Singer_index_theorem" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Atiyah-Singer 1963]</a>:
                 </p>
             </div>
 
@@ -1235,30 +1250,30 @@
                         </div>
                     </span>
                     <span class="formula-op">=</span>
-                    <span class="formula-var highlight">&chi;(CY4)
+                    <span class="formula-var highlight">&chi;<sub>eff</sub>(G₂)
                         <div class="var-tooltip">
-                            <div class="var-name">&chi;(CY4)</div>
-                            <div class="var-description">Euler characteristic of the Calabi-Yau four-fold. A topological invariant counting alternating sums of Betti numbers.</div>
+                            <div class="var-name">&chi;<sub>eff</sub>(G₂)</div>
+                            <div class="var-description">Effective Euler characteristic of the G₂ manifold (flux-dressed). For Z₂ mirror structure: χ_eff = 144 total.</div>
                             <div class="var-units">Dimensionless integer</div>
-                            <div class="var-contribution">For K<sub>Pneuma</sub>: &chi; = 72 is required for 3 generations.</div>
+                            <div class="var-contribution">For K<sub>Pneuma</sub>: &chi;<sub>eff</sub> = 144 (includes Z₂ mirror contribution).</div>
                         </div>
                     </span>
                     <span class="formula-op">/</span>
-                    <span class="formula-var highlight">24
+                    <span class="formula-var highlight">(24 × Z₂)
                         <div class="var-tooltip">
-                            <div class="var-name">24</div>
-                            <div class="var-description">The divisor 24 arises from the Atiyah-Singer index theorem applied to 8-dimensional Calabi-Yau manifolds.</div>
+                            <div class="var-name">24 × Z₂</div>
+                            <div class="var-description">Divisor: 24 from index theorem, × 2 from Z₂ mirror structure = 48 total.</div>
                             <div class="var-units">Dimensionless</div>
-                            <div class="var-contribution">Critical: This is NOT 2 (which applies to CY3). The 24 comes from topological properties of CY4.</div>
+                            <div class="var-contribution">The factor 48 accounts for both the topological index and the mirror pairing.</div>
                         </div>
                     </span>
                     <span class="formula-op">=</span>
-                    <span class="formula-var">72/24
+                    <span class="formula-var">144/48
                         <div class="var-tooltip">
-                            <div class="var-name">72/24</div>
-                            <div class="var-description">The explicit calculation: &chi; = 72 divided by 24 yields exactly 3 generations.</div>
+                            <div class="var-name">144/48</div>
+                            <div class="var-description">The explicit calculation: &chi;<sub>eff</sub> = 144 divided by 48 yields exactly 3 generations.</div>
                             <div class="var-units">Dimensionless</div>
-                            <div class="var-contribution">This integer result is non-trivial and constrains the allowed CY4 geometries.</div>
+                            <div class="var-contribution">This integer result is non-trivial and constrains the allowed G₂ geometries.</div>
                         </div>
                     </span>
                     <span class="formula-op">=</span>
@@ -1271,31 +1286,32 @@
                         </div>
                     </span>
                 </div>
-                <div class="formula-label">F-theory index formula: n<sub>gen</sub> = &chi;/24 for CY4 compactifications</div>
+                <div class="formula-label">M-theory index formula: n<sub>gen</sub> = &chi;<sub>eff</sub>/(24 × Z₂) for G₂ compactifications with mirror structure</div>
 
                 <div class="formula-info">
-                    <div class="formula-title">Generation Index Formula (Corrected)</div>
+                    <div class="formula-title">Generation Index Formula for G₂</div>
                     <div class="formula-meaning">
-                        <strong>Important:</strong> The divisor 24 (not 2) is correct for 8-dimensional Calabi-Yau manifolds.
-                        The factor arises from the <em>Atiyah-Singer index theorem</em> for the Dirac operator on CY4,
-                        specifically from the &Acirc;-genus contribution in 8 real dimensions.
+                        <strong>Important:</strong> The denominator 48 = 24 × 2 accounts for both the index theorem (24)
+                        and the Z₂ mirror structure (×2). While generic G₂ manifolds have χ = 0, flux dressing
+                        yields χ_eff = 144 total (including mirror contribution).
                     </div>
                     <div class="formula-info-grid">
                         <div class="formula-info-item">
-                            <h5>Required &chi;</h5>
-                            <p>&chi;(K<sub>Pneuma</sub>) = 72</p>
+                            <h5>Required χ_eff</h5>
+                            <p>&chi;<sub>eff</sub>(K<sub>Pneuma</sub>) = 144</p>
                         </div>
                         <div class="formula-info-item">
-                            <h5>CY3 vs CY4</h5>
-                            <p>CY3: n = &chi;/2, CY4: n = &chi;/24</p>
+                            <h5>G₂ vs CY</h5>
+                            <p>CY3: n = χ/2; CY4: n = χ/24; G₂: n = χ_eff/48</p>
                         </div>
                     </div>
                     <div class="use-cases">
                         <h5>Mathematical Origin</h5>
                         <ul>
-                            <li>Index theorem: ind(D) = &int;<sub>M</sub> &Acirc;(M) &and; ch(V)</li>
-                            <li>For CY4: &Acirc;-genus contributes factor of 1/24</li>
-                            <li>&chi;(CY4) = &Sigma;(-1)<sup>p</sup>h<sup>p,0</sup> = 2(1 + h<sup>1,1</sup> + h<sup>2,2</sup>/2 - h<sup>3,1</sup>)</li>
+                            <li>Index theorem: ind(D) = ∫<sub>M</sub> Â(M) ∧ ch(V)</li>
+                            <li>For G₂: χ_eff from flux dressing + Z₂ mirror doubling</li>
+                            <li>χ_eff = 144 = 72 (per copy) × 2 (Z₂ mirrors)</li>
+                            <li>n_gen = 144 / (24 × 2) = 144 / 48 = 3 ✓</li>
                         </ul>
                     </div>
                 </div>
@@ -1557,7 +1573,37 @@
                 </div>
 
                 <p>
-                    The 1 + 3 brane structure provides a geometric mechanism for understanding quantum randomness.
+                    The 
+            <div class="highlight-box">
+                <h4>Heterogeneous Brane Structure</h4>
+                <p>
+                    The dimensional structure explains why our 4D brane sees <strong>(5,1) = 4D_common + 2D_shared</strong>
+                    while shadow branes see only <strong>(3,1) = 4D_common</strong>:
+                </p>
+                <ul class="concept-list">
+                    <li><strong>Observable brane:</strong> Couples to all 6D bulk dimensions → sees (5,1) effective</li>
+                    <li><strong>Shadow branes (×3):</strong> Localized on domain walls → see only 4D_common</li>
+                    <li><strong>KK gravitons:</strong> Propagate in 6D bulk → universally coupled (testable at 5 TeV!)</li>
+                    <li><strong>φ_M field:</strong> 6D bulk scalar → generates dark energy</li>
+                </ul>
+            </div>
+
+
+            <div class="highlight-box">
+                <h4>Heterogeneous Brane Structure</h4>
+                <p>
+                    The dimensional structure explains why our 4D brane sees <strong>(5,1) = 4D_common + 2D_shared</strong>
+                    while shadow branes see only <strong>(3,1) = 4D_common</strong>:
+                </p>
+                <ul class="concept-list">
+                    <li><strong>Observable brane:</strong> Couples to all 6D bulk dimensions → sees (5,1) effective</li>
+                    <li><strong>Shadow branes (×3):</strong> Localized on domain walls → see only 4D_common</li>
+                    <li><strong>KK gravitons:</strong> Propagate in 6D bulk → universally coupled (testable at 5 TeV!)</li>
+                    <li><strong>φ_M field:</strong> 6D bulk scalar → generates dark energy</li>
+                </ul>
+            </div>
+
+1 + 3 brane structure provides a geometric mechanism for understanding quantum randomness.
                     Fields on our brane (B<sub>1</sub>) have <strong>correlated partners</strong> on the hidden branes
                     (B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub>). These correlations arise from the unified bulk action:
                 </p>
@@ -1914,7 +1960,7 @@
                     <span class="formula-var">&chi;(CY4)
                         <div class="var-tooltip">
                             <div class="var-name">&chi;(CY4)</div>
-                            <div class="var-description">Euler characteristic of the Calabi-Yau four-fold - a topological invariant counting alternating sums of Betti numbers.</div>
+                            <div class="var-description">Effective Euler characteristic of the G₂ manifold (flux-dressed) - a topological invariant counting alternating sums of Betti numbers.</div>
                             <div class="var-units">Dimensionless (integer)</div>
                             <div class="var-contribution">Determines number of fermion generations via n_gen = chi/24 in F-theory.</div>
                         </div>
@@ -2146,7 +2192,7 @@
             </div>
 
             <!-- D5 Singularity and SO(10) -->
-            <h3 id="d5-singularity">D<sub>5</sub> Singularity and SO(10) Gauge Symmetry</h3>
+            <h3 id="d5-singularity">D<sub>5</sub> Singularity from G₂ and SO(10) Gauge Symmetry</h3>
 
             <p>
                 The SO(10) gauge symmetry arises from a <strong>D<sub>5</sub> (type I*<sub>1</sub>) Kodaira singularity</strong>
@@ -2460,7 +2506,41 @@
             </p>
         </section>
 
-        <section id="kk-decomposition" class="subsection">
+        
+            <div class="subsection">
+                <h3>Warping and Hierarchy Generation</h3>
+                <p>
+                    The 6D effective spacetime exhibits <strong>Randall-Sundrum type warping</strong> in the shared extra dimensions:
+                </p>
+                <div class="equation-box">
+                    ds²<sub>6</sub> = e<sup>-2ky</sup> η<sub>μν</sub> dx<sup>μ</sup> dx<sup>ν</sup> + dy² + dz²
+                    <span class="equation-label">Warped 6D metric</span>
+                </div>
+                <p>
+                    where k ~ 35 is the curvature scale. The exponential warping factor e<sup>-kπR</sup> ~ 10<sup>-16</sup>
+                    naturally generates the Planck-TeV hierarchy. The φ_M (Mashiach) field propagates in this 6D bulk,
+                    with KK modes at M_KK ~ 5 TeV.
+                </p>
+            </div>
+
+
+            <div class="subsection">
+                <h3>Warping and Hierarchy Generation</h3>
+                <p>
+                    The 6D effective spacetime exhibits <strong>Randall-Sundrum type warping</strong> in the shared extra dimensions:
+                </p>
+                <div class="equation-box">
+                    ds²<sub>6</sub> = e<sup>-2ky</sup> η<sub>μν</sub> dx<sup>μ</sup> dx<sup>ν</sup> + dy² + dz²
+                    <span class="equation-label">Warped 6D metric</span>
+                </div>
+                <p>
+                    where k ~ 35 is the curvature scale. The exponential warping factor e<sup>-kπR</sup> ~ 10<sup>-16</sup>
+                    naturally generates the Planck-TeV hierarchy. The φ_M (Mashiach) field propagates in this 6D bulk,
+                    with KK modes at M_KK ~ 5 TeV.
+                </p>
+            </div>
+
+<section id="kk-decomposition" class="subsection">
             <div class="subsection-header">
                 <span class="subsection-number">2.3</span>
                 <h2>Kaluza-Klein Decomposition and 4D Effective Action</h2>

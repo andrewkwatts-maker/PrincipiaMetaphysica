@@ -37,7 +37,7 @@
             <p>
                 The Kaluza-Klein mechanism demonstrates how gauge forces can emerge from the geometry
                 of extra spatial dimensions. This established framework forms the foundation for
-                Principia Metaphysica's 13-dimensional unification.
+                Principia Metaphysica's dimensional reduction: 13D &rarr; 6D &rarr; 4D.
             </p>
         </div>
 
@@ -213,13 +213,191 @@
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
                 <h4 style="color: #8b7fff;">PM Application</h4>
                 <p style="color: var(--text-secondary);">
-                    Principia Metaphysica uses an 8-dimensional compact manifold K<sub>Pneuma</sub> (a Calabi-Yau fourfold)
-                    to achieve SO(10) unification. The larger dimension count allows the full Standard Model gauge group
-                    to emerge geometrically.
+                    Principia Metaphysica uses a multi-stage compactification:
                 </p>
-                <a href="../sections/geometric-framework.html" class="component-link" style="display: inline-block; margin-top: 0.75rem;">
-                    See K<sub>Pneuma</sub> geometry &rarr;
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li><strong>13D &rarr; 6D:</strong> Compactify on 7D G<sub>2</sub> manifold for SO(10) gauge symmetry</li>
+                    <li><strong>6D &rarr; 4D:</strong> Compactify shared extra dimensions (T<sup>2</sup>) at ~5 TeV scale</li>
+                </ul>
+                <a href="g2-manifolds.html" class="component-link" style="display: inline-block; margin-top: 0.75rem;">
+                    See G<sub>2</sub> manifolds &rarr;
                 </a>
+            </div>
+        </section>
+
+        <!-- Shared Extra Dimensions: T^2 Compactification -->
+        <section class="detail-section">
+            <h3>Shared Extra Dimensions: T<sup>2</sup> Compactification</h3>
+            <p>
+                Beyond the original 5D Kaluza-Klein theory, modern frameworks use multiple compact dimensions.
+                In Principia Metaphysica, after compactifying from 13D to 6D on a G<sub>2</sub> manifold,
+                two additional "shared" extra dimensions form a 2-torus T<sup>2</sup> = S<sup>1</sup> &times; S<sup>1</sup>.
+            </p>
+
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        ds<sup>2</sup><sub>6D</sub> = g<sub>&mu;&nu;</sub>(x)dx<sup>&mu;</sup>dx<sup>&nu;</sup> + R<sub>y</sub><sup>2</sup>dy<sup>2</sup> + R<sub>z</sub><sup>2</sup>dz<sup>2</sup>
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">Established</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
+                            <div class="component-name">4D Effective Metric</div>
+                            <div class="component-desc">The metric of observable 4D spacetime after compactification</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">R<sub>y</sub>, R<sub>z</sub></div>
+                            <div class="component-name">Torus Radii</div>
+                            <div class="component-desc">Sizes of the two compact circles forming the 2-torus. In PM: R<sub>y</sub> = R<sub>z</sub> ~ (5 TeV)<sup>-1</sup></div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">T<sup>2</sup></div>
+                            <div class="component-name">2-Torus</div>
+                            <div class="component-desc">Product of two circles: y ~ y + 2&pi;R<sub>y</sub>, z ~ z + 2&pi;R<sub>z</sub></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h4 style="margin-top: 2rem;">Kaluza-Klein Tower on T<sup>2</sup></h4>
+            <p>
+                Fields on the 2-torus can be expanded in Fourier modes. From the 4D perspective,
+                these modes appear as a tower of massive states:
+            </p>
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        m<sub>n,m</sub><sup>2</sup> = (n/R<sub>y</sub>)<sup>2</sup> + (m/R<sub>z</sub>)<sup>2</sup>
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">KK Tower</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">n, m</div>
+                            <div class="component-name">Mode Numbers</div>
+                            <div class="component-desc">Integer quantum numbers labeling momentum in the compact directions (n, m &isin; &Zopf;)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">m<sub>n,m</sub></div>
+                            <div class="component-name">KK Mode Mass</div>
+                            <div class="component-desc">Mass of the (n,m)-th Kaluza-Klein excitation in 4D</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">M<sub>KK</sub> = 1/R</div>
+                            <div class="component-name">Lightest KK Mode</div>
+                            <div class="component-desc">For equal radii R<sub>y</sub> = R<sub>z</sub> = R, the lightest excited state has mass M<sub>KK</sub> = 1/R ~ 5 TeV in PM</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Example KK Spectrum (R ~ (5 TeV)<sup>-1</sup>)</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            (0,0) mode: m = 0 (Standard Model fields)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            (1,0), (0,1) modes: m ~ 5 TeV (First KK excitations)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            (1,1) mode: m ~ 7 TeV (Diagonal excitation)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Higher modes: m ~ n &middot; 5 TeV (Future collider physics)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">Experimental Signature</h4>
+                <p style="color: var(--text-secondary);">
+                    If the shared extra dimensions have size R ~ (5 TeV)<sup>-1</sup>, the first KK excitations
+                    would be detectable at future colliders beyond the LHC. These would appear as copies of
+                    Standard Model particles with masses &gt; 5 TeV, providing direct evidence for extra dimensions.
+                </p>
+            </div>
+        </section>
+
+        <!-- Warped Extra Dimensions -->
+        <section class="detail-section">
+            <h3>Warped Extra Dimensions: Randall-Sundrum Mechanism</h3>
+            <p>
+                An alternative to flat compact dimensions is <strong>warping</strong>, where the metric
+                varies exponentially in the extra dimension. This generates mass hierarchies without fine-tuning.
+            </p>
+
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        ds<sup>2</sup> = e<sup>-2ky</sup>&eta;<sub>&mu;&nu;</sub>dx<sup>&mu;</sup>dx<sup>&nu;</sup> + dy<sup>2</sup>
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">Randall-Sundrum (1999)</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">k</div>
+                            <div class="component-name">Warp Factor</div>
+                            <div class="component-desc">AdS curvature scale, typically k ~ M<sub>Pl</sub> ~ 10<sup>19</sup> GeV</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">y</div>
+                            <div class="component-name">Extra Dimension</div>
+                            <div class="component-desc">Coordinate along the warped dimension, 0 &le; y &le; L</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">e<sup>-2ky</sup></div>
+                            <div class="component-name">Warp Factor</div>
+                            <div class="component-desc">Exponential suppression generates hierarchy: physics at y = L is redshifted by e<sup>-kL</sup></div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Hierarchy Generation</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Planck brane (y=0): M<sub>Pl</sub> ~ 10<sup>19</sup> GeV
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            TeV brane (y=L): M<sub>eff</sub> = M<sub>Pl</sub> e<sup>-kL</sup> ~ TeV
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            With kL ~ 35, hierarchy M<sub>Pl</sub>/M<sub>TeV</sub> ~ 10<sup>16</sup> explained!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                The Randall-Sundrum mechanism solves the <strong>hierarchy problem</strong>: why is gravity
+                so much weaker than other forces? If Standard Model fields are localized near y = L,
+                they naturally have TeV-scale masses, while gravity propagates in all dimensions and appears
+                weak at the TeV brane.
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">Connection to PM</h4>
+                <p style="color: var(--text-secondary);">
+                    While PM's shared dimensions (T<sup>2</sup>) are flat with R ~ (5 TeV)<sup>-1</sup>,
+                    the internal G<sub>2</sub> manifold may incorporate warping or flux-induced effective
+                    warping to stabilize moduli and generate hierarchies within the SO(10) breaking pattern.
+                </p>
             </div>
         </section>
 
@@ -231,6 +409,8 @@
                 <li><strong>1921:</strong> Paper finally published after Einstein's endorsement</li>
                 <li><strong>1926:</strong> Klein proposes compact fifth dimension with radius R ~ 10<sup>-33</sup> cm</li>
                 <li><strong>1980s:</strong> Revival in context of string theory and supergravity</li>
+                <li><strong>1998:</strong> Arkani-Hamed, Dimopoulos, Dvali propose Large Extra Dimensions</li>
+                <li><strong>1999:</strong> Randall-Sundrum introduce warped extra dimensions</li>
                 <li><strong>Today:</strong> Foundation for all higher-dimensional unification attempts</li>
             </ul>
         </section>
@@ -268,9 +448,9 @@
                 <span class="direction">&larr; Previous</span>
                 <span class="title">Einstein-Hilbert Action</span>
             </a>
-            <a href="calabi-yau.html" class="nav-link" style="text-align: right;">
+            <a href="g2-manifolds.html" class="nav-link" style="text-align: right;">
                 <span class="direction">Next &rarr;</span>
-                <span class="title">Calabi-Yau Manifolds</span>
+                <span class="title">G<sub>2</sub> Manifolds</span>
             </a>
         </div>
     </main>
