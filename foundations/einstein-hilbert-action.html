@@ -191,15 +191,100 @@
                 </div>
             </div>
 
-            <h3>Dimensional Reduction</h3>
+            <h3>Dimensional Reduction: 13D → 6D → 4D</h3>
             <p>
-                Upon compactification over the 8-dimensional internal manifold K<sub>Pneuma</sub>, the 13D action
-                reduces to 4D Einstein gravity with the Planck mass emerging as:
+                The Principia Metaphysica framework employs a two-stage compactification:
+            </p>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 1: 13D → 6D (G₂ Compactification)</h4>
+            <p>
+                Compactify on a 7-dimensional G₂ manifold M⁷, reducing to 6D effective theory:
             </p>
             <div class="equation-box">
-                M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &sdot; V<sub>8</sub>
-                <span class="equation-label">4D Planck mass from extra dimensions</span>
+                S<sub>13D</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R<sub>13</sub>
+                &nbsp;&rarr;&nbsp;
+                S<sub>6D</sub> = M<sub>6</sub><sup>4</sup> &int; d<sup>6</sup>x &radic;|g<sub>6</sub>| R<sub>6</sub>
+                <span class="equation-label">M<sub>6</sub><sup>4</sup> = M<sub>*</sub><sup>11</sup> &sdot; Vol(M⁷)</span>
             </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                The G₂ holonomy ensures N=1 supersymmetry is preserved and yields SO(10) gauge symmetry
+                from singularities in M⁷.
+            </p>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 2: 6D → 4D (Shared Dimensions)</h4>
+            <p>
+                Compactify the remaining two shared extra dimensions on a 2-torus T² at the ~5 TeV scale:
+            </p>
+            <div class="equation-box">
+                S<sub>6D</sub> = M<sub>6</sub><sup>4</sup> &int; d<sup>6</sup>x &radic;|g<sub>6</sub>| R<sub>6</sub>
+                &nbsp;&rarr;&nbsp;
+                S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> &int; d<sup>4</sup>x &radic;|g| R
+                <span class="equation-label">M<sub>Pl</sub><sup>2</sup> = M<sub>6</sub><sup>4</sup> &sdot; Vol(T²) &sdot; &int; dy e<sup>-2ky</sup> (if warped)</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                The 4D Planck mass M<sub>Pl</sub> ~ 10<sup>19</sup> GeV emerges from the product of the
+                fundamental scale M<sub>*</sub>, the volume of the G₂ manifold, and the volume of the shared T².
+                If warping is present, an additional warp factor suppresses the effective scale.
+            </p>
+
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h4>Scale Hierarchy</h4>
+                <p>
+                    The two-stage compactification naturally generates a hierarchy of scales:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li><strong>M<sub>*</sub> ~ M<sub>Pl</sub>:</strong> Fundamental 13D scale (Planck scale)</li>
+                    <li><strong>1/R<sub>G₂</sub> ~ M<sub>GUT</sub>:</strong> G₂ compactification scale (~10<sup>16</sup> GeV)</li>
+                    <li><strong>1/R<sub>T²</sub> ~ 5 TeV:</strong> Shared dimension scale (accessible at future colliders)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Comparison Table -->
+        <section class="subsection">
+            <h2>Dimensional Reduction: Path Comparison</h2>
+            <table class="breaking-table">
+                <thead>
+                    <tr>
+                        <th>Framework</th>
+                        <th>Starting Dim</th>
+                        <th>Internal Geometry</th>
+                        <th>Final Dim</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Original KK</strong></td>
+                        <td>5D</td>
+                        <td>S¹ (circle)</td>
+                        <td>4D + U(1)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Heterotic String</strong></td>
+                        <td>10D</td>
+                        <td>CY3 (6D Calabi-Yau)</td>
+                        <td>4D + gauge</td>
+                    </tr>
+                    <tr>
+                        <td><strong>F-Theory</strong></td>
+                        <td>12D</td>
+                        <td>CY4 (8D elliptic)</td>
+                        <td>4D + gauge</td>
+                    </tr>
+                    <tr>
+                        <td><strong>M-Theory (standard)</strong></td>
+                        <td>11D</td>
+                        <td>G₂ (7D)</td>
+                        <td>4D</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.1);">
+                        <td><strong>Principia Metaphysica</strong></td>
+                        <td>13D</td>
+                        <td>G₂ (7D) + T² (2D)</td>
+                        <td>4D (via 6D)</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
 
         <!-- References -->

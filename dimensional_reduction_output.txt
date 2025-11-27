@@ -1,0 +1,203 @@
+
+
+################################################################################
+# DIMENSIONAL REDUCTION VERIFICATION
+# Principia Metaphysica v6.1 - Computational Analysis
+################################################################################
+
+
+
+### PART 1: DIMENSIONAL REDUCTION PATHWAY ###
+
+
+
+################################################################################
+# COMPLETE DIMENSIONAL REDUCTION VERIFICATION
+# Principia Metaphysica v6.1
+################################################################################
+
+
+================================================================================
+STEP 0: BOSONIC STRING CRITICAL DIMENSION
+================================================================================
+
+Bosonic string requires D=26 for Virasoro central charge c=26.
+
+Standard signature: (25,1) - 25 space, 1 time
+Multi-time signature: (24,2) - 24 space, 2 time (t_parallel, t_perp)
+
+We use multi-time signature (24,2).
+
+Initial state: 26D Bosonic String: 26D with signature (24,2)
+Signature: (+ + + + + + + + + + + + + + + + + + + + + + + + - -)
+
+================================================================================
+STEP 1: Sp(2,R) GAUGE REDUCTION
+================================================================================
+
+Input: 26D Bosonic String: 26D with signature (24,2)
+
+INTERPRETATION OF 'Sp(2,R) gauge':
+  - Sp(2,R) has dimension 3 (gauge group)
+  - Gauging alone does NOT change spacetime dimensions
+  - The 26D -> 13D is actually COMPACTIFICATION
+
+DIMENSIONAL REDUCTION:
+  - Must compactify 26 - 13 = 13 dimensions
+  - To get signature (12,1) in 13D:
+    -> Compactify 12 spacelike + 1 timelike
+
+COMPACTIFICATION BREAKDOWN:
+  Start: (24, 2) = 26D
+  Compactify: 12 space + 1 time = 13 dimensions
+  Remaining: (12, 1) = (12, 1) = 13D
+
+CRITICAL INSIGHT: The orthogonal time t__perp is COMPACTIFIED, not observed!
+
+Result: 13D After Sp(2,R): 13D with signature (12,1)
+Signature: (+ + + + + + + + + + + + -)
+
+OK Dimension count verified: 13D = 12 space + 1 time
+
+================================================================================
+STEP 2: CALABI-YAU 4-FOLD (CY4) COMPACTIFICATION
+================================================================================
+
+Input: 13D After Sp(2,R): 13D with signature (12,1)
+
+CY4 MANIFOLD:
+  - Complex dimension: 4
+  - Real dimension: 8
+  - Topology: Compact, Ricci-flat, Kähler
+  - Hodge numbers: h^{1,1}=4, h^{2,1}=0, h^{3,1}=72
+
+DIMENSIONAL REDUCTION:
+  Start: 13D = (12, 1)
+  Compactify: 8 spatial dimensions on CY4
+  Remaining: (12 - 8, 1) = (4, 1)
+
+Result: After CY4 Compactification: 5D with signature (4,1)
+Signature: (+ + + + -)
+
+X DISCREPANCY: Expected 4D, obtained 5D
+  Missing dimensions: 1
+
+POSSIBLE RESOLUTIONS:
+  1. Brane localization: Matter on D3-brane (4D worldvolume)
+  2. Warped dimension: 5th dimension with warp factor -> effective 4D
+  3. Orbifold projection: Z_2 projects out 1 dimension
+  4. Counting error: One dimension double-counted earlier
+
+================================================================================
+STEP 3: BRANE LOCALIZATION
+================================================================================
+
+Input (bulk): After CY4 Compactification: 5D with signature (4,1)
+
+BRANE-WORLD SCENARIO:
+  - Universe is a D3-brane in 5D bulk
+  - D3-brane has 4D worldvolume: (3+1)D spacetime
+  - Gravity propagates in 5D bulk
+  - SM matter confined to 4D brane
+
+DIMENSIONAL BREAKDOWN:
+  Bulk spacetime: 5D = (4, 1)
+  Brane worldvolume: 4D = (3, 1)
+  Extra dimension: 1D orthogonal to brane
+
+Bulk: After CY4 Compactification: 5D with signature (4,1)
+Brane: D3-Brane Worldvolume (Observable): 4D with signature (3,1)
+
+OBSERVATIONAL CONSEQUENCE:
+  - Observers on brane (us) measure 4D spacetime OK
+  - Gravitational effects probe 5D bulk (detectable via GW dispersion)
+  - KK modes of graviton at mass scale M_KK ~ 1/R_extra
+
+
+### PART 2: EXPLICIT METRIC CONSTRUCTION ###
+
+================================================================================
+METRIC CONSTRUCTION: 26D SPACETIME
+================================================================================
+
+Coordinates: 26 dimensions
+  Timelike: t__parallel, t__perp
+  Spacelike: x^1, x^2, ..., x^2^4
+
+Metric tensor g_muv (diagonal form):
+  g_00 = -1 (t_parallel)
+  g_11 = -1 (t_perp)
+  g_ii = +1 for i=2,...,25 (spatial)
+
+Line element:
+  ds^2 = -dt_parallel^2 - dt_perp^2 + Sum_i=1^24 (dx^i)^2
+
+Signature: (24, 2) OK
+
+================================================================================
+METRIC CONSTRUCTION: 13D SPACETIME
+================================================================================
+
+Coordinates: 13 dimensions
+  Timelike: t (parallel time, t_parallel)
+  Spacelike: x1, x2, ..., x12
+  Compactified: t_perp (orthogonal time, on circle S1)
+
+Metric tensor g_muv (diagonal form):
+  g_00 = -1 (t)
+  g_ii = +1 for i=1,...,12 (spatial)
+
+Line element:
+  ds^2 = -dt^2 + Sum_i=1^12 (dx^i)^2
+
+Compactified dimension:
+  t_perp in S1 with radius R_perp ~ TeV^-1
+  KK modes: m_n = n/R__perp
+
+Signature: (12, 1) OK
+
+================================================================================
+METRIC CONSTRUCTION: 4D SPACETIME (OBSERVABLE)
+================================================================================
+
+Coordinates: 4 dimensions
+  Timelike: t
+  Spacelike: x, y, z
+
+Metric tensor g_muv (Minkowski, diagonal form):
+  g_00 = -1 (t)
+  g_11 = 1 (x)
+  g_22 = 1 (y)
+  g_33 = 1 (z)
+
+Line element:
+  ds^2 = -dt^2 + dx^2 + dy^2 + dz^2
+
+Signature: (3, 1) OK
+
+
+### PART 3: PHYSICAL PARAMETER VALIDATION ###
+
+================================================================================
+4D PLANCK MASS FROM DIMENSIONAL REDUCTION
+================================================================================
+
+INPUT PARAMETERS:
+  M_Pl (4D, observed): 1.22e+19 GeV
+  M_* (13D, fundamental): 1.00e+19 GeV
+  R_CY4: 1.00e-16 cm ~ 1.97e+02 GeV
+  R__perp: 1.00e-16 cm ~ 1.97e+02 GeV
+
+VOLUME FACTORS:
+Traceback (most recent call last):
+  File "H:\Github\PrincipiaMetaphysica\dimensional_reduction_verification.py", line 910, in <module>
+    results = main()
+  File "H:\Github\PrincipiaMetaphysica\dimensional_reduction_verification.py", line 850, in main
+    planck_results = compute_planck_mass_relation()
+  File "H:\Github\PrincipiaMetaphysica\dimensional_reduction_verification.py", line 610, in compute_planck_mass_relation
+    print(f"  Vol(CY4) ~ R^8: {Vol_CY4:.2e} GeV^-\u2078")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u2078' in position 32: character maps to <undefined>

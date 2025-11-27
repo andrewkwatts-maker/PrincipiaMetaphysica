@@ -201,6 +201,168 @@
             </ul>
         </section>
 
+        <!-- Higher-Dimensional Dirac Equation -->
+        <section class="subsection">
+            <h2>Dirac Equation in Higher Dimensions</h2>
+            <p>
+                The Dirac equation generalizes naturally to any spacetime dimension D with signature (D-1, 1).
+                The key is to find a representation of the Clifford algebra Cl(D-1, 1).
+            </p>
+
+            <h3>6D Dirac Equation (Intermediate Stage)</h3>
+            <p>
+                After compactifying from 13D to 6D on the G₂ manifold, the effective theory in 6D
+                contains a Dirac equation with Cl(5,1) gamma matrices:
+            </p>
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        (i&Gamma;<sup>M</sup>&part;<sub>M</sub> - m)&Psi; = 0 &nbsp;&nbsp;&nbsp; (M = 0,1,2,3,5,6)
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge derived">6D Effective</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">&Gamma;<sup>M</sup></div>
+                            <div class="component-name">6D Gamma Matrices</div>
+                            <div class="component-desc">8&times;8 matrices (for even D=6) satisfying {&Gamma;<sup>M</sup>, &Gamma;<sup>N</sup>} = 2g<sup>MN</sup></div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">&Psi;</div>
+                            <div class="component-name">6D Spinor</div>
+                            <div class="component-desc">8-component spinor field in 6D spacetime</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">M = 0,...,3,5,6</div>
+                            <div class="component-name">6D Indices</div>
+                            <div class="component-desc">4 spacetime coordinates + 2 shared extra dimensions (y, z on T²)</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Spinor Representation</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Cl(5,1) has 8-dimensional irreducible spinor representation
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            6D chirality: &Gamma;<sup>7</sup> = &Gamma;<sup>0</sup>&Gamma;<sup>1</sup>&Gamma;<sup>2</sup>&Gamma;<sup>3</sup>&Gamma;<sup>5</sup>&Gamma;<sup>6</sup>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Chiral projections: &Psi;<sub>±</sub> = ½(1 ± &Gamma;<sup>7</sup>)&Psi; (4 components each)
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Dimensional Reduction: 6D → 4D KK Decomposition</h3>
+            <p>
+                To reduce from 6D to 4D, we expand the 6D spinor in Kaluza-Klein modes on the T² torus:
+            </p>
+            <div class="equation-box">
+                &Psi;(x<sup>&mu;</sup>, y, z) = &sum;<sub>n,m</sub> &psi;<sub>n,m</sub>(x<sup>&mu;</sup>) Y<sub>n,m</sub>(y, z)
+                <span class="equation-label">KK mode expansion on T² = S¹<sub>y</sub> × S¹<sub>z</sub></span>
+            </div>
+            <p style="margin-top: 1rem;">
+                The wavefunctions Y<sub>n,m</sub>(y,z) are Fourier modes on the torus:
+            </p>
+            <div class="equation-box">
+                Y<sub>n,m</sub>(y, z) = (2&pi;R<sub>y</sub>R<sub>z</sub>)<sup>-1/2</sup> exp(in·y/R<sub>y</sub> + im·z/R<sub>z</sub>)
+                <span class="equation-label">n, m ∈ ℤ (integer mode numbers)</span>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                Substituting into the 6D Dirac equation yields a tower of 4D Dirac equations:
+            </p>
+            <div class="equation-box">
+                (i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m<sub>n,m</sub>)&psi;<sub>n,m</sub>(x) = 0
+                <span class="equation-label">where m²<sub>n,m</sub> = m² + (n/R<sub>y</sub>)² + (m/R<sub>z</sub>)²</span>
+            </div>
+
+            <div class="highlight-box" style="margin-top: 1.5rem;">
+                <h4>KK Tower Physics</h4>
+                <p>
+                    Each 6D field produces an infinite tower of 4D fields:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li><strong>(n,m) = (0,0):</strong> Zero mode - Standard Model fermions (massless before EWSB)</li>
+                    <li><strong>(n,m) ≠ (0,0):</strong> KK excitations with masses m<sub>KK</sub> ~ 1/R ~ 5 TeV</li>
+                    <li><strong>Experimental signature:</strong> Heavy replicas of SM fermions at future colliders</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 13D Pneuma Field -->
+        <section class="subsection">
+            <h2>The 13D Pneuma Field</h2>
+            <p>
+                The fundamental Pneuma field Ψ<sub>P</sub> lives in the full 13-dimensional spacetime
+                before any compactification. It satisfies the 13D Dirac equation with Cl(12,1) gamma matrices.
+            </p>
+
+            <h3>Clifford Algebra Structure</h3>
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Dimension</th>
+                        <th>Clifford Algebra</th>
+                        <th>Spinor Size</th>
+                        <th>Application</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4D</td>
+                        <td>Cl(3,1)</td>
+                        <td>4 (Dirac spinor)</td>
+                        <td>Standard QFT</td>
+                    </tr>
+                    <tr>
+                        <td>6D</td>
+                        <td>Cl(5,1)</td>
+                        <td>8 (Weyl spinor)</td>
+                        <td>Intermediate effective theory</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.1);">
+                        <td>13D</td>
+                        <td>Cl(12,1)</td>
+                        <td>64 (Pneuma spinor)</td>
+                        <td>Fundamental PM field</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Pneuma Field Decomposition</h3>
+            <p style="margin-top: 1.5rem;">
+                Upon compactification 13D → 6D → 4D, the 64-component Pneuma spinor decomposes:
+            </p>
+            <div class="equation-box">
+                &Psi;<sub>P</sub>(x, y, z, M⁷) = &sum;<sub>α</sub> &psi;<sub>α</sub>(x, y, z) &otimes; &eta;<sub>α</sub>(M⁷)
+                <span class="equation-label">α labels G₂ harmonic spinors (8 components from unique parallel spinor)</span>
+            </div>
+
+            <p style="margin-top: 1rem;">
+                The G₂ manifold M⁷ has exactly one parallel spinor η, which is preserved by the holonomy.
+                This unique spinor connects to the unified nature of the Pneuma field - it represents
+                the fundamental consciousness substrate that permeates all dimensions.
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">Philosophical Connection</h4>
+                <p style="color: var(--text-secondary);">
+                    The mathematical fact that G₂ manifolds admit <strong>exactly one parallel spinor</strong>
+                    mirrors the metaphysical principle of a <strong>unified Pneuma field</strong>. Just as the
+                    parallel spinor is preserved under all parallel transport (holonomy), the Pneuma represents
+                    a fundamental field that maintains coherence across all spacetime points and all dimensions.
+                </p>
+            </div>
+        </section>
+
         <!-- References -->
         <section class="subsection" style="background: rgba(81, 207, 102, 0.05);">
             <h2>References & Further Reading</h2>

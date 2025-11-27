@@ -20,21 +20,47 @@ class FundamentalConstants:
     These should NOT be changed unless the underlying theory is modified.
     """
 
-    # String Theory Dimensions
+    # Dimensional Structure (Shared Extra Dimensions Solution)
+    # =========================================================
+    # 26D (24,2) → [Sp(2,R)] → 13D (12,1) → [G₂ 7D] → 6D (5,1) effective
+
+    # Initial bosonic string
     D_BULK = 26              # Bosonic string critical dimension (Virasoro c=26)
-    D_INTERNAL = 13          # Compactified dimensions (26D → 13D projection)
-    D_OBSERVED = 4           # Observable 4D spacetime
+    SIGNATURE_INITIAL = (24, 2)  # Two timelike dimensions
 
-    # Brane Hierarchy Structure
-    N_BRANES = 4             # Number of D-branes in hierarchy
-    SPATIAL_DIMS = 3         # Spatial dimensions per brane
-    TIME_DIMS = 1            # Shared time dimension
-    # Verification: N_BRANES × SPATIAL_DIMS + TIME_DIMS = 13
+    # After Sp(2,R) gauge fixing
+    D_AFTER_SP2R = 13        # Effective after t_⊥ compactification
+    SIGNATURE_BULK = (12, 1) # One time remains observable
 
-    # Calabi-Yau Topology (CY4 × CY4̃)
-    HODGE_H11 = 4            # h^{1,1} Hodge number
-    HODGE_H21 = 0            # h^{2,1} Hodge number
-    HODGE_H31 = 72           # h^{3,1} Hodge number (doubled)
+    # Internal compactification (G₂ manifold or CY3×S¹/Z₂)
+    INTERNAL_MANIFOLD = "G2"  # 7D holonomy manifold
+    D_INTERNAL = 7            # G₂ (or CY3×S¹/Z₂)
+
+    # Effective spacetime after compactification
+    D_EFFECTIVE = 6           # 13D - 7D = 6D effective bulk
+    SIGNATURE_EFFECTIVE = (5, 1)  # Five spatial + one time
+
+    # Shared dimensions decomposition
+    D_COMMON = 4              # Accessible to all branes (3 space + 1 time)
+    D_SHARED_EXTRAS = 2       # Extra dimensions (observable brane only)
+
+    # Brane Hierarchy Structure (Heterogeneous)
+    N_BRANES = 4              # 1 observable + 3 shadow branes
+    D_OBSERVABLE_BRANE = 6    # (5,1) = 4D_common + 2D_shared + time
+    D_SHADOW_BRANE = 4        # (3,1) = 4D_common + time only
+    N_SHADOW_BRANES = 3
+
+    # Legacy (for backward compatibility, will be phased out)
+    D_OBSERVED = 4            # Effective 4D at low energies
+    SPATIAL_DIMS = 3          # Observable spatial dimensions
+    TIME_DIMS = 1             # Observable time dimension
+
+    # G₂ Manifold Topology (or CY3 × S¹/Z₂)
+    # For G₂: χ_eff = 72 from flux-dressed geometry
+    # For CY3×S¹/Z₂: χ(CY3) = 72, orbifold creates chirality
+    HODGE_H11 = 4            # h^{1,1} Hodge number (if CY3)
+    HODGE_H21 = 0            # h^{2,1} Hodge number (if CY3)
+    HODGE_H31 = 72           # h^{3,1} Hodge number (doubled for mirror)
 
     # Symmetry Factors
     FLUX_REDUCTION = 2       # Flux quantization reduction (Z₂ orbifold)
@@ -675,22 +701,144 @@ def validate_all():
 
 
 # ==============================================================================
+# SHARED DIMENSIONS PARAMETERS (v6.2+)
+# ==============================================================================
+
+class SharedDimensionsParameters:
+    """
+    Parameters for the shared extra dimensions structure.
+    Observable brane: (5,1) with access to 2D_shared
+    Shadow branes: (3,1) localized to 4D_common only
+    """
+
+    # Compactification radii
+    R_SHARED_Y = 1.0 / 5000      # GeV^-1 ~ 2×10^-19 m (y-direction)
+    R_SHARED_Z = 1.0 / 5000      # GeV^-1 ~ 2×10^-19 m (z-direction)
+    M_KK_CENTRAL = 5000          # GeV (5 TeV, lightest KK mode)
+
+    # Warping parameters (Randall-Sundrum type)
+    WARP_PARAMETER_K = 35        # Dimensionless (hierarchy: e^(-kπR) ~ 10^-16)
+    RADION_VEV = 1.0             # Stabilized value (normalized)
+
+    # Brane positions in y-direction (fractions of πR)
+    Y_OBSERVABLE = 0.0           # UV brane (at y=0)
+    Y_SHADOW_1 = 1.0 / 3.0       # First shadow (at y=πR/3)
+    Y_SHADOW_2 = 2.0 / 3.0       # Second shadow (at y=2πR/3)
+    Y_SHADOW_3 = 1.0             # Third shadow (at y=πR, IR brane)
+
+    # Brane tensions (GeV^D)
+    TENSION_OBSERVABLE = 1e19**6  # T_obs ~ M_*^6 (6D Planck scale)
+    TENSION_SHADOW = 1e19**4      # T_shadow ~ M_*^4 (4D Planck scale)
+
+    @staticmethod
+    def kk_mass(n, m):
+        """
+        Kaluza-Klein graviton mass from 2D shared extras.
+
+        Args:
+            n: KK mode number in y-direction
+            m: KK mode number in z-direction
+
+        Returns:
+            Mass in GeV
+        """
+        R_y = SharedDimensionsParameters.R_SHARED_Y
+        R_z = SharedDimensionsParameters.R_SHARED_Z
+        return np.sqrt((n / R_y)**2 + (m / R_z)**2)
+
+    @staticmethod
+    def warp_factor(y):
+        """
+        Randall-Sundrum warp factor at position y.
+
+        Args:
+            y: Position in extra dimension (fraction of πR)
+
+        Returns:
+            e^(-k|y|πR)
+        """
+        k = SharedDimensionsParameters.WARP_PARAMETER_K
+        R = SharedDimensionsParameters.R_SHARED_Y
+        return np.exp(-k * np.abs(y) * np.pi * R)
+
+    @staticmethod
+    def effective_4d_planck_mass():
+        """
+        Compute 4D Planck mass from 6D reduction.
+
+        M_Pl^2 = M_*^4 × Vol(2D_shared) × ∫ dy e^(-2ky)
+        """
+        M_star_6D = PhenomenologyParameters.M_STAR  # GeV
+
+        # Volume of 2D torus
+        R_y = SharedDimensionsParameters.R_SHARED_Y
+        R_z = SharedDimensionsParameters.R_SHARED_Z
+        Vol_2D = (2 * np.pi * R_y) * (2 * np.pi * R_z)
+
+        # Warp integral: ∫_0^πR dy e^(-2ky)
+        k = SharedDimensionsParameters.WARP_PARAMETER_K
+        warp_integral = (1 - np.exp(-2 * k * np.pi * R_y)) / (2 * k)
+
+        # 4D Planck mass squared
+        M_Pl_squared = M_star_6D**4 * Vol_2D * warp_integral
+        return np.sqrt(M_Pl_squared)
+
+    @staticmethod
+    def kk_spectrum(n_max=5, m_max=5):
+        """
+        Generate KK mode spectrum up to (n_max, m_max).
+
+        Returns:
+            List of tuples: [(n, m, mass_GeV), ...]
+        """
+        spectrum = []
+        for n in range(0, n_max + 1):
+            for m in range(0, m_max + 1):
+                if n == 0 and m == 0:
+                    continue  # Skip zero mode
+                mass = SharedDimensionsParameters.kk_mass(n, m)
+                spectrum.append((n, m, mass))
+        # Sort by mass
+        spectrum.sort(key=lambda x: x[2])
+        return spectrum
+
+
+# ==============================================================================
 # MAIN EXECUTION (FOR TESTING)
 # ==============================================================================
 
 if __name__ == '__main__':
     print("=" * 80)
-    print("PRINCIPIA METAPHYSICA v6.1 - CONFIGURATION VALIDATION")
+    print("PRINCIPIA METAPHYSICA v6.2 - CONFIGURATION VALIDATION")
     print("=" * 80)
 
     # Test fundamental constants
-    print("\nFUNDAMENTAL CONSTANTS:")
-    print(f"  D_bulk = {FundamentalConstants.D_BULK}")
-    print(f"  D_internal = {FundamentalConstants.D_INTERNAL}")
-    print(f"  Euler characteristic = {FundamentalConstants.euler_characteristic()}")
-    print(f"  Generations = {FundamentalConstants.fermion_generations()}")
-    print(f"  Pneuma (full) = {FundamentalConstants.pneuma_dimension_full()}")
-    print(f"  Pneuma (reduced) = {FundamentalConstants.pneuma_dimension_reduced()}")
+    print("\nDIMENSIONAL STRUCTURE (Shared Extra Dimensions):")
+    print(f"  Initial: {FundamentalConstants.D_BULK}D with signature {FundamentalConstants.SIGNATURE_INITIAL}")
+    print(f"  After Sp(2,R): {FundamentalConstants.D_AFTER_SP2R}D with signature {FundamentalConstants.SIGNATURE_BULK}")
+    print(f"  Internal manifold: {FundamentalConstants.INTERNAL_MANIFOLD} ({FundamentalConstants.D_INTERNAL}D)")
+    print(f"  Effective bulk: {FundamentalConstants.D_EFFECTIVE}D with signature {FundamentalConstants.SIGNATURE_EFFECTIVE}")
+    print(f"  Observable brane: {FundamentalConstants.D_OBSERVABLE_BRANE}D = {FundamentalConstants.D_COMMON}D_common + {FundamentalConstants.D_SHARED_EXTRAS}D_shared")
+    print(f"  Shadow branes (×{FundamentalConstants.N_SHADOW_BRANES}): {FundamentalConstants.D_SHADOW_BRANE}D = {FundamentalConstants.D_COMMON}D_common only")
+
+    print("\nTOPOLOGICAL INVARIANTS:")
+    print(f"  Euler characteristic (eff) = {FundamentalConstants.euler_characteristic_effective()}")
+    print(f"  Fermion generations = {FundamentalConstants.fermion_generations()}")
+    print(f"  Pneuma (full 26D) = {FundamentalConstants.pneuma_dimension_full()} components")
+    print(f"  Pneuma (reduced 13D) = {FundamentalConstants.pneuma_dimension_reduced()} components")
+
+    # Test shared dimensions
+    print("\nSHARED DIMENSIONS (KK SPECTRUM):")
+    print(f"  R_shared_y = {SharedDimensionsParameters.R_SHARED_Y:.6e} GeV^-1")
+    print(f"  R_shared_z = {SharedDimensionsParameters.R_SHARED_Z:.6e} GeV^-1")
+    print(f"  M_KK (lightest) = {SharedDimensionsParameters.M_KK_CENTRAL} GeV")
+    print(f"  Warp parameter k = {SharedDimensionsParameters.WARP_PARAMETER_K}")
+    print(f"  Warp factor at IR: {SharedDimensionsParameters.warp_factor(1.0):.6e}")
+
+    spectrum = SharedDimensionsParameters.kk_spectrum(n_max=3, m_max=3)
+    print(f"\n  First 5 KK modes:")
+    for i, (n, m, mass) in enumerate(spectrum[:5]):
+        print(f"    ({n},{m}): {mass:.1f} GeV")
 
     # Test derived parameters
     print("\nDERIVED PARAMETERS:")
@@ -699,6 +847,7 @@ if __name__ == '__main__':
     print(f"  a_swampland = {ModuliParameters.a_swampland():.6f}")
     print(f"  Delta (gap) = {ModuliParameters.condensate_gap():.6f} TeV")
     print(f"  S_landscape = {LandscapeParameters.landscape_entropy():.2f}")
+    print(f"  M_Pl (from 6D) = {SharedDimensionsParameters.effective_4d_planck_mass():.4e} GeV")
 
     # Run validation
     print("\nVALIDATION:")

@@ -415,7 +415,7 @@ if (typeof module !== 'undefined' && module.exports) {{
 console.log('SUCCESS: Principia Metaphysica Theory Constants loaded');
 console.log(`  Framework: v${{TheoryConstants.metadata.version}}`);
 console.log(`  Generated: ${{TheoryConstants.metadata.lastGenerated}}`);
-console.log(`  Dimensions: ${{TheoryConstants.dimensions.full}}D -> ${{TheoryConstants.dimensions.effective}}D -> ${{TheoryConstants.dimensions.observable}}D`);
+console.log(`  Dimensions: 26D -> 13D -> 7D (G2) -> 6D (effective) -> 4D (observed)`);
 console.log(`  Generations: ${{TheoryConstants.topology.generations}}`);
 console.log(`  Swampland: a = ${{TheoryConstants.moduli.aSwampland.toFixed(3)}} > ${{TheoryConstants.moduli.swamplandBound.toFixed(3)}} PASS`);
 """
@@ -434,7 +434,7 @@ except Exception as e:
 
 # Validation check
 print("\n=== Validation ===")
-print(f"Dimensions: {FC.D_BULK}D -> {FC.D_INTERNAL}D -> {FC.D_OBSERVED}D")
+print(f"Dimensions: {FC.D_BULK}D -> {FC.D_AFTER_SP2R}D -> {FC.D_INTERNAL}D (internal) -> {FC.D_EFFECTIVE}D (effective) -> {FC.D_OBSERVED}D (observed)")
 print(f"Generations: {FC.fermion_generations()}")
 print(f"Swampland: a = {MP.a_swampland():.6f} > {MP.SWAMPLAND_BOUND:.6f} PASS")
 print(f"w_0 = {PP.w0_value():.6f}")

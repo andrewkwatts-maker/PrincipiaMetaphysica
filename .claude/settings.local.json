@@ -26,7 +26,14 @@
       "Bash(lsof:*)",
       "Bash(python:*)",
       "Bash(find:*)",
-      "Bash(cmd:*)"
+      "Bash(cmd:*)",
+      "Bash(timeout:*)",
+      "Bash(build.bat)",
+      "Read(//h/**)",
+      "Bash(ls:*)",
+      "Bash(tee:*)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status --short)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

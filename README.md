@@ -65,3 +65,21 @@ HTML webpages                  ← AUTO-UPDATED (load the JS)
 - [SimulateTheory_README.md](SimulateTheory_README.md) - Calculation engine details
 
 ---
+
+## Known Open Problems
+
+The framework has several unresolved theoretical challenges documented in [sections/conclusion.html](sections/conclusion.html):
+
+1. **Asymptotic Safety Extent**: If UV fixed points exist in GUT sector (not just gravity), operator enhancement could affect proton decay predictions. Current assumption: AS confined to gravity sector only.
+
+2. **LQG Time Scale**: Connection between t_ortho ~ 10^-18 s and Loop Quantum Gravity's t_Planck ~ 10^-44 s unclear (26 orders of magnitude difference). May represent complementary regimes.
+
+3. **Landscape Size**: Predicted vacua (~10^(10^8)) vastly exceed anthropic bound (~10^120), requiring dynamical selection mechanism beyond anthropic reasoning.
+
+4. **Mirror DM Quantification**: Z_2 dark matter candidate from two-time structure needs quantitative predictions: relic abundance, direct detection cross-sections, self-interaction constraints.
+
+5. **Gauge-Higgs Calculation**: Higgs potential from Wilson line breaking requires explicit geometric derivation including quantum corrections.
+
+See [CRITIQUE_UPDATE_REPORT.md](CRITIQUE_UPDATE_REPORT.md) for detailed analysis of solved and unsolved issues.
+
+---

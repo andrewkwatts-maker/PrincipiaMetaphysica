@@ -1,7 +1,7 @@
 Parameter,Value,Unit,Description,Source,Derived?,Validation,Real_Value,Real_Error,Deviation_%,Within_Error,Real_Source_Link
 D_bulk,26,dimensionless,Bulk spacetime dimension (bosonic string critical dimension),Virasoro anomaly cancellation c=26,Asserted,Passed,,,,,
 Signature_bulk,"(24,2)",dimensionless,"Metric signature (24 space, 2 time dimensions)",Multi-time unitarity (Bars 2T-physics),Asserted,Passed,,,,,
-D_effective,13.0,dimensionless,"Effective shadow dimension after Sp(2,R) gauge fixing","Sp(2,R) projection: 26D → 13D",Yes (SymPy),Failed,,,,,
+D_effective,19.0,dimensionless,"Effective shadow dimension after Sp(2,R) gauge fixing","Sp(2,R) projection: 26D → 13D",Yes (SymPy),Failed,,,,,
 Signature_effective,"(12,1)",dimensionless,"Effective metric signature (12 space, 1 thermal time)",Kaluza-Klein reduction,Asserted,Passed,,,,,
 Dim_total_13,13.0,dimensionless,13D decomposition: 4 branes × 3 spatial + 1 shared time,Brane hierarchy structure,Yes (SymPy),Failed,,,,,
 Pneuma_dim_full,8192.0,dimensionless,Full Pneuma spinor dimension in 26D bulk,"2^(D/2) from Clifford algebra Cl(24,2)",Yes (SymPy),Failed,,,,,
@@ -28,8 +28,8 @@ E_F,1.0,TeV,Fermi energy of Pneuma condensate,Condensate scale ~ TeV,Asserted,Pa
 w_0,-0.8461538461538461,dimensionless,Dark energy equation of state at z=0,"V(φ) attractor from F(R,T,τ): w_0 ≈ -11/13",Yes (SymPy),Passed,-0.827,0.063,-2.31606362198866,Yes,https://arxiv.org/abs/2404.03002
 w_a,-0.75,dimensionless,Dark energy evolution parameter in w(a) = w_0 + w_a(1-a),Slow-roll dynamics from V(φ),Asserted,Passed,-0.75,0.3,0.0,Yes,https://arxiv.org/abs/2404.03002
 w_attractor_limit,16518.253192258882,dimensionless,Late-time attractor w → -1 (Mashiach mechanism),CPL w(a) → w_0 as a → ∞,Yes (SymPy),Warning: Check convergence,-1.0,0.1,1651925.31922589,No,https://arxiv.org/abs/2405.04216
-a_swampland,1.4142135623730951,dimensionless,Exponential coefficient in V(φ) = |F|²e^(-aφ) + ...,a = √(26/13) = √2 ≈ 1.414 > √(2/3) ≈ 0.816,Yes (SymPy),Passed (swampland satisfied),,,,,
-Hessian_V,-0.15179712523708377,dimensionless,Hessian d²V/dφ² at example φ=1 (stability check),"SymPy: diff(diff(V, phi), phi)",Yes (SymPy),Failed (unstable),,,,,
+a_swampland,1.927248223318863,dimensionless,Exponential coefficient in V(φ) = |F|²e^(-aφ) + ...,a = √(26/13) = √2 ≈ 1.414 > √(2/3) ≈ 0.816,Yes (SymPy),Passed (swampland satisfied),,,,,
+Hessian_V,-0.09742312794245167,dimensionless,Hessian d²V/dφ² at example φ=1 (stability check),"SymPy: diff(diff(V, phi), phi)",Yes (SymPy),Failed (unstable),,,,,
 λ,0.5,TeV^{-2},Pneuma quartic self-coupling,Gap equation constraint,Asserted,Passed,,,,,
 Δ,0.9090909090909091,TeV,Pneuma condensate gap energy,λv / (1 + g·t_ortho / E_F),Yes (SymPy),Passed,,,,,
 Entropy_condensate,5.419148351946601e-15,dimensionless,Von Neumann entropy in toy BCS condensate (QuTiP),QuTiP mesolve of pairing Hamiltonian,Yes (QuTiP),Passed (unitary),0.0,1e-10,,Yes,
