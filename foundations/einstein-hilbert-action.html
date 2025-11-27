@@ -191,9 +191,40 @@
                 </div>
             </div>
 
-            <h3>Dimensional Reduction: 13D → 6D → 4D</h3>
+            <h3>Complete Dimensional Reduction Pathway</h3>
             <p>
-                The Principia Metaphysica framework employs a two-stage compactification:
+                The Principia Metaphysica framework employs a <strong>multi-stage compactification</strong>
+                descending from the fundamental 26-dimensional bosonic string theory down to our observed 4D spacetime:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1rem; margin-bottom: 2rem;">
+                <h4 style="color: #8b7fff;">The Complete Pathway: 26D → 13D → 7D → 6D → 4D</h4>
+                <p style="color: var(--text-secondary);">
+                    Each stage of dimensional reduction reveals new physical structure:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
+                    <li><strong>26D → 13D:</strong> Bosonic string compactification (removes tachyon, establishes fermions)</li>
+                    <li><strong>13D → 7D:</strong> First geometric compactification (not directly physical, intermediate step)</li>
+                    <li><strong>13D → 6D:</strong> G₂ manifold compactification (establishes SO(10) GUT, 3 generations)</li>
+                    <li><strong>6D → 4D:</strong> Shared T² compactification (accessible TeV-scale physics)</li>
+                </ul>
+            </div>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 0: 26D → 13D (Fundamental String Compactification)</h4>
+            <p>
+                Bosonic string theory lives in 26 dimensions (critical dimension for conformal anomaly cancellation).
+                Compactifying 13 dimensions on a suitable torus or orbifold yields the 13D PM starting point:
+            </p>
+            <div class="equation-box">
+                S<sub>26D</sub> = &int; d<sup>26</sup>X &radic;|G<sub>26</sub>| R<sub>26</sub>
+                &nbsp;&rarr;&nbsp;
+                S<sub>13D</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R<sub>13</sub>
+                <span class="equation-label">M<sub>*</sub><sup>11</sup> ∝ (Vol<sub>13</sub>)<sup>-1</sup> in string units</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                This first reduction is typically done via orbifolding or toroidal compactification with Wilson lines
+                to break gauge symmetry and project out the tachyon. The resulting 13D theory has signature (12,1)
+                and serves as the effective starting dimension for PM.
             </p>
 
             <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 1: 13D → 6D (G₂ Compactification)</h4>
@@ -204,14 +235,15 @@
                 S<sub>13D</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R<sub>13</sub>
                 &nbsp;&rarr;&nbsp;
                 S<sub>6D</sub> = M<sub>6</sub><sup>4</sup> &int; d<sup>6</sup>x &radic;|g<sub>6</sub>| R<sub>6</sub>
-                <span class="equation-label">M<sub>6</sub><sup>4</sup> = M<sub>*</sub><sup>11</sup> &sdot; Vol(M⁷)</span>
+                <span class="equation-label">M<sub>6</sub><sup>4</sup> = M<sub>*</sub><sup>11</sup> &times; Vol(M⁷)</span>
             </div>
             <p style="color: var(--text-secondary); margin-top: 1rem;">
                 The G₂ holonomy ensures N=1 supersymmetry is preserved and yields SO(10) gauge symmetry
-                from singularities in M⁷.
+                from D₅ ADE singularities in M⁷. The effective Euler characteristic χ<sub>eff</sub> = 72
+                gives exactly 3 fermion generations via n<sub>gen</sub> = χ/24.
             </p>
 
-            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 2: 6D → 4D (Shared Dimensions)</h4>
+            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 2: 6D → 4D (Shared T² Dimensions)</h4>
             <p>
                 Compactify the remaining two shared extra dimensions on a 2-torus T² at the ~5 TeV scale:
             </p>
@@ -219,23 +251,39 @@
                 S<sub>6D</sub> = M<sub>6</sub><sup>4</sup> &int; d<sup>6</sup>x &radic;|g<sub>6</sub>| R<sub>6</sub>
                 &nbsp;&rarr;&nbsp;
                 S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> &int; d<sup>4</sup>x &radic;|g| R
-                <span class="equation-label">M<sub>Pl</sub><sup>2</sup> = M<sub>6</sub><sup>4</sup> &sdot; Vol(T²) &sdot; &int; dy e<sup>-2ky</sup> (if warped)</span>
+                <span class="equation-label">M<sub>Pl</sub><sup>2</sup> = M<sub>6</sub><sup>4</sup> &times; Vol(T²) &times; (warp factor)</span>
             </div>
             <p style="color: var(--text-secondary); margin-top: 1rem;">
-                The 4D Planck mass M<sub>Pl</sub> ~ 10<sup>19</sup> GeV emerges from the product of the
+                The 4D Planck mass M<sub>Pl</sub> ~ 1.2 &times; 10<sup>19</sup> GeV emerges from the product of the
                 fundamental scale M<sub>*</sub>, the volume of the G₂ manifold, and the volume of the shared T².
-                If warping is present, an additional warp factor suppresses the effective scale.
+                If warping is present (flux stabilization), an additional warp factor integral appears.
+            </p>
+
+            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Combined Formula</h4>
+            <p>
+                Putting all stages together, the 4D Planck mass is:
+            </p>
+            <div class="equation-box" style="background: rgba(81, 207, 102, 0.1); border: 2px solid rgba(81, 207, 102, 0.3);">
+                M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub>
+                <span class="equation-label">where V<sub>9</sub> = Vol(G₂) &times; Vol(T²) is the total compact volume</span>
+            </div>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                This confirms the general Kaluza-Klein formula M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>n+2</sup> V<sub>n</sub>
+                with n=9 compact dimensions. However, <strong>V<sub>9</sub> is not independently measurable</strong> - only
+                the product M<sub>*</sub><sup>11</sup> V<sub>9</sub> = M<sub>Pl</sub><sup>2</sup> is constrained by observation.
             </p>
 
             <div class="highlight-box" style="margin-top: 1.5rem;">
                 <h4>Scale Hierarchy</h4>
                 <p>
-                    The two-stage compactification naturally generates a hierarchy of scales:
+                    The multi-stage compactification naturally generates a hierarchy of scales:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>M<sub>*</sub> ~ M<sub>Pl</sub>:</strong> Fundamental 13D scale (Planck scale)</li>
-                    <li><strong>1/R<sub>G₂</sub> ~ M<sub>GUT</sub>:</strong> G₂ compactification scale (~10<sup>16</sup> GeV)</li>
+                    <li><strong>M<sub>string</sub> ~ 10<sup>18</sup> GeV:</strong> 26D bosonic string scale</li>
+                    <li><strong>M<sub>*</sub> ~ M<sub>Pl</sub> ~ 10<sup>19</sup> GeV:</strong> 13D fundamental scale</li>
+                    <li><strong>1/R<sub>G₂</sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV:</strong> G₂ compactification scale</li>
                     <li><strong>1/R<sub>T²</sub> ~ 5 TeV:</strong> Shared dimension scale (accessible at future colliders)</li>
+                    <li><strong>M<sub>EW</sub> ~ 100 GeV:</strong> Electroweak symmetry breaking (Higgs VEV)</li>
                 </ul>
             </div>
         </section>

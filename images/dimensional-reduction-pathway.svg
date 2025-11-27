@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Title -->
+  <text x="600" y="30" font-size="24" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">
+    Dimensional Reduction Pathway: 26D → 4D Observable Spacetime
+  </text>
+
+  <!-- Stage 1: Initial 26D -->
+  <g id="stage1">
+    <!-- Box -->
+    <rect x="50" y="80" width="200" height="400" fill="#3498db" stroke="#2c3e50" stroke-width="3" rx="10"/>
+    <!-- Label -->
+    <text x="150" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Initial Bosonic String</text>
+    <text x="150" y="140" font-size="32" font-weight="bold" text-anchor="middle" fill="white">26D</text>
+    <text x="150" y="170" font-size="16" text-anchor="middle" fill="white">Signature: (24, 2)</text>
+    <text x="150" y="200" font-size="14" text-anchor="middle" fill="#ecf0f1">24 spacelike</text>
+    <text x="150" y="220" font-size="14" text-anchor="middle" fill="#ecf0f1">2 timelike (t, t⊥)</text>
+
+    <!-- Key info -->
+    <text x="150" y="260" font-size="12" text-anchor="middle" fill="#ecf0f1">Virasoro c = 26</text>
+    <text x="150" y="280" font-size="12" text-anchor="middle" fill="#ecf0f1">Critical dimension</text>
+    <text x="150" y="300" font-size="12" text-anchor="middle" fill="#ecf0f1">Two-time physics</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g id="arrow1">
+    <path d="M 260 280 L 330 280" stroke="#2c3e50" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="295" y="260" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Sp(2,R)</text>
+    <text x="295" y="275" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">gauge fixing</text>
+    <text x="295" y="310" font-size="11" text-anchor="middle" fill="#555">t⊥ compactified</text>
+  </g>
+
+  <!-- Stage 2: 13D -->
+  <g id="stage2">
+    <rect x="340" y="80" width="200" height="400" fill="#27ae60" stroke="#2c3e50" stroke-width="3" rx="10"/>
+    <text x="440" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">After Sp(2,R) Gauging</text>
+    <text x="440" y="140" font-size="32" font-weight="bold" text-anchor="middle" fill="white">13D</text>
+    <text x="440" y="170" font-size="16" text-anchor="middle" fill="white">Signature: (12, 1)</text>
+    <text x="440" y="200" font-size="14" text-anchor="middle" fill="#ecf0f1">12 spacelike</text>
+    <text x="440" y="220" font-size="14" text-anchor="middle" fill="#ecf0f1">1 timelike (t)</text>
+
+    <text x="440" y="260" font-size="12" text-anchor="middle" fill="#ecf0f1">Effective bulk</text>
+    <text x="440" y="280" font-size="12" text-anchor="middle" fill="#ecf0f1">Observable time only</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g id="arrow2">
+    <path d="M 550 280 L 620 280" stroke="#2c3e50" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="585" y="260" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">G₂</text>
+    <text x="585" y="275" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">compactify</text>
+    <text x="585" y="310" font-size="11" text-anchor="middle" fill="#555">7D internal</text>
+  </g>
+
+  <!-- Stage 3: 6D Effective -->
+  <g id="stage3">
+    <rect x="630" y="80" width="200" height="400" fill="#f39c12" stroke="#2c3e50" stroke-width="3" rx="10"/>
+    <text x="730" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Effective Bulk</text>
+    <text x="730" y="140" font-size="32" font-weight="bold" text-anchor="middle" fill="white">6D</text>
+    <text x="730" y="170" font-size="16" text-anchor="middle" fill="white">Signature: (5, 1)</text>
+    <text x="730" y="200" font-size="14" text-anchor="middle" fill="#fff">13D - 7D = 6D</text>
+
+    <text x="730" y="240" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Shared Dimensions:</text>
+    <text x="730" y="260" font-size="12" text-anchor="middle" fill="#ecf0f1">4D common (all branes)</text>
+    <text x="730" y="280" font-size="12" text-anchor="middle" fill="#ecf0f1">+ 2D shared extras (T²)</text>
+    <text x="730" y="300" font-size="12" text-anchor="middle" fill="#ecf0f1">(observable only)</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g id="arrow3">
+    <path d="M 840 280 L 910 280" stroke="#2c3e50" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
+    <text x="875" y="260" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Brane</text>
+    <text x="875" y="275" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">localization</text>
+    <text x="875" y="310" font-size="11" text-anchor="middle" fill="#555">Heterogeneous</text>
+  </g>
+
+  <!-- Stage 4: 4D Observed -->
+  <g id="stage4">
+    <rect x="920" y="80" width="230" height="400" fill="#e67e22" stroke="#2c3e50" stroke-width="3" rx="10"/>
+    <text x="1035" y="110" font-size="18" font-weight="bold" text-anchor="middle" fill="white">Observable Universe</text>
+    <text x="1035" y="140" font-size="32" font-weight="bold" text-anchor="middle" fill="white">4D</text>
+    <text x="1035" y="170" font-size="16" text-anchor="middle" fill="white">Signature: (3, 1)</text>
+
+    <text x="1035" y="210" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Observable Brane:</text>
+    <text x="1035" y="230" font-size="12" text-anchor="middle" fill="#ecf0f1">6D total (4D + 2D_extras)</text>
+    <text x="1035" y="250" font-size="12" text-anchor="middle" fill="#ecf0f1">Access to KK modes</text>
+
+    <text x="1035" y="280" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Shadow Branes (×3):</text>
+    <text x="1035" y="300" font-size="12" text-anchor="middle" fill="#ecf0f1">4D only (localized)</text>
+    <text x="1035" y="320" font-size="12" text-anchor="middle" fill="#ecf0f1">No KK access</text>
+
+    <text x="1035" y="350" font-size="12" text-anchor="middle" fill="#ecf0f1">Low-energy limit:</text>
+    <text x="1035" y="370" font-size="12" text-anchor="middle" fill="#ecf0f1">Minkowski (3+1)D</text>
+  </g>
+
+  <!-- Bottom summary -->
+  <g id="summary">
+    <rect x="50" y="510" width="1100" height="70" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" rx="5"/>
+    <text x="600" y="535" font-size="14" font-weight="bold" text-anchor="middle">Key Points:</text>
+    <text x="600" y="555" font-size="12" text-anchor="middle">
+      26D → Sp(2,R) gauge fixing → 13D → G₂ compactification (7D) → 6D effective → Heterogeneous branes (4D common + 2D shared) → 4D observable
+    </text>
+    <text x="600" y="572" font-size="11" text-anchor="middle" fill="#555">
+      Observable brane has full 6D access (KK gravitons at 5 TeV), shadow branes restricted to 4D common base
+    </text>
+  </g>
+
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#2c3e50"/>
+    </marker>
+  </defs>
+</svg>
