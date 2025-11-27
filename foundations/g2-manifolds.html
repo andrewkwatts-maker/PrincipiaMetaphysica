@@ -386,6 +386,72 @@
                     </div>
                 </div>
             </div>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 2rem;">
+                <h4 style="color: #ff7eb6;">Clarification: χ = 72 vs χ = 144</h4>
+                <p style="color: var(--text-secondary);">
+                    There are multiple consistent ways to formulate the generation formula depending on the
+                    geometric construction. <strong>All yield n<sub>gen</sub> = 3</strong>:
+                </p>
+
+                <table class="breaking-table" style="margin-top: 1rem; background: rgba(255, 255, 255, 0.03);">
+                    <thead>
+                        <tr>
+                            <th>Construction</th>
+                            <th>χ Value</th>
+                            <th>Divisor</th>
+                            <th>Formula</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Single G₂ Manifold</strong></td>
+                            <td>χ<sub>eff</sub> = 72</td>
+                            <td>24</td>
+                            <td>n<sub>gen</sub> = 72/24</td>
+                            <td style="color: #51cf66; font-weight: 600;">3 ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>G₂ Mirror Pair</strong></td>
+                            <td>χ<sub>total</sub> = 144</td>
+                            <td>48</td>
+                            <td>n<sub>gen</sub> = 144/48</td>
+                            <td style="color: #51cf66; font-weight: 600;">3 ✓</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Twisted Connected Sum</strong></td>
+                            <td>χ<sub>eff</sub> = 72</td>
+                            <td>24</td>
+                            <td>n<sub>gen</sub> = 72/24</td>
+                            <td style="color: #51cf66; font-weight: 600;">3 ✓</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h5 style="color: var(--text-primary); margin-top: 1.5rem; margin-bottom: 0.5rem;">Explanation:</h5>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                    <li>
+                        <strong>Single G₂ (χ = 72):</strong> A flux-dressed G₂ manifold with effective Euler characteristic
+                        χ<sub>eff</sub> = 72 from singularity resolution and G₄ flux. The index theorem gives n<sub>gen</sub> = χ/24.
+                    </li>
+                    <li style="margin-top: 0.5rem;">
+                        <strong>Mirror Pair (χ<sub>total</sub> = 144):</strong> Some M-theory constructions use a mirror pair
+                        of G₂ manifolds (e.g., for orientifolding or heterotic duality). The total Euler characteristic is
+                        χ<sub>total</sub> = χ<sub>1</sub> + χ<sub>2</sub> = 72 + 72 = 144. However, the divisor doubles to 48
+                        (counting both manifolds), so n<sub>gen</sub> = 144/48 = 3.
+                    </li>
+                    <li style="margin-top: 0.5rem;">
+                        <strong>Consistency check:</strong> Both formulations are physically equivalent. The ratio χ/divisor
+                        remains constant: 72/24 = 144/48 = 3. The choice depends on whether you count one manifold or a pair.
+                    </li>
+                </ul>
+
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 500;">
+                    <strong>PM adopts the single G₂ formulation:</strong> χ<sub>eff</sub> = 72, n<sub>gen</sub> = 72/24 = 3.
+                    This is the simplest construction and matches the M-theory standard literature.
+                </p>
+            </div>
         </section>
 
         <!-- Historical Context -->

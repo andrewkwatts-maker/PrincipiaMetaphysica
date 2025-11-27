@@ -305,11 +305,16 @@
                 before any compactification. It satisfies the 13D Dirac equation with Cl(12,1) gamma matrices.
             </p>
 
-            <h3>Clifford Algebra Structure</h3>
+            <h3>Clifford Algebra Structure and Spinor Reduction</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+                The complete spinor reduction pathway from bosonic string theory to 4D follows the dimensional
+                reduction chain. Each stage preserves the Dirac structure while reducing spinor components:
+            </p>
             <table class="breaking-table" style="margin-top: 1rem;">
                 <thead>
                     <tr>
                         <th>Dimension</th>
+                        <th>Signature</th>
                         <th>Clifford Algebra</th>
                         <th>Spinor Size</th>
                         <th>Application</th>
@@ -317,25 +322,83 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>4D</td>
-                        <td>Cl(3,1)</td>
-                        <td>4 (Dirac spinor)</td>
-                        <td>Standard QFT</td>
+                        <td>26D</td>
+                        <td>(25,1)</td>
+                        <td>Cl(25,1)</td>
+                        <td>2<sup>13</sup> = 8192</td>
+                        <td>Bosonic string (critical dimension)</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.05);">
+                        <td>13D</td>
+                        <td>(12,1)</td>
+                        <td>Cl(12,1)</td>
+                        <td>2<sup>6</sup> = 64</td>
+                        <td>PM fundamental (post string compactification)</td>
                     </tr>
                     <tr>
                         <td>6D</td>
+                        <td>(5,1)</td>
                         <td>Cl(5,1)</td>
-                        <td>8 (Weyl spinor)</td>
-                        <td>Intermediate effective theory</td>
+                        <td>2<sup>3</sup> = 8</td>
+                        <td>Post-G₂ effective theory</td>
                     </tr>
-                    <tr style="background: rgba(139, 127, 255, 0.1);">
-                        <td>13D</td>
-                        <td>Cl(12,1)</td>
-                        <td>64 (Pneuma spinor)</td>
-                        <td>Fundamental PM field</td>
+                    <tr>
+                        <td>4D</td>
+                        <td>(3,1)</td>
+                        <td>Cl(3,1)</td>
+                        <td>2<sup>2</sup> = 4</td>
+                        <td>Observed spacetime (Standard Model)</td>
                     </tr>
                 </tbody>
             </table>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">Spinor Reduction Pathway</h4>
+                <p style="color: var(--text-secondary);">
+                    Each compactification step reduces the spinor representation:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
+                    <li>
+                        <strong>26D → 13D (Cl(25,1) → Cl(12,1)):</strong> Compactify on T<sup>13</sup> or orbifold.
+                        The 8192-component spinor decomposes into Kaluza-Klein towers. The zero mode survives as
+                        a 64-component Cl(12,1) spinor (reduces by 2<sup>7</sup> due to 13 compact dimensions).
+                    </li>
+                    <li style="margin-top: 0.5rem;">
+                        <strong>13D → 6D (Cl(12,1) → Cl(5,1)):</strong> Compactify on G₂ manifold M⁷.
+                        The unique parallel spinor η on M⁷ (8 real components) pairs with the 6D spinor.
+                        64 = 8 (G₂ harmonic) × 8 (6D Dirac spinor).
+                    </li>
+                    <li style="margin-top: 0.5rem;">
+                        <strong>6D → 4D (Cl(5,1) → Cl(3,1)):</strong> Compactify on T². The 8-component 6D spinor
+                        decomposes: 8 = 4 (4D Dirac) × 2 (T² KK modes). The zero mode gives the 4-component Dirac spinor.
+                    </li>
+                </ul>
+            </div>
+
+            <h4 style="margin-top: 2rem;">Consistency with Heterogeneous Brane Structure</h4>
+            <p style="color: var(--text-secondary);">
+                The spinor reduction Cl(12,1) → Cl(5,1) → Cl(3,1) is consistent with PM's
+                <strong>heterogeneous brane structure</strong>:
+            </p>
+            <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
+                <li>
+                    <strong>D3-branes:</strong> Fill 4D spacetime (signature (3,1)), support Cl(3,1) spinors
+                </li>
+                <li>
+                    <strong>D5-branes:</strong> Fill 6D spacetime (signature (5,1)), support Cl(5,1) spinors
+                </li>
+                <li>
+                    <strong>D9-branes (bulk):</strong> Fill 10D subspace of the 13D bulk, support larger spinor reps
+                </li>
+                <li>
+                    <strong>G₂ singularities:</strong> Localized on the internal M⁷, enhance gauge symmetry to SO(10)
+                </li>
+            </ul>
+            <p style="color: var(--text-secondary); margin-top: 1rem;">
+                This heterogeneous structure explains why different matter sectors (quarks vs. leptons,
+                different generations) may localize on different brane stacks with different Clifford algebra
+                representations, all unified in the full 13D Cl(12,1) Pneuma spinor.
+            </p>
 
             <h3>Pneuma Field Decomposition</h3>
             <p style="margin-top: 1.5rem;">

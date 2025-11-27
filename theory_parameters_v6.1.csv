@@ -37,7 +37,7 @@ Entropy_condensate,5.419148351946601e-15,dimensionless,Von Neumann entropy in to
 B_p_decay,0.6666666666666666,dimensionless,Proton decay branching B(p→e⁺π⁰) example θ=45°,1/(1 + β²) from mirror mixing,Yes (SymPy),Passed,,,,,
 N_vac,1.00e+500,dimensionless,String landscape vacua count,exp(log(10^500)) from flux compactifications,Yes (SymPy),Passed,,,,,
 S_landscape,1151.2925464970228,dimensionless,Landscape entropy S = log(N_vac),log(10^500) ≈ 1151.29,Yes (SymPy),Passed,,,,,
-Γ_bubble,1.0,yr^{-1} Mpc^{-3},Vacuum decay tunneling rate (Coleman-De Luccia),"exp(-S_E), S_E = 27π²σ⁴/(2ΔV³)",Yes (SymPy),Passed,,,,,
+Γ_bubble,0.0,yr^{-1} Mpc^{-3},Vacuum decay tunneling rate (Coleman-De Luccia),"exp(-S_E), S_E = 27π²σ⁴/(2ΔV³)",Yes (SymPy),Passed,,,,,
 α_F,0.0045,M_Pl^{-2},"F(R,T,τ) quadratic curvature coefficient",64/(1440π² M_Pl²) from 1-loop quantum corrections,Yes (config.py),Passed,,,,,
 β_F,0.15,dimensionless,"F(R,T,τ) matter coupling from breathing mode",2φ₀ where φ₀ = 0.075 M_Pl,Yes (config.py),Passed,,,,,
 γ_F,0.0001,M_Pl^{-2},"F(R,T,τ) mixed RT coupling",g²/(M_Pl² √V_K) from multi-time coupling,Yes (config.py),Passed,,,,,

@@ -176,6 +176,82 @@
                     </div>
                 </div>
             </div>
+
+            <h4 style="margin-top: 2rem;">Planck Mass from Dimensional Reduction</h4>
+            <p>
+                The 4D Planck mass emerges from integrating over the compact dimension:
+            </p>
+            <div class="expandable-formula">
+                <div class="formula-header">
+                    <div class="formula-main">
+                        M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>n+2</sup> &times; V<sub>n</sub>
+                    </div>
+                    <div class="formula-controls">
+                        <span class="foundation-badge established">General Formula</span>
+                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    </div>
+                </div>
+                <div class="formula-expansion">
+                    <div class="sub-components">
+                        <div class="sub-component">
+                            <div class="component-symbol">M<sub>Pl</sub></div>
+                            <div class="component-name">4D Planck Mass</div>
+                            <div class="component-desc">Observed gravitational strength: M<sub>Pl</sub> ~ 1.2 &times; 10<sup>19</sup> GeV (measured input)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">M<sub>*</sub></div>
+                            <div class="component-name">Fundamental Mass Scale</div>
+                            <div class="component-desc">Higher-dimensional gravitational coupling constant (unknown parameter)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">n</div>
+                            <div class="component-name">Number of Compact Dimensions</div>
+                            <div class="component-desc">Number of compactified spatial dimensions (e.g., n=1 for original KK, n=9 for PM's 13D&rarr;4D)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">V<sub>n</sub></div>
+                            <div class="component-name">Volume of Compact Space</div>
+                            <div class="component-desc">Total volume of the n-dimensional internal manifold (in fundamental units)</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">Example: 13D &rarr; 4D (PM Framework)</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Starting dimension D = 13, compact dimensions n = 9
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub> (where n+2 = 11)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            V<sub>9</sub> = Vol(G<sub>2</sub>) &times; Vol(T<sup>2</sup>) is not directly measurable
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            For M<sub>*</sub> ~ M<sub>Pl</sub>: requires V<sub>9</sub> ~ (M<sub>Pl</sub>)<sup>-9</sup>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
+                <h4 style="color: #ff7eb6;">Important: M<sub>Pl</sub> is an Input, Not an Output</h4>
+                <p style="color: var(--text-secondary);">
+                    A common misconception is that dimensional reduction "predicts" M<sub>Pl</sub>. In reality:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li><strong>M<sub>Pl</sub> ~ 1.2 &times; 10<sup>19</sup> GeV is measured</strong> from gravitational experiments (Cavendish, planetary orbits, etc.)</li>
+                    <li><strong>V<sub>n</sub> is not independently measurable</strong> - we cannot directly observe the internal geometry's volume</li>
+                    <li><strong>M<sub>*</sub> is a free parameter</strong> - the fundamental higher-dimensional scale is not predicted by the geometry alone</li>
+                    <li><strong>The formula relates three unknowns:</strong> M<sub>*</sub><sup>n+2</sup> &times; V<sub>n</sub> = M<sub>Pl</sub><sup>2</sup> (only the product is constrained)</li>
+                </ul>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    <strong>Bottom line:</strong> Given M<sub>Pl</sub> (measured) and choosing M<sub>*</sub> (model parameter),
+                    the formula determines V<sub>n</sub>. The framework does not predict the Planck mass from first principles.
+                </p>
+            </div>
         </section>
 
         <!-- Charge Quantization -->
@@ -397,6 +473,18 @@
                     While PM's shared dimensions (T<sup>2</sup>) are flat with R ~ (5 TeV)<sup>-1</sup>,
                     the internal G<sub>2</sub> manifold may incorporate warping or flux-induced effective
                     warping to stabilize moduli and generate hierarchies within the SO(10) breaking pattern.
+                </p>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    <strong>Warped correction to dimensional reduction:</strong> If the G<sub>2</sub> manifold
+                    has a warped metric (e.g., from flux stabilization), the Planck mass formula acquires an
+                    additional warp factor:
+                </p>
+                <div style="background: rgba(139, 127, 255, 0.12); padding: 1rem; border-radius: 8px; margin-top: 0.75rem; text-align: center; font-family: 'Crimson Text', serif; font-size: 1.05rem;">
+                    M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub> &times; &int;<sub>G₂</sub> e<sup>-2A(y)</sup>
+                </div>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
+                    where A(y) is the warp factor profile on the G<sub>2</sub> manifold. This can help address
+                    the hierarchy problem without requiring extremely large internal volumes.
                 </p>
             </div>
         </section>
