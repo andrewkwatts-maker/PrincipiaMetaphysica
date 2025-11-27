@@ -121,7 +121,7 @@ class PhenomenologyParameters:
     @staticmethod
     def w0_value():
         """Dark energy equation of state at z=0"""
-        return -PhenomenologyParameters.W0_NUMERATOR / PhenomenologyParameters.W0_DENOMINATOR
+        return PhenomenologyParameters.W0_NUMERATOR / PhenomenologyParameters.W0_DENOMINATOR
 
 
 # ==============================================================================

@@ -1,0 +1,37 @@
+================================================================================
+PRINCIPIA METAPHYSICA - THEORY SIMULATION v6.1
+Combined Parameter Generation and Validation
+================================================================================
+
+Generating core parameters...
+Deriving fundamental parameters...
+Using configuration: D_bulk=26, M_Pl=1.2195e+19 GeV
+Running QuTiP condensate simulation...
+Derived 45 parameters successfully!
+
+================================================================================
+PARAMETER SUMMARY
+================================================================================
+Total parameters: 45
+Derived (SymPy/QuTiP/NumPy): 27
+Asserted: 16
+Pending: 2
+
+Validation status:
+  [PASS] Passed: 33
+  [WARN] Warnings: 1
+  [FAIL] Failed: 9
+  [PEND] Pending: 2
+
+Parameters with real-world comparison: 11
+  Within experimental error: 6/11
+
+Sample parameters:
+Traceback (most recent call last):
+  File "h:\Github\PrincipiaMetaphysica\SimulateTheory.py", line 1199, in <module>
+    print(df[['Parameter', 'Value', 'Unit', 'Derived?', 'Validation']].head(10).to_string())
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u03c7' in position 581: character maps to <undefined>
