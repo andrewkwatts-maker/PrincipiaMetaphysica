@@ -36,8 +36,8 @@
             <h1 style="margin-top: 1rem;">G₂ Manifolds</h1>
             <p>
                 G₂ manifolds are exceptional 7-dimensional Riemannian manifolds with holonomy group G₂,
-                the smallest of the five exceptional Lie groups. They provide the natural geometric framework
-                for M-theory compactifications and form the internal geometry of Principia Metaphysica.
+                the smallest of the five exceptional Lie groups. In Principia Metaphysica's 2T physics framework,
+                each 14D half contains a 7D G₂ manifold, yielding the dimensional structure 14D &rarr; 7D per sector.
             </p>
         </div>
 
@@ -252,81 +252,90 @@
                 For Principia Metaphysica, a D₅ singularity gives SO(10) unification:
             </p>
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1rem;">
-                <h4 style="color: #8b7fff;">PM Application: D₅ Singularity</h4>
+                <h4 style="color: #8b7fff;">PM Application: Dual D₅ Singularities in 2T Framework</h4>
                 <p style="color: var(--text-secondary);">
-                    The internal G₂ manifold in PM has a conical D₅ singularity. In M-theory, this yields:
+                    Each G₂ manifold (M⁷<sub>1</sub> and M⁷<sub>2</sub>) in the two 14D halves has a conical D₅ singularity:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li>Gauge group: D₅ ≅ SO(10)</li>
-                    <li>Unifies all SM fermions in 16-dimensional spinor representation</li>
-                    <li>Singularity partially resolved by flux, yielding χ_eff = 72</li>
+                    <li>Gauge group per sector: D₅ ≅ SO(10)</li>
+                    <li>Each sector unifies SM fermions in 16-dimensional spinor representation</li>
+                    <li>Dual sectors coupled via shared timelike dimensions (Sp(2,R) structure)</li>
+                    <li>Singularity partially resolved by flux, yielding χ_eff = 72 per sector</li>
+                    <li>Total: 2 × 72 = 144 (consistent with dual G₂ pair formula)</li>
                 </ul>
             </div>
         </section>
 
         <!-- Physical Relevance -->
         <section class="detail-section">
-            <h3>Physical Relevance: M-Theory Compactifications</h3>
+            <h3>Physical Relevance: G₂ Compactifications in 2T Framework</h3>
             <p>
-                G₂ manifolds are the natural compactification spaces for <strong>11-dimensional M-theory</strong>.
-                Unlike string theory (10D), M-theory has no free parameter and is conjectured to be the
-                fundamental theory underlying all string theories.
+                In Principia Metaphysica's 2T physics framework, G₂ manifolds provide the compactification geometry
+                for each of the two 14D halves. The fundamental 26D bulk (signature (24,2)) splits into
+                14D<sub>1</sub> × 14D<sub>2</sub> via Sp(2,R) gauge fixing, and each 14D sector compactifies on a
+                7D G₂ manifold.
             </p>
 
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        11D M-theory on M⁴ × M⁷ → 4D N=1 SUSY theory
+                        26D (24,2) on (M⁷<sub>1</sub> × M⁷<sub>2</sub>) → 4D with dual G₂ sectors
                     </div>
                     <div class="formula-controls">
-                        <span class="foundation-badge established">M-Theory</span>
+                        <span class="foundation-badge pm-specific">2T Framework</span>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">M⁴</div>
-                            <div class="component-name">4D Spacetime</div>
-                            <div class="component-desc">Observable Minkowski space (or slowly varying cosmology)</div>
+                            <div class="component-symbol">26D (24,2)</div>
+                            <div class="component-name">Fundamental Bulk</div>
+                            <div class="component-desc">26 dimensions with signature (24,2): 24 spacelike, 2 timelike dimensions</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">M⁷</div>
-                            <div class="component-name">G₂ Manifold</div>
-                            <div class="component-desc">Compact 7-dimensional internal space with G₂ holonomy</div>
+                            <div class="component-symbol">M⁷<sub>1</sub>, M⁷<sub>2</sub></div>
+                            <div class="component-name">Dual G₂ Manifolds</div>
+                            <div class="component-desc">Two 7-dimensional G₂ manifolds, one in each 14D half</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">N=1 SUSY</div>
-                            <div class="component-name">Minimal Supersymmetry</div>
-                            <div class="component-desc">G₂ holonomy preserves exactly 1/8 of 11D supersymmetry → N=1 in 4D</div>
+                            <div class="component-symbol">14D<sub>1</sub>, 14D<sub>2</sub></div>
+                            <div class="component-name">14D Halves</div>
+                            <div class="component-desc">Each 14D sector has signature (12,2): 12 spatial + 2 timelike (shared)</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">Sp(2,R)</div>
+                            <div class="component-name">Gauge Symmetry</div>
+                            <div class="component-desc">Symplectic group acting on the two timelike dimensions, ensures consistency</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">Supersymmetry Counting</div>
+                        <div class="chain-title">Dimensional Reduction in 2T Framework</div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            11D: 32 supercharges
+                            26D (24,2) → 14D<sub>1</sub> (12,2) ⊗ 14D<sub>2</sub> (12,2) [Sp(2,R) gauge fixing]
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            G₂ holonomy: preserves 1 spinor (8 components)
+                            14D<sub>i</sub> → 7D<sub>i</sub> effective [Compactify on G₂ manifold M⁷<sub>i</sub>]
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            4D effective: N=1 SUSY (4 supercharges)
+                            7D<sub>1</sub> ⊗ 7D<sub>2</sub> → 4D (3,1) [Shared timelike dimensions unify]
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h4 style="margin-top: 2rem;">Why G₂ for Principia Metaphysica?</h4>
+            <h4 style="margin-top: 2rem;">Why G₂ for Principia Metaphysica's 2T Framework?</h4>
             <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2;">
-                <li><strong>Unique parallel spinor:</strong> The single real parallel spinor connects naturally to the Pneuma field (fundamental consciousness field)</li>
-                <li><strong>7-dimensional:</strong> Perfect arithmetic: 13D total = 4D observable + 7D internal + 2D shared</li>
-                <li><strong>ADE singularities:</strong> Natural mechanism for SO(10) gauge enhancement</li>
+                <li><strong>Unique parallel spinor:</strong> The single real parallel spinor in each G₂ half connects to the dual Pneuma fields</li>
+                <li><strong>7-dimensional:</strong> Perfect arithmetic in 2T framework: 26D = 2×(14D) where 14D = 7D G₂ + 5D space + 2D shared time</li>
+                <li><strong>Dual sector symmetry:</strong> Two G₂ manifolds (one per 14D half) provide natural left-right or matter-antimatter asymmetry</li>
+                <li><strong>ADE singularities:</strong> Natural mechanism for SO(10) gauge enhancement in each sector</li>
                 <li><strong>M-theory native:</strong> No need to invoke string dualities or F-theory uplift</li>
-                <li><strong>Flux dressing:</strong> G₄ flux on M⁷ can yield effective χ_eff ≠ 0, giving 3 generations</li>
-                <li><strong>Moduli stabilization:</strong> G₂ moduli more tractable than CY moduli</li>
+                <li><strong>Flux dressing:</strong> G₄ flux on each M⁷ can yield effective χ_eff = 72 per sector, giving 3 generations</li>
+                <li><strong>Moduli stabilization:</strong> G₂ moduli more tractable than CY moduli; shared time structure constrains moduli dynamics</li>
             </ul>
         </section>
 
@@ -340,10 +349,10 @@
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        n_gen = χ_eff(M⁷)/24 = 72/24 = 3
+                        n_gen = χ_eff(M⁷<sub>1</sub> ⊕ M⁷<sub>2</sub>)/24 = 72/24 = 3 (per sector)
                     </div>
                     <div class="formula-controls">
-                        <span class="foundation-badge derived">PM Formula</span>
+                        <span class="foundation-badge pm-specific">2T Framework Formula</span>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
                 </div>
@@ -352,36 +361,45 @@
                         <div class="sub-component">
                             <div class="component-symbol">n_gen</div>
                             <div class="component-name">Number of Generations</div>
-                            <div class="component-desc">Observed: 3 families (electron, muon, tau)</div>
+                            <div class="component-desc">Observed: 3 families (electron, muon, tau) from each G₂ sector</div>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">χ_eff</div>
                             <div class="component-name">Effective Euler Characteristic</div>
-                            <div class="component-desc">Modified by G₄ flux and singularity resolution. Pure G₂: χ = 0, but flux-dressed: χ_eff = 72 in PM.</div>
+                            <div class="component-desc">Modified by G₄ flux and singularity resolution. Per G₂: χ_eff = 72, Total: 144</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">M⁷<sub>1</sub> ⊕ M⁷<sub>2</sub></div>
+                            <div class="component-name">Dual G₂ Manifolds</div>
+                            <div class="component-desc">Two G₂ manifolds in 2T framework, one per 14D half. Each contributes χ_eff = 72</div>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">24</div>
                             <div class="component-name">Index Theorem Coefficient</div>
-                            <div class="component-desc">From M-theory index theorem on G₂ manifolds (analogous to CY4 F-theory formula)</div>
+                            <div class="component-desc">From M-theory index theorem on G₂ manifolds</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">PM Specification</div>
+                        <div class="chain-title">2T Framework Generation Count</div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            Bare G₂: χ = 0 → 0 generations (unacceptable)
+                            Each bare G₂: χ = 0 → 0 generations
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            Add G₄ flux threading 4-cycles
+                            Add G₄ flux threading 4-cycles in each M⁷<sub>i</sub>
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            Flux modifies index: χ_eff = 72
+                            Flux modifies index: χ_eff = 72 per G₂ manifold
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            n_gen = 72/24 = 3 ✓
+                            n_gen = 72/24 = 3 generations from each sector ✓
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            Shared time structure projects to single observable set of 3 families
                         </div>
                     </div>
                 </div>
@@ -488,6 +506,14 @@
                 <li>
                     <strong>Twisted Connected Sums:</strong> Kovalev, A. (2003) "Twisted connected sums and special Riemannian holonomy"
                     <em>J. Reine Angew. Math.</em> 565: 125-160
+                </li>
+                <li>
+                    <strong>2T Physics:</strong> Bars, I. (2000) "Survey of Two-Time Physics"
+                    <a href="https://arxiv.org/abs/hep-th/0008164" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/0008164]</a>
+                </li>
+                <li>
+                    <strong>2T Framework:</strong> Bars, I. & Kounnas, C. (1997) "String and Particle with Two Times"
+                    <a href="https://arxiv.org/abs/hep-th/9703060" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/9703060]</a>
                 </li>
                 <li>
                     <strong>Wikipedia:</strong>

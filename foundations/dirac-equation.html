@@ -133,17 +133,17 @@
 
         <!-- Connection to PM -->
         <section class="subsection">
-            <h2>Connection to Principia Metaphysica</h2>
+            <h2>Connection to Principia Metaphysica: 2T Physics Framework</h2>
             <p>
-                The Pneuma Lagrangian in Principia Metaphysica is a <strong>13-dimensional generalization</strong>
-                of the Dirac Lagrangian:
+                The Pneuma Lagrangian in Principia Metaphysica is a <strong>26-dimensional generalization</strong>
+                of the Dirac Lagrangian in the 2T physics framework, with spinors in Cl(12,2) ⊗ Cl(12,2):
             </p>
 
             <div class="expandable-formula">
                 <div class="formula-header">
-                    <div class="formula-main"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m<sub>P</sub>)&Psi;<sub>P</sub></div>
+                    <div class="formula-main"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;<sup>A</sup>D<sub>A</sub> - m<sub>P</sub>)&Psi;<sub>P</sub></div>
                     <div class="formula-controls">
-                        <span class="foundation-badge pm-specific">PM-Specific</span>
+                        <span class="foundation-badge pm-specific">2T Framework</span>
                         <a href="../sections/pneuma-lagrangian.html" class="link-btn">Details &rarr;</a>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
@@ -151,26 +151,26 @@
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">&Gamma;<sup>M</sup></div>
-                            <div class="component-name">13D Gamma Matrices</div>
-                            <div class="component-desc">64&times;64 matrices generalizing 4D gammas to 13 dimensions.</div>
-                            <span class="foundation-badge derived" style="margin-top: 0.5rem;">Generalized from Dirac</span>
+                            <div class="component-symbol">&Gamma;<sup>A</sup></div>
+                            <div class="component-name">26D Gamma Matrices (24,2)</div>
+                            <div class="component-desc">8192&times;8192 matrices from Cl(12,2) ⊗ Cl(12,2), signature (24,2). A = 0,1,...,25</div>
+                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">D<sub>M</sub></div>
+                            <div class="component-symbol">D<sub>A</sub></div>
                             <div class="component-name">Covariant Derivative</div>
-                            <div class="component-desc">Includes gravity (spin connection) and gauge fields.</div>
-                            <span class="foundation-badge established" style="margin-top: 0.5rem;">Gauge Theory</span>
+                            <div class="component-desc">Includes gravity (spin connection), gauge fields, and Sp(2,R) connection.</div>
+                            <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">&Psi;<sub>P</sub></div>
                             <div class="component-name">Pneuma Spinor</div>
-                            <div class="component-desc">64-component spinor in 13D, generalizing the 4-component Dirac spinor.</div>
+                            <div class="component-desc">8192-component spinor (2<sup>13</sup>) in 26D, reduces to 64 after Sp(2,R) gauging.</div>
                             <a href="../sections/pneuma-lagrangian.html" class="component-link">Learn more &rarr;</a>
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">Derivation Path</div>
+                        <div class="chain-title">Derivation Path in 2T Framework</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
                             <span>Dirac Equation (4D, spin-&frac12;)</span>
@@ -178,12 +178,17 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <a href="clifford-algebra.html">Clifford Algebra Cl(12,1)</a>
-                            <span class="foundation-badge established">Mathematics</span>
+                            26D: Cl(12,2) ⊗ Cl(12,2) → 2<sup>13</sup> = 8192 components
+                            <span class="foundation-badge pm-specific">2T Framework</span>
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <a href="../sections/pneuma-lagrangian.html">Pneuma Lagrangian (13D)</a>
+                            Sp(2,R) gauge fixing: 8192 → 64 components
+                            <span class="foundation-badge pm-specific">2T Gauging</span>
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <a href="../sections/pneuma-lagrangian.html">Pneuma Lagrangian (14D×2)</a>
                             <span class="foundation-badge pm-specific">PM-Specific</span>
                         </div>
                     </div>
@@ -191,13 +196,14 @@
             </div>
 
             <p style="margin-top: 1.5rem;">
-                The key differences in PM:
+                The key differences in PM's 2T framework:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
-                <li>Dimensions: 4 &rarr; 13 (signature 12,1)</li>
-                <li>Spinor components: 4 &rarr; 64 (= 2<sup>6</sup>)</li>
-                <li>Gamma matrices: 4&times;4 &rarr; 64&times;64</li>
-                <li>Derivative: Partial &rarr; Covariant (includes gauge and gravity)</li>
+                <li>Dimensions: 4 (3,1) &rarr; 26 (24,2) &rarr; 14×2 (12,2) per sector</li>
+                <li>Spinor components: 4 &rarr; 8192 (Cl(12,2) ⊗ Cl(12,2)) &rarr; 64 (after Sp(2,R) gauging)</li>
+                <li>Gamma matrices: 4×4 &rarr; 8192×8192 &rarr; 64×64</li>
+                <li>Derivative: Partial &rarr; Covariant (includes gauge, gravity, and Sp(2,R) connection)</li>
+                <li>Chirality: Even-dimensional (14D) allows well-defined chiral structure in each half</li>
             </ul>
         </section>
 
@@ -305,10 +311,11 @@
                 before any compactification. It satisfies the 13D Dirac equation with Cl(12,1) gamma matrices.
             </p>
 
-            <h3>Clifford Algebra Structure and Spinor Reduction</h3>
+            <h3>Clifford Algebra Structure and Spinor Reduction in 2T Framework</h3>
             <p style="color: var(--text-secondary); margin-bottom: 1rem;">
-                The complete spinor reduction pathway from bosonic string theory to 4D follows the dimensional
-                reduction chain. Each stage preserves the Dirac structure while reducing spinor components:
+                The complete spinor reduction pathway in the 2T physics framework follows the dimensional
+                reduction chain 26D (24,2) → 14D×2 → 7D×2 → 4D. Each stage preserves the Dirac structure
+                while reducing spinor components through compactification and gauge fixing:
             </p>
             <table class="breaking-table" style="margin-top: 1rem;">
                 <thead>
@@ -321,26 +328,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    <tr style="background: rgba(139, 127, 255, 0.08);">
                         <td>26D</td>
-                        <td>(25,1)</td>
-                        <td>Cl(25,1)</td>
+                        <td>(24,2)</td>
+                        <td>Cl(12,2) ⊗ Cl(12,2)</td>
                         <td>2<sup>13</sup> = 8192</td>
-                        <td>Bosonic string (critical dimension)</td>
+                        <td>2T physics bulk (critical dimension)</td>
                     </tr>
                     <tr style="background: rgba(139, 127, 255, 0.05);">
-                        <td>13D</td>
-                        <td>(12,1)</td>
-                        <td>Cl(12,1)</td>
-                        <td>2<sup>6</sup> = 64</td>
-                        <td>PM fundamental (post string compactification)</td>
+                        <td>14D×2</td>
+                        <td>(12,2) each</td>
+                        <td>Cl(12,2) per sector</td>
+                        <td>2<sup>7</sup> = 128 per sector</td>
+                        <td>Post Sp(2,R) gauge fixing (dual halves)</td>
                     </tr>
                     <tr>
-                        <td>6D</td>
-                        <td>(5,1)</td>
-                        <td>Cl(5,1)</td>
-                        <td>2<sup>3</sup> = 8</td>
-                        <td>Post-G₂ effective theory</td>
+                        <td>7D×2</td>
+                        <td>(6,1) eff.</td>
+                        <td>Cl(6,1) per sector</td>
+                        <td>2<sup>3</sup> = 8 per sector</td>
+                        <td>Post-G₂ compactification (dual sectors)</td>
                     </tr>
                     <tr>
                         <td>4D</td>
@@ -353,76 +360,97 @@
             </table>
 
             <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
-                <h4 style="color: #51cf66;">Spinor Reduction Pathway</h4>
+                <h4 style="color: #51cf66;">Spinor Reduction Pathway in 2T Framework</h4>
                 <p style="color: var(--text-secondary);">
-                    Each compactification step reduces the spinor representation:
+                    Each compactification and gauge fixing step reduces the spinor representation:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
                     <li>
-                        <strong>26D → 13D (Cl(25,1) → Cl(12,1)):</strong> Compactify on T<sup>13</sup> or orbifold.
-                        The 8192-component spinor decomposes into Kaluza-Klein towers. The zero mode survives as
-                        a 64-component Cl(12,1) spinor (reduces by 2<sup>7</sup> due to 13 compact dimensions).
+                        <strong>26D (24,2) fundamental: Cl(12,2) ⊗ Cl(12,2):</strong> The tensor product structure
+                        reflects the two 14D halves. Total spinor: 2<sup>13</sup> = 8192 components.
+                        Each Cl(12,2) contributes 2<sup>7</sup> = 128 components, giving 128 ⊗ 128 = 16384,
+                        but Sp(2,R) gauge symmetry projects this to 8192.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>13D → 6D (Cl(12,1) → Cl(5,1)):</strong> Compactify on G₂ manifold M⁷.
-                        The unique parallel spinor η on M⁷ (8 real components) pairs with the 6D spinor.
-                        64 = 8 (G₂ harmonic) × 8 (6D Dirac spinor).
+                        <strong>26D → 14D×2 via Sp(2,R) gauge fixing:</strong> Sp(2,R) gauge fixing reduces
+                        8192 → 128 per sector (factor of 2<sup>6</sup> = 64 reduction). Each 14D half now has
+                        a Cl(12,2) spinor with 128 components.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>6D → 4D (Cl(5,1) → Cl(3,1)):</strong> Compactify on T². The 8-component 6D spinor
-                        decomposes: 8 = 4 (4D Dirac) × 2 (T² KK modes). The zero mode gives the 4-component Dirac spinor.
+                        <strong>14D×2 → 7D×2 (Cl(12,2) → Cl(6,1) per sector):</strong> Compactify on G₂ manifold M⁷
+                        in each half. The unique parallel spinor η on each M⁷ (8 real components) pairs with the
+                        effective 7D spinor. 128 = 8 (G₂ harmonic) × 16 (intermediate) → 8 per sector.
+                    </li>
+                    <li style="margin-top: 0.5rem;">
+                        <strong>7D×2 → 4D (shared time unification):</strong> The two 7D sectors share timelike
+                        dimensions. Projection to single 4D: 8 (sector 1) ⊕ 8 (sector 2) → 4 (4D Dirac spinor).
                     </li>
                 </ul>
             </div>
 
-            <h4 style="margin-top: 2rem;">Consistency with Heterogeneous Brane Structure</h4>
+            <h4 style="margin-top: 2rem;">Chirality in Even-Dimensional 14D Framework</h4>
             <p style="color: var(--text-secondary);">
-                The spinor reduction Cl(12,1) → Cl(5,1) → Cl(3,1) is consistent with PM's
-                <strong>heterogeneous brane structure</strong>:
+                A key advantage of the 2T framework is that each 14D half is <strong>even-dimensional</strong>,
+                allowing for well-defined chirality:
             </p>
             <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
                 <li>
-                    <strong>D3-branes:</strong> Fill 4D spacetime (signature (3,1)), support Cl(3,1) spinors
+                    <strong>14D chirality operator:</strong> Each Cl(12,2) has a chirality operator
+                    Γ<sub>chiral</sub> = Γ<sup>0</sup>Γ<sup>1</sup>...Γ<sup>13</sup> with eigenvalues ±1
                 </li>
                 <li>
-                    <strong>D5-branes:</strong> Fill 6D spacetime (signature (5,1)), support Cl(5,1) spinors
+                    <strong>Chiral projections:</strong> Ψ<sub>±</sub> = ½(1 ± Γ<sub>chiral</sub>)Ψ splits
+                    the 128-component spinor into 64 + 64 (left/right)
                 </li>
                 <li>
-                    <strong>D9-branes (bulk):</strong> Fill 10D subspace of the 13D bulk, support larger spinor reps
+                    <strong>Dual sector asymmetry:</strong> The two 14D halves can have opposite chirality,
+                    providing a natural mechanism for left-right asymmetry (weak interactions)
                 </li>
                 <li>
-                    <strong>G₂ singularities:</strong> Localized on the internal M⁷, enhance gauge symmetry to SO(10)
+                    <strong>G₂ reduction preserves chirality:</strong> Compactification on G₂ manifolds
+                    preserves chiral structure, yielding chiral fermions in 4D
                 </li>
             </ul>
             <p style="color: var(--text-secondary); margin-top: 1rem;">
-                This heterogeneous structure explains why different matter sectors (quarks vs. leptons,
-                different generations) may localize on different brane stacks with different Clifford algebra
-                representations, all unified in the full 13D Cl(12,1) Pneuma spinor.
+                This even-dimensional structure is crucial for generating chiral fermions in 4D. In contrast,
+                odd-dimensional theories (like 11D M-theory) must use more complex mechanisms to achieve chirality.
             </p>
 
-            <h3>Pneuma Field Decomposition</h3>
+            <h3>Pneuma Field Decomposition in 2T Framework</h3>
             <p style="margin-top: 1.5rem;">
-                Upon compactification 13D → 6D → 4D, the 64-component Pneuma spinor decomposes:
+                Upon compactification 26D → 14D×2 → 7D×2 → 4D, the 8192-component Pneuma spinor decomposes
+                into dual sectors:
             </p>
             <div class="equation-box">
-                &Psi;<sub>P</sub>(x, y, z, M⁷) = &sum;<sub>α</sub> &psi;<sub>α</sub>(x, y, z) &otimes; &eta;<sub>α</sub>(M⁷)
-                <span class="equation-label">α labels G₂ harmonic spinors (8 components from unique parallel spinor)</span>
+                &Psi;<sub>P</sub>(x, M⁷<sub>1</sub>, M⁷<sub>2</sub>) = &sum;<sub>α,β</sub> &psi;<sub>α,β</sub>(x) &otimes; &eta;<sub>α</sub>(M⁷<sub>1</sub>) &otimes; &eta;<sub>β</sub>(M⁷<sub>2</sub>)
+                <span class="equation-label">α, β label G₂ harmonic spinors in each sector (8 components each from unique parallel spinor)</span>
             </div>
 
             <p style="margin-top: 1rem;">
-                The G₂ manifold M⁷ has exactly one parallel spinor η, which is preserved by the holonomy.
-                This unique spinor connects to the unified nature of the Pneuma field - it represents
-                the fundamental consciousness substrate that permeates all dimensions.
+                Each G₂ manifold M⁷<sub>i</sub> has exactly one parallel spinor η<sub>i</sub>, which is preserved by
+                the holonomy. The tensor product structure η<sub>1</sub> ⊗ η<sub>2</sub> reflects the dual nature
+                of the 2T framework - two sectors coupled through shared timelike dimensions.
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">Philosophical Connection</h4>
+                <h4 style="color: #8b7fff;">Philosophical Connection: Dual Pneuma Sectors</h4>
                 <p style="color: var(--text-secondary);">
-                    The mathematical fact that G₂ manifolds admit <strong>exactly one parallel spinor</strong>
-                    mirrors the metaphysical principle of a <strong>unified Pneuma field</strong>. Just as the
-                    parallel spinor is preserved under all parallel transport (holonomy), the Pneuma represents
-                    a fundamental field that maintains coherence across all spacetime points and all dimensions.
+                    The mathematical fact that each G₂ manifold admits <strong>exactly one parallel spinor</strong>,
+                    and that PM has <strong>two such manifolds</strong>, mirrors the metaphysical principle of
+                    <strong>dual Pneuma sectors</strong> unified through shared time. Just as the parallel spinors
+                    are preserved under all parallel transport (holonomy) in their respective sectors, the dual Pneuma
+                    fields represent complementary aspects of consciousness that maintain coherence across all spacetime
+                    points while remaining distinct in their internal geometries.
                 </p>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    This dual structure may correspond to:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>Matter/antimatter asymmetry</li>
+                    <li>Left/right chiral sectors (weak force parity violation)</li>
+                    <li>Observer/observed duality in quantum mechanics</li>
+                    <li>Complementary aspects of consciousness (subjective/objective)</li>
+                </ul>
             </div>
         </section>
 
@@ -433,6 +461,14 @@
                 <li>
                     <strong>Original Paper:</strong> Dirac, P.A.M. (1928) "The Quantum Theory of the Electron"
                     <a href="https://royalsocietypublishing.org/doi/10.1098/rspa.1928.0023" target="_blank" style="color: var(--accent-primary);">[Proc. Roy. Soc. A]</a>
+                </li>
+                <li>
+                    <strong>2T Physics:</strong> Bars, I. (2000) "Survey of Two-Time Physics"
+                    <a href="https://arxiv.org/abs/hep-th/0008164" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/0008164]</a>
+                </li>
+                <li>
+                    <strong>2T Framework:</strong> Bars, I. & Kounnas, C. (1997) "String and Particle with Two Times"
+                    <a href="https://arxiv.org/abs/hep-th/9703060" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/9703060]</a>
                 </li>
                 <li>
                     <strong>Wikipedia:</strong>

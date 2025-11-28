@@ -37,7 +37,7 @@
             <p>
                 The Kaluza-Klein mechanism demonstrates how gauge forces can emerge from the geometry
                 of extra spatial dimensions. This established framework forms the foundation for
-                Principia Metaphysica's dimensional reduction: 13D &rarr; 6D &rarr; 4D.
+                Principia Metaphysica's dimensional reduction: 26D &rarr; 14D&times;2 &rarr; 7D&times;2 &rarr; 4D.
             </p>
         </div>
 
@@ -117,7 +117,7 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <a href="../sections/geometric-framework.html">13D with CY4 gives SO(10)</a>
+                            <a href="../sections/geometric-framework.html">26D &rarr; 14D&times;2 with G₂&times;G₂ gives SO(10)</a>
                             <span class="foundation-badge pm-specific">PM Extension</span>
                         </div>
                     </div>
@@ -215,22 +215,22 @@
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">Example: 13D &rarr; 4D (PM Framework)</div>
+                        <div class="chain-title">Example: 26D &rarr; 4D (PM 2T Framework)</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Starting dimension D = 13, compact dimensions n = 9
+                            Starting dimension D = 26, compact dimensions n = 22 (signature (24,2))
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub> (where n+2 = 11)
+                            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>24</sup> &times; V<sub>22</sub> (where n+2 = 24)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            V<sub>9</sub> = Vol(G<sub>2</sub>) &times; Vol(T<sup>2</sup>) is not directly measurable
+                            V<sub>22</sub> = Vol(G<sub>2</sub>) &times; Vol(G<sub>2</sub>) &times; (internal T<sup>2</sup>) is not directly measurable
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            For M<sub>*</sub> ~ M<sub>Pl</sub>: requires V<sub>9</sub> ~ (M<sub>Pl</sub>)<sup>-9</sup>
+                            For M<sub>*</sub> ~ M<sub>Pl</sub>: requires V<sub>22</sub> ~ (M<sub>Pl</sub>)<sup>-22</sup>
                         </div>
                     </div>
                 </div>
@@ -287,13 +287,14 @@
             </ul>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">PM Application</h4>
+                <h4 style="color: #8b7fff;">PM Application: 2T Physics Framework</h4>
                 <p style="color: var(--text-secondary);">
-                    Principia Metaphysica uses a multi-stage compactification:
+                    Principia Metaphysica uses a multi-stage compactification in the 2T framework:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>13D &rarr; 6D:</strong> Compactify on 7D G<sub>2</sub> manifold for SO(10) gauge symmetry</li>
-                    <li><strong>6D &rarr; 4D:</strong> Compactify shared extra dimensions (T<sup>2</sup>) at ~5 TeV scale</li>
+                    <li><strong>26D &rarr; 14D&times;2:</strong> Sp(2,R) gauge fixing of two timelike dimensions</li>
+                    <li><strong>14D&times;2 &rarr; 7D&times;2:</strong> Compactify on 7D G<sub>2</sub> manifolds in each 14D half for SO(10) gauge symmetry</li>
+                    <li><strong>7D&times;2 &rarr; 4D:</strong> Shared timelike dimensions unify the two 7D sectors</li>
                 </ul>
                 <a href="g2-manifolds.html" class="component-link" style="display: inline-block; margin-top: 0.75rem;">
                     See G<sub>2</sub> manifolds &rarr;
@@ -301,107 +302,133 @@
             </div>
         </section>
 
-        <!-- Shared Extra Dimensions: T^2 Compactification -->
+        <!-- 2T Physics: Dual 14D Halves with Shared Time -->
         <section class="detail-section">
-            <h3>Shared Extra Dimensions: T<sup>2</sup> Compactification</h3>
+            <h3>2T Physics: Kaluza-Klein in 14D&times;2 Framework</h3>
             <p>
-                Beyond the original 5D Kaluza-Klein theory, modern frameworks use multiple compact dimensions.
-                In Principia Metaphysica, after compactifying from 13D to 6D on a G<sub>2</sub> manifold,
-                two additional "shared" extra dimensions form a 2-torus T<sup>2</sup> = S<sup>1</sup> &times; S<sup>1</sup>.
+                Principia Metaphysica employs the <strong>2T physics framework</strong> (Bars et al.), where the fundamental
+                26D bulk with signature (24,2) splits into two 14D halves sharing two timelike dimensions. Each 14D half
+                undergoes independent Kaluza-Klein compactification, but the shared time structure enforces consistency
+                between the two sectors.
             </p>
 
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        ds<sup>2</sup><sub>6D</sub> = g<sub>&mu;&nu;</sub>(x)dx<sup>&mu;</sup>dx<sup>&nu;</sup> + R<sub>y</sub><sup>2</sup>dy<sup>2</sup> + R<sub>z</sub><sup>2</sup>dz<sup>2</sup>
+                        ds<sup>2</sup><sub>26D</sub> = &eta;<sub>AB</sub>dx<sup>A</sup>dx<sup>B</sup> + g<sub>i<sub>1</sub>j<sub>1</sub></sub>dy<sup>i<sub>1</sub></sup>dy<sup>j<sub>1</sub></sup> + g<sub>i<sub>2</sub>j<sub>2</sub></sub>dy<sup>i<sub>2</sub></sup>dy<sup>j<sub>2</sub></sup>
                     </div>
                     <div class="formula-controls">
-                        <span class="foundation-badge established">Established</span>
+                        <span class="foundation-badge pm-specific">2T Framework</span>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
-                            <div class="component-name">4D Effective Metric</div>
-                            <div class="component-desc">The metric of observable 4D spacetime after compactification</div>
+                            <div class="component-symbol">&eta;<sub>AB</sub></div>
+                            <div class="component-name">(24,2) Metric</div>
+                            <div class="component-desc">26D bulk metric with signature (24,2): two timelike, 24 spacelike dimensions. A,B = 0,1,...,25</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">R<sub>y</sub>, R<sub>z</sub></div>
-                            <div class="component-name">Torus Radii</div>
-                            <div class="component-desc">Sizes of the two compact circles forming the 2-torus. In PM: R<sub>y</sub> = R<sub>z</sub> ~ (5 TeV)<sup>-1</sup></div>
+                            <div class="component-symbol">g<sub>i<sub>1</sub>j<sub>1</sub></sub></div>
+                            <div class="component-name">First 14D Half Metric</div>
+                            <div class="component-desc">Internal metric on first G<sub>2</sub> manifold (7D) plus 5 spacelike + 2 shared timelike = 14D total</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">T<sup>2</sup></div>
-                            <div class="component-name">2-Torus</div>
-                            <div class="component-desc">Product of two circles: y ~ y + 2&pi;R<sub>y</sub>, z ~ z + 2&pi;R<sub>z</sub></div>
+                            <div class="component-symbol">g<sub>i<sub>2</sub>j<sub>2</sub></sub></div>
+                            <div class="component-name">Second 14D Half Metric</div>
+                            <div class="component-desc">Internal metric on second G<sub>2</sub> manifold (7D) plus 5 spacelike + 2 shared timelike = 14D total</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">Shared T<sup>2</sup></div>
+                            <div class="component-name">Timelike Structure</div>
+                            <div class="component-desc">Two timelike dimensions form a pseudo-Euclidean "time-torus" signature (-,-), shared by both 14D halves</div>
+                        </div>
+                    </div>
+                    <div class="derivation-chain">
+                        <div class="chain-title">2T Physics Compactification</div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            26D (24,2) splits via Sp(2,R) gauge fixing
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Each 14D half: (12,2) signature = 12 spatial + 2 timelike
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Compactify 7D G<sub>2</sub> in each half: 14D &rarr; 7D effective per sector
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Shared time dimensions unify to single 4D spacetime (3,1)
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h4 style="margin-top: 2rem;">Kaluza-Klein Tower on T<sup>2</sup></h4>
+            <h4 style="margin-top: 2rem;">Kaluza-Klein Tower in 14D&times;2 Framework</h4>
             <p>
-                Fields on the 2-torus can be expanded in Fourier modes. From the 4D perspective,
-                these modes appear as a tower of massive states:
+                In the 2T physics framework, each 14D half develops its own KK tower upon compactification.
+                The shared timelike structure ensures that the KK masses in both sectors are correlated.
             </p>
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        m<sub>n,m</sub><sup>2</sup> = (n/R<sub>y</sub>)<sup>2</sup> + (m/R<sub>z</sub>)<sup>2</sup>
+                        M<sub>KK</sub><sup>2</sup> = M<sub>*</sub><sup>2</sup> + (n/R<sub>G<sub>2</sub></sub>)<sup>2</sup>
                     </div>
                     <div class="formula-controls">
-                        <span class="foundation-badge established">KK Tower</span>
+                        <span class="foundation-badge pm-specific">2T KK Tower</span>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">n, m</div>
-                            <div class="component-name">Mode Numbers</div>
-                            <div class="component-desc">Integer quantum numbers labeling momentum in the compact directions (n, m &isin; &Zopf;)</div>
+                            <div class="component-symbol">M<sub>*</sub></div>
+                            <div class="component-name">Fundamental Scale</div>
+                            <div class="component-desc">The fundamental mass scale from 26D reduction, M<sub>*</sub><sup>11</sup> ~ M<sub>Pl</sub><sup>2</sup></div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">m<sub>n,m</sub></div>
-                            <div class="component-name">KK Mode Mass</div>
-                            <div class="component-desc">Mass of the (n,m)-th Kaluza-Klein excitation in 4D</div>
+                            <div class="component-symbol">n</div>
+                            <div class="component-name">KK Mode Number</div>
+                            <div class="component-desc">Integer labeling harmonic modes on G<sub>2</sub> manifolds in each 14D half</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">M<sub>KK</sub> = 1/R</div>
-                            <div class="component-name">Lightest KK Mode</div>
-                            <div class="component-desc">For equal radii R<sub>y</sub> = R<sub>z</sub> = R, the lightest excited state has mass M<sub>KK</sub> = 1/R ~ 5 TeV in PM</div>
+                            <div class="component-symbol">R<sub>G<sub>2</sub></sub></div>
+                            <div class="component-name">G<sub>2</sub> Compactification Radius</div>
+                            <div class="component-desc">Effective size of the 7D G<sub>2</sub> manifolds: 1/R<sub>G<sub>2</sub></sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">Example KK Spectrum (R ~ (5 TeV)<sup>-1</sup>)</div>
+                        <div class="chain-title">KK Spectrum in 2T Framework</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            (0,0) mode: m = 0 (Standard Model fields)
+                            Zero modes: Standard Model fields at low energy
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            (1,0), (0,1) modes: m ~ 5 TeV (First KK excitations)
+                            First KK modes: M<sub>KK</sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV (G<sub>2</sub> modes)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            (1,1) mode: m ~ 7 TeV (Diagonal excitation)
+                            Dual sector coupling via shared time ensures mass degeneracy
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Higher modes: m ~ n &middot; 5 TeV (Future collider physics)
+                            Sp(2,R) gauge symmetry protects time structure
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
-                <h4 style="color: #51cf66;">Experimental Signature</h4>
+                <h4 style="color: #51cf66;">2T Physics Prediction</h4>
                 <p style="color: var(--text-secondary);">
-                    If the shared extra dimensions have size R ~ (5 TeV)<sup>-1</sup>, the first KK excitations
-                    would be detectable at future colliders beyond the LHC. These would appear as copies of
-                    Standard Model particles with masses &gt; 5 TeV, providing direct evidence for extra dimensions.
+                    The 2T framework predicts that KK excitations appear in <strong>dual pairs</strong>, one from each
+                    14D sector. The shared timelike dimensions enforce equal mass spectra in both sectors, leading to
+                    characteristic "doublet" structure in the KK tower. This is a distinctive signature of the 26D &rarr; 14D&times;2
+                    compactification that distinguishes PM from standard KK theories.
                 </p>
             </div>
         </section>
@@ -518,6 +545,14 @@
                 <li>
                     <strong>Review Article:</strong> Overduin & Wesson (1997) "Kaluza-Klein Gravity"
                     <a href="https://arxiv.org/abs/gr-qc/9805018" target="_blank" style="color: var(--accent-primary);">[arXiv]</a>
+                </li>
+                <li>
+                    <strong>2T Physics:</strong> Bars, I. (2000) "Survey of Two-Time Physics"
+                    <a href="https://arxiv.org/abs/hep-th/0008164" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/0008164]</a>
+                </li>
+                <li>
+                    <strong>2T Framework:</strong> Bars, I. & Kounnas, C. (1997) "String and Particle with Two Times"
+                    <a href="https://arxiv.org/abs/hep-th/9703060" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/9703060]</a>
                 </li>
                 <li>
                     <strong>Wikipedia:</strong>
