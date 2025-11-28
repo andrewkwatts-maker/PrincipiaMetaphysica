@@ -461,20 +461,20 @@
             <h1>The Geometric Framework</h1>
             <p class="lead">
                 This section establishes the mathematical foundation of the Principia Metaphysica v6.0
-                "Temporal Mirrors" framework. We introduce the <strong>26-dimensional action with signature (24,2)</strong>,
-                explain how Sp(2,R) gauge symmetry projects the full 26D theory onto an effective 13D shadow,
-                and derive the 4D effective action through Kaluza-Klein dimensional reduction on
-                the Pneuma manifold. The 26D framework incorporates <strong>two time dimensions</strong>
-                and <strong>Z₂ mirror brane structure</strong>.
+                "Temporal Mirrors" framework. We introduce the <strong>26-dimensional action decomposing as M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup></strong>,
+                where each 14D half has <strong>signature (12,2)</strong> with <strong>2 shared timelike dimensions</strong>.
+                Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, and we derive the 4D effective action
+                through Kaluza-Klein dimensional reduction on the Pneuma manifold. The 26D&rarr;14D&times;2 framework provides
+                a <strong>Z₂ mirror brane structure</strong> with fundamental two-time dynamics.
             </p>
         </section>
 
         <div class="toc-box">
             <h3>In This Section</h3>
             <ul class="toc-list">
-                <li><a href="#eft-paradigm">2.1 26D Action and Sp(2,R) Gauge Symmetry</a></li>
+                <li><a href="#eft-paradigm">2.1 26D&rarr;14D&times;2 Action and Sp(2,R) Gauge Symmetry</a></li>
                 <li style="padding-left: 1.5rem;"><a href="#two-time-structure">2.1.1 Two-Time Structure and Ghost Elimination</a></li>
-                <li style="padding-left: 1.5rem;"><a href="#effective-13d">2.1.2 Effective 13D Shadow</a></li>
+                <li style="padding-left: 1.5rem;"><a href="#effective-13d">2.1.2 Effective 14D Halves with Shared Time</a></li>
                 <li><a href="#pneuma-manifold">2.2 The Pneuma Manifold: G₂ Manifold with F-Theory Connection</a></li>
                 <li style="padding-left: 1.5rem;"><a href="#cy4-construction">2.2.1 G₂ Topology (χ_eff = 72)</a></li>
                 <li style="padding-left: 1.5rem;"><a href="#mirror-cy4">2.2.2 Z₂ Mirror Structure (χ = 144 Total)</a></li>
@@ -486,13 +486,14 @@
         <section id="eft-paradigm" class="subsection">
             <div class="subsection-header">
                 <span class="subsection-number">2.1</span>
-                <h2>26D Action and Sp(2,R) Gauge Symmetry</h2>
+                <h2>26D&rarr;14D&times;2 Action and Sp(2,R) Gauge Symmetry</h2>
             </div>
 
             <p>
-                The starting point is a gravitational theory in <strong>26 dimensions with signature (24,2)</strong>—the
-                critical dimension of bosonic string theory—coupled to the fundamental Pneuma field. The 26D framework
-                incorporates <strong>two time dimensions</strong>, with Sp(2,R) gauge symmetry eliminating ghosts.
+                The starting point is a gravitational theory in <strong>26 dimensions decomposing as M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup></strong>—the
+                critical dimension of bosonic string theory—coupled to the fundamental Pneuma field. Each 14D half has
+                <strong>signature (12,2)</strong> with <strong>2 shared timelike dimensions</strong>.
+                Sp(2,R) local gauge symmetry eliminates ghost states from the two-time structure.
                 The full 26D action takes the form:
             </p>
 
@@ -503,9 +504,9 @@
             </div>
 
             <p>
-                where Ψ<sub>P</sub> is the 8192-component Pneuma spinor (from Cl(24,2) = 2<sup>13</sup>),
-                and ℒ<sub>Sp(2,R)</sub> contains the gauge constraints that eliminate ghosts from the second
-                time dimension. The three Sp(2,R) first-class constraints are:
+                where Ψ<sub>P</sub> is the 8192-component Pneuma spinor (from Cl(12,2) &otimes; Cl(12,2) = 2<sup>7</sup> &otimes; 2<sup>7</sup> = 2<sup>14</sup> before gauge reduction),
+                and ℒ<sub>Sp(2,R)</sub> contains the local gauge constraints that eliminate ghosts from the two
+                shared time dimensions. The three Sp(2,R) first-class constraints are:
             </p>
 
             <div class="equation-box" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); margin: 1rem 0;">
@@ -514,10 +515,60 @@
             </div>
 
             <p>
-                These constraints eliminate the ghost degrees of freedom from the second time dimension (t<sub>ortho</sub>),
-                leaving t<sub>therm</sub> as the observable thermal time. After Sp(2,R) gauge fixing, the 8192-component spinor
-                reduces to 64 effective components, and the 26D theory projects onto an effective 13D shadow:
+                These constraints eliminate the ghost degrees of freedom from the two shared timelike dimensions,
+                projecting the full M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup> structure
+                onto physically observable states. After Sp(2,R) gauge fixing, the 8192-component spinor
+                reduces to 64 effective components. Each 14D half independently contributes physical degrees of freedom
+                while sharing the two timelike dimensions through the Sp(2,R) gauge connection:
             </p>
+
+            <!-- NEW: 14D×2 Structure with Shared Time (December 2025) -->
+            <div class="highlight-box" style="border-left-color: #ff7eb6; background: linear-gradient(135deg, rgba(255, 126, 182, 0.1), rgba(139, 127, 255, 0.08));">
+                <h4 style="color: #ff7eb6;">26D&rarr;14D&times;2 Decomposition with Shared Time (December 2025)</h4>
+                <p>
+                    The 26-dimensional spacetime decomposes as a <strong>tensor product of two 14D halves sharing 2 timelike dimensions</strong>:
+                </p>
+                <div class="equation-box" style="background: rgba(255, 126, 182, 0.15); border: 1px solid rgba(255, 126, 182, 0.4);">
+                    M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup>
+                    <span class="equation-label">26D&rarr;14D&times;2 decomposition</span>
+                </div>
+                <table class="dim-table" style="margin: 1rem 0;">
+                    <thead>
+                        <tr>
+                            <th>Component</th>
+                            <th>Signature</th>
+                            <th>Structure</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>M<sub>A</sub><sup>14</sup></td>
+                            <td>(12,2)</td>
+                            <td>12 spacelike + 2 timelike (shared)</td>
+                        </tr>
+                        <tr>
+                            <td>M<sub>B</sub><sup>14</sup></td>
+                            <td>(12,2)</td>
+                            <td>12 spacelike + 2 timelike (shared)</td>
+                        </tr>
+                        <tr style="border-top: 2px solid rgba(255, 126, 182, 0.3);">
+                            <td><strong>Total</strong></td>
+                            <td><strong>26D</strong></td>
+                            <td>24 spacelike + 2 timelike (shared between halves)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p style="margin-top: 1rem;">
+                    <strong>Key Features:</strong>
+                </p>
+                <ul style="color: var(--text-secondary); line-height: 1.8;">
+                    <li><strong>Shared Time:</strong> The 2 timelike dimensions are common to both M<sub>A</sub> and M<sub>B</sub>, enforced by Sp(2,R) gauge symmetry</li>
+                    <li><strong>Independent Spaces:</strong> Each half has 12 independent spacelike dimensions (24 total spacelike dimensions)</li>
+                    <li><strong>Ghost Elimination:</strong> Sp(2,R) local gauge symmetry removes negative-norm states from the (12,2) signature</li>
+                    <li><strong>Z₂ Mirror Structure:</strong> M<sub>A</sub> &harr; M<sub>B</sub> mirror symmetry provides natural brane doubling</li>
+                    <li><strong>Spinor Reduction:</strong> Cl(12,2) &otimes; Cl(12,2) = 2<sup>7</sup> &otimes; 2<sup>7</sup> = 2<sup>14</sup> &rarr; 2<sup>6</sup> after gauge fixing</li>
+                </ul>
+            </div>
 
             <!-- NEW: Division Algebra Decomposition for D=13 from Abstract Resolutions -->
             <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.08));">
@@ -643,7 +694,7 @@
                     <span class="formula-var highlight">&radic;|G|
                         <div class="var-tooltip">
                             <div class="var-name">&radic;|G|</div>
-                            <div class="var-description">Square root of the absolute value of the effective 13D metric determinant (from 26D via Sp(2,R)). Ensures coordinate-invariant integration.</div>
+                            <div class="var-description">Square root of the absolute value of the effective 13D metric determinant (from 26D=14D&times;2 via Sp(2,R) gauge fixing). Ensures coordinate-invariant integration.</div>
                             <div class="var-units">Dimensionless</div>
                             <div class="var-contribution">Provides the proper volume element for curved spacetime integration.</div>
                         </div>
@@ -652,7 +703,7 @@
                     <span class="formula-var">M<sub>*</sub><sup>11</sup>
                         <div class="var-tooltip">
                             <div class="var-name">M<sub>*</sub><sup>11</sup></div>
-                            <div class="var-description">Fundamental mass scale raised to the 11th power. This is the natural scale of quantum gravity in the effective 13D shadow.</div>
+                            <div class="var-description">Fundamental mass scale raised to the 11th power. This is the natural scale of quantum gravity in the effective theory from 26D=14D&times;2.</div>
                             <div class="var-units">GeV<sup>11</sup></div>
                             <div class="var-contribution">Sets the strength of gravitational interactions; related to 4D Planck mass via volume.</div>
                         </div>
@@ -685,7 +736,7 @@
                     <span class="formula-var highlight">&Psi;<sub>P</sub>
                         <div class="var-tooltip">
                             <div class="var-name">&Psi;<sub>P</sub></div>
-                            <div class="var-description">The fundamental Pneuma spinor field - a 64-component effective spinor (reduced from 8192 components in 26D via Sp(2,R) gauge fixing) whose condensates form spacetime geometry.</div>
+                            <div class="var-description">The fundamental Pneuma spinor field - a 64-component effective spinor (reduced from 8192 components via Cl(12,2)&otimes;Cl(12,2) and Sp(2,R) gauge fixing) whose condensates form spacetime geometry.</div>
                             <div class="var-units">Length<sup>-6</sup></div>
                             <div class="var-contribution">Central object: its vacuum structure determines the internal manifold K<sub>Pneuma</sub>.</div>
                         </div>
@@ -704,9 +755,9 @@
                 <div class="formula-label">Thirteen-dimensional bulk action with Pneuma field</div>
 
                 <div class="formula-info">
-                    <div class="formula-title">Effective 13D Bulk Action (from 26D Sp(2,R) projection)</div>
+                    <div class="formula-title">Effective 13D Bulk Action (from 26D=14D&times;2 Sp(2,R) projection)</div>
                     <div class="formula-meaning">
-                        This is the effective master action obtained from the 26D theory via Sp(2,R) gauge fixing. It unifies Einstein gravity with the Pneuma field in the effective 13D shadow. All physics - from Standard Model forces to dark energy - emerges from dimensional reduction of this action.
+                        This is the effective master action obtained from the 26D=M<sub>A</sub><sup>14</sup>&otimes;<sub>T</sub>M<sub>B</sub><sup>14</sup> theory via Sp(2,R) gauge fixing. Each 14D half has signature (12,2) with 2 shared timelike dimensions. After gauge reduction, this unifies Einstein gravity with the Pneuma field in the effective theory. All physics - from Standard Model forces to dark energy - emerges from dimensional reduction of this action.
                     </div>
                     <div class="formula-info-grid">
                         <div class="formula-info-item">
@@ -750,13 +801,13 @@
                         <a href="../foundations/einstein-hilbert-action.html" class="sub-component" style="text-decoration: none;">
                             <div class="component-symbol">M<sub>*</sub><sup>11</sup>R</div>
                             <div class="component-name">Einstein-Hilbert Term</div>
-                            <div class="component-desc">Generalizes 4D GR action S = &int;R&radic;g to effective 13D (from 26D via Sp(2,R)).</div>
+                            <div class="component-desc">Generalizes 4D GR action S = &int;R&radic;g to effective theory (from 26D=14D&times;2 via Sp(2,R)).</div>
                             <span class="foundation-badge established">From GR (1915)</span>
                         </a>
                         <a href="../foundations/dirac-equation.html" class="sub-component" style="text-decoration: none;">
                             <div class="component-symbol"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(&Gamma;D-m)&Psi;<sub>P</sub></div>
                             <div class="component-name">Pneuma Lagrangian</div>
-                            <div class="component-desc">Effective 13D Dirac Lagrangian (64 components from 8192 via Sp(2,R)). Reduces to standard (i&gamma;&part;-m)&psi; in 4D.</div>
+                            <div class="component-desc">Effective Dirac Lagrangian (64 components from Cl(12,2)&otimes;Cl(12,2) via Sp(2,R)). Reduces to standard (i&gamma;&part;-m)&psi; in 4D.</div>
                             <span class="foundation-badge established">From Dirac (1928)</span>
                         </a>
                         <div class="sub-component">
@@ -878,7 +929,7 @@
 
             <!-- SVG Diagram: Dimensional Reduction -->
             <div class="diagram-container">
-                <div class="diagram-title">Dimensional Reduction: 26D &rarr; 13D (effective) &rarr; 4D Spacetime</div>
+                <div class="diagram-title">Dimensional Reduction: 26D (14D&times;2 with shared time) &rarr; 4D Spacetime</div>
                 <svg class="diagram-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
                     <!-- Definitions for gradients and arrows -->
                     <defs>
@@ -903,24 +954,24 @@
                     </defs>
 
                     <!-- Background boxes for each stage -->
-                    <!-- 13D Effective Bulk (from 26D via Sp(2,R)) -->
+                    <!-- 14D×2 Structure (from 26D via Sp(2,R)) -->
                     <g class="node">
                         <rect x="30" y="50" width="200" height="300" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
-                        <text x="130" y="85" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="16">13D Effective Shadow</text>
-                        <text x="130" y="110" text-anchor="middle" fill="#adb5bd" font-size="12">(12,1) from 26D (24,2)</text>
+                        <text x="130" y="85" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="16">26D = 14D&times;2</text>
+                        <text x="130" y="110" text-anchor="middle" fill="#adb5bd" font-size="12">Each (12,2), 2 times shared</text>
 
-                        <!-- Inner elements for 13D -->
+                        <!-- Inner elements for 26D=14D×2 -->
                         <rect x="50" y="130" width="160" height="50" rx="8" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1.5"/>
                         <text x="130" y="150" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">M*</text>
                         <text x="130" y="168" text-anchor="middle" fill="#adb5bd" font-size="11">Fundamental Scale</text>
 
                         <rect x="50" y="195" width="160" height="50" rx="8" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1.5"/>
-                        <text x="130" y="215" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">&Psi;<tspan baseline-shift="sub" font-size="10">P</tspan></text>
-                        <text x="130" y="233" text-anchor="middle" fill="#adb5bd" font-size="11">Pneuma Field</text>
+                        <text x="130" y="210" text-anchor="middle" fill="#f8f9fa" font-size="11">M<tspan baseline-shift="sub" font-size="9">A</tspan><tspan baseline-shift="super" font-size="9">14</tspan> &otimes; M<tspan baseline-shift="sub" font-size="9">B</tspan><tspan baseline-shift="super" font-size="9">14</tspan></text>
+                        <text x="130" y="228" text-anchor="middle" fill="#adb5bd" font-size="10">Shared 2 times</text>
 
                         <rect x="50" y="260" width="160" height="50" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
-                        <text x="130" y="280" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">G<tspan baseline-shift="sub" font-size="10">MN</tspan></text>
-                        <text x="130" y="298" text-anchor="middle" fill="#adb5bd" font-size="11">Effective 13D Metric</text>
+                        <text x="130" y="280" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">Sp(2,R)</text>
+                        <text x="130" y="298" text-anchor="middle" fill="#adb5bd" font-size="11">Ghost Elimination</text>
                     </g>
 
                     <!-- Arrow 1: KK Reduction -->
@@ -974,8 +1025,8 @@
                     </text>
                 </svg>
                 <div class="diagram-caption">
-                    The full 26D theory (24,2 signature) projects via Sp(2,R) gauge fixing to an effective 13D shadow (12,1 signature).
-                    This 13D effective bulk compactifies on K<sub>Pneuma</sub> (CY4, 8D), yielding 4D Einstein-Yang-Mills with SO(10) and 3 generations.
+                    The full 26D theory decomposes as M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup>, where each 14D half has signature (12,2) with 2 shared timelike dimensions.
+                    Sp(2,R) gauge symmetry eliminates ghosts. The structure compactifies on K<sub>Pneuma</sub> (G₂ manifold), yielding 4D Einstein-Yang-Mills with SO(10) and 3 generations.
                 </div>
             </div>
 
@@ -1613,7 +1664,7 @@
                     <span class="formula-var">&Hscr;<sub>bulk</sub>
                         <div class="var-tooltip">
                             <div class="var-name">&Hscr;<sub>bulk</sub></div>
-                            <div class="var-description">The full Hilbert space of the effective 13D bulk (projected from 26D via Sp(2,R) gauge fixing), containing all quantum states across all four branes.</div>
+                            <div class="var-description">The full Hilbert space of the effective bulk (projected from 26D=14D&times;2 via Sp(2,R) gauge fixing), containing all quantum states across all four branes.</div>
                             <div class="var-units">Hilbert space</div>
                             <div class="var-contribution">The arena for complete quantum mechanics - deterministic evolution occurs here.</div>
                         </div>
@@ -1717,8 +1768,8 @@
                     in 3D space</strong>:
                 </p>
                 <ul class="concept-list">
-                    <li>The Pneuma field propagates through the full effective 13D bulk (the observable shadow of the 26D theory), coupling all four branes simultaneously
-                        (in the shared thermal time dimension).</li>
+                    <li>The Pneuma field propagates through the full effective bulk (from 26D=14D&times;2 theory), coupling all four branes simultaneously
+                        (in the shared time dimensions).</li>
                     <li>Non-locality is <em>geometric</em>: B<sub>2</sub>, B<sub>3</sub>, B<sub>4</sub> are spatially
                         orthogonal to B<sub>1</sub>, not "far away" in our 3D space.</li>
                     <li>This is structurally analogous to Bohmian mechanics (non-local quantum potential) but with
@@ -2555,7 +2606,7 @@
             <h3>Metric Decomposition</h3>
 
             <p>
-                The effective 13D metric (from 26D via Sp(2,R)) decomposes into three sectors:
+                The effective metric (from 26D=14D&times;2 via Sp(2,R)) decomposes into three sectors:
             </p>
 
             <table class="field-table">
@@ -2596,7 +2647,7 @@
                 <span class="formula-var">G<sub>&mu;m</sub>(x,y)
                     <div class="var-tooltip">
                         <div class="var-name">G<sub>&mu;m</sub>(x,y)</div>
-                        <div class="var-description">Mixed components of the effective 13D metric with one external (mu) and one internal (m) index - the "off-diagonal" terms.</div>
+                        <div class="var-description">Mixed components of the effective metric with one external (mu) and one internal (m) index - the "off-diagonal" terms.</div>
                         <div class="var-units">Dimensionless</div>
                         <div class="var-contribution">These components become gauge fields upon dimensional reduction (Kaluza-Klein mechanism).</div>
                     </div>
@@ -2660,12 +2711,12 @@
             <h3>Dimensional Reduction of Einstein-Hilbert Term</h3>
 
             <p>
-                The effective 13D Einstein-Hilbert action reduces to the 4D Einstein-Yang-Mills theory.
+                The effective Einstein-Hilbert action reduces to the 4D Einstein-Yang-Mills theory.
                 The key steps involve:
             </p>
 
             <ul class="concept-list">
-                <li>Decompose the effective 13D Ricci scalar in terms of 4D curvature R<sub>4</sub> and internal curvature R<sub>8</sub></li>
+                <li>Decompose the effective Ricci scalar in terms of 4D curvature R<sub>4</sub> and internal curvature R<sub>8</sub></li>
                 <li>Express gauge field strengths from metric variations along Killing directions</li>
                 <li>Integrate over the internal manifold K<sub>Pneuma</sub></li>
                 <li>Canonically normalize the 4D fields</li>
@@ -2786,8 +2837,8 @@
 
             <p>
                 A key prediction of the KK framework is gauge coupling unification. At the
-                compactification scale, all gauge couplings arise from the single effective 13D gravitational
-                coupling (derived from the 26D theory via Sp(2,R) projection):
+                compactification scale, all gauge couplings arise from the single effective gravitational
+                coupling (derived from the 26D=14D&times;2 theory via Sp(2,R) projection):
             </p>
 
             <div class="equation-box interactive-formula">
@@ -3058,15 +3109,15 @@
             </div>
 
             <p>
-                The full dimensional reduction pathway 26D &rarr; 13D &rarr; 7D &rarr; 6D &rarr; 4D is now rigorously validated
+                The full dimensional reduction pathway 26D (14D&times;2) &rarr; 7D &rarr; 6D &rarr; 4D is now rigorously validated
                 through 9 independent consistency checks. This section documents the complete chain and validation results.
             </p>
 
             <h3>Complete Dimensional Pathway</h3>
             <div class="highlight-box" style="background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3);">
                 <ol style="color: var(--text-secondary); line-height: 2.2; font-size: 1.05rem;">
-                    <li><strong>26D (24,2) &rarr; 13D (12,1):</strong> Sp(2,R) gauge fixing projects two-time physics to effective 13D shadow with observable signature (12,1)</li>
-                    <li><strong>13D &rarr; 7D G₂:</strong> Compactification on 6D internal space leaves 7D G₂ manifold (K<sub>Pneuma</sub>)</li>
+                    <li><strong>26D = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup>:</strong> Each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) local gauge symmetry eliminates ghost states.</li>
+                    <li><strong>14D&times;2 &rarr; 7D G₂:</strong> Compactification on internal dimensions leaves 7D G₂ manifold (K<sub>Pneuma</sub>) as the effective bulk</li>
                     <li><strong>7D G₂ &rarr; 6D bulk:</strong> One dimension wraps to give effective 6D bulk with signature (5,1)</li>
                     <li><strong>6D &rarr; 4D branes:</strong> Heterogeneous brane structure with shared extra dimensions yields observable 4D spacetime</li>
                 </ol>
@@ -3090,13 +3141,13 @@
                     <tr>
                         <td>1</td>
                         <td><strong>Sp(2,R) Gauge Symmetry</strong></td>
-                        <td>26D &rarr; 13D projection via SL(2,R)/U(1) coset must preserve physics</td>
+                        <td>26D = 14D&times;2 with Sp(2,R) local gauge must preserve physics and eliminate ghosts</td>
                         <td style="color: #51cf66; font-weight: 600;">PASS</td>
                     </tr>
                     <tr>
                         <td>2</td>
                         <td><strong>Two-Time Ghost Elimination</strong></td>
-                        <td>Gauge fixing removes negative-norm states from (24,2) signature</td>
+                        <td>Gauge fixing removes negative-norm states from 2 shared timelike dimensions in (12,2) signature</td>
                         <td style="color: #51cf66; font-weight: 600;">PASS</td>
                     </tr>
                     <tr>
