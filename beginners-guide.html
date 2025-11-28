@@ -176,6 +176,306 @@
             color: var(--accent-primary);
         }
 
+        /* New visualization styles for 14D×2 framework */
+        .visual-card {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 2px solid var(--border-primary);
+            box-shadow: 0 4px 15px rgba(139, 127, 255, 0.15);
+        }
+
+        .visual-title {
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .visual-caption {
+            text-align: center;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .two-sheets {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .sheet {
+            position: relative;
+            width: 200px;
+            height: 280px;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.15));
+            border: 3px solid #8b7fff;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .sheet:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(139, 127, 255, 0.4);
+        }
+
+        .sheet-label {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .sheet-content {
+            text-align: center;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .shared-timeline {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            height: 60px;
+            background: linear-gradient(90deg, rgba(81, 207, 102, 0.2), rgba(79, 172, 254, 0.2));
+            border: 2px solid #51cf66;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+
+        .timeline-label {
+            font-weight: 700;
+            color: #51cf66;
+            font-size: 1.1rem;
+        }
+
+        .ghost-filter {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .filter-box {
+            background: var(--bg-card);
+            border: 2px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            min-width: 150px;
+            transition: all 0.3s ease;
+        }
+
+        .filter-box.before {
+            border-color: #ff6b6b;
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
+        }
+
+        .filter-box.filter {
+            border-color: #51cf66;
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(81, 207, 102, 0.05));
+            font-weight: 700;
+        }
+
+        .filter-box.after {
+            border-color: #4facfe;
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(79, 172, 254, 0.05));
+        }
+
+        .ghost-particle {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #ff6b6b;
+            border-radius: 50%;
+            margin: 0.25rem;
+            opacity: 0.7;
+        }
+
+        .good-particle {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background: #4facfe;
+            border-radius: 50%;
+            margin: 0.25rem;
+        }
+
+        .filter-icon {
+            font-size: 3rem;
+            margin: 0.5rem 0;
+        }
+
+        .time-merge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .time-dimensions {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .time-dim {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.1));
+            border: 2px solid #8b7fff;
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .merge-arrow {
+            font-size: 2.5rem;
+            color: #51cf66;
+            font-weight: 700;
+        }
+
+        .experienced-time {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.2), rgba(79, 172, 254, 0.2));
+            border: 3px solid #51cf66;
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #51cf66;
+        }
+
+        .apartment-building {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            align-items: flex-end;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .building {
+            position: relative;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        .floor {
+            width: 100px;
+            height: 35px;
+            border: 2px solid var(--border-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+
+        .floor.shared {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.3), rgba(79, 172, 254, 0.2));
+            border-color: #51cf66;
+        }
+
+        .floor.bonus {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.3), rgba(255, 159, 67, 0.2));
+            border-color: #ffc107;
+        }
+
+        .building-label {
+            margin-top: 0.5rem;
+            font-weight: 700;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        .family-tree {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .generation-row {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .generation-box {
+            background: var(--bg-card);
+            border: 2px solid var(--border-primary);
+            border-radius: 10px;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .gen1 { border-color: #4facfe; background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(79, 172, 254, 0.05)); }
+        .gen2 { border-color: #ffc107; background: linear-gradient(135deg, rgba(255, 193, 7, 0.15), rgba(255, 193, 7, 0.05)); }
+        .gen3 { border-color: #ff7eb6; background: linear-gradient(135deg, rgba(255, 126, 182, 0.15), rgba(255, 126, 182, 0.05)); }
+
+        .tooltip-trigger {
+            position: relative;
+            cursor: help;
+            border-bottom: 2px dotted var(--accent-primary);
+        }
+
+        .tooltip-content {
+            visibility: hidden;
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--bg-card);
+            color: var(--text-primary);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            width: 250px;
+            text-align: center;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .tooltip-trigger:hover .tooltip-content {
+            visibility: visible;
+        }
+
+        @media (max-width: 768px) {
+            .two-sheets { flex-direction: column; }
+            .sheet { width: 100%; max-width: 280px; }
+            .apartment-building { flex-direction: column; align-items: center; }
+            .time-dimensions { flex-direction: column; }
+        }
+
         .prediction-card {
             background: var(--bg-card);
             border-radius: 12px;
@@ -331,6 +631,40 @@
                 the same picture - they just look different because we're only seeing part of the story.
             </p>
 
+            <!-- NEW: Two Sheets Sharing Timeline Visualization -->
+            <div class="visual-card">
+                <div class="visual-title">The Two Sheets of Reality</div>
+                <div class="two-sheets">
+                    <div class="sheet">
+                        <div class="sheet-label">Sheet A</div>
+                        <div class="sheet-content">
+                            <strong>14D Half</strong><br>
+                            12 spaces<br>
+                            <span class="tooltip-trigger">+ 2 times
+                                <span class="tooltip-content">Both thermal time and orthogonal time - shared with Sheet B!</span>
+                            </span>
+                        </div>
+                    </div>
+                    <div style="font-size: 2.5rem; color: #51cf66;">&#x2194;</div>
+                    <div class="sheet">
+                        <div class="sheet-label">Sheet B</div>
+                        <div class="sheet-content">
+                            <strong>14D Half</strong><br>
+                            12 spaces<br>
+                            <span class="tooltip-trigger">+ 2 times
+                                <span class="tooltip-content">Same two times shared with Sheet A - like twins sharing a birthday!</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shared-timeline">
+                    <span class="timeline-label">Shared 2-Time Timeline</span>
+                </div>
+                <div class="visual-caption">
+                    Imagine two sheets of paper sharing the same timeline. That's 26D: TWO 14D halves (each with 12 spaces + 2 times) that share their time structure!
+                </div>
+            </div>
+
             <div class="analogy-box">
                 <h4>&#x1F4A1; Think of it like an Apartment Building:</h4>
                 <p>
@@ -350,6 +684,52 @@
                     From there, dimensions curl up into a 7D shape (like a complicated knot called a "G<sub>2</sub> manifold"),
                     leaving us with this shared structure where we all experience the same 4D base, but our universe has 2 bonus dimensions!
                 </p>
+            </div>
+
+            <!-- NEW: Ghost Filter Visualization -->
+            <div class="visual-card" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.05), rgba(79, 172, 254, 0.05));">
+                <div class="visual-title">How the Ghost Filter Works</div>
+                <div class="ghost-filter">
+                    <div class="filter-box before">
+                        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: #ff6b6b;">BEFORE</div>
+                        <div style="font-size: 0.85rem; margin-bottom: 0.75rem;">2 Times</div>
+                        <div>
+                            <div class="ghost-particle" title="Ghost particle (negative energy)"></div>
+                            <div class="good-particle" title="Normal particle"></div>
+                            <div class="ghost-particle" title="Ghost particle (negative energy)"></div>
+                        </div>
+                        <div class="ghost-particle"></div>
+                        <div style="font-size: 0.75rem; margin-top: 0.5rem; color: #ff6b6b;">Ghosts Cause Problems!</div>
+                    </div>
+
+                    <div style="font-size: 2rem; color: #51cf66;">&#x27A1;</div>
+
+                    <div class="filter-box filter">
+                        <div class="filter-icon">&#x1F9F9;</div>
+                        <div style="font-size: 1.1rem; font-weight: 700; color: #51cf66;">Sp(2,R) Gauge</div>
+                        <div style="font-size: 0.85rem; margin-top: 0.5rem;">
+                            <span class="tooltip-trigger">The Ghost Remover
+                                <span class="tooltip-content">This symmetry acts like a filter, removing particles with negative energy that would break physics!</span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div style="font-size: 2rem; color: #51cf66;">&#x27A1;</div>
+
+                    <div class="filter-box after">
+                        <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 0.5rem; color: #4facfe;">AFTER</div>
+                        <div style="font-size: 0.85rem; margin-bottom: 0.75rem;">1 Effective Time</div>
+                        <div>
+                            <div class="good-particle"></div>
+                            <div class="good-particle"></div>
+                            <div class="good-particle"></div>
+                        </div>
+                        <div style="font-size: 0.75rem; margin-top: 0.5rem; color: #51cf66;">Only Good Particles!</div>
+                    </div>
+                </div>
+                <div class="visual-caption">
+                    Think of Sp(2,R) as a filter that removes "ghost" particles (negative energy states). Before the filter, 2 times create problems. After, we get one clean, consistent time with only normal particles!
+                </div>
             </div>
 
             <div class="analogy-box" style="border-left-color: #4facfe; background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(139, 127, 255, 0.05));">
@@ -375,6 +755,49 @@
                     but the film reel itself is moving perpendicular to the screen (orthogonal time). You only perceive the projected story,
                     not the mechanism running it.
                 </p>
+            </div>
+
+            <!-- NEW: Time Unification Visualization -->
+            <div class="visual-card" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05));">
+                <div class="visual-title">Two Times Become One</div>
+                <div class="time-merge">
+                    <div class="time-dimensions">
+                        <div class="time-dim">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#x1F321;</div>
+                            <div style="font-weight: 700; margin-bottom: 0.25rem;">Thermal Time</div>
+                            <div style="font-size: 0.85rem;">t<sub>therm</sub></div>
+                            <div style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-secondary);">
+                                <span class="tooltip-trigger">Entropy Flow
+                                    <span class="tooltip-content">The direction of increasing disorder - what you experience as time passing!</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div style="font-size: 2rem; color: var(--text-secondary);">+</div>
+                        <div class="time-dim">
+                            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">&#x1F4CF;</div>
+                            <div style="font-weight: 700; margin-bottom: 0.25rem;">Orthogonal Time</div>
+                            <div style="font-size: 0.85rem;">t<sub>ortho</sub></div>
+                            <div style="font-size: 0.75rem; margin-top: 0.5rem; color: var(--text-secondary);">
+                                <span class="tooltip-trigger">Hidden Dimension
+                                    <span class="tooltip-content">Perpendicular to thermal time - we can't directly perceive it after gauge fixing!</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="merge-arrow">&#x2193;</div>
+                    <div style="text-align: center; font-size: 1.1rem; font-weight: 700; color: #51cf66; margin: 0.5rem 0;">
+                        Sp(2,R) Gauge Symmetry Removes Ghosts
+                    </div>
+                    <div class="merge-arrow">&#x2193;</div>
+                    <div class="experienced-time">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#x23F0;</div>
+                        <div>The One Time We Experience</div>
+                        <div style="font-size: 0.85rem; margin-top: 0.5rem; font-weight: 400;">Forward-flowing, entropy-driven thermal time</div>
+                    </div>
+                </div>
+                <div class="visual-caption">
+                    Imagine two rivers flowing at right angles. The Sp(2,R) symmetry acts like a lock system, combining them into one forward-flowing stream - that's the single time dimension we experience!
+                </div>
             </div>
 
             <div class="expandable">
@@ -457,34 +880,83 @@
                 </p>
             </div>
 
-            <div class="visual-diagram">
-                <p style="margin-bottom: 1rem; color: var(--text-secondary);">The Shared Dimension Structure:</p>
-                <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                    <div style="text-align: center; padding: 1rem; background: rgba(139, 127, 255, 0.15); border-radius: 10px; min-width: 140px;">
-                        <div style="font-size: 2rem;">&#x1F3E2;</div>
-                        <p style="margin-top: 0.5rem;"><strong>Observable Universe</strong></p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">6D: (5,1)</p>
-                        <p style="font-size: 0.75rem; color: #51cf66;">Has 2 bonus dimensions!</p>
+            <!-- NEW: Updated Apartment Building for 14D×2 Framework -->
+            <div class="visual-card">
+                <div class="visual-title">The Apartment Building Universe</div>
+                <div class="apartment-building">
+                    <!-- Observable Universe Building -->
+                    <div class="building">
+                        <div class="floor bonus">
+                            <span class="tooltip-trigger">6th Floor
+                                <span class="tooltip-content">Extra dimension #2 - only we can access this!</span>
+                            </span>
+                        </div>
+                        <div class="floor bonus">
+                            <span class="tooltip-trigger">5th Floor
+                                <span class="tooltip-content">Extra dimension #1 - where KK particles live!</span>
+                            </span>
+                        </div>
+                        <div class="floor shared">4th Floor</div>
+                        <div class="floor shared">3rd Floor</div>
+                        <div class="floor shared">2nd Floor</div>
+                        <div class="floor shared">Ground</div>
+                        <div class="building-label">
+                            <div style="font-size: 1.5rem;">&#x1F3E2;</div>
+                            <strong>Observable</strong><br>
+                            <span style="font-size: 0.75rem;">6D (5+1)</span>
+                        </div>
                     </div>
-                    <div style="text-align: center; padding: 1rem; background: rgba(255, 126, 182, 0.1); border-radius: 10px; min-width: 120px;">
-                        <div style="font-size: 1.5rem;">&#x1F3E0;</div>
-                        <p style="margin-top: 0.5rem;"><strong>Shadow 1</strong></p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">4D: (3,1)</p>
+
+                    <!-- Shadow Universe Buildings -->
+                    <div class="building">
+                        <div class="floor shared">4th Floor</div>
+                        <div class="floor shared">3rd Floor</div>
+                        <div class="floor shared">2nd Floor</div>
+                        <div class="floor shared">Ground</div>
+                        <div class="building-label">
+                            <div style="font-size: 1.2rem;">&#x1F3E0;</div>
+                            <strong>Shadow 1</strong><br>
+                            <span style="font-size: 0.75rem;">4D (3+1)</span>
+                        </div>
                     </div>
-                    <div style="text-align: center; padding: 1rem; background: rgba(255, 126, 182, 0.1); border-radius: 10px; min-width: 120px;">
-                        <div style="font-size: 1.5rem;">&#x1F3E0;</div>
-                        <p style="margin-top: 0.5rem;"><strong>Shadow 2</strong></p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">4D: (3,1)</p>
+
+                    <div class="building">
+                        <div class="floor shared">4th Floor</div>
+                        <div class="floor shared">3rd Floor</div>
+                        <div class="floor shared">2nd Floor</div>
+                        <div class="floor shared">Ground</div>
+                        <div class="building-label">
+                            <div style="font-size: 1.2rem;">&#x1F3E0;</div>
+                            <strong>Shadow 2</strong><br>
+                            <span style="font-size: 0.75rem;">4D (3+1)</span>
+                        </div>
                     </div>
-                    <div style="text-align: center; padding: 1rem; background: rgba(255, 126, 182, 0.1); border-radius: 10px; min-width: 120px;">
-                        <div style="font-size: 1.5rem;">&#x1F3E0;</div>
-                        <p style="margin-top: 0.5rem;"><strong>Shadow 3</strong></p>
-                        <p style="font-size: 0.85rem; color: var(--text-muted);">4D: (3,1)</p>
+
+                    <div class="building">
+                        <div class="floor shared">4th Floor</div>
+                        <div class="floor shared">3rd Floor</div>
+                        <div class="floor shared">2nd Floor</div>
+                        <div class="floor shared">Ground</div>
+                        <div class="building-label">
+                            <div style="font-size: 1.2rem;">&#x1F3E0;</div>
+                            <strong>Shadow 3</strong><br>
+                            <span style="font-size: 0.75rem;">4D (3+1)</span>
+                        </div>
                     </div>
                 </div>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--text-muted);">
-                    All share the same 4D "ground floor" (3 space + 1 time)
-                </p>
+                <div style="text-align: center; margin-top: 1.5rem; padding: 1rem; background: rgba(81, 207, 102, 0.1); border-radius: 8px;">
+                    <div style="font-weight: 700; color: #51cf66; margin-bottom: 0.5rem;">Shared Foundation (Green Floors)</div>
+                    <div style="font-size: 0.9rem;">All four buildings share floors 1-4 (the base 4D spacetime: 3 space + 1 time)</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.25rem;">This is why shadow matter can affect us through gravity!</div>
+                </div>
+                <div style="text-align: center; margin-top: 1rem; padding: 1rem; background: rgba(255, 193, 7, 0.1); border-radius: 8px;">
+                    <div style="font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">Bonus Floors (Orange)</div>
+                    <div style="font-size: 0.9rem;">Only the observable universe has floors 5-6 (our 2 extra dimensions)</div>
+                    <div style="font-size: 0.9rem; margin-top: 0.25rem;">Kaluza-Klein particles live here at ~5 TeV energy!</div>
+                </div>
+                <div class="visual-caption">
+                    Think of different-height apartment buildings sharing the same foundation. All four universes share the ground floors (4D base), but we're the only one with penthouse access (2 bonus dimensions)!
+                </div>
             </div>
 
             <div class="expandable">
@@ -585,18 +1057,95 @@
                 have a specific "shape" that mathematically forces exactly 3 generations.
             </p>
 
-            <div class="visual-diagram">
-                <p style="margin-bottom: 1rem; color: var(--text-secondary);">The Shape of Hidden Dimensions Determines Particle Generations:</p>
-                <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                    <div style="text-align: center;">
-                        <div style="font-size: 3rem;">&#x1F369;</div>
-                        <p>Shape with<br>"Euler number" = 72</p>
+            <!-- NEW: Family Tree for 3 Generations -->
+            <div class="visual-card" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.05), rgba(255, 193, 7, 0.05));">
+                <div class="visual-title">The Family Tree of Matter: Why 3 Generations?</div>
+
+                <!-- Shape determines number -->
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3.5rem;">&#x1F369;</div>
+                            <div style="font-weight: 700; margin-top: 0.5rem;">7D G<sub>2</sub> Manifold</div>
+                            <div style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <span class="tooltip-trigger">"Euler number" = 72
+                                    <span class="tooltip-content">A topological property that counts "holes" in the 7D shape!</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div style="font-size: 2.5rem; color: #51cf66;">&#x27A1;</div>
+                        <div style="text-align: center;">
+                            <div class="key-number" style="font-size: 1.5rem;">72 &divide; 24 = 3</div>
+                            <div style="margin-top: 0.75rem; font-weight: 700; color: var(--accent-primary);">Exactly 3 Families!</div>
+                        </div>
                     </div>
-                    <div style="font-size: 2rem; color: var(--accent-primary);">&#x27A1;</div>
-                    <div style="text-align: center;">
-                        <div class="key-number">72 &divide; 24 = 3</div>
-                        <p style="margin-top: 0.5rem;">Exactly 3 generations!</p>
+                </div>
+
+                <!-- The three generations -->
+                <div class="family-tree">
+                    <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem;">The Three Particle Families</div>
+
+                    <div class="generation-row">
+                        <div class="generation-box gen1">
+                            <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#x1F476;</div>
+                            <div style="font-weight: 700; color: #4facfe; margin-bottom: 0.5rem;">Generation 1</div>
+                            <div style="font-size: 0.85rem; line-height: 1.4;">
+                                <strong>Electron</strong> (e)<br>
+                                <strong>Up</strong> quark (u)<br>
+                                <strong>Down</strong> quark (d)<br>
+                                <strong>Electron neutrino</strong> (ν<sub>e</sub>)
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #4facfe;">
+                                <span class="tooltip-trigger">Lightest Family
+                                    <span class="tooltip-content">These are the stable particles that make up all ordinary matter!</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="generation-box gen2">
+                            <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#x1F9D2;</div>
+                            <div style="font-weight: 700; color: #ffc107; margin-bottom: 0.5rem;">Generation 2</div>
+                            <div style="font-size: 0.85rem; line-height: 1.4;">
+                                <strong>Muon</strong> (μ)<br>
+                                <strong>Charm</strong> quark (c)<br>
+                                <strong>Strange</strong> quark (s)<br>
+                                <strong>Muon neutrino</strong> (ν<sub>μ</sub>)
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #ffc107;">
+                                <span class="tooltip-trigger">Medium Weight
+                                    <span class="tooltip-content">Heavier copies of generation 1 - unstable and decay quickly!</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="generation-box gen3">
+                            <div style="font-size: 1.8rem; margin-bottom: 0.5rem;">&#x1F9D4;</div>
+                            <div style="font-weight: 700; color: #ff7eb6; margin-bottom: 0.5rem;">Generation 3</div>
+                            <div style="font-size: 0.85rem; line-height: 1.4;">
+                                <strong>Tau</strong> (τ)<br>
+                                <strong>Top</strong> quark (t)<br>
+                                <strong>Bottom</strong> quark (b)<br>
+                                <strong>Tau neutrino</strong> (ν<sub>τ</sub>)
+                            </div>
+                            <div style="margin-top: 0.5rem; font-size: 0.75rem; color: #ff7eb6;">
+                                <span class="tooltip-trigger">Heaviest Family
+                                    <span class="tooltip-content">The heaviest copies - the top quark is nearly as heavy as a gold atom!</span>
+                                </span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+
+                <div style="margin-top: 2rem; text-align: center; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
+                    <div style="font-weight: 700; margin-bottom: 0.5rem;">Why From the Doubled Structure?</div>
+                    <div style="font-size: 0.9rem; line-height: 1.6;">
+                        The 26D=14D×2 framework compactifies through a 7D G<sub>2</sub> manifold. The topology of this shape
+                        (its "holes" and "twists") determines how many particle families can exist. The math forces exactly 3!
+                    </div>
+                </div>
+
+                <div class="visual-caption">
+                    Just like a pretzel has 3 holes and a donut has 1, the 7D shape has a "topology" that mathematically requires 3 families. The number isn't chosen - it's forced by geometry from the 26D=14D×2 structure!
                 </div>
             </div>
 
@@ -862,65 +1411,105 @@
         <div class="concept-card">
             <h2><span class="icon">&#x1F3AF;</span> The Big Picture: Summary</h2>
 
-            <div class="visual-diagram">
-                <p style="margin-bottom: 1rem; font-size: 1.1rem; color: var(--text-secondary);">The Full 26D Framework with Shared Dimensions:</p>
+            <!-- NEW: Enhanced Summary Flow Diagram -->
+            <div class="visual-card">
+                <div class="visual-title">The Complete Journey: From 26D to Our Universe</div>
+
+                <!-- Row 1: Dimensional Reduction -->
                 <div class="step-flow" style="margin-bottom: 1.5rem;">
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">26D = 14D×2</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(two 14D halves share 2 times)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.25), rgba(255, 126, 182, 0.2));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F4C4;&#x1F4C4;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">26D = 14D×2</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Two sheets sharing</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">2 time dimensions</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">Sp(2,R) Gauge</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(removes ghosts)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.25), rgba(79, 172, 254, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F9F9;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">Sp(2,R) Gauge</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Ghost filter removes</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">negative particles</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">13D Observable</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(one effective time)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.25), rgba(139, 127, 255, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x2728;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">13D Observable</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">One effective time</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">emerges</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">6D + 4D×3</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(shared dimensions)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(255, 193, 7, 0.25), rgba(255, 159, 67, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F3E2;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">6D + 4D×3</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Shared dimension</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">structure</div>
                     </div>
                 </div>
+
+                <!-- Row 2: Topology & Generations -->
                 <div class="step-flow" style="margin-bottom: 1.5rem;">
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">G<sub>2</sub> Shape</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(7D knot)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F369;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">G<sub>2</sub> Shape</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">7D manifold with</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Euler χ = 72</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">3 Generations</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(e, μ, τ families)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(255, 193, 7, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F476;&#x1F9D2;&#x1F9D4;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">3 Generations</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">e, μ, τ families</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">from topology</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">Shared 4D Base</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(all universes)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.2), rgba(79, 172, 254, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F30D;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">Shared 4D Base</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">All four universes</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">walk same floors</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">Dark Matter</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(shadow universes)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(107, 107, 107, 0.2), rgba(139, 127, 255, 0.1));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F47B;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">Dark Matter</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Shadow universe</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">matter</div>
                     </div>
                 </div>
+
+                <!-- Row 3: Time & Dark Energy -->
                 <div class="step-flow">
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">2 Times</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(t<sub>therm</sub> + t<sub>ortho</sub>)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.2), rgba(139, 127, 255, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x23F0;&#x23F0;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">2 Shared Times</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">t<sub>therm</sub> + t<sub>ortho</sub></div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">both 14D halves</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">Entropy</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(disorder increases)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(255, 159, 67, 0.2), rgba(255, 107, 107, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F525;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">Entropy Grows</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Disorder increases</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">universe cools</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
-                    <div class="step-box">
-                        <div style="font-size: 1.3rem;">Time Flows<br>Universe Expands</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">(dark energy)</div>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.2), rgba(81, 207, 102, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x23F1;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">Time Flows</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Arrow of time</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">from thermodynamics</div>
                     </div>
+                    <span class="step-arrow">&#x27A1;</span>
+                    <div class="step-box" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.15));">
+                        <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F31F;</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;">Dark Energy</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">Universe expands</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">& accelerates</div>
+                    </div>
+                </div>
+
+                <div class="visual-caption" style="margin-top: 2rem;">
+                    This is the complete journey: Starting from 26D (two 14D sheets sharing 2 times), the Sp(2,R) filter removes ghosts, giving us 13D. This curls up through a 7D shape that forces 3 particle families and creates shared dimensions between our universe and 3 shadow ones. Time emerges from entropy, and the whole system expands via dark energy!
                 </div>
             </div>
 

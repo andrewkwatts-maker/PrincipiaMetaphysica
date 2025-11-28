@@ -154,13 +154,18 @@
 
         <div class="page-title">
             <h1>Principia Metaphysica</h1>
-            <p>Visual Guide to the Theory</p>
+            <p>Visual Guide to the 2T Physics Framework</p>
+            <div style="display: inline-block; background: rgba(139,127,255,0.2); padding: 0.5rem 1rem; border-radius: 8px; margin-top: 1rem;">
+                <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics (v6.4)</span>
+            </div>
         </div>
 
         <!-- DIAGRAM 1: Dimensional Hierarchy -->
         <section class="diagram-section" id="dimensional-hierarchy">
-            <h2>1. Dimensional Hierarchy</h2>
-            <p>The theory begins in a 26-dimensional spacetime with signature (24,2), which reduces through gauge fixing and compactification to our observable 4D universe.</p>
+            <h2>1. Dimensional Hierarchy: 26D → 14D×2 → 4D</h2>
+            <p>The theory begins in a 26-dimensional bulk spacetime with signature (24,2) containing two timelike dimensions.
+               Via Sp(2,R) gauge fixing, this reduces to 14 physical spatial dimensions with 2 time coordinates (14D×2),
+               which further compactifies to our observable 4D universe with emergent time.</p>
             <div class="svg-wrapper">
                 <svg width="400" height="520" viewBox="0 0 400 520" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -195,8 +200,9 @@
 
                     <!-- 26D Box -->
                     <rect x="50" y="30" width="300" height="100" rx="15" fill="url(#purple26D)" filter="url(#shadow)"/>
-                    <text x="200" y="70" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">26D Bulk</text>
-                    <text x="200" y="100" font-family="Inter, sans-serif" font-size="14" fill="rgba(255,255,255,0.9)" text-anchor="middle">Signature (24, 2)</text>
+                    <text x="200" y="65" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">26D Bulk</text>
+                    <text x="200" y="92" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Signature (24, 2)</text>
+                    <text x="200" y="110" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Two timelike dimensions</text>
 
                     <!-- Arrow 1 -->
                     <path d="M200 130 L200 180" stroke="url(#arrowGrad)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
@@ -207,10 +213,11 @@
                     <text x="285" y="160" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff" text-anchor="middle">Sp(2,R)</text>
                     <text x="285" y="175" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff" text-anchor="middle">gauge fixing</text>
 
-                    <!-- 13D Box -->
+                    <!-- 14D×2 Box (new intermediate step) -->
                     <rect x="75" y="200" width="250" height="100" rx="15" fill="url(#blue13D)" filter="url(#shadow)"/>
-                    <text x="200" y="240" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">13D Effective</text>
-                    <text x="200" y="268" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Shadow Theory</text>
+                    <text x="200" y="235" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">14D×2 Physical</text>
+                    <text x="200" y="260" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">14 space + 2 time coords</text>
+                    <text x="200" y="278" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">(t_therm, t_ortho)</text>
 
                     <!-- Arrow 2 -->
                     <path d="M200 300 L200 350" stroke="url(#arrowGrad)" stroke-width="3" fill="none"/>
@@ -233,20 +240,22 @@
                     <line x1="40" y1="254" x2="40" y2="416" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,4"/>
 
                     <!-- Labels for dimensions -->
-                    <text x="20" y="85" font-family="Inter, sans-serif" font-size="10" fill="#9b59b6" text-anchor="middle">26</text>
-                    <text x="20" y="255" font-family="Inter, sans-serif" font-size="10" fill="#3498db" text-anchor="middle">13</text>
+                    <text x="18" y="85" font-family="Inter, sans-serif" font-size="10" fill="#9b59b6" text-anchor="middle">26</text>
+                    <text x="12" y="255" font-family="Inter, sans-serif" font-size="9" fill="#3498db" text-anchor="middle">14×2</text>
                     <text x="20" y="425" font-family="Inter, sans-serif" font-size="10" fill="#2ecc71" text-anchor="middle">4</text>
 
                     <!-- Note -->
-                    <text x="200" y="500" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle" font-style="italic">Two time dimensions become one observable time</text>
+                    <text x="200" y="500" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle" font-style="italic">Sp(2,R) gauge symmetry relates two time dimensions</text>
                 </svg>
             </div>
         </section>
 
-        <!-- DIAGRAM 2: Two-Time Structure -->
+        <!-- DIAGRAM 2: Two-Time Structure (14D×2)</h2>
         <section class="diagram-section" id="two-time-structure">
-            <h2>2. Two-Time Structure</h2>
-            <p>The 26D bulk contains two time dimensions related by Sp(2,R) gauge symmetry. Observable time emerges as a specific gauge choice.</p>
+            <h2>2. Two-Time Structure: Sp(2,R) Gauge Symmetry</h2>
+            <p>The 14D×2 framework contains two time coordinates (thermal t<sub>therm</sub> and orthogonal t<sub>ortho</sub>)
+               related by Sp(2,R) gauge symmetry. Observable time emerges as a specific gauge choice that breaks the symmetry,
+               while the orthogonal time remains compactified at the TeV scale.</p>
             <div class="svg-wrapper">
                 <svg width="550" height="400" viewBox="0 0 550 400" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -524,8 +533,9 @@
 
         <!-- DIAGRAM 5: Full Lagrangian Structure -->
         <section class="diagram-section" id="lagrangian-structure">
-            <h2>5. Full Lagrangian Structure</h2>
-            <p>The complete action consists of four interconnected components: modified gravity, the Pneuma field, the Standard Model, and hidden sector fields.</p>
+            <h2>5. Full Lagrangian Structure in 14D×2</h2>
+            <p>The complete action in the 14D×2 framework consists of four interconnected components: modified gravity F(R,T,τ) with thermal time,
+               the 64-component Pneuma field, the Standard Model emerging from dimensional reduction, and hidden sector fields for dark matter.</p>
             <div class="svg-wrapper">
                 <svg width="700" height="450" viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -551,9 +561,10 @@
                     </defs>
 
                     <!-- Main equation bar -->
-                    <rect x="50" y="30" width="600" height="60" rx="12" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
-                    <text x="350" y="55" font-family="Georgia, serif" font-size="16" fill="#8b7fff" text-anchor="middle" font-weight="bold">S = integral d^26x sqrt(-g) [ F(R,T,tau) + L_Pneuma + L_SM + L_hidden ]</text>
-                    <text x="350" y="78" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Full 26-dimensional action</text>
+                    <rect x="50" y="30" width="600" height="70" rx="12" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                    <text x="350" y="52" font-family="Georgia, serif" font-size="15" fill="#8b7fff" text-anchor="middle" font-weight="bold">S = ∫ d^14x dt_therm dt_ortho √(-g) [ F(R,T,τ) + L_Pneuma + L_SM + L_hidden ]</text>
+                    <text x="350" y="73" font-family="Inter, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">14D×2 action with thermal and orthogonal time</text>
+                    <text x="350" y="90" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle" font-style="italic">(Reduced from 26D bulk via Sp(2,R) gauge fixing)</text>
 
                     <!-- Box 1: F(R,T,tau) -->
                     <g transform="translate(60, 130)">
@@ -572,11 +583,13 @@
                         <rect width="140" height="160" rx="12" fill="url(#pneumaGrad)" filter="url(#boxShadow)"/>
                         <text x="70" y="35" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">L_Pneuma</text>
                         <line x1="20" y1="50" x2="120" y2="50" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
-                        <text x="70" y="75" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">Pneuma Field</text>
-                        <text x="70" y="95" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">26D spinor Psi</text>
-                        <text x="70" y="110" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">8192 components</text>
-                        <text x="70" y="125" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Self-interaction</text>
-                        <text x="70" y="148" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">Condensate formation</text>
+                        <text x="70" y="70" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.9)" text-anchor="middle">Pneuma Field</text>
+                        <text x="70" y="88" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">14D×2 spinor Ψ</text>
+                        <text x="70" y="103" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">64 components</text>
+                        <text x="70" y="118" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.65)" text-anchor="middle">(from Cliff(12,2))</text>
+                        <text x="70" y="133" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.75)" text-anchor="middle">Self-interaction</text>
+                        <text x="70" y="150" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">Condensate triggers</text>
+                        <text x="70" y="162" font-family="Inter, sans-serif" font-size="9" fill="rgba(255,255,255,0.6)" text-anchor="middle" font-style="italic">symmetry breaking</text>
                     </g>
 
                     <!-- Box 3: L_SM -->
@@ -622,19 +635,22 @@
                     <text x="510" y="165" font-family="Inter, sans-serif" font-size="9" fill="#ffd93d" text-anchor="middle">portal</text>
 
                     <!-- Bottom summary -->
-                    <rect x="100" y="320" width="500" height="100" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
-                    <text x="350" y="350" font-family="Georgia, serif" font-size="14" fill="#8b7fff" text-anchor="middle" font-weight="600">Physical Interpretation</text>
-                    <text x="350" y="375" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">Modified gravity provides dark energy</text>
-                    <text x="350" y="395" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">Pneuma condensate triggers symmetry breaking</text>
-                    <text x="350" y="415" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">SM emerges from higher-dimensional gauge fields</text>
+                    <rect x="100" y="320" width="500" height="110" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
+                    <text x="350" y="345" font-family="Georgia, serif" font-size="14" fill="#8b7fff" text-anchor="middle" font-weight="600">Physical Interpretation (14D×2 Framework)</text>
+                    <text x="350" y="368" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">Modified gravity F(R,T,τ) with thermal time provides dark energy</text>
+                    <text x="350" y="388" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">64-component Pneuma condensate triggers symmetry breaking</text>
+                    <text x="350" y="408" font-family="Inter, sans-serif" font-size="12" fill="#adb5bd" text-anchor="middle">SM emerges from 14D×2 → 4D dimensional reduction</text>
+                    <text x="350" y="425" font-family="Inter, sans-serif" font-size="10" fill="#6c757d" text-anchor="middle" font-style="italic">Sp(2,R) gauge symmetry relates two time coordinates</text>
                 </svg>
             </div>
         </section>
 
         <!-- DIAGRAM 6: Pneuma Field -->
         <section class="diagram-section" id="pneuma-field">
-            <h2>6. Pneuma Field Reduction</h2>
-            <p>The Pneuma field begins as an 8192-component spinor in 26D and reduces to 64 effective components through Sp(2,R) gauge fixing, forming a condensate that drives symmetry breaking.</p>
+            <h2>6. Pneuma Field Reduction: 26D → 14D×2</h2>
+            <p>The Pneuma field begins as an 8192-component spinor in the 26D bulk (2^13 from Clifford algebra Cliff(24,2)).
+               Through Sp(2,R) gauge fixing to the 14D×2 structure, it reduces to 64 effective components (2^6 from Cliff(12,2)),
+               forming a condensate that drives symmetry breaking and mass generation.</p>
             <div class="svg-wrapper">
                 <svg width="650" height="500" viewBox="0 0 650 500" xmlns="http://www.w3.org/2000/svg">
                     <defs>
@@ -691,17 +707,18 @@
                         <polygon points="0,80 -8,60 8,60" fill="url(#arrowGrad)"/>
 
                         <!-- Label -->
-                        <rect x="20" y="15" width="160" height="50" rx="10" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="1"/>
-                        <text x="100" y="38" font-family="Inter, sans-serif" font-size="13" fill="#8b7fff" text-anchor="middle" font-weight="600">Sp(2,R) Reduction</text>
-                        <text x="100" y="55" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">factor of 128</text>
+                        <rect x="20" y="15" width="180" height="50" rx="10" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="1"/>
+                        <text x="110" y="35" font-family="Inter, sans-serif" font-size="13" fill="#8b7fff" text-anchor="middle" font-weight="600">Sp(2,R) Gauge Fixing</text>
+                        <text x="110" y="52" font-family="Inter, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">26D → 14D×2 (÷128)</text>
                     </g>
 
-                    <!-- 13D Effective Spinor -->
+                    <!-- 14D×2 Effective Spinor -->
                     <g transform="translate(80, 250)">
-                        <rect x="0" y="0" width="200" height="90" rx="15" fill="url(#spinorGrad13)" filter="url(#shadow)"/>
-                        <text x="100" y="32" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">13D Effective</text>
-                        <text x="100" y="60" font-family="Inter, sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">64</text>
-                        <text x="100" y="80" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">components</text>
+                        <rect x="0" y="0" width="220" height="90" rx="15" fill="url(#spinorGrad13)" filter="url(#shadow)"/>
+                        <text x="110" y="28" font-family="Georgia, serif" font-size="18" fill="white" text-anchor="middle" font-weight="bold">14D×2 Effective</text>
+                        <text x="110" y="50" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.8)" text-anchor="middle">Cliff(12,2) spinor</text>
+                        <text x="110" y="70" font-family="Inter, sans-serif" font-size="26" fill="white" text-anchor="middle" font-weight="bold">64</text>
+                        <text x="110" y="85" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.8)" text-anchor="middle">components</text>
 
                         <!-- Reduced component visualization -->
                         <g transform="translate(220, 15)">
