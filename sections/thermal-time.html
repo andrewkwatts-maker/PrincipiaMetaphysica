@@ -462,17 +462,17 @@
                     <!-- Bottom equation bar -->
                     <rect x="30" y="345" width="790" height="30" rx="6" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.2)" stroke-width="1"/>
                     <text x="425" y="365" text-anchor="middle" fill="#adb5bd" font-size="12" font-family="Crimson Text, serif" font-style="italic">
-                        Key: &rho;(thermal state) &rarr; K(modular Hamiltonian) &rarr; &sigma;<tspan baseline-shift="sub" font-size="10">t</tspan>(time flow) &rarr; Emergent t<tspan baseline-shift="sub" font-size="10">therm</tspan> (t<tspan baseline-shift="sub" font-size="10">ortho</tspan> hidden)
+                        Key: &rho;(thermal state) &rarr; K(modular Hamiltonian) &rarr; &sigma;<tspan baseline-shift="sub" font-size="10">&tau;</tspan>(modular automorphism) &rarr; Emergent t<tspan baseline-shift="sub" font-size="10">therm</tspan> from 2T gauge fixing
                     </text>
                 </svg>
                 <div class="diagram-caption">
-                    <strong>How t<sub>therm</sub> Emerges from Thermodynamics:</strong> This diagram illustrates how the <em>observable</em> time dimension t<sub>therm</sub> emerges via the Thermal Time Hypothesis (TTH).
-                    Rather than assuming time exists fundamentally, TTH shows it <em>emerges</em> from statistical mechanics.
-                    <strong>Step 1:</strong> A thermal state &rho; (describing a system in equilibrium) defines a modular Hamiltonian K.
-                    <strong>Step 2:</strong> K generates a one-parameter family of automorphisms &sigma;<sub>t</sub> (the "modular flow").
-                    <strong>Step 3:</strong> This flow <em>is</em> t<sub>therm</sub> evolution&mdash;what we experience as time's passage is the modular
-                    flow of the Pneuma field's thermal state. The arrow of t<sub>therm</sub> aligns with the observable entropy gradient S<sub>obs</sub>.
-                    <strong>Note:</strong> In the full 26D framework, a second hidden time t<sub>ortho</sub> governs mirror-sector dynamics (see Section 5.2b).
+                    <strong>How t<sub>therm</sub> Emerges from Thermodynamics and 2T Gauge Fixing:</strong> This diagram illustrates how the <em>observable</em> time dimension t<sub>therm</sub> emerges via the Thermal Time Hypothesis (TTH) combined with Sp(2,R) gauge fixing.
+                    Rather than assuming time exists fundamentally, TTH shows it <em>emerges</em> from statistical mechanics and gauge symmetry.
+                    <strong>Step 1:</strong> A thermal state &rho; (describing the Pneuma field in equilibrium) defines a modular Hamiltonian K = -log(&rho;).
+                    <strong>Step 2:</strong> K generates a one-parameter family of <strong>modular automorphisms</strong> &sigma;<sub>&tau;</sub> = e<sup>iK&tau;</sup> (·) e<sup>-iK&tau;</sup> (the "Tomita-Takesaki modular flow").
+                    <strong>Step 3:</strong> This flow parameter &tau; <em>is</em> t<sub>therm</sub> evolution after Sp(2,R) gauge fixing eliminates the second time&mdash;what we experience as time's passage is the modular
+                    flow of the Pneuma field's thermal state. The arrow of t<sub>therm</sub> aligns with the observable entropy gradient &nabla;S<sub>obs</sub> > 0.
+                    <strong>2T Connection:</strong> In the full 26D (24,2) framework, two times (t₁, t₂) are gauge-fixed to a single &tau; via Sp(2,R) constraints, which then becomes t<sub>therm</sub> = &alpha;<sub>T</sub> · S.
                 </div>
             </div>
 
@@ -783,6 +783,106 @@
                 which employs <strong>Sp(2,R) gauge symmetry</strong> to eliminate unphysical degrees of freedom.
             </p>
 
+            <!-- SVG Diagram: Comprehensive Flow - 26D to Thermal Time -->
+            <div class="diagram-container">
+                <div class="diagram-title">The Complete Journey: From 26D (24,2) Bulk to 1D Thermal Time</div>
+                <svg class="diagram-svg" viewBox="0 0 950 680" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="bulkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:0.8" />
+                        </linearGradient>
+                        <marker id="flowArrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+                            <polygon points="0 0, 12 4, 0 8" fill="#8b7fff"/>
+                        </marker>
+                        <marker id="finalArrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+                            <polygon points="0 0, 12 4, 0 8" fill="#51cf66"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Stage 1: 26D Bulk -->
+                    <rect x="40" y="20" width="870" height="90" rx="12" fill="url(#bulkGrad)" stroke="rgba(155,89,182,0.6)" stroke-width="3"/>
+                    <text x="475" y="50" text-anchor="middle" fill="white" font-weight="700" font-size="16">STAGE 1: 26D Bulk with (24,2) Signature</text>
+                    <text x="475" y="72" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12">24 spatial dimensions + 2 timelike dimensions (t₁, t₂)</text>
+                    <text x="475" y="92" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">⚠ Unitarity problem: negative-norm states from 2nd time</text>
+
+                    <!-- Arrow down -->
+                    <path d="M 475 120 L 475 145" stroke="#8b7fff" stroke-width="4" marker-end="url(#flowArrow)"/>
+                    <text x="475" y="137" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600" dx="80">Identify Sp(2,R) gauge symmetry</text>
+
+                    <!-- Stage 2: Sp(2,R) Constraints -->
+                    <rect x="40" y="155" width="870" height="100" rx="12" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.5)" stroke-width="3"/>
+                    <text x="475" y="180" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="15">STAGE 2: Impose Sp(2,R) Gauge Constraints</text>
+
+                    <g class="constraints-row">
+                        <rect x="70" y="195" width="240" height="45" rx="6" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                        <text x="190" y="215" text-anchor="middle" fill="#f8f9fa" font-size="11" font-weight="600">X² = 0</text>
+                        <text x="190" y="232" text-anchor="middle" fill="#adb5bd" font-size="9">(null worldline)</text>
+
+                        <rect x="355" y="195" width="240" height="45" rx="6" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                        <text x="475" y="215" text-anchor="middle" fill="#f8f9fa" font-size="11" font-weight="600">P² = 0</text>
+                        <text x="475" y="232" text-anchor="middle" fill="#adb5bd" font-size="9">(null momentum)</text>
+
+                        <rect x="640" y="195" width="240" height="45" rx="6" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                        <text x="760" y="215" text-anchor="middle" fill="#f8f9fa" font-size="11" font-weight="600">X·P = 0</text>
+                        <text x="760" y="232" text-anchor="middle" fill="#adb5bd" font-size="9">(orthogonality)</text>
+                    </g>
+
+                    <!-- Arrow down -->
+                    <path d="M 475 265 L 475 290" stroke="#8b7fff" stroke-width="4" marker-end="url(#flowArrow)"/>
+                    <text x="475" y="282" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600" dx="70">Choose gauge: X⁰ = τ</text>
+
+                    <!-- Stage 3: Gauge Fixing -->
+                    <rect x="40" y="300" width="870" height="80" rx="12" fill="rgba(79,172,254,0.15)" stroke="rgba(79,172,254,0.5)" stroke-width="3"/>
+                    <text x="475" y="325" text-anchor="middle" fill="#4facfe" font-weight="700" font-size="15">STAGE 3: Gauge Fix to Single Time τ</text>
+                    <text x="475" y="347" text-anchor="middle" fill="#f8f9fa" font-size="12">t₂ eliminated as independent variable → solved in terms of t₁ ≡ τ and spatial coords</text>
+                    <text x="475" y="367" text-anchor="middle" fill="#4facfe" font-size="11">✓ Effective (d-1,1) signature restored  |  ✓ One physical time parameter</text>
+
+                    <!-- Arrow down -->
+                    <path d="M 475 390 L 475 415" stroke="#8b7fff" stroke-width="4" marker-end="url(#flowArrow)"/>
+                    <text x="475" y="407" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600" dx="-85">BRST quantization + ghost cancellation</text>
+
+                    <!-- Stage 4: Quantum Theory -->
+                    <rect x="40" y="425" width="870" height="80" rx="12" fill="rgba(255,107,107,0.12)" stroke="rgba(255,107,107,0.5)" stroke-width="3"/>
+                    <text x="475" y="450" text-anchor="middle" fill="#ff6b6b" font-weight="700" font-size="15">STAGE 4: BRST Ghosts Cancel Negative-Norm States</text>
+                    <text x="475" y="472" text-anchor="middle" fill="#f8f9fa" font-size="12">Ghost fields (c⁰, c⁺, c⁻, b₀, b₊, b₋) introduced for each Sp(2,R) generator</text>
+                    <text x="475" y="492" text-anchor="middle" fill="#ff6b6b" font-size="11">Q²=0 (nilpotency) → Physical Hilbert space ℋ<tspan baseline-shift="sub" font-size="9">phys</tspan> = ker(Q)/im(Q) is unitary</text>
+
+                    <!-- Arrow down -->
+                    <path d="M 475 515 L 475 540" stroke="#8b7fff" stroke-width="4" marker-end="url(#flowArrow)"/>
+                    <text x="475" y="532" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600" dx="-90">Pneuma field thermal state ρ</text>
+
+                    <!-- Stage 5: Tomita-Takesaki -->
+                    <rect x="40" y="550" width="870" height="80" rx="12" fill="rgba(255,126,182,0.12)" stroke="rgba(255,126,182,0.5)" stroke-width="3"/>
+                    <text x="475" y="575" text-anchor="middle" fill="#ff7eb6" font-weight="700" font-size="15">STAGE 5: Tomita-Takesaki Modular Flow</text>
+                    <text x="475" y="597" text-anchor="middle" fill="#f8f9fa" font-size="12">Thermal state ρ → Modular Hamiltonian K = -log(ρ) → Modular automorphism σ<tspan baseline-shift="sub" font-size="10">τ</tspan> = e<tspan baseline-shift="super" font-size="9">iKτ</tspan></text>
+                    <text x="475" y="617" text-anchor="middle" fill="#ff7eb6" font-size="11">Parameter τ IS the thermal time flow | Entropy S increases monotonically</text>
+
+                    <!-- Arrow down (final) -->
+                    <path d="M 475 640 L 475 665" stroke="#51cf66" stroke-width="4" marker-end="url(#finalArrow)"/>
+                    <text x="475" y="657" text-anchor="middle" fill="#51cf66" font-size="11" font-weight="600" dx="50">∇S > 0 defines time arrow</text>
+
+                    <!-- Stage 6: Thermal Time -->
+                    <rect x="150" y="665" width="650" height="50" rx="12" fill="rgba(81,207,102,0.3)" stroke="rgba(81,207,102,0.7)" stroke-width="3"/>
+                    <text x="475" y="688" text-anchor="middle" fill="white" font-weight="700" font-size="17">EMERGENT THERMAL TIME: t<tspan baseline-shift="sub" font-size="13">therm</tspan> = α<tspan baseline-shift="sub" font-size="13">T</tspan> · S</text>
+                    <text x="475" y="707" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11">The ONE time we experience, emergent from 2T gauge fixing + thermodynamics</text>
+                </svg>
+                <div class="diagram-caption">
+                    <strong>The Complete Journey from 2T Bulk to 1T Thermal Time:</strong> This comprehensive flow diagram shows
+                    how the single thermal time we experience emerges from a 26-dimensional bulk with <strong>two timelike dimensions</strong>.
+                    <strong>Stage 1:</strong> The 26D bulk has signature (24,2) with two times (t₁, t₂), creating a unitarity problem.
+                    <strong>Stage 2:</strong> The <strong>Sp(2,R) gauge symmetry</strong> provides three constraints (X²=0, P²=0, X·P=0)
+                    that relate the two times. <strong>Stage 3:</strong> Choosing the gauge X⁰ = τ eliminates the second time as an
+                    independent variable, leaving one effective time τ. <strong>Stage 4:</strong> <strong>BRST quantization</strong>
+                    introduces ghost fields that cancel the negative-norm states from the second time, ensuring unitarity via Q² = 0.
+                    <strong>Stage 5:</strong> The <strong>Tomita-Takesaki modular theory</strong> acts on the Pneuma field's thermal
+                    state &rho;, generating the modular automorphism σ<sub>τ</sub> that defines time evolution. <strong>Stage 6:</strong>
+                    The parameter τ is identified with <strong>thermal time t<sub>therm</sub> = &alpha;<sub>T</sub> · S</strong>, where
+                    the entropy gradient ∇S > 0 defines the arrow of time. This elegant chain connects abstract 2T geometry to the
+                    concrete, one-directional time flow we experience in everyday life.
+                </div>
+            </div>
+
             <div class="definition-box">
                 <h5>Sp(2,R) Gauge Group</h5>
                 <p>
@@ -869,6 +969,117 @@
                     <p style="margin-top: 1rem;"><strong>Result:</strong> The physical theory has only one time &tau;, which we identify with the thermal time t<sub>therm</sub> after thermodynamic considerations.</p>
                 </div>
 
+                <!-- SVG Diagram: 2T → 1T Gauge Fixing Process -->
+                <div class="diagram-container">
+                    <div class="diagram-title">2T → 1T Gauge Fixing: How Two Times Become One</div>
+                    <svg class="diagram-svg" viewBox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="time2TGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#9b59b6;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="time1TGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+                            </linearGradient>
+                            <marker id="gaugeArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#8b7fff"/>
+                            </marker>
+                            <marker id="blueArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#4facfe"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Top: 2T Phase Space (Before Gauge Fixing) -->
+                        <rect x="30" y="20" width="840" height="150" rx="12" fill="rgba(155,89,182,0.08)" stroke="rgba(155,89,182,0.4)" stroke-width="2"/>
+                        <text x="450" y="45" text-anchor="middle" fill="#9b59b6" font-weight="700" font-size="16">26D Phase Space with (24,2) Signature — TWO TIMES</text>
+
+                        <!-- Two time dimensions -->
+                        <g class="time-coords">
+                            <rect x="60" y="70" width="180" height="80" rx="8" fill="url(#time2TGrad)" stroke="rgba(155,89,182,0.7)" stroke-width="2"/>
+                            <text x="150" y="95" text-anchor="middle" fill="white" font-size="14" font-weight="600">Time Coordinates</text>
+                            <text x="150" y="115" text-anchor="middle" fill="white" font-size="12">t₁ (observable sector)</text>
+                            <text x="150" y="135" text-anchor="middle" fill="white" font-size="12">t₂ (mirror sector)</text>
+                        </g>
+
+                        <!-- Phase space structure -->
+                        <g class="phase-space">
+                            <rect x="270" y="70" width="200" height="80" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                            <text x="370" y="95" text-anchor="middle" fill="#f8f9fa" font-size="13">Phase Space: (X<tspan baseline-shift="super" font-size="10">μ</tspan>, P<tspan baseline-shift="sub" font-size="10">μ</tspan>)</text>
+                            <text x="370" y="115" text-anchor="middle" fill="#adb5bd" font-size="11">52 dimensions total</text>
+                            <text x="370" y="135" text-anchor="middle" fill="#adb5bd" font-size="10">(26 coords + 26 momenta)</text>
+                        </g>
+
+                        <!-- Metric signature -->
+                        <g class="metric">
+                            <rect x="500" y="70" width="350" height="80" rx="8" fill="rgba(155,89,182,0.15)" stroke="rgba(155,89,182,0.6)" stroke-width="2"/>
+                            <text x="675" y="95" text-anchor="middle" fill="#f8f9fa" font-size="13">Metric Signature (24,2)</text>
+                            <text x="675" y="115" text-anchor="middle" fill="#adb5bd" font-size="11" font-family="Crimson Text, serif">η<tspan baseline-shift="sub" font-size="9">μν</tspan> = diag(-1, -1, +1, +1, ..., +1)</text>
+                            <text x="675" y="135" text-anchor="middle" fill="#9b59b6" font-size="10" font-weight="600">⚠ Two timelike dimensions!</text>
+                        </g>
+
+                        <!-- Arrow down: Apply Sp(2,R) constraints -->
+                        <path d="M 450 180 L 450 210" stroke="#8b7fff" stroke-width="3" fill="none" marker-end="url(#gaugeArrow)"/>
+                        <text x="450" y="200" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600" dx="-120">Apply Sp(2,R) Constraints</text>
+
+                        <!-- Middle: Sp(2,R) Constraints -->
+                        <rect x="30" y="220" width="840" height="140" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                        <text x="450" y="245" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="15">Sp(2,R) Gauge Constraints — Relating the Two Times</text>
+
+                        <!-- Three constraints -->
+                        <g class="constraint-1">
+                            <rect x="60" y="265" width="240" height="70" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                            <text x="180" y="285" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Constraint 1: L₀</text>
+                            <text x="180" y="305" text-anchor="middle" fill="#f8f9fa" font-size="12" font-family="Crimson Text, serif">X² = X<tspan baseline-shift="super" font-size="10">μ</tspan>η<tspan baseline-shift="sub" font-size="9">μν</tspan>X<tspan baseline-shift="super" font-size="10">ν</tspan> = 0</text>
+                            <text x="180" y="325" text-anchor="middle" fill="#adb5bd" font-size="9">(null worldline)</text>
+                        </g>
+
+                        <g class="constraint-2">
+                            <rect x="330" y="265" width="240" height="70" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                            <text x="450" y="285" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Constraint 2: L₊</text>
+                            <text x="450" y="305" text-anchor="middle" fill="#f8f9fa" font-size="12" font-family="Crimson Text, serif">P² = P<tspan baseline-shift="super" font-size="10">μ</tspan>η<tspan baseline-shift="sub" font-size="9">μν</tspan>P<tspan baseline-shift="super" font-size="10">ν</tspan> = 0</text>
+                            <text x="450" y="325" text-anchor="middle" fill="#adb5bd" font-size="9">(null momentum)</text>
+                        </g>
+
+                        <g class="constraint-3">
+                            <rect x="600" y="265" width="240" height="70" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                            <text x="720" y="285" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Constraint 3: L₋</text>
+                            <text x="720" y="305" text-anchor="middle" fill="#f8f9fa" font-size="12" font-family="Crimson Text, serif">X·P = X<tspan baseline-shift="super" font-size="10">μ</tspan>η<tspan baseline-shift="sub" font-size="9">μν</tspan>P<tspan baseline-shift="super" font-size="10">ν</tspan> = 0</text>
+                            <text x="720" y="325" text-anchor="middle" fill="#adb5bd" font-size="9">(orthogonality)</text>
+                        </g>
+
+                        <!-- Arrow down: Gauge fixing -->
+                        <path d="M 450 370 L 450 400" stroke="#4facfe" stroke-width="3" fill="none" marker-end="url(#blueArrow)"/>
+                        <text x="450" y="390" text-anchor="middle" fill="#4facfe" font-size="12" font-weight="600" dx="-100">Choose Gauge: X⁰ = τ</text>
+
+                        <!-- Bottom: 1T Gauge-Fixed Theory -->
+                        <rect x="30" y="410" width="840" height="100" rx="12" fill="rgba(79,172,254,0.08)" stroke="rgba(79,172,254,0.4)" stroke-width="2"/>
+                        <text x="450" y="435" text-anchor="middle" fill="#4facfe" font-weight="700" font-size="16">Gauge-Fixed Theory — ONE EFFECTIVE TIME</text>
+
+                        <!-- Single time -->
+                        <g class="single-time">
+                            <rect x="150" y="455" width="220" height="40" rx="8" fill="url(#time1TGrad)" stroke="rgba(79,172,254,0.7)" stroke-width="2"/>
+                            <text x="260" y="480" text-anchor="middle" fill="white" font-size="14" font-weight="600">τ ≡ t<tspan baseline-shift="sub" font-size="11">therm</tspan> (single time)</text>
+                        </g>
+
+                        <!-- Result -->
+                        <g class="result">
+                            <rect x="400" y="455" width="450" height="40" rx="8" fill="rgba(79,172,254,0.15)" stroke="rgba(79,172,254,0.6)" stroke-width="2"/>
+                            <text x="625" y="475" text-anchor="middle" fill="#f8f9fa" font-size="12">Effective (d-1,1) signature</text>
+                            <text x="625" y="490" text-anchor="middle" fill="#4facfe" font-size="10">✓ Unitarity restored  ✓ Single causal structure</text>
+                        </g>
+                    </svg>
+                    <div class="diagram-caption">
+                        <strong>From Two Times to One:</strong> The 26D bulk has signature (24,2) with two timelike dimensions,
+                        which naively threatens unitarity and causality. However, the <strong>Sp(2,R) gauge symmetry</strong>
+                        provides three constraints (L₀, L₊, L₋) that relate the two times. By choosing a gauge where X⁰ = τ,
+                        we eliminate the second time t₂ as an independent degree of freedom—it becomes a composite function
+                        of spatial coordinates. The result is an effective theory with <strong>one physical time τ</strong>,
+                        which we identify with thermal time t<sub>therm</sub>. This gauge-fixing procedure is the key to
+                        maintaining consistency while preserving the geometric richness of the 2T structure.
+                    </div>
+                </div>
+
                 <p>
                     The crucial observation is that the gauge-fixed theory automatically has signature (d-1,1) where d is the
                     appropriate dimension for the effective theory. For our framework, gauge fixing the 26D (24,2) theory
@@ -918,6 +1129,123 @@
                     <li><strong>Thermodynamic interpretation</strong> identifies &tau; with entropy flow via Tomita-Takesaki theory</li>
                     <li><strong>Emergent time</strong> t<sub>therm</sub> = &alpha;<sub>T</sub> S is what observers experience</li>
                 </ol>
+
+                <!-- SVG Diagram: Sp(2,R) Gauge Orbits and Action -->
+                <div class="diagram-container">
+                    <div class="diagram-title">Sp(2,R) Gauge Action: How the Gauge Group Acts on Time Coordinates</div>
+                    <svg class="diagram-svg" viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="orbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:0.6" />
+                                <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0.6" />
+                            </linearGradient>
+                            <marker id="orbitArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#8b7fff"/>
+                            </marker>
+                            <marker id="sliceArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#51cf66"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Left: Gauge Orbits in (t₁, t₂) Space -->
+                        <rect x="30" y="20" width="420" height="440" rx="12" fill="rgba(139,127,255,0.05)" stroke="rgba(139,127,255,0.3)" stroke-width="2"/>
+                        <text x="240" y="45" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="14">Gauge Orbits in 2T Space</text>
+
+                        <!-- Axes -->
+                        <path d="M 80 400 L 420 400" stroke="#adb5bd" stroke-width="2" fill="none"/>
+                        <path d="M 80 400 L 80 80" stroke="#adb5bd" stroke-width="2" fill="none"/>
+                        <text x="430 " y="405" fill="#adb5bd" font-size="12">t₁</text>
+                        <text x="70" y="70" fill="#adb5bd" font-size="12">t₂</text>
+
+                        <!-- Gauge orbits (hyperbolas from X² = 0 constraint) -->
+                        <path d="M 120 360 Q 150 280, 200 200 Q 250 120, 300 80"
+                              stroke="url(#orbitGrad)" stroke-width="3" fill="none" opacity="0.7"/>
+                        <path d="M 140 380 Q 170 300, 220 220 Q 270 140, 320 100"
+                              stroke="url(#orbitGrad)" stroke-width="3" fill="none" opacity="0.5"/>
+                        <path d="M 160 390 Q 190 320, 240 240 Q 290 160, 340 120"
+                              stroke="url(#orbitGrad)" stroke-width="3" fill="none" opacity="0.4"/>
+
+                        <!-- Indicate orbit flow -->
+                        <path d="M 180 300 L 190 280" stroke="#8b7fff" stroke-width="2" marker-end="url(#orbitArrow)"/>
+                        <path d="M 250 180 L 260 160" stroke="#8b7fff" stroke-width="2" marker-end="url(#orbitArrow)"/>
+
+                        <!-- Labels for orbits -->
+                        <text x="240" y="250" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600">Gauge Orbits</text>
+                        <text x="240" y="265" text-anchor="middle" fill="#adb5bd" font-size="9">(equiv. under Sp(2,R))</text>
+
+                        <!-- Null constraint curve -->
+                        <circle cx="200" cy="200" r="5" fill="#ff7eb6" opacity="0.8"/>
+                        <circle cx="240" cy="240" r="5" fill="#ff7eb6" opacity="0.8"/>
+                        <circle cx="280" cy="280" r="5" fill="#ff7eb6" opacity="0.8"/>
+
+                        <text x="240" y="350" text-anchor="middle" fill="#ff7eb6" font-size="10" font-style="italic">X² = -t₁² - t₂² + x⃗² = 0</text>
+
+                        <!-- Sp(2,R) generators -->
+                        <g class="generators">
+                            <rect x="50" y="410" width="380" height="40" rx="6" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.3)" stroke-width="1"/>
+                            <text x="240" y="428" text-anchor="middle" fill="#f8f9fa" font-size="10" font-weight="600">Sp(2,R) ≅ SL(2,R) Generators:</text>
+                            <text x="240" y="443" text-anchor="middle" fill="#adb5bd" font-size="9">L₀ (dilations)  |  L₊ (boosts)  |  L₋ (inversions)</text>
+                        </g>
+
+                        <!-- Right: Gauge-Fixed Slice -->
+                        <rect x="480" y="20" width="390" height="440" rx="12" fill="rgba(81,207,102,0.05)" stroke="rgba(81,207,102,0.3)" stroke-width="2"/>
+                        <text x="675" y="45" text-anchor="middle" fill="#51cf66" font-weight="700" font-size="14">Gauge-Fixed Slice (τ chosen)</text>
+
+                        <!-- Vertical slice representing gauge choice -->
+                        <rect x="650" y="80" width="50" height="320" rx="4" fill="rgba(81,207,102,0.2)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                        <text x="675" y="240" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="600" transform="rotate(-90 675 240)">Gauge Slice</text>
+
+                        <!-- Representative points on slice -->
+                        <circle cx="675" cy="140" r="6" fill="#51cf66" stroke="white" stroke-width="2"/>
+                        <circle cx="675" cy="220" r="6" fill="#51cf66" stroke="white" stroke-width="2"/>
+                        <circle cx="675" cy="300" r="6" fill="#51cf66" stroke="white" stroke-width="2"/>
+                        <circle cx="675" cy="360" r="6" fill="#51cf66" stroke="white" stroke-width="2"/>
+
+                        <!-- Physical states -->
+                        <g class="phys-states">
+                            <rect x="510" y="130" width="120" height="30" rx="4" fill="rgba(79,172,254,0.15)" stroke="rgba(79,172,254,0.5)" stroke-width="1"/>
+                            <text x="570" y="150" text-anchor="middle" fill="#4facfe" font-size="10">State |ψ₁⟩</text>
+                            <path d="M 630 145 L 667 143" stroke="#51cf66" stroke-width="1.5" marker-end="url(#sliceArrow)"/>
+                        </g>
+
+                        <g class="phys-states">
+                            <rect x="510" y="210" width="120" height="30" rx="4" fill="rgba(79,172,254,0.15)" stroke="rgba(79,172,254,0.5)" stroke-width="1"/>
+                            <text x="570" y="230" text-anchor="middle" fill="#4facfe" font-size="10">State |ψ₂⟩</text>
+                            <path d="M 630 225 L 667 222" stroke="#51cf66" stroke-width="1.5" marker-end="url(#sliceArrow)"/>
+                        </g>
+
+                        <g class="phys-states">
+                            <rect x="510" y="290" width="120" height="30" rx="4" fill="rgba(79,172,254,0.15)" stroke="rgba(79,172,254,0.5)" stroke-width="1"/>
+                            <text x="570" y="310" text-anchor="middle" fill="#4facfe" font-size="10">State |ψ₃⟩</text>
+                            <path d="M 630 305 L 667 302" stroke="#51cf66" stroke-width="1.5" marker-end="url(#sliceArrow)"/>
+                        </g>
+
+                        <!-- Gauge condition label -->
+                        <rect x="720" y="180" width="130" height="80" rx="6" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                        <text x="785" y="200" text-anchor="middle" fill="#51cf66" font-size="11" font-weight="600">Gauge Condition</text>
+                        <text x="785" y="218" text-anchor="middle" fill="#f8f9fa" font-size="10">X⁰ = τ</text>
+                        <text x="785" y="235" text-anchor="middle" fill="#adb5bd" font-size="9">(fixes L₀)</text>
+                        <text x="785" y="252" text-anchor="middle" fill="#adb5bd" font-size="8">Picks one point</text>
+                        <text x="785" y="265" text-anchor="middle" fill="#adb5bd" font-size="8">from each orbit</text>
+
+                        <!-- Result box -->
+                        <rect x="500" y="410" width="350" height="40" rx="6" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.5)" stroke-width="1"/>
+                        <text x="675" y="428" text-anchor="middle" fill="#f8f9fa" font-size="11">
+                            <tspan fill="#51cf66" font-weight="600">Result:</tspan> One physical time τ per gauge orbit
+                        </text>
+                        <text x="675" y="443" text-anchor="middle" fill="#adb5bd" font-size="9">t₂ eliminated as independent variable</text>
+                    </svg>
+                    <div class="diagram-caption">
+                        <strong>Sp(2,R) Gauge Orbits and Gauge Fixing:</strong> The left panel shows the 2-dimensional time space (t₁, t₂).
+                        The <strong>Sp(2,R) gauge symmetry</strong> acts on this space, generating <strong>gauge orbits</strong> (shown as
+                        curved lines) that connect physically equivalent configurations. All points on a single orbit represent the same
+                        physical state, just described using different time coordinates. The constraint X² = 0 (from the gauge algebra)
+                        restricts states to lie on null hypersurfaces. The right panel shows <strong>gauge fixing</strong>: we choose a
+                        "gauge slice" (the vertical green region) by imposing the condition X⁰ = τ. This picks exactly <strong>one
+                        representative point</strong> from each gauge orbit, eliminating the redundancy. After gauge fixing, we're left
+                        with a single effective time parameter τ, which we identify with thermal time t<sub>therm</sub>.
+                    </div>
+                </div>
             </div>
 
             <div class="subsection">
@@ -977,6 +1305,133 @@
                         <span class="tooltip">quantum anomaly<span class="tooltiptext">A symmetry that exists classically but is broken by quantum effects, often rendering the theory inconsistent.</span></span>
                         and typically renders the gauge theory inconsistent.
                     </p>
+                </div>
+
+                <!-- SVG Diagram: BRST Ghost Complex -->
+                <div class="diagram-container">
+                    <div class="diagram-title">BRST Ghost Complex: Nilpotency and Physical State Projection</div>
+                    <svg class="diagram-svg" viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="ghostGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0.8" />
+                            </linearGradient>
+                            <linearGradient id="physGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#51cf66;stop-opacity:0.8" />
+                                <stop offset="100%" style="stop-color:#4facfe;stop-opacity:0.8" />
+                            </linearGradient>
+                            <marker id="brstArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#8b7fff"/>
+                            </marker>
+                            <marker id="redArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#ff6b6b"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Top: Ghost Fields -->
+                        <rect x="30" y="20" width="840" height="120" rx="12" fill="rgba(255,107,107,0.08)" stroke="rgba(255,107,107,0.4)" stroke-width="2"/>
+                        <text x="450" y="45" text-anchor="middle" fill="#ff6b6b" font-weight="700" font-size="15">Ghost Fields for Sp(2,R)</text>
+
+                        <!-- Three ghost pairs -->
+                        <g class="ghost-0">
+                            <rect x="60" y="65" width="240" height="60" rx="8" fill="rgba(255,107,107,0.15)" stroke="rgba(255,107,107,0.6)" stroke-width="2"/>
+                            <text x="180" y="85" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="600">L₀ Generator</text>
+                            <text x="180" y="105" text-anchor="middle" fill="#f8f9fa" font-size="11">Ghost: c⁰  |  Antighost: b₀</text>
+                            <text x="180" y="120" text-anchor="middle" fill="#adb5bd" font-size="9">(worldline reparametrization)</text>
+                        </g>
+
+                        <g class="ghost-plus">
+                            <rect x="330" y="65" width="240" height="60" rx="8" fill="rgba(255,107,107,0.15)" stroke="rgba(255,107,107,0.6)" stroke-width="2"/>
+                            <text x="450" y="85" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="600">L₊ Generator</text>
+                            <text x="450" y="105" text-anchor="middle" fill="#f8f9fa" font-size="11">Ghost: c⁺  |  Antighost: b₊</text>
+                            <text x="450" y="120" text-anchor="middle" fill="#adb5bd" font-size="9">(forward conformal)</text>
+                        </g>
+
+                        <g class="ghost-minus">
+                            <rect x="600" y="65" width="240" height="60" rx="8" fill="rgba(255,107,107,0.15)" stroke="rgba(255,107,107,0.6)" stroke-width="2"/>
+                            <text x="720" y="85" text-anchor="middle" fill="#ff6b6b" font-size="12" font-weight="600">L₋ Generator</text>
+                            <text x="720" y="105" text-anchor="middle" fill="#f8f9fa" font-size="11">Ghost: c⁻  |  Antighost: b₋</text>
+                            <text x="720" y="120" text-anchor="middle" fill="#adb5bd" font-size="9">(backward conformal)</text>
+                        </g>
+
+                        <!-- Arrow down -->
+                        <path d="M 450 150 L 450 175" stroke="#8b7fff" stroke-width="3" fill="none" marker-end="url(#brstArrow)"/>
+                        <text x="450" y="168" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600" dx="-70">BRST Operator Q</text>
+
+                        <!-- Middle: BRST Complex -->
+                        <rect x="30" y="185" width="840" height="180" rx="12" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
+                        <text x="450" y="210" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="15">BRST Complex and Nilpotency Q² = 0</text>
+
+                        <!-- BRST operator structure -->
+                        <rect x="60" y="230" width="780" height="50" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                        <text x="450" y="252" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif">
+                            Q = c<tspan baseline-shift="super" font-size="10">a</tspan>L<tspan baseline-shift="sub" font-size="10">a</tspan> + ½f<tspan baseline-shift="sub" font-size="9">abc</tspan>c<tspan baseline-shift="super" font-size="10">a</tspan>c<tspan baseline-shift="super" font-size="10">b</tspan>b<tspan baseline-shift="sub" font-size="10">c</tspan>
+                        </text>
+                        <text x="450" y="270" text-anchor="middle" fill="#adb5bd" font-size="10">
+                            (linear constraints + ghost-ghost-antighost coupling)
+                        </text>
+
+                        <!-- Nilpotency diagram -->
+                        <g class="nilpotency">
+                            <circle cx="200" cy="325" r="35" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                            <text x="200" y="330" text-anchor="middle" fill="#f8f9fa" font-size="12" font-weight="600">State |ψ⟩</text>
+
+                            <path d="M 240 325 L 310 325" stroke="#8b7fff" stroke-width="2" marker-end="url(#brstArrow)"/>
+                            <text x="275" y="315" text-anchor="middle" fill="#8b7fff" font-size="10">Q</text>
+
+                            <circle cx="350" cy="325" r="35" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.6)" stroke-width="2"/>
+                            <text x="350" y="330" text-anchor="middle" fill="#ff7eb6" font-size="12" font-weight="600">Q|ψ⟩</text>
+
+                            <path d="M 390 325 L 460 325" stroke="#ff6b6b" stroke-width="2" marker-end="url(#redArrow)"/>
+                            <text x="425" y="315" text-anchor="middle" fill="#ff6b6b" font-size="10">Q</text>
+
+                            <circle cx="500" cy="325" r="40" fill="rgba(81,207,102,0.2)" stroke="rgba(81,207,102,0.7)" stroke-width="3"/>
+                            <text x="500" y="320" text-anchor="middle" fill="#51cf66" font-size="14" font-weight="700">Q²|ψ⟩</text>
+                            <text x="500" y="340" text-anchor="middle" fill="#51cf66" font-size="13" font-weight="700">= 0</text>
+                        </g>
+
+                        <!-- Cohomology explanation -->
+                        <g class="cohomology">
+                            <rect x="560" y="295" width="260" height="60" rx="6" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                            <text x="690" y="315" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600">Nilpotency Consequence:</text>
+                            <text x="690" y="332" text-anchor="middle" fill="#f8f9fa" font-size="10">im(Q) ⊆ ker(Q)</text>
+                            <text x="690" y="348" text-anchor="middle" fill="#adb5bd" font-size="9">Defines BRST cohomology</text>
+                        </g>
+
+                        <!-- Arrow down to physical Hilbert space -->
+                        <path d="M 450 375 L 450 400" stroke="#51cf66" stroke-width="3" fill="none" marker-end="url(#brstArrow)"/>
+                        <text x="450" y="393" text-anchor="middle" fill="#51cf66" font-size="11" font-weight="600" dx="-90">Project to Physical States</text>
+
+                        <!-- Bottom: Physical Hilbert Space -->
+                        <rect x="30" y="410" width="840" height="120" rx="12" fill="rgba(81,207,102,0.08)" stroke="rgba(81,207,102,0.4)" stroke-width="2"/>
+                        <text x="450" y="435" text-anchor="middle" fill="#51cf66" font-weight="700" font-size="15">Physical Hilbert Space ℋ<tspan baseline-shift="sub" font-size="12">phys</tspan> = ker(Q) / im(Q)</text>
+
+                        <!-- Physical state conditions -->
+                        <g class="phys-conditions">
+                            <rect x="80" y="455" width="350" height="60" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.6)" stroke-width="2"/>
+                            <text x="255" y="475" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="600">BRST-Closed (ker Q):</text>
+                            <text x="255" y="493" text-anchor="middle" fill="#f8f9fa" font-size="11">Q|ψ<tspan baseline-shift="sub" font-size="9">phys</tspan>⟩ = 0</text>
+                            <text x="255" y="508" text-anchor="middle" fill="#adb5bd" font-size="9">Gauge-invariant states</text>
+                        </g>
+
+                        <g class="quotient">
+                            <rect x="470" y="455" width="370" height="60" rx="8" fill="rgba(79,172,254,0.15)" stroke="rgba(79,172,254,0.6)" stroke-width="2"/>
+                            <text x="655" y="475" text-anchor="middle" fill="#4facfe" font-size="12" font-weight="600">Quotient by BRST-Exact (im Q):</text>
+                            <text x="655" y="493" text-anchor="middle" fill="#f8f9fa" font-size="11">|ψ<tspan baseline-shift="sub" font-size="9">phys</tspan>⟩ ≠ Q|χ⟩</text>
+                            <text x="655" y="508" text-anchor="middle" fill="#adb5bd" font-size="9">Remove gauge redundancy</text>
+                        </g>
+                    </svg>
+                    <div class="diagram-caption">
+                        <strong>BRST Ghost Complex and Nilpotency:</strong> For each Sp(2,R) generator (L₀, L₊, L₋), we introduce
+                        a <strong>ghost field c<sup>a</sup></strong> and <strong>antighost field b<sub>a</sub></strong>. These combine
+                        with the constraint operators to form the <strong>BRST charge Q</strong>. The key property is <strong>nilpotency:
+                        Q² = 0</strong>, which means applying Q twice to any state gives zero. This ensures that the image of Q (BRST-exact
+                        states) is contained in the kernel of Q (BRST-closed states), allowing us to define the <strong>BRST cohomology</strong>.
+                        Physical states |ψ<sub>phys</sub>⟩ must be BRST-closed (Q|ψ⟩ = 0, meaning gauge-invariant) but not BRST-exact
+                        (|ψ⟩ ≠ Q|χ⟩, meaning not pure gauge). The quotient space <strong>ℋ<sub>phys</sub> = ker(Q) / im(Q)</strong>
+                        is the physical Hilbert space, where ghost contributions exactly cancel negative-norm states from the second time,
+                        restoring unitarity.
+                    </div>
                 </div>
             </div>
 
@@ -1082,6 +1537,125 @@
                         is &tau; from gauge fixing, which becomes thermal time only after identifying it with the entropy
                         gradient of the Pneuma field's quantum state.
                     </p>
+                </div>
+
+                <!-- SVG Diagram: Entropy Gradient and Time Arrow -->
+                <div class="diagram-container">
+                    <div class="diagram-title">Entropy Gradient Defines the Arrow of Thermal Time</div>
+                    <svg class="diagram-svg" viewBox="0 0 900 420" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="entropyIncGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:#51cf66;stop-opacity:0.3" />
+                                <stop offset="50%" style="stop-color:#ffd43b;stop-opacity:0.5" />
+                                <stop offset="100%" style="stop-color:#ff6b6b;stop-opacity:0.7" />
+                            </linearGradient>
+                            <marker id="timeFlowArrow" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+                                <polygon points="0 0, 12 4, 0 8" fill="#4facfe"/>
+                            </marker>
+                            <marker id="entropyArrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#ff6b6b"/>
+                            </marker>
+                        </defs>
+
+                        <!-- Background -->
+                        <rect x="30" y="20" width="840" height="380" rx="12" fill="rgba(139,127,255,0.05)" stroke="rgba(139,127,255,0.3)" stroke-width="2"/>
+                        <text x="450" y="45" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="16">∇S > 0 → dt<tspan baseline-shift="sub" font-size="12">therm</tspan> > 0</text>
+
+                        <!-- Time axis (horizontal) -->
+                        <path d="M 80 350 L 820 350" stroke="#4facfe" stroke-width="3" fill="none" marker-end="url(#timeFlowArrow)"/>
+                        <text x="830" y="355" fill="#4facfe" font-size="14" font-weight="600">τ (thermal time)</text>
+
+                        <!-- Entropy curve (increasing) -->
+                        <path d="M 100 320 Q 200 280, 300 250 Q 450 210, 600 180 Q 700 160, 780 150"
+                              stroke="url(#entropyIncGrad)" stroke-width="4" fill="none"/>
+
+                        <!-- Entropy axis label -->
+                        <path d="M 80 350 L 80 80" stroke="#adb5bd" stroke-width="2" fill="none"/>
+                        <text x="60" y="75" fill="#adb5bd" font-size="13" transform="rotate(-90 60 75)" text-anchor="middle">Entropy S</text>
+
+                        <!-- Entropy markers -->
+                        <circle cx="100" cy="320" r="6" fill="#51cf66" stroke="white" stroke-width="2"/>
+                        <text x="100" y="370" text-anchor="middle" fill="#51cf66" font-size="11">S(t₀)</text>
+
+                        <circle cx="300" cy="250" r="6" fill="#ffd43b" stroke="white" stroke-width="2"/>
+                        <text x="300" y="370" text-anchor="middle" fill="#ffd43b" font-size="11">S(t₁)</text>
+
+                        <circle cx="600" cy="180" r="6" fill="#ff9800" stroke="white" stroke-width="2"/>
+                        <text x="600" y="370" text-anchor="middle" fill="#ff9800" font-size="11">S(t₂)</text>
+
+                        <circle cx="780" cy="150" r="6" fill="#ff6b6b" stroke="white" stroke-width="2"/>
+                        <text x="780" y="370" text-anchor="middle" fill="#ff6b6b" font-size="11">S(t₃)</text>
+
+                        <!-- Gradient arrows -->
+                        <g class="gradient-arrows">
+                            <path d="M 150 295 L 180 285" stroke="#ff6b6b" stroke-width="2" marker-end="url(#entropyArrow)"/>
+                            <text x="165" y="275" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="600">∇S</text>
+
+                            <path d="M 350 235 L 380 225" stroke="#ff6b6b" stroke-width="2" marker-end="url(#entropyArrow)"/>
+                            <text x="365" y="215" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="600">∇S</text>
+
+                            <path d="M 650 170 L 680 162" stroke="#ff6b6b" stroke-width="2" marker-end="url(#entropyArrow)"/>
+                            <text x="665" y="155" text-anchor="middle" fill="#ff6b6b" font-size="10" font-weight="600">∇S</text>
+                        </g>
+
+                        <!-- Modular flow connection -->
+                        <rect x="100" y="80" width="720" height="120" rx="8" fill="rgba(79,172,254,0.08)" stroke="rgba(79,172,254,0.4)" stroke-width="1"/>
+                        <text x="460" y="105" text-anchor="middle" fill="#4facfe" font-size="13" font-weight="600">Modular Flow σ<tspan baseline-shift="sub" font-size="10">τ</tspan> Evolution</text>
+
+                        <g class="modular-steps">
+                            <rect x="120" y="120" width="150" height="60" rx="6" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                            <text x="195" y="142" text-anchor="middle" fill="#f8f9fa" font-size="11">State ρ(τ₀)</text>
+                            <text x="195" y="160" text-anchor="middle" fill="#adb5bd" font-size="9">S = S₀</text>
+                            <text x="195" y="175" text-anchor="middle" fill="#51cf66" font-size="8">Low entropy</text>
+
+                            <path d="M 275 150 L 305 150" stroke="#4facfe" stroke-width="2" marker-end="url(#timeFlowArrow)"/>
+                            <text x="290" y="140" text-anchor="middle" fill="#4facfe" font-size="9">σ<tspan baseline-shift="sub" font-size="7">Δτ</tspan></text>
+
+                            <rect x="310" y="120" width="150" height="60" rx="6" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                            <text x="385" y="142" text-anchor="middle" fill="#f8f9fa" font-size="11">State ρ(τ₁)</text>
+                            <text x="385" y="160" text-anchor="middle" fill="#adb5bd" font-size="9">S = S₁ > S₀</text>
+                            <text x="385" y="175" text-anchor="middle" fill="#ffd43b" font-size="8">↑ entropy</text>
+
+                            <path d="M 465 150 L 495 150" stroke="#4facfe" stroke-width="2" marker-end="url(#timeFlowArrow)"/>
+                            <text x="480" y="140" text-anchor="middle" fill="#4facfe" font-size="9">σ<tspan baseline-shift="sub" font-size="7">Δτ</tspan></text>
+
+                            <rect x="500" y="120" width="150" height="60" rx="6" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                            <text x="575" y="142" text-anchor="middle" fill="#f8f9fa" font-size="11">State ρ(τ₂)</text>
+                            <text x="575" y="160" text-anchor="middle" fill="#adb5bd" font-size="9">S = S₂ > S₁</text>
+                            <text x="575" y="175" text-anchor="middle" fill="#ff9800" font-size="8">↑ entropy</text>
+
+                            <path d="M 655 150 L 685 150" stroke="#4facfe" stroke-width="2" marker-end="url(#timeFlowArrow)"/>
+                            <text x="670" y="140" text-anchor="middle" fill="#4facfe" font-size="9">σ<tspan baseline-shift="sub" font-size="7">Δτ</tspan></text>
+
+                            <rect x="690" y="120" width="110" height="60" rx="6" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.5)" stroke-width="1"/>
+                            <text x="745" y="142" text-anchor="middle" fill="#f8f9fa" font-size="11">ρ(τ₃)</text>
+                            <text x="745" y="160" text-anchor="middle" fill="#adb5bd" font-size="9">S = S₃</text>
+                            <text x="745" y="175" text-anchor="middle" fill="#ff6b6b" font-size="8">↑ entropy</text>
+                        </g>
+
+                        <!-- Key insight box -->
+                        <rect x="120" y="225" width="680" height="60" rx="8" fill="rgba(81,207,102,0.12)" stroke="rgba(81,207,102,0.5)" stroke-width="2"/>
+                        <text x="460" y="245" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="700">Key Insight:</text>
+                        <text x="460" y="263" text-anchor="middle" fill="#f8f9fa" font-size="11">
+                            The modular automorphism σ<tspan baseline-shift="sub" font-size="9">τ</tspan> evolves states such that entropy <tspan fill="#ff6b6b" font-weight="600">increases monotonically</tspan>
+                        </text>
+                        <text x="460" y="278" text-anchor="middle" fill="#adb5bd" font-size="10">
+                            This defines the arrow of time: dS/dτ > 0 ⟹ τ flows forward ⟹ t<tspan baseline-shift="sub" font-size="8">therm</tspan> = α<tspan baseline-shift="sub" font-size="8">T</tspan> · S increases
+                        </text>
+                    </svg>
+                    <div class="diagram-caption">
+                        <strong>Entropy Gradient Defines the Arrow of Time:</strong> The <strong>Second Law of Thermodynamics</strong>
+                        (∇S > 0) is not imposed externally but emerges from the modular flow structure. The Tomita-Takesaki
+                        <strong>modular automorphism σ<sub>τ</sub></strong> evolves the density matrix &rho; in a direction that
+                        monotonically increases the von Neumann entropy S = -Tr(&rho; log &rho;). This provides a <strong>thermodynamic
+                        arrow of time</strong>: the parameter &tau; points in the direction of increasing entropy. Since thermal time
+                        is defined as t<sub>therm</sub> = &alpha;<sub>T</sub> · S, the monotonic increase in S directly corresponds
+                        to the forward flow of experienced time. The top panel shows the entropy curve rising over thermal time,
+                        while the bottom panel shows how the modular flow σ<sub>τ</sub> systematically increases entropy at each step.
+                        This connects the <strong>2T gauge-fixed parameter &tau;</strong> (from Sp(2,R) gauge fixing) to the
+                        <strong>thermodynamic arrow</strong> we observe, completing the chain: 2T bulk → gauge fixing → modular flow
+                        → entropy increase → experienced time flow.
+                    </div>
                 </div>
             </div>
 

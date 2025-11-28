@@ -164,15 +164,18 @@
             </p>
             <p style="color: var(--text-muted); margin-top: 1rem;">
                 Rigorous numerical implementations for gravitational wave dispersion, moduli stability,
-                tunneling rates, CMB statistics, and deep-dive quantum simulations
+                tunneling rates, CMB statistics, and deep-dive quantum simulations in the 2T physics framework
             </p>
+            <div style="display: inline-block; background: rgba(139,127,255,0.2); padding: 0.5rem 1rem; border-radius: 8px; margin-top: 1rem;">
+                <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics (v6.4)</span>
+            </div>
         </header>
 
         <div class="note-box">
             <strong>Note:</strong> These appendices contain working code implementations that validate
-            key predictions from the Principia Metaphysica framework. All code uses industry-standard
+            key predictions from the Principia Metaphysica 2T physics framework (26D→14D×2). All code uses industry-standard
             scientific Python libraries (SymPy for symbolic mathematics, QuTiP for quantum simulations)
-            and follows best practices in theoretical physics.
+            and follows best practices in theoretical physics. The 14D×2 structure emerges from Sp(2,R) gauge fixing of the 26D bulk.
         </div>
 
         <!-- Appendix A: GW Dispersion -->
@@ -181,10 +184,17 @@
 
             <p>
                 This appendix derives and numerically evaluates the modified gravitational wave dispersion
-                relation arising from multi-time physics in the 26D framework. The key innovation is the
-                linear correction term from orthogonal time (t<sub>ortho</sub>), which boosts the effect
+                relation arising from the 2T physics framework (14D×2 structure). The 26-dimensional bulk with signature
+                (24,2) reduces via Sp(2,R) gauge fixing to 14 physical dimensions with 2 time coordinates.
+                The key innovation is the linear correction term from orthogonal time (t<sub>ortho</sub>), which boosts the effect
                 from untestable (~10<sup>-32</sup>) to near-LISA sensitivity (~10<sup>-15</sup> Hz).
             </p>
+
+            <div style="background: rgba(139,127,255,0.1); border-left: 4px solid #8b7fff; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                <strong style="color: #8b7fff;">2T Physics Context:</strong> The two time dimensions (thermal and orthogonal)
+                are related by Sp(2,R) gauge symmetry. Observable time emerges as a specific gauge choice, while the orthogonal
+                time contributes to GW dispersion through its compactified structure.
+            </div>
 
             <div class="formula-box">
                 <h3>Dispersion Relation</h3>
@@ -335,9 +345,16 @@ linear_term = <span class="function">N</span>(eta * k * Delta_t / c).subs(params
 
             <p>
                 This appendix uses QuTiP (Quantum Toolbox in Python) to simulate the quantum evolution
-                of the moduli field φ in the stabilization potential V(φ). The simulation validates that
-                the potential has a stable minimum (no runaway) and satisfies swampland constraints.
+                of the moduli field φ in the stabilization potential V(φ) within the 14D×2 framework.
+                The simulation validates that the potential has a stable minimum (no runaway) and satisfies
+                swampland constraints with parameter a = √(26/13) derived from the 2T dimensional structure.
             </p>
+
+            <div style="background: rgba(139,127,255,0.1); border-left: 4px solid #8b7fff; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
+                <strong style="color: #8b7fff;">2T Parameter Space:</strong> The swampland parameter a = √(26/13) ≈ 1.414
+                emerges naturally from the dimensional reduction 26D→14D×2. The orthogonal time periodicity adds a
+                cos(φ/R<sub>ortho</sub>) term that breaks degeneracies in the moduli space.
+            </div>
 
             <div class="formula-box">
                 <h3>Moduli Potential</h3>
@@ -382,7 +399,7 @@ linear_term = <span class="function">N</span>(eta * k * Delta_t / c).subs(params
                         <td>Swampland parameter</td>
                         <td>a</td>
                         <td>1.414 = √(26/13)</td>
-                        <td>Must satisfy a &gt; √(2/3) ≈ 0.816 for dS stability</td>
+                        <td>From 26D→14D×2 reduction; Must satisfy a &gt; √(2/3) ≈ 0.816 for dS stability</td>
                     </tr>
                     <tr>
                         <td>Uplift strength</td>
@@ -400,13 +417,13 @@ linear_term = <span class="function">N</span>(eta * k * Delta_t / c).subs(params
                         <td>Periodic modulation</td>
                         <td>μ</td>
                         <td>0.5</td>
-                        <td>Multi-time coupling strength</td>
+                        <td>2T coupling strength from orthogonal time</td>
                     </tr>
                     <tr>
                         <td>Ortho radius</td>
                         <td>R<sub>ortho</sub></td>
                         <td>1 (normalized)</td>
-                        <td>Compactification scale for t<sub>ortho</sub></td>
+                        <td>Compactification scale for t<sub>ortho</sub> in 2T framework</td>
                     </tr>
                 </tbody>
             </table>
@@ -423,13 +440,13 @@ N = <span class="number">256</span>  <span class="comment"># Sufficient for conv
 x = <span class="function">position</span>(N)
 p = <span class="function">momentum</span>(N)
 
-<span class="comment"># Moduli potential parameters (swampland compliant)</span>
+<span class="comment"># Moduli potential parameters (swampland compliant, 2T framework)</span>
 F = <span class="number">1.0</span>        <span class="comment"># F-term (normalized)</span>
-a = <span class="number">1.414</span>      <span class="comment"># √(26/13) > √(2/3) ≈ 0.816 (swampland constraint)</span>
+a = <span class="number">1.414</span>      <span class="comment"># √(26/13) from 26D→14D×2 reduction; > √(2/3) ≈ 0.816 (swampland)</span>
 kappa = <span class="number">1.0</span>    <span class="comment"># Uplift strength</span>
 b = <span class="number">1.0</span>        <span class="comment"># Instanton parameter</span>
-mu = <span class="number">0.5</span>       <span class="comment"># Periodic modulation</span>
-R = <span class="number">1.0</span>        <span class="comment"># Ortho radius</span>
+mu = <span class="number">0.5</span>       <span class="comment"># 2T periodic modulation from t_ortho</span>
+R = <span class="number">1.0</span>        <span class="comment"># Ortho time compactification radius</span>
 
 <span class="comment"># Construct potential as diagonal matrix in position basis</span>
 x_vals = x.diag()  <span class="comment"># Extract diagonal elements</span>

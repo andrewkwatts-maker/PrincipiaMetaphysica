@@ -7,12 +7,17 @@
 <section class="detail-section" id="circularity-resolution">
     <h3>5.3b Resolving the Time Circularity Objection</h3>
 
+    <div style="display: inline-block; background: rgba(139,127,255,0.2); padding: 0.5rem 1rem; border-radius: 8px; margin-bottom: 1rem;">
+        <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics (v6.4)</span>
+    </div>
+
     <p>
         Critics argue that the Thermal Time Hypothesis is circular: thermodynamics presupposes time
         (dS/dt, "equilibrium", "relaxation"), yet TTH claims to derive time from thermodynamics.
         This section provides a <strong>complete mathematical resolution</strong> showing that
         Tomita-Takesaki theory constructs time from purely algebraic data, with no temporal
-        concepts presupposed.
+        concepts presupposed. In the 2T physics framework (14D×2), this resolution is particularly
+        elegant: the two time coordinates emerge from Sp(2,R) gauge symmetry of the algebraic structure.
     </p>
 
     <div class="note-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6;">
@@ -74,13 +79,14 @@
 
                 <!-- TTH Path (NOT CIRCULAR) -->
                 <rect x="30" y="170" width="790" height="120" rx="12" fill="rgba(81,207,102,0.08)" stroke="rgba(81,207,102,0.3)" stroke-width="1"/>
-                <text x="425" y="195" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="13">Tomita-Takesaki / TTH (NOT circular)</text>
+                <text x="425" y="195" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="13">2T Physics / TTH (NOT circular - two times from algebra)</text>
 
                 <g class="node">
                     <rect x="50" y="215" width="100" height="55" rx="6" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.5)" stroke-width="1.5"/>
-                    <text x="100" y="237" text-anchor="middle" fill="#f8f9fa" font-size="10">Algebra A</text>
-                    <text x="100" y="252" text-anchor="middle" fill="#f8f9fa" font-size="10">+ State &omega;</text>
-                    <text x="100" y="265" text-anchor="middle" fill="#adb5bd" font-size="8">(no time)</text>
+                    <text x="100" y="233" text-anchor="middle" fill="#f8f9fa" font-size="10">26D Bulk</text>
+                    <text x="100" y="248" text-anchor="middle" fill="#f8f9fa" font-size="9">Pneuma algebra</text>
+                    <text x="100" y="261" text-anchor="middle" fill="#f8f9fa" font-size="9">+ State ω</text>
+                    <text x="100" y="269" text-anchor="middle" fill="#adb5bd" font-size="7">(no time yet)</text>
                 </g>
 
                 <path d="M 155 242 L 175 242" stroke="#51cf66" stroke-width="1.5" fill="none" marker-end="url(#circArrowGreen)"/>
@@ -105,18 +111,20 @@
 
                 <g class="node">
                     <rect x="450" y="215" width="130" height="55" rx="6" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.5)" stroke-width="1.5"/>
-                    <text x="515" y="237" text-anchor="middle" fill="#f8f9fa" font-size="10">Modular Flow</text>
-                    <text x="515" y="252" text-anchor="middle" fill="#f8f9fa" font-size="10">&sigma;<sub>t</sub> = &Delta;<sup>it</sup>(&middot;)&Delta;<sup>-it</sup></text>
-                    <text x="515" y="265" text-anchor="middle" fill="#adb5bd" font-size="8">(group param t)</text>
+                    <text x="515" y="233" text-anchor="middle" fill="#f8f9fa" font-size="10">Modular Flow</text>
+                    <text x="515" y="248" text-anchor="middle" fill="#f8f9fa" font-size="9">&sigma;<sub>t</sub> = &Delta;<sup>it</sup>(&middot;)&Delta;<sup>-it</sup></text>
+                    <text x="515" y="261" text-anchor="middle" fill="#adb5bd" font-size="8">(Sp(2,R) structure)</text>
+                    <text x="515" y="269" text-anchor="middle" fill="#adb5bd" font-size="7">(two parameters!)</text>
                 </g>
 
                 <path d="M 585 242 L 605 242" stroke="#51cf66" stroke-width="1.5" fill="none" marker-end="url(#circArrowGreen)"/>
 
                 <g class="node">
-                    <rect x="610" y="215" width="100" height="55" rx="6" fill="rgba(139,127,255,0.3)" stroke="rgba(139,127,255,0.7)" stroke-width="2"/>
-                    <text x="660" y="237" text-anchor="middle" fill="#f8f9fa" font-size="10" font-weight="600">"Time"</text>
-                    <text x="660" y="252" text-anchor="middle" fill="#f8f9fa" font-size="10">DEFINED</text>
-                    <text x="660" y="265" text-anchor="middle" fill="#adb5bd" font-size="8">(not assumed)</text>
+                    <rect x="610" y="215" width="110" height="55" rx="6" fill="rgba(139,127,255,0.3)" stroke="rgba(139,127,255,0.7)" stroke-width="2"/>
+                    <text x="665" y="230" text-anchor="middle" fill="#f8f9fa" font-size="9" font-weight="600">Two "Times"</text>
+                    <text x="665" y="244" text-anchor="middle" fill="#f8f9fa" font-size="8">t<sub>therm</sub>, t<sub>ortho</sub></text>
+                    <text x="665" y="257" text-anchor="middle" fill="#f8f9fa" font-size="8">EMERGE</text>
+                    <text x="665" y="269" text-anchor="middle" fill="#adb5bd" font-size="7">(14D×2)</text>
                 </g>
 
                 <!-- Connecting text -->
@@ -128,8 +136,10 @@
                 </text>
             </svg>
             <div class="diagram-caption">
-                In standard thermodynamics, time is assumed to define dynamics. In TTH, time emerges from
-                the Tomita-Takesaki construction acting on algebraic data alone.
+                In standard thermodynamics, time is assumed to define dynamics. In 2T physics/TTH, <strong>two times</strong>
+                (thermal and orthogonal) emerge from the Tomita-Takesaki construction acting on algebraic data alone.
+                The Sp(2,R) gauge structure naturally accommodates both time coordinates, with one becoming observable
+                and the other compactified.
             </div>
         </div>
     </div>
@@ -256,14 +266,15 @@
     </div>
 
     <div class="subsection">
-        <h4>5.3b.5 Application to the Pneuma Field</h4>
+        <h4>5.3b.5 Application to the Pneuma Field (14D×2 Framework)</h4>
 
         <p>
-            For the Pneuma field &Psi;<sub>P</sub>, the algebraic data is:
+            For the Pneuma field &Psi;<sub>P</sub> in the 14D×2 structure, the algebraic data reflects
+            the dimensional reduction from 26D → 14D×2 via Sp(2,R) gauge fixing:
         </p>
 
         <div class="theorem-box" style="background: rgba(139, 127, 255, 0.1); border-left-color: var(--accent-primary);">
-            <h5 style="color: var(--accent-primary);">The Pneuma Field Algebra</h5>
+            <h5 style="color: var(--accent-primary);">The Pneuma Field Algebra (14D×2)</h5>
 
             <p><strong>The Algebra A:</strong></p>
             <div style="text-align: center; margin: 0.5rem 0; font-family: 'Crimson Text', serif;">
@@ -274,13 +285,14 @@
                 &nbsp; {&Psi;(f), &Psi;(g)} = 0
             </p>
 
-            <p style="margin-top: 1rem;"><strong>The Hilbert Space H:</strong></p>
+            <p style="margin-top: 1rem;"><strong>The Hilbert Space H (reduced from 26D):</strong></p>
             <div style="text-align: center; margin: 0.5rem 0; font-family: 'Crimson Text', serif;">
                 H = F<sub>fermion</sub>(H<sub>1</sub>) = &bigoplus;<sub>n=0</sub><sup>&infin;</sup> &wedge;<sup>n</sup>H<sub>1</sub>
             </div>
             <p style="font-size: 0.9rem; color: var(--text-secondary);">
-                The fermionic Fock space over the 64-dimensional single-particle space.
+                The fermionic Fock space over the 64-dimensional single-particle space (from Cliff(12,2) spinor).
                 For finite modes: dim(H) = 2<sup>64</sup> (a 64-qubit Hilbert space).
+                This is reduced from the original 8192-dimensional space (2<sup>13</sup>) via Sp(2,R) gauge fixing.
             </p>
 
             <p style="margin-top: 1rem;"><strong>The State &omega;:</strong></p>
@@ -419,7 +431,7 @@
     </div>
 
     <div class="note-box">
-        <h5>The Key Insight</h5>
+        <h5>The Key Insight (2T Physics)</h5>
         <p>
             The Tomita-Takesaki theorem is a <strong>purely mathematical result</strong>: given any
             von Neumann algebra with a faithful normal state, there exists a canonical one-parameter
@@ -427,15 +439,63 @@
             we call it "time."
         </p>
         <p style="margin-top: 0.75rem;">
-            The physical content of TTH is the <strong>identification</strong>:
+            The physical content of TTH in the 2T framework is the <strong>double identification</strong>:
         </p>
-        <div style="text-align: center; margin: 0.75rem 0; font-size: 1.1rem; color: var(--accent-primary);">
-            Physical time = Modular flow of the observer's state
+        <div style="text-align: center; margin: 0.75rem 0; font-size: 1.05rem; color: var(--accent-primary);">
+            Thermal time t<sub>therm</sub> = Modular flow of Pneuma condensate state<br>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">(Observable time via gauge fixing)</span>
+        </div>
+        <div style="text-align: center; margin: 0.75rem 0; font-size: 1.05rem; color: var(--accent-secondary);">
+            Orthogonal time t<sub>ortho</sub> = Compactified Sp(2,R) gauge degree of freedom<br>
+            <span style="font-size: 0.9rem; color: var(--text-secondary);">(Testable via GW dispersion)</span>
         </div>
         <p>
             This identification agrees with ordinary time in familiar situations, provides time
-            in quantum gravity where ordinary time fails, and explains the arrow of time through
-            entropy gradients.
+            in quantum gravity where ordinary time fails, explains the arrow of time through
+            entropy gradients, and makes testable predictions via the orthogonal time component.
+        </p>
+    </div>
+
+    <div class="subsection">
+        <h4>5.3b.7 How 2T Physics Resolves Bootstrapping</h4>
+
+        <p>
+            The 2T framework provides an elegant resolution to the time bootstrapping problem:
+        </p>
+
+        <div style="background: rgba(139,127,255,0.1); border-left: 4px solid #8b7fff; padding: 1rem; margin: 1.5rem 0; border-radius: 4px;">
+            <h5 style="color: #8b7fff; margin-top: 0;">Two-Time Bootstrapping Resolution</h5>
+            <ol style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
+                <li><strong>26D Bulk (Signature 24,2):</strong> Two timelike dimensions exist at the fundamental level,
+                    but neither is "physical time" yet - they're just coordinates in the bulk spacetime.</li>
+                <li><strong>Sp(2,R) Gauge Symmetry:</strong> The two time coordinates are related by Sp(2,R) gauge transformations.
+                    This is a mathematical symmetry, not a physical evolution.</li>
+                <li><strong>Pneuma Condensate Formation:</strong> The 64-component Pneuma field develops a condensate
+                    ⟨Ψ⟩ ≠ 0 through purely algebraic mechanisms (modular operator eigenvalues).</li>
+                <li><strong>Gauge Fixing:</strong> The Pneuma condensate structure breaks Sp(2,R) spontaneously,
+                    selecting a preferred time direction (thermal time) and compactifying the orthogonal direction.</li>
+                <li><strong>Emergent Observable Time:</strong> The thermal time becomes the observable time coordinate
+                    we measure with clocks. No circularity - time emerged from timeless algebraic structure!</li>
+            </ol>
+        </div>
+
+        <p>
+            The key insight: <strong>having two time coordinates allows one to emerge from the other</strong> through
+            spontaneous symmetry breaking. The orthogonal time provides the "scaffolding" that allows thermal time
+            to emerge without circularity, and then becomes compactified (like Kaluza-Klein extra dimensions).
+        </p>
+
+        <div class="equation-box numbered" style="background: rgba(81,207,102,0.1); border-left-color: #28a745;">
+            <span class="eq-content" style="color: #28a745;">
+                <strong>No-Circularity Theorem:</strong> In a spacetime with signature (D-2,2), at least one
+                timelike direction can emerge from algebraic data (modular flow) without presupposing temporal evolution.
+            </span>
+            <span class="eq-number">(5.3b.5)</span>
+        </div>
+
+        <p style="font-size: 0.95rem; color: var(--text-secondary); margin-top: 1rem;">
+            This is analogous to how the Higgs mechanism gives mass to gauge bosons: the Pneuma condensate "gives time
+            to spacetime" by breaking the Sp(2,R) symmetry between the two fundamental time coordinates.
         </p>
     </div>
 </section>

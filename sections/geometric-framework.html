@@ -514,6 +514,198 @@
                 <span class="equation-label">Sp(2,R) gauge constraints (two-time physics)</span>
             </div>
 
+            <!-- SVG Diagram: Sp(2,R) Gauge Orbits and Ghost Elimination -->
+            <div class="diagram-container" style="margin: 2rem 0;">
+                <div class="diagram-title">Sp(2,R) Gauge Orbits: Ghost Elimination in Two-Time Framework</div>
+                <svg class="diagram-svg" viewBox="0 0 1000 600" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="gaugeOrbitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(81,207,102,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(81,207,102,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="physicalGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(139,127,255,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(139,127,255,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="ghostGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(220,53,69,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(220,53,69,0.05)" />
+                        </linearGradient>
+                        <marker id="arrowGauge" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#51cf66"/>
+                        </marker>
+                        <marker id="arrowPhys" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#8b7fff"/>
+                        </marker>
+                        <filter id="glowGreen">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Title -->
+                    <text x="500" y="30" text-anchor="middle" fill="#51cf66" font-weight="700" font-size="18">
+                        Sp(2,R) Gauge Transformations: (12,2) → Effective (12,1)
+                    </text>
+
+                    <!-- LEFT: Full (12,2) Configuration Space -->
+                    <g>
+                        <rect x="30" y="60" width="300" height="500" rx="16" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.5)" stroke-width="2"/>
+                        <text x="180" y="90" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="15">Full (12,2) Space</text>
+                        <text x="180" y="110" text-anchor="middle" fill="#adb5bd" font-size="11">Before gauge fixing</text>
+
+                        <!-- Gauge orbit visualization -->
+                        <ellipse cx="180" cy="280" rx="120" ry="170" fill="url(#gaugeOrbitGrad)" stroke="rgba(81,207,102,0.6)" stroke-width="2" stroke-dasharray="5,3">
+                            <title>Sp(2,R) gauge orbit - all physically equivalent states</title>
+                        </ellipse>
+                        <text x="180" y="140" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="600">Sp(2,R) Gauge Orbit</text>
+
+                        <!-- Different time foliations on the orbit -->
+                        <circle cx="180" cy="200" r="6" fill="#ff7eb6" stroke="#ff7eb6" stroke-width="2">
+                            <title>Time foliation 1: t₁ = const, t₂ varying</title>
+                        </circle>
+                        <text x="200" y="205" fill="#ff7eb6" font-size="10">t₁-foliation</text>
+
+                        <circle cx="120" cy="280" r="6" fill="#ffc107" stroke="#ffc107" stroke-width="2">
+                            <title>Time foliation 2: t₂ = const, t₁ varying</title>
+                        </circle>
+                        <text x="75" y="285" fill="#ffc107" font-size="10">t₂-foliation</text>
+
+                        <circle cx="240" cy="280" r="6" fill="#51cf66" stroke="#51cf66" stroke-width="2">
+                            <title>Mixed foliation: α·t₁ + β·t₂ = const</title>
+                        </circle>
+                        <text x="255" y="285" fill="#51cf66" font-size="10">Mixed</text>
+
+                        <circle cx="180" cy="360" r="6" fill="#8b7fff" stroke="#8b7fff" stroke-width="2">
+                            <title>Physical state after gauge fixing</title>
+                        </circle>
+                        <text x="140" y="380" fill="#8b7fff" font-size="10" font-weight="600">Physical State</text>
+
+                        <!-- Curved arrows showing gauge orbit -->
+                        <path d="M 180 200 Q 150 240 120 280" stroke="#51cf66" stroke-width="2" fill="none" opacity="0.6" marker-end="url(#arrowGauge)"/>
+                        <path d="M 120 280 Q 150 320 180 360" stroke="#51cf66" stroke-width="2" fill="none" opacity="0.6" marker-end="url(#arrowGauge)"/>
+                        <path d="M 180 360 Q 210 320 240 280" stroke="#51cf66" stroke-width="2" fill="none" opacity="0.6" marker-end="url(#arrowGauge)"/>
+                        <path d="M 240 280 Q 210 240 180 200" stroke="#51cf66" stroke-width="2" fill="none" opacity="0.6" marker-end="url(#arrowGauge)"/>
+
+                        <!-- Ghost states region -->
+                        <rect x="50" y="430" width="260" height="100" rx="10" fill="url(#ghostGrad)" stroke="rgba(220,53,69,0.6)" stroke-width="2" stroke-dasharray="4,3">
+                            <title>Ghost states with negative norm - eliminated by constraints</title>
+                        </rect>
+                        <text x="180" y="455" text-anchor="middle" fill="#dc3545" font-size="12" font-weight="600">Ghost States (Negative Norm)</text>
+                        <text x="180" y="475" text-anchor="middle" fill="#adb5bd" font-size="10">X² = 0, X·P = 0, P²+M² = 0</text>
+                        <text x="180" y="495" text-anchor="middle" fill="#dc3545" font-size="10">Eliminated by Sp(2,R)</text>
+                        <text x="180" y="515" text-anchor="middle" fill="#adb5bd" font-size="9">constraints</text>
+                    </g>
+
+                    <!-- CENTER: Gauge Transformation Action -->
+                    <g>
+                        <path d="M 340 280 L 390 280" stroke="#51cf66" stroke-width="4" fill="none" marker-end="url(#arrowGauge)"/>
+                        <text x="365" y="260" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="600">Gauge Fix</text>
+                        <text x="365" y="305" text-anchor="middle" fill="#adb5bd" font-size="10">Sp(2,R)</text>
+                        <text x="365" y="322" text-anchor="middle" fill="#adb5bd" font-size="9">action</text>
+
+                        <!-- Constraint equations -->
+                        <rect x="340" y="350" width="100" height="120" rx="8" fill="rgba(81,207,102,0.1)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
+                        <text x="390" y="372" text-anchor="middle" fill="#51cf66" font-size="10" font-weight="600">Constraints:</text>
+                        <text x="390" y="395" text-anchor="middle" fill="#f8f9fa" font-size="10" font-family="Crimson Text, serif">X² = 0</text>
+                        <text x="390" y="415" text-anchor="middle" fill="#f8f9fa" font-size="10" font-family="Crimson Text, serif">X·P = 0</text>
+                        <text x="390" y="435" text-anchor="middle" fill="#f8f9fa" font-size="10" font-family="Crimson Text, serif">P²+M² = 0</text>
+                        <text x="390" y="458" text-anchor="middle" fill="#adb5bd" font-size="8">First-class</text>
+                    </g>
+
+                    <!-- CENTER-RIGHT: Constraint Surface -->
+                    <g>
+                        <rect x="450" y="60" width="200" height="500" rx="16" fill="rgba(51,207,102,0.08)" stroke="rgba(51,207,102,0.5)" stroke-width="2"/>
+                        <text x="550" y="90" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="15">Constraint Surface</text>
+                        <text x="550" y="110" text-anchor="middle" fill="#adb5bd" font-size="11">Physical Hilbert space</text>
+
+                        <!-- Physical constraint surface -->
+                        <ellipse cx="550" cy="280" rx="80" ry="150" fill="url(#physicalGrad)" stroke="rgba(139,127,255,0.6)" stroke-width="2.5">
+                            <title>Constraint surface: states satisfying X²=0, X·P=0, P²+M²=0</title>
+                        </ellipse>
+
+                        <!-- Gauge-invariant physical states -->
+                        <circle cx="550" cy="200" r="7" fill="#8b7fff" stroke="#8b7fff" stroke-width="2" filter="url(#glowGreen)">
+                            <title>Physical state 1: gauge-invariant</title>
+                        </circle>
+                        <circle cx="550" cy="280" r="7" fill="#8b7fff" stroke="#8b7fff" stroke-width="2" filter="url(#glowGreen)">
+                            <title>Physical state 2: gauge-invariant</title>
+                        </circle>
+                        <circle cx="550" cy="360" r="7" fill="#8b7fff" stroke="#8b7fff" stroke-width="2" filter="url(#glowGreen)">
+                            <title>Physical state 3: gauge-invariant</title>
+                        </circle>
+
+                        <text x="550" y="435" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600">Gauge-Invariant</text>
+                        <text x="550" y="455" text-anchor="middle" fill="#adb5bd" font-size="10">Physical States</text>
+
+                        <!-- Hilbert space info -->
+                        <rect x="470" y="480" width="160" height="60" rx="8" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5"/>
+                        <text x="550" y="502" text-anchor="middle" fill="#8b7fff" font-size="10">Hilbert Space:</text>
+                        <text x="550" y="520" text-anchor="middle" fill="#f8f9fa" font-size="10" font-family="Crimson Text, serif">
+                            H<tspan baseline-shift="sub" font-size="8">phys</tspan> = H<tspan baseline-shift="sub" font-size="8">(12,2)</tspan> / Sp(2,R)
+                        </text>
+                    </g>
+
+                    <!-- Arrow to effective theory -->
+                    <path d="M 660 280 L 710 280" stroke="#8b7fff" stroke-width="4" fill="none" marker-end="url(#arrowPhys)"/>
+                    <text x="685" y="260" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Effective</text>
+                    <text x="685" y="305" text-anchor="middle" fill="#adb5bd" font-size="9">Description</text>
+
+                    <!-- RIGHT: Effective (12,1) Theory -->
+                    <g>
+                        <rect x="720" y="60" width="250" height="500" rx="16" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.6)" stroke-width="2.5"/>
+                        <text x="845" y="90" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="16">Effective (12,1)</text>
+                        <text x="845" y="112" text-anchor="middle" fill="#adb5bd" font-size="11">After gauge fixing</text>
+
+                        <!-- Single physical time -->
+                        <rect x="740" y="140" width="210" height="60" rx="10" fill="rgba(255,193,7,0.15)" stroke="rgba(255,193,7,0.6)" stroke-width="2">
+                            <title>Single physical time after gauge fixing</title>
+                        </rect>
+                        <text x="845" y="165" text-anchor="middle" fill="#ffc107" font-size="13" font-weight="600">1 Physical Time</text>
+                        <text x="845" y="185" text-anchor="middle" fill="#adb5bd" font-size="10">t = gauge-fixed foliation</text>
+
+                        <!-- 12 spacelike dimensions -->
+                        <rect x="740" y="215" width="210" height="60" rx="10" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.6)" stroke-width="2">
+                            <title>12 spacelike dimensions preserved</title>
+                        </rect>
+                        <text x="845" y="240" text-anchor="middle" fill="#51cf66" font-size="13" font-weight="600">12 Spacelike Dims</text>
+                        <text x="845" y="260" text-anchor="middle" fill="#adb5bd" font-size="10">Unchanged by gauge fixing</text>
+
+                        <!-- Reduced spinor -->
+                        <rect x="740" y="290" width="210" height="75" rx="10" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2">
+                            <title>Spinor reduction from gauge fixing</title>
+                        </rect>
+                        <text x="845" y="312" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Spinor Reduction</text>
+                        <text x="845" y="332" text-anchor="middle" fill="#f8f9fa" font-size="11" font-family="Crimson Text, serif">
+                            2<tspan baseline-shift="super" font-size="9">14</tspan> = 8192 → 2<tspan baseline-shift="super" font-size="9">6</tspan> = 64
+                        </text>
+                        <text x="845" y="352" text-anchor="middle" fill="#adb5bd" font-size="9">components</text>
+
+                        <!-- No ghosts -->
+                        <rect x="740" y="380" width="210" height="70" rx="10" fill="rgba(81,207,102,0.12)" stroke="rgba(81,207,102,0.5)" stroke-width="2" stroke-dasharray="4,3">
+                            <title>Ghost-free Hilbert space</title>
+                        </rect>
+                        <text x="845" y="405" text-anchor="middle" fill="#51cf66" font-size="13" font-weight="600">Ghost-Free</text>
+                        <text x="845" y="425" text-anchor="middle" fill="#adb5bd" font-size="10">Positive-definite norm</text>
+                        <text x="845" y="440" text-anchor="middle" fill="#51cf66" font-size="9">Unitary evolution</text>
+
+                        <!-- Effective metric signature -->
+                        <rect x="740" y="465" width="210" height="70" rx="10" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5"/>
+                        <text x="845" y="488" text-anchor="middle" fill="#8b7fff" font-size="11">Effective Signature:</text>
+                        <text x="845" y="508" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-weight="600">
+                            (12, 1)
+                        </text>
+                        <text x="845" y="525" text-anchor="middle" fill="#adb5bd" font-size="9">Standard Lorentzian</text>
+                    </g>
+                </svg>
+                <div class="diagram-caption">
+                    <strong>Sp(2,R) Gauge Orbits and Ghost Elimination:</strong> The full (12,2) configuration space contains gauge orbits connecting different time foliations. Sp(2,R) gauge transformations map between physically equivalent descriptions (different choices of timelike coordinate). The three first-class constraints (X²=0, X·P=0, P²+M²=0) eliminate ghost states with negative norm, projecting onto the physical Hilbert space H<sub>phys</sub> = H<sub>(12,2)</sub>/Sp(2,R). After gauge fixing, each 14D half has effective signature (12,1) with 64 spinor components (reduced from 8192) and a ghost-free, unitary evolution.
+                </div>
+            </div>
+
             <p>
                 These constraints eliminate the ghost degrees of freedom from the two shared timelike dimensions,
                 projecting the full M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup> structure
@@ -568,6 +760,160 @@
                     <li><strong>Z₂ Mirror Structure:</strong> M<sub>A</sub> &harr; M<sub>B</sub> mirror symmetry provides natural brane doubling</li>
                     <li><strong>Spinor Reduction:</strong> Cl(12,2) &otimes; Cl(12,2) = 2<sup>7</sup> &otimes; 2<sup>7</sup> = 2<sup>14</sup> &rarr; 2<sup>6</sup> after gauge fixing</li>
                 </ul>
+            </div>
+
+            <!-- SVG Diagram: Spinor Reduction via Clifford Algebras -->
+            <div class="diagram-container" style="margin: 2rem 0;">
+                <div class="diagram-title">Spinor Reduction: Cl(12,2) ⊗ Cl(12,2) → 64 Physical Components</div>
+                <svg class="diagram-svg" viewBox="0 0 1100 650" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="cliffordAGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(139,127,255,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(139,127,255,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="cliffordBGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(255,126,182,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(255,126,182,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="tensorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(255,193,7,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(255,193,7,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="reducedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(81,207,102,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(81,207,102,0.05)" />
+                        </linearGradient>
+                        <marker id="arrowTensor" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#ffc107"/>
+                        </marker>
+                        <marker id="arrowReduce" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#51cf66"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Title -->
+                    <text x="550" y="30" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="18">
+                        Clifford Algebra Tensor Product and Gauge Reduction
+                    </text>
+
+                    <!-- TOP LEFT: Cl(12,2) for M_A -->
+                    <g>
+                        <rect x="30" y="60" width="280" height="220" rx="14" fill="url(#cliffordAGrad)" stroke="rgba(139,127,255,0.6)" stroke-width="2.5"/>
+                        <text x="170" y="90" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="16">Cl(12,2) - Half A</text>
+                        <text x="170" y="112" text-anchor="middle" fill="#adb5bd" font-size="11">Clifford algebra for M<tspan baseline-shift="sub" font-size="9">A</tspan><tspan baseline-shift="super" font-size="9">14</tspan></text>
+
+                        <!-- Signature breakdown -->
+                        <rect x="50" y="130" width="240" height="45" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.5)" stroke-width="1.5">
+                            <title>12 spacelike generators (γ_i, i=1..12)</title>
+                        </rect>
+                        <text x="170" y="155" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="600">12 Spacelike: γ<tspan baseline-shift="sub" font-size="9">i</tspan>², i=1..12</text>
+
+                        <rect x="50" y="185" width="240" height="45" rx="8" fill="rgba(255,193,7,0.15)" stroke="rgba(255,193,7,0.5)" stroke-width="1.5">
+                            <title>2 timelike generators (γ_0, γ_13)</title>
+                        </rect>
+                        <text x="170" y="210" text-anchor="middle" fill="#ffc107" font-size="12" font-weight="600">2 Timelike: γ<tspan baseline-shift="sub" font-size="9">0</tspan>, γ<tspan baseline-shift="sub" font-size="9">13</tspan></text>
+
+                        <!-- Dimension calculation -->
+                        <rect x="50" y="240" width="240" height="30" rx="6" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5"/>
+                        <text x="170" y="260" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600" font-family="Crimson Text, serif">
+                            dim = 2<tspan baseline-shift="super" font-size="9">⌊14/2⌋</tspan> = 2<tspan baseline-shift="super" font-size="9">7</tspan> = 128
+                        </text>
+                    </g>
+
+                    <!-- TOP RIGHT: Cl(12,2) for M_B -->
+                    <g>
+                        <rect x="790" y="60" width="280" height="220" rx="14" fill="url(#cliffordBGrad)" stroke="rgba(255,126,182,0.6)" stroke-width="2.5"/>
+                        <text x="930" y="90" text-anchor="middle" fill="#ff7eb6" font-weight="700" font-size="16">Cl(12,2) - Half B</text>
+                        <text x="930" y="112" text-anchor="middle" fill="#adb5bd" font-size="11">Clifford algebra for M<tspan baseline-shift="sub" font-size="9">B</tspan><tspan baseline-shift="super" font-size="9">14</tspan></text>
+
+                        <!-- Signature breakdown -->
+                        <rect x="810" y="130" width="240" height="45" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.5)" stroke-width="1.5">
+                            <title>12 spacelike generators (γ_i, i=14..25)</title>
+                        </rect>
+                        <text x="930" y="155" text-anchor="middle" fill="#51cf66" font-size="12" font-weight="600">12 Spacelike: γ<tspan baseline-shift="sub" font-size="9">i</tspan>², i=14..25</text>
+
+                        <rect x="810" y="185" width="240" height="45" rx="8" fill="rgba(255,193,7,0.15)" stroke="rgba(255,193,7,0.5)" stroke-width="1.5">
+                            <title>2 timelike generators (shared: γ_0, γ_13)</title>
+                        </rect>
+                        <text x="930" y="210" text-anchor="middle" fill="#ffc107" font-size="12" font-weight="600">2 Timelike (shared)</text>
+
+                        <!-- Dimension calculation -->
+                        <rect x="810" y="240" width="240" height="30" rx="6" fill="rgba(255,126,182,0.12)" stroke="rgba(255,126,182,0.4)" stroke-width="1.5"/>
+                        <text x="930" y="260" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="600" font-family="Crimson Text, serif">
+                            dim = 2<tspan baseline-shift="super" font-size="9">⌊14/2⌋</tspan> = 2<tspan baseline-shift="super" font-size="9">7</tspan> = 128
+                        </text>
+                    </g>
+
+                    <!-- Arrows to tensor product -->
+                    <path d="M 310 170 L 360 170 Q 410 170 410 220" stroke="#ffc107" stroke-width="3" fill="none" marker-end="url(#arrowTensor)"/>
+                    <path d="M 790 170 L 740 170 Q 690 170 690 220" stroke="#ffc107" stroke-width="3" fill="none" marker-end="url(#arrowTensor)"/>
+                    <text x="350" y="155" fill="#ffc107" font-size="11" font-weight="600">⊗</text>
+                    <text x="715" y="155" fill="#ffc107" font-size="11" font-weight="600">⊗</text>
+
+                    <!-- CENTER: Tensor Product -->
+                    <g>
+                        <rect x="330" y="230" width="440" height="160" rx="14" fill="url(#tensorGrad)" stroke="rgba(255,193,7,0.6)" stroke-width="2.5"/>
+                        <text x="550" y="260" text-anchor="middle" fill="#ffc107" font-weight="700" font-size="17">
+                            Cl(12,2) ⊗ Cl(12,2)
+                        </text>
+                        <text x="550" y="282" text-anchor="middle" fill="#adb5bd" font-size="11">Full 26D Clifford algebra (before gauge fixing)</text>
+
+                        <!-- Component count -->
+                        <rect x="360" y="300" width="380" height="70" rx="10" fill="rgba(255,193,7,0.2)" stroke="rgba(255,193,7,0.6)" stroke-width="2"/>
+                        <text x="550" y="323" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif">
+                            2<tspan baseline-shift="super" font-size="10">7</tspan> ⊗ 2<tspan baseline-shift="super" font-size="10">7</tspan> = 2<tspan baseline-shift="super" font-size="10">14</tspan> = <tspan fill="#ffc107" font-weight="700">8192</tspan> components
+                        </text>
+                        <text x="550" y="345" text-anchor="middle" fill="#adb5bd" font-size="11">
+                            128 × 128 = 16,384 / 2 = 8,192 (Majorana)
+                        </text>
+                        <text x="550" y="363" text-anchor="middle" fill="#ffc107" font-size="10" font-weight="600">
+                            Shared time structure: γ<tspan baseline-shift="sub" font-size="8">0</tspan>, γ<tspan baseline-shift="sub" font-size="8">13</tspan> common
+                        </text>
+                    </g>
+
+                    <!-- Arrow to gauge fixing -->
+                    <path d="M 550 400 L 550 450" stroke="#51cf66" stroke-width="4" fill="none" marker-end="url(#arrowReduce)"/>
+                    <text x="580" y="430" fill="#51cf66" font-size="12" font-weight="600">Sp(2,R) Gauge Fixing</text>
+
+                    <!-- BOTTOM: Reduced Physical Spinor -->
+                    <g>
+                        <rect x="220" y="460" width="660" height="160" rx="14" fill="url(#reducedGrad)" stroke="rgba(81,207,102,0.6)" stroke-width="2.5"/>
+                        <text x="550" y="490" text-anchor="middle" fill="#51cf66" font-weight="700" font-size="17">
+                            Physical Spinor (Gauge-Fixed)
+                        </text>
+                        <text x="550" y="512" text-anchor="middle" fill="#adb5bd" font-size="11">After Sp(2,R) constraints eliminate ghosts</text>
+
+                        <!-- Reduction pathway -->
+                        <rect x="250" y="530" width="280" height="70" rx="10" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.5)" stroke-width="2">
+                            <title>Gauge constraints reduce spinor components</title>
+                        </rect>
+                        <text x="390" y="553" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Constraint Reduction:</text>
+                        <text x="390" y="572" text-anchor="middle" fill="#f8f9fa" font-size="11" font-family="Crimson Text, serif">
+                            X² = 0, X·P = 0, P²+M² = 0
+                        </text>
+                        <text x="390" y="590" text-anchor="middle" fill="#adb5bd" font-size="10">3 first-class constraints</text>
+
+                        <!-- Final count -->
+                        <rect x="560" y="530" width="300" height="70" rx="10" fill="rgba(81,207,102,0.2)" stroke="rgba(81,207,102,0.6)" stroke-width="2.5">
+                            <title>64 physical spinor components</title>
+                        </rect>
+                        <text x="710" y="553" text-anchor="middle" fill="#51cf66" font-size="13" font-weight="700">Final Dimension:</text>
+                        <text x="710" y="575" text-anchor="middle" fill="#f8f9fa" font-size="15" font-family="Crimson Text, serif" font-weight="700">
+                            2<tspan baseline-shift="super" font-size="12">6</tspan> = <tspan fill="#51cf66" font-size="18">64</tspan> components
+                        </text>
+                        <text x="710" y="593" text-anchor="middle" fill="#adb5bd" font-size="10">
+                            Physical Pneuma spinor Ψ<tspan baseline-shift="sub" font-size="8">P</tspan>
+                        </text>
+                    </g>
+
+                    <!-- Bottom summary annotation -->
+                    <text x="550" y="635" text-anchor="middle" fill="#8b7fff" font-size="11" font-style="italic">
+                        Reduction Factor: 8192 / 64 = 128 = 2<tspan baseline-shift="super" font-size="9">7</tspan> (one Clifford half eliminated by gauge fixing)
+                    </text>
+                </svg>
+                <div class="diagram-caption">
+                    <strong>Clifford Algebra Spinor Reduction:</strong> Each 14D half with signature (12,2) has Clifford algebra Cl(12,2) of dimension 2<sup>7</sup>=128. The full 26D theory has spinor content Cl(12,2) ⊗ Cl(12,2) = 2<sup>14</sup> = 8,192 components. The two timelike dimensions (γ<sub>0</sub>, γ<sub>13</sub>) are shared between the halves. Sp(2,R) gauge fixing via three first-class constraints (X²=0, X·P=0, P²+M²=0) projects out ghost states, reducing the spinor to 2<sup>6</sup>=64 physical components - the Pneuma spinor Ψ<sub>P</sub>. This represents a factor of 128 reduction, eliminating exactly one Clifford half.
+                </div>
             </div>
 
             <!-- NEW: Division Algebra Decomposition for D=13 from Abstract Resolutions -->
@@ -929,8 +1275,8 @@
 
             <!-- SVG Diagram: Dimensional Reduction -->
             <div class="diagram-container">
-                <div class="diagram-title">Dimensional Reduction: 26D (14D&times;2 with shared time) &rarr; 4D Spacetime</div>
-                <svg class="diagram-svg" viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                <div class="diagram-title">Dimensional Reduction: 26D = M<sub>A</sub><sup>14</sup> &otimes; M<sub>B</sub><sup>14</sup> &rarr; 4D Spacetime</div>
+                <svg class="diagram-svg" viewBox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
                     <!-- Definitions for gradients and arrows -->
                     <defs>
                         <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -941,8 +1287,19 @@
                             <stop offset="0%" style="stop-color:rgba(139,127,255,0.15)" />
                             <stop offset="100%" style="stop-color:rgba(255,126,182,0.1)" />
                         </linearGradient>
+                        <linearGradient id="timelikeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(255,193,7,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(255,193,7,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="spacelikeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(81,207,102,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(81,207,102,0.05)" />
+                        </linearGradient>
                         <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
                             <polygon points="0 0, 10 3.5, 0 7" fill="#ff7eb6"/>
+                        </marker>
+                        <marker id="arrowSp" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#51cf66"/>
                         </marker>
                         <filter id="glow">
                             <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
@@ -953,80 +1310,159 @@
                         </filter>
                     </defs>
 
-                    <!-- Background boxes for each stage -->
-                    <!-- 14D×2 Structure (from 26D via Sp(2,R)) -->
+                    <!-- Main Title -->
+                    <text x="500" y="30" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="18">
+                        26D Two-Time Framework: M<tspan baseline-shift="super" font-size="14">26</tspan> = M<tspan baseline-shift="sub" font-size="12">A</tspan><tspan baseline-shift="super" font-size="14">14</tspan> ⊗ M<tspan baseline-shift="sub" font-size="12">B</tspan><tspan baseline-shift="super" font-size="14">14</tspan>
+                    </text>
+
+                    <!-- LEFT: 14D×2 Structure with detailed breakdown -->
                     <g class="node">
-                        <rect x="30" y="50" width="200" height="300" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
-                        <text x="130" y="85" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="16">26D = 14D&times;2</text>
-                        <text x="130" y="110" text-anchor="middle" fill="#adb5bd" font-size="12">Each (12,2), 2 times shared</text>
+                        <rect x="30" y="60" width="280" height="420" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.5)" stroke-width="2.5"/>
 
-                        <!-- Inner elements for 26D=14D×2 -->
-                        <rect x="50" y="130" width="160" height="50" rx="8" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1.5"/>
-                        <text x="130" y="150" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">M*</text>
-                        <text x="130" y="168" text-anchor="middle" fill="#adb5bd" font-size="11">Fundamental Scale</text>
+                        <text x="170" y="90" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="17">26D = 14D × 2</text>
+                        <text x="170" y="112" text-anchor="middle" fill="#adb5bd" font-size="11">Two 14D halves, shared 2-time</text>
 
-                        <rect x="50" y="195" width="160" height="50" rx="8" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1.5"/>
-                        <text x="130" y="210" text-anchor="middle" fill="#f8f9fa" font-size="11">M<tspan baseline-shift="sub" font-size="9">A</tspan><tspan baseline-shift="super" font-size="9">14</tspan> &otimes; M<tspan baseline-shift="sub" font-size="9">B</tspan><tspan baseline-shift="super" font-size="9">14</tspan></text>
-                        <text x="130" y="228" text-anchor="middle" fill="#adb5bd" font-size="10">Shared 2 times</text>
+                        <!-- M_A^14 Half -->
+                        <rect x="50" y="130" width="240" height="85" rx="10" fill="rgba(139,127,255,0.12)" stroke="rgba(139,127,255,0.6)" stroke-width="2"/>
+                        <text x="170" y="150" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="14">
+                            M<tspan baseline-shift="sub" font-size="10">A</tspan><tspan baseline-shift="super" font-size="11">14</tspan>: Signature (12,2)
+                        </text>
+                        <rect x="60" y="160" width="100" height="40" rx="6" fill="url(#spacelikeGrad)" stroke="rgba(81,207,102,0.5)" stroke-width="1.5">
+                            <title>12 spacelike dimensions in M_A</title>
+                        </rect>
+                        <text x="110" y="182" text-anchor="middle" fill="#51cf66" font-size="11" font-weight="600">12 Space</text>
 
-                        <rect x="50" y="260" width="160" height="50" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
-                        <text x="130" y="280" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">Sp(2,R)</text>
-                        <text x="130" y="298" text-anchor="middle" fill="#adb5bd" font-size="11">Ghost Elimination</text>
+                        <rect x="170" y="160" width="110" height="40" rx="6" fill="url(#timelikeGrad)" stroke="rgba(255,193,7,0.6)" stroke-width="1.5">
+                            <title>2 timelike dimensions shared between M_A and M_B</title>
+                        </rect>
+                        <text x="225" y="178" text-anchor="middle" fill="#ffc107" font-size="10" font-weight="600">2 Time</text>
+                        <text x="225" y="193" text-anchor="middle" fill="#ffc107" font-size="8">(shared)</text>
+
+                        <!-- M_B^14 Half -->
+                        <rect x="50" y="230" width="240" height="85" rx="10" fill="rgba(255,126,182,0.12)" stroke="rgba(255,126,182,0.6)" stroke-width="2"/>
+                        <text x="170" y="250" text-anchor="middle" fill="#ff7eb6" font-weight="600" font-size="14">
+                            M<tspan baseline-shift="sub" font-size="10">B</tspan><tspan baseline-shift="super" font-size="11">14</tspan>: Signature (12,2)
+                        </text>
+                        <rect x="60" y="260" width="100" height="40" rx="6" fill="url(#spacelikeGrad)" stroke="rgba(81,207,102,0.5)" stroke-width="1.5">
+                            <title>12 spacelike dimensions in M_B</title>
+                        </rect>
+                        <text x="110" y="282" text-anchor="middle" fill="#51cf66" font-size="11" font-weight="600">12 Space</text>
+
+                        <rect x="170" y="260" width="110" height="40" rx="6" fill="url(#timelikeGrad)" stroke="rgba(255,193,7,0.6)" stroke-width="1.5">
+                            <title>2 timelike dimensions shared between M_A and M_B</title>
+                        </rect>
+                        <text x="225" y="278" text-anchor="middle" fill="#ffc107" font-size="10" font-weight="600">2 Time</text>
+                        <text x="225" y="293" text-anchor="middle" fill="#ffc107" font-size="8">(shared)</text>
+
+                        <!-- Sp(2,R) Gauge Structure -->
+                        <rect x="50" y="330" width="240" height="70" rx="10" fill="rgba(81,207,102,0.12)" stroke="rgba(81,207,102,0.5)" stroke-width="2"/>
+                        <text x="170" y="352" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="14">Sp(2,R) Gauge</text>
+                        <text x="170" y="370" text-anchor="middle" fill="#adb5bd" font-size="10">Acts on 2-time sector</text>
+                        <text x="170" y="387" text-anchor="middle" fill="#51cf66" font-size="10">Ghost elimination</text>
+
+                        <!-- Reduction path -->
+                        <rect x="50" y="415" width="240" height="50" rx="10" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" stroke-dasharray="4,3">
+                            <title>After Sp(2,R) gauge fixing: 26D → effective 13D per half</title>
+                        </rect>
+                        <text x="170" y="435" text-anchor="middle" fill="#8b7fff" font-size="11">After gauge fixing:</text>
+                        <text x="170" y="453" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="12">
+                            Effective 13D = (12,1) each
+                        </text>
                     </g>
 
-                    <!-- Arrow 1: KK Reduction -->
-                    <path d="M 240 200 L 290 200" stroke="#ff7eb6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                    <text x="265" y="185" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="500">KK</text>
-                    <text x="265" y="220" text-anchor="middle" fill="#adb5bd" font-size="10">Compactify</text>
+                    <!-- Arrow 1: Sp(2,R) Gauge Reduction -->
+                    <path d="M 320 240 L 370 240" stroke="#51cf66" stroke-width="3" fill="none" marker-end="url(#arrowSp)"/>
+                    <text x="345" y="225" text-anchor="middle" fill="#51cf66" font-size="11" font-weight="600">Gauge Fix</text>
+                    <text x="345" y="260" text-anchor="middle" fill="#adb5bd" font-size="9">2 times → 1 time</text>
 
-                    <!-- Internal Manifold -->
+                    <!-- CENTER: Intermediate 13D+13D Stage -->
                     <g class="node">
-                        <rect x="300" y="100" width="200" height="200" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
-                        <text x="400" y="130" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="15">K<tspan baseline-shift="sub" font-size="11">Pneuma</tspan></text>
-                        <text x="400" y="152" text-anchor="middle" fill="#adb5bd" font-size="12">7D G₂ Manifold</text>
+                        <rect x="380" y="120" width="200" height="240" rx="14" fill="rgba(81,207,102,0.08)" stroke="rgba(81,207,102,0.5)" stroke-width="2"/>
+                        <text x="480" y="145" text-anchor="middle" fill="#51cf66" font-weight="600" font-size="14">Gauge-Fixed 13D+13D</text>
+                        <text x="480" y="163" text-anchor="middle" fill="#adb5bd" font-size="10">Each half: (12,1) signature</text>
 
-                        <!-- Inner details -->
-                        <ellipse cx="400" cy="210" rx="70" ry="60" fill="none" stroke="rgba(139,127,255,0.3)" stroke-width="1" stroke-dasharray="4 2"/>
-                        <text x="400" y="195" text-anchor="middle" fill="#adb5bd" font-size="11">CY4</text>
-                        <text x="400" y="212" text-anchor="middle" fill="#f8f9fa" font-size="13" font-family="Crimson Text, serif" font-style="italic">&chi; = 72</text>
-                        <text x="400" y="232" text-anchor="middle" fill="#51cf66" font-size="11">3 generations</text>
+                        <!-- 13D decomposition -->
+                        <rect x="400" y="180" width="160" height="50" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.5)" stroke-width="1.5">
+                            <title>13D = 4D observable + 9D compact</title>
+                        </rect>
+                        <text x="480" y="202" text-anchor="middle" fill="#f8f9fa" font-size="12">13D = 4D + 9D</text>
+                        <text x="480" y="219" text-anchor="middle" fill="#adb5bd" font-size="10">Per brane</text>
 
-                        <text x="400" y="275" text-anchor="middle" fill="#ff7eb6" font-size="12">D<tspan baseline-shift="sub" font-size="9">5</tspan> singularity &rarr; SO(10)</text>
+                        <!-- Compactification structure -->
+                        <ellipse cx="480" cy="275" rx="75" ry="55" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" stroke-dasharray="3,2">
+                            <title>9D internal space: V_9 = V_7(G2) × V_2(T²)</title>
+                        </ellipse>
+                        <text x="480" y="265" text-anchor="middle" fill="#8b7fff" font-size="11">9D Internal</text>
+                        <text x="480" y="280" text-anchor="middle" fill="#adb5bd" font-size="10">V<tspan baseline-shift="sub" font-size="8">7</tspan>(G₂) × T²</text>
+                        <text x="480" y="295" text-anchor="middle" fill="#ff7eb6" font-size="9">χ=72, n<tspan baseline-shift="sub" font-size="7">gen</tspan>=3</text>
+
+                        <!-- KK mode annotation -->
+                        <text x="480" y="340" text-anchor="middle" fill="#adb5bd" font-size="9" font-style="italic">
+                            M<tspan baseline-shift="sub" font-size="7">KK</tspan> ~ M<tspan baseline-shift="sub" font-size="7">*</tspan>/R ~ 10<tspan baseline-shift="super" font-size="7">16</tspan> GeV
+                        </text>
                     </g>
 
-                    <!-- Arrow 2: to 4D -->
-                    <path d="M 510 200 L 560 200" stroke="#ff7eb6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                    <text x="535" y="185" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="500">Integrate</text>
-                    <text x="535" y="220" text-anchor="middle" fill="#adb5bd" font-size="10">over K</text>
+                    <!-- Arrow 2: KK Compactification -->
+                    <path d="M 590 240 L 640 240" stroke="#ff7eb6" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+                    <text x="615" y="225" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="600">KK Reduction</text>
+                    <text x="615" y="260" text-anchor="middle" fill="#adb5bd" font-size="9">Integrate over 9D</text>
 
-                    <!-- 4D Effective -->
+                    <!-- RIGHT: 4D Effective Theory -->
                     <g class="node">
-                        <rect x="570" y="50" width="200" height="300" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.4)" stroke-width="2"/>
-                        <text x="670" y="85" text-anchor="middle" fill="#8b7fff" font-weight="600" font-size="16">4D Effective Theory</text>
-                        <text x="670" y="110" text-anchor="middle" fill="#adb5bd" font-size="12">(3,1) observable universe</text>
+                        <rect x="650" y="60" width="320" height="420" rx="16" fill="url(#bgGrad)" stroke="rgba(139,127,255,0.5)" stroke-width="2.5"/>
+                        <text x="810" y="90" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="17">4D Effective Theory</text>
+                        <text x="810" y="110" text-anchor="middle" fill="#adb5bd" font-size="11">Observable Universe (3,1)</text>
 
-                        <!-- 4D components -->
-                        <rect x="590" y="125" width="160" height="40" rx="8" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.5)" stroke-width="1.5"/>
-                        <text x="670" y="150" text-anchor="middle" fill="#f8f9fa" font-size="12">Einstein Gravity</text>
+                        <!-- Gravity Sector -->
+                        <rect x="670" y="130" width="280" height="55" rx="9" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.6)" stroke-width="2">
+                            <title>Einstein gravity: M_Pl² = M_*^11 · V_9</title>
+                        </rect>
+                        <text x="810" y="153" text-anchor="middle" fill="#f8f9fa" font-size="13" font-weight="600">Einstein-Hilbert</text>
+                        <text x="810" y="172" text-anchor="middle" fill="#adb5bd" font-size="10" font-family="Crimson Text, serif">
+                            M<tspan baseline-shift="sub" font-size="8">Pl</tspan><tspan baseline-shift="super" font-size="8">2</tspan> R<tspan baseline-shift="sub" font-size="8">4D</tspan>
+                        </text>
 
-                        <rect x="590" y="175" width="160" height="40" rx="8" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.5)" stroke-width="1.5"/>
-                        <text x="670" y="200" text-anchor="middle" fill="#f8f9fa" font-size="12">SO(10) Yang-Mills</text>
+                        <!-- Gauge Sector -->
+                        <rect x="670" y="200" width="280" height="55" rx="9" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.6)" stroke-width="2">
+                            <title>SO(10) gauge theory from D_5 singularity</title>
+                        </rect>
+                        <text x="810" y="223" text-anchor="middle" fill="#f8f9fa" font-size="13" font-weight="600">SO(10) Yang-Mills</text>
+                        <text x="810" y="242" text-anchor="middle" fill="#ff7eb6" font-size="10">From D<tspan baseline-shift="sub" font-size="8">5</tspan> singularity</text>
 
-                        <rect x="590" y="225" width="160" height="40" rx="8" fill="rgba(81,207,102,0.15)" stroke="rgba(81,207,102,0.4)" stroke-width="1.5"/>
-                        <text x="670" y="250" text-anchor="middle" fill="#f8f9fa" font-size="12">3 Fermion Families</text>
+                        <!-- Matter Sector -->
+                        <rect x="670" y="270" width="280" height="55" rx="9" fill="rgba(81,207,102,0.12)" stroke="rgba(81,207,102,0.5)" stroke-width="2">
+                            <title>3 generations from χ/24 = 72/24 = 3</title>
+                        </rect>
+                        <text x="810" y="293" text-anchor="middle" fill="#f8f9fa" font-size="13" font-weight="600">3 Fermion Families</text>
+                        <text x="810" y="312" text-anchor="middle" fill="#51cf66" font-size="10">
+                            16 ⊕ 16 ⊕ 16 of SO(10)
+                        </text>
 
-                        <rect x="590" y="275" width="160" height="40" rx="8" fill="rgba(255,212,59,0.15)" stroke="rgba(255,212,59,0.4)" stroke-width="1.5"/>
-                        <text x="670" y="300" text-anchor="middle" fill="#f8f9fa" font-size="12">Moduli + Mashiach</text>
+                        <!-- Moduli Sector -->
+                        <rect x="670" y="340" width="280" height="55" rx="9" fill="rgba(255,212,59,0.12)" stroke="rgba(255,212,59,0.5)" stroke-width="2">
+                            <title>Geometric moduli and Mashiach field</title>
+                        </rect>
+                        <text x="810" y="363" text-anchor="middle" fill="#f8f9fa" font-size="13" font-weight="600">Moduli + Mashiach</text>
+                        <text x="810" y="382" text-anchor="middle" fill="#ffc107" font-size="10">Geometric scalars + φ</text>
+
+                        <!-- Scale Hierarchy -->
+                        <rect x="670" y="410" width="280" height="55" rx="9" fill="rgba(139,127,255,0.08)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" stroke-dasharray="4,3">
+                            <title>Energy scales from compactification</title>
+                        </rect>
+                        <text x="810" y="433" text-anchor="middle" fill="#8b7fff" font-size="11">Hierarchy:</text>
+                        <text x="810" y="451" text-anchor="middle" fill="#adb5bd" font-size="9" font-family="Crimson Text, serif">
+                            M<tspan baseline-shift="sub" font-size="7">GUT</tspan> ~ 10<tspan baseline-shift="super" font-size="7">16</tspan> GeV, M<tspan baseline-shift="sub" font-size="7">EW</tspan> ~ 10<tspan baseline-shift="super" font-size="7">2</tspan> GeV, H<tspan baseline-shift="sub" font-size="7">0</tspan> ~ 10<tspan baseline-shift="super" font-size="7">-33</tspan> eV
+                        </text>
                     </g>
 
-                    <!-- Volume relation annotation -->
-                    <text x="400" y="380" text-anchor="middle" fill="#adb5bd" font-size="12" font-family="Crimson Text, serif" font-style="italic">
-                        M<tspan baseline-shift="sub" font-size="10">Pl</tspan><tspan baseline-shift="super" font-size="10">2</tspan> = M<tspan baseline-shift="sub" font-size="10">*</tspan><tspan baseline-shift="super" font-size="10">11</tspan> &middot; V<tspan baseline-shift="sub" font-size="10">8</tspan>
+                    <!-- Bottom annotation: Volume relation -->
+                    <text x="500" y="520" text-anchor="middle" fill="#8b7fff" font-size="13" font-weight="600" font-family="Crimson Text, serif">
+                        Planck Scale Relation: M<tspan baseline-shift="sub" font-size="10">Pl</tspan><tspan baseline-shift="super" font-size="10">2</tspan> = M<tspan baseline-shift="sub" font-size="10">*</tspan><tspan baseline-shift="super" font-size="10">11</tspan> · V<tspan baseline-shift="sub" font-size="10">9</tspan> where V<tspan baseline-shift="sub" font-size="10">9</tspan> = V<tspan baseline-shift="sub" font-size="10">7</tspan>(G₂) × V<tspan baseline-shift="sub" font-size="10">2</tspan>(T²)
                     </text>
                 </svg>
                 <div class="diagram-caption">
-                    The full 26D theory decomposes as M<sup>26</sup> = M<sub>A</sub><sup>14</sup> &otimes;<sub>T</sub> M<sub>B</sub><sup>14</sup>, where each 14D half has signature (12,2) with 2 shared timelike dimensions.
-                    Sp(2,R) gauge symmetry eliminates ghosts. The structure compactifies on K<sub>Pneuma</sub> (G₂ manifold), yielding 4D Einstein-Yang-Mills with SO(10) and 3 generations.
+                    <strong>Enhanced 26D→14D×2 Dimensional Reduction:</strong> The full 26D theory decomposes as M<sup>26</sup> = M<sub>A</sub><sup>14</sup> ⊗ M<sub>B</sub><sup>14</sup>, where each 14D half has signature (12,2) with 2 shared timelike dimensions.
+                    Sp(2,R) gauge fixing eliminates ghost states, reducing each half to effective (12,1) signature. Kaluza-Klein compactification on the 9D internal space (G₂ manifold + T²) yields the 4D effective theory with Einstein gravity, SO(10) gauge symmetry from D<sub>5</sub> singularity, 3 fermion families from χ=72, and moduli fields including the Mashiach field.
                 </div>
             </div>
 
@@ -2608,6 +3044,146 @@
             <p>
                 The effective metric (from 26D=14D&times;2 via Sp(2,R)) decomposes into three sectors:
             </p>
+
+            <!-- SVG Diagram: Metric Decomposition g_26 → g_14A ⊕ g_14B → 4D Fields -->
+            <div class="diagram-container" style="margin: 2rem 0;">
+                <div class="diagram-title">Metric Decomposition: G<sub>26</sub> = G<sub>14A</sub> ⊕ G<sub>14B</sub> → 4D Fields</div>
+                <svg class="diagram-svg" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="metricGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(139,127,255,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(139,127,255,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="gravitonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(139,127,255,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(139,127,255,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="gaugeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(255,126,182,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(255,126,182,0.05)" />
+                        </linearGradient>
+                        <linearGradient id="moduliGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:rgba(255,193,7,0.3)" />
+                            <stop offset="100%" style="stop-color:rgba(255,193,7,0.05)" />
+                        </linearGradient>
+                        <marker id="arrowMetric" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#8b7fff"/>
+                        </marker>
+                    </defs>
+
+                    <!-- Title -->
+                    <text x="500" y="30" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="17">
+                        Kaluza-Klein Metric Decomposition: 13D → 4D + Internal
+                    </text>
+
+                    <!-- LEFT: Full 13D Metric -->
+                    <g>
+                        <rect x="30" y="60" width="280" height="400" rx="14" fill="url(#metricGrad)" stroke="rgba(139,127,255,0.6)" stroke-width="2.5"/>
+                        <text x="170" y="90" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="16">13D Metric G<tspan baseline-shift="sub" font-size="11">MN</tspan></text>
+                        <text x="170" y="112" text-anchor="middle" fill="#adb5bd" font-size="10">After Sp(2,R) gauge fixing</text>
+
+                        <!-- Block structure visualization -->
+                        <text x="170" y="140" text-anchor="middle" fill="#8b7fff" font-size="12" font-weight="600">Block Structure:</text>
+
+                        <!-- G_μν block -->
+                        <rect x="50" y="155" width="105" height="95" rx="6" fill="rgba(139,127,255,0.2)" stroke="rgba(139,127,255,0.6)" stroke-width="2">
+                            <title>G_μν: 4D×4D metric block → graviton</title>
+                        </rect>
+                        <text x="102" y="182" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600">G<tspan baseline-shift="sub" font-size="9">μν</tspan></text>
+                        <text x="102" y="200" text-anchor="middle" fill="#adb5bd" font-size="9">4D metric</text>
+                        <text x="102" y="218" text-anchor="middle" fill="#8b7fff" font-size="9">10 DOF</text>
+                        <text x="102" y="236" text-anchor="middle" fill="#adb5bd" font-size="8">μ,ν=0..3</text>
+
+                        <!-- G_μm block -->
+                        <rect x="165" y="155" width="105" height="95" rx="6" fill="rgba(255,126,182,0.2)" stroke="rgba(255,126,182,0.6)" stroke-width="2">
+                            <title>G_μm: Mixed 4D×internal → gauge fields</title>
+                        </rect>
+                        <text x="217" y="182" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="600">G<tspan baseline-shift="sub" font-size="9">μm</tspan></text>
+                        <text x="217" y="200" text-anchor="middle" fill="#adb5bd" font-size="9">KK vectors</text>
+                        <text x="217" y="218" text-anchor="middle" fill="#ff7eb6" font-size="9">4×9 comp</text>
+                        <text x="217" y="236" text-anchor="middle" fill="#adb5bd" font-size="8">m=4..12</text>
+
+                        <!-- G_mμ block -->
+                        <rect x="50" y="260" width="105" height="95" rx="6" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.5)" stroke-width="1.5" stroke-dasharray="3,2">
+                            <title>G_mμ: Transpose of G_μm</title>
+                        </rect>
+                        <text x="102" y="287" text-anchor="middle" fill="#ff7eb6" font-size="11" font-weight="600">G<tspan baseline-shift="sub" font-size="9">mμ</tspan></text>
+                        <text x="102" y="305" text-anchor="middle" fill="#adb5bd" font-size="9">(transpose)</text>
+                        <text x="102" y="323" text-anchor="middle" fill="#adb5bd" font-size="8">9×4 comp</text>
+
+                        <!-- G_mn block -->
+                        <rect x="165" y="260" width="105" height="95" rx="6" fill="rgba(255,193,7,0.2)" stroke="rgba(255,193,7,0.6)" stroke-width="2">
+                            <title>G_mn: Internal 9D×9D → moduli scalars</title>
+                        </rect>
+                        <text x="217" y="287" text-anchor="middle" fill="#ffc107" font-size="11" font-weight="600">G<tspan baseline-shift="sub" font-size="9">mn</tspan></text>
+                        <text x="217" y="305" text-anchor="middle" fill="#adb5bd" font-size="9">Internal met</text>
+                        <text x="217" y="323" text-anchor="middle" fill="#ffc107" font-size="9">45 scalars</text>
+                        <text x="217" y="341" text-anchor="middle" fill="#adb5bd" font-size="8">m,n=4..12</text>
+
+                        <!-- Total DOF -->
+                        <rect x="50" y="375" width="220" height="70" rx="8" fill="rgba(139,127,255,0.1)" stroke="rgba(139,127,255,0.4)" stroke-width="1.5"/>
+                        <text x="160" y="398" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600">Total: 13×14/2 = 91 DOF</text>
+                        <text x="160" y="418" text-anchor="middle" fill="#adb5bd" font-size="9">Symmetric metric tensor</text>
+                        <text x="160" y="435" text-anchor="middle" fill="#8b7fff" font-size="9">→ 10(grav) + 36(gauge) + 45(mod)</text>
+                    </g>
+
+                    <!-- Arrow to decomposition -->
+                    <path d="M 320 260 L 390 260" stroke="#8b7fff" stroke-width="4" fill="none" marker-end="url(#arrowMetric)"/>
+                    <text x="355" y="245" text-anchor="middle" fill="#8b7fff" font-size="11" font-weight="600">KK Decompose</text>
+                    <text x="355" y="285" text-anchor="middle" fill="#adb5bd" font-size="9">13D → 4D×9D</text>
+
+                    <!-- RIGHT: 4D Fields -->
+                    <g>
+                        <rect x="400" y="60" width="570" height="400" rx="14" fill="rgba(139,127,255,0.05)" stroke="rgba(139,127,255,0.5)" stroke-width="2"/>
+                        <text x="685" y="90" text-anchor="middle" fill="#8b7fff" font-weight="700" font-size="16">4D Physical Fields</text>
+                        <text x="685" y="110" text-anchor="middle" fill="#adb5bd" font-size="10">After dimensional reduction</text>
+
+                        <!-- Graviton sector -->
+                        <rect x="420" y="130" width="530" height="75" rx="10" fill="url(#gravitonGrad)" stroke="rgba(139,127,255,0.6)" stroke-width="2">
+                            <title>10 DOF from G_μν → graviton h_μν</title>
+                        </rect>
+                        <text x="470" y="155" text-anchor="start" fill="#8b7fff" font-size="13" font-weight="700">1. Graviton: g<tspan baseline-shift="sub" font-size="10">μν</tspan></text>
+                        <text x="470" y="175" text-anchor="start" fill="#adb5bd" font-size="10">From G<tspan baseline-shift="sub" font-size="8">μν</tspan> (4D-4D block)</text>
+                        <text x="800" y="155" text-anchor="start" fill="#8b7fff" font-size="11">10 DOF</text>
+                        <text x="800" y="173" text-anchor="start" fill="#adb5bd" font-size="9">Massless spin-2</text>
+                        <text x="800" y="191" text-anchor="start" fill="#8b7fff" font-size="9">M<tspan baseline-shift="sub" font-size="7">Pl</tspan><tspan baseline-shift="super" font-size="7">2</tspan>R<tspan baseline-shift="sub" font-size="7">4</tspan>/2</text>
+
+                        <!-- Gauge boson sector -->
+                        <rect x="420" y="220" width="530" height="90" rx="10" fill="url(#gaugeGrad)" stroke="rgba(255,126,182,0.6)" stroke-width="2">
+                            <title>36 DOF from G_μm → SO(10) gauge bosons</title>
+                        </rect>
+                        <text x="470" y="245" text-anchor="start" fill="#ff7eb6" font-size="13" font-weight="700">2. Gauge Bosons: A<tspan baseline-shift="sub" font-size="10">μ</tspan><tspan baseline-shift="super" font-size="10">a</tspan></text>
+                        <text x="470" y="265" text-anchor="start" fill="#adb5bd" font-size="10">From G<tspan baseline-shift="sub" font-size="8">μm</tspan> via Killing vectors K<tspan baseline-shift="super" font-size="8">a</tspan></text>
+                        <text x="470" y="283" text-anchor="start" fill="#ff7eb6" font-size="10" font-family="Crimson Text, serif">
+                            G<tspan baseline-shift="sub" font-size="8">μm</tspan> = A<tspan baseline-shift="sub" font-size="8">μ</tspan><tspan baseline-shift="super" font-size="8">a</tspan>(x) K<tspan baseline-shift="sub" font-size="8">m</tspan><tspan baseline-shift="super" font-size="8">a</tspan>(y)
+                        </text>
+                        <text x="800" y="245" text-anchor="start" fill="#ff7eb6" font-size="11">45 vectors</text>
+                        <text x="800" y="263" text-anchor="start" fill="#adb5bd" font-size="9">SO(10) adjoint</text>
+                        <text x="800" y="281" text-anchor="start" fill="#ff7eb6" font-size="9">a=1..45</text>
+                        <text x="800" y="299" text-anchor="start" fill="#adb5bd" font-size="8">Massless spin-1</text>
+
+                        <!-- Moduli sector -->
+                        <rect x="420" y="325" width="530" height="120" rx="10" fill="url(#moduliGrad)" stroke="rgba(255,193,7,0.6)" stroke-width="2">
+                            <title>45 DOF from G_mn → geometric moduli</title>
+                        </rect>
+                        <text x="470" y="350" text-anchor="start" fill="#ffc107" font-size="13" font-weight="700">3. Moduli Scalars: φ<tspan baseline-shift="super" font-size="10">I</tspan></text>
+                        <text x="470" y="370" text-anchor="start" fill="#adb5bd" font-size="10">From G<tspan baseline-shift="sub" font-size="8">mn</tspan> (internal-internal block)</text>
+                        <text x="470" y="390" text-anchor="start" fill="#ffc107" font-size="10">Geometric deformations of K<tspan baseline-shift="sub" font-size="8">Pneuma</tspan>:</text>
+                        <text x="490" y="408" text-anchor="start" fill="#adb5bd" font-size="9">• Volume moduli (overall size)</text>
+                        <text x="490" y="424" text-anchor="start" fill="#adb5bd" font-size="9">• Shape moduli (G₂ structure)</text>
+                        <text x="490" y="440" text-anchor="start" fill="#adb5bd" font-size="9">• Mashiach field φ (special modulus)</text>
+                        <text x="800" y="350" text-anchor="start" fill="#ffc107" font-size="11">45 scalars</text>
+                        <text x="800" y="368" text-anchor="start" fill="#adb5bd" font-size="9">I=1..45</text>
+                        <text x="800" y="386" text-anchor="start" fill="#ffc107" font-size="9">Massive</text>
+                        <text x="800" y="404" text-anchor="start" fill="#adb5bd" font-size="8">M ~ M<tspan baseline-shift="sub" font-size="6">KK</tspan></text>
+                        <text x="800" y="422" text-anchor="start" fill="#adb5bd" font-size="8">except φ:</text>
+                        <text x="800" y="437" text-anchor="start" fill="#ffc107" font-size="8">m<tspan baseline-shift="sub" font-size="6">φ</tspan>~H<tspan baseline-shift="sub" font-size="6">0</tspan></text>
+                    </g>
+                </svg>
+                <div class="diagram-caption">
+                    <strong>Kaluza-Klein Metric Decomposition:</strong> The 13D metric G<sub>MN</sub> (M,N=0..12) after Sp(2,R) gauge fixing decomposes into block structure. The 4D-4D block G<sub>μν</sub> (μ,ν=0..3) becomes the graviton with 10 degrees of freedom. Mixed 4D-internal components G<sub>μm</sub> (m=4..12) yield 45 massless SO(10) gauge bosons A<sub>μ</sub><sup>a</sup> via expansion in Killing vectors K<sup>a</sup> on K<sub>Pneuma</sub>. The internal 9D×9D block G<sub>mn</sub> produces 45 moduli scalars φ<sup>I</sup> describing geometric deformations, including the Mashiach field φ with mass m<sub>φ</sub>~H<sub>0</sub>. Total: 10+45+45=100 DOF, though gauge and diff constraints reduce physical states.
+                </div>
+            </div>
 
             <table class="field-table">
                 <thead>
