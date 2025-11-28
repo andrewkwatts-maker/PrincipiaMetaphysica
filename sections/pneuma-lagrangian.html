@@ -811,18 +811,264 @@
             </div>
         </section>
 
+        <!-- 2T Physics p-Brane Action -->
+        <section class="subsection">
+            <h2>2T Physics p-Brane Action Formulation</h2>
+            <p>
+                Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes)
+                propagating in the full 26D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional
+                origin and the role of Sp(2,R) gauge symmetry.
+            </p>
+
+            <h3>General 2T p-Brane Action</h3>
+            <p>
+                The action for a p-brane in 2T physics consists of two parts: the Nambu-Goto term (world-volume) and the
+                Wess-Zumino term (gauge coupling):
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.12), rgba(139, 127, 255, 0.08)); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.2rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">S<sub>p-brane</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">S<sub>p-brane</sub> — p-Brane Action</div>
+                            <div class="var-description">Total action for a p-dimensional extended object in 26D spacetime</div>
+                            <div class="var-units">Dimensionless (action)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">T<sub>p</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">T<sub>p</sub> — Brane Tension</div>
+                            <div class="var-description">Energy per unit p-volume of the brane. Related to central charge Z via BPS bound: T<sub>p</sub> = |Z|</div>
+                            <div class="var-units">Energy/Volume<sup>p</sup></div>
+                        </div>
+                    </span>
+                    <span class="formula-op">&int;</span>
+                    <span class="formula-var" style="padding: 0.3rem 0.5rem;">d<sup>p+1</sup>&xi;
+                        <div class="var-tooltip">
+                            <div class="var-name">d<sup>p+1</sup>&xi; — World-volume Measure</div>
+                            <div class="var-description">Integration over (p+1)-dimensional world-volume parameters &xi;<sup>a</sup>, a = 0,1,...,p</div>
+                        </div>
+                    </span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">&radic;(-det(g<sub>ab</sub>))
+                        <div class="var-tooltip">
+                            <div class="var-name">Induced Metric Determinant</div>
+                            <div class="var-description">g<sub>ab</sub> = &part;<sub>a</sub>X<sup>M</sup>&part;<sub>b</sub>X<sup>N</sup>G<sub>MN</sub> is the induced metric on the world-volume</div>
+                            <div class="var-contribution">Nambu-Goto term: measures world-volume area in ambient spacetime</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-op">&int;</span>
+                    <span class="formula-var" style="padding: 0.3rem 0.5rem;">d<sup>p+1</sup>&xi;
+                        <div class="var-tooltip">
+                            <div class="var-name">World-volume Measure</div>
+                            <div class="var-description">Second integral over world-volume for Wess-Zumino term</div>
+                        </div>
+                    </span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">&lambda;<sup>M</sup>&part;<sub>a</sub>X<sup>N</sup>A<sup>a</sup>&eta;<sub>MN</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Wess-Zumino Coupling</div>
+                            <div class="var-description">&lambda;<sup>M</sup> = Lagrange multipliers enforcing constraints; A<sup>a</sup> = world-volume gauge field; &eta;<sub>MN</sub> = flat 26D metric (24,2)</div>
+                            <div class="var-contribution">Enforces null constraints and couples to gauge fields</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (3.7) General 2T p-Brane Action with Null Constraints
+                </div>
+            </div>
+
+            <div class="physics-note">
+                <h4>2T Physics Framework</h4>
+                <p>
+                    This action is formulated in the full 26D spacetime with two time dimensions. The Sp(2,R) gauge symmetry
+                    acts on the embedding coordinates X<sup>M</sup>(&xi;) and allows us to gauge-fix one time dimension,
+                    reducing (d,2) signature to (d,1) while maintaining covariance.
+                </p>
+            </div>
+
+            <h3>Brane Configuration: Observable and Shadow Branes</h3>
+            <p>
+                The Pneuma sector consists of four distinct p-branes embedded in the 26D spacetime. Before gauge fixing,
+                each brane has two timelike dimensions:
+            </p>
+
+            <div class="term-breakdown">
+                <div class="term-card">
+                    <div class="term-symbol">Observable: (5,2)</div>
+                    <h4>Observable 5-Brane</h4>
+                    <p>
+                        5 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (5,2) → (5,1).
+                        Hosts the visible matter sector and 4D spacetime as a subspace.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">Shadow 1: (3,2)</div>
+                    <h4>First Shadow 3-Brane</h4>
+                    <p>
+                        3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1).
+                        Contributes to dark sector structure.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">Shadow 2: (3,2)</div>
+                    <h4>Second Shadow 3-Brane</h4>
+                    <p>
+                        3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1).
+                        Second dark sector component.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">Shadow 3: (3,2)</div>
+                    <h4>Third Shadow 3-Brane</h4>
+                    <p>
+                        3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1).
+                        Third dark sector component.
+                    </p>
+                </div>
+            </div>
+
+            <div class="physics-note" style="background: rgba(139, 127, 255, 0.08); border-left-color: var(--accent-primary);">
+                <h4 style="color: var(--accent-primary);">Gauge Fixing: (d,2) → (d,1)</h4>
+                <p>
+                    <strong>Before gauge fixing:</strong> Observable (5,2) + 3×Shadow (3,2) - total 26 dimensions with signature (24,2)<br>
+                    <strong>After Sp(2,R) gauge fixing:</strong> Observable (5,1) + 3×Shadow (3,1) - effective theory with single timelike direction
+                </p>
+                <p style="margin-top: 0.75rem;">
+                    The gauge fixing procedure removes the second time dimension from each brane while preserving the physical
+                    degrees of freedom. The orthogonal time effects persist through the g·t<sub>ortho</sub> coupling in the
+                    effective action.
+                </p>
+            </div>
+
+            <h3>Null Constraints</h3>
+            <p>
+                The 2T physics formulation requires three null constraints on the embedding coordinates X<sup>M</sup>(&xi;)
+                and their conjugate momenta P<sup>M</sup>(&xi;):
+            </p>
+
+            <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.3);">
+                <div class="interactive-formula" style="margin-bottom: 1rem;">
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">X<sup>M</sup>X<sub>M</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Position Null Constraint</div>
+                            <div class="var-desc">Embedding coordinates lie on the null cone in 26D spacetime (24,2)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">0</span>
+                </div>
+
+                <div class="interactive-formula" style="margin-bottom: 1rem;">
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">X<sup>M</sup>P<sub>M</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Mixed Null Constraint</div>
+                            <div class="var-desc">Orthogonality between position and momentum in (24,2) metric</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">0</span>
+                </div>
+
+                <div class="interactive-formula">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">P<sup>M</sup>P<sub>M</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Mass-Shell Constraint</div>
+                            <div class="var-desc">On-shell condition with M<sup>2</sup> representing brane tension squared</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">M<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">M<sup>2</sup> — Mass Squared</div>
+                            <div class="var-desc">Squared mass parameter; for BPS branes: M<sup>2</sup> = T<sub>p</sub><sup>2</sup></div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var">0</span>
+                </div>
+
+                <span class="equation-label">(3.8) Null Constraints in 2T Physics</span>
+            </div>
+
+            <p>
+                These constraints are first-class and generate the Sp(2,R) gauge symmetry. They ensure that:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2;">
+                <li>The brane world-volume is properly embedded in the null cone of 26D spacetime</li>
+                <li>Only physical (gauge-invariant) degrees of freedom propagate</li>
+                <li>The gauge fixing (24,2) → (12,1) is consistent and preserves unitarity</li>
+                <li>The effective (d,1) theory emerges naturally without auxiliary dimensions</li>
+            </ul>
+
+            <h3>BPS Bound and Central Charges</h3>
+            <p>
+                For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central
+                charges of the extended supersymmetry algebra SO(24,2):
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08)); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">T<sub>p</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">T<sub>p</sub> — Brane Tension</div>
+                            <div class="var-description">Energy per unit p-volume; for BPS branes this equals the central charge magnitude</div>
+                            <div class="var-units">Energy/Volume<sup>p</sup></div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-op">|</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">Z
+                        <div class="var-tooltip">
+                            <div class="var-name">Z — Central Charge</div>
+                            <div class="var-description">Central charge of SO(24,2) extended supersymmetry algebra. Topologically conserved.</div>
+                            <div class="var-contribution">Z = ∫<sub>Σ<sub>p</sub></sub> *F<sub>p+2</sub> where F<sub>p+2</sub> is the (p+2)-form field strength</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">|</span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (3.9) BPS Bound: Brane Tension Equals Central Charge Magnitude
+                </div>
+            </div>
+
+            <p>
+                The BPS condition T<sub>p</sub> = |Z| ensures stability: branes cannot decay to lower-tension configurations
+                because the central charge is topologically conserved. This is the origin of the stability of matter in the theory.
+            </p>
+
+            <div class="physics-note">
+                <h4>Central Charges in SO(24,2)</h4>
+                <p>
+                    <strong>Observable 5-brane:</strong> Z<sub>5</sub> ∈ ∧<sup>5</sup>(R<sup>24,2</sup>) - rank-5 antisymmetric tensor charge<br>
+                    <strong>Shadow 3-branes:</strong> Z<sub>3</sub><sup>(i)</sup> ∈ ∧<sup>3</sup>(R<sup>24,2</sup>), i=1,2,3 - three rank-3 antisymmetric tensor charges
+                </p>
+                <p style="margin-top: 0.75rem;">
+                    These central charges commute with all supersymmetry generators and are topological invariants.
+                    The dimensions (5,2) and (3,2) are selected to maximize the allowed central charge structure while
+                    satisfying the total dimension constraint 26 = (5+1)+(3+1)+(3+1)+(3+1) + 8 (internal).
+                </p>
+            </div>
+        </section>
+
         <!-- 4D Reduction -->
         <section class="subsection">
             <h2>4D Effective Lagrangian</h2>
             <p>
-                Starting from the full 26D Lagrangian, we first gauge-fix to 13D (with the g&middot;t<sub>ortho</sub>
-                term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional
-                internal manifold K<sub>Pneuma</sub>. This yields the 4D fermion sector:
+                Starting from the full 26D Lagrangian (or equivalently, the 2T p-brane action), we first gauge-fix to 13D
+                (with the g&middot;t<sub>ortho</sub> term encoding the second time direction), then perform Kaluza-Klein
+                reduction over the 8-dimensional internal manifold K<sub>Pneuma</sub>. This yields the 4D fermion sector:
             </p>
 
             <div class="equation-box" style="font-size: 1rem;">
                 &Lscr;<sub>4D,fermion</sub> = &sum;<sub>i=1</sub><sup>3</sup> <span style="text-decoration: overline;">&psi;</span><sub>i</sub>(i&gamma;<sup>&mu;</sup>D<sub>&mu;</sub> - m<sub>i</sub>)&psi;<sub>i</sub> + (Yukawa couplings)
-                <span class="equation-label">4D effective fermion Lagrangian</span>
+                <span class="equation-label">4D effective fermion Lagrangian from dimensional reduction</span>
             </div>
 
             <p>
@@ -830,6 +1076,20 @@
                 operator. The 4D masses m<sub>i</sub> and Yukawa couplings are determined by overlap integrals of these
                 zero mode wave functions over K<sub>Pneuma</sub>.
             </p>
+
+            <div class="physics-note" style="background: rgba(255, 126, 182, 0.08); border-left-color: #ff7eb6;">
+                <h4 style="color: #ff7eb6;">Equivalence of Formulations</h4>
+                <p>
+                    The Pneuma field Lagrangian (fermionic) and the 2T p-brane action (bosonic) are dual descriptions
+                    of the same underlying theory. The duality relates:
+                </p>
+                <ul style="margin: 0.75rem 0 0 1.5rem; color: var(--text-secondary);">
+                    <li>Pneuma spinor &Psi;<sub>P</sub> ↔ World-volume fermions on the brane</li>
+                    <li>Pneuma condensate &langle;<span style="text-decoration: overline;">&Psi;</span>&Psi;&rangle; ↔ Brane tension T<sub>p</sub></li>
+                    <li>Clifford algebra action ↔ Sp(2,R) gauge symmetry</li>
+                    <li>26D → 13D gauge fixing ↔ Null constraint enforcement</li>
+                </ul>
+            </div>
         </section>
 
         <!-- Navigation -->
