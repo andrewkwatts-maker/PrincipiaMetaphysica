@@ -218,11 +218,12 @@
                 The fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content.
             </p>
             <div class="main-equation">
-                &Lscr; = <span style="text-decoration: overline;">&Psi;</span>(i&Gamma;<sup>M</sup>D<sub>M</sub> + g&middot;t<sub>ortho</sub>)&Psi; + &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
+                S = &int; d<sup>26</sup>X &radic;(-G) [R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub> (i&Gamma;<sup>M</sup>D<sub>M</sub> - m)&Psi;<sub>P</sub>]
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
                 <strong>Full 26D:</strong> 8192-component spinor, Cl(24,2) Clifford algebra, Sp(2,R) gauge<br>
-                <strong>Effective 13D:</strong> 64-component spinor via gauge fixing, Cl(12,1)
+                <strong>Effective 13D:</strong> 64-component spinor via gauge fixing, Cl(12,1)<br>
+                <strong>MASTERPLAN2 v6.5:</strong> Fermionic primacy - Pneuma spinor sources all physics
             </p>
         </div>
 
@@ -230,10 +231,10 @@
         <div class="expandable-formula">
             <div class="formula-header">
                 <div class="formula-main">
-                    <span style="text-decoration: overline;">&Psi;</span>(i&Gamma;<sup>M</sup>D<sub>M</sub> + g&middot;t<sub>ortho</sub>)&Psi; + &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
+                    S = &int; d<sup>26</sup>X &radic;(-G) [R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub> (i&Gamma;<sup>M</sup>D<sub>M</sub> - m)&Psi;<sub>P</sub>]
                 </div>
                 <div class="formula-controls">
-                    <span class="foundation-badge pm-specific">PM-Specific (26D)</span>
+                    <span class="foundation-badge pm-specific">v6.5 Master Action</span>
                     <button class="expand-btn" title="Expand to see derivation">&#x25BC;</button>
                 </div>
             </div>
@@ -1089,6 +1090,415 @@
                     <li>Clifford algebra action ↔ Sp(2,R) gauge symmetry</li>
                     <li>26D → 13D gauge fixing ↔ Null constraint enforcement</li>
                 </ul>
+            </div>
+        </section>
+
+        <!-- MASTERPLAN2 v6.5 Lagrangian Hierarchy -->
+        <section class="subsection">
+            <h2>MASTERPLAN2 v6.5: Complete Lagrangian Hierarchy</h2>
+            <p>
+                The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable
+                physics, incorporating all MASTERPLAN2 v6.5 updates. Each level emerges naturally from dimensional reduction
+                and gauge fixing, with fermionic primacy maintained throughout.
+            </p>
+
+            <h3>1. Master Bulk Action (26D)</h3>
+            <p>
+                The fundamental action in full 26D spacetime with signature (24,2), emphasizing fermionic primacy:
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.12), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(255, 126, 182, 0.4); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.3rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">S
+                        <div class="var-tooltip">
+                            <div class="var-name">S - Master Bulk Action</div>
+                            <div class="var-desc">The fundamental action from which all physics emerges</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-op">&int;</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">d<sup>26</sup>X
+                        <div class="var-tooltip">
+                            <div class="var-name">d<sup>26</sup>X - 26D Integration Measure</div>
+                            <div class="var-desc">Integration over all 26 dimensions (24 spatial, 2 temporal)</div>
+                        </div>
+                    </span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&radic;(-G)
+                        <div class="var-tooltip">
+                            <div class="var-name">&radic;(-G) - Metric Determinant</div>
+                            <div class="var-desc">Square root of minus the determinant of the 26D metric tensor</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">[</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">R
+                        <div class="var-tooltip">
+                            <div class="var-name">R - Ricci Scalar</div>
+                            <div class="var-desc">Curvature scalar, sourced by Pneuma stress-energy tensor</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name"><span style="text-decoration: overline;">&Psi;</span><sub>P</sub> - Pneuma Adjoint</div>
+                            <div class="var-desc">8192-component Dirac adjoint spinor</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">(</span>
+                    <span class="formula-var" style="padding: 0.2rem 0.4rem;">i&Gamma;<sup>M</sup>D<sub>M</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Dirac Operator</div>
+                            <div class="var-desc">26D covariant Dirac operator with Clifford algebra Cl(24,2)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var" style="padding: 0.2rem 0.4rem;">m
+                        <div class="var-tooltip">
+                            <div class="var-name">m - Bulk Mass</div>
+                            <div class="var-desc">Fundamental Pneuma mass parameter</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">)</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Psi;<sub>P</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Psi;<sub>P</sub> - Pneuma Spinor</div>
+                            <div class="var-desc">8192-component fundamental fermionic field</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">]</span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (v6.5-1) Master Bulk Action: Fermionic Primacy
+                </div>
+            </div>
+
+            <div class="physics-note">
+                <h4>Fermionic Primacy</h4>
+                <p>
+                    The Pneuma spinor &Psi;<sub>P</sub> is <strong>not</strong> a matter field on a fixed background.
+                    The fermionic term sources the Einstein equations: R<sub>MN</sub> = T<sub>MN</sub>[&Psi;<sub>P</sub>].
+                    Spacetime geometry emerges from Pneuma condensates, embodying true fermionic primacy.
+                </p>
+            </div>
+
+            <h3>2. 13D Shadow Effective Lagrangian</h3>
+            <p>
+                After Sp(2,R) gauge fixing from 26D to 13D, the spinor reduces from 8192 to 64 components:
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(81, 207, 102, 0.08)); border: 2px solid rgba(139, 127, 255, 0.4); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.2rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">&Lscr;<sub>13D</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Lscr;<sub>13D</sub> - 13D Effective Lagrangian</div>
+                            <div class="var-desc">Effective theory after gauge fixing one time dimension</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">M<sub>*</sub><sup>11</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">M<sub>*</sub><sup>11</sup> - Planck Scale</div>
+                            <div class="var-desc">13D Planck mass to 11th power (dimensionful prefactor)</div>
+                        </div>
+                    </span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">R<sub>13D</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">R<sub>13D</sub> - 13D Ricci Scalar</div>
+                            <div class="var-desc">Curvature in effective 13D spacetime with signature (12,1)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;"><span style="text-decoration: overline;">&Psi;</span><sub>64</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name"><span style="text-decoration: overline;">&Psi;</span><sub>64</sub> - Reduced Spinor Adjoint</div>
+                            <div class="var-desc">64-component reduced spinor from Cl(12,1)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">(</span>
+                    <span class="formula-var" style="padding: 0.2rem 0.4rem;">i&gamma;<sup>&mu;</sup>&nabla;<sub>&mu;</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">13D Dirac Operator</div>
+                            <div class="var-desc">Covariant derivative with 64×64 gamma matrices</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var" style="padding: 0.2rem 0.4rem;">m<sub>eff</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">m<sub>eff</sub> - Effective Mass</div>
+                            <div class="var-desc">Effective mass after dimensional reduction</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">)</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Psi;<sub>64</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Psi;<sub>64</sub> - Reduced Spinor</div>
+                            <div class="var-desc">64-component effective spinor field</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Lscr;<sub>flux</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Lscr;<sub>flux</sub> - Flux Stabilization</div>
+                            <div class="var-desc">Flux terms for moduli stabilization (KKLT/LVS)</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (v6.5-2) 13D Shadow Effective Lagrangian
+                </div>
+            </div>
+
+            <div class="physics-note" style="background: rgba(139, 127, 255, 0.08); border-left-color: var(--accent-primary);">
+                <h4 style="color: var(--accent-primary);">Dimensional Reduction: 26D &rarr; 13D</h4>
+                <p>
+                    Sp(2,R) gauge fixing removes one time dimension: (24,2) &rarr; (12,1).<br>
+                    Spinor dimension: 2<sup>13</sup> = 8192 &rarr; 2<sup>6</sup> = 64 components.<br>
+                    The flux terms &Lscr;<sub>flux</sub> stabilize moduli via KKLT/LVS mechanisms.
+                </p>
+            </div>
+
+            <h3>3. 4D Observable Effective Lagrangian</h3>
+            <p>
+                The effective 4D Lagrangian includes f(R,T,&tau;) modified gravity with specific coefficients
+                derived from higher-dimensional reduction:
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(255, 126, 182, 0.08)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.15rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">f(R,T,&tau;)
+                        <div class="var-tooltip">
+                            <div class="var-name">f(R,T,&tau;) - Modified Gravity</div>
+                            <div class="var-desc">Function of Ricci scalar R, trace T, and two-time invariant &tau;</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">R
+                        <div class="var-tooltip">
+                            <div class="var-name">R - Einstein-Hilbert</div>
+                            <div class="var-desc">Standard 4D Ricci scalar (GR term)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&alpha;<sub>F</sub>R<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">&alpha;<sub>F</sub>R<sup>2</sup> - Starobinsky Term</div>
+                            <div class="var-desc">&alpha;<sub>F</sub> = 0.0045 M<sub>Pl</sub><sup>-2</sup> (inflation)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&beta;<sub>F</sub>T
+                        <div class="var-tooltip">
+                            <div class="var-name">&beta;<sub>F</sub>T - Trace Coupling</div>
+                            <div class="var-desc">&beta;<sub>F</sub> = 0.15 (matter coupling)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&gamma;<sub>F</sub>R&tau;
+                        <div class="var-tooltip">
+                            <div class="var-name">&gamma;<sub>F</sub>R&tau; - Two-Time Coupling</div>
+                            <div class="var-desc">&gamma;<sub>F</sub> = 0.0001 M<sub>Pl</sub><sup>-2</sup> (thermal time)</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&delta;<sub>F</sub>(&part;<sub>t</sub>&tau;)R
+                        <div class="var-tooltip">
+                            <div class="var-name">&delta;<sub>F</sub>(&part;<sub>t</sub>&tau;)R - Time-Varying</div>
+                            <div class="var-desc">&delta;<sub>F</sub> = 10<sup>-19</sup> s (dynamical evolution)</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (v6.5-3) 4D Observable Effective Lagrangian: f(R,T,&tau;) Gravity
+                </div>
+            </div>
+
+            <div class="term-breakdown" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="term-card">
+                    <div class="term-symbol">&alpha;<sub>F</sub> = 0.0045 M<sub>Pl</sub><sup>-2</sup></div>
+                    <h4>Starobinsky Coefficient</h4>
+                    <p>
+                        R<sup>2</sup> term drives inflation. Value derived from CMB observations and Planck 2018 constraints.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">&beta;<sub>F</sub> = 0.15</div>
+                    <h4>Matter Coupling</h4>
+                    <p>
+                        Coupling to stress-energy trace T. Dimensionless parameter affecting matter-geometry interaction.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">&gamma;<sub>F</sub> = 0.0001 M<sub>Pl</sub><sup>-2</sup></div>
+                    <h4>Two-Time Invariant</h4>
+                    <p>
+                        Coupling to orthogonal time invariant &tau;. Small value consistent with thermal time hypothesis.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">&delta;<sub>F</sub> = 10<sup>-19</sup> s</div>
+                    <h4>Dynamical Evolution</h4>
+                    <p>
+                        Time-varying coupling (&part;<sub>t</sub>&tau;)R. Extremely small - near Planck timescale effects.
+                    </p>
+                </div>
+            </div>
+
+            <h3>4. Mashiach Attractor Lagrangian</h3>
+            <p>
+                The dark energy sector is described by the Mashiach scalar field with late-time attractor dynamics
+                ensuring w &rarr; -1.0:
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.12), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(255, 126, 182, 0.4); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.25rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">&Lscr;<sub>&phi;</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">&Lscr;<sub>&phi;</sub> - Scalar Field Lagrangian</div>
+                            <div class="var-desc">Mashiach quintessence-like dark energy field</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&frac12;(&part;&phi;)<sup>2</sup>
+                        <div class="var-tooltip">
+                            <div class="var-name">Kinetic Term</div>
+                            <div class="var-desc">Standard canonical kinetic energy for scalar field</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">-</span>
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">V(&phi;)
+                        <div class="var-tooltip">
+                            <div class="var-name">V(&phi;) - Potential</div>
+                            <div class="var-desc">Attractor potential with late-time minimum</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (v6.5-4a) Mashiach Attractor Lagrangian
+                </div>
+            </div>
+
+            <p>
+                The potential V(&phi;) is constructed to have a stable late-time attractor:
+            </p>
+
+            <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                <span class="formula-hint">Hover for details</span>
+                <div class="formula-display" style="display: flex; align-items: center; justify-content: center; gap: 0.4rem; font-size: 1.2rem; flex-wrap: wrap;">
+                    <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">V(&phi;<sub>M</sub>)
+                        <div class="var-tooltip">
+                            <div class="var-name">V(&phi;<sub>M</sub>) - Mashiach Potential</div>
+                            <div class="var-desc">Potential evaluated at Mashiach field &phi;<sub>M</sub></div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-var" style="background: rgba(255, 126, 182, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;">V<sub>0</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">V<sub>0</sub> - Vacuum Energy Scale</div>
+                            <div class="var-desc">Sets the cosmological constant scale &Lambda;</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">[</span>
+                    <span class="formula-var" style="padding: 0.2rem 0.4rem;">1
+                        <div class="var-tooltip">
+                            <div class="var-name">Constant Term</div>
+                            <div class="var-desc">Baseline vacuum energy</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">+</span>
+                    <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">A cos(&omega;&phi;<sub>M</sub>/f)
+                        <div class="var-tooltip">
+                            <div class="var-name">Modulation Term</div>
+                            <div class="var-desc">Oscillatory component from axion-like structure</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">]</span>
+                </div>
+                <div class="formula-label" style="text-align: center; margin-top: 1rem; color: var(--text-muted);">
+                    (v6.5-4b) Mashiach Potential with Attractor Structure
+                </div>
+            </div>
+
+            <div class="term-breakdown" style="grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));">
+                <div class="term-card">
+                    <div class="term-symbol">&phi;<sub>M</sub> = 2.493 M<sub>Pl</sub></div>
+                    <h4>Mashiach VEV</h4>
+                    <p>
+                        Derived value from weighted KKLT/LVS/topology methods. Central value with error ~5.0.
+                        Physical range: 0.5 - 5.0 M<sub>Pl</sub>.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">w &rarr; -1.0</div>
+                    <h4>Late-Time Attractor</h4>
+                    <p>
+                        Equation of state approaches &Lambda;CDM limit: w = -1.0 exactly at the potential minimum.
+                        Resolves DE fine-tuning problem.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">V<sub>0</sub></div>
+                    <h4>Vacuum Energy Scale</h4>
+                    <p>
+                        Sets &Lambda; ~ (2.4 meV)<sup>4</sup> to match observed dark energy density &rho;<sub>&Lambda;</sub> ~ 10<sup>-47</sup> GeV<sup>4</sup>.
+                    </p>
+                </div>
+
+                <div class="term-card">
+                    <div class="term-symbol">A, &omega;, f</div>
+                    <h4>Potential Parameters</h4>
+                    <p>
+                        A: amplitude of modulation; &omega;: frequency; f: decay constant.
+                        Tuned for slow-roll and attractor dynamics.
+                    </p>
+                </div>
+            </div>
+
+            <div class="physics-note">
+                <h4>Attractor Dynamics</h4>
+                <p>
+                    The Mashiach field &phi; evolves according to the Klein-Gordon equation in an FRW background:
+                    <br><br>
+                    <span style="font-family: 'Crimson Text', serif; font-size: 1.1rem;">
+                        &ddot;&phi; + 3H&dot;&phi; + V'(&phi;) = 0
+                    </span>
+                    <br><br>
+                    At late times, the field rolls to the minimum of V(&phi;), where &dot;&phi; &rarr; 0, yielding
+                    w = -1.0 without fine-tuning. This is the <strong>attractor solution</strong> - independent of
+                    initial conditions.
+                </p>
+            </div>
+
+            <h3>Summary: The Lagrangian Cascade</h3>
+            <p>
+                The complete descent from fundamental 26D physics to 4D observables:
+            </p>
+
+            <div class="equation-box" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.08), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(255, 126, 182, 0.3);">
+                <strong style="color: var(--accent-secondary);">Level 1 (26D):</strong>
+                S = &int; d<sup>26</sup>X &radic;(-G) [R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub> (i&Gamma;<sup>M</sup>D<sub>M</sub> - m)&Psi;<sub>P</sub>]
+                <br><br>
+                <span style="font-size: 1.5rem; color: var(--text-muted);">&darr;</span> Sp(2,R) gauge fixing
+                <br><br>
+                <strong style="color: var(--accent-primary);">Level 2 (13D):</strong>
+                &Lscr;<sub>13D</sub> = M<sub>*</sub><sup>11</sup> R<sub>13D</sub> + <span style="text-decoration: overline;">&Psi;</span><sub>64</sub> (i&gamma;<sup>&mu;</sup>&nabla;<sub>&mu;</sub> - m<sub>eff</sub>)&Psi;<sub>64</sub> + &Lscr;<sub>flux</sub>
+                <br><br>
+                <span style="font-size: 1.5rem; color: var(--text-muted);">&darr;</span> KK reduction (13D &rarr; 4D)
+                <br><br>
+                <strong style="color: #51cf66;">Level 3 (4D):</strong>
+                f(R,T,&tau;) = R + &alpha;<sub>F</sub>R<sup>2</sup> + &beta;<sub>F</sub>T + &gamma;<sub>F</sub>R&tau; + &delta;<sub>F</sub>(&part;<sub>t</sub>&tau;)R
+                <br><br>
+                <strong style="color: #ff7eb6;">Level 4 (DE):</strong>
+                &Lscr;<sub>&phi;</sub> = -&frac12;(&part;&phi;)<sup>2</sup> - V(&phi;<sub>M</sub>), &nbsp; V = V<sub>0</sub>[1 + A cos(&omega;&phi;<sub>M</sub>/f)]
+                <span class="equation-label">Complete v6.5 Lagrangian Hierarchy</span>
             </div>
         </section>
 

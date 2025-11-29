@@ -37,7 +37,8 @@
             <p>
                 The Kaluza-Klein mechanism demonstrates how gauge forces can emerge from the geometry
                 of extra spatial dimensions. This established framework forms the foundation for
-                Principia Metaphysica's dimensional reduction: 26D &rarr; 14D&times;2 &rarr; 7D&times;2 &rarr; 4D.
+                Principia Metaphysica's 4-stage dimensional reduction: 26D (24,2) &rarr; 13D (12,1) via Sp(2,R) gauge fixing
+                &rarr; 6D via G₂ compactification &rarr; 4D via torus compactification.
             </p>
         </div>
 
@@ -117,7 +118,7 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <a href="../sections/geometric-framework.html">26D &rarr; 14D&times;2 with G₂&times;G₂ gives SO(10)</a>
+                            <a href="../sections/geometric-framework.html">26D (24,2) &rarr; 13D (12,1) &rarr; 6D &rarr; 4D with G₂ compactification gives SO(10)</a>
                             <span class="foundation-badge pm-specific">PM Extension</span>
                         </div>
                     </div>
@@ -206,7 +207,7 @@
                         <div class="sub-component">
                             <div class="component-symbol">n</div>
                             <div class="component-name">Number of Compact Dimensions</div>
-                            <div class="component-desc">Number of compactified spatial dimensions (e.g., n=1 for original KK, n=9 for PM's 13D&rarr;4D)</div>
+                            <div class="component-desc">Number of compactified spatial dimensions (e.g., n=1 for original KK, n=9 for PM: 7D G₂ + 2D torus)</div>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">V<sub>n</sub></div>
@@ -215,22 +216,30 @@
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">Example: 26D &rarr; 4D (PM 2T Framework)</div>
+                        <div class="chain-title">Example: PM 4-Stage Dimensional Reduction</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Starting dimension D = 26, compact dimensions n = 22 (signature (24,2))
+                            Stage 1: 26D bulk with signature (24,2) - bosonic string theory critical dimension
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>24</sup> &times; V<sub>22</sub> (where n+2 = 24)
+                            Stage 2: Sp(2,R) gauge fixing (NOT compactification!) → 13D (12,1) eliminates ghost degrees
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            V<sub>22</sub> = Vol(G<sub>2</sub>) &times; Vol(G<sub>2</sub>) &times; (internal T<sup>2</sup>) is not directly measurable
+                            Stage 3: G₂ compactification: 13D → 6D (7D compact manifold)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            For M<sub>*</sub> ~ M<sub>Pl</sub>: requires V<sub>22</sub> ~ (M<sub>Pl</sub>)<sup>-22</sup>
+                            Stage 4: Torus compactification: 6D → 4D (2D torus, R ~ (5 TeV)<sup>-1</sup>)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Total compact dimensions: n = 9 (7D G₂ + 2D torus)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub>, where V<sub>9</sub> = 1.488×10<sup>-138</sup> GeV<sup>-9</sup>
                         </div>
                     </div>
                 </div>
@@ -287,150 +296,218 @@
             </ul>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">PM Application: 2T Physics Framework</h4>
+                <h4 style="color: #8b7fff;">PM Application: 4-Stage Dimensional Reduction</h4>
                 <p style="color: var(--text-secondary);">
-                    Principia Metaphysica uses a multi-stage compactification in the 2T framework:
+                    Principia Metaphysica uses a carefully structured 4-stage reduction pathway:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>26D &rarr; 14D&times;2:</strong> Sp(2,R) gauge fixing of two timelike dimensions</li>
-                    <li><strong>14D&times;2 &rarr; 7D&times;2:</strong> Compactify on 7D G<sub>2</sub> manifolds in each 14D half for SO(10) gauge symmetry</li>
-                    <li><strong>7D&times;2 &rarr; 4D:</strong> Shared timelike dimensions unify the two 7D sectors</li>
+                    <li><strong>Stage 1:</strong> 26D bulk with signature (24,2) - bosonic string critical dimension</li>
+                    <li><strong>Stage 2:</strong> Sp(2,R) gauge fixing → 13D (12,1) signature [<em>gauge projection</em>, NOT compactification!]</li>
+                    <li><strong>Stage 3:</strong> G₂ compactification: 13D → 6D (7D compact G₂ manifold for SO(10) gauge symmetry)</li>
+                    <li><strong>Stage 4:</strong> Torus compactification: 6D → 4D (2D torus with R ~ (5 TeV)<sup>-1</sup>)</li>
                 </ul>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    <strong>Critical distinction:</strong> Gauge fixing (Stage 2) eliminates ghost degrees of freedom via Sp(2,R) constraint,
+                    while geometric compactification (Stages 3-4) reduces physical dimensions. Total compact space: V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>).
+                </p>
                 <a href="g2-manifolds.html" class="component-link" style="display: inline-block; margin-top: 0.75rem;">
                     See G<sub>2</sub> manifolds &rarr;
                 </a>
             </div>
         </section>
 
-        <!-- 2T Physics: Dual 14D Halves with Shared Time -->
+        <!-- 4-Stage Dimensional Reduction Framework -->
         <section class="detail-section">
-            <h3>2T Physics: Kaluza-Klein in 14D&times;2 Framework</h3>
+            <h3>PM's 4-Stage Dimensional Reduction Framework</h3>
             <p>
-                Principia Metaphysica employs the <strong>2T physics framework</strong> (Bars et al.), where the fundamental
-                26D bulk with signature (24,2) splits into two 14D halves sharing two timelike dimensions. Each 14D half
-                undergoes independent Kaluza-Klein compactification, but the shared time structure enforces consistency
-                between the two sectors.
+                Principia Metaphysica employs a precise 4-stage reduction from 26D to 4D, carefully distinguishing
+                between <strong>gauge fixing</strong> (which eliminates unphysical degrees of freedom) and
+                <strong>geometric compactification</strong> (which reduces physical dimensions). The pathway proceeds:
+                26D (24,2) → 13D (12,1) → 6D → 4D.
             </p>
 
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        ds<sup>2</sup><sub>26D</sub> = &eta;<sub>AB</sub>dx<sup>A</sup>dx<sup>B</sup> + g<sub>i<sub>1</sub>j<sub>1</sub></sub>dy<sup>i<sub>1</sub></sup>dy<sup>j<sub>1</sub></sup> + g<sub>i<sub>2</sub>j<sub>2</sub></sub>dy<sup>i<sub>2</sub></sup>dy<sup>j<sub>2</sub></sup>
+                        ds<sup>2</sup><sub>13D</sub> = g<sub>&mu;&nu;</sub>(x)dx<sup>&mu;</sup>dx<sup>&nu;</sup> + g<sub>ij</sub>(y)dy<sup>i</sup>dy<sup>j</sup> + g<sub>ab</sub>(z)dz<sup>a</sup>dz<sup>b</sup>
                     </div>
                     <div class="formula-controls">
-                        <span class="foundation-badge pm-specific">2T Framework</span>
+                        <span class="foundation-badge pm-specific">4-Stage Reduction</span>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">&eta;<sub>AB</sub></div>
-                            <div class="component-name">(24,2) Metric</div>
-                            <div class="component-desc">26D bulk metric with signature (24,2): two timelike, 24 spacelike dimensions. A,B = 0,1,...,25</div>
+                            <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
+                            <div class="component-name">6D Spacetime Metric</div>
+                            <div class="component-desc">After G₂ compactification: (5,1) signature = 5 space + 1 time. μ,ν = 0,1,2,3,4,5</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">g<sub>i<sub>1</sub>j<sub>1</sub></sub></div>
-                            <div class="component-name">First 14D Half Metric</div>
-                            <div class="component-desc">Internal metric on first G<sub>2</sub> manifold (7D) plus 5 spacelike + 2 shared timelike = 14D total</div>
+                            <div class="component-symbol">g<sub>ij</sub></div>
+                            <div class="component-name">G₂ Manifold Metric</div>
+                            <div class="component-desc">7D exceptional holonomy manifold (Stage 3 compactification). i,j = 1,...,7</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">g<sub>i<sub>2</sub>j<sub>2</sub></sub></div>
-                            <div class="component-name">Second 14D Half Metric</div>
-                            <div class="component-desc">Internal metric on second G<sub>2</sub> manifold (7D) plus 5 spacelike + 2 shared timelike = 14D total</div>
+                            <div class="component-symbol">g<sub>ab</sub></div>
+                            <div class="component-name">Torus Metric</div>
+                            <div class="component-desc">2D torus with R ~ (5 TeV)<sup>-1</sup> (Stage 4 compactification). a,b = 1,2</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">Shared T<sup>2</sup></div>
-                            <div class="component-name">Timelike Structure</div>
-                            <div class="component-desc">Two timelike dimensions form a pseudo-Euclidean "time-torus" signature (-,-), shared by both 14D halves</div>
+                            <div class="component-symbol">13D (12,1)</div>
+                            <div class="component-name">Post-Gauge-Fixing Dimension</div>
+                            <div class="component-desc">After Stage 2 Sp(2,R) gauge fixing: 12 spatial + 1 timelike dimension (ghosts eliminated)</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">2T Physics Compactification</div>
+                        <div class="chain-title">4-Stage Dimensional Reduction Pathway</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            26D (24,2) splits via Sp(2,R) gauge fixing
+                            <strong>Stage 1:</strong> 26D (24,2) bulk - bosonic string critical dimension
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Each 14D half: (12,2) signature = 12 spatial + 2 timelike
+                            <strong>Stage 2:</strong> Sp(2,R) gauge fixing → 13D (12,1) [gauge projection, not compactification]
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Compactify 7D G<sub>2</sub> in each half: 14D &rarr; 7D effective per sector
+                            <strong>Stage 3:</strong> G₂ compactification: 13D → 6D (7D compact, SO(10) gauge group emerges)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Shared time dimensions unify to single 4D spacetime (3,1)
+                            <strong>Stage 4:</strong> Torus compactification: 6D → 4D (2D torus, M<sub>*</sub> ~ 5 TeV)
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            Final: 4D (3,1) spacetime with V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>) = 1.488×10<sup>-138</sup> GeV<sup>-9</sup>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <h4 style="margin-top: 2rem;">Kaluza-Klein Tower in 14D&times;2 Framework</h4>
+            <h4 style="margin-top: 2rem;">Kaluza-Klein Tower and Mass Scales</h4>
             <p>
-                In the 2T physics framework, each 14D half develops its own KK tower upon compactification.
-                The shared timelike structure ensures that the KK masses in both sectors are correlated.
+                The 4-stage reduction produces distinct KK towers at different mass scales. The 2D torus
+                compactification (Stage 4) generates the lightest KK modes at M<sub>*</sub> ~ 5 TeV, while
+                the G₂ compactification (Stage 3) produces much heavier modes at M<sub>GUT</sub> ~ 10<sup>16</sup> GeV.
             </p>
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        M<sub>KK</sub><sup>2</sup> = M<sub>*</sub><sup>2</sup> + (n/R<sub>G<sub>2</sub></sub>)<sup>2</sup>
+                        M<sub>KK,T²</sub> = n/R<sub>T²</sub> ~ n × (5 TeV)
+                        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+                        M<sub>KK,G₂</sub> = m/R<sub>G₂</sub> ~ m × (10<sup>16</sup> GeV)
                     </div>
                     <div class="formula-controls">
-                        <span class="foundation-badge pm-specific">2T KK Tower</span>
+                        <span class="foundation-badge pm-specific">Dual KK Towers</span>
                         <button class="expand-btn" title="Expand formula">&#x25BC;</button>
                     </div>
                 </div>
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">M<sub>*</sub></div>
-                            <div class="component-name">Fundamental Scale</div>
-                            <div class="component-desc">The fundamental mass scale from 26D reduction, M<sub>*</sub><sup>11</sup> ~ M<sub>Pl</sub><sup>2</sup></div>
+                            <div class="component-symbol">M<sub>KK,T²</sub></div>
+                            <div class="component-name">Torus KK Modes</div>
+                            <div class="component-desc">Lightest KK tower from Stage 4 (2D torus). First mode: ~5 TeV (potentially observable at colliders)</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">n</div>
-                            <div class="component-name">KK Mode Number</div>
-                            <div class="component-desc">Integer labeling harmonic modes on G<sub>2</sub> manifolds in each 14D half</div>
+                            <div class="component-symbol">M<sub>KK,G₂</sub></div>
+                            <div class="component-name">G₂ KK Modes</div>
+                            <div class="component-desc">Heavy KK tower from Stage 3 (7D G₂). First mode: ~10<sup>16</sup> GeV (affects gauge coupling unification)</div>
                         </div>
                         <div class="sub-component">
-                            <div class="component-symbol">R<sub>G<sub>2</sub></sub></div>
-                            <div class="component-name">G<sub>2</sub> Compactification Radius</div>
-                            <div class="component-desc">Effective size of the 7D G<sub>2</sub> manifolds: 1/R<sub>G<sub>2</sub></sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV</div>
+                            <div class="component-symbol">R<sub>T²</sub></div>
+                            <div class="component-name">Torus Radius</div>
+                            <div class="component-desc">2D torus compactification scale: R ~ (5 TeV)<sup>-1</sup> ~ 4×10<sup>-20</sup> m</div>
+                        </div>
+                        <div class="sub-component">
+                            <div class="component-symbol">R<sub>G₂</sub></div>
+                            <div class="component-name">G₂ Radius</div>
+                            <div class="component-desc">7D G₂ compactification scale: R ~ (10<sup>16</sup> GeV)<sup>-1</sup> ~ 2×10<sup>-32</sup> m</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
-                        <div class="chain-title">KK Spectrum in 2T Framework</div>
+                        <div class="chain-title">KK Spectrum in 4-Stage Framework</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Zero modes: Standard Model fields at low energy
+                            <strong>Zero modes:</strong> Standard Model fields (massless in KK sector)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            First KK modes: M<sub>KK</sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV (G<sub>2</sub> modes)
+                            <strong>Torus KK modes:</strong> First excitation at ~5 TeV, affects electroweak precision tests
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Dual sector coupling via shared time ensures mass degeneracy
+                            <strong>G₂ KK modes:</strong> First excitation at ~10<sup>16</sup> GeV, modifies gauge coupling running
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            Sp(2,R) gauge symmetry protects time structure
+                            <strong>Hierarchy separation:</strong> Factor of 10<sup>12</sup> between torus and G₂ scales
+                        </div>
+                        <div class="chain-step">
+                            <span class="step-arrow">&rarr;</span>
+                            <strong>Observability:</strong> Torus modes potentially accessible at future colliders (FCC)
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
-                <h4 style="color: #51cf66;">2T Physics Prediction</h4>
+                <h4 style="color: #51cf66;">Key Distinctions in PM's Dimensional Reduction</h4>
                 <p style="color: var(--text-secondary);">
-                    The 2T framework predicts that KK excitations appear in <strong>dual pairs</strong>, one from each
-                    14D sector. The shared timelike dimensions enforce equal mass spectra in both sectors, leading to
-                    characteristic "doublet" structure in the KK tower. This is a distinctive signature of the 26D &rarr; 14D&times;2
-                    compactification that distinguishes PM from standard KK theories.
+                    <strong>Gauge Fixing vs. Compactification:</strong> Stage 2 (26D → 13D) is <em>not</em> a geometric compactification.
+                    Sp(2,R) gauge fixing eliminates 13 unphysical ghost degrees of freedom from the (24,2) signature, projecting to
+                    physical (12,1) spacetime. Only Stages 3-4 (G₂ and torus) are true geometric compactifications.
+                </p>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    <strong>Two KK Towers:</strong> The hierarchy between R<sub>T²</sub> ~ (5 TeV)<sup>-1</sup> and
+                    R<sub>G₂</sub> ~ (10<sup>16</sup> GeV)<sup>-1</sup> produces phenomenologically distinct KK spectra.
+                    Torus modes may appear at colliders; G₂ modes affect high-energy unification.
                 </p>
             </div>
+        </section>
+
+        <!-- Gauge Fixing vs Compactification -->
+        <section class="detail-section">
+            <h3>Critical Distinction: Gauge Fixing vs. Geometric Compactification</h3>
+            <p>
+                A common source of confusion in PM's dimensional reduction is conflating <strong>gauge fixing</strong>
+                (Stage 2) with <strong>geometric compactification</strong> (Stages 3-4). These are fundamentally
+                different operations with distinct physical interpretations.
+            </p>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
+                <h4 style="color: #ff7eb6;">Stage 2: Sp(2,R) Gauge Fixing (26D → 13D)</h4>
+                <p style="color: var(--text-secondary);">
+                    <strong>Nature:</strong> Gauge projection that eliminates unphysical ghost degrees of freedom.
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li><strong>Mechanism:</strong> Sp(2,R) constraint removes 13 ghost coordinates from (24,2) signature</li>
+                    <li><strong>Result:</strong> 13D spacetime with physical (12,1) signature (12 space + 1 time)</li>
+                    <li><strong>NOT compactification:</strong> No internal manifold, no KK tower from this stage</li>
+                    <li><strong>Purpose:</strong> Projects to physical degrees of freedom, eliminating negative-norm states</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">Stages 3-4: Geometric Compactification</h4>
+                <p style="color: var(--text-secondary);">
+                    <strong>Nature:</strong> True dimensional reduction via compact internal manifolds.
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
+                    <li><strong>Stage 3 (G₂):</strong> 13D → 6D by compactifying on 7D G₂ manifold</li>
+                    <li><strong>Stage 4 (Torus):</strong> 6D → 4D by compactifying on 2D torus T<sup>2</sup></li>
+                    <li><strong>Total compact volume:</strong> V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>) = 1.488×10<sup>-138</sup> GeV<sup>-9</sup></li>
+                    <li><strong>KK towers:</strong> Modes at M<sub>G₂</sub> ~ 10<sup>16</sup> GeV and M<sub>T²</sub> ~ 5 TeV</li>
+                    <li><strong>Gauge groups:</strong> G₂ isometry → SO(10), torus gives additional U(1) factors</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                <strong>Summary:</strong> Dimensional counting goes 26 → 13 → 6 → 4, but only the last two transitions
+                (13 → 6 → 4) involve physical compactification. The first transition (26 → 13) is pure gauge projection,
+                selecting the physical sector of the theory.
+            </p>
         </section>
 
         <!-- Warped Extra Dimensions -->
@@ -497,9 +574,9 @@
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
                 <h4 style="color: #8b7fff;">Connection to PM</h4>
                 <p style="color: var(--text-secondary);">
-                    While PM's shared dimensions (T<sup>2</sup>) are flat with R ~ (5 TeV)<sup>-1</sup>,
-                    the internal G<sub>2</sub> manifold may incorporate warping or flux-induced effective
-                    warping to stabilize moduli and generate hierarchies within the SO(10) breaking pattern.
+                    PM's 2D torus (Stage 4) is flat with R ~ (5 TeV)<sup>-1</sup>, while the 7D G<sub>2</sub> manifold
+                    (Stage 3) may incorporate warping or flux-induced effective warping to stabilize moduli and generate
+                    hierarchies within the SO(10) breaking pattern.
                 </p>
                 <p style="color: var(--text-secondary); margin-top: 0.75rem;">
                     <strong>Warped correction to dimensional reduction:</strong> If the G<sub>2</sub> manifold
@@ -510,8 +587,9 @@
                     M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub> &times; &int;<sub>G₂</sub> e<sup>-2A(y)</sup>
                 </div>
                 <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
-                    where A(y) is the warp factor profile on the G<sub>2</sub> manifold. This can help address
-                    the hierarchy problem without requiring extremely large internal volumes.
+                    where A(y) is the warp factor profile on the G<sub>2</sub> manifold and V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>)
+                    is the total 9D internal volume (7D + 2D). This can help address the hierarchy problem without requiring
+                    extremely large internal volumes.
                 </p>
             </div>
         </section>

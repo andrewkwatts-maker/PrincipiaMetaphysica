@@ -239,6 +239,26 @@ class ModuliParameters:
     V_VEV = 2.0               # VEV scale [TeV] (condensate formation)
     T_ORTHO_NORMALIZED = 1.0  # Orthogonal time parameter [normalized]
 
+    # === MASHIACH MODULUS VEV (MASTERPLAN2 Derived) ===
+    # φ_M: Mashiach scalar VEV derived via weighted KKLT/LVS/topology
+    # Methods: KKLT (~1.93), LVS (~5.03), Topology (~1.32)
+    # Weighted: 40% KKLT + 20% LVS + 30% Topology + 10% phenomenological
+    PHI_M_CENTRAL = 2.493     # Central value [M_Pl units]
+    PHI_M_ERROR = 5.027       # Error estimate [M_Pl units]
+    PHI_M_MIN = 0.5           # Physical lower bound
+    PHI_M_MAX = 5.0           # Physical upper bound
+
+    # === INTERNAL VOLUME V_9 (MASTERPLAN2 Derived) ===
+    # V_9 for 7D G₂ × 2D torus compactification
+    # V_9 = M_Pl^2 / M_*^11 ~ 1.488×10^{-138} GeV^{-9}
+    M_STAR_GUT = 1e16         # GUT scale [GeV]
+    M_PLANCK = 1.22e19        # Planck mass [GeV]
+
+    @staticmethod
+    def V_9_volume():
+        """Internal volume V_9 = M_Pl^2 / M_*^11"""
+        return ModuliParameters.M_PLANCK**2 / ModuliParameters.M_STAR_GUT**11
+
     @staticmethod
     def condensate_gap():
         """Δ = λv / (1 + g·t_ortho / E_F)"""
@@ -1030,3 +1050,39 @@ class TwoTimePhysics:
     TACHYON_PROJECTED = True
     ANOMALY_FREE = True
     UNITARITY_PRESERVED = True
+
+
+class DimensionalStructure:
+    """Dimensional Reduction Framework (MASTERPLAN2 Clarification)
+
+    Stages:
+    1. Bulk: 26D (24,2) signature
+    2. Sp(2,R) Gauge Fixing: 26D → 13D (12,1) shadow [NOT compactification]
+    3. G₂ Compactification: 13D → 6D bulk (7D compact)
+    4. Observable Emergence: 6D → 4D (2D compact) + 3 shadow branes
+    """
+    D_BULK = 26
+    SIGNATURE_BULK = (24, 2)
+
+    # Stage 1: Sp(2,R) gauge fixing projects 26D→13D
+    D_AFTER_SP2R = 13
+    SIGNATURE_AFTER_SP2R = (12, 1)
+
+    # Stage 2: G₂ compactification 13D→6D
+    D_AFTER_G2 = 6
+    D_COMPACT_G2 = 7  # 7D G₂ manifold
+
+    # Stage 3: Final compactification 6D→4D
+    D_OBSERVABLE = 4
+    D_COMPACT_FINAL = 2  # 2D torus
+
+    # Validation
+    @staticmethod
+    def validate():
+        """Validate dimensional reduction stages"""
+        assert DimensionalStructure.D_AFTER_SP2R == 13, "Sp(2,R) must project to 13D"
+        assert DimensionalStructure.D_AFTER_G2 == DimensionalStructure.D_AFTER_SP2R - DimensionalStructure.D_COMPACT_G2, \
+            "G₂ compactification: 13D - 7D = 6D"
+        assert DimensionalStructure.D_OBSERVABLE == DimensionalStructure.D_AFTER_G2 - DimensionalStructure.D_COMPACT_FINAL, \
+            "Final: 6D - 2D = 4D"
+        return True
