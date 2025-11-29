@@ -42,5 +42,6 @@ S_landscape,1151.2925464970228,dimensionless,Landscape entropy S = log(N_vac),lo
 β_F,0.15,dimensionless,"F(R,T,τ) matter coupling from breathing mode",2φ₀ where φ₀ = 0.075 M_Pl,Yes (config.py),Passed,,,,,
 γ_F,0.0001,M_Pl^{-2},"F(R,T,τ) mixed RT coupling",g²/(M_Pl² √V_K) from multi-time coupling,Yes (config.py),Passed,,,,,
 δ_F,1e-19,s,"F(R,T,τ) orthogonal time derivative coefficient",g Δt_ortho from two-time structure,Yes (config.py),Passed,,,,,
+alpha_GUT_inv,-8.901822596517826,dimensionless,Unified gauge coupling 1/alpha at M_GUT,60% AS + 30% TC + 10% KK,Yes,In Progress,24.0,0.5,137.09092748549094,False,arXiv:hep-ph/0412173
 φ_M,TBD (v6.1+),dimensionless,Mashiach field stabilization value,To be derived from compactification (future work),Pending,Pending,,,,,
 V_8,TBD (v6.1+),dimensionless,Internal 8D manifold volume,To be derived from compactification (future work),Pending,Pending,,,,,
