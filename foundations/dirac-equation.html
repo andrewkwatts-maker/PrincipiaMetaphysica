@@ -142,9 +142,9 @@
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
                     <li><strong>26D bulk spinor: 8192 components</strong> - From Cl(24,2) representation. Validated: 2^(26/2) = 2^13 = 8192 ✓</li>
-                    <li><strong>13D shadow spinor: 64 components</strong> - From Cl(12,1) representation. Validated: 2^(13/2) ≈ 2^6 = 64 ✓</li>
-                    <li><strong>Reduction factor: 128 = 2^7</strong> - Dimensional reduction preserves power-of-two structure</li>
-                    <li><strong>Framework: 2T physics (24,2)</strong> - Two timelike dimensions provide gauge redundancy</li>
+                    <li><strong>Observable shadow spinor: 64 components</strong> - From 26D→14D×2 framework (M^26 = M^14_A ⊗ M^14_B). Validated: 64 ✓</li>
+                    <li><strong>Reduction factor: 128 = 2^7</strong> - 8192 (bulk) → 64 (observable) preserves power-of-two structure</li>
+                    <li><strong>Framework: 2T physics (24,2)</strong> - Two timelike dimensions; Sp(2,R) gauge symmetry on 14D×2 structure</li>
                 </ul>
             </div>
 
@@ -179,7 +179,7 @@
                         <div class="sub-component">
                             <div class="component-symbol">&Psi;<sub>P</sub></div>
                             <div class="component-name">Pneuma Spinor (Fundamental)</div>
-                            <div class="component-desc">8192-component spinor (2<sup>13</sup>) in 26D from Cl(24,2). The fundamental fermionic field from which geometry emerges as a spinor condensate. Reduces to 64 components in 13D shadow (Cl(12,1)).</div>
+                            <div class="component-desc">8192-component spinor (2<sup>13</sup>) in 26D from Cl(24,2). The fundamental fermionic field from which geometry emerges as a spinor condensate. The 26D→14D×2 framework (M^26 = M^14_A ⊗ M^14_B) yields 64 components in the observable shadow.</div>
                             <a href="../sections/pneuma-lagrangian.html" class="component-link">Learn more &rarr;</a>
                         </div>
                     </div>
@@ -197,7 +197,7 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <strong>13D shadow:</strong> Cl(12,1) → 2<sup>6</sup> = 64 components (validated ✓)
+                            <strong>Observable shadow (from 14D×2):</strong> 64 components (validated ✓)
                             <span class="foundation-badge pm-specific">Dimensional Reduction</span>
                         </div>
                         <div class="chain-step">
@@ -221,7 +221,7 @@
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
                 <li><strong>26D bulk: Cl(24,2)</strong> - Signature (24,2) with 2 timelike dimensions. Minimal spinor: 2^(26/2) = 8192 components (validated ✓)</li>
-                <li><strong>13D shadow: Cl(12,1)</strong> - After dimensional reduction. Minimal spinor: 2^⌊(13+1)/2⌋ = 64 components (validated ✓)</li>
+                <li><strong>Observable shadow (from 26D→14D×2):</strong> 64 components in effective theory (validated ✓)</li>
                 <li><strong>Reduction: 8192/64 = 128 = 2^7</strong> - Factor-of-128 reduction preserves power-of-two Clifford structure</li>
                 <li><strong>Master bulk action</strong> - Fermionic term primary; bosonic fields (gauge, gravity) emerge from spinor bilinears</li>
                 <li><strong>Geometry from condensate</strong> - Metric g<sub>MN</sub> ∼ ⟨Ψ̄<sub>P</sub> Γ<sub>(MN)</sub> Ψ<sub>P</sub>⟩ (spinor bivector condensate)</li>
@@ -231,7 +231,7 @@
                 The key generalization from standard 4D Dirac theory:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
-                <li>Dimensions: 4 (3,1) &rarr; 26 (24,2) bulk &rarr; 13D shadow &rarr; 4D observed</li>
+                <li>Dimensions: 4D observed &larr; 26D (24,2) bulk → 14D×2 structure (M^26 = M^14_A ⊗ M^14_B) via Sp(2,R) gauge</li>
                 <li>Clifford algebra: Cl(3,1) &rarr; Cl(24,2) &rarr; Cl(12,1) &rarr; Cl(3,1)</li>
                 <li>Spinor components: 4 &rarr; 8192 &rarr; 64 &rarr; 4 (3 generations × symmetry breaking)</li>
                 <li>Gamma matrices: 4×4 &rarr; 8192×8192 &rarr; 64×64 &rarr; 4×4</li>
@@ -250,7 +250,7 @@
 
             <h3>6D Dirac Equation (Intermediate Stage)</h3>
             <p>
-                After compactifying from 13D to 6D on the G₂ manifold, the effective theory in 6D
+                After compactifying the 26D→14D×2 framework to 6D on the G₂ manifold, the effective theory in 6D
                 contains a Dirac equation with Cl(5,1) gamma matrices:
             </p>
             <div class="expandable-formula">
@@ -336,12 +336,12 @@
             </div>
         </section>
 
-        <!-- 13D Pneuma Field -->
+        <!-- Observable Shadow Pneuma Field -->
         <section class="subsection">
-            <h2>The 13D Shadow Pneuma Field</h2>
+            <h2>The Observable Shadow Pneuma Field (from 26D→14D×2)</h2>
             <p>
-                The 13D shadow Pneuma field emerges from dimensional reduction of the fundamental 26D bulk field.
-                It satisfies the 13D Dirac equation with Cl(12,1) gamma matrices and has 64 components (validated).
+                The observable shadow Pneuma field emerges from the 26D→14D×2 framework (M^26 = M^14_A ⊗ M^14_B) via Sp(2,R) gauge symmetry.
+                It has 64 components in the effective theory (validated).
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-bottom: 1.5rem;">
@@ -353,7 +353,7 @@
                     <li><strong>26D bulk:</strong> Ψ<sub>P</sub> has 8192 components from Cl(24,2) - the master bulk action</li>
                     <li><strong>Geometry emerges:</strong> Metric g<sub>MN</sub> arises from spinor condensate ⟨Ψ̄<sub>P</sub> Γ<sub>(MN)</sub> Ψ<sub>P</sub>⟩</li>
                     <li><strong>Gauge fields emerge:</strong> A<sub>M</sub> from ⟨Ψ̄<sub>P</sub> Γ<sub>M</sub> Ψ<sub>P</sub>⟩ (spinor current)</li>
-                    <li><strong>Dimensional reduction:</strong> 26D → 13D shadow with 64-component spinor from Cl(12,1)</li>
+                    <li><strong>Dimensional framework:</strong> 26D → 14D×2 structure with 64-component spinor in observable shadow</li>
                     <li><strong>Generation structure:</strong> 64 components connect to SO(10) embedding and 3 fermion generations</li>
                 </ul>
             </div>
@@ -385,7 +385,7 @@
                         <td>2T bulk - fermionic primacy</td>
                     </tr>
                     <tr style="background: rgba(81, 207, 102, 0.05); border-left: 3px solid #51cf66;">
-                        <td><strong>13D</strong></td>
+                        <td><strong>Observable (from 14D×2)</strong></td>
                         <td><strong>(12,1)</strong></td>
                         <td><strong>Cl(12,1)</strong></td>
                         <td><strong>2<sup>6</sup> = 64</strong></td>
@@ -429,13 +429,13 @@
                         Signature (24,2) provides 2 timelike dimensions for Sp(2,R) gauge redundancy.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>26D → 13D shadow: Cl(24,2) → Cl(12,1) via dimensional reduction:</strong>
-                        Compactification to 13D shadow manifold. Clifford algebra reduces to Cl(12,1) with
+                        <strong>26D → 14D×2 structure: Cl(24,2) framework with M^26 = M^14_A ⊗ M^14_B:</strong>
+                        Sp(2,R) gauge symmetry on the 14D×2 dual structure. Observable shadow has 64 components with
                         spinor dimension 2^⌊(13+1)/2⌋ = 2^6 = 64 components (✓ validated). Reduction factor
                         8192/64 = 128 = 2^7 preserves power-of-two structure.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>13D → 7D: Cl(12,1) → Cl(6,1) via compactification:</strong>
+                        <strong>Observable shadow → 7D: Compactification on G₂ manifold:</strong>
                         Compactify on 6D internal space (e.g., Calabi-Yau or T^6). Cl(6,1) has spinor dimension
                         2^⌊7/2⌋ = 2^3 = 8 components. The 64-component spinor decomposes into 64/8 = 8 families
                         of 7D spinors.
