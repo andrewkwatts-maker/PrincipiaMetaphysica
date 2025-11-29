@@ -1,1 +1,188 @@
-# Root Directory Cleanup Plan **Date:** 2025-11-29 **Purpose:** Remove obsolete files from earlier work --- ## Files to DELETE ### Obsolete ISSUE1-5 Documentation (Old Issue Analysis) These are from the original issue discovery phase and have been superseded by the new 5-angle reports: ``` ISSUE1_ALGEBRAIC_SOLUTION.md ISSUE1_COMPUTATIONAL_SOLUTION.md ISSUE1_EFT_SOLUTION.md ISSUE1_EXECUTIVE_SUMMARY.md ISSUE1_GEOMETRIC_SOLUTION.md ISSUE1_HETEROGENEOUS_BRANE_SOLUTION.md ISSUE1_QUICK_REFERENCE.md ISSUE1_STRING_SOLUTION.md ISSUE2_ASYMPTOTIC_SOLUTION.md ISSUE2_PHENOMENOLOGICAL_SOLUTION.md ISSUE2_STRING_SOLUTION.md ISSUE2_SYNTHESIS_FINAL.md ISSUE3_ALGEBRAIC_SOLUTION.md ISSUE3_COMPUTATIONAL_SOLUTION.md ISSUE3_PHENOMENOLOGICAL_SOLUTION.md ISSUE3_STRING_SOLUTION.md ISSUE4_MPL_EFFECTIVE_ANALYSIS.md ISSUE5_CMB_BUBBLES_ANALYSIS.md ``` **Reason:** Replaced by comprehensive 6-issue 5-angle analysis reports ### Obsolete Agent Reports (Deployment Phase) These are from the Phase 1 deployment and have been integrated: ``` AGENT1_ABSTRACT_INTRO_UPDATE.md AGENT2_THEORY_SECTIONS_UPDATE.md AGENT3_FOUNDATIONS_UPDATE.md AGENT4_BEGINNERS_GUIDE_UPDATE.md AGENT5_CMB_BUBBLES_REWRITE.md AGENT6_REFERENCES_UPDATE.md AGENT7_PHILOSOPHICAL_UPDATE.md AGENT8_COMPUTATIONAL_UPDATE.md AGENT8_QUICK_REFERENCE.md AGENT8_SUMMARY.md AGENT9_VISUALIZATIONS_CREATED.md AGENT10_FINAL_INTEGRATION_REPORT.md ``` **Reason:** Work completed and integrated into main files ### Obsolete Status Reports These are old progress reports now superseded: ``` CLEANUP_SUMMARY.md (old cleanup) DEPLOYMENT_COMPLETE.md (old deployment) CONSISTENCY_AUDIT_PLAN.md (superseded by actual audit) CRITIQUE_UPDATE_REPORT.md (old critique) CRITIQUE_UPDATES_SUMMARY.md (old summary) BEGINNERS_GUIDE_UPDATE.md (superseded by agent reports) FOUNDATIONS_UPDATE.md (superseded by agent reports) IMPROVEMENTS_SUMMARY.md (old improvements) CROSS_VALIDATION_REPORT.md (old validation) ``` **Reason:** Completed tasks from previous phases ### Obsolete Dimensional Issue Files These are from the old dimensional reduction bug investigation: ``` DIMENSIONAL_FIXES_REQUIRED.md DIMENSIONAL_ISSUE_SUMMARY.md DIMENSIONAL_STRUCTURE_FINAL.md ``` **Reason:** Superseded by ISSUE_DIMENSIONAL_REDUCTION_5ANGLE_REPORT.md ### Obsolete Python Scripts These are old test/debug scripts not referenced in build.bat: ``` add_2t_params.py (one-time migration script, already run) asymptotic_safety.py (superseded by asymptotic_safety_gauge.py) cross_references.py (utility, not in build process) dimensional_reduction_verification.py (debug script) gauge_unification_KK.py (superseded by gauge_unification_merged.py) gw_dispersion.py (standalone test, not in build) lqg_connections.py (exploratory, not used) moduli_simulation.py (standalone test) proton_decay_corrected.py (analysis script, not in build) proton_decay_dimensional.py (analysis script) proton_decay_instantons.py (analysis script) proton_decay_pneuma.py (analysis script) proton_decay_rg.py (analysis script) quick_validate.py (debug utility) shared_dimensions_verification.py (verification script) threshold_corrections_gauge_unification.py (old version, superseded) update_sections_g2.py (one-time update script) ``` **Reason:** Not referenced in build.bat, either one-time scripts or superseded --- ## Files to KEEP ### Essential Build Files ``` build.bat ← Build script config.py ← Central configuration (REQUIRED) generate_js_constants.py ← Called by build.bat (REQUIRED) SimulateTheory.py ← Main simulation (REQUIRED) validation_modules.py ← Validation utilities ``` ### Active Gauge Unification (Phase 2) ``` asymptotic_safety_gauge.py ← 60% contribution threshold_corrections.py ← 30% contribution gauge_unification_merged.py ← Merged solution ``` ### Current Documentation ``` 26D_TO_14D_UPDATES.md ← 2T physics transition plan ARCHITECTURE.md ← Project structure CONFIG_README.md ← Config documentation HOW_VALUES_WORK.md ← Value propagation guide CONSISTENCY_AUDIT_REPORT.md ← Latest audit CRITICAL_FIX_w0_sign.md ← Important fix record ISSUE_DISCOVERY_COMPLETE_AUDIT.md ← Complete audit ``` ### New 5-Angle Analysis Reports (Keep) ``` ISSUE_DIMENSIONAL_REDUCTION_5ANGLE_REPORT.md ISSUE_GAUGE_UNIFICATION_5ANGLE_REPORT.md ISSUE_GENERATION_COUNT_5ANGLE_REPORT.md ISSUE_SPINOR_DIMENSION_5ANGLE_REPORT.md ISSUE_TBD_PARAMETERS_5ANGLE_REPORT.md ISSUE_W_ATTRACTOR_5ANGLE_REPORT.md MASTER_ISSUE_FIX_PLAN.md ← Master plan MATHEMATICAL_ISSUES_ASSESSMENT_COMPLETE.md ← Assessment summary ``` ### Recent Updates ``` COSMOLOGY_UPDATE_SUMMARY.md ← Recent cosmology updates FIX_SUMMARY_GENERATION_COUNT.md ← Fix documentation GENERATION_COUNT_QUICK_REFERENCE.md ← Quick reference PHASE2_2T_KEY_POINTS.md ← 2T physics summary PHASE2_IMPLEMENTATION_PLAN.md ← Phase 2 plan PAPER_2T_UPDATE_SECTION.html ← Section for paper ``` ### Research Files ``` appendix_G_H.md ← Appendix content discrete_spacetime.md ← Research notes ``` --- ## Summary **Total Files:** - MD files: 79 - Python files: 24 **To Delete:** - MD files: ~45 obsolete files - Python files: ~14 unused scripts **To Keep:** - MD files: ~34 active/current files - Python files: ~10 essential scripts **Cleanup Impact:** - Remove ~57% of MD files (45/79) - Remove ~58% of Python files (14/24) - Keep all essential build and current documentation - Archive old issue analysis (superseded by 5-angle reports) 
+# Root Directory Cleanup Plan
+
+**Date:** 2025-11-29
+**Purpose:** Remove obsolete files from previous versions
+
+---
+
+## Files to DELETE
+
+### Obsolete ISSUE1-5 Documentation (Old Issue Analysis)
+These are from the original issue discovery phase and have been superseded by the new 5-angle reports:
+
+```
+ISSUE1_ALGEBRAIC_SOLUTION.md
+ISSUE1_COMPUTATIONAL_SOLUTION.md
+ISSUE1_EFT_SOLUTION.md
+ISSUE1_EXECUTIVE_SUMMARY.md
+ISSUE1_GEOMETRIC_SOLUTION.md
+ISSUE1_HETEROGENEOUS_BRANE_SOLUTION.md
+ISSUE1_QUICK_REFERENCE.md
+ISSUE1_STRING_SOLUTION.md
+ISSUE2_ASYMPTOTIC_SOLUTION.md
+ISSUE2_PHENOMENOLOGICAL_SOLUTION.md
+ISSUE2_STRING_SOLUTION.md
+ISSUE2_SYNTHESIS_FINAL.md
+ISSUE3_ALGEBRAIC_SOLUTION.md
+ISSUE3_COMPUTATIONAL_SOLUTION.md
+ISSUE3_PHENOMENOLOGICAL_SOLUTION.md
+ISSUE3_STRING_SOLUTION.md
+ISSUE4_MPL_EFFECTIVE_ANALYSIS.md
+ISSUE5_CMB_BUBBLES_ANALYSIS.md
+```
+
+**Reason:** Replaced by comprehensive 6-issue 5-angle analysis reports
+
+### Obsolete Agent Reports (Deployment Phase)
+These are from the Phase 1 deployment and have been integrated:
+
+```
+AGENT1_ABSTRACT_INTRO_UPDATE.md
+AGENT2_THEORY_SECTIONS_UPDATE.md
+AGENT3_FOUNDATIONS_UPDATE.md
+AGENT4_BEGINNERS_GUIDE_UPDATE.md
+AGENT5_CMB_BUBBLES_REWRITE.md
+AGENT6_REFERENCES_UPDATE.md
+AGENT7_PHILOSOPHICAL_UPDATE.md
+AGENT8_COMPUTATIONAL_UPDATE.md
+AGENT8_QUICK_REFERENCE.md
+AGENT8_SUMMARY.md
+AGENT9_VISUALIZATIONS_CREATED.md
+AGENT10_FINAL_INTEGRATION_REPORT.md
+```
+
+**Reason:** Work completed and integrated into main files
+
+### Obsolete Status Reports
+These are old progress reports now superseded:
+
+```
+CLEANUP_SUMMARY.md (old cleanup)
+DEPLOYMENT_COMPLETE.md (old deployment)
+CONSISTENCY_AUDIT_PLAN.md (superseded by actual audit)
+CRITIQUE_UPDATE_REPORT.md (old critique)
+CRITIQUE_UPDATES_SUMMARY.md (old summary)
+BEGINNERS_GUIDE_UPDATE.md (superseded by agent reports)
+FOUNDATIONS_UPDATE.md (superseded by agent reports)
+IMPROVEMENTS_SUMMARY.md (old improvements)
+CROSS_VALIDATION_REPORT.md (old validation)
+```
+
+**Reason:** Completed tasks from previous phases
+
+### Obsolete Dimensional Issue Files
+These are from the old dimensional reduction bug investigation:
+
+```
+DIMENSIONAL_FIXES_REQUIRED.md
+DIMENSIONAL_ISSUE_SUMMARY.md
+DIMENSIONAL_STRUCTURE_FINAL.md
+```
+
+**Reason:** Superseded by ISSUE_DIMENSIONAL_REDUCTION_5ANGLE_REPORT.md
+
+### Obsolete Python Scripts
+These are old test/debug scripts not referenced in build.bat:
+
+```
+add_2t_params.py (one-time migration script, already run)
+asymptotic_safety.py (superseded by asymptotic_safety_gauge.py)
+cross_references.py (utility, not in build process)
+dimensional_reduction_verification.py (debug script)
+gauge_unification_KK.py (superseded by gauge_unification_merged.py)
+gw_dispersion.py (standalone test, not in build)
+lqg_connections.py (exploratory, not used)
+moduli_simulation.py (standalone test)
+proton_decay_corrected.py (analysis script, not in build)
+proton_decay_dimensional.py (analysis script)
+proton_decay_instantons.py (analysis script)
+proton_decay_pneuma.py (analysis script)
+proton_decay_rg.py (analysis script)
+quick_validate.py (debug utility)
+shared_dimensions_verification.py (verification script)
+threshold_corrections_gauge_unification.py (old version, superseded)
+update_sections_g2.py (one-time update script)
+```
+
+**Reason:** Not referenced in build.bat, either one-time scripts or superseded
+
+---
+
+## Files to KEEP
+
+### Essential Build Files
+```
+build.bat ← Build script
+config.py ← Central configuration (REQUIRED)
+generate_js_constants.py ← Called by build.bat (REQUIRED)
+SimulateTheory.py ← Main simulation (REQUIRED)
+validation_modules.py ← Validation utilities
+```
+
+### Active Gauge Unification (Phase 2)
+```
+asymptotic_safety_gauge.py ← 60% contribution
+threshold_corrections.py ← 30% contribution
+gauge_unification_merged.py ← Merged solution
+```
+
+### Current Documentation
+```
+26D_TO_14D_UPDATES.md ← 2T physics transition plan
+ARCHITECTURE.md ← Project structure
+CONFIG_README.md ← Config documentation
+HOW_VALUES_WORK.md ← Value propagation guide
+CONSISTENCY_AUDIT_REPORT.md ← Latest audit
+CRITICAL_FIX_w0_sign.md ← Important fix record
+ISSUE_DISCOVERY_COMPLETE_AUDIT.md ← Complete audit
+```
+
+### New 5-Angle Analysis Reports (Keep)
+```
+ISSUE_DIMENSIONAL_REDUCTION_5ANGLE_REPORT.md
+ISSUE_GAUGE_UNIFICATION_5ANGLE_REPORT.md
+ISSUE_GENERATION_COUNT_5ANGLE_REPORT.md
+ISSUE_SPINOR_DIMENSION_5ANGLE_REPORT.md
+ISSUE_TBD_PARAMETERS_5ANGLE_REPORT.md
+ISSUE_W_ATTRACTOR_5ANGLE_REPORT.md
+MASTER_ISSUE_FIX_PLAN.md ← Master plan
+MATHEMATICAL_ISSUES_ASSESSMENT_COMPLETE.md ← Assessment summary
+```
+
+### Recent Updates
+```
+COSMOLOGY_UPDATE_SUMMARY.md ← Recent cosmology updates
+FIX_SUMMARY_GENERATION_COUNT.md ← Fix documentation
+GENERATION_COUNT_QUICK_REFERENCE.md ← Quick reference
+PHASE2_2T_KEY_POINTS.md ← 2T physics summary
+PHASE2_IMPLEMENTATION_PLAN.md ← Phase 2 plan
+PAPER_2T_UPDATE_SECTION.html ← Section for paper
+```
+
+### Research Files
+```
+appendix_G_H.md ← Appendix content
+discrete_spacetime.md ← Research notes
+```
+
+---
+
+## Summary
+
+**Total Files:**
+- MD files: 79
+- Python files: 24
+
+**To Delete:**
+- MD files: ~45 obsolete files
+- Python files: ~14 unused scripts
+
+**To Keep:**
+- MD files: ~34 active/current files
+- Python files: ~10 essential scripts
+
+**Cleanup Impact:**
+- Remove ~57% of MD files (45/79)
+- Remove ~58% of Python files (14/24)
+- Keep all essential build and current documentation
+- Archive old issue analysis (superseded by 5-angle reports)
