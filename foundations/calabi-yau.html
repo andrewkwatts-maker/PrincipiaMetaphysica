@@ -42,12 +42,12 @@
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.1); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
                 <h4 style="color: #8b7fff;">2T Physics Framework</h4>
                 <p style="color: var(--text-secondary);">
-                    <strong>In the 26D→14D×2 framework</strong>, each 14-dimensional half contains its own
-                    <strong>Calabi-Yau fourfold compactification</strong>. The two halves M<sub>A</sub><sup>14</sup>
-                    and M<sub>B</sub><sup>14</sup> share timelike structure but have independent CY4 spaces:
+                    <strong>In the 2T framework</strong>, the 26D bulk with signature (24,2) is projected via Sp(2,R) gauge fixing
+                    to a <strong>13D shadow with signature (12,1)</strong>, which then undergoes <strong>G₂ compactification</strong>
+                    rather than CY4 compactification (though CY4 concepts inform the topology):
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>Structure:</strong> Each half: R<sup>1,3</sup> × CY4 (4D spacetime + 8D internal)</li>
+                    <li><strong>Structure:</strong> 13D shadow → 6D bulk (with 7D G₂ compact)</li>
                     <li><strong>Mirror Symmetry:</strong> CY4<sub>A</sub> and CY4<sub>B</sub> are mirror pairs, χ<sub>A</sub> + χ<sub>B</sub> = 72 + 72</li>
                     <li><strong>Topology:</strong> χ<sub>eff</sub> = 144 (flux-dressed effective Euler characteristic across both halves)</li>
                     <li><strong>Generations:</strong> n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3 (divisor 48 from SO(10) embedding)</li>
@@ -169,13 +169,13 @@
                     &chi; = 2(h<sup>1,1</sup> - h<sup>2,1</sup>) = 2(4 - 0) = 8 per CY3 formula<br>
                     <br>
                     <strong>Flux-dressed effective:</strong><br>
-                    &chi;<sub>eff</sub> = 72 per half (each 14D CY4)<br>
+                    &chi;<sub>eff</sub> = 144 from flux-dressed G₂ topology<br>
                     &chi;<sub>eff,total</sub> = 144 (both halves combined)
                 </div>
                 <p style="color: var(--text-secondary); margin-top: 1rem;">
                     The <strong>flux-dressed effective Euler characteristic</strong> χ<sub>eff</sub> = 144 differs from
                     the bare topological value due to <strong>flux quantization</strong> in the KKLT stabilization mechanism.
-                    Mirror symmetry relates the two halves: χ<sub>A</sub> + χ<sub>B</sub> = 72 + 72, where each 14D half
+                    The effective Euler characteristic χ<sub>eff</sub> = 144 arises from flux dressing on the G₂ manifold in the 13D shadow
                     contains a CY4 with χ = 72. Flux dressing is essential for realistic modulus stabilization.
                 </p>
             </div>
@@ -216,7 +216,7 @@
                         <td><strong>CY4</strong></td>
                         <td>4</td>
                         <td>8</td>
-                        <td><strong>F-theory, PM's 2T framework</strong> (14D &rarr; R<sup>1,3</sup> × CY4, per half)</td>
+                        <td><strong>F-theory, PM's 2T framework</strong> (13D → G₂ compactification)</td>
                     </tr>
                 </tbody>
             </table>
@@ -227,7 +227,7 @@
             <h3>Fermion Generations from Topology</h3>
             <p>
                 The number of fermion generations is determined by the topology of the compact space.
-                In the 2T physics framework with 26D→14D×2 structure, the generation count arises
+                In the 2T physics framework with 26D (24,2) → Sp(2,R) → 13D (12,1) structure, the generation count arises
                 from the combined topology of both CY4 spaces with flux reduction.
             </p>
             <div class="expandable-formula">
@@ -260,7 +260,7 @@
                         <div class="sub-component">
                             <div class="component-symbol">χ<sub>A</sub> + χ<sub>B</sub></div>
                             <div class="component-name">Mirror Symmetry</div>
-                            <div class="component-desc">χ<sub>A</sub> + χ<sub>B</sub> = 72 + 72 = 144; each 14D half contributes χ = 72</div>
+                            <div class="component-desc">χ<sub>eff</sub> = 144 from flux-dressed G₂ topology in 13D shadow</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
@@ -343,7 +343,7 @@
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
                 <h4 style="color: #8b7fff;">2T Physics Implementation</h4>
                 <p style="color: var(--text-secondary);">
-                    In the 26D→14D×2 framework, each 14-dimensional half contains an independent
+                    In the 2T framework, the 13D shadow (from 26D bulk via Sp(2,R) gauge fixing) compactifies on a G₂ manifold with
                     Calabi-Yau fourfold. The two CY4 spaces CY4<sub>A</sub> and CY4<sub>B</sub> are related by mirror symmetry:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
@@ -445,7 +445,7 @@
                 <li><strong>1996:</strong> Vafa introduces F-theory using CY4 elliptic fibrations</li>
                 <li><strong>1998:</strong> Bars develops 2T physics framework with (25+2)D signature</li>
                 <li><strong>2009:</strong> Beasley-Heckman-Vafa develop local F-theory GUT model building</li>
-                <li><strong>PM:</strong> Integration of 2T physics with F-theory CY4 compactifications in 26D→14D×2 framework</li>
+                <li><strong>PM:</strong> Integration of 2T physics with G₂ compactifications in 26D (24,2) → 13D (12,1) framework</li>
             </ul>
         </section>
 
