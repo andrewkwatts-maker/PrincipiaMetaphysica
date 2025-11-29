@@ -1,0 +1,21 @@
+Scanning for version references...
+================================================================================
+Error reading h:\Github\PrincipiaMetaphysica\dimensional_reduction_output.txt: 'utf-8' codec can't decode byte 0xe4 in position 2467: invalid continuation byte
+Error reading h:\Github\PrincipiaMetaphysica\output.txt: 'utf-8' codec can't decode byte 0xe4 in position 2467: invalid continuation byte
+
+[REPORT] Found 1064 version references in 66 files:
+
+
+ARCHITECTURE.md (2 matches):
+--------------------------------------------------------------------------------
+Traceback (most recent call last):
+  File "H:\Github\PrincipiaMetaphysica\remove_versioning.py", line 237, in <module>
+    scanner.report()
+    ~~~~~~~~~~~~~~^^
+  File "H:\Github\PrincipiaMetaphysica\remove_versioning.py", line 136, in report
+    print(f"  Line {line_num}: {line[:100]}")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u03b7' in position 37: character maps to <undefined>
