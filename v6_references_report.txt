@@ -1,0 +1,1266 @@
+================================================================================
+DETAILED v6.x VERSION REFERENCES REPORT
+================================================================================
+
+Total matches: 320
+Total files: 57
+
+VERSION BREAKDOWN:
+--------------------------------------------------------------------------------
+  v6.0: 17 occurrences
+  v6.1: 147 occurrences
+  v6.2: 23 occurrences
+  v6.3: 4 occurrences
+  v6.4: 52 occurrences
+  v6.5: 55 occurrences
+  v6.6: 1 occurrences
+  version 6.0: 2 occurrences
+  version 6.1: 12 occurrences
+  version 6.2: 2 occurrences
+  version 6.5: 5 occurrences
+
+
+================================================================================
+FILE: ARCHITECTURE.md (1 matches)
+================================================================================
+
+Line 51: [v6.1]
+  - v6.1 predictions (m_KK, η, c_μν)
+
+
+================================================================================
+FILE: CONSISTENCY_AUDIT_REPORT.md (10 matches)
+================================================================================
+
+Line 2: [v6.1]
+  **Principia Metaphysica v6.1+**
+
+Line 11: [v6.1]
+  This comprehensive audit examined all theoretical claims, parameter values, and predictions across the Principia Metaphysica v6.1+ framework. The audit identified **1 CRITICAL bug**, **4 major inconsi
+
+Line 58: [v6.1]
+  - `theory_parameters_v6.1.csv` (contains wrong value: -0.8461... should be checked)
+
+Line 184: [v6.1]
+  **Issue:** Two different generation formulas in `theory_parameters_v6.1.csv`:
+
+Line 203: [v6.1]
+  ### 🟡 MINOR #3: Kaluza-Klein Mass Scale Missing from v6.1 Predictions
+
+Line 219: [v6.1]
+  **Issue:** In `theory_parameters_v6.1.csv`, these parameters are marked "TBD (v6.1)":
+
+Line 294: [v6.1]
+  **Issue:** `theory_parameters_v6.1.csv` line 22 shows:
+
+Line 486: [v6.1]
+  **Issue:** `theory_parameters_v6.1.csv` has mixed validation statuses:
+
+Line 597: [v6.1]
+  2. **Regenerate CSV:** Run `SimulateTheory.py` after fixing w_0 to update `theory_parameters_v6.1.csv`
+
+Line 641: [v6.1]
+  The Principia Metaphysica v6.1+ framework is **largely internally consistent**, with most parameters matching across Python, JavaScript, and HTML files. However, the **critical sign error in config.py
+
+
+================================================================================
+FILE: COSMOLOGY_UPDATE_SUMMARY.md (2 matches)
+================================================================================
+
+Line 60: [V6.1]
+  - All new sections properly formatted with V6.1 badges
+
+Line 96: [V6.1]
+  - New sections use consistent styling with existing V6.1 updates
+
+
+================================================================================
+FILE: CRITICAL_FIX_w0_sign.md (2 matches)
+================================================================================
+
+Line 62: [v6.1]
+  ✅ `theory_parameters_v6.1.csv` successfully regenerated with corrected w₀ value
+
+Line 87: [v6.1]
+  3. ✅ `theory_parameters_v6.1.csv` - Regenerated with correct w₀
+
+
+================================================================================
+FILE: DEPLOYMENT_READY.txt (2 matches)
+================================================================================
+
+Line 2: [v6.2]
+  PRINCIPIA METAPHYSICA v6.2 - DEPLOYMENT READY
+
+Line 29: [v6.1]
+  git add config.py foundations/*.html sections/*.html principia-metaphysica-paper.html theory_parameters_v6.1.csv AGENT*.md ISSUE*.md *.txt
+
+
+================================================================================
+FILE: DIMENSIONAL_REDUCTION_SUMMARY.txt (1 matches)
+================================================================================
+
+Line 3: [v6.1]
+  Principia Metaphysica v6.1 - Computational Verification
+
+
+================================================================================
+FILE: FIX_SUMMARY_GENERATION_COUNT.md (4 matches)
+================================================================================
+
+Line 6: [v6.4]
+  **Version:** v6.4.1 (hotfix)
+
+Line 62: [v6.4]
+  **CSV Output (`theory_parameters_v6.4.csv`):**
+
+Line 126: [v6.4]
+  2. **theory_parameters_v6.4.csv** (auto-generated)
+
+Line 151: [v6.4]
+  grep "Generations," theory_parameters_v6.4.csv
+
+
+================================================================================
+FILE: GENERATION_COUNT_QUICK_REFERENCE.md (5 matches)
+================================================================================
+
+Line 118: [v6.4]
+  grep "Generations," theory_parameters_v6.4.csv
+
+Line 124: [v6.4]
+  grep "Generations" theory_parameters_v6.4.csv
+
+Line 131: [v6.4]
+  grep "χ_KPneuma," theory_parameters_v6.4.csv
+
+Line 159: [v6.4]
+  - **Output:** `theory_parameters_v6.4.csv` (line 11)
+
+Line 173: [v6.4]
+  *Version: v6.4.1 | Date: 2025-11-29*
+
+
+================================================================================
+FILE: ISSUES_2-5_EXECUTIVE_SUMMARY.md (4 matches)
+================================================================================
+
+Line 4: [v6.2]
+  **Framework Version**: v6.2 (post-shared-dimensions update)
+
+Line 127: [v6.1]
+  **Problem**: `SimulateTheory.py:1027` has `V_8 = TBD (v6.1+)`
+
+Line 240: [v6.1]
+  - [ ] Regenerate theory_parameters_v6.1.csv
+
+Line 246: [v6.1]
+  - [ ] Fix theory_parameters_v6.1.csv line 12
+
+
+================================================================================
+FILE: ISSUE_DIMENSIONAL_REDUCTION_5ANGLE_REPORT.md (4 matches)
+================================================================================
+
+Line 3: [v6.4]
+  **Framework**: Principia Metaphysica v6.4
+
+Line 121: [v6.1]
+  #### **Framework A: Shared Extra Dimensions (v6.1)**
+
+Line 143: [v6.4]
+  #### **Framework B: 14D×2 with 2T Physics (v6.4)**
+
+Line 321: [v6.4]
+  **Current CSV** (`theory_parameters_v6.4.csv`):
+
+
+================================================================================
+FILE: ISSUE_DISCOVERY_COMPLETE_AUDIT.md (12 matches)
+================================================================================
+
+Line 2: [v6.1]
+  ## Principia Metaphysica v6.1+ Devil's Advocate Analysis
+
+Line 42: [v6.1]
+  Value: 'TBD (v6.1+)'
+
+Line 107: [v6.1]
+  Value: 'TBD (v6.1+)'
+
+Line 186: [v6.2]
+  D_INTERNAL = 7  # G2 manifold in v6.2
+
+Line 202: [v6.1]
+  **Version A (v6.1):** 13D with 4 branes
+
+Line 209: [v6.2]
+  **Version B (v6.2):** 6D with G2 manifold
+
+Line 222: [v6.1]
+  4. HTML pages use v6.1, Python code uses v6.2
+
+Line 226: [v6.1]
+  # Stay with v6.1 (4 branes, 13D)
+
+Line 233: [v6.2]
+  **Recommended Fix - Option 2 (v6.2 Shared Dimensions):**
+
+Line 559: [v6.1]
+  `theory_parameters_v6.1.csv` may still show "TBD" if not regenerated
+
+Line 759: [v6.1]
+  - Choose v6.1 or v6.2 consistently
+
+Line 793: [v6.1]
+  - Regenerate theory_parameters_v6.1.csv
+
+
+================================================================================
+FILE: ISSUE_GAUGE_UNIFICATION_5ANGLE_REPORT.md (1 matches)
+================================================================================
+
+Line 4: [v6.3]
+  **Framework**: Principia Metaphysica v6.3+
+
+
+================================================================================
+FILE: ISSUE_GENERATION_COUNT_5ANGLE_REPORT.md (7 matches)
+================================================================================
+
+Line 4: [v6.4]
+  **Version:** v6.4
+
+Line 11: [v6.4]
+  **ISSUE:** `theory_parameters_v6.4.csv` shows contradictory generation count values:
+
+Line 793: [v6.4]
+  # TOPOLOGY & GENERATIONS (FIXED v6.4.1)
+
+Line 933: [v6.4]
+  # HARD-CODED VALUES REGISTRY (v6.4.1 UPDATE)
+
+Line 1025: [v6.4]
+  3. ✅ **Run simulation** to regenerate theory_parameters_v6.4.csv
+
+Line 1053: [v6.4]
+  grep "Generations," theory_parameters_v6.4.csv
+
+Line 1057: [v6.4]
+  grep "χ_KPneuma," theory_parameters_v6.4.csv
+
+
+================================================================================
+FILE: ISSUE_SPINOR_DIMENSION_5ANGLE_REPORT.md (1 matches)
+================================================================================
+
+Line 598: [v6.4]
+  - `H:\Github\PrincipiaMetaphysica\theory_parameters_v6.4.csv` (rows 7-8)
+
+
+================================================================================
+FILE: ISSUE_TBD_PARAMETERS_5ANGLE_REPORT.md (17 matches)
+================================================================================
+
+Line 6: [v6.4]
+  **Framework:** Principia Metaphysica v6.4
+
+Line 7: [v6.1]
+  **Parameters Analyzed:** φ_M and V_8 (currently "TBD (v6.1+)" and "Pending")
+
+Line 18: [v6.1]
+  φ_M,TBD (v6.1+),dimensionless,Mashiach field stabilization value
+
+Line 19: [v6.1]
+  V_8,TBD (v6.1+),dimensionless,Internal 8D manifold volume
+
+Line 1642: [v6.4]
+  **File:** `H:\Github\PrincipiaMetaphysica\theory_parameters_v6.4.csv`
+
+Line 1656: [v6.1]
+  φ_M,TBD (v6.1+),dimensionless,Mashiach field stabilization value,To be derived from compactification (future work),Pending,Pending,,,,,
+
+Line 1657: [v6.1]
+  V_8,TBD (v6.1+),dimensionless,Internal 8D manifold volume,To be derived from compactification (future work),Pending,Pending,,,,,
+
+Line 1688: [v6.1]
+  'Value': 'TBD (v6.1+)',
+
+Line 1915: [v6.4]
+  - [ ] Update theory_parameters_v6.4.csv line 12 (M_Pl)
+
+Line 1918: [v6.5]
+  - [ ] Increment version to v6.5
+
+Line 1930: [v6.4]
+  - [ ] Compare v6.4 vs v6.5 outputs
+
+Line 1934: [v6.5]
+  git add SimulateTheory.py theory_parameters_v6.5.csv
+
+Line 1941: [v6.5]
+  - Increment to v6.5
+
+Line 2019: [v6.4]
+  1. **Update theory_parameters_v6.4.csv → v6.5:**
+
+Line 2131: [v6.5]
+  - Ready for v6.5 release
+
+Line 2204: [v6.5]
+  - [ ] Increment filename to v6.5
+
+Line 2251: [v6.4]
+  **Framework:** Principia Metaphysica v6.4 → v6.5
+
+
+================================================================================
+FILE: Issue1 Resolution.txt (1 matches)
+================================================================================
+
+Line 38: [v6.1]
+  - **Experimental/Observational Angle**: Pros—Predicts KK modes from shared extras (m_KK ~ 1/R_extra ~ TeV if R ~ 10^{-18} cm), testable at LHC/ILC (e.g., Z' resonances). GW dispersion from your v6.1 c
+
+
+================================================================================
+FILE: LOW_HANGING_FRUIT_REPORT.md (6 matches)
+================================================================================
+
+Line 2: [v6.1]
+  **Principia Metaphysica v6.1+**
+
+Line 24: [v6.1]
+  The F(R,T,τ) modified gravity parameters (α_F, β_F, γ_F, δ_F) were marked as "TBD (v6.1)" in SimulateTheory.py, but they were already fully defined in `config.py::FRTTauParameters`.
+
+Line 213: [v6.2]
+  - Add pytest integration tests in v6.2
+
+Line 293: [v6.1]
+  - Compare theory_parameters_v6.1.csv across versions
+
+Line 385: [v6.2]
+  ### Long-Term (v6.2+)
+
+Line 411: [v6.1]
+  **Framework Version:** Principia Metaphysica v6.1+
+
+
+================================================================================
+FILE: MASTERPLAN2.txt (5 matches)
+================================================================================
+
+Line 3: [v6.1]
+  To help you learn and deep dive into refining *Principia Metaphysica* based on the updated website (now emphasizing v6.1+ with enhanced moduli stabilization, Mashiach attractor dynamics, and boosted G
+
+Line 8: [v6.1]
+  **Recap from Plan/Website**: Raw χ_KPneuma = -300 yields unphysical generations (-7); use effective χ_eff = 144 for flux-dressed topology, giving 3 generations (χ_eff / 48 = 3, per v6.1 SO(10) embeddi
+
+Line 35: [v6.1]
+  **Recap**: CPL extrapolation diverges to 16518 (invalid beyond z~3); replace with theoretical attractor w → -1 from Mashiach minimum (v6.1 update resolves DE fine-tuning).
+
+Line 121: [v6.5]
+  ### Deep Dive: Comprehensive Implementation Plan for Principia Metaphysica v6.5
+
+Line 123: [v6.1]
+  To help you learn and deep dive into implementing the planned changes for *Principia Metaphysica* (based on the updated website, which now includes v6.1+ refinements like enhanced Mashiach attractor s
+
+
+================================================================================
+FILE: MASTER_ISSUE_FIX_PLAN.md (36 matches)
+================================================================================
+
+Line 2: [v6.4]
+  ## Principia Metaphysica v6.4 → v6.5 Comprehensive Resolution
+
+Line 16: [v6.4]
+  This master plan synthesizes six comprehensive 5-angle analysis reports covering all critical issues in the Principia Metaphysica codebase. Analysis of **theory_parameters_v6.4.csv** revealed systemat
+
+Line 163: [v6.5]
+  grep "Generations," theory_parameters_v6.5.csv
+
+Line 166: [v6.5]
+  grep "χ_KPneuma," theory_parameters_v6.5.csv
+
+Line 244: [v6.5]
+  grep "w_attractor_limit," theory_parameters_v6.5.csv
+
+Line 317: [v6.5]
+  grep "Pneuma_dim" theory_parameters_v6.5.csv | grep "Passed"
+
+Line 413: [v6.5]
+  grep "D_effective," theory_parameters_v6.5.csv
+
+Line 436: [v6.1]
+  Two parameters show "TBD (v6.1+)":
+
+Line 528: [v6.1]
+  - Delete rows with "TBD (v6.1+)"
+
+Line 535: [v6.5]
+  grep -E "(φ_M|V_9|V_7|V_2)," theory_parameters_v6.5.csv
+
+Line 727: [v6.4]
+  - theory_parameters_v6.4.1.csv (intermediate)
+
+Line 771: [v6.5]
+  - theory_parameters_v6.5.csv
+
+Line 778: [v6.5]
+  - CSV incremented to v6.5
+
+Line 859: [v6.5]
+  - Create CHANGELOG_v6.5.md
+
+Line 871: [v6.5]
+  - VALIDATION_REPORT_v6.5.md
+
+Line 872: [v6.5]
+  - theory_parameters_v6.5_FINAL.csv
+
+Line 907: [v6.4]
+  #### theory_parameters_v6.4.csv → v6.5.csv
+
+Line 964: [v6.5]
+  - Add v6.5 changelog
+
+Line 976: [v6.5]
+  4. **CHANGELOG_v6.5.md** (new)
+
+Line 1096: [v6.1]
+  φ_M,TBD (v6.1+),...,Pending
+
+Line 1097: [v6.1]
+  V_8,TBD (v6.1+),...,Pending
+
+Line 1159: [v6.4]
+  # Before fixes (v6.4)
+
+Line 1161: [v6.4]
+  cp theory_parameters_v6.4.csv baseline.csv
+
+Line 1178: [v6.5]
+  **Final validation criteria for v6.5 release:**
+
+Line 1180: [v6.4]
+  | Metric | Target | Current (v6.4) | Expected (v6.5) |
+
+Line 1309: [v6.4]
+  - Low - TBD status is acceptable for v6.4
+
+Line 1352: [v6.5]
+  v6.5 incompatible with v6.4:
+
+Line 1357: [v6.4]
+  - Keep v6.4 archived for comparison
+
+Line 1568: [v6.4]
+  | Metric | v6.4 (current) | v6.5 (target) |
+
+Line 1623: [v6.5]
+  **Final Release (v6.5):**
+
+Line 1754: [v6.5]
+  ├─ v6.5-dev (development branch)
+
+Line 1761: [v6.4]
+  └─ v6.4-stable (archived)
+
+Line 1767: [v6.5]
+  - Merge to v6.5-dev when validated
+
+Line 1798: [v6.5]
+  **v6.5 Release is ready when:**
+
+Line 1816: [v6.6]
+  - **Mitigation:** 4-week timeline with buffer, can defer gauge unification to v6.6 if needed
+
+Line 1846: [v6.5]
+  **Approved for:** Principia Metaphysica v6.5 Development
+
+
+================================================================================
+FILE: MATHEMATICAL_ISSUES_ASSESSMENT_COMPLETE.md (9 matches)
+================================================================================
+
+Line 4: [v6.4]
+  **Framework:** Principia Metaphysica v6.4 (2T Physics)
+
+Line 50: [v6.1]
+  - **Current Status:** φ_M and V_8 marked "TBD (v6.1+)"
+
+Line 243: [v6.5]
+  4. Regenerate theory_parameters_v6.5.csv
+
+Line 291: [v6.4]
+  3. **Breaking changes to code:** Maintain v6.4 branch, develop in v7.0
+
+Line 298: [v6.4]
+  - Maintain backup of theory_parameters_v6.4.csv
+
+Line 317: [v6.4]
+  ├── theory_parameters_v6.4.csv ← Current state
+
+Line 318: [v6.5]
+  └── theory_parameters_v6.5.csv ← After fixes
+
+Line 325: [v6.4]
+  This comprehensive assessment has identified all outstanding mathematical issues in the Principia Metaphysica v6.4 framework. Through rigorous multi-angle analysis (30 perspectives across 6 issues), w
+
+Line 343: [v6.4]
+  **Framework Version:** v6.4 (2T Physics)
+
+
+================================================================================
+FILE: PHASE1_DEPLOYMENT_SUMMARY.md (7 matches)
+================================================================================
+
+Line 2: [v6.2]
+  # Principia Metaphysica v6.2 - Critical Fixes
+
+Line 6: [v6.1]
+  **Version**: v6.1 → v6.2
+
+Line 111: [v6.1]
+  git add config.py foundations/*.html sections/*.html principia-metaphysica-paper.html theory_parameters_v6.1.csv
+
+Line 117: [v6.2]
+  git commit -m "Phase 1 Critical Fixes: Issues 2-8 Resolved (v6.2)
+
+Line 194: [v6.1]
+  1. theory_parameters_v6.1.csv (parameter updates)
+
+Line 242: [v6.1]
+  - v6.1 → v6.2 ✅
+
+Line 251: [v6.2]
+  *Framework Version: v6.2*
+
+
+================================================================================
+FILE: PHASE1_VISUALIZATIONS_SUMMARY.txt (1 matches)
+================================================================================
+
+Line 103: [v6.2]
+  Framework: Principia Metaphysica v6.2
+
+
+================================================================================
+FILE: PHASE2_2T_KEY_POINTS.md (3 matches)
+================================================================================
+
+Line 16: [v6.1]
+  5. **[theory_parameters_v6.1.csv](theory_parameters_v6.1.csv)** - New parameter: `alpha_GUT_inv = -8.90`
+
+Line 31: [v6.4]
+  # config.py additions for v6.4
+
+Line 198: [v6.4]
+  4. **Regenerate theory_parameters_v6.4.csv** (5 min)
+
+
+================================================================================
+FILE: PHASE2_IMPLEMENTATION_PLAN.md (4 matches)
+================================================================================
+
+Line 4: [v6.2]
+  **Framework Version**: v6.2 → v6.3
+
+Line 102: [v6.2]
+  - [ ] Regenerate `theory_parameters_v6.2.csv`
+
+Line 130: [v6.2]
+  - [ ] Update version v6.2 → v6.3
+
+Line 888: [v6.2]
+  - [ ] Version bump v6.2 → v6.3
+
+
+================================================================================
+FILE: PHILOSOPHICAL_UPDATE.md (1 matches)
+================================================================================
+
+Line 1: [v6.1]
+  # Philosophical Implications Update: Shared Dimensions Model (v6.1)
+
+
+================================================================================
+FILE: PROJECT_STATUS.md (6 matches)
+================================================================================
+
+Line 4: [v6.1]
+  **Framework Version:** v6.1 (December 2025)
+
+Line 99: [v6.1]
+  | **v6.1 Predictions** | 15 | 100% ✅ |
+
+Line 115: [v6.1]
+  - All critical v6.1 predictions in config.py
+
+Line 198: [v6.1]
+  6. `V61Predictions` ⭐ NEW - v6.1 testable predictions
+
+Line 227: [v6.1]
+  - ✅ All v6.1 predictions captured
+
+Line 232: [v6.1]
+  **Next:** Run `python SimulateTheory.py` to generate parameter table with all v6.1 predictions!
+
+
+================================================================================
+FILE: REFERENCES_UPDATE.md (6 matches)
+================================================================================
+
+Line 9: [v6.0]
+  This update comprehensively revises the references page to reflect the transition from Calabi-Yau 4-fold (CY4) compactifications via F-theory (v6.0) to G₂ manifold compactifications via M-theory (v6.1
+
+Line 34: [v6.0]
+  - Marked as "Historical" - used in PM v6.0, retained for pedagogical value
+
+Line 58: [v6.0]
+  - Added note: "PM v6.0 used F-theory; v6.1+ uses M-theory on G₂"
+
+Line 154: [v6.0]
+  - v6.0: CY4 via F-theory
+
+Line 155: [v6.1]
+  - v6.1+: G₂ via M-theory
+
+Line 287: [v6.0]
+  ✅ Version notes clarifying v6.0 → v6.1 changes
+
+
+================================================================================
+FILE: REFERENCES_VERIFICATION.md (6 matches)
+================================================================================
+
+Line 38: [v6.0]
+  - **Note added:** "Used in PM v6.0, retained for pedagogical value"
+
+Line 56: [v6.0]
+  - **Note added:** "PM v6.0 used F-theory; v6.1+ uses M-theory on G₂"
+
+Line 177: [Version 6.0]
+  Version 6.0 used Calabi-Yau 4-fold (CY4) compactifications via F-theory.
+
+Line 178: [Version 6.1]
+  Version 6.1+ uses G₂ manifold compactifications via M-theory.
+
+Line 283: [v6.0]
+  - ✅ Version notes (v6.0 vs v6.1) added
+
+Line 400: [v6.0]
+  - **Version transparency** with clear v6.0 → v6.1 documentation
+
+
+================================================================================
+FILE: SECTIONS_UPDATE_LOG.md (2 matches)
+================================================================================
+
+Line 4: [v6.1]
+  **Update Version:** Shared Dimensions (v6.1 → v6.2)
+
+Line 208: [v6.1]
+  - Added new subsection: "v6.1 CLARIFICATION: KK Gravitons from 6D Bulk"
+
+
+================================================================================
+FILE: SHARED_DIMENSIONS_IMPLEMENTATION_COMPLETE.md (5 matches)
+================================================================================
+
+Line 4: [v6.2]
+  **Version:** Principia Metaphysica v6.2
+
+Line 17: [v6.0]
+  ### OLD (v6.0-6.1):
+
+Line 23: [v6.2]
+  ### NEW (v6.2):
+
+Line 403: [v6.2]
+  Major update: Shared dimensions framework (v6.2)
+
+Line 478: [v6.2]
+  **Version: Principia Metaphysica v6.2**
+
+
+================================================================================
+FILE: SimulateTheory.py (18 matches)
+================================================================================
+
+Line 27: [v6.1]
+  * v6.1 GW dispersion boost (eta parameter, 10^-29 effect size)
+
+Line 54: [v6.4]
+  print("PRINCIPIA METAPHYSICA - THEORY SIMULATION v6.4")
+
+Line 97: [v6.1]
+  η = g/E_F = 0.1          # Linear GW coefficient (v6.1)
+
+Line 327: [v6.4]
+  # TOPOLOGY & GENERATIONS (FIXED v6.4.1)
+
+Line 527: [v6.1]
+  # GRAVITATIONAL WAVE DISPERSION (v6.1 Enhancement)
+
+Line 548: [v6.1]
+  # η: Linear GW coefficient (v6.1 NEW)
+
+Line 593: [v6.1]
+  # GW_effect_size: Dispersion deviation (v6.1)
+
+Line 604: [v6.1]
+  'Description': 'GW dispersion deviation δω (v6.1 boosted)',
+
+Line 917: [v6.1]
+  # MULTIVERSE & LANDSCAPE (v6.1)
+
+Line 973: [v6.1]
+  # F(R,T,τ) MODIFIED GRAVITY PARAMETERS (v6.1 - Now Derived!)
+
+Line 1037: [v6.3]
+  # GAUGE UNIFICATION (Phase 2 - v6.3)
+
+Line 1062: [v6.4]
+  # TWO-TIME (2T) PHYSICS PARAMETERS (v6.4)
+
+Line 1397: [v6.5]
+  df.to_csv('theory_parameters_v6.5.csv', index=False)
+
+Line 1400: [v6.5]
+  df.to_excel('theory_parameters_v6.5.xlsx', index=False, engine='openpyxl')
+
+Line 1406: [v6.5]
+  print("  - theory_parameters_v6.5.csv")
+
+Line 1407: [v6.5]
+  print("  - theory_parameters_v6.5.xlsx (if openpyxl available)")
+
+Line 1440: [v6.5]
+  - theory_parameters_v6.5.csv: Full parameter table
+
+Line 1441: [v6.5]
+  - theory_parameters_v6.5.xlsx: Excel version with formatting
+
+
+================================================================================
+FILE: SimulateTheory_README.md (10 matches)
+================================================================================
+
+Line 5: [Version 6.1]
+  **SimulateTheory.py** is a comprehensive Python script that combines all 8 GenerateData scripts into a unified theoretical physics parameter simulation tool for the Principia Metaphysica framework (Ve
+
+Line 14: [v6.1]
+  ✅ **v6.1 GW Enhancement** (η parameter boosting testability to ~10⁻²⁹)
+
+Line 60: [v6.1]
+  - `theory_parameters_v6.1.csv`
+
+Line 61: [v6.1]
+  - `theory_parameters_v6.1.xlsx`
+
+Line 112: [v6.1]
+  ### Gravitational Waves (v6.1)
+
+Line 135: [v6.1]
+  ### Multiverse (v6.1)
+
+Line 183: [v6.1]
+  ### GW Dispersion (v6.1 Enhancement)
+
+Line 195: [v6.1]
+  ### v6.1 (December 2025)
+
+Line 202: [v6.0]
+  ### v6.0 (November 2025)
+
+Line 239: [v6.1]
+  **Generated by:** SimulateTheory.py v6.1
+
+
+================================================================================
+FILE: VALIDATION_MATRIX.txt (3 matches)
+================================================================================
+
+Line 2: [v6.2]
+  PRINCIPIA METAPHYSICA v6.2 - VALIDATION MATRIX
+
+Line 74: [v6.1]
+  │   - Framework version       │ ✅ v6.1           │ (v6.2 in HTML)        │
+
+Line 143: [v6.1]
+  ║   Framework: v6.1 → v6.2                                             ║
+
+
+================================================================================
+FILE: appendix_G_H.md (1 matches)
+================================================================================
+
+Line 7: [v6.0]
+  **Framework:** Principia Metaphysica v6.0 - 26D Clifford Algebra
+
+
+================================================================================
+FILE: asymptotic_safety_gauge.py (1 matches)
+================================================================================
+
+Line 3: [v6.3]
+  Principia Metaphysica v6.3 (Phase 2 Implementation)
+
+
+================================================================================
+FILE: computational-appendices.html (2 matches)
+================================================================================
+
+Line 170: [v6.4]
+  <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics (v6.4)</span>
+
+Line 1038: [v6.0]
+  from the v6.0 multi-time framework using SymPy. We derive the exact positive root for physical ω &gt; 0,
+
+
+================================================================================
+FILE: config.py (9 matches)
+================================================================================
+
+Line 169: [v6.1]
+  # Gravitational Wave Dispersion (v6.1)
+
+Line 325: [v6.1]
+  # v6.1 NEW PREDICTIONS
+
+Line 330: [v6.1]
+  New testable predictions added in v6.1 framework.
+
+Line 593: [v6.1]
+  Returns a dictionary with all configuration values (EXTENDED v6.1).
+
+Line 631: [v6.1]
+  # ==================== v6.1 NEW PARAMETERS ====================
+
+Line 633: [v6.1]
+  # v6.1 Predictions
+
+Line 766: [v6.2]
+  # SHARED DIMENSIONS PARAMETERS (v6.2+)
+
+Line 938: [v6.2]
+  print("PRINCIPIA METAPHYSICA v6.2 - CONFIGURATION VALIDATION")
+
+Line 991: [v6.4]
+  # TWO-TIME (2T) PHYSICS PARAMETERS (v6.4)
+
+
+================================================================================
+FILE: diagrams\theory-diagrams.html (1 matches)
+================================================================================
+
+Line 159: [v6.4]
+  <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics (v6.4)</span>
+
+
+================================================================================
+FILE: discrete_spacetime.md (1 matches)
+================================================================================
+
+Line 6: [v6.1]
+  **Framework:** Principia Metaphysica v6.1
+
+
+================================================================================
+FILE: generate_js_constants.py (2 matches)
+================================================================================
+
+Line 48: [v6.1]
+  * Framework Version: v6.1
+
+Line 261: [v6.1]
+  // v6.1 NEW PREDICTIONS (Testable!)
+
+
+================================================================================
+FILE: index.html (5 matches)
+================================================================================
+
+Line 598: [v6.1]
+  <span class="var-description">Generalizes f(R) gravity with matter-trace T and two-time invariant &tau;. All parameters derived from compactification (v6.1).</span>
+
+Line 600: [v6.1]
+  <strong>Derived Parameters (v6.1):</strong><br>
+
+Line 659: [Version 6.1]
+  <strong>Version 6.1 enhancements:</strong> Gravitational wave dispersion boosted via multi-time coupling
+
+Line 972: [v6.1]
+  <td>GW Dispersion (v6.1)</td>
+
+Line 987: [v6.1]
+  <td>CMB Bubble Collisions (v6.1)</td>
+
+
+================================================================================
+FILE: js\theory-constants.js (2 matches)
+================================================================================
+
+Line 8: [v6.1]
+  * Framework Version: v6.1
+
+Line 221: [v6.1]
+  // v6.1 NEW PREDICTIONS (Testable!)
+
+
+================================================================================
+FILE: philosophical-implications.html (1 matches)
+================================================================================
+
+Line 237: [v6.1]
+  The most profound shift in Principia Metaphysica v6.1 is the realization that <strong>shadow universes
+
+
+================================================================================
+FILE: principia-metaphysica-paper.html (2 matches)
+================================================================================
+
+Line 2433: [Version 6.5]
+  [Svrcek-Witten 2006, Conlon et al. 2006]. <strong>Version 6.5 update:</strong> The Mashiach field
+
+Line 3304: [Version 6.2]
+  <p><strong>† CMB Bubble Collision Testability Threshold:</strong> Version 6.2 corrects a critical error in
+
+
+================================================================================
+FILE: references.html (5 matches)
+================================================================================
+
+Line 100: [Version 6.0]
+  <strong>Version Note:</strong> Version 6.0 used Calabi-Yau 4-fold (CY4) compactifications via F-theory.
+
+Line 101: [Version 6.1]
+  Version 6.1+ uses G₂ manifold compactifications via M-theory. The dimensional flow is now:
+
+Line 199: [v6.1]
+  Definitive text on G₂ geometry. Covers construction methods, deformation theory, and moduli spaces of G₂ manifolds. Essential for understanding the geometric foundation of PM v6.1+ compactifications.
+
+Line 235: [v6.0]
+  Note: CY4 manifolds were used in Principia Metaphysica v6.0 via F-theory. Current framework (v6.1+) uses G₂ manifolds.
+
+Line 347: [v6.0]
+  Note: F-theory references (CY4) retained for comparison. PM v6.0 used F-theory; v6.1+ uses M-theory on G₂.
+
+
+================================================================================
+FILE: rg_flows_analysis.md (2 matches)
+================================================================================
+
+Line 4: [v6.1]
+  **Framework**: Principia Metaphysica v6.1+
+
+Line 1021: [v6.1]
+  **Framework**: Principia Metaphysica v6.1+
+
+
+================================================================================
+FILE: sections\cosmology.html (18 matches)
+================================================================================
+
+Line 441: [VERSION 6.1]
+  <!-- VERSION 6.1: Multi-Time Dimensional Projection -->
+
+Line 443: [V6.1]
+  <h4 style="color: var(--accent-primary);"><span style="background: rgba(139, 127, 255, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>26D &rarr;
+
+Line 514: [VERSION 6.1]
+  <!-- VERSION 6.1: CFT Anomaly Cancellation -->
+
+Line 516: [V6.1]
+  <h4 style="color: #51cf66;"><span style="background: rgba(81, 207, 102, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>CFT Anomaly Cancellation 
+
+Line 600: [VERSION 6.1]
+  <!-- VERSION 6.1: BPS Stability and Brane Configuration -->
+
+Line 602: [V6.1]
+  <h4 style="color: var(--accent-secondary);"><span style="background: rgba(255, 126, 182, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>BPS Stab
+
+Line 708: [VERSION 6.1]
+  <!-- VERSION 6.1: Pneuma Field Reduction -->
+
+Line 710: [V6.1]
+  <h4 style="color: #51cf66;"><span style="background: rgba(81, 207, 102, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>Pneuma Field Reduction: 8
+
+Line 938: [VERSION 6.1]
+  <!-- VERSION 6.1: F(R,T,τ) Parameter Derivations -->
+
+Line 940: [V6.1]
+  <h4 style="color: var(--accent-primary);"><span style="background: rgba(139, 127, 255, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>F(R,T,&tau
+
+Line 1370: [VERSION 6.1]
+  <!-- VERSION 6.1: Comprehensive Moduli Stabilization with Flux Quantization -->
+
+Line 1372: [V6.1]
+  <h4 style="color: var(--accent-primary);"><span style="background: rgba(139, 127, 255, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>Full V(&ph
+
+Line 2601: [VERSION 6.2]
+  <!-- VERSION 6.2: Comprehensive 2T Physics Cosmology Visualizations -->
+
+Line 2604: [V6.2]
+  <span style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.7em; margin-right: 0.5rem;">V6.2</span>
+
+Line 3379: [VERSION 6.1]
+  <!-- VERSION 6.1: Enhanced Gravitational Wave Dispersion -->
+
+Line 3381: [V6.1]
+  <h4 style="color: #4facfe;"><span style="background: rgba(79, 172, 254, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>Enhanced Gravitational Wa
+
+Line 3509: [VERSION 6.1]
+  <!-- VERSION 6.1: KMS Conditions for Multi-Time Thermal Hypothesis -->
+
+Line 3511: [V6.1]
+  <h4 style="color: #ff7eb6;"><span style="background: rgba(255, 126, 182, 0.2); padding: 0.2rem 0.6rem; border-radius: 6px; font-size: 0.75em; margin-right: 0.5rem;">V6.1</span>KMS Conditions: Multi-Ti
+
+
+================================================================================
+FILE: sections\formulas.html (1 matches)
+================================================================================
+
+Line 310: [v6.0]
+  <em>v6.0 "Temporal Mirrors" — 26D Two-Time Framework</em>
+
+
+================================================================================
+FILE: sections\geometric-framework.html (1 matches)
+================================================================================
+
+Line 463: [v6.0]
+  This section establishes the mathematical foundation of the Principia Metaphysica v6.0
+
+
+================================================================================
+FILE: sections\predictions.html (30 matches)
+================================================================================
+
+Line 235: [v6.1]
+  <span style="font-weight: 600; color: #51cf66;">Testability Grade: B+ (v6.1 Improved)</span>
+
+Line 479: [v6.1]
+  <h4>v6.1 NEW: TeV-Scale KK Modes from Orthogonal Compactification
+
+Line 549: [v6.1]
+  <h4 style="margin-top: 2rem;">v6.1 CLARIFICATION: KK Gravitons from 6D Bulk
+
+Line 1351: [v6.1]
+  <h4>v6.1 NEW: Quantitative SME Predictions from Mirror Sector Leakage
+
+Line 1400: [v6.1]
+  <h4 style="color: #4facfe; margin-top: 1.25rem; font-size: 1.1rem;">Quantitative Predictions (v6.1)</h4>
+
+Line 1488: [v6.1]
+  <h4>Enhanced Modified Dispersion Relation <span style="color: #51cf66; font-size: 0.85rem;">(v6.1 Update1-5)</span></h4>
+
+Line 1526: [v6.1]
+  <div class="var-description"><strong>v6.1 MULTI-TIME COUPLING TERM</strong> - orthogonal time separation boosts testability</div>
+
+Line 1541: [v6.1]
+  <li><strong>&eta;:</strong> <span style="color: #51cf66; font-weight: 600;">Multi-time coupling = g/E<sub>F</sub> ~ 0.1 to 10<sup>9</sup></span> <span class="testability-badge" style="font-size: 0.65r
+
+Line 1549: [v6.1]
+  <h4 style="color: #51cf66;">v6.1 Testability Enhancement via Multi-Time Coupling</h4>
+
+Line 1825: [v6.1]
+  <!-- 7.6b v6.1 NEW: CHSH Inequality Violations from Orthogonal Time -->
+
+Line 1828: [v6.1]
+  <span class="testability-badge" style="margin-left: 0.5rem; background: rgba(81, 207, 102, 0.3); color: #51cf66; padding: 0.3rem 0.8rem; border-radius: 6px; font-size: 0.75rem;">v6.1 NEW</span>
+
+Line 1974: [v6.1]
+  <h4>Correlation Signatures (v6.1 Unique Prediction)</h4>
+
+Line 2448: [v6.1]
+  Tier 1: Derived or Unique to This Theory (v6.1 Updated)
+
+Line 2456: [v6.1]
+  <li><strong style="color: #51cf66;">m<sub>KK</sub> = (3-7) TeV:</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle; margin-left: 0.2rem; background: rgba(81, 20
+
+Line 2457: [v6.1]
+  <li><strong style="color: #51cf66;">GW dispersion &eta; = 0.1-10<sup>9</sup>:</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle; margin-left: 0.2rem; backgroun
+
+Line 2458: [v6.1]
+  <li><strong style="color: #51cf66;">SME c<sub>&mu;&nu;</sub> ~ (10<sup>-6</sup>-10<sup>-4</sup>):</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle; margin-lef
+
+Line 2459: [v6.1]
+  <li><strong style="color: #51cf66;">CHSH = 2&radic;2(1+&delta;), &delta; ~ (10<sup>-6</sup>-10<sup>-4</sup>):</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle
+
+Line 2462: [v6.1]
+  <strong>Status:</strong> These represent genuine theoretical content of the two-time framework. <strong style="color: #51cf66;">v6.1 adds 4 new quantitative predictions</strong> with error bars.
+
+Line 2469: [v6.1]
+  Tier 2: Exploratory or Standard Results (v6.1 Updated)
+
+Line 2477: [v6.1]
+  <strong>Status:</strong> These cannot decisively test the theory; either qualitative or not discriminatory. <strong style="color: #51cf66;">v6.1 promoted SME to Tier 1</strong> (now quantified).
+
+Line 2484: [v6.1]
+  Tier 3: What Would Kill the Theory (v6.1 Enhanced)
+
+Line 2489: [v6.1]
+  <li><strong style="color: #ff7b7b;">m<sub>KK</sub> &gt; 10 TeV excluded (HL-LHC):</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle; margin-left: 0.2rem; backg
+
+Line 2490: [v6.1]
+  <li><strong style="color: #ff7b7b;">CHSH = 2&radic;2 &plusmn; 10<sup>-6</sup> (no violation):</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle; margin-left: 0
+
+Line 2491: [v6.1]
+  <li><strong style="color: #ff7b7b;">SME c<sub>&mu;&nu;</sub> &lt; 10<sup>-6</sup>:</strong> <span class="testability-badge" style="font-size: 0.65rem; vertical-align: middle; margin-left: 0.2rem; back
+
+Line 2495: [v6.1]
+  <strong>Status:</strong> JUNO/DUNE hierarchy measurement (2025-2028) remains the critical test. <strong style="color: #51cf66;">v6.1 adds 3 new falsification pathways</strong> (LHC, quantum optics, SM
+
+Line 2500: [v6.1]
+  <h4>Honest Assessment: What Was Resolved vs What Remains (v6.1 Updated)</h4>
+
+Line 2523: [v6.1]
+  <p><strong style="color: #51cf66;">v6.1 RESOLVED:</strong> SME coefficients quantified via mirror sector leakage (~10<sup>-5</sup>) with correlation ratios.</p>
+
+Line 2527: [v6.1]
+  <p><strong style="color: #51cf66;">v6.1 RESOLVED:</strong> GW dispersion enhanced via multi-time coupling to LISA-testable levels (~10<sup>-20</sup>).</p>
+
+Line 2531: [v6.1]
+  <p><strong style="color: #51cf66;">v6.1 RESOLVED:</strong> TeV-scale KK modes predicted from R<sub>ortho</sub> ~ TeV<sup>-1</sup> (LHC-testable).</p>
+
+Line 2535: [v6.1]
+  <p><strong style="color: #51cf66;">v6.1 RESOLVED:</strong> CHSH inequality violations from retrocausality (&delta; ~ 10<sup>-5</sup>, lab-testable).</p>
+
+
+================================================================================
+FILE: solutions\time-circularity-section.html (1 matches)
+================================================================================
+
+Line 11: [v6.4]
+  <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics (v6.4)</span>
+
+
+================================================================================
+FILE: theory_parameters_v6.1.csv (3 matches)
+================================================================================
+
+Line 22: [v6.1]
+  GW_effect_size,1.0000000006724136e-29,dimensionless,GW dispersion deviation δω (v6.1 boosted),η k Δt_ortho + ξ² (k/M_Pl)² ~ 10^{-29},Yes (SymPy),Passed,,,,,
+
+Line 46: [v6.1]
+  φ_M,TBD (v6.1+),dimensionless,Mashiach field stabilization value,To be derived from compactification (future work),Pending,Pending,,,,,
+
+Line 47: [v6.1]
+  V_8,TBD (v6.1+),dimensionless,Internal 8D manifold volume,To be derived from compactification (future work),Pending,Pending,,,,,
+
+
+================================================================================
+FILE: theory_parameters_v6.4.csv (1 matches)
+================================================================================
+
+Line 23: [v6.1]
+  GW_effect_size,1.0000000006724136e-29,dimensionless,GW dispersion deviation δω (v6.1 boosted),η k Δt_ortho + ξ² (k/M_Pl)² ~ 10^{-29},Yes (SymPy),Passed,,,,,
+
+
+================================================================================
+FILE: theory_parameters_v6.5.csv (1 matches)
+================================================================================
+
+Line 23: [v6.1]
+  GW_effect_size,1.0000000006724136e-29,dimensionless,GW dispersion deviation δω (v6.1 boosted),η k Δt_ortho + ξ² (k/M_Pl)² ~ 10^{-29},Yes (SymPy),Passed,,,,,
+
+
+================================================================================
+FILE: threshold_corrections.py (1 matches)
+================================================================================
+
+Line 3: [v6.3]
+  Principia Metaphysica v6.3 (Phase 2 Implementation)
+
+
+================================================================================
+FILE: v65_cleanup_tasks.json (25 matches)
+================================================================================
+
+Line 8: [Version 6.5]
+  "Line 1095: Version 6.5 | November 2025<br><br>"
+
+Line 17: [v6.5]
+  "Line 618: &#x2728; Updated for v6.5 - Now with 88% Validation Rate!",
+
+Line 18: [v6.5]
+  "Line 625: <strong>New in v6.5:</strong> Generation count fix, dark energy stability, two-time physics clarific",
+
+Line 19: [v6.5]
+  "Line 768: <h4 style=\"color: #8b7fff;\">NEW in v6.5: The Shadow Analogy for Two Times</h4>"
+
+Line 28: [v6.5]
+  "Line 139: <h4 style=\"color: #51cf66;\">Spinor Dimensions Validated (MASTERPLAN2 v6.5)</h4>",
+
+Line 29: [v6.5]
+  "Line 502: <h4 style=\"color: #8b7fff;\">Summary: Validated Spinor Dimensions (MASTERPLAN2 v6.5)</h4>"
+
+Line 38: [v6.5]
+  "Line 44: <h4 style=\"color: #8b7fff;\">MASTERPLAN2 v6.5: Flux-Dressed Topology</h4>",
+
+Line 39: [v6.5]
+  "Line 187: The topology of a compact G\u2082 manifold is characterized by several invariants. In MASTERPLAN2 v6.5,",
+
+Line 40: [v6.5]
+  "Line 196: <span class=\"foundation-badge pm-specific\">MASTERPLAN2 v6.5</span>"
+
+Line 49: [v6.5]
+  "Line 152: <!-- NEW SECTION: Fermionic Primacy Framework (v6.5) -->",
+
+Line 50: [v6.5]
+  "Line 156: Principia Metaphysica v6.5 advances a radical ontological claim: <strong>everything emerges from a s",
+
+Line 51: [v6.5]
+  "Line 166: <strong>Principia Metaphysica v6.5:</strong> Pneuma field \u03a8<sub>P</sub> is fundamental \u2192 spacetime e"
+
+Line 60: [Version 6.5]
+  "Line 336: <p class=\"date\">December 2025 - Version 6.5 (MASTERPLAN2 Implementation)</p>",
+
+Line 61: [Version 6.5]
+  "Line 365: at ~5 TeV</strong>, testable at the HL-LHC. <strong>Version 6.5</strong> implements the MASTERPLAN2",
+
+Line 62: [Version 6.5]
+  "Line 474: <h3>1.1 Version 6.5 MASTERPLAN2 Implementation</h3>"
+
+Line 82: [v6.5]
+  "Line 1276: <!-- NEW: 4-Stage Dimensional Reduction (MASTERPLAN2 v6.5 - Issue 4) -->",
+
+Line 83: [v6.5]
+  "Line 1278: <h3 style=\"color: #ffc107;\">Four-Stage Dimensional Reduction Pathway (v6.5 Clarification)</h3>",
+
+Line 84: [v6.5]
+  "Line 1280: <strong>MASTERPLAN2 v6.5 Update:</strong> The dimensional reduction from 26D to 4D proceeds through "
+
+Line 93: [v6.5]
+  "Line 226: <strong>MASTERPLAN2 v6.5:</strong> Fermionic primacy - Pneuma spinor sources all physics",
+
+Line 94: [v6.5]
+  "Line 237: <span class=\"foundation-badge pm-specific\">v6.5 Master Action</span>",
+
+Line 95: [v6.5]
+  "Line 1096: <!-- MASTERPLAN2 v6.5 Lagrangian Hierarchy -->"
+
+Line 104: [v6.5]
+  "Line 775: <h5 style=\"color: var(--success);\">v6.5 Updates: Complete 2T Physics Validation</h5>",
+
+Line 105: [v6.5]
+  "Line 922: <h5>Sp(2,R) Gauge Constraints (v6.5)</h5>",
+
+Line 106: [v6.5]
+  "Line 1369: <h5 style=\"color: var(--success);\">BRST Anomaly Validation (v6.5)</h5>"
+
+Line 117: [v6.5]
+  "Line 1196: # MODULI PARAMETERS (MASTERPLAN2 v6.5 - DERIVED)"
+
+
+================================================================================
+FILE: validation_modules.py (2 matches)
+================================================================================
+
+Line 3: [v6.1]
+  Principia Metaphysica v6.1+
+
+Line 443: [v6.1]
+  print("COMPREHENSIVE VALIDATION SUITE - Principia Metaphysica v6.1+")
+
