@@ -16,7 +16,7 @@ SOURCES MERGED:
 • GenerateData7.py: Extensibility template for custom parameters
 • GenerateData8.py: Enhanced error handling and unexplored terms
 
-VERSION: 6.5 (MASTERPLAN2 Implementation - January 2026)
+VERSION: December 2025
 FEATURES:
 ---------
 * ~50 fundamental parameters derived from first principles
@@ -737,7 +737,7 @@ def derive_all_parameters():
     }
     data.append(entry)
 
-    # w_attractor_limit: Late-time attractor (MASTERPLAN2 Fix: Direct theoretical value)
+    # w_attractor_limit: Late-time attractor (Direct theoretical value)
     # CPL extrapolation diverges beyond z~3; use theoretical Mashiach attractor w → -1
     num_w_limit = -1.0  # Direct from Mashiach minimum V(φ)
     real_limit = real_data['w_attractor_limit']['real_value']
@@ -1193,7 +1193,7 @@ def derive_all_parameters():
     except Exception as e:
         print(f"  Warning: Could not import 2T parameters: {e}")
 
-    # MODULI PARAMETERS (MASTERPLAN2 v6.5 - DERIVED)
+    # MODULI PARAMETERS (DERIVED)
     # ==========================================================================
     from config import ModuliParameters as MP
 
@@ -1207,7 +1207,7 @@ def derive_all_parameters():
         'Unit': 'M_Pl',
         'Description': 'Mashiach field VEV (modulus stabilization)',
         'Source': 'Weighted: 40% KKLT + 20% LVS + 30% Topology + 10% pheno = 2.493 M_Pl',
-        'Derived?': 'Yes (MASTERPLAN2)',
+        'Derived?': 'Yes',
         'Validation': validation_phi,
         'Real_Value': None,
         'Real_Error': float(phi_M_error),
@@ -1225,7 +1225,7 @@ def derive_all_parameters():
         'Unit': 'GeV^-9',
         'Description': 'Internal 9D volume (7D G₂ × 2D torus)',
         'Source': 'V_9 = M_Pl^2 / M_*^11 = (1.22e19)^2 / (1e16)^11',
-        'Derived?': 'Yes (MASTERPLAN2)',
+        'Derived?': 'Yes',
         'Validation': 'Passed' if V_9 > 0 and V_9 < 1e-100 else 'Warning',
         'Real_Value': None,
         'Real_Error': None,
