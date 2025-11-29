@@ -239,7 +239,7 @@ class ModuliParameters:
     V_VEV = 2.0               # VEV scale [TeV] (condensate formation)
     T_ORTHO_NORMALIZED = 1.0  # Orthogonal time parameter [normalized]
 
-    # === MASHIACH MODULUS VEV (MASTERPLAN2 Derived) ===
+    # === MASHIACH MODULUS VEV (Derived) ===
     # φ_M: Mashiach scalar VEV derived via weighted KKLT/LVS/topology
     # Methods: KKLT (~1.93), LVS (~5.03), Topology (~1.32)
     # Weighted: 40% KKLT + 20% LVS + 30% Topology + 10% phenomenological
@@ -248,7 +248,7 @@ class ModuliParameters:
     PHI_M_MIN = 0.5           # Physical lower bound
     PHI_M_MAX = 5.0           # Physical upper bound
 
-    # === INTERNAL VOLUME V_9 (MASTERPLAN2 Derived) ===
+    # === INTERNAL VOLUME V_9 (Derived) ===
     # V_9 for 7D G₂ × 2D torus compactification
     # V_9 = M_Pl^2 / M_*^11 ~ 1.488×10^{-138} GeV^{-9}
     M_STAR_GUT = 1e16         # GUT scale [GeV]
@@ -1053,7 +1053,7 @@ class TwoTimePhysics:
 
 
 class DimensionalStructure:
-    """Dimensional Reduction Framework (MASTERPLAN2 Clarification)
+    """Dimensional Reduction Framework
 
     Stages:
     1. Bulk: 26D (24,2) signature
