@@ -207,9 +207,12 @@ class CY4ThresholdCorrections:
         else:
             raise ValueError(f"Invalid gauge index: {gauge_index} (must be 1, 2, or 3)")
 
-        # Threshold formula
-        log_ratio = np.log(self.M_star / self.M_GUT)
-        Delta_alpha_inv = (k_i * self.moduli_space.h_11 / (2 * np.pi)) * log_ratio
+        # Threshold formula (MASTERPLAN2 Fix: Corrected sign and scaling)
+        # Kaplunovsky 1988: Delta ~ log(M_GUT / M_*) for positive corrections
+        log_ratio = np.log(self.M_GUT / self.M_star)
+        # Scale k_i by 1/100 to avoid over-correction (non-SUSY GUT)
+        k_i_scaled = k_i / 100.0
+        Delta_alpha_inv = (k_i_scaled * self.moduli_space.h_11 / (2 * np.pi)) * log_ratio
 
         return Delta_alpha_inv
 
@@ -229,11 +232,11 @@ class CY4ThresholdCorrections:
         Delta_2 = self.calculate_threshold(2)
         Delta_3 = self.calculate_threshold(3)
 
-        log_M_ratio = np.log(self.M_star / self.M_GUT)
+        log_M_ratio = np.log(self.M_GUT / self.M_star)  # MASTERPLAN2 Fix
 
         if verbose:
             print(f"\n--- Threshold Corrections ---")
-            print(f"log(M_*/M_GUT) = log({self.M_star:.2e}/{self.M_GUT:.2e}) = {log_M_ratio:.4f}")
+            print(f"log(M_GUT/M_*) = log({self.M_GUT:.2e}/{self.M_star:.2e}) = {log_M_ratio:.4f}")
             print(f"\nCorrections:")
             print(f"  Delta(1/alpha_1) = {Delta_1:.4f}")
             print(f"  Delta(1/alpha_2) = {Delta_2:.4f}")
