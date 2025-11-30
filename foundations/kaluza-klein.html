@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kaluza-Klein Theory - Foundation of higher-dimensional unification in Principia Metaphysica">
-    <title>Kaluza-Klein Theory - Principia Metaphysica</title>
+    <meta name="description" content="Kaluza-Klein Theory - Learn how extra dimensions can be compactified and hidden from observation with diagrams, explanations, and educational resources">
+    <title>Kaluza-Klein Theory - Foundational Physics</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="../js/formula-expansion.js" defer></script>
 </head>
@@ -31,627 +31,683 @@
             <span>Kaluza-Klein Theory</span>
         </nav>
 
-        <div class="intro">
-            <span class="foundation-badge established">Established Physics (1921)</span>
-            <h1 style="margin-top: 1rem;">Kaluza-Klein Theory</h1>
-            <p>
-                The Kaluza-Klein mechanism demonstrates how gauge forces can emerge from the geometry
-                of extra spatial dimensions. This established framework forms the foundation for
-                Principia Metaphysica's 4-stage dimensional reduction: 26D (24,2) &rarr; 13D (12,1) via Sp(2,R) gauge fixing
-                &rarr; 6D via G₂ compactification &rarr; 4D via torus compactification.
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Physics (1921-1926)</span>
+            <h1 style="background: linear-gradient(135deg, #8b7fff, #ff7eb6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Kaluza-Klein Theory</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The groundbreaking theory showing how extra spatial dimensions can be "curled up" so small they become invisible, unifying gravity and electromagnetism in higher dimensions.
+            </p>
+            <div class="main-equation" style="background: rgba(139, 127, 255, 0.1);">
+                Higher D &rarr; 4D &nbsp;&nbsp;|&nbsp;&nbsp; Compactification on S<sup>1</sup>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Theodor Kaluza (1921) & Oskar Klein (1926) | Foundation of String Theory
             </p>
         </div>
 
-        <!-- The Core Idea -->
-        <section class="detail-section">
-            <h3>The Core Insight</h3>
-            <p>
-                In 1921, Theodor Kaluza proposed that electromagnetism could be unified with gravity
-                by extending spacetime from 4 to 5 dimensions. Oscar Klein later refined this by
-                suggesting the fifth dimension is compactified to a tiny circle.
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.03)); border-left: 4px solid #8b7fff;">
+            <h2>How Can Extra Dimensions Be Hidden?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>"Extra dimensions can be compactified (curled up) to such small sizes that they're invisible at low energies."</strong>
             </p>
-            <p>
-                The key insight: <strong>gauge symmetries emerge from the geometry of compact extra dimensions</strong>.
-                The photon field A<sub>&mu;</sub> arises from the off-diagonal components of a 5D metric tensor.
-            </p>
-        </section>
-
-        <!-- The 5D Metric -->
-        <section class="detail-section">
-            <h3>The 5D Metric Decomposition</h3>
-            <div class="expandable-formula">
-                <div class="formula-header">
-                    <div class="formula-main">
-                        G<sub>MN</sub> =
-                        <span style="font-size: 1.5rem; vertical-align: middle;">&#x239B;</span>
-                        g<sub>&mu;&nu;</sub> + &phi;<sup>2</sup>A<sub>&mu;</sub>A<sub>&nu;</sub>
-                        <span style="margin: 0 0.25rem;">,</span>
-                        &phi;<sup>2</sup>A<sub>&mu;</sub>
-                        <span style="font-size: 1.5rem; vertical-align: middle;">&#x239E;</span>
-                        <br>
-                        <span style="font-size: 1.5rem; vertical-align: middle;">&#x239D;</span>
-                        &phi;<sup>2</sup>A<sub>&nu;</sub>
-                        <span style="margin: 0 0.25rem;">,</span>
-                        &phi;<sup>2</sup>
-                        <span style="font-size: 1.5rem; vertical-align: middle;">&#x23A0;</span>
-                    </div>
-                    <div class="formula-controls">
-                        <span class="foundation-badge established">Standard KK</span>
-                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
-                    </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Compactification</h4>
+                    <p>Just like a garden hose looks 1D from far away but is really 2D (with a tiny circular dimension), our universe might have extra dimensions curled up at the Planck scale (~10<sup>-35</sup> m).</p>
                 </div>
-                <div class="formula-expansion">
-                    <div class="sub-components">
-                        <div class="sub-component">
-                            <div class="component-symbol">G<sub>MN</sub></div>
-                            <div class="component-name">5D Metric Tensor</div>
-                            <div class="component-desc">The full 5&times;5 metric of the extended spacetime (M, N = 0,1,2,3,5)</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
-                            <div class="component-name">4D Metric</div>
-                            <div class="component-desc">The ordinary 4D spacetime metric describing gravity</div>
-                            <a href="einstein-hilbert-action.html" class="component-link">General Relativity &rarr;</a>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">A<sub>&mu;</sub></div>
-                            <div class="component-name">Gauge Field</div>
-                            <div class="component-desc">The electromagnetic 4-potential, emerging from g<sub>&mu;5</sub> components</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">&phi;</div>
-                            <div class="component-name">Dilaton Field</div>
-                            <div class="component-desc">Scalar field from g<sub>55</sub>, related to the radius of the compact dimension</div>
-                        </div>
-                    </div>
-                    <div class="derivation-chain">
-                        <div class="chain-title">How PM Extends This</div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            5D KK gives U(1) electromagnetism
-                            <span class="foundation-badge established">Established</span>
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Higher dimensions give non-Abelian gauge groups
-                            <span class="foundation-badge established">Established</span>
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <a href="../sections/geometric-framework.html">26D (24,2) &rarr; 13D (12,1) &rarr; 6D &rarr; 4D with G₂ compactification gives SO(10)</a>
-                            <span class="foundation-badge pm-specific">PM Extension</span>
-                        </div>
-                    </div>
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">KK Tower</h4>
+                    <p>Motion in the compact dimension appears as <em>massive particles</em> in 4D. The mass spectrum: m<sub>n</sub> = n/R, where R is the compactification radius and n = 0, 1, 2, ...</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Zero Mode</h4>
+                    <p>The n=0 mode is <strong>massless</strong> and corresponds to the 4D fields we observe (photon, graviton). Heavy modes (n&ge;1) are too massive to produce at current energies.</p>
                 </div>
             </div>
         </section>
 
-        <!-- The Effective 4D Action -->
-        <section class="detail-section">
-            <h3>Dimensional Reduction</h3>
-            <p>
-                Upon compactification, the 5D Einstein-Hilbert action reduces to 4D gravity
-                plus electromagnetism:
-            </p>
-            <div class="expandable-formula">
-                <div class="formula-header">
-                    <div class="formula-main">
-                        S<sub>5D</sub> = &int; d<sup>5</sup>x &radic;|G| R<sub>5</sub>
-                        &nbsp;&rarr;&nbsp;
-                        S<sub>4D</sub> = &int; d<sup>4</sup>x &radic;|g| [R - &frac14;F<sub>&mu;&nu;</sub>F<sup>&mu;&nu;</sup>]
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">ds<sup>2</sup><sub>(5D)</sub> = g<sub>&mu;&nu;</sub>dx<sup>&mu;</sup>dx<sup>&nu;</sup> + &phi;<sup>2</sup>(dy + A<sub>&mu;</sub>dx<sup>&mu;</sup>)<sup>2</sup></div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">ds<sup>2</sup><sub>(5D)</sub></div>
+                        <div class="component-name">5D Metric (Line Element)</div>
+                        <div class="component-desc">
+                            The fundamental measure of distance in 5D spacetime: ds<sup>2</sup> = g<sub>MN</sub> dx<sup>M</sup> dx<sup>N</sup><br>
+                            Indices M, N = 0, 1, 2, 3, 5 represent (t, x, y, z, y<sub>5</sub>)
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" class="component-link">Wikipedia: Kaluza-Klein Theory &rarr;</a>
                     </div>
-                    <div class="formula-controls">
-                        <span class="foundation-badge established">Established</span>
-                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                    <div class="sub-component">
+                        <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
+                        <div class="component-name">4D Metric Tensor</div>
+                        <div class="component-desc">
+                            The effective 4D spacetime metric after compactification.<br>
+                            Satisfies the 4D Einstein equations: G<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub>
+                        </div>
+                        <a href="einstein-field-equations.html" class="component-link">Learn about Einstein's equations &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">A<sub>&mu;</sub></div>
+                        <div class="component-name">KK Vector (Gauge Field)</div>
+                        <div class="component-desc">
+                            The 4D electromagnetic potential arising from the 5th dimension!<br>
+                            Remarkably, the 5D metric component g<sub>&mu;5</sub> becomes the photon field in 4D.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Unification Achieved</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&phi;</div>
+                        <div class="component-name">Radion (Dilaton)</div>
+                        <div class="component-desc">
+                            The scalar field describing fluctuations in the size of the compact dimension.<br>
+                            &phi; = &radic;g<sub>55</sub> encodes the "breathing mode" of the extra dimension.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Dilaton" target="_blank" class="component-link">Wikipedia: Dilaton &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">m<sup>2</sup><sub>n</sub> = (n/R)<sup>2</sup></div>
+                        <div class="component-name">KK Mass Spectrum</div>
+                        <div class="component-desc">
+                            Tower of massive states from momentum in the compact dimension.<br>
+                            n = 0: massless (our observed particles)<br>
+                            n &ge; 1: massive KK modes (not yet observed)
+                        </div>
+                        <span class="foundation-badge" style="background: rgba(255, 126, 182, 0.1); color: #ff7eb6; margin-top: 0.5rem;">Quantized Momentum</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">R</div>
+                        <div class="component-name">Compactification Radius</div>
+                        <div class="component-desc">
+                            The size of the compact dimension. If R ~ 10<sup>-35</sup> m (Planck scale), then m<sub>1</sub> ~ 10<sup>19</sup> GeV.<br>
+                            Current LHC limit: R &lt; 10<sup>-19</sup> m from lack of observed KK modes.
+                        </div>
+                        <span class="foundation-badge" style="background: rgba(255, 126, 182, 0.1); color: #ff7eb6; margin-top: 0.5rem;">Free Parameter</span>
                     </div>
                 </div>
-                <div class="formula-expansion">
-                    <div class="sub-components">
-                        <div class="sub-component">
-                            <div class="component-symbol">R<sub>5</sub></div>
-                            <div class="component-name">5D Ricci Scalar</div>
-                            <div class="component-desc">Curvature of the full 5D spacetime</div>
-                            <a href="einstein-hilbert-action.html" class="component-link">Ricci Scalar &rarr;</a>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">R</div>
-                            <div class="component-name">4D Ricci Scalar</div>
-                            <div class="component-desc">Ordinary 4D gravitational curvature</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">F<sub>&mu;&nu;</sub></div>
-                            <div class="component-name">Field Strength Tensor</div>
-                            <div class="component-desc">Electromagnetic field tensor: F<sub>&mu;&nu;</sub> = &part;<sub>&mu;</sub>A<sub>&nu;</sub> - &part;<sub>&nu;</sub>A<sub>&mu;</sub></div>
-                        </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Foundation Chain</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>General Relativity in 5D (Kaluza, 1921)</span>
+                        <span class="foundation-badge established">Higher-D GR</span>
                     </div>
-                    <div class="derivation-chain">
-                        <div class="chain-title">Key Result</div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Pure gravity in 5D = Gravity + Electromagnetism in 4D
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Gauge invariance comes from 5th dimension coordinate transformations
-                        </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Compactification on S<sup>1</sup> (Klein, 1926)</span>
+                        <span class="foundation-badge established">Dimensional Reduction</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Fourier Mode Expansion in y<sub>5</sub></span>
+                        <span class="foundation-badge established">Mode Decomposition</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="https://en.wikipedia.org/wiki/String_theory" target="_blank">String Theory (10D/11D)</a>
+                        <span class="foundation-badge" style="background: rgba(255, 126, 182, 0.1); color: #ff7eb6;">Modern Extension</span>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <h4 style="margin-top: 2rem;">Planck Mass from Dimensional Reduction</h4>
-            <p>
-                The 4D Planck mass emerges from integrating over the compact dimension:
-            </p>
-            <div class="expandable-formula">
-                <div class="formula-header">
-                    <div class="formula-main">
-                        M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>n+2</sup> &times; V<sub>n</sub>
-                    </div>
-                    <div class="formula-controls">
-                        <span class="foundation-badge established">General Formula</span>
-                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
-                    </div>
-                </div>
-                <div class="formula-expansion">
-                    <div class="sub-components">
-                        <div class="sub-component">
-                            <div class="component-symbol">M<sub>Pl</sub></div>
-                            <div class="component-name">4D Planck Mass</div>
-                            <div class="component-desc">Observed gravitational strength: M<sub>Pl</sub> ~ 1.2 &times; 10<sup>19</sup> GeV (measured input)</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">M<sub>*</sub></div>
-                            <div class="component-name">Fundamental Mass Scale</div>
-                            <div class="component-desc">Higher-dimensional gravitational coupling constant (unknown parameter)</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">n</div>
-                            <div class="component-name">Number of Compact Dimensions</div>
-                            <div class="component-desc">Number of compactified spatial dimensions (e.g., n=1 for original KK, n=9 for PM: 7D G₂ + 2D torus)</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">V<sub>n</sub></div>
-                            <div class="component-name">Volume of Compact Space</div>
-                            <div class="component-desc">Total volume of the n-dimensional internal manifold (in fundamental units)</div>
-                        </div>
-                    </div>
-                    <div class="derivation-chain">
-                        <div class="chain-title">Example: PM 4-Stage Dimensional Reduction</div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Stage 1: 26D bulk with signature (24,2) - bosonic string theory critical dimension
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Stage 2: Sp(2,R) gauge fixing (NOT compactification!) → 13D (12,1) eliminates ghost degrees
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Stage 3: G₂ compactification: 13D → 6D (7D compact manifold)
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Stage 4: Torus compactification: 6D → 4D (2D torus, R ~ (5 TeV)<sup>-1</sup>)
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Total compact dimensions: n = 9 (7D G₂ + 2D torus)
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub>, where V<sub>9</sub> = 1.488×10<sup>-138</sup> GeV<sup>-9</sup>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: Compactification & KK Modes</h2>
+            <p>How a higher-dimensional space reduces to lower dimensions through compactification:</p>
 
-            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
-                <h4 style="color: #ff7eb6;">Important: M<sub>Pl</sub> is an Input, Not an Output</h4>
-                <p style="color: var(--text-secondary);">
-                    A common misconception is that dimensional reduction "predicts" M<sub>Pl</sub>. In reality:
-                </p>
-                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>M<sub>Pl</sub> ~ 1.2 &times; 10<sup>19</sup> GeV is measured</strong> from gravitational experiments (Cavendish, planetary orbits, etc.)</li>
-                    <li><strong>V<sub>n</sub> is not independently measurable</strong> - we cannot directly observe the internal geometry's volume</li>
-                    <li><strong>M<sub>*</sub> is a free parameter</strong> - the fundamental higher-dimensional scale is not predicted by the geometry alone</li>
-                    <li><strong>The formula relates three unknowns:</strong> M<sub>*</sub><sup>n+2</sup> &times; V<sub>n</sub> = M<sub>Pl</sub><sup>2</sup> (only the product is constrained)</li>
-                </ul>
-                <p style="color: var(--text-secondary); margin-top: 1rem;">
-                    <strong>Bottom line:</strong> Given M<sub>Pl</sub> (measured) and choosing M<sub>*</sub> (model parameter),
-                    the formula determines V<sub>n</sub>. The framework does not predict the Planck mass from first principles.
-                </p>
-            </div>
+            <svg width="100%" height="500" viewBox="0 0 900 500" style="background: rgba(139, 127, 255, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <linearGradient id="cylinderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:0.4" />
+                        <stop offset="50%" style="stop-color:#8b7fff;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:0.4" />
+                    </linearGradient>
+                    <linearGradient id="kkTowerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:0.8" />
+                        <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0.3" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Title -->
+                <text x="450" y="25" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="600">
+                    Kaluza-Klein Compactification: 2D Surface = 1D Space + S¹
+                </text>
+
+                <!-- Left: Cylinder (compactified dimension) -->
+                <g transform="translate(150, 80)">
+                    <text x="0" y="-10" text-anchor="middle" fill="var(--accent-primary)" font-size="14" font-weight="600">
+                        Cylinder: 1D (extended) x S¹ (compact)
+                    </text>
+
+                    <!-- Cylinder body -->
+                    <rect x="-80" y="0" width="160" height="280" fill="url(#cylinderGrad)" stroke="#8b7fff" stroke-width="2"/>
+
+                    <!-- Top circle -->
+                    <ellipse cx="0" cy="0" rx="80" ry="25" fill="rgba(139, 127, 255, 0.3)" stroke="#8b7fff" stroke-width="2"/>
+
+                    <!-- Bottom circle -->
+                    <ellipse cx="0" cy="280" rx="80" ry="25" fill="rgba(139, 127, 255, 0.3)" stroke="#8b7fff" stroke-width="2"/>
+
+                    <!-- Circular lines showing compactification -->
+                    <ellipse cx="0" cy="70" rx="80" ry="25" fill="none" stroke="#ff7eb6" stroke-width="1.5" stroke-dasharray="3,3"/>
+                    <ellipse cx="0" cy="140" rx="80" ry="25" fill="none" stroke="#ff7eb6" stroke-width="1.5" stroke-dasharray="3,3"/>
+                    <ellipse cx="0" cy="210" rx="80" ry="25" fill="none" stroke="#ff7eb6" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+                    <!-- Labels -->
+                    <text x="90" y="140" fill="var(--text-secondary)" font-size="12">
+                        <tspan x="90" dy="0">Compact</tspan>
+                        <tspan x="90" dy="14">dimension</tspan>
+                        <tspan x="90" dy="14">(radius R)</tspan>
+                    </text>
+
+                    <path d="M 0 -30 L 0 -50" stroke="var(--accent-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M 0 310 L 0 330" stroke="var(--accent-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <text x="-100" y="145" fill="var(--accent-primary)" font-size="12" transform="rotate(-90, -100, 145)">
+                        Extended dimension
+                    </text>
+                </g>
+
+                <!-- Middle: Wavefunction modes -->
+                <g transform="translate(450, 120)">
+                    <text x="0" y="-30" text-anchor="middle" fill="var(--accent-primary)" font-size="14" font-weight="600">
+                        KK Mode Wavefunctions
+                    </text>
+
+                    <!-- n=0 (zero mode) -->
+                    <g transform="translate(0, 0)">
+                        <rect x="-60" y="0" width="120" height="40" fill="rgba(79, 172, 254, 0.1)" stroke="#4facfe" stroke-width="2" rx="5"/>
+                        <text x="0" y="25" text-anchor="middle" fill="#4facfe" font-size="14" font-weight="600">
+                            n=0: constant
+                        </text>
+                        <text x="70" y="25" fill="var(--text-secondary)" font-size="11">m = 0</text>
+                    </g>
+
+                    <!-- n=1 -->
+                    <g transform="translate(0, 60)">
+                        <path d="M -60 20 Q -30 0, 0 20 Q 30 40, 60 20" fill="none" stroke="#ff7eb6" stroke-width="2"/>
+                        <line x1="-60" y1="20" x2="60" y2="20" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2,2"/>
+                        <text x="70" y="25" fill="var(--text-secondary)" font-size="11">n=1: m₁ = 1/R</text>
+                    </g>
+
+                    <!-- n=2 -->
+                    <g transform="translate(0, 100)">
+                        <path d="M -60 20 Q -45 0, -30 20 Q -15 40, 0 20 Q 15 0, 30 20 Q 45 40, 60 20" fill="none" stroke="#ff7eb6" stroke-width="2"/>
+                        <line x1="-60" y1="20" x2="60" y2="20" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2,2"/>
+                        <text x="70" y="25" fill="var(--text-secondary)" font-size="11">n=2: m₂ = 2/R</text>
+                    </g>
+
+                    <!-- n=3 -->
+                    <g transform="translate(0, 140)">
+                        <path d="M -60 20 Q -50 0, -40 20 Q -30 40, -20 20 Q -10 0, 0 20 Q 10 40, 20 20 Q 30 0, 40 20 Q 50 40, 60 20" fill="none" stroke="#ff7eb6" stroke-width="2"/>
+                        <line x1="-60" y1="20" x2="60" y2="20" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2,2"/>
+                        <text x="70" y="25" fill="var(--text-secondary)" font-size="11">n=3: m₃ = 3/R</text>
+                    </g>
+
+                    <text x="0" y="190" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">
+                        psi(y) = e^(iny/R) / sqrt(2 pi R)
+                    </text>
+                </g>
+
+                <!-- Right: Mass spectrum tower -->
+                <g transform="translate(750, 100)">
+                    <text x="0" y="-10" text-anchor="middle" fill="var(--accent-primary)" font-size="14" font-weight="600">
+                        KK Mass Tower
+                    </text>
+
+                    <!-- Energy axis -->
+                    <line x1="-80" y1="280" x2="-80" y2="0" stroke="var(--text-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <text x="-90" y="-10" fill="var(--text-primary)" font-size="12">E</text>
+
+                    <!-- Mass levels -->
+                    <g>
+                        <!-- n=0 -->
+                        <line x1="-75" y1="270" x2="40" y2="270" stroke="#4facfe" stroke-width="4"/>
+                        <circle cx="-10" cy="270" r="5" fill="#4facfe"/>
+                        <text x="50" y="274" fill="#4facfe" font-size="12" font-weight="600">n=0 (massless)</text>
+
+                        <!-- n=1 -->
+                        <line x1="-75" y1="210" x2="40" y2="210" stroke="#ff7eb6" stroke-width="3"/>
+                        <circle cx="-10" cy="210" r="4" fill="#ff7eb6"/>
+                        <text x="50" y="214" fill="var(--text-secondary)" font-size="11">n=1: m = 1/R</text>
+
+                        <!-- n=2 -->
+                        <line x1="-75" y1="150" x2="40" y2="150" stroke="#ff7eb6" stroke-width="3"/>
+                        <circle cx="-10" cy="150" r="4" fill="#ff7eb6"/>
+                        <text x="50" y="154" fill="var(--text-secondary)" font-size="11">n=2: m = 2/R</text>
+
+                        <!-- n=3 -->
+                        <line x1="-75" y1="90" x2="40" y2="90" stroke="#ff7eb6" stroke-width="3"/>
+                        <circle cx="-10" cy="90" r="4" fill="#ff7eb6"/>
+                        <text x="50" y="94" fill="var(--text-secondary)" font-size="11">n=3: m = 3/R</text>
+
+                        <!-- n=4 -->
+                        <line x1="-75" y1="30" x2="40" y2="30" stroke="#ff7eb6" stroke-width="2" opacity="0.5"/>
+                        <circle cx="-10" cy="30" r="3" fill="#ff7eb6" opacity="0.5"/>
+                        <text x="50" y="34" fill="var(--text-muted)" font-size="10">n=4, 5, ...</text>
+                    </g>
+
+                    <!-- Energy gap annotation -->
+                    <path d="M -60 270 L -60 210" stroke="#ffb347" stroke-width="2" stroke-dasharray="3,3"/>
+                    <text x="-50" y="240" fill="#ffb347" font-size="11">Delta m ~ 1/R</text>
+                </g>
+
+                <!-- Bottom explanation -->
+                <text x="450" y="450" text-anchor="middle" fill="var(--text-secondary)" font-size="13" font-style="italic">
+                    From far away (E &lt;&lt; 1/R), we only see the massless n=0 mode. Heavy KK modes are inaccessible.
+                </text>
+
+                <text x="450" y="475" text-anchor="middle" fill="var(--text-muted)" font-size="12">
+                    If R ~ 10^-35 m (Planck scale), then m_1 ~ 10^19 GeV (far beyond LHC energies ~10^3 GeV)
+                </text>
+
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="var(--accent-primary)" />
+                    </marker>
+                </defs>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                The cylinder represents a 2D space with one dimension extended and one compact. Motion in the compact direction appears as massive particles in the effective 1D theory.
+            </p>
         </section>
 
-        <!-- Charge Quantization -->
-        <section class="detail-section">
-            <h3>Charge Quantization</h3>
-            <p>
-                A remarkable prediction of Kaluza-Klein theory: electric charge is quantized
-                because the momentum in the compact dimension must be quantized.
-            </p>
-            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
-                <h4 style="color: #51cf66;">Key Prediction</h4>
-                <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem;">
-                    q = n &sdot; (1/R) &sdot; &radic;(16&pi;G)
-                </p>
-                <p style="color: var(--text-secondary); font-size: 0.9rem;">
-                    Where R is the radius of the compact dimension and n is an integer.
-                    This explains why all charges are integer multiples of e.
-                </p>
-            </div>
-        </section>
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
 
-        <!-- Extension to Non-Abelian -->
-        <section class="detail-section">
-            <h3>Extension to Non-Abelian Gauge Groups</h3>
+            <h3>1. Compactification: How Dimensions Curl Up</h3>
             <p>
-                The original 5D theory only yields U(1). To get non-Abelian gauge groups
-                like SU(2) or SU(3), one needs:
+                A dimension is <strong>compactified</strong> when it forms a compact manifold (like a circle S<sup>1</sup>, sphere S<sup>n</sup>, or torus T<sup>n</sup>) with finite volume. The simplest case is a circle of radius R:
             </p>
-            <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
-                <li><strong>More dimensions:</strong> Each generator of the gauge group needs its own compact direction</li>
-                <li><strong>Specific geometry:</strong> The compact manifold must have the gauge group as its isometry group</li>
-                <li><strong>Example:</strong> S<sup>3</sup> (3-sphere) gives SU(2), CP<sup>2</sup> gives SU(3)</li>
+            <div class="equation-box">
+                y<sub>5</sub> ~ y<sub>5</sub> + 2&pi;R
+                <span class="equation-label">Periodic identification: points separated by 2πR are the same</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                <strong>Analogy:</strong> A garden hose appears 1D from far away, but up close it's really 2D (length x circumference). If the circumference is tiny, you won't notice it unless you look very closely.
+            </p>
+
+            <h3 style="margin-top: 2rem;">2. KK Modes and the Mass Spectrum</h3>
+            <p>
+                When a dimension is compact, <strong>momentum is quantized</strong> in that direction. A particle moving in the compact dimension with momentum p<sub>5</sub> = n/R (where n is an integer) appears in 4D as a particle with mass:
+            </p>
+            <div class="equation-box">
+                m<sub>n</sub> = |p<sub>5</sub>| = n/R &nbsp;&nbsp;&nbsp; (n = 0, 1, 2, 3, ...)
+                <span class="equation-label">KK mass formula (in natural units where h = c = 1)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                This creates an infinite tower of states called <strong>Kaluza-Klein modes</strong>:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>n = 0:</strong> Zero mode (massless). These are the particles we observe (photon, graviton, etc.)</li>
+                <li><strong>n &ge; 1:</strong> Heavy KK modes. Each has mass m<sub>n</sub> = n/R</li>
+                <li>The spacing between levels is <strong>Delta m = 1/R</strong></li>
             </ul>
 
-            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">PM Application: 4-Stage Dimensional Reduction</h4>
-                <p style="color: var(--text-secondary);">
-                    Principia Metaphysica uses a carefully structured 4-stage reduction pathway:
-                </p>
-                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>Stage 1:</strong> 26D bulk with signature (24,2) - bosonic string critical dimension</li>
-                    <li><strong>Stage 2:</strong> Sp(2,R) gauge fixing → 13D (12,1) signature [<em>gauge projection</em>, NOT compactification!]</li>
-                    <li><strong>Stage 3:</strong> G₂ compactification: 13D → 6D (7D compact G₂ manifold for SO(10) gauge symmetry)</li>
-                    <li><strong>Stage 4:</strong> Torus compactification: 6D → 4D (2D torus with R ~ (5 TeV)<sup>-1</sup>)</li>
-                </ul>
-                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
-                    <strong>Critical distinction:</strong> Gauge fixing (Stage 2) eliminates ghost degrees of freedom via Sp(2,R) constraint,
-                    while geometric compactification (Stages 3-4) reduces physical dimensions. Total compact space: V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>).
-                </p>
-                <a href="g2-manifolds.html" class="component-link" style="display: inline-block; margin-top: 0.75rem;">
-                    See G<sub>2</sub> manifolds &rarr;
-                </a>
-            </div>
-        </section>
+            <h3 style="margin-top: 2rem;">3. Why We Don't See Extra Dimensions</h3>
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Radius R</th>
+                        <th>First KK mass m<sub>1</sub></th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10<sup>-35</sup> m (Planck scale)</td>
+                        <td>~10<sup>19</sup> GeV</td>
+                        <td>Far beyond any experiment (LHC: ~10<sup>3</sup> GeV)</td>
+                    </tr>
+                    <tr>
+                        <td>10<sup>-19</sup> m (current limit)</td>
+                        <td>~10<sup>3</sup> GeV</td>
+                        <td>LHC would have seen KK modes</td>
+                    </tr>
+                    <tr>
+                        <td>10<sup>-15</sup> m (femtometer)</td>
+                        <td>~0.2 GeV</td>
+                        <td>Ruled out by particle physics</td>
+                    </tr>
+                    <tr>
+                        <td>1 mm (large extra dim.)</td>
+                        <td>~10<sup>-3</sup> eV</td>
+                        <td>Ruled out by gravity tests</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">
+                <strong>Conclusion:</strong> If R is very small (&le; 10<sup>-19</sup> m), the KK modes are too heavy to produce, so we only see the massless n=0 modes.
+            </p>
 
-        <!-- 4-Stage Dimensional Reduction Framework -->
-        <section class="detail-section">
-            <h3>PM's 4-Stage Dimensional Reduction Framework</h3>
+            <h3 style="margin-top: 2rem;">4. Zero Modes vs. Heavy Modes</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Zero Mode (n=0)</h4>
+                    <ul style="margin-left: 1.2rem; line-height: 1.8;">
+                        <li>Massless: m<sub>0</sub> = 0</li>
+                        <li>Constant wavefunction in compact direction</li>
+                        <li>These are the familiar 4D particles we observe</li>
+                        <li>Example: 4D photon from g<sub>mu 5</sub></li>
+                    </ul>
+                </div>
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Heavy Modes (n&ge;1)</h4>
+                    <ul style="margin-left: 1.2rem; line-height: 1.8;">
+                        <li>Massive: m<sub>n</sub> = n/R</li>
+                        <li>Oscillating wavefunction: e<sup>iny/R</sup></li>
+                        <li>Not yet observed (too heavy)</li>
+                        <li>Would be signature of extra dimensions!</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">5. Connection to String Theory</h3>
             <p>
-                Principia Metaphysica employs a precise 4-stage reduction from 26D to 4D, carefully distinguishing
-                between <strong>gauge fixing</strong> (which eliminates unphysical degrees of freedom) and
-                <strong>geometric compactification</strong> (which reduces physical dimensions). The pathway proceeds:
-                26D (24,2) → 13D (12,1) → 6D → 4D.
+                Kaluza-Klein theory was a precursor to <strong>string theory</strong>, which requires extra dimensions:
             </p>
-
-            <div class="expandable-formula">
-                <div class="formula-header">
-                    <div class="formula-main">
-                        ds<sup>2</sup><sub>13D</sub> = g<sub>&mu;&nu;</sub>(x)dx<sup>&mu;</sup>dx<sup>&nu;</sup> + g<sub>ij</sub>(y)dy<sup>i</sup>dy<sup>j</sup> + g<sub>ab</sub>(z)dz<sup>a</sup>dz<sup>b</sup>
-                    </div>
-                    <div class="formula-controls">
-                        <span class="foundation-badge pm-specific">4-Stage Reduction</span>
-                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
-                    </div>
-                </div>
-                <div class="formula-expansion">
-                    <div class="sub-components">
-                        <div class="sub-component">
-                            <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
-                            <div class="component-name">6D Spacetime Metric</div>
-                            <div class="component-desc">After G₂ compactification: (5,1) signature = 5 space + 1 time. μ,ν = 0,1,2,3,4,5</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">g<sub>ij</sub></div>
-                            <div class="component-name">G₂ Manifold Metric</div>
-                            <div class="component-desc">7D exceptional holonomy manifold (Stage 3 compactification). i,j = 1,...,7</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">g<sub>ab</sub></div>
-                            <div class="component-name">Torus Metric</div>
-                            <div class="component-desc">2D torus with R ~ (5 TeV)<sup>-1</sup> (Stage 4 compactification). a,b = 1,2</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">13D (12,1)</div>
-                            <div class="component-name">Post-Gauge-Fixing Dimension</div>
-                            <div class="component-desc">After Stage 2 Sp(2,R) gauge fixing: 12 spatial + 1 timelike dimension (ghosts eliminated)</div>
-                        </div>
-                    </div>
-                    <div class="derivation-chain">
-                        <div class="chain-title">4-Stage Dimensional Reduction Pathway</div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Stage 1:</strong> 26D (24,2) bulk - bosonic string critical dimension
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Stage 2:</strong> Sp(2,R) gauge fixing → 13D (12,1) [gauge projection, not compactification]
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Stage 3:</strong> G₂ compactification: 13D → 6D (7D compact, SO(10) gauge group emerges)
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Stage 4:</strong> Torus compactification: 6D → 4D (2D torus, M<sub>*</sub> ~ 5 TeV)
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Final: 4D (3,1) spacetime with V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>) = 1.488×10<sup>-138</sup> GeV<sup>-9</sup>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <h4 style="margin-top: 2rem;">Kaluza-Klein Tower and Mass Scales</h4>
-            <p>
-                The 4-stage reduction produces distinct KK towers at different mass scales. The 2D torus
-                compactification (Stage 4) generates the lightest KK modes at M<sub>*</sub> ~ 5 TeV, while
-                the G₂ compactification (Stage 3) produces much heavier modes at M<sub>GUT</sub> ~ 10<sup>16</sup> GeV.
-            </p>
-            <div class="expandable-formula">
-                <div class="formula-header">
-                    <div class="formula-main">
-                        M<sub>KK,T²</sub> = n/R<sub>T²</sub> ~ n × (5 TeV)
-                        &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-                        M<sub>KK,G₂</sub> = m/R<sub>G₂</sub> ~ m × (10<sup>16</sup> GeV)
-                    </div>
-                    <div class="formula-controls">
-                        <span class="foundation-badge pm-specific">Dual KK Towers</span>
-                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
-                    </div>
-                </div>
-                <div class="formula-expansion">
-                    <div class="sub-components">
-                        <div class="sub-component">
-                            <div class="component-symbol">M<sub>KK,T²</sub></div>
-                            <div class="component-name">Torus KK Modes</div>
-                            <div class="component-desc">Lightest KK tower from Stage 4 (2D torus). First mode: ~5 TeV (potentially observable at colliders)</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">M<sub>KK,G₂</sub></div>
-                            <div class="component-name">G₂ KK Modes</div>
-                            <div class="component-desc">Heavy KK tower from Stage 3 (7D G₂). First mode: ~10<sup>16</sup> GeV (affects gauge coupling unification)</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">R<sub>T²</sub></div>
-                            <div class="component-name">Torus Radius</div>
-                            <div class="component-desc">2D torus compactification scale: R ~ (5 TeV)<sup>-1</sup> ~ 4×10<sup>-20</sup> m</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">R<sub>G₂</sub></div>
-                            <div class="component-name">G₂ Radius</div>
-                            <div class="component-desc">7D G₂ compactification scale: R ~ (10<sup>16</sup> GeV)<sup>-1</sup> ~ 2×10<sup>-32</sup> m</div>
-                        </div>
-                    </div>
-                    <div class="derivation-chain">
-                        <div class="chain-title">KK Spectrum in 4-Stage Framework</div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Zero modes:</strong> Standard Model fields (massless in KK sector)
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Torus KK modes:</strong> First excitation at ~5 TeV, affects electroweak precision tests
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>G₂ KK modes:</strong> First excitation at ~10<sup>16</sup> GeV, modifies gauge coupling running
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Hierarchy separation:</strong> Factor of 10<sup>12</sup> between torus and G₂ scales
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            <strong>Observability:</strong> Torus modes potentially accessible at future colliders (FCC)
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
-                <h4 style="color: #51cf66;">Key Distinctions in PM's Dimensional Reduction</h4>
-                <p style="color: var(--text-secondary);">
-                    <strong>Gauge Fixing vs. Compactification:</strong> Stage 2 (26D → 13D) is <em>not</em> a geometric compactification.
-                    Sp(2,R) gauge fixing eliminates 13 unphysical ghost degrees of freedom from the (24,2) signature, projecting to
-                    physical (12,1) spacetime. Only Stages 3-4 (G₂ and torus) are true geometric compactifications.
-                </p>
-                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
-                    <strong>Two KK Towers:</strong> The hierarchy between R<sub>T²</sub> ~ (5 TeV)<sup>-1</sup> and
-                    R<sub>G₂</sub> ~ (10<sup>16</sup> GeV)<sup>-1</sup> produces phenomenologically distinct KK spectra.
-                    Torus modes may appear at colliders; G₂ modes affect high-energy unification.
-                </p>
-            </div>
-        </section>
-
-        <!-- Gauge Fixing vs Compactification -->
-        <section class="detail-section">
-            <h3>Critical Distinction: Gauge Fixing vs. Geometric Compactification</h3>
-            <p>
-                A common source of confusion in PM's dimensional reduction is conflating <strong>gauge fixing</strong>
-                (Stage 2) with <strong>geometric compactification</strong> (Stages 3-4). These are fundamentally
-                different operations with distinct physical interpretations.
-            </p>
-
-            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
-                <h4 style="color: #ff7eb6;">Stage 2: Sp(2,R) Gauge Fixing (26D → 13D)</h4>
-                <p style="color: var(--text-secondary);">
-                    <strong>Nature:</strong> Gauge projection that eliminates unphysical ghost degrees of freedom.
-                </p>
-                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>Mechanism:</strong> Sp(2,R) constraint removes 13 ghost coordinates from (24,2) signature</li>
-                    <li><strong>Result:</strong> 13D spacetime with physical (12,1) signature (12 space + 1 time)</li>
-                    <li><strong>NOT compactification:</strong> No internal manifold, no KK tower from this stage</li>
-                    <li><strong>Purpose:</strong> Projects to physical degrees of freedom, eliminating negative-norm states</li>
-                </ul>
-            </div>
-
-            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
-                <h4 style="color: #51cf66;">Stages 3-4: Geometric Compactification</h4>
-                <p style="color: var(--text-secondary);">
-                    <strong>Nature:</strong> True dimensional reduction via compact internal manifolds.
-                </p>
-                <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>Stage 3 (G₂):</strong> 13D → 6D by compactifying on 7D G₂ manifold</li>
-                    <li><strong>Stage 4 (Torus):</strong> 6D → 4D by compactifying on 2D torus T<sup>2</sup></li>
-                    <li><strong>Total compact volume:</strong> V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>) = 1.488×10<sup>-138</sup> GeV<sup>-9</sup></li>
-                    <li><strong>KK towers:</strong> Modes at M<sub>G₂</sub> ~ 10<sup>16</sup> GeV and M<sub>T²</sub> ~ 5 TeV</li>
-                    <li><strong>Gauge groups:</strong> G₂ isometry → SO(10), torus gives additional U(1) factors</li>
-                </ul>
-            </div>
-
-            <p style="margin-top: 1.5rem;">
-                <strong>Summary:</strong> Dimensional counting goes 26 → 13 → 6 → 4, but only the last two transitions
-                (13 → 6 → 4) involve physical compactification. The first transition (26 → 13) is pure gauge projection,
-                selecting the physical sector of the theory.
-            </p>
-        </section>
-
-        <!-- Warped Extra Dimensions -->
-        <section class="detail-section">
-            <h3>Warped Extra Dimensions: Randall-Sundrum Mechanism</h3>
-            <p>
-                An alternative to flat compact dimensions is <strong>warping</strong>, where the metric
-                varies exponentially in the extra dimension. This generates mass hierarchies without fine-tuning.
-            </p>
-
-            <div class="expandable-formula">
-                <div class="formula-header">
-                    <div class="formula-main">
-                        ds<sup>2</sup> = e<sup>-2ky</sup>&eta;<sub>&mu;&nu;</sub>dx<sup>&mu;</sup>dx<sup>&nu;</sup> + dy<sup>2</sup>
-                    </div>
-                    <div class="formula-controls">
-                        <span class="foundation-badge established">Randall-Sundrum (1999)</span>
-                        <button class="expand-btn" title="Expand formula">&#x25BC;</button>
-                    </div>
-                </div>
-                <div class="formula-expansion">
-                    <div class="sub-components">
-                        <div class="sub-component">
-                            <div class="component-symbol">k</div>
-                            <div class="component-name">Warp Factor</div>
-                            <div class="component-desc">AdS curvature scale, typically k ~ M<sub>Pl</sub> ~ 10<sup>19</sup> GeV</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">y</div>
-                            <div class="component-name">Extra Dimension</div>
-                            <div class="component-desc">Coordinate along the warped dimension, 0 &le; y &le; L</div>
-                        </div>
-                        <div class="sub-component">
-                            <div class="component-symbol">e<sup>-2ky</sup></div>
-                            <div class="component-name">Warp Factor</div>
-                            <div class="component-desc">Exponential suppression generates hierarchy: physics at y = L is redshifted by e<sup>-kL</sup></div>
-                        </div>
-                    </div>
-                    <div class="derivation-chain">
-                        <div class="chain-title">Hierarchy Generation</div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            Planck brane (y=0): M<sub>Pl</sub> ~ 10<sup>19</sup> GeV
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            TeV brane (y=L): M<sub>eff</sub> = M<sub>Pl</sub> e<sup>-kL</sup> ~ TeV
-                        </div>
-                        <div class="chain-step">
-                            <span class="step-arrow">&rarr;</span>
-                            With kL ~ 35, hierarchy M<sub>Pl</sub>/M<sub>TeV</sub> ~ 10<sup>16</sup> explained!
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <p style="margin-top: 1.5rem;">
-                The Randall-Sundrum mechanism solves the <strong>hierarchy problem</strong>: why is gravity
-                so much weaker than other forces? If Standard Model fields are localized near y = L,
-                they naturally have TeV-scale masses, while gravity propagates in all dimensions and appears
-                weak at the TeV brane.
-            </p>
-
-            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">Connection to PM</h4>
-                <p style="color: var(--text-secondary);">
-                    PM's 2D torus (Stage 4) is flat with R ~ (5 TeV)<sup>-1</sup>, while the 7D G<sub>2</sub> manifold
-                    (Stage 3) may incorporate warping or flux-induced effective warping to stabilize moduli and generate
-                    hierarchies within the SO(10) breaking pattern.
-                </p>
-                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
-                    <strong>Warped correction to dimensional reduction:</strong> If the G<sub>2</sub> manifold
-                    has a warped metric (e.g., from flux stabilization), the Planck mass formula acquires an
-                    additional warp factor:
-                </p>
-                <div style="background: rgba(139, 127, 255, 0.12); padding: 1rem; border-radius: 8px; margin-top: 0.75rem; text-align: center; font-family: 'Crimson Text', serif; font-size: 1.05rem;">
-                    M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> &times; V<sub>9</sub> &times; &int;<sub>G₂</sub> e<sup>-2A(y)</sup>
-                </div>
-                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem;">
-                    where A(y) is the warp factor profile on the G<sub>2</sub> manifold and V<sub>9</sub> = Vol(G₂) × Vol(T<sup>2</sup>)
-                    is the total 9D internal volume (7D + 2D). This can help address the hierarchy problem without requiring
-                    extremely large internal volumes.
-                </p>
-            </div>
-        </section>
-
-        <!-- Historical Context -->
-        <section class="detail-section">
-            <h3>Historical Development</h3>
-            <ul style="color: var(--text-secondary); margin-left: 1.5rem;">
-                <li><strong>1919:</strong> Kaluza sends paper to Einstein proposing 5D unification</li>
-                <li><strong>1921:</strong> Paper finally published after Einstein's endorsement</li>
-                <li><strong>1926:</strong> Klein proposes compact fifth dimension with radius R ~ 10<sup>-33</sup> cm</li>
-                <li><strong>1980s:</strong> Revival in context of string theory and supergravity</li>
-                <li><strong>1998:</strong> Arkani-Hamed, Dimopoulos, Dvali propose Large Extra Dimensions</li>
-                <li><strong>1999:</strong> Randall-Sundrum introduce warped extra dimensions</li>
-                <li><strong>Today:</strong> Foundation for all higher-dimensional unification attempts</li>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Type I, IIA, IIB string theory:</strong> 10 dimensions (9 space + 1 time)</li>
+                <li><strong>M-theory:</strong> 11 dimensions (10 space + 1 time)</li>
+                <li><strong>Compactification manifolds:</strong> Calabi-Yau manifolds (6D), G₂ manifolds (7D), etc.</li>
+                <li><strong>Moduli:</strong> Parameters describing the shape and size of compact dimensions (like radius R)</li>
             </ul>
+            <p style="margin-top: 1rem;">
+                The <strong>moduli stabilization problem</strong> asks: why do the compact dimensions have a particular size? This is still an open question in string theory.
+            </p>
         </section>
 
-        <!-- References -->
-        <section class="detail-section" style="background: rgba(81, 207, 102, 0.05);">
-            <h3>References & Further Reading</h3>
-            <ul style="color: var(--text-secondary); line-height: 2.2; margin-left: 1.5rem;">
-                <li>
-                    <strong>Original Paper:</strong> Kaluza, T. (1921) "Zum Unitatsproblem der Physik"
-                    <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
-                </li>
-                <li>
-                    <strong>Klein's Paper:</strong> Klein, O. (1926) "Quantentheorie und funfdimensionale Relativitatstheorie"
-                    <em>Zeitschrift fur Physik</em> 37: 895-906
-                </li>
-                <li>
-                    <strong>Review Article:</strong> Overduin & Wesson (1997) "Kaluza-Klein Gravity"
-                    <a href="https://arxiv.org/abs/gr-qc/9805018" target="_blank" style="color: var(--accent-primary);">[arXiv]</a>
-                </li>
-                <li>
-                    <strong>2T Physics:</strong> Bars, I. (2000) "Survey of Two-Time Physics"
-                    <a href="https://arxiv.org/abs/hep-th/0008164" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/0008164]</a>
-                </li>
-                <li>
-                    <strong>2T Framework:</strong> Bars, I. & Kounnas, C. (1997) "String and Particle with Two Times"
-                    <a href="https://arxiv.org/abs/hep-th/9703060" target="_blank" style="color: var(--accent-primary);">[arXiv:hep-th/9703060]</a>
-                </li>
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>Kaluza-Klein Theory - PBS Space Time</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Excellent introduction to how extra dimensions can be hidden and the physics of compactification.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=7VL0VBKMg_o" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">13 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Extra Dimensions - Sixty Symbols</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Intuitive explanation of why we might have extra spatial dimensions we can't see.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=7WIJfVQz4UA" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">10 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Compactification in String Theory - Perimeter Institute</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        More advanced discussion of compactification and Calabi-Yau manifolds.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=Qo0dqxQkg0Y" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">45 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Hidden Dimensions of String Theory - Brian Greene</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Beautiful visualizations of compactified dimensions and Calabi-Yau spaces.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=YtdE662eY_M" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">6 min</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Papers</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
                 <li>
                     <strong>Wikipedia:</strong>
                     <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory" target="_blank" style="color: var(--accent-primary);">Kaluza-Klein Theory</a> |
-                    <a href="https://en.wikipedia.org/wiki/Compactification_(physics)" target="_blank" style="color: var(--accent-primary);">Compactification</a>
+                    <a href="https://en.wikipedia.org/wiki/Compactification_(physics)" target="_blank" style="color: var(--accent-primary);">Compactification</a> |
+                    <a href="https://en.wikipedia.org/wiki/Extra_dimensions" target="_blank" style="color: var(--accent-primary);">Extra Dimensions</a>
+                </li>
+                <li>
+                    <strong>Original Papers:</strong><br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Kaluza, T. (1921) "On the Unification Problem in Physics"<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;Klein, O. (1926) "Quantum Theory and Five-Dimensional Relativity"
+                </li>
+                <li>
+                    <strong>Modern Review:</strong>
+                    Duff, M. J. "Kaluza-Klein Theory in Perspective" (1994)
+                    <a href="https://arxiv.org/abs/hep-th/9410046" target="_blank" style="color: var(--accent-primary);">[arXiv]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Advanced):</strong>
+                    "String Theory and M-Theory" by Becker, Becker & Schwarz (Chapter 8: Compactification)
+                </li>
+                <li>
+                    <strong>Popular Science:</strong>
+                    "The Elegant Universe" by Brian Greene (Chapter 12: Beyond Strings)
                 </li>
             </ul>
-            <p style="margin-top: 1rem;">
-                <a href="../references.html#kaluza1921" style="color: var(--accent-secondary);">See full references page &rarr;</a>
+
+            <h3 style="margin-top: 2.5rem;">Interactive Visualizations</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Calabi-Yau Manifold Explorer:</strong>
+                    <a href="https://www.dimensions-math.org/" target="_blank" style="color: var(--accent-primary);">Dimensions (free video series)</a>
+                </li>
+                <li>
+                    <strong>Extra Dimensions Simulator:</strong>
+                    <a href="https://www.dimensions-math.org/Dim_CH7_E.htm" target="_blank" style="color: var(--accent-primary);">Chapter 7: Fibrations</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>Compactification</h4>
+                    <p>The process of "curling up" extra dimensions into compact manifolds (finite volume). The simplest is a circle S¹, but can be more complex (Calabi-Yau, G₂, etc.).</p>
+                    <a href="https://en.wikipedia.org/wiki/Compactification_(physics)" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Compactification Radius</h4>
+                    <p>The characteristic size R of the compact dimension. Determines the mass gap between KK modes: Delta m ~ 1/R.</p>
+                    <span class="foundation-badge" style="margin-top: 0.5rem; background: rgba(139, 127, 255, 0.1); color: #8b7fff;">Free Parameter</span>
+                </div>
+                <div class="term-card">
+                    <h4>KK Tower</h4>
+                    <p>The infinite set of massive particle states arising from quantized momentum in compact dimensions. Forms a "tower" with mass spacing 1/R.</p>
+                    <a href="https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory#The_Kaluza%E2%80%93Klein_tower" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Zero Mode</h4>
+                    <p>The n=0 state in the KK tower. Massless and corresponds to the 4D fields we observe. Has constant wavefunction in compact directions.</p>
+                    <span class="foundation-badge" style="margin-top: 0.5rem; background: rgba(79, 172, 254, 0.1); color: #4facfe;">Observable</span>
+                </div>
+                <div class="term-card">
+                    <h4>Moduli</h4>
+                    <p>Scalar fields describing the shape and size of compact dimensions. Example: radion phi = sqrt(g_55) encodes the radius. These appear as massless scalars in 4D.</p>
+                    <a href="https://en.wikipedia.org/wiki/Moduli_(physics)" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Orbifolding</h4>
+                    <p>A generalization of compactification where you identify points under discrete symmetries (e.g., y ~ -y). Creates "orbifold singularities" where matter can be localized.</p>
+                    <a href="https://en.wikipedia.org/wiki/Orbifold" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Dimensional Reduction</h4>
+                    <p>The procedure of compactifying higher-dimensional theories to obtain effective lower-dimensional theories. KK theory is the classic example.</p>
+                    <a href="https://en.wikipedia.org/wiki/Dimensional_reduction" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Calabi-Yau Manifold</h4>
+                    <p>A complex 6D manifold with special geometric properties (Ricci-flat, Kahler). Used to compactify 6 of the 10 dimensions in string theory.</p>
+                    <a href="https://en.wikipedia.org/wiki/Calabi%E2%80%93Yau_manifold" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>G₂ Manifold</h4>
+                    <p>A 7D manifold with holonomy group G₂. Used to compactify M-theory (11D) down to 4D. More restrictive than Calabi-Yau.</p>
+                    <a href="g2-manifolds.html" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                Principia Metaphysica employs a <strong>multi-stage compactification</strong> process from 26D down to the observed 4D:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">26D &rarr; 13D &rarr; 6D &rarr; 4D Reduction Pathway</h4>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    Each stage involves different compactification mechanisms:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
+                    <li>
+                        <strong>26D &rarr; 13D:</strong> Sp(2,R) gauge fixing in 2T physics projects the (24,2) bulk onto a (12,1) "shadow" spacetime. This is not standard KK compactification but rather a gauge-theoretic reduction.
+                    </li>
+                    <li>
+                        <strong>13D &rarr; 6D:</strong> Seven dimensions compactify on a <strong>G₂ manifold</strong> (7D with holonomy G₂). This preserves N=1 supersymmetry and yields a 6D (5,1) bulk.
+                    </li>
+                    <li>
+                        <strong>6D &rarr; 4D:</strong> Further compactification on a 2D surface (possibly T² or more complex) to reach the observed 4D spacetime (3,1).
+                    </li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
+                <h4 style="color: #ff7eb6;">Multiple Compactification Scales</h4>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    Unlike the single-scale KK theory, PM has multiple scales:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
+                    <li><strong>R<sub>26 to 13</sub>:</strong> Not applicable (gauge fixing, not compactification)</li>
+                    <li><strong>R<sub>13 to 6</sub>:</strong> G₂ compactification scale (likely near Planck scale ~10<sup>-35</sup> m)</li>
+                    <li><strong>R<sub>6 to 4</sub>:</strong> Final compactification scale (could be hierarchically different)</li>
+                </ul>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">
+                    This <strong>hierarchy of scales</strong> allows different physics to emerge at each stage, potentially explaining the hierarchy problem (why gravity is so weak compared to other forces).
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe; margin-top: 1.5rem;">
+                <h4 style="color: #4facfe;">Flux Compactification & Moduli Stabilization</h4>
+                <p style="color: var(--text-secondary); margin-top: 0.75rem;">
+                    PM likely employs <strong>flux compactification</strong> to stabilize the moduli (size and shape of compact dimensions):
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
+                    <li>Background fluxes (generalized field strengths) on the G₂ manifold generate a potential for the moduli</li>
+                    <li>This lifts the flat directions and fixes the compactification radius R at specific values</li>
+                    <li>The resulting vacuum energy contributes to the cosmological constant Lambda</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                See the <a href="../sections/cosmology.html" style="color: var(--accent-primary);">Cosmology section</a> for how this dimensional reduction affects the evolution of the universe at different scales.
             </p>
         </section>
 
+        <!-- Practice Problems -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding of Kaluza-Klein theory:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: KK Mass Calculation</h4>
+                <p>
+                    Suppose one extra dimension is compactified on a circle of radius R = 10<sup>-32</sup> m.
+                    Calculate the mass of the first three KK modes (n=1, 2, 3) in GeV. (Use hc ~ 197 MeV·fm = 1.97 x 10<sup>-16</sup> GeV·m)
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        m<sub>n</sub> = n(hc)/R<br>
+                        m<sub>1</sub> = (1.97 x 10<sup>-16</sup> GeV·m) / (10<sup>-32</sup> m) ~ 1.97 x 10<sup>16</sup> GeV<br>
+                        m<sub>2</sub> ~ 3.94 x 10<sup>16</sup> GeV<br>
+                        m<sub>3</sub> ~ 5.91 x 10<sup>16</sup> GeV<br>
+                        (All far beyond LHC energies ~10<sup>3</sup> GeV!)
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Observational Constraint</h4>
+                <p>
+                    The LHC can produce particles up to about 14 TeV = 14 x 10<sup>3</sup> GeV. If no KK modes have been observed, what lower bound does this place on the compactification radius R?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        For the first KK mode to be unobservable: m<sub>1</sub> = (hc)/R > 14 TeV<br>
+                        Therefore: R < (hc)/(14 TeV) ~ (1.97 x 10<sup>-16</sup> GeV·m) / (1.4 x 10<sup>4</sup> GeV)<br>
+                        R < 1.4 x 10<sup>-20</sup> m<br>
+                        So extra dimensions (if they exist) must be smaller than ~10<sup>-20</sup> m.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Mode Expansion</h4>
+                <p>
+                    Consider a scalar field Phi(x<sup>mu</sup>, y) in 5D where y is compact with radius R.
+                    Expand Phi in KK modes and show that each mode phi<sub>n</sub>(x<sup>mu</sup>) satisfies a 4D Klein-Gordon equation with mass m<sub>n</sub> = n/R.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Expand: Phi(x<sup>mu</sup>, y) = Sum_n phi<sub>n</sub>(x<sup>mu</sup>) e<sup>iny/R</sup> / sqrt(2 pi R)<br>
+                        Substitute into 5D wave equation: partial_M partial<sup>M</sup> Phi = 0<br>
+                        Use: partial_y e<sup>iny/R</sup> = (in/R) e<sup>iny/R</sup>
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 4: Large Extra Dimensions</h4>
+                <p>
+                    In theories with "large" extra dimensions (ADD model), gravity can propagate in the extra dimensions while Standard Model particles are confined to a 4D "brane".
+                    If gravity appears weak because it dilutes in extra dimensions, what radius R would make the fundamental Planck scale M<sub>*</sub> ~ 1 TeV (instead of 10<sup>19</sup> GeV) with 2 extra dimensions?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Use: M<sub>Pl</sub><sup>2</sup> ~ M<sub>*</sub><sup>n+2</sup> R<sup>n</sup>, where n is the number of extra dimensions.<br>
+                        For n=2: (10<sup>19</sup> GeV)<sup>2</sup> ~ (10<sup>3</sup> GeV)<sup>4</sup> R<sup>2</sup><br>
+                        Solve for R ~ 10<sup>-3</sup> m = 1 mm (ruled out by gravity tests!)
+                    </p>
+                </details>
+            </div>
+        </section>
+
         <!-- Navigation -->
-        <div class="section-nav-links" style="margin-top: 3rem;">
-            <a href="einstein-hilbert-action.html" class="nav-link">
-                <span class="direction">&larr; Previous</span>
-                <span class="title">Einstein-Hilbert Action</span>
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
             </a>
-            <a href="g2-manifolds.html" class="nav-link" style="text-align: right;">
-                <span class="direction">Next &rarr;</span>
-                <span class="title">G<sub>2</sub> Manifolds</span>
+            <a href="einstein-field-equations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Einstein Field Equations &rarr;
             </a>
         </div>
     </main>
@@ -662,5 +718,177 @@
             &copy; 2025 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b7fff, #ff7eb6);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #8b7fff;
+        }
+        .highlight-box h4 {
+            color: #8b7fff;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        .breaking-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+        .breaking-table thead {
+            background: rgba(139, 127, 255, 0.1);
+        }
+        .breaking-table th {
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid var(--border-primary);
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        .breaking-table td {
+            padding: 0.75rem;
+            border-bottom: 1px solid var(--border-primary);
+            color: var(--text-secondary);
+        }
+        .breaking-table tbody tr:hover {
+            background: rgba(139, 127, 255, 0.05);
+        }
+    </style>
 </body>
 </html>

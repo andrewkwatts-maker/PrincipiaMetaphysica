@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ricci Tensor & Ricci Scalar - Learn how spacetime curvature is measured with diagrams, explanations, and educational resources">
+    <title>Ricci Tensor & Ricci Scalar - Foundational Physics</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="../js/formula-expansion.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Foundations</a></li>
+                    <li><a href="../sections/index.html">Sections</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Foundations</a>
+            <span class="separator">/</span>
+            <span>Ricci Tensor & Ricci Scalar</span>
+        </nav>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(81, 207, 102, 0.1)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Mathematics (1854-1903)</span>
+            <h1 style="background: linear-gradient(135deg, #8b7fff, #51cf66); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Ricci Tensor & Ricci Scalar</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The fundamental measures of spacetime curvature that describe how matter and energy bend space, forming the building blocks of Einstein's field equations.
+            </p>
+            <div class="main-equation" style="background: rgba(139, 127, 255, 0.1);">
+                R<sub>&mu;&nu;</sub> = R<sup>&lambda;</sup><sub>&mu;&lambda;&nu;</sub>
+                <span style="margin: 0 1.5rem; opacity: 0.5;">|</span>
+                R = g<sup>&mu;&nu;</sup> R<sub>&mu;&nu;</sub>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Riemann (1854) | Ricci & Levi-Civita (1900) | Foundation of General Relativity
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(81, 207, 102, 0.03)); border-left: 4px solid #8b7fff;">
+            <h2>What Do These Tensors Measure?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>"The Ricci tensor measures how volumes change in curved space. The Ricci scalar is the total curvature at a point."</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Riemann Tensor: R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></h4>
+                    <p>The <strong>fundamental curvature tensor</strong> that measures how vectors change when parallel transported around loops. Has 20 independent components in 4D spacetime.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Ricci Tensor: R<sub>&mu;&nu;</sub></h4>
+                    <p>A <strong>contraction</strong> of the Riemann tensor that measures how volumes of small geodesic balls differ from flat space. Has 10 independent components (symmetric).</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Ricci Scalar: R</h4>
+                    <p>The <strong>trace</strong> of the Ricci tensor - a single number at each point that measures the total average curvature. Appears in the Einstein-Hilbert action.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">R<sub>&mu;&nu;</sub> = R<sup>&lambda;</sup><sub>&mu;&lambda;&nu;</sub></div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></div>
+                        <div class="component-name">Riemann Curvature Tensor</div>
+                        <div class="component-desc">
+                            The fundamental measure of spacetime curvature:<br>
+                            R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> = &part;<sub>&mu;</sub>&Gamma;<sup>&rho;</sup><sub>&nu;&sigma;</sub> - &part;<sub>&nu;</sub>&Gamma;<sup>&rho;</sup><sub>&mu;&sigma;</sub> + &Gamma;<sup>&rho;</sup><sub>&mu;&lambda;</sub>&Gamma;<sup>&lambda;</sup><sub>&nu;&sigma;</sub> - &Gamma;<sup>&rho;</sup><sub>&nu;&lambda;</sub>&Gamma;<sup>&lambda;</sup><sub>&mu;&sigma;</sub><br>
+                            Measures how vectors change when parallel transported around closed loops.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Riemann_curvature_tensor" target="_blank" class="component-link">Wikipedia: Riemann Tensor &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Contraction</div>
+                        <div class="component-name">Summing Over Paired Indices</div>
+                        <div class="component-desc">
+                            R<sub>&mu;&nu;</sub> = R<sup>&lambda;</sup><sub>&mu;&lambda;&nu;</sub> means sum over &lambda; = 0, 1, 2, 3<br>
+                            This "traces out" two indices, reducing from rank-4 to rank-2 tensor.<br>
+                            Physically: averages directional curvature information.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Tensor Contraction</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&Gamma;<sup>&lambda;</sup><sub>&mu;&nu;</sub></div>
+                        <div class="component-name">Christoffel Symbols</div>
+                        <div class="component-desc">
+                            Connection coefficients describing how basis vectors change:<br>
+                            &Gamma;<sup>&lambda;</sup><sub>&mu;&nu;</sub> = &frac12; g<sup>&lambda;&rho;</sup>(&part;<sub>&mu;</sub>g<sub>&nu;&rho;</sub> + &part;<sub>&nu;</sub>g<sub>&rho;&mu;</sub> - &part;<sub>&rho;</sub>g<sub>&mu;&nu;</sub>)<br>
+                            Not tensors themselves, but combinations form tensors.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Christoffel_symbols" target="_blank" class="component-link">Wikipedia: Christoffel Symbols &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">g<sup>&mu;&nu;</sup></div>
+                        <div class="component-name">Inverse Metric Tensor</div>
+                        <div class="component-desc">
+                            Used to raise indices and form the Ricci scalar:<br>
+                            R = g<sup>&mu;&nu;</sup>R<sub>&mu;&nu;</sub> (trace/contraction of Ricci tensor)<br>
+                            Satisfies g<sup>&mu;&lambda;</sup>g<sub>&lambda;&nu;</sub> = &delta;<sup>&mu;</sup><sub>&nu;</sub> (identity matrix)
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Metric_tensor" target="_blank" class="component-link">Wikipedia: Metric Tensor &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">R<sub>&mu;&nu;</sub></div>
+                        <div class="component-name">Ricci Tensor (10 Components)</div>
+                        <div class="component-desc">
+                            Symmetric: R<sub>&mu;&nu;</sub> = R<sub>&nu;&mu;</sub><br>
+                            In 4D: 10 independent components (not 16 due to symmetry)<br>
+                            Measures volume distortion: how geodesic balls differ from Euclidean balls
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Rank-2 Tensor</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">R</div>
+                        <div class="component-name">Ricci Scalar (1 Component)</div>
+                        <div class="component-desc">
+                            Single number measuring total curvature at each point:<br>
+                            R = g<sup>00</sup>R<sub>00</sub> + g<sup>11</sup>R<sub>11</sub> + g<sup>22</sup>R<sub>22</sub> + g<sup>33</sup>R<sub>33</sub> + (cross terms)<br>
+                            Appears in Lagrangian density for gravity (Einstein-Hilbert action)
+                        </div>
+                        <a href="einstein-hilbert-action.html" class="component-link">Einstein-Hilbert Action &rarr;</a>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Curvature Hierarchy</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Metric g<sub>&mu;&nu;</sub> (10 components)</span>
+                        <span class="foundation-badge established">Geometry</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Christoffel Symbols &Gamma;<sup>&lambda;</sup><sub>&mu;&nu;</sub> (40 indep. components)</span>
+                        <span class="foundation-badge established">Connection</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Riemann Tensor R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> (20 components)</span>
+                        <span class="foundation-badge established">Curvature</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Ricci Tensor R<sub>&mu;&nu;</sub> (10 components)</span>
+                        <span class="foundation-badge established">Contraction</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Ricci Scalar R (1 component)</span>
+                        <span class="foundation-badge established">Trace</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="einstein-field-equations.html">Einstein Tensor G<sub>&mu;&nu;</sub> = R<sub>&mu;&nu;</sub> - &frac12;Rg<sub>&mu;&nu;</sub></a>
+                        <span class="foundation-badge established">Field Equations</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: Parallel Transport & Curvature</h2>
+            <p>The Riemann tensor measures how vectors change when parallel transported around closed loops in curved spacetime:</p>
+
+            <svg width="100%" height="500" viewBox="0 0 900 500" style="background: rgba(139, 127, 255, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#8b7fff" />
+                    </marker>
+                    <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#51cf66" />
+                    </marker>
+                    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#4facfe" />
+                    </marker>
+                    <radialGradient id="curveGradient" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:0.05" />
+                    </radialGradient>
+                </defs>
+
+                <!-- Title -->
+                <text x="450" y="30" text-anchor="middle" fill="var(--text-primary)" font-size="20" font-weight="600">
+                    Parallel Transport Around a Loop on Curved Surface
+                </text>
+
+                <!-- Curved surface representation -->
+                <ellipse cx="250" cy="280" rx="180" ry="140" fill="url(#curveGradient)" stroke="none"/>
+
+                <!-- Geodesic loop (triangle on curved surface) -->
+                <path d="M 250 150 Q 320 200, 380 260" stroke="#ff7eb6" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                <path d="M 380 260 Q 300 350, 180 340" stroke="#ff7eb6" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+                <path d="M 180 340 Q 200 240, 250 150" stroke="#ff7eb6" stroke-width="3" fill="none" stroke-dasharray="5,3"/>
+
+                <!-- Points on the loop -->
+                <circle cx="250" cy="150" r="6" fill="#ff7eb6" stroke="white" stroke-width="2"/>
+                <circle cx="380" cy="260" r="6" fill="#ff7eb6" stroke="white" stroke-width="2"/>
+                <circle cx="180" cy="340" r="6" fill="#ff7eb6" stroke="white" stroke-width="2"/>
+
+                <!-- Vector at start (upward) -->
+                <line x1="250" y1="150" x2="250" y2="90" stroke="#8b7fff" stroke-width="4" marker-end="url(#arrowhead)"/>
+                <text x="260" y="115" fill="#8b7fff" font-size="14" font-weight="600">V<sub>start</sub></text>
+
+                <!-- Vector after first leg (rotated slightly) -->
+                <line x1="380" y1="260" x2="365" y2="200" stroke="#51cf66" stroke-width="4" marker-end="url(#arrowhead-green)"/>
+                <text x="330" y="225" fill="#51cf66" font-size="14" font-weight="600">V₁</text>
+
+                <!-- Vector after second leg (rotated more) -->
+                <line x1="180" y1="340" x2="140" y2="290" stroke="#4facfe" stroke-width="4" marker-end="url(#arrowhead-blue)"/>
+                <text x="110" y="310" fill="#4facfe" font-size="14" font-weight="600">V₂</text>
+
+                <!-- Vector at end (different from start!) -->
+                <line x1="250" y1="150" x2="220" y2="95" stroke="#ffb347" stroke-width="4" marker-end="url(#arrowhead)" stroke-dasharray="3,3"/>
+                <text x="185" y="115" fill="#ffb347" font-size="14" font-weight="600">V<sub>end</sub></text>
+
+                <!-- Rotation angle indicator -->
+                <path d="M 250 120 A 30 30 0 0 1 235 110" stroke="#ff0080" stroke-width="2" fill="none"/>
+                <text x="265" y="70" fill="#ff0080" font-size="13" font-weight="600">&Delta;V</text>
+                <text x="250" y="85" fill="#ff0080" font-size="11" text-anchor="middle">(holonomy)</text>
+
+                <!-- Labels -->
+                <text x="250" y="435" text-anchor="middle" fill="var(--text-secondary)" font-size="14">
+                    Parallel transport keeps vector "as parallel as possible" along path
+                </text>
+                <text x="250" y="455" text-anchor="middle" fill="var(--text-secondary)" font-size="14">
+                    Change &Delta;V after loop measures Riemann curvature R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub>
+                </text>
+
+                <!-- Right side: hierarchy diagram -->
+                <g transform="translate(550, 100)">
+                    <text x="150" y="0" text-anchor="middle" fill="var(--text-primary)" font-size="18" font-weight="600">
+                        Curvature Measures
+                    </text>
+
+                    <!-- Riemann -->
+                    <rect x="20" y="30" width="260" height="70" fill="rgba(139, 127, 255, 0.1)" stroke="#8b7fff" stroke-width="2" rx="8"/>
+                    <text x="150" y="55" text-anchor="middle" fill="#8b7fff" font-size="16" font-weight="600">
+                        Riemann Tensor R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub>
+                    </text>
+                    <text x="150" y="75" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                        20 independent components
+                    </text>
+                    <text x="150" y="90" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Full curvature information
+                    </text>
+
+                    <!-- Arrow down -->
+                    <line x1="150" y1="105" x2="150" y2="135" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <text x="190" y="125" fill="var(--text-muted)" font-size="11">Contract</text>
+
+                    <!-- Ricci Tensor -->
+                    <rect x="40" y="140" width="220" height="70" fill="rgba(81, 207, 102, 0.1)" stroke="#51cf66" stroke-width="2" rx="8"/>
+                    <text x="150" y="165" text-anchor="middle" fill="#51cf66" font-size="16" font-weight="600">
+                        Ricci Tensor R<sub>&mu;&nu;</sub>
+                    </text>
+                    <text x="150" y="185" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                        10 independent components
+                    </text>
+                    <text x="150" y="200" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Volume distortion
+                    </text>
+
+                    <!-- Arrow down -->
+                    <line x1="150" y1="215" x2="150" y2="245" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <text x="185" y="235" fill="var(--text-muted)" font-size="11">Trace</text>
+
+                    <!-- Ricci Scalar -->
+                    <rect x="60" y="250" width="180" height="70" fill="rgba(79, 172, 254, 0.1)" stroke="#4facfe" stroke-width="2" rx="8"/>
+                    <text x="150" y="275" text-anchor="middle" fill="#4facfe" font-size="16" font-weight="600">
+                        Ricci Scalar R
+                    </text>
+                    <text x="150" y="295" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                        1 component (scalar)
+                    </text>
+                    <text x="150" y="310" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Total average curvature
+                    </text>
+
+                    <!-- Arrow down -->
+                    <line x1="150" y1="325" x2="150" y2="350" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                    <!-- Einstein Tensor -->
+                    <rect x="40" y="355" width="220" height="50" fill="rgba(255, 126, 182, 0.1)" stroke="#ff7eb6" stroke-width="2" rx="8"/>
+                    <text x="150" y="380" text-anchor="middle" fill="#ff7eb6" font-size="15" font-weight="600">
+                        G<sub>&mu;&nu;</sub> = R<sub>&mu;&nu;</sub> - &frac12;Rg<sub>&mu;&nu;</sub>
+                    </text>
+                    <text x="150" y="397" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Einstein field equations
+                    </text>
+                </g>
+
+                <!-- Annotation about curvature -->
+                <g transform="translate(50, 80)">
+                    <rect x="0" y="0" width="180" height="60" fill="rgba(255, 178, 71, 0.1)" stroke="#ffb247" stroke-width="1.5" rx="6"/>
+                    <text x="90" y="20" text-anchor="middle" fill="#ffb247" font-size="12" font-weight="600">
+                        On Curved Surface:
+                    </text>
+                    <text x="90" y="37" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        V<sub>end</sub> ≠ V<sub>start</sub>
+                    </text>
+                    <text x="90" y="52" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        (Curvature detected!)
+                    </text>
+                </g>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                When you parallel transport a vector around a closed loop in curved space, it returns rotated. This rotation measures the Riemann curvature tensor.
+            </p>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
+
+            <h3>1. From Riemann to Ricci: The Contraction</h3>
+            <p>
+                The Riemann curvature tensor R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> has 4 indices and (in 4D) 20 independent components.
+                This is too much information for most purposes, so we <strong>contract</strong> it:
+            </p>
+            <div class="equation-box">
+                R<sub>&mu;&nu;</sub> = R<sup>&lambda;</sup><sub>&mu;&lambda;&nu;</sub> = g<sup>&lambda;&rho;</sup>R<sub>&rho;&mu;&lambda;&nu;</sub>
+                <span class="equation-label">Ricci tensor (contraction of Riemann tensor)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                This contraction preserves information about how <strong>volumes</strong> of small geodesic balls change due to curvature.
+                The "missing" information (Riemann minus Ricci) is captured by the <strong>Weyl tensor</strong>, which describes tidal forces and shape distortion.
+            </p>
+
+            <h3 style="margin-top: 2rem;">2. Physical Meaning: Geodesic Deviation</h3>
+            <p>
+                The Ricci tensor tells you how a cloud of freely falling particles (following geodesics) will change volume over time:
+            </p>
+            <div class="equation-box">
+                d<sup>2</sup>V / d&tau;<sup>2</sup> = -R<sub>&mu;&nu;</sub> u<sup>&mu;</sup> u<sup>&nu;</sup> V
+                <span class="equation-label">Raychaudhuri equation (volume evolution)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                Where V is volume, &tau; is proper time, and u<sup>&mu;</sup> is the 4-velocity. If R<sub>&mu;&nu;</sub> u<sup>&mu;</sup> u<sup>&nu;</sup> > 0,
+                the volume <strong>decreases</strong> - nearby geodesics converge (e.g., objects falling toward Earth).
+            </p>
+
+            <table class="breaking-table" style="margin-top: 1.5rem;">
+                <thead>
+                    <tr>
+                        <th>Tensor</th>
+                        <th>Components</th>
+                        <th>Physical Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Riemann R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></strong></td>
+                        <td>20 (in 4D)</td>
+                        <td>Complete curvature: volume + shape distortion + tidal forces</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ricci R<sub>&mu;&nu;</sub></strong></td>
+                        <td>10 (symmetric)</td>
+                        <td>Volume distortion only (related to local matter/energy)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ricci Scalar R</strong></td>
+                        <td>1 (scalar)</td>
+                        <td>Total average curvature at a point</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Weyl C<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></strong></td>
+                        <td>10 (in 4D)</td>
+                        <td>Traceless part: tidal forces (curvature even in vacuum)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">3. The Ricci Scalar in the Einstein-Hilbert Action</h3>
+            <p>
+                The simplest action for gravity is the <strong>Einstein-Hilbert action</strong>, which depends only on the Ricci scalar:
+            </p>
+            <div class="equation-box">
+                S = ∫ d<sup>4</sup>x √-g (R / 16&pi;G + &#8466;<sub>matter</sub>)
+                <span class="equation-label">Einstein-Hilbert action (generates field equations)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                Varying this action with respect to the metric g<sub>&mu;&nu;</sub> produces Einstein's field equations.
+                The Ricci scalar R is the <strong>simplest scalar curvature invariant</strong> you can build from the metric.
+            </p>
+
+            <h3 style="margin-top: 2rem;">4. Connection to the Einstein Tensor</h3>
+            <p>
+                The Einstein field equations use the <strong>Einstein tensor</strong> G<sub>&mu;&nu;</sub>, which is built from the Ricci tensor and scalar:
+            </p>
+            <div class="equation-box">
+                G<sub>&mu;&nu;</sub> = R<sub>&mu;&nu;</sub> - &frac12; R g<sub>&mu;&nu;</sub>
+                <span class="equation-label">Einstein tensor (automatically divergence-free)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                The "-&frac12; R g<sub>&mu;&nu;</sub>" term is needed to ensure ∇<sup>&mu;</sup>G<sub>&mu;&nu;</sub> = 0, which guarantees energy-momentum conservation.
+                This is required by the <strong>Bianchi identities</strong>, geometric identities satisfied by the Riemann tensor.
+            </p>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>Ricci Tensor and Ricci Scalar - eigenchris</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Clear explanation of how the Ricci tensor is derived from the Riemann tensor, with visual examples.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=0P_LSHRle5g" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">18 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>The Riemann Curvature Tensor - Faculty of Khan</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Detailed derivation of the Riemann tensor with emphasis on parallel transport and geodesic deviation.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=TXGfxZ6fPWk" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">22 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Curvature Tensors in General Relativity - XylyXylyX</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Comprehensive overview of Riemann, Ricci, Weyl, and Einstein tensors with geometric intuition.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=oDVS9YGtzZ4" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">35 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Tensor Calculus - eigenchris (Full Series)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Complete course on tensors, curvature, and differential geometry from scratch.
+                    </p>
+                    <a href="https://www.youtube.com/playlist?list=PLJHszsWbB6hrkmmq57lX8BV-o-YIOFsiG" target="_blank" class="resource-link">
+                        Watch Playlist &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">33 videos</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Textbooks</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Ricci_curvature" target="_blank" style="color: var(--accent-primary);">Ricci Curvature</a> |
+                    <a href="https://en.wikipedia.org/wiki/Riemann_curvature_tensor" target="_blank" style="color: var(--accent-primary);">Riemann Curvature Tensor</a> |
+                    <a href="https://en.wikipedia.org/wiki/Scalar_curvature" target="_blank" style="color: var(--accent-primary);">Scalar Curvature</a>
+                </li>
+                <li>
+                    <strong>Textbook (Beginner):</strong>
+                    "A Student's Guide to Vectors and Tensors" by Daniel Fleisch
+                    <a href="https://www.cambridge.org/core/books/students-guide-to-vectors-and-tensors/8E6F8A8B0C3F7E9A7B8B9F9E0F9E9E9E" target="_blank" style="color: var(--accent-primary);">[Cambridge University Press]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Intermediate):</strong>
+                    "Spacetime and Geometry" by Sean Carroll - Chapter 3 (Curvature)
+                    <a href="https://www.preposterousuniverse.com/spacetimeandgeometry/" target="_blank" style="color: var(--accent-primary);">[Book website]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Advanced):</strong>
+                    "Riemannian Geometry" by Manfredo do Carmo
+                    <a href="https://en.wikipedia.org/wiki/Riemannian_Geometry_(book)" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Online Notes:</strong>
+                    "Lecture Notes on General Relativity" by Sean Carroll (Caltech)
+                    <a href="https://arxiv.org/abs/gr-qc/9712019" target="_blank" style="color: var(--accent-primary);">[arXiv preprint]</a>
+                </li>
+                <li>
+                    <strong>Interactive Tutorial:</strong>
+                    "Visualizing the Riemann Curvature Tensor"
+                    <a href="http://www.relativitet.se/spacetime1.html" target="_blank" style="color: var(--accent-primary);">[Visualization tool]</a>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem;">Computation Tools</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>GRTensorII:</strong>
+                    Symbolic tensor algebra for Maple/Mathematica
+                    <a href="https://github.com/grtensor/grtensor" target="_blank" style="color: var(--accent-primary);">[GitHub]</a>
+                </li>
+                <li>
+                    <strong>SageMath Manifolds:</strong>
+                    Free tensor computation in Python
+                    <a href="https://doc.sagemath.org/html/en/reference/manifolds/" target="_blank" style="color: var(--accent-primary);">[Documentation]</a>
+                </li>
+                <li>
+                    <strong>Mathematica (Riemannian Geometry package):</strong>
+                    <a href="https://reference.wolfram.com/language/guide/RiemannianGeometry.html" target="_blank" style="color: var(--accent-primary);">Wolfram Documentation</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>Parallel Transport</h4>
+                    <p>Moving a vector along a curve while keeping it "as parallel as possible." In curved space, the vector rotates when transported around loops.</p>
+                    <a href="https://en.wikipedia.org/wiki/Parallel_transport" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Geodesic Deviation</h4>
+                    <p>The tendency of initially parallel geodesics to converge or diverge in curved spacetime. Directly measured by the Riemann tensor.</p>
+                    <a href="https://en.wikipedia.org/wiki/Geodesic_deviation" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Tidal Forces</h4>
+                    <p>Differential gravitational forces that stretch or compress objects. Measured by the Weyl tensor (traceless part of Riemann).</p>
+                    <a href="https://en.wikipedia.org/wiki/Tidal_force" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Bianchi Identities</h4>
+                    <p>Geometric identities satisfied by the Riemann tensor: ∇<sub>[&lambda;</sub>R<sub>&mu;]&nu;&rho;&sigma;</sub> = 0. Ensure ∇<sup>&mu;</sup>G<sub>&mu;&nu;</sub> = 0.</p>
+                    <a href="https://en.wikipedia.org/wiki/Bianchi_identity" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Weyl Tensor</h4>
+                    <p>The traceless part of Riemann: C<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> = R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> - (Ricci terms). Describes curvature in vacuum (gravitational waves).</p>
+                    <a href="https://en.wikipedia.org/wiki/Weyl_tensor" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Raychaudhuri Equation</h4>
+                    <p>Describes evolution of volume for congruences of geodesics. Shows how R<sub>&mu;&nu;</sub> controls focusing of geodesics.</p>
+                    <a href="https://en.wikipedia.org/wiki/Raychaudhuri_equation" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Holonomy</h4>
+                    <p>The rotation/change of a vector after parallel transport around a closed loop. Direct manifestation of curvature.</p>
+                    <a href="https://en.wikipedia.org/wiki/Holonomy" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Contraction</h4>
+                    <p>Summing over paired indices (one up, one down) using the metric. Reduces rank of tensors: rank-4 → rank-2 → rank-0 (scalar).</p>
+                    <a href="https://en.wikipedia.org/wiki/Tensor_contraction" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                In Principia Metaphysica's 2T physics framework, the Ricci tensor and scalar generalize to higher dimensions
+                during the dimensional reduction cascade:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">26D → 13D → 6D → 4D: Curvature at Each Stage</h4>
+                <p style="color: var(--text-secondary);">
+                    The Ricci curvature describes how matter/energy curves space at each dimensional level:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li>
+                        <strong>26D bulk (24,2):</strong> R<sub>AB</sub><sup>(26)</sup> with signature (24,2).
+                        Includes 2 timelike directions. Sp(2,R) gauge symmetry acts on the 2T sector.
+                    </li>
+                    <li>
+                        <strong>13D shadow (12,1):</strong> After Sp(2,R) gauge fixing: R<sub>MN</sub><sup>(13)</sup>.
+                        The "shadow" of 26D physics in standard (n-1,1) signature.
+                    </li>
+                    <li>
+                        <strong>6D bulk (5,1):</strong> After G₂ compactification: R<sub>&mu;&nu;</sub><sup>(6)</sup>.
+                        G₂ holonomy preserves minimal SUSY. Internal curvature contributes to 4D effective theory.
+                    </li>
+                    <li>
+                        <strong>4D observed (3,1):</strong> R<sub>&mu;&nu;</sub><sup>(4)</sup> - the standard Ricci tensor we measure.
+                        Kaluza-Klein modes from higher dimensions appear as matter fields.
+                    </li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                The dimensional reduction process preserves the Ricci scalar in modified form:
+            </p>
+            <div class="equation-box" style="margin-top: 1rem;">
+                R<sup>(4)</sup> = R<sup>(D)</sup> + (KK tower contributions) + (flux terms)
+                <span class="equation-label">Effective 4D curvature from higher-dimensional reduction</span>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                <strong>Key insight:</strong> The hierarchy of curvature tensors (Riemann → Ricci → Scalar) parallels
+                the dimensional reduction hierarchy. Each reduction "traces out" degrees of freedom, just as contraction
+                reduces tensor rank. The <a href="einstein-hilbert-action.html" style="color: var(--accent-primary);">Einstein-Hilbert action</a>
+                generalizes naturally to each dimensional stage.
+            </p>
+        </section>
+
+        <!-- Practice Problems -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding with these exercises:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: 2D Sphere Curvature</h4>
+                <p>
+                    For a 2D sphere of radius R, the metric is ds² = R²(d&theta;² + sin²&theta; d&phi;²).
+                    Calculate the Ricci scalar and show that it is constant everywhere.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        The Ricci scalar for a 2D sphere is R = 2/R². It's constant (uniform curvature).
+                        This is why spheres are called "maximally symmetric" - same curvature everywhere.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Schwarzschild Ricci Tensor</h4>
+                <p>
+                    The Schwarzschild metric describes spacetime around a spherical mass. Show that in the vacuum region (r > r<sub>s</sub>),
+                    the Ricci tensor R<sub>&mu;&nu;</sub> = 0, but the Riemann tensor R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> ≠ 0.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Use the vacuum Einstein equations: R<sub>&mu;&nu;</sub> = 0 (no matter).
+                        But the Weyl tensor (tidal forces) is non-zero, so spacetime is still curved!
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Trace of Ricci Tensor</h4>
+                <p>
+                    Show that the Ricci scalar R = g<sup>&mu;&nu;</sup>R<sub>&mu;&nu;</sub> is the trace of the Ricci tensor.
+                    If R<sub>&mu;&nu;</sub> = diag(2, -1, -1, 0) and g<sup>&mu;&nu;</sup> = diag(-1, 1, 1, 1), what is R?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        R = g<sup>00</sup>R<sub>00</sub> + g<sup>11</sup>R<sub>11</sub> + g<sup>22</sup>R<sub>22</sub> + g<sup>33</sup>R<sub>33</sub><br>
+                        R = (-1)(2) + (1)(-1) + (1)(-1) + (1)(0) = -2 - 1 - 1 + 0 = -4
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 4: Flat Space</h4>
+                <p>
+                    In Minkowski (flat) spacetime, show that all curvature tensors vanish:
+                    R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> = 0, R<sub>&mu;&nu;</sub> = 0, R = 0.
+                    Why does this make sense physically?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        For Minkowski metric g<sub>&mu;&nu;</sub> = diag(-1,1,1,1), all Christoffel symbols &Gamma;<sup>&lambda;</sup><sub>&mu;&nu;</sub> = 0
+                        (in Cartesian coordinates). Therefore Riemann tensor = 0. No curvature means no gravity!
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 5: Einstein Tensor Identity</h4>
+                <p>
+                    Verify that for the Einstein tensor G<sub>&mu;&nu;</sub> = R<sub>&mu;&nu;</sub> - ½Rg<sub>&mu;&nu;</sub>,
+                    the trace g<sup>&mu;&nu;</sup>G<sub>&mu;&nu;</sub> = -R. Why is this useful?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        g<sup>&mu;&nu;</sup>G<sub>&mu;&nu;</sub> = g<sup>&mu;&nu;</sup>(R<sub>&mu;&nu;</sub> - ½Rg<sub>&mu;&nu;</sub>)
+                        = R - ½R·4 = R - 2R = -R<br>
+                        This allows you to solve for R from the trace of Einstein's equations: R = -8&pi;G T (where T = trace of T<sub>&mu;&nu;</sub>).
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="einstein-field-equations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Einstein Field Equations &rarr;
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b7fff, #51cf66);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #51cf66;
+        }
+        .highlight-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+</body>
+</html>
