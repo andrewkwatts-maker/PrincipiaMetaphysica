@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+#!/usr/bin/env python3
+"""
+Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+This is the intellectual property of Andrew Keith Watts. Unauthorized
+reproduction, distribution, or modification of this code, in whole or in part,
+without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+For inquiries, please contact AndrewKWatts@Gmail.com
+"""
+
 """Update principia-metaphysica-paper.html to current 26D→13D→6D→4D framework"""
 
 import re
