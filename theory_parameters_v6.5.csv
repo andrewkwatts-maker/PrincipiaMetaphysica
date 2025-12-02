@@ -55,5 +55,5 @@ CASIMIR_5BRANE,33.75,dimensionless,"SO(24,2) Casimir for 5-brane (BPS stability)
 CASIMIR_3BRANE,18.75,dimensionless,"SO(24,2) Casimir for 3-brane (BPS stability)",C_2 = p(p+22)/4 = 3(25)/4 = 18.75,Yes (config.py),Passed,,,,,
 GHOST_FREE,True,boolean,"Ghost-free status (Sp(2,R) gauge fixing)","Sp(2,R) local gauge eliminates 2nd time ghosts",Yes (config.py),Passed,,,,,
 TACHYON_PROJECTED,True,boolean,Tachyon projection status (GSO-like),Null constraints X^M X_M = 0 eliminate tachyons,Yes (config.py),Passed,,,,,
-φ_M,2.493,M_Pl,Mashiach field VEV (modulus stabilization),Weighted: 40% KKLT + 20% LVS + 30% Topology + 10% pheno = 2.493 M_Pl,Yes (MASTERPLAN2),Passed,,5.027,,,
-V_9,1.4884e-138,GeV^-9,Internal 9D volume (7D G₂ × 2D torus),V_9 = M_Pl^2 / M_*^11 = (1.22e19)^2 / (1e16)^11,Yes (MASTERPLAN2),Passed,,,,,
+φ_M,2.493,M_Pl,Mashiach field VEV (modulus stabilization),Weighted: 40% KKLT + 20% LVS + 30% Topology + 10% pheno = 2.493 M_Pl,Yes,Passed,,5.027,,,
+V_9,1.4884e-138,GeV^-9,Internal 9D volume (7D G₂ × 2D torus),V_9 = M_Pl^2 / M_*^11 = (1.22e19)^2 / (1e16)^11,Yes,Passed,,,,,
