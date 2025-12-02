@@ -176,12 +176,13 @@ def run_wz_analysis(verbose=True):
         print("DARK ENERGY w(z) EVOLUTION: DESI DR2 ANALYSIS")
         print("=" * 70)
 
-    # Present-day values
+    # Present-day values (calculate always for return value)
+    deviation_w0 = abs(w0_PM - w0_DESI) / w0_DESI_error
+
     if verbose:
         print("\n1. Present-Day Values (z=0):")
         print(f"   PM prediction: w0 = {w0_PM:.4f}")
         print(f"   DESI DR2: w0 = {w0_DESI:.2f} +/- {w0_DESI_error:.2f}")
-        deviation_w0 = abs(w0_PM - w0_DESI) / w0_DESI_error
         print(f"   Deviation: {deviation_w0:.2f}sigma")
 
     # CMB epoch
@@ -209,13 +210,14 @@ def run_wz_analysis(verbose=True):
         print(f"   Delta chi2: {func_test['delta_chi2']:.2f}")
         print(f"   {func_test['note']}")
 
-    # Evolution parameter comparison
+    # Evolution parameter comparison (calculate always for return value)
     wa_PM_effective = (3 / alpha_T) * w0_PM  # Derived from logarithmic form
+    wa_deviation = abs(wa_PM_effective - wa_DESI) / wa_DESI_error
+
     if verbose:
         print(f"\n5. Evolution Parameter:")
         print(f"   PM effective wa: {wa_PM_effective:.2f}")
         print(f"   DESI DR2 wa: {wa_DESI:.2f} +/- {wa_DESI_error:.2f}")
-        wa_deviation = abs(wa_PM_effective - wa_DESI) / wa_DESI_error
         print(f"   Deviation: {wa_deviation:.2f}sigma")
 
     # Planck tension resolution

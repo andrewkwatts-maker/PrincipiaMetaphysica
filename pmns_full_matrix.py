@@ -350,25 +350,27 @@ def run_pmns_calculation(verbose=True):
         'delta_cp': (232, 30)
     }
 
+    # Calculate sigma deviations (always, for return value)
+    sigma_23 = abs(theta_23 - nufit['theta_23'][0]) / nufit['theta_23'][1]
+    sigma_12 = abs(theta_12 - nufit['theta_12'][0]) / nufit['theta_12'][1]
+    sigma_13 = abs(theta_13 - nufit['theta_13'][0]) / nufit['theta_13'][1]
+    sigma_cp = abs(delta_cp - nufit['delta_cp'][0]) / nufit['delta_cp'][1]
+    avg_sigma = (sigma_23 + sigma_12 + sigma_13 + sigma_cp) / 4
+
     if verbose:
         print("\n2. Comparison with NuFIT 5.2:")
         print(f"   theta_23: PM={theta_23:.2f} deg vs NuFIT={nufit['theta_23'][0]} deg+/-{nufit['theta_23'][1]} deg")
-        sigma_23 = abs(theta_23 - nufit['theta_23'][0]) / nufit['theta_23'][1]
         print(f"        Deviation: {sigma_23:.2f}sigma")
 
         print(f"   theta_12: PM={theta_12:.2f} deg vs NuFIT={nufit['theta_12'][0]} deg+/-{nufit['theta_12'][1]} deg")
-        sigma_12 = abs(theta_12 - nufit['theta_12'][0]) / nufit['theta_12'][1]
         print(f"        Deviation: {sigma_12:.2f}sigma")
 
         print(f"   theta_13: PM={theta_13:.2f} deg vs NuFIT={nufit['theta_13'][0]} deg+/-{nufit['theta_13'][1]} deg")
-        sigma_13 = abs(theta_13 - nufit['theta_13'][0]) / nufit['theta_13'][1]
         print(f"        Deviation: {sigma_13:.2f}sigma")
 
         print(f"   delta_CP: PM={delta_cp:.1f} deg vs NuFIT={nufit['delta_cp'][0]} deg+/-{nufit['delta_cp'][1]} deg")
-        sigma_cp = abs(delta_cp - nufit['delta_cp'][0]) / nufit['delta_cp'][1]
         print(f"        Deviation: {sigma_cp:.2f}sigma")
 
-        avg_sigma = (sigma_23 + sigma_12 + sigma_13 + sigma_cp) / 4
         print(f"\n   Average deviation: {avg_sigma:.2f}sigma")
 
     # Construct matrix
