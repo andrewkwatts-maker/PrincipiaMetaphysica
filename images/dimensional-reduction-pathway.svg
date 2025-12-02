@@ -46,9 +46,11 @@
   <!-- Arrow 2 -->
   <g id="arrow2">
     <path d="M 550 280 L 620 280" stroke="#2c3e50" stroke-width="4" fill="none" marker-end="url(#arrowhead)"/>
-    <text x="585" y="260" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">G₂</text>
-    <text x="585" y="275" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">compactify</text>
-    <text x="585" y="310" font-size="11" text-anchor="middle" fill="#555">7D internal</text>
+    <text x="585" y="250" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">G₂ TCS</text>
+    <text x="585" y="265" font-size="14" font-weight="bold" text-anchor="middle" fill="#2c3e50">Compactify</text>
+    <text x="585" y="285" font-size="11" text-anchor="middle" fill="#555">b₂=4, b₃=24</text>
+    <text x="585" y="300" font-size="10" text-anchor="middle" fill="#555">7D G₂ manifold</text>
+    <text x="585" y="315" font-size="9" text-anchor="middle" fill="#777" font-style="italic">α₄, α₅ emerge</text>
   </g>
 
   <!-- Stage 3: 6D Effective -->
@@ -59,10 +61,13 @@
     <text x="730" y="170" font-size="16" text-anchor="middle" fill="white">Signature: (5, 1)</text>
     <text x="730" y="200" font-size="14" text-anchor="middle" fill="#fff">13D - 7D = 6D</text>
 
-    <text x="730" y="240" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">Shared Dimensions:</text>
-    <text x="730" y="260" font-size="12" text-anchor="middle" fill="#ecf0f1">4D common (all branes)</text>
-    <text x="730" y="280" font-size="12" text-anchor="middle" fill="#ecf0f1">+ 2D shared extras (T²)</text>
-    <text x="730" y="300" font-size="12" text-anchor="middle" fill="#ecf0f1">(observable only)</text>
+    <text x="730" y="230" font-size="13" font-weight="bold" text-anchor="middle" fill="#fff">G₂ Output:</text>
+    <text x="730" y="250" font-size="12" text-anchor="middle" fill="#ecf0f1">α₄ = 0.9557 (geometric)</text>
+    <text x="730" y="268" font-size="12" text-anchor="middle" fill="#ecf0f1">α₅ = 0.2224 (geometric)</text>
+
+    <text x="730" y="295" font-size="12" font-weight="bold" text-anchor="middle" fill="#fff">Shared Dimensions:</text>
+    <text x="730" y="313" font-size="11" text-anchor="middle" fill="#ecf0f1">4D common (all branes)</text>
+    <text x="730" y="328" font-size="11" text-anchor="middle" fill="#ecf0f1">+ 2D shared extras (T²)</text>
   </g>
 
   <!-- Arrow 3 -->
@@ -95,12 +100,15 @@
   <!-- Bottom summary -->
   <g id="summary">
     <rect x="50" y="510" width="1100" height="70" fill="#ecf0f1" stroke="#2c3e50" stroke-width="2" rx="5"/>
-    <text x="600" y="535" font-size="14" font-weight="bold" text-anchor="middle">Key Points:</text>
-    <text x="600" y="555" font-size="12" text-anchor="middle">
-      26D → Sp(2,R) gauge fixing → 13D → G₂ compactification (7D) → 6D effective → Heterogeneous branes (4D common + 2D shared) → 4D observable
+    <text x="600" y="530" font-size="14" font-weight="bold" text-anchor="middle">Key Points:</text>
+    <text x="600" y="548" font-size="12" text-anchor="middle">
+      26D → Sp(2,R) gauge fixing → 13D → G₂ TCS (b₂=4, b₃=24, ν=24) → 6D effective → Heterogeneous branes → 4D observable
     </text>
-    <text x="600" y="572" font-size="11" text-anchor="middle" fill="#555">
-      Observable brane has full 6D access (KK gravitons at 5 TeV), shadow branes restricted to 4D common base
+    <text x="600" y="563" font-size="11" text-anchor="middle" fill="#555">
+      G₂ topology determines α₄=0.9557, α₅=0.2224 → All physics predictions (neutrino mixing, dark energy, flux quantization)
+    </text>
+    <text x="600" y="575" font-size="10" text-anchor="middle" fill="#777" font-style="italic">
+      No free parameters: Geometry predicts observables!
     </text>
   </g>
 
