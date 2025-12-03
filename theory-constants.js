@@ -55,16 +55,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.7905551944550136e+34,
-    "tau_p_mean": 4.0028219955124603e+34,
-    "tau_p_std": 1.4808833325187328e+34,
-    "tau_p_lower_68": 2.4960721710997844e+34,
-    "tau_p_upper_68": 5.606285990960639e+34,
-    "tau_p_lower_95": 1.4572908487365367e+34,
-    "tau_p_upper_95": 7.274990623198155e+34,
-    "tau_p_uncertainty_oom": 0.17102091638141098,
+    "tau_p_median": 3.929817126429887e+34,
+    "tau_p_mean": 4.0595747067068295e+34,
+    "tau_p_std": 1.5121975271595323e+34,
+    "tau_p_lower_68": 2.5136779915539587e+34,
+    "tau_p_upper_68": 5.664354083965034e+34,
+    "tau_p_lower_95": 1.4980308922889557e+34,
+    "tau_p_upper_95": 7.38328129557189e+34,
+    "tau_p_uncertainty_oom": 0.1730557226490857,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.2697935296137803
+    "ratio_to_bound": 2.3531839080418484
   },
   "pmns_matrix": {
     "theta_23": 47.199999,
@@ -76,10 +76,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822289099971989,
-    "theta_23_error": 0.7943184560031703,
-    "theta_12_error": 1.2161827361622077,
-    "theta_13_error": 0.34998984331549293,
-    "delta_cp_error": 28.429763268917036
+    "theta_23_error": 0.8059940174285777,
+    "theta_12_error": 1.2049374060994467,
+    "theta_13_error": 0.35957948708243825,
+    "delta_cp_error": 28.832977500452046
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
