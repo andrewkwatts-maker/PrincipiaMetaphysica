@@ -19,10 +19,16 @@ Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 
 import json
 import numpy as np
+import sys
+from pathlib import Path
+
+# Add simulations directory to path
+sys.path.insert(0, str(Path(__file__).parent / 'simulations'))
+
 import config
-from proton_decay_rg_hybrid import run_proton_decay_calculation
-from pmns_full_matrix import run_pmns_calculation
-from wz_evolution_desi_dr2 import run_wz_analysis
+from simulations.proton_decay_rg_hybrid import run_proton_decay_calculation
+from simulations.pmns_full_matrix import run_pmns_calculation
+from simulations.wz_evolution_desi_dr2 import run_wz_analysis
 
 class NumpyEncoder(json.JSONEncoder):
     """Custom JSON encoder for numpy types"""
