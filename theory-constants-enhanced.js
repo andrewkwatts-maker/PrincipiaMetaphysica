@@ -156,12 +156,12 @@ const PM = {
       ]
     },
     "tau_p_median": {
-      "value": 3.8577011559430514e+34,
+      "value": 3.7440970367723104e+34,
       "unit": "years",
       "display": "3.84\u00d710\u00b3\u2074",
-      "uncertainty_lower": 2.5347824368937437e+34,
-      "uncertainty_upper": 5.583129023849802e+34,
-      "uncertainty_oom": 0.1691499066581933,
+      "uncertainty_lower": 2.4585894198352076e+34,
+      "uncertainty_upper": 5.458279334555235e+34,
+      "uncertainty_oom": 0.17736711304910024,
       "confidence_level": "68%",
       "description": "Proton lifetime (Monte Carlo median)",
       "formula": "\u03c4_p = 3.82\u00d710\u00b3\u00b3 \u00d7 (M_GUT/10\u00b9\u2076)\u2074 \u00d7 (0.03/\u03b1_GUT)\u00b2",
@@ -177,7 +177,7 @@ const PM = {
       ]
     },
     "uncertainty_oom": {
-      "value": 0.1691499066581933,
+      "value": 0.17736711304910024,
       "unit": "OOM",
       "display": "0.177",
       "description": "Proton decay uncertainty in orders of magnitude",
@@ -194,7 +194,7 @@ const PM = {
       "value": 47.199999,
       "unit": "degrees",
       "display": "47.20\u00b0",
-      "uncertainty": 0.7922417559817125,
+      "uncertainty": 0.8023529926676374,
       "description": "Atmospheric mixing angle",
       "formula": "\u03b8\u2082\u2083 = 45\u00b0 + (\u03b1\u2084 - \u03b1\u2085) \u00d7 n_gen",
       "derivation": "Asymmetric coupling to shared extra dimensions",
@@ -213,7 +213,7 @@ const PM = {
       "value": 33.59329049922625,
       "unit": "degrees",
       "display": "33.59\u00b0",
-      "uncertainty": 1.2233714179581392,
+      "uncertainty": 1.2061596014781946,
       "description": "Solar mixing angle",
       "formula": "\u03b8\u2081\u2082 = arcsin(1/\u221a3 \u00d7 |1 + \u03b4_pert|)",
       "derivation": "Tri-bimaximal mixing + G\u2082 cycle perturbation",
@@ -232,7 +232,7 @@ const PM = {
       "value": 8.568979552196335,
       "unit": "degrees",
       "display": "8.57\u00b0",
-      "uncertainty": 0.3566493117768441,
+      "uncertainty": 0.34312486276060267,
       "description": "Reactor mixing angle",
       "formula": "\u03b8\u2081\u2083 = arctan(b\u2082/b\u2083 \u00d7 exp(-\u03bd/n_gen))",
       "derivation": "G\u2082 cycle intersection asymmetry",
@@ -251,7 +251,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.94744559756296,
+      "uncertainty": 28.337851704434136,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -283,7 +283,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.94744559756296,
+      "uncertainty": 28.337851704434136,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -477,10 +477,10 @@ const PM = {
       ]
     },
     "prob_IH_mean": {
-      "value": 0.564201125161032,
+      "value": 0.8552735532924858,
       "unit": "probability",
-      "display": "56.4%",
-      "uncertainty": 0.013993498419113225,
+      "display": "85.5%",
+      "uncertainty": 0.023033524234268108,
       "description": "Probability of inverted hierarchy (Monte Carlo)",
       "formula": "P(IH) from flux dressing F ~ \u221a(\u03c7_eff/b\u2083) = \u221a6",
       "derivation": "Monte Carlo (1000 samples) over moduli deformations",
@@ -491,9 +491,9 @@ const PM = {
       ]
     },
     "confidence_level": {
-      "value": 0.8338183028805151,
+      "value": 0.8705035726891723,
       "unit": "probability",
-      "display": "83.4%",
+      "display": "87.1%",
       "description": "Confidence in mass ordering prediction",
       "formula": "max(P(IH), P(NH))",
       "derivation": "Geometric preference from index theorem",
@@ -503,16 +503,16 @@ const PM = {
       ]
     },
     "prob_IH": {
-      "value": 0.564201125161032,
+      "value": 0.8552735532924858,
       "unit": "probability",
-      "display": "56.4%",
+      "display": "85.5%",
       "description": "Alias for prob_IH_mean",
       "source": "simulation:neutrino_mass_ordering"
     },
     "prob_NH": {
-      "value": 0.43579887483896795,
+      "value": 0.14472644670751422,
       "unit": "probability",
-      "display": "43.6%",
+      "display": "14.5%",
       "description": "Probability of normal hierarchy",
       "source": "simulation:neutrino_mass_ordering"
     },
@@ -589,10 +589,10 @@ const PM = {
   },
   "proton_decay_channels": {
     "BR_epi0_mean": {
-      "value": 0.9864975541249994,
+      "value": 0.9893533638386399,
       "unit": "fraction",
       "display": "99\u00b10%",
-      "uncertainty": 0.0006303983475661678,
+      "uncertainty": 0.000746837244919494,
       "description": "Branching ratio p\u2192e\u207a\u03c0\u2070",
       "formula": "BR = |C_epi0|\u00b2 / \u03a3|C_i|\u00b2 where C ~ Y\u00b2/M_GUT\u00b2",
       "derivation": "Yukawa matrix from wavefunction overlaps on G\u2082 3-cycles",
@@ -604,10 +604,10 @@ const PM = {
       ]
     },
     "BR_Knu_mean": {
-      "value": 0.0011138221502630383,
+      "value": 0.00015363049860674658,
       "unit": "fraction",
       "display": "0\u00b10%",
-      "uncertainty": 0.00024000870296704544,
+      "uncertainty": 0.00020858421306016193,
       "description": "Branching ratio p\u2192K\u207a\u03bd\u0304",
       "formula": "BR = |C_Knu|\u00b2 / \u03a3|C_i|\u00b2 (CKM suppressed)",
       "derivation": "Wilson coefficients from SO(10)\u2192SM breaking",
@@ -619,9 +619,9 @@ const PM = {
       ]
     },
     "tau_p_epi0": {
-      "value": 3.980613760111406e+34,
+      "value": 3.9716620943897117e+34,
       "unit": "years",
-      "display": "3.98e+34",
+      "display": "3.97e+34",
       "description": "Channel-specific lifetime p\u2192e\u207a\u03c0\u2070",
       "formula": "\u03c4_p(channel) = \u03c4_p(total) / BR(channel)",
       "derivation": "Total lifetime divided by branching ratio",

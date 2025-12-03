@@ -58,16 +58,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.8577011559430514e+34,
-    "tau_p_mean": 4.035722461393014e+34,
-    "tau_p_std": 1.4813282578145034e+34,
-    "tau_p_lower_68": 2.5347824368937437e+34,
-    "tau_p_upper_68": 5.583129023849802e+34,
-    "tau_p_lower_95": 1.5262452774807454e+34,
-    "tau_p_upper_95": 7.284520061727687e+34,
-    "tau_p_uncertainty_oom": 0.1691499066581933,
+    "tau_p_median": 3.7440970367723104e+34,
+    "tau_p_mean": 3.9505457934031648e+34,
+    "tau_p_std": 1.5137849382473145e+34,
+    "tau_p_lower_68": 2.4585894198352076e+34,
+    "tau_p_upper_68": 5.458279334555235e+34,
+    "tau_p_lower_95": 1.4191197952184203e+34,
+    "tau_p_upper_95": 7.318459866521412e+34,
+    "tau_p_uncertainty_oom": 0.17736711304910024,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3100006921814678
+    "ratio_to_bound": 2.2419742735163535
   },
   "pmns_matrix": {
     "theta_23": 47.199999,
@@ -79,10 +79,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822289099971989,
-    "theta_23_error": 0.7922417559817125,
-    "theta_12_error": 1.2233714179581392,
-    "theta_13_error": 0.3566493117768441,
-    "delta_cp_error": 28.94744559756296
+    "theta_23_error": 0.8023529926676374,
+    "theta_12_error": 1.2061596014781946,
+    "theta_13_error": 0.34312486276060267,
+    "delta_cp_error": 28.337851704434136
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -133,10 +133,10 @@ const PM = {
   },
   "neutrino_mass_ordering": {
     "ordering_predicted": "IH",
-    "prob_IH_mean": 0.564201125161032,
-    "prob_IH_std": 0.013993498419113225,
-    "prob_NH_mean": 0.43579887483896795,
-    "confidence_level": 0.8338183028805151,
+    "prob_IH_mean": 0.8552735532924858,
+    "prob_IH_std": 0.023033524234268108,
+    "prob_NH_mean": 0.14472644670751422,
+    "confidence_level": 0.8705035726891723,
     "masses_IH_meV": [
       NaN,
       NaN,
@@ -149,12 +149,12 @@ const PM = {
     ]
   },
   "proton_decay_channels": {
-    "BR_epi0_mean": 0.9864975541249994,
-    "BR_epi0_std": 0.0006303983475661678,
-    "BR_Knu_mean": 0.0011138221502630383,
-    "BR_Knu_std": 0.00024000870296704544,
-    "tau_p_epi0": 3.980613760111406e+34,
-    "tau_p_Knu": 3.8341048942069983e+37,
+    "BR_epi0_mean": 0.9893533638386399,
+    "BR_epi0_std": 0.000746837244919494,
+    "BR_Knu_mean": 0.00015363049860674658,
+    "BR_Knu_std": 0.00020858421306016193,
+    "tau_p_epi0": 3.9716620943897117e+34,
+    "tau_p_Knu": 3.76196476516399e+38,
     "all_consistent": true
   },
   "validation": {
@@ -162,7 +162,7 @@ const PM = {
     "pmns_status": "EXCELLENT",
     "dark_energy_status": "EXCELLENT",
     "kk_spectrum_status": "EXCELLENT",
-    "mass_ordering_status": "MODERATE",
+    "mass_ordering_status": "STRONG",
     "proton_channels_status": "CONSISTENT",
     "predictions_within_1sigma": 10,
     "total_predictions": 14,

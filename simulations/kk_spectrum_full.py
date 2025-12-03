@@ -25,7 +25,7 @@ References:
 - Conlon-Quevedo - Discrete KK towers from compact CY3×S¹
 - Joyce (2003) - Ricci-flat metrics on G₂ via Kovalev twist
 
-Version: 8.0 (resolves Issue 2.1 from V7_ISSUES_REPORT.md)
+Version: 8.2 (resolves Issue 2.1 from V7_ISSUES_REPORT.md)
 """
 
 import numpy as np
@@ -223,7 +223,7 @@ class KKSpectrumCalculator:
         """
         if verbose:
             print("=" * 70)
-            print("KK SPECTRUM FULL CALCULATION (v8.0)")
+            print("KK SPECTRUM FULL CALCULATION (v8.2)")
             print("=" * 70)
             print(f"Geometric parameters: b2={self.b2}, b3={self.b3}, chi_eff={self.chi_eff}")
             print(f"Compactification radius: R_c = 1/{self.R_c_inv/1e3:.1f} TeV")
