@@ -156,12 +156,12 @@ const PM = {
       ]
     },
     "tau_p_median": {
-      "value": 3.8915419997432057e+34,
+      "value": 3.8884148987237325e+34,
       "unit": "years",
       "display": "3.84\u00d710\u00b3\u2074",
-      "uncertainty_lower": 2.45281190628376e+34,
-      "uncertainty_upper": 5.639506801855293e+34,
-      "uncertainty_oom": 0.17958921741584896,
+      "uncertainty_lower": 2.4763816503064737e+34,
+      "uncertainty_upper": 5.488533623458185e+34,
+      "uncertainty_oom": 0.17347568164706867,
       "confidence_level": "68%",
       "description": "Proton lifetime (Monte Carlo median)",
       "formula": "\u03c4_p = 3.82\u00d710\u00b3\u00b3 \u00d7 (M_GUT/10\u00b9\u2076)\u2074 \u00d7 (0.03/\u03b1_GUT)\u00b2",
@@ -177,7 +177,7 @@ const PM = {
       ]
     },
     "uncertainty_oom": {
-      "value": 0.17958921741584896,
+      "value": 0.17347568164706867,
       "unit": "OOM",
       "display": "0.177",
       "description": "Proton decay uncertainty in orders of magnitude",
@@ -194,7 +194,7 @@ const PM = {
       "value": 47.199999,
       "unit": "degrees",
       "display": "47.20\u00b0",
-      "uncertainty": 0.8098262872684749,
+      "uncertainty": 0.8010246499900693,
       "description": "Atmospheric mixing angle",
       "formula": "\u03b8\u2082\u2083 = 45\u00b0 + (\u03b1\u2084 - \u03b1\u2085) \u00d7 n_gen",
       "derivation": "Asymmetric coupling to shared extra dimensions",
@@ -213,7 +213,7 @@ const PM = {
       "value": 33.59329049922625,
       "unit": "degrees",
       "display": "33.59\u00b0",
-      "uncertainty": 1.2029400136139752,
+      "uncertainty": 1.1783948058115028,
       "description": "Solar mixing angle",
       "formula": "\u03b8\u2081\u2082 = arcsin(1/\u221a3 \u00d7 |1 + \u03b4_pert|)",
       "derivation": "Tri-bimaximal mixing + G\u2082 cycle perturbation",
@@ -232,7 +232,7 @@ const PM = {
       "value": 8.568979552196335,
       "unit": "degrees",
       "display": "8.57\u00b0",
-      "uncertainty": 0.3553819138832176,
+      "uncertainty": 0.3558967887107306,
       "description": "Reactor mixing angle",
       "formula": "\u03b8\u2081\u2083 = arctan(b\u2082/b\u2083 \u00d7 exp(-\u03bd/n_gen))",
       "derivation": "G\u2082 cycle intersection asymmetry",
@@ -251,7 +251,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 27.69618119935576,
+      "uncertainty": 27.63931015634927,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -283,7 +283,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 27.69618119935576,
+      "uncertainty": 27.63931015634927,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -381,10 +381,10 @@ const PM = {
   },
   "kk_spectrum": {
     "m1": {
-      "value": 256.3412225518028,
+      "value": 5000.0,
       "unit": "GeV",
-      "display": "0.26\u00b10.63 TeV",
-      "uncertainty": 626.310484963156,
+      "display": "5.00\u00b11.47 TeV",
+      "uncertainty": 1468.6506723739094,
       "description": "Lightest KK graviton mass from G\u2082 Laplacian",
       "formula": "m\u2081 = \u221a\u03bb\u2081 \u00d7 (1/R_c) where \u03bb\u2081 is first Laplacian eigenvalue",
       "derivation": "Harmonic expansion on G\u2082 co-associative 4-cycles (b\u2083=24)",
@@ -397,10 +397,10 @@ const PM = {
       ]
     },
     "sigma_m1_fb": {
-      "value": 41943.6220057623,
+      "value": 17.935490363097347,
       "unit": "fb",
-      "display": "41943.622",
-      "uncertainty": 2857.931286705412,
+      "display": "17.935",
+      "uncertainty": 5238.162578186883,
       "description": "Production cross-section at HL-LHC",
       "formula": "\u03c3(pp\u2192KK+X) ~ \u03b1_s\u00b2 / m_KK\u00b2 \u00d7 PDF",
       "derivation": "Parton luminosity at \u221as=14 TeV",
@@ -411,9 +411,9 @@ const PM = {
       ]
     },
     "discovery_significance_sigma": {
-      "value": 2621476.375360144,
+      "value": 1120.9681476935841,
       "unit": "\u03c3",
-      "display": "2621476.4\u03c3",
+      "display": "1121.0\u03c3",
       "description": "Expected discovery significance at HL-LHC",
       "formula": "\u03c3 = N_signal / \u221a(N_background) with 100 fb\u207b\u00b9",
       "derivation": "Monte Carlo with full detector simulation",
@@ -436,9 +436,9 @@ const PM = {
       ]
     },
     "m1_central": {
-      "value": 256.3412225518028,
+      "value": 5000.0,
       "unit": "GeV",
-      "display": "0.26",
+      "display": "5.00",
       "description": "Central value of lightest KK mass",
       "formula": "m\u2081 from Laplacian eigenvalue",
       "derivation": "Harmonic expansion on G\u2082 manifold",
@@ -448,9 +448,9 @@ const PM = {
       ]
     },
     "hl_lhc_significance": {
-      "value": 2621476.375360144,
+      "value": 1120.9681476935841,
       "unit": "\u03c3",
-      "display": "2621476.4",
+      "display": "1121.0",
       "description": "Expected discovery significance at HL-LHC",
       "formula": "\u03c3 = N_signal / \u221aN_background",
       "derivation": "Monte Carlo with 100 fb\u207b\u00b9",
@@ -477,10 +477,10 @@ const PM = {
       ]
     },
     "prob_IH_mean": {
-      "value": 0.5635587749996962,
+      "value": 0.5642493270473465,
       "unit": "probability",
       "display": "56.4%",
-      "uncertainty": 0.013881493767707297,
+      "uncertainty": 0.014021362882571718,
       "description": "Probability of inverted hierarchy (Monte Carlo)",
       "formula": "P(IH) from flux dressing F ~ \u221a(\u03c7_eff/b\u2083) = \u221a6",
       "derivation": "Monte Carlo (1000 samples) over moduli deformations",
@@ -491,9 +491,9 @@ const PM = {
       ]
     },
     "confidence_level": {
-      "value": 0.5338667308933166,
+      "value": 0.55359011641157,
       "unit": "probability",
-      "display": "53.4%",
+      "display": "55.4%",
       "description": "Confidence in mass ordering prediction",
       "formula": "max(P(IH), P(NH))",
       "derivation": "Geometric preference from index theorem",
@@ -503,14 +503,14 @@ const PM = {
       ]
     },
     "prob_IH": {
-      "value": 0.5635587749996962,
+      "value": 0.5642493270473465,
       "unit": "probability",
       "display": "56.4%",
       "description": "Alias for prob_IH_mean",
       "source": "simulation:neutrino_mass_ordering"
     },
     "prob_NH": {
-      "value": 0.4364412250003038,
+      "value": 0.43575067295265346,
       "unit": "probability",
       "display": "43.6%",
       "description": "Probability of normal hierarchy",
@@ -589,10 +589,10 @@ const PM = {
   },
   "proton_decay_channels": {
     "BR_epi0_mean": {
-      "value": 0.9896950304137376,
+      "value": 0.989693372717958,
       "unit": "fraction",
       "display": "99\u00b10%",
-      "uncertainty": 5.409752154520969e-05,
+      "uncertainty": 5.4684008252219126e-05,
       "description": "Branching ratio p\u2192e\u207a\u03c0\u2070",
       "formula": "BR = |C_epi0|\u00b2 / \u03a3|C_i|\u00b2 where C ~ Y\u00b2/M_GUT\u00b2",
       "derivation": "Yukawa matrix from wavefunction overlaps on G\u2082 3-cycles",
@@ -604,10 +604,10 @@ const PM = {
       ]
     },
     "BR_Knu_mean": {
-      "value": 6.592417092213087e-05,
+      "value": 6.633897362492039e-05,
       "unit": "fraction",
       "display": "0\u00b10%",
-      "uncertainty": 1.3204600709659708e-05,
+      "uncertainty": 1.3532505333905658e-05,
       "description": "Branching ratio p\u2192K\u207a\u03bd\u0304",
       "formula": "BR = |C_Knu|\u00b2 / \u03a3|C_i|\u00b2 (CKM suppressed)",
       "derivation": "Wilson coefficients from SO(10)\u2192SM breaking",
@@ -619,7 +619,7 @@ const PM = {
       ]
     },
     "tau_p_epi0": {
-      "value": 3.9710406326782955e+34,
+      "value": 3.9708922155834855e+34,
       "unit": "years",
       "display": "3.97e+34",
       "description": "Channel-specific lifetime p\u2192e\u207a\u03c0\u2070",
