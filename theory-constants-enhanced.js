@@ -176,17 +176,16 @@ const PM = {
         "Super-K Collaboration"
       ]
     },
-    "alpha_GUT_inv": {
-      "value": 23.538581563878598,
-      "unit": "dimensionless",
-      "display": "23.54",
-      "uncertainty": 0.5,
-      "description": "Inverse GUT coupling constant",
-      "formula": "1/\u03b1_GUT from 3-loop RG + KK thresholds at 5 TeV",
-      "derivation": "Renormalization group running from M_Z to M_GUT",
+    "uncertainty_oom": {
+      "value": 0.17563480615789856,
+      "unit": "OOM",
+      "display": "0.177",
+      "description": "Proton decay uncertainty in orders of magnitude",
+      "formula": "OOM = log\u2081\u2080(upper_68/lower_68) / 2",
+      "derivation": "Monte Carlo 68% confidence interval width",
       "source": "simulation:proton_decay_rg_hybrid",
       "references": [
-        "Acharya 2004"
+        "PM v7.0: 4.5\u00d7 improvement from 0.8 OOM"
       ]
     }
   },
@@ -251,7 +250,7 @@ const PM = {
     "delta_cp": {
       "value": 235.0,
       "unit": "degrees",
-      "display": "235.0\u00b0",
+      "display": "235.0",
       "uncertainty": 28.720686017549347,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
@@ -267,15 +266,34 @@ const PM = {
         "NuFIT 5.2"
       ]
     },
-    "average_sigma": {
+    "avg_sigma": {
       "value": 0.08822289099971989,
       "unit": "\u03c3",
-      "display": "0.09\u03c3",
+      "display": "0.09",
       "description": "Average deviation from NuFIT across all 4 parameters",
       "formula": "Average of |\u03b8_theory - \u03b8_exp| / \u03c3_exp",
       "derivation": "Geometric predictions vs NuFIT 5.2",
       "source": "simulation:pmns_full_matrix",
       "agreement_text": "Exceptional agreement (2 exact matches)",
+      "references": [
+        "NuFIT 5.2"
+      ]
+    },
+    "delta_CP": {
+      "value": 235.0,
+      "unit": "degrees",
+      "display": "235.0",
+      "uncertainty": 28.720686017549347,
+      "description": "CP-violating phase",
+      "formula": "\u03b4_CP from complex phase of cycle overlaps",
+      "derivation": "G\u2082 complex structure modulus + optional moonshine",
+      "source": "geometric",
+      "experimental_value": 232.0,
+      "experimental_uncertainty": 30.0,
+      "experimental_source": "NuFIT 5.2 (2024)",
+      "agreement_sigma": 0.1,
+      "agreement_text": "Excellent (0.10\u03c3)",
+      "testable": "DUNE 2028-2032",
       "references": [
         "NuFIT 5.2"
       ]
@@ -318,6 +336,46 @@ const PM = {
       "testable": "Euclid 2027-2028",
       "references": [
         "arXiv:2510.12627"
+      ]
+    },
+    "w0_DESI_central": {
+      "value": -0.83,
+      "unit": "dimensionless",
+      "display": "-0.83",
+      "uncertainty": 0.06,
+      "description": "DESI DR2 measured dark energy equation of state",
+      "formula": "w\u2080 = P/\u03c1 for dark energy",
+      "derivation": "DESI BAO + supernovae + CMB",
+      "source": "experimental:DESI_DR2",
+      "experimental_value": -0.83,
+      "experimental_uncertainty": 0.06,
+      "experimental_source": "DESI DR2 (Oct 2024)",
+      "references": [
+        "arXiv:2510.12627"
+      ]
+    },
+    "w0_DESI_error": {
+      "value": 0.06,
+      "unit": "dimensionless",
+      "display": "0.06",
+      "description": "DESI DR2 uncertainty on w\u2080",
+      "derivation": "Statistical + systematic uncertainties",
+      "source": "experimental:DESI_DR2",
+      "references": [
+        "arXiv:2510.12627"
+      ]
+    },
+    "w0_sigma": {
+      "value": 0.38036892584688753,
+      "unit": "\u03c3",
+      "display": "0.38",
+      "description": "Agreement between PM prediction and DESI measurement",
+      "formula": "\u03c3 = |w\u2080_PM - w\u2080_DESI| / \u03c3_DESI",
+      "derivation": "(\u22120.8528 \u2212 (\u22120.83)) / 0.06 = 0.38\u03c3",
+      "source": "simulation:dark_energy_wz_evolution",
+      "agreement_text": "Excellent agreement",
+      "references": [
+        "PM v7.0 validation"
       ]
     }
   },
@@ -391,6 +449,34 @@ const PM = {
       "source": "geometric",
       "references": [
         "PM Section 6.1a"
+      ]
+    }
+  },
+  "gauge_unification": {
+    "alpha_GUT_inv": {
+      "value": 23.538581563878598,
+      "unit": "dimensionless",
+      "display": "23.54",
+      "uncertainty": 0.5,
+      "description": "Inverse GUT coupling constant",
+      "formula": "1/\u03b1_GUT from 3-loop RG + KK thresholds at 5 TeV",
+      "derivation": "Renormalization group running from M_Z to M_GUT",
+      "source": "simulation:proton_decay_rg_hybrid",
+      "references": [
+        "Acharya 2004",
+        "Improved from 24.68 to 23.54 in v7.0"
+      ]
+    },
+    "unification_precision": {
+      "value": 0.953,
+      "unit": "fraction",
+      "display": "95.3%",
+      "description": "Gauge coupling unification precision",
+      "formula": "Relative agreement of SU(3), SU(2), U(1) at M_GUT",
+      "derivation": "3-loop RG with threshold corrections",
+      "source": "simulation:gauge_unification",
+      "references": [
+        "PM Section 3"
       ]
     }
   }

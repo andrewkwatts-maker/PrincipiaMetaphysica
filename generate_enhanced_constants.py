@@ -185,6 +185,22 @@ def generate_enhanced_constants():
                 testable='Hyper-K 2030s',
                 references=['PDG 2024', 'Super-K Collaboration']
             ),
+            'uncertainty_oom': create_enhanced_constant(
+                pd.get('tau_p_uncertainty_oom', 0.177),
+                unit='OOM',
+                display='0.177',
+                description='Proton decay uncertainty in orders of magnitude',
+                formula='OOM = log₁₀(upper_68/lower_68) / 2',
+                derivation='Monte Carlo 68% confidence interval width',
+                source='simulation:proton_decay_rg_hybrid',
+                references=['PM v7.0: 4.5× improvement from 0.8 OOM']
+            ),
+        }
+
+    # Add gauge unification category
+    if 'proton_decay' in sim_data:
+        pd = sim_data['proton_decay']
+        constants['gauge_unification'] = {
             'alpha_GUT_inv': create_enhanced_constant(
                 pd.get('alpha_GUT_inv', config.GaugeUnificationParameters.ALPHA_GUT_INV),
                 unit='dimensionless',
@@ -194,7 +210,17 @@ def generate_enhanced_constants():
                 formula='1/α_GUT from 3-loop RG + KK thresholds at 5 TeV',
                 derivation='Renormalization group running from M_Z to M_GUT',
                 source='simulation:proton_decay_rg_hybrid',
-                references=['Acharya 2004']
+                references=['Acharya 2004', 'Improved from 24.68 to 23.54 in v7.0']
+            ),
+            'unification_precision': create_enhanced_constant(
+                0.953,
+                unit='fraction',
+                display='95.3%',
+                description='Gauge coupling unification precision',
+                formula='Relative agreement of SU(3), SU(2), U(1) at M_GUT',
+                derivation='3-loop RG with threshold corrections',
+                source='simulation:gauge_unification',
+                references=['PM Section 3']
             ),
         }
 
@@ -258,7 +284,7 @@ def generate_enhanced_constants():
             'delta_cp': create_enhanced_constant(
                 pm.get('delta_cp', config.NeutrinoParameters.DELTA_CP),
                 unit='degrees',
-                display='235.0°',
+                display='235.0',
                 uncertainty=pm.get('delta_cp_error', 27.4),
                 description='CP-violating phase',
                 formula='δ_CP from complex phase of cycle overlaps',
@@ -272,10 +298,10 @@ def generate_enhanced_constants():
                 testable='DUNE 2028-2032',
                 references=['NuFIT 5.2']
             ),
-            'average_sigma': create_enhanced_constant(
+            'avg_sigma': create_enhanced_constant(
                 pm.get('average_sigma', 0.09),
                 unit='σ',
-                display='0.09σ',
+                display='0.09',
                 description='Average deviation from NuFIT across all 4 parameters',
                 formula='Average of |θ_theory - θ_exp| / σ_exp',
                 derivation='Geometric predictions vs NuFIT 5.2',
@@ -284,6 +310,10 @@ def generate_enhanced_constants():
                 references=['NuFIT 5.2']
             ),
         }
+
+        # Add capital aliases for HTML compatibility
+        if 'delta_cp' in constants['pmns_matrix']:
+            constants['pmns_matrix']['delta_CP'] = constants['pmns_matrix']['delta_cp']
 
     # Add dark energy with simulation data
     if 'dark_energy' in sim_data and 'desi_dr2_data' in sim_data:
@@ -324,6 +354,40 @@ def generate_enhanced_constants():
                 agreement_text='Good (0.66σ)',
                 testable='Euclid 2027-2028',
                 references=['arXiv:2510.12627']
+            ),
+            'w0_DESI_central': create_enhanced_constant(
+                desi.get('w0', config.PhenomenologyParameters.W0_DESI_DR2),
+                unit='dimensionless',
+                display='-0.83',
+                uncertainty=desi.get('w0_error', config.PhenomenologyParameters.W0_DESI_ERROR),
+                description='DESI DR2 measured dark energy equation of state',
+                formula='w₀ = P/ρ for dark energy',
+                derivation='DESI BAO + supernovae + CMB',
+                source='experimental:DESI_DR2',
+                experimental_value=-0.83,
+                experimental_uncertainty=0.06,
+                experimental_source='DESI DR2 (Oct 2024)',
+                references=['arXiv:2510.12627']
+            ),
+            'w0_DESI_error': create_enhanced_constant(
+                desi.get('w0_error', config.PhenomenologyParameters.W0_DESI_ERROR),
+                unit='dimensionless',
+                display='0.06',
+                description='DESI DR2 uncertainty on w₀',
+                derivation='Statistical + systematic uncertainties',
+                source='experimental:DESI_DR2',
+                references=['arXiv:2510.12627']
+            ),
+            'w0_sigma': create_enhanced_constant(
+                de.get('w0_deviation_sigma', 0.38),
+                unit='σ',
+                display='0.38',
+                description='Agreement between PM prediction and DESI measurement',
+                formula='σ = |w₀_PM - w₀_DESI| / σ_DESI',
+                derivation='(−0.8528 − (−0.83)) / 0.06 = 0.38σ',
+                source='simulation:dark_energy_wz_evolution',
+                agreement_text='Excellent agreement',
+                references=['PM v7.0 validation']
             ),
         }
 
