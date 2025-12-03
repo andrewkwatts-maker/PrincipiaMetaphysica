@@ -40,7 +40,7 @@ def generate_enhanced_constants():
 
     constants = {
         'meta': {
-            'version': '7.0',
+            'version': '8.0',
             'last_updated': datetime.now().strftime('%Y-%m-%d'),
             'description': 'Enhanced theory constants with full metadata',
             'has_metadata': True,
@@ -148,6 +148,8 @@ def generate_enhanced_constants():
         'pmns_matrix': {},
         'dark_energy': {},
         'kk_spectrum': {},
+        'neutrino_mass_ordering': {},
+        'proton_decay_channels': {},
         'planck_tension': {}
     }
 
@@ -424,6 +426,247 @@ def generate_enhanced_constants():
         ),
     }
 
+    # Add KK Spectrum (v8.0)
+    if 'kk_spectrum' in sim_data:
+        kk = sim_data['kk_spectrum']
+        constants['kk_spectrum'] = {
+            'm1': create_enhanced_constant(
+                kk.get('m1', 5000),
+                unit='GeV',
+                display=f"{kk.get('m1', 5000)/1e3:.2f}±{kk.get('m1_std', 1500)/1e3:.2f} TeV",
+                uncertainty=kk.get('m1_std', 1500),
+                description='Lightest KK graviton mass from G₂ Laplacian',
+                formula='m₁ = √λ₁ × (1/R_c) where λ₁ is first Laplacian eigenvalue',
+                derivation='Harmonic expansion on G₂ co-associative 4-cycles (b₃=24)',
+                source='simulation:kk_spectrum_full',
+                experimental_bound=3500,
+                experimental_source='ATLAS/CMS 2024',
+                testable='HL-LHC 2027-2030',
+                references=['Acharya et al hep-th/0505083']
+            ),
+            'sigma_m1_fb': create_enhanced_constant(
+                kk.get('sigma_m1_fb', 0.10),
+                unit='fb',
+                display=f"{kk.get('sigma_m1_fb', 0.10):.3f}",
+                uncertainty=kk.get('sigma_m1_std', 0.01),
+                description='Production cross-section at HL-LHC',
+                formula='σ(pp→KK+X) ~ α_s² / m_KK² × PDF',
+                derivation='Parton luminosity at √s=14 TeV',
+                source='simulation:kk_spectrum_full',
+                testable='HL-LHC 100 fb⁻¹',
+                references=['PM predictions section']
+            ),
+            'discovery_significance_sigma': create_enhanced_constant(
+                kk.get('discovery_significance_sigma', 6.2),
+                unit='σ',
+                display=f"{kk.get('discovery_significance_sigma', 6.2):.1f}σ",
+                description='Expected discovery significance at HL-LHC',
+                formula='σ = N_signal / √(N_background) with 100 fb⁻¹',
+                derivation='Monte Carlo with full detector simulation',
+                source='simulation:kk_spectrum_full',
+                testable='HL-LHC 2030',
+                references=['PM predictions section']
+            ),
+            'BR_gg': create_enhanced_constant(
+                kk.get('BR_gg', 0.65),
+                unit='fraction',
+                display=f"{kk.get('BR_gg', 0.65)*100:.0f}%",
+                description='Branching ratio KK→gg (gluons)',
+                formula='BR ~ α_s² × color_factor',
+                derivation='QCD coupling strength + color degrees of freedom',
+                source='simulation:kk_spectrum_full',
+                references=['PM predictions section']
+            ),
+            'm1_central': create_enhanced_constant(
+                kk.get('m1', 5000),
+                unit='GeV',
+                display=f"{kk.get('m1', 5000)/1e3:.2f}",
+                description='Central value of lightest KK mass',
+                formula='m₁ from Laplacian eigenvalue',
+                derivation='Harmonic expansion on G₂ manifold',
+                source='simulation:kk_spectrum_full',
+                references=['PM v8.0']
+            ),
+            'hl_lhc_significance': create_enhanced_constant(
+                kk.get('discovery_significance_sigma', 6.2),
+                unit='σ',
+                display=f"{kk.get('discovery_significance_sigma', 6.2):.1f}",
+                description='Expected discovery significance at HL-LHC',
+                formula='σ = N_signal / √N_background',
+                derivation='Monte Carlo with 100 fb⁻¹',
+                source='simulation:kk_spectrum_full',
+                references=['PM v8.0']
+            ),
+        }
+
+    # Add Neutrino Mass Ordering (v8.0)
+    if 'neutrino_mass_ordering' in sim_data:
+        nmo = sim_data['neutrino_mass_ordering']
+        constants['neutrino_mass_ordering'] = {
+            'ordering_predicted': create_enhanced_constant(
+                nmo.get('ordering_predicted', 'IH'),
+                unit='string',
+                display=nmo.get('ordering_predicted', 'IH'),
+                description='Predicted neutrino mass ordering',
+                formula='Ind(D) > 0 → IH, Ind(D) < 0 → NH',
+                derivation='Atiyah-Singer index on G₂ associative 3-cycles (b₃=24)',
+                source='simulation:neutrino_mass_ordering',
+                experimental_value='NH preferred at 2.7σ (NuFIT 5.3)',
+                testable='DUNE 2027, Hyper-K 2030s (>5σ resolution)',
+                references=['Atiyah-Singer theorem', 'NuFIT 5.3 2024']
+            ),
+            'prob_IH_mean': create_enhanced_constant(
+                nmo.get('prob_IH_mean', 0.92),
+                unit='probability',
+                display=f"{nmo.get('prob_IH_mean', 0.92)*100:.1f}%",
+                uncertainty=nmo.get('prob_IH_std', 0.08),
+                description='Probability of inverted hierarchy (Monte Carlo)',
+                formula='P(IH) from flux dressing F ~ √(χ_eff/b₃) = √6',
+                derivation='Monte Carlo (1000 samples) over moduli deformations',
+                source='simulation:neutrino_mass_ordering',
+                testable='DUNE 2027',
+                references=['PM fermion sector']
+            ),
+            'confidence_level': create_enhanced_constant(
+                nmo.get('confidence_level', 0.92),
+                unit='probability',
+                display=f"{nmo.get('confidence_level', 0.92)*100:.1f}%",
+                description='Confidence in mass ordering prediction',
+                formula='max(P(IH), P(NH))',
+                derivation='Geometric preference from index theorem',
+                source='simulation:neutrino_mass_ordering',
+                references=['PM v8.0']
+            ),
+            'prob_IH': create_enhanced_constant(
+                nmo.get('prob_IH_mean', 0.92),
+                unit='probability',
+                display=f"{nmo.get('prob_IH_mean', 0.92)*100:.1f}%",
+                description='Alias for prob_IH_mean',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'prob_NH': create_enhanced_constant(
+                nmo.get('prob_NH_mean', 0.08),
+                unit='probability',
+                display=f"{nmo.get('prob_NH_mean', 0.08)*100:.1f}%",
+                description='Probability of normal hierarchy',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'flux_dressing': create_enhanced_constant(
+                np.sqrt(144/24),  # √(χ_eff/b₃) = √6
+                unit='dimensionless',
+                display=f"{np.sqrt(144/24):.3f}",
+                description='Flux dressing parameter F = √(χ_eff/b₃)',
+                formula='F = √(144/24) = √6',
+                derivation='Flux quantization on G₂ manifold',
+                source='geometric',
+                references=['PM v8.0']
+            ),
+            'm1_IH': create_enhanced_constant(
+                nmo.get('masses_IH_meV', [0, 0, 19])[0],
+                unit='meV',
+                display=f"{nmo.get('masses_IH_meV', [0, 0, 19])[0]:.1f}",
+                description='Lightest neutrino mass if IH',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'm2_IH': create_enhanced_constant(
+                nmo.get('masses_IH_meV', [0, 0, 19])[1],
+                unit='meV',
+                display=f"{nmo.get('masses_IH_meV', [0, 0, 19])[1]:.1f}",
+                description='Middle neutrino mass if IH',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'm3_IH': create_enhanced_constant(
+                nmo.get('masses_IH_meV', [0, 0, 19])[2],
+                unit='meV',
+                display=f"{nmo.get('masses_IH_meV', [0, 0, 19])[2]:.1f}",
+                description='Heaviest neutrino mass if IH',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'm1_NH': create_enhanced_constant(
+                nmo.get('masses_NH_meV', [19, 21, 54])[0],
+                unit='meV',
+                display=f"{nmo.get('masses_NH_meV', [19, 21, 54])[0]:.1f}",
+                description='Lightest neutrino mass if NH',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'm2_NH': create_enhanced_constant(
+                nmo.get('masses_NH_meV', [19, 21, 54])[1],
+                unit='meV',
+                display=f"{nmo.get('masses_NH_meV', [19, 21, 54])[1]:.1f}",
+                description='Middle neutrino mass if NH',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'm3_NH': create_enhanced_constant(
+                nmo.get('masses_NH_meV', [19, 21, 54])[2],
+                unit='meV',
+                display=f"{nmo.get('masses_NH_meV', [19, 21, 54])[2]:.1f}",
+                description='Heaviest neutrino mass if NH',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'sum_m_IH': create_enhanced_constant(
+                sum(nmo.get('masses_IH_meV', [0, 0, 19])),
+                unit='meV',
+                display=f"{sum(nmo.get('masses_IH_meV', [0, 0, 19])):.1f}",
+                description='Sum of neutrino masses if IH',
+                formula='Σm_i = m₁ + m₂ + m₃',
+                source='simulation:neutrino_mass_ordering'
+            ),
+            'sum_m_NH': create_enhanced_constant(
+                sum(nmo.get('masses_NH_meV', [19, 21, 54])),
+                unit='meV',
+                display=f"{sum(nmo.get('masses_NH_meV', [19, 21, 54])):.1f}",
+                description='Sum of neutrino masses if NH',
+                formula='Σm_i = m₁ + m₂ + m₃',
+                source='simulation:neutrino_mass_ordering'
+            ),
+        }
+
+    # Add Proton Decay Channels (v8.0)
+    if 'proton_decay_channels' in sim_data:
+        pdc = sim_data['proton_decay_channels']
+        constants['proton_decay_channels'] = {
+            'BR_epi0_mean': create_enhanced_constant(
+                pdc.get('BR_epi0_mean', 0.62),
+                unit='fraction',
+                display=f"{pdc.get('BR_epi0_mean', 0.62)*100:.0f}±{pdc.get('BR_epi0_std', 0.08)*100:.0f}%",
+                uncertainty=pdc.get('BR_epi0_std', 0.08),
+                description='Branching ratio p→e⁺π⁰',
+                formula='BR = |C_epi0|² / Σ|C_i|² where C ~ Y²/M_GUT²',
+                derivation='Yukawa matrix from wavefunction overlaps on G₂ 3-cycles',
+                source='simulation:proton_decay_channels',
+                experimental_bound='τ_p > 1.67×10³⁴ years (Super-K)',
+                testable='Hyper-K 2027-2035',
+                references=['Super-K Collaboration 2024']
+            ),
+            'BR_Knu_mean': create_enhanced_constant(
+                pdc.get('BR_Knu_mean', 0.28),
+                unit='fraction',
+                display=f"{pdc.get('BR_Knu_mean', 0.28)*100:.0f}±{pdc.get('BR_Knu_std', 0.06)*100:.0f}%",
+                uncertainty=pdc.get('BR_Knu_std', 0.06),
+                description='Branching ratio p→K⁺ν̄',
+                formula='BR = |C_Knu|² / Σ|C_i|² (CKM suppressed)',
+                derivation='Wilson coefficients from SO(10)→SM breaking',
+                source='simulation:proton_decay_channels',
+                experimental_bound='τ_p > 6.6×10³³ years (Super-K)',
+                testable='Hyper-K 2027-2035',
+                references=['Super-K Collaboration 2024']
+            ),
+            'tau_p_epi0': create_enhanced_constant(
+                pdc.get('tau_p_epi0', 6.3e34),
+                unit='years',
+                display=f"{pdc.get('tau_p_epi0', 6.3e34):.2e}",
+                description='Channel-specific lifetime p→e⁺π⁰',
+                formula='τ_p(channel) = τ_p(total) / BR(channel)',
+                derivation='Total lifetime divided by branching ratio',
+                source='simulation:proton_decay_channels',
+                experimental_bound=1.67e34,
+                experimental_source='Super-K 2024',
+                agreement='2.4× above bound',
+                testable='Hyper-K 2030s',
+                references=['Super-K Collaboration']
+            ),
+        }
+
     # Add Planck tension
     constants['planck_tension'] = {
         'initial_sigma': create_enhanced_constant(
@@ -595,7 +838,7 @@ if (typeof module !== 'undefined' && module.exports) {
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(js_content)
 
-    print(f"✓ Generated {filename}")
+    print(f"* Generated {filename}")
     return filename
 
 if __name__ == '__main__':
