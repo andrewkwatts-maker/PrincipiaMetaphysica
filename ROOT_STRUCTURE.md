@@ -13,7 +13,7 @@
 - **generate_enhanced_constants.py** - Generates theory-constants-enhanced.js
 - **validate_pm_values.py** - Validates PM.* references in HTML
 
-### Documentation (8 files)
+### Documentation (11 files)
 - **README.md** - Project overview
 - **ARCHITECTURE.md** - System architecture
 - **CONFIG_README.md** - Configuration documentation
@@ -22,6 +22,7 @@
 - **ENHANCED_CONSTANTS_README.md** - Constants system
 - **SINGLE_SOURCE_OF_TRUTH.md** - Validation report
 - **V7_PUBLICATION_SUMMARY.md** - v7.0 summary
+- **VALIDATION_COMPLETE.md** - Final validation report
 - **CLEANUP_SUMMARY.md** - Cleanup documentation
 - **ROOT_STRUCTURE.md** - This file
 
@@ -79,7 +80,7 @@ Enhanced constants with metadata (20KB)
 
 ### analysis/
 Analysis results and plots:
-- plots/ - PNG visualizations
+- plots/ - PNG visualizations (7 files: wz_evolution, RG flows, KK spectrum, etc.)
 
 ### docs/
 Documentation pages:
@@ -91,12 +92,6 @@ Documentation pages:
 Test pages:
 - test-tooltip-system.html
 
-### solutions/
-Problem solutions and examples
-
-### peer-reviews/
-Peer review responses
-
 ### scripts/
 Build and utility scripts
 
@@ -107,16 +102,20 @@ Static images
 
 ## Files Removed (Clean Sweep)
 
-### Old Parameter Files
+### Old Parameter Files (7 files)
 ✗ theory_parameters_v6.1.csv
 ✗ theory_parameters_v6.4.csv
 ✗ theory_parameters_v6.5.csv
 ✗ extra_dim_tuning_grid.csv
-
-### Old Config Files
 ✗ magic_number_fix_instructions.json
 ✗ v65_cleanup_tasks.json
 ✗ Alpha4,5 Definitions.txt
+
+### Old Rumination Folders (57 files deleted)
+✗ abstract-resolutions/ - 28 MD files (theoretical explorations, CY4 constructions, w0 derivations)
+✗ peer-reviews/ - 5 MD files (fresh-* review documents)
+✗ solutions/ - 23 MD files + 1 HTML file (old resolution attempts)
+✗ analysis/*.md - 6 MD files (kept analysis/plots/ with PNGs)
 
 ### Moved to Subfolders
 - PNG files → analysis/plots/
