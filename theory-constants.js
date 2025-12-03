@@ -58,16 +58,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.8884148987237325e+34,
-    "tau_p_mean": 3.991749079535128e+34,
-    "tau_p_std": 1.4794274847024162e+34,
-    "tau_p_lower_68": 2.4763816503064737e+34,
-    "tau_p_upper_68": 5.488533623458185e+34,
-    "tau_p_lower_95": 1.4456936636795686e+34,
-    "tau_p_upper_95": 7.251262323013214e+34,
-    "tau_p_uncertainty_oom": 0.17347568164706867,
+    "tau_p_median": 3.8577011559430514e+34,
+    "tau_p_mean": 4.035722461393014e+34,
+    "tau_p_std": 1.4813282578145034e+34,
+    "tau_p_lower_68": 2.5347824368937437e+34,
+    "tau_p_upper_68": 5.583129023849802e+34,
+    "tau_p_lower_95": 1.5262452774807454e+34,
+    "tau_p_upper_95": 7.284520061727687e+34,
+    "tau_p_uncertainty_oom": 0.1691499066581933,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3283921549243907
+    "ratio_to_bound": 2.3100006921814678
   },
   "pmns_matrix": {
     "theta_23": 47.199999,
@@ -79,10 +79,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822289099971989,
-    "theta_23_error": 0.8010246499900693,
-    "theta_12_error": 1.1783948058115028,
-    "theta_13_error": 0.3558967887107306,
-    "delta_cp_error": 27.63931015634927
+    "theta_23_error": 0.7922417559817125,
+    "theta_12_error": 1.2233714179581392,
+    "theta_13_error": 0.3566493117768441,
+    "delta_cp_error": 28.94744559756296
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -133,10 +133,10 @@ const PM = {
   },
   "neutrino_mass_ordering": {
     "ordering_predicted": "IH",
-    "prob_IH_mean": 0.5642493270473465,
-    "prob_IH_std": 0.014021362882571718,
-    "prob_NH_mean": 0.43575067295265346,
-    "confidence_level": 0.55359011641157,
+    "prob_IH_mean": 0.564201125161032,
+    "prob_IH_std": 0.013993498419113225,
+    "prob_NH_mean": 0.43579887483896795,
+    "confidence_level": 0.8338183028805151,
     "masses_IH_meV": [
       NaN,
       NaN,
@@ -149,12 +149,12 @@ const PM = {
     ]
   },
   "proton_decay_channels": {
-    "BR_epi0_mean": 0.989693372717958,
-    "BR_epi0_std": 5.4684008252219126e-05,
-    "BR_Knu_mean": 6.633897362492039e-05,
-    "BR_Knu_std": 1.3532505333905658e-05,
-    "tau_p_epi0": 3.9708922155834855e+34,
-    "tau_p_Knu": 5.754444985416024e+38,
+    "BR_epi0_mean": 0.9864975541249994,
+    "BR_epi0_std": 0.0006303983475661678,
+    "BR_Knu_mean": 0.0011138221502630383,
+    "BR_Knu_std": 0.00024000870296704544,
+    "tau_p_epi0": 3.980613760111406e+34,
+    "tau_p_Knu": 3.8341048942069983e+37,
     "all_consistent": true
   },
   "validation": {
