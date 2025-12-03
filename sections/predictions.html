@@ -207,6 +207,10 @@
       font-weight: 600;
     }
   </style>
+    <link rel="stylesheet" href="../css/pm-tooltip.css">
+    <script src="../theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+
 </head>
 <body>
   <header>
@@ -270,7 +274,7 @@
           <tr style="background: rgba(79, 172, 254, 0.1);">
             <td><strong>w<sub>0</sub> & w<sub>a</sub> derivation</strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>w<sub>0</sub> = -0.8528, w<sub>a,eff</sub> = -0.95 from G₂ torsion logs (DESI DR2: 0.38σ, 0.66σ)</td>
+            <td>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>, w<sub>a,eff</sub> = -0.95 from G₂ torsion logs (DESI DR2: <span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ, 0.66σ)</td>
           </tr>
           <tr>
             <td>CY4 construction</td>
@@ -295,27 +299,27 @@
           <tr>
             <td>MEP w₀ derivation</td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>w₀ = -(d<sub>eff</sub>-1)/(d<sub>eff</sub>+1) = -0.8528 with d<sub>eff</sub> = 12.589 from G₂ torsion</td>
+            <td>w₀ = -(d<sub>eff</sub>-1)/(d<sub>eff</sub>+1) = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> with d<sub>eff</sub> = 12.589 from G₂ torsion</td>
           </tr>
           <tr>
             <td>Planck tension</td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; REDUCED</span></td>
-            <td>Reduced from 6σ to 1.3σ with refined w₀ = -0.8528 and logarithmic evolution</td>
+            <td>Reduced from 6σ to 1.3σ with refined w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> and logarithmic evolution</td>
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>M<sub>GUT</sub> & 1/α<sub>GUT</sub></strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>M<sub>GUT</sub> = 2.118×10¹⁶ GeV, 1/α<sub>GUT</sub> = 23.54 from G₂ torsion logs + 3-loop RG</td>
+            <td>M<sub>GUT</sub> = 2.118×10¹⁶ GeV, 1/α<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> from G₂ torsion logs + 3-loop RG</td>
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>Proton lifetime</strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; PREDICTION</span></td>
-            <td>τ<sub>p</sub> = 3.84×10³⁴ years, 68% CI: [2.41, 5.61]×10³⁴ yr (±0.177 OOM); Hyper-K testable</td>
+            <td>τ<sub>p</sub> = 3.84×10³⁴ years, 68% CI: [2.41, 5.61]×10³⁴ yr (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM); Hyper-K testable</td>
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>PMNS mixing angles</strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; CONFIRMED</span></td>
-            <td>θ₂₃=47.20°, θ₁₂=33.59°, θ₁₃=8.57°, δ<sub>CP</sub>=235.0° (0.00-0.24σ vs NuFIT 5.3)</td>
+            <td>θ₂₃=<span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:2"></span>°, θ₁₂=<span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:2"></span>°, θ₁₃=<span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>°, δ<sub>CP</sub>=<span class="pm-value" data-category="pmns_matrix" data-param="delta_CP" data-format="fixed:1"></span>° (0.00-0.24σ vs NuFIT 5.3)</td>
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>KK graviton spectrum</strong></td>
@@ -795,7 +799,7 @@
               <td>Common origin with w₀</td>
             </tr>
             <tr style="background: rgba(81, 207, 102, 0.08);">
-              <td><strong>w₀ = -0.8528</strong></td>
+              <td><strong>w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span></strong></td>
               <td>D<sub>eff</sub>=12.589 via MEP</td>
               <td>DESI 2024 ✓</td>
               <td>Common D<sub>eff</sub></td>
@@ -815,7 +819,7 @@
           </tbody>
         </table>
         <p style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">
-          <strong>Key insight:</strong> Discovery of KK gravitons at 5 TeV would strongly support the w₀ = -0.8528
+          <strong>Key insight:</strong> Discovery of KK gravitons at 5 TeV would strongly support the w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>
           prediction (both from D<sub>eff</sub>=12.589). Conversely, exclusion beyond 7 TeV would require
           re-examining the effective dimensionality or compactification geometry.
         </p>
@@ -917,11 +921,11 @@
           <strong>68% Confidence Interval:</strong> [2.41, 5.61] &times; 10<sup>34</sup> years
         </p>
         <p style="font-size: 0.95rem; margin-bottom: 0.5rem;">
-          <strong>Uncertainty:</strong> 0.177 orders of magnitude (dramatic improvement from 0.8 OOM)
+          <strong>Uncertainty:</strong> <span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> orders of magnitude (dramatic improvement from 0.8 OOM)
         </p>
         <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem;">
           Refined using three-loop RG running with G₂ torsion-derived M<sub>GUT</sub> = 2.118 &times; 10<sup>16</sup> GeV
-          and 1/&alpha;<sub>GUT</sub> = 23.54. The median (3.84) vs mean (3.98) shows slight log-normal asymmetry.
+          and 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span>. The median (3.84) vs mean (3.98) shows slight log-normal asymmetry.
           Lattice QCD matrix elements from FLAG 2023 contribute ~30% of uncertainty.
         </p>
         <div style="background: rgba(81, 207, 102, 0.15); padding: 0.75rem; margin-top: 1rem; border-radius: 6px; border-left: 3px solid #51cf66;">
@@ -984,15 +988,15 @@
           derives from <strong>two-time interference effects</strong>, improving the match with DESI 2024.
         </p>
         <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
-          <li><strong>w<sub>0</sub> = -0.8528:</strong> <span style="color: #51cf66;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12 + 0.5×(α₄+α₅) with α₄=0.9557, α₅=0.2224)</li>
+          <li><strong>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>:</strong> <span style="color: #51cf66;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12 + 0.5×(α₄+α₅) with α₄=0.9557, α₅=0.2224)</li>
           <li><strong>w<sub>a</sub> &asymp; -0.75:</strong> <span style="color: #51cf66;">DERIVED</span> from two-time dynamics (updated from -0.71)</li>
           <li><strong>&alpha;<sub>T</sub> &asymp; 2.7:</strong> <span style="color: #51cf66;">DERIVED</span> from Z<sub>2</sub>-corrected &Gamma;/H scaling</li>
         </ul>
         <div style="background: rgba(255, 193, 7, 0.15); padding: 1rem; margin-top: 1rem; border-radius: 8px;">
           <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
-            <strong>Update (Dec 2025):</strong> Previously w₀ = -11/13 ≈ -0.846 using d<sub>eff</sub>=12 (integer).
+            <strong>Update (Dec 2025):</strong> Previously w₀ = -11/13 ≈ <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> using d<sub>eff</sub>=12 (integer).
             Now <strong>geometrically derived</strong> from TCS G₂ manifold (b₂=4, b₃=24) yielding
-            α₄ + α₅ = 1.1781 → d<sub>eff</sub> = 12.589 → w₀ = -0.8528 (within DESI 1σ).
+            α₄ + α₅ = 1.1781 → d<sub>eff</sub> = 12.589 → w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> (within DESI 1σ).
           </p>
         </div>
       </div>
@@ -1015,10 +1019,10 @@
           <span class="formula-op">=</span>
           <span class="formula-var" style="color: #ffc107;">w<sub>0</sub>
             <div class="var-tooltip">
-              <div class="var-name">w<sub>0</sub> = -0.8528</div>
+              <div class="var-name">w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span></div>
               <div class="var-description">Present-day equation of state parameter (z=0) - geometrically derived</div>
               <div class="var-units">Dimensionless</div>
-              <div class="var-contribution"><span style="color: #51cf66;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12+0.5×1.1781 from TCS G₂). DESI DR2: 0.38σ agreement.</div>
+              <div class="var-contribution"><span style="color: #51cf66;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12+0.5×1.1781 from TCS G₂). DESI DR2: <span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ agreement.</div>
             </div>
           </span>
           <span class="formula-op">[1 +</span>
@@ -1056,7 +1060,7 @@
         <div class="calc-inputs">
           <div class="calc-input-group">
             <label for="w0-input">w<sub>0</sub> (present day)</label>
-            <input type="number" id="w0-input" value="-0.8528" step="0.001" min="-2" max="0" onchange="updateWz()">
+            <input type="number" id="w0-input" value="<span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>" step="0.001" min="-2" max="0" onchange="updateWz()">
           </div>
           <div class="calc-input-group">
             <label for="alphaT-input">&alpha;<sub>T</sub> (thermal time)</label>
@@ -1079,7 +1083,7 @@
         <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem;">
           <div style="text-align: center; padding: 0.75rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
             <div style="font-size: 0.8rem; color: var(--text-muted);">w(z=0)</div>
-            <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; color: var(--accent-primary);" id="wz0-display">-0.846</div>
+            <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; color: var(--accent-primary);" id="wz0-display"><span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span></div>
           </div>
           <div style="text-align: center; padding: 0.75rem; background: rgba(255, 126, 182, 0.1); border-radius: 8px;">
             <div style="font-size: 0.8rem; color: var(--text-muted);">w(z=0.5)</div>
@@ -1096,7 +1100,7 @@
           return w0 * (1 + (alphaT / 3) * Math.log(1 + z));
         }
         function updateWz() {
-          const w0 = parseFloat(document.getElementById('w0-input').value) || -0.846;
+          const w0 = parseFloat(document.getElementById('w0-input').value) || <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span>;
           const alphaT = parseFloat(document.getElementById('alphaT-input').value) || 2.7;
           const z = parseFloat(document.getElementById('z-input').value) || 1.0;
 
@@ -1162,7 +1166,7 @@
         </p>
         <p style="margin-top: 0.5rem; font-style: italic; color: var(--text-muted);">
           <strong>Epistemic status:</strong> Both w<sub>0</sub> and w<sub>a,eff</sub> are now <strong>derived</strong>
-          from theory. w<sub>0</sub> = -0.8528 from MEP via D<sub>eff</sub>=12.589 (DESI DR2: 0.38&sigma; agreement);
+          from theory. w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> from MEP via D<sub>eff</sub>=12.589 (DESI DR2: 0.38&sigma; agreement);
           w<sub>a,eff</sub> = -0.95 from &alpha;<sub>T</sub>=2.7 two-time dynamics (DESI: 0.66&sigma; deviation).
           The Planck H₀ tension reduced from 6σ to 1.3σ with these refined values.
         </p>
@@ -1450,7 +1454,7 @@
 
       <h4>Complete PMNS Parameters: Theory vs Experiment</h4>
       <div class="highlight-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(81, 207, 102, 0.3); margin: 1.5rem 0;">
-        <h5 style="color: #51cf66; margin-top: 0; margin-bottom: 1rem;">Exceptional Agreement: Average 0.09σ Deviation</h5>
+        <h5 style="color: #51cf66; margin-top: 0; margin-bottom: 1rem;">Exceptional Agreement: Average <span class="pm-value" data-category="pmns_matrix" data-param="avg_sigma" data-format="fixed:2"></span>σ Deviation</h5>
         <table class="sme-table" style="background: rgba(255, 255, 255, 0.05);">
           <thead>
             <tr>
@@ -1464,28 +1468,28 @@
           <tbody>
             <tr style="background: rgba(81, 207, 102, 0.1);">
               <td><strong>θ₂₃</strong></td>
-              <td><strong>47.20°</strong></td>
+              <td><strong><span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:2"></span>°</strong></td>
               <td>47.2 ± 2.0°</td>
               <td><span style="color: #51cf66; font-weight: 600;">0.00σ</span></td>
               <td><span style="color: #51cf66;">★ EXACT MATCH</span></td>
             </tr>
             <tr style="background: rgba(81, 207, 102, 0.08);">
               <td><strong>θ₁₃</strong></td>
-              <td><strong>8.57°</strong></td>
+              <td><strong><span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>°</strong></td>
               <td>8.57 ± 0.12°</td>
               <td><span style="color: #51cf66; font-weight: 600;">0.01σ</span></td>
               <td><span style="color: #51cf66;">★ EXACT MATCH</span></td>
             </tr>
             <tr>
               <td><strong>δ<sub>CP</sub></strong></td>
-              <td><strong>235.0°</strong></td>
+              <td><strong><span class="pm-value" data-category="pmns_matrix" data-param="delta_CP" data-format="fixed:1"></span>°</strong></td>
               <td>232 ± 30°</td>
               <td><span style="color: #51cf66; font-weight: 600;">0.10σ</span></td>
               <td><span style="color: #51cf66;">Excellent</span></td>
             </tr>
             <tr>
               <td><strong>θ₁₂</strong></td>
-              <td><strong>33.59°</strong></td>
+              <td><strong><span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:2"></span>°</strong></td>
               <td>33.41 ± 0.75°</td>
               <td><span style="color: #51cf66; font-weight: 600;">0.24σ</span></td>
               <td><span style="color: #51cf66;">Excellent</span></td>
@@ -1493,7 +1497,7 @@
           </tbody>
         </table>
         <p style="margin-top: 1rem; margin-bottom: 0; font-size: 0.95rem; color: var(--text-secondary);">
-          <strong>Average deviation:</strong> 0.09σ across all four parameters. Two parameters (θ₂₃, θ₁₃)
+          <strong>Average deviation:</strong> <span class="pm-value" data-category="pmns_matrix" data-param="avg_sigma" data-format="fixed:2"></span>σ across all four parameters. Two parameters (θ₂₃, θ₁₃)
           show exact agreement within experimental precision. This exceptional match provides strong evidence
           for the G₂ geometry and sequential dominance mechanism.
         </p>
@@ -2713,7 +2717,7 @@
         <tbody>
           <tr>
             <td>w<sub>0</sub></td>
-            <td>&minus;11/13 &asymp; -0.846</td>
+            <td>&minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span></td>
             <td><span style="color: #51cf66; font-weight: 600;">SEMI-DERIVED</span></td>
             <td>From Maximum Entropy Principle: w<sub>0</sub> = &minus;(d<sub>eff</sub>&minus;1)/(d<sub>eff</sub>+1) for d<sub>eff</sub>=12</td>
           </tr>
@@ -2923,7 +2927,7 @@
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>w<sub>0</sub></strong></td>
-            <td>&minus;11/13 &asymp; -0.846</td>
+            <td>&minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span></td>
             <td style="color: #51cf66; font-weight: bold;">DERIVED (MEP)</td>
             <td>From Maximum Entropy Principle</td>
           </tr>
@@ -2939,7 +2943,7 @@
       <div class="warning-box">
         <h4>Planck CMB Tension</h4>
         <p>
-          <strong>The theory's w<sub>0</sub> = &minus;11/13 &asymp; -0.846 is in ~6&sigma; tension with Planck CMB-only constraints
+          <strong>The theory's w<sub>0</sub> = &minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> is in ~6&sigma; tension with Planck CMB-only constraints
           (w<sub>0</sub> = -1.03 &plusmn; 0.03).</strong> This tension is acknowledged as a testable prediction.
           If future surveys confirm Planck-like values, the thermal time mechanism would be falsified.
         </p>
@@ -2967,7 +2971,7 @@
               Test: Logarithmic w(z) vs CPL Parameterization
             </p>
             <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
-              <strong>PM Prediction:</strong> w(z) = w₀[1 + (αₜ/3)ln(1+z)] with w₀ = -0.8528, αₜ = 2.7
+              <strong>PM Prediction:</strong> w(z) = w₀[1 + (αₜ/3)ln(1+z)] with w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>, αₜ = 2.7
             </p>
             <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: var(--text-secondary);">
               <strong>Falsification:</strong> CPL better fit than logarithmic at Δχ² > 9 (3σ) for z > 2
@@ -3039,7 +3043,7 @@
           <ul style="margin: 0; padding-left: 1.5rem; color: var(--text-secondary); line-height: 1.7;">
             <li><strong>Expected significance:</strong> 6.2σ discovery potential at 3 ab⁻¹</li>
             <li><strong>Current bound:</strong> m<sub>KK</sub> > 3.5 TeV (ATLAS/CMS 2024)</li>
-            <li><strong>Correlation:</strong> Same D<sub>eff</sub>=12.589 that predicts w₀ = -0.8528</li>
+            <li><strong>Correlation:</strong> Same D<sub>eff</sub>=12.589 that predicts w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span></li>
             <li><strong>Discovery modes:</strong> γγ (golden), ℓℓ, jj, WW, ZZ channels</li>
           </ul>
         </div>
@@ -3132,7 +3136,7 @@
               Dark Energy
             </div>
             <div style="font-size: 0.9rem; color: var(--text-secondary);">
-              w₀ = -0.8528<br/>
+              w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span><br/>
               from D<sub>eff</sub>=12.589
             </div>
           </div>
