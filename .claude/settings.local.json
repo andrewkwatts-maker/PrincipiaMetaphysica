@@ -74,7 +74,15 @@
       "Bash(git log:*)",
       "Bash(git show:*)",
       "Bash(git rebase:*)",
-      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" diff index.html)"
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" diff index.html)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" diff --stat principia-metaphysica-paper.html)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" checkout principia-metaphysica-paper.html)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" diff --stat)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" diff principia-metaphysica-paper.html)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" diff sections/cosmology.html)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" add -A)",
+      "Bash(git -C \"H:\\Github\\PrincipiaMetaphysica\" status --short)",
+      "Bash(del nul)"
     ],
     "deny": [],
     "ask": []

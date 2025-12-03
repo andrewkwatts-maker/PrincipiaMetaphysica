@@ -207,8 +207,11 @@
             color: #22c55e;
         }
     </style>
-    <script src="theory-constants.js"></script>
-</head>
+    <link rel="stylesheet" href="../css/pm-tooltip.css">
+    <script src="../theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+
+    </head>
 <body>
     <header>
         <div class="header-content">
@@ -1080,7 +1083,7 @@
                         </div>
                         <div class="formula-info-item">
                             <h5>Predicted &tau;<sub>p</sub></h5>
-                            <p>3.84 &times; 10<sup>34</sup> years (±0.177 OOM)</p>
+                            <p>3.84 &times; 10<sup>34</sup> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
                         </div>
                     </div>
                     <div class="use-cases">
@@ -2052,7 +2055,7 @@
                 <h4>Construction B: Z<sub>2</sub> Quotient of CY4 with &chi; = 144</h4>
                 <p>
                     K<sub>Pneuma</sub> = X/Z<sub>2</sub> where X is a CY4 with &chi;(X) = 144 and Z<sub>2</sub> acts freely (no fixed points).<br>
-                    &chi;(K<sub>Pneuma</sub>) = &chi;(X)/|Z<sub>2</sub>| = 144/2 = 72 &nbsp;&rArr;&nbsp; n<sub>gen</sub> = 72/24 = <strong>3</strong>
+                    &chi;(K<sub>Pneuma</sub>) = &chi;(X)/|Z<sub>2</sub>| = <span class="pm-value" data-category="topology" data-param="chi_eff" data-format="display"></span>/2 = 72 &nbsp;&rArr;&nbsp; n<sub>gen</sub> = 72/24 = <strong>3</strong>
                 </p>
             </div>
 
@@ -2690,7 +2693,7 @@
                     <span class="formula-var highlight">&lambda;* = g* = y*
                         <div class="var-tooltip">
                             <div class="var-name">Unified Coupling</div>
-                            <div class="var-description">At the GUT scale, all three couplings take the same value, realizing the SO(10) gauge unification. The unified coupling 1/&alpha;<sub>GUT</sub> = 23.54 from G₂ torsion logarithms with 3-loop RG + KK threshold corrections.</div>
+                            <div class="var-description">At the GUT scale, all three couplings take the same value, realizing the SO(10) gauge unification. The unified coupling 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> from G₂ torsion logarithms with 3-loop RG + KK threshold corrections.</div>
                             <div class="var-units">Dimensionless</div>
                             <div class="var-contribution">Predicts relations between low-energy couplings via RG running. The geometric derivation from K<sub>Pneuma</sub> topology provides a calculable prediction.</div>
                         </div>
@@ -3008,7 +3011,7 @@
                 <br><br>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= 1.8×10<sup>16</sup> GeV × 1.1767
                 <br><br>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong style="color: #22c55e; font-size: 1.3rem;">2.118 × 10<sup>16</sup> GeV</strong>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;= <strong style="color: #22c55e; font-size: 1.3rem;"><span class="pm-value" data-category="proton_decay" data-param="M_GUT" data-format="display"></span> GeV</strong>
                 <div class="label">Final result: 17.67% enhancement from warping</div>
             </div>
 
@@ -3066,7 +3069,7 @@
                     <li><strong>Flux normalization:</strong> N<sub>flux</sub> = 2π/(ν/b₃) = 6.283 (self-dual)</li>
                     <li><strong>Warping parameter:</strong> s = (6.519 + 0.8836)/6.283 = 1.178</li>
                     <li><strong>Warp coefficient:</strong> c = 3/(22 - 2) = 0.15</li>
-                    <li><strong>Final GUT scale:</strong> M<sub>GUT</sub> = 1.8 × 1.1767 × 10<sup>16</sup> = <strong>2.118 × 10<sup>16</sup> GeV</strong></li>
+                    <li><strong>Final GUT scale:</strong> M<sub>GUT</sub> = 1.8 × 1.1767 × 10<sup>16</sup> = <strong><span class="pm-value" data-category="proton_decay" data-param="M_GUT" data-format="display"></span> GeV</strong></li>
                 </ol>
             </div>
 
@@ -3076,7 +3079,7 @@
                     In standard GUT phenomenology, M<sub>GUT</sub> is extracted by <em>fitting</em> gauge coupling
                     evolution to measured low-energy values. Here, M<sub>GUT</sub> is <strong>geometrically predicted</strong>
                     from the topology and torsion structure of K<sub>Pneuma</sub>. The fact that this geometric value
-                    (2.118 × 10<sup>16</sup> GeV) is consistent with gauge coupling unification is a
+                    (<span class="pm-value" data-category="proton_decay" data-param="M_GUT" data-format="display"></span> GeV) is consistent with gauge coupling unification is a
                     <strong>non-trivial consistency check</strong> of the entire framework.
                 </p>
                 <p style="margin-top: 0.75rem;">
@@ -3110,7 +3113,7 @@
                     <li><strong>10% Kaluza-Klein (KK):</strong> Tower states from compactified dimensions</li>
                 </ul>
                 <p style="font-weight: 500; color: var(--text-primary);">
-                    <strong>Result:</strong> 1/α_GUT = 23.54 at M_GUT = 2.118×10¹⁶ GeV<br>
+                    <strong>Result:</strong> 1/α_GUT = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> at M_GUT = 2.118×10¹⁶ GeV<br>
                     <strong>Derivation:</strong> G₂ torsion logarithms with 3-loop RG + KK thresholds
                 </p>
             </div>
@@ -3150,7 +3153,7 @@
                         </div>
                     </div>
                     <div style="background: rgba(153, 102, 255, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid #9966ff;">
-                        <strong style="color: #9966ff;">1/α_GUT = 23.54</strong>
+                        <strong style="color: #9966ff;">1/α_GUT = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span></strong>
                         <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
                             Unification point<br>
                             M_GUT = 2.118×10¹⁶ GeV
@@ -3376,7 +3379,7 @@
                                     <strong>1/α_GUT (derived):</strong>
                                 </div>
                                 <div id="alphaGUTResult" style="text-align: right; font-weight: 600; color: var(--accent-primary);">
-                                    23.54
+                                    <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span>
                                 </div>
                                 <div>
                                     <strong>M_GUT:</strong>
@@ -3595,7 +3598,7 @@
                     <p>
                         <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = 3.84 &times; 10<sup>34</sup> years<br>
                         <strong>68% Confidence Interval:</strong> [2.41, 5.61] &times; 10<sup>34</sup> years<br>
-                        <strong>Uncertainty:</strong> 0.177 OOM (improved from 0.8 OOM!)<br>
+                        <strong>Uncertainty:</strong> <span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM (improved from 0.8 OOM!)<br>
                         <strong>Ratio to bound:</strong> 2.30× above Super-Kamiokande limit<br><br>
                         This is consistent with current bounds and testable by Hyper-Kamiokande (sensitivity ~10<sup>35</sup> years with 10 years of data).
                         The M<sub>GUT</sub> = 2.118 ± 0.09 &times; 10<sup>16</sup> GeV from G₂ torsion logarithms provides the precise scale.
@@ -3641,7 +3644,7 @@
                     <strong>Beta function coefficients with Pneuma contribution:</strong>
                     <em>b</em> = (33/5, 1, -3) for (U(1)<sub>Y</sub>, SU(2)<sub>L</sub>, SU(3)<sub>C</sub>), ensuring
                     precise gauge coupling unification at M<sub>GUT</sub> = 2.118 &times; 10<sup>16</sup> GeV
-                    with unified coupling 1/&alpha;<sub>GUT</sub> = 23.54 (derived from G₂ torsion logarithms).
+                    with unified coupling 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> (derived from G₂ torsion logarithms).
                 </p>
                 <div class="highlight-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08)); border: 2px solid rgba(81, 207, 102, 0.3); margin-top: 1.5rem;">
                     <h4 style="color: #51cf66;">Merged Solution Available: Asymptotic Safety + Thresholds + KK Tower</h4>
@@ -3676,7 +3679,7 @@
                     This is the smoking gun prediction of SO(10) grand unification.
                 </p>
                 <div class="observable">
-                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = 3.84 &times; 10<sup>34</sup> years (±0.177 OOM)
+                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = 3.84 &times; 10<sup>34</sup> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
                 </div>
                 <p class="method">
                     <strong>Current Bound:</strong> &tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years (Super-Kamiokande 2020)<br>
