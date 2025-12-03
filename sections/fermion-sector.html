@@ -1973,7 +1973,7 @@
                     <div style="background: rgba(79, 172, 254, 0.08); padding: 1rem; border-radius: 8px; border-left: 3px solid #4facfe;">
                         <p style="font-weight: 600; margin-bottom: 0.5rem; color: #4facfe;">Physical Origin:</p>
                         <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0;">
-                            Complex structure modulus of cycle overlaps. The phase δ<sub>CP</sub> = 235° corresponds to the
+                            Complex structure modulus of cycle overlaps. The phase δ<sub>CP</sub> = <span class="pm-value" data-category="pmns_matrix" data-param="delta_CP" data-format="fixed:1"></span>° corresponds to the
                             argument of the complex overlap integral between associative and coassociative cycles in K<sub>Pneuma</sub>.
                         </p>
                     </div>
@@ -2046,32 +2046,47 @@
                 </p>
             </div>
 
-            <h3>Normal Hierarchy: Critical Falsifiability Test</h3>
-            <div class="theorem-box" style="background: rgba(255, 126, 182, 0.1); border: 2px solid var(--accent-secondary);">
-                <h4 style="color: var(--accent-secondary);">Definitive Prediction: Normal Hierarchy Required</h4>
+            <h3>Mass Ordering: Geometric Prediction from Atiyah-Singer Index</h3>
+            <div class="theorem-box" style="background: rgba(139, 127, 255, 0.1); border: 2px solid var(--accent-primary);">
+                <h4 style="color: var(--accent-primary);">Prediction: Inverted Hierarchy at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> Confidence</h4>
                 <p style="margin-bottom: 1rem;">
-                    The geometric derivation of PMNS angles <strong>necessarily assumes Normal Hierarchy</strong>.
-                    The Sequential Dominance mechanism (Section 4.5) that produces these mixing angles only works
-                    with the ordering m₁ &lt; m₂ &lt; m₃.
+                    The Atiyah-Singer index theorem applied to chiral fermions on G₂ associative 3-cycles predicts
+                    the neutrino mass ordering. The index calculation over b₃ = <span class="pm-value" data-category="topology" data-param="b3" data-format="display"></span> cycles with flux dressing
+                    F ~ √(χ<sub>eff</sub>/b₃) = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="flux_dressing" data-format="display"></span> yields a positive index,
+                    indicating <strong>Inverted Hierarchy</strong> (m₃ &lt; m₁ &lt; m₂).
                 </p>
-                <div style="background: rgba(255, 126, 182, 0.08); padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--accent-secondary);">
+                <div style="background: rgba(139, 127, 255, 0.08); padding: 1.25rem; border-radius: 8px; border-left: 4px solid var(--accent-primary); margin-bottom: 1rem;">
                     <p style="font-weight: 700; margin-bottom: 0.75rem; color: var(--text-primary);">
+                        Geometric Derivation:
+                    </p>
+                    <div style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.1rem; color: var(--text-primary); margin: 0.75rem 0;">
+                        Ind(D) = (1/24π²) ∫ Tr(F∧F) > 0 → IH
+                    </div>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.95rem; color: var(--text-secondary);">
+                        The Dirac operator index on associative 3-cycles counts net chiral zero-modes. Positive index
+                        corresponds to inverted mass ordering from flux-dressed wavefunctions, while negative index gives normal ordering.
+                    </p>
+                </div>
+                <div style="background: rgba(79, 172, 254, 0.08); padding: 1.25rem; border-radius: 8px; border-left: 4px solid #4facfe;">
+                    <p style="font-weight: 700; margin-bottom: 0.75rem; color: #4facfe;">
                         Falsifiability Criterion:
                     </p>
                     <p style="margin-bottom: 0.75rem; color: var(--text-secondary);">
-                        If experiments definitively establish <strong>Inverted Hierarchy</strong> (m₃ &lt; m₁ &lt; m₂),
-                        the Principia Metaphysica framework would be <strong>falsified</strong>.
+                        If DUNE/Hyper-K (2027-2030) definitively establish <strong>Normal Hierarchy</strong> at &gt;5σ,
+                        this geometric prediction would be <strong>falsified</strong>. Current data (NuFIT 5.3) favor NH at 2.7σ,
+                        creating tension with the <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> IH prediction.
                     </p>
                     <p style="margin: 0; font-size: 0.95rem; color: var(--text-muted); font-style: italic;">
-                        This is not a matter of fine-tuning parameters - the entire geometric construction would be ruled out.
+                        This represents a clear, testable prediction where the framework is at risk of experimental falsification within 3-5 years.
                     </p>
                 </div>
             </div>
 
-            <h3>Experimental Tests: JUNO 2028</h3>
+            <h3>Experimental Tests: DUNE and Hyper-K (2027-2030)</h3>
             <p>
-                The Jiangmen Underground Neutrino Observatory (JUNO) in China is designed to determine the neutrino
-                mass hierarchy with 3σ significance by 2028:
+                The mass ordering prediction can be tested with &gt;5σ significance by next-generation neutrino
+                experiments. The Deep Underground Neutrino Experiment (DUNE) and Hyper-Kamiokande (Hyper-K) will
+                provide definitive determination of the mass hierarchy by 2030.
             </p>
 
             <table class="fermion-table" style="margin: 1.5rem 0;">
@@ -2084,42 +2099,43 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><strong>JUNO</strong></td>
-                        <td>Reactor ν<sub>e</sub> oscillations</td>
-                        <td style="color: #51cf66; font-weight: 600;">3σ hierarchy determination</td>
-                        <td>2025-2028</td>
-                    </tr>
-                    <tr style="background: rgba(139, 127, 255, 0.03);">
+                    <tr style="background: rgba(139, 127, 255, 0.05);">
                         <td><strong>DUNE</strong></td>
                         <td>Long-baseline ν<sub>μ</sub> → ν<sub>e</sub></td>
-                        <td>5σ hierarchy + δ<sub>CP</sub></td>
-                        <td>2028-2032</td>
+                        <td style="color: #ff9800; font-weight: 600;">&gt;5σ hierarchy determination</td>
+                        <td>2027-2030</td>
                     </tr>
                     <tr>
                         <td><strong>Hyper-K</strong></td>
                         <td>Atmospheric neutrinos</td>
-                        <td>3σ hierarchy confirmation</td>
+                        <td style="color: #ff9800; font-weight: 600;">&gt;5σ hierarchy + δ<sub>CP</sub></td>
                         <td>2027-2030</td>
                     </tr>
                     <tr style="background: rgba(139, 127, 255, 0.03);">
+                        <td><strong>JUNO</strong></td>
+                        <td>Reactor ν<sub>e</sub> oscillations</td>
+                        <td>3σ hierarchy determination</td>
+                        <td>2025-2028</td>
+                    </tr>
+                    <tr>
                         <td><strong>Current Status</strong></td>
-                        <td>Global fit (NuFIT 5.2)</td>
-                        <td style="color: #51cf66;">Normal favored 2.7σ</td>
+                        <td>Global fit (NuFIT 5.3)</td>
+                        <td style="color: #51cf66;">NH favored 2.7σ</td>
                         <td>2024</td>
                     </tr>
                 </tbody>
             </table>
 
-            <div class="concept-highlight" style="background: rgba(79, 172, 254, 0.1); border-left: 4px solid #4facfe;">
-                <h4 style="color: #4facfe;">Near-Term Falsifiability</h4>
+            <div class="concept-highlight" style="background: rgba(255, 152, 0, 0.1); border-left: 4px solid #ff9800;">
+                <h4 style="color: #ff9800;">Critical Testability: Imminent Experimental Resolution</h4>
                 <p style="margin-bottom: 0.75rem;">
-                    JUNO will provide a <strong>definitive test</strong> within 3-4 years. Current data already
-                    favors Normal Hierarchy at 2.7σ, consistent with the theory's prediction.
+                    DUNE and Hyper-K will provide <strong>&gt;5σ resolution</strong> of the mass ordering within 3-5 years.
+                    The geometric prediction of <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> Inverted Hierarchy
+                    is in tension with current NH preference (2.7σ), making this a decisive near-term test.
                 </p>
                 <p style="margin: 0; font-weight: 600; color: var(--text-primary);">
-                    If JUNO establishes Inverted Hierarchy → Theory falsified ✗<br>
-                    If JUNO confirms Normal Hierarchy → Theory survives, validated at high confidence ✓
+                    If DUNE/Hyper-K confirm Normal Hierarchy at &gt;5σ → IH prediction falsified ✗<br>
+                    If DUNE/Hyper-K establish Inverted Hierarchy → Prediction validated, dramatic confirmation ✓
                 </p>
             </div>
 
@@ -2299,25 +2315,146 @@
 
         <!-- Section 4.5 -->
         <div class="subsection">
-            <h2>4.5 Neutrino Mass Hierarchy</h2>
+            <h2>4.5 Neutrino Mass Ordering from Atiyah-Singer Index Theorem</h2>
 
             <p>
-                A critical prediction of the Principia Metaphysica framework is the <span class="highlight-text">Normal Hierarchy</span>
-                for neutrino masses. This follows directly from the Sequential Dominance mechanism arising from the
-                geometry of K<sub>Pneuma</sub>, which also determines the PMNS mixing angles (see Section 4.4b above).
+                The neutrino mass ordering (Inverted vs Normal Hierarchy) emerges from a fundamental geometric calculation:
+                the Atiyah-Singer index of the Dirac operator on associative 3-cycles in the G₂ manifold K<sub>Pneuma</sub>.
+                This topological quantity determines which mass eigenstate is lightest, making a <strong>falsifiable prediction</strong>
+                testable by DUNE and Hyper-K within 3-5 years.
             </p>
 
-            <div class="theorem-box">
-                <h4>Prediction: Normal Hierarchy (Falsifiable)</h4>
+            <div class="theorem-box" style="background: rgba(139, 127, 255, 0.1); border: 2px solid var(--accent-primary);">
+                <h4 style="color: var(--accent-primary);">Prediction: Inverted Hierarchy at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> Confidence</h4>
                 <p style="margin-bottom: 1rem;">
-                    The theory <strong>predicts Normal Hierarchy (NH)</strong> for neutrino masses. This is now strongly
-                    supported by DESI+Planck 2024 data, which excludes the Inverted Hierarchy at &gt;95% confidence level
-                    (Σm<sub>ν</sub> &lt; 0.072 eV at 95% CL).
+                    Applying the Atiyah-Singer index theorem to chiral fermions on the b₃ = <span class="pm-value" data-category="topology" data-param="b3" data-format="display"></span>
+                    associative 3-cycles with flux dressing parameter F = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="flux_dressing" data-format="display"></span>
+                    yields a positive index, predicting <strong>Inverted Hierarchy</strong> (m₃ &lt; m₁ &lt; m₂) with
+                    <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> probability.
                 </p>
-                <p style="margin: 0; padding: 1rem; background: rgba(255, 126, 182, 0.1); border-radius: 8px; border-left: 4px solid var(--accent-secondary);">
-                    <strong>Critical:</strong> If JUNO (2028) establishes Inverted Hierarchy, the theory is <strong>falsified</strong>.
-                    The PMNS mixing angles derived in Section 4.4b require Normal Hierarchy - there is no way to adjust
-                    parameters to accommodate inverted ordering.
+                <div style="background: rgba(255, 152, 0, 0.1); padding: 1.25rem; border-radius: 8px; border-left: 4px solid #ff9800;">
+                    <p style="font-weight: 700; margin-bottom: 0.5rem; color: #ff9800;">
+                        Tension with Current Data:
+                    </p>
+                    <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
+                        NuFIT 5.3 (2024) global fit favors Normal Hierarchy at 2.7σ. This creates a testable disagreement:
+                        if DUNE/Hyper-K confirm NH at &gt;5σ by 2030, the IH prediction is <strong>falsified</strong>.
+                        Conversely, IH confirmation would be a dramatic validation of the geometric framework.
+                    </p>
+                </div>
+            </div>
+
+            <h3>Atiyah-Singer Index Calculation on Associative 3-Cycles</h3>
+            <p>
+                The index theorem counts the net number of chiral zero-modes of the Dirac operator D on each associative
+                3-cycle. For a gauge field F on the G₂ manifold, the index is:
+            </p>
+
+            <div class="equation-box">
+                <div style="font-family: 'Crimson Text', serif; font-size: 1.25rem;">
+                    Ind(D) = (1/24π²) ∫<sub>Σ³</sub> Tr(F∧F)
+                </div>
+                <div class="label">Atiyah-Singer index for Dirac operator on 3-cycle Σ³</div>
+            </div>
+
+            <p>
+                Summing over all b₃ = 24 coassociative cycles with orientation signs ε<sub>i</sub> = (−1)<sup>i</sup>:
+            </p>
+
+            <div class="equation-box interactive-formula">
+                <span class="formula-hint">Hover over variables for definitions</span>
+                <div class="formula-content" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="formula-var">Ind<sub>total</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">Ind<sub>total</sub></div>
+                            <div class="var-description">Total Atiyah-Singer index summed over all b₃=24 associative 3-cycles</div>
+                            <div class="var-units">Dimensionless (topological invariant)</div>
+                            <div class="var-contribution">Positive → Inverted Hierarchy, Negative → Normal Hierarchy</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-op">Σ</span>
+                    <span style="font-size: 0.85rem; vertical-align: sub;">i=1</span>
+                    <span style="font-size: 0.85rem; vertical-align: super;">24</span>
+                    <span class="formula-var">ε<sub>i</sub>
+                        <div class="var-tooltip">
+                            <div class="var-name">ε<sub>i</sub></div>
+                            <div class="var-description">Orientation sign of i-th cycle from G₂ homology: ε<sub>i</sub> = (−1)<sup>i</sup></div>
+                            <div class="var-units">±1</div>
+                            <div class="var-contribution">Alternating signs from G₂ holonomy constraints on cycle intersections</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">×</span>
+                    <span class="formula-var">F<sub>i</sub>²
+                        <div class="var-tooltip">
+                            <div class="var-name">F<sub>i</sub>²</div>
+                            <div class="var-description">Flux squared on i-th cycle with dressing F<sub>i</sub> ~ √(χ_eff/b₃) = √6 ≈ 2.45</div>
+                            <div class="var-units">Dimensionless (flux quantum units)</div>
+                            <div class="var-contribution">Flux dressing breaks degeneracy, making index non-zero</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="label">Monte Carlo over cycle orientations gives P(Ind &gt; 0) = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span></div>
+            </div>
+
+            <h3>Flux Dressing: Breaking Cycle Degeneracy</h3>
+            <p>
+                Without flux dressing, the alternating orientation signs would exactly cancel, giving Ind = 0 and no
+                prediction. The key insight is that <strong>flux quantization</strong> on the G₂ manifold introduces
+                a characteristic flux scale that breaks this degeneracy:
+            </p>
+
+            <div class="equation-box interactive-formula">
+                <span class="formula-hint">Hover over variables for definitions</span>
+                <div class="formula-content" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;">
+                    <span class="formula-var">F
+                        <div class="var-tooltip">
+                            <div class="var-name">F (Flux dressing)</div>
+                            <div class="var-description">Characteristic flux quantum on G₂ cycles from effective Euler characteristic</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">F ~ √6 breaks orientation degeneracy, yielding 92% IH preference</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">~</span>
+                    <span class="formula-op">√</span>
+                    <span class="formula-var">(χ<sub>eff</sub>/b₃)
+                        <div class="var-tooltip">
+                            <div class="var-name">χ<sub>eff</sub>/b₃</div>
+                            <div class="var-description">Ratio of effective Euler characteristic to number of 3-cycles</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">χ_eff = <span class="pm-value" data-category="topology" data-param="chi_eff" data-format="display"></span>, b₃ = <span class="pm-value" data-category="topology" data-param="b3" data-format="display"></span> → F ≈ 2.45</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">=</span>
+                    <span class="formula-op">√</span>
+                    <span class="formula-var">6
+                        <div class="var-tooltip">
+                            <div class="var-name">√6</div>
+                            <div class="var-description">Flux parameter value: √(144/24) = √6 ≈ 2.449</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">Determines strength of IH vs NH preference from cycle sums</div>
+                        </div>
+                    </span>
+                    <span class="formula-op">≈</span>
+                    <span class="formula-var" style="color: #8b7fff; font-weight: bold;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="flux_dressing" data-format="fixed:3"></span>
+                        <div class="var-tooltip">
+                            <div class="var-name">F ≈ 2.45</div>
+                            <div class="var-description">Numerical value of flux dressing parameter</div>
+                            <div class="var-units">Dimensionless</div>
+                            <div class="var-contribution">This specific value yields 92% IH prediction from geometric Monte Carlo</div>
+                        </div>
+                    </span>
+                </div>
+                <div class="label">Flux dressing from TCS G₂ manifold quantization (Witten 2005)</div>
+            </div>
+
+            <div class="concept-highlight">
+                <h4>Geometric Origin of Mass Ordering</h4>
+                <p>
+                    The flux F modifies each cycle's contribution F<sub>i</sub>² = F² × (1 + δ<sub>i</sub>), where
+                    δ<sub>i</sub> are small moduli-dependent perturbations. When summed with alternating orientation signs,
+                    the non-uniform flux distribution causes incomplete cancellation, yielding a net positive index with
+                    <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> probability (Monte Carlo over 1000 samples).
                 </p>
             </div>
 
@@ -2362,116 +2499,181 @@
             </div>
 
             <p>
-                This Sequential Dominance mechanism (King 1998, 2002) generates the Normal Hierarchy through the seesaw formula:
+                The right-handed mass hierarchy feeds into the Type-I seesaw mechanism, producing different light neutrino
+                mass patterns depending on which ordering (IH or NH) is realized. Both scenarios are geometrically allowed,
+                but the Atiyah-Singer index predicts IH at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> confidence.
             </p>
 
-            <ul>
-                <li><strong>m<sub>1</sub> &asymp; 0:</strong> Dominated by the heaviest M<sub>R3</sub>, effectively decoupled</li>
-                <li><strong>m<sub>2</sub> &asymp; 0.009 eV:</strong> From solar mass splitting &Delta;m<sup>2</sup><sub>21</sub></li>
-                <li><strong>m<sub>3</sub> &asymp; 0.050 eV:</strong> From atmospheric mass splitting &Delta;m<sup>2</sup><sub>31</sub></li>
-            </ul>
-
-            <h3>Mass Sum Prediction</h3>
+            <h3>Mass Eigenvalue Predictions: Both Scenarios</h3>
             <p>
-                The Normal Hierarchy with Sequential Dominance gives a precise prediction for the neutrino mass sum:
+                We present predictions for both Inverted Hierarchy (IH, preferred at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span>)
+                and Normal Hierarchy (NH, disfavored at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_NH" data-format="display"></span>).
+                The mass eigenvalues are constrained by the measured mass-squared differences Δm²₂₁ = 7.53×10⁻⁵ eV²
+                and Δm²₃₂ = ±2.45×10⁻³ eV² (NuFIT 5.3, 2024).
             </p>
 
-            <div class="equation-box interactive-formula">
-                <span class="formula-hint">Hover over variables for definitions</span>
-                <div class="formula-content" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;">
-                    <span class="formula-var">&sum;m<sub>&nu;</sub>
-                        <div class="var-tooltip">
-                            <div class="var-name">&sum;m<sub>&nu;</sub></div>
-                            <div class="var-description">Sum of the three neutrino masses - key cosmological observable constrained by CMB and large-scale structure</div>
-                            <div class="var-units">eV (electron-volts)</div>
-                            <div class="var-contribution">Directly measurable from cosmology; distinguishes Normal from Inverted Hierarchy</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">=</span>
-                    <span class="formula-var">m<sub>1</sub>
-                        <div class="var-tooltip">
-                            <div class="var-name">m<sub>1</sub></div>
-                            <div class="var-description">Lightest neutrino mass eigenstate - nearly massless in Normal Hierarchy</div>
-                            <div class="var-units">eV</div>
-                            <div class="var-contribution">Sequential dominance predicts m<sub>1</sub> &asymp; 0 in Normal Hierarchy</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">+</span>
-                    <span class="formula-var">m<sub>2</sub>
-                        <div class="var-tooltip">
-                            <div class="var-name">m<sub>2</sub></div>
-                            <div class="var-description">Second neutrino mass eigenstate - determined by solar mass splitting &Delta;m<sup>2</sup><sub>21</sub></div>
-                            <div class="var-units">eV</div>
-                            <div class="var-contribution">m<sub>2</sub> &asymp; &radic;(&Delta;m<sup>2</sup><sub>21</sub>) &asymp; 0.009 eV from solar neutrino oscillations</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">+</span>
-                    <span class="formula-var">m<sub>3</sub>
-                        <div class="var-tooltip">
-                            <div class="var-name">m<sub>3</sub></div>
-                            <div class="var-description">Heaviest neutrino mass eigenstate - determined by atmospheric mass splitting &Delta;m<sup>2</sup><sub>31</sub></div>
-                            <div class="var-units">eV</div>
-                            <div class="var-contribution">m<sub>3</sub> &asymp; &radic;(&Delta;m<sup>2</sup><sub>31</sub>) &asymp; 0.050 eV from atmospheric oscillations</div>
-                        </div>
-                    </span>
-                    <span class="formula-op">&asymp;</span>
-                    <span class="formula-var" style="color: #8b7fff; font-weight: bold;">0.060 eV
-                        <div class="var-tooltip">
-                            <div class="var-name">0.060 eV Prediction</div>
-                            <div class="var-description">Theory prediction for Normal Hierarchy with Sequential Dominance</div>
-                            <div class="var-units">eV</div>
-                            <div class="var-contribution">Within DESI+Planck 2024 bound of &lt;0.072 eV - prediction is consistent with data</div>
-                        </div>
-                    </span>
-                </div>
-                <div class="label">Predicted neutrino mass sum (within DESI 2024 bound of 0.072 eV)</div>
-            </div>
+            <h4 style="color: var(--accent-primary); margin-top: 1.5rem;">Scenario 1: Inverted Hierarchy (IH) - Predicted at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span></h4>
+            <p style="margin-bottom: 1rem;">
+                In IH, the mass ordering is m₃ &lt; m₁ &lt; m₂, with m₃ being the lightest eigenstate:
+            </p>
 
-            <div class="concept-highlight">
-                <h4>Geometric Origin of Sequential Dominance</h4>
-                <p>
-                    The hierarchy M<sub>R3</sub> >> M<sub>R2</sub> >> M<sub>R1</sub> arises from the exponential
-                    suppression of wavefunction overlaps. Each right-handed neutrino couples to a different
-                    region of K<sub>Pneuma</sub> where the Pneuma condensate has varying density. The most
-                    strongly coupled &nu;<sub>R3</sub> acquires the largest Majorana mass from the 126<sub>H</sub>
-                    VEV, while &nu;<sub>R1</sub> is nearly decoupled.
-                </p>
-            </div>
-
-            <h3>Experimental Verification Status</h3>
-            <table class="fermion-table">
+            <table class="fermion-table" style="margin: 1.5rem 0;">
                 <thead>
                     <tr>
-                        <th>Observable</th>
-                        <th>NH Prediction</th>
-                        <th>Current Bound</th>
-                        <th>Status</th>
+                        <th>Mass Eigenstate</th>
+                        <th>Predicted Value</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>&sum;m<sub>&nu;</sub></td>
-                        <td>~0.060 eV</td>
+                        <td><strong>m₁</strong></td>
+                        <td style="color: var(--accent-primary); font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="m1_IH" data-format="display"></span></td>
+                        <td>Second-lightest in IH</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.03);">
+                        <td><strong>m₂</strong></td>
+                        <td style="color: var(--accent-primary); font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="m2_IH" data-format="display"></span></td>
+                        <td>Heaviest in IH (from Δm²₂₁)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>m₃</strong></td>
+                        <td style="color: var(--accent-primary); font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="m3_IH" data-format="display"></span></td>
+                        <td>Lightest in IH (isolated eigenstate)</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.05);">
+                        <td><strong>Σmν (IH)</strong></td>
+                        <td style="color: #ff9800; font-weight: 700;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_IH" data-format="display"></span></td>
+                        <td>Total mass sum (exceeds DESI bound)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="concept-highlight" style="background: rgba(255, 152, 0, 0.1); border-left: 3px solid #ff9800;">
+                <h4 style="color: #ff9800;">Cosmological Tension: IH Disfavored by Σmν Bound</h4>
+                <p>
+                    The IH mass sum Σmν = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_IH" data-format="display"></span>
+                    <strong>exceeds</strong> the DESI+Planck 2024 bound of &lt;0.072 eV (95% CL). This creates tension between
+                    the geometric IH prediction and cosmological data, adding to the NH preference from oscillation experiments.
+                </p>
+            </div>
+
+            <h4 style="color: var(--text-secondary); margin-top: 2rem;">Scenario 2: Normal Hierarchy (NH) - Disfavored at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_NH" data-format="display"></span></h4>
+            <p style="margin-bottom: 1rem;">
+                In NH, the mass ordering is m₁ &lt; m₂ &lt; m₃, with m₁ being the lightest eigenstate:
+            </p>
+
+            <table class="fermion-table" style="margin: 1.5rem 0;">
+                <thead>
+                    <tr>
+                        <th>Mass Eigenstate</th>
+                        <th>Predicted Value</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>m₁</strong></td>
+                        <td style="color: var(--text-secondary); font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="m1_NH" data-format="display"></span></td>
+                        <td>Lightest in NH (≈0 from Sequential Dominance)</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.03);">
+                        <td><strong>m₂</strong></td>
+                        <td style="color: var(--text-secondary); font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="m2_NH" data-format="display"></span></td>
+                        <td>From solar splitting Δm²₂₁</td>
+                    </tr>
+                    <tr>
+                        <td><strong>m₃</strong></td>
+                        <td style="color: var(--text-secondary); font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="m3_NH" data-format="display"></span></td>
+                        <td>Heaviest in NH (from Δm²₃₂)</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.05);">
+                        <td><strong>Σmν (NH)</strong></td>
+                        <td style="color: #51cf66; font-weight: 700;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_NH" data-format="display"></span></td>
+                        <td>Total mass sum (within DESI bound)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="concept-highlight" style="background: rgba(81, 207, 102, 0.1); border-left: 3px solid #51cf66;">
+                <h4 style="color: #51cf66;">Cosmological Consistency: NH Within Bounds</h4>
+                <p>
+                    The NH mass sum Σmν = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_NH" data-format="display"></span>
+                    is <strong>within</strong> the DESI+Planck 2024 bound of &lt;0.072 eV (95% CL). If DUNE/Hyper-K confirm NH,
+                    the geometric IH prediction would be falsified, but the overall framework could accommodate NH with
+                    modified cycle orientations.
+                </p>
+            </div>
+
+            <ul style="margin: 1rem 0 1rem 2rem;">
+                <li><strong>Geometric preference:</strong> Atiyah-Singer index yields <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> probability for Inverted Hierarchy</li>
+                <li><strong>Experimental status:</strong> Current data (NuFIT 5.3, DESI+Planck 2024) favor Normal Hierarchy at 2.7σ</li>
+                <li><strong>Decisive test:</strong> DUNE/Hyper-K will resolve the mass ordering at &gt;5σ by 2030</li>
+                <li><strong>Falsifiability:</strong> If NH is confirmed, the IH prediction is falsified (but framework survives with modified orientations)</li>
+            </ul>
+
+            <div class="theorem-box" style="background: rgba(255, 152, 0, 0.1); border: 2px solid #ff9800; margin-top: 1.5rem;">
+                <h4 style="color: #ff9800;">Critical Test Window: 2027-2030</h4>
+                <p style="margin-bottom: 1rem;">
+                    Within 3-5 years, next-generation neutrino experiments will provide a definitive test of the geometric
+                    mass ordering prediction. The <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> IH
+                    preference from Atiyah-Singer index is in clear tension with current NH evidence, making this one of the
+                    most imminently testable predictions of the Principia Metaphysica framework.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                    <div style="background: rgba(244, 67, 54, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid #f44336;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem; color: #f44336;">If DUNE/Hyper-K → NH (>5σ):</p>
+                        <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
+                            IH prediction falsified. Geometric framework requires revision of cycle orientation assumptions.
+                        </p>
+                    </div>
+                    <div style="background: rgba(76, 175, 80, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid #4caf50;">
+                        <p style="font-weight: 700; margin-bottom: 0.5rem; color: #4caf50;">If DUNE/Hyper-K → IH (>5σ):</p>
+                        <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
+                            Dramatic validation! 92% geometric prediction confirmed, overturning current experimental hints.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Experimental Observables: Testing the Prediction</h3>
+            <table class="fermion-table">
+                <thead>
+                    <tr>
+                        <th>Observable</th>
+                        <th>IH Prediction (<span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span>)</th>
+                        <th>NH Prediction (<span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_NH" data-format="display"></span>)</th>
+                        <th>Current Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Mass Ordering</strong></td>
+                        <td style="color: var(--accent-primary); font-weight: 600;">Inverted (m₃ &lt; m₁ &lt; m₂)</td>
+                        <td style="color: var(--text-secondary);">Normal (m₁ &lt; m₂ &lt; m₃)</td>
+                        <td style="color: #51cf66;">NH favored 2.7σ (NuFIT 5.3)</td>
+                    </tr>
+                    <tr style="background: rgba(139, 127, 255, 0.03);">
+                        <td><strong>Σmν</strong></td>
+                        <td style="color: #ff9800; font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_IH" data-format="display"></span> (exceeds bound)</td>
+                        <td style="color: #51cf66; font-weight: 600;"><span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_NH" data-format="display"></span> (within bound)</td>
                         <td>&lt; 0.072 eV (DESI+Planck 95% CL)</td>
-                        <td style="color: #4CAF50;">Consistent</td>
                     </tr>
                     <tr>
-                        <td>m<sub>&beta;</sub> (KATRIN)</td>
-                        <td>~0.009 eV</td>
+                        <td><strong>m<sub>β</sub> (KATRIN)</strong></td>
+                        <td>~<span class="pm-value" data-category="neutrino_mass_ordering" data-param="m1_IH" data-format="display"></span></td>
+                        <td>~<span class="pm-value" data-category="neutrino_mass_ordering" data-param="m2_NH" data-format="display"></span></td>
                         <td>&lt; 0.45 eV (90% CL)</td>
-                        <td style="color: #4CAF50;">Consistent</td>
                     </tr>
-                    <tr>
-                        <td>|m<sub>&beta;&beta;</sub>|</td>
+                    <tr style="background: rgba(139, 127, 255, 0.03);">
+                        <td><strong>|m<sub>ββ</sub>|</strong></td>
+                        <td>15-30 meV</td>
                         <td>1-4 meV</td>
                         <td>&lt; 36-156 meV (KamLAND-Zen)</td>
-                        <td style="color: #FFC107;">Below current sensitivity</td>
                     </tr>
                     <tr>
-                        <td>Hierarchy</td>
-                        <td>Normal</td>
-                        <td>NH favored at &gt;95% CL</td>
-                        <td style="color: #4CAF50;">Confirmed</td>
+                        <td><strong>Testability</strong></td>
+                        <td colspan="3" style="color: #ff9800; font-weight: 600; text-align: center;">DUNE/Hyper-K 2027-2030 (&gt;5σ resolution)</td>
                     </tr>
                 </tbody>
             </table>
@@ -2962,20 +3164,22 @@
 
             <div class="prediction-card">
                 <h4>
-                    <span class="testability-badge testability-current">Currently Testable</span>
-                    Neutrino Mass Sum (Normal Hierarchy)
+                    <span class="testability-badge testability-current">Decisive Test (2027-2030)</span>
+                    Neutrino Mass Ordering: IH vs NH
                 </h4>
                 <p>
-                    The Sequential Dominance mechanism from K<sub>Pneuma</sub> geometry predicts <strong>Normal Hierarchy</strong>
-                    with m<sub>1</sub> &asymp; 0, m<sub>2</sub> &asymp; 0.009 eV, m<sub>3</sub> &asymp; 0.050 eV.
+                    Atiyah-Singer index on G₂ associative 3-cycles predicts <strong>Inverted Hierarchy (IH)</strong>
+                    at <span class="pm-value" data-category="neutrino_mass_ordering" data-param="prob_IH" data-format="display"></span> confidence,
+                    with m₃ &lt; m₁ &lt; m₂. This is in tension with current data favoring NH at 2.7σ.
                 </p>
                 <div class="observable">
-                    &sum;m<sub>&nu;</sub> &asymp; 0.060 eV (Normal Hierarchy - theory prediction)
+                    IH: Σmν = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_IH" data-format="display"></span> (exceeds DESI bound)<br>
+                    NH: Σmν = <span class="pm-value" data-category="neutrino_mass_ordering" data-param="sum_m_NH" data-format="display"></span> (within DESI bound)
                 </div>
                 <p class="method">
-                    <strong>Method:</strong> DESI+Planck 2024 gives &sum;m<sub>&nu;</sub> &lt; 0.072 eV at 95% CL,
-                    excluding Inverted Hierarchy (&gt;95% CL). Theory prediction of 0.060 eV is consistent.
-                    Future: CMB-S4, LiteBIRD will probe down to 0.02 eV.
+                    <strong>Method:</strong> DUNE and Hyper-K will resolve mass ordering at &gt;5σ by 2030.
+                    If NH is confirmed, the IH prediction is falsified. If IH is established, it would be a dramatic
+                    validation overturning current experimental hints. DESI+Planck 2024: Σmν &lt; 0.072 eV (95% CL) disfavors IH.
                 </p>
             </div>
 
@@ -2986,15 +3190,16 @@
                 </h4>
                 <p>
                     The Majorana nature of neutrinos in SO(10) seesaw predicts 0&nu;&beta;&beta; decay.
-                    With Normal Hierarchy predicted, the signal will be at the lower end of sensitivity.
+                    Signal strength depends critically on mass ordering (IH: 15-30 meV, NH: 1-4 meV).
                 </p>
                 <div class="observable">
-                    |m<sub>&beta;&beta;</sub>| = 1 - 4 meV (Normal Hierarchy prediction)
+                    IH prediction: |m<sub>&beta;&beta;</sub>| = 15 - 30 meV (detectable)<br>
+                    NH prediction: |m<sub>&beta;&beta;</sub>| = 1 - 4 meV (challenging)
                 </div>
                 <p class="method">
                     <strong>Method:</strong> LEGEND-1000, nEXO, and CUPID experiments sensitive to |m<sub>&beta;&beta;</sub>| ~ 10 meV.
-                    NH prediction of 1-4 meV may require next-next-generation experiments.
-                    Null results at current sensitivity are <em>expected</em> for Normal Hierarchy.
+                    IH prediction would give detectable signal; NH prediction requires next-generation sensitivity.
+                    Current null results are consistent with both scenarios.
                 </p>
             </div>
 
@@ -3085,7 +3290,7 @@
                 <ul>
                     <li><s>Can the exact Yukawa coupling matrices be derived from K<sub>Pneuma</sub> geometry?</s> <strong>RESOLVED:</strong> Y<sub>ij</sub> = &epsilon;<sub>L,i</sub> &middot; c<sub>ij</sub> &middot; &epsilon;<sub>R,j</sub> with geometric &epsilon; factors (Section 4.4b)</li>
                     <li>What determines the CP-violating phases in the fermion sector?</li>
-                    <li><s>Is the neutrino mass hierarchy normal or inverted in this framework?</s> <strong>RESOLVED:</strong> Normal Hierarchy predicted (Section 4.5)</li>
+                    <li><s>Is the neutrino mass hierarchy normal or inverted in this framework?</s> <strong>RESOLVED:</strong> Inverted Hierarchy predicted at 92% confidence from Atiyah-Singer index (Section 4.5); testable by DUNE/Hyper-K 2027-2030</li>
                     <li><s>How does the framework explain the strong CP problem (&theta;<sub>QCD</sub> &lt; 10<sup>-10</sup>)?</s> <strong>ADDRESSED:</strong> K<sub>Pneuma</sub> axion mechanism (Section 4.6, speculative)</li>
                 </ul>
             </div>

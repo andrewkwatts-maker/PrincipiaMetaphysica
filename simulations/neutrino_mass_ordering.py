@@ -238,8 +238,8 @@ class NeutrinoMassOrderingCalculator:
             print("=" * 70)
             print("NEUTRINO MASS ORDERING CALCULATION (v8.0)")
             print("=" * 70)
-            print(f"Geometric parameters: b₂={self.b2}, b₃={self.b3}, χ_eff={self.chi_eff}")
-            print(f"Flux dressing: F = √(χ_eff/b₃) = √{self.chi_eff}/{self.b3} = {self.F_flux:.3f}")
+            print(f"Geometric parameters: b2={self.b2}, b3={self.b3}, chi_eff={self.chi_eff}")
+            print(f"Flux dressing: F = sqrt(chi_eff/b3) = sqrt({self.chi_eff}/{self.b3}) = {self.F_flux:.3f}")
             print()
 
         # 1. Compute Atiyah-Singer index on cycles
@@ -276,29 +276,29 @@ class NeutrinoMassOrderingCalculator:
             print()
 
             print("MASS EIGENVALUES (if IH):")
-            print(f"  m₁ = {masses_IH[0]*1e3:.2f} meV")
-            print(f"  m₂ = {masses_IH[1]*1e3:.2f} meV")
-            print(f"  m₃ = {masses_IH[2]*1e3:.2f} meV (lightest)")
+            print(f"  m1 = {masses_IH[0]*1e3:.2f} meV")
+            print(f"  m2 = {masses_IH[1]*1e3:.2f} meV")
+            print(f"  m3 = {masses_IH[2]*1e3:.2f} meV (lightest)")
             print()
 
             print("MASS EIGENVALUES (if NH):")
-            print(f"  m₁ = {masses_NH[0]*1e3:.2f} meV (lightest)")
-            print(f"  m₂ = {masses_NH[1]*1e3:.2f} meV")
-            print(f"  m₃ = {masses_NH[2]*1e3:.2f} meV")
+            print(f"  m1 = {masses_NH[0]*1e3:.2f} meV (lightest)")
+            print(f"  m2 = {masses_NH[1]*1e3:.2f} meV")
+            print(f"  m3 = {masses_NH[2]*1e3:.2f} meV")
             print()
 
             print("EXPERIMENTAL VALIDATION:")
-            print(f"  NuFIT 5.3 (2024): NH preferred at 2.7σ")
-            print(f"  DUNE/Hyper-K (2027): >5σ resolution expected")
+            print(f"  NuFIT 5.3 (2024): NH preferred at 2.7sigma")
+            print(f"  DUNE/Hyper-K (2027): >5sigma resolution expected")
             print(f"  PM Prediction: {ordering} at {max(prob_IH, 1-prob_IH)*100:.1f}% confidence")
             print()
 
             print("VALIDATION STATUS:")
             strength = "STRONG" if mc_results['prob_IH_mean'] > 0.85 or mc_results['prob_IH_mean'] < 0.15 else "MODERATE"
-            print(f"  ✓ Index theorem applied (Atiyah-Singer on b₃=24 cycles)")
-            print(f"  ✓ Flux dressing breaks degeneracy")
-            print(f"  ✓ {strength} geometric preference derived")
-            print(f"  ✓ Testable by DUNE (2027)")
+            print(f"  * Index theorem applied (Atiyah-Singer on b3=24 cycles)")
+            print(f"  * Flux dressing breaks degeneracy")
+            print(f"  * {strength} geometric preference derived")
+            print(f"  * Testable by DUNE (2027)")
             print("=" * 70)
 
         # Package results

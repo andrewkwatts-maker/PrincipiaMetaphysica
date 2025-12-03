@@ -230,7 +230,7 @@ class KKSpectrumCalculator:
             print("=" * 70)
             print("KK SPECTRUM FULL CALCULATION (v8.0)")
             print("=" * 70)
-            print(f"Geometric parameters: b₂={self.b2}, b₃={self.b3}, χ_eff={self.chi_eff}")
+            print(f"Geometric parameters: b2={self.b2}, b3={self.b3}, chi_eff={self.chi_eff}")
             print(f"Compactification radius: R_c = 1/{self.R_c_inv/1e3:.1f} TeV")
             print()
 
@@ -264,29 +264,29 @@ class KKSpectrumCalculator:
                 print(f"  m_KK({n},{m}) = {mass/1e3:.2f} TeV")
             print()
 
-            print(f"PRODUCTION AT HL-LHC (√s = 14 TeV):")
-            print(f"  σ(pp → KK₁ + X) = {sigma_m1:.3f} fb")
-            print(f"  Discovery potential: {sigma_m1/0.016:.1f}σ (100 fb⁻¹)")
+            print(f"PRODUCTION AT HL-LHC (sqrt(s) = 14 TeV):")
+            print(f"  sigma(pp -> KK1 + X) = {sigma_m1:.3f} fb")
+            print(f"  Discovery potential: {sigma_m1/0.016:.1f}sigma (100 fb^-1)")
             print()
 
             print("BRANCHING RATIOS:")
             for channel, ratio in br.items():
-                print(f"  BR(KK → {channel}) = {ratio*100:.1f}%")
+                print(f"  BR(KK -> {channel}) = {ratio*100:.1f}%")
             print()
 
             print("MONTE CARLO UNCERTAINTIES (n=1000):")
-            print(f"  m₁ = {mc_results['m1_mean']/1e3:.2f} ± {mc_results['m1_std']/1e3:.2f} TeV")
-            print(f"  m₂ = {mc_results['m2_mean']/1e3:.2f} ± {mc_results['m2_std']/1e3:.2f} TeV")
-            print(f"  m₃ = {mc_results['m3_mean']/1e3:.2f} ± {mc_results['m3_std']/1e3:.2f} TeV")
-            print(f"  σ(m₁) = {mc_results['sigma_m1_mean']:.3f} ± {mc_results['sigma_m1_std']:.3f} fb")
+            print(f"  m1 = {mc_results['m1_mean']/1e3:.2f} +/- {mc_results['m1_std']/1e3:.2f} TeV")
+            print(f"  m2 = {mc_results['m2_mean']/1e3:.2f} +/- {mc_results['m2_std']/1e3:.2f} TeV")
+            print(f"  m3 = {mc_results['m3_mean']/1e3:.2f} +/- {mc_results['m3_std']/1e3:.2f} TeV")
+            print(f"  sigma(m1) = {mc_results['sigma_m1_mean']:.3f} +/- {mc_results['sigma_m1_std']:.3f} fb")
             print()
 
             print("VALIDATION STATUS:")
-            print(f"  ✓ Complete tower computed (24 base modes)")
-            print(f"  ✓ T² degeneracy included")
-            print(f"  ✓ Production cross-sections quantified")
-            print(f"  ✓ Branching ratios derived")
-            print(f"  ✓ Uncertainties propagated via MC")
+            print(f"  * Complete tower computed (24 base modes)")
+            print(f"  * T^2 degeneracy included")
+            print(f"  * Production cross-sections quantified")
+            print(f"  * Branching ratios derived")
+            print(f"  * Uncertainties propagated via MC")
             print("=" * 70)
 
         # Package results

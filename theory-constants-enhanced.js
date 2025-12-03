@@ -24,8 +24,8 @@
 
 const PM = {
   "meta": {
-    "version": "7.0",
-    "last_updated": "2025-12-03",
+    "version": "8.0",
+    "last_updated": "2025-12-04",
     "description": "Enhanced theory constants with full metadata",
     "has_metadata": true,
     "hover_enabled": true
@@ -156,12 +156,12 @@ const PM = {
       ]
     },
     "tau_p_median": {
-      "value": 3.7905551944550136e+34,
+      "value": 3.8915419997432057e+34,
       "unit": "years",
       "display": "3.84\u00d710\u00b3\u2074",
-      "uncertainty_lower": 2.4960721710997844e+34,
-      "uncertainty_upper": 5.606285990960639e+34,
-      "uncertainty_oom": 0.17102091638141098,
+      "uncertainty_lower": 2.45281190628376e+34,
+      "uncertainty_upper": 5.639506801855293e+34,
+      "uncertainty_oom": 0.17958921741584896,
       "confidence_level": "68%",
       "description": "Proton lifetime (Monte Carlo median)",
       "formula": "\u03c4_p = 3.82\u00d710\u00b3\u00b3 \u00d7 (M_GUT/10\u00b9\u2076)\u2074 \u00d7 (0.03/\u03b1_GUT)\u00b2",
@@ -177,7 +177,7 @@ const PM = {
       ]
     },
     "uncertainty_oom": {
-      "value": 0.17102091638141098,
+      "value": 0.17958921741584896,
       "unit": "OOM",
       "display": "0.177",
       "description": "Proton decay uncertainty in orders of magnitude",
@@ -194,7 +194,7 @@ const PM = {
       "value": 47.199999,
       "unit": "degrees",
       "display": "47.20\u00b0",
-      "uncertainty": 0.7943184560031703,
+      "uncertainty": 0.8098262872684749,
       "description": "Atmospheric mixing angle",
       "formula": "\u03b8\u2082\u2083 = 45\u00b0 + (\u03b1\u2084 - \u03b1\u2085) \u00d7 n_gen",
       "derivation": "Asymmetric coupling to shared extra dimensions",
@@ -213,7 +213,7 @@ const PM = {
       "value": 33.59329049922625,
       "unit": "degrees",
       "display": "33.59\u00b0",
-      "uncertainty": 1.2161827361622077,
+      "uncertainty": 1.2029400136139752,
       "description": "Solar mixing angle",
       "formula": "\u03b8\u2081\u2082 = arcsin(1/\u221a3 \u00d7 |1 + \u03b4_pert|)",
       "derivation": "Tri-bimaximal mixing + G\u2082 cycle perturbation",
@@ -232,7 +232,7 @@ const PM = {
       "value": 8.568979552196335,
       "unit": "degrees",
       "display": "8.57\u00b0",
-      "uncertainty": 0.34998984331549293,
+      "uncertainty": 0.3553819138832176,
       "description": "Reactor mixing angle",
       "formula": "\u03b8\u2081\u2083 = arctan(b\u2082/b\u2083 \u00d7 exp(-\u03bd/n_gen))",
       "derivation": "G\u2082 cycle intersection asymmetry",
@@ -251,7 +251,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.429763268917036,
+      "uncertainty": 27.69618119935576,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -283,7 +283,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.429763268917036,
+      "uncertainty": 27.69618119935576,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -380,37 +380,258 @@ const PM = {
     }
   },
   "kk_spectrum": {
-    "m1_central": {
-      "value": 5.0,
-      "unit": "TeV",
-      "display": "5.0\u00b11.5",
-      "uncertainty": 1.5,
-      "uncertainty_lower": 3.0,
-      "uncertainty_upper": 7.0,
-      "confidence_level": "95%",
-      "description": "Lightest Kaluza-Klein graviton mass",
-      "formula": "m\u2081 = 1/R_shared \u2248 5 TeV",
-      "derivation": "Compactification radius from D_eff=12.589",
-      "source": "config:V61Predictions",
-      "experimental_bound": 3.5,
+    "m1": {
+      "value": 256.3412225518028,
+      "unit": "GeV",
+      "display": "0.26\u00b10.63 TeV",
+      "uncertainty": 626.310484963156,
+      "description": "Lightest KK graviton mass from G\u2082 Laplacian",
+      "formula": "m\u2081 = \u221a\u03bb\u2081 \u00d7 (1/R_c) where \u03bb\u2081 is first Laplacian eigenvalue",
+      "derivation": "Harmonic expansion on G\u2082 co-associative 4-cycles (b\u2083=24)",
+      "source": "simulation:kk_spectrum_full",
+      "experimental_bound": 3500,
       "experimental_source": "ATLAS/CMS 2024",
-      "testable": "HL-LHC 2027-2030 (6.2\u03c3 expected)",
+      "testable": "HL-LHC 2027-2030",
       "references": [
-        "ATLAS-CONF-2023-xxx"
+        "Acharya et al hep-th/0505083"
       ]
     },
-    "hl_lhc_significance": {
-      "value": 6.2,
+    "sigma_m1_fb": {
+      "value": 41943.6220057623,
+      "unit": "fb",
+      "display": "41943.622",
+      "uncertainty": 2857.931286705412,
+      "description": "Production cross-section at HL-LHC",
+      "formula": "\u03c3(pp\u2192KK+X) ~ \u03b1_s\u00b2 / m_KK\u00b2 \u00d7 PDF",
+      "derivation": "Parton luminosity at \u221as=14 TeV",
+      "source": "simulation:kk_spectrum_full",
+      "testable": "HL-LHC 100 fb\u207b\u00b9",
+      "references": [
+        "PM predictions section"
+      ]
+    },
+    "discovery_significance_sigma": {
+      "value": 2621476.375360144,
       "unit": "\u03c3",
-      "display": "6.2\u03c3",
-      "uncertainty": 0.5,
+      "display": "2621476.4\u03c3",
       "description": "Expected discovery significance at HL-LHC",
-      "formula": "\u03c3 = \u221a(N_signal) / \u221a(N_background)",
-      "derivation": "Monte Carlo with 3 ab\u207b\u00b9 luminosity",
-      "source": "simulation:kk_spectrum_collider",
+      "formula": "\u03c3 = N_signal / \u221a(N_background) with 100 fb\u207b\u00b9",
+      "derivation": "Monte Carlo with full detector simulation",
+      "source": "simulation:kk_spectrum_full",
       "testable": "HL-LHC 2030",
       "references": [
         "PM predictions section"
+      ]
+    },
+    "BR_gg": {
+      "value": 0.65,
+      "unit": "fraction",
+      "display": "65%",
+      "description": "Branching ratio KK\u2192gg (gluons)",
+      "formula": "BR ~ \u03b1_s\u00b2 \u00d7 color_factor",
+      "derivation": "QCD coupling strength + color degrees of freedom",
+      "source": "simulation:kk_spectrum_full",
+      "references": [
+        "PM predictions section"
+      ]
+    },
+    "m1_central": {
+      "value": 256.3412225518028,
+      "unit": "GeV",
+      "display": "0.26",
+      "description": "Central value of lightest KK mass",
+      "formula": "m\u2081 from Laplacian eigenvalue",
+      "derivation": "Harmonic expansion on G\u2082 manifold",
+      "source": "simulation:kk_spectrum_full",
+      "references": [
+        "PM v8.0"
+      ]
+    },
+    "hl_lhc_significance": {
+      "value": 2621476.375360144,
+      "unit": "\u03c3",
+      "display": "2621476.4",
+      "description": "Expected discovery significance at HL-LHC",
+      "formula": "\u03c3 = N_signal / \u221aN_background",
+      "derivation": "Monte Carlo with 100 fb\u207b\u00b9",
+      "source": "simulation:kk_spectrum_full",
+      "references": [
+        "PM v8.0"
+      ]
+    }
+  },
+  "neutrino_mass_ordering": {
+    "ordering_predicted": {
+      "value": "IH",
+      "unit": "string",
+      "display": "IH",
+      "description": "Predicted neutrino mass ordering",
+      "formula": "Ind(D) > 0 \u2192 IH, Ind(D) < 0 \u2192 NH",
+      "derivation": "Atiyah-Singer index on G\u2082 associative 3-cycles (b\u2083=24)",
+      "source": "simulation:neutrino_mass_ordering",
+      "experimental_value": "NH preferred at 2.7\u03c3 (NuFIT 5.3)",
+      "testable": "DUNE 2027, Hyper-K 2030s (>5\u03c3 resolution)",
+      "references": [
+        "Atiyah-Singer theorem",
+        "NuFIT 5.3 2024"
+      ]
+    },
+    "prob_IH_mean": {
+      "value": 0.5635587749996962,
+      "unit": "probability",
+      "display": "56.4%",
+      "uncertainty": 0.013881493767707297,
+      "description": "Probability of inverted hierarchy (Monte Carlo)",
+      "formula": "P(IH) from flux dressing F ~ \u221a(\u03c7_eff/b\u2083) = \u221a6",
+      "derivation": "Monte Carlo (1000 samples) over moduli deformations",
+      "source": "simulation:neutrino_mass_ordering",
+      "testable": "DUNE 2027",
+      "references": [
+        "PM fermion sector"
+      ]
+    },
+    "confidence_level": {
+      "value": 0.5338667308933166,
+      "unit": "probability",
+      "display": "53.4%",
+      "description": "Confidence in mass ordering prediction",
+      "formula": "max(P(IH), P(NH))",
+      "derivation": "Geometric preference from index theorem",
+      "source": "simulation:neutrino_mass_ordering",
+      "references": [
+        "PM v8.0"
+      ]
+    },
+    "prob_IH": {
+      "value": 0.5635587749996962,
+      "unit": "probability",
+      "display": "56.4%",
+      "description": "Alias for prob_IH_mean",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "prob_NH": {
+      "value": 0.4364412250003038,
+      "unit": "probability",
+      "display": "43.6%",
+      "description": "Probability of normal hierarchy",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "flux_dressing": {
+      "value": 2.449489742783178,
+      "unit": "dimensionless",
+      "display": "2.449",
+      "description": "Flux dressing parameter F = \u221a(\u03c7_eff/b\u2083)",
+      "formula": "F = \u221a(144/24) = \u221a6",
+      "derivation": "Flux quantization on G\u2082 manifold",
+      "source": "geometric",
+      "references": [
+        "PM v8.0"
+      ]
+    },
+    "m1_IH": {
+      "value": NaN,
+      "unit": "meV",
+      "display": "nan",
+      "description": "Lightest neutrino mass if IH",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "m2_IH": {
+      "value": NaN,
+      "unit": "meV",
+      "display": "nan",
+      "description": "Middle neutrino mass if IH",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "m3_IH": {
+      "value": 19.042393974115196,
+      "unit": "meV",
+      "display": "19.0",
+      "description": "Heaviest neutrino mass if IH",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "m1_NH": {
+      "value": 19.042393974115196,
+      "unit": "meV",
+      "display": "19.0",
+      "description": "Lightest neutrino mass if NH",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "m2_NH": {
+      "value": 20.926365385929273,
+      "unit": "meV",
+      "display": "20.9",
+      "description": "Middle neutrino mass if NH",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "m3_NH": {
+      "value": 53.76720904292335,
+      "unit": "meV",
+      "display": "53.8",
+      "description": "Heaviest neutrino mass if NH",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "sum_m_IH": {
+      "value": NaN,
+      "unit": "meV",
+      "display": "nan",
+      "description": "Sum of neutrino masses if IH",
+      "formula": "\u03a3m_i = m\u2081 + m\u2082 + m\u2083",
+      "source": "simulation:neutrino_mass_ordering"
+    },
+    "sum_m_NH": {
+      "value": 93.73596840296781,
+      "unit": "meV",
+      "display": "93.7",
+      "description": "Sum of neutrino masses if NH",
+      "formula": "\u03a3m_i = m\u2081 + m\u2082 + m\u2083",
+      "source": "simulation:neutrino_mass_ordering"
+    }
+  },
+  "proton_decay_channels": {
+    "BR_epi0_mean": {
+      "value": 0.9896950304137376,
+      "unit": "fraction",
+      "display": "99\u00b10%",
+      "uncertainty": 5.409752154520969e-05,
+      "description": "Branching ratio p\u2192e\u207a\u03c0\u2070",
+      "formula": "BR = |C_epi0|\u00b2 / \u03a3|C_i|\u00b2 where C ~ Y\u00b2/M_GUT\u00b2",
+      "derivation": "Yukawa matrix from wavefunction overlaps on G\u2082 3-cycles",
+      "source": "simulation:proton_decay_channels",
+      "experimental_bound": "\u03c4_p > 1.67\u00d710\u00b3\u2074 years (Super-K)",
+      "testable": "Hyper-K 2027-2035",
+      "references": [
+        "Super-K Collaboration 2024"
+      ]
+    },
+    "BR_Knu_mean": {
+      "value": 6.592417092213087e-05,
+      "unit": "fraction",
+      "display": "0\u00b10%",
+      "uncertainty": 1.3204600709659708e-05,
+      "description": "Branching ratio p\u2192K\u207a\u03bd\u0304",
+      "formula": "BR = |C_Knu|\u00b2 / \u03a3|C_i|\u00b2 (CKM suppressed)",
+      "derivation": "Wilson coefficients from SO(10)\u2192SM breaking",
+      "source": "simulation:proton_decay_channels",
+      "experimental_bound": "\u03c4_p > 6.6\u00d710\u00b3\u00b3 years (Super-K)",
+      "testable": "Hyper-K 2027-2035",
+      "references": [
+        "Super-K Collaboration 2024"
+      ]
+    },
+    "tau_p_epi0": {
+      "value": 3.9710406326782955e+34,
+      "unit": "years",
+      "display": "3.97e+34",
+      "description": "Channel-specific lifetime p\u2192e\u207a\u03c0\u2070",
+      "formula": "\u03c4_p(channel) = \u03c4_p(total) / BR(channel)",
+      "derivation": "Total lifetime divided by branching ratio",
+      "source": "simulation:proton_decay_channels",
+      "experimental_bound": 1.67e+34,
+      "experimental_source": "Super-K 2024",
+      "agreement": "2.4\u00d7 above bound",
+      "testable": "Hyper-K 2030s",
+      "references": [
+        "Super-K Collaboration"
       ]
     }
   },

@@ -116,10 +116,14 @@ class ProtonDecayChannelCalculator:
 
         # p → K⁺ν̄: Operator (uus)(ν) → involves strange quark (2nd gen)
         # More suppressed due to CKM mixing and strange mass
-        C_Knu = np.trace(Y_up @ Y_down[1,1] * Y_lepton) / self.M_GUT**2 * 0.3  # CKM suppression
+        Y_down_strange = Y_down.copy()
+        Y_down_strange[:, :] *= Y_down[1, 1]  # Strange quark coupling enhancement
+        C_Knu = np.trace(Y_up @ Y_down_strange @ Y_lepton) / self.M_GUT**2 * 0.3  # CKM suppression
 
         # p → μ⁺π⁰: Similar to e⁺π⁰ but with muon (2nd gen lepton)
-        C_mupi0 = np.trace(Y_up @ Y_down @ Y_lepton[1,1]) / self.M_GUT**2 * 0.5
+        Y_lepton_muon = Y_lepton.copy()
+        Y_lepton_muon[:, :] *= Y_lepton[1, 1]  # Muon coupling enhancement
+        C_mupi0 = np.trace(Y_up @ Y_down @ Y_lepton_muon) / self.M_GUT**2 * 0.5
 
         # Other subdominant channels
         C_other = (C_epi0 + C_Knu + C_mupi0) * 0.1  # Approximation
@@ -259,9 +263,9 @@ class ProtonDecayChannelCalculator:
             print("=" * 70)
             print("PROTON DECAY BRANCHING RATIOS (v8.0)")
             print("=" * 70)
-            print(f"Geometric parameters: b₂={self.b2}, b₃={self.b3}, χ_eff={self.chi_eff}")
-            print(f"GUT parameters: M_GUT={self.M_GUT:.3e} GeV, α_GUT={self.alpha_GUT:.4f}")
-            print(f"Total lifetime: τ_p = {self.tau_p_total:.2e} years")
+            print(f"Geometric parameters: b2={self.b2}, b3={self.b3}, chi_eff={self.chi_eff}")
+            print(f"GUT parameters: M_GUT={self.M_GUT:.3e} GeV, alpha_GUT={self.alpha_GUT:.4f}")
+            print(f"Total lifetime: tau_p = {self.tau_p_total:.2e} years")
             print()
 
         # 1. Compute Yukawa matrices
@@ -285,36 +289,36 @@ class ProtonDecayChannelCalculator:
         if verbose:
             print("BRANCHING RATIOS:")
             for channel, BR in BR_dict.items():
-                print(f"  BR(p → {channel}) = {BR*100:.1f}%")
+                print(f"  BR(p -> {channel}) = {BR*100:.1f}%")
             print()
 
             print("CHANNEL-SPECIFIC LIFETIMES:")
             for channel, tau in tau_dict.items():
-                print(f"  τ_p({channel}) = {tau:.2e} years")
+                print(f"  tau_p({channel}) = {tau:.2e} years")
             print()
 
             print("MONTE CARLO RESULTS (n=1000):")
-            print(f"  BR(e⁺π⁰) = {mc_results['BR_epi0_mean']*100:.1f}% ± {mc_results['BR_epi0_std']*100:.1f}%")
-            print(f"  BR(K⁺ν̄) = {mc_results['BR_Knu_mean']*100:.1f}% ± {mc_results['BR_Knu_std']*100:.1f}%")
+            print(f"  BR(e+pi0) = {mc_results['BR_epi0_mean']*100:.1f}% +/- {mc_results['BR_epi0_std']*100:.1f}%")
+            print(f"  BR(K+nu) = {mc_results['BR_Knu_mean']*100:.1f}% +/- {mc_results['BR_Knu_std']*100:.1f}%")
             print()
 
             print("EXPERIMENTAL COMPARISON:")
             for channel, comp in comparison.items():
                 print(f"  {channel}:")
-                print(f"    Predicted: τ_p = {comp['predicted']:.2e} years")
-                print(f"    Bound: τ_p > {comp['bound']:.2e} years (Super-K)")
-                print(f"    Ratio: {comp['ratio']:.2f}× bound")
-                print(f"    Status: {comp['status']} ({comp['sigma']:.1f}σ)")
+                print(f"    Predicted: tau_p = {comp['predicted']:.2e} years")
+                print(f"    Bound: tau_p > {comp['bound']:.2e} years (Super-K)")
+                print(f"    Ratio: {comp['ratio']:.2f}x bound")
+                print(f"    Status: {comp['status']} ({comp['sigma']:.1f}sigma)")
             print()
 
             print("VALIDATION STATUS:")
             all_consistent = all(comp['status'] == 'CONSISTENT' for comp in comparison.values())
-            status_str = "✓ ALL CHANNELS CONSISTENT" if all_consistent else "⚠ SOME CHANNELS EXCLUDED"
+            status_str = "* ALL CHANNELS CONSISTENT" if all_consistent else "* SOME CHANNELS EXCLUDED"
             print(f"  {status_str} with Super-K bounds")
-            print(f"  ✓ Yukawa matrix derived from G₂ geometry")
-            print(f"  ✓ Wilson coefficients computed")
-            print(f"  ✓ Branching ratios quantified")
-            print(f"  ✓ Testable by Hyper-Kamiokande (2027-2035)")
+            print(f"  * Yukawa matrix derived from G2 geometry")
+            print(f"  * Wilson coefficients computed")
+            print(f"  * Branching ratios quantified")
+            print(f"  * Testable by Hyper-Kamiokande (2027-2035)")
             print("=" * 70)
 
         # Package results
