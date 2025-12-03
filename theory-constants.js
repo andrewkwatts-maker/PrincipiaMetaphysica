@@ -12,7 +12,7 @@
 
 const PM = {
   "meta": {
-    "version": "8.0",
+    "version": "8.4",
     "last_updated": "2025-12-04",
     "description": "Principia Metaphysica - Single Source of Truth (Config + Simulations)",
     "simulations_run": [
@@ -21,7 +21,7 @@ const PM = {
       "wz_evolution_desi_dr2",
       "kk_spectrum_full",
       "neutrino_mass_ordering",
-      "proton_decay_channels"
+      "proton_decay_v84_ckm"
     ]
   },
   "dimensions": {
@@ -58,16 +58,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.7440970367723104e+34,
-    "tau_p_mean": 3.9505457934031648e+34,
-    "tau_p_std": 1.5137849382473145e+34,
-    "tau_p_lower_68": 2.4585894198352076e+34,
-    "tau_p_upper_68": 5.458279334555235e+34,
-    "tau_p_lower_95": 1.4191197952184203e+34,
-    "tau_p_upper_95": 7.318459866521412e+34,
-    "tau_p_uncertainty_oom": 0.17736711304910024,
+    "tau_p_median": 3.767042000812996e+34,
+    "tau_p_mean": 3.897148093988132e+34,
+    "tau_p_std": 1.4605090788432977e+34,
+    "tau_p_lower_68": 2.4796185546704514e+34,
+    "tau_p_upper_68": 5.361928544118536e+34,
+    "tau_p_lower_95": 1.4388365565413594e+34,
+    "tau_p_upper_95": 7.348568337192953e+34,
+    "tau_p_uncertainty_oom": 0.172663194896786,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.2419742735163535
+    "ratio_to_bound": 2.2557137729419137
   },
   "pmns_matrix": {
     "theta_23": 47.199999,
@@ -79,10 +79,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822289099971989,
-    "theta_23_error": 0.8023529926676374,
-    "theta_12_error": 1.2061596014781946,
-    "theta_13_error": 0.34312486276060267,
-    "delta_cp_error": 28.337851704434136
+    "theta_23_error": 0.7838798137044578,
+    "theta_12_error": 1.1766834605299323,
+    "theta_13_error": 0.3510259162725906,
+    "delta_cp_error": 28.064504001287112
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -149,12 +149,15 @@ const PM = {
     ]
   },
   "proton_decay_channels": {
-    "BR_epi0_mean": 0.9893533638386399,
-    "BR_epi0_std": 0.000746837244919494,
-    "BR_Knu_mean": 0.00015363049860674658,
-    "BR_Knu_std": 0.00020858421306016193,
-    "tau_p_epi0": 3.9716620943897117e+34,
-    "tau_p_Knu": 3.76196476516399e+38,
+    "BR_epi0_mean": 0.6418281610804959,
+    "BR_epi0_std": 0.09373091624142434,
+    "BR_Knu_mean": 0.3564536311154883,
+    "BR_Knu_std": 0.0939378142077142,
+    "BR_mupi0_mean": 4.983497742524172e-05,
+    "BR_mupi0_std": 0.00014622154216465414,
+    "tau_p_epi0": 5.933580683415054e+34,
+    "tau_p_Knu": 1.1698667492639492e+35,
+    "tau_p_mupi0": 7.97037470714477e+38,
     "all_consistent": true
   },
   "validation": {
