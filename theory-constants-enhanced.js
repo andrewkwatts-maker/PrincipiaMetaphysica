@@ -1239,6 +1239,71 @@ const PM = {
         "total_predictions",
         "uncertainty_oom"
       ]
+    },
+    "fermion_sector": {
+      "title": "4. The Fermion Sector and Emergent Chirality",
+      "subtitle": "26D Two-Time Framework: 13D Shadow Structure with Shared Timelike Dimensions",
+      "content": "The fermion sector addresses one of the most fundamental questions in string compactifications:\nhow does dimensional reduction produce the chiral fermion spectrum of the Standard Model? Generic\nKaluza-Klein reduction produces non-chiral (vector-like) fermions, yet the Standard Model requires\nleft-handed weak doublets and right-handed singlets.\n\nThe Principia Metaphysica framework solves this through the Pneuma mechanism, which combines the\n26D Clifford algebra Cl(24,2) structure with the G\u2082 holonomy of the internal manifold. The full\n26D spinor has 8192 components from the 13D shadow structure (two 14D halves sharing two timelike\ndimensions), reducing via Sp(2,R) gauge fixing to 64 effective components. The Pneuma condensate\ninduces a modified Dirac operator whose index theorem yields exactly three chiral generations.\n\nKey achievements include complete PMNS matrix derivation with 0.09\u03c3 average agreement (including\ntwo exact matches: \u03b8\u2082\u2083 = 47.20\u00b0 and \u03b8\u2081\u2083 = 8.54\u00b0), neutrino mass ordering prediction (Inverted\nHierarchy at 85.5% confidence from Atiyah-Singer index), and Yukawa hierarchy from wavefunction\noverlap geometry explaining the mass ratio m_t/m_e ~ 10\u2075 without fine-tuning.",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/fermion-sector.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
+        }
+      ],
+      "values": [
+        "chi_eff",
+        "b3",
+        "n_gen",
+        "theta_23",
+        "theta_12",
+        "theta_13",
+        "delta_CP",
+        "avg_sigma",
+        "prob_IH_mean",
+        "prob_NH_mean",
+        "flux_dressing",
+        "m1_IH",
+        "m2_IH",
+        "m3_IH",
+        "sum_m_IH",
+        "m1_NH",
+        "m2_NH",
+        "m3_NH",
+        "sum_m_NH"
+      ],
+      "related_simulation": null,
+      "has_topics": true,
+      "topic_count": 8,
+      "required_values": [
+        "avg_sigma",
+        "b3",
+        "chi_eff",
+        "delta_CP",
+        "flux_dressing",
+        "m1_IH",
+        "m1_NH",
+        "m2_IH",
+        "m2_NH",
+        "m3_IH",
+        "m3_NH",
+        "n_gen",
+        "prob_IH_mean",
+        "prob_NH_mean",
+        "sum_m_IH",
+        "sum_m_NH",
+        "theta_12",
+        "theta_13",
+        "theta_23"
+      ]
     }
   }
 };
