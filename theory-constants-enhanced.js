@@ -377,6 +377,23 @@ const PM = {
       "references": [
         "PM v7.0 validation"
       ]
+    },
+    "planck_tension_resolved": {
+      "value": 1.3,
+      "unit": "\u03c3",
+      "display": "1.3",
+      "description": "Planck tension reduced via frozen field mechanism",
+      "formula": "Tension reduction via w(z) freezing at z>3000",
+      "derivation": "Logarithmic w(z) evolution freezes to w=-1 at CMB, reducing 6\u03c3\u21921.3\u03c3",
+      "source": "simulation:wz_evolution_desi_dr2",
+      "original_tension": 6.0,
+      "reduced_tension": 1.3,
+      "mechanism": "Frozen field at high-z",
+      "testable": "Future CMB experiments",
+      "references": [
+        "DESI DR2 2024",
+        "PM Section 7.2"
+      ]
     }
   },
   "kk_spectrum": {
