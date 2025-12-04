@@ -224,17 +224,19 @@ main {
     margin-top: 2rem;
 }
 
-/* Cards - Modern Elevated Design */
+/* Cards - Modern Elevated Design with Frosted Glass */
 .card {
-    background: var(--bg-card);
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
     padding: 1.75rem;
     border-radius: 16px;
-    border: 1px solid var(--border-primary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .card::before {
@@ -250,10 +252,12 @@ main {
 }
 
 .card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 40px rgba(var(--color-primary-rgb, 139, 127, 255), 0.15);
-    border-color: var(--border-accent);
-    background: var(--bg-card-hover);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 16px 48px rgba(var(--color-primary-rgb, 139, 127, 255), 0.25);
+    border-color: rgba(var(--color-primary-rgb, 139, 127, 255), 0.3);
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.8);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
 }
 
 .card:hover::before {
@@ -477,12 +481,14 @@ main {
 }
 
 .detail-section {
-    background: var(--bg-card);
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.6);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
     padding: 2rem;
     border-radius: 16px;
     margin-bottom: 1.5rem;
-    border: 1px solid var(--border-primary);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .detail-section h3 {
@@ -852,17 +858,24 @@ ul li::marker {
 }
 
 .prediction-card {
-    background: rgba(79, 172, 254, 0.06);
-    border: 1px solid rgba(79, 172, 254, 0.15);
-    border-radius: 12px;
+    background: rgba(79, 172, 254, 0.08);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 1px solid rgba(79, 172, 254, 0.2);
+    border-radius: 16px;
     padding: 1.5rem;
     margin: 1rem 0;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 16px rgba(79, 172, 254, 0.08);
 }
 
 .prediction-card:hover {
-    border-color: rgba(79, 172, 254, 0.3);
-    box-shadow: 0 4px 16px rgba(79, 172, 254, 0.1);
+    transform: translateY(-4px);
+    border-color: rgba(79, 172, 254, 0.4);
+    box-shadow: 0 8px 32px rgba(79, 172, 254, 0.2);
+    background: rgba(79, 172, 254, 0.12);
+    backdrop-filter: blur(16px) saturate(200%);
+    -webkit-backdrop-filter: blur(16px) saturate(200%);
 }
 
 .prediction-card h4 {
@@ -2387,6 +2400,64 @@ ul li::marker {
     font-size: 1.3rem;
     color: var(--accent-primary);
     margin-top: 0.75rem;
+}
+
+/* Frosted Glass Utility Classes */
+.glass-card {
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(20px) saturate(200%);
+    -webkit-backdrop-filter: blur(20px) saturate(200%);
+}
+
+.glass-success {
+    background: rgba(81, 207, 102, 0.1);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 2px solid rgba(81, 207, 102, 0.4);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(81, 207, 102, 0.15);
+}
+
+.glass-warning {
+    background: rgba(255, 193, 7, 0.1);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 2px solid rgba(255, 193, 7, 0.4);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(255, 193, 7, 0.15);
+}
+
+.glass-info {
+    background: rgba(79, 172, 254, 0.1);
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border: 2px solid rgba(79, 172, 254, 0.4);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 24px rgba(79, 172, 254, 0.15);
+}
+
+.glass-gradient-primary {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.15));
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(139, 127, 255, 0.2);
 }
 
 /* Responsive adjustments for diagrams */
