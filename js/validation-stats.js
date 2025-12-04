@@ -69,7 +69,96 @@ function updateValidationStats() {
         desiElement.textContent = `Validated (${desiSigma.toFixed(2)}σ)`;
     }
 
+    // Update additional fields from PM constants if available
+    updateAdditionalFields();
+
     console.log(`Validation stats updated: ${within1sigma}/${totalWithData} within 1σ, ${exactMatches} exact, DESI ${desiSigma}σ, Grade ${grade}`);
+}
+
+function updateAdditionalFields() {
+    if (typeof PM === 'undefined') return;
+
+    // Chi effective
+    const chiEffEl = document.getElementById('chi-eff');
+    if (chiEffEl && PM.topology && PM.topology.chi_eff) {
+        chiEffEl.textContent = PM.topology.chi_eff;
+    }
+
+    // Proton decay uncertainty
+    const tauPUncertaintyEl = document.getElementById('tau-p-uncertainty');
+    if (tauPUncertaintyEl && PM.proton_decay && PM.proton_decay.uncertainty_oom) {
+        tauPUncertaintyEl.textContent = PM.proton_decay.uncertainty_oom.toFixed(3);
+    }
+
+    // Proton decay improvement
+    const tauPImprovementEl = document.getElementById('tau-p-improvement');
+    if (tauPImprovementEl && PM.proton_decay && PM.proton_decay.uncertainty_oom) {
+        const improvement = 0.8 / PM.proton_decay.uncertainty_oom;
+        tauPImprovementEl.textContent = improvement.toFixed(1);
+    }
+
+    // Planck tension (hardcoded for now - could be computed)
+    const planckTensionEl = document.getElementById('planck-tension');
+    if (planckTensionEl) {
+        planckTensionEl.textContent = '1.3'; // From DESI DR2 frozen field resolution
+    }
+
+    // PMNS average sigma
+    const pmnsAvgSigmaEl = document.getElementById('pmns-avg-sigma');
+    if (pmnsAvgSigmaEl && PM.pmns_matrix && PM.pmns_matrix.avg_sigma) {
+        pmnsAvgSigmaEl.textContent = PM.pmns_matrix.avg_sigma.toFixed(2);
+    }
+
+    // PMNS exact count (theta_23, theta_13)
+    const pmnsExactCountEl = document.getElementById('pmns-exact-count');
+    if (pmnsExactCountEl) {
+        pmnsExactCountEl.textContent = '2';
+    }
+
+    // KK mass
+    const mKKEl = document.getElementById('m-kk');
+    if (mKKEl && PM.kk_spectrum && PM.kk_spectrum.M_KK_mean) {
+        mKKEl.textContent = (PM.kk_spectrum.M_KK_mean / 1000).toFixed(1); // Convert GeV to TeV
+    }
+
+    // KK error
+    const mKKErrorEl = document.getElementById('m-kk-error');
+    if (mKKErrorEl && PM.kk_spectrum && PM.kk_spectrum.M_KK_std) {
+        mKKErrorEl.textContent = (PM.kk_spectrum.M_KK_std / 1000).toFixed(1); // Convert GeV to TeV
+    }
+
+    // KK significance (hardcoded from analysis)
+    const kkSigEl = document.getElementById('kk-significance');
+    if (kkSigEl) {
+        kkSigEl.textContent = '6.2';
+    }
+
+    // M_GUT value
+    const mGUTEl = document.getElementById('m-gut-value');
+    if (mGUTEl && PM.proton_decay && PM.proton_decay.M_GUT) {
+        const mgut = PM.proton_decay.M_GUT;
+        mGUTEl.textContent = (mgut / 1e16).toFixed(3) + '×10¹⁶';
+    }
+
+    // w0 theory
+    const w0TheoryEl = document.getElementById('w0-theory');
+    if (w0TheoryEl && PM.shared_dimensions && PM.shared_dimensions.w0_from_d_eff) {
+        w0TheoryEl.textContent = PM.shared_dimensions.w0_from_d_eff.toFixed(4);
+    }
+
+    // w0 DESI
+    const w0DESIEl = document.getElementById('w0-desi');
+    if (w0DESIEl && PM.dark_energy && PM.dark_energy.w0_DESI_central) {
+        const central = PM.dark_energy.w0_DESI_central;
+        const error = PM.dark_energy.w0_DESI_error || 0.06;
+        w0DESIEl.textContent = `${central.toFixed(2)}±${error.toFixed(2)}`;
+    }
+
+    // w0 sigma
+    const w0SigmaEl = document.getElementById('w0-sigma');
+    if (w0SigmaEl && PM.dark_energy && PM.dark_energy.w0_sigma) {
+        w0SigmaEl.textContent = PM.dark_energy.w0_sigma.toFixed(2);
+    }
 }
 
 function calculateGrade(within1sigma, total, exactMatches) {

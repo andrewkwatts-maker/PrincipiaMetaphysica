@@ -372,26 +372,6 @@
                 </a>
             </div>
 
-            <!-- Dynamic Validation Status -->
-            <div class="glass-success" style="max-width: 800px; margin: 1.5rem auto;">
-                <h4 style="color: #51cf66; margin: 0 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                    <span>&#x2713;</span> <span id="framework-grade">Grade A+</span>
-                </h4>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
-                    <div style="background: rgba(81, 207, 102, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.3rem; font-weight: 700; color: #51cf66;" id="predictions-within-1sigma">10 of 14</div>
-                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Predictions within 1σ</div>
-                    </div>
-                    <div style="background: rgba(79, 172, 254, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.3rem; font-weight: 700; color: #4facfe;" id="exact-matches">3 Exact</div>
-                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Matches (0.00σ)</div>
-                    </div>
-                    <div style="background: rgba(139, 127, 255, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.3rem; font-weight: 700; color: #8b7fff;">DESI DR2</div>
-                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;" id="desi-validation">Validated (0.38σ)</div>
-                    </div>
-                </div>
-            </div>
 
             <!-- Master 26D Action - Interactive Display -->
             <div class="interactive-formula" style="margin-top: 2rem; position: relative; z-index: 1;">
@@ -573,117 +553,40 @@
             <h2>Abstract</h2>
             <p>
                 A unified theory of gravity and the Standard Model forces originating from a
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">26-dimensional bulk spacetime with signature (24,2)
-                    <span class="var-tooltip" style="width: 280px;">
-                        <span class="var-name">Two-Time Physics</span>
-                        <span class="var-description">The bulk contains 24 spatial and 2 temporal dimensions. The second time dimension resolves unitarity and enables novel gauge structures.</span>
-                    </span>
-                </span>&mdash;incorporating two time dimensions.
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">Sp(2,R) gauge fixing
-                    <span class="var-tooltip" style="width: 280px;">
-                        <span class="var-name">Symplectic Gauge Symmetry</span>
-                        <span class="var-description">The Sp(2,R) gauge symmetry constrains the two times, projecting the 26D bulk onto a 13-dimensional effective "shadow" spacetime with signature (12,1).</span>
-                    </span>
-                </span>
+                26-dimensional bulk spacetime with signature (24,2)&mdash;incorporating two time dimensions.
+                Sp(2,R) gauge fixing
                 projects this onto a <strong>13D effective shadow</strong> with signature (12,1), structured as a
                 <strong>1 + 3 brane hierarchy</strong> (one observable + three hidden universes) with Z<sub>2</sub> mirror symmetry.
             </p>
             <p style="margin-top: 1rem;">
                 The 13D effective Lagrangian:
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">&Lscr;<sub>13D</sub> = M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>
-                    <span class="var-tooltip" style="width: 350px;">
-                        <span class="var-name">M<sup>13</sup> Bulk Lagrangian</span>
-                        <span class="var-description">The fundamental action in 13D spacetime (12,1 signature). M<sub>*</sub><sup>11</sup> is the 13D Planck scale raised to the 11th power. R is the 13D Ricci scalar. &Psi;<sub>P</sub> is the 64-component Pneuma field with Dirac kinetic term and mass m.</span>
-                        <span class="var-units" style="display: block; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                            <strong>Derivation:</strong> From 26D bulk via Sp(2,R) gauge fixing. The 8192-component 26D spinor reduces to 64 effective components in 13D.
-                        </span>
-                    </span>
-                </span>,
+                &Lscr;<sub>13D</sub> = M<sub>*</sub><sup>11</sup>R + <span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub>,
                 which upon compactification on K<sub>Pneuma</sub> yields the complete 4D Lagrangian:
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">&Lscr;<sub>4D</sub> = F(R,T,&tau;) + &Lscr;<sub>Pneuma</sub> + &Lscr;<sub>SM</sub> + &Lscr;<sub>hidden</sub>
-                    <span class="var-tooltip" style="width: 380px;">
-                        <span class="var-name">Complete 4D Effective Lagrangian</span>
-                        <span class="var-description">Modified gravity F(R,T,&tau;) couples to the Pneuma field, Standard Model, and hidden sector. The &tau; terms encode two-time physics residuals.</span>
-                        <span class="var-units" style="display: block; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                            <strong>Components:</strong><br>
-                            • F(R,T,&tau;): Modified gravity with matter coupling T and two-time invariant &tau;<br>
-                            • &Lscr;<sub>Pneuma</sub>: Condensate dynamics generating geometry<br>
-                            • &Lscr;<sub>SM</sub>: Standard Model from SO(10) breaking<br>
-                            • &Lscr;<sub>hidden</sub>: Three shadow brane sectors (B<sub>2,3,4</sub>)
-                        </span>
-                    </span>
-                </span>, where
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">F(R,T,&tau;) = R + &alpha;T + &beta;T&sup2; + &gamma;&tau; + &delta;&tau;&sup2;
-                    <span class="var-tooltip" style="width: 340px;">
-                        <span class="var-name">Modified Gravity Function</span>
-                        <span class="var-description">Generalizes f(R) gravity with matter-trace T and two-time invariant &tau;. All parameters derived from compactification.</span>
-                        <span class="var-units" style="display: block; margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.2);">
-                            <strong>Derived Parameters:</strong><br>
-                            • &alpha; = N<sub>eff</sub>/(1440&pi;&sup2;M<sub>Pl</sub>&sup2;) &asymp; 4.5&times;10<sup>-3</sup>/M<sub>Pl</sub>&sup2;<br>
-                            • &beta; = 2&lang;&sigma;&rang; &asymp; 0.15<br>
-                            • &gamma; &asymp; 10<sup>-4</sup>/M<sub>Pl</sub>&sup2;<br>
-                            • &delta; = g&Delta;t<sub>ortho</sub> &asymp; 10<sup>-19</sup> s
-                        </span>
-                    </span>
-                </span>.
+                &Lscr;<sub>4D</sub> = F(R,T,&tau;) + &Lscr;<sub>Pneuma</sub> + &Lscr;<sub>SM</sub> + &Lscr;<sub>hidden</sub>, where
+                F(R,T,&tau;) = R + &alpha;T + &beta;T&sup2; + &gamma;&tau; + &delta;&tau;&sup2;.
                 The fundamental
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">Pneuma field &Psi;<sub>P</sub>
-                    <span class="var-tooltip" style="width: 300px;">
-                        <span class="var-name">8192 &rarr; 64 Component Spinor</span>
-                        <span class="var-description">In 26D, the spinor has 2<sup>13</sup> = 8192 components. Upon Sp(2,R) gauge fixing and compactification, 64 effective components remain in 13D.</span>
-                    </span>
-                </span>
+                Pneuma field &Psi;<sub>P</sub>
                 is an 8192-component spinor in the bulk, reducing to 64 effective components in 13D. Its condensates form the internal
                 Calabi-Yau manifold K<sub>Pneuma</sub>, while its statistics generate emergent time via the <strong>Thermal Time Hypothesis</strong>.
             </p>
             <p style="margin-top: 1rem;">
                 Three fermion generations arise topologically:
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">&chi; = 72/24 = 3 (F-theory) or &chi; = 144/48 = 3 (26D)
-                    <span class="var-tooltip" style="width: 280px;">
-                        <span class="var-name">Generation Formula</span>
-                        <span class="var-description">The Euler characteristic of the internal manifold, divided by the appropriate topological factor, yields exactly 3 generations of quarks and leptons.</span>
-                    </span>
-                </span>.
+                &chi; = 72/24 = 3 (F-theory) or &chi; = 144/48 = 3 (26D).
                 The framework satisfies
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">Swampland constraints
-                    <span class="var-tooltip" style="width: 300px;">
-                        <span class="var-name">Quantum Gravity Consistency</span>
-                        <span class="var-description">The de Sitter conjecture requires a &ge; &radic;(2/3) &asymp; 0.816. This theory gives a = &radic;(26/13) &asymp; 1.414, comfortably satisfying the bound.</span>
-                    </span>
-                </span>
+                Swampland constraints
                 with a = &radic;(26/13) &asymp; 1.414 > &radic;(2/3).
                 Moduli are stabilized via
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">V(&phi;) = |F|&sup2;e<sup>-a&phi;</sup> + &kappa;e<sup>-b/&phi;</sup> + &mu;cos(&phi;/R<sub>ortho</sub>)
-                    <span class="var-tooltip" style="width: 320px;">
-                        <span class="var-name">Moduli Stabilization Potential</span>
-                        <span class="var-description">Combines F-term SUSY breaking, non-perturbative effects, and axionic oscillations from the orthogonal time dimension. Creates stable vacua for all geometric moduli.</span>
-                    </span>
-                </span>,
+                V(&phi;) = |F|&sup2;e<sup>-a&phi;</sup> + &kappa;e<sup>-b/&phi;</sup> + &mu;cos(&phi;/R<sub>ortho</sub>),
                 combining F-term contributions, non-perturbative effects, and axionic terms from the orthogonal time.
             </p>
             <p style="margin-top: 1rem;">
                 <strong>Cosmological predictions:</strong> Dark energy equation of state
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">w<sub>0</sub> = -0.8528, w<sub>a</sub> = -0.95
-                    <span class="var-tooltip" style="width: 280px;">
-                        <span class="var-name">Dark Energy Parameters</span>
-                        <span class="var-description">The CPL parameterization w(a) = w<sub>0</sub> + w<sub>a</sub>(1-a). Current observations (DESI+CMB) favor w<sub>0</sub> &asymp; -0.83, w<sub>a</sub> &asymp; -0.75. PM prediction w<sub>a</sub> = -0.95 within 0.66σ.</span>
-                    </span>
-                </span>,
+                w<sub>0</sub> = -0.8528, w<sub>a</sub> = -0.95,
                 with late-time attractor
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); position: relative;">w &rarr; -1
-                    <span class="var-tooltip" style="width: 280px;">
-                        <span class="var-name">Mashiach Mechanism</span>
-                        <span class="var-description">The scalar "Mashiach" field &phi;<sub>M</sub> drives dark energy toward a cosmological constant at late times, ensuring cosmic acceleration without fine-tuning.</span>
-                    </span>
-                </span>
+                w &rarr; -1
                 driven by the Mashiach field&mdash;a dynamical dark energy resolution requiring no fine-tuning.
                 <strong>Enhanced predictions:</strong> Gravitational wave dispersion from multi-time coupling
-                <span class="formula-var" style="cursor: help; border-bottom: 1px dotted var(--accent-primary); font-family: 'Crimson Text', serif; position: relative;">&eta; = g/E<sub>F</sub> ~ 0.1
-                    <span class="var-tooltip" style="width: 300px;">
-                        <span class="var-name">Multi-Time Coupling Parameter</span>
-                        <span class="var-description">Dimensionless ratio of multi-time coupling g to Fermi energy E<sub>F</sub>. Creates linear dispersion term &eta; k &Delta;t<sub>ortho</sub> that boosts GW testability from ~10<sup>-76</sup> to ~10<sup>-29</sup>, approaching LISA sensitivity with tuning.</span>
-                    </span>
-                </span>
+                &eta; = g/E<sub>F</sub> ~ 0.1
                 to LISA-testable regime (~10<sup>-20</sup> with parameter tuning); CMB bubble collision signatures from multiverse tunneling (falsifiable via Planck/CMB-S4 non-Gaussian cold spots with &kappa; > 3+10<sup>9</sup>).
             </p>
             <!-- Interactive Dimensional Decomposition Formula -->
@@ -755,6 +658,25 @@
             <h2 style="text-align: center; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
                 Key Theoretical Features & Validations
             </h2>
+
+            <!-- Dynamic Validation Metrics -->
+            <div class="glass-success" style="max-width: 1000px; margin: 1.5rem auto;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
+                    <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #51cf66;" id="predictions-within-1sigma">10 of 14</div>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Predictions within 1σ</div>
+                    </div>
+                    <div style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;" id="exact-matches">3 Exact</div>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">Matches (0.00σ)</div>
+                    </div>
+                    <div style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">DESI DR2</div>
+                        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;" id="desi-validation">Validated (0.38σ)</div>
+                    </div>
+                </div>
+            </div>
+
             <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.05rem;">
                 Geometrically derived parameters with experimental validation
             </p>
@@ -829,6 +751,61 @@
                     </p>
                     <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
                         <strong style="color: #4facfe;">DUNE 2027:</strong> Testable geometric prediction
+                    </p>
+                </div>
+            </div>
+
+            <!-- Additional Resolved Issues from Mathematical Framework -->
+            <h3 style="text-align: center; margin: 2rem 0 1.5rem 0; color: var(--accent-primary);">
+                Geometric Derivations and Precision Calculations
+            </h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Generation Count</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        χ<sub>eff</sub> = <span id="chi-eff">144</span> (flux-dressed) from G₂ manifold topology. Geometrically derived, exact match.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Proton Decay Precision</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        Uncertainty reduced from 0.8 OOM to <span id="tau-p-uncertainty">0.177</span> OOM (<span id="tau-p-improvement">4.5</span>× improvement) via 3-loop RG + Monte Carlo.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Planck Tension</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        Reduced from 6σ to <span id="planck-tension">1.3</span>σ via logarithmic w(z) and F(R,T) bias correction.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Complete PMNS Matrix</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        All 4 parameters derived (including δ<sub>CP</sub>), <span id="pmns-avg-sigma">0.09</span>σ average, <span id="pmns-exact-count">2</span> exact matches.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ KK Spectrum Quantified</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        M<sub>KK</sub> = <span id="m-kk">5.0</span>±<span id="m-kk-error">1.5</span> TeV, testable at HL-LHC with <span id="kk-significance">6.2</span>σ expected discovery significance.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ M<sub>GUT</sub> Geometric</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        Derived from TCS G₂ torsion logarithms: <span id="m-gut-value">2.118×10¹⁶</span> GeV, no longer phenomenological fit.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ DESI DR2 Validation</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        w₀ = <span id="w0-theory">-0.8528</span> matches DESI <span id="w0-desi">-0.83±0.06</span> at <span id="w0-sigma">0.38</span>σ agreement.
+                    </p>
+                </div>
+                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Dimensional Framework</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
+                        Complete 26D→13D→4D reduction with Sp(2,R) gauge fixing and G₂ holonomy.
                     </p>
                 </div>
             </div>
@@ -1007,148 +984,6 @@
             </div>
         </section>
 
-        <!-- Resolved Issues Callout -->
-        <section id="resolved-issues" style="margin: 3rem 0; padding: 2.5rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.05)); border: 2px solid rgba(81, 207, 102, 0.3); border-radius: 16px;">
-            <h2 style="text-align: center; color: #51cf66; margin-bottom: 1.5rem; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
-                <span style="font-size: 2rem;">✓</span> Mathematical Framework
-            </h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
-                Geometric derivations and precision calculations
-            </p>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Generation Count</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        χ<sub>eff</sub> = 144 (flux-dressed) replaces unphysical χ<sub>raw</sub> = -300. Now geometrically derived, exact match.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Proton Decay Precision</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Uncertainty reduced from 0.8 OOM to 0.18 OOM (4.4× improvement) via 3-loop RG + Monte Carlo.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Planck Tension</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Reduced from 6σ to 1.3σ via logarithmic w(z) and F(R,T) bias correction.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Complete PMNS Matrix</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        All 4 parameters derived (including δ<sub>CP</sub>), 0.09σ average, 2 exact matches.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ KK Spectrum Quantified</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        M<sub>KK</sub> = 5.0±1.5 TeV, testable at HL-LHC with 6.2σ expected discovery significance.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ M<sub>GUT</sub> Geometric</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Derived from TCS G₂ torsion logarithms, no longer phenomenological fit.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ DESI DR2 Validation</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        w₀ = -0.8528 matches DESI -0.83±0.06 at 0.38σ agreement.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Dimensional Framework</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        26D (24,2) → Sp(2,R) → 13D (12,1) shadow structure fully clarified.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ α₄, α₅ First-Principles</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Dimension parameters geometrically derived from G₂ torsion, no free parameters.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Mass Ordering Resolved</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Inverted Hierarchy at 85.5% confidence from Atiyah-Singer index theorem on associative 3-cycles.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Proton Decay Channels</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Complete branching ratios: BR(p→e⁺π⁰) = 64.2% ± 9.4%, all channels consistent with Super-K bounds.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Complete KK Tower</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Full Laplacian eigenvalue calculation on G₂ manifold with T² degeneracy structure.
-                    </p>
-                </div>
-                <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
-                    <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">✓ Consciousness Clarified</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-                        Moved to appendix as speculative interpretation, separated from testable physics predictions.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="achievements" style="margin: 3rem 0; padding: 2.5rem; background: var(--glass-bg); backdrop-filter: blur(20px); border-radius: 16px; border: 1px solid var(--glass-border);">
-            <h2 style="text-align: center; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 2rem;">
-                Theoretical Framework
-            </h2>
-            <div style="display: grid; gap: 1rem; max-width: 900px; margin: 0 auto;">
-                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(139, 127, 255, 0.1); border-radius: 12px; border-left: 4px solid var(--accent-primary);">
-                    <span style="color: var(--accent-primary); font-size: 1.5rem; line-height: 1;">◆</span>
-                    <div>
-                        <h4 style="color: var(--accent-primary); margin: 0 0 0.5rem 0;">G₂ Manifold Compactification</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
-                            Explicit twisted connected sum construction with b₂=4, b₃=24 from Fano 3-fold building blocks. Topology determines all physical parameters.
-                        </p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(139, 127, 255, 0.1); border-radius: 12px; border-left: 4px solid var(--accent-primary);">
-                    <span style="color: var(--accent-primary); font-size: 1.5rem; line-height: 1;">◆</span>
-                    <div>
-                        <h4 style="color: var(--accent-primary); margin: 0 0 0.5rem 0;">First-Principles Parameter Derivation</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
-                            All parameters derived from geometric principles: dimensional reduction parameters from torsion logarithms, generation count from Euler characteristic, gauge structure from singularities.
-                        </p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(139, 127, 255, 0.1); border-radius: 12px; border-left: 4px solid var(--accent-primary);">
-                    <span style="color: var(--accent-primary); font-size: 1.5rem; line-height: 1;">◆</span>
-                    <div>
-                        <h4 style="color: var(--accent-primary); margin: 0 0 0.5rem 0;">Unified Geometric Structure</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
-                            Single framework addresses hierarchy problem, strong CP, cosmological constant, matter-antimatter asymmetry, dark energy, and generation count through geometric topology.
-                        </p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(255, 126, 182, 0.1); border-radius: 12px; border-left: 4px solid var(--accent-secondary);">
-                    <span style="color: var(--accent-secondary); font-size: 1.5rem; line-height: 1;">◆</span>
-                    <div>
-                        <h4 style="color: var(--accent-secondary); margin: 0 0 0.5rem 0;">Experimental Predictions</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
-                            Dark energy w₀ = -0.8528 (DESI: -0.83 ± 0.06), neutrino mixing θ₂₃ = 47.2° (NuFIT: exact match), falsifiable proton decay and collider signatures.
-                        </p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; padding: 1.25rem; background: rgba(255, 126, 182, 0.1); border-radius: 12px; border-left: 4px solid var(--accent-secondary);">
-                    <span style="color: var(--accent-secondary); font-size: 1.5rem; line-height: 1;">◆</span>
-                    <div>
-                        <h4 style="color: var(--accent-secondary); margin: 0 0 0.5rem 0;">Complete Unification</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.95rem;">
-                            Gravity, Standard Model forces, dark energy, and thermodynamic time emergence unified from single 26D action with Pneuma field dynamics.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section id="sections">
             <div class="intro">
