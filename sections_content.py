@@ -604,6 +604,107 @@ All core physics predictions are complete and falsifiable.
             "avg_sigma"
         ],
         "topics": []
+    },
+
+    "fermion_sector": {
+        "pages": [
+            {
+                "file": "https://www.metaphysicæ.com/sections/fermion-sector.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": True,
+                "template_type": "Section Page"
+            }
+        ],
+        "title": "4. The Fermion Sector and Emergent Chirality",
+        "subtitle": "26D Two-Time Framework: 13D Shadow Structure with Shared Timelike Dimensions",
+        "content": """
+The fermion sector addresses one of the most fundamental questions in string compactifications:
+how does dimensional reduction produce the chiral fermion spectrum of the Standard Model? Generic
+Kaluza-Klein reduction produces non-chiral (vector-like) fermions, yet the Standard Model requires
+left-handed weak doublets and right-handed singlets.
+
+The Principia Metaphysica framework solves this through the Pneuma mechanism, which combines the
+26D Clifford algebra Cl(24,2) structure with the G₂ holonomy of the internal manifold. The full
+26D spinor has 8192 components from the 13D shadow structure (two 14D halves sharing two timelike
+dimensions), reducing via Sp(2,R) gauge fixing to 64 effective components. The Pneuma condensate
+induces a modified Dirac operator whose index theorem yields exactly three chiral generations.
+
+Key achievements include complete PMNS matrix derivation with 0.09σ average agreement (including
+two exact matches: θ₂₃ = 47.20° and θ₁₃ = 8.54°), neutrino mass ordering prediction (Inverted
+Hierarchy at 85.5% confidence from Atiyah-Singer index), and Yukawa hierarchy from wavefunction
+overlap geometry explaining the mass ratio m_t/m_e ~ 10⁵ without fine-tuning.
+        """.strip(),
+        "related_simulation": None,
+        "values": [
+            "chi_eff",
+            "b3",
+            "n_gen",
+            "theta_23",
+            "theta_12",
+            "theta_13",
+            "delta_CP",
+            "avg_sigma",
+            "prob_IH_mean",
+            "prob_NH_mean",
+            "flux_dressing",
+            "m1_IH",
+            "m2_IH",
+            "m3_IH",
+            "sum_m_IH",
+            "m1_NH",
+            "m2_NH",
+            "m3_NH",
+            "sum_m_NH"
+        ],
+        "topics": [
+            {
+                "id": "26d_fermions",
+                "title": "4.1 Fermions in the 26D Two-Time Framework",
+                "template_type": "subsection"
+            },
+            {
+                "id": "kk_zero_modes",
+                "title": "4.2 Kaluza-Klein Zero Modes and the Chirality Problem",
+                "template_type": "subsection"
+            },
+            {
+                "id": "pneuma_mechanism",
+                "title": "4.3 The Pneuma Mechanism for Chirality",
+                "template_type": "subsection"
+            },
+            {
+                "id": "so10_embedding",
+                "title": "4.4 Embedding Fermions in the SO(10) Representation",
+                "template_type": "subsection"
+            },
+            {
+                "id": "yukawa_hierarchy",
+                "title": "4.4b Yukawa Hierarchy from Wavefunction Geometry",
+                "template_type": "subsection"
+            },
+            {
+                "id": "pmns_matrix",
+                "title": "4.4b PMNS Neutrino Mixing Matrix: Complete 4-Parameter Derivation",
+                "template_type": "subsection"
+            },
+            {
+                "id": "neutrino_mass_ordering",
+                "title": "4.5 Neutrino Mass Ordering from Atiyah-Singer Index Theorem",
+                "template_type": "subsection"
+            },
+            {
+                "id": "strong_cp",
+                "title": "4.6 The Strong CP Problem",
+                "template_type": "subsection"
+            }
+        ]
     }
 }
 
