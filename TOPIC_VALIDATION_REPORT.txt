@@ -1,0 +1,97 @@
+Validating topic implementation across all pages...
+
+================================================================================
+TOPIC IMPLEMENTATION VALIDATION REPORT
+================================================================================
+
+Total pages checked: 20
+  Complete: 0
+  Partial: 0
+  Incomplete: 2
+  Not in sections_content: 18
+
+
+================================================================================
+INCOMPLETE
+================================================================================
+
+File: principia-metaphysica-paper.html
+  Expected sections: geometric_framework
+    geometric_framework: dimensional_reduction, euler_characteristic
+  Missing topics (2): dimensional_reduction, euler_characteristic
+
+File: sections\geometric-framework.html
+  Expected sections: geometric_framework
+    geometric_framework: dimensional_reduction, euler_characteristic, so10_emergence
+  Missing topics (3): dimensional_reduction, euler_characteristic, so10_emergence
+
+================================================================================
+NOT IN SECTIONS CONTENT
+================================================================================
+
+File: beginners-guide.html
+  Found topics (37): _extra_dimensions, _gravity__spacetime, _quantum_fields__matter, _time__entropy, _unification
+
+File: index.html
+  Found topics (67): 1__3_brane_hierarchy, _3_fermion_generations, _complete_pmns_matrix, _dark_energy_w___08528, _desi_dr2_validation
+
+File: sections\cmb-bubble-collisions-comprehensive.html
+  Found topics (16): 771_physics_foundation_quantum_tunneling_in_the_landscape, 772_mathematical_derivation_tunneling_rate_and_bubble_radius, 773_cmb_cold_spot_statistics_gaussian_baseline_vs_bubble_collision_extension, 774_sympy_code_computational_verification, 775_falsifiability_criteria_and_experimental_tests
+
+File: sections\conclusion.html
+  Found topics (24): 81_summary_of_results, 82_predictions_and_falsifiability, 83_future_research_directions, additional_testable_predictions_new, central_equation_26d_two_time_framework_with_g_compactification
+
+File: sections\cosmology.html
+  Found topics (54): 61_deriving_4d_gravity_from_kaluza_klein_reduction, 62_myrzakulov_frt_gravity, 63_the_mashiach_field_as_a_modulus, 64_dynamical_systems_analysis, 65_the_late_time_attractor
+
+File: sections\division-algebra-section.html
+  Found topics (15): comparison_with_string_theory_and_m_theory, division-algebra-origin, key_references, m_theory_d__11, mathematical_support_exceptional_structures
+
+File: sections\einstein-hilbert-term.html
+  Found topics (16): 26d_origin, 4d_effective_gravity, component_breakdown, components_of_the_metric, connection_to_the_pneuma_field
+
+File: sections\fermion-sector.html
+  Found topics (86): 41_fermions_in_the_26d_two_time_framework, 42_kaluza_klein_zero_modes_and_the_chirality_problem, 43_the_pneuma_mechanism_for_chirality, 44_embedding_fermions_in_the_so10_representation, 44b_pmns_neutrino_mixing_matrix_complete_4_parameter_derivation_with_exceptional_agreement
+
+File: sections\formulas.html
+  Found topics (17): 1_fundamental_action, 2_geometric_framework, 3_pneuma_field, 4_gauge_unification, 5_thermal_time
+
+File: sections\gauge-unification.html
+  Found topics (108): 31_the_so10_grand_unified_framework, 32_symmetry_breaking_chains_and_the_geometric_higgs, 33_a_geometric_solution_to_the_doublet_triplet_splitting_problem, 33b_doublet_triplet_splitting_explicit_calculation, 34_f_theory_embedding_and_string_theoretic_origin
+
+File: sections\index.html
+  Found topics (19): conclusion, cosmological_dynamics, experimental, experimental_tests, fermion_sector
+
+File: sections\introduction.html
+  Found topics (37): a_fermionic_foundation_for_geometry, central_thesis_, comparison_d__10_d__11_d__13_and_d__26, concerns_critical_analysis, division-algebra-origin
+
+File: sections\pneuma-lagrangian-new.html
+  Found topics (21): 4d_effective_lagrangian, bulk_mass, component_breakdown, components, condensate_gap_equation_sympy_derivation
+
+File: sections\pneuma-lagrangian.html
+  Found topics (55): 1_master_bulk_action_26d, 2_13d_shadow_effective_lagrangian, 2t_physics_framework, 2t_physics_p_brane_action_formulation, 3_4d_observable_effective_lagrangian
+
+File: sections\predictions.html
+  Found topics (124): 2027_2030_junodune_neutrino_mass_hierarchy, 2027_2035_hyper_kdune_proton_decay_channels, 2027_euclid_dark_energy_survey, 2028_lzxenonnt_wimp_exclusion_limits, 2030_hl_lhc_kk_graviton_search_62_expected
+
+File: sections\theory-analysis.html
+  Found topics (25): critical_analysis__validation_summary, desi_2024_agreement_analysis_26d_framework, desi_dark_energy_tension_resolved_26d_framework, development_history_v60__v84_a_achievement, executive_summary_v84___publication_ready
+
+File: sections\thermal-time.html
+  Found topics (96): 51_the_problem_of_time_in_quantum_gravity, 52_the_thermal_time_hypothesis_tth, 52b_two_time_structure_in_the_26d_framework, 52c_two_time_physics_and_sp2r_gauge_symmetry, 53_tomita_takesaki_modular_theory_and_kms_states
+
+File: sections\xy-gauge-bosons.html
+  Found topics (7): detection_prospects, overview_so10_gauge_structure, summary_x_and_y_boson_status, what_we_dont_know_geometry_doesnt_constrain, what_we_know_from_g_geometry
+
+================================================================================
+MIGRATION PLAN
+================================================================================
+
+Priority 1 (Incomplete): 2 pages
+Priority 2 (Partial): 0 pages
+Priority 3 (Not Defined): 18 pages
+Complete: 0 pages
+
+================================================================================
+Detailed migration plan saved to: TOPIC_MIGRATION_PLAN.json
+================================================================================
