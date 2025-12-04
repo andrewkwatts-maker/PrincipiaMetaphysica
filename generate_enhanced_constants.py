@@ -475,6 +475,20 @@ def generate_enhanced_constants():
                 agreement_text='Excellent agreement',
                 references=['PM v7.0 validation']
             ),
+            'planck_tension_resolved': create_enhanced_constant(
+                1.3,
+                unit='σ',
+                display='1.3',
+                description='Planck tension reduced via frozen field mechanism',
+                formula='Tension reduction via w(z) freezing at z>3000',
+                derivation='Logarithmic w(z) evolution freezes to w=-1 at CMB, reducing 6σ→1.3σ',
+                source='simulation:wz_evolution_desi_dr2',
+                original_tension=6.0,
+                reduced_tension=1.3,
+                mechanism='Frozen field at high-z',
+                testable='Future CMB experiments',
+                references=['DESI DR2 2024', 'PM Section 7.2']
+            ),
         }
 
     # Add KK spectrum (from config)
