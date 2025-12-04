@@ -939,9 +939,47 @@ if (typeof module !== 'undefined' && module.exports) {
     print(f"* Generated {filename}")
     return filename
 
+def add_sections_metadata(constants):
+    """Add sections/content metadata to constants"""
+    try:
+        from sections_content import SECTIONS, get_required_values
+
+        sections_meta = {
+            'meta': {
+                'description': 'Section content metadata for paper and website',
+                'version': '1.0',
+                'last_updated': datetime.now().strftime('%Y-%m-%d')
+            }
+        }
+
+        # Add each section's metadata
+        for section_id, section_data in SECTIONS.items():
+            sections_meta[section_id] = {
+                'title': section_data.get('title', ''),
+                'subtitle': section_data.get('subtitle', ''),
+                'content': section_data.get('content', ''),
+                'pages': section_data.get('pages', []),
+                'values': section_data.get('values', []),
+                'related_simulation': section_data.get('related_simulation', ''),
+                'has_topics': 'topics' in section_data and len(section_data.get('topics', [])) > 0,
+                'topic_count': len(section_data.get('topics', [])),
+                'required_values': get_required_values(section_id)
+            }
+
+        constants['sections'] = sections_meta
+        return constants
+
+    except ImportError:
+        print("Warning: sections_content.py not found, skipping sections metadata")
+        return constants
+
 if __name__ == '__main__':
     print("Generating enhanced theory constants with metadata...")
     constants = generate_enhanced_constants()
+
+    # Add sections metadata
+    constants = add_sections_metadata(constants)
+
     filename = write_enhanced_js(constants)
     print(f"\nEnhanced constants written to: {filename}")
     print(f"Total categories: {len(constants)}")

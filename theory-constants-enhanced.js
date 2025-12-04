@@ -815,6 +815,176 @@ const PM = {
         "SO(10) GUT literature"
       ]
     }
+  },
+  "sections": {
+    "meta": {
+      "description": "Section content metadata for paper and website",
+      "version": "1.0",
+      "last_updated": "2025-12-05"
+    },
+    "abstract": {
+      "title": "Abstract",
+      "subtitle": "A 26D Two-Time Framework for Particle Physics and Cosmology",
+      "content": "The Principia Metaphysica presents a comprehensive geometric framework unifying particle physics\nand cosmology through a 26-dimensional two-time bosonic string theory. The framework achieves\ndimensional reduction via Sp(2,R) gauge fixing (26D \u2192 13D shadow) followed by G\u2082 manifold\ncompactification (13D \u2192 6D effective \u2192 4D observable).\n\nKey achievements include exact prediction of three fermion generations from topology\n(n_gen = \u03c7_eff/48 = 144/48 = 3), SO(10) gauge unification geometrically derived from\nG\u2082 holonomy, complete PMNS matrix with 0.09\u03c3 average agreement, dark energy equation\nof state w\u2080 = -0.8528 matching DESI DR2 at 0.38\u03c3, and proton decay lifetime\n\u03c4_p = 3.83\u00d710\u00b3\u2074 years with branching ratios.\n\nThe framework resolves six major theoretical challenges: generation count, Planck tension\n(reduced 6\u03c3\u21921.3\u03c3), gauge unification scale, PMNS matrix derivation, KK spectrum quantification,\nand proton decay channels. Experimental validation includes 10/14 predictions within 1\u03c3,\n3 exact matches, and DESI DR2 confirmation. Critical tests include neutrino mass ordering\n(IH at 85.5% confidence, testable by JUNO 2027-2030) and KK gravitons at 5 TeV\n(6.2\u03c3 HL-LHC discovery potential).",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/index.html",
+          "section": "https://www.metaphysic\u00e6.com/index.html#abstract",
+          "order": 1,
+          "include": [
+            "title",
+            "subtitle",
+            "content"
+          ],
+          "hover_details": false,
+          "template_type": "Hero Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html",
+          "section": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html#abstract",
+          "order": 1,
+          "include": [
+            "title",
+            "content"
+          ],
+          "hover_details": false,
+          "template_type": "Paper Section"
+        }
+      ],
+      "values": [],
+      "related_simulation": null,
+      "has_topics": false,
+      "topic_count": 0,
+      "required_values": []
+    },
+    "geometric_framework": {
+      "title": "Section 1: Geometric Framework",
+      "subtitle": "26D \u2192 13D \u2192 4D Dimensional Reduction",
+      "content": "The Principia Metaphysica framework begins with 26-dimensional bosonic string theory,\nselected for its critical dimension requirement (Virasoro anomaly cancellation).\nThe framework employs a two-stage dimensional reduction process.\n\nFirst, Sp(2,R) gauge fixing projects the 26D bulk onto a (13,1) shadow spacetime,\nimplementing Itzhak Bars' two-time physics formalism. This creates dual temporal\ndimensions with Z\u2082 mirror symmetry, establishing both visible and shadow sectors.\n\nSecond, a twisted connected sum (TCS) G\u2082 manifold compactifies 7 internal dimensions,\nleaving a 6D effective theory that reduces to the observed 4D spacetime. The G\u2082 holonomy\nuniquely determines SO(10) gauge symmetry, while the flux-dressed Euler characteristic\n\u03c7_eff = 144 geometrically predicts exactly three fermion generations.\n\nThe framework's key innovation is deriving particle content and coupling structure\nfrom pure geometry, with no free parameters for generation count, gauge group,\nor unification scale.",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html",
+          "section": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html#geometric_framework",
+          "order": 2,
+          "include": [
+            "title",
+            "content",
+            "topics::dimensional_reduction",
+            "topics::euler_characteristic"
+          ],
+          "hover_details": true,
+          "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/geometric-framework.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
+        }
+      ],
+      "values": [
+        "D_bulk",
+        "D_after_sp2r",
+        "D_common",
+        "chi_eff",
+        "n_gen",
+        "b2",
+        "b3"
+      ],
+      "related_simulation": "dimensions",
+      "has_topics": true,
+      "topic_count": 3,
+      "required_values": [
+        "D_after_sp2r",
+        "D_bulk",
+        "D_common",
+        "D_effective",
+        "D_internal",
+        "b2",
+        "b3",
+        "chi_eff",
+        "n_gen"
+      ]
+    },
+    "cosmology": {
+      "title": "Section 2: Cosmology and Dark Energy",
+      "subtitle": "w\u2080 from Maximum Entropy Principle",
+      "content": "TO BE MIGRATED FROM PAPER",
+      "pages": [],
+      "values": [
+        "w0_PM",
+        "wa_PM_effective",
+        "d_eff",
+        "planck_tension_resolved"
+      ],
+      "related_simulation": "dark_energy",
+      "has_topics": false,
+      "topic_count": 0,
+      "required_values": [
+        "d_eff",
+        "planck_tension_resolved",
+        "w0_PM",
+        "wa_PM_effective"
+      ]
+    },
+    "gauge_unification": {
+      "title": "Section 3: Gauge Unification",
+      "subtitle": "M_GUT from G\u2082 Torsion",
+      "content": "TO BE MIGRATED FROM PAPER",
+      "pages": [],
+      "values": [
+        "M_GUT",
+        "alpha_GUT_inv"
+      ],
+      "related_simulation": "gauge_unification",
+      "has_topics": false,
+      "topic_count": 0,
+      "required_values": [
+        "M_GUT",
+        "alpha_GUT_inv"
+      ]
+    },
+    "fermion_sector": {
+      "title": "Section 4: Fermion Sector",
+      "subtitle": "PMNS Matrix from G\u2082 Geometry",
+      "content": "TO BE MIGRATED FROM PAPER",
+      "pages": [],
+      "values": [
+        "theta_23",
+        "theta_12",
+        "theta_13",
+        "delta_CP",
+        "avg_sigma"
+      ],
+      "related_simulation": "pmns_matrix",
+      "has_topics": false,
+      "topic_count": 0,
+      "required_values": [
+        "avg_sigma",
+        "delta_CP",
+        "theta_12",
+        "theta_13",
+        "theta_23"
+      ]
+    },
+    "predictions": {
+      "title": "Section 7: Falsifiable Predictions",
+      "subtitle": "Experimental Tests 2027-2035",
+      "content": "TO BE MIGRATED FROM PAPER",
+      "pages": [],
+      "values": [],
+      "related_simulation": "validation",
+      "has_topics": false,
+      "topic_count": 0,
+      "required_values": []
+    }
   }
 };
 
