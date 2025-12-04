@@ -25,7 +25,7 @@
 const PM = {
   "meta": {
     "version": "8.4",
-    "last_updated": "2025-12-04",
+    "last_updated": "2025-12-05",
     "description": "Enhanced theory constants with full metadata - v8.4 with CKM rotation and TCS cycle orientations",
     "has_metadata": true,
     "hover_enabled": true
@@ -698,6 +698,104 @@ const PM = {
       "source": "simulation:gauge_unification",
       "references": [
         "PM Section 3"
+      ]
+    }
+  },
+  "xy_bosons": {
+    "M_X": {
+      "value": 2.118e+16,
+      "unit": "GeV",
+      "display": "2.118\u00d710\u00b9\u2076",
+      "uncertainty": 900000000000000.0,
+      "description": "X boson mass (heavy gauge boson)",
+      "formula": "M_X = M_GUT from SO(10) symmetry",
+      "derivation": "Geometrically derived from TCS G\u2082 torsion",
+      "source": "geometric:M_GUT",
+      "charge": 1.3333333333333333,
+      "charge_display": "\u00b14/3 e",
+      "references": [
+        "Acharya-Witten 2001",
+        "SO(10) GUT"
+      ]
+    },
+    "M_Y": {
+      "value": 2.118e+16,
+      "unit": "GeV",
+      "display": "2.118\u00d710\u00b9\u2076",
+      "uncertainty": 900000000000000.0,
+      "description": "Y boson mass (heavy gauge boson)",
+      "formula": "M_Y = M_GUT from SO(10) symmetry",
+      "derivation": "Assumed degenerate with M_X (mass splitting unknown)",
+      "source": "geometric:M_GUT",
+      "charge": 0.3333333333333333,
+      "charge_display": "\u00b11/3 e",
+      "references": [
+        "Acharya-Witten 2001",
+        "SO(10) GUT"
+      ]
+    },
+    "alpha_GUT": {
+      "value": 0.04248088360237893,
+      "unit": "dimensionless",
+      "display": "0.0425",
+      "description": "GUT coupling strength (fine structure at M_GUT)",
+      "formula": "\u03b1_GUT = 1/23.54",
+      "derivation": "3-loop RG running from M_Z to M_GUT",
+      "source": "simulation:gauge_unification",
+      "references": [
+        "PM Section 3"
+      ]
+    },
+    "tau_estimate": {
+      "value": 1e-41,
+      "unit": "seconds",
+      "display": "~10\u207b\u2074\u00b9 s",
+      "description": "X,Y boson lifetime (theoretical estimate)",
+      "formula": "\u03c4 ~ \u210f/M_GUT",
+      "derivation": "Order of magnitude from decay width estimate",
+      "source": "theoretical_estimate",
+      "uncertainty_type": "order_of_magnitude",
+      "references": [
+        "Standard GUT phenomenology"
+      ]
+    },
+    "N_total": {
+      "value": 45.0,
+      "unit": "bosons",
+      "display": "45",
+      "description": "Total SO(10) gauge bosons",
+      "formula": "dim[SO(10) adjoint] = 45",
+      "derivation": "SO(10) Lie algebra dimension",
+      "source": "group_theory",
+      "fixed": true,
+      "references": [
+        "Georgi-Glashow 1974"
+      ]
+    },
+    "N_X": {
+      "value": 12.0,
+      "unit": "bosons",
+      "display": "12",
+      "description": "Number of X-type bosons (charge \u00b14/3)",
+      "formula": "From SO(10) representation decomposition",
+      "derivation": "SO(10) \u2192 SU(5) \u2192 SM breaking pattern",
+      "source": "group_theory",
+      "fixed": true,
+      "references": [
+        "SO(10) GUT literature"
+      ]
+    },
+    "N_Y": {
+      "value": 12.0,
+      "unit": "bosons",
+      "display": "12",
+      "description": "Number of Y-type bosons (charge \u00b11/3)",
+      "formula": "From SO(10) representation decomposition",
+      "derivation": "SO(10) \u2192 SU(5) \u2192 SM breaking pattern",
+      "source": "group_theory",
+      "fixed": true,
+      "references": [
+        "SO(10) GUT literature"
       ]
     }
   }

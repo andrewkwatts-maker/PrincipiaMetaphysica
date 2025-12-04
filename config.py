@@ -455,6 +455,72 @@ class GaugeUnificationParameters:
 
 
 # ==============================================================================
+# X,Y HEAVY GAUGE BOSONS (SO(10))
+# ==============================================================================
+
+class XYGaugeBosonParameters:
+    """
+    SO(10) heavy gauge bosons (X and Y particles).
+    These mediate proton decay and are predicted but not yet observed.
+
+    GEOMETRICALLY CONSTRAINED:
+    - Masses from M_GUT (TCS torsion logarithms)
+    - Coupling from alpha_GUT (3-loop RG)
+    - Charges from SO(10) representation theory
+
+    THEORETICAL ESTIMATES:
+    - Lifetimes from decay width calculations
+    - Branching ratios require full Yukawa matrix
+    """
+
+    # Masses (Geometrically Derived from M_GUT)
+    M_X = GaugeUnificationParameters.M_GUT      # [GeV] X boson mass = M_GUT
+    M_Y = GaugeUnificationParameters.M_GUT      # [GeV] Y boson mass = M_GUT (assume degeneracy)
+    M_X_ERROR = GaugeUnificationParameters.M_GUT_ERROR  # [GeV] From TCS flux variations
+    M_Y_ERROR = GaugeUnificationParameters.M_GUT_ERROR  # [GeV] Same uncertainty
+
+    # Couplings (from Gauge Unification)
+    ALPHA_GUT = GaugeUnificationParameters.ALPHA_GUT    # Fine structure at M_GUT
+    ALPHA_GUT_INV = GaugeUnificationParameters.ALPHA_GUT_INV  # 23.54
+
+    # Electric Charges (SO(10) Representation Theory - FIXED)
+    CHARGE_X = 4/3  # e (X boson charge)
+    CHARGE_Y = 1/3  # e (Y boson charge)
+
+    # Quantum Numbers (SO(10) Group Structure - FIXED)
+    SPIN = 1                # Vector boson
+    B_VIOLATING = True      # Violates baryon number
+    L_VIOLATING = True      # Violates lepton number
+
+    # SO(10) Gauge Boson Counting (Group Theory - FIXED)
+    N_TOTAL_BOSONS = 45     # Total SO(10) adjoint representation
+    N_SM_BOSONS = 12        # Standard Model: 8 gluons + 3 W + 1 photon
+    N_X_BOSONS = 12         # X-type bosons (charge ±4/3)
+    N_Y_BOSONS = 12         # Y-type bosons (charge ±1/3)
+    N_NEUTRAL_HEAVY = 9     # Heavy neutral bosons (Z', W'' cousins)
+
+    # Lifetimes (Theoretical Estimate)
+    @staticmethod
+    def lifetime_estimate():
+        """
+        τ ~ ℏ/Γ ~ ℏ/M_GUT (order of magnitude)
+        Returns: lifetime in seconds
+        """
+        import scipy.constants as const
+        hbar_GeV_s = const.hbar / const.e / 1e9  # Convert J·s to GeV·s
+        return hbar_GeV_s / XYGaugeBosonParameters.M_X  # ~10^-41 seconds
+
+    # Branching Ratios (Currently Unknown - Need Full Yukawa Calculation)
+    # These would come from wavefunction overlaps on G₂ associative cycles
+    BR_UNKNOWN = True       # Flag indicating BRs not yet calculated
+
+    # Decay Channels (Qualitative)
+    # X bosons: u + ū, u + e⁺, d + νₑ
+    # Y bosons: d + d̄, d + νₑ, u + e⁻
+    # Exact branching ratios require Yukawa matrix diagonalization
+
+
+# ==============================================================================
 # NEUTRINO SECTOR
 # ==============================================================================
 
