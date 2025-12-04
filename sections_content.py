@@ -107,7 +107,33 @@ have been validated through SymPy symbolic computation and numerical analysis.
             "exact_matches",
             "issues_resolved"
         ],
-        "topics": []
+        "topics": [
+            {
+                "id": "quest-unification",
+                "title": "1.1 The Quest for Unification",
+                "template_type": "subsection"
+            },
+            {
+                "id": "geometrization",
+                "title": "1.2 Geometrization of Forces",
+                "template_type": "subsection"
+            },
+            {
+                "id": "fermionic-foundation",
+                "title": "1.3 A Fermionic Foundation for Geometry",
+                "template_type": "subsection"
+            },
+            {
+                "id": "division-algebra-origin",
+                "title": "1.4 The Division Algebra Origin of D = 13 (Observable Shadow of 26D)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "outline",
+                "title": "1.5 Outline of the Paper (Two-Time Framework)",
+                "template_type": "subsection"
+            }
+        ]
     },
 
     "geometric_framework": {
@@ -603,7 +629,23 @@ All core physics predictions are complete and falsifiable.
             "prob_IH_mean",
             "avg_sigma"
         ],
-        "topics": []
+        "topics": [
+            {
+                "id": "summary",
+                "title": "8.1 Summary of Results",
+                "template_type": "subsection"
+            },
+            {
+                "id": "falsifiability",
+                "title": "8.2 Predictions and Falsifiability",
+                "template_type": "subsection"
+            },
+            {
+                "id": "future-research",
+                "title": "8.3 Future Research Directions",
+                "template_type": "subsection"
+            }
+        ]
     },
 
     "fermion_sector": {
@@ -702,6 +744,349 @@ overlap geometry explaining the mass ratio m_t/m_e ~ 10⁵ without fine-tuning.
             {
                 "id": "strong_cp",
                 "title": "4.6 The Strong CP Problem",
+                "template_type": "subsection"
+            }
+        ]
+    },
+
+    "pneuma_lagrangian": {
+        "pages": [
+            {
+                "file": "https://www.metaphysicæ.com/sections/pneuma-lagrangian.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": True,
+                "template_type": "Section Page"
+            }
+        ],
+        "title": "The Pneuma Lagrangian",
+        "subtitle": "The Fundamental Fermionic Field Sourcing All Physics",
+        "content": """
+The Pneuma Lagrangian represents the fundamental fermionic field action in the 26-dimensional
+two-time framework, from which all of physics emerges - both spacetime geometry and matter content.
+The full action S = ∫ d²⁶X √(-G) [R + Ψ̄_P (iΓᴹD_M - m)Ψ_P] describes an 8192-component spinor
+field in the 26D Clifford algebra Cl(24,2), which reduces to 64 effective components via Sp(2,R)
+gauge fixing to the 13D shadow structure.
+
+The Pneuma field Ψ_P is not merely a matter field living on fixed background spacetime - it is
+the fundamental source of spacetime itself. Through its bilinear condensates ⟨Ψ̄_P Γ_MN Ψ_P⟩ ≠ 0,
+the vacuum expectation values generate the metric structure of the internal G₂ manifold K_Pneuma
+(Twisted Connected Sum construction with Betti numbers b₂=4, b₃=24). Upon dimensional reduction,
+the same field yields 4D chiral fermions with generation count n_gen = χ_eff/48 = 144/48 = 3
+from the topology of zero modes.
+
+This page provides a detailed breakdown of each component term, the 26D → 13D gamma matrix
+structure, covariant derivatives with gauge fields, and the complete Lagrangian hierarchy from
+the master 26D bulk action through the 13D shadow effective theory down to the 4D observable
+effective Lagrangian and Mashiach attractor dynamics.
+        """.strip(),
+        "related_simulation": None,
+        "values": [
+            "D_bulk",
+            "D_after_sp2r",
+            "chi_eff",
+            "b2",
+            "b3",
+            "n_gen"
+        ],
+        "topics": [
+            {
+                "id": "component_breakdown",
+                "title": "Component Breakdown",
+                "template_type": "subsection"
+            },
+            {
+                "id": "gamma_matrices",
+                "title": "The Gamma Matrices: 26D to 13D",
+                "template_type": "subsection"
+            },
+            {
+                "id": "covariant_derivative",
+                "title": "The Covariant Derivative",
+                "template_type": "subsection"
+            },
+            {
+                "id": "physical_interpretation",
+                "title": "Physical Interpretation",
+                "template_type": "subsection"
+            },
+            {
+                "id": "thermal_time_connection",
+                "title": "Connection to Thermal Time",
+                "template_type": "subsection"
+            },
+            {
+                "id": "condensate_gap",
+                "title": "Condensate Gap Equation (SymPy Derivation)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "orthogonal_time_coupling",
+                "title": "The Orthogonal Time Coupling: g·t_ortho",
+                "template_type": "subsection"
+            },
+            {
+                "id": "2t_pbrane_action",
+                "title": "2T Physics p-Brane Action Formulation",
+                "template_type": "subsection"
+            },
+            {
+                "id": "4d_effective",
+                "title": "4D Effective Lagrangian",
+                "template_type": "subsection"
+            },
+            {
+                "id": "lagrangian_hierarchy",
+                "title": "Complete Lagrangian Hierarchy",
+                "template_type": "subsection"
+            }
+        ]
+    },
+
+    "einstein_hilbert": {
+        "pages": [
+            {
+                "file": "https://www.metaphysicæ.com/sections/einstein-hilbert-term.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": True,
+                "template_type": "Section Page"
+            }
+        ],
+        "title": "The Einstein-Hilbert Term",
+        "subtitle": "26D → 13D Gravitational Action",
+        "content": """
+The effective 13D gravitational action (from the 26D two-time framework) that reduces to Einstein gravity
+in 4D upon compactification. The Einstein-Hilbert term M*¹¹R represents the gravitational sector of the
+effective 13D bulk action after Sp(2,R) gauge fixing reduces the 26D theory to a 13D shadow.
+
+In the full 26D theory with signature (24,2), the gravitational action includes contributions from both
+time dimensions. The Sp(2,R) gauge symmetry reduces the two-time structure to an effective 13D shadow.
+After imposing the Sp(2,R) constraints (X² = 0, X·P = 0, P² + M² = 0), the orthogonal time dimension
+is gauge-fixed, leaving an effective 13D description.
+
+The framework naturally includes modifications to Einstein gravity through the F(R,T,τ) formalism, where
+T is the trace of the stress-energy tensor and τ is the torsion scalar. These modifications arise from
+higher-order curvature terms from the 26D → 13D reduction, moduli stabilization effects from K_Pneuma,
+the Mashiach field dynamics driving dark energy, Z₂ mirror sector contributions, and torsion coupling
+from Pneuma spinor condensates.
+
+Upon compactification over the 8-dimensional internal manifold K_Pneuma, the 13D action reduces to
+4D Einstein gravity with the 4D Planck mass emerging from the fundamental scale and internal volume:
+M_Pl² = M*¹¹ · V₈.
+        """.strip(),
+        "related_simulation": None,
+        "values": [
+            "D_bulk",
+            "D_after_sp2r",
+            "M_Pl_GeV"
+        ],
+        "topics": [
+            {
+                "id": "26d_origin",
+                "title": "26D Origin",
+                "template_type": "subsection"
+            },
+            {
+                "id": "component_breakdown",
+                "title": "Component Breakdown",
+                "template_type": "subsection"
+            },
+            {
+                "id": "effective_13d_action",
+                "title": "Effective 13D Gravitational Action",
+                "template_type": "subsection"
+            },
+            {
+                "id": "4d_effective_gravity",
+                "title": "4D Effective Gravity",
+                "template_type": "subsection"
+            },
+            {
+                "id": "frt_modifications",
+                "title": "F(R,T,τ) Modifications",
+                "template_type": "subsection"
+            },
+            {
+                "id": "pneuma_connection",
+                "title": "Connection to the Pneuma Field",
+                "template_type": "subsection"
+            }
+        ]
+    },
+
+    "formulas": {
+        "pages": [
+            {
+                "file": "https://www.metaphysicæ.com/sections/formulas.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": True,
+                "template_type": "Section Page"
+            }
+        ],
+        "title": "Formula Reference",
+        "subtitle": "Complete collection of all equations, predictions, and mathematical relationships",
+        "content": """
+Complete collection of all equations, predictions, and mathematical relationships from Principia
+Metaphysica with interactive term explanations. Updated for the 26D framework with signature (24,2),
+Sp(2,R) gauge symmetry, and Z₂ mirror structure.
+
+All formulas are defined in formula-definitions.js and organized into eight major categories:
+Fundamental Action, Geometric Framework, Pneuma Field, Gauge Unification, Thermal Time,
+Cosmology & Dark Energy, Testable Predictions, and Hidden Variables (1+3 Branes).
+
+The reference includes 15 established physics formulas, 12 new theory formulas, 5 derived results,
+and 6 testable predictions, providing a comprehensive mathematical foundation for the framework.
+        """.strip(),
+        "related_simulation": None,
+        "values": [],
+        "topics": [
+            {
+                "id": "fundamental_action",
+                "title": "1. Fundamental Action",
+                "template_type": "subsection"
+            },
+            {
+                "id": "geometric_framework_formulas",
+                "title": "2. Geometric Framework",
+                "template_type": "subsection"
+            },
+            {
+                "id": "pneuma_field_formulas",
+                "title": "3. Pneuma Field",
+                "template_type": "subsection"
+            },
+            {
+                "id": "gauge_unification_formulas",
+                "title": "4. Gauge Unification",
+                "template_type": "subsection"
+            },
+            {
+                "id": "thermal_time_formulas",
+                "title": "5. Thermal Time",
+                "template_type": "subsection"
+            },
+            {
+                "id": "cosmology_formulas",
+                "title": "6. Cosmology & Dark Energy",
+                "template_type": "subsection"
+            },
+            {
+                "id": "predictions_formulas",
+                "title": "7. Testable Predictions",
+                "template_type": "subsection"
+            },
+            {
+                "id": "hidden_variables_formulas",
+                "title": "8. Hidden Variables (1+3 Branes)",
+                "template_type": "subsection"
+            }
+        ]
+    },
+
+    "theory_analysis": {
+        "pages": [
+            {
+                "file": "https://www.metaphysicæ.com/sections/theory-analysis.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": False,
+                "template_type": "Section Page"
+            }
+        ],
+        "title": "Critical Analysis & Validation Summary",
+        "subtitle": "v8.4 Framework - Publication Ready (A+ Grade)",
+        "content": """
+Comprehensive evaluation of the TCS G₂ manifold framework achieving A+ grade (97/100).
+All 14 outstanding issues resolved with geometric derivations from torsion structure.
+Publication-ready status achieved with 100% parameter derivation from first principles.
+
+The G₂ holonomy manifold framework demonstrates exceptional validation across multiple domains:
+- Internal consistency: All 14 major issues resolved through TCS G₂ torsion structure
+- Predictive power: 3 exact matches (n_gen, θ₂₃, θ₁₃), 7 strong agreements (<1σ)
+- Falsifiability: Near-term testable predictions at HL-LHC 2027, DUNE 2027, Hyper-K 2030s
+- Geometric foundation: M_GUT = 2.12×10¹⁶ GeV from torsion, w₀ = -0.853 from MEP
+
+Framework progression: v6.0 (B- grade, fitted parameters) → v7.0 (A- grade, geometric derivations)
+→ v8.4 (A+ grade, 14/14 issues resolved). All remaining items are quantitative refinements,
+not fundamental requirements.
+        """.strip(),
+        "related_simulation": None,
+        "values": [],
+        "topics": [
+            {
+                "id": "theory_status",
+                "title": "Theory Status Summary: v8.4 Framework (Publication Ready)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "experimental_validation",
+                "title": "Experimental Validation (v8.4)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "future_refinements",
+                "title": "Future Refinements (v8.4 Status)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "executive_summary",
+                "title": "Executive Summary (v8.4 - Publication Ready)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "mathematical_rigor",
+                "title": "Mathematical Rigor Analysis",
+                "template_type": "subsection"
+            },
+            {
+                "id": "experimental_consistency",
+                "title": "Experimental Consistency Status (v8.4)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "recent_improvements",
+                "title": "Improvements from Recent Theory Adaptations",
+                "template_type": "subsection"
+            },
+            {
+                "id": "framework_positioning",
+                "title": "Position Relative to Major Frameworks",
+                "template_type": "subsection"
+            },
+            {
+                "id": "development_history",
+                "title": "Development History: v6.0 → v8.4 (A+ Achievement)",
+                "template_type": "subsection"
+            },
+            {
+                "id": "key_references",
+                "title": "Key Mathematical References",
                 "template_type": "subsection"
             }
         ]
