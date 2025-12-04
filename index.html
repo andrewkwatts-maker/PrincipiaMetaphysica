@@ -372,33 +372,25 @@
                 </a>
             </div>
 
-            <!-- Publication Status Badge -->
-            <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.5rem; margin-top: 1.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <!-- Dynamic Validation Status -->
+            <div class="glass-success" style="max-width: 800px; margin: 1.5rem auto;">
                 <h4 style="color: #51cf66; margin: 0 0 0.75rem 0; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
-                    <span>&#x2713;</span> Publication-Ready Framework - Grade A+ (97/100)
+                    <span>&#x2713;</span> <span id="framework-grade">Grade A+</span>
                 </h4>
-                <p style="margin: 0 0 1rem 0; color: var(--text-primary); font-size: 0.95rem; line-height: 1.7; text-align: center;">
-                    <strong>A testable, falsifiable theoretical framework</strong> with multiple experimental validations and concrete predictions.
-                    <strong style="color: #51cf66;">ALL 14 theoretical challenges resolved</strong> through geometric derivations and precision calculations with <strong style="color: #51cf66;">100% parameter derivation from first principles</strong>.
-                </p>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
                     <div style="background: rgba(81, 207, 102, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.3rem; font-weight: 700; color: #51cf66;">10 of 14</div>
+                        <div style="font-size: 1.3rem; font-weight: 700; color: #51cf66;" id="predictions-within-1sigma">10 of 14</div>
                         <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Predictions within 1σ</div>
                     </div>
                     <div style="background: rgba(79, 172, 254, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center;">
-                        <div style="font-size: 1.3rem; font-weight: 700; color: #4facfe;">3 Exact</div>
+                        <div style="font-size: 1.3rem; font-weight: 700; color: #4facfe;" id="exact-matches">3 Exact</div>
                         <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Matches (0.00σ)</div>
                     </div>
                     <div style="background: rgba(139, 127, 255, 0.1); padding: 0.75rem; border-radius: 8px; text-align: center;">
                         <div style="font-size: 1.3rem; font-weight: 700; color: #8b7fff;">DESI DR2</div>
-                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;">Validated (0.38σ)</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.25rem;" id="desi-validation">Validated (0.38σ)</div>
                     </div>
                 </div>
-                <p style="margin-top: 1rem; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5; text-align: center; font-style: italic;">
-                    This framework makes specific, falsifiable predictions testable by current and near-future experiments (HL-LHC, DUNE, Hyper-K, LISA).
-                    Complete mathematical rigor with all parameters geometrically derived from G₂ manifold topology.
-                </p>
             </div>
 
             <!-- Master 26D Action - Interactive Display -->
@@ -764,7 +756,7 @@
                 Key Theoretical Features & Validations
             </h2>
             <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.05rem;">
-                <strong style="color: #51cf66;">Complete framework:</strong> All parameters geometrically derived with experimental validation
+                Geometrically derived parameters with experimental validation
             </p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
                 <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
@@ -1018,10 +1010,10 @@
         <!-- Resolved Issues Callout -->
         <section id="resolved-issues" style="margin: 3rem 0; padding: 2.5rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.05)); border: 2px solid rgba(81, 207, 102, 0.3); border-radius: 16px;">
             <h2 style="text-align: center; color: #51cf66; margin-bottom: 1.5rem; font-size: 1.8rem; display: flex; align-items: center; justify-content: center; gap: 0.75rem;">
-                <span style="font-size: 2rem;">✓</span> Complete Mathematical Framework
+                <span style="font-size: 2rem;">✓</span> Mathematical Framework
             </h2>
             <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.1rem;">
-                <strong style="color: #51cf66;">ALL 14 theoretical challenges resolved</strong> through geometric derivations and precision calculations
+                Geometric derivations and precision calculations
             </p>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem;">
                 <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
@@ -1259,5 +1251,9 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+
+    <!-- Theory Constants and Validation Stats -->
+    <script src="theory-constants-enhanced.js"></script>
+    <script src="js/validation-stats.js"></script>
 </body>
 </html>

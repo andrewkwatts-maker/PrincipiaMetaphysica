@@ -1,0 +1,1460 @@
+{
+  "principia-metaphysica-paper.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\principia-metaphysica-paper.html",
+    "equation_boxes": [],
+    "key_patterns": {
+      "S_26D": 2,
+      "PMNS_matrix": 3,
+      "proton_decay": 5,
+      "w(z)": 23,
+      "M_Planck": 27,
+      "M_star": 23,
+      "F(R,T,tau)": 4,
+      "Ricci_scalar": 5,
+      "CKM_matrix": 3,
+      "neutrino_mixing": 4,
+      "dark_energy_w0": 17,
+      "GUT_scale": 36,
+      "Mashiach_field": 9
+    },
+    "has_hover": true,
+    "pm_references": [],
+    "data_categories": [
+      "validation",
+      "topology",
+      "gauge_unification",
+      "dark_energy",
+      "proton_decay_channels",
+      "proton_decay",
+      "pmns_matrix",
+      "neutrino_mass_ordering"
+    ]
+  },
+  "sections/geometric-framework.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\geometric-framework.html",
+    "equation_boxes": [
+      {
+        "type": "equation-box",
+        "content": "S 26D = \u222b d 26 x \u221a|G| [M * 24 R 26 +\n                \u03a8\u0304 P (i\u0393 M D M - m)\u03a8 P + \u2112 Sp(2,R) ] (2.0) \u2014 26D Master Action",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "X 2 = 0, \u00a0\u00a0\u00a0 X\u00b7P = 0, \u00a0\u00a0\u00a0 P 2 + M 2 = 0 Sp(2,R) gauge constraints (two-time physics)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "M 26 = M A 14 \u2297 T M B 14 26D\u219213D shadow decomposition",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details D D",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "formula-main",
+        "content": "Expand derivation: S 13D = \u222b d 13 x \u221a|G| [M * 11 R + \u03a8 P (\u0393D - m)\u03a8 P ]",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "26D (24,2) \u2192 13D (12,1) \u2192 6D (5,1) \u2192 4D (3,1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "The K3 surfaces S\u208a and S\u208b at asymptotic infinity have Picard lattices N\u208a and N\u208b\n                    (both rank 2) that must embed primitively into the K3 lattice: \u039b = U\u00b3 \u2295 (-E\u2088)\u00b2 with rank 22, signature (3,19)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details K Pneuma K Pneuma",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details \u210b bulk \u210b bulk",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details \u03c1 B 1 \u03c1 B 1",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details \u0394\u03c6 \u0394\u03c6",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details \u03bb n \u03bb n",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details Vol(G\u2082) = \u221a( \u03c7 eff \u03c7 eff",
+        "has_tooltip": true,
+        "data_category": "topology",
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details m KK,1 m KK,1",
+        "has_tooltip": true,
+        "data_category": "kk_spectrum",
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details m KK,n = \u221a\u03bb n \u00d7 (1/R c ) \u2248 \u221a(n\u00b2/Vol(G\u2082)) \u00d7 5 TeV nth KK mode mass",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details m KK (n,m) m KK (n,m)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details \u03c3(pp \u2192 KK\u2081 + X) \u03c3(pp \u2192 KK\u2081 + X)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover for details Discovery Significance Expected significance",
+        "has_tooltip": true,
+        "data_category": "kk_spectrum",
+        "label": null
+      }
+    ],
+    "key_patterns": {
+      "S_26D": 1,
+      "M_Planck": 17,
+      "M_star": 47,
+      "Ricci_scalar": 6,
+      "GUT_scale": 9,
+      "Mashiach_field": 2
+    },
+    "has_hover": true,
+    "pm_references": [
+      "PM.kk_spectrum",
+      "PM.proton_decay",
+      "PM.topology"
+    ],
+    "data_categories": [
+      "kk_spectrum",
+      "proton_decay",
+      "shared_dimensions",
+      "topology"
+    ]
+  },
+  "sections/cosmology.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\cosmology.html",
+    "equation_boxes": [
+      {
+        "type": "equation-box",
+        "content": "ds 2 13 = g \u03bc\u03bd (x)dx \u03bc dx \u03bd +\n            g mn (x,y)dy m dy n + 2A \u03bc a (x)K a m dx \u03bc dy m (6.1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S 14 = (1/2\u03ba 14 2 ) \u222b d 14 x \u221a(-G) R 14 (6.2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "g mn (x,y) = e 2\u03c3(x) g mn (0) (y) (6.4)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "ds 2 26 = G MN dX M dX N , \u00a0\u00a0 M,N = 0,1,...,25",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "X M \u2202 M \u03a6 = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "ds 2 14 = g \u03bc\u03bd dx \u03bc dx \u03bd + g mn dy m dy n",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "t total = t therm + \u03b2 t ortho , \u00a0\u00a0 \u03b2 = cos(\u03b8 mirror )",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "c total = c bulk + c ghosts + c matter = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "c total = 24 \u2212 26 + 2 = 0 \u2713",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "d eff = 12 + 0.5 \u00d7 (\u03b1\u2084 + \u03b1\u2085) = 12 + 0.5 \u00d7 1.1781 = 12.589",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "w 0 = -(d eff - 1)/(d eff + 1) = -(12.589 - 1)/(12.589 + 1) =",
+        "has_tooltip": true,
+        "data_category": "dark_energy",
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "(5,2) + 3\u00d7(3,2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "T BPS \u2265 |Z p,q | / V p",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u2211 Q branes + Q O-planes = 0 \u00a0\u00a0 (tadpole cancellation)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "C 2 (SO(24,2)) = p(p + 22)/4",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "dim(\u03a8 26D ) = 2 (26-2)/2 = 2 12 = 4096",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03a8 26D \u2192 \u03a8 4D \u2297 \u03c7 SO(10) \u2297 \u03b7 mirror",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "dim eff = 4 \u00d7 16 = 64 components",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S = \u222b d 4 x \u221a(-g) [\u03c6R + \u03c8T - V(\u03c6,\u03c8)] (6.6)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "T \u03bb \u03bc\u03bd = \u0393 \u03bb [\u03bc\u03bd] \u2260 0 (6.7)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "T \u03bb \u03bc\u03bd \u223c \u03ba 2 \u27e8\u03a8 P \u03b3 \u03bb \u03b3 [\u03bc \u03b3 \u03bd] \u03a8 P \u27e9 (6.8)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "F(R,T,\u03c4) = R + \u03b1R 2 + \u03b2T + \u03b3RT + \u03b4(\u2202\u03c4)T (6.8a)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S eff = (1/(16\u03c0 2 )) \u222b d 4 x \u221a-g [a 0 + a 2 R + a 4 R 2 + ...]",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b1 = N eff /(1440\u03c0 2 M Pl 2 ) = 64/(1440\u03c0 2 M Pl 2 ) \u2248 4.5 \u00d7 10 -3 /M Pl 2",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u222b d 4 x \u221a-g e 2\u03c3 T matter \u2192 \u222b d 4 x \u221a-g (1 + 2\u03c3 + ...) T",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b2 = 2\u27e8\u03c3\u27e9 = 2\u03c6 0 \u2248 0.15",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b3 = (g 2 )/(M Pl 2 ) \u00d7 V K -1/2",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b3 \u2248 10 -4 /M Pl 2",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u222b d 26 X \u221a-G &bar;\u03a8 i\u0393 M \u2202 M \u03a8 \u2283 \u222b d 4 x \u221a-g [(\u2202 t )T + g \u0394t ortho (\u2202 \u03c4 )T]",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b4 = g \u0394t ortho \u2248 0.1 \u00d7 10 -18 s = 10 -19 s",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "C ISW = 1 + (\u03b3/\u03b2) \u00d7 (R/T) \u00d7 f grav \u2248 1 + (10 -4 /0.15) \u00d7 O(1) \u00d7 2.3 \u2248 1.5",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b4T/T ~ \u03b2 \u00d7 (\u03b4\u03c6/M Pl ) \u00d7 (\u0394\u03b8/10\u00b0) -2 \u2248 0.15 \u00d7 0.01 \u00d7 10 -4 \u2248 -70 \u03bcK",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "M moduli = {(\u03c3, \u03c7 i , A m a ) : g mn satisfies Einstein equations on K Pneuma } (6.9)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "ds\u00b2 6 = e -2ky \u03b7 \u03bc\u03bd dx \u03bc dx \u03bd + dy\u00b2 + dz\u00b2 (6.9a)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "M tower (d) ~ M Pl e -\u03b1d/M Pl",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b1 > \u03b1 crit = \u221a(2/3) \u2248 0.816",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "a = \u221a(26/13) = \u221a(2) \u2248 1.414",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "1.414 > 0.816 \u00a0 \u2714 SWAMPLAND CONSTRAINT SATISFIED",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "V(\u03c7) = V 0 [1 + (\u03c7/M Pl ) -\u03b1 ] \u00a0\u00a0\n            (tracker potential) (6.11)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "x = \u03c7'/(\u221a6 H) \u00a0\u00a0\u00a0\n          y = \u221a(V/3H 2 M Pl 2 ) \u00a0\u00a0\u00a0\n          z = \u221a(\u03c1 m /3H 2 M Pl 2 )",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c1 \u039b = V 0 \u2248 (2.3 \u00d7 10 -3 eV) 4 (6.14)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "V 0 = M Pl 4 \u00d7 exp(-4\u03b1d/M Pl )",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "V 0 = n gen \u00d7 M Pl 4 / S dS \u2248 3 \u00d7 10 -46 GeV 4",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "w 0 = -(D eff - 1)/(D eff + 1) = -(12.589 - 1)/(12.589 + 1) = \u00b1 0.001",
+        "has_tooltip": true,
+        "data_category": "dark_energy",
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Thermal Time (PM)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "F(R,T) = R + \u03b1R 2 + \u03b2T + \u03b3RT",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u0394w 0 = -\u03b2 \u00d7 (\u03a9 m /\u03a9 DE ) \u00d7 C ISW \u2248 -0.15 \u00d7 0.43 \u00d7 1.5 \u2248 -0.10",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "True form (PM)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "w 0 = -(D eff - 1)/(D eff + 1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "D eff = 12 + \u03b4D quantum = 12 + 0.589 = 12.589",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "w 0 = -(12.589 - 1)/(12.589 + 1) = -11.589/13.589 = \u00b1 0.001",
+        "has_tooltip": true,
+        "data_category": "dark_energy",
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "L int = (g/f) (\u2202 \u03bc \u03c7) J \u03bc Pneuma Protected by approximate shift symmetry \u03c7 \u2192 \u03c7 + const",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b1 T (z) = 1 + (3/2) \u00d7 f m (z) where f m (z) = \u03a9 m (1+z) 3 / [\u03a9 m (1+z) 3 + \u03a9 \u039b ]",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c1' m + 3H\u03c1 m = -Q \u00a0\u00a0\u00a0\u00a0\n            \u03c1' \u03c7 + 3H(1+w)\u03c1 \u03c7 = +Q (6.15e)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "g \u03bc\u03bd = \u03b7 \u03bc\u03bd + h \u03bc\u03bd , \u00a0\u00a0 h \u03bc\u03bd ~ e i(\u03c9t - kx)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "F R &Box;h \u03bc\u03bd + (F T + \u03b4 \u2202 \u03c4 )T (1) \u03bc\u03bd = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "(-\u03c9 2 + k 2 )F R + (\u03b2 + \u03b4 \u03c9) \u03c9 2 = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c9 2 = k 2 [1 + \u03be 2 (k/M Pl ) 2 + \u03b7 k \u0394t ortho /c] (6.15a)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "LISA sensitivity: \u03b4\u03c9/\u03c9 ~ 10 -20 at f ~ 10 -3 Hz",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u27e8O A (t) O B (0)\u27e9 \u03b2 = \u27e8O B (0) O A (t + i\u03b2)\u27e9 \u03b2",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u27e8\u03a8 P (t th , t o ) \u03a8 P \u2020 (0,0)\u27e9 = \u27e8\u03a8 P \u2020 (0,0) \u03a8 P (t th + i\u03b2 th , t o + i\u03b2 o )\u27e9 (6.15b)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "K = H therm + \u03b1 TT H ortho",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c1 KMS = e -\u03b2 th H therm - \u03b2 o \u03b1 TT H ortho / Z",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u0393(E th , E o ) = e -\u03b2 th E th - \u03b2 o E o \u0393(-E th , -E o )",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S total = S therm + S ortho \u2265 0 \u00a0 \u2192 \u00a0 dS total /dt therm > 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u0398' \u2264 -(\u0398 2 /2) - 8\u03c0G\u27e8T kk \u27e9 ren (6.16)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "H phys = Ker(Q)/Im(Q) \u00a0\u00a0\u00a0 Q 2 = 0 (6.17)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "[Q, H] = 0 \u00a0\u00a0 \u21d2 \u00a0\u00a0 S-matrix is unitary on H phys (6.18)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S Pneuma /V \u2264 N modes \u00d7 log(2)/V \u223c 1/l Pneuma 3 (6.19)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "F R > 0 \u00a0\u00a0 (no graviton ghost) \u00a0\u00a0\u00a0\n            F RR > 0 \u00a0\u00a0 (no scalaron ghost) (6.20)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      }
+    ],
+    "key_patterns": {
+      "w(z)": 39,
+      "M_Planck": 40,
+      "M_star": 2,
+      "F(R,T,tau)": 6,
+      "Ricci_scalar": 2,
+      "dark_energy_w0": 66,
+      "Mashiach_field": 4
+    },
+    "has_hover": true,
+    "pm_references": [],
+    "data_categories": [
+      "dark_energy"
+    ]
+  },
+  "sections/fermion-sector.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\fermion-sector.html",
+    "equation_boxes": [
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions { \u0393 M \u0393 M",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions \u03a8 P \u03a8 P",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions D\u0338 Pneuma D\u0338 Pneuma",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions L L (Lagrangian density)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions n gen n gen",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions 16 16 of SO(10)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions Y ij Y ij",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions Y u Y u",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "m gen (n) = m 0 \u00b7 e \u2212n\u00b7d/\u2113 (n = 1, 2, 3)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions m \u03bd m \u03bd",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Ind(D) = (1/24\u03c0\u00b2) \u222b \u03a3\u00b3 Tr(F\u2227F)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions Ind total Ind total",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions F F (Flux dressing)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions M R3 M R3",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions \u2112 \u03b8 \u2112 \u03b8",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions d n d n",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions \u03b8\u0305 \u03b8\u0305 (theta-bar)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions a(x) a(x)",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u2112 aGG \u2112 aGG",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "f a f a",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Hover over variables for definitions \u03b8 eff \u03b8 eff",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      }
+    ],
+    "key_patterns": {
+      "M_Planck": 3,
+      "M_star": 1,
+      "neutrino_mixing": 4,
+      "GUT_scale": 3
+    },
+    "has_hover": true,
+    "pm_references": [],
+    "data_categories": [
+      "pmns_matrix",
+      "neutrino_mass_ordering",
+      "topology"
+    ]
+  },
+  "sections/predictions.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\predictions.html",
+    "equation_boxes": [
+      {
+        "type": "equation-box",
+        "content": "c e / c \u03bc ~ (m e /m \u03bc ) 2 ~ 2 \u00d7 10 -5",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "k F / s \u03bc\u03bd ~ (M Pl / M * ) 2 ~ 10 -18",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "F R h'' + F T T h + F \u03c4 \u03c4 h = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      }
+    ],
+    "key_patterns": {
+      "proton_decay": 5,
+      "w(z)": 10,
+      "M_Planck": 16,
+      "M_star": 4,
+      "dark_energy_w0": 27,
+      "GUT_scale": 10
+    },
+    "has_hover": true,
+    "pm_references": [],
+    "data_categories": [
+      "pmns_matrix",
+      "dark_energy",
+      "gauge_unification"
+    ]
+  },
+  "sections/gauge-unification.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\gauge-unification.html",
+    "equation_boxes": [
+      {
+        "type": "equation-box",
+        "content": "d\u03bb/dt = 9\u03bb 2 /(16\u03c0 2 ) SO(10) RG equation for Pneuma coupling",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "t GUT = log(M GUT /TeV) \u2248 30 \u00a0\u00a0\u21d2\u00a0\u00a0 M GUT \u2248 10 13 TeV GUT scale from RG flow parameter",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "ln(M Pl /M GUT,base ) = ln(1.22\u00d710 19 /1.8\u00d710 16 ) = ln(677.8) = 6.519 Logarithmic scale separation",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "s = [ln(M Pl /M GUT,base ) - T \u03c9 ] / N flux Warping parameter",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "s = (6.519 - (-0.8836)) / 6.283 = 7.403 / 6.283 = 1.178 Numerical evaluation: s \u2248 1.18",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "M GUT = M GUT,base \u00d7 (1 + c warp \u00b7 s) Master formula: Geometric M GUT derivation",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "M GUT = 1.8\u00d710 16 GeV \u00d7 (1 + 0.15 \u00d7 1.178) = 1.8\u00d710 16 GeV \u00d7 (1 + 0.1767) = 1.8\u00d710 16 GeV \u00d7 1.1767 = GeV Final result: 17.67% enhancement from warping",
+        "has_tooltip": true,
+        "data_category": "proton_decay",
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Uncertainty: \u0394M GUT = \u00b10.09 \u00d7 10 16 GeV \u00a0 (4.3% relative error) Error from b\u2083 flux variations",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      }
+    ],
+    "key_patterns": {
+      "proton_decay": 13,
+      "M_Planck": 4,
+      "GUT_scale": 54
+    },
+    "has_hover": true,
+    "pm_references": [],
+    "data_categories": [
+      "proton_decay",
+      "topology",
+      "gauge_unification"
+    ]
+  },
+  "sections/thermal-time.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\thermal-time.html",
+    "equation_boxes": [
+      {
+        "type": "equation-box",
+        "content": "H total = H grav + H matter = 0 (5.2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c1 = e -\u03b2K / Z \u00a0\u00a0\u21d2\u00a0\u00a0\n                        K = -log(\u03c1) - log(Z) (5.3)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "dS Pneuma /dt thermal \u2265 0 (5.5)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "X 2 = X \u03bc \u03b7 \u03bc\u03bd X \u03bd = 0 (5.5c-1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "X \u00b7 P = X \u03bc \u03b7 \u03bc\u03bd P \u03bd = 0 (5.5c-2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "P 2 = P \u03bc \u03b7 \u03bc\u03bd P \u03bd = 0 (5.5c-3)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "t obs = (X 0 + X 25 ) / \u221a2 (5.5c-4)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "ds 2 = -c 2 dt 1 2 - c 2 dt 2 2 + \u2211 i=1 24 (dx i ) 2 (5.5c)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "X 2 = X \u03bc \u03b7 \u03bc\u03bd X \u03bd = 0 P 2 = P \u03bc \u03b7 \u03bc\u03bd P \u03bd = 0 X \u00b7 P = X \u03bc \u03b7 \u03bc\u03bd P \u03bd = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "X 1 = f(X i , P i , \u03c4) \u00a0\u00a0 (i = 2, ..., 25)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Q|\u03c8\u27e9 = 0 \u00a0\u00a0 and \u00a0\u00a0 |\u03c8\u27e9 \u2260 Q|\u03c7\u27e9 for any |\u03c7\u27e9",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Q = c a L a + \u00bd f abc c a c b b c (5.5e)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "A BRST = (D - 26) + (c ghost contribution) (5.5e-1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "A BRST = 0.0 \u2713 VALIDATED",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "c total = c matter + c ghost + \u0394c gauge (5.5e-2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "c total = 24 - 26 + 2 = 0 \u2713 ANOMALY-FREE",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u210b total = \u210b matter \u2297 \u210b ghosts",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "(negative norm from X 1 ) + (negative norm from ghosts) = 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c4 = t therm = \u03b1 T \u00b7 S",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u2207S > 0 \u00a0\u00a0\u21d2\u00a0\u00a0 dt therm /d\u03c4 > 0",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S(A\u03a9) = A \u2020 \u03a9 \u00a0\u00a0 for all A \u2208 M (5.6)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "F AB (t) = \u03c9(A \u03b1 t (B)) \u00a0\u00a0\u00a0\n                        F AB (t + i\u03b2) = \u03c9(\u03b1 t (B) A) (5.8)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "(M, \u03c9) \u27f6 S = J\u0394 1/2 \u27f6 \u03c3 t = \u0394 it (\u00b7)\u0394 -it \u27f6 t = \"thermal time\" (5.3b.1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u0394 1 = K / (1 - K) \u00a0\u00a0\u21d2\u00a0\u00a0\n                        \u03c3 t (\u03a8(f)) = \u03a8(\u0394 1 it f) (5.3b.2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Spacetime = {(x \u03bc ) : \u03bc = 0,1,2,3} \u00a0\u00a0 (all events coexist)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "t thermal = \u03b1 T \u00d7 t cosmic + O(l Pl /L Hubble ) (5.4b.1)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u27e8n k \u27e9 = 1 / (e \u03b2(\u03b5 k - \u03bc) + 1) (5.11)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "{\u03a8 P (x), \u03a8 P \u2020 (x')} = \u03b4 (12) (x - x') (5.12)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S Pneuma = -k B \u2211 k [n k log(n k ) +\n                        (1-n k ) log(1-n k )] (5.13)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03a8(x 1 , ..., x i , ..., x j , ..., x N ) =\n                        -\u03a8(x 1 , ..., x j , ..., x i , ..., x N ) (5.14)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03a8 total \u2260 \u220f i \u03c8 i (irreducibly entangled) (5.15)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03c4 = 1/\u0393 \u221d 1/T \u221d a +1 (5.17)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "L = \u00bd(\u2202 \u03bc \u03c7) 2 - V(\u03c7) + \u03a8 P (i\u03b3 \u03bc \u2202 \u03bc - m)\u03a8 P + g \u03c7P \u03c7 \u03a8 P \u03a8 P (5.16b)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "Im \u03a3 R (k) = g \u03c7P 2 \u222b \u2044 d 3 p \u2044 (2\u03c0) 3 \u2044 1 \u2044 4E p E k-p [n F (E p ) + n F (E k-p )] \u00d7 (2\u03c0)\u03b4(k 0 - E p - E k-p ) (5.16c)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u0393 = \u2044 g \u03c7P 2 \u2044 16\u03c0 T (5.16d)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "H \u221d a -3/2 (5.18)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b1 T = (+1) - (-3/2) + \u03b4 Z 2 = 2.5 + 0.2 = 2.7 (5.20)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "w a = w 0 \u00d7 \u03b1 T / 3 (5.23)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "w a = (-11/13) \u00d7 2.7 / 3 \u2248 -0.76 (5.24)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u03b2 eff (a) = \u03b2 0 \u00d7 a \u00d7 (H 0 /H(a)) \u03b1 T /3 (5.25)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      }
+    ],
+    "key_patterns": {
+      "w(z)": 4,
+      "M_Planck": 3,
+      "dark_energy_w0": 13
+    },
+    "has_hover": false,
+    "pm_references": [],
+    "data_categories": []
+  },
+  "sections/pneuma-lagrangian.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\pneuma-lagrangian.html",
+    "equation_boxes": [
+      {
+        "type": "main-equation",
+        "content": "S = \u222b d 26 X \u221a(-G) [R + \u03a8 P (i\u0393 M D M - m)\u03a8 P ]",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "formula-main",
+        "content": "S = \u222b d 26 X \u221a(-G) [R + \u03a8 P (i\u0393 M D M - m)\u03a8 P ]",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u0393 \u03bc = \u03b3 \u03bc \u2297 1 16 (\u03bc = 0,1,2,3) \u0393 a+3 = \u03b3 5 \u2297 \u03a3 a (a = 1,...,8) Tensor product decomposition",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "t = \u03b1 T \u22c5 S[\u03c1] Time from Pneuma entropy",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "\u2112 int = \u03bb( \u03a8 \u03a8)\u00b2 + g\u00b7t ortho \u00b7 \u03a8 \u03a8 Interaction terms for gap derivation",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "Results (v = 2): \u0394(v=2) = (0.5 \u00d7 2) / (1 + 0.1 \u00d7 1 / 10) = 1 / 1.01 \u2248 0.99 d\u0394/dv = 0.5 / 1.01 \u2248 0.495 > 0 (stable) Numerical verification of gap stability",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "X M X M Position Null Constraint",
+        "has_tooltip": true,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "\u2112 4D,fermion = \u2211 i=1 3 \u03c8 i (i\u03b3 \u03bc D \u03bc - m i )\u03c8 i + (Yukawa couplings) 4D effective fermion Lagrangian from dimensional reduction",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "Level 1 (26D): S = \u222b d 26 X \u221a(-G) [R + \u03a8 P (i\u0393 M D M - m)\u03a8 P ] \u2193 Sp(2,R) gauge fixing Level 2 (13D): \u2112 13D = M * 11 R 13D + \u03a8 64 (i\u03b3 \u03bc \u2207 \u03bc - m eff )\u03a8 64 + \u2112 flux \u2193 KK reduction (13D \u2192 4D) Level 3 (4D): f(R,T,\u03c4) = R + \u03b1 F R 2 + \u03b2 F T + \u03b3 F R\u03c4 + \u03b4 F (\u2202 t \u03c4)R Level 4 (DE): \u2112 \u03c6 = -\u00bd(\u2202\u03c6) 2 - V(\u03c6 M ), \u00a0 V = V 0 [1 + A cos(\u03c9\u03c6 M /f)] Complete Lagrangian Hierarchy",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      }
+    ],
+    "key_patterns": {
+      "M_Planck": 6,
+      "M_star": 3,
+      "Mashiach_field": 7
+    },
+    "has_hover": false,
+    "pm_references": [],
+    "data_categories": []
+  },
+  "sections/einstein-hilbert-term.html": {
+    "file": "H:\\Github\\PrincipiaMetaphysica\\sections\\einstein-hilbert-term.html",
+    "equation_boxes": [
+      {
+        "type": "main-equation",
+        "content": "M * 11 R",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "formula-main",
+        "content": "S gravity = M * 11 \u222b d 13 x \u221a|G| R 13",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null
+      },
+      {
+        "type": "equation-box",
+        "content": "S = \u222b d 26 x \u221a|G| [F(R,T,\u03c4) + \u2112 Pneuma + \u2112 SM + \u2112 hidden ] Full 26D action with signature (24,2)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "F(R,T,\u03c4) = R + \u03b1T + \u03b2T\u00b2 + \u03b3\u03c4 + \u03b4\u03c4\u00b2 Modified gravity function with torsion coupling",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "S gravity = M * 11 \u222b d 13 x \u221a|G| R Effective 13D Einstein-Hilbert action (gauge-fixed from 26D)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "ds 2 13 = g \u03bc\u03bd (x)dx \u03bc dx \u03bd + h ab (x,y)dy a dy b Metric ansatz for KK reduction",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "S 4D = M Pl 2 \u222b d 4 x \u221a|g| R 4 + ... 4D effective gravitational action",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "M Pl 2 = M * 11 \u22c5 V 8 Planck mass from extra dimensions",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "F(R,T,\u03c4) = R + \u03b1T + \u03b2T\u00b2 + \u03b3\u03c4 + \u03b4\u03c4\u00b2 Modified gravity function (canonical form)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "G \u03bc\u03bd + \u039b eff g \u03bc\u03bd = 8\u03c0G eff T \u03bc\u03bd + \u03b1(T \u03bc\u03bd + \u0398 \u03bc\u03bd ) + 2\u03b2T T \u03bc\u03bd + S \u03bc\u03bd (\u03c4) Modified Einstein equations from F(R,T,\u03c4) variation",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "\u039b eff = (\u03b3\u03c4 + \u03b4\u03c4\u00b2)/2 Effective cosmological constant from torsion",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      },
+      {
+        "type": "equation-box",
+        "content": "G MN ~ \u27e8 \u03a8 P \u0393 (M \u2207 N) \u03a8 P \u27e9 Metric from Pneuma bilinears (schematic)",
+        "has_tooltip": false,
+        "data_category": null,
+        "label": null,
+        "label_tag": true
+      }
+    ],
+    "key_patterns": {
+      "S_gravity": 2,
+      "Einstein_equations": 1,
+      "M_Planck": 4,
+      "M_star": 11,
+      "F(R,T,tau)": 7,
+      "Ricci_scalar": 3
+    },
+    "has_hover": false,
+    "pm_references": [],
+    "data_categories": []
+  }
+}
