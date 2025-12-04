@@ -226,6 +226,90 @@ def generate_enhanced_constants():
             ),
         }
 
+    # Add X,Y heavy gauge bosons
+    constants['xy_bosons'] = {
+        'M_X': create_enhanced_constant(
+            config.XYGaugeBosonParameters.M_X,
+            unit='GeV',
+            display='2.118×10¹⁶',
+            uncertainty=config.XYGaugeBosonParameters.M_X_ERROR,
+            description='X boson mass (heavy gauge boson)',
+            formula='M_X = M_GUT from SO(10) symmetry',
+            derivation='Geometrically derived from TCS G₂ torsion',
+            source='geometric:M_GUT',
+            charge=config.XYGaugeBosonParameters.CHARGE_X,
+            charge_display='±4/3 e',
+            references=['Acharya-Witten 2001', 'SO(10) GUT']
+        ),
+        'M_Y': create_enhanced_constant(
+            config.XYGaugeBosonParameters.M_Y,
+            unit='GeV',
+            display='2.118×10¹⁶',
+            uncertainty=config.XYGaugeBosonParameters.M_Y_ERROR,
+            description='Y boson mass (heavy gauge boson)',
+            formula='M_Y = M_GUT from SO(10) symmetry',
+            derivation='Assumed degenerate with M_X (mass splitting unknown)',
+            source='geometric:M_GUT',
+            charge=config.XYGaugeBosonParameters.CHARGE_Y,
+            charge_display='±1/3 e',
+            references=['Acharya-Witten 2001', 'SO(10) GUT']
+        ),
+        'alpha_GUT': create_enhanced_constant(
+            config.XYGaugeBosonParameters.ALPHA_GUT,
+            unit='dimensionless',
+            display='0.0425',
+            description='GUT coupling strength (fine structure at M_GUT)',
+            formula='α_GUT = 1/23.54',
+            derivation='3-loop RG running from M_Z to M_GUT',
+            source='simulation:gauge_unification',
+            references=['PM Section 3']
+        ),
+        'tau_estimate': create_enhanced_constant(
+            1e-41,
+            unit='seconds',
+            display='~10⁻⁴¹ s',
+            description='X,Y boson lifetime (theoretical estimate)',
+            formula='τ ~ ℏ/M_GUT',
+            derivation='Order of magnitude from decay width estimate',
+            source='theoretical_estimate',
+            uncertainty_type='order_of_magnitude',
+            references=['Standard GUT phenomenology']
+        ),
+        'N_total': create_enhanced_constant(
+            config.XYGaugeBosonParameters.N_TOTAL_BOSONS,
+            unit='bosons',
+            display='45',
+            description='Total SO(10) gauge bosons',
+            formula='dim[SO(10) adjoint] = 45',
+            derivation='SO(10) Lie algebra dimension',
+            source='group_theory',
+            fixed=True,
+            references=['Georgi-Glashow 1974']
+        ),
+        'N_X': create_enhanced_constant(
+            config.XYGaugeBosonParameters.N_X_BOSONS,
+            unit='bosons',
+            display='12',
+            description='Number of X-type bosons (charge ±4/3)',
+            formula='From SO(10) representation decomposition',
+            derivation='SO(10) → SU(5) → SM breaking pattern',
+            source='group_theory',
+            fixed=True,
+            references=['SO(10) GUT literature']
+        ),
+        'N_Y': create_enhanced_constant(
+            config.XYGaugeBosonParameters.N_Y_BOSONS,
+            unit='bosons',
+            display='12',
+            description='Number of Y-type bosons (charge ±1/3)',
+            formula='From SO(10) representation decomposition',
+            derivation='SO(10) → SU(5) → SM breaking pattern',
+            source='group_theory',
+            fixed=True,
+            references=['SO(10) GUT literature']
+        ),
+    }
+
     # Add PMNS matrix with simulation data
     if 'pmns_matrix' in sim_data and 'pmns_nufit_comparison' in sim_data:
         pm = sim_data['pmns_matrix']
