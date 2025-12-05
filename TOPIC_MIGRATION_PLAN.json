@@ -1,20 +1,5 @@
 {
-  "priority_1_incomplete": [
-    {
-      "file": "sections\\fermion-sector.html",
-      "missing_count": 8,
-      "missing_topics": [
-        "26d_fermions",
-        "kk_zero_modes",
-        "neutrino_mass_ordering",
-        "pmns_matrix",
-        "pneuma_mechanism",
-        "so10_embedding",
-        "strong_cp",
-        "yukawa_hierarchy"
-      ]
-    }
-  ],
+  "priority_1_incomplete": [],
   "priority_2_partial": [],
   "priority_3_not_defined": [
     {
@@ -265,49 +250,6 @@
       ]
     },
     {
-      "file": "sections\\einstein-hilbert-term.html",
-      "found_topics": [
-        "26d_origin",
-        "4d_effective_gravity",
-        "component_breakdown",
-        "components_of_the_metric",
-        "connection_to_the_pneuma_field",
-        "correct_dimensions",
-        "effective_13d_gravitational_action",
-        "effective_cosmological_constant",
-        "frttau_modifications",
-        "fundamental_mass_scale",
-        "key_relation",
-        "modified_einstein_equations",
-        "ricci_scalar",
-        "ricci_tensor",
-        "the_frttau_function",
-        "the_planck_mass_relation"
-      ]
-    },
-    {
-      "file": "sections\\formulas.html",
-      "found_topics": [
-        "1_fundamental_action",
-        "2_geometric_framework",
-        "3_pneuma_field",
-        "4_gauge_unification",
-        "5_thermal_time",
-        "6_cosmology_amp_dark_energy",
-        "7_testable_predictions",
-        "8_hidden_variables_13_branes",
-        "cosmology",
-        "fundamental-action",
-        "gauge-unification",
-        "geometric-framework",
-        "hidden-variables",
-        "pneuma-field",
-        "predictions",
-        "quick_navigation",
-        "thermal-time"
-      ]
-    },
-    {
       "file": "sections\\gauge-unification.html",
       "found_topics": [
         "31_the_so10_grand_unified_framework",
@@ -516,66 +458,6 @@
       ]
     },
     {
-      "file": "sections\\pneuma-lagrangian.html",
-      "found_topics": [
-        "1_master_bulk_action_26d",
-        "2_13d_shadow_effective_lagrangian",
-        "2t_physics_framework",
-        "2t_physics_p_brane_action_formulation",
-        "3_4d_observable_effective_lagrangian",
-        "4_mashiach_attractor_lagrangian",
-        "4d_effective_lagrangian",
-        "attractor_dynamics",
-        "bps_bound_and_central_charges",
-        "brane_configuration_observable_and_shadow_branes",
-        "bulk_mass",
-        "central_charges_in_so242",
-        "complete_lagrangian_hierarchy",
-        "component_breakdown",
-        "components",
-        "condensate_gap_equation_sympy_derivation",
-        "condensate_stability_and_geometric_emergence",
-        "connection_to_thermal_time",
-        "dimensional_reduction_26d_rarr_13d",
-        "dimensional_reduction_cl242_rarr_cl121",
-        "dirac_adjoint",
-        "dynamical_evolution",
-        "equivalence_of_formulations",
-        "fermionic_primacy",
-        "first_shadow_3_brane",
-        "gauge_fixing_d2__d1",
-        "general_2t_p_brane_action",
-        "key_insight",
-        "kinetic_term",
-        "late_time_attractor",
-        "mashiach_vev",
-        "matter_coupling",
-        "mean_field_derivation",
-        "null_constraints",
-        "numerical_example",
-        "observable_5_brane",
-        "orthogonal_time_coupling",
-        "physical_interpretation",
-        "physical_role",
-        "pneuma_spinor_field",
-        "potential_parameters",
-        "quartic_interaction",
-        "second_shadow_3_brane",
-        "source_of_geometry",
-        "source_of_matter",
-        "stability_analysis",
-        "starobinsky_coefficient",
-        "summary_the_lagrangian_cascade",
-        "sympy_code_reference",
-        "the_covariant_derivative",
-        "the_gamma_matrices_26d_to_13d",
-        "third_shadow_3_brane",
-        "two_time_invariant",
-        "vacuum_energy_scale",
-        "why_two_time_dimensions"
-      ]
-    },
-    {
       "file": "sections\\predictions.html",
       "found_topics": [
         "2027_2030_junodune_neutrino_mass_hierarchy",
@@ -706,36 +588,6 @@
       ]
     },
     {
-      "file": "sections\\theory-analysis.html",
-      "found_topics": [
-        "critical_analysis__validation_summary",
-        "desi_2024_agreement_analysis_26d_framework",
-        "desi_dark_energy_tension_resolved_26d_framework",
-        "development_history_v60__v84_a_achievement",
-        "executive_summary_v84___publication_ready",
-        "experimental_consistency_status_v84",
-        "experimental_validation_v84",
-        "future_refinements_optional_not_required_for_publication",
-        "future_refinements_v84_status",
-        "improvements_from_recent_theory_adaptations",
-        "issue_resolution_status_1414_issues_resolved_a_grade",
-        "key_mathematical_references",
-        "mass_ordering_855_ih_preference",
-        "mathematical_resolution_pathways",
-        "mathematical_rigor_analysis",
-        "overall_assessment_v84_framework",
-        "position_relative_to_major_frameworks",
-        "proposed_resolutions",
-        "publication_ready_assessment",
-        "resolution_mechanisms",
-        "summary_statistics",
-        "theory_grade_assessment",
-        "theory_status_summary_v84_framework_publication_ready",
-        "unique_advantages_v84",
-        "v84_achievement_publication_ready_framework"
-      ]
-    },
-    {
       "file": "sections\\thermal-time.html",
       "found_topics": [
         "51_the_problem_of_time_in_quantum_gravity",
@@ -761,7 +613,7 @@
         "573_the_core_derivation",
         "575_the_thermal_time_equation_of_state",
         "576_physical_interpretation_connection_to_modular_flow",
-        "alpha-derivation",
+        "alpha_derivation",
         "block-universe",
         "blueArrow",
         "brstArrow",
@@ -779,6 +631,7 @@
         "entropyArrow",
         "entropyGrad",
         "entropyIncGrad",
+        "entropy_current",
         "entropy_gradient_and_the_arrow_of_time",
         "entropy_of_the_pneuma_field",
         "experimental_predictions_from_the_thermal_time_hypothesis",
@@ -824,7 +677,7 @@
         "timeFlowArrow",
         "timeGrad",
         "timeless_equations_and_the_frozen_formalism",
-        "tomita-takesaki",
+        "tomita_takesaki",
         "total_time_and_the_mirror_angle",
         "tth",
         "two-time-physics",
@@ -851,6 +704,11 @@
   ],
   "complete": [
     "principia-metaphysica-paper.html",
-    "sections\\geometric-framework.html"
+    "sections\\einstein-hilbert-term.html",
+    "sections\\fermion-sector.html",
+    "sections\\formulas.html",
+    "sections\\geometric-framework.html",
+    "sections\\pneuma-lagrangian.html",
+    "sections\\theory-analysis.html"
   ]
 }
