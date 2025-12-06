@@ -334,6 +334,82 @@ XY_BOSONS = {
 }
 
 # ============================================================================
+# CALABI-YAU GEOMETRY
+# ============================================================================
+
+CALABI_YAU = {
+    "ricci_flat": {
+        "latex": r"R_{ij} = 0 \quad \text{and} \quad c_1(M) = 0",
+        "html": "R<sub>ij</sub> = 0 and c₁(M) = 0",
+        "pm_values": [],
+        "derivation": "Ricci-flat condition for Calabi-Yau manifolds (foundational)",
+        "numerical": "Required for preserved supersymmetry"
+    },
+
+    "euler_characteristic": {
+        "latex": r"\chi = \sum_{p,q} (-1)^{p+q} h^{p,q}",
+        "html": "χ = Σ<sub>p,q</sub> (-1)<sup>p+q</sup> h<sup>p,q</sup>",
+        "pm_values": ["topology.chi_eff"],
+        "derivation": "Euler characteristic from Hodge numbers",
+        "numerical": "For mirror pair: χ_A = 72, χ_B = 72"
+    },
+
+    "mirror_symmetry": {
+        "latex": r"\chi_A + \chi_B = 72 + 72 = 144",
+        "html": "χ<sub>A</sub> + χ<sub>B</sub> = 72 + 72 = 144",
+        "pm_values": ["topology.chi_eff"],
+        "derivation": "Mirror symmetry relates Hodge numbers: h^{p,q}_A = h^{n-p,q}_B",
+        "numerical": "Combined Euler characteristic = 144"
+    }
+}
+
+# ============================================================================
+# G₂ MANIFOLD GEOMETRY
+# ============================================================================
+
+G2_MANIFOLDS = {
+    "g2_holonomy_conditions": {
+        "latex": r"d\varphi = 0, \quad d(*\varphi) = 0",
+        "html": "dφ = 0, d(*φ) = 0",
+        "pm_values": [],
+        "derivation": "G₂ holonomy conditions: φ is closed and coclosed 3-form",
+        "numerical": "Defines unique G₂ structure on 7-manifold"
+    },
+
+    "flux_dressed_euler": {
+        "latex": r"\chi_{\text{eff}}(M^7) = 72",
+        "html": "χ<sub>eff</sub>(M⁷) = 72",
+        "pm_values": ["topology.chi_eff"],
+        "derivation": "Flux-dressed Euler characteristic for single G₂ manifold",
+        "numerical": "144 / 2 = 72 (Z₂ orbifold symmetry)"
+    },
+
+    "tcs_gluing": {
+        "latex": r"M^7 = M_1^7 \cup M_2^7",
+        "html": "M⁷ = M₁⁷ ∪ M₂⁷",
+        "pm_values": [],
+        "derivation": "Twisted Connected Sum (TCS) construction",
+        "numerical": "Gluing two asymptotically cylindrical G₂ manifolds"
+    },
+
+    "m_gut_from_torsion": {
+        "latex": r"\ln(M_{\text{GUT}}/M_{\text{Planck}}) = -2\pi(b_2 + b_3)/\nu",
+        "html": "ln(M<sub>GUT</sub>/M<sub>Planck</sub>) = -2π(b₂ + b₃)/ν",
+        "pm_values": ["proton_decay.M_GUT", "topology.b2", "topology.b3"],
+        "derivation": "GUT scale from TCS G₂ torsion logarithms",
+        "numerical": "ln(M_GUT/M_Pl) = -2π(4 + 24)/24 = -7.33"
+    },
+
+    "v9_factorization": {
+        "latex": r"V_9 = V_7(G_2) \times V_2(T^2)",
+        "html": "V₉ = V₇(G₂) × V₂(T²)",
+        "pm_values": [],
+        "derivation": "9D internal volume factorization: G₂ × T²",
+        "numerical": "Heterotic brane structure: 7D G₂ times 2D torus"
+    }
+}
+
+# ============================================================================
 # EXPORT ALL FORMULAS
 # ============================================================================
 
@@ -348,7 +424,9 @@ ALL_FORMULAS = {
     **THERMAL_TIME,
     **GRAVITY,
     **CLIFFORD_ALGEBRA,
-    **XY_BOSONS
+    **XY_BOSONS,
+    **CALABI_YAU,
+    **G2_MANIFOLDS
 }
 
 # Category mapping for lookup
@@ -363,7 +441,9 @@ FORMULA_CATEGORIES = {
     "thermal_time": THERMAL_TIME,
     "gravity": GRAVITY,
     "clifford_algebra": CLIFFORD_ALGEBRA,
-    "xy_bosons": XY_BOSONS
+    "xy_bosons": XY_BOSONS,
+    "calabi_yau": CALABI_YAU,
+    "g2_manifolds": G2_MANIFOLDS
 }
 
 def get_formula(formula_id):

@@ -156,12 +156,12 @@ const PM = {
       ]
     },
     "tau_p_median": {
-      "value": 3.784524185725544e+34,
+      "value": 3.880908712543316e+34,
       "unit": "years",
       "display": "3.84\u00d710\u00b3\u2074",
-      "uncertainty_lower": 2.47194764482919e+34,
-      "uncertainty_upper": 5.546980403503642e+34,
-      "uncertainty_oom": 0.17024950224328292,
+      "uncertainty_lower": 2.529432772081294e+34,
+      "uncertainty_upper": 5.494333832713823e+34,
+      "uncertainty_oom": 0.16814991467892446,
       "confidence_level": "68%",
       "description": "Proton lifetime (Monte Carlo median)",
       "formula": "\u03c4_p = 3.82\u00d710\u00b3\u00b3 \u00d7 (M_GUT/10\u00b9\u2076)\u2074 \u00d7 (0.03/\u03b1_GUT)\u00b2",
@@ -177,7 +177,7 @@ const PM = {
       ]
     },
     "uncertainty_oom": {
-      "value": 0.17024950224328292,
+      "value": 0.16814991467892446,
       "unit": "OOM",
       "display": "0.177",
       "description": "Proton decay uncertainty in orders of magnitude",
@@ -194,7 +194,7 @@ const PM = {
       "value": 47.199999,
       "unit": "degrees",
       "display": "47.20\u00b0",
-      "uncertainty": 0.7975430619199849,
+      "uncertainty": 0.8014999187271764,
       "description": "Atmospheric mixing angle",
       "formula": "\u03b8\u2082\u2083 = 45\u00b0 + (\u03b1\u2084 - \u03b1\u2085) \u00d7 n_gen",
       "derivation": "Asymmetric coupling to shared extra dimensions",
@@ -213,7 +213,7 @@ const PM = {
       "value": 33.59329049922625,
       "unit": "degrees",
       "display": "33.59\u00b0",
-      "uncertainty": 1.21420342133699,
+      "uncertainty": 1.2332596810664747,
       "description": "Solar mixing angle",
       "formula": "\u03b8\u2081\u2082 = arcsin(1/\u221a3 \u00d7 |1 + \u03b4_pert|)",
       "derivation": "Tri-bimaximal mixing + G\u2082 cycle perturbation",
@@ -232,7 +232,7 @@ const PM = {
       "value": 8.568979552196335,
       "unit": "degrees",
       "display": "8.57\u00b0",
-      "uncertainty": 0.3392039211365724,
+      "uncertainty": 0.33410576454555474,
       "description": "Reactor mixing angle",
       "formula": "\u03b8\u2081\u2083 = arctan(b\u2082/b\u2083 \u00d7 exp(-\u03bd/n_gen))",
       "derivation": "G\u2082 cycle intersection asymmetry",
@@ -251,7 +251,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.146507580813157,
+      "uncertainty": 28.910339042804313,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -283,7 +283,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.146507580813157,
+      "uncertainty": 28.910339042804313,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -1617,6 +1617,181 @@ const PM = {
       "has_topics": true,
       "topic_count": 11,
       "required_values": []
+    },
+    "calabi_yau_manifolds": {
+      "title": "Calabi-Yau Manifolds",
+      "subtitle": "Mathematical foundation for string compactification in Principia Metaphysica",
+      "content": "Calabi-Yau manifolds are special geometric spaces that preserve supersymmetry when used for\ndimensional compactification. They are central to string theory and F-theory compactifications.\n\nIn the 2T framework, the 26D bulk with signature (24,2) is projected via Sp(2,R) gauge fixing\nto a 13D shadow with signature (12,1), which then undergoes G\u2082 compactification rather than\nCY4 compactification (though CY4 concepts inform the topology). The flux-dressed effective\nEuler characteristic \u03c7_eff = 144 yields exactly n_gen = \u03c7_eff/48 = 144/48 = 3 fermion generations.\n\nKey features include mirror symmetry between CY4_A and CY4_B (\u03c7_A + \u03c7_B = 72 + 72), KKLT\nmodulus stabilization with \u03c6_M = 2.493 M_Pl, Hodge numbers h^{1,1} = 4 (K\u00e4hler moduli) and\nh^{2,1} = 0 (complex structure), and SO(10) gauge symmetry from D\u2085 singularities embedded\nin the G\u2082 manifold.",
+      "pages": [
+        {
+          "file": "foundations/calabi-yau.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "subtitle",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Foundation Page"
+        }
+      ],
+      "values": [
+        "topology.chi_eff",
+        "topology.n_gen",
+        "topology.b2",
+        "topology.b3",
+        "dimensions.D_bulk",
+        "dimensions.D_after_sp2r"
+      ],
+      "related_simulation": null,
+      "has_topics": true,
+      "topic_count": 15,
+      "required_values": [
+        "dimensions.D_after_sp2r",
+        "dimensions.D_bulk",
+        "topology.b2",
+        "topology.b3",
+        "topology.chi_eff",
+        "topology.n_gen"
+      ]
+    },
+    "g2_manifolds": {
+      "title": "G\u2082 Manifolds",
+      "subtitle": "7-dimensional geometric foundations for M-theory compactification in Principia Metaphysica",
+      "content": "G\u2082 manifolds are exceptional 7-dimensional Riemannian manifolds with holonomy group G\u2082,\nthe smallest of the five exceptional Lie groups. In Principia Metaphysica's 2T physics framework,\nthe 13D shadow (from 26D bulk via Sp(2,R) gauge fixing) compactifies on a 7D G\u2082 manifold,\nyielding the dimensional structure 13D \u2192 6D bulk (with 7D G\u2082 compact).\n\nThe framework uses a specific Twisted Connected Sum (TCS) construction with Betti numbers\nb\u2082 = 4 (associative 3-cycles) and b\u2083 = 24 (coassociative 4-cycles). Flux quantization modifies\nthe bare topology (\u03c7 = 0) to flux-dressed effective topology \u03c7_eff = 144, yielding exactly\n3 fermion generations via n_gen = \u03c7_eff/48 = 144/48 = 3.\n\nKey features include D\u2085 singularities providing SO(10) gauge symmetry, GUT scale M_GUT = 2.118\u00d710\u00b9\u2076 GeV\nderived from TCS torsion logarithms, unified coupling 1/\u03b1_GUT = 23.54 from b\u2083 = 24 topology,\nand N=1 SUSY preservation from G\u2082 holonomy. The construction is mathematically rigorous with\ncomputational verification via G2_Manifold_Construction.py.",
+      "pages": [
+        {
+          "file": "foundations/g2-manifolds.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "subtitle",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Foundation Page"
+        }
+      ],
+      "values": [
+        "topology.chi_eff",
+        "topology.b2",
+        "topology.b3",
+        "topology.n_gen",
+        "proton_decay.M_GUT",
+        "proton_decay.alpha_GUT_inv",
+        "dimensions.D_bulk",
+        "dimensions.D_after_sp2r",
+        "dimensions.D_internal"
+      ],
+      "related_simulation": null,
+      "has_topics": true,
+      "topic_count": 9,
+      "required_values": [
+        "dimensions.D_after_sp2r",
+        "dimensions.D_bulk",
+        "dimensions.D_internal",
+        "proton_decay.M_GUT",
+        "proton_decay.alpha_GUT_inv",
+        "topology.b2",
+        "topology.b3",
+        "topology.chi_eff",
+        "topology.n_gen"
+      ]
+    },
+    "index_page": {
+      "title": "Index Page - Validation and Features",
+      "subtitle": "Key Theoretical Features & Validations",
+      "content": "The index page presents a comprehensive overview of Principia Metaphysica's validation status,\nkey theoretical features, and resolved issues. All metrics are dynamically populated from\ntheory_output.json and PM constants via JavaScript.\n\nValidation metrics include predictions within 1\u03c3, exact matches, and DESI DR2 confirmation.\nQuick features highlight the 8 major achievements: 3 generations, dark energy w\u2080, dimension\nparameters, PMNS matrix, M_GUT derivation, proton decay prediction, KK spectrum, and neutrino\nmass ordering. Resolved issues section details the 8 critical fixes achieved in v8.4.",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/index.html",
+          "section": "#quick-facts",
+          "order": 1,
+          "include": [
+            "title",
+            "validation_metrics",
+            "quick_features",
+            "resolved_issues"
+          ],
+          "hover_details": true,
+          "template_type": "Index Page"
+        }
+      ],
+      "values": [
+        "predictions_within_1sigma",
+        "total_predictions",
+        "exact_matches",
+        "w0_deviation_sigma",
+        "chi_eff",
+        "n_gen",
+        "w0_PM",
+        "d_eff",
+        "w0_DESI",
+        "w0_error",
+        "alpha_4",
+        "alpha_5",
+        "theta_23_nufit",
+        "theta_13_nufit",
+        "delta_cp_sigma",
+        "M_GUT",
+        "tau_p_median",
+        "m1",
+        "m1_std",
+        "functional_test_sigma_preference",
+        "prob_IH_mean",
+        "tau_p_uncertainty_oom",
+        "average_sigma",
+        "w0_sigma"
+      ],
+      "related_simulation": "validation",
+      "has_topics": true,
+      "topic_count": 3,
+      "required_values": [
+        "BR_Knu_mean",
+        "BR_epi0_mean",
+        "D_after_sp2r",
+        "D_bulk",
+        "D_common",
+        "M_GUT",
+        "alpha_4",
+        "alpha_5",
+        "alpha_GUT_inv",
+        "average_sigma",
+        "b2",
+        "b3",
+        "chi_eff",
+        "d_eff",
+        "delta_CP",
+        "delta_cp_sigma",
+        "exact_matches",
+        "functional_test_sigma_preference",
+        "m1",
+        "m1_std",
+        "n_gen",
+        "planck_tension_resolved",
+        "predictions_within_1sigma",
+        "prob_IH_mean",
+        "prob_NH_mean",
+        "tau_p_median",
+        "tau_p_uncertainty_oom",
+        "theta_12",
+        "theta_13",
+        "theta_13_nufit",
+        "theta_23",
+        "theta_23_nufit",
+        "total_predictions",
+        "w0_DESI",
+        "w0_PM",
+        "w0_deviation_sigma",
+        "w0_error",
+        "w0_sigma"
+      ]
     }
   }
 };

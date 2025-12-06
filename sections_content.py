@@ -13,6 +13,37 @@ This file defines:
 Each section can be used by multiple pages (paper, section pages, index)
 with different "Include" specifications for what to display.
 
+VALIDATION RULES - CRITICAL FOR PAPER QUALITY
+==============================================
+
+1. **Section Numbers: ALWAYS STATIC**
+   - Section numbers (1, 2, 3, 4, 5, 6, etc.) MUST be hardcoded
+   - NEVER use PM values for section numbers
+   - Example: "Section 2.3" is ALWAYS "2.3", not a PM value
+   - Reason: Sections are structural, not derived quantities
+
+2. **Equation Labels: ALWAYS SEQUENTIAL**
+   - Equation labels MUST use sequential format: (X.N) where X = section, N increments
+   - NEVER use PM values for equation labels
+   - Example: "(2.10)", "(2.11)", "(3.1)", etc.
+   - Reason: Equations are numbered for reference, not for their values
+   - Exception: None. Even if an equation calculates a PM value, the label is sequential
+
+3. **Cross-References: ALWAYS STATIC**
+   - References to sections and equations MUST use static labels
+   - Example: "[→ Eq. (2.10)]" or "[→ §3.1]"
+   - NEVER: "[→ Eq. <pm-value>]" or "[→ §<pm-value>]"
+
+4. **Physics Constants: ONLY USE PM VALUES FOR ACTUAL PHYSICS QUANTITIES**
+   - DO use PM values for: masses, coupling constants, angles, probabilities, etc.
+   - Example: M_GUT = <pm-value>, θ₂₃ = <pm-value>, χ_eff = <pm-value>
+   - Reason: These are computed quantities that need dynamic updates
+
+5. **Abstract Content: CENTRALIZED HERE**
+   - The paper abstract is defined in the "abstract" section below
+   - It uses PM values for key results (n_gen, w₀, τ_p, etc.)
+   - The abstract section is shared between index.html and paper.html
+
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 """
 
