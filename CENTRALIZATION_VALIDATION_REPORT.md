@@ -12,11 +12,11 @@ Generated: CENTRALIZATION_VALIDATION_REPORT
 
 | Metric | Count | Status |
 |--------|-------|--------|
-| PM References | 47 | ⚠️ |
-| Hardcoded Numbers | 571 | 🔴 |
+| PM References | 86 | ✅ |
+| Hardcoded Numbers | 462 | 🔴 |
 | Topic Sections | 404 | ✅ |
 | Orphaned Content Blocks | 46 | 🔴 |
-| Orphaned HTML Files | 31 | ⚠️ |
+| Orphaned HTML Files | 22 | ⚠️ |
 | Broken Links | 50 | 🔴 |
 | Formulas (Integrated) | 1099 | ⚠️ |
 | Formulas (Orphaned) | 1720 | ⚠️ |
@@ -26,53 +26,79 @@ Generated: CENTRALIZATION_VALIDATION_REPORT
 ## 1. PM Reference Analysis
 
 ### Valid PM References Found
-Total unique PM references: **47**
+Total unique PM references: **86**
 
 Sample of PM references in use:
 
+- `PM.dark_energy.functional_test_chi2_log`
+- `PM.dark_energy.functional_test_delta_chi2`
+- `PM.dark_energy.functional_test_sigma_preference`
 - `PM.dark_energy.planck_tension_resolved`
+- `PM.dark_energy.w0_DESI`
 - `PM.dark_energy.w0_DESI_central`
 - `PM.dark_energy.w0_DESI_error`
 - `PM.dark_energy.w0_PM`
+- `PM.dark_energy.w0_deviation_sigma`
 - `PM.dark_energy.w0_sigma`
+- `PM.dark_energy.w_CMB_frozen`
+- `PM.dark_energy.w_CPL_at_CMB`
+- `PM.dark_energy.w_DESI_average`
+- `PM.dark_energy.wa_DESI`
 - `PM.dark_energy.wa_PM_effective`
-- `PM.gauge_unification.alpha_GUT_inv`
-- `PM.kk_spectrum.hl_lhc_significance`
-- `PM.kk_spectrum.m1_central`
-- `PM.neutrino_mass_ordering.flux_dressing`
-- `PM.neutrino_mass_ordering.m1_IH`
-- `PM.neutrino_mass_ordering.m1_NH`
-- `PM.neutrino_mass_ordering.m2_IH`
-- `PM.neutrino_mass_ordering.m2_NH`
-- `PM.neutrino_mass_ordering.m3_IH`
-- `PM.neutrino_mass_ordering.m3_NH`
-- `PM.neutrino_mass_ordering.prob_IH`
-- `PM.neutrino_mass_ordering.prob_IH_mean`
-- `PM.neutrino_mass_ordering.prob_IH_std`
-- `PM.neutrino_mass_ordering.prob_NH`
-- ... and 27 more
+- `PM.dark_energy.wa_deviation_sigma`
+- `PM.desi_dr2_data.significance`
+- `PM.desi_dr2_data.w0_error`
+- `PM.desi_dr2_data.wa_error`
+- `PM.dimensions.D_common`
+- ... and 66 more
 
 ### Hardcoded Numbers Detected
-Total hardcoded numbers: **571**
+Total hardcoded numbers: **462**
 
 ⚠️ **ACTION REQUIRED**: Replace these hardcoded values with PM references
 
 
-**references.html**: 34 hardcoded numbers
-  - `10.2307`
-  - `10.1515`
-  - `0802.3391`
-  - `10.1103`
-  - `83.3370`
-  - ... and 29 more
+**beginners-guide.html**: 12 hardcoded numbers
+  - `1.178`
+  - `0.733`
+  - `0.9557`
+  - `0.2224`
+  - `0.846`
+  - ... and 7 more
 
-**theory-analysis.html**: 16 hardcoded numbers
-  - `0.884`
-  - `0.884`
-  - `0.853`
-  - `12.589`
-  - `0.853`
-  - ... and 11 more
+**geometric-framework.html**: 21 hardcoded numbers
+  - `1.488`
+  - `1.488`
+  - `2.118`
+  - `2.118`
+  - `2.1181`
+  - ... and 16 more
+
+**philosophical-implications.html**: 4 hardcoded numbers
+  - `2.493`
+  - `2.493`
+  - `2.493`
+  - `2.493`
+
+**references.html**: 1 hardcoded numbers
+  - `10.2307`
+
+**theory-diagrams.html**: 7 hardcoded numbers
+  - `0.9557`
+  - `0.2224`
+  - `0.9557`
+  - `0.2224`
+  - `1.178`
+  - ... and 2 more
+
+**tomita-takesaki.html**: 2 hardcoded numbers
+  - `1803.04993`
+  - `1803.04993`
+
+**yang-mills.html**: 3 hardcoded numbers
+  - `0.001`
+  - `2.118`
+  - `0.118`
 
 
 ---
@@ -88,11 +114,11 @@ Total orphaned blocks: **46**
 ⚠️ **ACTION REQUIRED**: Integrate these content blocks into topic sections
 
 
-**cosmology.html**: 6 orphaned blocks
-  - Classes: `['detail-section']` - Text: 6.1 Deriving 4D Gravity from Kaluza-Klein ReductionThe Princ...
-  - Classes: `['detail-section']` - Text: 6.2 Myrzakulov F(R,T) GravityThe dimensional reduction from ...
-  - Classes: `['detail-section']` - Text: 6.3 The Mashiach Field as a ModulusCentral to the cosmologic...
-  - ... and 3 more
+**calabi-yau.html**: 4 orphaned blocks
+  - Classes: `['detail-section']` - Text: DefinitionA Calabi-Yau manifold is a compact Kähler manifold...
+  - Classes: `['detail-section']` - Text: Why Calabi-Yau Manifolds?Key PropertiesSupersymmetry Preserv...
+  - Classes: `['detail-section']` - Text: Hodge Numbers and TopologyThe topology of a Calabi-Yau manif...
+  - ... and 1 more
 
 **g2-manifolds.html**: 9 orphaned blocks
   - Classes: `['detail-section']` - Text: What is G₂?G₂ is thesmallest exceptional Lie group, a 14-dim...
@@ -100,13 +126,11 @@ Total orphaned blocks: **46**
   - Classes: `['detail-section']` - Text: G₂ Manifolds vs. Calabi-Yau ManifoldsPropertyG₂ ManifoldsCal...
   - ... and 6 more
 
-**index.html**: 1 orphaned blocks
+**index.html**: 6 orphaned blocks
   - Classes: `['detail-section']` - Text: Falsifiable PredictionsThe theory makes concrete, testable p...
-
-**principia-metaphysica-paper.html**: 3 orphaned blocks
-  - Classes: `['info-box']` - Text: Bell Inequality Consideration:This hidden variable structure...
-  - Classes: `['info-box']` - Text: Quaternion Structure:The observable 3D space B1= Im(ℍ) inher...
-  - Classes: `['info-box']` - Text: Testability Note:These interpretations are currently not exp...
+  - Classes: `['detail-section']` - Text: General Relativity & GravityEstablishedEinstein Field Equati...
+  - Classes: `['detail-section']` - Text: Quantum Field TheoryEstablishedDirac Equation(iγμ∂μ- m)ψ = 0...
+  - ... and 3 more
 
 **thermal-time.html**: 11 orphaned blocks
   - Classes: `['detail-section']` - Text: 5.1 The Problem of Time in Quantum GravityOne of the most pr...
@@ -120,20 +144,29 @@ Total orphaned blocks: **46**
 ## 3. File Organization
 
 ### Defined Pages (in sections_content.py)
-Total: **8**
+Total: **17**
 
 - index.html
 - principia-metaphysica-paper.html
+- sections/cmb-bubble-collisions-comprehensive.html
+- sections/conclusion.html
+- sections/cosmology.html
+- sections/division-algebra-section.html
 - sections/einstein-hilbert-term.html
 - sections/fermion-sector.html
 - sections/formulas.html
+- sections/gauge-unification.html
 - sections/geometric-framework.html
+- sections/introduction.html
 - sections/pneuma-lagrangian.html
+- sections/predictions.html
 - sections/theory-analysis.html
+- sections/thermal-time.html
+- sections/xy-gauge-bosons.html
 
 
 ### Orphaned HTML Files
-Total: **31**
+Total: **22**
 
 ⚠️ **ACTION REQUIRED**: Add these files to sections_content.py or document why they're excluded
 
@@ -157,16 +190,7 @@ Total: **31**
 - `foundations/yang-mills.html`
 - `philosophical-implications.html`
 - `references.html`
-- `sections/cmb-bubble-collisions-comprehensive.html`
-- `sections/conclusion.html`
-- `sections/cosmology.html`
-- `sections/division-algebra-section.html`
-- `sections/gauge-unification.html`
-- `sections/introduction.html`
 - `sections/pneuma-lagrangian-new.html`
-- `sections/predictions.html`
-- `sections/thermal-time.html`
-- `sections/xy-gauge-bosons.html`
 - `visualization-index.html`
 
 
@@ -180,24 +204,8 @@ Total: **31**
 **tomita-takesaki.html**:
   - `../sections/quantum-foundations.html`
 
-**visualization-index.html**:
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-  - `beginners-guide-printable.html`
-
-**einstein-hilbert-action.html**:
-  - `metric-tensor.html`
-  - `../references.html#einstein1915`
-
-**dirac-equation.html**:
-  - `dirac-spinor.html`
-  - `../references.html#dirac1928`
+**geometric-framework.html**:
+  - `../index.html#sections`
 
 **beginners-guide.html**:
   - `beginners-guide-printable.html`
@@ -212,18 +220,23 @@ Total: **31**
   - `dark-sector.html`
   - `../references.html#neutrinos`
 
-**kms-condition.html**:
-  - `hawking-temperature.html`
-  - `unruh-effect.html`
+**g2-manifolds.html**:
+  - `../references.html#g2-manifolds`
 
-**so10-gut.html**:
-  - `../sections/computational-appendices.html`
+**dirac-equation.html**:
+  - `dirac-spinor.html`
+  - `../references.html#dirac1928`
 
-**index.html**:
-  - `principia-metaphysica-paper.html#framework`
-  - `principia-metaphysica-paper.html#four-brane-structure`
-  - `sections/geometric-framework.html#pneuma-manifold`
-  - `sections/gauge-unification.html#symmetry-breaking`
+**visualization-index.html**:
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
+  - `beginners-guide-printable.html`
 
 **thermal-time.html**:
   - `../index.html#abstract`
@@ -231,19 +244,25 @@ Total: **31**
   - `../index.html#sections`
   - `../references.html#thermal-time`
 
-**cosmology.html**:
-  - `../index.html#abstract`
-  - `../index.html#sections`
-  - `../index.html#sections`
-  - `../references.html#cosmology`
+**index.html**:
+  - `principia-metaphysica-paper.html#framework`
+  - `principia-metaphysica-paper.html#four-brane-structure`
+  - `sections/geometric-framework.html#pneuma-manifold`
+  - `sections/gauge-unification.html#symmetry-breaking`
 
-**g2-manifolds.html**:
-  - `../references.html#g2-manifolds`
+**introduction.html**:
+  - `../index.html#sections`
+
+**so10-gut.html**:
+  - `../sections/computational-appendices.html`
 
 **index.html**:
   - `dirac-lagrangian.html`
   - `generation-formula.html`
   - `thermal-time-relation.html`
+
+**calabi-yau.html**:
+  - `../references.html#calabi-yau`
 
 **gauge-unification.html**:
   - `../index.html#abstract`
@@ -252,14 +271,19 @@ Total: **31**
   - `../index.html#sections`
   - `../references.html#grand-unification`
 
-**calabi-yau.html**:
-  - `../references.html#calabi-yau`
+**einstein-hilbert-action.html**:
+  - `metric-tensor.html`
+  - `../references.html#einstein1915`
 
-**geometric-framework.html**:
+**cosmology.html**:
+  - `../index.html#abstract`
   - `../index.html#sections`
+  - `../index.html#sections`
+  - `../references.html#cosmology`
 
-**introduction.html**:
-  - `../index.html#sections`
+**kms-condition.html**:
+  - `hawking-temperature.html`
+  - `unruh-effect.html`
 
 
 ---
@@ -275,17 +299,11 @@ Total: **1720**
 ⚠️ **ACTION REQUIRED**: Integrate these formulas into topic sections
 
 
-**einstein-hilbert-action.html**: 9 orphaned formulas
-  - `Established Physics (1915)The Einstein-Hilbert Act`
-  - `S = &frac{1}{16πG} ∫ d4x √|g| R`
-  - `S = &frac{1}{16πG} ∫ d4x √|g| REstablished▼SAction`
-  - ... and 6 more
-
-**tomita-takesaki.html**: 21 orphaned formulas
-  - `Established Mathematics (1970)Tomita-Takesaki Theo`
-  - `σt(A) = ΔitA Δ-it`
-  - `σt(A) = ΔitA Δ-itEstablished▼STomita OperatorThe a`
-  - ... and 18 more
+**pneuma-lagrangian-new.html**: 30 orphaned formulas
+  - `The Pneuma LagrangianThe fundamental fermionic fie`
+  - `ℒ =Ψ(iΓMDM+ g·tortho)Ψ + λ(ΨΨ)²`
+  - `Ψ(iΓMDM+ g·tortho)Ψ + λ(ΨΨ)²PM-Specific (26D)▼(iγμ`
+  - ... and 27 more
 
 
 ---
@@ -294,10 +312,10 @@ Total: **1720**
 
 ### Priority 1: Critical Issues
 - 🔴 Fix 50 broken links
-- 🔴 Replace 571 hardcoded numbers with PM references
+- 🔴 Replace 462 hardcoded numbers with PM references
 
 ### Priority 2: Important Improvements
-- 🟡 Document or integrate 31 orphaned HTML files
+- 🟡 Document or integrate 22 orphaned HTML files
 - 🟡 Integrate 1720 orphaned formulas
 
 ### Priority 3: Nice to Have
