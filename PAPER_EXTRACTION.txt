@@ -1,0 +1,85 @@
+Extracting paper structure...
+
+================================================================================
+Found 10 main sections
+
+
+Section 1: 1. Introduction and Motivation
+  ID: intro
+  Subsections: 0
+
+Section 2: 2. Theoretical Framework
+  ID: framework
+  Subsections: 10
+    - Condensate Gap Equation (id=condensate-gap)
+    - 2.1.1 The 26D Two-Time Structure (id=26d-structure)
+    - 2.1.2 Sp(2,R) Gauge Symmetry (id=sp2r-gauge)
+
+Section 3: 3. Geometric Structure: The Pneuma Manifold
+  ID: geometry
+  Subsections: 2
+    - Derivation of Betti Numbers and Euler Characteristic (G₂ Geometry) (id=hodge-derivation)
+    - Derivation of ngen= χeff/24 (M-Theory on G₂) (id=generation-derivation)
+
+Section 4: 4. SO(10) Gauge Unification
+  ID: gauge
+  Subsections: 4
+    - G₂ Singularity Classification for SO(10) (id=kodaira-classification)
+    - Derivation of MGUTfrom RG Running (id=gut-derivation)
+    - Beta Functions with SO(10) Group Factors (id=beta-functions)
+
+Section 5: 5. Thermal Time and Emergent Temporality
+  ID: thermal
+  Subsections: 3
+    - Mathematical Foundation: Tomita-Takesaki Theory (id=tomita-takesaki)
+    - 5.1.1 Local Entropy Current (id=entropy-current)
+    - Derivation of αT= 2.7 (Two-Time Cosmological Thermodynamics) (id=alpha-derivation)
+
+Section 6: 6. Cosmological Implications
+  ID: cosmology
+  Subsections: 3
+    - 6.0 Moduli Potential with Swampland Compliance (id=moduli-potential)
+    - Mashiach Attractor Mechanism (id=mashiach-attractor)
+    - Derivation of w(z) from Thermal Friction (id=wz-derivation)
+
+Section 7: 7. Predictions and Testability
+  ID: predictions
+  Subsections: 3
+    - Derivation of Proton Lifetime (Standard GUT Formula) (id=proton-derivation)
+    - 7.5 Speculative Interpretations: Consciousness and Hidden Variables (id=philosophical-implications)
+    - 7.6 Asymptotic Safety (Weinberg-Reuter) (id=asymptotic-safety)
+
+Section 8: 8. Resolution Status and Validation
+  ID: concerns
+  Subsections: 0
+
+Section 9: 9. Conclusions and Future Prospects
+  ID: conclusion
+  Subsections: 0
+
+================================================================================
+
+Total sections extracted: 9
+
+================================================================================
+Section IDs:
+  - intro: 1. Introduction and Motivation
+  - framework: 2. Theoretical Framework
+  - geometry: 3. Geometric Structure: The Pneuma Manifold
+  - gauge: 4. SO(10) Gauge Unification
+  - thermal: 5. Thermal Time and Emergent Temporality
+  - cosmology: 6. Cosmological Implications
+  - predictions: 7. Predictions and Testability
+  - concerns: 8. Resolution Status and Validation
+  - conclusion: 9. Conclusions and Future Prospects
+
+================================================================================
+Generating sections_content.py code...
+
+Code saved to: PAPER_SECTIONS_EXTRACT.py
+
+Next steps:
+1. Review PAPER_SECTIONS_EXTRACT.py
+2. Merge into sections_content.py
+3. Add values arrays for each section
+4. Regenerate theory-constants-enhanced.js

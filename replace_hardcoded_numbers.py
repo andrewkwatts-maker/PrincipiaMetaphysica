@@ -566,6 +566,10 @@ class HTMLReplacer:
 
         # Find all text nodes containing the number
         for element in soup.find_all(string=True):
+            # CRITICAL: Skip elements in style/script/code/pre tags
+            if element.parent.name in {'style', 'script', 'code', 'pre'}:
+                continue
+
             text = str(element)
             if replacement.original_text in text:
                 # Replace the text
