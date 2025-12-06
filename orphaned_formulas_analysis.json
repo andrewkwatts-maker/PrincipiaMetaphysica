@@ -1,0 +1,2023 @@
+{
+  "summary": {
+    "total": 259,
+    "orphaned": 127,
+    "under_topics": 132,
+    "unique": 257,
+    "unique_orphaned": 125
+  },
+  "by_category": {
+    "other": 179,
+    "dimension": 14,
+    "gauge": 12,
+    "generation": 3,
+    "field_equation": 3,
+    "dark_energy": 2,
+    "thermal": 10,
+    "action": 17,
+    "metric": 15,
+    "neutrino": 1,
+    "proton_decay": 2,
+    "topology": 1
+  },
+  "unique_formulas": [
+    {
+      "text": "V(φ) = -(m²/2)φ² + (λ/4)φ⁴ + V₀",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        V(φ) = -(m²/2)φ² + (λ/4)φ⁴ + V₀\n      </div>",
+      "count": 1,
+      "hash": "b33cb0c84ff6"
+    },
+    {
+      "text": "Γ ~ (Δφ)⁴ exp(-B),    B = (2/ℏ) ∫φfalseφturn√[2m(V(φ) - Vfalse)] dφ",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        Γ ~ (Δφ)⁴ exp(-B),    B = (2/ℏ) ∫<sub>φ<sub>false</sub></sub><sup>φ<sub>turn</sub></sup> √[2m(V(φ) - V<sub>false</sub>)] dφ\n      </div>",
+      "count": 1,
+      "hash": "31dc4eeeaef6"
+    },
+    {
+      "text": "SE= 2π² ∫ [ρ³((dφ/dr)²/2 + V(φ)) + 3ρ(dρ/dr)²/(8πG) - 3ρ/(8πG)] dr",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; font-size: 1.05rem;\">\n        S<sub>E</sub> = 2π² ∫ [ρ³((dφ/dr)²/2 + V(φ)) + 3ρ(dρ/dr)²/(8πG) - 3ρ/(8πG)] dr\n      </div>",
+      "count": 1,
+      "hash": "9064f021f6a6"
+    },
+    {
+      "text": "rb= 3σ/(4ΔV)(7.7.1)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n<div class=\"eq-content\">\n          r<sub>b</sub> = 3σ/(4ΔV)\n        </div>\n<div class=\"eq-number\">(7.7.1)</div>\n</div>",
+      "count": 1,
+      "hash": "ed21238c59eb"
+    },
+    {
+      "text": "SE= 27π²σ⁴/(2ΔV³)(7.7.2)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n<div class=\"eq-content\">\n          S<sub>E</sub> = 27π²σ⁴/(2ΔV³)\n        </div>\n<div class=\"eq-number\">(7.7.2)</div>\n</div>",
+      "count": 1,
+      "hash": "3310bf5e64e3"
+    },
+    {
+      "text": "Γ ~ exp(-SE)(7.7.3)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n<div class=\"eq-content\">\n          Γ ~ exp(-S<sub>E</sub>)\n        </div>\n<div class=\"eq-number\">(7.7.3)</div>\n</div>",
+      "count": 1,
+      "hash": "b2c9c6026112"
+    },
+    {
+      "text": "P(δ > δ₀) = exp(-n · A · exp[-δ₀²/(2σ²)])",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        P(δ &gt; δ₀) = exp(-n · A · exp[-δ₀²/(2σ²)])\n      </div>",
+      "count": 1,
+      "hash": "6650a478169a"
+    },
+    {
+      "text": "ζ ~ -(rbH)1/2",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        ζ ~ -(r<sub>b</sub> H)<sup>1/2</sup>\n</div>",
+      "count": 1,
+      "hash": "182e564db16e"
+    },
+    {
+      "text": "ΔT/T ~ ζ/5 ~ -(rbH)1/2/5(7.7.4)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15);\">\n<div class=\"eq-content\">\n          ΔT/T ~ ζ/5 ~ -(r<sub>b</sub> H)<sup>1/2</sup>/5\n        </div>\n<div class=\"eq-number\">(7.7.4)</div>\n</div>",
+      "count": 1,
+      "hash": "ab3bbe170ff6"
+    },
+    {
+      "text": "P(Nspots) = λNexp(-λ) / N!",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        P(N<sub>spots</sub>) = λ<sup>N</sup> exp(-λ) / N!\n      </div>",
+      "count": 1,
+      "hash": "79dffce58130"
+    },
+    {
+      "text": "κ = ⟨(ΔT)⁴⟩ / ⟨(ΔT)²⟩² = 3 + Nspots(δdisk)⁴/σ⁴(7.7.5)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15);\">\n<div class=\"eq-content\">\n          κ = ⟨(ΔT)⁴⟩ / ⟨(ΔT)²⟩² = 3 + N<sub>spots</sub>(δ<sub>disk</sub>)⁴/σ⁴\n        </div>\n<div class=\"eq-number\">(7.7.5)</div>\n</div>",
+      "count": 1,
+      "hash": "c4479d3bb6e4"
+    },
+    {
+      "text": "Γ/V₄ = A exp(-SE[φbounce])",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1.5rem 0;\">\n      Γ/V₄ = A exp(-S<sub>E</sub>[φ<sub>bounce</sub>])\n    </div>",
+      "count": 1,
+      "hash": "1be7946e1b43"
+    },
+    {
+      "text": "SE[φ, g] = ∫ d⁴x √g [(1/2)gμν∂μφ∂νφ + V(φ) - R/(16πG)]",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; font-size: 1rem;\">\n        S<sub>E</sub>[φ, g] = ∫ d⁴x √g [(1/2)g<sup>μν</sup>∂<sub>μ</sub>φ∂<sub>ν</sub>φ + V(φ) - R/(16πG)]\n      </div>",
+      "count": 1,
+      "hash": "780d5a855e1f"
+    },
+    {
+      "text": "ds² = dξ² + ρ(ξ)² dΩ₃²",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        ds² = dξ² + ρ(ξ)² dΩ₃²\n      </div>",
+      "count": 1,
+      "hash": "64d0e50bc23c"
+    },
+    {
+      "text": "Ewall= 4πrb²σ    (surface energy)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        E<sub>wall</sub> = 4πr<sub>b</sub>²σ    (surface energy)\n      </div>",
+      "count": 1,
+      "hash": "1b8c65c2f464"
+    },
+    {
+      "text": "Evolume= -(4π/3)rb³ΔV    (volume energy gain)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        E<sub>volume</sub> = -(4π/3)r<sub>b</sub>³ΔV    (volume energy gain)\n      </div>",
+      "count": 1,
+      "hash": "2b4e3677fbaa"
+    },
+    {
+      "text": "rb= 2σ/ΔV",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; background: rgba(81, 207, 102, 0.15); font-weight: 600;\">\n        r<sub>b</sub> = 2σ/ΔV\n      </div>",
+      "count": 1,
+      "hash": "3b79c80f2b05"
+    },
+    {
+      "text": "rb= 3σ/(4ΔV)(gravitational correction)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; background: rgba(81, 207, 102, 0.15); font-weight: 600;\">\n        r<sub>b</sub> = 3σ/(4ΔV)     <span style=\"font-weight: normal;\">(gravitational correction)</span>\n</div>",
+      "count": 1,
+      "hash": "73b007e7381d"
+    },
+    {
+      "text": "SE= (surface term) + (curvature term) = π²ρ₀³σ - 3π²ρ₀⁴ΔV/4",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        S<sub>E</sub> = (surface term) + (curvature term) = π²ρ₀³σ - 3π²ρ₀⁴ΔV/4\n      </div>",
+      "count": 1,
+      "hash": "29f108c0ed43"
+    },
+    {
+      "text": "SE= 27π²σ⁴ / (2ΔV³)(7.8.1)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15); font-size: 1.1rem; font-weight: 600;\">\n<div class=\"eq-content\">\n          S<sub>E</sub> = 27π²σ⁴ / (2ΔV³)\n        </div>\n<div class=\"eq-number\">(7.8.1)</div>\n</div>",
+      "count": 1,
+      "hash": "9c6ebcf252b2"
+    },
+    {
+      "text": "Γ / V₄ = A(ΔV, σ) · exp(-SE)(7.8.2)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15); font-size: 1.1rem; font-weight: 600;\">\n<div class=\"eq-content\">\n          Γ / V₄ = A(ΔV, σ) · exp(-S<sub>E</sub>)\n        </div>\n<div class=\"eq-number\">(7.8.2)</div>\n</div>",
+      "count": 1,
+      "hash": "fd94093be2df"
+    },
+    {
+      "text": "ΔVeff= ΔV / (1 + ηΔtortho)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n        ΔV<sub>eff</sub> = ΔV / (1 + ηΔt<sub>ortho</sub>)\n      </div>",
+      "count": 1,
+      "hash": "004923b46d41"
+    },
+    {
+      "text": "ds213= gμν(x)dxμdxν+\n            gmn(x,y)dymdyn+ 2Aμa(x)Kamdxμdym(6.1)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            ds<sup>2</sup><sub>13</sub> = g<sub>μν</sub>(x)dx<sup>μ</sup>dx<sup>ν</sup> +\n            g<sub>mn</sub>(x,y)dy<sup>m</sup>dy<sup>n</sup> + 2A<sub>μ</sub><sup>a</sup>(x)K<sub>a</sub><sup>m</sup>dx<sup>μ</sup>dy<sub>m</sub>\n</span>\n<span class=\"eq-number\">(6.1)</span>\n</div>",
+      "count": 1,
+      "hash": "6d80962938be"
+    },
+    {
+      "text": "S14= (1/2κ142) ∫ d14x √(-G) R14(6.2)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            S<sub>14</sub> = (1/2κ<sub>14</sub><sup>2</sup>) ∫ d<sup>14</sup>x √(-G) R<sub>14</sub>\n</span>\n<span class=\"eq-number\">(6.2)</span>\n</div>",
+      "count": 1,
+      "hash": "9b77103d60bb"
+    },
+    {
+      "text": "gmn(x,y) = e2σ(x)gmn(0)(y)(6.4)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            g<sub>mn</sub>(x,y) = e<sup>2σ(x)</sup> g<sub>mn</sub><sup>(0)</sup>(y)\n          </span>\n<span class=\"eq-number\">(6.4)</span>\n</div>",
+      "count": 1,
+      "hash": "a4f8103aada7"
+    },
+    {
+      "text": "ds226= GMNdXMdXN,    M,N = 0,1,...,25",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              ds<sup>2</sup><sub>26</sub> = G<sub>MN</sub>dX<sup>M</sup>dX<sup>N</sup>,    M,N = 0,1,...,25\n            </span>\n</div>",
+      "count": 1,
+      "hash": "3ea83182b920"
+    },
+    {
+      "text": "XM∂MΦ = 0",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              X<sup>M</sup> ∂<sub>M</sub>Φ = 0\n            </span>\n</div>",
+      "count": 1,
+      "hash": "32e9bded9dce"
+    },
+    {
+      "text": "ds214= gμνdxμdxν+ gmndymdyn",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              ds<sup>2</sup><sub>14</sub> = g<sub>μν</sub>dx<sup>μ</sup>dx<sup>ν</sup> + g<sub>mn</sub>dy<sup>m</sup>dy<sup>n</sup>\n</span>\n</div>",
+      "count": 1,
+      "hash": "b15821d83297"
+    },
+    {
+      "text": "ttotal= ttherm+ β tortho,    β = cos(θmirror)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              t<sub>total</sub> = t<sub>therm</sub> + β t<sub>ortho</sub>,    β = cos(θ<sub>mirror</sub>)\n            </span>\n</div>",
+      "count": 1,
+      "hash": "6d995f0a5d48"
+    },
+    {
+      "text": "ctotal= cbulk+ cghosts+ cmatter= 0",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4);\">\n<span class=\"eq-content\">\n              c<sub>total</sub> = c<sub>bulk</sub> + c<sub>ghosts</sub> + c<sub>matter</sub> = 0\n            </span>\n</div>",
+      "count": 1,
+      "hash": "0cb144db119c"
+    },
+    {
+      "text": "ctotal= 24 − 26 + 2 =0✓",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.2); border: 2px solid rgba(81, 207, 102, 0.5); margin-top: 1rem;\">\n<span class=\"eq-content\">\n              c<sub>total</sub> = 24 − 26 + 2 = <strong>0</strong> ✓\n            </span>\n</div>",
+      "count": 1,
+      "hash": "6e77d9fe7ce8"
+    },
+    {
+      "text": "deff= 12 + 0.5 × (α₄ + α₅) = 12 + 0.5 × 1.1781 = 12.589",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              d<sub>eff</sub> = 12 + 0.5 × (α₄ + α₅) = 12 + 0.5 × 1.1781 = 12.589\n            </span>\n</div>",
+      "count": 1,
+      "hash": "2665457830c7"
+    },
+    {
+      "text": "w0= -(deff- 1)/(deff+ 1) = -(12.589 - 1)/(12.589 + 1) =",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.4);\">\n<span class=\"eq-content\">\n              w<sub>0</sub> = -(d<sub>eff</sub> - 1)/(d<sub>eff</sub> + 1) = -(12.589 - 1)/(12.589 + 1) = <strong><span class=\"pm-value\" data-category=\"dark_energy\" data-format=\"fixed:4\" data-param=\"w0_PM\"></span></strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "deb6d91defc7"
+    },
+    {
+      "text": "(5,2) + 3×(3,2)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(79, 172, 254, 0.15); border: 1px solid rgba(79, 172, 254, 0.4);\">\n<span class=\"eq-content\">\n<strong>(5,2) + 3×(3,2)</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "ea74ee1e9886"
+    },
+    {
+      "text": "TBPS≥ |Zp,q| / Vp",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              T<sub>BPS</sub> ≥ |Z<sub>p,q</sub>| / V<sub>p</sub>\n</span>\n</div>",
+      "count": 1,
+      "hash": "5b325f6851ad"
+    },
+    {
+      "text": "∑ Qbranes+ QO-planes= 0    (tadpole cancellation)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(255, 126, 182, 0.15); border: 1px solid rgba(255, 126, 182, 0.4); margin-top: 1rem;\">\n<span class=\"eq-content\">\n              ∑ Q<sub>branes</sub> + Q<sub>O-planes</sub> = 0    (tadpole cancellation)\n            </span>\n</div>",
+      "count": 1,
+      "hash": "06a54c26bf10"
+    },
+    {
+      "text": "C2(SO(24,2)) = p(p + 22)/4",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4);\">\n<span class=\"eq-content\">\n              C<sub>2</sub>(SO(24,2)) = p(p + 22)/4\n            </span>\n</div>",
+      "count": 1,
+      "hash": "97be120940c8"
+    },
+    {
+      "text": "dimeff= 4 × 16 =64 components",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              dim<sub>eff</sub> = 4 × 16 = <strong>64 components</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "9aa75ddec47b"
+    },
+    {
+      "text": "S = ∫ d4x √(-g) [φR + ψT - V(φ,ψ)](6.6)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            S = ∫ d<sup>4</sup>x √(-g) [φR + ψT - V(φ,ψ)]\n          </span>\n<span class=\"eq-number\">(6.6)</span>\n</div>",
+      "count": 1,
+      "hash": "69ade4eccb3e"
+    },
+    {
+      "text": "Tλμν= Γλ[μν]≠ 0(6.7)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            T<sup>λ</sup><sub>μν</sub> = Γ<sup>λ</sup><sub>[μν]</sub> ≠ 0\n          </span>\n<span class=\"eq-number\">(6.7)</span>\n</div>",
+      "count": 1,
+      "hash": "3482486f91ad"
+    },
+    {
+      "text": "Tλμν∼ κ2⟨ΨPγλγ[μγν]ΨP⟩(6.8)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            T<sup>λ</sup><sub>μν</sub> ∼ κ<sup>2</sup>\n            ⟨Ψ<sub>P</sub>γ<sup>λ</sup>γ<sub>[μ</sub>γ<sub>ν]</sub>Ψ<sub>P</sub>⟩\n          </span>\n<span class=\"eq-number\">(6.8)</span>\n</div>",
+      "count": 1,
+      "hash": "a79c7d93ab53"
+    },
+    {
+      "text": "F(R,T,τ) = R + αR2+ βT + γRT + δ(∂τ)T(6.8a)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"font-size: 1.1rem;\">\n<span class=\"eq-content\">\n            F(R,T,τ) = R + αR<sup>2</sup> + βT + γRT + δ(∂τ)T\n          </span>\n<span class=\"eq-number\">(6.8a)</span>\n</div>",
+      "count": 1,
+      "hash": "4df0acb2b308"
+    },
+    {
+      "text": "Seff= (1/(16π2)) ∫ d4x √-g [a0+ a2R + a4R2+ ...]",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              S<sub>eff</sub> = (1/(16π<sup>2</sup>)) ∫ d<sup>4</sup>x √-g [a<sub>0</sub> + a<sub>2</sub>R + a<sub>4</sub>R<sup>2</sup> + ...]\n            </span>\n</div>",
+      "count": 1,
+      "hash": "6f78dfc43256"
+    },
+    {
+      "text": "∫ d4x √-g e2σTmatter→ ∫ d4x √-g (1 + 2σ + ...) T",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              ∫ d<sup>4</sup>x √-g e<sup>2σ</sup> T<sub>matter</sub> → ∫ d<sup>4</sup>x √-g (1 + 2σ + ...) T\n            </span>\n</div>",
+      "count": 1,
+      "hash": "784c14b2ad95"
+    },
+    {
+      "text": "β = 2⟨σ⟩ = 2φ0≈0.15",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.1);\">\n<span class=\"eq-content\">\n              β = 2⟨σ⟩ = 2φ<sub>0</sub> ≈ <strong>0.15</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "799c7077e8f2"
+    },
+    {
+      "text": "γ = (g2)/(MPl2) × VK-1/2",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              γ = (g<sup>2</sup>)/(M<sub>Pl</sub><sup>2</sup>) × V<sub>K</sub><sup>-1/2</sup>\n</span>\n</div>",
+      "count": 1,
+      "hash": "5eb4a8b49422"
+    },
+    {
+      "text": "γ ≈10-4/MPl2",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.1);\">\n<span class=\"eq-content\">\n              γ ≈ <strong>10<sup>-4</sup>/M<sub>Pl</sub><sup>2</sup></strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "74d1b110cd86"
+    },
+    {
+      "text": "∫ d26X √-G &barΨ iΓM∂MΨ ⊃ ∫ d4x √-g [(∂t)T + g Δtortho(∂τ)T]",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              ∫ d<sup>26</sup>X √-G &amp;barΨ iΓ<sup>M</sup>∂<sub>M</sub>Ψ ⊃ ∫ d<sup>4</sup>x √-g [(∂<sub>t</sub>)T + g Δt<sub>ortho</sub> (∂<sub>τ</sub>)T]\n            </span>\n</div>",
+      "count": 1,
+      "hash": "5ebd18b758cb"
+    },
+    {
+      "text": "δ = g Δtortho≈ 0.1 × 10-18s =10-19s",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.1);\">\n<span class=\"eq-content\">\n              δ = g Δt<sub>ortho</sub> ≈ 0.1 × 10<sup>-18</sup> s = <strong>10<sup>-19</sup> s</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "7c1f65851ace"
+    },
+    {
+      "text": "CISW= 1 + (γ/β) × (R/T) × fgrav≈ 1 + (10-4/0.15) × O(1) × 2.3 ≈1.5",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(79, 172, 254, 0.15); border: 1px solid rgba(79, 172, 254, 0.4); margin: 1rem 0;\">\n<div style=\"font-size: 1.1rem;\">\n              C<sub>ISW</sub> = 1 + (γ/β) × (R/T) × f<sub>grav</sub> ≈ 1 + (10<sup>-4</sup>/0.15) × O(1) × 2.3 ≈ <strong>1.5</strong>\n</div>\n</div>",
+      "count": 1,
+      "hash": "84c139037ef4"
+    },
+    {
+      "text": "δT/T ~ β × (δφ/MPl) × (Δθ/10°)-2≈ 0.15 × 0.01 × 10-4≈-70 μKwhere δφ ~ 0.01 MPlis the bubble wall thickness and Δθ ~ 10° is the angular scale",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.4); margin: 1rem 0;\">\n<div style=\"font-size: 1.05rem;\">\n              δT/T ~ β × (δφ/M<sub>Pl</sub>) × (Δθ/10°)<sup>-2</sup> ≈ 0.15 × 0.01 × 10<sup>-4</sup> ≈ <strong>-70 μK</strong>\n</div>\n<div style=\"font-size: 0.9rem; color: var(--text-muted); margin-top: 0.5rem;\">\n              where δφ ~ 0.01 M<sub>Pl</sub> is the bubble wall thickness and Δθ ~ 10° is the angular scale\n           ",
+      "count": 1,
+      "hash": "ba8c1aebc2a1"
+    },
+    {
+      "text": "ds²6= e-2kyημνdxμdxν+ dy² + dz²(6.9a)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n              ds²<sub>6</sub> = e<sup>-2ky</sup> η<sub>μν</sub> dx<sup>μ</sup> dx<sup>ν</sup> + dy² + dz²\n            </span>\n<span class=\"eq-number\">(6.9a)</span>\n</div>",
+      "count": 1,
+      "hash": "7cab41484138"
+    },
+    {
+      "text": "Mtower(d) ~ MPle-αd/MPl",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              M<sub>tower</sub>(d) ~ M<sub>Pl</sub> e<sup>-αd/M<sub>Pl</sub></sup>\n</span>\n</div>",
+      "count": 1,
+      "hash": "d034be4a32fc"
+    },
+    {
+      "text": "α > αcrit= √(2/3) ≈0.816",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(255, 212, 59, 0.15);\">\n<span class=\"eq-content\">\n              α &gt; α<sub>crit</sub> = √(2/3) ≈ <strong>0.816</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "878c6f6f8408"
+    },
+    {
+      "text": "a = √(26/13) = √(2) ≈1.414",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 2px solid #51cf66;\">\n<span class=\"eq-content\">\n              a = √(26/13) = √(2) ≈ <strong>1.414</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "a9269ce5fecf"
+    },
+    {
+      "text": "1.414 > 0.816   ✔SWAMPLAND CONSTRAINT SATISFIED",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.2); border: 3px solid #51cf66; font-size: 1.2rem;\">\n<span class=\"eq-content\">\n              1.414 &gt; 0.816   ✔ <strong>SWAMPLAND CONSTRAINT SATISFIED</strong>\n</span>\n</div>",
+      "count": 1,
+      "hash": "e52f6987d10c"
+    },
+    {
+      "text": "V(χ) = V0[1 + (χ/MPl)-α]   \n            (tracker potential)(6.11)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            V(χ) = V<sub>0</sub>[1 + (χ/M<sub>Pl</sub>)<sup>-α</sup>]   \n            (tracker potential)\n          </span>\n<span class=\"eq-number\">(6.11)</span>\n</div>",
+      "count": 1,
+      "hash": "81a41624b230"
+    },
+    {
+      "text": "x = χ'/(√6 H)    \n          y = √(V/3H2MPl2)    \n          z = √(ρm/3H2MPl2)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n          x = χ'/(√6 H)    \n          y = √(V/3H<sup>2</sup>M<sub>Pl</sub><sup>2</sup>)    \n          z = √(ρ<sub>m</sub>/3H<sup>2</sup>M<sub>Pl</sub><sup>2</sup>)\n        </div>",
+      "count": 1,
+      "hash": "846cf78efb2f"
+    },
+    {
+      "text": "ρΛ= V0≈ (2.3 × 10-3eV)4(6.14)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            ρ<sub>Λ</sub> = V<sub>0</sub> ≈ (2.3 × 10<sup>-3</sup> eV)<sup>4</sup>\n</span>\n<span class=\"eq-number\">(6.14)</span>\n</div>",
+      "count": 1,
+      "hash": "c44df1f7dd8f"
+    },
+    {
+      "text": "V0= MPl4× exp(-4αd/MPl)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4);\">\n            V<sub>0</sub> = M<sub>Pl</sub><sup>4</sup> × exp(-4αd/M<sub>Pl</sub>)\n          </div>",
+      "count": 1,
+      "hash": "d7d46bd25113"
+    },
+    {
+      "text": "V0= ngen× MPl4/ SdS≈ 3 × 10-46GeV4",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.4);\">\n            V<sub>0</sub> = n<sub>gen</sub> × M<sub>Pl</sub><sup>4</sup> / S<sub>dS</sub> ≈ 3 × 10<sup>-46</sup> GeV<sup>4</sup>\n</div>",
+      "count": 1,
+      "hash": "3b891cfcd34d"
+    },
+    {
+      "text": "w0= -(Deff- 1)/(Deff+ 1) = -(12.589 - 1)/(12.589 + 1) =± 0.001where Deff= 12 + 0.589 from quantum corrections (CFT anomaly + moduli stabilization)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 2px solid rgba(81, 207, 102, 0.4); margin: 1rem 0;\">\n<div style=\"font-size: 1.2rem; margin-bottom: 0.5rem;\">\n              w<sub>0</sub> = -(D<sub>eff</sub> - 1)/(D<sub>eff</sub> + 1) = -(12.589 - 1)/(12.589 + 1) = <strong><span class=\"pm-value\" data-category=\"dark_energy\" data-format=\"fixed:4\" data-param=\"w0_PM\"></span> ± 0.001</strong>\n</div>\n<div style=\"font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5r",
+      "count": 1,
+      "hash": "2eceebd2335a"
+    },
+    {
+      "text": "F(R,T) = R + αR2+ βT + γRTwhere β = 0.15 from breathing mode VEV: φ0= 0.075 MPl",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(79, 172, 254, 0.15); border: 1px solid rgba(79, 172, 254, 0.4); margin: 1rem 0;\">\n<div style=\"font-size: 1.1rem;\">\n              F(R,T) = R + αR<sup>2</sup> + βT + γRT\n            </div>\n<div style=\"font-size: 0.95rem; color: var(--text-muted); margin-top: 0.5rem;\">\n              where β = 0.15 from breathing mode VEV: φ<sub>0</sub> = 0.075 M<sub>Pl</sub>\n</div>\n</div>",
+      "count": 1,
+      "hash": "92be287976ea"
+    },
+    {
+      "text": "Δw0= -β × (Ωm/ΩDE) × CISW≈ -0.15 × 0.43 × 1.5 ≈-0.10",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4); margin: 0.75rem 0;\">\n              Δw<sub>0</sub> = -β × (Ω<sub>m</sub>/Ω<sub>DE</sub>) × C<sub>ISW</sub> ≈ -0.15 × 0.43 × 1.5 ≈ <strong>-0.10</strong>\n</div>",
+      "count": 1,
+      "hash": "a30f69e6322a"
+    },
+    {
+      "text": "w0= -(Deff- 1)/(Deff+ 1)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4);\">\n            w<sub>0</sub> = -(D<sub>eff</sub> - 1)/(D<sub>eff</sub> + 1)\n          </div>",
+      "count": 1,
+      "hash": "db70863912e3"
+    },
+    {
+      "text": "Deff= 12 + δDquantum= 12 + 0.589 =12.589",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(79, 172, 254, 0.15); border: 1px solid rgba(79, 172, 254, 0.4); margin: 0.75rem 0;\">\n              D<sub>eff</sub> = 12 + δD<sub>quantum</sub> = 12 + 0.589 = <strong>12.589</strong>\n</div>",
+      "count": 1,
+      "hash": "ee7cfe8a0f8c"
+    },
+    {
+      "text": "w0= -(12.589 - 1)/(12.589 + 1) = -11.589/13.589 =± 0.001",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 1px solid rgba(81, 207, 102, 0.4); margin: 0.75rem 0;\">\n<div style=\"font-size: 1.15rem; margin-bottom: 0.3rem;\">\n                w<sub>0</sub> = -(12.589 - 1)/(12.589 + 1) = -11.589/13.589 = <strong><span class=\"pm-value\" data-category=\"dark_energy\" data-format=\"fixed:4\" data-param=\"w0_PM\"></span> ± 0.001</strong>\n</div>\n</div>",
+      "count": 1,
+      "hash": "0bce9afd3759"
+    },
+    {
+      "text": "Lint= (g/f) (∂μχ) JμPneumaProtected by approximate shift symmetry χ → χ + const",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 0.5rem 0;\">\n            L<sub>int</sub> = (g/f) (∂<sub>μ</sub>χ) J<sup>μ</sup><sub>Pneuma</sub>\n<div class=\"label\">Protected by approximate shift symmetry χ → χ + const</div>\n</div>",
+      "count": 1,
+      "hash": "62dd199093c0"
+    },
+    {
+      "text": "αT(z) = 1 + (3/2) × fm(z)where fm(z) = Ωm(1+z)3/ [Ωm(1+z)3+ ΩΛ]",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 0.5rem 0; background: rgba(255,193,7,0.1);\">\n            α<sub>T</sub>(z) = 1 + (3/2) × f<sub>m</sub>(z)\n            <div class=\"label\">where f<sub>m</sub>(z) = Ω<sub>m</sub>(1+z)<sup>3</sup> / [Ω<sub>m</sub>(1+z)<sup>3</sup> + Ω<sub>Λ</sub>]</div>\n</div>",
+      "count": 1,
+      "hash": "34a359ff53f9"
+    },
+    {
+      "text": "ρ'm+ 3Hρm= -Q     \n            ρ'χ+ 3H(1+w)ρχ= +Q(6.15e)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            ρ'<sub>m</sub> + 3Hρ<sub>m</sub> = -Q     \n            ρ'<sub>χ</sub> + 3H(1+w)ρ<sub>χ</sub> = +Q\n          </span>\n<span class=\"eq-number\">(6.15e)</span>\n</div>",
+      "count": 1,
+      "hash": "267fccf26fc1"
+    },
+    {
+      "text": "gμν= ημν+ hμν,    hμν~ ei(ωt - kx)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              g<sub>μν</sub> = η<sub>μν</sub> + h<sub>μν</sub>,    h<sub>μν</sub> ~ e<sup>i(ωt - kx)</sup>\n</span>\n</div>",
+      "count": 1,
+      "hash": "cfe49c4a1d70"
+    },
+    {
+      "text": "FR&Boxhμν+ (FT+ δ ∂τ)T(1)μν= 0",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              F<sub>R</sub> &amp;Boxh<sub>μν</sub> + (F<sub>T</sub> + δ ∂<sub>τ</sub>)T<sup>(1)</sup><sub>μν</sub> = 0\n            </span>\n</div>",
+      "count": 1,
+      "hash": "d60004b491f8"
+    },
+    {
+      "text": "(-ω2+ k2)FR+ (β + δ ω) ω2= 0",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              (-ω<sup>2</sup> + k<sup>2</sup>)F<sub>R</sub> + (β + δ ω) ω<sup>2</sup> = 0\n            </span>\n</div>",
+      "count": 1,
+      "hash": "712820da4b36"
+    },
+    {
+      "text": "ω2= k2[1 + ξ2(k/MPl)2+ η k Δtortho/c](6.15a)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(139, 127, 255, 0.1)); font-size: 1.1rem; border: 2px solid #4facfe;\">\n<span class=\"eq-content\">\n              ω<sup>2</sup> = k<sup>2</sup> [1 + ξ<sup>2</sup>(k/M<sub>Pl</sub>)<sup>2</sup> + η k Δt<sub>ortho</sub>/c]\n            </span>\n<span class=\"eq-number\">(6.15a)</span>\n</div>",
+      "count": 1,
+      "hash": "2b3cd61db120"
+    },
+    {
+      "text": "LISA sensitivity: δω/ω ~ 10-20at f ~ 10-3Hz",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 2px solid #51cf66; font-size: 1.1rem;\">\n<span class=\"eq-content\">\n              LISA sensitivity: δω/ω ~ 10<sup>-20</sup> at f ~ 10<sup>-3</sup> Hz\n            </span>\n</div>",
+      "count": 1,
+      "hash": "16dfd1e8a444"
+    },
+    {
+      "text": "⟨OA(t) OB(0)⟩β= ⟨OB(0) OA(t + iβ)⟩β",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              ⟨O<sub>A</sub>(t) O<sub>B</sub>(0)⟩<sub>β</sub> = ⟨O<sub>B</sub>(0) O<sub>A</sub>(t + iβ)⟩<sub>β</sub>\n</span>\n</div>",
+      "count": 1,
+      "hash": "054794d40a89"
+    },
+    {
+      "text": "⟨ΨP(tth, to) ΨP†(0,0)⟩ = ⟨ΨP†(0,0) ΨP(tth+ iβth, to+ iβo)⟩(6.15b)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"background: linear-gradient(135deg, rgba(255, 126, 182, 0.1), rgba(139, 127, 255, 0.1)); font-size: 1.05rem; border: 2px solid #ff7eb6;\">\n<span class=\"eq-content\">\n              ⟨Ψ<sub>P</sub>(t<sub>th</sub>, t<sub>o</sub>) Ψ<sub>P</sub><sup>†</sup>(0,0)⟩ = ⟨Ψ<sub>P</sub><sup>†</sup>(0,0) Ψ<sub>P</sub>(t<sub>th</sub> + iβ<sub>th</sub>, t<sub>o</sub> + iβ<sub>o</sub>)⟩\n            </span>\n<span class=\"eq-number\">(6.15b)</span>\n</div>",
+      "count": 1,
+      "hash": "7b2b863f3638"
+    },
+    {
+      "text": "K = Htherm+ αTTHortho",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              K = H<sub>therm</sub> + α<sub>TT</sub> H<sub>ortho</sub>\n</span>\n</div>",
+      "count": 1,
+      "hash": "25f246ad27ea"
+    },
+    {
+      "text": "Γ(Eth, Eo) = e-βthEth- βoEoΓ(-Eth, -Eo)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<span class=\"eq-content\">\n              Γ(E<sub>th</sub>, E<sub>o</sub>) = e<sup>-β<sub>th</sub> E<sub>th</sub> - β<sub>o</sub> E<sub>o</sub></sup> Γ(-E<sub>th</sub>, -E<sub>o</sub>)\n            </span>\n</div>",
+      "count": 1,
+      "hash": "5ecf3547f139"
+    },
+    {
+      "text": "Stotal= Stherm+ Sortho≥ 0   →   dStotal/dttherm> 0",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); border: 2px solid #51cf66;\">\n<span class=\"eq-content\">\n              S<sub>total</sub> = S<sub>therm</sub> + S<sub>ortho</sub> ≥ 0   →   dS<sub>total</sub>/dt<sub>therm</sub> &gt; 0\n            </span>\n</div>",
+      "count": 1,
+      "hash": "87fa7cb5d05d"
+    },
+    {
+      "text": "Θ' ≤ -(Θ2/2) - 8πG⟨Tkk⟩ren(6.16)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            Θ' ≤ -(Θ<sup>2</sup>/2) - 8πG⟨T<sub>kk</sub>⟩<sub>ren</sub>\n</span>\n<span class=\"eq-number\">(6.16)</span>\n</div>",
+      "count": 1,
+      "hash": "6975e168ce80"
+    },
+    {
+      "text": "Hphys= Ker(Q)/Im(Q)     Q2= 0(6.17)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            H<sub>phys</sub> = Ker(Q)/Im(Q)     Q<sup>2</sup> = 0\n          </span>\n<span class=\"eq-number\">(6.17)</span>\n</div>",
+      "count": 1,
+      "hash": "0f5e89c2679c"
+    },
+    {
+      "text": "[Q, H] = 0    ⇒    S-matrix is unitary on Hphys(6.18)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            [Q, H] = 0    ⇒    S-matrix is unitary on H<sub>phys</sub>\n</span>\n<span class=\"eq-number\">(6.18)</span>\n</div>",
+      "count": 1,
+      "hash": "9b93a6b554ec"
+    },
+    {
+      "text": "SPneuma/V ≤ Nmodes× log(2)/V ∼ 1/lPneuma3(6.19)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            S<sub>Pneuma</sub>/V ≤ N<sub>modes</sub> × log(2)/V ∼ 1/l<sub>Pneuma</sub><sup>3</sup>\n</span>\n<span class=\"eq-number\">(6.19)</span>\n</div>",
+      "count": 1,
+      "hash": "dfbced54e8f0"
+    },
+    {
+      "text": "FR> 0    (no graviton ghost)    \n            FRR> 0    (no scalaron ghost)(6.20)",
+      "type": "equation-box",
+      "file": "sections/cosmology.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\">\n<span class=\"eq-content\">\n            F<sub>R</sub> &gt; 0    (no graviton ghost)    \n            F<sub>RR</sub> &gt; 0    (no scalaron ghost)\n          </span>\n<span class=\"eq-number\">(6.20)</span>\n</div>",
+      "count": 1,
+      "hash": "cdde46f521dd"
+    },
+    {
+      "text": "D = 13 = 1 + 4 + 8 = dim(R) + dim(H) + dim(O)The unique division algebra decomposition of D = 13",
+      "type": "equation-box",
+      "file": "sections/division-algebra-section.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box large\" style=\"background: linear-gradient(135deg, rgba(81, 207, 102, 0.08), rgba(139, 127, 255, 0.12)); border: 2px solid rgba(81, 207, 102, 0.4);\">\n        D = 13 = 1 + 4 + 8 = dim(<strong>R</strong>) + dim(<strong>H</strong>) + dim(<strong>O</strong>)\n        <span class=\"equation-label\" style=\"font-size: 0.95rem; margin-top: 1rem;\">\n            The unique division algebra decomposition of D = 13\n        </span>\n</div>",
+      "count": 1,
+      "hash": "9dc20b0d667c"
+    },
+    {
+      "text": "dim(F4) = 52 = 4 × 13Automorphisms of J3(O)dim(E6) = 78 = 6 × 13Collineations ofOP2dim(J3(O)) - dim(G2) = 27 - 14 = 13Jordan algebra mod automorphismsΩ13Spin= Ω13String= 0Both cobordism groups vanish ",
+      "type": "equation-box",
+      "file": "sections/division-algebra-section.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"text-align: left; padding: 1.5rem;\">\n<table style=\"width: 100%; border-collapse: collapse;\">\n<tr>\n<td style=\"padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2);\">dim(F<sub>4</sub>) = 52 = 4 × 13</td>\n<td style=\"padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-muted);\">Automorphisms of J<sub>3</sub>(<strong>O</strong>)</td>\n</tr>\n<tr>\n<td style=\"padding: 0.5rem; border-bottom: 1px solid rgba(139, 127, 255, 0.2);",
+      "count": 1,
+      "hash": "8760240339ae"
+    },
+    {
+      "text": "F(R,T,τ) = R + αT + βT² + γτ + δτ²Modified gravity function with torsion coupling",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.12); border-color: rgba(139, 127, 255, 0.3);\">\n                F(R,T,τ) = R + αT + βT² + γτ + δτ²\n                <span class=\"equation-label\">Modified gravity function with torsion coupling</span>\n</div>",
+      "count": 1,
+      "hash": "14390e16b9f9"
+    },
+    {
+      "text": "F(R,T,τ) = R + αT + βT² + γτ + δτ²Modified gravity function (canonical form)",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.12); border-color: rgba(139, 127, 255, 0.3);\">\n                F(R,T,τ) = R + αT + βT² + γτ + δτ²\n                <span class=\"equation-label\">Modified gravity function (canonical form)</span>\n</div>",
+      "count": 1,
+      "hash": "ff0f4e58d4af"
+    },
+    {
+      "text": "Λeff= (γτ + δτ²)/2Effective cosmological constant from torsion",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);\">\n                Λ<sub>eff</sub> = (γτ + δτ²)/2\n                <span class=\"equation-label\">Effective cosmological constant from torsion</span>\n</div>",
+      "count": 1,
+      "hash": "193331d96cad"
+    },
+    {
+      "text": "mgen(n)= m0· e−n·d/ℓ(n = 1, 2, 3)",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(255, 126, 182, 0.15); border: 1px solid rgba(255, 126, 182, 0.4); margin: 1rem 0;\">\n      m\n      <sub>\n       gen\n      </sub>\n<sup>\n       (n)\n      </sup>\n      = m\n      <sub>\n       0\n      </sub>\n      · e\n      <sup>\n       −n·d/ℓ\n      </sup>\n      (n = 1, 2, 3)\n     </div>",
+      "count": 1,
+      "hash": "2ce77cee5c82"
+    },
+    {
+      "text": "Ind(D) = (1/24π²) ∫Σ³Tr(F∧F)Atiyah-Singer index for Dirac operator on 3-cycle Σ³",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<div style=\"font-family: 'Crimson Text', serif; font-size: 1.25rem;\">\n      Ind(D) = (1/24π²) ∫\n      <sub>\n       Σ³\n      </sub>\n      Tr(F∧F)\n     </div>\n<div class=\"label\">\n      Atiyah-Singer index for Dirac operator on 3-cycle Σ³\n     </div>\n</div>",
+      "count": 1,
+      "hash": "75acebc75d1e"
+    },
+    {
+      "text": "tGUT= log(MGUT/TeV) ≈ 30   ⇒   MGUT≈ 1013TeVGUT scale from RG flow parameter",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                t<sub>GUT</sub> = log(M<sub>GUT</sub>/TeV) ≈ 30   ⇒   M<sub>GUT</sub> ≈ 10<sup>13</sup> TeV\n                <div class=\"label\">GUT scale from RG flow parameter</div>\n</div>",
+      "count": 1,
+      "hash": "7c374104b3db"
+    },
+    {
+      "text": "ln(MPl/MGUT,base) = ln(1.22×1019/1.8×1016) = ln(677.8) =6.519Logarithmic scale separation",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                ln(M<sub>Pl</sub>/M<sub>GUT,base</sub>) = ln(1.22×10<sup>19</sup>/1.8×10<sup>16</sup>) = ln(677.8) = <strong>6.519</strong>\n<div class=\"label\">Logarithmic scale separation</div>\n</div>",
+      "count": 1,
+      "hash": "1d3c0868cae4"
+    },
+    {
+      "text": "s = [ln(MPl/MGUT,base) - Tω] / NfluxWarping parameter",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                s = [ln(M<sub>Pl</sub>/M<sub>GUT,base</sub>) - T<sub>ω</sub>] / N<sub>flux</sub>\n<div class=\"label\">Warping parameter</div>\n</div>",
+      "count": 1,
+      "hash": "c589abb7b5fc"
+    },
+    {
+      "text": "s = (6.519 - (-0.8836)) / 6.283 = 7.403 / 6.283 =1.178Numerical evaluation: s ≈ 1.18",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.1);\">\n                s = (6.519 - (-0.8836)) / 6.283 = 7.403 / 6.283 = <strong>1.178</strong>\n<div class=\"label\">Numerical evaluation: s ≈ 1.18</div>\n</div>",
+      "count": 1,
+      "hash": "01fc9ab215bb"
+    },
+    {
+      "text": "MGUT= 1.8×1016GeV × (1 + 0.15 × 1.178)= 1.8×1016GeV × (1 + 0.1767)= 1.8×1016GeV × 1.1767=GeVFinal result: 17.67% enhancement from warping",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); font-size: 1.15rem; padding: 1.5rem;\">\n                M<sub>GUT</sub> = 1.8×10<sup>16</sup> GeV × (1 + 0.15 × 1.178)\n                <br/><br/>\n                        = 1.8×10<sup>16</sup> GeV × (1 + 0.1767)\n                <br/><br/>\n                        = 1.8×10<sup>16</sup> GeV × 1.1767\n                <br/><br/>\n                        = <strong style=\"color: #22c55e; font-size: 1.3rem;\"><span class=\"pm-value\" data-c",
+      "count": 1,
+      "hash": "40f3ffde5854"
+    },
+    {
+      "text": "Uncertainty: ΔMGUT= ±0.09 × 1016GeV   (4.3% relative error)Error from b₃ flux variations",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                Uncertainty: ΔM<sub>GUT</sub> = ±0.09 × 10<sup>16</sup> GeV   (4.3% relative error)\n                <div class=\"label\">Error from b₃ flux variations</div>\n</div>",
+      "count": 1,
+      "hash": "b69e14e4950c"
+    },
+    {
+      "text": "The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋\n                    (both rank 2) that must embed primitively into the K3 lattice:Λ = U³ ⊕ (-E₈)² with rank 22, signatur",
+      "type": "equation-box",
+      "file": "sections/geometric-framework.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.1); padding: 1rem; margin: 1rem 0;\">\n<p style=\"margin-bottom: 0.5rem; color: var(--text-secondary);\">\n      The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋\n                    (both rank 2) that must embed primitively into the K3 lattice:\n     </p>\n<div style=\"text-align: center; font-size: 1.1rem; margin: 1rem 0;\">\n      Λ = U³ ⊕ (-E₈)² with rank 22, signature (3,19)\n     </div>\n<p style=\"margin-t",
+      "count": 1,
+      "hash": "81f446d2e86d"
+    },
+    {
+      "text": "Hover for detailsρB1ρB1The reduced density matrix on our brane - the quantum state we actually observe.Density operatorGenerally a mixed state even when |Ψ⟩bulkis pure, due to entanglement with hidden",
+      "type": "equation-box",
+      "file": "sections/geometric-framework.html",
+      "has_topic": true,
+      "category": "other",
+      "html": "<div class=\"equation-box interactive-formula\" style=\"background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3);\">\n<span class=\"formula-hint\">\n       Hover for details\n      </span>\n<span class=\"formula-var\">\n       ρ\n       <sub>\n        B\n        <sub>\n         1\n        </sub>\n</sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         ρ\n         <sub>\n          B\n          <sub>\n           1\n          </sub>\n</sub>\n</div>\n<div class=\"var-description\">\n         The ",
+      "count": 1,
+      "hash": "d4a91f1b95f2"
+    }
+  ],
+  "orphaned_formulas": [
+    {
+      "text": "V(φ) = -(m²/2)φ² + (λ/4)φ⁴ + V₀",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        V(φ) = -(m²/2)φ² + (λ/4)φ⁴ + V₀\n      </div>",
+      "count": 1,
+      "hash": "b33cb0c84ff6"
+    },
+    {
+      "text": "Γ ~ (Δφ)⁴ exp(-B),    B = (2/ℏ) ∫φfalseφturn√[2m(V(φ) - Vfalse)] dφ",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        Γ ~ (Δφ)⁴ exp(-B),    B = (2/ℏ) ∫<sub>φ<sub>false</sub></sub><sup>φ<sub>turn</sub></sup> √[2m(V(φ) - V<sub>false</sub>)] dφ\n      </div>",
+      "count": 1,
+      "hash": "31dc4eeeaef6"
+    },
+    {
+      "text": "SE= 2π² ∫ [ρ³((dφ/dr)²/2 + V(φ)) + 3ρ(dρ/dr)²/(8πG) - 3ρ/(8πG)] dr",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; font-size: 1.05rem;\">\n        S<sub>E</sub> = 2π² ∫ [ρ³((dφ/dr)²/2 + V(φ)) + 3ρ(dρ/dr)²/(8πG) - 3ρ/(8πG)] dr\n      </div>",
+      "count": 1,
+      "hash": "9064f021f6a6"
+    },
+    {
+      "text": "rb= 3σ/(4ΔV)(7.7.1)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n<div class=\"eq-content\">\n          r<sub>b</sub> = 3σ/(4ΔV)\n        </div>\n<div class=\"eq-number\">(7.7.1)</div>\n</div>",
+      "count": 1,
+      "hash": "ed21238c59eb"
+    },
+    {
+      "text": "SE= 27π²σ⁴/(2ΔV³)(7.7.2)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n<div class=\"eq-content\">\n          S<sub>E</sub> = 27π²σ⁴/(2ΔV³)\n        </div>\n<div class=\"eq-number\">(7.7.2)</div>\n</div>",
+      "count": 1,
+      "hash": "3310bf5e64e3"
+    },
+    {
+      "text": "Γ ~ exp(-SE)(7.7.3)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n<div class=\"eq-content\">\n          Γ ~ exp(-S<sub>E</sub>)\n        </div>\n<div class=\"eq-number\">(7.7.3)</div>\n</div>",
+      "count": 1,
+      "hash": "b2c9c6026112"
+    },
+    {
+      "text": "P(δ > δ₀) = exp(-n · A · exp[-δ₀²/(2σ²)])",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        P(δ &gt; δ₀) = exp(-n · A · exp[-δ₀²/(2σ²)])\n      </div>",
+      "count": 1,
+      "hash": "6650a478169a"
+    },
+    {
+      "text": "ζ ~ -(rbH)1/2",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        ζ ~ -(r<sub>b</sub> H)<sup>1/2</sup>\n</div>",
+      "count": 1,
+      "hash": "182e564db16e"
+    },
+    {
+      "text": "ΔT/T ~ ζ/5 ~ -(rbH)1/2/5(7.7.4)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15);\">\n<div class=\"eq-content\">\n          ΔT/T ~ ζ/5 ~ -(r<sub>b</sub> H)<sup>1/2</sup>/5\n        </div>\n<div class=\"eq-number\">(7.7.4)</div>\n</div>",
+      "count": 1,
+      "hash": "ab3bbe170ff6"
+    },
+    {
+      "text": "P(Nspots) = λNexp(-λ) / N!",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        P(N<sub>spots</sub>) = λ<sup>N</sup> exp(-λ) / N!\n      </div>",
+      "count": 1,
+      "hash": "79dffce58130"
+    },
+    {
+      "text": "κ = ⟨(ΔT)⁴⟩ / ⟨(ΔT)²⟩² = 3 + Nspots(δdisk)⁴/σ⁴(7.7.5)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15);\">\n<div class=\"eq-content\">\n          κ = ⟨(ΔT)⁴⟩ / ⟨(ΔT)²⟩² = 3 + N<sub>spots</sub>(δ<sub>disk</sub>)⁴/σ⁴\n        </div>\n<div class=\"eq-number\">(7.7.5)</div>\n</div>",
+      "count": 1,
+      "hash": "c4479d3bb6e4"
+    },
+    {
+      "text": "Γ/V₄ = A exp(-SE[φbounce])",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1.5rem 0;\">\n      Γ/V₄ = A exp(-S<sub>E</sub>[φ<sub>bounce</sub>])\n    </div>",
+      "count": 1,
+      "hash": "1be7946e1b43"
+    },
+    {
+      "text": "SE[φ, g] = ∫ d⁴x √g [(1/2)gμν∂μφ∂νφ + V(φ) - R/(16πG)]",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; font-size: 1rem;\">\n        S<sub>E</sub>[φ, g] = ∫ d⁴x √g [(1/2)g<sup>μν</sup>∂<sub>μ</sub>φ∂<sub>ν</sub>φ + V(φ) - R/(16πG)]\n      </div>",
+      "count": 1,
+      "hash": "780d5a855e1f"
+    },
+    {
+      "text": "ds² = dξ² + ρ(ξ)² dΩ₃²",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        ds² = dξ² + ρ(ξ)² dΩ₃²\n      </div>",
+      "count": 1,
+      "hash": "64d0e50bc23c"
+    },
+    {
+      "text": "Ewall= 4πrb²σ    (surface energy)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        E<sub>wall</sub> = 4πr<sub>b</sub>²σ    (surface energy)\n      </div>",
+      "count": 1,
+      "hash": "1b8c65c2f464"
+    },
+    {
+      "text": "Evolume= -(4π/3)rb³ΔV    (volume energy gain)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        E<sub>volume</sub> = -(4π/3)r<sub>b</sub>³ΔV    (volume energy gain)\n      </div>",
+      "count": 1,
+      "hash": "2b4e3677fbaa"
+    },
+    {
+      "text": "rb= 2σ/ΔV",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; background: rgba(81, 207, 102, 0.15); font-weight: 600;\">\n        r<sub>b</sub> = 2σ/ΔV\n      </div>",
+      "count": 1,
+      "hash": "3b79c80f2b05"
+    },
+    {
+      "text": "rb= 3σ/(4ΔV)(gravitational correction)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; background: rgba(81, 207, 102, 0.15); font-weight: 600;\">\n        r<sub>b</sub> = 3σ/(4ΔV)     <span style=\"font-weight: normal;\">(gravitational correction)</span>\n</div>",
+      "count": 1,
+      "hash": "73b007e7381d"
+    },
+    {
+      "text": "SE= (surface term) + (curvature term) = π²ρ₀³σ - 3π²ρ₀⁴ΔV/4",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0;\">\n        S<sub>E</sub> = (surface term) + (curvature term) = π²ρ₀³σ - 3π²ρ₀⁴ΔV/4\n      </div>",
+      "count": 1,
+      "hash": "29f108c0ed43"
+    },
+    {
+      "text": "SE= 27π²σ⁴ / (2ΔV³)(7.8.1)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15); font-size: 1.1rem; font-weight: 600;\">\n<div class=\"eq-content\">\n          S<sub>E</sub> = 27π²σ⁴ / (2ΔV³)\n        </div>\n<div class=\"eq-number\">(7.8.1)</div>\n</div>",
+      "count": 1,
+      "hash": "9c6ebcf252b2"
+    },
+    {
+      "text": "Γ / V₄ = A(ΔV, σ) · exp(-SE)(7.8.2)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box numbered\" style=\"margin: 1rem 0; background: rgba(139, 127, 255, 0.15); font-size: 1.1rem; font-weight: 600;\">\n<div class=\"eq-content\">\n          Γ / V₄ = A(ΔV, σ) · exp(-S<sub>E</sub>)\n        </div>\n<div class=\"eq-number\">(7.8.2)</div>\n</div>",
+      "count": 1,
+      "hash": "fd94093be2df"
+    },
+    {
+      "text": "ΔVeff= ΔV / (1 + ηΔtortho)",
+      "type": "equation-box",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin: 1rem 0; background: rgba(79, 172, 254, 0.15);\">\n        ΔV<sub>eff</sub> = ΔV / (1 + ηΔt<sub>ortho</sub>)\n      </div>",
+      "count": 1,
+      "hash": "004923b46d41"
+    },
+    {
+      "text": "S = ∫ d26x √|G| [F(R,T,τ) + ℒPneuma+ ℒSM+ ℒhidden]Full 26D action with signature (24,2)",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);\">\n                S = ∫ d<sup>26</sup>x √|G| [F(R,T,τ) + ℒ<sub>Pneuma</sub> + ℒ<sub>SM</sub> + ℒ<sub>hidden</sub>]\n                <span class=\"equation-label\">Full 26D action with signature (24,2)</span>\n</div>",
+      "count": 1,
+      "hash": "e33a29ce8fac"
+    },
+    {
+      "text": "F(R,T,τ) = R + αT + βT² + γτ + δτ²Modified gravity function with torsion coupling",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.12); border-color: rgba(139, 127, 255, 0.3);\">\n                F(R,T,τ) = R + αT + βT² + γτ + δτ²\n                <span class=\"equation-label\">Modified gravity function with torsion coupling</span>\n</div>",
+      "count": 1,
+      "hash": "14390e16b9f9"
+    },
+    {
+      "text": "Sgravity= M*11∫ d13x √|G| REffective 13D Einstein-Hilbert action (gauge-fixed from 26D)",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\">\n                S<sub>gravity</sub> = M<sub>*</sub><sup>11</sup> ∫ d<sup>13</sup>x √|G| R\n                <span class=\"equation-label\">Effective 13D Einstein-Hilbert action (gauge-fixed from 26D)</span>\n</div>",
+      "count": 1,
+      "hash": "8d963b69219e"
+    },
+    {
+      "text": "ds213= gμν(x)dxμdxν+ hab(x,y)dyadybMetric ansatz for KK reduction",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\">\n                ds<sup>2</sup><sub>13</sub> = g<sub>μν</sub>(x)dx<sup>μ</sup>dx<sup>ν</sup> + h<sub>ab</sub>(x,y)dy<sup>a</sup>dy<sup>b</sup>\n<span class=\"equation-label\">Metric ansatz for KK reduction</span>\n</div>",
+      "count": 1,
+      "hash": "9f3de4029b19"
+    },
+    {
+      "text": "S4D= MPl2∫ d4x √|g| R4+ ...4D effective gravitational action",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\">\n                S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> ∫ d<sup>4</sup>x √|g| R<sub>4</sub> + ...\n                <span class=\"equation-label\">4D effective gravitational action</span>\n</div>",
+      "count": 1,
+      "hash": "06de094785b3"
+    },
+    {
+      "text": "MPl2= M*11⋅ V8Planck mass from extra dimensions",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);\">\n                M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> ⋅ V<sub>8</sub>\n<span class=\"equation-label\">Planck mass from extra dimensions</span>\n</div>",
+      "count": 1,
+      "hash": "c489dd27918c"
+    },
+    {
+      "text": "F(R,T,τ) = R + αT + βT² + γτ + δτ²Modified gravity function (canonical form)",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.12); border-color: rgba(139, 127, 255, 0.3);\">\n                F(R,T,τ) = R + αT + βT² + γτ + δτ²\n                <span class=\"equation-label\">Modified gravity function (canonical form)</span>\n</div>",
+      "count": 1,
+      "hash": "ff0f4e58d4af"
+    },
+    {
+      "text": "Gμν+ Λeffgμν= 8πGeffTμν+ α(Tμν+ Θμν) + 2βT Tμν+ Sμν(τ)Modified Einstein equations from F(R,T,τ) variation",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "field_equation",
+      "html": "<div class=\"equation-box\">\n                G<sub>μν</sub> + Λ<sub>eff</sub>g<sub>μν</sub> = 8πG<sub>eff</sub> T<sub>μν</sub> + α(T<sub>μν</sub> + Θ<sub>μν</sub>) + 2βT T<sub>μν</sub> + S<sub>μν</sub><sup>(τ)</sup>\n<span class=\"equation-label\">Modified Einstein equations from F(R,T,τ) variation</span>\n</div>",
+      "count": 1,
+      "hash": "6e29dff0b58e"
+    },
+    {
+      "text": "Λeff= (γτ + δτ²)/2Effective cosmological constant from torsion",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);\">\n                Λ<sub>eff</sub> = (γτ + δτ²)/2\n                <span class=\"equation-label\">Effective cosmological constant from torsion</span>\n</div>",
+      "count": 1,
+      "hash": "193331d96cad"
+    },
+    {
+      "text": "GMN~ ⟨ΨPΓ(M∇N)ΨP⟩Metric from Pneuma bilinears (schematic)",
+      "type": "equation-box",
+      "file": "sections/einstein-hilbert-term.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\">\n                G<sub>MN</sub> ~ ⟨<span style=\"text-decoration: overline;\">Ψ</span><sub>P</sub>Γ<sub>(M</sub>∇<sub>N)</sub>Ψ<sub>P</sub>⟩\n                <span class=\"equation-label\">Metric from Pneuma bilinears (schematic)</span>\n</div>",
+      "count": 1,
+      "hash": "95375263a2b5"
+    },
+    {
+      "text": "Hover over variables for definitions{ΓMΓMGamma matrix for spacetime direction M, generalizing the Dirac matrices to 26 dimensionsDimensionless (8192×8192 matrix in full 26D)Encodes how fermions transf",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       {\n       <span class=\"formula-var\">\n        Γ\n        <sup>\n         M\n        </sup>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n          Γ\n          <sup>\n           M\n          </sup>\n</div>\n<div c",
+      "count": 1,
+      "hash": "e3cfc11a649d"
+    },
+    {
+      "text": "Hover over variables for definitionsΨPΨPThe Pneuma field - 8192-component spinor in full 26D, reducing to 64 effective components after Sp(2,R) gauge fixingMass dimension 12 (in 26D), effective dim 6 ",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "gauge",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       Ψ\n       <sub>\n        P\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         Ψ\n         <sub>\n          P\n         </sub>\n</div>\n<div class=\"var-description\">\n         The Pneuma field -",
+      "count": 1,
+      "hash": "8409dc56bb64"
+    },
+    {
+      "text": "Hover over variables for definitionsD̸PneumaD̸PneumaThe modified Dirac operator on KPneumaincluding condensate correctionsMass dimension 1Its zero modes determine the chiral fermion spectrum - key to ",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       D̸\n       <sub>\n        Pneuma\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         D̸\n         <sub>\n          Pneuma\n         </sub>\n</div>\n<div class=\"var-description\">\n         The mo",
+      "count": 1,
+      "hash": "0331b9c9554d"
+    },
+    {
+      "text": "Hover over variables for definitionsLL (Lagrangian density)The 26D Pneuma Lagrangian density governing fermion dynamicsMass dimension 26Determines equations of motion and symmetries of the Pneuma fiel",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       L\n       <div class=\"var-tooltip\">\n<div class=\"var-name\">\n         L (Lagrangian density)\n        </div>\n<div class=\"var-description\">\n         The 26D Pneuma Lagrangian density governing fermion dynamics\n ",
+      "count": 1,
+      "hash": "9e5325845ccc"
+    },
+    {
+      "text": "Hover over variables for definitionsngenngenNumber of chiral fermion generations from the flux-dressed index theoremDimensionless (integer)Must equal 3 to match the observed three generations of quark",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "gauge",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       n\n       <sub>\n        gen\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         n\n         <sub>\n          gen\n         </sub>\n</div>\n<div class=\"var-description\">\n         Number of chir",
+      "count": 1,
+      "hash": "30284e28d900"
+    },
+    {
+      "text": "Hover over variables for definitions1616 of SO(10)The 16-dimensional spinor representation of SO(10), containing one complete generation of fermionsDimensionless (representation)Unifies all 15 SM ferm",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n<strong>\n        16\n       </strong>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         16 of SO(10)\n        </div>\n<div class=\"var-description\">\n         The 16-dimensional spinor representation of SO(10),",
+      "count": 1,
+      "hash": "147893c2a724"
+    },
+    {
+      "text": "Hover over variables for definitionsYijYijEffective 4D Yukawa coupling matrix element between fermion generations i and jDimensionlessDetermines fermion masses via m = Y · v/√2 after electroweak symme",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       Y\n       <sub>\n        ij\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         Y\n         <sub>\n          ij\n         </sub>\n</div>\n<div class=\"var-description\">\n         Effective 4D Yuk",
+      "count": 1,
+      "hash": "4e9c3e80788e"
+    },
+    {
+      "text": "Hover over variables for definitionsYuYu3×3 Yukawa coupling matrix for up-type quarks (u, c, t)DimensionlessEigenvalues determine u, c, t quark masses; off-diagonal terms contribute to CKM mixing∼g*g*",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       Y\n       <sub>\n        u\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         Y\n         <sub>\n          u\n         </sub>\n</div>\n<div class=\"var-description\">\n         3×3 Yukawa couplin",
+      "count": 1,
+      "hash": "f01a1947d98d"
+    },
+    {
+      "text": "mgen(n)= m0· e−n·d/ℓ(n = 1, 2, 3)",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(255, 126, 182, 0.15); border: 1px solid rgba(255, 126, 182, 0.4); margin: 1rem 0;\">\n      m\n      <sub>\n       gen\n      </sub>\n<sup>\n       (n)\n      </sup>\n      = m\n      <sub>\n       0\n      </sub>\n      · e\n      <sup>\n       −n·d/ℓ\n      </sup>\n      (n = 1, 2, 3)\n     </div>",
+      "count": 1,
+      "hash": "2ce77cee5c82"
+    },
+    {
+      "text": "Hover over variables for definitionsmνmνLight neutrino mass matrix (3×3) - the eigenvalues are the observed neutrino masseseV (electron-volts)Produces masses m₁, m₂, m₃ ~ 0.001, 0.009, 0.050 eV≈-mDmDD",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       m\n       <sub>\n        ν\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         m\n         <sub>\n          ν\n         </sub>\n</div>\n<div class=\"var-description\">\n         Light neutrino mas",
+      "count": 1,
+      "hash": "3d3e2a056088"
+    },
+    {
+      "text": "Ind(D) = (1/24π²) ∫Σ³Tr(F∧F)Atiyah-Singer index for Dirac operator on 3-cycle Σ³",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n<div style=\"font-family: 'Crimson Text', serif; font-size: 1.25rem;\">\n      Ind(D) = (1/24π²) ∫\n      <sub>\n       Σ³\n      </sub>\n      Tr(F∧F)\n     </div>\n<div class=\"label\">\n      Atiyah-Singer index for Dirac operator on 3-cycle Σ³\n     </div>\n</div>",
+      "count": 1,
+      "hash": "75acebc75d1e"
+    },
+    {
+      "text": "Hover over variables for definitionsIndtotalIndtotalTotal Atiyah-Singer index summed over all b₃=24 associative 3-cyclesDimensionless (topological invariant)Positive → Inverted Hierarchy, Negative → N",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       Ind\n       <sub>\n        total\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         Ind\n         <sub>\n          total\n         </sub>\n</div>\n<div class=\"var-description\">\n         Total ",
+      "count": 1,
+      "hash": "3cfbc6c9efa5"
+    },
+    {
+      "text": "Hover over variables for definitionsFF (Flux dressing)Characteristic flux quantum on G₂ cycles from effective Euler characteristicDimensionlessF ~ √6 breaks orientation degeneracy, yielding 85.5% ±% I",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       F\n       <div class=\"var-tooltip\">\n<div class=\"var-name\">\n         F (Flux dressing)\n        </div>\n<div class=\"var-description\">\n         Characteristic flux quantum on G₂ cycles from effective Euler chara",
+      "count": 1,
+      "hash": "fc675f1a1bfe"
+    },
+    {
+      "text": "Hover over variables for definitionsMR3MR3Majorana mass of third-generation right-handed neutrino, largest due to strongest coupling to Pneuma condensateEnergy (~ 1014-1015GeV)Dominates seesaw, giving",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "neutrino",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       M\n       <sub>\n        R3\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         M\n         <sub>\n          R3\n         </sub>\n</div>\n<div class=\"var-description\">\n         Majorana mass of",
+      "count": 1,
+      "hash": "37de8d5355a0"
+    },
+    {
+      "text": "Hover over variables for definitionsℒθℒθThe theta-term Lagrangian density - a CP-violating contribution to QCDEnergy4(mass dimension 4)Would cause the neutron to have an electric dipole moment if non-",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       ℒ\n       <sub>\n        θ\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         ℒ\n         <sub>\n          θ\n         </sub>\n</div>\n<div class=\"var-description\">\n         The theta-term Lag",
+      "count": 1,
+      "hash": "334aecc9e177"
+    },
+    {
+      "text": "Hover over variables for definitionsdndnElectric dipole moment of the neutron - measures CP violation in the strong forcee·cm (charge times length)Current bound: |dn| < 1.8×10-26e·cm from nEDM collabo",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       d\n       <sub>\n        n\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         d\n         <sub>\n          n\n         </sub>\n</div>\n<div class=\"var-description\">\n         Electric dipole mo",
+      "count": 1,
+      "hash": "63a7d534f6d1"
+    },
+    {
+      "text": "Hover over variables for definitionsθ̅θ̅ (theta-bar)The physical, observable CP-violating angle - the combination that actually affects physicsDimensionlessThis is what experiments measure; must be < ",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       θ̅\n       <div class=\"var-tooltip\">\n<div class=\"var-name\">\n         θ̅ (theta-bar)\n        </div>\n<div class=\"var-description\">\n         The physical, observable CP-violating angle - the combination that ac",
+      "count": 1,
+      "hash": "7c83973a13ff"
+    },
+    {
+      "text": "Hover over variables for definitionsa(x)a(x)The axion field - a 4D scalar field with shift symmetry that solves the strong CP problemEnergy (mass dimension 1)Dynamically relaxes θeffto zero; also a da",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "gauge",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       a(x)\n       <div class=\"var-tooltip\">\n<div class=\"var-name\">\n         a(x)\n        </div>\n<div class=\"var-description\">\n         The axion field - a 4D scalar field with shift symmetry that solves the stron",
+      "count": 1,
+      "hash": "2a9774fe67d3"
+    },
+    {
+      "text": "ℒaGGℒaGGAxion-gluon-gluon coupling Lagrangian - the anomalous interactionEnergy4This coupling allows the axion to dynamically cancel θ=(a/fa)a/faAxion field normalized by decay constant - dimensionles",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box interactive-formula\" style=\"margin: 1rem 0; padding: 1rem;\">\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.3rem;\">\n<span class=\"formula-var\">\n         ℒ\n         <sub>\n          aGG\n         </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n           ℒ\n           <sub>\n            aGG\n           </sub>\n</div>\n<div class=\"var-description\">\n           Axion-gluon-gluon coupling Lagrangian - t",
+      "count": 1,
+      "hash": "fc7a93bd5db2"
+    },
+    {
+      "text": "fafaAxion decay constant - sets the scale of PQ symmetry breakingEnergy (GeV)Determines axion mass ma≈ 6 meV (109GeV/fa)∼MPlMPlPlanck mass =× 1019GeV (PDG 2024, measured) - fundamental gravitational s",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "proton_decay",
+      "html": "<div class=\"equation-box interactive-formula\" style=\"margin: 1rem 0; padding: 1rem;\">\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.3rem;\">\n<span class=\"formula-var\">\n         f\n         <sub>\n          a\n         </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n           f\n           <sub>\n            a\n           </sub>\n</div>\n<div class=\"var-description\">\n           Axion decay constant - sets the scale of PQ s",
+      "count": 1,
+      "hash": "11888af7fec9"
+    },
+    {
+      "text": "Hover over variables for definitionsθeffθeffEffective CP-violating angle after axion relaxation - the physical observableDimensionlessThis is what determines the neutron EDM - vanishes in the axion so",
+      "type": "equation-box",
+      "file": "sections/fermion-sector.html",
+      "has_topic": false,
+      "category": "proton_decay",
+      "html": "<div class=\"equation-box interactive-formula\">\n<span class=\"formula-hint\">\n      Hover over variables for definitions\n     </span>\n<div class=\"formula-content\" style=\"display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0.5rem;\">\n<span class=\"formula-var\">\n       θ\n       <sub>\n        eff\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         θ\n         <sub>\n          eff\n         </sub>\n</div>\n<div class=\"var-description\">\n         Effective CP-v",
+      "count": 1,
+      "hash": "a19a8f2f48c6"
+    },
+    {
+      "text": "dλ/dt = 9λ2/(16π2)SO(10) RG equation for Pneuma coupling",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "gauge",
+      "html": "<div class=\"equation-box\">\n                dλ/dt = 9λ<sup>2</sup>/(16π<sup>2</sup>)\n                <div class=\"label\">SO(10) RG equation for Pneuma coupling</div>\n</div>",
+      "count": 1,
+      "hash": "e4f3503999a7"
+    },
+    {
+      "text": "tGUT= log(MGUT/TeV) ≈ 30   ⇒   MGUT≈ 1013TeVGUT scale from RG flow parameter",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                t<sub>GUT</sub> = log(M<sub>GUT</sub>/TeV) ≈ 30   ⇒   M<sub>GUT</sub> ≈ 10<sup>13</sup> TeV\n                <div class=\"label\">GUT scale from RG flow parameter</div>\n</div>",
+      "count": 1,
+      "hash": "7c374104b3db"
+    },
+    {
+      "text": "ln(MPl/MGUT,base) = ln(1.22×1019/1.8×1016) = ln(677.8) =6.519Logarithmic scale separation",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                ln(M<sub>Pl</sub>/M<sub>GUT,base</sub>) = ln(1.22×10<sup>19</sup>/1.8×10<sup>16</sup>) = ln(677.8) = <strong>6.519</strong>\n<div class=\"label\">Logarithmic scale separation</div>\n</div>",
+      "count": 1,
+      "hash": "1d3c0868cae4"
+    },
+    {
+      "text": "s = [ln(MPl/MGUT,base) - Tω] / NfluxWarping parameter",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                s = [ln(M<sub>Pl</sub>/M<sub>GUT,base</sub>) - T<sub>ω</sub>] / N<sub>flux</sub>\n<div class=\"label\">Warping parameter</div>\n</div>",
+      "count": 1,
+      "hash": "c589abb7b5fc"
+    },
+    {
+      "text": "s = (6.519 - (-0.8836)) / 6.283 = 7.403 / 6.283 =1.178Numerical evaluation: s ≈ 1.18",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(139, 127, 255, 0.1);\">\n                s = (6.519 - (-0.8836)) / 6.283 = 7.403 / 6.283 = <strong>1.178</strong>\n<div class=\"label\">Numerical evaluation: s ≈ 1.18</div>\n</div>",
+      "count": 1,
+      "hash": "01fc9ab215bb"
+    },
+    {
+      "text": "MGUT= MGUT,base× (1 + cwarp· s)Master formula: Geometric MGUTderivation",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\" style=\"background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1)); border: 3px solid var(--accent-primary); padding: 1.5rem;\">\n                M<sub>GUT</sub> = M<sub>GUT,base</sub> × (1 + c<sub>warp</sub> · s)\n                <div class=\"label\" style=\"font-size: 1.1rem; font-weight: 600;\">Master formula: Geometric M<sub>GUT</sub> derivation</div>\n</div>",
+      "count": 1,
+      "hash": "7600c753665d"
+    },
+    {
+      "text": "MGUT= 1.8×1016GeV × (1 + 0.15 × 1.178)= 1.8×1016GeV × (1 + 0.1767)= 1.8×1016GeV × 1.1767=GeVFinal result: 17.67% enhancement from warping",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.15); font-size: 1.15rem; padding: 1.5rem;\">\n                M<sub>GUT</sub> = 1.8×10<sup>16</sup> GeV × (1 + 0.15 × 1.178)\n                <br/><br/>\n                        = 1.8×10<sup>16</sup> GeV × (1 + 0.1767)\n                <br/><br/>\n                        = 1.8×10<sup>16</sup> GeV × 1.1767\n                <br/><br/>\n                        = <strong style=\"color: #22c55e; font-size: 1.3rem;\"><span class=\"pm-value\" data-c",
+      "count": 1,
+      "hash": "40f3ffde5854"
+    },
+    {
+      "text": "Uncertainty: ΔMGUT= ±0.09 × 1016GeV   (4.3% relative error)Error from b₃ flux variations",
+      "type": "equation-box",
+      "file": "sections/gauge-unification.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                Uncertainty: ΔM<sub>GUT</sub> = ±0.09 × 10<sup>16</sup> GeV   (4.3% relative error)\n                <div class=\"label\">Error from b₃ flux variations</div>\n</div>",
+      "count": 1,
+      "hash": "b69e14e4950c"
+    },
+    {
+      "text": "Γμ= γμ⊗116(μ = 0,1,2,3)Γa+3= γ5⊗ Σa(a = 1,...,8)Tensor product decomposition",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian-new.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\">\n                Γ<sup>μ</sup> = γ<sup>μ</sup> ⊗ <strong>1</strong><sub>16</sub>   (μ = 0,1,2,3)\n                <br/><br/>\n                Γ<sup>a+3</sup> = γ<sup>5</sup> ⊗ Σ<sup>a</sup>   (a = 1,...,8)\n                <span class=\"equation-label\">Tensor product decomposition</span>\n</div>",
+      "count": 2,
+      "hash": "2ceff5f51920"
+    },
+    {
+      "text": "t = αT⋅ S[ρ]Time from Pneuma entropy",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian-new.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                t = α<sub>T</sub> ⋅ S[ρ]\n                <span class=\"equation-label\">Time from Pneuma entropy</span>\n</div>",
+      "count": 2,
+      "hash": "b2a50a845511"
+    },
+    {
+      "text": "ℒ4D,fermion= ∑i=13ψi(iγμDμ- mi)ψi+ (Yukawa couplings)4D effective fermion Lagrangian",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian-new.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\" style=\"font-size: 1rem;\">\n                ℒ<sub>4D,fermion</sub> = ∑<sub>i=1</sub><sup>3</sup> <span style=\"text-decoration: overline;\">ψ</span><sub>i</sub>(iγ<sup>μ</sup>D<sub>μ</sub> - m<sub>i</sub>)ψ<sub>i</sub> + (Yukawa couplings)\n                <span class=\"equation-label\">4D effective fermion Lagrangian</span>\n</div>",
+      "count": 1,
+      "hash": "3020636b589b"
+    },
+    {
+      "text": "Γμ= γμ⊗116(μ = 0,1,2,3)Γa+3= γ5⊗ Σa(a = 1,...,8)Tensor product decomposition",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\">\n     Γ\n     <sup>\n      μ\n     </sup>\n     = γ\n     <sup>\n      μ\n     </sup>\n     ⊗\n     <strong>\n      1\n     </strong>\n<sub>\n      16\n     </sub>\n     (μ = 0,1,2,3)\n     <br/>\n<br/>\n     Γ\n     <sup>\n      a+3\n     </sup>\n     = γ\n     <sup>\n      5\n     </sup>\n     ⊗ Σ\n     <sup>\n      a\n     </sup>\n     (a = 1,...,8)\n     <span class=\"equation-label\">\n      Tensor product decomposition\n     </span>\n</div>"
+    },
+    {
+      "text": "t = αT⋅ S[ρ]Time from Pneuma entropy",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n     t = α\n     <sub>\n      T\n     </sub>\n     ⋅ S[ρ]\n     <span class=\"equation-label\">\n      Time from Pneuma entropy\n     </span>\n</div>"
+    },
+    {
+      "text": "ℒint= λ(ΨΨ)² + g·tortho·ΨΨInteraction terms for gap derivation",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\">\n     ℒ\n     <sub>\n      int\n     </sub>\n     = λ(\n     <span style=\"text-decoration: overline;\">\n      Ψ\n     </span>\n     Ψ)² + g·t\n     <sub>\n      ortho\n     </sub>\n     ·\n     <span style=\"text-decoration: overline;\">\n      Ψ\n     </span>\n     Ψ\n     <span class=\"equation-label\">\n      Interaction terms for gap derivation\n     </span>\n</div>",
+      "count": 1,
+      "hash": "e9ffd62c13ef"
+    },
+    {
+      "text": "Results (v = 2):Δ(v=2) = (0.5 × 2) / (1 +× 1 / 10) = 1 / 1.01 ≈0.99dΔ/dv = 0.5 / 1.01 ≈0.495 > 0(stable)Numerical verification of gap stability",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.3);\">\n<strong>\n      Results (v = 2):\n     </strong>\n<br/>\n<br/>\n     Δ(v=2) = (0.5 × 2) / (1 +\n     <span class=\"pm-value\" data-category=\"pmns_matrix\" data-format=\"fixed:1\" data-param=\"delta_cp_sigma\">\n</span>\n     × 1 / 10) = 1 / 1.01 ≈\n     <strong style=\"color: #51cf66;\">\n      0.99\n     </strong>\n<br/>\n<br/>\n     dΔ/dv = 0.5 / 1.01 ≈\n     <strong style=\"color: #51cf66;\">\n      0.495 &gt",
+      "count": 1,
+      "hash": "48756570e3ae"
+    },
+    {
+      "text": "XMXMPosition Null ConstraintEmbedding coordinates lie on the null cone in 26D spacetime (24,2)=0XMPMMixed Null ConstraintOrthogonality between position and momentum in (24,2) metric=0PMPMMass-Shell Co",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.3);\">\n<div class=\"interactive-formula\" style=\"margin-bottom: 1rem;\">\n<span class=\"formula-var\" style=\"background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.6rem; border-radius: 6px;\">\n       X\n       <sup>\n        M\n       </sup>\n       X\n       <sub>\n        M\n       </sub>\n<div class=\"var-tooltip\">\n<div class=\"var-name\">\n         Position Null Constraint\n        </div>\n<div class=\"var-des",
+      "count": 1,
+      "hash": "91eec8bc54ba"
+    },
+    {
+      "text": "ℒ4D,fermion= ∑i=13ψi(iγμDμ- mi)ψi+ (Yukawa couplings)4D effective fermion Lagrangian from dimensional reduction",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\" style=\"font-size: 1rem;\">\n     ℒ\n     <sub>\n      4D,fermion\n     </sub>\n     = ∑\n     <sub>\n      i=1\n     </sub>\n<sup>\n      3\n     </sup>\n<span style=\"text-decoration: overline;\">\n      ψ\n     </span>\n<sub>\n      i\n     </sub>\n     (iγ\n     <sup>\n      μ\n     </sup>\n     D\n     <sub>\n      μ\n     </sub>\n     - m\n     <sub>\n      i\n     </sub>\n     )ψ\n     <sub>\n      i\n     </sub>\n     + (Yukawa couplings)\n     <span class=\"equation-label\">\n      4D effective fermion",
+      "count": 1,
+      "hash": "1446d5ac6ad0"
+    },
+    {
+      "text": "Level 1 (26D):S = ∫ d26X √(-G) [R +ΨP(iΓMDM- m)ΨP]↓Sp(2,R) gauge fixingLevel 2 (13D):ℒ13D= M*11R13D+Ψ64(iγμ∇μ- meff)Ψ64+ ℒflux↓KK reduction (13D → 4D)Level 3 (4D):f(R,T,τ) = R + αFR2+ βFT + γFRτ + δF(",
+      "type": "equation-box",
+      "file": "sections/pneuma-lagrangian.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\" style=\"background: linear-gradient(135deg, rgba(255, 126, 182, 0.08), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(255, 126, 182, 0.3);\">\n<strong style=\"color: var(--accent-secondary);\">\n      Level 1 (26D):\n     </strong>\n     S = ∫ d\n     <sup>\n      26\n     </sup>\n     X √(-G) [R +\n     <span style=\"text-decoration: overline;\">\n      Ψ\n     </span>\n<sub>\n      P\n     </sub>\n     (iΓ\n     <sup>\n      M\n     </sup>\n     D\n     <sub>\n      M\n     </sub>\n     - m)Ψ",
+      "count": 1,
+      "hash": "1eacfc790aa4"
+    },
+    {
+      "text": "Many microstates → One macrostateExample: 1023different particle arrangements can all have the same temperature",
+      "type": "equation-box",
+      "file": "foundations/boltzmann-entropy.html",
+      "has_topic": false,
+      "category": "thermal",
+      "html": "<div class=\"equation-box\">\n                Many microstates → One macrostate\n                <span class=\"equation-label\">Example: 10<sup>23</sup> different particle arrangements can all have the same temperature</span>\n</div>",
+      "count": 1,
+      "hash": "62e4a6d31e5b"
+    },
+    {
+      "text": "dS/dt ≥ 0   →   Time flows in the direction of increasing entropyThe \"arrow of time\" emerges from statistics, not fundamental physics",
+      "type": "equation-box",
+      "file": "foundations/boltzmann-entropy.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                dS/dt ≥ 0   →   Time flows in the direction of increasing entropy\n                <span class=\"equation-label\">The \"arrow of time\" emerges from statistics, not fundamental physics</span>\n</div>",
+      "count": 1,
+      "hash": "1f9a142adabd"
+    },
+    {
+      "text": "H = -∑ipilog2piInformation entropy measures uncertainty or missing information",
+      "type": "equation-box",
+      "file": "foundations/boltzmann-entropy.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                H = -∑<sub>i</sub> p<sub>i</sub> log<sub>2</sub> p<sub>i</sub>\n<span class=\"equation-label\">Information entropy measures uncertainty or missing information</span>\n</div>",
+      "count": 1,
+      "hash": "87f9a44bc35a"
+    },
+    {
+      "text": "t ∝ S = kBln ΩTime emerges from statistical correlations",
+      "type": "equation-box",
+      "file": "foundations/boltzmann-entropy.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin-top: 1rem;\">\n                    t ∝ S = k<sub>B</sub> ln Ω\n                    <span class=\"equation-label\">Time emerges from statistical correlations</span>\n</div>",
+      "count": 1,
+      "hash": "564f612c7ed8"
+    },
+    {
+      "text": "SBH= kBA/(4ℓP2) = kBln ΩhorizonBlack hole area measures the number of horizon microstates",
+      "type": "equation-box",
+      "file": "foundations/boltzmann-entropy.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin-top: 1rem;\">\n                    S<sub>BH</sub> = k<sub>B</sub>A/(4ℓ<sub>P</sub><sup>2</sup>) = k<sub>B</sub> ln Ω<sub>horizon</sub>\n<span class=\"equation-label\">Black hole area measures the number of horizon microstates</span>\n</div>",
+      "count": 1,
+      "hash": "ddd5a10038ce"
+    },
+    {
+      "text": "ab = a · b + a ∧ bGeometric product = symmetric part + antisymmetric part",
+      "type": "equation-box",
+      "file": "foundations/clifford-algebra.html",
+      "has_topic": false,
+      "category": "metric",
+      "html": "<div class=\"equation-box\">\n                ab = a · b + a ∧ b\n                <span class=\"equation-label\">Geometric product = symmetric part + antisymmetric part</span>\n</div>",
+      "count": 1,
+      "hash": "dbc35da081c0"
+    },
+    {
+      "text": "M = α + v + B + T + ... + ΩScalar + Vector + Bivector + Trivector + ... + Pseudoscalar",
+      "type": "equation-box",
+      "file": "foundations/clifford-algebra.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                M = α + v + B + T + ... + Ω\n                <span class=\"equation-label\">Scalar + Vector + Bivector + Trivector + ... + Pseudoscalar</span>\n</div>",
+      "count": 1,
+      "hash": "5ea76c98a408"
+    },
+    {
+      "text": "dim(Spinor Space) = 2⌊n/2⌋For Clifford algebra Cl(p,q) with n = p + q",
+      "type": "equation-box",
+      "file": "foundations/clifford-algebra.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                dim(Spinor Space) = 2<sup>⌊n/2⌋</sup>\n<span class=\"equation-label\">For Clifford algebra Cl(p,q) with n = p + q</span>\n</div>",
+      "count": 1,
+      "hash": "75477d0391aa"
+    },
+    {
+      "text": "Ψ(xμ, y, z) = ∑n,mψn,m(xμ) Yn,m(y, z)KK mode expansion on T² = S¹y× S¹z",
+      "type": "equation-box",
+      "file": "foundations/dirac-equation.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                Ψ(x<sup>μ</sup>, y, z) = ∑<sub>n,m</sub> ψ<sub>n,m</sub>(x<sup>μ</sup>) Y<sub>n,m</sub>(y, z)\n                <span class=\"equation-label\">KK mode expansion on T² = S¹<sub>y</sub> × S¹<sub>z</sub></span>\n</div>",
+      "count": 1,
+      "hash": "7c3a122d6d44"
+    },
+    {
+      "text": "Yn,m(y, z) = (2πRyRz)-1/2exp(in·y/Ry+ im·z/Rz)n, m ∈ ℤ (integer mode numbers)",
+      "type": "equation-box",
+      "file": "foundations/dirac-equation.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                Y<sub>n,m</sub>(y, z) = (2πR<sub>y</sub>R<sub>z</sub>)<sup>-1/2</sup> exp(in·y/R<sub>y</sub> + im·z/R<sub>z</sub>)\n                <span class=\"equation-label\">n, m ∈ ℤ (integer mode numbers)</span>\n</div>",
+      "count": 1,
+      "hash": "1e0c399f8b63"
+    },
+    {
+      "text": "(iγμ∂μ- mn,m)ψn,m(x) = 0where m²n,m= m² + (n/Ry)² + (m/Rz)²",
+      "type": "equation-box",
+      "file": "foundations/dirac-equation.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                (iγ<sup>μ</sup>∂<sub>μ</sub> - m<sub>n,m</sub>)ψ<sub>n,m</sub>(x) = 0\n                <span class=\"equation-label\">where m²<sub>n,m</sub> = m² + (n/R<sub>y</sub>)² + (m/R<sub>z</sub>)²</span>\n</div>",
+      "count": 1,
+      "hash": "5fc768ed2aef"
+    },
+    {
+      "text": "ΨP,bulk(xA) → ΨP,shadow(xμ, ya)26D (A=0,...,25) → 13D (μ=0,...,3 visible + a=1,...,9 compact): 8192 → 64 components",
+      "type": "equation-box",
+      "file": "foundations/dirac-equation.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box\">\n                Ψ<sub>P,bulk</sub>(x<sup>A</sup>) → Ψ<sub>P,shadow</sub>(x<sup>μ</sup>, y<sup>a</sup>)\n                <span class=\"equation-label\">26D (A=0,...,25) → 13D (μ=0,...,3 visible + a=1,...,9 compact): 8192 → 64 components</span>\n</div>",
+      "count": 1,
+      "hash": "239ae3e2ad3e"
+    },
+    {
+      "text": "γ0=[I00-I],  \n                γi=[0σi-σi0]where σiare the Pauli matrices",
+      "type": "equation-box",
+      "file": "foundations/dirac-equation.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                γ<sup>0</sup> = <span style=\"font-size: 0.9em;\">\n                    [<sup>I</sup><sub>0</sub> <sup>0</sup><sub>-I</sub>]\n                </span>,  \n                γ<sup>i</sup> = <span style=\"font-size: 0.9em;\">\n                    [<sup>0</sup><sub>σ<sup>i</sup></sub> <sup>-σ<sup>i</sup></sup><sub>0</sub>]\n                </span>\n<span class=\"equation-label\">where σ<sup>i</sup> are the Pauli matrices</span>\n</div>",
+      "count": 1,
+      "hash": "2336f206c23e"
+    },
+    {
+      "text": "ℒ =ψ(iγμ∂μ- m)ψDirac Lagrangian density",
+      "type": "equation-box",
+      "file": "foundations/dirac-equation.html",
+      "has_topic": false,
+      "category": "action",
+      "html": "<div class=\"equation-box\">\n                ℒ = <span style=\"text-decoration: overline;\">ψ</span>(iγ<sup>μ</sup>∂<sub>μ</sub> - m)ψ\n                <span class=\"equation-label\">Dirac Lagrangian density</span>\n</div>",
+      "count": 1,
+      "hash": "28544ca134e8"
+    },
+    {
+      "text": "ds2= gμνdxμdxνLine element (spacetime interval)",
+      "type": "equation-box",
+      "file": "foundations/einstein-field-equations.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                ds<sup>2</sup> = g<sub>μν</sub> dx<sup>μ</sup> dx<sup>ν</sup>\n<span class=\"equation-label\">Line element (spacetime interval)</span>\n</div>",
+      "count": 1,
+      "hash": "f3469ddb4537"
+    },
+    {
+      "text": "ds2= -(1 - 2GM/r)dt2+ (1 - 2GM/r)-1dr2+ r2dΩ2Describes spacetime around a non-rotating black hole or star",
+      "type": "equation-box",
+      "file": "foundations/einstein-field-equations.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                ds<sup>2</sup> = -(1 - 2GM/r)dt<sup>2</sup> + (1 - 2GM/r)<sup>-1</sup>dr<sup>2</sup> + r<sup>2</sup>dΩ<sup>2</sup>\n<span class=\"equation-label\">Describes spacetime around a non-rotating black hole or star</span>\n</div>",
+      "count": 1,
+      "hash": "de6015d543a4"
+    },
+    {
+      "text": "S26D= M*24∫ d26X √|G(24,2)| R26Signature (24,2): ηAB= diag(-,-,+,+,...,+)",
+      "type": "equation-box",
+      "file": "foundations/einstein-hilbert-action.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box\">\n                S<sub>26D</sub> = M<sub>*</sub><sup>24</sup> ∫ d<sup>26</sup>X √|G<sub>(24,2)</sub>| R<sub>26</sub>\n<span class=\"equation-label\">Signature (24,2): η<sub>AB</sub> = diag(-,-,+,+,...,+)</span>\n</div>",
+      "count": 1,
+      "hash": "0a69623dab1a"
+    },
+    {
+      "text": "S26D= M*24∫ d26X √|G(24,2)| R26→ \n                S14×2= M*24∫ d14x1d14x2√|g1g2| (R14,1+ R14,2)Each 14D half has signature (12,2): 12 spatial + 2 shared timelike",
+      "type": "equation-box",
+      "file": "foundations/einstein-hilbert-action.html",
+      "has_topic": false,
+      "category": "dimension",
+      "html": "<div class=\"equation-box\">\n                S<sub>26D</sub> = M<sub>*</sub><sup>24</sup> ∫ d<sup>26</sup>X √|G<sub>(24,2)</sub>| R<sub>26</sub>\n                 → \n                S<sub>14×2</sub> = M<sub>*</sub><sup>24</sup> ∫ d<sup>14</sup>x<sub>1</sub> d<sup>14</sup>x<sub>2</sub> √|g<sub>1</sub>g<sub>2</sub>| (R<sub>14,1</sub> + R<sub>14,2</sub>)\n                <span class=\"equation-label\">Each 14D half has signature (12,2): 12 spatial + 2 shared timelike</span>\n</div>",
+      "count": 1,
+      "hash": "de9f063c8d96"
+    },
+    {
+      "text": "S14×2= M*24∫ [d14x1√|g1| R14,1+ d14x2√|g2| R14,2]\n                 → \n                S7×2= M75∫ [d7x1√|h1| R7,1+ d7x2√|h2| R7,2]M75= M*24× Vol(M⁷1) × Vol(M⁷2)",
+      "type": "equation-box",
+      "file": "foundations/einstein-hilbert-action.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                S<sub>14×2</sub> = M<sub>*</sub><sup>24</sup> ∫ [d<sup>14</sup>x<sub>1</sub> √|g<sub>1</sub>| R<sub>14,1</sub> + d<sup>14</sup>x<sub>2</sub> √|g<sub>2</sub>| R<sub>14,2</sub>]\n                 → \n                S<sub>7×2</sub> = M<sub>7</sub><sup>5</sup> ∫ [d<sup>7</sup>x<sub>1</sub> √|h<sub>1</sub>| R<sub>7,1</sub> + d<sup>7</sup>x<sub>2</sub> √|h<sub>2</sub>| R<sub>7,2</sub>]\n                <span class=\"equation-label\">M<sub>7</sub><sup>5</sup> = M<",
+      "count": 1,
+      "hash": "f25b879ad3c8"
+    },
+    {
+      "text": "S7×2→ S4D= MPl2∫ d4x √|g| RShared time structure projects dual 7D sectors to single 4D spacetime",
+      "type": "equation-box",
+      "file": "foundations/einstein-hilbert-action.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                S<sub>7×2</sub> → S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> ∫ d<sup>4</sup>x √|g| R\n                <span class=\"equation-label\">Shared time structure projects dual 7D sectors to single 4D spacetime</span>\n</div>",
+      "count": 1,
+      "hash": "cb99bd6b6c81"
+    },
+    {
+      "text": "MPl2= M*24× V22where V22= Vol(M⁷1) × Vol(M⁷2) × (Sp(2,R) volume factor)",
+      "type": "equation-box",
+      "file": "foundations/einstein-hilbert-action.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(81, 207, 102, 0.1); border: 2px solid rgba(81, 207, 102, 0.3);\">\n                M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>24</sup> × V<sub>22</sub>\n<span class=\"equation-label\">where V<sub>22</sub> = Vol(M⁷<sub>1</sub>) × Vol(M⁷<sub>2</sub>) × (Sp(2,R) volume factor)</span>\n</div>",
+      "count": 1,
+      "hash": "2090b78b982b"
+    },
+    {
+      "text": "M⁷ = M₁⁷ ∪_S³×S¹ M₂⁷Glued along common S³ × S¹ boundary",
+      "type": "equation-box",
+      "file": "foundations/g2-manifolds.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"margin-top: 1rem;\">\n                M⁷ = M₁⁷ ∪_S³×S¹ M₂⁷\n                <span class=\"equation-label\">Glued along common S³ × S¹ boundary</span>\n</div>",
+      "count": 1,
+      "hash": "ecc37f05970f"
+    },
+    {
+      "text": "b₂(M) = rk(N₊ ∩ N₋) - 1 + dim(k₊) + dim(k₋) = 2 - 1 + 0 + 0 =4(adjusted)From arXiv:1809.09083, Theorem 7.1",
+      "type": "equation-box",
+      "file": "foundations/g2-manifolds.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(255, 255, 255, 0.05); margin: 1rem 0;\">\n                    b₂(M) = rk(N₊ ∩ N₋) - 1 + dim(k₊) + dim(k₋) = 2 - 1 + 0 + 0 = <strong>4</strong> (adjusted)\n                    <span class=\"equation-label\">From arXiv:1809.09083, Theorem 7.1</span>\n</div>",
+      "count": 1,
+      "hash": "74510ae24fac"
+    },
+    {
+      "text": "b₃(M) = b₃(Z₊) + b₃(Z₋) + rk(T₊ ∩ N₋) + rk(T₋ ∩ N₊) + 23 - rk(N₊ + N₋)From arXiv:1809.09083, Theorem 7.2",
+      "type": "equation-box",
+      "file": "foundations/g2-manifolds.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\" style=\"background: rgba(255, 255, 255, 0.05); margin: 1rem 0;\">\n                    b₃(M) = b₃(Z₊) + b₃(Z₋) + rk(T₊ ∩ N₋) + rk(T₋ ∩ N₊) + 23 - rk(N₊ + N₋)\n                    <span class=\"equation-label\">From arXiv:1809.09083, Theorem 7.2</span>\n</div>",
+      "count": 1,
+      "hash": "2b51c2b66ee1"
+    },
+    {
+      "text": "V₉ = V₇(G₂) × V₂(T²)9D internal space = 7D G₂ manifold × 2D torus",
+      "type": "equation-box",
+      "file": "foundations/g2-manifolds.html",
+      "has_topic": false,
+      "category": "topology",
+      "html": "<div class=\"equation-box\" style=\"margin-top: 1rem;\">\n                V₉ = V₇(G₂) × V₂(T²)\n                <span class=\"equation-label\">9D internal space = 7D G₂ manifold × 2D torus</span>\n</div>",
+      "count": 1,
+      "hash": "6119c6ab74ce"
+    },
+    {
+      "text": "y5~ y5+ 2πRPeriodic identification: points separated by 2πR are the same",
+      "type": "equation-box",
+      "file": "foundations/kaluza-klein.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                y<sub>5</sub> ~ y<sub>5</sub> + 2πR\n                <span class=\"equation-label\">Periodic identification: points separated by 2πR are the same</span>\n</div>",
+      "count": 1,
+      "hash": "b3dd015692bd"
+    },
+    {
+      "text": "mn= |p5| = n/R     (n = 0, 1, 2, 3, ...)KK mass formula (in natural units where h = c = 1)",
+      "type": "equation-box",
+      "file": "foundations/kaluza-klein.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                m<sub>n</sub> = |p<sub>5</sub>| = n/R     (n = 0, 1, 2, 3, ...)\n                <span class=\"equation-label\">KK mass formula (in natural units where h = c = 1)</span>\n</div>",
+      "count": 1,
+      "hash": "27aaeaad0ddf"
+    },
+    {
+      "text": "ρβ= e-βH/ ZThermal density matrix with Z = Tr(e-βH)",
+      "type": "equation-box",
+      "file": "foundations/kms-condition.html",
+      "has_topic": false,
+      "category": "thermal",
+      "html": "<div class=\"equation-box\">\n                ρ<sub>β</sub> = e<sup>-βH</sup> / Z\n                <span class=\"equation-label\">Thermal density matrix with Z = Tr(e<sup>-βH</sup>)</span>\n</div>",
+      "count": 1,
+      "hash": "aa9d21198578"
+    },
+    {
+      "text": "G(τ) = ⟨A(τ)B(0)⟩β= Tr(e-βHA(e-Hτ)B eHτ)/ZEuclidean correlation function (0 ≤ τ ≤ β)",
+      "type": "equation-box",
+      "file": "foundations/kms-condition.html",
+      "has_topic": false,
+      "category": "other",
+      "html": "<div class=\"equation-box\">\n                G(τ) = ⟨A(τ)B(0)⟩<sub>β</sub> = Tr(e<sup>-βH</sup> A(e<sup>-Hτ</sup>)B e<sup>Hτ</sup>)/Z\n                <span class=\"equation-label\">Euclidean correlation function (0 ≤ τ ≤ β)</span>\n</div>",
+      "count": 1,
+      "hash": "4b95bd9e88c4"
+    }
+  ]
+}

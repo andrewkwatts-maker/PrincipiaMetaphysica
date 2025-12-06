@@ -25,7 +25,7 @@
 const PM = {
   "meta": {
     "version": "8.4",
-    "last_updated": "2025-12-05",
+    "last_updated": "2025-12-06",
     "description": "Enhanced theory constants with full metadata - v8.4 with CKM rotation and TCS cycle orientations",
     "has_metadata": true,
     "hover_enabled": true
@@ -820,7 +820,7 @@ const PM = {
     "meta": {
       "description": "Section content metadata for paper and website",
       "version": "1.0",
-      "last_updated": "2025-12-05"
+      "last_updated": "2025-12-06"
     },
     "abstract": {
       "title": "Abstract",
@@ -873,6 +873,19 @@ const PM = {
           ],
           "hover_details": true,
           "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/introduction.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
         }
       ],
       "values": [
@@ -987,8 +1000,8 @@ const PM = {
       ]
     },
     "gauge_unification": {
-      "title": "4. SO(10) Gauge Unification",
-      "subtitle": "Geometric Origin of Grand Unification",
+      "title": "3. Gauge Unification and Spontaneous Symmetry Breaking",
+      "subtitle": "SO(10) Grand Unification in the 26D Two-Time Framework",
       "content": "The SO(10) gauge group arises from conical singularities in the G\u2082 manifold G\u2082_Pneuma.\nThese singularities are analogous to F-theory D-type singularities but occur in the 7D G\u2082 geometry.\nThe gauge fields live on coassociative 4-cycles that wrap the singular locus.\n\nThe G\u2082 singularity classification [Acharya-Witten 2001, Atiyah-Witten 2001] determines gauge\nsymmetry from the conical singularity type. For SO(10) (D\u2085 type), the gauge coupling unification\nis achieved through corrected sequential renormalization group (RG) evolution.\n\nThe framework predicts unified gauge coupling 1/\u03b1_GUT = 23.54 at M_GUT = 2.118\u00d710\u00b9\u2076 GeV\n(geometrically determined from TCS G\u2082 torsion structure) through corrected sequential RG evolution,\nachieving ~2% precision (unprecedented for non-SUSY SO(10)).",
       "pages": [
         {
@@ -1002,30 +1015,41 @@ const PM = {
           ],
           "hover_details": true,
           "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/gauge-unification.html",
+          "section": "",
+          "order": 3,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
         }
       ],
       "values": [
         "M_GUT",
         "alpha_GUT_inv",
         "chi_eff",
-        "b2",
-        "b3"
+        "uncertainty_oom"
       ],
       "related_simulation": "gauge_unification",
       "has_topics": true,
-      "topic_count": 4,
+      "topic_count": 11,
       "required_values": [
         "M_GUT",
         "alpha_GUT_inv",
-        "b2",
-        "b3",
-        "chi_eff"
+        "chi_eff",
+        "uncertainty_oom"
       ]
     },
     "thermal_time": {
       "title": "5. Thermal Time and Emergent Temporality",
-      "subtitle": "Time from Thermodynamics",
-      "content": "Following Connes-Rovelli, time is not fundamental but emerges from thermodynamic structure.\nGiven a quantum state \u03c1 with von Neumann entropy S = -Tr(\u03c1 ln \u03c1), the modular\nHamiltonian K generates time evolution:\n\n\u03c1 = e^(-K) / Z,    \u03b1_t(A) = e^(iKt) A e^(-iKt)\n\nThe thermal time \u03c4 is related to the modular flow parameter. In the cosmological context,\nthe thermal time coincides with proper time in the semiclassical limit. The entropy current\nprovides the microscopic foundation for the thermal time hypothesis: time flows in the direction\nof entropy increase.\n\nThe key thermal time parameter \u03b1_T = 2.7 is derived from two-time cosmological thermodynamics,\nincorporating corrections from the orthogonal time dimension and mirror sector coupling.",
+      "subtitle": "Two-Time Thermal Hypothesis: Emergent Time from Thermodynamics in the 26D Framework with Observable t_therm and Hidden t_ortho Dimensions",
+      "content": "Following Connes-Rovelli, time is not fundamental but emerges from thermodynamic structure.\nGiven a quantum state \u03c1 with von Neumann entropy S = -Tr(\u03c1 ln \u03c1), the modular\nHamiltonian K generates time evolution:\n\n\u03c1 = e^(-K) / Z,    \u03b1_t(A) = e^(iKt) A e^(-iKt)\n\nThe thermal time \u03c4 is related to the modular flow parameter. In the cosmological context,\nthe thermal time coincides with proper time in the semiclassical limit. The entropy current\nprovides the microscopic foundation for the thermal time hypothesis: time flows in the direction\nof entropy increase.\n\nThe Thermal Time Hypothesis (TTH), developed by Connes and Rovelli, provides an elegant resolution\nto the problem of time in quantum gravity. Rather than seeking a fundamental time variable, TTH\nproposes that time emerges from the thermodynamic properties of quantum systems. The framework\nextends this with a two-time structure: the observable thermal time t_therm emerges from the\nPneuma field's entropy gradient, while the orthogonal time t_ortho is gauge-fixed via Sp(2,R)\nconstraints.\n\nThe key thermal time parameter \u03b1_T = 2.7 is derived from two-time cosmological thermodynamics,\nincorporating corrections from the orthogonal time dimension and mirror sector coupling.",
       "pages": [
         {
           "file": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html",
@@ -1038,17 +1062,30 @@ const PM = {
           ],
           "hover_details": true,
           "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/thermal-time.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
         }
       ],
       "values": [],
       "related_simulation": null,
       "has_topics": true,
-      "topic_count": 3,
+      "topic_count": 14,
       "required_values": []
     },
     "cosmology": {
       "title": "6. Cosmological Implications",
-      "subtitle": "Dark Energy and the Mashiach Field",
+      "subtitle": "Two-Time Cosmology: Modified Gravity, the Mashiach Field, and the Late-Time Cosmic Attractor",
       "content": "The K\u00e4hler moduli potential must satisfy swampland conjectures for consistency with quantum gravity:\n\nV(\u03c6) = V\u2080 e^(-\u03bb\u03c6/M_Pl) [1 + A cos(\u03c9\u03c6 + \u03b8)]\n\nSwampland distance conjecture: |\u2207V|/V \u2265 c ~ O(1)/M_Pl must hold, which our exponential potential\nsatisfies with \u03bb = 0.8378 (derived from D_eff = 12.589). This connects the dark energy equation\nof state to string theory consistency conditions.\n\nThe \"Mashiach\" field \u03c6_M is a light scalar modulus that survives from the compactification.\nIts potential drives late-time cosmic acceleration with equation of state:\n\nw(z) = w\u2080 [1 + (\u03b1_T/3) ln(1+z)]\n\nTheory-Observation Match: Principia Metaphysica predicts w\u2080 = -0.8528 from the effective dimension\nD_eff = 12.589 (geometry-derived from TCS G\u2082 torsion structure), achieving 0.38\u03c3 agreement with\nDESI DR2 (w\u2080 = -0.83 \u00b1 0.06 at 4.2\u03c3).",
       "pages": [
         {
@@ -1062,30 +1099,39 @@ const PM = {
           ],
           "hover_details": true,
           "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/cosmology.html",
+          "section": "",
+          "order": 6,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
         }
       ],
       "values": [
         "w0_PM",
         "w0_DESI_central",
-        "w0_DESI_error",
-        "w0_sigma",
-        "wa_PM_effective"
+        "w0_sigma"
       ],
       "related_simulation": "dark_energy",
       "has_topics": true,
-      "topic_count": 3,
+      "topic_count": 9,
       "required_values": [
         "w0_DESI_central",
-        "w0_DESI_error",
         "w0_PM",
-        "w0_sigma",
-        "wa_PM_effective"
+        "w0_sigma"
       ]
     },
     "predictions": {
       "title": "7. Predictions and Testability",
-      "subtitle": "Falsifiable Experimental Tests 2027-2035",
-      "content": "The framework makes quantified, falsifiable predictions testable by current and near-future experiments.\nKey predictions include:\n\n1. Proton Decay: \u03c4_p = 3.83\u00d710\u00b3\u2074 years with 68% confidence interval [2.48, 5.51]\u00d710\u00b3\u2074 years,\n   achieving 0.177 orders of magnitude uncertainty. Channel-specific branching ratios include\n   BR(p\u2192e\u207a\u03c0\u2070) = 0.342 \u00b1 0.109 and BR(p\u2192K\u207a\u03bd\u0304) = 0.186 \u00b1 0.074.\n\n2. Neutrino Mass Hierarchy: Inverted Hierarchy (IH) predicted at 85.5% confidence from the\n   Atiyah-Singer index theorem on associative 3-cycles in the G\u2082 manifold. Testable by\n   JUNO (2027-2028) and DUNE (2028+).\n\n3. PMNS Matrix: All four angles derived with 0.09\u03c3 average deviation from NuFIT 5.3,\n   including two exact matches (\u03b8\u2082\u2083 = 47.20\u00b0 and \u03b8\u2081\u2083 = 8.54\u00b0).\n\n4. Dark Energy Evolution: w(z) = w\u2080[1 + (\u03b1_T/3) ln(1+z)] with logarithmic form preferred\n   over CPL by \u0394\u03c7\u00b2 = 38.8 (6.2\u03c3).",
+      "subtitle": "Falsifiable Predictions via the Standard-Model Extension (SME) \u2014 Experimental tests 2027-2035",
+      "content": "The framework makes quantified, falsifiable predictions testable by current and near-future experiments.\nKey predictions include:\n\n1. Proton Decay: \u03c4_p = 3.83\u00d710\u00b3\u2074 years with 68% confidence interval [2.48, 5.51]\u00d710\u00b3\u2074 years,\n   achieving 0.177 orders of magnitude uncertainty. Channel-specific branching ratios include\n   BR(p\u2192e\u207a\u03c0\u2070) = 0.342 \u00b1 0.109 and BR(p\u2192K\u207a\u03bd\u0304) = 0.186 \u00b1 0.074.\n\n2. Neutrino Mass Hierarchy: Inverted Hierarchy (IH) predicted at 85.5% confidence from the\n   Atiyah-Singer index theorem on associative 3-cycles in the G\u2082 manifold. Testable by\n   JUNO (2027-2028) and DUNE (2028+).\n\n3. PMNS Matrix: All four angles derived with 0.09\u03c3 average deviation from NuFIT 5.3,\n   including two exact matches (\u03b8\u2082\u2083 = 47.20\u00b0 and \u03b8\u2081\u2083 = 8.54\u00b0).\n\n4. Dark Energy Evolution: w(z) = w\u2080[1 + (\u03b1_T/3) ln(1+z)] with logarithmic form preferred\n   over CPL by \u0394\u03c7\u00b2 = 38.8 (6.2\u03c3). w\u2080 = -0.8528 from effective dimension D_eff = 12.589.\n\n5. KK Graviton Tower: First mode at 5.0 \u00b1 1.5 TeV with diphoton cross-section 0.10 \u00b1 0.03 fb,\n   testable at HL-LHC (2027-2030) with 6.2\u03c3 discovery potential.\n\n6. Gauge Unification: 1/\u03b1_GUT = 23.54 \u00b1 0.45 at M_GUT = 2.118\u00d710\u00b9\u2076 GeV from G\u2082 torsion\n   structure and 3-loop RG evolution.\n\nOverall: 10/14 predictions within 1\u03c3, 3 exact matches. Testability Grade: A+",
       "pages": [
         {
           "file": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html",
@@ -1098,6 +1144,19 @@ const PM = {
           ],
           "hover_details": true,
           "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/predictions.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
         }
       ],
       "values": [
@@ -1114,17 +1173,26 @@ const PM = {
         "avg_sigma",
         "predictions_within_1sigma",
         "total_predictions",
-        "exact_matches"
+        "exact_matches",
+        "w0_PM",
+        "w0_sigma",
+        "wa_PM_effective",
+        "alpha_GUT_inv",
+        "M_GUT",
+        "planck_tension_resolved"
       ],
       "related_simulation": "validation",
       "has_topics": true,
-      "topic_count": 3,
+      "topic_count": 20,
       "required_values": [
         "BR_Knu_mean",
         "BR_epi0_mean",
+        "M_GUT",
+        "alpha_GUT_inv",
         "avg_sigma",
         "delta_CP",
         "exact_matches",
+        "planck_tension_resolved",
         "predictions_within_1sigma",
         "prob_IH_mean",
         "prob_IH_std",
@@ -1133,7 +1201,10 @@ const PM = {
         "theta_13",
         "theta_23",
         "total_predictions",
-        "uncertainty_oom"
+        "uncertainty_oom",
+        "w0_PM",
+        "w0_sigma",
+        "wa_PM_effective"
       ]
     },
     "resolution_status": {
@@ -1202,6 +1273,19 @@ const PM = {
           ],
           "hover_details": true,
           "template_type": "Paper Section"
+        },
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/conclusion.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
         }
       ],
       "values": [
@@ -1218,7 +1302,19 @@ const PM = {
         "BR_epi0_mean",
         "BR_Knu_mean",
         "prob_IH_mean",
-        "avg_sigma"
+        "prob_NH_mean",
+        "avg_sigma",
+        "wa_DESI",
+        "wa_error",
+        "b3",
+        "w_CPL_at_CMB",
+        "theta_12_error",
+        "w0_PM",
+        "w0_error",
+        "BR_ll",
+        "theta_13_nufit_error",
+        "delta_cp_sigma",
+        "ratio_to_bound"
       ],
       "related_simulation": null,
       "has_topics": true,
@@ -1226,18 +1322,30 @@ const PM = {
       "required_values": [
         "BR_Knu_mean",
         "BR_epi0_mean",
+        "BR_ll",
         "M_GUT",
         "alpha_GUT_inv",
         "avg_sigma",
+        "b3",
         "chi_eff",
+        "delta_cp_sigma",
         "exact_matches",
         "issues_resolved",
         "n_gen",
         "predictions_within_1sigma",
         "prob_IH_mean",
+        "prob_NH_mean",
+        "ratio_to_bound",
         "tau_p_median",
+        "theta_12_error",
+        "theta_13_nufit_error",
         "total_predictions",
-        "uncertainty_oom"
+        "uncertainty_oom",
+        "w0_PM",
+        "w0_error",
+        "w_CPL_at_CMB",
+        "wa_DESI",
+        "wa_error"
       ]
     },
     "fermion_sector": {
@@ -1425,6 +1533,89 @@ const PM = {
       "related_simulation": null,
       "has_topics": true,
       "topic_count": 10,
+      "required_values": []
+    },
+    "xy_gauge_bosons": {
+      "title": "SO(10) Heavy Gauge Bosons",
+      "subtitle": "X and Y Particles: Predicted but Not Yet Observed",
+      "content": "SO(10) grand unification extends the Standard Model's SU(3)\u00d7SU(2)\u00d7U(1) gauge group into a single\nsimple group. The 45 gauge bosons of SO(10) decompose as: 12 Standard Model bosons (g, W\u00b1, Z, \u03b3)\nat 0-91 GeV, 12 X bosons (charge \u00b14/3) at M_GUT, 12 Y bosons (charge \u00b11/3) at M_GUT, and 9 additional\nneutral heavy bosons (heavy Z', W' cousins) at M_GUT.\n\nThe X and Y bosons are responsible for proton decay via dimension-6 operators. Their discovery would\nconfirm grand unification and validate the M_GUT scale prediction. While direct production is impossible\nat any foreseeable collider (LHC is 10\u00b9\u00b2 times too weak), X and Y bosons can only be detected indirectly\nthrough virtual exchange in proton decay experiments (Super-K, Hyper-K, DUNE).\n\nFrom G\u2082 Geometry: M_X = M_Y \u2248 M_GUT derived from TCS G\u2082 torsion logarithms, SO(10) gauge group from\nG\u2082 holonomy breaking (45 bosons total), coupling \u03b1_GUT = 1/23.54 at M_GUT (all three SM couplings unify).\nTheoretical Estimates: Decay branching ratios unknown (depend on Yukawa couplings), lifetime \u03c4 ~ 10\u207b\u2074\u00b9 s\n(order of magnitude), production cross-sections not computed, mass splitting M_X vs M_Y assumed degenerate.\n\nThe predicted lifetime \u03c4_p = 3.83\u00d710\u00b3\u2074 years and branching ratio BR(e\u207a\u03c0\u2070) = 64.2% provide smoking-gun\nsignatures of SO(10) X,Y bosons through virtual exchange.",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/xy-gauge-bosons.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
+        }
+      ],
+      "values": [
+        "M_X",
+        "tau_estimate",
+        "alpha_GUT_inv"
+      ],
+      "related_simulation": null,
+      "has_topics": true,
+      "topic_count": 1,
+      "required_values": [
+        "M_X",
+        "alpha_GUT_inv",
+        "tau_estimate"
+      ]
+    },
+    "division_algebras": {
+      "title": "The Division Algebra Origin of D = 13",
+      "subtitle": "Why This Dimension? Hurwitz Theorem and Normed Division Algebras",
+      "content": "A central question for any higher-dimensional theory is: why this particular dimension? For string\ntheory, D = 10 emerges from worldsheet conformal anomaly cancellation. For M-theory, D = 11 is the\nmaximum dimension admitting supergravity. For Principia Metaphysica, D = 13 emerges uniquely from\nthe mathematics of normed division algebras.\n\nThe Hurwitz Theorem (1898) proves there exist exactly four normed division algebras over the real\nnumbers: R (reals, dimension 1), C (complex, dimension 2), H (quaternions, dimension 4), and O\n(octonions, dimension 8). No other dimensions admit such algebraic structure. The dimensions 1, 2, 4, 8\nare mathematically privileged.\n\nThe total dimension D = 13 admits a unique decomposition: D = 13 = 1 + 4 + 8 = dim(R) + dim(H) + dim(O).\nEach component has precise physical interpretation: R provides emergent thermal time (entropy flow is 1D),\nH provides Lorentzian spacetime (Spin(3,1) \u2245 SL(2,C) \u2245 SL(2,H)|_unit), and O provides the internal\nmanifold K_Pneuma (exceptional geometry with Aut(O) = G\u2082).\n\nWhy not 1 + 3 + 9 = 13? Neither 3 nor 9 is a division algebra dimension. The Hurwitz theorem proves\nthat no normed division algebra exists in dimension 3 or 9 (or any dimension other than 1, 2, 4, 8).\nAny decomposition using non-division-algebra dimensions lacks the algebraic structure necessary for\nconsistent spinor physics and gauge theory.\n\nD = 13 excludes complex structure C, whereas D = 10 and D = 11 include it. This exclusion is physically\nmeaningful: no worldsheet (no fundamental strings), emergent time from thermodynamics (not geometric\ncomplex coordinates), quaternionic spacetime (preserving Lorentz group structure), and full octonionic\ngeometry (not reduced 7D G\u2082).",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/division-algebra-section.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Fragment"
+        }
+      ],
+      "values": [],
+      "related_simulation": null,
+      "has_topics": true,
+      "topic_count": 1,
+      "required_values": []
+    },
+    "cmb_bubble_collisions": {
+      "title": "Multiverse Bubble Collisions - From Fringe to Falsifiable",
+      "subtitle": "CMB Cold Spot Predictions via Coleman-De Luccia Instanton Theory",
+      "content": "This section demonstrates how to transform a speculative \"fringe theory\" (Susskind's string landscape\ninspiring multiverse tunneling) into a mathematically rigorous and falsifiable prediction. While more\nspeculative than the neutrino hierarchy prediction, this work provides a template for deriving testable\nobservables from cosmic multiverse scenarios via Coleman-De Luccia (CDL) instanton physics.\n\nThe framework uses the 26D two-time structure to boost quantum tunneling rates between landscape\nvacua from cosmologically negligible (~10\u207b\u00b9\u2070\u2070 yr\u207b\u00b9 Mpc\u207b\u00b3) to testable levels (~10\u207b\u2075\u2070) through\nreduced effective barriers via orthogonal temporal dynamics. This yields falsifiable CMB signatures:\ndisk-like cold spots with angular size \u03b8 ~ 1-10\u00b0, temperature decrement \u0394T/T ~ -100 \u03bcK, and\nnon-Gaussian kurtosis \u03ba > 3 + 10\u2079.\n\nKey predictions include bubble nucleation rate \u0393 ~ exp(-S_E) with Euclidean action S_E = 27\u03c0\u00b2\u03c3\u2074/(2\u0394V\u00b3),\nbubble radius r_b = 3\u03c3/(4\u0394V) from thin-wall approximation, and detection probability P > 10\u207b\u00b3 testable\nby CMB-S4 (2027+). Null result would constrain \u0393/H\u2074 < 10\u207b\u2076 without falsifying the entire framework.",
+      "pages": [
+        {
+          "file": "https://www.metaphysic\u00e6.com/sections/cmb-bubble-collisions-comprehensive.html",
+          "section": "",
+          "order": 1,
+          "include": [
+            "title",
+            "content",
+            "topics",
+            "values"
+          ],
+          "hover_details": true,
+          "template_type": "Section Page"
+        }
+      ],
+      "values": [],
+      "related_simulation": null,
+      "has_topics": true,
+      "topic_count": 11,
       "required_values": []
     }
   }
