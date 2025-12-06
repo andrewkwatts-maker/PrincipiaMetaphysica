@@ -1610,6 +1610,317 @@ by CMB-S4 (2027+). Null result would constrain Γ/H⁴ < 10⁻⁶ without falsif
                 "template_type": "subsection"
             }
         ]
+    },
+
+    "calabi_yau_manifolds": {
+        "pages": [
+            {
+                "file": "foundations/calabi-yau.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "subtitle",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": True,
+                "template_type": "Foundation Page"
+            }
+        ],
+        "title": "Calabi-Yau Manifolds",
+        "subtitle": "Mathematical foundation for string compactification in Principia Metaphysica",
+        "content": """
+Calabi-Yau manifolds are special geometric spaces that preserve supersymmetry when used for
+dimensional compactification. They are central to string theory and F-theory compactifications.
+
+In the 2T framework, the 26D bulk with signature (24,2) is projected via Sp(2,R) gauge fixing
+to a 13D shadow with signature (12,1), which then undergoes G₂ compactification rather than
+CY4 compactification (though CY4 concepts inform the topology). The flux-dressed effective
+Euler characteristic χ_eff = 144 yields exactly n_gen = χ_eff/48 = 144/48 = 3 fermion generations.
+
+Key features include mirror symmetry between CY4_A and CY4_B (χ_A + χ_B = 72 + 72), KKLT
+modulus stabilization with φ_M = 2.493 M_Pl, Hodge numbers h^{1,1} = 4 (Kähler moduli) and
+h^{2,1} = 0 (complex structure), and SO(10) gauge symmetry from D₅ singularities embedded
+in the G₂ manifold.
+        """.strip(),
+        "related_simulation": None,
+        "values": [
+            "topology.chi_eff",
+            "topology.n_gen",
+            "topology.b2",
+            "topology.b3",
+            "dimensions.D_bulk",
+            "dimensions.D_after_sp2r"
+        ],
+        "topics": [
+            {
+                "id": "definition",
+                "title": "Definition",
+                "description": "Compact Kähler manifold with vanishing first Chern class (Ricci-flat metric)",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "2t-framework-intro",
+                "title": "2T Physics Framework (Introduction)",
+                "description": "Overview of 26D→13D→6D structure and G₂ compactification",
+                "template_type": "highlight-box",
+                "values": ["topology.chi_eff", "topology.n_gen", "dimensions.D_bulk", "dimensions.D_after_sp2r"]
+            },
+            {
+                "id": "why-calabi-yau",
+                "title": "Why Calabi-Yau Manifolds?",
+                "description": "Key properties: SUSY preservation, stable moduli, chiral fermions, gauge symmetry",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "key-properties",
+                "title": "Key Properties",
+                "description": "Supersymmetry preservation, K&auml;hler moduli stability, chiral matter generation",
+                "template_type": "highlight-box",
+                "values": []
+            },
+            {
+                "id": "hodge-numbers",
+                "title": "Hodge Numbers and Topology",
+                "description": "Euler characteristic χ and Hodge numbers h^{p,q} characterizing CY topology",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff", "topology.b2", "topology.b3"]
+            },
+            {
+                "id": "cy4-hodge-numbers",
+                "title": "CY4 Hodge Numbers in 2T Framework",
+                "description": "Specific Hodge numbers for CY4: h^{1,1}=4, h^{2,1}=0, flux-dressed χ_eff=144",
+                "template_type": "highlight-box",
+                "values": ["topology.chi_eff", "topology.b2"]
+            },
+            {
+                "id": "cy-types",
+                "title": "Calabi-Yau Manifolds by Dimension",
+                "description": "CY1 (T²), CY2 (K3), CY3 (heterotic), CY4 (F-theory/2T framework)",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "generation-formula",
+                "title": "Fermion Generations from Topology",
+                "description": "Generation count n_gen = χ_eff/48 = 144/48 = 3 from flux-dressed topology",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff", "topology.n_gen"]
+            },
+            {
+                "id": "flux-stabilization",
+                "title": "Flux Stabilization and KKLT Mechanism",
+                "description": "KKLT modulus stabilization via flux quantization, φ_M = 2.493 M_Pl",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff"]
+            },
+            {
+                "id": "kklt-mechanism",
+                "title": "KKLT Modulus Stabilization",
+                "description": "Flux dressing modifies bare topology to χ_eff=144, modulus VEV sets scale",
+                "template_type": "highlight-box",
+                "values": ["topology.chi_eff"]
+            },
+            {
+                "id": "cy4-spaces",
+                "title": "CY4 Spaces in the 2T Framework",
+                "description": "Two CY4 spaces in 13D shadow with mirror symmetry and shared timelike structure",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff", "topology.b2", "dimensions.D_after_sp2r"]
+            },
+            {
+                "id": "2t-implementation",
+                "title": "2T Physics Implementation",
+                "description": "G₂ manifold with CY4 spaces, SO(10) from D₅ singularities, flux stabilization",
+                "template_type": "highlight-box",
+                "values": ["topology.chi_eff", "topology.b2"]
+            },
+            {
+                "id": "mirror-symmetry",
+                "title": "Mirror Symmetry Between M_A^14 and M_B^14",
+                "description": "Mirror pairing χ_A + χ_B = 72 + 72 = 144, anomaly cancellation, moduli stabilization",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff"]
+            },
+            {
+                "id": "historical-development",
+                "title": "Historical Development",
+                "description": "Timeline from Calabi conjecture (1954) to 2T/G₂ framework integration",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "references",
+                "title": "References & Further Reading",
+                "description": "Key papers on Calabi-Yau manifolds, F-theory, 2T physics, and KKLT stabilization",
+                "template_type": "subsection",
+                "values": []
+            }
+        ]
+    },
+
+    "g2_manifolds": {
+        "pages": [
+            {
+                "file": "foundations/g2-manifolds.html",
+                "section": "",
+                "order": 1,
+                "include": [
+                    "title",
+                    "subtitle",
+                    "content",
+                    "topics",
+                    "values"
+                ],
+                "hover_details": True,
+                "template_type": "Foundation Page"
+            }
+        ],
+        "title": "G₂ Manifolds",
+        "subtitle": "7-dimensional geometric foundations for M-theory compactification in Principia Metaphysica",
+        "content": """
+G₂ manifolds are exceptional 7-dimensional Riemannian manifolds with holonomy group G₂,
+the smallest of the five exceptional Lie groups. In Principia Metaphysica's 2T physics framework,
+the 13D shadow (from 26D bulk via Sp(2,R) gauge fixing) compactifies on a 7D G₂ manifold,
+yielding the dimensional structure 13D → 6D bulk (with 7D G₂ compact).
+
+The framework uses a specific Twisted Connected Sum (TCS) construction with Betti numbers
+b₂ = 4 (associative 3-cycles) and b₃ = 24 (coassociative 4-cycles). Flux quantization modifies
+the bare topology (χ = 0) to flux-dressed effective topology χ_eff = 144, yielding exactly
+3 fermion generations via n_gen = χ_eff/48 = 144/48 = 3.
+
+Key features include D₅ singularities providing SO(10) gauge symmetry, GUT scale M_GUT = 2.118×10¹⁶ GeV
+derived from TCS torsion logarithms, unified coupling 1/α_GUT = 23.54 from b₃ = 24 topology,
+and N=1 SUSY preservation from G₂ holonomy. The construction is mathematically rigorous with
+computational verification via G2_Manifold_Construction.py.
+        """.strip(),
+        "related_simulation": None,
+        "values": [
+            "topology.chi_eff",
+            "topology.b2",
+            "topology.b3",
+            "topology.n_gen",
+            "proton_decay.M_GUT",
+            "proton_decay.alpha_GUT_inv",
+            "dimensions.D_bulk",
+            "dimensions.D_after_sp2r",
+            "dimensions.D_internal"
+        ],
+        "topics": [
+            {
+                "id": "what-is-g2",
+                "title": "What is G₂?",
+                "description": "G₂ as the smallest exceptional Lie group, 14-dimensional subgroup of SO(7), automorphism group of octonions",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "g2-holonomy",
+                "title": "G₂ Holonomy Manifolds",
+                "description": "7-dimensional Riemannian manifolds with holonomy group contained in G₂, parallel associative 3-form φ, Ricci-flat metric",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "g2-vs-cy",
+                "title": "G₂ Manifolds vs. Calabi-Yau Manifolds",
+                "description": "Comparison table: dimension, complex structure, holonomy, parallel spinors, Ricci curvature, supersymmetry",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "topology",
+                "title": "Topological Invariants & Flux-Dressed Topology",
+                "description": "Bare topology χ = 0 modified to χ_eff = 72 per copy via G₄ flux backreaction, total χ_eff = 144",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff", "topology.b2", "topology.b3"]
+            },
+            {
+                "id": "construction",
+                "title": "Construction of G₂ Manifolds",
+                "description": "Joyce construction (1996), Twisted Connected Sum (Kovalev 2003), ADE singularities for gauge symmetry",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff", "topology.b2", "topology.b3"],
+                "topics": [
+                    {
+                        "id": "joyce-construction",
+                        "title": "1. Joyce Construction (1996)",
+                        "description": "First explicit constructions via T⁷/Γ orbifold resolution using Eguchi-Hanson-like ALE spaces",
+                        "template_type": "subsection",
+                        "values": []
+                    },
+                    {
+                        "id": "tcs-construction",
+                        "title": "2. Twisted Connected Sum (Kovalev, 2003)",
+                        "description": "PM uses TCS with blocks 3.25₁ and 3.25₂, gluing angle θ = π/6, b₂=4, b₃=24, ν=24",
+                        "template_type": "subsection",
+                        "values": ["topology.b2", "topology.b3", "topology.chi_eff"]
+                    },
+                    {
+                        "id": "ade-singularities",
+                        "title": "3. ADE Singularities",
+                        "description": "D₅ singularities in G₂ yield SO(10) gauge symmetry, M_GUT from torsion logarithms",
+                        "template_type": "subsection",
+                        "values": ["proton_decay.M_GUT", "proton_decay.alpha_GUT_inv", "topology.b2", "topology.b3"]
+                    }
+                ]
+            },
+            {
+                "id": "physical-relevance",
+                "title": "Physical Relevance: G₂ Compactifications in 2T Framework",
+                "description": "26D (24,2) → 13D shadow → 6D bulk via G₂ compactification, χ_eff = 144 yields 3 generations",
+                "template_type": "subsection",
+                "values": ["dimensions.D_bulk", "dimensions.D_after_sp2r", "topology.chi_eff", "topology.n_gen"],
+                "topics": [
+                    {
+                        "id": "v9-volume",
+                        "title": "V₉ Internal Volume Structure",
+                        "description": "Total internal space V₉ = V₇(G₂) × V₂(T²), factorization matches PM geometry",
+                        "template_type": "subsection",
+                        "values": []
+                    },
+                    {
+                        "id": "susy-preservation",
+                        "title": "Holonomy & Supersymmetry Preservation",
+                        "description": "G₂ holonomy preserves N=1 SUSY in 4D, exactly one parallel spinor (8 real components)",
+                        "template_type": "subsection",
+                        "values": []
+                    },
+                    {
+                        "id": "why-g2",
+                        "title": "Why G₂ for Principia Metaphysica's 2T Framework?",
+                        "description": "7D perfect for 13D=6D+7D, flux-dressed χ_eff=144, ADE singularities, M-theory native",
+                        "template_type": "subsection",
+                        "values": ["topology.chi_eff", "topology.n_gen"]
+                    }
+                ]
+            },
+            {
+                "id": "generations",
+                "title": "Fermion Generations from Flux-Dressed G₂ Topology",
+                "description": "n_gen = χ_eff/48 = 144/48 = 3 from M-theory index theorem on flux-dressed G₂",
+                "template_type": "subsection",
+                "values": ["topology.chi_eff", "topology.n_gen"]
+            },
+            {
+                "id": "history",
+                "title": "Historical Development",
+                "description": "Timeline from Cartan (1914) to Joyce (1996) to Kovalev (2003) to PM (2025)",
+                "template_type": "subsection",
+                "values": []
+            },
+            {
+                "id": "references",
+                "title": "References & Further Reading",
+                "description": "Bryant (1987), Joyce (2000), Acharya (1998), Kovalev (2003), Bars (2000), CHNP (2018)",
+                "template_type": "subsection",
+                "values": []
+            }
+        ]
     }
 }
 
