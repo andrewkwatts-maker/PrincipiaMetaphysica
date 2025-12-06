@@ -54,13 +54,250 @@
         }
 
         @media print {
-            body { background: white; }
+            /* A4 Page Configuration */
+            @page {
+                size: A4;
+                margin: 25mm 20mm;
+            }
+
+            /* Body and Container */
+            body {
+                background: white;
+                color: #000;
+            }
+
             .paper {
-                padding: 0.5in;
+                padding: 0;
                 max-width: none;
                 box-shadow: none;
+                margin: 0;
             }
-            .no-print { display: none; }
+
+            /* Typography for Print */
+            body {
+                font-size: 11pt;
+                line-height: 1.5;
+                orphans: 3;
+                widows: 3;
+                -webkit-hyphens: auto;
+                -moz-hyphens: auto;
+                hyphens: auto;
+            }
+
+            h1 {
+                font-size: 18pt;
+                page-break-after: avoid;
+                orphans: 4;
+                widows: 4;
+            }
+
+            h2 {
+                font-size: 14pt;
+                page-break-before: always;
+                page-break-after: avoid;
+                margin-top: 0;
+                padding-top: 0;
+                border-bottom: 1px solid #333;
+                orphans: 4;
+                widows: 4;
+            }
+
+            /* First h2 should not force page break */
+            h2:first-of-type {
+                page-break-before: auto;
+            }
+
+            h3 {
+                font-size: 12pt;
+                page-break-after: avoid;
+                margin-top: 1.2rem;
+                orphans: 3;
+                widows: 3;
+            }
+
+            h4 {
+                font-size: 11pt;
+                page-break-after: avoid;
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Paragraph Settings */
+            p {
+                orphans: 3;
+                widows: 3;
+            }
+
+            /* Abstract - Keep on First Page */
+            .abstract {
+                page-break-inside: avoid;
+                page-break-after: auto;
+                background: #f5f5f5;
+                border-left: 3px solid #666;
+            }
+
+            /* Table of Contents - Separate Page */
+            .toc {
+                page-break-before: always;
+                page-break-after: always;
+                page-break-inside: avoid;
+                background: #f5f5f5;
+            }
+
+            /* Equations - Keep Together */
+            .equation {
+                page-break-inside: avoid;
+                page-break-before: auto;
+                page-break-after: auto;
+                background: #f8f8f8;
+                border: 1px solid #ddd;
+            }
+
+            /* Formula Definition Boxes - Keep Together */
+            .formula-def {
+                page-break-inside: avoid;
+                page-break-before: auto;
+                page-break-after: auto;
+                background: #f0f4ff;
+                border: 1px solid #999;
+            }
+
+            .formula-def-item {
+                page-break-inside: avoid;
+                background: white;
+                border-left: 2px solid #666;
+            }
+
+            /* Tables - Keep Together */
+            table {
+                page-break-inside: avoid;
+                page-break-before: auto;
+                page-break-after: auto;
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+            }
+
+            th, td {
+                border: 1px solid #666;
+            }
+
+            th {
+                background: #e5e5e5;
+            }
+
+            /* Status Colors for Print */
+            .status-fitted { color: #c00; }
+            .status-derived { color: #080; }
+            .status-semi { color: #c80; }
+
+            /* Lists */
+            ul, ol {
+                page-break-inside: auto;
+            }
+
+            li {
+                page-break-inside: avoid;
+            }
+
+            /* Info Boxes - Keep Together */
+            .warning-box,
+            .success-box,
+            .danger-box,
+            .grade-box {
+                page-break-inside: avoid;
+                border: 1px solid #666;
+            }
+
+            .warning-box {
+                background: #fff8dc;
+            }
+
+            .success-box {
+                background: #e8f5e9;
+            }
+
+            .danger-box {
+                background: #ffebee;
+            }
+
+            .grade-box {
+                background: #fffacd;
+                border: 2px solid #c80;
+            }
+
+            /* Footnotes */
+            .footnote {
+                page-break-inside: avoid;
+                font-size: 9pt;
+                border-top: 1px solid #666;
+            }
+
+            /* Hide Interactive Elements */
+            .no-print,
+            .download-btn,
+            button,
+            nav,
+            .breadcrumb,
+            footer {
+                display: none !important;
+            }
+
+            /* Links - Show URLs for Important References */
+            a[href^="http"]:after {
+                content: " (" attr(href) ")";
+                font-size: 9pt;
+                color: #666;
+            }
+
+            /* Don't show URLs for internal anchors */
+            a[href^="#"]:after {
+                content: "";
+            }
+
+            /* Section References */
+            .section-ref,
+            .foundation-ref {
+                color: #000;
+                font-weight: 600;
+                text-decoration: none;
+            }
+
+            /* Tooltips and Interactive Elements */
+            .pm-value:hover:after,
+            [data-tooltip]:hover:after {
+                display: none;
+            }
+
+            /* Print-safe Colors for Borders */
+            h2 {
+                border-bottom-color: #333;
+            }
+
+            .toc a {
+                color: #333;
+                text-decoration: none;
+            }
+
+            /* Ensure References Start on New Page */
+            h2#footnotes,
+            h2:last-of-type {
+                page-break-before: always;
+            }
+
+            /* Color Adjustments for Grayscale Printing */
+            * {
+                color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
         }
 
         h1 {
@@ -469,7 +706,7 @@
      <span class="pm-value" data-category="pmns_matrix" data-format="fixed:2" data-param="avg_sigma">
      </span>
      σ average deviation from NuFIT 5.3, including
-                two exact matches (θ₂₃ =
+                two agreement(s) with experiment (θ₂₃ =
      <span class="pm-value" data-category="pmns_matrix" data-format="fixed:2" data-param="theta_23">
      </span>
      ° and θ₁₃ =
@@ -493,7 +730,7 @@
                 geometry via TCS torsion logarithms and neutrino mixing angles; (6) Gauge coupling unification achieved
                 with 3% precision; (7) Explicit TCS G₂ manifold construction (arXiv:1809.09083) with target topology
                 verified. Framework validation shows 58 of 58 parameters (100%) derived from first principles,
-                with all 14 critical issues resolved and 10 of 14 predictions within 1σ including 3 exact matches
+                with all 14 critical issues resolved and 10 of 14 predictions within 1σ including 3 agreement(s) with experiment
                 (θ₂₃, θ₁₃, w(z) functional form). The framework achieves proton decay precision of
      <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="uncertainty_oom">
      </span>
@@ -763,7 +1000,7 @@
     1.5 Outline of the Paper (Two-Time Framework)
    </h3>
    <p>
-    The framework achieves complete resolution of all critical issues through rigorous geometric derivations
+    The framework provides complete resolution of all critical issues through rigorous geometric derivations
             and Monte Carlo simulations, establishing 100% parameter derivation from first principles. All predictions
             have been validated through SymPy symbolic computation and numerical analysis:
    </p>
@@ -1014,7 +1251,7 @@
     <strong>
      Overall Validation Results:
     </strong>
-    The framework achieves complete resolution of all critical issues with
+    The framework provides complete resolution of all critical issues with
             rigorous derivations. Total parameter count:
     <strong>
      58 parameters
@@ -1038,9 +1275,8 @@
             with
     <span class="pm-value" data-category="validation" data-format="display" data-param="exact_matches">
     </span>
-    exact matches. The framework earns an
+    agreement(s) with experiment. The framework earns an
     <strong>
-     A+ grade
     </strong>
     with all
     <span class="pm-value" data-category="validation" data-format="display" data-param="issues_resolved">
@@ -1799,7 +2035,7 @@
     <sub>
      total
     </sub>
-    = 24 - 26 + 2 = 0 ✓
+    = 24 - 26 + 2 = 0
     <span class="equation-label">
      (2.1g)
     </span>
@@ -4682,7 +4918,7 @@
      /48 =
      <span class="pm-value" data-category="topology" data-format="display" data-param="chi_eff">
      </span>
-     /48 = 3 ✓
+     /48 = 3
     </li>
    </ol>
    <p>
@@ -5144,7 +5380,7 @@
      <sub>
       eff
      </sub>
-     = 6ν = 144 ✓
+     = 6ν = 144
     </li>
     <li>
      <strong>
@@ -6130,7 +6366,7 @@
     (geometrically determined from TCS G₂ torsion logarithms, see §
     <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:1" data-param="significance">
     </span>
-    a)—a dramatic improvement from previous negative/unphysical values.
+    a)—a improvement from previous negative/unphysical values.
    </p>
    <h4>
     Corrected RG Evolution Formula
@@ -8591,7 +8827,7 @@
       </span>
      </td>
      <td>
-      &gt; 1.67×10³⁴ (Super-K) ✓
+      &gt; 1.67×10³⁴ (Super-K)
      </td>
     </tr>
     <tr>
@@ -8609,7 +8845,7 @@
       </span>
      </td>
      <td>
-      &gt; 6.6×10³³ (Super-K) ✓
+      &gt; 6.6×10³³ (Super-K)
      </td>
     </tr>
     <tr>
@@ -8625,7 +8861,7 @@
       </span>
      </td>
      <td>
-      &gt; 1.1×10³⁴ (Super-K) ✓
+      &gt; 1.1×10³⁴ (Super-K)
      </td>
     </tr>
     <tr>
@@ -9236,7 +9472,7 @@
       ° (NuFIT 5.2)
      </td>
      <td>
-      EXACT match
+      agreement(s) with experiment
      </td>
      <td class="status-derived">
       GEOMETRY-DERIVED
@@ -9294,7 +9530,7 @@
       2° (NuFIT 5.2)
      </td>
      <td>
-      EXACT match
+      agreement(s) with experiment
      </td>
      <td class="status-derived">
       GEOMETRY-DERIVED
@@ -9393,7 +9629,7 @@
     <strong>
      Validation Statistics:
     </strong>
-    10 of 14 predictions within 1sigma, including 3 exact matches
+    10 of 14 predictions within 1sigma, including 3 agreement(s) with experiment
             (θ
     <sub>
      23
@@ -9993,7 +10229,7 @@
      </td>
      <td>
       <strong>
-       0.00σ (EXACT!)
+       0.00σ
       </strong>
      </td>
     </tr>
@@ -10059,7 +10295,7 @@
      </td>
      <td>
       <strong>
-       0.01σ (EXACT!)
+       0.01σ
       </strong>
      </td>
     </tr>
@@ -10466,9 +10702,7 @@
     8.1 Validation Scores
    </h3>
    <div class="grade-box" style="background: linear-gradient(135deg, #51cf66 0%, #40c057 100%); color: white; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; text-align: center;">
-    <div style="font-size: 3rem; font-weight: 700; margin-bottom: 0.5rem;">
-     A+
-    </div>
+    
     <div style="font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem;">
      Overall Framework Grade
     </div>
@@ -10489,7 +10723,7 @@
      Predictions Within 1σ |
      <span class="pm-value" data-category="validation" data-format="display" data-param="exact_matches">
      </span>
-     Exact Matches
+     agreement(s) with experiment
     </div>
    </div>
    <table>
@@ -10546,7 +10780,7 @@
       within 1σ,
       <span class="pm-value" data-category="validation" data-format="display" data-param="exact_matches">
       </span>
-      exact matches; proton decay
+      agreement(s) with experiment; proton decay
       <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="uncertainty_oom">
       </span>
       OOM with channel-specific branching ratios; neutrino mass ordering IH at
@@ -11398,7 +11632,7 @@
      </tr>
      <tr>
       <td>
-       Exact Matches
+       agreement(s) with experiment
       </td>
       <td>
        3 (θ₂₃, θ₁₃, w(z) form)
@@ -11631,7 +11865,7 @@
       All 4 angles derived (
       <span class="pm-value" data-category="pmns_matrix" data-format="fixed:2" data-param="avg_sigma">
       </span>
-      σ average, 2 exact matches)
+      σ average, 2 agreement(s) with experiment)
      </li>
      <li>
       <strong>
@@ -11872,7 +12106,7 @@
             establishes exceptional validation:
     <strong>
      10/14 predictions within 1σ,
-            including 3 exact matches
+            including 3 agreement(s) with experiment
     </strong>
     . All core physics predictions are complete and falsifiable. The remaining
             extensions involve computational completeness (explicit wavefunction calculations) rather than fundamental
@@ -12016,7 +12250,7 @@
    </p>
    <p>
     <strong>
-     Publication-Ready Status:
+     complete theoretical framework:
     </strong>
     The Principia Metaphysica framework presents a
     <strong>
@@ -12032,10 +12266,9 @@
     predictions within 1σ (including
     <span class="pm-value" data-category="validation" data-format="display" data-param="exact_matches">
     </span>
-    exact matches),
+    agreement(s) with experiment),
             100% parameter derivation from geometry, and an
     <strong>
-     A+ validation grade
     </strong>
     , the framework demonstrates robust predictive power
             grounded in rigorous mathematical foundations. Experimental tests from HL-LHC (2027), JUNO (2028),
@@ -12175,6 +12408,107 @@
      for detailed derivation.
     </p>
    </div>
+
+   <!-- Theoretical Foundations Acknowledgment -->
+   <div style="margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05)); border-radius: 16px; border: 1px solid rgba(139, 127, 255, 0.2);">
+    <h2 style="color: #8b7fff; margin-bottom: 1.5rem; border-bottom: 2px solid rgba(139, 127, 255, 0.3); padding-bottom: 0.75rem;">
+     Theoretical Foundations
+    </h2>
+    <p style="line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.25rem;">
+     This work builds upon the foundational contributions of numerous pioneering theorists whose
+     insights have shaped our understanding of fundamental physics and mathematics. We owe a profound
+     debt to their groundbreaking research, upon which this framework stands.
+    </p>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-top: 1.5rem;">
+
+     <!-- Geometry & Topology -->
+     <div style="background: rgba(139, 127, 255, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #8b7fff;">
+      <h4 style="color: #8b7fff; margin-bottom: 0.75rem; font-size: 1rem;">Geometry & Topology</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Robert Bryant (G₂ holonomy construction, 1987)</li>
+       <li>Dominic Joyce (Compact G₂ manifolds, 2000)</li>
+       <li>Alexei Kovalev (Twisted Connected Sum, 2003)</li>
+       <li>Shing-Tung Yau (Calabi-Yau theorem, 1977)</li>
+       <li>Michael Atiyah & Isadore Singer (Index theorem, 1963)</li>
+      </ul>
+     </div>
+
+     <!-- String/M-Theory -->
+     <div style="background: rgba(255, 126, 182, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #ff7eb6;">
+      <h4 style="color: #ff7eb6; margin-bottom: 0.75rem; font-size: 1rem;">String/M-Theory</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Bobby Acharya (M-theory on G₂, 1998)</li>
+       <li>Edward Witten & Michael Atiyah (G₂ dynamics, 2001)</li>
+       <li>Philip Candelas, Gary Horowitz, Andrew Strominger, Edward Witten (CY compactification, 1985)</li>
+       <li>Cumrun Vafa (F-theory, 1996)</li>
+      </ul>
+     </div>
+
+     <!-- Gauge Theory & GUTs -->
+     <div style="background: rgba(79, 192, 255, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #4fc0ff;">
+      <h4 style="color: #4fc0ff; margin-bottom: 0.75rem; font-size: 1rem;">Gauge Theory & GUTs</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Chen Ning Yang & Robert Mills (Non-abelian gauge theory, 1954)</li>
+       <li>Howard Georgi & Sheldon Glashow (SU(5) GUT, 1974)</li>
+       <li>Harald Fritzsch & Peter Minkowski (SO(10) GUT, 1975)</li>
+      </ul>
+     </div>
+
+     <!-- General Relativity -->
+     <div style="background: rgba(81, 207, 102, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #51cf66;">
+      <h4 style="color: #51cf66; margin-bottom: 0.75rem; font-size: 1rem;">General Relativity</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Albert Einstein (Field equations, 1915)</li>
+       <li>David Hilbert (Einstein-Hilbert action, 1915)</li>
+      </ul>
+     </div>
+
+     <!-- Quantum Mechanics & QFT -->
+     <div style="background: rgba(255, 212, 59, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #ffd43b;">
+      <h4 style="color: #ffd43b; margin-bottom: 0.75rem; font-size: 1rem;">Quantum Mechanics & QFT</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Paul Dirac (Dirac equation, 1928)</li>
+       <li>William Clifford (Clifford algebra, 1878)</li>
+      </ul>
+     </div>
+
+     <!-- Thermal Time -->
+     <div style="background: rgba(210, 168, 255, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #d2a8ff;">
+      <h4 style="color: #d2a8ff; margin-bottom: 0.75rem; font-size: 1rem;">Thermal Time</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Alain Connes & Carlo Rovelli (Thermal time hypothesis, 1994)</li>
+       <li>Minoru Tomita (Modular theory, 1967)</li>
+       <li>Ryogo Kubo, Paul Martin, Julian Schwinger (KMS condition, 1957-1959)</li>
+      </ul>
+     </div>
+
+     <!-- Neutrino Physics -->
+     <div style="background: rgba(255, 166, 87, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #ffa657;">
+      <h4 style="color: #ffa657; margin-bottom: 0.75rem; font-size: 1rem;">Neutrino Physics</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Peter Minkowski, Tsutomu Yanagida, Murray Gell-Mann, et al. (Seesaw mechanism, 1977-1980)</li>
+      </ul>
+     </div>
+
+     <!-- Extra Dimensions -->
+     <div style="background: rgba(86, 211, 100, 0.08); padding: 1.25rem; border-radius: 12px; border-left: 3px solid #56d364;">
+      <h4 style="color: #56d364; margin-bottom: 0.75rem; font-size: 1rem;">Extra Dimensions</h4>
+      <ul style="font-size: 0.85rem; line-height: 1.7; color: var(--text-secondary); margin: 0; padding-left: 1.25rem;">
+       <li>Theodor Kaluza (5D unification, 1921)</li>
+       <li>Oskar Klein (Compactification, 1926)</li>
+       <li>Lisa Randall & Raman Sundrum (Warped geometry, 1999)</li>
+      </ul>
+     </div>
+
+    </div>
+
+    <p style="margin-top: 1.5rem; font-style: italic; color: var(--text-muted); text-align: center; font-size: 0.9rem;">
+     This framework extends and builds upon these foundational insights,<br>
+     applying them to a unified 26-dimensional two-time structure.
+    </p>
+   </div>
+
    <!-- References Section -->
    <h2 style="margin-top: 3rem; border-top: 2px solid #8b7fff; padding-top: 2rem;">
     References
@@ -12244,29 +12578,76 @@
     </li>
    </ol>
    <h3>
-    String Theory &amp; Extra Dimensions
+    Geometry &amp; Topology
    </h3>
    <ol start="9" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
-     Yau, S.T. (1977). "Calabi's Conjecture."
+     Yau, S.T. (1977). "Calabi's Conjecture and Some New Results in Algebraic Geometry."
      <em>
       Proc. Nat. Acad. Sci.
      </em>
-     74: 1798.
+     74: 1798-1799.
     </li>
     <li>
-     Candelas, P. et al. (1985). "Vacuum Configurations for Superstrings."
+     Bryant, R.L. (1987). "Metrics with Exceptional Holonomy."
+     <em>
+      Ann. of Math.
+     </em>
+     126(3): 525-576.
+    </li>
+    <li>
+     Joyce, D.D. (2000).
+     <em>
+      Compact Manifolds with Special Holonomy.
+     </em>
+     Oxford Mathematical Monographs.
+    </li>
+    <li>
+     Kovalev, A. (2003). "Twisted connected sums and special Riemannian holonomy."
+     <em>
+      J. Reine Angew. Math.
+     </em>
+     565: 125-160.
+    </li>
+    <li>
+     Atiyah, M.F. &amp; Singer, I.M. (1963). "The Index of Elliptic Operators on Compact Manifolds."
+     <em>
+      Bull. Amer. Math. Soc.
+     </em>
+     69(3): 422-433.
+    </li>
+   </ol>
+   <h3>
+    String Theory &amp; M-Theory
+   </h3>
+   <ol start="14" style="font-size: 0.9rem; line-height: 1.8;">
+    <li>
+     Candelas, P., Horowitz, G., Strominger, A. &amp; Witten, E. (1985). "Vacuum Configurations for Superstrings."
      <em>
       Nucl. Phys. B
      </em>
-     258: 46.
+     258: 46-74.
     </li>
     <li>
      Vafa, C. (1996). "Evidence for F-Theory."
      <em>
       Nucl. Phys. B
      </em>
-     469: 403. [arXiv:hep-th/9602022]
+     469(3): 403-415. [arXiv:hep-th/9602022]
+    </li>
+    <li>
+     Acharya, B.S. (1998). "M Theory, Joyce Orbifolds and Super Yang-Mills."
+     <em>
+      Adv. Theor. Math. Phys.
+     </em>
+     3: 227-248. [arXiv:hep-th/9812205]
+    </li>
+    <li>
+     Atiyah, M.F. &amp; Witten, E. (2001). "M-Theory Dynamics On A Manifold Of G₂ Holonomy."
+     <em>
+      Adv. Theor. Math. Phys.
+     </em>
+     6: 1-106. [arXiv:hep-th/0107177]
     </li>
     <li>
      Beasley, C., Heckman, J.J. &amp; Vafa, C. (2009). "F-theory GUTs."
@@ -12280,13 +12661,39 @@
      <em>
       Nucl. Phys. B
      </em>
-     480: 213. [arXiv:hep-th/9606122]
+     480: 213-239. [arXiv:hep-th/9606122]
+    </li>
+   </ol>
+   <h3>
+    Extra Dimensions &amp; Warped Geometry
+   </h3>
+   <ol start="20" style="font-size: 0.9rem; line-height: 1.8;">
+    <li>
+     Randall, L. &amp; Sundrum, R. (1999). "Large Mass Hierarchy from a Small Extra Dimension."
+     <em>
+      Phys. Rev. Lett.
+     </em>
+     83: 3370-3373. [arXiv:hep-ph/9905221]
+    </li>
+    <li>
+     Randall, L. &amp; Sundrum, R. (1999). "An Alternative to Compactification."
+     <em>
+      Phys. Rev. Lett.
+     </em>
+     83: 4690-4693. [arXiv:hep-th/9906064]
+    </li>
+    <li>
+     Gherghetta, T. &amp; Shaposhnikov, M. (2000). "Localizing Gravity on a String-Like Defect in Six Dimensions."
+     <em>
+      Phys. Rev. Lett.
+     </em>
+     85: 240-243. [arXiv:hep-th/0004014]
     </li>
    </ol>
    <h3>
     Algebraic Geometry &amp; Singularities
    </h3>
-   <ol start="14" style="font-size: 0.9rem; line-height: 1.8;">
+   <ol start="23" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
      Kodaira, K. (1963, 1964). "On Compact Analytic Surfaces II, III."
      <em>
@@ -12340,7 +12747,7 @@
    <h3>
     Thermal Time &amp; Statistical Mechanics
    </h3>
-   <ol start="21" style="font-size: 0.9rem; line-height: 1.8;">
+   <ol start="30" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
      Connes, A. &amp; Rovelli, C. (1994). "Von Neumann Algebra Automorphisms."
      <em>
@@ -12365,7 +12772,7 @@
    <h3>
     Neutrino Physics
    </h3>
-   <ol start="24" style="font-size: 0.9rem; line-height: 1.8;">
+   <ol start="33" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
      Minkowski, P. (1977). "μ → eγ at a Rate of One Out of 10
      <sup>
@@ -12402,7 +12809,7 @@
    <h3>
     Cosmology &amp; Experimental Data
    </h3>
-   <ol start="28" style="font-size: 0.9rem; line-height: 1.8;">
+   <ol start="37" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
      DESI Collaboration (2024). "Cosmological Constraints from BAO." [arXiv:2404.03002]
     </li>
@@ -12445,7 +12852,7 @@
    <h3>
     String Moduli &amp; Dark Energy
    </h3>
-   <ol start="34" style="font-size: 0.9rem; line-height: 1.8;">
+   <ol start="43" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
      Svrcek, P. &amp; Witten, E. (2006). "Axions in String Theory."
      <em>
@@ -12464,7 +12871,7 @@
    <h3>
     Lorentz Violation
    </h3>
-   <ol start="36" style="font-size: 0.9rem; line-height: 1.8;">
+   <ol start="45" style="font-size: 0.9rem; line-height: 1.8;">
     <li>
      Colladay, D. &amp; Kostelecky, V.A. (1998). "Lorentz-Violating Extension of the Standard Model."
      <em>
