@@ -1,0 +1,444 @@
+PRINCIPIA METAPHYSICA v12.0 - COMPLETE PARAMETER DEPENDENCY TREE
+===================================================================
+
+LEGEND:
+✓✓✓ = Level A (Mathematically Proven)
+✓✓  = Level B (Standard Derivation)
+✓   = Level C (With Assumptions)
+❌  = Level D (Phenomenological Fit)
+⚠️  = Warning (Circular or Unjustified)
+
+===================================================================
+
+ROOT: TCS G₂ MANIFOLD #187 (CHNP DATABASE)
+    Status: ❌ NO JUSTIFICATION for this specific choice
+    Alternative manifolds: #186, #188, ... (#185-#189 have b₃=24)
+
+    ├─── TOPOLOGICAL DATA (from CHNP)
+    │    │
+    │    ├─→ b₂ = 4 ✓✓ (h^{1,1} Hodge number)
+    │    │
+    │    ├─→ b₃ = 24 ✓✓ (h^{2,1} Hodge number)
+    │    │   │
+    │    │   ├─→ Flux Quantization (Halverson-Long arXiv:1810.05652)
+    │    │   │   │
+    │    │   │   └─→ N_flux = 3 ✓ (discrete choice to get n_gen=3)
+    │    │   │       │
+    │    │   │       ├─→ χ_eff = χ_raw / N_flux^(2/3) ✓✓
+    │    │   │       │   = 300 / 3^(2/3) = 144.0 (exact)
+    │    │   │       │
+    │    │   │       └─→ n_gen = χ_eff / 48 ✓✓✓
+    │    │   │           = 144 / 48 = 3 (RIGOROUS, TOPOLOGICAL)
+    │    │   │
+    │    │   └─→ ν = 24 ✓✓ (Crowley-Nordström invariant)
+    │    │
+    │    └─→ D₅ Singularities (Joyce 2000) ✓✓
+    │        │
+    │        └─→ SO(10) GUT Group ✓✓✓
+    │            │
+    │            ├─→ Anomaly Cancellation ✓✓✓
+    │            │   │
+    │            │   ├─→ Chiral: 3×16 - GS = 3 - 3 = 0 ✓
+    │            │   │   (Green-Schwarz from G₂ axion)
+    │            │   │
+    │            │   └─→ Gravitational: (assumed in string theory) ✓
+    │            │
+    │            ├─→ SO(10) → SU(3)×SU(2)×U(1) ✓✓
+    │            │   │
+    │            │   └─→ v_126 = 3.1×10^16 GeV ✓
+    │            │       (SO(10) breaking scale, standard)
+    │            │
+    │            └─→ X,Y Gauge Bosons ✓✓
+    │                │
+    │                └─→ M_X = M_Y = M_GUT (see below)
+    │
+    ├─── TORSION CLASS T_ω (from TCS construction)
+    │    │
+    │    ├─→ T_ω = -0.884 ✓✓
+    │    │   = ln(4 sin²(5π/48)) (logarithmic volume)
+    │    │
+    │    ├─→ s-parameter Derivation ✓✓
+    │    │   │
+    │    │   ├─→ s = [ln(M_Pl/M_GUT_base) - T_ω] / (2π/(ν/b₃))
+    │    │   │   = [6.519 - (-0.884)] / 6.283 = 1.178
+    │    │   │
+    │    │   ├─→ Warp Coefficient ✓✓
+    │    │   │   = 3 / (22 - ν/12) = 3 / 20 = 0.15
+    │    │   │
+    │    │   └─→ M_GUT = M_GUT_base × (1 + warp × s) ✓✓
+    │    │       = 1.8×10^16 × (1 + 0.15 × 1.178)
+    │    │       = 2.118×10^16 GeV (GEOMETRIC DERIVATION)
+    │    │       │
+    │    │       ├─→ M_GUT Error (from b₃ flux variations) ✓
+    │    │       │   σ(M_GUT) = 9×10^14 GeV (±4.2%)
+    │    │       │
+    │    │       ├─→ α_GUT (3-loop RG Running) ✓✓
+    │    │       │   │
+    │    │       │   ├─→ 2-loop baseline ✓✓
+    │    │       │   │   α_GUT^-1 = 24.68 - 0.5×s = 24.09
+    │    │       │   │
+    │    │       │   ├─→ 3-loop threshold (KK @ 5 TeV) ✓✓
+    │    │       │   │   Δα = -0.287
+    │    │       │   │
+    │    │       │   └─→ α_GUT^-1 = 23.54 ✓✓
+    │    │       │       α_GUT = 0.0425
+    │    │       │       Agreement with unification: 0.38σ ✓
+    │    │       │
+    │    │       └─→ Proton Lifetime ✓✓
+    │    │           │
+    │    │           ├─→ Base Formula ✓✓
+    │    │           │   τ_p = 3.82×10^33 × (M_GUT/10^16)^4 × (0.03/α_GUT)^2
+    │    │           │
+    │    │           ├─→ Torsion Enhancement ✓✓
+    │    │           │   Factor = exp(8π|T_ω|) = 4.3×10^9
+    │    │           │
+    │    │           ├─→ Hadronic Matrix Elements ✓
+    │    │           │   (from lattice QCD, FLAG 2024)
+    │    │           │
+    │    │           └─→ τ_p = 3.83×10^34 years ✓✓
+    │    │               ± 0.177 OOM (Monte Carlo, n=1000)
+    │    │               68% CI: [2.43×10^34, 5.57×10^34]
+    │    │               Super-K bound: 1.67×10^34 y
+    │    │               Ratio: 2.3× above bound ✓
+    │    │
+    │    │               Testable: Hyper-Kamiokande 2032-2038
+    │    │
+    │    └─→ α₄ + α₅ Sum Constraint ✓✓
+    │        │
+    │        ├─→ Formula: α₄ + α₅ = [ln(M_Pl/M_GUT) + |T_ω|] / (2π)
+    │        │   = [6.519 + 0.884] / 6.283 = 1.178 ✓✓
+    │        │
+    │        ├─→ ⚠️ CRITICAL ISSUE: α₄ - α₅ Determination
+    │        │   │
+    │        │   ├─→ ❌ CIRCULAR DEPENDENCY:
+    │        │   │
+    │        │   │   Current claim in paper:
+    │        │   │   "θ₂₃ derived from α₄ - α₅"
+    │        │   │
+    │        │   │   Actual implementation (config.py L1402):
+    │        │   │   α₄ - α₅ = (θ₂₃ - 45°)/n_gen
+    │        │   │            = (47.2 - 45.0)/3 = 0.733
+    │        │   │
+    │        │   │   Where does θ₂₃ = 47.2° come from?
+    │        │   │   → NuFIT 5.3 experimental value! ❌
+    │        │   │
+    │        │   │   Then code "derives" θ₂₃:
+    │        │   │   θ₂₃ = 45° + (α₄ - α₅) × n_gen
+    │        │   │        = 45° + 0.733 × 3 = 47.2° ✓
+    │        │   │
+    │        │   │   This is CIRCULAR REASONING!
+    │        │   │
+    │        │   └─→ Resolution Required:
+    │        │       Option A: Admit α₄, α₅ are phenomenological
+    │        │       Option B: Derive from independent principle
+    │        │       Option C: Constrain sum only, admit difference is fitted
+    │        │
+    │        ├─→ α₄ = 0.9557 ❌ (PHENOMENOLOGICAL FIT)
+    │        │   Source: Fitted to match θ₂₃=47.2° AND w₀=-0.853
+    │        │   Status: NOT DERIVED, despite claims
+    │        │
+    │        ├─→ α₅ = 0.2224 ❌ (PHENOMENOLOGICAL FIT)
+    │        │   Source: Fitted to match θ₂₃ asymmetry
+    │        │   Status: NOT DERIVED, despite claims
+    │        │
+    │        ├─→ D_eff = 12 + 0.5(α₄ + α₅) ✓
+    │        │   = 12 + 0.5 × 1.178 = 12.589
+    │        │   Formula: Standard from shared dimensions
+    │        │   Status: Derived (given α₄, α₅)
+    │        │
+    │        └─→ w₀ = -(D_eff - 1)/(D_eff + 1) ✓✓
+    │            = -(12.589 - 1)/(12.589 + 1) = -0.8528
+    │            DESI DR2: w₀ = -0.83 ± 0.06
+    │            Deviation: 0.38σ ✓
+    │            Status: Excellent agreement!
+    │            Missing: σ(w₀) uncertainty ❌
+    │
+    │            ├─→ w_a (Evolution Parameter) ⚠️
+    │            │   │
+    │            │   ├─→ Thermal Friction Mechanism ⚠️
+    │            │   │   Γ ∝ T (from Connes-Rovelli TTH)
+    │            │   │   Status: NOT proven in PM context
+    │            │   │   Reference: Assumed analogy
+    │            │   │
+    │            │   ├─→ α_T = 2.7 ✓ (thermal time parameter)
+    │            │   │   Z₂-corrected canonical value
+    │            │   │
+    │            │   └─→ w_a = -0.95 ✓
+    │            │       (NOT from β mechanism!)
+    │            │       DESI: -0.75 ± 0.30
+    │            │       Deviation: 0.66σ ✓
+    │            │
+    │            └─→ Planck-DESI Tension Resolution ✓✓
+    │                │
+    │                ├─→ At z=1100 (CMB): w = -1.0 (frozen) ✓
+    │                ├─→ At z=0.3-2.3 (DESI): w ≈ -0.85 (active) ✓
+    │                ├─→ Original tension: 6σ → Reduced: 1.3σ ✓
+    │                │
+    │                └─→ Functional Form Test ✓✓
+    │                    ln(1+z) vs CPL: Δχ² = 38.8
+    │                    Preference: 6.2σ ✓
+    │                    Predicted Euclid (2028): 3.5σ
+    │                    Testable: YES ✓
+    │
+    ├─── 3-CYCLE INTERSECTIONS (Braun-Del Zotto 2022)
+    │    │
+    │    ├─→ Triple Intersection Numbers Ω_{ijk} ✓
+    │    │   │
+    │    │   │   ⚠️ WARNING: Paper cites "explicit metric from Braun-Del Zotto 2022"
+    │    │   │   But are these numbers from TCS #187 specifically?
+    │    │   │   Or generic example? Need verification!
+    │    │   │
+    │    │   ├─→ Neutrino Sector ✓✓
+    │    │   │   │
+    │    │   │   ├─→ Ω_ν = [[0, 11, 4], [11, 0, 16], [4, 16, 0]] ✓
+    │    │   │   │
+    │    │   │   ├─→ Wilson Line Phases φ_{ij} ⚠️
+    │    │   │   │   φ = [[0, 2.827, 1.109], [2.827, 0, 0.903], [1.109, 0.903, 0]] ⚠️
+    │    │   │   │   Source: "Flux configuration" (hand-waved) ⚠️
+    │    │   │   │   Status: NOT explicitly derived
+    │    │   │   │   Should come from: G₃ flux profile via Atiyah-Hitchin
+    │    │   │   │
+    │    │   │   ├─→ Dirac Yukawa Y_D = Ω_ν × exp(iφ) ✓
+    │    │   │   │
+    │    │   │   ├─→ Right-Handed Majorana Masses M_R ✓
+    │    │   │   │   │
+    │    │   │   │   ├─→ From G₃ Flux Quanta on Dual 4-Cycles ✓
+    │    │   │   │   │   N₁=3, N₂=2, N₃=1 (assumed orientation) ✓
+    │    │   │   │   │
+    │    │   │   │   ├─→ M_R = diag([9, 4, 1]) × 2.1×10^14 GeV ✓
+    │    │   │   │   │   = [1.89×10^15, 8.4×10^14, 2.1×10^14] GeV
+    │    │   │   │   │
+    │    │   │   │   └─→ Base Scale: v_126 = 3.1×10^16 GeV ✓
+    │    │   │   │       (SO(10) breaking, standard)
+    │    │   │   │
+    │    │   │   └─→ Type-I Seesaw ✓✓
+    │    │   │       │
+    │    │   │       ├─→ m_ν = -Y_D M_R^{-1} Y_D^T (v_126²/2) ✓✓
+    │    │   │       │   × 10^{-18} (normalization to eV)
+    │    │   │       │
+    │    │   │       ├─→ Diagonalization → Light Masses ✓✓
+    │    │   │       │   │
+    │    │   │       │   ├─→ m₁ = 0.00837 eV ✓
+    │    │   │       │   ├─→ m₂ = 0.01225 eV ✓
+    │    │   │       │   └─→ m₃ = 0.05021 eV ✓
+    │    │   │       │
+    │    │   │       ├─→ Δm²₂₁ = 7.40×10^{-5} eV² ✓✓
+    │    │   │       │   NuFIT: 7.42×10^{-5} eV²
+    │    │   │       │   Agreement: 0.3% ✓
+    │    │   │       │
+    │    │   │       ├─→ Δm²₃₁ = 2.514×10^{-3} eV² ✓✓
+    │    │   │       │   NuFIT: 2.515×10^{-3} eV²
+    │    │   │       │   Agreement: 0.04% ✓
+    │    │   │       │
+    │    │   │       ├─→ Σm_ν = 0.0708 eV ✓✓
+    │    │   │       │   Cosmology limit: < 0.12 eV ✓
+    │    │   │       │   Missing: σ(Σm_ν) ❌
+    │    │   │       │
+    │    │   │       └─→ Mass Ordering ✓
+    │    │   │           Normal Hierarchy: 78% probability
+    │    │   │           (from flux quanta orientation)
+    │    │   │
+    │    │   │           ⚠️ WARNING: Z₂ Ambiguity
+    │    │   │           Flip N₁↔N₃: → Inverted Hierarchy 75%
+    │    │   │           Hierarchy is preference, not firm prediction
+    │    │   │
+    │    │   │           FALSIFICATION TEST:
+    │    │   │           If JUNO finds IH → theory NOT dead
+    │    │   │           (can flip flux orientation)
+    │    │   │           Weakens predictive claim!
+    │    │   │
+    │    │   ├─→ PMNS Mixing Matrix ✓ (but see circular issue)
+    │    │   │   │
+    │    │   │   ├─→ θ₂₃ = 47.2° ❌ CIRCULAR (see above)
+    │    │   │   │   Formula: 45° + (α₄ - α₅) × n_gen
+    │    │   │   │   But α₄ - α₅ uses θ₂₃ = 47.2° from NuFIT!
+    │    │   │   │   NuFIT: 47.2 ± 2.0°
+    │    │   │   │   Deviation: 0.0σ (artificially perfect!)
+    │    │   │   │
+    │    │   │   ├─→ θ₁₂ = 33.59° ⚠️
+    │    │   │   │   Formula: arcsin(1/√3 × [1 - (b₃-b₂n_gen)/(2χ_eff)])
+    │    │   │   │   NuFIT: 33.41 ± 0.75°
+    │    │   │   │   Deviation: 0.24σ ✓
+    │    │   │   │   Status: Good, but formula tuned to match
+    │    │   │   │
+    │    │   │   ├─→ θ₁₃ = 8.57° ❌ CALIBRATED
+    │    │   │   │   Code admits (L138): "sin_theta_13_calibrated"
+    │    │   │   │   Directly set to NuFIT value!
+    │    │   │   │   NuFIT: 8.57 ± 0.12°
+    │    │   │   │   Deviation: 0.0σ (by construction!)
+    │    │   │   │
+    │    │   │   └─→ δ_CP = 235° ❌ FINE-TUNED
+    │    │   │       Formula: Complex, but final line (L187):
+    │    │   │       "delta_cp_best = 235.0  # Geometric value matching NuFIT"
+    │    │   │       NuFIT: 232 ± 30°
+    │    │   │       Deviation: 0.1σ ✓
+    │    │   │       Status: Post-hoc tuning
+    │    │   │
+    │    │   │   Average Deviation: 0.09σ (claimed)
+    │    │   │   But 3/4 angles are fitted/calibrated!
+    │    │   │   Only θ₁₂ is genuinely derived
+    │    │   │
+    │    │   ├─→ Quark Yukawa Matrices (Y_u, Y_d) ✓✓
+    │    │   │   │
+    │    │   │   ├─→ Ω_u = [[12, 3, 0], [3, 15, 5], [0, 5, 18]] ✓
+    │    │   │   ├─→ Ω_d = [[15, 6, 2], [6, 20, 8], [2, 8, 25]] ✓
+    │    │   │   │
+    │    │   │   ├─→ Wilson Phases (same as ν) ⚠️
+    │    │   │   │
+    │    │   │   ├─→ Quark Masses ✓✓
+    │    │   │   │   From Yukawa eigenvalues
+    │    │   │   │   Agreement: <1.8% all masses ✓
+    │    │   │   │
+    │    │   │   └─→ CKM Matrix ✓
+    │    │   │       │
+    │    │   │       ├─→ |V_us| = 0.224 (exp: 0.224±0.002) ✓
+    │    │   │       ├─→ |V_cb| = 0.042 (exp: 0.042±0.002) ✓
+    │    │   │       ├─→ |V_ub| = 0.0035 (exp: 0.0035±0.0004) ✓
+    │    │   │       │
+    │    │   │       └─→ ⚠️ CKM CP Phase δ_q NOT REPORTED
+    │    │   │           Should compute: arg(det(Y_u Y_d^†))
+    │    │   │           Compare to: δ_q ≈ 70° (exp)
+    │    │   │           Status: INCOMPLETE
+    │    │   │
+    │    │   └─→ Lepton Yukawa Y_e ✓✓
+    │    │       │
+    │    │       ├─→ Ω_e = Ω_lepton × 3 (Georgi-Jarlskog)
+    │    │       │
+    │    │       ├─→ Lepton Masses ✓✓
+    │    │       │   m_e, m_μ, m_τ from eigenvalues
+    │    │       │   Agreement: <2% ✓
+    │    │       │
+    │    │       └─→ Mass Ratios ✓
+    │    │           m_τ/m_μ = 16.8 (exp: 16.8±0.1) → 0.0σ ✓
+    │    │           m_μ/m_e = 207 (exp: 206.8±0.1) → 2.0σ ⚠️
+    │    │
+    │    └─→ Proton Decay Branching Ratios ✓✓
+    │        │
+    │        ├─→ From Yukawa Overlaps (Monte Carlo) ✓
+    │        │   Wavefunction overlaps on G₂ cycles
+    │        │
+    │        ├─→ BR(p → e⁺π⁰) = 64.2 ± 9.4% ✓✓
+    │        │   Dominant channel
+    │        │
+    │        └─→ BR(p → K̄⁰ν) = 35.6 ± 9.4% ✓✓
+    │            Subdominant
+    │
+    │            Both sum to ~100% ✓
+    │            Testable: Hyper-K 2032+
+    │
+    ├─── Sp(2,R) GAUGE PROJECTION (BRST Quantization)
+    │    │
+    │    ├─→ 26D → 13D Reduction ✓✓✓
+    │    │   │
+    │    │   ├─→ BRST Nilpotency: Q² = 0 ✓✓✓
+    │    │   │   Proven in v9.1 simulation
+    │    │   │
+    │    │   ├─→ Cohomology Dimension: 1 ✓✓
+    │    │   │   Physical states in Q-cohomology
+    │    │   │
+    │    │   ├─→ Unitarity Preserved ✓✓
+    │    │   │   Kugo-Ojima mechanism
+    │    │   │
+    │    │   └─→ Central Charge ✓✓
+    │    │       c_matter + c_ghost + c_BRST = 26 - 26 + 2 = 0
+    │    │       Anomaly-free conformal field theory
+    │    │
+    │    └─→ Effective Dimension Formula ✓
+    │        D_eff = 12 + 0.5(α₄ + α₅)
+    │        Depends on α₄, α₅ (see circular issue above)
+    │
+    └─── T² COMPACTIFICATION (9D Internal = G₂ × T²)
+         │
+         ├─→ Modulus Stabilization ✓
+         │   │
+         │   ├─→ KKLT Mechanism ✓
+         │   │   V(φ) = |F|² e^{-aφ} + κe^{-b/φ} + μcos(φ/R)
+         │   │
+         │   ├─→ Minimum at A_T² = 18.4 M_*^{-2} ✓
+         │   │   Status: Assumed from KKLT (not verified V''>0)
+         │   │
+         │   └─→ String Scale M_* ✓
+         │       │
+         │       ├─→ From G₃ Flux Density ✓
+         │       │   ρ_flux ~ ∫|G₃|² ~ M_*^4
+         │       │
+         │       └─→ M_* = 3.2×10^16 GeV ✓
+         │           (consistent with M_GUT = 2.1×10^16)
+         │
+         └─→ KK Graviton Mass ✓✓
+             │
+             ├─→ KK Formula: m_KK = 2π/√A_T² × M_* ✓✓
+             │   = 2π/√18.4 × 3.2×10^16 GeV
+             │
+             ├─→ m_KK = 5.02 TeV ✓✓
+             │   ± 0.12 TeV (estimated)
+             │   Status: No Monte Carlo uncertainty ⚠️
+             │
+             ├─→ KK Tower ✓✓
+             │   m₂ = 10.04 TeV
+             │   m₃ = 15.06 TeV
+             │   Evenly spaced (2D torus)
+             │
+             └─→ HL-LHC Discovery Potential ✓
+                 6.8σ with 3 ab^{-1} (2029+)
+                 Testable: YES ✓
+
+===================================================================
+
+CRITICAL PATHS TO OBSERVABLES:
+
+1. n_gen = 3:
+   TCS #187 → b₃=24 → N_flux=3 → χ_eff=144 → n_gen=3 ✓✓✓
+
+2. M_GUT:
+   TCS #187 → T_ω=-0.884 → s=1.178 → M_GUT=2.12×10^16 ✓✓
+
+3. τ_p:
+   M_GUT → α_GUT → Base Formula → Torsion × → τ_p=3.8×10^34 ✓✓
+
+4. w₀:
+   T_ω → α₄+α₅ → D_eff → w₀=-0.853 ✓ (given α₄, α₅)
+   BUT: α₄, α₅ individually are FITTED ❌
+
+5. PMNS:
+   3-cycles → Ω_ν → Y_D → Seesaw → m_ν, PMNS ✓
+   BUT: θ₂₃, θ₁₃, δ_CP are FITTED/CALIBRATED ❌
+
+6. m_KK:
+   KKLT → A_T² → m_KK = 5.02 TeV ✓✓
+
+===================================================================
+
+SHOWSTOPPERS SUMMARY:
+
+1. α₄/α₅ ↔ θ₂₃ Circular Dependency ❌
+   Fix: Admit phenomenological OR derive independently
+
+2. TCS #187 Unjustified ❌
+   Fix: Add manifold selection protocol appendix
+
+3. Missing Uncertainties ❌
+   w₀, Σm_ν, α₄, α₅ have no error bars
+   No 58×58 correlation matrix
+   Fix: Complete Monte Carlo analysis
+
+4. Wilson Line Phases Hand-Waved ⚠️
+   "From flux configuration" without calculation
+   Fix: Derive from G₃ flux OR admit phenomenological
+
+5. Thermal Friction Mechanism Unproven ⚠️
+   Γ∝T claimed but not derived in PM context
+   Fix: Prove OR admit ansatz
+
+===================================================================
+
+RIGOR LEVELS:
+A (Proven): 8 params (14%)
+B (Standard): 20 params (34%)
+C (Assumptions): 22 params (38%)
+D (Fitted): 8 params (14%)
+
+PUBLICATION GRADE: B+ (after fixing showstoppers)
+CURRENT STATUS: NOT READY (circular logic, unjustified choices)
+
+===================================================================
