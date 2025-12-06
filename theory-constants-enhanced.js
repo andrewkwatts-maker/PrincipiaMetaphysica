@@ -156,12 +156,12 @@ const PM = {
       ]
     },
     "tau_p_median": {
-      "value": 3.880908712543316e+34,
+      "value": 3.873624470154304e+34,
       "unit": "years",
       "display": "3.84\u00d710\u00b3\u2074",
-      "uncertainty_lower": 2.529432772081294e+34,
-      "uncertainty_upper": 5.494333832713823e+34,
-      "uncertainty_oom": 0.16814991467892446,
+      "uncertainty_lower": 2.4594463217169845e+34,
+      "uncertainty_upper": 5.51479735507131e+34,
+      "uncertainty_oom": 0.17498202355664605,
       "confidence_level": "68%",
       "description": "Proton lifetime (Monte Carlo median)",
       "formula": "\u03c4_p = 3.82\u00d710\u00b3\u00b3 \u00d7 (M_GUT/10\u00b9\u2076)\u2074 \u00d7 (0.03/\u03b1_GUT)\u00b2",
@@ -177,7 +177,7 @@ const PM = {
       ]
     },
     "uncertainty_oom": {
-      "value": 0.16814991467892446,
+      "value": 0.17498202355664605,
       "unit": "OOM",
       "display": "0.177",
       "description": "Proton decay uncertainty in orders of magnitude",
@@ -194,7 +194,7 @@ const PM = {
       "value": 47.199999,
       "unit": "degrees",
       "display": "47.20\u00b0",
-      "uncertainty": 0.8014999187271764,
+      "uncertainty": 0.788443739306532,
       "description": "Atmospheric mixing angle",
       "formula": "\u03b8\u2082\u2083 = 45\u00b0 + (\u03b1\u2084 - \u03b1\u2085) \u00d7 n_gen",
       "derivation": "Asymmetric coupling to shared extra dimensions",
@@ -213,7 +213,7 @@ const PM = {
       "value": 33.59329049922625,
       "unit": "degrees",
       "display": "33.59\u00b0",
-      "uncertainty": 1.2332596810664747,
+      "uncertainty": 1.221336852503704,
       "description": "Solar mixing angle",
       "formula": "\u03b8\u2081\u2082 = arcsin(1/\u221a3 \u00d7 |1 + \u03b4_pert|)",
       "derivation": "Tri-bimaximal mixing + G\u2082 cycle perturbation",
@@ -232,7 +232,7 @@ const PM = {
       "value": 8.568979552196335,
       "unit": "degrees",
       "display": "8.57\u00b0",
-      "uncertainty": 0.33410576454555474,
+      "uncertainty": 0.350446425914265,
       "description": "Reactor mixing angle",
       "formula": "\u03b8\u2081\u2083 = arctan(b\u2082/b\u2083 \u00d7 exp(-\u03bd/n_gen))",
       "derivation": "G\u2082 cycle intersection asymmetry",
@@ -251,7 +251,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.910339042804313,
+      "uncertainty": 29.50386801848551,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -283,7 +283,7 @@ const PM = {
       "value": 235.0,
       "unit": "degrees",
       "display": "235.0",
-      "uncertainty": 28.910339042804313,
+      "uncertainty": 29.50386801848551,
       "description": "CP-violating phase",
       "formula": "\u03b4_CP from complex phase of cycle overlaps",
       "derivation": "G\u2082 complex structure modulus + optional moonshine",
@@ -1131,7 +1131,7 @@ const PM = {
     "predictions": {
       "title": "7. Predictions and Testability",
       "subtitle": "Falsifiable Predictions via the Standard-Model Extension (SME) \u2014 Experimental tests 2027-2035",
-      "content": "The framework makes quantified, falsifiable predictions testable by current and near-future experiments.\nKey predictions include:\n\n1. Proton Decay: \u03c4_p = 3.83\u00d710\u00b3\u2074 years with 68% confidence interval [2.48, 5.51]\u00d710\u00b3\u2074 years,\n   achieving 0.177 orders of magnitude uncertainty. Channel-specific branching ratios include\n   BR(p\u2192e\u207a\u03c0\u2070) = 0.342 \u00b1 0.109 and BR(p\u2192K\u207a\u03bd\u0304) = 0.186 \u00b1 0.074.\n\n2. Neutrino Mass Hierarchy: Inverted Hierarchy (IH) predicted at 85.5% confidence from the\n   Atiyah-Singer index theorem on associative 3-cycles in the G\u2082 manifold. Testable by\n   JUNO (2027-2028) and DUNE (2028+).\n\n3. PMNS Matrix: All four angles derived with 0.09\u03c3 average deviation from NuFIT 5.3,\n   including two exact matches (\u03b8\u2082\u2083 = 47.20\u00b0 and \u03b8\u2081\u2083 = 8.54\u00b0).\n\n4. Dark Energy Evolution: w(z) = w\u2080[1 + (\u03b1_T/3) ln(1+z)] with logarithmic form preferred\n   over CPL by \u0394\u03c7\u00b2 = 38.8 (6.2\u03c3). w\u2080 = -0.8528 from effective dimension D_eff = 12.589.\n\n5. KK Graviton Tower: First mode at 5.0 \u00b1 1.5 TeV with diphoton cross-section 0.10 \u00b1 0.03 fb,\n   testable at HL-LHC (2027-2030) with 6.2\u03c3 discovery potential.\n\n6. Gauge Unification: 1/\u03b1_GUT = 23.54 \u00b1 0.45 at M_GUT = 2.118\u00d710\u00b9\u2076 GeV from G\u2082 torsion\n   structure and 3-loop RG evolution.\n\nOverall: 10/14 predictions within 1\u03c3, 3 exact matches. Testability Grade: A+",
+      "content": "The framework makes quantified, falsifiable predictions testable by current and near-future experiments.\nKey predictions include:\n\n1. Proton Decay: \u03c4_p = 3.83\u00d710\u00b3\u2074 years with 68% confidence interval [2.48, 5.51]\u00d710\u00b3\u2074 years,\n   achieving 0.177 orders of magnitude uncertainty. Channel-specific branching ratios include\n   BR(p\u2192e\u207a\u03c0\u2070) = 0.342 \u00b1 0.109 and BR(p\u2192K\u207a\u03bd\u0304) = 0.186 \u00b1 0.074.\n\n2. Neutrino Mass Hierarchy: Inverted Hierarchy (IH) predicted at 85.5% confidence from the\n   Atiyah-Singer index theorem on associative 3-cycles in the G\u2082 manifold. Testable by\n   JUNO (2027-2028) and DUNE (2028+).\n\n3. PMNS Matrix: All four angles derived with 0.09\u03c3 average deviation from NuFIT 5.3,\n   including two exact matches (\u03b8\u2082\u2083 = 47.20\u00b0 and \u03b8\u2081\u2083 = 8.54\u00b0).\n\n4. Dark Energy Evolution: w(z) = w\u2080[1 + (\u03b1_T/3) ln(1+z)] with logarithmic form preferred\n   over CPL by \u0394\u03c7\u00b2 = 38.8 (6.2\u03c3). w\u2080 = -0.8528 from effective dimension D_eff = 12.589.\n\n5. KK Graviton Tower: First mode at 5.0 \u00b1 1.5 TeV with diphoton cross-section 0.10 \u00b1 0.03 fb,\n   testable at HL-LHC (2027-2030) with 6.2\u03c3 discovery potential.\n\n6. Gauge Unification: 1/\u03b1_GUT = 23.54 \u00b1 0.45 at M_GUT = 2.118\u00d710\u00b9\u2076 GeV from G\u2082 torsion\n   structure and 3-loop RG evolution.\n\nOverall: 10/14 predictions within 1\u03c3, 3 exact matches",
       "pages": [
         {
           "file": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html",
@@ -1210,7 +1210,7 @@ const PM = {
     "resolution_status": {
       "title": "8. Resolution Status and Validation",
       "subtitle": "100% Parameter Derivation from First Principles",
-      "content": "The framework has been rigorously examined for mathematical consistency, physics viability,\nexperimental testability, and cosmological predictions. This section summarizes the validation status,\ndemonstrating resolution of all 14 critical issues with 100% parameter derivation from first principles.\n\nOverall Framework Grade: A+\n- 14 of 14 Critical Issues Resolved\n- 10 of 14 Predictions Within 1\u03c3 | 3 Exact Matches\n- Mathematical Rigor: 9/10\n- Physics Consistency: 10/10\n- Experimental Testability: 10/10\n- Cosmology/DESI: 9/10\n\nMajor Achievements:\n1. Generation count prediction: \u03c7_eff = 144 from TCS G\u2082 construction yields exactly 3 generations\n2. Dark energy attractor: Mashiach minimum achieves exact w \u2192 -1.0 late-time limit\n3. Gauge unification: 1/\u03b1_GUT = 23.54 with ~2% precision (unprecedented for non-SUSY SO(10))\n4. Complete parameter derivation: All 58 parameters rigorously derived from geometry (100%)",
+      "content": "The framework has been examined for mathematical consistency, physics viability,\nexperimental testability, and cosmological predictions. This section summarizes the current validation status.\n\nCurrent Framework Status:\n- 10 of 14 Predictions Within 1\u03c3 | 3 Exact Matches\n- Internal consistency maintained across sectors\n- Testable predictions for near-term experiments (2027-2035)\n\nKey Results:\n1. Generation count: \u03c7_eff = 144 from TCS G\u2082 construction yields n_gen = 3\n2. Dark energy: w\u2080 = -0.8528 from effective dimension D_eff = 12.589\n3. Gauge unification: 1/\u03b1_GUT = 23.54 from G\u2082 torsion structure\n4. PMNS matrix: 0.09\u03c3 average deviation from NuFIT 5.3",
       "pages": [
         {
           "file": "https://www.metaphysic\u00e6.com/principia-metaphysica-paper.html",
@@ -1512,8 +1512,8 @@ const PM = {
     },
     "theory_analysis": {
       "title": "Critical Analysis & Validation Summary",
-      "subtitle": "v8.4 Framework - Publication Ready (A+ Grade)",
-      "content": "Comprehensive evaluation of the TCS G\u2082 manifold framework achieving A+ grade (97/100).\nAll 14 outstanding issues resolved with geometric derivations from torsion structure.\nPublication-ready status achieved with 100% parameter derivation from first principles.\n\nThe G\u2082 holonomy manifold framework demonstrates exceptional validation across multiple domains:\n- Internal consistency: All 14 major issues resolved through TCS G\u2082 torsion structure\n- Predictive power: 3 exact matches (n_gen, \u03b8\u2082\u2083, \u03b8\u2081\u2083), 7 strong agreements (<1\u03c3)\n- Falsifiability: Near-term testable predictions at HL-LHC 2027, DUNE 2027, Hyper-K 2030s\n- Geometric foundation: M_GUT = 2.12\u00d710\u00b9\u2076 GeV from torsion, w\u2080 = -0.853 from MEP\n\nFramework progression: v6.0 (B- grade, fitted parameters) \u2192 v7.0 (A- grade, geometric derivations)\n\u2192 v8.4 (A+ grade, 14/14 issues resolved). All remaining items are quantitative refinements,\nnot fundamental requirements.",
+      "subtitle": "v8.4 Framework Status",
+      "content": "Comprehensive evaluation of the TCS G\u2082 manifold framework with geometric derivations from torsion structure.\n\nThe G\u2082 holonomy manifold framework demonstrates:\n- Internal consistency: Major theoretical issues addressed through TCS G\u2082 torsion structure\n- Experimental agreement: 3 exact matches (n_gen, \u03b8\u2082\u2083, \u03b8\u2081\u2083), 7 predictions within 1\u03c3\n- Testability: Near-term predictions at HL-LHC 2027, DUNE 2027, Hyper-K 2030s\n- Geometric foundation: M_GUT = 2.12\u00d710\u00b9\u2076 GeV from torsion, w\u2080 = -0.853 from effective dimension\n\nFramework progression: v6.0 (initial formulation) \u2192 v7.0 (geometric derivations)\n\u2192 v8.4 (current version). Remaining items represent opportunities for further refinement.",
       "pages": [
         {
           "file": "https://www.metaphysic\u00e6.com/sections/theory-analysis.html",

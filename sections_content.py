@@ -721,7 +721,7 @@ Key predictions include:
 6. Gauge Unification: 1/α_GUT = 23.54 ± 0.45 at M_GUT = 2.118×10¹⁶ GeV from G₂ torsion
    structure and 3-loop RG evolution.
 
-Overall: 10/14 predictions within 1σ, 3 exact matches. Testability Grade: A+
+Overall: 10/14 predictions within 1σ, 3 exact matches
         """.strip(),
         "related_simulation": "validation",
         "values": [
@@ -864,23 +864,19 @@ Overall: 10/14 predictions within 1σ, 3 exact matches. Testability Grade: A+
         "title": "8. Resolution Status and Validation",
         "subtitle": "100% Parameter Derivation from First Principles",
         "content": """
-The framework has been rigorously examined for mathematical consistency, physics viability,
-experimental testability, and cosmological predictions. This section summarizes the validation status,
-demonstrating resolution of all 14 critical issues with 100% parameter derivation from first principles.
+The framework has been examined for mathematical consistency, physics viability,
+experimental testability, and cosmological predictions. This section summarizes the current validation status.
 
-Overall Framework Grade: A+
-- 14 of 14 Critical Issues Resolved
+Current Framework Status:
 - 10 of 14 Predictions Within 1σ | 3 Exact Matches
-- Mathematical Rigor: 9/10
-- Physics Consistency: 10/10
-- Experimental Testability: 10/10
-- Cosmology/DESI: 9/10
+- Internal consistency maintained across sectors
+- Testable predictions for near-term experiments (2027-2035)
 
-Major Achievements:
-1. Generation count prediction: χ_eff = 144 from TCS G₂ construction yields exactly 3 generations
-2. Dark energy attractor: Mashiach minimum achieves exact w → -1.0 late-time limit
-3. Gauge unification: 1/α_GUT = 23.54 with ~2% precision (unprecedented for non-SUSY SO(10))
-4. Complete parameter derivation: All 58 parameters rigorously derived from geometry (100%)
+Key Results:
+1. Generation count: χ_eff = 144 from TCS G₂ construction yields n_gen = 3
+2. Dark energy: w₀ = -0.8528 from effective dimension D_eff = 12.589
+3. Gauge unification: 1/α_GUT = 23.54 from G₂ torsion structure
+4. PMNS matrix: 0.09σ average deviation from NuFIT 5.3
         """.strip(),
         "related_simulation": None,
         "values": [
@@ -1369,28 +1365,25 @@ and 6 testable predictions, providing a comprehensive mathematical foundation fo
             }
         ],
         "title": "Critical Analysis & Validation Summary",
-        "subtitle": "v8.4 Framework - Publication Ready (A+ Grade)",
+        "subtitle": "v8.4 Framework Status",
         "content": """
-Comprehensive evaluation of the TCS G₂ manifold framework achieving A+ grade (97/100).
-All 14 outstanding issues resolved with geometric derivations from torsion structure.
-Publication-ready status achieved with 100% parameter derivation from first principles.
+Comprehensive evaluation of the TCS G₂ manifold framework with geometric derivations from torsion structure.
 
-The G₂ holonomy manifold framework demonstrates exceptional validation across multiple domains:
-- Internal consistency: All 14 major issues resolved through TCS G₂ torsion structure
-- Predictive power: 3 exact matches (n_gen, θ₂₃, θ₁₃), 7 strong agreements (<1σ)
-- Falsifiability: Near-term testable predictions at HL-LHC 2027, DUNE 2027, Hyper-K 2030s
-- Geometric foundation: M_GUT = 2.12×10¹⁶ GeV from torsion, w₀ = -0.853 from MEP
+The G₂ holonomy manifold framework demonstrates:
+- Internal consistency: Major theoretical issues addressed through TCS G₂ torsion structure
+- Experimental agreement: 3 exact matches (n_gen, θ₂₃, θ₁₃), 7 predictions within 1σ
+- Testability: Near-term predictions at HL-LHC 2027, DUNE 2027, Hyper-K 2030s
+- Geometric foundation: M_GUT = 2.12×10¹⁶ GeV from torsion, w₀ = -0.853 from effective dimension
 
-Framework progression: v6.0 (B- grade, fitted parameters) → v7.0 (A- grade, geometric derivations)
-→ v8.4 (A+ grade, 14/14 issues resolved). All remaining items are quantitative refinements,
-not fundamental requirements.
+Framework progression: v6.0 (initial formulation) → v7.0 (geometric derivations)
+→ v8.4 (current version). Remaining items represent opportunities for further refinement.
         """.strip(),
         "related_simulation": None,
         "values": [],
         "topics": [
             {
                 "id": "theory_status",
-                "title": "Theory Status Summary: v8.4 Framework (Publication Ready)",
+                "title": "Theory Status Summary: v8.4 Framework",
                 "template_type": "subsection"
             },
             {
@@ -1405,7 +1398,7 @@ not fundamental requirements.
             },
             {
                 "id": "executive_summary",
-                "title": "Executive Summary (v8.4 - Publication Ready)",
+                "title": "Executive Summary (v8.4)",
                 "template_type": "subsection"
             },
             {
