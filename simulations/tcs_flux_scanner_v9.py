@@ -1,7 +1,7 @@
 # simulations/tcs_flux_scanner_v9.py
 """
 PRINCIPIA METAPHYSICA v9.0 - Realistic TCS Flux Scanner
-Computes χ_eff from realistic G₂ flux distributions
+Computes chi_eff from realistic G_2 flux distributions
 Based on Halverson-Long-Nelson (arXiv:1810.05652) flux quantization
 """
 
@@ -24,7 +24,7 @@ def scan_realistic_flux_vacua(n_samples=10000):
 
     chi_eff = chi_raw / reduction_factor
 
-    # v9.0: We find χ_eff = 144 is natural!
+    # v9.0: We find chi_eff = 144 is natural!
     mean_chi = chi_eff.mean()
     std_chi = chi_eff.std()
     prob_144 = np.mean(np.abs(chi_eff - 144) < 10)
@@ -36,14 +36,14 @@ def scan_realistic_flux_vacua(n_samples=10000):
 
 def compute_chi_eff_from_flux(b2=4, b3=24, flux_levels=range(-5,6)):
     """
-    Scan realistic G₂ fluxes and see if χ_eff ≈ 144 is natural
+    Scan realistic G_2 fluxes and see if chi_eff ~ 144 is natural
     Based on Halverson-Long-Nelson (arXiv:1810.05652) flux quantization
     """
-    chi_raw = -300  # typical for TCS G₂
+    chi_raw = -300  # typical for TCS G_2
     chi_eff_values = []
 
     for f in flux_levels:
-        # Simplified model: flux reduces |χ| by factor ~|f|^0.7
+        # Simplified model: flux reduces |chi| by factor ~|f|^0.7
         reduction = 1 + 0.07 * abs(f)**0.7
         chi_eff = abs(chi_raw) / reduction
         if chi_eff > 100:  # plausible range

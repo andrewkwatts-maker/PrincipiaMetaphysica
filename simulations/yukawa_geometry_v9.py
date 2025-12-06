@@ -13,7 +13,7 @@ def yukawa_from_associative_cycles(seed=42):
     """
     np.random.seed(seed)
 
-    # 3 generations × 3 cycles
+    # 3 generations x 3 cycles
     intersections = np.array([
         [3, 1, 0],
         [1, 4, 2],

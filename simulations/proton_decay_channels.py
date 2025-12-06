@@ -6,29 +6,29 @@ Proton Decay Branching Ratios - Channel-Specific Predictions from Yukawa Matrix
 
 v8.2: Uses literature-based TCS cycle volumes from tcs_cycle_data module
 
-This module derives branching ratios for proton decay channels (p→e⁺π⁰, p→K⁺ν̄, etc.)
-from the fermion Yukawa matrix computed via wavefunction overlaps on G₂ associative
+This module derives branching ratios for proton decay channels (p->e^+pi^0, p->K^+nū, etc.)
+from the fermion Yukawa matrix computed via wavefunction overlaps on G_2 associative
 3-cycles. This resolves the incomplete total lifetime prediction by quantifying
 channel-specific rates for comparison with Super-K and Hyper-K experiments.
 
 Theoretical Basis:
-- Yukawa couplings: Y_αβγ = ∫ ψ_α ψ_β φ_γ dV over associative 3-cycles
-- Dimension-6 effective operators: C_i ~ Y² / M_GUT²
-- Branching ratios: BR(p→i) = |C_i|² / Σ_j |C_j|²
-- Channels: e⁺π⁰ (dominant, Super-K bound), K⁺ν̄ (GUT-favored), μ⁺π⁰, etc.
+- Yukawa couplings: Y_alphabetagamma = int ψ_alpha ψ_beta phi_gamma dV over associative 3-cycles
+- Dimension-6 effective operators: C_i ~ Y^2 / M_GUT^2
+- Branching ratios: BR(p->i) = |C_i|^2 / Sigma_j |C_j|^2
+- Channels: e^+pi^0 (dominant, Super-K bound), K^+nū (GUT-favored), mu^+pi^0, etc.
 
 Mathematical Rigor:
-- Yukawa hierarchies from exp(-Vol(Σ)) on 3-cycles (volume suppression)
-- Volumes from TCS CY₃×S¹ fibration (Corti et al., literature-based)
-- Off-diagonal elements from b₂=4 moduli deformations
-- Flux dressing enhances/suppresses channels via F ~ √(χ_eff/b₃)
-- Wilson coefficients from SO(10) → SU(3)×SU(2)×U(1) breaking
+- Yukawa hierarchies from exp(-Vol(Sigma)) on 3-cycles (volume suppression)
+- Volumes from TCS CY_3xS^1 fibration (Corti et al., literature-based)
+- Off-diagonal elements from b_2=4 moduli deformations
+- Flux dressing enhances/suppresses channels via F ~ √(chi_eff/b_3)
+- Wilson coefficients from SO(10) -> SU(3)xSU(2)xU(1) breaking
 
 References:
-- Acharya et al. (arXiv:hep-th/0109152) - Proton decay in G₂ M-theory
+- Acharya et al. (arXiv:hep-th/0109152) - Proton decay in G_2 M-theory
 - Babu-Pati-Wilczek (arXiv:hep-ph/9905477) - SO(10) decay channels
 - Witten (arXiv:hep-th/0508075) - Yukawa textures from geometry
-- Corti et al. (arXiv:1412.4123) - TCS G₂ constructions
+- Corti et al. (arXiv:1412.4123) - TCS G_2 constructions
 
 Version: 8.2 (resolves Issue 2.4 from V7_ISSUES_REPORT.md)
 """
@@ -55,8 +55,8 @@ class ProtonDecayChannelCalculator:
         self.alpha_GUT = 1 / 23.54
 
         # Experimental bounds (PDG 2024)
-        self.tau_p_SuperK_epi0 = 1.67e34  # years (p→e⁺π⁰)
-        self.tau_p_SuperK_Knu = 6.6e33  # years (p→K⁺ν̄)
+        self.tau_p_SuperK_epi0 = 1.67e34  # years (p->e^+pi^0)
+        self.tau_p_SuperK_Knu = 6.6e33  # years (p->K^+nū)
 
         # Total lifetime from hybrid RG (v7.0)
         self.tau_p_total = 3.93e34  # years
@@ -65,23 +65,23 @@ class ProtonDecayChannelCalculator:
         """
         Compute fermion Yukawa matrix from wavefunction overlaps
 
-        Y_αβγ = ∫ ψ_α(x) ψ_β(x) φ_γ(x) dV_Σ
+        Y_alphabetagamma = int ψ_alpha(x) ψ_beta(x) phi_gamma(x) dV_Sigma
 
-        For 3 generations (α,β,γ = 1,2,3):
-        - Diagonal: Hierarchical from volume factors exp(-Vol(Σ_α))
-        - Off-diagonal: Small from moduli perturbations (b₂=4)
+        For 3 generations (alpha,beta,gamma = 1,2,3):
+        - Diagonal: Hierarchical from volume factors exp(-Vol(Sigma_alpha))
+        - Off-diagonal: Small from moduli perturbations (b_2=4)
 
         Returns:
-            Y_up: Up-type quark Yukawa (3×3)
-            Y_down: Down-type quark Yukawa (3×3)
-            Y_lepton: Charged lepton Yukawa (3×3)
+            Y_up: Up-type quark Yukawa (3x3)
+            Y_down: Down-type quark Yukawa (3x3)
+            Y_lepton: Charged lepton Yukawa (3x3)
 
         v8.2 Changes:
-        - Use literature-based volumes from TCS CY₃×S¹ fibration
+        - Use literature-based volumes from TCS CY_3xS^1 fibration
         - Hierarchy ratio 1.4 gives ~4:3:1 volumes (literature-inspired)
-        - Flux normalization via F = √6 ≈ 2.45
+        - Flux normalization via F = √6 ~ 2.45
         """
-        # Literature-based volumes from CY₃×S¹ fibration (Corti et al.)
+        # Literature-based volumes from CY_3xS^1 fibration (Corti et al.)
         # Returns [largest, medium, smallest] for [Gen1, Gen2, Gen3]
         # Using ratio=1.25 to reduce hierarchy and enhance mixing for realistic BR
         volumes = get_tcs_volumes(n_gen=3, hierarchy_ratio=1.25, normalization='flux')
@@ -91,8 +91,8 @@ class ProtonDecayChannelCalculator:
         diag_down = diag_up * 0.5   # Down-type suppression from GUT
         diag_lepton = diag_up * 0.3  # Lepton suppression from GUT
 
-        # Off-diagonal perturbation from moduli (b₂=4 deformations)
-        # Very strong mixing needed to enhance K⁺ν̄ and reduce e⁺π⁰ dominance
+        # Off-diagonal perturbation from moduli (b_2=4 deformations)
+        # Very strong mixing needed to enhance K^+nū and reduce e^+pi^0 dominance
         # Increased from 3.0 to 5.0 for more realistic channel distribution
         eps = self.b2 / self.chi_eff * 5.0  # ~ 0.14 (very strong mixing)
 
@@ -113,10 +113,10 @@ class ProtonDecayChannelCalculator:
         """
         Compute Wilson coefficients for dimension-6 operators
 
-        Effective Lagrangian: ℒ_eff = Σ_i C_i O_i
-        Operators: O_i = (qqq)(ℓ) for p→e⁺π⁰, p→K⁺ν̄, etc.
+        Effective Lagrangian: L_eff = Sigma_i C_i O_i
+        Operators: O_i = (qqq)(l) for p->e^+pi^0, p->K^+nū, etc.
 
-        Coefficients: C_i ~ (Y_up Y_down Y_lepton) / M_GUT²
+        Coefficients: C_i ~ (Y_up Y_down Y_lepton) / M_GUT^2
 
         Args:
             Y_up, Y_down, Y_lepton: Yukawa matrices
@@ -124,19 +124,19 @@ class ProtonDecayChannelCalculator:
         Returns:
             C_dict: Dictionary of Wilson coefficients for each channel
         """
-        # Proton = uud, decay via d→e⁺π⁰ (u→e⁺ + d→π⁰) or d→K⁺ν̄
+        # Proton = uud, decay via d->e^+pi^0 (u->e^+ + d->pi^0) or d->K^+nū
         # Coefficient involves Yukawa products
 
-        # p → e⁺π⁰: Operator (uud)(e) → coefficient from Y_up × Y_down × Y_lepton
+        # p -> e^+pi^0: Operator (uud)(e) -> coefficient from Y_up x Y_down x Y_lepton
         C_epi0 = np.trace(Y_up @ Y_down @ Y_lepton) / self.M_GUT**2
 
-        # p → K⁺ν̄: Operator (uus)(ν) → involves strange quark (2nd gen)
+        # p -> K^+nū: Operator (uus)(nu) -> involves strange quark (2nd gen)
         # More suppressed due to CKM mixing and strange mass
         Y_down_strange = Y_down.copy()
         Y_down_strange[:, :] *= Y_down[1, 1]  # Strange quark coupling enhancement
         C_Knu = np.trace(Y_up @ Y_down_strange @ Y_lepton) / self.M_GUT**2 * 0.3  # CKM suppression
 
-        # p → μ⁺π⁰: Similar to e⁺π⁰ but with muon (2nd gen lepton)
+        # p -> mu^+pi^0: Similar to e^+pi^0 but with muon (2nd gen lepton)
         Y_lepton_muon = Y_lepton.copy()
         Y_lepton_muon[:, :] *= Y_lepton[1, 1]  # Muon coupling enhancement
         C_mupi0 = np.trace(Y_up @ Y_down @ Y_lepton_muon) / self.M_GUT**2 * 0.5
@@ -157,7 +157,7 @@ class ProtonDecayChannelCalculator:
         """
         Compute branching ratios from Wilson coefficients
 
-        BR(p→i) = |C_i|² / Σ_j |C_j|²
+        BR(p->i) = |C_i|^2 / Sigma_j |C_j|^2
 
         Args:
             C_dict: Dictionary of Wilson coefficients
@@ -177,7 +177,7 @@ class ProtonDecayChannelCalculator:
         """
         Compute channel-specific lifetimes from branching ratios
 
-        τ_p(channel) = τ_p(total) / BR(channel)
+        tau_p(channel) = tau_p(total) / BR(channel)
 
         Args:
             BR_dict: Dictionary of branching ratios
@@ -200,7 +200,7 @@ class ProtonDecayChannelCalculator:
         """
         comparison = {}
 
-        # p → e⁺π⁰ vs Super-K
+        # p -> e^+pi^0 vs Super-K
         if 'epi0' in tau_dict:
             ratio_epi0 = tau_dict['epi0'] / self.tau_p_SuperK_epi0
             status_epi0 = "CONSISTENT" if ratio_epi0 > 1.0 else "EXCLUDED"
@@ -213,7 +213,7 @@ class ProtonDecayChannelCalculator:
                 'sigma': sigma_epi0
             }
 
-        # p → K⁺ν̄ vs Super-K
+        # p -> K^+nū vs Super-K
         if 'Knu' in tau_dict:
             ratio_Knu = tau_dict['Knu'] / self.tau_p_SuperK_Knu
             status_Knu = "CONSISTENT" if ratio_Knu > 1.0 else "EXCLUDED"
@@ -233,8 +233,8 @@ class ProtonDecayChannelCalculator:
         Monte Carlo uncertainty quantification
 
         Vary geometric parameters:
-        - b₂: 4 ± 0.5 (moduli)
-        - Yukawa elements: ±10% (volume uncertainties)
+        - b_2: 4 +/- 0.5 (moduli)
+        - Yukawa elements: +/-10% (volume uncertainties)
 
         Args:
             n_samples: Number of MC samples

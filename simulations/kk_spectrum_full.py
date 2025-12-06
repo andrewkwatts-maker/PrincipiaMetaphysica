@@ -2,28 +2,28 @@
 """
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 
-KK Spectrum Full Calculation - Kaluza-Klein Tower from G₂ Compactification
+KK Spectrum Full Calculation - Kaluza-Klein Tower from G_2 Compactification
 
-This module computes the complete Kaluza-Klein mass spectrum from the 7D G₂
+This module computes the complete Kaluza-Klein mass spectrum from the 7D G_2
 manifold compactification, deriving eigenvalues of the Laplacian on the
 compact dimensions.
 
 Theoretical Basis:
-- G₂ manifold with Betti numbers b₂=4, b₃=24
-- Laplacian eigenvalues: Δφ = λφ on Ricci-flat metric
-- KK masses: m_KK,n = √λ_n × (1/R_c) where R_c is compactification radius
-- Tower structure from associative 3-cycles (24 modes) and T² degeneracy
+- G_2 manifold with Betti numbers b_2=4, b_3=24
+- Laplacian eigenvalues: Deltaphi = lambdaphi on Ricci-flat metric
+- KK masses: m_KK,n = √lambda_n x (1/R_c) where R_c is compactification radius
+- Tower structure from associative 3-cycles (24 modes) and T^2 degeneracy
 
 Mathematical Rigor:
 - Harmonic expansion on co-associative 4-cycles (Atiyah-Singer index)
-- Discrete spectrum from compact volume: λ_n ~ n²/Vol(G₂)
-- Degeneracy from shared dimensions: (n,m) pairs for T² fiber
+- Discrete spectrum from compact volume: lambda_n ~ n^2/Vol(G_2)
+- Degeneracy from shared dimensions: (n,m) pairs for T^2 fiber
 - Production cross-sections for HL-LHC validation
 
 References:
-- Acharya et al. (arXiv:hep-th/0505083) - G₂ spectra in M-theory
-- Conlon-Quevedo - Discrete KK towers from compact CY3×S¹
-- Joyce (2003) - Ricci-flat metrics on G₂ via Kovalev twist
+- Acharya et al. (arXiv:hep-th/0505083) - G_2 spectra in M-theory
+- Conlon-Quevedo - Discrete KK towers from compact CY3xS^1
+- Joyce (2003) - Ricci-flat metrics on G_2 via Kovalev twist
 
 Version: 8.2 (resolves Issue 2.1 from V7_ISSUES_REPORT.md)
 """
@@ -36,7 +36,7 @@ sys.path.append('..')
 import config
 
 class KKSpectrumCalculator:
-    """Calculate full KK tower from G₂ compactification"""
+    """Calculate full KK tower from G_2 compactification"""
 
     def __init__(self):
         """Initialize with geometric parameters from config"""
@@ -51,33 +51,33 @@ class KKSpectrumCalculator:
         self.R_c_inv = 5.0e3  # GeV (5 TeV)
         self.M_string = 1e16  # GUT scale (GeV)
 
-        # Volume of G₂ manifold (dimensionless, normalized)
-        self.Vol_G2 = np.sqrt(self.chi_eff / self.b3)  # ~ √6 ≈ 2.45
+        # Volume of G_2 manifold (dimensionless, normalized)
+        self.Vol_G2 = np.sqrt(self.chi_eff / self.b3)  # ~ √6 ~ 2.45
 
     def compute_laplacian_eigenvalues(self, n_modes=24):
         """
-        Compute Laplacian eigenvalues on G₂ manifold
+        Compute Laplacian eigenvalues on G_2 manifold
 
-        For KK theory: m²_n = λ_n / R² where λ_n ~ O(1) for first mode
-        To get m₁ ~ 5 TeV, we need λ₁ ~ 1
+        For KK theory: m^2_n = lambda_n / R^2 where lambda_n ~ O(1) for first mode
+        To get m_1 ~ 5 TeV, we need lambda_1 ~ 1
 
-        The eigenvalues scale as λ_n ~ n² for a compact space
-        For the G₂ manifold with 24 associative cycles, we expect
-        a spectrum starting at λ₁ ~ 1 and going as λ_n ~ n²
+        The eigenvalues scale as lambda_n ~ n^2 for a compact space
+        For the G_2 manifold with 24 associative cycles, we expect
+        a spectrum starting at lambda_1 ~ 1 and going as lambda_n ~ n^2
 
         Args:
-            n_modes: Number of KK modes to compute (default 24 from b₃)
+            n_modes: Number of KK modes to compute (default 24 from b_3)
 
         Returns:
-            eigenvalues: Array of λ_n (dimensionless, O(1) normalization)
+            eigenvalues: Array of lambda_n (dimensionless, O(1) normalization)
         """
         # For a 7D compact manifold, Laplacian eigenvalues scale as
-        # λ_n ~ (n/R_typical)² where R_typical is the geometric size
-        # We want the first mode at m₁ = √λ₁ / R_c ≈ 5 TeV
-        # This requires λ₁ ~ 1 (canonical normalization)
+        # lambda_n ~ (n/R_typical)^2 where R_typical is the geometric size
+        # We want the first mode at m_1 = √lambda_1 / R_c ~ 5 TeV
+        # This requires lambda_1 ~ 1 (canonical normalization)
 
-        # Simple harmonic spectrum: λ_n = n²
-        # This gives m_n = n × m_1 (equally spaced in mass)
+        # Simple harmonic spectrum: lambda_n = n^2
+        # This gives m_n = n x m_1 (equally spaced in mass)
         eigenvalues = np.arange(1, n_modes + 1)**2
 
         # Return as numpy array for compatibility
@@ -87,7 +87,7 @@ class KKSpectrumCalculator:
         """
         Convert Laplacian eigenvalues to KK masses
 
-        Formula: m_KK,n = √λ_n × (1/R_c)
+        Formula: m_KK,n = √lambda_n x (1/R_c)
 
         Args:
             eigenvalues: Laplacian eigenvalues (dimensionless)
@@ -100,10 +100,10 @@ class KKSpectrumCalculator:
 
     def compute_t2_degeneracy(self, n_max=5):
         """
-        Compute T² degeneracy from shared extra dimensions
+        Compute T^2 degeneracy from shared extra dimensions
 
-        For each base mode n, T² fiber gives (n,m) pairs:
-        m_KK(n,m) = √(n² + m²) × m_KK,1
+        For each base mode n, T^2 fiber gives (n,m) pairs:
+        m_KK(n,m) = √(n^2 + m^2) x m_KK,1
 
         Args:
             n_max: Maximum mode number to compute
@@ -127,7 +127,7 @@ class KKSpectrumCalculator:
         """
         Estimate production cross-section for HL-LHC
 
-        σ(pp → KK + X) ~ α_s² / m_KK² × PDF factors
+        sigma(pp -> KK + X) ~ alpha_s^2 / m_KK^2 x PDF factors
 
         Args:
             mass_GeV: KK particle mass (GeV)
@@ -143,7 +143,7 @@ class KKSpectrumCalculator:
         # Strong coupling at scale m_KK
         alpha_s = 0.118 / (1 + 0.118 * np.log(mass_GeV / 91.2))
 
-        # Cross-section (approximate, scaled to match m₁=5 TeV → 0.10 fb)
+        # Cross-section (approximate, scaled to match m_1=5 TeV -> 0.10 fb)
         sigma_fb = 100 * (alpha_s / 0.1)**2 * (5e3 / mass_GeV)**2 * pdf_factor
 
         return sigma_fb
@@ -152,16 +152,16 @@ class KKSpectrumCalculator:
         """
         Compute KK decay branching ratios
 
-        KK → SM + SM via gauge couplings
-        Dominant: KK → gg (gluons), qq̄ (quarks), ℓℓ (leptons)
+        KK -> SM + SM via gauge couplings
+        Dominant: KK -> gg (gluons), qq̄ (quarks), ll (leptons)
 
         Returns:
             br_dict: Dictionary of branching ratios
         """
         # Approximate from phase space and couplings
         br_dict = {
-            'gg': 0.65,      # Gluons (strong coupling × color factor)
-            'qq': 0.25,      # Quarks (6 flavors × 3 colors)
+            'gg': 0.65,      # Gluons (strong coupling x color factor)
+            'qq': 0.25,      # Quarks (6 flavors x 3 colors)
             'll': 0.08,      # Leptons (3 flavors)
             'gamma_gamma': 0.02  # Diphoton (loop-induced, HL-LHC discovery)
         }
@@ -172,13 +172,13 @@ class KKSpectrumCalculator:
         Monte Carlo uncertainty quantification
 
         Vary geometric parameters within uncertainties:
-        - R_c: (1/5 TeV) ± 30% (TCS constraint uncertainty)
+        - R_c: (1/5 TeV) +/- 30% (TCS constraint uncertainty)
 
         Args:
             n_samples: Number of MC samples
 
         Returns:
-            results: Dictionary with mean/std for m₁, m₂, etc.
+            results: Dictionary with mean/std for m_1, m_2, etc.
         """
         results = {
             'm1': [],
@@ -191,8 +191,8 @@ class KKSpectrumCalculator:
             # Vary compactification scale within 30% uncertainty
             R_c_inv_varied = np.random.normal(self.R_c_inv, 0.3 * self.R_c_inv)
 
-            # Eigenvalues are λ_n = n² (geometry-fixed)
-            # m_n = √λ_n × R_c_inv = n × R_c_inv
+            # Eigenvalues are lambda_n = n^2 (geometry-fixed)
+            # m_n = √lambda_n x R_c_inv = n x R_c_inv
             masses_varied = np.array([1, 2, 3]) * R_c_inv_varied
 
             results['m1'].append(masses_varied[0])
@@ -235,7 +235,7 @@ class KKSpectrumCalculator:
         # 2. Convert to KK masses
         masses = self.compute_kk_masses(eigenvalues)
 
-        # 3. T² degeneracy tower
+        # 3. T^2 degeneracy tower
         tower = self.compute_t2_degeneracy(n_max=5)
 
         # 4. Production cross-sections
@@ -253,7 +253,7 @@ class KKSpectrumCalculator:
                 print(f"  m_KK,{i+1} = {masses[i]/1e3:.2f} TeV")
             print()
 
-            print("T² TOWER STRUCTURE (first 10 states):")
+            print("T^2 TOWER STRUCTURE (first 10 states):")
             sorted_tower = sorted(tower.items(), key=lambda x: x[1])
             for (n, m), mass in sorted_tower[:10]:
                 print(f"  m_KK({n},{m}) = {mass/1e3:.2f} TeV")
@@ -298,7 +298,7 @@ class KKSpectrumCalculator:
             'sigma_m1_fb': sigma_m1,
             'sigma_m1_std': mc_results['sigma_m1_std'],
             'branching_ratios': br,
-            'discovery_significance_sigma': sigma_m1 / 0.016  # 100 fb⁻¹ @ HL-LHC
+            'discovery_significance_sigma': sigma_m1 / 0.016  # 100 fb^-^1 @ HL-LHC
         }
 
         return results

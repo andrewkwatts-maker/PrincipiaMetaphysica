@@ -60,7 +60,7 @@ def derive_mgut_from_geometry():
     M_GUT_geom = M_GUT_base * (1 + warp_coeff * s)
     # = 1.8e16 * (1 + 0.15 * 1.178) = 2.118e16 GeV
 
-    # Uncertainty from b3 flux variations (±2)
+    # Uncertainty from b3 flux variations (+/-2)
     db3 = 2.0
     ds = (log_scale_ratio - T_omega) / ((2 * np.pi) / ((nu + db3) / (b3 + db3)))
     M_GUT_upper = M_GUT_base * (1 + warp_coeff * ds)
@@ -135,9 +135,9 @@ def monte_carlo_uncertainty(n_samples=1000, verbose=False):
     Propagate geometric uncertainties through to proton lifetime
 
     Sources of uncertainty:
-    - b3 flux variations: ±2
-    - Yukawa matrix elements: ±20%
-    - Strong coupling alpha_s(M_Z): ±0.001
+    - b3 flux variations: +/-2
+    - Yukawa matrix elements: +/-20%
+    - Strong coupling alpha_s(M_Z): +/-0.001
 
     Args:
         n_samples: number of MC samples
@@ -162,7 +162,7 @@ def monte_carlo_uncertainty(n_samples=1000, verbose=False):
 
         M_GUT_sample = M_GUT_base * (1 + warp_coeff * s_sample)
 
-        # Sample Yukawa uncertainty (±20%)
+        # Sample Yukawa uncertainty (+/-20%)
         yukawa_factor = np.random.normal(1.0, 0.2)
         yukawa_factor = max(0.6, min(1.4, yukawa_factor))
 
@@ -237,8 +237,8 @@ def run_proton_decay_calculation(verbose=True, mc_samples=1000):
         print(f"   T_omega (torsion log): {geom_result['T_omega']:.4f}")
         print(f"   s parameter: {geom_result['s_parameter']:.4f}")
         print(f"   Warp coefficient: {geom_result['warp_coefficient']:.4f}")
-        print(f"   M_GUT: {geom_result['M_GUT']:.3e} ± {geom_result['M_GUT_error']:.2e} GeV")
-        print(f"   Uncertainty: ±{geom_result['percent_error']:.1f}%")
+        print(f"   M_GUT: {geom_result['M_GUT']:.3e} +/- {geom_result['M_GUT_error']:.2e} GeV")
+        print(f"   Uncertainty: +/-{geom_result['percent_error']:.1f}%")
 
     # Step 2: Alpha_GUT with 3-loop
     alpha_inv = alpha_gut_3loop(geom_result['M_GUT'], geom_result['s_parameter'])

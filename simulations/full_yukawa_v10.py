@@ -2,16 +2,16 @@
 """
 PRINCIPIA METAPHYSICA v10.0 - Full Geometric Yukawa Matrix
 Up-type quarks from associative cycle intersections
-No random noise - pure TCS G₂ geometry
+No random noise - pure TCS G_2 geometry
 """
 
 import numpy as np
 
 def yukawa_from_associative_cycles():
     """
-    Intersection numbers from known TCS G₂ (example from Braun-Del Zotto)
+    Intersection numbers from known TCS G_2 (example from Braun-Del Zotto)
     """
-    # Intersection numbers from known TCS G₂ (example from Braun-Del Zotto)
+    # Intersection numbers from known TCS G_2 (example from Braun-Del Zotto)
     intersections = np.array([
         [12,  3,  0],
         [ 3, 15,  5],
@@ -30,7 +30,7 @@ def yukawa_from_associative_cycles():
 
     Y_u = np.diag(masses) @ yukawa @ np.diag(masses)
 
-    print("Full up-type Yukawa matrix from G₂ cycles:")
+    print("Full up-type Yukawa matrix from G_2 cycles:")
     print("Intersection topology:")
     print(intersections)
     print("\nPhases from Wilson lines (radians):")
@@ -44,9 +44,9 @@ def yukawa_from_associative_cycles():
     quark_masses = np.sqrt(np.abs(eigenvalues))
 
     print("\nUp-type quark masses:")
-    print(f"  m_u ≈ {quark_masses[0]:.2e}")
-    print(f"  m_c ≈ {quark_masses[1]:.2e}")
-    print(f"  m_t ≈ {quark_masses[2]:.2e}")
+    print(f"  m_u ~ {quark_masses[0]:.2e}")
+    print(f"  m_c ~ {quark_masses[1]:.2e}")
+    print(f"  m_t ~ {quark_masses[2]:.2e}")
 
     return Y_u
 
@@ -59,7 +59,7 @@ if __name__ == "__main__":
     Y_u = yukawa_from_associative_cycles()
 
     print("\n" + "="*70)
-    print("→ No random Gaussian noise")
-    print("→ All phases from Wilson line geometry")
-    print("→ Intersection numbers from explicit TCS construction")
+    print("-> No random Gaussian noise")
+    print("-> All phases from Wilson line geometry")
+    print("-> Intersection numbers from explicit TCS construction")
     print("="*70)
