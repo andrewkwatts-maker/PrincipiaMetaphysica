@@ -55,16 +55,16 @@
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.8334572614643863e+34,
-    "tau_p_mean": 3.9799863200180533e+34,
-    "tau_p_std": 1.528501167607228e+34,
-    "tau_p_lower_68": 2.4293674127608765e+34,
-    "tau_p_upper_68": 5.57020240002751e+34,
-    "tau_p_lower_95": 1.4443322458575895e+34,
-    "tau_p_upper_95": 7.535725809316723e+34,
-    "tau_p_uncertainty_oom": 0.17796437418804367,
+    "tau_p_median": 3.7703471267399433e+34,
+    "tau_p_mean": 3.9699087783463163e+34,
+    "tau_p_std": 1.5046641050607759e+34,
+    "tau_p_lower_68": 2.4053411832578105e+34,
+    "tau_p_upper_68": 5.556410259518669e+34,
+    "tau_p_lower_95": 1.4764914442781983e+34,
+    "tau_p_upper_95": 7.241306315624493e+34,
+    "tau_p_uncertainty_oom": 0.17495038301621887,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.295483390098435
+    "ratio_to_bound": 2.257692890263439
   },
   "pmns_matrix": {
     "theta_23": 47.199999,
@@ -76,10 +76,10 @@
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822289099971989,
-    "theta_23_error": 0.7837433914152551,
-    "theta_12_error": 1.2211870824974007,
-    "theta_13_error": 0.3452250728298993,
-    "delta_cp_error": 28.514704325906983
+    "theta_23_error": 0.7956248025874844,
+    "theta_12_error": 1.177612016002708,
+    "theta_13_error": 0.351771845359818,
+    "delta_cp_error": 28.327003802387786
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -100,11 +100,11 @@
     "wa_deviation_sigma": 0.6586005020400484,
     "w_CMB_frozen": -1.0,
     "w_CPL_at_CMB": -1.5793188010899182,
-    "w_DESI_average": -1.1219603347616396,
-    "functional_test_chi2_log": 3.1146102701810334,
-    "functional_test_chi2_CPL": 41.95447729724108,
-    "functional_test_delta_chi2": 38.839867027060045,
-    "functional_test_sigma_preference": 6.2321639120822265
+    "w_DESI_average": -0.8531546496527302,
+    "functional_test_chi2_log": 3.1146102701810325,
+    "functional_test_chi2_CPL": 300.83065890766557,
+    "functional_test_delta_chi2": 297.7160486374845,
+    "functional_test_sigma_preference": 17.254450111130303
   },
   "desi_dr2_data": {
     "w0": -0.83,

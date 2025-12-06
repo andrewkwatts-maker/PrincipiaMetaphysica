@@ -27,17 +27,17 @@ w0_PM = -(D_eff - 1) / (D_eff + 1)  # = -0.8528
 # Thermal time parameter
 alpha_T = 2.7  # From config.ThermalTimeParameters
 
-# Activation redshift
-z_activate = 3.0  # Field becomes active at z < 3
+# Activation redshift (CMB freeze-out)
+z_activate = 3000  # Field freezes at z > 3000 (CMB recombination, z≈1100)
 
-def w_logarithmic(z, w0, alpha_T, z_act=3.0):
+def w_logarithmic(z, w0, alpha_T, z_act=3000):
     """
     Logarithmic w(z) evolution (PM prediction)
 
     Formula:
         w(z) = w0 * [1 + (alpha_T/3) * ln(1 + z/z_act)]
 
-    At high z (z >> z_act): w -> w0 * [1 + (alpha_T/3) * ln(z)]
+    At high z (z >> z_act): w -> -1.0 (frozen at CMB)
     At low z (z << z_act): w -> w0
 
     Args:
