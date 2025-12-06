@@ -58,16 +58,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.833555287265832e+34,
-    "tau_p_mean": 3.98366632505195e+34,
-    "tau_p_std": 1.5428424724304787e+34,
-    "tau_p_lower_68": 2.3719843587225082e+34,
-    "tau_p_upper_68": 5.563235388972353e+34,
-    "tau_p_lower_95": 1.4113947667535696e+34,
-    "tau_p_upper_95": 7.384125644898091e+34,
-    "tau_p_uncertainty_oom": 0.18083591901943244,
+    "tau_p_median": 3.784524185725544e+34,
+    "tau_p_mean": 3.9795448873844903e+34,
+    "tau_p_std": 1.4722578652347706e+34,
+    "tau_p_lower_68": 2.47194764482919e+34,
+    "tau_p_upper_68": 5.546980403503642e+34,
+    "tau_p_lower_95": 1.5410885461129165e+34,
+    "tau_p_upper_95": 7.207852991585655e+34,
+    "tau_p_uncertainty_oom": 0.17024950224328292,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.2955420881831325
+    "ratio_to_bound": 2.2661821471410444
   },
   "pmns_matrix": {
     "theta_23": 47.199999,
@@ -79,10 +79,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822289099971989,
-    "theta_23_error": 0.7712971502655913,
-    "theta_12_error": 1.196648003771738,
-    "theta_13_error": 0.34713196309383165,
-    "delta_cp_error": 28.055592153410434
+    "theta_23_error": 0.7975430619199849,
+    "theta_12_error": 1.21420342133699,
+    "theta_13_error": 0.3392039211365724,
+    "delta_cp_error": 28.146507580813157
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -159,6 +159,16 @@ const PM = {
     "tau_p_Knu": 1.1698667492639492e+35,
     "tau_p_mupi0": 7.97037470714477e+38,
     "all_consistent": true
+  },
+  "xy_bosons": {
+    "M_X": 2.118e+16,
+    "M_Y": 2.118e+16,
+    "tau_estimate": 3.107705179182751e-41,
+    "charge_X": 1.3333333333333333,
+    "charge_Y": 0.3333333333333333,
+    "N_total_bosons": 45,
+    "N_X_bosons": 12,
+    "N_Y_bosons": 12
   },
   "validation": {
     "proton_decay_status": "CONSISTENT",
