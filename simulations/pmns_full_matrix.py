@@ -51,14 +51,14 @@ def theta_12_from_tri_bimaximal():
     theta_12 from perturbed tri-bimaximal mixing
 
     Formula:
-        theta_12 = arcsin(1/√3 · |1 - b₃/(√(χ_eff · n_gen))|)
+        theta_12 = arcsin(1/√3 · |1 - b_3/(√(chi_eff · n_gen))|)
 
     Corrected to ensure positive argument and physically reasonable values.
 
     Returns:
         theta_12 in degrees
     """
-    # Tri-bimaximal base: sin(theta_12) = 1/√3 → theta_12 = 35.26 deg
+    # Tri-bimaximal base: sin(theta_12) = 1/√3 -> theta_12 = 35.26 deg
     base_sin = 1.0 / np.sqrt(3)
 
     # Perturbation from b3 structure
@@ -70,7 +70,7 @@ def theta_12_from_tri_bimaximal():
     # = 0.577 * abs(1 - 1.155) = 0.577 * 0.155 = 0.0895
 
     # This gives too small an angle; need different perturbation sign
-    # Try: sin(theta_12) = 1/√3 · (1 + ε) where ε = (b₃ - √(χ_eff·n_gen))/χ_eff
+    # Try: sin(theta_12) = 1/√3 · (1 + ε) where ε = (b_3 - √(chi_eff·n_gen))/chi_eff
     epsilon = (b3 - np.sqrt(chi_eff * n_gen)) / chi_eff
     # = (24 - 20.78) / 144 = 0.0224
 
@@ -84,7 +84,7 @@ def theta_12_from_tri_bimaximal():
     # = 36.2 deg
 
     # Adjust to match NuFIT 33.41 deg by refining epsilon formula
-    # Better: sin(theta_12) = 1/√3 · (1 - (b₃ - b₂·n_gen)/(2·χ_eff))
+    # Better: sin(theta_12) = 1/√3 · (1 - (b_3 - b_2·n_gen)/(2·chi_eff))
     epsilon_refined = (b3 - b2 * n_gen) / (2 * chi_eff)
     # = (24 - 4*3) / (2*144) = (24 - 12) / 288 = 0.0417
 
@@ -101,7 +101,7 @@ def theta_13_from_cycle_asymmetry():
     theta_13 from cycle intersection asymmetry
 
     Formula:
-        theta_13 = arcsin(b₂/b₃ · exp(-ν/(2·n_gen)))
+        theta_13 = arcsin(b_2/b_3 · exp(-nu/(2·n_gen)))
 
     Incorporates suppression from geometric hierarchy.
 
@@ -111,7 +111,7 @@ def theta_13_from_cycle_asymmetry():
     # Base ratio
     base_ratio = b2 / b3  # = 4/24 = 1/6
 
-    # Exponential suppression from ν
+    # Exponential suppression from nu
     suppression = float(N(exp(-nu / (2 * n_gen))))
     # = exp(-24/6) = exp(-4) = 0.0183
 
@@ -147,35 +147,35 @@ def delta_cp_from_phases():
     delta_CP from CP-violating phase of cycle overlaps
 
     Formula:
-        delta_CP = arctan(Im(I_{alphaβγ})/Re(I_{alphaβγ})) · (180 deg/ν)
+        delta_CP = arctan(Im(I_{alphabetagamma})/Re(I_{alphabetagamma})) · (180 deg/nu)
 
-    where I_{alphaβγ} are triple intersection numbers on G2.
+    where I_{alphabetagamma} are triple intersection numbers on G2.
 
     Returns:
         delta_CP in degrees
     """
     # Triple intersection numbers (schematic from TCS construction)
-    # For extra-twisted TCS with b₂=4, b₃=24
-    # I₁_23 ~ ν·exp(iφ) where φ ~ π·(b₃/χ_eff)
+    # For extra-twisted TCS with b_2=4, b_3=24
+    # I_1_23 ~ nu·exp(iphi) where phi ~ pi·(b_3/chi_eff)
 
     phase_angle = np.pi * (b3 / chi_eff)
-    # = π * (24/144) = π/6
+    # = pi * (24/144) = pi/6
 
     # CP phase from geometric phase
-    delta_cp_rad = phase_angle * (180 / nu)  # Convert using ν normalization
-    # = (π/6) * (180/24) = (π/6) * 7.5
+    delta_cp_rad = phase_angle * (180 / nu)  # Convert using nu normalization
+    # = (pi/6) * (180/24) = (pi/6) * 7.5
 
     delta_cp = float(N(delta_cp_rad * 180 / pi))
-    # = 7.5 * 180/π * 180/π... incorrect units
+    # = 7.5 * 180/pi * 180/pi... incorrect units
 
-    # Better: delta_CP = φ · (χ_eff/ν) in radians, then to degrees
+    # Better: delta_CP = phi · (chi_eff/nu) in radians, then to degrees
     delta_cp_rad_corrected = phase_angle * (chi_eff / nu)
-    # = (π/6) * (144/24) = (π/6) * 6 = π
+    # = (pi/6) * (144/24) = (pi/6) * 6 = pi
 
     delta_cp_corrected = float(delta_cp_rad_corrected * 180 / pi)
     # = 180 deg
 
-    # Refined using b₂ asymmetry: delta_CP = φ · (χ_eff/ν) + π/b₂
+    # Refined using b_2 asymmetry: delta_CP = phi · (chi_eff/nu) + pi/b_2
     delta_cp_final = delta_cp_corrected + 180 / b2
     # = 180 + 45 = 225 deg
 
@@ -241,7 +241,7 @@ def construct_pmns_matrix():
 
 def monte_carlo_pmns_uncertainty(n_samples=1000, verbose=False):
     """
-    Propagate b₃ flux uncertainties to PMNS parameters
+    Propagate b_3 flux uncertainties to PMNS parameters
 
     Args:
         n_samples: number of MC samples
@@ -263,16 +263,16 @@ def monte_carlo_pmns_uncertainty(n_samples=1000, verbose=False):
         # Recalculate angles with perturbed b3
         # (This is a simplified propagation; full version would recompute formulas)
 
-        # theta_23 weakly depends on b₃ through alpha parameters
+        # theta_23 weakly depends on b_3 through alpha parameters
         theta_23_nominal = theta_23_from_asymmetric_coupling()
         theta_23_sample = theta_23_nominal + np.random.normal(0, 0.8)  # +/-0.8 deg uncertainty
 
-        # theta_12 depends on b₃ perturbation
+        # theta_12 depends on b_3 perturbation
         theta_12_nominal = theta_12_from_tri_bimaximal()
         b3_shift = (b3_sample - 24) / 24
         theta_12_sample = theta_12_nominal * (1 + 0.02 * b3_shift) + np.random.normal(0, 1.2)
 
-        # theta_13 depends on b₃ exponentially
+        # theta_13 depends on b_3 exponentially
         theta_13_nominal = theta_13_from_cycle_asymmetry()
         theta_13_sample = theta_13_nominal + np.random.normal(0, 0.35)
 

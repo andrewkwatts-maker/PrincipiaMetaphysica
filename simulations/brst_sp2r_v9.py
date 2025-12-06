@@ -14,10 +14,10 @@ def brst_nilpotency_check():
     BRST charge for Sp(2,R) ghosts in 26D bosonic string
     """
     print("BRST Nilpotency Check:")
-    print("  Q = ∮ dz/2πi [c(T_m + T_gh + T_Sp(2,R))]")
+    print("  Q = ∮ dz/2pii [c(T_m + T_gh + T_Sp(2,R))]")
     print("  Computing Q^2...")
-    print("  Q^2 = 0 (on-shell) ✓")
-    print("  → Nilpotency confirmed from Jacobi identity")
+    print("  Q^2 = 0 (on-shell) [OK]")
+    print("  -> Nilpotency confirmed from Jacobi identity")
     return True
 
 def quartet_norms(ghost_norm=-1, anti_norm=-1):
@@ -32,7 +32,7 @@ def quartet_norms(ghost_norm=-1, anti_norm=-1):
 
 def spinor_reduction():
     """
-    Dimensional Reduction: Spinor dim 2^{13}=8192 → 64 via Sp(2,R) projection
+    Dimensional Reduction: Spinor dim 2^{13}=8192 -> 64 via Sp(2,R) projection
     """
     dim_26d = 2**(26/2)  # 8192
     dim_reduced = dim_26d / (2**(3) * 2**(12/2))  # Sp(2,R) (dim=3) + ghosts/2
@@ -74,18 +74,18 @@ if __name__ == "__main__":
     # 2. Ghost quartets
     total = quartet_norms()
     print(f"Ghost Quartet Total Norm: {total}")
-    print("  → Positive norm = unitary subspace ✓")
+    print("  -> Positive norm = unitary subspace [OK]")
     print()
 
     # 3. Dimensional reduction
     dim_full, dim_phys = spinor_reduction()
-    print(f"Spinor Reduction: 26D = {dim_full} → 13D shadow = {dim_phys} (physical)")
+    print(f"Spinor Reduction: 26D = {dim_full} -> 13D shadow = {dim_phys} (physical)")
     print()
 
     # 4. Cohomology
     coh = brst_cohomology()
     print(f"BRST Cohomology dim H^1 (physical states): {coh}")
-    print("  → 24 transverse modes (D=26-2 times) ✓")
+    print("  -> 24 transverse modes (D=26-2 times) [OK]")
     print()
 
     print("="*80)
@@ -96,5 +96,5 @@ if __name__ == "__main__":
     print("  • Reduction is exact and ghost-free in physical subspace")
     print("  • UNITARITY PRESERVED!")
     print("="*80)
-    print("\n→ Sp(2,R) 26D→13D reduction now BRST-proven")
-    print("→ Foundational gap CLOSED")
+    print("\n-> Sp(2,R) 26D->13D reduction now BRST-proven")
+    print("-> Foundational gap CLOSED")

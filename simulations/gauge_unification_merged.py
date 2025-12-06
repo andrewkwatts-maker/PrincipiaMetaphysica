@@ -31,7 +31,7 @@ without SUSY, combining three complementary mechanisms:
    - SO(10) gauge bosons in bulk
    - Power-law running modification
 
-TARGET: alpha_1^-1 = alpha_2^-1 = alpha_3^-1 = 24.3 ± 0.5 at M_GUT (2% precision)
+TARGET: alpha_1^-1 = alpha_2^-1 = alpha_3^-1 = 24.3 +/- 0.5 at M_GUT (2% precision)
 
 References:
 - ISSUE2_SYNTHESIS_FINAL.md: Complete analysis of all 5 approaches
@@ -192,7 +192,7 @@ class MergedGaugeUnification:
 
         Args:
             M_star: KK scale (GeV), default: 5 TeV
-            M_GUT: GUT scale (GeV), default: 2×10^16 GeV
+            M_GUT: GUT scale (GeV), default: 2x10^16 GeV
             h_11: CY4 Kahler moduli count (default: 24)
             verbose: Print setup info
         """

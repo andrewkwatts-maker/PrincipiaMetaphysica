@@ -1,20 +1,20 @@
 # simulations/neutrino_mass_matrix_final_v12.py
 """
 PRINCIPIA METAPHYSICA v12.0 - Final Neutrino Mass Matrix
-Complete derivation using actual TCS G₂ intersection topology
-Manifold: CHNP #187 (b₃=24, χ_eff=144)
+Complete derivation using actual TCS G_2 intersection topology
+Manifold: CHNP #187 (b_3=24, chi_eff=144)
 """
 
 import numpy as np
 
 def derive_neutrino_mass_matrix_from_g2():
     """
-    v12.0 - Final derivation using actual TCS G₂ intersection topology
-    Manifold: CHNP #187 (b₃=24, χ_eff=144)
-    3 associative 3-cycles Σ₁, Σ₂, Σ₃ with known triple intersections
+    v12.0 - Final derivation using actual TCS G_2 intersection topology
+    Manifold: CHNP #187 (b_3=24, chi_eff=144)
+    3 associative 3-cycles Sigma_1, Sigma_2, Sigma_3 with known triple intersections
     """
 
-    # Triple intersection numbers Ω(Σ_i ∩ Σ_j ∩ Σ_k) from explicit metric (Braun et al. 2022)
+    # Triple intersection numbers Omega(Sigma_i ^ Sigma_j ^ Sigma_k) from explicit metric (Braun et al. 2022)
     Omega = np.array([
         [  0,  11,   4],
         [ 11,   0,  16],
@@ -28,8 +28,8 @@ def derive_neutrino_mass_matrix_from_g2():
         [1.109, 0.903, 0.000]
     ])
 
-    # Right-handed neutrino masses from G₃ flux quanta on dual 4-cycles
-    # N₁ = 3 quanta → M₁ ∝ 3², N₂ = 2 quanta → M₂ ∝ 2², N₃ = 1 quantum → M₃ ∝ 1²
+    # Right-handed neutrino masses from G_3 flux quanta on dual 4-cycles
+    # N_1 = 3 quanta -> M_1 ∝ 3^2, N_2 = 2 quanta -> M_2 ∝ 2^2, N_3 = 1 quantum -> M_3 ∝ 1^2
     M_R = np.diag([9, 4, 1]) * 2.1e14  # GeV
 
     # Dirac Yukawa from geometry
@@ -47,21 +47,21 @@ def derive_neutrino_mass_matrix_from_g2():
     delta_m21_2 = masses[1]**2 - masses[0]**2
     delta_m31_2 = masses[2]**2 - masses[0]**2
 
-    print("=== NEUTRINO MASS MATRIX - DERIVED FROM G₂ 3-CYCLES ===")
+    print("=== NEUTRINO MASS MATRIX - DERIVED FROM G_2 3-CYCLES ===")
     print("TCS Manifold #187 - Triple intersections + flux")
     print()
     print("Light neutrino masses (eV):")
-    print(f"  m₁ = {masses[0]*1e9:.5f}")
-    print(f"  m₂ = {masses[1]*1e9:.5f}")
-    print(f"  m₃ = {masses[2]*1e9:.5f}")
-    print(f"  Σm_ν = {np.sum(masses)*1e9:.4f} eV")
+    print(f"  m_1 = {masses[0]*1e9:.5f}")
+    print(f"  m_2 = {masses[1]*1e9:.5f}")
+    print(f"  m_3 = {masses[2]*1e9:.5f}")
+    print(f"  Sigmam_nu = {np.sum(masses)*1e9:.4f} eV")
     print()
     print("Mass squared differences:")
-    print(f"  Δm²_21 = {delta_m21_2*1e5:.4f} × 10⁻⁵ eV² (exp: 7.42)")
-    print(f"  Δm²_31 = {delta_m31_2*1e3:.4f} × 10⁻³ eV² (exp: 2.515)")
+    print(f"  Deltam^2_21 = {delta_m21_2*1e5:.4f} x 10^-^5 eV^2 (exp: 7.42)")
+    print(f"  Deltam^2_31 = {delta_m31_2*1e3:.4f} x 10^-^3 eV^2 (exp: 2.515)")
     print()
-    print("→ 0.12σ agreement with NuFIT 5.3 (2025)")
-    print("→ NO FITTING. PURE G₂ GEOMETRY.")
+    print("-> 0.12sigma agreement with NuFIT 5.3 (2025)")
+    print("-> NO FITTING. PURE G_2 GEOMETRY.")
 
     return m_nu, masses
 
@@ -74,8 +74,8 @@ if __name__ == "__main__":
     m_nu, m_light = derive_neutrino_mass_matrix_from_g2()
 
     print("\n" + "="*70)
-    print("→ Triple intersection topology")
-    print("→ Wilson line phases from flux")
-    print("→ Right-handed masses from flux quanta")
-    print("→ Type-I seesaw mechanism")
+    print("-> Triple intersection topology")
+    print("-> Wilson line phases from flux")
+    print("-> Right-handed masses from flux quanta")
+    print("-> Type-I seesaw mechanism")
     print("="*70)

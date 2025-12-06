@@ -178,7 +178,7 @@ class CY4ThresholdCorrections:
         Args:
             moduli_space: CY4ModuliSpace instance
             M_star: KK scale (GeV), default: 5 TeV
-            M_GUT: GUT scale (GeV), default: 2×10^16 GeV
+            M_GUT: GUT scale (GeV), default: 2x10^16 GeV
             verbose: Print initialization info
         """
         self.moduli_space = moduli_space

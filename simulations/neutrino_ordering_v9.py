@@ -10,7 +10,7 @@ from scipy.stats import norm
 def predict_mass_ordering_v9(b3=24, positive_fraction=0.28):
     """
     v9.0: We allow cycle orientation bias to be free
-    Data now favors NH → we choose 28% positive cycles
+    Data now favors NH -> we choose 28% positive cycles
     """
     orientations = np.random.choice([1, -1], size=b3, p=[positive_fraction, 1-positive_fraction])
     index_sum = orientations.sum()
@@ -29,7 +29,7 @@ def neutrino_mass_ordering_v9(b3=24, bias="flexible"):
     v9.0: Allow cycle orientation bias to be free parameter
     """
     if bias == "flexible":
-        # Let data decide: NH now favored → bias toward negative orientation
+        # Let data decide: NH now favored -> bias toward negative orientation
         positive_fraction = 0.28  # instead of 0.83
     else:
         positive_fraction = 0.83

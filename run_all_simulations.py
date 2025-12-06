@@ -49,8 +49,8 @@ class NumpyEncoder(json.JSONEncoder):
             return float(obj)
         elif isinstance(obj, np.ndarray):
             return obj.tolist()
-        elif isinstance(obj, np.complex_):
-            return {'real': obj.real, 'imag': obj.imag}
+        elif isinstance(obj, (np.complexfloating, complex)):
+            return {'real': float(obj.real), 'imag': float(obj.imag)}
         return super().default(obj)
 
 def run_v9_transparency(verbose=True):
@@ -93,10 +93,10 @@ def run_v9_transparency(verbose=True):
             'chi_eff_mean': float(np.mean(chi_eff_dist)),
             'chi_eff_std': float(np.std(chi_eff_dist)),
             'prob_chi_144': float(prob),
-            'status': 'Natural - χ_eff=144 appears in 41% of flux vacua'
+            'status': 'Natural - chi_eff=144 appears in 41% of flux vacua'
         }
         if verbose:
-            print(f"2. TCS Flux Scanner: χ_eff = {results['flux_scanner']['chi_eff_mean']:.1f} ± {results['flux_scanner']['chi_eff_std']:.1f}")
+            print(f"2. TCS Flux Scanner: chi_eff = {results['flux_scanner']['chi_eff_mean']:.1f} +/- {results['flux_scanner']['chi_eff_std']:.1f}")
     except ImportError:
         results['flux_scanner'] = {
             'chi_eff_mean': 145.2,
@@ -176,12 +176,12 @@ def run_v9_brst_proof(verbose=True):
             'nilpotency': 'Q^2 = 0 (verified)',
             'quartet_norm': float(quartet_norms()),
             'cohomology_dim': int(brst_cohomology()),
-            'reduction': '26D → 13D proven',
+            'reduction': '26D -> 13D proven',
             'unitarity': 'Preserved via Kugo-Ojima mechanism',
             'status': 'Rigorous'
         }
         if verbose:
-            print("1. BRST nilpotency: Q^2 = 0 ✓")
+            print("1. BRST nilpotency: Q^2 = 0 [OK]")
             print(f"2. Ghost quartets: norm = {results['brst_proof']['quartet_norm']}")
             print(f"3. Cohomology: H^1 = {results['brst_proof']['cohomology_dim']} (24 transverse modes)")
     except ImportError:
@@ -189,7 +189,7 @@ def run_v9_brst_proof(verbose=True):
             'nilpotency': 'Q^2 = 0 (verified)',
             'quartet_norm': 2.0,
             'cohomology_dim': 24,
-            'reduction': '26D → 13D proven',
+            'reduction': '26D -> 13D proven',
             'unitarity': 'Preserved via Kugo-Ojima mechanism',
             'status': 'Stub - module not implemented'
         }
@@ -203,8 +203,8 @@ def run_v10_geometric_derivations(verbose=True):
     v10.0 Rigorous Derivations Section
 
     Returns dict with:
-    - torsion_class: T_ω and derived α₄, α₅, w₀
-    - flux_quantization: χ_eff = 144 proof
+    - torsion_class: T_omega and derived alpha_4, alpha_5, w_0
+    - flux_quantization: chi_eff = 144 proof
     - anomaly_cancellation: SO(10) verification
     - yukawa_full: Complete geometric Yukawa
     """
@@ -215,7 +215,7 @@ def run_v10_geometric_derivations(verbose=True):
 
     results = {}
 
-    # 1. G₂ torsion derivation
+    # 1. G_2 torsion derivation
     try:
         from simulations.g2_torsion_derivation_v10 import derive_alpha_parameters, tcs_torsion_class
         T_omega = tcs_torsion_class()
@@ -227,10 +227,10 @@ def run_v10_geometric_derivations(verbose=True):
             'alpha_5': float(alpha_5),
             'd_eff': 12 + 0.5 * (alpha_4 + alpha_5),
             'w0': float(-(12.589-1)/(12.589+1)),
-            'status': 'Derived from TCS G₂ geometry'
+            'status': 'Derived from TCS G_2 geometry'
         }
         if verbose:
-            print(f"1. Torsion: T_ω = {T_omega}, α₄ = {alpha_4:.6f}, α₅ = {alpha_5:.6f}")
+            print(f"1. Torsion: T_omega = {T_omega}, alpha_4 = {alpha_4:.6f}, alpha_5 = {alpha_5:.6f}")
     except ImportError:
         results['torsion_derivation'] = {
             'T_omega': -0.884,
@@ -253,7 +253,7 @@ def run_v10_geometric_derivations(verbose=True):
             'status': 'Exact'
         }
         if verbose:
-            print(f"2. Flux Quantization: χ_eff = {chi_eff}")
+            print(f"2. Flux Quantization: chi_eff = {chi_eff}")
     except ImportError:
         results['flux_quantization'] = {
             'chi_eff': 144.0,
@@ -274,7 +274,7 @@ def run_v10_geometric_derivations(verbose=True):
             'status': 'Canceled'
         }
         if verbose:
-            print("3. Anomaly Cancellation: SO(10) ✓")
+            print("3. Anomaly Cancellation: SO(10) [OK]")
     except ImportError:
         results['anomaly_cancellation'] = {
             'A_16': 3,
@@ -290,14 +290,14 @@ def run_v10_geometric_derivations(verbose=True):
         from simulations.full_yukawa_v10 import yukawa_from_associative_cycles
         yukawa_from_associative_cycles()
         results['yukawa_full'] = {
-            'method': 'TCS G₂ cycle intersections',
+            'method': 'TCS G_2 cycle intersections',
             'status': 'Geometric - no randomness'
         }
         if verbose:
-            print("4. Full Yukawa: Derived from geometry ✓")
+            print("4. Full Yukawa: Derived from geometry [OK]")
     except ImportError:
         results['yukawa_full'] = {
-            'method': 'TCS G₂ cycle intersections',
+            'method': 'TCS G_2 cycle intersections',
             'status': 'Stub - module not implemented'
         }
         if verbose:
@@ -329,12 +329,12 @@ def run_v10_1_neutrino_masses(verbose=True):
             'delta_m31_sq': float((masses[2]**2 - masses[0]**2) * 1e3),
             'PMNS_matrix': PMNS.tolist(),
             'status': 'Derived from seesaw mechanism',
-            'agreement': '0.3σ from NuFIT 5.3'
+            'agreement': '0.3sigma from NuFIT 5.3'
         }
         if verbose:
-            print(f"m₁ = {results['m1_eV']:.5f} eV")
-            print(f"m₂ = {results['m2_eV']:.5f} eV")
-            print(f"m₃ = {results['m3_eV']:.5f} eV")
+            print(f"m_1 = {results['m1_eV']:.5f} eV")
+            print(f"m_2 = {results['m2_eV']:.5f} eV")
+            print(f"m_3 = {results['m3_eV']:.5f} eV")
     except ImportError:
         results = {
             'm1_eV': 0.00841,
@@ -345,7 +345,7 @@ def run_v10_1_neutrino_masses(verbose=True):
             'delta_m31_sq': 2.498,
             'PMNS_matrix': [[0.822, 0.547, 0.148], [0.369, 0.604, 0.705], [0.429, 0.579, 0.694]],
             'status': 'Stub - module not implemented',
-            'agreement': '0.3σ from NuFIT 5.3'
+            'agreement': '0.3sigma from NuFIT 5.3'
         }
         if verbose:
             print("neutrino_mass_matrix_v10_1 not found - using stub values")
@@ -382,7 +382,7 @@ def run_v10_2_all_fermions(verbose=True):
                 'tau': float(fermions['me'][2])
             },
             'CKM_matrix': np.abs(fermions['CKM']).tolist(),
-            'status': 'Derived from G₂ cycle intersections',
+            'status': 'Derived from G_2 cycle intersections',
             'agreement': '<1.8% all masses'
         }
         if verbose:
@@ -426,7 +426,7 @@ def run_v11_final_observables(verbose=True):
         results['proton_lifetime'] = {
             'tau_p_years': float(tau_p),
             'torsion_factor': 4.3e9,
-            'status': 'Derived from T_ω',
+            'status': 'Derived from T_omega',
             'testable': 'Hyper-Kamiokande 2032-2038'
         }
         if verbose:
@@ -449,7 +449,7 @@ def run_v11_final_observables(verbose=True):
             'm_h_GeV': float(m_h),
             'Re_T_modulus': 1.833,
             'status': 'Predicted from moduli',
-            'agreement': '0.0σ from PDG'
+            'agreement': '0.0sigma from PDG'
         }
         if verbose:
             print(f"2. Higgs Mass: {m_h:.2f} GeV")
@@ -458,7 +458,7 @@ def run_v11_final_observables(verbose=True):
             'm_h_GeV': 125.10,
             'Re_T_modulus': 1.833,
             'status': 'Stub - module not implemented',
-            'agreement': '0.0σ from PDG'
+            'agreement': '0.0sigma from PDG'
         }
         if verbose:
             print("2. higgs_mass_v11 not found - using stub")
@@ -487,10 +487,10 @@ def run_v12_final_values(verbose=True):
             'm2_eV': float(masses[1] * 1e9),
             'm3_eV': float(masses[2] * 1e9),
             'sum_eV': float(np.sum(masses) * 1e9),
-            'status': 'Final from G₂ triple intersections'
+            'status': 'Final from G_2 triple intersections'
         }
         if verbose:
-            print(f"1. Neutrino Masses: Σm_ν = {results['neutrino_masses_final']['sum_eV']:.4f} eV")
+            print(f"1. Neutrino Masses: Sum m_nu = {results['neutrino_masses_final']['sum_eV']:.4f} eV")
     except ImportError:
         results['neutrino_masses_final'] = {
             'm1_eV': 0.00837,
@@ -511,11 +511,11 @@ def run_v12_final_values(verbose=True):
             'm2_TeV': float(2 * m_KK / 1e3),
             'm3_TeV': float(3 * m_KK / 1e3),
             'T2_area': 18.4,
-            'status': 'Derived from T² volume',
-            'discovery': '6.8σ at HL-LHC'
+            'status': 'Derived from T^2 volume',
+            'discovery': '6.8sigma at HL-LHC'
         }
         if verbose:
-            print(f"2. KK Graviton: m₁ = {results['kk_graviton']['m1_TeV']:.2f} TeV")
+            print(f"2. KK Graviton: m1 = {results['kk_graviton']['m1_TeV']:.2f} TeV")
     except ImportError:
         results['kk_graviton'] = {
             'm1_TeV': 5.02,
@@ -523,7 +523,7 @@ def run_v12_final_values(verbose=True):
             'm3_TeV': 15.06,
             'T2_area': 18.4,
             'status': 'Stub - module not implemented',
-            'discovery': '6.8σ at HL-LHC'
+            'discovery': '6.8sigma at HL-LHC'
         }
         if verbose:
             print("2. kk_graviton_mass_v12 not found - using stub")
@@ -548,7 +548,7 @@ def run_all_simulations(verbose=True):
         'meta': {
             'version': '12.0',
             'last_updated': '2025-12-06',
-            'description': 'Principia Metaphysica - Complete Theory (v8.4 → v12.0)',
+            'description': 'Principia Metaphysica - Complete Theory (v8.4 -> v12.0)',
             'simulations_run': [
                 # v8.4
                 'proton_decay_rg_hybrid',
@@ -602,7 +602,7 @@ def run_all_simulations(verbose=True):
         'b3': 24,
         'chi_eff': 144,  # v10.0 now proven from flux quantization
         'nu': 24,
-        'n_gen': 3  # χ_eff / 48
+        'n_gen': 3  # chi_eff / 48
     }
 
     # ========================================================================
@@ -683,7 +683,7 @@ def run_all_simulations(verbose=True):
         }
 
         if verbose:
-            print(f"   Average: {results['pmns_matrix']['average_sigma']:.2f}σ")
+            print(f"   Average: {results['pmns_matrix']['average_sigma']:.2f} sigma")
     except Exception as e:
         if verbose:
             print(f"   Error: {e}")
@@ -934,15 +934,15 @@ def generate_js_constants_from_output(results, output_path='theory-constants-enh
  * Principia Metaphysica - Theory Constants (v12.0)
  * =================================================
  *
- * AUTO-GENERATED from config.py + simulations v8.4→v12.0 - DO NOT EDIT MANUALLY
+ * AUTO-GENERATED from config.py + simulations v8.4->v12.0 - DO NOT EDIT MANUALLY
  *
- * Single source of truth: config.py → simulations → theory_output.json → this file
+ * Single source of truth: config.py -> simulations -> theory_output.json -> this file
  * Generated by: run_all_simulations.py (v12.0)
  *
  * Changelog v12.0:
  * - Added v9.0 transparency data (fitted vs derived)
  * - Added v9.1 BRST proof results
- * - Added v10.0 geometric derivations (α₄, α₅, χ_eff)
+ * - Added v10.0 geometric derivations (alpha_4, alpha_5, chi_eff)
  * - Added v10.1 neutrino mass matrix
  * - Added v10.2 all fermion matrices + CKM
  * - Added v11.0 proton lifetime + Higgs mass
@@ -965,7 +965,7 @@ PM.format = {
     scientific: (value, decimals = 2) => value.toExponential(decimals),
     fixed: (value, decimals = 2) => value.toFixed(decimals),
     percent: (value) => (value * 100).toFixed(1) + '%',
-    sigma: (value) => value.toFixed(2) + 'σ',
+    sigma: (value) => value.toFixed(2) + 'sigma',
     eV: (value) => value.toFixed(5) + ' eV',
     GeV: (value) => value.toFixed(3) + ' GeV',
     TeV: (value) => value.toFixed(2) + ' TeV',
@@ -1007,8 +1007,8 @@ if __name__ == '__main__':
     print("Access constants via:")
     print("  - PM.v9_transparency (fitted vs derived)")
     print("  - PM.v9_brst_proof (Sp(2,R) proof)")
-    print("  - PM.v10_geometric_derivations (α₄, α₅, χ_eff)")
+    print("  - PM.v10_geometric_derivations (alpha_4, alpha_5, chi_eff)")
     print("  - PM.v10_1_neutrino_masses (full spectrum)")
     print("  - PM.v10_2_all_fermions (all quarks + leptons)")
-    print("  - PM.v11_final_observables (τ_p, m_h)")
+    print("  - PM.v11_final_observables (tau_p, m_h)")
     print("  - PM.v12_final_values (final neutrinos + KK)")

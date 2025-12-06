@@ -2,30 +2,30 @@
 """
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 
-TCS Cycle Data - Geometric Parameters from G₂ Compactification Literature
+TCS Cycle Data - Geometric Parameters from G_2 Compactification Literature
 
 This module provides geometric data for associative 3-cycles in TCS (Twisted
-Connected Sum) G₂ manifolds, derived from literature (Corti et al., Acharya et al.).
+Connected Sum) G_2 manifolds, derived from literature (Corti et al., Acharya et al.).
 
 Provides:
-- Cycle orientations from homology H₃(G₂, ℤ) and flux quantization
-- Cycle volumes from CY₃×S¹ fibration structure
+- Cycle orientations from homology H_3(G_2, ℤ) and flux quantization
+- Cycle volumes from CY_3xS^1 fibration structure
 - Moonshine-inspired modular functions for advanced predictions
 
 References:
-- Corti et al. (arXiv:1412.4123): TCS G₂ constructions
-- Acharya et al. (arXiv:hep-th/0109152): M-theory on G₂
-- Joyce (2003): Ricci-flat G₂ metrics
+- Corti et al. (arXiv:1412.4123): TCS G_2 constructions
+- Acharya et al. (arXiv:hep-th/0109152): M-theory on G_2
+- Joyce (2003): Ricci-flat G_2 metrics
 """
 
 import numpy as np
 
 def get_tcs_signs(n_cycles=24, bias=None, use_literature=True):
     """
-    Get cycle orientation signs from G₂ homology and flux quantization
+    Get cycle orientation signs from G_2 homology and flux quantization
 
     Args:
-        n_cycles: Number of associative 3-cycles (b₃)
+        n_cycles: Number of associative 3-cycles (b_3)
         bias: Probability of positive orientation (None = use literature value)
         use_literature: If True, use literature-inspired bias (83%)
 
@@ -33,11 +33,11 @@ def get_tcs_signs(n_cycles=24, bias=None, use_literature=True):
         List of +1/-1 orientation signs for each cycle
 
     Literature Basis:
-    Acharya & Gukov (2004) and Corti et al. (2013) show TCS G₂ cycles
-    have coherent orientations from positive flux quantization ∫F∧F > 0.
+    Acharya & Gukov (2004) and Corti et al. (2013) show TCS G_2 cycles
+    have coherent orientations from positive flux quantization intF^F > 0.
     In calibrated examples, ~75-85% of cycles have positive orientation.
 
-    For χ_eff = 144, b₃ = 24, flux F = √(χ_eff/b₃) ≈ 2.45 > 0 strongly
+    For chi_eff = 144, b_3 = 24, flux F = √(chi_eff/b_3) ~ 2.45 > 0 strongly
     biases toward positive cycles, giving ~20/24 positive (83%).
     """
     if bias is None:
@@ -62,31 +62,31 @@ def get_tcs_signs(n_cycles=24, bias=None, use_literature=True):
 
 def get_tcs_volumes(n_gen=3, hierarchy_ratio=1.5, normalization='flux'):
     """
-    Get cycle volumes from CY₃×S¹ fibration structure
+    Get cycle volumes from CY_3xS^1 fibration structure
 
     Args:
         n_gen: Number of fermion generations (3)
         hierarchy_ratio: Volume ratio between generations
-        normalization: 'flux' (scale by F = √(χ_eff/b₃)) or 'raw'
+        normalization: 'flux' (scale by F = √(chi_eff/b_3)) or 'raw'
 
     Returns:
         Array of volume factors for each generation
 
     Literature Basis:
-    TCS G₂ = CY₃×S¹ fibration (Corti et al.) with hierarchical volumes
-    from CY₃ complex structure moduli. Yukawa suppression ~ exp(-Vol(Σ))
+    TCS G_2 = CY_3xS^1 fibration (Corti et al.) with hierarchical volumes
+    from CY_3 complex structure moduli. Yukawa suppression ~ exp(-Vol(Sigma))
     gives mass hierarchies.
 
     From Acharya et al. examples:
-    - Gen 1 (lightest): Largest cycle volume → Vol ~ 4.2
-    - Gen 2 (middle):   Medium cycle volume → Vol ~ 2.8
-    - Gen 3 (heaviest): Smallest cycle volume → Vol ~ 1.0
+    - Gen 1 (lightest): Largest cycle volume -> Vol ~ 4.2
+    - Gen 2 (middle):   Medium cycle volume -> Vol ~ 2.8
+    - Gen 3 (heaviest): Smallest cycle volume -> Vol ~ 1.0
 
     Ratios ~4:3:1 consistent with observed fermion hierarchies.
-    Normalization by flux F = √6 ≈ 2.45 relates to χ_eff.
+    Normalization by flux F = √6 ~ 2.45 relates to chi_eff.
     """
     # Generate hierarchical volumes (largest for lightest generation)
-    # Use geometric progression: Vol_i = Vol_0 × r^i
+    # Use geometric progression: Vol_i = Vol_0 x r^i
     vols = [1.0 * (hierarchy_ratio ** i) for i in range(n_gen)]
 
     # Reverse so lightest (Gen 1) has largest volume
@@ -99,7 +99,7 @@ def get_tcs_volumes(n_gen=3, hierarchy_ratio=1.5, normalization='flux'):
     if normalization == 'flux':
         chi_eff = 144
         b3 = 24
-        flux_factor = np.sqrt(chi_eff / b3)  # F = √6 ≈ 2.45
+        flux_factor = np.sqrt(chi_eff / b3)  # F = √6 ~ 2.45
         vols = vols * flux_factor
 
     return vols
@@ -116,9 +116,9 @@ def get_moonshine_bias(b3=24):
         Orientation bias from modular J-function
 
     Fringe Theory:
-    The Monster group has dimension ~196k, but modular J(τ) relates to
-    cusps at rational points. For b₃ = 24 (related to Leech lattice dim),
-    τ = i/√24 gives J(τ) with magnitude ~0.82 (normalized), suggesting
+    The Monster group has dimension ~196k, but modular J(tau) relates to
+    cusps at rational points. For b_3 = 24 (related to Leech lattice dim),
+    tau = i/√24 gives J(tau) with magnitude ~0.82 (normalized), suggesting
     82% positive cycle bias.
 
     This is consistent with literature values (75-85%) and provides
@@ -129,7 +129,7 @@ def get_moonshine_bias(b3=24):
     try:
         from sympy import I, klein_j, N
 
-        # Moonshine point: τ = i/√b₃
+        # Moonshine point: tau = i/√b_3
         tau = I / np.sqrt(b3)
 
         # Klein j-invariant (modular function)
@@ -161,13 +161,13 @@ def get_yukawa_texture_ckm(sector='up', b2=4, b3=24):
         b3: Third Betti number (cycle count)
 
     Returns:
-        3×3 complex Yukawa matrix
+        3x3 complex Yukawa matrix
 
     Theory:
-    Yukawa couplings Y_{αβγ} = ∫ ψ_α ψ_β φ_γ dV over associative 3-cycles
+    Yukawa couplings Y_{alphabetagamma} = int ψ_alpha ψ_beta phi_gamma dV over associative 3-cycles
     Diagonal elements from volume suppression: Y_ii ~ exp(-Vol_i)
-    Off-diagonal elements from moduli perturbations: Y_ij ~ ε × Y_ii (i≠j)
-    where ε ~ b₂/χ_eff ~ 4/144 ≈ 0.028
+    Off-diagonal elements from moduli perturbations: Y_ij ~ ε x Y_ii (i!=j)
+    where ε ~ b_2/chi_eff ~ 4/144 ~ 0.028
 
     This provides geometric foundation for CKM matrix calculation.
     """
@@ -208,5 +208,5 @@ __author__ = "Andrew Keith Watts (with AI assistance)"
 __references__ = [
     "Corti et al. (arXiv:1412.4123)",
     "Acharya et al. (arXiv:hep-th/0109152)",
-    "Joyce (2003) - Ricci-flat G₂ metrics"
+    "Joyce (2003) - Ricci-flat G_2 metrics"
 ]

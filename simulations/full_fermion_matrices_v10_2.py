@@ -5,7 +5,7 @@ Complete derivation of all three Yukawa sectors:
   - Y_u (up-type quarks)
   - Y_d (down-type quarks)
   - Y_e (charged leptons)
-from one TCS G₂ manifold
+from one TCS G_2 manifold
 """
 
 import numpy as np
@@ -16,29 +16,29 @@ def derive_all_fermion_matrices():
       - Y_u (up-type quarks)
       - Y_d (down-type quarks)
       - Y_e (charged leptons)
-      - Y_ν_D (Dirac neutrinos)
-    from one TCS G₂ manifold with b₃=24 associative 3-cycles
+      - Y_nu_D (Dirac neutrinos)
+    from one TCS G_2 manifold with b_3=24 associative 3-cycles
     """
 
-    # Known TCS G₂ construction (CHNP #187 + Braun-Del Zotto 2021)
-    # 6 matter curves (3 generations × 2 for 10 + 10-bar)
-    # Triple intersection numbers Ω(Σ_i ∩ Σ_j ∩ Σ_k)
+    # Known TCS G_2 construction (CHNP #187 + Braun-Del Zotto 2021)
+    # 6 matter curves (3 generations x 2 for 10 + 10-bar)
+    # Triple intersection numbers Omega(Sigma_i ^ Sigma_j ^ Sigma_k)
 
-    # Up-type Yukawa (10 × 10 × 126_H)
+    # Up-type Yukawa (10 x 10 x 126_H)
     Yu_inter = np.array([
         [ 0, 12,  4],
         [12,  0, 18],
         [ 4, 18,  0]
     ])
 
-    # Down-type Yukawa (10 × 10-bar × 126_H)
+    # Down-type Yukawa (10 x 10-bar x 126_H)
     Yd_inter = np.array([
         [15,  6,  2],
         [ 6, 20,  8],
         [ 2,  8, 25]
     ])
 
-    # Charged lepton Yukawa (10 × 10-bar × 126_H) - Georgi-Jarlskog texture
+    # Charged lepton Yukawa (10 x 10-bar x 126_H) - Georgi-Jarlskog texture
     Ye_inter = np.array([
         [ 0,  3,  0],
         [ 3,  0,  9],
@@ -76,7 +76,7 @@ def derive_all_fermion_matrices():
     CKM = Vu.conj().T @ Vd
 
     print("=== PRINCIPIA METAPHYSICA v10.2 - FINAL FERMION SECTOR ===")
-    print("ALL MASSES DERIVED FROM ONE G₂ MANIFOLD")
+    print("ALL MASSES DERIVED FROM ONE G_2 MANIFOLD")
     print()
 
     print("Quark masses (GeV):")
@@ -85,7 +85,7 @@ def derive_all_fermion_matrices():
     print()
 
     print("Lepton masses (GeV):")
-    print(f"  e = {me[0]*1e3:.3f} MeV, μ = {me[1]*1e3:.1f} MeV, τ = {me[2]:.4f} GeV")
+    print(f"  e = {me[0]*1e3:.3f} MeV, mu = {me[1]*1e3:.1f} MeV, tau = {me[2]:.4f} GeV")
     print()
 
     print("CKM matrix |V_ij|:")
@@ -95,12 +95,12 @@ def derive_all_fermion_matrices():
     print("Comparison to PDG 2025:")
     print("  • All quark masses within 1.8%")
     print("  • Charged lepton masses within 0.4%")
-    print("  • |V_us| = 0.225 → 0.224 (PDG)")
-    print("  • |V_cb| = 0.041 → 0.040 (PDG)")
-    print("  • |V_ub| = 0.0038 → 0.0037 (PDG)")
-    print("  • CP phase δ = 1.21 rad → 1.20 rad (PDG)")
+    print("  • |V_us| = 0.225 -> 0.224 (PDG)")
+    print("  • |V_cb| = 0.041 -> 0.040 (PDG)")
+    print("  • |V_ub| = 0.0038 -> 0.0037 (PDG)")
+    print("  • CP phase delta = 1.21 rad -> 1.20 rad (PDG)")
     print()
-    print("→ NO FREE PARAMETERS. PURE G₂ GEOMETRY.")
+    print("-> NO FREE PARAMETERS. PURE G_2 GEOMETRY.")
 
     return {
         'Yu': Yu, 'Yd': Yd, 'Ye': Ye,
@@ -117,8 +117,8 @@ if __name__ == "__main__":
     fermions = derive_all_fermion_matrices()
 
     print("\n" + "="*70)
-    print("→ All three Yukawa sectors derived")
-    print("→ CKM matrix from misalignment")
-    print("→ Georgi-Jarlskog texture for leptons")
-    print("→ Single TCS G₂ manifold (CHNP #187)")
+    print("-> All three Yukawa sectors derived")
+    print("-> CKM matrix from misalignment")
+    print("-> Georgi-Jarlskog texture for leptons")
+    print("-> Single TCS G_2 manifold (CHNP #187)")
     print("="*70)

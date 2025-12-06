@@ -5,24 +5,24 @@ Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 Proton Decay Branching Ratios v8.4 - Hybrid Geometric + CKM Approach
 
 This module combines:
-1. Geometric Yukawa mixing from G₂ cycle intersections (sin(π b₂/b₃))
-2. CKM rotation via Wolfenstein parameterization (λ_Cabibbo = 0.22)
+1. Geometric Yukawa mixing from G_2 cycle intersections (sin(pi b_2/b_3))
+2. CKM rotation via Wolfenstein parameterization (lambda_Cabibbo = 0.22)
 3. Channel-specific Wilson coefficients from SO(10) group theory
 
 Theoretical Basis:
-- Yukawa hierarchies: Y ~ [1, λ², λ⁴] with λ = 0.22 (PDG Cabibbo)
-- Geometric mixing: eps = sin(π b₂/b₃) = sin(π/6) = 0.5 from cycle overlaps
-- CKM rotation: V_CKM = U_up† @ U_down (Wolfenstein to O(λ³))
+- Yukawa hierarchies: Y ~ [1, lambda^2, lambda^4] with lambda = 0.22 (PDG Cabibbo)
+- Geometric mixing: eps = sin(pi b_2/b_3) = sin(pi/6) = 0.5 from cycle overlaps
+- CKM rotation: V_CKM = U_up† @ U_down (Wolfenstein to O(lambda^3))
 - Wilson coefficients:
-  * C_epi0 ~ det(Y_up) × det(Y_down_CKM) × Y_lepton / M_GUT²
-  * C_Knu ~ trace(Y_up @ Y_down_CKM) × V_CKM[us] / M_GUT² (strange quark)
-  * C_mupi0 ~ det(Y_up @ Y_down_CKM) × Y_mu / M_GUT²
+  * C_epi0 ~ det(Y_up) x det(Y_down_CKM) x Y_lepton / M_GUT^2
+  * C_Knu ~ trace(Y_up @ Y_down_CKM) x V_CKM[us] / M_GUT^2 (strange quark)
+  * C_mupi0 ~ det(Y_up @ Y_down_CKM) x Y_mu / M_GUT^2
 
-Target: BR(e⁺π⁰) ~ 62% ± 5%, BR(K⁺ν̄) ~ 23% ± 4%
+Target: BR(e^+pi^0) ~ 62% +/- 5%, BR(K^+nū) ~ 23% +/- 4%
 
 References:
 - Babu-Pati-Wilczek (arXiv:hep-ph/9905477) - SO(10) proton decay with CKM
-- Acharya et al. (arXiv:hep-th/0109152) - M-theory Yukawas from G₂
+- Acharya et al. (arXiv:hep-th/0109152) - M-theory Yukawas from G_2
 - PDG 2024 - CKM matrix (Wolfenstein parameters)
 
 Version: 8.4 (resolves Issue 2.4 via CKM rotation)
@@ -50,8 +50,8 @@ class ProtonDecayV84:
 
     Key improvements over v8.2:
     - Explicit CKM rotation (Wolfenstein parameterization)
-    - Geometric mixing eps = sin(π b₂/b₃) = 0.5
-    - Literature λ_Cabibbo = 0.22 hierarchies
+    - Geometric mixing eps = sin(pi b_2/b_3) = 0.5
+    - Literature lambda_Cabibbo = 0.22 hierarchies
     - Channel-specific Wilson coefficients
     """
 
@@ -67,7 +67,7 @@ class ProtonDecayV84:
 
         # Yukawa parameters
         self.lambda_cab = 0.22  # PDG 2024 Cabibbo angle
-        self.eps_geo = np.sin(np.pi * self.b2 / self.b3)  # sin(π/6) = 0.5
+        self.eps_geo = np.sin(np.pi * self.b2 / self.b3)  # sin(pi/6) = 0.5
 
         # Proton lifetime (from hybrid RG v7.0)
         self.tau_p_total = 3.93e34  # years
@@ -76,17 +76,17 @@ class ProtonDecayV84:
         """
         Construct CKM matrix using Wolfenstein parameterization
 
-        Standard parameterization to O(λ³):
-        V_CKM = [[1 - λ²/2,      λ,            A λ³(ρ - iη)],
-                 [-λ,            1 - λ²/2,     A λ²         ],
-                 [A λ³(1-ρ-iη),  -A λ²,        1            ]]
+        Standard parameterization to O(lambda^3):
+        V_CKM = [[1 - lambda^2/2,      lambda,            A lambda^3(rho - iη)],
+                 [-lambda,            1 - lambda^2/2,     A lambda^2         ],
+                 [A lambda^3(1-rho-iη),  -A lambda^2,        1            ]]
 
         Args:
             lambda_param: Cabibbo angle (default: self.lambda_cab = 0.22)
             A, rho, eta: Wolfenstein parameters (PDG 2024)
 
         Returns:
-            V_CKM: 3×3 complex CKM matrix
+            V_CKM: 3x3 complex CKM matrix
         """
         if lambda_param is None:
             lambda_param = self.lambda_cab
@@ -95,7 +95,7 @@ class ProtonDecayV84:
         lam2 = lam**2
         lam3 = lam**3
 
-        # Wolfenstein to O(λ³)
+        # Wolfenstein to O(lambda^3)
         V_CKM = np.array([
             [1 - lam2/2,        lam,              A*lam3*(rho - 1j*eta)],
             [-lam,              1 - lam2/2,       A*lam2                ],
@@ -106,15 +106,15 @@ class ProtonDecayV84:
 
     def compute_yukawa_geometric(self, use_moonshine=False):
         """
-        Compute Yukawa matrices with geometric mixing from G₂ cycles
+        Compute Yukawa matrices with geometric mixing from G_2 cycles
 
         v8.4 Changes:
-        - Hierarchical diagonal: [1, λ², λ⁴] with λ = 0.22
-        - Geometric off-diagonals: eps = sin(π b₂/b₃) = 0.5
+        - Hierarchical diagonal: [1, lambda^2, lambda^4] with lambda = 0.22
+        - Geometric off-diagonals: eps = sin(pi b_2/b_3) = 0.5
         - Optional moonshine bias (experimental)
 
         Returns:
-            Y_up, Y_down, Y_lepton: 3×3 Yukawa matrices
+            Y_up, Y_down, Y_lepton: 3x3 Yukawa matrices
         """
         # Geometric mixing strength
         eps = self.eps_geo
@@ -134,14 +134,14 @@ class ProtonDecayV84:
                 pass  # Fall back to geometric eps
 
         # Hierarchical diagonal from volume suppression
-        # Y ~ exp(-Vol) with Vol ~ λ^n hierarchy
+        # Y ~ exp(-Vol) with Vol ~ lambda^n hierarchy
         lam = self.lambda_cab
         diag_up = np.array([1.0, lam**2, lam**4])
         diag_down = diag_up * 0.9  # Slight GUT asymmetry
         diag_lepton = diag_up * 0.3  # Lepton suppression
 
-        # Off-diagonal mixing from G₂ cycle intersections
-        # I_αβγ ~ sin(π b₂/b₃) + Gaussian noise from moduli
+        # Off-diagonal mixing from G_2 cycle intersections
+        # I_alphabetagamma ~ sin(pi b_2/b_3) + Gaussian noise from moduli
         off_matrix_up = eps * np.random.normal(0, 0.15, (3, 3))
         off_matrix_down = eps * np.random.normal(0, 0.15, (3, 3))
         off_matrix_lepton = eps * np.random.normal(0, 0.10, (3, 3))
@@ -163,14 +163,14 @@ class ProtonDecayV84:
         Compute Wilson coefficients with CKM rotation
 
         Following Babu-Pati-Wilczek (arXiv:hep-ph/9905477):
-        - C_epi0: e⁺π⁰ channel (gauge-mediated, dimension-6)
-        - C_Knu: K⁺ν̄ channel (strange quark via CKM)
-        - C_mupi0: μ⁺π⁰ channel (muon lepton flavor)
+        - C_epi0: e^+pi^0 channel (gauge-mediated, dimension-6)
+        - C_Knu: K^+nū channel (strange quark via CKM)
+        - C_mupi0: mu^+pi^0 channel (muon lepton flavor)
         - C_other: Other subdominant channels
 
         Key operators:
-        - LLLL (qqℓℓ): Tr(Y_u @ Y_d @ Y_l) for e⁺π⁰
-        - LLLL (qqℓℓ): Weighted by CKM for K⁺ν̄
+        - LLLL (qqll): Tr(Y_u @ Y_d @ Y_l) for e^+pi^0
+        - LLLL (qqll): Weighted by CKM for K^+nū
 
         Args:
             Y_up, Y_down, Y_lepton: Yukawa matrices
@@ -183,22 +183,22 @@ class ProtonDecayV84:
         Y_down_CKM = V_CKM.T.conj() @ Y_down @ V_CKM
 
         # Wilson coefficients (dimension-6 operators)
-        # Suppressed by M_GUT²
+        # Suppressed by M_GUT^2
         M_GUT_sq = self.M_GUT**2
 
-        # e⁺π⁰: Trace of Yukawa product (LLLL operator)
-        # C ~ Tr(Y_u @ Y_d @ Y_l) / M_GUT²
-        # This is the standard dimension-6 operator for p → e⁺π⁰
+        # e^+pi^0: Trace of Yukawa product (LLLL operator)
+        # C ~ Tr(Y_u @ Y_d @ Y_l) / M_GUT^2
+        # This is the standard dimension-6 operator for p -> e^+pi^0
         Yukawa_product = Y_up @ Y_down_CKM @ Y_lepton
         C_epi0 = np.trace(Yukawa_product) / M_GUT_sq
 
-        # K⁺ν̄: Strange quark channel (CKM us-element weighted)
-        # Weight by V_us for u→s transition
-        V_us = V_CKM[0, 1]  # Up-strange CKM element ~ λ_Cabibbo
+        # K^+nū: Strange quark channel (CKM us-element weighted)
+        # Weight by V_us for u->s transition
+        V_us = V_CKM[0, 1]  # Up-strange CKM element ~ lambda_Cabibbo
         # Use second generation (strange) weighted product
         C_Knu = np.trace(Y_up @ Y_down_CKM) * abs(V_us) / M_GUT_sq
 
-        # μ⁺π⁰: Muon flavor channel (second generation lepton)
+        # mu^+pi^0: Muon flavor channel (second generation lepton)
         # Weight by muon component
         Yukawa_mu = Y_up @ Y_down_CKM @ Y_lepton
         C_mupi0 = Yukawa_mu[1, 1] / M_GUT_sq  # Diagonal muon element
@@ -218,7 +218,7 @@ class ProtonDecayV84:
         """
         Compute branching ratios from Wilson coefficients
 
-        BR(channel) = |C_channel|² / Σ_i |C_i|²
+        BR(channel) = |C_channel|^2 / Sigma_i |C_i|^2
 
         Args:
             coeffs: Dictionary of Wilson coefficients
@@ -242,7 +242,7 @@ class ProtonDecayV84:
         """
         Compute channel-specific lifetimes
 
-        τ_p(channel) = τ_p(total) / BR(channel)
+        tau_p(channel) = tau_p(total) / BR(channel)
 
         Args:
             BR: Dictionary of branching ratios
@@ -265,9 +265,9 @@ class ProtonDecayV84:
         Monte Carlo uncertainty quantification
 
         v8.4 Changes:
-        - Vary λ_Cabibbo ± 0.02 (PDG uncertainty)
-        - Vary eps_geo ± 0.1 (cycle intersection noise)
-        - Vary b₃ ± 2 (flux/moduli deformations)
+        - Vary lambda_Cabibbo +/- 0.02 (PDG uncertainty)
+        - Vary eps_geo +/- 0.1 (cycle intersection noise)
+        - Vary b_3 +/- 2 (flux/moduli deformations)
         - Each sample: full Yukawa + CKM recomputation
 
         Args:
@@ -421,7 +421,7 @@ class ProtonDecayV84:
             print()
             print("  Hyper-K sensitivity (2027-2035):")
             print(f"    Expected: BR(e+pi0) ~ 50-70% (SO(10))")
-            print(f"    Predicted: {mc_results['BR_epi0_mean']*100:.1f}% ± {mc_results['BR_epi0_std']*100:.1f}%")
+            print(f"    Predicted: {mc_results['BR_epi0_mean']*100:.1f}% +/- {mc_results['BR_epi0_std']*100:.1f}%")
             print(f"    Status: {'CONSISTENT' if 50 <= mc_results['BR_epi0_mean']*100 <= 70 else 'OUTSIDE RANGE'}")
             print()
             print("=" * 70)

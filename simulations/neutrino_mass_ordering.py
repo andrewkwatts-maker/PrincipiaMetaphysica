@@ -2,30 +2,30 @@
 """
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 
-Neutrino Mass Ordering - Geometric Derivation from G₂ Associative Cycles
+Neutrino Mass Ordering - Geometric Derivation from G_2 Associative Cycles
 
 v8.2: Uses literature-based TCS cycle orientations from tcs_cycle_data module
 
 This module derives the neutrino mass ordering (normal hierarchy vs inverted
-hierarchy) from the orientation and sign of associative 3-cycles in the G₂
+hierarchy) from the orientation and sign of associative 3-cycles in the G_2
 manifold compactification.
 
 Theoretical Basis:
 - Neutrino Yukawa couplings from wavefunction overlaps on associative 3-cycles
-- Mass ordering from Atiyah-Singer index: Ind(D) = ∫ Tr(F∧F) over cycles
-- Positive index → Inverted Hierarchy (IH): m₃ < m₁ < m₂
-- Negative index → Normal Hierarchy (NH): m₁ < m₂ < m₃
+- Mass ordering from Atiyah-Singer index: Ind(D) = int Tr(F^F) over cycles
+- Positive index -> Inverted Hierarchy (IH): m_3 < m_1 < m_2
+- Negative index -> Normal Hierarchy (NH): m_1 < m_2 < m_3
 - Flux dressing F breaks degeneracy via quantization conditions
 
 Mathematical Rigor:
-- Chiral fermion zero-modes from Dirac operator D on G₂
-- Index theorem: Ind(D) = (1/24π²) ∫ Tr(F∧F) (topological invariant)
-- Orientation signs from cycle homology: H₃(G₂, ℤ) with b₃=24 generators
-- Even/odd cycle parity from flux F ~ √(χ_eff/b₃) = √6 ≈ 2.45
+- Chiral fermion zero-modes from Dirac operator D on G_2
+- Index theorem: Ind(D) = (1/24pi^2) int Tr(F^F) (topological invariant)
+- Orientation signs from cycle homology: H_3(G_2, ℤ) with b_3=24 generators
+- Even/odd cycle parity from flux F ~ √(chi_eff/b_3) = √6 ~ 2.45
 
 References:
 - Atiyah-Singer - Index theorems for chiral fermions
-- Acharya-Boček (arXiv:1607.06514) - Neutrino masses in SO(10) G₂
+- Acharya-Boček (arXiv:1607.06514) - Neutrino masses in SO(10) G_2
 - Witten (arXiv:hep-th/0508075) - Flux quantization in M-theory
 
 Version: 8.2 (resolves Issue 2.3 from V7_ISSUES_REPORT.md)
@@ -40,7 +40,7 @@ import config
 from tcs_cycle_data import get_tcs_signs, get_moonshine_bias
 
 class NeutrinoMassOrderingCalculator:
-    """Calculate neutrino mass ordering from G₂ geometry"""
+    """Calculate neutrino mass ordering from G_2 geometry"""
 
     def __init__(self):
         """Initialize with geometric parameters"""
@@ -49,32 +49,32 @@ class NeutrinoMassOrderingCalculator:
         self.chi_eff = config.FundamentalConstants.euler_characteristic_effective()  # 144
         self.n_gen = 3
 
-        # Flux dressing parameter (from χ_eff and b₃)
-        self.F_flux = np.sqrt(self.chi_eff / self.b3)  # √6 ≈ 2.45
+        # Flux dressing parameter (from chi_eff and b_3)
+        self.F_flux = np.sqrt(self.chi_eff / self.b3)  # √6 ~ 2.45
 
         # Mass splittings from NuFIT 5.3 (2024) - experimental constraints
-        self.Delta_m21_sq = 7.53e-5  # eV² (solar)
-        self.Delta_m32_sq_NH = 2.453e-3  # eV² (atmospheric, NH)
-        self.Delta_m32_sq_IH = -2.536e-3  # eV² (atmospheric, IH)
+        self.Delta_m21_sq = 7.53e-5  # eV^2 (solar)
+        self.Delta_m32_sq_NH = 2.453e-3  # eV^2 (atmospheric, NH)
+        self.Delta_m32_sq_IH = -2.536e-3  # eV^2 (atmospheric, IH)
 
     def compute_index_on_cycles(self, n_cycles=24, use_moonshine=False):
         """
         Compute Atiyah-Singer index on associative 3-cycles
 
-        Ind(D) = (1/24π²) ∫ Tr(F∧F) over each cycle
-        Sum over all b₃=24 cycles, weighted by orientation signs from literature
+        Ind(D) = (1/24pi^2) int Tr(F^F) over each cycle
+        Sum over all b_3=24 cycles, weighted by orientation signs from literature
 
         Args:
-            n_cycles: Number of cycles (b₃)
+            n_cycles: Number of cycles (b_3)
             use_moonshine: If True, use moonshine-derived bias (experimental)
 
         Returns:
-            index_total: Total index (positive → IH, negative → NH)
+            index_total: Total index (positive -> IH, negative -> NH)
             index_per_cycle: Array of individual cycle indices
 
         v8.2 Changes:
         - Uses literature-based TCS cycle orientations (83% positive)
-        - Optional moonshine bias from J(τ = i/√24) ≈ 0.82
+        - Optional moonshine bias from J(tau = i/√24) ~ 0.82
         - Smaller moduli perturbations (5% vs 10%)
         """
         # Get cycle orientation signs from TCS literature data
@@ -94,7 +94,7 @@ class NeutrinoMassOrderingCalculator:
             moduli_shift = np.random.normal(0, 0.05)  # Was 0.1, now 0.05
             F_i = self.F_flux * (1 + moduli_shift)
 
-            # Index integrand: Tr(F∧F) ~ F²
+            # Index integrand: Tr(F^F) ~ F^2
             # Integrate over cycle volume (normalized to 1)
             integrand = lambda x: (F_i**2) * np.sin(np.pi * x)**2
             index_i, _ = quad(integrand, 0, 1)
@@ -112,9 +112,9 @@ class NeutrinoMassOrderingCalculator:
         Predict mass ordering from total index
 
         Rules:
-        - Ind > 0 → Inverted Hierarchy (IH)
-        - Ind < 0 → Normal Hierarchy (NH)
-        - |Ind| ≈ 0 → Degenerate (ambiguous)
+        - Ind > 0 -> Inverted Hierarchy (IH)
+        - Ind < 0 -> Normal Hierarchy (NH)
+        - |Ind| ~ 0 -> Degenerate (ambiguous)
 
         Args:
             index_total: Total Atiyah-Singer index
@@ -123,7 +123,7 @@ class NeutrinoMassOrderingCalculator:
             ordering: 'IH' or 'NH'
             confidence: Probability of prediction (0.5-1.0)
         """
-        # Confidence from index magnitude (larger |Ind| → higher confidence)
+        # Confidence from index magnitude (larger |Ind| -> higher confidence)
         confidence_raw = 0.5 + 0.5 * np.tanh(5 * index_total)  # Sigmoid-like
 
         # Clip to [0.5, 1.0] range
@@ -143,17 +143,17 @@ class NeutrinoMassOrderingCalculator:
         """
         Compute neutrino Yukawa matrix texture from cycle intersections
 
-        Y_ν = ∫ ψ_L ψ_L φ over associative 3-cycles
-        Texture determined by b₂=4 moduli and b₃=24 off-diagonals
+        Y_nu = int ψ_L ψ_L phi over associative 3-cycles
+        Texture determined by b_2=4 moduli and b_3=24 off-diagonals
 
         Returns:
-            Y_nu: 3×3 Yukawa matrix (complex)
+            Y_nu: 3x3 Yukawa matrix (complex)
         """
         # Diagonal elements from volume factors (hierarchical)
-        diag = np.array([1.0, 0.15, 0.025])  # m₃ > m₂ > m₁ (or m₁ > m₂ > m₃)
+        diag = np.array([1.0, 0.15, 0.025])  # m_3 > m_2 > m_1 (or m_1 > m_2 > m_3)
 
         # Off-diagonal from cycle intersections
-        eps = self.b2 / self.chi_eff  # ~ 4/144 ≈ 0.028
+        eps = self.b2 / self.chi_eff  # ~ 4/144 ~ 0.028
 
         # Construct texture (Hermitian for real masses)
         Y_nu = np.diag(diag) + eps * np.array([
@@ -168,7 +168,7 @@ class NeutrinoMassOrderingCalculator:
         """
         Diagonalize Yukawa to get mass eigenvalues
 
-        M_ν = Y_ν Y_ν^T (Majorana masses)
+        M_nu = Y_nu Y_nu^T (Majorana masses)
         Order eigenvalues according to IH or NH
 
         Args:
@@ -185,16 +185,16 @@ class NeutrinoMassOrderingCalculator:
         eigenvalues = np.linalg.eigvalsh(M_nu.real)
         eigenvalues = np.sort(np.abs(eigenvalues))  # Positive masses
 
-        # Scale to match experimental Δm²
-        # Use Δm²₂₁ = m₂² - m₁² to set absolute scale
+        # Scale to match experimental Deltam^2
+        # Use Deltam^2_2_1 = m_2^2 - m_1^2 to set absolute scale
         if ordering == 'IH':
-            # Inverted: m₃ < m₁ < m₂
+            # Inverted: m_3 < m_1 < m_2
             m3_sq = eigenvalues[0]
             m2_sq = m3_sq + self.Delta_m32_sq_IH + self.Delta_m21_sq
             m1_sq = m3_sq + self.Delta_m32_sq_IH
             masses = np.sqrt([m1_sq, m2_sq, m3_sq])
         else:
-            # Normal: m₁ < m₂ < m₃
+            # Normal: m_1 < m_2 < m_3
             m1_sq = eigenvalues[0]
             m2_sq = m1_sq + self.Delta_m21_sq
             m3_sq = m2_sq + self.Delta_m32_sq_NH
@@ -208,12 +208,12 @@ class NeutrinoMassOrderingCalculator:
 
         v8.2 Changes:
         - Now properly recomputes full index with literature-based cycle signs
-        - Varies flux F and moduli perturbations, not b₃ (b₃=24 is fixed)
+        - Varies flux F and moduli perturbations, not b_3 (b_3=24 is fixed)
         - Each sample gets new random cycle orientation realization
 
         Vary geometric parameters:
         - Moduli perturbations: 5% (each cycle independently varied)
-        - Flux quantization: F ~ √6 ± 5%
+        - Flux quantization: F ~ √6 +/- 5%
 
         Args:
             n_samples: Number of MC samples
@@ -293,8 +293,8 @@ class NeutrinoMassOrderingCalculator:
             print()
 
             print("MONTE CARLO RESULTS (n=1000):")
-            print(f"  P(IH) = {mc_results['prob_IH_mean']*100:.1f}% ± {mc_results['prob_IH_std']*100:.1f}%")
-            print(f"  P(NH) = {(1-mc_results['prob_IH_mean'])*100:.1f}% ± {mc_results['prob_IH_std']*100:.1f}%")
+            print(f"  P(IH) = {mc_results['prob_IH_mean']*100:.1f}% +/- {mc_results['prob_IH_std']*100:.1f}%")
+            print(f"  P(NH) = {(1-mc_results['prob_IH_mean'])*100:.1f}% +/- {mc_results['prob_IH_std']*100:.1f}%")
             print(f"  Median P(IH) = {mc_results['prob_IH_median']*100:.1f}%")
             print()
 
