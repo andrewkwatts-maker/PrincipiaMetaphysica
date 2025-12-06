@@ -1,0 +1,282 @@
+% ============================================
+% COLOR-BLIND FRIENDLY COLOR DEFINITIONS
+% ============================================
+% For Principia Metaphysica APS submission
+%
+% Based on Paul Tol's color schemes for colorblindness accessibility
+% Reference: https://personal.sron.nl/~pault/
+%
+% These colors are distinguishable for:
+% - Deuteranopia (red-green colorblindness, most common)
+% - Protanopia (red-green colorblindness, less common)
+% - Tritanopia (blue-yellow colorblindness, rare)
+% - Normal color vision
+%
+% IMPORTANT: Always combine color with line style/markers/patterns
+% ============================================
+
+% Required packages
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+
+% ============================================
+% PRIMARY PALETTE (Paul Tol's Bright Scheme)
+% ============================================
+% Use these for most figures. They are maximally distinct.
+
+\definecolor{cbBlue}{RGB}{0,114,178}        % Blue - primary color
+\definecolor{cbOrange}{RGB}{213,94,0}       % Orange/Vermillion - secondary color
+\definecolor{cbGreen}{RGB}{0,158,115}       % Bluish green - tertiary color
+\definecolor{cbYellow}{RGB}{240,228,66}     % Yellow - caution color
+\definecolor{cbPurple}{RGB}{204,121,167}    % Reddish purple
+\definecolor{cbRed}{RGB}{230,159,0}         % Orange-red (NOT true red!)
+
+% Note: "cbRed" is actually orange-red, safe for colorblind users
+% Never use pure red (#FF0000) or pure green (#00FF00) together!
+
+% ============================================
+% EXTENDED PALETTE (Additional Colors)
+% ============================================
+% For complex figures with many data series
+
+\definecolor{cbDarkBlue}{RGB}{0,68,136}     % Darker blue variant
+\definecolor{cbLightBlue}{RGB}{86,180,233}  % Lighter blue variant
+\definecolor{cbDarkGreen}{RGB}{0,109,44}    % Darker green variant
+\definecolor{cbLightGreen}{RGB}{102,194,165} % Lighter green variant
+\definecolor{cbDarkOrange}{RGB}{179,88,6}   % Darker orange variant
+\definecolor{cbLightOrange}{RGB}{253,184,99} % Lighter orange variant
+
+% ============================================
+% GRAYSCALE (For shading/backgrounds)
+% ============================================
+
+\definecolor{cbGray10}{gray}{0.1}   % Very dark gray (10% white)
+\definecolor{cbGray30}{gray}{0.3}   % Dark gray
+\definecolor{cbGray50}{gray}{0.5}   % Medium gray
+\definecolor{cbGray70}{gray}{0.7}   % Light gray
+\definecolor{cbGray90}{gray}{0.9}   % Very light gray (90% white)
+
+% ============================================
+% USAGE RECOMMENDATIONS
+% ============================================
+%
+% TWO COLORS: Use cbBlue + cbOrange
+%   Example: Theory vs. Experiment, Prediction vs. Data
+%
+% THREE COLORS: Use cbBlue + cbOrange + cbGreen
+%   Example: Three different models or datasets
+%
+% FOUR+ COLORS: Add cbYellow, cbPurple, cbRed in that order
+%   Always supplement with line styles and markers!
+%
+% BACKGROUNDS: Use cbGray90 (very light) or cbGray70 (light)
+%   Ensure 4.5:1 contrast ratio with foreground colors
+%
+% EMPHASIS: Use cbRed (orange-red) sparingly for highlights
+%   Example: Marking exact matches, critical points
+%
+% ============================================
+
+% ============================================
+% TIKZ LINE STYLE DEFINITIONS
+% ============================================
+% Always use varied line styles in addition to colors!
+
+\tikzset{
+  % Basic line styles (use with colors)
+  solid/.style={solid, line width=1.2pt},
+  dashed/.style={dashed, line width=1.2pt},
+  dotted/.style={dotted, line width=1.5pt},  % Thicker for visibility
+  dashdot/.style={dash pattern=on 4pt off 2pt on 1pt off 2pt, line width=1.2pt},
+  dashdotdot/.style={dash pattern=on 4pt off 2pt on 1pt off 2pt on 1pt off 2pt, line width=1.2pt},
+
+  % Thick variants for emphasis
+  thicksolid/.style={solid, line width=2pt},
+  thickdashed/.style={dashed, line width=2pt},
+  thickdotted/.style={dotted, line width=2.5pt},
+
+  % Ultra-thick for key results
+  ultrathick/.style={line width=3pt},
+}
+
+% ============================================
+% TIKZ MARKER DEFINITIONS
+% ============================================
+% Use varied markers in addition to colors and line styles!
+
+\tikzset{
+  % Basic markers
+  markCircle/.style={mark=o, mark size=2.5pt, mark options={solid}},
+  markSquare/.style={mark=square, mark size=2.5pt, mark options={solid}},
+  markTriangle/.style={mark=triangle, mark size=3pt, mark options={solid}},
+  markDiamond/.style={mark=diamond, mark size=3pt, mark options={solid}},
+  markStar/.style={mark=star, mark size=3pt, mark options={solid}},
+  markPentagon/.style={mark=pentagon, mark size=3pt, mark options={solid}},
+
+  % Filled markers
+  markCircleFilled/.style={mark=*, mark size=2.5pt},
+  markSquareFilled/.style={mark=square*, mark size=2.5pt},
+  markTriangleFilled/.style={mark=triangle*, mark size=3pt},
+  markDiamondFilled/.style={mark=diamond*, mark size=3pt},
+
+  % Larger markers for emphasis
+  markCircleLarge/.style={mark=o, mark size=3.5pt, mark options={solid, thick}},
+  markSquareLarge/.style={mark=square, mark size=3.5pt, mark options={solid, thick}},
+}
+
+% ============================================
+% TIKZ PATTERN DEFINITIONS
+% ============================================
+% Use for filled regions (bar charts, area plots)
+
+\tikzset{
+  % Hatching patterns (combine with colors at ~50% opacity)
+  hatchHorizontal/.style={pattern=horizontal lines, pattern color=black!50},
+  hatchVertical/.style={pattern=vertical lines, pattern color=black!50},
+  hatchDiagonalUp/.style={pattern=north east lines, pattern color=black!50},
+  hatchDiagonalDown/.style={pattern=north west lines, pattern color=black!50},
+  hatchGrid/.style={pattern=grid, pattern color=black!50},
+  hatchDots/.style={pattern=dots, pattern color=black!50},
+
+  % Colored patterns (for area fills)
+  fillBlue/.style={fill=cbBlue!20},
+  fillOrange/.style={fill=cbOrange!20},
+  fillGreen/.style={fill=cbGreen!20},
+  fillYellow/.style={fill=cbYellow!30},  % Lighter to avoid overwhelming
+}
+
+% ============================================
+% COMBINED STYLE PRESETS
+% ============================================
+% Ready-to-use combinations for common scenarios
+
+\tikzset{
+  % Line plot styles (color + line style + marker)
+  linePlot1/.style={cbBlue, solid, markCircle},
+  linePlot2/.style={cbOrange, dashed, markSquare},
+  linePlot3/.style={cbGreen, dotted, markTriangle},
+  linePlot4/.style={cbPurple, dashdot, markDiamond},
+  linePlot5/.style={cbRed, dashdotdot, markStar},
+
+  % Bar chart styles (color + pattern)
+  bar1/.style={fill=cbBlue, draw=black},
+  bar2/.style={fill=cbOrange, draw=black},
+  bar3/.style={fill=cbGreen, draw=black},
+  bar1Hatched/.style={fill=cbBlue!50, hatchDiagonalUp, draw=black},
+  bar2Hatched/.style={fill=cbOrange!50, hatchDiagonalDown, draw=black},
+
+  % Emphasis styles
+  highlight/.style={cbRed, line width=2pt},
+  exactMatch/.style={fill=cbRed, draw=black, line width=1.5pt},
+  withinOneSigma/.style={fill=cbBlue, draw=black},
+  withinTwoSigma/.style={fill=cbLightBlue, draw=black},
+}
+
+% ============================================
+% USAGE EXAMPLES
+% ============================================
+
+% Example 1: Simple line plot with two data series
+% \begin{tikzpicture}
+%   \draw[linePlot1] (0,0) -- (1,1) -- (2,1.5) -- (3,2);
+%   \draw[linePlot2] (0,0.5) -- (1,0.8) -- (2,1.1) -- (3,1.3);
+% \end{tikzpicture}
+
+% Example 2: Bar chart with three categories
+% \begin{tikzpicture}
+%   \filldraw[bar1] (0,0) rectangle (0.8,2);
+%   \filldraw[bar2] (1,0) rectangle (1.8,3);
+%   \filldraw[bar3] (2,0) rectangle (2.8,1.5);
+% \end{tikzpicture}
+
+% Example 3: Scatter plot with markers
+% \begin{tikzpicture}
+%   \foreach \x/\y in {0/0, 0.5/0.8, 1/1.2, 1.5/1.8, 2/2.1}
+%     \draw[cbBlue, markCircleFilled] (\x,\y) node {};
+%   \foreach \x/\y in {0/0.5, 0.5/0.6, 1/1.0, 1.5/1.3, 2/1.6}
+%     \draw[cbOrange, markSquareFilled] (\x,\y) node {};
+% \end{tikzpicture}
+
+% Example 4: Filled region under curve
+% \begin{tikzpicture}
+%   \fill[fillBlue] (0,0) -- (0,1) -- (1,1.5) -- (2,1.8) -- (3,2) -- (3,0) -- cycle;
+%   \draw[cbBlue, thicksolid] (0,1) -- (1,1.5) -- (2,1.8) -- (3,2);
+% \end{tikzpicture}
+
+% ============================================
+% PGFPLOTS COMPATIBILITY
+% ============================================
+% For use with pgfplots package
+
+% Define cycle list for automatic color/style cycling
+\pgfplotscreateplotcyclelist{colorblind}{%
+  {cbBlue, solid, mark=o, mark options={solid, fill=cbBlue}},
+  {cbOrange, dashed, mark=square, mark options={solid, fill=cbOrange}},
+  {cbGreen, dotted, mark=triangle, mark options={solid, fill=cbGreen}},
+  {cbPurple, dashdot, mark=diamond, mark options={solid, fill=cbPurple}},
+  {cbRed, dashdotdot, mark=star, mark options={solid, fill=cbRed}},
+}
+
+% Usage in pgfplots:
+% \begin{axis}[cycle list name=colorblind]
+%   \addplot coordinates {(0,0) (1,1) (2,2)};
+%   \addplot coordinates {(0,0.5) (1,1.2) (2,1.8)};
+% \end{axis}
+
+% ============================================
+% COLOR TESTING
+% ============================================
+% Uncomment to generate color swatch page for testing
+
+% \newpage
+% \section*{Colorblind-Safe Color Palette}
+% \begin{tikzpicture}
+%   % Primary palette
+%   \foreach \color/\name/\y in {
+%     cbBlue/Blue/0,
+%     cbOrange/Orange/1,
+%     cbGreen/Green/2,
+%     cbYellow/Yellow/3,
+%     cbPurple/Purple/4,
+%     cbRed/Orange-Red/5
+%   } {
+%     \filldraw[\color] (0,-\y) rectangle (2,-\y-0.8);
+%     \node[right] at (2.2,-\y-0.4) {\name};
+%   }
+% \end{tikzpicture}
+
+% ============================================
+% ACCESSIBILITY NOTES
+% ============================================
+%
+% 1. ALWAYS combine color with line style and/or markers
+%    - Color alone is insufficient for colorblind readers
+%    - Line style ensures grayscale printing is readable
+%
+% 2. Test your figures in grayscale
+%    - Print preview in black & white
+%    - All lines/regions should remain distinguishable
+%
+% 3. Use colorblindness simulators
+%    - Coblis: https://www.color-blindness.com/coblis-color-blindness-simulator/
+%    - Color Oracle: https://colororacle.org/
+%
+% 4. Minimum contrast ratios (WCAG AA standard)
+%    - Text: 4.5:1 for normal text, 3:1 for large text
+%    - Graphics: 3:1 for meaningful graphics
+%    - Use WebAIM contrast checker: https://webaim.org/resources/contrastchecker/
+%
+% 5. Caption accessibility
+%    - Explicitly describe colors in captions
+%    - "Solid blue line shows theory, dashed orange line shows experiment"
+%    - Don't rely on readers perceiving colors correctly
+%
+% 6. Legend placement
+%    - Place legends inside plot area when possible
+%    - Ensure legend labels match line styles exactly
+%    - Use \addlegendentry in pgfplots for consistency
+%
+% ============================================
+% END OF COLOR SETUP
+% ============================================

@@ -1,0 +1,516 @@
+% ============================================
+% PRINCIPIA METAPHYSICA - KEY EQUATIONS
+% Extracted from principia-metaphysica-paper.html
+% Converted to LaTeX for REVTeX submission
+% Generated: 2025-12-06
+% ============================================
+
+% ============================================
+% SECTION 2.1: GEOMETRIC FRAMEWORK
+% ============================================
+
+% Master 26D Action
+\begin{equation}
+\label{eq:master-action-26d}
+S = \int d^{26}X \sqrt{-G} \left[ R + \bar{\Psi}_P \left(i\Gamma^M D_M - m\right) \Psi_P + \mathcal{L}_{\text{Sp}(2,\mathbb{R})} \right]
+\end{equation}
+
+% 26D spacetime decomposition
+\begin{equation}
+\label{eq:26d-decomposition}
+M^{26} = M^{(4,2)} \times K_{\text{Pneuma}} \times \tilde{K}_{\text{Pneuma}}
+\end{equation}
+
+% Sp(2,R) gauge constraints (eliminate ghosts from 2nd time)
+\begin{equation}
+\label{eq:sp2r-constraints}
+X^2 = 0, \quad X \cdot P = 0, \quad P^2 + M^2 = 0
+\end{equation}
+
+% Dimensional reduction chain
+\begin{equation}
+\label{eq:dimensional-reduction}
+M^{26}(24,2) \xrightarrow{\text{Sp}(2,\mathbb{R})} M^{13}(12,1) \xrightarrow{G_2} M^6(5,1)
+\end{equation}
+
+% Two-time combination
+\begin{equation}
+\label{eq:two-time-combination}
+t_{\text{total}} = t_{\text{therm}} + \beta \cdot t_{\text{ortho}}, \quad \beta = \cos(\theta_{\text{mirror}})
+\end{equation}
+
+% F(R,T,τ) gravity action
+\begin{equation}
+\label{eq:frt-gravity-action}
+S_{\text{grav}} = \int d^4x \sqrt{|g|} \, F(R, T, \tau)
+\end{equation}
+
+% F(R,T,τ) form
+\begin{equation}
+\label{eq:frt-form}
+F(R, T, \tau) = R + f(T) + \lambda_\tau \tau + \Lambda(\tau)
+\end{equation}
+
+% Condensate gap equation
+\begin{equation}
+\label{eq:condensate-gap}
+\Delta = \frac{\lambda v}{1 + g \cdot t_{\text{ortho}}/E_F}
+\end{equation}
+
+% Clifford algebra in 26D
+\begin{equation}
+\label{eq:clifford-26d}
+\{\Gamma^M, \Gamma^N\} = 2G^{MN} I_{8192}, \quad \dim = 2^{13} = 8192
+\end{equation}
+
+% Clifford algebra in effective 13D
+\begin{equation}
+\label{eq:clifford-13d}
+\{\Gamma^M_{\text{eff}}, \Gamma^N_{\text{eff}}\} = 2\eta^{MN} I_{64}, \quad \dim = 2^6 = 64
+\end{equation}
+
+% Anomaly cancellation (central charge)
+\begin{align}
+\label{eq:central-charge-26d}
+c_{\text{total}} &= c_{\text{matter}} + c_{\text{ghost}} = 26 + (-26 + 2) = 2 \\
+c_{\text{matter,eff}} &= 24 \quad \Rightarrow \quad c_{\text{total}} = 24 - 26 + 2 = 0
+\label{eq:central-charge-effective}
+\end{align}
+
+% 13D effective spacetime
+\begin{equation}
+\label{eq:13d-effective}
+M^{13}_{\text{eff}} = M^6_{\text{bulk}} \times G_2^{\text{Pneuma}}
+\end{equation}
+
+% Brane structure
+\begin{equation}
+\label{eq:brane-decomposition}
+M^{13}_{\text{eff}} = (B_1^3 \oplus B_2^3 \oplus B_3^3 \oplus B_4^3) \times \mathbb{R}_{t_{\text{therm}}}
+\end{equation}
+
+% Octonion-inspired dimension split
+\begin{equation}
+\label{eq:octonion-dimensions}
+D = 13 = 1 + 4 + 8 = \dim(\mathbb{R}) + \dim(\mathbb{H}) + \dim(\mathbb{O})
+\end{equation}
+
+% Planck mass relation
+\begin{equation}
+\label{eq:planck-mass}
+M_{\text{Pl}}^2 = M_*^{11} \cdot V_8
+\end{equation}
+
+% 4D effective Lagrangian
+\begin{equation}
+\label{eq:4d-lagrangian}
+\mathcal{L}_{\text{4D}} = f(R, T, \tau) + \mathcal{L}_{\text{SM}} + y_{ij} \bar{f}_i f_j \phi + \mathcal{L}_{\phi_M}
+\end{equation}
+
+
+% ============================================
+% SECTION 2.2: TOPOLOGY AND GENERATIONS
+% ============================================
+
+% Euler characteristic formula
+\begin{equation}
+\label{eq:euler-char-formula}
+\chi_{\text{eff}} = b_0 - b_1 + b_2 - b_3 + b_4 - b_5 + b_6 - b_7
+\end{equation}
+
+% Bare Euler characteristic
+\begin{equation}
+\label{eq:euler-char-bare}
+\chi_{\text{bare}} = 1 - 0 + 4 - 24 + 24 - 0 + 0 - 1 = 4
+\end{equation}
+
+% Flux-dressed Euler characteristic (CRITICAL PREDICTION!)
+\begin{equation}
+\label{eq:euler-char-effective}
+\chi_{\text{eff}}(G_2) = 144 \quad \text{(from flux-dressed TCS $G_2$ topology)}
+\end{equation}
+
+% Generation count formula (CRITICAL PREDICTION!)
+\begin{equation}
+\label{eq:generation-count}
+n_{\text{gen}} = \frac{\chi_{\text{eff}}}{48} = \frac{144}{48} = 3
+\end{equation}
+
+% M2-brane count
+\begin{equation}
+\label{eq:m2-brane-count}
+N_{M2} = \frac{\chi_{\text{eff}}(G_2)}{24}
+\end{equation}
+
+% TCS G2 construction
+\begin{equation}
+\label{eq:tcs-g2}
+G_2^{\text{TCS}} = (Z_+ \times_\theta Z_-) / S^1
+\end{equation}
+
+% G2 associative calibration
+\begin{equation}
+\label{eq:g2-calibration}
+d\varphi = 0, \quad d(*\varphi) = 0
+\end{equation}
+
+% G2 associative 3-cycles
+\begin{equation}
+\label{eq:g2-3cycles}
+G_2^{\text{Pneuma}} \supset \Sigma_1 \cup \Sigma_2 \cup \Sigma_3 \cup \Sigma_4 \quad \text{(associative 3-cycles)}
+\end{equation}
+
+
+% ============================================
+% SECTION 2.3: GAUGE UNIFICATION
+% ============================================
+
+% I*_1 ↔ D_5 singularity (SO(10) emergence)
+\begin{equation}
+\label{eq:d5-singularity}
+I^*_1 \leftrightarrow D_5 \quad \Rightarrow \quad \text{gauge group } \mathfrak{so}(10)
+\end{equation}
+
+% Discriminant non-vanishing (elliptic fibration)
+\begin{equation}
+\label{eq:discriminant-elliptic}
+4f^3 + 27g^2 \neq 0 \quad \text{(generically on } S\text{)}
+\end{equation}
+
+% RG evolution of gauge couplings
+\begin{equation}
+\label{eq:rg-evolution}
+\alpha_i^{-1}(\mu) = \alpha_i^{-1}(M_Z) - \frac{b_i}{2\pi} \ln\left(\frac{\mu}{M_Z}\right)
+\end{equation}
+
+% GUT scale and coupling (CRITICAL PREDICTION!)
+\begin{equation}
+\label{eq:gut-scale}
+M_{\text{GUT}} \approx 2 \times 10^{16} \text{ GeV}, \quad \alpha_{\text{GUT}}^{-1} \approx 24
+\end{equation}
+
+% Torsion parameter (CRITICAL - geometrically derived!)
+\begin{equation}
+\label{eq:torsion-omega}
+T_\omega = \ln\left(4 \sin^2\left(\frac{5\pi}{48}\right)\right) = -0.884
+\end{equation}
+
+% Log scale ratio
+\begin{equation}
+\label{eq:log-scale-ratio}
+\ln\left(\frac{M_{\text{Pl}}}{M_{\text{GUT,base}}}\right) = 6.519
+\end{equation}
+
+% Warp scaling parameter
+\begin{equation}
+\label{eq:warp-parameter}
+s = \frac{\log_{\text{scale}} - T_\omega}{\text{flux}_{\text{norm}}}
+\end{equation}
+
+% Warp coupling constant
+\begin{equation}
+\label{eq:warp-coupling}
+c_{\text{warp}} = \frac{3}{22 - \nu/12} = \frac{3}{22 - 24/12} = \frac{3}{20}
+\end{equation}
+
+% GUT mass with warping (geometrically determined!)
+\begin{equation}
+\label{eq:gut-mass-warped}
+M_{\text{GUT}} = M_{\text{GUT,base}} \times (1 + c_{\text{warp}} \times s) = 2.118 \times 10^{16} \text{ GeV}
+\end{equation}
+
+% KK threshold corrections
+\begin{equation}
+\label{eq:kk-threshold}
+\Delta_{\text{TC}} = +\frac{k_i}{2\pi} \log\left(\frac{M_{\text{GUT}}}{M_*}\right)
+\end{equation}
+
+% Beta function with KK modes
+\begin{equation}
+\label{eq:beta-kk}
+\beta_{\text{KK}}(g) = \beta_{\text{SM}}(g) + \frac{2}{2\pi} \alpha_i^2 \left(\frac{\mu}{M_*}\right)^2
+\end{equation}
+
+
+% ============================================
+% SECTION 2.4: FERMION SECTOR
+% ============================================
+
+% SO(10) 16-plet
+\begin{equation}
+\label{eq:so10-16plet}
+\mathbf{16} = (u, d, e, \nu)_L + (u^c, d^c, e^c, \nu^c)_R
+\end{equation}
+
+% Neutrino mass Lagrangian
+\begin{equation}
+\label{eq:neutrino-mass-lagrangian}
+\mathcal{L}_{\text{mass}} = -m_D \bar{\nu}_L \nu_R - \frac{1}{2} M_R \bar{\nu}_R^c \nu_R + \text{h.c.}
+\end{equation}
+
+% Seesaw mass matrix
+\begin{equation}
+\label{eq:seesaw-matrix}
+M = \begin{pmatrix} 0 & m_D \\ m_D & M_R \end{pmatrix}
+\end{equation}
+
+% Seesaw formula (type-I)
+\begin{equation}
+\label{eq:seesaw-formula}
+m_\nu \approx \frac{m_D^2}{M_R}, \quad M_N \approx M_R
+\end{equation}
+
+% Neutrino mass scale estimate
+\begin{equation}
+\label{eq:neutrino-mass-scale}
+m_\nu \sim \frac{(170 \text{ GeV})^2}{10^{16} \text{ GeV}} \sim 0.003 \text{ eV}
+\end{equation}
+
+% Yukawa coupling from wavefunction overlap
+\begin{equation}
+\label{eq:yukawa-overlap}
+Y_{\alpha\beta\gamma} = \int \psi_\alpha \psi_\beta \varphi_\gamma \, dV_{G_2}
+\end{equation}
+
+% CKM matrix structure (from geometry)
+\begin{equation}
+\label{eq:ckm-structure}
+C_{e\pi^0} \sim \text{Tr}\left(V_{\text{CKM}} Y_{\text{up}} V_{\text{CKM}}^\dagger \times Y_{\text{down}} \times Y_{\text{lepton}}\right)
+\end{equation}
+
+% Branching ratio formula
+\begin{equation}
+\label{eq:branching-ratio}
+\text{BR}(i) = \frac{|C_i|^2}{\sum_j |C_j|^2}
+\end{equation}
+
+
+% ============================================
+% SECTION 2.5: COSMOLOGY AND DARK ENERGY
+% ============================================
+
+% Tomita-Takesaki modular flow
+\begin{equation}
+\label{eq:modular-flow}
+\rho = \frac{e^{-K}}{Z}, \quad \alpha_t(A) = e^{iKt} A e^{-iKt}
+\end{equation}
+
+% KMS condition
+\begin{equation}
+\label{eq:kms-condition}
+\omega(AB) = \omega(B \sigma_i(A)) \quad \text{[KMS condition]}
+\end{equation}
+
+% Thermal entropy current
+\begin{equation}
+\label{eq:thermal-current}
+J_S^\mu = s u^\mu + \frac{q^\mu}{T}
+\end{equation}
+
+% Thermal time parameter
+\begin{equation}
+\label{eq:thermal-time-parameter}
+\alpha_T = \frac{d \ln \tau}{d \ln a} - \frac{d \ln H}{d \ln a}
+\end{equation}
+
+% Thermal time scaling
+\begin{align}
+\tau &= 1/\Gamma \propto a \quad \Rightarrow \quad \frac{d \ln \tau}{d \ln a} = +1 \label{eq:tau-scaling} \\
+H &\propto a^{-3/2} \quad \Rightarrow \quad \frac{d \ln H}{d \ln a} = -3/2 \label{eq:hubble-scaling}
+\end{align}
+
+% Thermal parameter value
+\begin{equation}
+\label{eq:thermal-parameter-value}
+\alpha_T(0) = \left(\frac{d \ln \tau}{d \ln a} - \frac{d \ln H}{d \ln a}\right) = (+1) - (-3/2) = 5/2
+\end{equation}
+
+% Mirror correction
+\begin{equation}
+\label{eq:mirror-correction}
+\alpha_T = \alpha_T(0) + \delta\alpha_{\text{mirror}} = 2.5 + 0.2 = 2.7
+\end{equation}
+
+% Mashiach field potential
+\begin{equation}
+\label{eq:mashiach-potential}
+V(\varphi) = V_0 e^{-\lambda\varphi/M_{\text{Pl}}} \left[1 + A \cos(\omega\varphi + \theta)\right]
+\end{equation}
+
+% Dark energy equation of state evolution (CRITICAL PREDICTION!)
+\begin{equation}
+\label{eq:dark-energy-evolution}
+w(z) = w_0 \left[1 + \frac{\alpha_T}{3} \ln(1+z)\right]
+\end{equation}
+
+% w_0 from effective dimensions (CRITICAL - geometrically derived!)
+\begin{equation}
+\label{eq:w0-from-dimensions}
+w_0 = -\frac{2(D_{\text{eff}} - 1)}{D_{\text{eff}} + 1} = -\frac{2(12.577 - 1)}{12.577 + 1} = -0.853
+\end{equation}
+
+% Mashiach field equation of motion
+\begin{equation}
+\label{eq:mashiach-eom}
+\ddot{\varphi} + 3H\dot{\varphi} + \Gamma\dot{\varphi} + V'(\varphi) = 0
+\end{equation}
+
+% Slow-roll approximation
+\begin{equation}
+\label{eq:slow-roll}
+(3H + \Gamma)\dot{\varphi} \approx -V'(\varphi)
+\end{equation}
+
+% w(z) with activation
+\begin{equation}
+\label{eq:wz-activation}
+w(z) = w_0 \left[1 + \frac{\alpha_T}{3} \ln\left(\frac{1+z}{z_{\text{act}}}\right)\right]
+\end{equation}
+
+% Planck breathing mode bias
+\begin{equation}
+\label{eq:planck-bias}
+\Delta w_0^{\text{Planck}} = -0.07 \pm 0.03
+\end{equation}
+
+
+% ============================================
+% SECTION 2.6: PROTON DECAY
+% ============================================
+
+% Effective dimension-6 operator
+\begin{equation}
+\label{eq:proton-decay-operator}
+\mathcal{L}_{\text{eff}} = \frac{g_{\text{GUT}}^2}{M_X^2} \epsilon_{ijk} (u_i^c d_j)(Q_k L)
+\end{equation}
+
+% Proton decay amplitude
+\begin{equation}
+\label{eq:proton-decay-amplitude}
+\Gamma(p \to e^+ \pi^0) = \frac{m_p}{32\pi} |A|^2 \left(\frac{\alpha_{\text{GUT}}}{M_X}\right)^2
+\end{equation}
+
+% Proton lifetime formula (CRITICAL PREDICTION!)
+\begin{equation}
+\label{eq:proton-lifetime}
+\tau_p = \Gamma^{-1} \approx \frac{M_X^4}{m_p^5} \times \frac{1}{\alpha_{\text{GUT}}^2}
+\end{equation}
+
+% Proton lifetime numerical value
+\begin{equation}
+\label{eq:proton-lifetime-value}
+\tau_p \approx \frac{(2.118 \times 10^{16} \text{ GeV})^4}{(0.94 \text{ GeV})^5 \times (0.0425)^2} = 3.83 \times 10^{34} \text{ years}
+\end{equation}
+
+
+% ============================================
+% SECTION 2.7: KK GRAVITON SPECTRUM
+% ============================================
+
+% KK graviton mass (first mode) (CRITICAL PREDICTION!)
+\begin{equation}
+\label{eq:kk-graviton-mass}
+m_{\text{KK}}^{(1)} = 5.0 \pm 1.5 \text{ TeV}
+\end{equation}
+
+% KK mass tower
+\begin{align}
+m_{\text{KK}}^{(1)} &= 5.0 \text{ TeV} \label{eq:kk-m1} \\
+m_{\text{KK}}^{(2)} &= 10.0 \text{ TeV} \label{eq:kk-m2} \\
+m_{\text{KK}}^{(3)} &= 15.0 \text{ TeV} \label{eq:kk-m3}
+\end{align}
+
+% Discovery significance
+\begin{equation}
+\label{eq:kk-discovery}
+\text{Discovery at HL-LHC: } 6.8\sigma \text{ with } 3000 \text{ fb}^{-1}
+\end{equation}
+
+
+% ============================================
+% SECTION 2.8: PMNS MATRIX PREDICTIONS
+% ============================================
+
+% PMNS mixing angles (from G_2 geometry) (CRITICAL PREDICTIONS!)
+\begin{align}
+\theta_{12} &= 33.59^\circ \pm 0.24^\circ \label{eq:pmns-theta12} \\
+\theta_{23} &= 47.20^\circ \pm 0.00^\circ \label{eq:pmns-theta23} \\
+\theta_{13} &= 8.57^\circ \pm 0.01^\circ \label{eq:pmns-theta13} \\
+\delta_{CP} &= 235^\circ \pm 0.1^\circ \label{eq:pmns-deltacp}
+\end{align}
+
+% PMNS maximal mixing deviation
+\begin{equation}
+\label{eq:pmns-deviation}
+\theta_{23} - 45^\circ = 2.2^\circ \quad \text{(octant determination)}
+\end{equation}
+
+% Atmospheric mixing from torsion
+\begin{equation}
+\label{eq:theta23-from-torsion}
+\alpha_4 + \alpha_5 = \frac{\ln(M_{\text{Pl}}/M_{\text{GUT}}) - T_\omega}{2\pi \times \text{flux}_{\text{norm}}}
+\end{equation}
+
+% Asymmetry parameter
+\begin{equation}
+\label{eq:theta23-asymmetry}
+\alpha_4 - \alpha_5 = \frac{\Delta\theta_{23}}{n_{\text{gen}}} = \frac{2.2^\circ - 0^\circ}{3}
+\end{equation}
+
+% Torsion-derived α parameters
+\begin{equation}
+\label{eq:alpha-parameters}
+\alpha_4 = \frac{(1.667 + 0.733)}{2} = 0.956, \quad \alpha_5 = \frac{(1.667 - 0.733)}{2} = 0.222
+\end{equation}
+
+
+% ============================================
+% SECTION 2.9: BELL INEQUALITY AND CHSH
+% ============================================
+
+% CHSH inequality (entanglement test)
+\begin{equation}
+\label{eq:chsh-inequality}
+|\langle \text{CHSH} \rangle| \leq 2 \text{ (local)} \quad \text{vs} \quad |\langle \text{CHSH} \rangle| \leq 2\sqrt{2} \text{ (quantum)}
+\end{equation}
+
+
+% ============================================
+% SECTION 2.10: FRIEDMANN EQUATIONS
+% ============================================
+
+% Modified Friedmann equations (F(R,T,τ) gravity)
+\begin{equation}
+\label{eq:friedmann-1}
+H^2 = \frac{8\pi G}{3} \rho_{\text{eff}} - \frac{k}{a^2} + \frac{\Lambda_{\text{eff}}}{3}
+\end{equation}
+
+\begin{equation}
+\label{eq:friedmann-2}
+\dot{H} = -4\pi G (\rho + p)_{\text{eff}} + \Gamma_\tau \tau
+\end{equation}
+
+% Effective cosmological constant
+\begin{equation}
+\label{eq:lambda-effective}
+\Lambda_{\text{eff}}(a) = \Lambda_0 \left(1 + \epsilon \tau(a)\right)
+\end{equation}
+
+
+% ============================================
+% CRITICAL VALUES SUMMARY
+% ============================================
+
+% Core predictions with numerical values
+\begin{align}
+\chi_{\text{eff}} &= 144 \quad \text{(flux quantization)} \label{eq:chi-eff-value} \\
+n_{\text{gen}} &= 3 \quad \text{(from } \chi_{\text{eff}}/48\text{)} \label{eq:ngen-value} \\
+M_{\text{GUT}} &= 2.118 \times 10^{16} \text{ GeV} \quad \text{(from } T_\omega\text{)} \label{eq:mgut-value} \\
+w_0 &= -0.853 \quad \text{(from } D_{\text{eff}} = 12.577\text{)} \label{eq:w0-value} \\
+\tau_p &= 3.83 \times 10^{34} \text{ years} \quad \text{(median)} \label{eq:taup-value} \\
+\alpha_{\text{GUT}}^{-1} &= 23.54 \quad \text{(3-loop RG)} \label{eq:alphagut-value}
+\end{align}
+
+% ============================================
+% END OF EQUATIONS
+% ============================================
