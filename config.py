@@ -1004,6 +1004,7 @@ class FluxQuantization:
     # TCS G₂ topological data
     B2 = 4                       # h^2 Betti number
     B3 = 24                      # h^3 Betti number (associative 3-cycles)
+    B5 = 4                       # h^5 Betti number (Poincaré duality: b₅ = b₂)
     CHI_RAW = 300               # Raw Euler characteristic (before flux)
 
     # Flux parameters
