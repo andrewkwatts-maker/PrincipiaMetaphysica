@@ -1921,6 +1921,220 @@ computational verification via G2_Manifold_Construction.py.
                 "values": []
             }
         ]
+    },
+
+    "index_page": {
+        "pages": [
+            {
+                "file": "https://www.metaphysicæ.com/index.html",
+                "section": "#quick-facts",
+                "order": 1,
+                "include": [
+                    "title",
+                    "validation_metrics",
+                    "quick_features",
+                    "resolved_issues"
+                ],
+                "hover_details": True,
+                "template_type": "Index Page"
+            }
+        ],
+        "title": "Index Page - Validation and Features",
+        "subtitle": "Key Theoretical Features & Validations",
+        "content": """
+The index page presents a comprehensive overview of Principia Metaphysica's validation status,
+key theoretical features, and resolved issues. All metrics are dynamically populated from
+theory_output.json and PM constants via JavaScript.
+
+Validation metrics include predictions within 1σ, exact matches, and DESI DR2 confirmation.
+Quick features highlight the 8 major achievements: 3 generations, dark energy w₀, dimension
+parameters, PMNS matrix, M_GUT derivation, proton decay prediction, KK spectrum, and neutrino
+mass ordering. Resolved issues section details the 8 critical fixes achieved in v8.4.
+        """.strip(),
+        "related_simulation": "validation",
+        "values": [
+            "predictions_within_1sigma",
+            "total_predictions",
+            "exact_matches",
+            "w0_deviation_sigma",
+            "chi_eff",
+            "n_gen",
+            "w0_PM",
+            "d_eff",
+            "w0_DESI",
+            "w0_error",
+            "alpha_4",
+            "alpha_5",
+            "theta_23_nufit",
+            "theta_13_nufit",
+            "delta_cp_sigma",
+            "M_GUT",
+            "tau_p_median",
+            "m1",
+            "m1_std",
+            "functional_test_sigma_preference",
+            "prob_IH_mean",
+            "tau_p_uncertainty_oom",
+            "average_sigma",
+            "w0_sigma"
+        ],
+        "topics": [
+            {
+                "id": "validation_metrics",
+                "title": "Validation Metrics Overview",
+                "template_type": "subsection",
+                "values": [
+                    "predictions_within_1sigma",
+                    "total_predictions",
+                    "exact_matches",
+                    "w0_deviation_sigma"
+                ],
+                "topics": [
+                    {
+                        "id": "predictions_within_1sigma",
+                        "title": "Predictions within 1σ",
+                        "description": "Number of theoretical predictions matching experimental data within 1 standard deviation",
+                        "template_type": "metric",
+                        "values": ["predictions_within_1sigma", "total_predictions"]
+                    },
+                    {
+                        "id": "exact_matches",
+                        "title": "Exact Matches",
+                        "description": "Number of predictions with 0.00σ deviation (exact match)",
+                        "template_type": "metric",
+                        "values": ["exact_matches"]
+                    }
+                ]
+            },
+            {
+                "id": "quick_features",
+                "title": "Quick Features Grid",
+                "template_type": "subsection",
+                "values": [],
+                "topics": [
+                    {
+                        "id": "generation_count_derivation",
+                        "title": "3 Fermion Generations",
+                        "description": "Exact derivation from χ_eff=144 via G₂ manifold topology",
+                        "template_type": "feature",
+                        "values": ["chi_eff", "n_gen", "b2", "b3"]
+                    },
+                    {
+                        "id": "desi_validation",
+                        "title": "Dark Energy w₀",
+                        "description": "DESI DR2 validation of w₀ from effective dimension",
+                        "template_type": "feature",
+                        "values": ["w0_PM", "d_eff", "w0_DESI", "w0_error", "w0_deviation_sigma"]
+                    },
+                    {
+                        "id": "alpha_derivation",
+                        "title": "Dimension Parameters",
+                        "description": "α₄ and α₅ from G₂ torsion and neutrino mixing",
+                        "template_type": "feature",
+                        "values": ["alpha_4", "alpha_5"]
+                    },
+                    {
+                        "id": "complete_derivation",
+                        "title": "PMNS Matrix",
+                        "description": "Complete 4-parameter derivation with 0.09σ average agreement",
+                        "template_type": "feature",
+                        "values": ["theta_23", "theta_12", "theta_13", "delta_CP", "average_sigma"]
+                    },
+                    {
+                        "id": "gut_derivation",
+                        "title": "M_GUT from TCS Torsion",
+                        "description": "Geometric derivation of GUT scale from torsion logarithms",
+                        "template_type": "feature",
+                        "values": ["M_GUT", "alpha_GUT_inv"]
+                    },
+                    {
+                        "id": "precision_analysis",
+                        "title": "Proton Decay Complete",
+                        "description": "τ_p with branching ratios, all channels consistent",
+                        "template_type": "feature",
+                        "values": ["tau_p_median", "BR_epi0_mean", "BR_Knu_mean"]
+                    },
+                    {
+                        "id": "discovery_potential",
+                        "title": "KK Spectrum Prediction",
+                        "description": "M_KK = 5.0±1.5 TeV testable at HL-LHC",
+                        "template_type": "feature",
+                        "values": ["m1", "m1_std", "functional_test_sigma_preference"]
+                    },
+                    {
+                        "id": "atiyah_singer_index",
+                        "title": "Neutrino Mass Ordering",
+                        "description": "Inverted Hierarchy at 85.5% confidence from index theorem",
+                        "template_type": "feature",
+                        "values": ["prob_IH_mean", "prob_NH_mean"]
+                    }
+                ]
+            },
+            {
+                "id": "resolved_issues",
+                "title": "Resolved Issues (Geometric Derivations)",
+                "template_type": "subsection",
+                "values": [],
+                "topics": [
+                    {
+                        "id": "generation_count_derivation",
+                        "title": "Generation Count",
+                        "description": "χ_eff=144 from TCS G₂ construction, exact match",
+                        "template_type": "issue",
+                        "values": ["chi_eff", "n_gen"]
+                    },
+                    {
+                        "id": "precision_analysis",
+                        "title": "Proton Decay Precision",
+                        "description": "Uncertainty reduced from 0.8 OOM to 0.170 OOM",
+                        "template_type": "issue",
+                        "values": ["tau_p_uncertainty_oom"]
+                    },
+                    {
+                        "id": "planck_tension_resolution",
+                        "title": "Planck Tension",
+                        "description": "Reduced from 6σ to 1.3σ via logarithmic w(z)",
+                        "template_type": "issue",
+                        "values": ["planck_tension_resolved"]
+                    },
+                    {
+                        "id": "complete_derivation",
+                        "title": "Complete PMNS Matrix",
+                        "description": "All 4 parameters derived, 0.09σ average, 2 exact matches",
+                        "template_type": "issue",
+                        "values": ["average_sigma", "exact_matches"]
+                    },
+                    {
+                        "id": "discovery_potential",
+                        "title": "KK Spectrum Quantified",
+                        "description": "M_KK = 5.0±1.5 TeV with 6.2σ discovery potential",
+                        "template_type": "issue",
+                        "values": ["m1", "m1_std", "functional_test_sigma_preference"]
+                    },
+                    {
+                        "id": "gut_derivation",
+                        "title": "M_GUT Geometric",
+                        "description": "Derived from TCS G₂ torsion logarithms",
+                        "template_type": "issue",
+                        "values": ["M_GUT"]
+                    },
+                    {
+                        "id": "desi_validation",
+                        "title": "DESI DR2 Validation",
+                        "description": "w₀ matches DESI at 0.38σ agreement",
+                        "template_type": "issue",
+                        "values": ["w0_PM", "w0_DESI", "w0_error", "w0_sigma"]
+                    },
+                    {
+                        "id": "dimensional_reduction",
+                        "title": "Dimensional Framework",
+                        "description": "Complete 26D→13D→4D reduction with Sp(2,R) and G₂",
+                        "template_type": "issue",
+                        "values": ["D_bulk", "D_after_sp2r", "D_common"]
+                    }
+                ]
+            }
+        ]
     }
 }
 

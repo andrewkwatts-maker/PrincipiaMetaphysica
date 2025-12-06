@@ -1340,9 +1340,9 @@
      Key Theoretical Features &amp; Validations
     </h2>
     <!-- Dynamic Validation Metrics -->
-    <div class="glass-success" style="max-width: 1000px; margin: 1.5rem auto;">
+    <div id="validation-metrics" class="glass-success" style="max-width: 1000px; margin: 1.5rem auto;" data-topic-id="validation.metrics_overview">
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-      <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+      <div id="metric-within-1sigma" style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
        <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;">
         10 of 14
        </div>
@@ -1350,7 +1350,7 @@
         Predictions within 1σ
        </div>
       </div>
-      <div style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+      <div id="metric-exact-matches" style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.exact_matches">
        <div id="exact-matches" style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">
         3 Exact
        </div>
@@ -1358,7 +1358,7 @@
         Matches (0.00σ)
        </div>
       </div>
-      <div style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;">
+      <div id="metric-desi" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="dark_energy.desi_validation">
        <div style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
         DESI DR2
        </div>
@@ -1374,8 +1374,8 @@
     <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem; font-size: 1.05rem;">
      Geometrically derived parameters with experimental validation
     </p>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+    <div id="quick-features" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;" data-topic-id="quick_features">
+     <div id="feature-generations" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="topology.generation_count_derivation">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ 3 Fermion Generations
       </h4>
@@ -1401,7 +1401,7 @@
        </strong>
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+     <div id="feature-dark-energy" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="dark_energy.desi_validation">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ Dark Energy w₀ =
        <span class="pm-value" data-category="dark_energy" data-format="fixed:4" data-param="w0_PM">
@@ -1433,7 +1433,7 @@
        </strong>
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);">
+     <div id="feature-dimension-params" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);" data-topic-id="shared_dimensions.alpha_derivation">
       <h4 style="color: var(--accent-primary); margin-bottom: 0.75rem;">
        Dimension Parameters α₄, α₅
       </h4>
@@ -1450,7 +1450,7 @@
        Geometrically derived from TCS logarithms
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+     <div id="feature-pmns" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="pmns_matrix.complete_derivation">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ PMNS Matrix (4 parameters)
       </h4>
@@ -1477,7 +1477,7 @@
        , average 0.09σ
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+     <div id="feature-mgut" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="gauge_unification.gut_derivation">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ M
        <sub>
@@ -1496,7 +1496,7 @@
        Geometric derivation (resolved from phenomenological fit)
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+     <div id="feature-proton-decay" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="proton_decay.precision_analysis">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ Proton Decay Complete
       </h4>
@@ -1515,7 +1515,7 @@
        All channels consistent with Super-K bounds, testable by Hyper-K
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+     <div id="feature-kk-spectrum" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="kk_spectrum.discovery_potential">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ KK Spectrum Prediction
       </h4>
@@ -1535,7 +1535,7 @@
        σ discovery potential with 100 fb⁻¹
       </p>
      </div>
-     <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;">
+     <div id="feature-neutrino-ordering" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="neutrino_ordering.atiyah_singer_index">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
        ✓ Neutrino Mass Ordering
       </h4>
@@ -1558,8 +1558,8 @@
     <h3 style="text-align: center; margin: 2rem 0 1.5rem 0; color: var(--accent-primary);">
      Geometric Derivations and Precision Calculations
     </h3>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;">
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+    <div id="resolved-issues" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.25rem; margin-bottom: 2rem;" data-topic-id="validation.resolved_issues">
+     <div id="issue-generation-count" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="topology.generation_count_derivation">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ Generation Count
       </h4>
@@ -1575,7 +1575,7 @@
        (flux-dressed) from G₂ manifold topology. Geometrically derived, exact match.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-proton-decay" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="proton_decay.precision_analysis">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ Proton Decay Precision
       </h4>
@@ -1593,7 +1593,7 @@
        × improvement) via 3-loop RG + Monte Carlo.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-planck-tension" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="dark_energy.planck_tension_resolution">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ Planck Tension
       </h4>
@@ -1605,7 +1605,7 @@
        σ via logarithmic w(z) and F(R,T) bias correction.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-pmns-matrix" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="pmns_matrix.complete_derivation">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ Complete PMNS Matrix
       </h4>
@@ -1625,7 +1625,7 @@
        exact matches.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-kk-spectrum" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="kk_spectrum.discovery_potential">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ KK Spectrum Quantified
       </h4>
@@ -1650,7 +1650,7 @@
        σ expected discovery significance.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-mgut-geometric" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="gauge_unification.gut_derivation">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ M
        <sub>
@@ -1666,7 +1666,7 @@
        GeV, no longer phenomenological fit.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-desi-dr2" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="dark_energy.desi_validation">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ DESI DR2 Validation
       </h4>
@@ -1692,7 +1692,7 @@
        σ agreement.
       </p>
      </div>
-     <div style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;">
+     <div id="issue-dimensional-framework" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="geometric_framework.dimensional_reduction">
       <h4 style="color: #51cf66; margin: 0 0 0.5rem 0; font-size: 1rem;">
        ✓ Dimensional Framework
       </h4>
