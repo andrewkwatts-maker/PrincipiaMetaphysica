@@ -15,17 +15,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Principia Metaphysica - Complete paper sections navigation and overview">
     <title>Paper Sections - Principia Metaphysica</title>
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/formula-expansion.js" defer></script>
     <style>
         /* Horizontal Tabs Component */
         .tabs-container {
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
             border-radius: 16px;
-            border: 1px solid var(--border-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             overflow: hidden;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .tab-list {
@@ -44,7 +46,7 @@
             border-bottom: 3px solid transparent;
             color: var(--text-secondary);
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.95rem;
             font-weight: 500;
             border-radius: 8px 8px 0 0;
@@ -54,12 +56,14 @@
         .tab:hover {
             color: var(--text-primary);
             background: rgba(139, 127, 255, 0.1);
+            transform: translateY(-2px);
         }
 
         .tab.active {
             color: var(--accent-primary);
             background: var(--bg-card);
             border-bottom-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
         }
 
         .tab-content {
@@ -86,15 +90,18 @@
         }
 
         .section-card {
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
             padding: 1.5rem;
             border-radius: 12px;
-            border: 1px solid var(--border-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             text-decoration: none;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             display: block;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
 
         .section-card::before {
@@ -110,7 +117,9 @@
         }
 
         .section-card:hover {
-            transform: translateY(-6px);
+            transform: translateY(-8px) scale(1.02);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
             box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
             border-color: var(--accent-primary);
         }
@@ -231,12 +240,14 @@
 
         /* Overview Section */
         .overview-box {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             padding: 2rem;
             border-radius: 16px;
             margin-bottom: 2rem;
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .overview-box h2 {
@@ -312,9 +323,9 @@
                 <em>26D Two-Time Framework with Signature (24,2)</em>
             </p>
             <p>
-                Navigate through all sections of the unified physics framework. The theory extends
-                to <strong>26 dimensions with two time dimensions</strong>, using Sp(2,R) gauge symmetry to
-                project onto our observable 13D universe. The paper covers Theoretical Foundations, Physical
+                Navigate through all sections of the unified physics framework. The theory achieves complete unification
+                through <strong>26D → 13D → 7D (G₂) → 6D → 4D via M-theory</strong>, deriving all <strong>58+ Standard Model
+                parameters from pure geometry with zero free parameters</strong>. The paper covers Theoretical Foundations, Physical
                 Mechanisms (Standard Model, cosmology, Z₂ mirror sectors), and Experimental Tests with
                 falsifiable predictions including w₀ = -11/13 and w<sub>a</sub> ≈ -0.75 (matching DESI 2024).
             </p>
