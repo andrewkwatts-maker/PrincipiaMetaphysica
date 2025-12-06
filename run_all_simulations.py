@@ -280,6 +280,24 @@ def run_all_simulations(verbose=True):
         print(f"   BR(p->K+nu) = {results['proton_decay_channels']['BR_Knu_mean']*100:.1f}% +/- {results['proton_decay_channels']['BR_Knu_std']*100:.1f}%")
         print(f"   All channels: CONSISTENT")
 
+    # Add X,Y heavy gauge bosons (from config, geometric derivation)
+    results['xy_bosons'] = {
+        'M_X': config.XYGaugeBosonParameters.M_X,
+        'M_Y': config.XYGaugeBosonParameters.M_Y,
+        'tau_estimate': config.XYGaugeBosonParameters.lifetime_estimate(),
+        'charge_X': config.XYGaugeBosonParameters.CHARGE_X,
+        'charge_Y': config.XYGaugeBosonParameters.CHARGE_Y,
+        'N_total_bosons': config.XYGaugeBosonParameters.N_TOTAL_BOSONS,
+        'N_X_bosons': config.XYGaugeBosonParameters.N_X_BOSONS,
+        'N_Y_bosons': config.XYGaugeBosonParameters.N_Y_BOSONS
+    }
+
+    if verbose:
+        print(f"\n7. X,Y Heavy Gauge Bosons (SO(10))...")
+        print(f"   M_X = M_Y = {results['xy_bosons']['M_X']:.3e} GeV (from M_GUT)")
+        print(f"   tau_X,Y ~ {results['xy_bosons']['tau_estimate']:.3e} s")
+        print(f"   Charges: X = ±{results['xy_bosons']['charge_X']:.2f}e, Y = ±{results['xy_bosons']['charge_Y']:.2f}e")
+
     # Add validation summary
     results['validation'] = {
         'proton_decay_status': 'CONSISTENT' if results['proton_decay']['ratio_to_bound'] > 1 else 'TENSION',
