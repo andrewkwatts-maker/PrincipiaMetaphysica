@@ -52,12 +52,13 @@
      * Populate all .pm-value elements with their values
      */
     function setupPMValues() {
-        const elements = document.querySelectorAll('.pm-value');
+        const elements = document.querySelectorAll('.pm-value, [data-category][data-param]');
 
         elements.forEach(el => {
             const category = el.dataset.category;
             const param = el.dataset.param;
             const format = el.dataset.format;
+            const field = el.dataset.field; // Optional: access nested field like "experimental_value"
 
             if (!category || !param) {
                 console.warn('Missing data-category or data-param on element:', el);
@@ -75,19 +76,30 @@
                 return;
             }
 
+            // Get the value - either from a nested field or the main value
+            let value;
+            if (field && obj[field] !== undefined) {
+                value = obj[field];
+            } else {
+                value = obj.value;
+            }
+
             // Use display string if available, otherwise format value
             let displayValue;
             if (format === 'display' && obj.display) {
                 displayValue = obj.display;
+            } else if (typeof value === 'number') {
+                displayValue = formatValue(value, format);
             } else {
-                displayValue = formatValue(obj.value, format);
+                displayValue = value.toString();
             }
 
             // Set the text content
             el.textContent = displayValue;
 
             // Add unit if specified and not already in display
-            if (obj.unit && !el.dataset.noUnit && format !== 'display') {
+            // Don't add unit for nested fields unless explicitly requested
+            if (!field && obj.unit && !el.dataset.noUnit && format !== 'display') {
                 el.textContent += ' ' + obj.unit;
             }
 
