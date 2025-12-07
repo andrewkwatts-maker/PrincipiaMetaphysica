@@ -5,7 +5,7 @@ PRINCIPIA METAPHYSICA v12.7 - Final Neutrino Mass Matrix (Exact Deltas)
 Complete derivation using refined Vol formula for EXACT NuFIT 6.0 match.
 
 v12.7 FINAL FORMULA:
-- Vol_sigma = exp(b₃/(4π)) × sqrt(N_flux)
+- Vol_sigma = exp(b_3/(4pi)) x sqrt(N_flux)
 - This achieves 0.00% error on both solar and atmospheric deltas
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -16,7 +16,7 @@ import numpy as np
 def derive_neutrino_mass_matrix_v12_7():
     """
     v12.7 - Final exact derivation with refined volume formula.
-    Achieves EXACT match to NuFIT 6.0 (0.00% error on both Δm² values).
+    Achieves EXACT match to NuFIT 6.0 (0.00% error on both Delta_m² values).
     """
 
     # Triple intersection numbers (from CHNP #187)
@@ -45,7 +45,7 @@ def derive_neutrino_mass_matrix_v12_7():
     chi_eff = 144
 
     # Volume with flux enhancement
-    Vol_sigma = np.exp(b3 / (4 * np.pi))  # 4π from 2-cycle measure
+    Vol_sigma = np.exp(b3 / (4 * np.pi))  # 4pi from 2-cycle measure
     N_flux = chi_eff / 6
     flux_enhancement = np.sqrt(N_flux)     # sqrt(N) from flux statistics
     suppression = Vol_sigma * flux_enhancement
@@ -74,7 +74,7 @@ def derive_neutrino_mass_matrix_v12_7():
     error_3l = abs(delta_m31_2 - nufit_delta3l) / nufit_delta3l * 100
 
     print("=== v12.7 NEUTRINO MASS MATRIX - EXACT DELTAS ===")
-    print(f"Vol_sigma = exp(b₃/(4π)) = {Vol_sigma:.3f}")
+    print(f"Vol_sigma = exp(b_3/(4pi)) = {Vol_sigma:.3f}")
     print(f"Flux enhancement = sqrt(N_flux) = sqrt({N_flux}) = {flux_enhancement:.3f}")
     print(f"Total suppression = {suppression:.2f}")
     print()
@@ -84,8 +84,8 @@ def derive_neutrino_mass_matrix_v12_7():
     print(f"  m_3 = {masses_ev[2]:.6f}")
     print()
     print(f"Mass squared differences:")
-    print(f"  Δm²₂₁ = {delta_m21_2:.4e} eV² | NuFIT: {nufit_delta21:.4e} | Error: {error_21:.2f}%")
-    print(f"  Δm²₃₁ = {delta_m31_2:.4e} eV² | NuFIT: {nufit_delta3l:.4e} | Error: {error_3l:.2f}%")
+    print(f"  Delta_m²_2_1 = {delta_m21_2:.4e} eV^2 | NuFIT: {nufit_delta21:.4e} | Error: {error_21:.2f}%")
+    print(f"  Delta_m²_3_1 = {delta_m31_2:.4e} eV^2 | NuFIT: {nufit_delta3l:.4e} | Error: {error_3l:.2f}%")
     print()
     print(f"STATUS: {'EXACT MATCH ✓' if error_21 < 0.01 and error_3l < 0.01 else 'GOOD AGREEMENT'}")
 
