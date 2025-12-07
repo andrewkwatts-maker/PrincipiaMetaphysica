@@ -67,16 +67,16 @@
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.882359280896472e+34,
-    "tau_p_mean": 3.992115363425226e+34,
-    "tau_p_std": 1.4757281614954747e+34,
-    "tau_p_lower_68": 2.516648237294001e+34,
-    "tau_p_upper_68": 5.472750821048172e+34,
-    "tau_p_lower_95": 1.4422223400695877e+34,
-    "tau_p_upper_95": 7.332953580887194e+34,
-    "tau_p_uncertainty_oom": 0.17234403320757913,
+    "tau_p_median": 3.837910763376391e+34,
+    "tau_p_mean": 4.021688503709217e+34,
+    "tau_p_std": 1.4925978837947238e+34,
+    "tau_p_lower_68": 2.555446652353019e+34,
+    "tau_p_upper_68": 5.586967655630307e+34,
+    "tau_p_lower_95": 1.4480847269254375e+34,
+    "tau_p_upper_95": 7.376332407639382e+34,
+    "tau_p_uncertainty_oom": 0.1726542536788624,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.324766036464953
+    "ratio_to_bound": 2.2981501577104138
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -88,10 +88,10 @@
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.7895918504383813,
-    "theta_12_error": 1.256439370589193,
-    "theta_13_error": 0.33911863989916796,
-    "delta_cp_error": 28.176613953596068
+    "theta_23_error": 0.8413595600872545,
+    "theta_12_error": 1.1897567958929292,
+    "theta_13_error": 0.34609905664180574,
+    "delta_cp_error": 27.884655362135742
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -486,10 +486,10 @@
       "status": "Derived from Cl(24,2) spinor condensate"
     },
     "alpha_gut_casimir": {
-      "alpha_GUT": 0.04115241864269142,
-      "alpha_GUT_inv": 24.29990831602307,
+      "alpha_GUT": 0.041495582459212095,
+      "alpha_GUT_inv": 24.09895079754443,
       "target_inv": 24.3,
-      "error_pct": 0.00037730031658272364,
+      "error_pct": 0.8273629730681962,
       "formula": "alpha_GUT = 1 / (C_A * Vol_sing * exp(|T_omega|/h11))",
       "C_A": 9,
       "Vol_sing": 2078.573808259901,
@@ -639,7 +639,7 @@
       "status": "PURE GEOMETRIC - m_h is OUTPUT"
     },
     "neutrino_exact": {
-      "error": "'charmap' codec can't encode character '\\u2083' in position 17: character maps to <undefined>",
+      "error": "'charmap' codec can't encode character '\\u0394' in position 3: character maps to <undefined>",
       "status": "Module import failed"
     },
     "summary": {
