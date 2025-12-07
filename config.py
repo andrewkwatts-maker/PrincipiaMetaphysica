@@ -18,21 +18,22 @@ and computational settings used throughout the Principia Metaphysica project.
 Version: 12.0
 Last Updated: December 2025
 
-CHANGELOG v12.0:
-- Added v9.0 Transparency: FittedParameters class with full provenance
-- Added v10.0 Geometric Derivations: TorsionClass, FluxQuantization, AnomalyCancellation
-- Added v10.1 Neutrino Mass: RightHandedNeutrinoMasses, Seesaw parameters
-- Added v10.2 Fermion Matrix: CycleIntersections, WilsonLinePhases, HiggsVEVs
-- Added v11.0 Observables: ProtonLifetimeParameters, HiggsMassParameters
-- Added v12.0 Final: KKGravitonParameters, FinalNeutrinoMasses
-- All parameters now traceable to geometric origin (TCS G₂ manifold CHNP #187)
+CHANGELOG v12.4:
+- v12.0: Added KKGravitonParameters, FinalNeutrinoMasses
+- v12.1: Updated alpha4/alpha5 to NuFIT 6.0 (theta_23 = 45.0°)
+- v12.2: Hybrid neutrino suppression (base 39.81 × flux 3.12 = 124.22)
+- v12.3: Fixed neutrino mass unit bug (1M× error), delta_m² calculation
+- v12.4: CRITICAL FIX - M_Pl standardized to reduced mass (2.435e18 GeV)
+  * Fixes 20% inconsistency between PhenomenologyParameters and ModuliParameters
+  * All formulas now use M_PLANCK_REDUCED consistently
+  * Added dual derivations for Higgs mass and M_GUT
 """
 
 # ==============================================================================
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "12.0"
+VERSION = "12.4"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
 
 import numpy as np
@@ -146,9 +147,11 @@ class PhenomenologyParameters:
     These values can be updated as new data becomes available.
     """
 
-    # Energy Scales
-    M_PLANCK = 1.2195e19     # Reduced Planck mass [GeV] (PDG 2024)
-    M_STAR = 1e19            # 13D fundamental scale [GeV] (~ M_Pl)
+    # Energy Scales (v12.4 fix: standardized on reduced Planck mass)
+    M_PLANCK_REDUCED = 2.435e18  # Reduced Planck mass [GeV] M_Pl = sqrt(ħc/8πG)
+    M_PLANCK_FULL = 1.221e19     # Full Planck mass [GeV] M_P = sqrt(ħc/G) (reference only)
+    M_PLANCK = M_PLANCK_REDUCED  # Default: use reduced mass everywhere
+    M_STAR = 1e19                # 13D fundamental scale [GeV] (~ M_Pl)
 
     # Proton Decay (RG Hybrid Calculation)
     TAU_PROTON = 3.70e34     # Proton lifetime [years] (geometric + RG hybrid)
@@ -973,7 +976,7 @@ class TorsionClass:
         α₄ + α₅ = [ln(M_Pl/M_GUT) + |T_ω|] / (2π)
         From G₂ volume modulus stabilization
         """
-        M_Pl = 1.22e19  # GeV
+        M_Pl = PhenomenologyParameters.M_PLANCK_REDUCED  # GeV (v12.4: use reduced mass)
         M_GUT = 2.118e16  # GeV (derived from T_ω)
         ln_ratio = np.log(M_Pl / M_GUT)
         return (ln_ratio + abs(TorsionClass.T_OMEGA)) / (2 * np.pi)
@@ -984,7 +987,7 @@ class TorsionClass:
         M_GUT derived from G₂ torsion logarithm
         M_GUT = M_Pl × exp(-2π × (α₄ + α₅) + |T_ω|)
         """
-        M_Pl = 1.22e19  # GeV
+        M_Pl = PhenomenologyParameters.M_PLANCK_REDUCED  # GeV (v12.4: use reduced mass)
         alpha_sum = TorsionClass.derive_alpha_sum()
         return M_Pl * np.exp(-2 * np.pi * alpha_sum + abs(TorsionClass.T_OMEGA))
 
