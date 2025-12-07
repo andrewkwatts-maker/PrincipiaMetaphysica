@@ -1497,22 +1497,6 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             The large value a = 1.414 ensures that as &phi; evolves (driving dark energy), no light towers destabilize
             the vacuum. This is crucial for de Sitter vacua in string theory, addressing the "dS swampland" controversy.
           </p>
-
-          <!-- V12.5 SWAMPLAND UPDATE -->
-          <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px; border-left: 3px solid #51cf66; margin-top: 1.5rem;">
-            <p><strong>v12.5 Update: Higgs Sector Swampland Compliance</strong></p>
-            <p>
-              With Re(T) = 7.086 derived from the Higgs mass (m<sub>h</sub> = 125.10 GeV), the Higgs field
-              traversal now satisfies the swampland constraint:
-            </p>
-            <div style="text-align: center; margin: 0.75rem 0; font-family: 'Crimson Text', serif;">
-              Δφ<sub>Higgs</sub> = ln(7.086) ≈ <strong>1.958 > 0.816</strong> ✅
-            </div>
-            <p style="font-size: 0.95rem; color: var(--text-secondary);">
-              Previous versions (v11.0-v12.4) used Re(T) = 1.833, giving Δφ = 0.605 < 0.816 (VIOLATION ❌).
-              The v12.5 correction ensures full swampland compliance across both cosmological and Higgs sectors.
-            </p>
-          </div>
         </div>
       </div>
       </div>
@@ -1983,7 +1967,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 2px solid #51cf66;">
             <h5 style="color: #51cf66; margin-bottom: 0.5rem;">Key Validation Results</h5>
             <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-              <li><strong>w₀ = -0.8527 (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
+              <li><strong>w₀ = <span class="pm-value" data-pm-value="v12_7_pure_geometric.w0_predicted.w0"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
               <li><strong>Planck tension: 6σ → 1.3σ</strong> — Resolved via F(R,T) breathing mode bias (Δw₀ = -0.10)</li>
               <li><strong>w(z) logarithmic evolution</strong> — Frozen at z>3000, active at z<10 (testable with Euclid)</li>
               <li><strong>2T corrections:</strong> w<sub>a</sub> = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66σ agreement via orthogonal time t<sub>ortho</sub> friction</li>

@@ -1083,7 +1083,7 @@
                         </div>
                         <div class="formula-info-item">
                             <h5>Predicted &tau;<sub>p</sub></h5>
-                            <p>4.09 &times; 10<sup>34</sup> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
+                            <p><span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
                         </div>
                     </div>
                     <div class="use-cases">
@@ -1104,7 +1104,7 @@
             <p>
                 The geometric splitting mechanism naturally achieves M<sub>T</sub> &sim; M<sub>GUT</sub> while keeping
                 the doublet light, satisfying current experimental bounds from Super-Kamiokande (&tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years
-                for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>). Our prediction of 4.09 &times; 10<sup>34</sup> years is <strong>2.46× above the bound</strong>,
+                for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>). Our prediction of <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years is <strong>2.46× above the bound</strong>,
                 providing a testable prediction for future proton decay experiments like Hyper-Kamiokande.
             </p>
         </div>
@@ -2739,10 +2739,10 @@
             </div>
 
             <div class="concept-highlight" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.08)); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
-                <h4>v12.5: Higgs Quartic from SO(10) Matching</h4>
+                <h4>Higgs Quartic from SO(10) Matching</h4>
                 <p>
                     Beyond gauge couplings, SO(10) matching also determines the Higgs quartic coupling
-                    <strong>λ₀ = 0.0945</strong> geometrically. Combined with the v12.5 derivation of
+                    <strong>λ₀ = 0.0945</strong> geometrically. Combined with the derivation of
                     Re(T) = 7.086 from the measured Higgs mass (125.10 GeV), the framework achieves
                     complete geometric unification with no free parameters in the electroweak sector.
                 </p>
@@ -3275,7 +3275,7 @@
                                 </tr>
                                 <tr style="background: rgba(255, 99, 132, 0.1);">
                                     <td style="padding: 0.5rem;"><strong>Target</strong></td>
-                                    <td style="padding: 0.5rem; text-align: right; font-weight: 600;">24.30</td>
+                                    <td style="padding: 0.5rem; text-align: right; font-weight: 600;"><span class="pm-value" data-pm-value="v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv"></span></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0.5rem;"><em>Deviation</em></td>
@@ -3606,7 +3606,7 @@
                 <div class="author-response">
                     <h5>Status: Significantly Improved</h5>
                     <p>
-                        <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = 4.09 &times; 10<sup>34</sup> years<br>
+                        <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years<br>
                         <strong>68% Confidence Interval:</strong> [2.41, 5.61] &times; 10<sup>34</sup> years<br>
                         <strong>Uncertainty:</strong> <span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM (improved from 0.8 OOM!)<br>
                         <strong>Ratio to bound:</strong> 2.30× above Super-Kamiokande limit<br><br>
@@ -3689,7 +3689,7 @@
                     This is the smoking gun prediction of SO(10) grand unification.
                 </p>
                 <div class="observable">
-                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = 4.09 &times; 10<sup>34</sup> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
+                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
                 </div>
                 <p class="method">
                     <strong>Current Bound:</strong> &tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years (Super-Kamiokande 2020)<br>
@@ -3730,7 +3730,7 @@
                     &Sigma; m<sub>&nu;</sub> = 0.060 &plusmn; 0.003 eV
                 </div>
                 <p class="method">
-                    <strong>Current Bound:</strong> &Sigma; m<sub>&nu;</sub> &lt; 0.072 eV (DESI+Planck 2024, 95% CL)<br>
+                    <strong>Current Bound:</strong> &Sigma; m<sub>&nu;</sub> &lt; 0.072 eV (DESI+Planck 2018, 95% CL)<br>
                     <strong>Method:</strong> JUNO (2025+), DUNE (2028+) will determine hierarchy at &gt;3&sigma;.
                 </p>
             </div>
@@ -4220,7 +4220,7 @@
             const alpha_tc = 18.2;
             const alpha_kk = 22.8;
             const alpha_combined = asWeight * alpha_as + tcWeight * alpha_tc + kkWeight * alpha_kk;
-            const target = 24.30;
+            const target = PM.v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv;
             const deviation = ((alpha_combined - target) / target * 100).toFixed(1);
 
             // Update result displays
