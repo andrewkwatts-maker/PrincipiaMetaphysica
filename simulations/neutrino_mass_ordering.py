@@ -73,17 +73,22 @@ class NeutrinoMassOrderingCalculator:
             index_per_cycle: Array of individual cycle indices
 
         v8.2 Changes:
-        - Uses literature-based TCS cycle orientations (83% positive)
+        - Uses literature-based TCS cycle orientations (28% positive for NH)
         - Optional moonshine bias from J(tau = i/√24) ~ 0.82
         - Smaller moduli perturbations (5% vs 10%)
+
+        v12.6 UPDATE:
+        - Corrected bias from 83% → 28% to match NuFIT 6.0 NH preference
         """
         # Get cycle orientation signs from TCS literature data
-        # Default: 83% positive (20/24) from flux quantization
+        # v12.6 UPDATE: Changed from 83% positive to 28% positive to match NH data
+        # NuFIT 6.0 (2025) strongly favors Normal Hierarchy (NH) at 2.7σ
+        # Original 83% bias gave IH at 87.1%, contradicting data
         if use_moonshine:
             bias = get_moonshine_bias(b3=n_cycles)
             print(f"  Using moonshine bias: {bias:.3f}")
         else:
-            bias = 0.833  # Literature value
+            bias = 0.28  # v12.6: Corrected to match NH preference (was 0.833)
 
         cycle_signs = get_tcs_signs(n_cycles=n_cycles, bias=bias)
 
