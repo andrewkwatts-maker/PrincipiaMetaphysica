@@ -1983,7 +1983,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 2px solid #51cf66;">
             <h5 style="color: #51cf66; margin-bottom: 0.5rem;">Key Validation Results</h5>
             <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-              <li><strong>w₀ = -0.8528 (theory) vs -0.83±0.06 (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
+              <li><strong>w₀ = -0.8528 (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
               <li><strong>Planck tension: 6σ → 1.3σ</strong> — Resolved via F(R,T) breathing mode bias (Δw₀ = -0.10)</li>
               <li><strong>w(z) logarithmic evolution</strong> — Frozen at z>3000, active at z<10 (testable with Euclid)</li>
               <li><strong>2T corrections:</strong> w<sub>a</sub> = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66σ agreement via orthogonal time t<sub>ortho</sub> friction</li>
@@ -2011,7 +2011,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <div style="background: var(--bg-card); padding: 1.25rem; border-radius: 12px; border-left: 4px solid #51cf66;">
               <h5 style="color: #51cf66; margin-bottom: 0.75rem; font-size: 1.1rem;">DESI DR2 Measurements</h5>
               <div style="font-family: 'Crimson Text', serif; font-size: 1.15rem; line-height: 1.8;">
-                <div style="margin-bottom: 0.5rem;"><strong>w<sub>0</sub></strong> = -0.83 &plusmn; 0.06</div>
+                <div style="margin-bottom: 0.5rem;"><strong>w<sub>0</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span></div>
                 <div style="margin-bottom: 0.5rem;"><strong>w<sub>a</sub></strong> = -0.75 &plusmn; 0.30</div>
                 <div style="margin-bottom: 0.5rem;"><strong>Ω<sub>m</sub></strong> = 0.385 &plusmn; 0.049</div>
                 <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;">
@@ -2357,7 +2357,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               </div>
               <div style="background: var(--bg-card); padding: 0.75rem; border-radius: 6px;">
                 <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.3rem;">DESI DR2</div>
-                <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;">w<sub>0</sub> = -0.83 &plusmn; 0.06</div>
+                <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;">w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span></div>
               </div>
             </div>
             <p style="color: #51cf66; font-weight: 600; text-align: center; margin-top: 0.75rem; font-size: 1.05rem;">
@@ -2404,7 +2404,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </p>
           <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
             <li><strong>Quantum corrections essential:</strong> The shift δD = 0.589 moves w<sub>0</sub> from <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> to -0.853, improving DESI agreement</li>
-            <li><strong>DESI DR2 validation:</strong> w₀ = -0.83 &plusmn; 0.06 — the refined MEP value is within <strong><span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ</strong></li>
+            <li><strong>DESI DR2 validation:</strong> w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> — the refined MEP value is within <strong><span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ</strong></li>
             <li><strong>Langlands duality</strong>: The ratio w<sub>a,eff</sub>/w₀ = α<sub>T</sub>/3 ≈ 1.11 appears in both thermal time and D₅ monodromy</li>
             <li><strong>Error budget:</strong> Theoretical uncertainty δw<sub>0</sub> ~ 0.001 from quantum corrections; DESI dominates error</li>
           </ul>
@@ -2440,7 +2440,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                 <div class="var-name">w<sub>0</sub></div>
                 <div class="var-description">Present-day equation of state parameter at z = 0.</div>
                 <div class="var-units">Dimensionless</div>
-                <div class="var-contribution">Theory predicts w<sub>0</sub> = &minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> via MEP; DESI measures -0.83 &plusmn; 0.06.</div>
+                <div class="var-contribution">Theory predicts w<sub>0</sub> = &minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> via MEP; DESI measures <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span>.</div>
               </div>
             </span>
             <span class="formula-op">[1 +</span>
@@ -2805,7 +2805,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <tr>
               <td>w<sub>0</sub></td>
               <td><span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> (MEP: &minus;11/13)</td>
-              <td>-0.83 &plusmn; 0.06</td>
+              <td><span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span></td>
               <td style="color: var(--success);">0.38&sigma;</td>
             </tr>
             <tr>
@@ -3649,7 +3649,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             two-time framework:
           </p>
           <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-            <li><strong>Dark Energy VALIDATED:</strong> w₀ = -0.8528 (theory) vs -0.83±0.06 (DESI) = <strong>0.38σ agreement</strong> — Geometric derivation confirmed</li>
+            <li><strong>Dark Energy VALIDATED:</strong> w₀ = -0.8528 (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = <strong>0.38σ agreement</strong> — Geometric derivation confirmed</li>
             <li><strong>Planck Tension RESOLVED:</strong> 6σ → 1.3σ via F(R,T) breathing mode bias (Δw₀ = -0.10) + logarithmic w(z) frozen at z>3000</li>
             <li><strong>w(z) Evolution:</strong> Logarithmic form w(z) = w₀[1 + (α_T/3)ln(1+z/z_act)] with z_act = 3000 — testable with Euclid</li>
             <li><strong>Brane Configuration:</strong> (5,2) + 3×(3,2) is BPS-protected with c_total = 0</li>
@@ -4049,7 +4049,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         <h4><span class="severity-badge" style="background: var(--success);">RESOLVED & VALIDATED</span> DESI Dark Energy Agreement + Planck Tension Resolution</h4>
         <p>
           <strong>Original Criticism:</strong> The initial predictions of w<sub>0</sub> &asymp; -0.98, w<sub>a</sub> &asymp; +0.05
-          were in significant tension with DESI 2024 data showing w<sub>0</sub> = -0.83 &plusmn; 0.06, w<sub>a</sub> = -0.75 &plusmn; 0.3.
+          were in significant tension with DESI 2024 data showing w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span>, w<sub>a</sub> = -0.75 &plusmn; 0.3.
           Standard quintessence models generically predict w<sub>a</sub> &gt; 0, while DESI observes w<sub>a</sub> &lt; 0.
           Additionally, Planck-DESI exhibited 6σ tension on combined parameters.
         </p>
@@ -4059,7 +4059,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <strong>DESI DR2 2024 directly validates the geometric prediction:</strong>
           </p>
           <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-            <li><strong>w₀ = -0.8528 (theory) vs -0.83±0.06 (DESI) = 0.38σ agreement</strong> — Geometric derivation from D_eff = 12.589 confirmed</li>
+            <li><strong>w₀ = -0.8528 (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Geometric derivation from D_eff = 12.589 confirmed</li>
             <li><strong>w_a = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66σ agreement:</strong> From thermal time logarithmic evolution with α_T = 2.7</li>
             <li><strong>Planck tension: 6σ → 1.3σ RESOLVED</strong> via two mechanisms:
               <ol style="margin-left: 1.5rem; margin-top: 0.5rem;">
@@ -4157,7 +4157,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         </div>
         <p class="method">
           <strong>Method:</strong> DESI, Euclid, Roman Space Telescope will constrain w<sub>0</sub> and w<sub>a</sub>
-          to &Delta;w ~ 0.01 level. <strong>Current DESI 2024 results (w<sub>0</sub> = -0.83 &plusmn; 0.06, w<sub>a</sub> = -0.75 &plusmn; 0.3)
+          to &Delta;w ~ 0.01 level. <strong>Current DESI 2024 results (w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span>, w<sub>a</sub> = -0.75 &plusmn; 0.3)
           show excellent agreement with the two-time corrected prediction (0.38σ and 0.66σ respectively).</strong>
         </p>
       </div>

@@ -1084,10 +1084,10 @@
                 <ul style="margin: 0.75rem 0; padding-left: 1.5rem;">
                     <li><strong>Higgs mass:</strong> <span class="tooltip-trigger" data-category="fundamental" data-param="higgs_mass">125.10 GeV</span> - agreement(s) with experiment to experiment!</li>
                     <li><strong>Proton lifetime:</strong> <span class="tooltip-trigger" data-category="predictions" data-param="proton_lifetime">3.91×10³⁴ years</span> - testable by Hyper-Kamiokande</li>
-                    <li><strong>KK graviton mass:</strong> <span class="tooltip-trigger" data-category="predictions" data-param="kk_mass_first">5.02±0.12 TeV</span> - discoverable at HL-LHC</li>
+                    <li><strong>KK graviton mass:</strong> <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span> - discoverable at HL-LHC</li>
                     <li><strong>Neutrino mass sum:</strong> Σm<sub>ν</sub> = <span class="tooltip-trigger" data-category="neutrino" data-param="sum_neutrino_mass">0.0708 eV</span> - Normal Hierarchy confirmed</li>
                     <li><strong>All fermion masses:</strong> Complete quark, lepton, and neutrino mass matrices derived from TCS G₂ 3-cycle intersections</li>
-                    <li><strong>Dark energy:</strong> w₀ = <span class="tooltip-trigger" data-category="dark_energy" data-param="w0">-0.8528</span>, matches DESI to 0.38σ</li>
+                    <li><strong>Dark energy:</strong> w₀ = <span class="tooltip-trigger" data-category="dark_energy" data-param="w0_PM">-0.8528</span>, matches DESI to 0.38σ</li>
                 </ul>
             </div>
 
@@ -1142,7 +1142,7 @@
                     <li>Neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV)</li>
                     <li>Higgs mass = 125.10 GeV (exact experimental match)</li>
                     <li>Proton lifetime = 3.91×10³⁴ years (from G₂ torsion class T<sub>ω</sub> = -0.884)</li>
-                    <li>KK graviton spectrum starting at 5.02±0.12 TeV</li>
+                    <li>KK graviton spectrum starting at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span></li>
                     <li>Dark energy equation of state w(z) = -1 + 0.147·ln(1+z)</li>
                 </ul>
                 <p style="margin-top: 0.5rem; color: #51cf66; font-weight: 700;">
@@ -1639,7 +1639,7 @@
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Maximum Entropy Principle with d<sub>eff</sub> = 12 (bulk minus time) gives
-                    w<sub>0</sub> = -0.8528. Matches DESI 2024 (w<sub>0</sub> = -0.83 ± 0.06) to 0.3σ.
+                    w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM"></span>. Matches DESI 2024 (w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central"></span> ± <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error"></span>) to <span class="pm-value" data-category="dark_energy" data-param="w0_sigma"></span>σ.
                 </p>
             </div>
 
@@ -1696,7 +1696,7 @@
             <div class="prediction-card testable" style="border-left-color: #4facfe;">
                 <h4><span class="tag testable">TESTABLE</span> KK Graviton Discovery</h4>
                 <p>
-                    <strong>Prediction:</strong> First KK graviton at m₁ = <span class="tooltip-trigger" data-category="predictions" data-param="kk_mass_first">5.02±0.12 TeV</span>
+                    <strong>Prediction:</strong> First KK graviton at m₁ = <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span>
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Derived from T² compactification area A = 18.4 M<sub>*</sub>⁻² in TCS G₂ metric.
@@ -1743,7 +1743,7 @@
                         </tr>
                         <tr>
                             <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">KK graviton mass</td>
-                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">5.02±0.12 TeV</td>
+                            <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);"><span class="pm-value" data-category="kk_spectrum" data-param="m1"></span></td>
                             <td style="padding: 0.75rem; border-bottom: 1px solid var(--border-primary);">HL-LHC 2029+</td>
                         </tr>
                         <tr>
@@ -1857,7 +1857,7 @@
                     <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
                         <li>Generation count: 3 (agreement(s) with experiment!)</li>
                         <li>PMNS mixing angles: θ₂₃ = 45.0° (maximal mixing), θ₁₂ = 33.6°, θ₁₃ = 8.57° (all within 0.25σ!)</li>
-                        <li>Dark energy equation of state: w₀ = -0.853 (DESI: -0.83±0.06, within 0.38σ)</li>
+                        <li>Dark energy equation of state: w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM"></span> (DESI: <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error"></span>, within <span class="pm-value" data-category="dark_energy" data-param="w0_sigma"></span>σ)</li>
                         <li>Dark energy evolution: wₐ < 0 confirmed by DESI DR2 at 6.2σ</li>
                         <li>Force unification scale: M_GUT = 2.118×10¹⁶ GeV (within 3%)</li>
                     </ul>
@@ -1987,7 +1987,7 @@
                     <li>Derives complete fermion spectrum: all quark, lepton, and neutrino masses from 3-cycle geometry</li>
                     <li>Predicts Higgs mass = 125.10 GeV (exact experimental match)</li>
                     <li>Derives neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV, 0.12σ from data)</li>
-                    <li>Predicts KK graviton at 5.02±0.12 TeV (HL-LHC discoverable)</li>
+                    <li>Predicts KK graviton at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span> (HL-LHC discoverable)</li>
                     <li>Derives proton lifetime 3.91×10³⁴ years from G₂ torsion (Hyper-K testable)</li>
                     <li>Achieves dark energy w₀ = -0.8528 matching DESI to 0.38σ</li>
                 </ul>

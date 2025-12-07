@@ -1,0 +1,186 @@
+======================================================================
+PM Value Reference Validation
+======================================================================
+
+[OK] Loaded PM constants with 14 categories
+
+Available categories:
+  dark_energy: 6 parameters
+  dimensions: 2 parameters
+  gauge_unification: 2 parameters
+  kk_spectrum: 6 parameters
+  meta: 5 parameters
+  neutrino_mass_ordering: 14 parameters
+  planck_tension: 3 parameters
+  pmns_matrix: 6 parameters
+  proton_decay: 3 parameters
+  proton_decay_channels: 3 parameters
+  sections: 24 parameters
+  shared_dimensions: 3 parameters
+  topology: 3 parameters
+  xy_bosons: 7 parameters
+
+[OK] Found 23 HTML files to check
+
+beginners-guide.html:
+  Found 19 PM references
+    [MISSING] PM.fundamental.higgs_mass - category not found
+    [MISSING] PM.predictions.proton_lifetime - category not found
+    [OK] PM.kk_spectrum.m1
+    [MISSING] PM.neutrino.sum_neutrino_mass - category not found
+    [MISSING] PM.dark_energy.w0 - parameter not found
+    [OK] PM.kk_spectrum.m1
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_DESI_central
+    [OK] PM.dark_energy.w0_DESI_error
+    [OK] PM.dark_energy.w0_sigma
+    [MISSING] PM.fundamental.higgs_mass - category not found
+    [OK] PM.kk_spectrum.m1
+    [MISSING] PM.predictions.proton_lifetime - category not found
+    [OK] PM.kk_spectrum.m1
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_DESI_central
+    [OK] PM.dark_energy.w0_DESI_error
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.kk_spectrum.m1
+
+index.html:
+  Found 3 PM references
+    [OK] PM.proton_decay_channels.BR_epi0_mean
+    [OK] PM.kk_spectrum.m1
+    [OK] PM.proton_decay_channels.BR_epi0_mean
+  [OK] All references valid
+
+principia-metaphysica-paper.html:
+  Found 2 PM references
+    [OK] PM.kk_spectrum.m1
+    [OK] PM.kk_spectrum.m1
+  [OK] All references valid
+
+sections\cosmology.html:
+  Found 27 PM references
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_DESI_central
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+  [OK] All references valid
+
+sections\gauge-unification.html:
+  Found 12 PM references
+    [OK] PM.proton_decay.uncertainty_oom
+    [OK] PM.topology.chi_eff
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.proton_decay.M_GUT
+    [OK] PM.proton_decay.M_GUT
+    [OK] PM.proton_decay.M_GUT
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.proton_decay.uncertainty_oom
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.proton_decay.uncertainty_oom
+  [OK] All references valid
+
+sections\geometric-framework.html:
+  Found 11 PM references
+    [OK] PM.proton_decay.M_GUT
+    [OK] PM.topology.n_gen
+    [OK] PM.topology.chi_eff
+    [MISSING] PM.proton_decay.alpha_GUT - parameter not found
+    [OK] PM.topology.chi_eff
+    [OK] PM.topology.b3
+    [OK] PM.topology.b3
+    [OK] PM.kk_spectrum.m1_central
+    [OK] PM.shared_dimensions.d_eff
+    [OK] PM.kk_spectrum.m1_central
+    [OK] PM.kk_spectrum.hl_lhc_significance
+
+sections\predictions.html:
+  Found 39 PM references
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.pmns_matrix.theta_23
+    [OK] PM.pmns_matrix.theta_12
+    [OK] PM.pmns_matrix.theta_13
+    [OK] PM.pmns_matrix.delta_CP
+    [OK] PM.kk_spectrum.m1
+    [OK] PM.kk_spectrum.sigma_m1_fb
+    [OK] PM.kk_spectrum.m1
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.wa_PM_effective
+    [OK] PM.dark_energy.planck_tension_resolved
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.pmns_matrix.avg_sigma
+    [OK] PM.pmns_matrix.theta_23
+    [OK] PM.pmns_matrix.theta_13
+    [OK] PM.pmns_matrix.delta_CP
+    [OK] PM.pmns_matrix.theta_12
+    [OK] PM.pmns_matrix.avg_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.planck_tension_resolved
+    [OK] PM.dark_energy.w0_sigma
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+    [OK] PM.dark_energy.w0_PM
+  [OK] All references valid
+
+sections\xy-gauge-bosons.html:
+  Found 7 PM references
+    [OK] PM.xy_bosons.M_X
+    [OK] PM.xy_bosons.tau_estimate
+    [OK] PM.xy_bosons.M_X
+    [OK] PM.xy_bosons.tau_estimate
+    [OK] PM.xy_bosons.M_X
+    [OK] PM.gauge_unification.alpha_GUT_inv
+    [OK] PM.xy_bosons.M_X
+  [OK] All references valid
+
+======================================================================
+[FAILED] Found 7 missing references:
+  - beginners-guide.html: PM.fundamental.higgs_mass
+  - beginners-guide.html: PM.predictions.proton_lifetime
+  - beginners-guide.html: PM.neutrino.sum_neutrino_mass
+  - beginners-guide.html: PM.dark_energy.w0
+  - beginners-guide.html: PM.fundamental.higgs_mass
+  - beginners-guide.html: PM.predictions.proton_lifetime
+  - sections\geometric-framework.html: PM.proton_decay.alpha_GUT
+
+To fix: Add missing parameters to generate_enhanced_constants.py
+======================================================================
