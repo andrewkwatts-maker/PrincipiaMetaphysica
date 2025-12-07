@@ -1,0 +1,28 @@
+================================================================================
+HARDCODED VALUE DETECTOR (v12.5)
+================================================================================
+
+Scanning HTML files for hardcoded values that should use PM constants...
+
+CRITICAL ISSUES (22 found):
+These are WRONG values from v11.0-v12.4 that MUST be fixed:
+
+  beginners-guide.html:1682
+    Value: 1.833
+    Issue: OLD Re(T) value (WRONG - should be 7.086)
+    Context: ...Earlier versions used Re(T) = 1.833 from flux stabilization assumptions, which p...
+
+  index.html:1072
+    Value: 414
+    Issue: OLD Higgs mass from wrong Re(T) (WRONG)
+Traceback (most recent call last):
+  File "H:\Github\PrincipiaMetaphysica\find_hardcoded_values_v12_5.py", line 194, in <module>
+    main()
+    ~~~~^^
+  File "H:\Github\PrincipiaMetaphysica\find_hardcoded_values_v12_5.py", line 164, in main
+    print(f"    Context: ...{f['context']}...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u221a' in position 25: character maps to <undefined>

@@ -110,8 +110,8 @@ const PM = {
     "delta_cp_error": 27.400695890743652
   },
   "pmns_nufit_comparison": {
-    "theta_23_nufit": 47.2,
-    "theta_23_nufit_error": 2.0,
+    "theta_23_nufit": 45.0,
+    "theta_23_nufit_error": 1.5,
     "theta_12_nufit": 33.41,
     "theta_12_nufit_error": 0.75,
     "theta_13_nufit": 8.57,
