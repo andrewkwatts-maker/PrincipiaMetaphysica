@@ -38,7 +38,7 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "12.5"
+VERSION = "12.7"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
 
 import numpy as np
