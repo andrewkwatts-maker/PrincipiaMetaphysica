@@ -41,7 +41,16 @@
       "Bash(timeout:*)",
       "Bash(git push:*)",
       "Bash(node:*)",
-      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" commit -m \"Regenerate theory-constants-enhanced.js with v12.7 verified values\n\nV12.7 THEORY CONSTANTS UPDATE\n\nRegenerated from verified v12.7 simulations with honest calibration approach.\n\nKey v12.7 Values:\n- VEV: 173.97 GeV (calibrated with factor 1.5859)\n- alpha_GUT_inv: 24.10 (PURE GEOMETRIC using 1/(10pi), 0.8% error)\n- Re(T): 7.086 (from Higgs mass inversion)\n- m_h: 125.10 GeV (exact match to PDG 2024)\n\nCalibration transparency:\n- Only 1 calibrated parameter (VEV factor 1.5859)\n- 56 out of 58 SM parameters remain predictive\n- alpha_GUT is PURE GEOMETRIC (no calibration)\n\nVerification: File loads correctly in Node.js with all expected constants.\n\nCopyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.\")"
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" commit -m \"Regenerate theory-constants-enhanced.js with v12.7 verified values\n\nV12.7 THEORY CONSTANTS UPDATE\n\nRegenerated from verified v12.7 simulations with honest calibration approach.\n\nKey v12.7 Values:\n- VEV: 173.97 GeV (calibrated with factor 1.5859)\n- alpha_GUT_inv: 24.10 (PURE GEOMETRIC using 1/(10pi), 0.8% error)\n- Re(T): 7.086 (from Higgs mass inversion)\n- m_h: 125.10 GeV (exact match to PDG 2024)\n\nCalibration transparency:\n- Only 1 calibrated parameter (VEV factor 1.5859)\n- 56 out of 58 SM parameters remain predictive\n- alpha_GUT is PURE GEOMETRIC (no calibration)\n\nVerification: File loads correctly in Node.js with all expected constants.\n\nCopyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.\")",
+      "Bash(mkdir:*)",
+      "Bash(find:*)",
+      "Bash(for file in sections/predictions.html sections/gauge-unification.html sections/cosmology.html sections/fermion-sector.html sections/geometric-framework.html index.html beginners-guide.html principia-metaphysica-paper.html)",
+      "Bash(do echo \"=== $file ===\")",
+      "Bash(done)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff philosophical-implications.html)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff index.html)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" diff references.html)"
     ],
     "deny": [],
     "ask": []
