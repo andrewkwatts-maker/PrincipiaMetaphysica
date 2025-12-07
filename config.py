@@ -151,7 +151,9 @@ class PhenomenologyParameters:
     M_PLANCK_REDUCED = 2.435e18  # Reduced Planck mass [GeV] M_Pl = sqrt(ħc/8πG)
     M_PLANCK_FULL = 1.221e19     # Full Planck mass [GeV] M_P = sqrt(ħc/G) (reference only)
     M_PLANCK = M_PLANCK_REDUCED  # Default: use reduced mass everywhere
-    M_STAR = 1e19                # 13D fundamental scale [GeV] (~ M_Pl)
+    # v12.4 FIX: Derived from dimensional analysis M_* = (M_Pl^2 / V_9)^(1/11)
+    M_STAR = 7.4604e+15  # 13D fundamental scale [GeV] (LOW string scale!)
+    M_STAR_OLD = 1e19                # Old value (inconsistent with V_9, DO NOT USE)
 
     # Proton Decay (RG Hybrid Calculation)
     TAU_PROTON = 3.70e34     # Proton lifetime [years] (geometric + RG hybrid)
