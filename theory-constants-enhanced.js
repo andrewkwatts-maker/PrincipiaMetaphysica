@@ -83,16 +83,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.8079982384811183e+34,
-    "tau_p_mean": 3.9783127768324015e+34,
-    "tau_p_std": 1.5514486111527565e+34,
-    "tau_p_lower_68": 2.4116308281964893e+34,
-    "tau_p_upper_68": 5.595984119442756e+34,
-    "tau_p_lower_95": 1.43491186618757e+34,
-    "tau_p_upper_95": 7.276338420623109e+34,
-    "tau_p_uncertainty_oom": 0.18167194771182815,
+    "tau_p_median": 3.843582842548087e+34,
+    "tau_p_mean": 3.972203935925788e+34,
+    "tau_p_std": 1.4711261610448595e+34,
+    "tau_p_lower_68": 2.4828599536909556e+34,
+    "tau_p_upper_68": 5.464058823795326e+34,
+    "tau_p_lower_95": 1.457802915290976e+34,
+    "tau_p_upper_95": 7.23188574665677e+34,
+    "tau_p_uncertainty_oom": 0.17338471185643498,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.280238466156358
+    "ratio_to_bound": 2.3015466123042434
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -104,10 +104,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.7796143256332978,
-    "theta_12_error": 1.23032223581282,
-    "theta_13_error": 0.3403942594030969,
-    "delta_cp_error": 29.82372675077021
+    "theta_23_error": 0.8170368472121311,
+    "theta_12_error": 1.229066526022659,
+    "theta_13_error": 0.3515816844979285,
+    "delta_cp_error": 27.400695890743652
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -468,12 +468,8 @@ const PM = {
       "status": "UV \u2194 IR dual consistency <1%"
     },
     "swampland": {
-      "higgs_valid": true,
-      "gut_valid": true,
-      "all_valid": true,
-      "delta_phi_higgs": 1.9581210064432804,
-      "delta_phi_gut": 4.74464469534343,
-      "status": "ALL constraints VALID"
+      "error": "No module named 'simulations.swampland_constraints_v12_5'",
+      "status": "Module not found"
     },
     "wilson_phases": {
       "phases_rad": [
