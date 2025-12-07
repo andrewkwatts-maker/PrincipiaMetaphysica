@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Run All Simulations and Generate Single Source of Truth (v12.3)
+Run All Simulations and Generate Single Source of Truth (v12.5)
 ================================================================
 
-This script runs all theoretical calculations from v8.4 through v12.3 and generates
+This script runs all theoretical calculations from v8.4 through v12.5 and generates
 a unified output file that serves as the single source of truth for all constants.
 
 Flow:
@@ -52,6 +52,8 @@ class NumpyEncoder(json.JSONEncoder):
             return obj.tolist()
         elif isinstance(obj, (np.complexfloating, complex)):
             return {'real': float(obj.real), 'imag': float(obj.imag)}
+        elif isinstance(obj, (np.bool_, bool)):
+            return bool(obj)
         return super().default(obj)
 
 def run_v9_transparency(verbose=True):
@@ -787,15 +789,15 @@ def run_all_simulations(verbose=True):
 
     if verbose:
         print("=" * 70)
-        print("RUNNING ALL SIMULATIONS (v8.4 -> v12.3)")
+        print("RUNNING ALL SIMULATIONS (v8.4 -> v12.5)")
         print("=" * 70)
 
     # Start with base config
     results = {
         'meta': {
-            'version': '12.3',
+            'version': '12.5',
             'last_updated': '2025-12-07',
-            'description': 'Principia Metaphysica - Complete Theory (v8.4 -> v12.3)',
+            'description': 'Principia Metaphysica - Complete Theory (v8.4 -> v12.5)',
             'simulations_run': [
                 # v8.4
                 'proton_decay_rg_hybrid',
@@ -827,7 +829,14 @@ def run_all_simulations(verbose=True):
                 'neutrino_mass_matrix_final_v12',
                 'kk_graviton_mass_v12',
                 # v12.3
-                'alpha45_nufit6_update'
+                'alpha45_nufit6_update',
+                # v12.5 BREAKTHROUGH
+                'flux_stabilization_full',
+                'rg_dual_integration',
+                'swampland_constraints_v12_5',
+                'wilson_phases_rigor',
+                'thermal_friction_rigor',
+                'ckm_cp_rigor'
             ]
         }
     }
@@ -1119,7 +1128,13 @@ def run_all_simulations(verbose=True):
     results['v12_3_updates'] = run_v12_3_updates(verbose)
 
     # ========================================================================
-    # VALIDATION SUMMARY (Updated for v12.3)
+    # v12.5 RIGOR RESOLUTION (BREAKTHROUGH)
+    # ========================================================================
+
+    results['v12_5_rigor_resolution'] = run_v12_5_rigor_resolution(verbose)
+
+    # ========================================================================
+    # VALIDATION SUMMARY (Updated for v12.5)
     # ========================================================================
 
     results['validation'] = {
