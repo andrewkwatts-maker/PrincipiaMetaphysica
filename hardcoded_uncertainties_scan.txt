@@ -1,0 +1,35 @@
+======================================================================
+HARDCODED UNCERTAINTY VALUE SCAN
+======================================================================
+
+[OK] Loaded theory_output.json
+
+[OK] Found 57 HTML files to scan
+
+[INFO] Found 128 hardcoded uncertainty values
+
+======================================================================
+ANALYSIS RESULTS
+======================================================================
+
+
+beginners-guide.html:
+  Found 8 hardcoded uncertainties
+    [MISSING] 5.02 +/- 0.12 (line 1087)
+      -> NOT FOUND in theory_output.json
+      -> Context: ...category="predictions" data-param="kk_mass_first">5.02±0.12 TeV</span> - discoverable at HL-LHC</li>         ...
+    [MISSING] 5.02 +/- 0.12 (line 1145)
+      -> NOT FOUND in theory_output.json
+      -> Context: ...             <li>KK graviton spectrum starting at 5.02±0.12 TeV</li>                     <li>Dark energy equa...
+    [MISSING] 0.83 +/- 0.06 (line 1642)
+      -> NOT FOUND in theory_output.json
+Traceback (most recent call last):
+  File "H:\Github\PrincipiaMetaphysica\find_hardcoded_uncertainties.py", line 185, in <module>
+    missing_count = main()
+  File "H:\Github\PrincipiaMetaphysica\find_hardcoded_uncertainties.py", line 147, in main
+    print(f"      -> Context: ...{unc['context']}...")
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.2544.0_x64__qbz5n2kfra8p0\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode character '\u03c3' in position 90: character maps to <undefined>
