@@ -261,7 +261,6 @@ class KKSpectrumCalculator:
 
             print(f"PRODUCTION AT HL-LHC (sqrt(s) = 14 TeV):")
             print(f"  sigma(pp -> KK1 + X) = {sigma_m1:.3f} fb")
-            print(f"  Discovery potential: {sigma_m1/0.016:.1f}sigma (100 fb^-1)")
             print()
 
             print("BRANCHING RATIOS:")
@@ -297,8 +296,7 @@ class KKSpectrumCalculator:
             'm3_std': mc_results['m3_std'],
             'sigma_m1_fb': sigma_m1,
             'sigma_m1_std': mc_results['sigma_m1_std'],
-            'branching_ratios': br,
-            'discovery_significance_sigma': sigma_m1 / 0.016  # 100 fb^-^1 @ HL-LHC
+            'branching_ratios': br
         }
 
         return results
