@@ -219,9 +219,9 @@ The framework begins with a 26-dimensional bulk spacetime M²⁶ with signature 
 and 2 timelike dimensions. This is the critical dimension of bosonic string theory, chosen for
 anomaly cancellation. The fundamental action is:
 
-S = ∫ d²⁶X √(-G) [R + Ψ̄_P (iΓᴹ D_M - m) Ψ_P + ℒ_Sp(2,R)]
+S₂₆D = ∫ d²⁶x √|G| [M*²⁴ R₂₆ + Ψ̄_P (iΓᴹ D_M - m) Ψ_P + ℒ_Sp(2,R)]
 
-where M_* is the fundamental scale, R₂₆ is the 26D Ricci scalar, Ψ_P is the Pneuma field,
+where M_* is the fundamental scale (7.46×10¹⁵ GeV), R₂₆ is the 26D Ricci scalar, Ψ_P is the Pneuma field,
 and ℒ_Sp(2,R) contains the gauge constraints that eliminate ghosts from the second time dimension.
 
 v9.1 BRST Proof: The Sp(2,R) gauge symmetry is rigorously quantized via BRST cohomology. The nilpotent
@@ -1224,7 +1224,7 @@ overlap geometry explaining the mass ratio m_t/m_e ~ 10⁵ without fine-tuning.
         "content": """
 The Pneuma Lagrangian represents the fundamental fermionic field action in the 26-dimensional
 two-time framework, from which all of physics emerges - both spacetime geometry and matter content.
-The full action S = ∫ d²⁶X √(-G) [R + Ψ̄_P (iΓᴹD_M - m)Ψ_P] describes an 8192-component spinor
+The full action S₂₆D = ∫ d²⁶x √|G| [M*²⁴ R₂₆ + Ψ̄_P (iΓᴹD_M - m)Ψ_P + ℒ_Sp(2,R)] describes an 8192-component spinor
 field in the 26D Clifford algebra Cl(24,2), which reduces to 64 effective components via Sp(2,R)
 gauge fixing to the 13D shadow structure.
 
