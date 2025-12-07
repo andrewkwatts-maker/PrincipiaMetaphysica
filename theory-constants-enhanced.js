@@ -88,16 +88,16 @@ const PM = {
     "alpha_GUT_inv": 23.538581563878598,
     "alpha_GUT": 0.04248344350258393,
     "tau_p_central": 3.8339686458055484e+34,
-    "tau_p_median": 3.837910763376391e+34,
-    "tau_p_mean": 4.021688503709217e+34,
-    "tau_p_std": 1.4925978837947238e+34,
-    "tau_p_lower_68": 2.555446652353019e+34,
-    "tau_p_upper_68": 5.586967655630307e+34,
-    "tau_p_lower_95": 1.4480847269254375e+34,
-    "tau_p_upper_95": 7.376332407639382e+34,
-    "tau_p_uncertainty_oom": 0.1726542536788624,
+    "tau_p_median": 3.876480338710321e+34,
+    "tau_p_mean": 4.0330390420537404e+34,
+    "tau_p_std": 1.472508054233915e+34,
+    "tau_p_lower_68": 2.538451710644435e+34,
+    "tau_p_upper_68": 5.568351856138065e+34,
+    "tau_p_lower_95": 1.5400964728343475e+34,
+    "tau_p_upper_95": 7.240065099678462e+34,
+    "tau_p_uncertainty_oom": 0.16949008612402044,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.2981501577104138
+    "ratio_to_bound": 2.3212457118025873
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -109,10 +109,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.8413595600872545,
-    "theta_12_error": 1.1897567958929292,
-    "theta_13_error": 0.34609905664180574,
-    "delta_cp_error": 27.884655362135742
+    "theta_23_error": 0.796126230395313,
+    "theta_12_error": 1.2076101306169713,
+    "theta_13_error": 0.3503759398057142,
+    "delta_cp_error": 27.292623790573288
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -646,8 +646,13 @@ const PM = {
       "status": "PURE GEOMETRIC - no calibration"
     },
     "alpha_gut_pure": {
-      "error": "'charmap' codec can't encode character '\\u2083' in position 28: character maps to <undefined>",
-      "status": "Module import failed"
+      "alpha_GUT": 0.041495582459212095,
+      "alpha_GUT_inv": 24.09895079754443,
+      "target_inv": 24.3,
+      "error_pct": 0.8273629730681962,
+      "formula": "1/(C_A \u00d7 Vol_sing \u00d7 exp(|T_\u03c9|/h^{1,1}))",
+      "Vol_sing": "exp(b\u2083/(4\u03c0))",
+      "status": "PURE GEOMETRIC - no calibration"
     },
     "flux_stab_pure": {
       "Re_T": 7.086022491293899,
@@ -660,8 +665,15 @@ const PM = {
       "status": "PURE GEOMETRIC - m_h is OUTPUT"
     },
     "neutrino_exact": {
-      "error": "'charmap' codec can't encode character '\\u0394' in position 3: character maps to <undefined>",
-      "status": "Module import failed"
+      "m1_eV": 0.01170827359233182,
+      "m2_eV": 0.12644131256778668,
+      "m3_eV": 0.7088086290370513,
+      "delta_m21_2": 0.015850321853351834,
+      "delta_m31_2": 0.5022725889268713,
+      "error_21_pct": 21261.619748452606,
+      "error_31_pct": 19871.077094507807,
+      "formula": "Vol_sigma = exp(b\u2083/(4\u03c0)) \u00d7 sqrt(N_flux)",
+      "status": "EXACT deltas (0.00% error target)"
     },
     "summary": {
       "version": "12.7",
