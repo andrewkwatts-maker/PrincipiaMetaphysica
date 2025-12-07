@@ -12,6 +12,28 @@ Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 """
 
 # ============================================================================
+# MASTER ACTION (26D)
+# ============================================================================
+
+MASTER_ACTION = {
+    "s_26d_action": {
+        "latex": r"S_{26D} = \int d^{26}x \sqrt{|G|} \left[M_*^{24} R_{26} + \bar{\Psi}_P (i\Gamma^M D_M - m)\Psi_P + \mathcal{L}_{\text{Sp}(2,\mathbb{R})}\right]",
+        "html": "S₂₆D = ∫ d²⁶x √|G| [M*²⁴ R₂₆ + Ψ̄_P (iΓᴹ D_M - m) Ψ_P + ℒ_Sp(2,R)]",
+        "pm_values": ["phenomenology.M_STAR", "dimensions.D_bulk"],
+        "derivation": "26D master action with Sp(2,R) gauge fixing to eliminate second time ghost",
+        "numerical": "M_* = 7.46×10¹⁵ GeV from volume hierarchy"
+    },
+
+    "clifford_algebra_dim": {
+        "latex": r"\text{dim}(\text{Cl}(24,2)) = 2^{13} = 8192",
+        "html": "dim(Cl(24,2)) = 2¹³ = 8192",
+        "pm_values": ["dimensions.D_bulk"],
+        "derivation": "Spinor dimension from 26D Clifford algebra",
+        "numerical": "8192 components, reduces to 64 via Sp(2,R) gauge fixing"
+    }
+}
+
+# ============================================================================
 # DIMENSIONAL FRAMEWORK
 # ============================================================================
 
