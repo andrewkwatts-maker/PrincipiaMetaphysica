@@ -2,9 +2,9 @@
 """
 GUT Coupling — FINAL v12.7 (exact 24.30, honest calibration)
 
-1/alpha_GUT = C_A × exp(0.032177 × b3) × exp(|T_omega|/h^{1,1})
+1/alpha_GUT = C_A x exp(0.032177 x b3) x exp(|T_omega|/h^{1,1})
 
-→ 9 × exp(0.77) × exp(0.884/4) = 24.30 exact
+→ 9 x exp(0.77) x exp(0.884/4) = 24.30 exact
 
 Factor 0.032177 calibrated once to match RG running value 24.3.
 Analogous to VEV calibration (minimal departure from pure geometry).
@@ -19,13 +19,13 @@ def derive_alpha_gut(b3=24, T_omega=-0.884, h11=4):
     Derive GUT coupling constant (PURE GEOMETRIC v12.7).
 
     Pure Geometric Formula (v12.7):
-    alpha_GUT = 1 / (C_A × Vol_factor × torsion_factor)
+    alpha_GUT = 1 / (C_A x Vol_factor x torsion_factor)
 
     where Vol_factor = exp(b3/(8pi)) from 4-cycle measure
 
     Physical Basis:
     - C_A = 9: SO(10) adjoint Casimir (group theory)
-    - Vol_factor = exp(0.032177 × b3): Volume with one calibrated coefficient
+    - Vol_factor = exp(0.032177 x b3): Volume with one calibrated coefficient
       (like VEV, factor 0.032177 fitted to match 1/alpha_GUT = 24.3)
     - torsion_factor = exp(|T_omega|/h^{1,1}): Torsion localization (geometric)
 
@@ -62,7 +62,7 @@ if __name__ == "__main__":
 
     print(f"\nCalculation breakdown:")
     print(f"  C_A (SO(10) Casimir) = {C_A}")
-    print(f"  Vol_factor = exp(0.032177 × b3) = exp({0.032177*b3:.3f}) = {Vol_factor:.3f}")
+    print(f"  Vol_factor = exp(0.032177 x b3) = exp({0.032177*b3:.3f}) = {Vol_factor:.3f}")
     print(f"  Torsion factor = exp(|T_omega|/h11) = exp({np.abs(T_omega)/h11:.3f}) = {torsion_factor:.3f}")
-    print(f"  1/alpha_GUT = {C_A} × {Vol_factor:.3f} × {torsion_factor:.3f} = {alpha_GUT_inv:.2f}")
+    print(f"  1/alpha_GUT = {C_A} x {Vol_factor:.3f} x {torsion_factor:.3f} = {alpha_GUT_inv:.2f}")
     print(f"\nMinimal calibration: factor 0.032177 fitted to RG value 24.3")
