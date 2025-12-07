@@ -152,7 +152,8 @@
             }
         }
     </style>
-    <script src="theory-constants.js"></script>
+    <script src="../theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
 </head>
 <body>
     <div class="diagram-container">
@@ -173,13 +174,15 @@
 
         <!-- DIAGRAM 1: Dimensional Hierarchy -->
         <section class="diagram-section" id="dimensional-hierarchy">
-            <h2>1. Dimensional Hierarchy: 26D → 13D → 6D → 4D (via G₂ Construction)</h2>
+            <h2>1. Complete Dimensional Reduction: 26D → 13D → 8D → 6D Branches → 4D (v12.5)</h2>
             <p>The theory begins in a 26-dimensional bulk spacetime with signature (24,2) containing two timelike dimensions.
-               Via Sp(2,R) gauge fixing, this projects to a 13D shadow with signature (12,1),
-               which compactifies on a 7D G₂ manifold (constructed via Twisted Connected Sum with b₂=4, b₃=24) to 6D bulk,
-               then to our observable 4D universe. The alpha parameters (α₄=0.9557, α₅=0.2224) emerge from G₂ geometry, not as inputs.</p>
+               Via Sp(2,R) shadow projection, this reduces to a 13D shadow with signature (12,1). Through CY₄×S¹ compactification
+               (K_Pneuma manifold + thermal circle), we reach an 8D internal manifold with χ_eff = 144, predicting 3 generations via χ_eff/48 = 3.
+               The theory then splits into two branches: Branch 1 (Standard Model) with signature (5,1), and Branch 2 (Three Generations)
+               as 3×(3,1) G₂ spaces. Both branches merge into our observable 4D (3,1) universe. The alpha parameters (α₄=0.9557, α₅=0.2224)
+               emerge from G₂ geometry (b₂=4, b₃=24), not as inputs.</p>
             <div class="svg-wrapper">
-                <svg width="500" height="600" viewBox="0 0 500 600" xmlns="http://www.w3.org/2000/svg">
+                <svg width="1200" height="850" viewBox="0 0 1200 850" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                         <!-- Gradients -->
                         <linearGradient id="purple26D" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -210,66 +213,11 @@
                         </filter>
                     </defs>
 
-                    <!-- 26D Box -->
-                    <rect x="50" y="30" width="400" height="100" rx="15" fill="url(#purple26D)" filter="url(#shadow)"/>
-                    <text x="250" y="65" font-family="Georgia, serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">26D Bulk</text>
-                    <text x="250" y="92" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.9)" text-anchor="middle">Signature (24, 2)</text>
-                    <text x="250" y="110" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">Two timelike dimensions</text>
+                    <!-- Note: Diagram shows complete v12.5 pathway with embedded reference diagram -->
+                    <!-- For detailed standalone version, see /images/dimensional-reduction-pathway.svg -->
 
-                    <!-- Arrow 1 -->
-                    <path d="M250 130 L250 180" stroke="url(#arrowGrad)" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
-                    <polygon points="250,195 243,175 257,175" fill="url(#arrowGrad)"/>
-
-                    <!-- Arrow 1 Label Box -->
-                    <rect x="280" y="140" width="130" height="45" rx="8" fill="rgba(139,127,255,0.15)" stroke="rgba(139,127,255,0.4)" stroke-width="1"/>
-                    <text x="345" y="160" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff" text-anchor="middle">Sp(2,R)</text>
-                    <text x="345" y="175" font-family="Inter, sans-serif" font-size="11" fill="#8b7fff" text-anchor="middle">gauge fixing</text>
-
-                    <!-- 13D Shadow Box -->
-                    <rect x="75" y="200" width="350" height="100" rx="15" fill="url(#blue13D)" filter="url(#shadow)"/>
-                    <text x="250" y="235" font-family="Georgia, serif" font-size="22" font-weight="bold" fill="white" text-anchor="middle">13D Shadow</text>
-                    <text x="250" y="260" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Signature (12,1)</text>
-                    <text x="250" y="278" font-family="Inter, sans-serif" font-size="11" fill="rgba(255,255,255,0.7)" text-anchor="middle">12 space + 1 effective time</text>
-
-                    <!-- Arrow 2 -->
-                    <path d="M250 300 L250 360" stroke="url(#arrowGrad)" stroke-width="3" fill="none"/>
-                    <polygon points="250,375 243,355 257,355" fill="url(#arrowGrad)"/>
-
-                    <!-- Arrow 2 Label Box - G2 TCS -->
-                    <rect x="270" y="310" width="180" height="60" rx="8" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.4)" stroke-width="1"/>
-                    <text x="360" y="328" font-family="Inter, sans-serif" font-size="11" fill="#ff7eb6" text-anchor="middle" font-weight="bold">G₂ TCS Compactification</text>
-                    <text x="360" y="343" font-family="Inter, sans-serif" font-size="10" fill="#ff7eb6" text-anchor="middle">b₂=4, b₃=24</text>
-                    <text x="360" y="358" font-family="Inter, sans-serif" font-size="9" fill="#adb5bd" text-anchor="middle">Twisted Connected Sum</text>
-
-                    <!-- 6D Box -->
-                    <rect x="75" y="380" width="350" height="90" rx="15" fill="rgba(241,196,15,0.8)" filter="url(#shadow)"/>
-                    <text x="250" y="410" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">6D Bulk</text>
-                    <text x="250" y="435" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">After G₂ reduction</text>
-                    <text x="250" y="455" font-family="Inter, sans-serif" font-size="10" fill="rgba(255,255,255,0.7)" text-anchor="middle">α₄, α₅ emerge as geometric outputs</text>
-
-                    <!-- Arrow 3 -->
-                    <path d="M250 470 L250 510" stroke="url(#arrowGrad)" stroke-width="3" fill="none"/>
-                    <polygon points="250,525 243,505 257,505" fill="url(#arrowGrad)"/>
-
-                    <!-- 4D Box -->
-                    <rect x="125" y="530" width="250" height="60" rx="15" fill="url(#green4D)" filter="url(#shadow)"/>
-                    <text x="250" y="560" font-family="Georgia, serif" font-size="20" font-weight="bold" fill="white" text-anchor="middle">4D Observable</text>
-                    <text x="250" y="580" font-family="Inter, sans-serif" font-size="12" fill="rgba(255,255,255,0.9)" text-anchor="middle">Universe</text>
-
-                    <!-- Dimension indicators -->
-                    <circle cx="40" cy="80" r="4" fill="#9b59b6"/>
-                    <circle cx="40" cy="250" r="4" fill="#3498db"/>
-                    <circle cx="40" cy="425" r="4" fill="#f1c40f"/>
-                    <circle cx="40" cy="560" r="4" fill="#2ecc71"/>
-                    <line x1="40" y1="84" x2="40" y2="246" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,4"/>
-                    <line x1="40" y1="254" x2="40" y2="421" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,4"/>
-                    <line x1="40" y1="429" x2="40" y2="556" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,4"/>
-
-                    <!-- Labels for dimensions -->
-                    <text x="18" y="85" font-family="Inter, sans-serif" font-size="10" fill="#9b59b6" text-anchor="middle">26</text>
-                    <text x="18" y="255" font-family="Inter, sans-serif" font-size="10" fill="#3498db" text-anchor="middle">13</text>
-                    <text x="18" y="430" font-family="Inter, sans-serif" font-size="10" fill="#f1c40f" text-anchor="middle">6</text>
-                    <text x="18" y="565" font-family="Inter, sans-serif" font-size="10" fill="#2ecc71" text-anchor="middle">4</text>
+                    <!-- Embedded reference to standalone SVG -->
+                    <image href="../images/dimensional-reduction-pathway.svg" x="0" y="0" width="1200" height="850"/>
                 </svg>
             </div>
         </section>

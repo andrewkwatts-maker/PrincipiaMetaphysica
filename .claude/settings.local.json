@@ -20,7 +20,13 @@
       "Bash(test:*)",
       "Bash(if exist \"reports\\nul\" del /f \"reports\\nul\")",
       "Bash(if exist hardcoded_scan_results.txt del /f hardcoded_scan_results.txt)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\nul\" del /f \"h:\\Github\\PrincipiaMetaphysica\\nul\")",
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\reports\\nul\" del /f \"h:\\Github\\PrincipiaMetaphysica\\reports\\nul\")",
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\hardcoded_scan_results.txt\" del /f \"h:\\Github\\PrincipiaMetaphysica\\hardcoded_scan_results.txt\")",
+      "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" add -A)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" add -A)",
+      "Bash(git -C \"h:/Github/PrincipiaMetaphysica\" status --short)"
     ],
     "deny": [],
     "ask": []
