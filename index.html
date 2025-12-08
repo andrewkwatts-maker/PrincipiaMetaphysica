@@ -606,8 +606,42 @@
        </div>
       </a>
       <span class="formula-op">
+       +
+      </span>
+      <a class="formula-var highlight" href="sections/gauge-unification.html" style="text-decoration: none; color: inherit;">
+       ℒ
+       <sub>
+        Sp(2,ℝ)
+       </sub>
+       <div class="var-tooltip">
+        <div class="var-name">
+         Sp(2,ℝ) Gauge Lagrangian
+        </div>
+        <div class="var-description">
+         The Sp(2,ℝ) gauge field Lagrangian governing the reduction from 26D to 13D.
+        </div>
+        <div class="var-units">
+         GeV
+         <sup>
+          4
+         </sup>
+         (26D)
+        </div>
+        <div class="var-contribution">
+         Controls the gauge fixing from (24,2) to (12,1) signature, enabling dimensional reduction.
+        </div>
+        <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">
+         Click to learn more →
+        </div>
+       </div>
+      </a>
+      <span class="formula-op">
        ]
       </span>
+     </div>
+     <!-- Plain text version for accessibility and AI processing -->
+     <div class="formula-plaintext" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; font-family: 'Courier New', monospace; text-align: center; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 6px;">
+      S_26D = ∫ d^26 X √|G_(24,2)| [M̅²₆ R₂₆ + Ψ̄₂₆(iΓ^A∇_A - M)Ψ₂₆ + ℒ_Sp(2,ℝ)]
      </div>
      <div class="formula-label" style="font-size: 1.1rem; margin-top: 0.75rem;">
       <strong>
@@ -1319,6 +1353,10 @@
        </div>
       </a>
      </div>
+     <!-- Plain text version for accessibility and AI processing -->
+     <div class="formula-plaintext" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; font-family: 'Courier New', monospace; text-align: center; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 6px;">
+      M^13 = M^4 × K_Pneuma | SO(10) → SU(3)_C × SU(2)_L × U(1)_Y
+     </div>
      <div style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.9rem; font-style: italic;">
       <strong>
        In plain English:
@@ -1347,8 +1385,8 @@
     <!-- Dynamic Validation Metrics -->
     <div id="validation-metrics" class="glass-success" style="max-width: 1000px; margin: 1.5rem auto;" data-topic-id="validation.metrics_overview">
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-      <div id="metric-within-1sigma" style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
-       <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;">
+      <div id="metric-within-1sigma" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
+       <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
         All 58 SM
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
@@ -1766,10 +1804,10 @@
        <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1">
        </stop>
       </lineargradient>
-      <lineargradient id="greenGrad" x1="0%" x2="100%" y1="0%" y2="100%">
-       <stop offset="0%" style="stop-color:#51cf66;stop-opacity:1">
+      <lineargradient id="purpleGrad" x1="0%" x2="100%" y1="0%" y2="100%">
+       <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1">
        </stop>
-       <stop offset="100%" style="stop-color:#40c057;stop-opacity:1">
+       <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1">
        </stop>
       </lineargradient>
       <lineargradient id="blueGrad" x1="0%" x2="100%" y1="0%" y2="100%">
@@ -1779,7 +1817,7 @@
        </stop>
       </lineargradient>
       <marker id="mainArrow" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
-       <polygon fill="#ff7eb6" points="0 0, 10 3.5, 0 7">
+       <polygon fill="#8b7fff" points="0 0, 10 3.5, 0 7">
        </polygon>
       </marker>
      </defs>
@@ -1856,9 +1894,9 @@
      </g>
      <!-- Right: Gauge -->
      <g class="node">
-      <rect fill="rgba(81,207,102,0.15)" height="80" rx="12" stroke="rgba(81,207,102,0.5)" stroke-width="2" width="200" x="610" y="190">
+      <rect fill="rgba(139,127,255,0.15)" height="80" rx="12" stroke="rgba(139,127,255,0.5)" stroke-width="2" width="200" x="610" y="190">
       </rect>
-      <text fill="#51cf66" font-size="14" font-weight="600" text-anchor="middle" x="710" y="220">
+      <text fill="#8b7fff" font-size="14" font-weight="600" text-anchor="middle" x="710" y="220">
        SO(10) GUT
       </text>
       <text fill="#f8f9fa" font-size="12" text-anchor="middle" x="710" y="240">
@@ -1877,7 +1915,7 @@
      </path>
      <path d="M 450 270 L 450 310" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="2">
      </path>
-     <path d="M 710 270 L 710 310" fill="none" marker-end="url(#mainArrow)" stroke="#51cf66" stroke-width="2">
+     <path d="M 710 270 L 710 310" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="2">
      </path>
      <!-- Second level boxes -->
      <!-- Left: 4D Gravity -->
@@ -1927,9 +1965,9 @@
      </g>
      <!-- Right: Standard Model -->
      <g class="node">
-      <rect fill="rgba(81,207,102,0.1)" height="70" rx="10" stroke="rgba(81,207,102,0.4)" stroke-width="1.5" width="200" x="610" y="320">
+      <rect fill="rgba(139,127,255,0.1)" height="70" rx="10" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" width="200" x="610" y="320">
       </rect>
-      <text fill="#51cf66" font-size="13" font-weight="600" text-anchor="middle" x="710" y="345">
+      <text fill="#8b7fff" font-size="13" font-weight="600" text-anchor="middle" x="710" y="345">
        Standard Model
       </text>
       <text fill="#f8f9fa" font-size="11" text-anchor="middle" x="710" y="365">
@@ -1944,7 +1982,7 @@
      </path>
      <path d="M 450 390 L 450 440" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="1.5">
      </path>
-     <path d="M 710 390 L 550 450" fill="none" marker-end="url(#mainArrow)" stroke="#51cf66" stroke-width="1.5">
+     <path d="M 710 390 L 550 450" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="1.5">
      </path>
      <!-- Final output: Observable Universe -->
      <g class="node">
@@ -2004,9 +2042,9 @@
      <text fill="#adb5bd" font-size="9" text-anchor="middle" x="75" y="83">
       (12,1) bulk
      </text>
-     <rect fill="rgba(81,207,102,0.08)" height="60" rx="6" stroke="rgba(81,207,102,0.2)" stroke-width="1" width="90" x="780" y="30">
+     <rect fill="rgba(139,127,255,0.08)" height="60" rx="6" stroke="rgba(139,127,255,0.2)" stroke-width="1" width="90" x="780" y="30">
      </rect>
-     <text fill="#51cf66" font-size="20" font-weight="700" text-anchor="middle" x="825" y="50">
+     <text fill="#8b7fff" font-size="20" font-weight="700" text-anchor="middle" x="825" y="50">
       3
      </text>
      <text fill="#adb5bd" font-size="10" text-anchor="middle" x="825" y="70">
@@ -2017,12 +2055,14 @@
      </text>
     </svg>
     <div class="diagram-caption">
-     The Principia Metaphysica framework: A single fundamental field Ψ
+     <strong>Functional Overview:</strong> The Principia Metaphysica framework shows how a single fundamental field Ψ
      <sub>
       P
      </sub>
      (Pneuma) generates all physics.
                 Its condensates form spacetime geometry, its statistics yield emergent time, and its gauge structure contains the Standard Model.
+                For the complete dimensional reduction pathway (26D → 13D → 8D → 6D → 4D), see the
+                <a href="images/dimensional-reduction-pathway.svg" target="_blank" style="color: var(--accent-primary);">dimensional reduction diagram</a>.
     </div>
    </section>
    <section id="key-concepts">
