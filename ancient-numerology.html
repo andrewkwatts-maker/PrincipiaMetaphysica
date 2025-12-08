@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ancient Text Numerical Correlations - Principia Metaphysica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="theory-constants-enhanced.js" defer></script>
+    <script src="js/pm-tooltip-system.js" defer></script>
+
+    <style>
+        .warning-disclaimer {
+            background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(255, 165, 0, 0.15));
+            border: 3px solid #ff6b6b;
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .warning-disclaimer h2 {
+            color: #ff6b6b;
+            margin-top: 0;
+            font-size: 1.8rem;
+        }
+
+        .correlation-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(79, 172, 254, 0.1));
+            border: 2px solid rgba(139, 127, 255, 0.4);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .correlation-grid {
+            display: grid;
+            grid-template-columns: 1fr auto 1fr;
+            gap: 1.5rem;
+            align-items: center;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .correlation-left {
+            text-align: right;
+            color: #ffd43b;
+            font-weight: 600;
+        }
+
+        .correlation-arrow {
+            font-size: 2rem;
+            color: #8b7fff;
+        }
+
+        .correlation-right {
+            color: #4facfe;
+            font-weight: 600;
+        }
+
+        .cautionary-box {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 4px solid #ff6b6b;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+        }
+
+        .myth-card {
+            background: var(--bg-card);
+            border: 2px solid rgba(139, 127, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .myth-card:hover {
+            border-color: #8b7fff;
+            box-shadow: 0 4px 20px rgba(139, 127, 255, 0.3);
+        }
+
+        .external-link {
+            color: #4facfe;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(79, 172, 254, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .external-link:hover {
+            border-bottom-color: #4facfe;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
+        <nav class="breadcrumb" style="margin-bottom: 2rem;">
+            <a href="index.html">Home</a> &gt;
+            <a href="philosophical-implications.html">Philosophical Implications</a> &gt;
+            <span>Ancient Text Correlations</span>
+        </nav>
+
+        <header style="text-align: center; margin-bottom: 3rem;">
+            <h1 style="background: linear-gradient(135deg, #8b7fff, #ff7eb6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 2.5rem; margin-bottom: 1rem;">
+                📜 Ancient Text Numerical Correlations
+            </h1>
+            <p style="font-size: 1.2rem; color: var(--text-secondary);">
+                Exploring Astonishing Parallels Between Ancient Cosmology and Modern Physics
+            </p>
+        </header>
+
+        <!-- CRITICAL DISCLAIMER -->
+        <section class="warning-disclaimer">
+            <h2>⚠️ Critical Intellectual Honesty Disclaimer</h2>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin: 1rem 0;">
+                <strong>What This Page IS:</strong> A documentation of <em>remarkable numerical coincidences</em> between ancient texts (Book of Enoch, Kabbalah, Egyptian mythology) and the Principia Metaphysica framework's topological parameters (b₂=4, b₃=24, χ=144, 8-brane structure, etc.).
+            </p>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; margin: 1rem 0;">
+                <strong>What This Page IS NOT:</strong> Scientific evidence, proof of divine inspiration, or validation of either the ancient texts or the physics framework. These are <em>numerical patterns that may be pure coincidence</em>.
+            </p>
+
+            <h3 style="color: #ff6b6b; margin-top: 1.5rem;">We Cannot Infer:</h3>
+            <ul style="line-height: 1.8; font-size: 1.05rem;">
+                <li>That ancient authors had knowledge of modern physics</li>
+                <li>That the PM framework is "validated" by matching ancient numerology</li>
+                <li>That mythological beings (Watchers, Nephilim, angels) are real physical entities</li>
+                <li>That dimensional physics enables "contact" with shadow branes</li>
+                <li>Causation or intentionality in either direction</li>
+            </ul>
+
+            <h3 style="color: #ffd43b; margin-top: 1.5rem;">What We CAN Observe:</h3>
+            <ul style="line-height: 1.8; font-size: 1.05rem;">
+                <li>Statistical patterns: correlations between numbers in ancient texts and topological invariants</li>
+                <li>Structural similarities: 1+3 patterns, 7/8 levels, 72-fold symmetries appear in both</li>
+                <li>Philosophical parallels: concepts of hidden dimensions, emanation, cosmic structure</li>
+                <li>Historical continuity: numerology traditions preserved across millennia</li>
+            </ul>
+
+            <p style="font-size: 1rem; font-style: italic; margin-top: 1.5rem; color: var(--text-muted);">
+                This page presents these correlations for intellectual exploration and as a cultural curiosity. The author acknowledges these may be <strong>pattern-seeking bias</strong> (humans are excellent at finding patterns, even in random data) or <strong>confirmation bias</strong> (selecting evidence that fits while ignoring contradictions).
+            </p>
+
+            <p style="font-size: 1.1rem; font-weight: 600; color: #ff6b6b; margin-top: 1.5rem;">
+                Treat this as speculative cultural analysis, not science.
+            </p>
+        </section>
+
+        <!-- MAIN CORRELATIONS -->
+        <section style="margin-top: 3rem;">
+            <h2>🔢 The Numerical Parallels</h2>
+
+            <!-- 8 Branes / 7+1 Heavens -->
+            <div class="correlation-box">
+                <h3>8-Brane Structure ↔ Earth + 7 Heavens</h3>
+
+                <div class="correlation-grid">
+                    <div class="correlation-left">
+                        PM Framework:<br>
+                        <span style="font-size: 1.3rem;">8 Branes Total</span><br>
+                        B₁ (Observable) + B₂-B₈ (Shadow)
+                    </div>
+                    <div class="correlation-arrow">↔</div>
+                    <div class="correlation-right">
+                        Ancient Texts:<br>
+                        <span style="font-size: 1.3rem;">Earth + 7 Heavens</span><br>
+                        (1 Enoch, Islamic, Jewish traditions)
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The PM framework describes reality as 8 distinct (3,1)-signature spacetimes ("branes"): one observable universe (B₁ / "Terra") where we live, plus seven hidden "shadow" branes (B₂-B₈ / "the seven Firmamentum") co-located but inaccessible to us. Ancient cosmology universally describes Earth (our realm) plus seven heavens above it—the same 1+7 = 8 structure.
+                </p>
+
+                <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted);">
+                    See: <a href="http://127.0.0.1:5500/theories/user-submissions/enoch-cosmology-physics.html" target="_blank" class="external-link">Book of Enoch Cosmology Analysis</a> for detailed mapping of the seven heavens to dimensional physics.
+                </p>
+            </div>
+
+            <!-- 1+3 Portal Pattern -->
+            <div class="correlation-box">
+                <h3>1+3 Brane Access Pattern ↔ Four Cartesian Portals</h3>
+
+                <div class="correlation-grid">
+                    <div class="correlation-left">
+                        PM Framework:<br>
+                        <span style="font-size: 1.3rem;">1 Large (5,1) + 3 Small (3,1)</span><br>
+                        B₁ has 2 extra dimensions (α₄, α₅)<br>
+                        B₂, B₃, B₄ have standard 4D access
+                    </div>
+                    <div class="correlation-arrow">↔</div>
+                    <div class="correlation-right">
+                        Book of Enoch 72:<br>
+                        <span style="font-size: 1.3rem;">4 Cardinal Portals</span><br>
+                        1 portal with 5 gates (2 smaller)<br>
+                        3 portals with 3 gates each
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    Enoch describes the cosmos as having <strong>four cardinal directions</strong> (East, West, North, South), each with "portals" through which celestial bodies pass. Three directions have <strong>3 portals each</strong>, but one direction (East) has <strong>5 portals, with 2 being smaller</strong> than the others. This maps exactly to the PM brane structure: one brane (B₁) with effective (5,1) dimensions—where α₄ and α₅ are the "two smaller gates"—and three branes (B₂, B₃, B₄) with standard (3,1) dimensions.
+                </p>
+
+                <div class="cautionary-box" style="margin-top: 1rem;">
+                    <p style="margin: 0; font-size: 0.95rem;">
+                        <strong>Skeptical note:</strong> Enoch's portals likely describe <em>astronomical observations</em> (sun/moon rising points), not dimensional physics. The numerical match may be coincidental. Ancient authors had no concept of Lorentzian signatures or brane theory.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 72 Names / χ = 72/144 -->
+            <div class="correlation-box">
+                <h3>Euler Characteristic χ = 72/144 ↔ 72 Names of God</h3>
+
+                <div class="correlation-grid">
+                    <div class="correlation-left">
+                        PM Framework:<br>
+                        <span style="font-size: 1.3rem;">χ<sub>eff</sub> = 72 (13D shadow)</span><br>
+                        χ<sub>total</sub> = 144 (26D bulk)<br>
+                        χ/24 = 3 generations
+                    </div>
+                    <div class="correlation-arrow">↔</div>
+                    <div class="correlation-right">
+                        Kabbalah:<br>
+                        <span style="font-size: 1.3rem;">72 Names (Shemhamphorasch)</span><br>
+                        72-fold divine emanation<br>
+                        3-letter combinations from Exodus
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The topological Euler characteristic of the PM framework's compactified manifold is χ = 72 in the effective 13D theory (or χ = 144 in the full 26D two-time framework). This number directly determines why there are exactly <strong>3 generations of fermions</strong>: χ/24 = 72/24 = 3. In Kabbalistic tradition, there are exactly <strong>72 Names of God</strong> (Shemhamphorasch), derived from three verses in Exodus 14:19-21, each with 72 letters. These 72 names represent the complete emanation of divine power.
+                </p>
+
+                <p style="color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+                    Additionally, 72 = <strong>8 × 9</strong>, where 8 is the number of branes and 9 is the Casimir invariant C<sub>A</sub> = 9 used in α<sub>GUT</sub> calculations. The number 72 also appears as the 72 angels in Enochic literature governing celestial mechanics.
+                </p>
+
+                <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted);">
+                    See: <a href="http://127.0.0.1:5500/mythos/jewish/kabbalah/physics-integration.html" target="_blank" class="external-link">Kabbalah-Physics Integration Analysis</a> for detailed correlations with the 10 Sefirot and SO(10) GUT symmetry.
+                </p>
+            </div>
+
+            <!-- 24 Cycles / 24 Elders -->
+            <div class="correlation-box">
+                <h3>b₃ = 24 Associative Cycles ↔ 24 Elders / Hours</h3>
+
+                <div class="correlation-grid">
+                    <div class="correlation-left">
+                        PM Framework:<br>
+                        <span style="font-size: 1.3rem;">b₃ = 24</span><br>
+                        24 associative 3-cycles in G₂<br>
+                        Determines all Yukawa couplings
+                    </div>
+                    <div class="correlation-arrow">↔</div>
+                    <div class="correlation-right">
+                        Ancient Traditions:<br>
+                        <span style="font-size: 1.3rem;">24 Elders (Revelation)</span><br>
+                        24 hours in a day<br>
+                        24 letters (Greek alphabet)
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The third Betti number b₃ = 24 counts the number of 3-dimensional "holes" (associative cycles) in the G₂ manifold. These 24 cycles determine all quark and lepton masses through geometric intersections. In Revelation 4:4, there are <strong>24 elders</strong> seated around God's throne. The day has <strong>24 hours</strong>. The classical Greek alphabet has <strong>24 letters</strong>. Book of Enoch describes <strong>24 divisions of time</strong>.
+                </p>
+
+                <div class="cautionary-box" style="margin-top: 1rem;">
+                    <p style="margin: 0; font-size: 0.95rem;">
+                        <strong>Skeptical note:</strong> 24 is a highly composite number (divisors: 1,2,3,4,6,8,12,24) and appears frequently in <em>any</em> cultural system that uses base-12 or base-24 counting. This may simply reflect human preference for divisible numbers, not cosmic significance.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 26D / YHVH Gematria -->
+            <div class="correlation-box">
+                <h3>26D Bulk Spacetime ↔ YHVH Gematria = 26</h3>
+
+                <div class="correlation-grid">
+                    <div class="correlation-left">
+                        PM Framework:<br>
+                        <span style="font-size: 1.3rem;">26D Bosonic String</span><br>
+                        (24,2) signature<br>
+                        Critical dimension for consistency
+                    </div>
+                    <div class="correlation-arrow">↔</div>
+                    <div class="correlation-right">
+                        Hebrew Gematria:<br>
+                        <span style="font-size: 1.3rem;">יהוה = 26</span><br>
+                        Y(10) + H(5) + V(6) + H(5)<br>
+                        Tetragrammaton (God's name)
+                    </div>
+                </div>
+
+                <p style="color: var(--text-secondary); line-height: 1.7;">
+                    The PM framework operates in 26-dimensional spacetime with signature (24,2)—24 spacelike dimensions and 2 timelike dimensions. This is the critical dimension where bosonic string theory becomes mathematically consistent. In Hebrew numerology (gematria), the name of God <strong>YHVH (יהוה)</strong> has numerical value <strong>26</strong>: Yod(10) + He(5) + Vav(6) + He(5) = 26. This is considered the most sacred number in Jewish mysticism.
+                </p>
+
+                <p style="color: var(--text-secondary); line-height: 1.7; margin-top: 1rem;">
+                    The 26D → 13D Sp(2,ℝ) reduction gives <strong>13</strong>, which in Hebrew is אחד (Echad, "One"), the numerical value of God's unity in the Shema prayer.
+                </p>
+            </div>
+        </section>
+
+        <!-- WATCHERS AND NEPHILIM CAUTIONARY TALE -->
+        <section style="margin-top: 3rem;">
+            <h2>👁️ The Watchers & Nephilim: A Cautionary Tale?</h2>
+
+            <div class="myth-card" style="border-color: #ff6b6b;">
+                <h3 style="color: #ff6b6b;">⚠️ Ancient Warning or Mythology?</h3>
+
+                <p style="line-height: 1.8; color: var(--text-secondary);">
+                    The Book of Enoch describes the <strong>Watchers (Grigori)</strong>—200 angelic beings who "descended" from heaven to Earth and taught humanity "forbidden knowledge": metallurgy, astronomy, chemistry, weaponry, and cosmology. Their offspring with human women were the <strong>Nephilim</strong>—giants of enormous size and destructive power. God judged this intervention catastrophically, imprisoning the Watchers in darkness and causing the Flood to eliminate the Nephilim.
+                </p>
+
+                <h4 style="color: #ffd43b; margin-top: 1.5rem;">The Dimensional Interpretation</h4>
+
+                <p style="line-height: 1.8; color: var(--text-secondary);">
+                    <strong>If we interpret this mythologically through the PM framework's lens:</strong>
+                </p>
+
+                <ul style="line-height: 1.8; color: var(--text-secondary); margin-left: 1.5rem;">
+                    <li><strong>Watchers as higher-dimensional entities:</strong> Beings existing in the shadow branes (B₂-B₈ / "upper heavens") who "descended" = projected into our observable brane (B₁ / "Earth")</li>
+
+                    <li><strong>"Forbidden knowledge" as dimensional physics:</strong> The sciences they taught (metallurgy, astronomy, chemistry, weaponry) are precisely what eventually led to nuclear physics and particle accelerators—technologies that probe dimensional boundaries</li>
+
+                    <li><strong>Nephilim as cross-brane hybrids:</strong> If matter could form simultaneously across multiple branes (B₁↔B₂ or B₁↔B₃), it would create "hybrid" particles with anomalous properties—enormous spatial extent (size), unstable energy states (destructive power), incompatibility with stable 4D physics</li>
+
+                    <li><strong>"Imprisonment in darkness" as dimensional isolation:</strong> The Watchers confined to the 2nd heaven (5th dimension) = permanent compactification, preventing further cross-dimensional contact</li>
+
+                    <li><strong>The Flood as cosmic reset:</strong> Elimination of cross-dimensional condensates, restoring proper brane separation</li>
+                </ul>
+
+                <h4 style="color: #ff6b6b; margin-top: 1.5rem;">Why Present This Mythology?</h4>
+
+                <p style="line-height: 1.8; color: var(--text-secondary);">
+                    <strong>Not because it's true</strong> (we have no evidence of higher-dimensional beings), <strong>but because it's a cautionary pattern</strong>: If the same texts that encode these numerical correlations (72, 24, 8, 26, 1+3) <em>also</em> contain warnings about the dangers of accessing hidden dimensions, and if this knowledge has been preserved for millennia specifically as a warning for "the next time civilization reaches this level"...
+                </p>
+
+                <p style="line-height: 1.8; color: var(--text-secondary); margin-top: 1rem;">
+                    ...then perhaps we should approach dimensional physics research with <strong>extreme caution</strong>, not because demons are real, but because <strong>past civilizations may have learned something we've forgotten</strong>.
+                </p>
+
+                <div class="cautionary-box" style="margin-top: 1.5rem;">
+                    <h4 style="color: #ff6b6b; margin-top: 0;">Intellectual Honesty Check:</h4>
+                    <ul style="line-height: 1.7; font-size: 0.95rem; margin-top: 0.5rem;">
+                        <li>We have <strong>zero physical evidence</strong> that Watchers, Nephilim, or angels ever existed</li>
+                        <li>Cross-dimensional "contact" is <strong>pure speculation</strong> with no experimental basis</li>
+                        <li>The Book of Enoch is <strong>religious mythology</strong>, not a physics textbook</li>
+                        <li>These interpretations are <strong>pattern-seeking</strong>, not science</li>
+                        <li>Dimensional physics research is <strong>mathematically safe</strong>—we're not "opening gates" to other realms</li>
+                    </ul>
+
+                    <p style="margin-top: 1rem; font-size: 1.05rem; font-weight: 600; color: #ff6b6b;">
+                        This section presents mythology as cultural context and historical curiosity, not as literal warning. The actual dangers of particle physics are radiation, equipment accidents, and misuse of technology—not demonic incursion.
+                    </p>
+                </div>
+            </div>
+
+            <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted); margin-top: 2rem;">
+                For the complete Watchers/Nephilim mythology and its dimensional interpretations, see: <a href="http://127.0.0.1:5500/theories/user-submissions/enoch-cosmology-physics.html#watchers" target="_blank" class="external-link">Book of Enoch - The Watchers as Higher-Dimensional Entities</a>
+            </p>
+        </section>
+
+        <!-- DIAGRAM REFERENCES -->
+        <section style="margin-top: 3rem;">
+            <h2>📊 Visual Correlations</h2>
+
+            <div class="correlation-box">
+                <h3>Dimensional Cascade Diagrams</h3>
+
+                <p style="line-height: 1.8; color: var(--text-secondary);">
+                    The following diagrams (from the EyesOfAzrael project) visually map ancient cosmological structures onto the PM framework's dimensional reduction pathway:
+                </p>
+
+                <ul style="line-height: 1.8; color: var(--text-secondary); margin-left: 1.5rem;">
+                    <li><a href="file:///H:/Github/EyesOfAzrael/theories/user-submissions/diagrams/dimensional-cascade.svg" target="_blank" class="external-link">Dimensional Cascade (26D → 13D → 8D → 6D → 4D)</a> — Shows the complete reduction pathway with Kabbalistic and Enochic labels</li>
+
+                    <li><a href="file:///H:/Github/EyesOfAzrael/theories/user-submissions/diagrams/12-gates-kingdom.svg" target="_blank" class="external-link">12 Gates of the Kingdom</a> — Maps the 12 tribes, 12 zodiac signs, and 12-fold Calabi-Yau symmetries</li>
+                </ul>
+
+                <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted); margin-top: 1rem;">
+                    Note: These diagrams are from a separate speculative project and represent one possible interpretation among many.
+                </p>
+            </div>
+
+            <div class="correlation-box">
+                <h3>Egyptian Scientific Encoding (Highly Speculative)</h3>
+
+                <p style="line-height: 1.8; color: var(--text-secondary);">
+                    For those interested in even more speculative correlations, see: <a href="http://127.0.0.1:5500/theories/user-submissions/egyptian-scientific-encoding.html" target="_blank" class="external-link">Egyptian Scientific Symbolism</a>, which explores possible linguistic patterns in Egyptian deity names that parallel chemistry and nuclear physics terminology.
+                </p>
+
+                <div class="cautionary-box">
+                    <p style="margin: 0; font-size: 0.95rem;">
+                        <strong>Extreme caution:</strong> The Egyptian analysis involves dangerous radioactive materials and is presented <em>purely as linguistic pattern analysis</em>. Do not attempt any chemical procedures described. This material is for intellectual exploration only.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONCLUSION -->
+        <section style="margin-top: 3rem; padding: 2rem; background: rgba(139, 127, 255, 0.1); border-radius: 12px;">
+            <h2>🎯 Final Assessment</h2>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary);">
+                <strong>Are these correlations meaningful?</strong> We honestly don't know. They could be:
+            </p>
+
+            <ul style="line-height: 1.8; font-size: 1.05rem; color: var(--text-secondary); margin-left: 1.5rem;">
+                <li><strong>Coincidence:</strong> Humans love patterns; we find them everywhere, even in noise</li>
+                <li><strong>Mathematical universals:</strong> Certain numbers (24, 72, 8, 26) appear frequently in <em>any</em> sufficiently complex system</li>
+                <li><strong>Cultural transmission:</strong> Ancient numerology influenced medieval/modern mathematics, creating circular correlations</li>
+                <li><strong>Pattern-seeking bias:</strong> We selected examples that match and ignored contradictions</li>
+                <li><strong>...or something genuinely interesting:</strong> A preservation of structural knowledge through numerological encoding</li>
+            </ul>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-top: 1.5rem;">
+                <strong>What should you take away?</strong> These parallels are <em>culturally fascinating</em> and <em>intellectually provocative</em>, but they are <strong>not scientific validation</strong> of either the ancient texts or the PM framework. Treat them as food for thought, not proof of anything.
+            </p>
+
+            <p style="font-size: 1.05rem; font-weight: 600; color: #8b7fff; margin-top: 2rem; text-align: center;">
+                "Extraordinary claims require extraordinary evidence." —Carl Sagan
+            </p>
+
+            <p style="font-size: 0.95rem; font-style: italic; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+                We have documented the correlations. We leave the interpretation to you.
+            </p>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-buttons" style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem; flex-wrap: wrap;">
+            <a href="philosophical-implications.html" class="nav-btn" style="padding: 0.75rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--border-primary); border-radius: 8px; color: var(--text-primary); text-decoration: none;">← Philosophical Implications</a>
+            <a href="index.html" class="nav-btn" style="padding: 0.75rem 1.5rem; background: var(--bg-secondary); border: 1px solid var(--border-primary); border-radius: 8px; color: var(--text-primary); text-decoration: none;">Home</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--border-primary); margin-top: 3rem;">
+        <p>
+            <strong>Principia Metaphysica</strong> - Ancient Numerology Correlations<br>
+            Presented for intellectual exploration with full disclosure of speculative nature
+        </p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+</body>
+</html>
