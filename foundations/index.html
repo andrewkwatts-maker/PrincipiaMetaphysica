@@ -252,10 +252,11 @@
 
             <!-- Category Filter Tabs -->
             <div class="formula-category-tabs" style="margin: 1.5rem 0; display: flex; gap: 0.75rem; flex-wrap: wrap;">
-                <button class="category-tab active" data-category="ALL" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.3); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">All Formulas</button>
-                <button class="category-tab" data-category="ESTABLISHED" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Established Physics</button>
-                <button class="category-tab" data-category="THEORY" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(255, 126, 182, 0.08); border: 1px solid rgba(255, 126, 182, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">PM Theory</button>
-                <button class="category-tab" data-category="DERIVED" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Derived Results</button>
+                <button class="category-tab active" data-category="THEORY" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(255, 126, 182, 0.15); border: 2px solid rgba(255, 193, 7, 0.5); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease; font-weight: 600;">PM Theory</button>
+                <button class="category-tab" data-category="ALL_PM" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(255, 126, 182, 0.08); border: 2px solid rgba(255, 193, 7, 0.3); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 600;">All PM</button>
+                <button class="category-tab" data-category="ALL" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">All Formulas</button>
+                <button class="category-tab" data-category="ESTABLISHED" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(100, 100, 100, 0.08); border: 1px solid rgba(100, 100, 100, 0.2); color: var(--text-muted); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Established</button>
+                <button class="category-tab" data-category="DERIVED" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Derived</button>
                 <button class="category-tab" data-category="PREDICTIONS" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(79, 172, 254, 0.08); border: 1px solid rgba(79, 172, 254, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Predictions</button>
             </div>
 
@@ -294,7 +295,7 @@
     <!-- Dynamic Formula Panel System -->
     <script>
         // State
-        let currentCategory = 'ALL';
+        let currentCategory = 'THEORY';
 
         // Category color mapping
         const categoryColors = {
@@ -308,30 +309,70 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Display formula counts
             const counts = getFormulaCounts();
+            const pmTotal = counts.THEORY + counts.DERIVED + counts.PREDICTIONS;
             document.getElementById('formula-count-display').innerHTML =
-                `${counts.TOTAL} total (${counts.ESTABLISHED} established, ${counts.THEORY} theory, ${counts.DERIVED} derived, ${counts.PREDICTIONS} predictions)`;
+                `${counts.TOTAL} total (${pmTotal} PM-specific: ${counts.THEORY} theory, ${counts.DERIVED} derived, ${counts.PREDICTIONS} predictions | ${counts.ESTABLISHED} established)`;
 
-            // Populate formulas
-            renderFormulas('ALL');
+            // Populate formulas - start with PM Theory (default)
+            renderFormulas('THEORY');
 
             // Setup category tabs
             document.querySelectorAll('.category-tab').forEach(tab => {
                 tab.addEventListener('click', function() {
+                    const category = this.dataset.category;
+
                     // Update active state
                     document.querySelectorAll('.category-tab').forEach(t => {
                         t.classList.remove('active');
-                        t.style.background = t.dataset.category === 'ALL' ? 'rgba(139, 127, 255, 0.08)' :
-                                            categoryColors[t.dataset.category]?.bg || 'rgba(139, 127, 255, 0.08)';
-                        t.style.color = 'var(--text-secondary)';
+
+                        // Reset styling based on category type
+                        if (t.dataset.category === 'THEORY' || t.dataset.category === 'ALL_PM') {
+                            // PM-specific buttons get gold border
+                            t.style.background = t.dataset.category === 'THEORY' ? 'rgba(255, 126, 182, 0.08)' : 'rgba(255, 126, 182, 0.08)';
+                            t.style.border = '2px solid rgba(255, 193, 7, 0.3)';
+                            t.style.color = 'var(--text-secondary)';
+                            t.style.fontWeight = '600';
+                        } else if (t.dataset.category === 'ESTABLISHED') {
+                            // Established gets grey/de-emphasized
+                            t.style.background = 'rgba(100, 100, 100, 0.08)';
+                            t.style.border = '1px solid rgba(100, 100, 100, 0.2)';
+                            t.style.color = 'var(--text-muted)';
+                            t.style.fontWeight = '500';
+                        } else if (t.dataset.category === 'ALL') {
+                            t.style.background = 'rgba(139, 127, 255, 0.08)';
+                            t.style.border = '1px solid rgba(139, 127, 255, 0.2)';
+                            t.style.color = 'var(--text-secondary)';
+                            t.style.fontWeight = '500';
+                        } else {
+                            // DERIVED, PREDICTIONS
+                            t.style.background = categoryColors[t.dataset.category]?.bg || 'rgba(139, 127, 255, 0.08)';
+                            t.style.border = '1px solid ' + (categoryColors[t.dataset.category]?.border || 'rgba(139, 127, 255, 0.2)');
+                            t.style.color = 'var(--text-secondary)';
+                            t.style.fontWeight = '500';
+                        }
                     });
 
+                    // Apply active styling to clicked tab
                     this.classList.add('active');
-                    this.style.background = this.dataset.category === 'ALL' ? 'rgba(139, 127, 255, 0.15)' :
-                                           categoryColors[this.dataset.category]?.bg.replace('0.08', '0.15') || 'rgba(139, 127, 255, 0.15)';
-                    this.style.color = 'var(--text-primary)';
+                    if (category === 'THEORY' || category === 'ALL_PM') {
+                        this.style.background = 'rgba(255, 126, 182, 0.15)';
+                        this.style.border = '2px solid rgba(255, 193, 7, 0.5)';
+                        this.style.color = 'var(--text-primary)';
+                    } else if (category === 'ESTABLISHED') {
+                        this.style.background = 'rgba(100, 100, 100, 0.15)';
+                        this.style.border = '1px solid rgba(100, 100, 100, 0.4)';
+                        this.style.color = 'var(--text-primary)';
+                    } else if (category === 'ALL') {
+                        this.style.background = 'rgba(139, 127, 255, 0.15)';
+                        this.style.border = '1px solid rgba(139, 127, 255, 0.3)';
+                        this.style.color = 'var(--text-primary)';
+                    } else {
+                        this.style.background = categoryColors[category]?.bg.replace('0.08', '0.15') || 'rgba(139, 127, 255, 0.15)';
+                        this.style.border = '1px solid ' + (categoryColors[category]?.border || 'rgba(139, 127, 255, 0.3)');
+                        this.style.color = 'var(--text-primary)';
+                    }
 
                     // Render formulas for selected category
-                    const category = this.dataset.category;
                     currentCategory = category;
                     renderFormulas(category);
                 });
@@ -356,6 +397,16 @@
             if (category === 'ALL') {
                 // Get all formulas from all categories
                 for (const cat of ['ESTABLISHED', 'THEORY', 'DERIVED', 'PREDICTIONS']) {
+                    const catFormulas = Object.entries(PM_FORMULAS[cat] || {}).map(([key, formula]) => ({
+                        ...formula,
+                        key,
+                        category: cat
+                    }));
+                    formulas = formulas.concat(catFormulas);
+                }
+            } else if (category === 'ALL_PM') {
+                // Get all PM-specific formulas (Theory + Derived + Predictions)
+                for (const cat of ['THEORY', 'DERIVED', 'PREDICTIONS']) {
                     const catFormulas = Object.entries(PM_FORMULAS[cat] || {}).map(([key, formula]) => ({
                         ...formula,
                         key,
