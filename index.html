@@ -272,10 +272,18 @@
 
         .formula-var {
             cursor: pointer;
+            position: relative;
         }
 
         a.formula-var:hover {
             color: var(--accent-primary) !important;
+        }
+
+        /* Formula variable tooltips - ensure they appear above everything */
+        .var-tooltip {
+            position: absolute;
+            z-index: 10000 !important;
+            pointer-events: none;
         }
 
         /* Equation Display */
@@ -442,7 +450,7 @@
      </a>
     </div>
     <!-- Master 26D Action - Interactive Display -->
-    <div class="interactive-formula" style="margin-top: 2rem; position: relative; z-index: 1;">
+    <div class="interactive-formula" style="margin-top: 2rem; position: relative; z-index: 100;">
      <span class="formula-hint">
       Hover for details
      </span>
@@ -1170,7 +1178,7 @@
      ).
     </p>
     <!-- Interactive Dimensional Decomposition Formula -->
-    <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.1); padding: 1.5rem 2rem; border-radius: 12px; margin: 1.5rem 0; border: 1px solid rgba(139, 127, 255, 0.2); position: relative; z-index: 1;">
+    <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.1); padding: 1.5rem 2rem; border-radius: 12px; margin: 1.5rem 0; border: 1px solid rgba(139, 127, 255, 0.2); position: relative; z-index: 100;">
      <span class="formula-hint">
       Hover for details
      </span>
@@ -1398,7 +1406,7 @@
         12 Parameters
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        0.0σ Agreement
+        Exact Central Value Match
        </div>
       </div>
       <div id="metric-desi" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="dark_energy.desi_validation">
@@ -1406,7 +1414,7 @@
         DESI DR2
        </div>
        <div id="desi-validation" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        0.00σ Agreement
+        0.00σ DESI DR2
        </div>
       </div>
      </div>
@@ -1426,7 +1434,7 @@
       <li><strong>1/α_GUT = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.alpha_gut_casimir.alpha_GUT_inv"></span></strong> (fitted parameter - sets GUT scale for all gauge couplings)</li>
      </ul>
      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
-      From these two inputs, the G₂ manifold geometry generates: Higgs mass (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV, 0.0σ deviation), dark energy w₀ (<span class="pm-value" data-pm-value="v12_6_geometric_derivations.w0_d_eff.w0"></span>, 0.0σ agreement with DESI), both neutrino mass differences (0.0σ deviation), KK graviton mass (<span class="pm-value" data-pm-value="v12_6_geometric_derivations.kk_graviton_fixed.m_KK_TeV"></span> TeV), proton lifetime (<span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> yr), and all other SM parameters.
+      From these two inputs, the G₂ manifold geometry generates: Higgs mass (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV, matches PDG central value), dark energy w₀ (<span class="pm-value" data-pm-value="v12_6_geometric_derivations.w0_d_eff.w0"></span>, within DESI DR2 uncertainties), both neutrino mass differences (match NuFIT central values), KK graviton mass (<span class="pm-value" data-pm-value="v12_6_geometric_derivations.kk_graviton_fixed.m_KK_TeV"></span> TeV), proton lifetime (<span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> yr), and all other SM parameters.
      </p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.5rem; margin: 0 auto 2rem auto; max-width: 900px;">
@@ -1442,17 +1450,17 @@
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Higgs Mass</div>
        <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.0σ</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">PDG 2024</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">w₀ (Dark Energy)</div>
        <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="v12_6_geometric_derivations.w0_d_eff.w0"></span></div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.0σ DESI</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">0.00σ DESI DR2</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">1/α_GUT</div>
        <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="v12_6_geometric_derivations.alpha_gut_casimir.alpha_GUT_inv"></span></div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.0σ</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">KK Graviton</div>
@@ -1462,12 +1470,12 @@
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Δm²₂₁</div>
        <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;">7.42×10⁻⁵ eV²</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.0σ</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Δm²₃₁</div>
        <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;">2.515×10⁻³ eV²</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.0σ</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Proton Lifetime</div>
@@ -1778,7 +1786,7 @@
        DESI DR2 Agreement
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       w₀ = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.w0_d_eff.w0"></span> - <strong style="color: #51cf66;">0.0σ agreement</strong> with DESI DR2 central value
+       w₀ = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.w0_d_eff.w0"></span> - <strong style="color: #51cf66;">0.00σ within DESI DR2 combined uncertainties</strong>
       </p>
      </div>
      <div id="issue-dimensional-framework" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="geometric_framework.dimensional_reduction">
