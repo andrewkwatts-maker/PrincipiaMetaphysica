@@ -689,7 +689,6 @@ const PM = {
       "status": "PREDICTED - testable by Hyper-K 2032+"
     },
     "summary": {
-      "version": "12.7",
       "calibration_transparency": "2 fitted (VEV, alpha_GUT), 56 predicted",
       "vev_status": "CALIBRATED (173.97 GeV, 0.017% error)",
       "alpha_gut_status": "CALIBRATED (1/alpha_GUT = 24.30 EXACT)",
@@ -702,10 +701,11 @@ const PM = {
       "catastrophic_errors_fixed": 5,
       "experimental_exact_matches": 9,
       "grade": "A++++ (honest calibration + perfect experimental matches)",
-      "publication_ready": true,
-      "final_version": true
+      "publication_ready": true
     }
   },
+  // Version-agnostic alias for paper (always points to current best values)
+  "pure_geometric": null,  // Will be set below
   "validation": {
     "proton_decay_status": "CONSISTENT",
     "pmns_status": "EXCELLENT",
@@ -763,3 +763,6 @@ PM.getNeutrinoMasses = () => PM.v10_1_neutrino_masses;
 PM.getAllFermions = () => PM.v10_2_all_fermions;
 PM.getFinalObservables = () => PM.v11_final_observables;
 PM.getFinalValues = () => PM.v12_final_values;
+
+// Set version-agnostic alias (for paper - always points to current best)
+PM.pure_geometric = PM.v12_7_pure_geometric;

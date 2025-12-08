@@ -243,34 +243,38 @@
             </div>
         </section>
 
-        <section class="detail-section">
+        <!-- PM-Derived Formulas Section - DYNAMIC -->
+        <section class="detail-section" id="pm-formulas">
             <h3>PM-Derived Formulas</h3>
             <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                These formulas are derived within Principia Metaphysica from the foundational physics above.
+                Unique formulas derived within the Principia Metaphysica framework - <strong id="formula-count-display">Loading...</strong> formulas organized by category
             </p>
-            <div class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <a href="../sections/pneuma-lagrangian.html" class="section-card">
-                    <span class="foundation-badge pm-specific">PM-Specific</span>
-                    <h3 style="margin-top: 0.75rem;">Pneuma Lagrangian</h3>
-                    <p><span style="text-decoration: overline;">&Psi;</span><sub>P</sub>(i&Gamma;&nabla; - m)&Psi;<sub>P</sub></p>
-                </a>
-                <a href="../sections/einstein-hilbert-term.html" class="section-card">
-                    <span class="foundation-badge derived">Derived</span>
-                    <h3 style="margin-top: 0.75rem;">13D Einstein-Hilbert</h3>
-                    <p>M<sub>*</sub><sup>11</sup>R</p>
-                </a>
-                <a href="generation-formula.html" class="section-card">
-                    <span class="foundation-badge derived">Derived</span>
-                    <h3 style="margin-top: 0.75rem;">Generation Formula</h3>
-                    <p>n<sub>gen</sub> = &chi;/24</p>
-                </a>
-                <a href="thermal-time-relation.html" class="section-card">
-                    <span class="foundation-badge pm-specific">PM-Specific</span>
-                    <h3 style="margin-top: 0.75rem;">Thermal Time Relation</h3>
-                    <p>t = &alpha;<sub>T</sub> &sdot; S</p>
-                </a>
+
+            <!-- Category Filter Tabs -->
+            <div class="formula-category-tabs" style="margin: 1.5rem 0; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="category-tab active" data-category="ALL" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(139, 127, 255, 0.15); border: 1px solid rgba(139, 127, 255, 0.3); color: var(--text-primary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">All Formulas</button>
+                <button class="category-tab" data-category="ESTABLISHED" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Established Physics</button>
+                <button class="category-tab" data-category="THEORY" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(255, 126, 182, 0.08); border: 1px solid rgba(255, 126, 182, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">PM Theory</button>
+                <button class="category-tab" data-category="DERIVED" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Derived Results</button>
+                <button class="category-tab" data-category="PREDICTIONS" style="padding: 0.5rem 1rem; border-radius: 8px; background: rgba(79, 172, 254, 0.08); border: 1px solid rgba(79, 172, 254, 0.2); color: var(--text-secondary); cursor: pointer; transition: all 0.3s ease; font-weight: 500;">Predictions</button>
+            </div>
+
+            <!-- Dynamically populated formula grid -->
+            <div id="formula-panels-container" class="section-nav" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <!-- Panels populated by JavaScript from formula-definitions.js -->
+                <p style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">Loading formulas...</p>
             </div>
         </section>
+
+        <!-- Formula Details Modal -->
+        <div id="formula-modal" class="modal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.7);">
+            <div class="modal-content" style="background-color: var(--bg-card); margin: 5% auto; padding: 2rem; border: 1px solid var(--border-primary); border-radius: 16px; width: 80%; max-width: 900px; box-shadow: 0 8px 32px rgba(0,0,0,0.3);">
+                <span class="modal-close" style="color: var(--text-muted); float: right; font-size: 2rem; font-weight: bold; cursor: pointer; transition: color 0.3s;">&times;</span>
+                <div id="formula-modal-body" style="margin-top: 1rem;">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+        </div>
     </main>
 
         <footer>
@@ -283,5 +287,244 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+
+    <!-- Load formula database -->
+    <script src="../js/formula-definitions.js"></script>
+
+    <!-- Dynamic Formula Panel System -->
+    <script>
+        // State
+        let currentCategory = 'ALL';
+
+        // Category color mapping
+        const categoryColors = {
+            'ESTABLISHED': { bg: 'rgba(139, 127, 255, 0.08)', border: 'rgba(139, 127, 255, 0.25)', badge: '#8b7fff' },
+            'THEORY': { bg: 'rgba(255, 126, 182, 0.08)', border: 'rgba(255, 126, 182, 0.25)', badge: '#ff7eb6' },
+            'DERIVED': { bg: 'rgba(81, 207, 102, 0.08)', border: 'rgba(81, 207, 102, 0.25)', badge: '#51cf66' },
+            'PREDICTIONS': { bg: 'rgba(79, 172, 254, 0.08)', border: 'rgba(79, 172, 254, 0.25)', badge: '#4facfe' }
+        };
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Display formula counts
+            const counts = getFormulaCounts();
+            document.getElementById('formula-count-display').innerHTML =
+                `${counts.TOTAL} total (${counts.ESTABLISHED} established, ${counts.THEORY} theory, ${counts.DERIVED} derived, ${counts.PREDICTIONS} predictions)`;
+
+            // Populate formulas
+            renderFormulas('ALL');
+
+            // Setup category tabs
+            document.querySelectorAll('.category-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active state
+                    document.querySelectorAll('.category-tab').forEach(t => {
+                        t.classList.remove('active');
+                        t.style.background = t.dataset.category === 'ALL' ? 'rgba(139, 127, 255, 0.08)' :
+                                            categoryColors[t.dataset.category]?.bg || 'rgba(139, 127, 255, 0.08)';
+                        t.style.color = 'var(--text-secondary)';
+                    });
+
+                    this.classList.add('active');
+                    this.style.background = this.dataset.category === 'ALL' ? 'rgba(139, 127, 255, 0.15)' :
+                                           categoryColors[this.dataset.category]?.bg.replace('0.08', '0.15') || 'rgba(139, 127, 255, 0.15)';
+                    this.style.color = 'var(--text-primary)';
+
+                    // Render formulas for selected category
+                    const category = this.dataset.category;
+                    currentCategory = category;
+                    renderFormulas(category);
+                });
+            });
+
+            // Setup modal close
+            document.querySelector('.modal-close').addEventListener('click', closeModal);
+            window.addEventListener('click', function(event) {
+                const modal = document.getElementById('formula-modal');
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+
+        function renderFormulas(category) {
+            const container = document.getElementById('formula-panels-container');
+            container.innerHTML = '';
+
+            let formulas = [];
+
+            if (category === 'ALL') {
+                // Get all formulas from all categories
+                for (const cat of ['ESTABLISHED', 'THEORY', 'DERIVED', 'PREDICTIONS']) {
+                    const catFormulas = Object.entries(PM_FORMULAS[cat] || {}).map(([key, formula]) => ({
+                        ...formula,
+                        key,
+                        category: cat
+                    }));
+                    formulas = formulas.concat(catFormulas);
+                }
+            } else {
+                // Get formulas from specific category
+                formulas = Object.entries(PM_FORMULAS[category] || {}).map(([key, formula]) => ({
+                    ...formula,
+                    key,
+                    category
+                }));
+            }
+
+            if (formulas.length === 0) {
+                container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-muted);">No formulas found in this category.</p>';
+                return;
+            }
+
+            // Create formula cards
+            formulas.forEach(formula => {
+                const card = createFormulaCard(formula);
+                container.appendChild(card);
+            });
+        }
+
+        function createFormulaCard(formula) {
+            const colors = categoryColors[formula.category];
+
+            const card = document.createElement('div');
+            card.className = 'section-card';
+            card.style.background = colors.bg;
+            card.style.border = `1px solid ${colors.border}`;
+            card.style.cursor = 'pointer';
+            card.style.transition = 'all 0.3s ease';
+
+            card.innerHTML = `
+                <span class="foundation-badge" style="background: ${colors.bg.replace('0.08', '0.2')}; color: ${colors.badge}; border: 1px solid ${colors.border};">
+                    ${formula.category}
+                </span>
+                <h3 style="margin-top: 0.75rem; font-size: 1.1rem; color: var(--text-primary);">
+                    ${formula.label || formula.id}
+                </h3>
+                <div style="font-family: 'Crimson Text', serif; font-size: 1rem; margin: 0.75rem 0; padding: 0.75rem; background: ${colors.bg.replace('0.08', '0.05')}; border-radius: 8px; color: var(--text-primary);">
+                    ${formula.html}
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0;">
+                    ${formula.description.substring(0, 120)}${formula.description.length > 120 ? '...' : ''}
+                </p>
+                ${formula.v12_7_status ? `<p style="font-size: 0.8rem; color: ${colors.badge}; margin-top: 0.5rem; font-weight: 500;">v12.7: ${formula.v12_7_status}</p>` : ''}
+            `;
+
+            card.addEventListener('click', () => showFormulaDetails(formula));
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-4px)';
+                this.style.boxShadow = `0 8px 24px ${colors.border}`;
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = 'none';
+            });
+
+            return card;
+        }
+
+        function showFormulaDetails(formula) {
+            const modal = document.getElementById('formula-modal');
+            const body = document.getElementById('formula-modal-body');
+            const colors = categoryColors[formula.category];
+
+            let html = `
+                <div style="margin-bottom: 1.5rem;">
+                    <span class="foundation-badge" style="background: ${colors.bg.replace('0.08', '0.2')}; color: ${colors.badge}; border: 1px solid ${colors.border};">
+                        ${formula.category}
+                    </span>
+                    <h2 style="margin-top: 0.75rem; color: var(--text-primary);">${formula.label || formula.id}</h2>
+                    ${formula.attribution ? `<p style="color: var(--text-muted); font-size: 0.9rem;">${formula.attribution}</p>` : ''}
+                </div>
+
+                <div style="background: ${colors.bg}; border: 1px solid ${colors.border}; border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+                    <div style="font-family: 'Crimson Text', serif; font-size: 1.4rem; text-align: center; color: var(--text-primary);">
+                        ${formula.html}
+                    </div>
+                    ${formula.latex ? `<p style="margin-top: 0.75rem; text-align: center; font-family: monospace; font-size: 0.8rem; color: var(--text-muted);">LaTeX: ${formula.latex}</p>` : ''}
+                </div>
+
+                <div style="margin: 1.5rem 0;">
+                    <h3 style="color: var(--accent-primary); margin-bottom: 0.75rem;">Description</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8;">${formula.description}</p>
+                </div>
+            `;
+
+            // Add terms/variables
+            if (formula.terms && Object.keys(formula.terms).length > 0) {
+                html += `
+                    <div style="margin: 1.5rem 0;">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 0.75rem;">Terms & Variables</h3>
+                        <div style="display: grid; gap: 0.75rem;">
+                `;
+
+                for (const [symbol, info] of Object.entries(formula.terms)) {
+                    const termInfo = typeof info === 'object' ? info : { name: info, description: '' };
+                    html += `
+                        <div style="padding: 0.75rem; background: var(--bg-secondary); border-radius: 8px; border: 1px solid var(--border-primary);">
+                            <strong style="color: var(--accent-primary); font-family: 'Crimson Text', serif;">${symbol}</strong>
+                            ${termInfo.name ? `<span style="color: var(--text-primary);"> — ${termInfo.name}</span>` : ''}
+                            ${termInfo.description ? `<p style="margin: 0.25rem 0 0 0; color: var(--text-secondary); font-size: 0.9rem;">${termInfo.description}</p>` : ''}
+                        </div>
+                    `;
+                }
+
+                html += `</div></div>`;
+            }
+
+            // Add derivation if present
+            if (formula.derivation) {
+                html += `
+                    <div style="margin: 1.5rem 0;">
+                        <h3 style="color: var(--accent-primary); margin-bottom: 0.75rem;">Derivation</h3>
+                        <p style="color: var(--text-secondary); line-height: 1.8;">${formula.derivation}</p>
+                    </div>
+                `;
+            }
+
+            // Add experimental comparison if present
+            if (formula.experimental_value !== undefined) {
+                html += `
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(79, 172, 254, 0.08); border: 1px solid rgba(79, 172, 254, 0.25); border-radius: 8px;">
+                        <h3 style="color: #4facfe; margin-bottom: 0.75rem;">Experimental Comparison</h3>
+                        <p style="color: var(--text-secondary);">
+                            <strong>Experimental value:</strong> ${formula.experimental_value}
+                            ${formula.experimental_source ? ` (${formula.experimental_source})` : ''}
+                        </p>
+                        ${formula.sigma !== undefined ? `<p style="color: var(--text-secondary); margin-top: 0.5rem;"><strong>Agreement:</strong> ${formula.sigma}σ</p>` : ''}
+                        ${formula.currentData ? `<p style="color: var(--text-secondary); margin-top: 0.5rem;"><strong>Current data:</strong> ${formula.currentData}</p>` : ''}
+                    </div>
+                `;
+            }
+
+            // Add testability info if present
+            if (formula.testBy) {
+                html += `
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(255, 193, 7, 0.08); border: 1px solid rgba(255, 193, 7, 0.25); border-radius: 8px;">
+                        <h3 style="color: #ffc107; margin-bottom: 0.75rem;">Testability</h3>
+                        <p style="color: var(--text-secondary);"><strong>Test by:</strong> ${formula.testBy}</p>
+                        ${formula.falsification ? `<p style="color: var(--text-secondary); margin-top: 0.5rem;"><strong>Falsification:</strong> ${formula.falsification}</p>` : ''}
+                    </div>
+                `;
+            }
+
+            // Add v12.7 status
+            if (formula.v12_7_status) {
+                html += `
+                    <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.25); border-radius: 8px;">
+                        <h3 style="color: #51cf66; margin-bottom: 0.75rem;">v12.7 Framework Status</h3>
+                        <p style="color: var(--text-secondary);">${formula.v12_7_status}</p>
+                    </div>
+                `;
+            }
+
+            body.innerHTML = html;
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('formula-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
