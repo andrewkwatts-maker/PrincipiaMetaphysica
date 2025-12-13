@@ -2656,3 +2656,586 @@ ul li::marker {
         font-size: 0.8rem;
     }
 }
+
+/* ============================================
+   COMPREHENSIVE PRINT STYLES FOR PDF EXPORT
+   ============================================ */
+
+@media print {
+    /* ===== PAGE SETUP ===== */
+    @page {
+        size: A4;
+        margin: 20mm 15mm;
+    }
+
+    /* ===== FORCE BACKGROUND COLORS/GRADIENTS TO PRINT ===== */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    /* ===== BODY & CONTAINER ===== */
+    body {
+        background: white !important;
+        color: #000 !important;
+        font-size: 11pt;
+        line-height: 1.5;
+    }
+
+    main {
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* ===== HIDE NAVIGATION & INTERACTIVE ELEMENTS ===== */
+    header,
+    nav,
+    footer,
+    .search-container,
+    .breadcrumb,
+    .back-to-top,
+    .download-btn,
+    .no-print,
+    button,
+    .nav-links,
+    .section-nav,
+    .downloads,
+    .download-buttons,
+    .appendix-nav,
+    .formula-controls,
+    .expand-btn,
+    .link-btn,
+    .formula-calculator,
+    .slider-control {
+        display: none !important;
+    }
+
+    /* ===== TYPOGRAPHY - PRINT OPTIMIZED ===== */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        break-after: avoid;
+        color: #000 !important;
+        background: none !important;
+        -webkit-text-fill-color: #000 !important;
+    }
+
+    h1 {
+        font-size: 18pt;
+        orphans: 4;
+        widows: 4;
+    }
+
+    h2 {
+        font-size: 14pt;
+        page-break-before: auto;
+        margin-top: 1.5rem;
+        padding-top: 0.5rem;
+        border-bottom: 1px solid #333 !important;
+        orphans: 4;
+        widows: 4;
+    }
+
+    /* First h2 on page shouldn't force break */
+    h2:first-of-type {
+        page-break-before: avoid;
+    }
+
+    h3 {
+        font-size: 12pt;
+        margin-top: 1rem;
+        orphans: 3;
+        widows: 3;
+    }
+
+    h4 {
+        font-size: 11pt;
+        orphans: 3;
+        widows: 3;
+    }
+
+    /* ===== PARAGRAPHS - ORPHAN/WIDOW CONTROL ===== */
+    p {
+        orphans: 3;
+        widows: 3;
+        page-break-inside: auto;
+    }
+
+    /* ===== LINKS - SHOW URLs FOR EXTERNAL LINKS ===== */
+    a {
+        color: #000 !important;
+        text-decoration: underline;
+    }
+
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 9pt;
+        color: #555;
+        font-weight: normal;
+    }
+
+    /* Don't show URLs for internal anchors */
+    a[href^="#"]:after,
+    a[href^="/"]:after {
+        content: "";
+    }
+
+    .section-ref:after,
+    .foundation-ref:after {
+        content: "";
+    }
+
+    /* ===== TABLES - PRINT OPTIMIZATION ===== */
+    table {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        border-collapse: collapse;
+        width: 100%;
+        font-size: 10pt;
+        background: white !important;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tbody {
+        display: table-row-group;
+    }
+
+    tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+
+    th, td {
+        border: 1px solid #666 !important;
+        padding: 0.5rem;
+        background: white !important;
+    }
+
+    th {
+        background: #e5e5e5 !important;
+        font-weight: 600;
+        color: #000 !important;
+    }
+
+    .dimension-table,
+    .comparison-table,
+    .dim-table {
+        page-break-inside: avoid;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    /* ===== CARDS - CONVERT TO SIMPLE BOXES ===== */
+    .card,
+    .glass-card,
+    .sefirah-card,
+    .world-card,
+    .name-card,
+    .summary-card,
+    .formula-card,
+    .prediction-card {
+        background: #f8f8f8 !important;
+        border: 1px solid #666 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+    }
+
+    /* ===== GRID LAYOUTS - CONVERT TO SINGLE COLUMN ===== */
+    .grid,
+    .names-grid,
+    .summary-cards,
+    .rep-grid {
+        display: block !important;
+    }
+
+    .grid > *,
+    .names-grid > *,
+    .summary-cards > *,
+    .rep-grid > * {
+        margin: 0.5rem 0;
+        page-break-inside: avoid;
+    }
+
+    /* ===== FORMULAS & EQUATIONS - KEEP TOGETHER ===== */
+    .equation,
+    .equation-box,
+    .formula-display,
+    .interactive-formula,
+    .expandable-formula {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        background: #f8f8f8 !important;
+        border: 1px solid #999 !important;
+        border-radius: 0 !important;
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
+
+    /* Expand all expandable formulas for print */
+    .expandable-formula .formula-expansion {
+        max-height: none !important;
+        padding: 1rem !important;
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .formula-def,
+    .formula-def-item {
+        page-break-inside: avoid;
+        background: #f0f4ff !important;
+        border: 1px solid #999 !important;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+    }
+
+    /* ===== MATHJAX - ENSURE PROPER RENDERING ===== */
+    .MathJax,
+    .MathJax_Display,
+    .mjx-chtml,
+    mjx-container {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+        overflow: visible !important;
+    }
+
+    /* Ensure MathJax doesn't render as blank */
+    mjx-container[jax="CHTML"][display="true"] {
+        display: block !important;
+        text-align: center;
+        margin: 1em 0;
+    }
+
+    /* ===== DIAGRAMS & SVG - PRINT OPTIMIZATION ===== */
+    .diagram-container,
+    .flow-diagram,
+    .scale-ladder,
+    .coset-diagram {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        background: white !important;
+        border: 1px solid #999 !important;
+        border-radius: 0 !important;
+        padding: 0.75rem;
+        margin: 1rem 0;
+    }
+
+    .diagram-svg,
+    svg {
+        max-width: 100%;
+        height: auto;
+        page-break-inside: avoid;
+    }
+
+    /* SVG elements - ensure visibility */
+    svg text {
+        fill: #000 !important;
+    }
+
+    svg .node-bg,
+    svg .node-accent {
+        fill: #f0f0f0 !important;
+        stroke: #666 !important;
+    }
+
+    /* ===== IMAGES - PRINT AT FULL RESOLUTION ===== */
+    img {
+        max-width: 100%;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+
+    figure {
+        page-break-inside: avoid;
+        margin: 1rem 0;
+    }
+
+    /* ===== SPECIAL BOXES - KEEP TOGETHER ===== */
+    .abstract,
+    .intro,
+    .detail-section,
+    .warning-box,
+    .success-box,
+    .danger-box,
+    .grade-box,
+    .definition-box,
+    .highlight-box,
+    .theorem-box,
+    .peer-review-section,
+    .concerns-section,
+    .experimental-predictions,
+    .open-questions,
+    .strengthening-suggestions {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        background: #f5f5f5 !important;
+        border: 1px solid #666 !important;
+        border-radius: 0 !important;
+        padding: 0.75rem;
+        margin: 0.75rem 0;
+    }
+
+    .abstract {
+        background: #f5f5f5 !important;
+        border-left: 3px solid #666 !important;
+    }
+
+    .warning-box {
+        background: #fff8dc !important;
+        border-color: #c80 !important;
+    }
+
+    .success-box {
+        background: #e8f5e9 !important;
+        border-color: #080 !important;
+    }
+
+    .danger-box {
+        background: #ffebee !important;
+        border-color: #c00 !important;
+    }
+
+    /* ===== HIDE TOOLTIPS & HOVER EFFECTS ===== */
+    .var-tooltip,
+    .formula-info,
+    .diagram-tooltip,
+    .formula-hint,
+    [data-tooltip]:after,
+    [data-tooltip]:before {
+        display: none !important;
+    }
+
+    /* ===== INTERACTIVE ELEMENTS - SIMPLIFY ===== */
+    .formula-var {
+        background: #f0f0f0 !important;
+        border: 1px solid #999 !important;
+        padding: 0.1rem 0.3rem;
+        border-radius: 0 !important;
+    }
+
+    /* ===== LISTS - PROPER PAGE BREAKS ===== */
+    ul, ol {
+        page-break-inside: auto;
+    }
+
+    li {
+        page-break-inside: avoid;
+        orphans: 2;
+        widows: 2;
+    }
+
+    /* ===== TABLE OF CONTENTS ===== */
+    .toc {
+        page-break-before: auto;
+        page-break-after: auto;
+        background: #f5f5f5 !important;
+        border: 1px solid #666 !important;
+        padding: 1rem;
+    }
+
+    .toc a {
+        color: #000 !important;
+        text-decoration: none;
+    }
+
+    .toc a:after {
+        content: "";
+    }
+
+    /* ===== APPENDIX ===== */
+    .appendix {
+        page-break-before: always;
+        border-top: 2px solid #333 !important;
+        padding-top: 1rem;
+    }
+
+    .appendix h2 {
+        color: #000 !important;
+        border-bottom: 1px solid #666 !important;
+    }
+
+    /* ===== BADGES & TAGS ===== */
+    .tag,
+    .badge,
+    .severity-badge,
+    .testability-badge,
+    .foundation-badge {
+        background: #e0e0e0 !important;
+        color: #000 !important;
+        border: 1px solid #999 !important;
+        padding: 0.2rem 0.5rem;
+        display: inline-block;
+    }
+
+    /* ===== STATUS COLORS - HIGH CONTRAST FOR PRINT ===== */
+    .status-fitted {
+        color: #c00 !important;
+        font-weight: 600;
+    }
+
+    .status-derived {
+        color: #080 !important;
+        font-weight: 600;
+    }
+
+    .status-semi {
+        color: #c80 !important;
+        font-weight: 600;
+    }
+
+    /* ===== GRADIENT TEXT - CONVERT TO SOLID ===== */
+    h1, h2, h3, h4, h5, h6,
+    .card h3,
+    .detail-header h2 {
+        background: none !important;
+        -webkit-background-clip: unset !important;
+        -webkit-text-fill-color: #000 !important;
+        background-clip: unset !important;
+        color: #000 !important;
+    }
+
+    /* ===== FOOTNOTES ===== */
+    .footnote {
+        page-break-inside: avoid;
+        font-size: 9pt;
+        border-top: 1px solid #666 !important;
+        padding-top: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    /* ===== CITATIONS ===== */
+    .citation {
+        background: #f0f0f0 !important;
+        border-left: 3px solid #666 !important;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+        font-size: 9pt;
+    }
+
+    /* ===== ENSURE SUFFICIENT CONTRAST ===== */
+    .text-muted,
+    .text-secondary {
+        color: #444 !important;
+    }
+
+    /* ===== FLOW DIAGRAMS ===== */
+    .flow-chain {
+        display: block !important;
+    }
+
+    .flow-node {
+        background: #f0f0f0 !important;
+        border: 1px solid #666 !important;
+        margin: 0.25rem 0;
+        padding: 0.5rem;
+    }
+
+    .flow-arrow {
+        display: inline;
+    }
+
+    /* ===== HIERARCHY ELEMENTS ===== */
+    .hierarchy-tree,
+    .hierarchy-level {
+        display: block !important;
+    }
+
+    .hierarchy-node {
+        background: #f0f0f0 !important;
+        border: 1px solid #666 !important;
+        margin: 0.25rem 0;
+        padding: 0.5rem;
+    }
+
+    /* ===== PHASE DIAGRAMS ===== */
+    .phase-diagram,
+    .phase-region {
+        page-break-inside: avoid;
+        background: white !important;
+    }
+
+    /* ===== LADDER/SCALE DIAGRAMS ===== */
+    .ladder-container::before {
+        background: #666 !important;
+    }
+
+    .ladder-content {
+        background: #f8f8f8 !important;
+        border-left: 3px solid #666 !important;
+    }
+
+    /* ===== FORMULA CHAINS & DERIVATIONS ===== */
+    .derivation-chain,
+    .chain {
+        page-break-inside: avoid;
+        background: #f8f8f8 !important;
+        border: 1px solid #999 !important;
+        padding: 0.5rem;
+    }
+
+    /* ===== CRITICISM & PEER REVIEW SECTIONS ===== */
+    .criticism-item {
+        background: #fff5f5 !important;
+        border-left: 4px solid #c00 !important;
+        page-break-inside: avoid;
+        padding: 0.5rem;
+        margin: 0.5rem 0;
+    }
+
+    .author-response {
+        background: #f0f8f0 !important;
+        border-left: 4px solid #080 !important;
+        padding: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    /* ===== PREDICTION CARDS ===== */
+    .prediction-card {
+        background: #f0f8ff !important;
+        border: 1px solid #666 !important;
+        page-break-inside: avoid;
+    }
+
+    /* ===== SCROLLBAR - HIDE IN PRINT ===== */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* ===== SELECTION - DISABLE ===== */
+    ::selection {
+        background: transparent;
+    }
+
+    /* ===== ENSURE NO OVERFLOW ===== */
+    * {
+        overflow: visible !important;
+    }
+
+    /* ===== FIX LIGHT GRAY TEXT CONTRAST ===== */
+    [style*="color: #666"],
+    [style*="color: #999"],
+    [style*="color: #aaa"],
+    [style*="color: #ccc"] {
+        color: #333 !important;
+    }
+
+    /* ===== POSITION ABSOLUTE/FIXED - MAKE STATIC ===== */
+    .position {
+        position: static !important;
+    }
+
+    /* ===== FLOATING ELEMENTS ===== */
+    .equation-label {
+        float: right;
+        color: #666;
+    }
+}
