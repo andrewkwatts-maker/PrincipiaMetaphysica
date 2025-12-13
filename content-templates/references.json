@@ -1,0 +1,486 @@
+{
+  "references": [
+    {
+      "id": "einstein-1915",
+      "html_id": "einstein1915",
+      "authors": "Einstein, A.",
+      "title": "Die Feldgleichungen der Gravitation (The Field Equations of Gravitation)",
+      "journal": "Sitzungsberichte der Preussischen Akademie der Wissenschaften zu Berlin",
+      "year": 1915,
+      "pages": "844-847",
+      "doi": null,
+      "arxiv": null,
+      "url": "https://einsteinpapers.press.princeton.edu/",
+      "cited_by": ["einstein-field"],
+      "status": "EXISTS"
+    },
+    {
+      "id": "hilbert-1915",
+      "html_id": "hilbert1915",
+      "authors": "Hilbert, D.",
+      "title": "Die Grundlagen der Physik (The Foundations of Physics)",
+      "journal": "Nachrichten von der Gesellschaft der Wissenschaften zu Gottingen",
+      "year": 1915,
+      "pages": null,
+      "doi": null,
+      "arxiv": null,
+      "url": "https://en.wikipedia.org/wiki/Einstein%E2%80%93Hilbert_action",
+      "cited_by": ["einstein-hilbert"],
+      "status": "EXISTS"
+    },
+    {
+      "id": "clifford-1878",
+      "html_id": "clifford1878",
+      "authors": "Clifford, W.K.",
+      "title": "Applications of Grassmann's Extensive Algebra",
+      "journal": "American Journal of Mathematics",
+      "year": 1878,
+      "volume": "1",
+      "issue": "4",
+      "pages": "350-358",
+      "doi": null,
+      "arxiv": null,
+      "url": "https://en.wikipedia.org/wiki/Clifford_algebra",
+      "cited_by": ["clifford-algebra"],
+      "status": "EXISTS"
+    },
+    {
+      "id": "sethi-vafa-witten-1996",
+      "html_id": "sethivafawitten1996",
+      "authors": "Sethi, S., Vafa, C., Witten, E.",
+      "title": "Constraints on low-dimensional string compactifications",
+      "journal": "Nuclear Physics B",
+      "year": 1996,
+      "volume": "480",
+      "issue": "1-2",
+      "pages": "213-224",
+      "doi": "10.1016/S0550-3213(96)00483-X",
+      "arxiv": "hep-th/9606122",
+      "url": "https://arxiv.org/abs/hep-th/9606122",
+      "cited_by": ["f-theory-index"],
+      "status": "MISSING",
+      "notes": "This is the paper that derives the generation formula n_gen = χ/24 for F-theory compactifications on Calabi-Yau fourfolds using the D3-brane index theorem."
+    },
+    {
+      "id": "bars-2006",
+      "html_id": "bars2006",
+      "authors": "Bars, I.",
+      "title": "Gauge Symmetry in Phase Space, Consequences for Physics and Spacetime",
+      "journal": "International Journal of Modern Physics A",
+      "year": 2006,
+      "volume": "25",
+      "issue": "25",
+      "pages": "5235-5252",
+      "doi": "10.1142/S0217751X10051128",
+      "arxiv": "hep-th/0606045",
+      "url": "https://arxiv.org/abs/hep-th/0606045",
+      "cited_by": ["sp2r-constraints"],
+      "status": "MISSING",
+      "notes": "Core reference for Sp(2,R) gauge symmetry in two-time physics. The three constraints X²=0, X·P=0, P²+M²=0 eliminate ghosts from the second time dimension. Note: references.html has bars2008 (arXiv:0807.5006) which is a later review paper."
+    },
+    {
+      "id": "kubo-1957",
+      "html_id": "kms1957",
+      "authors": "Kubo, R.",
+      "title": "Statistical-Mechanical Theory of Irreversible Processes. I.",
+      "journal": "Journal of the Physical Society of Japan",
+      "year": 1957,
+      "volume": "12",
+      "issue": "6",
+      "pages": "570-586",
+      "doi": "10.1143/JPSJ.12.570",
+      "arxiv": null,
+      "url": null,
+      "cited_by": ["kms-condition"],
+      "status": "PARTIAL",
+      "notes": "KMS condition reference exists in HTML as 'kms1957', but combines Kubo, Martin, and Schwinger citations."
+    },
+    {
+      "id": "martin-schwinger-1959",
+      "html_id": "kms1957",
+      "authors": "Martin, P.C., Schwinger, J.",
+      "title": "Theory of Many-Particle Systems. I.",
+      "journal": "Physical Review",
+      "year": 1959,
+      "volume": "115",
+      "issue": "6",
+      "pages": "1342-1373",
+      "doi": "10.1103/PhysRev.115.1342",
+      "arxiv": null,
+      "url": null,
+      "cited_by": ["kms-condition"],
+      "status": "PARTIAL",
+      "notes": "Part of KMS condition development, combined with Kubo 1957 in references.html."
+    },
+    {
+      "id": "tomita-1967",
+      "html_id": "tomita1967",
+      "authors": "Tomita, M.",
+      "title": "On Canonical Forms of von Neumann Algebras",
+      "journal": "Fifth Functional Analysis Symposium, Tohoku University",
+      "year": 1967,
+      "volume": null,
+      "issue": null,
+      "pages": null,
+      "doi": null,
+      "arxiv": null,
+      "url": "https://en.wikipedia.org/wiki/Tomita%E2%80%93Takesaki_theory",
+      "cited_by": ["tomita-takesaki"],
+      "status": "PARTIAL",
+      "notes": "Tomita exists in HTML, but Takesaki 1970 is missing as separate entry."
+    },
+    {
+      "id": "takesaki-1970",
+      "html_id": "takesaki1970",
+      "authors": "Takesaki, M.",
+      "title": "Tomita's Theory of Modular Hilbert Algebras and its Applications",
+      "journal": "Lecture Notes in Mathematics",
+      "year": 1970,
+      "volume": "128",
+      "issue": null,
+      "pages": null,
+      "doi": "10.1007/BFb0065832",
+      "arxiv": null,
+      "url": null,
+      "cited_by": ["tomita-takesaki"],
+      "status": "MISSING",
+      "notes": "Second part of Tomita-Takesaki theory, currently missing from references.html."
+    },
+    {
+      "id": "lovelace-1971",
+      "html_id": "lovelace1971",
+      "authors": "Lovelace, C.",
+      "title": "Pomeron form factors and dual Regge cuts",
+      "journal": "Physics Letters B",
+      "year": 1971,
+      "volume": "34",
+      "issue": "6",
+      "pages": "500-506",
+      "doi": "10.1016/0370-2693(71)90665-4",
+      "arxiv": null,
+      "url": null,
+      "cited_by": ["bosonic-string-critical"],
+      "status": "MISSING",
+      "notes": "First calculation showing D=26 critical dimension for bosonic string from Virasoro anomaly cancellation."
+    },
+    {
+      "id": "minkowski-1977",
+      "html_id": "seesaw",
+      "authors": "Minkowski, P.",
+      "title": "μ → eγ at a Rate of One Out of 10⁹ Muon Decays?",
+      "journal": "Physics Letters B",
+      "year": 1977,
+      "volume": "67",
+      "issue": "4",
+      "pages": "421-428",
+      "doi": "10.1016/0370-2693(77)90435-X",
+      "arxiv": null,
+      "url": null,
+      "cited_by": ["seesaw-mechanism"],
+      "status": "PARTIAL",
+      "notes": "Exists in HTML as 'seesaw', but combines multiple authors (Minkowski, Yanagida, Gell-Mann et al., Mohapatra-Senjanovic)."
+    },
+    {
+      "id": "gellmann-ramond-slansky-1979",
+      "html_id": "seesaw",
+      "authors": "Gell-Mann, M., Ramond, P., Slansky, R.",
+      "title": "Complex Spinors and Unified Theories",
+      "journal": "Supergravity (North-Holland, Amsterdam)",
+      "year": 1979,
+      "volume": null,
+      "issue": null,
+      "pages": "315-321",
+      "doi": null,
+      "arxiv": "arXiv:1306.4669",
+      "url": "https://arxiv.org/abs/1306.4669",
+      "cited_by": ["seesaw-mechanism"],
+      "status": "PARTIAL",
+      "notes": "Part of seesaw mechanism development, combined in HTML as 'seesaw'."
+    },
+    {
+      "id": "yang-mills-1954",
+      "html_id": "yangmills1954",
+      "authors": "Yang, C.N., Mills, R.L.",
+      "title": "Conservation of Isotopic Spin and Isotopic Gauge Invariance",
+      "journal": "Physical Review",
+      "year": 1954,
+      "volume": "96",
+      "issue": "1",
+      "pages": "191-195",
+      "doi": "10.1103/PhysRev.96.191",
+      "arxiv": null,
+      "url": "https://journals.aps.org/pr/abstract/10.1103/PhysRev.96.191",
+      "cited_by": ["yang-mills"],
+      "status": "EXISTS"
+    },
+    {
+      "id": "kaluza-1921",
+      "html_id": "kaluza1921",
+      "authors": "Kaluza, T.",
+      "title": "Zum Unitatsproblem der Physik (On the Unification Problem of Physics)",
+      "journal": "Sitzungsberichte der Preussischen Akademie der Wissenschaften",
+      "year": 1921,
+      "volume": null,
+      "issue": null,
+      "pages": "966-972",
+      "doi": null,
+      "arxiv": null,
+      "url": "https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory",
+      "cited_by": ["kaluza-klein"],
+      "status": "EXISTS"
+    },
+    {
+      "id": "klein-1926",
+      "html_id": "klein1926",
+      "authors": "Klein, O.",
+      "title": "Quantentheorie und funfdimensionale Relativitatstheorie",
+      "journal": "Zeitschrift fur Physik",
+      "year": 1926,
+      "volume": "37",
+      "issue": "12",
+      "pages": "895-906",
+      "doi": null,
+      "arxiv": null,
+      "url": "https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory",
+      "cited_by": ["kaluza-klein"],
+      "status": "EXISTS"
+    }
+  ],
+  "orphaned_references": [
+    {
+      "id": "misner1973",
+      "title": "Gravitation",
+      "authors": "Misner, C.W., Thorne, K.S., Wheeler, J.A.",
+      "notes": "Textbook reference, not directly cited by any formula but provides foundational material on differential geometry and general relativity."
+    },
+    {
+      "id": "dirac1928",
+      "title": "The Quantum Theory of the Electron",
+      "authors": "Dirac, P.A.M.",
+      "notes": "Foundational spinor/Dirac equation reference, not directly cited but underpins fermion formalism."
+    },
+    {
+      "id": "peskin1995",
+      "title": "An Introduction to Quantum Field Theory",
+      "authors": "Peskin, M.E., Schroeder, D.V.",
+      "notes": "Textbook reference for QFT, not directly cited by formulas."
+    },
+    {
+      "id": "joyce2000",
+      "title": "Compact Manifolds with Special Holonomy",
+      "authors": "Joyce, D.D.",
+      "notes": "Definitive text on G₂ geometry, provides theoretical foundation but not directly cited in formula attributions."
+    },
+    {
+      "id": "bryant1987",
+      "title": "Metrics with Exceptional Holonomy",
+      "authors": "Bryant, R.L.",
+      "notes": "First construction of G₂ metrics, foundational but not directly cited."
+    },
+    {
+      "id": "kovalev2003",
+      "title": "Twisted connected sums and special Riemannian holonomy",
+      "authors": "Kovalev, A.",
+      "notes": "TCS construction methodology, foundational for PM's G₂ manifolds but not directly cited in formulas."
+    },
+    {
+      "id": "yau1977",
+      "title": "Calabi's Conjecture and Some New Results in Algebraic Geometry",
+      "authors": "Yau, S.T.",
+      "notes": "Calabi-Yau manifolds, pedagogical context but PM uses G₂ manifolds."
+    },
+    {
+      "id": "nakahara2003",
+      "title": "Geometry, Topology and Physics",
+      "authors": "Nakahara, M.",
+      "notes": "Textbook on differential geometry and fiber bundles."
+    },
+    {
+      "id": "indextheorem",
+      "title": "The Index of Elliptic Operators on Compact Manifolds",
+      "authors": "Atiyah, M.F., Singer, I.M.",
+      "notes": "Atiyah-Singer index theorem, foundational for understanding topology/physics connection."
+    },
+    {
+      "id": "acharya1998",
+      "title": "M Theory, Joyce Orbifolds and Super Yang-Mills",
+      "authors": "Acharya, B.S.",
+      "notes": "M-theory on G₂ manifolds with gauge group derivation."
+    },
+    {
+      "id": "Acharya1809",
+      "title": "G-flux, topology, and the effective action for M-theory moduli",
+      "authors": "Acharya, B.S., Kerr, M., Rauh, N., Zimet, M.",
+      "notes": "TCS manifolds and moduli stabilization."
+    },
+    {
+      "id": "atiyahwitten2001",
+      "title": "M-Theory Dynamics On A Manifold Of G₂ Holonomy",
+      "authors": "Atiyah, M.F., Witten, E.",
+      "notes": "Comprehensive M-theory on G₂ reference."
+    },
+    {
+      "id": "candelas1985",
+      "title": "Vacuum Configurations for Superstrings",
+      "authors": "Candelas, P., Horowitz, G., Strominger, A., Witten, E.",
+      "notes": "Historical string compactification on CY3."
+    },
+    {
+      "id": "vafa1996",
+      "title": "Evidence for F-Theory",
+      "authors": "Vafa, C.",
+      "notes": "F-theory introduction (different from Sethi/Vafa/Witten 1996)."
+    },
+    {
+      "id": "corti2015",
+      "title": "G₂-manifolds and associative submanifolds via semi-Fano 3-folds",
+      "authors": "Corti, A., Haskins, M., Nordström, J., Pacini, T.",
+      "notes": "TCS construction with explicit examples."
+    },
+    {
+      "id": "halverson2020",
+      "title": "The Landscape of M-theory Compactifications on Seven-Manifolds with G₂ Holonomy",
+      "authors": "Halverson, J., Morrison, D.R.",
+      "notes": "M-theory G₂ landscape."
+    },
+    {
+      "id": "braun2024",
+      "title": "Machine Learning the Tetrad Index on TCS G₂ Manifolds",
+      "authors": "Braun, V. et al.",
+      "notes": "Recent computational work on TCS manifolds."
+    },
+    {
+      "id": "bars2008",
+      "title": "Gauge Symmetry in Phase Space: Consequences for Physics and Spacetime",
+      "authors": "Bars, I.",
+      "notes": "Later review paper (2008, arXiv:0807.5006), not the 2006 original cited in formulas."
+    },
+    {
+      "id": "bars2009",
+      "title": "Supersymmetric Field Theory in 4+2 Dimensions",
+      "authors": "Bars, I., Kuo, Y.C.",
+      "notes": "Supersymmetry in two-time framework."
+    },
+    {
+      "id": "kklt2003",
+      "title": "de Sitter vacua in string theory",
+      "authors": "Kachru, S., Kallosh, R., Linde, A., Trivedi, S.P.",
+      "notes": "KKLT moduli stabilization mechanism."
+    },
+    {
+      "id": "lvs2005",
+      "title": "Systematics of Moduli Stabilisation in Calabi-Yau Flux Compactifications",
+      "authors": "Balasubramanian, V., Berglund, P., Conlon, J.P., Quevedo, F.",
+      "notes": "Large volume scenario (LVS)."
+    },
+    {
+      "id": "overduin1997",
+      "title": "Kaluza-Klein Gravity",
+      "authors": "Overduin, J.M., Wesson, P.S.",
+      "notes": "Comprehensive KK theory review."
+    },
+    {
+      "id": "rs1999a",
+      "title": "Large Mass Hierarchy from a Small Extra Dimension",
+      "authors": "Randall, L., Sundrum, R.",
+      "notes": "Randall-Sundrum I (warped geometry)."
+    },
+    {
+      "id": "rs1999b",
+      "title": "An Alternative to Compactification",
+      "authors": "Randall, L., Sundrum, R.",
+      "notes": "Randall-Sundrum II (gravity localization)."
+    },
+    {
+      "id": "gherghettashaposhnikov2000",
+      "title": "Localizing Gravity on a String-Like Defect in Six Dimensions",
+      "authors": "Gherghetta, T., Shaposhnikov, M.",
+      "notes": "Codimension-2 branes in 6D."
+    },
+    {
+      "id": "georgiglashow1974",
+      "title": "Unity of All Elementary-Particle Forces",
+      "authors": "Georgi, H., Glashow, S.L.",
+      "notes": "SU(5) GUT."
+    },
+    {
+      "id": "fritzschminkowski1975",
+      "title": "Unified Interactions of Leptons and Hadrons",
+      "authors": "Fritzsch, H., Minkowski, P.",
+      "notes": "SO(10) GUT."
+    },
+    {
+      "id": "langacker1981",
+      "title": "Grand Unified Theories and Proton Decay",
+      "authors": "Langacker, P.",
+      "notes": "GUT review with proton decay."
+    },
+    {
+      "id": "atlas2019",
+      "title": "Search for new resonances in mass distributions of jet pairs",
+      "authors": "ATLAS Collaboration",
+      "notes": "Current KK graviton experimental bounds."
+    },
+    {
+      "id": "agashe2007",
+      "title": "Warped Gravitons at the CERN LHC and Beyond",
+      "authors": "Agashe, K., Davoudiasl, H., Perez, G., Soni, A.",
+      "notes": "KK graviton phenomenology."
+    },
+    {
+      "id": "superk2017",
+      "title": "Search for proton decay via p → e⁺π⁰ and p → μ⁺π⁰",
+      "authors": "Super-Kamiokande Collaboration",
+      "notes": "Current proton lifetime limits."
+    },
+    {
+      "id": "lisa2017",
+      "title": "Laser Interferometer Space Antenna",
+      "authors": "LISA Consortium",
+      "notes": "Future gravitational wave detector."
+    },
+    {
+      "id": "connesrovelli1994",
+      "title": "Von Neumann Algebra Automorphisms and Time-Thermodynamics Relation",
+      "authors": "Connes, A., Rovelli, C.",
+      "notes": "Thermal time hypothesis."
+    },
+    {
+      "id": "desi2024",
+      "title": "DESI 2024 VI: Cosmological Constraints from BAO",
+      "authors": "DESI Collaboration",
+      "notes": "Dark energy w(z) data."
+    },
+    {
+      "id": "planck2018",
+      "title": "Planck 2018 Results. VI. Cosmological Parameters",
+      "authors": "Planck Collaboration",
+      "notes": "CMB cosmological parameters."
+    },
+    {
+      "id": "NuFIT6.0",
+      "title": "NuFIT 6.0 (2025)",
+      "authors": "NuFIT Collaboration",
+      "notes": "Latest neutrino oscillation global fit."
+    },
+    {
+      "id": "pdg2024",
+      "title": "Review of Particle Physics",
+      "authors": "Particle Data Group",
+      "notes": "Comprehensive particle properties database."
+    }
+  ],
+  "summary": {
+    "total_formulas_with_attributions": 23,
+    "external_attributions": 11,
+    "pm_attributions": 12,
+    "references_in_html": 46,
+    "missing_from_html": 3,
+    "orphaned_in_html": 42,
+    "status": {
+      "complete": 8,
+      "missing": 3,
+      "partial": 3
+    }
+  }
+}
