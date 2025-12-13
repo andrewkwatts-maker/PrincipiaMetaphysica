@@ -1777,3 +1777,12 @@ if __name__ == '__main__':
     print("  - PM.v11_final_observables (tau_p, m_h)")
     print("  - PM.v12_final_values (final neutrinos + KK)")
     print("  - PM.v12_3_updates (NuFIT 6.0, theta_23=45.0°)")
+
+    # V12.8 Final Transparency Report
+    print("\n" + "=" * 80)
+    try:
+        from simulations.final_transparency_v12_8 import final_transparency_report
+        final_transparency_report()
+    except ImportError as e:
+        print(f"Note: final_transparency_v12_8 module not available: {e}")
+    print("=" * 80)

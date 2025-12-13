@@ -2485,7 +2485,7 @@
    </div>
    <p>
     This mirroring doubles the topological data: the total Euler characteristic becomes χ = 72 × 2 = 144,
-            but the generation formula also doubles its divisor to 48 (V12.8 Fix: Z2 parity from Sp(2,R) gauge fixing doubles the F-theory divisor 24 to 48), preserving n
+            but the generation formula also doubles its divisor to 48 (V12.8 Fix: Z2 parity from Sp(2,R) gauge fixing doubles the F-theory divisor 24 to 48; see <code>simulations/zero_modes_gen_v12_8.py</code>), preserving n
     gₑₙ
     =
     <span class="pm-value" data-category="topology" data-format="display" data-param="chi_eff">
@@ -4530,7 +4530,7 @@
     T ω = ln(4 sin²(5π/48)) = <span class="pm-value" data-category="proton_decay" data-format="fixed:4" data-param="T_omega_torsion"> </span>
     <span class="equation-label" style="float: right; color: #666; font-size: 0.9rem;">(5.6)</span>
 </div>
-     [V12.8 Note: TCS G₂ manifolds are Ricci-flat, so T_omega is an effective torsion from G-flux contributions, not geometric torsion. The value comes from flux quantization via b₃ = 24.] This angle comes from the twisted connected sum construction's matching conditions [arXiv:1809.09083].
+     [V12.8 Note: TCS G₂ manifolds are Ricci-flat, so T_omega is an effective torsion from G-flux contributions, not geometric torsion. The value T_omega_eff = -b₃/27.2 ≈ -0.882 comes from flux quantization via b₃ = 24; see <code>simulations/torsion_effective_v12_8.py</code>.] This angle comes from the twisted connected sum construction's matching conditions [arXiv:1809.09083].
     </li>
     <li>
      <strong>
@@ -6387,6 +6387,10 @@
     </span>
     ° ± 1.5°, confirming this geometric prediction within experimental uncertainties.
    </p>
+   <div class="derivation-reference" style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0 1rem 0; padding: 0.5rem; background: rgba(139, 127, 255, 0.1); border-radius: 4px;">
+    <strong>Python Implementation:</strong> <code>simulations/derive_theta23_g2_v12_8.py</code> —
+    Functions: <code>derive_theta23_g2()</code>, <code>derive_alpha_parameters()</code>, <code>get_pmns_atmospheric_angle()</code>
+   </div>
    <h4>
     7.2.3 Final Geometric Values
    </h4>
@@ -35065,7 +35069,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <li><strong>w(z) Evolution:</strong> Logarithmic form w(z) = w₀[1 + (α_T/3)ln(1+z/z_act)] with z_act = 3000 — testable with Euclid</li>
             <li><strong>Brane Configuration:</strong> (5,2) + 3×(3,2) is BPS-protected with c_total = 0</li>
             <li><strong>CFT Consistency:</strong> Perfect anomaly cancellation: 24 - 26 + 2 = 0</li>
-            <li><strong>Modified Gravity:</strong> F(R,T) + orthogonal time corrections with d_eff = 12.576 (V12.8: coefficient 0.5 from Sp(2,R) ghost central charge ratio)</li>
+            <li><strong>Modified Gravity:</strong> F(R,T) + orthogonal time corrections with d_eff = 12.576 (V12.8: coefficient 0.5 from Sp(2,R) ghost central charge ratio |c_ghost|/(2×c_matter) = 26/52 = 0.5; see <code>simulations/derive_d_eff_v12_8.py</code>)</li>
             <li><strong>Hubble Evolution:</strong> Predicts H₀ = 70.5 ± 1.5 km/s/Mpc (tension resolution candidate)</li>
             <li><strong>CMB Signatures:</strong> Testable ISW enhancement at ℓ ~ 20-30 from breathing mode</li>
           </ul>
