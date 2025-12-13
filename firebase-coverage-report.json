@@ -1,15 +1,16 @@
 {
   "summary": {
     "totalPages": 46,
-    "pagesWithFirebase": 41,
+    "pagesWithFirebase": 40,
     "pagesWithHardcoded": 27,
-    "totalHardcoded": 874,
+    "totalHardcoded": 885,
     "pagesWithFormulas": 31
   },
   "noFirebase": [
     "appendices_content.html",
     "ATTRIBUTION_HTML_ADDITIONS.html",
     "ATTRIBUTION_HTML_ADDITIONS_PART2.html",
+    "principia-metaphysica-paper.html",
     "sections\\division-algebra-section.html",
     "docs\\PAPER_2T_UPDATE_SECTION.html"
   ],
@@ -112,6 +113,20 @@
           "pmPath": "dark_energy.w0",
           "file": "appendices_content.html",
           "context": "<div style=\"font-size: 1.15rem; font-weight: 600; color: #51cf66;\">w<sub>0</sub> ~ -0.85</div> </div> </div> <p style=\"color: #51cf66; font-weight:"
+        },
+        {
+          "value": "-0.8528",
+          "name": "w0",
+          "pmPath": "dark_energy.w0",
+          "file": "appendices_content.html",
+          "context": "state) evaluateW0() { const pred = PM.dark_energy?.w0_PM || PM.desi_dr2_data?.w0 || -0.8528; const obsDESI = this.experimentalData.w0DESI2024; const o"
+        },
+        {
+          "value": "-0.8528",
+          "name": "w0_PM",
+          "pmPath": "dark_energy.w0_PM",
+          "file": "appendices_content.html",
+          "context": "state) evaluateW0() { const pred = PM.dark_energy?.w0_PM || PM.desi_dr2_data?.w0 || -0.8528; const obsDESI = this.experimentalData.w0DESI2024; const o"
         },
         {
           "value": "2.1181×10^16",
@@ -3773,84 +3788,98 @@
           "name": "D_bulk",
           "pmPath": "dimensions.D_bulk",
           "file": "index.html",
-          "context": "gnature.time; if (spinorFull) spinorFull.textContent = TheoryConstants.spinors.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors"
+          "context": "fTime) sigEffTime.textContent = 1; if (spinorFull) spinorFull.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor"
         },
         {
           "value": "26D",
           "name": "D_bulk",
           "pmPath": "dimensions.D_bulk",
           "file": "index.html",
-          "context": "gnature.time; if (spinorFull) spinorFull.textContent = TheoryConstants.spinors.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors"
+          "context": "fTime) sigEffTime.textContent = 1; if (spinorFull) spinorFull.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor"
         },
         {
           "value": "26D",
           "name": "D_bulk",
           "pmPath": "dimensions.D_bulk",
           "file": "index.html",
-          "context": "gnature.time; if (spinorFull) spinorFull.textContent = TheoryConstants.spinors.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors"
+          "context": "fTime) sigEffTime.textContent = 1; if (spinorFull) spinorFull.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor"
+        },
+        {
+          "value": "26D",
+          "name": "D_bulk",
+          "pmPath": "dimensions.D_bulk",
+          "file": "index.html",
+          "context": "fTime) sigEffTime.textContent = 1; if (spinorFull) spinorFull.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         },
         {
           "value": "13D",
           "name": "D_after_sp2r",
           "pmPath": "dimensions.D_after_sp2r",
           "file": "index.html",
-          "context": "s.full26D; if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D; } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.css\"> <"
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
+        },
+        {
+          "value": "13D",
+          "name": "D_after_sp2r",
+          "pmPath": "dimensions.D_after_sp2r",
+          "file": "index.html",
+          "context": "Full.textContent = 64; // 26D spinor if (spinorEff) spinorEff.textContent = 64; // 13D spinor } }); </script> <link rel=\"stylesheet\" href=\"/css/auth.c"
         }
       ]
     },
@@ -3898,6 +3927,20 @@
           "pmPath": "dark_energy.w0",
           "file": "principia-metaphysica-paper.html",
           "context": "a\" data-format=\"fixed:1\" data-param=\"wa_error\"> </span> -2.3), active evolution gives w ~ -0.85. The Planck lensing anomaly (A L &gt; 1) correlation i"
+        },
+        {
+          "value": "-0.8528",
+          "name": "w0",
+          "pmPath": "dark_energy.w0",
+          "file": "principia-metaphysica-paper.html",
+          "context": "state) evaluateW0() { const pred = PM.dark_energy?.w0_PM || PM.desi_dr2_data?.w0 || -0.8528; const obsDESI = this.experimentalData.w0DESI2024; const o"
+        },
+        {
+          "value": "-0.8528",
+          "name": "w0_PM",
+          "pmPath": "dark_energy.w0_PM",
+          "file": "principia-metaphysica-paper.html",
+          "context": "state) evaluateW0() { const pred = PM.dark_energy?.w0_PM || PM.desi_dr2_data?.w0 || -0.8528; const obsDESI = this.experimentalData.w0DESI2024; const o"
         },
         {
           "value": "2.1181×10^16",
@@ -4150,6 +4193,27 @@
           "pmPath": "dimensions.D_bulk",
           "file": "principia-metaphysica-paper.html",
           "context": "id=\"division-algebra-origin\"> 1.4 The Division Algebra Origin of D = 13 (Observable Shadow of 26D) </h3> <p> The 13-dimensional effective spacetime ar"
+        },
+        {
+          "value": "13D",
+          "name": "D_after_sp2r",
+          "pmPath": "dimensions.D_after_sp2r",
+          "file": "principia-metaphysica-paper.html",
+          "context": "(Clifford algebra Cl(24,2)), which gauge-reduces to 64 effective components in the 13D shadow. </p> <p> Time emerges from thermal entropy via the Two-"
+        },
+        {
+          "value": "13D",
+          "name": "D_after_sp2r",
+          "pmPath": "dimensions.D_after_sp2r",
+          "file": "principia-metaphysica-paper.html",
+          "context": "(Clifford algebra Cl(24,2)), which gauge-reduces to 64 effective components in the 13D shadow. </p> <p> Time emerges from thermal entropy via the Two-"
+        },
+        {
+          "value": "13D",
+          "name": "D_after_sp2r",
+          "pmPath": "dimensions.D_after_sp2r",
+          "file": "principia-metaphysica-paper.html",
+          "context": "(Clifford algebra Cl(24,2)), which gauge-reduces to 64 effective components in the 13D shadow. </p> <p> Time emerges from thermal entropy via the Two-"
         },
         {
           "value": "13D",
@@ -5729,6 +5793,20 @@
     {
       "path": "sections\\predictions.html",
       "values": [
+        {
+          "value": "-0.8528",
+          "name": "w0",
+          "pmPath": "dark_energy.w0",
+          "file": "sections\\predictions.html",
+          "context": "state) evaluateW0() { const pred = PM.dark_energy?.w0_PM || PM.desi_dr2_data?.w0 || -0.8528; const obsDESI = this.experimentalData.w0DESI2024; const o"
+        },
+        {
+          "value": "-0.8528",
+          "name": "w0_PM",
+          "pmPath": "dark_energy.w0_PM",
+          "file": "sections\\predictions.html",
+          "context": "state) evaluateW0() { const pred = PM.dark_energy?.w0_PM || PM.desi_dr2_data?.w0 || -0.8528; const obsDESI = this.experimentalData.w0DESI2024; const o"
+        },
         {
           "value": "b₃=24",
           "name": "b3",
@@ -11244,6 +11322,16 @@
         },
         {
           "content": "Mashiach Potential with Attractor Structure",
+          "file": "principia-metaphysica-paper.html",
+          "hasDataRef": false
+        },
+        {
+          "content": "&Psi; (i&Gamma; M D M + g&middot;t ortho )&Psi; + &lambda;( &Psi; &Psi;)&sup2;",
+          "file": "principia-metaphysica-paper.html",
+          "hasDataRef": false
+        },
+        {
+          "content": "(i&gamma; &mu; &part; &mu; - m)&psi;",
           "file": "principia-metaphysica-paper.html",
           "hasDataRef": false
         },

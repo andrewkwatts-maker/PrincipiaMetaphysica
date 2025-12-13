@@ -3,16 +3,16 @@
     "theory_output.json": {
       "exists": true,
       "path": "theory_output.json",
-      "size": 21331,
-      "lastModified": "2025-12-07T18:32:30.688Z",
-      "version": null,
+      "size": 21537,
+      "lastModified": "2025-12-13T09:11:41.674Z",
+      "version": "12.7",
       "required": true
     },
     "theory-constants-enhanced.js": {
       "exists": true,
       "path": "theory-constants-enhanced.js",
-      "size": 24467,
-      "lastModified": "2025-12-07T22:29:25.162Z",
+      "size": 23402,
+      "lastModified": "2025-12-13T09:11:41.674Z",
       "version": "12.7",
       "required": true
     },
@@ -35,8 +35,8 @@
     "config.py": {
       "exists": true,
       "path": "config.py",
-      "size": 69350,
-      "lastModified": "2025-12-07T18:08:13.026Z",
+      "size": 69523,
+      "lastModified": "2025-12-13T07:30:00.659Z",
       "version": null,
       "required": true
     }
@@ -44,10 +44,45 @@
   "firestoreStatus": {
     "theory_constants": {
       "exists": true,
-      "documentCount": 3,
+      "documentCount": 11,
       "documents": [
         {
           "id": "current",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T04-33-39-950Z",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T04-34-27-578Z",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T04-36-08-705Z",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T04-37-54-735Z",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T04-39-08-986Z",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T04-41-30-342Z",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-13T05-17-16-386Z",
           "version": "12.7",
           "lastUpdated": "2025-12-08"
         },
@@ -58,6 +93,11 @@
         },
         {
           "id": "v12_7_1765597131803",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "v12_7_1765617225847",
           "version": "12.7",
           "lastUpdated": "2025-12-08"
         }
@@ -723,10 +763,15 @@
     },
     "validation_history": {
       "exists": true,
-      "documentCount": 2,
+      "documentCount": 3,
       "documents": [
         {
           "id": "complete_upload_1765597132110",
+          "version": "12.7",
+          "lastUpdated": null
+        },
+        {
+          "id": "complete_upload_1765617226098",
           "version": "12.7",
           "lastUpdated": null
         },
@@ -741,6 +786,7 @@
   "comparison": {
     "needsUpload": [],
     "synced": [
+      "theory_constants (v12.7)",
       "formulas (55 docs)",
       "formula_database (15 docs)"
     ],
