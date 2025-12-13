@@ -95,6 +95,17 @@ service cloud.firestore {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
+    // REFERENCES - Academic citations and bibliography
+    // ═══════════════════════════════════════════════════════════════════════
+    match /references/{refId} {
+      // Read: Authenticated users only
+      allow read: if isAuthenticated();
+
+      // Write: Admin SDK only (no client writes)
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
     // DENY ALL OTHER ACCESS
     // ═══════════════════════════════════════════════════════════════════════
     match /{document=**} {
