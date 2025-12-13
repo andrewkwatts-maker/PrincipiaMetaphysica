@@ -15,6 +15,20 @@
   <title>
    Principia Metaphysica - A Unified Theory of Physics
   </title>
+  <!-- MathJax for LaTeX equation rendering -->
+  <script>
+    MathJax = {
+      tex: {
+        inlineMath: [["$", "$"], ["\(", "\)"]],
+        displayMath: [["$$", "$$"], ["\[", "\]"]],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"]
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
    @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600;700&display=swap');
 
@@ -679,6 +693,21 @@
             color: #666;
         }
 
+        /* Mobile Responsive Styles */
+        @media screen and (max-width: 768px) {
+            .paper { padding: 20px 15px; font-size: 10pt; }
+            h1 { font-size: 18pt; }
+            h2 { font-size: 12pt; }
+            h3 { font-size: 11pt; }
+            .equation, .formula-display { font-size: 9pt; overflow-x: auto; }
+            table { display: block; overflow-x: auto; font-size: 9pt; }
+            .formula-def-grid { grid-template-columns: 1fr; }
+        }
+        @media screen and (max-width: 480px) {
+            .paper { padding: 10px; font-size: 9pt; }
+            h1 { font-size: 16pt; }
+            .equation, .formula-display { font-size: 8pt; padding: 0.5rem; }
+        }
         </style>
   <link href="css/pm-tooltip.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/auth.css">
