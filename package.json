@@ -1,0 +1,19 @@
+{
+  "name": "principia-metaphysica",
+  "version": "12.7.0",
+  "description": "Principia Metaphysica - 26D Two-Time Framework",
+  "private": true,
+  "scripts": {
+    "upload-formulas": "node scripts/upload-formula-database.js",
+    "upload-formulas-dry": "node scripts/upload-formula-database.js --dry-run",
+    "upload-all": "node scripts/firebase-upload-all.js",
+    "firebase-status": "node scripts/firebase-check-status.js",
+    "firebase-download": "node scripts/firebase-download.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.1.2",
+    "firebase-admin": "^12.7.0"
+  },
+  "author": "Andrew Keith Watts",
+  "license": "UNLICENSED"
+}
