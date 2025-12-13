@@ -57,7 +57,7 @@
                 The groundbreaking theory showing how extra spatial dimensions can be "curled up" so small they become invisible, unifying gravity and electromagnetism in higher dimensions.
             </p>
             <div class="main-equation" style="background: rgba(139, 127, 255, 0.1);">
-                Higher D &rarr; 4D &nbsp;&nbsp;|&nbsp;&nbsp; Compactification on S<sup>1</sup>
+                Higher D &rarr; <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D &nbsp;&nbsp;|&nbsp;&nbsp; Compactification on S<sup>1</sup>
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
                 Theodor Kaluza (1921) & Oskar Klein (1926) | Foundation of String Theory
@@ -77,11 +77,11 @@
                 </div>
                 <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
                     <h4 style="color: #ff7eb6;">KK Tower</h4>
-                    <p>Motion in the compact dimension appears as <em>massive particles</em> in 4D. The mass spectrum: m<sub>n</sub> = n/R, where R is the compactification radius and n = 0, 1, 2, ...</p>
+                    <p>Motion in the compact dimension appears as <em>massive particles</em> in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D. The mass spectrum: m<sub>n</sub> = n/R, where R is the compactification radius and n = 0, 1, 2, ...</p>
                 </div>
                 <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
                     <h4 style="color: #4facfe;">Zero Mode</h4>
-                    <p>The n=0 mode is <strong>massless</strong> and corresponds to the 4D fields we observe (photon, graviton). Heavy modes (n&ge;1) are too massive to produce at current energies.</p>
+                    <p>The n=0 mode is <strong>massless</strong> and corresponds to the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D fields we observe (photon, graviton). Heavy modes (n&ge;1) are too massive to produce at current energies.</p>
                 </div>
             </div>
         </section>
@@ -108,10 +108,10 @@
                     </div>
                     <div class="sub-component">
                         <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
-                        <div class="component-name">4D Metric Tensor</div>
+                        <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Metric Tensor</div>
                         <div class="component-desc">
-                            The effective 4D spacetime metric after compactification.<br>
-                            Satisfies the 4D Einstein equations: G<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub>
+                            The effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime metric after compactification.<br>
+                            Satisfies the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Einstein equations: G<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub>
                         </div>
                         <a href="einstein-field-equations.html" class="component-link">Learn about Einstein's equations &rarr;</a>
                     </div>
@@ -119,8 +119,8 @@
                         <div class="component-symbol">A<sub>&mu;</sub></div>
                         <div class="component-name">KK Vector (Gauge Field)</div>
                         <div class="component-desc">
-                            The 4D electromagnetic potential arising from the 5th dimension!<br>
-                            Remarkably, the 5D metric component g<sub>&mu;5</sub> becomes the photon field in 4D.
+                            The <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D electromagnetic potential arising from the 5th dimension!<br>
+                            Remarkably, the 5D metric component g<sub>&mu;5</sub> becomes the photon field in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D.
                         </div>
                         <span class="foundation-badge established" style="margin-top: 0.5rem;">Unification Achieved</span>
                     </div>
@@ -172,7 +172,7 @@
                     </div>
                     <div class="chain-step">
                         <span class="step-arrow">&rarr;</span>
-                        <a href="https://en.wikipedia.org/wiki/String_theory" target="_blank">String Theory (10D/11D)</a>
+                        <a href="https://en.wikipedia.org/wiki/String_theory" target="_blank">String Theory (<span class="pm-value" data-pm-value="dimensions.D_string"></span>D/11D)</a>
                         <span class="foundation-badge" style="background: rgba(255, 126, 182, 0.1); color: #ff7eb6;">Modern Extension</span>
                     </div>
                 </div>
@@ -265,7 +265,7 @@
                         <text x="70" y="25" fill="var(--text-secondary)" font-size="11">n=2: m₂ = 2/R</text>
                     </g>
 
-                    <!-- n=3 -->
+                    <!-- n_gen = <span class="pm-value" data-pm-value="topology.n_gen"></span> -->
                     <g transform="translate(0, 140)">
                         <path d="M -60 20 Q -50 0, -40 20 Q -30 40, -20 20 Q -10 0, 0 20 Q 10 40, 20 20 Q 30 0, 40 20 Q 50 40, 60 20" fill="none" stroke="#ff7eb6" stroke-width="2"/>
                         <line x1="-60" y1="20" x2="60" y2="20" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="2,2"/>
@@ -304,7 +304,7 @@
                         <circle cx="-10" cy="150" r="4" fill="#ff7eb6"/>
                         <text x="50" y="154" fill="var(--text-secondary)" font-size="11">n=2: m = 2/R</text>
 
-                        <!-- n=3 -->
+                        <!-- n_gen = <span class="pm-value" data-pm-value="topology.n_gen"></span> -->
                         <line x1="-75" y1="90" x2="40" y2="90" stroke="#ff7eb6" stroke-width="3"/>
                         <circle cx="-10" cy="90" r="4" fill="#ff7eb6"/>
                         <text x="50" y="94" fill="var(--text-secondary)" font-size="11">n=3: m = 3/R</text>
@@ -359,7 +359,7 @@
 
             <h3 style="margin-top: 2rem;">2. KK Modes and the Mass Spectrum</h3>
             <p>
-                When a dimension is compact, <strong>momentum is quantized</strong> in that direction. A particle moving in the compact dimension with momentum p<sub>5</sub> = n/R (where n is an integer) appears in 4D as a particle with mass:
+                When a dimension is compact, <strong>momentum is quantized</strong> in that direction. A particle moving in the compact dimension with momentum p<sub>5</sub> = n/R (where n is an integer) appears in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D as a particle with mass:
             </p>
             <div class="equation-box">
                 m<sub>n</sub> = |p<sub>5</sub>| = n/R &nbsp;&nbsp;&nbsp; (n = 0, 1, 2, 3, ...)
@@ -417,8 +417,8 @@
                     <ul style="margin-left: 1.2rem; line-height: 1.8;">
                         <li>Massless: m<sub>0</sub> = 0</li>
                         <li>Constant wavefunction in compact direction</li>
-                        <li>These are the familiar 4D particles we observe</li>
-                        <li>Example: 4D photon from g<sub>mu 5</sub></li>
+                        <li>These are the familiar <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D particles we observe</li>
+                        <li>Example: <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D photon from g<sub>mu 5</sub></li>
                     </ul>
                 </div>
                 <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
@@ -439,7 +439,7 @@
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
                 <li><strong>Type I, IIA, IIB string theory:</strong> 10 dimensions (9 space + 1 time)</li>
                 <li><strong>M-theory:</strong> 11 dimensions (10 space + 1 time)</li>
-                <li><strong>Compactification manifolds:</strong> Calabi-Yau manifolds (6D), G₂ manifolds (7D), etc.</li>
+                <li><strong>Compactification manifolds:</strong> Calabi-Yau manifolds (6D), G₂ manifolds (<span class="pm-value" data-pm-value="dimensions.D_G2"></span>D), etc.</li>
                 <li><strong>Moduli:</strong> Parameters describing the shape and size of compact dimensions (like radius R)</li>
             </ul>
             <p style="margin-top: 1rem;">
@@ -560,12 +560,12 @@
                 </div>
                 <div class="term-card">
                     <h4>Zero Mode</h4>
-                    <p>The n=0 state in the KK tower. Massless and corresponds to the 4D fields we observe. Has constant wavefunction in compact directions.</p>
+                    <p>The n=0 state in the KK tower. Massless and corresponds to the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D fields we observe. Has constant wavefunction in compact directions.</p>
                     <span class="foundation-badge" style="margin-top: 0.5rem; background: rgba(79, 172, 254, 0.1); color: #4facfe;">Observable</span>
                 </div>
                 <div class="term-card">
                     <h4>Moduli</h4>
-                    <p>Scalar fields describing the shape and size of compact dimensions. Example: radion phi = sqrt(g_55) encodes the radius. These appear as massless scalars in 4D.</p>
+                    <p>Scalar fields describing the shape and size of compact dimensions. Example: radion phi = sqrt(g_55) encodes the radius. These appear as massless scalars in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D.</p>
                     <a href="https://en.wikipedia.org/wiki/Moduli_(physics)" target="_blank" class="term-link">Learn more &rarr;</a>
                 </div>
                 <div class="term-card">
@@ -585,7 +585,7 @@
                 </div>
                 <div class="term-card">
                     <h4>G₂ Manifold</h4>
-                    <p>A 7D manifold with holonomy group G₂. Used to compactify M-theory (11D) down to 4D. More restrictive than Calabi-Yau.</p>
+                    <p>A 7D manifold with holonomy group G₂. Used to compactify M-theory (11D) down to <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D. More restrictive than Calabi-Yau.</p>
                     <a href="g2-manifolds.html" class="term-link">Learn more &rarr;</a>
                 </div>
             </div>
@@ -595,20 +595,20 @@
         <section class="subsection">
             <h2>Connection to Principia Metaphysica</h2>
             <p>
-                Principia Metaphysica employs a <strong>multi-stage compactification</strong> process from 26D down to the observed 4D:
+                Principia Metaphysica employs a <strong>multi-stage compactification</strong> process from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D down to the observed 4D:
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">26D &rarr; 13D &rarr; 6D &rarr; 4D Reduction Pathway</h4>
+                <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D &rarr; 13D &rarr; 6D &rarr; 4D Reduction Pathway</h4>
                 <p style="color: var(--text-secondary); margin-top: 0.75rem;">
                     Each stage involves different compactification mechanisms:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
                     <li>
-                        <strong>26D &rarr; 13D:</strong> Sp(2,R) gauge fixing in 2T physics projects the (24,2) bulk onto a (12,1) "shadow" spacetime. This is not standard KK compactification but rather a gauge-theoretic reduction.
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D &rarr; 13D:</strong> Sp(2,R) gauge fixing in 2T physics projects the (24,2) bulk onto a (12,1) "shadow" spacetime. This is not standard KK compactification but rather a gauge-theoretic reduction.
                     </li>
                     <li>
-                        <strong>13D &rarr; 6D:</strong> Seven dimensions compactify on a <strong>G₂ manifold</strong> (7D with holonomy G₂). This preserves N=1 supersymmetry and yields a 6D (5,1) bulk.
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D &rarr; 6D:</strong> Seven dimensions compactify on a <strong>G₂ manifold</strong> (7D with holonomy G₂). This preserves N=1 supersymmetry and yields a 6D (5,1) bulk.
                         <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
                             <li><strong>Specific construction:</strong> TCS G₂ with b₂=4, b₃=24, χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span></li>
                             <li><strong>KK mass scale:</strong> m_KK ~ 1/R_G₂ where R_G₂ ~ 10⁻³⁵ m (Planck scale)</li>
@@ -616,7 +616,7 @@
                         </ul>
                     </li>
                     <li>
-                        <strong>6D &rarr; 4D:</strong> Further compactification on a 2D surface (possibly T² or more complex) to reach the observed 4D spacetime (3,1).
+                        <strong>6D &rarr; <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D:</strong> Further compactification on a 2D surface (possibly T² or more complex) to reach the observed <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime (3,1).
                     </li>
                 </ul>
             </div>
@@ -696,7 +696,7 @@
                 <h4>Problem 3: Mode Expansion</h4>
                 <p>
                     Consider a scalar field Phi(x<sup>mu</sup>, y) in 5D where y is compact with radius R.
-                    Expand Phi in KK modes and show that each mode phi<sub>n</sub>(x<sup>mu</sup>) satisfies a 4D Klein-Gordon equation with mass m<sub>n</sub> = n/R.
+                    Expand Phi in KK modes and show that each mode phi<sub>n</sub>(x<sup>mu</sup>) satisfies a <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Klein-Gordon equation with mass m<sub>n</sub> = n/R.
                 </p>
                 <details style="margin-top: 0.75rem;">
                     <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
@@ -711,7 +711,7 @@
             <div class="problem-card">
                 <h4>Problem 4: Large Extra Dimensions</h4>
                 <p>
-                    In theories with "large" extra dimensions (ADD model), gravity can propagate in the extra dimensions while Standard Model particles are confined to a 4D "brane".
+                    In theories with "large" extra dimensions (ADD model), gravity can propagate in the extra dimensions while Standard Model particles are confined to a <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D "brane".
                     If gravity appears weak because it dilutes in extra dimensions, what radius R would make the fundamental Planck scale M<sub>*</sub> ~ 1 TeV (instead of 10<sup>19</sup> GeV) with 2 extra dimensions?
                 </p>
                 <details style="margin-top: 0.75rem;">
@@ -738,7 +738,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Geometric Framework</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        26D → 13D → 6D → 4D reduction
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 6D → 4D reduction
                     </p>
                     <a href="../sections/geometric-framework.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -786,7 +786,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Geometric Framework</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        26D → 13D → 6D → 4D reduction
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 6D → 4D reduction
                     </p>
                     <a href="../sections/geometric-framework.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;

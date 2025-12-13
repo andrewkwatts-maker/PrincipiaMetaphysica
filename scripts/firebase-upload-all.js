@@ -367,46 +367,72 @@ function extractCoreConstants(theoryOutput) {
 }
 
 /**
- * Upload theory constants
+ * Upload theory constants using smart sync with history
  */
 async function uploadTheoryConstants(db) {
-  console.log('\n📦 Uploading theory constants...');
+  console.log('\n📦 Uploading theory constants with version history...');
 
-  const theoryOutput = loadTheoryOutput();
-
-  // Extract core constants (flattened for Firestore compatibility)
-  const coreData = extractCoreConstants(theoryOutput);
-
-  // Add metadata
-  const data = {
-    ...coreData,
-    uploadedAt: admin.firestore.FieldValue.serverTimestamp()
-  };
-
-  // Upload current version
-  await db.collection('theory_constants').doc('current').set(data);
-  console.log('  ✓ Uploaded to theory_constants/current');
-
-  // Upload versioned backup
-  const version = theoryOutput.meta?.version || '12.7';
-  const versionId = `v${version.replace(/\./g, '_')}`;
-  await db.collection('theory_constants').doc(versionId).set(data);
-  console.log(`  ✓ Uploaded to theory_constants/${versionId}`);
-
-  // Upload enhanced constants separately (they're smaller)
   try {
-    const enhancedConstants = loadEnhancedConstants();
-    const flattenedEnhanced = flattenDeepNested(enhancedConstants, 0, 10);
-    await db.collection('theory_constants').doc('enhanced').set({
-      ...flattenedEnhanced,
-      uploadedAt: admin.firestore.FieldValue.serverTimestamp()
-    });
-    console.log('  ✓ Uploaded to theory_constants/enhanced');
-  } catch (err) {
-    console.log(`  ⚠ Could not upload enhanced constants: ${err.message}`);
-  }
+    // Use the sync-with-history script
+    const { syncWithHistory } = require('./firebase-sync-with-history.js');
 
-  return { success: true, version };
+    // Close current Firebase connection to avoid conflicts
+    const currentApp = admin.app();
+    await currentApp.delete();
+
+    // Run sync (it will re-initialize Firebase)
+    const result = await syncWithHistory();
+
+    // Re-initialize Firebase for remaining operations
+    const serviceAccountPath = path.join(__dirname, 'principia-metaphysica-firebase-adminsdk-fbsvc-8cbaa9f520.json');
+    if (!fs.existsSync(serviceAccountPath)) {
+      throw new Error('Service account key not found after sync');
+    }
+
+    const serviceAccount = require(serviceAccountPath);
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      projectId: "principia-metaphysica"
+    });
+
+    // Get version from enhanced constants
+    const enhancedConstants = loadEnhancedConstants();
+    const version = enhancedConstants.meta?.version || '12.7';
+
+    if (result.updated) {
+      console.log('  ✓ Theory constants synced with version history');
+      console.log(`  ✓ Changes applied: ${result.diffs}`);
+      if (result.backupId) {
+        console.log(`  ✓ Backup created: ${result.backupId}`);
+      }
+    } else {
+      console.log('  ✓ No changes detected - Firebase already up to date');
+    }
+
+    return { success: true, version, synced: result.updated, changes: result.diffs };
+
+  } catch (err) {
+    console.log(`  ⚠ Sync failed, falling back to direct upload: ${err.message}`);
+
+    // Fallback to original upload logic
+    const theoryOutput = loadTheoryOutput();
+    const coreData = extractCoreConstants(theoryOutput);
+
+    const data = {
+      ...coreData,
+      uploadedAt: admin.firestore.FieldValue.serverTimestamp()
+    };
+
+    await db.collection('theory_constants').doc('current').set(data);
+    console.log('  ✓ Uploaded to theory_constants/current (fallback)');
+
+    const version = theoryOutput.meta?.version || '12.7';
+    const versionId = `v${version.replace(/\./g, '_')}`;
+    await db.collection('theory_constants').doc(versionId).set(data);
+    console.log(`  ✓ Uploaded to theory_constants/${versionId} (fallback)`);
+
+    return { success: true, version, synced: false, fallback: true };
+  }
 }
 
 /**

@@ -278,7 +278,7 @@
         Two-Time Cosmology: Modified Gravity, the Mashiach Field, and the Late-Time Cosmic Attractor
       </p>
       <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 0.25rem;">
-        <em>Principia Metaphysica &mdash; 26D Two-Time Framework</em>
+        <em>Principia Metaphysica &mdash; <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Two-Time Framework</em>
       </p>
     </div>
 
@@ -287,7 +287,7 @@
       <h5 style="color: var(--accent-secondary);">Two-Time Cosmology: Building on the Thermal Time Hypothesis (Section 5)</h5>
       <p style="margin-bottom: 0.75rem;">
         This section applies the <strong>Thermal Time Hypothesis</strong> developed in Section 5 to
-        cosmological dynamics within the 26D two-time framework. Recall the key insight: <em>time is not a fundamental coordinate but
+        cosmological dynamics within the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework. Recall the key insight: <em>time is not a fundamental coordinate but
         emerges from thermodynamic flow</em> in the Pneuma sector.
       </p>
       <p style="margin-bottom: 0.75rem;">
@@ -322,7 +322,7 @@
     <div class="toc">
       <h4>Table of Contents</h4>
       <ul>
-        <li><a href="#kaluza-klein">6.1 Deriving 4D Gravity from Kaluza-Klein Reduction</a></li>
+        <li><a href="#kaluza-klein">6.1 Deriving <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Gravity from Kaluza-Klein Reduction</a></li>
         <li><a href="#frt-gravity">6.2 Myrzakulov F(R,T) Gravity</a></li>
         <li><a href="#mashiach-field">6.3 The Mashiach Field as a Modulus</a></li>
         <li><a href="#dynamical-systems">6.4 Dynamical Systems Analysis</a></li>
@@ -339,18 +339,18 @@
     </div>
 
     <section class="detail-section" id="kaluza-klein">
-      <h3>6.1 Deriving 4D Gravity from Kaluza-Klein Reduction</h3>
+      <h3>6.1 Deriving <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Gravity from Kaluza-Klein Reduction</h3>
 
       <p>
         The Principia Metaphysica framework begins with a (12,1)-dimensional spacetime that reduces
-        to our observed 4D universe through <strong>Kaluza-Klein compactification</strong>. This
+        to our observed <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D universe through <strong>Kaluza-Klein compactification</strong>. This
         dimensional reduction naturally generates both gravity and gauge fields from pure geometry.
       </p>
 
       <div class="subsection">
         <h4>The Higher-Dimensional Metric</h4>
         <p>
-          The 13-dimensional metric G<sub>MN</sub> decomposes according to the product structure
+          The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>-dimensional metric G<sub>MN</sub> decomposes according to the product structure
           M<sup>13</sup> = M<sup>4</sup> &times; K<sub>Pneuma</sub>:
         </p>
 
@@ -371,7 +371,7 @@
       <div class="subsection">
         <h4>Dimensional Reduction of the Einstein-Hilbert Action</h4>
         <p>
-          Starting from the 14D Einstein-Hilbert action (one time sector of the full 26D&rarr;13D shadow two-time framework):
+          Starting from the 14D Einstein-Hilbert action (one time sector of the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D&rarr;13D shadow two-time framework):
         </p>
 
         <div class="equation-box numbered">
@@ -382,7 +382,7 @@
         </div>
 
         <p>
-          Integration over the compact dimensions K<sub>Pneuma</sub> yields the 4D effective action:
+          Integration over the compact dimensions K<sub>Pneuma</sub> yields the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective action:
         </p>
 
         <div class="interactive-formula" style="background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.25); border-radius: 10px; padding: 1.25rem; margin: 1rem 0;">
@@ -397,14 +397,14 @@
             <span class="formula-var" style="padding: 0.2rem 0.3rem;">&int; d<sup>4</sup>x &radic;(-g)
               <div class="var-tooltip">
                 <div class="var-name">Spacetime Integration</div>
-                <div class="var-desc">4D volume element with metric determinant</div>
+                <div class="var-desc"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D volume element with metric determinant</div>
               </div>
             </span>
             <span class="formula-op">[</span>
             <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">M<sub>Pl</sub><sup>2</sup>R/2
               <div class="var-tooltip">
                 <div class="var-name">Einstein-Hilbert Term</div>
-                <div class="var-desc">4D gravity with Planck mass M<sub>Pl</sub> = 1.22 × 10<sup>19</sup> GeV (PDG 2024, measured)</div>
+                <div class="var-desc"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D gravity with Planck mass M<sub>Pl</sub> = 1.22 × 10<sup>19</sup> GeV (PDG 2024, measured)</div>
               </div>
             </span>
             <span class="formula-op">-</span>
@@ -430,13 +430,13 @@
           The key results of the reduction are:
         </p>
         <ul>
-          <li><strong>4D gravity:</strong> The 4D Planck mass M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> × V<sub>9</sub>
+          <li><strong>4D gravity:</strong> The <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Planck mass M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>11</sup> × V<sub>9</sub>
             where V<sub>9</sub> = V<sub>7</sub>(G₂) × V<sub>2</sub>(T²) is the 9-dimensional internal volume.
             <strong>NOTE:</strong> M<sub>Pl</sub> = 1.22×10<sup>19</sup> GeV is MEASURED (PDG 2024), not derived.</li>
           <li><strong>Gauge fields:</strong> The off-diagonal metric components become SO(10) gauge
             bosons A<sub>&mu;</sub><sup>a</sup></li>
           <li><strong>Scalar moduli:</strong> The internal metric fluctuations become scalar fields
-            &phi;<sup>i</sup> in 4D</li>
+            &phi;<sup>i</sup> in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D</li>
         </ul>
       </div>
 
@@ -466,7 +466,7 @@
 
         <p>
           The framework begins with a <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</strong> with signature (24,2), containing two timelike dimensions.
-          This projects via <strong>Sp(2,R) gauge fixing</strong> to a <strong>13D shadow with signature (12,1)</strong>, a symmetry that constrains the two-time dynamics and eliminates ghost degrees of freedom. The 13D shadow contains 12 spatial dimensions + 1 effective temporal dimension.
+          This projects via <strong>Sp(2,R) gauge fixing</strong> to a <strong>13D shadow with signature (12,1)</strong>, a symmetry that constrains the two-time dynamics and eliminates ghost degrees of freedom. The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow contains 12 spatial dimensions + 1 effective temporal dimension.
         </p>
 
         <div class="theorem-box" style="background: rgba(139, 127, 255, 0.08);">
@@ -492,11 +492,11 @@
             </span>
           </div>
           <p style="margin-top: 0.5rem;">
-            This constraint eliminates half the degrees of freedom, projecting 26D &rarr; 13D shadow (two copies of 14D, one per time sector).
+            This constraint eliminates half the degrees of freedom, projecting <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D &rarr; 13D shadow (two copies of 14D, one per time sector).
             Here &Phi; represents scalar field configurations in the bulk.
           </p>
 
-          <p style="margin-top: 1rem;"><strong>Step 3: Effective 13D Metric</strong></p>
+          <p style="margin-top: 1rem;"><strong>Step 3: Effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Metric</strong></p>
           <p>
             After gauge fixing, the effective metric becomes:
           </p>
@@ -506,7 +506,7 @@
             </span>
           </div>
           <p style="margin-top: 0.5rem;">
-            where &mu;,&nu; = 0,1,2,3 (4D spacetime) and m,n = 1,...,9 (internal space in 13D shadow framework after compactification).
+            where &mu;,&nu; = 0,1,2,3 (4D spacetime) and m,n = 1,...,9 (internal space in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow framework after compactification).
           </p>
 
           <p style="margin-top: 1rem;"><strong>Step 4: Time Emergence</strong></p>
@@ -538,7 +538,7 @@
         <h4 style="color: #51cf66;">CFT Anomaly Cancellation &amp; Cosmological Implications</h4>
 
         <p>
-          The 26D&rarr;13D shadow structure is constrained by <strong>conformal field theory (CFT) anomaly cancellation</strong>.
+          The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D&rarr;13D shadow structure is constrained by <strong>conformal field theory (CFT) anomaly cancellation</strong>.
           In any consistent CFT, the total central charge must vanish to ensure unitarity and cancel gravitational anomalies.
         </p>
 
@@ -577,7 +577,7 @@
             The CFT anomaly cancellation condition c<sub>total</sub> = 0 has profound consequences for cosmology:
           </p>
           <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
-            <li><strong>Dimensional correction:</strong> The effective dimension d<sub>eff</sub> = 12.589 (from 13D shadow minus emergent time,
+            <li><strong>Dimensional correction:</strong> The effective dimension d<sub>eff</sub> = 12.589 (from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow minus emergent time,
               plus geometric correction 0.5×(α₄+α₅) = 0.5×1.1781 from TCS G₂ compactification)</li>
             <li><strong>Dark energy equation of state:</strong> w<sub>0</sub> = -(d<sub>eff</sub>-1)/(d<sub>eff</sub>+1) = -11.589/13.589 = <strong><span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span></strong>
               (geometrically derived from TCS G₂ with b₂=4, b₃=24)</li>
@@ -635,7 +635,7 @@
         </p>
 
         <div class="definition-box" style="background: rgba(79, 172, 254, 0.1);">
-          <h5 style="color: var(--info);">Enhanced Brane Configuration in 13D Shadow</h5>
+          <h5 style="color: var(--info);">Enhanced Brane Configuration in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow</h5>
           <p>
             The framework contains an enhanced brane structure after G₂ compactification:
           </p>
@@ -740,19 +740,19 @@
         <p>
           The Pneuma spinor field &Psi;<sub>P</sub> has <strong>8192 components</strong> in the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk
           (from Majorana-Weyl condition in (24,2) signature). Upon compactification and symmetry breaking,
-          this reduces to <strong>64 effective components</strong> in the 4D effective theory.
+          this reduces to <strong>64 effective components</strong> in the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective theory.
         </p>
 
         <div class="theorem-box" style="background: rgba(81, 207, 102, 0.08);">
           <h5 style="color: #51cf66;">Symbolic Computation: Spinor Decomposition</h5>
 
-          <p><strong>Step 1: 26D Spinor Dimension</strong></p>
+          <p><strong>Step 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Spinor Dimension</strong></p>
           <p>
             For signature (24,2), the minimal spinor has dimension:
           </p>
           <div class="equation-box">
             <span class="eq-content">
-              dim(&Psi;<sub>26D</sub>) = 2<sup>(26-2)/2</sup> = 2<sup>12</sup> = 4096
+              dim(&Psi;<sub><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</sub>) = 2<sup>(26-2)/2</sup> = 2<sup>12</sup> = 4096
             </span>
           </div>
           <p style="margin-top: 0.5rem;">
@@ -761,18 +761,18 @@
 
           <p style="margin-top: 1rem;"><strong>Step 2: Decomposition Under SO(10) &times; U(1)</strong></p>
           <p>
-            The Pneuma manifold K<sub>Pneuma</sub> has SO(10) isometry. Decomposing the 26D spinor:
+            The Pneuma manifold K<sub>Pneuma</sub> has SO(10) isometry. Decomposing the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spinor:
           </p>
           <div class="equation-box">
             <span class="eq-content">
-              &Psi;<sub>26D</sub> &rarr; &Psi;<sub>4D</sub> &otimes; &chi;<sub>SO(10)</sub> &otimes; &eta;<sub>mirror</sub>
+              &Psi;<sub><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</sub> &rarr; &Psi;<sub>4D</sub> &otimes; &chi;<sub>SO(10)</sub> &otimes; &eta;<sub>mirror</sub>
             </span>
           </div>
           <p style="margin-top: 0.5rem;">
             where:
           </p>
           <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
-            <li>&Psi;<sub>4D</sub>: 4-component Dirac spinor (4D spacetime)</li>
+            <li>&Psi;<sub><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D</sub>: 4-component Dirac spinor (<span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime)</li>
             <li>&chi;<sub>SO(10)</sub>: 16-dimensional spinor representation <strong>16</strong> of SO(10)</li>
             <li>&eta;<sub>mirror</sub>: Mirror sector factor (Z<sub>2</sub> quotient)</li>
           </ul>
@@ -804,18 +804,18 @@ d_spacetime = 4
 d_internal = d_bulk - d_spacetime  # = 22
 
 # Spinor dimensions
-spinor_26D = 2**(12)  # Majorana-Weyl
+spinor_<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D = 2**(12)  # Majorana-Weyl
 spinor_4D = 4         # Dirac
 spinor_SO10 = 16      # Representation 16
 
 # Effective reduction
-reduction_factor = spinor_26D / (spinor_4D * spinor_SO10)
-print(f"26D components: {spinor_26D}")
+reduction_factor = spinor_<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D / (spinor_4D * spinor_SO10)
+print(f"<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D components: {spinor_<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D}")
 print(f"Reduction factor: {reduction_factor}")
 print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </div>
           <p style="margin-top: 0.5rem; font-style: italic; color: var(--text-muted);">
-            Output: 26D components: 8192, Reduction factor: 128, Effective 4D components: 64
+            Output: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D components: 8192, Reduction factor: 128, Effective 4D components: 64
           </p>
         </div>
 
@@ -844,7 +844,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       <div class="subsection">
         <h4>The F(R,T) Action</h4>
         <p>
-          The effective 4D gravitational action takes the form:
+          The effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D gravitational action takes the form:
         </p>
 
         <div class="interactive-formula" style="background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.2); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
@@ -1365,7 +1365,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         <div class="subsection">
           <h4>6D Effective Bulk and Warping</h4>
           <p>
-            After compactifying the 7D G₂ manifold, the theory reduces to a <strong>6D effective bulk</strong>
+            After compactifying the <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D G₂ manifold, the theory reduces to a <strong>6D effective bulk</strong>
             with signature (5,1). This 6D spacetime exhibits <strong>Randall-Sundrum type warping</strong>
             in the two shared extra dimensions (y, z):
           </p>
@@ -1379,7 +1379,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
           <p>
             where k ~ 35 is the curvature scale. The <strong>φ<sub>M</sub> (Mashiach) field propagates in this 6D bulk</strong>,
-            not confined to the 4D brane. This has important cosmological implications:
+            not confined to the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D brane. This has important cosmological implications:
           </p>
 
           <ul>
@@ -1393,7 +1393,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <h5>Heterogeneous Brane Structure</h5>
             <p>
               The observable brane couples to all 6D bulk dimensions → sees (5,1) effective spacetime.
-              The three shadow branes are localized on domain walls → see only (3,1) = 4D<sub>common</sub>.
+              The three shadow branes are localized on domain walls → see only (3,1) = <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D<sub>common</sub>.
               This asymmetry is key to the interpretation of quantum measurement and the hidden sector structure.
             </p>
           </div>
@@ -1436,7 +1436,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <span class="formula-var" style="color: #4facfe;">&mu;cos(&phi;/R<sub>ortho</sub>)
               <div class="var-tooltip">
                 <div class="var-name">&mu;cos(&phi;/R<sub>ortho</sub>) — Orthogonal Sector</div>
-                <div class="var-description">Periodic contribution from orthogonal time sector in 26D framework</div>
+                <div class="var-description">Periodic contribution from orthogonal time sector in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework</div>
                 <div class="var-contribution">R<sub>ortho</sub> is the compactification radius of the mirror sector</div>
               </div>
             </span>
@@ -1929,7 +1929,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             w<sub>0</sub> = &minus;(d<sub>eff</sub> &minus; 1)/(d<sub>eff</sub> + 1) = &minus;(13 &minus; 2)/(13 + 2) = <strong>&minus;11/15 &asymp; &minus;0.733</strong> (naive), but <strong>CFT anomaly cancellation</strong> modifies this to <strong>&minus;11/13 &asymp; &minus;0.846</strong>
           </div>
           <p style="margin: 0.75rem 0 0 0; font-size: 0.9rem; color: var(--text-muted);">
-            where d<sub>eff</sub> = 12 counts the <strong>effective spatial dimensions</strong>: in the 26D two-time framework,
+            where d<sub>eff</sub> = 12 counts the <strong>effective spatial dimensions</strong>: in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework,
             d<sub>eff</sub> = (13 &minus; 1) = 12 spatial dimensions (13D shadow minus emergent thermal time t<sub>therm</sub>).
             Multiple approaches converge: K&auml;hler potential (&minus;0.87), tracker quintessence (&minus;0.85), Fisher-Rao (&minus;0.846).
             DESI 2024 measures w<sub>0</sub> = &minus;0.83 &plusmn; 0.06 — matching MEP to <strong>0.3&sigma;</strong>.
@@ -1983,7 +1983,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </div>
 
           <p style="text-align: center; color: #51cf66; font-size: 1.05rem; font-weight: 600; margin-top: 1rem; padding: 0.75rem; background: rgba(81, 207, 102, 0.1); border-radius: 8px;">
-            Geometric prediction from 26D→13D shadow validated by DESI DR2 — No free parameters fitted to data
+            Geometric prediction from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→13D shadow validated by DESI DR2 — No free parameters fitted to data
           </p>
         </div>
 
@@ -2219,7 +2219,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <div style="font-size: 1.3rem; color: #51cf66;">→</div>
               <div style="text-align: left;">
                 <div style="font-size: 0.9rem; color: var(--text-muted);">After F(R,T) correction</div>
-                <div style="font-size: 1.15rem; font-weight: 600; color: #51cf66;">w<sub>0</sub> ~ -0.85</div>
+                <div style="font-size: 1.15rem; font-weight: 600; color: #51cf66;">w<sub>0</sub> ~ <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:2"></span></div>
               </div>
             </div>
             <p style="color: #51cf66; font-weight: 600; margin-top: 0.5rem; text-align: center;">
@@ -2378,7 +2378,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                 <tr style="border-bottom: 1px solid var(--border-primary);">
                   <td style="padding: 0.5rem;">Previous (partial corrections)</td>
                   <td style="padding: 0.5rem; text-align: center;">12.3</td>
-                  <td style="padding: 0.5rem; text-align: center;">-0.8509</td>
+                  <td style="padding: 0.5rem; text-align: center;"><span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span></td>
                   <td style="padding: 0.5rem; text-align: center; color: #51cf66;">0.32σ</td>
                 </tr>
                 <tr style="background: rgba(81, 207, 102, 0.1);">
@@ -2808,7 +2808,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             </tr>
           </table>
           <p style="text-align: center; font-weight: 600; color: var(--success);">
-            Combined agreement: 0.38σ &mdash; DESI DR2 <strong>validates</strong> geometric prediction from 26D→13D dimensional reduction!
+            Combined agreement: 0.38σ &mdash; DESI DR2 <strong>validates</strong> geometric prediction from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→13D dimensional reduction!
           </p>
         </div>
 
@@ -2849,7 +2849,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       <div class="subsection">
         <h4>Mirror Sector Contributions (Two-Time Framework)</h4>
         <p>
-          In the 26D two-time framework (""), the full spacetime exhibits a <strong>mirror symmetry</strong>
+          In the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework (""), the full spacetime exhibits a <strong>mirror symmetry</strong>
           between the two temporal sectors. This has significant cosmological implications:
         </p>
 
@@ -2884,7 +2884,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       <!-- VERSION 6.2: Comprehensive 2T Physics Cosmology Visualizations -->
       <div class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05)); padding: 2rem; border-radius: 12px; margin-top: 2.5rem; border: 2px solid rgba(139, 127, 255, 0.4);">
         <h4 style="color: var(--accent-primary); font-size: 1.5rem; text-align: center; margin-bottom: 1.5rem;">
-          13D shadow Cosmology: Interactive Visualizations
+          <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Cosmology: Interactive Visualizations
         </h4>
 
         <!-- w(z) Evolution Plot with DESI Data -->
@@ -2936,7 +2936,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="85" y="55" fill="#f8f9fa" font-size="11" text-anchor="end">-0.7</text>
             <text x="85" y="150" fill="#f8f9fa" font-size="11" text-anchor="end">-0.75</text>
             <text x="85" y="250" fill="#f8f9fa" font-size="11" text-anchor="end">-0.8</text>
-            <text x="85" y="300" fill="#f8f9fa" font-size="11" text-anchor="end">-0.85</text>
+            <text x="85" y="300" fill="#f8f9fa" font-size="11" text-anchor="end"><span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:2"></span></text>
             <text x="85" y="350" fill="#f8f9fa" font-size="11" text-anchor="end">-0.9</text>
             <text x="85" y="400" fill="#f8f9fa" font-size="11" text-anchor="end">-0.95</text>
             <text x="85" y="455" fill="#f8f9fa" font-size="11" text-anchor="end">-1.0</text>
@@ -2996,7 +2996,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="150" y="117" fill="#f8f9fa" font-size="11">DESI 2024</text>
 
             <line x1="130" y1="135" x2="145" y2="135" stroke="#51cf66" stroke-width="3"/>
-            <text x="150" y="140" fill="#f8f9fa" font-size="11">13D shadow Theory</text>
+            <text x="150" y="140" fill="#f8f9fa" font-size="11"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Theory</text>
 
             <line x1="130" y1="158" x2="145" y2="158" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="4 4"/>
             <text x="150" y="163" fill="#f8f9fa" font-size="11">ΛCDM</text>
@@ -3013,7 +3013,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="720" y="162" fill="#51cf66" font-size="10" text-anchor="middle" font-style="italic">Excellent!</text>
           </svg>
           <div class="diagram-caption">
-            <strong>Figure 1: Dark Energy Equation of State Evolution.</strong> The 13D shadow framework predicts w(z) = w₀ + wₐz/(1+z)
+            <strong>Figure 1: Dark Energy Equation of State Evolution.</strong> The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow framework predicts w(z) = w₀ + wₐz/(1+z)
             with w₀ = -11/13 from Maximum Entropy Principle and wₐ = -0.95 from thermal time corrections (DESI measures -0.75±0.30, giving 0.66σ agreement). This shows remarkable
             agreement with DESI 2024 observations (purple points with error bars). Standard quintessence (yellow dashed)
             predicts wₐ > 0, while ΛCDM (red dashed) has w = -1 constant. The negative wₐ is a distinctive signature of
@@ -3048,11 +3048,11 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <ellipse cx="450" cy="275" rx="280" ry="160" fill="rgba(81,207,102,0.2)" stroke="#51cf66" stroke-width="4"/>
               <text x="450" y="200" fill="#51cf66" font-size="20" font-weight="700" text-anchor="middle">Primary Brane</text>
               <text x="450" y="225" fill="#f8f9fa" font-size="16" text-anchor="middle">(5,2) — 7D with 2 times</text>
-              <text x="450" y="250" fill="#f8f9fa" font-size="13" text-anchor="middle">Contains: (3,1) spacetime + 4D compact</text>
+              <text x="450" y="250" fill="#f8f9fa" font-size="13" text-anchor="middle">Contains: (3,1) spacetime + <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D compact</text>
               <text x="450" y="275" fill="#51cf66" font-size="14" font-weight="600" text-anchor="middle">Casimir: C₂ = 105/8</text>
               <text x="450" y="300" fill="#f8f9fa" font-size="12" text-anchor="middle" font-style="italic">Our observable universe</text>
 
-              <!-- Show 4D effective spacetime -->
+              <!-- Show <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective spacetime -->
               <rect x="350" y="315" width="200" height="80" rx="8" fill="rgba(255,126,182,0.15)" stroke="#ff7eb6" stroke-width="2" stroke-dasharray="4 4"/>
               <text x="450" y="340" fill="#ff7eb6" font-size="13" font-weight="600" text-anchor="middle">4D Effective</text>
               <text x="450" y="360" fill="#f8f9fa" font-size="12" text-anchor="middle">(3+1) Minkowski</text>
@@ -3111,7 +3111,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </div>
         </div>
 
-        <!-- Dark Energy Potential with 13D shadow Corrections -->
+        <!-- Dark Energy Potential with <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Corrections -->
         <div class="phase-diagram" style="margin-bottom: 2rem;">
           <h5 style="color: #ff7eb6; font-size: 1.2rem; margin-bottom: 1rem;">Mashiach Field Potential: V(φ) with Quantum Corrections</h5>
           <svg class="diagram-svg" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
@@ -3132,11 +3132,11 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                   stroke="#ffd43b" stroke-width="2.5" stroke-dasharray="5 5" fill="none" opacity="0.6"/>
             <text x="750" y="50" fill="#ffd43b" font-size="12">V₀ e^(-λφ) (classical)</text>
 
-            <!-- Quantum corrected potential (13D shadow) -->
+            <!-- Quantum corrected potential (<span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow) -->
             <!-- Shows oscillations from Kaluza-Klein modes -->
             <path d="M 120 380 Q 180 370 240 345 Q 300 315 360 275 Q 380 260 400 250 Q 420 242 440 238 Q 460 237 480 240 Q 500 245 520 248 Q 540 250 560 245 Q 580 238 600 225 Q 640 200 680 165 Q 720 125 760 95 Q 800 70 840 55"
                   stroke="#ff7eb6" stroke-width="3.5" fill="none"/>
-            <text x="680" y="110" fill="#ff7eb6" font-size="13" font-weight="700">13D shadow Corrected</text>
+            <text x="680" y="110" fill="#ff7eb6" font-size="13" font-weight="700"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Corrected</text>
 
             <!-- Minimum (late-time attractor) -->
             <circle cx="480" cy="240" r="8" fill="#51cf66" stroke="#f8f9fa" stroke-width="2"/>
@@ -3169,7 +3169,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="230" y="205" fill="#51cf66" font-size="11" font-weight="600" text-anchor="middle">symmetry breaking</text>
           </svg>
           <div class="diagram-caption">
-            <strong>Figure 3: Mashiach Field Potential with 13D shadow Quantum Corrections.</strong> The classical exponential
+            <strong>Figure 3: Mashiach Field Potential with <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Quantum Corrections.</strong> The classical exponential
             potential (yellow dashed) is modified by 1-loop Kaluza-Klein corrections from the 14D compactification.
             The 2T sector adds ~10% to oscillation amplitude, generating the w_a = -0.95 prediction (DESI measures -0.75±0.30). Today (blue dot)
             the field is rolling toward the late-time attractor (green dot) where w → -1.
@@ -3178,7 +3178,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
         <!-- Modified Friedmann Equations -->
         <div class="phase-diagram" style="margin-bottom: 2rem;">
-          <h5 style="color: #51cf66; font-size: 1.2rem; margin-bottom: 1rem;">Modified Friedmann Equations: 13D shadow Effective Dimension</h5>
+          <h5 style="color: #51cf66; font-size: 1.2rem; margin-bottom: 1rem;">Modified Friedmann Equations: <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Effective Dimension</h5>
           <svg class="diagram-svg" viewBox="0 0 900 450" xmlns="http://www.w3.org/2000/svg">
             <rect width="900" height="450" fill="rgba(81,207,102,0.05)"/>
 
@@ -3187,7 +3187,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
             <!-- Standard Friedmann -->
             <rect x="50" y="60" width="380" height="350" rx="12" fill="rgba(139,127,255,0.08)" stroke="#8b7fff" stroke-width="2"/>
-            <text x="240" y="90" fill="#8b7fff" font-size="15" font-weight="700" text-anchor="middle">Standard GR (4D)</text>
+            <text x="240" y="90" fill="#8b7fff" font-size="15" font-weight="700" text-anchor="middle">Standard GR (<span class="pm-value" data-pm-value="dimensions.D_observable"></span>D)</text>
 
             <text x="70" y="125" fill="#f8f9fa" font-size="13" font-weight="600">Friedmann 1:</text>
             <text x="240" y="155" fill="#f8f9fa" font-size="14" text-anchor="middle" font-family="Crimson Text, serif">
@@ -3209,7 +3209,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
             <!-- Modified Friedmann (2T) -->
             <rect x="470" y="60" width="380" height="350" rx="12" fill="rgba(81,207,102,0.12)" stroke="#51cf66" stroke-width="3"/>
-            <text x="660" y="90" fill="#51cf66" font-size="15" font-weight="700" text-anchor="middle">2T Framework (13D shadow → 4D)</text>
+            <text x="660" y="90" fill="#51cf66" font-size="15" font-weight="700" text-anchor="middle">2T Framework (<span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow → 4D)</text>
 
             <text x="490" y="125" fill="#f8f9fa" font-size="13" font-weight="600">Modified Friedmann:</text>
             <text x="660" y="150" fill="#f8f9fa" font-size="13" text-anchor="middle" font-family="Crimson Text, serif">
@@ -3237,8 +3237,8 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="450" y="215" fill="#ffd43b" font-size="11" text-anchor="middle">Reduction</text>
           </svg>
           <div class="diagram-caption">
-            <strong>Figure 4: Modified Friedmann Equations from 13D shadow Framework.</strong> Standard 4D GR (left) is modified
-            by the dimensional reduction from 13D shadow to 4D (right). Key additions: effective energy density ρ_eff from
+            <strong>Figure 4: Modified Friedmann Equations from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Framework.</strong> Standard 4D GR (left) is modified
+            by the dimensional reduction from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow to 4D (right). Key additions: effective energy density ρ_eff from
             Kaluza-Klein modes, F(R,T) corrections (α, β terms), and orthogonal time contribution (γ term). The effective
             dimension d_eff = 12 after compactification determines the scaling of cosmological evolution.
           </div>
@@ -3295,7 +3295,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <text x="730" y="230" fill="#ff6b6b" font-size="18" font-weight="700" text-anchor="middle">-26</text>
               <text x="730" y="252" fill="#f8f9fa" font-size="13" text-anchor="middle">Bulk Spacetime</text>
               <text x="730" y="270" fill="#f8f9fa" font-size="13" text-anchor="middle">Dimensions</text>
-              <text x="730" y="295" fill="#f8f9fa" font-size="11" text-anchor="middle" font-style="italic">26D critical</text>
+              <text x="730" y="295" fill="#f8f9fa" font-size="11" text-anchor="middle" font-style="italic"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D critical</text>
               <text x="730" y="312" fill="#f8f9fa" font-size="11" text-anchor="middle" font-style="italic">dimension</text>
 
               <!-- Connection to beam -->
@@ -3523,7 +3523,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
         <!-- CMB Power Spectrum -->
         <div class="phase-diagram" style="margin-bottom: 2rem;">
-          <h5 style="color: #ff7eb6; font-size: 1.2rem; margin-bottom: 1rem;">CMB Power Spectrum: 13D shadow Predictions</h5>
+          <h5 style="color: #ff7eb6; font-size: 1.2rem; margin-bottom: 1rem;">CMB Power Spectrum: <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Predictions</h5>
           <svg class="diagram-svg" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg">
             <rect width="900" height="500" fill="rgba(255,126,182,0.05)"/>
 
@@ -3602,14 +3602,14 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="158" y="134" fill="#f8f9fa" font-size="10">ΛCDM</text>
 
             <line x1="135" y1="150" x2="150" y2="150" stroke="#51cf66" stroke-width="3"/>
-            <text x="158" y="154" fill="#f8f9fa" font-size="10">13D shadow Theory</text>
+            <text x="158" y="154" fill="#f8f9fa" font-size="10"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Theory</text>
 
             <circle cx="142" cy="168" r="4" fill="#ffd43b" stroke="#f8f9fa" stroke-width="1"/>
             <text x="158" y="172" fill="#f8f9fa" font-size="10">Acoustic peaks</text>
 
             <!-- 2T effects box -->
             <rect x="580" y="70" width="270" height="150" rx="10" fill="rgba(81,207,102,0.15)" stroke="#51cf66" stroke-width="2"/>
-            <text x="715" y="95" fill="#51cf66" font-size="14" font-weight="700" text-anchor="middle">13D shadow Signatures</text>
+            <text x="715" y="95" fill="#51cf66" font-size="14" font-weight="700" text-anchor="middle"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Signatures</text>
             <text x="715" y="120" fill="#f8f9fa" font-size="11" text-anchor="middle">Subtle shifts in peak positions:</text>
             <text x="715" y="138" fill="#f8f9fa" font-size="10" text-anchor="middle">• 1st peak: Δℓ ≈ +2 (↑ sound horizon)</text>
             <text x="715" y="153" fill="#f8f9fa" font-size="10" text-anchor="middle">• Enhanced damping tail from</text>
@@ -3626,7 +3626,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </svg>
           <div class="diagram-caption">
             <strong>Figure 8: CMB Temperature Power Spectrum Predictions.</strong> The CMB angular power spectrum showing
-            Planck 2018 data (purple band), ΛCDM best fit (red dashed), and 13D shadow framework prediction (green). The
+            Planck 2018 data (purple band), ΛCDM best fit (red dashed), and <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow framework prediction (green). The
             framework predicts subtle shifts in acoustic peak positions (±2 multipoles) and enhanced damping tail (±3%
             at ℓ > 1000) from extra dimensional effects. The low-ℓ ISW plateau shows ~5% enhancement. These signatures
             are within Planck errors but testable with next-generation CMB-S4 experiments (sensitivity ΔC_ℓ/C_ℓ ~ 0.1%).
@@ -3635,9 +3635,9 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
         <!-- Summary box -->
         <div class="theorem-box" style="background: linear-gradient(135deg, rgba(81,207,102,0.1), rgba(79,172,254,0.1)); border-left: 4px solid #51cf66; margin-top: 2rem;">
-          <h5 style="color: #51cf66; font-size: 1.2rem;">Visualization Summary: 13D shadow Cosmological Predictions</h5>
+          <h5 style="color: #51cf66; font-size: 1.2rem;">Visualization Summary: <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Cosmological Predictions</h5>
           <p style="margin-top: 1rem;">
-            The comprehensive visualization suite above demonstrates the distinctive cosmological signatures of the 13D shadow
+            The comprehensive visualization suite above demonstrates the distinctive cosmological signatures of the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow
             two-time framework:
           </p>
           <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--text-secondary); line-height: 1.8;">
@@ -3651,7 +3651,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <li><strong>CMB Signatures:</strong> Testable ISW enhancement at ℓ ~ 20-30 from breathing mode</li>
           </ul>
           <p style="margin-top: 1rem; font-weight: 600; color: #51cf66; font-size: 1.1rem;">
-            <strong>DESI DR2 2024 Consistency:</strong> All predictions derived from 26D→13D shadow geometry with zero free parameters fitted to dark energy data. The 0.38σ agreement on w₀ is consistent with geometric dimensional reduction predictions.
+            <strong>DESI DR2 2024 Consistency:</strong> All predictions derived from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→13D shadow geometry with zero free parameters fitted to dark energy data. The 0.38σ agreement on w₀ is consistent with geometric dimensional reduction predictions.
           </p>
         </div>
       </div>
@@ -4061,7 +4061,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             </li>
           </ul>
           <p style="margin-top: 0.75rem; font-weight: 600; color: #51cf66;">
-            Status: Framework predictions consistent with DESI DR2 data (zero free parameters fitted to dark energy). The 0.38σ agreement is consistent with 26D→13D shadow dimensional reduction.
+            Status: Framework predictions consistent with DESI DR2 data (zero free parameters fitted to dark energy). The 0.38σ agreement is consistent with <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→13D shadow dimensional reduction.
           </p>
         </div>
       </div>

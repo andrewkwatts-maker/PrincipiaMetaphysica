@@ -420,29 +420,49 @@ async function main() {
     }
   }
 
-  // Push to Firebase
-  console.log(`\n${c.bright}Pushing to Firebase...${c.reset}`);
+  // Push to Firebase using smart sync with history
+  console.log(`\n${c.bright}Pushing to Firebase with version history...${c.reset}`);
 
   try {
-    // Upload theory constants
-    const version = localData.meta?.version || '12.7';
-    const versionId = `v${version.replace(/\./g, '_')}_${Date.now()}`;
+    // Use the sync-with-history script
+    const { syncWithHistory } = require('./firebase-sync-with-history.js');
 
-    await db.collection('theory_constants').doc('current').set({
-      ...localData,
-      uploadedAt: admin.firestore.FieldValue.serverTimestamp()
+    // Close current Firebase connection to avoid conflicts
+    const currentApp = admin.app();
+    await currentApp.delete();
+
+    // Run sync (it will re-initialize Firebase)
+    const syncResult = await syncWithHistory();
+
+    // Re-initialize Firebase for validation history
+    const serviceAccountPath = path.join(__dirname, 'principia-metaphysica-firebase-adminsdk-fbsvc-8cbaa9f520.json');
+    if (!fs.existsSync(serviceAccountPath)) {
+      // Try alternate location
+      const altPath = path.join(ROOT_DIR, 'principia-metaphysica-firebase-adminsdk-fbsvc-8cbaa9f520.json');
+      if (!fs.existsSync(altPath)) {
+        throw new Error('Service account key not found after sync');
+      }
+    }
+
+    const serviceAccount = require(serviceAccountPath);
+    admin.initializeApp({
+      credential: admin.credential.cert(serviceAccount),
+      projectId: "principia-metaphysica"
     });
 
-    await db.collection('theory_constants').doc(versionId).set({
-      ...localData,
-      uploadedAt: admin.firestore.FieldValue.serverTimestamp()
-    });
+    const db2 = admin.firestore();
 
     // Create validation history entry
-    await db.collection('validation_history').doc(`push_${Date.now()}`).set({
+    const version = localData.meta?.version || '12.7';
+    await db2.collection('validation_history').doc(`push_${Date.now()}`).set({
       timestamp: admin.firestore.FieldValue.serverTimestamp(),
       version: version,
-      action: 'push_update',
+      action: 'validated_push_with_history',
+      sync_result: {
+        updated: syncResult.updated,
+        changes: syncResult.diffs,
+        backupId: syncResult.backupId || null
+      },
       derivation_validation: {
         valid: chainValidation.valid.length,
         warnings: chainValidation.warnings.length,
@@ -457,7 +477,12 @@ async function main() {
 
     console.log(`\n${c.green}${c.bright}✅ PUSH COMPLETE${c.reset}`);
     console.log(`  Version: ${version}`);
-    console.log(`  Backup: ${versionId}`);
+    if (syncResult.updated) {
+      console.log(`  Changes: ${syncResult.diffs}`);
+      console.log(`  Backup: ${syncResult.backupId}`);
+    } else {
+      console.log(`  Status: No changes (Firebase already up to date)`);
+    }
 
   } catch (error) {
     console.error(`\n${c.red}❌ PUSH FAILED: ${error.message}${c.reset}`);

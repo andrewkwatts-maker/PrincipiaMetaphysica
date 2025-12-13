@@ -240,7 +240,7 @@
                 &Lscr; = <span style="text-decoration: overline;">&Psi;</span>(i&Gamma;<sup>M</sup>D<sub>M</sub> + g&middot;t<sub>ortho</sub>)&Psi; + &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
-                <strong>Full 26D:</strong> 8192-component spinor, Cl(24,2) Clifford algebra, Sp(2,R) gauge<br>
+                <strong>Full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D:</strong> 8192-component spinor, Cl(24,2) Clifford algebra, Sp(2,R) gauge<br>
                 <strong>Effective 13D:</strong> 64-component spinor via gauge fixing, Cl(12,1)
             </p>
         </div>
@@ -252,7 +252,7 @@
                     <span style="text-decoration: overline;">&Psi;</span>(i&Gamma;<sup>M</sup>D<sub>M</sub> + g&middot;t<sub>ortho</sub>)&Psi; + &lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;
                 </div>
                 <div class="formula-controls">
-                    <span class="foundation-badge pm-specific">PM-Specific (26D)</span>
+                    <span class="foundation-badge pm-specific">PM-Specific (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)</span>
                     <button class="expand-btn" title="Expand to see derivation">&#x25BC;</button>
                 </div>
             </div>
@@ -260,14 +260,14 @@
                 <div class="sub-components">
                     <a href="../foundations/dirac-equation.html" class="sub-component" style="text-decoration: none;">
                         <div class="component-symbol">(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi;</div>
-                        <div class="component-name">4D Dirac Equation</div>
+                        <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Dirac Equation</div>
                         <div class="component-desc">The established relativistic wave equation for spin-&frac12; particles.</div>
                         <span class="foundation-badge established" style="margin-top: 0.5rem;">Established 1928</span>
                     </a>
                     <div class="sub-component">
                         <div class="component-symbol">&Gamma;<sup>M</sup></div>
-                        <div class="component-name">26D/13D Gamma Matrices</div>
-                        <div class="component-desc">8192&times;8192 in 26D Cl(24,2); reduces to 64&times;64 in effective 13D Cl(12,1).</div>
+                        <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D/13D Gamma Matrices</div>
+                        <div class="component-desc">8192&times;8192 in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Cl(24,2); reduces to 64&times;64 in effective 13D Cl(12,1).</div>
                         <span class="foundation-badge derived" style="margin-top: 0.5rem;">From Clifford Algebra</span>
                     </div>
                     <div class="sub-component">
@@ -279,14 +279,14 @@
                     <div class="sub-component">
                         <div class="component-symbol">&Psi;<sub>P</sub></div>
                         <div class="component-name">Pneuma Spinor</div>
-                        <div class="component-desc">8192-component in full 26D; 64-component effective after gauge fixing to 13D.</div>
+                        <div class="component-desc">8192-component in full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D; 64-component effective after gauge fixing to 13D.</div>
                         <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">PM-Specific</span>
                     </div>
                     <div class="sub-component">
                         <div class="component-symbol">g&middot;t<sub>ortho</sub></div>
                         <div class="component-name">Orthogonal Time Coupling</div>
-                        <div class="component-desc">Coupling to orthogonal time direction unique to 26D (2 time dimensions).</div>
-                        <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">26D-Specific</span>
+                        <div class="component-desc">Coupling to orthogonal time direction unique to <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (2 time dimensions).</div>
+                        <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D-Specific</span>
                     </div>
                     <div class="sub-component">
                         <div class="component-symbol">&lambda;(<span style="text-decoration: overline;">&Psi;</span>&Psi;)&sup2;</div>
@@ -344,9 +344,9 @@
                     <div class="term-symbol">&Psi;<sub>P</sub></div>
                     <h4>Pneuma Spinor Field</h4>
                     <p>
-                        An 8192-component Dirac spinor in full 26D (2<sup>13</sup> = 8192 from Cl(24,2)). Reduces to
+                        An 8192-component Dirac spinor in full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (2<sup>13</sup> = 8192 from Cl(24,2)). Reduces to
                         64-component effective spinor in 13D via gauge fixing. Further decomposes as 64 = 4 &times; 16
-                        under 4D spacetime &times; internal manifold split.
+                        under <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime &times; internal manifold split.
                     </p>
                 </div>
 
@@ -365,7 +365,7 @@
                     <h4>Bulk Mass</h4>
                     <p>
                         The fundamental mass parameter m<sub>P</sub> for the Pneuma field. Sets the scale for
-                        Pneuma condensation and influences 4D fermion masses through dimensional reduction.
+                        Pneuma condensation and influences <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D fermion masses through dimensional reduction.
                     </p>
                 </div>
 
@@ -373,7 +373,7 @@
                     <div class="term-symbol">g&middot;t<sub>ortho</sub></div>
                     <h4>Orthogonal Time Coupling</h4>
                     <p>
-                        Unique to 26D with signature (24,2): coupling constant g times the orthogonal time
+                        Unique to <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D with signature (24,2): coupling constant g times the orthogonal time
                         coordinate t<sub>ortho</sub>. The second time dimension enables thermal time emergence and
                         resolves causality issues in lower-dimensional formulations.
                     </p>
@@ -392,9 +392,9 @@
 
         <!-- The Gamma Matrices -->
         <section class="subsection">
-            <h2>The Gamma Matrices: 26D to 13D</h2>
+            <h2>The Gamma Matrices: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D to 13D</h2>
             <p>
-                In full 26D with signature (24,2), the gamma matrices &Gamma;<sup>M</sup> form a representation
+                In full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D with signature (24,2), the gamma matrices &Gamma;<sup>M</sup> form a representation
                 of the Clifford algebra Cl(24,2) with dimension 2<sup>13</sup> = 8192. Upon gauge fixing 13 dimensions,
                 we obtain the effective Cl(12,1) algebra:
             </p>
@@ -405,7 +405,7 @@
                     <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&Gamma;<sup>M</sup>
                         <div class="var-tooltip">
                             <div class="var-name">&Gamma;<sup>M</sup> — Gamma Matrix</div>
-                            <div class="var-desc">26D: M = 0,1,...,25 (8192&times;8192); Effective 13D: M = 0,1,...,12 (64&times;64)</div>
+                            <div class="var-desc"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D: M = 0,1,...,25 (8192&times;8192); Effective 13D: M = 0,1,...,12 (64&times;64)</div>
                         </div>
                     </span>
                     <span class="formula-op">,</span>
@@ -420,7 +420,7 @@
                     <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">2G<sup>MN</sup>
                         <div class="var-tooltip">
                             <div class="var-name">2G<sup>MN</sup> — Metric Anticommutator</div>
-                            <div class="var-desc">26D: signature (24,2) with 2 times; Effective 13D: signature (12,1) with 1 time</div>
+                            <div class="var-desc"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D: signature (24,2) with 2 times; Effective 13D: signature (12,1) with 1 time</div>
                         </div>
                     </span>
                 </div>
@@ -430,14 +430,14 @@
             <div class="physics-note">
                 <h4>Dimensional Reduction: Cl(24,2) &rarr; Cl(12,1)</h4>
                 <p>
-                    <strong>Full 26D:</strong> Spinor dimension = 2<sup>⌊26/2⌋</sup> = 2<sup>13</sup> = 8192 components<br>
+                    <strong>Full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D:</strong> Spinor dimension = 2<sup>⌊26/2⌋</sup> = 2<sup>13</sup> = 8192 components<br>
                     <strong>Effective 13D:</strong> After gauge fixing, spinor reduces to 2<sup>⌊13/2⌋</sup> = 2<sup>6</sup> = 64 components<br>
                     The gauge fixing removes one time dimension, yielding signature (12,1) from (24,2).
                 </p>
             </div>
 
             <p>
-                In the effective 13D theory, the gamma matrices can be constructed from tensor products:
+                In the effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D theory, the gamma matrices can be constructed from tensor products:
             </p>
 
             <div class="equation-box">
@@ -448,8 +448,8 @@
             </div>
 
             <p>
-                Here &gamma;<sup>&mu;</sup> are the 4D Dirac matrices, &gamma;<sup>5</sup> = i&gamma;<sup>0</sup>&gamma;<sup>1</sup>&gamma;<sup>2</sup>&gamma;<sup>3</sup>
-                is the 4D chirality operator, and &Sigma;<sup>a</sup> are 16&times;16 matrices acting on the internal spinor space.
+                Here &gamma;<sup>&mu;</sup> are the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Dirac matrices, &gamma;<sup>5</sup> = i&gamma;<sup>0</sup>&gamma;<sup>1</sup>&gamma;<sup>2</sup>&gamma;<sup>3</sup>
+                is the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D chirality operator, and &Sigma;<sup>a</sup> are 16&times;16 matrices acting on the internal spinor space.
             </p>
         </section>
 
@@ -457,7 +457,7 @@
         <section class="subsection">
             <h2>The Covariant Derivative</h2>
             <p>
-                The full covariant derivative D<sub>M</sub> acting on the Pneuma spinor in 26D includes both gravitational
+                The full covariant derivative D<sub>M</sub> acting on the Pneuma spinor in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D includes both gravitational
                 and gauge connections. In the full theory, M ranges over all 26 dimensions; in the effective 13D theory,
                 M = 0, 1, ..., 12:
             </p>
@@ -467,7 +467,7 @@
                     <span class="formula-var" style="background: rgba(81, 207, 102, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">D<sub>M</sub>
                         <div class="var-tooltip">
                             <div class="var-name">D<sub>M</sub> — Covariant Derivative</div>
-                            <div class="var-desc">Full derivative including all connections; M = 0,...,25 in 26D; M = 0,...,12 effective</div>
+                            <div class="var-desc">Full derivative including all connections; M = 0,...,25 in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D; M = 0,...,12 effective</div>
                         </div>
                     </span>
                     <span class="formula-op">=</span>
@@ -481,7 +481,7 @@
                     <span class="formula-var" style="background: rgba(139, 127, 255, 0.2); padding: 0.3rem 0.5rem; border-radius: 6px;">&frac14;&omega;<sub>M</sub><sup>AB</sup>&Gamma;<sub>AB</sub>
                         <div class="var-tooltip">
                             <div class="var-name">Spin Connection</div>
-                            <div class="var-desc">&omega;<sub>M</sub><sup>AB</sup> couples spinor to curvature; &Gamma;<sub>AB</sub> = ½[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>]; generates Spin(24,2) in 26D, Spin(12,1) effective</div>
+                            <div class="var-desc">&omega;<sub>M</sub><sup>AB</sup> couples spinor to curvature; &Gamma;<sub>AB</sub> = ½[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>]; generates Spin(24,2) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D, Spin(12,1) effective</div>
                         </div>
                     </span>
                     <span class="formula-op">+</span>
@@ -492,14 +492,14 @@
                         </div>
                     </span>
                 </div>
-                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.2) Full Covariant Derivative (26D/effective 13D)</div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.2) Full Covariant Derivative (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D/effective 13D)</div>
             </div>
 
             <h3>Components</h3>
             <ul style="color: var(--text-secondary); line-height: 2;">
                 <li><strong>&part;<sub>M</sub></strong> - Partial derivative in coordinate direction M (26 directions in full theory, 13 effective)</li>
                 <li><strong>&omega;<sub>M</sub><sup>AB</sup></strong> - Spin connection from 26D gravity (reduces to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective spin connection)</li>
-                <li><strong>&Gamma;<sub>AB</sub></strong> - Antisymmetric product &frac12;[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>], generators of Spin(24,2) in 26D, Spin(12,1) effective</li>
+                <li><strong>&Gamma;<sub>AB</sub></strong> - Antisymmetric product &frac12;[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>], generators of Spin(24,2) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D, Spin(12,1) effective</li>
                 <li><strong>A<sub>M</sub><sup>a</sup></strong> - Gauge connection (from isometries of K<sub>Pneuma</sub>)</li>
                 <li><strong>T<sup>a</sup></strong> - Gauge group generators (SO(10) in this framework)</li>
             </ul>
@@ -541,7 +541,7 @@
 
             <h3>Source of Matter</h3>
             <p>
-                Upon dimensional reduction over K<sub>Pneuma</sub>, the full 8192-component 26D spinor (or equivalently,
+                Upon dimensional reduction over K<sub>Pneuma</sub>, the full 8192-component <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spinor (or equivalently,
                 the 64-component effective 13D spinor) decomposes into 4D chiral fermions. The topological structure
                 (zero modes of the Dirac operator on K<sub>Pneuma</sub>) determines the number of generations:
             </p>
@@ -628,7 +628,7 @@
         <section class="subsection">
             <h2>The Orthogonal Time Coupling: g&middot;t&lt;sub&gt;ortho&lt;/sub&gt;</h2>
             <p>
-                A distinguishing feature of the 26D formulation is the explicit presence of two time dimensions in the
+                A distinguishing feature of the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D formulation is the explicit presence of two time dimensions in the
                 signature (24,2). The term g&middot;t<sub>ortho</sub> in the Lagrangian couples the Pneuma field
                 to the orthogonal time direction:
             </p>
@@ -649,15 +649,15 @@
                         </div>
                     </span>
                 </div>
-                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.4) Orthogonal Time Coupling (26D-Specific)</div>
+                <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">(3.4) Orthogonal Time Coupling (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D-Specific)</div>
             </div>
 
             <h3>Physical Role</h3>
             <ul style="color: var(--text-secondary); line-height: 2;">
                 <li><strong>Thermal Time Emergence:</strong> The orthogonal time coordinate provides the thermodynamic arrow of time through the TTH mechanism</li>
-                <li><strong>Causality Resolution:</strong> Two-time physics in 26D resolves apparent causality issues that arise in naive lower-dimensional formulations</li>
-                <li><strong>Gauge Fixing:</strong> When reducing from 26D to effective 13D, the orthogonal time is gauge-fixed, leaving its effects encoded in the thermal dynamics</li>
-                <li><strong>CPT Connection:</strong> The second time dimension relates to discrete CPT symmetries in the effective 4D theory</li>
+                <li><strong>Causality Resolution:</strong> Two-time physics in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D resolves apparent causality issues that arise in naive lower-dimensional formulations</li>
+                <li><strong>Gauge Fixing:</strong> When reducing from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D to effective 13D, the orthogonal time is gauge-fixed, leaving its effects encoded in the thermal dynamics</li>
+                <li><strong>CPT Connection:</strong> The second time dimension relates to discrete CPT symmetries in the effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D theory</li>
             </ul>
 
             <div class="physics-note">
@@ -674,19 +674,19 @@
         <section class="subsection">
             <h2>4D Effective Lagrangian</h2>
             <p>
-                Starting from the full 26D Lagrangian, we first gauge-fix to 13D (with the g&middot;t<sub>ortho</sub>
+                Starting from the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Lagrangian, we first gauge-fix to 13D (with the g&middot;t<sub>ortho</sub>
                 term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional
-                internal manifold K<sub>Pneuma</sub>. This yields the 4D fermion sector:
+                internal manifold K<sub>Pneuma</sub>. This yields the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D fermion sector:
             </p>
 
             <div class="equation-box" style="font-size: 1rem;">
-                &Lscr;<sub>4D,fermion</sub> = &sum;<sub>i=1</sub><sup>3</sup> <span style="text-decoration: overline;">&psi;</span><sub>i</sub>(i&gamma;<sup>&mu;</sup>D<sub>&mu;</sub> - m<sub>i</sub>)&psi;<sub>i</sub> + (Yukawa couplings)
-                <span class="equation-label">4D effective fermion Lagrangian</span>
+                &Lscr;<sub><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D,fermion</sub> = &sum;<sub>i=1</sub><sup>3</sup> <span style="text-decoration: overline;">&psi;</span><sub>i</sub>(i&gamma;<sup>&mu;</sup>D<sub>&mu;</sub> - m<sub>i</sub>)&psi;<sub>i</sub> + (Yukawa couplings)
+                <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective fermion Lagrangian</span>
             </div>
 
             <p>
                 The three generations (i = 1, 2, 3) arise from the three independent zero modes of the internal Dirac
-                operator. The 4D masses m<sub>i</sub> and Yukawa couplings are determined by overlap integrals of these
+                operator. The <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D masses m<sub>i</sub> and Yukawa couplings are determined by overlap integrals of these
                 zero mode wave functions over K<sub>Pneuma</sub>.
             </p>
         </section>

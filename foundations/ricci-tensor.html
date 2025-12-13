@@ -75,7 +75,7 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                 <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Riemann Tensor: R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></h4>
-                    <p>The <strong>fundamental curvature tensor</strong> that measures how vectors change when parallel transported around loops. Has 20 independent components in 4D spacetime.</p>
+                    <p>The <strong>fundamental curvature tensor</strong> that measures how vectors change when parallel transported around loops. Has 20 independent components in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime.</p>
                 </div>
                 <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
                     <h4 style="color: #51cf66;">Ricci Tensor: R<sub>&mu;&nu;</sub></h4>
@@ -144,7 +144,7 @@
                         <div class="component-name">Ricci Tensor (10 Components)</div>
                         <div class="component-desc">
                             Symmetric: R<sub>&mu;&nu;</sub> = R<sub>&nu;&mu;</sub><br>
-                            In 4D: 10 independent components (not 16 due to symmetry)<br>
+                            In <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D: 10 independent components (not 16 due to symmetry)<br>
                             Measures volume distortion: how geodesic balls differ from Euclidean balls
                         </div>
                         <span class="foundation-badge established" style="margin-top: 0.5rem;">Rank-2 Tensor</span>
@@ -354,7 +354,7 @@
 
             <h3>1. From Riemann to Ricci: The Contraction</h3>
             <p>
-                The Riemann curvature tensor R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> has 4 indices and (in 4D) 20 independent components.
+                The Riemann curvature tensor R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub> has 4 indices and (in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D) 20 independent components.
                 This is too much information for most purposes, so we <strong>contract</strong> it:
             </p>
             <div class="equation-box">
@@ -390,7 +390,7 @@
                 <tbody>
                     <tr>
                         <td><strong>Riemann R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></strong></td>
-                        <td>20 (in 4D)</td>
+                        <td>20 (in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D)</td>
                         <td>Complete curvature: volume + shape distortion + tidal forces</td>
                     </tr>
                     <tr>
@@ -405,7 +405,7 @@
                     </tr>
                     <tr>
                         <td><strong>Weyl C<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></strong></td>
-                        <td>10 (in 4D)</td>
+                        <td>10 (in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D)</td>
                         <td>Traceless part: tidal forces (curvature even in vacuum)</td>
                     </tr>
                 </tbody>
@@ -599,7 +599,7 @@
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">26D → 13D → 6D → 4D: Curvature at Each Stage</h4>
+                <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 6D → 4D: Curvature at Each Stage</h4>
                 <p style="color: var(--text-secondary);">
                     The Ricci curvature describes how matter/energy curves space at each dimensional level:
                 </p>
@@ -610,14 +610,14 @@
                     </li>
                     <li>
                         <strong>13D shadow (12,1):</strong> After Sp(2,R) gauge fixing: R<sub>MN</sub><sup>(13)</sup>.
-                        The "shadow" of 26D physics in standard (n-1,1) signature.
+                        The "shadow" of <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D physics in standard (n-1,1) signature.
                     </li>
                     <li>
                         <strong>6D bulk (5,1):</strong> After G₂ compactification: R<sub>&mu;&nu;</sub><sup>(6)</sup>.
-                        G₂ holonomy preserves minimal SUSY. Internal curvature contributes to 4D effective theory.
+                        G₂ holonomy preserves minimal SUSY. Internal curvature contributes to <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective theory.
                     </li>
                     <li>
-                        <strong>4D observed (3,1):</strong> R<sub>&mu;&nu;</sub><sup>(4)</sup> - the standard Ricci tensor we measure.
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D observed (3,1):</strong> R<sub>&mu;&nu;</sub><sup>(4)</sup> - the standard Ricci tensor we measure.
                         Kaluza-Klein modes from higher dimensions appear as matter fields.
                     </li>
                 </ul>
@@ -628,7 +628,7 @@
             </p>
             <div class="equation-box" style="margin-top: 1rem;">
                 R<sup>(4)</sup> = R<sup>(D)</sup> + (KK tower contributions) + (flux terms)
-                <span class="equation-label">Effective 4D curvature from higher-dimensional reduction</span>
+                <span class="equation-label">Effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D curvature from higher-dimensional reduction</span>
             </div>
 
             <p style="margin-top: 1.5rem;">

@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the 26D → 13D gravitational action in Principia Metaphysica">
+    <meta name="description" content="The Einstein-Hilbert Term - Detailed breakdown of the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D gravitational action in Principia Metaphysica">
     <title>Einstein-Hilbert Term - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="/css/auth.css">
@@ -234,7 +234,7 @@
         <div class="equation-hero">
             <h1>The Einstein-Hilbert Term</h1>
             <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
-                The effective 13D gravitational action (from the 26D two-time framework) that reduces to Einstein gravity in 4D upon compactification.
+                The effective 13D gravitational action (from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework) that reduces to Einstein gravity in 4D upon compactification.
             </p>
             <div class="main-equation">
                 M<sub>*</sub><sup>11</sup>R
@@ -244,7 +244,7 @@
                 M_*^11 R_13
             </div>
             <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
-                The gravitational sector of the effective 13D bulk action (26D → 13D via Sp(2,R) gauge fixing)
+                The gravitational sector of the effective 13D bulk action (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D via Sp(2,R) gauge fixing)
             </p>
         </div>
 
@@ -263,7 +263,7 @@
                 <div class="sub-components">
                     <a href="../foundations/einstein-hilbert-action.html" class="sub-component" style="text-decoration: none;">
                         <div class="component-symbol">S = &frac{1}{16&pi;G} &int; d<sup>4</sup>x &radic;|g| R</div>
-                        <div class="component-name">4D Einstein-Hilbert Action</div>
+                        <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Einstein-Hilbert Action</div>
                         <div class="component-desc">The standard gravitational action from General Relativity.</div>
                         <span class="foundation-badge established" style="margin-top: 0.5rem;">Established 1915</span>
                     </a>
@@ -281,8 +281,8 @@
                     </div>
                     <div class="sub-component">
                         <div class="component-symbol">M<sub>*</sub><sup>11</sup></div>
-                        <div class="component-name">13D Coupling</div>
-                        <div class="component-desc">Dimensional analysis requires mass<sup>11</sup> in 13D for correct units.</div>
+                        <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Coupling</div>
+                        <div class="component-desc">Dimensional analysis requires mass<sup>11</sup> in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D for correct units.</div>
                         <span class="foundation-badge derived" style="margin-top: 0.5rem;">PM Extension</span>
                     </div>
                 </div>
@@ -312,20 +312,20 @@
             </div>
         </div>
 
-        <!-- 26D Context -->
+        <!-- <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Context -->
         <section class="subsection">
-            <h2 id="26d_origin">26D Origin</h2>
+            <h2 id="26d_origin"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Origin</h2>
             <p>
-                In the full 26D theory with signature (24,2), the gravitational action includes contributions from both
-                time dimensions. The Sp(2,R) gauge symmetry reduces the two-time structure to an effective 13D shadow:
+                In the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D theory with signature (24,2), the gravitational action includes contributions from both
+                time dimensions. The Sp(2,R) gauge symmetry reduces the two-time structure to an effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow:
             </p>
             <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);">
                 S = &int; d<sup>26</sup>x &radic;|G| [F(R,T,&tau;) + ℒ<sub>Pneuma</sub> + ℒ<sub>SM</sub> + ℒ<sub>hidden</sub>]
-                <span class="equation-label">Full 26D action with signature (24,2)</span>
+                <span class="equation-label">Full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D action with signature (24,2)</span>
             </div>
             <!-- Plain text version for accessibility and AI processing -->
             <div class="formula-plaintext" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem; font-family: 'Courier New', monospace; text-align: center; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 6px;">
-                S_26D = ∫ d^26 x √|G_(24,2)| [F(R,T,τ) + ℒ_Pneuma + ℒ_SM + ℒ_hidden]
+                S_<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D = ∫ d^26 x √|G_(24,2)| [F(R,T,τ) + ℒ_Pneuma + ℒ_SM + ℒ_hidden]
             </div>
 
             <h3>The F(R,T,&tau;) Function</h3>
@@ -342,13 +342,13 @@
                 F(R,T,τ) = R + αT + βT² + γτ + δτ²
             </div>
             <p>
-                Here &alpha;, &beta;, &gamma;, &delta; are coupling constants determined by the underlying 26D geometry.
+                Here &alpha;, &beta;, &gamma;, &delta; are coupling constants determined by the underlying <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D geometry.
                 The torsion terms (&gamma;&tau; + &delta;&tau;&sup2;) arise naturally from the Pneuma spinor condensates.
             </p>
             <p>
                 After imposing the Sp(2,R) constraints (X² = 0, X·P = 0, P² + M² = 0), the orthogonal time dimension
-                is gauge-fixed, leaving an effective 13D description. The Z₂ mirror structure creates two copies of
-                this 13D shadow, related by time-reversal symmetry.
+                is gauge-fixed, leaving an effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D description. The Z₂ mirror structure creates two copies of
+                this <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow, related by time-reversal symmetry.
             </p>
         </section>
 
@@ -356,7 +356,7 @@
         <section class="subsection">
             <h2 id="component_breakdown">Component Breakdown</h2>
             <p>
-                The effective Einstein-Hilbert term is the standard gravitational action in the gauge-fixed 13D shadow.
+                The effective Einstein-Hilbert term is the standard gravitational action in the gauge-fixed <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow.
                 It couples the fundamental mass scale to the curvature of the effective bulk spacetime.
             </p>
 
@@ -365,7 +365,7 @@
                     <div class="term-symbol">M<sub>*</sub></div>
                     <h4>Fundamental Mass Scale</h4>
                     <p>
-                        The single fundamental mass scale of the theory in 13D. All other scales (Planck mass,
+                        The single fundamental mass scale of the theory in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D. All other scales (Planck mass,
                         GUT scale, etc.) emerge from M<sub>*</sub> through dimensional reduction.
                     </p>
                 </div>
@@ -374,7 +374,7 @@
                     <div class="term-symbol">M<sub>*</sub><sup>11</sup></div>
                     <h4>Correct Dimensions</h4>
                     <p>
-                        The power 11 ensures correct mass dimension: in 13D, [R] = mass<sup>2</sup>, and the action
+                        The power 11 ensures correct mass dimension: in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D, [R] = mass<sup>2</sup>, and the action
                         must be dimensionless, so we need mass<sup>11</sup> to compensate for d<sup>13</sup>x.
                     </p>
                 </div>
@@ -383,7 +383,7 @@
                     <div class="term-symbol">R</div>
                     <h4>Ricci Scalar</h4>
                     <p>
-                        The effective 13D Ricci scalar R = G<sup>MN</sup>R<sub>MN</sub>, encoding the curvature of the
+                        The effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Ricci scalar R = G<sup>MN</sup>R<sub>MN</sub>, encoding the curvature of the
                         gauge-fixed spacetime including both 4D and internal directions.
                     </p>
                 </div>
@@ -393,7 +393,7 @@
                     <h4>Ricci Tensor</h4>
                     <p>
                         The contraction of the Riemann tensor: R<sub>MN</sub> = R<sup>P</sup><sub>MPN</sub>.
-                        Contains second derivatives of the 13D metric G<sub>MN</sub>.
+                        Contains second derivatives of the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D metric G<sub>MN</sub>.
                     </p>
                 </div>
             </div>
@@ -401,14 +401,14 @@
 
         <!-- Full Gravitational Action -->
         <section class="subsection">
-            <h2 id="effective_13d_action">Effective 13D Gravitational Action</h2>
+            <h2 id="effective_13d_action">Effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Gravitational Action</h2>
             <p>
-                After Sp(2,R) gauge fixing, the complete effective 13D gravitational action is:
+                After Sp(2,R) gauge fixing, the complete effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D gravitational action is:
             </p>
 
             <div class="equation-box">
                 S<sub>gravity</sub> = M<sub>*</sub><sup>11</sup> &int; d<sup>13</sup>x &radic;|G| R
-                <span class="equation-label">Effective 13D Einstein-Hilbert action (gauge-fixed from 26D)</span>
+                <span class="equation-label">Effective 13D Einstein-Hilbert action (gauge-fixed from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)</span>
             </div>
 
             <h3>Components of the Metric</h3>
@@ -422,7 +422,7 @@
             </div>
 
             <p>
-                Where g<sub>&mu;&nu;</sub> is the 4D metric, h<sub>ab</sub> is the metric on K<sub>Pneuma</sub>,
+                Where g<sub>&mu;&nu;</sub> is the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D metric, h<sub>ab</sub> is the metric on K<sub>Pneuma</sub>,
                 and we have omitted off-diagonal terms (gauge fields) for clarity.
             </p>
         </section>
@@ -431,18 +431,18 @@
         <section class="subsection">
             <h2 id="4d_effective_gravity">4D Effective Gravity</h2>
             <p>
-                Upon compactification over the 8-dimensional internal manifold K<sub>Pneuma</sub>, the 13D action
+                Upon compactification over the 8-dimensional internal manifold K<sub>Pneuma</sub>, the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D action
                 reduces to 4D Einstein gravity:
             </p>
 
             <div class="equation-box">
                 S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> &int; d<sup>4</sup>x &radic;|g| R<sub>4</sub> + ...
-                <span class="equation-label">4D effective gravitational action</span>
+                <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective gravitational action</span>
             </div>
 
             <h3>The Planck Mass Relation</h3>
             <p>
-                The 4D Planck mass emerges from the fundamental scale and internal volume:
+                The <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Planck mass emerges from the fundamental scale and internal volume:
             </p>
 
             <div class="equation-box" style="background: rgba(81, 207, 102, 0.08); border-color: rgba(81, 207, 102, 0.2);">
@@ -510,7 +510,7 @@
                 These modifications arise from:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2;">
-                <li>Higher-order curvature terms from the 26D &rarr; 13D reduction</li>
+                <li>Higher-order curvature terms from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D &rarr; 13D reduction</li>
                 <li>Moduli stabilization effects from K<sub>Pneuma</sub> (Re(T) = 7.086 derived from Higgs mass)</li>
                 <li>The Mashiach field dynamics driving dark energy</li>
                 <li>Z&sub;2</sub> mirror sector contributions from the orthogonal time direction</li>

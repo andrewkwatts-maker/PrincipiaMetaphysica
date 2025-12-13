@@ -628,9 +628,9 @@
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
                     <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,2):</strong> Fundamental Sp(2,R) gauge symmetry</li>
                     <li><strong>13D shadow (12,1):</strong> After Sp(2,R) gauge fixing</li>
-                    <li><strong>7D G₂ manifold:</strong> Compactification with G₂ holonomy preserves supersymmetry</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_G2"></span>D G₂ manifold:</strong> Compactification with G₂ holonomy preserves supersymmetry</li>
                     <li><strong>SO(10) GUT:</strong> Emerges as holonomy group, breaks to SU(3) &times; SU(2) &times; U(1)</li>
-                    <li><strong>Gauge fields in bulk:</strong> Higher-dimensional Yang-Mills fields reduce to 4D Standard Model</li>
+                    <li><strong>Gauge fields in bulk:</strong> Higher-dimensional Yang-Mills fields reduce to <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Standard Model</li>
                 </ul>
                 <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 600;">
                     <strong>SO(10) embedding on G₂ associative cycles:</strong>
@@ -644,13 +644,13 @@
             </div>
 
             <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
-                <h4 style="color: #ff7eb6;">26D Yang-Mills Action</h4>
+                <h4 style="color: #ff7eb6;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Yang-Mills Action</h4>
                 <p style="color: var(--text-secondary);">
                     The bulk theory includes higher-dimensional gauge fields:
                 </p>
                 <div class="equation-box" style="margin-top: 1rem;">
                     S = &int; d<sup>26</sup>x &sqrt;-g<sub>26</sub> [-¼ F<sup>A</sup><sub>MN</sub> F<sup>AMN</sup> + ℒ<sub>matter</sub>]
-                    <span class="equation-label">26D Yang-Mills action in (24,2) signature</span>
+                    <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Yang-Mills action in (24,2) signature</span>
                 </div>
                 <p style="color: var(--text-secondary); margin-top: 1rem;">
                     After compactification and symmetry breaking, this reduces to the Standard Model Yang-Mills action plus corrections.
@@ -661,7 +661,7 @@
                 <strong>Key insights:</strong>
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem; margin-top: 0.5rem;">
-                <li>Gauge couplings unify at GUT scale M<sub>GUT</sub> = 2.118×10¹⁶ GeV in SO(10) with 1/α<sub>GUT</sub> = 24.30</li>
+                <li>Gauge couplings unify at GUT scale M<sub>GUT</sub> = 2.118×10¹⁶ GeV in SO(10) with 1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv" data-format="fixed:2"></span></li>
                 <li>Three generations of fermions from G₂ topology</li>
                 <li>QCD confinement scale emerges from compactification radius</li>
                 <li>CP violation and strong CP problem connected to bulk geometry</li>
@@ -711,7 +711,7 @@
                     <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
                     <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                         With n<sub>f</sub> = 6: b = 11 - 4 = 7 (asymptotic freedom).<br>
-                        Using RG equation, &alpha;<sub>s</sub>(M<sub>Z</sub> ~ 91 GeV) &asymp; 0.118 (matches experiment).
+                        Using RG equation, &alpha;<sub>s</sub>(M<sub>Z</sub> ~ 91 GeV) &asymp; <span class="pm-value" data-pm-value="gauge_couplings.alpha_s_MZ" data-format="fixed:4"></span> (matches experiment).
                     </p>
                 </details>
             </div>

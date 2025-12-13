@@ -94,7 +94,10 @@
       "Bash(npm install:*)",
       "Bash(findstr:*)",
       "Bash(cat:*)",
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\scripts\\firebase-sync-with-history.js\" echo \"exists\")",
+      "Bash(clear-cache-and-run.bat)",
+      "Bash(cmd /c \"clear-cache-and-run.bat\")"
     ],
     "deny": [],
     "ask": []
