@@ -93,15 +93,15 @@ def compute_m_gut_from_torsion(T_omega=T_OMEGA, D_bulk=D_BULK, kappa=KAPPA,
 
     if verbose:
         print("M_GUT Calculation from Torsion:")
-        print(f"  T_ω = {T_omega:.3f}")
+        print(f"  T_omega = {T_omega:.3f}")
         print(f"  D_bulk = {D_bulk}")
-        print(f"  √D_bulk = {sqrt_D:.3f}")
-        print(f"  κ = {kappa:.3f}")
+        print(f"  sqrt(D_bulk) = {sqrt_D:.3f}")
+        print(f"  kappa = {kappa:.3f}")
         print(f"  M_Pl = {M_Pl:.3e} GeV")
-        print(f"  Exponent = -κ × 8π|T_ω|/√D = {exponent:.4f}")
+        print(f"  Exponent = -kappa * 8*pi*|T_omega|/sqrt(D) = {exponent:.4f}")
         print(f"  Warp factor = exp({exponent:.4f}) = {warp_factor:.6f}")
-        print(f"  M_GUT = M_Pl × warp = {M_GUT:.3e} GeV")
-        print(f"  log₁₀(M_GUT) = {np.log10(M_GUT):.3f}")
+        print(f"  M_GUT = M_Pl * warp = {M_GUT:.3e} GeV")
+        print(f"  log10(M_GUT) = {np.log10(M_GUT):.3f}")
 
     return M_GUT
 
@@ -153,20 +153,20 @@ def compute_alpha_gut_from_torsion(T_omega=T_OMEGA, M_GUT=None,
     alpha_GUT = 1 / alpha_inv
 
     if verbose:
-        print("\nα_GUT Calculation from Torsion:")
+        print("\nalpha_GUT Calculation from Torsion:")
         print(f"  log(M_Pl/M_GUT) = {log_ratio:.4f}")
-        print(f"  α_naive^(-1) = (2π/|T_ω|) × log(ratio)")
-        print(f"              = (2π/{abs(T_omega):.3f}) × {log_ratio:.4f}")
+        print(f"  alpha_naive^(-1) = (2*pi/|T_omega|) * log(ratio)")
+        print(f"              = (2*pi/{abs(T_omega):.3f}) * {log_ratio:.4f}")
         print(f"              = {alpha_inv_naive:.2f}")
-        print(f"  Tadpole factor = 1 - χ_eff/(4π b₃)")
-        print(f"                 = 1 - {chi_eff}/(4π × {b3})")
+        print(f"  Tadpole factor = 1 - chi_eff/(4*pi*b3)")
+        print(f"                 = 1 - {chi_eff}/(4*pi * {b3})")
         print(f"                 = {tadpole_factor:.4f}")
-        print(f"  α_tadpole^(-1) = {alpha_inv_tadpole:.2f}")
-        print(f"  Anomaly Δ_GS = {Delta_GS}")
-        print(f"  Correction = Δ_GS/(4π) = {anomaly_correction:.3f}")
-        print(f"  α_GUT^(-1) = {alpha_inv_tadpole:.2f} - {anomaly_correction:.3f}")
+        print(f"  alpha_tadpole^(-1) = {alpha_inv_tadpole:.2f}")
+        print(f"  Anomaly Delta_GS = {Delta_GS}")
+        print(f"  Correction = Delta_GS/(4*pi) = {anomaly_correction:.3f}")
+        print(f"  alpha_GUT^(-1) = {alpha_inv_tadpole:.2f} - {anomaly_correction:.3f}")
         print(f"             = {alpha_inv:.2f}")
-        print(f"  α_GUT = 1/{alpha_inv:.2f} = {alpha_GUT:.6f}")
+        print(f"  alpha_GUT = 1/{alpha_inv:.2f} = {alpha_GUT:.6f}")
 
     return alpha_GUT, alpha_inv
 
@@ -234,7 +234,7 @@ def validate_against_gauge_approach():
     print(f"  Ratio:      {ratio_M:.4f}  (target: 1.000)")
     print(f"  Deviation:  {abs(ratio_M - 1)*100:.2f}%")
 
-    print(f"\nα_GUT Comparison:")
+    print(f"\nalpha_GUT Comparison:")
     print(f"  Gauge RG:   1/{alpha_GUT_inv_gauge:.2f} = {1/alpha_GUT_inv_gauge:.6f}")
     print(f"  Torsion:    1/{alpha_inv_torsion:.2f} = {alpha_GUT_torsion:.6f}")
     print(f"  Ratio:      {ratio_alpha:.4f}  (target: 1.000)")
@@ -254,8 +254,8 @@ def validate_against_gauge_approach():
         if not M_match:
             print(f"  M_GUT mismatch: {abs(ratio_M - 1)*100:.1f}% (exceeds 5%)")
         if not alpha_match:
-            print(f"  α_GUT mismatch: {abs(ratio_alpha - 1)*100:.1f}% (exceeds 5%)")
-        print("  → Adjust κ normalization constant")
+            print(f"  alpha_GUT mismatch: {abs(ratio_alpha - 1)*100:.1f}% (exceeds 5%)")
+        print("  -> Adjust kappa normalization constant")
     print("="*80)
 
     return M_match and alpha_match
@@ -339,10 +339,10 @@ def propagate_uncertainties(N_samples=10000, plot=True, verbose=True):
         print(f"Number of samples: {N_samples}")
         print()
         print("Input Uncertainties:")
-        print(f"  T_ω:     {T_OMEGA:.3f} ± 0.005  (0.6%)")
-        print(f"  κ:       {KAPPA:.2f} ± {KAPPA_ERROR:.2f}  (10%)")
-        print(f"  b₃:      {B3_ASSOCIATIVE} ± 1")
-        print(f"  χ_eff:   {CHI_EFF} ± 3")
+        print(f"  T_omega: {T_OMEGA:.3f} +/- 0.005  (0.6%)")
+        print(f"  kappa:   {KAPPA:.2f} +/- {KAPPA_ERROR:.2f}  (10%)")
+        print(f"  b3:      {B3_ASSOCIATIVE} +/- 1")
+        print(f"  chi_eff: {CHI_EFF} +/- 3")
         print()
         print("M_GUT Results:")
         print(f"  Mean:    {M_GUT_mean:.3e} GeV")
@@ -350,9 +350,9 @@ def propagate_uncertainties(N_samples=10000, plot=True, verbose=True):
         print(f"  Median:  {M_GUT_median:.3e} GeV")
         print(f"  68% CI:  [{M_GUT_16:.3e}, {M_GUT_84:.3e}] GeV")
         print()
-        print("α_GUT Results:")
+        print("alpha_GUT Results:")
         print(f"  Mean:    1/{alpha_inv_mean:.2f} = {1/alpha_inv_mean:.6f}")
-        print(f"  Std Dev: ±{alpha_inv_std:.2f}  ({alpha_inv_std/alpha_inv_mean*100:.2f}%)")
+        print(f"  Std Dev: +/-{alpha_inv_std:.2f}  ({alpha_inv_std/alpha_inv_mean*100:.2f}%)")
         print(f"  Median:  1/{alpha_inv_median:.2f}")
         print(f"  68% CI:  [1/{alpha_inv_84:.2f}, 1/{alpha_inv_16:.2f}]")
         print()
@@ -428,15 +428,15 @@ def detailed_calculation_steps():
     sqrt_D = np.sqrt(D_BULK)
     print("STEP 1: Dimensional Reduction Factor")
     print(f"  sqrt(D_bulk) = sqrt({D_BULK}) = {sqrt_D:.4f}")
-    print(f"  (Throat depth scales as √D from AdS/CFT entropy)")
+    print(f"  (Throat depth scales as sqrt(D) from AdS/CFT entropy)")
     print()
 
     # Step 2: Compute exponent
     exponent = -KAPPA * 8 * np.pi * abs(T_OMEGA) / sqrt_D
     print("STEP 2: Compute Warp Factor Exponent")
     print(f"  Exponent = -kappa x 8pi|T_omega|/sqrt(D_bulk)")
-    print(f"           = -{KAPPA:.3f} × 8π × {abs(T_OMEGA):.3f} / {sqrt_D:.4f}")
-    print(f"           = -{KAPPA:.3f} × {8*np.pi*abs(T_OMEGA):.4f} / {sqrt_D:.4f}")
+    print(f"           = -{KAPPA:.3f} * 8*pi * {abs(T_OMEGA):.3f} / {sqrt_D:.4f}")
+    print(f"           = -{KAPPA:.3f} * {8*np.pi*abs(T_OMEGA):.4f} / {sqrt_D:.4f}")
     print(f"           = -{KAPPA * 8*np.pi*abs(T_OMEGA):.4f} / {sqrt_D:.4f}")
     print(f"           = {exponent:.4f}")
     print(f"  (Membrane instanton action + integrated warp factor)")
@@ -454,10 +454,10 @@ def detailed_calculation_steps():
     # Step 4: Compute M_GUT
     M_GUT = M_PLANCK * warp_factor
     print("STEP 4: Compute M_GUT")
-    print(f"  M_GUT = M_Pl × warp_factor")
-    print(f"        = {M_PLANCK:.3e} GeV × {warp_factor:.6e}")
+    print(f"  M_GUT = M_Pl * warp_factor")
+    print(f"        = {M_PLANCK:.3e} GeV * {warp_factor:.6e}")
     print(f"        = {M_GUT:.3e} GeV")
-    print(f"        = {M_GUT/1e16:.4f} × 10¹⁶ GeV")
+    print(f"        = {M_GUT/1e16:.4f} x 10^16 GeV")
     print()
 
     # Step 5: Compute log ratio
@@ -466,15 +466,15 @@ def detailed_calculation_steps():
     print(f"  log(M_Pl/M_GUT) = log({M_PLANCK:.3e} / {M_GUT:.3e})")
     print(f"                  = log({M_PLANCK/M_GUT:.4e})")
     print(f"                  = {log_ratio:.4f}")
-    print(f"  (This enters α_GUT calculation)")
+    print(f"  (This enters alpha_GUT calculation)")
     print()
 
-    # Step 6: Compute α_GUT (naive)
+    # Step 6: Compute alpha_GUT (naive)
     alpha_inv_naive = (2 * np.pi / abs(T_OMEGA)) * log_ratio
-    print("STEP 6: Compute α_GUT (Naive Formula)")
+    print("STEP 6: Compute alpha_GUT (Naive Formula)")
     print(f"  alpha_naive^(-1) = (2pi/|T_omega|) x log(M_Pl/M_GUT)")
-    print(f"               = (2π/{abs(T_OMEGA):.3f}) × {log_ratio:.4f}")
-    print(f"               = {2*np.pi/abs(T_OMEGA):.4f} × {log_ratio:.4f}")
+    print(f"               = (2*pi/{abs(T_OMEGA):.3f}) * {log_ratio:.4f}")
+    print(f"               = {2*np.pi/abs(T_OMEGA):.4f} * {log_ratio:.4f}")
     print(f"               = {alpha_inv_naive:.2f}")
     print()
 
@@ -482,11 +482,11 @@ def detailed_calculation_steps():
     tadpole_factor = 1 - CHI_EFF / (4 * np.pi * B3_ASSOCIATIVE)
     alpha_inv_tadpole = alpha_inv_naive * tadpole_factor
     print("STEP 7: Apply Tadpole Correction")
-    print(f"  Tadpole factor = 1 - χ_eff/(4π b₃)")
+    print(f"  Tadpole factor = 1 - chi_eff/(4*pi*b3)")
     print(f"                 = 1 - {CHI_EFF}/(4pi x {B3_ASSOCIATIVE})")
     print(f"                 = 1 - {CHI_EFF/(4*np.pi*B3_ASSOCIATIVE):.4f}")
     print(f"                 = {tadpole_factor:.4f}")
-    print(f"  α_tadpole^(-1) = {alpha_inv_naive:.2f} × {tadpole_factor:.4f}")
+    print(f"  alpha_tadpole^(-1) = {alpha_inv_naive:.2f} * {tadpole_factor:.4f}")
     print(f"                 = {alpha_inv_tadpole:.2f}")
     print()
 
@@ -514,7 +514,7 @@ def detailed_calculation_steps():
     print("Comparison with Gauge RG Approach:")
     print(f"  M_GUT (gauge) = 2.118 x 10^16 GeV")
     print(f"  Match: {abs(M_GUT/2.118e16 - 1)*100:.2f}% deviation")
-    print(f"  α_GUT^(-1) (gauge) = 23.54")
+    print(f"  alpha_GUT^(-1) (gauge) = 23.54")
     print(f"  Match: {abs(alpha_inv_final/23.54 - 1)*100:.2f}% deviation")
     print("="*80)
 
