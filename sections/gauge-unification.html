@@ -247,7 +247,7 @@
         <section class="section-header">
             <div class="section-number">3</div>
             <h1>Gauge Unification and Spontaneous Symmetry Breaking</h1>
-            <p class="subtitle">SO(10) Grand Unification in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Two-Time Framework</p>
+            <p class="subtitle">SO(10) Grand Unification in the <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D Two-Time Framework</p>
         </section>
 
         <!-- Section 3.1 -->
@@ -255,7 +255,7 @@
             <h2>3.1 The SO(10) Grand Unified Framework</h2>
 
             <p>
-                In the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework, gauge symmetries emerge from
+                In the <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D two-time framework, gauge symmetries emerge from
                 the singularity structure of K<sub>Pneuma</sub>. Specifically, <span class="highlight-text">SO(10)</span>
                 arises from <strong>ADE-type singularities on the G₂ manifold</strong>, specifically a D₅-type singularity
                 where the G₂ holonomy degenerates locally
@@ -272,7 +272,7 @@
                 <h4 style="color: #17a2b8;">Geometric Origin: D₅ Singularity on b₂=4 Associative Cycles</h4>
                 <p>
                     The SO(10) gauge symmetry has a precise geometric origin in the <strong>explicit TCS G₂ manifold</strong>
-                    with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> topology
+                    with b₂=4, b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span> topology
                     <a href="https://arxiv.org/abs/1809.09083" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[CHNP arXiv:1809.09083]</a>:
                 </p>
                 <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.8;">
@@ -304,16 +304,16 @@
                 </div>
             </div>
 
-            <!-- <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Framework Context -->
+            <!-- <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D Framework Context -->
             <div class="concept-highlight">
                 <h4>Z<sub>2</sub> Orbifold and Mirror Gauge Sectors</h4>
                 <p>
-                    The Z<sub>2</sub> orbifold action in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework relates gauge sectors across the temporal mirror:
+                    The Z<sub>2</sub> orbifold action in the <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D framework relates gauge sectors across the temporal mirror:
                     <strong>observable SO(10) &harr; mirror SO(10)</strong>. While both sectors undergo identical
                     symmetry breaking chains (SO(10) &rarr; SU(3)×SU(2)×U(1)), the mirror sector gauge bosons
                     <em>do not couple directly to our matter</em>&mdash;interaction occurs only gravitationally.
                     This provides a natural dark sector while preserving the elegance of SO(10) unification in the
-                    effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D theory we observe.
+                    effective <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D theory we observe.
                 </p>
             </div>
 
@@ -745,7 +745,7 @@
                     <span class="formula-var highlight">126<sub>H</sub>
                         <div class="var-tooltip">
                             <div class="var-name">126<sub>H</sub></div>
-                            <div class="var-description">The 1<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional Higgs representation of SO(10), crucial for B-L symmetry breaking and Majorana neutrino masses.</div>
+                            <div class="var-description">The 1<span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>-dimensional Higgs representation of SO(10), crucial for B-L symmetry breaking and Majorana neutrino masses.</div>
                             <div class="var-units">Dimensionless (representation label)</div>
                             <div class="var-contribution">Provides right-handed neutrino Majorana masses and triggers Type-I seesaw mechanism.</div>
                         </div>
@@ -1091,7 +1091,7 @@
                         </div>
                         <div class="formula-info-item">
                             <h5>Predicted &tau;<sub>p</sub></h5>
-                            <p><span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
+                            <p><span class="pm-value" data-category="v11_final_observables" data-param="proton_lifetime.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
                         </div>
                     </div>
                     <div class="use-cases">
@@ -1112,7 +1112,7 @@
             <p>
                 The geometric splitting mechanism naturally achieves M<sub>T</sub> &sim; M<sub>GUT</sub> while keeping
                 the doublet light, satisfying current experimental bounds from Super-Kamiokande (&tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years
-                for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>). Our prediction of <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years is <strong>2.46× above the bound</strong>,
+                for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>). Our prediction of <span class="pm-value" data-category="v11_final_observables" data-param="proton_lifetime.tau_p_years"></span> years is <strong>2.46× above the bound</strong>,
                 providing a testable prediction for future proton decay experiments like Hyper-Kamiokande.
             </p>
         </div>
@@ -1131,8 +1131,8 @@
             <h3>Setup: The 10<sub>H</sub> on K<sub>Pneuma</sub></h3>
             <p>
                 Consider the <strong>10<sub>H</sub></strong> Higgs representation decomposed under the Standard Model gauge group.
-                Each component field &Phi;<sub>r</sub>(x, y) depends on both <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime coordinates x<sup>&mu;</sup>
-                and internal K<sub>Pneuma</sub> coordinates y<sup>m</sup> (m = 1, ..., 8). The effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D mass
+                Each component field &Phi;<sub>r</sub>(x, y) depends on both <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D spacetime coordinates x<sup>&mu;</sup>
+                and internal K<sub>Pneuma</sub> coordinates y<sup>m</sup> (m = 1, ..., 8). The effective <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D mass
                 arises from the overlap integral with the GUT-breaking Higgs condensate.
             </p>
 
@@ -1223,7 +1223,7 @@
                             <div class="var-name">N<sub>T</sub></div>
                             <div class="var-description">Normalization constant: N<sub>T</sub> = Vol(K<sub>Pneuma</sub>)<sup>-1/2</sup>.</div>
                             <div class="var-units">GeV<sup>4</sup></div>
-                            <div class="var-contribution">Much smaller than N<sub>D</sub> since the triplet spreads over the full <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D volume.</div>
+                            <div class="var-contribution">Much smaller than N<sub>D</sub> since the triplet spreads over the full <span class="pm-value" data-category="dimensions" data-param="D_spin8"></span>D volume.</div>
                         </div>
                     </span>
                     <span class="formula-op">&middot;</span>
@@ -1261,7 +1261,7 @@
                         </div>
                         <div class="formula-info-item">
                             <h5>Support Region</h5>
-                            <p>Full <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D bulk of K<sub>Pneuma</sub></p>
+                            <p>Full <span class="pm-value" data-category="dimensions" data-param="D_spin8"></span>D bulk of K<sub>Pneuma</sub></p>
                         </div>
                     </div>
                 </div>
@@ -1269,7 +1269,7 @@
 
             <h3>The Mass Integral: Explicit Computation</h3>
             <p>
-                The effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D mass for a component field arises from its overlap with the GUT-breaking Higgs
+                The effective <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D mass for a component field arises from its overlap with the GUT-breaking Higgs
                 condensate &langle;&Phi;<sub>GUT</sub>(y)&rangle;. The general formula is:
             </p>
 
@@ -1280,7 +1280,7 @@
                     <span class="formula-var">m<sub>eff</sub>
                         <div class="var-tooltip">
                             <div class="var-name">m<sub>eff</sub></div>
-                            <div class="var-description">Effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D mass of the Higgs component after dimensional reduction.</div>
+                            <div class="var-description">Effective <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D mass of the Higgs component after dimensional reduction.</div>
                             <div class="var-units">GeV</div>
                             <div class="var-contribution">Must be ~M<sub>GUT</sub> for triplet, ~0 for doublet.</div>
                         </div>
@@ -1289,7 +1289,7 @@
                     <span class="formula-var highlight">&lambda;
                         <div class="var-tooltip">
                             <div class="var-name">&lambda;</div>
-                            <div class="var-description"><span class="pm-value" data-pm-value="dimensions.D_string"></span>D Yukawa-type coupling between the 10<sub>H</sub> and the GUT-breaking Higgs.</div>
+                            <div class="var-description"><span class="pm-value" data-category="dimensions" data-param="D_string"></span>D Yukawa-type coupling between the 10<sub>H</sub> and the GUT-breaking Higgs.</div>
                             <div class="var-units">Dimensionless (in natural units)</div>
                             <div class="var-contribution">Typically &lambda; ~ O(1) from GUT relations.</div>
                         </div>
@@ -1408,7 +1408,7 @@
                     <span class="formula-var">m<sub>D</sub>
                         <div class="var-tooltip">
                             <div class="var-name">m<sub>D</sub></div>
-                            <div class="var-description">Effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D mass for the electroweak doublet Higgs.</div>
+                            <div class="var-description">Effective <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D mass for the electroweak doublet Higgs.</div>
                             <div class="var-units">GeV</div>
                             <div class="var-contribution">Must be ~ 0 (protected) before electroweak symmetry breaking.</div>
                         </div>
@@ -1427,7 +1427,7 @@
                         <div class="var-tooltip">
                             <div class="var-name">&int;<sub>&Sigma;<sub>D</sub></sub></div>
                             <div class="var-description">Integral restricted to the 4-cycle &Sigma;<sub>D</sub> where the doublet is localized.</div>
-                            <div class="var-units"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D volume integration</div>
+                            <div class="var-units"><span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D volume integration</div>
                             <div class="var-contribution">The &delta;-function in &psi;<sub>D</sub> restricts integration to &Sigma;<sub>D</sub>.</div>
                         </div>
                     </span>
@@ -1502,7 +1502,7 @@
                     <span class="formula-var">m<sub>T</sub>
                         <div class="var-tooltip">
                             <div class="var-name">m<sub>T</sub></div>
-                            <div class="var-description">Effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D mass for the color triplet Higgs.</div>
+                            <div class="var-description">Effective <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D mass for the color triplet Higgs.</div>
                             <div class="var-units">GeV</div>
                             <div class="var-contribution">Must be ~ M<sub>GUT</sub> to suppress proton decay.</div>
                         </div>
@@ -1520,8 +1520,8 @@
                     <span class="formula-var">&int;<sub>K</sub>
                         <div class="var-tooltip">
                             <div class="var-name">&int;<sub>K</sub></div>
-                            <div class="var-description">Full <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D integration over K<sub>Pneuma</sub>.</div>
-                            <div class="var-units"><span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D volume integration</div>
+                            <div class="var-description">Full <span class="pm-value" data-category="dimensions" data-param="D_spin8"></span>D integration over K<sub>Pneuma</sub>.</div>
+                            <div class="var-units"><span class="pm-value" data-category="dimensions" data-param="D_spin8"></span>D volume integration</div>
                             <div class="var-contribution">No restriction since triplet is bulk-delocalized.</div>
                         </div>
                     </span>
@@ -1546,7 +1546,7 @@
                     <span class="formula-var">d<sup>8</sup>y
                         <div class="var-tooltip">
                             <div class="var-name">d<sup>8</sup>y</div>
-                            <div class="var-description">Full <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D volume element.</div>
+                            <div class="var-description">Full <span class="pm-value" data-category="dimensions" data-param="D_spin8"></span>D volume element.</div>
                             <div class="var-units">GeV<sup>-8</sup></div>
                             <div class="var-contribution">Integrates over the entire internal space.</div>
                         </div>
@@ -1765,7 +1765,7 @@
                 The SO(10) gauge group emerges from a <span class="highlight-text">D<sub>5</sub> (I<sub>1</sub><sup>*</sup>) singularity</span>
                 over a divisor S in the base. Crucially, this D<sub>5</sub> singularity structure is <em>preserved under the
                 Z<sub>2</sub> orbifold action</em>, ensuring that both observable and mirror sectors inherit identical SO(10) gauge symmetry
-                from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D parent geometry:
+                from the <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D parent geometry:
             </p>
 
             <!-- Interactive Formula: D5 Singularity F-theory -->
@@ -1784,7 +1784,7 @@
                         <div class="var-tooltip">
                             <div class="var-name">S &subset; B<sub>3</sub></div>
                             <div class="var-description">A complex surface (divisor) in the 3-dimensional base manifold B<sub>3</sub> over which the elliptic fiber degenerates.</div>
-                            <div class="var-units">Complex 2-dimensional (real <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D)</div>
+                            <div class="var-units">Complex 2-dimensional (real <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D)</div>
                             <div class="var-contribution">The GUT physics lives on S; its geometry determines matter curves and Yukawa couplings.</div>
                         </div>
                     </span>
@@ -1809,7 +1809,7 @@
                     <span class="formula-var">on S &times; R<sup>3,1</sup>
                         <div class="var-tooltip">
                             <div class="var-name">S &times; R<sup>3,1</sup></div>
-                            <div class="var-description">The 8-dimensional worldvolume of the SO(10) 7-brane: <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Minkowski spacetime times the GUT divisor S.</div>
+                            <div class="var-description">The 8-dimensional worldvolume of the SO(10) 7-brane: <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D Minkowski spacetime times the GUT divisor S.</div>
                             <div class="var-units">8-dimensional spacetime</div>
                             <div class="var-contribution">All SO(10) gauge interactions are confined to this 7-brane worldvolume.</div>
                         </div>
@@ -1951,7 +1951,7 @@
                         <div class="var-tooltip">
                             <div class="var-name">K<sub>Pneuma</sub> = X<sub>4</sub></div>
                             <div class="var-description">The 8-dimensional internal manifold identified as a Calabi-Yau fourfold X<sub>4</sub> with elliptic fibration structure.</div>
-                            <div class="var-units">Complex 4-dimensional (real <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D)</div>
+                            <div class="var-units">Complex 4-dimensional (real <span class="pm-value" data-category="dimensions" data-param="D_spin8"></span>D)</div>
                             <div class="var-contribution">Its topology determines generations (&chi;/24), gauge symmetry (singularity type), and matter content.</div>
                         </div>
                     </span>
@@ -2338,7 +2338,7 @@
                     <span class="formula-var">M<sub>0</sub>
                         <div class="var-tooltip">
                             <div class="var-name">M<sub>0</sub></div>
-                            <div class="var-description">Overall mass scale set by &langle;126<sub>H</sub>&rangle; and the <span class="pm-value" data-pm-value="dimensions.D_string"></span>D Yukawa coupling. M<sub>0</sub> ~ 10<sup>14</sup> GeV.</div>
+                            <div class="var-description">Overall mass scale set by &langle;126<sub>H</sub>&rangle; and the <span class="pm-value" data-category="dimensions" data-param="D_string"></span>D Yukawa coupling. M<sub>0</sub> ~ 10<sup>14</sup> GeV.</div>
                             <div class="var-units">GeV</div>
                             <div class="var-contribution">Provides the dimensional scale; the integral determines the generation-dependent suppression.</div>
                         </div>
@@ -2751,7 +2751,7 @@
                 <p>
                     Beyond gauge couplings, SO(10) matching also determines the Higgs quartic coupling
                     <strong>λ₀ = 0.0945</strong> geometrically. Combined with the derivation of
-                    Re(T) = 7.086 from the measured Higgs mass (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV), the framework achieves
+                    Re(T) = 7.086 from the measured Higgs mass (<span class="pm-value" data-category="v11_final_observables" data-param="higgs_mass.m_h_GeV"></span> GeV), the framework achieves
                     complete geometric unification with no free parameters in the electroweak sector.
                 </p>
             </div>
@@ -2882,7 +2882,7 @@
                 </p>
                 <ul style="margin-left: 1.5rem; margin-top: 0.75rem;">
                     <li><strong>k=5:</strong> Fifth-order matching (ℤ₅ symmetry from building blocks)</li>
-                    <li><strong>q=48:</strong> Total angular divisions = 48 from b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> flux quantum (2× for gluing)</li>
+                    <li><strong>q=48:</strong> Total angular divisions = 48 from b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span> flux quantum (2× for gluing)</li>
                 </ul>
                 <p style="margin-top: 0.75rem;">
                     See <a href="../foundations/g2-manifolds.html" style="color: #51cf66; font-weight: 600;">Section 1.4: G₂ Manifolds</a> for the full TCS construction details.
@@ -2903,7 +2903,7 @@
             <h3>Step 3: Flux Normalization Factor</h3>
             <p>
                 The 4-form flux on K<sub>Pneuma</sub> provides the normalization for warping. The flux is quantized
-                in units of the third Betti number b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>:
+                in units of the third Betti number b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span>:
             </p>
 
             <!-- Interactive Formula: Flux Normalization -->
@@ -2922,7 +2922,7 @@
                     <span class="formula-var highlight">(2π) / (ν/b₃)
                         <div class="var-tooltip">
                             <div class="var-name">Flux quantum formula</div>
-                            <div class="var-description">ν = 24 flux units, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> third Betti number → ratio = 1.</div>
+                            <div class="var-description">ν = 24 flux units, b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span> third Betti number → ratio = 1.</div>
                             <div class="var-units">Angular factor (2π normalized)</div>
                             <div class="var-contribution">Unity ratio: special "self-dual" flux configuration.</div>
                         </div>
@@ -2937,7 +2937,7 @@
                         </div>
                     </span>
                 </div>
-                <div class="formula-label">Flux normalization from b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></div>
+                <div class="formula-label">Flux normalization from b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span></div>
             </div>
 
             <h3>Step 4: Dimensionless Warping Parameter</h3>
@@ -3036,7 +3036,7 @@
             <h3>Error Analysis: Flux Variations</h3>
             <p>
                 The primary uncertainty comes from <strong>b₃ flux stabilization</strong>. Variations in the
-                flux configuration (b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> ± 1) propagate through the normalization factor:
+                flux configuration (b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span> ± 1) propagate through the normalization factor:
             </p>
 
             <table class="breaking-table" style="margin: 1.5rem 0;">
@@ -3118,7 +3118,7 @@
 
         <!-- Section 3.8: Phase 2 Gauge Coupling Unification Visualizations -->
         <div class="subsection" id="phase2-visualizations">
-            <h2>3.8 Phase 2: Gauge Coupling Unification in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Framework</h2>
+            <h2>3.8 Phase 2: Gauge Coupling Unification in <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow Framework</h2>
 
             <div style="background: linear-gradient(135deg, rgba(255, 206, 86, 0.1), rgba(255, 159, 64, 0.08)); border: 2px solid rgba(255, 206, 86, 0.3); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
                 <h4 style="color: #ffa500; margin-bottom: 0.75rem;">Phase 2: Merged Unification Approach</h4>
@@ -3127,7 +3127,7 @@
                 </p>
                 <ul style="margin-left: 1.5rem; margin-bottom: 0.5rem;">
                     <li><strong>60% Asymptotic Safety (AS):</strong> UV fixed point from gravity-gauge coupling</li>
-                    <li><strong>30% Threshold Corrections (TC):</strong> CY4 moduli effects from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure</li>
+                    <li><strong>30% Threshold Corrections (TC):</strong> CY4 moduli effects from <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow structure</li>
                     <li><strong>10% Kaluza-Klein (KK):</strong> Tower states from compactified dimensions</li>
                 </ul>
                 <p style="font-weight: 500; color: var(--text-primary);">
@@ -3136,10 +3136,10 @@
                 </p>
             </div>
 
-            <h3>Interactive RG Running with <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Corrections</h3>
+            <h3>Interactive RG Running with <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow Corrections</h3>
             <p>
                 The gauge coupling evolution from the electroweak scale to M<sub>GUT</sub> includes contributions from
-                the <span class="highlight-text">2-torus (T²) structure</span> in the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow framework. Each 14D half
+                the <span class="highlight-text">2-torus (T²) structure</span> in the <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow framework. Each 14D half
                 contains a compactified T² that contributes Kaluza-Klein modes to the running.
             </p>
 
@@ -3174,7 +3174,7 @@
                         <strong style="color: #9966ff;">1/α_GUT = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span></strong>
                         <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
                             Unification point<br>
-                            <span class="pm-value" data-pm-value="proton_decay.M_GUT" data-format="scientific:2"></span> GeV
+                            <span class="pm-value" data-category="proton_decay" data-param="M_GUT" data-format="scientific:2"></span> GeV
                         </div>
                     </div>
                 </div>
@@ -3216,7 +3216,7 @@
                     <canvas id="tcPanel" width="280" height="200" style="width: 100%; margin-bottom: 1rem;"></canvas>
                     <p style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.6;">
                         <strong>Mechanism:</strong> Heavy states at M_GUT modify running<br>
-                        <strong>Source:</strong> CY4 moduli in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure<br>
+                        <strong>Source:</strong> CY4 moduli in <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow structure<br>
                         <strong>Effect:</strong> Step corrections at threshold scales: M_EW, M_intermediate, M_GUT
                     </p>
                     <div style="background: rgba(255, 126, 182, 0.15); padding: 0.75rem; border-radius: 6px; margin-top: 0.75rem; font-size: 0.85rem;">
@@ -3283,7 +3283,7 @@
                                 </tr>
                                 <tr style="background: rgba(255, 99, 132, 0.1);">
                                     <td style="padding: 0.5rem;"><strong>Target</strong></td>
-                                    <td style="padding: 0.5rem; text-align: right; font-weight: 600;"><span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span></td>
+                                    <td style="padding: 0.5rem; text-align: right; font-weight: 600;"><span class="pm-value" data-category="proton_decay" data-param="alpha_GUT_inv"></span></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0.5rem;"><em>Deviation</em></td>
@@ -3495,7 +3495,7 @@
             <div style="background: var(--bg-card); border: 2px solid var(--border-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0;">
                 <h4 style="text-align: center; margin-bottom: 1.5rem;">Threshold Corrections: CY4 Moduli Dependence</h4>
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                    In the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow framework, each 14D half compactifies on a Calabi-Yau fourfold (CY4) with h^{1,1} = 72
+                    In the <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow framework, each 14D half compactifies on a Calabi-Yau fourfold (CY4) with h^{1,1} = 72
                     Kähler moduli. These moduli control the volumes of 2-cycles and 4-cycles, which in turn determine
                     the masses of KK modes and thus the threshold corrections to gauge coupling running.
                 </p>
@@ -3527,9 +3527,9 @@
 
             <!-- KK Mode Spectrum from 14D Halves -->
             <div style="background: var(--bg-card); border: 2px solid var(--border-primary); border-radius: 16px; padding: 2rem; margin: 2rem 0;">
-                <h4 style="text-align: center; margin-bottom: 1.5rem;">Kaluza-Klein Tower from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow Compactification</h4>
+                <h4 style="text-align: center; margin-bottom: 1.5rem;">Kaluza-Klein Tower from <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow Compactification</h4>
                 <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
-                    The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure has each 14D half compactified on CY4 × T², giving rise to two towers of
+                    The <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow structure has each 14D half compactified on CY4 × T², giving rise to two towers of
                     Kaluza-Klein modes. The mode spectrum depends on the compactification radii R_A and R_B of the
                     two T² factors (one per 14D half).
                 </p>
@@ -3614,7 +3614,7 @@
                 <div class="author-response">
                     <h5>Status: Significantly Improved</h5>
                     <p>
-                        <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years<br>
+                        <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = <span class="pm-value" data-category="v11_final_observables" data-param="proton_lifetime.tau_p_years"></span> years<br>
                         <strong>68% Confidence Interval:</strong> [2.41, 5.61] &times; 10<sup>34</sup> years<br>
                         <strong>Uncertainty:</strong> <span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM (improved from 0.8 OOM!)<br>
                         <strong>Ratio to bound:</strong> 2.30× above Super-Kamiokande limit<br><br>
@@ -3697,7 +3697,7 @@
                     This is the smoking gun prediction of SO(10) grand unification.
                 </p>
                 <div class="observable">
-                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
+                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = <span class="pm-value" data-category="v11_final_observables" data-param="proton_lifetime.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
                 </div>
                 <p class="method">
                     <strong>Current Bound:</strong> &tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years (Super-Kamiokande 2020)<br>

@@ -617,6 +617,9 @@
             <strong>DESI DR2 Agreement:</strong> w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> ± 0.06 (DESI DR2) vs. <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> (theory) → <span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ tension.
             Value is <strong>geometry-derived</strong> from explicit TCS G₂ construction (arXiv:1809.09083), not phenomenologically fit.
           </p>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
+            <strong>Derivation:</strong> See <code>simulations/derive_d_eff_v12_8.py</code> for complete d<sub>eff</sub> and w₀ calculation from G₂ geometry.
+          </p>
         </div>
       </div>
 
@@ -2813,7 +2816,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         </div>
 
         <p>
-          This agreement is remarkable because:
+          This agreement is notable because:
         </p>
         <ul>
           <li><strong>w<sub>a</sub> derived, not fitted:</strong> w<sub>a</sub> = w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.95 (with &alpha;<sub>T</sub> = 2.7), in good agreement with DESI's -0.75±0.30 (0.66σ)</li>
@@ -3014,7 +3017,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </svg>
           <div class="diagram-caption">
             <strong>Figure 1: Dark Energy Equation of State Evolution.</strong> The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow framework predicts w(z) = w₀ + wₐz/(1+z)
-            with w₀ = -11/13 from Maximum Entropy Principle and wₐ = -0.95 from thermal time corrections (DESI measures -0.75±0.30, giving 0.66σ agreement). This shows remarkable
+            with w₀ = -11/13 from Maximum Entropy Principle and wₐ = -0.95 from thermal time corrections (DESI measures -0.75±0.30, giving 0.66σ agreement). This shows quantitative
             agreement with DESI 2024 observations (purple points with error bars). Standard quintessence (yellow dashed)
             predicts wₐ > 0, while ΛCDM (red dashed) has w = -1 constant. The negative wₐ is a distinctive signature of
             thermal friction in the 2T framework.
