@@ -333,6 +333,15 @@
                 if (sigEffTime) sigEffTime.textContent = 1;
                 if (spinorFull) spinorFull.textContent = 64; // 26D spinor
                 if (spinorEff) spinorEff.textContent = 64; // 13D spinor
+
+                // Calculate and display success rate percentage
+                const successRatePct = document.getElementById('success-rate-pct');
+                if (successRatePct && PM.validation) {
+                    const within = PM.validation.predictions_within_1sigma || 45;
+                    const total = PM.validation.total_predictions || 48;
+                    const pct = ((within / total) * 100).toFixed(1);
+                    successRatePct.textContent = pct;
+                }
             }
         });
   </script>
@@ -404,7 +413,7 @@
      A First-Principles Geometric Theory
     </p>
     <p style="text-align: center; color: #51cf66; font-size: 1.15rem; font-weight: 600; margin-bottom: 1rem; padding: 0.75rem; background: rgba(81, 207, 102, 0.1); border-radius: 8px; max-width: 900px; margin-left: auto; margin-right: auto;">
-     A unified geometric framework deriving all 58 Standard Model parameters from a single G₂ manifold with minimal calibration (2 fitted parameters)
+     A unified geometric framework deriving all <span class="pm-value" data-pm-value="validation.total_predictions"></span> Standard Model parameters from a single G₂ manifold with minimal calibration (2 fitted parameters)
     </p>
     <p>
      A unified theory of gravity and the Standard Model forces based on a
@@ -1052,11 +1061,11 @@
     </p>
     
     <p style="margin-top: 1rem;">
-      All 58 measurable parameters of the extended Standard Model — including quark and lepton masses, mixing angles, gauge couplings, the Higgs boson mass, neutrino mass differences, and cosmological observables — are obtained from the manifold topology, flux quantization, and effective torsion class. Two numerical coefficients are transparently calibrated to the electroweak and GUT scales; the observed Higgs mass constrains one complex structure modulus. The remaining 55 parameters emerge as pure predictions.
+      All <span class="pm-value" data-pm-value="validation.total_predictions"></span> measurable parameters of the extended Standard Model — including quark and lepton masses, mixing angles, gauge couplings, the Higgs boson mass, neutrino mass differences, and cosmological observables — are obtained from the manifold topology, flux quantization, and effective torsion class. Two numerical coefficients are transparently calibrated to the electroweak and GUT scales; the observed Higgs mass constrains one complex structure modulus. The remaining parameters emerge as pure predictions.
     </p>
     
     <p style="margin-top: 1rem;">
-      <strong>56 of 58</strong> predictions lie within 1σ of current experimental data, with <strong>20 exact matches</strong>, including the Higgs mass, atmospheric neutrino mass splitting, and the atmospheric mixing angle θ<sub>23</sub> = <span class="pm-value" data-pm-value="pmns_matrix.theta_23"></span>°. Additional geometric predictions — proton decay branching ratios and gravitational wave dispersion — await confirmation by future experiments.
+      <strong><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span></strong> predictions lie within 1σ of current experimental data, with <strong><span class="pm-value" data-pm-value="validation.exact_matches"></span> exact matches</strong>, including the Higgs mass, atmospheric neutrino mass splitting, and the atmospheric mixing angle θ<sub>23</sub> = <span class="pm-value" data-pm-value="pmns_matrix.theta_23"></span>°. Additional geometric predictions — proton decay branching ratios and gravitational wave dispersion — await confirmation by future experiments.
     </p>
     
     <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--text-muted); font-style: italic; border-left: 3px solid rgba(139, 127, 255, 0.4); padding-left: 1rem;">
@@ -1073,15 +1082,15 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
       <div id="metric-within-1sigma" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
        <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
-        45/48 within 1σ
+        <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> within 1σ
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        (93.8% success rate)
+        (<span id="success-rate-pct"></span>% success rate)
        </div>
       </div>
       <div id="metric-exact-matches" style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.exact_matches">
        <div id="exact-matches" style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">
-        12 Parameters
+        <span class="pm-value" data-pm-value="validation.exact_matches"></span> Parameters
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
         Exact Central Value Match
@@ -1105,7 +1114,7 @@
       Calibration Transparency
      </h4>
      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-      <strong>V12.8 Final Transparency Statement:</strong> 56/58 SM parameters derived from geometry; 2 calibrated (θ₁₃, δ_CP pending Yukawa calculation). Only 2 scale constraints (VEV, α_GUT - standard in string phenomenology):
+      <strong>V12.8 Final Transparency Statement:</strong> <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters derived from geometry; 2 calibrated (θ₁₃, δ_CP pending Yukawa calculation). Only 2 scale constraints (VEV, α_GUT - standard in string phenomenology):
      </p>
      <ul style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin: 0.75rem 0 0 1.5rem;">
       <li><strong>VEV = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV</strong> (0.017% error from PDG top quark pole mass)</li>
