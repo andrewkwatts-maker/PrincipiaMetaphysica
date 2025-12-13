@@ -286,7 +286,50 @@ This is still an impressive achievement - don't overclaim.
 - principia-metaphysica-paper.html (V12.8 derivation notes added)
 
 **Still Needed:**
-- simulations/derive_theta23_g2_v12_8.py (NEW)
-- simulations/torsion_effective_v12_8.py (NEW)
-- simulations/zero_modes_gen_v12_8.py (NEW or update existing)
-- simulations/derive_d_eff_v12_8.py (NEW or update existing)
+- simulations/derive_theta23_g2_v12_8.py (NEW) ✅ COMPLETED
+- simulations/torsion_effective_v12_8.py (NEW) ✅ COMPLETED
+- simulations/zero_modes_gen_v12_8.py (NEW or update existing) ✅ COMPLETED
+- simulations/derive_d_eff_v12_8.py (NEW or update existing) ✅ COMPLETED
+- simulations/final_transparency_v12_8.py (NEW) ✅ COMPLETED
+
+---
+
+## V12.8 Predictions (Future Testable)
+
+In addition to the validated predictions (45/48 within 1σ), the framework makes
+two additional PREDICTIONS that cannot yet be validated due to lack of experimental data:
+
+### 1. Proton Decay Branching Ratio (PREDICTION)
+
+**File:** `simulations/proton_decay_br_v12_8.py`
+
+**Formula:** `BR(p → e+π0) = (orientation_sum / b3)² = (12/24)² = 0.25`
+
+**Status:** PREDICTION (cannot validate - proton decay not observed)
+
+**Future Test:** Hyper-K 2032-2038
+
+**Note:** The orientation_sum = 12 assumes half of b3 cycles oriented toward electron
+channel. This is a reasonable geometric assumption but not rigorously derived.
+
+### 2. Gravitational Wave Dispersion (PREDICTION)
+
+**File:** `simulations/gw_dispersion_v12_8.py`
+
+**Formula:** `η = exp(|T_ω|) / b3 = exp(0.884) / 24 = 0.101`
+
+**Status:** PREDICTION (cannot validate - beyond current detector sensitivity)
+
+**Future Test:** LISA 2037+
+
+**Note:** Predicts high-frequency GWs arrive slightly before low-frequency over
+cosmological distances due to torsion-induced dispersion.
+
+### IMPORTANT: These predictions do NOT increase the validation count
+
+The current validated status remains:
+- **45/48** predictions within 1σ (93.8%)
+- **56/58** parameters derived from geometry
+- **2** honest calibrations (theta_13, delta_CP)
+
+The proton BR and GW dispersion are future testable predictions, not validated ones.
