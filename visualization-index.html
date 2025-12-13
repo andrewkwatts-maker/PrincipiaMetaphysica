@@ -462,8 +462,10 @@
     </style>
     <script src="theory-constants-enhanced.js"></script>
     <script src="js/pm-tooltip-system.js"></script>
-</head>
-<body>
+    <link rel="stylesheet" href="/css/auth.css">
+  </head>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
     <div class="container">
         <header>
             <h1>Visualization Index</h1>
@@ -472,7 +474,13 @@
                 <span class="status-badge">46 Total Visualizations</span>
                 <span class="status-badge twotime">22 Updated for 2T Physics</span>
             </div>
-        </header>
+        
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
         <!-- Table of Contents -->
         <div class="toc">
@@ -1986,6 +1994,7 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+  </div>
     </div>
 
     <!-- Filter JavaScript -->
@@ -2079,5 +2088,10 @@
             });
         });
     </script>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('visualization-index');
+  </script>
 </body>
 </html>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PM Tooltip System Test</title>
     <link rel="stylesheet" href="css/pm-tooltip.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -46,7 +47,7 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
     <h1>Principia Metaphysica - Tooltip System Test</h1>
 
     <div class="instruction">
@@ -221,5 +222,10 @@
             }
         });
     </script>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('tests-test-tooltip-system');
+  </script>
 </body>
 </html>

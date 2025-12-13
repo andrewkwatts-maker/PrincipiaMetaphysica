@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Content Loading Test - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <style>
         body {
             padding: 2rem;
@@ -56,7 +57,7 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
     <h1>Dynamic Content Loading Prototype</h1>
     <p>Testing centralized content management system with PM constants integration</p>
 
@@ -240,5 +241,10 @@
             testValidation();
         });
     </script>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('tests-test-dynamic-content');
+  </script>
 </body>
 </html>

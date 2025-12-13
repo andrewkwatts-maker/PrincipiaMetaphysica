@@ -16,6 +16,7 @@
     <meta name="description" content="Section 1: Introduction to Principia Metaphysica - 26D Two-Time Framework, Quest for Unification, Geometrization of Forces, and the Fermionic Foundation">
     <title>Section 1: Introduction - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../js/formula-expansion.js" defer></script>
     <style>
         /* Section Page Specific Styles */
@@ -338,7 +339,8 @@
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <header>
         <div class="header-content">
             <h1>Principia Metaphysica</h1>
@@ -350,7 +352,13 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
     <main>
         <div class="breadcrumb">
@@ -1597,5 +1605,11 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('introduction');
+    </script>
 </body>
 </html>

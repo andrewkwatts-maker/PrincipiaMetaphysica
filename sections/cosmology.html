@@ -16,6 +16,7 @@
   <meta name="description" content="Section 6: Two-Time Cosmological Dynamics - Modified gravity, Mashiach field attractors, and dark energy in Principia Metaphysica">
   <title>Section 6: Cosmological Dynamics - Principia Metaphysica</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="/css/auth.css">
   <script src="../js/formula-expansion.js" defer></script>
   <style>
     /* Section page specific styles */
@@ -240,7 +241,8 @@
     <script src="../js/pm-tooltip-system.js"></script>
 
     </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
   <header>
     <div class="header-content">
       <h1>Principia Metaphysica</h1>
@@ -252,6 +254,12 @@
           <li><a href="predictions.html">Predictions</a></li>
         </ul>
       </nav>
+    </div>
+  
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
     </div>
   </header>
 
@@ -4274,5 +4282,11 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('cosmology');
+    </script>
 </body>
 </html>

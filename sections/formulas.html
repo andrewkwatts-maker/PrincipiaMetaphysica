@@ -17,6 +17,7 @@
    Formula Reference - Principia Metaphysica
   </title>
   <link href="../styles.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/auth.css">
   <script defer="" src="../js/formula-expansion.js">
   </script>
   <script defer="" src="../js/formula-definitions.js">
@@ -306,7 +307,8 @@
   <script src="../js/pm-tooltip-system.js">
   </script>
  </head>
- <body>
+ <body class="not-authenticated">
+  <div id="main-content" style="display: none;">
   <!-- Navigation -->
   <nav class="main-nav">
    <div class="nav-content">
@@ -2343,5 +2345,11 @@
     </p>
    </div>
   </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('formulas');
+  </script>
  </body>
 </html>

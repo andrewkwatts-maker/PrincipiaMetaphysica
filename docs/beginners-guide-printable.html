@@ -255,10 +255,12 @@
 
         sup, sub { font-size: 0.7em; }
     </style>
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <div class="paper">
         <button class="print-btn no-print" onclick="window.print()">
             Print / Save as PDF
@@ -1150,5 +1152,11 @@
             </p>
         </div>
     </div>
+    </div>
+
+    <script type="module">
+      import { setupAuthGuard } from '/js/auth-guard.js';
+      setupAuthGuard('docs-beginners-guide-printable');
+    </script>
 </body>
 </html>

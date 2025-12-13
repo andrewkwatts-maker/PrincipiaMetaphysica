@@ -16,6 +16,7 @@
     <meta name="description" content="SO(10) Heavy Gauge Bosons: X and Y Particles - Predicted but Not Yet Observed">
     <title>X,Y Gauge Bosons - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
     <script src="../js/formula-expansion.js" defer></script>
@@ -104,7 +105,8 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <div class="container">
         <nav class="breadcrumb">
             <a href="../index.html">Home</a>
@@ -520,5 +522,11 @@
     </footer>
 
     </div>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('xy-gauge-bosons');
+    </script>
 </body>
 </html>

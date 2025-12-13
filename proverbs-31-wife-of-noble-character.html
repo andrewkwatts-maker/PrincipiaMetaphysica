@@ -16,6 +16,7 @@
     <meta name="description" content="Proverbs 31:10-31 - Epilogue: The Wife of Noble Character">
     <title>Epilogue: The Wife of Noble Character - Proverbs 31</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <style>
         .proverbs-container {
             max-width: 900px;
@@ -122,7 +123,8 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
     <main class="proverbs-container">
         <h1 class="scripture-title">Epilogue: The Wife of Noble Character</h1>
         <p class="scripture-subtitle">Proverbs 31:10-31 (NIV)</p>
@@ -328,5 +330,11 @@
             © 2025-2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('proverbs-31');
+  </script>
 </body>
 </html>

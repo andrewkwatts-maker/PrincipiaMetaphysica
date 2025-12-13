@@ -16,6 +16,7 @@
     <meta name="description" content="Foundational Physics - The established equations that underpin Principia Metaphysica">
     <title>Foundational Physics - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../js/formula-expansion.js" defer></script>
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
@@ -112,7 +113,8 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <header>
         <div class="header-content">
             <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
@@ -123,6 +125,11 @@
                     <li><a href="../principia-metaphysica-paper.html">Full Paper</a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="user-controls">
+            <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
         </div>
     </header>
 
@@ -288,6 +295,7 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+    </div>
 
     <!-- Load formula database -->
     <script src="../js/formula-definitions.js"></script>
@@ -576,6 +584,11 @@
         function closeModal() {
             document.getElementById('formula-modal').style.display = 'none';
         }
+    </script>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('foundations-index');
     </script>
 </body>
 </html>

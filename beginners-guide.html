@@ -15,6 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beginner's Guide to Principia Metaphysica</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="js/formula-expansion.js" defer></script>
     <style>
         .guide-container {
@@ -608,7 +609,8 @@
     <script src="theory-constants-enhanced.js"></script>
     <script src="js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
     <header>
         <div class="header-content">
             <h1>Principia Metaphysica</h1>
@@ -620,7 +622,13 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
     <main class="guide-container">
         <div class="intro-box">
@@ -2465,6 +2473,7 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+  </div>
 
     <script>
         function toggleExpand(header) {
@@ -2530,5 +2539,10 @@
         console.log(`Validation stats updated: ${within1sigma}/${total} within 1σ, ${exact} central value matches, DESI ${desiSigma}σ`);
     });
     </script>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('beginners-guide');
+  </script>
 </body>
 </html>

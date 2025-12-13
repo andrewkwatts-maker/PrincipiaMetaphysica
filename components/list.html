@@ -23,9 +23,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>List Components</title>
     <link rel="stylesheet" href="/themes/theme-base.css">
-    
+    <link rel="stylesheet" href="/css/auth.css">
+
 </head>
-<body style="padding: var(--space-8); background: var(--color-background);">
+<body class="not-authenticated" style="padding: var(--space-8); background: var(--color-background);">
+    <div id="main-content" style="display: none;">
     <div id="theme-picker-container"></div>
 
     <h1 style="color: var(--color-text-primary); margin-bottom: var(--space-6);">List Components</h1>
@@ -482,6 +484,11 @@
             color: var(--color-text-primary);
         }
     </style>
+    </div>
 
+    <script type="module">
+      import { setupAuthGuard } from '/js/auth-guard.js';
+      setupAuthGuard('components-list');
+    </script>
 </body>
 </html>

@@ -16,11 +16,13 @@
     <meta name="description" content="Boltzmann Entropy - Learn the statistical foundation of thermodynamics with diagrams, explanations, and educational resources">
     <title>Boltzmann Entropy - Foundational Physics</title>
     <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../js/formula-expansion.js" defer></script>
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <header>
         <div class="header-content">
             <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
@@ -31,6 +33,11 @@
                     <li><a href="../sections/index.html">Sections</a></li>
                 </ul>
             </nav>
+        </div>
+        <div class="user-controls">
+            <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
         </div>
     </header>
 
@@ -719,6 +726,7 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+    </div>
 
     <style>
         .equation-hero {
@@ -868,5 +876,10 @@
             margin: 0;
         }
     </style>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('foundations-boltzmann-entropy');
+    </script>
 </body>
 </html>

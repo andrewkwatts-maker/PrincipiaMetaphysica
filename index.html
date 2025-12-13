@@ -330,8 +330,10 @@
             }
         });
   </script>
- </head>
- <body>
+     <link rel="stylesheet" href="/css/auth.css">
+  </head>
+ <body class="not-authenticated">
+  <div id="main-content" style="display: none;">
   <header>
    <div class="header-content">
     <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
@@ -372,6 +374,12 @@
      </ul>
     </nav>
    </div>
+  
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
   </header>
   <main>
    <section class="hero">
@@ -2474,10 +2482,16 @@
     <a href="references.html#acknowledgments" style="color: var(--accent-secondary); text-decoration: none;">Personal Acknowledgments</a>
    </p>
   </footer>
+  </div>
   <!-- Theory Constants and Validation Stats -->
   <script src="theory-constants-enhanced.js">
   </script>
   <script src="js/validation-stats.js">
   </script>
- </body>
+ 
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('index');
+  </script>
+</body>
 </html>

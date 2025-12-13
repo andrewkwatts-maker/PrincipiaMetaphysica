@@ -16,6 +16,7 @@
   <meta name="description" content="Section 7: Falsifiable Predictions via the Standard-Model Extension (SME) - Principia Metaphysica">
   <title>Section 7: Predictions &amp; Tests - Principia Metaphysica</title>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="/css/auth.css">
   <script src="../theory-constants-enhanced.js"></script>
   <script src="../js/pm-tooltip-system.js"></script>
   <script src="../js/formula-expansion.js" defer></script>
@@ -213,7 +214,8 @@
     <script src="../js/pm-tooltip-system.js"></script>
 
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
   <header>
     <div class="header-content">
       <h1>Principia Metaphysica</h1>
@@ -225,6 +227,12 @@
           <li><a href="conclusion.html">Next</a></li>
         </ul>
       </nav>
+    </div>
+  
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
     </div>
   </header>
 
@@ -3667,5 +3675,11 @@
             Grok (xAI), and Gemini (Google).
         </p>
     </footer>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('predictions');
+    </script>
 </body>
 </html>
