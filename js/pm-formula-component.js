@@ -101,6 +101,43 @@ class PMFormula extends HTMLElement {
 
     connectedCallback() {
         this.render();
+        this.setupTouchHandlers();
+    }
+
+    setupTouchHandlers() {
+        // Add touch support for mobile devices
+        const shadowRoot = this.shadowRoot;
+        if (!shadowRoot) return;
+
+        // Wait for next frame to ensure DOM is ready
+        requestAnimationFrame(() => {
+            const formulaVars = shadowRoot.querySelectorAll('.formula-var');
+
+            formulaVars.forEach(el => {
+                // Touch start - show tooltip
+                el.addEventListener('touchstart', (e) => {
+                    e.preventDefault();
+                    // Remove touched from all other elements
+                    formulaVars.forEach(other => other.classList.remove('touched'));
+                    // Add touched to this element
+                    el.classList.add('touched');
+                }, { passive: false });
+            });
+
+            // Touch outside to dismiss
+            document.addEventListener('touchstart', (e) => {
+                if (!shadowRoot.contains(e.target)) {
+                    formulaVars.forEach(el => el.classList.remove('touched'));
+                }
+            }, { passive: true });
+
+            // Click outside shadow root to dismiss (for hybrid devices)
+            shadowRoot.addEventListener('click', (e) => {
+                if (!e.target.closest('.formula-var')) {
+                    formulaVars.forEach(el => el.classList.remove('touched'));
+                }
+            });
+        });
     }
 
     static get observedAttributes() {
@@ -324,6 +361,56 @@ class PMFormula extends HTMLElement {
                 .chain-item.established {
                     background: rgba(74, 222, 128, 0.2);
                     color: #4ade80;
+                }
+
+                /* Mobile touch support */
+                @media (hover: none) and (pointer: coarse) {
+                    .formula-var:hover {
+                        background: rgba(139, 127, 255, 0.15);
+                        transform: none;
+                        box-shadow: none;
+                    }
+                    .formula-var:hover .var-tooltip {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+                    .formula-var.touched {
+                        background: rgba(139, 127, 255, 0.3);
+                        transform: translateY(-1px);
+                        box-shadow: 0 2px 8px rgba(139, 127, 255, 0.2);
+                    }
+                    .formula-var.touched .var-tooltip {
+                        opacity: 1 !important;
+                        visibility: visible !important;
+                        transform: translateX(-50%) translateY(-12px);
+                        pointer-events: auto;
+                    }
+                }
+
+                /* Small screens - tooltip below */
+                @media (max-width: 600px) {
+                    .var-tooltip {
+                        bottom: auto;
+                        top: 100%;
+                        transform: translateX(-50%) translateY(8px);
+                        width: calc(100vw - 4rem);
+                        max-width: 300px;
+                        left: 50%;
+                    }
+                    .formula-var:hover .var-tooltip,
+                    .formula-var.touched .var-tooltip {
+                        transform: translateX(-50%) translateY(12px);
+                    }
+                    .var-tooltip::after {
+                        top: auto;
+                        bottom: 100%;
+                        border-top-color: transparent;
+                        border-bottom-color: rgba(139, 127, 255, 0.4);
+                    }
+                    .formula-display {
+                        font-size: 1.1rem;
+                        overflow-x: auto;
+                    }
                 }
             </style>
 

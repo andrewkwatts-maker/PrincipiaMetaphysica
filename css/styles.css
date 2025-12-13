@@ -2488,3 +2488,171 @@ ul li::marker {
         align-items: center;
     }
 }
+
+/* ============================================
+   MOBILE RESPONSIVENESS FOR FORMULAS & TOOLTIPS
+   ============================================ */
+
+/* Touch device detection - disable hover effects */
+@media (hover: none) and (pointer: coarse) {
+    /* Touch devices need tap instead of hover */
+    .formula-var:hover {
+        background: rgba(139, 127, 255, 0.15);
+        transform: none;
+        box-shadow: none;
+    }
+
+    /* Show tooltips on tap via .touched class (JS-added) */
+    .formula-var.touched .var-tooltip {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(-12px);
+        pointer-events: auto;
+    }
+
+    /* Add tap hint for touch devices */
+    .formula-var::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 4px;
+        height: 4px;
+        background: var(--accent-primary);
+        border-radius: 50%;
+        opacity: 0.6;
+    }
+}
+
+/* Small phones (320px - 480px) */
+@media (max-width: 480px) {
+    /* Formula container adjustments */
+    .interactive-formula {
+        padding: 0.75rem;
+        margin: 1rem 0;
+        border-radius: 8px;
+    }
+
+    .formula-display {
+        font-size: 0.95rem;
+        line-height: 1.6;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .formula-display.large {
+        font-size: 1.1rem;
+    }
+
+    /* Smaller formula variables */
+    .formula-var {
+        padding: 0.15rem 0.25rem;
+        margin: 0 0.1rem;
+        font-size: 0.9rem;
+    }
+
+    /* Tooltips: position below on small screens */
+    .var-tooltip {
+        bottom: auto;
+        top: 100%;
+        width: calc(100vw - 2rem);
+        max-width: 280px;
+        left: 0;
+        transform: translateY(8px);
+        font-size: 0.85rem;
+        padding: 0.75rem;
+    }
+
+    .var-tooltip::after {
+        top: auto;
+        bottom: 100%;
+        border-top-color: transparent;
+        border-bottom-color: rgba(139, 127, 255, 0.4);
+    }
+
+    .formula-var:hover .var-tooltip,
+    .formula-var.touched .var-tooltip {
+        transform: translateY(12px);
+    }
+
+    .var-tooltip .var-name {
+        font-size: 1.1rem;
+    }
+
+    .var-tooltip .var-description {
+        font-size: 0.8rem;
+    }
+
+    /* Paper container on mobile */
+    .paper {
+        padding: 1rem !important;
+        margin: 0;
+        max-width: 100%;
+    }
+
+    /* Formula hint */
+    .formula-hint {
+        font-size: 0.7rem;
+    }
+}
+
+/* Medium phones and small tablets (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+    .interactive-formula {
+        padding: 1rem;
+        margin: 1.25rem 0;
+    }
+
+    .formula-display {
+        font-size: 1.1rem;
+    }
+
+    .formula-var {
+        padding: 0.2rem 0.35rem;
+    }
+
+    .var-tooltip {
+        width: 260px;
+    }
+
+    .paper {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Tablets (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .interactive-formula {
+        padding: 1.5rem;
+    }
+
+    .formula-display {
+        font-size: 1.25rem;
+    }
+
+    .paper {
+        padding: 2rem 2.5rem !important;
+    }
+}
+
+/* PM Formula Component Mobile Styles */
+@media (max-width: 768px) {
+    pm-formula {
+        display: block;
+        margin: 1rem 0;
+    }
+
+    /* Ensure shadow DOM styles are overridden */
+    pm-formula::part(container) {
+        padding: 0.75rem;
+    }
+
+    pm-formula::part(formula-display) {
+        font-size: 1rem;
+    }
+
+    pm-formula::part(plain-text) {
+        font-size: 0.8rem;
+    }
+}
