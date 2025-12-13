@@ -1,0 +1,751 @@
+{
+  "localFiles": {
+    "theory_output.json": {
+      "exists": true,
+      "path": "theory_output.json",
+      "size": 21331,
+      "lastModified": "2025-12-07T18:32:30.688Z",
+      "version": null,
+      "required": true
+    },
+    "theory-constants-enhanced.js": {
+      "exists": true,
+      "path": "theory-constants-enhanced.js",
+      "size": 24467,
+      "lastModified": "2025-12-07T22:29:25.162Z",
+      "version": "12.7",
+      "required": true
+    },
+    "formula-definitions.js": {
+      "exists": true,
+      "path": "js/formula-definitions.js",
+      "size": 60282,
+      "lastModified": "2025-12-07T22:31:54.645Z",
+      "version": null,
+      "required": true
+    },
+    "formula-database.js": {
+      "exists": true,
+      "path": "js/formula-database.js",
+      "size": 13807,
+      "lastModified": "2025-12-07T22:02:09.655Z",
+      "version": null,
+      "required": false
+    },
+    "config.py": {
+      "exists": true,
+      "path": "config.py",
+      "size": 69350,
+      "lastModified": "2025-12-07T18:08:13.026Z",
+      "version": null,
+      "required": true
+    }
+  },
+  "firestoreStatus": {
+    "theory_constants": {
+      "exists": true,
+      "documentCount": 3,
+      "documents": [
+        {
+          "id": "current",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "v12_7",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "v12_7_1765597131803",
+          "version": "12.7",
+          "lastUpdated": "2025-12-08"
+        }
+      ]
+    },
+    "formulas": {
+      "exists": true,
+      "documentCount": 55,
+      "documents": [
+        {
+          "id": "alpha-gut",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "bosonic-string",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "brane-structure",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "brane-trace",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "bulk-gravity-frt",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "clifford",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "clifford-13d",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "clifford-26d",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "cpl",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "de-w0",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "de-wa",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "dirac",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "einstein-field",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "einstein-hilbert",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "euler-char",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "f-theory-index",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "friedmann",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "functional-form",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "gauge-unification",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "generation-number",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "generation-number-26d",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "gut-scale",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "higgs-mass",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "hodge-numbers",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "kk-graviton",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "kk-reduction",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "kms",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "master-action-26d",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "mep-w0",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "mirror-brane-structure",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "mirror-coupling",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "mirror-entropy",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "modular-flow",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "n-eff",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "neutrino-sum",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "normal-hierarchy",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "planck-mass",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "pmns-angles",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "pneuma-lagrangian",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "pneuma-lagrangian-26d",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "proton-channels",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "proton-decay",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "seesaw",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "so10-spinor",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "sp2r-constraints",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "spacetime-structure",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "spacetime-structure-26d",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "symmetry-breaking",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "thermal-de",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "thermal-time-param",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "two-time-physics",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "two-time-structure",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "wa-derivation",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "wheeler-dewitt",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "yang-mills",
+          "version": null,
+          "lastUpdated": null
+        }
+      ]
+    },
+    "formula_database": {
+      "exists": true,
+      "documentCount": 15,
+      "documents": [
+        {
+          "id": "BR_epi0",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "M_GUT",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "M_Planck",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "M_star",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "S_13D",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "S_26D",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "delta_CP",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "n_gen",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "tau_p",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "theta_12",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "theta_13",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "theta_23",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "w0",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "w_a",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "wz_evolution",
+          "version": null,
+          "lastUpdated": null
+        }
+      ]
+    },
+    "pages": {
+      "exists": true,
+      "documentCount": 57,
+      "documents": [
+        {
+          "id": "ancient-numerology",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.345Z"
+        },
+        {
+          "id": "beginners-guide",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.078Z"
+        },
+        {
+          "id": "components-button",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.031Z"
+        },
+        {
+          "id": "components-card",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.135Z"
+        },
+        {
+          "id": "components-corpus-result-template",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.194Z"
+        },
+        {
+          "id": "components-expandable",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.240Z"
+        },
+        {
+          "id": "components-form",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.292Z"
+        },
+        {
+          "id": "components-grid",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.334Z"
+        },
+        {
+          "id": "components-hero",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.412Z"
+        },
+        {
+          "id": "components-index",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.484Z"
+        },
+        {
+          "id": "components-list",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.547Z"
+        },
+        {
+          "id": "components-modal",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.618Z"
+        },
+        {
+          "id": "components-nav",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.687Z"
+        },
+        {
+          "id": "components-page-template",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.760Z"
+        },
+        {
+          "id": "components-search",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.817Z"
+        },
+        {
+          "id": "components-tabs",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:27.873Z"
+        },
+        {
+          "id": "diagrams-theory-diagrams",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.976Z"
+        },
+        {
+          "id": "docs-PAPER_2T_UPDATE_SECTION",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.911Z"
+        },
+        {
+          "id": "docs-beginners-guide-printable",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.777Z"
+        },
+        {
+          "id": "docs-computational-appendices",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.851Z"
+        },
+        {
+          "id": "foundations-boltzmann-entropy",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:25.505Z"
+        },
+        {
+          "id": "foundations-calabi-yau",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:25.683Z"
+        },
+        {
+          "id": "foundations-clifford-algebra",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:25.835Z"
+        },
+        {
+          "id": "foundations-dirac-equation",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.043Z"
+        },
+        {
+          "id": "foundations-einstein-field-equations",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.182Z"
+        },
+        {
+          "id": "foundations-einstein-hilbert-action",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.239Z"
+        },
+        {
+          "id": "foundations-g2-manifolds",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.294Z"
+        },
+        {
+          "id": "foundations-index",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.373Z"
+        },
+        {
+          "id": "foundations-kaluza-klein",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.416Z"
+        },
+        {
+          "id": "foundations-kms-condition",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.472Z"
+        },
+        {
+          "id": "foundations-ricci-tensor",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.539Z"
+        },
+        {
+          "id": "foundations-so10-gut",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.601Z"
+        },
+        {
+          "id": "foundations-tomita-takesaki",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.654Z"
+        },
+        {
+          "id": "foundations-yang-mills",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:26.727Z"
+        },
+        {
+          "id": "index",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:20.176Z"
+        },
+        {
+          "id": "philosophical-implications",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.186Z"
+        },
+        {
+          "id": "principia-metaphysica-paper",
+          "version": null,
+          "lastUpdated": null
+        },
+        {
+          "id": "proverbs-31-wife-of-noble-character",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.413Z"
+        },
+        {
+          "id": "references",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:22.999Z"
+        },
+        {
+          "id": "sections-cmb-bubble-collisions-comprehensive",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.471Z"
+        },
+        {
+          "id": "sections-conclusion",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.546Z"
+        },
+        {
+          "id": "sections-cosmology",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.650Z"
+        },
+        {
+          "id": "sections-division-algebra-section",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.792Z"
+        },
+        {
+          "id": "sections-einstein-hilbert-term",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.842Z"
+        },
+        {
+          "id": "sections-fermion-sector",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.917Z"
+        },
+        {
+          "id": "sections-formulas",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.027Z"
+        },
+        {
+          "id": "sections-gauge-unification",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.130Z"
+        },
+        {
+          "id": "sections-geometric-framework",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.253Z"
+        },
+        {
+          "id": "sections-index",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.361Z"
+        },
+        {
+          "id": "sections-introduction",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.427Z"
+        },
+        {
+          "id": "sections-pneuma-lagrangian",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.581Z"
+        },
+        {
+          "id": "sections-pneuma-lagrangian-new",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.527Z"
+        },
+        {
+          "id": "sections-predictions",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.689Z"
+        },
+        {
+          "id": "sections-theory-analysis",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.802Z"
+        },
+        {
+          "id": "sections-thermal-time",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:24.890Z"
+        },
+        {
+          "id": "sections-xy-gauge-bosons",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:25.324Z"
+        },
+        {
+          "id": "visualization-index",
+          "version": null,
+          "lastUpdated": "2025-12-13T03:31:23.242Z"
+        }
+      ]
+    },
+    "appendices": {
+      "exists": true,
+      "documentCount": 0,
+      "documents": []
+    },
+    "validation_history": {
+      "exists": true,
+      "documentCount": 2,
+      "documents": [
+        {
+          "id": "complete_upload_1765597132110",
+          "version": "12.7",
+          "lastUpdated": null
+        },
+        {
+          "id": "upload_1765596687917",
+          "version": "12.7",
+          "lastUpdated": null
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "needsUpload": [],
+    "synced": [
+      "formulas (55 docs)",
+      "formula_database (15 docs)"
+    ],
+    "conflicts": [],
+    "missing": []
+  },
+  "needsAction": false
+}

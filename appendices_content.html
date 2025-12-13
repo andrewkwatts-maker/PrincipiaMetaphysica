@@ -37,7 +37,7 @@
                 historical arc from Maxwell's unification of electricity and magnetism to modern
                 attempts at Grand Unified Theories, while introducing the novel approach of deriving
                 geometry from a fundamental fermionic field. <strong>Principia Metaphysica</strong>
-                posits a 26-dimensional bulk spacetime with signature (24,2)&mdash;incorporating two time
+                posits a <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with signature (24,2)&mdash;incorporating two time
                 dimensions related by Sp(2,R) gauge symmetry&mdash;from which an observable 13D shadow emerges.
                 Key predictions include w<sub>0</sub> = -11/13 and w<sub>a</sub> &asymp; -0.75, matching DESI 2024 observations.
             </p>
@@ -386,7 +386,7 @@
             </div>
 
             <p>
-                In this framework, the full 26D bulk has two timelike directions
+                In this framework, the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has two timelike directions
                 related by Z<sub>2</sub> mirror symmetry. The Pneuma field <span class="greek-symbol">&Psi;<sub>P</sub></span>
                 transforms under Spin(24,2), with the Sp(2,R) gauge symmetry eliminating ghosts from the second
                 time dimension. After gauge-fixing, the effective 13D theory emerges with
@@ -484,7 +484,7 @@
                 <span class="formula-var">Spin(12,1)
                     <div class="var-tooltip">
                         <div class="var-name">Spin(12,1) - 13D Lorentz Spin Group</div>
-                        <div class="var-description">The double cover of the Lorentz group SO(12,1) in 13-dimensional spacetime with signature (12,1). Required for defining spinor (fermionic) representations. Its spinor representation has dimension 2<sup>6</sup> = 64.</div>
+                        <div class="var-description">The double cover of the Lorentz group SO(12,1) in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D spacetime with signature (12,1). Required for defining spinor (fermionic) representations. Its spinor representation has dimension 2<sup>6</sup> = 64.</div>
                         <div class="var-units">Dimensionless (Lie group)</div>
                         <div class="var-contribution">The full symmetry group of the 13D bulk; parent group that branches into 4D and internal parts</div>
                     </div>
@@ -1016,7 +1016,7 @@
                     <tr>
                         <td><strong>Section 2</strong></td>
                         <td>Geometric Framework</td>
-                        <td>26D bulk with (24,2) signature; Sp(2,R) gauge fixing; 13D shadow emergence; K<sub>Pneuma</sub></td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk with (24,2) signature; Sp(2,R) gauge fixing; 13D shadow emergence; K<sub>Pneuma</sub></td>
                     </tr>
                     <tr>
                         <td><strong>Section 3</strong></td>
@@ -1062,7 +1062,7 @@
                 <h4 style="color: #51cf66; margin-bottom: 0.75rem;">Key Feature: Derived Modulus</h4>
                 <p>
                     A significant advancement was achieved by inverting the Higgs mass formula to derive
-                    Re(T) = 7.086 from the measured Higgs mass (<span class="pm-value" data-pm-value="v12_7_pure_geometric.flux_stab_pure.m_h_GeV"></span> GeV), rather than choosing it arbitrarily.
+                    Re(T) = 7.086 from the measured Higgs mass (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV), rather than choosing it arbitrarily.
                     This ensures swampland compliance (Δφ = 1.958 > 0.816)
                     and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T)
                     (from experimental data) are now fully determined.
@@ -1071,15 +1071,15 @@
                     <strong>Calibration Transparency:</strong> The framework uses only TWO minimal calibrations:
                     VEV factor 1.5859 and α_GUT coefficient 0.032177—both fully documented and analogous to KKLT
                     minimal tuning. This leaves <strong>56 out of 58 Standard Model parameters purely predictive</strong>,
-                    achieving VEV = <span class="pm-value" data-pm-value="v12_7_pure_geometric.vev_pure.v_GeV"></span> GeV (0.017% error), 1/α_GUT = <span class="pm-value" data-pm-value="v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv"></span> (matches NuFIT 6.0), w₀ = <span class="pm-value" data-pm-value="v12_7_pure_geometric.w0_predicted.w0"></span>,
-                    Higgs mass = <span class="pm-value" data-pm-value="v12_7_pure_geometric.flux_stab_pure.m_h_GeV"></span> GeV (matches PDG 2024), and proton lifetime = <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years.
+                    achieving VEV = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV (0.017% error), 1/α_GUT = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span> (matches NuFIT 6.0), w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span>,
+                    Higgs mass = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV (matches PDG 2024), and proton lifetime = <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years.
                 </p>
             </div>
 
             <div class="highlight-box">
                 <h4>Central Thesis ()</h4>
                 <p>
-                    The central claim of this work is that a <strong>26-dimensional bulk spacetime with signature (24,2)</strong>,
+                    The central claim of this work is that a <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with signature (24,2)</strong>,
                     incorporating two time dimensions related by Z<sub>2</sub> mirror symmetry, projects to a
                     <strong>13D observable shadow</strong> containing a 1 + 3 brane hierarchy. The Sp(2,R) gauge-fixed
                     framework, with geometry emerging from the 8192-component Pneuma field, can simultaneously explain:
@@ -1182,7 +1182,7 @@
                     constants at M<sub>GUT</sub> ~ 10<sup>16</sup> GeV with threshold corrections from KK tower.
                 </p>
                 <div class="observable">
-                    &alpha;<sub>GUT</sub><sup>-1</sup> = <span class="pm-value" data-pm-value="v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv"></span> (matches NuFIT 6.0) at M<sub>GUT</sub> = (2.1 &plusmn; 0.3) &times; 10<sup>16</sup> GeV
+                    &alpha;<sub>GUT</sub><sup>-1</sup> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span> (matches NuFIT 6.0) at M<sub>GUT</sub> = (2.1 &plusmn; 0.3) &times; 10<sup>16</sup> GeV
                 </div>
                 <p class="method">
                     <strong>Method:</strong> Precision electroweak measurements at future e<sup>+</sup>e<sup>-</sup>
@@ -1236,7 +1236,7 @@
      This section establishes the mathematical foundation of the Principia Metaphysica framework.
                 We introduce the
      <strong>
-      26-dimensional action with signature (24,2) decomposing as M
+      <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional action with signature (24,2) decomposing as M
       <sup>
        26
       </sup>
@@ -1830,7 +1830,7 @@
      <p>
       The 26-dimensional spacetime decomposes as a
       <strong>
-       tensor product of 13D shadow (from 26D bulk) sharing 2 timelike dimensions
+       tensor product of 13D shadow (from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk) sharing 2 timelike dimensions
       </strong>
       :
      </p>
@@ -2265,7 +2265,7 @@
       <strong>
        Clifford Algebra Spinor Reduction:
       </strong>
-      The 26D spacetime with signature (24,2) has Clifford algebra Cl(24,2) with spinor dimension 2
+      The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with signature (24,2) has Clifford algebra Cl(24,2) with spinor dimension 2
       <sup>
        13
       </sup>
@@ -3503,7 +3503,7 @@
          Starting Point
         </td>
         <td>
-         26D Bulk Theory
+         <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk Theory
         </td>
         <td>
          26D
@@ -4851,13 +4851,13 @@
         <strong>
          Topology:
         </strong>
-        Explicit TCS (Twisted Connected Sum, <a href="https://arxiv.org/abs/math/0012189" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Kovalev, 2003]</a>) with b₂=4, b₃=24 via CHNP construction
+        Explicit TCS (Twisted Connected Sum, <a href="https://arxiv.org/abs/math/0012189" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[Kovalev, 2003]</a>) with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> via CHNP construction
        </li>
        <li>
         <strong>
          Euler characteristic:
         </strong>
-        χ(G₂) = 0 generically, but flux dressing yields χ_eff = 144 (72 per copy, Z₂ mirror)
+        χ(G₂) = 0 generically, but flux dressing yields χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> (72 per copy, Z₂ mirror)
        </li>
        <li>
         <strong>
@@ -4895,7 +4895,7 @@
      <strong>
       G₂ manifold
      </strong>
-     that emerges from Pneuma field condensates and compactifies the 13D effective theory down to a 6D bulk.
+     that emerges from Pneuma field condensates and compactifies the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective theory down to a 6D bulk.
     </p>
     <div class="warning-box">
      <h4>
@@ -5210,7 +5210,7 @@
          (G₂)
         </div>
         <div class="var-description">
-         Effective Euler characteristic of the G₂ manifold (flux-dressed). For Z₂ mirror structure: χ_eff = 144 total.
+         Effective Euler characteristic of the G₂ manifold (flux-dressed). For Z₂ mirror structure: χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> total.
         </div>
         <div class="var-units">
          Dimensionless integer
@@ -5329,7 +5329,7 @@
        </strong>
        The denominator 48 = 24 × 2 accounts for both the index theorem (24)
                         and the Z₂ mirror structure (×2). While generic G₂ manifolds have χ = 0, flux dressing
-                        yields χ_eff = 144 total (including mirror contribution).
+                        yields χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> total (including mirror contribution).
       </div>
       <div class="formula-info-grid">
        <div class="formula-info-item">
@@ -5373,7 +5373,7 @@
          For G₂: χ_eff from flux dressing + Z₂ mirror doubling
         </li>
         <li>
-         χ_eff = 144 = 72 (per copy) × 2 (Z₂ mirrors)
+         χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> = 72 (per copy) × 2 (Z₂ mirrors)
         </li>
         <li>
          n_gen = 144 / (24 × 2) = 144 / 48 = 3
@@ -5468,7 +5468,7 @@
        <sub>
         eff
        </sub>
-       = 144 from topology (b₂=4, b₃=24)
+       = 144 from topology (b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>)
       </li>
       <li>
        <strong>
@@ -5492,7 +5492,7 @@
     </h3>
     <div class="highlight-box" style="border-left-color: #17a2b8; background: linear-gradient(135deg, rgba(23, 162, 184, 0.12), rgba(139, 127, 255, 0.08));">
      <h4 style="color: #17a2b8;">
-      Twisted Connected Sum (TCS) Construction with b₂=4, b₃=24
+      Twisted Connected Sum (TCS) Construction with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>
      </h4>
      <p>
       The G₂ manifold K
@@ -5658,7 +5658,7 @@
        θ = π/6
       </strong>
       (30°), matching torus coordinates via ξ₊ = ζ₋, ζ₊ = ξ₋.
-                    The π/6 angle is critical for achieving b₃ = 24.
+                    The π/6 angle is critical for achieving b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>.
      </li>
      <li>
       <strong>
@@ -5830,7 +5830,7 @@
       <strong>
        Yukawa textures:
       </strong>
-      b₃=24 co-associative cycles control wavefunction overlaps
+      b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> co-associative cycles control wavefunction overlaps
      </li>
      <li>
       <strong>
@@ -5879,7 +5879,7 @@
        Proven metric existence: Joyce-Karigiannis implicit function theorem
       </li>
       <li>
-       Verified topology: Mayer-Vietoris exact sequence yields b₂=4, b₃=24
+       Verified topology: Mayer-Vietoris exact sequence yields b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>
       </li>
       <li>
        Referenced construction: CHNP involution blocks 3.25₁ and 3.25₂ with π/6 matching
@@ -6550,7 +6550,7 @@
       <sub>
        Pneuma
       </sub>
-      (χ = 144 Total)
+      (χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> Total)
      </h4>
      <p>
       The h
@@ -7603,7 +7603,7 @@
         1/23.54
        </div>
        <div class="var-description">
-        Geometrically derived value of the unified coupling at M_GUT = 2.118×10^16 GeV.
+        Geometrically derived value of the unified coupling at <span class="pm-value" data-pm-value="proton_decay.M_GUT" data-format="scientific:2"></span> GeV.
        </div>
        <div class="var-units">
         Dimensionless
@@ -8430,7 +8430,7 @@
        <strong>
         24 base modes:
        </strong>
-       One for each associative 3-cycle (b₃ = 24)
+       One for each associative 3-cycle (b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>)
       </li>
       <li>
        <strong>
@@ -8874,7 +8874,7 @@
        <strong style="color: #51cf66;">
         RESOLVED:
        </strong>
-       TCS G₂ construction with explicit topology b₂=4, b₃=24 yields χ_eff=72 per copy (Z₂ mirror: 144 total)
+       TCS G₂ construction with explicit topology b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> yields χ_eff=72 per copy (Z₂ mirror: 144 total)
       </li>
       <li>
        For the CY4/Z
@@ -8936,7 +8936,7 @@
        <strong>
         Topology:
        </strong>
-       TCS G₂ construction with b₂=4, b₃=24 (arXiv:1809.09083)
+       TCS G₂ construction with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> (arXiv:1809.09083)
       </li>
      </ul>
     </div>
@@ -8968,7 +8968,7 @@
      <ol style="color: var(--text-secondary); line-height: 2.2; font-size: 1.05rem;">
       <li>
        <strong>
-        Stage 1 - 26D Bulk (24,2):
+        Stage 1 - <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk (24,2):
        </strong>
        M
        <sup>
@@ -9001,7 +9001,7 @@
        <span style="color: #51cf66; font-weight: 600;">
         Gauge fixing (NOT compactification!)
        </span>
-       Projects 26D onto 13D effective shadow by eliminating ghost states via constraints X²=0, X·P=0, P²+M²=0. Spinor: 8192 → 64 components.
+       Projects 26D onto <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective shadow by eliminating ghost states via constraints X²=0, X·P=0, P²+M²=0. Spinor: 8192 → 64 components.
       </li>
       <li>
        <strong>
@@ -9429,7 +9429,7 @@
                 <h4 style="color: #17a2b8;">Geometric Origin: D₅ Singularity on b₂=4 Associative Cycles</h4>
                 <p>
                     The SO(10) gauge symmetry has a precise geometric origin in the <strong>explicit TCS G₂ manifold</strong>
-                    with b₂=4, b₃=24 topology
+                    with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> topology
                     <a href="https://arxiv.org/abs/1809.09083" target="_blank" style="color: var(--accent-primary); font-size: 0.85rem;">[CHNP arXiv:1809.09083]</a>:
                 </p>
                 <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.8;">
@@ -9902,7 +9902,7 @@
                     <span class="formula-var highlight">126<sub>H</sub>
                         <div class="var-tooltip">
                             <div class="var-name">126<sub>H</sub></div>
-                            <div class="var-description">The 126-dimensional Higgs representation of SO(10), crucial for B-L symmetry breaking and Majorana neutrino masses.</div>
+                            <div class="var-description">The 1<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional Higgs representation of SO(10), crucial for B-L symmetry breaking and Majorana neutrino masses.</div>
                             <div class="var-units">Dimensionless (representation label)</div>
                             <div class="var-contribution">Provides right-handed neutrino Majorana masses and triggers Type-I seesaw mechanism.</div>
                         </div>
@@ -10248,7 +10248,7 @@
                         </div>
                         <div class="formula-info-item">
                             <h5>Predicted &tau;<sub>p</sub></h5>
-                            <p><span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
+                            <p><span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)</p>
                         </div>
                     </div>
                     <div class="use-cases">
@@ -10269,7 +10269,7 @@
             <p>
                 The geometric splitting mechanism naturally achieves M<sub>T</sub> &sim; M<sub>GUT</sub> while keeping
                 the doublet light, satisfying current experimental bounds from Super-Kamiokande (&tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years
-                for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>). Our prediction of <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years is <strong>2.46× above the bound</strong>,
+                for p &rarr; e<sup>+</sup>&pi;<sup>0</sup>). Our prediction of <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years is <strong>2.46× above the bound</strong>,
                 providing a testable prediction for future proton decay experiments like Hyper-Kamiokande.
             </p>
         </div>
@@ -12039,7 +12039,7 @@
                 </p>
                 <ul style="margin-left: 1.5rem; margin-top: 0.75rem;">
                     <li><strong>k=5:</strong> Fifth-order matching (ℤ₅ symmetry from building blocks)</li>
-                    <li><strong>q=48:</strong> Total angular divisions = 48 from b₃ = 24 flux quantum (2× for gluing)</li>
+                    <li><strong>q=48:</strong> Total angular divisions = 48 from b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> flux quantum (2× for gluing)</li>
                 </ul>
                 <p style="margin-top: 0.75rem;">
                     See <a href="../foundations/g2-manifolds.html" style="color: #51cf66; font-weight: 600;">Section 1.4: G₂ Manifolds</a> for the full TCS construction details.
@@ -12060,7 +12060,7 @@
             <h3>Step 3: Flux Normalization Factor</h3>
             <p>
                 The 4-form flux on K<sub>Pneuma</sub> provides the normalization for warping. The flux is quantized
-                in units of the third Betti number b₃ = 24:
+                in units of the third Betti number b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>:
             </p>
 
             <!-- Interactive Formula: Flux Normalization -->
@@ -12079,7 +12079,7 @@
                     <span class="formula-var highlight">(2π) / (ν/b₃)
                         <div class="var-tooltip">
                             <div class="var-name">Flux quantum formula</div>
-                            <div class="var-description">ν = 24 flux units, b₃ = 24 third Betti number → ratio = 1.</div>
+                            <div class="var-description">ν = 24 flux units, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> third Betti number → ratio = 1.</div>
                             <div class="var-units">Angular factor (2π normalized)</div>
                             <div class="var-contribution">Unity ratio: special "self-dual" flux configuration.</div>
                         </div>
@@ -12094,7 +12094,7 @@
                         </div>
                     </span>
                 </div>
-                <div class="formula-label">Flux normalization from b₃ = 24</div>
+                <div class="formula-label">Flux normalization from b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></div>
             </div>
 
             <h3>Step 4: Dimensionless Warping Parameter</h3>
@@ -12193,7 +12193,7 @@
             <h3>Error Analysis: Flux Variations</h3>
             <p>
                 The primary uncertainty comes from <strong>b₃ flux stabilization</strong>. Variations in the
-                flux configuration (b₃ = 24 ± 1) propagate through the normalization factor:
+                flux configuration (b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> ± 1) propagate through the normalization factor:
             </p>
 
             <table class="breaking-table" style="margin: 1.5rem 0;">
@@ -12331,7 +12331,7 @@
                         <strong style="color: #9966ff;">1/α_GUT = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span></strong>
                         <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
                             Unification point<br>
-                            M_GUT = 2.118×10¹⁶ GeV
+                            <span class="pm-value" data-pm-value="proton_decay.M_GUT" data-format="scientific:2"></span> GeV
                         </div>
                     </div>
                 </div>
@@ -12440,7 +12440,7 @@
                                 </tr>
                                 <tr style="background: rgba(255, 99, 132, 0.1);">
                                     <td style="padding: 0.5rem;"><strong>Target</strong></td>
-                                    <td style="padding: 0.5rem; text-align: right; font-weight: 600;"><span class="pm-value" data-pm-value="v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv"></span></td>
+                                    <td style="padding: 0.5rem; text-align: right; font-weight: 600;"><span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span></td>
                                 </tr>
                                 <tr>
                                     <td style="padding: 0.5rem;"><em>Deviation</em></td>
@@ -12771,7 +12771,7 @@
                 <div class="author-response">
                     <h5>Status: Significantly Improved</h5>
                     <p>
-                        <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years<br>
+                        <strong>Central prediction (MC median):</strong> &tau;<sub>p</sub> = <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years<br>
                         <strong>68% Confidence Interval:</strong> [2.41, 5.61] &times; 10<sup>34</sup> years<br>
                         <strong>Uncertainty:</strong> <span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM (improved from 0.8 OOM!)<br>
                         <strong>Ratio to bound:</strong> 2.30× above Super-Kamiokande limit<br><br>
@@ -12854,7 +12854,7 @@
                     This is the smoking gun prediction of SO(10) grand unification.
                 </p>
                 <div class="observable">
-                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
+                    &tau;<sub>p</sub>(p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) = <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years (±<span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM)
                 </div>
                 <p class="method">
                     <strong>Current Bound:</strong> &tau;<sub>p</sub> &gt; 1.67 &times; 10<sup>34</sup> years (Super-Kamiokande 2020)<br>
@@ -13053,7 +13053,7 @@
      </li>
      <li>
       <strong>
-       The 26D bulk
+       The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk
       </strong>
       M
       <sup>
@@ -13359,7 +13359,7 @@
       The 13D shadow Structure with Shared Times
      </h4>
      <p>
-      The 26D bulk factorizes as
+      The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk factorizes as
       <strong>
        M
        <sup>
@@ -13758,7 +13758,7 @@
      <span class="highlight-text">
       8192-component Dirac spinor
      </span>
-     in the full 26D bulk. After Sp(2,R) gauge fixing, this reduces to 64 effective components that decompose
+     in the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk. After Sp(2,R) gauge fixing, this reduces to 64 effective components that decompose
                 into three generations of Standard Model fermions:
     </p>
     <div class="spinor-diagram">
@@ -14717,7 +14717,7 @@
          Mass dimension 1
         </div>
         <div class="var-contribution">
-         Propagation of the Pneuma field through 26D spacetime
+         Propagation of the Pneuma field through <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime
         </div>
        </div>
       </span>
@@ -16029,17 +16029,17 @@
                 from the exponentially varying overlaps of wavefunctions localized at different points in the internal
                 geometry—a natural consequence of the Pneuma condensate structure.
     </p>
-    <!-- b₃=24 Co-associative Cycles Control Yukawa Textures -->
+    <!-- b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> Co-associative Cycles Control Yukawa Textures -->
     <div class="highlight-box" style="border-left-color: #8b7fff; background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(81, 207, 102, 0.08)); margin-top: 1.5rem;">
      <h4 style="color: #8b7fff;">
-      Geometric Origin: b₃=24 Co-associative Cycles Control Yukawa Textures
+      Geometric Origin: b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> Co-associative Cycles Control Yukawa Textures
      </h4>
      <p>
       The Yukawa coupling textures have a precise geometric origin in the
       <strong>
        TCS G₂ manifold
       </strong>
-      with b₃=24
+      with b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>
       <a href="https://arxiv.org/abs/1809.09083" style="color: var(--accent-primary); font-size: 0.85rem;" target="_blank">
        [CHNP arXiv:1809.09083]
       </a>
@@ -16050,7 +16050,7 @@
        <strong>
         Co-associative 4-cycles:
        </strong>
-       The b₃=24 co-associative cycles (calibrated 4-dimensional submanifolds)
+       The b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> co-associative cycles (calibrated 4-dimensional submanifolds)
                         control the complex structure moduli of the G₂ manifold. These cycles are dual to the associative 3-cycles and
                         preserve the Cayley 4-form.
       </li>
@@ -16114,7 +16114,7 @@
         Neutrino mixing connection:
        </strong>
        The perfect alignment α₄ = α₅ = 0.576152 arises from the geometric torsion constraint,
-                        giving α₄ - α₅ = 0.0 exactly and yielding maximal mixing θ₂₃ = 45.0°.
+                        giving α₄ - α₅ = 0.0 exactly and yielding maximal mixing <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°.
       </li>
       <li>
        <strong>
@@ -16145,7 +16145,7 @@
         eff
        </sub>
        = 6×ν = 6×24
-                        from flux quantization. The b₃=24 cycles directly enter the flux-dressed Euler characteristic
+                        from flux quantization. The b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> cycles directly enter the flux-dressed Euler characteristic
                         that determines generation count and mixing patterns.
       </p>
      </div>
@@ -17975,9 +17975,9 @@
        </h4>
       </div>
       <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
-       <strong style="color: #51cf66;">Major Validation:</strong> NuFIT 6.0 update shows θ₂₃ central value shifted from 47.2° → 45.0° (exactly maximal mixing),
+       <strong style="color: #51cf66;">Major Validation:</strong> NuFIT 6.0 update shows θ₂₃ central value shifted from 47.2° → <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° (exactly maximal mixing),
        validating the framework prediction that emerges from symmetric 4-cycle and 5-cycle embeddings (α₄ = α₅ = 0.576152).
-       This confirms the geometric constraint θ₂₃ = 45° + (α₄ - α₅) × n = 45° + 0 = <strong>45.0°</strong> exactly.
+       This confirms the geometric constraint θ₂₃ = 45° + (α₄ - α₅) × n = 45° + 0 = <strong><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong> exactly.
       </p>
      </div>
      <div class="concept-highlight" style="margin-top: 1.5rem; background: rgba(81, 207, 102, 0.12); border-left: 4px solid #51cf66;">
@@ -18014,7 +18014,7 @@
         Zero free parameters:
        </strong>
        Unlike phenomenological models that fit angles to data, all four values
-                        emerge geometrically from the b₃=24 coassociative cycle structure of the G₂ manifold with no adjustable parameters.
+                        emerge geometrically from the b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> coassociative cycle structure of the G₂ manifold with no adjustable parameters.
       </p>
      </div>
     </div>
@@ -18027,7 +18027,7 @@
       Pneuma
      </sub>
      ,
-                specifically from the associative (b₂=4) and coassociative (b₃=24) cycle structure of the TCS G₂ topology.
+                specifically from the associative (b₂=4) and coassociative (b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>) cycle structure of the TCS G₂ topology.
                 These cycles encode how right-handed neutrinos localize on different regions of K
      <sub>
       Pneuma
@@ -18166,7 +18166,7 @@
         Physical Origin:
        </p>
        <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0;">
-        Deviation from tri-bimaximal mixing due to G₂ cycle topology. The b₃=24 coassociative cycle
+        Deviation from tri-bimaximal mixing due to G₂ cycle topology. The b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> coassociative cycle
                             perturbs the symmetric ν
         <sub>
          e
@@ -18209,7 +18209,7 @@
         )
        </div>
        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0;">
-        where b₂ = 4, b₃ = 24, ν = 24, n
+        where b₂ = 4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>, ν = 24, n
         <sub>
          gen
         </sub>
@@ -19044,7 +19044,7 @@
     <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
      <li>
       <strong>
-       b₃ = 24 coassociative 3-cycles:
+       b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> coassociative 3-cycles:
       </strong>
       Sets the fundamental scale for θ₁₂ and θ₁₃ through wavefunction overlap integrals
                     (see
@@ -19174,7 +19174,7 @@
        independent confirmation
       </strong>
       of the G₂ geometric framework,
-                    complementing the gauge coupling unification and Higgs mass predictions (m<sub>h</sub> = 125.10 GeV via derived Re(T) = 7.086). With two agreement(s) with experiment and 0.09σ average deviation,
+                    complementing the gauge coupling unification and Higgs mass predictions (m<sub>h</sub> = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV via derived Re(T) = 7.086). With two agreement(s) with experiment and 0.09σ average deviation,
                     this represents one of the most precise geometric predictions in the entire framework.
      </p>
     </div>
@@ -19255,7 +19255,7 @@
      </div>
     </div>
     <p>
-     Summing over all b₃ = 24 coassociative cycles with orientation signs ε
+     Summing over all b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> coassociative cycles with orientation signs ε
      <sub>
       i
      </sub>
@@ -19283,7 +19283,7 @@
          </sub>
         </div>
         <div class="var-description">
-         Total Atiyah-Singer index summed over all b₃=24 associative 3-cycles
+         Total Atiyah-Singer index summed over all b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> associative 3-cycles
         </div>
         <div class="var-units">
          Dimensionless (topological invariant)
@@ -19673,7 +19673,7 @@
      <span class="pm-value" data-category="neutrino_mass_ordering" data-format="display" data-param="prob_NH">
      </span>
      ).
-                The mass eigenvalues are constrained by the measured mass-squared differences Δm²₂₁ = 7.53×10⁻⁵ eV²
+                The mass eigenvalues are constrained by the measured mass-squared differences <span class="pm-value" data-pm-value="neutrino_mass.delta_m_sq" data-format="scientific:2"></span> eV²
                 and Δm²₃₂ = ±2.45×10⁻³ eV² (NuFIT 6.0, 2025).
     </p>
     <h4 style="color: var(--accent-primary); margin-top: 1.5rem;">
@@ -21765,7 +21765,7 @@
       Exceptional agreement with NuFIT 6.0 (2025) global fit (
       <span class="pm-value" data-category="pmns_matrix" data-format="fixed:2" data-param="avg_sigma">
       </span>
-      σ average) — <span style="color: #51cf66; font-weight: 700;">NuFIT 6.0 update confirms θ₂₃ = 45.0° maximal mixing prediction</span>
+      σ average) — <span style="color: #51cf66; font-weight: 700;">NuFIT 6.0 update confirms θ₂₃ = <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° maximal mixing prediction</span>
       <br/>
       <strong>
        Data:
@@ -21787,7 +21787,7 @@
       </h4>
       <p style="margin-bottom: 0.75rem;">
        Unlike phenomenological models that fit mixing angles to data, these values emerge directly
-                        from the b₃=24 coassociative cycle structure of the TCS G₂ manifold. The large mixing angles
+                        from the b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> coassociative cycle structure of the TCS G₂ manifold. The large mixing angles
                         (compared to small CKM angles) reflect the different localization patterns of right-handed
                         neutrinos on K
        <sub>
@@ -22314,14 +22314,14 @@
         <h4 style="color: var(--accent-primary);">26D &rarr; 13D Shadow Projection via Sp(2,R) Gauging</h4>
 
         <p>
-          The framework begins with a <strong>26-dimensional bulk</strong> with signature (24,2), containing two timelike dimensions.
+          The framework begins with a <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</strong> with signature (24,2), containing two timelike dimensions.
           This projects via <strong>Sp(2,R) gauge fixing</strong> to a <strong>13D shadow with signature (12,1)</strong>, a symmetry that constrains the two-time dynamics and eliminates ghost degrees of freedom. The 13D shadow contains 12 spatial dimensions + 1 effective temporal dimension.
         </p>
 
         <div class="theorem-box" style="background: rgba(139, 127, 255, 0.08);">
           <h5 style="color: var(--accent-primary);">Step-by-Step Derivation: Dimensional Reduction</h5>
 
-          <p><strong>Step 1: 26D Bulk Metric</strong></p>
+          <p><strong>Step 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk Metric</strong></p>
           <div class="equation-box">
             <span class="eq-content">
               ds<sup>2</sup><sub>26</sub> = G<sub>MN</sub>dX<sup>M</sup>dX<sup>N</sup>, &nbsp;&nbsp; M,N = 0,1,...,25
@@ -22448,7 +22448,7 @@
             </span>
           </div>
           <p style="margin-top: 0.75rem;">
-            where α₄ = 0.576152 and α₅ = 0.576152 are derived from the TCS (Twisted Connected Sum) G₂ manifold with b₂=4, b₃=24:
+            where α₄ = 0.576152 and α₅ = 0.576152 are derived from the TCS (Twisted Connected Sum) G₂ manifold with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>:
           </p>
           <ul style="margin-left: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
             <li>α₄ + α₅ from torsion logarithm T<sub>ω</sub> = ln(4 sin²(kπ/q)) with k=5 (D₅), q=48 (SO(10))</li>
@@ -22587,7 +22587,7 @@
         <h4 style="color: #51cf66;">Pneuma Field Reduction: 8192 &rarr; 64 Components</h4>
 
         <p>
-          The Pneuma spinor field &Psi;<sub>P</sub> has <strong>8192 components</strong> in the full 26D bulk
+          The Pneuma spinor field &Psi;<sub>P</sub> has <strong>8192 components</strong> in the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk
           (from Majorana-Weyl condition in (24,2) signature). Upon compactification and symmetry breaking,
           this reduces to <strong>64 effective components</strong> in the 4D effective theory.
         </p>
@@ -23824,7 +23824,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 2px solid #51cf66;">
             <h5 style="color: #51cf66; margin-bottom: 0.5rem;">Key Validation Results</h5>
             <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-              <li><strong>w₀ = <span class="pm-value" data-pm-value="v12_7_pure_geometric.w0_predicted.w0"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
+              <li><strong>w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
               <li><strong>Planck tension: 6σ → 1.3σ</strong> — Resolved via F(R,T) breathing mode bias (Δw₀ = -0.10)</li>
               <li><strong>w(z) logarithmic evolution</strong> — Frozen at z>3000, active at z<10 (testable with Euclid)</li>
               <li><strong>2T corrections:</strong> w<sub>a</sub> = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66σ agreement via orthogonal time t<sub>ortho</sub> friction</li>
@@ -23845,7 +23845,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </h4>
 
           <p style="font-size: 1.05rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
-            The Dark Energy Spectroscopic Instrument (DESI) Data Release 2 provides the most precise measurements of dark energy evolution to date, based on 5.7 million galaxies and quasars spanning redshifts 0.1 &lt; z &lt; 4.2. The results show <strong>4.2σ detection of evolving dark energy</strong>, directly <strong>validating</strong> the Principia Metaphysica geometric prediction w₀ = -0.8527 from 13D shadow dimensional reduction.
+            The Dark Energy Spectroscopic Instrument (DESI) Data Release 2 provides the most precise measurements of dark energy evolution to date, based on 5.7 million galaxies and quasars spanning redshifts 0.1 &lt; z &lt; 4.2. The results show <strong>4.2σ detection of evolving dark energy</strong>, directly <strong>validating</strong> the Principia Metaphysica geometric prediction <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span> from 13D shadow dimensional reduction.
           </p>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
@@ -24872,7 +24872,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
         <!-- Brane Configuration Diagram -->
         <div class="phase-diagram" style="margin-bottom: 2rem;">
-          <h5 style="color: #4facfe; font-size: 1.2rem; margin-bottom: 1rem;">Brane Configuration in 26D Bulk</h5>
+          <h5 style="color: #4facfe; font-size: 1.2rem; margin-bottom: 1rem;">Brane Configuration in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk</h5>
           <svg class="diagram-svg" viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="bulkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -24888,9 +24888,9 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               </filter>
             </defs>
 
-            <!-- Background representing 26D bulk -->
+            <!-- Background representing <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk -->
             <rect width="900" height="550" fill="url(#bulkGrad)"/>
-            <text x="450" y="30" fill="#4facfe" font-size="18" font-weight="700" text-anchor="middle">26D Bulk: SO(24,2) Signature</text>
+            <text x="450" y="30" fill="#4facfe" font-size="18" font-weight="700" text-anchor="middle"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk: SO(24,2) Signature</text>
 
             <!-- Central (5,2) brane -->
             <g filter="url(#glow)">
@@ -24952,7 +24952,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="175" y="468" fill="#f8f9fa" font-size="10" text-anchor="middle">+2: Two-time correction</text>
           </svg>
           <div class="diagram-caption">
-            <strong>Figure 2: Brane Configuration in 26D Bulk.</strong> The framework contains one primary (5,2) brane
+            <strong>Figure 2: Brane Configuration in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk.</strong> The framework contains one primary (5,2) brane
             (green) hosting our observable 4D universe, plus three auxiliary (3,2) branes (purple). The configuration
             (5,2) + 3×(3,2) is BPS-protected with total CFT central charge c = 24 - 26 + 2 = 0, ensuring quantum
             consistency. The Mashiach field φₘ (pink dashed path) propagates in the 6D effective bulk, not confined
@@ -26477,10 +26477,10 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
             <p>
                 In the full 26-dimensional Principia Metaphysica framework, the thermal time
-                discussed above corresponds to one of <em>two</em> fundamental time dimensions. The familiar 13D effective
+                discussed above corresponds to one of <em>two</em> fundamental time dimensions. The familiar <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective
                 theory arises as a gauge-fixed shadow of the complete 26D structure, where the second time dimension
                 becomes hidden through dimensional reduction. Further compactification on the explicit TCS G₂ manifold
-                (b₂=4, b₃=24) yields the observable 4D spacetime with geometric parameters α₄ = 0.576152, α₅ = 0.576152
+                (b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>) yields the observable 4D spacetime with geometric parameters α₄ = 0.576152, α₅ = 0.576152
                 entering the effective dimension d<sub>eff</sub> = 12 + 0.5(α₄+α₅) = 12.589.
             </p>
 
@@ -26640,7 +26640,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                 <div class="note-box">
                     <h5>26D to 13D Reduction</h5>
                     <p>
-                        The 13D effective theory is not a separate framework but rather the gauge-fixed shadow of the
+                        The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective theory is not a separate framework but rather the gauge-fixed shadow of the
                         complete 26D structure. The factor of 2 (26 = 2 &times; 13) reflects the mirror symmetry between
                         observable and hidden sectors, each contributing one copy of the effective 13D geometry.
                         When t<sub>ortho</sub> is integrated out, we recover all predictions of the single-time TTH.
@@ -26671,7 +26671,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             </div>
 
             <p>
-                The presence of two timelike dimensions in the 26D bulk raises immediate concerns about
+                The presence of two timelike dimensions in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk raises immediate concerns about
                 <span class="tooltip">unitarity<span class="tooltiptext">The principle that probability is conserved in quantum mechanics; states evolve unitarily so that &lang;&psi;|&psi;&rang; = 1 is preserved.</span></span>
                 and the appearance of
                 <span class="tooltip">ghost states<span class="tooltiptext">States with negative norm in the Hilbert space, arising from timelike gauge fields, which violate the probabilistic interpretation of quantum mechanics.</span></span>.
@@ -26699,9 +26699,9 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                         </marker>
                     </defs>
 
-                    <!-- Stage 1: 26D Bulk -->
+                    <!-- Stage 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk -->
                     <rect x="40" y="20" width="870" height="90" rx="12" fill="url(#bulkGrad)" stroke="rgba(155,89,182,0.6)" stroke-width="3"/>
-                    <text x="475" y="50" text-anchor="middle" fill="white" font-weight="700" font-size="16">STAGE 1: 26D Bulk with (24,2) Signature</text>
+                    <text x="475" y="50" text-anchor="middle" fill="white" font-weight="700" font-size="16">STAGE 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk with (24,2) Signature</text>
                     <text x="475" y="72" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12">24 spatial dimensions + 2 timelike dimensions (t₁, t₂)</text>
                     <text x="475" y="92" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">⚠ Unitarity problem: negative-norm states from 2nd time</text>
 
@@ -26769,7 +26769,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                 <div class="diagram-caption">
                     <strong>The Complete Journey from 2T Bulk to 1T Thermal Time:</strong> This comprehensive flow diagram shows
                     how the single thermal time we experience emerges from a 26-dimensional bulk with <strong>two timelike dimensions</strong>.
-                    <strong>Stage 1:</strong> The 26D bulk has signature (24,2) with two times (t₁, t₂), creating a unitarity problem.
+                    <strong>Stage 1:</strong> The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has signature (24,2) with two times (t₁, t₂), creating a unitarity problem.
                     <strong>Stage 2:</strong> The <strong>Sp(2,R) gauge symmetry</strong> provides three constraints (X²=0, P²=0, X·P=0)
                     that relate the two times. <strong>Stage 3:</strong> Choosing the gauge X⁰ = τ eliminates the second time as an
                     independent variable, leaving one effective time τ. <strong>Stage 4:</strong> <strong>BRST quantization</strong>
@@ -26786,7 +26786,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                 <h5>Sp(2,R) Gauge Group</h5>
                 <p>
                     The symplectic group Sp(2,R) &cong; SL(2,R) is a 3-parameter gauge group acting on the phase space
-                    coordinates (X<sup>&mu;</sup>, P<sup>&mu;</sup>) in the 26D bulk. It generates three gauge constraints:
+                    coordinates (X<sup>&mu;</sup>, P<sup>&mu;</sup>) in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk. It generates three gauge constraints:
                 </p>
                 <ul>
                     <li><strong>L<sub>0</sub></strong>: Phase space dilation (worldline reparametrization)</li>
@@ -26842,7 +26842,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <div class="subsection">
                 <h4>The (24,2) Signature and Two-Time Structure</h4>
                 <p>
-                    The 26-dimensional bulk has signature (24,2), meaning 24 spacelike dimensions and 2 timelike dimensions.
+                    The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D has signature (24,2), meaning 24 spacelike dimensions and 2 timelike dimensions.
                     The metric is:
                 </p>
 
@@ -27009,7 +27009,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                         </g>
                     </svg>
                     <div class="diagram-caption">
-                        <strong>From Two Times to One:</strong> The 26D bulk has signature (24,2) with two timelike dimensions,
+                        <strong>From Two Times to One:</strong> The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has signature (24,2) with two timelike dimensions,
                         which naively threatens unitarity and causality. However, the <strong>Sp(2,R) gauge symmetry</strong>
                         provides three constraints (L₀, L₊, L₋) that relate the two times. By choosing a gauge where X⁰ = τ,
                         we eliminate the second time t₂ as an independent degree of freedom—it becomes a composite function
@@ -27563,7 +27563,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
                         The logical chain is:
                     </p>
                     <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin-top: 0.75rem; font-family: monospace; font-size: 0.95rem;">
-                        26D bulk (24,2 signature)<br>
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,2 signature)<br>
                         &nbsp;&nbsp;&darr; Sp(2,R) gauge fixing<br>
                         Effective 1D worldline with parameter &tau;<br>
                         &nbsp;&nbsp;&darr; Quantum field theory (Pneuma field)<br>
@@ -29821,7 +29821,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <div class="var-name">&chi;<sub>eff</sub></div>
               <div class="var-description">Effective Euler characteristic (flux-dressed) from 26D framework</div>
               <div class="var-units">Dimensionless</div>
-              <div class="var-contribution">&chi;<sub>eff</sub> = 144 from G₂ manifold topology with b₂=4, b₃=24</div>
+              <div class="var-contribution">&chi;<sub>eff</sub> = 144 from G₂ manifold topology with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></div>
             </div>
           </span>
           <span class="formula-op">/</span>
@@ -30746,7 +30746,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         </p>
         <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
           <li><strong>Hybrid suppression:</strong> Base geometric (~40) × Flux enhancement (~3.1) = 124 total suppression</li>
-          <li><strong>Flux quantization:</strong> χ_eff = 144 from G₂ topology validated by flux scanner (41% probability)</li>
+          <li><strong>Flux quantization:</strong> χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> from G₂ topology validated by flux scanner (41% probability)</li>
           <li><strong>Right-handed masses:</strong> M_R scales quadratically with flux: M_R1 > M_R2 > M_R3</li>
           <li><strong>Cycle bias:</strong> Realistic 28% positive bias → 76% NH confidence</li>
         </ul>
@@ -30801,13 +30801,13 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
       <!-- Neutrino Mixing Angle Prediction from G₂ Geometry -->
       <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08)); margin-top: 1.5rem; margin-bottom: 1.5rem;">
-        <h4 style="color: #51cf66;">Geometric Prediction: θ₂₃ = 45.0° (Maximal Mixing from Torsion Constraint)</h4>
+        <h4 style="color: #51cf66;">Geometric Prediction: <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° (Maximal Mixing from Torsion Constraint)</h4>
         <p>
           The atmospheric neutrino mixing angle θ₂₃ is <strong>geometrically derived</strong> from the TCS G₂ manifold
           torsion constraint with perfect alignment:
         </p>
         <div style="text-align: center; font-size: 1.15rem; margin: 1rem 0; padding: 1rem; background: rgba(81, 207, 102, 0.15); border-radius: 8px;">
-          θ₂₃ = 45° + n<sub>gen</sub> × (α₄ - α₅) = 45° + 3 × 0.0° = <strong style="color: #51cf66;">45.0°</strong>
+          θ₂₃ = 45° + n<sub>gen</sub> × (α₄ - α₅) = 45° + 3 × 0.0° = <strong style="color: #51cf66;"><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong>
         </div>
         <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.8;">
           <li>
@@ -30821,13 +30821,13 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <strong>Maximal mixing:</strong> Zero deviation from 45° indicates perfect symmetry between μ and τ sectors
           </li>
           <li>
-            <strong>Experimental value:</strong> θ₂₃ = 45.0° ± 1.5° (NuFIT 6.0, 2025) - agrees with central value.
+            <strong>Experimental value:</strong> <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° ± 1.5° (NuFIT 6.0, 2025) - agrees with central value.
           </li>
         </ul>
         <div style="background: rgba(81, 207, 102, 0.2); padding: 1rem; margin-top: 1rem; border-radius: 8px;">
           <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
             The framework derives α₄ and α₅ <strong>geometrically from torsion</strong>, yielding perfect maximal mixing
-            θ₂₃ = 45.0° with no free parameters—in precise agreement with NuFIT 6.0 central value.
+            <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° with no free parameters—in precise agreement with NuFIT 6.0 central value.
           </p>
         </div>
       </div>
@@ -30879,7 +30879,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         </div>
       </div>
       <p>
-        where the index theorem on b₃=24 cycles determines m<sub>3</sub> &lt; m<sub>1</sub> &lt; m<sub>2</sub> (inverted hierarchy).
+        where the index theorem on b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> cycles determines m<sub>3</sub> &lt; m<sub>1</sub> &lt; m<sub>2</sub> (inverted hierarchy).
       </p>
 
       <h4>Complete PMNS Parameters: Theory vs Experiment</h4>
@@ -33038,7 +33038,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     <p>
      The Principia Metaphysica framework presents a unified geometric description of fundamental
                 physics, deriving the Standard Model and gravity from a 26D structure with signature (24,2).
-                The two-time framework projects to a 13D effective shadow, which compactifies on a 7D G₂ manifold
+                The two-time framework projects to a <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective shadow, which compactifies on a 7D G₂ manifold
                 to yield a 6D effective bulk with heterogeneous branes, from which all observable physics emerges.
                 The key results achieved are:
     </p>
@@ -33154,17 +33154,17 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08));">
       <h4 style="color: #51cf66;">Geometric Unification Complete</h4>
       <p>
-        The breakthrough derivation of Re(T) = 7.086 from the measured Higgs mass (<span class="pm-value" data-pm-value="v12_7_pure_geometric.flux_stab_pure.m_h_GeV"></span> GeV)
+        The breakthrough derivation of Re(T) = 7.086 from the measured Higgs mass (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV)
         completes the geometric unification program. The modulus T is no longer a free parameter
         but is determined by experimental data, while λ₀ comes from SO(10) matching. Together
         they form a fully predictive, swampland-compliant framework.
       </p>
       <ul style="margin-left: 1.5rem; line-height: 1.8;">
-        <li>✅ Higgs mass: <span class="pm-value" data-pm-value="v12_7_pure_geometric.flux_stab_pure.m_h_GeV"></span> GeV (matches PDG 2024)</li>
-        <li>✅ VEV: <span class="pm-value" data-pm-value="v12_7_pure_geometric.vev_pure.v_GeV"></span> GeV (0.017% error)</li>
-        <li>✅ 1/α_GUT: <span class="pm-value" data-pm-value="v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv"></span> (matches NuFIT 6.0)</li>
-        <li>✅ w₀: <span class="pm-value" data-pm-value="v12_7_pure_geometric.w0_predicted.w0"></span> (0.38σ from DESI)</li>
-        <li>✅ Proton lifetime: <span class="pm-value" data-pm-value="v12_7_pure_geometric.proton_lifetime_predicted.tau_p_years"></span> years</li>
+        <li>✅ Higgs mass: <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV (matches PDG 2024)</li>
+        <li>✅ VEV: <span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV (0.017% error)</li>
+        <li>✅ 1/α_GUT: <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span> (matches NuFIT 6.0)</li>
+        <li>✅ w₀: <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span> (0.38σ from DESI)</li>
+        <li>✅ Proton lifetime: <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> years</li>
         <li>✅ Swampland valid: Δφ<sub>Higgs</sub> = 1.958 > 0.816</li>
         <li>✅ Calibration: Only 2 factors (56/58 SM parameters predictive)</li>
         <li>✅ Dual consistency: UV ↔ IR agreement < 1%</li>
@@ -33202,7 +33202,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </sub>
          </div>
          <div class="var-description">
-          The full 26-dimensional bulk spacetime manifold with signature (24,2) - two timelike dimensions enable mirror sector and derive w
+          The full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime manifold with signature (24,2) - two timelike dimensions enable mirror sector and derive w
           <sub>
            a
           </sub>
@@ -33212,7 +33212,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           Geometric manifold
          </div>
          <div class="var-contribution">
-          Projects to 13D effective shadow (observable physics) via Sp(2,R) gauge fixing.
+          Projects to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective shadow (observable physics) via Sp(2,R) gauge fixing.
          </div>
         </div>
        </span>
@@ -33275,7 +33275,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           Geometric manifold (G₂ holonomy)
          </div>
          <div class="var-contribution">
-          ADE singularities yield SO(10) gauge symmetry; flux-dressed topology determines 3 fermion generations via index theorem (χ_eff=144).
+          ADE singularities yield SO(10) gauge symmetry; flux-dressed topology determines 3 fermion generations via index theorem (χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span>).
          </div>
         </div>
        </span>
@@ -36459,7 +36459,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
        </sub>
        <div class="var-tooltip">
         <div class="var-name">
-         13D Spacetime
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Spacetime
         </div>
         <div class="var-desc">
          Complete 13-dimensional spacetime manifold
@@ -36541,7 +36541,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       </span>
      </div>
      <p class="formula-description">
-      13D spacetime decomposes into observable 4D times a 9D Calabi-Yau 4-fold.
+      <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D spacetime decomposes into observable 4D times a 9D Calabi-Yau 4-fold.
                     The isometries of K
       <sub>
        Pneuma
@@ -38554,7 +38554,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         <sub>
          h
         </sub>
-        = 125.10 GeV; swampland compliance
+        = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV; swampland compliance
        </td>
        <td>
         <span class="status-badge status-resolved">
@@ -40610,7 +40610,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       Effective Field Theory Framework
      </h4>
      <p style="color: var(--text-secondary);">
-      The 26D (24,2) spacetime formulation properly treats the theory as an EFT. The 26D structure projects to 13D effective shadow
+      The 26D (24,2) spacetime formulation properly treats the theory as an EFT. The 26D structure projects to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective shadow
           where scalar fields [φ] = 5.5, fermion fields [ψ] = 6. All couplings have negative mass dimension,
           making the EFT paradigm mandatory. This provides systematic power counting and connects to UV completion discussions.
      </p>
@@ -41204,7 +41204,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     </h2>
     <p>
      The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the
-                full 26-dimensional spacetime with signature (24,2). After gauge fixing 13 dimensions, we obtain an
+                full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional spacetime with signature (24,2). After gauge fixing 13 dimensions, we obtain an
                 effective 13D theory. Each component has specific physical meaning:
     </p>
     <div class="term-breakdown">
@@ -41287,7 +41287,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         M
        </sub>
        where M runs over all 26 dimensions
-                        (effective 13D after gauge fixing). Γ
+                        (effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D after gauge fixing). Γ
        <sup>
         M
        </sup>
@@ -41715,7 +41715,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         AB
        </sup>
       </strong>
-      - Spin connection from 26D gravity (reduces to 13D effective spin connection)
+      - Spin connection from 26D gravity (reduces to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective spin connection)
      </li>
      <li>
       <strong>
@@ -41840,7 +41840,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
      </sub>
      is realized as an explicit
                 TCS (Twisted Connected Sum) G₂ manifold with Betti numbers b₂=4 (associative cycles hosting D₅ singularity
-                for SO(10) gauge symmetry) and b₃=24 (co-associative cycles controlling Yukawa textures), constructed via
+                for SO(10) gauge symmetry) and b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> (co-associative cycles controlling Yukawa textures), constructed via
                 π/6 hyper-Kähler rotation following Corti-Haskins-Nordenstam-Pacini (arXiv:1809.09083).
     </p>
     <h3>
@@ -41906,7 +41906,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
          ) — Euler Characteristic
         </div>
         <div class="var-description">
-         Topological invariant from TCS G₂ manifold (b₂=4, b₃=24). Flux-dressed: χ
+         Topological invariant from TCS G₂ manifold (b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>). Flux-dressed: χ
          <sub>
           eff
          </sub>
@@ -42334,7 +42334,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       <sub>
        Pneuma
       </sub>
-      . The Euler characteristic χ = 144 arises from the Hodge number
+      . The Euler characteristic χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> arises from the Hodge number
                     h
       <sup>
        3,1
@@ -42482,7 +42482,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     </h2>
     <p>
      Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes)
-                propagating in the full 26D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional
+                propagating in the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional
                 origin and the role of Sp(2,R) gauge symmetry.
     </p>
     <h3>
@@ -42511,7 +42511,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
          — p-Brane Action
         </div>
         <div class="var-description">
-         Total action for a p-dimensional extended object in 26D spacetime
+         Total action for a p-dimensional extended object in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime
         </div>
         <div class="var-units">
          Dimensionless (action)
@@ -42696,7 +42696,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
       2T Physics Framework
      </h4>
      <p>
-      This action is formulated in the full 26D spacetime with two time dimensions. The Sp(2,R) gauge symmetry
+      This action is formulated in the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with two time dimensions. The Sp(2,R) gauge symmetry
                     acts on the embedding coordinates X
       <sup>
        M
@@ -42709,7 +42709,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
      Brane Configuration: Observable and Shadow Branes
     </h3>
     <p>
-     The Pneuma sector consists of four distinct p-branes embedded in the 26D spacetime. Before gauge fixing,
+     The Pneuma sector consists of four distinct p-branes embedded in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime. Before gauge fixing,
                 each brane has two timelike dimensions:
     </p>
     <div class="term-breakdown">
@@ -42818,7 +42818,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
          Position Null Constraint
         </div>
         <div class="var-desc">
-         Embedding coordinates lie on the null cone in 26D spacetime (24,2)
+         Embedding coordinates lie on the null cone in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime (24,2)
         </div>
        </div>
       </span>
@@ -42925,7 +42925,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     </p>
     <ul style="color: var(--text-secondary); line-height: 2;">
      <li>
-      The brane world-volume is properly embedded in the null cone of 26D spacetime
+      The brane world-volume is properly embedded in the null cone of <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime
      </li>
      <li>
       Only physical (gauge-invariant) degrees of freedom propagate
@@ -43184,7 +43184,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
      Complete Lagrangian Hierarchy
     </h2>
     <p>
-     The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable
+     The following presents the complete hierarchy of Lagrangians from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk action down to 4D observable
                 physics. Each level emerges naturally from dimensional reduction
                 and gauge fixing, with fermionic primacy maintained throughout.
     </p>
@@ -43192,7 +43192,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
      1. Master Bulk Action (26D)
     </h3>
     <p>
-     The fundamental action in full 26D spacetime with signature (24,2), emphasizing fermionic primacy:
+     The fundamental action in full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with signature (24,2), emphasizing fermionic primacy:
     </p>
     <div class="interactive-formula" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.12), rgba(139, 127, 255, 0.08)); border: 2px solid rgba(255, 126, 182, 0.4); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
      <span class="formula-hint">
@@ -43401,7 +43401,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
          <sub>
           13D
          </sub>
-         - 13D Effective Lagrangian
+         - <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Effective Lagrangian
         </div>
         <div class="var-desc">
          Effective theory after gauge fixing one time dimension
@@ -43449,7 +43449,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
          - 13D Ricci Scalar
         </div>
         <div class="var-desc">
-         Curvature in effective 13D spacetime with signature (12,1)
+         Curvature in effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D spacetime with signature (12,1)
         </div>
        </div>
       </span>
@@ -43592,7 +43592,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
      </p>
      <p style="margin-top: 0.75rem; padding: 0.75rem; background: rgba(81, 207, 102, 0.1); border-radius: 6px; font-size: 0.95rem;">
       The complex structure modulus Re(T) = 7.086 is derived from the measured
-      Higgs mass (125.10 GeV), completing the moduli stabilization picture
+      Higgs mass (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV), completing the moduli stabilization picture
       with full swampland compliance.
      </p>
     </div>
@@ -45963,7 +45963,7 @@ num_kurt = N(kurtosis.subs({excess:0.01, sigma_cmb2:3e-3}))
             <h2>Component Breakdown</h2>
             <p>
                 The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the
-                full 26-dimensional spacetime with signature (24,2). After gauge fixing 13 dimensions, we obtain an
+                full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional spacetime with signature (24,2). After gauge fixing 13 dimensions, we obtain an
                 effective 13D theory. Each component has specific physical meaning:
             </p>
 
@@ -45992,7 +45992,7 @@ num_kurt = N(kurtosis.subs({excess:0.01, sigma_cmb2:3e-3}))
                     <h4>Kinetic Term</h4>
                     <p>
                         The covariant Dirac operator: &Gamma;<sup>M</sup>D<sub>M</sub> where M runs over all 26 dimensions
-                        (effective 13D after gauge fixing). &Gamma;<sup>M</sup> are 8192&times;8192 matrices in 26D Cl(24,2),
+                        (effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D after gauge fixing). &Gamma;<sup>M</sup> are 8192&times;8192 matrices in 26D Cl(24,2),
                         64&times;64 in effective 13D Cl(12,1).
                     </p>
                 </div>
@@ -46135,7 +46135,7 @@ num_kurt = N(kurtosis.subs({excess:0.01, sigma_cmb2:3e-3}))
             <h3>Components</h3>
             <ul style="color: var(--text-secondary); line-height: 2;">
                 <li><strong>&part;<sub>M</sub></strong> - Partial derivative in coordinate direction M (26 directions in full theory, 13 effective)</li>
-                <li><strong>&omega;<sub>M</sub><sup>AB</sup></strong> - Spin connection from 26D gravity (reduces to 13D effective spin connection)</li>
+                <li><strong>&omega;<sub>M</sub><sup>AB</sup></strong> - Spin connection from 26D gravity (reduces to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective spin connection)</li>
                 <li><strong>&Gamma;<sub>AB</sub></strong> - Antisymmetric product &frac12;[&Gamma;<sub>A</sub>, &Gamma;<sub>B</sub>], generators of Spin(24,2) in 26D, Spin(12,1) effective</li>
                 <li><strong>A<sub>M</sub><sup>a</sup></strong> - Gauge connection (from isometries of K<sub>Pneuma</sub>)</li>
                 <li><strong>T<sup>a</sup></strong> - Gauge group generators (SO(10) in this framework)</li>

@@ -195,7 +195,7 @@
             <strong>Note:</strong> These appendices contain working code implementations that validate
             key predictions from the Principia Metaphysica 2T physics framework (26D (24,2) → Sp(2,R) → 13D (12,1)). All code uses industry-standard
             scientific Python libraries (SymPy for symbolic mathematics, QuTiP for quantum simulations)
-            and follows best practices in theoretical physics. The 13D shadow structure emerges from Sp(2,R) gauge fixing of the 26D bulk.
+            and follows best practices in theoretical physics. The 13D shadow structure emerges from Sp(2,R) gauge fixing of the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk.
         </div>
 
         <!-- Appendix A: GW Dispersion -->
@@ -204,7 +204,7 @@
 
             <p>
                 This appendix derives and numerically evaluates the modified gravitational wave dispersion
-                relation arising from the 2T physics framework. The 26-dimensional bulk with signature
+                relation arising from the 2T physics framework. The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D with signature
                 (24,2) reduces via Sp(2,R) gauge fixing to 13 physical dimensions (12,1) with 1 effective time.
                 The key innovation is the linear correction term from orthogonal time (t<sub>ortho</sub>) in the 2T invariants, which boosts the effect
                 from untestable (~10<sup>-32</sup>) to near-LISA sensitivity (~10<sup>-15</sup> Hz).
@@ -372,7 +372,7 @@ linear_term = <span class="function">N</span>(eta * k * Delta_t / c).subs(params
 
             <div style="background: rgba(139,127,255,0.1); border-left: 4px solid #8b7fff; padding: 1rem; margin: 1rem 0; border-radius: 4px;">
                 <strong style="color: #8b7fff;">2T Parameter Space:</strong> The swampland parameter a = √(26/13) ≈ 1.414
-                emerges naturally from the 26D bulk with signature (24,2). The orthogonal time periodicity adds a
+                emerges naturally from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk with signature (24,2). The orthogonal time periodicity adds a
                 cos(φ/R<sub>ortho</sub>) term that breaks degeneracies in the moduli space.
             </div>
 
