@@ -846,56 +846,62 @@
      <div class="formula-expansion">
       <div style="background: rgba(139, 127, 255, 0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
        <h4 style="color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.1rem;">
-        Level 1: <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow Action (Sp(2,ℝ) gauge fixed)
+        Level 1: <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow Action (Sp(2,R) gauge fixed)
        </h4>
-       <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; text-align: center; margin: 1rem 0;">
-        S
-        <sub>
-         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D
-        </sub>
-        = ∫ d
-        <sup>
-         13
-        </sup>
-        x √|G
-        <sub>
-         (12,1)
-        </sub>
-        | [M
-        <sub>
-         *
-        </sub>
-        <sup>
-         11
-        </sup>
-        R
-        <sub>
-         13
-        </sub>
-        +
-        <span style="text-decoration: overline;">
-         Ψ
-        </span>
-        <sub>
-         P
-        </sub>
-        (iΓ
-        <sup>
-         M
-        </sup>
-        ∇
-        <sub>
-         M
-        </sub>
-        - m)Ψ
-        <sub>
-         P
-        </sub>
-        ]
+       <span class="formula-hint" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 0.5rem;">Hover for details</span>
+       <div class="formula-display" style="font-family: 'Crimson Text', serif; font-size: 1.2rem; text-align: center; margin: 1rem 0; position: relative; z-index: 100;">
+        <a class="formula-var" href="principia-metaphysica-paper.html#shadow-action" style="text-decoration: none; color: inherit;">
+         S<sub><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D</sub>
+         <div class="var-tooltip">
+          <div class="var-name">S<sub>13D</sub> - Shadow Action</div>
+          <div class="var-description">The 13-dimensional shadow action after Sp(2,R) gauge fixing reduces the (24,2) bulk to (12,1) signature.</div>
+          <div class="var-units">Dimensionless (natural units)</div>
+          <div class="var-contribution">This is the effective action in the observable shadow brane.</div>
+          <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click to see full paper</div>
+         </div>
+        </a>
+        <span class="formula-op"> = </span>
+        <a class="formula-var" href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+         d<sup>13</sup>x |G<sub>(12,1)</sub>|
+         <div class="var-tooltip">
+          <div class="var-name">d<sup>13</sup>x |G<sub>(12,1)</sub>|</div>
+          <div class="var-description">Integration over 13 dimensions with signature (12,1) - one time dimension from Sp(2,R) gauge fixing.</div>
+          <div class="var-units">Length<sup>13</sup></div>
+          <div class="var-contribution">Sums physics from every point in the 13D shadow spacetime.</div>
+          <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click for Geometric Framework</div>
+         </div>
+        </a>
+        <span class="formula-op"> [</span>
+        <a class="formula-var highlight" href="sections/einstein-hilbert-term.html" style="text-decoration: none; color: inherit;">
+         M<sub>*</sub><sup>11</sup>R<sub>13</sub>
+         <div class="var-tooltip">
+          <div class="var-name">13D Einstein-Hilbert Term</div>
+          <div class="var-description">13D gravity with signature (12,1): M<sub>*</sub> is the reduced Planck mass in 13D, R<sub>13</sub> is the 13D Ricci scalar.</div>
+          <div class="var-units">Mass<sup>11</sup> x Length<sup>-2</sup></div>
+          <div class="var-contribution">Governs gravitational dynamics in the shadow brane.</div>
+          <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click for Einstein-Hilbert details</div>
+         </div>
+        </a>
+        <span class="formula-op"> + </span>
+        <a class="formula-var highlight" href="sections/pneuma-lagrangian.html" style="text-decoration: none; color: inherit;">
+         <span style="text-decoration: overline;">Psi</span><sub>P</sub>(iGamma<sup>M</sup>nabla<sub>M</sub> - m)Psi<sub>P</sub>
+         <div class="var-tooltip">
+          <div class="var-name">Pneuma Field Lagrangian</div>
+          <div class="var-description">The 64-component Pneuma spinor Psi<sub>P</sub> (Primordial Spinor Field) with 13D Dirac equation. Reduced from 8192 components via Sp(2,R) gauge fixing.</div>
+          <div class="var-units">Mass<sup>4</sup> (energy density)</div>
+          <div class="var-contribution">Source of all matter content: quarks, leptons, gauge bosons emerge from Pneuma condensates.</div>
+          <div style="margin-top: 0.5rem; color: var(--accent-secondary); font-size: 0.8rem;">Click for Pneuma Lagrangian</div>
+         </div>
+        </a>
+        <span class="formula-op">]</span>
        </div>
-       <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
-        The 8192-component <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spinor reduces to 64 components via Sp(2,ℝ) gauge fixing.
-                            One time dimension emerges from fermion parity Z₂.
+       <!-- Plain text version -->
+       <div style="background: rgba(0,0,0,0.2); padding: 0.75rem 1rem; border-radius: 8px; margin-top: 1rem; font-family: monospace; font-size: 0.9rem; color: var(--text-muted);">
+        <strong>Plain text:</strong> S_13D = integral d^13 x sqrt|G_(12,1)| [M_*^11 R_13 + Psi_P (i Gamma^M nabla_M - m) Psi_P]
+       </div>
+       <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem;">
+        The 8192-component <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spinor reduces to 64 components via Sp(2,R) gauge fixing.
+        One time dimension emerges from fermion parity Z2.
        </p>
       </div>
       <div class="sub-components">
@@ -1812,278 +1818,95 @@
      </div>
     </div>
    </section>
-   <!-- Theory Overview Diagram -->
+   <!-- Dimensional Reduction Pathway Diagram -->
    <section class="diagram-container" id="theory-overview" style="margin: 3rem 0;">
     <div class="diagram-title">
-     Principia Metaphysica: Unified Theory Overview
+     Dimensional Reduction Pathway: 26D → 13D → 8D → 6D → 4D
     </div>
-    <svg class="diagram-svg" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg">
-     <defs>
-      <lineargradient id="mainGrad" x1="0%" x2="100%" y1="0%" y2="100%">
-       <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1">
-       </stop>
-       <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1">
-       </stop>
-      </lineargradient>
-      <lineargradient id="purpleGrad" x1="0%" x2="100%" y1="0%" y2="100%">
-       <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1">
-       </stop>
-       <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1">
-       </stop>
-      </lineargradient>
-      <lineargradient id="blueGrad" x1="0%" x2="100%" y1="0%" y2="100%">
-       <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1">
-       </stop>
-       <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1">
-       </stop>
-      </lineargradient>
-      <marker id="mainArrow" markerheight="7" markerwidth="10" orient="auto" refx="9" refy="3.5">
-       <polygon fill="#8b7fff" points="0 0, 10 3.5, 0 7">
-       </polygon>
-      </marker>
-     </defs>
-     <!-- Central Pneuma Field -->
-     <g class="node">
-      <ellipse cx="450" cy="80" fill="url(#mainGrad)" rx="120" ry="50" stroke="rgba(255,255,255,0.3)" stroke-width="2">
-      </ellipse>
-      <text fill="white" font-size="16" font-weight="700" text-anchor="middle" x="450" y="70">
-       Ψ
-       <tspan baseline-shift="sub" font-size="12">
-        P
-       </tspan>
-       Pneuma Field
-      </text>
-      <text fill="rgba(255,255,255,0.9)" font-size="11" text-anchor="middle" x="450" y="92">
-       64-component fermion
-      </text>
-     </g>
-     <text fill="#adb5bd" font-size="12" text-anchor="middle" x="450" y="25">
-      FUNDAMENTAL FIELD
-     </text>
-     <!-- Arrows from Pneuma -->
-     <path d="M 350 115 L 200 180" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="2">
-     </path>
-     <path d="M 450 130 L 450 180" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="2">
-     </path>
-     <path d="M 550 115 L 700 180" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="2">
-     </path>
-     <!-- Labels on arrows -->
-     <text fill="#adb5bd" font-size="10" x="265" y="145">
-      condensates
-     </text>
-     <text fill="#adb5bd" font-size="10" x="470" y="160">
-      statistics
-     </text>
-     <text fill="#adb5bd" font-size="10" x="610" y="145">
-      compactifies
-     </text>
-     <!-- Three main branches -->
-     <!-- Left: Geometry -->
-     <g class="node">
-      <rect fill="rgba(139,127,255,0.15)" height="80" rx="12" stroke="rgba(139,127,255,0.5)" stroke-width="2" width="200" x="90" y="190">
-      </rect>
-      <text fill="#8b7fff" font-size="14" font-weight="600" text-anchor="middle" x="190" y="220">
-       K
-       <tspan baseline-shift="sub" font-size="10">
-        Pneuma
-       </tspan>
-      </text>
-      <text fill="#f8f9fa" font-size="12" text-anchor="middle" x="190" y="240">
-       <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D Internal Manifold
-      </text>
-      <text fill="#adb5bd" font-size="11" text-anchor="middle" x="190" y="258">
-       CY4 with χ=72
-      </text>
-     </g>
-     <!-- Center: Thermodynamics -->
-     <g class="node">
-      <rect fill="rgba(255,126,182,0.15)" height="80" rx="12" stroke="rgba(255,126,182,0.5)" stroke-width="2" width="200" x="350" y="190">
-      </rect>
-      <text fill="#ff7eb6" font-size="14" font-weight="600" text-anchor="middle" x="450" y="220">
-       Thermal Time
-      </text>
-      <text fill="#f8f9fa" font-size="12" text-anchor="middle" x="450" y="240">
-       t = α
-       <tspan baseline-shift="sub" font-size="10">
-        T
-       </tspan>
-       · S
-      </text>
-      <text fill="#adb5bd" font-size="11" text-anchor="middle" x="450" y="258">
-       Time from entropy
-      </text>
-     </g>
-     <!-- Right: Gauge -->
-     <g class="node">
-      <rect fill="rgba(139,127,255,0.15)" height="80" rx="12" stroke="rgba(139,127,255,0.5)" stroke-width="2" width="200" x="610" y="190">
-      </rect>
-      <text fill="#8b7fff" font-size="14" font-weight="600" text-anchor="middle" x="710" y="220">
-       SO(10) GUT
-      </text>
-      <text fill="#f8f9fa" font-size="12" text-anchor="middle" x="710" y="240">
-       45 gauge bosons
-      </text>
-      <text fill="#adb5bd" font-size="11" text-anchor="middle" x="710" y="258">
-       D
-       <tspan baseline-shift="sub" font-size="9">
-        5
-       </tspan>
-       singularity
-      </text>
-     </g>
-     <!-- Second level arrows -->
-     <path d="M 190 270 L 190 310" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="2">
-     </path>
-     <path d="M 450 270 L 450 310" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="2">
-     </path>
-     <path d="M 710 270 L 710 310" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="2">
-     </path>
-     <!-- Second level boxes -->
-     <!-- Left: <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Gravity -->
-     <g class="node">
-      <rect fill="rgba(139,127,255,0.1)" height="70" rx="10" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" width="200" x="90" y="320">
-      </rect>
-      <text fill="#8b7fff" font-size="13" font-weight="600" text-anchor="middle" x="190" y="345">
-       <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Einstein Gravity
-      </text>
-      <text fill="#f8f9fa" font-size="11" text-anchor="middle" x="190" y="368">
-       M
-       <tspan baseline-shift="sub" font-size="9">
-        Pl
-       </tspan>
-       <tspan baseline-shift="super" font-size="9">
-        2
-       </tspan>
-       = M
-       <tspan baseline-shift="sub" font-size="9">
-        *
-       </tspan>
-       <tspan baseline-shift="super" font-size="9">
-        11
-       </tspan>
-       V
-       <tspan baseline-shift="sub" font-size="9">
-        8
-       </tspan>
-      </text>
-      <text fill="#adb5bd" font-size="10" text-anchor="middle" x="190" y="383">
-       + F(R,T) modifications
-      </text>
-     </g>
-     <!-- Center: Arrow of Time -->
-     <g class="node">
-      <rect fill="rgba(255,126,182,0.1)" height="70" rx="10" stroke="rgba(255,126,182,0.4)" stroke-width="1.5" width="200" x="350" y="320">
-      </rect>
-      <text fill="#ff7eb6" font-size="13" font-weight="600" text-anchor="middle" x="450" y="345">
-       Arrow of Time
-      </text>
-      <text fill="#f8f9fa" font-size="11" text-anchor="middle" x="450" y="365">
-       ∇S &gt; 0 → dt &gt; 0
-      </text>
-      <text fill="#adb5bd" font-size="10" text-anchor="middle" x="450" y="383">
-       Tomita-Takesaki flow
-      </text>
-     </g>
-     <!-- Right: Standard Model -->
-     <g class="node">
-      <rect fill="rgba(139,127,255,0.1)" height="70" rx="10" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" width="200" x="610" y="320">
-      </rect>
-      <text fill="#8b7fff" font-size="13" font-weight="600" text-anchor="middle" x="710" y="345">
-       Standard Model
-      </text>
-      <text fill="#f8f9fa" font-size="11" text-anchor="middle" x="710" y="365">
-       SU(3)×SU(2)×U(1)
-      </text>
-      <text fill="#adb5bd" font-size="10" text-anchor="middle" x="710" y="383">
-       3 generations × 16
-      </text>
-     </g>
-     <!-- Convergence arrows to outputs -->
-     <path d="M 190 390 L 350 450" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="1.5">
-     </path>
-     <path d="M 450 390 L 450 440" fill="none" marker-end="url(#mainArrow)" stroke="#ff7eb6" stroke-width="1.5">
-     </path>
-     <path d="M 710 390 L 550 450" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="1.5">
-     </path>
-     <!-- Final output: Observable Universe -->
-     <g class="node">
-      <rect fill="url(#mainGrad)" height="55" rx="12" stroke="rgba(255,255,255,0.3)" stroke-width="2" width="300" x="300" y="450">
-      </rect>
-      <text fill="white" font-size="15" font-weight="700" text-anchor="middle" x="450" y="475">
-       Observable Universe
-      </text>
-      <text fill="rgba(255,255,255,0.9)" font-size="11" text-anchor="middle" x="450" y="495">
-       Gravity + SM + Dark Energy + Time Flow
-      </text>
-     </g>
-     <!-- Side annotations -->
-     <!-- Dark Energy -->
-     <rect fill="rgba(79,172,254,0.1)" height="70" rx="8" stroke="rgba(79,172,254,0.3)" stroke-width="1" width="120" x="30" y="380">
-     </rect>
-     <text fill="#4facfe" font-size="11" font-weight="600" text-anchor="middle" x="90" y="400">
-      Dark Energy
-     </text>
-     <text fill="#f8f9fa" font-size="10" text-anchor="middle" x="90" y="420">
-      Mashiach φ
-      <tspan baseline-shift="sub" font-size="8">
-       M
-      </tspan>
-     </text>
-     <text fill="#adb5bd" font-size="9" text-anchor="middle" x="90" y="438">
-      w → -1 attractor
-     </text>
-     <path d="M 155 415 L 300 470" fill="none" stroke="#4facfe" stroke-dasharray="4 2" stroke-width="1">
-     </path>
-     <!-- Predictions -->
-     <rect fill="rgba(255,212,59,0.1)" height="70" rx="8" stroke="rgba(255,212,59,0.3)" stroke-width="1" width="120" x="750" y="380">
-     </rect>
-     <text fill="#ffd43b" font-size="11" font-weight="600" text-anchor="middle" x="810" y="400">
-      Predictions
-     </text>
-     <text fill="#f8f9fa" font-size="9" text-anchor="middle" x="810" y="418">
-      Proton decay
-     </text>
-     <text fill="#f8f9fa" font-size="9" text-anchor="middle" x="810" y="433">
-      GW dispersion
-     </text>
-     <text fill="#f8f9fa" font-size="9" text-anchor="middle" x="810" y="448">
-      SME coefficients
-     </text>
-     <path d="M 745 415 L 600 470" fill="none" stroke="#ffd43b" stroke-dasharray="4 2" stroke-width="1">
-     </path>
-     <!-- Key numbers at top corners -->
-     <rect fill="rgba(139,127,255,0.08)" height="60" rx="6" stroke="rgba(139,127,255,0.2)" stroke-width="1" width="90" x="30" y="30">
-     </rect>
-     <text fill="#8b7fff" font-size="20" font-weight="700" text-anchor="middle" x="75" y="50">
-      13
-     </text>
-     <text fill="#adb5bd" font-size="10" text-anchor="middle" x="75" y="70">
-      dimensions
-     </text>
-     <text fill="#adb5bd" font-size="9" text-anchor="middle" x="75" y="83">
-      (12,1) bulk
-     </text>
-     <rect fill="rgba(139,127,255,0.08)" height="60" rx="6" stroke="rgba(139,127,255,0.2)" stroke-width="1" width="90" x="780" y="30">
-     </rect>
-     <text fill="#8b7fff" font-size="20" font-weight="700" text-anchor="middle" x="825" y="50">
-      3
-     </text>
-     <text fill="#adb5bd" font-size="10" text-anchor="middle" x="825" y="70">
-      generations
-     </text>
-     <text fill="#adb5bd" font-size="9" text-anchor="middle" x="825" y="83">
-      χ/24 = 72/24
-     </text>
-    </svg>
-    <div class="diagram-caption">
-     <strong>Functional Overview:</strong> The Principia Metaphysica framework shows how a single fundamental field Ψ
-     <sub>
-      P
-     </sub>
-     (Pneuma) generates all physics.
-                Its condensates form spacetime geometry, its statistics yield emergent time, and its gauge structure contains the Standard Model.
-                For the complete dimensional reduction pathway (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 8D → 6D → 4D), see the
-                <a href="images/dimensional-reduction-pathway.svg" target="_blank" style="color: var(--accent-primary);">dimensional reduction diagram</a>.
+    <div style="background: rgba(139, 127, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
+     <img src="images/dimensional-reduction-pathway.svg" alt="Dimensional Reduction Pathway: 26D Bulk (24,2) → 13D Shadow (12,1) → 8D Internal → 6D Branches → 4D Observable" style="width: 100%; max-width: 1400px; height: auto; border-radius: 8px; margin: 0 auto; display: block;">
+    </div>
+    <div class="diagram-caption" style="text-align: center; margin-top: 1rem; color: var(--text-muted); font-size: 0.95rem;">
+     <strong>Complete Dimensional Reduction:</strong> The 26D bulk spacetime (signature 24,2) reduces via Sp(2,ℝ) gauge fixing to a 13D shadow (12,1), which contains an 8D internal manifold. This branches into 6D sub-manifolds yielding 4D observable spacetime with three fermion generations.
+    </div>
+
+    <!-- Expandable: Unified Theory Overview -->
+    <details style="margin-top: 1.5rem; background: rgba(139, 127, 255, 0.05); border: 1px solid rgba(139, 127, 255, 0.2); border-radius: 12px; overflow: hidden;">
+     <summary style="padding: 1rem 1.5rem; cursor: pointer; font-weight: 600; color: var(--accent-primary); list-style: none;">
+      ▶ View Unified Theory Overview (Pneuma Field → Observable Universe)
+     </summary>
+     <div style="padding: 1.5rem;">
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 1rem;">
+       <em>Schematic overview showing how the Pneuma field Ψ<sub>P</sub> generates all physics through condensates, emergent time, and gauge structure.</em>
+      </p>
+      <svg class="diagram-svg" viewbox="0 0 900 520" xmlns="http://www.w3.org/2000/svg" style="max-width: 100%; height: auto;">
+       <defs>
+        <linearGradient id="mainGrad2" x1="0%" x2="100%" y1="0%" y2="100%">
+         <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1"></stop>
+         <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="purpleGrad2" x1="0%" x2="100%" y1="0%" y2="100%">
+         <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:1"></stop>
+         <stop offset="100%" style="stop-color:#9b59b6;stop-opacity:1"></stop>
+        </linearGradient>
+        <linearGradient id="blueGrad2" x1="0%" x2="100%" y1="0%" y2="100%">
+         <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1"></stop>
+         <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1"></stop>
+        </linearGradient>
+        <marker id="mainArrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+         <polygon points="0 0, 10 3.5, 0 7" fill="#8b7fff"></polygon>
+        </marker>
+       </defs>
+       <!-- Central Pneuma Field -->
+       <g class="node">
+        <ellipse cx="450" cy="80" rx="120" ry="50" fill="url(#mainGrad2)" stroke="rgba(255,255,255,0.3)" stroke-width="2"></ellipse>
+        <text x="450" y="70" text-anchor="middle" fill="white" font-size="16" font-weight="700">Ψ<tspan baseline-shift="sub" font-size="12">P</tspan> Pneuma Field</text>
+        <text x="450" y="92" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11">64-component fermion</text>
+       </g>
+       <!-- Arrows from Pneuma -->
+       <path d="M380 120 Q280 180 200 220" stroke="#8b7fff" stroke-width="2" fill="none" marker-end="url(#mainArrow2)"></path>
+       <path d="M450 130 L450 200" stroke="#8b7fff" stroke-width="2" fill="none" marker-end="url(#mainArrow2)"></path>
+       <path d="M520 120 Q620 180 700 220" stroke="#8b7fff" stroke-width="2" fill="none" marker-end="url(#mainArrow2)"></path>
+       <!-- Three main branches -->
+       <g class="node">
+        <rect x="100" y="220" width="200" height="70" rx="10" fill="url(#purpleGrad2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"></rect>
+        <text x="200" y="250" text-anchor="middle" fill="white" font-size="14" font-weight="600">Spacetime Geometry</text>
+        <text x="200" y="270" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">Condensate → Metric</text>
+       </g>
+       <g class="node">
+        <rect x="350" y="220" width="200" height="70" rx="10" fill="url(#purpleGrad2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"></rect>
+        <text x="450" y="250" text-anchor="middle" fill="white" font-size="14" font-weight="600">Thermal Time</text>
+        <text x="450" y="270" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">KMS Statistics → Flow</text>
+       </g>
+       <g class="node">
+        <rect x="600" y="220" width="200" height="70" rx="10" fill="url(#purpleGrad2)" stroke="rgba(255,255,255,0.2)" stroke-width="1"></rect>
+        <text x="700" y="250" text-anchor="middle" fill="white" font-size="14" font-weight="600">Gauge Structure</text>
+        <text x="700" y="270" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">SO(10) ⊃ SM Gauge</text>
+       </g>
+       <!-- Convergence arrows -->
+       <path d="M200 290 Q200 340 350 380" stroke="#8b7fff" stroke-width="2" fill="none" marker-end="url(#mainArrow2)"></path>
+       <path d="M450 290 L450 380" stroke="#8b7fff" stroke-width="2" fill="none" marker-end="url(#mainArrow2)"></path>
+       <path d="M700 290 Q700 340 550 380" stroke="#8b7fff" stroke-width="2" fill="none" marker-end="url(#mainArrow2)"></path>
+       <!-- Observable Universe -->
+       <g class="node">
+        <rect x="300" y="380" width="300" height="80" rx="15" fill="url(#blueGrad2)" stroke="rgba(255,255,255,0.3)" stroke-width="2"></rect>
+        <text x="450" y="410" text-anchor="middle" fill="white" font-size="16" font-weight="700">Observable Universe</text>
+        <text x="450" y="430" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="11">4D Spacetime + Standard Model</text>
+        <text x="450" y="448" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="10">3 Generations | 58 Parameters | Dark Energy</text>
+       </g>
+       <!-- Key numbers -->
+       <text x="80" y="500" fill="#8b7fff" font-size="11">χ<tspan baseline-shift="sub" font-size="9">eff</tspan> = 144 → n<tspan baseline-shift="sub" font-size="9">gen</tspan> = 3</text>
+       <text x="350" y="500" fill="#8b7fff" font-size="11">w₀ = -0.8528 | w<tspan baseline-shift="sub" font-size="9">a</tspan> = -0.75</text>
+       <text x="650" y="500" fill="#8b7fff" font-size="11">M<tspan baseline-shift="sub" font-size="9">GUT</tspan> = 2.12×10¹⁶ GeV</text>
+      </svg>
+     </div>
+    </details>
+
+    <div class="diagram-caption" style="margin-top: 1rem; padding: 1rem; background: rgba(79, 172, 254, 0.05); border-radius: 8px;">
+     <strong>Core Mechanism:</strong> The primordial spinor field Ψ<sub>P</sub> (Pneuma) generates all physics.
+     Its condensates form spacetime geometry, its statistics yield emergent time, and its gauge structure contains the Standard Model.
+     For the complete dimensional reduction pathway (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 8D → 6D → 4D), see the
+     <a href="images/dimensional-reduction-pathway.svg" target="_blank" style="color: var(--accent-primary);">dimensional reduction diagram</a>.
     </div>
    </section>
    <section id="key-concepts">
