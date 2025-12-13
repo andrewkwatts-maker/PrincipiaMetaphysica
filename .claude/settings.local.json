@@ -278,7 +278,8 @@
       "Bash(\"v12_8_appendix_e_content.html\" )",
       "Bash(\"v12_8_appendix_g_content.html\" )",
       "Bash(\"ATTRIBUTION_HTML_ADDITIONS.html\" )",
-      "Bash(\"ATTRIBUTION_HTML_ADDITIONS_PART2.html\")"
+      "Bash(\"ATTRIBUTION_HTML_ADDITIONS_PART2.html\")",
+      "Bash(__NEW_LINE__ sed -i 's|href=\"\"\"\"geometric-framework.html#|href=\"\"\"\"sections/geometric-framework.html#|g' principia-metaphysica-paper.html grep -n '../principia-metaphysica-paper.html' principia-metaphysica-paper.html)"
     ],
     "deny": [],
     "ask": []
