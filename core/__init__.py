@@ -34,6 +34,24 @@ from .config_provider import (
     get_config,
 )
 
+from .logging_config import (
+    setup_logging,
+    get_logger,
+    log_operation,
+    SimulationLogger,
+)
+
+from .validation import (
+    ValidationResult,
+    PhysicsValidator,
+    ExperimentalComparator,
+    ConsistencyChecker,
+    validate_n_gen,
+    validate_chi_eff,
+    validate_m_gut,
+    validate_proton_lifetime,
+)
+
 __all__ = [
     # Constants
     'DimensionalStructure',
@@ -50,6 +68,20 @@ __all__ = [
     # Configuration
     'ConfigProvider',
     'get_config',
+    # Logging
+    'setup_logging',
+    'get_logger',
+    'log_operation',
+    'SimulationLogger',
+    # Validation
+    'ValidationResult',
+    'PhysicsValidator',
+    'ExperimentalComparator',
+    'ConsistencyChecker',
+    'validate_n_gen',
+    'validate_chi_eff',
+    'validate_m_gut',
+    'validate_proton_lifetime',
 ]
 
 __version__ = "12.7"
