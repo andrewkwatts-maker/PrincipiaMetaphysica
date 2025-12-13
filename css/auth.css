@@ -189,6 +189,31 @@ body.authenticated .auth-overlay {
    Header User Controls
    ============================================ */
 
+/* Position user-controls in top-right of header */
+header {
+  position: relative;
+}
+
+header .user-controls {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: rgba(139, 127, 255, 0.1);
+  border-radius: 30px;
+  border: 1px solid rgba(139, 127, 255, 0.2);
+  z-index: 100;
+}
+
+body.authenticated header .user-controls {
+  display: flex;
+}
+
+/* Fallback for user-controls outside header */
 .user-controls {
   display: none;
   align-items: center;
