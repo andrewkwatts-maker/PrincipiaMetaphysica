@@ -666,6 +666,11 @@
   </script>
   <script src="js/pm-tooltip-system.js">
   </script>
+  <!-- Formula Registry and Component for hoverable formulas -->
+  <script src="js/formula-registry.js">
+  </script>
+  <script src="js/pm-formula-component.js">
+  </script>
  </head>
  <body>
   <div class="paper">
@@ -1331,11 +1336,8 @@
     —24 spacelike and 2 timelike dimensions. This is the critical dimension of
             bosonic string theory, chosen for anomaly cancellation. The fundamental action is:
    </p>
-   <div class="formula-display" style="font-family: 'Courier New', monospace; font-size: 1.1rem; text-align: center; margin: 1.5rem 0; padding: 1rem; background: rgba(0,0,0,0.05); border-left: 4px solid #8b7fff; border-radius: 6px;">
-    Master Bulk Action (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D): S = ∫ d ²⁶ X √(-G) [R + Ψ̄ P (iΓ ᴹ D M - m) Ψ P + ℒ Sₚ₍₂,R₎ ]
-    <span class="equation-label" style="float: right; color: #666; font-size: 0.9rem;">(2.1)
-    </span>
-</div>
+   <!-- Using pm-formula component for hoverable formula with plain text fallback -->
+   <pm-formula formula-id="master-action-26d" show-derivation="true"></pm-formula>
    <div class="formula-def">
     <div class="formula-def-title">
      Term Definitions (Eq. 2.1 - <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Master Action)
