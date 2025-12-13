@@ -12,28 +12,30 @@
       },
       {
         "id": "parameters",
-        "text": "All 58 measurable parameters of the extended Standard Model — including quark and lepton masses, mixing angles, gauge couplings, the Higgs boson mass, neutrino mass differences, and cosmological observables — are obtained from the manifold topology, flux quantization, and effective torsion class. Two numerical coefficients are transparently calibrated to the electroweak and GUT scales; the observed Higgs mass constrains one complex structure modulus. The remaining 55 parameters emerge as pure predictions.",
-        "pm_refs": []
+        "text": "All {total_predictions} measurable parameters of the extended Standard Model — including quark and lepton masses, mixing angles, gauge couplings, the Higgs boson mass, neutrino mass differences, and cosmological observables — are obtained from the manifold topology, flux quantization, and effective torsion class. Two numerical coefficients are transparently calibrated to the electroweak and GUT scales; the observed Higgs mass constrains one complex structure modulus. The remaining parameters emerge as pure predictions.",
+        "pm_refs": ["validation.total_predictions"]
       },
       {
         "id": "validation",
-        "text": "{predictions_within_1sigma} of 58 predictions lie within 1σ of current experimental data, with {exact_matches} exact matches, including the Higgs mass, atmospheric neutrino mass splitting, and the atmospheric mixing angle θ₂₃ = {theta_23}°. Additional geometric predictions — proton decay branching ratios and gravitational wave dispersion — await confirmation by future experiments.",
-        "pm_refs": ["validation.predictions_within_1sigma", "validation.exact_matches", "pmns_matrix.theta_23"]
+        "text": "{predictions_within_1sigma} of {total_predictions} predictions lie within 1σ of current experimental data, with {exact_matches} exact matches, including the Higgs mass, atmospheric neutrino mass splitting, and the atmospheric mixing angle θ₂₃ = {theta_23}°. Additional geometric predictions — proton decay branching ratios and gravitational wave dispersion — await confirmation by future experiments.",
+        "pm_refs": ["validation.predictions_within_1sigma", "validation.total_predictions", "validation.exact_matches", "pmns_matrix.theta_23"]
       }
     ],
     "footnote": {
       "id": "field_names",
       "text": "Historical field names \"Pneuma\" and \"Mashiach\" reflect philosophical origins; modern terminology uses \"Primordial Spinor Field\" and \"Attractor Scalar\"."
     },
-    "key_values": {
-      "D_bulk": 26,
-      "D_after_sp2r": 13,
-      "D_observable": 4,
-      "n_gen": 3,
-      "chi_eff": 144,
-      "predictions_within_1sigma": 56,
-      "exact_matches": 20,
-      "theta_23": 45.0
+    "pm_value_sources": {
+      "_note": "All values below are sourced dynamically from theory_output.json via PM object",
+      "D_bulk": "dimensions.D_bulk",
+      "D_after_sp2r": "dimensions.D_after_sp2r",
+      "D_observable": "dimensions.D_observable",
+      "n_gen": "topology.n_gen",
+      "chi_eff": "topology.chi_eff",
+      "predictions_within_1sigma": "validation.predictions_within_1sigma",
+      "total_predictions": "validation.total_predictions",
+      "exact_matches": "validation.exact_matches",
+      "theta_23": "pmns_matrix.theta_23"
     }
   }
 }
