@@ -130,7 +130,7 @@ def calculate_proton_lifetime(M_GUT, alpha_GUT_inv):
 
 # === PART 3: Monte Carlo Uncertainty Propagation ===
 
-def monte_carlo_uncertainty(n_samples=1000, verbose=False):
+def monte_carlo_uncertainty(n_samples=10000, verbose=False):
     """
     Propagate geometric uncertainties through to proton lifetime
 
@@ -217,7 +217,7 @@ def monte_carlo_uncertainty(n_samples=1000, verbose=False):
 
 # === PART 4: Main Calculation ===
 
-def run_proton_decay_calculation(verbose=True, mc_samples=1000):
+def run_proton_decay_calculation(verbose=True, mc_samples=10000):
     """
     Run complete proton decay calculation with all improvements
 
@@ -297,7 +297,7 @@ def run_proton_decay_calculation(verbose=True, mc_samples=1000):
 
 if __name__ == '__main__':
     # Run calculation
-    results = run_proton_decay_calculation(verbose=True, mc_samples=1000)
+    results = run_proton_decay_calculation(verbose=True, mc_samples=10000)
 
     # Export to config for website updates
     print("\n" + "=" * 70)

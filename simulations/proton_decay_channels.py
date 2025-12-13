@@ -228,7 +228,7 @@ class ProtonDecayChannelCalculator:
 
         return comparison
 
-    def run_mc_uncertainty(self, n_samples=1000):
+    def run_mc_uncertainty(self, n_samples=10000):
         """
         Monte Carlo uncertainty quantification
 
@@ -300,7 +300,7 @@ class ProtonDecayChannelCalculator:
         comparison = self.compare_with_experiments(tau_dict)
 
         # 6. MC uncertainty
-        mc_results = self.run_mc_uncertainty(n_samples=1000)
+        mc_results = self.run_mc_uncertainty(n_samples=10000)
 
         if verbose:
             print("BRANCHING RATIOS:")
@@ -313,7 +313,7 @@ class ProtonDecayChannelCalculator:
                 print(f"  tau_p({channel}) = {tau:.2e} years")
             print()
 
-            print("MONTE CARLO RESULTS (n=1000):")
+            print("MONTE CARLO RESULTS ((n=10000)):")
             print(f"  BR(e+pi0) = {mc_results['BR_epi0_mean']*100:.1f}% +/- {mc_results['BR_epi0_std']*100:.1f}%")
             print(f"  BR(K+nu) = {mc_results['BR_Knu_mean']*100:.1f}% +/- {mc_results['BR_Knu_std']*100:.1f}%")
             print()

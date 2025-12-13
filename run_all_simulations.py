@@ -1292,7 +1292,7 @@ def run_all_simulations(verbose=True):
         print("\n1. Running Proton Decay RG Hybrid...")
 
     try:
-        proton_results = run_proton_decay_calculation(verbose=False, mc_samples=1000)
+        proton_results = run_proton_decay_calculation(verbose=False, mc_samples=10000)
 
         results['proton_decay'] = {
             'M_GUT': proton_results['geometry']['M_GUT'],

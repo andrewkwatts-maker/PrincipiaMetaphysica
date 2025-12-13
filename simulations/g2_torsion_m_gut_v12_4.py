@@ -262,7 +262,7 @@ def validate_against_gauge_approach():
 # UNCERTAINTY QUANTIFICATION
 # ==============================================================================
 
-def propagate_uncertainties(N_samples=1000, plot=True, verbose=True):
+def propagate_uncertainties(N_samples=10000, plot=True, verbose=True):
     """
     Monte Carlo uncertainty propagation for M_GUT and α_GUT.
 
@@ -550,7 +550,7 @@ def main():
     print("PART 3: UNCERTAINTY QUANTIFICATION")
     print(">"*40)
     M_mean, M_std, alpha_mean, alpha_std = propagate_uncertainties(
-        N_samples=1000, plot=True, verbose=True
+        N_samples=10000, plot=True, verbose=True
     )
 
     # Summary

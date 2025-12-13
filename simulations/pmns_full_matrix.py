@@ -239,7 +239,7 @@ def construct_pmns_matrix():
 
 # === MONTE CARLO UNCERTAINTY ===
 
-def monte_carlo_pmns_uncertainty(n_samples=1000, verbose=False):
+def monte_carlo_pmns_uncertainty(n_samples=10000, verbose=False):
     """
     Propagate b_3 flux uncertainties to PMNS parameters
 
@@ -384,7 +384,7 @@ def run_pmns_calculation(verbose=True):
         print(f"   {np.imag(U_PMNS)}")
 
     # Monte Carlo
-    mc_results = monte_carlo_pmns_uncertainty(n_samples=1000, verbose=verbose)
+    mc_results = monte_carlo_pmns_uncertainty(n_samples=10000, verbose=verbose)
 
     if verbose:
         print("\n4. Status:")
