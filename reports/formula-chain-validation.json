@@ -1,0 +1,447 @@
+{
+  "timestamp": "2025-12-13T08:35:08.998Z",
+  "version": "12.7",
+  "summary": {
+    "valid": true,
+    "totalFormulas": 24,
+    "validChains": 13,
+    "invalidChains": 0,
+    "maxDepth": 3
+  },
+  "byCategory": {
+    "ESTABLISHED": {
+      "count": 11,
+      "note": "Foundation formulas - no derivation needed",
+      "formulas": [
+        {
+          "id": "einstein-field",
+          "label": "Einstein Field Equations",
+          "attribution": "[Einstein 1915]"
+        },
+        {
+          "id": "einstein-hilbert",
+          "label": "Einstein-Hilbert Action",
+          "attribution": "[Hilbert 1915]"
+        },
+        {
+          "id": "clifford-algebra",
+          "label": "Clifford Algebra",
+          "attribution": "[Clifford 1878]"
+        },
+        {
+          "id": "f-theory-index",
+          "label": "F-theory Generation Formula",
+          "attribution": "[Sethi, Vafa, Witten 1996]"
+        },
+        {
+          "id": "sp2r-constraints",
+          "label": "Sp(2,R) Gauge Constraints",
+          "attribution": "[Bars 2006]"
+        },
+        {
+          "id": "kms-condition",
+          "label": "KMS Condition",
+          "attribution": "[Kubo 1957, Martin-Schwinger 1959]"
+        },
+        {
+          "id": "tomita-takesaki",
+          "label": "Tomita-Takesaki Modular Flow",
+          "attribution": "[Tomita 1967, Takesaki 1970]"
+        },
+        {
+          "id": "bosonic-string-critical",
+          "label": "Bosonic String Critical Dimension",
+          "attribution": "[Lovelace 1971]"
+        },
+        {
+          "id": "seesaw-mechanism",
+          "label": "See-saw Mechanism",
+          "attribution": "[Minkowski 1977, Gell-Mann et al. 1979]"
+        },
+        {
+          "id": "yang-mills",
+          "label": "Yang-Mills Action",
+          "attribution": "[Yang-Mills 1954]"
+        },
+        {
+          "id": "kaluza-klein",
+          "label": "Kaluza-Klein Mass Spectrum",
+          "attribution": "[Kaluza 1921, Klein 1926]"
+        }
+      ]
+    },
+    "THEORY": {
+      "valid": 4,
+      "invalid": 0,
+      "formulas": [
+        {
+          "id": "master-action-26d",
+          "label": "(1.1) Master 26D Action",
+          "valid": true,
+          "depth": 0,
+          "establishedRoots": [
+            "einstein-hilbert",
+            "clifford-algebra",
+            "sp2r-constraints"
+          ],
+          "error": null
+        },
+        {
+          "id": "spacetime-26d",
+          "label": "(2.1) 26D Spacetime Structure",
+          "valid": true,
+          "depth": 0,
+          "establishedRoots": [
+            "bosonic-string-critical"
+          ],
+          "error": null
+        },
+        {
+          "id": "clifford-26d",
+          "label": "(3.3) 26D Clifford Algebra",
+          "valid": true,
+          "depth": 0,
+          "establishedRoots": [
+            "clifford-algebra"
+          ],
+          "error": null
+        },
+        {
+          "id": "two-time-structure",
+          "label": "(5.1) Two-Time Structure",
+          "valid": true,
+          "depth": 0,
+          "establishedRoots": [
+            "sp2r-constraints",
+            "tomita-takesaki"
+          ],
+          "error": null
+        }
+      ]
+    },
+    "DERIVED": {
+      "valid": 5,
+      "invalid": 0,
+      "formulas": [
+        {
+          "id": "generation-number",
+          "label": "(2.6) Three Generations",
+          "valid": true,
+          "depth": 1,
+          "establishedRoots": [
+            "f-theory-index"
+          ],
+          "error": null
+        },
+        {
+          "id": "gut-scale",
+          "label": "(4.1) GUT Scale from Torsion",
+          "valid": true,
+          "depth": 1,
+          "establishedRoots": [
+            "einstein-hilbert"
+          ],
+          "error": null
+        },
+        {
+          "id": "alpha-gut",
+          "label": "(4.2) GUT Coupling from Geometry",
+          "valid": true,
+          "depth": 2,
+          "establishedRoots": [
+            "yang-mills"
+          ],
+          "error": null
+        },
+        {
+          "id": "w0-dark-energy",
+          "label": "(6.1) Dark Energy w₀",
+          "valid": true,
+          "depth": 1,
+          "establishedRoots": [
+            "tomita-takesaki",
+            "kms-condition"
+          ],
+          "error": null
+        },
+        {
+          "id": "pmns-angles",
+          "label": "(7.3) PMNS Mixing Angles",
+          "valid": true,
+          "depth": 2,
+          "establishedRoots": [
+            "seesaw-mechanism"
+          ],
+          "error": null
+        }
+      ]
+    },
+    "PREDICTIONS": {
+      "valid": 4,
+      "invalid": 0,
+      "formulas": [
+        {
+          "id": "normal-hierarchy",
+          "label": "(7.1) Neutrino Hierarchy",
+          "valid": true,
+          "depth": 3,
+          "establishedRoots": [
+            "seesaw-mechanism"
+          ],
+          "error": null
+        },
+        {
+          "id": "proton-lifetime",
+          "label": "(4.4) Proton Lifetime",
+          "valid": true,
+          "depth": 3,
+          "establishedRoots": [
+            "yang-mills"
+          ],
+          "error": null
+        },
+        {
+          "id": "kk-graviton",
+          "label": "(7.5) KK Graviton Masses",
+          "valid": true,
+          "depth": 1,
+          "establishedRoots": [
+            "kaluza-klein"
+          ],
+          "error": null
+        },
+        {
+          "id": "de-functional-form",
+          "label": "(6.6) Dark Energy Functional Form",
+          "valid": true,
+          "depth": 2,
+          "establishedRoots": [
+            "kms-condition"
+          ],
+          "error": null
+        }
+      ]
+    }
+  },
+  "issues": [],
+  "chains": [
+    {
+      "formulaId": "master-action-26d",
+      "category": "THEORY",
+      "chain": [
+        "master-action-26d",
+        "einstein-hilbert",
+        "clifford-algebra",
+        "sp2r-constraints"
+      ],
+      "establishedRoots": [
+        "einstein-hilbert",
+        "clifford-algebra",
+        "sp2r-constraints"
+      ],
+      "depth": 0
+    },
+    {
+      "formulaId": "spacetime-26d",
+      "category": "THEORY",
+      "chain": [
+        "spacetime-26d",
+        "bosonic-string-critical"
+      ],
+      "establishedRoots": [
+        "bosonic-string-critical"
+      ],
+      "depth": 0
+    },
+    {
+      "formulaId": "clifford-26d",
+      "category": "THEORY",
+      "chain": [
+        "clifford-26d",
+        "clifford-algebra"
+      ],
+      "establishedRoots": [
+        "clifford-algebra"
+      ],
+      "depth": 0
+    },
+    {
+      "formulaId": "two-time-structure",
+      "category": "THEORY",
+      "chain": [
+        "two-time-structure",
+        "sp2r-constraints",
+        "tomita-takesaki"
+      ],
+      "establishedRoots": [
+        "sp2r-constraints",
+        "tomita-takesaki"
+      ],
+      "depth": 0
+    },
+    {
+      "formulaId": "generation-number",
+      "category": "DERIVED",
+      "chain": [
+        "generation-number",
+        "f-theory-index",
+        "spacetime-26d",
+        "bosonic-string-critical",
+        "clifford-26d",
+        "clifford-algebra"
+      ],
+      "establishedRoots": [
+        "f-theory-index"
+      ],
+      "depth": 1
+    },
+    {
+      "formulaId": "gut-scale",
+      "category": "DERIVED",
+      "chain": [
+        "gut-scale",
+        "einstein-hilbert",
+        "spacetime-26d",
+        "bosonic-string-critical"
+      ],
+      "establishedRoots": [
+        "einstein-hilbert"
+      ],
+      "depth": 1
+    },
+    {
+      "formulaId": "alpha-gut",
+      "category": "DERIVED",
+      "chain": [
+        "alpha-gut",
+        "yang-mills",
+        "gut-scale",
+        "einstein-hilbert",
+        "spacetime-26d",
+        "bosonic-string-critical"
+      ],
+      "establishedRoots": [
+        "yang-mills"
+      ],
+      "depth": 2
+    },
+    {
+      "formulaId": "w0-dark-energy",
+      "category": "DERIVED",
+      "chain": [
+        "w0-dark-energy",
+        "tomita-takesaki",
+        "kms-condition",
+        "two-time-structure",
+        "sp2r-constraints",
+        "tomita-takesaki"
+      ],
+      "establishedRoots": [
+        "tomita-takesaki",
+        "kms-condition"
+      ],
+      "depth": 1
+    },
+    {
+      "formulaId": "pmns-angles",
+      "category": "DERIVED",
+      "chain": [
+        "pmns-angles",
+        "seesaw-mechanism",
+        "generation-number",
+        "f-theory-index",
+        "spacetime-26d",
+        "bosonic-string-critical",
+        "clifford-26d",
+        "clifford-algebra"
+      ],
+      "establishedRoots": [
+        "seesaw-mechanism"
+      ],
+      "depth": 2
+    },
+    {
+      "formulaId": "normal-hierarchy",
+      "category": "PREDICTIONS",
+      "chain": [
+        "normal-hierarchy",
+        "seesaw-mechanism",
+        "pmns-angles",
+        "seesaw-mechanism",
+        "generation-number",
+        "f-theory-index",
+        "spacetime-26d",
+        "bosonic-string-critical",
+        "clifford-26d",
+        "clifford-algebra",
+        "generation-number",
+        "f-theory-index",
+        "spacetime-26d",
+        "bosonic-string-critical",
+        "clifford-26d",
+        "clifford-algebra"
+      ],
+      "establishedRoots": [
+        "seesaw-mechanism"
+      ],
+      "depth": 3
+    },
+    {
+      "formulaId": "proton-lifetime",
+      "category": "PREDICTIONS",
+      "chain": [
+        "proton-lifetime",
+        "yang-mills",
+        "gut-scale",
+        "einstein-hilbert",
+        "spacetime-26d",
+        "bosonic-string-critical",
+        "alpha-gut",
+        "yang-mills",
+        "gut-scale",
+        "einstein-hilbert",
+        "spacetime-26d",
+        "bosonic-string-critical"
+      ],
+      "establishedRoots": [
+        "yang-mills"
+      ],
+      "depth": 3
+    },
+    {
+      "formulaId": "kk-graviton",
+      "category": "PREDICTIONS",
+      "chain": [
+        "kk-graviton",
+        "kaluza-klein",
+        "spacetime-26d",
+        "bosonic-string-critical"
+      ],
+      "establishedRoots": [
+        "kaluza-klein"
+      ],
+      "depth": 1
+    },
+    {
+      "formulaId": "de-functional-form",
+      "category": "PREDICTIONS",
+      "chain": [
+        "de-functional-form",
+        "kms-condition",
+        "w0-dark-energy",
+        "tomita-takesaki",
+        "kms-condition",
+        "two-time-structure",
+        "sp2r-constraints",
+        "tomita-takesaki",
+        "two-time-structure",
+        "sp2r-constraints",
+        "tomita-takesaki"
+      ],
+      "establishedRoots": [
+        "kms-condition"
+      ],
+      "depth": 2
+    }
+  ]
+}
