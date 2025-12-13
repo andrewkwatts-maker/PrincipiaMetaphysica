@@ -617,10 +617,10 @@
 
             <p>
                 In the full 26-dimensional Principia Metaphysica framework, the thermal time
-                discussed above corresponds to one of <em>two</em> fundamental time dimensions. The familiar 13D effective
+                discussed above corresponds to one of <em>two</em> fundamental time dimensions. The familiar <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective
                 theory arises as a gauge-fixed shadow of the complete 26D structure, where the second time dimension
                 becomes hidden through dimensional reduction. Further compactification on the explicit TCS G₂ manifold
-                (b₂=4, b₃=24) yields the observable 4D spacetime with geometric parameters α₄ = 0.576152, α₅ = 0.576152
+                (b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>) yields the observable 4D spacetime with geometric parameters α₄ = 0.576152, α₅ = 0.576152
                 entering the effective dimension d<sub>eff</sub> = 12 + 0.5(α₄+α₅) = 12.589.
             </p>
 
@@ -780,7 +780,7 @@
                 <div class="note-box">
                     <h5>26D to 13D Reduction</h5>
                     <p>
-                        The 13D effective theory is not a separate framework but rather the gauge-fixed shadow of the
+                        The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective theory is not a separate framework but rather the gauge-fixed shadow of the
                         complete 26D structure. The factor of 2 (26 = 2 &times; 13) reflects the mirror symmetry between
                         observable and hidden sectors, each contributing one copy of the effective 13D geometry.
                         When t<sub>ortho</sub> is integrated out, we recover all predictions of the single-time TTH.
@@ -811,7 +811,7 @@
             </div>
 
             <p>
-                The presence of two timelike dimensions in the 26D bulk raises immediate concerns about
+                The presence of two timelike dimensions in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk raises immediate concerns about
                 <span class="tooltip">unitarity<span class="tooltiptext">The principle that probability is conserved in quantum mechanics; states evolve unitarily so that &lang;&psi;|&psi;&rang; = 1 is preserved.</span></span>
                 and the appearance of
                 <span class="tooltip">ghost states<span class="tooltiptext">States with negative norm in the Hilbert space, arising from timelike gauge fields, which violate the probabilistic interpretation of quantum mechanics.</span></span>.
@@ -839,9 +839,9 @@
                         </marker>
                     </defs>
 
-                    <!-- Stage 1: 26D Bulk -->
+                    <!-- Stage 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk -->
                     <rect x="40" y="20" width="870" height="90" rx="12" fill="url(#bulkGrad)" stroke="rgba(155,89,182,0.6)" stroke-width="3"/>
-                    <text x="475" y="50" text-anchor="middle" fill="white" font-weight="700" font-size="16">STAGE 1: 26D Bulk with (24,2) Signature</text>
+                    <text x="475" y="50" text-anchor="middle" fill="white" font-weight="700" font-size="16">STAGE 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk with (24,2) Signature</text>
                     <text x="475" y="72" text-anchor="middle" fill="rgba(255,255,255,0.9)" font-size="12">24 spatial dimensions + 2 timelike dimensions (t₁, t₂)</text>
                     <text x="475" y="92" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11">⚠ Unitarity problem: negative-norm states from 2nd time</text>
 
@@ -909,7 +909,7 @@
                 <div class="diagram-caption">
                     <strong>The Complete Journey from 2T Bulk to 1T Thermal Time:</strong> This comprehensive flow diagram shows
                     how the single thermal time we experience emerges from a 26-dimensional bulk with <strong>two timelike dimensions</strong>.
-                    <strong>Stage 1:</strong> The 26D bulk has signature (24,2) with two times (t₁, t₂), creating a unitarity problem.
+                    <strong>Stage 1:</strong> The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has signature (24,2) with two times (t₁, t₂), creating a unitarity problem.
                     <strong>Stage 2:</strong> The <strong>Sp(2,R) gauge symmetry</strong> provides three constraints (X²=0, P²=0, X·P=0)
                     that relate the two times. <strong>Stage 3:</strong> Choosing the gauge X⁰ = τ eliminates the second time as an
                     independent variable, leaving one effective time τ. <strong>Stage 4:</strong> <strong>BRST quantization</strong>
@@ -926,7 +926,7 @@
                 <h5>Sp(2,R) Gauge Group</h5>
                 <p>
                     The symplectic group Sp(2,R) &cong; SL(2,R) is a 3-parameter gauge group acting on the phase space
-                    coordinates (X<sup>&mu;</sup>, P<sup>&mu;</sup>) in the 26D bulk. It generates three gauge constraints:
+                    coordinates (X<sup>&mu;</sup>, P<sup>&mu;</sup>) in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk. It generates three gauge constraints:
                 </p>
                 <ul>
                     <li><strong>L<sub>0</sub></strong>: Phase space dilation (worldline reparametrization)</li>
@@ -982,7 +982,7 @@
             <div class="subsection">
                 <h4>The (24,2) Signature and Two-Time Structure</h4>
                 <p>
-                    The 26-dimensional bulk has signature (24,2), meaning 24 spacelike dimensions and 2 timelike dimensions.
+                    The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D has signature (24,2), meaning 24 spacelike dimensions and 2 timelike dimensions.
                     The metric is:
                 </p>
 
@@ -1149,7 +1149,7 @@
                         </g>
                     </svg>
                     <div class="diagram-caption">
-                        <strong>From Two Times to One:</strong> The 26D bulk has signature (24,2) with two timelike dimensions,
+                        <strong>From Two Times to One:</strong> The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has signature (24,2) with two timelike dimensions,
                         which naively threatens unitarity and causality. However, the <strong>Sp(2,R) gauge symmetry</strong>
                         provides three constraints (L₀, L₊, L₋) that relate the two times. By choosing a gauge where X⁰ = τ,
                         we eliminate the second time t₂ as an independent degree of freedom—it becomes a composite function
@@ -1703,7 +1703,7 @@
                         The logical chain is:
                     </p>
                     <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin-top: 0.75rem; font-family: monospace; font-size: 0.95rem;">
-                        26D bulk (24,2 signature)<br>
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,2 signature)<br>
                         &nbsp;&nbsp;&darr; Sp(2,R) gauge fixing<br>
                         Effective 1D worldline with parameter &tau;<br>
                         &nbsp;&nbsp;&darr; Quantum field theory (Pneuma field)<br>

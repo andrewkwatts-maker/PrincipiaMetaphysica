@@ -112,7 +112,7 @@
                         <div class="component-desc">
                             Represents dark energy or vacuum energy density. &Lambda; &asymp; 10<sup>-52</sup> m<sup>-2</sup><br>
                             Causes the accelerated expansion of the universe.<br>
-                            <strong>PM prediction:</strong> Dark energy equation of state w₀ = -0.8528
+                            <strong>PM prediction:</strong> Dark energy equation of state <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span>
                         </div>
                         <a href="https://en.wikipedia.org/wiki/Cosmological_constant" target="_blank" class="component-link">Wikipedia: Cosmological Constant &rarr;</a>
                     </div>
@@ -502,15 +502,15 @@
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
-                <h4 style="color: #8b7fff;">26D Bulk → 13D Shadow → 6D → 4D</h4>
+                <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk → 13D Shadow → 6D → 4D</h4>
                 <p style="color: var(--text-secondary);">
                     The Einstein Field Equations generalize to each dimensional stage:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
-                    <li><strong>26D bulk (24,2):</strong> G<sub>AB</sub> + &Lambda;<sub>26</sub>g<sub>AB</sub> = 8&pi;G<sub>26</sub> T<sub>AB</sub> with signature (24,2)</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (24,2):</strong> G<sub>AB</sub> + &Lambda;<sub>26</sub>g<sub>AB</sub> = 8&pi;G<sub>26</sub> T<sub>AB</sub> with signature (24,2)</li>
                     <li><strong>13D shadow (12,1):</strong> After Sp(2,R) gauge fixing: G<sub>MN</sub> + &Lambda;<sub>13</sub>g<sub>MN</sub> = 8&pi;G<sub>13</sub> T<sub>MN</sub></li>
                     <li><strong>6D bulk (5,1):</strong> After G₂ compactification with flux-dressed geometry</li>
-                    <li><strong>4D observed (3,1):</strong> The standard Einstein equations with dark energy w₀ = -0.8528</li>
+                    <li><strong>4D observed (3,1):</strong> The standard Einstein equations with dark energy <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span></li>
                 </ul>
                 <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 600;">
                     <strong>G₂ Ricci-Flatness and TCS Gluing:</strong>
@@ -521,7 +521,7 @@
                     <li><strong>TCS gluing preserves Einstein equations:</strong> π/6 hyper-Kähler rotation maintains Ricci-flatness across the gluing neck</li>
                     <li><strong>Metric existence:</strong> For large neck length T >> 1, torsion-free metric exists with error ~ O(e^(-λT))</li>
                     <li><strong>Flux corrections:</strong> G₄ flux modifies effective geometry: G<sub>μν</sub> = 8πG(T<sub>μν</sub> + T<sub>μν</sub><sup>flux</sup>)</li>
-                    <li><strong>χ_eff from flux backreaction:</strong> Flux energy density |G₄|² changes effective curvature → χ_eff = 144</li>
+                    <li><strong>χ_eff from flux backreaction:</strong> Flux energy density |G₄|² changes effective curvature → χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span></li>
                 </ul>
             </div>
 

@@ -459,7 +459,7 @@
               <div class="var-name">&chi;<sub>eff</sub></div>
               <div class="var-description">Effective Euler characteristic (flux-dressed) from 26D framework</div>
               <div class="var-units">Dimensionless</div>
-              <div class="var-contribution">&chi;<sub>eff</sub> = 144 from G₂ manifold topology with b₂=4, b₃=24</div>
+              <div class="var-contribution">&chi;<sub>eff</sub> = 144 from G₂ manifold topology with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></div>
             </div>
           </span>
           <span class="formula-op">/</span>
@@ -1384,7 +1384,7 @@
         </p>
         <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
           <li><strong>Hybrid suppression:</strong> Base geometric (~40) × Flux enhancement (~3.1) = 124 total suppression</li>
-          <li><strong>Flux quantization:</strong> χ_eff = 144 from G₂ topology validated by flux scanner (41% probability)</li>
+          <li><strong>Flux quantization:</strong> χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> from G₂ topology validated by flux scanner (41% probability)</li>
           <li><strong>Right-handed masses:</strong> M_R scales quadratically with flux: M_R1 > M_R2 > M_R3</li>
           <li><strong>Cycle bias:</strong> Realistic 28% positive bias → 76% NH confidence</li>
         </ul>
@@ -1439,13 +1439,13 @@
 
       <!-- Neutrino Mixing Angle Prediction from G₂ Geometry -->
       <div class="highlight-box" style="border-left-color: #51cf66; background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08)); margin-top: 1.5rem; margin-bottom: 1.5rem;">
-        <h4 style="color: #51cf66;">Geometric Prediction: θ₂₃ = 45.0° (Maximal Mixing from Torsion Constraint)</h4>
+        <h4 style="color: #51cf66;">Geometric Prediction: <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° (Maximal Mixing from Torsion Constraint)</h4>
         <p>
           The atmospheric neutrino mixing angle θ₂₃ is <strong>geometrically derived</strong> from the TCS G₂ manifold
           torsion constraint with perfect alignment:
         </p>
         <div style="text-align: center; font-size: 1.15rem; margin: 1rem 0; padding: 1rem; background: rgba(81, 207, 102, 0.15); border-radius: 8px;">
-          θ₂₃ = 45° + n<sub>gen</sub> × (α₄ - α₅) = 45° + 3 × 0.0° = <strong style="color: #51cf66;">45.0°</strong>
+          θ₂₃ = 45° + n<sub>gen</sub> × (α₄ - α₅) = 45° + 3 × 0.0° = <strong style="color: #51cf66;"><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong>
         </div>
         <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.8;">
           <li>
@@ -1459,13 +1459,13 @@
             <strong>Maximal mixing:</strong> Zero deviation from 45° indicates perfect symmetry between μ and τ sectors
           </li>
           <li>
-            <strong>Experimental value:</strong> θ₂₃ = 45.0° ± 1.5° (NuFIT 6.0, 2025) - agrees with central value.
+            <strong>Experimental value:</strong> <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° ± 1.5° (NuFIT 6.0, 2025) - agrees with central value.
           </li>
         </ul>
         <div style="background: rgba(81, 207, 102, 0.2); padding: 1rem; margin-top: 1rem; border-radius: 8px;">
           <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
             The framework derives α₄ and α₅ <strong>geometrically from torsion</strong>, yielding perfect maximal mixing
-            θ₂₃ = 45.0° with no free parameters—in precise agreement with NuFIT 6.0 central value.
+            <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° with no free parameters—in precise agreement with NuFIT 6.0 central value.
           </p>
         </div>
       </div>
@@ -1517,7 +1517,7 @@
         </div>
       </div>
       <p>
-        where the index theorem on b₃=24 cycles determines m<sub>3</sub> &lt; m<sub>1</sub> &lt; m<sub>2</sub> (inverted hierarchy).
+        where the index theorem on b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> cycles determines m<sub>3</sub> &lt; m<sub>1</sub> &lt; m<sub>2</sub> (inverted hierarchy).
       </p>
 
       <h4>Complete PMNS Parameters: Theory vs Experiment</h4>

@@ -291,7 +291,7 @@
         emerges from thermodynamic flow</em> in the Pneuma sector.
       </p>
       <p style="margin-bottom: 0.75rem;">
-        <strong>Two-Time Structure:</strong> In the framework, the 26D bulk contains two temporal dimensions:
+        <strong>Two-Time Structure:</strong> In the framework, the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk contains two temporal dimensions:
       </p>
       <ul style="margin: 0 0 0.75rem 1.5rem; color: var(--text-secondary);">
         <li><strong>t<sub>conf</sub></strong> (conformal time): The "hidden" time dimension, compactified or gauge-fixed in our sector</li>
@@ -465,14 +465,14 @@
         <h4 style="color: var(--accent-primary);">26D &rarr; 13D Shadow Projection via Sp(2,R) Gauging</h4>
 
         <p>
-          The framework begins with a <strong>26-dimensional bulk</strong> with signature (24,2), containing two timelike dimensions.
+          The framework begins with a <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</strong> with signature (24,2), containing two timelike dimensions.
           This projects via <strong>Sp(2,R) gauge fixing</strong> to a <strong>13D shadow with signature (12,1)</strong>, a symmetry that constrains the two-time dynamics and eliminates ghost degrees of freedom. The 13D shadow contains 12 spatial dimensions + 1 effective temporal dimension.
         </p>
 
         <div class="theorem-box" style="background: rgba(139, 127, 255, 0.08);">
           <h5 style="color: var(--accent-primary);">Step-by-Step Derivation: Dimensional Reduction</h5>
 
-          <p><strong>Step 1: 26D Bulk Metric</strong></p>
+          <p><strong>Step 1: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk Metric</strong></p>
           <div class="equation-box">
             <span class="eq-content">
               ds<sup>2</sup><sub>26</sub> = G<sub>MN</sub>dX<sup>M</sup>dX<sup>N</sup>, &nbsp;&nbsp; M,N = 0,1,...,25
@@ -599,7 +599,7 @@
             </span>
           </div>
           <p style="margin-top: 0.75rem;">
-            where α₄ = 0.576152 and α₅ = 0.576152 are derived from the TCS (Twisted Connected Sum) G₂ manifold with b₂=4, b₃=24:
+            where α₄ = 0.576152 and α₅ = 0.576152 are derived from the TCS (Twisted Connected Sum) G₂ manifold with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>:
           </p>
           <ul style="margin-left: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
             <li>α₄ + α₅ from torsion logarithm T<sub>ω</sub> = ln(4 sin²(kπ/q)) with k=5 (D₅), q=48 (SO(10))</li>
@@ -738,7 +738,7 @@
         <h4 style="color: #51cf66;">Pneuma Field Reduction: 8192 &rarr; 64 Components</h4>
 
         <p>
-          The Pneuma spinor field &Psi;<sub>P</sub> has <strong>8192 components</strong> in the full 26D bulk
+          The Pneuma spinor field &Psi;<sub>P</sub> has <strong>8192 components</strong> in the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk
           (from Majorana-Weyl condition in (24,2) signature). Upon compactification and symmetry breaking,
           this reduces to <strong>64 effective components</strong> in the 4D effective theory.
         </p>
@@ -1975,7 +1975,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px; margin-top: 1rem; border: 2px solid #51cf66;">
             <h5 style="color: #51cf66; margin-bottom: 0.5rem;">Key Validation Results</h5>
             <ul style="margin-left: 1.5rem; color: var(--text-secondary); line-height: 1.8;">
-              <li><strong>w₀ = <span class="pm-value" data-pm-value="v12_7_pure_geometric.w0_predicted.w0"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
+              <li><strong>w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Validates geometric derivation</li>
               <li><strong>Planck tension: 6σ → 1.3σ</strong> — Resolved via F(R,T) breathing mode bias (Δw₀ = -0.10)</li>
               <li><strong>w(z) logarithmic evolution</strong> — Frozen at z>3000, active at z<10 (testable with Euclid)</li>
               <li><strong>2T corrections:</strong> w<sub>a</sub> = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66σ agreement via orthogonal time t<sub>ortho</sub> friction</li>
@@ -1996,7 +1996,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </h4>
 
           <p style="font-size: 1.05rem; margin-bottom: 1.5rem; color: var(--text-secondary);">
-            The Dark Energy Spectroscopic Instrument (DESI) Data Release 2 provides the most precise measurements of dark energy evolution to date, based on 5.7 million galaxies and quasars spanning redshifts 0.1 &lt; z &lt; 4.2. The results show <strong>4.2σ detection of evolving dark energy</strong>, directly <strong>validating</strong> the Principia Metaphysica geometric prediction w₀ = -0.8527 from 13D shadow dimensional reduction.
+            The Dark Energy Spectroscopic Instrument (DESI) Data Release 2 provides the most precise measurements of dark energy evolution to date, based on 5.7 million galaxies and quasars spanning redshifts 0.1 &lt; z &lt; 4.2. The results show <strong>4.2σ detection of evolving dark energy</strong>, directly <strong>validating</strong> the Principia Metaphysica geometric prediction <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span> from 13D shadow dimensional reduction.
           </p>
 
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
@@ -3023,7 +3023,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
 
         <!-- Brane Configuration Diagram -->
         <div class="phase-diagram" style="margin-bottom: 2rem;">
-          <h5 style="color: #4facfe; font-size: 1.2rem; margin-bottom: 1rem;">Brane Configuration in 26D Bulk</h5>
+          <h5 style="color: #4facfe; font-size: 1.2rem; margin-bottom: 1rem;">Brane Configuration in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk</h5>
           <svg class="diagram-svg" viewBox="0 0 900 550" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="bulkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -3039,9 +3039,9 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               </filter>
             </defs>
 
-            <!-- Background representing 26D bulk -->
+            <!-- Background representing <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk -->
             <rect width="900" height="550" fill="url(#bulkGrad)"/>
-            <text x="450" y="30" fill="#4facfe" font-size="18" font-weight="700" text-anchor="middle">26D Bulk: SO(24,2) Signature</text>
+            <text x="450" y="30" fill="#4facfe" font-size="18" font-weight="700" text-anchor="middle"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk: SO(24,2) Signature</text>
 
             <!-- Central (5,2) brane -->
             <g filter="url(#glow)">
@@ -3103,7 +3103,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
             <text x="175" y="468" fill="#f8f9fa" font-size="10" text-anchor="middle">+2: Two-time correction</text>
           </svg>
           <div class="diagram-caption">
-            <strong>Figure 2: Brane Configuration in 26D Bulk.</strong> The framework contains one primary (5,2) brane
+            <strong>Figure 2: Brane Configuration in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk.</strong> The framework contains one primary (5,2) brane
             (green) hosting our observable 4D universe, plus three auxiliary (3,2) branes (purple). The configuration
             (5,2) + 3×(3,2) is BPS-protected with total CFT central charge c = 24 - 26 + 2 = 0, ensuring quantum
             consistency. The Mashiach field φₘ (pink dashed path) propagates in the 6D effective bulk, not confined

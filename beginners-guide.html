@@ -656,10 +656,10 @@
 
             <!-- Dimensional Structure Visualization -->
             <div class="visual-card">
-                <div class="visual-title">The 26D Bulk with Two Times</div>
+                <div class="visual-title">The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk with Two Times</div>
                 <div class="two-sheets">
                     <div class="sheet">
-                        <div class="sheet-label">26D Bulk</div>
+                        <div class="sheet-label"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk</div>
                         <div class="sheet-content">
                             <strong>24 spatial dims</strong><br>
                             <span class="tooltip-trigger">+ 2 times
@@ -683,7 +683,7 @@
                     <span class="timeline-label">Gauge Fixing Removes Ghost States</span>
                 </div>
                 <div class="visual-caption">
-                    The 26D bulk has signature (24,2): 24 spatial dimensions + 2 timelike dimensions. Sp(2,R) gauge fixing projects this to 13D with signature (12,1): 12 spaces + 1 effective time!
+                    The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has signature (24,2): 24 spatial dimensions + 2 timelike dimensions. Sp(2,R) gauge fixing projects this to 13D with signature (12,1): 12 spaces + 1 effective time!
                 </div>
             </div>
 
@@ -701,7 +701,7 @@
                 <p style="margin-top: 0.75rem;">
                     The full theory operates in <strong>26 dimensions with signature (24,2)</strong>: 24 spatial dimensions and 2 timelike dimensions.
                     A special symmetry called <strong>Sp(2,R) gauge fixing</strong> removes ghost particles that would arise from having 2 times,
-                    projecting the 26D bulk down to a <strong>13-dimensional effective shadow with signature (12,1)</strong>: 12 spaces + 1 time.
+                    projecting the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk down to a <strong>13-dimensional effective shadow with signature (12,1)</strong>: 12 spaces + 1 time.
                     From there, 7 dimensions curl up into a complicated shape called a <strong><a href="foundations/g2-manifolds.html" style="color: var(--accent-primary); text-decoration: none; border-bottom: 2px solid var(--accent-primary);">G<sub>2</sub> manifold</a></strong>,
                     giving us a 6D bulk with signature (5,1). This leaves us with the shared structure where we all experience the same 4D base (3 space + 1 time),
                     but our universe has 2 bonus spatial dimensions compared to the shadow universes!
@@ -756,7 +756,7 @@
             <div class="analogy-box" style="border-left-color: #4facfe; background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(139, 127, 255, 0.05));">
                 <h4 style="color: #4facfe;">&#x23F0; Two Kinds of Time?</h4>
                 <p>
-                    One of the strangest ideas: the full 26D bulk has <strong>two timelike dimensions</strong> with signature (24,2).
+                    One of the strangest ideas: the full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has <strong>two timelike dimensions</strong> with signature (24,2).
                     Think of it like latitude and longitude on a map - both needed to locate a position, but
                     we only experience motion along one direction at a time.
                 </p>
@@ -787,7 +787,7 @@
                     that dimension is "hidden" in the projection.
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    The same thing happens with time! The full 26D bulk has <strong>two timelike dimensions</strong>
+                    The same thing happens with time! The full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk has <strong>two timelike dimensions</strong>
                     that are both fundamental in the (24,2) signature. But what we experience is like
                     a "shadow" - the Sp(2,R) gauge fixing projects both times down to one effective time dimension (thermal time) in the 13D shadow.
                 </p>
@@ -861,10 +861,10 @@
                     </p>
                     <p>
                         The <strong>Sp(2,R) gauge symmetry</strong> acts on the 2 timelike dimensions, eliminating ghost particles
-                        (negative-norm states) that would otherwise make 2T physics inconsistent. Through gauge fixing, this projects the 26D bulk to a 13D shadow.
+                        (negative-norm states) that would otherwise make 2T physics inconsistent. Through gauge fixing, this projects the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk to a 13D shadow.
                     </p>
                     <p style="margin-top: 1rem;">
-                        Through gauge fixing (choosing a consistent reference frame), we observe a <strong>13-dimensional effective shadow</strong>
+                        Through gauge fixing (choosing a consistent reference frame), we observe a <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective shadow</strong>
                         with signature (12,1) - one effective time emerges:
                     </p>
                     <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0; padding: 0.75rem; background: rgba(255, 126, 182, 0.1); border-radius: 8px;">
@@ -1065,7 +1065,7 @@
                     <li><strong>KK graviton mass:</strong> <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span> - discoverable at HL-LHC</li>
                     <li><strong>Neutrino mass sum:</strong> Σm<sub>ν</sub> = <span class="tooltip-trigger" data-category="neutrino" data-param="sum_neutrino_mass">0.0708 eV</span> (Normal Hierarchy predicted, 76% confidence from NuFIT 6.0, testable by JUNO 2027+)</li>
                     <li><strong>All fermion masses:</strong> Complete quark, lepton, and neutrino mass matrices derived from TCS G₂ 3-cycle intersections</li>
-                    <li><strong>Dark energy:</strong> w₀ = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.w0_d_eff.w0"></span>, matches DESI DR2 (0.00σ agreement)</li>
+                    <li><strong>Dark energy:</strong> w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span>, matches DESI DR2 (0.00σ agreement)</li>
                 </ul>
             </div>
 
@@ -1117,7 +1117,7 @@
                     <strong style="color: #8b7fff;">56 parameters</strong> come purely from the geometry of the extra dimensions.
                 </p>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
-                    <strong>What's calibrated:</strong> The vacuum expectation value (VEV = <span class="pm-value" data-pm-value="v12_7_pure_geometric.vev_pure.v_GeV"></span> GeV) and the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="v12_7_pure_geometric.alpha_gut_pure.alpha_GUT_inv"></span>).
+                    <strong>What's calibrated:</strong> The vacuum expectation value (VEV = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV) and the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span>).
                     Everything else—particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
                 </p>
             </div>
@@ -1135,7 +1135,7 @@
                     <li>All quark and lepton masses (from 3-cycle intersections)</li>
                     <li>Complete CKM and PMNS mixing matrices (0.09σ average agreement)</li>
                     <li>Neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV)</li>
-                    <li>Higgs mass = <span class="pm-value" data-pm-value="v12_7_pure_geometric.flux_stab_pure.m_h_GeV"></span> GeV (matches PDG 2024 central value)</li>
+                    <li>Higgs mass = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV (matches PDG 2024 central value)</li>
                     <li>Proton lifetime = 3.91×10³⁴ years (from G₂ torsion class T<sub>ω</sub> = -0.884)</li>
                     <li>KK graviton spectrum starting at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span></li>
                     <li>Dark energy equation of state w(z) = -1 + 0.147·ln(1+z)</li>
@@ -1409,7 +1409,7 @@
                         These parameters control how our universe accesses the extra dimensions. The values
                         <strong>α<sub>4</sub> = 0.576152</strong> and <strong>α<sub>5</sub> = 0.576152</strong>
                         are not adjustable - they're geometric facts that fall out of the manifold's shape.
-                        Their equality (α<sub>4</sub> = α<sub>5</sub>) gives maximal mixing θ<sub>23</sub> = 45.0° exactly!
+                        Their equality (α<sub>4</sub> = α<sub>5</sub>) gives maximal mixing θ<sub>23</sub> = <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° exactly!
                     </p>
                 </div>
 
@@ -1626,7 +1626,7 @@
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Masses derived from TCS G₂ 3-cycle triple intersections using Type-I seesaw.
-                    Mass-squared differences: Δm²₂₁ = 7.40×10⁻⁵ eV², Δm²₃₁ = 2.514×10⁻³ eV² (0.12σ from NuFIT 6.0)
+                    Mass-squared differences: <span class="pm-value" data-pm-value="neutrino_mass.delta_m_sq" data-format="scientific:2"></span> eV², Δm²₃₁ = 2.514×10⁻³ eV² (0.12σ from NuFIT 6.0)
                 </p>
                 <p style="margin-top: 0.5rem; color: #51cf66;">
                     <strong>Test:</strong> JUNO (2027+), DUNE (2027+). Current 2025 data already favors NH at ~2.7σ, consistent with our prediction.
@@ -1661,21 +1661,21 @@
                     <strong>Prediction:</strong> All three mixing angles match experiment within 0.25sigma on average
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
-                    <strong>Values:</strong> θ<sub>23</sub> = 45.0° (maximal mixing), θ<sub>12</sub> = 33.6°, θ<sub>13</sub> = 8.57°
+                    <strong>Values:</strong> θ<sub>23</sub> = <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° (maximal mixing), θ<sub>12</sub> = 33.6°, θ<sub>13</sub> = 8.57°
                 </p>
             </div>
 
             <div class="prediction-card testable" style="border-left-color: #51cf66;">
                 <h4><span class="tag derived">DERIVED</span> Higgs Mass</h4>
                 <p>
-                    <strong>Prediction:</strong> m<sub>h</sub> = <span class="tooltip-trigger" data-category="fundamental" data-param="higgs_mass">125.10 GeV</span>
+                    <strong>Prediction:</strong> m<sub>h</sub> = <span class="tooltip-trigger" data-category="fundamental" data-param="higgs_mass"><span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV</span>
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Predicted from G₂ Kähler potential and flux superpotential with
                     complex structure modulus Re(T) = 7.086 determined by Higgs mass constraint.
                 </p>
                 <p style="margin-top: 0.5rem; color: #51cf66;">
-                    <strong>Result:</strong> PDG 2024: <span class="pm-value" data-pm-value="v12_7_pure_geometric.flux_stab_pure.m_h_GeV"></span> ± 0.14 GeV (agrees with central value within uncertainties).
+                    <strong>Result:</strong> PDG 2024: <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> ± 0.14 GeV (agrees with central value within uncertainties).
                 </p>
                 <div class="analogy-box" style="margin-top: 0.75rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.05)); border-left-color: #51cf66;">
                     <h4 style="color: #51cf66;">The Shape Parameter Derivation</h4>
@@ -1888,7 +1888,7 @@
                         <li>PMNS mixing angles: θ₂₃ = 45.0° (maximal mixing), θ₁₂ = 33.6°, θ₁₃ = 8.57° (all within 0.25σ!)</li>
                         <li>Dark energy equation of state: w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM"></span> (DESI: <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error"></span>, within <span class="pm-value" data-category="dark_energy" data-param="w0_sigma"></span>σ)</li>
                         <li>Dark energy evolution: wₐ < 0 (consistent with DESI DR2 6.2σ preference)</li>
-                        <li>Force unification scale: M_GUT = 2.118×10¹⁶ GeV (within 3%)</li>
+                        <li>Force unification scale: <span class="pm-value" data-pm-value="proton_decay.M_GUT" data-format="scientific:2"></span> GeV (within 3%)</li>
                     </ul>
                     <p style="margin-top: 1rem;"><strong>Theoretical Completeness (14/14 = 100%):</strong></p>
                     <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
@@ -1913,7 +1913,7 @@
                 <div class="step-flow" style="margin-bottom: 1.5rem;">
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.25), rgba(255, 126, 182, 0.2));">
                         <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x1F4C4;</div>
-                        <div style="font-size: 1.3rem; font-weight: 700;">26D Bulk</div>
+                        <div style="font-size: 1.3rem; font-weight: 700;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk</div>
                         <div style="font-size: 0.8rem; color: var(--text-muted);">Signature (24,2)</div>
                         <div style="font-size: 0.8rem; color: var(--text-muted);">2 timelike dims</div>
                     </div>
@@ -1977,7 +1977,7 @@
                         <div style="font-size: 1.8rem; margin-bottom: 0.25rem;">&#x23F0;&#x23F0;</div>
                         <div style="font-size: 1.3rem; font-weight: 700;">2 Timelike Dims</div>
                         <div style="font-size: 0.8rem; color: var(--text-muted);">t<sub>therm</sub> + t<sub>ortho</sub></div>
-                        <div style="font-size: 0.8rem; color: var(--text-muted);">in 26D bulk</div>
+                        <div style="font-size: 0.8rem; color: var(--text-muted);">in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk</div>
                     </div>
                     <span class="step-arrow">&#x27A1;</span>
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(255, 159, 67, 0.2), rgba(255, 107, 107, 0.15));">
@@ -2003,7 +2003,7 @@
                 </div>
 
                 <div class="visual-caption" style="margin-top: 2rem;">
-                    This is the complete journey: Starting from 26D bulk with signature (24,2), the Sp(2,R) gauge fixing removes ghosts, giving us 13D shadow with (12,1). This compactifies through a 7D G<sub>2</sub> manifold that forces 3 particle families and creates shared dimensions between our universe and 3 shadow ones. Time emerges from entropy, and the whole system expands via dark energy!
+                    This is the complete journey: Starting from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk with signature (24,2), the Sp(2,R) gauge fixing removes ghosts, giving us 13D shadow with (12,1). This compactifies through a 7D G<sub>2</sub> manifold that forces 3 particle families and creates shared dimensions between our universe and 3 shadow ones. Time emerges from entropy, and the whole system expands via dark energy!
                 </div>
             </div>
 
@@ -2014,11 +2014,11 @@
                     <li>Explains exactly 3 generations from topology (χ<sub>eff</sub> = 144 from TCS G₂ #187)</li>
                     <li>Unifies gravity, particle physics, and cosmology in one geometric framework (26D → 13D → 6D/4D BRST-proven)</li>
                     <li>Derives complete fermion spectrum: all quark, lepton, and neutrino masses from 3-cycle geometry</li>
-                    <li>Predicts Higgs mass = 125.10 GeV (exact experimental match)</li>
+                    <li>Predicts Higgs mass = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV (exact experimental match)</li>
                     <li>Derives neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV, 0.12σ from data)</li>
                     <li>Predicts KK graviton at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span> (HL-LHC discoverable)</li>
                     <li>Derives proton lifetime 3.91×10³⁴ years from G₂ torsion (Hyper-K testable)</li>
-                    <li>Achieves dark energy w₀ = -0.8527 matching DESI DR2 (0.00σ agreement)</li>
+                    <li>Achieves dark energy <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span> matching DESI DR2 (0.00σ agreement)</li>
                 </ul>
                 <p><strong>Framework achievements:</strong></p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
@@ -2034,7 +2034,7 @@
                     <li>Accurate Higgs mass formula calculation</li>
                     <li>Re(T) = 7.086 derived from Higgs mass constraint</li>
                     <li>Swampland distance conjecture satisfied</li>
-                    <li>Exact Higgs mass match (125.10 GeV) now comes from correct physics, not compensating errors</li>
+                    <li>Exact Higgs mass match (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV) now comes from correct physics, not compensating errors</li>
                 </ul>
                 <p style="margin-top: 0.75rem; color: #51cf66;">
                     All values derived from TCS G₂ manifold geometry. Falsifiable predictions testable 2027-2038:
@@ -2270,7 +2270,7 @@
             <div class="analogy-box" style="border-left-color: #8b7fff; background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.05));">
                 <h4 style="color: #8b7fff;">&#x1F30C; Eight Branes in Two Stacks (4 + 4)</h4>
                 <p>
-                    The full 26-dimensional theory contains <strong>8 branes organized in 2 stacks of 4</strong>,
+                    The full <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional theory contains <strong>8 branes organized in 2 stacks of 4</strong>,
                     related by a Z<sub>2</sub> mirror symmetry:
                 </p>
                 <div style="background: rgba(0,0,0,0.2); padding: 1rem; border-radius: 8px; margin: 1rem 0; text-align: center; font-family: 'Crimson Text', serif;">
@@ -2324,12 +2324,12 @@
                     <strong>"hidden variables"</strong> that determine quantum outcomes in our observable brane (B<sub>1</sub>).
                     The quantum state we observe is a <em>partial trace</em> over these hidden degrees of freedom.
                     What looks "random" to us is actually determined by information we can't directly access&mdash;the
-                    underlying 26D bulk dynamics is deterministic.
+                    underlying <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk dynamics is deterministic.
                 </p>
                 <p style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">
                     <strong>Why doesn't this violate Bell's theorem?</strong> Bell proved <em>local</em> hidden variables
                     can't explain quantum correlations. But the inter-brane correlations are <em>non-local</em>: the
-                    Pneuma field couples all 8 branes through the 26D bulk, similar to how Bohmian mechanics uses the
+                    Pneuma field couples all 8 branes through the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk, similar to how Bohmian mechanics uses the
                     quantum potential. The key difference is that PM's non-locality is <em>geometric</em> (extra
                     dimensions) rather than kinematic (configuration space).
                 </p>
@@ -2395,7 +2395,7 @@
                         If "you" are a correlated pattern across all eight branes in the 26D theory, what happens when
                         biological death occurs? The matter in B<sub>1</sub> disperses, but the correlations with
                         B<sub>2</sub>-B<sub>4</sub> (and the mirror stack B<sub>1'</sub>-B<sub>4'</sub>) were never
-                        <em>located</em> in your body&mdash;they're patterns in the 26D bulk state. The mathematics
+                        <em>located</em> in your body&mdash;they're patterns in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk state. The mathematics
                         doesn't say these correlations vanish; it's silent on what becomes of the "you-pattern" when its
                         B<sub>1</sub> anchor dissolves. This is genuinely open.
                     </p>
