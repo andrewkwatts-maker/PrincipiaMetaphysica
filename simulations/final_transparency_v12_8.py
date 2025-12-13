@@ -230,8 +230,8 @@ def get_validation_statistics() -> Dict:
         "predictions_within_1sigma": 45,
         "success_rate": 93.75,        # 45/48
 
-        "exact_matches": 12,          # 0.0σ deviation from central value
-        "excellent_matches": 33,      # < 0.5σ deviation
+        "exact_matches": 12,          # 0.0sigma deviation from central value
+        "excellent_matches": 33,      # < 0.5sigma deviation
 
         "honest_grade": "A+",
         "note": "Maximum possible rigor with current theoretical tools"
