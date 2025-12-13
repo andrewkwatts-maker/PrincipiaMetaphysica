@@ -15,17 +15,23 @@ import numpy as np
 from sympy import symbols, ln, sin, pi, N, exp
 import config
 
-# TCS G2 Topological Parameters
-b2, b3 = 4, 24
-chi_eff = 144
-nu = 24
-n_gen = 3
+# Import from centralized config to avoid hardcoded duplicates
+from config import FundamentalConstants, PhenomenologyParameters, GaugeUnificationParameters
+
+# TCS G2 Topological Parameters (from config - single source of truth)
+b2 = FundamentalConstants.HODGE_H11  # = 4 (Kahler moduli)
+b3 = 24  # Associative 3-cycles (b3 = 2 * h21 + 2 for G2, or specific TCS value)
+chi_eff = FundamentalConstants.euler_characteristic_effective()  # = 144
+nu = b3  # Dirac operator index = b3
+n_gen = chi_eff // 48  # = 3
 q = 48  # SO(10) divisor
 k = 5   # D5 singularity
 
-# Physics Constants
-M_Pl = 1.22e19  # GeV
-M_GUT_base = 1.8e16  # GeV (geometric baseline)
+# Physics Constants (from config - single source of truth)
+# NOTE: Using FULL Planck mass (1.22e19) for M_GUT derivation formulas
+# This is the convention used in string theory literature for log(M_Pl/M_GUT)
+M_Pl = PhenomenologyParameters.M_PLANCK_FULL  # = 1.221e19 GeV
+M_GUT_base = 1.8e16  # GeV (geometric baseline for iteration)
 
 # === PART 1: Geometric M_GUT Derivation from TCS Torsions ===
 
