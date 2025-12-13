@@ -167,7 +167,7 @@ class KKSpectrumCalculator:
         }
         return br_dict
 
-    def run_mc_uncertainty(self, n_samples=1000):
+    def run_mc_uncertainty(self, n_samples=10000):
         """
         Monte Carlo uncertainty quantification
 
@@ -245,7 +245,7 @@ class KKSpectrumCalculator:
         br = self.compute_branching_ratios()
 
         # 6. MC uncertainty
-        mc_results = self.run_mc_uncertainty(n_samples=1000)
+        mc_results = self.run_mc_uncertainty(n_samples=10000)
 
         if verbose:
             print("KK MASS SPECTRUM (first 10 modes):")
@@ -268,7 +268,7 @@ class KKSpectrumCalculator:
                 print(f"  BR(KK -> {channel}) = {ratio*100:.1f}%")
             print()
 
-            print("MONTE CARLO UNCERTAINTIES (n=1000):")
+            print("MONTE CARLO UNCERTAINTIES ((n=10000)):")
             print(f"  m1 = {mc_results['m1_mean']/1e3:.2f} +/- {mc_results['m1_std']/1e3:.2f} TeV")
             print(f"  m2 = {mc_results['m2_mean']/1e3:.2f} +/- {mc_results['m2_std']/1e3:.2f} TeV")
             print(f"  m3 = {mc_results['m3_mean']/1e3:.2f} +/- {mc_results['m3_std']/1e3:.2f} TeV")

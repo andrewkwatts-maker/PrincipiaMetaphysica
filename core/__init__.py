@@ -52,6 +52,13 @@ from .validation import (
     validate_proton_lifetime,
 )
 
+from .monte_carlo import (
+    MonteCarloConfig,
+    get_mc_config,
+    get_n_samples,
+    N_SAMPLES_DEFAULT,
+)
+
 __all__ = [
     # Constants
     'DimensionalStructure',
@@ -82,6 +89,11 @@ __all__ = [
     'validate_chi_eff',
     'validate_m_gut',
     'validate_proton_lifetime',
+    # Monte Carlo
+    'MonteCarloConfig',
+    'get_mc_config',
+    'get_n_samples',
+    'N_SAMPLES_DEFAULT',
 ]
 
 __version__ = "12.7"

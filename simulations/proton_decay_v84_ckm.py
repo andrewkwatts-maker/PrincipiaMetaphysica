@@ -260,7 +260,7 @@ class ProtonDecayV84:
 
         return tau_channels
 
-    def run_mc_uncertainty(self, n_samples=1000, use_moonshine=False):
+    def run_mc_uncertainty(self, n_samples=10000, use_moonshine=False):
         """
         Monte Carlo uncertainty quantification
 
@@ -401,9 +401,9 @@ class ProtonDecayV84:
 
         # Step 6: MC uncertainty
         if verbose:
-            print("Running Monte Carlo uncertainty quantification (n=1000)...")
+            print("Running Monte Carlo uncertainty quantification ((n=10000))...")
 
-        mc_results = self.run_mc_uncertainty(n_samples=1000, use_moonshine=use_moonshine)
+        mc_results = self.run_mc_uncertainty(n_samples=10000, use_moonshine=use_moonshine)
 
         if verbose:
             print("MONTE CARLO RESULTS:")

@@ -207,7 +207,7 @@ class NeutrinoMassOrderingCalculator:
 
         return masses
 
-    def run_mc_uncertainty(self, n_samples=1000):
+    def run_mc_uncertainty(self, n_samples=10000):
         """
         Monte Carlo uncertainty quantification
 
@@ -284,7 +284,7 @@ class NeutrinoMassOrderingCalculator:
         masses_NH = self.diagonalize_mass_matrix(Y_nu, ordering='NH')
 
         # 5. MC uncertainty
-        mc_results = self.run_mc_uncertainty(n_samples=1000)
+        mc_results = self.run_mc_uncertainty(n_samples=10000)
 
         if verbose:
             print("ATIYAH-SINGER INDEX:")
@@ -297,7 +297,7 @@ class NeutrinoMassOrderingCalculator:
             print(f"  Confidence: {prob_IH*100:.1f}% (IH) / {(1-prob_IH)*100:.1f}% (NH)")
             print()
 
-            print("MONTE CARLO RESULTS (n=1000):")
+            print("MONTE CARLO RESULTS ((n=10000)):")
             print(f"  P(IH) = {mc_results['prob_IH_mean']*100:.1f}% +/- {mc_results['prob_IH_std']*100:.1f}%")
             print(f"  P(NH) = {(1-mc_results['prob_IH_mean'])*100:.1f}% +/- {mc_results['prob_IH_std']*100:.1f}%")
             print(f"  Median P(IH) = {mc_results['prob_IH_median']*100:.1f}%")
