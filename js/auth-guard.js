@@ -9,6 +9,7 @@
 
 import { onAuthReady, signInWithGoogle, signOutUser, getUserInfo } from './firebase-auth.js';
 import { initializeData, loadAllPageData } from './firebase-data.js';
+import { trackUserLogin, trackUserLogout, trackPageView } from './firebase-analytics.js';
 
 // Current page identifier (set by page)
 let currentPageId = null;
@@ -63,6 +64,9 @@ async function handleAuthenticated(user) {
   console.log(`[PM Auth Guard] User authenticated: ${user.email}`);
   isAuthenticated = true;
 
+  // Track user login
+  await trackUserLogin(user);
+
   // Hide overlay, show content
   document.body.classList.remove('not-authenticated');
   document.body.classList.add('authenticated');
@@ -88,6 +92,9 @@ async function handleAuthenticated(user) {
     if (currentPageId) {
       const pageData = await loadAllPageData(currentPageId);
       console.log(`[PM Auth Guard] Page data loaded for ${currentPageId}`);
+
+      // Track page view
+      await trackPageView(user, currentPageId);
 
       // Dispatch event for page-specific handling
       window.dispatchEvent(new CustomEvent('pm-data-ready', { detail: pageData }));
@@ -148,6 +155,10 @@ async function handleLogin() {
  * Handle logout button click
  */
 async function handleLogout() {
+  const user = getUserInfo();
+  if (user) {
+    await trackUserLogout(user);
+  }
   await signOutUser();
 }
 
