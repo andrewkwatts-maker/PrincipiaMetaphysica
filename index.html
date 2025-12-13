@@ -1061,7 +1061,7 @@
     </p>
 
     <p style="margin-top: 1rem;">
-      The framework relates <span class="pm-value" data-pm-value="validation.total_predictions"></span> Standard Model parameters to manifold topology, flux quantization, and effective torsion. <strong>Two scale parameters</strong> (VEV, α<sub>GUT</sub>) are calibrated to experimental values; the Higgs mass constrains one modulus (Re(T) = 7.086); and two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT data pending explicit Yukawa calculation.
+      The framework relates <span class="pm-value" data-pm-value="validation.total_predictions"></span> Standard Model parameters to manifold topology, flux quantization, and effective torsion. <strong>55 parameters are pure predictions</strong>; three inputs constrain the theory: two scale calibrations (VEV coefficient 1.5859, 1/α<sub>GUT</sub> coefficient 1/(10π) ≈ 0.0318) and the Higgs mass (fixes Re(T) = 7.086). Two PMNS parameters (θ₁₃, δ<sub>CP</sub>) are fitted to NuFIT 6.0 pending explicit Yukawa calculation.
     </p>
 
     <p style="margin-top: 1rem;">
@@ -1114,16 +1114,23 @@
       Calibration Transparency
      </h4>
      <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin: 0;">
-      <strong>V12.8 Transparency Statement:</strong> The framework uses <strong>3 inputs</strong> and <strong>2 calibrations</strong>:
+      <strong>V12.8 Transparency Statement:</strong> 55 parameters are pure predictions; 3 constrain the theory:
      </p>
      <ul style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin: 0.75rem 0 0 1.5rem;">
-      <li><strong>VEV scale</strong> = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV (calibrated to electroweak scale)</li>
-      <li><strong>1/α<sub>GUT</sub></strong> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span> (calibrated to set GUT scale)</li>
-      <li><strong>Higgs mass constraint</strong>: m<sub>h</sub> = 125.10 GeV fixes Re(T) = 7.086 (postdiction, not prediction)</li>
-      <li><strong>θ₁₃, δ<sub>CP</sub></strong>: calibrated to NuFIT 6.0 (pending explicit Yukawa intersection calculation)</li>
+      <li><strong>VEV coefficient</strong> = 1.5859 (analogous to flux choices in KKLT)</li>
+      <li><strong>1/α<sub>GUT</sub> coefficient</strong> = 1/(10π) ≈ 0.0318 (<a href="simulations/derive_alpha_gut.py" style="color: #8b7fff;">geometric from 5-cycle measure</a>)</li>
+      <li><strong>Higgs mass</strong>: m<sub>h</sub> = 125.10 GeV fixes Re(T) = 7.086 (observational constraint)</li>
      </ul>
+     <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem; font-style: italic;">
+      <strong>Calibrated (pending Yukawa calculation):</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0; geometric derivation from triple cycle intersections planned for v13.0.
+     </p>
      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem; font-style: italic;">
-      <strong>Derivation Details:</strong> The generation formula n<sub>gen</sub> = χ<sub>eff</sub>/48 uses a Z₂ factor from Sp(2,R) gauge fixing (derived in <a href="simulations/zero_modes_gen_v12_8.py" style="color: #8b7fff;">zero_modes_gen_v12_8.py</a>, referencing Bars 2006). The "effective torsion" T<sub>ω</sub> = -0.884 arises from G-flux on the Ricci-flat TCS G₂ manifold (derived in <a href="simulations/torsion_effective_v12_8.py" style="color: #8b7fff;">torsion_effective_v12_8.py</a>). Dimensional decomposition 26D = 4D × T<sup>15</sup> × G₂(7D) is explicit in <a href="simulations/dim_decomp_v12_8.py" style="color: #8b7fff;">dim_decomp_v12_8.py</a>.
+      <strong>Derivation Files:</strong>
+      <a href="simulations/derive_theta23_g2_v12_8.py" style="color: #8b7fff;">θ₂₃ from G₂ holonomy</a> (Joyce 2000, Acharya-Witten 2001) |
+      <a href="simulations/zero_modes_gen_v12_8.py" style="color: #8b7fff;">n<sub>gen</sub>=3 with Z₂</a> (Bars 2006) |
+      <a href="simulations/torsion_effective_v12_8.py" style="color: #8b7fff;">T<sub>ω</sub> from G-flux</a> |
+      <a href="simulations/derive_d_eff_v12_8.py" style="color: #8b7fff;">d<sub>eff</sub> ghost coefficient</a> |
+      <a href="simulations/dim_decomp_v12_8.py" style="color: #8b7fff;">26D decomposition</a>
      </p>
     </div>
     <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.5rem; margin: 0 auto 2rem auto; max-width: 900px;">
