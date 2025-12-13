@@ -1,4 +1,13 @@
 /**
+ * Script to update firebase-page-loader.js with enhanced PM value population
+ * Run with: node scripts/update-page-loader.js
+ */
+const fs = require('fs');
+const path = require('path');
+
+const filePath = path.join(__dirname, '..', 'js', 'firebase-page-loader.js');
+
+const newContent = `/**
  * Firebase Page Loader
  *
  * Loads page content and PM values from Firebase Firestore.
@@ -192,7 +201,7 @@ function formatValue(val, format) {
       case 'percent':
         return (val * 100).toFixed(p) + '%';
       case 'sigma':
-        return val.toFixed(p) + '\u03C3';
+        return val.toFixed(p) + '\\u03C3';
       default:
         break;
     }
@@ -265,3 +274,8 @@ export function getCacheStatus() {
     ttl: cache.CACHE_TTL
   };
 }
+`;
+
+fs.writeFileSync(filePath, newContent);
+console.log('Updated firebase-page-loader.js with enhanced PM value population');
+console.log('New file size:', fs.statSync(filePath).size, 'bytes');
