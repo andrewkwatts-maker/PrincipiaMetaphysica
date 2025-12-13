@@ -681,6 +681,7 @@
 
         </style>
   <link href="css/pm-tooltip.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/auth.css">
   <script src="theory-constants-enhanced.js">
   </script>
   <script src="js/pm-tooltip-system.js">
@@ -691,7 +692,7 @@
   <script src="js/pm-formula-component.js">
   </script>
  </head>
- <body>
+ <body class="not-authenticated">
   <div class="paper">
    <h1>
     Principia Metaphysica
@@ -55940,5 +55941,9 @@ num_kurt = N(kurtosis.subs({excess:0.01, sigma_cmb2:3e-3}))
             <a href="sections/pneuma-lagrangian-new.html">View Full Section Page →</a>
         </div>
 </section></div>
+<script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('principia-metaphysica-paper');
+</script>
 </body>
 </html>
