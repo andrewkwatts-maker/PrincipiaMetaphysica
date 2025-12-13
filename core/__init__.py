@@ -59,6 +59,43 @@ from .monte_carlo import (
     N_SAMPLES_DEFAULT,
 )
 
+from .data_flow_validation import (
+    DataFlowValidator,
+    ValidationIssue,
+    validate_data_flow,
+)
+
+from .attributed_constants import (
+    AttributedConstant,
+    ALL_CONSTANTS,
+    get_constant,
+    get_value,
+    print_attribution,
+    generate_attribution_report,
+    # Key constants with full attribution
+    PLANCK_MASS_FULL,
+    PLANCK_MASS_REDUCED,
+    HIGGS_MASS,
+    ELECTROWEAK_VEV,
+    FINE_STRUCTURE_CONSTANT,
+    THETA_12,
+    THETA_23,
+    THETA_13,
+    DELTA_CP,
+    DM21_SQUARED,
+    DM31_SQUARED,
+    W0_DARK_ENERGY,
+    WA_DARK_ENERGY,
+    M_GUT,
+    ALPHA_GUT_INV,
+    HODGE_H11,
+    HODGE_B3,
+    CHI_EFFECTIVE,
+    N_GENERATIONS,
+    TAU_PROTON_EXP,
+    TAU_PROTON_PM,
+)
+
 __all__ = [
     # Constants
     'DimensionalStructure',
@@ -94,6 +131,38 @@ __all__ = [
     'get_mc_config',
     'get_n_samples',
     'N_SAMPLES_DEFAULT',
+    # Data Flow Validation
+    'DataFlowValidator',
+    'ValidationIssue',
+    'validate_data_flow',
+    # Attributed Constants
+    'AttributedConstant',
+    'ALL_CONSTANTS',
+    'get_constant',
+    'get_value',
+    'print_attribution',
+    'generate_attribution_report',
+    'PLANCK_MASS_FULL',
+    'PLANCK_MASS_REDUCED',
+    'HIGGS_MASS',
+    'ELECTROWEAK_VEV',
+    'FINE_STRUCTURE_CONSTANT',
+    'THETA_12',
+    'THETA_23',
+    'THETA_13',
+    'DELTA_CP',
+    'DM21_SQUARED',
+    'DM31_SQUARED',
+    'W0_DARK_ENERGY',
+    'WA_DARK_ENERGY',
+    'M_GUT',
+    'ALPHA_GUT_INV',
+    'HODGE_H11',
+    'HODGE_B3',
+    'CHI_EFFECTIVE',
+    'N_GENERATIONS',
+    'TAU_PROTON_EXP',
+    'TAU_PROTON_PM',
 ]
 
 __version__ = "12.7"

@@ -15,12 +15,15 @@ import numpy as np
 from sympy import asin, atan, sqrt, pi, N, cos, sin, exp, symbols
 import config
 
-# TCS G2 Topological Parameters
-b2 = 4      # h^{1,1} Hodge number (associative cycles)
-b3 = 24     # h^{2,1} Hodge number (coassociative cycles)
-chi_eff = 144  # Effective Euler characteristic
-nu = 24     # Crowley-Nordenstram invariant
-n_gen = 3   # Number of generations
+# Import from centralized config to avoid hardcoded duplicates
+from config import FundamentalConstants
+
+# TCS G2 Topological Parameters (from config - single source of truth)
+b2 = FundamentalConstants.HODGE_H11  # = 4 (Kahler moduli)
+b3 = 24     # Associative 3-cycles (TCS manifold specific)
+chi_eff = FundamentalConstants.euler_characteristic_effective()  # = 144
+nu = b3     # Crowley-Nordenstram invariant = b3
+n_gen = FundamentalConstants.fermion_generations()  # = 3
 
 # === MIXING ANGLE FORMULAS ===
 

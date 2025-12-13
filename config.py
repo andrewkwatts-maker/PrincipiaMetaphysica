@@ -295,12 +295,14 @@ class ModuliParameters:
     # V_9 for 7D G₂ × 2D torus compactification
     # V_9 = M_Pl^2 / M_*^11 ~ 1.488×10^{-138} GeV^{-9}
     M_STAR_GUT = 1e16         # GUT scale [GeV]
-    M_PLANCK = 1.22e19        # Planck mass [GeV]
+    # NOTE: Use FULL Planck mass for volume calculations in string theory
+    # References PhenomenologyParameters.M_PLANCK_FULL = 1.221e19 GeV
 
     @staticmethod
     def V_9_volume():
         """Internal volume V_9 = M_Pl^2 / M_*^11"""
-        return ModuliParameters.M_PLANCK**2 / ModuliParameters.M_STAR_GUT**11
+        M_Pl = PhenomenologyParameters.M_PLANCK_FULL  # Use FULL Planck mass
+        return M_Pl**2 / ModuliParameters.M_STAR_GUT**11
 
     @staticmethod
     def condensate_gap():
@@ -1256,9 +1258,9 @@ class ProtonLifetimeParameters:
     τ_p = (M_GUT)^4 / (m_p^5 α_GUT^2) × exp(8π|T_ω|) / hadronic_matrix_elements
     """
 
-    # From previous derivations
-    M_GUT = 2.118e16             # [GeV] From TCS torsion class
-    ALPHA_GUT = 1/24.3           # GUT coupling (exact at unification)
+    # From GaugeUnificationParameters (single source of truth)
+    M_GUT = GaugeUnificationParameters.M_GUT  # 2.118e16 GeV
+    ALPHA_GUT = GaugeUnificationParameters.ALPHA_GUT  # 1/23.54
     M_PROTON = 0.938             # [GeV] Proton mass
 
     # Torsion enhancement

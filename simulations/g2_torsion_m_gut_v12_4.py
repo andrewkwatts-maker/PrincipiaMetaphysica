@@ -22,29 +22,32 @@ Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
+import config
+from config import FundamentalConstants, PhenomenologyParameters
 
 # ==============================================================================
-# FUNDAMENTAL CONSTANTS
+# FUNDAMENTAL CONSTANTS (from centralized config - single source of truth)
 # ==============================================================================
 
 # TCS G₂ manifold CHNP construction #187
 T_OMEGA = -0.884        # Torsion class (exact from CHNP database)
-B2_KAHLER = 4           # Kähler moduli (h^{1,1})
-B3_ASSOCIATIVE = 24     # Associative 3-cycles (h^{2,1})
-CHI_EFF = 72            # Effective Euler characteristic
+B2_KAHLER = FundamentalConstants.HODGE_H11  # = 4 (Kähler moduli)
+B3_ASSOCIATIVE = 24     # Associative 3-cycles (TCS manifold specific)
+CHI_EFF = FundamentalConstants.euler_characteristic_effective()  # = 144
 
-# Dimensional structure
-D_BULK = 26             # Bosonic string critical dimension (24,2) signature
-D_EFFECTIVE = 13        # After Sp(2,ℝ) gauge fixing (12,1) signature
-D_INTERNAL_G2 = 7       # G₂ holonomy manifold
+# Dimensional structure (from config)
+D_BULK = FundamentalConstants.D_BULK  # = 26
+D_EFFECTIVE = FundamentalConstants.D_AFTER_SP2R  # = 13
+D_INTERNAL_G2 = FundamentalConstants.D_INTERNAL  # = 7
 D_INTERNAL_T2 = 2       # T² torus
 
 # Normalization factors
 KAPPA = 1.46            # Sp(2,ℝ) + Z₂ + G₂/SO(7) normalization
 KAPPA_ERROR = 0.15      # ±10% uncertainty
 
-# Phenomenological inputs
-M_PLANCK = 1.22e19      # Reduced Planck mass [GeV] (PDG 2024)
+# Phenomenological inputs (from config - FULL Planck mass for M_GUT derivation)
+# NOTE: String theory literature uses M_P = 1.22e19 GeV for log(M_Pl/M_GUT)
+M_PLANCK = PhenomenologyParameters.M_PLANCK_FULL  # = 1.221e19 GeV (FULL Planck mass)
 M_PLANCK_ERROR = 3.6e15 # ±0.03% uncertainty
 
 # Flux quantization
