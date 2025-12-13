@@ -16,6 +16,7 @@
     <meta name="description" content="Section 3: Gauge Unification and Spontaneous Symmetry Breaking - SO(10) Grand Unified Framework">
     <title>Section 3: Gauge Unification - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../js/formula-expansion.js" defer></script>
     <style>
         /* Section-specific styles */
@@ -212,7 +213,8 @@
     <script src="../js/pm-tooltip-system.js"></script>
 
     </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <header>
         <div class="header-content">
             <h1>Principia Metaphysica</h1>
@@ -225,7 +227,13 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
     <main>
         <nav class="breadcrumb">
@@ -4616,6 +4624,12 @@
             init();
         }
     })();
+    </script>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard} from '/js/auth-guard.js';
+        setupAuthGuard('gauge-unification');
     </script>
 </body>
 </html>

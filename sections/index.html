@@ -16,6 +16,7 @@
     <meta name="description" content="Principia Metaphysica - Complete paper sections navigation and overview">
     <title>Paper Sections - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../js/formula-expansion.js" defer></script>
     <style>
         /* Horizontal Tabs Component */
@@ -296,7 +297,7 @@
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
     <header>
         <div class="header-content">
             <h1>Principia Metaphysica</h1>
@@ -309,8 +310,14 @@
                 </ul>
             </nav>
         </div>
+        <div class="user-controls">
+            <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
     </header>
 
+    <div id="main-content" style="display: none;">
     <main>
         <nav class="breadcrumb" aria-label="Breadcrumb">
             <a href="../index.html">Home</a>
@@ -561,6 +568,12 @@
 
         window.addEventListener('hashchange', handleHash);
         window.addEventListener('load', handleHash);
+    </script>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('index');
     </script>
 </body>
 </html>

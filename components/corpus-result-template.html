@@ -20,6 +20,7 @@
 
     <!-- Theme System -->
     <link rel="stylesheet" href="{{PATH_TO_THEMES}}/theme-base.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="{{PATH_TO_THEMES}}/theme-picker.js" defer></script>
 
     <style>
@@ -175,13 +176,20 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <!-- Theme Picker -->
     <div id="theme-picker-container"></div>
 
     <header>
     <div class="header-content"></div>
-</header>
+
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="{{PATH_TO_ROOT}}/mythos/index.html">Home</a> →
             <a href="{{PATH_TO_ROOT}}/mythos/{{TRADITION}}/index.html">{{TRADITION_NAME}}</a> →
@@ -237,6 +245,12 @@
                 btn.setAttribute('aria-expanded', 'false');
             }
         }
+    </script>
+    </div>
+
+    <script type="module">
+      import { setupAuthGuard } from '/js/auth-guard.js';
+      setupAuthGuard('components-corpus-result-template');
     </script>
 </body>
 </html>

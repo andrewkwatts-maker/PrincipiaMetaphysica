@@ -17,6 +17,7 @@
    Theory Analysis Principia Metaphysica
   </title>
   <link href="../css/styles.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="/css/auth.css">
   <script defer="" src="../js/formula-expansion.js">
   </script>
   <style>
@@ -131,7 +132,8 @@
   <script src="../js/pm-tooltip-system.js">
   </script>
  </head>
- <body>
+ <body class="not-authenticated">
+  <div id="main-content" style="display: none;">
   <header>
    <div class="header-content">
     <h1>
@@ -157,6 +159,12 @@
      </ul>
     </nav>
    </div>
+  
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
   </header>
   <main>
    <nav class="breadcrumb">
@@ -3039,5 +3047,11 @@
             Grok (xAI), and Gemini (Google).
    </p>
   </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('theory-analysis');
+  </script>
  </body>
 </html>

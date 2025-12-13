@@ -15,6 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CMB Bubble Collisions - Comprehensive Treatment</title>
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="/css/auth.css">
   <style>
     .equation-box {
       background: rgba(139, 127, 255, 0.1);
@@ -132,7 +133,8 @@
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
   <main style="max-width: 1200px; margin: 0 auto; padding: 2rem;">
     <h1>Section 7.7: Multiverse Bubble Collisions - From Fringe to Falsifiable</h1>
 
@@ -733,5 +735,11 @@ num_kurt = N(kurtosis.subs({excess:0.01, sigma_cmb2:3e-3}))
       © 2025 Andrew Keith Watts. All rights reserved.
     </p>
   </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('cmb-bubble-collisions-comprehensive');
+  </script>
 </body>
 </html>

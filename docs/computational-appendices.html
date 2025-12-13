@@ -156,10 +156,12 @@
             color: var(--accent-gold);
         }
     </style>
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <div class="container">
         <div class="breadcrumb">
             <a href="index.html">Home</a> /
@@ -181,7 +183,13 @@
             <div style="display: inline-block; background: rgba(139,127,255,0.2); padding: 0.5rem 1rem; border-radius: 8px; margin-top: 1rem;">
                 <span style="color: #8b7fff; font-weight: 600;">Updated for 2T Physics</span>
             </div>
-        </header>
+        
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
         <div class="note-box">
             <strong>Note:</strong> These appendices contain working code implementations that validate
@@ -1816,5 +1824,11 @@ python appendix_d_cmb_stats.py
             </p>
         </footer>
     </div>
+    </div>
+
+    <script type="module">
+      import { setupAuthGuard } from '/js/auth-guard.js';
+      setupAuthGuard('docs-computational-appendices');
+    </script>
 </body>
 </html>

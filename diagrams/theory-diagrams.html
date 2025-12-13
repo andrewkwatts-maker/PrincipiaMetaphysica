@@ -152,10 +152,12 @@
             }
         }
     </style>
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <div class="diagram-container">
         <a href="../index.html" class="back-link">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -1148,6 +1150,12 @@
                 });
             });
         });
+    </script>
+    </div>
+
+    <script type="module">
+      import { setupAuthGuard } from '/js/auth-guard.js';
+      setupAuthGuard('diagrams-theory-diagrams');
     </script>
 </body>
 </html>

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ancient Text Numerical Correlations - Principia Metaphysica</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <script src="theory-constants-enhanced.js" defer></script>
     <script src="js/pm-tooltip-system.js" defer></script>
 
@@ -96,7 +97,8 @@
         }
     </style>
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
     <div class="container" style="max-width: 1000px; margin: 0 auto; padding: 2rem;">
         <nav class="breadcrumb" style="margin-bottom: 2rem;">
             <a href="index.html">Home</a> &gt;
@@ -111,7 +113,13 @@
             <p style="font-size: 1.2rem; color: var(--text-secondary);">
                 Exploring Astonishing Parallels Between Ancient Cosmology and Modern Physics
             </p>
-        </header>
+        
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
         <!-- CRITICAL DISCLAIMER -->
         <section class="warning-disclaimer">
@@ -717,5 +725,11 @@
             Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('ancient-numerology');
+  </script>
 </body>
 </html>

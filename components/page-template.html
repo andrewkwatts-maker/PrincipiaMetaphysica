@@ -19,9 +19,10 @@
 
     <!-- Base theme styles -->
     <link rel="stylesheet" href="/themes/theme-base.css">
+    <link rel="stylesheet" href="/css/auth.css">
 
     <!-- Dynamic theme (loaded by JS) - default is 'day' -->
-    
+
 
     <!-- Theme picker -->
     <script src="/themes/theme-picker.js" defer></script>
@@ -31,7 +32,8 @@
         /* Add custom styles here if needed */
     </style>
 </head>
-<body>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
     <!-- Skip to main content link for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
@@ -43,7 +45,13 @@
     <div class="header-content">
         <h1 class="site-title">EOAPlot Mythology</h1>
     </div>
-</header>
+
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="../index.html">Home</a> → <a href="index.html">Components</a>
 </nav>
@@ -183,6 +191,12 @@
                 document.getElementById(tabId).classList.add('active');
             });
         });
+    </script>
+    </div>
+
+    <script type="module">
+      import { setupAuthGuard } from '/js/auth-guard.js';
+      setupAuthGuard('components-page-template');
     </script>
 </body>
 </html>

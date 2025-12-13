@@ -16,6 +16,7 @@
     <meta name="description" content="References - Academic papers and resources for Principia Metaphysica">
     <title>References - Principia Metaphysica</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <style>
         .ref-category {
             background: var(--bg-card);
@@ -81,7 +82,8 @@
     <script src="theory-constants-enhanced.js"></script>
     <script src="js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
     <header>
         <div class="header-content">
             <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
@@ -93,7 +95,13 @@
                 </ul>
             </nav>
         </div>
-    </header>
+    
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
     <main>
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -924,5 +932,11 @@
             <a href="#acknowledgments" style="color: var(--accent-secondary); text-decoration: none;">Personal Acknowledgments</a>
         </p>
     </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('references');
+  </script>
 </body>
 </html>

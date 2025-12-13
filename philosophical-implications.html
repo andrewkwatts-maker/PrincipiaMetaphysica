@@ -16,6 +16,7 @@
     <meta name="description" content="Philosophical Implications of Principia Metaphysica - Exploring consciousness, reality, and the nature of existence">
     <title>Philosophical Implications - Principia Metaphysica</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
     <style>
         .diagram-container {
             background: rgba(10, 10, 15, 0.6);
@@ -134,7 +135,8 @@
     <script src="theory-constants-enhanced.js"></script>
     <script src="js/pm-tooltip-system.js"></script>
 </head>
-<body>
+<body class="not-authenticated">
+  <div id="main-content" style="display: none;">
     <header>
         <nav>
             <a href="index.html" class="logo">Principia Metaphysica</a>
@@ -144,7 +146,13 @@
                 <a href="principia-metaphysica-paper.html">Full Paper</a>
             </div>
         </nav>
-    </header>
+    
+    <div class="user-controls">
+      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
 
     <main class="container" style="max-width: 1000px; padding: 2rem;">
         <h1 style="text-align: center; margin-bottom: 0.5rem;">Philosophical Implications</h1>
@@ -2713,5 +2721,11 @@
             © 2025 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
+  </div>
+
+  <script type="module">
+    import { setupAuthGuard } from '/js/auth-guard.js';
+    setupAuthGuard('philosophical-implications');
+  </script>
 </body>
 </html>
