@@ -1,0 +1,54 @@
+{
+  "cascade": [
+    {
+      "dim": 26,
+      "signature": "(24,2)",
+      "name": "26D Bulk",
+      "description": "Bosonic string critical dimension with two times"
+    },
+    {
+      "dim": 13,
+      "signature": "(12,1)",
+      "name": "13D Shadow",
+      "description": "Sp(2,R) gauge-fixed effective spacetime"
+    },
+    {
+      "dim": 8,
+      "signature": "(7,1)",
+      "name": "8D G₂ × Time",
+      "description": "G₂ holonomy manifold with time"
+    },
+    {
+      "dim": 6,
+      "signature": "(5,1)",
+      "name": "6D Observable Brane",
+      "description": "Observable brane with extra spatial dims"
+    },
+    {
+      "dim": 4,
+      "signature": "(3,1)",
+      "name": "4D Spacetime",
+      "description": "Our observable 3+1 dimensional world"
+    }
+  ],
+  "two_time": {
+    "t_therm": "Thermal time from KMS state (experienced time)",
+    "t_ortho": "Orthogonal time (eliminated by Sp(2,R) gauge)"
+  },
+  "brane_structure": {
+    "n_branes": 4,
+    "observable": {
+      "signature": "(5,1)",
+      "name": "B₁"
+    },
+    "shadow": {
+      "count": 3,
+      "signature": "(3,1)",
+      "names": [
+        "B₂",
+        "B₃",
+        "B₄"
+      ]
+    }
+  }
+}
