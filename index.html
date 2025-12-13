@@ -306,10 +306,10 @@
   <script defer="" src="js/formula-expansion.js">
   </script>
   <script>
-   // Populate values from TheoryConstants when page loads
+   // Populate values from PM object when page loads
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof TheoryConstants !== 'undefined') {
-                // Update dimensional values
+            if (typeof PM !== 'undefined') {
+                // Update dimensional values using PM object (from theory-constants-enhanced.js)
                 const dimFull = document.getElementById('dim-full');
                 const dimEff = document.getElementById('dim-eff');
                 const sigSpace = document.getElementById('sig-space');
@@ -319,14 +319,15 @@
                 const spinorFull = document.getElementById('spinor-full');
                 const spinorEff = document.getElementById('spinor-eff');
 
-                if (dimFull) dimFull.textContent = TheoryConstants.dimensions.full;
-                if (dimEff) dimEff.textContent = TheoryConstants.dimensions.effective;
-                if (sigSpace) sigSpace.textContent = TheoryConstants.dimensions.signature.space;
-                if (sigTime) sigTime.textContent = TheoryConstants.dimensions.signature.time;
-                if (sigEffSpace) sigEffSpace.textContent = TheoryConstants.dimensions.effectiveSignature.space;
-                if (sigEffTime) sigEffTime.textContent = TheoryConstants.dimensions.effectiveSignature.time;
-                if (spinorFull) spinorFull.textContent = TheoryConstants.spinors.full26D;
-                if (spinorEff) spinorEff.textContent = TheoryConstants.spinors.effective13D;
+                // Map from PM.dimensions structure
+                if (dimFull) dimFull.textContent = PM.dimensions?.D_bulk || 26;
+                if (dimEff) dimEff.textContent = PM.dimensions?.D_after_sp2r || 13;
+                if (sigSpace) sigSpace.textContent = 24; // (24,2) signature
+                if (sigTime) sigTime.textContent = 2;
+                if (sigEffSpace) sigEffSpace.textContent = 12; // (12,1) effective
+                if (sigEffTime) sigEffTime.textContent = 1;
+                if (spinorFull) spinorFull.textContent = 64; // 26D spinor
+                if (spinorEff) spinorEff.textContent = 64; // 13D spinor
             }
         });
   </script>
@@ -410,7 +411,7 @@
       two time dimensions
      </strong>
      . The
-                observable universe emerges as a 13D gauge-fixed shadow structured as a
+                observable universe emerges as a <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D gauge-fixed shadow structured as a
      <strong>
       1 + 3 brane
                 hierarchy
@@ -456,7 +457,7 @@
       Philosophical Implications
      </a>
     </div>
-    <!-- Master 26D Action - Interactive Display -->
+    <!-- Master <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Action - Interactive Display -->
     <div class="interactive-formula" style="margin-top: 2rem; position: relative; z-index: 100;">
      <span class="formula-hint">
       Hover for details
@@ -465,7 +466,7 @@
       <a class="formula-var" href="principia-metaphysica-paper.html#framework" style="text-decoration: none; color: inherit;">
        S
        <sub>
-        26D
+        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D
        </sub>
        <div class="var-tooltip">
         <div class="var-name">
@@ -548,10 +549,10 @@
        </sub>
        <div class="var-tooltip">
         <div class="var-name">
-         26D Einstein-Hilbert Term
+         <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Einstein-Hilbert Term
         </div>
         <div class="var-description">
-         26D gravity with signature (24,2): M
+         <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D gravity with signature (24,2): M
          <sub>
           26
          </sub>
@@ -566,7 +567,7 @@
          <sup>
           4
          </sup>
-         (26D)
+         (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)
         </div>
         <div class="var-contribution">
          Generates Einstein-like field equations in the full bulk; gauge-fixes to 13D via Sp(2,ℝ).
@@ -600,17 +601,17 @@
        </sub>
        <div class="var-tooltip">
         <div class="var-name">
-         26D Pneuma Lagrangian
+         <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Pneuma Lagrangian
         </div>
         <div class="var-description">
-         The fundamental 8192-component fermionic Pneuma field in 26D with Clifford algebra Cl(24,2).
+         The fundamental 8192-component fermionic Pneuma field in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D with Clifford algebra Cl(24,2).
         </div>
         <div class="var-units">
          GeV
          <sup>
           4
          </sup>
-         (26D)
+         (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)
         </div>
         <div class="var-contribution">
          Source of EVERYTHING: gauge-fixes to 64 components in 13D, generates geometry and all matter.
@@ -633,14 +634,14 @@
          Sp(2,ℝ) Gauge Lagrangian
         </div>
         <div class="var-description">
-         The Sp(2,ℝ) gauge field Lagrangian governing the reduction from 26D to 13D.
+         The Sp(2,ℝ) gauge field Lagrangian governing the reduction from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D to 13D.
         </div>
         <div class="var-units">
          GeV
          <sup>
           4
          </sup>
-         (26D)
+         (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)
         </div>
         <div class="var-contribution">
          Controls the gauge fixing from (24,2) to (12,1) signature, enabling dimensional reduction.
@@ -656,11 +657,11 @@
      </div>
      <!-- Plain text version for accessibility and AI processing -->
      <div class="formula-plaintext" style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem; font-family: 'Courier New', monospace; text-align: center; padding: 0.5rem; background: rgba(0,0,0,0.2); border-radius: 6px;">
-      S_26D = ∫ d^26 X √|G_(24,2)| [M̅²₆ R₂₆ + Ψ̄₂₆(iΓ^A∇_A - M)Ψ₂₆ + ℒ_Sp(2,ℝ)]
+      S_<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D = ∫ d^26 X √|G_(24,2)| [M̅²₆ R₂₆ + Ψ̄₂₆(iΓ^A∇_A - M)Ψ₂₆ + ℒ_Sp(2,ℝ)]
      </div>
      <div class="formula-label" style="font-size: 1.1rem; margin-top: 0.75rem;">
       <strong>
-       The Master 26D Action
+       The Master <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Action
       </strong>
       with signature (24,2)
       <br/>
@@ -669,7 +670,7 @@
        <span class="highlight" style="color: var(--accent-primary);">
         S
         <sub>
-         13D
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D
         </sub>
        </span>
        →
@@ -802,7 +803,7 @@
       </div>
      </div>
     </div>
-    <!-- Expandable Formula Breakdown: 26D → 13D → 4D -->
+    <!-- Expandable Formula Breakdown: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 4D -->
     <div class="expandable-formula" id="master-formula" style="margin-top: 1.5rem;">
      <div class="formula-header" style="cursor: pointer;">
       <div class="formula-main">
@@ -811,7 +812,7 @@
        </span>
        S
        <sub>
-        26D
+        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D
        </sub>
        <span style="color: var(--accent-primary);">
         →
@@ -825,7 +826,7 @@
        </span>
        S
        <sub>
-        4D
+        <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D
        </sub>
       </div>
       <div class="formula-controls">
@@ -840,12 +841,12 @@
      <div class="formula-expansion">
       <div style="background: rgba(139, 127, 255, 0.1); padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem;">
        <h4 style="color: var(--accent-primary); margin-bottom: 1rem; font-size: 1.1rem;">
-        Level 1: 13D Shadow Action (Sp(2,ℝ) gauge fixed)
+        Level 1: <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow Action (Sp(2,ℝ) gauge fixed)
        </h4>
        <div style="font-family: 'Crimson Text', serif; font-size: 1.1rem; text-align: center; margin: 1rem 0;">
         S
         <sub>
-         13D
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D
         </sub>
         = ∫ d
         <sup>
@@ -888,7 +889,7 @@
         ]
        </div>
        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.5rem;">
-        The 8192-component 26D spinor reduces to 64 components via Sp(2,ℝ) gauge fixing.
+        The 8192-component <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spinor reduces to 64 components via Sp(2,ℝ) gauge fixing.
                             One time dimension emerges from fermion parity Z₂.
        </p>
       </div>
@@ -908,7 +909,7 @@
          </sub>
         </div>
         <div class="component-name">
-         13D Einstein-Hilbert Term
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Einstein-Hilbert Term
         </div>
         <div class="component-desc">
          Gravity in (12,1) spacetime. Reduces to 4D Einstein gravity upon compactification.
@@ -939,7 +940,7 @@
          </sub>
         </div>
         <div class="component-name">
-         13D Pneuma Lagrangian
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Pneuma Lagrangian
         </div>
         <div class="component-desc">
          64-component spinor from Cl(12,1). Source of all matter and geometry.
@@ -956,7 +957,7 @@
          </sup>
         </div>
         <div class="component-name">
-         13D Gamma Matrices
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Gamma Matrices
         </div>
         <div class="component-desc">
          64×64 matrices from Clifford algebra Cl(12,1). M = 0,1,...,12.
@@ -970,7 +971,7 @@
          √|G|
         </div>
         <div class="component-name">
-         13D Metric Determinant
+         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Metric Determinant
         </div>
         <div class="component-desc">
          Covariant volume element ensuring coordinate invariance.
@@ -1083,10 +1084,10 @@
      <sub>
       Pneuma
      </sub>
-     yields the complete 4D Lagrangian:
+     yields the complete <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Lagrangian:
                 ℒ
      <sub>
-      4D
+      <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D
      </sub>
      = F(R,T,τ) + ℒ
      <sub>
@@ -1107,7 +1108,7 @@
      <sub>
       P
      </sub>
-     is an 8192-component spinor in the bulk, reducing to 64 effective components in 13D. Its condensates form the internal
+     is an 8192-component spinor in the bulk, reducing to 64 effective components in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D. Its condensates form the internal
                 Calabi-Yau manifold K
      <sub>
       Pneuma
@@ -1376,7 +1377,7 @@
       <strong>
        In plain English:
       </strong>
-      The full 13D universe (M
+      The full <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D universe (M
       <sup>
        13
       </sup>
@@ -1384,7 +1385,7 @@
       <sup>
        4
       </sup>
-      ) times a tiny curled-up 8D shape (K
+      ) times a tiny curled-up <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D shape (K
       <sub>
        Pneuma
       </sub>
@@ -1801,7 +1802,7 @@
        Dimensional Reduction Framework
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       Complete 26D→13D→4D reduction with Sp(2,R) gauge fixing and G₂ holonomy.
+       Complete <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→13D→4D reduction with Sp(2,R) gauge fixing and G₂ holonomy.
       </p>
      </div>
     </div>
@@ -1883,7 +1884,7 @@
        </tspan>
       </text>
       <text fill="#f8f9fa" font-size="12" text-anchor="middle" x="190" y="240">
-       8D Internal Manifold
+       <span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D Internal Manifold
       </text>
       <text fill="#adb5bd" font-size="11" text-anchor="middle" x="190" y="258">
        CY4 with χ=72
@@ -1933,12 +1934,12 @@
      <path d="M 710 270 L 710 310" fill="none" marker-end="url(#mainArrow)" stroke="#8b7fff" stroke-width="2">
      </path>
      <!-- Second level boxes -->
-     <!-- Left: 4D Gravity -->
+     <!-- Left: <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Gravity -->
      <g class="node">
       <rect fill="rgba(139,127,255,0.1)" height="70" rx="10" stroke="rgba(139,127,255,0.4)" stroke-width="1.5" width="200" x="90" y="320">
       </rect>
       <text fill="#8b7fff" font-size="13" font-weight="600" text-anchor="middle" x="190" y="345">
-       4D Einstein Gravity
+       <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Einstein Gravity
       </text>
       <text fill="#f8f9fa" font-size="11" text-anchor="middle" x="190" y="368">
        M
@@ -2076,7 +2077,7 @@
      </sub>
      (Pneuma) generates all physics.
                 Its condensates form spacetime geometry, its statistics yield emergent time, and its gauge structure contains the Standard Model.
-                For the complete dimensional reduction pathway (26D → 13D → 8D → 6D → 4D), see the
+                For the complete dimensional reduction pathway (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 8D → 6D → 4D), see the
                 <a href="images/dimensional-reduction-pathway.svg" target="_blank" style="color: var(--accent-primary);">dimensional reduction diagram</a>.
     </div>
    </section>
@@ -2177,7 +2178,7 @@
        Geometric Framework
       </h3>
       <p>
-       Kaluza-Klein reduction on the Pneuma manifold with explicit G₂ construction, dimensional reduction, and 4D effective action.
+       Kaluza-Klein reduction on the Pneuma manifold with explicit G₂ construction, dimensional reduction, and <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective action.
       </p>
      </a>
      <a class="section-card" href="sections/gauge-unification.html">

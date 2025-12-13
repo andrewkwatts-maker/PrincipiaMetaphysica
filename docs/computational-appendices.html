@@ -193,7 +193,7 @@
 
         <div class="note-box">
             <strong>Note:</strong> These appendices contain working code implementations that validate
-            key predictions from the Principia Metaphysica 2T physics framework (26D (24,2) → Sp(2,R) → 13D (12,1)). All code uses industry-standard
+            key predictions from the Principia Metaphysica 2T physics framework (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) → Sp(2,R) → 13D (12,1)). All code uses industry-standard
             scientific Python libraries (SymPy for symbolic mathematics, QuTiP for quantum simulations)
             and follows best practices in theoretical physics. The 13D shadow structure emerges from Sp(2,R) gauge fixing of the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk.
         </div>
@@ -355,7 +355,7 @@ linear_term = <span class="function">N</span>(eta * k * Delta_t / c).subs(params
             <div class="note-box">
                 <strong>Falsifiability:</strong> This prediction is testable! If LISA detects no dispersion
                 deviation above 10<sup>-20</sup> by 2030, it constrains η &lt; 10<sup>9</sup> and refutes
-                strong multi-time coupling scenarios. Conversely, detection would validate the 26D framework.
+                strong multi-time coupling scenarios. Conversely, detection would validate the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework.
             </div>
         </div>
 
@@ -419,7 +419,7 @@ linear_term = <span class="function">N</span>(eta * k * Delta_t / c).subs(params
                         <td>Swampland parameter</td>
                         <td>a</td>
                         <td>1.414 = √(26/13)</td>
-                        <td>From 26D → 13D reduction via Sp(2,R); Must satisfy a &gt; √(2/3) ≈ 0.816 for dS stability</td>
+                        <td>From <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D reduction via Sp(2,R); Must satisfy a &gt; √(2/3) ≈ 0.816 for dS stability</td>
                     </tr>
                     <tr>
                         <td>Uplift strength</td>
@@ -462,7 +462,7 @@ p = <span class="function">momentum</span>(N)
 
 <span class="comment"># Moduli potential parameters (swampland compliant, 2T framework)</span>
 F = <span class="number">1.0</span>        <span class="comment"># F-term (normalized)</span>
-a = <span class="number">1.414</span>      <span class="comment"># √(26/13) from 26D→13D via Sp(2,R); > √(2/3) ≈ 0.816 (swampland)</span>
+a = <span class="number">1.414</span>      <span class="comment"># √(26/13) from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→13D via Sp(2,R); > √(2/3) ≈ 0.816 (swampland)</span>
 kappa = <span class="number">1.0</span>    <span class="comment"># Uplift strength</span>
 b = <span class="number">1.0</span>        <span class="comment"># Instanton parameter</span>
 mu = <span class="number">0.5</span>       <span class="comment"># 2T periodic modulation from t_ortho</span>
@@ -1724,10 +1724,10 @@ plt.show()
                 This simulation validates <strong>Section 4.3 (Moduli Stabilization)</strong> predictions:
             </p>
             <ul>
-                <li><strong>Stability:</strong> No runaway → resolves moduli problem in 26D compactification</li>
+                <li><strong>Stability:</strong> No runaway → resolves moduli problem in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D compactification</li>
                 <li><strong>Swampland:</strong> a = 1.414 &gt; 0.816 → dS vacuum allowed, consistent with ΛCDM</li>
                 <li><strong>Multi-time:</strong> Periodic term breaks degeneracies → finite landscape, avoids infinite tower</li>
-                <li><strong>Dark energy:</strong> V<sub>min</sub> &gt; 0 provides cosmological constant, w ≈ -0.85
+                <li><strong>Dark energy:</strong> V<sub>min</sub> &gt; 0 provides cosmological constant, w ≈ <span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:2"></span>
                     from Friedmann eq (see Cosmology section)</li>
             </ul>
 
@@ -1788,7 +1788,7 @@ plt.show()
             <ul style="line-height: 2;">
                 <li><a href="principia-metaphysica-paper.html#cosmology">Cosmology Section</a> - Dark energy w(z) predictions</li>
                 <li><a href="sections/predictions.html">Predictions Section</a> - Full testability overview</li>
-                <li><a href="sections/geometric-framework.html">Geometric Framework</a> - 26D structure derivation</li>
+                <li><a href="sections/geometric-framework.html">Geometric Framework</a> - <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D structure derivation</li>
                 <li><a href="sections/thermal-time.html">Thermal Time Hypothesis</a> - Multi-time foundations</li>
             </ul>
 

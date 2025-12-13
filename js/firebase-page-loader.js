@@ -9,21 +9,121 @@
 
 import { getFirestore, doc, getDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/12.6.0/firebase-firestore.js";
 
-// Session cache
+// Session cache with smart invalidation
 const cache = {
   theoryConstants: null,
   pageContent: {},
   cacheTime: null,
-  CACHE_TTL: 5 * 60 * 1000 // 5 minutes
+  cacheHour: null,
+  dataVersion: null,
+  CACHE_TTL: 5 * 60 * 1000, // 5 minutes for normal refresh
+  STORAGE_KEY: 'pm_cache_data',
+  VERSION_KEY: 'pm_data_version',
+  HOUR_KEY: 'pm_cache_hour'
 };
 
 /**
- * Load theory constants from Firestore
+ * Get current hour for hourly cache invalidation
  */
-export async function loadTheoryConstants() {
-  if (cache.theoryConstants && cache.cacheTime && (Date.now() - cache.cacheTime < cache.CACHE_TTL)) {
-    console.log('[Firebase Page Loader] Using cached theory constants');
+function getCurrentHour() {
+  const now = new Date();
+  return `${now.getFullYear()}-${now.getMonth()}-${now.getDate()}-${now.getHours()}`;
+}
+
+/**
+ * Check if cache should be invalidated (new hour or new version)
+ */
+function shouldInvalidateCache(newVersion) {
+  const currentHour = getCurrentHour();
+  const storedHour = localStorage.getItem(cache.HOUR_KEY);
+  const storedVersion = localStorage.getItem(cache.VERSION_KEY);
+
+  // Invalidate if new hour
+  if (storedHour !== currentHour) {
+    console.log('[Firebase Page Loader] New hour detected, invalidating cache');
+    return true;
+  }
+
+  // Invalidate if new version
+  if (newVersion && storedVersion !== newVersion) {
+    console.log('[Firebase Page Loader] New version detected, invalidating cache');
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Save cache metadata to localStorage
+ */
+function saveCacheMetadata(version) {
+  const currentHour = getCurrentHour();
+  localStorage.setItem(cache.HOUR_KEY, currentHour);
+  if (version) {
+    localStorage.setItem(cache.VERSION_KEY, version);
+  }
+  cache.cacheHour = currentHour;
+  cache.dataVersion = version;
+}
+
+/**
+ * Try to load from localStorage cache
+ */
+function loadFromLocalStorage() {
+  try {
+    const stored = localStorage.getItem(cache.STORAGE_KEY);
+    if (!stored) return null;
+
+    const data = JSON.parse(stored);
+    const currentHour = getCurrentHour();
+    const storedHour = localStorage.getItem(cache.HOUR_KEY);
+
+    // Check if cache is from current hour
+    if (storedHour === currentHour) {
+      console.log('[Firebase Page Loader] Using localStorage cache');
+      return data;
+    }
+  } catch (e) {
+    console.warn('[Firebase Page Loader] Error reading localStorage cache:', e);
+  }
+  return null;
+}
+
+/**
+ * Save to localStorage cache
+ */
+function saveToLocalStorage(data) {
+  try {
+    localStorage.setItem(cache.STORAGE_KEY, JSON.stringify(data));
+  } catch (e) {
+    console.warn('[Firebase Page Loader] Error saving to localStorage:', e);
+  }
+}
+
+/**
+ * Load theory constants from Firestore with smart caching
+ * - Checks localStorage first (hourly invalidation)
+ * - Checks memory cache (5 min TTL)
+ * - Falls back to Firestore
+ * - Supports version-based invalidation
+ */
+export async function loadTheoryConstants(forceRefresh = false) {
+  // Check if we should use memory cache
+  if (!forceRefresh && cache.theoryConstants && cache.cacheTime &&
+      (Date.now() - cache.cacheTime < cache.CACHE_TTL) &&
+      !shouldInvalidateCache(null)) {
+    console.log('[Firebase Page Loader] Using memory cache');
     return cache.theoryConstants;
+  }
+
+  // Try localStorage cache (survives page refresh, hourly invalidation)
+  if (!forceRefresh) {
+    const localData = loadFromLocalStorage();
+    if (localData) {
+      cache.theoryConstants = localData;
+      cache.cacheTime = Date.now();
+      return localData;
+    }
   }
 
   console.log('[Firebase Page Loader] Loading theory constants from Firestore...');
@@ -33,14 +133,35 @@ export async function loadTheoryConstants() {
   try {
     const docSnap = await getDoc(docRef);
     if (docSnap.exists()) {
-      cache.theoryConstants = docSnap.data();
+      const data = docSnap.data();
+      const version = data.meta?.version || data.meta?.last_updated || 'unknown';
+
+      // Check if version changed (force refresh if so)
+      if (shouldInvalidateCache(version)) {
+        console.log('[Firebase Page Loader] Cache invalidated, using fresh data');
+      }
+
+      // Update all caches
+      cache.theoryConstants = data;
       cache.cacheTime = Date.now();
-      console.log('[Firebase Page Loader] Theory constants loaded successfully');
-      return cache.theoryConstants;
+      saveCacheMetadata(version);
+      saveToLocalStorage(data);
+
+      console.log('[Firebase Page Loader] Theory constants loaded (v' + version + ')');
+      return data;
     }
     throw new Error('Theory constants not found in Firestore');
   } catch (error) {
     console.error('[Firebase Page Loader] Error loading theory constants:', error);
+
+    // Try localStorage as fallback even on error
+    const fallback = loadFromLocalStorage();
+    if (fallback) {
+      console.log('[Firebase Page Loader] Using localStorage fallback after error');
+      cache.theoryConstants = fallback;
+      return fallback;
+    }
+
     throw error;
   }
 }
@@ -236,13 +357,34 @@ export async function initPageFromFirebase(pageId) {
 }
 
 /**
- * Clear cache
+ * Clear all caches (memory + localStorage)
  */
 export function clearCache() {
   cache.theoryConstants = null;
   cache.pageContent = {};
   cache.cacheTime = null;
-  console.log('[Firebase Page Loader] Cache cleared');
+  cache.cacheHour = null;
+  cache.dataVersion = null;
+
+  // Clear localStorage cache
+  try {
+    localStorage.removeItem(cache.STORAGE_KEY);
+    localStorage.removeItem(cache.VERSION_KEY);
+    localStorage.removeItem(cache.HOUR_KEY);
+  } catch (e) {
+    console.warn('[Firebase Page Loader] Error clearing localStorage:', e);
+  }
+
+  console.log('[Firebase Page Loader] All caches cleared');
+}
+
+/**
+ * Force refresh from Firebase (bypasses all caches)
+ */
+export async function forceRefresh(pageId) {
+  console.log('[Firebase Page Loader] Force refreshing all data...');
+  clearCache();
+  return await initPageFromFirebase(pageId);
 }
 
 /**

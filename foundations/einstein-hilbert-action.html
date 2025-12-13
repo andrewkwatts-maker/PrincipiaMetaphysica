@@ -30,7 +30,7 @@
                 <ul>
                     <li><a href="../index.html">Home</a></li>
                     <li><a href="index.html">Foundations</a></li>
-                    <li><a href="../sections/einstein-hilbert-term.html">13D Extension</a></li>
+                    <li><a href="../sections/einstein-hilbert-term.html"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Extension</a></li>
                 </ul>
             </nav>
         </div>
@@ -172,18 +172,18 @@
                         <div class="sub-component">
                             <div class="component-symbol">M<sub>*</sub><sup>24</sup></div>
                             <div class="component-name">Fundamental Mass Scale</div>
-                            <div class="component-desc">The 26D gravitational coupling with (24,2) signature. Power 24 ensures correct dimensions.</div>
+                            <div class="component-desc">The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D gravitational coupling with (24,2) signature. Power 24 ensures correct dimensions.</div>
                             <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">d<sup>26</sup>x</div>
-                            <div class="component-name">26D Volume Element</div>
+                            <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Volume Element</div>
                             <div class="component-desc">Integration over 26 dimensions: 2 timelike + 24 spacelike (signature (24,2)).</div>
                             <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">G</div>
-                            <div class="component-name">26D Metric (24,2)</div>
+                            <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Metric (24,2)</div>
                             <div class="component-desc">Full 26×26 metric tensor with signature (24,2): η<sub>AB</sub> = diag(-,-,+,+,...,+).</div>
                             <a href="../sections/geometric-framework.html" class="component-link">Learn more &rarr;</a>
                         </div>
@@ -198,22 +198,22 @@
                         <div class="chain-title">Derivation Path in 2T Framework</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <span>4D Einstein-Hilbert Action</span>
+                            <span><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Einstein-Hilbert Action</span>
                             <span class="foundation-badge established">This Page</span>
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
                             <a href="kaluza-klein.html">Kaluza-Klein Theory</a>
-                            <span class="foundation-badge established">5D &rarr; 4D + gauge</span>
+                            <span class="foundation-badge established">5D &rarr; <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D + gauge</span>
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            26D (24,2) → 13D (12,1) via Sp(2,R) gauge fixing
+                            <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) → 13D (12,1) via Sp(2,R) gauge fixing
                             <span class="foundation-badge pm-specific">2T Framework</span>
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <a href="../sections/einstein-hilbert-term.html">13D Einstein-Hilbert</a>
+                            <a href="../sections/einstein-hilbert-term.html"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Einstein-Hilbert</a>
                             <span class="foundation-badge derived">PM Generalization</span>
                         </div>
                     </div>
@@ -227,15 +227,15 @@
             </p>
 
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1rem; margin-bottom: 2rem;">
-                <h4 style="color: #8b7fff;">The Complete Pathway: 26D (24,2) → 13D (12,1) → 6D → 4D</h4>
+                <h4 style="color: #8b7fff;">The Complete Pathway: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) → 13D (12,1) → 6D → 4D</h4>
                 <p style="color: var(--text-secondary);">
                     Each stage of dimensional reduction reveals new physical structure:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
-                    <li><strong>26D (24,2):</strong> Fundamental bulk with two timelike dimensions, signature (24,2)</li>
-                    <li><strong>26D → 13D:</strong> Sp(2,R) gauge fixing projects bulk to 13D shadow with signature (12,1)</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2):</strong> Fundamental bulk with two timelike dimensions, signature (24,2)</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D:</strong> Sp(2,R) gauge fixing projects bulk to 13D shadow with signature (12,1)</li>
                     <li><strong>13D → 6D:</strong> G₂ manifold compactification (7D compact, establishes SO(10) GUT, 3 generations)</li>
-                    <li><strong>7D×2 → 4D:</strong> Shared timelike dimensions unify the two 7D sectors to observable 4D (3,1)</li>
+                    <li><strong>7D×2 → <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D:</strong> Shared timelike dimensions unify the two 7D sectors to observable <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D (3,1)</li>
                 </ul>
             </div>
 
@@ -246,7 +246,7 @@
                 two timelike coordinates protected by Sp(2,R) gauge symmetry:
             </p>
             <div class="equation-box">
-                S<sub>26D</sub> = M<sub>*</sub><sup>24</sup> &int; d<sup>26</sup>X &radic;|G<sub>(24,2)</sub>| R<sub>26</sub>
+                S<sub><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</sub> = M<sub>*</sub><sup>24</sup> &int; d<sup>26</sup>X &radic;|G<sub>(24,2)</sub>| R<sub>26</sub>
                 <span class="equation-label">Signature (24,2): η<sub>AB</sub> = diag(-,-,+,+,...,+)</span>
             </div>
             <p style="color: var(--text-secondary); margin-top: 1rem;">
@@ -261,7 +261,7 @@
                 the two timelike dimensions:
             </p>
             <div class="equation-box">
-                S<sub>26D</sub> = M<sub>*</sub><sup>24</sup> &int; d<sup>26</sup>X &radic;|G<sub>(24,2)</sub>| R<sub>26</sub>
+                S<sub><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</sub> = M<sub>*</sub><sup>24</sup> &int; d<sup>26</sup>X &radic;|G<sub>(24,2)</sub>| R<sub>26</sub>
                 &nbsp;&rarr;&nbsp;
                 S<sub>14×2</sub> = M<sub>*</sub><sup>24</sup> &int; d<sup>14</sup>x<sub>1</sub> d<sup>14</sup>x<sub>2</sub> &radic;|g<sub>1</sub>g<sub>2</sub>| (R<sub>14,1</sub> + R<sub>14,2</sub>)
                 <span class="equation-label">Each 14D half has signature (12,2): 12 spatial + 2 shared timelike</span>
@@ -272,9 +272,9 @@
                 structure ensures consistency between the two sectors.
             </p>
 
-            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 2: 14D×2 → 7D×2 (Dual G₂ Compactification)</h4>
+            <h4 style="margin-top: 1.5rem; color: var(--accent-primary);">Stage 2: 14D×2 → <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D×2 (Dual G₂ Compactification)</h4>
             <p>
-                Each 14D half compactifies on a 7-dimensional G₂ manifold, reducing to two coupled 7D sectors:
+                Each 14D half compactifies on a 7-dimensional G₂ manifold, reducing to two coupled <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D sectors:
             </p>
             <div class="equation-box">
                 S<sub>14×2</sub> = M<sub>*</sub><sup>24</sup> &int; [d<sup>14</sup>x<sub>1</sub> &radic;|g<sub>1</sub>| R<sub>14,1</sub> + d<sup>14</sup>x<sub>2</sub> &radic;|g<sub>2</sub>| R<sub>14,2</sub>]
@@ -288,19 +288,19 @@
                 giving 3 fermion generations per sector via n<sub>gen</sub> = χ/24.
             </p>
 
-            <h4 style="margin-top: 2rem; color: var(--accent-primary);">Stage 3: 7D×2 → 4D (Shared Time Unification)</h4>
+            <h4 style="margin-top: 2rem; color: var(--accent-primary);">Stage 3: 7D×2 → <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D (Shared Time Unification)</h4>
             <p>
                 The two 7D sectors share the two timelike dimensions, which unify to give the single observed time
-                coordinate. The effective 4D theory emerges with signature (3,1):
+                coordinate. The effective <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D theory emerges with signature (3,1):
             </p>
             <div class="equation-box">
-                S<sub>7×2</sub> &rarr; S<sub>4D</sub> = M<sub>Pl</sub><sup>2</sup> &int; d<sup>4</sup>x &radic;|g| R
-                <span class="equation-label">Shared time structure projects dual 7D sectors to single 4D spacetime</span>
+                S<sub>7×2</sub> &rarr; S<sub><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D</sub> = M<sub>Pl</sub><sup>2</sup> &int; d<sup>4</sup>x &radic;|g| R
+                <span class="equation-label">Shared time structure projects dual 7D sectors to single <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime</span>
             </div>
 
             <h4 style="margin-top: 2rem; color: var(--accent-primary);">Combined Formula in 2T Framework</h4>
             <p>
-                Putting all stages together, the 4D Planck mass emerges from the full compactification:
+                Putting all stages together, the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Planck mass emerges from the full compactification:
             </p>
             <div class="equation-box" style="background: rgba(81, 207, 102, 0.1); border: 2px solid rgba(81, 207, 102, 0.3);">
                 M<sub>Pl</sub><sup>2</sup> = M<sub>*</sub><sup>24</sup> &times; V<sub>22</sub>
@@ -319,9 +319,9 @@
                     The multi-stage compactification in 2T physics naturally generates a hierarchy of scales:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
-                    <li><strong>M<sub>string</sub> ~ 10<sup>18</sup> GeV:</strong> 26D bosonic string scale</li>
-                    <li><strong>M<sub>*</sub> ~ M<sub>Pl</sub> ~ 10<sup>19</sup> GeV:</strong> 26D (24,2) fundamental scale</li>
-                    <li><strong>M<sub>Sp(2,R)</sub> ~ M<sub>Pl</sub>:</strong> Scale of Sp(2,R) gauge symmetry (26D → 13D projection)</li>
+                    <li><strong>M<sub>string</sub> ~ 10<sup>18</sup> GeV:</strong> <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bosonic string scale</li>
+                    <li><strong>M<sub>*</sub> ~ M<sub>Pl</sub> ~ 10<sup>19</sup> GeV:</strong> <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) fundamental scale</li>
+                    <li><strong>M<sub>Sp(2,R)</sub> ~ M<sub>Pl</sub>:</strong> Scale of Sp(2,R) gauge symmetry (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D projection)</li>
                     <li><strong>1/R<sub>G₂</sub> ~ M<sub>GUT</sub> ~ 10<sup>16</sup> GeV:</strong> G₂ compactification scale (each sector)</li>
                     <li><strong>M<sub>EW</sub> ~ 100 GeV:</strong> Electroweak symmetry breaking (Higgs VEV)</li>
                 </ul>
@@ -350,29 +350,29 @@
                         <td><strong>Original KK</strong></td>
                         <td>5D</td>
                         <td>S¹ (circle)</td>
-                        <td>4D + U(1)</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D + U(1)</td>
                     </tr>
                     <tr>
                         <td><strong>Heterotic String</strong></td>
                         <td>10D</td>
                         <td>CY3 (6D Calabi-Yau)</td>
-                        <td>4D + gauge</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D + gauge</td>
                     </tr>
                     <tr>
                         <td><strong>F-Theory</strong></td>
                         <td>12D</td>
                         <td>CY4 (8D elliptic)</td>
-                        <td>4D + gauge</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D + gauge</td>
                     </tr>
                     <tr>
                         <td><strong>M-Theory (standard)</strong></td>
                         <td>11D</td>
                         <td>G₂ (7D)</td>
-                        <td>4D</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D</td>
                     </tr>
                     <tr style="background: rgba(139, 127, 255, 0.1);">
                         <td><strong>Principia Metaphysica</strong></td>
-                        <td>13D</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D</td>
                         <td>G₂ (7D) + T² (2D)</td>
                         <td>4D (via 6D)</td>
                     </tr>
@@ -420,9 +420,9 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
-                    <h4 style="color: #8b7fff;">13D Einstein-Hilbert</h4>
+                    <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Einstein-Hilbert</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        Extension to 13D shadow
+                        Extension to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow
                     </p>
                     <a href="../sections/einstein-hilbert-term.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -458,9 +458,9 @@
 
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
-                    <h4 style="color: #8b7fff;">13D Einstein-Hilbert</h4>
+                    <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Einstein-Hilbert</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        Extension to 13D shadow
+                        Extension to <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow
                     </p>
                     <a href="../sections/einstein-hilbert-term.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -491,7 +491,7 @@
                 &larr; All Foundations
             </a>
             <a href="../sections/einstein-hilbert-term.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
-                13D Einstein-Hilbert &rarr;
+                <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Einstein-Hilbert &rarr;
             </a>
         </div>
     </main>

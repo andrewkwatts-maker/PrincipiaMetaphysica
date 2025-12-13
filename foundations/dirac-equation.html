@@ -185,7 +185,7 @@
                     <div class="sub-components">
                         <div class="sub-component">
                             <div class="component-symbol">&Gamma;<sup>A</sup></div>
-                            <div class="component-name">26D Gamma Matrices (24,2)</div>
+                            <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Gamma Matrices (24,2)</div>
                             <div class="component-desc">8192&times;8192 matrices from Cl(24,2), signature (24,2). A = 0,1,...,25. The Clifford algebra Cl(24,2) has a minimal spinor representation of dimension 2^13 = 8192 (validated).</div>
                             <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">2T Framework</span>
                         </div>
@@ -198,7 +198,7 @@
                         <div class="sub-component">
                             <div class="component-symbol">&Psi;<sub>P</sub></div>
                             <div class="component-name">Pneuma Spinor (Fundamental)</div>
-                            <div class="component-desc">8192-component spinor (2<sup>13</sup>) in 26D from Cl(24,2). The fundamental fermionic field from which geometry emerges as a spinor condensate. Reduces to 64 components in 13D shadow (Cl(12,1)).</div>
+                            <div class="component-desc">8192-component spinor (2<sup>13</sup>) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D from Cl(24,2). The fundamental fermionic field from which geometry emerges as a spinor condensate. Reduces to 64 components in 13D shadow (Cl(12,1)).</div>
                             <a href="../sections/pneuma-lagrangian.html" class="component-link">Learn more &rarr;</a>
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                         <div class="chain-title">Fermionic Primacy: Spinor Reduction Path</div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <span>Dirac Equation (4D, spin-&frac12;): 4 components from Cl(3,1)</span>
+                            <span>Dirac Equation (<span class="pm-value" data-pm-value="dimensions.D_observable"></span>D, spin-&frac12;): 4 components from Cl(3,1)</span>
                             <span class="foundation-badge established">This Page</span>
                         </div>
                         <div class="chain-step">
@@ -216,7 +216,7 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">&rarr;</span>
-                            <strong>13D shadow:</strong> Cl(12,1) → 2<sup>6</sup> = 64 components (validated ✓)
+                            <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow:</strong> Cl(12,1) → 2<sup>6</sup> = 64 components (validated ✓)
                             <span class="foundation-badge pm-specific">Dimensional Reduction</span>
                         </div>
                         <div class="chain-step">
@@ -240,17 +240,17 @@
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
                 <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk: Cl(24,2)</strong> - Signature (24,2) with 2 timelike dimensions. Minimal spinor: 2^(26/2) = 8192 components (validated ✓)</li>
-                <li><strong>13D shadow: Cl(12,1)</strong> - After dimensional reduction. Minimal spinor: 2^⌊(13+1)/2⌋ = 64 components (validated ✓)</li>
+                <li><strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow: Cl(12,1)</strong> - After dimensional reduction. Minimal spinor: 2^⌊(13+1)/2⌋ = 64 components (validated ✓)</li>
                 <li><strong>Reduction: 8192/64 = 128 = 2^7</strong> - Factor-of-128 reduction preserves power-of-two Clifford structure</li>
                 <li><strong>Master bulk action</strong> - Fermionic term primary; bosonic fields (gauge, gravity) emerge from spinor bilinears</li>
                 <li><strong>Geometry from condensate</strong> - Metric g<sub>MN</sub> ∼ ⟨Ψ̄<sub>P</sub> Γ<sub>(MN)</sub> Ψ<sub>P</sub>⟩ (spinor bivector condensate)</li>
             </ul>
 
             <p style="margin-top: 1.5rem; color: var(--text-secondary);">
-                The key generalization from standard 4D Dirac theory:
+                The key generalization from standard <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Dirac theory:
             </p>
             <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
-                <li>Dimensions: 4 (3,1) &rarr; 26 (24,2) bulk &rarr; 13D shadow &rarr; 4D observed</li>
+                <li>Dimensions: 4 (3,1) &rarr; 26 (24,2) bulk &rarr; <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow &rarr; 4D observed</li>
                 <li>Clifford algebra: Cl(3,1) &rarr; Cl(24,2) &rarr; Cl(12,1) &rarr; Cl(3,1)</li>
                 <li>Spinor components: 4 &rarr; 8192 &rarr; 64 &rarr; 4 (3 generations × symmetry breaking)</li>
                 <li>Gamma matrices: 4×4 &rarr; 8192×8192 &rarr; 64×64 &rarr; 4×4</li>
@@ -269,7 +269,7 @@
 
             <h3>6D Dirac Equation (Intermediate Stage)</h3>
             <p>
-                After compactifying from 13D to 6D on the G₂ manifold, the effective theory in 6D
+                After compactifying from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D to 6D on the G₂ manifold, the effective theory in 6D
                 contains a Dirac equation with Cl(5,1) gamma matrices:
             </p>
             <div class="expandable-formula">
@@ -318,9 +318,9 @@
                 </div>
             </div>
 
-            <h3>Dimensional Reduction: 6D → 4D KK Decomposition</h3>
+            <h3>Dimensional Reduction: 6D → <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D KK Decomposition</h3>
             <p>
-                To reduce from 6D to 4D, we expand the 6D spinor in Kaluza-Klein modes on the T² torus:
+                To reduce from 6D to <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D, we expand the 6D spinor in Kaluza-Klein modes on the T² torus:
             </p>
             <div class="equation-box">
                 &Psi;(x<sup>&mu;</sup>, y, z) = &sum;<sub>n,m</sub> &psi;<sub>n,m</sub>(x<sup>&mu;</sup>) Y<sub>n,m</sub>(y, z)
@@ -335,7 +335,7 @@
             </div>
 
             <p style="margin-top: 1.5rem;">
-                Substituting into the 6D Dirac equation yields a tower of 4D Dirac equations:
+                Substituting into the 6D Dirac equation yields a tower of <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Dirac equations:
             </p>
             <div class="equation-box">
                 (i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m<sub>n,m</sub>)&psi;<sub>n,m</sub>(x) = 0
@@ -345,7 +345,7 @@
             <div class="highlight-box" style="margin-top: 1.5rem;">
                 <h4>KK Tower Physics</h4>
                 <p>
-                    Each 6D field produces an infinite tower of 4D fields:
+                    Each 6D field produces an infinite tower of <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D fields:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
                     <li><strong>(n,m) = (0,0):</strong> Zero mode - Standard Model fermions (massless before EWSB)</li>
@@ -355,7 +355,7 @@
             </div>
         </section>
 
-        <!-- 13D Pneuma Field -->
+        <!-- <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Pneuma Field -->
         <section class="subsection">
             <h2>The 13D Shadow Pneuma Field</h2>
             <p>
@@ -372,7 +372,7 @@
                     <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk:</strong> Ψ<sub>P</sub> has 8192 components from Cl(24,2) - the master bulk action</li>
                     <li><strong>Geometry emerges:</strong> Metric g<sub>MN</sub> arises from spinor condensate ⟨Ψ̄<sub>P</sub> Γ<sub>(MN)</sub> Ψ<sub>P</sub>⟩</li>
                     <li><strong>Gauge fields emerge:</strong> A<sub>M</sub> from ⟨Ψ̄<sub>P</sub> Γ<sub>M</sub> Ψ<sub>P</sub>⟩ (spinor current)</li>
-                    <li><strong>Dimensional reduction:</strong> 26D → 13D shadow with 64-component spinor from Cl(12,1)</li>
+                    <li><strong>Dimensional reduction:</strong> <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D shadow with 64-component spinor from Cl(12,1)</li>
                     <li><strong>Generation structure:</strong> 64 components connect to SO(10) embedding and 3 fermion generations</li>
                 </ul>
             </div>
@@ -396,7 +396,7 @@
                 </thead>
                 <tbody>
                     <tr style="background: rgba(81, 207, 102, 0.08); border-left: 3px solid #51cf66;">
-                        <td><strong>26D</strong></td>
+                        <td><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</strong></td>
                         <td><strong>(24,2)</strong></td>
                         <td><strong>Cl(24,2)</strong></td>
                         <td><strong>2<sup>13</sup> = 8192</strong></td>
@@ -404,7 +404,7 @@
                         <td>2T bulk - fermionic primacy</td>
                     </tr>
                     <tr style="background: rgba(81, 207, 102, 0.05); border-left: 3px solid #51cf66;">
-                        <td><strong>13D</strong></td>
+                        <td><strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D</strong></td>
                         <td><strong>(12,1)</strong></td>
                         <td><strong>Cl(12,1)</strong></td>
                         <td><strong>2<sup>6</sup> = 64</strong></td>
@@ -412,7 +412,7 @@
                         <td>Shadow manifold - SO(10) embedding</td>
                     </tr>
                     <tr style="background: rgba(139, 127, 255, 0.05);">
-                        <td>7D</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_G2"></span>D</td>
                         <td>(6,1)</td>
                         <td>Cl(6,1)</td>
                         <td>2<sup>3</sup> = 8</td>
@@ -420,7 +420,7 @@
                         <td>G₂ compactification</td>
                     </tr>
                     <tr>
-                        <td>4D</td>
+                        <td><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D</td>
                         <td>(3,1)</td>
                         <td>Cl(3,1)</td>
                         <td>2<sup>2</sup> = 4</td>
@@ -442,35 +442,35 @@
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 2; margin-top: 0.75rem;">
                     <li>
-                        <strong>26D (24,2) bulk: Cl(24,2) → 8192 components (✓ validated):</strong>
-                        The fundamental Pneuma spinor Ψ<sub>P</sub> in 26D has 2^(26/2) = 2^13 = 8192 components.
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) bulk: Cl(24,2) → 8192 components (✓ validated):</strong>
+                        The fundamental Pneuma spinor Ψ<sub>P</sub> in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D has 2^(26/2) = 2^13 = 8192 components.
                         This is the master bulk action where geometry emerges from the spinor condensate.
                         Signature (24,2) provides 2 timelike dimensions for Sp(2,R) gauge redundancy.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>26D → 13D shadow: Cl(24,2) → Cl(12,1) via dimensional reduction:</strong>
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D shadow: Cl(24,2) → Cl(12,1) via dimensional reduction:</strong>
                         Compactification to 13D shadow manifold. Clifford algebra reduces to Cl(12,1) with
                         spinor dimension 2^⌊(13+1)/2⌋ = 2^6 = 64 components (✓ validated). Reduction factor
                         8192/64 = 128 = 2^7 preserves power-of-two structure.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>13D → 7D: Cl(12,1) → Cl(6,1) via compactification:</strong>
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D → 7D: Cl(12,1) → Cl(6,1) via compactification:</strong>
                         Compactify on 6D internal space (e.g., Calabi-Yau or T^6). Cl(6,1) has spinor dimension
                         2^⌊7/2⌋ = 2^3 = 8 components. The 64-component spinor decomposes into 64/8 = 8 families
                         of 7D spinors.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>7D → 4D: Cl(6,1) → Cl(3,1) via further compactification:</strong>
-                        Final reduction to observed 4D spacetime. Cl(3,1) has spinor dimension 2^2 = 4 components
+                        <strong>7D → <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D: Cl(6,1) → Cl(3,1) via further compactification:</strong>
+                        Final reduction to observed <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime. Cl(3,1) has spinor dimension 2^2 = 4 components
                         (standard Dirac spinor). Connection to 3 fermion generations emerges from topology and
-                        SO(10) breaking pattern in 64-component 13D shadow spinor.
+                        SO(10) breaking pattern in 64-component <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow spinor.
                     </li>
                 </ul>
             </div>
 
             <h4 style="margin-top: 2rem;">Generation Count Connection: 64-Component Shadow Spinor</h4>
             <p style="color: var(--text-secondary);">
-                The <strong>64-component spinor in 13D</strong> (from Cl(12,1)) provides a natural connection
+                The <strong>64-component spinor in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D</strong> (from Cl(12,1)) provides a natural connection
                 to fermion generation structure:
             </p>
             <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8;">
@@ -483,11 +483,11 @@
                     64/16 = 4 families, with 3 generations from topological moduli or Wilson lines on compact manifold
                 </li>
                 <li>
-                    <strong>Chiral structure:</strong> Cl(12,1) in 13D is odd-dimensional, but projects to
+                    <strong>Chiral structure:</strong> Cl(12,1) in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D is odd-dimensional, but projects to
                     even-dimensional 4D Cl(3,1) allowing well-defined chirality (left/right splitting)
                 </li>
                 <li>
-                    <strong>Spinor reduction: 64 → 4:</strong> Factor-of-16 reduction from 13D to 4D suggests
+                    <strong>Spinor reduction: 64 → 4:</strong> Factor-of-16 reduction from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D to 4D suggests
                     internal symmetry breaking: 64 = 16 (SO(10)) × 4 (Dirac in 4D)
                 </li>
             </ul>
@@ -499,13 +499,13 @@
 
             <h3>Pneuma Field Decomposition: From 8192 to 64 Components</h3>
             <p style="margin-top: 1.5rem;">
-                The fundamental <strong>8192-component bulk Pneuma spinor</strong> Ψ<sub>P</sub> (from Cl(24,2) in 26D)
+                The fundamental <strong>8192-component bulk Pneuma spinor</strong> Ψ<sub>P</sub> (from Cl(24,2) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D)
                 reduces to the <strong>64-component shadow spinor</strong> (from Cl(12,1) in 13D) through dimensional
                 reduction with factor 128 = 2^7:
             </p>
             <div class="equation-box">
                 &Psi;<sub>P,bulk</sub>(x<sup>A</sup>) &rarr; &Psi;<sub>P,shadow</sub>(x<sup>&mu;</sup>, y<sup>a</sup>)
-                <span class="equation-label">26D (A=0,...,25) → 13D (μ=0,...,3 visible + a=1,...,9 compact): 8192 → 64 components</span>
+                <span class="equation-label"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (A=0,...,25) → 13D (μ=0,...,3 visible + a=1,...,9 compact): 8192 → 64 components</span>
             </div>
 
             <p style="margin-top: 1rem;">
@@ -615,7 +615,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        26D generalization of Dirac equation
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D generalization of Dirac equation
                     </p>
                     <a href="../sections/pneuma-lagrangian.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;
@@ -653,7 +653,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        26D generalization of Dirac equation
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D generalization of Dirac equation
                     </p>
                     <a href="../sections/pneuma-lagrangian.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;

@@ -187,12 +187,12 @@
                     </tr>
                     <tr>
                         <td><strong>Supersymmetry</strong></td>
-                        <td>N=1 in 4D (M-theory)</td>
-                        <td>N=1 in 4D (String theory)</td>
+                        <td>N=1 in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D (M-theory)</td>
+                        <td>N=1 in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D (String theory)</td>
                     </tr>
                     <tr style="background: rgba(139, 127, 255, 0.1);">
                         <td><strong>PM Application</strong></td>
-                        <td><strong>Internal 7D geometry</strong></td>
+                        <td><strong>Internal <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D geometry</strong></td>
                         <td>Previously used (CY4)</td>
                     </tr>
                 </tbody>
@@ -334,7 +334,7 @@
                     <div style="background: rgba(81, 207, 102, 0.1); padding: 1rem; border-radius: 8px;">
                         <div style="font-size: 1.8rem; font-weight: 700; color: #51cf66;">χ_eff = <span class="pm-value" data-pm-key="topology.chi_eff">144</span></div>
                         <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">Flux-dressed Euler</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">→ n_gen = 3</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.25rem;">→ n_gen = <span class="pm-value" data-pm-value="topology.n_gen"></span></div>
                     </div>
                     <div style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 8px;">
                         <div style="font-size: 1.8rem; font-weight: 700; color: #4facfe;">ν = 24</div>
@@ -374,7 +374,7 @@
             <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1rem;">
                 <h4 style="color: #8b7fff;">PM Application: D₅ Singularities in 2T Framework</h4>
                 <p style="color: var(--text-secondary);">
-                    The G₂ manifold in the 13D shadow has a conical D₅ singularity:
+                    The G₂ manifold in the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow has a conical D₅ singularity:
                 </p>
                 <ul style="color: var(--text-secondary); margin-left: 1.5rem; margin-top: 0.75rem;">
                     <li>Gauge group: D₅ ≅ SO(10)</li>
@@ -427,14 +427,14 @@
                     <li><strong>G₂ compactification:</strong> 13D → 6D bulk (7D G₂ manifold compact)</li>
                     <li><strong>Flux dressing:</strong> G₄ flux backreaction gives χ_eff = <span class="pm-value" data-pm-key="topology.chi_eff">144</span></li>
                     <li><strong>Generation count:</strong> n_gen = χ_eff/48 = 144/48 = 3</li>
-                    <li><strong>Brane structure:</strong> 6D observable + 3×4D shadow branes</li>
+                    <li><strong>Brane structure:</strong> 6D observable + 3×<span class="pm-value" data-pm-value="dimensions.D_observable"></span>D shadow branes</li>
                 </ul>
             </div>
 
             <div class="expandable-formula">
                 <div class="formula-header">
                     <div class="formula-main">
-                        26D (24,2) on (M⁷<sub>1</sub> × M⁷<sub>2</sub>) → 4D with dual G₂ sectors
+                        <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) on (M⁷<sub>1</sub> × M⁷<sub>2</sub>) → 4D with dual G₂ sectors
                     </div>
                     <div class="formula-controls">
                         <span class="foundation-badge pm-specific">2T Framework</span>
@@ -444,7 +444,7 @@
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">26D (24,2)</div>
+                            <div class="component-symbol"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2)</div>
                             <div class="component-name">Fundamental Bulk</div>
                             <div class="component-desc">26 dimensions with signature (24,2): 24 spacelike, 2 timelike dimensions</div>
                         </div>
@@ -468,15 +468,15 @@
                         <div class="chain-title">Dimensional Reduction in 2T Framework</div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            26D (24,2) → 14D<sub>1</sub> (12,2) ⊗ 14D<sub>2</sub> (12,2) [Sp(2,R) gauge fixing]
+                            <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) → 14D<sub>1</sub> (12,2) ⊗ 14D<sub>2</sub> (12,2) [Sp(2,R) gauge fixing]
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            14D<sub>i</sub> → 7D<sub>i</sub> effective [Compactify on G₂ manifold M⁷<sub>i</sub>]
+                            14D<sub>i</sub> → <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D<sub>i</sub> effective [Compactify on G₂ manifold M⁷<sub>i</sub>]
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            7D<sub>1</sub> ⊗ 7D<sub>2</sub> → 4D (3,1) [Shared timelike dimensions unify]
+                            7D<sub>1</sub> ⊗ 7D<sub>2</sub> → <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D (3,1) [Shared timelike dimensions unify]
                         </div>
                     </div>
                 </div>
@@ -488,7 +488,7 @@
             </p>
             <div class="equation-box" style="margin-top: 1rem;">
                 V₉ = V₇(G₂) × V₂(T²)
-                <span class="equation-label">9D internal space = 7D G₂ manifold × 2D torus</span>
+                <span class="equation-label">9D internal space = <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D G₂ manifold × 2D torus</span>
             </div>
             <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 1rem;">
                 <li><strong>V₇(G₂):</strong> Volume of the 7-dimensional G₂ manifold M⁷</li>
@@ -499,7 +499,7 @@
 
             <h4 id="susy-preservation" style="margin-top: 2rem;">Holonomy & Supersymmetry Preservation</h4>
             <p style="color: var(--text-secondary);">
-                G₂ holonomy is essential for preserving <strong>N=1 supersymmetry</strong> in the 4D effective theory:
+                G₂ holonomy is essential for preserving <strong>N=1 supersymmetry</strong> in the <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective theory:
             </p>
             <div class="expandable-formula">
                 <div class="formula-header">
@@ -525,15 +525,15 @@
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">N=1 SUSY</div>
-                            <div class="component-name">4D Supersymmetry</div>
-                            <div class="component-desc">One 4D supercharge preserved after compactification (1/8 of 11D SUSY)</div>
+                            <div class="component-name"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Supersymmetry</div>
+                            <div class="component-desc">One <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D supercharge preserved after compactification (1/8 of 11D SUSY)</div>
                         </div>
                     </div>
                     <div class="derivation-chain">
                         <div class="chain-title">SUSY Preservation Mechanism</div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            11D M-theory: 32 real supercharges (maximal SUSY)
+                            <span class="pm-value" data-pm-value="dimensions.D_Mtheory"></span>D M-theory: 32 real supercharges (maximal SUSY)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
@@ -541,7 +541,7 @@
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
-                            4D reduction: 8 components → N=1 SUSY (4 real supercharges)
+                            <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D reduction: 8 components → N=1 SUSY (4 real supercharges)
                         </div>
                         <div class="chain-step">
                             <span class="step-arrow">→</span>
@@ -586,7 +586,7 @@
                 <div class="formula-expansion">
                     <div class="sub-components">
                         <div class="sub-component">
-                            <div class="component-symbol">n_gen = 3</div>
+                            <div class="component-symbol">n_gen = <span class="pm-value" data-pm-value="topology.n_gen"></span></div>
                             <div class="component-name">Number of Generations</div>
                             <div class="component-desc">Observed: 3 fermion families (electron, muon, tau and their neutrinos + quarks)</div>
                         </div>
@@ -603,7 +603,7 @@
                         <div class="sub-component">
                             <div class="component-symbol">24</div>
                             <div class="component-name">Index Theorem Coefficient</div>
-                            <div class="component-desc">From M-theory Dirac index theorem on 7D G₂ manifolds: I(D) = χ_eff/24</div>
+                            <div class="component-desc">From M-theory Dirac index theorem on <span class="pm-value" data-pm-value="dimensions.D_G2"></span>D G₂ manifolds: I(D) = χ_eff/24</div>
                         </div>
                         <div class="sub-component">
                             <div class="component-symbol">χ_total = 144</div>
@@ -646,7 +646,7 @@
             </div>
 
             <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 2rem;">
-                <h4 style="color: #ff7eb6;">Flux-Dressed Topology in 13D Shadow</h4>
+                <h4 style="color: #ff7eb6;">Flux-Dressed Topology in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow</h4>
                 <p style="color: var(--text-secondary);">
                     The G₂ manifold with flux dressing yields consistent generation counting:
                 </p>
@@ -693,7 +693,7 @@
                         yields χ_eff = 72 and the observed 3 generations.
                     </li>
                     <li style="margin-top: 0.5rem;">
-                        <strong>13D shadow structure:</strong> The 13D shadow compactifies on a G₂ manifold with flux dressing.
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure:</strong> The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow compactifies on a G₂ manifold with flux dressing.
                         Mirror symmetry ensures χ_eff(M⁷₁) = χ_eff(M⁷₂) = 72.
                     </li>
                     <li style="margin-top: 0.5rem;">
@@ -785,7 +785,7 @@
                 <div class="resource-card" style="border-left: 4px solid #8b7fff;">
                     <h4 style="color: #8b7fff;">Geometric Framework</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
-                        G₂ compactification from 13D → 6D
+                        G₂ compactification from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D → 6D
                     </p>
                     <a href="../sections/geometric-framework.html" class="resource-link" style="color: var(--accent-primary);">
                         Read More &rarr;

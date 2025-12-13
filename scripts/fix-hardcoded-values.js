@@ -305,18 +305,243 @@ const VALUE_MAPPINGS = [
     replacement: '<span class="pm-value" data-pm-value="v10_2_all_fermions.quarks.b.mass_GeV" data-format="fixed:2"></span> GeV',
     name: 'm_b',
     skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Standalone 26D references - MOST COMMON (942 instances)
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])26D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D',
+    name: '26D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // Standalone 13D references - VERY COMMON (868 instances)
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])13D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D',
+    name: '13D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // 13-dimensional text (18 instances)
+  {
+    patterns: [
+      /13-dimensional(?!\s*(?:effective|after|space))/gi
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>-dimensional',
+    name: '13D_dimensional',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // 4D standalone - common for observable spacetime
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])4D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_observable"></span>D',
+    name: '4D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION', '4D Effective']
+  },
+
+  // 7D standalone - G2 manifold dimension
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])7D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_G2"></span>D',
+    name: '7D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // 8D standalone - Spin(8) representation
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])8D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_spin8"></span>D',
+    name: '8D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // 10D standalone - string theory dimension
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])10D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_string"></span>D',
+    name: '10D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // 11D standalone - M-theory dimension
+  {
+    patterns: [
+      /(?<![a-zA-Z0-9])11D(?![a-zA-Z])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dimensions.D_Mtheory"></span>D',
+    name: '11D_standalone',
+    skipInContext: ['data-pm-value', 'class="pm-value"', 'ATTRIBUTION']
+  },
+
+  // b₃=24 (15 instances)
+  {
+    patterns: [
+      /b[₃3]\s*=\s*24(?![0-9])/g
+    ],
+    replacement: 'b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>',
+    name: 'b3_equals',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // PMNS theta_12 specific values (33.6°)
+  {
+    patterns: [
+      /33\.6°/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="pmns_matrix.theta_12" data-format="fixed:1"></span>°',
+    name: 'theta_12_336',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // PMNS theta_13 specific values (8.57°)
+  {
+    patterns: [
+      /8\.57°/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="pmns_matrix.theta_13" data-format="fixed:2"></span>°',
+    name: 'theta_13_857',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Alpha GUT 24.68 and 24.30
+  {
+    patterns: [
+      /(?<![0-9])24\.68(?![0-9])/g,
+      /(?<![0-9])24\.30(?![0-9])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv" data-format="fixed:2"></span>',
+    name: 'alpha_GUT_values',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // w0 approximate value -0.85
+  {
+    patterns: [
+      /(?<![0-9])-0\.85(?![0-9])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:2"></span>',
+    name: 'w0_approx',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // w0 specific values
+  {
+    patterns: [
+      /-0\.8509/g,
+      /-0\.8527/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="dark_energy.w0_PM" data-format="fixed:4"></span>',
+    name: 'w0_specific',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // KK graviton 5.0 TeV and 5.06 TeV
+  {
+    patterns: [
+      /5\.0\s*TeV/g,
+      /5\.06\s*TeV/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="kk_graviton.mass_TeV" data-format="fixed:2"></span> TeV',
+    name: 'KK_TeV_values',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // M_GUT specific value
+  {
+    patterns: [
+      /2\.1181\s*×\s*10\^?16/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="proton_decay.M_GUT" data-format="scientific:4"></span>',
+    name: 'M_GUT_specific',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Chi = 144
+  {
+    patterns: [
+      /χ\s*=\s*144(?![0-9])/g
+    ],
+    replacement: 'χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span>',
+    name: 'chi_equals',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // n_gen = 3 pattern
+  {
+    patterns: [
+      /n[_gen]*\s*=\s*3(?=\s|<|$)/g
+    ],
+    replacement: 'n_gen = <span class="pm-value" data-pm-value="topology.n_gen"></span>',
+    name: 'n_gen_equals',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Higgs 125.10 GeV specific
+  {
+    patterns: [
+      /125\.10\s*GeV/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV',
+    name: 'higgs_12510',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Strong coupling constant α_s
+  {
+    patterns: [
+      /0\.1179(?![0-9])/g,
+      /0\.118(?![0-9])/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="gauge_couplings.alpha_s_MZ" data-format="fixed:4"></span>',
+    name: 'alpha_s',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Electron mass
+  {
+    patterns: [
+      /0\.511\s*MeV/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="v10_2_all_fermions.leptons.e.mass_MeV" data-format="fixed:3"></span> MeV',
+    name: 'm_electron',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
+  },
+
+  // Muon mass
+  {
+    patterns: [
+      /105\.66\s*MeV/g
+    ],
+    replacement: '<span class="pm-value" data-pm-value="v10_2_all_fermions.leptons.mu.mass_MeV" data-format="fixed:2"></span> MeV',
+    name: 'm_muon',
+    skipInContext: ['data-pm-value', 'class="pm-value"']
   }
 ];
 
 // Directories to process
 const PROCESS_DIRS = ['', 'sections', 'foundations', 'docs'];
 
-// Files to skip
+// Files to skip - partial HTML fragments and attribution files
 const SKIP_FILES = [
   'test-',
   'node_modules',
   'ATTRIBUTION',
-  '.backup'
+  '.backup',
+  'appendices_content.html'
 ];
 
 /**

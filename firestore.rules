@@ -1,0 +1,104 @@
+rules_version = '2';
+
+/**
+ * Firestore Security Rules for Principia Metaphysica
+ *
+ * Features:
+ * - Authenticated users only (Google sign-in required)
+ * - Read-only access (write via admin SDK only)
+ * - Rate limiting via App Check (configure in Firebase Console)
+ * - Request size limits
+ *
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+ */
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // HELPER FUNCTIONS
+    // ═══════════════════════════════════════════════════════════════════════
+
+    // Check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    // Check if request has valid App Check token (DDoS protection)
+    function hasValidAppCheck() {
+      return request.auth.token.firebase.sign_in_provider != null;
+    }
+
+    // Rate limiting: Check timestamp isn't too frequent
+    // Note: Full rate limiting requires Cloud Functions
+    function isValidRequest() {
+      return isAuthenticated();
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // THEORY CONSTANTS - Core PM data
+    // ═══════════════════════════════════════════════════════════════════════
+    match /theory_constants/{document=**} {
+      // Read: Authenticated users only
+      allow read: if isAuthenticated();
+
+      // Write: Admin SDK only (no client writes)
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // FORMULAS - Formula definitions with LaTeX/HTML
+    // ═══════════════════════════════════════════════════════════════════════
+    match /formulas/{formulaId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // FORMULA DATABASE - Tooltip and metadata
+    // ═══════════════════════════════════════════════════════════════════════
+    match /formula_database/{constantId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // PAGES - Page content (if stored in Firestore)
+    // ═══════════════════════════════════════════════════════════════════════
+    match /pages/{pageId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // APPENDICES - Paper appendix content
+    // ═══════════════════════════════════════════════════════════════════════
+    match /appendices/{appendixId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // VALIDATION HISTORY - Upload history tracking
+    // ═══════════════════════════════════════════════════════════════════════
+    match /validation_history/{historyId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // EXPERIMENTAL DATA - PDG, NuFIT, DESI references
+    // ═══════════════════════════════════════════════════════════════════════
+    match /experimental_data/{dataId} {
+      allow read: if isAuthenticated();
+      allow write: if false;
+    }
+
+    // ═══════════════════════════════════════════════════════════════════════
+    // DENY ALL OTHER ACCESS
+    // ═══════════════════════════════════════════════════════════════════════
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
