@@ -1,0 +1,140 @@
+<section id="appendix-b" class="appendix">
+  <h2>Appendix B: Geometric Framework</h2>
+
+  <div class="appendix-summary" style="background: rgba(139, 127, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
+    <p class="lead">
+      This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the <strong>26-dimensional action with signature (24,2)</strong> decomposing as \(M^{26} = M_A^{14} \otimes_T M_B^{14}\), where each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, projecting onto an effective 13D (12,1) shadow. The Z₂ mirror brane structure provides geometrically-derived generation count \(n_{\text{gen}} = 3\).
+    </p>
+  </div>
+
+  <div class="theorem-box" style="background: rgba(139, 127, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
+    <h3>Key Topics Covered</h3>
+    <ul style="line-height: 1.8; color: var(--text-secondary);">
+      <li><strong>26D → 13D Shadow Action</strong> - Sp(2,R) gauge symmetry and ghost elimination</li>
+      <li><strong>Two-Time Structure</strong> - (24,2) signature with shared timelike dimensions</li>
+      <li><strong>The Pneuma Manifold</strong> - G₂ manifold with F-theory connection</li>
+      <li><strong>Kaluza-Klein Decomposition</strong> - Dimensional reduction to 4D effective action</li>
+      <li><strong>Spinor Reduction</strong> - 8192 components → 64 via gauge fixing</li>
+    </ul>
+  </div>
+
+  <div class="theorem-box" style="background: rgba(255, 126, 182, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
+    <h3>26D Decomposition with Shared Time</h3>
+    <p style="text-align: center; font-size: 1.2rem; margin: 1.5rem 0;">
+      $$M^{26} = M_A^{14} \otimes_T M_B^{14}$$
+    </p>
+    <table class="dimensional-table" style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+      <tr style="background: rgba(255, 126, 182, 0.1);">
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 126, 182, 0.3);">Component</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 126, 182, 0.3);">Signature</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 126, 182, 0.3);">Structure</th>
+      </tr>
+      <tr style="border-bottom: 1px solid rgba(255, 126, 182, 0.1);">
+        <td style="padding: 0.75rem;">\(M_A^{14}\)</td>
+        <td style="padding: 0.75rem;">(12,2)</td>
+        <td style="padding: 0.75rem;">12 spacelike + 2 timelike (shared)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid rgba(255, 126, 182, 0.1);">
+        <td style="padding: 0.75rem;">\(M_B^{14}\)</td>
+        <td style="padding: 0.75rem;">(12,2)</td>
+        <td style="padding: 0.75rem;">12 spacelike + 2 timelike (shared)</td>
+      </tr>
+      <tr style="border-top: 2px solid rgba(255, 126, 182, 0.3);">
+        <td style="padding: 0.75rem;"><strong>Total</strong></td>
+        <td style="padding: 0.75rem;"><strong>26D</strong></td>
+        <td style="padding: 0.75rem;">24 spacelike + 2 timelike (shared between halves)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="theorem-box" style="background: rgba(81, 207, 102, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
+    <h3>Key Formulas</h3>
+
+    <h4 style="color: #51cf66; margin-top: 1.5rem;">26D Master Action</h4>
+    <p style="text-align: center; margin: 1rem 0; font-size: 1.1rem;">
+      $$S_{26D} = \int d^{26}x \sqrt{|G|} \left[ M_*^{24} R_{26} + \bar{\Psi}_P (i\Gamma^M D_M - m)\Psi_P + \mathcal{L}_{\text{Sp}(2,\mathbb{R})} \right]$$
+    </p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">
+      Where \(\Psi_P\) is the Pneuma spinor with 8192 components before gauge reduction (from Cl(24,2))
+    </p>
+
+    <h4 style="color: #51cf66; margin-top: 1.5rem;">Sp(2,ℝ) Gauge Constraints</h4>
+    <p style="text-align: center; margin: 1rem 0;">
+      $$X^2 = 0, \quad X \cdot P = 0, \quad P^2 + M^2 = 0$$
+    </p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Three first-class constraints eliminating ghost states</p>
+
+    <h4 style="color: #51cf66; margin-top: 1.5rem;">Spinor Reduction</h4>
+    <p style="text-align: center; margin: 1rem 0;">
+      $$\text{Cl}(24,2) : 2^{13} = 8192 \text{ components} \xrightarrow{\text{Sp}(2,\mathbb{R})} 2^6 = 64 \text{ components}$$
+    </p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Reduction factor: 128 = 2⁷</p>
+
+    <h4 style="color: #51cf66; margin-top: 1.5rem;">13D Effective Action (after gauge fixing)</h4>
+    <p style="text-align: center; margin: 1rem 0; font-size: 1.1rem;">
+      $$S_{13D} = \int d^{13}x \sqrt{|G|} \left[ M_*^{11} R_{13} + \bar{\Psi}_P (\Gamma^M D_M - m)\Psi_P + \mathcal{L}_{\text{int}} \right]$$
+    </p>
+
+    <h4 style="color: #51cf66; margin-top: 1.5rem;">Kaluza-Klein Decomposition</h4>
+    <p style="text-align: center; margin: 1rem 0;">
+      $$\int d^{13}x \sqrt{|G_{13}|} = \int d^4x \sqrt{|g_4|} \times \int d^8y \sqrt{|g_8|} = \int d^4x \sqrt{|g_4|} \times V_8$$
+    </p>
+    <p style="font-size: 0.9rem; color: var(--text-muted); text-align: center;">Volume factorization for dimensional reduction</p>
+  </div>
+
+  <div class="theorem-box" style="background: rgba(255, 193, 7, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(255, 193, 7, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
+    <h3>EFT Operator Hierarchy</h3>
+    <table class="dimensional-table" style="width: 100%; border-collapse: collapse; margin: 1rem 0;">
+      <tr style="background: rgba(255, 193, 7, 0.1);">
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 193, 7, 0.3);">Operator Type</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 193, 7, 0.3);">Mass Dimension</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 193, 7, 0.3);">Suppression</th>
+        <th style="padding: 0.75rem; text-align: left; border-bottom: 1px solid rgba(255, 193, 7, 0.3);">Example</th>
+      </tr>
+      <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.1);">
+        <td style="padding: 0.75rem;">Kinetic terms</td>
+        <td style="padding: 0.75rem;">[D] = 13</td>
+        <td style="padding: 0.75rem;">\(M_*^{11}\)</td>
+        <td style="padding: 0.75rem;">\(M_*^{11} R\)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.1);">
+        <td style="padding: 0.75rem;">Fermion kinetic</td>
+        <td style="padding: 0.75rem;">[D] = 13</td>
+        <td style="padding: 0.75rem;">1</td>
+        <td style="padding: 0.75rem;">\(\bar{\Psi}\Gamma D\Psi\)</td>
+      </tr>
+      <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.1);">
+        <td style="padding: 0.75rem;">Four-fermion</td>
+        <td style="padding: 0.75rem;">[D] = 26</td>
+        <td style="padding: 0.75rem;">\(M_*^{-13}\)</td>
+        <td style="padding: 0.75rem;">\((\bar{\Psi}\Gamma\Psi)^2/M_*^{13}\)</td>
+      </tr>
+      <tr>
+        <td style="padding: 0.75rem;">Higher curvature</td>
+        <td style="padding: 0.75rem;">[D] = 26</td>
+        <td style="padding: 0.75rem;">\(M_*^{-13}\)</td>
+        <td style="padding: 0.75rem;">\(R^2/M_*^{13}\)</td>
+      </tr>
+    </table>
+    <p style="margin-top: 1rem; font-style: italic; color: var(--text-muted);">
+      Non-renormalizable but predictive as an EFT below \(M_* \sim 10^{16}\) GeV
+    </p>
+  </div>
+
+  <div class="theorem-box" style="background: rgba(139, 127, 255, 0.08); backdrop-filter: blur(10px); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 12px; padding: 1.5rem; margin: 1rem 0;">
+    <h3>Key Features of Two-Time Structure</h3>
+    <ul style="line-height: 1.8; color: var(--text-secondary);">
+      <li><strong>Shared Time:</strong> The 2 timelike dimensions are common to both \(M_A\) and \(M_B\), enforced by Sp(2,ℝ) gauge symmetry</li>
+      <li><strong>Independent Spaces:</strong> Each half has 12 independent spacelike dimensions (24 total spacelike dimensions)</li>
+      <li><strong>Ghost Elimination:</strong> Sp(2,ℝ) local gauge symmetry removes negative-norm states from the (12,2) signature</li>
+      <li><strong>Z₂ Mirror Structure:</strong> \(M_A \leftrightarrow M_B\) mirror symmetry provides natural brane doubling</li>
+      <li><strong>Spinor Reduction:</strong> Cl(24,2) with \(2^{13} = 8192\) components → \(2^6 = 64\) components after Sp(2,ℝ) gauge fixing</li>
+    </ul>
+  </div>
+
+  <div class="appendix-nav" style="margin-top: 2rem; padding: 1rem; text-align: center; border-top: 1px solid rgba(139, 127, 255, 0.3);">
+    <a href="#toc" style="color: #8b7fff; text-decoration: none; margin-right: 1rem;">↑ Back to Table of Contents</a>
+    <span style="color: var(--text-muted);">|</span>
+    <a href="sections/geometric-framework.html" style="color: #8b7fff; text-decoration: none; margin-left: 1rem;">View Full Section Page →</a>
+  </div>
+</section>
