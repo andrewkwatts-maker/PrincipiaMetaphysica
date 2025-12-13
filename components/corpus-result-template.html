@@ -9,19 +9,30 @@
     For inquiries, please contact AndrewKWatts@Gmail.com
 -->
 
+<!--
+    TEMPLATE FILE NOTICE:
+    This is a template file that uses placeholder variables for dynamic content generation.
+    Placeholders include:
+    - {{TERM}}: Search term
+    - {{TRADITION_NAME}}: Name of the tradition
+    - {{TRADITION}}: Tradition identifier
+    - {{ICON}}: Icon for the tradition
+    - {{RESULT_COUNT_TEXT}}: Text describing result count
+    - {{RESULTS_HTML}}: Generated HTML for search results
+    - {{PATH_TO_ROOT}}: Path to root directory (if used by template processor)
+
+    This template should be processed by a template engine before deployment.
+-->
+
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../themes/theme-base.css">
-    <script defer src="../themes/theme-picker.js"></script>
-    <script defer src="../themes/theme-animations.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{TERM}} - {{TRADITION_NAME}} Corpus Results</title>
 
-    <!-- Theme System -->
-    <link rel="stylesheet" href="{{PATH_TO_THEMES}}/theme-base.css">
+    <!-- PM Project CSS -->
+    <link rel="stylesheet" href="/css/styles.css">
     <link rel="stylesheet" href="/css/auth.css">
-    <script src="{{PATH_TO_THEMES}}/theme-picker.js" defer></script>
 
     <style>
         .matching-text {
@@ -191,9 +202,9 @@
     </div>
   </header>
 <nav class="breadcrumb" aria-label="Breadcrumb">
-    <a href="{{PATH_TO_ROOT}}/mythos/index.html">Home</a> →
-            <a href="{{PATH_TO_ROOT}}/mythos/{{TRADITION}}/index.html">{{TRADITION_NAME}}</a> →
-            <a href="{{PATH_TO_ROOT}}/mythos/{{TRADITION}}/corpus-search.html">Corpus Search</a> →
+    <a href="/index.html">Home</a> →
+            <span>{{TRADITION_NAME}}</span> →
+            <span>Corpus Search</span> →
             <span aria-current="page">{{TERM}}</span>
 </nav>
 
@@ -207,11 +218,11 @@
 
         <!-- Back Navigation -->
         <div class="nav-links">
-            <a href="{{PATH_TO_ROOT}}/mythos/{{TRADITION}}/index.html" class="btn btn-secondary">
-                ← Back to {{TRADITION_NAME}}
+            <a href="/index.html" class="btn btn-secondary">
+                ← Back to Home
             </a>
-            <a href="{{PATH_TO_ROOT}}/mythos/{{TRADITION}}/corpus-search.html" class="btn btn-primary">
-                🔍 New Search
+            <a href="/components/index.html" class="btn btn-primary">
+                View Components
             </a>
         </div>
     </main>

@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Metric Tensor - Learn how spacetime geometry is encoded in the fundamental metric tensor g_μν">
+    <title>Metric Tensor - Foundational Physics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="/css/auth.css">
+    <script src="../js/formula-expansion.js" defer></script>
+    <script src="../theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+</head>
+<body class="not-authenticated">
+    <div id="main-content" style="display: none;">
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="index.html">Foundations</a></li>
+                    <li><a href="../sections/index.html">Sections</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="user-controls">
+            <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="index.html">Foundations</a>
+            <span class="separator">/</span>
+            <span>Metric Tensor</span>
+        </nav>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(139, 127, 255, 0.1)); border: 2px solid rgba(79, 172, 254, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Mathematics (1854)</span>
+            <h1 style="background: linear-gradient(135deg, #4facfe, #8b7fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Metric Tensor</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The fundamental mathematical object that encodes the geometry of spacetime, defining distances, angles, and the causal structure of the universe.
+            </p>
+            <div class="main-equation" style="background: rgba(79, 172, 254, 0.1);">
+                ds<sup>2</sup> = g<sub>&mu;&nu;</sub> dx<sup>&mu;</sup> dx<sup>&nu;</sup>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Riemann (1854) | Foundation of Differential Geometry & General Relativity
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.05), rgba(139, 127, 255, 0.03)); border-left: 4px solid #4facfe;">
+            <h2>What Is the Metric Tensor?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>"The metric tensor g<sub>&mu;&nu;</sub> tells you how to measure distances and time intervals in curved spacetime."</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Line Element ds<sup>2</sup></h4>
+                    <p>The <strong>infinitesimal distance</strong> between nearby points in spacetime: ds<sup>2</sup> = g<sub>&mu;&nu;</sub> dx<sup>&mu;</sup> dx<sup>&nu;</sup>. This generalizes the Pythagorean theorem to curved spaces.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Signature & Causality</h4>
+                    <p>The <strong>metric signature</strong> determines which directions are timelike, spacelike, or null. Standard 4D signature: (3,1) or (-,+,+,+).</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Geometry Encoded</h4>
+                    <p>The metric contains <strong>all geometric information</strong>: distances, angles, volumes, geodesics, and curvature all derive from g<sub>&mu;&nu;</sub>.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">ds<sup>2</sup> = g<sub>&mu;&nu;</sub> dx<sup>&mu;</sup> dx<sup>&nu;</sup></div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">ds<sup>2</sup></div>
+                        <div class="component-name">Spacetime Interval (Line Element)</div>
+                        <div class="component-desc">
+                            The infinitesimal "distance" between two nearby events in spacetime.<br>
+                            Invariant under coordinate transformations (all observers agree on ds<sup>2</sup>).<br>
+                            Can be positive (spacelike), negative (timelike), or zero (lightlike/null).
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Spacetime#Spacetime_interval" target="_blank" class="component-link">Wikipedia: Spacetime Interval &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">g<sub>&mu;&nu;</sub></div>
+                        <div class="component-name">Metric Tensor Components</div>
+                        <div class="component-desc">
+                            A symmetric matrix with 10 independent components in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D:<br>
+                            g<sub>&mu;&nu;</sub> = g<sub>&nu;&mu;</sub> (symmetric)<br>
+                            Determines the local geometry of spacetime at each point.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Rank-2 Tensor</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">dx<sup>&mu;</sup></div>
+                        <div class="component-name">Coordinate Differentials</div>
+                        <div class="component-desc">
+                            Infinitesimal changes in coordinates: dx<sup>&mu;</sup> = (dt, dx, dy, dz)<br>
+                            In <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D: &mu; = 0, 1, 2, 3 (time + 3 space dimensions)<br>
+                            Einstein summation convention: repeated indices are summed.
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Index Notation</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">g<sup>&mu;&nu;</sup></div>
+                        <div class="component-name">Inverse Metric (Contravariant)</div>
+                        <div class="component-desc">
+                            Satisfies: g<sup>&mu;&lambda;</sup>g<sub>&lambda;&nu;</sub> = &delta;<sup>&mu;</sup><sub>&nu;</sub> (Kronecker delta)<br>
+                            Used to raise indices: V<sup>&mu;</sup> = g<sup>&mu;&nu;</sup>V<sub>&nu;</sub><br>
+                            Essential for computing curvature tensors.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Raising_and_lowering_indices" target="_blank" class="component-link">Wikipedia: Raising/Lowering Indices &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&eta;<sub>&mu;&nu;</sub></div>
+                        <div class="component-name">Minkowski Metric (Flat Spacetime)</div>
+                        <div class="component-desc">
+                            Special case - flat spacetime metric:<br>
+                            &eta;<sub>&mu;&nu;</sub> = diag(-1, 1, 1, 1) or diag(1, -1, -1, -1)<br>
+                            Used in Special Relativity. General Relativity: g<sub>&mu;&nu;</sub> &rarr; &eta;<sub>&mu;&nu;</sub> locally.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Minkowski_space" target="_blank" class="component-link">Wikipedia: Minkowski Metric &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Signature</div>
+                        <div class="component-name">Metric Signature (p, q)</div>
+                        <div class="component-desc">
+                            Number of positive and negative eigenvalues:<br>
+                            <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D: (3,1) - 3 space + 1 time<br>
+                            <strong>PM signatures:</strong> (24,2) in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D, (12,1) in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D, (5,1) in 6D
+                        </div>
+                        <span class="foundation-badge pm-specific" style="margin-top: 0.5rem;">Two-Time Physics</span>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">From Metric to Curvature</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Metric g<sub>&mu;&nu;</sub> (10 components in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D)</span>
+                        <span class="foundation-badge established">Geometry</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Christoffel Symbols &Gamma;<sup>&lambda;</sup><sub>&mu;&nu;</sub> = &frac12; g<sup>&lambda;&rho;</sup>(&part;<sub>&mu;</sub>g<sub>&nu;&rho;</sub> + &part;<sub>&nu;</sub>g<sub>&rho;&mu;</sub> - &part;<sub>&rho;</sub>g<sub>&mu;&nu;</sub>)</span>
+                        <span class="foundation-badge established">Connection</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Riemann Curvature R<sup>&rho;</sup><sub>&sigma;&mu;&nu;</sub></span>
+                        <span class="foundation-badge established">Intrinsic Curvature</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="ricci-tensor.html">Ricci Tensor R<sub>&mu;&nu;</sub> & Scalar R</a>
+                        <span class="foundation-badge established">Contracted Curvature</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="einstein-field-equations.html">Einstein Field Equations G<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub></a>
+                        <span class="foundation-badge established">Dynamics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: The Metric in Different Spacetimes</h2>
+            <p>The metric tensor encodes how to measure distances. Different geometries have different metrics:</p>
+
+            <svg width="100%" height="500" viewBox="0 0 900 500" style="background: rgba(79, 172, 254, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <radialGradient id="flatGradient" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#4facfe;stop-opacity:0.05" />
+                    </radialGradient>
+                    <radialGradient id="curvedGradient" cx="50%" cy="50%">
+                        <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:0.05" />
+                    </radialGradient>
+                    <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#4facfe" />
+                    </marker>
+                    <marker id="arrowhead-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#8b7fff" />
+                    </marker>
+                </defs>
+
+                <!-- Title -->
+                <text x="450" y="30" text-anchor="middle" fill="var(--text-primary)" font-size="20" font-weight="600">
+                    Metric Tensor in Flat vs Curved Spacetime
+                </text>
+
+                <!-- LEFT: Minkowski (Flat) -->
+                <g transform="translate(50, 80)">
+                    <text x="150" y="0" text-anchor="middle" fill="#4facfe" font-size="16" font-weight="600">
+                        Minkowski Metric (Flat)
+                    </text>
+
+                    <!-- Flat grid -->
+                    <rect x="20" y="20" width="260" height="200" fill="url(#flatGradient)" stroke="none"/>
+
+                    <!-- Regular grid lines -->
+                    <line x1="20" y1="70" x2="280" y2="70" stroke="#4facfe" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="20" y1="120" x2="280" y2="120" stroke="#4facfe" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="20" y1="170" x2="280" y2="170" stroke="#4facfe" stroke-width="1.5" opacity="0.6"/>
+
+                    <line x1="80" y1="20" x2="80" y2="220" stroke="#4facfe" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="150" y1="20" x2="150" y2="220" stroke="#4facfe" stroke-width="1.5" opacity="0.6"/>
+                    <line x1="220" y1="20" x2="220" y2="220" stroke="#4facfe" stroke-width="1.5" opacity="0.6"/>
+
+                    <!-- Metric display -->
+                    <rect x="20" y="240" width="260" height="130" fill="rgba(79, 172, 254, 0.1)" stroke="#4facfe" stroke-width="2" rx="8"/>
+                    <text x="150" y="265" text-anchor="middle" fill="var(--text-primary)" font-size="14" font-weight="600">
+                        η<sub>μν</sub> = diag(-1, 1, 1, 1)
+                    </text>
+                    <text x="150" y="290" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                        ds² = -dt² + dx² + dy² + dz²
+                    </text>
+                    <text x="150" y="315" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Signature: (3,1)
+                    </text>
+                    <text x="150" y="335" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        All Christoffel symbols: Γ = 0
+                    </text>
+                    <text x="150" y="355" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Riemann curvature: R = 0
+                    </text>
+                </g>
+
+                <!-- RIGHT: Schwarzschild (Curved) -->
+                <g transform="translate(500, 80)">
+                    <text x="150" y="0" text-anchor="middle" fill="#8b7fff" font-size="16" font-weight="600">
+                        Schwarzschild Metric (Curved)
+                    </text>
+
+                    <!-- Curved grid around mass -->
+                    <ellipse cx="150" cy="120" rx="100" ry="80" fill="url(#curvedGradient)" stroke="none"/>
+
+                    <!-- Curved grid lines -->
+                    <path d="M 50 70 Q 150 85, 250 70" stroke="#8b7fff" stroke-width="1.5" opacity="0.6" fill="none"/>
+                    <path d="M 40 120 Q 150 140, 260 120" stroke="#8b7fff" stroke-width="1.5" opacity="0.6" fill="none"/>
+                    <path d="M 50 170 Q 150 185, 250 170" stroke="#8b7fff" stroke-width="1.5" opacity="0.6" fill="none"/>
+
+                    <path d="M 80 40 Q 85 120, 80 200" stroke="#8b7fff" stroke-width="1.5" opacity="0.6" fill="none"/>
+                    <path d="M 150 30 Q 150 120, 150 210" stroke="#8b7fff" stroke-width="1.5" opacity="0.6" fill="none"/>
+                    <path d="M 220 40 Q 215 120, 220 200" stroke="#8b7fff" stroke-width="1.5" opacity="0.6" fill="none"/>
+
+                    <!-- Central mass -->
+                    <circle cx="150" cy="120" r="15" fill="#ff7eb6" stroke="#ff0080" stroke-width="2"/>
+                    <text x="150" y="125" text-anchor="middle" fill="white" font-size="10" font-weight="bold">M</text>
+
+                    <!-- Metric display -->
+                    <rect x="20" y="240" width="260" height="130" fill="rgba(139, 127, 255, 0.1)" stroke="#8b7fff" stroke-width="2" rx="8"/>
+                    <text x="150" y="265" text-anchor="middle" fill="var(--text-primary)" font-size="13" font-weight="600">
+                        ds² = -(1-2GM/r)dt² + (1-2GM/r)⁻¹dr²
+                    </text>
+                    <text x="150" y="285" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        + r²(dθ² + sin²θ dφ²)
+                    </text>
+                    <text x="150" y="310" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Signature: (3,1)
+                    </text>
+                    <text x="150" y="330" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Christoffel symbols: Γ ≠ 0
+                    </text>
+                    <text x="150" y="350" text-anchor="middle" fill="var(--text-secondary)" font-size="11">
+                        Riemann curvature: R ≠ 0
+                    </text>
+                </g>
+
+                <!-- Bottom annotation -->
+                <text x="450" y="420" text-anchor="middle" fill="var(--text-primary)" font-size="14" font-weight="600">
+                    The Metric Determines All Geometry
+                </text>
+                <text x="450" y="440" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                    From g<sub>μν</sub> we can compute: distances, angles, geodesics, curvature, and dynamics
+                </text>
+                <text x="450" y="460" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                    Einstein's equations tell us how matter determines g<sub>μν</sub>
+                </text>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                In flat spacetime (left), the metric is constant everywhere. Near a massive object (right), the metric varies with position, encoding curvature.
+            </p>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
+
+            <h3>1. Minkowski Metric: Flat Spacetime</h3>
+            <p>
+                In Special Relativity, spacetime is flat and described by the <strong>Minkowski metric</strong>:
+            </p>
+            <div class="equation-box">
+                ds<sup>2</sup> = -dt<sup>2</sup> + dx<sup>2</sup> + dy<sup>2</sup> + dz<sup>2</sup> = &eta;<sub>&mu;&nu;</sub> dx<sup>&mu;</sup> dx<sup>&nu;</sup>
+                <span class="equation-label">Minkowski metric (signature convention: mostly plus)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                In matrix form, the Minkowski metric is:
+            </p>
+            <div class="equation-box">
+                &eta;<sub>&mu;&nu;</sub> =
+                <span style="display: inline-block; vertical-align: middle;">
+                    <span style="display: block; font-size: 0.9rem;">⎛ -1  0  0  0 ⎞</span>
+                    <span style="display: block; font-size: 0.9rem;">⎜  0  1  0  0 ⎟</span>
+                    <span style="display: block; font-size: 0.9rem;">⎜  0  0  1  0 ⎟</span>
+                    <span style="display: block; font-size: 0.9rem;">⎝  0  0  0  1 ⎠</span>
+                </span>
+                <span class="equation-label">Signature (3,1) or (-,+,+,+)</span>
+            </div>
+
+            <h3 style="margin-top: 2rem;">2. General Curved Spacetime Metrics</h3>
+            <p>
+                In General Relativity, the metric g<sub>&mu;&nu;</sub> is a function of position and encodes curvature.
+                <strong>Important examples:</strong>
+            </p>
+
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Spacetime</th>
+                        <th>Metric ds<sup>2</sup></th>
+                        <th>Physical Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Minkowski</strong></td>
+                        <td>-dt<sup>2</sup> + dx<sup>2</sup> + dy<sup>2</sup> + dz<sup>2</sup></td>
+                        <td>Flat spacetime (no gravity)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Schwarzschild</strong></td>
+                        <td>-(1-r<sub>s</sub>/r)dt<sup>2</sup> + (1-r<sub>s</sub>/r)<sup>-1</sup>dr<sup>2</sup> + r<sup>2</sup>d&Omega;<sup>2</sup></td>
+                        <td>Non-rotating black hole or spherical mass</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kerr</strong></td>
+                        <td>(Complex form with rotation parameter a)</td>
+                        <td>Rotating black hole</td>
+                    </tr>
+                    <tr>
+                        <td><strong>FLRW</strong></td>
+                        <td>-dt<sup>2</sup> + a(t)<sup>2</sup>[dr<sup>2</sup>/(1-kr<sup>2</sup>) + r<sup>2</sup>d&Omega;<sup>2</sup>]</td>
+                        <td>Expanding universe (cosmology)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">3. Metric Signature: Causality Structure</h3>
+            <p>
+                The <strong>signature</strong> of the metric (p, q) tells you how many positive and negative eigenvalues it has.
+                This determines the causal structure of spacetime:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Signature (3,1):</strong> Standard <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime - 3 space + 1 time dimension</li>
+                <li><strong>Signature (n,1):</strong> n spatial + 1 temporal dimension (standard physics)</li>
+                <li><strong>Signature (n,2):</strong> n spatial + 2 temporal dimensions (<strong>two-time physics!</strong>)</li>
+            </ul>
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">PM Framework: Two-Time Signatures</h4>
+                <p style="color: var(--text-secondary);">
+                    Principia Metaphysica uses metrics with <strong>two timelike directions</strong>:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk:</strong> Signature (24,2) - 24 space + 2 time</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow:</strong> Signature (12,1) - 12 space + 1 time (after Sp(2,R) gauge fixing)</li>
+                    <li><strong>6D bulk:</strong> Signature (5,1) - 5 space + 1 time</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D observed:</strong> Signature (3,1) - 3 space + 1 time</li>
+                </ul>
+            </div>
+
+            <h3 style="margin-top: 2rem;">4. Line Element and Proper Time</h3>
+            <p>
+                The metric allows us to calculate the <strong>proper time</strong> &tau; along a worldline:
+            </p>
+            <div class="equation-box">
+                d&tau;<sup>2</sup> = -ds<sup>2</sup>/c<sup>2</sup> = -g<sub>&mu;&nu;</sub> dx<sup>&mu;</sup> dx<sup>&nu;</sup>/c<sup>2</sup>
+                <span class="equation-label">Proper time (for timelike paths)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                This is the time measured by a clock moving along the worldline. Different paths through spacetime
+                correspond to different elapsed proper times - the basis of the <strong>twin paradox</strong> and gravitational time dilation.
+            </p>
+
+            <h3 style="margin-top: 2rem;">5. Raising and Lowering Indices</h3>
+            <p>
+                The metric and its inverse are used to convert between covariant and contravariant tensors:
+            </p>
+            <div class="equation-box">
+                V<sub>&mu;</sub> = g<sub>&mu;&nu;</sub> V<sup>&nu;</sup> &nbsp;&nbsp;&nbsp; (lowering)<br>
+                V<sup>&mu;</sup> = g<sup>&mu;&nu;</sup> V<sub>&nu;</sub> &nbsp;&nbsp;&nbsp; (raising)
+                <span class="equation-label">Index gymnastics - fundamental tensor operation</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                The inverse metric g<sup>&mu;&nu;</sup> satisfies: g<sup>&mu;&lambda;</sup>g<sub>&lambda;&nu;</sub> = &delta;<sup>&mu;</sup><sub>&nu;</sub>
+                (the identity matrix in tensor form).
+            </p>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>The Metric Tensor - eigenchris</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Comprehensive introduction to the metric tensor with clear visual explanations.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=mb9nOKQ7s5w" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">22 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Understanding the Metric - PBS Space Time</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Intuitive explanation of how the metric encodes spacetime geometry.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=Rh6VQGMJ3fI" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">15 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Tensor Calculus - eigenchris (Full Series)</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Complete course covering metrics, tensors, and differential geometry from scratch.
+                    </p>
+                    <a href="https://www.youtube.com/playlist?list=PLJHszsWbB6hrkmmq57lX8BV-o-YIOFsiG" target="_blank" class="resource-link">
+                        Watch Playlist &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">33 videos</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>General Relativity - Leonard Susskind</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Stanford lecture series including detailed treatment of the metric tensor.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=hbmf0bB38h0&list=PLpGHT1n4-mAsJ123W3fjPzvlDHOvIhHA0" target="_blank" class="resource-link">
+                        Watch Playlist &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">12 lectures</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Textbooks</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Metric_tensor" target="_blank" style="color: var(--accent-primary);">Metric Tensor</a> |
+                    <a href="https://en.wikipedia.org/wiki/Metric_tensor_(general_relativity)" target="_blank" style="color: var(--accent-primary);">Metric Tensor (GR)</a> |
+                    <a href="https://en.wikipedia.org/wiki/Minkowski_space" target="_blank" style="color: var(--accent-primary);">Minkowski Space</a>
+                </li>
+                <li>
+                    <strong>Textbook (Beginner):</strong>
+                    "A Student's Guide to Vectors and Tensors" by Daniel Fleisch
+                    <a href="https://www.cambridge.org/core/books/students-guide-to-vectors-and-tensors/" target="_blank" style="color: var(--accent-primary);">[Cambridge University Press]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Intermediate):</strong>
+                    "Spacetime and Geometry" by Sean Carroll - Chapter 2 (Manifolds)
+                    <a href="https://www.preposterousuniverse.com/spacetimeandgeometry/" target="_blank" style="color: var(--accent-primary);">[Book website]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Advanced):</strong>
+                    "Gravitation" by Misner, Thorne, Wheeler - Chapters 8-13
+                    <a href="https://en.wikipedia.org/wiki/Gravitation_(book)" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Online Notes:</strong>
+                    "Lecture Notes on General Relativity" by Sean Carroll (Caltech)
+                    <a href="https://arxiv.org/abs/gr-qc/9712019" target="_blank" style="color: var(--accent-primary);">[arXiv preprint]</a>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem;">Computation Tools</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>SageMath Manifolds:</strong>
+                    Free tensor computation including metric tensors
+                    <a href="https://doc.sagemath.org/html/en/reference/manifolds/" target="_blank" style="color: var(--accent-primary);">[Documentation]</a>
+                </li>
+                <li>
+                    <strong>Mathematica Riemannian Geometry:</strong>
+                    Built-in metric tensor calculations
+                    <a href="https://reference.wolfram.com/language/guide/RiemannianGeometry.html" target="_blank" style="color: var(--accent-primary);">[Wolfram Documentation]</a>
+                </li>
+                <li>
+                    <strong>GRTensorII:</strong>
+                    Symbolic tensor algebra for Maple/Mathematica
+                    <a href="https://github.com/grtensor/grtensor" target="_blank" style="color: var(--accent-primary);">[GitHub]</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>Riemannian Manifold</h4>
+                    <p>A smooth manifold equipped with a metric tensor. The metric defines distances and angles, making differential geometry possible.</p>
+                    <a href="https://en.wikipedia.org/wiki/Riemannian_manifold" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Lorentzian Manifold</h4>
+                    <p>A pseudo-Riemannian manifold with signature (n-1,1). Spacetime in relativity is Lorentzian, not Riemannian.</p>
+                    <a href="https://en.wikipedia.org/wiki/Pseudo-Riemannian_manifold" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Coordinate System</h4>
+                    <p>A choice of labels (x<sup>μ</sup>) for points in spacetime. The metric components g<sub>μν</sub> depend on the coordinate choice.</p>
+                    <a href="https://en.wikipedia.org/wiki/Coordinate_system" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Geodesic</h4>
+                    <p>The "straightest possible" path through curved spacetime, determined by the metric. Free particles follow geodesics.</p>
+                    <a href="https://en.wikipedia.org/wiki/Geodesic" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Proper Time</h4>
+                    <p>Time measured by a clock moving along a worldline: dτ² = -ds²/c². Invariant under coordinate transformations.</p>
+                    <a href="https://en.wikipedia.org/wiki/Proper_time" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Signature</h4>
+                    <p>The number of positive and negative eigenvalues (p,q) of the metric. Determines causality structure and number of time dimensions.</p>
+                    <a href="https://en.wikipedia.org/wiki/Metric_signature" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Christoffel Symbols</h4>
+                    <p>Connection coefficients Γ<sup>λ</sup><sub>μν</sub> derived from the metric. Describe how basis vectors change from point to point.</p>
+                    <a href="https://en.wikipedia.org/wiki/Christoffel_symbols" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Determinant √|g|</h4>
+                    <p>The square root of the absolute value of det(g<sub>μν</sub>). Appears in volume elements: d<sup>4</sup>x √|g|.</p>
+                    <a href="https://en.wikipedia.org/wiki/Metric_tensor#Volume_form" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                The metric tensor is fundamental to Principia Metaphysica's geometric framework. At each dimensional stage,
+                a metric defines the geometry:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">Metric Signatures Across Dimensional Reduction</h4>
+                <p style="color: var(--text-secondary);">
+                    The PM framework uses metrics with two-time signatures in higher dimensions:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li>
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk metric:</strong> g<sub>AB</sub><sup>(26)</sup> with signature (24,2)<br>
+                        Two timelike directions allow Sp(2,R) gauge symmetry. The extra time dimension enables causal paradox resolution.
+                    </li>
+                    <li>
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow metric:</strong> g<sub>MN</sub><sup>(13)</sup> with signature (12,1)<br>
+                        After Sp(2,R) gauge fixing, we have a standard (n-1,1) signature spacetime.
+                    </li>
+                    <li>
+                        <strong>6D bulk metric:</strong> g<sub>μν</sub><sup>(6)</sup> with signature (5,1)<br>
+                        The G₂ manifold internal space contributes to this 6D geometry.
+                    </li>
+                    <li>
+                        <strong><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D observed metric:</strong> g<sub>μν</sub><sup>(4)</sup> with signature (3,1)<br>
+                        The standard spacetime metric we observe and measure.
+                    </li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                The <strong>line element</strong> generalizes at each stage:
+            </p>
+            <div class="equation-box" style="margin-top: 1rem;">
+                ds<sup>2</sup> = g<sub>AB</sub><sup>(D)</sup> dx<sup>A</sup> dx<sup>B</sup>
+                <span class="equation-label">General D-dimensional line element</span>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                <strong>Key insight:</strong> The (n,2) signature in higher dimensions is essential for two-time physics.
+                The Sp(2,R) gauge symmetry acts on the two timelike directions, and gauge fixing reduces to a single
+                observed time dimension. This resolves the apparent contradiction with our one-time experience while
+                maintaining the mathematical consistency of the higher-dimensional theory.
+            </p>
+
+            <p style="margin-top: 1rem;">
+                All curvature quantities - <a href="ricci-tensor.html" style="color: var(--accent-primary);">Ricci tensor</a>,
+                <a href="einstein-field-equations.html" style="color: var(--accent-primary);">Einstein tensor</a> - are
+                ultimately derived from the metric at each dimensional stage.
+            </p>
+        </section>
+
+        <!-- Practice Problems -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding with these exercises:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: Flat Space Distance</h4>
+                <p>
+                    Using the Minkowski metric η<sub>μν</sub> = diag(-1,1,1,1), calculate the spacetime interval ds<sup>2</sup>
+                    between events at (t,x,y,z) = (0,0,0,0) and (1,1,0,0). Is the interval timelike, spacelike, or null?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        ds² = -dt² + dx² + dy² + dz² = -(1)² + (1)² + 0 + 0 = -1 + 1 = 0<br>
+                        The interval is <strong>null (lightlike)</strong> - the two events are connected by a light ray!
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Schwarzschild Event Horizon</h4>
+                <p>
+                    For the Schwarzschild metric with r<sub>s</sub> = 2GM/c², what happens to g<sub>tt</sub> at r = r<sub>s</sub>?
+                    What does this tell you about the event horizon?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        g<sub>tt</sub> = -(1 - r<sub>s</sub>/r) → 0 as r → r<sub>s</sub><br>
+                        The time component vanishes at the Schwarzschild radius. This is the event horizon - the boundary
+                        beyond which nothing (not even light) can escape. Note: This is a coordinate singularity, not a physical one.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Metric Signature</h4>
+                <p>
+                    A metric has eigenvalues {-1, -1, 1, 1, 1}. What is its signature (p,q)? Could this represent
+                    a physical spacetime? Why or why not?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Signature (p,q) = (3,2) - 3 spacelike + 2 timelike directions.<br>
+                        This is a <strong>two-time metric</strong>! In standard physics, we only observe one time dimension.
+                        However, in PM's framework, this signature appears in higher-dimensional bulk spacetime before
+                        Sp(2,R) gauge fixing reduces it to (n,1).
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 4: Inverse Metric</h4>
+                <p>
+                    If g<sub>μν</sub> = diag(-1, 1, 1, 1), what is g<sup>μν</sup>? Verify that
+                    g<sup>μλ</sup>g<sub>λν</sub> = δ<sup>μ</sup><sub>ν</sub>.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        For diagonal metrics, g<sup>μν</sup> = diag(-1, 1, 1, 1) (same as g<sub>μν</sub>).<br>
+                        Verification: g<sup>μλ</sup>g<sub>λν</sub> = (-1)(-1)δ<sup>μ</sup><sub>ν</sub> for μ=ν=0,
+                        and (1)(1)δ<sup>μ</sup><sub>ν</sub> for spatial indices, giving the identity matrix.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 5: Proper Time on Worldline</h4>
+                <p>
+                    A particle moves from (t,x) = (0,0) to (t,x) = (5,3) in flat 2D spacetime with metric
+                    ds² = -dt² + dx². Calculate the proper time τ along this straight worldline.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        dτ² = -ds² = dt² - dx²<br>
+                        For straight path: Δτ² = Δt² - Δx² = 5² - 3² = 25 - 9 = 16<br>
+                        Therefore: τ = 4 time units<br>
+                        The moving clock experiences less time (4) than coordinate time (5) - time dilation!
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where the Metric Tensor Is Used in PM</h2>
+            <p>
+                This foundational concept appears throughout Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Geometric Framework</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Higher-dimensional metrics and signatures
+                    </p>
+                    <a href="../sections/geometric-framework.html" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Two-Time Physics</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        (n,2) signature and Sp(2,R) gauge symmetry
+                    </p>
+                    <a href="../sections/geometric-framework.html" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Dimensional Reduction</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        How metrics transform during compactification
+                    </p>
+                    <a href="../sections/geometric-framework.html" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../sections/index.html" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="index.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="ricci-tensor.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(81, 207, 102, 0.1); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Ricci Tensor &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+        <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.5rem;">
+            This project was developed with the assistance of AI tools including Claude (Anthropic),
+            Grok (xAI), and Gemini (Google).
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4facfe, #8b7fff);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #51cf66;
+        }
+        .highlight-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('foundations-metric-tensor');
+    </script>
+</body>
+</html>
