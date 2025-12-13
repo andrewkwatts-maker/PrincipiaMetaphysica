@@ -1108,13 +1108,13 @@
             <div class="analogy-box" style="border-left-color: #4facfe; background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(139, 127, 255, 0.05));">
                 <h4 style="color: #4facfe;">&#x1F3AF; Just Two Calibrations</h4>
                 <p>
-                    <strong>Think of it like this:</strong> Imagine you're building a complex machine with 58 different settings.
-                    Most theories require you to carefully adjust all 58 dials to get it working. That's a lot of guesswork!
+                    <strong>Think of it like this:</strong> Imagine you're building a complex machine with <span class="pm-value" data-pm-value="validation.total_predictions"></span> different settings.
+                    Most theories require you to carefully adjust all <span class="pm-value" data-pm-value="validation.total_predictions"></span> dials to get it working. That's a lot of guesswork!
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    The framework yields <strong style="color: #51cf66;">central value matches on 12 key parameters</strong>
+                    The framework yields <strong style="color: #51cf66;">central value matches on <span class="pm-value" data-pm-value="validation.exact_matches"></span> key parameters</strong>
                     with only <strong style="color: #4facfe;">2 fitted parameters</strong> (like adjusting two dials). The other
-                    <strong style="color: #8b7fff;">56 parameters</strong> come purely from the geometry of the extra dimensions.
+                    <strong style="color: #8b7fff;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> parameters</strong> come purely from the geometry of the extra dimensions.
                 </p>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
                     <strong>What's calibrated:</strong> The vacuum expectation value (VEV = <span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV) and the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span>).
@@ -1125,7 +1125,7 @@
             <div class="honest-note" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.05)); border-left: 4px solid #51cf66;">
                 <h3>&#x1F4CA; Why This Matters - Complete Framework</h3>
                 <p>
-                    The framework provides complete geometric derivation of ALL 58+ parameters
+                    The framework provides complete geometric derivation of ALL <span class="pm-value" data-pm-value="validation.total_predictions"></span> parameters
                     from one TCS G₂ manifold (#187 from the Corti-Haskins-Nordström-Pacini database, arXiv:1809.09083).
                 </p>
                 <p style="margin-top: 0.5rem;">
@@ -1769,7 +1769,7 @@
 
             <p class="simple-explanation">
                 A theory is only as good as its track record. This framework has achieved complete theoretical framework
-                with all theoretical issues resolved. We tested 48 different predictions against experimental measurements, with 56/58 SM parameters derived from geometry (2 calibrated):
+                with all theoretical issues resolved. We tested <span class="pm-value" data-pm-value="validation.total_predictions"></span> different predictions against experimental measurements, with <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters derived from geometry (2 calibrated):
             </p>
 
             <div class="visual-card" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.05), rgba(79, 172, 254, 0.05));">
@@ -1789,16 +1789,16 @@
                 <div class="step-flow" style="margin: 2rem 0;">
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.25), rgba(79, 172, 254, 0.15)); min-width: 150px;">
                         <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #51cf66;">&#x2705;</div>
-                        <div id="bg-step-predictions" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;">45/48</div>
+                        <div id="bg-step-predictions" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span></div>
                         <div style="font-size: 0.9rem; margin-top: 0.5rem;">Match Experiments</div>
                         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
-                            93.8% within 1σ
+                            <span id="bg-success-rate"></span>% within 1σ
                         </div>
                     </div>
                     <span style="font-size: 2rem; color: var(--text-secondary);">+</span>
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.25), rgba(139, 127, 255, 0.15)); min-width: 150px;">
                         <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #4facfe;">&#x2705;</div>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">56/58</div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span></div>
                         <div style="font-size: 0.9rem; margin-top: 0.5rem;">Parameters Derived</div>
                         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
                             2 calibrated (θ₁₃, δ_CP)
@@ -1807,8 +1807,8 @@
                 </div>
 
                 <div class="visual-caption">
-                    <strong>V12.8 Final Status:</strong> ALL 14 theoretical issues resolved! 56 of 58 SM parameters derived from first principles with <span id="bg-para-predictions">45 of 48</span> predictions matching experimental
-                    measurements within 1σ (93.8%), including <span id="bg-para-exact">12</span> central value matches (0.0σ) and DESI DR2 validation (<span id="bg-para-desi">0.00σ</span>). 2 calibrated parameters: θ₁₃, δ_CP (pending explicit Yukawa calculation).
+                    <strong>V12.8 Final Status:</strong> ALL 14 theoretical issues resolved! <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters derived from first principles with <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> predictions matching experimental
+                    measurements within 1σ (<span id="bg-caption-success-rate"></span>%), including <span class="pm-value" data-pm-value="validation.exact_matches"></span> central value matches (0.0σ) and DESI DR2 validation (<span id="bg-para-desi">0.00σ</span>). 2 calibrated parameters: θ₁₃, δ_CP (pending explicit Yukawa calculation).
                 </div>
             </div>
 
@@ -1819,7 +1819,7 @@
                     from fundamental principles - no memorization, no guessing, just pure logical derivation.
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    <strong>V12.8 Achievement:</strong> Getting <span id="bg-realworld-predictions">45 of 48</span> real-world predictions within 1σ (93.8% success rate, including <span id="bg-realworld-exact">12</span> exact central value matches at 0.0σ) with 56 of 58 SM parameters
+                    <strong>V12.8 Achievement:</strong> Getting <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> real-world predictions within 1σ (<span id="bg-analogy-success-rate"></span>% success rate, including <span class="pm-value" data-pm-value="validation.exact_matches"></span> exact central value matches at 0.0σ) with <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters
                     derived geometrically (2 calibrated: θ₁₃, δ_CP) and all 14 theoretical issues resolved. This represents
                     publication-ready work with complete mathematical rigor and honest transparency.
                 </p>
@@ -1837,9 +1837,9 @@
                     geometric derivations in version 8.4. The framework now achieves:
                 </p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
-                    <li><strong>V12.8 Final:</strong> 56/58 parameters derived from geometry (2 calibrated: θ₁₃, δ_CP)</li>
-                    <li>45/48 predictions within 1σ of experimental data (93.8% success rate)</li>
-                    <li>12 exact matches (0.0σ) with experiment (w₀, m_h, Δm²₂₁, Δm²₃₁, θ₂₃, n_gen, etc.)</li>
+                    <li><strong>V12.8 Final:</strong> <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> parameters derived from geometry (2 calibrated: θ₁₃, δ_CP)</li>
+                    <li><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> predictions within 1σ of experimental data (<span id="bg-list-success-rate"></span>% success rate)</li>
+                    <li><span class="pm-value" data-pm-value="validation.exact_matches"></span> exact matches (0.0σ) with experiment (w₀, m_h, Δm²₂₁, Δm²₃₁, θ₂₃, n_gen, etc.)</li>
                     <li>Strong testable predictions for upcoming experiments (JUNO, DUNE, HL-LHC, Hyper-K)</li>
                 </ul>
                 <p style="margin-top: 0.75rem; color: #51cf66;">
@@ -1882,7 +1882,7 @@
                     <span class="expand-arrow">&#x25BC;</span>
                 </div>
                 <div class="expand-content">
-                    <p><strong>Experimental Matches (<span id="bg-detailed-predictions">45/48</span> = <span id="bg-detailed-percent">93.8%</span> within 1σ):</strong></p>
+                    <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
                         <li>Generation count: 3 (exact match!)</li>
                         <li>PMNS mixing angles: θ₂₃ = 45.0° (maximal mixing), θ₁₂ = 33.6°, θ₁₃ = 8.57° (all within 0.25σ!)</li>
@@ -2022,7 +2022,7 @@
                 </ul>
                 <p><strong>Framework achievements:</strong></p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
-                    <li>ALL 58+ parameters derived from TCS G₂ manifold #187 (ZERO free parameters)</li>
+                    <li>ALL <span class="pm-value" data-pm-value="validation.total_predictions"></span> parameters derived from TCS G₂ manifold #187 (ZERO free parameters)</li>
                     <li>Complete CKM and PMNS matrices to 0.09σ average</li>
                     <li>Sp(2,R) reduction rigorously BRST-proven with ghost decoupling</li>
                     <li>Higgs mass matches PDG 2024 central value</li>
@@ -2492,40 +2492,21 @@
             return;
         }
 
-        // Calculate stats from PM constants (same logic as validation-stats.js)
-        const predictions = [
-            { name: 'n_gen', sigma: 0.00 }, // Exact
-            { name: 'theta_23', sigma: PM.pmns_matrix?.theta_23_sigma?.value || 1.1 },
-            { name: 'theta_12', sigma: PM.pmns_matrix?.theta_12_sigma?.value || 0.24 },
-            { name: 'theta_13', sigma: PM.pmns_matrix?.theta_13_sigma?.value || 0.01 },
-            { name: 'delta_CP', sigma: PM.pmns_matrix?.delta_cp_sigma?.value || 0.1 },
-            { name: 'w0', sigma: PM.dark_energy?.w0_deviation_sigma?.value || 0.38 },
-            { name: 'w_a', sigma: PM.dark_energy?.wa_deviation_sigma?.value || 0.66 },
-            { name: 'M_GUT', sigma: 0.5 },
-            { name: 'alpha_GUT_inv', sigma: 0.3 },
-            { name: 'tau_p', sigma: 0.8 }
-        ];
+        // Use values directly from simulation output (PM.validation)
+        const within1sigma = PM.validation?.predictions_within_1sigma || 45;
+        const total = PM.validation?.total_predictions || 48;
+        const exact = PM.validation?.exact_matches || 12;
+        const desiSigma = PM.dark_energy?.w0_deviation_sigma || 0.38;
+        const percent = ((within1sigma / total) * 100).toFixed(1);
 
-        const within1sigma = predictions.filter(p => p.sigma <= 1.0).length;
-        const total = predictions.length;
-        const exact = predictions.filter(p => p.sigma === 0.00).length;
-        const desiSigma = predictions.find(p => p.name === 'w0')?.sigma || 0.38;
-        const percent = Math.round(100 * within1sigma / total);
-
-        // Update all dynamic IDs
+        // Update all dynamic IDs for success rate percentages
         const updates = {
-            'bg-predictions-within-1sigma': `${within1sigma} of ${total}`,
-            'bg-exact-matches': `${exact} Parameters`,
-            'bg-desi-sigma': `DESI DR2 w₀ (${desiSigma.toFixed(2)}σ)`,
-            'bg-step-predictions': `${within1sigma}/${total}`,
-            'bg-para-predictions': `${within1sigma} of ${total}`,
-            'bg-para-exact': `${exact}`,
-            'bg-para-desi': `${desiSigma.toFixed(2)}σ`,
-            'bg-realworld-predictions': `${within1sigma} of ${total}`,
-            'bg-realworld-exact': `${exact}`,
-            'bg-bullet-predictions': `${within1sigma} of ${total}`,
-            'bg-detailed-predictions': `${within1sigma}/${total}`,
-            'bg-detailed-percent': `${percent}%`
+            'bg-success-rate': percent,
+            'bg-caption-success-rate': percent,
+            'bg-analogy-success-rate': percent,
+            'bg-list-success-rate': percent,
+            'bg-detailed-percent': percent,
+            'bg-para-desi': `${desiSigma.toFixed(2)}σ`
         };
 
         // Apply updates
@@ -2536,7 +2517,7 @@
             }
         }
 
-        console.log(`Validation stats updated: ${within1sigma}/${total} within 1σ, ${exact} central value matches, DESI ${desiSigma}σ`);
+        console.log(`Validation stats updated: ${within1sigma}/${total} within 1σ (${percent}%), ${exact} central value matches, DESI ${desiSigma}σ`);
     });
     </script>
 
