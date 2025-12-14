@@ -117,6 +117,12 @@ async function handleAuthenticated(user) {
   // Update user info display
   updateUserDisplay(user);
 
+  // Inject user identifier for content tracking
+  injectUserIdentifier(user);
+
+  // Inject download watermark for paper page
+  injectDownloadWatermark(user);
+
   // Initialize data from Firestore
   try {
     await initializeData();
@@ -276,9 +282,48 @@ function injectAuthOverlay() {
         Login with Google
       </button>
 
+      <div class="auth-tos">
+        <p class="tos-notice">By logging in, you agree to the <a href="#terms-of-service" onclick="document.getElementById('tos-modal').style.display='flex'">Terms of Service</a></p>
+        <p class="tos-summary">All content is protected. Redistribution prohibited.</p>
+      </div>
+
       <footer class="auth-footer">
         <p>Copyright © Andrew K Watts 2025</p>
       </footer>
+    </div>
+
+    <!-- Terms of Service Modal -->
+    <div id="tos-modal" class="tos-modal" style="display:none">
+      <div class="tos-content">
+        <h2>Terms of Service</h2>
+        <div class="tos-body">
+          <h3>1. Intellectual Property</h3>
+          <p>All content on this website, including but not limited to text, equations, formulas, derivations, code, graphics, and documentation, is the exclusive intellectual property of Andrew Keith Watts and is protected by copyright law.</p>
+
+          <h3>2. Prohibited Activities</h3>
+          <p>You are expressly prohibited from:</p>
+          <ul>
+            <li>Copying, reproducing, or redistributing any content from this website</li>
+            <li>Sharing your login credentials with others</li>
+            <li>Downloading content for distribution to third parties</li>
+            <li>Using any content for commercial purposes without written permission</li>
+            <li>Removing or altering any copyright notices or user identifiers</li>
+          </ul>
+
+          <h3>3. User Tracking</h3>
+          <p>Each page displays a unique user identifier (Ux) tied to your account. This identifier is embedded in all content for copyright protection purposes. Any unauthorized distribution can be traced back to your account.</p>
+
+          <h3>4. Permitted Use</h3>
+          <p>You may view and read the content for personal, non-commercial educational purposes only. Citation with proper attribution is permitted for academic work.</p>
+
+          <h3>5. Enforcement</h3>
+          <p>Violation of these terms may result in immediate account termination and legal action for copyright infringement.</p>
+
+          <h3>6. Contact</h3>
+          <p>For licensing inquiries or permissions, contact: AndrewKWatts@Gmail.com</p>
+        </div>
+        <button class="tos-close" onclick="document.getElementById('tos-modal').style.display='none'">I Understand</button>
+      </div>
     </div>
   `;
 
@@ -300,4 +345,110 @@ export function isUserAuthenticated() {
  */
 export function getCurrentPageId() {
   return currentPageId;
+}
+
+/**
+ * Generate a simple hash from user email for content tracking
+ * @param {string} email - User's email address
+ * @returns {string} - Hash string
+ */
+function generateUserHash(email) {
+  if (!email) return '';
+  let hash = 0;
+  for (let i = 0; i < email.length; i++) {
+    const char = email.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  // Convert to positive number and format as scientific notation style
+  const absHash = Math.abs(hash);
+  const mantissa = (absHash / Math.pow(10, Math.floor(Math.log10(absHash)))).toFixed(8);
+  const exponent = Math.floor(Math.log10(absHash));
+  return `${mantissa}e${exponent}`;
+}
+
+/**
+ * Inject user identifier at bottom of page for content tracking
+ * @param {Object} user - Firebase user object
+ */
+function injectUserIdentifier(user) {
+  // Remove existing identifier if present
+  const existing = document.getElementById('pm-user-identifier');
+  if (existing) {
+    existing.remove();
+  }
+
+  if (!user || !user.email) return;
+
+  const hash = generateUserHash(user.email);
+  const identifier = document.createElement('div');
+  identifier.id = 'pm-user-identifier';
+  identifier.className = 'pm-user-identifier';
+  identifier.textContent = `Ux="${hash}"`;
+
+  // Append to body (will appear at bottom)
+  document.body.appendChild(identifier);
+}
+
+/**
+ * Inject download watermark at top of paper page
+ * @param {Object} user - Firebase user object
+ */
+function injectDownloadWatermark(user) {
+  // Remove existing watermark if present
+  const existing = document.getElementById('download-watermark');
+  if (existing) {
+    existing.remove();
+  }
+
+  if (!user || !user.email) return;
+
+  // Only inject on paper page
+  if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
+
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short'
+  });
+
+  const hash = generateUserHash(user.email);
+
+  const watermark = document.createElement('div');
+  watermark.id = 'download-watermark';
+  watermark.className = 'download-watermark';
+  watermark.innerHTML = `
+    <div class="watermark-row">
+      <span class="watermark-label">Downloaded By:</span>
+      <span class="watermark-value">${user.email}</span>
+    </div>
+    <div class="watermark-row">
+      <span class="watermark-label">Download Date:</span>
+      <span class="watermark-value">${dateStr}</span>
+    </div>
+    <div class="watermark-row">
+      <span class="watermark-label">User ID:</span>
+      <span class="watermark-value">Ux="${hash}"</span>
+    </div>
+    <div class="watermark-row">
+      <span class="watermark-label">Copyright:</span>
+      <span class="watermark-value">© Andrew K Watts 2025. All rights reserved.</span>
+    </div>
+    <div class="watermark-warning">
+      ⚠️ This document is for personal use only. Redistribution without written permission is strictly prohibited.
+    </div>
+  `;
+
+  // Insert at beginning of main content or paper element
+  const mainContent = document.getElementById('main-content');
+  const paper = document.querySelector('.paper');
+  const target = paper || mainContent;
+
+  if (target) {
+    target.insertBefore(watermark, target.firstChild);
+  }
 }
