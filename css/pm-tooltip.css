@@ -222,10 +222,48 @@
         max-width: 90vw;
         min-width: 250px;
         font-size: 12px;
+        /* Fix positioning on mobile - center in viewport */
+        position: fixed !important;
+        left: 5vw !important;
+        right: 5vw !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 90vw !important;
+        z-index: 100000 !important;
+        pointer-events: auto; /* Allow interaction on mobile */
     }
 
     .pm-tooltip-value {
         font-size: 16px;
+    }
+
+    /* Touch-friendly PM values */
+    .pm-value {
+        padding: 4px 2px;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+    }
+}
+
+/* Touch device specific (no hover capability) */
+@media (hover: none) and (pointer: coarse) {
+    .pm-tooltip-popup {
+        /* Ensure tooltip is centered and visible on touch */
+        position: fixed !important;
+        left: 5% !important;
+        right: 5% !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 90% !important;
+        max-width: 90vw !important;
+        z-index: 100000 !important;
+        pointer-events: auto;
+    }
+
+    .pm-value {
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(139, 127, 255, 0.3);
     }
 }
 
