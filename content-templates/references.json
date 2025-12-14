@@ -58,8 +58,8 @@
       "arxiv": "hep-th/9606122",
       "url": "https://arxiv.org/abs/hep-th/9606122",
       "cited_by": ["f-theory-index"],
-      "status": "MISSING",
-      "notes": "This is the paper that derives the generation formula n_gen = χ/24 for F-theory compactifications on Calabi-Yau fourfolds using the D3-brane index theorem."
+      "status": "EXISTS",
+      "notes": "This is the paper that derives the generation formula n_gen = χ/24 for F-theory compactifications on Calabi-Yau fourfolds using the D3-brane index theorem. Added to references.html."
     },
     {
       "id": "bars-2006",
@@ -75,8 +75,8 @@
       "arxiv": "hep-th/0606045",
       "url": "https://arxiv.org/abs/hep-th/0606045",
       "cited_by": ["sp2r-constraints"],
-      "status": "MISSING",
-      "notes": "Core reference for Sp(2,R) gauge symmetry in two-time physics. The three constraints X²=0, X·P=0, P²+M²=0 eliminate ghosts from the second time dimension. Note: references.html has bars2008 (arXiv:0807.5006) which is a later review paper."
+      "status": "EXISTS",
+      "notes": "Core reference for Sp(2,R) gauge symmetry in two-time physics. The three constraints X²=0, X·P=0, P²+M²=0 eliminate ghosts from the second time dimension. Both bars2006 and bars2008 now exist in references.html."
     },
     {
       "id": "kubo-1957",
@@ -143,8 +143,8 @@
       "arxiv": null,
       "url": null,
       "cited_by": ["tomita-takesaki"],
-      "status": "MISSING",
-      "notes": "Second part of Tomita-Takesaki theory, currently missing from references.html."
+      "status": "EXISTS",
+      "notes": "Second part of Tomita-Takesaki theory. Now exists in references.html."
     },
     {
       "id": "lovelace-1971",
@@ -160,8 +160,8 @@
       "arxiv": null,
       "url": null,
       "cited_by": ["bosonic-string-critical"],
-      "status": "MISSING",
-      "notes": "First calculation showing D=26 critical dimension for bosonic string from Virasoro anomaly cancellation."
+      "status": "EXISTS",
+      "notes": "First calculation showing D=26 critical dimension for bosonic string from Virasoro anomaly cancellation. Added to references.html."
     },
     {
       "id": "minkowski-1977",
@@ -474,13 +474,15 @@
     "total_formulas_with_attributions": 23,
     "external_attributions": 11,
     "pm_attributions": 12,
-    "references_in_html": 46,
-    "missing_from_html": 3,
-    "orphaned_in_html": 42,
+    "references_in_html": 50,
+    "missing_from_html": 0,
+    "orphaned_in_html": 38,
     "status": {
-      "complete": 8,
-      "missing": 3,
+      "complete": 12,
+      "missing": 0,
       "partial": 3
-    }
+    },
+    "last_updated": "2025-12-14",
+    "version": "v12.8"
   }
 }
