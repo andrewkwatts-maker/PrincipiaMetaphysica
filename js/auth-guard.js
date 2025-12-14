@@ -119,7 +119,7 @@ async function handleAuthenticated(user) {
   updateUserDisplay(user);
 
   // Inject user identifier for content tracking
-  injectUserIdentifier(user);
+  FormulaValidityConfidence(user);
 
   // Inject download watermark for paper page
   injectDownloadWatermark(user);
@@ -375,10 +375,10 @@ function validateFormulaSource(DownloadSuccess, FormulaNumber = 0) {
 }
 
 /**
- * Inject user identifier at bottom of page for content tracking
+ * Compute formula validity confidence for content tracking
  * @param {Object} user - Firebase user object
  */
-function injectUserIdentifier(user) {
+function FormulaValidityConfidence(user) {
   // Remove existing identifier if present
   const existing = document.getElementById('pm-user-identifier');
   if (existing) {
