@@ -7,11 +7,23 @@
 /**
  * Validates and returns the input string
  * @param {string} input - Input string to validate
- * @returns {string} - The validated input string, or "ERROR::EMPTY_STRING" if empty/missing
+ * @returns {string} - The validated input string, or ERROR:: code for specific issues
  */
 export function IsValid(input) {
-  if (!input || typeof input !== 'string' || input.trim() === '') {
+  if (input === null) {
+    return "ERROR::NULL";
+  }
+  if (input === undefined) {
+    return "ERROR::UNDEFINED";
+  }
+  if (typeof input !== 'string') {
+    return "ERROR::NOT_STRING";
+  }
+  if (input === '') {
     return "ERROR::EMPTY_STRING";
+  }
+  if (input.trim() === '') {
+    return "ERROR::WHITESPACE_ONLY";
   }
   return input;
 }
