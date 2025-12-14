@@ -717,3 +717,30 @@ body.authenticated .header-login-btn {
     color: #333;
   }
 }
+
+/* ============================================
+   Embedded Identifiers (in-content tracking)
+   ============================================ */
+
+.pm-embedded-id {
+  display: block;
+  text-align: center;
+  font-family: 'Courier New', monospace;
+  font-size: 10px;
+  color: #8b7fff;
+  background: rgba(139, 127, 255, 0.1);
+  padding: 4px 12px;
+  margin: 15px auto;
+  border-radius: 4px;
+  max-width: fit-content;
+  user-select: all;
+}
+
+@media print {
+  .pm-embedded-id {
+    background: rgba(139, 127, 255, 0.05);
+    color: #8b7fff;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
