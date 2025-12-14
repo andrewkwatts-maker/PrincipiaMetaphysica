@@ -482,7 +482,7 @@
                 <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0;">
                     ${formula.description.substring(0, 120)}${formula.description.length > 120 ? '...' : ''}
                 </p>
-                ${formula.v12_7_status ? `<p style="font-size: 0.8rem; color: ${colors.badge}; margin-top: 0.5rem; font-weight: 500;">v12.7: ${formula.v12_7_status}</p>` : ''}
+                ${formula.v12_7_status ? `<p style="font-size: 0.8rem; color: ${colors.badge}; margin-top: 0.5rem; font-weight: 500;">v12.8: ${formula.v12_7_status}</p>` : ''}
             `;
 
             card.addEventListener('click', () => showFormulaDetails(formula));
@@ -583,11 +583,11 @@
                 `;
             }
 
-            // Add v12.7 status
+            // Add v12.8 status
             if (formula.v12_7_status) {
                 html += `
                     <div style="margin: 1.5rem 0; padding: 1rem; background: rgba(81, 207, 102, 0.08); border: 1px solid rgba(81, 207, 102, 0.25); border-radius: 8px;">
-                        <h3 style="color: #51cf66; margin-bottom: 0.75rem;">v12.7 Framework Status</h3>
+                        <h3 style="color: #51cf66; margin-bottom: 0.75rem;">v12.8 Framework Status</h3>
                         <p style="color: var(--text-secondary);">${formula.v12_7_status}</p>
                     </div>
                 `;

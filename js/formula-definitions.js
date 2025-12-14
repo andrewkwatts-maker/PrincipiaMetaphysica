@@ -1,6 +1,6 @@
 /**
  * Centralized Formula Definitions for Principia Metaphysica
- * 26D Two-Time Framework - v12.7 VERIFIED
+ * 26D Two-Time Framework - v12.8 VERIFIED
  *
  * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
  *
@@ -24,7 +24,7 @@
  * - experimental_value: Measured value (if applicable)
  * - experimental_source: Source of measurement
  * - sigma: Agreement with experiment in standard deviations
- * - v12_7_status: Status in v12.7 verified framework
+ * - v12_7_status: Status in v12.8 verified framework
  *
  * FRAMEWORK FEATURES:
  * - 26D spacetime with signature (24,2)
@@ -1135,7 +1135,7 @@ function renderFormula(id, options = {}) {
             <div class="formula-label" style="text-align: center; margin-top: 0.75rem; color: var(--text-muted);">
                 ${formula.label} ${formula.attribution || ''}
             </div>
-            ${formula.v12_7_status ? `<div class="formula-status" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: var(--accent-primary);">v12.7: ${formula.v12_7_status}</div>` : ''}
+            ${formula.v12_7_status ? `<div class="formula-status" style="text-align: center; margin-top: 0.5rem; font-size: 0.85rem; color: var(--accent-primary);">v12.8: ${formula.v12_7_status}</div>` : ''}
         </div>
     `;
 }
