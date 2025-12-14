@@ -49,8 +49,8 @@ def flux_stabilization_full():
     # Higgs mass check (should be exact)
     m_h = np.sqrt(8 * np.pi**2 * v**2 * (lambda_0 - kappa * Re_T * y_t**2))
 
-    print(f"Re(T) derived = {Re_T:.3f}")
-    print(f"m_h predicted = {m_h:.2f} GeV")
+    print(f"Re(T) constrained = {Re_T:.3f}")
+    print(f"m_h (input constraint) = {m_h:.2f} GeV")
 
     print(f"\nCalculation breakdown:")
     print(f"  lambda_0 (geometric) = {lambda_0:.6f}")
