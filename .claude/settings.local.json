@@ -282,7 +282,9 @@
       "Bash(__NEW_LINE__ sed -i 's|href=\"\"\"\"geometric-framework.html#|href=\"\"\"\"sections/geometric-framework.html#|g' principia-metaphysica-paper.html grep -n '../principia-metaphysica-paper.html' principia-metaphysica-paper.html)",
       "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\content-templates\\abstract.json\" echo \"abstract.json exists\")",
       "Bash(non-calibrated parameters lie within 1σ\")\n- simulations/final_transparency_v12_8.py: σ -> sigma in comments\n- simulations/g2_torsion_m_gut_v12_4.py: Greek letters -> ASCII\n  (α -> alpha, χ -> chi, κ -> kappa, β -> beta, π -> pi, × -> *)\n- simulations/thermal_friction_rigor.py: Greek letters -> ASCII\n  (α_T -> alpha_T, β -> beta, σ -> sigma)\n\nCharacter mappings applied:\n- α (alpha) -> alpha\n- β (beta) -> beta\n- χ (chi) -> chi\n- κ (kappa) -> kappa\n- σ (sigma) -> sigma\n- π (pi) -> pi\n- × (multiplication) -> *\n- √ (sqrt) -> sqrt()\n- → (arrow) -> ->\n- ⟨⟩ (angle brackets) -> <>\n- ₀₁₂₃ (subscripts) -> 0123\n\nNote: Unicode retained in docstrings and comments (no console output).\nOnly print statements modified for Windows compatibility.\n\nCopyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.\nEOF\n)\")",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git checkout:*)",
+      "Bash(powershell -Command:*)"
     ],
     "deny": [],
     "ask": []
