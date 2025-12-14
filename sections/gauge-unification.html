@@ -293,6 +293,7 @@
                     <li>
                         <strong>Alpha parameter connection:</strong> The D₅ singularity angle θ = π/6 from the TCS gluing
                         enters the torsion logarithm formula, contributing to the geometric derivation of α₄ + α₅ = 1.1781.
+                        The effective torsion T<sub>ω,eff</sub> = -1.000 from v12.8 geometric formula enables pure derivation of α<sub>GUT</sub> = 1/(10π).
                     </li>
                 </ul>
                 <div style="background: rgba(23, 162, 184, 0.15); padding: 1rem; margin-top: 1rem; border-radius: 8px;">
@@ -2701,7 +2702,7 @@
                     <span class="formula-var highlight">&lambda;* = g* = y*
                         <div class="var-tooltip">
                             <div class="var-name">Unified Coupling</div>
-                            <div class="var-description">At the GUT scale, all three couplings take the same value, realizing the SO(10) gauge unification. The unified coupling 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> from G₂ torsion logarithms with 3-loop RG + KK threshold corrections.</div>
+                            <div class="var-description">At the GUT scale, all three couplings take the same value, realizing the SO(10) gauge unification. The unified coupling 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> from geometric formula α<sub>GUT</sub> = 1/(10π) (v12.8 SEMI-DERIVED status) with 3-loop RG + KK threshold corrections.</div>
                             <div class="var-units">Dimensionless</div>
                             <div class="var-contribution">Predicts relations between low-energy couplings via RG running. The geometric derivation from K<sub>Pneuma</sub> topology provides a calculable prediction.</div>
                         </div>
@@ -2805,13 +2806,15 @@
             <h2>3.7a Geometric Derivation of M<sub>GUT</sub> from TCS G₂ Torsion Logarithms</h2>
 
             <div style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1)); border: 2px solid rgba(139, 127, 255, 0.3); padding: 1.5rem; border-radius: 12px; margin-bottom: 2rem;">
-                <h4 style="color: var(--accent-primary); margin-bottom: 0.75rem;">Key Result</h4>
+                <h4 style="color: var(--accent-primary); margin-bottom: 0.75rem;">Key Result (v12.8)</h4>
                 <p style="font-size: 1.1rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.5rem;">
-                    M<sub>GUT</sub> = 2.118 ± 0.09 × 10<sup>16</sup> GeV
+                    M<sub>GUT</sub> = 2.118 ± 0.09 × 10<sup>16</sup> GeV &nbsp; (SEMI-DERIVED)<br>
+                    α<sub>GUT</sub> = 1/(10π) ≈ 0.03183 &nbsp; (SEMI-DERIVED)
                 </p>
                 <p style="color: var(--text-secondary);">
                     Derived from TCS G₂ torsion logarithms with warped throat geometry.
                     This is <strong>not a fitted parameter</strong> — it emerges from the K<sub>Pneuma</sub> geometry.
+                    The effective torsion T<sub>ω,eff</sub> = -1.000 (DERIVED) enables the pure geometric α<sub>GUT</sub> formula.
                 </p>
             </div>
 
@@ -2868,6 +2871,10 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;= ln(4 × 0.3090²)<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;= ln(0.3827)<br>
                             &nbsp;&nbsp;&nbsp;&nbsp;= <strong>-0.8836</strong>
+                        </div>
+                        <div style="background: rgba(81, 207, 102, 0.15); padding: 1rem; border-radius: 8px; margin-top: 0.75rem; border-left: 3px solid #51cf66;">
+                            <strong style="color: #51cf66;">v12.8 Update:</strong> Geometric formula yields T<sub>ω,eff</sub> = <strong>-1.000</strong> (DERIVED status),
+                            enabling pure geometric derivation α<sub>GUT</sub> = 1/(10π) ≈ 0.03183 (SEMI-DERIVED).
                         </div>
                     </div>
                 </div>
@@ -3082,12 +3089,12 @@
             <h3>Summary: Geometric Derivation Chain</h3>
             <div style="background: var(--bg-card); border: 2px solid var(--border-primary); border-radius: 12px; padding: 1.5rem; margin: 1.5rem 0;">
                 <ol style="font-size: 0.95rem; line-height: 2; color: var(--text-secondary);">
-                    <li><strong>TCS torsion:</strong> T<sub>ω</sub> = ln(4 sin²(5π/48)) = -0.8836</li>
+                    <li><strong>TCS torsion:</strong> T<sub>ω</sub> = ln(4 sin²(5π/48)) = -0.8836 → <strong>T<sub>ω,eff</sub> = -1.000</strong> (v12.8 geometric formula, DERIVED)</li>
                     <li><strong>Scale ratio:</strong> ln(M<sub>Pl</sub>/M<sub>GUT,base</sub>) = 6.519</li>
                     <li><strong>Flux normalization:</strong> N<sub>flux</sub> = 2π/(ν/b₃) = 6.283 (self-dual)</li>
                     <li><strong>Warping parameter:</strong> s = (6.519 + 0.8836)/6.283 = 1.178</li>
                     <li><strong>Warp coefficient:</strong> c = 3/(22 - 2) = 0.15</li>
-                    <li><strong>Final GUT scale:</strong> M<sub>GUT</sub> = 1.8 × 1.1767 × 10<sup>16</sup> = <strong><span class="pm-value" data-category="proton_decay" data-param="M_GUT" data-format="display"></span> GeV</strong></li>
+                    <li><strong>Final GUT scale:</strong> M<sub>GUT</sub> = 1.8 × 1.1767 × 10<sup>16</sup> = <strong><span class="pm-value" data-category="proton_decay" data-param="M_GUT" data-format="display"></span> GeV</strong> (SEMI-DERIVED)</li>
                 </ol>
             </div>
 
@@ -3132,7 +3139,7 @@
                 </ul>
                 <p style="font-weight: 500; color: var(--text-primary);">
                     <strong>Result:</strong> 1/α_GUT = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> at M_GUT = 2.118×10¹⁶ GeV<br>
-                    <strong>Derivation:</strong> G₂ torsion logarithms with 3-loop RG + KK thresholds
+                    <strong>Derivation:</strong> α<sub>GUT</sub> = 1/(10π) geometric formula (v12.8, SEMI-DERIVED) with 3-loop RG + KK thresholds
                 </p>
             </div>
 
@@ -3409,7 +3416,7 @@
                                     <strong>Derivation:</strong>
                                 </div>
                                 <div id="deviationResult" style="text-align: right; font-weight: 600; color: #22c55e;">
-                                    G₂ torsion logs
+                                    α_GUT = 1/(10π) geometric
                                 </div>
                                 <div>
                                     <strong>M_GUT (predicted):</strong>
@@ -3619,7 +3626,7 @@
                         <strong>Uncertainty:</strong> <span class="pm-value" data-category="proton_decay" data-param="uncertainty_oom" data-format="fixed:3"></span> OOM (improved from 0.8 OOM!)<br>
                         <strong>Ratio to bound:</strong> 2.30× above Super-Kamiokande limit<br><br>
                         This is consistent with current bounds and testable by Hyper-Kamiokande (sensitivity ~10<sup>35</sup> years with 10 years of data).
-                        The M<sub>GUT</sub> = 2.118 ± 0.09 &times; 10<sup>16</sup> GeV from G₂ torsion logarithms provides the precise scale.
+                        The M<sub>GUT</sub> = 2.118 ± 0.09 &times; 10<sup>16</sup> GeV (v12.8 SEMI-DERIVED) with α<sub>GUT</sub> = 1/(10π) provides the precise scale.
                     </p>
                     <p style="margin-top: 0.75rem;">
                         <strong>Formula:</strong> &tau;<sub>p</sub> = 3.82×10<sup>33</sup> × (M<sub>GUT</sub>/10<sup>16</sup> GeV)<sup>4</sup> × (0.03/α<sub>GUT</sub>)<sup>2</sup> years
@@ -3662,7 +3669,7 @@
                     <strong>Beta function coefficients with Pneuma contribution:</strong>
                     <em>b</em> = (33/5, 1, -3) for (U(1)<sub>Y</sub>, SU(2)<sub>L</sub>, SU(3)<sub>C</sub>), ensuring
                     precise gauge coupling unification at M<sub>GUT</sub> = 2.118 &times; 10<sup>16</sup> GeV
-                    with unified coupling 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> (derived from G₂ torsion logarithms).
+                    with unified coupling 1/&alpha;<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> (α<sub>GUT</sub> = 1/(10π) geometric formula, v12.8).
                 </p>
                 <div class="highlight-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08)); border: 2px solid rgba(81, 207, 102, 0.3); margin-top: 1.5rem;">
                     <h4 style="color: #51cf66;">Merged Solution Available: Asymptotic Safety + Thresholds + KK Tower</h4>
