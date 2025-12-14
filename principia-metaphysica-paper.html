@@ -42708,7 +42708,7 @@ def derive_w0_from_d_eff(d_eff=None):
               <li>Proton decay via XY gauge boson exchange</li>
               <li>Branching ratio depends on lepton flavor coupling strength</li>
               <li>Flux orientation on TCS Gâ‚‚ determines coupling</li>
-              <li>V12.8: orientation_sum = 12 derived from shadow spatial dims (13D signature (12,1) after Sp(2,R)). Cross-check: b3/2 = 12</li>
+              <li>V12.8: orientation_sum = 12 derived geometrically: Sp(2,R) gauge fixing creates Z2 identification, halving 26D (24,2) to 13D (12,1). Shadow spatial dims = 24/2 = 12</li>
             </ul>
           </div>
 
@@ -42719,7 +42719,7 @@ def proton_decay_branching_geometric():
     """
     Derive proton decay BR from geometric orientation sum.
     BR(p -> e+pi0) = (orientation_sum / b3)^2
-    orientation_sum = 12 (shadow spatial dims)
+    orientation_sum = 12 (Z2 halving: 24/2 = 12)
     b3 = 24 -> BR = 0.25
     """
     orientation_sum = derive_orientation_sum()
@@ -42733,7 +42733,7 @@ def proton_decay_branching_geometric():
 </code></pre>
 
           <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">
-            <strong>Note:</strong> V12.8 UPDATE: orientation_sum = 12 is now geometrically derived from shadow spatial dimensions (13D signature (12,1)).
+            <strong>Note:</strong> V12.8 UPDATE: orientation_sum = 12 is geometrically derived via Z2 halving from Sp(2,R) gauge fixing: 24 spatial dims / 2 = 12.
             Literature range for SO(10) GUTs: BR(eâºÏ€â°) = 0.3-0.5.
           </p>
         </div>
