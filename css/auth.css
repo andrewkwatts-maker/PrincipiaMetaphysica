@@ -186,60 +186,72 @@ body.authenticated .auth-overlay {
 }
 
 /* ============================================
-   Header User Controls
+   Header User Controls (inline in nav)
    ============================================ */
 
-/* Position user-controls in top-right of header */
-header {
-  position: relative;
-}
-
-header .user-controls {
-  position: absolute;
-  top: 50%;
-  right: 1rem;
-  transform: translateY(-50%);
-  display: none;
-  align-items: center;
-  gap: 12px;
-  padding: 8px 16px;
-  background: rgba(139, 127, 255, 0.1);
-  border-radius: 30px;
-  border: 1px solid rgba(139, 127, 255, 0.2);
-  z-index: 100;
-}
-
-body.authenticated header .user-controls {
+/* User controls nav item - sits inline with other nav items */
+.user-controls-nav {
   display: flex;
+  align-items: center;
+  margin-left: auto;
 }
 
-/* Fallback for user-controls outside header */
+/* User controls container */
 .user-controls {
   display: none;
   align-items: center;
-  gap: 12px;
-  padding: 8px 16px;
-  background: rgba(139, 127, 255, 0.1);
-  border-radius: 30px;
-  border: 1px solid rgba(139, 127, 255, 0.2);
+  gap: 8px;
+  padding: 6px 12px;
+  background: rgba(139, 127, 255, 0.15);
+  border-radius: 20px;
+  border: 1px solid rgba(139, 127, 255, 0.25);
 }
 
 body.authenticated .user-controls {
   display: flex;
 }
 
+/* Header login button (shown when not authenticated) */
+.header-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  background: rgba(139, 127, 255, 0.2);
+  border: 1px solid rgba(139, 127, 255, 0.4);
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header-login-btn:hover {
+  background: rgba(139, 127, 255, 0.35);
+  border-color: rgba(139, 127, 255, 0.6);
+}
+
+body.authenticated .header-login-btn {
+  display: none;
+}
+
+.google-icon-small {
+  width: 16px;
+  height: 16px;
+}
+
 #user-avatar {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   border: 2px solid rgba(139, 127, 255, 0.5);
   object-fit: cover;
 }
 
 #user-email {
-  font-size: 13px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.9);
-  max-width: 180px;
+  max-width: 120px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -250,8 +262,8 @@ body.authenticated .user-controls {
   color: rgba(255, 255, 255, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 6px;
-  padding: 6px 14px;
-  font-size: 12px;
+  padding: 4px 10px;
+  font-size: 11px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
@@ -299,6 +311,39 @@ body.authenticated .user-controls {
    Responsive Design
    ============================================ */
 
+@media (max-width: 768px) {
+  /* Mobile: Show only avatar and logout, hide email */
+  #user-email {
+    max-width: 80px;
+    font-size: 11px;
+  }
+
+  .user-controls {
+    padding: 4px 8px;
+    gap: 6px;
+  }
+
+  #user-avatar {
+    width: 24px;
+    height: 24px;
+  }
+
+  #logout-btn {
+    padding: 3px 8px;
+    font-size: 10px;
+  }
+
+  .header-login-btn {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+
+  .google-icon-small {
+    width: 14px;
+    height: 14px;
+  }
+}
+
 @media (max-width: 600px) {
   .auth-card {
     padding: 35px 25px;
@@ -330,12 +375,39 @@ body.authenticated .user-controls {
     font-size: 15px;
   }
 
+  /* Mobile nav: user controls in flex row */
+  .user-controls-nav {
+    flex-shrink: 0;
+  }
+
   .user-controls {
-    padding: 6px 12px;
+    padding: 4px 8px;
+    gap: 4px;
   }
 
   #user-email {
-    display: none;
+    display: none; /* Hide email on small screens */
+  }
+
+  #user-avatar {
+    width: 22px;
+    height: 22px;
+  }
+
+  #logout-btn {
+    padding: 3px 6px;
+    font-size: 9px;
+  }
+
+  .header-login-btn {
+    padding: 4px 8px;
+    font-size: 10px;
+    gap: 4px;
+  }
+
+  .google-icon-small {
+    width: 12px;
+    height: 12px;
   }
 }
 
@@ -350,6 +422,16 @@ body.authenticated .user-controls {
 
   .auth-framework {
     padding: 15px;
+  }
+
+  /* Very small screens: minimal user controls */
+  .user-controls {
+    padding: 3px 6px;
+  }
+
+  #logout-btn {
+    padding: 2px 5px;
+    font-size: 8px;
   }
 }
 
