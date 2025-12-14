@@ -147,6 +147,18 @@ async function handleAuthenticated(user) {
   } catch (error) {
     console.error('[PM Auth Guard] Error initializing data:', error);
   }
+
+  // Re-trigger MathJax typesetting after content is revealed
+  // This is necessary because content was hidden during initial page load
+  if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+    console.log('[PM Auth Guard] Re-triggering MathJax typesetting...');
+    try {
+      await MathJax.typesetPromise();
+      console.log('[PM Auth Guard] MathJax typesetting complete');
+    } catch (mathJaxError) {
+      console.error('[PM Auth Guard] MathJax typesetting error:', mathJaxError);
+    }
+  }
 }
 
 /**
