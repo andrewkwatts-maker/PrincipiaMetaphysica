@@ -17,6 +17,9 @@ let currentPageId = null;
 // Auth state
 let isAuthenticated = false;
 
+// Expose signInWithGoogle globally for header login button onclick handlers
+window.signInWithGoogle = signInWithGoogle;
+
 /**
  * Initialize the auth guard
  * @param {string} pageId - Identifier for this page (e.g., 'index', 'fermion-sector')
@@ -26,8 +29,14 @@ export function setupAuthGuard(pageId = 'index') {
 
   console.log(`[PM Auth Guard] Setting up for page: ${pageId}`);
 
-  // Add not-authenticated class to body initially
-  document.body.classList.add('not-authenticated');
+  // Start with loading state (prevents flicker)
+  document.body.classList.add('auth-loading');
+  document.body.classList.remove('not-authenticated', 'authenticated');
+
+  // Create and inject loading screen if it doesn't exist
+  if (!document.getElementById('auth-loading-screen')) {
+    injectLoadingScreen();
+  }
 
   // Create and inject auth overlay if it doesn't exist
   if (!document.getElementById('auth-overlay')) {
@@ -36,6 +45,9 @@ export function setupAuthGuard(pageId = 'index') {
 
   // Set up auth state listener
   onAuthReady(async (user) => {
+    // Remove loading state
+    document.body.classList.remove('auth-loading');
+
     if (user) {
       await handleAuthenticated(user);
     } else {
@@ -43,13 +55,34 @@ export function setupAuthGuard(pageId = 'index') {
     }
   });
 
-  // Set up login button handler
-  const loginBtn = document.getElementById('google-login-btn');
-  if (loginBtn) {
-    loginBtn.addEventListener('click', handleLogin);
-  }
+  // Set up login button handlers (both overlay and header)
+  setupLoginHandlers();
 
   // Set up logout button handler
+  setupLogoutHandler();
+}
+
+/**
+ * Set up login button handlers
+ */
+function setupLoginHandlers() {
+  // Overlay login button
+  const overlayLoginBtn = document.getElementById('google-login-btn');
+  if (overlayLoginBtn) {
+    overlayLoginBtn.addEventListener('click', handleLogin);
+  }
+
+  // Header login button
+  const headerLoginBtn = document.getElementById('header-login-btn');
+  if (headerLoginBtn) {
+    headerLoginBtn.addEventListener('click', handleLogin);
+  }
+}
+
+/**
+ * Set up logout button handler
+ */
+function setupLogoutHandler() {
   const logoutBtn = document.getElementById('logout-btn');
   if (logoutBtn) {
     logoutBtn.addEventListener('click', handleLogout);
@@ -194,6 +227,21 @@ function updateUserDisplay(user) {
     if (logoutBtn) logoutBtn.style.display = 'none';
     if (userControls) userControls.style.display = 'none';
   }
+}
+
+/**
+ * Inject loading screen HTML into the page
+ */
+function injectLoadingScreen() {
+  const loadingScreen = document.createElement('div');
+  loadingScreen.id = 'auth-loading-screen';
+  loadingScreen.innerHTML = `
+    <div class="auth-spinner"></div>
+    <p class="loading-text">Loading Principia Metaphysica...</p>
+  `;
+
+  // Insert at beginning of body
+  document.body.insertBefore(loadingScreen, document.body.firstChild);
 }
 
 /**

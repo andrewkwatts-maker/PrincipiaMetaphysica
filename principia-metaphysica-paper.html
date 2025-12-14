@@ -723,7 +723,7 @@
   <script src="js/pm-formula-component.js">
   </script>
  </head>
- <body class="not-authenticated">
+ <body class="auth-loading">
   <div class="paper">
    <h1>
     Principia Metaphysica
@@ -9375,7 +9375,7 @@ P
                 geometry from a fundamental fermionic field. <strong>Principia Metaphysica</strong>
                 posits a <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spacetime with signature (24,2)&mdash;incorporating two time
                 dimensions related by Sp(2,R) gauge symmetry&mdash;from which an observable 13D shadow emerges.
-                Key predictions include w<sub>0</sub> = -11/13 and w<sub>a</sub> &asymp; -0.75, matching DESI 2024 observations.
+                Key predictions include w<sub>0</sub> = -11/13 and w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span>, matching DESI 2024 observations.
             </p>
         </section>
 
@@ -10161,7 +10161,7 @@ P
                             <li><strong>Signature (24,2)</strong>: Two time dimensions</li>
                             <li><strong>Sp(2,R)</strong>: Gauge symmetry eliminating ghosts</li>
                             <li><strong>Z<sub>2</sub> mirror</strong>: B<sup>1</sup> ↔ B<sup>2</sup> branes</li>
-                            <li><strong>Predicts</strong>: w<sub>0</sub> = -11/13, w<sub>a</sub> &asymp; -0.75</li>
+                            <li><strong>Predicts</strong>: w<sub>0</sub> = -11/13, w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span></li>
                         </ul>
                     </div>
 
@@ -10372,7 +10372,7 @@ P
                     <tr>
                         <td><strong>Section 6</strong></td>
                         <td>Cosmological Dynamics</td>
-                        <td><strong>w<sub>0</sub> = -11/13, w<sub>a</sub> &asymp; -0.75 DERIVED</strong>; mirror sector contributions</td>
+                        <td><strong>w<sub>0</sub> = -11/13, w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> DERIVED</strong>; mirror sector contributions</td>
                     </tr>
                     <tr>
                         <td><strong>Section 7</strong></td>
@@ -10421,7 +10421,7 @@ P
                     framework, with geometry emerging from the 8192-component Pneuma field, can simultaneously explain:
                     (1) the origin of gauge forces from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D isometries, (2) the chiral structure via two-time mirror mechanism,
                     (3) the emergence of time from modular flow, (4) the <strong>precise values w<sub>0</sub> = -11/13
-                    and w<sub>a</sub> &asymp; -0.75 as DERIVED predictions</strong>, and (5) the quantum measurement
+                    and w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> as DERIVED predictions</strong>, and (5) the quantum measurement
                     problem through geometric hidden variables in the mirror sector.
                 </p>
             </div>
@@ -32525,7 +32525,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           </p>
           <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
             <li><strong>&alpha;:</strong> Modifies post-Newtonian corrections; constrained by solar system tests to |&alpha;| &lt; 10<sup>-2</sup>/M<sub>Pl</sub><sup>2</sup></li>
-            <li><strong>&beta;:</strong> Affects cosmological evolution; consistent with w<sub>a</sub> = -0.95 (effective) from logarithmic evolution</li>
+            <li><strong>&beta;:</strong> Affects cosmological evolution; consistent with w<sub>a</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> (effective) from logarithmic evolution</li>
             <li><strong>&delta;:</strong> Produces gravitational wave dispersion; testable with LISA (see enhanced GW section below)</li>
           </ul>
         </div>
@@ -33316,9 +33316,9 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <td style="padding: 0.5rem; color: var(--text-secondary);">From thermal time: &alpha;<sub>T</sub> = d ln &tau;/d ln a &minus; d ln H/d ln a, with Z<sub>2</sub> mirror correction</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.2);">
-              <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &asymp; -0.75 (2T corrected)</td>
+              <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> (2T corrected)</td>
               <td style="padding: 0.5rem; color: #51cf66;"><strong>DERIVED</strong></td>
-              <td style="padding: 0.5rem; color: var(--text-secondary);">Base: w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.76, with two-time correction &rarr; -0.75</td>
+              <td style="padding: 0.5rem; color: var(--text-secondary);">Base: w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.76, with two-time correction &rarr; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span></td>
             </tr>
             <tr>
               <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &lt; 0 (sign)</td>
@@ -33363,14 +33363,14 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: var(--info); margin-bottom: 0.5rem;">DESI 2024 Data</h5>
               <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
                 w<sub>0</sub> = -0.827 &plusmn; 0.063<br>
-                w<sub>a</sub> = -0.75 &plusmn; 0.3
+                w<sub>a</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> &plusmn; 0.3
               </p>
             </div>
             <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-primary);">
               <h5 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Two-Time Thermal Values</h5>
               <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
                 w<sub>0</sub> = &minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> <span style="color: #ffc107; font-size: 0.8rem;">(MEP)</span><br>
-                w<sub>a</sub> &asymp; -0.75 <span style="color: #51cf66; font-size: 0.8rem;">(2T corrected)</span>
+                w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> <span style="color: #51cf66; font-size: 0.8rem;">(2T corrected)</span>
               </p>
             </div>
             <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid #51cf66;">
@@ -33392,7 +33392,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <li><strong>w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38\\(\\sigma\\) agreement</strong> — Validates geometric derivation</li>
               <li><strong>Planck tension: 6σ → 1.3σ</strong> — Resolved via F(R,T) breathing mode bias (Δw₀ = -0.10)</li>
               <li><strong>w(z) logarithmic evolution</strong> — Frozen at z>3000, active at z<10 (testable with Euclid)</li>
-              <li><strong>2T corrections:</strong> w<sub>a</sub> = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66\\(\\sigma\\) agreement via orthogonal time t<sub>ortho</sub> friction</li>
+              <li><strong>2T corrections:</strong> w<sub>a</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span>±0.30 (DESI) = 0.66\\(\\sigma\\) agreement via orthogonal time t<sub>ortho</sub> friction</li>
             </ul>
           </div>
 
@@ -33418,7 +33418,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: #51cf66; margin-bottom: 0.75rem; font-size: 1.1rem;">DESI DR2 Measurements</h5>
               <div style="font-family: 'Crimson Text', serif; font-size: 1.15rem; line-height: 1.8;">
                 <div style="margin-bottom: 0.5rem;"><strong>w<sub>0</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span></div>
-                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a</sub></strong> = -0.75 &plusmn; 0.30</div>
+                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> &plusmn; 0.30</div>
                 <div style="margin-bottom: 0.5rem;"><strong>Ω<sub>m</sub></strong> = 0.385 &plusmn; 0.049</div>
                 <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;">
                   <strong>Significance:</strong> 4.2\\(\\sigma\\) deviation from ΛCDM<br>
@@ -33431,7 +33431,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: var(--accent-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">PM Theory Predictions</h5>
               <div style="font-family: 'Crimson Text', serif; font-size: 1.15rem; line-height: 1.8;">
                 <div style="margin-bottom: 0.5rem;"><strong>w<sub>0</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> (from D<sub>eff</sub>=12.589)</div>
-                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a,eff</sub></strong> = -0.95 (logarithmic form)</div>
+                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a,eff</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> (logarithmic form)</div>
                 <div style="margin-bottom: 0.5rem;"><strong>α<sub>T</sub></strong> = 2.7 (Z<sub>2</sub>-corrected)</div>
                 <div style="font-size: 0.9rem; color: #51cf66; margin-top: 0.75rem; font-weight: 600;">
                   Agreement: <strong><span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ</strong> on w<sub>0</sub><br>
@@ -40075,7 +40075,7 @@ def derive_w0_from_d_eff(d_eff=None):
         </p>
         <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
           <li><strong>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>:</strong> <span style="color: #51cf66;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12 + 0.5×(\\(\\alpha_4\\)+\\(\\alpha_5\\)) with \\(\\alpha_4\\) = 0.576152, \\(\\alpha_5\\) = 0.576152)</li>
-          <li><strong>w<sub>a</sub> &asymp; -0.75:</strong> <span style="color: #51cf66;">DERIVED</span> from two-time dynamics</li>
+          <li><strong>w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span>:</strong> <span style="color: #51cf66;">DERIVED</span> from two-time dynamics</li>
           <li><strong>&alpha;<sub>T</sub> &asymp; 2.7:</strong> <span style="color: #51cf66;">DERIVED</span> from Z<sub>2</sub>-corrected &Gamma;/H scaling</li>
         </ul>
         <div style="background: rgba(255, 193, 7, 0.15); padding: 1rem; margin-top: 1rem; border-radius: 8px;">

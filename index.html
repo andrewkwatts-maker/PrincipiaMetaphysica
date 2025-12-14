@@ -347,7 +347,7 @@
   </script>
      <link rel="stylesheet" href="/css/auth.css">
   </head>
- <body class="not-authenticated">
+ <body class="auth-loading">
   <div id="main-content" style="display: none;">
   <header>
    <div class="header-content">
@@ -368,7 +368,7 @@
         <span id="user-email"></span>
         <button id="logout-btn">Logout</button>
        </div>
-       <button id="header-login-btn" class="header-login-btn" onclick="window.signInWithGoogle && window.signInWithGoogle()">
+       <button id="header-login-btn" class="header-login-btn">
         <img src="/images/google-icon.svg" alt="G" class="google-icon-small">
         Login
        </button>
