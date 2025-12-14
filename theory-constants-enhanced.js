@@ -198,9 +198,9 @@ const PM = {
     "tau_estimate": 1e-35,
     "charge_X": 1.3333333333333333,
     "charge_Y": 0.3333333333333333,
-    "N_total_bosons": 12,
-    "N_X_bosons": 6,
-    "N_Y_bosons": 6
+    "N_total_bosons": 45,
+    "N_X_bosons": 12,
+    "N_Y_bosons": 12
   },
   "v9_transparency": {
     "manifest": {

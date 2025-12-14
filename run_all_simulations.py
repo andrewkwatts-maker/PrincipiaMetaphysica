@@ -1742,9 +1742,9 @@ def run_all_simulations(verbose=True):
         'tau_estimate': 1e-35,
         'charge_X': 4/3,
         'charge_Y': 1/3,
-        'N_total_bosons': 12,
-        'N_X_bosons': 6,
-        'N_Y_bosons': 6
+        'N_total_bosons': 45,   # SO(10) adjoint representation
+        'N_X_bosons': 12,       # X bosons (charge ±4/3)
+        'N_Y_bosons': 12        # Y bosons (charge ±1/3)
     }
 
     # ========================================================================
