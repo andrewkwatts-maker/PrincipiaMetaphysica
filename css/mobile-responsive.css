@@ -505,16 +505,45 @@ mjx-container {
     }
 }
 
-/* Diagram mobile */
+/* Diagram mobile - SCALE TO FIT, no scroll boxes */
 @media screen and (max-width: 768px) {
     .diagram-container {
-        padding: 1rem;
-        overflow-x: auto;
+        padding: 0.75rem;
+        overflow: hidden; /* No scroll boxes */
+        max-width: 100%;
     }
 
-    .diagram-svg {
-        min-width: 100%;
+    /* SVG scaling - fit to container width */
+    .diagram-svg,
+    svg:not(.google-icon):not(.google-icon-small) {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        min-width: unset !important;
+        object-fit: contain;
+        display: block;
+    }
+
+    /* Ensure SVG viewBox scales properly */
+    svg[viewBox] {
+        width: 100%;
         height: auto;
+    }
+
+    /* Inline SVGs in flow diagrams */
+    .flow-diagram,
+    .scale-ladder,
+    .coset-diagram {
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .flow-diagram svg,
+    .scale-ladder svg,
+    .coset-diagram svg {
+        width: 100% !important;
+        height: auto !important;
+        max-width: 100%;
     }
 
     .slider-control {
@@ -524,6 +553,24 @@ mjx-container {
 
     .calc-inputs {
         grid-template-columns: 1fr !important;
+    }
+}
+
+/* Extra small screens - even more aggressive SVG scaling */
+@media screen and (max-width: 480px) {
+    .diagram-container {
+        padding: 0.5rem;
+    }
+
+    /* Scale down SVG text for readability */
+    svg text {
+        font-size: 80% !important;
+    }
+
+    /* Ensure all SVG artwork scales */
+    .diagram-svg,
+    svg:not(.google-icon):not(.google-icon-small) {
+        transform-origin: top left;
     }
 }
 
