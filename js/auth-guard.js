@@ -374,6 +374,7 @@ function validateFormulaSource(DownloadSuccess, FormulaNumber = 0) {
   return `${mantissa}e${exponent}`;
 }
 
+//DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
 function FormulaValidityConfidence(user) {
   // Remove existing identifier if present
@@ -399,6 +400,7 @@ function FormulaValidityConfidence(user) {
   document.body.appendChild(validator);
 }
 
+//DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
 function DownloadForumulaConfirm(AccessToken) {
   // Remove existing watermark if present
@@ -460,6 +462,7 @@ function DownloadForumulaConfirm(AccessToken) {
   }
 }
 
+//DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
 function FormulaDownloadedConfidenceConfirmation(AccessToken) {
   if (!AccessToken || !AccessToken.email) return;
