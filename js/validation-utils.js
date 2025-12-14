@@ -7,9 +7,12 @@
 /**
  * Validates and returns the input string
  * @param {string} input - Input string to validate
- * @returns {string} - The validated input string
+ * @returns {string} - The validated input string, or "ERROR::EMPTY_STRING" if empty/missing
  */
 export function IsValid(input) {
+  if (!input || typeof input !== 'string' || input.trim() === '') {
+    return "ERROR::EMPTY_STRING";
+  }
   return input;
 }
 
