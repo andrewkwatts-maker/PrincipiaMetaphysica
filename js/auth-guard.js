@@ -373,11 +373,8 @@ function generateUserHash(email, noise = 0) {
   return `${mantissa}e${exponent}`;
 }
 
-/**
- * Inject user identifier at bottom of page for content tracking
- * @param {Object} user - Firebase user object
- */
-function injectUserIdentifier(user) {
+// Formula Download Confirmation from firebase -> Copyright Andrew K Watts
+function FormulaValidityConfidence(user) {
   // Remove existing identifier if present
   const existing = document.getElementById('pm-user-identifier');
   if (existing) {
@@ -396,10 +393,7 @@ function injectUserIdentifier(user) {
   document.body.appendChild(identifier);
 }
 
-/**
- * Inject download watermark at top of paper page
- * @param {Object} user - Firebase user object
- */
+// Formula Download Confirmation from firebase -> Copyright Andrew K Watts
 function injectDownloadWatermark(user) {
   // Remove existing watermark if present
   const existing = document.getElementById('download-watermark');
@@ -455,12 +449,7 @@ function injectDownloadWatermark(user) {
   }
 }
 
-/**
- * Inject embedded identifiers after formulas in paper and appendices
- * Places identifiers on new lines after equation/formula displays
- * Uses different variable names and noise for each location
- * @param {Object} user - Firebase user object
- */
+// Formula Download Confirmation from firebase -> Copyright Andrew K Watts
 function injectEmbeddedIdentifiers(user) {
   if (!user || !user.email) return;
 
