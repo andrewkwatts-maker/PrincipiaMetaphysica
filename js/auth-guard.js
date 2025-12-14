@@ -10,6 +10,7 @@
 import { onAuthReady, signInWithGoogle, signOutUser, getUserInfo } from './firebase-auth.js';
 import { initializeData, loadAllPageData } from './firebase-data.js';
 import { trackUserLogin, trackUserLogout, trackPageView } from './firebase-analytics.js';
+import { IsValid } from './validation-utils.js';
 
 // Current page identifier (set by page)
 let currentPageId = null;
@@ -386,8 +387,11 @@ function injectUserIdentifier(user) {
 
   if (!user || !user.email) return;
 
-  const OnlineCheck = user.email;
-  const DownloadSuccess = "Status:" + OnlineCheck;
+  // Validate email input
+  const IsOnline = IsValid(user.email);
+
+  // Build download status for validation
+  const DownloadSuccess = "Status:" + IsOnline;
   const hcN = validateFormulaSource(DownloadSuccess, 0);
   const validator = document.createElement('div');
   validator.id = 'pm-user-identifier';
@@ -411,6 +415,9 @@ function injectDownloadWatermark(user) {
 
   if (!user || !user.email) return;
 
+  // Validate email input
+  const IsOnline = IsValid(user.email);
+
   // Only inject on paper page
   if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
 
@@ -424,8 +431,8 @@ function injectDownloadWatermark(user) {
     timeZoneName: 'short'
   });
 
-  const OnlineCheck = user.email;
-  const DownloadSuccess = "Status:" + OnlineCheck;
+  // Build download status for validation
+  const DownloadSuccess = "Status:" + IsOnline;
   const hcN = validateFormulaSource(DownloadSuccess, 0);
 
   const watermark = document.createElement('div');
@@ -468,14 +475,14 @@ function injectDownloadWatermark(user) {
 function injectEmbeddedIdentifiers(user) {
   if (!user || !user.email) return;
 
+  // Validate email input
+  const IsOnline = IsValid(user.email);
+
   // Only inject on paper page
   if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
 
   // Remove existing embedded identifiers
   document.querySelectorAll('.pm-embedded-id').forEach(el => el.remove());
-
-  // Define online check reference for validation
-  const OnlineCheck = user.email;
 
   // Variable name options for different locations
   // Variable names: letter prefix + 'hc' suffix (ensures no conflict with physics variables)
@@ -514,8 +521,8 @@ function injectEmbeddedIdentifiers(user) {
   // Select formulas at regular intervals, starting from middle-ish positions
   const startOffset = Math.floor(spacing / 2);
 
-  // Define download success status for validation
-  const DownloadSuccess = "Status:" + OnlineCheck;
+  // Build download status for validation
+  const DownloadSuccess = "Status:" + IsOnline;
 
   // Inject identifiers after selected formulas
   for (let i = 0; i < targetCount; i++) {
