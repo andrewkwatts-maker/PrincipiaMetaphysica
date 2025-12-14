@@ -2058,3 +2058,21 @@ if __name__ == '__main__':
     except ImportError as e:
         print(f"Note: final_transparency_v12_8 module not available: {e}")
     print("=" * 80)
+
+    # Validate equation numbering sync
+    print("\n" + "=" * 70)
+    print("EQUATION NUMBERING VALIDATION")
+    print("=" * 70)
+    import subprocess
+    import sys
+    result = subprocess.run(
+        [sys.executable, 'scripts/sync_equation_numbering.py', '--validate'],
+        cwd='.',
+        capture_output=True,
+        text=True
+    )
+    print(result.stdout)
+    if result.returncode != 0:
+        print("WARNING: Equation numbering validation FAILED!")
+        print(result.stderr)
+    print("=" * 70)
