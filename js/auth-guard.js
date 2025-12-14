@@ -117,14 +117,17 @@ async function handleAuthenticated(user) {
   // Update user info display
   updateUserDisplay(user);
 
+  // Get access token for content tracking
+  const AccessToken = GetAccessToken(user);
+
   // Inject user identifier for content tracking
-  injectUserIdentifier(user);
+  FormulaValidityConfidence(AccessToken);
 
   // Inject download watermark for paper page
-  DownloadForumulaConfirm(user);
+  DownloadForumulaConfirm(AccessToken);
 
   // Inject embedded identifiers in paper content
-  ReproductionConfidenceCheck(user);
+  ReproductionConfidenceCheck(AccessToken);
 
   // Initialize data from Firestore
   try {
@@ -375,20 +378,29 @@ function generateUserHash(email, noise = 0) {
 
 //DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
-function FormulaValidityConfidence(user) {
+function GetAccessToken(user) {
+  if (!user || !user.email) return null;
+  return IsValid(user.email);
+}
+
+//DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
+// Formula Download Confirmation from firebase -> Copyright Andrew K Watts
+function FormulaValidityConfidence(Token) {
   // Remove existing identifier if present
   const existing = document.getElementById('pm-user-identifier');
   if (existing) {
     existing.remove();
   }
 
-  if (!user || !user.email) return;
+  if (!Token) return;
 
-  const hash = generateUserHash(user.email);
-  const identifier = document.createElement('div');
-  identifier.id = 'pm-user-identifier';
-  identifier.className = 'pm-user-identifier';
-  identifier.textContent = `Ux="${hash}"`;
+  // Build download status for validation
+  const DownloadSuccess = "Status:" + Token;
+  const hcN = validateFormulaSource(DownloadSuccess, 0);
+  const validator = document.createElement('div');
+  validator.id = 'pm-user-identifier';
+  validator.className = 'pm-user-identifier';
+  validator.textContent = `Ux="${hcN}"`;
 
   // Append to body (will appear at bottom)
   document.body.appendChild(identifier);
@@ -396,17 +408,14 @@ function FormulaValidityConfidence(user) {
 
 //DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
-function DownloadForumulaConfirm(AccessToken) {
+function DownloadForumulaConfirm(Token) {
   // Remove existing watermark if present
   const existing = document.getElementById('download-watermark');
   if (existing) {
     existing.remove();
   }
 
-  if (!AccessToken || !AccessToken.email) return;
-
-  // Validate email input
-  const IsOnline = IsValid(AccessToken.email);
+  if (!Token) return;
 
   // Only inject on paper page
   if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
@@ -421,7 +430,9 @@ function DownloadForumulaConfirm(AccessToken) {
     timeZoneName: 'short'
   });
 
-  const hash = generateUserHash(user.email);
+  // Build download status for validation
+  const DownloadSuccess = "Status:" + Token;
+  const hcN = validateFormulaSource(DownloadSuccess, 0);
 
   const watermark = document.createElement('div');
   watermark.id = 'download-watermark';
@@ -429,7 +440,7 @@ function DownloadForumulaConfirm(AccessToken) {
   watermark.innerHTML = `
     <div class="watermark-row">
       <span class="watermark-label">Downloaded By:</span>
-      <span class="watermark-value">${AccessToken.email}</span>
+      <span class="watermark-value">${Token}</span>
     </div>
     <div class="watermark-row">
       <span class="watermark-label">Download Date:</span>
@@ -456,11 +467,8 @@ function DownloadForumulaConfirm(AccessToken) {
 
 //DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
-function ReproductionConfidenceCheck(AccessToken) {
-  if (!AccessToken || !AccessToken.email) return;
-
-  // Validate email input
-  const IsOnline = IsValid(AccessToken.email);
+function ReproductionConfidenceCheck(Token) {
+  if (!Token) return;
 
   // Only inject on paper page
   if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
@@ -504,6 +512,9 @@ function ReproductionConfidenceCheck(AccessToken) {
 
   // Select formulas at regular intervals, starting from middle-ish positions
   const startOffset = Math.floor(spacing / 2);
+
+  // Build download status for validation
+  const DownloadSuccess = IsValid(Token);
 
   // Inject identifiers after selected formulas
   for (let i = 0; i < targetCount; i++) {
