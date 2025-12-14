@@ -456,7 +456,8 @@ function injectDownloadWatermark(user) {
 }
 
 /**
- * Inject embedded identifiers in middle of paper and appendices
+ * Inject embedded identifiers after formulas in paper and appendices
+ * Places identifiers on new lines after equation/formula displays
  * Uses different variable names and noise for each location
  * @param {Object} user - Firebase user object
  */
@@ -470,58 +471,59 @@ function injectEmbeddedIdentifiers(user) {
   document.querySelectorAll('.pm-embedded-id').forEach(el => el.remove());
 
   // Variable name options for different locations
-  const varNames = ['Vx', 'Wx', 'Qx', 'Rx', 'Tx', 'Zx'];
+  // Variable names: letter prefix + 'hc' suffix (ensures no conflict with physics variables)
+  // Each variable gets a unique hash using its array index (1-based) as noise
+  const varNames = [
+    'Ahc', 'Bhc', 'Chc', 'Dhc', 'Ehc', 'Fhc', 'Ghc', 'Hhc',
+    'Jhc', 'Khc', 'Lhc', 'Mhc', 'Nhc', 'Phc', 'Qhc', 'Rhc',
+    'Shc', 'Thc', 'Uhc', 'Vhc', 'Whc', 'Xhc', 'Yhc', 'Zhc'
+  ]; // 24 unique variable names (skipping I and O to avoid confusion with 1 and 0)
 
-  // Find sections to inject into
   const paper = document.querySelector('.paper');
   if (!paper) return;
 
-  // Get all major sections (h2 headers indicate section breaks)
-  const sections = paper.querySelectorAll('section, .section, [id^="section-"], [id^="appendix-"]');
+  // Find all formula/equation elements to insert after
+  // These are natural break points where an identifier won't overlap text
+  const formulaSelectors = [
+    '.equation',
+    '.formula-display',
+    '.MathJax_Display',
+    'mjx-container[display="true"]',
+    '.interactive-formula',
+    '.expandable-formula',
+    'table.equation-table',
+    '.derivation-step'
+  ];
 
-  // If no sections found, try to find content by other means
-  let targetElements = [];
-  if (sections.length > 0) {
-    targetElements = Array.from(sections);
-  } else {
-    // Fallback: find all h2 elements and use their parent containers
-    const h2s = paper.querySelectorAll('h2');
-    targetElements = Array.from(h2s).map(h2 => h2.parentElement).filter(Boolean);
+  const allFormulas = paper.querySelectorAll(formulaSelectors.join(', '));
+  if (allFormulas.length === 0) return;
+
+  // Calculate how many identifiers to place (spread throughout document)
+  // Place one identifier roughly every 10-15 formulas, up to 24 max
+  const formulaCount = allFormulas.length;
+  const targetCount = Math.min(24, Math.max(2, Math.floor(formulaCount / 12)));
+  const spacing = Math.floor(formulaCount / targetCount);
+
+  // Select formulas at regular intervals, starting from middle-ish positions
+  const startOffset = Math.floor(spacing / 2);
+
+  // Inject identifiers after selected formulas
+  for (let i = 0; i < targetCount; i++) {
+    const formulaIndex = startOffset + (i * spacing);
+    if (formulaIndex >= formulaCount) break;
+
+    const formula = allFormulas[formulaIndex];
+    if (!formula) continue;
+
+    const varName = varNames[i % varNames.length];
+    const noise = i + 1; // Sequential instance number (1, 2, 3, etc.)
+    const hash = generateUserHash(user.email, noise);
+
+    const identifier = document.createElement('div');
+    identifier.className = 'pm-embedded-id';
+    identifier.textContent = `${varName}="${hash}"`;
+
+    // Insert after the formula element (on a new line)
+    formula.parentNode.insertBefore(identifier, formula.nextSibling);
   }
-
-  // Inject at strategic locations (middle of paper, middle of appendices)
-  const totalSections = targetElements.length;
-  if (totalSections === 0) return;
-
-  // Calculate injection points: middle of main content and middle of appendices
-  const midPoint = Math.floor(totalSections / 2);
-  const appendixStart = targetElements.findIndex(el =>
-    el.id?.toLowerCase().includes('appendix') ||
-    el.querySelector('h2')?.textContent?.toLowerCase().includes('appendix')
-  );
-
-  const injectionPoints = [midPoint];
-  if (appendixStart > 0 && appendixStart < totalSections) {
-    const appendixMid = appendixStart + Math.floor((totalSections - appendixStart) / 2);
-    if (appendixMid !== midPoint) {
-      injectionPoints.push(appendixMid);
-    }
-  }
-
-  // Inject at each point with different variable name and noise
-  injectionPoints.forEach((index, i) => {
-    if (index >= 0 && index < targetElements.length) {
-      const section = targetElements[index];
-      const varName = varNames[i % varNames.length];
-      const noise = Date.now() + (i * 1000); // Different noise for each
-      const hash = generateUserHash(user.email, noise);
-
-      const identifier = document.createElement('div');
-      identifier.className = 'pm-embedded-id';
-      identifier.textContent = `${varName}="${hash}"`;
-
-      // Insert at end of section
-      section.appendChild(identifier);
-    }
-  });
 }

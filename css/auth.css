@@ -727,13 +727,13 @@ body.authenticated .header-login-btn {
   text-align: center;
   font-family: 'Courier New', monospace;
   font-size: 10px;
-  color: #8b7fff;
-  background: rgba(139, 127, 255, 0.1);
-  padding: 4px 12px;
-  margin: 15px auto;
-  border-radius: 4px;
+  color: rgba(139, 127, 255, 0.01); /* Extremely subtle - barely visible */
+  background: transparent; /* No background */
+  padding: 2px 0;
+  margin: 8px auto;
   max-width: fit-content;
   user-select: all;
+  line-height: 1;
 }
 
 @media print {
