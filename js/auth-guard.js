@@ -123,6 +123,9 @@ async function handleAuthenticated(user) {
   // Inject download watermark for paper page
   injectDownloadWatermark(user);
 
+  // Inject embedded identifiers in paper content
+  injectEmbeddedIdentifiers(user);
+
   // Initialize data from Firestore
   try {
     await initializeData();
@@ -350,13 +353,16 @@ export function getCurrentPageId() {
 /**
  * Generate a simple hash from user email for content tracking
  * @param {string} email - User's email address
+ * @param {number} noise - Optional noise value to add variation
  * @returns {string} - Hash string
  */
-function generateUserHash(email) {
+function generateUserHash(email, noise = 0) {
   if (!email) return '';
+  // Add noise to email before hashing
+  const noisyEmail = email + String(noise);
   let hash = 0;
-  for (let i = 0; i < email.length; i++) {
-    const char = email.charCodeAt(i);
+  for (let i = 0; i < noisyEmail.length; i++) {
+    const char = noisyEmail.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
     hash = hash & hash; // Convert to 32-bit integer
   }
@@ -431,10 +437,6 @@ function injectDownloadWatermark(user) {
       <span class="watermark-value">${dateStr}</span>
     </div>
     <div class="watermark-row">
-      <span class="watermark-label">User ID:</span>
-      <span class="watermark-value">Ux="${hash}"</span>
-    </div>
-    <div class="watermark-row">
       <span class="watermark-label">Copyright:</span>
       <span class="watermark-value">© Andrew K Watts 2025. All rights reserved.</span>
     </div>
@@ -451,4 +453,75 @@ function injectDownloadWatermark(user) {
   if (target) {
     target.insertBefore(watermark, target.firstChild);
   }
+}
+
+/**
+ * Inject embedded identifiers in middle of paper and appendices
+ * Uses different variable names and noise for each location
+ * @param {Object} user - Firebase user object
+ */
+function injectEmbeddedIdentifiers(user) {
+  if (!user || !user.email) return;
+
+  // Only inject on paper page
+  if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
+
+  // Remove existing embedded identifiers
+  document.querySelectorAll('.pm-embedded-id').forEach(el => el.remove());
+
+  // Variable name options for different locations
+  const varNames = ['Vx', 'Wx', 'Qx', 'Rx', 'Tx', 'Zx'];
+
+  // Find sections to inject into
+  const paper = document.querySelector('.paper');
+  if (!paper) return;
+
+  // Get all major sections (h2 headers indicate section breaks)
+  const sections = paper.querySelectorAll('section, .section, [id^="section-"], [id^="appendix-"]');
+
+  // If no sections found, try to find content by other means
+  let targetElements = [];
+  if (sections.length > 0) {
+    targetElements = Array.from(sections);
+  } else {
+    // Fallback: find all h2 elements and use their parent containers
+    const h2s = paper.querySelectorAll('h2');
+    targetElements = Array.from(h2s).map(h2 => h2.parentElement).filter(Boolean);
+  }
+
+  // Inject at strategic locations (middle of paper, middle of appendices)
+  const totalSections = targetElements.length;
+  if (totalSections === 0) return;
+
+  // Calculate injection points: middle of main content and middle of appendices
+  const midPoint = Math.floor(totalSections / 2);
+  const appendixStart = targetElements.findIndex(el =>
+    el.id?.toLowerCase().includes('appendix') ||
+    el.querySelector('h2')?.textContent?.toLowerCase().includes('appendix')
+  );
+
+  const injectionPoints = [midPoint];
+  if (appendixStart > 0 && appendixStart < totalSections) {
+    const appendixMid = appendixStart + Math.floor((totalSections - appendixStart) / 2);
+    if (appendixMid !== midPoint) {
+      injectionPoints.push(appendixMid);
+    }
+  }
+
+  // Inject at each point with different variable name and noise
+  injectionPoints.forEach((index, i) => {
+    if (index >= 0 && index < targetElements.length) {
+      const section = targetElements[index];
+      const varName = varNames[i % varNames.length];
+      const noise = Date.now() + (i * 1000); // Different noise for each
+      const hash = generateUserHash(user.email, noise);
+
+      const identifier = document.createElement('div');
+      identifier.className = 'pm-embedded-id';
+      identifier.textContent = `${varName}="${hash}"`;
+
+      // Insert at end of section
+      section.appendChild(identifier);
+    }
+  });
 }
