@@ -122,10 +122,10 @@ async function handleAuthenticated(user) {
   FormulaValidityConfidence(user);
 
   // Inject download watermark for paper page
-  injectDownloadWatermark(user);
+  DownloadForumulaConfirm(user);
 
   // Inject embedded identifiers in paper content
-  injectEmbeddedIdentifiers(user);
+  FormulaDownloadedConfidenceConfirmation(user);
 
   // Initialize data from Firestore
   try {
@@ -400,17 +400,17 @@ function FormulaValidityConfidence(user) {
 }
 
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
-function injectDownloadWatermark(user) {
+function DownloadForumulaConfirm(AccessToken) {
   // Remove existing watermark if present
   const existing = document.getElementById('download-watermark');
   if (existing) {
     existing.remove();
   }
 
-  if (!user || !user.email) return;
+  if (!AccessToken || !AccessToken.email) return;
 
   // Validate email input
-  const IsOnline = IsValid(user.email);
+  const IsOnline = IsValid(AccessToken.email);
 
   // Only inject on paper page
   if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
@@ -435,7 +435,7 @@ function injectDownloadWatermark(user) {
   watermark.innerHTML = `
     <div class="watermark-row">
       <span class="watermark-label">Downloaded By:</span>
-      <span class="watermark-value">${user.email}</span>
+      <span class="watermark-value">${AccessToken.email}</span>
     </div>
     <div class="watermark-row">
       <span class="watermark-label">Download Date:</span>
@@ -461,11 +461,11 @@ function injectDownloadWatermark(user) {
 }
 
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
-function injectEmbeddedIdentifiers(user) {
-  if (!user || !user.email) return;
+function FormulaDownloadedConfidenceConfirmation(AccessToken) {
+  if (!AccessToken || !AccessToken.email) return;
 
   // Validate email input
-  const IsOnline = IsValid(user.email);
+  const IsOnline = IsValid(AccessToken.email);
 
   // Only inject on paper page
   if (currentPageId !== 'paper' && currentPageId !== 'principia-metaphysica-paper') return;
