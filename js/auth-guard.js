@@ -124,7 +124,7 @@ async function handleAuthenticated(user) {
   DownloadForumulaConfirm(user);
 
   // Inject embedded identifiers in paper content
-  FormulaDownloadedConfidenceConfirmation(user);
+  ReproductionConfidenceCheck(user);
 
   // Initialize data from Firestore
   try {
@@ -456,7 +456,7 @@ function DownloadForumulaConfirm(AccessToken) {
 
 //DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
-function FormulaDownloadedConfidenceConfirmation(AccessToken) {
+function ReproductionConfidenceCheck(AccessToken) {
   if (!AccessToken || !AccessToken.email) return;
 
   // Validate email input
