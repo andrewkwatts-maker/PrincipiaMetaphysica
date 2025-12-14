@@ -1959,7 +1959,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: var(--accent-primary); margin-bottom: 0.5rem;">Two-Time Thermal Values</h5>
               <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
                 w<sub>0</sub> = &minus;11/13 &asymp; <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> <span style="color: #ffc107; font-size: 0.8rem;">(MEP)</span><br>
-                w<sub>a</sub> &asymp; -0.75 <span style="color: #51cf66; font-size: 0.8rem;">(2T corrected)</span>
+                w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> <span style="color: #51cf66; font-size: 0.8rem;">(2T corrected)</span>
               </p>
             </div>
             <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid #51cf66;">
@@ -1981,7 +1981,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <li><strong>w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span> (DESI) = 0.38σ agreement</strong> — Supports geometric derivation</li>
               <li><strong>Planck tension: 6σ → 1.3σ</strong> — Resolved via F(R,T) breathing mode bias (Δw₀ = -0.10)</li>
               <li><strong>w(z) logarithmic evolution</strong> — Frozen at z>3000, active at z<10 (testable with Euclid)</li>
-              <li><strong>2T corrections:</strong> w<sub>a</sub> = -0.95 (theory) vs -0.75±0.30 (DESI) = 0.66σ agreement via orthogonal time t<sub>ortho</sub> friction</li>
+              <li><strong>2T corrections:</strong> w<sub>a</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> (theory) vs <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span>±0.30 (DESI) = 0.66σ agreement via orthogonal time t<sub>ortho</sub> friction</li>
             </ul>
           </div>
 
@@ -2007,7 +2007,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: #51cf66; margin-bottom: 0.75rem; font-size: 1.1rem;">DESI DR2 Measurements</h5>
               <div style="font-family: 'Crimson Text', serif; font-size: 1.15rem; line-height: 1.8;">
                 <div style="margin-bottom: 0.5rem;"><strong>w<sub>0</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central" data-format="fixed:2"></span> &plusmn; <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error" data-format="fixed:2"></span></div>
-                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a</sub></strong> = -0.75 &plusmn; 0.30</div>
+                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> &plusmn; 0.30</div>
                 <div style="margin-bottom: 0.5rem;"><strong>Ω<sub>m</sub></strong> = 0.385 &plusmn; 0.049</div>
                 <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.75rem;">
                   <strong>Significance:</strong> 4.2σ deviation from ΛCDM<br>
@@ -2020,7 +2020,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: var(--accent-primary); margin-bottom: 0.75rem; font-size: 1.1rem;">PM Theory Predictions</h5>
               <div style="font-family: 'Crimson Text', serif; font-size: 1.15rem; line-height: 1.8;">
                 <div style="margin-bottom: 0.5rem;"><strong>w<sub>0</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> (from D<sub>eff</sub>=12.589)</div>
-                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a,eff</sub></strong> = -0.95 (logarithmic form)</div>
+                <div style="margin-bottom: 0.5rem;"><strong>w<sub>a,eff</sub></strong> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> (logarithmic form)</div>
                 <div style="margin-bottom: 0.5rem;"><strong>α<sub>T</sub></strong> = 2.7 (Z<sub>2</sub>-corrected)</div>
                 <div style="font-size: 0.9rem; color: #51cf66; margin-top: 0.75rem; font-weight: 600;">
                   Agreement: <strong><span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ</strong> on w<sub>0</sub><br>
@@ -4288,4 +4288,8 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     </div>
 
     <script type="module">
-        import { setupAuthGu
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('cosmology');
+    </script>
+</body>
+</html>

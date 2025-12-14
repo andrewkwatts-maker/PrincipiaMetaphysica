@@ -286,12 +286,12 @@
           <tr style="background: rgba(79, 172, 254, 0.1);">
             <td><strong>w<sub>0</sub> & w<sub>a</sub> derivation</strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>, w<sub>a,eff</sub> = -0.95 from G₂ torsion logs (DESI DR2: <span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ, 0.66σ)</td>
+            <td>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>, w<sub>a,eff</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> from G₂ torsion logs (DESI DR2: <span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ, 0.66σ)</td>
           </tr>
           <tr>
             <td>CY4 construction</td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; RESOLVED</span></td>
-            <td>&chi;<sub>eff</sub> = 144 from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework (flux-dressed Euler characteristic)</td>
+            <td>&chi;<sub>eff</sub> = <span class="pm-value" data-category="topology" data-param="chi_eff"></span> from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework (flux-dressed Euler characteristic)</td>
           </tr>
           <tr>
             <td>Hodge numbers</td>
@@ -339,9 +339,9 @@
             <td>Full tower: m₁=<span class="pm-value" data-category="kk_spectrum" data-param="m1"></span>, m₂=7.1±2.1 TeV, with T² degeneracies; σ(m₁)=<span class="pm-value" data-category="kk_spectrum" data-param="sigma_m1_fb" data-format="fixed:2"></span>±0.03 fb; HL-LHC 6.2σ (2029-2030)</td>
           </tr>
           <tr>
-            <td>n<sub>gen</sub> = 3</td>
+            <td>n<sub>gen</sub> = <span class="pm-value" data-category="topology" data-param="n_gen"></span></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>n<sub>gen</sub> = &chi;<sub>eff</sub>/48 = 144/48 = 3 (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework with flux quantization)</td>
+            <td>n<sub>gen</sub> = &chi;<sub>eff</sub>/48 = <span class="pm-value" data-category="topology" data-param="chi_eff"></span>/48 = <span class="pm-value" data-category="topology" data-param="n_gen"></span> (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework with flux quantization)</td>
           </tr>
           <tr>
             <td>&alpha;<sub>T</sub> derivation</td>
@@ -462,7 +462,7 @@
               <div class="var-name">&chi;<sub>eff</sub></div>
               <div class="var-description">Effective Euler characteristic (flux-dressed) from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework</div>
               <div class="var-units">Dimensionless</div>
-              <div class="var-contribution">&chi;<sub>eff</sub> = 144 from G₂ manifold topology with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></div>
+              <div class="var-contribution">&chi;<sub>eff</sub> = <span class="pm-value" data-category="topology" data-param="chi_eff"></span> from G₂ manifold topology with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></div>
             </div>
           </span>
           <span class="formula-op">/</span>
@@ -475,9 +475,9 @@
             </div>
           </span>
           <span class="formula-op">=</span>
-          <span class="formula-var" style="color: #51cf66; font-weight: 700;">144/48 = 3
+          <span class="formula-var" style="color: #51cf66; font-weight: 700;"><span class="pm-value" data-category="topology" data-param="chi_eff"></span>/48 = <span class="pm-value" data-category="topology" data-param="n_gen"></span>
             <div class="var-tooltip">
-              <div class="var-name">Result: 3 generations</div>
+              <div class="var-name">Result: <span class="pm-value" data-category="topology" data-param="n_gen"></span> generations</div>
               <div class="var-description">The theory <strong>predicts</strong> exactly 3 fermion generations from topology</div>
               <div class="var-units">Dimensionless</div>
               <div class="var-contribution">This is NOT fitted - it emerges from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time geometry</div>
@@ -1061,7 +1061,7 @@
         </p>
         <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
           <li><strong>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>:</strong> <span style="color: #51cf66;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12 + 0.5×(α₄+α₅) with α₄ = 0.576152, α₅ = 0.576152)</li>
-          <li><strong>w<sub>a</sub> &asymp; -0.75:</strong> <span style="color: #51cf66;">DERIVED</span> from two-time dynamics</li>
+          <li><strong>w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span>:</strong> <span style="color: #51cf66;">DERIVED</span> from two-time dynamics</li>
           <li><strong>&alpha;<sub>T</sub> &asymp; 2.7:</strong> <span style="color: #51cf66;">DERIVED</span> from Z<sub>2</sub>-corrected &Gamma;/H scaling</li>
         </ul>
         <div style="background: rgba(255, 193, 7, 0.15); padding: 1rem; margin-top: 1rem; border-radius: 8px;">
@@ -2281,9 +2281,9 @@
           Honest categorization of predictions by epistemic status:
         </p>
         <ul>
-          <li><strong style="color: #51cf66;">n<sub>gen</sub> = 3 (DERIVED):</strong> Genuine prediction from &chi;<sub>eff</sub> = 144 via <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework formula</li>
+          <li><strong style="color: #51cf66;">n<sub>gen</sub> = <span class="pm-value" data-category="topology" data-param="n_gen"></span> (DERIVED):</strong> Genuine prediction from &chi;<sub>eff</sub> = <span class="pm-value" data-category="topology" data-param="chi_eff"></span> via <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework formula</li>
           <li><strong style="color: #51cf66;">Normal Hierarchy (PREDICTION):</strong> Only genuinely unique falsifiable prediction</li>
-          <li><strong style="color: #51cf66;">w<sub>a</sub> = -0.75 (DERIVED):</strong> From two-time dynamics; exact DESI 2024 match</li>
+          <li><strong style="color: #51cf66;">w<sub>a</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> (DERIVED):</strong> From two-time dynamics; exact DESI 2024 match</li>
           <li><strong style="color: #51cf66;">w<sub>0</sub> = &minus;11/13 (DERIVED):</strong> From MEP with d<sub>eff</sub>=12</li>
           <li><strong style="color: #ffc107;">Mirror sector (QUALITATIVE):</strong> Predictions depend on unknown Z<sub>2</sub> breaking scale</li>
           <li><strong style="color: #ff7b7b;">&Sigma;m<sub>&nu;</sub> = 0.060 eV (NOT UNIQUE):</strong> Standard result for NH + minimal m<sub>1</sub></li>
