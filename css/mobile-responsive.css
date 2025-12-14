@@ -479,29 +479,105 @@ mjx-container {
     }
 }
 
-/* Interactive formula mobile */
+/* Interactive formula mobile - SCALE TO FIT, no scroll boxes */
 @media screen and (max-width: 768px) {
     .interactive-formula {
-        padding: 0.75rem;
+        padding: 0.5rem;
         margin: 1rem 0;
+        overflow: visible;
+        position: relative;
+        z-index: 10;
     }
 
     .formula-display {
-        font-size: 0.95rem;
-        overflow-x: auto;
+        font-size: clamp(0.6rem, 2.5vw, 0.95rem);
+        overflow: visible !important;
+        white-space: normal;
+        word-wrap: break-word;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 0.25rem;
+        line-height: 1.8;
+    }
+
+    .formula-display.large {
+        font-size: clamp(0.55rem, 2.2vw, 0.85rem);
     }
 
     .formula-var {
-        padding: 0.15rem 0.25rem;
-        font-size: 0.9rem;
+        padding: 0.1rem 0.2rem;
+        font-size: inherit;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .formula-op {
+        font-size: inherit;
+        padding: 0 0.15rem;
     }
 
     .expandable-formula {
         margin: 1rem 0;
+        overflow: visible;
     }
 
     .sub-components {
         grid-template-columns: 1fr !important;
+    }
+
+    /* Formula tooltips - MUST appear above everything */
+    .var-tooltip {
+        position: fixed !important;
+        left: 5vw !important;
+        right: 5vw !important;
+        top: 50% !important;
+        transform: translateY(-50%) !important;
+        width: 90vw !important;
+        max-width: 90vw !important;
+        z-index: 100000 !important;
+        font-size: 0.85rem;
+        padding: 1rem;
+        background: var(--bg-secondary, #1a1a2e) !important;
+        border: 1px solid rgba(139, 127, 255, 0.4) !important;
+        border-radius: 12px !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8) !important;
+    }
+
+    .formula-var:hover .var-tooltip,
+    .formula-var:focus .var-tooltip,
+    .formula-var.touched .var-tooltip {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+}
+
+/* Extra small screens - even more compact formulas */
+@media screen and (max-width: 480px) {
+    .interactive-formula {
+        padding: 0.4rem;
+    }
+
+    .formula-display {
+        font-size: clamp(0.5rem, 2vw, 0.75rem);
+        gap: 0.15rem;
+    }
+
+    .formula-display.large {
+        font-size: clamp(0.45rem, 1.8vw, 0.7rem);
+    }
+
+    .formula-var {
+        padding: 0.08rem 0.15rem;
+    }
+
+    .var-tooltip {
+        font-size: 0.8rem;
+        padding: 0.75rem;
     }
 }
 
