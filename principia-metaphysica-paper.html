@@ -724,6 +724,94 @@
             h1 { font-size: 16pt; }
             .equation, .formula-display { font-size: 8pt; padding: 0.5rem; }
         }
+
+        /* Interactive Formula Tooltips - Hidden by default, shown on hover */
+        .formula-var {
+            position: relative;
+            display: inline;
+            cursor: help;
+            color: #4a4a4a;
+            font-weight: 500;
+            overflow: visible;
+        }
+        .formula-var:hover {
+            color: #333;
+        }
+        .var-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            width: 280px;
+            max-width: 90vw;
+            background: #fff;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            pointer-events: none;
+        }
+        .formula-var:hover .var-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-12px);
+        }
+        .var-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: #ccc;
+        }
+        .var-tooltip .var-name {
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        .var-tooltip .var-description {
+            font-size: 0.9rem;
+            color: #555;
+            line-height: 1.5;
+            margin-bottom: 0.5rem;
+        }
+        .var-tooltip .var-units,
+        .var-tooltip .var-contribution {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 0.25rem;
+        }
+        .interactive-formula {
+            overflow: visible !important;
+            padding: 1rem;
+            margin: 1rem 0;
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .formula-hint {
+            display: block;
+            font-size: 0.8rem;
+            color: #666;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        .formula-display {
+            overflow: visible !important;
+        }
+        /* Print: hide interactive elements */
+        @media print {
+            .var-tooltip { display: none !important; }
+            .formula-hint { display: none !important; }
+            .formula-var { cursor: default; color: #333; }
+        }
         </style>
   <link href="css/pm-tooltip.css" rel="stylesheet"/>
   <link rel="stylesheet" href="css/auth.css">
