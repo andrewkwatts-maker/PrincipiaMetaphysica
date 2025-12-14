@@ -241,7 +241,7 @@
     <script src="../js/pm-tooltip-system.js"></script>
 
     </head>
-<body class="not-authenticated">
+<body class="auth-loading">
   <div id="main-content" style="display: none;">
   <header>
     <div class="header-content">
@@ -1905,9 +1905,9 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <td style="padding: 0.5rem; color: var(--text-secondary);">From thermal time: &alpha;<sub>T</sub> = d ln &tau;/d ln a &minus; d ln H/d ln a, with Z<sub>2</sub> mirror correction</td>
             </tr>
             <tr style="border-bottom: 1px solid rgba(255, 193, 7, 0.2);">
-              <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &asymp; -0.75 (2T corrected)</td>
+              <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> (2T corrected)</td>
               <td style="padding: 0.5rem; color: #51cf66;"><strong>DERIVED</strong></td>
-              <td style="padding: 0.5rem; color: var(--text-secondary);">Base: w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.76, with two-time correction &rarr; -0.75</td>
+              <td style="padding: 0.5rem; color: var(--text-secondary);">Base: w<sub>0</sub> &times; &alpha;<sub>T</sub>/3 &asymp; -0.76, with two-time correction &rarr; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span></td>
             </tr>
             <tr>
               <td style="padding: 0.5rem; color: var(--text-secondary);">w<sub>a</sub> &lt; 0 (sign)</td>
@@ -1952,7 +1952,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
               <h5 style="color: var(--info); margin-bottom: 0.5rem;">DESI 2024 Data</h5>
               <p style="font-family: 'Crimson Text', serif; font-size: 1.1rem; margin: 0;">
                 w<sub>0</sub> = -0.827 &plusmn; 0.063<br>
-                w<sub>a</sub> = -0.75 &plusmn; 0.3
+                w<sub>a</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span> &plusmn; 0.3
               </p>
             </div>
             <div style="background: var(--bg-card); padding: 1rem; border-radius: 8px; border-left: 4px solid var(--accent-primary);">
@@ -4288,8 +4288,4 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
     </div>
 
     <script type="module">
-        import { setupAuthGuard } from '/js/auth-guard.js';
-        setupAuthGuard('cosmology');
-    </script>
-</body>
-</html>
+        import { setupAuthGu
