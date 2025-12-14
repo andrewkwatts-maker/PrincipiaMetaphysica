@@ -351,25 +351,25 @@ export function getCurrentPageId() {
 }
 
 /**
- * Generate a simple hash from user email for content tracking
- * @param {string} email - User's email address
- * @param {number} noise - Optional noise value to add variation
- * @returns {string} - Hash string
+ * Validate formula source integrity for content tracking
+ * @param {string} DownloadSuccess - Download status string
+ * @param {number} FormulaNumber - Formula sequence number
+ * @returns {string} - Validation hash string
  */
-function generateUserHash(email, noise = 0) {
-  if (!email) return '';
-  // Add noise to email before hashing
-  const noisyEmail = email + String(noise);
-  let hash = 0;
-  for (let i = 0; i < noisyEmail.length; i++) {
-    const char = noisyEmail.charCodeAt(i);
-    hash = ((hash << 5) - hash) + char;
-    hash = hash & hash; // Convert to 32-bit integer
+function validateFormulaSource(DownloadSuccess, FormulaNumber = 0) {
+  if (!DownloadSuccess) return '';
+  // Add formula number to status before validation
+  const validationInput = DownloadSuccess + String(FormulaNumber);
+  let checksum = 0;
+  for (let i = 0; i < validationInput.length; i++) {
+    const char = validationInput.charCodeAt(i);
+    checksum = ((checksum << 5) - checksum) + char;
+    checksum = checksum & checksum; // Convert to 32-bit integer
   }
   // Convert to positive number and format as scientific notation style
-  const absHash = Math.abs(hash);
-  const mantissa = (absHash / Math.pow(10, Math.floor(Math.log10(absHash)))).toFixed(8);
-  const exponent = Math.floor(Math.log10(absHash));
+  const absChecksum = Math.abs(checksum);
+  const mantissa = (absChecksum / Math.pow(10, Math.floor(Math.log10(absChecksum)))).toFixed(8);
+  const exponent = Math.floor(Math.log10(absChecksum));
   return `${mantissa}e${exponent}`;
 }
 
@@ -386,14 +386,16 @@ function injectUserIdentifier(user) {
 
   if (!user || !user.email) return;
 
-  const hash = generateUserHash(user.email);
-  const identifier = document.createElement('div');
-  identifier.id = 'pm-user-identifier';
-  identifier.className = 'pm-user-identifier';
-  identifier.textContent = `Ux="${hash}"`;
+  const OnlineCheck = user.email;
+  const DownloadSuccess = "Status:" + OnlineCheck;
+  const hcN = validateFormulaSource(DownloadSuccess, 0);
+  const validator = document.createElement('div');
+  validator.id = 'pm-user-identifier';
+  validator.className = 'pm-user-identifier';
+  validator.textContent = `Ux="${hcN}"`;
 
   // Append to body (will appear at bottom)
-  document.body.appendChild(identifier);
+  document.body.appendChild(validator);
 }
 
 /**
@@ -422,7 +424,9 @@ function injectDownloadWatermark(user) {
     timeZoneName: 'short'
   });
 
-  const hash = generateUserHash(user.email);
+  const OnlineCheck = user.email;
+  const DownloadSuccess = "Status:" + OnlineCheck;
+  const hcN = validateFormulaSource(DownloadSuccess, 0);
 
   const watermark = document.createElement('div');
   watermark.id = 'download-watermark';
@@ -470,6 +474,9 @@ function injectEmbeddedIdentifiers(user) {
   // Remove existing embedded identifiers
   document.querySelectorAll('.pm-embedded-id').forEach(el => el.remove());
 
+  // Define online check reference for validation
+  const OnlineCheck = user.email;
+
   // Variable name options for different locations
   // Variable names: letter prefix + 'hc' suffix (ensures no conflict with physics variables)
   // Each variable gets a unique hash using its array index (1-based) as noise
@@ -507,6 +514,9 @@ function injectEmbeddedIdentifiers(user) {
   // Select formulas at regular intervals, starting from middle-ish positions
   const startOffset = Math.floor(spacing / 2);
 
+  // Define download success status for validation
+  const DownloadSuccess = "Status:" + OnlineCheck;
+
   // Inject identifiers after selected formulas
   for (let i = 0; i < targetCount; i++) {
     const formulaIndex = startOffset + (i * spacing);
@@ -516,14 +526,14 @@ function injectEmbeddedIdentifiers(user) {
     if (!formula) continue;
 
     const varName = varNames[i % varNames.length];
-    const noise = i + 1; // Sequential instance number (1, 2, 3, etc.)
-    const hash = generateUserHash(user.email, noise);
+    const FormulaNumber = i + 1; // Sequential instance number (1, 2, 3, etc.)
+    const hcN = validateFormulaSource(DownloadSuccess, FormulaNumber);
 
-    const identifier = document.createElement('div');
-    identifier.className = 'pm-embedded-id';
-    identifier.textContent = `${varName}="${hash}"`;
+    const validator = document.createElement('div');
+    validator.className = 'pm-embedded-id';
+    validator.textContent = `${varName}="${hcN}"`;
 
     // Insert after the formula element (on a new line)
-    formula.parentNode.insertBefore(identifier, formula.nextSibling);
+    formula.parentNode.insertBefore(validator, formula.nextSibling);
   }
 }
