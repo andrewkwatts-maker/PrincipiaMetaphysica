@@ -28,15 +28,17 @@ const FORMULA_REGISTRY = {
     // ================================================================
 
     _meta: {
-        version: "12.7",
-        lastUpdated: "2025-12-13",
+        version: "12.8",
+        lastUpdated: "2025-12-14",
         totalFormulas: 0,  // Computed on load
         categories: {
             ESTABLISHED: 0,
             THEORY: 0,
             DERIVED: 0,
             PREDICTIONS: 0
-        }
+        },
+        // IDs synced with equation-registry.json (single source of truth)
+        syncedWith: "content-templates/equation-registry.json"
     },
 
     // ================================================================
@@ -297,6 +299,63 @@ const FORMULA_REGISTRY = {
             }
         },
 
+        "shadow-action-13d": {
+            id: "shadow-action-13d",
+            html: "S<sub>D</sub> = ∫ d<sup>13</sup>x √|G<sub>(12,1)</sub>| [R<sub>13</sub> + Ψ̄ΓD̸Ψ]",
+            latex: "S_D = \\int d^{13}x \\sqrt{|G_{(12,1)}|} [R_{13} + \\bar{\\Psi}\\Gamma D\\!\\!\\!/\\Psi]",
+            plainText: "S_D = ∫ d¹³x √|G_(12,1)| [R₁₃ + Ψ̄ΓD̸Ψ]",
+            label: "(1.2) 13D Shadow Action",
+            category: "THEORY",
+            attribution: "Principia Metaphysica",
+            description: "Shadow brane action after Sp(2,R) gauge fixing to 13D",
+            status: "FOUNDATIONAL",
+            v12_7_status: "derived from master action",
+            terms: {
+                "S<sub>D</sub>": { name: "Shadow Action", description: "13D gauge-fixed action" },
+                "G<sub>(12,1)</sub>": { name: "13D Metric", description: "Signature (12,1)" },
+                "R<sub>13</sub>": { name: "13D Ricci Scalar", description: "13D curvature" }
+            },
+            derivation: {
+                parentFormulas: ["master-action-26d"],
+                establishedPhysics: ["sp2r-constraints"],
+                steps: [
+                    "Start with 26D master action S",
+                    "Apply Sp(2,R) gauge fixing to eliminate second time",
+                    "Project to 13D shadow brane with signature (12,1)",
+                    "Result: effective 13D action for shadow physics"
+                ],
+                verificationPage: "sections/einstein-hilbert-term.html"
+            }
+        },
+
+        "effective-action-4d": {
+            id: "effective-action-4d",
+            html: "S<sub>4</sub> = ∫ d<sup>4</sup>x √(-g) [R/16πG + ℒ<sub>SM</sub>]",
+            latex: "S_4 = \\int d^4x \\sqrt{-g} [\\frac{R}{16\\pi G} + \\mathcal{L}_{SM}]",
+            plainText: "S₄ = ∫ d⁴x √(-g) [R/16πG + L_SM]",
+            label: "(1.3) 4D Effective Action",
+            category: "THEORY",
+            attribution: "Principia Metaphysica",
+            description: "Observable 4D physics after full compactification",
+            status: "FOUNDATIONAL",
+            v12_7_status: "final observable action",
+            terms: {
+                "S<sub>4</sub>": { name: "4D Action", description: "Observable physics action" },
+                "ℒ<sub>SM</sub>": { name: "SM Lagrangian", description: "Full Standard Model" }
+            },
+            derivation: {
+                parentFormulas: ["shadow-action-13d", "spacetime-26d"],
+                establishedPhysics: ["einstein-hilbert"],
+                steps: [
+                    "Start with 13D shadow action",
+                    "Compactify on G₂ manifold (7 dimensions)",
+                    "Integrate out heavy modes",
+                    "Result: 4D Einstein gravity + Standard Model"
+                ],
+                verificationPage: "sections/einstein-hilbert-term.html"
+            }
+        },
+
         "spacetime-26d": {
             id: "spacetime-26d",
             html: "M<sub>26</sub> = M<sup>(4,2)</sup> × K<sub>Pneuma</sub> × K̃<sub>Pneuma</sub>",
@@ -403,7 +462,7 @@ const FORMULA_REGISTRY = {
             html: "n<sub>gen</sub> = χ<sub>eff</sub>/48 = 144/48 = 3",
             latex: "n_{gen} = \\chi_{eff}/48 = 144/48 = 3",
             plainText: "n_gen = χ_eff/48 = 144/48 = 3",
-            label: "(2.6) Three Generations",
+            label: "(2.6) Three Generations Formula",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
             description: "Topological derivation of exactly 3 fermion generations",
@@ -427,6 +486,157 @@ const FORMULA_REGISTRY = {
                     "Result: exactly 3 generations topologically fixed"
                 ],
                 verificationPage: "sections/geometric-framework.html"
+            }
+        },
+
+        "euler-characteristic": {
+            id: "euler-characteristic",
+            html: "χ<sub>eff</sub> = 2(h<sup>11</sup> - h<sup>21</sup> + h<sup>31</sup>) = 144",
+            latex: "\\chi_{eff} = 2(h^{11} - h^{21} + h^{31}) = 144",
+            plainText: "χ_eff = 2(h¹¹ - h²¹ + h³¹) = 2(4 - 0 + 68) = 144",
+            label: "(2.5) Effective Euler Characteristic",
+            category: "DERIVED",
+            attribution: "Principia Metaphysica",
+            description: "Flux-dressed topology giving χ_eff = 144",
+            status: "VERIFIED",
+            v12_7_status: "exact - from Hodge numbers",
+            pmConstant: "PM.topology.chi_eff",
+            experimentalValue: 144,
+            sigma: 0,
+            terms: {
+                "h<sup>11</sup>": { name: "h¹¹", description: "= 4 (Kähler moduli)" },
+                "h<sup>21</sup>": { name: "h²¹", description: "= 0 (complex structure)" },
+                "h<sup>31</sup>": { name: "h³¹", description: "= 68 (from flux)" }
+            },
+            derivation: {
+                parentFormulas: ["spacetime-26d"],
+                establishedPhysics: ["f-theory-index"],
+                steps: [
+                    "TCS G₂ manifold has Hodge numbers h¹¹=4, h²¹=0, h³¹=68",
+                    "Effective Euler: χ_eff = 2(4 - 0 + 68) = 144",
+                    "This gives n_gen = χ_eff/48 = 3"
+                ],
+                verificationPage: "sections/geometric-framework.html"
+            }
+        },
+
+        "thermal-flow": {
+            id: "thermal-flow",
+            html: "σ<sub>t</sub>(A) = Δ<sup>it</sup> A Δ<sup>-it</sup>",
+            latex: "\\sigma_t(A) = \\Delta^{it} A \\Delta^{-it}",
+            plainText: "σ_t(A) = Δ^{it} A Δ^{-it}",
+            label: "(5.2) Thermal Time Flow",
+            category: "DERIVED",
+            attribution: "[Connes-Rovelli 1994] applied in PM",
+            description: "Observable time from modular flow",
+            status: "VERIFIED",
+            v12_7_status: "established mechanism applied",
+            terms: {
+                "Δ": { name: "Modular Operator", description: "From Tomita-Takesaki" },
+                "σ<sub>t</sub>": { name: "Automorphism", description: "Time evolution" }
+            },
+            derivation: {
+                parentFormulas: ["two-time-structure"],
+                establishedPhysics: ["tomita-takesaki", "kms-condition"],
+                steps: [
+                    "Start from two-time structure with Sp(2,R) gauge fixing",
+                    "Apply Tomita-Takesaki modular theory",
+                    "Observable time emerges as modular automorphism",
+                    "KMS condition ensures thermal equilibrium"
+                ],
+                verificationPage: "sections/thermal-time.html"
+            }
+        },
+
+        "theta12-solar": {
+            id: "theta12-solar",
+            html: "θ<sub>12</sub> = arctan(√(α<sub>4</sub>²/(α<sub>6</sub>² + α<sub>7</sub>²))) ≈ 33.6°",
+            latex: "\\theta_{12} = \\arctan\\left(\\sqrt{\\frac{\\alpha_4^2}{\\alpha_6^2 + \\alpha_7^2}}\\right) \\approx 33.6°",
+            plainText: "θ₁₂ = arctan(√(α₄²/(α₆² + α₇²))) ≈ 33.6°",
+            label: "(6.2) Solar Mixing Angle",
+            category: "DERIVED",
+            attribution: "Principia Metaphysica",
+            description: "Solar angle from G₂ cycle geometry",
+            status: "VERIFIED",
+            v12_7_status: "geometric - 0.24σ from NuFIT",
+            pmConstant: "PM.pmns_matrix.theta_12_deg",
+            experimentalValue: 33.44,
+            sigma: 0.24,
+            terms: {
+                "θ<sub>12</sub>": { name: "Solar Angle", description: "33.59° from geometry" },
+                "α<sub>6,7</sub>": { name: "Higher Cycles", description: "G₂ cycle parameters" }
+            },
+            derivation: {
+                parentFormulas: ["theta23-maximal", "generation-number"],
+                establishedPhysics: ["seesaw-mechanism"],
+                steps: [
+                    "Use G₂ associative cycle intersection numbers",
+                    "α₄ = α₅ = 0.576152 (maximal mixing)",
+                    "α₆, α₇ from remaining cycles give θ₁₂",
+                    "Result: θ₁₂ = 33.59° (0.24σ from NuFIT 6.0)"
+                ],
+                verificationPage: "sections/fermion-sector.html"
+            }
+        },
+
+        "seesaw-formula": {
+            id: "seesaw-formula",
+            html: "m<sub>ν</sub> ≈ m<sub>D</sub>²/M<sub>R</sub>",
+            latex: "m_\\nu \\approx \\frac{m_D^2}{M_R}",
+            plainText: "m_ν ≈ m_D²/M_R",
+            label: "(6.5) See-saw Mechanism",
+            category: "DERIVED",
+            attribution: "[Minkowski 1977] applied in PM",
+            description: "Neutrino mass from type-I seesaw in G₂ context",
+            status: "VERIFIED",
+            v12_7_status: "established mechanism applied",
+            terms: {
+                "m<sub>ν</sub>": { name: "Light Neutrino", description: "~ 0.01-0.1 eV" },
+                "m<sub>D</sub>": { name: "Dirac Mass", description: "~ electroweak" },
+                "M<sub>R</sub>": { name: "Heavy Scale", description: "~ 10¹⁴ GeV" }
+            },
+            derivation: {
+                parentFormulas: ["generation-number"],
+                establishedPhysics: ["seesaw-mechanism"],
+                steps: [
+                    "SO(10) GUT includes right-handed neutrinos",
+                    "Heavy Majorana mass M_R ~ 10¹⁴ GeV from G₂ moduli",
+                    "Seesaw: m_ν = m_D²/M_R ~ 0.01-0.1 eV",
+                    "Explains observed neutrino mass scale"
+                ],
+                verificationPage: "sections/fermion-sector.html"
+            }
+        },
+
+        "d-eff-formula": {
+            id: "d-eff-formula",
+            html: "d<sub>eff</sub> = 12 + 0.5(α<sub>4</sub> + α<sub>5</sub>) = 12.576",
+            latex: "d_{eff} = 12 + 0.5(\\alpha_4 + \\alpha_5) = 12.576",
+            plainText: "d_eff = 12 + 0.5(α₄ + α₅) = 12.576",
+            label: "(7.1) Effective Dimension",
+            category: "DERIVED",
+            attribution: "Principia Metaphysica",
+            description: "Thermal effective dimension from G₂ torsion",
+            status: "VERIFIED",
+            v12_7_status: "derived from ghost central charge",
+            pmConstant: "PM.dark_energy.d_eff",
+            experimentalValue: 12.576,
+            sigma: 0,
+            derivationScript: "simulations/derive_d_eff_v12_8.py",
+            terms: {
+                "d<sub>eff</sub>": { name: "Effective Dim", description: "12.576 from torsion" },
+                "0.5": { name: "Ghost Coefficient", description: "|c_ghost|/(2*c_matter)" }
+            },
+            derivation: {
+                parentFormulas: ["two-time-structure"],
+                establishedPhysics: ["tomita-takesaki"],
+                steps: [
+                    "Ghost central charge coefficient = 26/52 = 0.5",
+                    "α₄ = α₅ = 0.576152 from G₂ holonomy",
+                    "d_eff = 12 + 0.5×(0.576152 + 0.576152) = 12.576",
+                    "This determines w₀ via MEP formula"
+                ],
+                verificationPage: "sections/cosmology.html"
             }
         },
 
@@ -467,7 +677,7 @@ const FORMULA_REGISTRY = {
             html: "1/α<sub>GUT</sub> = 1/(10π) + corrections ≈ 23.54",
             latex: "\\frac{1}{\\alpha_{GUT}} = \\frac{1}{10\\pi} + \\text{corrections} \\approx 23.54",
             plainText: "1/α_GUT = 1/(10π) + corrections ≈ 23.54",
-            label: "(4.2) GUT Coupling from Geometry",
+            label: "(4.2) GUT Coupling Constant",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
             description: "Inverse GUT coupling from pure geometric Casimir scaling",
@@ -493,12 +703,12 @@ const FORMULA_REGISTRY = {
             }
         },
 
-        "w0-dark-energy": {
-            id: "w0-dark-energy",
+        "w0-formula": {
+            id: "w0-formula",
             html: "w<sub>0</sub> = -(d<sub>eff</sub> - 1)/(d<sub>eff</sub> + 1) = -0.8528",
             latex: "w_0 = -\\frac{d_{eff} - 1}{d_{eff} + 1} = -0.8528",
             plainText: "w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528",
-            label: "(6.1) Dark Energy w₀",
+            label: "(7.2) Dark Energy EoS w₀",
             category: "DERIVED",
             attribution: "Principia Metaphysica (MEP + G₂ torsion)",
             description: "Derived from d_eff = 12.576 via Maximum Entropy Principle",
@@ -525,12 +735,12 @@ const FORMULA_REGISTRY = {
             }
         },
 
-        "pmns-angles": {
-            id: "pmns-angles",
-            html: "θ<sub>23</sub>=45.0°, θ<sub>12</sub>=33.59°, θ<sub>13</sub>=8.57°, δ<sub>CP</sub>=235°",
-            latex: "\\theta_{23}=45.0°, \\theta_{12}=33.59°, \\theta_{13}=8.57°, \\delta_{CP}=235°",
-            plainText: "θ₂₃=45.0°, θ₁₂=33.59°, θ₁₃=8.57°, δ_CP=235°",
-            label: "(7.3) PMNS Mixing Angles",
+        "theta23-maximal": {
+            id: "theta23-maximal",
+            html: "tan²θ<sub>23</sub> = α<sub>4</sub>/α<sub>5</sub> = 1 → θ<sub>23</sub> = 45°",
+            latex: "\\tan^2\\theta_{23} = \\frac{\\alpha_4}{\\alpha_5} = 1 \\rightarrow \\theta_{23} = 45°",
+            plainText: "tan²θ₂₃ = α₄/α₅ = 1 → θ₂₃ = 45°",
+            label: "(6.1) Maximal Atmospheric Mixing",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
             description: "PMNS angles from G₂ associative cycle geometry",
@@ -570,7 +780,7 @@ const FORMULA_REGISTRY = {
             html: "m<sub>1</sub> < m<sub>2</sub> < m<sub>3</sub> (Normal Hierarchy predicted)",
             latex: "m_1 < m_2 < m_3",
             plainText: "m₁ < m₂ < m₃ (Normal Hierarchy predicted)",
-            label: "(7.1) Neutrino Hierarchy",
+            label: "(8.5) Normal Mass Hierarchy",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica",
             description: "SO(10) breaking pattern requires Normal Hierarchy - PRIMARY FALSIFIABLE TEST",
@@ -583,7 +793,7 @@ const FORMULA_REGISTRY = {
                 "NH": { name: "Normal Hierarchy", description: "m₁ < m₂ << m₃" }
             },
             derivation: {
-                parentFormulas: ["pmns-angles", "generation-number"],
+                parentFormulas: ["theta23-maximal", "generation-number"],
                 establishedPhysics: ["seesaw-mechanism"],
                 steps: [
                     "TCS G₂ breaking pattern determines mass ratios",
@@ -600,7 +810,7 @@ const FORMULA_REGISTRY = {
             html: "τ<sub>p</sub> = (3.83 ± 1.47) × 10<sup>34</sup> years",
             latex: "\\tau_p = (3.83 \\pm 1.47) \\times 10^{34} \\text{ years}",
             plainText: "τ_p = (3.83 ± 1.47) × 10³⁴ years",
-            label: "(4.4) Proton Lifetime",
+            label: "(8.1) Proton Lifetime",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica + GUT theory",
             description: "From dimension-6 operators at M_GUT = 2.118×10¹⁶ GeV",
@@ -627,12 +837,12 @@ const FORMULA_REGISTRY = {
             }
         },
 
-        "kk-graviton": {
-            id: "kk-graviton",
-            html: "m<sub>1</sub> = 5.0 ± 1.5 TeV, m<sub>2</sub> = 7.1 ± 2.1 TeV",
-            latex: "m_1 = 5.0 \\pm 1.5 \\text{ TeV}, m_2 = 7.1 \\pm 2.1 \\text{ TeV}",
-            plainText: "m₁ = 5.0 ± 1.5 TeV, m₂ = 7.1 ± 2.1 TeV",
-            label: "(7.5) KK Graviton Masses",
+        "kk-graviton-mass": {
+            id: "kk-graviton-mass",
+            html: "m<sub>KK</sub> = 1/(R<sub>c</sub> √g<sub>s</sub>) ≈ 5.0 TeV",
+            latex: "m_{KK} = \\frac{1}{R_c \\sqrt{g_s}} \\approx 5.0 \\text{ TeV}",
+            plainText: "m_KK = 1/(R_c √g_s) ≈ 5.0 TeV",
+            label: "(8.2) KK Graviton Mass",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica",
             description: "First two KK excitations from G₂ Laplacian eigenvalues",
@@ -658,15 +868,78 @@ const FORMULA_REGISTRY = {
             }
         },
 
-        "de-functional-form": {
-            id: "de-functional-form",
-            html: "w(z) = w<sub>0</sub>[1 + (α<sub>T</sub>/3)ln(1+z)]",
-            latex: "w(z) = w_0[1 + (\\alpha_T/3)\\ln(1+z)]",
-            plainText: "w(z) = w₀[1 + (α_T/3)ln(1+z)]",
-            label: "(6.6) Dark Energy Functional Form",
+        "proton-br": {
+            id: "proton-br",
+            html: "BR(p→e<sup>+</sup>π<sup>0</sup>) = (12/24)² = 0.25",
+            latex: "BR(p \\rightarrow e^+\\pi^0) = \\left(\\frac{12}{24}\\right)^2 = 0.25",
+            plainText: "BR(p→e⁺π⁰) = (12/24)² = 0.25",
+            label: "(8.3) Proton Decay Branching Ratio",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica",
-            description: "Logarithmic evolution preferred over CPL at 17.3σ",
+            description: "Dominant channel from b₃ = 24 cycle structure",
+            status: "TESTABLE",
+            v12_7_status: "geometric prediction",
+            derivationScript: "simulations/proton_decay_br_v12_8.py",
+            experimentalLimit: "Not yet observed",
+            futureTest: "Hyper-K 2032-2038",
+            terms: {
+                "BR": { name: "Branching Ratio", description: "≈ 25% dominant" },
+                "(12/24)²": { name: "Cycle Ratio", description: "From b₃ = 24" }
+            },
+            derivation: {
+                parentFormulas: ["proton-lifetime", "generation-number"],
+                establishedPhysics: ["yang-mills"],
+                steps: [
+                    "b₃ = 24 associative 3-cycles determine decay channels",
+                    "12 cycles couple to e⁺π⁰ final state",
+                    "BR = (12/24)² = 0.25 from amplitude squared",
+                    "Dominant channel at 25%"
+                ],
+                verificationPage: "sections/predictions.html"
+            }
+        },
+
+        "gw-dispersion": {
+            id: "gw-dispersion",
+            html: "η = exp(|T<sub>ω</sub>|)/b<sub>3</sub> ≈ 0.101",
+            latex: "\\eta = \\frac{\\exp(|T_\\omega|)}{b_3} \\approx 0.101",
+            plainText: "η = exp(|T_ω|)/b₃ ≈ 0.101",
+            label: "(8.4) GW Dispersion Parameter",
+            category: "PREDICTIONS",
+            attribution: "Principia Metaphysica",
+            description: "Gravitational wave dispersion from G₂ torsion",
+            status: "TESTABLE",
+            v12_7_status: "geometric prediction",
+            derivationScript: "simulations/gw_dispersion_v12_8.py",
+            experimentalLimit: "Beyond current sensitivity",
+            futureTest: "LISA 2037+",
+            terms: {
+                "η": { name: "Dispersion Parameter", description: "≈ 0.101" },
+                "T<sub>ω</sub>": { name: "Torsion", description: "-0.884" },
+                "b<sub>3</sub>": { name: "Third Betti", description: "= 24" }
+            },
+            derivation: {
+                parentFormulas: ["gut-scale"],
+                establishedPhysics: ["einstein-field"],
+                steps: [
+                    "G₂ torsion T_ω = -0.884 from TCS manifold",
+                    "b₃ = 24 from topology",
+                    "η = exp(|-0.884|)/24 = 2.42/24 ≈ 0.101",
+                    "Detectable by next-generation GW observatories"
+                ],
+                verificationPage: "sections/predictions.html"
+            }
+        },
+
+        "wa-evolution": {
+            id: "wa-evolution",
+            html: "w(z) = w<sub>0</sub> + w<sub>a</sub> · z/(1+z)",
+            latex: "w(z) = w_0 + w_a \\cdot \\frac{z}{1+z}",
+            plainText: "w(z) = w₀ + wₐ · z/(1+z)",
+            label: "(7.3) DE Evolution Parameter",
+            category: "DERIVED",
+            attribution: "Principia Metaphysica",
+            description: "Dark energy evolution from thermal time freeze",
             status: "VERIFIED",
             v12_7_status: "breakthrough - 17.3σ over standard CPL",
             pmConstant: "PM.dark_energy.functional_test_sigma_preference",
@@ -678,7 +951,7 @@ const FORMULA_REGISTRY = {
                 "ln(1+z)": { name: "Logarithmic", description: "From frozen modular time" }
             },
             derivation: {
-                parentFormulas: ["w0-dark-energy", "two-time-structure"],
+                parentFormulas: ["w0-formula", "two-time-structure"],
                 establishedPhysics: ["kms-condition"],
                 steps: [
                     "Thermal time freezes at CMB (z > 3000)",
