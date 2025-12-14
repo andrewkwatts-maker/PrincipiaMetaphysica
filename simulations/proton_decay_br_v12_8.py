@@ -22,7 +22,7 @@ import numpy as np
 from typing import Dict
 
 
-def proton_decay_branching(b3: int = 24, orientation_sum: int = 12) -> float:
+def proton_decay_br(b3: int = 24, orientation_sum: int = 12) -> dict:
     """
     Predict proton decay branching ratios from flux orientation.
 
@@ -47,14 +47,24 @@ def proton_decay_branching(b3: int = 24, orientation_sum: int = 12) -> float:
     br_e_pi = (orientation_sum / b3)**2
     br_mu_pi = 1 - br_e_pi
 
-    return br_e_pi
+    return {
+        'BR_e_pi0': br_e_pi,
+        'BR_mu_pi0': br_mu_pi,
+        'b3': b3,
+        'orientation_sum': orientation_sum,
+        'formula': 'BR = (orientation_sum/b3)^2',
+        'derivation_status': 'PREDICTION',
+        'validation': 'NOT YET POSSIBLE (proton decay not observed)',
+        'future_test': 'Hyper-K 2032-2038'
+    }
 
 
 def proton_decay_br_detailed(b3: int = 24, orientation_sum: int = 12) -> Dict:
     """
     Return complete prediction with derivation chain.
     """
-    br_e_pi = proton_decay_branching(b3, orientation_sum)
+    result = proton_decay_br(b3, orientation_sum)
+    br_e_pi = result['BR_e_pi0']
     br_mu_pi = 1 - br_e_pi
 
     return {

@@ -116,6 +116,8 @@ def derive_d_eff_detailed(alpha_4: float = 0.576152, alpha_5: float = 0.576152,
         'alpha_5': alpha_5,
         'alpha_sum': alpha_4 + alpha_5,
         'ghost_coefficient': GHOST_COEFFICIENT,
+        'c_ghost': C_GHOST,
+        'c_matter': C_MATTER,
         'shared_contribution': GHOST_COEFFICIENT * (alpha_4 + alpha_5),
         'w0_derived': w0,
         'derivation_chain': [

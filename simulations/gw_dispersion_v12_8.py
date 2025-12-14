@@ -23,7 +23,7 @@ import numpy as np
 from typing import Dict
 
 
-def gw_dispersion(T_omega: float = -0.884, b3: int = 24) -> float:
+def gw_dispersion(T_omega: float = -0.884, b3: int = 24) -> dict:
     """
     Predict gravitational wave dispersion from torsion effects.
 
@@ -42,10 +42,18 @@ def gw_dispersion(T_omega: float = -0.884, b3: int = 24) -> float:
         b3: Third Betti number (default 24)
 
     Returns:
-        eta: Dispersion parameter (dimensionless)
+        dict: Contains eta and derivation info
     """
     eta = np.exp(np.abs(T_omega)) / b3
-    return eta
+    return {
+        'eta': eta,
+        'T_omega': T_omega,
+        'b3': b3,
+        'formula': 'eta = exp(|T_omega|)/b3',
+        'derivation_status': 'PREDICTION',
+        'validation': 'NOT YET POSSIBLE (beyond current sensitivity)',
+        'future_test': 'LISA 2037+ (space-based GW detector)'
+    }
 
 
 def gw_dispersion_detailed(T_omega: float = -0.884, b3: int = 24) -> Dict:
