@@ -479,10 +479,53 @@
             <!-- HC tracking pixel 1 -->
             <img class="hc-pixel" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-hc="abstract-view">
 
+            <!-- Print Button -->
+            <button class="download-btn no-print" onclick="window.print()" style="position: fixed; top: 80px; right: 20px; z-index: 1000; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
+                Print / Save as PDF
+            </button>
+
+            <!-- Table of Contents -->
+            <nav class="toc no-print" style="background: rgba(102, 126, 234, 0.05); border-radius: 12px; padding: 1.5rem; margin: 2rem 0; border-left: 4px solid #667eea;">
+                <h3 style="color: #667eea; margin-bottom: 1rem; font-size: 1.1rem;">Table of Contents</h3>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; font-size: 0.95rem;">
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 0.5rem; color: #333;">Main Sections</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li><a href="#section-1" style="color: #667eea; text-decoration: none;">1. Introduction</a></li>
+                            <li><a href="#section-2" style="color: #667eea; text-decoration: none;">2. The 26-Dimensional Bulk</a></li>
+                            <li><a href="#section-3" style="color: #667eea; text-decoration: none;">3. 13-Dimensional Shadow</a></li>
+                            <li><a href="#section-4" style="color: #667eea; text-decoration: none;">4. TCS G₂ Compactification</a></li>
+                            <li><a href="#section-5" style="color: #667eea; text-decoration: none;">5. Gauge Unification</a></li>
+                            <li><a href="#section-6" style="color: #667eea; text-decoration: none;">6. Fermion Sector</a></li>
+                            <li><a href="#section-7" style="color: #667eea; text-decoration: none;">7. Cosmology & Dark Energy</a></li>
+                            <li><a href="#section-8" style="color: #667eea; text-decoration: none;">8. Predictions</a></li>
+                            <li><a href="#section-9" style="color: #667eea; text-decoration: none;">9. Discussion</a></li>
+                            <li><a href="#references" style="color: #667eea; text-decoration: none;">References</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <p style="font-weight: 600; margin-bottom: 0.5rem; color: #333;">Appendices</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li><a href="#appendix-a" style="color: #667eea; text-decoration: none;">A. Virasoro Anomaly</a></li>
+                            <li><a href="#appendix-b" style="color: #667eea; text-decoration: none;">B. Generation Number</a></li>
+                            <li><a href="#appendix-c" style="color: #667eea; text-decoration: none;">C. PMNS Angles</a></li>
+                            <li><a href="#appendix-d" style="color: #667eea; text-decoration: none;">D. Dark Energy</a></li>
+                            <li><a href="#appendix-e" style="color: #667eea; text-decoration: none;">E. Proton Decay</a></li>
+                            <li><a href="#appendix-f" style="color: #667eea; text-decoration: none;">F. Dimensional Decomp.</a></li>
+                            <li><a href="#appendix-g" style="color: #667eea; text-decoration: none;">G. Effective Torsion</a></li>
+                            <li><a href="#appendix-h" style="color: #667eea; text-decoration: none;">H. Proton BR</a></li>
+                            <li><a href="#appendix-i" style="color: #667eea; text-decoration: none;">I. GW Dispersion</a></li>
+                            <li><a href="#appendix-j" style="color: #667eea; text-decoration: none;">J. Monte Carlo</a></li>
+                            <li><a href="#appendix-k" style="color: #667eea; text-decoration: none;">K. Transparency</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
             <!-- ============================================================ -->
             <!-- SECTION 1: INTRODUCTION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">1. Introduction</h2>
+            <h2 class="section-title" id="section-1">1. Introduction</h2>
 
             <p>
                 The quest for a unified description of fundamental physics has driven theoretical research from Kaluza-Klein theory through string theory to modern M-theory compactifications. Despite remarkable progress, a complete geometric derivation of Standard Model parameters from first principles has remained elusive. This work presents <em>Principia Metaphysica</em>, a framework that addresses this challenge through compactification on a single G<sub>2</sub> manifold.
@@ -595,7 +638,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 2: 26D BULK -->
             <!-- ============================================================ -->
-            <h2 class="section-title">2. The 26-Dimensional Bulk Spacetime</h2>
+            <h2 class="section-title" id="section-2">2. The 26-Dimensional Bulk Spacetime</h2>
 
             <h3 class="subsection-title">2.1 Motivation for (24,2) Signature</h3>
             <p>
@@ -637,7 +680,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 3: SHADOW REDUCTION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">3. Reduction to the 13-Dimensional Shadow</h2>
+            <h2 class="section-title" id="section-3">3. Reduction to the 13-Dimensional Shadow</h2>
 
             <h3 class="subsection-title">3.1 Sp(2,&#x211D;) Gauge Fixing</h3>
             <p>The Sp(2,&#x211D;) gauge symmetry acts on both time coordinates, with generators satisfying:</p>
@@ -659,7 +702,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 4: G2 COMPACTIFICATION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">4. Compactification on the TCS G<sub>2</sub> Manifold</h2>
+            <h2 class="section-title" id="section-4">4. Compactification on the TCS G<sub>2</sub> Manifold</h2>
 
             <h3 class="subsection-title">4.1 TCS Construction</h3>
             <p>
@@ -708,7 +751,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 5: GAUGE UNIFICATION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">5. Gauge Unification and the Standard Model</h2>
+            <h2 class="section-title" id="section-5">5. Gauge Unification and the Standard Model</h2>
 
             <h3 class="subsection-title">5.1 SO(10) from Singularities</h3>
             <p>The Standard Model gauge group emerges from D5 singularities in the G<sub>2</sub> geometry:</p>
@@ -735,7 +778,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 6: FERMION SECTOR -->
             <!-- ============================================================ -->
-            <h2 class="section-title">6. Fermion Sector and Mixing Angles</h2>
+            <h2 class="section-title" id="section-6">6. Fermion Sector and Mixing Angles</h2>
 
             <h3 class="subsection-title">6.1 PMNS Matrix Derivation</h3>
             <p>
@@ -815,7 +858,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 7: COSMOLOGY -->
             <!-- ============================================================ -->
-            <h2 class="section-title">7. Cosmology and Dark Energy</h2>
+            <h2 class="section-title" id="section-7">7. Cosmology and Dark Energy</h2>
 
             <h3 class="subsection-title">7.1 Dark Energy from Effective Dimension</h3>
             <p>The dark energy equation of state emerges from dimensional reduction:</p>
@@ -858,7 +901,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 8: PREDICTIONS -->
             <!-- ============================================================ -->
-            <h2 class="section-title">8. Predictions and Testability</h2>
+            <h2 class="section-title" id="section-8">8. Predictions and Testability</h2>
 
             <h3 class="subsection-title">8.1 Summary of 58 Parameters</h3>
             <table>
@@ -943,7 +986,7 @@
             <!-- ============================================================ -->
             <!-- SECTION 9: DISCUSSION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">9. Discussion and Transparency</h2>
+            <h2 class="section-title" id="section-9">9. Discussion and Transparency</h2>
 
             <h3 class="subsection-title">9.1 Input Summary</h3>
             <p>The framework requires:</p>
@@ -977,7 +1020,7 @@
             <!-- ============================================================ -->
             <!-- REFERENCES -->
             <!-- ============================================================ -->
-            <h2 class="section-title">References</h2>
+            <h2 class="section-title" id="references">References</h2>
             <ol class="references">
                 <li>Lovelace, C. (1971). Pomeron form factors and dual Regge cuts. <em>Phys. Lett. B</em> 34, 500.</li>
                 <li>Bars, I. (2006). Gravity in 2T-Physics. <em>Phys. Rev. D</em> 74, 085019. [arXiv:hep-th/0606045]</li>
@@ -995,7 +1038,7 @@
             <!-- ============================================================ -->
             <!-- APPENDIX A: VIRASORO DERIVATION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix A: Virasoro Anomaly Cancellation</h2>
+            <h2 class="section-title" id="appendix-a">Appendix A: Virasoro Anomaly Cancellation</h2>
 
             <p>
                 The critical dimension $D = 26$ follows from requiring consistent BRST quantization of the bosonic string. The Virasoro algebra central charge must vanish for physical states.
@@ -1027,7 +1070,7 @@ def virasoro_anomaly(D: int = 26) -> Dict:
             <!-- ============================================================ -->
             <!-- APPENDIX B: GENERATION NUMBER -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix B: Generation Number Derivation</h2>
+            <h2 class="section-title" id="appendix-b">Appendix B: Generation Number Derivation</h2>
 
             <p>
                 The generation count $n_{\text{gen}} = 3$ follows from the F-theory index theorem modified by the Z<sub>2</sub> factor from Sp(2,&#x211D;) gauge fixing.
@@ -1059,7 +1102,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
             <!-- ============================================================ -->
             <!-- APPENDIX C: THETA_23 DERIVATION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix C: Atmospheric Mixing Angle Derivation</h2>
+            <h2 class="section-title" id="appendix-c">Appendix C: Atmospheric Mixing Angle Derivation</h2>
 
             <p>
                 The maximal atmospheric mixing angle $\theta_{23} = 45°$ emerges from G<sub>2</sub> holonomy symmetry, not from fitting to experimental data.
@@ -1094,7 +1137,7 @@ def derive_alpha_parameters() -> Tuple[float, float]:
             <!-- ============================================================ -->
             <!-- APPENDIX D: DARK ENERGY DERIVATION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix D: Dark Energy Equation of State</h2>
+            <h2 class="section-title" id="appendix-d">Appendix D: Dark Energy Equation of State</h2>
 
             <p>
                 The dark energy parameter $w_0 = -0.8528$ emerges from the effective dimension formula with ghost coefficient derivation.
@@ -1136,7 +1179,7 @@ def derive_w0_from_d_eff(d_eff):
             <!-- ============================================================ -->
             <!-- APPENDIX E: PROTON DECAY -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix E: Proton Decay Calculation</h2>
+            <h2 class="section-title" id="appendix-e">Appendix E: Proton Decay Calculation</h2>
 
             <p>
                 Proton lifetime is computed using geometric $M_{\text{GUT}}$ with 3-loop RG running and KK threshold corrections.
@@ -1171,7 +1214,7 @@ def derive_w0_from_d_eff(d_eff):
             <!-- ============================================================ -->
             <!-- APPENDIX F: DIMENSIONAL DECOMPOSITION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix F: Dimensional Decomposition</h2>
+            <h2 class="section-title" id="appendix-f">Appendix F: Dimensional Decomposition</h2>
 
             <p>
                 The 26-dimensional bulk decomposes explicitly into observable and compactified dimensions:
@@ -1228,7 +1271,7 @@ def dim_decomp() -> Dict:
             <!-- ============================================================ -->
             <!-- APPENDIX G: EFFECTIVE TORSION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix G: Effective Torsion from Flux Quantization</h2>
+            <h2 class="section-title" id="appendix-g">Appendix G: Effective Torsion from Flux Quantization</h2>
 
             <p>
                 TCS G<sub>2</sub> manifolds are Ricci-flat (geometric torsion $\tau = 0$). The effective torsion arises from G<sub>4</sub> flux quantization.
@@ -1264,7 +1307,7 @@ def effective_torsion_geometric(chi_eff: int = 144, b3: int = 24) -> float:
             <!-- ============================================================ -->
             <!-- APPENDIX H: PROTON DECAY BRANCHING RATIO -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix H: Proton Decay Branching Ratio</h2>
+            <h2 class="section-title" id="appendix-h">Appendix H: Proton Decay Branching Ratio</h2>
 
             <p>
                 The branching ratio BR$(p \to e^+\pi^0)$ is predicted from flux orientation on the TCS G<sub>2</sub> manifold.
@@ -1304,7 +1347,7 @@ def proton_decay_br(b3: int = 24, orientation_sum: int = 12) -> dict:
             <!-- ============================================================ -->
             <!-- APPENDIX I: GW DISPERSION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix I: Gravitational Wave Dispersion</h2>
+            <h2 class="section-title" id="appendix-i">Appendix I: Gravitational Wave Dispersion</h2>
 
             <p>
                 The two-time framework predicts a small frequency-dependent dispersion for gravitational waves propagating through compactified dimensions.
@@ -1337,7 +1380,7 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
             <!-- ============================================================ -->
             <!-- APPENDIX J: MONTE CARLO ERROR PROPAGATION -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix J: Monte Carlo Error Propagation</h2>
+            <h2 class="section-title" id="appendix-j">Appendix J: Monte Carlo Error Propagation</h2>
 
             <p>
                 Uncertainties are propagated through 10,000 Monte Carlo samples to compute the 58×58 parameter correlation matrix.
@@ -1407,7 +1450,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
             <!-- ============================================================ -->
             <!-- APPENDIX K: TRANSPARENCY STATEMENT -->
             <!-- ============================================================ -->
-            <h2 class="section-title">Appendix K: Transparency Statement</h2>
+            <h2 class="section-title" id="appendix-k">Appendix K: Transparency Statement</h2>
 
             <h3 class="subsection-title">K.1 Parameter Classification</h3>
             <table>
