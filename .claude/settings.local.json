@@ -289,7 +289,12 @@
       "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\simulations\\proton_decay_br_geometric_v12_8.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\simulations\\proton_decay_br_geometric_v12_8.py\")",
       "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\simulations\\gw_dispersion_geometric_v12_8.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\simulations\\gw_dispersion_geometric_v12_8.py\")",
       "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\fix_paper_encoding.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\fix_paper_encoding.py\")",
-      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\simulations\\nul\" del /f \"h:\\Github\\PrincipiaMetaphysica\\simulations\\nul\")"
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\simulations\\nul\" del /f \"h:\\Github\\PrincipiaMetaphysica\\simulations\\nul\")",
+      "Bash(âˆ ')",
+      "Bash(GIT_SEQUENCE_EDITOR=\"sed -i -e ''/0d7932c/d'' -e ''/c735ed2/d'' -e ''/4794793/d''\" git rebase -i 4794793~1)",
+      "Bash(GIT_SEQUENCE_EDITOR=\"sed -i -e ''/0d7932c/d'' -e ''/c735ed2/d'' -e ''/4794793/d''\" git rebase -i 4794793~1 -X theirs)",
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices.py\")",
+      "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices_phase2.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices_phase2.py\")"
     ],
     "deny": [],
     "ask": []
