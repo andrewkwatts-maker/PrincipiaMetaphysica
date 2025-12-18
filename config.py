@@ -38,7 +38,7 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "12.7"
+VERSION = "12.8"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
 
 import numpy as np
@@ -1707,6 +1707,77 @@ class TwoTimePhysics:
     TACHYON_PROJECTED = True
     ANOMALY_FREE = True
     UNITARITY_PRESERVED = True
+
+
+# ==============================================================================
+# v12.8 MASTER ACTION AND PNEUMA FIELD PARAMETERS
+# ==============================================================================
+
+class MasterActionParameters:
+    """
+    v12.8: Master Action parameters for the 26D theory.
+
+    S_26D = ∫d²⁶X √G [M²⁴R + Ψ̄_P(iΓ·D - m)Ψ_P + L_Sp(2,R)]
+
+    The Pneuma field Ψ_P is a 26D spinor from Clifford algebra Cl(24,2).
+    """
+
+    # Bulk Planck mass power
+    BULK_PLANCK_POWER = 24  # M^24 coefficient in 26D action
+
+    # Pneuma spinor dimension chain (26D → 13D → 4D)
+    PNEUMA_26D = 8192       # 2^13 from Cl(24,2)
+    PNEUMA_13D_FULL = 64    # 2^[13/2] = 2^6 = 64 from Cl(12,1)
+    PNEUMA_13D_CHIRAL = 32  # Weyl projection (64/2)
+    PNEUMA_4D = 4           # 4D Weyl spinor
+
+    # Reduction factors
+    SP2R_REDUCTION = 128    # 8192 / 64 = 128 (Sp(2,R) gauge)
+    G2_REDUCTION = 8        # 64 / 8 = 8 (G₂ holonomy)
+    Z2_REDUCTION = 2        # Chirality projection
+
+    # Pneuma condensate parameters
+    CONDENSATE_SCALE = 1.0  # TeV (condensation scale)
+    CONDENSATE_GAP = 0.5    # Mass gap from symmetry breaking
+
+    @staticmethod
+    def reduction_chain():
+        """Returns the full spinor reduction chain"""
+        return {
+            '26D_Cl(24,2)': 8192,
+            '13D_Cl(12,1)': 64,
+            '13D_chiral': 32,
+            '4D_Weyl': 4,
+            'total_factor': 8192 / 4  # = 2048
+        }
+
+
+class HiddenVariableParameters:
+    """
+    v12.8: Hidden variable structure from 4-brane geometry.
+
+    Observable states arise from partial tracing over shadow branes:
+    ρ_Σ₁ = Tr_{Σ₂,Σ₃,Σ₄}[|Ψ⟩_bulk ⟨Ψ|]
+    """
+
+    # Brane structure (same as FundamentalConstants but explicit)
+    N_OBSERVABLE = 1        # Our brane Σ₁
+    N_SHADOW = 3            # Shadow branes Σ₂, Σ₃, Σ₄
+    TOTAL_BRANES = 4
+
+    # Inter-brane correlation via Pneuma field
+    BULK_CORRELATION = 0.8  # Entanglement strength
+    DECOHERENCE_TIME = 1e-18  # seconds (Planck scale)
+
+    # Bell test parameters
+    BELL_CONSTRAINT = 'local'  # Bell constrains LOCAL hidden variables
+    PM_STRUCTURE = 'bulk_nonlocal'  # PM variables are non-local in 3D
+    COMPATIBLE = True  # Bell's theorem does not constrain PM
+
+    # Randomness interpretation
+    RANDOMNESS_TYPE = 'epistemic'  # Not fundamental indeterminacy
+    RANDOMNESS_SOURCE = 'shadow_brane_ignorance'
+    BULK_DETERMINISM = True  # 26D dynamics are deterministic
 
 
 class DimensionalStructure:
