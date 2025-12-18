@@ -1,0 +1,151 @@
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    CITATION EDITS - QUICK REFERENCE CARD                    │
+│                        principia-metaphysica-paper.html                      │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+EDIT 1: M_Z Citation                                                  Priority: LOW
+────────────────────────────────────────────────────────────────────────────────
+Line: 1051 (after)
+Action: INSERT new paragraph
+Text: <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #555;">
+      <em>PDG 2024: $M_Z = 91.1876 \pm 0.0021$ GeV</em></p>
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+EDIT 2: M_Pl Citation                                              Priority: MEDIUM
+────────────────────────────────────────────────────────────────────────────────
+Line: 1084 (after)
+Action: INSERT new paragraph
+Text: <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #555;">
+      <em>CODATA 2022: $M_{\text{Pl}} = 2.4351 \times 10^{18}$ GeV
+      (from $\hbar c/G_N$)</em></p>
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+VERIFICATION 1: sin²θ_W                                              Status: ✓ OK
+────────────────────────────────────────────────────────────────────────────────
+Line: 1055
+Current: PDG 2024: $\sin^2\theta_W = 0.23122 \pm 0.00003$ — 0.33σ agreement
+Action: VERIFY ONLY - No changes needed
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+EDIT 3: Higgs Mass Citation                                       Priority: MEDIUM
+────────────────────────────────────────────────────────────────────────────────
+Line: 1592
+Action: MODIFY text (inline citation)
+Old:   <li><strong>1 constraint:</strong> Higgs mass $m_h = 125.1$ GeV
+       fixes Re$(T) = 7.086$</li>
+New:   <li><strong>1 constraint:</strong> Higgs mass $m_h = 125.1$ GeV
+       (PDG 2024: $125.09 \pm 0.24$ GeV) fixes Re$(T) = 7.086$</li>
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+VERIFICATION 2: m_t                                                 Status: ✓ OK
+────────────────────────────────────────────────────────────────────────────────
+Line: 1253
+Current: PDG 2024: $m_t = 172.69 \pm 0.30$ GeV — exact agreement
+Action: VERIFY ONLY - No changes needed
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+EDIT 4A: Super-K Limit #1                                         Priority: MEDIUM
+────────────────────────────────────────────────────────────────────────────────
+Line: 1143
+Action: REPLACE full paragraph
+Old:   <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+       <em>Super-K limit: $\tau_p > 2.4 \times 10^{34}$ years
+       — PM prediction compatible</em></p>
+New:   <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
+       <em>Super-K limit (PDG 2024): $\tau_p(p \to e^+ \pi^0) > 1.6 \times 10^{34}$
+       years — PM prediction: $3.9 \times 10^{34}$ yr (2.4× bound)</em></p>
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+EDIT 4B: Super-K Limit #2                                         Priority: MEDIUM
+────────────────────────────────────────────────────────────────────────────────
+Line: 1850
+Action: REPLACE text (within paragraph)
+Old:   Super-Kamiokande bound: $\tau_p > 1.67 \times 10^{34}$ yr.
+       PM prediction is 2.3× the current bound, consistent and testable
+       at Hyper-Kamiokande.
+New:   Super-Kamiokande + Gd bound (PDG 2024): $\tau_p > 1.6 \times 10^{34}$ yr.
+       PM prediction is 2.4× the current bound, consistent and testable
+       at Hyper-Kamiokande (target: $10^{36}$ yr sensitivity).
+
+┌───────────────────────────────────────────────────────────────────────────┐
+
+EDIT 5: Add CODATA Reference                                       Priority: MEDIUM
+────────────────────────────────────────────────────────────────────────────────
+Line: 1632 (between line 1631 and closing </ol> tag)
+Action: INSERT new list item
+Text: <li>NIST CODATA Task Group (2022). CODATA 2022 Recommended Values
+      of Physical Constants. <em>National Institute of Standards and
+      Technology</em>. https://physics.nist.gov/cuu/Constants/</li>
+
+┌───────────────────────────────────────────────────────────────────────────┘
+
+SUMMARY TABLE
+─────────────────────────────────────────────────────────────────────────────
+Edit  Value              Line    Type     Notes
+─────────────────────────────────────────────────────────────────────────────
+1     M_Z                1051    INSERT   +0.5rem margin, 85% font
+2     M_Pl               1084    INSERT   +0.5rem margin, 85% font
+3     sin²θ_W            1055    VERIFY   ✓ Already cited
+4     m_h                1592    MODIFY   Inline citation
+5     m_t                1253    VERIFY   ✓ Already cited
+6A    Super-K #1         1143    REPLACE  Unify value to 1.6×10³⁴
+6B    Super-K #2         1850    REPLACE  Unify value to 1.6×10³⁴
+7     CODATA ref         1632    INSERT   New reference list item
+─────────────────────────────────────────────────────────────────────────────
+
+EXECUTION ORDER
+─────────────────────────────────────────────────────────────────────────────
+1. Edit 7  (CODATA reference) - Foundation for Edit 2
+2. Edit 6A + 6B (Super-K limits) - Dual modification
+3. Edit 2 (M_Pl) - Depends on CODATA from step 1
+4. Edit 1 (M_Z) - Independent
+5. Edit 3 (Higgs) - Independent
+6. Verify 1 & 2 - Confirmation
+
+TOTAL EDITS: 8 changes (5 new/modified, 2 verifications, 1 reference)
+TOTAL TIME: ~10-15 minutes
+COMPLEXITY: LOW
+RISK: NONE (citations only)
+
+KEY NUMBERS
+─────────────────────────────────────────────────────────────────────────────
+OLD Super-K value:  2.4 × 10³⁴ years (WRONG - paper inconsistency)
+OLD Super-K value:  1.67 × 10³⁴ years (slightly off from PDG)
+CORRECT value:      1.6 × 10³⁴ years (PDG 2024, Super-K + Super-K-Gd)
+PM prediction:      3.9 × 10³⁴ years
+Ratio:             3.9 / 1.6 = 2.4× (consistent across paper)
+
+FONT/STYLE REFERENCE
+─────────────────────────────────────────────────────────────────────────────
+New PDG citations:   style="margin-top: 0.5rem; font-size: 0.85rem; color: #555;"
+Existing PDG style:  style="margin-top: 1rem; font-size: 0.9rem; color: #666;"
+(Slightly smaller/lighter for secondary citations - matches paper's pattern)
+
+VERIFICATION AFTER EDITS
+─────────────────────────────────────────────────────────────────────────────
+☐ All citations render in browser (gray text, italic)
+☐ CODATA URL is clickable and functional
+☐ Super-K value appears as 1.6 × 10³⁴ on both lines 1143 & 1850
+☐ Higgs citation inline with main text (not on separate line)
+☐ No typos in physics notation ($...$)
+☐ No HTML syntax errors
+☐ PDF renders without formatting issues
+
+REFERENCE VALUES FOR COPY-PASTE
+─────────────────────────────────────────────────────────────────────────────
+M_Z = 91.1876 ± 0.0021 GeV
+M_Pl = 2.4351 × 10^18 GeV
+m_h = 125.09 ± 0.24 GeV
+m_t = 172.69 ± 0.30 GeV
+sin²θ_W = 0.23122 ± 0.00003
+τ_p(p → e⁺π⁰) > 1.6 × 10^34 yr
+
+Generated: 2025-12-18
+Version: 1.0 Quick Reference
+Source: HARDCODED_VALUES_AUDIT.md + CITATION_EDITS.md
