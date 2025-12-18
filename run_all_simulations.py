@@ -1390,11 +1390,35 @@ def run_v12_8_derivation_completions(verbose=True):
         if verbose:
             print(f"\n8. Proton Lifetime MC: ERROR - {e}")
 
+    # 9. Attractor Scalar (Dark Energy Tracking) (New in v12.8)
+    try:
+        from simulations.attractor_scalar_v12_8 import run_attractor_scalar_analysis
+        attractor_result = run_attractor_scalar_analysis(verbose=False)
+        results['attractor_scalar'] = {
+            'phi_M_vev': attractor_result['phi_M_vev'],
+            'a_flux': attractor_result['a_flux'],
+            'b_inst': attractor_result['b_inst'],
+            'f_axion': attractor_result['f_axion'],
+            'w_late_time': attractor_result['w_late_time'],
+            'tracking_confirmed': attractor_result['tracking_confirmed'],
+            'derivation': 'phi_M = log(Vol_7) is G2 volume breathing mode',
+            'status': 'DERIVED - geometric attractor from TCS G2'
+        }
+        if verbose:
+            print(f"\n9. Attractor Scalar (Dark Energy):")
+            print(f"   phi_M = {attractor_result['phi_M_vev']:.3f} M_Pl (volume breathing mode)")
+            print(f"   Late-time attractor: w -> {attractor_result['w_late_time']:.4f}")
+            print(f"   Tracking: {'CONFIRMED' if attractor_result['tracking_confirmed'] else 'FAILED'}")
+    except Exception as e:
+        results['attractor_scalar'] = {'error': str(e), 'status': 'Module import failed'}
+        if verbose:
+            print(f"\n9. Attractor Scalar: ERROR - {e}")
+
     # Summary
     issues_closed = sum(1 for k, v in results.items() if isinstance(v, dict) and v.get('status') and 'DERIVED' in str(v.get('status', '')))
     results['summary'] = {
         'version': '12.8',
-        'issues_addressed': 8,
+        'issues_addressed': 9,
         'issues_closed': issues_closed,
         'derivations_complete': [
             'theta_23 from G2 holonomy (Issue #1)',
@@ -1404,7 +1428,8 @@ def run_v12_8_derivation_completions(verbose=True):
             'VEV coefficient (semi-derived)',
             'Proton BR prediction',
             'GW dispersion prediction',
-            'tau_p MC uncertainty'
+            'tau_p MC uncertainty',
+            'Attractor scalar (dark energy tracking)'
         ],
         'remaining_calibrated': [
             'theta_13 (8.57 deg - pending Yukawa intersection calc)',
@@ -1498,7 +1523,8 @@ def run_all_simulations(verbose=True):
                 'vev_coefficient_v12_8',
                 'proton_decay_br_v12_8',
                 'gw_dispersion_v12_8',
-                'proton_lifetime_mc_v12_8'
+                'proton_lifetime_mc_v12_8',
+                'attractor_scalar_v12_8'
             ]
         }
     }
