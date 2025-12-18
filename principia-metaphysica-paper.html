@@ -765,6 +765,36 @@
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>&rarr; See <a href="#appendix-a">Appendix A</a> for (24,2) signature validation and simulation code</em></p>
             </div>
 
+            <h3 class="subsection-title" id="master-action">2.4 The Master Action and Pneuma Field</h3>
+            <p>The complete 26D action integrates the Pneuma field dynamics with Sp(2,$\mathbb{R}$) gauge constraints:</p>
+            <div class="equation-block">
+                $$S_{26D} = \int d^{26}X \sqrt{G} \left[ M^{24} R + \bar{\Psi}_P (i\Gamma^M D_M - m)\Psi_P + \mathcal{L}_{Sp(2,\mathbb{R})} \right]$$
+                <span class="equation-number">(2.3)</span>
+            </div>
+
+            <div class="derivation-box">
+                <h4>The Pneuma Field $\Psi_P$ (Primordial Spinor)</h4>
+                <p>The Pneuma is an 8,192-component spinor in 26D from Clifford algebra Cl(24,2):</p>
+                <ol>
+                    <li class="derivation-step"><strong>26D Clifford algebra:</strong> $\{\Gamma^M, \Gamma^N\} = 2\eta^{MN}$ with $M,N = 0,...,25$</li>
+                    <li class="derivation-step"><strong>Spinor dimension:</strong> $2^{26/2} = 2^{13} = 8192$ components</li>
+                    <li class="derivation-step"><strong>Sp(2,$\mathbb{R}$) reduction:</strong> 8192 $\to$ 64 effective components in 13D shadow</li>
+                    <li class="derivation-step"><strong>G$_2$ chirality:</strong> Holonomy projects to chiral 4D Weyl spinors (4 components)</li>
+                </ol>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    <em>The Pneuma condensate $\langle\bar{\Psi}_P\Psi_P\rangle$ generates geometry, time arrow, and all Standard Model matter.</em>
+                </p>
+            </div>
+
+            <div class="info-box" style="background: #e8f5e9; border-left: 4px solid #4caf50; padding: 1rem; margin: 1rem 0;">
+                <h4 style="color: #2e7d32; margin-top: 0;">Action Term Summary</h4>
+                <ul style="margin-bottom: 0;">
+                    <li><strong>$M^{24}R$:</strong> Einstein-Hilbert gravity in 26D (exponent = D-2 = 24)</li>
+                    <li><strong>$\bar{\Psi}_P(i\Gamma D - m)\Psi_P$:</strong> Pneuma kinetic + mass terms</li>
+                    <li><strong>$\mathcal{L}_{Sp(2,\mathbb{R})}$:</strong> Gauge constraints eliminating second time</li>
+                </ul>
+            </div>
+
             <!-- ============================================================ -->
             <!-- SECTION 3: SHADOW REDUCTION -->
             <!-- ============================================================ -->
@@ -876,6 +906,45 @@
             <div class="equation-block">
                 $$\Psi_{64} \in \text{Spin}(12,1), \quad \dim(\Psi) = 2^{[13/2]} = 64$$
                 <span class="equation-number">(3.2)</span>
+            </div>
+
+            <h3 class="subsection-title" id="hidden-variables">3.3 Hidden Variables from Shadow Branes</h3>
+            <p>
+                The 4-brane structure (1 observable + 3 shadow) provides a geometric explanation for
+                quantum apparent randomness. Observable states on our brane $\Sigma_1$ result from
+                <strong>partial tracing</strong> over shadow brane degrees of freedom:
+            </p>
+            <div class="equation-block">
+                $$\rho_{\Sigma_1} = \text{Tr}_{\Sigma_2,\Sigma_3,\Sigma_4} \left[|\Psi\rangle_{\text{bulk}} \langle\Psi|\right]$$
+                <span class="equation-number">(3.3)</span>
+            </div>
+            <p>
+                What appears as quantum randomness is actually <em>deterministic dynamics</em> across the full
+                4-brane system, with apparent stochasticity arising from our inability to access shadow sector states.
+            </p>
+
+            <div class="info-box" style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 1rem; margin: 1rem 0;">
+                <h4 style="color: #e65100; margin-top: 0;">Bell's Theorem Compatibility</h4>
+                <p style="margin-bottom: 0;">
+                    This hidden variable structure evades Bell's theorem because Bell constrains
+                    <em>local</em> hidden variables. The inter-brane correlations are fundamentally
+                    <strong>non-local in 3D space</strong>: the Pneuma field propagates through the bulk,
+                    coupling all branes non-locally via extra dimensions. What appears non-local in 3D is
+                    actually local in the 26D bulk geometry.
+                </p>
+            </div>
+
+            <div class="derivation-box">
+                <h4>Quantum Measurement in PM Framework</h4>
+                <ol>
+                    <li class="derivation-step"><strong>Pre-measurement:</strong> Observable and shadow branes are entangled via bulk Pneuma field</li>
+                    <li class="derivation-step"><strong>Measurement:</strong> Decoherence with macroscopic apparatus on $\Sigma_1$</li>
+                    <li class="derivation-step"><strong>Outcome:</strong> Determined by shadow brane state (the "hidden variable")</li>
+                    <li class="derivation-step"><strong>Apparent collapse:</strong> Just learning about pre-existing bulk correlation</li>
+                </ol>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    <em>&rarr; Randomness is <strong>epistemic</strong> (our ignorance of shadow branes), not <strong>ontic</strong> (fundamental indeterminacy). This restores determinism at the 26D bulk level. See <code>simulations/hidden_variables_v12_8.py</code>.</em>
+                </p>
             </div>
 
             <!-- ============================================================ -->
@@ -1495,20 +1564,23 @@
             </div>
             <p>
                 In the TCS G$_2$ construction, Vol$_7$ is determined by matching asymptotic Calabi-Yau threefold volumes.
-                The scalar potential takes the geometric form:
+                The complete scalar potential has three geometric contributions:
             </p>
             <div class="equation-block">
-                $$V(\phi_M) = V_0 \left[1 + A \cos\left(\frac{\omega \phi_M}{f}\right)\right]$$
+                $$V(\phi_M) = V_{\text{flux}} e^{-a\phi_M} + V_{\text{inst}} e^{-b/\phi_M} + V_{\text{axion}} \cos\left(\frac{\phi_M}{f}\right)$$
                 <span class="equation-number">(7.6)</span>
             </div>
             <p>
-                where the coefficients are determined entirely by topology:
+                where all coefficients are determined by TCS G$_2$ topology:
             </p>
             <ul>
-                <li>$a = \sqrt{\chi_{\text{eff}}/6} = \sqrt{24} \approx 4.9$ (from flux quanta on 4-cycles)</li>
-                <li>$b = b_3 = 24$ (from membrane instantons on 3-cycles)</li>
-                <li>$f = 12$ (from shadow spatial dimensions, orientation sum)</li>
+                <li><strong>Flux term:</strong> $a = \sqrt{\chi_{\text{eff}}/6} = \sqrt{144/6} = \sqrt{24} \approx 4.9$ (from G$_4$-flux on 4-cycles)</li>
+                <li><strong>Instanton term:</strong> $b = b_3 = 24$ (from M2-brane instantons wrapping 3-cycles)</li>
+                <li><strong>Axion term:</strong> $f = 12$ (from discrete shift symmetry; shadow spatial dimensions)</li>
             </ul>
+            <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                <em>The simplified form $V(\phi_M) = V_0[1 + A\cos(\omega\phi_M/f)]$ applies near the attractor minimum where flux and instanton terms balance. See <code>simulations/attractor_scalar_v12_8.py</code> for full numerical implementation.</em>
+            </p>
 
             <div class="derivation-box">
                 <h4>Attractor Mechanism</h4>
@@ -1535,6 +1607,68 @@
 
             <!-- HC tracking pixel 5 -->
             <img class="hc-pixel" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-hc="section7-view">
+
+            <h3 class="subsection-title" id="thermal-time">7.5 The Thermal Time Hypothesis</h3>
+            <p>
+                Time emergence follows from the <strong>Connes-Rovelli Thermal Time Hypothesis</strong> (TTH):
+                rather than postulating fundamental time, time emerges from the thermal state of the quantum system.
+            </p>
+
+            <div class="info-box" style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 1rem; margin: 1rem 0;">
+                <h4 style="color: #1565c0; margin-top: 0;">Thermal Time Hypothesis (Connes-Rovelli 1994)</h4>
+                <p style="margin-bottom: 0;">
+                    In any generally covariant quantum theory, the physical time flow is determined by the
+                    thermal state. If $\rho$ is the density matrix, time evolution is generated by the
+                    <strong>modular Hamiltonian</strong> $K = -\log(\rho)$.
+                </p>
+            </div>
+
+            <div class="derivation-box">
+                <h4>Derivation: Thermal Time from KMS Condition</h4>
+                <ol>
+                    <li class="derivation-step"><strong>Thermal density matrix:</strong> $\rho = e^{-\beta H}/Z$ (canonical ensemble)</li>
+                    <li class="derivation-step"><strong>Modular Hamiltonian:</strong> $K = -\log(\rho) = \beta H + \log Z$</li>
+                    <li class="derivation-step"><strong>Modular automorphism:</strong> $\sigma_t(A) = e^{iKt} A e^{-iKt}$</li>
+                    <li class="derivation-step"><strong>KMS condition:</strong> $\text{Tr}(\rho \sigma_t(A) B) = \text{Tr}(\rho B \sigma_{t+i\beta}(A))$</li>
+                    <li class="derivation-step"><strong>Physical time:</strong> $t_{\text{therm}}$ emerges as the modular flow parameter</li>
+                </ol>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    <em>&rarr; The Pneuma field provides the thermal state; its modular flow defines observable time.</em>
+                </p>
+            </div>
+
+            <h4>Two-Time Structure and Gauge Fixing</h4>
+            <p>
+                The (24,2) signature contains two timelike coordinates:
+            </p>
+            <ul>
+                <li><strong>$t_{\text{therm}}$:</strong> Thermal/observable time from KMS modular flow</li>
+                <li><strong>$t_{\text{ortho}}$:</strong> Orthogonal/hidden time eliminated by Sp(2,$\mathbb{R}$) gauge</li>
+            </ul>
+            <p>
+                The gauge fixing constraint $X \cdot P = 0$ eliminates $t_{\text{ortho}}$, leaving physical evolution
+                along $t_{\text{therm}}$ only. This explains why we perceive a single time dimension despite
+                the (24,2) bulk signature.
+            </p>
+
+            <div class="derivation-box">
+                <h4>Derivation: Thermal-Hubble Coupling $\alpha_T = 2.7$</h4>
+                <p>The thermal time parameter $\alpha_T$ measures the coupling between thermal and cosmological time:</p>
+                <div class="equation-block">
+                    $$\alpha_T = \frac{d(\ln \tau)}{d(\ln a)} - \frac{d(\ln H)}{d(\ln a)}$$
+                    <span class="equation-number">(7.7)</span>
+                </div>
+                <ol>
+                    <li class="derivation-step"><strong>Thermal time scaling:</strong> $\tau \sim T^{-1} \sim a$ (adiabatic) $\Rightarrow d(\ln \tau)/d(\ln a) = +1$</li>
+                    <li class="derivation-step"><strong>Hubble in matter era:</strong> $H \sim a^{-3/2}$ $\Rightarrow d(\ln H)/d(\ln a) = -3/2$</li>
+                    <li class="derivation-step"><strong>Single-time baseline:</strong> $\alpha_T^{(0)} = 1 - (-3/2) = 2.5$</li>
+                    <li class="derivation-step"><strong>Z$_2$ mirror correction:</strong> $+0.2$ from thermal coupling to mirror sector</li>
+                    <li class="derivation-step"><strong>Total:</strong> $\alpha_T = 2.5 + 0.2 = 2.7$</li>
+                </ol>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                    <em>&rarr; See <code>simulations/thermal_time_v12_8.py</code> for numerical verification.</em>
+                </p>
+            </div>
 
             <!-- ============================================================ -->
             <!-- SECTION 8: PREDICTIONS -->
