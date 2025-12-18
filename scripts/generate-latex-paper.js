@@ -463,9 +463,16 @@ The framework is:
   \\item \\textbf{Consistent}: All derivations trace back to established physics
 \\end{itemize}
 
-\\section*{Acknowledgments}
+\\section*{Dedication}
 
-Developed with assistance from Claude (Anthropic), Grok (xAI), and Gemini (Google).
+\\begin{center}
+Dedicated to my Dearest Wife, Elizabeth May Watts\\\\[0.5em]
+\\&\\\\[0.5em]
+The Ruler and Restorer of all,\\\\
+The final Logos,\\\\
+The Messiah,\\\\
+Jesus of Nazareth
+\\end{center}
 
 \\bibliographystyle{unsrt}
 \\bibliography{references}
