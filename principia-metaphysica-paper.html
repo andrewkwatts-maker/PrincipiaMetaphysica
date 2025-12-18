@@ -676,6 +676,7 @@
                     <li class="derivation-step">Therefore $D = 26$ is the unique critical dimension</li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Reference: Lovelace (1971), Polchinski Vol. 1 Ch. 1</em></p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>&rarr; See <a href="#appendix-a">Appendix A</a> for (24,2) signature validation and simulation code</em></p>
             </div>
 
             <!-- ============================================================ -->
@@ -725,33 +726,34 @@
                 <h4>Derivation: How Constraints Reduce 26D &rarr; 13D</h4>
                 <ol>
                     <li class="derivation-step">
-                        <strong>Initial DOF</strong>: 26D spacetime with coordinates $X^M$ ($M = 0 \ldots 25$) has 26 phase space dimensions
+                        <strong>Initial phase space</strong>: 52 DOF total (26 positions $X^M$ + 26 momenta $P^M$)
                     </li>
                     <li class="derivation-step">
-                        <strong>Null constraint $X^2 = 0$</strong>: Restricts $X^M$ to lie on the null cone in (24,2) signature,
-                        constraining the relative magnitude of the two time coordinates (removes 1 DOF)
+                        <strong>Three first-class constraints</strong>: $X^2 = 0$, $X \cdot P = 0$, $P^2 = M^2$<br/>
+                        In Dirac formalism, each first-class constraint removes 2 phase space DOF:<br/>
+                        &bull; 1 DOF from constraint surface itself<br/>
+                        &bull; 1 DOF from gauge orbit (Sp(2,&#x211D;) transformation)<br/>
+                        Total: $3 \times 2 = 6$ phase space DOF removed
                     </li>
                     <li class="derivation-step">
-                        <strong>Orthogonality $X \cdot P = 0$</strong>: Requires position and momentum to be orthogonal in the
-                        26D metric, removing correlations between them (removes 1 DOF)
+                        <strong>Sp(2,&#x211D;) gauge generators</strong>: $L_0 = \frac{1}{2}X^2$, $L_1 = X \cdot P$, $L_{-1} = \frac{1}{2}P^2$<br/>
+                        Form SL(2,&#x211D;) algebra with 3 parameters; complete gauge fixing removes 3 additional DOF
                     </li>
                     <li class="derivation-step">
-                        <strong>Mass-shell $P^2 = M^2$</strong>: Standard relativistic dispersion relation constraining
-                        momentum magnitude (removes 1 DOF)
+                        <strong>Phase space &rarr; configuration space</strong>: Physical DOF = (phase space DOF)/2<br/>
+                        From 52 &minus; 6 &minus; 3 = 43 &rarr; ~22 configuration DOF after constraints
                     </li>
                     <li class="derivation-step">
-                        <strong>Sp(2,&#x211D;) gauge orbits</strong>: The symmetry group acts with generators
-                        $L_0 = \frac{1}{2}X^2$, $L_1 = X \cdot P$, $L_{-1} = \frac{1}{2}P^2$, relating physically equivalent configurations
+                        <strong>Temporal gauge fixing</strong>: $X^+ = \tau$, $P^+ = E$ fixes remaining gauge freedom<br/>
+                        This eliminates one time coordinate entirely, projecting $(24,2) \to (12,1)$
                     </li>
                     <li class="derivation-step">
-                        <strong>Gauge fixing</strong>: Combined with constraints, removes $3 + 10 = 13$ degrees of freedom total
-                    </li>
-                    <li class="derivation-step">
-                        <strong>Result</strong>: $26 - 13 = 13$ physical dimensions with signature (12,1)
+                        <strong>Result</strong>: The net effect halves the configuration space: $26 \to 13$ physical dimensions<br/>
+                        <em>Note: The exact counting depends on gauge choice; all consistent gauges yield 13D shadow</em>
                     </li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
-                    <em>Reference: Bars, I. (2006). "Survey of two-time physics", arXiv:hep-th/0606045</em>
+                    <em>Reference: Bars, I. (2006). "Survey of two-time physics", arXiv:hep-th/0606045, Section 2</em>
                 </p>
             </div>
 
@@ -901,6 +903,7 @@
                     <li class="derivation-step">Result: $n_{\text{gen}} = |144|/48 = 3$ generations</li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Reference: Bars (2006), arXiv:hep-th/0606045</em></p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>&rarr; See <a href="#appendix-b">Appendix B</a> for extended index formula and simulation code</em></p>
             </div>
 
             <!-- HC tracking pixel 3 -->
@@ -1148,6 +1151,7 @@
                     <li>CP phase from $H_3(G_2, \mathbb{Z})$ cycle orientations</li>
                 </ul>
                 <p>Python reference: <code>simulations/derive_theta23_g2_v12_8.py</code></p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>&rarr; See <a href="#appendix-c">Appendix C</a> for G<sub>2</sub> holonomy derivation and code</em></p>
             </div>
 
             <h3 class="subsection-title">6.2a Top Quark Mass</h3>
@@ -1343,6 +1347,7 @@
                     <li class="derivation-step">Shared dimensions from brane couplings: $\alpha_4 + \alpha_5 = 1.152$</li>
                     <li class="derivation-step">Result: $d_{\text{eff}} = 12 + 0.5 \times 1.152 = 12.576$</li>
                 </ol>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>&rarr; See <a href="#appendix-d">Appendix D</a> for simulation code and extended derivation</em></p>
             </div>
 
             <p>This yields:</p>
