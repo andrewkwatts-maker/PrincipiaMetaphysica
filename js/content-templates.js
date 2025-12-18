@@ -24,7 +24,7 @@ const getContentTemplates = () => {
       version: PM.meta?.version || '12.7',
       author: 'Andrew Keith Watts',
       copyright: `Copyright © 2025-2026 Andrew Keith Watts. All rights reserved.`,
-      aiAttribution: 'Developed with assistance from Claude (Anthropic), Grok (xAI), and Gemini (Google).'
+      dedication: 'Dedicated to my Dearest Wife, Elizabeth May Watts & The Ruler and Restorer of all, The final Logos, The Messiah, Jesus of Nazareth'
     },
 
     // ========================================================================
