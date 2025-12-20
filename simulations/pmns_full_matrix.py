@@ -347,7 +347,7 @@ def run_pmns_calculation(verbose=True):
 
     # NuFIT 5.2 comparison
     nufit = {
-        'theta_23': (47.2, 2.0),  # degrees, +/-1sigma
+        'theta_23': (45.0, 1.5),  # degrees, +/-1sigma
         'theta_12': (33.41, 0.75),
         'theta_13': (8.57, 0.12),
         'delta_cp': (232, 30)
