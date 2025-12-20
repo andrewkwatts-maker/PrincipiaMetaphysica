@@ -2145,7 +2145,7 @@ if __name__ == '__main__':
     }
 
     # Add 24-dimension Greek letter nomenclature (v12.9+)
-    # New Jerusalem Architecture: Gate Mirror (tribes/gemstones) + Foundation Mirror (apostles)
+    # Gate Mirror + Foundation Mirror across Z₂ mirror branes
     try:
         from config import ShadowDimensionNomenclature
         results['shadow_dimension_nomenclature'] = ShadowDimensionNomenclature.get_all_dimensions()
@@ -2154,29 +2154,29 @@ if __name__ == '__main__':
         print("  Warning: ShadowDimensionNomenclature not available")
 
     # Add G2 direction nomenclature (v12.9+)
-    # 7 directions labeled with Hebrew Sefirot + Enochian Heptarchic Kings
+    # 7 directions labeled with Hebrew letter subscripts
     try:
         from config import G2DirectionNomenclature
         results['g2_direction_nomenclature'] = G2DirectionNomenclature.get_all_directions()
-        print("  Added: g2_direction_nomenclature (7 Hebrew Sefirot + Enochian Kings)")
+        print("  Added: g2_direction_nomenclature (7 Hebrew letter directions)")
     except ImportError:
         print("  Warning: G2DirectionNomenclature not available")
 
     # Add Brane Localization nomenclature (v12.9+)
-    # Enochian Watchtower naming: Λ_Α (Exarp), Λ_Π (Bitom), Λ_Υ (Hcoma), Λ_Γ (Nanta)
+    # Brane naming: Λ_Α (Exarp), Λ_Π (Bitom), Λ_Υ (Hcoma), Λ_Γ (Nanta)
     try:
         from config import BraneNomenclature
         results['brane_nomenclature'] = BraneNomenclature.get_all_branes()
-        print("  Added: brane_nomenclature (4 Enochian Watchtower branes)")
+        print("  Added: brane_nomenclature (4 brane localization factors)")
     except ImportError:
         print("  Warning: BraneNomenclature not available")
 
     # Add Hebrew Physics Nomenclature (v12.9+)
-    # Kabbalistic naming: k_ג (warping), C_כ (flux), f_ה (partition), S_מ (instanton), δ_ל (threshold)
+    # Hebrew letter naming: k_ג (warping), C_כ (flux), f_ה (partition), S_מ (instanton), δ_ל (threshold)
     try:
         from config import HebrewPhysicsNomenclature
         results['hebrew_physics_nomenclature'] = HebrewPhysicsNomenclature.get_all_parameters()
-        print("  Added: hebrew_physics_nomenclature (5 Kabbalistic parameters)")
+        print("  Added: hebrew_physics_nomenclature (5 Hebrew letter parameters)")
     except ImportError:
         print("  Warning: HebrewPhysicsNomenclature not available")
 
