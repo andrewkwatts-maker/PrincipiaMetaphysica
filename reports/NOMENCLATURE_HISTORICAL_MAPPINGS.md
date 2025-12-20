@@ -12,20 +12,21 @@ This document preserves the complete mystical/esoteric mappings that inspired th
 | Shadow_ח (Chet) | ח | 0.576152 | Chet = 8, represents "life" / fence/enclosure |
 
 **Sitra Pairing:**
-- ק_Α_Γ: Air↔Earth coupling (Exarp↔Nanta)
-- ח_Π_Υ: Fire↔Water coupling (Bitom↔Hcoma)
+- ק_Α_Γ: Air↔Earth coupling (Exarp↔Nanta) — Foundation Mirror letters (spiritual/apostles side)
+- ח_Π_Υ: Fire↔Water coupling (Bitom↔Hcoma) — Gate Mirror letters (material/tribes side)
 
 ---
 
 ## 2. 24 Shadow Dimensions (Greek Letters)
 
-### Gate Mirror (Σ₁) - 12 Dimensions
+### Gate Mirror (Σ₁) - 12 Dimensions (Material/Tribes Side)
 *Original mapping: Twelve Tribes of Israel + Gemstones (Revelation 21:12, 19-20)*
+*Contains Π, Υ for Shadow_ח coupling*
 
 | Wall | Greek | Tribe | Gemstone |
 |------|-------|-------|----------|
 | North | Ρ (Rho) | Reuben | Ruby |
-| North | Γ (Gamma) | Judah | Emerald |
+| North | Π (Pi) | Judah | Emerald |
 | North | Ζ (Zeta) | Levi | Zircon |
 | East | Ο (Omicron) | Joseph | Onyx |
 | East | Ι (Iota) | Benjamin | Jasper |
@@ -33,12 +34,13 @@ This document preserves the complete mystical/esoteric mappings that inspired th
 | South | Τ (Tau) | Simeon | Topaz |
 | South | Ω (Omega) | Issachar | Amethyst |
 | South | Χ (Chi) | Zebulun | Peridot |
-| West | Α (Alpha) | Gad | Agate |
+| West | Υ (Upsilon) | Gad | Agate |
 | West | Β (Beta) | Asher | Beryl |
 | West | Κ (Kappa) | Naphtali | Chrysoprase |
 
-### Foundation Mirror (Σ₂) - 12 Dimensions
+### Foundation Mirror (Σ₂) - 12 Dimensions (Spiritual/Apostles Side)
 *Original mapping: Twelve Apostles (Revelation 21:14)*
+*Contains Α, Γ for Shadow_ק coupling*
 
 | Wall | Greek | Apostle |
 |------|-------|---------|
@@ -50,16 +52,16 @@ This document preserves the complete mystical/esoteric mappings that inspired th
 | East | Μ (Mu) | Bartholomew |
 | South | Ν (Nu) | Matthew |
 | South | Ξ (Xi) | Thomas |
-| South | Π (Pi) | James the Less |
-| West | Υ (Upsilon) | Jude |
+| South | Γ (Gamma) | James the Less |
+| West | Α (Alpha) | Jude |
 | West | Φ (Phi) | Simon the Zealot |
 | West | Ψ (Psi) | Matthias |
 
 **Paired Dimension Notation:** X_{Gate-Foundation}
-- North: X_{Ρ-Δ}, X_{Γ-Ε}, X_{Ζ-Η}
+- North: X_{Ρ-Δ}, X_{Π-Ε}, X_{Ζ-Η}
 - East: X_{Ο-Θ}, X_{Ι-Λ}, X_{Σ-Μ}
-- South: X_{Τ-Ν}, X_{Ω-Ξ}, X_{Χ-Π}
-- West: X_{Α-Υ}, X_{Β-Φ}, X_{Κ-Ψ}
+- South: X_{Τ-Ν}, X_{Ω-Ξ}, X_{Χ-Γ}
+- West: X_{Υ-Α}, X_{Β-Φ}, X_{Κ-Ψ}
 
 **Reference:** New Jerusalem Architecture (Revelation 21:12-14, 19-20)
 

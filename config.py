@@ -1640,15 +1640,15 @@ class ShadowDimensionNomenclature:
     # Cardinal walls (4 walls × 3 pairs = 12 paired dimensions)
     WALLS = ("north", "east", "south", "west")
 
-    # Gate Mirror Greek letters - 12 dimensions
-    GATE_LETTERS = ("Ρ", "Γ", "Ζ", "Ο", "Ι", "Σ", "Τ", "Ω", "Χ", "Α", "Β", "Κ")
-    GATE_NAMES = ("Rho", "Gamma", "Zeta", "Omicron", "Iota", "Sigma",
-                  "Tau", "Omega", "Chi", "Alpha", "Beta", "Kappa")
+    # Gate Mirror Greek letters - 12 dimensions (includes Π, Υ for Shadow_ח coupling)
+    GATE_LETTERS = ("Ρ", "Π", "Ζ", "Ο", "Ι", "Σ", "Τ", "Ω", "Χ", "Υ", "Β", "Κ")
+    GATE_NAMES = ("Rho", "Pi", "Zeta", "Omicron", "Iota", "Sigma",
+                  "Tau", "Omega", "Chi", "Upsilon", "Beta", "Kappa")
 
-    # Foundation Mirror Greek letters - 12 dimensions
-    FOUNDATION_LETTERS = ("Δ", "Ε", "Η", "Θ", "Λ", "Μ", "Ν", "Ξ", "Π", "Υ", "Φ", "Ψ")
+    # Foundation Mirror Greek letters - 12 dimensions (includes Α, Γ for Shadow_ק coupling)
+    FOUNDATION_LETTERS = ("Δ", "Ε", "Η", "Θ", "Λ", "Μ", "Ν", "Ξ", "Γ", "Α", "Φ", "Ψ")
     FOUNDATION_NAMES = ("Delta", "Epsilon", "Eta", "Theta", "Lambda", "Mu",
-                        "Nu", "Xi", "Pi", "Upsilon", "Phi", "Psi")
+                        "Nu", "Xi", "Gamma", "Alpha", "Phi", "Psi")
 
     # Gate Mirror labels (historical naming convention)
     TRIBES = (
@@ -1677,15 +1677,15 @@ class ShadowDimensionNomenclature:
     # Symbolic meanings for each paired dimension
     SYMBOLIC_MEANINGS = (
         "Firstborn + Rock (stability)",           # Ρ–Δ: Reuben/Peter
-        "Royal + Reach (extension)",              # Γ–Ε: Judah/Andrew
+        "Royal + Reach (extension)",              # Π–Ε: Judah/Andrew
         "Priestly + Heritage (inheritance)",      # Ζ–Η: Levi/James Great
         "Fruitful + Divine Love (theology)",      # Ο–Θ: Joseph/John
         "Beloved + Reason (logos)",               # Ι–Λ: Benjamin/Philip
         "Judge + Truth Spreading (manifest)",     # Σ–Μ: Dan/Bartholomew
         "Hearing + Record (numbers)",             # Τ–Ν: Simeon/Matthew
         "Wisdom + Faith Sight (vision)",          # Ω–Ξ: Issachar/Thomas
-        "Mariner + Steadfastness (pillar)",       # Χ–Π: Zebulun/James Less
-        "Beginning + Unity",                       # Α–Υ: Gad/Jude
+        "Mariner + Steadfastness (pillar)",       # Χ–Γ: Zebulun/James Less
+        "Beginning + Unity",                       # Υ–Α: Gad/Jude
         "Prosperous + Passion (fire)",            # Β–Φ: Asher/Simon Zealot
         "Free + Soul (spirit)"                    # Κ–Ψ: Naphtali/Matthias
     )
