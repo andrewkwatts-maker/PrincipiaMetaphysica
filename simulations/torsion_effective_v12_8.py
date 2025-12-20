@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-V12.8: Effective Torsion from G₄ Flux Quantization (100% GEOMETRIC)
+V12.8: Effective Torsion from G₄ Flux Quantization
 
-This module derives the effective torsion T_omega from PURE GEOMETRIC principles
-using standard G₄ flux quantization in G₂ compactifications.
+This module derives the effective torsion T_omega from G₄ flux quantization
+on G₂ compactifications using standard literature formulas.
 
-STATUS: GEOMETRIC (100% derived, no tuning)
+STATUS: Geometric derivation (no phenomenological tuning)
 RIGOR: Literature-backed (Acharya et al. 2001, Halverson-Taylor 2019)
 
 DERIVATION:
@@ -87,9 +87,9 @@ except ImportError:
 
 def effective_torsion_geometric(chi_eff: int = CHI_EFF, b3: int = B3) -> float:
     """
-    Derive effective torsion from PURE G₄ flux quantization (100% geometric).
+    Derive effective torsion from G₄ flux quantization.
 
-    This is the v12.8 geometric derivation using standard literature formulas.
+    This is the v12.8 derivation using standard literature formulas.
 
     Physical Argument:
     -----------------
@@ -150,7 +150,7 @@ def effective_torsion_detailed(chi_eff: int = CHI_EFF, b3: int = B3) -> Dict:
         'flux_divisor': FLUX_DIVISOR,
         'chi_eff': chi_eff,
         'b3': b3,
-        'derivation_status': 'GEOMETRIC (100% derived, no tuning)',
+        'derivation_status': 'Geometric derivation from flux quantization',
         'derivation_chain': [
             'TCS G2 manifold is Ricci-flat (geometric torsion tau = 0)',
             'M-theory requires G4 flux for moduli stabilization',
@@ -164,7 +164,7 @@ def effective_torsion_detailed(chi_eff: int = CHI_EFF, b3: int = B3) -> Dict:
             'This is EFFECTIVE torsion from G-flux, not geometric torsion. '
             'TCS manifolds remain Ricci-flat. The effective torsion appears '
             'in the moduli potential and affects M_GUT calculation. '
-            f'The {error_percent:.0f}% agreement is excellent for an effective parameter '
+            f'The {error_percent:.0f}% agreement is within typical uncertainties for effective parameters '
             'in string compactifications (typical uncertainties are 10-20%).'
         ),
         'references': [

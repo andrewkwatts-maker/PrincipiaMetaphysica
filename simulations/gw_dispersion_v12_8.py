@@ -1,20 +1,18 @@
 #!/usr/bin/env python3
 """
-V12.8: Gravitational Wave Dispersion Prediction (100% GEOMETRIC)
+V12.8: Gravitational Wave Dispersion Prediction
 
-This file provides a PREDICTION for GW dispersion from torsion effects in the
-two-time framework. This is NOT a validated prediction because no experimental
-data exists to test it yet.
+This file provides a prediction for GW dispersion from torsion effects in the
+two-time framework. This prediction awaits future experimental verification.
 
-STATUS: PREDICTION (Future testable by LISA 2037+)
-VALIDATION: NOT YET POSSIBLE (beyond current detector sensitivity)
+STATUS: Prediction (testable by LISA 2037+)
+VALIDATION: Beyond current detector sensitivity
 
-V12.8 UPDATE: Pure geometric derivation:
+V12.8 UPDATE: Geometric derivation from flux quantization:
 - N_flux = chi_eff / 6 = 144 / 6 = 24 (standard G2 flux quantization)
 - T_omega = -b3 / N_flux = -24 / 24 = -1.000
 - eta = exp(|T_omega|) / b3 = exp(1.0) / 24 = 0.113
-- 100% geometric (no tuning constants)
-- Agreement with phenomenological T_omega=-0.884: 13% (excellent)
+- Agreement with phenomenological T_omega=-0.884: 13%
 
 This predicts a small dispersion relation modification for GWs propagating
 through the compactified dimensions.
@@ -23,7 +21,7 @@ VARIABLE DOCUMENTATION:
 ----------------------
 N_flux (24): Number of G4 flux quanta = chi_eff / 6
 T_omega (-1.000): Effective torsion from flux quantization
-                  T_omega = -b3 / N_flux (100% GEOMETRIC)
+                  T_omega = -b3 / N_flux
 b3 (24): Third Betti number (associative 3-cycles)
 chi_eff (144): Effective Euler characteristic
 eta (0.113): GW dispersion coefficient = exp(|T_omega|) / b3
@@ -57,7 +55,7 @@ except ImportError:
 # T_omega = -b3 / N_flux = -24 / 24 = -1.000
 FLUX_DIVISOR = 6  # Standard in M-theory G2 literature
 N_FLUX = CHI_EFF / FLUX_DIVISOR  # = 24
-T_OMEGA_GEOMETRIC = -B3 / N_FLUX  # = -1.000 (100% geometric, 13% agreement with -0.884)
+T_OMEGA_GEOMETRIC = -B3 / N_FLUX  # = -1.000 (13% agreement with phenomenological -0.884)
 
 
 def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
@@ -71,11 +69,10 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
     3. The dispersion parameter eta controls frequency-dependent speed
     4. Formula: eta = exp(|T_omega|) / b3
 
-    V12.8 Pure Geometric Formula:
+    V12.8 Formula:
     - N_flux = chi_eff / 6 = 24 (standard G2 flux quantization)
     - T_omega = -b3 / N_flux = -1.000
     - eta = exp(1.0) / 24 = 0.113
-    - 100% geometric (no tuning constants)
 
     Args:
         T_omega: Effective torsion coefficient (default -1.000 geometric)
@@ -92,7 +89,7 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
         'b3': b3,
         'formula': 'eta = exp(|T_omega|)/b3',
         'derivation': 'eta = exp(|T_omega|)/b3',
-        'status': 'GEOMETRIC PREDICTION (100% derived, no tuning)',
+        'status': 'Geometric prediction from flux quantization',
         'testable': 'Future GW observatories (LISA, ET)'
     }
 
@@ -157,12 +154,12 @@ def gw_dispersion_detailed(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> 
             'Orthogonal time propagation introduces dispersion effects',
             f'G4 flux quantization: N_flux = chi_eff / 6 = {CHI_EFF} / 6 = {N_flux:.0f}',
             f'Effective torsion: T_omega = -b3 / N_flux = -{b3} / {N_flux:.0f} = {T_omega:.3f}',
-            '(This is 100% GEOMETRIC - standard G2 flux quantization)',
+            '(Standard G2 flux quantization formula)',
             f'GW dispersion: eta = exp(|T_omega|) / b3',
             f'eta = exp(|{T_omega:.3f}|) / {b3} = {eta:.4f}',
             f'Cross-check confirms: eta = {alt["eta"]:.4f}'
         ],
-        'status': 'GEOMETRIC PREDICTION (100% derived)',
+        'status': 'Prediction from geometric derivation',
         'validation': 'NOT YET POSSIBLE (beyond current sensitivity)',
         'future_test': 'LISA 2037+ (space-based GW detector)',
         'expected_effect': 'High-frequency GWs arrive slightly before low-frequency',
@@ -177,7 +174,7 @@ def gw_dispersion_detailed(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> 
 
 if __name__ == '__main__':
     print("=" * 70)
-    print("V12.8: Gravitational Wave Dispersion CORRECTED PREDICTION")
+    print("V12.8: Gravitational Wave Dispersion Prediction")
     print("=" * 70)
 
     result = gw_dispersion_detailed()
