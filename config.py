@@ -267,7 +267,7 @@ class ModuliParameters:
 
     # Non-perturbative Uplift
     KAPPA_UPLIFT = 1.0        # Uplift coefficient (order unity)
-    S_MEM = 1.0         # Instanton action exponent (simplified)
+    S_INSTANTON_NORM = 1.0    # Normalized instanton exponent (simplified moduli)
 
     # Axionic Modulation
     MU_PERIODIC = 0.5         # Periodic potential amplitude
@@ -804,7 +804,7 @@ def get_config_dict():
         'lambda_coupling': ModuliParameters.LAMBDA_COUPLING,
         'F_term': ModuliParameters.F_TERM_NORMALIZED,
         'kappa': ModuliParameters.KAPPA_UPLIFT,
-        's_mem': ModuliParameters.S_MEM,
+        's_instanton_norm': ModuliParameters.S_INSTANTON_NORM,
         'mu_periodic': ModuliParameters.MU_PERIODIC,
         'R_ortho': MultiTimeParameters.R_ORTHO,
         'phi_example': ModuliParameters.PHI_EXAMPLE,
