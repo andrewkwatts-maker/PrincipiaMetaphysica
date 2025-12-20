@@ -76,8 +76,8 @@
 | NH probability | 76% | ✅ | ✅ | ✅ MIGRATED |
 | Seesaw M_R1 | 5.1e13 GeV | ✅ | ⚠️ | ⚠️ PARTIAL (narrative missing) |
 | Suppression | 124.22 | ✅ | ⚠️ | ⚠️ PARTIAL |
-| alpha_4 | 0.576152 | ✅ | ⚠️ | **⚠️ CRITICAL (source undefined)** |
-| alpha_5 | 0.576152 | ✅ | ⚠️ | **⚠️ CRITICAL (source undefined)** |
+| shadow_kuf | 0.576152 | ✅ | ⚠️ | **⚠️ CRITICAL (source undefined)** |
+| shadow_chet | 0.576152 | ✅ | ⚠️ | **⚠️ CRITICAL (source undefined)** |
 
 ---
 
@@ -155,7 +155,7 @@
 
 1. ✅ **κ = 1.46** - Added Appendix E.4 with full derivation from G₂ 5-cycle volume
 2. ✅ **α_T = 2.7** - Already in paper (7.2) with full Tomita-Takesaki derivation
-3. ✅ **α₄ = α₅ = 0.576152** - Derived from G₂ holonomy (existing Section 6.1)
+3. ✅ **Shadow_ק = Shadow_ח = 0.576152** - Derived from G₂ holonomy (existing Section 6.1)
 4. ✅ **α_s(M_Z)** - Already in paper (6.2e) with GUT RG evolution
 5. ⚠️ **α_em(M_Z)** - Implicit in sin²θ_W derivation (acceptable)
 6. ⚠️ **λ₀, λ_eff** - Implicit in Higgs section (RG evolution mentioned)

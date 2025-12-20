@@ -550,9 +550,9 @@ const FORMULA_REGISTRY = {
 
         "theta12-solar": {
             id: "theta12-solar",
-            html: "θ<sub>12</sub> = arctan(√(α<sub>4</sub>²/(α<sub>6</sub>² + α<sub>7</sub>²))) ≈ 33.6°",
-            latex: "\\theta_{12} = \\arctan\\left(\\sqrt{\\frac{\\alpha_4^2}{\\alpha_6^2 + \\alpha_7^2}}\\right) \\approx 33.6°",
-            plainText: "θ₁₂ = arctan(√(α₄²/(α₆² + α₇²))) ≈ 33.6°",
+            html: "θ<sub>12</sub> = arctan(√(Shadow<sub>ק</sub>²/(α<sub>6</sub>² + α<sub>7</sub>²))) ≈ 33.6°",
+            latex: "\\theta_{12} = \\arctan\\left(\\sqrt{\\frac{\\shadow_kuf^2}{\\alpha_6^2 + \\alpha_7^2}}\\right) \\approx 33.6°",
+            plainText: "θ₁₂ = arctan(√(Shadow_ק²/(α₆² + α₇²))) ≈ 33.6°",
             label: "(6.2) Solar Mixing Angle",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
@@ -571,7 +571,7 @@ const FORMULA_REGISTRY = {
                 establishedPhysics: ["seesaw-mechanism"],
                 steps: [
                     "Use G₂ associative cycle intersection numbers",
-                    "α₄ = α₅ = 0.576152 (maximal mixing)",
+                    "Shadow_ק = Shadow_ח = 0.576152 (maximal mixing)",
                     "α₆, α₇ from remaining cycles give θ₁₂",
                     "Result: θ₁₂ = 33.59° (0.24σ from NuFIT 6.0)"
                 ],
@@ -610,9 +610,9 @@ const FORMULA_REGISTRY = {
 
         "d-eff-formula": {
             id: "d-eff-formula",
-            html: "d<sub>eff</sub> = 12 + 0.5(α<sub>4</sub> + α<sub>5</sub>) = 12.576",
-            latex: "d_{eff} = 12 + 0.5(\\alpha_4 + \\alpha_5) = 12.576",
-            plainText: "d_eff = 12 + 0.5(α₄ + α₅) = 12.576",
+            html: "d<sub>eff</sub> = 12 + 0.5(Shadow<sub>ק</sub> + Shadow<sub>ח</sub>) = 12.576",
+            latex: "d_{eff} = 12 + 0.5(\\shadow_kuf + \\shadow_chet) = 12.576",
+            plainText: "d_eff = 12 + 0.5(Shadow_ק + Shadow_ח) = 12.576",
             label: "(7.1) Effective Dimension",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
@@ -632,7 +632,7 @@ const FORMULA_REGISTRY = {
                 establishedPhysics: ["tomita-takesaki"],
                 steps: [
                     "Ghost central charge coefficient = 26/52 = 0.5",
-                    "α₄ = α₅ = 0.576152 from G₂ holonomy",
+                    "Shadow_ק = Shadow_ח = 0.576152 from G₂ holonomy",
                     "d_eff = 12 + 0.5×(0.576152 + 0.576152) = 12.576",
                     "This determines w₀ via MEP formula"
                 ],
@@ -727,7 +727,7 @@ const FORMULA_REGISTRY = {
                 establishedPhysics: ["tomita-takesaki", "kms-condition"],
                 steps: [
                     "Thermal time defines effective dimensionality d_eff",
-                    "G₂ torsion α₄ = α₅ = 0.576152 gives d_eff = 12.576",
+                    "G₂ torsion Shadow_ק = Shadow_ח = 0.576152 gives d_eff = 12.576",
                     "MEP formula: w₀ = -(d_eff - 1)/(d_eff + 1)",
                     "Result: w₀ = -0.8528 (0.38σ from DESI DR2)"
                 ],
@@ -737,9 +737,9 @@ const FORMULA_REGISTRY = {
 
         "theta23-maximal": {
             id: "theta23-maximal",
-            html: "tan²θ<sub>23</sub> = α<sub>4</sub>/α<sub>5</sub> = 1 → θ<sub>23</sub> = 45°",
-            latex: "\\tan^2\\theta_{23} = \\frac{\\alpha_4}{\\alpha_5} = 1 \\rightarrow \\theta_{23} = 45°",
-            plainText: "tan²θ₂₃ = α₄/α₅ = 1 → θ₂₃ = 45°",
+            html: "tan²θ<sub>23</sub> = Shadow<sub>ק</sub>/Shadow<sub>ח</sub> = 1 → θ<sub>23</sub> = 45°",
+            latex: "\\tan^2\\theta_{23} = \\frac{\\shadow_kuf}{\\shadow_chet} = 1 \\rightarrow \\theta_{23} = 45°",
+            plainText: "tan²θ₂₃ = Shadow_ק/Shadow_ח = 1 → θ₂₃ = 45°",
             label: "(6.1) Maximal Atmospheric Mixing",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
@@ -761,7 +761,7 @@ const FORMULA_REGISTRY = {
                 steps: [
                     "TCS G₂ manifold has 24 associative 3-cycles (b₃ = 24)",
                     "Cycle intersection numbers determine Yukawa ratios",
-                    "α₄ = α₅ = 0.576152 gives maximal θ₂₃ = 45°",
+                    "Shadow_ק = Shadow_ח = 0.576152 gives maximal θ₂₃ = 45°",
                     "Remaining angles from cycle asymmetries"
                 ],
                 verificationPage: "sections/fermion-sector.html"

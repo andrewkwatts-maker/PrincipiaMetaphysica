@@ -80,11 +80,11 @@ The paper correctly uses the **geometric value of -1.0** for the GW dispersion c
 | Parameter | JSON | Paper | Status |
 |-----------|------|-------|--------|
 | θ₂₃ | 45.0° | 45.0° | ✅ EXACT MATCH |
-| α₄ | 0.576152 | 0.576152 | ✅ EXACT MATCH |
-| α₅ | 0.576152 | 0.576152 | ✅ EXACT MATCH |
+| Shadow_ק | 0.576152 | 0.576152 | ✅ EXACT MATCH |
+| Shadow_ח | 0.576152 | 0.576152 | ✅ EXACT MATCH |
 
 **Sources:**
-- JSON: `pmns_matrix.theta_23`, `v12_3_updates.alpha_parameters.alpha_4`, `v12_3_updates.alpha_parameters.alpha_5`
+- JSON: `pmns_matrix.theta_23`, `v12_3_updates.sitra_shadow_coupling.shadow_kuf`, `v12_3_updates.sitra_shadow_coupling.shadow_chet`
 - Paper: Lines 1320, 1325, 1331, 2321, 2345-2346
 
 ---
@@ -182,8 +182,8 @@ The paper correctly uses the **geometric value of -1.0** for the GW dispersion c
 
 ### ✅ Exact Matches (8)
 1. θ₂₃ = 45.0°
-2. α₄ = 0.576152
-3. α₅ = 0.576152
+2. Shadow_ק = 0.576152
+3. Shadow_ח = 0.576152
 4. χ_eff = 144
 5. b₃ = 24
 6. n_gen = 3
@@ -213,8 +213,8 @@ All critical formulas match between paper and JSON derivations:
 1. **η formula:** `η = exp(|T_ω|)/b₃` ✅
 2. **n_gen formula:** `n_gen = |χ_eff|/48` ✅
 3. **w₀ formula:** `w₀ = -(d_eff - 1)/(d_eff + 1)` ✅
-4. **d_eff formula:** `d_eff = 12 + γ(α₄ + α₅)` where γ = 0.5 ✅
-5. **θ₂₃ constraint:** `α₄ = α₅ → θ₂₃ = 45°` ✅
+4. **d_eff formula:** `d_eff = 12 + γ(Shadow_ק + Shadow_ח)` where γ = 0.5 ✅
+5. **θ₂₃ constraint:** `Shadow_ק = Shadow_ח → θ₂₃ = 45°` ✅
 
 ---
 
@@ -252,8 +252,8 @@ All discrepancies are:
 | η (eta) | 0.11326174285246021 | v12_8...gw_dispersion.eta | 0.113 | Line 2002, 2544 | ✅ |
 | T_ω (geometric) | -1.0 | v12_8...gw_dispersion.T_omega | -1.0 | Line 2552, 2647 | ✅ |
 | θ₂₃ | 45.0 | pmns_matrix.theta_23 | 45.0° | Line 2345 | ✅ |
-| α₄ | 0.576152 | v12_3...alpha_4 | 0.576152 | Line 1331 | ✅ |
-| α₅ | 0.576152 | v12_3...alpha_5 | 0.576152 | Line 1331 | ✅ |
+| Shadow_ק | 0.576152 | v12_3...shadow_kuf | 0.576152 | Line 1331 | ✅ |
+| Shadow_ח | 0.576152 | v12_3...shadow_chet | 0.576152 | Line 1331 | ✅ |
 | χ_eff | 144 | topology.chi_eff | 144 | Line 1029 | ✅ |
 | b₃ | 24 | topology.b3 | 24 | Line 1029 | ✅ |
 | n_gen | 3 | topology.n_gen | 3 | Line 2316 | ✅ |

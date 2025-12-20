@@ -55,13 +55,13 @@ Main sections (1-9) contain NO phrases like "See Appendix", "(Appendix X)", or s
 
 **Main Text (Line 1333):**
 ```html
-$$d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5) = 12 + 0.5(1.152) = 12.576$$
+$$d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet) = 12 + 0.5(1.152) = 12.576$$
 <span class="equation-number">(7.1)</span>
 ```
 
 **Appendix D (Line 1716):**
 ```html
-$$d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5) = 12 + 0.5(0.576152 + 0.576152) = 12.576$$
+$$d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet) = 12 + 0.5(0.576152 + 0.576152) = 12.576$$
 ```
 
 **Issue:** Identical equation with slightly different presentation (summed vs. explicit values).
@@ -168,7 +168,7 @@ $$w_0 = -\frac{d_{\text{eff}} - 1}{d_{\text{eff}} + 1} = -\frac{11.576}{13.576} 
         <li>Maximal compact subgroup is SU(3)</li>
         <li>7-dimensional rep decomposes: $\mathbf{7} = \mathbf{3} + \bar{\mathbf{3}} + \mathbf{1}$...</li>
         <li>Three (3,1) shadow branes transform as SU(3) triplet</li>
-        <li>Symmetric treatment enforced: $\alpha_4 = \alpha_5 = 0.576152$</li>
+        <li>Symmetric treatment enforced: $\shadow_kuf = \shadow_chet = 0.576152$</li>
         <li>Maximal mixing: $\theta_{23} = \pi/4 = 45°$</li>
     </ol>
 </div>

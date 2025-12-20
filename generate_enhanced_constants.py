@@ -109,8 +109,8 @@ def generate_enhanced_constants():
         },
 
         'shared_dimensions': {
-            'alpha_4': create_enhanced_constant(
-                config.SharedDimensionsParameters.ALPHA_4,
+            'shadow_kuf': create_enhanced_constant(
+                config.SharedDimensionsParameters.SHADOW_KUF,
                 unit='dimensionless',
                 display='0.956',
                 uncertainty=0.01,
@@ -120,8 +120,8 @@ def generate_enhanced_constants():
                 source='geometric',
                 references=['PM Section 3.7a']
             ),
-            'alpha_5': create_enhanced_constant(
-                config.SharedDimensionsParameters.ALPHA_5,
+            'shadow_chet': create_enhanced_constant(
+                config.SharedDimensionsParameters.SHADOW_CHET,
                 unit='dimensionless',
                 display='0.222',
                 uncertainty=0.01,
@@ -137,7 +137,7 @@ def generate_enhanced_constants():
                 display='12.589',
                 uncertainty=0.01,
                 description='Effective quantum-corrected dimension',
-                formula='D_eff = 12 + 0.5×(α₄+α₅)',
+                formula='D_eff = 12 + 0.5×(Shadow_ק+Shadow_ח)',
                 derivation='Shared dimension coupling + quantum corrections',
                 source='geometric',
                 references=['PM Section 6']
@@ -322,7 +322,7 @@ def generate_enhanced_constants():
                 display='45.00°',
                 uncertainty=pm.get('theta_23_error', 0.80),
                 description='Atmospheric mixing angle',
-                formula='θ₂₃ = 45° + (α₄ - α₅) × n_gen',
+                formula='θ₂₃ = 45° + (Shadow_ק - Shadow_ח) × n_gen',
                 derivation='Asymmetric coupling to shared extra dimensions',
                 source='geometric',
                 experimental_value=nf.get('theta_23_nufit', 45.0),

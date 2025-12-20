@@ -51,7 +51,7 @@ EQUATIONS_TO_NUMBER: List[Tuple[str, str, int, str]] = [
     (r'w\(z\).*?=.*?w_0.*?\\+.*?w_a', 'w-z-evolution', 9, 'DE Evolution w(z)'),
 
     # Neutrino
-    (r'\\tan\^2.*?\\theta_{23}.*?=.*?\\alpha_4/\\alpha_5', 'theta23-maximal', 10, 'Maximal Mixing Formula'),
+    (r'\\tan\^2.*?\\theta_{23}.*?=.*?\\shadow_kuf/\\shadow_chet', 'theta23-maximal', 10, 'Maximal Mixing Formula'),
     (r'm_\\nu.*?=.*?y\^2.*?v\^2/M_R', 'seesaw-formula', 11, 'Seesaw Mechanism'),
 
     # Predictions

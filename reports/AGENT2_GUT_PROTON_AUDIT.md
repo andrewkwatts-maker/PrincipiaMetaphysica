@@ -137,7 +137,7 @@ Geometric value from standard flux quantization: T_ω = -1.000 (13% difference).
   M_GUT = 1.8×10¹⁶ × (1 + 0.15 × 1.178)
   M_GUT = 1.8×10¹⁶ × 1.1767 = 2.118×10¹⁶ GeV
   ```
-- Physical interpretation (line 6280): "α₄ + α₅ = 1.178 represents total coupling strength"
+- Physical interpretation (line 6280): "Shadow_ק + Shadow_ח = 1.178 represents total coupling strength"
 
 **NEW Paper:**
 - NOT FOUND - The parameter is absent
@@ -455,7 +455,7 @@ Geometric value from standard flux quantization: T_ω = -1.000 (13% difference).
 <h3 class="subsection-title">Geometric Scale Parameter s = 1.178</h3>
 
 <p>
-  The warping parameter s connects the base GUT scale to the observed value through torsion corrections:
+  The Gimel warping parameter (k_ג) s connects the base GUT scale to the observed value through torsion corrections:
 </p>
 
 <div class="calculation-box">
@@ -533,7 +533,7 @@ Geometric value from standard flux quantization: T_ω = -1.000 (13% difference).
 </table>
 
 <p class="physical-interpretation">
-  <strong>Physical meaning:</strong> The parameter s = α₄ + α₅ = 1.1781 represents the total coupling strength to the shadow dimensions. It enters the M_GUT formula as a warping correction that shifts the unification scale upward by ~18%.
+  <strong>Physical meaning:</strong> The parameter s = Shadow_ק + Shadow_ח = 1.1781 represents the total coupling strength to the shadow dimensions. It enters the M_GUT formula as a warping correction that shifts the unification scale upward by ~18%.
 </p>
 ```
 

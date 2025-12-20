@@ -17,8 +17,8 @@ V9_MANIFEST = {
     ],
 
     "what_we_currently_fit": {
-        "alpha_4": {"value": 0.9557, "fitted_to": "theta_23 = 47.2 deg and w_0 = -0.853", "status": "shared phenomenological parameter"},
-        "alpha_5": {"value": 0.2224, "fitted_to": "theta_23 asymmetry", "status": "shared phenomenological parameter"},
+        "shadow_kuf": {"value": 0.9557, "fitted_to": "theta_23 = 47.2 deg and w_0 = -0.853", "status": "shared phenomenological parameter"},
+        "shadow_chet": {"value": 0.2224, "fitted_to": "theta_23 asymmetry", "status": "shared phenomenological parameter"},
         "flux_dressing": {"assumed": "chi_eff = 144", "justification": "common in flux vacua", "goal": "compute in v10"},
         "cycle_bias": {"current": "28% positive", "needed_for": "Normal Hierarchy", "v8 had": "83% -> IH"}
     },
@@ -30,7 +30,7 @@ V9_MANIFEST = {
         "proton_lifetime": "tau_p = (3.87 +/- 0.70)x10^34 years - Hyper-K 2035"
     },
 
-    "commitment": "We will not adjust alpha_4, alpha_5, or cycle bias after JUNO/DUNE/Euclid data release."
+    "commitment": "We will not adjust shadow_kuf, shadow_chet, or cycle bias after JUNO/DUNE/Euclid data release."
 }
 
 if __name__ == "__main__":

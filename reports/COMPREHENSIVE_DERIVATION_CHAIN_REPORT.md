@@ -156,17 +156,17 @@ ESTABLISHED PHYSICS
     |
     +-> THEORY: G2 Associative Cycle Geometry
         |   b3 = 24 cycles determine Yukawa structure
-        |   alpha_4, alpha_5 = shared dimension parameters
+        |   shadow_kuf, shadow_chet = shared dimension parameters
         |
         +-> PMNS Angles (MIXED STATUS):
 
             theta_23 = 45.0 deg
             -------------------------
-            CLAIM: "Derived from alpha_4 = alpha_5 (maximal mixing)"
+            CLAIM: "Derived from shadow_kuf = shadow_chet (maximal mixing)"
             REALITY: CIRCULAR REASONING
               - NuFIT 6.0 measures theta_23 = 45.0 deg
-              - PM sets alpha_4 - alpha_5 = (theta_23 - 45)/n_gen = 0
-              - Then "derives" theta_23 = 45 + (alpha_4 - alpha_5)*n_gen = 45
+              - PM sets shadow_kuf - shadow_chet = (theta_23 - 45)/n_gen = 0
+              - Then "derives" theta_23 = 45 + (shadow_kuf - shadow_chet)*n_gen = 45
             STATUS: CALIBRATED (not derived)
 
             theta_12 = 33.59 deg
@@ -193,7 +193,7 @@ ESTABLISHED PHYSICS
 
 **Status:** MIXED. theta_12 is semi-derived. theta_23, theta_13, delta_CP are calibrated to NuFIT 6.0.
 
-**Outstanding Issue #5:** Fix circular reasoning for theta_23 - either derive alpha_4-alpha_5 from geometry first, or acknowledge calibration.
+**Outstanding Issue #5:** Fix circular reasoning for theta_23 - either derive shadow_kuf-shadow_chet from geometry first, or acknowledge calibration.
 
 **Outstanding Issue #6:** Find rigorous geometric formula for theta_13 instead of calibration.
 
@@ -211,16 +211,16 @@ ESTABLISHED PHYSICS
     |
     +-> THEORY: Thermal Time Framework
         |   t_therm = modular flow from Tomita-Takesaki
-        |   Effective dimension: d_eff = 12 + 0.5*(alpha_4 + alpha_5)
+        |   Effective dimension: d_eff = 12 + 0.5*(shadow_kuf + shadow_chet)
         |
         +-> SEMI-DERIVED: w0 = -(d_eff - 1)/(d_eff + 1) = -0.8528
 
         ANALYSIS:
         1. MEP formula w0 = -(d-1)/(d+1) is ESTABLISHED (information geometry)
         2. d_eff = 12 from 13D (12,1) shadow after Sp(2,R) is DERIVED
-        3. Correction 0.5*(alpha_4 + alpha_5) = 0.576 is PHENOMENOLOGICAL
+        3. Correction 0.5*(shadow_kuf + shadow_chet) = 0.576 is PHENOMENOLOGICAL
            - Why coefficient 0.5?
-           - Why linear in (alpha_4 + alpha_5)?
+           - Why linear in (shadow_kuf + shadow_chet)?
            - No derivation from Tomita-Takesaki!
 
         CRITICAL: Tomita-Takesaki provides w(z) EVOLUTION, not w0!
@@ -231,7 +231,7 @@ ESTABLISHED PHYSICS
 
 **Status:** SEMI-DERIVED. MEP formula is established, d_eff base value is derived, but correction term is phenomenological.
 
-**Outstanding Issue #8:** Derive d_eff = 12 + 0.5*(alpha_4 + alpha_5) from first principles, or justify coefficient.
+**Outstanding Issue #8:** Derive d_eff = 12 + 0.5*(shadow_kuf + shadow_chet) from first principles, or justify coefficient.
 
 ---
 
@@ -320,8 +320,8 @@ ESTABLISHED PHYSICS
 |-----------|-------|--------|-------|
 | **T_omega** | -0.884 | UNVERIFIED | Not found in CHNP literature; TCS manifolds are Ricci-flat (tau=0) |
 | **kappa** | 1.46 | CALIBRATED | Explicitly adjusted to reproduce gauge RG M_GUT |
-| **d_eff correction** | 0.5*(alpha_4+alpha_5) | PHENOMENOLOGICAL | Coefficient 0.5 has no derivation |
-| **theta_23** | 45.0 deg | CALIBRATED | alpha_4-alpha_5 derived FROM theta_23, not vice versa |
+| **d_eff correction** | 0.5*(shadow_kuf+shadow_chet) | PHENOMENOLOGICAL | Coefficient 0.5 has no derivation |
+| **theta_23** | 45.0 deg | CALIBRATED | shadow_kuf-shadow_chet derived FROM theta_23, not vice versa |
 | **theta_13** | 8.57 deg | CALIBRATED | Code admits "direct calibration to NuFIT" |
 | **delta_CP** | 235 deg | HARDCODED | Set to match NuFIT range |
 | **Divisor 48** | vs F-theory's 24 | PHENOMENOLOGICAL | Z2 factor claimed but not rigorously proven |
@@ -333,7 +333,7 @@ ESTABLISHED PHYSICS
    - Claims "warped throat hierarchy" but G2 is compact (no throat)
    - Exponential form not found in M-theory literature for G2
 
-2. **d_eff = 12 + 0.5*(alpha_4 + alpha_5)**
+2. **d_eff = 12 + 0.5*(shadow_kuf + shadow_chet)**
    - Base d=12 is justified (13-1 from Sp(2,R))
    - Correction term is ad hoc
    - No derivation from Tomita-Takesaki (despite claims)
@@ -343,7 +343,7 @@ ESTABLISHED PHYSICS
    - Uses b2, b3, chi_eff but formula structure is phenomenological
    - No physics principle connects topology to this specific perturbation
 
-4. **alpha_4 + alpha_5 = [ln(M_Pl/M_GUT) + |T_omega|] / (2*pi)**
+4. **shadow_kuf + shadow_chet = [ln(M_Pl/M_GUT) + |T_omega|] / (2*pi)**
    - This is the DEFINITION of alpha sum, not a derivation
    - Uses M_GUT which depends on kappa (circular)
 
@@ -353,7 +353,7 @@ ESTABLISHED PHYSICS
                     kappa (calibrated to RG)
                            |
                            v
-    alpha_4 + alpha_5 <-- M_GUT --> alpha_GUT --> tau_p
+    shadow_kuf + shadow_chet <-- M_GUT --> alpha_GUT --> tau_p
          |                 |
          v                 v
        d_eff            Validation against RG
@@ -371,9 +371,9 @@ ESTABLISHED PHYSICS
 ### HIGH PRIORITY (Affects Credibility Claims)
 
 **Issue #1: Circular Reasoning in PMNS theta_23**
-- **Problem:** alpha_4-alpha_5 is derived FROM observed theta_23=45, then used to "derive" theta_23
+- **Problem:** shadow_kuf-shadow_chet is derived FROM observed theta_23=45, then used to "derive" theta_23
 - **Options:**
-  - A: Derive alpha_4-alpha_5 from G2 moduli first (requires new calculation)
+  - A: Derive shadow_kuf-shadow_chet from G2 moduli first (requires new calculation)
   - B: Acknowledge theta_23 is calibrated (update documentation)
 - **Recommendation:** Option B is honest and doesn't weaken framework
 
@@ -400,7 +400,7 @@ ESTABLISHED PHYSICS
 - **Impact:** Weakens n_gen=3 derivation claim if not proven
 
 **Issue #5: d_eff Correction Term**
-- **Problem:** 0.5*(alpha_4 + alpha_5) has no derivation from Tomita-Takesaki
+- **Problem:** 0.5*(shadow_kuf + shadow_chet) has no derivation from Tomita-Takesaki
 - **Needed:** Either derive from modular theory or classify as phenomenological
 - **Impact:** Affects claimed derivation of w0 from "first principles"
 

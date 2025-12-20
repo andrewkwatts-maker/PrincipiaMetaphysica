@@ -54,7 +54,7 @@ This audit systematically verified all PM (Principia Metaphysica) values against
 |----------|-------|------------------|------|--------|
 | A | Virasoro Anomaly Cancellation | c = D - 26 = 0 → D = 26 | ✅ | COMPLETE |
 | B | Generation Number Derivation | χ_eff/48 = 144/48 = 3 | ✅ | COMPLETE |
-| C | Atmospheric Mixing Angle | G₂ holonomy → α₄ = α₅ → 45° | ✅ | COMPLETE |
+| C | Atmospheric Mixing Angle | G₂ holonomy → Shadow_ק = Shadow_ח → 45° | ✅ | COMPLETE |
 | D | Dark Energy Equation of State | γ = 0.5 → d_eff → w₀ | ✅ | COMPLETE |
 | E | Proton Decay Calculation | M_GUT → τ_p with MC | ✅ | COMPLETE |
 | F | Dimensional Decomposition | 26D = 4D × T¹⁵ × G₂⁷ | ✅ | COMPLETE |
@@ -75,7 +75,7 @@ This audit systematically verified all PM (Principia Metaphysica) values against
 |-----------|-------|------------------|------------|
 | D_bulk | 26 | Virasoro: c_matter(D) + c_ghost(-26) = 0 | Lovelace 1971, Polchinski Ch.1 |
 | n_gen | 3 | F-theory: |χ_eff|/48 with Z₂ from Sp(2,ℝ) | Sethi-Vafa-Witten 1996, Bars 2006 |
-| θ₂₃ | 45.0° | G₂ holonomy: SU(3) → α₄ = α₅ → maximal mixing | Joyce 2000, Acharya-Witten 2001 |
+| θ₂₃ | 45.0° | G₂ holonomy: SU(3) → Shadow_ק = Shadow_ח → maximal mixing | Joyce 2000, Acharya-Witten 2001 |
 | w_a sign | negative | Tomita-Takesaki: modular flow → thermal friction | Connes-Rovelli 1994 |
 | b₂ | 4 | TCS G₂ #187 topology: H²(X,ℤ) | Corti et al. 2015 |
 | b₃ | 24 | TCS G₂ #187 topology: associative 3-cycles | Corti et al. 2015 |

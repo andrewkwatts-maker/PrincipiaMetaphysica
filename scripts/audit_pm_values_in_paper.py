@@ -37,7 +37,7 @@ CRITICAL_PM_VALUES = {
 
     # === PMNS MATRIX ===
     "pmns": {
-        "theta_23": {"value": 45.0, "patterns": ["theta.*23.*=.*45", "\\\\theta.*23.*45", "maximal.*mixing"], "section": "6", "derivation": "G2 holonomy SU(3) symmetry => alpha_4 = alpha_5 => theta_23 = pi/4"},
+        "theta_23": {"value": 45.0, "patterns": ["theta.*23.*=.*45", "\\\\theta.*23.*45", "maximal.*mixing"], "section": "6", "derivation": "G2 holonomy SU(3) symmetry => shadow_kuf = shadow_chet => theta_23 = pi/4"},
         "theta_12": {"value": 33.59, "patterns": ["theta.*12.*33", "\\\\theta.*12"], "section": "6", "derivation": "Tri-bimaximal base + perturbation from cycle volumes"},
         "theta_13": {"value": 8.57, "patterns": ["theta.*13.*8\\.5", "\\\\theta.*13"], "section": "6", "derivation": "CALIBRATED (pending Yukawa intersection)"},
         "delta_CP": {"value": 235, "patterns": ["delta.*CP.*235", "\\\\delta.*CP"], "section": "6", "derivation": "CALIBRATED (pending phase calculation)"},
@@ -46,7 +46,7 @@ CRITICAL_PM_VALUES = {
     # === DARK ENERGY ===
     "dark_energy": {
         "w0": {"value": -0.8528, "patterns": ["w.*0.*=.*-0\\.85", "w_0.*-0\\.85", "-0\\.8528"], "section": "7", "derivation": "w0 = -(d_eff - 1)/(d_eff + 1) from MEP"},
-        "d_eff": {"value": 12.576, "patterns": ["d.*eff.*=.*12\\.5", "12\\.576"], "section": "7", "derivation": "d_eff = 12 + 0.5*(alpha_4 + alpha_5), ghost coeff = |c_ghost|/(2*c_matter)"},
+        "d_eff": {"value": 12.576, "patterns": ["d.*eff.*=.*12\\.5", "12\\.576"], "section": "7", "derivation": "d_eff = 12 + 0.5*(shadow_kuf + shadow_chet), ghost coeff = |c_ghost|/(2*c_matter)"},
         "wa": {"value": -0.95, "patterns": ["w.*a.*=.*-0\\.9", "w_a.*-"], "section": "7", "derivation": "Thermal friction from Tomita-Takesaki modular flow"},
         "alpha_T": {"value": 2.7, "patterns": ["alpha.*T.*2\\.7", "\\\\alpha.*T"], "section": "7", "derivation": "From two-time thermodynamic framework"},
     },

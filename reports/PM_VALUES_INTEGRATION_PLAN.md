@@ -85,7 +85,7 @@ The PMNS matrix angles from G₂ geometry:
 
 **θ₁₂ Derivation Chain:**
 1. Tri-bimaximal base: θ₁₂ = arctan(1/√2) = 35.26°
-2. Flux perturbation: Δθ₁₂ = -(α₄ - α₅)/(2√2) = -1.67°
+2. Flux perturbation: Δθ₁₂ = -(Shadow_ק - Shadow_ח)/(2√2) = -1.67°
 3. Result: θ₁₂ = 35.26° - 1.67° = 33.59°
 
 **θ₁₃ and δ_CP Status:**

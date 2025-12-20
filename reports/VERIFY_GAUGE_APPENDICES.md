@@ -131,8 +131,8 @@
 **Content:**
 - θ₂₃ = 45° from G₂ holonomy symmetry
 - G₂ ⊃ SU(3) decomposition: **7 = 3 + 3̄ + 1**
-- α₄ = α₅ equality enforced by symmetry
-- **Simulation code:** `derive_alpha_parameters()` (Lines 1423-1433)
+- Shadow_ק = Shadow_ח equality enforced by symmetry
+- **Simulation code:** `derive_sitra_shadow_coupling()` (Lines 1423-1433)
 - **Cross-reference:** Complements Section 6.1
 
 **Duplication Check:** NO - appendix shows G₂ → SU(3) representation theory
@@ -349,7 +349,7 @@ All appendices include Python simulation code:
 |----------|---------------|--------|
 | A | Virasoro central charge calculation | ✓ Present |
 | B | `zero_modes_gen()` | ✓ Present |
-| C | `derive_alpha_parameters()` | ✓ Present |
+| C | `derive_sitra_shadow_coupling()` | ✓ Present |
 | D | `derive_w0_from_d_eff()` | ✓ Present |
 | E | 3-loop RG running (inline) | ✓ Present |
 | F | `dimensional_decomposition()` | ✓ Present |
@@ -432,7 +432,7 @@ All appendices include Python simulation code:
 
 1. **D = 26:** Appendix A → Virasoro anomaly → BRST quantization ✓
 2. **n_gen = 3:** Appendix B → F-theory index → Z₂ factor → 144/48 ✓
-3. **θ₂₃ = 45°:** Appendix C → G₂ ⊃ SU(3) → α₄ = α₅ → maximal mixing ✓
+3. **θ₂₃ = 45°:** Appendix C → G₂ ⊃ SU(3) → Shadow_ק = Shadow_ח → maximal mixing ✓
 4. **w₀ = -0.8528:** Appendix D → c_ghost → γ = 0.5 → d_eff → EoS ✓
 5. **κ = 1.46:** Appendix E.2 → G₂ 5-cycle volume → 10π formula ✓
 6. **26D → 4D:** Appendix F → M²⁶ = M⁴ × T¹⁵ × G₂⁷ ✓

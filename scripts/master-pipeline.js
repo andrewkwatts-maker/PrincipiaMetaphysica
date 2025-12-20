@@ -268,7 +268,7 @@ function generatePhysicsValues(data) {
     pmns_matrix: {
       ...data.pmns_matrix,
       descriptions: {
-        theta_23: `Maximal mixing θ₂₃ = ${data.pmns_matrix?.theta_23?.toFixed(1)}° from α₄ = α₅`,
+        theta_23: `Maximal mixing θ₂₃ = ${data.pmns_matrix?.theta_23?.toFixed(1)}° from Shadow_ק = Shadow_ח`,
         theta_12: `Solar angle θ₁₂ = ${data.pmns_matrix?.theta_12?.toFixed(2)}°`,
         theta_13: `Reactor angle θ₁₃ = ${data.pmns_matrix?.theta_13?.toFixed(2)}°`,
         delta_cp: `CP phase δ_CP = ${data.pmns_matrix?.delta_cp?.toFixed(0)}°`
@@ -361,7 +361,7 @@ function generatePredictions(data) {
     ],
     exact_matches: [
       { name: 'n_gen = 3', description: 'Three fermion generations from χ/48 = 144/48 = 3' },
-      { name: 'θ₂₃ = 45.0°', description: 'Maximal atmospheric mixing from α₄ = α₅' },
+      { name: 'θ₂₃ = 45.0°', description: 'Maximal atmospheric mixing from Shadow_ק = Shadow_ח' },
       { name: 'm_h = 125.10 GeV', description: 'Higgs mass from Re(T) = 7.086' }
     ]
   };

@@ -101,7 +101,7 @@ const TOOLTIP_DATABASE = {
       source: 'NuFIT 6.0 (2025)'
     },
     category: 'pmns',
-    derivation: 'Maximal mixing from α₄ = α₅ brane symmetry'
+    derivation: 'Maximal mixing from Shadow_ק = Shadow_ח brane symmetry'
   },
 
   theta_12: {
@@ -168,7 +168,7 @@ const TOOLTIP_DATABASE = {
       source: 'DESI DR2 (2024)'
     },
     category: 'cosmology',
-    derivation: 'w₀ = -1 + 2/(3d_eff) where d_eff = 12 + (α₄+α₅)/2'
+    derivation: 'w₀ = -1 + 2/(3d_eff) where d_eff = 12 + (Shadow_ק+Shadow_ח)/2'
   },
 
   wa: {

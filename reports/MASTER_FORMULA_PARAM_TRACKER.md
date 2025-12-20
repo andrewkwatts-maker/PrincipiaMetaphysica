@@ -71,8 +71,8 @@
 | 36 | m₃ | 5.05×10⁻² eV | 6.3 | 🔄 | Heaviest neutrino |
 | 37 | Σmν | 0.061 eV | 6.3 | 🔄 | Sum of masses |
 | 38 | NH prob | 76% | 8.1 | 🔄 | Normal hierarchy |
-| 39 | α₄ | 0.576152 | 6.1 | 🔄 | Torsion parameter |
-| 40 | α₅ | 0.576152 | 6.1 | 🔄 | Torsion parameter |
+| 39 | Shadow_ק | 0.576152 | 6.1 | 🔄 | Torsion parameter |
+| 40 | Shadow_ח | 0.576152 | 6.1 | 🔄 | Torsion parameter |
 | 41 | Seesaw M_R | ~10¹⁴ GeV | 6.3 | 🔄 | Right-handed scale |
 | 42 | Suppression | 124.22 | 6.3 | 🔄 | Modular damping |
 

@@ -180,7 +180,7 @@ THETA_23 = AttributedConstant(
     source_year=2024,
     description="Atmospheric neutrino mixing angle θ₂₃ (NO w/SK-atm)",
     category="experimental",
-    notes=["PM predicts exactly 45° from α₄ = α₅ symmetry"]
+    notes=["PM predicts exactly 45° from Shadow_ק = Shadow_ח symmetry"]
 )
 
 THETA_13 = AttributedConstant(

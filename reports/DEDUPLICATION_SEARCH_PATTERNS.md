@@ -63,7 +63,7 @@
 ```html
             <h3 class="subsection-title">D.2 Effective Dimension</h3>
             <div class="equation-block">
-                $$d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5) = 12 + 0.5(0.576152 + 0.576152) = 12.576$$
+                $$d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet) = 12 + 0.5(0.576152 + 0.576152) = 12.576$$
             </div>
 ```
 
@@ -109,7 +109,7 @@
 ```html
             <h3 class="subsection-title">C.1 G<sub>2</sub> Holonomy Argument</h3>
             <div class="equation-block">
-                $$G_2 \supset SU(3), \quad \mathbf{7} = \mathbf{3} + \bar{\mathbf{3}} + \mathbf{1} \quad \Rightarrow \quad \alpha_4 = \alpha_5$$
+                $$G_2 \supset SU(3), \quad \mathbf{7} = \mathbf{3} + \bar{\mathbf{3}} + \mathbf{1} \quad \Rightarrow \quad \shadow_kuf = \shadow_chet$$
             </div>
             <p>
                 The SU(3) maximal compact subgroup enforces symmetric treatment of the three (3,1) shadow branes, requiring equal coupling parameters.
@@ -307,7 +307,7 @@ n_{\text{gen}} = \frac{|\chi_{\text{eff}}|}{48} = \frac{144}{48} = 3
 
 **Should appear ONLY in Section 7.1:**
 ```
-d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5)
+d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet)
 w_0 = -\frac{d_{\text{eff}} - 1}{d_{\text{eff}} + 1} = -\frac{11.576}{13.576} = -0.8528
 ```
 

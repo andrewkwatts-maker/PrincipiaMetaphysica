@@ -31,16 +31,16 @@ CRITICAL_PARAMS = {
         'config_usage': 'M_PLANCK = PhenomenologyParameters.M_PLANCK_REDUCED  # 2.435e18 GeV',
         'expected_value': '2.435e18',
     },
-    'ALPHA_4': {
+    'SHADOW_KUF': {
         'pattern': r'alpha[_]?4\s*=\s*(0\.576[0-9]+)',
         'config_import': 'from config import SharedDimensionsParameters',
-        'config_usage': 'ALPHA_4 = SharedDimensionsParameters.ALPHA_4  # 0.576152',
+        'config_usage': 'SHADOW_KUF = SharedDimensionsParameters.SHADOW_KUF  # 0.576152',
         'expected_value': '0.576152',
     },
-    'ALPHA_5': {
+    'SHADOW_CHET': {
         'pattern': r'alpha[_]?5\s*=\s*(0\.576[0-9]+)',
         'config_import': 'from config import SharedDimensionsParameters',
-        'config_usage': 'ALPHA_5 = SharedDimensionsParameters.ALPHA_5  # 0.576152',
+        'config_usage': 'SHADOW_CHET = SharedDimensionsParameters.SHADOW_CHET  # 0.576152',
         'expected_value': '0.576152',
     },
     'THETA_23': {

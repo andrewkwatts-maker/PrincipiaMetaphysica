@@ -153,12 +153,12 @@ class ConfigProvider:
         return self.neutrino.delta_cp
 
     @property
-    def alpha_4(self) -> float:
-        return self.neutrino.alpha_4
+    def shadow_kuf(self) -> float:
+        return self.neutrino.shadow_kuf
 
     @property
-    def alpha_5(self) -> float:
-        return self.neutrino.alpha_5
+    def shadow_chet(self) -> float:
+        return self.neutrino.shadow_chet
 
     @property
     def w0(self) -> float:
