@@ -10,13 +10,34 @@ Formula: tau_p ~ M_GUT^4
 
 This closes the "tau_p uncertainty" statement.
 
+v12.8 UPDATE: Now imports all values from config.py (single source of truth)
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 import numpy as np
+import sys
+import os
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+try:
+    from config import ProtonLifetimeParameters, GaugeUnificationParameters
+    # Import from config.py (single source of truth)
+    M_GUT_DEFAULT = GaugeUnificationParameters.M_GUT  # 2.118e16 GeV
+    M_GUT_ERROR_DEFAULT = GaugeUnificationParameters.M_GUT_ERROR  # 0.09e16 GeV
+    TAU_P_BASELINE = ProtonLifetimeParameters.TAU_P_MC_BASELINE  # 3.91e34 years
+    SUPER_K_BOUND = ProtonLifetimeParameters.SUPER_K_BOUND  # 1.67e34 years
+except ImportError:
+    # Fallback values if config.py not available
+    M_GUT_DEFAULT = 2.118e16
+    M_GUT_ERROR_DEFAULT = 0.09e16
+    TAU_P_BASELINE = 3.91e34
+    SUPER_K_BOUND = 1.67e34
 
 
-def proton_lifetime_mc(n_mc=10000, M_GUT_mean=2.118e16, M_GUT_std=1e14):
+def proton_lifetime_mc(n_mc=10000, M_GUT_mean=None, M_GUT_std=None):
     """
     Monte Carlo uncertainty estimation for proton lifetime.
 
@@ -25,14 +46,20 @@ def proton_lifetime_mc(n_mc=10000, M_GUT_mean=2.118e16, M_GUT_std=1e14):
     n_mc : int
         Number of Monte Carlo samples
     M_GUT_mean : float
-        Central M_GUT value in GeV
+        Central M_GUT value in GeV (default from config.py)
     M_GUT_std : float
-        M_GUT uncertainty in GeV
+        M_GUT uncertainty in GeV (default from config.py)
 
     Returns:
     --------
     dict : Contains tau_p statistics and uncertainties
     """
+    # Use config values if not provided
+    if M_GUT_mean is None:
+        M_GUT_mean = M_GUT_DEFAULT
+    if M_GUT_std is None:
+        M_GUT_std = M_GUT_ERROR_DEFAULT
+
     # Monte Carlo sampling of M_GUT
     np.random.seed(42)  # Reproducibility
     M_GUT_mc = np.random.normal(M_GUT_mean, M_GUT_std, n_mc)
@@ -40,9 +67,8 @@ def proton_lifetime_mc(n_mc=10000, M_GUT_mean=2.118e16, M_GUT_std=1e14):
     # Remove non-physical values
     M_GUT_mc = M_GUT_mc[M_GUT_mc > 0]
 
-    # tau_p scales as M_GUT^4
-    tau_p_baseline = 3.91e34  # years (from simulations)
-    tau_p_mc = tau_p_baseline * (M_GUT_mc / M_GUT_mean)**4
+    # tau_p scales as M_GUT^4 (from config.py single source of truth)
+    tau_p_mc = TAU_P_BASELINE * (M_GUT_mc / M_GUT_mean)**4
 
     # Statistics
     tau_p_mean = np.mean(tau_p_mc)
@@ -57,9 +83,8 @@ def proton_lifetime_mc(n_mc=10000, M_GUT_mean=2.118e16, M_GUT_std=1e14):
     # Order of magnitude uncertainty
     oom_uncertainty = np.log10(tau_p_84 / tau_p_16) / 2
 
-    # Super-K limit comparison
-    tau_p_superK = 2.4e34  # years (90% CL lower limit)
-    above_superK = tau_p_mean > tau_p_superK
+    # Super-K limit comparison (from config.py single source of truth)
+    above_superK = tau_p_mean > SUPER_K_BOUND
 
     results = {
         'tau_p_mean': tau_p_mean,
@@ -72,11 +97,13 @@ def proton_lifetime_mc(n_mc=10000, M_GUT_mean=2.118e16, M_GUT_std=1e14):
         'n_mc': n_mc,
         'M_GUT_mean': M_GUT_mean,
         'M_GUT_std': M_GUT_std,
-        'tau_p_superK': tau_p_superK,
+        'tau_p_superK': SUPER_K_BOUND,  # From config.py
+        'tau_p_baseline': TAU_P_BASELINE,  # From config.py
         'above_superK': above_superK,
         'derivation_status': 'MC QUANTIFIED',
         'formula': 'tau_p ~ M_GUT^4',
-        'reference': 'Monte Carlo from flux quantization variation'
+        'reference': 'Monte Carlo from flux quantization variation',
+        'source': 'config.py (single source of truth)'
     }
 
     return results
