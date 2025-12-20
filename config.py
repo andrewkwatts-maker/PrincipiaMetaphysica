@@ -1613,7 +1613,7 @@ class SharedDimensionsParameters:
 
 # ==============================================================================
 # SHADOW DIMENSION NOMENCLATURE (v12.9+)
-# New Jerusalem Architecture: 24 Greek Letters for Shadow Spatial Dimensions
+# 24 Greek Letters for Shadow Spatial Dimensions
 # ==============================================================================
 
 class ShadowDimensionNomenclature:
@@ -1624,19 +1624,14 @@ class ShadowDimensionNomenclature:
     from the Sp(2,R) gauge structure, this yields 24 total shadow spatial dimensions
     across two Sitra mirror branes:
 
-    - Gate Mirror (Σ₁): 12 dimensions labeled for tribes/gemstones (material side)
-    - Foundation Mirror (Σ₂): 12 dimensions labeled for apostles (spiritual side)
+    - Gate Mirror (Σ₁): 12 dimensions
+    - Foundation Mirror (Σ₂): 12 dimensions
 
-    Dimensions are paired by wall (New Jerusalem architecture, Revelation 21):
+    Dimensions are paired by cardinal wall:
     - North Wall: 3 pairs (Ρ–Δ, Γ–Ε, Ζ–Η)
     - East Wall: 3 pairs (Ο–Θ, Ι–Λ, Σ–Μ)
     - South Wall: 3 pairs (Τ–Ν, Ω–Ξ, Χ–Π)
     - West Wall: 3 pairs (Α–Υ, Β–Φ, Κ–Ψ)
-
-    Reference: Revelation 21:12-14, 19-20 (New Jerusalem gates and foundations)
-
-    Usage in equations:
-        orientation_sum = Σᵢ₌₁¹² Xᵢ = 12
 
     The Sitra Shadow Coupling (shadow_kuf + shadow_chet) governs interactions
     across all paired dimensions.
@@ -1645,39 +1640,38 @@ class ShadowDimensionNomenclature:
     # Cardinal walls (4 walls × 3 pairs = 12 paired dimensions)
     WALLS = ("north", "east", "south", "west")
 
-    # Gate Mirror Greek letters (tribes/gemstones) - 12 dimensions
+    # Gate Mirror Greek letters - 12 dimensions
     GATE_LETTERS = ("Ρ", "Γ", "Ζ", "Ο", "Ι", "Σ", "Τ", "Ω", "Χ", "Α", "Β", "Κ")
     GATE_NAMES = ("Rho", "Gamma", "Zeta", "Omicron", "Iota", "Sigma",
                   "Tau", "Omega", "Chi", "Alpha", "Beta", "Kappa")
 
-    # Foundation Mirror Greek letters (apostles) - 12 dimensions
+    # Foundation Mirror Greek letters - 12 dimensions
     FOUNDATION_LETTERS = ("Δ", "Ε", "Η", "Θ", "Λ", "Μ", "Ν", "Ξ", "Π", "Υ", "Φ", "Ψ")
     FOUNDATION_NAMES = ("Delta", "Epsilon", "Eta", "Theta", "Lambda", "Mu",
                         "Nu", "Xi", "Pi", "Upsilon", "Phi", "Psi")
 
-    # Twelve Tribes of Israel (Gate Mirror associations)
-    # Order follows wall positions: North 1-3, East 1-3, South 1-3, West 1-3
+    # Gate Mirror labels (historical naming convention)
     TRIBES = (
-        "Reuben", "Judah", "Levi",           # North wall (gates 1-3)
-        "Joseph", "Benjamin", "Dan",          # East wall (gates 4-6)
-        "Simeon", "Issachar", "Zebulun",      # South wall (gates 7-9)
-        "Gad", "Asher", "Naphtali"            # West wall (gates 10-12)
+        "Reuben", "Judah", "Levi",
+        "Joseph", "Benjamin", "Dan",
+        "Simeon", "Issachar", "Zebulun",
+        "Gad", "Asher", "Naphtali"
     )
 
-    # Twelve Gemstones (Revelation 21:19-20, Gate Mirror associations)
+    # Gate Mirror gemstone labels
     GEMSTONES = (
-        "Ruby", "Emerald", "Zircon",          # North wall
-        "Onyx", "Jasper", "Sapphire",         # East wall
-        "Topaz", "Amethyst", "Peridot",       # South wall
-        "Agate", "Beryl", "Chrysoprase"       # West wall
+        "Ruby", "Emerald", "Zircon",
+        "Onyx", "Jasper", "Sapphire",
+        "Topaz", "Amethyst", "Peridot",
+        "Agate", "Beryl", "Chrysoprase"
     )
 
-    # Twelve Apostles (Foundation Mirror associations)
+    # Foundation Mirror labels (historical naming convention)
     APOSTLES = (
-        "Peter", "Andrew", "James the Great",      # North wall (foundations 1-3)
-        "John", "Philip", "Bartholomew",           # East wall (foundations 4-6)
-        "Matthew", "Thomas", "James the Less",     # South wall (foundations 7-9)
-        "Jude", "Simon the Zealot", "Matthias"     # West wall (foundations 10-12)
+        "Peter", "Andrew", "James the Great",
+        "John", "Philip", "Bartholomew",
+        "Matthew", "Thomas", "James the Less",
+        "Jude", "Simon the Zealot", "Matthias"
     )
 
     # Symbolic meanings for each paired dimension
@@ -1806,8 +1800,8 @@ class ShadowDimensionNomenclature:
         """
         return {
             "version": "12.9",
-            "description": "24-Dimension Greek Letter Naming Scheme (New Jerusalem Architecture)",
-            "reference": "Revelation 21:12-14, 19-20",
+            "description": "24-Dimension Greek Letter Naming Scheme",
+            "reference": "Z₂ mirror brane structure",
             "structure": {
                 "total_dimensions": 24,
                 "mirrors": 2,
@@ -1916,32 +1910,27 @@ class ShadowDimensionNomenclature:
 
 # ==============================================================================
 # G₂ MANIFOLD DIRECTION NOMENCLATURE (v12.9+)
-# Seven Sefirot Hebrew Letters for G₂ Internal Directions
+# Seven Hebrew Letters for G₂ Internal Directions
 # ==============================================================================
 
 class G2DirectionNomenclature:
     """
     7-Direction Hebrew Letter Naming Scheme for G₂ Manifold.
 
-    The 7D G₂ holonomy manifold (TCS construction) has 7 internal directions.
-    These are labeled with Hebrew letters corresponding to the lower seven Sefirot
-    (the "emotional" attributes in Kabbalistic cosmology):
+    The 7D G₂ holonomy manifold (TCS construction) has 7 internal directions:
 
-    - Gח (Chesed) - Primary volume: Loving-kindness/expansion
-    - Gג (Gevurah) - Structural form: Strength/contraction
-    - Gת (Tiferet) - Chirality axis: Beauty/harmony (balances Chesed-Gevurah)
-    - Gנ (Netzach) - Primary flux: Victory/endurance
-    - Gה (Hod) - Modulus scaling: Splendor/submission
-    - Gי (Yesod) - Torsion axis: Foundation/bonding (balances Netzach-Hod)
-    - Gמ (Malkuth) - Attractor direction: Kingdom/manifestation (receives all above)
+    - Gח - Primary volume
+    - Gג - Structural form
+    - Gת - Chirality axis
+    - Gנ - Primary flux
+    - Gה - Modulus scaling
+    - Gי - Torsion axis
+    - Gמ - Attractor direction
 
-    The lower seven Sefirot form the "building blocks" of creation, just as
-    the 7 G₂ directions form the geometric foundation of compactification.
-
-    Reference: Sefer Yetzirah (Book of Formation), Zohar, TCS G₂ manifold construction
+    The 7 G₂ directions form the geometric foundation of compactification.
     """
 
-    # Hebrew letters for the 7 directions (lower Sefirot)
+    # Hebrew letters for the 7 directions
     HEBREW_LETTERS = ("ח", "ג", "ת", "נ", "ה", "י", "מ")
 
     # Transliterated names
@@ -1953,44 +1942,37 @@ class G2DirectionNomenclature:
     # Display notation (G with Hebrew subscript)
     DISPLAY_NAMES = ("Gח", "Gג", "Gת", "Gנ", "Gה", "Gי", "Gמ")
 
-    # Sefirot names (Hebrew)
+    # Historical naming labels
     SEFIROT = ("Chesed", "Gevurah", "Tiferet", "Netzach", "Hod", "Yesod", "Malkuth")
 
-    # Sefirot English translations
+    # English translations (historical)
     SEFIROT_ENGLISH = (
-        "Loving-kindness",   # Chesed
-        "Strength",          # Gevurah
-        "Beauty",            # Tiferet
-        "Victory",           # Netzach
-        "Splendor",          # Hod
-        "Foundation",        # Yesod
-        "Kingdom"            # Malkuth
+        "Loving-kindness",
+        "Strength",
+        "Beauty",
+        "Victory",
+        "Splendor",
+        "Foundation",
+        "Kingdom"
     )
 
     # Geometric roles in G₂ manifold
     GEOMETRIC_ROLES = (
-        "Primary volume",      # Chesed: expansion/volume
-        "Structural form",     # Gevurah: contraction/form
-        "Chirality axis",      # Tiferet: balance/chirality
-        "Primary flux",        # Netzach: flux quantization
-        "Modulus scaling",     # Hod: moduli stabilization
-        "Torsion axis",        # Yesod: torsion class
-        "Attractor direction"  # Malkuth: attractor basin
+        "Primary volume",
+        "Structural form",
+        "Chirality axis",
+        "Primary flux",
+        "Modulus scaling",
+        "Torsion axis",
+        "Attractor direction"
     )
 
-    # Enochian Heptarchic Kings (from John Dee's Heptarchia Mystica)
-    # Maps 7 G₂ directions to 7 planetary angels
+    # Historical naming labels
     ENOCHIAN_KINGS = (
-        "Baligon",   # Sun/Sunday - Primary volume (light/expansion)
-        "Bobogel",   # Moon/Monday - Structural form (reflection/boundary)
-        "Babalel",   # Mars/Tuesday - Chirality axis (action/handedness)
-        "Bynepor",   # Jupiter/Thursday - Primary flux (victory/endurance)
-        "Bnaspol",   # Venus/Friday - Modulus scaling (beauty/glory)
-        "Blumaza",   # Mercury/Wednesday - Torsion axis (connection/foundation)
-        "Bagenol"    # Saturn/Saturday - Attractor direction (manifestation/end)
+        "Baligon", "Bobogel", "Babalel", "Bynepor", "Bnaspol", "Blumaza", "Bagenol"
     )
 
-    # Planetary/Day associations (Heptarchia Mystica)
+    # Planetary/Day associations (historical)
     PLANETARY_DAYS = (
         ("Sun", "Sunday"),
         ("Moon", "Monday"),
@@ -2001,11 +1983,11 @@ class G2DirectionNomenclature:
         ("Saturn", "Saturday")
     )
 
-    # Tree of Life structure (which Sefirot pairs balance each other)
+    # Pillar structure (historical)
     SEFIROT_PAIRS = {
-        "right_pillar": ["Chesed", "Netzach"],      # Expansion/Victory
-        "left_pillar": ["Gevurah", "Hod"],          # Contraction/Splendor
-        "middle_pillar": ["Tiferet", "Yesod", "Malkuth"]  # Balance/Foundation/Kingdom
+        "right_pillar": ["Chesed", "Netzach"],
+        "left_pillar": ["Gevurah", "Hod"],
+        "middle_pillar": ["Tiferet", "Yesod", "Malkuth"]
     }
 
     @classmethod
@@ -2045,8 +2027,8 @@ class G2DirectionNomenclature:
 
         return {
             "version": "12.9",
-            "description": "7-Direction Hebrew Letter Naming for G₂ Manifold (Sefirot)",
-            "reference": "Sefer Yetzirah, Zohar, TCS G₂ construction",
+            "description": "7-Direction Hebrew Letter Naming for G₂ Manifold",
+            "reference": "TCS G₂ holonomy construction",
             "structure": {
                 "total_directions": 7,
                 "holonomy_group": "G₂",
@@ -2066,21 +2048,19 @@ class G2DirectionNomenclature:
                 }
                 for i in range(7)
             },
-            "enochian_correspondence": {
-                "source": "Heptarchia Mystica (John Dee, 1582-1588)",
+            "historical_labels": {
                 "kings": list(cls.ENOCHIAN_KINGS),
                 "planetary_days": [
                     {"planet": p, "day": d} for p, d in cls.PLANETARY_DAYS
                 ]
             },
-            "pillar_structure": cls.SEFIROT_PAIRS,
             "topology": {
                 "b2": 4,
                 "b3": 24,
                 "chi_eff": 144,
                 "generations": 3
             },
-            "footnote": "The G₂ directions are labeled G with Hebrew letter subscripts corresponding to the lower seven Sefirot, used as a mnemonic for their progressive geometric roles."
+            "footnote": "The G₂ directions are labeled G with Hebrew letter subscripts as a mnemonic for their progressive geometric roles."
         }
 
     @classmethod
@@ -2114,39 +2094,37 @@ class G2DirectionNomenclature:
 
 
 # ==============================================================================
-# BRANE NOMENCLATURE - ENOCHIAN WATCHTOWERS (v12.9)
+# BRANE NOMENCLATURE (v12.9)
 # ==============================================================================
 
 class BraneNomenclature:
     """
-    Enochian Watchtower Brane Localization Factors (v12.9).
+    Brane Localization Factors (v12.9).
 
-    Maps the 4 branes to Enochian Watchtowers with Greek letter subscripts:
-    - Λ_Α (Lambda Alpha) = Exarp (Air/East) = (5,1) Observable
-    - Λ_Π (Lambda Pi) = Bitom (Fire/South) = Gen 1 (3,1)
-    - Λ_Υ (Lambda Upsilon) = Hcoma (Water/West) = Gen 2 (3,1)
-    - Λ_Γ (Lambda Gamma) = Nanta (Earth/North) = Gen 3 (3,1)
+    4 branes with Greek letter subscripts:
+    - Λ_Α (Exarp) = (5,1) Observable
+    - Λ_Π (Bitom) = Gen 1 (3,1)
+    - Λ_Υ (Hcoma) = Gen 2 (3,1)
+    - Λ_Γ (Nanta) = Gen 3 (3,1)
 
     Sitra Shadow Coupling:
-    - ק_Α_Γ = Shadow_ק = 0.576152 (Exarp↔Nanta, Air↔Earth)
-    - ח_Π_Υ = Shadow_ח = 0.576152 (Bitom↔Hcoma, Fire↔Water)
-
-    Reference: John Dee's Enochian system, 1 Enoch 33-36
+    - ק_Α_Γ = Shadow_ק = 0.576152 (Exarp↔Nanta)
+    - ח_Π_Υ = Shadow_ח = 0.576152 (Bitom↔Hcoma)
     """
 
-    # Enochian names
+    # Brane names
     ENOCHIAN_NAMES = ("Exarp", "Bitom", "Hcoma", "Nanta")
 
     # Greek letters (Alpha, Pi, Upsilon, Gamma)
     GREEK_LETTERS = ("Α", "Π", "Υ", "Γ")
     GREEK_NAMES = ("Alpha", "Pi", "Upsilon", "Gamma")
 
-    # Greek letter rationale
+    # Greek letter etymology (historical)
     GREEK_ETYMOLOGY = {
-        "Α": "Alpha - First letter, primary observable",
-        "Π": "Pi - From Πῦρ (Pyr = Fire)",
-        "Υ": "Upsilon - From Ὕδωρ (Hydor = Water)",
-        "Γ": "Gamma - From Γαῖα (Gaia = Earth)"
+        "Α": "Alpha - First letter",
+        "Π": "Pi",
+        "Υ": "Upsilon",
+        "Γ": "Gamma"
     }
 
     # Lambda symbols for display
@@ -2175,19 +2153,18 @@ class BraneNomenclature:
         "Generation 3 (τ, t, b - heavy)"
     )
 
-    # Enoch's descriptions (1 Enoch 33-36)
+    # Historical quotes (naming reference)
     ENOCH_QUOTES = (
-        "Three gates of heaven open, wherein the stars go forth",
-        "From the first gate proceed dew, rain, prosperity",
-        "I saw three great gates where the sun sets",
-        "I went to the north and saw cold winds, darkness"
+        "Three gates of heaven open",
+        "From the first gate proceed",
+        "I saw three great gates",
+        "I went to the north"
     )
 
-    # Warping parameter for brane localization (k_gimel / k_ג)
+    # Warping parameter for brane localization (k_ג)
     # Calibrated to give warp factors: 1, ~10^-6, ~10^-12, ~10^-17
     # Formula: Λ = e^(-k_ג×y×π) where y = 0, 1/3, 2/3, 1
-    # See HebrewPhysicsNomenclature.K_GIMEL for Hebrew naming
-    K_GIMEL = 12.31  # k_ג: Gimel bridges observable and shadow worlds
+    K_GIMEL = 12.31
 
     # Sitra Shadow Coupling
     SITRA_COUPLINGS = {
@@ -2248,8 +2225,8 @@ class BraneNomenclature:
 
         return {
             "version": "12.9",
-            "description": "Enochian Watchtower Brane Localization Factors",
-            "reference": "John Dee's Enochian system, 1 Enoch 33-36",
+            "description": "Brane Localization Factors",
+            "reference": "Warped extra dimension framework",
             "greek_etymology": cls.GREEK_ETYMOLOGY,
             "branes": branes,
             "sitra_couplings": cls.SITRA_COUPLINGS,
@@ -2266,135 +2243,96 @@ class HebrewPhysicsNomenclature:
     """
     Hebrew Letter Naming for Key Physics Parameters (v12.9).
 
-    Maps 5 key physics parameters to Hebrew letters based on their
-    gematria values and Kabbalistic symbolic meanings.
-
-    Reference: Traditional gematria values and Sefer Yetzirah correspondences.
+    Maps 5 key physics parameters to Hebrew letters:
+    - k_ג (k_gimel): Warping constant ≈ 12.31
+    - C_כ (C_kaf): Flux normalization ≈ 27.2
+    - f_ה (f_heh): Partition divisor ≈ 4.5
+    - S_מ (S_mem): Instanton suppression ≈ 40
+    - δ_ל (delta_lamed): Threshold correction ≈ 1.2
     """
 
-    # -------------------------------------------------------------------------
-    # k_gimel (ג): Warping constant ≈ 12.31
-    # -------------------------------------------------------------------------
-    # Hebrew: Gimel (ג) = 3
-    # Meaning: Kindness, giving, bridge/camel carrying between worlds
-    # Physics: Bridge between observable and shadow sectors
-    K_GIMEL = 12.31  # Warping parameter in Λ(y) = exp(-k_ג × y × π)
+    # k_gimel (ג): Warping constant
+    K_GIMEL = 12.31
     K_GIMEL_SYMBOL = "k_ג"
     K_GIMEL_DESCRIPTION = "Warping parameter controlling exponential hierarchy in brane tensions"
     K_GIMEL_FORMULA = "Λ(y) = exp(-k_ג × y × π)"
 
-    # -------------------------------------------------------------------------
-    # C_kaf (כ): Flux normalization ≈ 27.2
-    # -------------------------------------------------------------------------
-    # Hebrew: Kaf (כ=20) + Vav (ו=6) + Alef (א=1) = 27
-    # Meaning: Hand of creation shaping flux quanta
-    # Physics: Normalizes flux quanta to give effective torsion T_ω
-    C_KAF = 27.2  # Flux normalization: T_ω = -b₃ / C_כ
+    # C_kaf (כ): Flux normalization
+    C_KAF = 27.2
     C_KAF_SYMBOL = "C_כ"
     C_KAF_DESCRIPTION = "Normalizes flux quanta to give effective torsion T_ω = -b₃ / C_כ"
     C_KAF_FORMULA = "T_ω = -b₃ / C_כ = -24 / 27.2 ≈ -0.882"
 
-    # -------------------------------------------------------------------------
-    # f_heh (ה): Partition divisor ≈ 4.5
-    # -------------------------------------------------------------------------
-    # Hebrew: Heh (ה) = 5, halved to 4.5
-    # Meaning: Divine breath, revelation — halved for duality/mirror
-    # Physics: Partition factor split between mirror branes
-    F_HEH = 4.5  # Effective partition factor (phenomenological)
+    # f_heh (ה): Partition divisor
+    F_HEH = 4.5
     F_HEH_SYMBOL = "f_ה"
     F_HEH_DESCRIPTION = "Effective partition factor in flux normalization (phenomenological)"
     F_HEH_FORMULA = "f_ה = 5/2 × 1.8 ≈ 4.5 (mirror symmetry factor)"
 
-    # -------------------------------------------------------------------------
-    # S_mem (מ): Instanton suppression ≈ 40
-    # -------------------------------------------------------------------------
-    # Hebrew: Mem (מ) = 40
-    # Meaning: Water, closed form, finality (40 days flood/transformation)
-    # Physics: Instanton action sealing non-perturbative effects
-    S_MEM = 40.0  # Instanton action exponent for Yukawa suppression
+    # S_mem (מ): Instanton suppression
+    S_MEM = 40.0
     S_MEM_SYMBOL = "S_מ"
     S_MEM_DESCRIPTION = "Instanton action for non-perturbative Yukawa suppression"
     S_MEM_FORMULA = "Y_ij ∝ exp(-S_מ) for heavy mode suppression"
 
-    # -------------------------------------------------------------------------
-    # δ_lamed (ל): Threshold correction ≈ 1.2
-    # -------------------------------------------------------------------------
-    # Hebrew: Lamed (ל) = 30
-    # Meaning: Learning, teaching, refinement/elevation
-    # Physics: Threshold corrections refining tree-level unification
-    DELTA_LAMED = 1.2  # Coefficient for KK/heavy threshold corrections
+    # δ_lamed (ל): Threshold correction
+    DELTA_LAMED = 1.2
     DELTA_LAMED_SYMBOL = "δ_ל"
     DELTA_LAMED_DESCRIPTION = "Coefficient for KK/heavy threshold corrections in RG flow"
     DELTA_LAMED_FORMULA = "α_GUT(M_GUT) = α_GUT^tree × (1 + δ_ל × loop_factor)"
 
-    # -------------------------------------------------------------------------
     # Complete Hebrew Letter Mapping
-    # -------------------------------------------------------------------------
     HEBREW_PARAMETERS = {
         "k_gimel": {
             "hebrew": "ג",
-            "gematria": 3,
             "symbol": "k_ג",
             "english_name": "k_gimel",
             "value": 12.31,
             "unit": "dimensionless",
-            "meaning": "Kindness, bridge between worlds",
+            "meaning": "Bridge between observable and shadow sectors",
             "physics": "Warping parameter in brane localization Λ(y) = exp(-k_ג × y × π)",
             "derivation": "Calibrated to give warp factors: 1, ~10⁻⁶, ~10⁻¹², ~10⁻¹⁷"
         },
         "C_kaf": {
             "hebrew": "כ",
-            "gematria": 27,  # כ(20) + ו(6) + א(1) = 27
             "symbol": "C_כ",
             "english_name": "C_kaf",
             "value": 27.2,
             "unit": "dimensionless",
-            "meaning": "Hand of creation + connection + unity",
+            "meaning": "Shapes flux quanta into effective torsion",
             "physics": "Flux normalization: T_ω = -b₃ / C_כ",
             "derivation": "C_כ = b₃ / |T_ω| = 24 / 0.882 ≈ 27.2"
         },
         "f_heh": {
             "hebrew": "ה",
-            "gematria": 5,  # Halved to 4.5
             "symbol": "f_ה",
             "english_name": "f_heh",
             "value": 4.5,
             "unit": "dimensionless",
-            "meaning": "Divine breath in duality (halved for mirror)",
+            "meaning": "Partition split between mirror branes",
             "physics": "Partition factor in flux normalization",
             "derivation": "f_ה = 5/2 × 1.8 (mirror symmetry factor)"
         },
         "S_mem": {
             "hebrew": "מ",
-            "gematria": 40,
             "symbol": "S_מ",
             "english_name": "S_mem",
             "value": 40.0,
             "unit": "dimensionless",
-            "meaning": "Closed form, finality (40 days transformation)",
+            "meaning": "Seals heavy modes via instantons",
             "physics": "Instanton action for non-perturbative suppression",
             "derivation": "S_מ ≈ 8π²/g² for SU(N) instantons"
         },
         "delta_lamed": {
             "hebrew": "ל",
-            "gematria": 30,
             "symbol": "δ_ל",
             "english_name": "delta_lamed",
             "value": 1.2,
             "unit": "dimensionless",
-            "meaning": "Learning, refinement/elevation",
+            "meaning": "Refines tree-level via loop corrections",
             "physics": "KK/heavy threshold corrections in RG flow",
             "derivation": "δ_ל = Σᵢ bᵢ × ln(Mᵢ/M_GUT) / (2π)"
         }
-    }
-
-    # Gematria Summary
-    GEMATRIA_TABLE = {
-        "ג (Gimel)": 3,
-        "ה (Heh)": 5,
-        "כ (Kaf)": 20,
-        "ל (Lamed)": 30,
-        "מ (Mem)": 40
     }
 
     @classmethod
@@ -2409,18 +2347,10 @@ class HebrewPhysicsNomenclature:
         """Return complete nomenclature for JSON export."""
         return {
             "version": "12.9",
-            "description": "Hebrew Letter Naming for Physics Parameters (Kabbalistic Nomenclature)",
-            "reference": "Traditional gematria values and Sefer Yetzirah correspondences",
+            "description": "Hebrew Letter Naming for Physics Parameters",
+            "reference": "Parameter nomenclature system",
             "parameters": cls.HEBREW_PARAMETERS,
-            "gematria_table": cls.GEMATRIA_TABLE,
-            "symbolic_rationale": {
-                "k_ג": "Gimel (camel) bridges observable and shadow worlds",
-                "C_כ": "Kaf (palm/hand) shapes flux quanta into torsion",
-                "f_ה": "Heh (breath) split between mirror branes",
-                "S_מ": "Mem (water/final) seals heavy modes with instantons",
-                "δ_ל": "Lamed (teaching) refines tree-level via loop corrections"
-            },
-            "footnote": "Hebrew letters chosen for gematria correspondence with parameter values"
+            "footnote": "Hebrew letter subscripts provide a consistent naming convention"
         }
 
 

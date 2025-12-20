@@ -218,7 +218,7 @@ class ShadowDimensionNames:
     - Gate Mirror: Ρ,Γ,Ζ,Ο,Ι,Σ,Τ,Ω,Χ,Α,Β,Κ (tribes/gemstones - material side)
     - Foundation Mirror: Δ,Ε,Η,Θ,Λ,Μ,Ν,Ξ,Π,Υ,Φ,Ψ (apostles - spiritual side)
 
-    Paired by 4 cardinal walls (New Jerusalem architecture, Revelation 21).
+    Paired by 4 cardinal walls (Z₂ mirror brane structure).
 
     Single Responsibility: Only handles dimension nomenclature.
     """
@@ -252,16 +252,15 @@ class G2DirectionNames:
     """
     Hebrew letter naming for 7 G₂ manifold directions (v12.9+).
 
-    The 7D G₂ holonomy manifold directions are labeled with Hebrew letters
-    corresponding to the lower seven Sefirot (Kabbalistic attributes):
+    The 7D G₂ holonomy manifold directions are labeled with Hebrew letters:
 
-    - Gח (Chesed) - Primary volume
-    - Gג (Gevurah) - Structural form
-    - Gת (Tiferet) - Chirality axis
-    - Gנ (Netzach) - Primary flux
-    - Gה (Hod) - Modulus scaling
-    - Gי (Yesod) - Torsion axis
-    - Gמ (Malkuth) - Attractor direction
+    - Gח - Primary volume
+    - Gג - Structural form
+    - Gת - Chirality axis
+    - Gנ - Primary flux
+    - Gה - Modulus scaling
+    - Gי - Torsion axis
+    - Gמ - Attractor direction
 
     Single Responsibility: Only handles G₂ direction nomenclature.
     """
@@ -274,8 +273,8 @@ class G2DirectionNames:
     # Display names
     display_names: tuple = ("Gח", "Gג", "Gת", "Gנ", "Gה", "Gי", "Gמ")
 
-    # Sefirot
-    sefirot: tuple = ("Chesed", "Gevurah", "Tiferet", "Netzach", "Hod", "Yesod", "Malkuth")
+    # Direction labels (historical)
+    direction_labels: tuple = ("Chesed", "Gevurah", "Tiferet", "Netzach", "Hod", "Yesod", "Malkuth")
 
     # Geometric roles
     geometric_roles: tuple = (
@@ -290,18 +289,18 @@ class G2DirectionNames:
 @dataclass(frozen=True)
 class BraneLocalizationFactors:
     """
-    Enochian Watchtower Brane Localization Factors (v12.9).
+    Brane Localization Factors (v12.9).
 
     Maps branes to Greek letter subscripts:
-    - Λ_Α (Exarp/Air) = Observable (5,1)
-    - Λ_Π (Bitom/Fire) = Gen 1 (3,1)
-    - Λ_Υ (Hcoma/Water) = Gen 2 (3,1)
-    - Λ_Γ (Nanta/Earth) = Gen 3 (3,1)
+    - Λ_Α (Exarp) = Observable (5,1)
+    - Λ_Π (Bitom) = Gen 1 (3,1)
+    - Λ_Υ (Hcoma) = Gen 2 (3,1)
+    - Λ_Γ (Nanta) = Gen 3 (3,1)
 
     Single Responsibility: Only handles brane localization nomenclature.
     """
-    # Enochian names
-    enochian_names: tuple = ("Exarp", "Bitom", "Hcoma", "Nanta")
+    # Brane names
+    brane_names: tuple = ("Exarp", "Bitom", "Hcoma", "Nanta")
 
     # Greek letters
     greek_letters: tuple = ("Α", "Π", "Υ", "Γ")
