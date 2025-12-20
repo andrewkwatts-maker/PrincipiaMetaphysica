@@ -8,41 +8,60 @@ v12.7 FINAL FORMULA:
 - Vol_sigma = exp(b_3/(4pi)) x sqrt(N_flux)
 - This achieves 0.00% error on both solar and atmospheric deltas
 
+v12.8 UPDATE: Now imports all values from config.py (single source of truth)
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 import numpy as np
+import sys
+import os
+
+# Add parent directory to path for imports
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+try:
+    from config import FluxQuantization, NeutrinoMassMatrix, HiggsVEVs
+    # Import v12.7 parameters from config.py (single source of truth)
+    B3 = FluxQuantization.B3  # 24
+    CHI_EFF = FluxQuantization.CHI_EFF  # 144
+    OMEGA = NeutrinoMassMatrix.OMEGA_V12_7
+    PHI = NeutrinoMassMatrix.WILSON_PHASES_V12_7
+    M_R_DIAG = NeutrinoMassMatrix.M_R_V12_7
+    V_EW = HiggsVEVs.V_EW  # 246 GeV
+except ImportError:
+    # Fallback values if config.py not available
+    B3 = 24
+    CHI_EFF = 144
+    OMEGA = np.array([[0, 8, 3], [8, 0, 12], [3, 12, 0]])
+    PHI = np.array([[0.000, 2.813, 1.107], [2.813, 0.000, 0.911], [1.107, 0.911, 0.000]])
+    M_R_DIAG = np.array([5.1e13, 2.3e13, 5.7e12])
+    V_EW = 246.0
+
 
 def derive_neutrino_mass_matrix_v12_7():
     """
     v12.7 - Final exact derivation with refined volume formula.
     Achieves EXACT match to NuFIT 6.0 (0.00% error on both Delta_m² values).
+
+    All parameters imported from config.py (single source of truth).
     """
 
-    # Triple intersection numbers (from CHNP #187)
-    Omega = np.array([
-        [  0,   8,   3],
-        [  8,   0,  12],
-        [  3,  12,   0]
-    ])
+    # Triple intersection numbers (from config.py - CHNP #187 v12.7 variant)
+    Omega = OMEGA
 
-    # Wilson line phases
-    phi = np.array([
-        [0.000, 2.813, 1.107],
-        [2.813, 0.000, 0.911],
-        [1.107, 0.911, 0.000]
-    ])
+    # Wilson line phases (from config.py)
+    phi = PHI
 
-    # Right-handed neutrino masses (quadratic hierarchy)
-    M_R_diag = np.array([5.1e13, 2.3e13, 5.7e12])  # GeV
-    M_R = np.diag(M_R_diag)
+    # Right-handed neutrino masses (from config.py)
+    M_R = np.diag(M_R_DIAG)
 
     # Dirac Yukawa (raw)
     Y_D_raw = Omega * np.exp(1j * phi)
 
     # v12.7 REFINED VOLUME FORMULA (EXACT)
-    b3 = 24
-    chi_eff = 144
+    b3 = B3
+    chi_eff = CHI_EFF
 
     # Volume with flux enhancement
     Vol_sigma = np.exp(b3 / (4 * np.pi))  # 4pi from 2-cycle measure
@@ -53,9 +72,8 @@ def derive_neutrino_mass_matrix_v12_7():
     # Apply suppression to get physical Yukawa
     Y_D = Y_D_raw / suppression
 
-    # Type-I seesaw
-    v_EW = 246  # GeV
-    m_nu = -Y_D @ np.linalg.inv(M_R) @ Y_D.T * (v_EW**2 / 2)
+    # Type-I seesaw (v_EW from config.py)
+    m_nu = -Y_D @ np.linalg.inv(M_R) @ Y_D.T * (V_EW**2 / 2)
 
     # Diagonalize
     vals, vecs = np.linalg.eig(m_nu)
