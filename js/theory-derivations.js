@@ -243,9 +243,9 @@ const TheoryDerivations = {
                 desiComparison: { value: -0.827, sigma: 0.063, tension: "< 1σ" }
             },
             wa: {
-                value: -0.75,
-                derivation: "Two-time modular flow with Z₂ coupling",
-                desiComparison: { value: -0.75, sigma: 0.25, tension: "EXACT MATCH" }
+                value: -0.9476,
+                derivation: "w_a = w_0 · α_T/3 = -0.8527 × 3.337/3 ≈ -0.9476",
+                desiComparison: { value: -0.75, sigma: 0.30, tension: "0.66σ agreement" }
             },
             alphaT: {
                 value: 2.7,
