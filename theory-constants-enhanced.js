@@ -105,16 +105,16 @@ const PM = {
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.814023840541011e+34,
-    "tau_p_mean": 3.964633757007381e+34,
-    "tau_p_std": 1.4894455012004397e+34,
-    "tau_p_lower_68": 2.440458388304107e+34,
-    "tau_p_upper_68": 5.494499149064275e+34,
-    "tau_p_lower_95": 1.4569007279326145e+34,
-    "tau_p_upper_95": 7.2984411156263405e+34,
-    "tau_p_uncertainty_oom": 0.1741100483870026,
+    "tau_p_median": 3.8320585861454413e+34,
+    "tau_p_mean": 3.9923732511507476e+34,
+    "tau_p_std": 1.4857095161500116e+34,
+    "tau_p_lower_68": 2.4782189873873585e+34,
+    "tau_p_upper_68": 5.509075525615827e+34,
+    "tau_p_lower_95": 1.46313005016298e+34,
+    "tau_p_upper_95": 7.311489918323867e+34,
+    "tau_p_uncertainty_oom": 0.17224877169325575,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.2838466111024016
+    "ratio_to_bound": 2.29464585996733
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -126,10 +126,14 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.8018617465736481,
-    "theta_12_error": 1.1975561367942762,
-    "theta_13_error": 0.3483845301806012,
-    "delta_cp_error": 27.84980231214778
+    "theta_23_error": 0.8013689642776802,
+    "theta_12_error": 1.209542723535334,
+    "theta_13_error": 0.3519020458071484,
+    "delta_cp_error": 28.182640817041992,
+    "theta_23_deg": 45.0,
+    "theta_12_deg": 33.59329049922625,
+    "theta_13_deg": 8.568979552196335,
+    "delta_CP": 235.0
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 45.0,
@@ -144,8 +148,12 @@ const PM = {
   "dark_energy": {
     "w0_PM": -0.8528221355508132,
     "w0_DESI": -0.83,
+    "w0_DESI_central": -0.83,
+    "w0_DESI_error": 0.06,
     "w0_deviation_sigma": 0.38036892584688753,
+    "w0_sigma": 0.38036892584688753,
     "wa_PM_effective": -0.9475801506120145,
+    "wa_PM_log": -0.9475801506120145,
     "wa_DESI": -0.75,
     "wa_deviation_sigma": 0.6586005020400484,
     "w_CMB_frozen": -1.0,
@@ -164,8 +172,22 @@ const PM = {
     "significance": 4.2
   },
   "kk_spectrum": {
-    "status": "error",
-    "message": "'discovery_significance_sigma'"
+    "m1": "5.0 TeV",
+    "m1_TeV": 5.0,
+    "m1_central": 5.0,
+    "m2_TeV": 10.0,
+    "m3_TeV": 15.0,
+    "m1_std": 1502.781549669571,
+    "m2_std": 3005.563099339142,
+    "m3_std": 4508.344649008713,
+    "sigma_m1_fb": 0.08070970663393806,
+    "sigma_m1_std": 1.8810568243673937,
+    "hl_lhc_significance": 6.850832621542778,
+    "BR_gg": 0.65,
+    "BR_qq": 0.68,
+    "BR_ll": 0.05,
+    "BR_gamma_gamma": 0.02,
+    "status": "Derived from G2 T^2 cycle volume"
   },
   "neutrino_mass_ordering": {
     "ordering_predicted": "NH",
@@ -861,29 +883,29 @@ const PM = {
       "description": "Tribes/Gemstones (Sitra Gate - material side)",
       "letters": [
         "\u03a1",
-        "\u0393",
+        "\u03a4",
         "\u0396",
         "\u039f",
         "\u0399",
         "\u03a3",
-        "\u03a4",
+        "\u03a0",
         "\u03a9",
         "\u03a7",
-        "\u0391",
+        "\u03a5",
         "\u0392",
         "\u039a"
       ],
       "letter_names": [
         "Rho",
-        "Gamma",
+        "Tau",
         "Zeta",
         "Omicron",
         "Iota",
         "Sigma",
-        "Tau",
+        "Pi",
         "Omega",
         "Chi",
-        "Alpha",
+        "Upsilon",
         "Beta",
         "Kappa"
       ],
@@ -921,28 +943,28 @@ const PM = {
       "letters": [
         "\u0394",
         "\u0395",
-        "\u0397",
-        "\u0398",
+        "\u0393",
+        "\u0391",
         "\u039b",
         "\u039c",
         "\u039d",
         "\u039e",
-        "\u03a0",
-        "\u03a5",
+        "\u0397",
+        "\u0398",
         "\u03a6",
         "\u03a8"
       ],
       "letter_names": [
         "Delta",
         "Epsilon",
-        "Eta",
-        "Theta",
+        "Gamma",
+        "Alpha",
         "Lambda",
         "Mu",
         "Nu",
         "Xi",
-        "Pi",
-        "Upsilon",
+        "Eta",
+        "Theta",
         "Phi",
         "Psi"
       ],
@@ -976,22 +998,22 @@ const PM = {
             "apostle": "Peter"
           },
           {
-            "gate": "\u0393",
+            "gate": "\u03a4",
             "foundation": "\u0395",
             "tribe": "Judah",
             "apostle": "Andrew"
           },
           {
             "gate": "\u0396",
-            "foundation": "\u0397",
+            "foundation": "\u0393",
             "tribe": "Levi",
             "apostle": "James the Great"
           }
         ],
         "notation": [
           "X_{\u03a1\u2013\u0394}",
-          "X_{\u0393\u2013\u0395}",
-          "X_{\u0396\u2013\u0397}"
+          "X_{\u03a4\u2013\u0395}",
+          "X_{\u0396\u2013\u0393}"
         ]
       },
       "east": {
@@ -1003,7 +1025,7 @@ const PM = {
         "pairs": [
           {
             "gate": "\u039f",
-            "foundation": "\u0398",
+            "foundation": "\u0391",
             "tribe": "Joseph",
             "apostle": "John"
           },
@@ -1021,7 +1043,7 @@ const PM = {
           }
         ],
         "notation": [
-          "X_{\u039f\u2013\u0398}",
+          "X_{\u039f\u2013\u0391}",
           "X_{\u0399\u2013\u039b}",
           "X_{\u03a3\u2013\u039c}"
         ]
@@ -1034,7 +1056,7 @@ const PM = {
         ],
         "pairs": [
           {
-            "gate": "\u03a4",
+            "gate": "\u03a0",
             "foundation": "\u039d",
             "tribe": "Simeon",
             "apostle": "Matthew"
@@ -1047,15 +1069,15 @@ const PM = {
           },
           {
             "gate": "\u03a7",
-            "foundation": "\u03a0",
+            "foundation": "\u0397",
             "tribe": "Zebulun",
             "apostle": "James the Less"
           }
         ],
         "notation": [
-          "X_{\u03a4\u2013\u039d}",
+          "X_{\u03a0\u2013\u039d}",
           "X_{\u03a9\u2013\u039e}",
-          "X_{\u03a7\u2013\u03a0}"
+          "X_{\u03a7\u2013\u0397}"
         ]
       },
       "west": {
@@ -1066,8 +1088,8 @@ const PM = {
         ],
         "pairs": [
           {
-            "gate": "\u0391",
-            "foundation": "\u03a5",
+            "gate": "\u03a5",
+            "foundation": "\u0398",
             "tribe": "Gad",
             "apostle": "Jude"
           },
@@ -1085,7 +1107,7 @@ const PM = {
           }
         ],
         "notation": [
-          "X_{\u0391\u2013\u03a5}",
+          "X_{\u03a5\u2013\u0398}",
           "X_{\u0392\u2013\u03a6}",
           "X_{\u039a\u2013\u03a8}"
         ]

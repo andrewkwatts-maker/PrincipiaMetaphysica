@@ -1691,7 +1691,12 @@ def run_all_simulations(verbose=True):
             'theta_23_error': float(pmns_results['monte_carlo']['theta_23']['std']),
             'theta_12_error': float(pmns_results['monte_carlo']['theta_12']['std']),
             'theta_13_error': float(pmns_results['monte_carlo']['theta_13']['std']),
-            'delta_cp_error': float(pmns_results['monte_carlo']['delta_cp']['std'])
+            'delta_cp_error': float(pmns_results['monte_carlo']['delta_cp']['std']),
+            # Website compatibility aliases
+            'theta_23_deg': float(pmns_results['angles']['theta_23']),
+            'theta_12_deg': float(pmns_results['angles']['theta_12']),
+            'theta_13_deg': float(pmns_results['angles']['theta_13']),
+            'delta_CP': float(pmns_results['angles']['delta_cp'])
         }
 
         results['pmns_nufit_comparison'] = {
@@ -1722,8 +1727,12 @@ def run_all_simulations(verbose=True):
         results['dark_energy'] = {
             'w0_PM': wz_results['w0_PM'],
             'w0_DESI': wz_results['w0_DESI'],
+            'w0_DESI_central': wz_results['w0_DESI'],  # Alias for website compatibility
+            'w0_DESI_error': 0.06,  # DESI DR2 uncertainty
             'w0_deviation_sigma': wz_results['deviation_w0_sigma'],
+            'w0_sigma': wz_results['deviation_w0_sigma'],  # Alias for website compatibility
             'wa_PM_effective': wz_results['wa_PM_effective'],
+            'wa_PM_log': wz_results['wa_PM_effective'],  # Alias for website compatibility
             'wa_DESI': wz_results['wa_DESI'],
             'wa_deviation_sigma': wz_results['wa_deviation_sigma'],
             'w_CMB_frozen': wz_results['cmb']['w_PM_frozen'],
@@ -1757,24 +1766,33 @@ def run_all_simulations(verbose=True):
     try:
         kk_results = run_kk_spectrum()
 
+        # Convert masses from GeV to TeV for display
+        m1_TeV = kk_results['m1'] / 1e3
+        m2_TeV = kk_results['m2'] / 1e3
+
         results['kk_spectrum'] = {
-            'm1': kk_results['m1'],
-            'm2': kk_results['m2'],
-            'm3': kk_results['m3'],
+            'm1': f"{m1_TeV:.1f} TeV",  # String format for display
+            'm1_TeV': m1_TeV,  # Numeric value
+            'm1_central': round(m1_TeV, 1),  # Central value (rounded)
+            'm2_TeV': m2_TeV,
+            'm3_TeV': kk_results['m3'] / 1e3,
             'm1_std': kk_results['m1_std'],
             'm2_std': kk_results['m2_std'],
             'm3_std': kk_results['m3_std'],
             'sigma_m1_fb': kk_results['sigma_m1_fb'],
             'sigma_m1_std': kk_results['sigma_m1_std'],
-            'discovery_significance_sigma': kk_results['discovery_significance_sigma'],
+            'hl_lhc_significance': kk_results['discovery_significance_sigma'],
             'BR_gg': kk_results['branching_ratios']['gg'],
             'BR_qq': kk_results['branching_ratios']['qq'],
             'BR_ll': kk_results['branching_ratios']['ll'],
-            'BR_gamma_gamma': kk_results['branching_ratios']['gamma_gamma']
+            'BR_gamma_gamma': kk_results['branching_ratios']['gamma_gamma'],
+            'status': 'Derived from G2 T^2 cycle volume'
         }
 
         if verbose:
-            print(f"   m1 = {results['kk_spectrum']['m1']/1e3:.2f} TeV")
+            print(f"   m1 = {m1_TeV:.2f} TeV")
+            print(f"   sigma = {kk_results['sigma_m1_fb']:.2f} fb")
+            print(f"   HL-LHC significance = {kk_results['discovery_significance_sigma']:.1f} sigma")
     except Exception as e:
         if verbose:
             print(f"   Error: {e}")

@@ -346,22 +346,25 @@ function populatePMValues() {
     }
 
     const obj = window.PM[category][param];
-    if (!obj) {
+    if (obj === undefined) {
       console.warn(`[PM Auth Guard] Parameter "${param}" not found in PM.${category}`);
       return;
     }
 
-    // Get the value - either from a nested field or the main value
+    // Get the value - handle both flat values and object values
     let value;
-    if (field && obj[field] !== undefined) {
+    if (field && typeof obj === 'object' && obj[field] !== undefined) {
       value = obj[field];
-    } else {
+    } else if (typeof obj === 'object' && obj.value !== undefined) {
       value = obj.value;
+    } else {
+      // Handle flat primitive values (numbers, strings)
+      value = obj;
     }
 
     // Use display string if available, otherwise format value
     let displayValue;
-    if (format === 'display' && obj.display) {
+    if (format === 'display' && typeof obj === 'object' && obj.display) {
       displayValue = obj.display;
     } else if (typeof value === 'number') {
       displayValue = formatValue(value, format);
@@ -372,8 +375,8 @@ function populatePMValues() {
     // Set the text content
     el.textContent = displayValue;
 
-    // Add unit if specified and not already in display
-    if (!field && obj.unit && !el.dataset.noUnit && format !== 'display') {
+    // Add unit if specified and not already in display (only for object values)
+    if (!field && typeof obj === 'object' && obj.unit && !el.dataset.noUnit && format !== 'display') {
       el.textContent += ' ' + obj.unit;
     }
 
