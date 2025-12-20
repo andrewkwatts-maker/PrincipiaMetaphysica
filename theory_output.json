@@ -84,16 +84,16 @@
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.8730973550213364e+34,
-    "tau_p_mean": 4.026651807021729e+34,
-    "tau_p_std": 1.5080166511464932e+34,
-    "tau_p_lower_68": 2.498132088064794e+34,
-    "tau_p_upper_68": 5.607365352255772e+34,
-    "tau_p_lower_95": 1.4610639326850721e+34,
-    "tau_p_upper_95": 7.334325553619625e+34,
-    "tau_p_uncertainty_oom": 0.17425906646406625,
+    "tau_p_median": 3.867971530946286e+34,
+    "tau_p_mean": 4.009580086758146e+34,
+    "tau_p_std": 1.498093913062042e+34,
+    "tau_p_lower_68": 2.484263617044717e+34,
+    "tau_p_upper_68": 5.551322303381623e+34,
+    "tau_p_lower_95": 1.4887025520773888e+34,
+    "tau_p_upper_95": 7.310210931131992e+34,
+    "tau_p_uncertainty_oom": 0.1730872275367112,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3192199730666685
+    "ratio_to_bound": 2.3161506173331055
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -105,10 +105,10 @@
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.7940976571958135,
-    "theta_12_error": 1.215354508853886,
-    "theta_13_error": 0.34911622555654526,
-    "delta_cp_error": 27.943672592033767
+    "theta_23_error": 0.8008046667112882,
+    "theta_12_error": 1.1940085753720056,
+    "theta_13_error": 0.3478080927716717,
+    "delta_cp_error": 28.069066205430655
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -711,7 +711,7 @@
       "b3": 24,
       "formula": "eta = exp(|T_omega|)/b3",
       "derivation": "eta = exp(|T_omega|)/b3",
-      "status": "GEOMETRIC PREDICTION (100% derived, no tuning)",
+      "status": "Geometric prediction from flux quantization",
       "testable": "Future GW observatories (LISA, ET)"
     },
     "proton_lifetime_mc": {
@@ -747,13 +747,18 @@
       "status": "DERIVED - thermal time from modular Hamiltonian"
     },
     "hidden_variables": {
-      "error": "[Errno 22] Invalid argument",
-      "status": "Module import failed"
+      "brane_observable": 1,
+      "brane_shadow": 3,
+      "purity": 0.8199999999999998,
+      "bell_compatible": true,
+      "randomness_type": "epistemic",
+      "derivation": "Partial trace over shadow branes",
+      "status": "DERIVED - epistemic randomness from brane structure"
     },
     "summary": {
       "version": "12.8",
       "issues_addressed": 12,
-      "issues_closed": 5,
+      "issues_closed": 6,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
         "T_omega from G-flux (Issue #2)",
@@ -798,7 +803,7 @@
     "issues_resolved": 48,
     "new_predictions": {
       "proton_br_e_pi0": 0.25,
-      "gw_dispersion_eta": 0.113
+      "gw_dispersion_eta": 0.101
     },
     "calibrated_parameters": {
       "theta_13": "8.57 deg (pending Yukawa intersection)",
