@@ -105,16 +105,16 @@ const PM = {
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.8463794153936174e+34,
-    "tau_p_mean": 3.9825236427538467e+34,
-    "tau_p_std": 1.4884210355066098e+34,
-    "tau_p_lower_68": 2.457538296073057e+34,
-    "tau_p_upper_68": 5.527237873786882e+34,
-    "tau_p_lower_95": 1.4586955769018217e+34,
-    "tau_p_upper_95": 7.312307884259653e+34,
-    "tau_p_uncertainty_oom": 0.1736357197472875,
+    "tau_p_median": 3.8730973550213364e+34,
+    "tau_p_mean": 4.026651807021729e+34,
+    "tau_p_std": 1.5080166511464932e+34,
+    "tau_p_lower_68": 2.498132088064794e+34,
+    "tau_p_upper_68": 5.607365352255772e+34,
+    "tau_p_lower_95": 1.4610639326850721e+34,
+    "tau_p_upper_95": 7.334325553619625e+34,
+    "tau_p_uncertainty_oom": 0.17425906646406625,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.303221206822525
+    "ratio_to_bound": 2.3192199730666685
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -126,10 +126,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.8052028915784598,
-    "theta_12_error": 1.209485378999781,
-    "theta_13_error": 0.34837380064179085,
-    "delta_cp_error": 28.078668896369145
+    "theta_23_error": 0.7940976571958135,
+    "theta_12_error": 1.215354508853886,
+    "theta_13_error": 0.34911622555654526,
+    "delta_cp_error": 27.943672592033767
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -727,12 +727,12 @@ const PM = {
       "testable": "Hyper-Kamiokande 2032-2038"
     },
     "gw_dispersion": {
-      "eta": 0.10069079544237515,
-      "T_omega": -0.8823529411764706,
+      "eta": 0.11326174285246021,
+      "T_omega": -1.0,
       "b3": 24,
       "formula": "eta = exp(|T_omega|)/b3",
       "derivation": "eta = exp(|T_omega|)/b3",
-      "status": "GEOMETRIC PREDICTION (100% derived)",
+      "status": "GEOMETRIC PREDICTION (100% derived, no tuning)",
       "testable": "Future GW observatories (LISA, ET)"
     },
     "proton_lifetime_mc": {
@@ -768,18 +768,13 @@ const PM = {
       "status": "DERIVED - thermal time from modular Hamiltonian"
     },
     "hidden_variables": {
-      "brane_observable": 1,
-      "brane_shadow": 3,
-      "purity": 0.8199999999999998,
-      "bell_compatible": true,
-      "randomness_type": "epistemic",
-      "derivation": "Partial trace over shadow branes",
-      "status": "DERIVED - epistemic randomness from brane structure"
+      "error": "[Errno 22] Invalid argument",
+      "status": "Module import failed"
     },
     "summary": {
       "version": "12.8",
       "issues_addressed": 12,
-      "issues_closed": 6,
+      "issues_closed": 5,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
         "T_omega from G-flux (Issue #2)",
@@ -824,7 +819,7 @@ const PM = {
     "issues_resolved": 48,
     "new_predictions": {
       "proton_br_e_pi0": 0.25,
-      "gw_dispersion_eta": 0.101
+      "gw_dispersion_eta": 0.113
     },
     "calibrated_parameters": {
       "theta_13": "8.57 deg (pending Yukawa intersection)",
