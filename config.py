@@ -1627,11 +1627,11 @@ class ShadowDimensionNomenclature:
     - Gate Mirror (Σ₁): 12 dimensions
     - Foundation Mirror (Σ₂): 12 dimensions
 
-    Dimensions are paired by cardinal wall:
-    - North Wall: 3 pairs (Ρ–Δ, Γ–Ε, Ζ–Η)
-    - East Wall: 3 pairs (Ο–Θ, Ι–Λ, Σ–Μ)
-    - South Wall: 3 pairs (Τ–Ν, Ω–Ξ, Χ–Π)
-    - West Wall: 3 pairs (Α–Υ, Β–Φ, Κ–Ψ)
+    Dimensions are paired by cardinal wall (directionally aligned):
+    - North Wall: 3 pairs (Ρ–Δ, Τ–Ε, Ζ–Γ) ← Γ (Earth) at North
+    - East Wall: 3 pairs (Ο–Α, Ι–Λ, Σ–Μ) ← Α (Air) at East
+    - South Wall: 3 pairs (Π–Ν, Ω–Ξ, Χ–Η) ← Π (Fire) at South
+    - West Wall: 3 pairs (Υ–Θ, Β–Φ, Κ–Ψ) ← Υ (Water) at West
 
     The Sitra Shadow Coupling (shadow_kuf + shadow_chet) governs interactions
     across all paired dimensions.
@@ -1640,15 +1640,15 @@ class ShadowDimensionNomenclature:
     # Cardinal walls (4 walls × 3 pairs = 12 paired dimensions)
     WALLS = ("north", "east", "south", "west")
 
-    # Gate Mirror Greek letters - 12 dimensions (includes Π, Υ for Shadow_ח coupling)
-    GATE_LETTERS = ("Ρ", "Π", "Ζ", "Ο", "Ι", "Σ", "Τ", "Ω", "Χ", "Υ", "Β", "Κ")
-    GATE_NAMES = ("Rho", "Pi", "Zeta", "Omicron", "Iota", "Sigma",
-                  "Tau", "Omega", "Chi", "Upsilon", "Beta", "Kappa")
+    # Gate Mirror Greek letters - 12 dimensions (Π at South, Υ at West for Shadow_ח)
+    GATE_LETTERS = ("Ρ", "Τ", "Ζ", "Ο", "Ι", "Σ", "Π", "Ω", "Χ", "Υ", "Β", "Κ")
+    GATE_NAMES = ("Rho", "Tau", "Zeta", "Omicron", "Iota", "Sigma",
+                  "Pi", "Omega", "Chi", "Upsilon", "Beta", "Kappa")
 
-    # Foundation Mirror Greek letters - 12 dimensions (includes Α, Γ for Shadow_ק coupling)
-    FOUNDATION_LETTERS = ("Δ", "Ε", "Η", "Θ", "Λ", "Μ", "Ν", "Ξ", "Γ", "Α", "Φ", "Ψ")
-    FOUNDATION_NAMES = ("Delta", "Epsilon", "Eta", "Theta", "Lambda", "Mu",
-                        "Nu", "Xi", "Gamma", "Alpha", "Phi", "Psi")
+    # Foundation Mirror Greek letters - 12 dimensions (Α at East, Γ at North for Shadow_ק)
+    FOUNDATION_LETTERS = ("Δ", "Ε", "Γ", "Α", "Λ", "Μ", "Ν", "Ξ", "Η", "Θ", "Φ", "Ψ")
+    FOUNDATION_NAMES = ("Delta", "Epsilon", "Gamma", "Alpha", "Lambda", "Mu",
+                        "Nu", "Xi", "Eta", "Theta", "Phi", "Psi")
 
     # Gate Mirror labels (historical naming convention)
     TRIBES = (
@@ -1677,15 +1677,15 @@ class ShadowDimensionNomenclature:
     # Symbolic meanings for each paired dimension
     SYMBOLIC_MEANINGS = (
         "Firstborn + Rock (stability)",           # Ρ–Δ: Reuben/Peter
-        "Royal + Reach (extension)",              # Π–Ε: Judah/Andrew
-        "Priestly + Heritage (inheritance)",      # Ζ–Η: Levi/James Great
-        "Fruitful + Divine Love (theology)",      # Ο–Θ: Joseph/John
+        "Royal + Reach (extension)",              # Τ–Ε: Judah/Andrew
+        "Priestly + Heritage (inheritance)",      # Ζ–Γ: Levi/James Great
+        "Fruitful + Divine Love (theology)",      # Ο–Α: Joseph/John
         "Beloved + Reason (logos)",               # Ι–Λ: Benjamin/Philip
         "Judge + Truth Spreading (manifest)",     # Σ–Μ: Dan/Bartholomew
-        "Hearing + Record (numbers)",             # Τ–Ν: Simeon/Matthew
+        "Hearing + Record (numbers)",             # Π–Ν: Simeon/Matthew
         "Wisdom + Faith Sight (vision)",          # Ω–Ξ: Issachar/Thomas
-        "Mariner + Steadfastness (pillar)",       # Χ–Γ: Zebulun/James Less
-        "Beginning + Unity",                       # Υ–Α: Gad/Jude
+        "Mariner + Steadfastness (pillar)",       # Χ–Η: Zebulun/James Less
+        "Beginning + Unity",                       # Υ–Θ: Gad/Jude
         "Prosperous + Passion (fire)",            # Β–Φ: Asher/Simon Zealot
         "Free + Soul (spirit)"                    # Κ–Ψ: Naphtali/Matthias
     )
@@ -1827,37 +1827,37 @@ class ShadowDimensionNomenclature:
                     "indices": [0, 1, 2],
                     "pairs": [
                         {"gate": "Ρ", "foundation": "Δ", "tribe": "Reuben", "apostle": "Peter"},
-                        {"gate": "Γ", "foundation": "Ε", "tribe": "Judah", "apostle": "Andrew"},
-                        {"gate": "Ζ", "foundation": "Η", "tribe": "Levi", "apostle": "James the Great"}
+                        {"gate": "Τ", "foundation": "Ε", "tribe": "Judah", "apostle": "Andrew"},
+                        {"gate": "Ζ", "foundation": "Γ", "tribe": "Levi", "apostle": "James the Great"}
                     ],
-                    "notation": ["X_{Ρ–Δ}", "X_{Γ–Ε}", "X_{Ζ–Η}"]
+                    "notation": ["X_{Ρ–Δ}", "X_{Τ–Ε}", "X_{Ζ–Γ}"]
                 },
                 "east": {
                     "indices": [3, 4, 5],
                     "pairs": [
-                        {"gate": "Ο", "foundation": "Θ", "tribe": "Joseph", "apostle": "John"},
+                        {"gate": "Ο", "foundation": "Α", "tribe": "Joseph", "apostle": "John"},
                         {"gate": "Ι", "foundation": "Λ", "tribe": "Benjamin", "apostle": "Philip"},
                         {"gate": "Σ", "foundation": "Μ", "tribe": "Dan", "apostle": "Bartholomew"}
                     ],
-                    "notation": ["X_{Ο–Θ}", "X_{Ι–Λ}", "X_{Σ–Μ}"]
+                    "notation": ["X_{Ο–Α}", "X_{Ι–Λ}", "X_{Σ–Μ}"]
                 },
                 "south": {
                     "indices": [6, 7, 8],
                     "pairs": [
-                        {"gate": "Τ", "foundation": "Ν", "tribe": "Simeon", "apostle": "Matthew"},
+                        {"gate": "Π", "foundation": "Ν", "tribe": "Simeon", "apostle": "Matthew"},
                         {"gate": "Ω", "foundation": "Ξ", "tribe": "Issachar", "apostle": "Thomas"},
-                        {"gate": "Χ", "foundation": "Π", "tribe": "Zebulun", "apostle": "James the Less"}
+                        {"gate": "Χ", "foundation": "Η", "tribe": "Zebulun", "apostle": "James the Less"}
                     ],
-                    "notation": ["X_{Τ–Ν}", "X_{Ω–Ξ}", "X_{Χ–Π}"]
+                    "notation": ["X_{Π–Ν}", "X_{Ω–Ξ}", "X_{Χ–Η}"]
                 },
                 "west": {
                     "indices": [9, 10, 11],
                     "pairs": [
-                        {"gate": "Α", "foundation": "Υ", "tribe": "Gad", "apostle": "Jude"},
+                        {"gate": "Υ", "foundation": "Θ", "tribe": "Gad", "apostle": "Jude"},
                         {"gate": "Β", "foundation": "Φ", "tribe": "Asher", "apostle": "Simon the Zealot"},
                         {"gate": "Κ", "foundation": "Ψ", "tribe": "Naphtali", "apostle": "Matthias"}
                     ],
-                    "notation": ["X_{Α–Υ}", "X_{Β–Φ}", "X_{Κ–Ψ}"]
+                    "notation": ["X_{Υ–Θ}", "X_{Β–Φ}", "X_{Κ–Ψ}"]
                 }
             },
             "symbolic_meanings": list(cls.SYMBOLIC_MEANINGS),

@@ -21,17 +21,17 @@ This document preserves the complete mystical/esoteric mappings that inspired th
 
 ### Gate Mirror (Σ₁) - 12 Dimensions (Material/Tribes Side)
 *Original mapping: Twelve Tribes of Israel + Gemstones (Revelation 21:12, 19-20)*
-*Contains Π, Υ for Shadow_ח coupling*
+*Contains Π (South), Υ (West) for Shadow_ח - directionally aligned*
 
 | Wall | Greek | Tribe | Gemstone |
 |------|-------|-------|----------|
 | North | Ρ (Rho) | Reuben | Ruby |
-| North | Π (Pi) | Judah | Emerald |
+| North | Τ (Tau) | Judah | Emerald |
 | North | Ζ (Zeta) | Levi | Zircon |
 | East | Ο (Omicron) | Joseph | Onyx |
 | East | Ι (Iota) | Benjamin | Jasper |
 | East | Σ (Sigma) | Dan | Sapphire |
-| South | Τ (Tau) | Simeon | Topaz |
+| South | Π (Pi) | Simeon | Topaz |
 | South | Ω (Omega) | Issachar | Amethyst |
 | South | Χ (Chi) | Zebulun | Peridot |
 | West | Υ (Upsilon) | Gad | Agate |
@@ -40,28 +40,28 @@ This document preserves the complete mystical/esoteric mappings that inspired th
 
 ### Foundation Mirror (Σ₂) - 12 Dimensions (Spiritual/Apostles Side)
 *Original mapping: Twelve Apostles (Revelation 21:14)*
-*Contains Α, Γ for Shadow_ק coupling*
+*Contains Α (East), Γ (North) for Shadow_ק - directionally aligned*
 
 | Wall | Greek | Apostle |
 |------|-------|---------|
 | North | Δ (Delta) | Peter |
 | North | Ε (Epsilon) | Andrew |
-| North | Η (Eta) | James the Great |
-| East | Θ (Theta) | John |
+| North | Γ (Gamma) | James the Great |
+| East | Α (Alpha) | John |
 | East | Λ (Lambda) | Philip |
 | East | Μ (Mu) | Bartholomew |
 | South | Ν (Nu) | Matthew |
 | South | Ξ (Xi) | Thomas |
-| South | Γ (Gamma) | James the Less |
-| West | Α (Alpha) | Jude |
+| South | Η (Eta) | James the Less |
+| West | Θ (Theta) | Jude |
 | West | Φ (Phi) | Simon the Zealot |
 | West | Ψ (Psi) | Matthias |
 
 **Paired Dimension Notation:** X_{Gate-Foundation}
-- North: X_{Ρ-Δ}, X_{Π-Ε}, X_{Ζ-Η}
-- East: X_{Ο-Θ}, X_{Ι-Λ}, X_{Σ-Μ}
-- South: X_{Τ-Ν}, X_{Ω-Ξ}, X_{Χ-Γ}
-- West: X_{Υ-Α}, X_{Β-Φ}, X_{Κ-Ψ}
+- North: X_{Ρ-Δ}, X_{Τ-Ε}, X_{Ζ-Γ}
+- East: X_{Ο-Α}, X_{Ι-Λ}, X_{Σ-Μ}
+- South: X_{Π-Ν}, X_{Ω-Ξ}, X_{Χ-Η}
+- West: X_{Υ-Θ}, X_{Β-Φ}, X_{Κ-Ψ}
 
 **Reference:** New Jerusalem Architecture (Revelation 21:12-14, 19-20)
 

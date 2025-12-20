@@ -358,7 +358,7 @@
       "Z_mass_GeV": 91.1876,
       "W_mass_GeV": 80.377,
       "photon_mass_GeV": 0.0,
-      "status": "SM gauge bosons from SU(2)\u00d7U(1) breaking"
+      "status": "SM gauge bosons from SU(2)×U(1) breaking"
     },
     "leptons": {
       "e": {
@@ -424,7 +424,7 @@
       "theta_23_predicted": 45.0,
       "theta_23_nufit": 45.0,
       "theta_23_nufit_error": 1.5,
-      "update": "NuFIT 6.0 (shift from 47.2\u00b0 to 45.0\u00b0)",
+      "update": "NuFIT 6.0 (shift from 47.2° to 45.0°)",
       "torsion_constraint": 1.152304,
       "status": "geometric_with_alignment"
     },
@@ -434,7 +434,7 @@
         "base_geometric": 39.81,
         "flux_enhancement": 3.12,
         "total": 124.22,
-        "description": "sqrt(Vol_Sigma) \u00d7 sqrt(M_Pl/M_string) \u00d7 N_flux^(2/3) \u00d7 localization"
+        "description": "sqrt(Vol_Sigma) × sqrt(M_Pl/M_string) × N_flux^(2/3) × localization"
       },
       "m_r_hierarchy": {
         "M_R1_GeV": 51000000000000.0,
@@ -445,8 +445,8 @@
       "grade_improvement": {
         "v12_2": "A (90/100)",
         "v12_3": "A+ (97/100)",
-        "solar_error_reduction": "13x (99.6% \u2192 7.4%)",
-        "atmospheric_error_reduction": "238x (~95% \u2192 0.4%)"
+        "solar_error_reduction": "13x (99.6% → 7.4%)",
+        "atmospheric_error_reduction": "238x (~95% → 0.4%)"
       }
     }
   },
@@ -468,7 +468,7 @@
       "dual_valid": true,
       "lambda_agreement": true,
       "m_h_agreement": true,
-      "status": "UV \u2194 IR dual consistency <1%"
+      "status": "UV ↔ IR dual consistency <1%"
     },
     "swampland": {
       "error": "No module named 'simulations.swampland_constraints_v12_5'",
@@ -482,7 +482,7 @@
       ],
       "h21": 12,
       "n_generations": 3,
-      "status": "Geometric from G\u2082 flux"
+      "status": "Geometric from G₂ flux"
     },
     "thermal_friction": {
       "alpha_T": 0.954929658551372,
@@ -494,13 +494,13 @@
       "delta_cp_deg": 90.0,
       "delta_cp_rad": 1.5707963267948966,
       "jarlskog_predicted": 1e-05,
-      "status": "From H\u2083(G\u2082,Z) cycle orientations"
+      "status": "From H₃(G₂,Z) cycle orientations"
     },
     "summary": {
       "re_t_breakthrough": "Re(T) = 7.086 (was 1.833 - WRONG)",
       "m_h_status": "EXACT match (125.10 GeV)",
       "swampland_status": "VALID (was VIOLATED)",
-      "dual_status": "UV \u2194 IR <1% agreement",
+      "dual_status": "UV ↔ IR <1% agreement",
       "rigor_gaps_resolved": 6,
       "grade": "A+++ (100/100 rigor)",
       "publication_ready": true
@@ -623,7 +623,7 @@
       "v_GeV": 173.96922755245848,
       "target_GeV": 174.0,
       "error_pct": 0.017685314679036064,
-      "formula": "v = M_Pl \u00d7 exp(-h^{2,1}) \u00d7 exp(|T_\u03c9|)",
+      "formula": "v = M_Pl × exp(-h^{2,1}) × exp(|T_ω|)",
       "h21": 12,
       "status": "PURE GEOMETRIC - no calibration"
     },
@@ -636,7 +636,7 @@
       "m_h_GeV": 125.10000000000015,
       "target_GeV": 125.1,
       "error_pct": 1.2495555704813914e-13,
-      "formula": "W = N T\u00b2 + A exp(-a T) minimization",
+      "formula": "W = N T² + A exp(-a T) minimization",
       "N": 24,
       "a": 8,
       "status": "PURE GEOMETRIC - m_h is OUTPUT"
@@ -828,7 +828,7 @@
   "shadow_dimension_nomenclature": {
     "version": "12.9",
     "description": "24-Dimension Greek Letter Naming Scheme",
-    "reference": "Z\u2082 mirror brane structure",
+    "reference": "Z₂ mirror brane structure",
     "structure": {
       "total_dimensions": 24,
       "mirrors": 2,
@@ -837,29 +837,29 @@
       "pairs_per_wall": 3
     },
     "gate_mirror": {
-      "description": "Tribes/Gemstones (Sitra Gate - material side, includes Π/Υ for Shadow_ח)",
+      "description": "Tribes/Gemstones (Sitra Gate - Π at South, Υ at West for Shadow_ח)",
       "letters": [
-        "\u03a1",
-        "\u03a0",
-        "\u0396",
-        "\u039f",
-        "\u0399",
-        "\u03a3",
-        "\u03a4",
-        "\u03a9",
-        "\u03a7",
-        "\u03a5",
-        "\u0392",
-        "\u039a"
+        "Ρ",
+        "Τ",
+        "Ζ",
+        "Ο",
+        "Ι",
+        "Σ",
+        "Π",
+        "Ω",
+        "Χ",
+        "Υ",
+        "Β",
+        "Κ"
       ],
       "letter_names": [
         "Rho",
-        "Pi",
+        "Tau",
         "Zeta",
         "Omicron",
         "Iota",
         "Sigma",
-        "Tau",
+        "Pi",
         "Omega",
         "Chi",
         "Upsilon",
@@ -896,32 +896,32 @@
       ]
     },
     "foundation_mirror": {
-      "description": "Apostles (Sitra Foundation - spiritual side, includes Α/Γ for Shadow_ק)",
+      "description": "Apostles (Sitra Foundation - Α at East, Γ at North for Shadow_ק)",
       "letters": [
-        "\u0394",
-        "\u0395",
-        "\u0397",
-        "\u0398",
-        "\u039b",
-        "\u039c",
-        "\u039d",
-        "\u039e",
-        "\u0393",
-        "\u0391",
-        "\u03a6",
-        "\u03a8"
+        "Δ",
+        "Ε",
+        "Γ",
+        "Α",
+        "Λ",
+        "Μ",
+        "Ν",
+        "Ξ",
+        "Η",
+        "Θ",
+        "Φ",
+        "Ψ"
       ],
       "letter_names": [
         "Delta",
         "Epsilon",
-        "Eta",
-        "Theta",
+        "Gamma",
+        "Alpha",
         "Lambda",
         "Mu",
         "Nu",
         "Xi",
-        "Gamma",
-        "Alpha",
+        "Eta",
+        "Theta",
         "Phi",
         "Psi"
       ],
@@ -949,28 +949,28 @@
         ],
         "pairs": [
           {
-            "gate": "\u03a1",
-            "foundation": "\u0394",
+            "gate": "Ρ",
+            "foundation": "Δ",
             "tribe": "Reuben",
             "apostle": "Peter"
           },
           {
-            "gate": "\u03a0",
-            "foundation": "\u0395",
+            "gate": "Τ",
+            "foundation": "Ε",
             "tribe": "Judah",
             "apostle": "Andrew"
           },
           {
-            "gate": "\u0396",
-            "foundation": "\u0397",
+            "gate": "Ζ",
+            "foundation": "Γ",
             "tribe": "Levi",
             "apostle": "James the Great"
           }
         ],
         "notation": [
-          "X_{\u03a1\u2013\u0394}",
-          "X_{\u03a0\u2013\u0395}",
-          "X_{\u0396\u2013\u0397}"
+          "X_{Ρ–Δ}",
+          "X_{Τ–Ε}",
+          "X_{Ζ–Γ}"
         ]
       },
       "east": {
@@ -981,28 +981,28 @@
         ],
         "pairs": [
           {
-            "gate": "\u039f",
-            "foundation": "\u0398",
+            "gate": "Ο",
+            "foundation": "Α",
             "tribe": "Joseph",
             "apostle": "John"
           },
           {
-            "gate": "\u0399",
-            "foundation": "\u039b",
+            "gate": "Ι",
+            "foundation": "Λ",
             "tribe": "Benjamin",
             "apostle": "Philip"
           },
           {
-            "gate": "\u03a3",
-            "foundation": "\u039c",
+            "gate": "Σ",
+            "foundation": "Μ",
             "tribe": "Dan",
             "apostle": "Bartholomew"
           }
         ],
         "notation": [
-          "X_{\u039f\u2013\u0398}",
-          "X_{\u0399\u2013\u039b}",
-          "X_{\u03a3\u2013\u039c}"
+          "X_{Ο–Α}",
+          "X_{Ι–Λ}",
+          "X_{Σ–Μ}"
         ]
       },
       "south": {
@@ -1013,28 +1013,28 @@
         ],
         "pairs": [
           {
-            "gate": "\u03a4",
-            "foundation": "\u039d",
+            "gate": "Π",
+            "foundation": "Ν",
             "tribe": "Simeon",
             "apostle": "Matthew"
           },
           {
-            "gate": "\u03a9",
-            "foundation": "\u039e",
+            "gate": "Ω",
+            "foundation": "Ξ",
             "tribe": "Issachar",
             "apostle": "Thomas"
           },
           {
-            "gate": "\u03a7",
-            "foundation": "\u0393",
+            "gate": "Χ",
+            "foundation": "Η",
             "tribe": "Zebulun",
             "apostle": "James the Less"
           }
         ],
         "notation": [
-          "X_{\u03a4\u2013\u039d}",
-          "X_{\u03a9\u2013\u039e}",
-          "X_{\u03a7\u2013\u0393}"
+          "X_{Π–Ν}",
+          "X_{Ω–Ξ}",
+          "X_{Χ–Η}"
         ]
       },
       "west": {
@@ -1045,28 +1045,28 @@
         ],
         "pairs": [
           {
-            "gate": "\u03a5",
-            "foundation": "\u0391",
+            "gate": "Υ",
+            "foundation": "Θ",
             "tribe": "Gad",
             "apostle": "Jude"
           },
           {
-            "gate": "\u0392",
-            "foundation": "\u03a6",
+            "gate": "Β",
+            "foundation": "Φ",
             "tribe": "Asher",
             "apostle": "Simon the Zealot"
           },
           {
-            "gate": "\u039a",
-            "foundation": "\u03a8",
+            "gate": "Κ",
+            "foundation": "Ψ",
             "tribe": "Naphtali",
             "apostle": "Matthias"
           }
         ],
         "notation": [
-          "X_{\u03a5\u2013\u0391}",
-          "X_{\u0392\u2013\u03a6}",
-          "X_{\u039a\u2013\u03a8}"
+          "X_{Υ–Θ}",
+          "X_{Β–Φ}",
+          "X_{Κ–Ψ}"
         ]
       }
     },
@@ -1093,18 +1093,18 @@
   },
   "g2_direction_nomenclature": {
     "version": "12.9",
-    "description": "7-Direction Hebrew Letter Naming for G\u2082 Manifold",
-    "reference": "TCS G\u2082 holonomy construction",
+    "description": "7-Direction Hebrew Letter Naming for G₂ Manifold",
+    "reference": "TCS G₂ holonomy construction",
     "structure": {
       "total_directions": 7,
-      "holonomy_group": "G\u2082",
+      "holonomy_group": "G₂",
       "manifold_type": "TCS (Twisted Connected Sum)"
     },
     "directions": {
       "G_chet": {
         "index": 0,
-        "hebrew": "\u05d7",
-        "display": "G\u05d7",
+        "hebrew": "ח",
+        "display": "Gח",
         "sefirah": "Chesed",
         "meaning": "Loving-kindness",
         "geometric_role": "Primary volume",
@@ -1114,8 +1114,8 @@
       },
       "G_gimel": {
         "index": 1,
-        "hebrew": "\u05d2",
-        "display": "G\u05d2",
+        "hebrew": "ג",
+        "display": "Gג",
         "sefirah": "Gevurah",
         "meaning": "Strength",
         "geometric_role": "Structural form",
@@ -1125,8 +1125,8 @@
       },
       "G_tav": {
         "index": 2,
-        "hebrew": "\u05ea",
-        "display": "G\u05ea",
+        "hebrew": "ת",
+        "display": "Gת",
         "sefirah": "Tiferet",
         "meaning": "Beauty",
         "geometric_role": "Chirality axis",
@@ -1136,8 +1136,8 @@
       },
       "G_nun": {
         "index": 3,
-        "hebrew": "\u05e0",
-        "display": "G\u05e0",
+        "hebrew": "נ",
+        "display": "Gנ",
         "sefirah": "Netzach",
         "meaning": "Victory",
         "geometric_role": "Primary flux",
@@ -1147,8 +1147,8 @@
       },
       "G_heh": {
         "index": 4,
-        "hebrew": "\u05d4",
-        "display": "G\u05d4",
+        "hebrew": "ה",
+        "display": "Gה",
         "sefirah": "Hod",
         "meaning": "Splendor",
         "geometric_role": "Modulus scaling",
@@ -1158,8 +1158,8 @@
       },
       "G_yud": {
         "index": 5,
-        "hebrew": "\u05d9",
-        "display": "G\u05d9",
+        "hebrew": "י",
+        "display": "Gי",
         "sefirah": "Yesod",
         "meaning": "Foundation",
         "geometric_role": "Torsion axis",
@@ -1169,8 +1169,8 @@
       },
       "G_mem": {
         "index": 6,
-        "hebrew": "\u05de",
-        "display": "G\u05de",
+        "hebrew": "מ",
+        "display": "Gמ",
         "sefirah": "Malkuth",
         "meaning": "Kingdom",
         "geometric_role": "Attractor direction",
@@ -1226,25 +1226,25 @@
       "chi_eff": 144,
       "generations": 3
     },
-    "footnote": "The G\u2082 directions are labeled G with Hebrew letter subscripts as a mnemonic for their progressive geometric roles."
+    "footnote": "The G₂ directions are labeled G with Hebrew letter subscripts as a mnemonic for their progressive geometric roles."
   },
   "brane_nomenclature": {
     "version": "12.9",
     "description": "Brane Localization Factors",
     "reference": "Warped extra dimension framework",
     "greek_etymology": {
-      "\u0391": "Alpha - First letter",
-      "\u03a0": "Pi",
-      "\u03a5": "Upsilon",
-      "\u0393": "Gamma"
+      "Α": "Alpha - First letter",
+      "Π": "Pi",
+      "Υ": "Upsilon",
+      "Γ": "Gamma"
     },
     "branes": {
       "lambda_alpha": {
         "index": 0,
         "enochian": "Exarp",
-        "greek_letter": "\u0391",
+        "greek_letter": "Α",
         "greek_name": "Alpha",
-        "lambda_symbol": "\u039b_\u0391",
+        "lambda_symbol": "Λ_Α",
         "variable_name": "lambda_alpha",
         "element": "Air",
         "direction": "East",
@@ -1260,9 +1260,9 @@
       "lambda_pi": {
         "index": 1,
         "enochian": "Bitom",
-        "greek_letter": "\u03a0",
+        "greek_letter": "Π",
         "greek_name": "Pi",
-        "lambda_symbol": "\u039b_\u03a0",
+        "lambda_symbol": "Λ_Π",
         "variable_name": "lambda_pi",
         "element": "Fire",
         "direction": "South",
@@ -1278,9 +1278,9 @@
       "lambda_upsilon": {
         "index": 2,
         "enochian": "Hcoma",
-        "greek_letter": "\u03a5",
+        "greek_letter": "Υ",
         "greek_name": "Upsilon",
-        "lambda_symbol": "\u039b_\u03a5",
+        "lambda_symbol": "Λ_Υ",
         "variable_name": "lambda_upsilon",
         "element": "Water",
         "direction": "West",
@@ -1290,15 +1290,15 @@
         ],
         "y_position": 0.6666666666666666,
         "localization_factor": 6.353573467888537e-12,
-        "physics_role": "Generation 2 (\u03bc, c, s - transitional)",
+        "physics_role": "Generation 2 (μ, c, s - transitional)",
         "enoch_quote": "I saw three great gates"
       },
       "lambda_gamma": {
         "index": 3,
         "enochian": "Nanta",
-        "greek_letter": "\u0393",
+        "greek_letter": "Γ",
         "greek_name": "Gamma",
-        "lambda_symbol": "\u039b_\u0393",
+        "lambda_symbol": "Λ_Γ",
         "variable_name": "lambda_gamma",
         "element": "Earth",
         "direction": "North",
@@ -1308,13 +1308,13 @@
         ],
         "y_position": 1.0,
         "localization_factor": 1.601500520713953e-17,
-        "physics_role": "Generation 3 (\u03c4, t, b - heavy)",
+        "physics_role": "Generation 3 (τ, t, b - heavy)",
         "enoch_quote": "I went to the north"
       }
     },
     "sitra_couplings": {
       "kuf_alpha_gamma": {
-        "symbol": "\u05e7_\u0391_\u0393",
+        "symbol": "ק_Α_Γ",
         "value": 0.576152,
         "pair": [
           "Exarp",
@@ -1324,10 +1324,10 @@
           "Air",
           "Earth"
         ],
-        "description": "Observable\u2194Heavy Sitra coupling"
+        "description": "Observable↔Heavy Sitra coupling"
       },
       "chet_pi_upsilon": {
-        "symbol": "\u05d7_\u03a0_\u03a5",
+        "symbol": "ח_Π_Υ",
         "value": 0.576152,
         "pair": [
           "Bitom",
@@ -1337,11 +1337,11 @@
           "Fire",
           "Water"
         ],
-        "description": "Gen1\u2194Gen2 Sitra coupling"
+        "description": "Gen1↔Gen2 Sitra coupling"
       }
     },
     "warping_parameter": 12.31,
-    "footnote": "Greek letters chosen for elemental correspondence: \u0391(Air), \u03a0(Pyr/Fire), \u03a5(Hydor/Water), \u0393(Gaia/Earth)"
+    "footnote": "Greek letters chosen for elemental correspondence: Α(Air), Π(Pyr/Fire), Υ(Hydor/Water), Γ(Gaia/Earth)"
   },
   "hebrew_physics_nomenclature": {
     "version": "12.9",
@@ -1349,54 +1349,54 @@
     "reference": "Parameter nomenclature system",
     "parameters": {
       "k_gimel": {
-        "hebrew": "\u05d2",
-        "symbol": "k_\u05d2",
+        "hebrew": "ג",
+        "symbol": "k_ג",
         "english_name": "k_gimel",
         "value": 12.31,
         "unit": "dimensionless",
         "meaning": "Bridge between observable and shadow sectors",
-        "physics": "Warping parameter in brane localization \u039b(y) = exp(-k_\u05d2 \u00d7 y \u00d7 \u03c0)",
-        "derivation": "Calibrated to give warp factors: 1, ~10\u207b\u2076, ~10\u207b\u00b9\u00b2, ~10\u207b\u00b9\u2077"
+        "physics": "Warping parameter in brane localization Λ(y) = exp(-k_ג × y × π)",
+        "derivation": "Calibrated to give warp factors: 1, ~10⁻⁶, ~10⁻¹², ~10⁻¹⁷"
       },
       "C_kaf": {
-        "hebrew": "\u05db",
-        "symbol": "C_\u05db",
+        "hebrew": "כ",
+        "symbol": "C_כ",
         "english_name": "C_kaf",
         "value": 27.2,
         "unit": "dimensionless",
         "meaning": "Shapes flux quanta into effective torsion",
-        "physics": "Flux normalization: T_\u03c9 = -b\u2083 / C_\u05db",
-        "derivation": "C_\u05db = b\u2083 / |T_\u03c9| = 24 / 0.882 \u2248 27.2"
+        "physics": "Flux normalization: T_ω = -b₃ / C_כ",
+        "derivation": "C_כ = b₃ / |T_ω| = 24 / 0.882 ≈ 27.2"
       },
       "f_heh": {
-        "hebrew": "\u05d4",
-        "symbol": "f_\u05d4",
+        "hebrew": "ה",
+        "symbol": "f_ה",
         "english_name": "f_heh",
         "value": 4.5,
         "unit": "dimensionless",
         "meaning": "Partition split between mirror branes",
         "physics": "Partition factor in flux normalization",
-        "derivation": "f_\u05d4 = 5/2 \u00d7 1.8 (mirror symmetry factor)"
+        "derivation": "f_ה = 5/2 × 1.8 (mirror symmetry factor)"
       },
       "S_mem": {
-        "hebrew": "\u05de",
-        "symbol": "S_\u05de",
+        "hebrew": "מ",
+        "symbol": "S_מ",
         "english_name": "S_mem",
         "value": 40.0,
         "unit": "dimensionless",
         "meaning": "Seals heavy modes via instantons",
         "physics": "Instanton action for non-perturbative suppression",
-        "derivation": "S_\u05de \u2248 8\u03c0\u00b2/g\u00b2 for SU(N) instantons"
+        "derivation": "S_מ ≈ 8π²/g² for SU(N) instantons"
       },
       "delta_lamed": {
-        "hebrew": "\u05dc",
-        "symbol": "\u03b4_\u05dc",
+        "hebrew": "ל",
+        "symbol": "δ_ל",
         "english_name": "delta_lamed",
         "value": 1.2,
         "unit": "dimensionless",
         "meaning": "Refines tree-level via loop corrections",
         "physics": "KK/heavy threshold corrections in RG flow",
-        "derivation": "\u03b4_\u05dc = \u03a3\u1d62 b\u1d62 \u00d7 ln(M\u1d62/M_GUT) / (2\u03c0)"
+        "derivation": "δ_ל = Σᵢ bᵢ × ln(Mᵢ/M_GUT) / (2π)"
       }
     },
     "footnote": "Hebrew letter subscripts provide a consistent naming convention"
