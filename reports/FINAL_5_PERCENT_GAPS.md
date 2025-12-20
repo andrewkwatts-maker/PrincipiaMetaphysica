@@ -29,7 +29,7 @@ These parameters exist in config.py but have NO mention in the paper:
 | `F_TERM_NORMALIZED` | 1.0 | ✗ MISSING | Add to Section 4 (Higgs sector) |
 | `F_TERM_PHYSICAL` | 1e10 GeV² | ✗ MISSING | Add with SUSY breaking discussion |
 | `KAPPA_UPLIFT` | 1.0 | ✗ MISSING | Add to moduli stabilization |
-| `S_MEM` | 1.0 | ✗ MISSING | Add with non-perturbative uplift |
+| `S_INSTANTON_NORM` | 1.0 | ✗ MISSING | Add with non-perturbative uplift (simplified) |
 | `MU_PERIODIC` | 0.5 | ✗ MISSING | Add with axionic modulation |
 | `PHI_M_CENTRAL` | 2.493 M_Pl | ✗ MISSING | Add Mashiach modulus VEV derivation |
 | `PHI_M_ERROR` | 5.027 M_Pl | ✗ MISSING | Add uncertainty estimate |

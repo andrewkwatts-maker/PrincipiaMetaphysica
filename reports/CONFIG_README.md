@@ -158,7 +158,7 @@ M_Pl = CONFIG['M_Pl']          # 1.2195e19
 |-----------|-------|------|
 | `F_TERM_NORMALIZED` | 1.0 | SUSY F-term coefficient |
 | `KAPPA_UPLIFT` | 1.0 | Non-perturbative uplift |
-| `S_MEM` | 1.0 | Instanton action exponent |
+| `S_INSTANTON_NORM` | 1.0 | Normalized instanton exponent (simplified) |
 | `MU_PERIODIC` | 0.5 | Axionic modulation amplitude |
 | `LAMBDA_COUPLING` | 0.5 TeV⁻² | Pneuma quartic coupling λ |
 | `V_VEV` | 2.0 TeV | VEV scale (condensate) |
