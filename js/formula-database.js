@@ -210,7 +210,7 @@ const FORMULA_DATABASE = {
         symbol: 'δ<sub>CP</sub>',
         htmlSymbol: 'δ<sub>CP</sub>',
         textSymbol: 'delta_CP',
-        value: '195°',
+        value: '235°',
         pmRef: 'PM.pmns_matrix.delta_CP_deg',
         description: 'Neutrino CP-violating phase',
         longDescription: 'PMNS CP phase from associative 3-cycle phases',
