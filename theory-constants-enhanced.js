@@ -105,16 +105,16 @@ const PM = {
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.843687103382082e+34,
-    "tau_p_mean": 3.993145683889933e+34,
-    "tau_p_std": 1.5020341856781975e+34,
-    "tau_p_lower_68": 2.4557485017326152e+34,
-    "tau_p_upper_68": 5.549437426946976e+34,
-    "tau_p_lower_95": 1.458193788410393e+34,
-    "tau_p_upper_95": 7.329600482859833e+34,
-    "tau_p_uncertainty_oom": 0.17481553657656243,
+    "tau_p_median": 3.828040312970706e+34,
+    "tau_p_mean": 3.9845946702296485e+34,
+    "tau_p_std": 1.5117922374279904e+34,
+    "tau_p_lower_68": 2.441253811807262e+34,
+    "tau_p_upper_68": 5.538262695657684e+34,
+    "tau_p_lower_95": 1.4625650779448064e+34,
+    "tau_p_upper_95": 7.326133820771347e+34,
+    "tau_p_uncertainty_oom": 0.17597332796336795,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3016090439413666
+    "ratio_to_bound": 2.2922397083656922
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -126,10 +126,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.8060021839019702,
-    "theta_12_error": 1.221777320201964,
-    "theta_13_error": 0.3514115977015043,
-    "delta_cp_error": 27.9006954592813
+    "theta_23_error": 0.7958967846761685,
+    "theta_12_error": 1.2094253894406812,
+    "theta_13_error": 0.34786690401002546,
+    "delta_cp_error": 28.176849999052013
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 45.0,
@@ -848,8 +848,8 @@ const PM = {
   },
   "shadow_dimension_nomenclature": {
     "version": "12.9",
-    "description": "24-Dimension Greek Letter Naming Scheme (New Jerusalem Architecture)",
-    "reference": "Revelation 21:12-14, 19-20",
+    "description": "24-Dimension Greek Letter Naming Scheme",
+    "reference": "Z\u2082 mirror brane structure",
     "structure": {
       "total_dimensions": 24,
       "mirrors": 2,
@@ -1114,8 +1114,8 @@ const PM = {
   },
   "g2_direction_nomenclature": {
     "version": "12.9",
-    "description": "7-Direction Hebrew Letter Naming for G\u2082 Manifold (Sefirot)",
-    "reference": "Sefer Yetzirah, Zohar, TCS G\u2082 construction",
+    "description": "7-Direction Hebrew Letter Naming for G\u2082 Manifold",
+    "reference": "TCS G\u2082 holonomy construction",
     "structure": {
       "total_directions": 7,
       "holonomy_group": "G\u2082",
@@ -1200,8 +1200,7 @@ const PM = {
         "day": "Saturday"
       }
     },
-    "enochian_correspondence": {
-      "source": "Heptarchia Mystica (John Dee, 1582-1588)",
+    "historical_labels": {
       "kings": [
         "Baligon",
         "Bobogel",
@@ -1242,38 +1241,23 @@ const PM = {
         }
       ]
     },
-    "pillar_structure": {
-      "right_pillar": [
-        "Chesed",
-        "Netzach"
-      ],
-      "left_pillar": [
-        "Gevurah",
-        "Hod"
-      ],
-      "middle_pillar": [
-        "Tiferet",
-        "Yesod",
-        "Malkuth"
-      ]
-    },
     "topology": {
       "b2": 4,
       "b3": 24,
       "chi_eff": 144,
       "generations": 3
     },
-    "footnote": "The G\u2082 directions are labeled G with Hebrew letter subscripts corresponding to the lower seven Sefirot, used as a mnemonic for their progressive geometric roles."
+    "footnote": "The G\u2082 directions are labeled G with Hebrew letter subscripts as a mnemonic for their progressive geometric roles."
   },
   "brane_nomenclature": {
     "version": "12.9",
-    "description": "Enochian Watchtower Brane Localization Factors",
-    "reference": "John Dee's Enochian system, 1 Enoch 33-36",
+    "description": "Brane Localization Factors",
+    "reference": "Warped extra dimension framework",
     "greek_etymology": {
-      "\u0391": "Alpha - First letter, primary observable",
-      "\u03a0": "Pi - From \u03a0\u1fe6\u03c1 (Pyr = Fire)",
-      "\u03a5": "Upsilon - From \u1f5d\u03b4\u03c9\u03c1 (Hydor = Water)",
-      "\u0393": "Gamma - From \u0393\u03b1\u1fd6\u03b1 (Gaia = Earth)"
+      "\u0391": "Alpha - First letter",
+      "\u03a0": "Pi",
+      "\u03a5": "Upsilon",
+      "\u0393": "Gamma"
     },
     "branes": {
       "lambda_alpha": {
@@ -1292,7 +1276,7 @@ const PM = {
         "y_position": 0.0,
         "localization_factor": 1.0,
         "physics_role": "SM Observable (EM, light)",
-        "enoch_quote": "Three gates of heaven open, wherein the stars go forth"
+        "enoch_quote": "Three gates of heaven open"
       },
       "lambda_pi": {
         "index": 1,
@@ -1310,7 +1294,7 @@ const PM = {
         "y_position": 0.3333333333333333,
         "localization_factor": 2.5206295776826345e-06,
         "physics_role": "Generation 1 (e, u, d - stable)",
-        "enoch_quote": "From the first gate proceed dew, rain, prosperity"
+        "enoch_quote": "From the first gate proceed"
       },
       "lambda_upsilon": {
         "index": 2,
@@ -1328,7 +1312,7 @@ const PM = {
         "y_position": 0.6666666666666666,
         "localization_factor": 6.353573467888537e-12,
         "physics_role": "Generation 2 (\u03bc, c, s - transitional)",
-        "enoch_quote": "I saw three great gates where the sun sets"
+        "enoch_quote": "I saw three great gates"
       },
       "lambda_gamma": {
         "index": 3,
@@ -1346,7 +1330,7 @@ const PM = {
         "y_position": 1.0,
         "localization_factor": 1.601500520713953e-17,
         "physics_role": "Generation 3 (\u03c4, t, b - heavy)",
-        "enoch_quote": "I went to the north and saw cold winds, darkness"
+        "enoch_quote": "I went to the north"
       }
     },
     "sitra_couplings": {
@@ -1382,80 +1366,61 @@ const PM = {
   },
   "hebrew_physics_nomenclature": {
     "version": "12.9",
-    "description": "Hebrew Letter Naming for Physics Parameters (Kabbalistic Nomenclature)",
-    "reference": "Traditional gematria values and Sefer Yetzirah correspondences",
+    "description": "Hebrew Letter Naming for Physics Parameters",
+    "reference": "Parameter nomenclature system",
     "parameters": {
       "k_gimel": {
         "hebrew": "\u05d2",
-        "gematria": 3,
         "symbol": "k_\u05d2",
         "english_name": "k_gimel",
         "value": 12.31,
         "unit": "dimensionless",
-        "meaning": "Kindness, bridge between worlds",
+        "meaning": "Bridge between observable and shadow sectors",
         "physics": "Warping parameter in brane localization \u039b(y) = exp(-k_\u05d2 \u00d7 y \u00d7 \u03c0)",
         "derivation": "Calibrated to give warp factors: 1, ~10\u207b\u2076, ~10\u207b\u00b9\u00b2, ~10\u207b\u00b9\u2077"
       },
       "C_kaf": {
         "hebrew": "\u05db",
-        "gematria": 27,
         "symbol": "C_\u05db",
         "english_name": "C_kaf",
         "value": 27.2,
         "unit": "dimensionless",
-        "meaning": "Hand of creation + connection + unity",
+        "meaning": "Shapes flux quanta into effective torsion",
         "physics": "Flux normalization: T_\u03c9 = -b\u2083 / C_\u05db",
         "derivation": "C_\u05db = b\u2083 / |T_\u03c9| = 24 / 0.882 \u2248 27.2"
       },
       "f_heh": {
         "hebrew": "\u05d4",
-        "gematria": 5,
         "symbol": "f_\u05d4",
         "english_name": "f_heh",
         "value": 4.5,
         "unit": "dimensionless",
-        "meaning": "Divine breath in duality (halved for mirror)",
+        "meaning": "Partition split between mirror branes",
         "physics": "Partition factor in flux normalization",
         "derivation": "f_\u05d4 = 5/2 \u00d7 1.8 (mirror symmetry factor)"
       },
       "S_mem": {
         "hebrew": "\u05de",
-        "gematria": 40,
         "symbol": "S_\u05de",
         "english_name": "S_mem",
         "value": 40.0,
         "unit": "dimensionless",
-        "meaning": "Closed form, finality (40 days transformation)",
+        "meaning": "Seals heavy modes via instantons",
         "physics": "Instanton action for non-perturbative suppression",
         "derivation": "S_\u05de \u2248 8\u03c0\u00b2/g\u00b2 for SU(N) instantons"
       },
       "delta_lamed": {
         "hebrew": "\u05dc",
-        "gematria": 30,
         "symbol": "\u03b4_\u05dc",
         "english_name": "delta_lamed",
         "value": 1.2,
         "unit": "dimensionless",
-        "meaning": "Learning, refinement/elevation",
+        "meaning": "Refines tree-level via loop corrections",
         "physics": "KK/heavy threshold corrections in RG flow",
         "derivation": "\u03b4_\u05dc = \u03a3\u1d62 b\u1d62 \u00d7 ln(M\u1d62/M_GUT) / (2\u03c0)"
       }
     },
-    "gematria_table": {
-      "\u05d2 (Gimel)": 3,
-      "\u05d4 (Heh)": 5,
-      "\u05db (Kaf)": 20,
-      "\u05dc (Lamed)": 30,
-      "\u05de (Mem)": 40
-    },
-    "symbolic_rationale": {
-      "k_\u05d2": "Gimel (camel) bridges observable and shadow worlds",
-      "C_\u05db": "Kaf (palm/hand) shapes flux quanta into torsion",
-      "f_\u05d4": "Heh (breath) split between mirror branes",
-      "S_\u05de": "Mem (water/final) seals heavy modes with instantons",
-      "\u03b4_\u05dc": "Lamed (teaching) refines tree-level via loop corrections"
-    },
-    "footnote": "Hebrew letters chosen for gematria correspondence with parameter values"
+    "footnote": "Hebrew letter subscripts provide a consistent naming convention"
   }
 };
 
