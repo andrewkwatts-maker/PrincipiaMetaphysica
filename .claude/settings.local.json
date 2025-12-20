@@ -295,7 +295,17 @@
       "Bash(GIT_SEQUENCE_EDITOR=\"sed -i -e ''/0d7932c/d'' -e ''/c735ed2/d'' -e ''/4794793/d''\" git rebase -i 4794793~1 -X theirs)",
       "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices.py\")",
       "Bash(if exist \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices_phase2.py\" del /f \"h:\\Github\\PrincipiaMetaphysica\\fix_appendices_phase2.py\")",
-      "Bash(powershell -NoProfile -Command:*)"
+      "Bash(powershell -NoProfile -Command:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd mathematical rigor: Sp(2,R) constraints, χ_eff Hodge formula, Virasoro (24,2)\n\nMathematical Rigor Additions:\n- Section 3.1.1: Add Sp(2,R) constraint equations (X²=0, X·P=0, P²=M²)\n  with DOF counting derivation 26D→13D and ghost elimination explanation\n- Section 4.1a: Add χ_eff Hodge number derivation with two formulas\n  χ_eff = 2(h¹¹-h²¹+h³¹) = 2(4-0+68) = 144 and χ_eff = 6×b₃ = 144\n  Plus Hodge numbers table for TCS #187\n- Appendix A.3-A.4: Add (24,2) signature validation with code reference\n  and PM framework applications (dimensional reduction chain)\n\nAgent Reports Added:\n- AGENT2_ETA_GW_RESOLUTION.md: η_GW value analysis (0.113 confirmed)\n- AGENT3_VIRASORO_REPORT.md: Virasoro content analysis\n- AGENT4_SP2R_REPORT.md: Sp(2,R) constraint recommendations\n- AGENT5_TOPOLOGY_REPORT.md: Topology derivation analysis\n\nPaper: +218 lines of derivations, tables, and code references\nStatus: v12.8 mathematical rigor enhanced (~95% complete)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nv12.8 verification: Fix DOF counting, add cross-references, 6 audit reports\n\nPaper Fixes:\n- Section 3.1.1: Rewrite DOF counting derivation with proper Dirac formalism\n  (phase space 52 DOF → constraint analysis → 13D configuration space)\n- Add 4 cross-references: Section 2.3→App A, 4.2→App B, 6.1→App C, 7.1→App D\n\n6 Agent Verification Reports:\n- FINAL_5_PERCENT_GAPS.md: ~87% migrated, 40-45 params for future work\n- DUPLICATION_AUDIT.md: 4 equation duplications, recommends consolidation\n- SINGLE_SOURCE_TRUTH_AUDIT.md: 37 hardcoded violations + validation script\n- HARDCODED_VALUES_AUDIT.md: 32 values need derivation/citation\n- DERIVATION_PEER_REVIEW.md: 15/18 derivations correct, 1 critical (fixed)\n- SIMULATION_PAPER_CONSISTENCY.md: PERFECT - zero discrepancies\n\nNew Tools:\n- scripts/validate_config_usage.py: Automated config compliance checker\n- scripts/README.md: Documentation for validation tools\n\nStatus: v12.8 verified at ~95% completion\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(wc:*)",
+      "Bash(node scripts/firebase-download.js:*)",
+      "Bash(node scripts/firebase-push-updates.js:*)",
+      "Bash(node scripts/firebase-upload-complete.js:*)",
+      "Bash(node scripts/firebase-upload-website-content.js:*)",
+      "Bash(curl:*)",
+      "Bash(ping:*)"
     ],
     "deny": [],
     "ask": []
