@@ -21,8 +21,8 @@ INPUT_UNCERTAINTIES = {
     'chi_eff': 0,      # Topological (exact)
     'Re_T': 0.05,      # From Higgs mass constraint (~0.7%)
     'T_omega': 0.02,   # Effective torsion (~2%)
-    'alpha_4': 0.01,   # G2 holonomy (~2%)
-    'alpha_5': 0.01,   # G2 holonomy (~2%)
+    'shadow_kuf': 0.01,   # G2 holonomy (~2%)
+    'shadow_chet': 0.01,   # G2 holonomy (~2%)
 }
 
 
@@ -44,7 +44,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
 
     # Generate correlated input variations
     # Most parameters are topologically exact (b2, b3, chi_eff, n_gen)
-    # Main uncertainties from: Re(T), T_omega, alpha_4, alpha_5
+    # Main uncertainties from: Re(T), T_omega, shadow_kuf, shadow_chet
 
     # Simplified correlation structure
     # Group 1: Topology (exact): n_gen, chi_eff, b2, b3
@@ -120,7 +120,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
         'derivation_chain': [
             f'Monte Carlo samples: N = {n_mc}',
             'Topological parameters (b2, b3, chi_eff, n_gen) are EXACT',
-            'Propagated uncertainties from Re(T), T_omega, alpha_4, alpha_5',
+            'Propagated uncertainties from Re(T), T_omega, shadow_kuf, shadow_chet',
             f'Correlation matrix: {n_params}x{n_params}',
             f'Mean relative error: {mean_rel_error*100:.2f}%',
             f'Max relative error: {max_rel_error*100:.2f}%'

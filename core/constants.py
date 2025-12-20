@@ -178,7 +178,7 @@ class NeutrinoConfig:
     v12.3: Updated to NuFIT 6.0 (maximal mixing)
     """
     # PMNS mixing angles (degrees)
-    theta_23: float = 45.0    # Maximal mixing from α₄ = α₅
+    theta_23: float = 45.0    # Maximal mixing from Shadow_ק = Shadow_ח
     theta_12: float = 33.59   # From tri-bimaximal + perturbation
     theta_13: float = 8.57    # From cycle asymmetry
     delta_cp: float = 235.0   # CP phase from cycle overlaps
@@ -203,8 +203,138 @@ class NeutrinoConfig:
     DELTA_M31_SQ: float = 2.515e-3  # Atmospheric
 
     # Alpha parameters (G₂ torsion derived)
-    alpha_4: float = 0.576152
-    alpha_5: float = 0.576152  # Equal for maximal mixing
+    shadow_kuf: float = 0.576152
+    shadow_chet: float = 0.576152  # Equal for maximal mixing
+
+
+@dataclass(frozen=True)
+class ShadowDimensionNames:
+    """
+    Greek letter naming for 24 shadow spatial dimensions (v12.9+).
+
+    The 13D shadow has 12 spatial dimensions. With Z₂ mirroring, this yields
+    24 total shadow spatial dimensions across two Sitra mirror branes:
+
+    - Gate Mirror: Ρ,Γ,Ζ,Ο,Ι,Σ,Τ,Ω,Χ,Α,Β,Κ (tribes/gemstones - material side)
+    - Foundation Mirror: Δ,Ε,Η,Θ,Λ,Μ,Ν,Ξ,Π,Υ,Φ,Ψ (apostles - spiritual side)
+
+    Paired by 4 cardinal walls (New Jerusalem architecture, Revelation 21).
+
+    Single Responsibility: Only handles dimension nomenclature.
+    """
+    # Gate Mirror letters (tribes/gemstones)
+    gate_letters: tuple = ("Ρ", "Γ", "Ζ", "Ο", "Ι", "Σ", "Τ", "Ω", "Χ", "Α", "Β", "Κ")
+
+    # Foundation Mirror letters (apostles)
+    foundation_letters: tuple = ("Δ", "Ε", "Η", "Θ", "Λ", "Μ", "Ν", "Ξ", "Π", "Υ", "Φ", "Ψ")
+
+    # Wall pairings (3 pairs per wall)
+    north_pairs: tuple = (("Ρ", "Δ"), ("Γ", "Ε"), ("Ζ", "Η"))
+    east_pairs: tuple = (("Ο", "Θ"), ("Ι", "Λ"), ("Σ", "Μ"))
+    south_pairs: tuple = (("Τ", "Ν"), ("Ω", "Ξ"), ("Χ", "Π"))
+    west_pairs: tuple = (("Α", "Υ"), ("Β", "Φ"), ("Κ", "Ψ"))
+
+    # Total counts
+    total_dimensions: int = 24
+    dimensions_per_mirror: int = 12
+    pairs_per_wall: int = 3
+
+    def get_all_pairs(self) -> list:
+        """Return all 12 paired dimension notations."""
+        return [
+            f"X_{{{g}–{f}}}"
+            for g, f in zip(self.gate_letters, self.foundation_letters)
+        ]
+
+
+@dataclass(frozen=True)
+class G2DirectionNames:
+    """
+    Hebrew letter naming for 7 G₂ manifold directions (v12.9+).
+
+    The 7D G₂ holonomy manifold directions are labeled with Hebrew letters
+    corresponding to the lower seven Sefirot (Kabbalistic attributes):
+
+    - Gח (Chesed) - Primary volume
+    - Gג (Gevurah) - Structural form
+    - Gת (Tiferet) - Chirality axis
+    - Gנ (Netzach) - Primary flux
+    - Gה (Hod) - Modulus scaling
+    - Gי (Yesod) - Torsion axis
+    - Gמ (Malkuth) - Attractor direction
+
+    Single Responsibility: Only handles G₂ direction nomenclature.
+    """
+    # Hebrew letters
+    hebrew_letters: tuple = ("ח", "ג", "ת", "נ", "ה", "י", "מ")
+
+    # Variable names
+    variable_names: tuple = ("G_chet", "G_gimel", "G_tav", "G_nun", "G_heh", "G_yud", "G_mem")
+
+    # Display names
+    display_names: tuple = ("Gח", "Gג", "Gת", "Gנ", "Gה", "Gי", "Gמ")
+
+    # Sefirot
+    sefirot: tuple = ("Chesed", "Gevurah", "Tiferet", "Netzach", "Hod", "Yesod", "Malkuth")
+
+    # Geometric roles
+    geometric_roles: tuple = (
+        "Primary volume", "Structural form", "Chirality axis",
+        "Primary flux", "Modulus scaling", "Torsion axis", "Attractor direction"
+    )
+
+    # Total count
+    total_directions: int = 7
+
+
+@dataclass(frozen=True)
+class BraneLocalizationFactors:
+    """
+    Enochian Watchtower Brane Localization Factors (v12.9).
+
+    Maps branes to Greek letter subscripts:
+    - Λ_Α (Exarp/Air) = Observable (5,1)
+    - Λ_Π (Bitom/Fire) = Gen 1 (3,1)
+    - Λ_Υ (Hcoma/Water) = Gen 2 (3,1)
+    - Λ_Γ (Nanta/Earth) = Gen 3 (3,1)
+
+    Single Responsibility: Only handles brane localization nomenclature.
+    """
+    # Enochian names
+    enochian_names: tuple = ("Exarp", "Bitom", "Hcoma", "Nanta")
+
+    # Greek letters
+    greek_letters: tuple = ("Α", "Π", "Υ", "Γ")
+    greek_names: tuple = ("Alpha", "Pi", "Upsilon", "Gamma")
+
+    # Lambda symbols
+    lambda_symbols: tuple = ("Λ_Α", "Λ_Π", "Λ_Υ", "Λ_Γ")
+
+    # Variable names
+    variable_names: tuple = ("lambda_alpha", "lambda_pi", "lambda_upsilon", "lambda_gamma")
+
+    # Elements
+    elements: tuple = ("Air", "Fire", "Water", "Earth")
+
+    # Directions
+    directions: tuple = ("East", "South", "West", "North")
+
+    # Signatures
+    signatures: tuple = ((5, 1), (3, 1), (3, 1), (3, 1))
+
+    # Y-positions (fractions of πR)
+    y_positions: tuple = (0.0, 0.333, 0.667, 1.0)
+
+    # Sitra coupling symbols
+    kuf_symbol: str = "ק_Α_Γ"
+    chet_symbol: str = "ח_Π_Υ"
+
+    # Sitra coupling values
+    kuf_value: float = 0.576152
+    chet_value: float = 0.576152
+
+    # Total count
+    total_branes: int = 4
 
 
 @dataclass(frozen=True)
@@ -231,7 +361,7 @@ class DarkEnergyConfig:
     H0: float = 67.4  # km/s/Mpc
 
     # Effective dimension (from G₂ torsion)
-    d_eff: float = 12.576  # 12 + 0.5*(α₄ + α₅)
+    d_eff: float = 12.576  # 12 + 0.5*(Shadow_ק + Shadow_ח)
 
     @classmethod
     def w0_from_d_eff(cls, d_eff: float) -> float:
@@ -269,6 +399,7 @@ _gauge = None
 _neutrino = None
 _dark_energy = None
 _proton = None
+_brane_localization = None
 
 
 def get_dimensions() -> DimensionalStructure:
@@ -325,3 +456,11 @@ def get_proton_decay() -> ProtonDecayConfig:
     if _proton is None:
         _proton = ProtonDecayConfig()
     return _proton
+
+
+def get_brane_localization() -> BraneLocalizationFactors:
+    """Get singleton BraneLocalizationFactors instance"""
+    global _brane_localization
+    if _brane_localization is None:
+        _brane_localization = BraneLocalizationFactors()
+    return _brane_localization

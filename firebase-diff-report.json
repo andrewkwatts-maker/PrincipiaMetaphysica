@@ -1,0 +1,139 @@
+{
+  "timestamp": "2025-12-20T10:24:04.321Z",
+  "localVersion": "12.8",
+  "remoteVersion": "12.8",
+  "oomValidation": [
+    {
+      "name": "GUT Scale",
+      "path": "proton_decay.M_GUT",
+      "experimental": 20000000000000000,
+      "tolerance_oom": 1,
+      "local": {
+        "value": 21181306559642252,
+        "oom_diff": 0.024922750199159793,
+        "valid": true
+      },
+      "remote": {
+        "value": 21181306559642252,
+        "oom_diff": 0.024922750199159793,
+        "valid": true
+      },
+      "improvement": 0,
+      "isBetter": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Proton Lifetime",
+      "path": "proton_decay.tau_p_median",
+      "experimental": 1.67e+34,
+      "tolerance_oom": 1,
+      "local": {
+        "value": 3.830720075244848e+34,
+        "oom_diff": 0.3605639465055077,
+        "valid": true
+      },
+      "remote": {
+        "value": 3.861151151945145e+34,
+        "oom_diff": 0.3640003320747027,
+        "valid": true
+      },
+      "improvement": 0.0034363855691950107,
+      "isBetter": true,
+      "status": "PASS"
+    },
+    {
+      "name": "KK Graviton Mass",
+      "path": "v12_7_pure_geometric.kk_graviton_exact.m_KK_TeV",
+      "experimental": 5,
+      "tolerance_oom": 1,
+      "local": {
+        "oom_diff": null,
+        "valid": false
+      },
+      "remote": {
+        "oom_diff": null,
+        "valid": false
+      },
+      "improvement": null,
+      "isBetter": true,
+      "status": "FAIL"
+    },
+    {
+      "name": "Higgs Mass",
+      "path": "v12_7_pure_geometric.flux_stab_pure.m_h_GeV",
+      "experimental": 125.1,
+      "tolerance_oom": 0.1,
+      "local": {
+        "value": 125.10000000000015,
+        "oom_diff": 4.440892098500626e-16,
+        "valid": true
+      },
+      "remote": {
+        "value": 125.10000000000015,
+        "oom_diff": 4.440892098500626e-16,
+        "valid": true
+      },
+      "improvement": 0,
+      "isBetter": true,
+      "status": "PASS"
+    },
+    {
+      "name": "VEV",
+      "path": "v12_7_pure_geometric.vev_pure.v_GeV",
+      "experimental": 174,
+      "tolerance_oom": 0.1,
+      "local": {
+        "value": 173.96922755245848,
+        "oom_diff": 0.00007681313828111769,
+        "valid": true
+      },
+      "remote": {
+        "value": 173.96922755245848,
+        "oom_diff": 0.00007681313828111769,
+        "valid": true
+      },
+      "improvement": 0,
+      "isBetter": true,
+      "status": "PASS"
+    },
+    {
+      "name": "Theta 23",
+      "path": "pmns_matrix.theta_23",
+      "experimental": 45,
+      "tolerance_oom": 0.1,
+      "local": {
+        "value": 45,
+        "oom_diff": 0,
+        "valid": true
+      },
+      "remote": {
+        "value": 45,
+        "oom_diff": 0,
+        "valid": true
+      },
+      "improvement": 0,
+      "isBetter": true,
+      "status": "PASS"
+    },
+    {
+      "name": "w0 Dark Energy",
+      "path": "dark_energy.w0_PM",
+      "experimental": -0.83,
+      "tolerance_oom": 0.1,
+      "local": {
+        "value": -0.8528221355508132,
+        "oom_diff": 0.011780371847242399,
+        "valid": true
+      },
+      "remote": {
+        "value": -0.8528221355508132,
+        "oom_diff": 0.011780371847242399,
+        "valid": true
+      },
+      "improvement": 0,
+      "isBetter": true,
+      "status": "PASS"
+    }
+  ],
+  "allPassed": false
+}

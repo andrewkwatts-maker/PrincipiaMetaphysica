@@ -169,10 +169,10 @@ class TestNeutrinoConfig:
         assert abs(nu.theta_13 - 8.57) < 0.1
 
     def test_alpha_equality(self):
-        """Test alpha_4 = alpha_5 (maximal mixing)"""
+        """Test shadow_kuf = shadow_chet (maximal mixing)"""
         nu = NeutrinoConfig()
-        assert abs(nu.alpha_4 - nu.alpha_5) < 1e-10
-        assert abs(nu.alpha_4 - 0.576152) < 1e-6
+        assert abs(nu.shadow_kuf - nu.shadow_chet) < 1e-10
+        assert abs(nu.shadow_kuf - 0.576152) < 1e-6
 
     def test_hierarchy(self):
         """Test hierarchy prediction"""

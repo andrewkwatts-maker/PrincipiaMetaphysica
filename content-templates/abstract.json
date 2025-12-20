@@ -23,7 +23,7 @@
       },
       {
         "id": "validation",
-        "text": "{predictions_within_1sigma} of {total_predictions} parameter values lie within 1sigma of experimental data, with {exact_matches} central value matches including theta_23 = {theta_23} deg (from G2 holonomy SU(3) symmetry forcing alpha_4 = alpha_5). Testable predictions include proton decay lifetime tau_p ~ 10^34 years (Hyper-K testable) and gravitational wave dispersion eta ~ 0.10 from effective torsion. The effective torsion T_omega = -0.884 arises from G-flux on the Ricci-flat TCS G2 manifold (not geometric torsion).",
+        "text": "{predictions_within_1sigma} of {total_predictions} parameter values lie within 1sigma of experimental data, with {exact_matches} central value matches including theta_23 = {theta_23} deg (from G2 holonomy SU(3) symmetry forcing shadow_kuf = shadow_chet). Testable predictions include proton decay lifetime tau_p ~ 10^34 years (Hyper-K testable) and gravitational wave dispersion eta ~ 0.10 from effective torsion. The effective torsion T_omega = -0.884 arises from G-flux on the Ricci-flat TCS G2 manifold (not geometric torsion).",
         "pm_refs": ["validation.predictions_within_1sigma", "validation.total_predictions", "validation.exact_matches", "pmns_matrix.theta_23"]
       }
     ],

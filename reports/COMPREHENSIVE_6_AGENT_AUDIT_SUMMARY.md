@@ -134,7 +134,7 @@ Six parallel audit agents systematically verified all PM parameters against the 
 
 **CRITICAL GAPS:**
 - **α_T = 2.7**: Only assertion "from KMS condition", NO mathematical derivation
-- **α₄ = α₅ = 0.576152**: Stated from "moduli stabilization" but no calculation
+- **Shadow_ק = Shadow_ח = 0.576152**: Stated from "moduli stabilization" but no calculation
 - **Tomita-Takesaki**: Stated as basis but NO equations connecting to w(z)
 
 **MINOR:**
@@ -206,7 +206,7 @@ All parameters have supporting simulation code:
 
 ### Phase 2: Critical Cosmology/Gauge
 5. Add Section 7.2a: α_T Derivation from Tomita-Takesaki
-6. Add Section 7.1a: α₄, α₅ from Moduli Stabilization
+6. Add Section 7.1a: Shadow_ק, Shadow_ח from Moduli Stabilization
 7. Add Section 5.2b: α_s(M_Z) RG Evolution
 8. Add Section 5.2c: α_em(M_Z) derivation
 

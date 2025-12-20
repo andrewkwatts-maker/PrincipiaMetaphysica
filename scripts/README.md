@@ -23,7 +23,7 @@ python scripts/validate_config_usage.py --fix
 **What it checks:**
 - M_GUT hardcoding (should use `GaugeUnificationParameters.M_GUT`)
 - M_PLANCK hardcoding (should use `PhenomenologyParameters.M_PLANCK_REDUCED`)
-- ALPHA_4/ALPHA_5 hardcoding (should use `SharedDimensionsParameters`)
+- SHADOW_KUF/SHADOW_CHET hardcoding (should use `SharedDimensionsParameters`)
 - THETA_23 hardcoding (should use `NeutrinoParameters.THETA_23`)
 - ALPHA_GUT hardcoding (should use `GaugeUnificationParameters.ALPHA_GUT`)
 
@@ -41,8 +41,8 @@ By Parameter Type:
   M_GUT: 26 instances
   THETA_23: 3 instances
   ALPHA_GUT: 3 instances
-  ALPHA_4: 2 instances
-  ALPHA_5: 2 instances
+  SHADOW_KUF: 2 instances
+  SHADOW_CHET: 2 instances
   M_PLANCK: 1 instances
 ```
 

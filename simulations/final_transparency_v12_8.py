@@ -68,7 +68,7 @@ def get_parameter_status() -> Dict[str, Dict]:
             "value": 45.0,
             "unit": "degrees",
             "status": DerivationStatus.DERIVED,
-            "derivation": "G2 holonomy SU(3) symmetry -> alpha_4 = alpha_5 -> maximal mixing",
+            "derivation": "G2 holonomy SU(3) symmetry -> shadow_kuf = shadow_chet -> maximal mixing",
             "reference": "Joyce 2000, Acharya-Witten 2001",
             "rigor": "HIGH"
         },
@@ -248,9 +248,9 @@ def get_issue_resolutions() -> Dict[str, Dict]:
     """
     return {
         "1_theta23_circular": {
-            "issue": "Circular reasoning: alpha_4-alpha_5 derived FROM theta_23",
+            "issue": "Circular reasoning: shadow_kuf-shadow_chet derived FROM theta_23",
             "status": "RESOLVED",
-            "solution": "G2 holonomy SU(3) symmetry -> alpha_4 = alpha_5 -> theta_23 = 45 deg",
+            "solution": "G2 holonomy SU(3) symmetry -> shadow_kuf = shadow_chet -> theta_23 = 45 deg",
             "python": "simulations/derive_theta23_g2_v12_8.py",
             "rigor": "HIGH"
         },

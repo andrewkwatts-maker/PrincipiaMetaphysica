@@ -36,8 +36,8 @@ const PATH_CORRECTIONS = [
 
   // Shared dimensions paths
   ['shared_dimensions.d_eff', 'v10_geometric_derivations.torsion_derivation.d_eff'],
-  ['shared_dimensions.alpha_4', 'v10_geometric_derivations.torsion_derivation.alpha_4'],
-  ['shared_dimensions.alpha_5', 'v10_geometric_derivations.torsion_derivation.alpha_5'],
+  ['shared_dimensions.shadow_kuf', 'v10_geometric_derivations.torsion_derivation.shadow_kuf'],
+  ['shared_dimensions.shadow_chet', 'v10_geometric_derivations.torsion_derivation.shadow_chet'],
 
   // KK spectrum paths
   ['kk_spectrum.m1', 'v12_final_values.kk_graviton.m1_TeV'],

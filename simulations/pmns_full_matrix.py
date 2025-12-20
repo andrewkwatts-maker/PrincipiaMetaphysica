@@ -29,17 +29,17 @@ n_gen = FundamentalConstants.fermion_generations()  # = 3
 
 def theta_23_from_asymmetric_coupling():
     """
-    theta_23 from asymmetric extra dimension coupling (alpha_4 - alpha_5)
+    theta_23 from asymmetric extra dimension coupling (shadow_kuf - shadow_chet)
 
     Formula:
-        theta_23 = 45 deg + (alpha_4 - alpha_5) · n_gen
-        where alpha_4 - alpha_5 = 0.733 degrees/generation
+        theta_23 = 45 deg + (shadow_kuf - shadow_chet) · n_gen
+        where shadow_kuf - shadow_chet = 0.733 degrees/generation
 
     Returns:
         theta_23 in degrees
     """
     from config import SharedDimensionsParameters
-    alpha_diff = SharedDimensionsParameters.ALPHA_4 - SharedDimensionsParameters.ALPHA_5
+    alpha_diff = SharedDimensionsParameters.SHADOW_KUF - SharedDimensionsParameters.SHADOW_CHET
     # = 0.9557 - 0.2224 = 0.7333
 
     # Convert to angle contribution
@@ -266,7 +266,7 @@ def monte_carlo_pmns_uncertainty(n_samples=10000, verbose=False):
         # Recalculate angles with perturbed b3
         # (This is a simplified propagation; full version would recompute formulas)
 
-        # theta_23 weakly depends on b_3 through alpha parameters
+        # theta_23 weakly depends on b_3 through Sitra Shadow Coupling
         theta_23_nominal = theta_23_from_asymmetric_coupling()
         theta_23_sample = theta_23_nominal + np.random.normal(0, 0.8)  # +/-0.8 deg uncertainty
 
@@ -340,7 +340,7 @@ def run_pmns_calculation(verbose=True):
 
     if verbose:
         print("\n1. Mixing Angles from G2 Topology:")
-        print(f"   theta_23 = {theta_23:.2f} deg (from alpha_4 - alpha_5 asymmetry)")
+        print(f"   theta_23 = {theta_23:.2f} deg (from shadow_kuf - shadow_chet asymmetry)")
         print(f"   theta_12 = {theta_12:.2f} deg (from tri-bimaximal + perturbation)")
         print(f"   theta_13 = {theta_13:.2f} deg (from cycle asymmetry)")
         print(f"   delta_CP = {delta_cp:.1f} deg (from CP phase)")

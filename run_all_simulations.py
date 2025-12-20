@@ -109,7 +109,7 @@ def run_v9_transparency(verbose=True):
     except ImportError:
         results['manifest'] = {
             'status': 'Module not found - using stub',
-            'fitted_parameters': ['alpha_4', 'alpha_5', 'theta_13', 'delta_CP'],
+            'fitted_parameters': ['shadow_kuf', 'shadow_chet', 'theta_13', 'delta_CP'],
             'derived_parameters': ['n_gen', 'SO10_gauge_group', 'w_z_form']
         }
         if verbose:
@@ -233,7 +233,7 @@ def run_v10_geometric_derivations(verbose=True):
     v10.0 Rigorous Derivations Section
 
     Returns dict with:
-    - torsion_class: T_omega and derived alpha_4, alpha_5, w_0
+    - torsion_class: T_omega and derived shadow_kuf, shadow_chet, w_0
     - flux_quantization: chi_eff = 144 proof
     - anomaly_cancellation: SO(10) verification
     - yukawa_full: Complete geometric Yukawa
@@ -247,25 +247,25 @@ def run_v10_geometric_derivations(verbose=True):
 
     # 1. G_2 torsion derivation
     try:
-        from simulations.g2_torsion_derivation_v10 import derive_alpha_parameters, tcs_torsion_class
+        from simulations.g2_torsion_derivation_v10 import derive_sitra_shadow_coupling, tcs_torsion_class
         T_omega = tcs_torsion_class()
-        alpha_4, alpha_5 = derive_alpha_parameters(T_omega)
+        shadow_kuf, shadow_chet = derive_sitra_shadow_coupling(T_omega)
 
         results['torsion_derivation'] = {
             'T_omega': float(T_omega),
-            'alpha_4': float(alpha_4),
-            'alpha_5': float(alpha_5),
-            'd_eff': 12 + 0.5 * (alpha_4 + alpha_5),
+            'shadow_kuf': float(shadow_kuf),
+            'shadow_chet': float(shadow_chet),
+            'd_eff': 12 + 0.5 * (shadow_kuf + shadow_chet),
             'w0': float(-(12.589-1)/(12.589+1)),
             'status': 'Derived from TCS G_2 geometry'
         }
         if verbose:
-            print(f"1. Torsion: T_omega = {T_omega}, alpha_4 = {alpha_4:.6f}, alpha_5 = {alpha_5:.6f}")
+            print(f"1. Torsion: T_omega = {T_omega}, shadow_kuf = {shadow_kuf:.6f}, shadow_chet = {shadow_chet:.6f}")
     except ImportError:
         results['torsion_derivation'] = {
             'T_omega': -0.884,
-            'alpha_4': 0.955821,
-            'alpha_5': 0.222179,
+            'shadow_kuf': 0.955821,
+            'shadow_chet': 0.222179,
             'd_eff': 12.589,
             'w0': -0.852821,
             'status': 'Stub - module not implemented'
@@ -587,14 +587,14 @@ def run_v12_3_updates(verbose=True):
         print("="*70)
 
     results = {
-        'alpha_parameters': {
-            'alpha_4': config.FittedParameters.ALPHA_4,
-            'alpha_5': config.FittedParameters.ALPHA_5,
-            'theta_23_predicted': 45.0,  # From alpha_4 = alpha_5 (maximal mixing)
+        'sitra_shadow_coupling': {
+            'shadow_kuf': config.FittedParameters.SHADOW_KUF,
+            'shadow_chet': config.FittedParameters.SHADOW_CHET,
+            'theta_23_predicted': 45.0,  # From shadow_kuf = shadow_chet (maximal mixing)
             'theta_23_nufit': 45.0,
             'theta_23_nufit_error': 1.5,
             'update': 'NuFIT 6.0 (shift from 47.2° to 45.0°)',
-            'torsion_constraint': config.FittedParameters.ALPHA_4 + config.FittedParameters.ALPHA_5,
+            'torsion_constraint': config.FittedParameters.SHADOW_KUF + config.FittedParameters.SHADOW_CHET,
             'status': 'geometric_with_alignment'
         },
         'neutrino_validation': {
@@ -621,10 +621,10 @@ def run_v12_3_updates(verbose=True):
     }
 
     if verbose:
-        print(f"Alpha Parameters (NuFIT 6.0):")
-        print(f"  alpha_4 = {results['alpha_parameters']['alpha_4']:.6f}")
-        print(f"  alpha_5 = {results['alpha_parameters']['alpha_5']:.6f}")
-        print(f"  theta_23 = {results['alpha_parameters']['theta_23_predicted']:.1f}° (maximal mixing)")
+        print(f"Sitra Shadow Coupling (NuFIT 6.0):")
+        print(f"  shadow_kuf = {results['sitra_shadow_coupling']['shadow_kuf']:.6f}")
+        print(f"  shadow_chet = {results['sitra_shadow_coupling']['shadow_chet']:.6f}")
+        print(f"  theta_23 = {results['sitra_shadow_coupling']['theta_23_predicted']:.1f}° (maximal mixing)")
         print(f"Neutrino Validation:")
         print(f"  Hybrid suppression: {results['neutrino_validation']['hybrid_suppression']['total']:.2f}")
         print(f"  Grade: {results['neutrino_validation']['grade_improvement']['v12_3']}")
@@ -1216,9 +1216,9 @@ def run_v12_8_derivation_completions(verbose=True):
         theta23_result = get_pmns_atmospheric_angle()
         results['theta_23_g2'] = {
             'theta_23_deg': theta23_result['theta_23_deg'],
-            'alpha_4': theta23_result['alpha_4'],
-            'alpha_5': theta23_result['alpha_5'],
-            'derivation': 'G2 holonomy SU(3) maximal subgroup forces alpha_4 = alpha_5',
+            'shadow_kuf': theta23_result['shadow_kuf'],
+            'shadow_chet': theta23_result['shadow_chet'],
+            'derivation': 'G2 holonomy SU(3) maximal subgroup forces shadow_kuf = shadow_chet',
             'status': theta23_result['status'],
             'experimental_match': theta23_result['experimental']['match']
         }
@@ -1285,7 +1285,7 @@ def run_v12_8_derivation_completions(verbose=True):
             'c_ghost': d_eff_result['c_ghost'],
             'c_matter': d_eff_result['c_matter'],
             'derivation': 'Ghost coefficient = |c_ghost|/(2*c_matter) = 26/52 = 0.5',
-            'formula': 'd_eff = 12 + 0.5*(alpha_4 + alpha_5)',
+            'formula': 'd_eff = 12 + 0.5*(shadow_kuf + shadow_chet)',
             'status': d_eff_result['status']
         }
         if verbose:
@@ -2071,7 +2071,7 @@ def generate_js_constants_from_output(results, output_path='theory-constants-enh
  * Changelog v12.0:
  * - Added v9.0 transparency data (fitted vs derived)
  * - Added v9.1 BRST proof results
- * - Added v10.0 geometric derivations (alpha_4, alpha_5, chi_eff)
+ * - Added v10.0 geometric derivations (shadow_kuf, shadow_chet, chi_eff)
  * - Added v10.1 neutrino mass matrix
  * - Added v10.2 all fermion matrices + CKM
  * - Added v11.0 proton lifetime + Higgs mass
@@ -2136,13 +2136,49 @@ if __name__ == '__main__':
     if 'pmns_matrix' not in results:
         results['shared_dimensions'] = {}
     results['shared_dimensions'] = {
-        'alpha_4': 0.576152,
-        'alpha_5': 0.576152,
+        'shadow_kuf': 0.576152,
+        'shadow_chet': 0.576152,
         'd_eff': 12.576152,
         'w0_from_d_eff': -0.8527,
         'theta_23_predicted': 45.0,
-        'description': 'Shared extra dimension couplings from G2 holonomy SU(3) symmetry'
+        'description': 'Sitra Shadow Coupling from G2 holonomy SU(3) symmetry'
     }
+
+    # Add 24-dimension Greek letter nomenclature (v12.9+)
+    # New Jerusalem Architecture: Gate Mirror (tribes/gemstones) + Foundation Mirror (apostles)
+    try:
+        from config import ShadowDimensionNomenclature
+        results['shadow_dimension_nomenclature'] = ShadowDimensionNomenclature.get_all_dimensions()
+        print("\n  Added: shadow_dimension_nomenclature (24 Greek letter pairs)")
+    except ImportError:
+        print("  Warning: ShadowDimensionNomenclature not available")
+
+    # Add G2 direction nomenclature (v12.9+)
+    # 7 directions labeled with Hebrew Sefirot + Enochian Heptarchic Kings
+    try:
+        from config import G2DirectionNomenclature
+        results['g2_direction_nomenclature'] = G2DirectionNomenclature.get_all_directions()
+        print("  Added: g2_direction_nomenclature (7 Hebrew Sefirot + Enochian Kings)")
+    except ImportError:
+        print("  Warning: G2DirectionNomenclature not available")
+
+    # Add Brane Localization nomenclature (v12.9+)
+    # Enochian Watchtower naming: Λ_Α (Exarp), Λ_Π (Bitom), Λ_Υ (Hcoma), Λ_Γ (Nanta)
+    try:
+        from config import BraneNomenclature
+        results['brane_nomenclature'] = BraneNomenclature.get_all_branes()
+        print("  Added: brane_nomenclature (4 Enochian Watchtower branes)")
+    except ImportError:
+        print("  Warning: BraneNomenclature not available")
+
+    # Add Hebrew Physics Nomenclature (v12.9+)
+    # Kabbalistic naming: k_ג (warping), C_כ (flux), f_ה (partition), S_מ (instanton), δ_ל (threshold)
+    try:
+        from config import HebrewPhysicsNomenclature
+        results['hebrew_physics_nomenclature'] = HebrewPhysicsNomenclature.get_all_parameters()
+        print("  Added: hebrew_physics_nomenclature (5 Kabbalistic parameters)")
+    except ImportError:
+        print("  Warning: HebrewPhysicsNomenclature not available")
 
     # Write output files
     json_file = write_output_json(results)
@@ -2157,7 +2193,7 @@ if __name__ == '__main__':
     print("Access constants via:")
     print("  - PM.v9_transparency (fitted vs derived)")
     print("  - PM.v9_brst_proof (Sp(2,R) proof)")
-    print("  - PM.v10_geometric_derivations (alpha_4, alpha_5, chi_eff)")
+    print("  - PM.v10_geometric_derivations (shadow_kuf, shadow_chet, chi_eff)")
     print("  - PM.v10_1_neutrino_masses (v12.3 hybrid suppression)")
     print("  - PM.v10_2_all_fermions (all quarks + leptons)")
     print("  - PM.v11_final_observables (tau_p, m_h)")

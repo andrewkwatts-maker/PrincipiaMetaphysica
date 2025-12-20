@@ -388,12 +388,12 @@ class FittedParametersProxy:
         self._nu = get_neutrino()
 
     @property
-    def ALPHA_4(self) -> float:
-        return self._nu.alpha_4
+    def SHADOW_KUF(self) -> float:
+        return self._nu.shadow_kuf
 
     @property
-    def ALPHA_5(self) -> float:
-        return self._nu.alpha_5
+    def SHADOW_CHET(self) -> float:
+        return self._nu.shadow_chet
 
 
 class TorsionClassProxy:
@@ -445,8 +445,8 @@ def get_legacy_config() -> Dict[str, Any]:
         'theta_12': get_neutrino().theta_12,
         'theta_13': get_neutrino().theta_13,
         'delta_cp': get_neutrino().delta_cp,
-        'alpha_4': get_neutrino().alpha_4,
-        'alpha_5': get_neutrino().alpha_5,
+        'shadow_kuf': get_neutrino().shadow_kuf,
+        'shadow_chet': get_neutrino().shadow_chet,
         'w0': get_dark_energy().w0,
         'wa': get_dark_energy().wa,
         'tau_p_median': get_proton_decay().tau_p_median,

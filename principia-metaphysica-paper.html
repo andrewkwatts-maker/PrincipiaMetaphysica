@@ -1317,7 +1317,7 @@
                 The atmospheric mixing angle emerges from G<sub>2</sub> holonomy symmetry. The maximal compact subgroup of G<sub>2</sub> is SU(3), which enforces:
             </p>
             <div class="equation-block">
-                $$\alpha_4 = \alpha_5 \quad \Rightarrow \quad \theta_{23} = \frac{\pi}{4} = 45°$$
+                $$\shadow_kuf = \shadow_chet \quad \Rightarrow \quad \theta_{23} = \frac{\pi}{4} = 45°$$
                 <span class="equation-number">(6.1)</span>
             </div>
 
@@ -1328,7 +1328,7 @@
                     <li class="derivation-step">Maximal compact subgroup is SU(3)</li>
                     <li class="derivation-step">7-dimensional rep decomposes: $\mathbf{7} = \mathbf{3} + \bar{\mathbf{3}} + \mathbf{1}$ under SU(3)</li>
                     <li class="derivation-step">Three (3,1) shadow branes transform as SU(3) triplet</li>
-                    <li class="derivation-step">Symmetric treatment enforced: $\alpha_4 = \alpha_5 = 0.576152$</li>
+                    <li class="derivation-step">Symmetric treatment enforced: $\shadow_kuf = \shadow_chet = 0.576152$</li>
                     <li class="derivation-step">Maximal mixing: $\theta_{23} = \pi/4 = 45°$</li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0 (2025) central value: $45.0° \pm 1.0°$ &mdash; exact match</em></p>
@@ -1713,7 +1713,7 @@
             <h3 class="subsection-title">7.1 Dark Energy from Effective Dimension</h3>
             <p>The dark energy equation of state emerges from dimensional reduction:</p>
             <div class="equation-block">
-                $$d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5) = 12 + 0.5(1.152) = 12.576$$
+                $$d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet) = 12 + 0.5(1.152) = 12.576$$
                 <span class="equation-number">(7.1)</span>
             </div>
 
@@ -1723,7 +1723,7 @@
                     <li class="derivation-step">Matter central charge: $c_{\text{matter}} = 26$ (critical bosonic string)</li>
                     <li class="derivation-step">Ghost central charge: $c_{\text{ghost}} = -26$ (bc system)</li>
                     <li class="derivation-step">Ghost dilution coefficient: $\gamma = \frac{|c_{\text{ghost}}|}{2 c_{\text{matter}}} = \frac{26}{52} = 0.5$</li>
-                    <li class="derivation-step">Shared dimensions from brane couplings: $\alpha_4 + \alpha_5 = 1.152$</li>
+                    <li class="derivation-step">Shared dimensions from brane couplings: $\shadow_kuf + \shadow_chet = 1.152$</li>
                     <li class="derivation-step">Result: $d_{\text{eff}} = 12 + 0.5 \times 1.152 = 12.576$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;"><em>&rarr; See <a href="#appendix-d">Appendix D</a> for simulation code and extended derivation</em></p>
@@ -2328,7 +2328,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
 
             <h3 class="subsection-title">C.1 G<sub>2</sub> Holonomy Argument</h3>
             <div class="equation-block">
-                $$G_2 \supset SU(3), \quad \mathbf{7} = \mathbf{3} + \bar{\mathbf{3}} + \mathbf{1} \quad \Rightarrow \quad \alpha_4 = \alpha_5$$
+                $$G_2 \supset SU(3), \quad \mathbf{7} = \mathbf{3} + \bar{\mathbf{3}} + \mathbf{1} \quad \Rightarrow \quad \shadow_kuf = \shadow_chet$$
             </div>
             <p>
                 The SU(3) maximal compact subgroup enforces symmetric treatment of the three (3,1) shadow branes, requiring equal coupling parameters.
@@ -2338,14 +2338,14 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
             <pre><code># derive_theta23_g2_v12_8.py
 def derive_theta23_g2() -> float:
     """Derive theta_23 from G2 holonomy SU(3) symmetry."""
-    # G2 holonomy forces alpha_4 = alpha_5 via SU(3) symmetry
+    # G2 holonomy forces shadow_kuf = shadow_chet via SU(3) symmetry
     alpha_diff = 0.0  # Geometric constraint
 
     # Maximal mixing from symmetric brane couplings
     theta_23_rad = np.pi / 4  # 45 degrees
     return np.degrees(theta_23_rad)  # 45.0
 
-def derive_alpha_parameters() -> Tuple[float, float]:
+def derive_sitra_shadow_coupling() -> Tuple[float, float]:
     """Alpha parameters equal by G2 holonomy."""
     alpha_value = 0.576152  # From moduli stabilization
     return alpha_value, alpha_value  # Equal by symmetry
@@ -2368,7 +2368,7 @@ def derive_alpha_parameters() -> Tuple[float, float]:
 
             <h3 class="subsection-title">D.2 Effective Dimension</h3>
             <div class="equation-block">
-                $$d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5) = 12 + 0.5(0.576152 + 0.576152) = 12.576$$
+                $$d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet) = 12 + 0.5(0.576152 + 0.576152) = 12.576$$
             </div>
 
             <h3 class="subsection-title">D.3 Equation of State</h3>
@@ -2382,9 +2382,9 @@ C_MATTER = 26   # Matter central charge
 C_GHOST = -26   # Ghost central charge
 GHOST_COEFFICIENT = np.abs(C_GHOST) / (2 * C_MATTER)  # 0.5
 
-def derive_d_eff(alpha_4=0.576152, alpha_5=0.576152, d_base=12):
+def derive_d_eff(shadow_kuf=0.576152, shadow_chet=0.576152, d_base=12):
     """Calculate effective dimension with ghost contribution."""
-    shared_contribution = GHOST_COEFFICIENT * (alpha_4 + alpha_5)
+    shared_contribution = GHOST_COEFFICIENT * (shadow_kuf + shadow_chet)
     return d_base + shared_contribution  # 12.576
 
 def derive_w0_from_d_eff(d_eff):

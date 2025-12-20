@@ -73,11 +73,11 @@ All 9 specified sections have been polished and validated against v12.8 requirem
 ### Complete Derivation Chain Coverage
 
 1. **derive_theta23_g2_v12_8.py** → fermion-sector.html
-   - Derives θ₂₃ = 45° from G₂ holonomy SU(3) symmetry forcing α₄ = α₅
+   - Derives θ₂₃ = 45° from G₂ holonomy SU(3) symmetry forcing Shadow_ק = Shadow_ח
 
 2. **derive_d_eff_v12_8.py** → cosmology.html
    - Derives ghost coefficient 0.5 from Sp(2,R) central charge ratio
-   - Calculates d_eff = 12 + 0.5(α₄ + α₅) = 12.589
+   - Calculates d_eff = 12 + 0.5(Shadow_ק + Shadow_ח) = 12.589
    - Derives w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8465
 
 3. **torsion_effective_v12_8.py** → (referenced in theory-analysis.html)

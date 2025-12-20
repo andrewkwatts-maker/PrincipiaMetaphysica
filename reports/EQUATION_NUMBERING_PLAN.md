@@ -67,7 +67,7 @@ experimental inputs pending rigorous Yukawa intersection calculation.
 9. w(z) functional form (Eq. 9)
 
 **Neutrino:**
-10. tan²θ₂₃ = α₄/α₅ = 1 (Eq. 10)
+10. tan²θ₂₃ = Shadow_ק/Shadow_ח = 1 (Eq. 10)
 11. Seesaw formula (Eq. 11)
 
 **Predictions:**

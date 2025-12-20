@@ -1,7 +1,7 @@
 """
 V12.8 Fix: Effective Dimension with Ghost Contribution
 
-Issue #5 Resolution: The 0.5 coefficient in d_eff = 12 + 0.5*(alpha_4 + alpha_5)
+Issue #5 Resolution: The 0.5 coefficient in d_eff = 12 + 0.5*(shadow_kuf + shadow_chet)
 was ad hoc without derivation from Tomita-Takesaki or Sp(2,R).
 
 SOLUTION: The 0.5 coefficient arises from the ghost central charge ratio in
@@ -38,7 +38,7 @@ C_GHOST = -26  # Ghost central charge (bc system)
 GHOST_COEFFICIENT = np.abs(C_GHOST) / (2 * C_MATTER)  # 0.5
 
 
-def derive_d_eff(alpha_4: float = 0.576152, alpha_5: float = 0.576152,
+def derive_d_eff(shadow_kuf: float = 0.576152, shadow_chet: float = 0.576152,
                  d_base: int = 12) -> float:
     """
     Calculate effective dimension with ghost contribution.
@@ -48,7 +48,7 @@ def derive_d_eff(alpha_4: float = 0.576152, alpha_5: float = 0.576152,
     1. The base dimension d = 12 comes from the (12,1) shadow spacetime
        after Sp(2,R) gauge fixing of the 26D (24,2) bulk
 
-    2. The shared dimensions (alpha_4, alpha_5) represent partial coupling
+    2. The shared dimensions (shadow_kuf, shadow_chet) represent partial coupling
        between the observable B1 brane and shadow branes B2, B3, B4
 
     3. The ghost system in Sp(2,R) gauge theory contributes negative DOF:
@@ -56,19 +56,19 @@ def derive_d_eff(alpha_4: float = 0.576152, alpha_5: float = 0.576152,
        - Matter has central charge c_matter = +26 (critical dimension)
        - The ratio 0.5 = |c_ghost|/(2*c_matter) dilutes shared dimensions
 
-    4. Result: d_eff = d_base + ghost_coeff * (alpha_4 + alpha_5)
+    4. Result: d_eff = d_base + ghost_coeff * (shadow_kuf + shadow_chet)
               d_eff = 12 + 0.5 * (0.576 + 0.576) = 12.576
 
     Args:
-        alpha_4: Brane coupling parameter (default 0.576152)
-        alpha_5: Brane coupling parameter (default 0.576152)
+        shadow_kuf: Brane coupling parameter (default 0.576152)
+        shadow_chet: Brane coupling parameter (default 0.576152)
         d_base: Base dimension from (12,1) shadow (default 12)
 
     Returns:
         d_eff: Effective dimension for dark energy calculation
     """
     # Shared dimension contribution, diluted by ghost factor
-    shared_contribution = GHOST_COEFFICIENT * (alpha_4 + alpha_5)
+    shared_contribution = GHOST_COEFFICIENT * (shadow_kuf + shadow_chet)
 
     # Effective dimension
     d_eff = d_base + shared_contribution
@@ -98,7 +98,7 @@ def derive_w0_from_d_eff(d_eff: float = None) -> float:
     return w0
 
 
-def derive_d_eff_detailed(alpha_4: float = 0.576152, alpha_5: float = 0.576152,
+def derive_d_eff_detailed(shadow_kuf: float = 0.576152, shadow_chet: float = 0.576152,
                           d_base: int = 12) -> Dict:
     """
     Return complete information about d_eff derivation.
@@ -106,28 +106,28 @@ def derive_d_eff_detailed(alpha_4: float = 0.576152, alpha_5: float = 0.576152,
     Returns:
         Dictionary with derivation chain and physics details
     """
-    d_eff = derive_d_eff(alpha_4, alpha_5, d_base)
+    d_eff = derive_d_eff(shadow_kuf, shadow_chet, d_base)
     w0 = derive_w0_from_d_eff(d_eff)
 
     return {
         'd_eff': d_eff,
         'd_base': d_base,
-        'alpha_4': alpha_4,
-        'alpha_5': alpha_5,
-        'alpha_sum': alpha_4 + alpha_5,
+        'shadow_kuf': shadow_kuf,
+        'shadow_chet': shadow_chet,
+        'alpha_sum': shadow_kuf + shadow_chet,
         'ghost_coefficient': GHOST_COEFFICIENT,
         'c_ghost': C_GHOST,
         'c_matter': C_MATTER,
-        'shared_contribution': GHOST_COEFFICIENT * (alpha_4 + alpha_5),
+        'shared_contribution': GHOST_COEFFICIENT * (shadow_kuf + shadow_chet),
         'w0_derived': w0,
         'derivation_chain': [
             '26D (24,2) bulk spacetime',
             'Sp(2,R) gauge fixing → 13D (12,1) shadow',
             'Base dimension: d_base = 12',
-            'Shared dimensions from brane couplings: alpha_4 + alpha_5',
+            'Shared dimensions from brane couplings: shadow_kuf + shadow_chet',
             'Ghost dilution: coeff = |c_ghost|/(2*c_matter) = 26/52 = 0.5',
-            f'd_eff = {d_base} + 0.5 × ({alpha_4:.6f} + {alpha_5:.6f})',
-            f'd_eff = {d_base} + 0.5 × {alpha_4 + alpha_5:.6f} = {d_eff:.3f}'
+            f'd_eff = {d_base} + 0.5 × ({shadow_kuf:.6f} + {shadow_chet:.6f})',
+            f'd_eff = {d_base} + 0.5 × {shadow_kuf + shadow_chet:.6f} = {d_eff:.3f}'
         ],
         'ghost_physics': {
             'c_matter': C_MATTER,
@@ -195,7 +195,7 @@ if __name__ == '__main__':
 
     print(f"\nEffective dimension: d_eff = {result['d_eff']:.4f}")
     print(f"Base dimension: d_base = {result['d_base']}")
-    print(f"Alpha sum: alpha_4 + alpha_5 = {result['alpha_sum']:.6f}")
+    print(f"Alpha sum: shadow_kuf + shadow_chet = {result['alpha_sum']:.6f}")
     print(f"Ghost coefficient: {result['ghost_coefficient']}")
     print(f"Shared contribution: {result['shared_contribution']:.6f}")
 

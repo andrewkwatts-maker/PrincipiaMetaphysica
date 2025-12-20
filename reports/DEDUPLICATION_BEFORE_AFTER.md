@@ -115,7 +115,7 @@ Eq. 6.1: θ₂₃ = 45°
 C.1 G₂ Holonomy Argument
 [Repeats: G₂ ⊃ SU(3), mathbf decomposition]
 [Repeats: SU(3) maximal compact subgroup enforces symmetric treatment]
-Eq: α₄ = α₅
+Eq: Shadow_ק = Shadow_ח
 [Code for simulation - UNIQUE CONTENT]
 ```
 
@@ -155,7 +155,7 @@ Eq. 6.1: θ₂₃ = 45°
 ```
 Derivation box:
 - Explains γ = 0.5 (ghost coefficient)
-- Shows d_eff = 12 + γ(α₄ + α₅) = 12.576
+- Shows d_eff = 12 + γ(Shadow_ק + Shadow_ח) = 12.576
 - Derives w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528
 
 Eq. 7.1: d_eff = 12.576
@@ -168,7 +168,7 @@ D.1 Ghost Coefficient
 Eq: γ = |c_ghost|/(2 c_matter) = 26/52 = 0.5          [DUPLICATE]
 
 D.2 Effective Dimension
-Eq: d_eff = 12 + γ(α₄ + α₅) = 12.576               [DUPLICATE]
+Eq: d_eff = 12 + γ(Shadow_ק + Shadow_ח) = 12.576               [DUPLICATE]
 
 D.3 Equation of State
 Eq: w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528         [DUPLICATE]
@@ -185,7 +185,7 @@ D.4 Simulation Code
 ```
 Derivation box:
 - Explains γ = 0.5 (ghost coefficient)
-- Shows d_eff = 12 + γ(α₄ + α₅) = 12.576
+- Shows d_eff = 12 + γ(Shadow_ק + Shadow_ח) = 12.576
 - Derives w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528
 
 Eq. 7.1: d_eff = 12.576

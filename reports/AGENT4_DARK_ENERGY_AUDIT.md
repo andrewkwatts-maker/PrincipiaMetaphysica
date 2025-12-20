@@ -54,7 +54,7 @@ All critical dark energy parameters have been successfully migrated from the old
 
 #### Derivation Chain (NEW Paper):
 1. Ghost coefficient γ = 0.5 (from central charge ratio)
-2. d_eff = 12 + γ(α₄ + α₅) = 12 + 0.5(1.152) = 12.576
+2. d_eff = 12 + γ(Shadow_ק + Shadow_ח) = 12 + 0.5(1.152) = 12.576
 3. w0 = -(d_eff - 1)/(d_eff + 1) = -0.8528
 4. MEP (Maximum Entropy Principle) justification provided
 
@@ -107,22 +107,22 @@ The wa value is **derived** from alpha_T (not fitted), making it a genuine predi
 #### NEW Paper Location:
 - **Line 1050**: Complete derivation with equation (7.1):
   ```latex
-  d_{\text{eff}} = 12 + \gamma(\alpha_4 + \alpha_5) = 12 + 0.5(1.152) = 12.576
+  d_{\text{eff}} = 12 + \gamma(\shadow_kuf + \shadow_chet) = 12 + 0.5(1.152) = 12.576
   ```
 - **Line 1054-1063**: Full derivation box for ghost coefficient γ = 0.5:
   1. Matter central charge: c_matter = 26 (critical bosonic string)
   2. Ghost central charge: c_ghost = -26 (bc system)
   3. Ghost dilution coefficient: γ = |c_ghost|/(2 c_matter) = 26/52 = 0.5
-  4. Shared dimensions from brane couplings: α₄ + α₅ = 1.152
+  4. Shared dimensions from brane couplings: Shadow_ק + Shadow_ח = 1.152
   5. Result: d_eff = 12 + 0.5 × 1.152 = 12.576
 
 #### Supporting Files:
 - `simulations/derive_d_eff_v12_8.py` line 60: Complete derivation script
-- `core/constants.py` line 234: `d_eff: float = 12.576  # 12 + 0.5*(α₄ + α₅)`
-- `sections/thermal-time.html` line 624: "d_eff = 12 + 0.5(α₄+α₅) = 12.589"
+- `core/constants.py` line 234: `d_eff: float = 12.576  # 12 + 0.5*(Shadow_ק + Shadow_ח)`
+- `sections/thermal-time.html` line 624: "d_eff = 12 + 0.5(Shadow_ק+Shadow_ח) = 12.589"
 
 #### Note on Value Discrepancy:
-The paper uses 12.576 (from α₄ + α₅ = 1.152) while some sections reference 12.589. This is likely due to different precision in α₄, α₅ values. The derivation methodology is consistent.
+The paper uses 12.576 (from Shadow_ק + Shadow_ח = 1.152) while some sections reference 12.589. This is likely due to different precision in Shadow_ק, Shadow_ח values. The derivation methodology is consistent.
 
 **Status**: Fully migrated with enhanced string theory justification for γ = 0.5
 
@@ -196,7 +196,7 @@ Not explicitly derived in OLD paper main text. Value used implicitly in d_eff ca
   1. Matter central charge: c_matter = 26 (critical bosonic string)
   2. Ghost central charge: c_ghost = -26 (bc system)
   3. Ghost dilution coefficient: γ = |c_ghost|/(2 c_matter) = 26/52 = 0.5
-  4. Shared dimensions from brane couplings: α₄ + α₅ = 1.152
+  4. Shared dimensions from brane couplings: Shadow_ק + Shadow_ח = 1.152
   5. Result: d_eff = 12 + 0.5 × 1.152 = 12.576
 
 #### Supporting Files:
@@ -441,7 +441,7 @@ At CMB redshifts (z ~ 1100 >> 3000 activation threshold), the logarithmic evolut
 ### sections/thermal-time.html
 
 **Thermal Time Framework:**
-- Line 624: d_eff = 12 + 0.5(α₄+α₅) derivation
+- Line 624: d_eff = 12 + 0.5(Shadow_ק+Shadow_ח) derivation
 - Line 3175: Section 5.7.2 "Cosmological Scalings" (α_T derivation context)
 - Extended discussion of thermal time hypothesis and KMS condition
 
@@ -540,7 +540,7 @@ Step 6: Final result
    - Recommendation: Global find-replace to standardize
 
 2. **d_eff Value Consistency**: Resolve 12.576 vs 12.589 discrepancy
-   - Root cause: Different precision in α₄ + α₅ calculation
+   - Root cause: Different precision in Shadow_ק + Shadow_ח calculation
    - Recommendation: Document which value is "canonical" and why
 
 3. **w_CMB_frozen Visibility**: Add explicit equation in NEW paper main text

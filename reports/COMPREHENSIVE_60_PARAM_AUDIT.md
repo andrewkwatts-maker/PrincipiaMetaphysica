@@ -174,9 +174,9 @@ These mediate proton decay via dimension-6 operators.
 
 ### Issue #12: theta_12 Perturbation Inconsistency [Agent 3]
 
-**Formula:** Δθ₁₂ = -(α₄ - α₅)/(2√2) = -1.67°
+**Formula:** Δθ₁₂ = -(Shadow_ק - Shadow_ח)/(2√2) = -1.67°
 
-**Problem:** But θ₂₃ derivation proves α₄ = α₅ exactly (G₂ symmetry), so (α₄ - α₅) = 0.
+**Problem:** But θ₂₃ derivation proves Shadow_ק = Shadow_ח exactly (G₂ symmetry), so (Shadow_ק - Shadow_ח) = 0.
 
 **Required Fix:** Clarify perturbation source (likely flux volumes, not alpha difference).
 
@@ -196,7 +196,7 @@ These mediate proton decay via dimension-6 operators.
 
 **Problem:** Two different quantities called "s":
 - s_parameter (geometric scale) = 1.178
-- α₄ + α₅ (brane coupling sum) = 1.152
+- Shadow_ק + Shadow_ח (brane coupling sum) = 1.152
 
 **Required Fix:** Clarify definitions and use distinct variable names.
 

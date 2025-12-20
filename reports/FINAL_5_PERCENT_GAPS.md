@@ -29,7 +29,7 @@ These parameters exist in config.py but have NO mention in the paper:
 | `F_TERM_NORMALIZED` | 1.0 | ✗ MISSING | Add to Section 4 (Higgs sector) |
 | `F_TERM_PHYSICAL` | 1e10 GeV² | ✗ MISSING | Add with SUSY breaking discussion |
 | `KAPPA_UPLIFT` | 1.0 | ✗ MISSING | Add to moduli stabilization |
-| `B_INSTANTON` | 1.0 | ✗ MISSING | Add with non-perturbative uplift |
+| `S_MEM` | 1.0 | ✗ MISSING | Add with non-perturbative uplift |
 | `MU_PERIODIC` | 0.5 | ✗ MISSING | Add with axionic modulation |
 | `PHI_M_CENTRAL` | 2.493 M_Pl | ✗ MISSING | Add Mashiach modulus VEV derivation |
 | `PHI_M_ERROR` | 5.027 M_Pl | ✗ MISSING | Add uncertainty estimate |
@@ -92,7 +92,7 @@ These parameters exist in config.py but have NO mention in the paper:
 |-----------|-------|----------------|-----------------|
 | `R_SHARED_Y` | 1/5000 GeV⁻¹ | ✗ MISSING | Add y-direction radius |
 | `R_SHARED_Z` | 1/5000 GeV⁻¹ | ✗ MISSING | Add z-direction radius |
-| `WARP_PARAMETER_K` | 35 | ✗ MISSING | Add warping parameter |
+| `WARP_PARAMETER_K` | 35 | ✗ MISSING | Add Gimel warping parameter (k_ג) |
 | `RADION_VEV` | 1.0 | ✗ MISSING | Add radion stabilization |
 | `Y_SHADOW_1/2/3` | 1/3, 2/3, 1 | ✗ MISSING | Add shadow brane positions |
 | `TENSION_OBSERVABLE` | 1e19⁶ GeV⁶ | ✗ MISSING | Add observable brane tension |
@@ -267,7 +267,7 @@ These parameters have multiple definitions in config.py:
 **Section/Appendix Additions Required:**
 
 1. **Section 4.3 "Moduli Stabilization"** (NEW)
-   - Parameters: φ_M, V_9, F-term, κ_uplift, b_instanton, μ_periodic
+   - Parameters: φ_M, V_9, F-term, κ_uplift, s_mem, μ_periodic
    - Length: ~1 page
    - Derivation complexity: Medium
 

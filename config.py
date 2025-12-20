@@ -267,7 +267,7 @@ class ModuliParameters:
 
     # Non-perturbative Uplift
     KAPPA_UPLIFT = 1.0        # Uplift coefficient (order unity)
-    B_INSTANTON = 1.0         # Instanton action exponent (simplified)
+    S_MEM = 1.0         # Instanton action exponent (simplified)
 
     # Axionic Modulation
     MU_PERIODIC = 0.5         # Periodic potential amplitude
@@ -570,7 +570,7 @@ class NeutrinoParameters:
 
     # PMNS Mixing Angles (Geometrically Derived from G2 Cycles)
     # v12.3: Updated to NuFIT 6.0 (maximal mixing)
-    THETA_23 = 45.00            # [degrees] From alpha_4 = alpha_5 (maximal mixing)
+    THETA_23 = 45.00            # [degrees] From shadow_kuf = shadow_chet (maximal mixing)
     THETA_23_ERROR = 0.80       # [degrees] Monte Carlo uncertainty
     THETA_23_NUFIT = 45.0       # [degrees] NuFIT 6.0 central value
     THETA_23_NUFIT_ERROR = 1.5  # [degrees] NuFIT 6.0 1sigma
@@ -804,7 +804,7 @@ def get_config_dict():
         'lambda_coupling': ModuliParameters.LAMBDA_COUPLING,
         'F_term': ModuliParameters.F_TERM_NORMALIZED,
         'kappa': ModuliParameters.KAPPA_UPLIFT,
-        'b_instanton': ModuliParameters.B_INSTANTON,
+        's_mem': ModuliParameters.S_MEM,
         'mu_periodic': ModuliParameters.MU_PERIODIC,
         'R_ortho': MultiTimeParameters.R_ORTHO,
         'phi_example': ModuliParameters.PHI_EXAMPLE,
@@ -911,8 +911,8 @@ class FittedParameters:
 
     # Parameters fitted to experimental data
     # v12.3: Updated to NuFIT 6.0 (θ₂₃ = 45.0° central value, shift from 47.2°)
-    ALPHA_4 = 0.576152           # Geometric torsion-based (NuFIT 6.0 aligned)
-    ALPHA_5 = 0.576152           # Geometric torsion-based (NuFIT 6.0 aligned)
+    SHADOW_KUF = 0.576152           # Geometric torsion-based (NuFIT 6.0 aligned)
+    SHADOW_CHET = 0.576152           # Geometric torsion-based (NuFIT 6.0 aligned)
     FITTED_TO_THETA_23 = True    # θ₂₃ = 45.0° (NuFIT 6.0)
     FITTED_TO_W0_DESI = True     # w₀ = -0.853 (DESI DR2 2024, preserved)
 
@@ -921,8 +921,8 @@ class FittedParameters:
     DELTA_CP_CALIBRATED = 235    # [degrees] From NuFIT
 
     # Status flags
-    STATUS_ALPHA_4 = "phenomenological"  # Shared geometric parameter
-    STATUS_ALPHA_5 = "phenomenological"  # Shared geometric parameter
+    STATUS_SHADOW_KUF = "phenomenological"  # Shared geometric parameter
+    STATUS_SHADOW_CHET = "phenomenological"  # Shared geometric parameter
     STATUS_THETA_13 = "calibrated"       # Fitted to oscillation data
     STATUS_DELTA_CP = "calibrated"       # Fitted to oscillation data
 
@@ -931,16 +931,16 @@ class FittedParameters:
     def provenance():
         """Returns full provenance of fitted parameters"""
         return {
-            "alpha_4": {
-                "value": FittedParameters.ALPHA_4,
+            "shadow_kuf": {
+                "value": FittedParameters.SHADOW_KUF,
                 "fitted_to": "θ₂₃ = 45.0° (NuFIT 6.0) via torsion constraint",
                 "status": "geometric_with_alignment",  # v12.3: Torsion-based, not phenomenological
                 "date_fitted": "December 2025 (v12.3 update)"
             },
-            "alpha_5": {
-                "value": FittedParameters.ALPHA_5,
+            "shadow_chet": {
+                "value": FittedParameters.SHADOW_CHET,
                 "fitted_to": "θ₂₃ = 45.0° (NuFIT 6.0) via torsion constraint",
-                "status": "geometric_with_alignment",  # v12.3: Equal to alpha_4 (maximal mixing)
+                "status": "geometric_with_alignment",  # v12.3: Equal to shadow_kuf (maximal mixing)
                 "date_fitted": "December 2025"
             },
             "theta_13": {
@@ -969,7 +969,7 @@ class TorsionClass:
     Reference: Corti-Haskins-Nordström-Pacini (CHNP) arXiv:1207.4470, 1809.09083
     TCS G₂ manifold #187 has torsion class T_ω = -0.884 (logarithmic volume).
 
-    This is the GEOMETRIC SOURCE of α₄, α₅, M_GUT, and w₀.
+    This is the GEOMETRIC SOURCE of Shadow_ק, Shadow_ח, M_GUT, and w₀.
     """
 
     # From TCS G₂ construction #187 (CHNP database)
@@ -980,7 +980,7 @@ class TorsionClass:
     @staticmethod
     def derive_alpha_sum():
         """
-        α₄ + α₅ = [ln(M_Pl/M_GUT) + |T_ω|] / (2π)
+        Shadow_ק + Shadow_ח = [ln(M_Pl/M_GUT) + |T_ω|] / (2π)
         From G₂ volume modulus stabilization
         """
         M_Pl = PhenomenologyParameters.M_PLANCK_REDUCED  # GeV (v12.4: use reduced mass)
@@ -992,7 +992,7 @@ class TorsionClass:
     def derive_M_GUT():
         """
         M_GUT derived from G₂ torsion logarithm
-        M_GUT = M_Pl × exp(-2π × (α₄ + α₅) + |T_ω|)
+        M_GUT = M_Pl × exp(-2π × (Shadow_ק + Shadow_ח) + |T_ω|)
         """
         M_Pl = PhenomenologyParameters.M_PLANCK_REDUCED  # GeV (v12.4: use reduced mass)
         alpha_sum = TorsionClass.derive_alpha_sum()
@@ -1441,22 +1441,22 @@ class SharedDimensionsParameters:
     # Reference: arXiv:1809.09083 (CHNP extra-twisted TCS)
     #
     # Derivation formulas:
-    #   ALPHA_4 + ALPHA_5 = [ln(M_Pl/M_GUT) + |T_omega|] / (2*pi)
+    #   SHADOW_KUF + SHADOW_CHET = [ln(M_Pl/M_GUT) + |T_omega|] / (2*pi)
     #                     = [6.356 + 0.884] / 6.283 = 1.152303 (torsion constraint)
     #
-    #   ALPHA_4 - ALPHA_5 = (theta_23 - 45 deg) / n_gen
+    #   SHADOW_KUF - SHADOW_CHET = (theta_23 - 45 deg) / n_gen
     #                     = (45.0 - 45.0) / 3 = 0.000 (maximal mixing, NuFIT 6.0)
     #
     # Solutions (v12.3 update):
-    ALPHA_4 = 0.576152           # Geometric derivation (NuFIT 6.0: theta_23 = 45.0°)
-    ALPHA_5 = 0.576152           # Geometric derivation (maximal mixing case)
+    SHADOW_KUF = 0.576152           # Geometric derivation (NuFIT 6.0: theta_23 = 45.0°)
+    SHADOW_CHET = 0.576152           # Geometric derivation (maximal mixing case)
 
     # Alternative: Numerical optimization values (for comparison)
-    # ALPHA_4_NUMERICAL = 0.8980  # From chi-squared minimization
-    # ALPHA_5_NUMERICAL = -0.3381 # Note: Sign differs from geometric!
+    # SHADOW_KUF_NUMERICAL = 0.8980  # From chi-squared minimization
+    # SHADOW_CHET_NUMERICAL = -0.3381 # Note: Sign differs from geometric!
 
     # Derived physics (using geometric values):
-    D_EFF = 12.0 + 0.5 * (ALPHA_4 + ALPHA_5)  # Effective dimension: 12.576 (v12.3)
+    D_EFF = 12.0 + 0.5 * (SHADOW_KUF + SHADOW_CHET)  # Effective dimension: 12.576 (v12.3)
     W_0_PREDICTION = -(D_EFF - 1) / (D_EFF + 1)  # Dark energy: -0.853 (DESI: -0.83 +/- 0.06)
 
 
@@ -1609,6 +1609,819 @@ class SharedDimensionsParameters:
         # Sort by mass
         spectrum.sort(key=lambda x: x[2])
         return spectrum
+
+
+# ==============================================================================
+# SHADOW DIMENSION NOMENCLATURE (v12.9+)
+# New Jerusalem Architecture: 24 Greek Letters for Shadow Spatial Dimensions
+# ==============================================================================
+
+class ShadowDimensionNomenclature:
+    """
+    24-Dimension Greek Letter Naming Scheme for Shadow Spatial Dimensions.
+
+    The 13D shadow (signature 12,1) has 12 spatial dimensions. With Z₂ mirroring
+    from the Sp(2,R) gauge structure, this yields 24 total shadow spatial dimensions
+    across two Sitra mirror branes:
+
+    - Gate Mirror (Σ₁): 12 dimensions labeled for tribes/gemstones (material side)
+    - Foundation Mirror (Σ₂): 12 dimensions labeled for apostles (spiritual side)
+
+    Dimensions are paired by wall (New Jerusalem architecture, Revelation 21):
+    - North Wall: 3 pairs (Ρ–Δ, Γ–Ε, Ζ–Η)
+    - East Wall: 3 pairs (Ο–Θ, Ι–Λ, Σ–Μ)
+    - South Wall: 3 pairs (Τ–Ν, Ω–Ξ, Χ–Π)
+    - West Wall: 3 pairs (Α–Υ, Β–Φ, Κ–Ψ)
+
+    Reference: Revelation 21:12-14, 19-20 (New Jerusalem gates and foundations)
+
+    Usage in equations:
+        orientation_sum = Σᵢ₌₁¹² Xᵢ = 12
+
+    The Sitra Shadow Coupling (shadow_kuf + shadow_chet) governs interactions
+    across all paired dimensions.
+    """
+
+    # Cardinal walls (4 walls × 3 pairs = 12 paired dimensions)
+    WALLS = ("north", "east", "south", "west")
+
+    # Gate Mirror Greek letters (tribes/gemstones) - 12 dimensions
+    GATE_LETTERS = ("Ρ", "Γ", "Ζ", "Ο", "Ι", "Σ", "Τ", "Ω", "Χ", "Α", "Β", "Κ")
+    GATE_NAMES = ("Rho", "Gamma", "Zeta", "Omicron", "Iota", "Sigma",
+                  "Tau", "Omega", "Chi", "Alpha", "Beta", "Kappa")
+
+    # Foundation Mirror Greek letters (apostles) - 12 dimensions
+    FOUNDATION_LETTERS = ("Δ", "Ε", "Η", "Θ", "Λ", "Μ", "Ν", "Ξ", "Π", "Υ", "Φ", "Ψ")
+    FOUNDATION_NAMES = ("Delta", "Epsilon", "Eta", "Theta", "Lambda", "Mu",
+                        "Nu", "Xi", "Pi", "Upsilon", "Phi", "Psi")
+
+    # Twelve Tribes of Israel (Gate Mirror associations)
+    # Order follows wall positions: North 1-3, East 1-3, South 1-3, West 1-3
+    TRIBES = (
+        "Reuben", "Judah", "Levi",           # North wall (gates 1-3)
+        "Joseph", "Benjamin", "Dan",          # East wall (gates 4-6)
+        "Simeon", "Issachar", "Zebulun",      # South wall (gates 7-9)
+        "Gad", "Asher", "Naphtali"            # West wall (gates 10-12)
+    )
+
+    # Twelve Gemstones (Revelation 21:19-20, Gate Mirror associations)
+    GEMSTONES = (
+        "Ruby", "Emerald", "Zircon",          # North wall
+        "Onyx", "Jasper", "Sapphire",         # East wall
+        "Topaz", "Amethyst", "Peridot",       # South wall
+        "Agate", "Beryl", "Chrysoprase"       # West wall
+    )
+
+    # Twelve Apostles (Foundation Mirror associations)
+    APOSTLES = (
+        "Peter", "Andrew", "James the Great",      # North wall (foundations 1-3)
+        "John", "Philip", "Bartholomew",           # East wall (foundations 4-6)
+        "Matthew", "Thomas", "James the Less",     # South wall (foundations 7-9)
+        "Jude", "Simon the Zealot", "Matthias"     # West wall (foundations 10-12)
+    )
+
+    # Symbolic meanings for each paired dimension
+    SYMBOLIC_MEANINGS = (
+        "Firstborn + Rock (stability)",           # Ρ–Δ: Reuben/Peter
+        "Royal + Reach (extension)",              # Γ–Ε: Judah/Andrew
+        "Priestly + Heritage (inheritance)",      # Ζ–Η: Levi/James Great
+        "Fruitful + Divine Love (theology)",      # Ο–Θ: Joseph/John
+        "Beloved + Reason (logos)",               # Ι–Λ: Benjamin/Philip
+        "Judge + Truth Spreading (manifest)",     # Σ–Μ: Dan/Bartholomew
+        "Hearing + Record (numbers)",             # Τ–Ν: Simeon/Matthew
+        "Wisdom + Faith Sight (vision)",          # Ω–Ξ: Issachar/Thomas
+        "Mariner + Steadfastness (pillar)",       # Χ–Π: Zebulun/James Less
+        "Beginning + Unity",                       # Α–Υ: Gad/Jude
+        "Prosperous + Passion (fire)",            # Β–Φ: Asher/Simon Zealot
+        "Free + Soul (spirit)"                    # Κ–Ψ: Naphtali/Matthias
+    )
+
+    @classmethod
+    def get_wall_for_index(cls, index: int) -> str:
+        """Determine which wall a dimension belongs to (0-11 → wall name)."""
+        if index < 3:
+            return "north"
+        elif index < 6:
+            return "east"
+        elif index < 9:
+            return "south"
+        else:
+            return "west"
+
+    @classmethod
+    def get_gate_dimension(cls, index: int) -> dict:
+        """
+        Get Gate Mirror dimension by index (0-11).
+
+        Returns dict with greek_letter, tribe, gemstone, wall, paired letter, notation.
+        """
+        if not 0 <= index < 12:
+            raise ValueError(f"Index must be 0-11, got {index}")
+
+        return {
+            "index": index,
+            "mirror": "gate",
+            "greek_letter": cls.GATE_LETTERS[index],
+            "greek_name": cls.GATE_NAMES[index],
+            "wall": cls.get_wall_for_index(index),
+            "tribe": cls.TRIBES[index],
+            "gemstone": cls.GEMSTONES[index],
+            "paired_with": cls.FOUNDATION_LETTERS[index],
+            "paired_apostle": cls.APOSTLES[index],
+            "notation": f"X_{{Ρ–Δ}}".replace("Ρ", cls.GATE_LETTERS[index]).replace("Δ", cls.FOUNDATION_LETTERS[index]),
+            "symbolic_meaning": cls.SYMBOLIC_MEANINGS[index]
+        }
+
+    @classmethod
+    def get_foundation_dimension(cls, index: int) -> dict:
+        """
+        Get Foundation Mirror dimension by index (0-11).
+
+        Returns dict with greek_letter, apostle, wall, paired letter, notation.
+        """
+        if not 0 <= index < 12:
+            raise ValueError(f"Index must be 0-11, got {index}")
+
+        return {
+            "index": index,
+            "mirror": "foundation",
+            "greek_letter": cls.FOUNDATION_LETTERS[index],
+            "greek_name": cls.FOUNDATION_NAMES[index],
+            "wall": cls.get_wall_for_index(index),
+            "apostle": cls.APOSTLES[index],
+            "paired_with": cls.GATE_LETTERS[index],
+            "paired_tribe": cls.TRIBES[index],
+            "paired_gemstone": cls.GEMSTONES[index],
+            "notation": f"X_{{Ρ–Δ}}".replace("Ρ", cls.GATE_LETTERS[index]).replace("Δ", cls.FOUNDATION_LETTERS[index]),
+            "symbolic_meaning": cls.SYMBOLIC_MEANINGS[index]
+        }
+
+    @classmethod
+    def get_paired_dimensions(cls) -> list:
+        """
+        Return list of all 12 paired dimension coordinates.
+
+        Each pair contains one Gate dimension and one Foundation dimension.
+        """
+        pairs = []
+        for i in range(12):
+            pairs.append({
+                "index": i,
+                "wall": cls.get_wall_for_index(i),
+                "gate_letter": cls.GATE_LETTERS[i],
+                "foundation_letter": cls.FOUNDATION_LETTERS[i],
+                "tribe": cls.TRIBES[i],
+                "gemstone": cls.GEMSTONES[i],
+                "apostle": cls.APOSTLES[i],
+                "notation": f"X_{{{cls.GATE_LETTERS[i]}–{cls.FOUNDATION_LETTERS[i]}}}",
+                "symbolic_meaning": cls.SYMBOLIC_MEANINGS[i]
+            })
+        return pairs
+
+    @classmethod
+    def get_wall_dimensions(cls, wall: str) -> list:
+        """
+        Get all 3 paired dimensions for a specific wall.
+
+        Args:
+            wall: One of "north", "east", "south", "west"
+
+        Returns:
+            List of 3 paired dimension dicts for that wall.
+        """
+        wall = wall.lower()
+        if wall not in cls.WALLS:
+            raise ValueError(f"Wall must be one of {cls.WALLS}, got {wall}")
+
+        wall_index = cls.WALLS.index(wall)
+        start_idx = wall_index * 3
+        return [cls.get_paired_dimensions()[i] for i in range(start_idx, start_idx + 3)]
+
+    @classmethod
+    def get_all_dimensions(cls) -> dict:
+        """
+        Return complete nomenclature dictionary for JSON export.
+
+        Structure suitable for theory_output.json and website display.
+        """
+        return {
+            "version": "12.9",
+            "description": "24-Dimension Greek Letter Naming Scheme (New Jerusalem Architecture)",
+            "reference": "Revelation 21:12-14, 19-20",
+            "structure": {
+                "total_dimensions": 24,
+                "mirrors": 2,
+                "dimensions_per_mirror": 12,
+                "walls": 4,
+                "pairs_per_wall": 3
+            },
+            "gate_mirror": {
+                "description": "Tribes/Gemstones (Sitra Gate - material side)",
+                "letters": list(cls.GATE_LETTERS),
+                "letter_names": list(cls.GATE_NAMES),
+                "tribes": list(cls.TRIBES),
+                "gemstones": list(cls.GEMSTONES)
+            },
+            "foundation_mirror": {
+                "description": "Apostles (Sitra Foundation - spiritual side)",
+                "letters": list(cls.FOUNDATION_LETTERS),
+                "letter_names": list(cls.FOUNDATION_NAMES),
+                "apostles": list(cls.APOSTLES)
+            },
+            "wall_pairings": {
+                "north": {
+                    "indices": [0, 1, 2],
+                    "pairs": [
+                        {"gate": "Ρ", "foundation": "Δ", "tribe": "Reuben", "apostle": "Peter"},
+                        {"gate": "Γ", "foundation": "Ε", "tribe": "Judah", "apostle": "Andrew"},
+                        {"gate": "Ζ", "foundation": "Η", "tribe": "Levi", "apostle": "James the Great"}
+                    ],
+                    "notation": ["X_{Ρ–Δ}", "X_{Γ–Ε}", "X_{Ζ–Η}"]
+                },
+                "east": {
+                    "indices": [3, 4, 5],
+                    "pairs": [
+                        {"gate": "Ο", "foundation": "Θ", "tribe": "Joseph", "apostle": "John"},
+                        {"gate": "Ι", "foundation": "Λ", "tribe": "Benjamin", "apostle": "Philip"},
+                        {"gate": "Σ", "foundation": "Μ", "tribe": "Dan", "apostle": "Bartholomew"}
+                    ],
+                    "notation": ["X_{Ο–Θ}", "X_{Ι–Λ}", "X_{Σ–Μ}"]
+                },
+                "south": {
+                    "indices": [6, 7, 8],
+                    "pairs": [
+                        {"gate": "Τ", "foundation": "Ν", "tribe": "Simeon", "apostle": "Matthew"},
+                        {"gate": "Ω", "foundation": "Ξ", "tribe": "Issachar", "apostle": "Thomas"},
+                        {"gate": "Χ", "foundation": "Π", "tribe": "Zebulun", "apostle": "James the Less"}
+                    ],
+                    "notation": ["X_{Τ–Ν}", "X_{Ω–Ξ}", "X_{Χ–Π}"]
+                },
+                "west": {
+                    "indices": [9, 10, 11],
+                    "pairs": [
+                        {"gate": "Α", "foundation": "Υ", "tribe": "Gad", "apostle": "Jude"},
+                        {"gate": "Β", "foundation": "Φ", "tribe": "Asher", "apostle": "Simon the Zealot"},
+                        {"gate": "Κ", "foundation": "Ψ", "tribe": "Naphtali", "apostle": "Matthias"}
+                    ],
+                    "notation": ["X_{Α–Υ}", "X_{Β–Φ}", "X_{Κ–Ψ}"]
+                }
+            },
+            "symbolic_meanings": list(cls.SYMBOLIC_MEANINGS),
+            "sitra_shadow_coupling": {
+                "shadow_kuf": FittedParameters.SHADOW_KUF,
+                "shadow_chet": FittedParameters.SHADOW_CHET,
+                "sum": FittedParameters.SHADOW_KUF + FittedParameters.SHADOW_CHET,
+                "description": "Gate-Foundation coupling strength across all 24 dimensions"
+            }
+        }
+
+    @classmethod
+    def greek_to_index(cls, letter: str) -> tuple:
+        """
+        Convert Greek letter to (mirror, index) tuple.
+
+        Args:
+            letter: Single Greek letter (e.g., "Ρ", "Δ")
+
+        Returns:
+            Tuple of (mirror_name, index) where mirror_name is "gate" or "foundation"
+        """
+        if letter in cls.GATE_LETTERS:
+            return ("gate", cls.GATE_LETTERS.index(letter))
+        elif letter in cls.FOUNDATION_LETTERS:
+            return ("foundation", cls.FOUNDATION_LETTERS.index(letter))
+        else:
+            raise ValueError(f"Unknown Greek letter: {letter}")
+
+    @classmethod
+    def notation_to_indices(cls, notation: str) -> tuple:
+        """
+        Parse dimension notation to get both indices.
+
+        Args:
+            notation: String like "X_{Ρ–Δ}" or "Ρ–Δ"
+
+        Returns:
+            Tuple of (gate_index, foundation_index)
+        """
+        # Extract letters from notation
+        import re
+        match = re.search(r'([ΡΓΖΟΙΣΤΩΧΑΒΚ])–([ΔΕΗΘΛΜΝΞΠΥΦΨ])', notation)
+        if match:
+            gate_letter, foundation_letter = match.groups()
+            return (cls.GATE_LETTERS.index(gate_letter),
+                    cls.FOUNDATION_LETTERS.index(foundation_letter))
+        raise ValueError(f"Could not parse notation: {notation}")
+
+
+# ==============================================================================
+# G₂ MANIFOLD DIRECTION NOMENCLATURE (v12.9+)
+# Seven Sefirot Hebrew Letters for G₂ Internal Directions
+# ==============================================================================
+
+class G2DirectionNomenclature:
+    """
+    7-Direction Hebrew Letter Naming Scheme for G₂ Manifold.
+
+    The 7D G₂ holonomy manifold (TCS construction) has 7 internal directions.
+    These are labeled with Hebrew letters corresponding to the lower seven Sefirot
+    (the "emotional" attributes in Kabbalistic cosmology):
+
+    - Gח (Chesed) - Primary volume: Loving-kindness/expansion
+    - Gג (Gevurah) - Structural form: Strength/contraction
+    - Gת (Tiferet) - Chirality axis: Beauty/harmony (balances Chesed-Gevurah)
+    - Gנ (Netzach) - Primary flux: Victory/endurance
+    - Gה (Hod) - Modulus scaling: Splendor/submission
+    - Gי (Yesod) - Torsion axis: Foundation/bonding (balances Netzach-Hod)
+    - Gמ (Malkuth) - Attractor direction: Kingdom/manifestation (receives all above)
+
+    The lower seven Sefirot form the "building blocks" of creation, just as
+    the 7 G₂ directions form the geometric foundation of compactification.
+
+    Reference: Sefer Yetzirah (Book of Formation), Zohar, TCS G₂ manifold construction
+    """
+
+    # Hebrew letters for the 7 directions (lower Sefirot)
+    HEBREW_LETTERS = ("ח", "ג", "ת", "נ", "ה", "י", "מ")
+
+    # Transliterated names
+    LETTER_NAMES = ("Chet", "Gimel", "Tav", "Nun", "Heh", "Yud", "Mem")
+
+    # Variable names (Python/JS compatible)
+    VARIABLE_NAMES = ("G_chet", "G_gimel", "G_tav", "G_nun", "G_heh", "G_yud", "G_mem")
+
+    # Display notation (G with Hebrew subscript)
+    DISPLAY_NAMES = ("Gח", "Gג", "Gת", "Gנ", "Gה", "Gי", "Gמ")
+
+    # Sefirot names (Hebrew)
+    SEFIROT = ("Chesed", "Gevurah", "Tiferet", "Netzach", "Hod", "Yesod", "Malkuth")
+
+    # Sefirot English translations
+    SEFIROT_ENGLISH = (
+        "Loving-kindness",   # Chesed
+        "Strength",          # Gevurah
+        "Beauty",            # Tiferet
+        "Victory",           # Netzach
+        "Splendor",          # Hod
+        "Foundation",        # Yesod
+        "Kingdom"            # Malkuth
+    )
+
+    # Geometric roles in G₂ manifold
+    GEOMETRIC_ROLES = (
+        "Primary volume",      # Chesed: expansion/volume
+        "Structural form",     # Gevurah: contraction/form
+        "Chirality axis",      # Tiferet: balance/chirality
+        "Primary flux",        # Netzach: flux quantization
+        "Modulus scaling",     # Hod: moduli stabilization
+        "Torsion axis",        # Yesod: torsion class
+        "Attractor direction"  # Malkuth: attractor basin
+    )
+
+    # Enochian Heptarchic Kings (from John Dee's Heptarchia Mystica)
+    # Maps 7 G₂ directions to 7 planetary angels
+    ENOCHIAN_KINGS = (
+        "Baligon",   # Sun/Sunday - Primary volume (light/expansion)
+        "Bobogel",   # Moon/Monday - Structural form (reflection/boundary)
+        "Babalel",   # Mars/Tuesday - Chirality axis (action/handedness)
+        "Bynepor",   # Jupiter/Thursday - Primary flux (victory/endurance)
+        "Bnaspol",   # Venus/Friday - Modulus scaling (beauty/glory)
+        "Blumaza",   # Mercury/Wednesday - Torsion axis (connection/foundation)
+        "Bagenol"    # Saturn/Saturday - Attractor direction (manifestation/end)
+    )
+
+    # Planetary/Day associations (Heptarchia Mystica)
+    PLANETARY_DAYS = (
+        ("Sun", "Sunday"),
+        ("Moon", "Monday"),
+        ("Mars", "Tuesday"),
+        ("Jupiter", "Thursday"),
+        ("Venus", "Friday"),
+        ("Mercury", "Wednesday"),
+        ("Saturn", "Saturday")
+    )
+
+    # Tree of Life structure (which Sefirot pairs balance each other)
+    SEFIROT_PAIRS = {
+        "right_pillar": ["Chesed", "Netzach"],      # Expansion/Victory
+        "left_pillar": ["Gevurah", "Hod"],          # Contraction/Splendor
+        "middle_pillar": ["Tiferet", "Yesod", "Malkuth"]  # Balance/Foundation/Kingdom
+    }
+
+    @classmethod
+    def get_direction(cls, index: int) -> dict:
+        """
+        Get G₂ direction by index (0-6).
+
+        Returns dict with hebrew_letter, sefirah, geometric_role, etc.
+        """
+        if not 0 <= index < 7:
+            raise ValueError(f"Index must be 0-6, got {index}")
+
+        return {
+            "index": index,
+            "hebrew_letter": cls.HEBREW_LETTERS[index],
+            "letter_name": cls.LETTER_NAMES[index],
+            "variable_name": cls.VARIABLE_NAMES[index],
+            "display_name": cls.DISPLAY_NAMES[index],
+            "sefirah": cls.SEFIROT[index],
+            "sefirah_english": cls.SEFIROT_ENGLISH[index],
+            "geometric_role": cls.GEOMETRIC_ROLES[index],
+            "enochian_king": cls.ENOCHIAN_KINGS[index],
+            "planet": cls.PLANETARY_DAYS[index][0],
+            "day": cls.PLANETARY_DAYS[index][1]
+        }
+
+    @classmethod
+    def get_all_directions(cls) -> dict:
+        """
+        Return complete nomenclature dictionary for JSON export.
+
+        Structure suitable for theory_output.json and website display.
+        """
+        directions = []
+        for i in range(7):
+            directions.append(cls.get_direction(i))
+
+        return {
+            "version": "12.9",
+            "description": "7-Direction Hebrew Letter Naming for G₂ Manifold (Sefirot)",
+            "reference": "Sefer Yetzirah, Zohar, TCS G₂ construction",
+            "structure": {
+                "total_directions": 7,
+                "holonomy_group": "G₂",
+                "manifold_type": "TCS (Twisted Connected Sum)"
+            },
+            "directions": {
+                cls.VARIABLE_NAMES[i]: {
+                    "index": i,
+                    "hebrew": cls.HEBREW_LETTERS[i],
+                    "display": cls.DISPLAY_NAMES[i],
+                    "sefirah": cls.SEFIROT[i],
+                    "meaning": cls.SEFIROT_ENGLISH[i],
+                    "geometric_role": cls.GEOMETRIC_ROLES[i],
+                    "enochian_king": cls.ENOCHIAN_KINGS[i],
+                    "planet": cls.PLANETARY_DAYS[i][0],
+                    "day": cls.PLANETARY_DAYS[i][1]
+                }
+                for i in range(7)
+            },
+            "enochian_correspondence": {
+                "source": "Heptarchia Mystica (John Dee, 1582-1588)",
+                "kings": list(cls.ENOCHIAN_KINGS),
+                "planetary_days": [
+                    {"planet": p, "day": d} for p, d in cls.PLANETARY_DAYS
+                ]
+            },
+            "pillar_structure": cls.SEFIROT_PAIRS,
+            "topology": {
+                "b2": 4,
+                "b3": 24,
+                "chi_eff": 144,
+                "generations": 3
+            },
+            "footnote": "The G₂ directions are labeled G with Hebrew letter subscripts corresponding to the lower seven Sefirot, used as a mnemonic for their progressive geometric roles."
+        }
+
+    @classmethod
+    def variable_to_hebrew(cls, var_name: str) -> str:
+        """Convert variable name (e.g., 'G_chet') to Hebrew display (e.g., 'Gח')."""
+        if var_name in cls.VARIABLE_NAMES:
+            idx = cls.VARIABLE_NAMES.index(var_name)
+            return cls.DISPLAY_NAMES[idx]
+        raise ValueError(f"Unknown variable name: {var_name}")
+
+    @classmethod
+    def hebrew_to_variable(cls, display: str) -> str:
+        """Convert Hebrew display (e.g., 'Gח') to variable name (e.g., 'G_chet')."""
+        if display in cls.DISPLAY_NAMES:
+            idx = cls.DISPLAY_NAMES.index(display)
+            return cls.VARIABLE_NAMES[idx]
+        raise ValueError(f"Unknown display name: {display}")
+
+    @classmethod
+    def get_pillar(cls, direction_index: int) -> str:
+        """
+        Get which pillar of the Tree of Life this direction belongs to.
+
+        Returns: "right_pillar", "left_pillar", or "middle_pillar"
+        """
+        sefirah = cls.SEFIROT[direction_index]
+        for pillar, sefirot in cls.SEFIROT_PAIRS.items():
+            if sefirah in sefirot:
+                return pillar
+        return "unknown"
+
+
+# ==============================================================================
+# BRANE NOMENCLATURE - ENOCHIAN WATCHTOWERS (v12.9)
+# ==============================================================================
+
+class BraneNomenclature:
+    """
+    Enochian Watchtower Brane Localization Factors (v12.9).
+
+    Maps the 4 branes to Enochian Watchtowers with Greek letter subscripts:
+    - Λ_Α (Lambda Alpha) = Exarp (Air/East) = (5,1) Observable
+    - Λ_Π (Lambda Pi) = Bitom (Fire/South) = Gen 1 (3,1)
+    - Λ_Υ (Lambda Upsilon) = Hcoma (Water/West) = Gen 2 (3,1)
+    - Λ_Γ (Lambda Gamma) = Nanta (Earth/North) = Gen 3 (3,1)
+
+    Sitra Shadow Coupling:
+    - ק_Α_Γ = Shadow_ק = 0.576152 (Exarp↔Nanta, Air↔Earth)
+    - ח_Π_Υ = Shadow_ח = 0.576152 (Bitom↔Hcoma, Fire↔Water)
+
+    Reference: John Dee's Enochian system, 1 Enoch 33-36
+    """
+
+    # Enochian names
+    ENOCHIAN_NAMES = ("Exarp", "Bitom", "Hcoma", "Nanta")
+
+    # Greek letters (Alpha, Pi, Upsilon, Gamma)
+    GREEK_LETTERS = ("Α", "Π", "Υ", "Γ")
+    GREEK_NAMES = ("Alpha", "Pi", "Upsilon", "Gamma")
+
+    # Greek letter rationale
+    GREEK_ETYMOLOGY = {
+        "Α": "Alpha - First letter, primary observable",
+        "Π": "Pi - From Πῦρ (Pyr = Fire)",
+        "Υ": "Upsilon - From Ὕδωρ (Hydor = Water)",
+        "Γ": "Gamma - From Γαῖα (Gaia = Earth)"
+    }
+
+    # Lambda symbols for display
+    LAMBDA_SYMBOLS = ("Λ_Α", "Λ_Π", "Λ_Υ", "Λ_Γ")
+
+    # Variable names (Python/JS)
+    VARIABLE_NAMES = ("lambda_alpha", "lambda_pi", "lambda_upsilon", "lambda_gamma")
+
+    # Elements
+    ELEMENTS = ("Air", "Fire", "Water", "Earth")
+
+    # Cardinal directions
+    DIRECTIONS = ("East", "South", "West", "North")
+
+    # Brane signatures
+    SIGNATURES = ((5, 1), (3, 1), (3, 1), (3, 1))
+
+    # Y-positions in extra dimension (fractions of πR)
+    Y_POSITIONS = (0.0, 1.0/3.0, 2.0/3.0, 1.0)
+
+    # Physics roles
+    PHYSICS_ROLES = (
+        "SM Observable (EM, light)",
+        "Generation 1 (e, u, d - stable)",
+        "Generation 2 (μ, c, s - transitional)",
+        "Generation 3 (τ, t, b - heavy)"
+    )
+
+    # Enoch's descriptions (1 Enoch 33-36)
+    ENOCH_QUOTES = (
+        "Three gates of heaven open, wherein the stars go forth",
+        "From the first gate proceed dew, rain, prosperity",
+        "I saw three great gates where the sun sets",
+        "I went to the north and saw cold winds, darkness"
+    )
+
+    # Warping parameter for brane localization (k_gimel / k_ג)
+    # Calibrated to give warp factors: 1, ~10^-6, ~10^-12, ~10^-17
+    # Formula: Λ = e^(-k_ג×y×π) where y = 0, 1/3, 2/3, 1
+    # See HebrewPhysicsNomenclature.K_GIMEL for Hebrew naming
+    K_GIMEL = 12.31  # k_ג: Gimel bridges observable and shadow worlds
+
+    # Sitra Shadow Coupling
+    SITRA_COUPLINGS = {
+        "kuf_alpha_gamma": {
+            "symbol": "ק_Α_Γ",
+            "value": 0.576152,
+            "pair": ("Exarp", "Nanta"),
+            "elements": ("Air", "Earth"),
+            "description": "Observable↔Heavy Sitra coupling"
+        },
+        "chet_pi_upsilon": {
+            "symbol": "ח_Π_Υ",
+            "value": 0.576152,
+            "pair": ("Bitom", "Hcoma"),
+            "elements": ("Fire", "Water"),
+            "description": "Gen1↔Gen2 Sitra coupling"
+        }
+    }
+
+    @classmethod
+    def localization_factor(cls, index: int) -> float:
+        """Calculate Λ = e^(-k×y×πR) for brane at index."""
+        import numpy as np
+        y = cls.Y_POSITIONS[index]
+        return np.exp(-cls.K_GIMEL * y * np.pi)
+
+    @classmethod
+    def get_brane(cls, index: int) -> dict:
+        """Get complete brane info by index (0-3)."""
+        if not 0 <= index < 4:
+            raise ValueError(f"Index must be 0-3, got {index}")
+
+        return {
+            "index": index,
+            "enochian": cls.ENOCHIAN_NAMES[index],
+            "greek_letter": cls.GREEK_LETTERS[index],
+            "greek_name": cls.GREEK_NAMES[index],
+            "lambda_symbol": cls.LAMBDA_SYMBOLS[index],
+            "variable_name": cls.VARIABLE_NAMES[index],
+            "element": cls.ELEMENTS[index],
+            "direction": cls.DIRECTIONS[index],
+            "signature": cls.SIGNATURES[index],
+            "y_position": cls.Y_POSITIONS[index],
+            "localization_factor": cls.localization_factor(index),
+            "physics_role": cls.PHYSICS_ROLES[index],
+            "enoch_quote": cls.ENOCH_QUOTES[index]
+        }
+
+    @classmethod
+    def get_all_branes(cls) -> dict:
+        """Return complete nomenclature for JSON export."""
+        import numpy as np
+
+        branes = {}
+        for i in range(4):
+            var_name = cls.VARIABLE_NAMES[i]
+            branes[var_name] = cls.get_brane(i)
+
+        return {
+            "version": "12.9",
+            "description": "Enochian Watchtower Brane Localization Factors",
+            "reference": "John Dee's Enochian system, 1 Enoch 33-36",
+            "greek_etymology": cls.GREEK_ETYMOLOGY,
+            "branes": branes,
+            "sitra_couplings": cls.SITRA_COUPLINGS,
+            "warping_parameter": cls.K_GIMEL,
+            "footnote": "Greek letters chosen for elemental correspondence: Α(Air), Π(Pyr/Fire), Υ(Hydor/Water), Γ(Gaia/Earth)"
+        }
+
+
+# ==============================================================================
+# HEBREW PHYSICS NOMENCLATURE (v12.9)
+# ==============================================================================
+
+class HebrewPhysicsNomenclature:
+    """
+    Hebrew Letter Naming for Key Physics Parameters (v12.9).
+
+    Maps 5 key physics parameters to Hebrew letters based on their
+    gematria values and Kabbalistic symbolic meanings.
+
+    Reference: Traditional gematria values and Sefer Yetzirah correspondences.
+    """
+
+    # -------------------------------------------------------------------------
+    # k_gimel (ג): Warping constant ≈ 12.31
+    # -------------------------------------------------------------------------
+    # Hebrew: Gimel (ג) = 3
+    # Meaning: Kindness, giving, bridge/camel carrying between worlds
+    # Physics: Bridge between observable and shadow sectors
+    K_GIMEL = 12.31  # Warping parameter in Λ(y) = exp(-k_ג × y × π)
+    K_GIMEL_SYMBOL = "k_ג"
+    K_GIMEL_DESCRIPTION = "Warping parameter controlling exponential hierarchy in brane tensions"
+    K_GIMEL_FORMULA = "Λ(y) = exp(-k_ג × y × π)"
+
+    # -------------------------------------------------------------------------
+    # C_kaf (כ): Flux normalization ≈ 27.2
+    # -------------------------------------------------------------------------
+    # Hebrew: Kaf (כ=20) + Vav (ו=6) + Alef (א=1) = 27
+    # Meaning: Hand of creation shaping flux quanta
+    # Physics: Normalizes flux quanta to give effective torsion T_ω
+    C_KAF = 27.2  # Flux normalization: T_ω = -b₃ / C_כ
+    C_KAF_SYMBOL = "C_כ"
+    C_KAF_DESCRIPTION = "Normalizes flux quanta to give effective torsion T_ω = -b₃ / C_כ"
+    C_KAF_FORMULA = "T_ω = -b₃ / C_כ = -24 / 27.2 ≈ -0.882"
+
+    # -------------------------------------------------------------------------
+    # f_heh (ה): Partition divisor ≈ 4.5
+    # -------------------------------------------------------------------------
+    # Hebrew: Heh (ה) = 5, halved to 4.5
+    # Meaning: Divine breath, revelation — halved for duality/mirror
+    # Physics: Partition factor split between mirror branes
+    F_HEH = 4.5  # Effective partition factor (phenomenological)
+    F_HEH_SYMBOL = "f_ה"
+    F_HEH_DESCRIPTION = "Effective partition factor in flux normalization (phenomenological)"
+    F_HEH_FORMULA = "f_ה = 5/2 × 1.8 ≈ 4.5 (mirror symmetry factor)"
+
+    # -------------------------------------------------------------------------
+    # S_mem (מ): Instanton suppression ≈ 40
+    # -------------------------------------------------------------------------
+    # Hebrew: Mem (מ) = 40
+    # Meaning: Water, closed form, finality (40 days flood/transformation)
+    # Physics: Instanton action sealing non-perturbative effects
+    S_MEM = 40.0  # Instanton action exponent for Yukawa suppression
+    S_MEM_SYMBOL = "S_מ"
+    S_MEM_DESCRIPTION = "Instanton action for non-perturbative Yukawa suppression"
+    S_MEM_FORMULA = "Y_ij ∝ exp(-S_מ) for heavy mode suppression"
+
+    # -------------------------------------------------------------------------
+    # δ_lamed (ל): Threshold correction ≈ 1.2
+    # -------------------------------------------------------------------------
+    # Hebrew: Lamed (ל) = 30
+    # Meaning: Learning, teaching, refinement/elevation
+    # Physics: Threshold corrections refining tree-level unification
+    DELTA_LAMED = 1.2  # Coefficient for KK/heavy threshold corrections
+    DELTA_LAMED_SYMBOL = "δ_ל"
+    DELTA_LAMED_DESCRIPTION = "Coefficient for KK/heavy threshold corrections in RG flow"
+    DELTA_LAMED_FORMULA = "α_GUT(M_GUT) = α_GUT^tree × (1 + δ_ל × loop_factor)"
+
+    # -------------------------------------------------------------------------
+    # Complete Hebrew Letter Mapping
+    # -------------------------------------------------------------------------
+    HEBREW_PARAMETERS = {
+        "k_gimel": {
+            "hebrew": "ג",
+            "gematria": 3,
+            "symbol": "k_ג",
+            "english_name": "k_gimel",
+            "value": 12.31,
+            "unit": "dimensionless",
+            "meaning": "Kindness, bridge between worlds",
+            "physics": "Warping parameter in brane localization Λ(y) = exp(-k_ג × y × π)",
+            "derivation": "Calibrated to give warp factors: 1, ~10⁻⁶, ~10⁻¹², ~10⁻¹⁷"
+        },
+        "C_kaf": {
+            "hebrew": "כ",
+            "gematria": 27,  # כ(20) + ו(6) + א(1) = 27
+            "symbol": "C_כ",
+            "english_name": "C_kaf",
+            "value": 27.2,
+            "unit": "dimensionless",
+            "meaning": "Hand of creation + connection + unity",
+            "physics": "Flux normalization: T_ω = -b₃ / C_כ",
+            "derivation": "C_כ = b₃ / |T_ω| = 24 / 0.882 ≈ 27.2"
+        },
+        "f_heh": {
+            "hebrew": "ה",
+            "gematria": 5,  # Halved to 4.5
+            "symbol": "f_ה",
+            "english_name": "f_heh",
+            "value": 4.5,
+            "unit": "dimensionless",
+            "meaning": "Divine breath in duality (halved for mirror)",
+            "physics": "Partition factor in flux normalization",
+            "derivation": "f_ה = 5/2 × 1.8 (mirror symmetry factor)"
+        },
+        "S_mem": {
+            "hebrew": "מ",
+            "gematria": 40,
+            "symbol": "S_מ",
+            "english_name": "S_mem",
+            "value": 40.0,
+            "unit": "dimensionless",
+            "meaning": "Closed form, finality (40 days transformation)",
+            "physics": "Instanton action for non-perturbative suppression",
+            "derivation": "S_מ ≈ 8π²/g² for SU(N) instantons"
+        },
+        "delta_lamed": {
+            "hebrew": "ל",
+            "gematria": 30,
+            "symbol": "δ_ל",
+            "english_name": "delta_lamed",
+            "value": 1.2,
+            "unit": "dimensionless",
+            "meaning": "Learning, refinement/elevation",
+            "physics": "KK/heavy threshold corrections in RG flow",
+            "derivation": "δ_ל = Σᵢ bᵢ × ln(Mᵢ/M_GUT) / (2π)"
+        }
+    }
+
+    # Gematria Summary
+    GEMATRIA_TABLE = {
+        "ג (Gimel)": 3,
+        "ה (Heh)": 5,
+        "כ (Kaf)": 20,
+        "ל (Lamed)": 30,
+        "מ (Mem)": 40
+    }
+
+    @classmethod
+    def get_parameter(cls, name: str) -> dict:
+        """Get complete parameter info by name."""
+        if name not in cls.HEBREW_PARAMETERS:
+            raise ValueError(f"Unknown parameter: {name}")
+        return cls.HEBREW_PARAMETERS[name]
+
+    @classmethod
+    def get_all_parameters(cls) -> dict:
+        """Return complete nomenclature for JSON export."""
+        return {
+            "version": "12.9",
+            "description": "Hebrew Letter Naming for Physics Parameters (Kabbalistic Nomenclature)",
+            "reference": "Traditional gematria values and Sefer Yetzirah correspondences",
+            "parameters": cls.HEBREW_PARAMETERS,
+            "gematria_table": cls.GEMATRIA_TABLE,
+            "symbolic_rationale": {
+                "k_ג": "Gimel (camel) bridges observable and shadow worlds",
+                "C_כ": "Kaf (palm/hand) shapes flux quanta into torsion",
+                "f_ה": "Heh (breath) split between mirror branes",
+                "S_מ": "Mem (water/final) seals heavy modes with instantons",
+                "δ_ל": "Lamed (teaching) refines tree-level via loop corrections"
+            },
+            "footnote": "Hebrew letters chosen for gematria correspondence with parameter values"
+        }
 
 
 # ==============================================================================

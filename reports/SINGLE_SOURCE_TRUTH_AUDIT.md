@@ -67,8 +67,8 @@ XYGaugeBosonParameters      # Heavy gauge bosons
 | M_GUT | 2.118e16 GeV | GaugeUnificationParameters | ✅ Defined |
 | ALPHA_GUT | 1/23.54 | GaugeUnificationParameters | ✅ Defined |
 | THETA_23 | 45.00° | NeutrinoParameters | ✅ Defined |
-| ALPHA_4 | 0.576152 | SharedDimensionsParameters | ✅ Defined |
-| ALPHA_5 | 0.576152 | SharedDimensionsParameters | ✅ Defined |
+| SHADOW_KUF | 0.576152 | SharedDimensionsParameters | ✅ Defined |
+| SHADOW_CHET | 0.576152 | SharedDimensionsParameters | ✅ Defined |
 | TAU_PROTON | 3.70e34 years | PhenomenologyParameters | ✅ Defined |
 | M_HIGGS_PREDICTED | 125.10 GeV | HiggsMassParameters | ✅ Defined |
 | RE_T_MODULUS | 7.086 | HiggsMassParameters | ✅ Defined |
@@ -119,7 +119,7 @@ from config import GaugeUnificationParameters
 M_GUT = GaugeUnificationParameters.M_GUT  # 2.118e16 GeV
 ```
 
-#### ALPHA_4/ALPHA_5 Hardcoded (3 instances):
+#### SHADOW_KUF/SHADOW_CHET Hardcoded (3 instances):
 ```python
 # derive_w0_g2.py
 alpha4 = 0.576152   # HARDCODED
@@ -136,8 +136,8 @@ alpha5 = 0.576152   # HARDCODED
 **SHOULD BE:**
 ```python
 from config import SharedDimensionsParameters
-alpha4 = SharedDimensionsParameters.ALPHA_4
-alpha5 = SharedDimensionsParameters.ALPHA_5
+alpha4 = SharedDimensionsParameters.SHADOW_KUF
+alpha5 = SharedDimensionsParameters.SHADOW_CHET
 ```
 
 #### THETA_23 Hardcoded (4 instances):
@@ -369,8 +369,8 @@ derive_theta23_g2_v12_8.py
 ```python
 # WARNING: These values MUST match config.py
 # If config.py changes, update here manually
-alpha4 = 0.576152  # config.SharedDimensionsParameters.ALPHA_4
-alpha5 = 0.576152  # config.SharedDimensionsParameters.ALPHA_5
+alpha4 = 0.576152  # config.SharedDimensionsParameters.SHADOW_KUF
+alpha5 = 0.576152  # config.SharedDimensionsParameters.SHADOW_CHET
 ```
 
 #### Fix #3: Add Deprecation Warnings to v11.py Files
@@ -417,7 +417,7 @@ from pathlib import Path
 CRITICAL_PARAMS = {
     'M_GUT': r'M_GUT\s*=\s*[0-9]',
     'M_PLANCK': r'M_PLANCK\s*=\s*[0-9]',
-    'ALPHA_4': r'alpha[_]?4\s*=\s*0\.576',
+    'SHADOW_KUF': r'alpha[_]?4\s*=\s*0\.576',
     'THETA_23': r'[Tt]heta[_]?23\s*=\s*45',
 }
 

@@ -31,7 +31,7 @@
 3. ✅ **G₂ Geometric Basis:**
    - Derivation from G₂ holonomy: G₂ ⊃ SU(3) maximal compact subgroup
    - Representation decomposition: **7** = **3** + **3̄** + **1** under SU(3)
-   - Symmetric treatment of three (3,1) shadow branes enforces α₄ = α₅ = 0.576152
+   - Symmetric treatment of three (3,1) shadow branes enforces Shadow_ק = Shadow_ח = 0.576152
    - Maximal mixing: θ₂₃ = π/4 = 45°
 4. ✅ **Experimental Comparison:** NuFIT 6.0: 45.0° ± 1.0° — **EXACT MATCH** (0.0σ deviation)
 5. ✅ **Code Reference:** derive_theta23_g2_v12_8.py (lines 1419-1434)
@@ -49,7 +49,7 @@
 2. ✅ **Derivation Present:** Section 6.2 (lines 922-931)
 3. ⚠️ **G₂ Geometric Basis:**
    - Base from Tri-Bimaximal mixing: θ₁₂ = arctan(1/√2) = 35.26°
-   - Flux perturbation from TCS cycle volumes: Δθ₁₂ = -(α₄ - α₅)/(2√2) = -1.67°
+   - Flux perturbation from TCS cycle volumes: Δθ₁₂ = -(Shadow_ק - Shadow_ח)/(2√2) = -1.67°
    - Result: 35.26° - 1.67° = 33.59°
    - **Note:** Perturbation formula connection to G₂ geometry not fully explicit
 4. ✅ **Experimental Comparison:** NuFIT 6.0: 33.41° ± 0.75° — **0.24σ agreement**
@@ -171,20 +171,20 @@
 
 ---
 
-### 3.10 α₄ = α₅ = 0.576152 (Brane Coupling Parameters)
+### 3.10 Shadow_ק = Shadow_ח = 0.576152 (Brane Coupling Parameters)
 
 **Status:** ✅ VERIFIED
 
 **Verification Checklist:**
 1. ✅ **Values Present:** Section 6.1, line 874; Appendix C, line 1431; Appendix D, line 1452
 2. ✅ **Derivation Present:**
-   - Equality α₄ = α₅ from G₂ holonomy SU(3) symmetry (lines 863, 1412)
+   - Equality Shadow_ק = Shadow_ח from G₂ holonomy SU(3) symmetry (lines 863, 1412)
    - Specific value 0.576152 "from moduli stabilization" (line 1431)
 3. ✅ **G₂ Geometric Basis:**
    - Equality: G₂ ⊃ SU(3) symmetric treatment of shadow branes
    - Magnitude: From moduli stabilization (stated but detailed calculation not shown)
 4. ✅ **Usage:** Used in d_eff calculation (lines 1121, 1131, 1452)
-5. ✅ **Internal Consistency:** Same values throughout; sum α₄ + α₅ = 1.152 consistently used
+5. ✅ **Internal Consistency:** Same values throughout; sum Shadow_ק + Shadow_ח = 1.152 consistently used
 
 **Assessment:** Equality rigorously derived from G₂ holonomy. Specific magnitude from moduli physics (technical detail).
 
@@ -201,9 +201,9 @@
 2. ✅ **Derivation Present:** Section 7.1 (lines 1125-1141), Appendix D (lines 1439-1476)
 3. ✅ **G₂ Geometric Basis:**
    - Formula: w₀ = -(d_eff - 1)/(d_eff + 1)
-   - d_eff = 12 + γ(α₄ + α₅) = 12 + 0.5(1.152) = 12.576
+   - d_eff = 12 + γ(Shadow_ק + Shadow_ח) = 12 + 0.5(1.152) = 12.576
    - γ = 0.5 derived from string central charges: |c_ghost|/(2c_matter) = 26/52
-   - α₄ + α₅ from G₂ geometry (see 3.10)
+   - Shadow_ק + Shadow_ח from G₂ geometry (see 3.10)
    - Result: w₀ = -11.576/13.576 = -0.8528
 4. ✅ **Experimental Comparison:** DESI DR2 (2024): w₀ = -0.83 ± 0.06 — **0.38σ agreement**
 5. ✅ **Code Reference:** derive_d_eff_v12_8.py (lines 1461-1476)
@@ -239,10 +239,10 @@
 1. ✅ **Value Present:** Section 7.1, line 1121; Appendix D, line 1452; Appendix L, line 2027
 2. ✅ **Derivation Present:** Section 7.1 (lines 1125-1133), Appendix D.2 (lines 1450-1453)
 3. ✅ **G₂ Geometric Basis:**
-   - Formula: d_eff = 12 + γ(α₄ + α₅)
+   - Formula: d_eff = 12 + γ(Shadow_ק + Shadow_ח)
    - Base dimension: 12 (from (12,1) gauge-fixed degrees of freedom, line 693)
    - Ghost coefficient: γ = 0.5 (derived from c_matter = 26, c_ghost = -26)
-   - Brane parameters: α₄ + α₅ = 1.152 from G₂ holonomy
+   - Brane parameters: Shadow_ק + Shadow_ח = 1.152 from G₂ holonomy
    - Calculation: 12 + 0.5 × 1.152 = 12.576
 4. ✅ **Experimental Context:** Not directly measurable; manifests through w₀
 5. ✅ **Code Reference:** derive_d_eff function (lines 1466-1469)
@@ -377,7 +377,7 @@
 | Δm²₃₁ | 2.525×10⁻³ (Sec 6.3) | — | ✅ No conflict |
 | Σmν | 0.061 eV (Sec 6.3) | — | ✅ No conflict |
 | NH prob | 76% (Sec 6.3, 8.1) | 76% (App L) | ✅ Consistent |
-| α₄, α₅ | 0.576152 (Sec 6.1) | 0.576152 (App C, D) | ✅ Consistent |
+| Shadow_ק, Shadow_ח | 0.576152 (Sec 6.1) | 0.576152 (App C, D) | ✅ Consistent |
 | w₀ | -0.8528 (Sec 7.1) | -0.8528 (App D, L) | ✅ Consistent |
 | w_a | -0.95 (Sec 7.3) | -0.95 (App L) | ✅ Consistent |
 | d_eff | 12.576 (Sec 7.1) | 12.576 (App D, L) | ✅ Consistent |
@@ -404,7 +404,7 @@
 | m₁,m₂,m₃ | ⭐⭐⭐ Good | Via splittings | Consistent calculation |
 | Σmν | ⭐⭐⭐⭐ Good | Via masses | Direct sum |
 | NH prob | ⭐⭐ Stated | Claimed | 76% value origin not detailed |
-| α₄, α₅ | ⭐⭐⭐⭐⭐/⭐⭐⭐ | Equality: Direct<br>Magnitude: Partial | Equality rigorous; value from moduli |
+| Shadow_ק, Shadow_ח | ⭐⭐⭐⭐⭐/⭐⭐⭐ | Equality: Direct<br>Magnitude: Partial | Equality rigorous; value from moduli |
 
 ### Category 4: Dark Energy & Cosmology
 
@@ -412,7 +412,7 @@
 |-----------|-------------------|-----------------|-------|
 | w₀ | ⭐⭐⭐⭐⭐ Excellent | Direct | Full chain: γ → d_eff → w₀ |
 | w_a | ⭐⭐⭐⭐ Good | Via α_T | CPL fit to logarithmic form |
-| d_eff | ⭐⭐⭐⭐⭐ Excellent | Direct | γ(α₄+α₅) explicitly from G₂ |
+| d_eff | ⭐⭐⭐⭐⭐ Excellent | Direct | γ(Shadow_ק+Shadow_ח) explicitly from G₂ |
 | γ | ⭐⭐⭐⭐⭐ Excellent | String theory | c_matter, c_ghost from CFT |
 | α_T | ⭐⭐⭐⭐ Good | Two-time KMS | ℤ₂ correction calculated |
 | w₀_DESI | N/A (experimental) | — | Reference value |
@@ -466,7 +466,7 @@
    - Specific calculation or origin of 76% not shown
    - **Recommendation:** Add derivation box showing how geometric preference yields 76%
 
-3. **α₄ = α₅ = 0.576152 - Magnitude Origin**
+3. **Shadow_ק = Shadow_ח = 0.576152 - Magnitude Origin**
    - Equality from G₂ holonomy: ✅ Rigorous
    - Specific value "from moduli stabilization": ⚠️ Stated but not derived
    - **Recommendation:** Add Appendix showing moduli stabilization calculation
@@ -491,14 +491,14 @@
 ### Category 3: PMNS & Neutrino (10 parameters)
 
 **Parameters Status:**
-- ✅ **6 parameters:** Derived or calculated (θ₂₃, θ₁₂, Δm²₂₁, Δm²₃₁, m₁/m₂/m₃, Σmν, α₄=α₅)
+- ✅ **6 parameters:** Derived or calculated (θ₂₃, θ₁₂, Δm²₂₁, Δm²₃₁, m₁/m₂/m₃, Σmν, Shadow_ק=Shadow_ח)
 - ⚠️ **2 parameters:** Explicitly calibrated (θ₁₃, δ_CP) — openly acknowledged
 - ⭐ **2 parameters:** Predictions (NH 76%, individual masses)
 
 **Overall Grade:** ⚠️ **PARTIAL VERIFICATION** (60% derived, 20% calibrated-transparent, 20% predictions)
 
 **Mathematical Rigor:** Strong for derived parameters; honest about calibrations
-**G₂ Traceability:** Excellent for θ₂₃, α₄=α₅; good for θ₁₂; indirect for masses
+**G₂ Traceability:** Excellent for θ₂₃, Shadow_ק=Shadow_ח; good for θ₁₂; indirect for masses
 **Experimental Agreement:** Excellent (0-0.24σ for derived angles; 0.4-7.4% for masses)
 
 ### Category 4: Dark Energy & Cosmology (10 parameters)
@@ -532,7 +532,7 @@ The paper demonstrates strong mathematical rigor for Categories 3-4:
 **Recommended Actions:**
 1. Clarify η_GW = 0.101 vs. 0.113 discrepancy (if 0.101 exists elsewhere)
 2. Add derivation for NH 76% probability
-3. Show moduli stabilization calculation for α₄ = α₅ = 0.576152 magnitude
+3. Show moduli stabilization calculation for Shadow_ק = Shadow_ח = 0.576152 magnitude
 4. Investigate/refine Δm²₂₁ to reduce 7.4% error
 
 **Verification Status:** ✅ **APPROVED WITH MINOR NOTES**

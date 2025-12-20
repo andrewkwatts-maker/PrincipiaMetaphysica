@@ -101,7 +101,7 @@ const getContentTemplates = () => {
         value: `${PM.pmns_matrix?.theta_23?.toFixed(1) || '45.0'}°`,
         test: 'NuFIT 6.0 (2025)',
         status: 'confirmed',
-        description: 'Maximal atmospheric mixing from α₄ = α₅ geometric symmetry.'
+        description: 'Maximal atmospheric mixing from Shadow_ק = Shadow_ח geometric symmetry.'
       }
     },
 
@@ -216,7 +216,7 @@ const getContentTemplates = () => {
         theta23: {
           value: PM.pmns_matrix?.theta_23 || 45.0,
           unit: '°',
-          description: 'Atmospheric mixing angle (maximal from α₄ = α₅).'
+          description: 'Atmospheric mixing angle (maximal from Shadow_ק = Shadow_ח).'
         },
         theta12: {
           value: PM.pmns_matrix?.theta_12 || 33.59,

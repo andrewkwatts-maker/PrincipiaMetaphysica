@@ -265,7 +265,7 @@ The PMNS and neutrino parameter content has been **partially migrated** from the
 
 ---
 
-### 10. **alpha_4 = alpha_5 = 0.576152**
+### 10. **shadow_kuf = shadow_chet = 0.576152**
 
 **Status:** ✅ **MIGRATED** (key derivation preserved)
 

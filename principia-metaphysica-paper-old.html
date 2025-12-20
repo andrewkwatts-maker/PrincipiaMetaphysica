@@ -859,8 +859,8 @@
                 flux-dressed topology rather than bare Euler characteristic; (2) Dark energy attractor to $w = -1.0$
                 at late times via Mashiach minimum; (3) Spinor dimensions validated via Clifford algebra;
                 (4) Dimensional reduction pathway clarified (gauge projection followed by compactification);
-                (5) Shared extra dimension parameters $\alpha_4 = $<span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_4"></span>
-     and $\alpha_5 = $<span class="pm-value" data-category="shared_dimensions" data-format="fixed:2" data-param="alpha_5"></span>
+                (5) Shared extra dimension parameters $\shadow_kuf = $<span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_kuf"></span>
+     and $\shadow_chet = $<span class="pm-value" data-category="shared_dimensions" data-format="fixed:2" data-param="shadow_chet"></span>
      24 now derived entirely from G<sub>2</sub> manifold
                 geometry via TCS torsion logarithms and neutrino mixing angles; (6) Gauge coupling unification achieved
                 with 3% precision; (7) Explicit TCS G<sub>2</sub> manifold construction (arXiv:1809.09083) with target topology
@@ -3897,7 +3897,7 @@ P
      Key formulas for shared dimension parameters:
     </strong>
     The TCS construction geometrically determines
-            \(\alpha_4\) and \(\alpha_5\) via torsion logarithms at the gluing neck and neutrino mixing angle deviations (see §7.2).
+            \(\shadow_kuf\) and \(\shadow_chet\) via torsion logarithms at the gluing neck and neutrino mixing angle deviations (see §7.2).
    </p>
    <h4>
     G<sub>2</sub> Structure and Associative Form (M-Theory Standard)
@@ -4459,7 +4459,7 @@ P
             wraps around non-trivial cycles, creating a "twist" that modifies the effective gauge coupling flow.
             The s-parameter measures the deviation from minimal coupling (s = 1 gives \(M_{\text{GUT}}\),b₁₁‘
     ), while
-            warping from shared extra dimensions (\(\alpha_4\), \(\alpha_5\)) provides the final ~18% enhancement to reach the
+            warping from shared extra dimensions (\(\shadow_kuf\), \(\shadow_chet\)) provides the final ~18% enhancement to reach the
             physical \(M_{\text{GUT}}\)
     .
    </p>
@@ -6105,7 +6105,7 @@ P
     <strong>
      Geometric Foundation:
     </strong>
-    The shared extra dimension parameters \(\alpha_4\) and \(\alpha_5\)
+    The shared extra dimension parameters \(\shadow_kuf\) and \(\shadow_chet\)
             are
     <strong>
      derived entirely from first principles
@@ -6114,7 +6114,7 @@ P
             establishing the theory on complete geometric foundations with no free parameters.
    </div>
    <p>
-    The influence parameters \(\alpha_4\) and \(\alpha_5\) (controlling coupling to the 4th and 5th shared extra dimensions)
+    The influence parameters \(\shadow_kuf\) and \(\shadow_chet\) (controlling coupling to the 4th and 5th shared extra dimensions)
             are geometrically determined via two independent constraints:
    </p>
    <h4>
@@ -6136,7 +6136,7 @@ P
     where k=5 comes from the D₅ singularity and q=48 is the SO(10) spinor representation divisor. The sum is:
    </p>
    <div class="formula-display">
-    $$\alpha_4 + \alpha_5 = [\ln(M_{\text{Pl}}/M_{\text{GUT}}) - T_\omega] / (2\pi × \nu/d)$$ = [6.519 - ( <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="T_omega_torsion"> </span> )] / <span class="pm-value" data-category="dark_energy" data-format="fixed:3" data-param="functional_test_sigma_preference"> </span> = <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="s_parameter"> </span>
+    $$\shadow_kuf + \shadow_chet = [\ln(M_{\text{Pl}}/M_{\text{GUT}}) - T_\omega] / (2\pi × \nu/d)$$ = [6.519 - ( <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="T_omega_torsion"> </span> )] / <span class="pm-value" data-category="dark_energy" data-format="fixed:3" data-param="functional_test_sigma_preference"> </span> = <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="s_parameter"> </span>
     <span class="equation-label" style="float: right; color: #666; font-size: 0.9rem;">(7.2b)
     </span>
 </div>
@@ -6147,10 +6147,10 @@ P
     Maximal Mixing from G2 Holonomy Symmetry
    </h4>
    <p>
-    The atmospheric neutrino mixing angle theta_23 = 45 deg (maximal mixing) is a geometric PREDICTION from G2 holonomy. The G2 manifold has SU(3) as its maximal compact subgroup, which enforces symmetric treatment of the three shadow branes, requiring alpha_4 = alpha_5:
+    The atmospheric neutrino mixing angle theta_23 = 45 deg (maximal mixing) is a geometric PREDICTION from G2 holonomy. The G2 manifold has SU(3) as its maximal compact subgroup, which enforces symmetric treatment of the three shadow branes, requiring shadow_kuf = shadow_chet:
    </p>
    <div class="formula-display">
-    G<sub>2</sub> holonomy → SU(3) maximal subgroup → \(\alpha_4\) = \(\alpha_5\) → \(\theta_{23}\) = π/4 = 45°
+    G<sub>2</sub> holonomy → SU(3) maximal subgroup → \(\shadow_kuf\) = \(\shadow_chet\) → \(\theta_{23}\) = π/4 = 45°
     <span class="equation-label" style="float: right; color: #666; font-size: 0.9rem;">(7.2c)
     </span>
 </div>
@@ -6162,7 +6162,7 @@ P
    </p>
    <div class="derivation-reference" style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0 1rem 0; padding: 0.5rem; background: #f9f9f9; border-radius: 4px;">
     <strong>Python Implementation:</strong> <code>simulations/derive_theta23_g2_v12_8.py</code> &mdash;
-    Functions: <code>derive_theta23_g2()</code>, <code>derive_alpha_parameters()</code>, <code>get_pmns_atmospheric_angle()</code>
+    Functions: <code>derive_theta23_g2()</code>, <code>derive_sitra_shadow_coupling()</code>, <code>get_pmns_atmospheric_angle()</code>
    </div>
    <h4>
     7.2.3 Final Geometric Values
@@ -6171,7 +6171,7 @@ P
     Solving the linear system yields:
    </p>
    <div class="formula-display">
-    \(\alpha_4\) = ( <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="s_parameter"> </span> + 0.733)/2 = <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_4"> </span> , \(\alpha_5\) = ( <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="s_parameter"> </span> - 0.733)/2 = <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_5"> </span>
+    \(\shadow_kuf\) = ( <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="s_parameter"> </span> + 0.733)/2 = <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_kuf"> </span> , \(\shadow_chet\) = ( <span class="pm-value" data-category="proton_decay" data-format="fixed:3" data-param="s_parameter"> </span> - 0.733)/2 = <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_chet"> </span>
     <span class="equation-label" style="float: right; color: #666; font-size: 0.9rem;">(7.2d)
     </span>
 </div>
@@ -6192,10 +6192,10 @@ P
     </tr>
     <tr>
      <td>
-      \(\alpha_4\)
+      \(\shadow_kuf\)
      </td>
      <td>
-      <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_4">
+      <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_kuf">
       </span>
      </td>
      <td>
@@ -6207,10 +6207,10 @@ P
     </tr>
     <tr>
      <td>
-      \(\alpha_5\)
+      \(\shadow_chet\)
      </td>
      <td>
-      <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_5">
+      <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_chet">
       </span>
      </td>
      <td>
@@ -6277,8 +6277,8 @@ P
     <strong>
      Physical interpretation:
     </strong>
-    The sum \(\alpha_4\)+\(\alpha_5\) = 1.178 represents total coupling strength to the
-            2 shared extra dimensions, controlled by the TCS gluing geometry. The difference \(\alpha_4\)-\(\alpha_5\) = 0.733 represents
+    The sum \(\shadow_kuf\)+\(\shadow_chet\) = 1.178 represents total coupling strength to the
+            2 shared extra dimensions, controlled by the TCS gluing geometry. The difference \(\shadow_kuf\)-\(\shadow_chet\) = 0.733 represents
             asymmetry that breaks degeneracy and shifts neutrino mixing from maximal. Both are
     <em>
      predictions
@@ -6786,11 +6786,11 @@ P
     TeV-Scale Kaluza-Klein Graviton Resonances
    </h4>
    <p>
-    The shared extra dimensions (\(\alpha_4\)=
-    <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_4">
+    The shared extra dimensions (\(\shadow_kuf\)=
+    <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_kuf">
     </span>
-    , \(\alpha_5\)=
-    <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_5">
+    , \(\shadow_chet\)=
+    <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_chet">
     </span>
     ) produce Kaluza-Klein graviton resonances
             at collider-accessible energies. The lightest mode mass is derived from the effective dimension
@@ -7191,7 +7191,7 @@ P
       ° ± 0.79°
      </td>
      <td>
-      Shared extra dimension asymmetry (\(\alpha_4\) ≠ \(\alpha_5\))
+      Shared extra dimension asymmetry (\(\shadow_kuf\) ≠ \(\shadow_chet\))
      </td>
      <td>
       <span class="pm-value" data-category="pmns_nufit_comparison" data-format="fixed:1" data-param="theta_23_nufit">
@@ -8413,13 +8413,13 @@ P
     </li>
     <li>
      <s>
-      Shared dimension parameters \(\alpha_4\), \(\alpha_5\) require phenomenological fitting
+      Shared dimension parameters \(\shadow_kuf\), \(\shadow_chet\) require phenomenological fitting
      </s>
      <strong>
       [RESOLVED]:
      </strong>
-     \(\alpha_4\) = 0.576152, \(\alpha_5\)=
-     <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_5">
+     \(\shadow_kuf\) = 0.576152, \(\shadow_chet\)=
+     <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_chet">
      </span>
      derived from TCS torsion logarithms and neutrino mixing
     </li>
@@ -14156,7 +14156,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
         24
        </td>
        <td>
-        Pontryagin class mod 48; enters \(\alpha_4\)+\(\alpha_5\) formula
+        Pontryagin class mod 48; enters \(\shadow_kuf\)+\(\shadow_chet\) formula
        </td>
       </tr>
      </tbody>
@@ -14315,11 +14315,11 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
      </p>
     </div>
     <h4 style="margin-top: 1.5rem; color: #333;">
-     Connection to Alpha Parameters
+     Connection to Sitra Shadow Coupling
     </h4>
     <div class="highlight-box" >
      <p>
-      The geometric alpha parameters \(\alpha_4\) and \(\alpha_5\) are
+      The geometric Sitra Shadow Coupling \(\shadow_kuf\) and \(\shadow_chet\) are
       <strong>
        derived entirely from G<sub>2</sub> topology
       </strong>
@@ -14328,7 +14328,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
      <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.8;">
       <li>
        <strong>
-        Sum (\(\alpha_4\) + \(\alpha_5\)):
+        Sum (\(\shadow_kuf\) + \(\shadow_chet\)):
        </strong>
        Derived from torsion logarithm T<sub>
         ω
@@ -14338,7 +14338,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
       </li>
       <li>
        <strong>
-        Difference (\(\alpha_4\) - \(\alpha_5\)):
+        Difference (\(\shadow_kuf\) - \(\shadow_chet\)):
        </strong>
        Derived from neutrino mixing angle deviation
                         Δ\(\theta_{23}\) = \(\theta_{23}\)
@@ -14353,11 +14353,11 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
      </ul>
      <div style="background: #f9f9f9; padding: 1rem; margin-top: 1rem; border-radius: 8px;">
       <p style="text-align: center; font-size: 1.05rem; font-weight: 600; color: #333; margin: 0;">
-       \(\alpha_4\) =
-       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_4">
+       \(\shadow_kuf\) =
+       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_kuf">
        </span>
-       ,   \(\alpha_5\) =
-       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="alpha_5">
+       ,   \(\shadow_chet\) =
+       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:4" data-param="shadow_chet">
        </span>
        (geometry-derived)
       </p>
@@ -14401,7 +14401,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
       \(\theta_{23}\) = 45° + n<sub>
        gen
       </sub>
-      (\(\alpha_4\)-\(\alpha_5\)) = 45° + 3(0.0°) = 45.0° (maximal mixing from perfect torsion alignment)
+      (\(\shadow_kuf\)-\(\shadow_chet\)) = 45° + 3(0.0°) = 45.0° (maximal mixing from perfect torsion alignment)
       <span style="display:none;" class="pm-value" data-category="pmns_nufit_comparison" data-format="fixed:1" data-param="theta_23_nufit">
       </span>
      </li>
@@ -14412,7 +14412,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
       D<sub>
        eff
       </sub>
-      = 12 + 0.5(\(\alpha_4\)+\(\alpha_5\)) =
+      = 12 + 0.5(\(\shadow_kuf\)+\(\shadow_chet\)) =
       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="d_eff">
       </span>
       → \(w_0\) =
@@ -17231,7 +17231,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
                     </li>
                     <li>
                         <strong>Alpha parameter connection:</strong> The Dâ‚… singularity angle \(\theta\) = π/6 from the TCS gluing
-                        enters the torsion logarithm formula, contributing to the geometric derivation of \(\alpha_4\) + \(\alpha_5\) = 1.1781.
+                        enters the torsion logarithm formula, contributing to the geometric derivation of \(\shadow_kuf\) + \(\shadow_chet\) = 1.1781.
                     </li>
                 </ul>
                 <div style="background: rgba(23, 162, 184, 0.15); padding: 1rem; margin-top: 1rem; border-radius: 8px;">
@@ -19185,7 +19185,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
             <h3>Step 4: Dimensionless Warping Parameter</h3>
             <p>
                 Combining the torsion logarithm, scale ratio, and flux normalization gives the
-                <strong>dimensionless warping parameter</strong> s:
+                <strong>dimensionless Gimel warping parameter (k_ג)</strong> s:
             </p>
 
             <div class="equation-box">
@@ -22441,8 +22441,8 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
        <strong>
         Neutrino mixing connection:
        </strong>
-       The perfect alignment \(\alpha_4\) = \(\alpha_5\) = 0.576152 arises from the geometric torsion constraint,
-                        giving \(\alpha_4\) - \(\alpha_5\) = 0.0 exactly and yielding maximal mixing <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°.
+       The perfect alignment \(\shadow_kuf\) = \(\shadow_chet\) = 0.576152 arises from the geometric torsion constraint,
+                        giving \(\shadow_kuf\) - \(\shadow_chet\) = 0.0 exactly and yielding maximal mixing <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°.
       </li>
       <li>
        <strong>
@@ -23130,7 +23130,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
        C
       </sub>
       ≈
-      <span class="pm-value" data-category="shared_dimensions" data-format="fixed:2" data-param="alpha_5">
+      <span class="pm-value" data-category="shared_dimensions" data-format="fixed:2" data-param="shadow_chet">
       </span>
      </strong>
      is the Cabibbo angle, and
@@ -23823,8 +23823,8 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
       </div>
       <p style="margin: 0; font-size: 1rem; line-height: 1.6;">
        <strong style="color: #333;">Major Validation:</strong> NuFIT 6.0 update shows \(\theta_{23}\) central value shifted from 47.2° → <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° (exactly maximal mixing),
-       validating the framework prediction that emerges from symmetric 4-cycle and 5-cycle embeddings (\(\alpha_4\) = \(\alpha_5\) = 0.576152).
-       This confirms the geometric constraint \(\theta_{23}\) = 45° + (\(\alpha_4\) - \(\alpha_5\)) × n = 45° + 0 = <strong><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong> exactly.
+       validating the framework prediction that emerges from symmetric 4-cycle and 5-cycle embeddings (\(\shadow_kuf\) = \(\shadow_chet\) = 0.576152).
+       This confirms the geometric constraint \(\theta_{23}\) = 45° + (\(\shadow_kuf\) - \(\shadow_chet\)) × n = 45° + 0 = <strong><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong> exactly.
       </p>
      </div>
      <div class="concept-highlight" style="margin-top: 1.5rem; background: #f9f9f9; border-left: 4px solid #666;">
@@ -23894,16 +23894,16 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
         Formula:
        </p>
        <div style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.15rem; color: var(--text-primary); margin: 0.75rem 0;">
-        \(\theta_{23}\) = 45° + (\(\alpha_4\) - \(\alpha_5\)) × n<sub>
+        \(\theta_{23}\) = 45° + (\(\shadow_kuf\) - \(\shadow_chet\)) × n<sub>
          gen
         </sub>
        </div>
        <p style="font-size: 0.9rem; color: var(--text-secondary); margin: 0.5rem 0;">
-        where \(\alpha_4\) =
-        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="alpha_4">
+        where \(\shadow_kuf\) =
+        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="shadow_kuf">
         </span>
-        , \(\alpha_5\) =
-        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="alpha_5">
+        , \(\shadow_chet\) =
+        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="shadow_chet">
         </span>
         , n<sub>
          gen
@@ -23917,7 +23917,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
        </p>
        <div style="font-family: 'Crimson Text', serif; font-size: 1.05rem; color: var(--text-secondary);">
         45.0° + (0.956 -
-        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:2" data-param="alpha_5">
+        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:2" data-param="shadow_chet">
         </span>
         2) × 3
         <br/>
@@ -23942,7 +23942,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
        </p>
        <p style="font-size: 0.95rem; color: var(--text-secondary); margin: 0;">
         Asymmetric coupling of μ-τ neutrinos to extra dimensions. The deviation from maximal mixing
-                            (45°) arises from unequal \(\alpha_4\) and \(\alpha_5\) coefficients in the associative 4-cycle and 5-cycle embeddings.
+                            (45°) arises from unequal \(\shadow_kuf\) and \(\shadow_chet\) coefficients in the associative 4-cycle and 5-cycle embeddings.
        </p>
       </div>
      </div>
@@ -24178,7 +24178,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
        <strong>
         Associated geometric parameters:
        </strong>
-       \(\alpha_4\), \(\alpha_5\), χ<sub>
+       \(\shadow_kuf\), \(\shadow_chet\), χ<sub>
         eff
        </sub>
        vary accordingly
@@ -24777,7 +24777,7 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
      </li>
      <li>
       <strong>
-       \(\alpha_4\) - \(\alpha_5\) asymmetry:
+       \(\shadow_kuf\) - \(\shadow_chet\) asymmetry:
       </strong>
       Extra dimension coupling difference from 4-cycle and 5-cycle embeddings, produces \(\theta_{23}\) deviation from maximal 45°
      </li>
@@ -27037,15 +27037,15 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
             The atmospheric neutrino mixing angle \(\theta_{23}\) = 45° (maximal mixing) arises geometrically from
             G<sub>2</sub> holonomy symmetry, not from fitting experimental data. The G<sub>2</sub> holonomy group has SU(3)
             as its maximal compact subgroup, which forces symmetric treatment of the three (3,1) shadow
-            branes, requiring \(\alpha_4\) = \(\alpha_5\):
+            branes, requiring \(\shadow_kuf\) = \(\shadow_chet\):
         </p>
 
         <div class="formula-box" style="margin: 1rem 0; padding: 1rem; background: #f9f9f9; border: 1px solid #ddd; border-radius: 8px;" >
             <div style="text-align: center; margin: 1rem 0;">
-                $$\theta_{23} = \frac{\pi}{4} = 45° \quad (\text{from } \alpha_4 = \alpha_5 \text{ via } G_2 \text{ holonomy SU(3) symmetry})$$
+                $$\theta_{23} = \frac{\pi}{4} = 45° \quad (\text{from } \shadow_kuf = \shadow_chet \text{ via } G_2 \text{ holonomy SU(3) symmetry})$$
             </div>
             <div style="text-align: center; margin: 0.5rem 0; color: var(--text-secondary); font-size: 0.95rem;">
-                Derivation chain: G<sub>2</sub> holonomy → SU(3) maximal subgroup → \(\alpha_4\) = \(\alpha_5\) → \(\theta_{23}\) = π/4
+                Derivation chain: G<sub>2</sub> holonomy → SU(3) maximal subgroup → \(\shadow_kuf\) = \(\shadow_chet\) → \(\theta_{23}\) = π/4
             </div>
         </div>
 
@@ -27057,8 +27057,8 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
             <li>The maximal compact subgroup of G<sub>2</sub> is SU(3)</li>
             <li>Under SU(3), the 7-dimensional representation decomposes as: 7 = 3 + 3Ì„ + 1</li>
             <li>The three (3,1) shadow branes (B<sub>2</sub>, \(B_3\), \(B_4\)) transform as a triplet under SU(3)</li>
-            <li>SU(3) symmetry requires symmetric treatment: \(\alpha_4\) = \(\alpha_5\)</li>
-            <li>With \(\alpha_4\) = \(\alpha_5\), the PMNS mixing angle \(\theta_{23}\) = π/4 (maximal mixing)</li>
+            <li>SU(3) symmetry requires symmetric treatment: \(\shadow_kuf\) = \(\shadow_chet\)</li>
+            <li>With \(\shadow_kuf\) = \(\shadow_chet\), the PMNS mixing angle \(\theta_{23}\) = π/4 (maximal mixing)</li>
         </ol>
 
         <p style="margin-top: 1rem;">
@@ -27076,8 +27076,8 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
     2. The maximal compact subgroup of G2 is SU(3)
     3. Under SU(3), the 7-dimensional representation decomposes as: 7 = 3 + 3_bar + 1
     4. The three (3,1) shadow branes (B2, B3, B4) transform as a triplet under SU(3)
-    5. SU(3) symmetry requires symmetric treatment: alpha_4 = alpha_5
-    6. With alpha_4 = alpha_5, the PMNS mixing angle theta_23 = pi/4 (maximal mixing)
+    5. SU(3) symmetry requires symmetric treatment: shadow_kuf = shadow_chet
+    6. With shadow_kuf = shadow_chet, the PMNS mixing angle theta_23 = pi/4 (maximal mixing)
 
     This is a GEOMETRIC derivation, not calibration to experimental data.
     The NuFIT 6.0 (2025) measurement of theta_23 = 45.0 +/- 1.0 degrees
@@ -27088,23 +27088,23 @@ def zero_modes_gen(chi_eff: int = 144) -> int:
     alpha_diff = 0.0  # Geometric constraint from SU(3) symmetry
 
     # Maximal mixing from symmetric brane couplings
-    # theta_23 = pi/4 when alpha_4 = alpha_5
+    # theta_23 = pi/4 when shadow_kuf = shadow_chet
     theta_23_rad = np.pi / 4  # 45 degrees - maximal mixing
     theta_23_deg = np.degrees(theta_23_rad)
 
     return theta_23_deg  # 45.0
 
 
-def derive_alpha_parameters() -> Tuple[float, float]:
+def derive_sitra_shadow_coupling() -> Tuple[float, float]:
     """
-    Derive alpha_4 and alpha_5 from G2 holonomy SU(3) symmetry.
+    Derive shadow_kuf and shadow_chet from G2 holonomy SU(3) symmetry.
 
-    The brane coupling parameters alpha_4 and alpha_5 control the mixing
+    The brane coupling parameters shadow_kuf and shadow_chet control the mixing
     between the observable brane B1 and shadow branes B2, B3, B4.
 
     G2 holonomy with SU(3) maximal subgroup enforces:
     - Symmetric treatment of the three shadow (3,1) branes
-    - Equal coupling strengths: alpha_4 = alpha_5
+    - Equal coupling strengths: shadow_kuf = shadow_chet
 
     The specific VALUE 0.576152 comes from moduli stabilization,
     but the EQUALITY is enforced by geometry.
@@ -27113,10 +27113,10 @@ def derive_alpha_parameters() -> Tuple[float, float]:
     # The EQUALITY is geometric, the VALUE is from stabilization
     alpha_value = 0.576152
 
-    alpha_4 = alpha_value
-    alpha_5 = alpha_value  # Equal by G2 holonomy SU(3) symmetry
+    shadow_kuf = alpha_value
+    shadow_chet = alpha_value  # Equal by G2 holonomy SU(3) symmetry
 
-    return alpha_4, alpha_5</code></pre>
+    return shadow_kuf, shadow_chet</code></pre>
         </div>
 
         <p style="margin-top: 1rem; color: var(--text-secondary);">
@@ -27376,7 +27376,7 @@ def derive_alpha_parameters() -> Tuple[float, float]:
           </p>
           <ul style="margin-left: 1.5rem; color: var(--text-secondary);">
             <li><strong>Dimensional correction:</strong> The effective dimension d<sub>eff</sub> = 12.589 (from <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow minus emergent time,
-              plus geometric correction 0.5×(\(\alpha_4\)+\(\alpha_5\)) = 0.5×1.1781 from TCS G<sub>2</sub> compactification)</li>
+              plus geometric correction 0.5×(\(\shadow_kuf\)+\(\shadow_chet\)) = 0.5×1.1781 from TCS G<sub>2</sub> compactification)</li>
             <li><strong>Dark energy equation of state:</strong> w<sub>0</sub> = -(d<sub>eff</sub>-1)/(d<sub>eff</sub>+1) = -11.589/13.589 = <strong><span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span></strong>
               (geometrically derived from TCS G<sub>2</sub> with b<sub>2</sub>=4, b<sub>3</sub>=24)</li>
             <li><strong>Holographic consistency:</strong> The cancellation ensures that the holographic dual to the bulk cosmology
@@ -27393,15 +27393,15 @@ def derive_alpha_parameters() -> Tuple[float, float]:
           </p>
           <div class="equation-box">
             <span class="eq-content">
-              d<sub>eff</sub> = 12 + 0.5 × (\(\alpha_4\) + \(\alpha_5\)) = 12 + 0.5 × 1.1781 = 12.589
+              d<sub>eff</sub> = 12 + 0.5 × (\(\shadow_kuf\) + \(\shadow_chet\)) = 12 + 0.5 × 1.1781 = 12.589
             </span>
           </div>
           <p style="margin-top: 0.75rem;">
-            where \(\alpha_4\) = 0.576152 and \(\alpha_5\) = 0.576152 are derived from the TCS (Twisted Connected Sum) G<sub>2</sub> manifold with b<sub>2</sub>=4, b<sub>3</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>:
+            where \(\shadow_kuf\) = 0.576152 and \(\shadow_chet\) = 0.576152 are derived from the TCS (Twisted Connected Sum) G<sub>2</sub> manifold with b<sub>2</sub>=4, b<sub>3</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>:
           </p>
           <ul style="margin-left: 1.5rem; font-size: 0.95rem; color: var(--text-secondary);">
-            <li>\(\alpha_4\) + \(\alpha_5\) from torsion logarithm T<sub>ω</sub> = ln(4 sin²(kπ/q)) with k=5 (D₅), q=48 (SO(10))</li>
-            <li>\(\alpha_4\) - \(\alpha_5\) from neutrino mixing Δ\(\theta_{23}\) = 2.2° via cycle intersection asymmetry</li>
+            <li>\(\shadow_kuf\) + \(\shadow_chet\) from torsion logarithm T<sub>ω</sub> = ln(4 sin²(kπ/q)) with k=5 (D₅), q=48 (SO(10))</li>
+            <li>\(\shadow_kuf\) - \(\shadow_chet\) from neutrino mixing Δ\(\theta_{23}\) = 2.2° via cycle intersection asymmetry</li>
           </ul>
           <p style="margin-top: 0.75rem;">
             This gives the MEP formula:
@@ -30927,7 +30927,7 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
         <div class="theorem-box" style="background: #f9f9f9; margin-top: 1.5rem; border: 2px solid rgba(79, 172, 254, 0.3);">
           <h5 style="color: var(--info);">V12.8 Simulation: Ghost Central Charge Derivation</h5>
           <p>
-            The 0.5 coefficient in d<sub>eff</sub> = 12 + 0.5 × (\(\alpha_4\) + \(\alpha_5\)) arises from the <strong>ghost central charge ratio</strong>
+            The 0.5 coefficient in d<sub>eff</sub> = 12 + 0.5 × (\(\shadow_kuf\) + \(\shadow_chet\)) arises from the <strong>ghost central charge ratio</strong>
             in Sp(2,R) gauge-fixed string theory:
           </p>
 
@@ -30943,8 +30943,8 @@ C_MATTER = 26   # Matter central charge (critical bosonic string)
 C_GHOST = -26   # Ghost central charge (bc system)
 GHOST_COEFFICIENT = np.abs(C_GHOST) / (2 * C_MATTER)  # 0.5
 
-def derive_d_eff(alpha_4=0.576152, alpha_5=0.576152, d_base=12):
-    shared_contribution = GHOST_COEFFICIENT * (alpha_4 + alpha_5)
+def derive_d_eff(shadow_kuf=0.576152, shadow_chet=0.576152, d_base=12):
+    shared_contribution = GHOST_COEFFICIENT * (shadow_kuf + shadow_chet)
     d_eff = d_base + shared_contribution
     return d_eff  # 12.576
 
@@ -31332,8 +31332,8 @@ def derive_w0_from_d_eff(d_eff=None):
                 discussed above corresponds to one of <em>two</em> fundamental time dimensions. The familiar <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D effective
                 theory arises as a gauge-fixed shadow of the complete 26D structure, where the second time dimension
                 becomes hidden through dimensional reduction. Further compactification on the explicit TCS G<sub>2</sub> manifold
-                (b<sub>2</sub>=4, b<sub>3</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>) yields the observable 4D spacetime with geometric parameters \(\alpha_4\) = 0.576152, \(\alpha_5\) = 0.576152
-                entering the effective dimension d<sub>eff</sub> = 12 + 0.5(\(\alpha_4\)+\(\alpha_5\)) = 12.589.
+                (b<sub>2</sub>=4, b<sub>3</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>) yields the observable 4D spacetime with geometric parameters \(\shadow_kuf\) = 0.576152, \(\shadow_chet\) = 0.576152
+                entering the effective dimension d<sub>eff</sub> = 12 + 0.5(\(\shadow_kuf\)+\(\shadow_chet\)) = 12.589.
             </p>
 
             <div class="definition-box">
@@ -35046,7 +35046,7 @@ def derive_w0_from_d_eff(d_eff=None):
           derives from <strong>two-time interference effects</strong>, improving the match with DESI 2024.
         </p>
         <ul style="margin-top: 0.5rem; color: var(--text-secondary);">
-          <li><strong>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>:</strong> <span style="color: #333;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12 + 0.5×(\(\alpha_4\)+\(\alpha_5\)) with \(\alpha_4\) = 0.576152, \(\alpha_5\) = 0.576152)</li>
+          <li><strong>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>:</strong> <span style="color: #333;">DERIVED</span> via MEP: w<sub>0</sub> = &minus;(d&minus;1)/(d+1) for d<sub>eff</sub>=12.589 (geometric: 12 + 0.5×(\(\shadow_kuf\)+\(\shadow_chet\)) with \(\shadow_kuf\) = 0.576152, \(\shadow_chet\) = 0.576152)</li>
           <li><strong>w<sub>a</sub> &asymp; <span class="pm-value" data-category="dark_energy" data-param="wa_PM_effective" data-format="fixed:2"></span>:</strong> <span style="color: #333;">DERIVED</span> from two-time dynamics</li>
           <li><strong>&alpha;<sub>T</sub> &asymp; 2.7:</strong> <span style="color: #333;">DERIVED</span> from Z<sub>2</sub>-corrected &Gamma;/H scaling</li>
         </ul>
@@ -35054,7 +35054,7 @@ def derive_w0_from_d_eff(d_eff=None):
           <p style="margin: 0; font-size: 0.9rem; color: var(--text-secondary);">
              \(w_0\) = -11/13 ≈ <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:3"></span> using d<sub>eff</sub>=12 (integer).
             Now <strong>geometrically derived</strong> from TCS G<sub>2</sub> manifold (b<sub>2</sub>=4, b<sub>3</sub>=24) yielding
-            \(\alpha_4\) + \(\alpha_5\) = 1.1781 → d<sub>eff</sub> = 12.589 → \(w_0\) = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> (within DESI 1σ).
+            \(\shadow_kuf\) + \(\shadow_chet\) = 1.1781 → d<sub>eff</sub> = 12.589 → \(w_0\) = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> (within DESI 1σ).
           </p>
         </div>
       </div>
@@ -35406,15 +35406,15 @@ def derive_w0_from_d_eff(d_eff=None):
           torsion constraint with perfect alignment:
         </p>
         <div style="text-align: center; font-size: 1.15rem; margin: 1rem 0; padding: 1rem; background: #f9f9f9; border-radius: 8px;">
-          \(\theta_{23}\) = 45° + n<sub>gen</sub> × (\(\alpha_4\) - \(\alpha_5\)) = 45° + 3 × 0.0° = <strong style="color: #333;"><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong>
+          \(\theta_{23}\) = 45° + n<sub>gen</sub> × (\(\shadow_kuf\) - \(\shadow_chet\)) = 45° + 3 × 0.0° = <strong style="color: #333;"><span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>°</strong>
         </div>
         <ul style="margin-left: 1.5rem; color: var(--text-secondary); margin-top: 0.75rem; line-height: 1.8;">
           <li>
             <strong>Base value 45°:</strong> Maximal mixing from octonionic G<sub>2</sub> structure (SO(8) triality symmetry)
           </li>
           <li>
-            <strong>Perfect alignment \(\alpha_4\) = \(\alpha_5\) = 0.576152:</strong> Geometric torsion constraint from T_ω = -0.884
-            produces identical values for both dimensions, yielding \(\alpha_4\) - \(\alpha_5\) = 0.0 exactly
+            <strong>Perfect alignment \(\shadow_kuf\) = \(\shadow_chet\) = 0.576152:</strong> Geometric torsion constraint from T_ω = -0.884
+            produces identical values for both dimensions, yielding \(\shadow_kuf\) - \(\shadow_chet\) = 0.0 exactly
           </li>
           <li>
             <strong>Maximal mixing:</strong> Zero deviation from 45° indicates perfect symmetry between μ and \(\tau\) sectors
@@ -35425,7 +35425,7 @@ def derive_w0_from_d_eff(d_eff=None):
         </ul>
         <div style="background: #f9f9f9; padding: 1rem; margin-top: 1rem; border-radius: 8px;">
           <p style="margin: 0; font-size: 0.95rem; color: var(--text-secondary);">
-            The framework derives \(\alpha_4\) and \(\alpha_5\) <strong>geometrically from torsion</strong>, yielding perfect maximal mixing
+            The framework derives \(\shadow_kuf\) and \(\shadow_chet\) <strong>geometrically from torsion</strong>, yielding perfect maximal mixing
             <span class="pm-value" data-pm-value="pmns_matrix.theta_23" data-format="fixed:1"></span>° with no free parameters&mdash;in precise agreement with NuFIT 6.0 central value.
           </p>
         </div>
@@ -37506,7 +37506,7 @@ def gw_dispersion_geometric(T_omega=-0.889):
     Monte Carlo error propagation for all 58 SM parameters.
 
     Topological parameters (b2, b3, chi_eff, n_gen) are EXACT.
-    Main uncertainties from: Re(T), T_omega, alpha_4, alpha_5
+    Main uncertainties from: Re(T), T_omega, shadow_kuf, shadow_chet
     """
     # Generate correlated input variations
     samples = np.zeros((n_mc, n_params))
@@ -37544,7 +37544,7 @@ def gw_dispersion_geometric(T_omega=-0.889):
 
           <p style="margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-muted);">
             <strong>Key Result:</strong> Topological parameters are EXACT (zero uncertainty), while derived parameters
-            have controlled uncertainties from Re(T), T<sub>ω</sub>, \(\alpha_4\), \(\alpha_5\) input variations.
+            have controlled uncertainties from Re(T), T<sub>ω</sub>, \(\shadow_kuf\), \(\shadow_chet\) input variations.
           </p>
         </div>
 
@@ -41868,11 +41868,11 @@ def gw_dispersion_geometric(T_omega=-0.889):
       </tr>
       <tr>
        <td><strong>#1 \(\theta_{23}\) circular</strong><br/>
-       <span style="font-size: 0.85em; color: var(--text-muted);">Circular: \(\alpha_4 - \alpha_5\) derived FROM \(\theta_{23}\)</span>
+       <span style="font-size: 0.85em; color: var(--text-muted);">Circular: \(\shadow_kuf - \shadow_chet\) derived FROM \(\theta_{23}\)</span>
        </td>
        <td><span class="status-badge status-resolved">RESOLVED</span></td>
        <td>
-        G<sub>2</sub> holonomy SU(3) symmetry → \(\alpha_4 = \alpha_5\) → \(\theta_{23} = 45°\)
+        G<sub>2</sub> holonomy SU(3) symmetry → \(\shadow_kuf = \shadow_chet\) → \(\theta_{23} = 45°\)
        </td>
        <td><code>derive_theta23_g2_v12_8.py</code></td>
       </tr>
