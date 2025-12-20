@@ -2,7 +2,7 @@
 <svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
   <!-- Title -->
   <text x="700" y="30" font-size="26" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">
-    Dimensional Reduction Pathway v12.8: 26D → 13D → 8D → 6D Branches → 4D Observable
+    Dimensional Reduction Pathway v12.8: 26D → 13D → 7D (G₂) → 6D Branches → 4D Observable
   </text>
   <text x="700" y="55" font-size="14" text-anchor="middle" font-family="Arial, sans-serif" fill="#555">
     Complete pathway showing Sp(2,R) shadow projection and dual-branch compactification structure
@@ -43,18 +43,18 @@
   <!-- Arrow 2: CY4 × S¹ compactification -->
   <g id="arrow2">
     <path d="M 590 190 L 660 190" stroke="#8b7fff" stroke-width="5" fill="none" marker-end="url(#arrowhead1)"/>
-    <text x="625" y="165" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">CY₄ × S¹</text>
+    <text x="625" y="165" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">G₂ holonomy</text>
     <text x="625" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">compactify</text>
-    <text x="625" y="215" font-size="11" text-anchor="middle" fill="#555">K_Pneuma + thermal</text>
+    <text x="625" y="215" font-size="11" text-anchor="middle" fill="#555">TCS construction</text>
   </g>
 
-  <!-- Stage 3: 8D Internal Manifold -->
+  <!-- Stage 3: 7D G₂ Internal Manifold -->
   <g id="stage3">
     <rect x="670" y="100" width="220" height="180" fill="#16a085" stroke="#2c3e50" stroke-width="3" rx="10"/>
-    <text x="780" y="125" font-size="18" font-weight="bold" text-anchor="middle" fill="white">8D Internal</text>
-    <text x="780" y="150" font-size="28" font-weight="bold" text-anchor="middle" fill="white">8D</text>
-    <text x="780" y="175" font-size="13" text-anchor="middle" fill="#ecf0f1">K_Pneuma (CY₄)</text>
-    <text x="780" y="193" font-size="13" text-anchor="middle" fill="#ecf0f1">+ S¹ thermal circle</text>
+    <text x="780" y="125" font-size="18" font-weight="bold" text-anchor="middle" fill="white">7D G₂ Manifold</text>
+    <text x="780" y="150" font-size="28" font-weight="bold" text-anchor="middle" fill="white">7D</text>
+    <text x="780" y="175" font-size="13" text-anchor="middle" fill="#ecf0f1">TCS G₂ holonomy</text>
+    <text x="780" y="193" font-size="13" text-anchor="middle" fill="#ecf0f1">Twisted Connected Sum</text>
     <text x="780" y="220" font-size="12" font-weight="bold" text-anchor="middle" fill="white">χ_eff = 144</text>
     <text x="780" y="238" font-size="11" text-anchor="middle" fill="#ecf0f1">Euler characteristic</text>
     <text x="780" y="258" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffeb3b">χ_eff / 48 = 3</text>
@@ -146,10 +146,10 @@
     <text x="1120" y="368" font-size="11" text-anchor="start" fill="#666">1. 26D → 13D via Sp(2,R)</text>
     <text x="1125" y="383" font-size="10" text-anchor="start" fill="#999">Shadow projection</text>
 
-    <text x="1120" y="405" font-size="11" text-anchor="start" fill="#666">2. 13D → 8D via CY₄×S¹</text>
-    <text x="1125" y="420" font-size="10" text-anchor="start" fill="#999">K_Pneuma compactification</text>
+    <text x="1120" y="405" font-size="11" text-anchor="start" fill="#666">2. 13D → 7D via G₂</text>
+    <text x="1125" y="420" font-size="10" text-anchor="start" fill="#999">TCS G₂ compactification</text>
 
-    <text x="1120" y="442" font-size="11" text-anchor="start" fill="#666">3. 8D → 6D branches</text>
+    <text x="1120" y="442" font-size="11" text-anchor="start" fill="#666">3. 7D → 6D branches</text>
     <text x="1125" y="457" font-size="10" text-anchor="start" fill="#999">SM: (5,1) signature</text>
     <text x="1125" y="472" font-size="10" text-anchor="start" fill="#999">Gen: 3×(3,1) spaces</text>
 

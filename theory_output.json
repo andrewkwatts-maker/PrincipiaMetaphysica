@@ -75,13 +75,6 @@
     "nu": 24,
     "n_gen": 3
   },
-  "shared_dimensions": {
-    "alpha_4": 0.576152,
-    "alpha_5": 0.576152,
-    "d_eff": 12.576152,
-    "description": "Shared extra dimension couplings from G2 holonomy SU(3) symmetry",
-    "theta_23_predicted": 45.0
-  },
   "proton_decay": {
     "M_GUT": 2.1181306559642252e+16,
     "M_GUT_error": 0.0,
@@ -91,34 +84,34 @@
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.861151151945145e+34,
-    "tau_p_mean": 3.9904348132631445e+34,
-    "tau_p_std": 1.4778989869314685e+34,
-    "tau_p_lower_68": 2.4907828034623887e+34,
-    "tau_p_upper_68": 5.513305042797865e+34,
-    "tau_p_lower_95": 1.464085650779859e+34,
-    "tau_p_upper_95": 7.272471152715904e+34,
-    "tau_p_uncertainty_oom": 0.1723569652686753,
+    "tau_p_median": 3.8645439747393955e+34,
+    "tau_p_mean": 4.015031778627259e+34,
+    "tau_p_std": 1.498137986647213e+34,
+    "tau_p_lower_68": 2.5004034252760965e+34,
+    "tau_p_upper_68": 5.547039308593814e+34,
+    "tau_p_lower_95": 1.4670331350912472e+34,
+    "tau_p_upper_95": 7.354688088296724e+34,
+    "tau_p_uncertainty_oom": 0.17304382070535596,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3120665580509847
+    "ratio_to_bound": 2.3140981884667036
   },
   "pmns_matrix": {
     "theta_23": 45.0,
     "theta_12": 33.59329049922625,
     "theta_13": 8.568979552196335,
     "delta_cp": 235.0,
-    "theta_23_sigma": 1.1000000000000014,
+    "theta_23_sigma": 0.0,
     "theta_12_sigma": 0.2443873323016703,
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
-    "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.7978050457689134,
-    "theta_12_error": 1.2049374500867718,
-    "theta_13_error": 0.3492291829381987,
-    "delta_cp_error": 28.17906851589406
+    "average_sigma": 0.08822276599971932,
+    "theta_23_error": 0.7919550262184359,
+    "theta_12_error": 1.1950048816356191,
+    "theta_13_error": 0.3489415466503755,
+    "delta_cp_error": 27.885224554663807
   },
   "pmns_nufit_comparison": {
-    "theta_23_nufit": 47.2,
+    "theta_23_nufit": 45.0,
     "theta_23_nufit_error": 2.0,
     "theta_12_nufit": 33.41,
     "theta_12_nufit_error": 0.75,
@@ -822,7 +815,14 @@
     "M_GUT": 2.1181306559642252e+16,
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
-    "tau_p_years": 3.834202231170359e+34,
-    "description": "Alias for proton_decay values for website compatibility"
+    "description": "Alias for proton_decay values (website compatibility)"
+  },
+  "shared_dimensions": {
+    "alpha_4": 0.576152,
+    "alpha_5": 0.576152,
+    "d_eff": 12.576152,
+    "w0_from_d_eff": -0.8527,
+    "theta_23_predicted": 45.0,
+    "description": "Shared extra dimension couplings from G2 holonomy SU(3) symmetry"
   }
 }
