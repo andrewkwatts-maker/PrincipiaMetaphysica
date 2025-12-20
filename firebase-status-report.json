@@ -3,16 +3,16 @@
     "theory_output.json": {
       "exists": true,
       "path": "theory_output.json",
-      "size": 26496,
-      "lastModified": "2025-12-20T07:00:26.231Z",
+      "size": 43979,
+      "lastModified": "2025-12-20T13:01:28.962Z",
       "version": "12.8",
       "required": true
     },
     "theory-constants-enhanced.js": {
       "exists": true,
       "path": "theory-constants-enhanced.js",
-      "size": 28361,
-      "lastModified": "2025-12-20T07:00:26.232Z",
+      "size": 45851,
+      "lastModified": "2025-12-20T13:01:28.962Z",
       "version": "12.8",
       "required": true
     },
@@ -27,16 +27,16 @@
     "formula-database.js": {
       "exists": true,
       "path": "js/formula-database.js",
-      "size": 13807,
-      "lastModified": "2025-12-07T22:02:09.655Z",
+      "size": 13445,
+      "lastModified": "2025-12-20T10:42:52.924Z",
       "version": null,
       "required": false
     },
     "config.py": {
       "exists": true,
       "path": "config.py",
-      "size": 72948,
-      "lastModified": "2025-12-20T04:31:58.956Z",
+      "size": 107878,
+      "lastModified": "2025-12-20T13:00:55.822Z",
       "version": null,
       "required": true
     }
@@ -44,7 +44,7 @@
   "firestoreStatus": {
     "theory_constants": {
       "exists": true,
-      "documentCount": 17,
+      "documentCount": 21,
       "documents": [
         {
           "id": "current",
@@ -85,6 +85,26 @@
           "id": "history_2025-12-13T05-17-16-386Z",
           "version": "12.7",
           "lastUpdated": "2025-12-08"
+        },
+        {
+          "id": "history_2025-12-20T07-07-41-394Z",
+          "version": "12.8",
+          "lastUpdated": "2025-12-14"
+        },
+        {
+          "id": "history_2025-12-20T07-12-21-687Z",
+          "version": "12.8",
+          "lastUpdated": "2025-12-14"
+        },
+        {
+          "id": "history_2025-12-20T10-45-39-898Z",
+          "version": "12.8",
+          "lastUpdated": "2025-12-14"
+        },
+        {
+          "id": "history_2025-12-20T13-04-39-333Z",
+          "version": "12.8",
+          "lastUpdated": "2025-12-14"
         },
         {
           "id": "v12_7",
