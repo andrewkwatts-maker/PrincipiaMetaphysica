@@ -84,16 +84,16 @@
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.8523834948008264e+34,
-    "tau_p_mean": 3.9990804210056256e+34,
-    "tau_p_std": 1.498346987283622e+34,
-    "tau_p_lower_68": 2.4582273403613055e+34,
-    "tau_p_upper_68": 5.543493295501355e+34,
-    "tau_p_lower_95": 1.4582907026356955e+34,
-    "tau_p_upper_95": 7.34763430507375e+34,
-    "tau_p_uncertainty_oom": 0.17421082196226578,
+    "tau_p_median": 3.8463794153936174e+34,
+    "tau_p_mean": 3.9825236427538467e+34,
+    "tau_p_std": 1.4884210355066098e+34,
+    "tau_p_lower_68": 2.457538296073057e+34,
+    "tau_p_upper_68": 5.527237873786882e+34,
+    "tau_p_lower_95": 1.4586955769018217e+34,
+    "tau_p_upper_95": 7.312307884259653e+34,
+    "tau_p_uncertainty_oom": 0.1736357197472875,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3068164639525905
+    "ratio_to_bound": 2.303221206822525
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -105,10 +105,10 @@
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.3632227659997197,
-    "theta_23_error": 0.7986927435702688,
-    "theta_12_error": 1.1982499367373465,
-    "theta_13_error": 0.34884480110219945,
-    "delta_cp_error": 27.9432453712006
+    "theta_23_error": 0.8052028915784598,
+    "theta_12_error": 1.209485378999781,
+    "theta_13_error": 0.34837380064179085,
+    "delta_cp_error": 28.078668896369145
   },
   "pmns_nufit_comparison": {
     "theta_23_nufit": 47.2,
@@ -665,7 +665,7 @@
       "status": "Module import failed"
     },
     "torsion_effective": {
-      "error": "'T_omega_eff'",
+      "error": "'original_T_omega'",
       "status": "Module import failed"
     },
     "generation_z2": {
@@ -706,8 +706,8 @@
       "testable": "Hyper-Kamiokande 2032-2038"
     },
     "gw_dispersion": {
-      "eta": 0.11326174285246021,
-      "T_omega": -1.0,
+      "eta": 0.10069079544237515,
+      "T_omega": -0.8823529411764706,
       "b3": 24,
       "formula": "eta = exp(|T_omega|)/b3",
       "derivation": "eta = exp(|T_omega|)/b3",

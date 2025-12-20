@@ -1354,13 +1354,13 @@ def run_v12_8_derivation_completions(verbose=True):
             'b3': gw_result['b3'],
             'formula': gw_result['formula'],
             'derivation': 'eta = exp(|T_omega|)/b3',
-            'status': gw_result['derivation_status'],
+            'status': gw_result['status'],
             'testable': 'Future GW observatories (LISA, ET)'
         }
         if verbose:
             print(f"\n7. GW Dispersion (PREDICTION):")
             print(f"   eta = {gw_result['eta']:.4f}")
-            print(f"   Status: {gw_result['derivation_status']}")
+            print(f"   Status: {gw_result['status']}")
     except Exception as e:
         results['gw_dispersion'] = {'error': str(e), 'status': 'Module import failed'}
         if verbose:
