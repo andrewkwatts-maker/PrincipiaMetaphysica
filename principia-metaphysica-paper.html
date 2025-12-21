@@ -19,7 +19,10 @@
                 inlineMath: [['$', '$'], ['\\(', '\\)']],
                 displayMath: [['$$', '$$'], ['\\[', '\\]']],
                 processEscapes: true,
-                tags: 'ams'
+                tags: 'ams',
+                macros: {
+                    shadow: '\\text{shadow}'
+                }
             },
             options: {
                 skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
@@ -2087,7 +2090,7 @@
                 <span class="equation-number">(7.3)</span>
             </div>
             <p>
-                where $\alpha_T \approx 2.7$ is derived from the two-time thermodynamic framework. This logarithmic form avoids the CPL divergence at high redshift and predicts $w_a &lt; 0$, consistent with DESI's 6.2&sigma; preference.
+                where $\alpha_T \approx 2.7$ is derived from the two-time thermodynamic framework. This logarithmic form avoids the CPL divergence at high redshift and predicts $w_a < 0$, consistent with DESI's 6.2σ preference.
             </p>
 
             <div class="derivation-box">
@@ -2957,7 +2960,7 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 <li><strong>Method 2:</strong> TCS cycle symmetry = $b_3/2 = 24/2 = 12$ (oriented pairs)</li>
             </ul>
             <div class="equation-block">
-                $$\text{BR}(p \to e^+\pi^0) = \left(\frac{\text{orientation\_sum}}{b_3}\right)^2 = \left(\frac{12}{24}\right)^2 = 0.25$$
+                $$\text{BR}(p \to e^+\pi^0) = \left(\frac{N_{\text{orient}}}{b_3}\right)^2 = \left(\frac{12}{24}\right)^2 = 0.25$$
             </div>
             <p>
                 This is within the literature range (0.3-0.5) for SO(10) GUTs. Testable at Hyper-Kamiokande (2032-2038).

@@ -21,7 +21,10 @@
       tex: {
         inlineMath: [["$", "$"], ["\(", "\)"]],
         displayMath: [["$$", "$$"], ["\[", "\]"]],
-        processEscapes: true
+        processEscapes: true,
+        macros: {
+          shadow: '\\text{shadow}'
+        }
       },
       options: {
         skipHtmlTags: ["script", "noscript", "style", "textarea", "pre"]
