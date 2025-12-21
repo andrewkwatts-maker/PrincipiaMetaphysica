@@ -1447,6 +1447,12 @@
                     <p style="text-align: center;">
                         &chi; = 4 + 8 + 0 + 0 + 60 = <strong>72</strong> &nbsp;&rarr;&nbsp; n<sub>gen</sub> = 72/24 = <strong>3</strong>
                     </p>
+                    <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); border-top: 1px solid rgba(139, 127, 255, 0.2); padding-top: 1rem;">
+                        <strong>Alternative Derivation (v13.0):</strong> The generation count can also be derived from G<sub>2</sub>
+                        spinor saturation: n<sub>gen</sub> = N<sub>flux</sub>/spinor<sub>DOF</sub> = 24/8 = <strong>3</strong>,
+                        where N<sub>flux</sub> = &chi;<sub>eff</sub>/6 = 144/6 = 24 (flux quanta wrapping b<sub>3</sub> cycles)
+                        and spinor<sub>DOF</sub> = 8 (real components of the parallel G<sub>2</sub> spinor).
+                    </p>
                 </div>
             </div>
         </div>
@@ -1884,7 +1890,7 @@
                 <div class="expand-content">
                     <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
-                        <li>Generation count: 3 (exact match!)</li>
+                        <li>Generation count: 3 (exact match! Derived from N<sub>flux</sub>/spinor<sub>DOF</sub> = 24/8)</li>
                         <li>PMNS mixing angles: θ₂₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:1"></span>° (maximal mixing), θ₁₂ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:1"></span>°, θ₁₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>° (all within 0.25σ!)</li>
                         <li>Dark energy equation of state: w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM"></span> (DESI: <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error"></span>, within <span class="pm-value" data-category="dark_energy" data-param="w0_sigma"></span>σ)</li>
                         <li>Dark energy evolution: wₐ < 0 (consistent with DESI DR2 6.2σ preference)</li>
