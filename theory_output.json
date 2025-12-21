@@ -84,16 +84,16 @@
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.854470452387567e+34,
-    "tau_p_mean": 3.987690360720029e+34,
-    "tau_p_std": 1.490263274294338e+34,
-    "tau_p_lower_68": 2.434881029154269e+34,
-    "tau_p_upper_68": 5.544684483281989e+34,
-    "tau_p_lower_95": 1.4764202337841382e+34,
-    "tau_p_upper_95": 7.274862149817237e+34,
-    "tau_p_uncertainty_oom": 0.17364859763240903,
+    "tau_p_median": 3.8540822008242693e+34,
+    "tau_p_mean": 3.995391710405683e+34,
+    "tau_p_std": 1.485639433253648e+34,
+    "tau_p_lower_68": 2.477058003468458e+34,
+    "tau_p_upper_68": 5.544688233910248e+34,
+    "tau_p_lower_95": 1.4634781422635085e+34,
+    "tau_p_upper_95": 7.274342723314015e+34,
+    "tau_p_uncertainty_oom": 0.17347827125216125,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3080661391542314
+    "ratio_to_bound": 2.307833653188185
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -105,10 +105,10 @@
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.8016750070230322,
-    "theta_12_error": 1.203760846028938,
-    "theta_13_error": 0.3489674174041627,
-    "delta_cp_error": 27.773504499612407,
+    "theta_23_error": 0.8059207732194555,
+    "theta_12_error": 1.2063475450206886,
+    "theta_13_error": 0.3434281522066235,
+    "delta_cp_error": 27.73930792178205,
     "theta_23_deg": 45.0,
     "theta_12_deg": 33.59329049922625,
     "theta_13_deg": 8.568979552196335,
@@ -819,13 +819,29 @@
       "precision_protected": true,
       "status": "RESOLVED - EFT valid to GUT scale with geometric protection"
     },
+    "g2_spinor_geometry": {
+      "chi_eff": 144,
+      "b3": 24,
+      "spinor_dof_7d": 8,
+      "invariant_spinors": 1,
+      "active_components": 7,
+      "spinor_fraction": 0.875,
+      "spinor_fraction_formula": "7/8 (active/total spinor DOF)",
+      "T_omega_derived": -0.875,
+      "vielbein_dof": 14,
+      "geometry_mechanism": "phi_{mnp} ~ eta_bar Gamma_{mnp} eta (Joyce 2000)",
+      "pneuma_role": "Provides invariant spinor eta after dimensional reduction",
+      "signature_protection": "Sp(2,R) gauge fixing",
+      "geometry_valid": true,
+      "status": "RESOLVED - Geometry emerges from canonical G2 spinor bilinears"
+    },
     "summary": {
       "version": "13.0",
-      "issues_addressed": 16,
-      "issues_closed": 9,
+      "issues_addressed": 17,
+      "issues_closed": 10,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
-        "T_omega from G-flux (Issue #2)",
+        "T_omega from G-flux with 7/8 spinor fraction (Issue #2)",
         "n_gen divisor 48 with Z2 (Issue #4)",
         "d_eff coefficient 0.5 (Issue #5)",
         "VEV coefficient (semi-derived)",
@@ -839,7 +855,8 @@
         "Pneuma racetrack vacuum (v12.9)",
         "Fermion chirality & generations (v13.0)",
         "Moduli stabilization (v13.0)",
-        "EFT validity envelope (v13.0)"
+        "EFT validity envelope (v13.0)",
+        "G2 spinor geometry (v13.0)"
       ],
       "remaining_calibrated": [
         "theta_13 (8.57 deg - pending Yukawa intersection calc)",
@@ -850,7 +867,8 @@
         "Pneuma Dynamics Underdetermined (v12.9)",
         "Geometric Chirality Mechanism (v13.0)",
         "Moduli Stabilization Mechanism (v13.0)",
-        "EFT Validity Regime (v13.0)"
+        "EFT Validity Regime (v13.0)",
+        "Pneuma Condensate Formation (v13.0)"
       ],
       "grade": "A+ (maximum possible rigor with current tools)",
       "publication_ready": true
