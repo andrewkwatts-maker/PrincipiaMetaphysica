@@ -482,6 +482,93 @@ class FermionChiralityParameters:
 
 
 # ==============================================================================
+# EFT VALIDITY & UV COMPLETION (v13.0)
+# ==============================================================================
+
+class EFTValidityParameters:
+    """
+    EFT validity regime with geometric protection.
+
+    The effective field theory remains valid up to the unification scale due to:
+    1. Asymptotic Safety: UV fixed point prevents coupling divergence (Section 3.4.5)
+    2. Geometric Suppression: Higher-dimensional operators suppressed by 1/b₃ per level
+
+    Key Result:
+    - Standard EFT correction at GUT scale: (E/M_GUT)² ~ O(1)
+    - PM geometric correction: (E/M_GUT)² / b₃ ~ 3-4%
+
+    This ensures precision predictions (m_t, m_b, mixing angles) remain valid.
+
+    References:
+    - Weinberg (1979): Asymptotic safety proposal
+    - Reuter (1998): Non-perturbative fixed point
+    - Acharya et al. (2010): G₂ compactification EFT
+    """
+
+    # Energy scales
+    M_GUT = 2.118e16  # GeV (from GaugeUnificationParameters)
+    M_PLANCK = 1.221e19  # GeV (reduced Planck mass)
+
+    # Geometric suppression factor from G₂ topology
+    B3 = 24  # Number of 3-cycles (from TCS manifold #187)
+
+    # Asymptotic Safety parameters
+    G_FIXED_POINT = 0.27  # Dimensionless Newton coupling at UV fixed point
+    LAMBDA_FIXED_POINT = 0.19  # Dimensionless cosmological constant at fixed point
+
+    @staticmethod
+    def standard_eft_correction(E_scale):
+        """Standard EFT correction: (E/M_GUT)^(d-4) for dim-6 operator"""
+        return (E_scale / EFTValidityParameters.M_GUT)**2
+
+    @staticmethod
+    def geometric_correction_dim6(E_scale):
+        """Dim-6 correction with geometric suppression: (E/M_GUT)² / b₃"""
+        epsilon_sq = (E_scale / EFTValidityParameters.M_GUT)**2
+        return epsilon_sq / EFTValidityParameters.B3
+
+    @staticmethod
+    def geometric_correction_dim8(E_scale):
+        """Dim-8 correction: (E/M_GUT)⁴ / b₃²"""
+        epsilon_4 = (E_scale / EFTValidityParameters.M_GUT)**4
+        return epsilon_4 / (EFTValidityParameters.B3**2)
+
+    @staticmethod
+    def total_uncertainty(E_scale):
+        """Total EFT uncertainty envelope at given scale"""
+        dim6 = EFTValidityParameters.geometric_correction_dim6(E_scale)
+        dim8 = EFTValidityParameters.geometric_correction_dim8(E_scale)
+        return dim6 + dim8
+
+    @staticmethod
+    def max_uncertainty_at_gut():
+        """Maximum correction at unification scale"""
+        return EFTValidityParameters.total_uncertainty(EFTValidityParameters.M_GUT)
+
+    @staticmethod
+    def is_valid(E_scale, threshold=0.1):
+        """Check if EFT is valid (corrections < threshold)"""
+        return EFTValidityParameters.total_uncertainty(E_scale) < threshold
+
+    @staticmethod
+    def get_eft_validity():
+        """Return EFT validity parameters as dictionary"""
+        M_GUT = EFTValidityParameters.M_GUT
+        return {
+            'M_GUT': M_GUT,
+            'b3': EFTValidityParameters.B3,
+            'dim6_at_gut': EFTValidityParameters.geometric_correction_dim6(M_GUT),
+            'dim8_at_gut': EFTValidityParameters.geometric_correction_dim8(M_GUT),
+            'total_at_gut': EFTValidityParameters.total_uncertainty(M_GUT),
+            'total_percent': EFTValidityParameters.total_uncertainty(M_GUT) * 100,
+            'g_fixed_point': EFTValidityParameters.G_FIXED_POINT,
+            'as_uv_completion': True,
+            'geometric_suppression': f'1/b₃ = 1/{EFTValidityParameters.B3}',
+            'status': 'VALID - Precision protected by AS + geometric suppression'
+        }
+
+
+# ==============================================================================
 # MULTIVERSE & LANDSCAPE PARAMETERS
 # ==============================================================================
 
