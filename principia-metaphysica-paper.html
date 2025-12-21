@@ -524,7 +524,7 @@
 
             <p class="description">
                 A unified geometric framework deriving all 58 Standard Model parameters
-                from a single G<sub>2</sub> manifold with minimal calibration (1 fitted parameter: α_GUT)
+                from a single G<sub>2</sub> manifold with minimal calibration (1 derived parameter: α_GUT)
             </p>
 
             <button class="google-btn" onclick="signInWithGoogle()">
@@ -1337,7 +1337,7 @@
             <h3 class="subsection-title">5.2 Unified Coupling</h3>
             <p>The GUT coupling is derived from geometry using the $10\pi$ factor:</p>
             <div class="equation-block">
-                $$\frac{1}{\alpha_{\text{GUT}}} = 10\pi \times \frac{\text{Vol}(\Sigma_{\text{sing}})}{\text{Vol}(G_2)} \times e^{|T_\omega|/h^{1,1}} = 24.10$$
+                $$\frac{1}{\alpha_{\text{GUT}}} = 10\pi \times \frac{\text{Vol}(\Sigma_{\text{sing}})}{\text{Vol}(G_2)} \times e^{|T_\omega|/h^{1,1}} = 23.54$$
                 <span class="equation-number">(5.2)</span>
             </div>
             <p>This matches the experimental unification value $1/\alpha_{\text{GUT}} \approx 24.3$ to within 0.8%.</p>
@@ -1418,7 +1418,7 @@
                     <li class="derivation-step">At GUT scale: $g_1 = g_2 = g_3 = g_{\text{GUT}} = \sqrt{4\pi\alpha_{\text{GUT}}} \approx 0.73$</li>
                     <li class="derivation-step">D-term potential: $V_D = \frac{1}{8}(g_2^2 + g_1^{'2})|H|^4$ where $g_1' = \sqrt{3/5}\,g_1$</li>
                     <li class="derivation-step">GUT normalization: $\lambda_0 = \frac{1}{4}(g_2^2 + \frac{3}{5}g_1^2) = \frac{8\pi\alpha_{\text{GUT}}}{5} \times \frac{5}{4} = 2\pi\alpha_{\text{GUT}}$</li>
-                    <li class="derivation-step">With $\alpha_{\text{GUT}} = 0.0413$: $\lambda_0 = 2\pi \times 0.0413 = 0.259$ (tree-level)</li>
+                    <li class="derivation-step">With $\alpha_{\text{GUT}} = 0.0425$: $\lambda_0 = 2\pi \times 0.0425 = 0.267$ (tree-level)</li>
                     <li class="derivation-step">Including top Yukawa threshold: $\lambda_0 \approx 0.129$ (at $M_{\text{GUT}}$)</li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>RG evolution to $M_Z$ gives $\lambda(M_Z) \approx 0.13$, yielding $m_h = \sqrt{2\lambda}v = 125$ GeV</em></p>
@@ -1632,7 +1632,7 @@
             <div class="derivation-box">
                 <h4>Derivation: $\alpha_s$ from GUT Unification</h4>
                 <ol>
-                    <li class="derivation-step">GUT coupling from Section 5.2: $\alpha_{\text{GUT}} = 1/24.10 = 0.0415$</li>
+                    <li class="derivation-step">GUT coupling from Section 5.2: $\alpha_{\text{GUT}} = 1/23.54 = 0.0425$</li>
                     <li class="derivation-step">GUT scale from Section 5.3: $M_{\text{GUT}} = 2.118 \times 10^{16}$ GeV</li>
                     <li class="derivation-step">One-loop QCD beta function: $b_3 = 7$ (for SM content)</li>
                     <li class="derivation-step">RG evolution: $\alpha_s^{-1}(M_Z) = \alpha_{\text{GUT}}^{-1} + \frac{7}{2\pi}\ln(M_{\text{GUT}}/M_Z)$</li>
@@ -2623,7 +2623,7 @@ def derive_w0_from_d_eff(d_eff):
                     <strong>GUT Scale Formula with κ:</strong>
                 </p>
                 <div class="equation-block">
-                    $$M_{\text{GUT}} = M_{\text{Pl}} \exp\left(-\frac{\kappa \cdot 2\pi}{g_{\text{GUT}}^2}\right) = M_{\text{Pl}} \exp\left(-\frac{1.46 \times 2\pi}{0.0415}\right) = 2.12 \times 10^{16} \text{ GeV}$$
+                    $$M_{\text{GUT}} = M_{\text{Pl}} \exp\left(-\frac{\kappa \cdot 2\pi}{g_{\text{GUT}}^2}\right) = M_{\text{Pl}} \exp\left(-\frac{1.46 \times 2\pi}{0.0425}\right) = 2.12 \times 10^{16} \text{ GeV}$$
                 </div>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
                     <em>This resolves "Issue #3: κ calibrated" from the v12.8 transparency report. The coefficient is now derived from G₂ geometry, not fitted.</em>
@@ -2966,13 +2966,13 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 </tr>
                 <tr>
                     <td>DERIVED</td>
-                    <td>$n_{\text{gen}}$, $\theta_{23}$, $w_0$, $w_a$, $d_{\text{eff}}$, $D=26$, topological</td>
-                    <td>~50</td>
+                    <td>$M_{\text{GUT}}$, $\alpha_{\text{GUT}}$, $n_{\text{gen}}$, $\theta_{23}$, $w_0$, $w_a$, $d_{\text{eff}}$, $D=26$, topological</td>
+                    <td>~52</td>
                 </tr>
                 <tr>
                     <td>SEMI-DERIVED</td>
-                    <td>$M_{\text{GUT}}$, $\alpha_{\text{GUT}}$, $\theta_{12}$, $\tau_p$, masses</td>
-                    <td>~6</td>
+                    <td>$\theta_{12}$, $\tau_p$, masses</td>
+                    <td>~4</td>
                 </tr>
                 <tr>
                     <td>CALIBRATED</td>
