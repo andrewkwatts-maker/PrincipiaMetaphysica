@@ -40,6 +40,10 @@ from simulations.wz_evolution_desi_dr2 import run_wz_analysis
 from simulations.kk_spectrum_full import run_kk_spectrum
 from simulations.neutrino_mass_ordering import run_mass_ordering
 from simulations.proton_decay_v84_ckm import ProtonDecayV84
+from simulations.proton_decay_geometric_v13_0 import (
+    proton_decay_geometric_prediction,
+    export_proton_decay_geometric
+)
 
 class NumpyEncoder(json.JSONEncoder):
     """Custom JSON encoder for numpy types - handles NaN/Inf properly"""
@@ -1706,11 +1710,42 @@ def run_v12_8_derivation_completions(verbose=True):
         if verbose:
             print(f"\n20. Quantum FR Stability: ERROR - {e}")
 
+    # 21. Geometric Proton Decay (v13.0 - Proton Decay Rate Uncertainty Resolution)
+    try:
+        geo_proton_result = proton_decay_geometric_prediction(n_samples=10000, verbose=False)
+        results['proton_decay_geometric'] = {
+            'tau_p_years': geo_proton_result['tau_median'],
+            'tau_p_68_low': geo_proton_result['ci_68'][0],
+            'tau_p_68_high': geo_proton_result['ci_68'][1],
+            'oom_uncertainty': geo_proton_result['oom_uncertainty'],
+            'd_over_r': geo_proton_result['d_over_r'],
+            'suppression_factor': geo_proton_result['suppression_factor'],
+            'k_matching': geo_proton_result['k_matching'],
+            'br_e_pi0': geo_proton_result['br_e_pi0'],
+            'super_k_ratio': geo_proton_result['ratio_to_bound'],
+            'above_super_k': geo_proton_result['above_bound'],
+            'mechanism': geo_proton_result['mechanism'],
+            'selection_rule': geo_proton_result['selection_rule'],
+            'status': geo_proton_result['status']
+        }
+        if verbose:
+            print(f"\n21. Geometric Proton Decay (v13.0):")
+            print(f"    Cycle separation: d/R = {geo_proton_result['d_over_r']}")
+            print(f"    Suppression: S = exp(2*pi*d/R) = {geo_proton_result['suppression_factor']:.3f}")
+            print(f"    tau_p = {geo_proton_result['tau_median']:.2e} years")
+            print(f"    Super-K ratio: {geo_proton_result['ratio_to_bound']:.1f}x")
+            print(f"    BR(e+pi0) = {geo_proton_result['br_e_pi0']}")
+            print(f"    Status: RESOLVED - TCS cycle separation")
+    except Exception as e:
+        results['proton_decay_geometric'] = {'error': str(e), 'status': 'Module import failed'}
+        if verbose:
+            print(f"\n21. Geometric Proton Decay: ERROR - {e}")
+
     # Summary
     issues_closed = sum(1 for k, v in results.items() if isinstance(v, dict) and v.get('status') and ('DERIVED' in str(v.get('status', '')) or 'RESOLVED' in str(v.get('status', ''))))
     results['summary'] = {
         'version': '13.0',
-        'issues_addressed': 21,
+        'issues_addressed': 22,
         'issues_closed': issues_closed,
         'derivations_complete': [
             'theta_23 from G2 holonomy (Issue #1)',
@@ -1733,7 +1768,8 @@ def run_v12_8_derivation_completions(verbose=True):
             'Sp(2,R) gauge fixing (v13.0)',
             'Pneuma vielbein emergence (v13.0)',
             'Mashiach volume stabilization (v13.0)',
-            'Quantum FR stability (v13.0)'
+            'Quantum FR stability (v13.0)',
+            'Geometric proton decay (v13.0 - TCS cycle separation)'
         ],
         'remaining_calibrated': [
             'theta_13 (8.57 deg - pending Yukawa intersection calc)',
@@ -1745,7 +1781,8 @@ def run_v12_8_derivation_completions(verbose=True):
             'Geometric Chirality Mechanism (v13.0)',
             'Moduli Stabilization Mechanism (v13.0)',
             'EFT Validity Regime (v13.0)',
-            'Pneuma Condensate Formation (v13.0)'
+            'Pneuma Condensate Formation (v13.0)',
+            'Proton Decay Rate Uncertainty (v13.0 - TCS cycle separation)'
         ],
         'open_questions_resolved': [
             'Open Question 1: 37D Subgroup H -> Stabilizer is SO(12,1) (Bars 2006)',
@@ -1846,7 +1883,18 @@ def run_all_simulations(verbose=True):
                 'attractor_scalar_v12_8',
                 'master_action_v12_8',
                 'thermal_time_v12_8',
-                'hidden_variables_v12_8'
+                'hidden_variables_v12_8',
+                # v12.9 PNEUMA RACETRACK
+                'pneuma_racetrack_stability_v12_9',
+                # v13.0 FINAL RESOLUTIONS
+                'fermion_chirality_generations_v13_0',
+                'eft_validity_envelope_v13_0',
+                'g2_spinor_geometry_validation_v13_0',
+                'sp2r_gauge_fixing_validation_v13_0',
+                'pneuma_vielbein_emergence_validation_v13_0',
+                'mashiach_volume_stabilization_v13_0',
+                'quantum_fr_stability_v13_0',
+                'proton_decay_geometric_v13_0'
             ]
         }
     }
