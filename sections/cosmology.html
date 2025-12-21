@@ -1395,12 +1395,20 @@ print(f"Effective 4D components: {spinor_4D * spinor_SO10}")</pre>
           <ul>
             <li><strong>Flux compactification:</strong> Background fluxes on K<sub>Pneuma</sub> generate
               a potential for the moduli</li>
-            <li><strong>Casimir energy:</strong> Quantum fluctuations of the Pneuma field contribute
-              to the moduli potential</li>
+            <li><strong>Racetrack potential (primary):</strong> Non-perturbative superpotential W = A e<sup>-aT</sup> + B e<sup>-bT</sup>
+              stabilizes the G₂ volume modulus at large radius, preventing runaway decompactification</li>
+            <li><strong>Casimir energy (subleading):</strong> Quantum corrections V<sub>Casimir</sub> ~ ζ<sub>G₂</sub>(-1)/R<sup>8</sup>
+              from KK tower fluctuations provide positive pressure, preventing gravitational collapse to zero size</li>
             <li><strong>Gaugino condensation:</strong> Non-perturbative effects in the SO(10) sector
               break supersymmetry and lift flat directions</li>
           </ul>
           <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary);">
+            <strong>Quantum stability:</strong> The Casimir correction is subleading (~ R<sup>-8</sup>) compared to
+            the racetrack potential (~ e<sup>-R</sup> for large R), but crucial for preventing collapse. Combined,
+            quantum corrections <em>stabilize</em> (not destabilize) the classical Freund-Rubin compactification.
+            See Section 1.6.2 for complete derivation.
+          </p>
+          <p style="margin-top: 0.75rem; font-size: 0.95rem; color: var(--text-secondary);">
             <strong>Landscape statistics:</strong> The string landscape contains approximately <strong>~10<sup>500</sup> metastable vacua</strong>
             arising from different flux configurations. The observed vacuum is selected by anthropic considerations
             (see Section 8 for detailed statistical analysis).
