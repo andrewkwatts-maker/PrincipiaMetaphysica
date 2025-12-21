@@ -5154,7 +5154,7 @@
             ctx.fillText('RG flow', 60, centerY + 35);
         }
 
-        // Moduli Canvas
+        // Moduli Canvas - Shows CY4 Kähler moduli volumes (all positive)
         function drawModuli() {
             const canvas = document.getElementById('moduliCanvas');
             if (!canvas) return;
@@ -5167,35 +5167,82 @@
 
             // Draw moduli space visualization
             const nModuli = 10; // Show first 10 of 72 moduli
-            const barWidth = (width - 100) / nModuli;
+            const barWidth = (width - 120) / nModuli;
+            const chartLeft = 70;
+            const chartBottom = height - 60;
+            const chartTop = 50;
+            const chartHeight = chartBottom - chartTop;
 
-            for (let i = 0; i < nModuli; i++) {
-                const x = 50 + i * barWidth;
-                const moduliValue = 0.3 + 0.5 * Math.sin(i * 0.7); // Pseudo-random values
-                const barHeight = (height - 100) * moduliValue;
-                const y = height - 50 - barHeight;
+            // Moduli values (all positive - represent cycle volumes in string units)
+            // Values loosely follow a hierarchy consistent with CY4 geometry
+            const moduliValues = [0.85, 0.72, 0.78, 0.65, 0.58, 0.42, 0.35, 0.48, 0.55, 0.40];
 
-                ctx.fillStyle = colors.tc;
-                ctx.fillRect(x + 5, y, barWidth - 10, barHeight);
+            // Draw Y-axis
+            ctx.strokeStyle = colors.textSecondary;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(chartLeft, chartTop);
+            ctx.lineTo(chartLeft, chartBottom);
+            ctx.lineTo(width - 30, chartBottom);
+            ctx.stroke();
 
-                // Labels
-                ctx.fillStyle = colors.textSecondary;
-                ctx.font = '10px Arial';
-                ctx.textAlign = 'center';
-                ctx.fillText(`T_${i+1}`, x + barWidth / 2, height - 30);
+            // Y-axis labels
+            ctx.fillStyle = colors.textSecondary;
+            ctx.font = '10px Arial';
+            ctx.textAlign = 'right';
+            for (let i = 0; i <= 4; i++) {
+                const yVal = i * 0.25;
+                const yPos = chartBottom - (yVal * chartHeight);
+                ctx.fillText(yVal.toFixed(2), chartLeft - 8, yPos + 4);
+                // Grid line
+                ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+                ctx.beginPath();
+                ctx.moveTo(chartLeft, yPos);
+                ctx.lineTo(width - 30, yPos);
+                ctx.stroke();
             }
 
-            // Title and axes
+            // Draw bars
+            for (let i = 0; i < nModuli; i++) {
+                const x = chartLeft + 10 + i * barWidth;
+                const barHeight = chartHeight * moduliValues[i];
+                const y = chartBottom - barHeight;
+
+                // Gradient fill for bars
+                const gradient = ctx.createLinearGradient(x, y, x, chartBottom);
+                gradient.addColorStop(0, colors.tc);
+                gradient.addColorStop(1, 'rgba(255, 126, 182, 0.5)');
+                ctx.fillStyle = gradient;
+                ctx.fillRect(x + 3, y, barWidth - 6, barHeight);
+
+                // Bar border
+                ctx.strokeStyle = colors.tc;
+                ctx.lineWidth = 1;
+                ctx.strokeRect(x + 3, y, barWidth - 6, barHeight);
+
+                // Labels
+                ctx.fillStyle = colors.text;
+                ctx.font = '10px Arial';
+                ctx.textAlign = 'center';
+                ctx.fillText(`T_${i+1}`, x + barWidth / 2, chartBottom + 18);
+            }
+
+            // Title
             ctx.fillStyle = colors.text;
-            ctx.font = '12px Arial';
+            ctx.font = 'bold 13px Arial';
             ctx.textAlign = 'center';
             ctx.fillText('Kähler Moduli Values (first 10 of 72)', width / 2, 25);
 
+            // Y-axis label
+            ctx.save();
+            ctx.translate(18, height / 2);
+            ctx.rotate(-Math.PI / 2);
             ctx.font = '11px Arial';
-            ctx.fillText('Vol(C_i)', 25, height / 2);
+            ctx.fillText('Vol(C_i) [string units]', 0, 0);
+            ctx.restore();
         }
 
-        // KK Spectrum Canvases
+        // KK Spectrum Canvases - Clear energy level diagram
         function drawKKSpectrum(canvasId, label) {
             const canvas = document.getElementById(canvasId);
             if (!canvas) return;
@@ -5206,57 +5253,120 @@
             ctx.fillStyle = '#1a1a2e';
             ctx.fillRect(0, 0, width, height);
 
-            // Draw KK mode spectrum as energy levels
-            const R = 5000; // 5 TeV in GeV
-            const maxN = 6;
+            // Chart dimensions
+            const chartLeft = 60;
+            const chartRight = width - 30;
+            const chartTop = 50;
+            const chartBottom = height - 50;
+            const chartHeight = chartBottom - chartTop;
+            const chartWidth = chartRight - chartLeft;
 
-            for (let n1 = 0; n1 <= maxN; n1++) {
-                for (let n2 = 0; n2 <= maxN; n2++) {
-                    if (n1 === 0 && n2 === 0) continue; // Skip zero mode
-                    if (n1 * n1 + n2 * n2 > maxN * maxN) continue; // Stay in range
+            // KK mode mass formula: M² = (n₁/R₁)² + (n₂/R₂)²
+            // For R₁ ≈ R₂ ≈ (5 TeV)⁻¹, first excited mode is ~5 TeV
+            const R_TeV = 5; // TeV scale
+            const maxMass = 20; // TeV (show up to 20 TeV)
 
-                    const mass = Math.sqrt(n1 * n1 + n2 * n2) / R; // in TeV
-                    const yPos = height - 50 - mass * (height - 100) / 3; // Scale to canvas
-                    const xPos = 80 + (n1 * 50) % (width - 160);
+            // Draw Y-axis (mass scale)
+            ctx.strokeStyle = colors.textSecondary;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(chartLeft, chartTop);
+            ctx.lineTo(chartLeft, chartBottom);
+            ctx.stroke();
 
-                    // Draw state
-                    ctx.fillStyle = colors.kk;
-                    ctx.fillRect(xPos - 15, yPos - 3, 30, 6);
-
-                    // Label
-                    ctx.fillStyle = colors.textSecondary;
-                    ctx.font = '9px Arial';
-                    ctx.textAlign = 'center';
-                    ctx.fillText(`(${n1},${n2})`, xPos, yPos + 15);
-                }
+            // Y-axis labels (mass in TeV)
+            ctx.fillStyle = colors.textSecondary;
+            ctx.font = '10px Arial';
+            ctx.textAlign = 'right';
+            for (let m = 0; m <= maxMass; m += 5) {
+                const yPos = chartBottom - (m / maxMass) * chartHeight;
+                ctx.fillText(`${m}`, chartLeft - 8, yPos + 4);
+                // Grid line
+                ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+                ctx.beginPath();
+                ctx.moveTo(chartLeft, yPos);
+                ctx.lineTo(chartRight, yPos);
+                ctx.stroke();
             }
 
-            // Ground state
+            // Collect and sort KK modes by mass
+            const modes = [];
+            for (let n1 = 0; n1 <= 4; n1++) {
+                for (let n2 = 0; n2 <= 4; n2++) {
+                    if (n1 === 0 && n2 === 0) continue; // Skip zero mode
+                    const mass = R_TeV * Math.sqrt(n1 * n1 + n2 * n2);
+                    if (mass <= maxMass) {
+                        modes.push({ n1, n2, mass });
+                    }
+                }
+            }
+            modes.sort((a, b) => a.mass - b.mass);
+
+            // Draw energy levels as horizontal lines
+            const levelWidth = chartWidth * 0.6;
+            const levelLeft = chartLeft + (chartWidth - levelWidth) / 2;
+
+            modes.forEach((mode, index) => {
+                const yPos = chartBottom - (mode.mass / maxMass) * chartHeight;
+
+                // Energy level line
+                ctx.strokeStyle = colors.kk;
+                ctx.lineWidth = 3;
+                ctx.beginPath();
+                ctx.moveTo(levelLeft, yPos);
+                ctx.lineTo(levelLeft + levelWidth, yPos);
+                ctx.stroke();
+
+                // Mode label (show only first few to avoid clutter)
+                if (index < 8) {
+                    ctx.fillStyle = colors.text;
+                    ctx.font = '10px Arial';
+                    ctx.textAlign = 'left';
+                    ctx.fillText(`(${mode.n1},${mode.n2})`, levelLeft + levelWidth + 8, yPos + 4);
+
+                    // Mass value on left
+                    ctx.textAlign = 'right';
+                    ctx.fillStyle = colors.textSecondary;
+                    ctx.fillText(`${mode.mass.toFixed(1)}`, levelLeft - 8, yPos + 4);
+                }
+            });
+
+            // Ground state (zero mode) - dashed line at bottom
             ctx.strokeStyle = colors.gutTarget;
             ctx.lineWidth = 2;
             ctx.setLineDash([5, 5]);
             ctx.beginPath();
-            ctx.moveTo(50, height - 50);
-            ctx.lineTo(width - 50, height - 50);
+            ctx.moveTo(levelLeft, chartBottom);
+            ctx.lineTo(levelLeft + levelWidth, chartBottom);
             ctx.stroke();
             ctx.setLineDash([]);
 
             ctx.fillStyle = colors.text;
-            ctx.font = '11px Arial';
+            ctx.font = '10px Arial';
             ctx.textAlign = 'left';
-            ctx.fillText('M=0 (zero mode)', 60, height - 35);
+            ctx.fillText('M=0 (SM)', levelLeft + levelWidth + 8, chartBottom + 4);
 
-            // Axes labels
+            // Title
             ctx.fillStyle = colors.text;
-            ctx.font = '12px Arial';
+            ctx.font = 'bold 12px Arial';
             ctx.textAlign = 'center';
             ctx.fillText(label, width / 2, 25);
 
+            // Y-axis label
             ctx.save();
-            ctx.translate(20, height / 2);
+            ctx.translate(15, height / 2);
             ctx.rotate(-Math.PI / 2);
+            ctx.font = '11px Arial';
             ctx.fillText('Mass (TeV)', 0, 0);
             ctx.restore();
+
+            // First KK mode indicator
+            const firstKKMass = R_TeV * 1; // (1,0) or (0,1)
+            const firstKKY = chartBottom - (firstKKMass / maxMass) * chartHeight;
+            ctx.fillStyle = '#51cf66';
+            ctx.font = '9px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('← First KK mode ~5 TeV', levelLeft - 30, firstKKY);
         }
 
         // Interactive sliders
