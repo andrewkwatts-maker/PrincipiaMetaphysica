@@ -21,9 +21,9 @@
 
 const PM = {
   "meta": {
-    "version": "13.0",
+    "version": "14.0",
     "last_updated": "2025-12-21",
-    "description": "Principia Metaphysica - Complete Theory (v8.4 -> v13.0 FINAL)",
+    "description": "Principia Metaphysica - Complete Theory (v8.4 -> v14.0 GAUGE CLOSURE)",
     "simulations_run": [
       "proton_decay_rg_hybrid",
       "pmns_full_matrix",
@@ -69,7 +69,18 @@ const PM = {
       "attractor_scalar_v12_8",
       "master_action_v12_8",
       "thermal_time_v12_8",
-      "hidden_variables_v12_8"
+      "hidden_variables_v12_8",
+      "pneuma_racetrack_stability_v12_9",
+      "fermion_chirality_generations_v13_0",
+      "eft_validity_envelope_v13_0",
+      "g2_spinor_geometry_validation_v13_0",
+      "sp2r_gauge_fixing_validation_v13_0",
+      "pneuma_vielbein_emergence_validation_v13_0",
+      "mashiach_volume_stabilization_v13_0",
+      "quantum_fr_stability_v13_0",
+      "proton_decay_geometric_v13_0",
+      "doublet_triplet_splitting_v14_0",
+      "breaking_chain_geometric_v14_1"
     ]
   },
   "dimensions": {
@@ -105,16 +116,16 @@ const PM = {
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.8439331278118233e+34,
-    "tau_p_mean": 3.9873808922068203e+34,
-    "tau_p_std": 1.4900027073593393e+34,
-    "tau_p_lower_68": 2.458788364789338e+34,
-    "tau_p_upper_68": 5.544231913689585e+34,
-    "tau_p_lower_95": 1.4717636770318103e+34,
-    "tau_p_upper_95": 7.284958858768199e+34,
-    "tau_p_uncertainty_oom": 0.17337615595943345,
+    "tau_p_median": 3.854127854735301e+34,
+    "tau_p_mean": 3.9922391037759586e+34,
+    "tau_p_std": 1.5077563472940994e+34,
+    "tau_p_lower_68": 2.444706323736375e+34,
+    "tau_p_upper_68": 5.548651064286088e+34,
+    "tau_p_lower_95": 1.4520464470270908e+34,
+    "tau_p_upper_95": 7.336968368140912e+34,
+    "tau_p_uncertainty_oom": 0.17533899003661774,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.3017563639591754
+    "ratio_to_bound": 2.3078609908594614
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -126,10 +137,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.7951260316864707,
-    "theta_12_error": 1.2270057368105656,
-    "theta_13_error": 0.34886210130791695,
-    "delta_cp_error": 28.322011520550586,
+    "theta_23_error": 0.7951107868671428,
+    "theta_12_error": 1.1902267196672167,
+    "theta_13_error": 0.350427749002544,
+    "delta_cp_error": 28.12914965529392,
     "theta_23_deg": 45.0,
     "theta_12_deg": 33.59329049922625,
     "theta_13_deg": 8.568979552196335,
@@ -910,10 +921,58 @@ const PM = {
       "casimir_scaling": "V_Casimir ~ zeta_G2(-1) / R^8 (7D zeta regularization)",
       "status": "RESOLVED - Quantum corrections stabilize classical FR via Casimir"
     },
+    "proton_decay_geometric": {
+      "tau_p_years": 8.14497242021334e+34,
+      "tau_p_68_low": 6.845794967749571e+34,
+      "tau_p_68_high": 9.645105444730002e+34,
+      "oom_uncertainty": 0.07444154603993694,
+      "d_over_r": 0.12,
+      "suppression_factor": 2.125447220334627,
+      "k_matching": 4,
+      "br_e_pi0": 0.25,
+      "super_k_ratio": 4.877228994139724,
+      "above_super_k": true,
+      "mechanism": "TCS cycle separation (K=4 neck topology)",
+      "selection_rule": "Wavefunction overlap suppression ~ exp(-2\u03c0 d/R)",
+      "status": "RESOLVED - Geometric selection rule from TCS cycle separation"
+    },
+    "doublet_triplet_splitting": {
+      "b2": 4,
+      "k_matching": 4,
+      "sm_rank": 4,
+      "topology_supports_filter": true,
+      "triplet_index": 0,
+      "doublet_index_per_gen": 1,
+      "total_doublets": 3,
+      "triplet_suppression": 0.9999999,
+      "doublet_preservation": 1.0,
+      "z2_filter_active": true,
+      "m_gut": 2.118e+16,
+      "m_ew": 246.0,
+      "mass_hierarchy": 86097560975609.75,
+      "all_valid": true,
+      "mechanism": "Native TCS Topological Filter (triplets to shadow sector)",
+      "z2_action": "Z2 x Z2 (real structure + free involution + shadow projection)",
+      "index_formula": "N_doublets - N_triplets = integral A-hat(M) wedge ch(L_Y) mod Z2",
+      "status": "RESOLVED - Native G2 topological filter, no Wilson lines"
+    },
+    "breaking_chain": {
+      "chain": "SO(10) -> SU(4)_C x SU(2)_L x SU(2)_R -> SU(3)_C x SU(2)_L x U(1)_Y",
+      "m_gut": 2.118e+16,
+      "m_ps": 1200000000000.0,
+      "m_ew": 246.0,
+      "higgs_gut_break": "54_H",
+      "higgs_ps_break": "126_H",
+      "chain_geometric": true,
+      "pneuma_alignment": true,
+      "k_matching": 4,
+      "mechanism": "Pneuma (54_H) alignment with G2 7D curvature",
+      "status": "RESOLVED - Pati-Salam geometrically preferred by G2 projection"
+    },
     "summary": {
-      "version": "13.0",
-      "issues_addressed": 21,
-      "issues_closed": 14,
+      "version": "14.1",
+      "issues_addressed": 24,
+      "issues_closed": 17,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
         "T_omega from G-flux with 7/8 spinor fraction (Issue #2)",
@@ -935,7 +994,10 @@ const PM = {
         "Sp(2,R) gauge fixing (v13.0)",
         "Pneuma vielbein emergence (v13.0)",
         "Mashiach volume stabilization (v13.0)",
-        "Quantum FR stability (v13.0)"
+        "Quantum FR stability (v13.0)",
+        "Geometric proton decay (v13.0 - TCS cycle separation)",
+        "Doublet-triplet splitting (v14.1 - Native TCS Topological Filter)",
+        "Breaking chain selection (v14.1 - Geometric Pati-Salam)"
       ],
       "remaining_calibrated": [
         "theta_13 (8.57 deg - pending Yukawa intersection calc)",
@@ -947,13 +1009,22 @@ const PM = {
         "Geometric Chirality Mechanism (v13.0)",
         "Moduli Stabilization Mechanism (v13.0)",
         "EFT Validity Regime (v13.0)",
-        "Pneuma Condensate Formation (v13.0)"
+        "Pneuma Condensate Formation (v13.0)",
+        "Proton Decay Rate Uncertainty (v13.0 - TCS cycle separation)",
+        "Doublet-Triplet Splitting Naturalness (v14.1 - Native TCS Topological Filter)",
+        "Breaking Chain Selection (v14.1 - Geometric Pati-Salam)"
       ],
       "open_questions_resolved": [
         "Open Question 1: 37D Subgroup H -> Stabilizer is SO(12,1) (Bars 2006)",
         "Open Question 2: Vielbein Map -> Induced gravity from Pneuma bilinears (Sakharov)",
         "Open Question 3: Mashiach Stabilization -> G2 racetrack volume modulus (Acharya/KKLT)",
         "Open Question 4: Quantum FR Stability -> Racetrack + Casimir correction (Freund-Rubin)"
+      ],
+      "gauge_sector_closure": [
+        "Gauge Unification (3-loop RG + thresholds): RESOLVED",
+        "Proton Decay (TCS cycle separation d/R=0.12): RESOLVED",
+        "Doublet-Triplet Splitting (v14.1 Native Topological Filter): RESOLVED",
+        "Breaking Chain Selection (v14.1 Geometric Pati-Salam): RESOLVED"
       ],
       "grade": "A+ (maximum possible rigor with current tools)",
       "publication_ready": true
