@@ -71,17 +71,20 @@
             }
 
             const obj = PM[category][param];
-            if (!obj) {
+            if (obj === undefined || obj === null) {
                 console.warn(`Parameter "${param}" not found in PM.${category}`);
                 return;
             }
 
-            // Get the value - either from a nested field or the main value
+            // Get the value - handle both object format (with .value) and direct primitives
             let value;
-            if (field && obj[field] !== undefined) {
+            if (field && typeof obj === 'object' && obj[field] !== undefined) {
                 value = obj[field];
-            } else {
+            } else if (typeof obj === 'object' && obj !== null && obj.value !== undefined) {
                 value = obj.value;
+            } else {
+                // Direct primitive value (number, string, etc.)
+                value = obj;
             }
 
             // Use display string if available, otherwise format value
