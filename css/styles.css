@@ -823,6 +823,17 @@ ul li::marker {
     border: 1px solid rgba(255, 212, 59, 0.3);
 }
 
+.severity-resolved {
+    background: rgba(81, 207, 102, 0.2);
+    color: #51cf66;
+    border: 1px solid rgba(81, 207, 102, 0.3);
+}
+
+.criticism-item.resolved {
+    border-left-color: #51cf66;
+    background: rgba(81, 207, 102, 0.05);
+}
+
 /* ================================
    EXPERIMENTAL PREDICTIONS SECTIONS
    ================================ */
