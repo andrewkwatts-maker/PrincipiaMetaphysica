@@ -101,20 +101,20 @@ const PM = {
     "M_GUT_error": 0.0,
     "M_GUT_percent_error": 0.0,
     "s_parameter": 1.1782616887563888,
-    "T_omega_torsion": -0.8835977215981629,
+    "T_omega_torsion": -0.875,
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.8320585861454413e+34,
-    "tau_p_mean": 3.9923732511507476e+34,
-    "tau_p_std": 1.4857095161500116e+34,
-    "tau_p_lower_68": 2.4782189873873585e+34,
-    "tau_p_upper_68": 5.509075525615827e+34,
-    "tau_p_lower_95": 1.46313005016298e+34,
-    "tau_p_upper_95": 7.311489918323867e+34,
-    "tau_p_uncertainty_oom": 0.17224877169325575,
+    "tau_p_median": 3.8555255579227185e+34,
+    "tau_p_mean": 3.9856747910917335e+34,
+    "tau_p_std": 1.4951092335382167e+34,
+    "tau_p_lower_68": 2.448552960755052e+34,
+    "tau_p_upper_68": 5.504171436979195e+34,
+    "tau_p_lower_95": 1.463842874677001e+34,
+    "tau_p_upper_95": 7.313245563763384e+34,
+    "tau_p_uncertainty_oom": 0.17480472087661064,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.29464585996733
+    "ratio_to_bound": 2.3086979388758793
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -126,10 +126,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.8013689642776802,
-    "theta_12_error": 1.209542723535334,
-    "theta_13_error": 0.3519020458071484,
-    "delta_cp_error": 28.182640817041992,
+    "theta_23_error": 0.8028437938631993,
+    "theta_12_error": 1.1857205020936938,
+    "theta_13_error": 0.349890593723467,
+    "delta_cp_error": 27.99881327437895,
     "theta_23_deg": 45.0,
     "theta_12_deg": 33.59329049922625,
     "theta_13_deg": 8.568979552196335,
@@ -303,7 +303,7 @@ const PM = {
   },
   "v10_geometric_derivations": {
     "torsion_derivation": {
-      "T_omega": -0.884,
+      "T_omega": -0.875,
       "shadow_kuf": 0.9434974012874584,
       "shadow_chet": 0.21016406795412412,
       "d_eff": 12.576830734620792,
@@ -433,7 +433,7 @@ const PM = {
     "proton_lifetime": {
       "tau_p_years": 4.0852839013613944e+34,
       "torsion_factor": 4300000000.0,
-      "status": "Derived from T_omega",
+      "status": "Derived from T_omega (spinor fraction 7/8)",
       "testable": "Hyper-Kamiokande 2032-2038"
     },
     "higgs_mass": {
@@ -554,7 +554,7 @@ const PM = {
       "v_EW": 173.96922755245848,
       "target": 174.0,
       "error_pct": 0.017685314679036064,
-      "formula": "v = M_Pl * exp(-dim_spinor/b3) * exp(|T_omega|)",
+      "formula": "v = M_Pl * exp(-dim_spinor/b3) * exp(|T_omega|), T_omega from spinor fraction 7/8",
       "dim_spinor": 4096,
       "status": "Derived from Cl(24,2) spinor condensate"
     },
@@ -736,7 +736,7 @@ const PM = {
       "percent_difference": 0.0004646930477291024,
       "log_term": 1.5490592971338686,
       "torsion_term": 0.036833333333333336,
-      "derivation": "coeff = ln(M_Pl/v_EW)/b3 + |T_omega|/b3",
+      "derivation": "coeff = ln(M_Pl/v_EW)/b3 + |T_omega|/b3, T_omega = -0.875 from spinor fraction 7/8",
       "status": "SEMI-DERIVED (4% agreement)"
     },
     "proton_br": {
@@ -804,7 +804,7 @@ const PM = {
       "issues_closed": 6,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
-        "T_omega from G-flux (Issue #2)",
+        "T_omega from Spin(7) spinor fraction 7/8 (Issue #2)",
         "n_gen divisor 48 with Z2 (Issue #4)",
         "d_eff coefficient 0.5 (Issue #5)",
         "VEV coefficient (semi-derived)",

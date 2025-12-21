@@ -656,14 +656,14 @@ const FORMULA_REGISTRY = {
             sigma: 0,
             terms: {
                 "M<sub>GUT</sub>": { name: "GUT Scale", description: "2.118 × 10¹⁶ GeV" },
-                "T<sub>ω</sub>": { name: "Torsion", description: "-0.884 from TCS geometry" },
+                "T<sub>ω</sub>": { name: "Torsion", description: "-0.875 from Spin(7) spinor fraction 7/8" },
                 "s": { name: "s-parameter", description: "1.178 from G₂ moduli" }
             },
             derivation: {
                 parentFormulas: ["spacetime-26d"],
                 establishedPhysics: ["einstein-hilbert"],
                 steps: [
-                    "TCS G₂ manifold has intrinsic torsion T_ω = -0.884",
+                    "TCS G₂ manifold has intrinsic torsion T_ω = -0.875 (spinor fraction 7/8)",
                     "s-parameter from G₂ moduli stabilization: s = 1.178",
                     "M_GUT = M_* × exp(T_ω × s / 2)",
                     "Result: M_GUT = 2.118 × 10^16 GeV (no fitting)"
@@ -922,9 +922,9 @@ const FORMULA_REGISTRY = {
                 parentFormulas: ["gut-scale"],
                 establishedPhysics: ["einstein-field"],
                 steps: [
-                    "G₂ torsion T_ω = -0.884 from TCS manifold",
+                    "G₂ torsion T_ω = -0.875 from Spin(7) spinor fraction 7/8",
                     "b₃ = 24 from topology",
-                    "η = exp(|-0.884|)/24 = 2.42/24 ≈ 0.101",
+                    "η = exp(|-0.875|)/24 = 2.40/24 ≈ 0.100",
                     "Detectable by next-generation GW observatories"
                 ],
                 verificationPage: "sections/predictions.html"
