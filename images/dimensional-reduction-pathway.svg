@@ -2,7 +2,7 @@
 <svg width="1400" height="900" xmlns="http://www.w3.org/2000/svg">
   <!-- Title -->
   <text x="700" y="30" font-size="26" font-weight="bold" text-anchor="middle" font-family="Arial, sans-serif">
-    Dimensional Reduction Pathway v12.8: 26D → 13D → 7D (G₂) → 6D Branches → 4D Observable
+    Dimensional Reduction Pathway v13.0: 26D → 13D → 7D (G₂) → 6D Branches → 4D Observable
   </text>
   <text x="700" y="55" font-size="14" text-anchor="middle" font-family="Arial, sans-serif" fill="#555">
     Complete pathway showing Sp(2,R) shadow projection and dual-branch compactification structure
@@ -23,6 +23,10 @@
   <!-- Arrow 1: Sp(2,R) shadow projection -->
   <g id="arrow1">
     <path d="M 280 190 L 350 190" stroke="#8b7fff" stroke-width="5" fill="none" marker-end="url(#arrowhead1)"/>
+  </g>
+
+  <!-- Arrow 1 labels (drawn after path to appear on top) -->
+  <g id="arrow1-labels">
     <text x="315" y="165" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">Sp(2,R)</text>
     <text x="315" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">shadow</text>
     <text x="315" y="215" font-size="11" text-anchor="middle" fill="#555">t⊥ projection</text>
@@ -35,8 +39,8 @@
     <text x="470" y="152" font-size="28" font-weight="bold" text-anchor="middle" fill="white">13D</text>
     <text x="470" y="175" font-size="15" text-anchor="middle" fill="white">Signature: (12, 1)</text>
     <text x="470" y="195" font-size="12" text-anchor="middle" fill="#ecf0f1">12 spatial × 2 mirrors = 24</text>
-    <text x="470" y="213" font-size="11" text-anchor="middle" fill="#ffeb3b">Gate: Ρ,Τ,Ζ,Ο,Ι,Σ,Π,Ω,Χ,Υ,Β,Κ</text>
-    <text x="470" y="229" font-size="11" text-anchor="middle" fill="#ffeb3b">Found: Δ,Ε,Γ,Α,Λ,Μ,Ν,Ξ,Η,Θ,Φ,Ψ</text>
+    <text x="470" y="213" font-size="11" text-anchor="middle" fill="#ffeb3b">Shadow_ח: Ρ,Τ,Ζ,Ο,Ι,Σ,Π,Ω,Χ,Υ,Β,Κ</text>
+    <text x="470" y="229" font-size="11" text-anchor="middle" fill="#ffeb3b">Shadow_ק: Δ,Ε,Γ,Α,Λ,Μ,Ν,Ξ,Η,Θ,Φ,Ψ</text>
     <text x="470" y="250" font-size="10" text-anchor="middle" fill="#ecf0f1">Sitra Shadow Coupling</text>
     <text x="470" y="266" font-size="10" text-anchor="middle" fill="#ecf0f1">(Shadow_ק, Shadow_ח)</text>
   </g>
@@ -44,6 +48,10 @@
   <!-- Arrow 2: CY4 × S¹ compactification -->
   <g id="arrow2">
     <path d="M 590 190 L 660 190" stroke="#8b7fff" stroke-width="5" fill="none" marker-end="url(#arrowhead1)"/>
+  </g>
+
+  <!-- Arrow 2 labels (drawn after path to appear on top) -->
+  <g id="arrow2-labels">
     <text x="625" y="165" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">G₂ holonomy</text>
     <text x="625" y="180" font-size="14" font-weight="bold" text-anchor="middle" fill="#8b7fff">compactify</text>
     <text x="625" y="215" font-size="11" text-anchor="middle" fill="#555">TCS construction</text>
@@ -56,10 +64,10 @@
     <text x="780" y="150" font-size="28" font-weight="bold" text-anchor="middle" fill="white">7D</text>
     <text x="780" y="175" font-size="13" text-anchor="middle" fill="#ecf0f1">TCS G₂ holonomy</text>
     <text x="780" y="193" font-size="13" text-anchor="middle" fill="#ecf0f1">Twisted Connected Sum</text>
-    <text x="780" y="220" font-size="12" font-weight="bold" text-anchor="middle" fill="white">χ_eff = 144</text>
-    <text x="780" y="238" font-size="11" text-anchor="middle" fill="#ecf0f1">Euler characteristic</text>
-    <text x="780" y="258" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffeb3b">χ_eff / 48 = 3</text>
-    <text x="780" y="273" font-size="10" text-anchor="middle" fill="#ecf0f1">→ 3 generations!</text>
+    <text x="780" y="215" font-size="11" font-weight="bold" text-anchor="middle" fill="white">χ_eff = 144, N_flux = 24</text>
+    <text x="780" y="233" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffeb3b">n_gen = N_flux/spinor_DOF</text>
+    <text x="780" y="248" font-size="11" font-weight="bold" text-anchor="middle" fill="#ffeb3b">= 24/8 = 3</text>
+    <text x="780" y="265" font-size="10" text-anchor="middle" fill="#ecf0f1">(spinor saturation)</text>
   </g>
 
   <!-- Arrow 3: Split into two branches -->
@@ -68,8 +76,10 @@
     <path d="M 780 280 L 780 340 L 600 340 L 600 380" stroke="#ff7eb6" stroke-width="4" fill="none" marker-end="url(#arrowhead2)"/>
     <!-- Right branch arrow -->
     <path d="M 780 280 L 780 340 L 960 340 L 960 380" stroke="#ff7eb6" stroke-width="4" fill="none" marker-end="url(#arrowhead2)"/>
+  </g>
 
-    <!-- Split label -->
+  <!-- Split label (drawn after arrows to appear on top) -->
+  <g id="split-label">
     <rect x="710" y="305" width="140" height="50" rx="8" fill="rgba(255,126,182,0.15)" stroke="rgba(255,126,182,0.6)" stroke-width="2"/>
     <text x="780" y="325" font-size="13" font-weight="bold" text-anchor="middle" fill="#ff7eb6">BRANCH SPLIT</text>
     <text x="780" y="343" font-size="10" text-anchor="middle" fill="#ff7eb6">Further compactification</text>
@@ -111,7 +121,10 @@
     <path d="M 600 590 L 600 650 L 700 650 L 700 680" stroke="#2ecc71" stroke-width="4" fill="none" marker-end="url(#arrowhead3)"/>
     <!-- Right path -->
     <path d="M 960 590 L 960 650 L 700 650" stroke="#2ecc71" stroke-width="4" fill="none"/>
+  </g>
 
+  <!-- Convergence label (drawn after arrows to appear on top) -->
+  <g id="convergence-label">
     <text x="700" y="640" font-size="12" font-weight="bold" text-anchor="middle" fill="#2ecc71">Both branches merge</text>
   </g>
 
@@ -133,8 +146,8 @@
     <!-- Section 0: 24 Dimension Nomenclature -->
     <rect x="1115" y="145" width="240" height="90" fill="#f0e6ff" stroke="#8b7fff" stroke-width="2" rx="5"/>
     <text x="1235" y="163" font-size="12" font-weight="bold" text-anchor="middle" fill="#6b5fff">24 Shadow Dimensions (v12.9)</text>
-    <text x="1235" y="180" font-size="10" text-anchor="middle" fill="#666">Gate: Ρ,Τ,Ζ,Ο,Ι,Σ,Π,Ω,Χ,Υ,Β,Κ (ח)</text>
-    <text x="1235" y="195" font-size="10" text-anchor="middle" fill="#666">Found: Δ,Ε,Γ,Α,Λ,Μ,Ν,Ξ,Η,Θ,Φ,Ψ (ק)</text>
+    <text x="1235" y="180" font-size="10" text-anchor="middle" fill="#666">Shadow_ח: Ρ,Τ,Ζ,Ο,Ι,Σ,Π,Ω,Χ,Υ,Β,Κ (ח)</text>
+    <text x="1235" y="195" font-size="10" text-anchor="middle" fill="#666">Shadow_ק: Δ,Ε,Γ,Α,Λ,Μ,Ν,Ξ,Η,Θ,Φ,Ψ (ק)</text>
     <text x="1235" y="210" font-size="10" text-anchor="middle" fill="#666">Paired by cardinal directions</text>
     <text x="1235" y="225" font-size="9" text-anchor="middle" fill="#999" font-style="italic">Z₂ mirror brane structure</text>
 
@@ -149,43 +162,45 @@
     <text x="1235" y="328" font-size="10" text-anchor="middle" fill="#666">(24,2)→(12,1)→(5,1)→(3,1)</text>
 
     <!-- Section 2: Generation Formula -->
-    <rect x="1115" y="340" width="240" height="60" fill="#fff9e6" stroke="#f39c12" stroke-width="2" rx="5"/>
-    <text x="1235" y="358" font-size="12" font-weight="bold" text-anchor="middle" fill="#d68910">Generation Count:</text>
-    <text x="1235" y="374" font-size="12" font-weight="bold" text-anchor="middle" fill="#2c3e50">χ_eff / 48 = 144/48 = 3</text>
-    <text x="1235" y="390" font-size="9" text-anchor="middle" fill="#999" font-style="italic">Geometric origin!</text>
+    <rect x="1115" y="340" width="240" height="95" fill="#fff9e6" stroke="#f39c12" stroke-width="2" rx="5"/>
+    <text x="1235" y="358" font-size="12" font-weight="bold" text-anchor="middle" fill="#d68910">Generation Count (v13.0):</text>
+    <text x="1235" y="374" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">n_gen = N_flux/spinor_DOF</text>
+    <text x="1235" y="390" font-size="11" font-weight="bold" text-anchor="middle" fill="#2c3e50">= 24/8 = 3</text>
+    <text x="1235" y="406" font-size="9" text-anchor="middle" fill="#666">Spinor reduction: 8192→64→3</text>
+    <text x="1235" y="420" font-size="9" text-anchor="middle" fill="#666">Chiral filter: 7/8 = 0.875</text>
+    <text x="1235" y="433" font-size="9" text-anchor="middle" fill="#999" font-style="italic">(Spinor saturation!)</text>
 
     <!-- Section 3: Pathway Summary -->
-    <text x="1235" y="415" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Reduction Steps:</text>
-    <text x="1120" y="438" font-size="11" text-anchor="start" fill="#666">1. 26D → 13D via Sp(2,R)</text>
-    <text x="1125" y="453" font-size="10" text-anchor="start" fill="#999">Shadow projection</text>
+    <text x="1235" y="450" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Reduction Steps:</text>
+    <text x="1120" y="473" font-size="11" text-anchor="start" fill="#666">1. 26D → 13D via Sp(2,R)</text>
+    <text x="1125" y="488" font-size="10" text-anchor="start" fill="#999">Shadow projection</text>
 
-    <text x="1120" y="475" font-size="11" text-anchor="start" fill="#666">2. 13D → 7D via G₂</text>
-    <text x="1125" y="490" font-size="10" text-anchor="start" fill="#999">TCS G₂ compactification</text>
+    <text x="1120" y="510" font-size="11" text-anchor="start" fill="#666">2. 13D → 7D via G₂</text>
+    <text x="1125" y="525" font-size="10" text-anchor="start" fill="#999">TCS G₂ compactification</text>
 
-    <text x="1120" y="512" font-size="11" text-anchor="start" fill="#666">3. 7D → 6D branches</text>
-    <text x="1125" y="527" font-size="10" text-anchor="start" fill="#999">SM: (5,1) signature</text>
-    <text x="1125" y="542" font-size="10" text-anchor="start" fill="#999">Gen: 3×(3,1) spaces</text>
+    <text x="1120" y="547" font-size="11" text-anchor="start" fill="#666">3. 7D → 6D branches</text>
+    <text x="1125" y="562" font-size="10" text-anchor="start" fill="#999">SM: (5,1) signature</text>
+    <text x="1125" y="577" font-size="10" text-anchor="start" fill="#999">Gen: 3×(3,1) spaces</text>
 
-    <text x="1120" y="564" font-size="11" text-anchor="start" fill="#666">4. Branches → 4D</text>
-    <text x="1125" y="579" font-size="10" text-anchor="start" fill="#999">Observable (3,1) spacetime</text>
+    <text x="1120" y="599" font-size="11" text-anchor="start" fill="#666">4. Branches → 4D</text>
+    <text x="1125" y="614" font-size="10" text-anchor="start" fill="#999">Observable (3,1) spacetime</text>
 
     <!-- Section 4: G₂ Topology -->
-    <rect x="1115" y="600" width="240" height="100" fill="#e8f8f5" stroke="#16a085" stroke-width="2" rx="5"/>
-    <text x="1235" y="617" font-size="13" font-weight="bold" text-anchor="middle" fill="#117a65">G₂ Topology (TCS):</text>
-    <text x="1235" y="633" font-size="11" text-anchor="middle" fill="#666">b₂ = 4 (associative cycles)</text>
-    <text x="1235" y="648" font-size="11" text-anchor="middle" fill="#666">b₃ = 24 (co-associative)</text>
-    <text x="1235" y="663" font-size="11" text-anchor="middle" fill="#666">Determines Shadow_ק, Shadow_ח</text>
-    <text x="1235" y="678" font-size="10" font-weight="bold" text-anchor="middle" fill="#16a085">7 G₂ Directions:</text>
-    <text x="1235" y="691" font-size="9" text-anchor="middle" fill="#666">Gח Gג Gת Gנ Gה Gי Gמ</text>
+    <rect x="1115" y="630" width="240" height="100" fill="#e8f8f5" stroke="#16a085" stroke-width="2" rx="5"/>
+    <text x="1235" y="647" font-size="13" font-weight="bold" text-anchor="middle" fill="#117a65">G₂ Topology (TCS):</text>
+    <text x="1235" y="663" font-size="11" text-anchor="middle" fill="#666">b₂ = 4 (associative cycles)</text>
+    <text x="1235" y="678" font-size="11" text-anchor="middle" fill="#666">b₃ = 24 (co-associative)</text>
+    <text x="1235" y="693" font-size="11" text-anchor="middle" fill="#666">Determines Shadow_ק, Shadow_ח</text>
+    <text x="1235" y="708" font-size="10" font-weight="bold" text-anchor="middle" fill="#16a085">7 G₂ Directions:</text>
+    <text x="1235" y="721" font-size="9" text-anchor="middle" fill="#666">Gח Gג Gת Gנ Gה Gי Gמ</text>
 
     <!-- Section 5: Important Notes -->
-    <text x="1235" y="711" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Critical Points:</text>
-    <text x="1120" y="732" font-size="10" text-anchor="start" fill="#666">• Use "shadow" terminology</text>
-    <text x="1120" y="747" font-size="10" text-anchor="start" fill="#666">• Sp(2,R) not Sp(1,1)</text>
-    <text x="1120" y="762" font-size="10" text-anchor="start" fill="#666">• χ_eff = 144 → 3 generations</text>
-    <text x="1120" y="777" font-size="10" text-anchor="start" fill="#666">• Dual-branch structure</text>
-    <text x="1120" y="792" font-size="10" text-anchor="start" fill="#666">• SM branch: (5,1) signature</text>
-    <text x="1120" y="807" font-size="10" text-anchor="start" fill="#666">• Gen branch: 3×(3,1) spaces</text>
+    <text x="1235" y="743" font-size="14" font-weight="bold" text-anchor="middle" fill="#555">Critical Points:</text>
+    <text x="1120" y="764" font-size="10" text-anchor="start" fill="#666">• Use "shadow" terminology</text>
+    <text x="1120" y="779" font-size="10" text-anchor="start" fill="#666">• Sp(2,R) not Sp(1,1)</text>
+    <text x="1120" y="794" font-size="10" text-anchor="start" fill="#666">• N_flux = 24 → 3 generations</text>
+    <text x="1120" y="809" font-size="10" text-anchor="start" fill="#666">• Dual-branch structure</text>
+    <text x="1120" y="824" font-size="10" text-anchor="start" fill="#666">• SM branch: (5,1) signature</text>
 
     <!-- Section 6: Predictions -->
     <rect x="1115" y="820" width="240" height="0" fill="#fef5e7" stroke="#d68910" stroke-width="0" rx="5"/>
