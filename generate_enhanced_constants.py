@@ -73,24 +73,54 @@ def generate_enhanced_constants():
 
         'topology': {
             'chi_eff': create_enhanced_constant(
-                config.FundamentalConstants.euler_characteristic_effective(),
+                config.TCSTopologyParameters.CHI_EFF,
                 unit='dimensionless',
                 display='144',
                 description='Effective Euler characteristic',
                 formula='χ_eff = 144 from TCS G₂ construction',
-                derivation='Flux quantization on TCS manifold',
-                source='geometric',
-                references=['Corti et al 2013']
+                derivation='Flux quantization on TCS manifold #187',
+                source='geometric:TCSTopologyParameters',
+                references=['Corti-Haskins-Nordström-Pacini 2015']
+            ),
+            'b2': create_enhanced_constant(
+                config.TCSTopologyParameters.B2,
+                unit='dimensionless',
+                display='4',
+                description='Second Betti number (h^{1,1})',
+                formula='b₂ = K = 4 matching K3 fibres',
+                derivation='TCS gluing construction',
+                source='geometric:TCSTopologyParameters',
+                references=['CHNP 2015']
             ),
             'b3': create_enhanced_constant(
-                24,
+                config.TCSTopologyParameters.B3,
                 unit='dimensionless',
                 display='24',
                 description='Number of coassociative 4-cycles',
-                formula='b₃ = 24 from TCS matching',
-                derivation='G₂ cohomology',
-                source='geometric',
-                references=['CHNP 2018']
+                formula='b₃ = b₂(X₁) + b₂(X₂) + K + 1 = 24',
+                derivation='G₂ cohomology from TCS gluing',
+                source='geometric:TCSTopologyParameters',
+                references=['CHNP 2015']
+            ),
+            'k_matching': create_enhanced_constant(
+                config.TCSTopologyParameters.K_MATCHING,
+                unit='dimensionless',
+                display='4',
+                description='Number of matching K3 fibres',
+                formula='K = b₂ = 4',
+                derivation='TCS construction parameter',
+                source='geometric:TCSTopologyParameters',
+                references=['CHNP 2015']
+            ),
+            'n_flux': create_enhanced_constant(
+                config.TCSTopologyParameters.n_flux(),
+                unit='dimensionless',
+                display='24',
+                description='Flux quantization number',
+                formula='N_flux = χ_eff / 6 = 144 / 6',
+                derivation='Index theorem on G₂ manifold',
+                source='geometric:TCSTopologyParameters',
+                references=['CHNP 2015']
             ),
             'n_gen': create_enhanced_constant(
                 config.FundamentalConstants.fermion_generations(),
@@ -105,6 +135,26 @@ def generate_enhanced_constants():
                 agreement_sigma=0.00,
                 agreement_text='EXACT MATCH',
                 references=['PDG 2024']
+            ),
+            'hodge_h11': create_enhanced_constant(
+                config.TCSTopologyParameters.HODGE_H11,
+                unit='dimensionless',
+                display='4',
+                description='Kähler moduli dimension',
+                formula='h^{1,1} = 4',
+                derivation='G₂ Hodge theory',
+                source='geometric:TCSTopologyParameters',
+                references=['CHNP 2015']
+            ),
+            'hodge_h31': create_enhanced_constant(
+                config.TCSTopologyParameters.HODGE_H31,
+                unit='dimensionless',
+                display='68',
+                description='Associative 3-cycle moduli dimension',
+                formula='h^{3,1} = 68',
+                derivation='G₂ Hodge theory',
+                source='geometric:TCSTopologyParameters',
+                references=['CHNP 2015']
             ),
         },
 
