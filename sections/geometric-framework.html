@@ -1447,7 +1447,7 @@
         Cl(12,2) ⊗ Cl(12,2)
        </text>
        <text fill="#adb5bd" font-size="11" text-anchor="middle" x="550" y="282">
-        Full <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D Clifford algebra (before gauge fixing)
+        Full 26D Clifford algebra (before gauge fixing)
        </text>
        <!-- Component count -->
        <rect fill="rgba(255,193,7,0.2)" height="70" rx="10" stroke="rgba(255,193,7,0.6)" stroke-width="2" width="380" x="360" y="300">
@@ -1464,7 +1464,7 @@
         components
        </text>
        <text fill="#adb5bd" font-size="11" text-anchor="middle" x="550" y="345">
-        <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D (24,2) signature before gauge fixing
+        26D (24,2) signature before gauge fixing
        </text>
        <text fill="#ffc107" font-size="10" font-weight="600" text-anchor="middle" x="550" y="363">
         Shared time structure: γ
@@ -1549,7 +1549,7 @@
       <strong>
        Clifford Algebra Spinor Reduction:
       </strong>
-      The <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D spacetime with signature (24,2) has Clifford algebra Cl(24,2) with spinor dimension 2
+      The 26D spacetime with signature (24,2) has Clifford algebra Cl(24,2) with spinor dimension 2
       <sup>
        13
       </sup>
@@ -2702,25 +2702,29 @@
      </p>
     </div>
     <!-- 4-Stage Dimensional Reduction -->
-    <div class="highlight-box" id="four-stage-reduction" style="border-left-color: #ffc107; background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(139, 127, 255, 0.08)); margin: 2rem 0;">
+    <div class="highlight-box" id="five-stage-reduction" style="border-left-color: #ffc107; background: linear-gradient(135deg, rgba(255, 193, 7, 0.1), rgba(139, 127, 255, 0.08)); margin: 2rem 0;">
      <h3 style="color: #ffc107;">
-      Four-Stage Dimensional Reduction Pathway (Clarification)
+      Five-Stage Dimensional Reduction Pathway (v14.1)
      </h3>
      <p>
       <strong>
-       Update:
+       Update (v14.1):
       </strong>
-      The dimensional reduction from <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D to 4D proceeds through four distinct stages,
+      The dimensional reduction from 26D to 4D proceeds through five distinct stages,
                     with a crucial distinction between
       <strong>
        gauge fixing
       </strong>
-      (Stages 1-2) and
+      (Stages 1-2),
+      <strong>
+       G₂ holonomy
+      </strong>
+      (Stage 3), and
       <strong>
        compactification
       </strong>
-      (Stages 3-4).
-                    This clarifies the conceptual framework and resolves the dimensional counting issue.
+      (Stages 4-5).
+                    The explicit 7D G₂ holonomy stage is critical for generating SO(10) gauge symmetry and 3 fermion families.
      </p>
      <div class="equation-box" style="background: rgba(255, 193, 7, 0.15); border: 2px solid rgba(255, 193, 7, 0.4); margin: 1.5rem 0;">
       <div style="font-size: 1.3rem; font-family: 'Crimson Text', serif; margin-bottom: 1rem;">
@@ -2861,49 +2865,39 @@
          Spinor: 8192 → 64 components
         </td>
        </tr>
-       <tr style="background: rgba(255, 126, 182, 0.08);">
+       <tr style="background: rgba(79, 172, 254, 0.08);">
         <td>
          <strong>
           Stage 3
          </strong>
         </td>
         <td>
-         <span style="color: #ff7eb6; font-weight: 600;">
-          Compactification
+         <span style="color: #4facfe; font-weight: 600;">
+          G₂ Holonomy
          </span>
         </td>
         <td>
-         G₂ Compactification
+         7D G₂ Internal Space
         </td>
         <td>
-         <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D → 6D bulk
+         13D → 13D (7D internal)
         </td>
         <td>
-         (5,1)
+         G₂ ⊂ SO(7)
         </td>
         <td>
-         7D G₂ manifold (TCS #187) compact
+         <strong>
+          7D G₂ manifold (TCS #187)
+         </strong>
          <br/>
-         χ
-         <sub>
-          eff
-         </sub>
-         = 144, b₂ = 4, b₃ = 24
+         Explicit construction: b₂=4, b₃=24
          <br/>
-         N
-         <sub>
-          flux
-         </sub>
-         = χ
-         <sub>
-          eff
-         </sub>
-         /6 = 24
+         D₅ singularity → <strong>SO(10)</strong> gauge symmetry
          <br/>
-         D₅ singularity → SO(10)
+         n<sub>gen</sub> = χ<sub>eff</sub>/48 = 3 families
         </td>
        </tr>
-       <tr style="background: rgba(255, 126, 182, 0.12);">
+       <tr style="background: rgba(255, 126, 182, 0.08);">
         <td>
          <strong>
           Stage 4
@@ -2915,10 +2909,40 @@
          </span>
         </td>
         <td>
+         G₂ KK Reduction
+        </td>
+        <td>
+         13D → 6D bulk
+        </td>
+        <td>
+         (5,1)
+        </td>
+        <td>
+         Integrate over 7D G₂
+         <br/>
+         χ<sub>eff</sub> = 144, N<sub>flux</sub> = 24
+         <br/>
+         Moduli stabilization via racetrack
+         <br/>
+         Spinor: 64 → 8 per generation
+        </td>
+       </tr>
+       <tr style="background: rgba(255, 126, 182, 0.12);">
+        <td>
+         <strong>
+          Stage 5
+         </strong>
+        </td>
+        <td>
+         <span style="color: #ff7eb6; font-weight: 600;">
+          Compactification
+         </span>
+        </td>
+        <td>
          Final T² Compactification
         </td>
         <td>
-         6D → <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D
+         6D → 4D
         </td>
         <td>
          (3,1)
@@ -2931,47 +2955,40 @@
          <strong>
           Total internal:
          </strong>
-         9D (<span class="pm-value" data-category="dimensions" data-param="D_G2"></span>D G₂ + 2D T²)
+         9D (7D G₂ + 2D T²)
         </td>
        </tr>
       </tbody>
      </table>
      <div class="warning-box" style="margin: 1.5rem 0;">
       <h4>
-       Critical Distinction: Gauge Fixing ≠ Compactification
+       Critical Distinction: Three Conceptually Different Processes
       </h4>
       <p>
-       <strong>
-        Stage 2 (Sp(2,R) gauge fixing)
-       </strong>
-       is fundamentally different from compactification:
+       The five stages involve three fundamentally different mechanisms:
       </p>
       <ul style="margin-top: 0.5rem; padding-left: 1.5rem; color: var(--text-secondary);">
        <li>
-        <strong>
-         Gauge Fixing:
+        <strong style="color: #51cf66;">
+         Gauge Fixing (Stages 1-2):
         </strong>
-        Projects <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D (24,2) onto a 13D (12,1)
+        Projects 26D (24,2) onto a 13D (12,1)
         <em>
          shadow
         </em>
-        by eliminating gauge redundancy. No dimensions are "curled up" - we simply fix the 2-time gauge freedom.
+        by eliminating gauge redundancy. No dimensions are "curled up" - we simply fix the 2-time gauge freedom via Sp(2,R) constraints.
        </li>
        <li>
-        <strong>
-         Compactification:
+        <strong style="color: #4facfe;">
+         G₂ Holonomy (Stage 3):
         </strong>
-        Physical dimensions become compact manifolds with finite volume (e.g., 7D G₂, 2D torus).
+        The 7D internal space has G₂ holonomy - this is where SO(10) gauge symmetry emerges from D₅ singularities and the 3-generation structure is determined by b₃=24 cycles. This is the <em>geometric heart</em> of the theory.
        </li>
        <li>
-        <strong>
-         Key Point:
+        <strong style="color: #ff7eb6;">
+         Compactification (Stages 4-5):
         </strong>
-        The 13D is
-        <em>
-         not
-        </em>
-        <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D with 13 dimensions compactified - it's an effective description after gauge redundancy removal.
+        Physical dimensions become compact manifolds with finite volume. The G₂ manifold and T² torus reduce 13D → 6D → 4D.
        </li>
       </ul>
      </div>
@@ -3172,7 +3189,7 @@
       <sup>
        14
       </sup>
-      → <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D Spacetime
+      → 4D Spacetime
      </div>
      <svg class="diagram-svg" viewbox="0 0 1000 550" xmlns="http://www.w3.org/2000/svg">
       <!-- Definitions for gradients and arrows -->
@@ -3222,31 +3239,14 @@
       </defs>
       <!-- Main Title -->
       <text fill="#8b7fff" font-size="18" font-weight="700" text-anchor="middle" x="500" y="30">
-       <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D Two-Time Framework: M
-       <tspan baseline-shift="super" font-size="14">
-        26
-       </tspan>
-       = M
-       <tspan baseline-shift="sub" font-size="12">
-        A
-       </tspan>
-       <tspan baseline-shift="super" font-size="14">
-        14
-       </tspan>
-       ⊗ M
-       <tspan baseline-shift="sub" font-size="12">
-        B
-       </tspan>
-       <tspan baseline-shift="super" font-size="14">
-        14
-       </tspan>
+       26D Two-Time Framework: M<tspan baseline-shift="super" font-size="14">26</tspan> = M<tspan baseline-shift="sub" font-size="12">A</tspan><tspan baseline-shift="super" font-size="14">14</tspan> ⊗ M<tspan baseline-shift="sub" font-size="12">B</tspan><tspan baseline-shift="super" font-size="14">14</tspan>
       </text>
-      <!-- LEFT: <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D shadow Structure with detailed breakdown -->
+      <!-- LEFT: 26D → 13D shadow Structure with detailed breakdown -->
       <g class="node">
        <rect fill="url(#bgGrad)" height="420" rx="16" stroke="rgba(139,127,255,0.5)" stroke-width="2.5" width="280" x="30" y="60">
        </rect>
        <text fill="#8b7fff" font-size="17" font-weight="700" text-anchor="middle" x="170" y="90">
-        <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D = 14D × 2
+        26D = 14D × 2
        </text>
        <text fill="#adb5bd" font-size="11" text-anchor="middle" x="170" y="112">
         Two 14D halves, shared 2-time
@@ -3330,14 +3330,14 @@
        <!-- Reduction path -->
        <rect fill="rgba(139,127,255,0.08)" height="50" rx="10" stroke="rgba(139,127,255,0.4)" stroke-dasharray="4,3" stroke-width="1.5" width="240" x="50" y="415">
         <title>
-         After Sp(2,R) gauge fixing: <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D → effective 13D per half
+         After Sp(2,R) gauge fixing: 26D → effective 13D per half
         </title>
        </rect>
        <text fill="#8b7fff" font-size="11" text-anchor="middle" x="170" y="435">
         After gauge fixing:
        </text>
        <text fill="#8b7fff" font-size="12" font-weight="600" text-anchor="middle" x="170" y="453">
-        Effective <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D = (12,1) each
+        Effective 13D = (12,1) each
        </text>
       </g>
       <!-- Arrow 1: Sp(2,R) Gauge Reduction -->
@@ -3354,7 +3354,7 @@
        <rect fill="rgba(81,207,102,0.08)" height="240" rx="14" stroke="rgba(81,207,102,0.5)" stroke-width="2" width="200" x="380" y="120">
        </rect>
        <text fill="#51cf66" font-size="14" font-weight="600" text-anchor="middle" x="480" y="145">
-        Gauge-Fixed <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D+<span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D
+        Gauge-Fixed 13D+13D
        </text>
        <text fill="#adb5bd" font-size="10" text-anchor="middle" x="480" y="163">
         Each half: (12,1) signature
@@ -3362,11 +3362,11 @@
        <!-- <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D decomposition -->
        <rect fill="rgba(139,127,255,0.15)" height="50" rx="8" stroke="rgba(139,127,255,0.5)" stroke-width="1.5" width="160" x="400" y="180">
         <title>
-         <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D = 4D observable + 9D compact
+         13D = 4D observable + 9D compact
         </title>
        </rect>
        <text fill="#f8f9fa" font-size="12" text-anchor="middle" x="480" y="202">
-        <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D = 4D + 9D
+        13D = 4D + 9D
        </text>
        <text fill="#adb5bd" font-size="10" text-anchor="middle" x="480" y="219">
         Per brane
@@ -3449,7 +3449,7 @@
         </tspan>
         R
         <tspan baseline-shift="sub" font-size="8">
-         <span class="pm-value" data-category="dimensions" data-param="D_observable"></span>D
+         4D
         </tspan>
        </text>
        <!-- Gauge Sector -->
@@ -4181,7 +4181,7 @@
         <strong>
          Euler characteristic:
         </strong>
-        χ(G₂) = 0 generically, but flux dressing yields χ = <span class="pm-value" data-category="topology" data-param="chi_eff"></span> (72 per copy, Z₂ mirror)
+        χ(G₂) = 0 generically, but flux dressing yields χ<sub>eff</sub> = 72 (72 per copy, Z₂ mirror)
        </li>
        <li>
         <strong>
@@ -4219,7 +4219,7 @@
      <strong>
       G₂ manifold
      </strong>
-     that emerges from Pneuma field condensates and compactifies the <span class="pm-value" data-category="dimensions" data-param="D_after_sp2r"></span>D effective theory down to a 6D bulk.
+     that emerges from Pneuma field condensates and compactifies the 13D effective theory down to a 6D bulk.
     </p>
     <div class="warning-box">
      <h4>
