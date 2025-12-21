@@ -58,7 +58,8 @@
       "mashiach_volume_stabilization_v13_0",
       "quantum_fr_stability_v13_0",
       "proton_decay_geometric_v13_0",
-      "doublet_triplet_splitting_v14_0"
+      "doublet_triplet_splitting_v14_0",
+      "breaking_chain_geometric_v14_1"
     ]
   },
   "dimensions": {
@@ -94,16 +95,16 @@
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.840661243270218e+34,
-    "tau_p_mean": 3.9756394577960004e+34,
-    "tau_p_std": 1.4870653498778975e+34,
-    "tau_p_lower_68": 2.4630623290785096e+34,
-    "tau_p_upper_68": 5.527847077233562e+34,
-    "tau_p_lower_95": 1.4584120235865334e+34,
-    "tau_p_upper_95": 7.273516413891984e+34,
-    "tau_p_uncertainty_oom": 0.17430887449974716,
+    "tau_p_median": 3.854127854735301e+34,
+    "tau_p_mean": 3.9922391037759586e+34,
+    "tau_p_std": 1.5077563472940994e+34,
+    "tau_p_lower_68": 2.444706323736375e+34,
+    "tau_p_upper_68": 5.548651064286088e+34,
+    "tau_p_lower_95": 1.4520464470270908e+34,
+    "tau_p_upper_95": 7.336968368140912e+34,
+    "tau_p_uncertainty_oom": 0.17533899003661774,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.2997971516588134
+    "ratio_to_bound": 2.3078609908594614
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -115,10 +116,10 @@
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.7898173051351136,
-    "theta_12_error": 1.2178246005107822,
-    "theta_13_error": 0.34930846065391735,
-    "delta_cp_error": 28.173352138307436,
+    "theta_23_error": 0.7951107868671428,
+    "theta_12_error": 1.1902267196672167,
+    "theta_13_error": 0.350427749002544,
+    "delta_cp_error": 28.12914965529392,
     "theta_23_deg": 45.0,
     "theta_12_deg": 33.59329049922625,
     "theta_13_deg": 8.568979552196335,
@@ -918,23 +919,39 @@
       "b2": 4,
       "k_matching": 4,
       "sm_rank": 4,
-      "topology_supports_flux": true,
+      "topology_supports_filter": true,
       "triplet_index": 0,
       "doublet_index_per_gen": 1,
       "total_doublets": 3,
+      "triplet_suppression": 0.9999999,
+      "doublet_preservation": 1.0,
+      "z2_filter_active": true,
       "m_gut": 2.118e+16,
       "m_ew": 246.0,
       "mass_hierarchy": 86097560975609.75,
       "all_valid": true,
-      "mechanism": "TCS discrete torsion on b2=4 cycles",
-      "z2_action": "Z2 x Z2 (real structure + free involution)",
+      "mechanism": "Native TCS Topological Filter (triplets to shadow sector)",
+      "z2_action": "Z2 x Z2 (real structure + free involution + shadow projection)",
       "index_formula": "N_doublets - N_triplets = integral A-hat(M) wedge ch(L_Y) mod Z2",
-      "status": "RESOLVED - G2-native solution via discrete torsion"
+      "status": "RESOLVED - Native G2 topological filter, no Wilson lines"
+    },
+    "breaking_chain": {
+      "chain": "SO(10) -> SU(4)_C x SU(2)_L x SU(2)_R -> SU(3)_C x SU(2)_L x U(1)_Y",
+      "m_gut": 2.118e+16,
+      "m_ps": 1200000000000.0,
+      "m_ew": 246.0,
+      "higgs_gut_break": "54_H",
+      "higgs_ps_break": "126_H",
+      "chain_geometric": true,
+      "pneuma_alignment": true,
+      "k_matching": 4,
+      "mechanism": "Pneuma (54_H) alignment with G2 7D curvature",
+      "status": "RESOLVED - Pati-Salam geometrically preferred by G2 projection"
     },
     "summary": {
-      "version": "14.0",
-      "issues_addressed": 23,
-      "issues_closed": 16,
+      "version": "14.1",
+      "issues_addressed": 24,
+      "issues_closed": 17,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
         "T_omega from G-flux with 7/8 spinor fraction (Issue #2)",
@@ -958,7 +975,8 @@
         "Mashiach volume stabilization (v13.0)",
         "Quantum FR stability (v13.0)",
         "Geometric proton decay (v13.0 - TCS cycle separation)",
-        "Doublet-triplet splitting (v14.0 - TCS discrete torsion)"
+        "Doublet-triplet splitting (v14.1 - Native TCS Topological Filter)",
+        "Breaking chain selection (v14.1 - Geometric Pati-Salam)"
       ],
       "remaining_calibrated": [
         "theta_13 (8.57 deg - pending Yukawa intersection calc)",
@@ -972,7 +990,8 @@
         "EFT Validity Regime (v13.0)",
         "Pneuma Condensate Formation (v13.0)",
         "Proton Decay Rate Uncertainty (v13.0 - TCS cycle separation)",
-        "Doublet-Triplet Splitting Naturalness (v14.0 - TCS discrete torsion)"
+        "Doublet-Triplet Splitting Naturalness (v14.1 - Native TCS Topological Filter)",
+        "Breaking Chain Selection (v14.1 - Geometric Pati-Salam)"
       ],
       "open_questions_resolved": [
         "Open Question 1: 37D Subgroup H -> Stabilizer is SO(12,1) (Bars 2006)",
@@ -983,7 +1002,8 @@
       "gauge_sector_closure": [
         "Gauge Unification (3-loop RG + thresholds): RESOLVED",
         "Proton Decay (TCS cycle separation d/R=0.12): RESOLVED",
-        "Doublet-Triplet Splitting (TCS discrete torsion b2=4): RESOLVED"
+        "Doublet-Triplet Splitting (v14.1 Native Topological Filter): RESOLVED",
+        "Breaking Chain Selection (v14.1 Geometric Pati-Salam): RESOLVED"
       ],
       "grade": "A+ (maximum possible rigor with current tools)",
       "publication_ready": true
