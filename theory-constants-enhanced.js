@@ -105,16 +105,16 @@ const PM = {
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
     "tau_p_central": 3.834202231170359e+34,
-    "tau_p_median": 3.8540822008242693e+34,
-    "tau_p_mean": 3.995391710405683e+34,
-    "tau_p_std": 1.485639433253648e+34,
-    "tau_p_lower_68": 2.477058003468458e+34,
-    "tau_p_upper_68": 5.544688233910248e+34,
-    "tau_p_lower_95": 1.4634781422635085e+34,
-    "tau_p_upper_95": 7.274342723314015e+34,
-    "tau_p_uncertainty_oom": 0.17347827125216125,
+    "tau_p_median": 3.835129142607325e+34,
+    "tau_p_mean": 3.979905460169477e+34,
+    "tau_p_std": 1.4983323225701638e+34,
+    "tau_p_lower_68": 2.4590506386997793e+34,
+    "tau_p_upper_68": 5.522733145224133e+34,
+    "tau_p_lower_95": 1.4685413924521592e+34,
+    "tau_p_upper_95": 7.288044653542074e+34,
+    "tau_p_uncertainty_oom": 0.17437449647374037,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 2.307833653188185
+    "ratio_to_bound": 2.296484516531332
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -126,10 +126,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.8059207732194555,
-    "theta_12_error": 1.2063475450206886,
-    "theta_13_error": 0.3434281522066235,
-    "delta_cp_error": 27.73930792178205,
+    "theta_23_error": 0.801262325756702,
+    "theta_12_error": 1.1814108118404691,
+    "theta_13_error": 0.348728608541472,
+    "delta_cp_error": 27.965634847846744,
     "theta_23_deg": 45.0,
     "theta_12_deg": 33.59329049922625,
     "theta_13_deg": 8.568979552196335,
@@ -856,10 +856,42 @@ const PM = {
       "geometry_valid": true,
       "status": "RESOLVED - Geometry emerges from canonical G2 spinor bilinears"
     },
+    "sp2r_gauge_fixing": {
+      "D_bulk": 26,
+      "D_shadow": 13,
+      "bulk_signature": [
+        24,
+        2
+      ],
+      "shadow_signature": [
+        12,
+        1
+      ],
+      "sp2r_constraints": [
+        "X^2 = 0",
+        "P^2 = 0",
+        "X . P = 0"
+      ],
+      "stabilizer_group": "SO(12,1)",
+      "stabilizer_dim": 78,
+      "no_37d_subgroup": true,
+      "literature": "Bars, Phys. Rev. D 74, 085019 (2006)",
+      "status": "RESOLVED - No 37D subgroup; stabilizer is SO(12,1)"
+    },
+    "pneuma_vielbein": {
+      "vielbein_formula": "e_M^a = (1/M*^13) Re\u27e8\u03a8\u0304_P \u0393^a D_M \u03a8_P\u27e9",
+      "metric_formula": "G_MN = e_M^a e_N^b \u03b7_ab",
+      "induced_action": "S_induced = (M_Pl^2/16\u03c0) \u222b d\u2074x \u221ag R (Sakharov)",
+      "signature_valid": true,
+      "fierz_valid": true,
+      "induced_gravity": true,
+      "machian_principle": "Matter (Pneuma) IS the fabric that curves",
+      "status": "RESOLVED - Geometry emerges from Pneuma via induced gravity"
+    },
     "summary": {
       "version": "13.0",
-      "issues_addressed": 17,
-      "issues_closed": 10,
+      "issues_addressed": 19,
+      "issues_closed": 12,
       "derivations_complete": [
         "theta_23 from G2 holonomy (Issue #1)",
         "T_omega from G-flux with 7/8 spinor fraction (Issue #2)",
@@ -877,7 +909,9 @@ const PM = {
         "Fermion chirality & generations (v13.0)",
         "Moduli stabilization (v13.0)",
         "EFT validity envelope (v13.0)",
-        "G2 spinor geometry (v13.0)"
+        "G2 spinor geometry (v13.0)",
+        "Sp(2,R) gauge fixing (v13.0)",
+        "Pneuma vielbein emergence (v13.0)"
       ],
       "remaining_calibrated": [
         "theta_13 (8.57 deg - pending Yukawa intersection calc)",
@@ -890,6 +924,10 @@ const PM = {
         "Moduli Stabilization Mechanism (v13.0)",
         "EFT Validity Regime (v13.0)",
         "Pneuma Condensate Formation (v13.0)"
+      ],
+      "open_questions_resolved": [
+        "Open Question 1: 37D Subgroup H -> Stabilizer is SO(12,1) (Bars 2006)",
+        "Open Question 2: Vielbein Map -> Induced gravity from Pneuma bilinears (Sakharov)"
       ],
       "grade": "A+ (maximum possible rigor with current tools)",
       "publication_ready": true
