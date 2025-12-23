@@ -21,9 +21,9 @@
 
 const PM = {
   "meta": {
-    "version": "14.1",
-    "last_updated": "2025-12-22",
-    "description": "Principia Metaphysica - Complete Theory (v8.4 -> v14.1 FULL CLOSURE)",
+    "version": "14.0",
+    "last_updated": "2025-12-21",
+    "description": "Principia Metaphysica - Complete Theory (v8.4 -> v14.0 GAUGE CLOSURE)",
     "simulations_run": [
       "proton_decay_rg_hybrid",
       "pmns_full_matrix",
@@ -109,27 +109,26 @@ const PM = {
   },
   "proton_decay": {
     "M_GUT": 2.1181306559642252e+16,
-    "M_GUT_error": 0.09e+16,
-    "M_GUT_percent_error": 0.425,
+    "M_GUT_error": 0.0,
+    "M_GUT_percent_error": 0.0,
     "s_parameter": 1.1782616887563888,
     "T_omega_torsion": -0.8835977215981629,
     "alpha_GUT_inv": 23.53851604737075,
     "alpha_GUT": 0.04248356174992178,
-    "d_over_r": 0.12,
-    "suppression_factor": 2.125,
-    "tau_p_central": 8.147679941236513e+34,
-    "tau_p_median": 8.227003144900953e+34,
-    "tau_p_mean": 8.559740702649244e+34,
-    "tau_p_std": 3.177403619380317e+34,
-    "tau_p_lower_68": 5.340825611235766e+34,
-    "tau_p_upper_68": 1.184887439554818e+35,
-    "tau_p_lower_95": 3.196903573408256e+34,
-    "tau_p_upper_95": 1.5621247899697478e+35,
-    "tau_p_uncertainty_oom": 0.17160324466239055,
+    "tau_p_central": 8.14497242021334e+34,
+    "tau_p_median": 8.14497242021334e+34,
+    "tau_p_mean": 4.011210787468321e+34,
+    "tau_p_std": 1.4967393661249344e+34,
+    "tau_p_lower_68": 6.845794967749571e+34,
+    "tau_p_upper_68": 9.645105444730002e+34,
+    "tau_p_lower_95": 1.4657366830221627e+34,
+    "tau_p_upper_95": 7.30565086618206e+34,
+    "tau_p_uncertainty_oom": 0.07444154603993694,
     "super_k_bound": 1.67e+34,
-    "ratio_to_bound": 4.88,
-    "br_e_pi0": 0.25,
-    "mechanism": "TCS cycle separation (K=4 neck topology)"
+    "ratio_to_bound": 4.877228994139724,
+    "suppression_factor": 2.125447220334627,
+    "d_over_r": 0.12,
+    "br_e_pi0": 0.25
   },
   "pmns_matrix": {
     "theta_23": 45.0,
@@ -141,10 +140,10 @@ const PM = {
     "theta_13_sigma": 0.008503731697206973,
     "delta_cp_sigma": 0.1,
     "average_sigma": 0.08822276599971932,
-    "theta_23_error": 0.8040744222449323,
-    "theta_12_error": 1.2135080442116415,
-    "theta_13_error": 0.3515570833827371,
-    "delta_cp_error": 28.129197562204485,
+    "theta_23_error": 0.8090356453989813,
+    "theta_12_error": 1.2039102651667244,
+    "theta_13_error": 0.3488808458425985,
+    "delta_cp_error": 28.098831256795314,
     "theta_23_deg": 45.0,
     "theta_12_deg": 33.59329049922625,
     "theta_13_deg": 8.568979552196335,
@@ -1653,60 +1652,6 @@ const PM = {
       }
     },
     "footnote": "Hebrew letter subscripts provide a consistent naming convention"
-  },
-  "v14_breaking_chain": {
-    "gut_group": "SO(10)",
-    "intermediate_group": "SU(4)_C x SU(2)_L x SU(2)_R",
-    "sm_group": "SU(3)_C x SU(2)_L x U(1)_Y",
-    "chain_description": "SO(10) -> SU(4)_C x SU(2)_L x SU(2)_R -> SU(3)_C x SU(2)_L x U(1)_Y",
-    "m_gut": 2.118e16,
-    "m_ps": 1.2e12,
-    "m_ew": 246.0,
-    "higgs_gut_break": "54_H",
-    "higgs_ps_break": "126_H",
-    "pneuma_alignment": true,
-    "g2_maximal_subgroup": true,
-    "chain_geometric": true,
-    "k_matching": 4,
-    "mechanism": "Pneuma (54_H) alignment with G2 7D curvature",
-    "status": "RESOLVED - Pati-Salam geometrically preferred by G2 projection"
-  },
-  "v14_doublet_triplet_tcs": {
-    "k_matching": 4,
-    "b2": 4,
-    "chi_eff": 144,
-    "rank_sm": 4,
-    "filter_supported": true,
-    "z2_real_structure": true,
-    "z2_free_involution": true,
-    "shadow_projection": true,
-    "filter_active": true,
-    "triplet_suppression": 0.9999999,
-    "doublet_preservation": 1.0,
-    "triplet_index": 0,
-    "doublet_index_per_gen": 1,
-    "total_doublets": 3,
-    "mechanism": "Native TCS Topological Filter",
-    "upgrade_v14_1": "Triplets SHUNTED to shadow sector (not just lifted)",
-    "status": "RESOLVED - No Wilson line tuning required"
-  },
-  "v14_proton_decay_geometric": {
-    "d_over_r": 0.12,
-    "suppression_factor": 2.125,
-    "k_matching": 4,
-    "tau_p_median": 8.15e34,
-    "tau_p_mean": 8.24e34,
-    "tau_p_68_low": 6.84e34,
-    "tau_p_68_high": 9.64e34,
-    "tau_p_95_low": 5.73e34,
-    "tau_p_95_high": 1.13e35,
-    "oom_uncertainty": 0.075,
-    "super_k_bound": 1.67e34,
-    "ratio_to_bound": 4.88,
-    "br_e_pi0": 0.25,
-    "mechanism": "TCS cycle separation (K=4 neck topology)",
-    "selection_rule": "Wavefunction overlap suppression ~ exp(-2*pi*d/R)",
-    "status": "RESOLVED - Geometric selection rule from TCS cycle separation"
   }
 };
 
@@ -1736,6 +1681,3 @@ PM.getNeutrinoMasses = () => PM.v10_1_neutrino_masses;
 PM.getAllFermions = () => PM.v10_2_all_fermions;
 PM.getFinalObservables = () => PM.v11_final_observables;
 PM.getFinalValues = () => PM.v12_final_values;
-PM.getBreakingChain = () => PM.v14_breaking_chain;
-PM.getDoubletTripletTCS = () => PM.v14_doublet_triplet_tcs;
-PM.getProtonDecayGeometric = () => PM.v14_proton_decay_geometric;

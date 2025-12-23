@@ -1736,6 +1736,7 @@ def run_v12_8_derivation_completions(verbose=True):
             'selection_rule': geo_proton_result['selection_rule'],
             'status': geo_proton_result['status']
         }
+
         if verbose:
             print(f"\n21. Geometric Proton Decay (v13.0):")
             print(f"    Cycle separation: d/R = {geo_proton_result['d_over_r']}")
@@ -2357,6 +2358,27 @@ def run_all_simulations(verbose=True):
     # v12.8 DERIVATION COMPLETIONS
     # ========================================================================
     results['v12_8_derivation_completions'] = run_v12_8_derivation_completions(verbose)
+
+    # ========================================================================
+    # v14.0: UPDATE PROTON DECAY WITH GEOMETRIC v13.0 VALUES
+    # The TCS cycle separation mechanism provides the correct physics
+    # ========================================================================
+    if 'proton_decay_geometric' in results['v12_8_derivation_completions']:
+        geo = results['v12_8_derivation_completions']['proton_decay_geometric']
+        if 'tau_p_years' in geo:
+            results['proton_decay']['tau_p_central'] = geo['tau_p_years']
+            results['proton_decay']['tau_p_median'] = geo['tau_p_years']
+            results['proton_decay']['tau_p_lower_68'] = geo['tau_p_68_low']
+            results['proton_decay']['tau_p_upper_68'] = geo['tau_p_68_high']
+            results['proton_decay']['tau_p_uncertainty_oom'] = geo['oom_uncertainty']
+            results['proton_decay']['ratio_to_bound'] = geo['super_k_ratio']
+            results['proton_decay']['suppression_factor'] = geo['suppression_factor']
+            results['proton_decay']['d_over_r'] = geo['d_over_r']
+            results['proton_decay']['br_e_pi0'] = geo['br_e_pi0']
+            if verbose:
+                print(f"\n[v14.0] Updated proton_decay with geometric v13.0 values:")
+                print(f"   tau_p = {geo['tau_p_years']:.2e} years (was ~3.9e34)")
+                print(f"   Super-K ratio = {geo['super_k_ratio']:.1f}x")
 
     # ========================================================================
     # VALIDATION SUMMARY (Updated for v12.8 FINAL)
