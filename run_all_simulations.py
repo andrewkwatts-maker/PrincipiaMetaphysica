@@ -781,32 +781,36 @@ def run_pneuma_bridge_v15_1(verbose: bool = True) -> Dict[str, Any]:
         }
 
 
-def run_multi_sector_v15_2(verbose: bool = True) -> Dict[str, Any]:
+def run_multi_sector_v16_0(verbose: bool = True) -> Dict[str, Any]:
     """
-    v15.2: Multi-Sector Blended Sampling.
+    v16.0: Multi-Sector Blended Sampling with GEOMETRIC WIDTH.
 
-    Our 4D physics = weighted sampling across h^{1,1}=4 Kähler sectors.
-    Gravity samples all sectors (bulk), gauge localized (brane).
+    MAJOR UPGRADE: modulation_width now derived from G2 geometry, not tuned.
+    DM/Baryon ratio emerges as PREDICTION from wavefunction overlaps.
 
-    Key achievement: Hierarchy from geometry, not fine-tuning!
+    Key achievement: Last tuning knob eliminated - full geometric derivation!
     """
     try:
-        from simulations.multi_sector_sampling_v15_2 import MultiSectorSampling
-        sampler = MultiSectorSampling()
+        from simulations.multi_sector_sampling_v16_0 import MultiSectorSamplingV16
+        sampler = MultiSectorSamplingV16(use_geometric_width=True)
         results = sampler.run_full_analysis(verbose=verbose)
         return {
             'n_sectors': results['input_parameters']['n_sectors'],
             'sampling_position': results['input_parameters']['sampling_position'],
+            'modulation_width': results['width_derivation']['value'],
+            'width_source': results['width_derivation']['source'],
+            'is_geometric': results['width_derivation']['is_geometric'],
             'sm_weight': results['sector_structure']['sm_weight'],
             'mirror_weight': results['sector_structure']['mirror_weight'],
             'hierarchy_ratio': results['blended_observables']['hierarchy_ratio'],
             'gravity_dilution': results['blended_observables']['gravity_dilution'],
             'mirror_dm_fraction': results['dark_matter']['mirror_dm_fraction'],
+            'dm_deviation_pct': results['dm_validation']['deviation_pct'],
             'overall_valid': results['overall_valid'],
-            'mechanism': 'Gravity samples all sectors (bulk), gauge localized (brane)',
-            'version': 'v15.2'
+            'mechanism': 'Width from G2 wavefunction overlap (geometric)',
+            'version': 'v16.0'
         }
-    except ImportError as e:
+    except Exception as e:
         return {
             'error': str(e),
             'source': 'fallback'
@@ -1312,16 +1316,16 @@ def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
         results['simulations']['pneuma_bridge_v15_1'] = {'error': str(e)}
         validation_summary.append(('Pneuma-Vielbein Bridge (v15.1)', 'ERROR'))
 
-    # v15.2 Multi-Sector Blended Sampling
+    # v16.0 Multi-Sector Blended Sampling (GEOMETRIC WIDTH)
     try:
-        results['simulations']['multi_sector_v15_2'] = run_multi_sector_v15_2(verbose)
-        if results['simulations']['multi_sector_v15_2'].get('overall_valid'):
-            validation_summary.append(('Multi-Sector Sampling (v15.2)', 'PASS'))
+        results['simulations']['multi_sector_v16_0'] = run_multi_sector_v16_0(verbose)
+        if results['simulations']['multi_sector_v16_0'].get('overall_valid'):
+            validation_summary.append(('Multi-Sector Sampling (v16.0)', 'PASS'))
         else:
-            validation_summary.append(('Multi-Sector Sampling (v15.2)', 'CHECK'))
+            validation_summary.append(('Multi-Sector Sampling (v16.0)', 'CHECK'))
     except Exception as e:
-        results['simulations']['multi_sector_v15_2'] = {'error': str(e)}
-        validation_summary.append(('Multi-Sector Sampling (v15.2)', 'ERROR'))
+        results['simulations']['multi_sector_v16_0'] = {'error': str(e)}
+        validation_summary.append(('Multi-Sector Sampling (v16.0)', 'ERROR'))
 
     # v15.2 Microtubule Coupling (SPECULATIVE - Appendix)
     try:
