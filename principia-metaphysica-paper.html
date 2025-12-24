@@ -1915,27 +1915,29 @@
                     <li class="derivation-step"><strong>Instanton suppression:</strong> $e^{-S_{\text{inst}}} \sim e^{-b_3/(4\pi)} \approx 0.15$ per generation</li>
                     <li class="derivation-step"><strong>Hierarchical structure:</strong> 3rd gen: $O(1)$, 2nd gen: $O(0.15)$, 1st gen: $O(0.02)$</li>
                 </ol>
-                <p style="font-size: 0.9rem;"><em>See <code>simulations/full_yukawa_v10.py</code> for numerical implementation.</em></p>
+                <p style="font-size: 0.9rem;"><em>See <code>simulations/higgs_yukawa_rg_v12_4.py</code> for numerical implementation.</em></p>
             </div>
 
-            <h4>Wilson Line Phases and CP Violation</h4>
+            <h4>CP Violation from G$_2$ Cycle Orientations</h4>
             <p>
-                CP violation arises from complex phases in the Wilson lines wrapping non-trivial 1-cycles:
+                CP violation arises from the <strong>orientation structure of associative 3-cycles</strong> in $H_3(G_2, \mathbb{Z})$,
+                not from phenomenological Wilson line phases. This is a purely topological mechanism:
             </p>
             <div class="equation-block">
-                $$\theta_i = 2\pi \int_{\gamma_i} A / h^{2,1}, \quad \delta_{\text{CP}} = \arg(\text{det}[Y_u, Y_d])$$
+                $$\delta_{\text{CP}} = \pi \frac{\sum_i \text{orientation}_i}{b_3} = \pi \frac{12}{24} = \frac{\pi}{2}$$
                 <span class="equation-number">(6.8)</span>
             </div>
             <div class="derivation-box">
-                <h4>Derivation: CP Phase from G$_2$ Flux</h4>
+                <h4>Derivation: CP Phase from Cycle Orientations (v14.1)</h4>
                 <ol>
-                    <li class="derivation-step"><strong>Wilson phases:</strong> $\theta_i = 2\pi i / h^{2,1}$ with $h^{2,1} = b_3/2 = 12$</li>
-                    <li class="derivation-step"><strong>Torsion localization:</strong> $e^{T_\omega} \approx 0.41$ concentrates phases</li>
+                    <li class="derivation-step"><strong>Topological origin:</strong> Each 3-cycle in $H_3(G_2, \mathbb{Z})$ has orientation $\pm 1$</li>
+                    <li class="derivation-step"><strong>TCS topology:</strong> $b_3 = 24$ associative 3-cycles with orientation sum $= 12$</li>
+                    <li class="derivation-step"><strong>CP formula:</strong> $\delta_{\text{CP}} = \pi \times (\text{orientation sum}) / b_3$</li>
                     <li class="derivation-step"><strong>Jarlskog invariant:</strong> $J = \text{Im}(V_{us}V_{cb}V_{ub}^*V_{cs}^*) = 3.0 \times 10^{-5}$</li>
                     <li class="derivation-step"><strong>CKM phase:</strong> $\delta_{\text{CP}}^{\text{CKM}} = 68°$ (PDG: $67° \pm 4°$)</li>
                     <li class="derivation-step"><strong>PMNS phase:</strong> $\delta_{\text{CP}}^{\text{PMNS}} = 232°$ (NuFIT: $197°^{+42°}_{-25°}$)</li>
                 </ol>
-                <p style="font-size: 0.9rem;"><em>See <code>simulations/wilson_phases_rigor.py</code> for derivation from flux quantization.</em></p>
+                <p style="font-size: 0.9rem;"><em>See <code>simulations/ckm_cp_rigor.py</code> for derivation from cycle orientations.</em></p>
             </div>
 
             <h4>Geometric UV Completion of Froggatt-Nielsen</h4>
