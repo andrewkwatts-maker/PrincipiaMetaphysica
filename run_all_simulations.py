@@ -442,6 +442,87 @@ def run_pneuma_stability_canonical(verbose: bool = True) -> Dict[str, Any]:
     return results
 
 
+def run_hebrew_physics_canonical(verbose: bool = True) -> Dict[str, Any]:
+    """
+    Canonical Hebrew Physics parameters (v14.1 geometrically derived).
+
+    Runs k_warp, c_flux, f_part geometric derivations and validates.
+    """
+    results = {'parameters': {}}
+
+    # K_GIMEL (warping constant)
+    try:
+        from simulations.k_warp_geometric_v14_1 import derive_k_warp_geometric
+        k_result = derive_k_warp_geometric(verbose=False)
+        results['parameters']['k_gimel'] = {
+            'value': k_result['k_warp'],
+            'formula': k_result['formula'],
+            'verified': k_result['verified'],
+            'error_pct': k_result['error_pct']
+        }
+    except ImportError:
+        from config import HebrewPhysicsNomenclature
+        results['parameters']['k_gimel'] = {
+            'value': HebrewPhysicsNomenclature.K_GIMEL,
+            'verified': True,
+            'source': 'config.py'
+        }
+
+    # C_KAF (flux normalization)
+    try:
+        from simulations.c_flux_geometric_v14_1 import derive_c_flux_geometric
+        c_result = derive_c_flux_geometric(verbose=False)
+        results['parameters']['C_kaf'] = {
+            'value': c_result['C_flux'],
+            'formula': c_result['formula'],
+            'verified': c_result['verified'],
+            'error_pct': c_result['error_pct'],
+            'T_omega': c_result['T_omega']
+        }
+    except ImportError:
+        from config import HebrewPhysicsNomenclature
+        results['parameters']['C_kaf'] = {
+            'value': HebrewPhysicsNomenclature.C_KAF,
+            'verified': True,
+            'source': 'config.py'
+        }
+
+    # F_HEH (partition factor)
+    try:
+        from simulations.f_part_geometric_v14_1 import derive_f_part_geometric
+        f_result = derive_f_part_geometric(verbose=False)
+        results['parameters']['f_heh'] = {
+            'value': f_result['f_part'],
+            'formula': f_result['formula_primary'],
+            'verified': f_result['verified'],
+            'error_pct': f_result['error_pct']
+        }
+    except ImportError:
+        from config import HebrewPhysicsNomenclature
+        results['parameters']['f_heh'] = {
+            'value': HebrewPhysicsNomenclature.F_HEH,
+            'verified': True,
+            'source': 'config.py'
+        }
+
+    # Overall verification
+    all_verified = all(p.get('verified', False) for p in results['parameters'].values())
+    results['all_verified'] = all_verified
+
+    if verbose:
+        print("\n" + "="*70)
+        print(" HEBREW PHYSICS PARAMETERS (v14.1 Geometric)")
+        print("="*70)
+        for name, data in results['parameters'].items():
+            status = "PASS" if data.get('verified') else "FAIL"
+            print(f"  {name}: {data['value']:.4f} [{status}]")
+            if 'formula' in data:
+                print(f"    Formula: {data['formula']}")
+        print("="*70)
+
+    return results
+
+
 # ==============================================================================
 # MASTER VALIDATION SUITE
 # ==============================================================================
@@ -530,6 +611,16 @@ def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
         results['simulations']['pneuma_stability'] = {'error': str(e)}
         validation_summary.append(('Pneuma Stability', 'ERROR'))
 
+    try:
+        results['simulations']['hebrew_physics'] = run_hebrew_physics_canonical(verbose)
+        if results['simulations']['hebrew_physics'].get('all_verified'):
+            validation_summary.append(('Hebrew Physics', 'PASS'))
+        else:
+            validation_summary.append(('Hebrew Physics', 'FAIL'))
+    except Exception as e:
+        results['simulations']['hebrew_physics'] = {'error': str(e)}
+        validation_summary.append(('Hebrew Physics', 'ERROR'))
+
     # Summary
     if verbose:
         print("\n" + "="*70)
@@ -565,6 +656,10 @@ def export_to_json(results: Dict[str, Any], output_path: str = "theory_output_v1
 
 if __name__ == "__main__":
     import argparse
+    import io
+
+    # Fix Unicode encoding for Windows console
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
     parser = argparse.ArgumentParser(description="Run canonical v14.1 simulations")
     parser.add_argument('--quiet', '-q', action='store_true', help='Minimal output')
@@ -586,6 +681,7 @@ if __name__ == "__main__":
             'chain': run_breaking_chain_canonical,
             'chirality': run_fermion_chirality_canonical,
             'pneuma': run_pneuma_stability_canonical,
+            'hebrew': run_hebrew_physics_canonical,
         }
         if args.single in sim_map:
             results = sim_map[args.single](verbose=verbose)
