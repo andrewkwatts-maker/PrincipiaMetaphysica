@@ -1,8 +1,8 @@
 {
   "abstract": {
-    "version": "12.8.3",
-    "last_updated": "2025-12-14",
-    "revision_note": "Applied peer review recommendations: clarified 55 pure predictions vs 3 inputs, added literature references",
+    "version": "14.2",
+    "last_updated": "2025-12-24",
+    "revision_note": "v14.2: Added geometric derivations for KK scale (non-circular), Yukawa textures (Froggatt-Nielsen), and CP phase (topological)",
     "peer_review": {
       "score": "8.5/10",
       "recommendation": "Accept with Minor Revisions",
@@ -61,6 +61,21 @@
       "dimensional_decomposition": {
         "file": "simulations/dim_decomp_v12_8.py",
         "description": "Explicit 26D = 4D x T^15 x G2(7D) decomposition"
+      },
+      "v14_2_kk_scale": {
+        "file": "simulations/kk_spectrum_derived_v14_2.py",
+        "description": "KK scale M_KK from k_eff = b3/(2+epsilon), resolves circularity",
+        "references": ["Randall-Sundrum (1999)", "Acharya et al. (2008)"]
+      },
+      "v14_2_yukawa": {
+        "file": "simulations/yukawa_texture_geometric_v14_2.py",
+        "description": "Geometric Froggatt-Nielsen: Y_f = A_f * epsilon^Q_f with epsilon = exp(-lambda)",
+        "references": ["Froggatt-Nielsen (1979)", "Acharya et al. (2007)"]
+      },
+      "v14_2_cp_phase": {
+        "file": "simulations/cp_phase_topological_v14_2.py",
+        "description": "CP phase from G2 cycle orientations: delta_CP = pi/2 (maximal)",
+        "references": ["Acharya-Witten (2001)"]
       }
     },
     "calibrations": {
@@ -72,8 +87,11 @@
         "1/alpha_GUT coefficient 1/(10pi) (geometric from 5-cycle measure)",
         "Higgs mass 125.10 GeV (observational constraint, fixes Re(T))"
       ],
-      "pending_derivation": ["theta_13", "delta_CP"],
-      "pending_method": "Triple cycle intersections for explicit Yukawa calculation (planned v13.0)"
+      "v14_2_derivations": {
+        "kk_scale": "M_KK derived from k_eff = b3/(2+epsilon), no circular 5 TeV input",
+        "yukawa": "Geometric Froggatt-Nielsen with epsilon = exp(-lambda) = Cabibbo angle",
+        "delta_CP": "Topological: delta_CP = pi * (orientation_sum/b3) = 90 deg maximal"
+      }
     },
     "pm_value_sources": {
       "_note": "All values sourced dynamically from theory_output.json via PM object",
