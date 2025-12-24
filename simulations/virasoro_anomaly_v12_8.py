@@ -12,7 +12,22 @@ Central charge calculation:
 The (24,2) signature preserves Virasoro anomaly cancellation while enabling
 Sp(2,R) gauge fixing of the second time dimension.
 
-Reference: Lovelace (1971), "Pomeron Form Factors and Dual Regge Cuts", Phys. Lett. B 34
+NOTE ON UNCONVENTIONAL STARTING POINT:
+--------------------------------------
+The 26D (24,2) framework is intentionally non-standard compared to 11D M-theory
+or 10D superstrings. This choice is motivated by:
+
+1. UNIQUE ANOMALY CANCELLATION: D=26 is the *only* bosonic critical dimension
+2. TWO-TIME PHYSICS: Follows Bars (2006) program for covariant ghost elimination
+3. EMERGENT SUSY: G2 holonomy generates N=1 SUSY, not postulated
+4. UNIQUE PREDICTIONS: n_gen=3, theta_23=45 degree follow from topology
+
+While standard M/F-theory approaches yield ~10^500 vacua with no selection
+principle, the PM framework derives specific observables from geometry.
+
+References:
+  - Lovelace (1971), "Pomeron Form Factors and Dual Regge Cuts", Phys. Lett. B 34
+  - Bars, I. (2006), "Survey of two-time physics", arXiv:hep-th/0606045
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
