@@ -286,7 +286,7 @@
           <tr style="background: rgba(79, 172, 254, 0.1);">
             <td><strong>w<sub>0</sub> & w<sub>a</sub> derivation</strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span>, w<sub>a,eff</sub> = <span class="pm-value" data-category="dark_energy" data-param="wa_PM_log" data-format="fixed:2"></span> from G₂ torsion logs (DESI DR2: <span class="pm-value" data-category="dark_energy" data-param="w0_sigma" data-format="fixed:2"></span>σ, 0.66σ)</td>
+            <td>w<sub>0</sub> = <pm-param id="dark_energy.w0_PM"></pm-param>, w<sub>a,eff</sub> = <pm-param id="dark_energy.wa_PM"></pm-param> from G₂ torsion logs (DESI DR2: <pm-param id="dark_energy.w0_PM" show="agreement"></pm-param>, 0.66σ)</td>
           </tr>
           <tr>
             <td>CY4 construction</td>
@@ -311,17 +311,17 @@
           <tr>
             <td>MEP w₀ derivation</td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>w₀ = -(d<sub>eff</sub>-1)/(d<sub>eff</sub>+1) = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> with d<sub>eff</sub> = 12.576 from G₂ torsion</td>
+            <td>w₀ = -(d<sub>eff</sub>-1)/(d<sub>eff</sub>+1) = <pm-param id="dark_energy.w0_PM"></pm-param> with d<sub>eff</sub> = 12.576 from G₂ torsion</td>
           </tr>
           <tr>
             <td>Planck tension</td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; REDUCED</span></td>
-            <td>Reduced from 6σ to 1.3σ with refined w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> and logarithmic evolution</td>
+            <td>Reduced from 6σ to 1.3σ with refined w₀ = <pm-param id="dark_energy.w0_PM"></pm-param> and logarithmic evolution</td>
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>M<sub>GUT</sub> & 1/α<sub>GUT</sub></strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; DERIVED</span></td>
-            <td>M<sub>GUT</sub> = 2.118×10¹⁶ GeV, 1/α<sub>GUT</sub> = <span class="pm-value" data-category="gauge_unification" data-param="alpha_GUT_inv" data-format="fixed:2"></span> from G₂ torsion logs + 3-loop RG</td>
+            <td>M<sub>GUT</sub> = 2.118×10¹⁶ GeV, 1/α<sub>GUT</sub> = <pm-param id="proton_decay.alpha_GUT_inv"></pm-param> from G₂ torsion logs + 3-loop RG</td>
           </tr>
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>Proton decay channels</strong></td>
@@ -336,7 +336,7 @@
           <tr style="background: rgba(81, 207, 102, 0.1);">
             <td><strong>KK graviton tower</strong></td>
             <td><span style="color: #51cf66; font-weight: 600;">&#10003; COMPLETE</span></td>
-            <td>Full tower: m₁=<span class="pm-value" data-category="kk_spectrum" data-param="m1"></span>, m₂=7.1±2.1 TeV, with T² degeneracies; σ(m₁)=<span class="pm-value" data-category="kk_spectrum" data-param="sigma_m1_fb" data-format="fixed:2"></span>±0.03 fb; HL-LHC 6.2σ (2029-2030)</td>
+            <td>Full tower: m₁=<pm-param id="kk_spectrum.m1_central"></pm-param> TeV, m₂=7.1±2.1 TeV, with T² degeneracies; σ(m₁)=<pm-param id="kk_spectrum.hl_lhc_significance"></pm-param>±0.03 fb; HL-LHC <pm-param id="kk_spectrum.hl_lhc_significance"></pm-param> (2029-2030)</td>
           </tr>
           <tr>
             <td>n<sub>gen</sub> = <span class="pm-value" data-category="topology" data-param="n_gen"></span></td>
@@ -3772,6 +3772,13 @@
         </p>
     </footer>
     </div>
+
+    <!-- PM Parameter System -->
+    <script src="../theory-constants-enhanced.js"></script>
+    <script src="../js/pm-parameter-schema.js"></script>
+    <script src="../js/pm-parameter-data.js"></script>
+    <script src="../js/pm-parameter-component.js"></script>
+    <script src="../simulation-stats.js"></script>
 
     <script type="module">
         import { setupAuthGuard } from '/js/auth-guard.js';

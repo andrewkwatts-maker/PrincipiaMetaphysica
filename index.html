@@ -1070,7 +1070,7 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
       <div id="metric-within-1sigma" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
        <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
-        <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> within 1σ
+        <pm-param id="validation.predictions_within_1sigma"></pm-param>/<pm-param id="validation.total_predictions"></pm-param> within 1σ
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
         (<span id="success-rate-pct"></span>% success rate)
@@ -1078,7 +1078,7 @@
       </div>
       <div id="metric-exact-matches" style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.exact_matches">
        <div id="exact-matches" style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">
-        <span class="pm-value" data-pm-value="validation.exact_matches"></span> Parameters
+        <pm-param id="validation.exact_matches"></pm-param> Parameters
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
         Exact Central Value Match
@@ -1089,7 +1089,7 @@
         DESI DR2
        </div>
        <div id="desi-validation" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        0.38σ DESI DR2
+        <pm-param id="dark_energy.w0_PM" show="agreement"></pm-param> DESI DR2
        </div>
       </div>
      </div>
@@ -1128,27 +1128,27 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">VEV</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><pm-param id="v12_6_geometric_derivations.vev_pneuma.v_EW"></pm-param> GeV</div>
        <div style="font-size: 0.75rem; color: var(--text-muted);">0.017% error</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Higgs Mass</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">PDG 2024</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><pm-param id="v11_final_observables.higgs_mass.m_h_GeV"></pm-param> GeV</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);"><pm-param id="v11_final_observables.higgs_mass.m_h_GeV" show="agreement"></pm-param> PDG 2024</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">w₀ (Dark Energy)</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="dark_energy.w0_PM"></span></div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">0.38σ DESI DR2</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><pm-param id="dark_energy.w0_PM"></pm-param></div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);"><pm-param id="dark_energy.w0_PM" show="agreement"></pm-param> DESI DR2</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">1/α_GUT</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span></div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><pm-param id="proton_decay.alpha_GUT_inv"></pm-param></div>
        <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">KK Graviton</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><span class="pm-value" data-pm-value="v12_final_values.kk_graviton.m1_TeV"></span> TeV</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><pm-param id="kk_spectrum.m1_central"></pm-param> TeV</div>
        <div style="font-size: 0.75rem; color: var(--text-muted);">LHC testable</div>
       </div>
       <div style="text-align: center;">
@@ -1163,7 +1163,7 @@
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Proton Lifetime</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> yr</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><pm-param id="v11_final_observables.proton_lifetime.tau_p_years"></pm-param> yr</div>
        <div style="font-size: 0.75rem; color: var(--text-muted);">Hyper-K testable</div>
       </div>
      </div>
@@ -1988,7 +1988,12 @@
   </script>
   <script src="js/validation-stats.js">
   </script>
- 
+  <!-- PM Parameter System -->
+  <script src="js/pm-parameter-schema.js"></script>
+  <script src="js/pm-parameter-data.js"></script>
+  <script src="js/pm-parameter-component.js"></script>
+  <script src="simulation-stats.js"></script>
+
   <script type="module">
     import { setupAuthGuard } from '/js/auth-guard.js';
     setupAuthGuard('index');
