@@ -4,6 +4,19 @@ Sp(2,R) Gauge Fixing Validation (v13.0)
 
 Rigorously validates the Sp(2,R) gauge fixing in two-time physics.
 
+NOTE ON UNCONVENTIONAL APPROACH:
+--------------------------------
+This Sp(2,R) gauge fixing is central to the two-time physics framework,
+which is non-standard compared to 11D M-theory or 10D superstrings.
+
+The approach is motivated by Bars' program (1998-2010) and provides:
+1. COVARIANT ghost elimination (vs non-covariant light-cone)
+2. UNIQUE reduction 26D → 13D preserving Lorentz invariance
+3. GEOMETRIC origin for the shadow sector and generations
+
+While unconventional, this yields unique predictions that standard
+approaches leave undetermined. See paper Section 2.1 for comparison table.
+
 Key Result:
 - The "37D subgroup H" is a mathematical ghost - no such subgroup exists
 - The stabilizer is SO(12,1) with 78 generators
