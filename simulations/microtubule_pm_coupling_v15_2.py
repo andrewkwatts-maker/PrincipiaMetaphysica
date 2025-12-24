@@ -64,11 +64,12 @@ class MicrotubulePMCoupling:
 
     # === BEST-FIT PARAMETER SET (Recommended Starting Point) ===
     # Rationale:
-    # - n_tubulins: 1e16 → τ ≈ 500 ms (Hameroff & Penrose 2014 conscious moment)
+    # - n_tubulins: 3.12e5 → τ ≈ 500 ms (from E_G = G*(n*m)^2/r, tau = hbar/E_G)
+    #   Derivation: n = sqrt(hbar * r / (tau * G * m_tubulin^2)) ~ 3.12e5
     # - sampling_position: 0.5 → racetrack minimum (stable vacuum)
     # - modulation_width: 0.15 → coherence drops ~e^{-1} at ±0.3 deviation
     BEST_PARAMS = {
-        'n_tubulins': 1e16,           # Optimal superposition size
+        'n_tubulins': 3.12e5,         # Calibrated for 500ms conscious moment
         'sampling_position': 0.5,     # Middle (racetrack min)
         'modulation_width': 0.15,     # Coherence falloff scale
     }
