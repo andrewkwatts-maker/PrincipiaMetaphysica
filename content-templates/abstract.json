@@ -76,6 +76,21 @@
         "file": "simulations/cp_phase_topological_v14_2.py",
         "description": "CP phase from G2 cycle orientations: delta_CP = pi/2 (maximal)",
         "references": ["Acharya-Witten (2001)"]
+      },
+      "v14_2_g2_ricci": {
+        "file": "simulations/g2_metric_ricci_validator_v14_2.py",
+        "description": "G2 Ricci-flatness validation, epsilon from cycle volumes, clarifies geometric vs effective torsion",
+        "references": ["Joyce (2000)", "Corti et al. (2015)"]
+      },
+      "v14_2_yukawa_overlap": {
+        "file": "simulations/g2_yukawa_overlap_integrals_v14_2.py",
+        "description": "Yukawa couplings from explicit G2 overlap integrals, Jarlskog invariant derivation",
+        "references": ["Acharya et al. (2007)", "Jarlskog (1985)"]
+      },
+      "v14_2_asymptotic_safety": {
+        "file": "simulations/asymptotic_safety_rg_flow_v14_2.py",
+        "description": "RG flow to UV fixed point, 1/alpha* = 24 = b3 topological connection",
+        "references": ["Weinberg (1979)", "Reuter (1998)", "Eichhorn-Held (2017)"]
       }
     },
     "calibrations": {
