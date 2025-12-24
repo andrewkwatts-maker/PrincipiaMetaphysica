@@ -37,6 +37,7 @@ CANONICAL SIMULATION MAP (each observable has ONE source):
 - Moduli Stabilization (v15.0): moduli_racetrack_stabilization_v15_0.py
 - G2 Metric Validation (v15.0): g2_metric_ricci_validator_v15_0.py
 - Yukawa Overlaps (v15.0): g2_yukawa_overlap_integrals_v15_0.py
+- Pneuma-Vielbein Bridge (v15.1): pneuma_bridge_v15_1.py
 
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 """
@@ -750,6 +751,36 @@ def run_yukawa_overlap_v15_0(verbose: bool = True) -> Dict[str, Any]:
         }
 
 
+def run_pneuma_bridge_v15_1(verbose: bool = True) -> Dict[str, Any]:
+    """
+    v15.1: Pneuma-Vielbein Bridge Validation.
+
+    Demonstrates metric induction from G2 parallel spinor.
+    4D Lorentzian metric emerges from Pneuma condensate bilinears.
+
+    Key achievement: No fundamental metric postulate - geometry is emergent!
+    """
+    try:
+        from simulations.pneuma_bridge_v15_1 import ValidPneumaVielbeinBridge
+        bridge = ValidPneumaVielbeinBridge()
+        results = bridge.run_full_validation(verbose=verbose)
+        return {
+            'condensate_density': results['g2_structure']['condensate_density'],
+            'is_lorentzian': results['metric_emergence']['is_lorentzian'],
+            'is_nonsingular': results['metric_emergence']['is_nonsingular'],
+            'topological_stable': results['topological_stability']['is_stable'],
+            'planck_agreement_pct': results['planck_scale']['agreement_pct'],
+            'overall_valid': results['overall_valid'],
+            'mechanism': 'Metric induced from Pneuma condensate on G2 manifold',
+            'version': 'v15.1'
+        }
+    except ImportError as e:
+        return {
+            'error': str(e),
+            'source': 'fallback'
+        }
+
+
 # ==============================================================================
 # MASTER VALIDATION SUITE
 # ==============================================================================
@@ -932,6 +963,17 @@ def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
         results['simulations']['yukawa_overlap_v15'] = {'error': str(e)}
         validation_summary.append(('Yukawa 7D MC (v15.0)', 'ERROR'))
 
+    # v15.1 Pneuma-Vielbein Bridge
+    try:
+        results['simulations']['pneuma_bridge_v15_1'] = run_pneuma_bridge_v15_1(verbose)
+        if results['simulations']['pneuma_bridge_v15_1'].get('overall_valid'):
+            validation_summary.append(('Pneuma-Vielbein Bridge (v15.1)', 'PASS'))
+        else:
+            validation_summary.append(('Pneuma-Vielbein Bridge (v15.1)', 'CHECK'))
+    except Exception as e:
+        results['simulations']['pneuma_bridge_v15_1'] = {'error': str(e)}
+        validation_summary.append(('Pneuma-Vielbein Bridge (v15.1)', 'ERROR'))
+
     # Summary
     if verbose:
         print("\n" + "="*70)
@@ -1005,6 +1047,8 @@ if __name__ == "__main__":
             'racetrack': run_moduli_racetrack_v15_0,
             'g2-v15': run_g2_metric_v15_0,
             'yukawa-v15': run_yukawa_overlap_v15_0,
+            # v15.1 Pneuma bridge
+            'pneuma-bridge': run_pneuma_bridge_v15_1,
         }
         if args.single in sim_map:
             results = sim_map[args.single](verbose=verbose)
