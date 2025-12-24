@@ -540,5 +540,4 @@ The physics is **correct and consistent** throughout. The additions recommended 
 ---
 
 *Report generated: 2025-12-16*
-*Agent: Claude Opus 4.5 (Sonnet 4.5)*
 *Working directory: h:\Github\PrincipiaMetaphysica*

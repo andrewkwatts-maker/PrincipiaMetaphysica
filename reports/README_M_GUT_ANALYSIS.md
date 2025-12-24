@@ -318,7 +318,7 @@ All analysis is in the Github repository:
 
 ---
 
-**Analysis completed by**: Claude Code
+**Analysis completed by**: Andrew Keith Watts
 **Date**: 2025-12-18
 **Confidence**: HIGH
 **Recommendation**: Implement the fix before publication

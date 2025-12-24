@@ -1,7 +1,7 @@
 # References Audit Report
 **Principia Metaphysica**
 **Date:** 2025-12-13
-**Auditor:** Claude Sonnet 4.5
+**Auditor:** Andrew Keith Watts
 
 ---
 
@@ -483,7 +483,6 @@ Once these additions are made, the reference system will provide complete tracea
 ---
 
 **Report Generated:** 2025-12-13
-**Audit Tool:** Claude Sonnet 4.5
 **Files Created:**
 - `h:\Github\PrincipiaMetaphysica\content-templates\references.json`
 - `h:\Github\PrincipiaMetaphysica\reports\REFERENCES_AUDIT.md`

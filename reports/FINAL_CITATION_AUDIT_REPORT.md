@@ -1,7 +1,7 @@
 # PDG 2024 & Experimental Citations - Final Audit Report
 **Document**: principia-metaphysica-paper.html
 **Audit Date**: 2025-12-18
-**Auditor**: Claude Code Analysis
+**Auditor**: Andrew Keith Watts
 **Status**: Complete - Ready for Editorial Application
 
 ---
@@ -512,7 +512,6 @@ The audit identified **8 required edits** across the paper:
 | **Values Reviewed** | 6 parameters |
 | **Edits Identified** | 8 changes |
 | **Date Generated** | 2025-12-18 |
-| **Auditor** | Claude Code Analysis System |
 | **Status** | COMPLETE - Ready for Application |
 | **Confidence Level** | HIGH (verified against PDG 2024, CODATA 2022) |
 

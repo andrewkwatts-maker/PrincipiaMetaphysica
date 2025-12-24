@@ -424,7 +424,7 @@ This comprehensive audit identified **8 citation-related edits** needed to bring
 ---
 
 **Generated**: 2025-12-18
-**Auditor**: Claude Code Analysis System
+**Auditor**: Andrew Keith Watts
 **Next Step**: Select preferred workflow (A, B, or C) and begin edits
 
 ---

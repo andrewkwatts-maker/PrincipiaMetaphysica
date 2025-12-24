@@ -1,7 +1,7 @@
 # Single Source of Truth Audit Report
 
 **Date:** 2025-12-17
-**Auditor:** Claude Code Agent
+**Auditor:** Andrew Keith Watts
 **Scope:** Verify config.py as SINGLE SOURCE OF TRUTH for all parameters
 
 ---

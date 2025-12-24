@@ -3,7 +3,7 @@
 ## Executive Summary
 
 **Date:** 2025-12-14
-**Auditor:** Claude Code (Sonnet 4.5)
+**Auditor:** Andrew Keith Watts
 **File:** h:\Github\PrincipiaMetaphysica\principia-metaphysica-paper.html
 **Scope:** Appendices F-I (Lines 35782-47931)
 

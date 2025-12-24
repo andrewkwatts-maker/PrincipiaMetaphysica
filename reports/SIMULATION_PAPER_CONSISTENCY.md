@@ -378,5 +378,5 @@ All simulation outputs are correctly reflected in the paper. The consistency is 
 ---
 
 **Report generated**: 2025-12-17
-**Verified by**: Claude (Sonnet 4.5)
+**Verified by**: Andrew Keith Watts
 **Status**: Complete ✅

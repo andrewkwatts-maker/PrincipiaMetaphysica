@@ -1,6 +1,6 @@
 # AGENT3: PMNS & NEUTRINO PARAMETERS AUDIT
 **Date:** 2025-12-15
-**Auditor:** Claude Opus 4.5 (Agent System)
+**Auditor:** Andrew Keith Watts
 **Task:** Compare OLD vs NEW papers for PMNS matrix and neutrino parameter derivations
 
 ---

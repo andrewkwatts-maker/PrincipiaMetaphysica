@@ -2,7 +2,7 @@
 
 **Date:** 2025-12-17
 **File:** `principia-metaphysica-paper.html`
-**Auditor:** Claude Code Analysis System
+**Auditor:** Andrew Keith Watts
 
 ---
 

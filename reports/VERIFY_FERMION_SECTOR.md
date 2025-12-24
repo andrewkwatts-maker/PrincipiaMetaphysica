@@ -443,6 +443,6 @@ CKM matrix (6.2h): From Y_u vs Y_d misalignment
 
 ---
 
-**Report Compiled By:** Claude (Anthropic)
+**Report Compiled By:**Andrew Keith Watts
 **Verification Date:** 2025-12-16
 **Document Version:** Current main branch (commit 6075139)

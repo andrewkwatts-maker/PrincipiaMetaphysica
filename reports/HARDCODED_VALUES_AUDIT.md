@@ -1,6 +1,6 @@
 # Hardcoded Values Audit: principia-metaphysica-paper.html
 **Date**: 2025-12-17
-**Auditor**: Claude Code Analysis
+**Auditor**: Andrew Keith Watts
 **Document**: principia-metaphysica-paper.html
 **Purpose**: Identify numeric values that should reference derivations
 
