@@ -239,8 +239,9 @@ def run_neutrino_masses_canonical(verbose: bool = True) -> Dict[str, Any]:
         'delta_m21_sq': float(delta_m21_sq),
         'delta_m3l_sq': float(delta_m3l_sq),
         'ordering': FinalNeutrinoMasses.HIERARCHY,
-        'agreement_sigma': FinalNeutrinoMasses.AGREEMENT_SIGMA,
-        'source': 'config.py FinalNeutrinoMasses',
+        'agreement_solar_pct': FinalNeutrinoMasses.AGREEMENT_SOLAR_PCT,
+        'agreement_atm_pct': FinalNeutrinoMasses.AGREEMENT_ATM_PCT,
+        'source': 'config.py FinalNeutrinoMasses (v14.1 from simulation)',
         'validation': {
             'solar_splitting': val_21,
             'atmospheric_splitting': val_3l,
