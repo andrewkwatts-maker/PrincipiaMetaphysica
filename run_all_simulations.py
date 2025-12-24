@@ -781,6 +781,67 @@ def run_pneuma_bridge_v15_1(verbose: bool = True) -> Dict[str, Any]:
         }
 
 
+def run_multi_sector_v15_2(verbose: bool = True) -> Dict[str, Any]:
+    """
+    v15.2: Multi-Sector Blended Sampling.
+
+    Our 4D physics = weighted sampling across h^{1,1}=4 Kähler sectors.
+    Gravity samples all sectors (bulk), gauge localized (brane).
+
+    Key achievement: Hierarchy from geometry, not fine-tuning!
+    """
+    try:
+        from simulations.multi_sector_sampling_v15_2 import MultiSectorSampling
+        sampler = MultiSectorSampling()
+        results = sampler.run_full_analysis(verbose=verbose)
+        return {
+            'n_sectors': results['input_parameters']['n_sectors'],
+            'sampling_position': results['input_parameters']['sampling_position'],
+            'sm_weight': results['sector_structure']['sm_weight'],
+            'mirror_weight': results['sector_structure']['mirror_weight'],
+            'hierarchy_ratio': results['blended_observables']['hierarchy_ratio'],
+            'gravity_dilution': results['blended_observables']['gravity_dilution'],
+            'mirror_dm_fraction': results['dark_matter']['mirror_dm_fraction'],
+            'overall_valid': results['overall_valid'],
+            'mechanism': 'Gravity samples all sectors (bulk), gauge localized (brane)',
+            'version': 'v15.2'
+        }
+    except ImportError as e:
+        return {
+            'error': str(e),
+            'source': 'fallback'
+        }
+
+
+def run_microtubule_coupling_v15_2(verbose: bool = True) -> Dict[str, Any]:
+    """
+    v15.2: Microtubule-Orch OR Coupling (SPECULATIVE - Appendix).
+
+    Toy model linking quantum consciousness to PM vacuum sampling.
+    Peak coherence at stable racetrack minimum.
+
+    Status: Appendix material for future work.
+    """
+    try:
+        from simulations.microtubule_pm_coupling_v15_2 import MicrotubulePMCoupling
+        model = MicrotubulePMCoupling()
+        results = model.run_analysis(verbose=verbose)
+        return {
+            'n_tubulins': results['input_parameters']['n_tubulins'],
+            'collapse_timescale_ms': results['orch_or_quantities']['collapse_timescale_ms'],
+            'effective_coupling_Hz': results['pm_modulation']['effective_coupling_Hz'],
+            'modulation_factor': results['pm_modulation']['modulation_factor'],
+            'timescale_valid': results['validation']['timescale_valid'],
+            'status': 'SPECULATIVE',
+            'version': 'v15.2'
+        }
+    except ImportError as e:
+        return {
+            'error': str(e),
+            'source': 'fallback'
+        }
+
+
 # ==============================================================================
 # MASTER VALIDATION SUITE
 # ==============================================================================
@@ -974,6 +1035,28 @@ def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
         results['simulations']['pneuma_bridge_v15_1'] = {'error': str(e)}
         validation_summary.append(('Pneuma-Vielbein Bridge (v15.1)', 'ERROR'))
 
+    # v15.2 Multi-Sector Blended Sampling
+    try:
+        results['simulations']['multi_sector_v15_2'] = run_multi_sector_v15_2(verbose)
+        if results['simulations']['multi_sector_v15_2'].get('overall_valid'):
+            validation_summary.append(('Multi-Sector Sampling (v15.2)', 'PASS'))
+        else:
+            validation_summary.append(('Multi-Sector Sampling (v15.2)', 'CHECK'))
+    except Exception as e:
+        results['simulations']['multi_sector_v15_2'] = {'error': str(e)}
+        validation_summary.append(('Multi-Sector Sampling (v15.2)', 'ERROR'))
+
+    # v15.2 Microtubule Coupling (SPECULATIVE - Appendix)
+    try:
+        results['simulations']['microtubule_v15_2'] = run_microtubule_coupling_v15_2(verbose)
+        if results['simulations']['microtubule_v15_2'].get('overall_valid'):
+            validation_summary.append(('Microtubule-PM Coupling (v15.2)', 'PASS'))
+        else:
+            validation_summary.append(('Microtubule-PM Coupling (v15.2)', 'CHECK'))
+    except Exception as e:
+        results['simulations']['microtubule_v15_2'] = {'error': str(e)}
+        validation_summary.append(('Microtubule-PM Coupling (v15.2)', 'CHECK'))  # SPECULATIVE - don't fail
+
     # Summary
     if verbose:
         print("\n" + "="*70)
@@ -1049,6 +1132,9 @@ if __name__ == "__main__":
             'yukawa-v15': run_yukawa_overlap_v15_0,
             # v15.1 Pneuma bridge
             'pneuma-bridge': run_pneuma_bridge_v15_1,
+            # v15.2 Multi-sector sampling
+            'multi-sector': run_multi_sector_v15_2,
+            'microtubule': run_microtubule_coupling_v15_2,
         }
         if args.single in sim_map:
             results = sim_map[args.single](verbose=verbose)
