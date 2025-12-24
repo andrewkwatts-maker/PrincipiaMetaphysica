@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Run All Simulations v14.1 - Single Source of Truth
+Run All Simulations v15.0 - Single Source of Truth
 ===================================================
 
-This script runs ONLY the canonical v13.0+/v14.1 simulations and validates
+This script runs ONLY the canonical v13.0+/v15.0 simulations and validates
 outputs against experimental data and paper values.
 
 NOTE: This replaces the old run_all_simulations.py (now in deprecated/).
@@ -15,6 +15,12 @@ DESIGN PRINCIPLES:
 2. No Duplicates: Each observable computed exactly once
 3. Experimental Validation: All outputs checked against PDG/NuFIT/DESI
 4. Paper Consistency: Values match principia-metaphysica-paper.html
+
+v15.0 IMPROVEMENTS:
+- Racetrack Moduli Stabilization: Dynamically derives epsilon from flux
+- Perturbation Test: Validates Ricci-flatness is actively evaluated
+- 7D Monte Carlo: Full integration for Yukawa overlaps
+- Topological FN Charges: Graph distances on cycle network
 
 CANONICAL SIMULATION MAP (each observable has ONE source):
 - Proton Decay: proton_decay_geometric_v13_0.py
@@ -28,6 +34,9 @@ CANONICAL SIMULATION MAP (each observable has ONE source):
 - Mass Ordering: neutrino_mass_ordering.py
 - Dark Energy: wz_evolution_desi_dr2.py
 - Pneuma Stability: pneuma_racetrack_stability_v12_9.py
+- Moduli Stabilization (v15.0): moduli_racetrack_stabilization_v15_0.py
+- G2 Metric Validation (v15.0): g2_metric_ricci_validator_v15_0.py
+- Yukawa Overlaps (v15.0): g2_yukawa_overlap_integrals_v15_0.py
 
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 """
@@ -98,7 +107,9 @@ EXPERIMENTAL = ExperimentalBounds()
 class NumpyEncoder(json.JSONEncoder):
     """Handle numpy types in JSON serialization."""
     def default(self, obj):
-        if isinstance(obj, np.integer):
+        if isinstance(obj, np.bool_):
+            return bool(obj)
+        elif isinstance(obj, np.integer):
             return int(obj)
         elif isinstance(obj, np.floating):
             val = float(obj)
@@ -649,17 +660,108 @@ def run_asymptotic_safety_v14_2(verbose: bool = True) -> Dict[str, Any]:
 
 
 # ==============================================================================
+# v15.0 SIMULATION RUNNERS
+# ==============================================================================
+
+def run_moduli_racetrack_v15_0(verbose: bool = True) -> Dict[str, Any]:
+    """
+    v15.0: Moduli Racetrack Stabilization.
+
+    Derives cycle volumes DYNAMICALLY from racetrack potential minimum.
+    No input tuning - epsilon emerges from flux dynamics.
+
+    Key achievement: Cabibbo angle derived, not input!
+    """
+    try:
+        from simulations.moduli_racetrack_stabilization_v15_0 import RacetrackModuliStabilization
+        sim = RacetrackModuliStabilization()
+        results = sim.run_full_analysis(verbose=verbose)
+        return {
+            'T_stabilized': results['stabilization']['T_stabilized'],
+            'epsilon_dynamic': results['stabilization']['epsilon_dynamic'],
+            'cabibbo_agreement_pct': results['stabilization']['cabibbo_agreement_pct'],
+            'validated': results['stabilization']['validated'],
+            'mechanism': 'Racetrack superpotential with flux-determined exponents',
+            'version': 'v15.0'
+        }
+    except ImportError as e:
+        return {
+            'error': str(e),
+            'source': 'fallback'
+        }
+
+
+def run_g2_metric_v15_0(verbose: bool = True) -> Dict[str, Any]:
+    """
+    v15.0: G2 Metric Ricci-Flatness Validation with Perturbation Test.
+
+    Enhanced validator that actively evaluates geometry via perturbations.
+    Integrates with racetrack for dynamically-derived epsilon.
+
+    Key achievement: Perturbation test validates active geometry evaluation.
+    """
+    try:
+        from simulations.g2_metric_ricci_validator_v15_0 import G2MetricRicciValidatorV15
+        validator = G2MetricRicciValidatorV15()
+        results = validator.run_full_validation(verbose=verbose)
+        return {
+            'holonomy_valid': results['holonomy_validation']['holonomy_valid'],
+            'perturbation_valid': results['perturbation_test']['linear_response_valid'],
+            'epsilon_derived': results['epsilon_derivation']['epsilon_derived'],
+            'epsilon_source': results['epsilon_derivation']['epsilon_source'],
+            'overall_valid': results['overall_valid'],
+            'version': 'v15.0'
+        }
+    except ImportError as e:
+        return {
+            'error': str(e),
+            'source': 'fallback'
+        }
+
+
+def run_yukawa_overlap_v15_0(verbose: bool = True) -> Dict[str, Any]:
+    """
+    v15.0: Yukawa Couplings from Full 7D Monte Carlo Integration.
+
+    True 7D integration via importance-sampled Monte Carlo.
+    FN charges from topological distances in cycle graph.
+
+    Key achievement: Full 7D integration, not 1D proxy.
+    """
+    try:
+        from simulations.g2_yukawa_overlap_integrals_v15_0 import G2YukawaOverlapIntegralsV15
+        sim = G2YukawaOverlapIntegralsV15()
+        results = sim.run_full_analysis(verbose=verbose)
+        return {
+            'epsilon': results['yukawa_couplings']['epsilon'],
+            'epsilon_source': results['yukawa_couplings']['epsilon_source'],
+            'method': '7D Monte Carlo',
+            'n_samples': results['yukawa_couplings']['n_mc_samples'],
+            'jarlskog': results['jarlskog_analysis']['jarlskog'],
+            'delta_cp_deg': results['jarlskog_analysis']['delta_cp_deg'],
+            'maximal_cp': results['jarlskog_analysis']['maximal_cp'],
+            'all_converged': results['all_converged'],
+            'version': 'v15.0'
+        }
+    except ImportError as e:
+        return {
+            'error': str(e),
+            'source': 'fallback'
+        }
+
+
+# ==============================================================================
 # MASTER VALIDATION SUITE
 # ==============================================================================
 
 def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
     """
-    Run all canonical v14.2 simulations and validate outputs.
+    Run all canonical v15.0 simulations and validate outputs.
 
     Returns consolidated results with validation status.
     """
     print("\n" + "="*70)
-    print(" PRINCIPIA METAPHYSICA v14.2 - CANONICAL SIMULATIONS")
+    print(" PRINCIPIA METAPHYSICA v15.0 - CANONICAL SIMULATIONS")
     print("="*70)
     print(f" Config Version: {config.VERSION}")
     print(f" Single Source of Truth: config.py")
@@ -799,6 +901,37 @@ def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
         results['simulations']['asymptotic_safety'] = {'error': str(e)}
         validation_summary.append(('Asymptotic Safety', 'ERROR'))
 
+    # v15.0 Enhanced Validators
+    try:
+        results['simulations']['moduli_racetrack_v15'] = run_moduli_racetrack_v15_0(verbose)
+        if results['simulations']['moduli_racetrack_v15'].get('validated'):
+            validation_summary.append(('Moduli Racetrack (v15.0)', 'PASS'))
+        else:
+            validation_summary.append(('Moduli Racetrack (v15.0)', 'CHECK'))
+    except Exception as e:
+        results['simulations']['moduli_racetrack_v15'] = {'error': str(e)}
+        validation_summary.append(('Moduli Racetrack (v15.0)', 'ERROR'))
+
+    try:
+        results['simulations']['g2_metric_v15'] = run_g2_metric_v15_0(verbose)
+        if results['simulations']['g2_metric_v15'].get('overall_valid'):
+            validation_summary.append(('G2 Metric+Perturbation (v15.0)', 'PASS'))
+        else:
+            validation_summary.append(('G2 Metric+Perturbation (v15.0)', 'CHECK'))
+    except Exception as e:
+        results['simulations']['g2_metric_v15'] = {'error': str(e)}
+        validation_summary.append(('G2 Metric+Perturbation (v15.0)', 'ERROR'))
+
+    try:
+        results['simulations']['yukawa_overlap_v15'] = run_yukawa_overlap_v15_0(verbose)
+        if results['simulations']['yukawa_overlap_v15'].get('all_converged'):
+            validation_summary.append(('Yukawa 7D MC (v15.0)', 'PASS'))
+        else:
+            validation_summary.append(('Yukawa 7D MC (v15.0)', 'CHECK'))
+    except Exception as e:
+        results['simulations']['yukawa_overlap_v15'] = {'error': str(e)}
+        validation_summary.append(('Yukawa 7D MC (v15.0)', 'ERROR'))
+
     # Summary
     if verbose:
         print("\n" + "="*70)
@@ -839,7 +972,7 @@ if __name__ == "__main__":
     # Fix Unicode encoding for Windows console
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
 
-    parser = argparse.ArgumentParser(description="Run canonical v14.2 simulations")
+    parser = argparse.ArgumentParser(description="Run canonical v15.0 simulations")
     parser.add_argument('--quiet', '-q', action='store_true', help='Minimal output')
     parser.add_argument('--export', '-e', action='store_true', help='Export to JSON')
     parser.add_argument('--single', '-s', type=str, help='Run single simulation')
@@ -868,6 +1001,10 @@ if __name__ == "__main__":
             'g2-ricci': run_g2_metric_validation_v14_2,
             'yukawa-overlap': run_yukawa_overlap_v14_2,
             'asymptotic-safety': run_asymptotic_safety_v14_2,
+            # v15.0 enhanced validators
+            'racetrack': run_moduli_racetrack_v15_0,
+            'g2-v15': run_g2_metric_v15_0,
+            'yukawa-v15': run_yukawa_overlap_v15_0,
         }
         if args.single in sim_map:
             results = sim_map[args.single](verbose=verbose)
