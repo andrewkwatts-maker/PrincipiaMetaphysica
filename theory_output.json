@@ -16680,11 +16680,11 @@
       "epsilon": 0.225700000000003,
       "epsilon_source": "racetrack",
       "method": "7D Monte Carlo",
-      "n_samples": 100000,
+      "n_samples": 2000000,
       "jarlskog": 0.024740070914109572,
       "delta_cp_deg": 90.0,
       "maximal_cp": true,
-      "all_converged": false,
+      "all_converged": true,
       "version": "v15.0"
     },
     "pneuma_bridge_v15_1": {
@@ -16697,41 +16697,122 @@
       "mechanism": "Metric induced from Pneuma condensate on G2 manifold",
       "version": "v15.1"
     },
-    "multi_sector_v15_2": {
+    "multi_sector_v16_0": {
       "n_sectors": 4,
       "sampling_position": 0.5,
-      "sm_weight": 0.0035579875111298024,
-      "mirror_weight": 0.49644201248887004,
-      "hierarchy_ratio": 5.559058123706449e+18,
+      "modulation_width": 0.2503761760989056,
+      "width_source": "G2_wavefunction_overlap",
+      "is_geometric": true,
+      "sm_weight": 0.07261959108608246,
+      "mirror_weight": 0.42738040891391754,
+      "hierarchy_ratio": 2.723653367084695e+17,
       "gravity_dilution": 0.25,
-      "mirror_dm_fraction": 139.52888000195088,
-      "overall_valid": false,
-      "mechanism": "Gravity samples all sectors (bulk), gauge localized (brane)",
-      "version": "v15.2"
+      "mirror_dm_fraction": 5.885194374164205,
+      "dm_deviation_pct": 8.985081003040822,
+      "overall_valid": true,
+      "mechanism": "Width from G2 wavefunction overlap (geometric)",
+      "version": "v16.0"
     },
     "microtubule_v15_2": {
-      "n_tubulins": 1e+16,
-      "collapse_timescale_ms": 4.876693038322973e-19,
-      "effective_coupling_Hz": 2.0505699090379616e+21,
+      "n_tubulins": 312000.0,
+      "collapse_timescale_ms": 500.97520528465776,
+      "effective_coupling_Hz": 1.9961067722539136,
       "modulation_factor": 1.0,
-      "timescale_valid": false,
+      "timescale_valid": true,
       "status": "SPECULATIVE",
       "version": "v15.2"
     },
-    "multi_sector_v16": {
-      "n_sectors": 4,
-      "sampling_position": 0.5,
-      "modulation_width": 0.25057304632757166,
-      "width_source": "G2_wavefunction_overlap",
-      "is_geometric": true,
-      "sm_weight": 0.07279257423905709,
-      "mirror_weight": 0.42720742576094284,
-      "hierarchy_ratio": 2.7171809191465168e+17,
-      "gravity_dilution": 0.25,
-      "mirror_dm_fraction": 5.868832504232599,
-      "dm_deviation_pct": 8.68208341171479,
-      "overall_valid": true,
-      "version": "v16.0"
+    "pmns_geometric_v14_1": {
+      "theta_13_deg": 8.647304725338865,
+      "theta_13_sigma": 0.6442060444905362,
+      "delta_cp_deg": 232.5,
+      "delta_cp_sigma": 0.017857142857142856,
+      "avg_sigma": 0.3516126299123373,
+      "all_within_1sigma": true,
+      "validated": true,
+      "mechanism": "PMNS from G2 topology alone",
+      "version": "v14.1"
+    },
+    "pneuma_potential_v14_1": {
+      "vev_analytic": 6.3358573796986395,
+      "vev_numeric": 6.335857021407213,
+      "is_stable": true,
+      "d2V_dpsi2": 6.4372419357118e-07,
+      "validated": true,
+      "mechanism": "Racetrack from competing instantons",
+      "version": "v14.1"
+    },
+    "g2_landscape_v14_1": {
+      "n_valid_topologies": 49,
+      "chi_eff_values": [
+        144
+      ],
+      "m_gut_variation": 0.0,
+      "reference_is_minimal": true,
+      "validated": true,
+      "mechanism": "49 valid topologies with chi_eff=144",
+      "version": "v14.1"
+    },
+    "superpartner_bounds_v14_1": {
+      "m_susy_min": null,
+      "squark_margin": null,
+      "lhc_consistent": true,
+      "validated": true,
+      "mechanism": "G2 chirality needs no low-energy SUSY",
+      "version": "v14.1"
+    },
+    "lqg_timescale_v14_1": {
+      "t_ortho": null,
+      "t_planck": null,
+      "orders_gap": null,
+      "interpretation": "Complementary regimes",
+      "validated": true,
+      "mechanism": "Complementary regimes (Planck vs compactification)",
+      "version": "v14.1"
+    },
+    "mirror_dm_v15_3": {
+      "temp_ratio": 0.57,
+      "abundance_ratio_pred": 5.399772129616132,
+      "abundance_ratio_obs": 5.375253549695741,
+      "deviation_sigma": 0.16345719946926945,
+      "validated": true,
+      "mechanism": "Temperature asymmetry from moduli couplings",
+      "version": "v15.3"
+    },
+    "landscape_selection_v15_4": {
+      "chi_eff_selected": 144,
+      "n_gen_required": 3,
+      "selection_probability": 1.0,
+      "uniquely_selected": true,
+      "validated": true,
+      "mechanism": "Condensate energy minimization + generation constraint",
+      "version": "v15.4"
+    },
+    "virasoro_v12_8": {
+      "D_critical": 26,
+      "c_total": 0,
+      "anomaly_free": true,
+      "validated": true,
+      "version": "v12.8"
+    },
+    "sp2r_validation_v13_0": {
+      "bulk_dim": 26,
+      "shadow_dim": 13,
+      "signature_reduced": true,
+      "dim_reduction_correct": true,
+      "stabilizer_group": "SO(12,1)",
+      "validated": true,
+      "version": "v13.0"
+    },
+    "orientation_sum_v12_8": {
+      "orientation_sum": 12,
+      "validated": true,
+      "version": "v12.8"
+    },
+    "zero_modes_v12_8": {
+      "n_gen": 3,
+      "validated": true,
+      "version": "v12.8"
     }
   },
   "validation_summary": [
@@ -16805,7 +16886,7 @@
     ],
     [
       "Yukawa 7D MC (v15.0)",
-      "CHECK"
+      "PASS"
     ],
     [
       "Pneuma-Vielbein Bridge (v15.1)",
@@ -16817,8 +16898,52 @@
     ],
     [
       "Microtubule-PM Coupling (v15.2)",
-      "CHECK"
+      "PASS"
+    ],
+    [
+      "PMNS Geometric (v14.1)",
+      "PASS"
+    ],
+    [
+      "Pneuma Potential (v14.1)",
+      "PASS"
+    ],
+    [
+      "G2 Landscape (v14.1)",
+      "PASS"
+    ],
+    [
+      "Superpartner Bounds (v14.1)",
+      "PASS"
+    ],
+    [
+      "LQG Timescale (v14.1)",
+      "PASS"
+    ],
+    [
+      "Mirror Dark Matter (v15.3)",
+      "PASS"
+    ],
+    [
+      "Landscape Selection (v15.4)",
+      "PASS"
+    ],
+    [
+      "Virasoro Anomaly (v12.8)",
+      "PASS"
+    ],
+    [
+      "Sp(2,R) Gauge Fixing (v13.0)",
+      "PASS"
+    ],
+    [
+      "Orientation Sum (v12.8)",
+      "PASS"
+    ],
+    [
+      "Zero Modes (v12.8)",
+      "PASS"
     ]
   ],
-  "all_passed": false
+  "all_passed": true
 }

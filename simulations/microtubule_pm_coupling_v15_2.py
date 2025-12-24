@@ -30,6 +30,21 @@ BEST-FIT PARAMETERS (from Orch OR literature):
 
 STATUS: Speculative but quantitative starting point for future work.
 
+IMPORTANT DISCLAIMER:
+    Biological systems are extraordinarily complex. This simplified model
+    almost certainly does not capture the full biophysics of microtubule
+    quantum coherence. The Orch OR mechanism itself remains controversial
+    and unverified. This simulation is intended only as a toy model to
+    explore *potential* PM-consciousness links, not as a definitive prediction.
+
+    Full credit for the Orch OR framework belongs to:
+    - Sir Roger Penrose (gravitational objective reduction concept)
+    - Stuart Hameroff (microtubule quantum coherence hypothesis)
+
+    The PM extension here is purely exploratory and should be treated
+    as appendix/future work material requiring proper biophysics expertise
+    to develop further.
+
 REFERENCES:
     - Hameroff & Penrose (2014) "Consciousness in the universe"
     - Penrose (1989) "The Emperor's New Mind"
