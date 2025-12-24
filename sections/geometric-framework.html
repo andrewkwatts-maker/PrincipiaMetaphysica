@@ -7565,6 +7565,20 @@
       <p style="margin-top: 0.75rem;"><strong>Deep Connection:</strong> The same λ = 1.5 that generates the Cabibbo angle also determines the KK scale, unifying UV topology → flavor physics → IR phenomenology.</p>
       <p style="font-size: 0.9rem;"><strong>Reference:</strong> <code>simulations/kk_spectrum_derived_v14_2.py</code></p>
     </div>
+    <!-- v14.2 Deep Issue Resolutions -->
+    <h3>G₂ Metric Ricci-Flatness Validation (v14.2)</h3>
+    <div class="highlight-box" style="background: rgba(139, 127, 255, 0.1); border-left: 4px solid #8b7fff; margin-bottom: 1.5rem;">
+      <h4 style="color: #8b7fff; margin-top: 0;">Geometric Torsion vs Effective Torsion</h4>
+      <p><strong>CRITICAL CLARIFICATION:</strong> The TCS G₂ manifold is <em>Ricci-flat</em> with <em>zero geometric torsion</em>. The torsion parameter T<sub>ω</sub> = -0.884 arises from <strong>G-flux backreaction</strong>, not geometric torsion:</p>
+      <ul style="line-height: 1.8;">
+        <li><strong>Geometric torsion:</strong> T = 0 (Levi-Civita connection on Ricci-flat manifold)</li>
+        <li><strong>G₂ holonomy:</strong> Verified via closure: dΦ = 0, d*Φ = 0 (covariantly constant 3-form)</li>
+        <li><strong>Effective torsion:</strong> T<sub>ω</sub> = -(spinor + moduli) × (N<sub>flux</sub>/b₃) ≈ -0.884 from G₄ flux on 3-cycles</li>
+        <li><strong>ε from volumes:</strong> ε = exp(-log(Vol<sub>K3</sub>/Vol<sub>S3</sub>)) = exp(-1.5) ≈ 0.223</li>
+      </ul>
+      <p style="margin-top: 0.75rem;">The G₂ holonomy is validated by 4 conditions: parallel spinor existence (N=1), Ricci flatness (R=0), 3-form closure, and b₃=24 matching TCS prediction.</p>
+      <p style="font-size: 0.9rem;"><strong>Reference:</strong> <code>simulations/g2_metric_ricci_validator_v14_2.py</code></p>
+    </div>
     <h3>
      Base KK Tower from Associative Cycles
     </h3>
