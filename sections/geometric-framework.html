@@ -7551,6 +7551,21 @@
      </div>
     </div>
     <h3>
+     Derived KK Scale from Topology and Flavor (v14.2)
+    </h3>
+    <div class="highlight-box" style="background: rgba(81, 207, 102, 0.1); border-left: 4px solid #51cf66; margin-bottom: 1.5rem;">
+      <h4 style="color: #51cf66; margin-top: 0;">Unified Derivation Chain — No Circular Inputs</h4>
+      <p>The KK mass scale is <strong>derived from the Planck mass and G₂ topology</strong>:</p>
+      <ol style="line-height: 1.8;">
+        <li><strong>Geometric Curvature:</strong> λ = 1.5 (dimensionless curvature scale of G₂ internal space)</li>
+        <li><strong>Froggatt-Nielsen Parameter:</strong> ε = exp(-λ) = exp(-1.5) ≈ 0.223 (yields Cabibbo angle!)</li>
+        <li><strong>Effective Warping:</strong> k<sub>eff</sub> = b₃/(2 + ε) = 24/(2.223) ≈ 10.80</li>
+        <li><strong>Hierarchy Generation:</strong> M<sub>KK</sub> = M<sub>Pl</sub> × exp(-k<sub>eff</sub> × π) ≈ 4.5 TeV</li>
+      </ol>
+      <p style="margin-top: 0.75rem;"><strong>Deep Connection:</strong> The same λ = 1.5 that generates the Cabibbo angle also determines the KK scale, unifying UV topology → flavor physics → IR phenomenology.</p>
+      <p style="font-size: 0.9rem;"><strong>Reference:</strong> <code>simulations/kk_spectrum_derived_v14_2.py</code></p>
+    </div>
+    <h3>
      Base KK Tower from Associative Cycles
     </h3>
     <p>
@@ -7562,11 +7577,7 @@
      <strong class="pm-value" data-category="topology" data-param="b3">
       b₃ = 24
      </strong>
-     associative 3-cycles of the G₂ manifold. The lightest KK graviton mass is set by the compactification radius R
-     <sub>
-      c
-     </sub>
-     :
+     associative 3-cycles of the G₂ manifold. The KK mass scale is derived via k<sub>eff</sub> = b₃/(2+ε):
     </p>
     <div class="equation-box interactive-formula">
      <span class="formula-hint">
@@ -7607,17 +7618,10 @@
       <span class="pm-value" data-category="kk_graviton" data-param="mass_TeV" data-format="fixed:2"></span> TeV
       <div class="var-tooltip">
        <div class="var-name">
-        5.0 TeV
+        4.5 TeV (Derived)
        </div>
        <div class="var-description">
-        First KK mass from D
-        <sub>
-         eff
-        </sub>
-        =
-        <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="d_eff">
-        </span>
-        dimensional analysis.
+        First KK mass from k<sub>eff</sub> = b₃/(2+ε) ≈ 10.80, via M<sub>KK</sub> = M<sub>Pl</sub> × exp(-k<sub>eff</sub>π). No longer an input!
        </div>
        <div class="var-units">
         TeV
