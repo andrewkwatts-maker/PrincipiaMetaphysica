@@ -438,7 +438,7 @@ The geometric approach (N_flux = chi_eff/6, T_omega = -1.000, eta = 0.113) is pr
 ---
 
 **Report Generated:** 2025-12-20
-**Verified By:** Claude Code (Sonnet 4.5)
+**Verified By:** Andrew Keith Watts
 **Files Checked:** 4 (2 Python, 1 JSON, 1 HTML)
 **Verification Points:** 47
 **Passed:** 47/47 (100%)

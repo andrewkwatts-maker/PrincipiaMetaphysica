@@ -204,7 +204,7 @@ def get_yukawa_texture_ckm(sector='up', b2=4, b3=24):
 
 # Module metadata
 __version__ = "1.0.0"
-__author__ = "Andrew Keith Watts (with AI assistance)"
+__author__ = "Andrew Keith Watts"
 __references__ = [
     "Corti et al. (arXiv:1412.4123)",
     "Acharya et al. (arXiv:hep-th/0109152)",

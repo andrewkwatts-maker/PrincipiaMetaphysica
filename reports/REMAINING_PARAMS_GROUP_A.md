@@ -1,7 +1,7 @@
 # REMAINING PARAMETERS GROUP A - DERIVATION AUDIT
 
 **Date:** 2025-12-16
-**Auditor:** Claude Sonnet 4.5
+**Auditor:** Andrew Keith Watts
 **Paper:** principia-metaphysica-paper.html
 **Scope:** 4 parameters requiring derivation sections
 

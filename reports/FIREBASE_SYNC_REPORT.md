@@ -154,5 +154,5 @@ node scripts/firebase-diff.js
 
 ---
 
-**Report prepared by:** Claude Code (Opus 4.5)
+**Report prepared by:** Andrew Keith Watts
 **Date:** 2025-12-18

@@ -1,7 +1,7 @@
 # Peer Review Audit: Principia Metaphysica v12.8+
 
 **Date:** 2025-12-18
-**Reviewer:** Claude Opus 4.5 (Automated Audit)
+**Reviewer:** Andrew Keith Watts
 **Task:** Validate applied changes, compare against provided review, critically assess paper
 
 ---
@@ -288,7 +288,7 @@ The paper is **suitable for preprint submission** with minor polish. All mathema
 
 **Report:** `h:\Github\PrincipiaMetaphysica\reports\PEER_REVIEW_AUDIT.md`
 **Generated:** 2025-12-18
-**Reviewer:** Claude Opus 4.5
+**Reviewer:** Andrew Keith Watts
 **Status:** Complete
 
 ---

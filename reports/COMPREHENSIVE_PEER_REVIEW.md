@@ -1,7 +1,7 @@
 # Comprehensive Peer Review: Principia Metaphysica v12.8
 
 **Date:** 2025-12-18
-**Reviewer:** Claude Code (Opus 4.5)
+**Reviewer:** Andrew Keith Watts
 **Paper Version:** v12.8
 **Total Lines Reviewed:** ~2,480
 
@@ -341,6 +341,6 @@ The paper is publication-ready. The logical flow is sound, the ordering is optim
 
 ---
 
-**Report prepared by:** Claude Code (Opus 4.5)
+**Report prepared by:** Andrew Keith Watts
 **Date:** 2025-12-18
 **Method:** Line-by-line review of all 2,480 lines

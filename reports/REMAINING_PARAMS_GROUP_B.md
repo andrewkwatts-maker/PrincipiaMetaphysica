@@ -718,7 +718,7 @@ M_GUT = M_GUT,base × (1 + 3/(22 - ν/12) × 0.624)
 
 ---
 
-**Report compiled by:** Claude Code
+**Report compiled by:** Andrew Keith Watts
 **Date:** 2025-12-16
 **Version:** v12.8
 **Status:** READY FOR REVIEW
