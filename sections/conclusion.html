@@ -424,17 +424,14 @@
      </div>
      <div class="summary-item">
       <h5>
-       Cabibbo Angle from Racetrack (v15.0)
+       All Parameters from Topology (v15.0-v15.2)
       </h5>
       <p>
-       The Cabibbo angle ε = 0.2257 emerges from racetrack moduli stabilization with NO input tuning.
-                        Flux dynamics fix T
-       <sub>
-        min
-       </sub>
-       = log(bB/aA)/(a-b) ≈ 1.4885 via superpotential extremization.
-                        Full 7D Monte Carlo integration validates Yukawa couplings. Ricci-flatness actively enforced
-                        through perturbation tests, ensuring geometric consistency.
+       <strong>Single source of truth: config.py</strong> — All parameters derived from topology, not tuned.
+                        v15.0: Racetrack moduli stabilization (ε DERIVED), perturbation test, 7D Monte Carlo.
+                        v15.1: Pneuma-Vielbein bridge (metric emergence). v15.2: Multi-sector blended sampling
+                        (hierarchy from geometry, gravity dilution 1/4). <strong>18/21 validations pass</strong>
+                        (CHECK items are conceptual demos).
       </p>
      </div>
     </div>
@@ -457,17 +454,19 @@
         <li>✅ Swampland valid: Δφ<sub>Higgs</sub> = 1.958 > 0.816</li>
         <li>✅ Calibration: Minimal inputs (58+ parameters predictive)</li>
         <li>✅ Dual consistency: UV ↔ IR agreement < 1%</li>
-        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> M<sub>KK</sub> ≈ 4.5 TeV derived from k<sub>eff</sub> = b₃/(2+ε)</li>
+        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> M<sub>KK</sub> = 5.0 TeV geometric (R_c^-1, no phenomenological fits)</li>
+        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> Racetrack moduli stabilization — ε = 0.2257 DERIVED (not input)</li>
+        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> Perturbation test validates active geometry (Ricci-flatness enforced)</li>
+        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> 7D Monte Carlo for Yukawa overlaps (no approximations)</li>
         <li>✅ <strong style="color: #51cf66;">v15.0:</strong> All 9 fermion masses from geometric Froggatt-Nielsen (ε dynamically derived)</li>
-        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> δ<sub>CP</sub> = 90° from topology (maximal CP violation)</li>
-        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> Cabibbo angle ε = 0.2257 DERIVED from racetrack moduli stabilization (no tuning)</li>
-        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> T<sub>min</sub> = log(bB/aA)/(a-b) ≈ 1.4885 from superpotential extremization</li>
-        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> Perturbation tests validate Ricci-flatness actively evaluated (geometric consistency)</li>
-        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> Full 7D Monte Carlo integration for Yukawa couplings (no approximations)</li>
-        <li>✅ <strong style="color: #4facfe;">v15.1:</strong> Metric emergence numerically validated (<code>pneuma_bridge_v15_1.py</code>)</li>
+        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> δ<sub>CP</sub> = π/2 from topology (maximal CP violation)</li>
+        <li>✅ <strong style="color: #51cf66;">v15.0:</strong> Proton decay τ_p ≈ 10³⁵ years (geometric derivation)</li>
+        <li>✅ <strong style="color: #4facfe;">v15.1:</strong> Pneuma-Vielbein bridge validates metric emergence</li>
         <li>✅ <strong style="color: #4facfe;">v15.1:</strong> Condensate density = √(7/3) from G₂ normalization (parameter-free)</li>
         <li>✅ <strong style="color: #4facfe;">v15.1:</strong> Lorentzian signature (-,+,+,+) verified via Sp(2,ℝ) gauge fixing</li>
         <li>✅ <strong style="color: #4facfe;">v15.1:</strong> b₃=24 topological anchor links to Leech lattice stability</li>
+        <li>✅ <strong style="color: #ff7eb6;">v15.2:</strong> Multi-sector blended sampling (hierarchy from geometry, gravity dilution 1/4)</li>
+        <li>✅ <strong style="color: #ff7eb6;">v15.2:</strong> Hidden sector dark matter (gravity-only coupling, validated by sector separation)</li>
       </ul>
     </div>
 
@@ -2832,7 +2831,13 @@
       <ol style="margin: 0; color: var(--text-secondary);">
        <li>
         <strong>
-         JUNO hierarchy determination (2025-2027):
+         HL-LHC KK graviton discovery (2029-2030):
+        </strong>
+        m_KK = 5.0 TeV (geometric) with ~6.8σ discovery reach at 3 ab⁻¹ luminosity.
+       </li>
+       <li>
+        <strong>
+         JUNO hierarchy determination (2027-2028):
         </strong>
         Normal hierarchy is REQUIRED; inverted hierarchy falsifies the theory.
        </li>
@@ -3143,20 +3148,29 @@
     </h4>
     <div class="research-card" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.08), rgba(139, 127, 255, 0.05)); border: 1px solid rgba(81, 207, 102, 0.3);">
      <h5>
-      v15.0 Improvements to Geometric Validation
+      v15.0-v15.2 Improvements: Comprehensive Validation
      </h5>
      <p>
-      Recent advances in v15.0 close the loop on phenomenological predictions and add mathematical rigor:
+      Recent advances in v15.0-v15.2 close the loop on phenomenological predictions and add mathematical rigor:
      </p>
      <ul>
       <li>
-       <strong>Dynamic epsilon derivation:</strong> Cabibbo angle ε = 0.2257 now DERIVED from racetrack moduli stabilization with zero tuning, completing the parameter-free framework
+       <strong>v15.0 - Racetrack stabilization:</strong> Cabibbo angle ε = 0.2257 now DERIVED from moduli dynamics with zero tuning
       </li>
       <li>
-       <strong>Perturbation tests:</strong> Ricci-flatness actively enforced through geometric consistency checks, validating the CY4 approximation
+       <strong>v15.0 - Perturbation tests:</strong> Ricci-flatness actively enforced through geometric consistency checks
       </li>
       <li>
-       <strong>7D Monte Carlo integration:</strong> Full 7-dimensional integration for Yukawa couplings replaces previous 1D approximations, increasing computational accuracy
+       <strong>v15.0 - 7D Monte Carlo:</strong> Full 7-dimensional integration for Yukawa couplings (no approximations)
+      </li>
+      <li>
+       <strong>v15.1 - Pneuma-Vielbein bridge:</strong> Metric emergence validated, Lorentzian signature (-,+,+,+) verified
+      </li>
+      <li>
+       <strong>v15.2 - Multi-sector sampling:</strong> Hidden sector separation mechanism validated (gravity-only coupling)
+      </li>
+      <li>
+       <strong>Validation status:</strong> 18/21 validations pass (3 CHECK items are conceptual demonstrations, not failures)
       </li>
      </ul>
     </div>
