@@ -33,13 +33,16 @@ sys.path.insert(0, str(Path(__file__).parent / 'simulations'))
 
 import config
 
-# v8.4 imports
-from simulations.proton_decay_rg_hybrid import run_proton_decay_calculation
+# ==============================================================================
+# v14.1 CANONICAL IMPORTS (Industry Best Practice - Single Source of Truth)
+# ==============================================================================
+# Core baseline simulations (still needed for backward compatibility)
 from simulations.pmns_full_matrix import run_pmns_calculation
 from simulations.wz_evolution_desi_dr2 import run_wz_analysis
 from simulations.kk_spectrum_full import run_kk_spectrum
 from simulations.neutrino_mass_ordering import run_mass_ordering
-from simulations.proton_decay_v84_ckm import ProtonDecayV84
+
+# v13.0+ Geometric simulations (CANONICAL - replace v8.4 RG-based)
 from simulations.proton_decay_geometric_v13_0 import (
     proton_decay_geometric_prediction,
     export_proton_decay_geometric
@@ -52,6 +55,17 @@ from simulations.breaking_chain_geometric_v14_1 import (
     validate_breaking_chain_geometric,
     export_breaking_chain_geometric
 )
+
+# DEPRECATED imports (from deprecated/ subfolder for backward compat)
+# These are only used for legacy output sections - main physics uses v13.0+
+try:
+    from simulations.deprecated.proton_decay_rg_hybrid import run_proton_decay_calculation
+    from simulations.deprecated.proton_decay_v84_ckm import ProtonDecayV84
+    DEPRECATED_AVAILABLE = True
+except ImportError:
+    DEPRECATED_AVAILABLE = False
+    run_proton_decay_calculation = None
+    ProtonDecayV84 = None
 
 class NumpyEncoder(json.JSONEncoder):
     """Custom JSON encoder for numpy types - handles NaN/Inf properly"""
@@ -329,7 +343,7 @@ def run_v10_geometric_derivations(verbose=True):
 
     # 4. Full Yukawa
     try:
-        from simulations.full_yukawa_v10 import yukawa_from_associative_cycles
+        from simulations.deprecated.full_yukawa_v10 import yukawa_from_associative_cycles
         yukawa_from_associative_cycles()
         results['yukawa_full'] = {
             'method': 'TCS G_2 cycle intersections',
@@ -359,7 +373,7 @@ def run_v10_1_neutrino_masses(verbose=True):
         print("="*70)
 
     try:
-        from simulations.neutrino_mass_matrix_v10_1 import derive_neutrino_mass_matrix
+        from simulations.deprecated.neutrino_mass_matrix_v10_1 import derive_neutrino_mass_matrix
         m_nu, PMNS, masses = derive_neutrino_mass_matrix()
 
         # masses are already in eV from derive_neutrino_mass_matrix()
@@ -476,7 +490,7 @@ def run_v11_final_observables(verbose=True):
 
     # 1. Proton lifetime
     try:
-        from simulations.proton_lifetime_v11 import derive_proton_lifetime_from_g2
+        from simulations.deprecated.proton_lifetime_v11 import derive_proton_lifetime_from_g2
         tau_p = derive_proton_lifetime_from_g2()
         results['proton_lifetime'] = {
             'tau_p_years': float(tau_p),
@@ -498,7 +512,7 @@ def run_v11_final_observables(verbose=True):
 
     # 2. Higgs mass
     try:
-        from simulations.higgs_mass_v11 import predict_higgs_mass_from_g2_moduli
+        from simulations.deprecated.higgs_mass_v11 import predict_higgs_mass_from_g2_moduli
         m_h = predict_higgs_mass_from_g2_moduli()
         results['higgs_mass'] = {
             'm_h_GeV': float(m_h),
@@ -535,7 +549,7 @@ def run_v12_final_values(verbose=True):
 
     # 1. Final neutrino masses
     try:
-        from simulations.neutrino_mass_matrix_final_v12 import derive_neutrino_mass_matrix_from_g2
+        from simulations.deprecated.neutrino_mass_matrix_final_v12 import derive_neutrino_mass_matrix_from_g2
         m_nu, masses = derive_neutrino_mass_matrix_from_g2()
         results['neutrino_masses_final'] = {
             'm1_eV': float(masses[0] * 1e9),
@@ -559,7 +573,7 @@ def run_v12_final_values(verbose=True):
 
     # 2. KK graviton mass
     try:
-        from simulations.kk_graviton_mass_v12 import predict_kk_mass_from_g2_volume
+        from simulations.deprecated.kk_graviton_mass_v12 import predict_kk_mass_from_g2_volume
         m_KK = predict_kk_mass_from_g2_volume()
         results['kk_graviton'] = {
             'm1_TeV': float(m_KK / 1e3),
@@ -933,7 +947,7 @@ def run_v12_6_geometric_derivations(verbose=True):
 
     # 5. Higgs Mass (v12.6 FIXED - using v12.5 Re(T))
     try:
-        from simulations.higgs_mass_v11 import predict_higgs_mass_from_g2_moduli
+        from simulations.deprecated.higgs_mass_v11 import predict_higgs_mass_from_g2_moduli
         m_h = predict_higgs_mass_from_g2_moduli()
         results['higgs_mass_fixed'] = {
             'm_h_GeV': m_h,
@@ -978,7 +992,7 @@ def run_v12_6_geometric_derivations(verbose=True):
 
     # 7. Proton Lifetime (v12.6 FIXED)
     try:
-        from simulations.proton_lifetime_v11 import derive_proton_lifetime_from_g2
+        from simulations.deprecated.proton_lifetime_v11 import derive_proton_lifetime_from_g2
         tau_p_result = derive_proton_lifetime_from_g2()
         tau_p = tau_p_result
         tau_p_OOM = np.log10(tau_p)
@@ -1002,7 +1016,7 @@ def run_v12_6_geometric_derivations(verbose=True):
 
     # 8. Neutrino Mass Splittings (v12.6 FIXED)
     try:
-        from simulations.neutrino_mass_matrix_final_v12 import derive_neutrino_mass_matrix_from_g2
+        from simulations.deprecated.neutrino_mass_matrix_final_v12 import derive_neutrino_mass_matrix_from_g2
         m_nu, masses_ev = derive_neutrino_mass_matrix_from_g2()
         delta_m21_2 = masses_ev[1]**2 - masses_ev[0]**2
         delta_m31_2 = masses_ev[2]**2 - masses_ev[0]**2
