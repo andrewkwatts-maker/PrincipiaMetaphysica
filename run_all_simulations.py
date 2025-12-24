@@ -1472,9 +1472,9 @@ def run_all_canonical_simulations(verbose: bool = True) -> Dict[str, Any]:
     return results
 
 
-def export_to_json(results: Dict[str, Any], output_path: str = "theory_output_v14_1.json"):
-    """Export results to JSON file."""
-    output_file = Path(__file__).parent.parent / output_path
+def export_to_json(results: Dict[str, Any], output_path: str = "theory_output.json"):
+    """Export results to JSON file in the project root."""
+    output_file = Path(__file__).parent / output_path
     with open(output_file, 'w') as f:
         json.dump(results, f, cls=NumpyEncoder, indent=2)
     print(f"\nResults exported to: {output_file}")
