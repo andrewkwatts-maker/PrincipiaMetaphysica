@@ -17,6 +17,18 @@ let currentPageId = null;
 // Auth state
 let isAuthenticated = false;
 
+// Base path for assets (computed based on current location)
+function getBasePath() {
+  const path = window.location.pathname;
+  // If in subdirectory (e.g., foundations/, sections/), add ../
+  if (path.includes('/foundations/') || path.includes('/sections/') ||
+      path.includes('/docs/') || path.includes('/diagrams/') ||
+      path.includes('/components/') || path.includes('/tests/')) {
+    return '../';
+  }
+  return '';
+}
+
 // Expose signInWithGoogle globally for header login button onclick handlers
 window.signInWithGoogle = signInWithGoogle;
 
@@ -222,14 +234,14 @@ async function handleLogin() {
       // Login cancelled or failed - reset button
       if (loginBtn) {
         loginBtn.disabled = false;
-        loginBtn.innerHTML = '<img src="/images/google-icon.svg" alt="Google" class="google-icon"> Login with Google';
+        loginBtn.innerHTML = `<img src="${getBasePath()}images/google-icon.svg" alt="Google" class="google-icon"> Login with Google`;
       }
     }
   } catch (error) {
     console.error('[PM Auth Guard] Login failed:', error);
     if (loginBtn) {
       loginBtn.disabled = false;
-      loginBtn.innerHTML = '<img src="/images/google-icon.svg" alt="Google" class="google-icon"> Login with Google';
+      loginBtn.innerHTML = `<img src="${getBasePath()}images/google-icon.svg" alt="Google" class="google-icon"> Login with Google`;
     }
   }
 }
@@ -257,7 +269,7 @@ function updateUserDisplay(user) {
 
   if (user) {
     if (userAvatar) {
-      userAvatar.src = user.photoURL || '/images/default-avatar.svg';
+      userAvatar.src = user.photoURL || `${getBasePath()}images/default-avatar.svg`;
       userAvatar.alt = user.displayName || 'User';
       userAvatar.style.display = 'block';
     }
@@ -322,7 +334,7 @@ function injectAuthOverlay() {
       </p>
 
       <button id="google-login-btn" class="google-login-btn">
-        <img src="/images/google-icon.svg" alt="Google" class="google-icon">
+        <img src="${getBasePath()}images/google-icon.svg" alt="Google" class="google-icon">
         Login with Google
       </button>
 
