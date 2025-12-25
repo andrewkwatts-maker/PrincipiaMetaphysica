@@ -54,12 +54,19 @@
     --warning: #ffd43b;
     --glass-bg: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.8);
     --glass-border: rgba(255, 255, 255, 0.1);
+
+    /* RGB values for rgba() usage */
+    --color-border-primary-rgb: 42, 47, 74;
+    --color-bg-secondary-rgb: 21, 26, 53;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -73,6 +80,7 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     transition: background-color 0.3s ease;
 }
 
@@ -108,10 +116,10 @@ h1 {
     letter-spacing: -0.02em;
 }
 
-h2 {
+h2, h3, h4, h5, h6 {
     font-family: 'Crimson Text', serif;
     font-weight: 600;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
 }
 
 nav ul {
@@ -121,15 +129,31 @@ nav ul {
     flex-wrap: wrap;
 }
 
-nav a {
-    color: var(--text-secondary);
+nav a,
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: 8px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    font-size: 0.95rem;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
     font-weight: 500;
+    display: inline-block;
     position: relative;
+}
+
+.nav-link:hover,
+nav a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    text-shadow: 0 0 10px rgba(139, 127, 255, 0.5);
+}
+
+.nav-link.active,
+nav a.active {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.3), rgba(255, 126, 182, 0.2));
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    color: #fff;
 }
 
 nav a::after {
@@ -151,6 +175,94 @@ nav a:hover {
 
 nav a:hover::after {
     width: 60%;
+}
+
+/* Breadcrumb - Glass Effect */
+.breadcrumb {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+}
+
+.breadcrumb a {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb .separator {
+    margin: 0 0.5rem;
+    color: var(--text-muted);
+}
+
+/* Mobile Hamburger Menu */
+.mobile-nav-toggle {
+    display: none;
+    background: var(--accent-primary);
+    border: none;
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(139, 127, 255, 0.4);
+}
+
+/* User Controls Dropdown */
+.user-controls {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.user-controls img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-controls span {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.user-controls button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+.user-controls button:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: var(--accent-primary);
 }
 
 /* Search - Modern Style */
@@ -536,37 +648,326 @@ main {
     border-color: var(--accent-primary);
 }
 
-/* Tables - Modern styling */
+/* Tables - Modern styling matching old paper */
 table {
     width: 100%;
-    border-collapse: separate;
-    border-spacing: 0;
+    border-collapse: collapse;
     margin: 1.5rem 0;
+    font-size: 0.95rem;
+    background: var(--bg-card);
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 table th {
-    background: var(--bg-secondary);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, rgba(var(--color-primary-rgb, 139, 127, 255), 0.1) 100%);
     color: var(--accent-primary);
     font-weight: 600;
     text-align: left;
-    padding: 1rem;
-    border-bottom: 2px solid var(--border-primary);
+    padding: 0.85rem 1rem;
+    border-bottom: 2px solid var(--border-accent);
+    border-right: 1px solid var(--border-primary);
+}
+
+table th:last-child {
+    border-right: none;
 }
 
 table td {
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     border-bottom: 1px solid var(--border-primary);
+    border-right: 1px solid rgba(var(--color-border-primary-rgb, 42, 47, 74), 0.5);
+    color: var(--text-secondary);
+}
+
+table td:last-child {
+    border-right: none;
 }
 
 table tr:last-child td {
     border-bottom: none;
 }
 
-table tr:hover {
+/* Alternating row colors */
+table tbody tr:nth-child(even) {
+    background: rgba(var(--color-bg-secondary-rgb, 21, 26, 53), 0.3);
+}
+
+table tbody tr:nth-child(odd) {
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.5);
+}
+
+table tbody tr:hover {
     background: var(--bg-card-hover);
+    transform: scale(1.001);
+    transition: all 0.2s ease;
+}
+
+/* Table caption styling */
+table caption {
+    caption-side: top;
+    padding: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-align: left;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Specific table types */
+.pm-table,
+.data-table,
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+}
+
+.data-table th,
+.comparison-table th {
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.15) 0%, rgba(81, 207, 102, 0.05) 100%);
+    font-weight: 700;
+}
+
+/* Number alignment */
+table td.number,
+table td[data-type="number"],
+.param-value {
+    text-align: right;
+    font-family: 'Courier New', Consolas, monospace;
+    font-weight: 500;
+}
+
+/* Text alignment */
+table td.text,
+table td[data-type="text"] {
+    text-align: left;
+}
+
+/* Center alignment */
+table td.center,
+table th.center,
+table td[data-align="center"] {
+    text-align: center;
+}
+
+/* Parameter Cards */
+.param-card {
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.6);
+    backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid var(--border-primary);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.param-card:hover {
+    border-color: var(--accent-primary);
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.8);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(var(--color-primary-rgb, 139, 127, 255), 0.15);
+}
+
+.param-card .param-name {
+    font-family: 'Courier New', Consolas, monospace;
+    font-weight: 600;
+    color: var(--accent-secondary);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.param-card .param-symbol {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: var(--text-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    display: block;
+}
+
+.param-card .param-value {
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+.param-card .param-units {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-left: 0.5rem;
+}
+
+.param-card .param-description {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--border-primary);
+}
+
+/* Comparison Boxes */
+.comparison-box,
+.param-comparison {
+    background: rgba(var(--color-bg-secondary-rgb, 21, 26, 53), 0.5);
+    border: 1px solid var(--border-accent);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.comparison-box .comparison-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1rem 0;
+}
+
+.comparison-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.comparison-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.comparison-value {
+    font-family: 'Courier New', Consolas, monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.comparison-value.predicted {
+    color: var(--accent-primary);
+}
+
+.comparison-value.experimental {
+    color: var(--success);
+}
+
+/* Sigma Deviation Badges */
+.sigma-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.3rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    font-family: 'Courier New', Consolas, monospace;
+    letter-spacing: 0.025em;
+    margin-left: 0.5rem;
+}
+
+/* Color coding based on sigma deviation */
+.sigma-badge.sigma-0,
+.sigma-badge[data-sigma="0"] {
+    background: rgba(81, 207, 102, 0.2);
+    color: #51cf66;
+    border: 1px solid rgba(81, 207, 102, 0.4);
+}
+
+.sigma-badge.sigma-1,
+.sigma-badge[data-sigma="1"] {
+    background: rgba(77, 171, 247, 0.2);
+    color: #4dabf7;
+    border: 1px solid rgba(77, 171, 247, 0.4);
+}
+
+.sigma-badge.sigma-2,
+.sigma-badge[data-sigma="2"] {
+    background: rgba(255, 212, 59, 0.2);
+    color: #ffd43b;
+    border: 1px solid rgba(255, 212, 59, 0.4);
+}
+
+.sigma-badge.sigma-3,
+.sigma-badge[data-sigma="3"] {
+    background: rgba(255, 159, 67, 0.2);
+    color: #ff9f43;
+    border: 1px solid rgba(255, 159, 67, 0.4);
+}
+
+.sigma-badge.sigma-high,
+.sigma-badge[data-sigma-range="high"] {
+    background: rgba(255, 107, 107, 0.2);
+    color: #ff6b6b;
+    border: 1px solid rgba(255, 107, 107, 0.4);
+}
+
+/* Uncertainty Display */
+.uncertainty,
+.param-uncertainty {
+    color: var(--text-muted);
+    font-size: 0.9em;
+    font-family: 'Courier New', Consolas, monospace;
+}
+
+.uncertainty::before {
+    content: '±';
+    margin: 0 0.2em;
+    color: var(--text-muted);
+}
+
+/* Scientific Notation */
+.scientific-notation {
+    font-family: 'Courier New', Consolas, monospace;
+    white-space: nowrap;
+}
+
+.scientific-notation sup {
+    font-size: 0.75em;
+}
+
+.sci-mantissa {
+    font-weight: 600;
+}
+
+.sci-exponent {
+    font-size: 0.75em;
+    vertical-align: super;
+}
+
+/* Table Container with Scroll */
+.table-container {
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    border-radius: 12px;
+    border: 1px solid var(--border-primary);
+    background: var(--bg-card);
+}
+
+.table-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.table-container::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: 0 0 12px 12px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+    background: var(--border-accent);
+    border-radius: 4px;
+}
+
+.table-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-primary);
 }
 
 /* Footer */
@@ -606,6 +1007,21 @@ ul li::marker {
         gap: 1rem;
     }
 
+    /* Show mobile hamburger menu */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Hide desktop nav on mobile */
+    header nav ul {
+        display: none;
+    }
+
+    /* Glass header responsive */
+    header {
+        padding: 1rem;
+    }
+
     nav ul {
         justify-content: center;
     }
@@ -628,6 +1044,51 @@ ul li::marker {
 
     .intro, .detail-header, .detail-section {
         padding: 1.5rem;
+    }
+
+    /* Table responsive styles */
+    table {
+        font-size: 0.85rem;
+    }
+
+    table th,
+    table td {
+        padding: 0.5rem 0.6rem;
+    }
+
+    /* Make tables scrollable on mobile */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Comparison boxes stack on mobile */
+    .comparison-box .comparison-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .comparison-value {
+        font-size: 1rem;
+    }
+
+    /* Parameter cards more compact */
+    .param-card {
+        padding: 1rem;
+    }
+
+    .param-card .param-symbol {
+        font-size: 1rem;
+    }
+
+    .param-card .param-value {
+        font-size: 1rem;
+    }
+
+    /* Sigma badges smaller */
+    .sigma-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.5rem;
     }
 }
 
@@ -2669,6 +3130,89 @@ ul li::marker {
 }
 
 /* ============================================
+   FINAL VISUAL POLISH
+   ============================================ */
+
+/* Text shadows for readability on glass cards */
+.glass-card h2, .glass-card h3,
+.card h2, .card h3,
+.sefirah-card h2, .sefirah-card h3,
+.world-card h2, .world-card h3 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading shimmer effect for async content */
+.loading-shimmer,
+.skeleton-loading,
+[data-loading="true"] {
+    background: linear-gradient(90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Polished scrollbars for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(139, 127, 255, 0.3);
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 127, 255, 0.5);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+/* Firefox scrollbar styling */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(139, 127, 255, 0.3) rgba(255, 255, 255, 0.05);
+}
+
+/* Ensure smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Selection color */
+::selection {
+    background: rgba(139, 127, 255, 0.3);
+    color: var(--text-primary);
+}
+
+::-moz-selection {
+    background: rgba(139, 127, 255, 0.3);
+    color: var(--text-primary);
+}
+
+/* ============================================
    COMPREHENSIVE PRINT STYLES FOR PDF EXPORT
    ============================================ */
 
@@ -2834,10 +3378,46 @@ ul li::marker {
 
     .dimension-table,
     .comparison-table,
-    .dim-table {
+    .dim-table,
+    .data-table,
+    .pm-table {
         page-break-inside: avoid;
         border-radius: 0;
         box-shadow: none;
+    }
+
+    /* Alternating row colors for print */
+    tbody tr:nth-child(even) {
+        background: #f5f5f5 !important;
+    }
+
+    tbody tr:nth-child(odd) {
+        background: white !important;
+    }
+
+    /* Parameter and comparison boxes for print */
+    .param-card,
+    .comparison-box,
+    .param-comparison {
+        background: #f8f8f8 !important;
+        border: 1px solid #666 !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+    }
+
+    .param-value,
+    .comparison-value,
+    .scientific-notation {
+        color: #000 !important;
+    }
+
+    .sigma-badge {
+        border: 1px solid #666 !important;
+        background: white !important;
+        color: #000 !important;
     }
 
     /* ===== CARDS - CONVERT TO SIMPLE BOXES ===== */

@@ -299,17 +299,13 @@
             border: 1px solid rgba(139, 127, 255, 0.2);
         }
   </style>
-  <script src="theory-constants-enhanced.js">
-  </script>
-  <script src="js/pm-tooltip-system.js">
-  </script>
-  <script defer="" src="js/formula-expansion.js">
-  </script>
-  <!-- Formula Registry and Component for hoverable formulas -->
-  <script src="js/formula-registry.js">
-  </script>
-  <script src="js/pm-formula-component.js">
-  </script>
+  <script src="js/pm-constants-loader.js"></script>
+  <script src="js/pm-formula-loader.js"></script>
+  <script src="theory-constants-enhanced.js"></script>
+  <script src="js/pm-tooltip-system.js"></script>
+  <script defer src="js/formula-expansion.js"></script>
+  <script src="js/formula-registry.js"></script>
+  <script src="js/pm-formula-component.js"></script>
   <script>
    // Populate values from PM object when page loads
         document.addEventListener('DOMContentLoaded', function() {
@@ -1983,12 +1979,8 @@
    </p>
   </footer>
   </div>
-  <!-- Theory Constants and Validation Stats -->
-  <script src="theory-constants-enhanced.js">
-  </script>
-  <script src="js/validation-stats.js">
-  </script>
-  <!-- PM Parameter System -->
+  <!-- Validation Stats and PM Parameter System -->
+  <script src="js/validation-stats.js"></script>
   <script src="js/pm-parameter-schema.js"></script>
   <script src="js/pm-parameter-data.js"></script>
   <script src="js/pm-parameter-component.js"></script>

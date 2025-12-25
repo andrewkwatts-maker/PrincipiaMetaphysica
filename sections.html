@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<!--
+    Principia Metaphysica: Dynamic Section Browser
+    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+    Single-page app for browsing paper sections loaded dynamically from JSON.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principia Metaphysica - Sections</title>
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams',
+                macros: {
+                    shadow: '\\text{shadow}'
+                }
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            },
+            startup: {
+                pageReady: () => {
+                    return MathJax.startup.defaultPageReady().then(() => {
+                        console.log('MathJax initial typesetting complete');
+                    });
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Loaders -->
+    <script src="js/pm-constants-loader.js"></script>
+    <script src="js/pm-formula-loader.js"></script>
+    <script src="js/content-templates.js"></script>
+    <script src="js/pm-section-renderer.js"></script>
+
+    <!-- Common Shared Styles -->
+    <link rel="stylesheet" href="css/pm-common.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-paper: #1a1a2e;
+            --bg-sidebar: #16213e;
+            --text-dark: #1a1a1a;
+            --text-light: #e0e0e0;
+            --text-muted: #888;
+            --accent: #8b7fff;
+            --accent-hover: #a394ff;
+            --accent-secondary: #ff7eb6;
+            --border: #2a2a3e;
+            --border-light: #3a3a4e;
+            --shadow: rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 11pt;
+            overflow-x: hidden;
+        }
+
+        /* Layout Grid */
+        .app-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            grid-template-rows: auto 1fr auto;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .app-header {
+            grid-area: header;
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            padding: 1.5rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .app-header h1 {
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .app-header .subtitle {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Sidebar Navigation */
+        .app-sidebar {
+            grid-area: sidebar;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+        }
+
+        .sidebar-title {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            padding: 0 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-nav-list {
+            list-style: none;
+        }
+
+        .section-nav-item {
+            margin: 0;
+        }
+
+        .section-nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1.5rem;
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+            font-size: 1rem;
+        }
+
+        .section-nav-link:hover {
+            background: rgba(139, 127, 255, 0.1);
+            border-left-color: var(--accent);
+        }
+
+        .section-nav-link.active {
+            background: rgba(139, 127, 255, 0.15);
+            border-left-color: var(--accent);
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .section-number {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--accent);
+            min-width: 1.5rem;
+        }
+
+        .section-title {
+            flex: 1;
+        }
+
+        /* Main Content Area */
+        .app-main {
+            grid-area: main;
+            background: var(--bg-paper);
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        .content-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Loading State */
+        .loading {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+        }
+
+        .loading::after {
+            content: '...';
+            animation: ellipsis 1.5s infinite;
+        }
+
+        @keyframes ellipsis {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        /* Error State */
+        .error {
+            background: rgba(248, 113, 113, 0.1);
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            color: #f87171;
+        }
+
+        .error h3 {
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        /* Footer */
+        .app-footer {
+            grid-area: footer;
+            background: var(--bg-sidebar);
+            border-top: 1px solid var(--border);
+            padding: 1.5rem 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .app-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .app-footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Section Content Styles (complement pm-section-renderer.js shadow DOM) */
+        .section-header-main {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-header-main h2 {
+            font-size: 2rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .section-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-meta-item strong {
+            color: var(--accent);
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .breadcrumb a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-separator {
+            margin: 0 0.5rem;
+        }
+
+        /* Section content styles */
+        .section-abstract {
+            font-style: italic;
+            padding: 1rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-left: 3px solid var(--accent);
+            margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        .beginner-summary {
+            background: rgba(96, 165, 250, 0.1);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .beginner-summary h3 {
+            color: #60a5fa;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+        }
+
+        .key-takeaways {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .key-takeaways h3 {
+            color: #4ade80;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.2rem;
+        }
+
+        .key-takeaways ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .key-takeaways li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Navigation Links */
+        .nav-link {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .nav-link:hover {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            text-shadow: 0 0 10px rgba(139, 127, 255, 0.5);
+        }
+
+        .nav-link.active {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.3), rgba(255, 126, 182, 0.2));
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            color: #fff;
+        }
+
+        /* Breadcrumb Glass Effect */
+        .breadcrumb {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .app-container {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                    "header"
+                    "main"
+                    "footer";
+            }
+
+            .app-header nav ul {
+                display: none;
+            }
+
+            .app-header h1 {
+                font-size: 1.2rem;
+            }
+
+            .app-header .subtitle {
+                font-size: 0.8rem;
+            }
+
+            .app-sidebar {
+                display: none;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 56px;
+                height: 56px;
+                background: var(--accent);
+                border: none;
+                border-radius: 50%;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
+                box-shadow: 0 4px 12px var(--shadow);
+                z-index: 1000;
+            }
+
+            .app-sidebar.mobile-open {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 999;
+                height: 100vh;
+            }
+
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 998;
+            }
+
+            .sidebar-overlay.active {
+                display: block;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .mobile-nav-toggle {
+                display: none;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .app-sidebar,
+            .app-header,
+            .app-footer,
+            .mobile-nav-toggle {
+                display: none;
+            }
+
+            .app-container {
+                grid-template-areas: "main";
+                grid-template-columns: 1fr;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div>
+                    <h1>Principia Metaphysica</h1>
+                    <div class="subtitle">A First-Principles Geometric Theory</div>
+                </div>
+                <nav style="margin-left: auto;">
+                    <ul style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0; padding: 0;">
+                        <li><a href="principia-metaphysica-paper.html" class="nav-link">Home</a></li>
+                        <li><a href="sections.html" class="nav-link active">Sections</a></li>
+                        <li><a href="formulas.html" class="nav-link">Formulas</a></li>
+                        <li><a href="parameters.html" class="nav-link">Parameters</a></li>
+                        <li><a href="references.html" class="nav-link">References</a></li>
+                        <li><a href="foundations.html" class="nav-link">Foundations</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Sidebar Navigation -->
+        <aside class="app-sidebar" id="sidebar">
+            <div class="sidebar-title">Sections</div>
+            <nav>
+                <ul class="section-nav-list" id="section-nav-list">
+                    <!-- Populated dynamically -->
+                    <li class="section-nav-item">
+                        <a href="#" class="section-nav-link">
+                            <div class="loading">Loading sections</div>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="app-main" id="main-content">
+            <div class="content-wrapper">
+                <div class="breadcrumb" id="breadcrumb">
+                    <a href="principia-metaphysica-paper.html">Paper Home</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span id="current-section-breadcrumb">Sections</span>
+                </div>
+
+                <div id="section-content">
+                    <div class="loading">Loading section content</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>Copyright &copy; 2025-2026 Andrew Keith Watts. All rights reserved.</p>
+            <p>Dedicated to my Dearest Wife, Elizabeth May Watts &amp; The Ruler and Restorer of all, The final Logos, The Messiah, Jesus of Nazareth</p>
+        </footer>
+    </div>
+
+    <!-- Mobile Navigation Toggle -->
+    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+        &#9776;
+    </button>
+
+    <!-- Sidebar Overlay (mobile) -->
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <!-- Application Script -->
+    <script>
+        /**
+         * Sections App - Dynamic Section Browser
+         * Loads sections from AUTO_GENERATED/json/sections.json
+         * Uses pm-section-renderer.js for rendering
+         */
+        (async function() {
+            'use strict';
+
+            // State
+            let sectionsData = null;
+            let currentSectionId = null;
+
+            // DOM Elements
+            const navList = document.getElementById('section-nav-list');
+            const sectionContent = document.getElementById('section-content');
+            const breadcrumb = document.getElementById('current-section-breadcrumb');
+            const mobileToggle = document.getElementById('mobile-nav-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const sidebarOverlay = document.getElementById('sidebar-overlay');
+
+            /**
+             * Load sections from JSON
+             */
+            async function loadSections() {
+                try {
+                    // Try multiple paths
+                    const paths = [
+                        'AUTO_GENERATED/json/sections.json',
+                        '../AUTO_GENERATED/json/sections.json',
+                        'sections.json',
+                        '../sections.json'
+                    ];
+
+                    for (const path of paths) {
+                        try {
+                            console.log(`Trying to load sections from: ${path}`);
+                            const response = await fetch(path);
+                            if (response.ok) {
+                                sectionsData = await response.json();
+                                console.log(`Successfully loaded sections from: ${path}`, sectionsData);
+
+                                // Cache sections in window.PM for pm-section-renderer.js
+                                if (!window.PM) window.PM = {};
+                                window.PM.sections = sectionsData;
+
+                                return true;
+                            }
+                        } catch (e) {
+                            console.log(`Failed to load from ${path}:`, e.message);
+                            continue;
+                        }
+                    }
+
+                    throw new Error('Could not find sections.json in any expected location');
+                } catch (error) {
+                    console.error('Error loading sections:', error);
+                    showError('Failed to load sections', error.message);
+                    return false;
+                }
+            }
+
+            /**
+             * Render navigation sidebar
+             */
+            function renderNavigation() {
+                if (!sectionsData) return;
+
+                navList.innerHTML = '';
+
+                // Get section IDs and sort them
+                const sectionIds = Object.keys(sectionsData).sort((a, b) => {
+                    // Sort numerically if both are numbers
+                    const aNum = parseInt(a);
+                    const bNum = parseInt(b);
+                    if (!isNaN(aNum) && !isNaN(bNum)) {
+                        return aNum - bNum;
+                    }
+                    // Otherwise alphabetically
+                    return a.localeCompare(b);
+                });
+
+                for (const id of sectionIds) {
+                    const section = sectionsData[id];
+                    const li = document.createElement('li');
+                    li.className = 'section-nav-item';
+
+                    const link = document.createElement('a');
+                    link.href = `#section-${id}`;
+                    link.className = 'section-nav-link';
+                    link.dataset.sectionId = id;
+
+                    const numberSpan = document.createElement('span');
+                    numberSpan.className = 'section-number';
+                    numberSpan.textContent = id;
+
+                    const titleSpan = document.createElement('span');
+                    titleSpan.className = 'section-title';
+                    titleSpan.textContent = section.title;
+
+                    link.appendChild(numberSpan);
+                    link.appendChild(titleSpan);
+                    li.appendChild(link);
+                    navList.appendChild(li);
+
+                    // Add click handler
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        loadSection(id);
+                        closeMobileNav();
+                    });
+                }
+            }
+
+            /**
+             * Load and render a specific section
+             */
+            async function loadSection(sectionId) {
+                if (!sectionsData || !sectionsData[sectionId]) {
+                    showError('Section not found', `Section ${sectionId} does not exist`);
+                    return;
+                }
+
+                currentSectionId = sectionId;
+                const section = sectionsData[sectionId];
+
+                // Update URL hash
+                window.location.hash = `section-${sectionId}`;
+
+                // Update breadcrumb
+                breadcrumb.textContent = `Section ${sectionId}: ${section.title}`;
+
+                // Update active state in navigation
+                document.querySelectorAll('.section-nav-link').forEach(link => {
+                    link.classList.remove('active');
+                    if (link.dataset.sectionId === sectionId) {
+                        link.classList.add('active');
+                    }
+                });
+
+                // Show loading state
+                sectionContent.innerHTML = '<div class="loading">Loading section content</div>';
+
+                try {
+                    // Check if section has a sectionFile to load
+                    if (section.sectionFile) {
+                        // Load the section HTML file
+                        const response = await fetch(section.sectionFile);
+                        if (response.ok) {
+                            const html = await response.text();
+
+                            // Parse the HTML to extract just the content (not the full page)
+                            const parser = new DOMParser();
+                            const doc = parser.parseFromString(html, 'text/html');
+
+                            // Try to find the main content area
+                            let content = doc.querySelector('main') || doc.querySelector('.section-container') || doc.querySelector('body');
+
+                            if (content) {
+                                // Clone the content to avoid modifying the original
+                                const contentClone = content.cloneNode(true);
+
+                                // Remove any nav elements, headers, footers that might be in the section file
+                                contentClone.querySelectorAll('nav, header.site-header, footer.site-footer').forEach(el => el.remove());
+
+                                // Clear and set new content
+                                sectionContent.innerHTML = '';
+                                sectionContent.appendChild(contentClone);
+                            } else {
+                                throw new Error('Could not find content in section file');
+                            }
+                        } else {
+                            throw new Error(`Failed to load section file: ${section.sectionFile}`);
+                        }
+                    } else if (section.contentBlocks && section.contentBlocks.length > 0) {
+                        // Use pm-section-renderer for JSON-based content
+                        const headerHTML = `
+                            <div class="section-header-main">
+                                <h2>Section ${section.id}: ${section.title}</h2>
+                                <div class="section-meta">
+                                    ${section.sectionType ? `<div class="section-meta-item"><strong>Type:</strong> ${section.sectionType}</div>` : ''}
+                                </div>
+                            </div>
+                        `;
+
+                        const sectionElement = document.createElement('pm-section');
+                        sectionElement.setAttribute('section-id', sectionId);
+                        sectionElement.setAttribute('format', 'html');
+                        sectionElement.setAttribute('level', 'full');
+
+                        sectionContent.innerHTML = headerHTML;
+                        sectionContent.appendChild(sectionElement);
+                    } else {
+                        // No content available - show section metadata
+                        sectionContent.innerHTML = `
+                            <div class="section-header-main">
+                                <h2>Section ${section.id}: ${section.title}</h2>
+                                <div class="section-meta">
+                                    ${section.sectionType ? `<div class="section-meta-item"><strong>Type:</strong> ${section.sectionType}</div>` : ''}
+                                </div>
+                            </div>
+                            ${section.abstract ? `<div class="section-abstract"><p>${section.abstract}</p></div>` : ''}
+                            ${section.beginnerSummary ? `
+                                <div class="beginner-summary">
+                                    <h3>Simplified Explanation</h3>
+                                    <p>${section.beginnerSummary}</p>
+                                </div>
+                            ` : ''}
+                            ${section.keyTakeaways && section.keyTakeaways.length > 0 ? `
+                                <div class="key-takeaways">
+                                    <h3>Key Takeaways</h3>
+                                    <ul>
+                                        ${section.keyTakeaways.map(t => `<li>${t}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            ` : ''}
+                        `;
+                    }
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                    // Retrigger MathJax after content loads
+                    if (window.MathJax && window.MathJax.typesetPromise) {
+                        setTimeout(() => {
+                            window.MathJax.typesetPromise([sectionContent]).catch((err) => {
+                                console.warn('MathJax typesetting failed:', err);
+                            });
+                        }, 100);
+                    }
+                } catch (error) {
+                    console.error('Error rendering section:', error);
+                    showError('Rendering error', error.message);
+                }
+            }
+
+            /**
+             * Show error message
+             */
+            function showError(title, message) {
+                sectionContent.innerHTML = `
+                    <div class="error">
+                        <h3>${title}</h3>
+                        <p>${message}</p>
+                    </div>
+                `;
+            }
+
+            /**
+             * Handle hash changes
+             */
+            function handleHashChange() {
+                const hash = window.location.hash;
+                if (hash.startsWith('#section-')) {
+                    const sectionId = hash.replace('#section-', '');
+                    if (sectionsData && sectionsData[sectionId]) {
+                        loadSection(sectionId);
+                    } else {
+                        console.warn(`Section not found: ${sectionId}`);
+                        // Load first section as fallback
+                        if (sectionsData) {
+                            const firstId = Object.keys(sectionsData).sort((a, b) => {
+                                const aNum = parseInt(a);
+                                const bNum = parseInt(b);
+                                if (!isNaN(aNum) && !isNaN(bNum)) {
+                                    return aNum - bNum;
+                                }
+                                return a.localeCompare(b);
+                            })[0];
+                            if (firstId) {
+                                loadSection(firstId);
+                            }
+                        }
+                    }
+                } else if (sectionsData) {
+                    // Load first section by default
+                    const firstId = Object.keys(sectionsData).sort((a, b) => {
+                        const aNum = parseInt(a);
+                        const bNum = parseInt(b);
+                        if (!isNaN(aNum) && !isNaN(bNum)) {
+                            return aNum - bNum;
+                        }
+                        return a.localeCompare(b);
+                    })[0];
+                    if (firstId) {
+                        loadSection(firstId);
+                    }
+                }
+            }
+
+            /**
+             * Mobile navigation handlers
+             */
+            function openMobileNav() {
+                sidebar.classList.add('mobile-open');
+                sidebarOverlay.classList.add('active');
+            }
+
+            function closeMobileNav() {
+                sidebar.classList.remove('mobile-open');
+                sidebarOverlay.classList.remove('active');
+            }
+
+            mobileToggle.addEventListener('click', () => {
+                if (sidebar.classList.contains('mobile-open')) {
+                    closeMobileNav();
+                } else {
+                    openMobileNav();
+                }
+            });
+
+            sidebarOverlay.addEventListener('click', closeMobileNav);
+
+            /**
+             * Initialize app
+             */
+            async function init() {
+                console.log('Initializing Sections App...');
+
+                // Load sections data
+                const loaded = await loadSections();
+                if (!loaded) {
+                    console.error('Failed to load sections data');
+                    return;
+                }
+
+                // Validate sections data
+                if (!sectionsData || Object.keys(sectionsData).length === 0) {
+                    showError('No sections found', 'The sections.json file is empty or invalid.');
+                    return;
+                }
+
+                console.log(`Loaded ${Object.keys(sectionsData).length} sections`);
+
+                // Render navigation
+                renderNavigation();
+
+                // Handle initial hash or load first section
+                handleHashChange();
+
+                // Listen for hash changes
+                window.addEventListener('hashchange', handleHashChange);
+
+                console.log('Sections App initialized successfully');
+            }
+
+            // Start the app when DOM is ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', init);
+            } else {
+                init();
+            }
+        })();
+    </script>
+</body>
+</html>
