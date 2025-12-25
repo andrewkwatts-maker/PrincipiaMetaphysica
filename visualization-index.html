@@ -460,9 +460,11 @@
             .viz-card { break-inside: avoid; }
         }
     </style>
-    <script src="theory-constants-enhanced.js"></script>
-    <script src="js/pm-tooltip-system.js"></script>
-    <link rel="stylesheet" href="/css/auth.css">
+
+    <!-- Tooltip System CSS -->
+    <link rel="stylesheet" href="css/pm-tooltip.css">
+    <link rel="stylesheet" href="css/formula-hover.css">
+    <link rel="stylesheet" href="css/auth.css">
   </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
@@ -476,7 +478,7 @@
             </div>
         
     <div class="user-controls">
-      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <img id="user-avatar" src="images/default-avatar.svg" alt="User">
       <span id="user-email"></span>
       <button id="logout-btn">Logout</button>
     </div>
@@ -2086,8 +2088,13 @@
     </script>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from './js/auth-guard.js';
     setupAuthGuard('visualization-index');
   </script>
+
+  <!-- Tooltip System -->
+  <script src="theory-constants-enhanced.js"></script>
+  <script src="js/pm-tooltip-system.js"></script>
+  <script src="js/pm-formula-loader.js"></script>
 </body>
 </html>
