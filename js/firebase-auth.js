@@ -22,6 +22,9 @@ const authCallbacks = [];
 // Current user reference
 let currentUser = null;
 
+// Flag to track if auth state has been resolved
+let authStateResolved = false;
+
 /**
  * Initialize authentication with persistence
  * Sets up local persistence so users stay logged in across browser sessions
@@ -37,6 +40,7 @@ export async function initAuth() {
   // Set up auth state listener
   onAuthStateChanged(auth, (user) => {
     currentUser = user;
+    authStateResolved = true;
 
     if (user) {
       console.log('[PM Auth] User signed in:', user.email);
@@ -113,9 +117,10 @@ export async function signOutUser() {
 export function onAuthReady(callback) {
   authCallbacks.push(callback);
 
-  // If we already have an auth state, call immediately
-  if (currentUser !== null || auth.currentUser !== undefined) {
-    callback(auth.currentUser);
+  // Only call immediately if auth state has already been resolved by onAuthStateChanged
+  // This prevents calling with null before Firebase loads the persisted user
+  if (authStateResolved) {
+    callback(currentUser);
   }
 
   // Return unsubscribe function
