@@ -597,7 +597,7 @@
                 <p>
                     <strong>Pneuma field (&Psi;<sub>P</sub>)</strong>: Chiral spinor field (8192-component in <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D, 64-component in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D)<br>
                     <strong>Mashiach (An Attractor Scalar) field (&chi;)</strong>: Attractor scalar field for dark energy (separate from Pneuma)<br>
-                    <strong>Framework statistics</strong>: 45/48 SM parameters within 1&sigma; (93.8%), 12 exact matches
+                    <strong>Framework statistics</strong>: <span data-stat-id="within_1sigma">45</span>/<span data-stat-id="total_parameters">48</span> SM parameters within 1&sigma; (<span data-stat-id="success_rate_1sigma">93.8</span>%), <span data-stat-id="exact_matches">12</span> exact matches
                 </p>
             </div>
         </section>
@@ -720,9 +720,11 @@
     </div>
 
     <script type="module">
-        import { setupAuthGuard } from '/js/auth-guard.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
         setupAuthGuard('pneuma-lagrangian-new');
     </script>
+    <!-- Dynamic validation statistics -->
+    <script src="../js/pm-validation-stats.js"></script>
 </body>
 </html>
 

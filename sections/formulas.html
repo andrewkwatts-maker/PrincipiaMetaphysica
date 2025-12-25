@@ -8,2348 +8,935 @@
 
     For inquiries, please contact AndrewKWatts@Gmail.com
 -->
+
 <html lang="en">
- <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <meta content="Complete Formula Reference - All equations and predictions from Principia Metaphysica in one location" name="description"/>
-  <title>
-   Formula Reference - Principia Metaphysica
-  </title>
-  <link href="../css/styles.css" rel="stylesheet"/>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Complete Formula Registry - All equations dynamically loaded from theory_output.json">
+  <title>Formula Registry - Principia Metaphysica</title>
+  <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="/css/auth.css">
-  <script defer="" src="../js/formula-expansion.js">
-  </script>
-  <script defer="" src="../js/formula-definitions.js">
-  </script>
+  <script src="../js/pm-constants-loader.js"></script>
+  <script src="../js/pm-formula-loader.js"></script>
   <style>
-   /* Formula Reference Specific Styles */
-        .formula-hero {
-            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(81, 207, 102, 0.1));
-            border: 1px solid rgba(139, 127, 255, 0.3);
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 2.5rem;
-            text-align: center;
-        }
+    /* Formula Table Styles */
+    .controls-panel {
+      background: var(--bg-card);
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+      border: 1px solid var(--border-primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        .formula-hero h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(135deg, var(--accent-primary), #51cf66);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
+    .controls-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
 
-        .formula-category {
-            margin-bottom: 3rem;
-        }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
 
-        .formula-category h2 {
-            color: var(--accent-primary);
-            border-bottom: 2px solid var(--accent-primary);
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
+    .control-group label {
+      color: var(--accent-primary);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-        .formula-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-primary);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-        }
+    .control-group input,
+    .control-group select {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border-primary);
+      color: var(--text-primary);
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
 
-        .formula-card:hover {
-            border-color: var(--accent-primary);
-            box-shadow: 0 4px 20px rgba(139, 127, 255, 0.15);
-        }
+    .control-group input:focus,
+    .control-group select:focus {
+      outline: none;
+      border-color: var(--accent-primary);
+      box-shadow: 0 0 0 3px rgba(139, 127, 255, 0.1);
+    }
 
-        .formula-card .formula-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
+    .stats-bar {
+      display: flex;
+      gap: 2rem;
+      padding: 1rem;
+      background: rgba(139, 127, 255, 0.05);
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
 
-        .formula-card .formula-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
 
-        .formula-card .formula-status {
-            font-size: 0.75rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 20px;
-            font-weight: 600;
-        }
+    .stat-label {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-        .status-derived {
-            background: rgba(81, 207, 102, 0.2);
-            color: #51cf66;
-        }
+    .stat-value {
+      color: var(--accent-primary);
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
 
-        .status-semi-derived {
-            background: rgba(255, 193, 7, 0.2);
-            color: #ffc107;
-        }
+    .formula-table-container {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-primary);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
 
-        .status-prediction {
-            background: rgba(79, 172, 254, 0.2);
-            color: #4facfe;
-        }
+    .formula-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
 
-        .status-established {
-            background: rgba(139, 127, 255, 0.2);
-            color: var(--accent-primary);
-        }
+    .formula-table thead {
+      background: var(--bg-secondary);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
 
-        .formula-display {
-            background: rgba(139, 127, 255, 0.08);
-            border: 1px solid rgba(139, 127, 255, 0.2);
-            border-radius: 8px;
-            padding: 1.25rem;
-            text-align: center;
-            font-family: 'Crimson Text', serif;
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
+    .formula-table th {
+      padding: 1rem;
+      text-align: left;
+      color: var(--accent-primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid var(--border-accent);
+      cursor: pointer;
+      user-select: none;
+      white-space: nowrap;
+    }
 
-        .formula-description {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-        }
+    .formula-table th:hover {
+      background: rgba(139, 127, 255, 0.1);
+    }
 
-        .formula-attribution {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-style: italic;
-        }
+    .formula-table th.sortable::after {
+      content: ' ↕';
+      opacity: 0.3;
+      font-size: 0.8rem;
+    }
 
-        .term-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-primary);
-        }
+    .formula-table th.sorted-asc::after {
+      content: ' ↑';
+      opacity: 1;
+      color: var(--accent-primary);
+    }
 
-        .term-item {
-            background: rgba(139, 127, 255, 0.05);
-            border-radius: 8px;
-            padding: 0.75rem;
-        }
+    .formula-table th.sorted-desc::after {
+      content: ' ↓';
+      opacity: 1;
+      color: var(--accent-primary);
+    }
 
-        .term-symbol {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
-            color: var(--accent-primary);
-            font-weight: 600;
-        }
+    .formula-table tbody tr {
+      border-bottom: 1px solid var(--border-primary);
+      transition: all 0.2s ease;
+    }
 
-        .term-name {
-            font-size: 0.85rem;
-            color: var(--text-primary);
-            margin-top: 0.25rem;
-        }
+    .formula-table tbody tr:hover {
+      background: rgba(139, 127, 255, 0.05);
+    }
 
-        .term-desc {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.25rem;
-        }
+    .formula-table tbody tr.expanded {
+      background: rgba(139, 127, 255, 0.1);
+    }
 
-        .toc-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border-primary);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-        }
+    .formula-table td {
+      padding: 1rem;
+      color: var(--text-secondary);
+      vertical-align: top;
+    }
 
-        .toc-box h3 {
-            color: var(--accent-primary);
-            margin-bottom: 1rem;
-        }
+    .formula-row-main {
+      cursor: pointer;
+    }
 
-        .toc-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 0.5rem;
-        }
+    .formula-row-details {
+      display: none;
+    }
 
-        .toc-list a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            padding: 0.5rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
+    .formula-row-details.visible {
+      display: table-row;
+    }
 
-        .toc-list a:hover {
-            background: rgba(139, 127, 255, 0.1);
-            color: var(--accent-primary);
-        }
+    .formula-row-details td {
+      padding: 0;
+      background: var(--bg-secondary);
+    }
 
-        .quick-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
+    .details-content {
+      padding: 1.5rem;
+      animation: slideDown 0.3s ease;
+    }
 
-        .stat-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-primary);
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-        }
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-        .stat-number {
-            font-size: 2rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    .details-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
 
-        .stat-label {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
+    .details-section {
+      background: var(--bg-card);
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid var(--border-primary);
+    }
 
-        /* Interactive formula hover styles */
-        .interactive-formula {
-            position: relative;
-        }
+    .details-section h4 {
+      color: var(--accent-primary);
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-primary);
+    }
 
-        .formula-var {
-            position: relative;
-            cursor: help;
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            transition: all 0.2s ease;
-        }
+    .details-section ul {
+      list-style: none;
+      padding: 0;
+    }
 
-        .formula-var:hover {
-            background: rgba(139, 127, 255, 0.3);
-        }
+    .details-section li {
+      padding: 0.5rem 0;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
 
-        .var-tooltip {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-primary);
-            border-radius: 8px;
-            padding: 0.75rem;
-            min-width: 200px;
-            max-width: 300px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.2s ease;
-            z-index: 100;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
+    .details-section li strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
 
-        .formula-var:hover .var-tooltip {
-            opacity: 1;
-            visibility: visible;
-        }
+    .formula-html {
+      font-family: 'Crimson Text', serif;
+      font-size: 1.1rem;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow-x: auto;
+    }
 
-        .var-tooltip .var-name {
-            font-weight: 600;
-            color: var(--accent-primary);
-            margin-bottom: 0.5rem;
-        }
+    .category-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
 
-        .var-tooltip .var-desc {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-            line-height: 1.5;
-        }
+    .category-badge.ESTABLISHED {
+      background: rgba(81, 207, 102, 0.2);
+      color: #51cf66;
+      border: 1px solid rgba(81, 207, 102, 0.3);
+    }
 
-        .var-tooltip .var-units {
-            font-size: 0.8rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
-            font-style: italic;
-        }
+    .category-badge.THEORY {
+      background: rgba(139, 127, 255, 0.2);
+      color: #8b7fff;
+      border: 1px solid rgba(139, 127, 255, 0.3);
+    }
 
-        @media (max-width: 768px) {
-            .formula-hero {
-                padding: 2rem 1rem;
-            }
-            .formula-hero h1 {
-                font-size: 1.8rem;
-            }
-            .formula-display {
-                font-size: 1.1rem;
-                padding: 1rem;
-            }
-            .term-grid {
-                grid-template-columns: 1fr;
-            }
-        }
+    .category-badge.DERIVED {
+      background: rgba(77, 171, 247, 0.2);
+      color: #4dabf7;
+      border: 1px solid rgba(77, 171, 247, 0.3);
+    }
+
+    .category-badge.PREDICTIONS {
+      background: rgba(255, 126, 182, 0.2);
+      color: #ff7eb6;
+      border: 1px solid rgba(255, 126, 182, 0.3);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 0.25rem 0.75rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .status-badge.validated {
+      background: rgba(81, 207, 102, 0.2);
+      color: #51cf66;
+    }
+
+    .status-badge.exact-match {
+      background: rgba(255, 212, 59, 0.2);
+      color: #ffd43b;
+    }
+
+    .status-badge.pending {
+      background: rgba(108, 117, 125, 0.2);
+      color: #adb5bd;
+    }
+
+    .expand-icon {
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+      margin-right: 0.5rem;
+      transition: transform 0.3s ease;
+      color: var(--accent-primary);
+    }
+
+    .formula-row-main.expanded .expand-icon {
+      transform: rotate(90deg);
+    }
+
+    .no-results {
+      text-align: center;
+      padding: 3rem;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 3rem;
+      color: var(--accent-primary);
+      font-size: 1.1rem;
+    }
+
+    .error {
+      text-align: center;
+      padding: 3rem;
+      color: var(--warning);
+      font-size: 1.1rem;
+    }
+
+    .derivation-step {
+      background: rgba(139, 127, 255, 0.05);
+      padding: 0.75rem;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      border-left: 3px solid var(--accent-primary);
+    }
+
+    .term-definition {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .term-symbol {
+      font-family: 'Crimson Text', serif;
+      font-weight: 600;
+      color: var(--accent-primary);
+      min-width: 60px;
+    }
+
+    .term-desc {
+      color: var(--text-secondary);
+    }
+
+    .related-formula-link {
+      color: var(--accent-primary);
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      display: inline-block;
+      margin: 0.25rem;
+      background: rgba(139, 127, 255, 0.1);
+    }
+
+    .related-formula-link:hover {
+      background: rgba(139, 127, 255, 0.2);
+      transform: translateX(3px);
+    }
+
+    .sigma-badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .sigma-badge.good {
+      background: rgba(81, 207, 102, 0.2);
+      color: #51cf66;
+    }
+
+    .sigma-badge.moderate {
+      background: rgba(255, 212, 59, 0.2);
+      color: #ffd43b;
+    }
+
+    .sigma-badge.high {
+      background: rgba(250, 112, 154, 0.2);
+      color: #fa709a;
+    }
+
+    @media (max-width: 768px) {
+      .formula-table {
+        font-size: 0.85rem;
+      }
+
+      .formula-table th,
+      .formula-table td {
+        padding: 0.75rem 0.5rem;
+      }
+
+      .controls-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-bar {
+        gap: 1rem;
+      }
+    }
   </style>
-  <script src="../theory-constants-enhanced.js">
-  </script>
-  <script src="../js/pm-tooltip-system.js">
-  </script>
- </head>
- <body class="auth-loading">
+</head>
+<body class="auth-loading">
   <div id="main-content" style="display: none;">
-  <!-- Navigation -->
-  <nav class="main-nav">
-   <div class="nav-content">
-    <a class="nav-brand" href="../index.html">
-     Principia Metaphysica
-    </a>
-    <div class="nav-links">
-     <a href="index.html">
-      All Sections
-     </a>
-     <a href="../beginners-guide.html">
-      Beginner's Guide
-     </a>
-     <a href="theory-analysis.html">
-      Analysis
-     </a>
+  <header>
+    <div class="header-content">
+      <h1>Principia Metaphysica</h1>
+      <nav>
+        <ul>
+          <li><a href="../principia-metaphysica-paper.html">Home</a></li>
+          <li><a href="formulas.html" class="active">Formulas</a></li>
+          <li><a href="predictions.html">Predictions</a></li>
+          <li><a href="index.html">All Sections</a></li>
+        </ul>
+      </nav>
     </div>
-   </div>
-  </nav>
-  <main class="section-content">
-   <!-- Hero Section -->
-   <div class="formula-hero">
-    <h1>
-     ∑ Formula Reference
-    </h1>
-    <p style="color: #8b7fff; font-size: 1rem; margin-bottom: 0.5rem;">
-     <em>
-      <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Two-Time Framework
-     </em>
-    </p>
-    <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 700px; margin: 0 auto;">
-     Complete collection of all equations, predictions, and mathematical relationships
-                from Principia Metaphysica with interactive term explanations. Updated for the
-                <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D framework with signature (24,2), Sp(2,R) gauge symmetry, and Z₂ mirror structure.
-    </p>
-   </div>
-   <!-- Quick Stats by Category -->
-   <div class="quick-stats">
-    <div class="stat-card" style="border-left: 4px solid #8b7fff;">
-     <div class="stat-number">
-      15
-     </div>
-     <div class="stat-label">
-      Established Physics
-     </div>
-    </div>
-    <div class="stat-card" style="border-left: 4px solid #ff7eb6;">
-     <div class="stat-number">
-      12
-     </div>
-     <div class="stat-label">
-      New Theory
-     </div>
-    </div>
-    <div class="stat-card" style="border-left: 4px solid #51cf66;">
-     <div class="stat-number">
-      5
-     </div>
-     <div class="stat-label">
-      Derived Results
-     </div>
-    </div>
-    <div class="stat-card" style="border-left: 4px solid #4facfe;">
-     <div class="stat-number">
-      6
-     </div>
-     <div class="stat-label">
-      Predictions
-     </div>
-    </div>
-   </div>
-   <!-- Category Legend -->
-   <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 2rem; padding: 1rem; background: var(--card-bg); border-radius: 10px; border: 1px solid var(--border-primary);">
-    <div style="display: flex; align-items: center; gap: 0.5rem;">
-     <span style="width: 12px; height: 12px; border-radius: 50%; background: #8b7fff;">
-     </span>
-     <span style="font-size: 0.9rem; color: var(--text-secondary);">
-      ESTABLISHED - Standard physics with citations
-     </span>
-    </div>
-    <div style="display: flex; align-items: center; gap: 0.5rem;">
-     <span style="width: 12px; height: 12px; border-radius: 50%; background: #ff7eb6;">
-     </span>
-     <span style="font-size: 0.9rem; color: var(--text-secondary);">
-      THEORY - New Principia Metaphysica formulas
-     </span>
-    </div>
-    <div style="display: flex; align-items: center; gap: 0.5rem;">
-     <span style="width: 12px; height: 12px; border-radius: 50%; background: #51cf66;">
-     </span>
-     <span style="font-size: 0.9rem; color: var(--text-secondary);">
-      DERIVED - Results from the theory
-     </span>
-    </div>
-    <div style="display: flex; align-items: center; gap: 0.5rem;">
-     <span style="width: 12px; height: 12px; border-radius: 50%; background: #4facfe;">
-     </span>
-     <span style="font-size: 0.9rem; color: var(--text-secondary);">
-      PREDICTION - Testable predictions
-     </span>
-    </div>
-   </div>
-   <!-- Table of Contents -->
-   <div class="toc-box">
-    <h3>
-     Quick Navigation
-    </h3>
-    <div class="toc-list">
-     <a href="#predictions" style="color: #4facfe;">
-      • Testable Predictions
-     </a>
-    </div>
-   </div>
-   <!-- Info Box -->
-   <div style="background: rgba(139, 127, 255, 0.08); border: 1px solid rgba(139, 127, 255, 0.25); border-radius: 10px; padding: 1rem; margin-bottom: 2rem;">
-    <p style="margin: 0; color: var(--text-secondary); font-size: 0.9rem;">
-     <strong style="color: var(--accent-primary);">
-      ℹ Centralized Formulas:
-     </strong>
-     All formulas are defined in
-     <a href="../js/formula-definitions.js" style="color: var(--accent-primary);">
-      formula-definitions.js
-     </a>
-     .
-                Edit that file to update formulas consistently across the entire site.
-    </p>
-   </div>
-   <!-- SECTION 1: FUNDAMENTAL ACTION -->
-   <section class="formula-category" id="fundamental_action">
-    <h2>
-     1. Fundamental Action
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="proton_decay" data-format="fixed:1" data-param="s_parameter">
-       </span>
-       ) Master Action
-      </span>
-      <span class="formula-status status-established">
-       FOUNDATIONAL
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       S
-       <div class="var-tooltip">
-        <div class="var-name">
-         S — Action
-        </div>
-        <div class="var-desc">
-         The total action functional - extremizing this gives equations of motion via δS = 0
-        </div>
-        <div class="var-units">
-         Units: ℏ (dimensionless)
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var">
-       ∫ d
-       <sup>
-        13
-       </sup>
-       x
-       <div class="var-tooltip">
-        <div class="var-name">
-         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Volume Integral
-        </div>
-        <div class="var-desc">
-         Integration over all 13 spacetime dimensions (4 macroscopic + 9 compact)
-        </div>
-       </div>
-      </span>
-      <span class="formula-var">
-       √|G|
-       <div class="var-tooltip">
-        <div class="var-name">
-         Metric Determinant
-        </div>
-        <div class="var-desc">
-         Square root of absolute value of <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D metric determinant - ensures coordinate invariance
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       [
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       M
-       <sub>
-        *
-       </sub>
-       <sup>
-        11
-       </sup>
-       R
-       <div class="var-tooltip">
-        <div class="var-name">
-         Einstein-Hilbert Term
-        </div>
-        <div class="var-desc">
-         Gravity: M* ≈ 10¹⁶ GeV is the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Planck mass, R is the Ricci scalar curvature
-        </div>
-        <div class="var-units">
-         Units: Energy¹¹ × Length⁻²
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       +
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       <span style="text-decoration: overline;">
-        Ψ
-       </span>
-       <sub>
-        P
-       </sub>
-       (iΓ∇ - m)Ψ
-       <sub>
-        P
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Pneuma (A Primordial Spinor Field) Lagrangian
-        </div>
-        <div class="var-desc">
-         64-component fermionic field with Dirac kinetic term and mass
-        </div>
-        <div class="var-units">
-         Units: Energy¹³/Length¹³
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ]
-      </span>
-     </div>
-     <p class="formula-description">
-      The complete <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>-dimensional action combining Einstein gravity and the Pneuma field.
-                    All Standard Model physics emerges from dimensional reduction and symmetry breaking.
-     </p>
-     <p class="formula-attribution">
-      Foundation: Einstein-Hilbert [1915], Kaluza-Klein [1921], Dirac [1928]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="pmns_matrix" data-format="fixed:1" data-param="theta_12_error">
-       </span>
-       ) Full Lagrangian F(R,T,tau)
-      </span>
-      <span class="formula-status status-established">
-       FOUNDATIONAL
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       F(R,T,τ)
-       <div class="var-tooltip">
-        <div class="var-name">
-         Extended Gravity Function
-        </div>
-        <div class="var-desc">
-         Modified gravity Lagrangian incorporating curvature, trace, and thermal time
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       R
-       <div class="var-tooltip">
-        <div class="var-name">
-         Ricci Scalar
-        </div>
-        <div class="var-desc">
-         Standard Einstein-Hilbert curvature term
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       +
-      </span>
-      <span class="formula-var">
-       αT
-       <div class="var-tooltip">
-        <div class="var-name">
-         Linear Trace Term
-        </div>
-        <div class="var-desc">
-         T = trace of stress-energy tensor
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       +
-      </span>
-      <span class="formula-var">
-       βT²
-       <div class="var-tooltip">
-        <div class="var-name">
-         Quadratic Trace
-        </div>
-        <div class="var-desc">
-         Higher-order matter coupling
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       +
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       γτ
-       <div class="var-tooltip">
-        <div class="var-name">
-         Linear Thermal Time
-        </div>
-        <div class="var-desc">
-         τ = thermal time parameter from two-time framework
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       +
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       δτ²
-       <div class="var-tooltip">
-        <div class="var-name">
-         Quadratic Thermal Time
-        </div>
-        <div class="var-desc">
-         Higher-order thermal time coupling
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The complete Lagrangian structure: F(R,T,τ) + Pneuma terms + Standard Model + hidden sector.
-                    This extends f(R,T) gravity with thermal time τ from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D two-time framework.
-     </p>
-     <p class="formula-attribution">
-      Principia Metaphysica - <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D/13D Framework
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 2: GEOMETRIC FRAMEWORK -->
-   <section class="formula-category" id="geometric_framework_formulas">
-    <h2>
-     2. Geometric Framework
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (2.1) Spacetime Decomposition
-      </span>
-      <span class="formula-status status-established">
-       ANSATZ
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       M
-       <sub>
-        13
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Spacetime
-        </div>
-        <div class="var-desc">
-         Complete 13-dimensional spacetime manifold
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       M
-       <sup>
-        4
-       </sup>
-       <div class="var-tooltip">
-        <div class="var-name">
-         <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Minkowski Space
-        </div>
-        <div class="var-desc">
-         Observable spacetime with signature (-,+,+,+)
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ×
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       K
-       <sub>
-        Pneuma
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Pneuma Manifold
-        </div>
-        <div class="var-desc">
-         9-dimensional Calabi-Yau 4-fold with χ = 72
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       |
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       SO(10)
-       <div class="var-tooltip">
-        <div class="var-name">
-         Grand Unified Group
-        </div>
-        <div class="var-desc">
-         Gauge symmetry from K_Pneuma isometries
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       →
-      </span>
-      <span class="formula-var">
-       SU(3)
-       <sub>
-        C
-       </sub>
-       × SU(2)
-       <sub>
-        L
-       </sub>
-       × U(1)
-       <sub>
-        Y
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Standard Model Group
-        </div>
-        <div class="var-desc">
-         Low-energy gauge symmetry after breaking
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D spacetime decomposes into observable 4D times a 9D Calabi-Yau 4-fold.
-                    The isometries of K
-      <sub>
-       Pneuma
-      </sub>
-      give SO(10) gauge symmetry.
-     </p>
-     <p class="formula-attribution">
-      Kaluza-Klein [1921], F-theory [Vafa 1996]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="proton_decay" data-format="fixed:1" data-param="ratio_to_bound">
-       </span>
-       ) Generation Formula
-      </span>
-      <span class="formula-status status-derived">
-       DERIVED
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       n
-       <sub>
-        gen
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Number of Generations
-        </div>
-        <div class="var-desc">
-         Number of fermion families - exactly 3 in nature
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       χ(K
-       <sub>
-        Pneuma
-       </sub>
-       )/24
-       <div class="var-tooltip">
-        <div class="var-name">
-         F-theory Index
-        </div>
-        <div class="var-desc">
-         Euler characteristic divided by 24 from index theorem
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var">
-       72/24
-       <div class="var-tooltip">
-        <div class="var-name">
-         Calculation
-        </div>
-        <div class="var-desc">
-         χ = 72 for our CY4 manifold
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       3
-       <div class="var-tooltip">
-        <div class="var-name">
-         Result
-        </div>
-        <div class="var-desc">
-         Topologically protected integer - explains why exactly 3 generations
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The number of fermion generations is fixed by topology. The Euler characteristic χ = 72
-                    combined with the F-theory index theorem yields exactly 3 generations.
-     </p>
-     <p class="formula-attribution">
-      [Sethi, Vafa, Witten 1996]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="proton_decay" data-format="fixed:1" data-param="ratio_to_bound">
-       </span>
-       ) Hodge Numbers
-      </span>
-      <span class="formula-status status-established">
-       GEOMETRIC
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       h
-       <sup>
-        1,1
-       </sup>
-       = 4
-       <div class="var-tooltip">
-        <div class="var-name">
-         h
-         <sup>
-          1,1
-         </sup>
-         - Kahler Moduli
-        </div>
-        <div class="var-desc">
-         Number of (1,1)-forms; counts Kahler deformations of the Calabi-Yau manifold
-        </div>
-        <div class="var-units">
-         Dimensionless integer
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ,
-      </span>
-      <span class="formula-var">
-       h
-       <sup>
-        2,1
-       </sup>
-       = 0
-       <div class="var-tooltip">
-        <div class="var-name">
-         h
-         <sup>
-          2,1
-         </sup>
-         - Complex Structure Moduli
-        </div>
-        <div class="var-desc">
-         Number of (2,1)-forms; counts complex structure deformations. Zero means rigid complex structure.
-        </div>
-        <div class="var-units">
-         Dimensionless integer
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ,
-      </span>
-      <span class="formula-var">
-       h
-       <sup>
-        3,1
-       </sup>
-       = 0
-       <div class="var-tooltip">
-        <div class="var-name">
-         h
-         <sup>
-          3,1
-         </sup>
-         - Higher Deformations
-        </div>
-        <div class="var-desc">
-         Number of (3,1)-forms; additional moduli specific to CY4 manifolds
-        </div>
-        <div class="var-units">
-         Dimensionless integer
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ,
-      </span>
-      <span class="formula-var">
-       h
-       <sup>
-        2,2
-       </sup>
-       = 60
-       <div class="var-tooltip">
-        <div class="var-name">
-         h
-         <sup>
-          2,2
-         </sup>
-         - Middle Cohomology
-        </div>
-        <div class="var-desc">
-         Central Hodge number fixed by CY4 identity: h
-         <sup>
-          2,2
-         </sup>
-         = 2(22 + 2h
-         <sup>
-          1,1
-         </sup>
-         + 2h
-         <sup>
-          3,1
-         </sup>
-         - h
-         <sup>
-          2,1
-         </sup>
-         )
-        </div>
-        <div class="var-units">
-         Dimensionless integer
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      Hodge numbers of K
-      <sub>
-       Pneuma
-      </sub>
-      satisfying the CY4 constraint:
-                    h
-      <sup>
-       2,2
-      </sup>
-      = 2(22 + 2h
-      <sup>
-       1,1
-      </sup>
-      + 2h
-      <sup>
-       3,1
-      </sup>
-      - h
-      <sup>
-       2,1
-      </sup>
-      ) = 60.
-                    Gives χ = 4 + 60 + 4 + 4 = 72.
-     </p>
-     <p class="formula-attribution">
-      Calabi-Yau geometry
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 3: PNEUMA FIELD -->
-   <section class="formula-category" id="pneuma_field_formulas">
-    <h2>
-     3. Pneuma Field
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:1" data-param="functional_test_chi2_log">
-       </span>
-       ) Pneuma Lagrangian
-      </span>
-      <span class="formula-status status-established">
-       FOUNDATIONAL
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       ℒ
-       <sub>
-        Pneuma
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Lagrangian Density
-        </div>
-        <div class="var-desc">
-         Energy density of the Pneuma field
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var">
-       <span style="text-decoration: overline;">
-        Ψ
-       </span>
-       <sub>
-        P
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Dirac Conjugate
-        </div>
-        <div class="var-desc">
-         Ψ̄ = Ψ†Γ⁰ - conjugate spinor
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       (
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       iΓ
-       <sup>
-        M
-       </sup>
-       D
-       <sub>
-        M
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Kinetic Term
-        </div>
-        <div class="var-desc">
-         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D gamma matrices times covariant derivative
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       -
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       m
-       <sub>
-        P
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Pneuma Mass
-        </div>
-        <div class="var-desc">
-         Fundamental mass ~ M_GUT ≈ 10¹⁶ GeV
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       )
-      </span>
-      <span class="formula-var">
-       Ψ
-       <sub>
-        P
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Pneuma Field
-        </div>
-        <div class="var-desc">
-         64-component spinor in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The Pneuma field is a 64-component spinor in 13 dimensions. Upon dimensional reduction,
-                    it produces all Standard Model fermions with the correct quantum numbers.
-     </p>
-     <p class="formula-attribution">
-      Dirac equation [1928] generalized to 13D
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:1" data-param="functional_test_chi2_log">
-       </span>
-       ) Clifford Decomposition
-      </span>
-      <span class="formula-status status-established">
-       ALGEBRAIC
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       Cl(1,12)
-       <div class="var-tooltip">
-        <div class="var-name">
-         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Clifford Algebra
-        </div>
-        <div class="var-desc">
-         Algebra with signature (1,12)
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ≅
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       Cl(1,3)
-       <div class="var-tooltip">
-        <div class="var-name">
-         <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Dirac Algebra
-        </div>
-        <div class="var-desc">
-         Standard 4×4 gamma matrices
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ⊗
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       Cl(9)
-       <div class="var-tooltip">
-        <div class="var-name">
-         Internal Clifford
-        </div>
-        <div class="var-desc">
-         32×32 matrices for K_Pneuma
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       →
-      </span>
-      <span class="formula-var">
-       (4×4) ⊗ (32×32) = 64×64
-       <div class="var-tooltip">
-        <div class="var-name">
-         Matrix Dimension
-        </div>
-        <div class="var-desc">
-         64-component spinor representation
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Clifford algebra decomposes into 4D and 9D parts, explaining
-                    why Pneuma is a 64-component spinor that reduces to 16-dimensional SO(10) spinors.
-     </p>
-     <p class="formula-attribution">
-      Clifford algebra theory
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (3.3) Emergent Metric
-      </span>
-      <span class="formula-status status-established">
-       CONDENSATE
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       g
-       <sub>
-        mn
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Metric Tensor
-        </div>
-        <div class="var-desc">
-         Spacetime metric determining geometry
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ∝
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       ⟨
-       <span style="text-decoration: overline;">
-        Ψ
-       </span>
-       <sub>
-        P
-       </sub>
-       Γ
-       <sub>
-        mn
-       </sub>
-       Ψ
-       <sub>
-        P
-       </sub>
-       ⟩
-       <div class="var-tooltip">
-        <div class="var-name">
-         Fermion Bilinear
-        </div>
-        <div class="var-desc">
-         Vacuum expectation value of Pneuma bilinear condensate
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The spacetime metric emerges from Pneuma field condensates - geometry is not fundamental
-                    but arises from fermionic matter.
-     </p>
-     <p class="formula-attribution">
-      Principia Metaphysica
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 4: GAUGE UNIFICATION -->
-   <section class="formula-category" id="gauge_unification_formulas">
-    <h2>
-     4. Gauge Unification
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dimensions" data-format="fixed:1" data-param="D_common">
-       </span>
-       ) Unification Scale
-      </span>
-      <span class="formula-status status-derived">
-       DERIVED
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       M
-       <sub>
-        GUT
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         GUT Scale
-        </div>
-        <div class="var-desc">
-         Energy where gauge couplings unify
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       2 × 10
-       <sup>
-        16
-       </sup>
-       GeV
-       <div class="var-tooltip">
-        <div class="var-name">
-         Value
-        </div>
-        <div class="var-desc">
-         Determined by RG running of gauge couplings
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The three Standard Model gauge couplings (α₁, α₂, α₃) unify at this scale
-                    within the SO(10) grand unified theory.
-     </p>
-     <p class="formula-attribution">
-      Georgi-Glashow [1974], SO(10) [Fritzsch-Minkowski 1975]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:1" data-param="significance">
-       </span>
-       ) Proton Lifetime
-      </span>
-      <span class="formula-status status-prediction">
-       PREDICTION
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       τ
-       <sub>
-        p
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Proton Lifetime
-        </div>
-        <div class="var-desc">
-         Mean time before proton decay
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ≈
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       M
-       <sub>
-        GUT
-       </sub>
-       <sup>
-        4
-       </sup>
-       <div class="var-tooltip">
-        <div class="var-name">
-         GUT Scale Factor
-        </div>
-        <div class="var-desc">
-         Fourth power suppression from heavy gauge boson
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       /
-      </span>
-      <span class="formula-var">
-       (α
-       <sub>
-        GUT
-       </sub>
-       <sup>
-        2
-       </sup>
-       m
-       <sub>
-        p
-       </sub>
-       <sup>
-        5
-       </sup>
-       )
-       <div class="var-tooltip">
-        <div class="var-name">
-         Coupling and Mass
-        </div>
-        <div class="var-desc">
-         α_GUT ≈ 1/24, m_p ≈ 938 MeV
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ~
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       10
-       <sup>
-        34
-       </sup>
-       -10
-       <sup>
-        36
-       </sup>
-       years
-       <div class="var-tooltip">
-        <div class="var-name">
-         Predicted Range
-        </div>
-        <div class="var-desc">
-         Testable by Hyper-Kamiokande (2030+)
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      Proton decay via dimension-6 operators. Current limit: τ &gt; 2.4 × 10³⁴ years (Super-K).
-                    Hyper-K will probe the full predicted range by 2037.
-     </p>
-     <p class="formula-attribution">
-      Grand Unified Theory prediction
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 5: THERMAL TIME -->
-   <section class="formula-category" id="thermal_time_formulas">
-    <h2>
-     5. Thermal Time
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (5.1) Wheeler-DeWitt Equation
-      </span>
-      <span class="formula-status status-established">
-       FOUNDATIONAL
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       H
-       <div class="var-tooltip">
-        <div class="var-name">
-         Wheeler-DeWitt Hamiltonian
-        </div>
-        <div class="var-desc">
-         Hamiltonian constraint of canonical quantum gravity
-        </div>
-       </div>
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       Ψ[g
-       <sub>
-        ab
-       </sub>
-       ]
-       <div class="var-tooltip">
-        <div class="var-name">
-         Wave Function of Universe
-        </div>
-        <div class="var-desc">
-         Functional of 3-geometries
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       0
-       <div class="var-tooltip">
-        <div class="var-name">
-         Zero Energy
-        </div>
-        <div class="var-desc">
-         Time is not fundamental in quantum gravity
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The fundamental equation of quantum gravity where time disappears.
-                    Thermal time hypothesis recovers time from thermodynamic properties.
-     </p>
-     <p class="formula-attribution">
-      [DeWitt 1967, Wheeler 1968]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (5.2) Thermal Time Parameter
-      </span>
-      <span class="formula-status status-derived">
-       DERIVED
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       α
-       <sub>
-        T
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Thermal Time Parameter
-        </div>
-        <div class="var-desc">
-         Dimensionless parameter driving dark energy evolution
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var">
-       (d ln τ / d ln a)
-       <div class="var-tooltip">
-        <div class="var-name">
-         τ Scaling
-        </div>
-        <div class="var-desc">
-         Thermal relaxation time τ = 1/Γ scales as a¹
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       -
-      </span>
-      <span class="formula-var">
-       (d ln H / d ln a)
-       <div class="var-tooltip">
-        <div class="var-name">
-         H Scaling
-        </div>
-        <div class="var-desc">
-         Hubble rate H scales as a^(-3/2) in matter era
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var">
-       (+1)
-       <div class="var-tooltip">
-        <div class="var-name">
-         τ Contribution
-        </div>
-        <div class="var-desc">
-         From τ ∝ a
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       -
-      </span>
-      <span class="formula-var">
-       (-3/2)
-       <div class="var-tooltip">
-        <div class="var-name">
-         H Contribution
-        </div>
-        <div class="var-desc">
-         From H ∝ a^(-3/2)
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       2.7
-       <div class="var-tooltip">
-        <div class="var-name">
-         Result
-        </div>
-        <div class="var-desc">
-         Canonical value derived from two-time dynamics
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The mismatch between thermal relaxation time and Hubble time drives dark energy evolution.
-                    The canonical value alpha_T = 2.7 is derived from the two-time framework dynamics.
-     </p>
-     <p class="formula-attribution">
-      Principia Metaphysica + TTH [Connes-Rovelli 1994]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (5.3) Modular Flow
-      </span>
-      <span class="formula-status status-established">
-       MATHEMATICAL
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       σ
-       <sub>
-        t
-       </sub>
-       (A)
-       <div class="var-tooltip">
-        <div class="var-name">
-         Modular Automorphism
-        </div>
-        <div class="var-desc">
-         Time evolution from thermal state
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       Δ
-       <sup>
-        it
-       </sup>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Modular Operator
-        </div>
-        <div class="var-desc">
-         Positive self-adjoint operator from Tomita-Takesaki theory
-        </div>
-       </div>
-      </span>
-      <span class="formula-var">
-       A
-       <div class="var-tooltip">
-        <div class="var-name">
-         Observable
-        </div>
-        <div class="var-desc">
-         Any element of the von Neumann algebra
-        </div>
-       </div>
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       Δ
-       <sup>
-        -it
-       </sup>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Inverse Evolution
-        </div>
-        <div class="var-desc">
-         Completes the automorphism
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      Time evolution emerges from the modular operator of a thermal state.
-                    This provides a rigorous mathematical foundation for emergent time.
-     </p>
-     <p class="formula-attribution">
-      [Tomita 1967, Takesaki 1970]
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 6: COSMOLOGY -->
-   <section class="formula-category" id="cosmology_formulas">
-    <h2>
-     6. Cosmology &amp; Dark Energy
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dimensions" data-format="fixed:1" data-param="D_effective">
-       </span>
-       ) CPL Parameterization
-      </span>
-      <span class="formula-status status-established">
-       STANDARD
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       w(z)
-       <div class="var-tooltip">
-        <div class="var-name">
-         Equation of State
-        </div>
-        <div class="var-desc">
-         Dark energy pressure/density ratio
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       w
-       <sub>
-        0
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Present-day EOS
-        </div>
-        <div class="var-desc">
-         w₀ = -11/13 ≈
-         <span class="pm-value" data-category="dark_energy" data-format="fixed:3" data-param="w0_PM">
-         </span>
-         (semi-derived via MEP)
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       +
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       w
-       <sub>
-        a
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Evolution Parameter
-        </div>
-        <div class="var-desc">
-         w_a ≈
-         <span class="pm-value" data-category="dark_energy" data-format="fixed:2" data-param="wa_DESI">
-         </span>
-         (DERIVED from two-time dynamics with α_T = 2.7)
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ×
-      </span>
-      <span class="formula-var">
-       (z / (1+z))
-       <div class="var-tooltip">
-        <div class="var-name">
-         Redshift Factor
-        </div>
-        <div class="var-desc">
-         Standard CPL functional form
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      Standard dark energy parameterization. DESI 2024 measures w₀ =
-      <span class="pm-value" data-category="dark_energy" data-format="fixed:2" data-param="w0_DESI">
-      </span>
-      ±
-      <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:2" data-param="w0_error">
-      </span>
-      , w_a =
-      <span class="pm-value" data-category="dark_energy" data-format="fixed:2" data-param="wa_DESI">
-      </span>
-      ±
-      <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:1" data-param="wa_error">
-      </span>
-      ,
-                    matching our semi-derived values within
-      <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:1" data-param="wa_error">
-      </span>
-      σ and 1σ respectively.
-     </p>
-     <p class="formula-attribution">
-      [Chevallier-Polarski 2001, Linder 2003]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:1" data-param="functional_test_sigma_preference">
-       </span>
-       ) MEP Derivation of w₀
-      </span>
-      <span class="formula-status status-semi-derived">
-       SEMI-DERIVED
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       w
-       <sub>
-        0
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Present-day EOS
-        </div>
-        <div class="var-desc">
-         Dark energy equation of state today
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       −(d
-       <sub>
-        eff
-       </sub>
-       − 1)/(d
-       <sub>
-        eff
-       </sub>
-       + 1)
-       <div class="var-tooltip">
-        <div class="var-name">
-         MEP Formula
-        </div>
-        <div class="var-desc">
-         Maximum Entropy Principle constraint
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       −11/13
-       <div class="var-tooltip">
-        <div class="var-name">
-         For d_eff = 12
-        </div>
-        <div class="var-desc">
-         <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D theory minus 1 for time
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ≈
-      </span>
-      <span class="formula-var">
-       −
-       <span class="pm-value" data-category="neutrino_mass_ordering" data-format="fixed:3" data-param="prob_IH_mean">
-       </span>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Numerical Value
-        </div>
-        <div class="var-desc">
-         Matches DESI
-         <span class="pm-value" data-category="dark_energy" data-format="fixed:2" data-param="w0_DESI">
-         </span>
-         ±
-         <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:2" data-param="w0_error">
-         </span>
-         to
-         <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:1" data-param="wa_error">
-         </span>
-         σ
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The Maximum Entropy Principle fixes w₀ from the effective dimensionality of the theory.
-                    For d_eff = 12 (from 13D with one time direction), we get w₀ = -11/13 ≈
-      <span class="pm-value" data-category="dark_energy" data-format="fixed:3" data-param="w0_PM">
-      </span>
-      .
-     </p>
-     <p class="formula-attribution">
-      Maximum Entropy Principle + Principia Metaphysica
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:1" data-param="functional_test_sigma_preference">
-       </span>
-       ) Thermal Dark Energy
-      </span>
-      <span class="formula-status status-derived">
-       DERIVED
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       w
-       <sub>
-        thermal
-       </sub>
-       (z)
-       <div class="var-tooltip">
-        <div class="var-name">
-         Thermal w(z)
-        </div>
-        <div class="var-desc">
-         Dark energy EOS from thermal time
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       w
-       <sub>
-        0
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Present Value
-        </div>
-        <div class="var-desc">
-         ≈
-         <span class="pm-value" data-category="dark_energy" data-format="fixed:3" data-param="w0_PM">
-         </span>
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ×
-      </span>
-      <span class="formula-var">
-       [1 + (α
-       <sub>
-        T
-       </sub>
-       /3) × ln(1+z)]
-       <div class="var-tooltip">
-        <div class="var-name">
-         Evolution Factor
-        </div>
-        <div class="var-desc">
-         α_T/3 = 0.9 (with canonical α_T = 2.7) - logarithmic evolution
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The thermal time formulation naturally produces w_a &lt; 0 (dark energy weakening with time),
-                    unlike standard quintessence which predicts w_a &gt; 0.
-     </p>
-     <p class="formula-attribution">
-      Principia Metaphysica
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 7: PREDICTIONS -->
-   <section class="formula-category" id="predictions_formulas">
-    <h2>
-     7. Testable Predictions
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (
-       <span class="pm-value" data-category="dimensions" data-format="fixed:1" data-param="D_internal">
-       </span>
-       ) Neutrino Mass Sum
-      </span>
-      <span class="formula-status status-prediction">
-       PREDICTION
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       Σm
-       <sub>
-        ν
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Neutrino Mass Sum
-        </div>
-        <div class="var-desc">
-         m₁ + m₂ + m₃
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:2" data-param="w0_error">
-       </span>
-       0 eV
-       <div class="var-tooltip">
-        <div class="var-name">
-         Predicted Value
-        </div>
-        <div class="var-desc">
-         Normal Hierarchy with m₁ → 0
-        </div>
-       </div>
-      </span>
-      <span style="margin-left: 1rem; font-size: 0.9rem; color: var(--text-muted);">
-       (Normal Hierarchy required)
-      </span>
-     </div>
-     <p class="formula-description">
-      SO(10) breaking pattern requires Normal Hierarchy (m₁ &lt; m₂ &lt; m₃).
-      <strong>
-       This is the primary falsifiable prediction
-      </strong>
-      - if Inverted Hierarchy is confirmed, the theory is falsified.
-     </p>
-     <p class="formula-attribution">
-      See-saw mechanism [Minkowski 1977]
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (7.2) Extra Radiation
-      </span>
-      <span class="formula-status status-prediction">
-       PREDICTION
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       ΔN
-       <sub>
-        eff
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Effective Neutrino Excess
-        </div>
-        <div class="var-desc">
-         Extra relativistic degrees of freedom
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       0.08 - 0.16
-       <div class="var-tooltip">
-        <div class="var-name">
-         Predicted Range
-        </div>
-        <div class="var-desc">
-         From pNG fermions in thermal bath
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      Pseudo-Nambu-Goldstone fermions from Pneuma condensate contribute extra radiation.
-                    Testable by CMB-S4 (2028+) with sensitivity Δ(N_eff) ~
-      <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:2" data-param="w0_error">
-      </span>
-      .
-     </p>
-     <p class="formula-attribution">
-      Principia Metaphysica
-     </p>
-    </div>
-   </section>
-   <!-- SECTION 8: HIDDEN VARIABLES -->
-   <section class="formula-category" id="hidden_variables_formulas">
-    <h2>
-     8. Hidden Variables (1+3 Branes)
-    </h2>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (8.1) 1+3 Brane Structure
-      </span>
-      <span class="formula-status status-established">
-       FRAMEWORK
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       |Ψ⟩
-       <div class="var-tooltip">
-        <div class="var-name">
-         Total State
-        </div>
-        <div class="var-desc">
-         Complete quantum state of the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D theory
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ∈
-      </span>
-      <span class="formula-var">
-       ℋ
-       <div class="var-tooltip">
-        <div class="var-name">
-         Total Hilbert Space
-        </div>
-        <div class="var-desc">
-         Full state space
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       ℋ
-       <sub>
-        B₁
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Observable Brane
-        </div>
-        <div class="var-desc">
-         Our <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D universe
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       ⊗
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       ℋ
-       <sub>
-        B₂
-       </sub>
-       ⊗ ℋ
-       <sub>
-        B₃
-       </sub>
-       ⊗ ℋ
-       <sub>
-        B₄
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Hidden Branes
-        </div>
-        <div class="var-desc">
-         Three additional <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D branes sharing time
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      The 9D internal space decomposes into four <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D branes sharing a common time coordinate.
-                    Quantum entanglement between branes provides "hidden variables" for our observable brane.
-     </p>
-     <p class="formula-attribution">
-      Principia Metaphysica
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (8.2) Partial Trace
-      </span>
-      <span class="formula-status status-established">
-       QUANTUM INFO
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       ρ
-       <sub>
-        B₁
-       </sub>
-       <div class="var-tooltip">
-        <div class="var-name">
-         Reduced Density Matrix
-        </div>
-        <div class="var-desc">
-         Observable quantum state
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-       =
-      </span>
-      <span class="formula-var" style="background: rgba(139, 127, 255, 0.2);">
-       Tr
-       <sub>
-        B₂
-       </sub>
-       [Tr
-       <sub>
-        B₃
-       </sub>
-       [Tr
-       <sub>
-        B₄
-       </sub>
-       [
-       <div class="var-tooltip">
-        <div class="var-name">
-         Partial Traces
-        </div>
-        <div class="var-desc">
-         Trace over hidden brane degrees of freedom
-        </div>
-       </div>
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       |Ψ⟩⟨Ψ|
-       <div class="var-tooltip">
-        <div class="var-name">
-         Pure State Projector
-        </div>
-        <div class="var-desc">
-         Density matrix for total pure state
-        </div>
-       </div>
-      </span>
-      <span class="formula-var">
-       ]]]
-       <div class="var-tooltip">
-        <div class="var-name">
-         Result
-        </div>
-        <div class="var-desc">
-         Mixed state on observable brane
-        </div>
-       </div>
-      </span>
-     </div>
-     <p class="formula-description">
-      Tracing over hidden branes produces a mixed state on our brane, explaining
-                    apparent quantum randomness as ignorance of hidden degrees of freedom.
-     </p>
-     <p class="formula-attribution">
-      Quantum Information Theory
-     </p>
-    </div>
-    <div class="formula-card">
-     <div class="formula-header">
-      <span class="formula-label">
-       (8.3) Bell Inequality
-      </span>
-      <span class="formula-status status-established">
-       CONSISTENCY
-      </span>
-     </div>
-     <div class="formula-display interactive-formula">
-      <span class="formula-var">
-       |⟨CHSH⟩|
-       <div class="var-tooltip">
-        <div class="var-name">
-         CHSH Correlator
-        </div>
-        <div class="var-desc">
-         Clauser-Horne-Shimony-Holt correlation function measuring joint spin measurements at different angles
-        </div>
-        <div class="var-units">
-         Dimensionless
-        </div>
-       </div>
-      </span>
-      <span class="formula-op">
-      </span>
-      <span class="formula-var" style="background: rgba(81, 207, 102, 0.2);">
-       ≤ 2
-       <div class="var-tooltip">
-        <div class="var-name">
-         Classical Bound
-        </div>
-        <div class="var-desc">
-         Maximum value for any local hidden variable theory - Bell's theorem limit
-        </div>
-        <div class="var-units">
-         Dimensionless
-        </div>
-       </div>
-      </span>
-      <span style="margin: 0 0.5rem; color: var(--text-muted);">
-       (local)
-      </span>
-      <span class="formula-op">
-       vs
-      </span>
-      <span class="formula-var" style="background: rgba(255, 126, 182, 0.2);">
-       ≤ 2√2
-       <div class="var-tooltip">
-        <div class="var-name">
-         Quantum Bound (Tsirelson)
-        </div>
-        <div class="var-desc">
-         Maximum quantum mechanical value ≈ 2.828; violation of 2 proves non-local correlations
-        </div>
-        <div class="var-units">
-         Dimensionless
-        </div>
-       </div>
-      </span>
-      <span style="margin-left: 0.5rem; color: var(--text-muted);">
-       (quantum)
-      </span>
-     </div>
-     <p class="formula-description">
-      Bell inequality violation is explained by non-local correlations from hidden brane entanglement.
-                    The "hidden variables" are non-local (spread across branes), consistent with Bell's theorem.
-     </p>
-     <p class="formula-attribution">
-      [Bell 1964, CHSH 1969]
-     </p>
-    </div>
-   </section>
-   <!-- Navigation -->
-   <div class="section-navigation" style="margin-top: 3rem;">
-    <a class="nav-btn" href="index.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: var(--card-bg); border: 1px solid var(--border-primary); border-radius: 8px; color: var(--text-primary); text-decoration: none; transition: all 0.3s ease;">
-     ← Back to All Sections
-    </a>
-    <a class="nav-btn" href="predictions.html" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); border-radius: 8px; color: white; text-decoration: none; margin-left: 1rem;">
-     Experimental Tests →
-    </a>
-   </div>
+  </header>
+
+  <main style="max-width: 1600px; margin: 0 auto; padding: 2rem;">
+    <section>
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+        Formula Registry
+      </h2>
+      <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2rem;">
+        Complete catalog of all formulas in Principia Metaphysica, dynamically loaded from theory_output.json.
+        Click any row to expand and see derivation, terms, related formulas, and more.
+      </p>
+
+      <!-- Controls Panel -->
+      <div class="controls-panel">
+        <div class="controls-grid">
+          <div class="control-group">
+            <label for="search">Search (ID, Label, Description)</label>
+            <input type="text" id="search" placeholder="Type to search...">
+          </div>
+          <div class="control-group">
+            <label for="category-filter">Category</label>
+            <select id="category-filter">
+              <option value="">All Categories</option>
+              <option value="ESTABLISHED">ESTABLISHED</option>
+              <option value="THEORY">THEORY</option>
+              <option value="DERIVED">DERIVED</option>
+              <option value="PREDICTIONS">PREDICTIONS</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="section-filter">Section</label>
+            <select id="section-filter">
+              <option value="">All Sections</option>
+            </select>
+          </div>
+          <div class="control-group">
+            <label for="status-filter">Status</label>
+            <select id="status-filter">
+              <option value="">All Statuses</option>
+              <option value="exact-match">Exact Match</option>
+              <option value="validated">Validated</option>
+              <option value="pending">Pending</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Statistics Bar -->
+        <div class="stats-bar">
+          <div class="stat-item">
+            <div class="stat-label">Total Formulas</div>
+            <div class="stat-value" id="stat-total">-</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">Visible</div>
+            <div class="stat-value" id="stat-visible">-</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">With Validation</div>
+            <div class="stat-value" id="stat-validated">-</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-label">With Derivation</div>
+            <div class="stat-value" id="stat-derived">-</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formula Table -->
+      <div class="formula-table-container">
+        <table class="formula-table">
+          <thead>
+            <tr>
+              <th class="sortable" data-sort="id">ID</th>
+              <th class="sortable" data-sort="label">Label</th>
+              <th>Formula</th>
+              <th class="sortable" data-sort="category">Category</th>
+              <th class="sortable" data-sort="section">Section</th>
+              <th class="sortable" data-sort="status">Status</th>
+              <th class="sortable" data-sort="computed">Computed</th>
+              <th class="sortable" data-sort="experimental">Experimental</th>
+              <th class="sortable" data-sort="sigma">Sigma (σ)</th>
+            </tr>
+          </thead>
+          <tbody id="formula-table-body">
+            <tr>
+              <td colspan="9" class="loading">Loading formulas...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
   </main>
-  <!-- Footer -->
+
   <footer class="site-footer">
-   <div class="footer-content">
-    <p>
-     Principia Metaphysica © 2025 | Formula Reference
-    </p>
-    <p style="font-size: 0.85rem; color: var(--text-muted);">
-     All formulas sourced from
-     <a href="../js/formula-definitions.js" style="color: var(--accent-primary);">
-      formula-definitions.js
-     </a>
-    </p>
-   </div>
+    <div class="footer-content">
+      <p>Principia Metaphysica © 2025 | Formula Registry</p>
+      <p style="font-size: 0.85rem; color: var(--text-muted);">
+        All formulas loaded from theory_output.json
+      </p>
+    </div>
   </footer>
   </div>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
     setupAuthGuard('formulas');
   </script>
- </body>
+
+  <script>
+    (async function() {
+      'use strict';
+
+      let allFormulas = [];
+      let filteredFormulas = [];
+      let currentSort = { column: null, direction: 'asc' };
+
+      // Wait for PM to load
+      await window.PM.load();
+
+      // Get formulas from PM
+      const formulasObj = window.PM.formulas;
+
+      if (!formulasObj || Object.keys(formulasObj).length === 0) {
+        document.getElementById('formula-table-body').innerHTML =
+          '<tr><td colspan="9" class="error">No formulas found. Please run: python run_all_simulations.py --export</td></tr>';
+        return;
+      }
+
+      // Convert to array and add to global list
+      allFormulas = Object.values(formulasObj).map(f => ({
+        ...f,
+        searchText: `${f.id || ''} ${f.label || ''} ${f.description || ''}`.toLowerCase()
+      }));
+
+      filteredFormulas = [...allFormulas];
+
+      // Build section dropdown
+      const sections = [...new Set(allFormulas.map(f => f.section).filter(Boolean))].sort();
+      const sectionFilter = document.getElementById('section-filter');
+      sections.forEach(section => {
+        const option = document.createElement('option');
+        option.value = section;
+        option.textContent = `Section ${section}`;
+        sectionFilter.appendChild(option);
+      });
+
+      // Event listeners for filters
+      document.getElementById('search').addEventListener('input', applyFilters);
+      document.getElementById('category-filter').addEventListener('change', applyFilters);
+      document.getElementById('section-filter').addEventListener('change', applyFilters);
+      document.getElementById('status-filter').addEventListener('change', applyFilters);
+
+      // Event listeners for sorting
+      document.querySelectorAll('.sortable').forEach(th => {
+        th.addEventListener('click', () => {
+          const column = th.getAttribute('data-sort');
+          toggleSort(column);
+        });
+      });
+
+      // Initial render
+      applyFilters();
+
+      function applyFilters() {
+        const searchTerm = document.getElementById('search').value.toLowerCase();
+        const categoryFilter = document.getElementById('category-filter').value;
+        const sectionFilter = document.getElementById('section-filter').value;
+        const statusFilter = document.getElementById('status-filter').value;
+
+        filteredFormulas = allFormulas.filter(formula => {
+          // Search filter
+          if (searchTerm && !formula.searchText.includes(searchTerm)) {
+            return false;
+          }
+
+          // Category filter
+          if (categoryFilter && formula.category !== categoryFilter) {
+            return false;
+          }
+
+          // Section filter
+          if (sectionFilter && (!formula.section || !formula.section.startsWith(sectionFilter))) {
+            return false;
+          }
+
+          // Status filter
+          if (statusFilter) {
+            const status = getFormulaStatus(formula);
+            if (status !== statusFilter) {
+              return false;
+            }
+          }
+
+          return true;
+        });
+
+        updateStats();
+        renderTable();
+      }
+
+      function toggleSort(column) {
+        if (currentSort.column === column) {
+          currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+        } else {
+          currentSort.column = column;
+          currentSort.direction = 'asc';
+        }
+
+        // Update header classes
+        document.querySelectorAll('.sortable').forEach(th => {
+          th.classList.remove('sorted-asc', 'sorted-desc');
+          if (th.getAttribute('data-sort') === column) {
+            th.classList.add(currentSort.direction === 'asc' ? 'sorted-asc' : 'sorted-desc');
+          }
+        });
+
+        sortFormulas();
+        renderTable();
+      }
+
+      function sortFormulas() {
+        if (!currentSort.column) return;
+
+        filteredFormulas.sort((a, b) => {
+          let aVal, bVal;
+
+          switch (currentSort.column) {
+            case 'id':
+              aVal = a.id || '';
+              bVal = b.id || '';
+              break;
+            case 'label':
+              aVal = a.label || '';
+              bVal = b.label || '';
+              break;
+            case 'category':
+              aVal = a.category || '';
+              bVal = b.category || '';
+              break;
+            case 'section':
+              aVal = parseFloat(a.section) || 0;
+              bVal = parseFloat(b.section) || 0;
+              break;
+            case 'status':
+              aVal = getFormulaStatus(a);
+              bVal = getFormulaStatus(b);
+              break;
+            case 'computed':
+              aVal = a.computedValue ?? -Infinity;
+              bVal = b.computedValue ?? -Infinity;
+              break;
+            case 'experimental':
+              aVal = a.experimentalValue ?? -Infinity;
+              bVal = b.experimentalValue ?? -Infinity;
+              break;
+            case 'sigma':
+              aVal = Math.abs(a.sigmaDeviation ?? Infinity);
+              bVal = Math.abs(b.sigmaDeviation ?? Infinity);
+              break;
+            default:
+              return 0;
+          }
+
+          let comparison = 0;
+          if (typeof aVal === 'number' && typeof bVal === 'number') {
+            comparison = aVal - bVal;
+          } else {
+            comparison = String(aVal).localeCompare(String(bVal));
+          }
+
+          return currentSort.direction === 'asc' ? comparison : -comparison;
+        });
+      }
+
+      function getFormulaStatus(formula) {
+        if (formula.status === 'exact-match') return 'exact-match';
+        if (formula.status === 'validated' || formula.experimentalValue !== undefined) return 'validated';
+        return 'pending';
+      }
+
+      function updateStats() {
+        document.getElementById('stat-total').textContent = allFormulas.length;
+        document.getElementById('stat-visible').textContent = filteredFormulas.length;
+        document.getElementById('stat-validated').textContent =
+          filteredFormulas.filter(f => f.experimentalValue !== undefined).length;
+        document.getElementById('stat-derived').textContent =
+          filteredFormulas.filter(f => f.derivation && f.derivation.steps && f.derivation.steps.length > 0).length;
+      }
+
+      function renderTable() {
+        const tbody = document.getElementById('formula-table-body');
+
+        if (filteredFormulas.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="9" class="no-results">No formulas match your filters.</td></tr>';
+          return;
+        }
+
+        const html = filteredFormulas.map((formula, index) => {
+          const status = getFormulaStatus(formula);
+          const sigmaClass = getSigmaClass(formula.sigmaDeviation);
+
+          return `
+            <tr class="formula-row-main" data-index="${index}">
+              <td>
+                <span class="expand-icon">▶</span>
+                <code style="color: var(--accent-primary);">${escapeHtml(formula.id || '-')}</code>
+              </td>
+              <td style="white-space: nowrap;">${escapeHtml(formula.label || '-')}</td>
+              <td>
+                <div class="formula-html">${formula.html || formula.latex || escapeHtml(formula.plainText || '-')}</div>
+              </td>
+              <td>
+                <span class="category-badge ${formula.category || 'UNKNOWN'}">${formula.category || 'UNKNOWN'}</span>
+              </td>
+              <td>${formula.section || '-'}</td>
+              <td>
+                <span class="status-badge ${status}">${status.replace('-', ' ').toUpperCase()}</span>
+              </td>
+              <td>${formatValue(formula.computedValue)}</td>
+              <td>${formatValue(formula.experimentalValue)}</td>
+              <td>
+                ${formula.sigmaDeviation !== undefined ?
+                  `<span class="sigma-badge ${sigmaClass}">${formula.sigmaDeviation.toFixed(2)}σ</span>` :
+                  '-'}
+              </td>
+            </tr>
+            <tr class="formula-row-details" data-index="${index}">
+              <td colspan="9">
+                <div class="details-content">
+                  ${renderDetails(formula)}
+                </div>
+              </td>
+            </tr>
+          `;
+        }).join('');
+
+        tbody.innerHTML = html;
+
+        // Add click handlers for expand/collapse
+        tbody.querySelectorAll('.formula-row-main').forEach(row => {
+          row.addEventListener('click', () => {
+            const index = row.getAttribute('data-index');
+            const detailsRow = tbody.querySelector(`.formula-row-details[data-index="${index}"]`);
+
+            row.classList.toggle('expanded');
+            detailsRow.classList.toggle('visible');
+          });
+        });
+      }
+
+      function renderDetails(formula) {
+        const sections = [];
+
+        // Description
+        if (formula.description) {
+          sections.push(`
+            <div class="details-section">
+              <h4>Description</h4>
+              <p style="color: var(--text-secondary); line-height: 1.6;">${escapeHtml(formula.description)}</p>
+            </div>
+          `);
+        }
+
+        // Terms
+        if (formula.terms && Object.keys(formula.terms).length > 0) {
+          const termsList = Object.entries(formula.terms).map(([symbol, desc]) =>
+            `<div class="term-definition">
+              <span class="term-symbol">${symbol}</span>
+              <span class="term-desc">${escapeHtml(desc)}</span>
+            </div>`
+          ).join('');
+
+          sections.push(`
+            <div class="details-section">
+              <h4>Terms</h4>
+              ${termsList}
+            </div>
+          `);
+        }
+
+        // Derivation
+        if (formula.derivation && formula.derivation.steps && formula.derivation.steps.length > 0) {
+          const stepsList = formula.derivation.steps.map((step, i) =>
+            `<div class="derivation-step">
+              <strong style="color: var(--accent-primary);">Step ${i + 1}:</strong> ${escapeHtml(step)}
+            </div>`
+          ).join('');
+
+          sections.push(`
+            <div class="details-section">
+              <h4>Derivation (${formula.derivation.method || 'unknown'})</h4>
+              ${stepsList}
+              ${formula.derivation.difficulty ? `<p style="margin-top: 0.75rem; color: var(--text-muted); font-size: 0.85rem;">Difficulty: ${formula.derivation.difficulty}</p>` : ''}
+            </div>
+          `);
+        }
+
+        // Related Formulas
+        if (formula.relatedFormulas && formula.relatedFormulas.length > 0) {
+          const relatedLinks = formula.relatedFormulas.map(relId =>
+            `<a href="#" class="related-formula-link" onclick="filterByFormula('${relId}'); return false;">${relId}</a>`
+          ).join('');
+
+          sections.push(`
+            <div class="details-section">
+              <h4>Related Formulas</h4>
+              <div>${relatedLinks}</div>
+            </div>
+          `);
+        }
+
+        // Validation Data
+        if (formula.experimentalValue !== undefined || formula.computedValue !== undefined) {
+          sections.push(`
+            <div class="details-section">
+              <h4>Validation</h4>
+              <ul>
+                ${formula.computedValue !== undefined ? `<li><strong>Computed:</strong> ${formatValueLong(formula.computedValue)}${formula.units ? ' ' + formula.units : ''}</li>` : ''}
+                ${formula.experimentalValue !== undefined ? `<li><strong>Experimental:</strong> ${formatValueLong(formula.experimentalValue)}${formula.units ? ' ' + formula.units : ''}</li>` : ''}
+                ${formula.sigmaDeviation !== undefined ? `<li><strong>Deviation:</strong> ${formula.sigmaDeviation.toFixed(3)}σ</li>` : ''}
+                ${formula.simulationFile ? `<li><strong>Simulation:</strong> <code>${formula.simulationFile}</code></li>` : ''}
+              </ul>
+            </div>
+          `);
+        }
+
+        // Additional Info
+        const additionalInfo = [];
+        if (formula.attribution && formula.attribution !== 'Principia Metaphysica') {
+          additionalInfo.push(`<li><strong>Attribution:</strong> ${escapeHtml(formula.attribution)}</li>`);
+        }
+        if (formula.testability) {
+          additionalInfo.push(`<li><strong>Testability:</strong> ${escapeHtml(formula.testability)}</li>`);
+        }
+        if (formula.notes) {
+          additionalInfo.push(`<li><strong>Notes:</strong> ${escapeHtml(formula.notes)}</li>`);
+        }
+
+        if (additionalInfo.length > 0) {
+          sections.push(`
+            <div class="details-section">
+              <h4>Additional Information</h4>
+              <ul>${additionalInfo.join('')}</ul>
+            </div>
+          `);
+        }
+
+        return `<div class="details-grid">${sections.join('')}</div>`;
+      }
+
+      function formatValue(value) {
+        if (value === undefined || value === null) return '-';
+        if (typeof value === 'number') {
+          if (Math.abs(value) >= 1e10 || (Math.abs(value) < 0.001 && value !== 0)) {
+            return value.toExponential(2);
+          }
+          return value.toFixed(3);
+        }
+        return String(value);
+      }
+
+      function formatValueLong(value) {
+        if (value === undefined || value === null) return '-';
+        if (typeof value === 'number') {
+          if (Math.abs(value) >= 1e10 || (Math.abs(value) < 0.001 && value !== 0)) {
+            return value.toExponential(4);
+          }
+          return value.toPrecision(6);
+        }
+        return String(value);
+      }
+
+      function getSigmaClass(sigma) {
+        if (sigma === undefined || sigma === null) return '';
+        const absSigma = Math.abs(sigma);
+        if (absSigma < 2) return 'good';
+        if (absSigma < 5) return 'moderate';
+        return 'high';
+      }
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // Global function for related formula links
+      window.filterByFormula = function(formulaId) {
+        document.getElementById('search').value = formulaId;
+        applyFilters();
+        // Scroll to top of table
+        document.querySelector('.formula-table-container').scrollIntoView({ behavior: 'smooth' });
+      };
+
+    })();
+  </script>
+</body>
 </html>

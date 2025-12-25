@@ -19,8 +19,9 @@
   </title>
   <link href="../css/styles.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/auth.css">
-  <script defer="" src="../js/formula-expansion.js">
-  </script>
+  <script src="../js/pm-constants-loader.js"></script>
+  <script src="../js/pm-formula-loader.js"></script>
+  <script defer src="../js/formula-expansion.js"></script>
   <style>
    /* Section Page Specific Styles */
         .section-hero {
@@ -9275,7 +9276,7 @@
   <script src="../simulation-stats.js"></script>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
     setupAuthGuard('geometric-framework');
   </script>
  </body>
