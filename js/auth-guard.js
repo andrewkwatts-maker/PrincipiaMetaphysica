@@ -197,10 +197,22 @@ async function handleLogin() {
   }
 
   try {
-    await signInWithGoogle();
+    const user = await signInWithGoogle();
+
+    // If login was successful, immediately update UI
+    // Don't wait for onAuthStateChanged - it can be delayed
+    if (user) {
+      console.log('[PM Auth Guard] Login successful, updating UI immediately');
+      await handleAuthenticated(user);
+    } else {
+      // Login cancelled or failed - reset button
+      if (loginBtn) {
+        loginBtn.disabled = false;
+        loginBtn.innerHTML = '<img src="/images/google-icon.svg" alt="Google" class="google-icon"> Login with Google';
+      }
+    }
   } catch (error) {
     console.error('[PM Auth Guard] Login failed:', error);
-  } finally {
     if (loginBtn) {
       loginBtn.disabled = false;
       loginBtn.innerHTML = '<img src="/images/google-icon.svg" alt="Google" class="google-icon"> Login with Google';

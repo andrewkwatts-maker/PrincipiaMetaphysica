@@ -22,6 +22,9 @@ const authCallbacks = [];
 // Current user reference
 let currentUser = null;
 
+// Flag to track if auth has initialized (first state received)
+let authInitialized = false;
+
 /**
  * Initialize authentication with persistence
  * Sets up local persistence so users stay logged in across browser sessions
@@ -37,6 +40,7 @@ export async function initAuth() {
   // Set up auth state listener
   onAuthStateChanged(auth, (user) => {
     currentUser = user;
+    authInitialized = true;
 
     if (user) {
       console.log('[PM Auth] User signed in:', user.email);
@@ -44,7 +48,7 @@ export async function initAuth() {
       console.log('[PM Auth] User signed out');
     }
 
-    // Notify all registered callbacks
+    // Notify all registered callbacks immediately
     authCallbacks.forEach(callback => {
       try {
         callback(user);
@@ -113,8 +117,11 @@ export async function signOutUser() {
 export function onAuthReady(callback) {
   authCallbacks.push(callback);
 
-  // If we already have an auth state, call immediately
-  if (currentUser !== null || auth.currentUser !== undefined) {
+  // If auth is already initialized, call immediately with current state
+  // Note: auth.currentUser can be null (not logged in) or a user object
+  // We check if Firebase has finished initializing by seeing if we've received
+  // any auth state (currentUser will be set after first onAuthStateChanged fires)
+  if (authInitialized) {
     callback(auth.currentUser);
   }
 
