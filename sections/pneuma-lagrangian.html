@@ -1334,7 +1334,7 @@
       <strong>
        Framework statistics
       </strong>
-      : 45/48 SM parameters within 1σ (93.8%), 12 exact matches
+      : <span data-stat-id="within_1sigma">45</span>/<span data-stat-id="total_parameters">48</span> SM parameters within 1σ (<span data-stat-id="success_rate_1sigma">93.8</span>%), <span data-stat-id="exact_matches">12</span> exact matches
      </p>
     </div>
    </section>
@@ -3664,8 +3664,10 @@
   </div>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
     setupAuthGuard('pneuma-lagrangian');
   </script>
+  <!-- Dynamic validation statistics -->
+  <script src="../js/pm-validation-stats.js"></script>
  </body>
 </html>

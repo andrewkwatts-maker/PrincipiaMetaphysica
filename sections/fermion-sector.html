@@ -18,8 +18,9 @@
   </title>
   <link href="../css/styles.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/auth.css">
-  <script defer="" src="../js/formula-expansion.js">
-  </script>
+  <script src="../js/pm-constants-loader.js"></script>
+  <script src="../js/pm-formula-loader.js"></script>
+  <script defer src="../js/formula-expansion.js"></script>
   <style>
    /* Section-specific styles */
         .section-header {
@@ -246,9 +247,12 @@
         }
   </style>
   <link href="../css/pm-tooltip.css" rel="stylesheet"/>
+  <link href="../css/pm-citations.css" rel="stylesheet"/>
   <script src="../theory-constants-enhanced.js">
   </script>
   <script src="../js/pm-tooltip-system.js">
+  </script>
+  <script src="../js/pm-citations.js">
   </script>
  </head>
  <body class="auth-loading">
@@ -266,18 +270,18 @@
        </a>
       </li>
       <li>
-       <a href="../index.html#abstract">
-        Abstract
+       <a href="gauge-unification.html">
+        Previous
+       </a>
+      </li>
+      <li>
+       <a href="predictions.html">
+        Next Section
        </a>
       </li>
       <li>
        <a href="../index.html#sections">
-        Sections
-       </a>
-      </li>
-      <li>
-       <a href="../index.html#predictions">
-        Predictions
+        All Sections
        </a>
       </li>
      </ul>
@@ -337,7 +341,7 @@
        </sub>
       </strong>
       is the same 8-dimensional internal manifold from Sections 2 and 3,
-                    whose isometries give rise to the SO(10) gauge group.
+                    whose isometries give rise to the SO(10) gauge group<cite data-ref="acharya1998"></cite>.
      </li>
      <li>
       <strong>
@@ -1047,7 +1051,7 @@
       8192-component Dirac spinor
      </span>
      in the full <span class="pm-value" data-category="dimensions" data-param="D_bulk"></span>D bulk. After Sp(2,R) gauge fixing, this reduces to 64 effective components that decompose
-                into three generations of Standard Model fermions:
+                into three generations of Standard Model fermions<cite data-ref="vafa1996"></cite><cite data-ref="acharya2001_chiral"></cite>:
     </p>
     <div class="spinor-diagram">
      <div class="spinor-component">
@@ -3388,7 +3392,7 @@
      <p>
       The Yukawa coupling textures have a precise geometric origin in the
       <strong>
-       TCS G₂ manifold
+       TCS G₂ manifold<cite data-ref="corti2015"></cite>
       </strong>
       with b₃ = <span class="pm-value" data-category="topology" data-param="b3"></span>
       <a href="https://arxiv.org/abs/1809.09083" style="color: var(--accent-primary); font-size: 0.85rem;" target="_blank">
@@ -9569,7 +9573,7 @@
   <script src="../simulation-stats.js"></script>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
     setupAuthGuard('fermion-sector');
   </script>
  </body>

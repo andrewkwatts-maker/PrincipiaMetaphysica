@@ -375,6 +375,10 @@
             }
         }
     </style>
+
+    <!-- Tooltip System CSS -->
+    <link rel="stylesheet" href="css/pm-tooltip.css">
+    <link rel="stylesheet" href="css/formula-hover.css">
 </head>
 <body class="auth-loading">
     <div id="main-content" style="display: none;">
@@ -793,6 +797,14 @@
     </script>
 
     <!-- Auth system integration -->
-    <script src="js/auth-guard.js"></script>
+    <script type="module">
+        import { setupAuthGuard } from './js/auth-guard.js';
+        setupAuthGuard('simulations');
+    </script>
+
+    <!-- Tooltip System -->
+    <script src="theory-constants-enhanced.js"></script>
+    <script src="js/pm-tooltip-system.js"></script>
+    <script src="js/pm-formula-loader.js"></script>
 </body>
 </html>

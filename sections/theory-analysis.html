@@ -18,8 +18,9 @@
   </title>
   <link href="../css/styles.css" rel="stylesheet"/>
   <link rel="stylesheet" href="/css/auth.css">
-  <script defer="" src="../js/formula-expansion.js">
-  </script>
+  <script src="../js/pm-constants-loader.js"></script>
+  <script src="../js/pm-formula-loader.js"></script>
+  <script defer src="../js/formula-expansion.js"></script>
   <style>
    .analysis-section {
       background: var(--bg-card);
@@ -3046,7 +3047,7 @@
   </div>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
     setupAuthGuard('theory-analysis');
   </script>
  </body>

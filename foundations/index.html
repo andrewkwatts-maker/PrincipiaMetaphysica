@@ -17,9 +17,11 @@
     <title>Foundational Physics - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="/css/auth.css">
-    <script src="../js/formula-expansion.js" defer></script>
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
     <style>
         /* Intro Section with Frosted Glass */
         .intro {
@@ -603,7 +605,7 @@
     </script>
 
     <script type="module">
-        import { setupAuthGuard } from '/js/auth-guard.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
         setupAuthGuard('foundations-index');
     </script>
 </body>

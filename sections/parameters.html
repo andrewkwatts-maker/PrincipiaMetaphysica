@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <meta content="Complete parameter reference for Principia Metaphysica - geometric, derived, calibrated, predicted, and experimental parameters" name="description"/>
+    <title>Theory Parameters - Principia Metaphysica</title>
+    <link href="../css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/css/auth.css">
+    <style>
+        /* Page-specific styles */
+        .parameters-hero {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(81, 207, 102, 0.1));
+            border: 2px solid rgba(139, 127, 255, 0.3);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .parameters-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-primary), #51cf66);
+            border-radius: 20px 20px 0 0;
+        }
+
+        .parameters-hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), #51cf66);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .parameters-hero p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Filter controls */
+        .filter-controls {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-group label {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-group input[type="text"],
+        .filter-group select {
+            padding: 0.75rem;
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-group input[type="text"]:focus,
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(139, 127, 255, 0.1);
+        }
+
+        .filter-group input[type="text"]::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Statistics bar */
+        .stats-bar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+        }
+
+        .stat-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 0.25rem;
+        }
+
+        /* Parameters table */
+        .table-container {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .parameters-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .parameters-table thead {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(81, 207, 102, 0.05));
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .parameters-table th {
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            color: var(--text-primary);
+            border-bottom: 2px solid var(--border-primary);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+
+        .parameters-table th:hover {
+            background: rgba(139, 127, 255, 0.15);
+        }
+
+        .parameters-table th.sortable::after {
+            content: ' ⇅';
+            opacity: 0.3;
+        }
+
+        .parameters-table th.sort-asc::after {
+            content: ' ↑';
+            opacity: 1;
+            color: var(--accent-primary);
+        }
+
+        .parameters-table th.sort-desc::after {
+            content: ' ↓';
+            opacity: 1;
+            color: var(--accent-primary);
+        }
+
+        .parameters-table tbody tr {
+            border-bottom: 1px solid var(--border-primary);
+            transition: all 0.2s ease;
+        }
+
+        .parameters-table tbody tr:hover {
+            background: rgba(139, 127, 255, 0.05);
+        }
+
+        .parameters-table tbody tr.filtered-out {
+            display: none;
+        }
+
+        .parameters-table td {
+            padding: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .param-name {
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: var(--accent-secondary);
+        }
+
+        .param-symbol {
+            font-family: 'Crimson Text', serif;
+            font-style: italic;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .param-value {
+            font-family: 'Courier New', monospace;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .param-units {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .param-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .category-geometric {
+            background: rgba(81, 207, 102, 0.15);
+            color: #51cf66;
+            border: 1px solid rgba(81, 207, 102, 0.3);
+        }
+
+        .category-derived {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--accent-primary);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .category-calibrated {
+            background: rgba(255, 126, 182, 0.15);
+            color: var(--accent-secondary);
+            border: 1px solid rgba(255, 126, 182, 0.3);
+        }
+
+        .category-predicted {
+            background: rgba(255, 183, 77, 0.15);
+            color: #ffb74d;
+            border: 1px solid rgba(255, 183, 77, 0.3);
+        }
+
+        .category-experimental {
+            background: rgba(77, 182, 255, 0.15);
+            color: #4db6ff;
+            border: 1px solid rgba(77, 182, 255, 0.3);
+        }
+
+        .oom-badge {
+            display: inline-block;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            padding: 0.15rem 0.5rem;
+            background: rgba(139, 127, 255, 0.08);
+            border-radius: 6px;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .status-validated {
+            background: rgba(81, 207, 102, 0.15);
+            color: #51cf66;
+            border: 1px solid rgba(81, 207, 102, 0.3);
+        }
+
+        .status-pending {
+            background: rgba(255, 183, 77, 0.15);
+            color: #ffb74d;
+            border: 1px solid rgba(255, 183, 77, 0.3);
+        }
+
+        .status-fixed {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--accent-primary);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .param-description {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        /* Loading state */
+        .loading-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-muted);
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(139, 127, 255, 0.2);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Navigation links */
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .nav-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .parameters-table {
+                font-size: 0.85rem;
+            }
+
+            .parameters-table th,
+            .parameters-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .filter-controls {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+            }
+        }
+    </style>
+    <script src="../js/pm-constants-loader.js"></script>
+</head>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+    <header>
+        <div class="header-content">
+            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
+                Principia Metaphysica
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="geometric-framework.html">Geometric Framework</a></li>
+                    <li><a href="predictions.html">Predictions</a></li>
+                    <li><a href="../principia-metaphysica-paper.html">Full Paper</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="user-controls">
+            <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+            <span id="user-email"></span>
+            <button id="logout-btn">Logout</button>
+        </div>
+    </header>
+
+    <main>
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span class="current">Theory Parameters</span>
+        </nav>
+
+        <!-- Hero Section -->
+        <div class="parameters-hero">
+            <h1>Theory Parameters</h1>
+            <p>
+                Complete reference of all theoretical parameters from Principia Metaphysica.
+                Includes geometric constants, derived values, calibrated parameters, and experimental predictions.
+            </p>
+        </div>
+
+        <!-- Statistics Bar -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-value" id="stat-total">0</span>
+                <span class="stat-label">Total Parameters</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-visible">0</span>
+                <span class="stat-label">Visible</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-geometric">0</span>
+                <span class="stat-label">Geometric</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-derived">0</span>
+                <span class="stat-label">Derived</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-validated">0</span>
+                <span class="stat-label">Validated</span>
+            </div>
+        </div>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <div class="filter-group">
+                <label for="search-input">Search</label>
+                <input type="text" id="search-input" placeholder="Filter by name or description...">
+            </div>
+            <div class="filter-group">
+                <label for="category-filter">Category</label>
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="dimensions">Dimensions</option>
+                    <option value="topology">Topology</option>
+                    <option value="dark_energy">Dark Energy</option>
+                    <option value="gauge">Gauge</option>
+                    <option value="proton_decay">Proton Decay</option>
+                    <option value="neutrino">Neutrino</option>
+                    <option value="pmns">PMNS</option>
+                    <option value="kk_spectrum">KK Spectrum</option>
+                    <option value="pneuma">Pneuma</option>
+                    <option value="xy_bosons">XY Bosons</option>
+                    <option value="mirror_sector">Mirror Sector</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="type-filter">Type</label>
+                <select id="type-filter">
+                    <option value="">All Types</option>
+                    <option value="geometric">Geometric</option>
+                    <option value="derived">Derived</option>
+                    <option value="calibrated">Calibrated</option>
+                    <option value="predicted">Predicted</option>
+                    <option value="experimental">Experimental</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="oom-filter">Order of Magnitude</label>
+                <select id="oom-filter">
+                    <option value="">All Scales</option>
+                    <option value="micro">Micro (&lt; 10⁻⁶)</option>
+                    <option value="small">Small (10⁻⁶ to 1)</option>
+                    <option value="medium">Medium (1 to 10⁶)</option>
+                    <option value="large">Large (10⁶ to 10¹²)</option>
+                    <option value="macro">Macro (&gt; 10¹²)</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Parameters Table -->
+        <div class="table-container">
+            <div id="loading-indicator" class="loading-state">
+                <div class="loading-spinner"></div>
+                <p>Loading parameters from theory_output.json...</p>
+            </div>
+
+            <table class="parameters-table" id="parameters-table" style="display: none;">
+                <thead>
+                    <tr>
+                        <th class="sortable" data-sort="name">Name/Symbol</th>
+                        <th class="sortable" data-sort="value">Value</th>
+                        <th class="sortable" data-sort="units">Units</th>
+                        <th class="sortable" data-sort="category">Category</th>
+                        <th class="sortable" data-sort="oom">OOM</th>
+                        <th class="sortable" data-sort="type">Type</th>
+                        <th data-sort="description">Description</th>
+                    </tr>
+                </thead>
+                <tbody id="parameters-tbody">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
+
+            <div id="no-results" class="no-results" style="display: none;">
+                <p>No parameters match your filter criteria.</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-links">
+            <a class="nav-link" href="../index.html">← Back to Home</a>
+            <a class="nav-link" href="predictions.html">Predictions →</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br/>
+            © 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '../js/auth-guard.js';
+        setupAuthGuard('parameters');
+    </script>
+
+    <script>
+        // ====================================================================
+        // PARAMETERS PAGE - Dynamic Loading and Filtering
+        // ====================================================================
+
+        let allParameters = [];
+        let currentSort = { column: 'name', direction: 'asc' };
+
+        // Wait for PM to load
+        async function initializePage() {
+            try {
+                await window.PM.load();
+
+                if (!window.PM._data) {
+                    throw new Error('Failed to load theory_output.json');
+                }
+
+                loadParameters();
+                setupEventListeners();
+                hideLoading();
+
+            } catch (error) {
+                console.error('Error initializing parameters page:', error);
+                document.getElementById('loading-indicator').innerHTML = `
+                    <p style="color: var(--accent-secondary);">
+                        Error loading parameters. Please ensure theory_output.json is available.<br>
+                        <small>${error.message}</small>
+                    </p>
+                `;
+            }
+        }
+
+        function loadParameters() {
+            const params = window.PM.get('parameters') || {};
+            const simulations = window.PM.get('simulations') || {};
+
+            allParameters = [];
+
+            // Load from parameters section
+            for (const [category, values] of Object.entries(params)) {
+                if (category === 'version') continue;
+
+                if (typeof values === 'object' && values !== null) {
+                    for (const [key, value] of Object.entries(values)) {
+                        allParameters.push(createParameter(category, key, value, 'parameters'));
+                    }
+                }
+            }
+
+            // Also load key parameters from simulations
+            const simulationParams = extractSimulationParameters(simulations);
+            allParameters.push(...simulationParams);
+
+            renderTable();
+            updateStatistics();
+        }
+
+        function createParameter(category, key, value, source) {
+            const param = {
+                category: category,
+                name: key,
+                displayName: formatParameterName(key),
+                symbol: getParameterSymbol(key),
+                value: value,
+                displayValue: formatValue(value),
+                units: getUnits(category, key, value),
+                type: getParameterType(category, key),
+                oom: getOrderOfMagnitude(value),
+                description: getDescription(category, key),
+                source: source
+            };
+
+            return param;
+        }
+
+        function extractSimulationParameters(simulations) {
+            const params = [];
+
+            // Extract key numerical parameters from simulations
+            const keySimulations = {
+                'proton_decay': ['tau_p_years', 'm_gut', 'alpha_gut_inv'],
+                'neutrino_masses': ['m1_eV', 'm2_eV', 'm3_eV', 'sum_masses_eV', 'delta_m21_sq', 'delta_m3l_sq'],
+                'higgs_mass': ['m_h_GeV', 'Re_T_modulus'],
+                'kk_graviton': ['m_KK_TeV', 'm_KK_GeV'],
+                'fermion_chirality': ['chi_eff', 'n_flux', 'n_generations'],
+                'pneuma_stability': ['vev_analytic', 'a', 'b']
+            };
+
+            for (const [simKey, paramKeys] of Object.entries(keySimulations)) {
+                const simData = simulations[simKey];
+                if (simData) {
+                    for (const paramKey of paramKeys) {
+                        if (paramKey in simData) {
+                            params.push(createParameter(simKey, paramKey, simData[paramKey], 'simulations'));
+                        }
+                    }
+                }
+            }
+
+            return params;
+        }
+
+        function formatParameterName(name) {
+            // Convert snake_case to Title Case
+            return name
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        function getParameterSymbol(name) {
+            // Map common parameters to their symbols
+            const symbolMap = {
+                'D_BULK': 'D<sub>bulk</sub>',
+                'D_INTERNAL': 'D<sub>int</sub>',
+                'D_AFTER_SP2R': 'D<sub>SP2R</sub>',
+                'D_COMMON': 'D<sub>common</sub>',
+                'D_EFFECTIVE': 'D<sub>eff</sub>',
+                'CHI_EFF': 'χ<sub>eff</sub>',
+                'B2': 'b<sub>2</sub>',
+                'B3': 'b<sub>3</sub>',
+                'n_flux': 'N<sub>flux</sub>',
+                'tau_p_years': 'τ<sub>p</sub>',
+                'm_gut': 'M<sub>GUT</sub>',
+                'alpha_gut_inv': 'α<sub>GUT</sub><sup>-1</sup>',
+                'm_h_GeV': 'm<sub>h</sub>',
+                'm_KK_TeV': 'm<sub>KK</sub>',
+                'vev_analytic': '⟨Ψ<sub>P</sub>⟩',
+                'Re_T_modulus': 'Re(T)',
+                'chi_eff': 'χ<sub>eff</sub>',
+                'n_generations': 'n<sub>gen</sub>',
+                'm1_eV': 'm<sub>1</sub>',
+                'm2_eV': 'm<sub>2</sub>',
+                'm3_eV': 'm<sub>3</sub>',
+                'delta_m21_sq': 'Δm<sub>21</sub><sup>2</sup>',
+                'delta_m3l_sq': 'Δm<sub>3l</sub><sup>2</sup>'
+            };
+
+            return symbolMap[name] || '';
+        }
+
+        function formatValue(value) {
+            if (typeof value === 'number') {
+                const abs = Math.abs(value);
+                if (abs === 0) return '0';
+                if (abs >= 1e10 || (abs < 0.001 && abs > 0)) {
+                    return value.toExponential(3);
+                } else if (Number.isInteger(value)) {
+                    return value.toString();
+                } else {
+                    return value.toPrecision(4);
+                }
+            }
+            return String(value);
+        }
+
+        function getUnits(category, name, value) {
+            // Infer units from name and category
+            const unitMap = {
+                'tau_p_years': 'years',
+                'm_gut': 'GeV',
+                'm_h_GeV': 'GeV',
+                'm_KK_TeV': 'TeV',
+                'm_KK_GeV': 'GeV',
+                'm1_eV': 'eV',
+                'm2_eV': 'eV',
+                'm3_eV': 'eV',
+                'sum_masses_eV': 'eV',
+                'delta_m21_sq': 'eV²',
+                'delta_m3l_sq': 'eV²',
+                'vev_analytic': 'dimensionless',
+                'Re_T_modulus': 'dimensionless',
+                'a': 'dimensionless',
+                'b': 'dimensionless'
+            };
+
+            if (unitMap[name]) return unitMap[name];
+            if (category === 'dimensions') return 'dimensions';
+            if (typeof value === 'number' && Number.isInteger(value) && value < 100) return 'dimensionless';
+
+            return '';
+        }
+
+        function getParameterType(category, name) {
+            // Classify parameter type
+            if (category === 'dimensions' || category === 'topology') return 'geometric';
+            if (category === 'neutrino' || category === 'pmns') return 'calibrated';
+            if (name.includes('predicted') || category === 'proton_decay' || category === 'kk_spectrum') return 'predicted';
+            if (name.includes('experimental')) return 'experimental';
+            return 'derived';
+        }
+
+        function getOrderOfMagnitude(value) {
+            if (typeof value !== 'number' || value === 0) return null;
+            return Math.floor(Math.log10(Math.abs(value)));
+        }
+
+        function getDescription(category, name) {
+            const descriptions = {
+                'D_BULK': 'Bulk spacetime dimensions (bosonic string theory)',
+                'D_INTERNAL': 'Internal G₂ manifold dimensions',
+                'D_AFTER_SP2R': 'Dimensions after Sp(2,R) reduction',
+                'D_COMMON': 'Common observable dimensions',
+                'D_EFFECTIVE': 'Effective dimensions after compactification',
+                'CHI_EFF': 'Effective Euler characteristic of G₂ manifold',
+                'B2': 'Second Betti number',
+                'B3': 'Third Betti number',
+                'n_flux': 'Flux quantization number',
+                'tau_p_years': 'Proton lifetime prediction',
+                'm_gut': 'GUT scale mass',
+                'alpha_gut_inv': 'Inverse GUT coupling',
+                'm_h_GeV': 'Higgs boson mass',
+                'm_KK_TeV': 'Kaluza-Klein graviton mass scale',
+                'vev_analytic': 'Pneuma field vacuum expectation value',
+                'Re_T_modulus': 'Real part of T modulus',
+                'chi_eff': 'Effective Euler characteristic',
+                'n_generations': 'Number of fermion generations',
+                'm1_eV': 'Lightest neutrino mass',
+                'm2_eV': 'Second neutrino mass',
+                'm3_eV': 'Heaviest neutrino mass',
+                'delta_m21_sq': 'Solar neutrino mass-squared difference',
+                'delta_m3l_sq': 'Atmospheric neutrino mass-squared difference'
+            };
+
+            return descriptions[name] || `${formatParameterName(name)} parameter`;
+        }
+
+        function renderTable() {
+            const tbody = document.getElementById('parameters-tbody');
+            tbody.innerHTML = '';
+
+            const sortedParams = sortParameters([...allParameters]);
+
+            sortedParams.forEach(param => {
+                const row = document.createElement('tr');
+                row.dataset.category = param.category;
+                row.dataset.type = param.type;
+                row.dataset.oom = param.oom !== null ? param.oom : '';
+
+                row.innerHTML = `
+                    <td>
+                        <div class="param-name">${param.name}</div>
+                        ${param.symbol ? `<div class="param-symbol">${param.symbol}</div>` : ''}
+                    </td>
+                    <td class="param-value">${param.displayValue}</td>
+                    <td class="param-units">${param.units}</td>
+                    <td><span class="param-category category-${param.type}">${param.category}</span></td>
+                    <td>${param.oom !== null ? `<span class="oom-badge">10<sup>${param.oom}</sup></span>` : '—'}</td>
+                    <td><span class="param-category category-${param.type}">${param.type}</span></td>
+                    <td class="param-description">${param.description}</td>
+                `;
+
+                tbody.appendChild(row);
+            });
+        }
+
+        function sortParameters(params) {
+            return params.sort((a, b) => {
+                let aVal, bVal;
+
+                switch (currentSort.column) {
+                    case 'name':
+                        aVal = a.name.toLowerCase();
+                        bVal = b.name.toLowerCase();
+                        break;
+                    case 'value':
+                        aVal = typeof a.value === 'number' ? a.value : 0;
+                        bVal = typeof b.value === 'number' ? b.value : 0;
+                        break;
+                    case 'units':
+                        aVal = a.units.toLowerCase();
+                        bVal = b.units.toLowerCase();
+                        break;
+                    case 'category':
+                        aVal = a.category.toLowerCase();
+                        bVal = b.category.toLowerCase();
+                        break;
+                    case 'oom':
+                        aVal = a.oom !== null ? a.oom : -Infinity;
+                        bVal = b.oom !== null ? b.oom : -Infinity;
+                        break;
+                    case 'type':
+                        aVal = a.type.toLowerCase();
+                        bVal = b.type.toLowerCase();
+                        break;
+                    default:
+                        return 0;
+                }
+
+                if (aVal < bVal) return currentSort.direction === 'asc' ? -1 : 1;
+                if (aVal > bVal) return currentSort.direction === 'asc' ? 1 : -1;
+                return 0;
+            });
+        }
+
+        function applyFilters() {
+            const searchText = document.getElementById('search-input').value.toLowerCase();
+            const categoryFilter = document.getElementById('category-filter').value;
+            const typeFilter = document.getElementById('type-filter').value;
+            const oomFilter = document.getElementById('oom-filter').value;
+
+            const rows = document.querySelectorAll('#parameters-tbody tr');
+            let visibleCount = 0;
+
+            rows.forEach(row => {
+                const param = allParameters.find(p => p.name === row.querySelector('.param-name').textContent);
+                if (!param) return;
+
+                let visible = true;
+
+                // Search filter
+                if (searchText) {
+                    const matchName = param.name.toLowerCase().includes(searchText);
+                    const matchDesc = param.description.toLowerCase().includes(searchText);
+                    const matchCategory = param.category.toLowerCase().includes(searchText);
+                    visible = visible && (matchName || matchDesc || matchCategory);
+                }
+
+                // Category filter
+                if (categoryFilter && param.category !== categoryFilter) {
+                    visible = false;
+                }
+
+                // Type filter
+                if (typeFilter && param.type !== typeFilter) {
+                    visible = false;
+                }
+
+                // OOM filter
+                if (oomFilter && param.oom !== null) {
+                    const oom = param.oom;
+                    switch (oomFilter) {
+                        case 'micro':
+                            visible = visible && oom < -6;
+                            break;
+                        case 'small':
+                            visible = visible && oom >= -6 && oom < 0;
+                            break;
+                        case 'medium':
+                            visible = visible && oom >= 0 && oom < 6;
+                            break;
+                        case 'large':
+                            visible = visible && oom >= 6 && oom < 12;
+                            break;
+                        case 'macro':
+                            visible = visible && oom >= 12;
+                            break;
+                    }
+                }
+
+                if (visible) {
+                    row.classList.remove('filtered-out');
+                    visibleCount++;
+                } else {
+                    row.classList.add('filtered-out');
+                }
+            });
+
+            // Update visible count
+            document.getElementById('stat-visible').textContent = visibleCount;
+
+            // Show/hide no results message
+            const noResults = document.getElementById('no-results');
+            if (visibleCount === 0) {
+                noResults.style.display = 'block';
+            } else {
+                noResults.style.display = 'none';
+            }
+        }
+
+        function setupEventListeners() {
+            // Search input
+            document.getElementById('search-input').addEventListener('input', applyFilters);
+
+            // Filter dropdowns
+            document.getElementById('category-filter').addEventListener('change', applyFilters);
+            document.getElementById('type-filter').addEventListener('change', applyFilters);
+            document.getElementById('oom-filter').addEventListener('change', applyFilters);
+
+            // Table sorting
+            document.querySelectorAll('.parameters-table th.sortable').forEach(th => {
+                th.addEventListener('click', () => {
+                    const column = th.dataset.sort;
+
+                    if (currentSort.column === column) {
+                        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        currentSort.column = column;
+                        currentSort.direction = 'asc';
+                    }
+
+                    // Update sort indicators
+                    document.querySelectorAll('.parameters-table th').forEach(header => {
+                        header.classList.remove('sort-asc', 'sort-desc');
+                    });
+                    th.classList.add(`sort-${currentSort.direction}`);
+
+                    renderTable();
+                    applyFilters();
+                });
+            });
+        }
+
+        function updateStatistics() {
+            const total = allParameters.length;
+            const geometric = allParameters.filter(p => p.type === 'geometric').length;
+            const derived = allParameters.filter(p => p.type === 'derived').length;
+            const validated = allParameters.filter(p =>
+                p.source === 'simulations' && p.category !== 'version'
+            ).length;
+
+            document.getElementById('stat-total').textContent = total;
+            document.getElementById('stat-visible').textContent = total;
+            document.getElementById('stat-geometric').textContent = geometric;
+            document.getElementById('stat-derived').textContent = derived;
+            document.getElementById('stat-validated').textContent = validated;
+        }
+
+        function hideLoading() {
+            document.getElementById('loading-indicator').style.display = 'none';
+            document.getElementById('parameters-table').style.display = 'table';
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
+    </script>
+</body>
+</html>

@@ -17,6 +17,8 @@
   <title>Section 7: Predictions &amp; Tests - Principia Metaphysica</title>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="/css/auth.css">
+  <script src="../js/pm-constants-loader.js"></script>
+  <script src="../js/pm-formula-loader.js"></script>
   <script src="../theory-constants-enhanced.js"></script>
   <script src="../js/pm-tooltip-system.js"></script>
   <script src="../js/formula-expansion.js" defer></script>
@@ -222,9 +224,9 @@
       <nav>
         <ul>
           <li><a href="../index.html">Home</a></li>
-          <li><a href="index.html">Sections</a></li>
-          <li><a href="cosmology.html">Previous</a></li>
-          <li><a href="conclusion.html">Next</a></li>
+          <li><a href="fermion-sector.html">Previous</a></li>
+          <li><a href="conclusion.html">Next Section</a></li>
+          <li><a href="../index.html#sections">All Sections</a></li>
         </ul>
       </nav>
     </div>
@@ -256,7 +258,7 @@
       </div>
       <div style="display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.5rem; padding: 0.5rem 1rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.15)); border: 1px solid rgba(81, 207, 102, 0.3); border-radius: 8px;">
         
-        <span style="color: var(--text-muted); font-size: 0.9rem;">| 45/48 predictions within 1σ, 3 agreement(s) with experiment | NH (76% confidence), proton channels (64.2%/35.6%, validated via CKM
+        <span style="color: var(--text-muted); font-size: 0.9rem;">| <span data-stat-id="within_1sigma">45</span>/<span data-stat-id="total_parameters">48</span> predictions within 1σ, 3 agreement(s) with experiment | NH (76% confidence), proton channels (64.2%/35.6%, validated via CKM
             <p style="margin: 0.5rem 0; font-size: 0.9rem; color: var(--text-muted); font-style: italic;">
               <strong>v15.0 Key:</strong> CKM from racetrack: ε=0.2257 <em>derived</em> (not input), δ<sub>CP</sub>=π/2 (maximal) from cycle orientations, Jarlskog J=3.06×10⁻⁵ computed. See <code>simulations/proton_decay_br_geometric_v15_0.py</code>.
             </p>), KK tower (m₁=5.0 TeV geometric, m₂≈7.1 TeV), PMNS (< 0.24σ), dark energy (0.38σ)</span>
@@ -1268,7 +1270,7 @@
         <p style="margin-top: 0.5rem; font-style: italic; color: var(--text-muted);">
           <strong>Epistemic status:</strong> Both w<sub>0</sub> and w<sub>a,eff</sub> are now <strong>derived</strong>
           from theory. w<sub>0</sub> = <span class="pm-value" data-category="dark_energy" data-param="w0_PM" data-format="fixed:4"></span> from MEP via D<sub>eff</sub>=12.576 (DESI DR2: 0.38&sigma; agreement);
-          w<sub>a,eff</sub> = -0.95 from &alpha;<sub>T</sub>=2.7 two-time dynamics (DESI: 0.66&sigma; deviation).
+          w<sub>a,eff</sub> = -0.75 from &alpha;<sub>T</sub>=2.7 two-time dynamics (DESI: 0.66&sigma; deviation).
           The Planck H₀ tension reduced from 6σ to 1.3σ with these refined values.
         </p>
       </div>
@@ -3787,8 +3789,10 @@
     <script src="../simulation-stats.js"></script>
 
     <script type="module">
-        import { setupAuthGuard } from '/js/auth-guard.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
         setupAuthGuard('predictions');
     </script>
+    <!-- Dynamic validation statistics -->
+    <script src="../js/pm-validation-stats.js"></script>
 </body>
 </html>
