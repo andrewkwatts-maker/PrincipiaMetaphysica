@@ -341,7 +341,7 @@
             }
         });
   </script>
-     <link rel="stylesheet" href="/css/auth.css">
+     <link rel="stylesheet" href="css/auth.css">
   </head>
  <body class="auth-loading">
   <div id="main-content" style="display: none;">
@@ -363,12 +363,12 @@
       <li><a href="simulations.html">Simulations</a></li>
       <li class="user-controls-nav">
        <div class="user-controls">
-        <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+        <img id="user-avatar" src="images/default-avatar.svg" alt="User">
         <span id="user-email"></span>
         <button id="logout-btn">Logout</button>
        </div>
        <button id="header-login-btn" class="header-login-btn">
-        <img src="/images/google-icon.svg" alt="G" class="google-icon-small">
+        <img src="images/google-icon.svg" alt="G" class="google-icon-small">
         Login
        </button>
       </li>
@@ -1989,7 +1989,7 @@
   <script src="simulation-stats.js"></script>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from './js/auth-guard.js';
     setupAuthGuard('index');
   </script>
 </body>

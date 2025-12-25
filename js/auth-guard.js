@@ -43,8 +43,22 @@ export function setupAuthGuard(pageId = 'index') {
     injectAuthOverlay();
   }
 
-  // Set up auth state listener
+  // Set up auth state listener with timeout
+  let authResolved = false;
+
+  // Timeout after 10 seconds to prevent infinite loading
+  const authTimeout = setTimeout(() => {
+    if (!authResolved) {
+      console.warn('[PM Auth Guard] Auth timeout - showing login screen');
+      document.body.classList.remove('auth-loading');
+      handleNotAuthenticated();
+    }
+  }, 10000);
+
   onAuthReady(async (user) => {
+    authResolved = true;
+    clearTimeout(authTimeout);
+
     // Remove loading state
     document.body.classList.remove('auth-loading');
 

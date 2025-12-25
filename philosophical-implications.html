@@ -16,7 +16,7 @@
     <meta name="description" content="Philosophical Implications of Principia Metaphysica - Exploring consciousness, reality, and the nature of existence">
     <title>Philosophical Implications - Principia Metaphysica</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="/css/auth.css">
+    <link rel="stylesheet" href="css/auth.css">
     <style>
         .diagram-container {
             background: rgba(10, 10, 15, 0.6);
@@ -132,8 +132,10 @@
             animation: pulse 2s infinite;
         }
     </style>
-    <script src="theory-constants-enhanced.js"></script>
-    <script src="js/pm-tooltip-system.js"></script>
+
+    <!-- Tooltip System CSS -->
+    <link rel="stylesheet" href="css/pm-tooltip.css">
+    <link rel="stylesheet" href="css/formula-hover.css">
 </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
@@ -148,7 +150,7 @@
         </nav>
     
     <div class="user-controls">
-      <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+      <img id="user-avatar" src="images/default-avatar.svg" alt="User">
       <span id="user-email"></span>
       <button id="logout-btn">Logout</button>
     </div>
@@ -2490,8 +2492,13 @@
   </div>
 
   <script type="module">
-    import { setupAuthGuard } from '/js/auth-guard.js';
+    import { setupAuthGuard } from './js/auth-guard.js';
     setupAuthGuard('philosophical-implications');
   </script>
+
+  <!-- Tooltip System -->
+  <script src="theory-constants-enhanced.js"></script>
+  <script src="js/pm-tooltip-system.js"></script>
+  <script src="js/pm-formula-loader.js"></script>
 </body>
 </html>
