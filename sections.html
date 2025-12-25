@@ -487,19 +487,32 @@
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
-            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <div>
-                    <h1>Principia Metaphysica</h1>
-                    <div class="subtitle">A First-Principles Geometric Theory</div>
+            <div class="header-content">
+                <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
+                    Principia Metaphysica
                 </div>
-                <nav style="margin-left: auto;">
-                    <ul style="list-style: none; display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 0; padding: 0;">
-                        <li><a href="principia-metaphysica-paper.html" class="nav-link">Home</a></li>
-                        <li><a href="sections.html" class="nav-link active">Sections</a></li>
-                        <li><a href="formulas.html" class="nav-link">Formulas</a></li>
-                        <li><a href="parameters.html" class="nav-link">Parameters</a></li>
-                        <li><a href="references.html" class="nav-link">References</a></li>
-                        <li><a href="foundations.html" class="nav-link">Foundations</a></li>
+                <nav>
+                    <ul>
+                        <li><a href="index.html#abstract">Abstract</a></li>
+                        <li><a href="beginners-guide.html">Beginner's Guide</a></li>
+                        <li><a href="sections.html">Sections</a></li>
+                        <li><a href="foundations/index.html">Foundations</a></li>
+                        <li><a href="references.html">References</a></li>
+                        <li><a href="formulas.html">Formulas</a></li>
+                        <li><a href="parameters.html">Parameters</a></li>
+                        <li><a href="principia-metaphysica-paper.html">Paper</a></li>
+                        <li><a href="simulations.html">Simulations</a></li>
+                        <li class="user-controls-nav">
+                            <div class="user-controls">
+                                <img id="user-avatar" src="/images/default-avatar.svg" alt="User">
+                                <span id="user-email"></span>
+                                <button id="logout-btn">Logout</button>
+                            </div>
+                            <button id="header-login-btn" class="header-login-btn">
+                                <img src="/images/google-icon.svg" alt="G" class="google-icon-small">
+                                Login
+                            </button>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -904,6 +917,11 @@
                 init();
             }
         })();
+    </script>
+
+    <script type="module">
+        import { setupAuthGuard } from '/js/auth-guard.js';
+        setupAuthGuard('sections');
     </script>
 </body>
 </html>
