@@ -139,9 +139,10 @@ export function updateHeaderUserDisplay(user) {
   const userControls = document.querySelector('.user-controls');
   const loginBtn = document.getElementById('header-login-btn');
 
+  const basePath = getBasePath();
   if (user) {
     if (userAvatar) {
-      userAvatar.src = user.photoURL || 'images/default-avatar.svg';
+      userAvatar.src = user.photoURL || `${basePath}images/default-avatar.svg`;
       userAvatar.alt = user.displayName || 'User';
     }
     if (userEmail) {
