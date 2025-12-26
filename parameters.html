@@ -1123,12 +1123,36 @@
                         parametersByCategory[category] = [];
                     }
 
+                    // Try to find computed value from simulations or formulas
+                    let computedValue = param.value ?? param.computed ?? param.predicted ?? null;
+
+                    // Look up value from simulations if not in registry
+                    if (computedValue === null && theoryData.simulations) {
+                        // Map registry keys to simulation keys
+                        const simKeyMap = {
+                            'm_t': 'fermion_masses.m_top_GeV',
+                            'm_b': 'fermion_masses.m_bottom_GeV',
+                            'm_tau': 'fermion_masses.m_tau_GeV',
+                            'm_higgs': 'higgs_mass.m_h_GeV',
+                            'm_nu1': 'neutrino_masses.m1_eV',
+                            'm_nu2': 'neutrino_masses.m2_eV',
+                            'm_nu3': 'neutrino_masses.m3_eV',
+                        };
+                        const simPath = simKeyMap[key];
+                        if (simPath) {
+                            const [simName, simField] = simPath.split('.');
+                            computedValue = theoryData.simulations[simName]?.[simField];
+                        }
+                    }
+
                     const paramObj = {
                         key,
                         displayName: param.name || formatParameterName(key),
                         category,
                         status: param.status || 'DERIVED',
                         sigma: param.sigma ?? null,
+                        value: computedValue,
+                        displayValue: formatValue(computedValue),
                         symbol: PARAMETER_SYMBOLS[key] || '',
                         description: PARAMETER_DESCRIPTIONS[key] || param.name || '',
                         source: 'registry'
