@@ -41,6 +41,7 @@ from config import (
     TCSTopologyParameters,
     GaugeUnificationParameters,
     PhenomenologyParameters,
+    CoreFormulas,
 )
 
 
@@ -182,10 +183,25 @@ def proton_decay_geometric_prediction(n_samples: int = 100000, verbose: bool = T
         'status': 'RESOLVED - Geometric selection rule from TCS cycle separation'
     }
 
+    # Validate against CoreFormulas
+    formula = CoreFormulas.PROTON_LIFETIME
+    formula_value = formula.computed_value
+    # Use order-of-magnitude comparison (within factor of 10)
+    formula_match = abs(np.log10(tau_median) - np.log10(formula_value)) < 1.0
+    results['formula_id'] = formula.id
+    results['formula_validated'] = formula_match
+
     if verbose:
         print("=" * 70)
         print(" PROTON DECAY GEOMETRIC SUPPRESSION (v13.0)")
         print("=" * 70)
+        print()
+        # Print associated formula
+        print("ASSOCIATED FORMULA:")
+        print(f"  {formula.label}")
+        print(f"  {formula.plain_text}")
+        print(f"  Category: {formula.category}")
+        print(f"  Status: {formula.status}")
         print()
         print("TCS Cycle Separation Mechanism:")
         print(f"  K = {TCSTopologyParameters.K_MATCHING} matching K3 fibres")
@@ -216,6 +232,14 @@ def proton_decay_geometric_prediction(n_samples: int = 100000, verbose: bool = T
         status = "PASS" if results['above_bound'] else "FAIL"
         print(f" RESULT: tau_p = {tau_median:.2e} years [{status}]")
         print("=" * 70)
+        print()
+        # Formula validation
+        print("FORMULA VALIDATION:")
+        print(f"  Formula: {formula.id}")
+        print(f"  Expected: {formula_value:.2e} years")
+        print(f"  Computed: {tau_median:.2e} years")
+        print(f"  Match: {'PASS' if formula_match else 'FAIL'} (within 1 OoM)")
+        print("=" * 70)
 
     return results
 
@@ -223,6 +247,7 @@ def proton_decay_geometric_prediction(n_samples: int = 100000, verbose: bool = T
 def export_proton_decay_geometric() -> dict:
     """Export geometric proton decay results for theory_output.json."""
     results = proton_decay_geometric_prediction(verbose=False)
+    formula = CoreFormulas.PROTON_LIFETIME
     return {
         'tau_p_years': results['tau_median'],
         'tau_p_68_low': results['ci_68'][0],
@@ -237,11 +262,20 @@ def export_proton_decay_geometric() -> dict:
         'alpha_gut_inv': results['alpha_gut_inv'],
         'br_e_pi0': results['br_e_pi0'],
         'mechanism': results['mechanism'],
-        'status': results['status']
+        'status': results['status'],
+        'formula': {
+            'id': formula.id,
+            'label': formula.label,
+            'plain_text': formula.plain_text,
+            'validated': results.get('formula_validated', True)
+        }
     }
 
 
 if __name__ == "__main__":
+    import io
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
     # Run main analysis
     results = proton_decay_geometric_prediction()
 

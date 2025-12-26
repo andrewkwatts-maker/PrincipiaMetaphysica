@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Section Renderer - Style Test</title>
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Loaders -->
+    <script src="js/pm-constants-loader.js"></script>
+    <script src="js/pm-formula-loader.js"></script>
+    <script src="js/pm-section-renderer.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: #0a0a0f;
+            color: #f8f9fa;
+            line-height: 1.7;
+            font-size: 11pt;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.1rem;
+        }
+
+        .paper-container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 50px 60px;
+            background: #ffffff;
+            min-height: 100vh;
+        }
+
+        .controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .controls button {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            border: none;
+            border-radius: 6px;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .controls button:hover {
+            transform: scale(1.05);
+        }
+
+        .controls button:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-banner {
+            background: rgba(96, 165, 250, 0.1);
+            border-left: 4px solid #60a5fa;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .info-banner h3 {
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-banner ul {
+            margin-left: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .comparison-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+
+        .comparison-item h4 {
+            color: #8b7fff;
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .paper-container {
+                padding: 20px 15px;
+            }
+
+            .controls {
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            .header,
+            .controls,
+            .info-banner {
+                display: none;
+            }
+
+            body {
+                background: white;
+            }
+
+            .paper-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>PM Section Renderer Style Test</h1>
+        <p class="subtitle">Testing Paper-Style CSS for Dynamic Sections</p>
+    </div>
+
+    <div class="controls">
+        <button onclick="window.print()">Print Preview</button>
+        <button onclick="toggleDarkMode()">Toggle Dark/Light</button>
+        <button onclick="location.reload()">Reload</button>
+    </div>
+
+    <div style="padding: 0 2rem; margin-bottom: 2rem;">
+        <div class="info-banner">
+            <h3>Style Test Checklist</h3>
+            <ul>
+                <li>Typography: Crimson Text 11pt, line-height 1.7</li>
+                <li>Section headers with purple accent and gray border</li>
+                <li>Abstract box with light gray background</li>
+                <li>Derivation boxes with gradient background</li>
+                <li>Callout boxes (info, warning, success, etc.)</li>
+                <li>Tables with proper borders and header styling</li>
+                <li>Code blocks with monospace font and accent border</li>
+                <li>Responsive design (resize window to test)</li>
+                <li>Print styles (click Print Preview)</li>
+            </ul>
+        </div>
+
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <h4>Font Families</h4>
+                <p style="font-family: 'Crimson Text', serif;">Body: Crimson Text</p>
+                <p style="font-family: 'Source Sans Pro', sans-serif;">Headers: Source Sans Pro</p>
+                <p style="font-family: 'Source Code Pro', monospace;">Code: Source Code Pro</p>
+            </div>
+
+            <div class="comparison-item">
+                <h4>Color Palette</h4>
+                <p><span style="color: #8b7fff;">●</span> Accent: #8b7fff</p>
+                <p><span style="color: #ff7eb6;">●</span> Secondary: #ff7eb6</p>
+                <p><span style="color: #1a1a1a;">●</span> Text: #1a1a1a</p>
+                <p><span style="color: #e0e0e0;">●</span> Border: #e0e0e0</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Paper Container with White Background -->
+    <div class="paper-container">
+        <h1 style="font-size: 1.8rem; text-align: center; margin-bottom: 0.3rem; font-weight: 700;">
+            Principia Metaphysica
+        </h1>
+        <p style="font-size: 1.1rem; text-align: center; font-weight: 400; color: #555; margin-bottom: 1.5rem;">
+            A Geometric Unification of the Standard Model and Cosmology<br>
+            from M-Theory on a Single G₂ Manifold
+        </p>
+
+        <p style="text-align: center; font-size: 1rem; margin-bottom: 0.3rem;"><strong>Andrew Keith Watts</strong></p>
+        <p style="text-align: center; font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 2rem;">
+            Independent Researcher<br>December 2025
+        </p>
+
+        <!-- Sample Abstract -->
+        <div style="background: #f8f9fa; padding: 20px 25px; border-left: 4px solid #8b7fff; margin: 2rem 0;">
+            <h2 style="font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.8rem;">Abstract</h2>
+            <p style="font-size: 0.95rem; text-align: justify;">
+                This is a sample abstract demonstrating the paper styling. The text uses Crimson Text at 0.95rem with justified alignment.
+                The background is light gray (#f8f9fa) with a purple accent border (4px solid #8b7fff). This matches the exact styling
+                from the original paper HTML.
+            </p>
+        </div>
+
+        <!-- Dynamic Section Rendering Test -->
+        <h2 style="font-size: 1.3rem; margin: 2.5rem 0 1rem; padding-bottom: 0.3rem; border-bottom: 2px solid #e0e0e0;">
+            Test Section: Dynamic Rendering
+        </h2>
+
+        <p style="margin-bottom: 1rem; text-align: justify;">
+            Below you will see a dynamically rendered section using the <code style="font-family: 'Source Code Pro', monospace; font-size: 0.9em; background: #f0f0f0; padding: 2px 5px; border-radius: 3px;">&lt;pm-section&gt;</code> custom element.
+            The styling should match this static content exactly. If the section data is not available, you'll see an error message.
+        </p>
+
+        <!-- PM Section Renderer Test -->
+        <pm-section section-id="1"></pm-section>
+
+        <!-- Sample Derivation Box -->
+        <div style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid #dee2e6; border-radius: 8px; padding: 20px; margin: 1.5rem 0;">
+            <h4 style="font-size: 1rem; color: #8b7fff; margin-bottom: 0.8rem; border-bottom: 1px solid #dee2e6; padding-bottom: 0.5rem;">
+                Sample Derivation: Dimensional Reduction
+            </h4>
+            <p style="margin-bottom: 0.5rem;">Starting from the 26D action:</p>
+            <div style="margin: 1rem 0; text-align: center;">
+                $$S_{26} = \int d^{26}x \sqrt{-g} \, R_{26}$$
+            </div>
+            <p>We reduce to 13D via Sp(2,ℝ) gauge symmetry.</p>
+        </div>
+
+        <!-- Sample Callout Boxes -->
+        <aside style="padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 8px; border-left: 4px solid #60a5fa; background: rgba(96, 165, 250, 0.05);">
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #60a5fa;">Info Callout</h4>
+            <p style="margin-bottom: 0;">This is an informational callout box with blue accent.</p>
+        </aside>
+
+        <aside style="padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 8px; border-left: 4px solid #fbbf24; background: rgba(251, 191, 36, 0.05);">
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #f59e0b;">Warning Callout</h4>
+            <p style="margin-bottom: 0;">This is a warning callout box with amber accent.</p>
+        </aside>
+
+        <aside style="padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 8px; border-left: 4px solid #2e7d32; background: rgba(74, 222, 128, 0.05);">
+            <h4 style="margin: 0 0 0.5rem 0; font-size: 1rem; color: #2e7d32;">Success Callout</h4>
+            <p style="margin-bottom: 0;">This is a success callout box with green accent.</p>
+        </aside>
+
+        <!-- Sample Table -->
+        <h3 style="font-size: 1.1rem; margin: 1.5rem 0 0.8rem; color: #333;">Sample Table</h3>
+        <table style="width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem;">
+            <thead>
+                <tr>
+                    <th style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; background: #f5f5f5; font-weight: 600;">Parameter</th>
+                    <th style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; background: #f5f5f5; font-weight: 600;">PM Value</th>
+                    <th style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; background: #f5f5f5; font-weight: 600;">Experiment</th>
+                    <th style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0; background: #f5f5f5; font-weight: 600;">Deviation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">α<sub>GUT</sub></td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">0.0256</td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">0.0256 ± 0.0003</td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">0.0σ</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">θ<sub>23</sub></td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">45.0°</td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">45.2° ± 1.3°</td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">0.15σ</td>
+                </tr>
+                <tr>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">n<sub>gen</sub></td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">3</td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">3</td>
+                    <td style="padding: 10px 12px; text-align: left; border-bottom: 1px solid #e0e0e0;">0.0σ</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Sample Code Block -->
+        <h3 style="font-size: 1.1rem; margin: 1.5rem 0 0.8rem; color: #333;">Sample Code Block</h3>
+        <pre style="background: #f5f5f5; padding: 15px 20px; border-radius: 6px; overflow-x: auto; font-family: 'Source Code Pro', monospace; font-size: 0.85rem; line-height: 1.5; margin: 1rem 0; border-left: 3px solid #8b7fff;"><code>import numpy as np
+from scipy.special import gamma
+
+def calculate_generations(chi_eff):
+    """Calculate number of fermion generations."""
+    return abs(chi_eff) // 48
+
+# For TCS G2 with b2=4, b3=24
+chi = 144
+n_gen = calculate_generations(chi)
+print(f"Number of generations: {n_gen}")  # Output: 3</code></pre>
+
+        <!-- Sample Lists -->
+        <h3 style="font-size: 1.1rem; margin: 1.5rem 0 0.8rem; color: #333;">Sample Lists</h3>
+        <p style="margin-bottom: 1rem; text-align: justify;">Unordered list:</p>
+        <ul style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.3rem;">First item with proper spacing</li>
+            <li style="margin-bottom: 0.3rem;">Second item demonstrating bullet style</li>
+            <li style="margin-bottom: 0.3rem;">Third item with nested list:
+                <ul style="margin-top: 0.3rem; margin-bottom: 0.3rem; margin-left: 2rem;">
+                    <li style="margin-bottom: 0.3rem;">Nested item A</li>
+                    <li style="margin-bottom: 0.3rem;">Nested item B</li>
+                </ul>
+            </li>
+        </ul>
+
+        <p style="margin-bottom: 1rem; text-align: justify;">Ordered list:</p>
+        <ol style="margin-left: 2rem; margin-bottom: 1rem;">
+            <li style="margin-bottom: 0.3rem;">First numbered item</li>
+            <li style="margin-bottom: 0.3rem;">Second numbered item</li>
+            <li style="margin-bottom: 0.3rem;">Third numbered item</li>
+        </ol>
+
+        <!-- Sample Figure -->
+        <figure style="text-align: center; margin: 2rem 0;">
+            <div style="background: #f8f9fa; border: 1px solid #e0e0e0; padding: 2rem; border-radius: 8px;">
+                <svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="300" height="200" fill="#f8f9fa"/>
+                    <text x="150" y="100" text-anchor="middle" font-family="Crimson Text" font-size="24" fill="#8b7fff">
+                        Sample Figure
+                    </text>
+                    <circle cx="150" cy="140" r="30" fill="none" stroke="#8b7fff" stroke-width="2"/>
+                </svg>
+            </div>
+            <figcaption style="font-size: 0.9rem; color: #666; margin-top: 0.5rem; font-style: italic;">
+                Figure 1: Sample diagram demonstrating figure caption styling
+            </figcaption>
+        </figure>
+
+        <!-- Typography Samples -->
+        <h3 style="font-size: 1.1rem; margin: 1.5rem 0 0.8rem; color: #333;">Typography Samples</h3>
+        <p style="margin-bottom: 1rem; text-align: justify;">
+            This paragraph demonstrates the default text styling with <strong>bold text</strong> and <em>italic text</em>.
+            We can also show inline code like <code style="font-family: 'Source Code Pro', monospace; font-size: 0.9em; background: #f0f0f0; padding: 2px 5px; border-radius: 3px;">pm-section</code>
+            and mathematical notation: $E = mc^2$ or $\theta_{23} = 45°$. Subscripts like H<sub>2</sub>O and superscripts like x<sup>2</sup> are also supported.
+        </p>
+
+        <p style="margin-bottom: 1rem; text-align: justify;">
+            The font size is 11pt with line-height of 1.7, providing comfortable reading. Text is justified for a professional appearance.
+            Paragraph spacing is 1rem bottom margin. The color is #1a1a1a on white background for optimal contrast and readability.
+        </p>
+    </div>
+
+    <script>
+        window.PM_DEBUG = true; // Enable debug logging
+
+        function toggleDarkMode() {
+            const paperContainer = document.querySelector('.paper-container');
+            const currentBg = paperContainer.style.background;
+
+            if (currentBg === 'rgb(255, 255, 255)' || currentBg === '#ffffff' || currentBg === '') {
+                paperContainer.style.background = '#1a1a1a';
+                paperContainer.style.color = '#f8f9fa';
+            } else {
+                paperContainer.style.background = '#ffffff';
+                paperContainer.style.color = '#1a1a1a';
+            }
+        }
+
+        // Log when custom element is registered
+        console.log('%cPM Section Style Test Loaded', 'color: #8b7fff; font-weight: bold; font-size: 16px');
+        console.log('Waiting for pm-section custom element to be defined...');
+
+        customElements.whenDefined('pm-section').then(() => {
+            console.log('%cpm-section custom element is now defined!', 'color: green; font-weight: bold');
+        });
+
+        // Check if section loaded successfully
+        setTimeout(() => {
+            const pmSection = document.querySelector('pm-section');
+            if (pmSection && pmSection.shadowRoot) {
+                console.log('%cpm-section shadow root found', 'color: green');
+                console.log('Shadow root content:', pmSection.shadowRoot.innerHTML.substring(0, 200) + '...');
+            } else {
+                console.warn('pm-section shadow root not found - section may not have loaded');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

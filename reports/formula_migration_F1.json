@@ -1,0 +1,819 @@
+{
+  "agent": "F1",
+  "section": "2",
+  "section_title": "26-Dimensional Bulk Spacetime",
+  "paper_lines": "732-1137",
+  "formulas": [
+    {
+      "id": "master-action-26d",
+      "equation_number": "(2.1)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing 'uses_params' and 'outputs_params' fields",
+        "Missing 'child_formulas' list",
+        "Derivation needs more detail from paper derivation box",
+        "Missing assumption about Sp(2,R) gauge fixing"
+      ],
+      "terms_to_add": [],
+      "complete_metadata": {
+        "id": "master-action-26d",
+        "label": "(2.1) Master Action",
+        "html": "S<sub>26</sub> = ∫ d<sup>26</sup>x √|G| [M<sub>*</sub><sup>24</sup>R<sub>26</sub> + Ψ̄<sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub> + ℒ<sub>Sp(2,ℝ)</sub>]",
+        "latex": "S_{26} = \\int d^{26}x \\sqrt{|G_{(24,2)}|} \\left[ M_*^{24} R_{26} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{Sp}(2,\\mathbb{R})} \\right]",
+        "plain_text": "S_26 = ∫ d²⁶x √|G| [M*²⁴R₂₆ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_Sp(2,ℝ)]",
+        "category": "THEORY",
+        "description": "Master action for 26D bulk with Pneuma field and Sp(2,R) gauge constraints",
+        "section": "2.2",
+        "status": "FOUNDATIONAL",
+        "terms": {
+          "S_26": {
+            "name": "26D Action",
+            "description": "Full action in (24,2) signature spacetime",
+            "link": "sections/geometric-framework.html"
+          },
+          "d^26x": {
+            "name": "26D Volume Element",
+            "description": "Integration over all 26 dimensions (24 space + 2 time)"
+          },
+          "√|G|": {
+            "name": "Metric Determinant",
+            "description": "Square root of metric determinant for (24,2) signature"
+          },
+          "M_*": {
+            "name": "Fundamental Scale",
+            "description": "26D Planck scale ~10¹⁶ GeV",
+            "units": "GeV"
+          },
+          "R_26": {
+            "name": "Ricci Scalar",
+            "description": "26D curvature scalar from Einstein-Hilbert term"
+          },
+          "Ψ_P": {
+            "name": "Pneuma Field",
+            "description": "8192-component spinor from Cl(24,2) Clifford algebra",
+            "formula_id": "primordial-spinor-26d"
+          },
+          "Γ^M": {
+            "name": "Gamma Matrices",
+            "description": "26D Clifford algebra generators satisfying {Γ^M, Γ^N} = 2η^MN"
+          },
+          "D_M": {
+            "name": "Covariant Derivative",
+            "description": "Gauge-covariant derivative including spin connection"
+          },
+          "m": {
+            "name": "Pneuma Mass",
+            "description": "Primordial spinor mass parameter"
+          },
+          "ℒ_Sp(2,ℝ)": {
+            "name": "Gauge Lagrangian",
+            "description": "Sp(2,R) constraint Lagrangian for two-time ghost elimination"
+          }
+        },
+        "derivation": {
+          "parent_formulas": [],
+          "established_physics": ["virasoro-anomaly", "string-theory", "bars-two-time"],
+          "steps": [
+            "Start with bosonic string critical dimension D=26 (Virasoro anomaly cancellation)",
+            "Adopt (24,2) signature following Bars' two-time physics for covariant ghost elimination",
+            "Include Pneuma spinor field Ψ_P with 2^13 = 8192 components for fermionic degrees of freedom",
+            "Add Einstein-Hilbert term with exponent M*^24 (dimension D-2 = 24)",
+            "Add Sp(2,R) gauge constraint Lagrangian to project out second time dimension",
+            "Result: Complete 26D action with gravity, fermions, and gauge constraints"
+          ],
+          "assumptions": [
+            "Virasoro anomaly cancellation requires D=26",
+            "Two-time signature (24,2) for covariant quantization",
+            "Sp(2,R) gauge symmetry eliminates ghost states",
+            "Pneuma field is fundamental (not composite)"
+          ],
+          "approximations": [],
+          "verification_page": "sections/geometric-framework.html",
+          "difficulty": "advanced"
+        },
+        "simulation_file": "simulations/attractor_scalar_v12_8.py",
+        "related_formulas": ["virasoro-anomaly", "sp2r-constraints", "pneuma-stress-energy"],
+        "child_formulas": ["reduction-cascade", "primordial-spinor-13d"],
+        "uses_params": ["D", "signature"],
+        "outputs_params": ["S_26", "M_*"],
+        "notes": "This is the foundational action from which all PM predictions derive. The Pneuma field is the key innovation."
+      }
+    },
+    {
+      "id": "virasoro-anomaly",
+      "equation_number": "(2.2)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing full derivation steps from paper (5 steps listed in derivation box)",
+        "Missing FormulaDerivation object with proper structure",
+        "Missing references to Lovelace (1971) and Polchinski",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "D: Spacetime dimension (critical parameter)"
+      ],
+      "complete_metadata": {
+        "id": "virasoro-anomaly",
+        "label": "(2.2) Virasoro Anomaly Cancellation",
+        "html": "c<sub>total</sub> = c<sub>matter</sub> + c<sub>ghost</sub> = D + (-26) = 0 ⟹ D = 26",
+        "latex": "c_{\\text{total}} = c_{\\text{matter}} + c_{\\text{ghost}} = D + (-26) = 0 \\quad \\Rightarrow \\quad D = 26",
+        "plain_text": "c_total = c_matter + c_ghost = D + (-26) = 0 ⟹ D = 26",
+        "category": "ESTABLISHED",
+        "description": "Virasoro anomaly cancellation fixes critical dimension to 26",
+        "section": "2.3",
+        "status": "EXACT (established physics)",
+        "terms": {
+          "c_total": {
+            "name": "Total Central Charge",
+            "description": "Must vanish for consistent BRST quantization of bosonic string"
+          },
+          "c_matter": {
+            "name": "Matter Central Charge",
+            "description": "= D (one unit per coordinate field X^μ)"
+          },
+          "c_ghost": {
+            "name": "Ghost Central Charge",
+            "description": "= -26 from reparametrization ghosts (bc system with weights 2,-1)"
+          },
+          "D": {
+            "name": "Spacetime Dimension",
+            "description": "Critical dimension = 26 uniquely fixed by anomaly cancellation"
+          }
+        },
+        "derivation": {
+          "parent_formulas": [],
+          "established_physics": ["virasoro-algebra", "brst-cohomology"],
+          "steps": [
+            "Virasoro algebra has central extension: [L_m, L_n] = (m-n)L_{m+n} + (c/12)m(m²-1)δ_{m+n,0}",
+            "Matter fields X^μ contribute c_matter = D (one per coordinate)",
+            "Faddeev-Popov ghosts (bc system, weights 2,-1) contribute c_ghost = -26",
+            "BRST cohomology requires c_total = 0 for consistent quantization",
+            "Therefore D = 26 is the unique critical dimension for bosonic string"
+          ],
+          "assumptions": [
+            "Bosonic string (no worldsheet supersymmetry)",
+            "Conformal gauge fixing requires ghost fields",
+            "BRST nilpotency Q² = 0"
+          ],
+          "approximations": [],
+          "comments": "This is established physics, not a PM innovation. Reference: Lovelace (1971), Polchinski Vol. 1 Ch. 1",
+          "verification_page": "sections/geometric-framework.html#virasoro",
+          "difficulty": "advanced"
+        },
+        "references": [
+          {
+            "id": "lovelace1971",
+            "title": "Pomeron form factors and dual Regge cuts",
+            "authors": "C. Lovelace",
+            "year": 1971,
+            "description": "First derivation of critical dimension D=26"
+          },
+          {
+            "id": "polchinski1998",
+            "title": "String Theory Vol. 1",
+            "authors": "J. Polchinski",
+            "year": 1998,
+            "description": "Standard textbook reference for Virasoro anomaly"
+          }
+        ],
+        "computed_value": 26,
+        "related_formulas": ["master-action-26d"],
+        "child_formulas": ["master-action-26d", "sp2r-constraints"],
+        "uses_params": [],
+        "outputs_params": ["D"],
+        "notes": "D=26 is the ONLY critical dimension for bosonic strings. This is foundational established physics."
+      }
+    },
+    {
+      "id": "sp2r-constraints",
+      "equation_number": "(2.3)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing detailed explanation of each constraint from paper",
+        "Missing reference to Bars (2006) paper",
+        "Terms need expanded descriptions",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "M: Mass parameter for mass-shell constraint"
+      ],
+      "complete_metadata": {
+        "id": "sp2r-constraints",
+        "label": "(2.3) Sp(2,R) Gauge Constraints",
+        "html": "X² = 0, X·P = 0, P² + M² = 0",
+        "latex": "X^2 = 0, \\quad X \\cdot P = 0, \\quad P^2 + M^2 = 0",
+        "plain_text": "X² = 0, X·P = 0, P² + M² = 0",
+        "category": "THEORY",
+        "description": "Three first-class constraints eliminating ghost states from two-time structure",
+        "section": "2.1",
+        "status": "THEORETICAL (from Bars two-time physics)",
+        "terms": {
+          "X²": {
+            "name": "Null Constraint",
+            "description": "Position vector is null in (24,2) signature: X^M X_M = 0"
+          },
+          "X·P": {
+            "name": "Orthogonality Constraint",
+            "description": "Position and momentum are orthogonal: X^M P_M = 0"
+          },
+          "P²+M²": {
+            "name": "Mass Shell Constraint",
+            "description": "Modified mass-shell condition: P^M P_M + M² = 0"
+          },
+          "X^M": {
+            "name": "26D Position",
+            "description": "Position coordinates in (24,2) spacetime, M=0,...,25"
+          },
+          "P^M": {
+            "name": "26D Momentum",
+            "description": "Canonical momentum conjugate to X^M"
+          },
+          "M": {
+            "name": "Mass Parameter",
+            "description": "Physical mass appearing in mass-shell constraint"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["master-action-26d"],
+          "established_physics": ["bars-two-time"],
+          "steps": [
+            "Two-time physics (24,2) requires gauge symmetry to remove ghost states (negative-norm states)",
+            "Sp(2,R) is the minimal gauge group preserving the symplectic structure of phase space",
+            "First constraint X²=0: Ensures position vector is null (covariant light-cone)",
+            "Second constraint X·P=0: Fixes gauge redundancy between position and momentum",
+            "Third constraint P²+M²=0: Modified mass-shell from gauge fixing",
+            "Three constraints reduce effective dimension: 26D → 13D (26 - 2×2 - 9 gauge DOF)"
+          ],
+          "assumptions": [
+            "Sp(2,R) gauge symmetry is exact",
+            "Constraints are first-class (no anomalies)",
+            "Gauge fixing preserves Lorentz invariance"
+          ],
+          "approximations": [],
+          "comments": "Following Bars' two-time physics program for covariant ghost elimination",
+          "verification_page": "sections/geometric-framework.html#sp2r",
+          "difficulty": "advanced"
+        },
+        "references": [
+          {
+            "id": "bars2006",
+            "title": "Survey of two-time physics",
+            "authors": "I. Bars",
+            "year": 2006,
+            "arxiv": "hep-th/0606045",
+            "description": "Comprehensive review of two-time physics and Sp(2,R) constraints"
+          }
+        ],
+        "related_formulas": ["master-action-26d", "reduction-cascade"],
+        "child_formulas": ["reduction-cascade"],
+        "uses_params": ["D=26", "signature=(24,2)"],
+        "outputs_params": ["D_eff=13"],
+        "notes": "These constraints are the key to making two-time physics consistent without ghosts"
+      }
+    },
+    {
+      "id": "pneuma-stress-energy",
+      "equation_number": "(2.4)",
+      "current_status": "missing",
+      "updates_needed": [
+        "DOES NOT EXIST in config.py - must be created"
+      ],
+      "terms_to_add": [
+        "All terms need to be added"
+      ],
+      "complete_metadata": {
+        "id": "pneuma-stress-energy",
+        "label": "(2.4) Pneuma Stress-Energy Tensor",
+        "html": "T<sub>MN</sub><sup>(Pneuma)</sup> = (i/4)[Ψ̄<sub>P</sub>Γ<sub>(M</sub>D<sub>N)</sub>Ψ<sub>P</sub> - D<sub>(M</sub>Ψ̄<sub>P</sub>Γ<sub>N)</sub>Ψ<sub>P</sub>] - g<sub>MN</sub>ℒ<sub>Ψ</sub>",
+        "latex": "T_{MN}^{(\\text{Pneuma})} = \\frac{i}{4}\\left[\\bar{\\Psi}_P\\Gamma_{(M}D_{N)}\\Psi_P - D_{(M}\\bar{\\Psi}_P\\Gamma_{N)}\\Psi_P\\right] - g_{MN}\\mathcal{L}_{\\Psi}",
+        "plain_text": "T_MN^(Pneuma) = (i/4)[Ψ̄_P Γ_(M D_N) Ψ_P - D_(M Ψ̄_P Γ_N) Ψ_P] - g_MN ℒ_Ψ",
+        "category": "DERIVED",
+        "description": "Pneuma field stress-energy tensor sourcing 26D geometry",
+        "section": "2.5",
+        "status": "THEORETICAL",
+        "terms": {
+          "T_MN": {
+            "name": "Stress-Energy Tensor",
+            "description": "Energy-momentum tensor of Pneuma field"
+          },
+          "Ψ_P": {
+            "name": "Pneuma Field",
+            "description": "8192-component primordial spinor",
+            "formula_id": "master-action-26d"
+          },
+          "Γ_(M": {
+            "name": "Symmetrized Gamma",
+            "description": "Gamma matrices with symmetrized indices: Γ_(M D_N) = (Γ_M D_N + Γ_N D_M)/2"
+          },
+          "D_M": {
+            "name": "Covariant Derivative",
+            "description": "Gauge and spin covariant derivative"
+          },
+          "g_MN": {
+            "name": "26D Metric",
+            "description": "Metric tensor in (24,2) signature"
+          },
+          "ℒ_Ψ": {
+            "name": "Pneuma Lagrangian",
+            "description": "Lagrangian density for Pneuma field"
+          },
+          "⟨Ψ̄Ψ⟩": {
+            "name": "Pneuma Condensate",
+            "description": "Vacuum expectation value = v_P³ (dimension 3)",
+            "formula_id": "pneuma-vev"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["master-action-26d"],
+          "established_physics": ["noether-theorem"],
+          "steps": [
+            "Start with Pneuma Lagrangian: ℒ_Ψ = Ψ̄_P(iΓ^M D_M - m)Ψ_P",
+            "Apply Noether procedure: vary action with respect to metric g^MN",
+            "Stress-energy tensor: T_MN = (2/√|g|) δS/δg^MN",
+            "For Dirac spinor: T_MN = (i/4)[Ψ̄Γ_(M D_N)Ψ - D_(M Ψ̄ Γ_N)Ψ] - g_MN ℒ",
+            "Condensate couples to Einstein equations: R_MN - (1/2)g_MN R = (1/M*^24) T_MN^(Pneuma)",
+            "Vacuum state: ⟨Ψ̄Ψ⟩ = v_P³ generates effective cosmological constant"
+          ],
+          "assumptions": [
+            "Pneuma field is fundamental Dirac spinor",
+            "Metric is dynamical (not fixed background)",
+            "Condensate is thermally stable"
+          ],
+          "approximations": [],
+          "comments": "This is the mechanism by which Pneuma generates geometry - Mach's principle realized",
+          "verification_page": "sections/geometric-framework.html#pneuma-condensate",
+          "difficulty": "advanced"
+        },
+        "related_formulas": ["master-action-26d", "pneuma-vev", "bekenstein-hawking"],
+        "child_formulas": ["bekenstein-hawking"],
+        "uses_params": ["Ψ_P", "M_*"],
+        "outputs_params": ["T_MN", "Λ_eff"],
+        "notes": "The Pneuma condensate is the SOURCE of spacetime geometry, not a field on fixed spacetime"
+      }
+    },
+    {
+      "id": "bekenstein-hawking",
+      "equation_number": "(2.5)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing complete derivation steps from paper (5 steps in derivation box)",
+        "Missing connection to holographic principle",
+        "Terms need expansion",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "r_S: Schwarzschild radius",
+        "N_cells: Number of Planck cells on horizon"
+      ],
+      "complete_metadata": {
+        "id": "bekenstein-hawking",
+        "label": "(2.5) Bekenstein-Hawking Entropy",
+        "html": "S<sub>BH</sub> = A/(4l<sub>P</sub>²) = N<sub>Pneuma</sub>/4 · log(2)",
+        "latex": "S_{\\text{BH}} = \\frac{A}{4l_P^2} = \\frac{N_{\\text{Pneuma}}}{4} \\cdot \\log(2)",
+        "plain_text": "S_BH = A/(4l_P²) = N_Pneuma/4 · log(2)",
+        "category": "DERIVED",
+        "description": "Black hole entropy from Pneuma spinor counting on horizon",
+        "section": "2.6",
+        "status": "THEORETICAL",
+        "terms": {
+          "S_BH": {
+            "name": "BH Entropy",
+            "description": "Bekenstein-Hawking black hole entropy"
+          },
+          "A": {
+            "name": "Horizon Area",
+            "description": "Event horizon area = 4πr_S² for Schwarzschild BH"
+          },
+          "l_P": {
+            "name": "Planck Length",
+            "description": "√(ℏG/c³) ≈ 1.6×10⁻³⁵ m"
+          },
+          "N_Pneuma": {
+            "name": "Pneuma Microstate Count",
+            "description": "Number of Pneuma spinor degrees of freedom on horizon"
+          },
+          "r_S": {
+            "name": "Schwarzschild Radius",
+            "description": "Event horizon radius = 2GM/c²"
+          },
+          "N_cells": {
+            "name": "Planck Cells",
+            "description": "Number of Planck-sized cells on horizon = A/l_P²"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["pneuma-stress-energy"],
+          "established_physics": ["bekenstein-hawking-formula"],
+          "steps": [
+            "Horizon area: A = 4πr_S² for Schwarzschild radius r_S = 2GM",
+            "Planck cells: N_cells = A/l_P² (minimum resolution from quantum gravity)",
+            "Spinor states per cell: Each Planck cell hosts one Pneuma qubit (2 states)",
+            "Total microstates: Ω = 2^(N_cells/4) (factor 1/4 from holographic reduction)",
+            "Entropy: S = log Ω = (A/4l_P²) log 2 ∝ A (area law)",
+            "Factor 1/4: From 26D→(26-2)/4=6 effective surface dimensions in holographic projection"
+          ],
+          "assumptions": [
+            "Holographic principle applies",
+            "Pneuma states on horizon are independent",
+            "Horizon is in thermal equilibrium"
+          ],
+          "approximations": [
+            "Ignoring quantum corrections to entropy"
+          ],
+          "comments": "Black hole entropy is Pneuma information encoded on horizon - microscopic explanation",
+          "verification_page": "sections/geometric-framework.html#holographic-entropy",
+          "difficulty": "advanced"
+        },
+        "related_formulas": ["master-action-26d", "pneuma-stress-energy", "hidden-variables"],
+        "child_formulas": [],
+        "uses_params": ["l_P", "A"],
+        "outputs_params": ["S_BH"],
+        "notes": "Provides microscopic explanation for BH entropy without string microstates. Resolves information paradox via hidden variables."
+      }
+    },
+    {
+      "id": "racetrack-superpotential",
+      "equation_number": "(2.6)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing detailed flux quantization derivation",
+        "Terms need expansion with N_flux connection",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "N_flux: Topological flux quantum = 24",
+        "N_flux+1: Second sector flux = 25"
+      ],
+      "complete_metadata": {
+        "id": "racetrack-superpotential",
+        "label": "(2.6) Racetrack Superpotential",
+        "html": "W(Ψ<sub>P</sub>) = A·e<sup>-aΨ<sub>P</sub></sup> - B·e<sup>-bΨ<sub>P</sub></sup>",
+        "latex": "W(\\Psi_P) = A \\cdot e^{-a\\Psi_P} - B \\cdot e^{-b\\Psi_P}",
+        "plain_text": "W(Ψ_P) = A·exp(-a·Ψ_P) - B·exp(-b·Ψ_P)",
+        "category": "THEORY",
+        "description": "Racetrack superpotential for Pneuma vacuum stabilization from competing gaugino condensates",
+        "section": "2.7",
+        "status": "DYNAMICAL STABILIZATION",
+        "terms": {
+          "W": {
+            "name": "Superpotential",
+            "description": "Holomorphic function generating F-term scalar potential",
+            "link": "sections/geometric-framework.html#pneuma-racetrack"
+          },
+          "Ψ_P": {
+            "name": "Pneuma Modulus",
+            "description": "Scalar component of Pneuma field (complexified)",
+            "formula_id": "pneuma-vev"
+          },
+          "A": {
+            "name": "First Sector Amplitude",
+            "description": "Instanton prefactor ~ O(1) in Planck units"
+          },
+          "B": {
+            "name": "Second Sector Amplitude",
+            "description": "Instanton prefactor ~ O(1) in Planck units"
+          },
+          "a": {
+            "name": "First Exponent",
+            "description": "a = 2π/N_flux = 2π/24 ≈ 0.262 from first hidden gauge sector",
+            "value": "0.2618"
+          },
+          "b": {
+            "name": "Second Exponent",
+            "description": "b = 2π/(N_flux+1) = 2π/25 ≈ 0.251 from second hidden gauge sector",
+            "value": "0.2513"
+          },
+          "N_flux": {
+            "name": "Flux Quantum",
+            "description": "Topological flux = χ_eff/6 = 144/6 = 24 from G₂ manifold",
+            "value": "24",
+            "formula_id": "flux-quantization"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["tcs-topology", "flux-quantization"],
+          "established_physics": ["kklt-stabilization", "gaugino-condensation"],
+          "steps": [
+            "Two hidden SU(N_c) gauge sectors undergo gaugino condensation",
+            "First sector: flux quantum N_flux = χ_eff/6 = 24 → exponent a = 2π/24",
+            "Second sector: flux quantum N_flux+1 = 25 → exponent b = 2π/25",
+            "Competing condensates give racetrack potential: W = A·e^(-aΨ) - B·e^(-bΨ)",
+            "Minimum condition ∂W/∂Ψ = 0 → Aa·e^(-a⟨Ψ⟩) = Bb·e^(-b⟨Ψ⟩)",
+            "Solution: ⟨Ψ_P⟩ = ln(Aa/Bb)/(a-b) ≈ 1.076 for A≈B≈1"
+          ],
+          "assumptions": [
+            "Two hidden gauge sectors (not observable sector)",
+            "Gaugino condensation occurs at high scale",
+            "Prefactors A, B ~ O(1) natural",
+            "No fine-tuning required"
+          ],
+          "approximations": [
+            "Single-instanton approximation",
+            "Neglecting quantum corrections to W"
+          ],
+          "comments": "Topology SELECTS the vacuum - no free parameters. This is the key insight of PM.",
+          "verification_page": "sections/geometric-framework.html#pneuma-racetrack",
+          "difficulty": "advanced"
+        },
+        "simulation_file": "simulations/pneuma_full_potential_v14_1.py",
+        "related_formulas": ["pneuma-vev", "scalar-potential", "vacuum-minimization", "flux-quantization"],
+        "child_formulas": ["scalar-potential", "vacuum-minimization", "pneuma-vev"],
+        "uses_params": ["N_flux=24", "χ_eff=144"],
+        "outputs_params": ["a=0.262", "b=0.251"],
+        "notes": "Zero free parameters - vacuum is completely determined by G₂ topology"
+      }
+    },
+    {
+      "id": "scalar-potential",
+      "equation_number": "(2.7)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing derivation from F-term formula",
+        "Terms could be more detailed",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "F-term: ∂W/∂Ψ_P derivative of superpotential"
+      ],
+      "complete_metadata": {
+        "id": "scalar-potential",
+        "label": "(2.7) Scalar Potential",
+        "html": "V(Ψ<sub>P</sub>) = |∂W/∂Ψ<sub>P</sub>|² = |-Aa·e<sup>-aΨ</sup> + Bb·e<sup>-bΨ</sup>|²",
+        "latex": "V(\\Psi_P) = \\left| \\frac{\\partial W}{\\partial \\Psi_P} \\right|^2 = \\left| -Aa \\, e^{-a\\Psi_P} + Bb \\, e^{-b\\Psi_P} \\right|^2",
+        "plain_text": "V(Ψ_P) = |∂W/∂Ψ_P|² = |-Aa·exp(-aΨ) + Bb·exp(-bΨ)|²",
+        "category": "DERIVED",
+        "description": "F-term scalar potential from racetrack superpotential determining vacuum structure",
+        "section": "2.7",
+        "status": "DERIVED FROM SUSY",
+        "terms": {
+          "V": {
+            "name": "Scalar Potential",
+            "description": "F-term potential determining Pneuma vacuum structure"
+          },
+          "W": {
+            "name": "Superpotential",
+            "description": "Holomorphic function of Pneuma modulus",
+            "formula_id": "racetrack-superpotential"
+          },
+          "∂W/∂Ψ_P": {
+            "name": "F-term",
+            "description": "Derivative of superpotential = -Aa·e^(-aΨ) + Bb·e^(-bΨ)"
+          },
+          "a,b": {
+            "name": "Racetrack Exponents",
+            "description": "a=2π/24=0.262, b=2π/25=0.251 from topology",
+            "formula_id": "racetrack-superpotential"
+          },
+          "A,B": {
+            "name": "Instanton Amplitudes",
+            "description": "Non-perturbative prefactors ~ O(1)"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["racetrack-superpotential"],
+          "established_physics": ["f-term-susy"],
+          "steps": [
+            "Start with racetrack superpotential: W = A·e^(-aΨ) - B·e^(-bΨ)",
+            "F-term formula in N=1 SUSY: V = |∂W/∂Ψ|² (Kähler potential K=|Ψ|²)",
+            "Compute derivative: ∂W/∂Ψ = -Aa·e^(-aΨ) + Bb·e^(-bΨ)",
+            "Square modulus: V = |-Aa·e^(-aΨ) + Bb·e^(-bΨ)|²",
+            "Explicit form: V = (Aa)²e^(-2aΨ) + (Bb)²e^(-2bΨ) - 2AaBb·e^(-(a+b)Ψ)"
+          ],
+          "assumptions": [
+            "N=1 supersymmetry (emergent from G₂)",
+            "Canonical Kähler potential K = |Ψ|²",
+            "No D-terms (Abelian symmetries)"
+          ],
+          "approximations": [],
+          "comments": "This potential has a stable minimum at ⟨Ψ_P⟩ ≈ 1.076",
+          "verification_page": "sections/geometric-framework.html#pneuma-racetrack",
+          "difficulty": "intermediate"
+        },
+        "simulation_file": "simulations/pneuma_full_potential_v14_1.py",
+        "related_formulas": ["racetrack-superpotential", "pneuma-vev", "vacuum-minimization"],
+        "child_formulas": ["vacuum-minimization"],
+        "uses_params": ["a", "b", "A", "B"],
+        "outputs_params": ["V(Ψ_P)"],
+        "notes": "F-term potential is standard SUSY formula - no PM innovation here"
+      }
+    },
+    {
+      "id": "vacuum-minimization",
+      "equation_number": "(2.8)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "VEV value inconsistent: shows 6.336 in terms, but should be 1.076",
+        "Missing stability analysis (V'' > 0)",
+        "Derivation needs transcendental solving step",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "V'': Second derivative for stability check"
+      ],
+      "complete_metadata": {
+        "id": "vacuum-minimization",
+        "label": "(2.8) Vacuum Minimization Condition",
+        "html": "∂V/∂Ψ<sub>P</sub> = 0 ⟹ Aa·e<sup>-a⟨Ψ<sub>P</sub>⟩</sup> = Bb·e<sup>-b⟨Ψ<sub>P</sub>⟩</sup>",
+        "latex": "\\frac{\\partial V}{\\partial \\Psi_P} = 0 \\quad \\Rightarrow \\quad Aa \\, e^{-a\\langle\\Psi_P\\rangle} = Bb \\, e^{-b\\langle\\Psi_P\\rangle}",
+        "plain_text": "∂V/∂Ψ_P = 0 ⟹ Aa·exp(-a⟨Ψ_P⟩) = Bb·exp(-b⟨Ψ_P⟩)",
+        "category": "DERIVED",
+        "description": "Vacuum stability condition for racetrack potential minimum",
+        "section": "2.7",
+        "status": "STABLE MINIMUM",
+        "terms": {
+          "V": {
+            "name": "Scalar Potential",
+            "description": "F-term potential V = |∂W/∂Ψ|²",
+            "formula_id": "scalar-potential"
+          },
+          "⟨Ψ_P⟩": {
+            "name": "Vacuum VEV",
+            "description": "Pneuma field vacuum expectation value ≈ 1.076",
+            "formula_id": "pneuma-vev",
+            "value": "1.076"
+          },
+          "a": {
+            "name": "First Exponent",
+            "description": "a = 2π/24 = 0.2618",
+            "value": "0.2618"
+          },
+          "b": {
+            "name": "Second Exponent",
+            "description": "b = 2π/25 = 0.2513",
+            "value": "0.2513"
+          },
+          "A,B": {
+            "name": "Instanton Amplitudes",
+            "description": "Non-perturbative prefactors ~ O(1)"
+          },
+          "V''": {
+            "name": "Second Derivative",
+            "description": "∂²V/∂Ψ² = 8.56×10⁻⁶ > 0 (stable minimum)",
+            "value": "8.56e-6"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["scalar-potential", "racetrack-superpotential"],
+          "established_physics": ["f-term-stabilization"],
+          "steps": [
+            "Start with V = |∂W/∂Ψ|² = |-Aa·e^(-aΨ) + Bb·e^(-bΨ)|²",
+            "Take derivative: ∂V/∂Ψ = 2Re[(∂W/∂Ψ)* · ∂²W/∂Ψ²]",
+            "Set to zero for extremum: Aa·e^(-a⟨Ψ⟩) = Bb·e^(-b⟨Ψ⟩)",
+            "Solve transcendentally: ⟨Ψ_P⟩ = ln(Aa/Bb)/(a-b)",
+            "For A=B=1: ⟨Ψ_P⟩ = ln(0.2618/0.2513)/(0.0105) ≈ 1.076",
+            "Stability check: V'' = 8.56×10⁻⁶ > 0 ✓ (stable minimum, not saddle)"
+          ],
+          "assumptions": [
+            "A, B ~ O(1) natural scale",
+            "Ratio Aa/Bb ≈ 1.042 near unity",
+            "Quantum corrections negligible"
+          ],
+          "approximations": [],
+          "comments": "Small V'' implies light modulus - Pneuma can be dynamical in cosmology",
+          "verification_page": "sections/geometric-framework.html#pneuma-racetrack",
+          "difficulty": "intermediate"
+        },
+        "simulation_file": "simulations/pneuma_full_potential_v14_1.py",
+        "related_formulas": ["scalar-potential", "pneuma-vev", "racetrack-superpotential"],
+        "child_formulas": ["pneuma-vev"],
+        "uses_params": ["a", "b", "A", "B"],
+        "outputs_params": ["⟨Ψ_P⟩"],
+        "notes": "Positive second derivative confirms stable vacuum (not local maximum or saddle point)"
+      }
+    },
+    {
+      "id": "pneuma-vev",
+      "equation_number": "(2.9)",
+      "current_status": "incomplete",
+      "updates_needed": [
+        "Missing numerical evaluation steps from paper",
+        "Terms need expansion",
+        "Missing 'uses_params' and 'outputs_params'"
+      ],
+      "terms_to_add": [
+        "ln(Aa/Bb): Logarithm of amplitude ratio ≈ 0.041"
+      ],
+      "complete_metadata": {
+        "id": "pneuma-vev",
+        "label": "(2.9) Pneuma Field VEV",
+        "html": "⟨Ψ<sub>P</sub>⟩ = ln(Aa/Bb)/(a - b) ≈ 1.076",
+        "latex": "\\langle\\Psi_P\\rangle = \\frac{\\ln(Aa/Bb)}{a - b} \\approx 1.076",
+        "plain_text": "⟨Ψ_P⟩ = ln(Aa/Bb)/(a - b) ≈ 1.076",
+        "category": "DERIVED",
+        "description": "Pneuma field VEV from racetrack minimum (dynamically selected by topology)",
+        "section": "2.7",
+        "status": "DYNAMICALLY SELECTED",
+        "terms": {
+          "⟨Ψ_P⟩": {
+            "name": "Pneuma VEV",
+            "description": "Vacuum expectation value of Pneuma modulus",
+            "value": "1.076"
+          },
+          "a": {
+            "name": "First Exponent",
+            "description": "a = 2π/N_flux = 2π/24 = 0.2618",
+            "value": "0.2618",
+            "formula_id": "racetrack-superpotential"
+          },
+          "b": {
+            "name": "Second Exponent",
+            "description": "b = 2π/(N_flux+1) = 2π/25 = 0.2513",
+            "value": "0.2513",
+            "formula_id": "racetrack-superpotential"
+          },
+          "Aa/Bb": {
+            "name": "Amplitude Ratio",
+            "description": "For A=B=1: Aa/Bb = 0.2618/0.2513 = 1.042"
+          },
+          "ln(Aa/Bb)": {
+            "name": "Log Ratio",
+            "description": "ln(1.042) ≈ 0.041",
+            "value": "0.041"
+          },
+          "a-b": {
+            "name": "Exponent Difference",
+            "description": "0.2618 - 0.2513 = 0.0105",
+            "value": "0.0105"
+          }
+        },
+        "derivation": {
+          "parent_formulas": ["vacuum-minimization"],
+          "established_physics": [],
+          "steps": [
+            "Start with minimization condition: Aa·e^(-a⟨Ψ⟩) = Bb·e^(-b⟨Ψ⟩)",
+            "Divide both sides by e^(-b⟨Ψ⟩): Aa·e^(-(a-b)⟨Ψ⟩) = Bb",
+            "Take logarithm: ln(Aa) - (a-b)⟨Ψ⟩ = ln(Bb)",
+            "Solve for ⟨Ψ⟩: ⟨Ψ_P⟩ = [ln(Aa) - ln(Bb)]/(a-b) = ln(Aa/Bb)/(a-b)",
+            "Numerical evaluation: a=0.2618, b=0.2513, A=B=1 → Aa/Bb=1.042",
+            "Final value: ⟨Ψ_P⟩ = ln(1.042)/0.0105 = 0.041/0.0105 ≈ 1.076"
+          ],
+          "assumptions": [
+            "Natural amplitudes A ≈ B ≈ 1 in Planck units",
+            "No fine-tuning of prefactors"
+          ],
+          "approximations": [],
+          "comments": "VEV is NOT postulated but emerges from topology via N_flux = 24",
+          "verification_page": "sections/geometric-framework.html#pneuma-racetrack",
+          "difficulty": "beginner"
+        },
+        "computed_value": 1.076,
+        "simulation_file": "simulations/pneuma_full_potential_v14_1.py",
+        "related_formulas": ["racetrack-superpotential", "vacuum-minimization", "flux-quantization"],
+        "child_formulas": [],
+        "uses_params": ["a", "b", "A", "B"],
+        "outputs_params": ["⟨Ψ_P⟩=1.076"],
+        "notes": "This is a prediction with zero free parameters - fully determined by G₂ topology"
+      }
+    }
+  ],
+  "new_formulas_needed": [
+    {
+      "id": "pneuma-stress-energy",
+      "equation_number": "(2.4)",
+      "reason": "Missing from config.py but present in paper",
+      "priority": "high",
+      "action": "Create new Formula entry"
+    }
+  ],
+  "formulas_outside_scope": [
+    "reduction-cascade (Section 3)",
+    "primordial-spinor-13d (Section 3)",
+    "tcs-topology (Section 4)",
+    "flux-quantization (Section 4)"
+  ],
+  "migration_summary": {
+    "total_section2_formulas": 9,
+    "existing_in_config": 8,
+    "missing_from_config": 1,
+    "incomplete_metadata": 8,
+    "complete_metadata": 0
+  },
+  "validation_notes": [
+    "Equation (2.4) Pneuma stress-energy tensor is completely missing - must be added",
+    "VEV inconsistency in vacuum-minimization: shows 6.336 but should be 1.076 (matches pneuma-vev)",
+    "All formulas missing uses_params and outputs_params fields",
+    "All formulas missing child_formulas lists",
+    "Derivations are incomplete - paper has detailed derivation boxes not captured in config",
+    "References incomplete - paper cites Lovelace (1971), Polchinski, Bars (2006) not in formula refs",
+    "No formula has complete three-level metadata (Level 1: ✓, Level 2: partial, Level 3: incomplete)"
+  ],
+  "recommendations": [
+    "Add pneuma-stress-energy (2.4) to config.py CoreFormulas",
+    "Fix VEV value in vacuum-minimization.terms['⟨Ψ_P⟩'].description from 6.336 to 1.076",
+    "Add uses_params and outputs_params to ALL Section 2 formulas",
+    "Add child_formulas to show derivation DAG",
+    "Expand derivation.steps to match paper derivation boxes (currently too terse)",
+    "Add FormulaReference objects for Lovelace (1971), Polchinski (1998), Bars (2006)",
+    "Add learning_resources for key formulas (video, interactive demos)",
+    "Validate all LaTeX against paper - ensure exact match"
+  ],
+  "todos": [
+    "CREATE pneuma-stress-energy formula entry in config.py",
+    "UPDATE vacuum-minimization VEV value 6.336 → 1.076",
+    "ADD uses_params/outputs_params to all 9 formulas",
+    "EXPAND derivation steps to match paper detail",
+    "ADD child_formulas lists for DAG visualization",
+    "ADD references (Lovelace, Polchinski, Bars)",
+    "VALIDATE LaTeX matches paper exactly"
+  ]
+}

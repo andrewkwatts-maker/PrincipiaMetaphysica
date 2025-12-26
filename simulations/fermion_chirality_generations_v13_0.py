@@ -39,6 +39,8 @@ import os
 # Add parent directory to path
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from config import CoreFormulas
+
 
 def verify_fermion_chirality_and_generations(chi_eff: int = 144, spinor_dof: int = 8,
                                               verbose: bool = True) -> dict:
@@ -125,10 +127,24 @@ def verify_fermion_chirality_and_generations(chi_eff: int = 144, spinor_dof: int
         'status': 'PASS' if is_exact else 'FAIL'
     }
 
+    # Validate against CoreFormulas
+    formula = CoreFormulas.GENERATION_NUMBER
+    formula_value = formula.computed_value
+    formula_match = abs(n_gen - formula_value) < 0.001
+    results['formula_id'] = formula.id
+    results['formula_validated'] = formula_match
+
     if verbose:
         print("=" * 70)
         print(" FERMION CHIRALITY & GENERATION DERIVATION (v13.0)")
         print("=" * 70)
+        print()
+        # Print associated formula
+        print("ASSOCIATED FORMULA:")
+        print(f"  {formula.label}")
+        print(f"  {formula.plain_text}")
+        print(f"  Category: {formula.category}")
+        print(f"  Status: {formula.status}")
         print()
         print("Topological Input:")
         print(f"  chi_eff = {chi_eff}")
@@ -167,6 +183,14 @@ def verify_fermion_chirality_and_generations(chi_eff: int = 144, spinor_dof: int
         print()
         print("=" * 70)
         print(f" RESULT: EXACTLY {int(n_gen)} GENERATIONS DERIVED [{results['status']}]")
+        print("=" * 70)
+        print()
+        # Formula validation
+        print("FORMULA VALIDATION:")
+        print(f"  Formula: {formula.id}")
+        print(f"  Expected: {formula_value}")
+        print(f"  Computed: {n_gen}")
+        print(f"  Match: {'PASS' if formula_match else 'FAIL'}")
         print("=" * 70)
 
     return results
@@ -220,15 +244,21 @@ def export_chirality_data() -> dict:
     Export chirality/generation data for theory_output.json.
     """
     results = verify_fermion_chirality_and_generations(verbose=False)
+    formula = CoreFormulas.GENERATION_NUMBER
     return {
         'n_generations': results['n_generations_exact'],
         'n_generations_derived': True,
         'chiral_filter_strength': results['chiral_filter_strength'],
         'mechanism': 'Pneuma torsion filter',
-        'formula': 'n_gen = N_flux / spinor_DOF = 24 / 8 = 3',
         'dirac_modification': 'gamma^5 T_mu (axial torsion coupling)',
         'comparison_to_standard': 'Dynamical/Smooth vs Singular/Discrete',
-        'status': 'RESOLVED - Parameter-free derivation'
+        'status': 'RESOLVED - Parameter-free derivation',
+        'formula': {
+            'id': formula.id,
+            'label': formula.label,
+            'plain_text': formula.plain_text,
+            'validated': results.get('formula_validated', True)
+        }
     }
 
 

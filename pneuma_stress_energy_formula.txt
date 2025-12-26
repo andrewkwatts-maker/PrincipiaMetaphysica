@@ -1,0 +1,82 @@
+    PNEUMA_STRESS_ENERGY = Formula(
+        id="pneuma-stress-energy",
+        label="(2.4) Pneuma Stress-Energy Tensor",
+        html="T<sub>MN</sub><sup>(Pneuma)</sup> = (i/4)[Ψ̄<sub>P</sub>Γ<sub>(M</sub>D<sub>N)</sub>Ψ<sub>P</sub> - D<sub>(M</sub>Ψ̄<sub>P</sub>Γ<sub>N)</sub>Ψ<sub>P</sub>] - g<sub>MN</sub>ℒ<sub>Ψ</sub>",
+        latex="T_{MN}^{(\\text{Pneuma})} = \\frac{i}{4}\\left[\\bar{\\Psi}_P\\Gamma_{(M}D_{N)}\\Psi_P - D_{(M}\\bar{\\Psi}_P\\Gamma_{N)}\\Psi_P\\right] - g_{MN}\\mathcal{L}_{\\Psi}",
+        plain_text="T_MN^(Pneuma) = (i/4)[Ψ̄_P Γ_(M D_N) Ψ_P - D_(M Ψ̄_P Γ_N) Ψ_P] - g_MN ℒ_Ψ",
+        category=FormulaCategory.DERIVED,
+        description="Pneuma field stress-energy tensor sourcing 26D geometry",
+        section="2.5",
+        status="THEORETICAL",
+        terms={
+            "T_MN": FormulaTerm(
+                name="Stress-Energy Tensor",
+                description="Energy-momentum tensor of Pneuma field coupling to Einstein equations",
+                units="GeV⁴",
+                oom=16  # ~ M_GUT⁴ scale
+            ),
+            "Ψ_P": FormulaTerm(
+                name="Pneuma Field",
+                description="8192-component primordial spinor from Cl(24,2) Clifford algebra",
+                formula_id="master-action-26d"
+            ),
+            "Γ_(M": FormulaTerm(
+                name="Symmetrized Gamma",
+                description="Clifford algebra gamma matrices with symmetrized indices: Γ_(M D_N) = (Γ_M D_N + Γ_N D_M)/2"
+            ),
+            "D_M": FormulaTerm(
+                name="Covariant Derivative",
+                description="Gauge and spin covariant derivative including spin connection"
+            ),
+            "g_MN": FormulaTerm(
+                name="26D Metric",
+                description="Metric tensor in (24,2) signature spacetime"
+            ),
+            "ℒ_Ψ": FormulaTerm(
+                name="Pneuma Lagrangian",
+                description="Lagrangian density for Pneuma field = Ψ̄(iΓD - m)Ψ"
+            ),
+            "⟨Ψ̄Ψ⟩": FormulaTerm(
+                name="Pneuma Condensate",
+                description="Vacuum expectation value with mass dimension 3: v_P³",
+                formula_id="pneuma-vev",
+                units="GeV³"
+            ),
+            "v_P": FormulaTerm(
+                name="Condensate Scale",
+                description="Pneuma condensate energy scale ~ TeV",
+                value="~1 TeV",
+                units="GeV"
+            )
+        },
+        derivation=FormulaDerivation(
+            parent_formulas=["master-action-26d"],
+            established_physics=["noether-theorem", "einstein-equations"],
+            steps=[
+                "Start with Pneuma Lagrangian: ℒ_Ψ = Ψ̄_P(iΓ^M D_M - m)Ψ_P from master action",
+                "Apply Noether procedure: vary action δS with respect to metric g^MN",
+                "Stress-energy tensor definition: T_MN = (2/√|g|) δS/δg^MN",
+                "For Dirac spinor: T_MN = (i/4)[Ψ̄Γ_(M D_N)Ψ - D_(M Ψ̄ Γ_N)Ψ] - g_MN ℒ",
+                "Couple to Einstein equations: R_MN - (1/2)g_MN R = (1/M*^24) T_MN^(Pneuma)",
+                "Vacuum state: Condensate ⟨Ψ̄Ψ⟩ = v_P³ generates curvature",
+                "Gap generation: Δ = λv_P / (1 + g·t_⊥/E_F) from symmetry breaking",
+                "Effective cosmological constant: Λ_eff = λv_P⁴ / M*^24 after TeV cancellation",
+                "Result: Spacetime curvature emerges from Pneuma thermal state (Mach's principle)"
+            ],
+            assumptions=[
+                "Pneuma field is fundamental Dirac spinor (not composite)",
+                "Metric g_MN is dynamical (not fixed background)",
+                "Condensate ⟨Ψ̄Ψ⟩ is thermally stable",
+                "TeV-scale cancellation mechanism works"
+            ],
+            approximations=[
+                "Classical field theory (quantum corrections negligible at large scales)",
+                "Homogeneous condensate approximation"
+            ],
+            comments="This is the KEY formula showing Pneuma as active source of geometry - Mach's principle realized. Geometry is not fundamental but emerges from Pneuma condensate dynamics.",
+            difficulty="advanced"
+        ),
+        notes="The Pneuma condensate is the SOURCE of spacetime geometry, not a field propagating on fixed spacetime. This realizes Mach's principle: geometry emerges from matter (Pneuma) distribution. The 1/4 factor in Bekenstein-Hawking entropy comes from holographic projection of these 26D degrees of freedom.",
+        related_formulas=["master-action-26d", "pneuma-vev", "bekenstein-hawking", "thermal-time"]
+    )
+

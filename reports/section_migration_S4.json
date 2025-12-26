@@ -1,0 +1,914 @@
+{
+  "section": 5,
+  "title": "Gauge Unification and the Standard Model",
+  "line_range": [1662, 2011],
+  "subsections": [
+    {
+      "number": "5.1",
+      "title": "SO(10) from Singularities",
+      "line_start": 1664,
+      "line_end": 1669,
+      "formulas": [
+        {
+          "equation_number": "5.1",
+          "formula": "\\text{SO}(10) \\supset \\text{SU}(3)_C \\times \\text{SU}(2)_L \\times \\text{U}(1)_Y",
+          "description": "Standard Model gauge group from D5 singularities",
+          "type": "gauge_symmetry_breaking",
+          "parameters_referenced": [],
+          "derivation_status": "geometric"
+        }
+      ],
+      "parameters": [],
+      "derivations": [],
+      "status": "complete"
+    },
+    {
+      "number": "5.2",
+      "title": "Unified Coupling",
+      "line_start": 1671,
+      "line_end": 1678,
+      "formulas": [
+        {
+          "equation_number": "5.2",
+          "formula": "\\frac{1}{\\alpha_{\\text{GUT}}} = 10\\pi \\times \\frac{\\text{Vol}(\\Sigma_{\\text{sing}})}{\\text{Vol}(G_2)} \\times e^{|T_\\omega|/h^{1,1}} = 23.54",
+          "description": "GUT coupling from geometry using 10π factor",
+          "type": "gauge_coupling",
+          "parameters_referenced": ["Vol(G_2)", "T_omega", "h^{1,1}"],
+          "derivation_status": "geometric",
+          "experimental_value": 24.3,
+          "agreement": "0.8% (excellent)"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "alpha_GUT",
+          "value": 0.0425,
+          "formula_id": "5.2",
+          "unit": "dimensionless",
+          "derivation": "geometric",
+          "experimental_comparison": "1/α_GUT ≈ 24.3 (PDG 2024)",
+          "in_constants_file": true,
+          "location": "xy_bosons.alpha_GUT"
+        }
+      ],
+      "derivations": [],
+      "status": "complete"
+    },
+    {
+      "number": "5.3",
+      "title": "GUT Scale",
+      "line_start": 1679,
+      "line_end": 1710,
+      "formulas": [
+        {
+          "equation_number": "5.3",
+          "formula": "M_{\\text{GUT}} = M_{\\text{Pl}} \\times \\left(\\frac{\\text{Vol}(G_2)}{\\ell_P^7}\\right)^{-1/2} \\times e^{|T_\\omega|} = 2.12 \\times 10^{16} \\text{ GeV}",
+          "description": "Grand unification scale from G₂ volume",
+          "type": "mass_scale",
+          "parameters_referenced": ["M_Pl", "Vol(G_2)", "T_omega"],
+          "derivation_status": "geometric"
+        },
+        {
+          "equation_number": "5.3a",
+          "formula": "\\text{SO}(10) \\to \\text{SU}(4)_C \\times \\text{SU}(2)_L \\times \\text{SU}(2)_R \\to \\text{SM}",
+          "description": "Pati-Salam breaking chain (geometrically preferred)",
+          "type": "symmetry_breaking_chain",
+          "parameters_referenced": ["M_PS"],
+          "derivation_status": "geometric"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "M_GUT",
+          "value": 2.118e16,
+          "formula_id": "5.3",
+          "unit": "GeV",
+          "derivation": "geometric",
+          "in_constants_file": true,
+          "location": "xy_bosons.M_X"
+        },
+        {
+          "name": "M_PS",
+          "value": 1.2e12,
+          "formula_id": "5.3a",
+          "unit": "GeV",
+          "derivation": "geometric (Pati-Salam intermediate scale)",
+          "in_constants_file": false,
+          "note": "Missing from constants file - candidate for addition"
+        }
+      ],
+      "derivations": [
+        {
+          "title": "Geometric Preference for Pati-Salam Chain",
+          "line_start": 1698,
+          "line_end": 1710,
+          "steps": 5,
+          "key_points": [
+            "SO(24,2) bulk symmetry contains SO(10) as maximal compact subgroup",
+            "G₂ holonomy projection favors SU(4)_C × SU(2)_L × SU(2)_R",
+            "54_H Pneuma condensate aligns with 7D curvature",
+            "G₂ curvature tensor selects Pati-Salam direction",
+            "M_PS = 1.2 × 10¹² GeV from volume stabilization"
+          ],
+          "status": "complete",
+          "parameter_free": true
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "number": "5.4",
+      "title": "Native Geometric Doublet-Triplet Splitting via Topological Filter",
+      "line_start": 1712,
+      "line_end": 1800,
+      "formulas": [
+        {
+          "equation_number": "5.4a",
+          "formula": "\\mathbf{10}_{\\text{Higgs}} = (1,2)_{+1/2} \\oplus (\\bar{3},1)_{-2/3} \\oplus (3,1)_{+2/3}",
+          "description": "Higgs 10-plet decomposition under SM gauge group",
+          "type": "representation_decomposition",
+          "parameters_referenced": [],
+          "derivation_status": "group_theory"
+        },
+        {
+          "equation_number": "5.4b",
+          "formula": "\\mathcal{T}_{\\text{shadow}}: \\quad \\mathbf{3}_C \\to \\text{shadow sector}, \\quad \\mathbf{2}_L \\to \\text{4D vacuum}",
+          "description": "Shadow Z₂ topological filter action",
+          "type": "topological_projection",
+          "parameters_referenced": [],
+          "derivation_status": "geometric"
+        },
+        {
+          "equation_number": "5.4c",
+          "formula": "N_{\\text{doublets}} - N_{\\text{triplets}} = \\int_M \\hat{A}(M) \\wedge \\text{ch}(L_Y) \\mod \\mathbb{Z}_2",
+          "description": "Atiyah-Singer index theorem for doublet-triplet splitting",
+          "type": "index_theorem",
+          "parameters_referenced": ["b_2"],
+          "derivation_status": "topological"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "b_2",
+          "value": 4,
+          "formula_id": "5.4c",
+          "unit": "dimensionless",
+          "derivation": "topological requirement: b_2 ≥ rank(G_SM) = 4",
+          "note": "TCS manifold saturates this bound exactly",
+          "in_constants_file": true,
+          "location": "topology.b2"
+        },
+        {
+          "name": "N_doublet",
+          "value": 3,
+          "formula_id": "5.4c",
+          "unit": "zero-modes",
+          "derivation": "index theorem (one doublet per generation)",
+          "in_constants_file": false
+        },
+        {
+          "name": "N_triplet",
+          "value": 0,
+          "formula_id": "5.4c",
+          "unit": "zero-modes",
+          "derivation": "index theorem (all triplets lifted to M_GUT)",
+          "in_constants_file": false
+        }
+      ],
+      "derivations": [
+        {
+          "title": "Doublet-Triplet Splitting from Topological Filter",
+          "line_start": 1766,
+          "line_end": 1779,
+          "steps": 6,
+          "key_points": [
+            "TCS topology: b₂ = 4 from K3 × K3 × T² building blocks",
+            "Shadow Z₂ symmetry acts as topological filter",
+            "Triplets mapped to shadow sector (topologically disconnected)",
+            "Index theorem: ∫_M Â ∧ ch(L_Y) = 3 mod 2 (three doublet zero-modes)",
+            "Triplets topologically absent from observable sector",
+            "Doublet mass: m_h = 125.1 GeV (radiatively stable)"
+          ],
+          "status": "complete",
+          "parameter_free": true,
+          "note": "Purely geometric resolution - no tuned fluxes"
+        }
+      ],
+      "callout_boxes": [
+        {
+          "title": "Why Native TCS Topological Filter Rather Than Wilson Lines?",
+          "line_start": 1781,
+          "line_end": 1800,
+          "type": "comparison",
+          "key_points": [
+            "Wilson lines introduce phenomenological parameters (continuous phases)",
+            "TCS uses discrete Z₂ symmetry (no tunable phases)",
+            "Triplets topologically disconnected (not mass-suppressed)",
+            "Parameter-free: follows from b₂ = 4 exactly",
+            "Proton decay topologically forbidden (not mass-suppressed)"
+          ],
+          "conclusion": "Only approach consistent with zero phenomenological parameters"
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "number": "5.5",
+      "title": "Weinberg Angle",
+      "line_start": 1802,
+      "line_end": 1834,
+      "formulas": [
+        {
+          "equation_number": "5.5",
+          "formula": "\\sin^2\\theta_W(M_Z) = 0.23121",
+          "description": "Weak mixing angle at M_Z from SO(10) breaking",
+          "type": "electroweak_parameter",
+          "parameters_referenced": ["M_GUT", "M_Z"],
+          "derivation_status": "RG_evolution",
+          "experimental_value": "0.23122 ± 0.00003 (PDG 2024)",
+          "agreement": "0.33σ (excellent)"
+        },
+        {
+          "equation_number": "5.5a",
+          "formula": "\\alpha_{\\text{em}}^{-1}(M_Z) = \\frac{\\alpha_2^{-1}(M_Z)}{\\sin^2\\theta_W(M_Z)} = \\frac{29.6}{0.23121} = 127.9",
+          "description": "Electromagnetic fine structure constant at Z-pole",
+          "type": "gauge_coupling",
+          "parameters_referenced": ["sin2_theta_W", "alpha_2"],
+          "derivation_status": "RG_evolution",
+          "experimental_value": "127.952 ± 0.009 (PDG 2024)",
+          "agreement": "0.04% (excellent)"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "sin2_theta_W",
+          "value": 0.23121,
+          "formula_id": "5.5",
+          "unit": "dimensionless",
+          "derivation": "RG evolution from M_GUT to M_Z with threshold corrections",
+          "experimental_value": "0.23122 ± 0.00003",
+          "agreement_sigma": 0.33,
+          "in_constants_file": false,
+          "note": "Missing from constants file - candidate for addition"
+        },
+        {
+          "name": "alpha_em_MZ",
+          "value": 127.9,
+          "formula_id": "5.5a",
+          "unit": "dimensionless (inverse)",
+          "derivation": "α_em^-1 = α_2^-1 / sin²θ_W",
+          "experimental_value": "127.952 ± 0.009",
+          "agreement": "0.04%",
+          "in_constants_file": false,
+          "note": "Missing from constants file - candidate for addition"
+        }
+      ],
+      "derivations": [
+        {
+          "title": "sin²θ_W from SO(10)",
+          "line_start": 1808,
+          "line_end": 1817,
+          "steps": 4,
+          "key_points": [
+            "SO(10) prediction at GUT scale: sin²θ_W = 3/8 = 0.375",
+            "RG evolution from M_GUT = 2.12 × 10¹⁶ GeV to M_Z = 91.2 GeV",
+            "Two-loop beta functions reduce value to 0.231",
+            "Threshold corrections at GUT scale: Δsin²θ_W = +0.0002"
+          ],
+          "status": "complete"
+        },
+        {
+          "title": "α_em(M_Z) from Gauge Unification",
+          "line_start": 1825,
+          "line_end": 1834,
+          "steps": 4,
+          "key_points": [
+            "Electroweak relation: α_em = α_2 sin²θ_W (tree level)",
+            "Using sin²θ_W(M_Z) = 0.23121 and α_2^-1(M_Z) = 29.6",
+            "Calculate: α_em^-1 = α_2^-1/sin²θ_W = 29.6/0.23121 = 128.0",
+            "With threshold corrections: α_em^-1(M_Z) = 127.9"
+          ],
+          "status": "complete"
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "number": "5.6",
+      "title": "Electroweak VEV",
+      "line_start": 1836,
+      "line_end": 1875,
+      "formulas": [
+        {
+          "equation_number": "5.6",
+          "formula": "v_{\\text{EW}} = M_{\\text{Pl}} \\times e^{-h^{2,1}/b_3} \\times e^{|T_\\omega|} = 173.97 \\text{ GeV}",
+          "description": "Electroweak VEV dynamically selected via racetrack potential",
+          "type": "mass_scale",
+          "parameters_referenced": ["M_Pl", "h^{2,1}", "b_3", "T_omega"],
+          "derivation_status": "racetrack_stabilization",
+          "experimental_value": "174.0 GeV",
+          "agreement": "0.02% (excellent)"
+        },
+        {
+          "equation_number": "5.6a",
+          "formula": "\\lambda_0 = \\frac{1}{4}\\left(g_2^2 + \\frac{3}{5}g_1^2\\right) = 0.1289",
+          "description": "UV Higgs quartic coupling at GUT scale",
+          "type": "dimensionless_coupling",
+          "parameters_referenced": ["g_1", "g_2", "alpha_GUT"],
+          "derivation_status": "gauge_coupling_relation"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "v_EW",
+          "value": 173.97,
+          "formula_id": "5.6",
+          "unit": "GeV",
+          "derivation": "Racetrack stabilization with Pneuma condensate",
+          "experimental_value": 174.0,
+          "agreement": "0.02%",
+          "in_constants_file": false,
+          "note": "Missing from constants file - candidate for addition"
+        },
+        {
+          "name": "lambda_0",
+          "value": 0.1289,
+          "formula_id": "5.6a",
+          "unit": "dimensionless",
+          "derivation": "D-term potential from gauge couplings",
+          "note": "RG evolution to M_Z gives λ(M_Z) ≈ 0.13 → m_h = 125 GeV",
+          "in_constants_file": false,
+          "note2": "Missing from constants file - candidate for addition"
+        }
+      ],
+      "derivations": [
+        {
+          "title": "Electroweak VEV from G₂ Moduli and Racetrack Stabilization",
+          "line_start": 1842,
+          "line_end": 1857,
+          "steps": 5,
+          "key_points": [
+            "Racetrack potential: V(Ψ_P) = |A e^(-2π/N_flux Ψ_P) - B e^(-2π/(N_flux+1) Ψ_P)|²",
+            "N_flux = χ_eff/6 = 24 from topology",
+            "Minimum at ⟨Ψ_P⟩ ≈ 1.076 (stability proven: V''(VEV) > 0)",
+            "Hodge number: h^{2,1} = 12 from CY3 building blocks",
+            "VEV = M_Pl × e^(-12/24) × e^(0.884) = 173.97 GeV"
+          ],
+          "status": "complete",
+          "parameter_free": true,
+          "note": "VEV derived from topology, not fitted"
+        },
+        {
+          "title": "λ_0 from Gauge Unification",
+          "line_start": 1865,
+          "line_end": 1875,
+          "steps": 5,
+          "key_points": [
+            "At GUT scale: g_1 = g_2 = g_3 = g_GUT = √(4πα_GUT) ≈ 0.73",
+            "D-term potential: V_D = (1/8)(g_2² + g_1'²)|H|⁴",
+            "GUT normalization: λ_0 = (1/4)(g_2² + (3/5)g_1²)",
+            "With α_GUT = 0.0425: λ_0 = 2π × 0.0425 = 0.267 (tree-level)",
+            "Including top Yukawa threshold: λ_0 ≈ 0.129 at M_GUT"
+          ],
+          "status": "complete"
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "number": "5.7",
+      "title": "XY Gauge Bosons and Proton Decay Mechanism",
+      "line_start": 1877,
+      "line_end": 1933,
+      "formulas": [
+        {
+          "equation_number": "5.7",
+          "formula": "\\mathbf{45}_{\\text{SO}(10)} = (\\mathbf{8},1)_0 + (1,\\mathbf{3})_0 + (1,1)_0 + (\\mathbf{3},2)_{+5/6} + (\\bar{\\mathbf{3}},2)_{-5/6} + (\\mathbf{3},2)_{-1/6} + (\\bar{\\mathbf{3}},2)_{+1/6} + \\text{9 neutrals}",
+          "description": "SO(10) adjoint decomposition (45 gauge bosons)",
+          "type": "representation_decomposition",
+          "parameters_referenced": [],
+          "derivation_status": "group_theory"
+        },
+        {
+          "equation_number": "5.8",
+          "formula": "\\mathcal{O}_6 = \\frac{g_{\\text{GUT}}^2}{M_X^2} \\epsilon^{abc} \\epsilon^{ij} (u_a^c \\gamma_\\mu d_b)(Q_{ci} \\gamma^\\mu L_j)",
+          "description": "Dimension-6 operator for baryon number violation",
+          "type": "effective_operator",
+          "parameters_referenced": ["g_GUT", "M_X"],
+          "derivation_status": "effective_field_theory"
+        },
+        {
+          "equation_number": "5.9",
+          "formula": "\\int \\psi^\\dagger_{\\text{matter}} \\psi_{\\text{Higgs}} \\, dV \\sim \\exp\\left(-2\\pi \\frac{d}{R}\\right)",
+          "description": "Geometric selection rule from cycle separation",
+          "type": "geometric_suppression",
+          "parameters_referenced": ["d", "R"],
+          "derivation_status": "geometric"
+        },
+        {
+          "equation_number": "5.10",
+          "formula": "\\tau_p = C \\times \\left(\\frac{M_{\\text{GUT}}}{10^{16} \\text{ GeV}}\\right)^4 \\times \\left(\\frac{0.03}{\\alpha_{\\text{GUT}}}\\right)^2 \\times S",
+          "description": "Proton lifetime with geometric suppression",
+          "type": "decay_rate",
+          "parameters_referenced": ["M_GUT", "alpha_GUT", "S"],
+          "derivation_status": "geometric",
+          "experimental_bound": "> 1.67 × 10³⁴ years (Super-K 90% CL)",
+          "prediction": "8.15 × 10³⁴ years (4.9× Super-K bound)"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "M_X",
+          "value": 2.118e16,
+          "formula_id": "5.7",
+          "unit": "GeV",
+          "derivation": "M_X = M_GUT from SO(10) symmetry",
+          "charge": "±4/3 e",
+          "in_constants_file": true,
+          "location": "xy_bosons.M_X"
+        },
+        {
+          "name": "M_Y",
+          "value": 2.118e16,
+          "formula_id": "5.7",
+          "unit": "GeV",
+          "derivation": "M_Y = M_GUT (assumed degenerate with M_X)",
+          "charge": "±1/3 e",
+          "in_constants_file": true,
+          "location": "xy_bosons.M_Y"
+        },
+        {
+          "name": "N_X",
+          "value": 12,
+          "formula_id": "5.7",
+          "unit": "bosons",
+          "derivation": "SO(10) representation decomposition",
+          "in_constants_file": true,
+          "location": "xy_bosons.N_X"
+        },
+        {
+          "name": "N_Y",
+          "value": 12,
+          "formula_id": "5.7",
+          "unit": "bosons",
+          "derivation": "SO(10) representation decomposition",
+          "in_constants_file": true,
+          "location": "xy_bosons.N_Y"
+        },
+        {
+          "name": "N_total_bosons",
+          "value": 45,
+          "formula_id": "5.7",
+          "unit": "bosons",
+          "derivation": "dim[SO(10) adjoint] = 45",
+          "in_constants_file": true,
+          "location": "xy_bosons.N_total"
+        },
+        {
+          "name": "S_geometric",
+          "value": 2.125,
+          "formula_id": "5.9",
+          "unit": "dimensionless",
+          "derivation": "exp(2π × d/R) with d/R = ln(4)/2π ≈ 0.12",
+          "note": "Topologically fixed - zero variance",
+          "in_constants_file": false,
+          "note2": "Missing from constants file - candidate for addition"
+        },
+        {
+          "name": "d_over_R",
+          "value": 0.12,
+          "formula_id": "5.9",
+          "unit": "dimensionless",
+          "derivation": "ln(K)/2π = ln(4)/2π from TCS K=4 matching condition",
+          "note": "Topologically fixed - zero variance",
+          "in_constants_file": false,
+          "note2": "Missing from constants file - candidate for addition"
+        },
+        {
+          "name": "tau_p",
+          "value": 8.15e34,
+          "formula_id": "5.10",
+          "unit": "years",
+          "derivation": "Full geometric calculation with cycle separation",
+          "experimental_bound": "> 1.67 × 10³⁴ years",
+          "confidence_interval": "[6.8, 9.6] × 10³⁴ years (68% CL)",
+          "in_constants_file": false,
+          "note": "CRITICAL - Missing from constants file"
+        },
+        {
+          "name": "C_QCD",
+          "value": 3.82e33,
+          "formula_id": "5.10",
+          "unit": "years",
+          "derivation": "QCD matrix element factor",
+          "in_constants_file": false,
+          "note": "Missing from constants file - candidate for addition"
+        }
+      ],
+      "derivations": [
+        {
+          "title": "XY Boson Contribution to Proton Decay",
+          "line_start": 1900,
+          "line_end": 1910,
+          "steps": 5,
+          "key_points": [
+            "Gauge boson count: 45 = 8 + 3 + 1 + 12 + 12 + 9",
+            "X boson mediation: p → e⁺ π⁰ (dominant channel)",
+            "Y boson mediation: p → ν̄ π⁺ (subdominant)",
+            "Decay rate: Γ_p ∝ (α_GUT² m_p⁵)/(M_X⁴) × S^(-1)",
+            "With M_X = 2.118 × 10¹⁶ GeV and S = 2.125: τ_p = 8.15 × 10³⁴ years"
+          ],
+          "status": "complete",
+          "parameter_free": true
+        },
+        {
+          "title": "Cycle Separation from TCS Geometry",
+          "line_start": 1923,
+          "line_end": 1933,
+          "steps": 5,
+          "key_points": [
+            "TCS neck structure: Matter fields on associative 3-cycles in compact region",
+            "Higgs localization: Separate 3-cycles in asymptotic K3 × T² ends",
+            "K = 4 matching condition: Four fibres connect compact to asymptotic regions",
+            "Geodesic separation: d/R = ln(K)/2π = ln(4)/2π ≈ 0.12",
+            "Suppression factor: S = exp(2π d/R) = e^(0.75) ≈ 2.1"
+          ],
+          "status": "complete",
+          "parameter_free": true,
+          "note": "Topologically fixed parameter with zero variance"
+        },
+        {
+          "title": "Proton Lifetime from G₂ Geometry",
+          "line_start": 1946,
+          "line_end": 1962,
+          "steps": 5,
+          "key_points": [
+            "GUT coupling: α_GUT = 1/23.54 = 0.0425",
+            "GUT scale: M_GUT = 2.118 × 10¹⁶ GeV",
+            "Geometric suppression: S = exp(2π × 0.12) = 2.125 (topologically fixed)",
+            "Baseline rate: τ_0 = 3.82 × 10³³ × (2.118)⁴ × (0.03/0.0425)² = 3.83 × 10³⁴ yr",
+            "With suppression: τ_p = τ_0 × S = 8.15 × 10³⁴ years"
+          ],
+          "status": "complete",
+          "parameter_free": true,
+          "uncertainty_analysis": {
+            "68_percent_CI": "[6.8, 9.6] × 10³⁴ years",
+            "order_of_magnitude_uncertainty": "±0.08 (from threshold corrections only)",
+            "topological_parameters": "zero variance (d/R, S)"
+          }
+        }
+      ],
+      "status": "complete",
+      "criticality": "HIGH - proton decay is testable prediction"
+    },
+    {
+      "number": "5.8",
+      "title": "Threshold Corrections",
+      "line_start": 1964,
+      "line_end": 1983,
+      "formulas": [
+        {
+          "equation_number": "5.11",
+          "formula": "\\Delta\\left(\\frac{1}{\\alpha_i}\\right) = \\frac{k_i \\cdot h^{1,1}}{2\\pi} \\log\\left(\\frac{M_*}{M_{\\text{GUT}}}\\right)",
+          "description": "Threshold corrections from KK states and moduli",
+          "type": "quantum_correction",
+          "parameters_referenced": ["h^{1,1}", "M_*", "M_GUT", "k_i"],
+          "derivation_status": "moduli_dependent"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "h^{1,1}",
+          "value": 4,
+          "formula_id": "5.11",
+          "unit": "dimensionless",
+          "derivation": "Kähler moduli from TCS construction",
+          "in_constants_file": true,
+          "location": "topology.hodge_h11"
+        },
+        {
+          "name": "M_*",
+          "value": 5000,
+          "formula_id": "5.11",
+          "unit": "GeV",
+          "derivation": "First Kaluza-Klein excitation scale",
+          "note": "~5 TeV from compactification radius",
+          "in_constants_file": false,
+          "note2": "Related to kk_spectrum.m1_central"
+        },
+        {
+          "name": "k_3",
+          "value": 3,
+          "formula_id": "5.11",
+          "unit": "dimensionless",
+          "derivation": "Group-theoretic coefficient for SU(3)",
+          "in_constants_file": false
+        },
+        {
+          "name": "k_2",
+          "value": 2,
+          "formula_id": "5.11",
+          "unit": "dimensionless",
+          "derivation": "Group-theoretic coefficient for SU(2)",
+          "in_constants_file": false
+        },
+        {
+          "name": "k_1",
+          "value": 1,
+          "formula_id": "5.11",
+          "unit": "dimensionless",
+          "derivation": "Group-theoretic coefficient for U(1)",
+          "in_constants_file": false
+        },
+        {
+          "name": "Delta_sin2_theta_W",
+          "value": 0.0002,
+          "formula_id": "5.11",
+          "unit": "dimensionless",
+          "derivation": "Net threshold correction (improves unification)",
+          "in_constants_file": false,
+          "note": "Missing from constants file - candidate for addition"
+        }
+      ],
+      "derivations": [
+        {
+          "title": "Threshold Corrections from CY Moduli",
+          "line_start": 1973,
+          "line_end": 1983,
+          "steps": 5,
+          "key_points": [
+            "Kähler moduli: h^{1,1} = 4 contributes to gauge kinetic function",
+            "KK scale: M_* ~ 5 TeV (first Kaluza-Klein excitations)",
+            "Winding modes: Subdominant at M_string ~ 10¹⁷ GeV",
+            "Group-theoretic coefficients: k_3 = 3, k_2 = 2, k_1 = 1",
+            "Net effect: Δsin²θ_W ≈ +0.0002 (improves unification)"
+          ],
+          "status": "complete",
+          "simulation_reference": "simulations/threshold_corrections.py"
+        }
+      ],
+      "status": "complete"
+    },
+    {
+      "number": "5.9",
+      "title": "Gauge Unification: Theoretical Closure (v14.1)",
+      "line_start": 1985,
+      "line_end": 2008,
+      "formulas": [],
+      "parameters": [],
+      "derivations": [],
+      "closure_statement": {
+        "title": "Section 5 Geometric Closure Statement",
+        "line_start": 1987,
+        "line_end": 2007,
+        "resolved_questions": [
+          "CY4 Construction: χ = 72 via Z₂×Z₂ quotient of CICY χ=288",
+          "Threshold Corrections: Ab initio from KK tower + AS fixed point → 1/α_GUT = 23.54",
+          "126_H Profile: Gaussian localization on b₃=24 3-cycles; M_R/M_Pl ~ e^(-b₃/2π) ≈ 10⁻⁶",
+          "Higgs Spectrum: Native TCS Topological Filter: 1 doublet pair + 'Desert' from 5 TeV to M_GUT",
+          "Breaking Chain: Pati-Salam geometrically preferred by G₂ projection; M_PS = 1.2×10¹² GeV",
+          "Doublet-Triplet: Triplets shunted to shadow sector (topologically disconnected from 4D vacuum)"
+        ],
+        "status": "COMPLETE - All parameters derived from explicit TCS G₂ construction",
+        "free_parameters": 0
+      },
+      "status": "complete"
+    }
+  ],
+  "all_formulas": [
+    "5.1", "5.2", "5.3", "5.3a", "5.4a", "5.4b", "5.4c",
+    "5.5", "5.5a", "5.6", "5.6a", "5.7", "5.8", "5.9", "5.10", "5.11"
+  ],
+  "formula_count": 16,
+  "parameters_in_constants_file": [
+    "alpha_GUT", "M_GUT", "M_X", "M_Y", "N_X", "N_Y", "N_total_bosons",
+    "b_2", "h^{1,1}"
+  ],
+  "parameters_missing_from_constants": [
+    {
+      "name": "M_PS",
+      "value": 1.2e12,
+      "unit": "GeV",
+      "priority": "HIGH",
+      "note": "Pati-Salam intermediate scale"
+    },
+    {
+      "name": "sin2_theta_W",
+      "value": 0.23121,
+      "unit": "dimensionless",
+      "priority": "HIGH",
+      "note": "Critical electroweak parameter"
+    },
+    {
+      "name": "alpha_em_MZ",
+      "value": 127.9,
+      "unit": "dimensionless (inverse)",
+      "priority": "MEDIUM",
+      "note": "Electromagnetic coupling at Z-pole"
+    },
+    {
+      "name": "v_EW",
+      "value": 173.97,
+      "unit": "GeV",
+      "priority": "HIGH",
+      "note": "Electroweak VEV - key prediction"
+    },
+    {
+      "name": "lambda_0",
+      "value": 0.1289,
+      "unit": "dimensionless",
+      "priority": "MEDIUM",
+      "note": "Higgs quartic coupling at GUT scale"
+    },
+    {
+      "name": "tau_p",
+      "value": 8.15e34,
+      "unit": "years",
+      "priority": "CRITICAL",
+      "note": "Proton lifetime - testable prediction"
+    },
+    {
+      "name": "S_geometric",
+      "value": 2.125,
+      "unit": "dimensionless",
+      "priority": "HIGH",
+      "note": "Geometric suppression factor (topologically fixed)"
+    },
+    {
+      "name": "d_over_R",
+      "value": 0.12,
+      "unit": "dimensionless",
+      "priority": "MEDIUM",
+      "note": "Cycle separation ratio"
+    },
+    {
+      "name": "C_QCD",
+      "value": 3.82e33,
+      "unit": "years",
+      "priority": "LOW",
+      "note": "QCD matrix element factor"
+    },
+    {
+      "name": "Delta_sin2_theta_W",
+      "value": 0.0002,
+      "unit": "dimensionless",
+      "priority": "LOW",
+      "note": "Threshold correction to Weinberg angle"
+    },
+    {
+      "name": "k_1",
+      "value": 1,
+      "unit": "dimensionless",
+      "priority": "LOW",
+      "note": "U(1) coefficient for threshold corrections"
+    },
+    {
+      "name": "k_2",
+      "value": 2,
+      "unit": "dimensionless",
+      "priority": "LOW",
+      "note": "SU(2) coefficient for threshold corrections"
+    },
+    {
+      "name": "k_3",
+      "value": 3,
+      "unit": "dimensionless",
+      "priority": "LOW",
+      "note": "SU(3) coefficient for threshold corrections"
+    }
+  ],
+  "derivation_boxes": [
+    {
+      "subsection": "5.3.1",
+      "title": "Geometric Preference for Pati-Salam Chain",
+      "steps": 5,
+      "line_range": [1698, 1710]
+    },
+    {
+      "subsection": "5.4.3",
+      "title": "Doublet-Triplet Splitting from Topological Filter",
+      "steps": 6,
+      "line_range": [1766, 1779]
+    },
+    {
+      "subsection": "5.5",
+      "title": "sin²θ_W from SO(10)",
+      "steps": 4,
+      "line_range": [1808, 1817]
+    },
+    {
+      "subsection": "5.5a",
+      "title": "α_em(M_Z) from Gauge Unification",
+      "steps": 4,
+      "line_range": [1825, 1834]
+    },
+    {
+      "subsection": "5.6",
+      "title": "Electroweak VEV from G₂ Moduli and Racetrack Stabilization",
+      "steps": 5,
+      "line_range": [1842, 1857]
+    },
+    {
+      "subsection": "5.6a",
+      "title": "λ_0 from Gauge Unification",
+      "steps": 5,
+      "line_range": [1865, 1875]
+    },
+    {
+      "subsection": "5.7",
+      "title": "XY Boson Contribution to Proton Decay",
+      "steps": 5,
+      "line_range": [1900, 1910]
+    },
+    {
+      "subsection": "5.7.1",
+      "title": "Cycle Separation from TCS Geometry",
+      "steps": 5,
+      "line_range": [1923, 1933]
+    },
+    {
+      "subsection": "5.7.2",
+      "title": "Proton Lifetime from G₂ Geometry",
+      "steps": 5,
+      "line_range": [1946, 1962]
+    },
+    {
+      "subsection": "5.8",
+      "title": "Threshold Corrections from CY Moduli",
+      "steps": 5,
+      "line_range": [1973, 1983]
+    }
+  ],
+  "callout_boxes": [
+    {
+      "subsection": "5.4.1",
+      "title": "Why Native TCS Topological Filter Rather Than Wilson Lines?",
+      "type": "comparison",
+      "line_range": [1781, 1800]
+    }
+  ],
+  "critical_content": {
+    "proton_decay": {
+      "formulas": ["5.8", "5.9", "5.10"],
+      "parameters": ["tau_p", "S_geometric", "d_over_R", "M_X", "M_Y"],
+      "derivations": 3,
+      "status": "COMPLETE - All metadata required",
+      "testable": true,
+      "experimental_bound": "> 1.67 × 10³⁴ years (Super-K 90% CL)",
+      "prediction": "8.15 × 10³⁴ years (4.9× Super-K bound)"
+    },
+    "doublet_triplet_splitting": {
+      "formulas": ["5.4a", "5.4b", "5.4c"],
+      "mechanism": "Native TCS Topological Filter",
+      "parameter_free": true,
+      "status": "COMPLETE"
+    },
+    "electroweak_precision": {
+      "formulas": ["5.5", "5.5a"],
+      "parameters": ["sin2_theta_W", "alpha_em_MZ"],
+      "agreements": ["0.33σ", "0.04%"],
+      "status": "COMPLETE"
+    }
+  },
+  "migration_metadata": {
+    "total_subsections": 9,
+    "total_formulas": 16,
+    "total_parameters": 22,
+    "parameters_in_JS": 9,
+    "parameters_missing": 13,
+    "total_derivations": 10,
+    "total_callouts": 1,
+    "has_closure_statement": true,
+    "section_status": "COMPLETE",
+    "criticality": "HIGH",
+    "testable_predictions": [
+      "Proton decay: τ_p = 8.15 × 10³⁴ years (Hyper-K sensitivity by 2030)",
+      "Weinberg angle: sin²θ_W = 0.23121 (precision tests ongoing)",
+      "Electromagnetic coupling: α_em^-1(M_Z) = 127.9 (precision tests ongoing)"
+    ]
+  },
+  "notes": [
+    "Section 5 contains CRITICAL proton decay predictions - all formulas must be ID'd",
+    "Proton lifetime (τ_p = 8.15 × 10³⁴ years) is MISSING from constants file - HIGH PRIORITY",
+    "Geometric suppression factor (S = 2.125) is topologically fixed - should be in constants",
+    "Electroweak VEV (v_EW = 173.97 GeV) is key prediction - should be in constants",
+    "Section has comprehensive derivation boxes (10 total) - all complete",
+    "Native TCS Topological Filter mechanism is parameter-free",
+    "Threshold corrections reference simulation: simulations/threshold_corrections.py",
+    "Section 5.9 provides theoretical closure - all open questions resolved",
+    "13 parameters missing from constants file (see parameters_missing_from_constants)",
+    "All formulas have equation numbers (5.1 through 5.11, plus 5.3a, 5.4a-c, 5.5a, 5.6a)"
+  ],
+  "recommendations": [
+    "ADD PROTON_DECAY category to theory-constants-enhanced.js with tau_p, S_geometric, d_over_R",
+    "ADD ELECTROWEAK category with sin2_theta_W, alpha_em_MZ, v_EW, lambda_0",
+    "ADD GAUGE_UNIFICATION category with M_PS, threshold correction parameters",
+    "Ensure all 13 missing parameters have full metadata (formula, derivation, uncertainty)",
+    "Link proton decay parameters to formulas 5.8, 5.9, 5.10 for traceability",
+    "Include experimental comparisons for testable predictions",
+    "Add simulation references for threshold corrections"
+  ],
+  "agent": "S4",
+  "timestamp": "2025-12-25",
+  "version": "1.0"
+}

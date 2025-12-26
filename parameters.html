@@ -477,6 +477,125 @@
             box-shadow: 0 4px 12px rgba(139, 127, 255, 0.2);
         }
 
+        /* View Toggle */
+        .view-toggle {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+
+        .view-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(26, 31, 58, 0.5);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .view-btn:hover {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--text-primary);
+        }
+
+        .view-btn.active {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.25), rgba(255, 126, 182, 0.15));
+            border-color: rgba(139, 127, 255, 0.5);
+            color: var(--text-primary);
+        }
+
+        /* OOM Gap Table */
+        .oom-table-container {
+            background: rgba(26, 31, 58, 0.4);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1.5rem;
+            overflow-x: auto;
+            display: none;
+        }
+
+        .oom-table-container.active {
+            display: block;
+        }
+
+        .oom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        .oom-table th {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--text-primary);
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid rgba(139, 127, 255, 0.3);
+            cursor: pointer;
+            white-space: nowrap;
+            user-select: none;
+        }
+
+        .oom-table th:hover {
+            background: rgba(139, 127, 255, 0.25);
+        }
+
+        .oom-table th.sort-asc::after {
+            content: ' ▲';
+            font-size: 0.7rem;
+        }
+
+        .oom-table th.sort-desc::after {
+            content: ' ▼';
+            font-size: 0.7rem;
+        }
+
+        .oom-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+        }
+
+        .oom-table tr:hover td {
+            background: rgba(139, 127, 255, 0.08);
+        }
+
+        .oom-table .param-name-cell {
+            font-family: 'Courier New', monospace;
+            color: var(--accent-primary);
+            font-weight: 500;
+        }
+
+        .oom-table .sigma-cell {
+            font-weight: 600;
+        }
+
+        .oom-table .sigma-good {
+            color: #51cf66;
+        }
+
+        .oom-table .sigma-moderate {
+            color: #ffb74d;
+        }
+
+        .oom-table .sigma-warning {
+            color: var(--accent-secondary);
+        }
+
+        .oom-table .sigma-high {
+            color: #f87171;
+        }
+
+        .table-info {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
         /* Loading state */
         .loading-state {
             text-align: center;
@@ -578,7 +697,8 @@
             <h1>Theory Parameters</h1>
             <p>
                 Complete reference of all theoretical parameters from Principia Metaphysica.
-                Dynamically loaded from <code>AUTO_GENERATED/json/parameters.json</code> - NO hardcoded values!
+                Dynamically loaded from <code>theory_output.json</code> - includes registry, simulations, and formulas.
+                <br><strong>Use Table View to sort by σ deviation and identify the weakest predictions.</strong>
             </p>
         </div>
 
@@ -600,6 +720,16 @@
                 <span class="stat-value" id="stat-validated">0</span>
                 <span class="stat-label">Validated</span>
             </div>
+            <div class="stat-item">
+                <span class="stat-value" id="stat-within-1sigma">0</span>
+                <span class="stat-label">Within 1σ</span>
+            </div>
+        </div>
+
+        <!-- View Toggle -->
+        <div class="view-toggle">
+            <button id="card-view-btn" class="view-btn active">Card View</button>
+            <button id="table-view-btn" class="view-btn">Table View (OOM Gap)</button>
         </div>
 
         <!-- Filter Controls -->
@@ -631,7 +761,7 @@
         <!-- Loading State -->
         <div id="loading-indicator" class="loading-state">
             <div class="loading-spinner"></div>
-            <p>Loading parameters from AUTO_GENERATED/json/parameters.json...</p>
+            <p>Loading all parameters from theory_output.json...</p>
         </div>
 
         <!-- Error State -->
@@ -640,9 +770,33 @@
             <p id="error-message"></p>
         </div>
 
-        <!-- Parameters Container -->
+        <!-- Parameters Container (Card View) -->
         <div id="parameters-container" style="display: none;">
             <!-- Dynamically populated category sections -->
+        </div>
+
+        <!-- OOM Gap Table Container -->
+        <div id="oom-table-container" class="oom-table-container">
+            <p class="table-info">
+                Sortable table showing all parameters with their sigma (σ) deviation from experiment.
+                <strong>Click column headers to sort.</strong> Higher sigma = weaker prediction.
+            </p>
+            <table class="oom-table">
+                <thead>
+                    <tr>
+                        <th data-sort="name">Parameter</th>
+                        <th data-sort="category">Category</th>
+                        <th data-sort="status">Status</th>
+                        <th data-sort="sigma" class="sort-desc">σ Deviation</th>
+                        <th data-sort="computed">Computed</th>
+                        <th data-sort="experimental">Experimental</th>
+                        <th data-sort="units">Units</th>
+                    </tr>
+                </thead>
+                <tbody id="oom-table-body">
+                    <!-- Dynamically populated -->
+                </tbody>
+            </table>
         </div>
 
         <!-- No Results -->
@@ -890,14 +1044,14 @@
         // Initialize the page
         async function initializePage() {
             try {
-                // Load parameters from JSON
-                const parameters = await loadParametersJSON();
+                // Load ALL data from theory_output.json
+                const theoryData = await loadTheoryOutputJSON();
 
                 // Load formulas for cross-referencing
                 await loadFormulasJSON();
 
-                // Process and organize parameters
-                processParameters(parameters);
+                // Process and organize ALL parameters
+                processAllParameters(theoryData);
 
                 // Populate category filter
                 populateCategoryFilter();
@@ -905,8 +1059,17 @@
                 // Render the parameters
                 renderParameters();
 
+                // Render the OOM table
+                renderOOMTable();
+
                 // Setup event listeners
                 setupEventListeners();
+
+                // Setup view toggle
+                setupViewToggle();
+
+                // Setup table sorting
+                setupTableSorting();
 
                 // Update statistics
                 updateStatistics();
@@ -920,7 +1083,165 @@
             }
         }
 
+        async function loadTheoryOutputJSON() {
+            const pathPrefixes = [
+                '',
+                '../',
+                '../../',
+                'AUTO_GENERATED/json/'
+            ];
+
+            for (const prefix of pathPrefixes) {
+                try {
+                    const path = prefix + 'theory_output.json';
+                    const response = await fetch(path);
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log(`Loaded theory_output.json from ${path}`);
+                        console.log(`Version: ${data.version}`);
+                        return data;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+
+            throw new Error('Could not load theory_output.json. Please run: python run_all_simulations.py');
+        }
+
+        // Extract ALL parameters from theory_output.json
+        function processAllParameters(theoryData) {
+            allParameters = [];
+            parametersByCategory = {};
+
+            // 1. Extract from framework_statistics.registry.parameters (56 core SM params)
+            if (theoryData.framework_statistics?.registry?.parameters) {
+                const registry = theoryData.framework_statistics.registry.parameters;
+                for (const [key, param] of Object.entries(registry)) {
+                    const category = param.category || 'uncategorized';
+                    if (!parametersByCategory[category]) {
+                        parametersByCategory[category] = [];
+                    }
+
+                    const paramObj = {
+                        key,
+                        displayName: param.name || formatParameterName(key),
+                        category,
+                        status: param.status || 'DERIVED',
+                        sigma: param.sigma ?? null,
+                        symbol: PARAMETER_SYMBOLS[key] || '',
+                        description: PARAMETER_DESCRIPTIONS[key] || param.name || '',
+                        source: 'registry'
+                    };
+                    allParameters.push(paramObj);
+                    parametersByCategory[category].push(paramObj);
+                }
+            }
+
+            // 2. Extract from simulations (35 simulations with validation data)
+            if (theoryData.simulations) {
+                for (const [simKey, sim] of Object.entries(theoryData.simulations)) {
+                    if (sim.validation) {
+                        const category = 'simulations';
+                        if (!parametersByCategory[category]) {
+                            parametersByCategory[category] = [];
+                        }
+
+                        const paramObj = {
+                            key: simKey,
+                            displayName: formatParameterName(simKey),
+                            category,
+                            status: sim.status || 'CHECK',
+                            sigma: sim.validation.sigma ?? null,
+                            computed: sim.validation.computed,
+                            experimental: sim.validation.experimental ?? sim.validation.bound,
+                            units: sim.validation.units || '',
+                            symbol: '',
+                            description: sim.mechanism || sim.formula?.plain_text || '',
+                            source: 'simulations'
+                        };
+                        allParameters.push(paramObj);
+                        parametersByCategory[category].push(paramObj);
+                    }
+
+                    // Extract nested validation data (like neutrino_masses.validation)
+                    extractNestedValidations(sim, simKey);
+                }
+            }
+
+            // 3. Extract from formulas (computed vs experimental values)
+            if (theoryData.formulas) {
+                for (const [fKey, formula] of Object.entries(theoryData.formulas)) {
+                    if (formula.computedValue !== undefined && formula.experimentalValue !== undefined) {
+                        const category = 'formulas';
+                        if (!parametersByCategory[category]) {
+                            parametersByCategory[category] = [];
+                        }
+
+                        const paramObj = {
+                            key: fKey,
+                            displayName: formula.label || formatParameterName(fKey),
+                            category,
+                            status: formula.status || 'DERIVED',
+                            sigma: formula.sigmaDeviation ?? null,
+                            computed: formula.computedValue,
+                            experimental: formula.experimentalValue,
+                            units: formula.units || '',
+                            symbol: '',
+                            description: formula.description || '',
+                            source: 'formulas'
+                        };
+                        allParameters.push(paramObj);
+                        parametersByCategory[category].push(paramObj);
+                    }
+                }
+            }
+
+            console.log(`Processed ${allParameters.length} total parameters across ${Object.keys(parametersByCategory).length} categories`);
+        }
+
+        function extractNestedValidations(obj, parentKey, depth = 0) {
+            if (depth > 3 || typeof obj !== 'object' || obj === null) return;
+
+            for (const [key, value] of Object.entries(obj)) {
+                if (key === 'validation' && typeof value === 'object') {
+                    // Skip if already processed as main validation
+                    if (parentKey.includes('.')) continue;
+
+                    // Check for nested validations like solar_splitting, atmospheric_splitting
+                    for (const [subKey, subVal] of Object.entries(value)) {
+                        if (typeof subVal === 'object' && subVal.computed !== undefined) {
+                            const category = 'nested_validations';
+                            if (!parametersByCategory[category]) {
+                                parametersByCategory[category] = [];
+                            }
+
+                            const fullKey = `${parentKey}.${subKey}`;
+                            const paramObj = {
+                                key: fullKey,
+                                displayName: formatParameterName(subKey),
+                                category,
+                                status: subVal.status?.includes('PASS') ? 'PASS' : 'CHECK',
+                                sigma: subVal.sigma ?? null,
+                                computed: subVal.computed,
+                                experimental: subVal.experimental,
+                                units: subVal.units || '',
+                                symbol: '',
+                                description: `From ${parentKey}`,
+                                source: 'nested'
+                            };
+                            allParameters.push(paramObj);
+                            parametersByCategory[category].push(paramObj);
+                        }
+                    }
+                } else if (typeof value === 'object') {
+                    extractNestedValidations(value, `${parentKey}.${key}`, depth + 1);
+                }
+            }
+        }
+
         async function loadParametersJSON() {
+            // Fallback to parameters.json if needed
             const pathPrefixes = [
                 'AUTO_GENERATED/json/',
                 '../AUTO_GENERATED/json/',
@@ -1451,20 +1772,166 @@
             document.getElementById('no-results').style.display = visibleCount === 0 ? 'block' : 'none';
         }
 
+        // Render OOM Gap Table
+        function renderOOMTable() {
+            const tbody = document.getElementById('oom-table-body');
+            tbody.innerHTML = '';
+
+            // Sort by sigma descending (highest deviation first = weakest predictions)
+            const sortedParams = [...allParameters].sort((a, b) => {
+                const sigmaA = a.sigma ?? -1;
+                const sigmaB = b.sigma ?? -1;
+                return sigmaB - sigmaA;
+            });
+
+            sortedParams.forEach(param => {
+                const tr = document.createElement('tr');
+                tr.dataset.key = param.key;
+                tr.dataset.category = param.category;
+
+                const sigmaClass = getSigmaClass(param.sigma);
+                const sigmaDisplay = param.sigma !== null ? param.sigma.toFixed(2) : '—';
+                const computedDisplay = formatValue(param.computed);
+                const expDisplay = formatValue(param.experimental);
+
+                tr.innerHTML = `
+                    <td class="param-name-cell">${param.key}</td>
+                    <td>${param.category}</td>
+                    <td><span class="param-status-badge status-${param.status}">${param.status}</span></td>
+                    <td class="sigma-cell ${sigmaClass}">${sigmaDisplay}</td>
+                    <td>${computedDisplay}</td>
+                    <td>${expDisplay}</td>
+                    <td>${param.units || '—'}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function getSigmaClass(sigma) {
+            if (sigma === null || sigma === undefined) return '';
+            if (sigma < 1) return 'sigma-good';
+            if (sigma < 2) return 'sigma-moderate';
+            if (sigma < 3) return 'sigma-warning';
+            return 'sigma-high';
+        }
+
+        // View Toggle
+        function setupViewToggle() {
+            const cardViewBtn = document.getElementById('card-view-btn');
+            const tableViewBtn = document.getElementById('table-view-btn');
+            const cardContainer = document.getElementById('parameters-container');
+            const tableContainer = document.getElementById('oom-table-container');
+
+            cardViewBtn.addEventListener('click', () => {
+                cardViewBtn.classList.add('active');
+                tableViewBtn.classList.remove('active');
+                cardContainer.style.display = 'block';
+                tableContainer.classList.remove('active');
+            });
+
+            tableViewBtn.addEventListener('click', () => {
+                tableViewBtn.classList.add('active');
+                cardViewBtn.classList.remove('active');
+                cardContainer.style.display = 'none';
+                tableContainer.classList.add('active');
+            });
+        }
+
+        // Table Sorting
+        let currentSort = { column: 'sigma', direction: 'desc' };
+
+        function setupTableSorting() {
+            const headers = document.querySelectorAll('.oom-table th[data-sort]');
+            headers.forEach(th => {
+                th.addEventListener('click', () => {
+                    const column = th.dataset.sort;
+
+                    // Toggle direction if same column
+                    if (currentSort.column === column) {
+                        currentSort.direction = currentSort.direction === 'asc' ? 'desc' : 'asc';
+                    } else {
+                        currentSort.column = column;
+                        currentSort.direction = 'desc';
+                    }
+
+                    // Update header classes
+                    headers.forEach(h => h.classList.remove('sort-asc', 'sort-desc'));
+                    th.classList.add(`sort-${currentSort.direction}`);
+
+                    // Sort the table
+                    sortTable();
+                });
+            });
+        }
+
+        function sortTable() {
+            const tbody = document.getElementById('oom-table-body');
+            const rows = Array.from(tbody.querySelectorAll('tr'));
+
+            rows.sort((a, b) => {
+                let valA, valB;
+
+                switch (currentSort.column) {
+                    case 'name':
+                        valA = a.dataset.key.toLowerCase();
+                        valB = b.dataset.key.toLowerCase();
+                        break;
+                    case 'category':
+                        valA = a.dataset.category.toLowerCase();
+                        valB = b.dataset.category.toLowerCase();
+                        break;
+                    case 'status':
+                        valA = a.cells[2].textContent.toLowerCase();
+                        valB = b.cells[2].textContent.toLowerCase();
+                        break;
+                    case 'sigma':
+                        valA = parseFloat(a.cells[3].textContent) || -1;
+                        valB = parseFloat(b.cells[3].textContent) || -1;
+                        break;
+                    case 'computed':
+                        valA = parseFloat(a.cells[4].textContent) || 0;
+                        valB = parseFloat(b.cells[4].textContent) || 0;
+                        break;
+                    case 'experimental':
+                        valA = parseFloat(a.cells[5].textContent) || 0;
+                        valB = parseFloat(b.cells[5].textContent) || 0;
+                        break;
+                    default:
+                        valA = a.cells[6].textContent;
+                        valB = b.cells[6].textContent;
+                }
+
+                if (typeof valA === 'string') {
+                    return currentSort.direction === 'asc'
+                        ? valA.localeCompare(valB)
+                        : valB.localeCompare(valA);
+                } else {
+                    return currentSort.direction === 'asc'
+                        ? valA - valB
+                        : valB - valA;
+                }
+            });
+
+            rows.forEach(row => tbody.appendChild(row));
+        }
+
         function updateStatistics() {
             const total = allParameters.length;
             const categories = Object.keys(parametersByCategory).length;
             const validated = allParameters.filter(p =>
                 p.experimental !== undefined ||
                 p.observed !== undefined ||
+                p.sigma !== null ||
                 p.status === 'MEASURED' ||
                 p.status === 'INPUT'
             ).length;
+            const within1sigma = allParameters.filter(p => p.sigma !== null && p.sigma < 1).length;
 
             document.getElementById('stat-total').textContent = total;
             document.getElementById('stat-visible').textContent = total;
             document.getElementById('stat-categories').textContent = categories;
             document.getElementById('stat-validated').textContent = validated;
+            document.getElementById('stat-within-1sigma').textContent = within1sigma;
         }
 
         function hideLoading() {

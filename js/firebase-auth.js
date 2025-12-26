@@ -31,8 +31,9 @@ let authStateResolved = false;
  */
 export async function initAuth() {
   try {
+    // Set persistence to local (persists across browser sessions)
     await setPersistence(auth, browserLocalPersistence);
-    console.log('[PM Auth] Persistence set to local storage');
+    console.log('[PM Auth] Persistence set to local storage (browserLocalPersistence)');
   } catch (error) {
     console.error('[PM Auth] Error setting persistence:', error);
   }

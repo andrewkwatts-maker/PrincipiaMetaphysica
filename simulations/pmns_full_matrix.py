@@ -13,10 +13,16 @@ Based on NEUTRINO_PMNS_FULL_MATRIX_APPROACH.md
 
 import numpy as np
 from sympy import asin, atan, sqrt, pi, N, cos, sin, exp, symbols
+import sys
+import os
+
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import config
 
 # Import from centralized config to avoid hardcoded duplicates
-from config import FundamentalConstants
+from config import FundamentalConstants, CoreFormulas
 
 # TCS G2 Topological Parameters (from config - single source of truth)
 b2 = FundamentalConstants.HODGE_H11  # = 4 (Kahler moduli)
@@ -327,10 +333,21 @@ def run_pmns_calculation(verbose=True):
     Returns:
         dict with angles, matrix, and comparisons
     """
+    # Get formula for validation
+    formula = CoreFormulas.THETA23_MAXIMAL
+    formula_value = formula.computed_value
+
     if verbose:
         print("=" * 70)
         print("PMNS MATRIX: FULL GEOMETRIC DERIVATION")
         print("=" * 70)
+        print()
+        # Print associated formula
+        print("ASSOCIATED FORMULA:")
+        print(f"  {formula.label}")
+        print(f"  {formula.plain_text}")
+        print(f"  Category: {formula.category}")
+        print(f"  Status: {formula.status}")
 
     # Calculate angles
     theta_23 = theta_23_from_asymmetric_coupling()
@@ -400,6 +417,18 @@ def run_pmns_calculation(verbose=True):
 
         print("=" * 70)
 
+    # Validate theta_23 against formula (within 3 degrees)
+    formula_match = abs(theta_23 - formula_value) < 3.0
+
+    if verbose:
+        print()
+        print("FORMULA VALIDATION:")
+        print(f"  Formula: {formula.id}")
+        print(f"  Expected: {formula_value} deg")
+        print(f"  Computed: {theta_23:.2f} deg")
+        print(f"  Match: {'PASS' if formula_match else 'FAIL'} (within 3 deg)")
+        print("=" * 70)
+
     return {
         'angles': {
             'theta_23': theta_23,
@@ -415,7 +444,13 @@ def run_pmns_calculation(verbose=True):
             'sigma_cp': sigma_cp,
             'average': avg_sigma
         },
-        'monte_carlo': mc_results
+        'monte_carlo': mc_results,
+        'formula': {
+            'id': formula.id,
+            'label': formula.label,
+            'plain_text': formula.plain_text,
+            'validated': formula_match
+        }
     }
 
 if __name__ == '__main__':

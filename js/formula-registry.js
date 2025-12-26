@@ -465,16 +465,28 @@ const FORMULA_REGISTRY = {
             label: "(2.6) Three Generations Formula",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "Topological derivation of exactly 3 fermion generations",
+            description: "Topological derivation of exactly 3 fermion generations from flux-dressed G₂ geometry - explains why nature has exactly three families of quarks and leptons",
             status: "VERIFIED",
             v12_7_status: "exact - topologically required",
             pmConstant: "PM.topology.n_gen",
             experimentalValue: 3,
             sigma: 0,
             terms: {
-                "n<sub>gen</sub>": { name: "Generations", description: "= 3 (observed)" },
-                "χ<sub>eff</sub>": { name: "Effective Euler Char", description: "144 from flux-dressed topology" },
-                "48": { name: "2T Index Divisor", description: "24 × 2 for two-time framework" }
+                "n<sub>gen</sub>": {
+                    name: "Number of Generations",
+                    description: "= 3 (electron/muon/tau + up/down/charm/strange/top/bottom quarks). This is the observed number of fermion families in nature.",
+                    link: "sections/geometric-framework.html#generations"
+                },
+                "χ<sub>eff</sub>": {
+                    name: "Effective Euler Characteristic",
+                    description: "= 144 from flux-dressed TCS G₂ topology. The Euler characteristic is a topological invariant that counts the 'shape' of the compactified dimensions.",
+                    link: "sections/geometric-framework.html#euler-char"
+                },
+                "48": {
+                    name: "Two-Time Index Divisor",
+                    description: "= 24 × 2, where 24 comes from the F-theory index theorem and the factor of 2 accounts for the two-time structure of the 26D framework.",
+                    link: "sections/geometric-framework.html#index-theorem"
+                }
             },
             derivation: {
                 parentFormulas: ["spacetime-26d", "clifford-26d"],
@@ -645,19 +657,35 @@ const FORMULA_REGISTRY = {
             html: "M<sub>GUT</sub> = M<sub>*</sub> exp(T<sub>ω</sub>s/2) = 2.118 × 10<sup>16</sup> GeV",
             latex: "M_{GUT} = M_* \\exp(T_\\omega s/2) = 2.118 \\times 10^{16} \\text{ GeV}",
             plainText: "M_GUT = M_* exp(T_ω s/2) = 2.118 × 10¹⁶ GeV",
-            label: "(4.1) GUT Scale from Torsion",
+            label: "(4.1) GUT Scale from G₂ Torsion",
             category: "DERIVED",
             attribution: "Principia Metaphysica",
-            description: "GUT scale derived geometrically from TCS G₂ torsion",
+            description: "Grand Unification scale derived purely from geometry with no free parameters - the energy scale where electromagnetic, weak, and strong forces unify into a single force",
             status: "VERIFIED",
-            v12_7_status: "pure geometric - breakthrough",
+            v12_7_status: "pure geometric - breakthrough derivation",
             pmConstant: "PM.proton_decay.M_GUT",
             experimentalValue: 2.118e16,
             sigma: 0,
             terms: {
-                "M<sub>GUT</sub>": { name: "GUT Scale", description: "2.118 × 10¹⁶ GeV" },
-                "T<sub>ω</sub>": { name: "Torsion", description: "-0.875 from Spin(7) spinor fraction 7/8" },
-                "s": { name: "s-parameter", description: "1.178 from G₂ moduli" }
+                "M<sub>GUT</sub>": {
+                    name: "GUT Unification Scale",
+                    description: "= 2.118 × 10¹⁶ GeV. The energy scale where the three Standard Model forces (electromagnetic, weak, strong) merge into a single unified force. About 10 trillion times higher than the Large Hadron Collider can reach.",
+                    link: "sections/gauge-unification.html#gut-scale"
+                },
+                "M<sub>*</sub>": {
+                    name: "Fundamental Scale",
+                    description: "Base compactification scale from dimensional reduction. Related to the size of the compactified G₂ manifold."
+                },
+                "T<sub>ω</sub>": {
+                    name: "G₂ Torsion",
+                    description: "= -0.875 from Spin(7) spinor fraction 7/8. The intrinsic torsion of the TCS G₂ manifold, derived from flux stabilization. This is the key geometric input that fixes M_GUT with no adjustable parameters.",
+                    link: "sections/geometric-framework.html#torsion"
+                },
+                "s": {
+                    name: "Moduli Parameter",
+                    description: "= 1.178 from G₂ volume modulus stabilization via racetrack superpotential. Determines the size of the compactified dimensions.",
+                    link: "sections/geometric-framework.html#moduli"
+                }
             },
             derivation: {
                 parentFormulas: ["spacetime-26d"],
@@ -708,19 +736,31 @@ const FORMULA_REGISTRY = {
             html: "w<sub>0</sub> = -(d<sub>eff</sub> - 1)/(d<sub>eff</sub> + 1) = -0.8528",
             latex: "w_0 = -\\frac{d_{eff} - 1}{d_{eff} + 1} = -0.8528",
             plainText: "w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528",
-            label: "(7.2) Dark Energy EoS w₀",
+            label: "(7.2) Dark Energy Equation of State w₀",
             category: "DERIVED",
             attribution: "Principia Metaphysica (MEP + G₂ torsion)",
-            description: "Derived from d_eff = 12.576 via Maximum Entropy Principle",
+            description: "Dark energy equation of state parameter derived from effective dimensionality via Maximum Entropy Principle - determines how dark energy pressure relates to its density",
             status: "VERIFIED",
-            v12_7_status: "derived from G₂ torsion",
+            v12_7_status: "derived from G₂ torsion - 0.38σ agreement with DESI",
             pmConstant: "PM.dark_energy.w0_PM",
             experimentalValue: -0.83,
             experimentalSource: "DESI DR2 2024",
             sigma: 0.38,
             terms: {
-                "w<sub>0</sub>": { name: "Present EOS", description: "-0.8528 from d_eff" },
-                "d<sub>eff</sub>": { name: "Effective Dim", description: "= 12.576 from G₂ torsion" }
+                "w<sub>0</sub>": {
+                    name: "Dark Energy EoS",
+                    description: "= -0.8528 (present epoch). The equation of state parameter w = P/ρ relates pressure to density. w = -1 is a cosmological constant, w > -1 is quintessence. PM predicts w₀ ≈ -0.85.",
+                    link: "sections/cosmology.html#dark-energy"
+                },
+                "d<sub>eff</sub>": {
+                    name: "Effective Dimension",
+                    description: "= 12.576 from G₂ torsion. The thermal time framework causes the effective dimensionality to differ from the naive 13D count due to geometric corrections from Shadow_ק and Shadow_ח.",
+                    link: "sections/cosmology.html#d-eff"
+                },
+                "MEP": {
+                    name: "Maximum Entropy Principle",
+                    description: "The formula w₀ = -(d_eff - 1)/(d_eff + 1) emerges from maximizing entropy in d_eff dimensions, connecting thermodynamics to cosmology."
+                }
             },
             derivation: {
                 parentFormulas: ["two-time-structure"],
@@ -807,22 +847,39 @@ const FORMULA_REGISTRY = {
 
         "proton-lifetime": {
             id: "proton-lifetime",
-            html: "τ<sub>p</sub> = (3.83 ± 1.47) × 10<sup>34</sup> years",
-            latex: "\\tau_p = (3.83 \\pm 1.47) \\times 10^{34} \\text{ years}",
-            plainText: "τ_p = (3.83 ± 1.47) × 10³⁴ years",
-            label: "(8.1) Proton Lifetime",
+            html: "τ<sub>p</sub> = M<sub>GUT</sub><sup>4</sup>/(α<sub>GUT</sub><sup>2</sup> m<sub>p</sub><sup>5</sup>) = (3.83 ± 1.47) × 10<sup>34</sup> years",
+            latex: "\\tau_p = \\frac{M_{GUT}^4}{\\alpha_{GUT}^2 m_p^5} = (3.83 \\pm 1.47) \\times 10^{34} \\text{ years}",
+            plainText: "τ_p = M_GUT⁴/(α_GUT² m_p⁵) = (3.83 ± 1.47) × 10³⁴ years",
+            label: "(8.1) Proton Decay Lifetime",
             category: "PREDICTIONS",
             attribution: "Principia Metaphysica + GUT theory",
-            description: "From dimension-6 operators at M_GUT = 2.118×10¹⁶ GeV",
+            description: "Predicted proton decay lifetime from geometric M_GUT and α_GUT - the universe is about 10²⁶ times younger than the typical proton lifetime, making this extremely rare but potentially observable",
             status: "TESTABLE",
-            v12_7_status: "derived from M_GUT and α_GUT",
+            v12_7_status: "derived from pure geometric M_GUT and α_GUT",
             pmConstant: "PM.proton_decay.tau_p_central",
             experimentalValue: 1.67e34,
-            experimentalSource: "Super-K lower bound",
+            experimentalSource: "Super-Kamiokande lower bound (2023)",
             testBy: "Hyper-Kamiokande (2030-2037)",
             terms: {
-                "τ<sub>p</sub>": { name: "Proton Lifetime", description: "Mean decay time" },
-                "M<sub>GUT</sub>": { name: "GUT Scale", description: "2.118 × 10¹⁶ GeV" }
+                "τ<sub>p</sub>": {
+                    name: "Proton Lifetime",
+                    description: "= 3.83 × 10³⁴ years (central value). This is about a trillion trillion times the age of the universe. If you watched 10³³ protons for a year, you'd expect to see about one decay.",
+                    link: "sections/predictions.html#proton-decay"
+                },
+                "M<sub>GUT</sub>": {
+                    name: "GUT Scale",
+                    description: "= 2.118 × 10¹⁶ GeV from G₂ torsion geometry. Heavier X and Y bosons (which mediate proton decay) mean longer proton lifetime. M_GUT appears to the 4th power, making the lifetime extremely sensitive to this scale.",
+                    link: "sections/gauge-unification.html#gut-scale"
+                },
+                "α<sub>GUT</sub>": {
+                    name: "GUT Coupling",
+                    description: "= 1/23.54 from geometric Casimir scaling. The unified gauge coupling strength at M_GUT. Appears squared in the denominator.",
+                    link: "sections/gauge-unification.html#alpha-gut"
+                },
+                "m<sub>p</sub>": {
+                    name: "Proton Mass",
+                    description: "= 938.3 MeV. Appears to the 5th power in denominator due to phase space factors in the decay rate."
+                }
             },
             derivation: {
                 parentFormulas: ["gut-scale", "alpha-gut"],

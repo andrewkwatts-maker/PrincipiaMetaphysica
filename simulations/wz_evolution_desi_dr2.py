@@ -12,17 +12,25 @@ Based on PLANCK_TENSION_COSMOLOGY_APPROACH.md
 """
 
 import numpy as np
+import sys
+import os
+
+# Add parent directory to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 import config
+from config import CoreFormulas
 
 # DESI DR2 Data (October 2024, arXiv:2510.12627)
-w0_DESI = -0.83
-w0_DESI_error = 0.06
-wa_DESI = -0.75
+# Updated to match config.PhenomenologyParameters.W0_DESI_DR2
+w0_DESI = -0.827  # DESI DR2 combined value
+w0_DESI_error = 0.063  # DESI DR2 1σ uncertainty
+wa_DESI = -0.75  # Dark energy evolution parameter (DESI DR2 approximate)
 wa_DESI_error = 0.30
 
 # PM Prediction from effective dimension
-D_eff = 12.589  # From config.SharedDimensionsParameters
-w0_PM = -(D_eff - 1) / (D_eff + 1)  # = -0.8528
+D_eff = 12.576  # From config.SharedDimensionsParameters.D_EFF = 12 + 0.5*(0.576152 + 0.576152)
+w0_PM = -(D_eff - 1) / (D_eff + 1)  # = -0.8527
 
 # Thermal time parameter
 alpha_T = 2.7  # From config.ThermalTimeParameters
@@ -171,10 +179,22 @@ def run_wz_analysis(verbose=True):
     Returns:
         dict with all results
     """
+    # Get formula for validation
+    formula = CoreFormulas.DARK_ENERGY_W0
+    formula_value = formula.computed_value
+    formula_match = abs(w0_PM - formula_value) < 0.01
+
     if verbose:
         print("=" * 70)
         print("DARK ENERGY w(z) EVOLUTION: DESI DR2 ANALYSIS")
         print("=" * 70)
+        print()
+        # Print associated formula
+        print("ASSOCIATED FORMULA:")
+        print(f"  {formula.label}")
+        print(f"  {formula.plain_text}")
+        print(f"  Category: {formula.category}")
+        print(f"  Status: {formula.status}")
 
     # Present-day values (calculate always for return value)
     deviation_w0 = abs(w0_PM - w0_DESI) / w0_DESI_error
@@ -231,6 +251,13 @@ def run_wz_analysis(verbose=True):
         print(f"   Status: TENSION SIGNIFICANTLY REDUCED")
 
         print("=" * 70)
+        print()
+        print("FORMULA VALIDATION:")
+        print(f"  Formula: {formula.id}")
+        print(f"  Expected: {formula_value}")
+        print(f"  Computed: {w0_PM:.4f}")
+        print(f"  Match: {'PASS' if formula_match else 'FAIL'}")
+        print("=" * 70)
 
     return {
         'w0_PM': w0_PM,
@@ -241,7 +268,13 @@ def run_wz_analysis(verbose=True):
         'functional_test': func_test,
         'wa_PM_effective': wa_PM_effective,
         'wa_DESI': wa_DESI,
-        'wa_deviation_sigma': wa_deviation
+        'wa_deviation_sigma': wa_deviation,
+        'formula': {
+            'id': formula.id,
+            'label': formula.label,
+            'plain_text': formula.plain_text,
+            'validated': formula_match
+        }
     }
 
 if __name__ == '__main__':

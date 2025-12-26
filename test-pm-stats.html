@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Statistics Test</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            line-height: 1.6;
+            background: #f8f9fa;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #8b7fff;
+            padding-bottom: 0.5rem;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+        }
+        .stat-group {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat-item {
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            border-left: 3px solid #8b7fff;
+            padding-left: 1rem;
+        }
+        .stat-label {
+            font-weight: 600;
+            color: #555;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .pm-stat, [data-stat-id] {
+            color: #8b7fff;
+            font-weight: 700;
+            font-family: 'Monaco', 'Courier New', monospace;
+        }
+        .pm-stat-loaded {
+            animation: highlight 0.5s ease-in-out;
+        }
+        @keyframes highlight {
+            0% { background-color: #fff3cd; }
+            100% { background-color: transparent; }
+        }
+        code {
+            background: #f1f3f5;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+        .console-output {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 1rem;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 0.85rem;
+            overflow-x: auto;
+            margin-top: 1rem;
+        }
+        button {
+            background: #8b7fff;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #7461e8;
+        }
+    </style>
+</head>
+<body>
+    <h1>PM Validation Statistics - Test Page</h1>
+
+    <div class="stat-group">
+        <h2>Parameter Counts</h2>
+        <div class="stat-item">
+            <span class="stat-label">Total Parameters:</span>
+            <span class="pm-stat" data-stat-id="total_parameters">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Geometric Parameters:</span>
+            <span class="pm-stat" data-stat-id="geometric_count">--</span>
+            (<span data-stat-id="geometric_percentage">--</span>%)
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Derived Parameters:</span>
+            <span class="pm-stat" data-stat-id="derived_count">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Calibrated Parameters:</span>
+            <span class="pm-stat" data-stat-id="calibrated_count">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Exact Topological Results:</span>
+            <span class="pm-stat" data-stat-id="exact_count">--</span>
+        </div>
+    </div>
+
+    <div class="stat-group">
+        <h2>Validation Metrics</h2>
+        <div class="stat-item">
+            <span class="stat-label">Total Validations:</span>
+            <span class="pm-stat" data-stat-id="total_validations">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Testable Predictions:</span>
+            <span class="pm-stat" data-stat-id="testable_predictions">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Within 1σ:</span>
+            <span class="pm-stat" data-stat-id="within_1sigma">--</span>
+            (<span data-stat-id="success_rate_1sigma">--</span>%)
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Within 2σ:</span>
+            <span class="pm-stat" data-stat-id="within_2sigma">--</span>
+            (<span data-stat-id="success_rate_2sigma">--</span>%)
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Exact Matches (0.0σ):</span>
+            <span class="pm-stat" data-stat-id="exact_matches">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Mean Sigma Deviation:</span>
+            <span class="pm-stat" data-stat-id="mean_sigma">--</span>σ
+        </div>
+    </div>
+
+    <div class="stat-group">
+        <h2>Computed Statistics</h2>
+        <div class="stat-item">
+            <span class="stat-label">Geometric Fraction:</span>
+            <span class="pm-stat" data-stat-id="geometric_fraction">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Validation Summary:</span>
+            <span class="pm-stat" data-stat-id="validation_summary_percent">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Calibration Statement:</span>
+            <span class="pm-stat" data-stat-id="calibration_statement">--</span>
+        </div>
+    </div>
+
+    <div class="stat-group">
+        <h2>Human-Readable Summaries</h2>
+        <div class="stat-item">
+            <span class="stat-label">Short Summary:</span><br>
+            <span data-stat-id="summary_short">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Full Summary:</span><br>
+            <span data-stat-id="summary_full">--</span>
+        </div>
+        <div class="stat-item">
+            <span class="stat-label">Transparency Statement:</span><br>
+            <span data-stat-id="transparency_statement">--</span>
+        </div>
+    </div>
+
+    <div class="stat-group">
+        <h2>Manual Controls</h2>
+        <button onclick="PM_STATS.update()">Refresh Statistics</button>
+        <button onclick="showConsoleInfo()">Show PM_STATS Object</button>
+        <div id="console-info"></div>
+    </div>
+
+    <div class="stat-group">
+        <h2>Usage Examples</h2>
+        <h3>HTML Usage:</h3>
+        <pre><code>&lt;span class="pm-stat" data-stat-id="total_parameters"&gt;&lt;/span&gt;
+&lt;span data-stat-id="success_rate_1sigma"&gt;&lt;/span&gt;%</code></pre>
+
+        <h3>JavaScript Usage:</h3>
+        <pre><code>// Access statistics programmatically
+console.log(PM_STATS.total_parameters);  // 58
+console.log(PM_STATS.success_rate_1sigma);  // "93.8"
+console.log(PM_STATS.summary_short);
+
+// Refresh statistics
+PM_STATS.update();</code></pre>
+    </div>
+
+    <!-- Load the PM statistics module -->
+    <script src="js/pm-validation-stats.js"></script>
+
+    <script>
+        function showConsoleInfo() {
+            const info = document.getElementById('console-info');
+            const stats = {
+                total_parameters: PM_STATS.total_parameters,
+                geometric_count: PM_STATS.geometric_count,
+                within_1sigma: PM_STATS.within_1sigma,
+                testable_predictions: PM_STATS.testable_predictions,
+                success_rate_1sigma: PM_STATS.success_rate_1sigma,
+                summary_short: PM_STATS.summary_short,
+                available_properties: Object.keys(PM_STATS).filter(k => typeof PM_STATS[k] !== 'function')
+            };
+
+            info.innerHTML = `<div class="console-output">${JSON.stringify(stats, null, 2)}</div>`;
+        }
+    </script>
+</body>
+</html>

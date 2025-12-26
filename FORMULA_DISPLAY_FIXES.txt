@@ -1,0 +1,287 @@
+================================================================================
+FORMULA DISPLAY FIXES - EXACT CODE CHANGES
+================================================================================
+
+This document contains the exact code changes needed to update formula display
+styling to match the old paper (principia-metaphysica-paper.html).
+
+Each section shows the EXACT code to find and replace.
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+================================================================================
+FILE 1: formulas.html
+================================================================================
+
+LOCATION: Lines 123-137 (approximately)
+
+FIND:
+--------------------------------------------------------------------------------
+        /* Formula Equation Display */
+        .formula-equation {
+            background: var(--bg-secondary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            text-align: center;
+            font-size: 1.3rem;
+            border: 1px solid var(--border-primary);
+            overflow-x: auto;
+        }
+
+        .formula-equation .MathJax {
+            font-size: 1.2em;
+        }
+--------------------------------------------------------------------------------
+
+REPLACE WITH:
+--------------------------------------------------------------------------------
+        /* Formula Equation Display - Match old paper styling */
+        .formula-equation {
+            margin: 1.5rem 0;
+            padding: 1rem 0;
+            overflow-x: auto;
+            text-align: center;
+            position: relative;
+            clear: both;
+        }
+
+        .formula-equation .MathJax,
+        .formula-equation mjx-container {
+            font-size: 1.2em !important;
+        }
+
+        /* Equation number (right-aligned, in parentheses) */
+        .equation-number {
+            float: right;
+            color: #666;
+            font-size: 0.9rem;
+            font-family: 'Crimson Text', serif;
+            margin-left: 1rem;
+        }
+--------------------------------------------------------------------------------
+
+LOCATION: Line 18 (approximately, after styles.css link)
+
+ADD:
+--------------------------------------------------------------------------------
+    <link rel="stylesheet" href="css/formula-display-fix.css">
+--------------------------------------------------------------------------------
+
+LOCATION: Lines 1007-1010 (in renderFormulaCard function)
+
+FIND:
+--------------------------------------------------------------------------------
+                <!-- Equation -->
+                <div class="formula-equation">
+                    ${formula.latex ? `$$${formula.latex}$$` : (formula.html || escapeHtml(formula.plainText || 'No equation available'))}
+                </div>
+--------------------------------------------------------------------------------
+
+REPLACE WITH:
+--------------------------------------------------------------------------------
+                <!-- Equation -->
+                <div class="formula-equation">
+                    ${formula.section ? `<span class="equation-number">(${escapeHtml(formula.section)})</span>` : ''}
+                    ${formula.latex ? `$$${formula.latex}$$` : (formula.html || escapeHtml(formula.plainText || 'No equation available'))}
+                </div>
+--------------------------------------------------------------------------------
+
+================================================================================
+FILE 2: js/pm-formula-loader.js
+================================================================================
+
+LOCATION: Lines 359-362 (in render function)
+
+FIND:
+--------------------------------------------------------------------------------
+        // Main formula display
+        html += `<div class="formula-display" style="font-size: 1.2rem; padding: 0.5rem 0; text-align: center;">
+            ${formula.html || formula.latex || formula.plainText || ''}
+        </div>`;
+--------------------------------------------------------------------------------
+
+REPLACE WITH:
+--------------------------------------------------------------------------------
+        // Main formula display with equation number
+        const equationNumber = formula.section ? `(${formula.section})` : '';
+        html += `<div class="formula-display" style="font-size: 1.2rem; padding: 0.5rem 0; text-align: center; position: relative; clear: both;">
+            ${equationNumber ? `<span class="equation-number">${equationNumber}</span>` : ''}
+            ${formula.html || formula.latex || formula.plainText || ''}
+        </div>`;
+--------------------------------------------------------------------------------
+
+================================================================================
+FILE 3: js/pm-formula-component.js
+================================================================================
+
+LOCATION: Lines 252-259 (after .formula-display style definition)
+
+FIND:
+--------------------------------------------------------------------------------
+                .formula-display {
+                    font-family: 'Times New Roman', serif;
+                    font-size: 1.3rem;
+                    line-height: 1.8;
+                    text-align: center;
+                    padding: 0.5rem 0;
+                    overflow: visible;
+                }
+
+                .formula-var {
+--------------------------------------------------------------------------------
+
+REPLACE WITH:
+--------------------------------------------------------------------------------
+                .formula-display {
+                    font-family: 'Times New Roman', serif;
+                    font-size: 1.3rem;
+                    line-height: 1.8;
+                    text-align: center;
+                    padding: 0.5rem 0;
+                    overflow: visible;
+                    position: relative;
+                    clear: both;
+                }
+
+                .equation-number {
+                    float: right;
+                    color: #666;
+                    font-size: 0.9rem;
+                    font-family: 'Crimson Text', Georgia, serif;
+                    margin-left: 1rem;
+                    line-height: 2;
+                }
+
+                .formula-var {
+--------------------------------------------------------------------------------
+
+================================================================================
+FILE 4: css/formula-display-fix.css
+================================================================================
+
+STATUS: Already created ✓
+
+This file provides comprehensive styling overrides to match the old paper.
+Make sure it's linked in all pages that display formulas.
+
+================================================================================
+TESTING CHECKLIST
+================================================================================
+
+After applying all changes:
+
+1. EQUATION NUMBERS:
+   [ ] Open formulas.html
+   [ ] Verify equation numbers appear on right side
+   [ ] Numbers should be in parentheses like "(2.1)"
+   [ ] Numbers don't overlap with equations
+
+2. EQUATION DISPLAY:
+   [ ] Equations are centered
+   [ ] No heavy background boxes (clean like old paper)
+   [ ] MathJax renders consistently
+   [ ] Equations scroll horizontally on mobile if needed
+
+3. DERIVATION BOXES:
+   [ ] Light gray gradient background
+   [ ] Simple border (not heavy cards)
+   [ ] Steps are numbered properly
+
+4. STATUS BADGES:
+   [ ] Colors match: green (exact match), purple (validated),
+       yellow (geometric), pink (prediction)
+
+5. RESPONSIVE:
+   [ ] Test on mobile device
+   [ ] Test on tablet
+   [ ] Test on desktop
+
+6. COMPARISON PAGE:
+   [ ] Open examples/formula-styling-comparison.html
+   [ ] Verify all three styles render correctly
+   [ ] Fixed style should match old paper
+
+================================================================================
+VISUAL COMPARISON
+================================================================================
+
+OLD PAPER:
+  +----------------------------------------------------------------+
+  |                                                                |
+  |  $$equation here$$                                      (2.1)  |
+  |                                                                |
+  +----------------------------------------------------------------+
+  Clean, no background, equation number floats right
+
+CURRENT (BEFORE FIX):
+  +================================================================+
+  |  [Dark background box with border]                            |
+  |                                                                |
+  |           $$equation here$$                                    |
+  |                                                                |
+  |  [Heavy card styling]                                         |
+  +================================================================+
+  Heavy styling, NO equation number
+
+FIXED (AFTER):
+  +----------------------------------------------------------------+
+  |                                                                |
+  |  $$equation here$$                                      (2.1)  |
+  |                                                                |
+  +----------------------------------------------------------------+
+  Clean, matches old paper, equation number restored
+
+================================================================================
+ROLLBACK INSTRUCTIONS
+================================================================================
+
+If issues occur:
+
+1. Restore from backup:
+   cp backups/formula-display-fix-[timestamp]/* .
+
+2. Remove CSS link from formulas.html:
+   Delete: <link rel="stylesheet" href="css/formula-display-fix.css">
+
+3. Revert code changes in:
+   - formulas.html
+   - js/pm-formula-loader.js
+   - js/pm-formula-component.js
+
+4. Clear browser cache:
+   Ctrl+Shift+R (or Cmd+Shift+R on Mac)
+
+================================================================================
+ADDITIONAL NOTES
+================================================================================
+
+1. The css/formula-display-fix.css file uses !important flags to override
+   existing styles without breaking other functionality.
+
+2. Equation numbers are extracted from the formula.section property.
+   Make sure this property is set in your formula JSON data.
+
+3. All changes are backward compatible. Formulas without section numbers
+   will simply not show an equation number.
+
+4. MathJax re-typesetting is preserved and will work as before.
+
+5. Print styles are included for generating academic papers.
+
+6. Mobile responsiveness is maintained with proper media queries.
+
+================================================================================
+SUPPORT
+================================================================================
+
+If you encounter issues:
+
+1. Check browser console for JavaScript errors
+2. Verify CSS file is loading: check Network tab in DevTools
+3. Confirm JSON data has section property for equation numbers
+4. Test with examples/formula-styling-comparison.html first
+
+For questions: AndrewKWatts@Gmail.com
+
+================================================================================

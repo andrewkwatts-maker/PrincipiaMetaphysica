@@ -1,0 +1,231 @@
+{
+  "version": "1.0",
+  "description": "Foundational physics concepts that underpin Principia Metaphysica",
+  "foundations": {
+    "gravity": {
+      "category": "General Relativity & Gravity",
+      "description": "The mathematical framework describing gravity, spacetime curvature, and the geometric nature of gravitational phenomena.",
+      "items": [
+        {
+          "id": "einstein-field-equations",
+          "title": "Einstein Field Equations",
+          "year": 1915,
+          "equation": "G<sub>&mu;&nu;</sub> + &Lambda;g<sub>&mu;&nu;</sub> = 8&pi;G T<sub>&mu;&nu;</sub>",
+          "summary": "The fundamental equations of General Relativity describing how matter and energy curve spacetime.",
+          "badge": "established",
+          "link": "einstein-field-equations.html"
+        },
+        {
+          "id": "einstein-hilbert-action",
+          "title": "Einstein-Hilbert Action",
+          "year": 1915,
+          "equation": "S = &int; d<sup>4</sup>x &radic;|g| R",
+          "summary": "The variational principle from which Einstein's field equations are derived.",
+          "badge": "established",
+          "link": "einstein-hilbert-action.html"
+        },
+        {
+          "id": "ricci-tensor",
+          "title": "Ricci Tensor & Scalar",
+          "year": 1900,
+          "equation": "R<sub>&mu;&nu;</sub>, R = g<sup>&mu;&nu;</sup>R<sub>&mu;&nu;</sub>",
+          "summary": "Mathematical objects describing the curvature of spacetime in General Relativity.",
+          "badge": "established",
+          "link": "ricci-tensor.html"
+        },
+        {
+          "id": "metric-tensor",
+          "title": "Metric Tensor",
+          "year": 1854,
+          "equation": "ds&sup2; = g<sub>&mu;&nu;</sub> dx<sup>&mu;</sup>dx<sup>&nu;</sup>",
+          "summary": "The fundamental object describing distances and geometry in curved spacetime.",
+          "badge": "established",
+          "link": "metric-tensor.html"
+        }
+      ]
+    },
+    "quantum": {
+      "category": "Quantum Field Theory",
+      "description": "The quantum mechanical framework for particles and fields, including relativistic wave equations and gauge theories.",
+      "items": [
+        {
+          "id": "dirac-equation",
+          "title": "Dirac Equation",
+          "year": 1928,
+          "equation": "(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi; = 0",
+          "summary": "The relativistic quantum equation describing spin-1/2 fermions like electrons.",
+          "badge": "established",
+          "link": "dirac-equation.html"
+        },
+        {
+          "id": "dirac-lagrangian",
+          "title": "Dirac Lagrangian",
+          "year": 1928,
+          "equation": "&Lscr; = <span style=\"text-decoration: overline;\">&psi;</span>(i&gamma;<sup>&mu;</sup>&part;<sub>&mu;</sub> - m)&psi;",
+          "summary": "The Lagrangian formulation of the Dirac equation for fermion dynamics.",
+          "badge": "established",
+          "link": "dirac-equation.html"
+        },
+        {
+          "id": "clifford-algebra",
+          "title": "Clifford Algebra",
+          "year": 1878,
+          "equation": "{&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2g<sup>&mu;&nu;</sup>",
+          "summary": "The anticommutation relations defining the gamma matrices used in the Dirac equation.",
+          "badge": "established",
+          "link": "clifford-algebra.html"
+        },
+        {
+          "id": "yang-mills",
+          "title": "Yang-Mills Theory",
+          "year": 1954,
+          "equation": "&Lscr; = -&frac14;F<sub>&mu;&nu;</sub><sup>a</sup>F<sup>a&mu;&nu;</sup>",
+          "summary": "Non-abelian gauge theory forming the basis of the Standard Model gauge structure.",
+          "badge": "established",
+          "link": "yang-mills.html"
+        },
+        {
+          "id": "dirac-spinor",
+          "title": "Dirac Spinors",
+          "year": 1928,
+          "equation": "&psi; = (&psi;<sub>L</sub>, &psi;<sub>R</sub>)<sup>T</sup>",
+          "summary": "Four-component wavefunctions describing fermions with both left and right chirality.",
+          "badge": "established",
+          "link": "dirac-spinor.html"
+        }
+      ]
+    },
+    "unification": {
+      "category": "Extra Dimensions & Unification",
+      "description": "Theoretical frameworks for unifying forces through extra dimensions and higher symmetries.",
+      "items": [
+        {
+          "id": "kaluza-klein",
+          "title": "Kaluza-Klein Theory",
+          "year": 1921,
+          "equation": "13D &rarr; 7D &rarr; 6D &rarr; 4D",
+          "summary": "Dimensional reduction mechanism unifying gravity and electromagnetism through extra dimensions.",
+          "badge": "established",
+          "link": "kaluza-klein.html"
+        },
+        {
+          "id": "g2-manifolds",
+          "title": "G₂ Manifolds",
+          "year": 1987,
+          "equation": "7D holonomy manifolds",
+          "summary": "Seven-dimensional Riemannian manifolds with special holonomy, used for M-theory compactifications.",
+          "badge": "pm-specific",
+          "link": "g2-manifolds.html"
+        },
+        {
+          "id": "calabi-yau",
+          "title": "Calabi-Yau Manifolds",
+          "year": 1954,
+          "equation": "Ricci-flat Kähler manifolds",
+          "summary": "Complex manifolds with SU(n) holonomy used in string theory compactifications.",
+          "badge": "established",
+          "link": "calabi-yau.html"
+        },
+        {
+          "id": "so10-gut",
+          "title": "SO(10) Grand Unification",
+          "year": 1974,
+          "equation": "16-dimensional spinor representation",
+          "summary": "Grand unified theory embedding the Standard Model in a single SO(10) gauge group.",
+          "badge": "established",
+          "link": "so10-gut.html"
+        }
+      ]
+    },
+    "thermodynamics": {
+      "category": "Thermodynamics & Statistical Mechanics",
+      "description": "The connection between thermodynamics, entropy, and the emergence of time from quantum information.",
+      "items": [
+        {
+          "id": "boltzmann-entropy",
+          "title": "Boltzmann Entropy",
+          "year": 1877,
+          "equation": "S = k<sub>B</sub> ln &Omega;",
+          "summary": "Statistical definition of entropy relating disorder to the number of microstates.",
+          "badge": "established",
+          "link": "boltzmann-entropy.html"
+        },
+        {
+          "id": "kms-condition",
+          "title": "KMS Condition",
+          "year": 1957,
+          "equation": "Thermal equilibrium states",
+          "summary": "Mathematical characterization of thermal equilibrium in quantum field theory.",
+          "badge": "established",
+          "link": "kms-condition.html"
+        },
+        {
+          "id": "tomita-takesaki",
+          "title": "Tomita-Takesaki Theory",
+          "year": 1970,
+          "equation": "Modular automorphisms",
+          "summary": "Mathematical framework connecting thermodynamics to the structure of quantum algebras.",
+          "badge": "established",
+          "link": "tomita-takesaki.html"
+        },
+        {
+          "id": "hawking-temperature",
+          "title": "Hawking Temperature",
+          "year": 1974,
+          "equation": "T<sub>H</sub> = &hbar;c&sup3;/(8&pi;GMk<sub>B</sub>)",
+          "summary": "Temperature of thermal radiation emitted by black holes due to quantum effects.",
+          "badge": "established",
+          "link": "hawking-temperature.html"
+        },
+        {
+          "id": "unruh-effect",
+          "title": "Unruh Effect",
+          "year": 1976,
+          "equation": "T = &hbar;a/(2&pi;ck<sub>B</sub>)",
+          "summary": "Accelerated observers detect thermal radiation in the quantum vacuum.",
+          "badge": "established",
+          "link": "unruh-effect.html"
+        }
+      ]
+    },
+    "algebra": {
+      "category": "Mathematical Structures",
+      "description": "The algebraic and geometric structures underlying modern theoretical physics.",
+      "items": [
+        {
+          "id": "clifford-algebra",
+          "title": "Clifford Algebra",
+          "year": 1878,
+          "equation": "{&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2g<sup>&mu;&nu;</sup>",
+          "summary": "Geometric algebra encoding spacetime structure through gamma matrix anticommutation.",
+          "badge": "established",
+          "link": "clifford-algebra.html"
+        }
+      ]
+    },
+    "geometry": {
+      "category": "Differential Geometry",
+      "description": "The mathematical tools for describing curved spaces and their properties.",
+      "items": [
+        {
+          "id": "metric-tensor",
+          "title": "Metric Tensor",
+          "year": 1854,
+          "equation": "ds&sup2; = g<sub>&mu;&nu;</sub> dx<sup>&mu;</sup>dx<sup>&nu;</sup>",
+          "summary": "Defines the geometry of spacetime, measuring distances and angles.",
+          "badge": "established",
+          "link": "metric-tensor.html"
+        },
+        {
+          "id": "ricci-tensor",
+          "title": "Ricci Tensor",
+          "year": 1900,
+          "equation": "R<sub>&mu;&nu;</sub> = R<sup>&rho;</sup><sub>&mu;&rho;&nu;</sub>",
+          "summary": "Contraction of the Riemann curvature tensor describing spacetime curvature.",
+          "badge": "established",
+          "link": "ricci-tensor.html"
+        }
+      ]
+    }
+  }
+}

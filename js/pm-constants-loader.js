@@ -59,11 +59,41 @@
             // Gauge parameters - M_PS is in breaking_chain
             'parameters.gauge.m_ps': 'simulations.breaking_chain.m_ps',
 
-            // Validation -> Statistics mapping
-            'validation.total_predictions': 'statistics.total_parameters',
-            'validation.exact_matches': 'statistics.exact_matches',
-            'validation.predictions_within_1sigma': 'statistics.within_1sigma',
-            'validation.predictions_within_2sigma': 'statistics.within_2sigma',
+            // Validation -> Framework Statistics mapping (use framework_statistics for accurate counts)
+            'validation.total_predictions': 'framework_statistics.total_sm_parameters',
+            'validation.total_parameters': 'framework_statistics.total_sm_parameters',
+            'validation.exact_matches': 'framework_statistics.exact_matches',
+            'validation.predictions_within_1sigma': 'framework_statistics.within_1_sigma',
+            'validation.predictions_within_2sigma': 'framework_statistics.within_2_sigma',
+            'validation.success_rate': 'framework_statistics.success_rate_1sigma',
+            'validation.calibrated_parameters': 'framework_statistics.calibrated_parameters',
+
+            // PMNS angles
+            'pmns_matrix.theta_23': 'simulations.pmns_geometric_v14_1.theta_23',
+            'pmns_matrix.theta_12': 'simulations.pmns_geometric_v14_1.theta_12',
+            'pmns_matrix.theta_13': 'simulations.pmns_geometric_v14_1.theta_13',
+            'pmns_matrix.delta_cp': 'simulations.pmns_geometric_v14_1.delta_cp',
+
+            // Common parameter shortcuts
+            'topology.b3': 'parameters.topology.B3',
+            'topology.b2': 'parameters.topology.B2',
+            'topology.chi_eff': 'parameters.topology.CHI_EFF',
+            'topology.n_gen': 'parameters.topology.n_gen',
+
+            // KK spectrum
+            'kk_spectrum.m1_central': 'simulations.kk_graviton.m_KK_TeV',
+            'kk_spectrum.m1_TeV': 'simulations.kk_graviton.m_KK_TeV',
+
+            // Proton decay
+            'proton_decay.tau_p_years': 'simulations.proton_decay.tau_p_years',
+            'proton_decay.alpha_GUT_inv': 'simulations.proton_decay.alpha_gut_inv',
+
+            // Higgs
+            'higgs_mass.m_h_GeV': 'simulations.higgs_mass.m_h_GeV',
+
+            // Dark energy
+            'dark_energy.w0': 'parameters.dark_energy.w0',
+            'dark_energy.w0_PM': 'parameters.dark_energy.w0',
         },
 
         /**
@@ -212,11 +242,42 @@
     // LOADING FROM theory_output.json
     // ========================================================================
 
+    // Session storage key for caching
+    const CACHE_KEY = 'pm_theory_output_cache';
+    const CACHE_VERSION_KEY = 'pm_theory_output_version';
+    const EXPECTED_VERSION = '16.1'; // Update when theory_output.json structure changes
+
     async function loadConstants() {
         if (PM._loaded) return true;
         if (PM._loading) return PM._loading;
 
         PM._loading = (async () => {
+            // ================================================================
+            // STRATEGY 0: Check sessionStorage cache first (fast path)
+            // ================================================================
+            try {
+                const cachedVersion = sessionStorage.getItem(CACHE_VERSION_KEY);
+                const cachedData = sessionStorage.getItem(CACHE_KEY);
+
+                if (cachedData && cachedVersion === EXPECTED_VERSION) {
+                    const data = JSON.parse(cachedData);
+                    PM._data = data;
+                    PM._loaded = true;
+
+                    // Create flat access to simulations
+                    if (data.simulations) {
+                        for (const [key, value] of Object.entries(data.simulations)) {
+                            PM[key] = value;
+                        }
+                    }
+
+                    console.log('[PM Constants] Loaded from session cache');
+                    return true;
+                }
+            } catch (cacheError) {
+                console.warn('[PM Constants] Session cache not available:', cacheError.message);
+            }
+
             const pathPrefixes = [
                 '',                          // Root directory (theory_output.json)
                 'AUTO_GENERATED/',           // AUTO_GENERATED folder
@@ -240,6 +301,15 @@
                         const data = await response.json();
                         PM._data = data;
                         PM._loaded = true;
+
+                        // Cache to sessionStorage for fast subsequent page loads
+                        try {
+                            sessionStorage.setItem(CACHE_KEY, JSON.stringify(data));
+                            sessionStorage.setItem(CACHE_VERSION_KEY, EXPECTED_VERSION);
+                            console.log('[PM Constants] Cached to session storage');
+                        } catch (storageError) {
+                            console.warn('[PM Constants] Could not cache:', storageError.message);
+                        }
 
                         // Create flat access to simulations
                         if (data.simulations) {
