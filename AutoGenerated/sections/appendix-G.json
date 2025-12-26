@@ -1,0 +1,120 @@
+{
+  "id": "G",
+  "title": "Appendix G: Effective Torsion from Flux Quantization",
+  "type": "appendix",
+  "abstract": "TCS G₂ manifolds are Ricci-flat (geometric torsion τ = 0). The effective torsion arises from G₄ flux quantization, yielding T_ω = -0.875 with Spin(7) spinor fraction correction.",
+  "subsections": [
+    {
+      "number": "G.1",
+      "title": "Flux Quantization",
+      "id": "flux_quantization",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "TCS G₂ manifolds are Ricci-flat (geometric torsion τ = 0). The effective torsion arises from G₄ flux quantization."
+        },
+        {
+          "type": "equation",
+          "content": "$$N_{\\text{flux}} = \\frac{\\chi_{\\text{eff}}}{6} = \\frac{144}{6} = 24$$",
+          "label": "G.1",
+          "formulaRef": "flux-quantization"
+        },
+        {
+          "type": "paragraph",
+          "content": "The divisor 6 has geometric origin in M-theory: χ_eff = 6 N_flux from the index theorem on G₂ manifolds (Acharya et al., 2001)."
+        }
+      ],
+      "formulas": [
+        "flux-quantization"
+      ],
+      "paramRefs": [
+        "CHI_EFF",
+        "n_flux"
+      ],
+      "crossRefs": []
+    },
+    {
+      "number": "G.2",
+      "title": "Effective Torsion",
+      "id": "effective_torsion_derivation",
+      "content_blocks": [
+        {
+          "type": "equation",
+          "content": "$$T_{\\omega} = -\\frac{b_3}{N_{\\text{flux}}} = -\\frac{24}{24} = -1.000$$",
+          "label": "G.2a",
+          "formulaRef": "effective-torsion"
+        },
+        {
+          "type": "paragraph",
+          "content": "The effective torsion is derived from pure G₄ flux quantization with no tuning constants. Since N_flux = χ_eff/6 = 24 equals b₃ = 24 exactly, each coassociative 3-cycle carries exactly one unit of G₄ flux. The topological result T_ω = -1.000 is then corrected by the Spin(7) spinor fraction (7/8): in 7D G₂ manifolds, G₄ flux stabilizes 7 of 8 spinor components, leaving 1 zero mode per generation."
+        },
+        {
+          "type": "equation",
+          "content": "$$T_{\\omega} = -1.000 \\times \\frac{7}{8} = -0.875$$",
+          "label": "G.2b",
+          "formulaRef": "effective-torsion-spinor"
+        },
+        {
+          "type": "paragraph",
+          "content": "This agrees with the phenomenological value -0.884 to 1.02%. The GW dispersion prediction is η = e^|T_ω|/b₃ = e^0.875/24 ≈ 0.100."
+        }
+      ],
+      "formulas": [
+        "effective-torsion",
+        "effective-torsion-spinor"
+      ],
+      "paramRefs": [
+        "B3",
+        "n_flux",
+        "CHI_EFF"
+      ],
+      "crossRefs": [
+        "appendix-I"
+      ]
+    },
+    {
+      "number": "G.3",
+      "title": "Simulation Code",
+      "id": "torsion_simulation_code",
+      "content_blocks": [
+        {
+          "type": "code",
+          "language": "python",
+          "content": "# torsion_spinor_fraction_v12_8.py\ndef effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:\n    \"\"\"Calculate effective torsion with Spin(7) spinor fraction correction.\"\"\"\n    N_flux = chi_eff / 6  # = 24 (standard G2 flux quantization)\n    T_topological = -b3 / N_flux  # = -24/24 = -1.000\n\n    # Spinor fraction from Spin(7) structure:\n    # - 8 total spinor components in 7D G2 manifolds\n    # - G4 flux stabilizes 7 components (mass terms)\n    # - 1 zero mode per generation remains\n    SPINOR_FRACTION = 7 / 8  # = 0.875\n\n    T_omega = T_topological * SPINOR_FRACTION  # = -0.875\n    return T_omega\n\n# Result: T_omega = -0.875 (1.02% agreement with phenomenological -0.884)",
+          "label": "Python code for effective torsion calculation with spinor correction"
+        }
+      ],
+      "formulas": [],
+      "paramRefs": [
+        "B3",
+        "CHI_EFF",
+        "n_flux"
+      ],
+      "crossRefs": []
+    }
+  ],
+  "references": {
+    "formulaRefs": [
+      "flux-quantization",
+      "effective-torsion",
+      "effective-torsion-spinor"
+    ],
+    "paramRefs": [
+      "CHI_EFF",
+      "B3",
+      "n_flux"
+    ],
+    "crossRefs": [
+      "appendix-I"
+    ]
+  },
+  "navigation": {
+    "prevSection": "appendix-F",
+    "nextSection": "appendix-H"
+  },
+  "metadata": {
+    "subsection_count": 3,
+    "formula_count": 3,
+    "param_count": 3
+  }
+}

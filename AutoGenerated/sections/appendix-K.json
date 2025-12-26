@@ -1,0 +1,310 @@
+{
+  "section_id": "appendix-k",
+  "section_number": "K",
+  "section_title": "Transparency Statement",
+  "full_title": "Appendix K: Transparency Statement",
+  "subtitle": "Parameter Classification, Validation Statistics, and Outstanding Issues Resolution",
+  "type": "appendix",
+  "abstract": "Appendix K: Comprehensive transparency statement documenting the classification of all 58 Standard Model parameters (derived, semi-derived, calibrated, constrained), validation statistics showing predictions within experimental bounds, and resolution status of all previously identified theoretical issues including moduli stabilization, EFT validity, and parameter derivations.",
+  "agent_id": "appendix_k_extractor",
+  "migration_date": "2025-12-26",
+  "status": "COMPLETE",
+  "navigation": {
+    "prevSection": "appendix-j",
+    "nextSection": "appendix-l"
+  },
+  "subsections": [
+    {
+      "subsection_id": "K.1",
+      "html_id": "appendix-k",
+      "title": "K.1 Parameter Classification",
+      "paragraphs": [],
+      "equations": [],
+      "code_blocks": [],
+      "lists": [],
+      "tables": [
+        {
+          "caption": "Parameter Classification by Derivation Status",
+          "headers": ["Status", "Parameters", "Count"],
+          "rows": [
+            {
+              "Status": "DERIVED",
+              "Parameters": "$M_{\\text{GUT}}$, $\\alpha_{\\text{GUT}}$, $n_{\\text{gen}}$, $\\theta_{23}$, $w_0$, $w_a$, $d_{\\text{eff}}$, $D=26$, topological",
+              "Count": "~52"
+            },
+            {
+              "Status": "SEMI-DERIVED",
+              "Parameters": "$\\theta_{12}$, $\\tau_p$, masses",
+              "Count": "~4"
+            },
+            {
+              "Status": "CALIBRATED",
+              "Parameters": "<em>None</em> ($\\theta_{13}$, $\\delta_{CP}$ now derived)",
+              "Count": "0"
+            },
+            {
+              "Status": "CONSTRAINED",
+              "Parameters": "Re$(T)$ from $m_h = 125.10$ GeV",
+              "Count": "1"
+            }
+          ]
+        }
+      ],
+      "content_type": "summary"
+    },
+    {
+      "subsection_id": "K.2",
+      "html_id": "appendix-k",
+      "title": "K.2 Validation Statistics",
+      "paragraphs": [
+        "<em>Note: Agreement percentages should be interpreted carefully. The single constraint (Higgs mass) indirectly influences several derived quantities through the moduli stabilization chain. Independent experimental tests are essential.</em>"
+      ],
+      "equations": [],
+      "code_blocks": [],
+      "lists": [
+        {
+          "type": "ul",
+          "items": [
+            "<strong>Predictions within 1σ:</strong> <span data-stat-id=\"within_1\\sigma\">45</span> of <span data-stat-id=\"total_parameters\">48</span>",
+            "<strong>Predictions within 2σ:</strong> <span data-stat-id=\"within_2\\sigma\">47</span> of <span data-stat-id=\"total_parameters\">48</span>",
+            "<strong>Calibrated parameters:</strong> 0 ($\\theta_{13}$, $\\delta_{CP}$ derived geometrically)",
+            "<strong>Constraints:</strong> 1 ($m_h$ fixes Re$(T)$)",
+            "<strong>Phenomenological inputs:</strong> 0"
+          ]
+        }
+      ],
+      "tables": [],
+      "content_type": "summary"
+    },
+    {
+      "subsection_id": "K.3",
+      "html_id": "appendix-k",
+      "title": "K.3 Outstanding Issues Resolution",
+      "paragraphs": [],
+      "equations": [],
+      "code_blocks": [],
+      "lists": [],
+      "tables": [
+        {
+          "caption": "Outstanding Issues Resolution Status",
+          "headers": ["Issue", "Status", "Resolution"],
+          "rows": [
+            {
+              "Issue": "$\\theta_{23}$ circular reasoning",
+              "Status": "RESOLVED",
+              "Resolution": "G<sub>2</sub> holonomy SU(3) symmetry"
+            },
+            {
+              "Issue": "$T_\\omega$ not in literature",
+              "Status": "RESOLVED",
+              "Resolution": "Effective torsion from G-flux"
+            },
+            {
+              "Issue": "$\\kappa$ calibrated",
+              "Status": "RESOLVED",
+              "Resolution": "$10\\pi$ formula from 5-cycle volume"
+            },
+            {
+              "Issue": "Divisor 48 vs 24",
+              "Status": "RESOLVED",
+              "Resolution": "Z<sub>2</sub> from Sp(2,ℝ) gauge fixing"
+            },
+            {
+              "Issue": "$d_{\\text{eff}}$ coefficient 0.5",
+              "Status": "RESOLVED",
+              "Resolution": "Ghost central charge ratio"
+            },
+            {
+              "Issue": "Moduli Stabilization (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "G₂-racetrack: $W = Ae^{-a\\Psi} - Be^{-b\\Psi}$, $a = 2\\pi/24$, $b = 2\\pi/25$"
+            },
+            {
+              "Issue": "EFT Validity Regime (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "AS fixed point + geometric suppression $1/b_3 \\approx 4\\%$ at GUT scale"
+            },
+            {
+              "Issue": "Pneuma Condensate Formation (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "G₂ spinor bilinears: \\phi ~ eta_bar Gamma eta (Joyce 2000)"
+            },
+            {
+              "Issue": "Doublet-Triplet Splitting (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "Native TCS Topological Filter (triplets to shadow sector, topologically disconnected from 4D vacuum)"
+            },
+            {
+              "Issue": "Breaking Chain Selection (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "Pati-Salam geometrically preferred; Pneuma (54<sub>H</sub>) alignment with G<sub>2</sub> curvature"
+            },
+            {
+              "Issue": "CY4 Toric Construction χ=72 (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "Z<sub>2</sub>×Z<sub>2</sub> quotient of CICY χ=288; preserves n<sub>gen</sub>=3 via TCS #187"
+            },
+            {
+              "Issue": "Ab Initio Threshold Corrections (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "KK tower from TCS spectrum + Asymptotic Safety fixed point → 1/α<sub>GUT</sub>=23.54"
+            },
+            {
+              "Issue": "126<sub>H</sub> Condensate Profile (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "Gaussian localization on b<sub>3</sub>=24 3-cycles; M<sub>R</sub>/M<sub>Pl</sub> ~ e<sup>-b<sub>3</sub>/2π</sup>"
+            },
+            {
+              "Issue": "Higgs Sector Spectrum (v14.1)",
+              "Status": "RESOLVED",
+              "Resolution": "Native TCS Topological Filter: 1 doublet (SM Higgs) + Desert (5 TeV to M<sub>GUT</sub>)"
+            },
+            {
+              "Issue": "37D Subgroup H (Open Question 1)",
+              "Status": "RESOLVED",
+              "Resolution": "Stabilizer is SO(12,1); 2T-physics phase space reduction (Bars 2006)"
+            },
+            {
+              "Issue": "Vielbein Map (Open Question 2)",
+              "Status": "RESOLVED",
+              "Resolution": "Induced gravity from Pneuma bilinears (Akama/Wetterich/Sakharov)"
+            },
+            {
+              "Issue": "Mashiach Field Stabilization (Open Question 3)",
+              "Status": "RESOLVED",
+              "Resolution": "G<sub>2</sub> volume modulus Re(T) stabilized via racetrack potential (Acharya/KKLT)"
+            },
+            {
+              "Issue": "Quantum Corrections to Freund-Rubin (Open Question 4)",
+              "Status": "RESOLVED",
+              "Resolution": "Racetrack potential (primary) + Casimir energy V<sub>Casimir</sub> ~ ζ<sub>G₂</sub>(-1)/R<sup>8</sup> (subleading); full V<sub>eff</sub> includes flux, curvature, racetrack, and quantum corrections ensuring stability"
+            },
+            {
+              "Issue": "$\\theta_{13}$ derivation",
+              "Status": "RESOLVED",
+              "Resolution": "Geometric formula: $\\sin\\theta_{13} = \\sqrt{b_2 n_{\\text{gen}}}/b_3 \\times (1 + S/2\\chi_{\\text{eff}}) = 8.65°$ (v14.1)"
+            },
+            {
+              "Issue": "$\\delta_{CP}$ derivation",
+              "Status": "RESOLVED",
+              "Resolution": "Geometric formula: $\\delta_{CP} = \\pi(n_{\\text{gen}} + b_2)/(2n_{\\text{gen}}) + \\pi n_{\\text{gen}}/b_3 = 232.5°$ (v14.1)"
+            },
+            {
+              "Issue": "VEV coefficient",
+              "Status": "ACKNOWLEDGED",
+              "Resolution": "Analogous to KKLT flux choice"
+            }
+          ]
+        }
+      ],
+      "content_type": "summary"
+    },
+    {
+      "subsection_id": "K.4",
+      "html_id": "appendix-k",
+      "title": "K.4 Source of Truth",
+      "paragraphs": [
+        "All parameter values trace to <code>theory_output.json</code> generated by <code>run_all_simulations.py</code>. Simulation code is available in the <code>simulations/</code> directory with complete derivation chains documented in v12.8 Python modules."
+      ],
+      "equations": [],
+      "code_blocks": [],
+      "lists": [],
+      "tables": [],
+      "content_type": "summary"
+    }
+  ],
+  "content_blocks": [],
+  "formulas_referenced": [],
+  "parameters_used": [
+    "gauge.M_GUT",
+    "gauge.alpha_GUT",
+    "topology.n_gen",
+    "pmns.theta_23",
+    "pmns.theta_12",
+    "pmns.theta_13",
+    "pmns.delta_CP",
+    "cosmology.w0",
+    "cosmology.wa",
+    "dimensions.d_eff",
+    "dimensions.D_bulk",
+    "topology.chi_eff",
+    "topology.b2",
+    "topology.b3",
+    "moduli.Re_T",
+    "higgs.m_h",
+    "proton_decay.tau_p"
+  ],
+  "cross_references": {
+    "internal": [],
+    "external": [
+      "theory_output.json",
+      "run_all_simulations.py",
+      "Joyce 2000",
+      "Bars 2006",
+      "Acharya",
+      "KKLT",
+      "Akama",
+      "Wetterich",
+      "Sakharov"
+    ],
+    "appendices": []
+  },
+  "simulation_file": "run_all_simulations.py",
+  "website_only": {
+    "beginner_explanations": [
+      {
+        "term": "Derived Parameters",
+        "explanation": "Parameters that are calculated directly from the geometric structure of the theory without any experimental input. Examples include the number of generations (n_gen = 3) from topological properties."
+      },
+      {
+        "term": "Semi-Derived Parameters",
+        "explanation": "Parameters that are partially derived from theory but may require some additional assumptions or approximations to match precise experimental values."
+      },
+      {
+        "term": "Calibrated Parameters",
+        "explanation": "Parameters that would be fitted to match experimental data. In PM v14.1, there are zero calibrated parameters - all mixing angles are now geometrically derived."
+      },
+      {
+        "term": "Constrained Parameters",
+        "explanation": "Parameters that are fixed by a single experimental measurement. In PM, Re(T) is constrained by the Higgs mass measurement m_h = 125.10 GeV."
+      },
+      {
+        "term": "Moduli Stabilization",
+        "explanation": "The process of determining the values of geometric parameters (moduli) in string compactifications. PM uses a racetrack potential mechanism to stabilize the G₂ volume modulus."
+      },
+      {
+        "term": "EFT Validity",
+        "explanation": "The energy regime where the Effective Field Theory description remains valid. Higher-order quantum corrections must be small compared to leading-order terms."
+      }
+    ],
+    "info_boxes": [
+      {
+        "type": "note",
+        "title": "Zero Calibration Achievement",
+        "content": "As of version 14.1, Principia Metaphysica has achieved zero calibrated parameters. Previously calibrated angles θ₁₃ and δ_CP are now fully derived from G₂ topology through geometric formulas involving Betti numbers and Euler characteristic."
+      },
+      {
+        "type": "definition",
+        "title": "Validation Statistics",
+        "content": "45 of 48 predictions fall within 1σ experimental bounds, and 47 of 48 within 2σ. This high agreement is achieved with only one constraint (Higgs mass) rather than fitting multiple parameters."
+      },
+      {
+        "type": "warning",
+        "title": "Interpretation Caveat",
+        "content": "While validation statistics are impressive, the single Higgs mass constraint indirectly influences many derived quantities through the moduli stabilization chain. Independent experimental tests of novel predictions (proton decay, gravitational wave dispersion, dark energy evolution) are essential to validate the framework."
+      }
+    ],
+    "derivation_boxes": [
+      {
+        "type": "theorem",
+        "title": "Parameter Classification Hierarchy",
+        "content": "Level 1: Topological (Exact)\nDirect from manifold topology: n_gen = 3, χ_eff = 144, b₂ = 4, b₃ = 24\nNo uncertainty, exactly determined by G₂ structure.\n\nLevel 2: Derived (Geometric)\nFrom moduli and cycles: M_GUT, α_GUT, θ₂₃, θ₁₃, δ_CP, w₀, w_a\nTypical uncertainty ~1-5% from geometric approximations.\n\nLevel 3: Semi-Derived (Phenomenological)\nRequire additional input: θ₁₂, fermion masses, τ_p\nUncertainty ~5-15% from effective Yukawa couplings.\n\nLevel 4: Constrained (Experimental)\nFixed by measurement: Re(T) from m_h = 125.10 GeV\nSingle constraint determines volume modulus."
+      },
+      {
+        "type": "theorem",
+        "title": "Outstanding Issues Resolution Path",
+        "content": "Historical Issues (Pre-v14.1):\n- Circular reasoning in mixing angles → Resolved via G₂ holonomy\n- Effective torsion T_ω origin → Resolved via G-flux mechanism\n- Moduli stabilization → Resolved via racetrack potential\n\nOpen Questions (Resolved in v14.1):\n- 37D subgroup H → Identified as SO(12,1) stabilizer\n- Vielbein map → Derived from Pneuma bilinear condensate\n- Quantum corrections → Full V_eff with racetrack + Casimir\n\nRecent Achievements (v14.1):\n- θ₁₃ geometric derivation → 8.65° formula from Betti numbers\n- δ_CP geometric derivation → 232.5° from cycle orientations\n- Zero calibrated parameters → All mixing angles now derived"
+      }
+    ]
+  }
+}
