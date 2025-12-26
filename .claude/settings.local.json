@@ -392,7 +392,9 @@
       "Bash(simulations.html )",
       "Bash(beginners-guide.html )",
       "Bash(principia-metaphysica-paper.html )",
-      "Bash(index.html )"
+      "Bash(index.html )",
+      "Bash(git commit -m \"$(cat <<''EOF''\nPolish formula and parameter metadata (16 agents)\n\nFormula metadata enhancements:\n- Added proper section/sectionId assignments\n- Added inputParams and outputParams arrays\n- Added derivedFrom relationships\n- Enhanced terms definitions\n- Corrected equationNumber formats\n- Total: 110 formulas with complete metadata\n\nParameter metadata additions:\n- Light quark masses (m_u, m_d, m_c, m_s)\n- Heavy fermions (m_t, m_b, m_tau, m_e, m_mu)\n- Gauge couplings (alpha_em, alpha_s, sin2_theta_W)\n- Boson masses (m_W, m_Z, m_higgs)\n- CKM matrix elements\n- PMNS/neutrino parameters\n- Cosmological parameters (w0, wa, H0)\n- GUT-scale predictions\n- Total: 67 registry parameters with computed values\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix multiple site-wide bugs\n\n- HOME: Fix Sections header link to go to sections.html (not anchor)\n- HOME: Make Verified Values dynamically populated (VEV, neutrino masses, proton lifetime)\n- FOUNDATIONS: Fix G2 manifolds badge from PM-SPECIFIC to ESTABLISHED\n- FORMULAS/PARAMETERS: Add dark background for dropdown options (white text readable)\n- PAPER: Fix LaTeX errors (\\xrightarrow, \\arctan, \\alpha_T, \\gtrsim)\n- BEGINNERS: Fix pm-param component to use PM.get() for alias resolution\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
