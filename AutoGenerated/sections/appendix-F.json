@@ -1,0 +1,77 @@
+{
+  "id": "F",
+  "title": "Appendix F: Dimensional Decomposition",
+  "type": "appendix",
+  "abstract": "Explicit decomposition of the 26-dimensional bulk into observable and compactified dimensions: M^26 = M^4 × T^15 × G_2^7",
+  "subsections": [
+    {
+      "number": "F.1",
+      "title": "Compactification Structure",
+      "id": "compactification_structure",
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The 26-dimensional bulk decomposes explicitly into observable and compactified dimensions:"
+        },
+        {
+          "type": "equation",
+          "content": "$$\\mathcal{M}^{26} = \\mathcal{M}^4 \\times T^{15} \\times G_2^7$$",
+          "label": "26D bulk decomposition into observable 4D, 15-torus, and G₂ manifold"
+        },
+        {
+          "type": "table",
+          "headers": ["Component", "Dimensions", "Physical Role"],
+          "rows": [
+            ["$\\mathcal{M}^4$", "4", "Observable Minkowski spacetime"],
+            ["$T^{15}$", "15", "Torus for flux quantization"],
+            ["$G_2^7$", "7", "G₂ manifold generating chiral spectrum"]
+          ]
+        }
+      ],
+      "formulas": [],
+      "paramRefs": [
+        "D_bulk",
+        "D_observable"
+      ],
+      "crossRefs": []
+    },
+    {
+      "number": "F.2",
+      "title": "Simulation Code",
+      "id": "dimensional_decomposition_code",
+      "content_blocks": [
+        {
+          "type": "code",
+          "language": "python",
+          "content": "# dim_decomp_v12_8.py\ndef dim_decomp() -> Dict:\n    \"\"\"Explicit dimensional decomposition of 26D bulk to 4D observed.\"\"\"\n    total_dims = 26\n    observed = 4\n    extra = total_dims - observed  # 22\n    g2_dim = 7\n    t_dim = extra - g2_dim  # 15\n\n    return {\n        'decomposition': f'26D = 4D x T^{t_dim} x G2({g2_dim}D)',\n        'physics_role': {\n            'g2_manifold': 'Generates chiral fermions, determines n_gen = 3',\n            'torus': 'Allows flux quantization, moduli stabilization',\n            'observed': 'Standard Model physics'\n        }\n    }\n\n# Result: 26D = 4D x T^15 x G2(7D)",
+          "label": "Python code for dimensional decomposition calculation"
+        }
+      ],
+      "formulas": [],
+      "paramRefs": [
+        "D_bulk",
+        "D_observable",
+        "n_gen"
+      ],
+      "crossRefs": []
+    }
+  ],
+  "references": {
+    "formulaRefs": [],
+    "paramRefs": [
+      "D_bulk",
+      "D_observable",
+      "n_gen"
+    ],
+    "crossRefs": []
+  },
+  "navigation": {
+    "prevSection": "appendix-E",
+    "nextSection": "appendix-G"
+  },
+  "metadata": {
+    "subsection_count": 2,
+    "formula_count": 0,
+    "param_count": 3
+  }
+}
