@@ -485,38 +485,7 @@
 </head>
 <body>
     <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-content">
-                <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
-                    Principia Metaphysica
-                </div>
-                <nav>
-                    <ul>
-                        <li><a href="index.html#abstract">Abstract</a></li>
-                        <li><a href="beginners-guide.html">Beginner's Guide</a></li>
-                        <li><a href="sections.html">Sections</a></li>
-                        <li><a href="foundations/index.html">Foundations</a></li>
-                        <li><a href="references.html">References</a></li>
-                        <li><a href="formulas.html">Formulas</a></li>
-                        <li><a href="parameters.html">Parameters</a></li>
-                        <li><a href="principia-metaphysica-paper.html">Paper</a></li>
-                        <li><a href="simulations.html">Simulations</a></li>
-                        <li class="user-controls-nav">
-                            <div class="user-controls">
-                                <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-                                <span id="user-email"></span>
-                                <button id="logout-btn">Logout</button>
-                            </div>
-                            <button id="header-login-btn" class="header-login-btn">
-                                <img src="images/google-icon.svg" alt="G" class="google-icon-small">
-                                Login
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
+        <!-- Header injected by pm-header.js -->
 
         <!-- Sidebar Navigation -->
         <aside class="app-sidebar" id="sidebar">
@@ -920,7 +889,20 @@
     </script>
 
     <script type="module">
+        import { injectHeader } from './js/pm-header.js';
         import { setupAuthGuard } from './js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('sections', {
+                breadcrumbs: [
+                    { label: 'Paper Home', href: 'principia-metaphysica-paper.html' }
+                ],
+                currentLabel: 'Sections'
+            });
+        });
+
+        // Setup auth after header
         setupAuthGuard('sections');
     </script>
 </body>

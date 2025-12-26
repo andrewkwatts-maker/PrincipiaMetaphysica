@@ -14,8 +14,17 @@ import { trackUserLogin, trackUserLogout, trackPageView } from './firebase-analy
 // Current page identifier (set by page)
 let currentPageId = null;
 
+// Framework statistics cache
+let frameworkStats = null;
+
 // Auth state
 let isAuthenticated = false;
+
+// Session cache constants
+const SESSION_KEY = 'pm_auth_session';
+const SESSION_EXPIRY_MS = 30 * 60 * 1000; // 30 minutes
+const STATS_CACHE_KEY = 'pm_framework_stats';
+const STATS_CACHE_EXPIRY_MS = 60 * 60 * 1000; // 1 hour
 
 // Base path for assets (computed based on current location)
 function getBasePath() {
@@ -33,6 +42,155 @@ function getBasePath() {
 window.signInWithGoogle = signInWithGoogle;
 
 /**
+ * Get cached session from sessionStorage
+ * @returns {Object|null} Cached session object or null if expired/missing
+ */
+function getCachedSession() {
+  try {
+    const cached = sessionStorage.getItem(SESSION_KEY);
+    if (!cached) return null;
+
+    const session = JSON.parse(cached);
+
+    // Check if session has expired
+    if (Date.now() - session.timestamp > SESSION_EXPIRY_MS) {
+      sessionStorage.removeItem(SESSION_KEY);
+      return null;
+    }
+
+    return session;
+  } catch (error) {
+    console.warn('[PM Auth Guard] Error reading cached session:', error);
+    sessionStorage.removeItem(SESSION_KEY);
+    return null;
+  }
+}
+
+/**
+ * Cache session in sessionStorage
+ * @param {Object} user - Firebase user object
+ */
+function cacheSession(user) {
+  try {
+    const session = {
+      email: user.email,
+      displayName: user.displayName,
+      photoURL: user.photoURL,
+      uid: user.uid,
+      timestamp: Date.now()
+    };
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify(session));
+  } catch (error) {
+    console.warn('[PM Auth Guard] Error caching session:', error);
+  }
+}
+
+/**
+ * Clear cached session
+ */
+function clearCachedSession() {
+  try {
+    sessionStorage.removeItem(SESSION_KEY);
+  } catch (error) {
+    console.warn('[PM Auth Guard] Error clearing session:', error);
+  }
+}
+
+/**
+ * Fetch framework statistics from theory_output.json
+ * Used to dynamically populate the auth overlay description
+ */
+async function fetchFrameworkStats() {
+  // Check memory cache first
+  if (frameworkStats) return frameworkStats;
+
+  // Check sessionStorage cache
+  try {
+    const cached = sessionStorage.getItem(STATS_CACHE_KEY);
+    if (cached) {
+      const cachedData = JSON.parse(cached);
+      if (Date.now() - cachedData.timestamp < STATS_CACHE_EXPIRY_MS) {
+        frameworkStats = cachedData.stats;
+        return frameworkStats;
+      }
+    }
+  } catch (error) {
+    console.warn('[PM Auth Guard] Error reading cached stats:', error);
+  }
+
+  // Fetch from server
+  try {
+    const basePath = getBasePath();
+    const response = await fetch(`${basePath}theory_output.json`);
+    if (!response.ok) {
+      console.warn('[PM Auth Guard] Could not fetch theory_output.json, using defaults');
+      return getDefaultStats();
+    }
+
+    const data = await response.json();
+
+    // Extract framework statistics from theory_output.json
+    frameworkStats = {
+      totalParameters: data.framework_statistics?.total_sm_parameters || 58,
+      calibratedParameters: data.framework_statistics?.calibrated_parameters || 1,
+      manifoldType: data.framework_statistics?.manifold_type || 'G₂',
+      within1Sigma: data.framework_statistics?.within_1_sigma || 45,
+      exactMatches: data.framework_statistics?.exact_matches || 12,
+      successRate: data.framework_statistics?.success_rate_1sigma || 93.8
+    };
+
+    // Cache in sessionStorage
+    try {
+      sessionStorage.setItem(STATS_CACHE_KEY, JSON.stringify({
+        stats: frameworkStats,
+        timestamp: Date.now()
+      }));
+    } catch (error) {
+      console.warn('[PM Auth Guard] Error caching stats:', error);
+    }
+
+    return frameworkStats;
+  } catch (error) {
+    console.warn('[PM Auth Guard] Error fetching stats:', error);
+    return getDefaultStats();
+  }
+}
+
+/**
+ * Default statistics if theory_output.json is unavailable
+ */
+function getDefaultStats() {
+  return {
+    totalParameters: 58,
+    calibratedParameters: 1,
+    manifoldType: 'G₂',
+    within1Sigma: 45,
+    exactMatches: 12,
+    successRate: 93.8
+  };
+}
+
+/**
+ * Generate dynamic description from framework statistics
+ */
+function generateDescription(stats) {
+  const cal = stats.calibratedParameters;
+  const plural = cal !== 1 ? 's' : '';
+  return `A unified geometric framework deriving all ${stats.totalParameters} Standard Model parameters from a single ${stats.manifoldType} manifold with minimal calibration (${cal} fitted parameter${plural})`;
+}
+
+/**
+ * Update the auth overlay description with dynamic values
+ */
+async function updateAuthDescription() {
+  const descElement = document.querySelector('.auth-description');
+  if (!descElement) return;
+
+  const stats = await fetchFrameworkStats();
+  descElement.textContent = generateDescription(stats);
+}
+
+/**
  * Initialize the auth guard
  * @param {string} pageId - Identifier for this page (e.g., 'index', 'fermion-sector')
  */
@@ -41,51 +199,144 @@ export function setupAuthGuard(pageId = 'index') {
 
   console.log(`[PM Auth Guard] Setting up for page: ${pageId}`);
 
-  // Start with loading state (prevents flicker)
-  document.body.classList.add('auth-loading');
-  document.body.classList.remove('not-authenticated', 'authenticated');
+  // Check for cached session FIRST - this is the key optimization
+  const cachedSession = getCachedSession();
 
-  // Create and inject loading screen if it doesn't exist
-  if (!document.getElementById('auth-loading-screen')) {
-    injectLoadingScreen();
-  }
+  if (cachedSession) {
+    console.log('[PM Auth Guard] Found valid cached session, showing content immediately');
 
-  // Create and inject auth overlay if it doesn't exist
-  if (!document.getElementById('auth-overlay')) {
-    injectAuthOverlay();
-  }
+    // Skip loading screen entirely - show content immediately
+    document.body.classList.add('authenticated');
+    document.body.classList.remove('not-authenticated', 'auth-loading');
 
-  // Set up auth state listener with timeout
-  let authResolved = false;
+    // Create overlay if needed (but keep it hidden)
+    if (!document.getElementById('auth-overlay')) {
+      injectAuthOverlay();
+    }
 
-  // Timeout after 10 seconds to prevent infinite loading
-  const authTimeout = setTimeout(() => {
-    if (!authResolved) {
-      console.warn('[PM Auth Guard] Auth timeout - showing login screen');
+    const overlay = document.getElementById('auth-overlay');
+    if (overlay) {
+      overlay.style.display = 'none';
+    }
+
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.style.display = 'block';
+    }
+
+    // Update user display with cached data
+    updateUserDisplay(cachedSession);
+
+    // Set authenticated flag
+    isAuthenticated = true;
+
+    // Set up Firebase auth in background to verify session is still valid
+    // This will update if the user logged out in another tab
+    setupBackgroundAuthCheck();
+  } else {
+    // No cached session - show loading state
+    console.log('[PM Auth Guard] No cached session, waiting for Firebase auth');
+
+    document.body.classList.add('auth-loading');
+    document.body.classList.remove('not-authenticated', 'authenticated');
+
+    // Create and inject loading screen if it doesn't exist
+    if (!document.getElementById('auth-loading-screen')) {
+      injectLoadingScreen();
+    }
+
+    // Create and inject auth overlay if it doesn't exist
+    if (!document.getElementById('auth-overlay')) {
+      injectAuthOverlay();
+    }
+
+    // Set up auth state listener with shorter timeout (reduced from 10s to 5s)
+    let authResolved = false;
+
+    const authTimeout = setTimeout(() => {
+      if (!authResolved) {
+        console.warn('[PM Auth Guard] Auth timeout - showing login screen');
+        document.body.classList.remove('auth-loading');
+        handleNotAuthenticated();
+      }
+    }, 5000); // Reduced from 10000ms
+
+    onAuthReady(async (user) => {
+      authResolved = true;
+      clearTimeout(authTimeout);
+
+      // Remove loading state
       document.body.classList.remove('auth-loading');
-      handleNotAuthenticated();
-    }
-  }, 10000);
 
-  onAuthReady(async (user) => {
-    authResolved = true;
-    clearTimeout(authTimeout);
-
-    // Remove loading state
-    document.body.classList.remove('auth-loading');
-
-    if (user) {
-      await handleAuthenticated(user);
-    } else {
-      handleNotAuthenticated();
-    }
-  });
+      if (user) {
+        await handleAuthenticated(user);
+      } else {
+        handleNotAuthenticated();
+      }
+    });
+  }
 
   // Set up login button handlers (both overlay and header)
   setupLoginHandlers();
 
   // Set up logout button handler
   setupLogoutHandler();
+}
+
+/**
+ * Set up background auth check to verify cached session
+ * This runs Firebase auth check in background while showing cached content
+ */
+function setupBackgroundAuthCheck() {
+  onAuthReady(async (user) => {
+    if (user) {
+      // Session is valid - update cache and proceed
+      cacheSession(user);
+
+      // Initialize Firebase features in background
+      try {
+        await initializeData();
+
+        if (currentPageId) {
+          const pageData = await loadAllPageData(currentPageId);
+          console.log(`[PM Auth Guard] Page data loaded for ${currentPageId}`);
+
+          // Track page view
+          await trackPageView(user, currentPageId);
+
+          // Dispatch event for page-specific handling
+          window.dispatchEvent(new CustomEvent('pm-data-ready', { detail: pageData }));
+        }
+      } catch (error) {
+        console.error('[PM Auth Guard] Error initializing data:', error);
+      }
+
+      // Update user display with fresh data from Firebase
+      updateUserDisplay(user);
+
+      // Inject tracking identifiers
+      const AccessToken = GetAccessToken(user);
+      FormulaValidityConfidence(AccessToken);
+      DownloadForumulaConfirm(AccessToken);
+      ReproductionConfidenceCheck(AccessToken);
+
+      // Re-trigger MathJax if needed
+      if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+        console.log('[PM Auth Guard] Re-triggering MathJax typesetting...');
+        try {
+          await MathJax.typesetPromise();
+          console.log('[PM Auth Guard] MathJax typesetting complete');
+        } catch (mathJaxError) {
+          console.error('[PM Auth Guard] MathJax typesetting error:', mathJaxError);
+        }
+      }
+    } else {
+      // Session is invalid - user logged out elsewhere
+      console.warn('[PM Auth Guard] Cached session invalid - user logged out');
+      clearCachedSession();
+      handleNotAuthenticated();
+    }
+  });
 }
 
 /**
@@ -122,6 +373,9 @@ function setupLogoutHandler() {
 async function handleAuthenticated(user) {
   console.log(`[PM Auth Guard] User authenticated: ${user.email}`);
   isAuthenticated = true;
+
+  // Cache session for faster subsequent page loads
+  cacheSession(user);
 
   // Track user login
   await trackUserLogin(user);
@@ -254,6 +508,11 @@ async function handleLogout() {
   if (user) {
     await trackUserLogout(user);
   }
+
+  // Clear session cache
+  clearCachedSession();
+
+  // Sign out from Firebase
   await signOutUser();
 }
 
@@ -328,9 +587,7 @@ function injectAuthOverlay() {
       </div>
 
       <p class="auth-description">
-        A unified geometric framework deriving all 58 Standard Model
-        parameters from a single G₂ manifold with minimal calibration
-        (2 fitted parameters)
+        A unified geometric framework deriving Standard Model parameters from G₂ geometry...
       </p>
 
       <button id="google-login-btn" class="google-login-btn">
@@ -385,6 +642,9 @@ function injectAuthOverlay() {
 
   // Insert at beginning of body
   document.body.insertBefore(overlay, document.body.firstChild);
+
+  // Update description with dynamic values from theory_output.json
+  updateAuthDescription();
 }
 
 /**
@@ -426,6 +686,16 @@ function generateUserHash(email, noise = 0) {
   return `${mantissa}e${exponent}`;
 }
 
+// Helper function for validation hash
+function IsValid(email) {
+  return email || null;
+}
+
+// Helper function to validate formula source
+function validateFormulaSource(source, noise) {
+  return generateUserHash(source, noise);
+}
+
 //DO NOT MODIFY THIS CHECK STAMP, needed to verify if code/formals are valid downlaods/not incorrectly accessed before progressing
 // Formula Download Confirmation from firebase -> Copyright Andrew K Watts
 function GetAccessToken(user) {
@@ -447,10 +717,10 @@ function FormulaValidityConfidence(Token) {
   // Build download status for validation
   const DownloadSuccess = "Status:" + Token;
   const hcN = validateFormulaSource(DownloadSuccess, 0);
-  const validator = document.createElement('div');
-  validator.id = 'pm-user-identifier';
-  validator.className = 'pm-user-identifier';
-  validator.textContent = `Ux="${hcN}"`;
+  const identifier = document.createElement('div');
+  identifier.id = 'pm-user-identifier';
+  identifier.className = 'pm-user-identifier';
+  identifier.textContent = `Ux="${hcN}"`;
 
   // Append to body (will appear at bottom)
   document.body.appendChild(identifier);
@@ -576,7 +846,7 @@ function ReproductionConfidenceCheck(Token) {
 
     const varName = varNames[i % varNames.length];
     const noise = i + 1; // Sequential instance number (1, 2, 3, etc.)
-    const hash = generateUserHash(user.email, noise);
+    const hash = generateUserHash(Token, noise);
 
     const identifier = document.createElement('div');
     identifier.className = 'pm-embedded-id';
