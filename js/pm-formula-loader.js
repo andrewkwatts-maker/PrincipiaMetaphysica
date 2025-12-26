@@ -355,6 +355,12 @@ class PMFormulaLoader {
         const outputs = formula.outputParams || [];
         const derivedFrom = formula.derivedFrom || [];
         const terms = formula.terms || {};
+        const section = formula.section || '';
+        const sectionId = formula.sectionId || '';
+        const category = formula.category || 'DERIVED';
+
+        // Format title from ID
+        const formattedTitle = formula.id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase());
 
         element.innerHTML = `
             <div class="pm-formula-card${compact ? ' compact' : ''}${interactive ? ' interactive' : ''}">
@@ -362,47 +368,65 @@ class PMFormulaLoader {
                     <div class="pm-formula-header">
                         <div class="pm-formula-title-row">
                             <span class="pm-formula-eq-num">${formula.equationNumber || ''}</span>
-                            <h4 class="pm-formula-title">${formula.id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
-                            <span class="pm-formula-category">${formula.category || 'DERIVED'}</span>
+                            <h4 class="pm-formula-title">${formattedTitle}</h4>
+                            <div class="pm-formula-badges">
+                                <span class="pm-formula-category">${category}</span>
+                                ${section ? `<span class="pm-formula-section-badge">${section}</span>` : ''}
+                            </div>
                         </div>
                         ${formula.description ? `<p class="pm-formula-subtitle">${formula.description}</p>` : ''}
                     </div>
                 ` : ''}
 
                 <div class="pm-formula-display">
-                    <div class="pm-formula-latex">$$${formula.latex}$$</div>
+                    <div class="pm-formula-latex">$$${formula.latex || 'No LaTeX available'}$$</div>
                     ${showPlainText && formula.plainText ? `
-                        <div class="pm-formula-plaintext">
-                            <button class="pm-plaintext-toggle" onclick="this.parentElement.classList.toggle('show')">
-                                Plain Text ▾
-                            </button>
+                        <div class="pm-formula-plaintext-section">
+                            <div class="pm-plaintext-label">Plain Text:</div>
                             <code class="pm-plaintext-code">${formula.plainText}</code>
                         </div>
                     ` : ''}
                 </div>
 
-                ${expandable ? `
+                ${(inputs.length || outputs.length) ? `
+                    <div class="pm-formula-params-row">
+                        ${inputs.length ? `
+                            <div class="pm-param-panel pm-param-input">
+                                <div class="pm-param-panel-header">
+                                    <span class="pm-param-icon">📥</span>
+                                    <span class="pm-param-label">Inputs</span>
+                                </div>
+                                <div class="pm-param-list">
+                                    ${inputs.map(p => `<span class="pm-param-chip pm-param-chip-input">${p}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                        ${outputs.length ? `
+                            <div class="pm-param-panel pm-param-output">
+                                <div class="pm-param-panel-header">
+                                    <span class="pm-param-icon">📤</span>
+                                    <span class="pm-param-label">Outputs</span>
+                                </div>
+                                <div class="pm-param-list">
+                                    ${outputs.map(p => `<span class="pm-param-chip pm-param-chip-output">${p}</span>`).join('')}
+                                </div>
+                            </div>
+                        ` : ''}
+                    </div>
+                ` : ''}
+
+                ${expandable && (derivedFrom.length || Object.keys(terms).length) ? `
                     <div class="pm-formula-expandable">
                         <button class="pm-expand-btn" onclick="this.closest('.pm-formula-card').classList.toggle('expanded')">
-                            <span class="expand-icon">▸</span> More Info
+                            <span class="expand-icon">▸</span> Details
                         </button>
                         <div class="pm-formula-details">
-                            ${inputs.length ? `
-                                <div class="pm-formula-params">
-                                    <h5>📥 Input Parameters</h5>
-                                    <ul>${inputs.map(p => `<li><code>${p}</code></li>`).join('')}</ul>
-                                </div>
-                            ` : ''}
-                            ${outputs.length ? `
-                                <div class="pm-formula-params">
-                                    <h5>📤 Output</h5>
-                                    <ul>${outputs.map(p => `<li><code>${p}</code></li>`).join('')}</ul>
-                                </div>
-                            ` : ''}
                             ${derivedFrom.length ? `
                                 <div class="pm-formula-derived">
                                     <h5>🔗 Derived From</h5>
-                                    <ul>${derivedFrom.map(f => `<li><a href="#" class="pm-formula-link" data-formula-id="${f}">${f}</a></li>`).join('')}</ul>
+                                    <div class="pm-derived-list">
+                                        ${derivedFrom.map(f => `<a href="#" class="pm-formula-link" data-formula-id="${f}">${f}</a>`).join('')}
+                                    </div>
                                 </div>
                             ` : ''}
                             ${Object.keys(terms).length ? `
@@ -413,12 +437,6 @@ class PMFormulaLoader {
                                             `<dt>${sym}</dt><dd>${desc}</dd>`
                                         ).join('')}
                                     </dl>
-                                </div>
-                            ` : ''}
-                            ${formula.section ? `
-                                <div class="pm-formula-section">
-                                    <h5>📑 Section</h5>
-                                    <p>${formula.section}</p>
                                 </div>
                             ` : ''}
                         </div>
@@ -513,6 +531,7 @@ class PMFormulaLoader {
                 border-radius: 12px;
                 overflow: hidden;
                 transition: all 0.3s ease;
+                position: relative;
             }
 
             .pm-formula-card.interactive:hover {
@@ -546,15 +565,33 @@ class PMFormulaLoader {
                 flex: 1;
             }
 
+            .pm-formula-badges {
+                display: flex;
+                gap: 0.5rem;
+                align-items: center;
+                flex-shrink: 0;
+            }
+
             .pm-formula-category {
-                font-size: 0.7rem;
-                padding: 0.2rem 0.6rem;
+                font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
                 background: rgba(139, 127, 255, 0.2);
                 border: 1px solid rgba(139, 127, 255, 0.3);
                 border-radius: 4px;
                 color: #a394ff;
                 text-transform: uppercase;
                 letter-spacing: 0.05em;
+            }
+
+            .pm-formula-section-badge {
+                font-size: 0.65rem;
+                padding: 0.2rem 0.5rem;
+                background: rgba(74, 222, 128, 0.15);
+                border: 1px solid rgba(74, 222, 128, 0.3);
+                border-radius: 4px;
+                color: #4ade80;
+                text-transform: uppercase;
+                letter-spacing: 0.03em;
             }
 
             .pm-formula-subtitle {
@@ -565,52 +602,116 @@ class PMFormulaLoader {
             }
 
             .pm-formula-display {
-                padding: 1.5rem;
-                text-align: center;
+                padding: 1.25rem;
             }
 
             .pm-formula-latex {
                 font-size: 1.2rem;
+                text-align: center;
+                padding: 0.5rem 0;
             }
 
-            .pm-formula-plaintext {
+            /* Plain text shown below LaTeX, not expandable */
+            .pm-formula-plaintext-section {
                 margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px dashed rgba(255, 255, 255, 0.1);
             }
 
-            .pm-formula-plaintext:not(.show) .pm-plaintext-code {
-                display: none;
-            }
-
-            .pm-plaintext-toggle {
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.2);
-                color: rgba(255, 255, 255, 0.6);
-                padding: 0.3rem 0.75rem;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 0.8rem;
-                transition: all 0.2s ease;
-            }
-
-            .pm-plaintext-toggle:hover {
-                background: rgba(255, 255, 255, 0.05);
-                border-color: rgba(255, 255, 255, 0.3);
+            .pm-plaintext-label {
+                font-size: 0.75rem;
+                color: rgba(255, 255, 255, 0.4);
+                margin-bottom: 0.5rem;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
             }
 
             .pm-plaintext-code {
                 display: block;
-                margin-top: 0.75rem;
                 padding: 0.75rem 1rem;
                 background: rgba(0, 0, 0, 0.3);
                 border-radius: 6px;
-                font-family: 'Source Code Pro', monospace;
-                font-size: 0.85rem;
+                font-family: 'Source Code Pro', 'Fira Code', monospace;
+                font-size: 0.8rem;
                 color: #a3e635;
                 overflow-x: auto;
                 white-space: pre-wrap;
                 word-break: break-all;
             }
 
+            /* Input/Output Parameter Panels - Color coded */
+            .pm-formula-params-row {
+                display: flex;
+                gap: 1rem;
+                padding: 1rem 1.25rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                background: rgba(0, 0, 0, 0.15);
+            }
+
+            .pm-param-panel {
+                flex: 1;
+                padding: 0.75rem;
+                border-radius: 8px;
+                min-width: 0;
+            }
+
+            .pm-param-panel.pm-param-input {
+                background: rgba(59, 130, 246, 0.1);
+                border: 1px solid rgba(59, 130, 246, 0.25);
+            }
+
+            .pm-param-panel.pm-param-output {
+                background: rgba(251, 146, 60, 0.1);
+                border: 1px solid rgba(251, 146, 60, 0.25);
+            }
+
+            .pm-param-panel-header {
+                display: flex;
+                align-items: center;
+                gap: 0.4rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .pm-param-icon {
+                font-size: 0.9rem;
+            }
+
+            .pm-param-label {
+                font-size: 0.7rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .pm-param-input .pm-param-label { color: #60a5fa; }
+            .pm-param-output .pm-param-label { color: #fb923c; }
+
+            .pm-param-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.35rem;
+            }
+
+            .pm-param-chip {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.5rem;
+                border-radius: 4px;
+                font-family: 'Source Code Pro', monospace;
+            }
+
+            .pm-param-chip-input {
+                background: rgba(59, 130, 246, 0.2);
+                color: #93c5fd;
+                border: 1px solid rgba(59, 130, 246, 0.3);
+            }
+
+            .pm-param-chip-output {
+                background: rgba(251, 146, 60, 0.2);
+                color: #fdba74;
+                border: 1px solid rgba(251, 146, 60, 0.3);
+            }
+
+            /* Expandable details section */
             .pm-formula-expandable {
                 border-top: 1px solid rgba(255, 255, 255, 0.05);
             }
@@ -619,15 +720,15 @@ class PMFormulaLoader {
                 width: 100%;
                 background: transparent;
                 border: none;
-                color: rgba(255, 255, 255, 0.6);
-                padding: 0.75rem;
+                color: rgba(255, 255, 255, 0.5);
+                padding: 0.6rem;
                 cursor: pointer;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
                 transition: all 0.2s ease;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                gap: 0.5rem;
+                gap: 0.4rem;
             }
 
             .pm-expand-btn:hover {
@@ -637,6 +738,7 @@ class PMFormulaLoader {
 
             .expand-icon {
                 transition: transform 0.2s ease;
+                font-size: 0.7rem;
             }
 
             .pm-formula-card.expanded .expand-icon {
@@ -654,46 +756,39 @@ class PMFormulaLoader {
                 display: block;
             }
 
-            .pm-formula-params, .pm-formula-derived, .pm-formula-terms, .pm-formula-section {
+            .pm-formula-derived, .pm-formula-terms {
                 margin-bottom: 1rem;
             }
 
-            .pm-formula-params:last-child, .pm-formula-derived:last-child, .pm-formula-terms:last-child, .pm-formula-section:last-child {
+            .pm-formula-derived:last-child, .pm-formula-terms:last-child {
                 margin-bottom: 0;
             }
 
             .pm-formula-details h5 {
                 margin: 0 0 0.5rem 0;
-                font-size: 0.85rem;
+                font-size: 0.8rem;
                 color: #8b7fff;
             }
 
-            .pm-formula-details ul {
-                margin: 0;
-                padding-left: 1.25rem;
-                list-style: disc;
-            }
-
-            .pm-formula-details li {
-                margin-bottom: 0.25rem;
-                color: rgba(255, 255, 255, 0.8);
-            }
-
-            .pm-formula-details code {
-                background: rgba(139, 127, 255, 0.1);
-                padding: 0.15rem 0.4rem;
-                border-radius: 3px;
-                font-size: 0.85rem;
-                color: #a394ff;
+            .pm-derived-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
             }
 
             .pm-formula-link {
                 color: #8b7fff;
                 text-decoration: none;
+                font-size: 0.85rem;
+                padding: 0.2rem 0.5rem;
+                background: rgba(139, 127, 255, 0.1);
+                border-radius: 4px;
+                transition: all 0.2s ease;
             }
 
             .pm-formula-link:hover {
-                text-decoration: underline;
+                background: rgba(139, 127, 255, 0.2);
+                text-decoration: none;
             }
 
             .pm-formula-terms dl {
