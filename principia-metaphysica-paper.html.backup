@@ -157,7 +157,7 @@
         #user-info {
             position: fixed;
             top: 10px;
-            \right: 20px;
+            right: 20px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -268,7 +268,7 @@
         }
 
         .equation-number {
-            float: \right;
+            float: right;
             color: #666;
             font-size: 0.9rem;
         }
@@ -283,7 +283,7 @@
 
         th, td {
             padding: 10px 12px;
-            text-align: \left;
+            text-align: left;
             border-bottom: 1px solid var(--border);
         }
 
@@ -362,7 +362,7 @@
 
         .derivation-step {
             margin: 0.5rem 0;
-            padding-\left: 1.5rem;
+            padding-left: 1.5rem;
             position: relative;
         }
 
@@ -370,7 +370,7 @@
             content: counter(step);
             counter-increment: step;
             position: absolute;
-            \left: 0;
+            left: 0;
             color: var(--accent);
             font-weight: 600;
         }
@@ -426,7 +426,7 @@
 
             #user-info {
                 top: 5px;
-                \right: 10px;
+                right: 10px;
                 padding: 5px 10px;
             }
 
@@ -453,13 +453,13 @@
             }
 
             .derivation-step {
-                padding-\left: 1.2rem;
+                padding-left: 1.2rem;
                 font-size: 0.9rem;
             }
         }
 
-        /* Pr\int styles */
-        @media pr\int {
+        /* Print styles */
+        @media print {
             body { background: white; }
             .paper { padding: 0; max-width: none; }
             #user-info { display: none; }
@@ -471,7 +471,7 @@
         .references li { margin-bottom: 0.5rem; }
 
         /* Lists */
-        ul, ol { margin-\left: 2rem; margin-bottom: 1rem; }
+        ul, ol { margin-left: 2rem; margin-bottom: 1rem; }
         li { margin-bottom: 0.3rem; }
     </style>
 
@@ -495,19 +495,19 @@
             <div class="abstract">
                 <h2>Abstract</h2>
                 <p>
-                    We present a unified geometric framework that derives all 58 Standard Model parameters and cosmological observables from compactification on a single twisted connected \sum (TCS) G<sub>2</sub> manifold. Starting from a 26-dimensional bulk spacetime with signature (24,2), an Sp(2,&#x211D;) gauge symmetry eliminates ghost degrees of freedom, reducing to an effective 13-dimensional shadow spacetime. Compactification on a specific TCS G<sub>2</sub> manifold with Betti numbers $b_2=4$, $b_3=24$ yields exactly three chiral fermion generations via the index formula $n_{\text{gen}} = |\chi_{\text{eff}}|/48 = 144/48 = 3$.
+                    We present a unified geometric framework that derives all 58 Standard Model parameters and cosmological observables from compactification on a single twisted connected sum (TCS) G<sub>2</sub> manifold. Starting from a 26-dimensional bulk spacetime with signature (24,2), an Sp(2,&#x211D;) gauge symmetry eliminates ghost degrees of freedom, reducing to an effective 13-dimensional shadow spacetime. Compactification on a specific TCS G<sub>2</sub> manifold with Betti numbers $b_2=4$, $b_3=24$ yields exactly three chiral fermion generations via the index formula $n_{\text{gen}} = |\chi_{\text{eff}}|/48 = 144/48 = 3$.
                 </p>
                 <p style="margin-top: 1rem;">
-                    The framework achieves <strong><span data-stat-id="within_1\sigma">45</span> of <span data-stat-id="total_parameters">48</span></strong> predictions within 1&\sigma; of experimental values (<span data-stat-id="success_rate_1\sigma">93.8</span>%), with <strong><span data-stat-id="exact_matches">12</span> exact matches</strong> (0.0&\sigma; deviation). Key predictions include maximal atmospheric mixing $\theta_{23} = 45°$ from G<sub>2</sub> holonomy symmetry, proton decay branching ratio BR$(p\to e^+\pi^0) = 0.25$, and gravitational wave dispersion $\eta \approx 0.113$. Two parameters ($\theta_{13}$, $\delta_{CP}$) remain calibrated pending explicit Yukawa intersection calculations, and the Higgs mass constrains the K&auml;hler modulus $\text{Re}(T) = 7.086$. Testable at HL-LHC (KK graviton), Hyper-Kamiokande (proton decay), LISA (GW dispersion), and Euclid (dark energy evolution). Complete derivation chains are provided in Appendices A-K.
+                    The framework achieves <strong><span data-stat-id="within_1sigma">45</span> of <span data-stat-id="total_parameters">48</span></strong> predictions within 1&sigma; of experimental values (<span data-stat-id="success_rate_1sigma">93.8</span>%), with <strong><span data-stat-id="exact_matches">12</span> exact matches</strong> (0.0&sigma; deviation). Key predictions include maximal atmospheric mixing $\theta_{23} = 45°$ from G<sub>2</sub> holonomy symmetry, proton decay branching ratio BR$(p\to e^+\pi^0) = 0.25$, and gravitational wave dispersion $\eta \approx 0.113$. Two parameters ($\theta_{13}$, $\delta_{CP}$) remain calibrated pending explicit Yukawa intersection calculations, and the Higgs mass constrains the K&auml;hler modulus $\text{Re}(T) = 7.086$. Testable at HL-LHC (KK graviton), Hyper-Kamiokande (proton decay), LISA (GW dispersion), and Euclid (dark energy evolution). Complete derivation chains are provided in Appendices A-K.
                 </p>
             </div>
 
             <!-- HC tracking pixel 1 -->
             <img class="hc-pixel" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-hc="abstract-view">
 
-            <!-- Pr\int Button -->
-            <button class="download-btn no-print" onclick="window.pr\int()" style="position: fixed; top: 80px; \right: 20px; z-index: 1000; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
-                Pr\int / Save as PDF
+            <!-- Print Button -->
+            <button class="download-btn no-print" onclick="window.print()" style="position: fixed; top: 80px; right: 20px; z-index: 1000; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; font-weight: 600; box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);">
+                Print / Save as PDF
             </button>
 
             <!-- Table of Contents -->
@@ -576,7 +576,7 @@
             <h3 class="subsection-title">1.3 Framework Overview</h3>
             <p>The dimensional cascade proceeds as:</p>
             <div class="equation-block">
-                $$\text{26D}_{(24,2)} \x\rightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \x\rightarrow{G_2} \text{6D}_{(5,1)} \x\rightarrow{\text{compactify}} \text{4D}_{(3,1)}$$
+                $$\text{26D}_{(24,2)} \xrightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \xrightarrow{G_2} \text{6D}_{(5,1)} \xrightarrow{\text{compactify}} \text{4D}_{(3,1)}$$
                 <span class="equation-number">(1.1)</span>
             </div>
 
@@ -670,7 +670,7 @@
 
             <h3 class="subsection-title">2.1 Motivation for (24,2) Signature</h3>
             <p>
-                The bosonic string requires 26 dimensions for Virasoro anomaly cancellation. We adopt signature (24,2) following Bars' two-time physics program, which provides a covariant framework for eliminating unphysical degrees of freedom through gauge symmetry rather than constra\int equations.
+                The bosonic string requires 26 dimensions for Virasoro anomaly cancellation. We adopt signature (24,2) following Bars' two-time physics program, which provides a covariant framework for eliminating unphysical degrees of freedom through gauge symmetry rather than constraint equations.
             </p>
 
             <div class="info-box" style="background: #fff3e0; border-left: 4px solid #ff9800; padding: 1.25rem; margin: 1.5rem 0;">
@@ -701,15 +701,15 @@
             <!-- Comparison Table -->
             <div class="table-container" style="margin: 1.5rem 0;">
                 <table class="data-table" style="width: 100%; border-collapse: collapse;">
-                    <caption style="font-weight: 600; margin-bottom: 0.75rem; text-align: \left;">Table 2.1: Comparison of Higher-Dimensional Unification Approaches</caption>
+                    <caption style="font-weight: 600; margin-bottom: 0.75rem; text-align: left;">Table 2.1: Comparison of Higher-Dimensional Unification Approaches</caption>
                     <thead>
                         <tr style="background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
-                            <th style="padding: 0.75rem; text-align: \left;">Approach</th>
+                            <th style="padding: 0.75rem; text-align: left;">Approach</th>
                             <th style="padding: 0.75rem; text-align: center;">Dimension</th>
                             <th style="padding: 0.75rem; text-align: center;">Signature</th>
-                            <th style="padding: 0.75rem; text-align: \left;">Anomaly/Consistency</th>
+                            <th style="padding: 0.75rem; text-align: left;">Anomaly/Consistency</th>
                             <th style="padding: 0.75rem; text-align: center;">SUSY</th>
-                            <th style="padding: 0.75rem; text-align: \left;">Key Reference</th>
+                            <th style="padding: 0.75rem; text-align: left;">Key Reference</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -811,7 +811,7 @@
             <div class="derivation-box">
                 <h4>Derivation: Critical Dimension D = 26</h4>
                 <ol>
-                    <li class="derivation-step">Virasoro algebra has central extension: $[L_m, L_n] = (m-n)L_{m+n} + \frac{c}{12}m(m^2-1)\delta_{m+n,0}$</li>
+                    <li class="derivation-step">Virasoro algebra has central extension: $[L_m, L_n] = (m-n)L_{m+n} + \f\frac{c}{12}m(m^2-1)\delta_{m+n,0}$</li>
                     <li class="derivation-step">Matter fields contribute $c_{\text{matter}} = D$ (one per coordinate)</li>
                     <li class="derivation-step">Faddeev-Popov ghosts (bc system, weights 2,-1) contribute $c_{\text{ghost}} = -26$</li>
                     <li class="derivation-step">BRST cohomology requires $c_{\text{total}} = 0$ for consistent quantization</li>
@@ -857,7 +857,7 @@
                 The condensate $\langle\bar{\Psi}_P\Psi_P\rangle$ generates curvature through the stress-energy tensor:
             </p>
             <div class="equation-block">
-                $$T_{MN}^{(\text{Pneuma})} = \frac{i}{4}\left[\bar{\Psi}_P\Gamma_{(M}D_{N)}\Psi_P - D_{(M}\bar{\Psi}_P\Gamma_{N)}\Psi_P\right] - g_{MN}\mathcal{L}_{\Psi}$$
+                $$T_{MN}^{(\text{Pneuma})} = \f\frac{i}{4}\left[\bar{\Psi}_P\Gamma_{(M}D_{N)}\Psi_P - D_{(M}\bar{\Psi}_P\Gamma_{N)}\Psi_P\right] - g_{MN}\mathcal{L}_{\Psi}$$
                 <span class="equation-number">(2.4)</span>
             </div>
 
@@ -866,7 +866,7 @@
                 <p>The 26D Einstein equations couple geometry to the Pneuma condensate:</p>
                 <ol>
                     <li class="derivation-step"><strong>Vacuum state:</strong> $\langle\bar{\Psi}_P\Psi_P\rangle = v_P^3$ (condensate VEV with mass dimension 3)</li>
-                    <li class="derivation-step"><strong>Curvature sourcing:</strong> $R_{MN} - \frac{1}{2}g_{MN}R = \frac{1}{M^{24}}T_{MN}^{(\text{Pneuma})}$</li>
+                    <li class="derivation-step"><strong>Curvature sourcing:</strong> $R_{MN} - \f\frac{1}{2}g_{MN}R = \f\frac{1}{M^{24}}T_{MN}^{(\text{Pneuma})}$</li>
                     <li class="derivation-step"><strong>Gap generation:</strong> Condensate breaks symmetry, generating mass gap $\Delta = \lambda v_P / (1 + g \cdot t_\perp / E_F)$</li>
                     <li class="derivation-step"><strong>Effective cosmological constant:</strong> $\Lambda_{\text{eff}} = \lambda v_P^4 / M^{24}$ (after TeV-scale cancellation)</li>
                 </ol>
@@ -895,7 +895,7 @@
                 <strong>counting Pneuma spinor degrees of freedom</strong> on the horizon:
             </p>
             <div class="equation-block">
-                $$S_{\text{BH}} = \frac{A}{4l_P^2} = \frac{N_{\text{Pneuma}}}{4} \cdot \log(2)$$
+                $$S_{\text{BH}} = \f\frac{A}{4l_P^2} = \f\frac{N_{\text{Pneuma}}}{4} \cdot \log(2)$$
                 <span class="equation-number">(2.5)</span>
             </div>
 
@@ -958,21 +958,21 @@
                 The F-term scalar potential is:
             </p>
             <div class="equation-block">
-                $$V(\Psi_P) = \left| \frac{\partial W}{\partial \Psi_P} \right|^2 = \left| -Aa \, e^{-a\Psi_P} + Bb \, e^{-b\Psi_P} \right|^2$$
+                $$V(\Psi_P) = \left| \f\frac{\partial W}{\partial \Psi_P} \right|^2 = \left| -Aa \, e^{-a\Psi_P} + Bb \, e^{-b\Psi_P} \right|^2$$
                 <span class="equation-number">(2.7)</span>
             </div>
             <p>
                 Minimizing $V$ with respect to $\Psi_P$ gives the stability condition:
             </p>
             <div class="equation-block">
-                $$\frac{\partial V}{\partial \Psi_P} = 0 \quad \Rightarrow \quad Aa \, e^{-a\Psi_P} = Bb \, e^{-b\Psi_P}$$
+                $$\f\frac{\partial V}{\partial \Psi_P} = 0 \quad \Rightarrow \quad Aa \, e^{-a\Psi_P} = Bb \, e^{-b\Psi_P}$$
                 <span class="equation-number">(2.8)</span>
             </div>
             <p>
                 Solving for the VEV:
             </p>
             <div class="equation-block">
-                $$\langle\Psi_P\rangle = \frac{\ln(Aa/Bb)}{a - b}$$
+                $$\langle\Psi_P\rangle = \f\frac{\ln(Aa/Bb)}{a - b}$$
                 <span class="equation-number">(2.9)</span>
             </div>
 
@@ -989,7 +989,7 @@
                         <strong>VEV:</strong> $\langle\Psi_P\rangle = \ln(1.042)/(0.2618 - 0.2513) = 0.041/0.0105 \approx 1.08$
                     </li>
                     <li class="derivation-step">
-                        <strong>Stability check:</strong> $\frac{\partial^2 V}{\partial \Psi_P^2}\Big|_{\text{VEV}} = 8.56 \times 10^{-6} > 0$ ✓
+                        <strong>Stability check:</strong> $\f\frac{\partial^2 V}{\partial \Psi_P^2}\Big|_{\text{VEV}} = 8.56 \times 10^{-6} > 0$ ✓
                     </li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
@@ -1026,9 +1026,9 @@
                 <table style="width: 100%; border-collapse: collapse; margin-top: 1rem;">
                     <thead>
                         <tr style="background: var(--accent-primary); color: white;">
-                            <th style="padding: 0.75rem; text-align: \left;">Aspect</th>
-                            <th style="padding: 0.75rem; text-align: \left;">Before v12.9</th>
-                            <th style="padding: 0.75rem; text-align: \left;">After v12.9 (Racetrack)</th>
+                            <th style="padding: 0.75rem; text-align: left;">Aspect</th>
+                            <th style="padding: 0.75rem; text-align: left;">Before v12.9</th>
+                            <th style="padding: 0.75rem; text-align: left;">After v12.9 (Racetrack)</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -1082,10 +1082,10 @@
                 <span class="equation-number">(3.1)</span>
             </div>
             <p>
-                Gauge fixing eliminates 13 degrees of freedom, reducing (24,2) &rarr; (12,1). The physical content projects onto a 13-dimensional shadow spacetime with one effective time direction. The 12 surviving spatial dimensions define the <em>orientation \sum</em> parameter that appears in proton decay and gravitational wave predictions (see <a href="#appendix-h">Appendix H</a>).
+                Gauge fixing eliminates 13 degrees of freedom, reducing (24,2) &rarr; (12,1). The physical content projects onto a 13-dimensional shadow spacetime with one effective time direction. The 12 surviving spatial dimensions define the <em>orientation sum</em> parameter that appears in proton decay and gravitational wave predictions (see <a href="#appendix-h">Appendix H</a>).
             </p>
 
-            <h4 class="subsection-title" style="font-size: 1.05rem; margin-top: 1.5rem;">3.1.1 Sp(2,&#x211D;) Constra\int Equations</h4>
+            <h4 class="subsection-title" style="font-size: 1.05rem; margin-top: 1.5rem;">3.1.1 Sp(2,&#x211D;) Constraint Equations</h4>
             <p>
                 Following Bars' two-time physics formalism, the Sp(2,&#x211D;) gauge symmetry imposes three fundamental
                 constraints on phase space coordinates $(X^M, P^M)$ with $M = 0, 1, \ldots, 25$ and metric signature
@@ -1093,22 +1093,22 @@
             </p>
 
             <div class="equation-block">
-                $$X^2 = X^M \eta_{MN} X^N = 0 \quad \text{(null constra\int)}$$
+                $$X^2 = X^M \eta_{MN} X^N = 0 \quad \text{(null constraint)}$$
                 <span class="equation-number">(3.1a)</span>
             </div>
 
             <div class="equation-block">
-                $$X \cdot P = X^M \eta_{MN} P^N = 0 \quad \text{(orthogonality constra\int)}$$
+                $$X \cdot P = X^M \eta_{MN} P^N = 0 \quad \text{(orthogonality constraint)}$$
                 <span class="equation-number">(3.1b)</span>
             </div>
 
             <div class="equation-block">
-                $$P^2 = P^M \eta_{MN} P^N = M^2 \quad \text{(mass-shell constra\int)}$$
+                $$P^2 = P^M \eta_{MN} P^N = M^2 \quad \text{(mass-shell constraint)}$$
                 <span class="equation-number">(3.1c)</span>
             </div>
 
             <p>
-                These constraints are <strong>first-class</strong> in the Dirac sense, forming a closed constra\int algebra
+                These constraints are <strong>first-class</strong> in the Dirac sense, forming a closed constraint algebra
                 under Poisson brackets. They eliminate exactly 13 degrees of freedom through gauge fixing, reducing the
                 26-dimensional phase space to a physical 13-dimensional configuration space.
             </p>
@@ -1121,13 +1121,13 @@
                     </li>
                     <li class="derivation-step">
                         <strong>Three first-class constraints</strong>: $X^2 = 0$, $X \cdot P = 0$, $P^2 = M^2$<br/>
-                        In Dirac formalism, each first-class constra\int removes 2 phase space DOF:<br/>
-                        &bull; 1 DOF from constra\int surface itself<br/>
+                        In Dirac formalism, each first-class constraint removes 2 phase space DOF:<br/>
+                        &bull; 1 DOF from constraint surface itself<br/>
                         &bull; 1 DOF from gauge orbit (Sp(2,&#x211D;) transformation)<br/>
                         Total: $3 \times 2 = 6$ phase space DOF removed
                     </li>
                     <li class="derivation-step">
-                        <strong>Sp(2,&#x211D;) gauge generators</strong>: $L_0 = \frac{1}{2}X^2$, $L_1 = X \cdot P$, $L_{-1} = \frac{1}{2}P^2$<br/>
+                        <strong>Sp(2,&#x211D;) gauge generators</strong>: $L_0 = \f\frac{1}{2}X^2$, $L_1 = X \cdot P$, $L_{-1} = \f\frac{1}{2}P^2$<br/>
                         Form SL(2,&#x211D;) algebra with 3 parameters; complete gauge fixing removes 3 additional DOF
                     </li>
                     <li class="derivation-step">
@@ -1154,9 +1154,9 @@
                     The (24,2) signature might naively suggest two independent time directions leading to causality
                     violations and ghost states. The Sp(2,&#x211D;) constraints prevent this:
                 </p>
-                <ul style="margin-\left: 1.5rem;">
+                <ul style="margin-left: 1.5rem;">
                     <li>
-                        <strong>Null constra\int</strong>: $X^2 = 0$ links the two \times to spatial dimensions via
+                        <strong>Null constraint</strong>: $X^2 = 0$ links the two times to spatial dimensions via
                         $-t_1^2 - t_2^2 + |\vec{x}|^2 = 0$
                     </li>
                     <li>
@@ -1171,8 +1171,8 @@
                     </li>
                 </ul>
                 <p style="margin-top: 0.5rem;">
-                    <em>Key insight: the constraints don't eliminate one time by compactification, but enforce that the two \times
-                    are gauge-related, projecting to a single physical time through the constra\int surface.</em>
+                    <em>Key insight: the constraints don't eliminate one time by compactification, but enforce that the two times
+                    are gauge-related, projecting to a single physical time through the constraint surface.</em>
                 </p>
             </div>
 
@@ -1187,7 +1187,7 @@
             <p>
                 The 4-brane structure (1 observable + 3 shadow) provides a geometric explanation for
                 quantum apparent randomness. Observable states on our brane $\Sigma_1$ result from
-                <strong>\partial tracing</strong> over shadow brane degrees of freedom:
+                <strong>partial tracing</strong> over shadow brane degrees of freedom:
             </p>
             <div class="equation-block">
                 $$\rho_{\Sigma_1} = \text{Tr}_{\Sigma_2,\Sigma_3,\Sigma_4} \left[|\Psi\rangle_{\text{bulk}} \langle\Psi|\right]$$
@@ -1229,7 +1229,7 @@
 
             <h3 class="subsection-title">4.1 TCS Construction</h3>
             <p>
-                We employ a twisted connected \sum (TCS) G<sub>2</sub> manifold constructed from asymptotically cylindrical Calabi-Yau threefolds. Specifically, we use <strong>TCS manifold #187</strong> from the Corti-Haskins-Nordström-Pacini classification (arXiv:1207.4470), characterized by the building blocks K3 × T² with orthogonal gluing. The specific topology has:
+                We employ a twisted connected sum (TCS) G<sub>2</sub> manifold constructed from asymptotically cylindrical Calabi-Yau threefolds. Specifically, we use <strong>TCS manifold #187</strong> from the Corti-Haskins-Nordström-Pacini classification (arXiv:1207.4470), characterized by the building blocks K3 × T² with orthogonal gluing. The specific topology has:
             </p>
             <div class="equation-block">
                 $$b_2 = 4, \quad b_3 = 24, \quad \chi_{\text{eff}} = 144, \quad \nu = 3$$
@@ -1250,7 +1250,7 @@
             </div>
 
             <div class="derivation-box">
-                <h4>Derivation: Two Equivalent Formulas for &\chi;<sub>eff</sub></h4>
+                <h4>Derivation: Two Equivalent Formulas for &chi;<sub>eff</sub></h4>
                 <ol>
                     <li class="derivation-step">
                         <strong>Hodge number formula (index theorem):</strong>
@@ -1269,7 +1269,7 @@
                     </li>
                     <li class="derivation-step">
                         <strong>Flux quantum number:</strong>
-                        $\nu = N_{\text{flux}} = \frac{\chi_{\text{eff}}}{6} = \frac{144}{6} = 24$<br/>
+                        $\nu = N_{\text{flux}} = \f\frac{\chi_{\text{eff}}}{6} = \f\frac{144}{6} = 24$<br/>
                         This equals $b_3 = 24$, indicating one flux quantum per coassociative 3-cycle
                     </li>
                 </ol>
@@ -1287,7 +1287,7 @@
                     <strong>Landscape scan result:</strong> Under the physical constraints ($n_{\text{gen}} = 3$,
                     $h^{1,1} \geq 4$ for doublet-triplet splitting, $h^{3,1} \in [20, 100]$, integer $N_{\text{flux}} \leq 50$),
                     <strong>49 valid topologies</strong> exist—all sharing $\chi_{\text{eff}} = 144$ and $N_{\text{flux}} = 24$.
-                    The constra\int $h^{1,1} + h^{3,1} = 72$ is fixed by the generation count requirement.
+                    The constraint $h^{1,1} + h^{3,1} = 72$ is fixed by the generation count requirement.
                 </p>
                 <ul style="margin: 0.5rem 0;">
                     <li><strong>TCS #187 selection criterion:</strong> Minimal $h^{1,1} = 4$ among valid options
@@ -1318,17 +1318,17 @@
                     <strong>Condensate energy:</strong> The Pneuma 4-fermion condensate contributes
                 </p>
                 <div class="equation-block" style="background: rgba(255,255,255,0.5);">
-                    $$E_{\text{condensate}} \sim -\frac{g^2}{\chi_{\text{eff}}}$$
+                    $$E_{\text{condensate}} \sim -\f\frac{g^2}{\chi_{\text{eff}}}$$
                 </div>
                 <p>
                     Smaller $\chi_{\text{eff}}$ yields deeper (more negative) condensate energy, creating selection pressure
                     toward minimal $\chi_{\text{eff}}$.
                 </p>
                 <p style="margin-top: 0.5rem;">
-                    <strong>Generation constra\int:</strong> The index theorem requires
+                    <strong>Generation constraint:</strong> The index theorem requires
                 </p>
                 <div class="equation-block" style="background: rgba(255,255,255,0.5);">
-                    $$n_{\text{gen}} = \frac{|\chi_{\text{eff}}|}{48} = 3 \quad \Rightarrow \quad \chi_{\text{eff}} \geq 144$$
+                    $$n_{\text{gen}} = \f\frac{|\chi_{\text{eff}}|}{48} = 3 \quad \Rightarrow \quad \chi_{\text{eff}} \geq 144$$
                 </div>
                 <p>
                     <strong>Selection principle:</strong> Minimize $E_{\text{condensate}}$ subject to $n_{\text{gen}} = 3$.
@@ -1346,9 +1346,9 @@
             <h4 style="margin-top: 1.5rem; font-size: 1rem;">Hodge Numbers for TCS G<sub>2</sub> Manifold #187</h4>
             <table style="margin: 1rem auto; border-collapse: collapse; max-width: 600px;">
                 <tr style="border-bottom: 2px solid #444;">
-                    <th style="padding: 0.5rem 1rem; text-align: \left;">Hodge Number</th>
+                    <th style="padding: 0.5rem 1rem; text-align: left;">Hodge Number</th>
                     <th style="padding: 0.5rem 1rem; text-align: center;">Value</th>
-                    <th style="padding: 0.5rem 1rem; text-align: \left;">Physical Interpretation</th>
+                    <th style="padding: 0.5rem 1rem; text-align: left;">Physical Interpretation</th>
                 </tr>
                 <tr>
                     <td style="padding: 0.5rem 1rem;">$h^{0,0}$</td>
@@ -1383,7 +1383,7 @@
             <h3 class="subsection-title">4.2 Generation Number from Topology</h3>
             <p>The number of chiral fermion generations is determined by the effective Euler characteristic:</p>
             <div class="equation-block">
-                $$n_{\text{gen}} = \frac{|\chi_{\text{eff}}|}{48} = \frac{144}{48} = 3$$
+                $$n_{\text{gen}} = \f\frac{|\chi_{\text{eff}}|}{48} = \f\frac{144}{48} = 3$$
                 <span class="equation-number">(4.2)</span>
             </div>
 
@@ -1393,7 +1393,7 @@
                     <li class="derivation-step">F-theory index theorem: $n_{\text{gen}} = |\chi|/24$ [Sethi-Vafa-Witten 1996]</li>
                     <li class="derivation-step">26D (24,2) spacetime has Sp(2,&#x211D;) gauge symmetry</li>
                     <li class="derivation-step">Sp(2,&#x211D;) gauge fixing to (12,1) shadow introduces constraints</li>
-                    <li class="derivation-step">Z<sub>2</sub> parity identifies spinors across two \times: $\Psi_L(t_1) \sim \Psi_R(t_2)$</li>
+                    <li class="derivation-step">Z<sub>2</sub> parity identifies spinors across two times: $\Psi_L(t_1) \sim \Psi_R(t_2)$</li>
                     <li class="derivation-step">Halves independent spinor DOF, doubles index divisor: $24 \times 2 = 48$</li>
                     <li class="derivation-step">Result: $n_{\text{gen}} = |144|/48 = 3$ generations</li>
                 </ol>
@@ -1405,9 +1405,9 @@
                 <h4 style="color: #2e7d32;">v14.1 Alternative Derivation: Spinor Saturation</h4>
                 <p>The generation count can also be understood as <strong>spinor saturation</strong> in G<sub>2</sub> holonomy:</p>
                 <div class="equation-block" style="background: rgba(76, 175, 80, 0.05);">
-                    $$n_{\text{gen}} = \frac{N_{\text{flux}}}{\text{spinor}_{\text{DOF}}} = \frac{24}{8} = 3$$
+                    $$n_{\text{gen}} = \f\frac{N_{\text{flux}}}{\text{spinor}_{\text{DOF}}} = \f\frac{24}{8} = 3$$
                 </div>
-                <ul style="margin-\left: 1.5rem; margin-top: 0.5rem;">
+                <ul style="margin-left: 1.5rem; margin-top: 0.5rem;">
                     <li>$N_{\text{flux}} = \chi_{\text{eff}}/6 = 144/6 = 24$ (flux quanta wrapping b<sub>3</sub> cycles)</li>
                     <li>spinor<sub>DOF</sub> = 8 (real components of the parallel G<sub>2</sub> spinor)</li>
                     <li>Each generation saturates 8 flux quanta through the G<sub>2</sub> spinor representation</li>
@@ -1426,16 +1426,16 @@
                 While TCS G<sub>2</sub> manifolds are Ricci-flat ($\tau_{\text{geometric}} = 0$), M2-brane flux generates an effective torsion in the moduli potential:
             </p>
             <div class="equation-block">
-                $$N_{\text{flux}} = \frac{\chi_{\text{eff}}}{6} = \frac{144}{6} = 24 \quad \Rightarrow \quad T_{\omega,\text{eff}} = -\frac{b_3}{N_{\text{flux}}} = -\frac{24}{24} = -1.0$$
+                $$N_{\text{flux}} = \f\frac{\chi_{\text{eff}}}{6} = \f\frac{144}{6} = 24 \quad \Rightarrow \quad T_{\omega,\text{eff}} = -\f\frac{b_3}{N_{\text{flux}}} = -\f\frac{24}{24} = -1.0$$
                 <span class="equation-number">(4.3)</span>
             </div>
             <p>
                 The flux quantization divisor 6 is standard in G<sub>2</sub> compactification literature (Acharya et al., 2001). The result $N_{\text{flux}} = b_3 = 24$ indicates one flux quantum per coassociative 3-cycle.
             </p>
             <div class="derivation-box" style="background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%); border-left: 4px solid #f9a825;">
-                <h4 style="color: #e65100;">Note: T<sub>&\omega;</sub> Values in Different Contexts</h4>
+                <h4 style="color: #e65100;">Note: T<sub>&omega;</sub> Values in Different Contexts</h4>
                 <p>The effective torsion parameter appears with two values in this work:</p>
-                <ul style="margin-\left: 1.5rem;">
+                <ul style="margin-left: 1.5rem;">
                     <li><strong>Geometric value:</strong> $|T_{\omega,\text{eff}}| = 1.0$ from flux quantization (Eq. 4.3)</li>
                     <li><strong>Phenomenological value:</strong> $|T_\omega| = 0.884$ used in VEV and GUT scale derivations</li>
                 </ul>
@@ -1451,7 +1451,7 @@
             <p>
                 The TCS G<sub>2</sub> manifold has $h^{1,1} = 4$ K&auml;hler moduli, which naturally define four distinct <em>sector nodes</em> in the higher-dimensional geometry. These sectors correspond to different regions where branes or fields can localize:
             </p>
-            <ul style="margin-\left: 2rem; color: var(--text-secondary);">
+            <ul style="margin-left: 2rem; color: var(--text-secondary);">
                 <li><strong>Sector 0 (SM/Higgs):</strong> The Standard Model gauge fields and matter are localized here</li>
                 <li><strong>Sector 1 (Mirror/Shadow):</strong> A parallel sector coupled only via gravity, providing a natural dark matter candidate</li>
                 <li><strong>Sectors 2-3 (Hidden):</strong> Additional sectors involved in moduli stabilization</li>
@@ -1486,7 +1486,7 @@
                 The effective gravitational coupling in 4D is suppressed by the sector averaging:
             </p>
             <div class="equation-block">
-                $$M_{\text{Pl,eff}}^2 = \frac{1}{h^{1,1}} \sum_{i=1}^{4} w_i M_{\text{Pl,bulk}}^2 \approx \frac{1}{4} M_{\text{Pl,bulk}}^2$$
+                $$M_{\text{Pl,eff}}^2 = \f\frac{1}{h^{1,1}} \sum_{i=1}^{4} w_i M_{\text{Pl,bulk}}^2 \approx \f\frac{1}{4} M_{\text{Pl,bulk}}^2$$
                 <span class="equation-number">(4.4b)</span>
             </div>
             <p>
@@ -1500,7 +1500,7 @@
                 since the Higgs field is localized entirely in Sector 0. The observed hierarchy ratio becomes:
             </p>
             <div class="equation-block">
-                $$\frac{M_{\text{Pl}}}{v_{\text{EW}}} \sim \frac{1}{\sqrt{h^{1,1}}} \times \frac{M_{\text{Pl,bulk}}}{v_{\text{EW,0}}} = 2 \times \frac{M_{\text{Pl,bulk}}}{v_{\text{EW,0}}} \sim 10^{16}$$
+                $$\f\frac{M_{\text{Pl}}}{v_{\text{EW}}} \sim \f\frac{1}{\sqrt{h^{1,1}}} \times \f\frac{M_{\text{Pl,bulk}}}{v_{\text{EW,0}}} = 2 \times \f\frac{M_{\text{Pl,bulk}}}{v_{\text{EW,0}}} \sim 10^{16}$$
                 <span class="equation-number">(4.4d)</span>
             </div>
             <p>
@@ -1511,7 +1511,7 @@
             <p>
                 Sector 1 provides a dark matter candidate. Since this sector couples to our world only through gravity (the only force that propagates in the bulk), matter localized there is:
             </p>
-            <ul style="margin-\left: 2rem; color: var(--text-secondary);">
+            <ul style="margin-left: 2rem; color: var(--text-secondary);">
                 <li><strong>Invisible:</strong> No electromagnetic or strong force interactions</li>
                 <li><strong>Stable:</strong> Protected by the sector structure and $\mathbb{Z}_2$ symmetry</li>
                 <li><strong>Non-tuned:</strong> The mirror sector exists because $h^{1,1} = 4$ is fixed by topology</li>
@@ -1526,13 +1526,13 @@
                     The mirror sector temperature differs from the visible sector due to asymmetric reheating after inflation. The temperature ratio is determined by moduli couplings:
                 </p>
                 <div class="equation-block" style="background: rgba(255,255,255,0.5);">
-                    $$\frac{T'}{T} = \left(\frac{g_*}{g'_*}\right)^{1/3} \left(\frac{\Gamma'}{\Gamma}\right)^{1/2} \approx 0.57$$
+                    $$\f\frac{T'}{T} = \left(\f\frac{g_*}{g'_*}\right)^{1/3} \left(\f\frac{\Gamma'}{\Gamma}\right)^{1/2} \approx 0.57$$
                 </div>
                 <p>
                     where the decay rate asymmetry $\Gamma'/\Gamma \approx (\chi_{\text{eff}}/b_3^2)^2$ comes from the moduli structure. The abundance ratio follows from entropy scaling:
                 </p>
                 <div class="equation-block" style="background: rgba(255,255,255,0.5);">
-                    $$\frac{\Omega_{\text{DM}}}{\Omega_b} = \left(\frac{T}{T'}\right)^3 = \left(\frac{1}{0.57}\right)^3 \approx 5.8$$
+                    $$\f\frac{\Omega_{\text{DM}}}{\Omega_b} = \left(\f\frac{T}{T'}\right)^3 = \left(\f\frac{1}{0.57}\right)^3 \approx 5.8$$
                 </div>
                 <p>
                     <strong>Geometric prediction:</strong> The framework predicts $\Omega_{\text{DM}}/\Omega_b \approx 5.8$, which emerges from the G<sub>2</sub> wavefunction overlap geometry (not an input parameter).
@@ -1554,9 +1554,9 @@
             </p>
             <table style="margin: 1rem auto; border-collapse: collapse; max-width: 700px;">
                 <tr style="border-bottom: 2px solid #444;">
-                    <th style="padding: 0.5rem 1rem; text-align: \left;">Parameter</th>
-                    <th style="padding: 0.5rem 1rem; text-align: \left;">Value</th>
-                    <th style="padding: 0.5rem 1rem; text-align: \left;">Origin</th>
+                    <th style="padding: 0.5rem 1rem; text-align: left;">Parameter</th>
+                    <th style="padding: 0.5rem 1rem; text-align: left;">Value</th>
+                    <th style="padding: 0.5rem 1rem; text-align: left;">Origin</th>
                 </tr>
                 <tr style="background: rgba(102, 126, 234, 0.05);">
                     <td style="padding: 0.5rem 1rem;">Sector count</td>
@@ -1608,7 +1608,7 @@
             <h3 class="subsection-title">5.2 Unified Coupling</h3>
             <p>The GUT coupling is derived from geometry using the $10\pi$ factor:</p>
             <div class="equation-block">
-                $$\frac{1}{\alpha_{\text{GUT}}} = 10\pi \times \frac{\text{Vol}(\Sigma_{\text{sing}})}{\text{Vol}(G_2)} \times e^{|T_\omega|/h^{1,1}} = 23.54$$
+                $$\f\frac{1}{\alpha_{\text{GUT}}} = 10\pi \times \f\frac{\text{Vol}(\Sigma_{\text{sing}})}{\text{Vol}(G_2)} \times e^{|T_\omega|/h^{1,1}} = 23.54$$
                 <span class="equation-number">(5.2)</span>
             </div>
             <p>This matches the experimental unification value $1/\alpha_{\text{GUT}} \approx 24.3$ to within 0.8%.</p>
@@ -1616,7 +1616,7 @@
             <h3 class="subsection-title">5.3 GUT Scale</h3>
             <p>The grand unification scale emerges from the G<sub>2</sub> volume:</p>
             <div class="equation-block">
-                $$M_{\text{GUT}} = M_{\text{Pl}} \times \left(\frac{\text{Vol}(G_2)}{\ell_P^7}\right)^{-1/2} \times e^{|T_\omega|} = 2.12 \times 10^{16} \text{ GeV}$$
+                $$M_{\text{GUT}} = M_{\text{Pl}} \times \left(\f\frac{\text{Vol}(G_2)}{\ell_P^7}\right)^{-1/2} \times e^{|T_\omega|} = 2.12 \times 10^{16} \text{ GeV}$$
                 <span class="equation-number">(5.3)</span>
             </div>
 
@@ -1692,7 +1692,7 @@
             <p>
                 The index calculation yields:
             </p>
-            <ul style="margin-\left: 2rem;">
+            <ul style="margin-left: 2rem;">
                 <li><strong>Triplet index:</strong> $N_{\text{triplet}} = 0$ (no zero-modes, all lifted to $M_{\text{GUT}}$)</li>
                 <li><strong>Doublet index:</strong> $N_{\text{doublet}} = n_{\text{gen}} = 3$ (one doublet per generation)</li>
             </ul>
@@ -1725,7 +1725,7 @@
                 <p style="font-size: 0.9rem; margin-top: 0.5rem;">
                     The PM framework instead uses the <strong>native topological structure of TCS G<sub>2</sub> manifolds</strong>:
                 </p>
-                <ul style="font-size: 0.85rem; margin-\left: 1.5rem;">
+                <ul style="font-size: 0.85rem; margin-left: 1.5rem;">
                     <li><strong>No tunable phases:</strong> The Z<sub>2</sub> shadow symmetry is discrete, not continuous</li>
                     <li><strong>Topological protection:</strong> Triplets are mapped to a topologically disconnected sector, not merely given large masses</li>
                     <li><strong>Parameter-free:</strong> The mechanism follows from b<sub>2</sub> = 4 exactly, with no adjustable couplings</li>
@@ -1747,16 +1747,16 @@
                 <ol>
                     <li class="derivation-step">SO(10) prediction at GUT scale: $\sin^2\theta_W = 3/8 = 0.375$</li>
                     <li class="derivation-step">RG evolution from $M_{\text{GUT}} = 2.12 \times 10^{16}$ GeV to $M_Z = 91.2$ GeV</li>
-                    <li class="derivation-step">Two-loop \beta functions reduce value to 0.231</li>
+                    <li class="derivation-step">Two-loop beta functions reduce value to 0.231</li>
                     <li class="derivation-step">Threshold corrections at GUT scale: $\Delta\sin^2\theta_W = +0.0002$</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>PDG 2024: $\sin^2\theta_W = 0.23122 \pm 0.00003$ &mdash; 0.33&\sigma; agreement</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>PDG 2024: $\sin^2\theta_W = 0.23122 \pm 0.00003$ &mdash; 0.33&sigma; agreement</em></p>
             </div>
 
             <h4 class="subsection-title" style="margin-top: 1.5rem;">5.5a Electromagnetic Fine Structure Constant at $M_Z$</h4>
             <p>The electromagnetic coupling at the Z-pole is derived from gauge coupling unification:</p>
             <div class="equation-block">
-                $$\alpha_{\text{em}}^{-1}(M_Z) = \frac{\alpha_2^{-1}(M_Z)}{\sin^2\theta_W(M_Z)} = \frac{29.6}{0.23121} = 127.9$$
+                $$\alpha_{\text{em}}^{-1}(M_Z) = \f\frac{\alpha_2^{-1}(M_Z)}{\sin^2\theta_W(M_Z)} = \f\frac{29.6}{0.23121} = 127.9$$
                 <span class="equation-number">(5.5a)</span>
             </div>
             <div class="derivation-box">
@@ -1796,15 +1796,15 @@
             <h4 class="subsection-title" style="margin-top: 1.5rem;">5.6a Higgs Quartic Coupling from K&auml;hler Potential</h4>
             <p>The UV Higgs quartic coupling $\lambda_0$ at the GUT scale derives from the gauge couplings:</p>
             <div class="equation-block">
-                $$\lambda_0 = \frac{1}{4}\left(g_2^2 + \frac{3}{5}g_1^2\right) = \frac{1}{4}\left(\frac{4\pi\alpha_{\text{GUT}}}{1} + \frac{3}{5}\cdot\frac{4\pi\alpha_{\text{GUT}}}{1}\right) = 0.1289$$
+                $$\lambda_0 = \f\frac{1}{4}\left(g_2^2 + \f\frac{3}{5}g_1^2\right) = \f\frac{1}{4}\left(\f\frac{4\pi\alpha_{\text{GUT}}}{1} + \f\frac{3}{5}\cdot\f\frac{4\pi\alpha_{\text{GUT}}}{1}\right) = 0.1289$$
                 <span class="equation-number">(5.6a)</span>
             </div>
             <div class="derivation-box">
                 <h4>Derivation: $\lambda_0$ from Gauge Unification</h4>
                 <ol>
                     <li class="derivation-step">At GUT scale: $g_1 = g_2 = g_3 = g_{\text{GUT}} = \sqrt{4\pi\alpha_{\text{GUT}}} \approx 0.73$</li>
-                    <li class="derivation-step">D-term potential: $V_D = \frac{1}{8}(g_2^2 + g_1^{'2})|H|^4$ where $g_1' = \sqrt{3/5}\,g_1$</li>
-                    <li class="derivation-step">GUT normalization: $\lambda_0 = \frac{1}{4}(g_2^2 + \frac{3}{5}g_1^2) = \frac{8\pi\alpha_{\text{GUT}}}{5} \times \frac{5}{4} = 2\pi\alpha_{\text{GUT}}$</li>
+                    <li class="derivation-step">D-term potential: $V_D = \f\frac{1}{8}(g_2^2 + g_1^{'2})|H|^4$ where $g_1' = \sqrt{3/5}\,g_1$</li>
+                    <li class="derivation-step">GUT normalization: $\lambda_0 = \f\frac{1}{4}(g_2^2 + \f\frac{3}{5}g_1^2) = \f\frac{8\pi\alpha_{\text{GUT}}}{5} \times \f\frac{5}{4} = 2\pi\alpha_{\text{GUT}}$</li>
                     <li class="derivation-step">With $\alpha_{\text{GUT}} = 0.0425$: $\lambda_0 = 2\pi \times 0.0425 = 0.267$ (tree-level)</li>
                     <li class="derivation-step">Including top Yukawa threshold: $\lambda_0 \approx 0.129$ (at $M_{\text{GUT}}$)</li>
                 </ol>
@@ -1813,7 +1813,7 @@
 
             <h3 class="subsection-title">5.7 XY Gauge Bosons and Proton Decay Mechanism</h3>
             <p>
-                The SO(10) adjo\int representation contains 45 gauge bosons. Upon symmetry breaking, these decompose as:
+                The SO(10) adjoint representation contains 45 gauge bosons. Upon symmetry breaking, these decompose as:
             </p>
             <div class="equation-block">
                 $$\mathbf{45}_{\text{SO}(10)} = \underbrace{(\mathbf{8},1)_0}_{\text{8 gluons}} + \underbrace{(1,\mathbf{3})_0}_{\text{3 weak}} + \underbrace{(1,1)_0}_{\text{1 hypercharge}} + \underbrace{(\mathbf{3},2)_{+5/6}}_{\text{6 X}} + \underbrace{(\bar{\mathbf{3}},2)_{-5/6}}_{\text{6 } \bar{X}} + \underbrace{(\mathbf{3},2)_{-1/6}}_{\text{6 Y}} + \underbrace{(\bar{\mathbf{3}},2)_{+1/6}}_{\text{6 } \bar{Y}} + \underbrace{\text{9 neutrals}}_{\text{heavy}}$$
@@ -1822,16 +1822,16 @@
             <p>
                 The X and Y gauge bosons carry both color and electroweak quantum numbers:
             </p>
-            <ul style="margin-\left: 2rem;">
-                <li><strong>X bosons</strong> (12 total): Color triplet, weak doublet, charge $\pm\frac{4}{3}$</li>
-                <li><strong>Y bosons</strong> (12 total): Color triplet, weak doublet, charge $\pm\frac{1}{3}$</li>
+            <ul style="margin-left: 2rem;">
+                <li><strong>X bosons</strong> (12 total): Color triplet, weak doublet, charge $\pm\f\frac{4}{3}$</li>
+                <li><strong>Y bosons</strong> (12 total): Color triplet, weak doublet, charge $\pm\f\frac{1}{3}$</li>
                 <li><strong>Masses:</strong> $M_X = M_Y = M_{\text{GUT}} = 2.12 \times 10^{16}$ GeV</li>
             </ul>
             <p>
                 These bosons mediate baryon number violation through dimension-6 operators:
             </p>
             <div class="equation-block">
-                $$\mathcal{O}_6 = \frac{g_{\text{GUT}}^2}{M_X^2} \epsilon^{abc} \epsilon^{ij} (u_a^c \gamma_\mu d_b)(Q_{ci} \gamma^\mu L_j)$$
+                $$\mathcal{O}_6 = \f\frac{g_{\text{GUT}}^2}{M_X^2} \epsilon^{abc} \epsilon^{ij} (u_a^c \gamma_\mu d_b)(Q_{ci} \gamma^\mu L_j)$$
                 <span class="equation-number">(5.8)</span>
             </div>
             <div class="derivation-box">
@@ -1840,10 +1840,10 @@
                     <li class="derivation-step">Gauge boson count: $45 = 8 + 3 + 1 + 12 + 12 + 9$ (gluons + weak + hypercharge + X + Y + neutral)</li>
                     <li class="derivation-step">X boson mediation: $p \to e^+ \pi^0$ (dominant channel)</li>
                     <li class="derivation-step">Y boson mediation: $p \to \bar{\nu} \pi^+$ (subdominant)</li>
-                    <li class="derivation-step">Decay rate: $\Gamma_p \propto \frac{\alpha_{\text{GUT}}^2 m_p^5}{M_X^4} \times S^{-1}$ where $S$ is geometric suppression</li>
+                    <li class="derivation-step">Decay rate: $\Gamma_p \propto \f\frac{\alpha_{\text{GUT}}^2 m_p^5}{M_X^4} \times S^{-1}$ where $S$ is geometric suppression</li>
                     <li class="derivation-step">With $M_X = 2.12 \times 10^{16}$ GeV and $S = 2.125$ (from TCS geometry): $\tau_p = 8.15 \times 10^{34}$ years</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Super-K limit: $\tau_p > 1.67 \times 10^{34}$ years (90% CL) &mdash; PM prediction is 4.9&\times; the bound</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Super-K limit: $\tau_p > 1.67 \times 10^{34}$ years (90% CL) &mdash; PM prediction is 4.9&times; the bound</em></p>
             </div>
 
             <h4 class="subsection-title" style="margin-top: 1.5rem;">5.7.1 Geometric Selection Rules</h4>
@@ -1851,7 +1851,7 @@
                 The proton decay rate is suppressed by a <strong>geometric selection rule</strong> arising from spatial separation of matter and Higgs fields on distinct 3-cycles in the TCS G<sub>2</sub> manifold (Acharya 2008; Friedmann &amp; Witten 2003; Corti et al. 2015):
             </p>
             <div class="equation-block">
-                $$\int \psi^\dagger_{\text{matter}} \psi_{\text{Higgs}} \, dV \sim \exp\left(-2\pi \frac{d}{R}\right)$$
+                $$\int \psi^\dagger_{\text{matter}} \psi_{\text{Higgs}} \, dV \sim \exp\left(-2\pi \f\frac{d}{R}\right)$$
                 <span class="equation-number">(5.9)</span>
             </div>
             <p>
@@ -1874,7 +1874,7 @@
                 The complete proton lifetime formula incorporates the geometric suppression:
             </p>
             <div class="equation-block">
-                $$\tau_p = C \times \left(\frac{M_{\text{GUT}}}{10^{16} \text{ GeV}}\right)^4 \times \left(\frac{0.03}{\alpha_{\text{GUT}}}\right)^2 \times S$$
+                $$\tau_p = C \times \left(\f\frac{M_{\text{GUT}}}{10^{16} \text{ GeV}}\right)^4 \times \left(\f\frac{0.03}{\alpha_{\text{GUT}}}\right)^2 \times S$$
                 <span class="equation-number">(5.10)</span>
             </div>
             <p>
@@ -1890,7 +1890,7 @@
                     <li class="derivation-step">With geometric suppression: $\tau_p = \tau_0 \times S = 3.83 \times 10^{34} \times 2.125 = 8.15 \times 10^{34}$ yr</li>
                 </ol>
                 <p style="margin-top: 1rem;"><strong>Uncertainty Analysis:</strong></p>
-                <ul style="margin-\left: 1.5rem; font-size: 0.9rem;">
+                <ul style="margin-left: 1.5rem; font-size: 0.9rem;">
                     <li>68% confidence interval: $[6.8, 9.6] \times 10^{34}$ years</li>
                     <li>Order-of-magnitude uncertainty: $\pm 0.08$ (from threshold corrections only)</li>
                     <li>Topological parameters ($d/R$, $S$): <strong>zero variance</strong></li>
@@ -1904,7 +1904,7 @@
                 and moduli-dependent string loop effects:
             </p>
             <div class="equation-block">
-                $$\Delta\left(\frac{1}{\alpha_i}\right) = \frac{k_i \cdot h^{1,1}}{2\pi} \log\left(\frac{M_*}{M_{\text{GUT}}}\right)$$
+                $$\Delta\left(\f\frac{1}{\alpha_i}\right) = \f\frac{k_i \cdot h^{1,1}}{2\pi} \log\left(\f\frac{M_*}{M_{\text{GUT}}}\right)$$
                 <span class="equation-number">(5.11)</span>
             </div>
             <div class="derivation-box">
@@ -1953,7 +1953,7 @@
                 The atmospheric mixing angle emerges from G<sub>2</sub> holonomy symmetry. The maximal compact subgroup of G<sub>2</sub> is SU(3), which enforces:
             </p>
             <div class="equation-block">
-                $$\shadow_kuf = \shadow_chet \quad \Rightarrow \quad \theta_{23} = \frac{\pi}{4} = 45°$$
+                $$\shadow_kuf = \shadow_chet \quad \Rightarrow \quad \theta_{23} = \f\frac{\pi}{4} = 45°$$
                 <span class="equation-number">(6.1)</span>
             </div>
 
@@ -1986,47 +1986,47 @@
                     <td>$\theta_{23}$</td>
                     <td>45.0°</td>
                     <td>$45.0° \pm 1.0°$</td>
-                    <td>0.0&\sigma;</td>
+                    <td>0.0&sigma;</td>
                     <td>Derived</td>
                 </tr>
                 <tr>
                     <td>$\theta_{12}$</td>
                     <td>33.59°</td>
                     <td>$33.41° \pm 0.75°$</td>
-                    <td>0.24&\sigma;</td>
+                    <td>0.24&sigma;</td>
                     <td>Semi-derived</td>
                 </tr>
                 <tr>
                     <td>$\theta_{13}$</td>
                     <td>8.65°</td>
                     <td>$8.57° \pm 0.12°$</td>
-                    <td>0.64&\sigma;</td>
+                    <td>0.64&sigma;</td>
                     <td>Derived</td>
                 </tr>
                 <tr>
                     <td>$\delta_{CP}$</td>
                     <td>232.5°</td>
                     <td>$232° \pm 28°$</td>
-                    <td>0.02&\sigma;</td>
+                    <td>0.02&sigma;</td>
                     <td>Derived</td>
                 </tr>
             </table>
 
             <div class="derivation-box">
-                <h4>Derivation: $\theta_{12} = 33.59°$ from Tri-Bimaximal + Perturbation</h4>
+                <h4>Derivation: $	heta_{12} = 33.59°$ from Tri-Bimaximal + Perturbation</h4>
                 <ol>
-                    <li class="derivation-step">Tri-bimaximal base: $\theta_{12} = rctan(1/\sqrt{2}) = 35.26°$</li>
+                    <li class="derivation-step">Tri-bimaximal base: $	heta_{12} = rctan(1/\sqrt{2}) = 35.26°$</li>
                     <li class="derivation-step">Flux perturbation from TCS cycle volumes</li>
-                    <li class="derivation-step">Perturbation: $\Delta\theta_{12} = -(\alpha_4 - \alpha_5)/(2\sqrt{2}) = -1.67°$</li>
-                    <li class="derivation-step">Result: $\theta_{12} = 35.26° - 1.67° = 33.59°$</li>
+                    <li class="derivation-step">Perturbation: $\Delta	heta_{12} = -(lpha_4 - lpha_5)/(2\sqrt{2}) = -1.67°$</li>
+                    <li class="derivation-step">Result: $	heta_{12} = 35.26° - 1.67° = 33.59°$</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0: $33.41° \pm 0.75°$ &mdash; 0.24&\sigma; agreement</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0: $33.41° \pm 0.75°$ &mdash; 0.24&sigma; agreement</em></p>
             </div>
 
             <div class="derivation-box">
                 <h4>Derivation: $\theta_{13} = 8.65°$ from (1,3) Cycle Intersection</h4>
                 <ol>
-                    <li class="derivation-step"><strong>Formula:</strong> $\sin\theta_{13} = \frac{\sqrt{b_2 \times n_{\text{gen}}}}{b_3} \times \left(1 + \frac{S}{2\chi_{\text{eff}}}\right)$</li>
+                    <li class="derivation-step"><strong>Formula:</strong> $\sin\theta_{13} = \f\frac{\sqrt{b_2 \times n_{\text{gen}}}}{b_3} \times \left(1 + \f\frac{S}{2\chi_{\text{eff}}}\right)$</li>
                     <li class="derivation-step">Base mixing from cycle overlap: $\sqrt{b_2 \times n_{\text{gen}}}/b_3 = \sqrt{4 \times 3}/24 = 0.1443$</li>
                     <li class="derivation-step">Orientation correction: $1 + S/(2\chi_{\text{eff}}) = 1 + 12/(2 \times 144) = 1.0417$</li>
                     <li class="derivation-step">Combined: $\sin\theta_{13} = 0.1443 \times 1.0417 = 0.1504$</li>
@@ -2036,13 +2036,13 @@
                     <strong>Physical interpretation:</strong> The (1,3) mixing arises from the overlap between generation-1 and generation-3 cycles in the TCS network.
                     The base factor $\sqrt{b_2 \times n_{\text{gen}}}/b_3$ encodes the intersection number, while the orientation correction accounts for flux phase contributions.
                 </p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0: $8.57° \pm 0.12°$ &mdash; 0.64&\sigma; agreement</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0: $8.57° \pm 0.12°$ &mdash; 0.64&sigma; agreement</em></p>
             </div>
 
             <div class="derivation-box">
                 <h4>Derivation: $\delta_{CP} = 232.5°$ from Flux Orientation Phases</h4>
                 <ol>
-                    <li class="derivation-step"><strong>Formula:</strong> $\delta_{CP} = \pi \times \left(\frac{n_{\text{gen}} + b_2}{2 n_{\text{gen}}} + \frac{n_{\text{gen}}}{b_3}\right)$</li>
+                    <li class="derivation-step"><strong>Formula:</strong> $\delta_{CP} = \pi \times \left(\f\frac{n_{\text{gen}} + b_2}{2 n_{\text{gen}}} + \f\frac{n_{\text{gen}}}{b_3}\right)$</li>
                     <li class="derivation-step">Lepton sector phase: $(n_{\text{gen}} + b_2)/(2 n_{\text{gen}}) = (3+4)/(2 \times 3) = 7/6$</li>
                     <li class="derivation-step">Cycle topology phase: $n_{\text{gen}}/b_3 = 3/24 = 1/8$</li>
                     <li class="derivation-step">Total phase factor: $7/6 + 1/8 = 28/24 + 3/24 = 31/24$</li>
@@ -2052,14 +2052,14 @@
                     <strong>Physical interpretation:</strong> The CP phase emerges from the complex phase of the (1,3) intersection number $I_{13} = |I_{13}| e^{i\delta_{CP}}$.
                     The lepton sector contribution encodes the phase structure from the PMNS rotation, while the topology phase comes from the $b_3 = 24$ cycle network.
                 </p>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0: $232° \pm 28°$ &mdash; 0.02&\sigma;</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>NuFIT 6.0: $232° \pm 28°$ &mdash; 0.02&sigma;</em></p>
                 <p style="margin-top: 0.5rem; font-size: 0.85rem;"><em>Python reference: <code>simulations/pmns_theta13_delta_geometric_v14_1.py</code></em></p>
             </div>
 
             <h3 class="subsection-title">6.2a Top Quark Mass</h3>
             <p>The top quark mass emerges from the dominant Yukawa coupling:</p>
             <div class="equation-block">
-                $$m_t = y_t \times \frac{v_{\text{EW}}}{\sqrt{2}} = 172.7 \text{ GeV}$$
+                $$m_t = y_t \times\frac{v_{\text{EW}}}{\sqrt{2}} = 172.7 \text{ GeV}$$
                 <span class="equation-number">(6.4)</span>
             </div>
             <div class="derivation-box">
@@ -2067,9 +2067,9 @@
                 <ol>
                     <li class="derivation-step">Yukawa coupling $y_t$ from dominant G$_2$ cycle intersection</li>
                     <li class="derivation-step">VEV from Section 5.6: $v_{\text{EW}} = 173.97$ GeV</li>
-                    <li class="derivation-step">Mass formula: $m_t = y_t \times v / \sqrt{2}$</li>
-                    <li class="derivation-step">Intersection calculation yields $y_t \approx 1.0$</li>
-                    <li class="derivation-step">Result: $m_t = 1.0 \times 173.97 / \sqrt{2} = 172.7$ GeV</li>
+                    <li class="derivation-step">Mass formula: $m_t = y_t \timesv / \sqrt{2}$</li>
+                    <li class="derivation-step">Intersection calculation yields $y_t pprox 1.0$</li>
+                    <li class="derivation-step">Result: $m_t = 1.0 \times173.97 / \sqrt{2} = 172.7$ GeV</li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>PDG 2024: $m_t = 172.69 \pm 0.30$ GeV</em></p>
             </div>
@@ -2077,7 +2077,7 @@
             <h3 class="subsection-title">6.2b Bottom Quark Mass</h3>
             <p>The bottom quark mass derives from a subdominant Yukawa coupling:</p>
             <div class="equation-block">
-                $$m_b = y_b \times \frac{v_{\text{EW}}}{\sqrt{2}} = 4.18 \text{ GeV}$$
+                $$m_b = y_b \times \f\frac{v_{\text{EW}}}{\sqrt{2}} = 4.18 \text{ GeV}$$
                 <span class="equation-number">(6.5)</span>
             </div>
             <div class="derivation-box">
@@ -2092,9 +2092,9 @@
             </div>
 
             <h3 class="subsection-title">6.2c Tau Lepton Mass</h3>
-            <p>The \tau lepton mass follows the same geometric pattern:</p>
+            <p>The tau lepton mass follows the same geometric pattern:</p>
             <div class="equation-block">
-                $$m_\tau = y_\tau \times \frac{v_{\text{EW}}}{\sqrt{2}} = 1.777 \text{ GeV}$$
+                $$m_\tau = y_\tau \times \f\frac{v_{\text{EW}}}{\sqrt{2}} = 1.777 \text{ GeV}$$
                 <span class="equation-number">(6.6)</span>
             </div>
             <div class="derivation-box">
@@ -2111,7 +2111,7 @@
             <h3 class="subsection-title">6.2d Strong Coupling Constant</h3>
             <p>The strong coupling at the Z pole is determined by RG running from the GUT scale:</p>
             <div class="equation-block">
-                $$\alpha_s(M_Z) = \frac{\alpha_{\text{GUT}}}{1 + \frac{7\alpha_{\text{GUT}}}{2\pi}\ln\left(\frac{M_{\text{GUT}}}{M_Z}\right)} = 0.1179$$
+                $$\alpha_s(M_Z) = \f\frac{\alpha_{\text{GUT}}}{1 + \f\frac{7\alpha_{\text{GUT}}}{2\pi}\ln\left(\f\frac{M_{\text{GUT}}}{M_Z}\right)} = 0.1179$$
                 <span class="equation-number">(6.7)</span>
             </div>
             <div class="derivation-box">
@@ -2119,11 +2119,11 @@
                 <ol>
                     <li class="derivation-step">GUT coupling from Section 5.2: $\alpha_{\text{GUT}} = 1/23.54 = 0.0425$</li>
                     <li class="derivation-step">GUT scale from Section 5.3: $M_{\text{GUT}} = 2.118 \times 10^{16}$ GeV</li>
-                    <li class="derivation-step">One-loop QCD \beta function: $b_3 = 7$ (for SM content)</li>
-                    <li class="derivation-step">RG evolution: $\alpha_s^{-1}(M_Z) = \alpha_{\text{GUT}}^{-1} + \frac{7}{2\pi}\ln(M_{\text{GUT}}/M_Z)$</li>
+                    <li class="derivation-step">One-loop QCD beta function: $b_3 = 7$ (for SM content)</li>
+                    <li class="derivation-step">RG evolution: $\alpha_s^{-1}(M_Z) = \alpha_{\text{GUT}}^{-1} + \f\frac{7}{2\pi}\ln(M_{\text{GUT}}/M_Z)$</li>
                     <li class="derivation-step">Result: $\alpha_s(M_Z) = 0.1179$</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>PDG 2024: $\alpha_s(M_Z) = 0.1180 \pm 0.0009$ &mdash; 0.1&\sigma; agreement</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>PDG 2024: $\alpha_s(M_Z) = 0.1180 \pm 0.0009$ &mdash; 0.1&sigma; agreement</em></p>
             </div>
 
             <h3 class="subsection-title">6.2e Light Quark Masses</h3>
@@ -2190,7 +2190,7 @@
                     <li class="derivation-step">CKM matrix: $V_{\text{CKM}} = V_u^\dagger V_d$ (unitary transformation)</li>
                     <li class="derivation-step">Cabibbo angle: $|V_{us}| \approx \epsilon = 0.225$ (Froggatt-Nielsen parameter)</li>
                     <li class="derivation-step">Higher-order elements: $|V_{cb}| \approx \epsilon^2 = 0.048$, $|V_{ub}| \approx \epsilon^3 = 0.011$</li>
-                    <li class="derivation-step"><strong>Unitarity constra\int:</strong> $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 1$<br/>
+                    <li class="derivation-step"><strong>Unitarity constraint:</strong> $|V_{ud}|^2 + |V_{us}|^2 + |V_{ub}|^2 = 1$<br/>
                         $|V_{ud}| = \sqrt{1 - 0.225^2 - 0.0036^2} = \sqrt{0.9494} = 0.9744$</li>
                     <li class="derivation-step">Full numerical fit: accounts for complex phases and CP violation</li>
                 </ol>
@@ -2235,14 +2235,14 @@
                 not from phenomenological Wilson line phases. This is a purely topological mechanism:
             </p>
             <div class="equation-block">
-                $$\delta_{\text{CP}} = \pi \frac{\sum_i \text{orientation}_i}{b_3} = \pi \frac{12}{24} = \frac{\pi}{2}$$
+                $$\delta_{\text{CP}} = \pi \f\frac{\sum_i \text{orientation}_i}{b_3} = \pi \f\frac{12}{24} = \f\frac{\pi}{2}$$
                 <span class="equation-number">(6.8)</span>
             </div>
             <div class="derivation-box">
                 <h4>Derivation: CP Phase from Cycle Orientations (v14.1)</h4>
                 <ol>
                     <li class="derivation-step"><strong>Topological origin:</strong> Each 3-cycle in $H_3(G_2, \mathbb{Z})$ has orientation $\pm 1$</li>
-                    <li class="derivation-step"><strong>TCS topology:</strong> $b_3 = 24$ associative 3-cycles with orientation \sum $= 12$</li>
+                    <li class="derivation-step"><strong>TCS topology:</strong> $b_3 = 24$ associative 3-cycles with orientation sum $= 12$</li>
                     <li class="derivation-step"><strong>CP formula:</strong> $\delta_{\text{CP}} = \pi \times (\text{orientation sum}) / b_3$</li>
                     <li class="derivation-step"><strong>Jarlskog invariant:</strong> $J = \text{Im}(V_{us}V_{cb}V_{ub}^*V_{cs}^*) = 3.0 \times 10^{-5}$</li>
                     <li class="derivation-step"><strong>CKM phase:</strong> $\delta_{\text{CP}}^{\text{CKM}} = 68°$ (PDG: $67° \pm 4°$)</li>
@@ -2282,14 +2282,14 @@
                         delocalized at different depths into the shadow brane chain:
                         <ul style="margin-top: 0.5rem;">
                             <li>1st gen (e, u, d): Localized on B<sub>1</sub> &rarr; lightest</li>
-                            <li>2nd gen (&\mu;, c, s): Delocalized to B<sub>2</sub> &rarr; intermediate</li>
-                            <li>3rd gen (&\tau;, t, b): Delocalized to B<sub>3</sub> &rarr; heaviest</li>
+                            <li>2nd gen (&mu;, c, s): Delocalized to B<sub>2</sub> &rarr; intermediate</li>
+                            <li>3rd gen (&tau;, t, b): Delocalized to B<sub>3</sub> &rarr; heaviest</li>
                         </ul>
                     </li>
                 </ol>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
                     <em>This reduces the 13 free Yukawa parameters of the SM to ~5 geometric parameters of
-                    K<sub>Pneuma</sub>: the Higgs localization width L, the curvature &\lambda;, and the 3 fermion
+                    K<sub>Pneuma</sub>: the Higgs localization width L, the curvature &lambda;, and the 3 fermion
                     radial positions.</em>
                 </p>
             </div>
@@ -2350,13 +2350,13 @@
                     <li class="derivation-step"><strong>Electroweak VEV:</strong> $v_{\text{EW}} = 246$ GeV</li>
                 </ol>
                 <p style="margin-top: 0.5rem;"><strong>Sterile Neutrino Spectrum (Heavy):</strong></p>
-                <ul style="margin-\left: 2rem;">
+                <ul style="margin-left: 2rem;">
                     <li>$N_1$: $M_1 = 5.1 \times 10^{13}$ GeV (heaviest, leptogenesis)</li>
                     <li>$N_2$: $M_2 = 2.3 \times 10^{13}$ GeV</li>
                     <li>$N_3$: $M_3 = 5.7 \times 10^{12}$ GeV (lightest heavy state)</li>
                 </ul>
                 <p style="margin-top: 0.5rem;"><strong>Individual Neutrino Masses (Normal Hierarchy):</strong></p>
-                <ul style="margin-\left: 2rem;">
+                <ul style="margin-left: 2rem;">
                     <li>$m_1 = 2.5 \times 10^{-3}$ eV (lightest, nearly zero)</li>
                     <li>$m_2 = \sqrt{m_1^2 + \Delta m^2_{21}} = 8.6 \times 10^{-3}$ eV</li>
                     <li>$m_3 = \sqrt{m_1^2 + \Delta m^2_{31}} = 5.05 \times 10^{-2}$ eV (heaviest)</li>
@@ -2382,7 +2382,7 @@
                 <ol>
                     <li class="derivation-step">Matter central charge: $c_{\text{matter}} = 26$ (critical bosonic string)</li>
                     <li class="derivation-step">Ghost central charge: $c_{\text{ghost}} = -26$ (bc system)</li>
-                    <li class="derivation-step">Ghost dilution coefficient: $\gamma = \frac{|c_{\text{ghost}}|}{2 c_{\text{matter}}} = \frac{26}{52} = 0.5$</li>
+                    <li class="derivation-step">Ghost dilution coefficient: $\gamma = \f\frac{|c_{\text{ghost}}|}{2 c_{\text{matter}}} = \f\frac{26}{52} = 0.5$</li>
                     <li class="derivation-step">Shared dimensions from brane couplings: $\shadow_kuf + \shadow_chet = 1.152$</li>
                     <li class="derivation-step">Result: $d_{\text{eff}} = 12 + 0.5 \times 1.152 = 12.576$</li>
                 </ol>
@@ -2391,50 +2391,50 @@
 
             <p>This yields:</p>
             <div class="equation-block">
-                $$w_0 = -\frac{d_{\text{eff}} - 1}{d_{\text{eff}} + 1} = -\frac{11.576}{13.576} = -0.8528$$
+                $$w_0 = -\f\frac{d_{\text{eff}} - 1}{d_{\text{eff}} + 1} = -\f\frac{11.576}{13.576} = -0.8528$$
                 <span class="equation-number">(7.2)</span>
             </div>
-            <p>This matches DESI DR2 (2024): $w_0 = -0.83 \pm 0.06$ to within 0.38&\sigma;.</p>
+            <p>This matches DESI DR2 (2024): $w_0 = -0.83 \pm 0.06$ to within 0.38&sigma;.</p>
 
             <h3 class="subsection-title">7.2 Logarithmic Evolution</h3>
             <p>Thermal friction from the Tomita-Takesaki modular flow generates redshift evolution:</p>
             <div class="equation-block">
-                $$w(z) = w_0 \left[1 + \frac{\a\alpha_T}{3}\ln(1+z)\right]$$
+                $$w(z) = w_0 \left[1 + \f\frac{\alpha_T}{3}\ln(1+z)\right]$$
                 <span class="equation-number">(7.3)</span>
             </div>
             <p>
-                where $\a\alpha_T \approx 2.7$ is derived from the two-time thermodynamic framework. This logarithmic form avoids the CPL divergence at high redshift and predicts $w_a < 0$, consistent with DESI's 6.2σ preference.
+                where $\alpha_T \approx 2.7$ is derived from the two-time thermodynamic framework. This logarithmic form avoids the CPL divergence at high redshift and predicts $w_a < 0$, consistent with DESI's 6.2σ preference.
             </p>
 
             <div class="derivation-box">
-                <h4>Derivation: $\a\alpha_T = 2.7$ from Cosmological Scalings</h4>
+                <h4>Derivation: $\alpha_T = 2.7$ from Cosmological Scalings</h4>
                 <ol>
-                    <li class="derivation-step">Define: $\a\alpha_T \equiv \frac{d\ln\tau}{d\ln a} - \frac{d\ln H}{d\ln a}$ (thermal-Hubble coefficient)</li>
-                    <li class="derivation-step">Thermal time from KMS: $\tau \propto T^{-1} \propto a$ (adiabatic expansion) $\Rightarrow \frac{d\ln\tau}{d\ln a} = +1$</li>
-                    <li class="derivation-step">Hubble rate (matter era): $H \propto a^{-3/2}$ $\Rightarrow \frac{d\ln H}{d\ln a} = -\frac{3}{2}$</li>
-                    <li class="derivation-step">Single-time baseline: $\a\alpha_T^{(0)} = (+1) - (-\frac{3}{2}) = 2.5$</li>
-                    <li class="derivation-step">Two-time $\mathbb{Z}_2$ correction: $\Delta\a\alpha_T = +0.2$ from mirror sector thermal coupling</li>
-                    <li class="derivation-step">Result: $\a\alpha_T = 2.5 + 0.2 = \boxed{2.7}$</li>
+                    <li class="derivation-step">Define: $\alpha_T \equiv \f\frac{d\ln\tau}{d\ln a} - \f\frac{d\ln H}{d\ln a}$ (thermal-Hubble coefficient)</li>
+                    <li class="derivation-step">Thermal time from KMS: $\tau \propto T^{-1} \propto a$ (adiabatic expansion) $\Rightarrow \f\frac{d\ln\tau}{d\ln a} = +1$</li>
+                    <li class="derivation-step">Hubble rate (matter era): $H \propto a^{-3/2}$ $\Rightarrow \f\frac{d\ln H}{d\ln a} = -\f\frac{3}{2}$</li>
+                    <li class="derivation-step">Single-time baseline: $\alpha_T^{(0)} = (+1) - (-\f\frac{3}{2}) = 2.5$</li>
+                    <li class="derivation-step">Two-time $\mathbb{Z}_2$ correction: $\Delta\alpha_T = +0.2$ from mirror sector thermal coupling</li>
+                    <li class="derivation-step">Result: $\alpha_T = 2.5 + 0.2 = \boxed{2.7}$</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Note: Alternative KMS derivation $\a\alpha_T = b_3/(8\pi) \approx 0.955$ applies to modular flow period; the cosmological value 2.7 includes full thermodynamic scaling.</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Note: Alternative KMS derivation $\alpha_T = b_3/(8\pi) \approx 0.955$ applies to modular flow period; the cosmological value 2.7 includes full thermodynamic scaling.</em></p>
             </div>
 
             <h3 class="subsection-title">7.3 Dark Energy Evolution Parameter</h3>
             <p>The effective $w_a$ parameter from CPL fitting:</p>
             <div class="equation-block">
-                $$w_a = -\frac{\alpha_T}{3} \times \frac{w_0 + 1}{1 - w_0} = -0.75$$
+                $$w_a = -\frac{lpha_T}{3} \times\frac{w_0 + 1}{1 - w_0} = -0.75$$
                 <span class="equation-number">(7.4)</span>
             </div>
             <div class="derivation-box">
                 <h4>Derivation: $w_a$ from Thermal Friction</h4>
                 <ol>
-                    <li class="derivation-step">Thermal parameter from KMS condition: $\alpha_T = 2.7$</li>
+                    <li class="derivation-step">Thermal parameter from KMS condition: $lpha_T = 2.7$</li>
                     <li class="derivation-step">Present value from Section 7.1: $w_0 = -0.8528$</li>
-                    <li class="derivation-step">Logarithmic evolution: $w(z) = w_0[1 + (\alpha_T/3)\ln(1+z)]$</li>
-                    <li class="derivation-step">CPL approximation fit: $w(a) \approx w_0 + w_a(1-a)$</li>
+                    <li class="derivation-step">Logarithmic evolution: $w(z) = w_0[1 + (lpha_T/3)\ln(1+z)]$</li>
+                    <li class="derivation-step">CPL \approximation fit: $w(a) pprox w_0 + w_a(1-a)$</li>
                     <li class="derivation-step">Result: $w_a = -(2.7/3) \times(-0.8528+1)/(1+0.8528) = -0.75$</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>DESI DR2 (2024): $w_a = -0.75 \pm 0.30$ &mdash; 0.66&\sigma; agreement</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>DESI DR2 (2024): $w_a = -0.75 \pm 0.30$ &mdash; 0.66&sigma; agreement</em></p>
             </div>
 
             <h3 class="subsection-title" id="attractor-scalar">7.4 The Attractor Scalar</h3>
@@ -2451,7 +2451,7 @@
                 The complete scalar potential has three geometric contributions:
             </p>
             <div class="equation-block">
-                $$V(\phi_M) = V_{\text{flux}} e^{-a\phi_M} + V_{\text{inst}} e^{-b/\phi_M} + V_{\text{axion}} \cos\left(\frac{\phi_M}{f}\right)$$
+                $$V(\phi_M) = V_{\text{flux}} e^{-a\phi_M} + V_{\text{inst}} e^{-b/\phi_M} + V_{\text{axion}} \cos\left(\f\frac{\phi_M}{f}\right)$$
                 <span class="equation-number">(7.6)</span>
             </div>
             <p>
@@ -2471,12 +2471,12 @@
                 <p>The attractor scalar resolves the dark energy fine-tuning problem via tracking dynamics:</p>
                 <ol>
                     <li class="derivation-step"><strong>Equation of motion:</strong> $\ddot{\phi}_M + 3H\dot{\phi}_M + V'(\phi_M) = 0$</li>
-                    <li class="derivation-step"><strong>Slow-roll conditions:</strong> $\epsilon = \frac{1}{2}\left(\frac{V'}{V}\right)^2 \ll 1$ (satisfied at VEV)</li>
+                    <li class="derivation-step"><strong>Slow-roll conditions:</strong> $\epsilon = \f\frac{1}{2}\left(\f\frac{V'}{V}\right)^2 \ll 1$ (satisfied at VEV)</li>
                     <li class="derivation-step"><strong>Tracking behavior:</strong> Different initial conditions converge to the same attractor</li>
-                    <li class="derivation-step"><strong>Late-time limit:</strong> As $\dot{\phi}_M \to 0$, the equation of state $w = \frac{\dot{\phi}^2/2 - V}{\dot{\phi}^2/2 + V} \to -1$</li>
+                    <li class="derivation-step"><strong>Late-time limit:</strong> As $\dot{\phi}_M \to 0$, the equation of state $w = \f\frac{\dot{\phi}^2/2 - V}{\dot{\phi}^2/2 + V} \to -1$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                    <em>&rarr; This attractor mechanism drives $w \to -1$ at late \times, consistent with $\Lambda$CDM, while permitting early-time evolution.</em>
+                    <em>&rarr; This attractor mechanism drives $w \to -1$ at late times, consistent with $\Lambda$CDM, while permitting early-time evolution.</em>
                 </p>
             </div>
 
@@ -2536,17 +2536,17 @@
             </p>
 
             <div class="derivation-box">
-                <h4>Time-Entropy Connection: $t = \a\alpha_T \cdot S$</h4>
+                <h4>Time-Entropy Connection: $t = \alpha_T \cdot S$</h4>
                 <p>The thermal time is proportional to the entropy of the Pneuma condensate:</p>
                 <div class="equation-block">
-                    $$t_{\text{therm}} = \a\alpha_T \cdot S_{\text{Pneuma}} = \a\alpha_T \cdot \text{Tr}(\rho \log \rho)$$
+                    $$t_{\text{therm}} = \alpha_T \cdot S_{\text{Pneuma}} = \alpha_T \cdot \text{Tr}(\rho \log \rho)$$
                     <span class="equation-number">(7.8)</span>
                 </div>
                 <ol>
                     <li class="derivation-step"><strong>Von Neumann entropy:</strong> $S = -\text{Tr}(\rho \log \rho) = \langle K \rangle$</li>
                     <li class="derivation-step"><strong>Modular parameter:</strong> $t = -i \log(\Delta)$ generates time translations</li>
-                    <li class="derivation-step"><strong>Coupling constant:</strong> $\a\alpha_T = 2.7$ (thermal-Hubble coupling)</li>
-                    <li class="derivation-step"><strong>Dark energy relation:</strong> $w_a = w_0 \cdot \a\alpha_T / 3 \approx -0.75$</li>
+                    <li class="derivation-step"><strong>Coupling constant:</strong> $\alpha_T = 2.7$ (thermal-Hubble coupling)</li>
+                    <li class="derivation-step"><strong>Dark energy relation:</strong> $w_a = w_0 \cdot \alpha_T / 3 \approx -0.75$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
                     <em>&rarr; Time flow is thermodynamic: the second law guarantees $dS/dt > 0$, hence unidirectional time.</em>
@@ -2562,24 +2562,24 @@
                 <li><strong>$t_{\text{ortho}}$:</strong> Orthogonal/hidden time eliminated by Sp(2,$\mathbb{R}$) gauge</li>
             </ul>
             <p>
-                The gauge fixing constra\int $X \cdot P = 0$ eliminates $t_{\text{ortho}}$, leaving physical evolution
+                The gauge fixing constraint $X \cdot P = 0$ eliminates $t_{\text{ortho}}$, leaving physical evolution
                 along $t_{\text{therm}}$ only. This explains why we perceive a single time dimension despite
                 the (24,2) bulk signature.
             </p>
 
             <div class="derivation-box">
-                <h4>Derivation: Thermal-Hubble Coupling $\a\alpha_T = 2.7$</h4>
-                <p>The thermal time parameter $\a\alpha_T$ measures the coupling between thermal and cosmological time:</p>
+                <h4>Derivation: Thermal-Hubble Coupling $\alpha_T = 2.7$</h4>
+                <p>The thermal time parameter $\alpha_T$ measures the coupling between thermal and cosmological time:</p>
                 <div class="equation-block">
-                    $$\a\alpha_T = \frac{d(\ln \tau)}{d(\ln a)} - \frac{d(\ln H)}{d(\ln a)}$$
+                    $$\alpha_T = \f\frac{d(\ln \tau)}{d(\ln a)} - \f\frac{d(\ln H)}{d(\ln a)}$$
                     <span class="equation-number">(7.9)</span>
                 </div>
                 <ol>
                     <li class="derivation-step"><strong>Thermal time scaling:</strong> $\tau \sim T^{-1} \sim a$ (adiabatic) $\Rightarrow d(\ln \tau)/d(\ln a) = +1$</li>
                     <li class="derivation-step"><strong>Hubble in matter era:</strong> $H \sim a^{-3/2}$ $\Rightarrow d(\ln H)/d(\ln a) = -3/2$</li>
-                    <li class="derivation-step"><strong>Single-time baseline:</strong> $\a\alpha_T^{(0)} = 1 - (-3/2) = 2.5$</li>
+                    <li class="derivation-step"><strong>Single-time baseline:</strong> $\alpha_T^{(0)} = 1 - (-3/2) = 2.5$</li>
                     <li class="derivation-step"><strong>Z$_2$ mirror correction:</strong> $+0.2$ from thermal coupling to mirror sector</li>
-                    <li class="derivation-step"><strong>Total:</strong> $\a\alpha_T = 2.5 + 0.2 = 2.7$</li>
+                    <li class="derivation-step"><strong>Total:</strong> $\alpha_T = 2.5 + 0.2 = 2.7$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
                     <em>&rarr; See <code>simulations/thermal_time_v12_8.py</code> for numerical verification.</em>
@@ -2621,7 +2621,7 @@
                 <tr>
                     <td>Masses</td>
                     <td>All quarks, leptons, Higgs</td>
-                    <td>Derived + 1 constra\int</td>
+                    <td>Derived + 1 constraint</td>
                 </tr>
             </table>
 
@@ -2675,9 +2675,9 @@
                 <h4>Derivation: KK Graviton Mass $m_{\text{KK}} = 5.0$ TeV</h4>
                 <ol>
                     <li class="derivation-step">G<sub>2</sub> compactification volume: $V_{G_2} = (\text{Re}(T))^7 \times \ell_P^7$ where $\ell_P = 1.6 \times 10^{-35}$ m</li>
-                    <li class="derivation-step">Modulus from Higgs constra\int: $\text{Re}(T) = 7.086$</li>
+                    <li class="derivation-step">Modulus from Higgs constraint: $\text{Re}(T) = 7.086$</li>
                     <li class="derivation-step">Compactification radius: $R_c = V_{G_2}^{1/7} = 7.086 \times \ell_P \approx 1.1 \times 10^{-34}$ m</li>
-                    <li class="derivation-step">First KK mode mass: $m_{\text{KK},1} = \frac{\hbar c}{R_c} = \frac{1.97 \times 10^{-7} \text{ eV·m}}{1.1 \times 10^{-34} \text{ m}}$</li>
+                    <li class="derivation-step">First KK mode mass: $m_{\text{KK},1} = \f\frac{\hbar c}{R_c} = \f\frac{1.97 \times 10^{-7} \text{ eV·m}}{1.1 \times 10^{-34} \text{ m}}$</li>
                     <li class="derivation-step">Result: $m_{\text{KK},1} \approx 5.0$ TeV (within HL-LHC reach at $\sqrt{s} = 14$ TeV)</li>
                 </ol>
                 <p style="margin-top: 0.5rem;"><strong>Signature at HL-LHC:</strong> Missing transverse energy + dijets from $pp \to G^{(1)} \to \gamma\gamma, ZZ, W^+W^-$</p>
@@ -2743,7 +2743,7 @@
             <p>The framework requires:</p>
             <ul>
                 <li><strong>0 calibrated parameters:</strong> All PMNS angles including $\theta_{13}$ and $\delta_{CP}$ now derived from geometry</li>
-                <li><strong>1 constra\int:</strong> Higgs mass $m_h = 125.1$ GeV fixes Re$(T) = 7.086$</li>
+                <li><strong>1 constraint:</strong> Higgs mass $m_h = 125.1$ GeV fixes Re$(T) = 7.086$</li>
                 <li><strong>0 phenomenological parameters:</strong> VEV, $\alpha_{\text{GUT}}$, $w_0$ all derived geometrically</li>
             </ul>
 
@@ -2814,7 +2814,7 @@
             </p>
 
             <div class="equation-block">
-                $$M_{\text{SUSY}} \gtr\sim M_{\text{GUT}} \approx 2.1 \times 10^{16}~\text{GeV} \gg M_{\text{LHC}} \sim 10^4~\text{GeV}$$
+                $$M_{\text{SUSY}} \gtrsim M_{\text{GUT}} \approx 2.1 \times 10^{16}~\text{GeV} \gg M_{\text{LHC}} \sim 10^4~\text{GeV}$$
             </div>
 
             <p>
@@ -2826,7 +2826,7 @@
             <h3 class="subsection-title">9.6 Limitations and Future Work</h3>
             <p>Outstanding theoretical challenges:</p>
             <ul>
-                <li><s>Derive $\theta_{13}$ and $\delta_{CP}$ from explicit cycle intersection integrals</s> — <strong>RESOLVED (v14.1):</strong> Both parameters now derived geometrically with 0.35&\sigma; average agreement with NuFIT</li>
+                <li><s>Derive $\theta_{13}$ and $\delta_{CP}$ from explicit cycle intersection integrals</s> — <strong>RESOLVED (v14.1):</strong> Both parameters now derived geometrically with 0.35&sigma; average agreement with NuFIT</li>
                 <li>Compute Yukawa textures without cycle volume fitting</li>
                 <li>Establish rigorous proof of Z<sub>2</sub> factor in generation formula</li>
                 <li>Full quantum loop corrections to attractor potential</li>
@@ -2853,7 +2853,7 @@
 
             <h3 class="subsection-title">9.7 Conclusion</h3>
             <p>
-                This framework derives Standard Model parameters from a single TCS G<sub>2</sub> manifold with 1 constra\int (Higgs mass fixes Re$(T)$). The agreement with experimental data should be interpreted with caution: while many predictions fall within experimental uncertainties, the framework remains a theoretical proposal requiring experimental validation.
+                This framework derives Standard Model parameters from a single TCS G<sub>2</sub> manifold with 1 constraint (Higgs mass fixes Re$(T)$). The agreement with experimental data should be interpreted with caution: while many predictions fall within experimental uncertainties, the framework remains a theoretical proposal requiring experimental validation.
             </p>
             <p>
                 The framework makes testable predictions: normal neutrino hierarchy, KK graviton signatures near 5 TeV, and specific dark energy evolution. Confirmation or refutation of these predictions by DUNE, HL-LHC, and next-generation cosmology surveys will provide meaningful tests.
@@ -2872,7 +2872,7 @@
                 <li>Sethi, S., Vafa, C. &amp; Witten, E. (1996). Constraints on low-dimensional string compactifications. <em>Nucl. Phys. B</em> 480, 213. [DOI:10.1016/S0550-3213(96)00483-X] [arXiv:hep-th/9606122]</li>
                 <li>Connes, A. &amp; Rovelli, C. (1994). Von Neumann algebra automorphisms and time-thermodynamics. <em>Class. Quant. Grav.</em> 11, 2899. [DOI:10.1088/0264-9381/11/12/007]</li>
                 <li>DESI Collaboration (2024). DESI 2024 VI: Cosmological Constraints. [arXiv:2404.03002]</li>
-                <li>NuFIT 6.0 (2025). Global analysis of neutrino oscillation data. <a href="http://www.\nu-fit.org" target="_blank">www.\nu-fit.org</a></li>
+                <li>NuFIT 6.0 (2025). Global analysis of neutrino oscillation data. <a href="http://www.nu-fit.org" target="_blank">www.nu-fit.org</a></li>
                 <li>Particle Data Group (2024). Review of Particle Physics. <em>Phys. Rev. D</em> 110, 030001. [DOI:10.1103/PhysRevD.110.030001]</li>
                 <li>Polchinski, J. (1998). <em>String Theory</em>, Vol. 1. Cambridge University Press. [ISBN:978-0521633031]</li>
                 <li>Grimm, T. &amp; Louis, J. (2004). The effective action of N=1 Calabi-Yau orientifolds. <em>Nucl. Phys. B</em> 699, 387. [DOI:10.1016/j.nuclphysb.2004.08.005] [arXiv:hep-th/0412277]</li>
@@ -2887,7 +2887,7 @@
                 <li>Witten, E. (2001). Anomaly cancellation on G<sub>2</sub> manifolds. [arXiv:hep-th/0108165]</li>
                 <li>Kachru, S., Kallosh, R., Linde, A. &amp; Trivedi, S.P. (2003). de Sitter vacua in string theory. <em>Phys. Rev. D</em> 68, 046005. [DOI:10.1103/PhysRevD.68.046005] [arXiv:hep-th/0301240]</li>
                 <li>Beasley, C., Heckman, J.J. &amp; Vafa, C. (2009). GUTs and Exceptional Branes in F-theory - I. <em>JHEP</em> 01, 058. [DOI:10.1088/1126-6708/2009/01/058] [arXiv:0802.3391]</li>
-                <li>Super-Kamiokande Collaboration (2023). Search for proton decay via p &rarr; e<sup>+</sup>&\pi;<sup>0</sup>. <em>Phys. Rev. D</em> 108, 012002. [DOI:10.1103/PhysRevD.108.012002]</li>
+                <li>Super-Kamiokande Collaboration (2023). Search for proton decay via p &rarr; e<sup>+</sup>&pi;<sup>0</sup>. <em>Phys. Rev. D</em> 108, 012002. [DOI:10.1103/PhysRevD.108.012002]</li>
                 <li>Planck Collaboration (2020). Planck 2018 results. VI. Cosmological parameters. <em>Astron. Astrophys.</em> 641, A6. [DOI:10.1051/0004-6361/201833910] [arXiv:1807.06209]</li>
                 <li>Kaluza, T. (1921). Zum Unit&auml;tsproblem der Physik. <em>Sitzungsber. Preuss. Akad. Wiss.</em> Berlin, 966.</li>
                 <li>Klein, O. (1926). Quantentheorie und f&uuml;nfdimensionale Relativit&auml;tstheorie. <em>Z. Phys.</em> 37, 895. [DOI:10.1007/BF01397481]</li>
@@ -2911,7 +2911,7 @@
 
             <h3 class="subsection-title">A.2 Simulation Code</h3>
             <pre><code># virasoro_anomaly_v12_8.py
-def virasoro_anomaly(D: \int = 26) -> Dict:
+def virasoro_anomaly(D: int = 26) -> Dict:
     """Verify Virasoro anomaly cancellation for bosonic string."""
     c_matter = D           # Each bosonic coordinate contributes +1
     c_ghost = -26          # b,c ghost system (conformal weights 2, -1)
@@ -2940,12 +2940,12 @@ def virasoro_anomaly(D: \int = 26) -> Dict:
                 reducing the physical degrees of freedom:
             </p>
             <div class="equation-block">
-                $$\text{26D}_{(24,2)} \x\rightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \x\rightarrow{\text{gauge fixing}} \text{Effective 4D}_{(3,1)}$$
+                $$\text{26D}_{(24,2)} \xrightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \xrightarrow{\text{gauge fixing}} \text{Effective 4D}_{(3,1)}$$
             </div>
 
             <h4 style="margin-top: 1.5rem;">Signature Validation Code</h4>
             <pre><code># virasoro_anomaly_v12_8.py: Signature validation
-def virasoro_with_signature(D_space: \int = 24, D_time: \int = 2) -> Dict:
+def virasoro_with_signature(D_space: int = 24, D_time: int = 2) -> Dict:
     """Virasoro anomaly for (D_space, D_time) signature."""
     D_total = D_space + D_time
     result = virasoro_anomaly(D_total)
@@ -2969,13 +2969,13 @@ def virasoro_with_signature(D_space: \int = 24, D_time: \int = 2) -> Dict:
 
             <h3 class="subsection-title">A.4 PM Framework Applications</h3>
             <p>
-                The $D = 26$ constra\int and (24,2) signature enable the PM framework's dimensional reduction:
+                The $D = 26$ constraint and (24,2) signature enable the PM framework's dimensional reduction:
             </p>
             <ul style="line-height: 1.8;">
                 <li><strong>Bulk spacetime:</strong> 26D with signature (24,2) automatically satisfies Virasoro anomaly cancellation</li>
                 <li><strong>Sp(2,&#x211D;) gauge fixing:</strong> Reduces (24,2) &rarr; (12,1) by eliminating half the degrees of freedom</li>
                 <li><strong>Shadow reduction:</strong> Yields 13-dimensional intermediate spacetime with one effective time</li>
-                <li><strong>Compactification:</strong> 9 spatial dimensions (from gauge fixing) + 13 shadow dimensions compactify on T<sup>15</sup> &\times; G<sub>2</sub>(7D)</li>
+                <li><strong>Compactification:</strong> 9 spatial dimensions (from gauge fixing) + 13 shadow dimensions compactify on T<sup>15</sup> &times; G<sub>2</sub>(7D)</li>
                 <li><strong>Observable physics:</strong> Effective 4D Minkowski (3,1) after full reduction</li>
             </ul>
 
@@ -2990,7 +2990,7 @@ def virasoro_with_signature(D_space: \int = 24, D_time: \int = 2) -> Dict:
 
             <h3 class="subsection-title">B.1 Index Formula</h3>
             <div class="equation-block">
-                $$n_{\text{gen}} = \frac{|\chi_{\text{eff}}|}{24 \times Z_2} = \frac{144}{24 \times 2} = \frac{144}{48} = 3$$
+                $$n_{\text{gen}} = \f\frac{|\chi_{\text{eff}}|}{24 \times Z_2} = \f\frac{144}{24 \times 2} = \f\frac{144}{48} = 3$$
             </div>
 
             <h3 class="subsection-title">B.2 Z<sub>2</sub> Mirror Symmetry</h3>
@@ -3027,10 +3027,10 @@ F_THEORY_DIVISOR = 24   # Sethi-Vafa-Witten index theorem
 Z2_FACTOR = 2           # From Sp(2,R) gauge fixing
 PM_DIVISOR = F_THEORY_DIVISOR * Z2_FACTOR  # = 48
 
-def zero_modes_gen(chi_eff: \int = 144) -> \int:
+def zero_modes_gen(chi_eff: int = 144) -> int:
     """Calculate generation count with Z2 factor."""
     n_gen = np.abs(chi_eff) / PM_DIVISOR
-    return \int(n_gen)  # Returns 3
+    return int(n_gen)  # Returns 3
 
 # Verification: 144 / 48 = 3 generations</code></pre>
 
@@ -3056,10 +3056,10 @@ def zero_modes_gen(chi_eff: \int = 144) -> \int:
 def derive_theta23_g2() -> float:
     """Derive theta_23 from G2 holonomy SU(3) symmetry."""
     # G2 holonomy forces shadow_kuf = shadow_chet via SU(3) symmetry
-    alpha_diff = 0.0  # Geometric constra\int
+    alpha_diff = 0.0  # Geometric constraint
 
     # Maximal mixing from symmetric brane couplings
-    theta_23_rad = np.\pi / 4  # 45 degrees
+    theta_23_rad = np.pi / 4  # 45 degrees
     return np.degrees(theta_23_rad)  # 45.0
 
 def derive_sitra_shadow_coupling() -> Tuple[float, float]:
@@ -3080,7 +3080,7 @@ def derive_sitra_shadow_coupling() -> Tuple[float, float]:
 
             <h3 class="subsection-title">D.1 Ghost Coefficient</h3>
             <div class="equation-block">
-                $$\gamma = \frac{|c_{\text{ghost}}|}{2 c_{\text{matter}}} = \frac{26}{2 \times 26} = \frac{26}{52} = 0.5$$
+                $$\gamma = \f\frac{|c_{\text{ghost}}|}{2 c_{\text{matter}}} = \f\frac{26}{2 \times 26} = \f\frac{26}{52} = 0.5$$
             </div>
 
             <h3 class="subsection-title">D.2 Effective Dimension</h3>
@@ -3090,7 +3090,7 @@ def derive_sitra_shadow_coupling() -> Tuple[float, float]:
 
             <h3 class="subsection-title">D.3 Equation of State</h3>
             <div class="equation-block">
-                $$w_0 = -\frac{d_{\text{eff}} - 1}{d_{\text{eff}} + 1} = -\frac{11.576}{13.576} = -0.8528$$
+                $$w_0 = -\f\frac{d_{\text{eff}} - 1}{d_{\text{eff}} + 1} = -\f\frac{11.576}{13.576} = -0.8528$$
             </div>
 
             <h3 class="subsection-title">D.4 Simulation Code</h3>
@@ -3109,7 +3109,7 @@ def derive_w0_from_d_eff(d_eff):
     return -(d_eff - 1) / (d_eff + 1)  # -0.8528
 
 # DESI DR2 comparison: w0 = -0.83 +/- 0.06
-# Deviation: 0.38 \sigma</code></pre>
+# Deviation: 0.38 sigma</code></pre>
 
             <!-- ============================================================ -->
             <!-- APPENDIX E: PROTON DECAY -->
@@ -3122,7 +3122,7 @@ def derive_w0_from_d_eff(d_eff):
 
             <h3 class="subsection-title">E.1 GUT Scale Derivation</h3>
             <div class="equation-block">
-                $$M_{\text{GUT}} = M_{\text{GUT,base}} \times \left(1 + \frac{3}{22 - \nu/12} \times s\right) = 2.12 \times 10^{16} \text{ GeV}$$
+                $$M_{\text{GUT}} = M_{\text{GUT,base}} \times \left(1 + \f\frac{3}{22 - \nu/12} \times s\right) = 2.12 \times 10^{16} \text{ GeV}$$
             </div>
             <p>
                 where $s = (\ln(M_{\text{Pl}}/M_{\text{GUT,base}}) - T_\omega) / (2\pi/(\nu/b_3))$ is the geometric scale parameter.
@@ -3130,7 +3130,7 @@ def derive_w0_from_d_eff(d_eff):
 
             <h3 class="subsection-title">E.2 Proton Lifetime</h3>
             <div class="equation-block">
-                $$\tau_p = C \times \left(\frac{M_{\text{GUT}}}{10^{16} \text{ GeV}}\right)^4 \times \left(\frac{0.03}{\alpha_{\text{GUT}}}\right)^2 \times S$$
+                $$\tau_p = C \times \left(\f\frac{M_{\text{GUT}}}{10^{16} \text{ GeV}}\right)^4 \times \left(\f\frac{0.03}{\alpha_{\text{GUT}}}\right)^2 \times S$$
             </div>
             <p>
                 where $C = 3.82 \times 10^{33}$ yr (QCD matrix element) and $S = \exp(2\pi d/R) \approx 2.1$ is the geometric suppression factor from cycle separation.
@@ -3152,7 +3152,7 @@ def derive_w0_from_d_eff(d_eff):
                 $$\tau_p = 8.15 \times 10^{34} \text{ years}$$
             </div>
             <p>
-                Super-Kamiokande bound (PDG 2024): $\tau_p > 1.67 \times 10^{34}$ yr ($p \to e^+ \pi^0$, 90% CL). PM prediction is <strong>4.9&\times; the experimental bound</strong>, consistent and testable at Hyper-Kamiokande.
+                Super-Kamiokande bound (PDG 2024): $\tau_p > 1.67 \times 10^{34}$ yr ($p \to e^+ \pi^0$, 90% CL). PM prediction is <strong>4.9&times; the experimental bound</strong>, consistent and testable at Hyper-Kamiokande.
             </p>
 
             <h3 class="subsection-title">E.3 Uncertainty Analysis</h3>
@@ -3181,7 +3181,7 @@ def derive_w0_from_d_eff(d_eff):
                 The coefficient κ appearing in the geometric GUT scale formula is derived from the 5-cycle volume of the G₂ manifold:
             </p>
             <div class="equation-block">
-                $$\kappa = \frac{10\pi}{V_5^{1/5}} = \frac{10\pi}{21.6} = 1.46$$
+                $$\kappa = \f\frac{10\pi}{V_5^{1/5}} = \f\frac{10\pi}{21.6} = 1.46$$
                 <span class="equation-number">(E.4)</span>
             </div>
 
@@ -3197,7 +3197,7 @@ def derive_w0_from_d_eff(d_eff):
                     <strong>GUT Scale Formula with κ:</strong>
                 </p>
                 <div class="equation-block">
-                    $$M_{\text{GUT}} = M_{\text{Pl}} \exp\left(-\frac{\kappa \cdot 2\pi}{g_{\text{GUT}}^2}\right) = M_{\text{Pl}} \exp\left(-\frac{1.46 \times 2\pi}{0.0425}\right) = 2.12 \times 10^{16} \text{ GeV}$$
+                    $$M_{\text{GUT}} = M_{\text{Pl}} \exp\left(-\f\frac{\kappa \cdot 2\pi}{g_{\text{GUT}}^2}\right) = M_{\text{Pl}} \exp\left(-\f\frac{1.46 \times 2\pi}{0.0425}\right) = 2.12 \times 10^{16} \text{ GeV}$$
                 </div>
                 <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">
                     <em>This resolves "Issue #3: κ calibrated" from the v12.8 transparency report. The coefficient is now derived from G₂ geometry, not fitted.</em>
@@ -3272,7 +3272,7 @@ def dim_decomp() -> Dict:
 
             <h3 class="subsection-title">G.1 Flux Quantization</h3>
             <div class="equation-block">
-                $$N_{\text{flux}} = \frac{\chi_{\text{eff}}}{6} = \frac{144}{6} = 24$$
+                $$N_{\text{flux}} = \f\frac{\chi_{\text{eff}}}{6} = \f\frac{144}{6} = 24$$
             </div>
             <p>
                 The divisor 6 has geometric origin in M-theory: $\chi_{\text{eff}} = 6 N_{\text{flux}}$ from the index theorem on G<sub>2</sub> manifolds (Acharya et al., 2001).
@@ -3280,7 +3280,7 @@ def dim_decomp() -> Dict:
 
             <h3 class="subsection-title">G.2 Effective Torsion</h3>
             <div class="equation-block">
-                $$T_{\omega} = -\frac{b_3}{N_{\text{flux}}} = -\frac{24}{24} = -1.000$$
+                $$T_{\omega} = -\f\frac{b_3}{N_{\text{flux}}} = -\f\frac{24}{24} = -1.000$$
             </div>
             <p>
                 The effective torsion is derived from <strong>pure G<sub>4</sub> flux quantization</strong> with no tuning constants.
@@ -3294,7 +3294,7 @@ def dim_decomp() -> Dict:
 
             <h3 class="subsection-title">G.3 Simulation Code</h3>
             <pre><code># torsion_spinor_fraction_v12_8.py
-def effective_torsion(b3: \int = 24, chi_eff: \int = 144) -> float:
+def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
     """Calculate effective torsion with Spin(7) spinor fraction correction."""
     N_flux = chi_eff / 6  # = 24 (standard G2 flux quantization)
     T_topological = -b3 / N_flux  # = -24/24 = -1.000
@@ -3305,10 +3305,10 @@ def effective_torsion(b3: \int = 24, chi_eff: \int = 144) -> float:
     # - 1 zero mode per generation remains
     SPINOR_FRACTION = 7 / 8  # = 0.875
 
-    T_\omega = T_topological * SPINOR_FRACTION  # = -0.875
-    return T_\omega
+    T_omega = T_topological * SPINOR_FRACTION  # = -0.875
+    return T_omega
 
-# Result: T_\omega = -0.875 (1.02% agreement with phenomenological -0.884)</code></pre>
+# Result: T_omega = -0.875 (1.02% agreement with phenomenological -0.884)</code></pre>
 
             <!-- ============================================================ -->
             <!-- APPENDIX H: PROTON DECAY BRANCHING RATIO -->
@@ -3320,13 +3320,13 @@ def effective_torsion(b3: \int = 24, chi_eff: \int = 144) -> float:
             </p>
 
             <h3 class="subsection-title">H.1 Geometric Derivation</h3>
-            <p>The orientation \sum derives from shadow spacetime geometry:</p>
+            <p>The orientation sum derives from shadow spacetime geometry:</p>
             <ul>
                 <li><strong>Method 1:</strong> Shadow spatial dims = 12 (from 13D $(12,1)$ signature after Sp(2,&#x211D;) gauge fixing)</li>
                 <li><strong>Method 2:</strong> TCS cycle symmetry = $b_3/2 = 24/2 = 12$ (oriented pairs)</li>
             </ul>
             <div class="equation-block">
-                $$\text{BR}(p \to e^+\pi^0) = \left(\frac{N_{\text{orient}}}{b_3}\right)^2 = \left(\frac{12}{24}\right)^2 = 0.25$$
+                $$\text{BR}(p \to e^+\pi^0) = \left(\f\frac{N_{\text{orient}}}{b_3}\right)^2 = \left(\f\frac{12}{24}\right)^2 = 0.25$$
             </div>
             <p>
                 This is within the literature range (0.3-0.5) for SO(10) GUTs. Testable at Hyper-Kamiokande (2032-2038).
@@ -3335,7 +3335,7 @@ def effective_torsion(b3: \int = 24, chi_eff: \int = 144) -> float:
             <h3 class="subsection-title">H.2 Simulation Code</h3>
             <pre><code># proton_decay_br_v12_8.py
 def derive_orientation_sum_geometric():
-    """Derive orientation_\sum = 12 from shadow spacetime geometry."""
+    """Derive orientation_sum = 12 from shadow spacetime geometry."""
     # Method 1: Shadow spatial dimensions
     shadow_spatial_dims = 12  # From 13D (12,1) shadow
     # Method 2: TCS cycle symmetry
@@ -3344,9 +3344,9 @@ def derive_orientation_sum_geometric():
     assert shadow_spatial_dims == cycle_symmetry
     return shadow_spatial_dims
 
-def proton_decay_br(b3: \int = 24, orientation_\sum: \int = 12) -> dict:
-    br_e_\pi = (orientation_\sum / b3)**2  # = 0.25
-    return {'BR_e_pi0': br_e_\pi, 'BR_mu_pi0': 1 - br_e_\pi}
+def proton_decay_br(b3: int = 24, orientation_sum: int = 12) -> dict:
+    br_e_pi = (orientation_sum / b3)**2  # = 0.25
+    return {'BR_e_pi0': br_e_pi, 'BR_mu_pi0': 1 - br_e_pi}
 
 # Result: BR(e+pi0) = 0.25 (GEOMETRIC PREDICTION)</code></pre>
 
@@ -3383,13 +3383,13 @@ def proton_decay_br(b3: \int = 24, orientation_\sum: \int = 12) -> dict:
                     <li class="derivation-step"><strong>Dispersion coefficient:</strong> $\eta = e^{|T_\omega|}/b_3 = e^{1.0}/24 \approx 0.113$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
-                    <em>&rarr; The orthogonal time $\tau$ leaves an observable impr\int through GW dispersion, despite being gauge-fixed.</em>
+                    <em>&rarr; The orthogonal time $\tau$ leaves an observable imprint through GW dispersion, despite being gauge-fixed.</em>
                 </p>
             </div>
 
             <h3 class="subsection-title">I.2 Dispersion Formula</h3>
             <div class="equation-block">
-                $$\eta = \frac{e^{|T_\omega|}}{b_3} = \frac{e^{1.0}}{24} \approx 0.113$$
+                $$\eta = \f\frac{e^{|T_\omega|}}{b_3} = \f\frac{e^{1.0}}{24} \approx 0.113$$
             </div>
             <p>
                 This predicts high-frequency GWs arrive slightly before low-frequency components. Testable by LISA (2037+).
@@ -3403,12 +3403,12 @@ N_FLUX = 144 / FLUX_DIVISOR  # = 24
 T_OMEGA_GEOMETRIC = -24 / N_FLUX  # = -1.000
 B3 = 24
 
-def gw_dispersion(T_\omega: float = T_OMEGA_GEOMETRIC, b3: \int = B3) -> dict:
+def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
     """Predict GW dispersion from torsion effects."""
-    eta = np.exp(np.abs(T_\omega)) / b3  # = exp(1.0)/24 = 0.113
+    eta = np.exp(np.abs(T_omega)) / b3  # = exp(1.0)/24 = 0.113
     return {
         'eta': eta,
-        'formula': 'eta = exp(|T_\omega|)/b3',
+        'formula': 'eta = exp(|T_omega|)/b3',
         'future_test': 'LISA 2037+ (space-based GW detector)'
     }
 
@@ -3420,7 +3420,7 @@ def gw_dispersion(T_\omega: float = T_OMEGA_GEOMETRIC, b3: \int = B3) -> dict:
                 instead of the standard flux quantization $N_{\text{flux}} = \chi_{\text{eff}}/6$:
             </p>
             <div class="equation-block">
-                $$T_{\omega}^{\text{(alt)}} = -\frac{b_3}{C} = -\frac{24}{27.2} = -0.882$$
+                $$T_{\omega}^{\text{(alt)}} = -\f\frac{b_3}{C} = -\f\frac{24}{27.2} = -0.882$$
             </div>
             <p>
                 This yields $\eta^{\text{(alt)}} = e^{0.882}/24 \approx 0.101$, which agrees with the phenomenological
@@ -3504,7 +3504,7 @@ def gw_dispersion(T_\omega: float = T_OMEGA_GEOMETRIC, b3: \int = B3) -> dict:
 
             <h3 class="subsection-title">J.2 Simulation Code</h3>
             <pre><code># mc_error_propagation_v12_8.py
-def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
+def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
     """Monte Carlo error propagation for all 58 SM parameters."""
     np.random.seed(42)  # Reproducibility
     samples = np.zeros((n_mc, n_params))
@@ -3562,14 +3562,14 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
 
             <h3 class="subsection-title">K.2 Validation Statistics</h3>
             <ul>
-                <li><strong>Predictions within 1&\sigma;:</strong> <span data-stat-id="within_1\sigma">45</span> of <span data-stat-id="total_parameters">48</span></li>
-                <li><strong>Predictions within 2&\sigma;:</strong> <span data-stat-id="within_2\sigma">47</span> of <span data-stat-id="total_parameters">48</span></li>
+                <li><strong>Predictions within 1&sigma;:</strong> <span data-stat-id="within_1sigma">45</span> of <span data-stat-id="total_parameters">48</span></li>
+                <li><strong>Predictions within 2&sigma;:</strong> <span data-stat-id="within_2sigma">47</span> of <span data-stat-id="total_parameters">48</span></li>
                 <li><strong>Calibrated parameters:</strong> 0 ($\theta_{13}$, $\delta_{CP}$ derived geometrically)</li>
                 <li><strong>Constraints:</strong> 1 ($m_h$ fixes Re$(T)$)</li>
                 <li><strong>Phenomenological inputs:</strong> 0</li>
             </ul>
             <p style="font-size: 0.9rem; color: #666;">
-                <em>Note: Agreement percentages should be interpreted carefully. The single constra\int (Higgs mass) indirectly influences several derived quantities through the moduli stabilization chain. Independent experimental tests are essential.</em>
+                <em>Note: Agreement percentages should be interpreted carefully. The single constraint (Higgs mass) indirectly influences several derived quantities through the moduli stabilization chain. Independent experimental tests are essential.</em>
             </p>
 
             <h3 class="subsection-title">K.3 Outstanding Issues Resolution</h3>
@@ -3617,7 +3617,7 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
                 <tr>
                     <td>Pneuma Condensate Formation (v14.1)</td>
                     <td>RESOLVED</td>
-                    <td>G₂ spinor bilinears: \phi ~ eta_bar Gamma eta (Joyce 2000)</td>
+                    <td>G₂ spinor bilinears: phi ~ eta_bar Gamma eta (Joyce 2000)</td>
                 </tr>
                 <tr>
                     <td>Doublet-Triplet Splitting (v14.1)</td>
@@ -3760,19 +3760,19 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
                     <td>$M_{\text{GUT}}$</td>
                     <td>$2.118 \times 10^{16}$ GeV</td>
                     <td>$(2.0 \pm 0.3) \times 10^{16}$</td>
-                    <td>0.39&\sigma;</td>
+                    <td>0.39&sigma;</td>
                 </tr>
                 <tr>
                     <td>$1/\alpha_{\text{GUT}}$</td>
                     <td>23.54</td>
                     <td>$24.3 \pm 0.5$</td>
-                    <td>1.52&\sigma;</td>
+                    <td>1.52&sigma;</td>
                 </tr>
                 <tr>
                     <td>$\sin^2\theta_W$</td>
                     <td>0.23121</td>
                     <td>$0.23122 \pm 0.00003$</td>
-                    <td>0.33&\sigma;</td>
+                    <td>0.33&sigma;</td>
                 </tr>
                 <tr>
                     <td>$v_{\text{EW}}$</td>
@@ -3784,7 +3784,7 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
                     <td>$m_h$</td>
                     <td>125.10 GeV</td>
                     <td>125.10 GeV</td>
-                    <td>0.0&\sigma;</td>
+                    <td>0.0&sigma;</td>
                 </tr>
             </table>
 
@@ -3834,13 +3834,13 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
                     <td>$w_0$</td>
                     <td>$-0.8528$</td>
                     <td>$-0.83 \pm 0.06$</td>
-                    <td>0.38&\sigma;</td>
+                    <td>0.38&sigma;</td>
                 </tr>
                 <tr>
                     <td>$w_a$</td>
                     <td>$-0.75$</td>
                     <td>$-0.75 \pm 0.30$</td>
-                    <td>0.66&\sigma;</td>
+                    <td>0.66&sigma;</td>
                 </tr>
                 <tr>
                     <td>$d_{\text{eff}}$</td>
@@ -3946,7 +3946,7 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
                 The collapse timescale is given by Penrose's objective reduction criterion:
             </p>
             <div class="equation-block">
-                $$\tau = \frac{\hbar}{E_G} \quad \text{where} \quad E_G \approx \frac{G m_{\text{total}}^2}{r}$$
+                $$\tau = \f\frac{\hbar}{E_G} \quad \text{where} \quad E_G \approx \f\frac{G m_{\text{total}}^2}{r}$$
             </div>
             <p>
                 For a coherent superposition of $N \approx 10^{16}$ tubulins with characteristic separation $r \approx 1$ nm, this yields $\tau \approx 500$ ms, matching the timescale of conscious perception.
@@ -3968,7 +3968,7 @@ def mc_error_propagation(n_mc: \int = 10000, n_params: \int = 58) -> Dict:
                 A toy model implements this via Gaussian modulation:
             </p>
             <div class="equation-block">
-                $$f_{\text{eff}} = f_0 \times \exp\left(-\frac{(\phi - \phi_0)^2}{2\sigma^2}\right)$$
+                $$f_{\text{eff}} = f_0 \times \exp\left(-\f\frac{(\phi - \phi_0)^2}{2\sigma^2}\right)$$
             </div>
             <p>
                 where $\phi$ is the sampling position across sectors (0 to 1), $\phi_0 = 0.5$ is the stable middle position, and $\sigma \approx 0.25$ characterizes the coherence falloff scale (geometrically derived from G<sub>2</sub> wavefunction overlap). Peak consciousness event frequency occurs at the balanced vacuum.
@@ -4009,8 +4009,8 @@ class MicrotubulePMCoupling:
 
     def base_event_frequency(self):
         """Base frequency of proto-conscious events: f = 1/τ"""
-        \tau = self.collapse_timescale()
-        return 1.0 / \tau  # Hz
+        tau = self.collapse_timescale()
+        return 1.0 / tau  # Hz
 
 # Best-fit: N = 10^16 → τ ≈ 500 ms (conscious moment timescale)</code></pre>
 
@@ -4097,7 +4097,7 @@ def effective_coupling_strength(self):
                 <p style="margin: 0; font-weight: 600; color: #333;">
                     <strong>Important Clarifications:</strong>
                 </p>
-                <ul style="margin: 0.5rem 0 0 0; padding-\left: 1.5rem; line-height: 1.8;">
+                <ul style="margin: 0.5rem 0 0 0; padding-left: 1.5rem; line-height: 1.8;">
                     <li>This appendix presents <strong>highly speculative ideas</strong> at an early exploratory stage</li>
                     <li>The connection between PM vacuum structure and consciousness is <strong>NOT a core prediction</strong> of the theory</li>
                     <li>No experimental evidence currently supports this speculation</li>

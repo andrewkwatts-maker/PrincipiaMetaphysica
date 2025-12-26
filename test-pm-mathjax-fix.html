@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Constants Loader + MathJax Test</title>
+
+    <!-- MathJax Configuration - UPDATED TO FIX "Math input error" -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                // Skip these HTML tags completely
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                // Skip elements with these classes (pipe-separated regex)
+                skipHtmlClasses: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore',
+                ignoreHtmlClass: 'mathjax-ignore'
+            },
+            startup: {
+                // Coordinate with PM constants loader
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                    if (window.PM && window.PM._loaded) {
+                        console.log('MathJax: PM already loaded, proceeding with typeset');
+                    } else {
+                        console.log('MathJax: Waiting for PM constants to load...');
+                    }
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Constants Loader - FIXED VERSION -->
+    <script src="js/pm-constants-loader.js"></script>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 { color: #333; }
+        .test-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        pre {
+            background: #282c34;
+            color: #abb2bf;
+            padding: 16px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+        }
+        .pm-value {
+            font-weight: bold;
+            color: #0066cc;
+        }
+        .pm-error {
+            color: red;
+            font-weight: bold;
+        }
+        .pm-loaded {
+            color: green;
+        }
+        .status {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            font-size: 12px;
+        }
+        .status.pass { background: #d4edda; color: #155724; }
+        .status.fail { background: #f8d7da; color: #721c24; }
+    </style>
+</head>
+<body>
+    <h1>PM Constants Loader + MathJax Integration Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: PM Values in Regular Text (Should Work)</h2>
+        <p>
+            The topology has B₂ = <span class="pm-value" data-pm-value="parameters.topology.B2"></span>
+            and B₃ = <span class="pm-value" data-pm-value="parameters.topology.B3"></span>.
+        </p>
+        <p>
+            Effective Euler characteristic: χ_eff = <span class="pm-value" data-pm-value="parameters.topology.CHI_EFF"></span>
+        </p>
+        <p>
+            Number of generations: n_gen = <span class="pm-value" data-pm-value="parameters.topology.n_gen"></span>
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: PM Values Inside Math (Should Work with skipHtmlClasses)</h2>
+        <p>
+            The generation formula is: $n_{gen} = \chi_{eff} / 48 = $ <span class="pm-value" data-pm-value="parameters.topology.n_gen"></span>
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: PM Values in Code Block (FIXED - No Math Input Error)</h2>
+        <pre><code># Python simulation code
+def zero_modes_gen(chi_eff: int = <span class="pm-value" data-pm-value="parameters.topology.CHI_EFF"></span>) -> int:
+    """Calculate generation count with Z2 factor."""
+    PM_DIVISOR = 48  # F-theory divisor
+    n_gen = np.abs(chi_eff) / PM_DIVISOR
+    return int(n_gen)  # Returns <span class="pm-value" data-pm-value="parameters.topology.n_gen"></span>
+
+# Verification: <span class="pm-value" data-pm-value="parameters.topology.CHI_EFF"></span> / 48 = <span class="pm-value" data-pm-value="parameters.topology.n_gen"></span> generations</code></pre>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Regular Math Equations (Should Work)</h2>
+        <p>
+            The proton lifetime is given by:
+            $$\tau_p = \frac{M_{GUT}^4}{\alpha_{GUT}^2 m_p^5} \times S^2$$
+        </p>
+        <p>
+            And the neutrino mass splittings:
+            $$\Delta m^2_{21} = 7.42 \times 10^{-5} \text{ eV}^2$$
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Case-Insensitive Path Resolution</h2>
+        <p>Lowercase path (via alias): b2 = <span class="pm-value" data-pm-value="parameters.topology.b2"></span></p>
+        <p>Uppercase path (direct): B2 = <span class="pm-value" data-pm-value="parameters.topology.B2"></span></p>
+        <p>Mixed case: chi_eff = <span class="pm-value" data-pm-value="parameters.topology.chi_eff"></span></p>
+        <p>Uppercase: CHI_EFF = <span class="pm-value" data-pm-value="parameters.topology.CHI_EFF"></span></p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Results</h2>
+        <p id="test-results">Waiting for PM constants to load...</p>
+    </div>
+
+    <script>
+        // Test script to verify everything works
+        function runTests() {
+            const results = [];
+
+            // Check if PM loaded
+            if (!window.PM || !window.PM._loaded) {
+                results.push('❌ PM not loaded');
+                document.getElementById('test-results').innerHTML = results.join('<br>');
+                return;
+            }
+
+            results.push('✅ PM loaded successfully');
+
+            // Check if theory_output.json data is available
+            if (window.PM._data) {
+                results.push('✅ theory_output.json data available');
+            } else {
+                results.push('❌ No theory_output.json data');
+            }
+
+            // Count loaded vs error pm-value elements
+            const allPmValues = document.querySelectorAll('[data-pm-value]');
+            const loadedPmValues = document.querySelectorAll('[data-pm-value].pm-loaded');
+            const errorPmValues = document.querySelectorAll('[data-pm-value].pm-error');
+
+            results.push(`✅ Found ${allPmValues.length} pm-value elements`);
+            results.push(`✅ Loaded ${loadedPmValues.length} pm-value elements`);
+
+            if (errorPmValues.length > 0) {
+                results.push(`⚠️ ${errorPmValues.length} pm-value elements failed to load:`);
+                errorPmValues.forEach(el => {
+                    const path = el.getAttribute('data-pm-value');
+                    results.push(`  - ${path}: ${el.textContent}`);
+                });
+            } else {
+                results.push('✅ All pm-value elements loaded successfully');
+            }
+
+            // Check for Math input errors
+            const mathErrors = document.querySelectorAll('[data-mjo-error]');
+            if (mathErrors.length > 0) {
+                results.push(`❌ Found ${mathErrors.length} MathJax errors`);
+            } else {
+                results.push('✅ No MathJax errors detected');
+            }
+
+            document.getElementById('test-results').innerHTML = results.join('<br>');
+        }
+
+        // Run tests after PM loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                setTimeout(runTests, 1000);
+            });
+        } else {
+            setTimeout(runTests, 1000);
+        }
+
+        // Also run after MathJax finishes
+        if (typeof MathJax !== 'undefined') {
+            MathJax.startup.promise.then(() => {
+                console.log('MathJax typesetting complete');
+                setTimeout(runTests, 500);
+            });
+        }
+    </script>
+</body>
+</html>
