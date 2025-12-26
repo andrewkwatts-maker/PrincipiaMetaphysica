@@ -49,8 +49,16 @@ class PMParameterComponent extends HTMLElement {
             return PM_PARAMS.get(id);
         }
 
-        // Fallback to PM object (theory-constants-enhanced.js)
+        // Fallback to PM object with alias support (pm-constants-loader.js)
         if (typeof PM !== 'undefined') {
+            // Use PM.get() which handles parameter aliases
+            if (PM.get) {
+                const value = PM.get(id);
+                if (value !== null && value !== undefined) {
+                    return value;
+                }
+            }
+            // Final fallback: direct object traversal
             const parts = id.split('.');
             let obj = PM;
             for (const part of parts) {

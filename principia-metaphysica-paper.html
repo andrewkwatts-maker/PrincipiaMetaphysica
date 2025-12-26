@@ -576,7 +576,7 @@
             <h3 class="subsection-title">1.3 Framework Overview</h3>
             <p>The dimensional cascade proceeds as:</p>
             <div class="equation-block">
-                $$\text{26D}_{(24,2)} \x\rightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \x\rightarrow{G_2} \text{6D}_{(5,1)} \x\rightarrow{\text{compactify}} \text{4D}_{(3,1)}$$
+                $$\text{26D}_{(24,2)} \xrightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \xrightarrow{G_2} \text{6D}_{(5,1)} \xrightarrow{\text{compactify}} \text{4D}_{(3,1)}$$
                 <span class="equation-number">(1.1)</span>
             </div>
 
@@ -2015,7 +2015,7 @@
             <div class="derivation-box">
                 <h4>Derivation: $\theta_{12} = 33.59°$ from Tri-Bimaximal + Perturbation</h4>
                 <ol>
-                    <li class="derivation-step">Tri-bimaximal base: $\theta_{12} = rctan(1/\sqrt{2}) = 35.26°$</li>
+                    <li class="derivation-step">Tri-bimaximal base: $\theta_{12} = \arctan(1/\sqrt{2}) = 35.26°$</li>
                     <li class="derivation-step">Flux perturbation from TCS cycle volumes</li>
                     <li class="derivation-step">Perturbation: $\Delta\theta_{12} = -(\alpha_4 - \alpha_5)/(2\sqrt{2}) = -1.67°$</li>
                     <li class="derivation-step">Result: $\theta_{12} = 35.26° - 1.67° = 33.59°$</li>
@@ -2399,24 +2399,24 @@
             <h3 class="subsection-title">7.2 Logarithmic Evolution</h3>
             <p>Thermal friction from the Tomita-Takesaki modular flow generates redshift evolution:</p>
             <div class="equation-block">
-                $$w(z) = w_0 \left[1 + \frac{\a\alpha_T}{3}\ln(1+z)\right]$$
+                $$w(z) = w_0 \left[1 + \frac{\alpha_T}{3}\ln(1+z)\right]$$
                 <span class="equation-number">(7.3)</span>
             </div>
             <p>
-                where $\a\alpha_T \approx 2.7$ is derived from the two-time thermodynamic framework. This logarithmic form avoids the CPL divergence at high redshift and predicts $w_a < 0$, consistent with DESI's 6.2σ preference.
+                where $\alpha_T \approx 2.7$ is derived from the two-time thermodynamic framework. This logarithmic form avoids the CPL divergence at high redshift and predicts $w_a < 0$, consistent with DESI's 6.2σ preference.
             </p>
 
             <div class="derivation-box">
-                <h4>Derivation: $\a\alpha_T = 2.7$ from Cosmological Scalings</h4>
+                <h4>Derivation: $\alpha_T = 2.7$ from Cosmological Scalings</h4>
                 <ol>
-                    <li class="derivation-step">Define: $\a\alpha_T \equiv \frac{d\ln\tau}{d\ln a} - \frac{d\ln H}{d\ln a}$ (thermal-Hubble coefficient)</li>
+                    <li class="derivation-step">Define: $\alpha_T \equiv \frac{d\ln\tau}{d\ln a} - \frac{d\ln H}{d\ln a}$ (thermal-Hubble coefficient)</li>
                     <li class="derivation-step">Thermal time from KMS: $\tau \propto T^{-1} \propto a$ (adiabatic expansion) $\Rightarrow \frac{d\ln\tau}{d\ln a} = +1$</li>
                     <li class="derivation-step">Hubble rate (matter era): $H \propto a^{-3/2}$ $\Rightarrow \frac{d\ln H}{d\ln a} = -\frac{3}{2}$</li>
-                    <li class="derivation-step">Single-time baseline: $\a\alpha_T^{(0)} = (+1) - (-\frac{3}{2}) = 2.5$</li>
-                    <li class="derivation-step">Two-time $\mathbb{Z}_2$ correction: $\Delta\a\alpha_T = +0.2$ from mirror sector thermal coupling</li>
-                    <li class="derivation-step">Result: $\a\alpha_T = 2.5 + 0.2 = \boxed{2.7}$</li>
+                    <li class="derivation-step">Single-time baseline: $\alpha_T^{(0)} = (+1) - (-\frac{3}{2}) = 2.5$</li>
+                    <li class="derivation-step">Two-time $\mathbb{Z}_2$ correction: $\Delta\alpha_T = +0.2$ from mirror sector thermal coupling</li>
+                    <li class="derivation-step">Result: $\alpha_T = 2.5 + 0.2 = \boxed{2.7}$</li>
                 </ol>
-                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Note: Alternative KMS derivation $\a\alpha_T = b_3/(8\pi) \approx 0.955$ applies to modular flow period; the cosmological value 2.7 includes full thermodynamic scaling.</em></p>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;"><em>Note: Alternative KMS derivation $\alpha_T = b_3/(8\pi) \approx 0.955$ applies to modular flow period; the cosmological value 2.7 includes full thermodynamic scaling.</em></p>
             </div>
 
             <h3 class="subsection-title">7.3 Dark Energy Evolution Parameter</h3>
@@ -2536,17 +2536,17 @@
             </p>
 
             <div class="derivation-box">
-                <h4>Time-Entropy Connection: $t = \a\alpha_T \cdot S$</h4>
+                <h4>Time-Entropy Connection: $t = \alpha_T \cdot S$</h4>
                 <p>The thermal time is proportional to the entropy of the Pneuma condensate:</p>
                 <div class="equation-block">
-                    $$t_{\text{therm}} = \a\alpha_T \cdot S_{\text{Pneuma}} = \a\alpha_T \cdot \text{Tr}(\rho \log \rho)$$
+                    $$t_{\text{therm}} = \alpha_T \cdot S_{\text{Pneuma}} = \alpha_T \cdot \text{Tr}(\rho \log \rho)$$
                     <span class="equation-number">(7.8)</span>
                 </div>
                 <ol>
                     <li class="derivation-step"><strong>Von Neumann entropy:</strong> $S = -\text{Tr}(\rho \log \rho) = \langle K \rangle$</li>
                     <li class="derivation-step"><strong>Modular parameter:</strong> $t = -i \log(\Delta)$ generates time translations</li>
-                    <li class="derivation-step"><strong>Coupling constant:</strong> $\a\alpha_T = 2.7$ (thermal-Hubble coupling)</li>
-                    <li class="derivation-step"><strong>Dark energy relation:</strong> $w_a = w_0 \cdot \a\alpha_T / 3 \approx -0.75$</li>
+                    <li class="derivation-step"><strong>Coupling constant:</strong> $\alpha_T = 2.7$ (thermal-Hubble coupling)</li>
+                    <li class="derivation-step"><strong>Dark energy relation:</strong> $w_a = w_0 \cdot \alpha_T / 3 \approx -0.75$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
                     <em>&rarr; Time flow is thermodynamic: the second law guarantees $dS/dt > 0$, hence unidirectional time.</em>
@@ -2568,18 +2568,18 @@
             </p>
 
             <div class="derivation-box">
-                <h4>Derivation: Thermal-Hubble Coupling $\a\alpha_T = 2.7$</h4>
-                <p>The thermal time parameter $\a\alpha_T$ measures the coupling between thermal and cosmological time:</p>
+                <h4>Derivation: Thermal-Hubble Coupling $\alpha_T = 2.7$</h4>
+                <p>The thermal time parameter $\alpha_T$ measures the coupling between thermal and cosmological time:</p>
                 <div class="equation-block">
-                    $$\a\alpha_T = \frac{d(\ln \tau)}{d(\ln a)} - \frac{d(\ln H)}{d(\ln a)}$$
+                    $$\alpha_T = \frac{d(\ln \tau)}{d(\ln a)} - \frac{d(\ln H)}{d(\ln a)}$$
                     <span class="equation-number">(7.9)</span>
                 </div>
                 <ol>
                     <li class="derivation-step"><strong>Thermal time scaling:</strong> $\tau \sim T^{-1} \sim a$ (adiabatic) $\Rightarrow d(\ln \tau)/d(\ln a) = +1$</li>
                     <li class="derivation-step"><strong>Hubble in matter era:</strong> $H \sim a^{-3/2}$ $\Rightarrow d(\ln H)/d(\ln a) = -3/2$</li>
-                    <li class="derivation-step"><strong>Single-time baseline:</strong> $\a\alpha_T^{(0)} = 1 - (-3/2) = 2.5$</li>
+                    <li class="derivation-step"><strong>Single-time baseline:</strong> $\alpha_T^{(0)} = 1 - (-3/2) = 2.5$</li>
                     <li class="derivation-step"><strong>Z$_2$ mirror correction:</strong> $+0.2$ from thermal coupling to mirror sector</li>
-                    <li class="derivation-step"><strong>Total:</strong> $\a\alpha_T = 2.5 + 0.2 = 2.7$</li>
+                    <li class="derivation-step"><strong>Total:</strong> $\alpha_T = 2.5 + 0.2 = 2.7$</li>
                 </ol>
                 <p style="margin-top: 0.5rem; font-size: 0.9rem;">
                     <em>&rarr; See <code>simulations/thermal_time_v12_8.py</code> for numerical verification.</em>
@@ -2814,7 +2814,7 @@
             </p>
 
             <div class="equation-block">
-                $$M_{\text{SUSY}} \gtr\sim M_{\text{GUT}} \approx 2.1 \times 10^{16}~\text{GeV} \gg M_{\text{LHC}} \sim 10^4~\text{GeV}$$
+                $$M_{\text{SUSY}} \gtrsim M_{\text{GUT}} \approx 2.1 \times 10^{16}~\text{GeV} \gg M_{\text{LHC}} \sim 10^4~\text{GeV}$$
             </div>
 
             <p>
