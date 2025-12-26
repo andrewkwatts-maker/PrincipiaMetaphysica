@@ -84,38 +84,11 @@
         .app-container {
             display: grid;
             grid-template-columns: 280px 1fr;
-            grid-template-rows: auto 1fr auto;
+            grid-template-rows: 1fr auto;
             grid-template-areas:
-                "header header"
                 "sidebar main"
-                "footer footer";
+                "sidebar footer";
             min-height: 100vh;
-        }
-
-        /* Header */
-        .app-header {
-            grid-area: header;
-            background: rgba(26, 31, 58, 0.8);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .app-header h1 {
-            font-size: 1.6rem;
-            color: #fff;
-            margin-bottom: 0.25rem;
-        }
-
-        .app-header .subtitle {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            font-style: italic;
         }
 
         /* Sidebar Navigation */
@@ -124,10 +97,12 @@
             background: var(--bg-sidebar);
             border-right: 1px solid var(--border);
             overflow-y: auto;
-            padding: 1.5rem 0;
+            padding: 1.5rem 0 0 0;
             position: sticky;
             top: 0;
             height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
 
         .sidebar-title {
@@ -139,10 +114,13 @@
             color: var(--accent);
             padding: 0 1.5rem;
             margin-bottom: 1rem;
+            flex-shrink: 0;
         }
 
         .section-nav-list {
             list-style: none;
+            flex: 1;
+            overflow-y: auto;
         }
 
         .section-nav-item {
@@ -183,6 +161,106 @@
 
         .section-title {
             flex: 1;
+        }
+
+        /* Collapsible Subsections */
+        .section-nav-item.has-subsections .section-nav-header {
+            display: flex;
+            align-items: center;
+            gap: 0;
+        }
+
+        .section-nav-item.has-subsections .section-nav-link {
+            flex: 1;
+        }
+
+        .section-expand-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.4);
+            padding: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .section-expand-btn:hover {
+            color: #8b7fff;
+        }
+
+        .expand-arrow {
+            display: inline-block;
+            transition: transform 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .section-nav-item.expanded .expand-arrow {
+            transform: rotate(90deg);
+        }
+
+        .subsection-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .section-nav-item.expanded .subsection-list {
+            max-height: 500px;
+        }
+
+        .subsection-list li a {
+            display: block;
+            padding: 0.5rem 1rem 0.5rem 3rem;
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-left: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .subsection-list li a:hover {
+            color: #f8f9fa;
+            background: rgba(139, 127, 255, 0.1);
+            border-left-color: rgba(139, 127, 255, 0.5);
+        }
+
+        .subsection-list li a.active {
+            color: #8b7fff;
+            border-left-color: #8b7fff;
+        }
+
+        /* Sidebar Stats */
+        .sidebar-stats {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: auto;
+            flex-shrink: 0;
+        }
+
+        .sidebar-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        .sidebar-stat .stat-icon {
+            font-size: 1rem;
+        }
+
+        .sidebar-stat .stat-count {
+            color: #8b7fff;
+            font-weight: 600;
+        }
+
+        .sidebar-stat .stat-label {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         /* Main Content Area */
@@ -509,25 +587,99 @@
             color: var(--accent);
         }
 
-        /* Breadcrumb */
-        .breadcrumb {
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 0.85rem;
-            color: var(--text-muted);
+        /* Breadcrumb Navigation */
+        .pm-breadcrumb-nav {
             margin-bottom: 1.5rem;
         }
 
-        .breadcrumb a {
+        .pm-breadcrumb {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .pm-breadcrumb a {
             color: var(--accent);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .breadcrumb a:hover {
+        .pm-breadcrumb a:hover {
             text-decoration: underline;
+            color: var(--accent-hover);
         }
 
-        .breadcrumb-separator {
-            margin: 0 0.5rem;
+        .pm-breadcrumb .separator {
+            margin: 0 0.25rem;
+            color: var(--text-muted);
+        }
+
+        .breadcrumb-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-trigger {
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-trigger:hover {
+            background: rgba(139, 127, 255, 0.15);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 280px;
+            max-height: 400px;
+            overflow-y: auto;
+            background: rgba(26, 31, 58, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 1001;
+            margin-top: 0.5rem;
+        }
+
+        .dropdown-menu.open {
+            display: block;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: background 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(139, 127, 255, 0.15);
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item .section-num {
+            color: #8b7fff;
+            font-weight: 600;
+            margin-right: 0.5rem;
         }
 
         /* Section content styles */
@@ -601,38 +753,14 @@
             color: #fff;
         }
 
-        /* Breadcrumb Glass Effect */
-        .breadcrumb {
-            font-family: 'Source Sans Pro', sans-serif;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 0.75rem 1rem;
-            border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .app-container {
                 grid-template-columns: 1fr;
                 grid-template-areas:
-                    "header"
                     "main"
                     "footer";
-            }
-
-            .app-header nav ul {
-                display: none;
-            }
-
-            .app-header h1 {
-                font-size: 1.2rem;
-            }
-
-            .app-header .subtitle {
-                font-size: 0.8rem;
             }
 
             .app-sidebar {
@@ -728,7 +856,7 @@
         /* Print Styles */
         @media print {
             .app-sidebar,
-            .app-header,
+            .pm-header,
             .app-footer,
             .mobile-nav-toggle {
                 display: none;
@@ -763,16 +891,37 @@
                     </li>
                 </ul>
             </nav>
+
+            <!-- Sidebar Stats -->
+            <div class="sidebar-stats">
+                <div class="sidebar-stat">
+                    <span class="stat-count" id="sidebar-formula-count">0</span>
+                    <span class="stat-label">Formulas</span>
+                </div>
+                <div class="sidebar-stat">
+                    <span class="stat-count" id="sidebar-param-count">0</span>
+                    <span class="stat-label">Parameters</span>
+                </div>
+            </div>
         </aside>
 
         <!-- Main Content -->
         <main class="app-main" id="main-content">
             <div class="content-wrapper">
-                <div class="breadcrumb">
-                    <a href="principia-metaphysica-paper.html">Paper Home</a>
-                    <span class="breadcrumb-separator">/</span>
-                    <span>Sections Browser</span>
-                </div>
+                <nav class="pm-breadcrumb-nav" id="breadcrumb-nav">
+                    <div class="pm-breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span class="separator">/</span>
+                        <a href="principia-metaphysica-paper.html">Paper</a>
+                        <span class="separator">/</span>
+                        <div class="breadcrumb-dropdown">
+                            <span class="current dropdown-trigger">Sections Browser ▾</span>
+                            <div class="dropdown-menu" id="section-dropdown">
+                                <!-- Populated dynamically from sections -->
+                            </div>
+                        </div>
+                    </div>
+                </nav>
 
                 <h1 style="color: #fff; font-size: 2rem; margin-bottom: 1rem;">Paper Sections</h1>
                 <p style="color: var(--text-muted); margin-bottom: 2rem;">Explore the sections of Principia Metaphysica. Each section presents a key aspect of the theory.</p>
@@ -924,23 +1073,64 @@
                     const li = document.createElement('li');
                     li.className = 'section-nav-item';
 
-                    const link = document.createElement('a');
-                    link.href = section.sectionFile || `#section-${section.id}`;
-                    link.className = 'section-nav-link';
+                    const subsections = section.subsections || [];
+                    const hasSubsections = subsections.length > 0;
 
-                    const numberSpan = document.createElement('span');
-                    numberSpan.className = 'section-number';
-                    numberSpan.textContent = section.id;
+                    if (hasSubsections) {
+                        li.classList.add('has-subsections');
+                        li.innerHTML = `
+                            <div class="section-nav-header">
+                                <a href="${section.sectionFile || '#section-' + section.id}" class="section-nav-link">
+                                    <span class="section-number">${section.id}</span>
+                                    <span class="section-title">${section.title}</span>
+                                </a>
+                                <button class="section-expand-btn" aria-label="Expand subsections">
+                                    <span class="expand-arrow">▸</span>
+                                </button>
+                            </div>
+                            <ul class="subsection-list">
+                                ${subsections.map(sub => `
+                                    <li><a href="#subsection-${sub.id}">${sub.id}. ${sub.title}</a></li>
+                                `).join('')}
+                            </ul>
+                        `;
 
-                    const titleSpan = document.createElement('span');
-                    titleSpan.className = 'section-title';
-                    titleSpan.textContent = section.title;
+                        // Add expand/collapse handler
+                        const expandBtn = li.querySelector('.section-expand-btn');
+                        expandBtn.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            li.classList.toggle('expanded');
+                        });
+                    } else {
+                        li.innerHTML = `
+                            <a href="${section.sectionFile || '#section-' + section.id}" class="section-nav-link">
+                                <span class="section-number">${section.id}</span>
+                                <span class="section-title">${section.title}</span>
+                            </a>
+                        `;
+                    }
 
-                    link.appendChild(numberSpan);
-                    link.appendChild(titleSpan);
-                    li.appendChild(link);
                     navList.appendChild(li);
                 }
+
+                // Also populate breadcrumb dropdown
+                populateBreadcrumbDropdown();
+            }
+
+            /**
+             * Populate breadcrumb dropdown with sections
+             */
+            function populateBreadcrumbDropdown() {
+                const dropdown = document.getElementById('section-dropdown');
+                if (!dropdown || !allSections.length) return;
+
+                dropdown.innerHTML = allSections.map(section =>
+                    `<a class="dropdown-item" href="${section.sectionFile || 'sections/section-' + section.id + '.html'}">
+                        <span class="section-num">${section.id}.</span>
+                        ${section.title}
+                    </a>`
+                ).join('');
             }
 
             /**
@@ -1015,6 +1205,12 @@
                 const totalParams = allSections.reduce((sum, s) =>
                     sum + (s.paramRefs ? s.paramRefs.length : 0), 0);
                 document.getElementById('stat-params').textContent = totalParams;
+
+                // Update sidebar stats as well
+                const sidebarFormulaCount = document.getElementById('sidebar-formula-count');
+                const sidebarParamCount = document.getElementById('sidebar-param-count');
+                if (sidebarFormulaCount) sidebarFormulaCount.textContent = totalFormulas;
+                if (sidebarParamCount) sidebarParamCount.textContent = totalParams;
             }
 
             /**
@@ -1100,6 +1296,21 @@
             sidebarOverlay.addEventListener('click', closeMobileNav);
 
             /**
+             * Setup breadcrumb dropdown toggle
+             */
+            document.addEventListener('click', (e) => {
+                const trigger = e.target.closest('.dropdown-trigger');
+                const dropdown = document.getElementById('section-dropdown');
+
+                if (trigger) {
+                    e.preventDefault();
+                    dropdown?.classList.toggle('open');
+                } else if (!e.target.closest('.dropdown-menu')) {
+                    dropdown?.classList.remove('open');
+                }
+            });
+
+            /**
              * Initialize app
              */
             async function init() {
@@ -1140,14 +1351,9 @@
         import { injectHeader } from './js/pm-header.js';
         import { setupAuthGuard } from './js/auth-guard.js';
 
-        // Inject header first
+        // Inject header first (no breadcrumbs - we have custom dynamic ones)
         document.addEventListener('DOMContentLoaded', () => {
-            injectHeader('sections', {
-                breadcrumbs: [
-                    { label: 'Paper Home', href: 'principia-metaphysica-paper.html' }
-                ],
-                currentLabel: 'Sections'
-            });
+            injectHeader('sections');
         });
 
         // Setup auth after header

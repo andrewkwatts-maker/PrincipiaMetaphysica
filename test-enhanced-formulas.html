@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced PM Formula Loader Test</title>
+
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Formula Loader -->
+    <script src="js/pm-formula-loader.js"></script>
+
+    <style>
+        body {
+            background: #0f0f23;
+            color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #8b7fff;
+            border-bottom: 2px solid rgba(139, 127, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: #a394ff;
+            margin-top: 2rem;
+        }
+
+        .demo-section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .demo-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 0.5rem;
+            font-family: monospace;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Enhanced PM Formula Loader - Interactive Demo</h1>
+
+    <div class="demo-section">
+        <h2>Default Configuration (Full Features)</h2>
+        <div class="demo-label">data-formula-id="generation-number"</div>
+        <div data-formula-id="generation-number"></div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Compact Mode</h2>
+        <div class="demo-label">data-formula-id="fine-structure-constant" data-compact="true"</div>
+        <div data-formula-id="fine-structure-constant" data-compact="true"></div>
+    </div>
+
+    <div class="demo-section">
+        <h2>No Title, Non-Interactive</h2>
+        <div class="demo-label">data-formula-id="proton-electron-mass-ratio" data-show-title="false" data-interactive="false"</div>
+        <div data-formula-id="proton-electron-mass-ratio" data-show-title="false" data-interactive="false"></div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Grid Layout</h2>
+        <div class="grid">
+            <div data-formula-id="generation-number" data-compact="true"></div>
+            <div data-formula-id="fine-structure-constant" data-compact="true"></div>
+            <div data-formula-id="proton-electron-mass-ratio" data-compact="true"></div>
+            <div data-formula-id="vacuum-energy-density" data-compact="true"></div>
+        </div>
+    </div>
+
+    <div class="demo-section">
+        <h2>Manual Render Example</h2>
+        <div class="demo-label">Manual JavaScript rendering with custom options</div>
+        <div id="manual-render-target"></div>
+    </div>
+
+    <script>
+        // Manual rendering example
+        window.addEventListener('load', async () => {
+            await PMFormulaLoader.load();
+
+            // Manual render with custom options
+            const target = document.getElementById('manual-render-target');
+            PMFormulaLoader.render(target, 'weak-mixing-angle', {
+                showTitle: true,
+                showPlainText: true,
+                expandable: true,
+                interactive: true,
+                compact: false
+            });
+
+            // Log statistics
+            console.log('Formula Loader Stats:', PMFormulaLoader.getStats());
+        });
+    </script>
+</body>
+</html>

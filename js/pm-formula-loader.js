@@ -317,13 +317,16 @@ class PMFormulaLoader {
     }
 
     /**
-     * Render a formula into a DOM element
-     * @param {HTMLElement} element - Element to render into
-     * @param {string} formulaId - Formula ID
+     * Render a formula with full interactive features
+     * @param {HTMLElement} element - Target element
+     * @param {string} formulaId - Formula ID from theory_output.json
      * @param {Object} options - Rendering options
      * @returns {boolean} - True if rendered successfully
      */
     static render(element, formulaId, options = {}) {
+        // Ensure styles are loaded
+        this._ensureStyles();
+
         if (!element) {
             console.error('PMFormulaLoader.render: No element provided');
             return false;
@@ -331,56 +334,100 @@ class PMFormulaLoader {
 
         const formula = this.get(formulaId);
         if (!formula) {
-            console.error(`PMFormulaLoader.render: Formula not found: ${formulaId}`);
-            element.innerHTML = `<div style="color: red; padding: 0.5rem; background: rgba(255,0,0,0.1); border-radius: 4px;">
-                <strong>Formula not found:</strong> ${formulaId}
-                <br><small>Available formulas: ${Object.keys(this._formulas || {}).slice(0, 5).join(', ')}...</small>
-            </div>`;
+            element.innerHTML = `<div class="pm-formula-error">Formula not found: ${formulaId}</div>`;
             return false;
         }
 
         const {
-            showLabel = true,
-            showPlainText = false,
-            showDerivation = false,
-            className = 'pm-formula-rendered'
+            showTitle = true,
+            showPlainText = true,
+            expandable = true,
+            interactive = true,
+            compact = false
         } = options;
 
-        // Build the HTML
-        let html = `<div class="${className}" data-formula-id="${formulaId}">`;
+        // Build enhanced formula card
+        element.classList.add('pm-formula-container');
+        element.dataset.formulaId = formulaId;
 
-        // Label
-        if (showLabel && formula.label) {
-            html += `<div class="formula-label" style="font-size: 0.9rem; color: #888; margin-bottom: 0.5rem;">
-                ${formula.label}
-            </div>`;
-        }
+        // Get input/output params info
+        const inputs = formula.inputParams || [];
+        const outputs = formula.outputParams || [];
+        const derivedFrom = formula.derivedFrom || [];
+        const terms = formula.terms || {};
 
-        // Main formula display
-        html += `<div class="formula-display" style="font-size: 1.2rem; padding: 0.5rem 0; text-align: center;">
-            ${formula.html || formula.latex || formula.plainText || ''}
-        </div>`;
+        element.innerHTML = `
+            <div class="pm-formula-card${compact ? ' compact' : ''}${interactive ? ' interactive' : ''}">
+                ${showTitle ? `
+                    <div class="pm-formula-header">
+                        <div class="pm-formula-title-row">
+                            <span class="pm-formula-eq-num">${formula.equationNumber || ''}</span>
+                            <h4 class="pm-formula-title">${formula.id.replace(/-/g, ' ').replace(/\b\w/g, l => l.toUpperCase())}</h4>
+                            <span class="pm-formula-category">${formula.category || 'DERIVED'}</span>
+                        </div>
+                        ${formula.description ? `<p class="pm-formula-subtitle">${formula.description}</p>` : ''}
+                    </div>
+                ` : ''}
 
-        // Plain text fallback
-        if (showPlainText && formula.plainText) {
-            html += `<div class="formula-plaintext" style="font-family: monospace; font-size: 0.85rem; color: #666; text-align: center; margin-top: 0.5rem;">
-                ${formula.plainText}
-            </div>`;
-        }
+                <div class="pm-formula-display">
+                    <div class="pm-formula-latex">$$${formula.latex}$$</div>
+                    ${showPlainText && formula.plainText ? `
+                        <div class="pm-formula-plaintext">
+                            <button class="pm-plaintext-toggle" onclick="this.parentElement.classList.toggle('show')">
+                                Plain Text ▾
+                            </button>
+                            <code class="pm-plaintext-code">${formula.plainText}</code>
+                        </div>
+                    ` : ''}
+                </div>
 
-        // Derivation info
-        if (showDerivation && formula.derivation) {
-            html += `<div class="formula-derivation" style="font-size: 0.85rem; color: #888; margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px dashed #444;">
-                <strong>Derivation:</strong> ${formula.description || 'See documentation'}
-            </div>`;
-        }
+                ${expandable ? `
+                    <div class="pm-formula-expandable">
+                        <button class="pm-expand-btn" onclick="this.closest('.pm-formula-card').classList.toggle('expanded')">
+                            <span class="expand-icon">▸</span> More Info
+                        </button>
+                        <div class="pm-formula-details">
+                            ${inputs.length ? `
+                                <div class="pm-formula-params">
+                                    <h5>📥 Input Parameters</h5>
+                                    <ul>${inputs.map(p => `<li><code>${p}</code></li>`).join('')}</ul>
+                                </div>
+                            ` : ''}
+                            ${outputs.length ? `
+                                <div class="pm-formula-params">
+                                    <h5>📤 Output</h5>
+                                    <ul>${outputs.map(p => `<li><code>${p}</code></li>`).join('')}</ul>
+                                </div>
+                            ` : ''}
+                            ${derivedFrom.length ? `
+                                <div class="pm-formula-derived">
+                                    <h5>🔗 Derived From</h5>
+                                    <ul>${derivedFrom.map(f => `<li><a href="#" class="pm-formula-link" data-formula-id="${f}">${f}</a></li>`).join('')}</ul>
+                                </div>
+                            ` : ''}
+                            ${Object.keys(terms).length ? `
+                                <div class="pm-formula-terms">
+                                    <h5>📖 Terms</h5>
+                                    <dl>
+                                        ${Object.entries(terms).map(([sym, desc]) =>
+                                            `<dt>${sym}</dt><dd>${desc}</dd>`
+                                        ).join('')}
+                                    </dl>
+                                </div>
+                            ` : ''}
+                            ${formula.section ? `
+                                <div class="pm-formula-section">
+                                    <h5>📑 Section</h5>
+                                    <p>${formula.section}</p>
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                ` : ''}
+            </div>
+        `;
 
-        html += '</div>';
-        element.innerHTML = html;
-
-        // Trigger MathJax if available
         this._triggerMathJax(element);
-
         return true;
     }
 
@@ -400,28 +447,293 @@ class PMFormulaLoader {
         }
 
         // Find all elements with data-formula-id attribute
-        const elementsWithFormulaId = document.querySelectorAll('[data-formula-id]:not(.pm-formula-rendered)');
+        const elementsWithFormulaId = document.querySelectorAll('[data-formula-id]:not(.pm-formula-container)');
         let renderedCount = 0;
 
         elementsWithFormulaId.forEach(element => {
             const formulaId = element.getAttribute('data-formula-id');
-            if (formulaId && this.render(element, formulaId)) {
-                renderedCount++;
+            if (formulaId) {
+                // Read options from data attributes
+                const options = {
+                    showTitle: element.getAttribute('data-show-title') !== 'false',
+                    showPlainText: element.getAttribute('data-show-plaintext') !== 'false',
+                    expandable: element.getAttribute('data-expandable') !== 'false',
+                    interactive: element.getAttribute('data-interactive') !== 'false',
+                    compact: element.getAttribute('data-compact') === 'true'
+                };
+
+                if (this.render(element, formulaId, options)) {
+                    renderedCount++;
+                }
             }
         });
 
         // Find all pm-formula elements with data-id attribute (if not using web component)
-        const pmFormulaElements = document.querySelectorAll('pm-formula[data-id]:not(.pm-formula-rendered)');
+        const pmFormulaElements = document.querySelectorAll('pm-formula[data-id]:not(.pm-formula-container)');
         pmFormulaElements.forEach(element => {
             const formulaId = element.getAttribute('data-id');
-            if (formulaId && this.render(element, formulaId)) {
-                renderedCount++;
+            if (formulaId) {
+                // Read options from data attributes
+                const options = {
+                    showTitle: element.getAttribute('data-show-title') !== 'false',
+                    showPlainText: element.getAttribute('data-show-plaintext') !== 'false',
+                    expandable: element.getAttribute('data-expandable') !== 'false',
+                    interactive: element.getAttribute('data-interactive') !== 'false',
+                    compact: element.getAttribute('data-compact') === 'true'
+                };
+
+                if (this.render(element, formulaId, options)) {
+                    renderedCount++;
+                }
             }
         });
 
         if (renderedCount > 0) {
             console.log(`PMFormulaLoader: Rendered ${renderedCount} formulas`);
         }
+    }
+
+    /**
+     * Ensure formula styles are loaded
+     * @private
+     */
+    static _ensureStyles() {
+        if (document.getElementById('pm-formula-styles')) return;
+
+        const style = document.createElement('style');
+        style.id = 'pm-formula-styles';
+        style.textContent = `
+            .pm-formula-container {
+                margin: 1rem 0;
+            }
+
+            .pm-formula-card {
+                background: rgba(255, 255, 255, 0.03);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                border-radius: 12px;
+                overflow: hidden;
+                transition: all 0.3s ease;
+            }
+
+            .pm-formula-card.interactive:hover {
+                border-color: rgba(139, 127, 255, 0.4);
+                box-shadow: 0 4px 20px rgba(139, 127, 255, 0.15);
+            }
+
+            .pm-formula-header {
+                padding: 1rem 1.25rem;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                background: rgba(139, 127, 255, 0.05);
+            }
+
+            .pm-formula-title-row {
+                display: flex;
+                align-items: center;
+                gap: 0.75rem;
+                flex-wrap: wrap;
+            }
+
+            .pm-formula-eq-num {
+                color: #8b7fff;
+                font-weight: 600;
+                font-size: 0.9rem;
+            }
+
+            .pm-formula-title {
+                margin: 0;
+                font-size: 1.1rem;
+                color: #f8f9fa;
+                flex: 1;
+            }
+
+            .pm-formula-category {
+                font-size: 0.7rem;
+                padding: 0.2rem 0.6rem;
+                background: rgba(139, 127, 255, 0.2);
+                border: 1px solid rgba(139, 127, 255, 0.3);
+                border-radius: 4px;
+                color: #a394ff;
+                text-transform: uppercase;
+                letter-spacing: 0.05em;
+            }
+
+            .pm-formula-subtitle {
+                margin: 0.5rem 0 0 0;
+                font-size: 0.9rem;
+                color: rgba(255, 255, 255, 0.6);
+                font-style: italic;
+            }
+
+            .pm-formula-display {
+                padding: 1.5rem;
+                text-align: center;
+            }
+
+            .pm-formula-latex {
+                font-size: 1.2rem;
+            }
+
+            .pm-formula-plaintext {
+                margin-top: 1rem;
+            }
+
+            .pm-formula-plaintext:not(.show) .pm-plaintext-code {
+                display: none;
+            }
+
+            .pm-plaintext-toggle {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                color: rgba(255, 255, 255, 0.6);
+                padding: 0.3rem 0.75rem;
+                border-radius: 4px;
+                cursor: pointer;
+                font-size: 0.8rem;
+                transition: all 0.2s ease;
+            }
+
+            .pm-plaintext-toggle:hover {
+                background: rgba(255, 255, 255, 0.05);
+                border-color: rgba(255, 255, 255, 0.3);
+            }
+
+            .pm-plaintext-code {
+                display: block;
+                margin-top: 0.75rem;
+                padding: 0.75rem 1rem;
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 6px;
+                font-family: 'Source Code Pro', monospace;
+                font-size: 0.85rem;
+                color: #a3e635;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-break: break-all;
+            }
+
+            .pm-formula-expandable {
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .pm-expand-btn {
+                width: 100%;
+                background: transparent;
+                border: none;
+                color: rgba(255, 255, 255, 0.6);
+                padding: 0.75rem;
+                cursor: pointer;
+                font-size: 0.85rem;
+                transition: all 0.2s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+
+            .pm-expand-btn:hover {
+                background: rgba(139, 127, 255, 0.1);
+                color: #f8f9fa;
+            }
+
+            .expand-icon {
+                transition: transform 0.2s ease;
+            }
+
+            .pm-formula-card.expanded .expand-icon {
+                transform: rotate(90deg);
+            }
+
+            .pm-formula-details {
+                display: none;
+                padding: 1rem 1.25rem;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                background: rgba(0, 0, 0, 0.2);
+            }
+
+            .pm-formula-card.expanded .pm-formula-details {
+                display: block;
+            }
+
+            .pm-formula-params, .pm-formula-derived, .pm-formula-terms, .pm-formula-section {
+                margin-bottom: 1rem;
+            }
+
+            .pm-formula-params:last-child, .pm-formula-derived:last-child, .pm-formula-terms:last-child, .pm-formula-section:last-child {
+                margin-bottom: 0;
+            }
+
+            .pm-formula-details h5 {
+                margin: 0 0 0.5rem 0;
+                font-size: 0.85rem;
+                color: #8b7fff;
+            }
+
+            .pm-formula-details ul {
+                margin: 0;
+                padding-left: 1.25rem;
+                list-style: disc;
+            }
+
+            .pm-formula-details li {
+                margin-bottom: 0.25rem;
+                color: rgba(255, 255, 255, 0.8);
+            }
+
+            .pm-formula-details code {
+                background: rgba(139, 127, 255, 0.1);
+                padding: 0.15rem 0.4rem;
+                border-radius: 3px;
+                font-size: 0.85rem;
+                color: #a394ff;
+            }
+
+            .pm-formula-link {
+                color: #8b7fff;
+                text-decoration: none;
+            }
+
+            .pm-formula-link:hover {
+                text-decoration: underline;
+            }
+
+            .pm-formula-terms dl {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 0.5rem 1rem;
+                margin: 0;
+            }
+
+            .pm-formula-terms dt {
+                color: #a394ff;
+                font-weight: 600;
+            }
+
+            .pm-formula-terms dd {
+                margin: 0;
+                color: rgba(255, 255, 255, 0.7);
+            }
+
+            .pm-formula-card.compact .pm-formula-header {
+                padding: 0.75rem 1rem;
+            }
+
+            .pm-formula-card.compact .pm-formula-display {
+                padding: 1rem;
+            }
+
+            .pm-formula-card.compact .pm-formula-latex {
+                font-size: 1rem;
+            }
+
+            .pm-formula-error {
+                background: rgba(248, 113, 113, 0.1);
+                border: 1px solid rgba(248, 113, 113, 0.3);
+                border-radius: 8px;
+                padding: 1rem;
+                color: #f87171;
+            }
+        `;
+        document.head.appendChild(style);
     }
 
     /**
