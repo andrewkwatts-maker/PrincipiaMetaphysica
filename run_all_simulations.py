@@ -2019,8 +2019,8 @@ if __name__ == "__main__":
             'yukawa-v15': run_yukawa_overlap_v15_0,
             # v15.1 Pneuma bridge
             'pneuma-bridge': run_pneuma_bridge_v15_1,
-            # v15.2 Multi-sector sampling
-            'multi-sector': run_multi_sector_v15_2,
+            # v16.0 Multi-sector sampling
+            'multi-sector': run_multi_sector_v16_0,
             'microtubule': run_microtubule_coupling_v15_2,
         }
         if args.single in sim_map:
