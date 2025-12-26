@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <!--
-    Principia Metaphysica: Dynamic Section Browser
+    Principia Metaphysica: Section Browser
     Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
-    Single-page app for browsing paper sections loaded dynamically from JSON.
+    Browse all paper sections as cards with search and filtering capabilities.
+    Loads section metadata dynamically from theory_output.json.
 -->
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Principia Metaphysica - Sections</title>
+    <title>Principia Metaphysica - Section Browser</title>
 
     <!-- MathJax Configuration -->
     <script>
@@ -193,8 +194,234 @@
         }
 
         .content-wrapper {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
+        }
+
+        /* Search and Filter */
+        .search-filter-bar {
+            margin-bottom: 2rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-light);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-light);
+            cursor: pointer;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(139, 127, 255, 0.1);
+            border-color: var(--accent);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+        }
+
+        /* Section Cards Grid */
+        .sections-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Section Card */
+        .section-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .section-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .section-card-header {
+            margin-bottom: 1rem;
+        }
+
+        .section-card-title {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.5rem;
+        }
+
+        .section-card-number {
+            color: var(--accent);
+            font-weight: 700;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .section-card-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(139, 127, 255, 0.15);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 4px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-card-description {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .section-card-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-light);
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .section-card-meta-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-muted);
+        }
+
+        .section-card-meta-item .icon {
+            color: var(--accent);
+            font-size: 1rem;
+        }
+
+        .section-card-meta-item .count {
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .section-card-link {
+            display: block;
+            text-align: center;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.1));
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .section-card-link:hover {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.3), rgba(255, 126, 182, 0.2));
+            border-color: var(--accent);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .section-card-link::after {
+            content: ' →';
+        }
+
+        /* Stats Summary */
+        .stats-summary {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 4rem 2rem;
+            color: var(--text-muted);
+            font-style: italic;
         }
 
         /* Loading State */
@@ -454,11 +681,47 @@
             .sidebar-overlay.active {
                 display: block;
             }
+
+            /* Section cards on mobile */
+            .sections-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .search-filter-bar {
+                flex-direction: column;
+            }
+
+            .search-box {
+                width: 100%;
+            }
+
+            .stats-summary {
+                justify-content: space-around;
+            }
+
+            .stat-item {
+                flex: 1;
+            }
         }
 
         @media (min-width: 769px) {
             .mobile-nav-toggle {
                 display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-card-title {
+                font-size: 1.1rem;
+            }
+
+            .section-card-meta {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .stat-value {
+                font-size: 1.5rem;
             }
         }
 
@@ -505,14 +768,47 @@
         <!-- Main Content -->
         <main class="app-main" id="main-content">
             <div class="content-wrapper">
-                <div class="breadcrumb" id="breadcrumb">
+                <div class="breadcrumb">
                     <a href="principia-metaphysica-paper.html">Paper Home</a>
                     <span class="breadcrumb-separator">/</span>
-                    <span id="current-section-breadcrumb">Sections</span>
+                    <span>Sections Browser</span>
                 </div>
 
-                <div id="section-content">
-                    <div class="loading">Loading section content</div>
+                <h1 style="color: #fff; font-size: 2rem; margin-bottom: 1rem;">Paper Sections</h1>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Explore the sections of Principia Metaphysica. Each section presents a key aspect of the theory.</p>
+
+                <!-- Stats Summary -->
+                <div class="stats-summary" id="stats-summary">
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-sections">0</div>
+                        <div class="stat-label">Sections</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-formulas">0</div>
+                        <div class="stat-label">Formulas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-value" id="stat-params">0</div>
+                        <div class="stat-label">Parameters</div>
+                    </div>
+                </div>
+
+                <!-- Search and Filter -->
+                <div class="search-filter-bar">
+                    <div class="search-box">
+                        <input type="text" id="search-input" placeholder="Search sections by title or description...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="core">Core Theory</button>
+                        <button class="filter-btn" data-filter="mathematical">Mathematical</button>
+                        <button class="filter-btn" data-filter="experimental">Experimental</button>
+                    </div>
+                </div>
+
+                <!-- Section Cards Grid -->
+                <div class="sections-grid" id="sections-grid">
+                    <div class="loading">Loading sections...</div>
                 </div>
             </div>
         </main>
@@ -535,51 +831,72 @@
     <!-- Application Script -->
     <script>
         /**
-         * Sections App - Dynamic Section Browser
-         * Loads sections from AUTO_GENERATED/json/sections.json
-         * Uses pm-section-renderer.js for rendering
+         * Sections Browser - Dynamic Section Cards Gallery
+         * Loads sections from theory_output.json and displays as cards
          */
         (async function() {
             'use strict';
 
             // State
-            let sectionsData = null;
-            let currentSectionId = null;
+            let allSections = [];
+            let filteredSections = [];
+            let currentFilter = 'all';
+            let searchQuery = '';
 
             // DOM Elements
             const navList = document.getElementById('section-nav-list');
-            const sectionContent = document.getElementById('section-content');
-            const breadcrumb = document.getElementById('current-section-breadcrumb');
+            const sectionsGrid = document.getElementById('sections-grid');
+            const searchInput = document.getElementById('search-input');
+            const filterButtons = document.querySelectorAll('.filter-btn');
             const mobileToggle = document.getElementById('mobile-nav-toggle');
             const sidebar = document.getElementById('sidebar');
             const sidebarOverlay = document.getElementById('sidebar-overlay');
 
             /**
-             * Load sections from JSON
+             * Load sections from theory_output.json
              */
-            async function loadSections() {
+            async function loadSectionsData() {
                 try {
-                    // Try multiple paths
                     const paths = [
-                        'AUTO_GENERATED/json/sections.json',
-                        '../AUTO_GENERATED/json/sections.json',
-                        'sections.json',
-                        '../sections.json'
+                        'theory_output.json',
+                        '../theory_output.json',
+                        'AUTO_GENERATED/theory_output.json',
+                        '../AUTO_GENERATED/theory_output.json'
                     ];
 
                     for (const path of paths) {
                         try {
-                            console.log(`Trying to load sections from: ${path}`);
+                            console.log(`Trying to load from: ${path}`);
                             const response = await fetch(path);
                             if (response.ok) {
-                                sectionsData = await response.json();
-                                console.log(`Successfully loaded sections from: ${path}`, sectionsData);
+                                const data = await response.json();
+                                console.log(`Successfully loaded data from: ${path}`);
 
-                                // Cache sections in window.PM for pm-section-renderer.js
-                                if (!window.PM) window.PM = {};
-                                window.PM.sections = sectionsData;
+                                if (data.sections) {
+                                    // Convert sections object to array
+                                    allSections = Object.entries(data.sections).map(([id, section]) => ({
+                                        ...section,
+                                        id: id
+                                    }));
 
-                                return true;
+                                    // Sort by section number
+                                    allSections.sort((a, b) => {
+                                        const aNum = parseInt(a.id);
+                                        const bNum = parseInt(b.id);
+                                        if (!isNaN(aNum) && !isNaN(bNum)) {
+                                            return aNum - bNum;
+                                        }
+                                        return a.id.localeCompare(b.id);
+                                    });
+
+                                    // Cache in window.PM
+                                    if (!window.PM) window.PM = {};
+                                    window.PM.sections = data.sections;
+                                    window.PM.formulas = data.formulas || {};
+                                    window.PM.parameters = data.parameters || {};
+
+                                    return true;
+                                }
                             }
                         } catch (e) {
                             console.log(`Failed to load from ${path}:`, e.message);
@@ -587,7 +904,7 @@
                         }
                     }
 
-                    throw new Error('Could not find sections.json in any expected location');
+                    throw new Error('Could not find theory_output.json');
                 } catch (error) {
                     console.error('Error loading sections:', error);
                     showError('Failed to load sections', error.message);
@@ -599,35 +916,21 @@
              * Render navigation sidebar
              */
             function renderNavigation() {
-                if (!sectionsData) return;
+                if (!allSections.length) return;
 
                 navList.innerHTML = '';
 
-                // Get section IDs and sort them
-                const sectionIds = Object.keys(sectionsData).sort((a, b) => {
-                    // Sort numerically if both are numbers
-                    const aNum = parseInt(a);
-                    const bNum = parseInt(b);
-                    if (!isNaN(aNum) && !isNaN(bNum)) {
-                        return aNum - bNum;
-                    }
-                    // Otherwise alphabetically
-                    return a.localeCompare(b);
-                });
-
-                for (const id of sectionIds) {
-                    const section = sectionsData[id];
+                for (const section of allSections) {
                     const li = document.createElement('li');
                     li.className = 'section-nav-item';
 
                     const link = document.createElement('a');
-                    link.href = `#section-${id}`;
+                    link.href = section.sectionFile || `#section-${section.id}`;
                     link.className = 'section-nav-link';
-                    link.dataset.sectionId = id;
 
                     const numberSpan = document.createElement('span');
                     numberSpan.className = 'section-number';
-                    numberSpan.textContent = id;
+                    numberSpan.textContent = section.id;
 
                     const titleSpan = document.createElement('span');
                     titleSpan.className = 'section-title';
@@ -637,190 +940,140 @@
                     link.appendChild(titleSpan);
                     li.appendChild(link);
                     navList.appendChild(li);
-
-                    // Add click handler
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        loadSection(id);
-                        closeMobileNav();
-                    });
                 }
             }
 
             /**
-             * Load and render a specific section
+             * Create a section card
              */
-            async function loadSection(sectionId) {
-                if (!sectionsData || !sectionsData[sectionId]) {
-                    showError('Section not found', `Section ${sectionId} does not exist`);
+            function createSectionCard(section) {
+                const formulaCount = section.formulaRefs ? section.formulaRefs.length : 0;
+                const paramCount = section.paramRefs ? section.paramRefs.length : 0;
+
+                const description = section.description || section.abstract || 'No description available.';
+                const sectionType = section.category || section.sectionType || 'Section';
+
+                const card = document.createElement('div');
+                card.className = 'section-card';
+                card.dataset.sectionId = section.id;
+                card.dataset.category = sectionType.toLowerCase();
+
+                card.innerHTML = `
+                    <div class="section-card-header">
+                        <h3 class="section-card-title">
+                            <span class="section-card-number">${section.id}.</span>
+                            <span>${section.title}</span>
+                        </h3>
+                        <div class="section-card-type">${sectionType}</div>
+                    </div>
+                    <p class="section-card-description">${description}</p>
+                    <div class="section-card-meta">
+                        <div class="section-card-meta-item">
+                            <span class="icon">📐</span>
+                            <span><span class="count">${formulaCount}</span> formulas</span>
+                        </div>
+                        <div class="section-card-meta-item">
+                            <span class="icon">🔢</span>
+                            <span><span class="count">${paramCount}</span> parameters</span>
+                        </div>
+                    </div>
+                    <a href="${section.sectionFile || `sections/section-${section.id}.html`}" class="section-card-link">
+                        Read Section
+                    </a>
+                `;
+
+                return card;
+            }
+
+            /**
+             * Render section cards
+             */
+            function renderSections() {
+                sectionsGrid.innerHTML = '';
+
+                if (filteredSections.length === 0) {
+                    sectionsGrid.innerHTML = '<div class="no-results">No sections found matching your criteria.</div>';
                     return;
                 }
 
-                currentSectionId = sectionId;
-                const section = sectionsData[sectionId];
-
-                // Update URL hash
-                window.location.hash = `section-${sectionId}`;
-
-                // Update breadcrumb
-                breadcrumb.textContent = `Section ${sectionId}: ${section.title}`;
-
-                // Update active state in navigation
-                document.querySelectorAll('.section-nav-link').forEach(link => {
-                    link.classList.remove('active');
-                    if (link.dataset.sectionId === sectionId) {
-                        link.classList.add('active');
-                    }
-                });
-
-                // Show loading state
-                sectionContent.innerHTML = '<div class="loading">Loading section content</div>';
-
-                try {
-                    // Check if section has a sectionFile to load
-                    if (section.sectionFile) {
-                        // Load the section HTML file
-                        const response = await fetch(section.sectionFile);
-                        if (response.ok) {
-                            const html = await response.text();
-
-                            // Parse the HTML to extract just the content (not the full page)
-                            const parser = new DOMParser();
-                            const doc = parser.parseFromString(html, 'text/html');
-
-                            // Try to find the main content area
-                            let content = doc.querySelector('main') || doc.querySelector('.section-container') || doc.querySelector('body');
-
-                            if (content) {
-                                // Clone the content to avoid modifying the original
-                                const contentClone = content.cloneNode(true);
-
-                                // Remove any nav elements, headers, footers that might be in the section file
-                                contentClone.querySelectorAll('nav, header.site-header, footer.site-footer').forEach(el => el.remove());
-
-                                // Clear and set new content
-                                sectionContent.innerHTML = '';
-                                sectionContent.appendChild(contentClone);
-                            } else {
-                                throw new Error('Could not find content in section file');
-                            }
-                        } else {
-                            throw new Error(`Failed to load section file: ${section.sectionFile}`);
-                        }
-                    } else if (section.contentBlocks && section.contentBlocks.length > 0) {
-                        // Use pm-section-renderer for JSON-based content
-                        const headerHTML = `
-                            <div class="section-header-main">
-                                <h2>Section ${section.id}: ${section.title}</h2>
-                                <div class="section-meta">
-                                    ${section.sectionType ? `<div class="section-meta-item"><strong>Type:</strong> ${section.sectionType}</div>` : ''}
-                                </div>
-                            </div>
-                        `;
-
-                        const sectionElement = document.createElement('pm-section');
-                        sectionElement.setAttribute('section-id', sectionId);
-                        sectionElement.setAttribute('format', 'html');
-                        sectionElement.setAttribute('level', 'full');
-
-                        sectionContent.innerHTML = headerHTML;
-                        sectionContent.appendChild(sectionElement);
-                    } else {
-                        // No content available - show section metadata
-                        sectionContent.innerHTML = `
-                            <div class="section-header-main">
-                                <h2>Section ${section.id}: ${section.title}</h2>
-                                <div class="section-meta">
-                                    ${section.sectionType ? `<div class="section-meta-item"><strong>Type:</strong> ${section.sectionType}</div>` : ''}
-                                </div>
-                            </div>
-                            ${section.abstract ? `<div class="section-abstract"><p>${section.abstract}</p></div>` : ''}
-                            ${section.beginnerSummary ? `
-                                <div class="beginner-summary">
-                                    <h3>Simplified Explanation</h3>
-                                    <p>${section.beginnerSummary}</p>
-                                </div>
-                            ` : ''}
-                            ${section.keyTakeaways && section.keyTakeaways.length > 0 ? `
-                                <div class="key-takeaways">
-                                    <h3>Key Takeaways</h3>
-                                    <ul>
-                                        ${section.keyTakeaways.map(t => `<li>${t}</li>`).join('')}
-                                    </ul>
-                                </div>
-                            ` : ''}
-                        `;
-                    }
-
-                    // Scroll to top
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-
-                    // Retrigger MathJax after content loads
-                    if (window.MathJax && window.MathJax.typesetPromise) {
-                        setTimeout(() => {
-                            window.MathJax.typesetPromise([sectionContent]).catch((err) => {
-                                console.warn('MathJax typesetting failed:', err);
-                            });
-                        }, 100);
-                    }
-                } catch (error) {
-                    console.error('Error rendering section:', error);
-                    showError('Rendering error', error.message);
+                for (const section of filteredSections) {
+                    const card = createSectionCard(section);
+                    sectionsGrid.appendChild(card);
                 }
             }
+
+            /**
+             * Update statistics
+             */
+            function updateStats() {
+                document.getElementById('stat-sections').textContent = allSections.length;
+
+                const totalFormulas = allSections.reduce((sum, s) =>
+                    sum + (s.formulaRefs ? s.formulaRefs.length : 0), 0);
+                document.getElementById('stat-formulas').textContent = totalFormulas;
+
+                const totalParams = allSections.reduce((sum, s) =>
+                    sum + (s.paramRefs ? s.paramRefs.length : 0), 0);
+                document.getElementById('stat-params').textContent = totalParams;
+            }
+
+            /**
+             * Filter sections
+             */
+            function filterSections() {
+                filteredSections = allSections.filter(section => {
+                    // Apply filter
+                    if (currentFilter !== 'all') {
+                        const category = (section.category || section.sectionType || '').toLowerCase();
+                        if (!category.includes(currentFilter)) {
+                            return false;
+                        }
+                    }
+
+                    // Apply search
+                    if (searchQuery) {
+                        const query = searchQuery.toLowerCase();
+                        const title = section.title.toLowerCase();
+                        const description = (section.description || section.abstract || '').toLowerCase();
+                        return title.includes(query) || description.includes(query);
+                    }
+
+                    return true;
+                });
+
+                renderSections();
+            }
+
+            /**
+             * Handle search input
+             */
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value;
+                filterSections();
+            });
+
+            /**
+             * Handle filter buttons
+             */
+            filterButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    currentFilter = btn.dataset.filter;
+                    filterSections();
+                });
+            });
 
             /**
              * Show error message
              */
             function showError(title, message) {
-                sectionContent.innerHTML = `
-                    <div class="error">
+                sectionsGrid.innerHTML = `
+                    <div class="error" style="grid-column: 1 / -1;">
                         <h3>${title}</h3>
                         <p>${message}</p>
                     </div>
                 `;
-            }
-
-            /**
-             * Handle hash changes
-             */
-            function handleHashChange() {
-                const hash = window.location.hash;
-                if (hash.startsWith('#section-')) {
-                    const sectionId = hash.replace('#section-', '');
-                    if (sectionsData && sectionsData[sectionId]) {
-                        loadSection(sectionId);
-                    } else {
-                        console.warn(`Section not found: ${sectionId}`);
-                        // Load first section as fallback
-                        if (sectionsData) {
-                            const firstId = Object.keys(sectionsData).sort((a, b) => {
-                                const aNum = parseInt(a);
-                                const bNum = parseInt(b);
-                                if (!isNaN(aNum) && !isNaN(bNum)) {
-                                    return aNum - bNum;
-                                }
-                                return a.localeCompare(b);
-                            })[0];
-                            if (firstId) {
-                                loadSection(firstId);
-                            }
-                        }
-                    }
-                } else if (sectionsData) {
-                    // Load first section by default
-                    const firstId = Object.keys(sectionsData).sort((a, b) => {
-                        const aNum = parseInt(a);
-                        const bNum = parseInt(b);
-                        if (!isNaN(aNum) && !isNaN(bNum)) {
-                            return aNum - bNum;
-                        }
-                        return a.localeCompare(b);
-                    })[0];
-                    if (firstId) {
-                        loadSection(firstId);
-                    }
-                }
             }
 
             /**
@@ -850,33 +1103,28 @@
              * Initialize app
              */
             async function init() {
-                console.log('Initializing Sections App...');
+                console.log('Initializing Sections Browser...');
 
-                // Load sections data
-                const loaded = await loadSections();
+                const loaded = await loadSectionsData();
                 if (!loaded) {
                     console.error('Failed to load sections data');
                     return;
                 }
 
-                // Validate sections data
-                if (!sectionsData || Object.keys(sectionsData).length === 0) {
-                    showError('No sections found', 'The sections.json file is empty or invalid.');
+                if (allSections.length === 0) {
+                    showError('No sections found', 'The theory_output.json file contains no sections.');
                     return;
                 }
 
-                console.log(`Loaded ${Object.keys(sectionsData).length} sections`);
+                console.log(`Loaded ${allSections.length} sections`);
 
-                // Render navigation
+                // Initial render
+                filteredSections = [...allSections];
                 renderNavigation();
+                renderSections();
+                updateStats();
 
-                // Handle initial hash or load first section
-                handleHashChange();
-
-                // Listen for hash changes
-                window.addEventListener('hashchange', handleHashChange);
-
-                console.log('Sections App initialized successfully');
+                console.log('Sections Browser initialized successfully');
             }
 
             // Start the app when DOM is ready

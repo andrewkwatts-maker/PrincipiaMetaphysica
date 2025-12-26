@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section Loader Integration Example - Principia Metaphysica</title>
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Loaders -->
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-section-loader.js"></script>
+
+    <!-- Basic Styling -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        body {
+            background: #0a0a0f;
+            color: #e0e0e0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .header h1 {
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-button {
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.4);
+        }
+
+        .nav-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .section-indicator {
+            text-align: center;
+            color: #8b7fff;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        #main-content {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            min-height: 400px;
+        }
+
+        .pm-section-rendered {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .loading {
+            text-align: center;
+            padding: 4rem;
+            font-size: 1.2rem;
+            color: #8b7fff;
+        }
+
+        .loading::after {
+            content: '...';
+            animation: ellipsis 1.5s infinite;
+        }
+
+        @keyframes ellipsis {
+            0%, 20% { content: '.'; }
+            40% { content: '..'; }
+            60%, 100% { content: '...'; }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(139, 127, 255, 0.2);
+            color: #888;
+        }
+
+        .view-toggle {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .view-toggle button {
+            background: rgba(139, 127, 255, 0.2);
+            color: #e0e0e0;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            padding: 0.5rem 1rem;
+            margin: 0 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .view-toggle button.active {
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            border-color: transparent;
+        }
+
+        #paper-view-container {
+            display: none;
+        }
+
+        #paper-view-container.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <h1>Principia Metaphysica</h1>
+            <p>A geometric framework for fundamental physics</p>
+        </header>
+
+        <!-- View Toggle -->
+        <div class="view-toggle">
+            <button id="single-view-btn" class="active" onclick="switchToSingleView()">
+                Single Section View
+            </button>
+            <button id="paper-view-btn" onclick="switchToPaperView()">
+                Full Paper View
+            </button>
+        </div>
+
+        <!-- Single Section View -->
+        <div id="single-view-container" class="active">
+            <!-- Section Indicator -->
+            <div class="section-indicator" id="section-indicator">
+                Loading...
+            </div>
+
+            <!-- Navigation Controls -->
+            <nav class="navigation">
+                <button class="nav-button" id="prev-btn" onclick="previousSection()">
+                    ← Previous Section
+                </button>
+                <button class="nav-button" onclick="loadSection(1)">1. Introduction</button>
+                <button class="nav-button" onclick="loadSection(2)">2. Geometric Framework</button>
+                <button class="nav-button" onclick="loadSection(3)">3. Fermion Sector</button>
+                <button class="nav-button" onclick="loadSection(4)">4. Gauge Unification</button>
+                <button class="nav-button" onclick="loadSection(5)">5. Cosmology</button>
+                <button class="nav-button" onclick="loadSection(6)">6. Conclusion</button>
+                <button class="nav-button" id="next-btn" onclick="nextSection()">
+                    Next Section →
+                </button>
+            </nav>
+
+            <!-- Main Content Area -->
+            <main id="main-content">
+                <div class="loading">Loading section</div>
+            </main>
+        </div>
+
+        <!-- Full Paper View -->
+        <div id="paper-view-container">
+            <div class="loading">Loading full paper</div>
+        </div>
+
+        <footer class="footer">
+            <p>Copyright © 2025 Andrew Keith Watts. All rights reserved.</p>
+            <p>Powered by PM Section Loader v1.0.0</p>
+        </footer>
+    </div>
+
+    <script>
+        // ====================================================================
+        // STATE MANAGEMENT
+        // ====================================================================
+
+        let currentSectionId = 1;
+        const maxSections = 6;
+
+        // ====================================================================
+        // SECTION NAVIGATION
+        // ====================================================================
+
+        async function loadSection(sectionId) {
+            if (sectionId < 1 || sectionId > maxSections) {
+                console.warn(`Invalid section ID: ${sectionId}`);
+                return;
+            }
+
+            currentSectionId = sectionId;
+
+            // Show loading state
+            const container = document.getElementById('main-content');
+            const indicator = document.getElementById('section-indicator');
+
+            container.innerHTML = '<div class="loading">Loading section</div>';
+            indicator.textContent = 'Loading...';
+
+            try {
+                // Load the section
+                const section = await PMSectionLoader.loadSection(String(sectionId));
+
+                if (section) {
+                    // Update indicator
+                    indicator.textContent = `Section ${sectionId}: ${section.title}`;
+
+                    // Render the section
+                    PMSectionLoader.renderSection(container, section);
+
+                    // Update navigation buttons
+                    updateNavButtons();
+
+                    // Scroll to top
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 4rem; color: #f44336;">
+                            <h2>Section Not Found</h2>
+                            <p>Could not load section ${sectionId}. Please try another section.</p>
+                        </div>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error loading section:', error);
+                container.innerHTML = `
+                    <div style="text-align: center; padding: 4rem; color: #f44336;">
+                        <h2>Error Loading Section</h2>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            }
+        }
+
+        function previousSection() {
+            if (currentSectionId > 1) {
+                loadSection(currentSectionId - 1);
+            }
+        }
+
+        function nextSection() {
+            if (currentSectionId < maxSections) {
+                loadSection(currentSectionId + 1);
+            }
+        }
+
+        function updateNavButtons() {
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            prevBtn.disabled = currentSectionId <= 1;
+            nextBtn.disabled = currentSectionId >= maxSections;
+        }
+
+        // ====================================================================
+        // VIEW SWITCHING
+        // ====================================================================
+
+        async function switchToSingleView() {
+            document.getElementById('single-view-btn').classList.add('active');
+            document.getElementById('paper-view-btn').classList.remove('active');
+
+            document.getElementById('single-view-container').classList.add('active');
+            document.getElementById('paper-view-container').classList.remove('active');
+        }
+
+        async function switchToPaperView() {
+            document.getElementById('single-view-btn').classList.remove('active');
+            document.getElementById('paper-view-btn').classList.add('active');
+
+            document.getElementById('single-view-container').classList.remove('active');
+            document.getElementById('paper-view-container').classList.add('active');
+
+            // Load all sections if not already loaded
+            const container = document.getElementById('paper-view-container');
+            if (!container.classList.contains('loaded')) {
+                container.innerHTML = '<div class="loading">Loading full paper</div>';
+
+                try {
+                    const sections = await PMSectionLoader.loadAllSections();
+                    PMSectionLoader.renderAllSections(container, sections);
+                    container.classList.add('loaded');
+                } catch (error) {
+                    console.error('Error loading paper view:', error);
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 4rem; color: #f44336;">
+                            <h2>Error Loading Paper</h2>
+                            <p>${error.message}</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // ====================================================================
+        // KEYBOARD NAVIGATION
+        // ====================================================================
+
+        document.addEventListener('keydown', (e) => {
+            // Only in single view
+            if (!document.getElementById('single-view-container').classList.contains('active')) {
+                return;
+            }
+
+            // Left arrow: previous section
+            if (e.key === 'ArrowLeft' && currentSectionId > 1) {
+                previousSection();
+            }
+
+            // Right arrow: next section
+            if (e.key === 'ArrowRight' && currentSectionId < maxSections) {
+                nextSection();
+            }
+
+            // Number keys: jump to section
+            const num = parseInt(e.key);
+            if (num >= 1 && num <= maxSections) {
+                loadSection(num);
+            }
+        });
+
+        // ====================================================================
+        // INITIALIZATION
+        // ====================================================================
+
+        window.addEventListener('load', async () => {
+            console.log('Page loaded. Initializing...');
+
+            // Load the first section
+            await loadSection(1);
+
+            console.log('Ready! Use arrow keys or buttons to navigate.');
+            console.log('Press 1-6 to jump to specific sections.');
+        });
+    </script>
+</body>
+</html>

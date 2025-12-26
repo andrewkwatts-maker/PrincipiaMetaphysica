@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!--
+    Principia Metaphysica - Dynamic Paper Example
+    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+    This example demonstrates how to use PMPaperRenderer to build
+    the complete paper dynamically from theory_output.json.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principia Metaphysica - Dynamic Paper</title>
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams',
+                macros: {
+                    shadow: '\\text{shadow}'
+                }
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                skipHtmlClasses: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore',
+                ignoreHtmlClass: 'mathjax-ignore'
+            },
+            startup: {
+                ready: () => {
+                    MathJax.startup.defaultReady();
+                    console.log('MathJax: Ready for dynamic content');
+                }
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Loaders (MUST be in this order) -->
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-paper-renderer.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/pm-common.css">
+    <link rel="stylesheet" href="../css/pm-glass-theme.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-paper: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #f8f9fa;
+            --accent: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --border: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            min-height: 100vh;
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+
+        .loading-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-spinner {
+            width: 64px;
+            height: 64px;
+            border: 4px solid rgba(139, 127, 255, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1.5rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading-text {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+        }
+
+        .loading-details {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        .paper-wrapper {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        #paper-container {
+            padding: 3rem;
+            color: var(--text-dark);
+        }
+
+        /* Paper-specific styles */
+        .pm-paper-container {
+            line-height: 1.8;
+        }
+
+        .paper-title-section {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .paper-title {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .paper-subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .paper-author {
+            font-size: 1.1rem;
+            color: #888;
+            margin: 0.5rem 0;
+        }
+
+        .paper-date,
+        .paper-version {
+            font-size: 0.95rem;
+            color: #999;
+            margin: 0.25rem 0;
+        }
+
+        .paper-abstract {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.03));
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2.5rem;
+            border-left: 4px solid var(--accent);
+        }
+
+        .paper-abstract h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: var(--accent);
+        }
+
+        .paper-abstract p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .paper-toc {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border);
+        }
+
+        .paper-toc h2 {
+            font-size: 1.6rem;
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .toc-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .toc-list > li {
+            margin: 0.75rem 0;
+        }
+
+        .toc-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 0.75rem 1rem;
+            border-radius: 6px;
+            transition: all 0.2s;
+            background: white;
+        }
+
+        .toc-link:hover {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.05));
+            color: var(--accent);
+            transform: translateX(4px);
+        }
+
+        .toc-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .toc-title {
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .paper-section {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .paper-section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
+            font-weight: 700;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .section-abstract {
+            font-size: 1.05rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            padding: 1.25rem;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.03), rgba(255, 126, 182, 0.02));
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-secondary);
+        }
+
+        .section-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .section-content h3 {
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            color: var(--accent);
+        }
+
+        .section-content p {
+            margin-bottom: 1.25rem;
+        }
+
+        .section-takeaways {
+            background: linear-gradient(135deg, rgba(255, 126, 182, 0.08), rgba(139, 127, 255, 0.05));
+            padding: 1.75rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+            border-left: 4px solid var(--accent-secondary);
+        }
+
+        .section-takeaways h3 {
+            color: var(--accent-secondary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .section-takeaways ul {
+            padding-left: 1.5rem;
+        }
+
+        .section-takeaways li {
+            margin: 0.75rem 0;
+            line-height: 1.6;
+        }
+
+        .pm-loaded {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .pm-error {
+            color: #ff4444;
+            background: rgba(255, 68, 68, 0.1);
+            padding: 0.15rem 0.35rem;
+            border-radius: 3px;
+        }
+
+        .pm-loading {
+            color: #ffd700;
+            font-style: italic;
+        }
+
+        .formula-block,
+        .equation-block {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.03), rgba(255, 126, 182, 0.02));
+            border-radius: 8px;
+            overflow-x: auto;
+            text-align: center;
+            border: 1px solid rgba(139, 127, 255, 0.1);
+        }
+
+        /* Footer */
+        .paper-footer {
+            text-align: center;
+            padding: 2rem;
+            color: #999;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+        <div class="loading-text">Loading Principia Metaphysica</div>
+        <div class="loading-details" id="loading-details">Initializing...</div>
+    </div>
+
+    <!-- Paper Container -->
+    <div class="paper-wrapper">
+        <div id="paper-container">
+            <!-- Paper will be rendered here dynamically -->
+        </div>
+
+        <div class="paper-footer">
+            <p>Copyright © 2025-2026 Andrew Keith Watts. All rights reserved.</p>
+            <p style="margin-top: 0.5rem;">
+                Generated dynamically from theory_output.json
+            </p>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const RENDER_CONFIG = {
+            loadSections: true,
+            loadFormulas: true,
+            loadParameters: true,
+            renderAbstract: true,
+            renderTOC: true,
+            debug: true
+        };
+
+        // State
+        let renderStartTime;
+        const loadingOverlay = document.getElementById('loading-overlay');
+        const loadingDetails = document.getElementById('loading-details');
+
+        function updateLoadingStatus(message) {
+            loadingDetails.textContent = message;
+            console.log(`[Loading] ${message}`);
+        }
+
+        async function initializePaper() {
+            renderStartTime = Date.now();
+
+            try {
+                // Step 1: Wait for PM constants to load
+                updateLoadingStatus('Loading theory data...');
+                if (window.PM && typeof window.PM.load === 'function') {
+                    await window.PM.load();
+                }
+
+                // Step 2: Wait for formula loader
+                updateLoadingStatus('Loading formulas...');
+                if (window.PMFormulaLoader && typeof window.PMFormulaLoader.load === 'function') {
+                    await window.PMFormulaLoader.load();
+                }
+
+                // Step 3: Render paper
+                updateLoadingStatus('Rendering paper...');
+                const success = await PMPaperRenderer.renderPaper('paper-container', RENDER_CONFIG);
+
+                if (success) {
+                    const elapsed = ((Date.now() - renderStartTime) / 1000).toFixed(2);
+                    updateLoadingStatus(`Complete! (${elapsed}s)`);
+
+                    // Hide loading overlay after short delay
+                    setTimeout(() => {
+                        loadingOverlay.classList.add('hidden');
+                    }, 500);
+
+                    console.log(`%cPaper rendered successfully in ${elapsed}s`, 'color: green; font-weight: bold');
+                } else {
+                    updateLoadingStatus('Error: Rendering failed');
+                    setTimeout(() => {
+                        loadingOverlay.classList.add('hidden');
+                    }, 2000);
+                    console.error('Paper rendering failed');
+                }
+
+            } catch (error) {
+                console.error('Error initializing paper:', error);
+                updateLoadingStatus(`Error: ${error.message}`);
+                setTimeout(() => {
+                    loadingOverlay.classList.add('hidden');
+                }, 2000);
+            }
+        }
+
+        // Start rendering when page loads
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePaper);
+        } else {
+            initializePaper();
+        }
+
+        // Expose for debugging
+        window.DEBUG = {
+            renderPaper: () => initializePaper(),
+            showOverlay: () => loadingOverlay.classList.remove('hidden'),
+            hideOverlay: () => loadingOverlay.classList.add('hidden'),
+            config: RENDER_CONFIG
+        };
+
+        console.log('Debug commands available:');
+        console.log('  DEBUG.renderPaper() - Re-render the paper');
+        console.log('  DEBUG.showOverlay() - Show loading overlay');
+        console.log('  DEBUG.hideOverlay() - Hide loading overlay');
+        console.log('  DEBUG.config - View render configuration');
+    </script>
+</body>
+</html>
