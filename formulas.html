@@ -86,7 +86,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
             pointer-events: none;
         }
 
@@ -101,7 +101,7 @@
             background: linear-gradient(
                 90deg,
                 transparent,
-                rgba(255, 255, 255, 0.1),
+                rgba(255, 255, 255, 0.03),
                 transparent
             );
             transition: left 0.5s ease;
@@ -112,8 +112,8 @@
             transform: translateY(-4px);
             box-shadow:
                 0 12px 40px rgba(0, 0, 0, 0.4),
-                0 0 20px rgba(139, 127, 255, 0.2);
-            border-color: rgba(139, 127, 255, 0.4);
+                0 0 15px rgba(139, 127, 255, 0.1);
+            border-color: rgba(139, 127, 255, 0.35);
             background: rgba(26, 31, 58, 0.7);
         }
 
@@ -218,7 +218,7 @@
             left: 0;
             right: 0;
             height: 2px;
-            background: linear-gradient(90deg, transparent, rgba(139, 127, 255, 0.5), transparent);
+            background: linear-gradient(90deg, transparent, rgba(139, 127, 255, 0.3), transparent);
             pointer-events: none;
         }
 
@@ -309,7 +309,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(139, 127, 255, 0.4), transparent);
+            background: linear-gradient(90deg, transparent, rgba(139, 127, 255, 0.25), transparent);
             pointer-events: none;
         }
 
@@ -424,7 +424,7 @@
         .reference-link:hover {
             color: var(--accent-primary);
             text-decoration: underline;
-            text-shadow: 0 0 8px rgba(139, 127, 255, 0.5);
+            text-shadow: 0 0 8px rgba(139, 127, 255, 0.3);
         }
 
         /* Related Formulas */
@@ -455,8 +455,8 @@
             background: rgba(139, 127, 255, 0.35);
             border-color: rgba(139, 127, 255, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(139, 127, 255, 0.3);
-            text-shadow: 0 0 8px rgba(139, 127, 255, 0.6);
+            box-shadow: 0 4px 10px rgba(139, 127, 255, 0.2);
+            text-shadow: 0 0 8px rgba(139, 127, 255, 0.35);
         }
 
         /* Controls & Filters - Frosted Glass */
@@ -511,7 +511,7 @@
             border-color: rgba(139, 127, 255, 0.5);
             box-shadow:
                 0 0 0 3px rgba(139, 127, 255, 0.1),
-                0 0 20px rgba(139, 127, 255, 0.2);
+                0 0 12px rgba(139, 127, 255, 0.08);
         }
 
         .control-input::placeholder {
@@ -554,7 +554,7 @@
             background: linear-gradient(135deg, #8b7fff, #ff7eb6);
             border-color: transparent;
             color: #fff;
-            box-shadow: 0 4px 15px rgba(139, 127, 255, 0.4);
+            box-shadow: 0 4px 15px rgba(139, 127, 255, 0.25);
         }
 
         /* Stats Bar */
@@ -651,8 +651,8 @@
             background: rgba(80, 200, 120, 0.25);
             border-color: rgba(80, 200, 120, 0.5);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(80, 200, 120, 0.3);
-            text-shadow: 0 0 8px rgba(80, 200, 120, 0.5);
+            box-shadow: 0 4px 12px rgba(80, 200, 120, 0.2);
+            text-shadow: 0 0 8px rgba(80, 200, 120, 0.3);
         }
 
         /* Expandable Sections */
@@ -750,6 +750,112 @@
             color: var(--text-secondary);
         }
 
+        /* Formula Parameters - Input/Output Cards */
+        .formula-params {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(17, 20, 38, 0.3);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+
+        .formula-params h4 {
+            margin: 0 0 0.75rem 0;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-muted);
+        }
+
+        .param-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .param-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 0.85rem;
+            background: rgba(139, 127, 255, 0.15);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .param-card:hover {
+            background: rgba(139, 127, 255, 0.25);
+            border-color: rgba(139, 127, 255, 0.5);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(139, 127, 255, 0.25);
+        }
+
+        .param-card .param-symbol {
+            font-family: 'Courier New', monospace;
+            font-weight: 700;
+            color: var(--accent-primary);
+            font-size: 0.9rem;
+        }
+
+        .param-card .param-equals {
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        .param-card .param-value {
+            font-family: 'Source Code Pro', monospace;
+            font-weight: 600;
+            color: #f8f9fa;
+        }
+
+        .param-card .param-units {
+            color: rgba(248, 249, 250, 0.7);
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+
+        /* Input parameters - blue tint */
+        .formula-params.inputs .param-card {
+            background: rgba(77, 182, 255, 0.12);
+            border-color: rgba(77, 182, 255, 0.3);
+        }
+
+        .formula-params.inputs .param-card:hover {
+            background: rgba(77, 182, 255, 0.2);
+            border-color: rgba(77, 182, 255, 0.5);
+            box-shadow: 0 4px 10px rgba(77, 182, 255, 0.25);
+        }
+
+        .formula-params.inputs h4 {
+            color: #4db6ff;
+        }
+
+        /* Output parameters - green tint */
+        .formula-params.outputs .param-card {
+            background: rgba(81, 207, 102, 0.12);
+            border-color: rgba(81, 207, 102, 0.3);
+        }
+
+        .formula-params.outputs .param-card:hover {
+            background: rgba(81, 207, 102, 0.2);
+            border-color: rgba(81, 207, 102, 0.5);
+            box-shadow: 0 4px 10px rgba(81, 207, 102, 0.25);
+        }
+
+        .formula-params.outputs h4 {
+            color: #51cf66;
+        }
+
         /* Empty State */
         .empty-state {
             text-align: center;
@@ -762,6 +868,93 @@
             margin-bottom: 1rem;
             opacity: 0.5;
         }
+
+        /* Interactive Formula Term Tooltips */
+        .formula-var {
+            position: relative;
+            overflow: visible !important;
+            z-index: 1;
+        }
+
+        .formula-var:hover {
+            background: rgba(139, 127, 255, 0.3) !important;
+            border-color: var(--accent-primary) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.25);
+            z-index: 100;
+        }
+
+        .var-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            width: 280px;
+            max-width: 90vw;
+            background: rgba(17, 20, 38, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(139, 127, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.25s ease;
+            pointer-events: none;
+            z-index: 10000;
+        }
+
+        .formula-var:hover .var-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-12px);
+        }
+
+        .var-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 8px solid transparent;
+            border-top-color: rgba(139, 127, 255, 0.4);
+        }
+
+        .var-tooltip .var-name {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .var-tooltip .var-description {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        .var-tooltip .var-units {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            background: rgba(81, 207, 102, 0.15);
+            color: #51cf66;
+            padding: 0.25rem 0.5rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Ensure formula containers don't clip tooltips */
+        .interactive-formula,
+        .formula-display,
+        .formula-card {
+            overflow: visible !important;
+        }
     </style>
 
     <script src="js/pm-constants-loader.js"></script>
@@ -771,37 +964,7 @@
 </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
-    <header>
-        <div class="header-content">
-            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
-                Principia Metaphysica
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#abstract">Abstract</a></li>
-                    <li><a href="beginners-guide.html">Beginner's Guide</a></li>
-                    <li><a href="sections.html">Sections</a></li>
-                    <li><a href="foundations/index.html">Foundations</a></li>
-                    <li><a href="references.html">References</a></li>
-                    <li><a href="formulas.html">Formulas</a></li>
-                    <li><a href="parameters.html">Parameters</a></li>
-                    <li><a href="principia-metaphysica-paper.html">Paper</a></li>
-                    <li><a href="simulations.html">Simulations</a></li>
-                    <li class="user-controls-nav">
-                        <div class="user-controls">
-                            <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-                            <span id="user-email"></span>
-                            <button id="logout-btn">Logout</button>
-                        </div>
-                        <button id="header-login-btn" class="header-login-btn">
-                            <img src="images/google-icon.svg" alt="G" class="google-icon-small">
-                            Login
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Header injected by pm-header.js -->
 
     <main>
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -909,7 +1072,15 @@
   </div>
 
   <script type="module">
+    import { injectHeader } from './js/pm-header.js';
     import { setupAuthGuard } from './js/auth-guard.js';
+
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+        injectHeader('formulas');
+    });
+
+    // Setup auth after header
     setupAuthGuard('formulas');
   </script>
 
@@ -928,19 +1099,30 @@
     // Load and initialize formulas
     async function loadFormulas() {
         try {
-            const response = await fetch('AUTO_GENERATED/json/formulas.json');
+            // Try loading from theory_output.json first, fallback to formulas.json
+            let response = await fetch('theory_output.json');
             if (!response.ok) {
-                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                console.log('theory_output.json not found, trying AUTO_GENERATED/json/formulas.json...');
+                response = await fetch('AUTO_GENERATED/json/formulas.json');
+                if (!response.ok) {
+                    throw new Error(`Could not load formulas. HTTP ${response.status}: ${response.statusText}`);
+                }
             }
 
             const data = await response.json();
             console.log('Raw data structure:', data);
-            console.log(`Loaded formula database v${data.version} with ${data.count} formulas`);
 
-            // Handle both nested and flat structures
-            if (data.formulas && typeof data.formulas === 'object') {
+            // Handle theory_output.json structure
+            if (data.formulas && data.formulas.formulas) {
+                // theory_output.json format: { formulas: { formulas: { "id": {...} }, version, count } }
+                allFormulas = Object.values(data.formulas.formulas);
+                console.log(`Loaded formula database from theory_output.json v${data.formulas.version} with ${data.formulas.count} formulas`);
+            }
+            // Handle standalone formulas.json structure
+            else if (data.formulas && typeof data.formulas === 'object') {
                 // Nested structure: { formulas: { "id": {...}, ... } }
                 allFormulas = Object.values(data.formulas);
+                console.log(`Loaded formula database v${data.version} with ${data.count || Object.keys(data.formulas).length} formulas`);
             } else if (Array.isArray(data)) {
                 // Direct array: [...]
                 allFormulas = data;
@@ -1205,6 +1387,97 @@
         console.log('Formula rendering complete');
     }
 
+    // Render interactive formula with hoverable terms
+    function renderInteractiveFormula(formula) {
+        if (!formula.terms || Object.keys(formula.terms).length === 0) {
+            // No terms to make interactive, just show the formula
+            return formula.latex ? `$$${formula.latex}$$` : (formula.html || escapeHtml(formula.plainText || 'No equation available'));
+        }
+
+        // If we have HTML with terms, wrap each term with tooltips
+        if (formula.html) {
+            let interactiveHtml = formula.html;
+
+            // Create a mapping of potential patterns to terms
+            const termPatterns = [];
+
+            for (const [symbol, term] of Object.entries(formula.terms)) {
+                const termDesc = typeof term === 'string' ? term : (term.description || term.name || '');
+                const termName = typeof term === 'object' && term.name ? term.name : symbol;
+
+                // Create tooltip HTML
+                const tooltipHtml = `
+                    <div class="var-tooltip">
+                        <div class="var-name">${escapeHtml(termName)}</div>
+                        <div class="var-description">${escapeHtml(termDesc)}</div>
+                        ${typeof term === 'object' && term.value ? `<div class="var-units">Value: ${escapeHtml(String(term.value))}</div>` : ''}
+                    </div>
+                `;
+
+                // Build patterns that might match this symbol in HTML
+                // e.g., "n_gen" might appear as "n<sub>gen</sub>"
+                const patterns = [
+                    symbol, // exact match
+                    symbol.replace(/_/g, '<sub>') + '</sub>', // n_gen -> n<sub>gen</sub>
+                    symbol.replace(/_(\w+)/g, '<sub>$1</sub>') // more precise version
+                ];
+
+                for (const pattern of patterns) {
+                    termPatterns.push({
+                        pattern: pattern,
+                        symbol: symbol,
+                        tooltipHtml: tooltipHtml,
+                        priority: pattern === symbol ? 2 : 1 // prioritize exact matches
+                    });
+                }
+            }
+
+            // Sort by priority (exact matches first) and by length (longer patterns first to avoid partial replacements)
+            termPatterns.sort((a, b) => {
+                if (a.priority !== b.priority) return b.priority - a.priority;
+                return b.pattern.length - a.pattern.length;
+            });
+
+            // Track which positions have been wrapped to avoid double-wrapping
+            const wrapped = new Set();
+
+            for (const {pattern, symbol, tooltipHtml} of termPatterns) {
+                // Find all occurrences of this pattern
+                let startIndex = 0;
+                while ((startIndex = interactiveHtml.indexOf(pattern, startIndex)) !== -1) {
+                    // Check if this position is already wrapped
+                    const isWrapped = Array.from(wrapped).some(pos =>
+                        startIndex >= pos[0] && startIndex < pos[1]
+                    );
+
+                    if (!isWrapped) {
+                        const endIndex = startIndex + pattern.length;
+                        const before = interactiveHtml.substring(0, startIndex);
+                        const match = interactiveHtml.substring(startIndex, endIndex);
+                        const after = interactiveHtml.substring(endIndex);
+
+                        const wrappedTerm = `<span class="formula-var" style="cursor: pointer; position: relative; padding: 0.15rem 0.3rem; margin: 0 0.1rem; background: rgba(139, 127, 255, 0.15); border-radius: 6px; border: 1px solid rgba(139, 127, 255, 0.25); display: inline-block;">${match}${tooltipHtml}</span>`;
+
+                        interactiveHtml = before + wrappedTerm + after;
+
+                        // Mark this position as wrapped
+                        wrapped.add([startIndex, startIndex + wrappedTerm.length]);
+
+                        // Move past this replacement
+                        startIndex += wrappedTerm.length;
+                    } else {
+                        startIndex += pattern.length;
+                    }
+                }
+            }
+
+            return interactiveHtml;
+        }
+
+        // Fallback to LaTeX or plain text
+        return formula.latex ? `$$${formula.latex}$$` : escapeHtml(formula.plainText || 'No equation available');
+    }
+
     // Render individual formula card
     function renderFormulaCard(formula) {
         if (!formula || !formula.id) {
@@ -1226,10 +1499,30 @@
                     ${statusBadge}
                 </div>
 
-                <!-- Equation -->
-                <div class="formula-equation">
-                    ${formula.latex ? `$$${formula.latex}$$` : (formula.html || escapeHtml(formula.plainText || 'No equation available'))}
+                <!-- Interactive Formula Display with Hoverable Terms -->
+                <div class="interactive-formula" style="margin: 1.5rem 0; position: relative; overflow: visible;">
+                    <span class="formula-hint" style="position: absolute; top: -1.5rem; right: 0; font-size: 0.75rem; color: var(--text-muted); opacity: 0.7;">Hover terms for details</span>
+                    <div class="formula-display" style="text-align: center; font-size: 1.3rem; padding: 1.5rem; background: rgba(17, 20, 38, 0.5); backdrop-filter: blur(16px); border-radius: 12px; border: 1px solid rgba(139, 127, 255, 0.3); position: relative; overflow: visible;">
+                        ${renderInteractiveFormula(formula)}
+                    </div>
                 </div>
+
+                <!-- Expandable LaTeX Code Section -->
+                <div class="expandable-section" style="margin: 1rem 0;">
+                    <div class="expand-toggle" style="cursor: pointer; user-select: none;">
+                        <span class="expand-title">View LaTeX Code</span>
+                        <span class="expand-icon">▶</span>
+                    </div>
+                    <div class="expand-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
+                        <div style="background: rgba(17, 20, 38, 0.6); padding: 1rem; border-radius: 8px; margin-top: 0.5rem; border: 1px solid rgba(139, 127, 255, 0.2);">
+                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Plain Text Formula</div>
+                            <code style="display: block; font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.9rem; color: #50c878; background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">${escapeHtml(formula.plainText || formula.latex || 'No plain text available')}</code>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Parameter Input/Output Cards -->
+                ${renderParameterIO(formula)}
 
                 <!-- Details Grid -->
                 ${renderDetails(formula)}
@@ -1469,6 +1762,129 @@
                 </a>
             </div>
         `;
+    }
+
+    // Render parameter input/output sections
+    function renderParameterIO(formula) {
+        const inputParams = getInputParameters(formula);
+        const outputParams = getOutputParameters(formula);
+
+        let html = '';
+
+        // Render inputs
+        if (inputParams.length > 0) {
+            html += `
+                <div class="formula-params inputs">
+                    <h4>Input Parameters</h4>
+                    <div class="param-cards">
+                        ${inputParams.map(param => renderParameterCard(param)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        // Render outputs
+        if (outputParams.length > 0) {
+            html += `
+                <div class="formula-params outputs">
+                    <h4>Output Parameters</h4>
+                    <div class="param-cards">
+                        ${outputParams.map(param => renderParameterCard(param)).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        return html;
+    }
+
+    // Get input parameters for a formula
+    function getInputParameters(formula) {
+        const inputs = [];
+
+        // Check derivation for parent formulas
+        if (formula.derivation && formula.derivation.parentFormulas) {
+            formula.derivation.parentFormulas.forEach(parentId => {
+                const parent = allFormulas.find(f => f.id === parentId);
+                if (parent && parent.pmConstant) {
+                    inputs.push({
+                        name: parent.label || parentId,
+                        constant: parent.pmConstant,
+                        value: parent.experimentalValue || parent.computedValue,
+                        units: parent.units
+                    });
+                }
+            });
+        }
+
+        // Check terms for input parameters
+        if (formula.terms) {
+            Object.entries(formula.terms).forEach(([symbol, termData]) => {
+                if (typeof termData === 'object' && termData.input === true) {
+                    inputs.push({
+                        name: symbol,
+                        constant: termData.pmConstant,
+                        value: termData.value,
+                        units: termData.units
+                    });
+                }
+            });
+        }
+
+        return inputs;
+    }
+
+    // Get output parameters for a formula
+    function getOutputParameters(formula) {
+        const outputs = [];
+
+        // The formula's pmConstant is the primary output
+        if (formula.pmConstant) {
+            outputs.push({
+                name: formula.label || formula.id,
+                constant: formula.pmConstant,
+                value: formula.experimentalValue || formula.computedValue,
+                units: formula.units
+            });
+        }
+
+        return outputs;
+    }
+
+    // Render a single parameter card
+    function renderParameterCard(param) {
+        if (!param || !param.constant) return '';
+
+        const value = formatParameterValue(param.value);
+        const units = param.units ? ` ${escapeHtml(param.units)}` : '';
+        const symbol = param.constant.split('.').pop(); // Extract last part like "M_GUT"
+
+        return `
+            <span class="param-card" title="${escapeHtml(param.constant)}">
+                <span class="param-symbol">${escapeHtml(symbol)}</span>
+                <span class="param-equals">=</span>
+                <span class="param-value">${value}</span>
+                ${units ? `<span class="param-units">${units}</span>` : ''}
+            </span>
+        `;
+    }
+
+    // Format parameter value for display
+    function formatParameterValue(value) {
+        if (value === null || value === undefined) return '—';
+        if (typeof value === 'string') return escapeHtml(value);
+        if (typeof value === 'number') {
+            const abs = Math.abs(value);
+            if (abs === 0) return '0';
+            if (abs >= 1e10 || (abs < 0.001 && abs > 0)) {
+                return value.toExponential(3);
+            } else if (Number.isInteger(value)) {
+                return value.toLocaleString();
+            } else {
+                return value.toPrecision(4);
+            }
+        }
+        return String(value);
     }
 
     // Get status CSS class

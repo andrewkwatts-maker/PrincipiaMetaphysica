@@ -1068,15 +1068,15 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
       <div id="metric-within-1sigma" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
        <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
-        <pm-param id="validation.predictions_within_1sigma"></pm-param>/<pm-param id="validation.total_predictions"></pm-param> within 1σ
+        <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma">45</span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters">58</span>
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        (<span id="success-rate-pct"></span>% success rate)
+        (<span class="pm-value" data-pm-value="framework_statistics.success_rate_1sigma">93.8</span>% success rate)
        </div>
       </div>
       <div id="metric-exact-matches" style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.exact_matches">
        <div id="exact-matches" style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">
-        <pm-param id="validation.exact_matches"></pm-param> Parameters
+        <span class="pm-value" data-pm-value="framework_statistics.exact_matches">12</span> Exact
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
         Exact Central Value Match
@@ -1087,7 +1087,7 @@
         DESI DR2
        </div>
        <div id="desi-validation" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        <pm-param id="dark_energy.w0_PM" show="agreement"></pm-param> DESI DR2
+        Validated (<span class="pm-value" data-pm-value="simulations.wz_evolution_desi_dr2.sigma_deviation" data-format="fixed:2">0.38</span>σ)
        </div>
       </div>
      </div>
@@ -1126,42 +1126,42 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">VEV</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><pm-param id="v12_6_geometric_derivations.vev_pneuma.v_EW"></pm-param> GeV</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;">246.22 GeV</div>
        <div style="font-size: 0.75rem; color: var(--text-muted);">0.017% error</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Higgs Mass</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><pm-param id="v11_final_observables.higgs_mass.m_h_GeV"></pm-param> GeV</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);"><pm-param id="v11_final_observables.higgs_mass.m_h_GeV" show="agreement"></pm-param> PDG 2024</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV">125.1</span> GeV</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">0.91σ PDG 2024</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">w₀ (Dark Energy)</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><pm-param id="dark_energy.w0_PM"></pm-param></div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);"><pm-param id="dark_energy.w0_PM" show="agreement"></pm-param> DESI DR2</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="parameters.dark_energy.w0">-0.8528</span></div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">0.38σ DESI DR2</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">1/α_GUT</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><pm-param id="proton_decay.alpha_GUT_inv"></pm-param></div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;"><span class="pm-value" data-pm-value="parameters.gauge.ALPHA_GUT_INV">23.54</span></div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">Geometric derivation</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">KK Graviton</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><pm-param id="kk_spectrum.m1_central"></pm-param> TeV</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">LHC testable</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><span class="pm-value" data-pm-value="simulations.kk_graviton.m_KK_TeV">5.0</span> TeV</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">HL-LHC testable</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Δm²₂₁</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;">7.42×10⁻⁵ eV²</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;">7.96×10⁻⁵ eV²</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">2.70σ NuFIT 6.0</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Δm²₃₁</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;">2.515×10⁻³ eV²</div>
-       <div style="font-size: 0.75rem; color: var(--text-muted);">NuFIT 6.0</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #4facfe;">2.521×10⁻³ eV²</div>
+       <div style="font-size: 0.75rem; color: var(--text-muted);">0.21σ NuFIT 6.0</div>
       </div>
       <div style="text-align: center;">
        <div style="font-size: 0.85rem; color: var(--text-muted);">Proton Lifetime</div>
-       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;"><pm-param id="v11_final_observables.proton_lifetime.tau_p_years"></pm-param> yr</div>
+       <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66;">8.15×10³⁴ yr</div>
        <div style="font-size: 0.75rem; color: var(--text-muted);">Hyper-K testable</div>
       </div>
      </div>
@@ -1179,47 +1179,18 @@
        =144 via G₂ manifold topology with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       n
-       <sub>
-        gen
-       </sub>
-       = χ
-       <sub>
-        eff
-       </sub>
-       /48 = <span class="pm-value" data-category="topology" data-param="chi_eff"></span>/48 = <span class="pm-value" data-category="topology" data-param="n_gen"></span>
+       n<sub>gen</sub> = χ<sub>eff</sub>/48 = <span class="pm-value" data-pm-value="parameters.topology.CHI_EFF">144</span>/48 = <span class="pm-value" data-pm-value="parameters.topology.n_gen">3</span>
       </p>
      </div>
      <div id="feature-dark-energy" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="dark_energy.desi_validation">
       <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
-       Dark Energy w₀ =
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:4" data-param="w0_PM">
-       </span>
+       Dark Energy w₀ = <span class="pm-value" data-pm-value="parameters.dark_energy.w0">-0.8528</span>
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       From effective dimension D
-       <sub>
-        eff
-       </sub>
-       =
-       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="d_eff">
-       </span>
+       From effective dimension D<sub>eff</sub> = <span class="pm-value" data-pm-value="parameters.dark_energy.d_eff">12.576</span>
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #4facfe;">
-        DESI DR2:
-       </strong>
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:2" data-param="w0_DESI">
-       </span>
-       ±
-       <span class="pm-value" data-category="desi_dr2_data" data-format="fixed:2" data-param="w0_error">
-       </span>
-       →
-       <strong style="color: #51cf66;">
-        <span class="pm-value" data-category="dark_energy" data-format="fixed:2" data-param="w0_deviation_sigma">
-        </span>
-        σ
-       </strong>
+       <strong style="color: #4facfe;">DESI DR2:</strong> -0.827 ± 0.063 → <strong style="color: #51cf66;">0.38σ</strong>
       </p>
      </div>
      <div id="feature-dimension-params" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--accent-primary);" data-topic-id="shared_dimensions.alpha_derivation">
@@ -1227,16 +1198,10 @@
        Dimension Parameters Shadow_ק, Shadow_ח
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       Shadow_ק =
-       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="shadow_kuf">
-       </span>
-       , Shadow_ח =
-       <span class="pm-value" data-category="shared_dimensions" data-format="fixed:3" data-param="shadow_chet">
-       </span>
-       from G₂ torsion and neutrino mixing
+       Shadow_ק = 7.636, Shadow_ח = 7.636 from G₂ torsion and neutrino mixing
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       Geometrically derived from TCS logarithms
+       Geometrically derived from TCS logarithms (θ₂₃ = 45° exact)
       </p>
      </div>
      <div id="feature-pmns" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="pmns_matrix.complete_derivation">
@@ -1244,26 +1209,10 @@
        PMNS Matrix (4 parameters)
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       θ₂₃ =
-       <span class="pm-value" data-category="pmns_nufit_comparison" data-format="fixed:1" data-param="theta_23_nufit">
-       </span>
-       ° (0.00σ), θ₁₃ =
-       <span class="pm-value" data-category="pmns_nufit_comparison" data-format="fixed:2" data-param="theta_13_nufit">
-       </span>
-       ° (0.01σ), δ
-       <sub>
-        CP
-       </sub>
-       = 235° (
-       <span class="pm-value" data-category="pmns_matrix" data-format="fixed:1" data-param="delta_cp_sigma">
-       </span>
-       0σ)
+       θ₂₃ = <span class="pm-value" data-pm-value="parameters.pmns.theta_23">45.0</span>° (0.00σ), θ₁₃ = <span class="pm-value" data-pm-value="parameters.pmns.theta_13">8.57</span>° (0.25σ), δ<sub>CP</sub> = <span class="pm-value" data-pm-value="parameters.pmns.delta_CP">235.0</span>° (1.64σ)
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #51cf66;">
-        2 agreement(s) with experiment
-       </strong>
-       , average 0.09σ
+       <strong style="color: #51cf66;">3 within 2σ</strong>, average 0.63σ deviation
       </p>
      </div>
      <div id="feature-mgut" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="gauge_unification.gut_derivation">
@@ -1290,18 +1239,10 @@
        Proton Decay Lifetime and Branching Ratios
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       τ
-       <sub>
-        p
-       </sub>
-       = 3.84×10³⁴ yr,
-       <strong style="color: #51cf66;">
-        BR(p→e⁺π⁰) = <span class="pm-value" data-category="proton_decay_channels" data-param="BR_epi0_mean"></span>
-       </strong>
-       (!)
+       τ<sub>p</sub> = 8.15×10³⁴ yr, <strong style="color: #51cf66;">BR(p→e⁺π⁰) = <span class="pm-value" data-pm-value="parameters.proton_decay.BR_epi0">0.25</span></strong>
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       All channels consistent with Super-K bounds, testable by Hyper-K
+       4.88× Super-K bound, testable by Hyper-K
       </p>
      </div>
      <div id="feature-kk-spectrum" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="kk_spectrum.discovery_potential">
@@ -1309,19 +1250,10 @@
        KK Spectrum Prediction
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       M
-       <sub>
-        KK
-       </sub>
-       = <span class="pm-value" data-pm-value="v12_final_values.kk_graviton.m1_TeV" data-format="fixed:2"></span> from G₂ compactification
+       M<sub>KK</sub> = <span class="pm-value" data-pm-value="simulations.kk_graviton.m_KK_TeV">5.0</span> TeV from G₂ compactification
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #4facfe;">
-        HL-LHC:
-       </strong>
-       <span class="pm-value" data-category="dark_energy" data-format="fixed:1" data-param="functional_test_sigma_preference">
-       </span>
-       σ discovery potential with 100 fb⁻¹
+       <strong style="color: #4facfe;">HL-LHC:</strong> 6.8σ discovery potential with 3 ab⁻¹
       </p>
      </div>
      <div id="feature-neutrino-ordering" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="neutrino_ordering.atiyah_singer_index">
@@ -1358,7 +1290,7 @@
        Complex Structure Modulus Derivation
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       The complex structure modulus Re(T) = 7.086 is derived from the Higgs mass constraint m<sub>h</sub> = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV through inversion of the geometric formula, ensuring swampland distance conjecture compliance (Δφ = 1.958 > 0.816 M<sub>Pl</sub>).
+       The complex structure modulus Re(T) = 7.086 is derived from the Higgs mass constraint m<sub>h</sub> = <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV">125.1</span> GeV through inversion of the geometric formula, ensuring swampland distance conjecture compliance (Δφ = 1.958 > 0.816 M<sub>Pl</sub>).
       </p>
      </div>
     </div>
@@ -1388,17 +1320,7 @@
        Proton Decay Precision
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       Uncertainty reduced from 0.8 OOM to
-       <span id="tau-p-uncertainty">
-        <span class="pm-value" data-category="pmns_matrix" data-format="fixed:1" data-param="delta_cp_sigma">
-        </span>
-        77
-       </span>
-       OOM (
-       <span id="tau-p-improvement">
-        4.5
-       </span>
-       × improvement) via 3-loop RG + Monte Carlo.
+       Uncertainty reduced from 0.8 OOM to 0.077 OOM (4.5× improvement) via 3-loop RG + Monte Carlo.
       </p>
      </div>
      <div id="issue-planck-tension" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="dark_energy.planck_tension_resolution">
@@ -1438,24 +1360,7 @@
        KK Spectrum Quantification
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       M
-       <sub>
-        KK
-       </sub>
-       =
-       <span id="m-kk">
-        5.0
-       </span>
-       ±
-       <span id="m-kk-error">
-        1.5
-       </span>
-       TeV, testable at HL-LHC with
-       <span id="kk-significance">
-        <span class="pm-value" data-category="dark_energy" data-format="fixed:1" data-param="functional_test_sigma_preference">
-        </span>
-       </span>
-       σ expected discovery significance.
+       M<sub>KK</sub> = 5.0 ± 1.5 TeV, testable at HL-LHC with 6.8σ expected discovery significance.
       </p>
      </div>
      <div id="issue-mgut-geometric" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="gauge_unification.gut_derivation">
@@ -1479,7 +1384,7 @@
        DESI DR2 Agreement
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       w₀ = <span class="pm-value" data-pm-value="dark_energy.w0_PM"></span> - <strong style="color: #51cf66;">0.38σ within DESI DR2 combined uncertainties</strong>
+       w₀ = <span class="pm-value" data-pm-value="parameters.dark_energy.w0">-0.8528</span> - <strong style="color: #51cf66;">0.38σ within DESI DR2 combined uncertainties</strong>
       </p>
      </div>
      <div id="issue-dimensional-framework" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="geometric_framework.dimensional_reduction">
@@ -1788,22 +1693,7 @@
         </sup>
        </td>
        <td>
-        τ
-        <sub>
-         p
-        </sub>
-        = <span class="pm-value" data-pm-value="v11_final_observables.proton_lifetime.tau_p_years"></span> yr; BR(e
-        <sup>
-         +
-        </sup>
-        π
-        <sup>
-         0
-        </sup>
-        ) = <span class="pm-value" data-category="proton_decay_channels" data-param="BR_epi0_mean"></span>; Super-K: &gt;1.67 × 10
-        <sup>
-         34
-        </sup>
+        τ<sub>p</sub> = 8.15×10³⁴ yr; BR(e<sup>+</sup>π<sup>0</sup>) = 0.25; Super-K: &gt;1.67×10<sup>34</sup>
        </td>
       </tr>
       <tr>

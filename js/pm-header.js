@@ -4,6 +4,10 @@
  * Injects a consistent header across all pages.
  * Single source of truth for navigation and user controls.
  *
+ * Usage:
+ *   import { injectHeader } from './js/pm-header.js';
+ *   injectHeader('sections', { breadcrumbs: [{ label: 'Paper Home', href: 'index.html' }] });
+ *
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
@@ -27,11 +31,26 @@ const NAV_LINKS = [
  */
 function getBasePath() {
   const path = window.location.pathname;
-  // If in subdirectory (e.g., foundations/), add ../
+  // If in subdirectory (e.g., foundations/, sections/), add ../
   if (path.includes('/foundations/') || path.includes('/sections/')) {
     return '../';
   }
   return '';
+}
+
+/**
+ * Ensure CSS is loaded
+ */
+function ensureCSS() {
+  const cssId = 'pm-header-css';
+  if (document.getElementById(cssId)) return;
+
+  const basePath = getBasePath();
+  const link = document.createElement('link');
+  link.id = cssId;
+  link.rel = 'stylesheet';
+  link.href = `${basePath}css/pm-header.css`;
+  document.head.appendChild(link);
 }
 
 /**
@@ -46,7 +65,7 @@ function createHeaderHTML(activePageId = '') {
     const activeClass = isActive ? ' class="active"' : '';
     const href = basePath + link.href;
     return `<li><a href="${href}"${activeClass}>${link.label}</a></li>`;
-  }).join('\n          ');
+  }).join('\n            ');
 
   return `
     <header class="pm-header">
@@ -79,12 +98,43 @@ function createHeaderHTML(activePageId = '') {
 }
 
 /**
+ * Create breadcrumb HTML
+ * @param {Array} breadcrumbs - Array of {label, href} objects. Last item is current page (no href needed).
+ * @param {string} currentLabel - Label for current page
+ */
+function createBreadcrumbHTML(breadcrumbs = [], currentLabel = '') {
+  if (!breadcrumbs.length && !currentLabel) return '';
+
+  const basePath = getBasePath();
+  const items = [];
+
+  breadcrumbs.forEach((crumb, index) => {
+    if (crumb.href) {
+      items.push(`<a href="${basePath}${crumb.href}">${crumb.label}</a>`);
+    } else {
+      items.push(`<span class="current">${crumb.label}</span>`);
+    }
+  });
+
+  if (currentLabel) {
+    items.push(`<span class="current">${currentLabel}</span>`);
+  }
+
+  const separator = '<span class="separator">/</span>';
+  return `<div class="pm-breadcrumb">${items.join(separator)}</div>`;
+}
+
+/**
  * Inject header into page
  * @param {string} activePageId - The ID of the current page
- * @param {string} targetSelector - CSS selector for where to inject (default: start of body)
+ * @param {Object} options - Configuration options
+ * @param {Array} options.breadcrumbs - Breadcrumb trail [{label, href}]
+ * @param {string} options.currentLabel - Current page label for breadcrumbs
+ * @param {string} options.targetSelector - CSS selector for where to inject
  */
-export function injectHeader(activePageId = '', targetSelector = null) {
-  const headerHTML = createHeaderHTML(activePageId);
+export function injectHeader(activePageId = '', options = {}) {
+  // Ensure CSS is loaded
+  ensureCSS();
 
   // Check if header already exists
   if (document.querySelector('.pm-header')) {
@@ -92,18 +142,44 @@ export function injectHeader(activePageId = '', targetSelector = null) {
     return;
   }
 
-  if (targetSelector) {
-    const target = document.querySelector(targetSelector);
-    if (target) {
-      target.insertAdjacentHTML('afterbegin', headerHTML);
+  const headerHTML = createHeaderHTML(activePageId);
+  const breadcrumbHTML = createBreadcrumbHTML(options.breadcrumbs || [], options.currentLabel);
+
+  // Remove any existing non-pm headers to avoid duplicates
+  const existingHeaders = document.querySelectorAll('header:not(.pm-header), .app-header:not(.pm-header)');
+  existingHeaders.forEach(h => {
+    // Only remove if it looks like a nav header (has nav element or site title)
+    if (h.querySelector('nav') || h.querySelector('.site-title') || h.querySelector('.header-content')) {
+      h.style.display = 'none';
     }
-  } else {
-    // Insert at start of body or main-content
-    const mainContent = document.getElementById('main-content');
-    if (mainContent) {
-      mainContent.insertAdjacentHTML('afterbegin', headerHTML);
-    } else {
-      document.body.insertAdjacentHTML('afterbegin', headerHTML);
+  });
+
+  // Find injection target
+  let target;
+  if (options.targetSelector) {
+    target = document.querySelector(options.targetSelector);
+  }
+
+  if (!target) {
+    // Try common targets
+    target = document.querySelector('.app-container') ||
+             document.getElementById('main-content') ||
+             document.body;
+  }
+
+  // Inject header at start of target
+  if (target) {
+    target.insertAdjacentHTML('afterbegin', headerHTML);
+
+    // If breadcrumbs, inject after header inside main content area
+    if (breadcrumbHTML) {
+      const mainContent = document.querySelector('.app-main') ||
+                         document.querySelector('.content-wrapper') ||
+                         document.querySelector('main') ||
+                         document.querySelector('#main-content');
+      if (mainContent) {
+        mainContent.insertAdjacentHTML('afterbegin', breadcrumbHTML);
+      }
     }
   }
 
@@ -117,8 +193,8 @@ export function injectHeader(activePageId = '', targetSelector = null) {
  * Setup mobile menu toggle functionality
  */
 function setupMobileMenu() {
-  const menuBtn = document.querySelector('.mobile-menu-btn');
-  const nav = document.querySelector('.main-nav');
+  const menuBtn = document.querySelector('.pm-header .mobile-menu-btn');
+  const nav = document.querySelector('.pm-header .main-nav');
 
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
@@ -135,8 +211,7 @@ function setupMobileMenu() {
 export function updateHeaderUserDisplay(user) {
   const userAvatar = document.getElementById('user-avatar');
   const userEmail = document.getElementById('user-email');
-  const logoutBtn = document.getElementById('logout-btn');
-  const userControls = document.querySelector('.user-controls');
+  const userControls = document.querySelector('.pm-header .user-controls');
   const loginBtn = document.getElementById('header-login-btn');
 
   const basePath = getBasePath();
@@ -159,10 +234,24 @@ export function updateHeaderUserDisplay(user) {
       userControls.style.display = 'none';
     }
     if (loginBtn) {
-      loginBtn.style.display = 'block';
+      loginBtn.style.display = 'flex';
     }
   }
 }
 
+/**
+ * Remove injected header (useful for cleanup)
+ */
+export function removeHeader() {
+  const header = document.querySelector('.pm-header');
+  if (header) {
+    header.remove();
+  }
+  const breadcrumb = document.querySelector('.pm-breadcrumb');
+  if (breadcrumb) {
+    breadcrumb.remove();
+  }
+}
+
 // Export nav links for use elsewhere
-export { NAV_LINKS };
+export { NAV_LINKS, getBasePath };

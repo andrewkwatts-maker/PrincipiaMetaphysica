@@ -198,6 +198,32 @@
             opacity: 0.7;
         }
 
+        .citation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.7rem;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.2));
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-left: 0.5rem;
+        }
+
+        .citation-count {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .journal-info {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
         .loading-indicator {
             text-align: center;
             padding: 3rem;
@@ -239,37 +265,7 @@
 </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
-    <header>
-        <div class="header-content">
-            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
-                Principia Metaphysica
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#abstract">Abstract</a></li>
-                    <li><a href="beginners-guide.html">Beginner's Guide</a></li>
-                    <li><a href="sections.html">Sections</a></li>
-                    <li><a href="foundations/index.html">Foundations</a></li>
-                    <li><a href="references.html">References</a></li>
-                    <li><a href="formulas.html">Formulas</a></li>
-                    <li><a href="parameters.html">Parameters</a></li>
-                    <li><a href="principia-metaphysica-paper.html">Paper</a></li>
-                    <li><a href="simulations.html">Simulations</a></li>
-                    <li class="user-controls-nav">
-                        <div class="user-controls">
-                            <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-                            <span id="user-email"></span>
-                            <button id="logout-btn">Logout</button>
-                        </div>
-                        <button id="header-login-btn" class="header-login-btn">
-                            <img src="images/google-icon.svg" alt="G" class="google-icon-small">
-                            Login
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Header injected by pm-header.js -->
 
     <main>
         <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -310,6 +306,9 @@
             <div class="ref-stats" id="ref-stats">
                 Loading references...
             </div>
+            <div id="citation-summary" style="margin-top: 1rem; padding: 1rem; background: rgba(81, 207, 102, 0.1); border-radius: 8px; border-left: 3px solid #50c878; display: none;">
+                <strong>Most Cited:</strong> <span id="most-cited-refs"></span>
+            </div>
         </div>
 
         <!-- References Container -->
@@ -332,7 +331,15 @@
   </div>
 
   <script type="module">
+    import { injectHeader } from './js/pm-header.js';
     import { setupAuthGuard } from './js/auth-guard.js';
+
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+        injectHeader('references');
+    });
+
+    // Setup auth after header
     setupAuthGuard('references');
   </script>
 
@@ -362,7 +369,10 @@
             const paths = [
                 'AUTO_GENERATED/json/references.json',
                 './AUTO_GENERATED/json/references.json',
-                '/AUTO_GENERATED/json/references.json'
+                '/AUTO_GENERATED/json/references.json',
+                'theory_output.json',  // Fallback to theory_output.json
+                './theory_output.json',
+                '/theory_output.json'
             ];
 
             let data = null;
@@ -379,7 +389,19 @@
                         console.log(`[References] Fetched ${text.length} bytes from ${path}`);
                         console.log(`[References] First 100 chars:`, text.substring(0, 100));
 
-                        data = JSON.parse(text);
+                        const parsedData = JSON.parse(text);
+
+                        // Check if this is theory_output.json and extract references
+                        if (path.includes('theory_output') && parsedData.references) {
+                            data = parsedData.references;
+                            console.log(`[References] Extracted references from theory_output.json`);
+                        } else if (path.includes('references.json')) {
+                            data = parsedData;
+                        } else {
+                            console.warn(`[References] ${path} does not contain references data`);
+                            continue;
+                        }
+
                         successPath = path;
                         console.log(`[References] Successfully parsed JSON from ${path}`);
                         break;
@@ -390,7 +412,7 @@
             }
 
             if (!data) {
-                throw new Error('Could not load references.json from any path. Tried: ' + paths.join(', '));
+                throw new Error('Could not load references from any path. Tried: ' + paths.join(', '));
             }
 
             console.log('[References] Successfully loaded from:', successPath);
@@ -440,15 +462,40 @@
         const withDOI = allReferences.filter(ref => ref.doi && ref.doi.length > 0).length;
         const avgYear = Math.round(allReferences.reduce((sum, ref) => sum + ref.year, 0) / totalRefs);
 
+        // Calculate citation statistics
+        const refsWithCitations = allReferences.map(ref => ({
+            ...ref,
+            totalCitations: (ref.citedByFormulas?.length || 0) + (ref.citedByParams?.length || 0)
+        }));
+        const totalCitations = refsWithCitations.reduce((sum, ref) => sum + ref.totalCitations, 0);
+
+        // Find most cited references
+        const mostCited = refsWithCitations
+            .filter(ref => ref.totalCitations > 0)
+            .sort((a, b) => b.totalCitations - a.totalCitations)
+            .slice(0, 5);
+
         const statsHTML = `
             <strong>${totalRefs}</strong> total references •
             <strong>${withArxiv}</strong> with arXiv •
             <strong>${withDOI}</strong> with DOI •
-            Average year: <strong>${avgYear}</strong>
+            Average year: <strong>${avgYear}</strong> •
+            <strong>${totalCitations}</strong> total citations
         `;
 
         document.getElementById('ref-stats').innerHTML = statsHTML;
-        console.log('[References] Stats updated:', { totalRefs, withArxiv, withDOI, avgYear });
+
+        // Update most cited summary
+        if (mostCited.length > 0) {
+            const citationSummary = document.getElementById('citation-summary');
+            const mostCitedHTML = mostCited
+                .map(ref => `<a href="#${ref.id}" style="color: #50c878; text-decoration: none; margin-right: 0.75rem;" title="${ref.title}">${ref.authors.split(',')[0]} (${ref.year}) - ${ref.totalCitations} citations</a>`)
+                .join('');
+            document.getElementById('most-cited-refs').innerHTML = mostCitedHTML;
+            citationSummary.style.display = 'block';
+        }
+
+        console.log('[References] Stats updated:', { totalRefs, withArxiv, withDOI, avgYear, totalCitations });
     }
 
     // Display references
@@ -531,6 +578,17 @@
             const arxivLink = ref.arxiv ? `https://arxiv.org/abs/${ref.arxiv}` : null;
             const doiLink = ref.doi ? `https://doi.org/${ref.doi}` : null;
 
+            // Calculate total citations
+            const formulaCitations = ref.citedByFormulas?.length || 0;
+            const paramCitations = ref.citedByParams?.length || 0;
+            const totalCitations = formulaCitations + paramCitations;
+
+            // Create citation badge
+            const citationBadgeHTML = totalCitations > 0 ?
+                `<span class="citation-badge" title="${formulaCitations} formula citations, ${paramCitations} parameter citations">
+                    <span class="citation-count">${totalCitations}</span> citation${totalCitations !== 1 ? 's' : ''}
+                </span>` : '';
+
             let linksHTML = '<div class="ref-links">';
             if (arxivLink) {
                 linksHTML += `<a href="${arxivLink}" target="_blank">arXiv: ${ref.arxiv} →</a>`;
@@ -543,14 +601,25 @@
             const descriptionHTML = ref.description ?
                 `<div class="ref-description">${ref.description}</div>` : '';
 
+            // Journal info
+            const journalHTML = ref.journal ?
+                `<div class="journal-info">${ref.journal}</div>` : '';
+
+            // Cited by formulas (clickable tags)
             const citedByHTML = (ref.citedByFormulas && ref.citedByFormulas.length > 0) ?
-                ref.citedByFormulas.map(f => `<span class="ref-tag">Formula: ${f}</span>`).join('') : '';
+                '<div style="margin-top: 0.5rem;">' +
+                ref.citedByFormulas.map(f => `<span class="ref-tag" title="Click to view formula"><a href="formulas.html#${f}" style="color: inherit; text-decoration: none;">Formula: ${f}</a></span>`).join('') +
+                '</div>' : '';
 
             return `
-                <div class="ref-item" data-ref-id="${ref.id}">
-                    <div class="ref-title">${ref.title}</div>
+                <div class="ref-item" data-ref-id="${ref.id}" id="${ref.id}">
+                    <div class="ref-title">
+                        ${ref.title}
+                        ${citationBadgeHTML}
+                    </div>
                     <div class="ref-authors">${ref.authors}</div>
                     <div class="ref-year">${ref.year} <span class="ref-id">[${ref.id}]</span></div>
+                    ${journalHTML}
                     ${descriptionHTML}
                     ${linksHTML}
                     ${citedByHTML}

@@ -613,29 +613,7 @@
 </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
-    <header>
-        <div class="header-content">
-            <h1>Principia Metaphysica</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="sections.html">Sections</a></li>
-                    <li><a href="foundations/index.html">Foundations</a></li>
-                    <li><a href="references.html">References</a></li>
-                    <li><a href="formulas.html">Formulas</a></li>
-                    <li><a href="parameters.html">Parameters</a></li>
-                    <li><a href="principia-metaphysica-paper.html">Paper</a></li>
-                    <li><a href="simulations.html">Simulations</a></li>
-                </ul>
-            </nav>
-        </div>
-    
-    <div class="user-controls">
-      <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-      <span id="user-email"></span>
-      <button id="logout-btn">Logout</button>
-    </div>
-  </header>
+    <!-- Header injected by pm-header.js -->
 
     <main class="guide-container">
         <div class="intro-box">
@@ -2632,7 +2610,15 @@
   <script src="js/pm-parameter-component.js"></script>
 
   <script type="module">
+    import { injectHeader } from './js/pm-header.js';
     import { setupAuthGuard } from './js/auth-guard.js';
+
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+        injectHeader('beginners-guide');
+    });
+
+    // Setup auth after header
     setupAuthGuard('beginners-guide');
   </script>
 </body>

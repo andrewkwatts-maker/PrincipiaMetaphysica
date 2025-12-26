@@ -17,40 +17,29 @@
     <title>Dirac Spinors - Foundational Mathematics</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
     <script src="../js/pm-constants-loader.js"></script>
     <script src="../js/pm-formula-loader.js"></script>
     <script src="../theory-constants-enhanced.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
     <script src="../js/formula-expansion.js" defer></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'Dirac Spinors'
+            });
+        });
+    </script>
 </head>
 <body class="auth-loading">
     <div id="main-content" style="display: none;">
-    <header>
-        <div class="header-content">
-            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">Principia Metaphysica</div>
-            <nav>
-                <ul>
-                    <li><a href="../index.html">Home</a></li>
-                    <li><a href="index.html">Foundations</a></li>
-                    <li><a href="../sections/index.html">Sections</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="user-controls">
-            <img id="user-avatar" src="../images/default-avatar.svg" alt="User">
-            <span id="user-email"></span>
-            <button id="logout-btn">Logout</button>
-        </div>
-    </header>
 
     <main>
-        <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="../index.html">Home</a>
-            <span class="separator">/</span>
-            <a href="index.html">Foundations</a>
-            <span class="separator">/</span>
-            <span>Dirac Spinors</span>
-        </nav>
 
         <div class="equation-hero" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.15), rgba(139, 127, 255, 0.1)); border: 2px solid rgba(255, 126, 182, 0.3);">
             <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Mathematics (1928)</span>

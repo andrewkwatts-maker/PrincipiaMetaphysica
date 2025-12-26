@@ -564,37 +564,7 @@
 </head>
 <body class="auth-loading">
     <div id="main-content" style="display: none;">
-    <header>
-        <div class="header-content">
-            <div class="site-title" style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
-                Principia Metaphysica
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#abstract">Abstract</a></li>
-                    <li><a href="beginners-guide.html">Beginner's Guide</a></li>
-                    <li><a href="sections.html">Sections</a></li>
-                    <li><a href="foundations/index.html">Foundations</a></li>
-                    <li><a href="references.html">References</a></li>
-                    <li><a href="formulas.html">Formulas</a></li>
-                    <li><a href="parameters.html">Parameters</a></li>
-                    <li><a href="principia-metaphysica-paper.html">Paper</a></li>
-                    <li><a href="simulations.html">Simulations</a></li>
-                    <li class="user-controls-nav">
-                        <div class="user-controls">
-                            <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-                            <span id="user-email"></span>
-                            <button id="logout-btn">Logout</button>
-                        </div>
-                        <button id="header-login-btn" class="header-login-btn">
-                            <img src="images/google-icon.svg" alt="G" class="google-icon-small">
-                            Login
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <!-- Header injected by pm-header.js -->
 
     <main>
         <nav aria-label="Breadcrumb" class="breadcrumb">
@@ -696,7 +666,15 @@
     </div>
 
     <script type="module">
+        import { injectHeader } from './js/pm-header.js';
         import { setupAuthGuard } from './js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('parameters');
+        });
+
+        // Setup auth after header
         setupAuthGuard('parameters');
     </script>
 
@@ -1012,7 +990,37 @@
         }
 
         function processCategory(category, params, parentKey = '') {
+            // Internal metadata fields that should NOT be displayed as parameters
+            const SKIP_KEYS = ['metadata', 'timestamp', 'render', 'hidden', 'version', 'config_source', 'description'];
+
             for (const [key, value] of Object.entries(params)) {
+                // Skip internal metadata keys
+                if (SKIP_KEYS.includes(key)) {
+                    continue;
+                }
+
+                // Skip if this is a standalone description field at category level
+                if (key === 'description' && typeof value === 'string') {
+                    continue;
+                }
+
+                // Skip date-only strings that look like timestamps
+                if (typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)) {
+                    continue;
+                }
+
+                // Skip count strings like "2 parameters"
+                if (typeof value === 'string' && /^\d+\s+(parameter|item|field)s?$/i.test(value)) {
+                    continue;
+                }
+
+                // Skip if explicitly marked as hidden or not to render
+                if (typeof value === 'object' && value !== null) {
+                    if (value.hidden === true || value.render === false) {
+                        continue;
+                    }
+                }
+
                 const fullKey = parentKey ? `${parentKey}.${key}` : key;
 
                 // If value is a simple parameter (number, string) or has standard fields
@@ -1036,6 +1044,11 @@
             // Arrays are always parameters (like SIGNATURE_INITIAL)
             if (Array.isArray(value)) {
                 return true;
+            }
+
+            // Check for render: false or hidden: true flags
+            if (value.render === false || value.hidden === true) {
+                return false; // Skip this parameter
             }
 
             // Check for common parameter field patterns
