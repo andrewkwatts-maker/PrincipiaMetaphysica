@@ -329,6 +329,12 @@
                         window.PM_FORMULAS = data.formulas?.formulas || {};
 
                         updateDOM();
+
+                        // Defer MathJax signal to ensure DOM updates complete
+                        setTimeout(() => {
+                            if (typeof signalMathJax === 'function') signalMathJax();
+                        }, 100);
+
                         return true;
                     }
                 } catch (e) {
@@ -387,6 +393,12 @@
                         window.PM_FORMULAS = data.formulas?.formulas || {};
 
                         updateDOM();
+
+                        // Defer MathJax signal to ensure DOM updates complete
+                        setTimeout(() => {
+                            if (typeof signalMathJax === 'function') signalMathJax();
+                        }, 100);
+
                         return true;
                     }
 
@@ -486,6 +498,10 @@
                 el.classList.add('pm-loaded');
                 el.classList.remove('pm-error', 'pm-loading');
                 el.removeAttribute('title');
+
+                // Mark element to prevent MathJax from processing it
+                el.classList.add('mathjax-ignore');
+
                 stats.pmValue.loaded++;
             } else if (!PM._loaded) {
                 el.textContent = '...';
@@ -725,6 +741,23 @@
     }
 
     // ========================================================================
+    // MATHJAX INTEGRATION
+    // ========================================================================
+
+    function signalMathJax() {
+        // Signal MathJax to typeset after PM values are loaded
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            console.log('PM: Signaling MathJax to typeset...');
+            MathJax.typesetPromise().catch((err) => {
+                console.warn('PM: MathJax typeset error:', err);
+            });
+        } else if (typeof MathJax !== 'undefined' && MathJax.Hub) {
+            // MathJax v2
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+        }
+    }
+
+    // ========================================================================
     // PUBLIC API
     // ========================================================================
 
@@ -732,6 +765,7 @@
     PM.refresh = loadConstants;
     PM.updateDOM = updateDOM;
     PM.formatValue = formatValue;
+    PM.signalMathJax = signalMathJax;
 
     // Export globally
     window.PM = PM;
