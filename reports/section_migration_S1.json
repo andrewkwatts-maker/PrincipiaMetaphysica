@@ -1,0 +1,525 @@
+{
+  "agent": "S1",
+  "scope": "Sections 1-2",
+  "sections": [
+    {
+      "id": "1",
+      "metadata": {
+        "id": "1",
+        "title": "Introduction",
+        "section_type": "section",
+        "parent_id": "",
+        "abstract": "The quest for a unified description of fundamental physics has driven theoretical research from Kaluza-Klein theory through string theory to modern M-theory compactifications. Despite remarkable progress, a complete geometric derivation of Standard Model parameters from first principles has remained elusive. This work presents Principia Metaphysica, a framework that addresses this challenge through compactification on a single G₂ manifold.",
+        "content_blocks": [
+          {
+            "type": "text",
+            "text": "The quest for a unified description of fundamental physics has driven theoretical research from Kaluza-Klein theory through string theory to modern M-theory compactifications. Despite remarkable progress, a complete geometric derivation of Standard Model parameters from first principles has remained elusive. This work presents <em>Principia Metaphysica</em>, a framework that addresses this challenge through compactification on a single G<sub>2</sub> manifold."
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\">1.1 Historical Context</h3>"
+          },
+          {
+            "type": "text",
+            "text": "Kaluza (1921) and Klein (1926) demonstrated that electromagnetism could emerge from five-dimensional general relativity. String theory extended this program, requiring 10 dimensions for consistency. M-theory, the strong-coupling limit of Type IIA string theory, operates in 11 dimensions and admits compactifications on 7-dimensional G<sub>2</sub> manifolds that preserve $\\mathcal{N}=1$ supersymmetry in 4D."
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\">1.2 Problems Addressed</h3>"
+          },
+          {
+            "type": "text",
+            "text": "This framework addresses four longstanding puzzles:"
+          },
+          {
+            "type": "callout",
+            "callout_type": "info",
+            "title": "Four Central Puzzles",
+            "children": [
+              {
+                "type": "text",
+                "text": "<ul><li><strong>Generation puzzle:</strong> Why exactly 3 fermion generations?</li><li><strong>Hierarchy problem:</strong> Why $M_{\\text{GUT}}/M_{\\text{Pl}} \\sim 10^{-3}$?</li><li><strong>Dark energy:</strong> Why $w_0 \\approx -0.85$, not $-1$?</li><li><strong>Time's arrow:</strong> Why does thermal time have definite direction?</li></ul>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\">1.3 Framework Overview</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The dimensional cascade proceeds as:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "reduction-cascade",
+            "showDerivation": false,
+            "showTerms": true
+          },
+          {
+            "type": "figure",
+            "figureId": "dimensional-cascade-diagram",
+            "caption": "Figure 1: Dimensional cascade from 26D bulk to 4D observable spacetime",
+            "altText": "SVG diagram showing progression from 26D bulk to 4D observable"
+          },
+          {
+            "type": "table",
+            "tableId": "dimensional-cascade-table",
+            "columns": ["Stage", "Dimension", "Signature", "Mechanism"],
+            "rows": [
+              ["Bulk", "26", "(24,2)", "Virasoro anomaly cancellation"],
+              ["Shadow", "13", "(12,1)", "Sp(2,R) gauge fixing"],
+              ["Effective", "6", "(5,1)", "G₂ compactification"],
+              ["Observable", "4", "(3,1)", "Low-energy limit"]
+            ]
+          }
+        ],
+        "appendices": [],
+        "formula_refs": ["reduction-cascade"],
+        "param_refs": ["d-bulk", "d-shadow", "d-effective", "d-observable"],
+        "figure_refs": ["dimensional-cascade-diagram"],
+        "citation_refs": ["kaluza1921", "klein1926", "witten1995"],
+        "prev_section": "",
+        "next_section": "2",
+        "subsections": ["1.1", "1.2", "1.3"],
+        "paper_line_start": 619,
+        "paper_line_end": 728,
+        "section_file": "sections/introduction.html",
+        "beginner_summary": "Principia Metaphysica unifies physics by starting in 26 dimensions and reducing down to our familiar 4D spacetime. This geometric framework explains why there are exactly 3 generations of particles, predicts dark energy properties, and derives the arrow of time from first principles.",
+        "key_takeaways": [
+          "The framework starts with 26 dimensions (24 space + 2 time), required by string theory consistency",
+          "A cascade of dimensional reductions: 26D → 13D → 6D → 4D produces observable physics",
+          "Four major puzzles are addressed: generation count, mass hierarchy, dark energy, and time's arrow",
+          "All Standard Model parameters emerge from the geometry of a single G₂ manifold"
+        ],
+        "learning_objectives": [
+          "Understand the motivation for extra dimensions in unified physics",
+          "Learn the historical progression from Kaluza-Klein to M-theory",
+          "Grasp the dimensional cascade structure unique to Principia Metaphysica",
+          "Identify the four central problems addressed by the framework"
+        ],
+        "website_only_content": []
+      }
+    },
+    {
+      "id": "2",
+      "metadata": {
+        "id": "2",
+        "title": "The 26-Dimensional Bulk Spacetime",
+        "section_type": "section",
+        "parent_id": "",
+        "abstract": "The bosonic string requires 26 dimensions for Virasoro anomaly cancellation. We adopt signature (24,2) following Bars' two-time physics program, which provides a covariant framework for eliminating unphysical degrees of freedom through gauge symmetry rather than constraint equations. The complete action integrates the Pneuma field (8192-component spinor) with Sp(2,ℝ) gauge constraints.",
+        "content_blocks": [
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\">2.1 Motivation for (24,2) Signature</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The bosonic string requires 26 dimensions for Virasoro anomaly cancellation. We adopt signature (24,2) following Bars' two-time physics program, which provides a covariant framework for eliminating unphysical degrees of freedom through gauge symmetry rather than constraint equations."
+          },
+          {
+            "type": "callout",
+            "callout_type": "info",
+            "title": "Why 26D (24,2) Instead of Standard M-Theory?",
+            "children": [
+              {
+                "type": "text",
+                "text": "This framework deliberately differs from the standard 11D M-theory or 10D superstring starting points. While those approaches are well-established, they face persistent challenges:"
+              },
+              {
+                "type": "text",
+                "text": "<ul><li><strong>Landscape problem:</strong> 10D/11D string vacua yield ~10<sup>500</sup> solutions with no selection principle</li><li><strong>SUSY breaking:</strong> Requires additional mechanisms beyond the geometric framework</li><li><strong>Generation counting:</strong> Topology alone doesn't uniquely fix n<sub>gen</sub> = 3</li></ul>"
+              },
+              {
+                "type": "text",
+                "text": "The 26D two-time approach addresses these via:"
+              },
+              {
+                "type": "text",
+                "text": "<ul><li><strong>Unique anomaly cancellation:</strong> D = 26 is the <em>only</em> critical dimension for bosonic strings</li><li><strong>Covariant ghost elimination:</strong> Sp(2,ℝ) gauge symmetry removes negative-norm states covariantly</li><li><strong>Geometric SUSY emergence:</strong> G₂ holonomy generates N=1 SUSY in 4D without fundamental superpartners</li><li><strong>Unique generation count:</strong> χ<sub>eff</sub>/48 = 3 follows from index theorem + Z<sub>2</sub> factor</li></ul>"
+              }
+            ]
+          },
+          {
+            "type": "table",
+            "tableId": "comparison-table-approaches",
+            "caption": "Table 2.1: Comparison of Higher-Dimensional Unification Approaches",
+            "columns": ["Approach", "Dimension", "Signature", "Anomaly/Consistency", "SUSY", "Key Reference"],
+            "rows": [
+              ["M-Theory", "11", "(10,1)", "Supergravity limit", "N=1 (11D)", "Witten (1995)"],
+              ["Type II Strings", "10", "(9,1)", "Superstring critical", "N=2 (10D)", "Green-Schwarz (1984)"],
+              ["F-Theory", "12", "(10,2)", "Type IIB + SL(2,Z)", "From IIB", "Vafa (1996)"],
+              ["Two-Time Physics", "D+2", "(D,2)", "Sp(2,R) gauge", "Emergent", "Bars (1998-2010)"],
+              ["Principia Metaphysica", "26", "(24,2)", "Virasoro + Sp(2,R)", "G₂ emergent", "This work"]
+            ]
+          },
+          {
+            "type": "callout",
+            "callout_type": "derivation",
+            "title": "Key Distinctions from Standard Approaches",
+            "children": [
+              {
+                "type": "text",
+                "text": "<ol><li><strong>Bosonic critical dimension:</strong> D = 26 is uniquely fixed by Virasoro anomaly cancellation (c<sub>matter</sub> + c<sub>ghost</sub> = D - 26 = 0), unlike 10D/11D which require supersymmetry</li><li><strong>Two-time covariance:</strong> Following Bars' program, the (24,2) signature enables covariant treatment of gauge constraints via Sp(2,ℝ), rather than non-covariant light-cone quantization</li><li><strong>Ghost elimination:</strong> The Sp(2,ℝ) gauge symmetry projects out negative-norm states and the unphysical time, reducing 26D → 13D without breaking Lorentz invariance</li><li><strong>SUSY emergence:</strong> Rather than postulating supersymmetry, it emerges from G₂ holonomy upon compactification: G₂ ⊂ Spin(7) preserves exactly one spinor (N=1 in 4D)</li><li><strong>Consistency check:</strong> The framework passes standard UV tests: the asymptotic safety analysis shows g<sub>*</sub> = 0.868, ensuring finite quantum corrections</li></ol>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\">2.2 Master Action</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The complete 26-dimensional action is:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "master-action-26d",
+            "showDerivation": true,
+            "showTerms": true
+          },
+          {
+            "type": "text",
+            "text": "where $\\Psi_P$ is the primordial spinor field with $2^{13} = 8192$ components in 26D, and the Sp(2,ℝ) Lagrangian ensures ghost elimination."
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\">2.3 Virasoro Anomaly Cancellation</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The central charge condition requires:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "virasoro-anomaly",
+            "showDerivation": true,
+            "showTerms": true
+          },
+          {
+            "type": "callout",
+            "callout_type": "derivation",
+            "title": "Derivation: Critical Dimension D = 26",
+            "children": [
+              {
+                "type": "text",
+                "text": "<ol><li>Virasoro algebra has central extension: $[L_m, L_n] = (m-n)L_{m+n} + \\frac{c}{12}m(m^2-1)\\delta_{m+n,0}$</li><li>Matter fields contribute $c_{\\text{matter}} = D$ (one per coordinate)</li><li>Faddeev-Popov ghosts (bc system, weights 2,-1) contribute $c_{\\text{ghost}} = -26$</li><li>BRST cohomology requires $c_{\\text{total}} = 0$ for consistent quantization</li><li>Therefore $D = 26$ is the unique critical dimension</li></ol>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\" id=\"master-action\">2.4 The Master Action and Pneuma Field</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The complete 26D action integrates the Pneuma field dynamics with Sp(2,$\\mathbb{R}$) gauge constraints:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "master-action-26d",
+            "showDerivation": false,
+            "showTerms": true
+          },
+          {
+            "type": "callout",
+            "callout_type": "derivation",
+            "title": "The Pneuma Field Ψ_P (Primordial Spinor)",
+            "children": [
+              {
+                "type": "text",
+                "text": "The Pneuma is an 8,192-component spinor in 26D from Clifford algebra Cl(24,2):"
+              },
+              {
+                "type": "text",
+                "text": "<ol><li><strong>26D Clifford algebra:</strong> $\\{\\Gamma^M, \\Gamma^N\\} = 2\\eta^{MN}$ with $M,N = 0,...,25$</li><li><strong>Spinor dimension:</strong> $2^{26/2} = 2^{13} = 8192$ components</li><li><strong>Sp(2,$\\mathbb{R}$) reduction:</strong> 8192 → 64 effective components in 13D shadow</li><li><strong>G₂ chirality:</strong> Holonomy projects to chiral 4D Weyl spinors (4 components)</li></ol>"
+              },
+              {
+                "type": "text",
+                "text": "<em>The Pneuma condensate $\\langle\\bar{\\Psi}_P\\Psi_P\\rangle$ generates geometry, time arrow, and all Standard Model matter.</em>"
+              }
+            ]
+          },
+          {
+            "type": "callout",
+            "callout_type": "info",
+            "title": "Action Term Summary",
+            "children": [
+              {
+                "type": "text",
+                "text": "<ul><li><strong>$M^{24}R$:</strong> Einstein-Hilbert gravity in 26D (exponent = D-2 = 24)</li><li><strong>$\\bar{\\Psi}_P(i\\Gamma D - m)\\Psi_P$:</strong> Pneuma kinetic + mass terms</li><li><strong>$\\mathcal{L}_{Sp(2,\\mathbb{R})}$:</strong> Gauge constraints eliminating second time</li></ul>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\" id=\"pneuma-condensate\">2.5 Pneuma Condensate as Source of Geometry</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The Pneuma field is not merely a passive spectator but the <strong>active source of spacetime geometry</strong>. The condensate $\\langle\\bar{\\Psi}_P\\Psi_P\\rangle$ generates curvature through the stress-energy tensor:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "pneuma-stress-energy",
+            "showDerivation": true,
+            "showTerms": true
+          },
+          {
+            "type": "callout",
+            "callout_type": "derivation",
+            "title": "Geometry from Condensation",
+            "children": [
+              {
+                "type": "text",
+                "text": "The 26D Einstein equations couple geometry to the Pneuma condensate:"
+              },
+              {
+                "type": "text",
+                "text": "<ol><li><strong>Vacuum state:</strong> $\\langle\\bar{\\Psi}_P\\Psi_P\\rangle = v_P^3$ (condensate VEV with mass dimension 3)</li><li><strong>Curvature sourcing:</strong> $R_{MN} - \\frac{1}{2}g_{MN}R = \\frac{1}{M^{24}}T_{MN}^{(\\text{Pneuma})}$</li><li><strong>Gap generation:</strong> Condensate breaks symmetry, generating mass gap $\\Delta = \\lambda v_P / (1 + g \\cdot t_\\perp / E_F)$</li><li><strong>Effective cosmological constant:</strong> $\\Lambda_{\\text{eff}} = \\lambda v_P^4 / M^{24}$ (after TeV-scale cancellation)</li></ol>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h4>Time Arrow from Condensate Entropy</h4>"
+          },
+          {
+            "type": "text",
+            "text": "The thermodynamic arrow of time arises from the <strong>entropy gradient of the Pneuma condensate</strong>. As the universe expands:"
+          },
+          {
+            "type": "text",
+            "text": "<ul><li><strong>Early universe:</strong> High-temperature Pneuma plasma (disordered, high entropy)</li><li><strong>Phase transition:</strong> Condensation at $T_c \\sim$ TeV creates ordered state</li><li><strong>Present epoch:</strong> Entropy increase in matter sector, decrease in Pneuma coherence</li></ul>"
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\" id=\"holographic-entropy\">2.6 Holographic Entropy from Pneuma</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The Bekenstein-Hawking entropy formula $S = A/(4G\\hbar)$ can be interpreted as <strong>counting Pneuma spinor degrees of freedom</strong> on the horizon:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "bekenstein-hawking",
+            "showDerivation": true,
+            "showTerms": true
+          },
+          {
+            "type": "callout",
+            "callout_type": "derivation",
+            "title": "Derivation: Spinor Counting on Horizons",
+            "children": [
+              {
+                "type": "text",
+                "text": "<ol><li><strong>Horizon area:</strong> $A = 4\\pi r_S^2$ for Schwarzschild radius $r_S = 2GM$</li><li><strong>Planck cells:</strong> $N_{\\text{cells}} = A / l_P^2$ (minimum resolution)</li><li><strong>Spinor states per cell:</strong> Each Planck cell hosts one Pneuma qubit (2 states)</li><li><strong>Total microstates:</strong> $\\Omega = 2^{N_{\\text{cells}}/4}$ (quarter due to holographic reduction)</li><li><strong>Entropy:</strong> $S = \\log\\Omega = (A/4l_P^2) \\log 2 \\propto A$</li></ol>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h3 class=\"subsection-title\" id=\"pneuma-racetrack\">2.7 Pneuma Vacuum Selection: Racetrack Mechanism</h3>"
+          },
+          {
+            "type": "text",
+            "text": "The Pneuma field vacuum expectation value is not postulated but <strong>dynamically selected</strong> via a G₂-racetrack potential arising from competing non-perturbative effects in hidden gauge sectors. This provides explicit equations of motion and stability analysis, ensuring the dynamics are fully determined."
+          },
+          {
+            "type": "callout",
+            "callout_type": "info",
+            "title": "Key Insight: Topology Selects the Vacuum",
+            "children": [
+              {
+                "type": "text",
+                "text": "The Pneuma VEV $\\langle\\Psi_P\\rangle \\approx 1.08$ emerges from the interplay of two hidden gauge sectors with flux quanta $N_{\\text{flux}} = 24$ and $N_{\\text{flux}} + 1 = 25$. These flux quanta are determined by the G₂ manifold topology, making the vacuum selection a purely geometric phenomenon."
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h4>Racetrack Superpotential</h4>"
+          },
+          {
+            "type": "text",
+            "text": "Following the KKLT construction, we consider two hidden SU($N_c$) gauge sectors with gaugino condensation:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "racetrack-superpotential",
+            "showDerivation": true,
+            "showTerms": true
+          },
+          {
+            "type": "text",
+            "text": "where the coefficients are determined by topological flux:"
+          },
+          {
+            "type": "text",
+            "text": "<ul><li><strong>$a = 2\\pi / N_{\\text{flux}} = 2\\pi / 24 \\approx 0.262$</strong> (first hidden sector)</li><li><strong>$b = 2\\pi / (N_{\\text{flux}} + 1) = 2\\pi / 25 \\approx 0.251$</strong> (second hidden sector)</li><li><strong>$A, B$:</strong> Instanton prefactors of order $\\mathcal{O}(1)$ in Planck units</li></ul>"
+          },
+          {
+            "type": "text",
+            "text": "<h4>Scalar Potential and Vacuum</h4>"
+          },
+          {
+            "type": "text",
+            "text": "The F-term scalar potential is:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "scalar-potential",
+            "showDerivation": false,
+            "showTerms": true
+          },
+          {
+            "type": "text",
+            "text": "Minimizing $V$ with respect to $\\Psi_P$ gives the stability condition:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "vacuum-minimization",
+            "showDerivation": false,
+            "showTerms": true
+          },
+          {
+            "type": "text",
+            "text": "Solving for the VEV:"
+          },
+          {
+            "type": "formula",
+            "formulaId": "pneuma-vev",
+            "showDerivation": true,
+            "showTerms": true
+          },
+          {
+            "type": "callout",
+            "callout_type": "derivation",
+            "title": "Numerical Evaluation: VEV ≈ 1.08",
+            "children": [
+              {
+                "type": "text",
+                "text": "<ol><li><strong>Flux coefficients:</strong> $a = 2\\pi/24 = 0.2618$, $b = 2\\pi/25 = 0.2513$</li><li><strong>Prefactor ratio:</strong> Setting $A = B = 1$ (natural scale), $Aa/Bb = 0.2618/0.2513 = 1.042$</li><li><strong>VEV:</strong> $\\langle\\Psi_P\\rangle = \\ln(1.042)/(0.2618 - 0.2513) = 0.041/0.0105 \\approx 1.08$</li><li><strong>Stability check:</strong> $\\frac{\\partial^2 V}{\\partial \\Psi_P^2}\\Big|_{\\text{VEV}} = 8.56 \\times 10^{-6} > 0$ ✓</li></ol>"
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "text": "<h4>Physical Interpretation</h4>"
+          },
+          {
+            "type": "text",
+            "text": "This mechanism demonstrates that:"
+          },
+          {
+            "type": "text",
+            "text": "<ul><li><strong>No free parameters:</strong> The VEV is completely determined by the G₂ topology through $N_{\\text{flux}} = 24$ (one of the 7 exceptional holonomy groups)</li><li><strong>Geometric origin:</strong> The competing instanton effects arise from D-branes wrapping distinct 2-cycles of the G₂ manifold</li><li><strong>Stability:</strong> The positive second derivative ensures the vacuum is perturbatively stable against quantum fluctuations</li><li><strong>Naturalness:</strong> The small mass $m_\\Psi \\sim \\sqrt{V''} \\sim 10^{-3} M_{\\text{Pl}}$ arises from the near-degeneracy $a \\approx b$, explaining why Pneuma can act as a light modulus</li></ul>"
+          },
+          {
+            "type": "table",
+            "tableId": "pneuma-resolution-table",
+            "caption": "Resolution Status: Pneuma Dynamics",
+            "columns": ["Aspect", "Before v12.9", "After v12.9 (Racetrack)"],
+            "rows": [
+              ["Vacuum selection", "Postulated VEV", "Dynamically selected by topology"],
+              ["Potential V(Ψ_P)", "Unspecified", "Explicit formula (Eq. 2.7)"],
+              ["Stability", "Assumed", "Proven: V'' > 0 at minimum"],
+              ["Free parameters", "VEV value arbitrary", "Zero (fixed by N_flux = 24)"],
+              ["Criticism status", "Open issue", "RESOLVED"]
+            ]
+          }
+        ],
+        "appendices": [],
+        "formula_refs": [
+          "master-action-26d",
+          "virasoro-anomaly",
+          "sp2r-constraints",
+          "racetrack-superpotential",
+          "pneuma-vev",
+          "scalar-potential",
+          "vacuum-minimization",
+          "bekenstein-hawking"
+        ],
+        "param_refs": [
+          "d-bulk",
+          "signature-bulk",
+          "pneuma-dimension-full",
+          "pneuma-dimension-reduced",
+          "m-planck-26d",
+          "n-flux",
+          "vev-pneuma"
+        ],
+        "figure_refs": [],
+        "citation_refs": [
+          "bars2006",
+          "lovelace1971",
+          "polchinski1998",
+          "witten1995",
+          "green-schwarz1984",
+          "vafa1996",
+          "bars1998",
+          "kklt2003"
+        ],
+        "prev_section": "1",
+        "next_section": "3",
+        "subsections": ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7"],
+        "paper_line_start": 732,
+        "paper_line_end": 1138,
+        "section_file": "sections/geometric-framework.html",
+        "beginner_summary": "The framework starts in 26 dimensions with signature (24 space, 2 time). This unusual setup is required by string theory's Virasoro anomaly cancellation - D=26 is the only dimension where the theory is mathematically consistent. The Pneuma field is an 8,192-component spinor that serves as the source of all geometry and matter. Its vacuum value (~1.08) is not put in by hand but emerges automatically from the topology of the extra dimensions through a 'racetrack' mechanism involving competing quantum effects.",
+        "key_takeaways": [
+          "26 dimensions are uniquely required by Virasoro anomaly cancellation in bosonic string theory",
+          "The (24,2) signature with two time dimensions allows covariant ghost elimination via Sp(2,R) gauge symmetry",
+          "The Pneuma field is an 8,192-component spinor that sources spacetime geometry and all matter",
+          "The Pneuma vacuum value is dynamically selected by topology (N_flux = 24), not a free parameter",
+          "Black hole entropy emerges from counting Pneuma spinor states on horizons",
+          "The arrow of time arises from entropy gradients in the Pneuma condensate"
+        ],
+        "learning_objectives": [
+          "Understand why 26 dimensions are required for string consistency",
+          "Learn the role of two-time physics and Sp(2,R) gauge symmetry",
+          "Grasp the concept of the Pneuma field as primordial spinor",
+          "Follow the racetrack mechanism for vacuum selection",
+          "Connect Pneuma dynamics to black hole entropy and time's arrow"
+        ],
+        "website_only_content": []
+      }
+    }
+  ],
+  "todos": [
+    "Add formula IDs for pneuma-stress-energy (equation 2.4) to CoreFormulas in config.py",
+    "Verify all citation references exist in references database",
+    "Add parameter metadata for d-bulk, signature-bulk, pneuma-dimension-full, etc.",
+    "Create SVG figure asset for dimensional-cascade-diagram",
+    "Add simulation links to Section 2 formulas (asymptotic_safety_v14_2.py, pneuma_full_potential_v14_1.py)",
+    "Cross-reference Appendix A for (24,2) signature validation",
+    "Add learning resources for Virasoro algebra, Sp(2,R) gauge theory, and KKLT stabilization"
+  ],
+  "notes": [
+    "Section 1 is relatively straightforward - mainly narrative with one key formula (reduction-cascade) and one table",
+    "Section 2 is dense with formulas and derivation boxes - used callout type='derivation' for these",
+    "The pneuma-stress-energy formula (Eq 2.4) needs to be added to CoreFormulas - it's referenced but not defined",
+    "Tables are represented with type='table' and raw data in columns/rows arrays",
+    "All formula references use formulaId pointing to config.py CoreFormulas IDs",
+    "Parameter references use param_id conventions (kebab-case)",
+    "Subsection titles are embedded as text blocks with HTML - could be promoted to separate metadata",
+    "The comparison table (Table 2.1) is a good candidate for interactive filtering on website",
+    "Resolution status table shows framework evolution - useful for 'version history' feature"
+  ],
+  "formula_gaps": [
+    "pneuma-stress-energy (equation 2.4) - needs to be added to CoreFormulas"
+  ],
+  "param_gaps": [
+    "d-bulk - bulk dimension (26)",
+    "d-shadow - shadow dimension (13)",
+    "d-effective - effective dimension (6)",
+    "d-observable - observable dimension (4)",
+    "signature-bulk - (24,2)",
+    "pneuma-dimension-full - 8192",
+    "pneuma-dimension-reduced - 64",
+    "m-planck-26d - 26D Planck scale",
+    "n-flux - flux quantum number (24)",
+    "vev-pneuma - Pneuma VEV (~1.076-1.08)"
+  ]
+}

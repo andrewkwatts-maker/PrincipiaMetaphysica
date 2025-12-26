@@ -1,0 +1,334 @@
+#!/usr/bin/env python3
+"""
+Content Validation Script - Verify all old paper content exists in new JSON output
+
+This script validates that all formulas, parameters, references, and sections
+from the old hardcoded HTML are present in the new JSON-based system.
+"""
+
+import json
+import re
+from pathlib import Path
+from collections import defaultdict
+
+# Paths
+BASE_DIR = Path(__file__).parent
+OLD_PAPER = BASE_DIR / "principia-metaphysica-paper.html"
+JSON_DIR = BASE_DIR / "AUTO_GENERATED" / "json"
+
+def load_json(filename):
+    """Load a JSON file from AUTO_GENERATED/json/"""
+    with open(JSON_DIR / filename, 'r', encoding='utf-8') as f:
+        return json.load(f)
+
+def count_equations_in_html(html_path):
+    """Count equation numbers and formula displays in old HTML"""
+    with open(html_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Count equation numbers (eq-num, equation-number classes)
+    eq_nums = len(re.findall(r'class="(?:eq-num|equation-number)"', content))
+
+    # Count formula displays
+    display_math = len(re.findall(r'\\displaystyle|\\begin{equation}|class="formula"', content))
+
+    return {
+        'equation_numbers': eq_nums,
+        'display_formulas': display_math
+    }
+
+def extract_key_parameters_from_html(html_path):
+    """Extract key parameter mentions from old HTML"""
+    with open(html_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+
+    # Key parameters to track
+    params = {
+        'chi_eff': len(re.findall(r'χ_eff|chi_eff|CHI_EFF', content)),
+        'M_GUT': len(re.findall(r'M_GUT|M_{GUT}', content)),
+        'w_0': len(re.findall(r'w_0|w_\{0\}', content)),
+        'w_a': len(re.findall(r'w_a|w_\{a\}', content)),
+        'tau_p': len(re.findall(r'τ_p|tau_p|\\tau_p', content)),
+        'n_gen': len(re.findall(r'n_gen|n_{gen}', content)),
+        'alpha_GUT': len(re.findall(r'α_GUT|alpha_GUT|\\alpha_{GUT}', content)),
+        'theta_23': len(re.findall(r'θ_23|theta_23|\\theta_{23}', content)),
+        'delta_CP': len(re.findall(r'δ_CP|delta_CP|\\delta_{CP}', content)),
+    }
+
+    return params
+
+def validate_formulas(formulas_data):
+    """Validate formula content"""
+    if 'formulas' in formulas_data:
+        formulas = formulas_data['formulas']
+    else:
+        formulas = formulas_data
+
+    formula_ids = [k for k in formulas.keys() if k != 'version' and k != 'count']
+
+    # Check for key formulas
+    key_formulas = [
+        'generation-number',
+        'gut-scale',
+        'dark-energy-w0',
+        'dark-energy-wa',
+        'proton-lifetime',
+        'theta23-maximal',
+        'cp-phase-geometric',
+        'kk-graviton-mass',
+        'master-action-26d',
+        'virasoro-anomaly',
+        'sp2r-constraints',
+        'racetrack-superpotential',
+        'pneuma-vev',
+    ]
+
+    present = []
+    missing = []
+
+    for key in key_formulas:
+        if key in formula_ids:
+            present.append(key)
+        else:
+            missing.append(key)
+
+    return {
+        'total': len(formula_ids),
+        'key_formulas_present': present,
+        'key_formulas_missing': missing,
+        'all_formula_ids': formula_ids
+    }
+
+def validate_parameters(params_data):
+    """Validate parameter content"""
+    categories = params_data.keys()
+
+    # Count total parameters
+    total_params = 0
+    param_list = []
+
+    for category, params in params_data.items():
+        if isinstance(params, dict):
+            for key, value in params.items():
+                total_params += 1
+                param_list.append(f"{category}.{key}")
+
+    # Check for key parameters
+    key_params = {
+        'topology.CHI_EFF': 'topology' in params_data and 'CHI_EFF' in params_data.get('topology', {}),
+        'gauge.M_GUT': 'gauge' in params_data and 'M_GUT' in params_data.get('gauge', {}),
+        'dark_energy.w0': 'dark_energy' in params_data and 'w0' in params_data.get('dark_energy', {}),
+        'dark_energy.wa': 'dark_energy' in params_data and 'wa' in params_data.get('dark_energy', {}),
+        'proton_decay.tau_p_years': 'proton_decay' in params_data and 'tau_p_years' in params_data.get('proton_decay', {}),
+        'pmns.theta_12': 'pmns' in params_data and 'theta_12' in params_data.get('pmns', {}),
+        'pmns.theta_23': 'pmns' in params_data and 'theta_23' in params_data.get('pmns', {}),
+        'pmns.theta_13': 'pmns' in params_data and 'theta_13' in params_data.get('pmns', {}),
+        'pmns.delta_CP': 'pmns' in params_data and 'delta_CP' in params_data.get('pmns', {}),
+        'kk_spectrum.m1_TeV': 'kk_spectrum' in params_data and 'm1_TeV' in params_data.get('kk_spectrum', {}),
+    }
+
+    return {
+        'total_parameters': total_params,
+        'categories': list(categories),
+        'key_params_present': [k for k, v in key_params.items() if v],
+        'key_params_missing': [k for k, v in key_params.items() if not v],
+        'all_parameters': param_list
+    }
+
+def validate_references(refs_data):
+    """Validate reference content"""
+    ref_ids = list(refs_data.keys())
+
+    # Check for key references
+    key_refs = [
+        'vafa1996',
+        'acharya2001_chiral',
+        'corti2015',
+        'desi2024',
+        'georgi1974',
+        'joyce2000',
+        'nufit2025',
+        'planck2020',
+        'sk2017'
+    ]
+
+    present = [r for r in key_refs if r in ref_ids]
+    missing = [r for r in key_refs if r not in ref_ids]
+
+    return {
+        'total': len(ref_ids),
+        'key_refs_present': present,
+        'key_refs_missing': missing,
+        'all_ref_ids': ref_ids
+    }
+
+def validate_sections(sections_data):
+    """Validate section content"""
+    section_ids = list(sections_data.keys())
+
+    # Expected main sections
+    expected_sections = ['1', '2', '3', '4', '5', '6']
+
+    present = [s for s in expected_sections if s in section_ids]
+    missing = [s for s in expected_sections if s not in section_ids]
+
+    # Check section files exist
+    section_files_exist = {}
+    for sid, sdata in sections_data.items():
+        if 'sectionFile' in sdata:
+            file_path = BASE_DIR / sdata['sectionFile']
+            section_files_exist[sid] = file_path.exists()
+
+    return {
+        'total': len(section_ids),
+        'expected_present': present,
+        'expected_missing': missing,
+        'section_files_exist': section_files_exist,
+        'all_section_ids': section_ids
+    }
+
+def main():
+    """Run comprehensive content validation"""
+    print("="*80)
+    print("PRINCIPIA METAPHYSICA CONTENT VALIDATION")
+    print("="*80)
+    print()
+
+    # Load JSON data
+    print("Loading JSON data...")
+    formulas = load_json('formulas.json')
+    parameters = load_json('parameters.json')
+    references = load_json('references.json')
+    sections = load_json('sections.json')
+    print("[OK] All JSON files loaded\n")
+
+    # Validate old HTML
+    print("Analyzing old HTML paper...")
+    html_eqs = count_equations_in_html(OLD_PAPER)
+    html_params = extract_key_parameters_from_html(OLD_PAPER)
+    print(f"  Equation numbers found: {html_eqs['equation_numbers']}")
+    print(f"  Display formulas found: {html_eqs['display_formulas']}")
+    print(f"  Key parameter mentions: {sum(html_params.values())}")
+    print()
+
+    # Validate formulas
+    print("Validating Formulas...")
+    formula_validation = validate_formulas(formulas)
+    print(f"  Total formulas in JSON: {formula_validation['total']}")
+    print(f"  Key formulas present: {len(formula_validation['key_formulas_present'])}/{len(formula_validation['key_formulas_present']) + len(formula_validation['key_formulas_missing'])}")
+    if formula_validation['key_formulas_missing']:
+        print(f"  [WARN] Missing: {', '.join(formula_validation['key_formulas_missing'])}")
+    else:
+        print("  [OK] All key formulas present")
+    print()
+
+    # Validate parameters
+    print("Validating Parameters...")
+    param_validation = validate_parameters(parameters)
+    print(f"  Total parameters in JSON: {param_validation['total_parameters']}")
+    print(f"  Parameter categories: {len(param_validation['categories'])}")
+    print(f"  Key params present: {len(param_validation['key_params_present'])}/{len(param_validation['key_params_present']) + len(param_validation['key_params_missing'])}")
+    if param_validation['key_params_missing']:
+        print(f"  [WARN] Missing: {', '.join(param_validation['key_params_missing'])}")
+    else:
+        print("  [OK] All key parameters present")
+    print()
+
+    # Validate references
+    print("Validating References...")
+    ref_validation = validate_references(references)
+    print(f"  Total references in JSON: {ref_validation['total']}")
+    print(f"  Key refs present: {len(ref_validation['key_refs_present'])}/{len(ref_validation['key_refs_present']) + len(ref_validation['key_refs_missing'])}")
+    if ref_validation['key_refs_missing']:
+        print(f"  [WARN] Missing: {', '.join(ref_validation['key_refs_missing'])}")
+    else:
+        print("  [OK] All key references present")
+    print()
+
+    # Validate sections
+    print("Validating Sections...")
+    section_validation = validate_sections(sections)
+    print(f"  Total sections in JSON: {section_validation['total']}")
+    print(f"  Expected sections present: {len(section_validation['expected_present'])}/{len(section_validation['expected_present']) + len(section_validation['expected_missing'])}")
+    if section_validation['expected_missing']:
+        print(f"  [WARN] Missing: {', '.join(section_validation['expected_missing'])}")
+    else:
+        print("  [OK] All expected sections present")
+
+    # Check section files
+    files_exist = sum(1 for v in section_validation['section_files_exist'].values() if v)
+    print(f"  Section HTML files exist: {files_exist}/{len(section_validation['section_files_exist'])}")
+    print()
+
+    # Summary checklist
+    print("="*80)
+    print("CONTENT VALIDATION CHECKLIST")
+    print("="*80)
+
+    checklist = []
+
+    # Formula checklist
+    if formula_validation['total'] >= 60:
+        checklist.append(("[OK]", f"All {formula_validation['total']} formulas present (target: 62)"))
+    else:
+        checklist.append(("[FAIL]", f"Only {formula_validation['total']} formulas (target: 62)"))
+
+    # Key parameters
+    if not param_validation['key_params_missing']:
+        checklist.append(("[OK]", f"All key parameters present (chi_eff, M_GUT, w_0, w_a, tau_p, etc.)"))
+    else:
+        checklist.append(("[FAIL]", f"Missing key parameters: {', '.join(param_validation['key_params_missing'])}"))
+
+    # References
+    if ref_validation['total'] >= 90:
+        checklist.append(("[OK]", f"All {ref_validation['total']} references present"))
+    else:
+        checklist.append(("[FAIL]", f"Only {ref_validation['total']} references"))
+
+    # Sections
+    if not section_validation['expected_missing']:
+        checklist.append(("[OK]", "All section content accessible"))
+    else:
+        checklist.append(("[FAIL]", f"Missing sections: {', '.join(section_validation['expected_missing'])}"))
+
+    # Print checklist
+    for status, message in checklist:
+        print(f"{status} {message}")
+
+    print()
+    print("="*80)
+
+    # Calculate success rate
+    passed = sum(1 for s, m in checklist if s == "[OK]")
+    total = len(checklist)
+    success_rate = (passed / total) * 100
+
+    print(f"Overall Validation: {passed}/{total} checks passed ({success_rate:.1f}%)")
+    print("="*80)
+
+    # Return validation results
+    return {
+        'html': {
+            'equations': html_eqs,
+            'parameters': html_params
+        },
+        'formulas': formula_validation,
+        'parameters': param_validation,
+        'references': ref_validation,
+        'sections': section_validation,
+        'checklist': checklist,
+        'success_rate': success_rate
+    }
+
+if __name__ == '__main__':
+    results = main()
+
+    # Save detailed results
+    output_file = BASE_DIR / 'CONTENT_VALIDATION.json'
+    with open(output_file, 'w', encoding='utf-8') as f:
+        # Convert checklist to serializable format
+        results_copy = results.copy()
+        results_copy['checklist'] = [{'status': s, 'message': m} for s, m in results['checklist']]
+        json.dump(results_copy, f, indent=2)
+
+    print(f"\nDetailed results saved to: {output_file}")

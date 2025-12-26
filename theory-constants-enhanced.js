@@ -25,7 +25,7 @@
 const PM = {
   "meta": {
     "version": "8.4",
-    "last_updated": "2025-12-24",
+    "last_updated": "2025-12-25",
     "description": "Enhanced theory constants with full metadata - v8.4 with CKM rotation and TCS cycle orientations",
     "has_metadata": true,
     "hover_enabled": true
@@ -199,96 +199,9 @@ const PM = {
       ]
     }
   },
-  "proton_decay": {
-    "tau_p_years": {
-      "value": 2.1e34,
-      "unit": "years",
-      "display": "2.1\u00d710\u00b3\u2074",
-      "description": "Proton lifetime prediction",
-      "formula": "\u03c4_p = M_GUT\u2074 / (\u03b1_GUT\u00b2 m_p\u2075)",
-      "derivation": "GUT-scale mediated decay via X/Y bosons",
-      "experimental_value": 1.6e34,
-      "experimental_source": "Super-K 2020 (lower bound)",
-      "agreement_sigma": 0.3,
-      "source": "geometric",
-      "testable": "Hyper-K 2027+"
-    }
-  },
-  "pmns_matrix": {
-    "theta_12": {
-      "value": 33.41,
-      "unit": "degrees",
-      "display": "33.41\u00b0",
-      "description": "Solar mixing angle",
-      "experimental_value": 33.41,
-      "experimental_uncertainty": 0.74,
-      "experimental_source": "NuFIT 5.2",
-      "agreement_sigma": 0.0,
-      "source": "geometric"
-    },
-    "theta_23": {
-      "value": 45.0,
-      "unit": "degrees",
-      "display": "45\u00b0",
-      "description": "Atmospheric mixing angle (maximal)",
-      "formula": "\u03b8\u2082\u2083 = \u03c0/4 from Z\u2082 symmetry",
-      "experimental_value": 42.2,
-      "experimental_uncertainty": 1.1,
-      "experimental_source": "NuFIT 5.2",
-      "agreement_sigma": 2.5,
-      "source": "geometric:Z2_symmetry"
-    },
-    "theta_13": {
-      "value": 8.65,
-      "unit": "degrees",
-      "display": "8.65\u00b0",
-      "description": "Reactor mixing angle",
-      "formula": "sin(\u03b8\u2081\u2083) = \u221a(b\u2082\u00b7n_gen)/b\u2083 \u00d7 (1 + S/(2\u03c7_eff))",
-      "experimental_value": 8.57,
-      "experimental_uncertainty": 0.12,
-      "experimental_source": "NuFIT 5.2",
-      "agreement_sigma": 0.64,
-      "source": "geometric:TCS_topology"
-    },
-    "delta_CP": {
-      "value": 232.5,
-      "unit": "degrees",
-      "display": "232.5\u00b0",
-      "description": "Dirac CP phase",
-      "formula": "\u03b4_CP = \u03c0((n_gen + b\u2082)/(2n_gen) + n_gen/b\u2083)",
-      "experimental_value": 232,
-      "experimental_uncertainty": 28,
-      "experimental_source": "NuFIT 5.2",
-      "agreement_sigma": 0.02,
-      "source": "geometric:TCS_topology"
-    }
-  },
-  "dark_energy": {
-    "w0_PM": {
-      "value": -0.82,
-      "unit": "dimensionless",
-      "display": "-0.82",
-      "description": "Dark energy equation of state (present)",
-      "formula": "w\u2080 = -1 + 2/(3\u03b1_T) with \u03b1_T = 2.7",
-      "experimental_value": -0.827,
-      "experimental_uncertainty": 0.063,
-      "experimental_source": "DESI DR2 2024",
-      "agreement_sigma": 0.11,
-      "source": "geometric:two_time_thermal"
-    },
-    "wa_PM": {
-      "value": -0.75,
-      "unit": "dimensionless",
-      "display": "-0.75",
-      "description": "Dark energy evolution parameter",
-      "formula": "w_a = -2/(3\u03b1_T) with mirror sector correction",
-      "experimental_value": -0.75,
-      "experimental_uncertainty": 0.25,
-      "experimental_source": "DESI DR2 2024",
-      "agreement_sigma": 0.0,
-      "source": "geometric:two_time_thermal"
-    }
-  },
+  "proton_decay": {},
+  "pmns_matrix": {},
+  "dark_energy": {},
   "kk_spectrum": {
     "m1_central": {
       "value": 5.0,
@@ -324,93 +237,8 @@ const PM = {
       ]
     }
   },
-  "neutrino_mass_ordering": {
-    "ordering": {
-      "value": "normal",
-      "display": "Normal (NH)",
-      "description": "Predicted mass ordering",
-      "source": "geometric:TCS_topology"
-    }
-  },
-  "proton_decay_channels": {
-    "BR_epi0_mean": {
-      "value": 0.45,
-      "unit": "dimensionless",
-      "display": "45%",
-      "description": "Branching ratio p \u2192 e\u207a\u03c0\u2070",
-      "formula": "Dominant SU(5) channel",
-      "source": "geometric"
-    },
-    "BR_nuK_mean": {
-      "value": 0.35,
-      "unit": "dimensionless",
-      "display": "35%",
-      "description": "Branching ratio p \u2192 \u03bd\u0304K\u207a",
-      "formula": "Second channel from SO(10)",
-      "source": "geometric"
-    }
-  },
-  "validation": {
-    "predictions_within_1sigma": {
-      "value": 28,
-      "display": "28",
-      "description": "Predictions within 1\u03c3 of experiment"
-    },
-    "total_predictions": {
-      "value": 32,
-      "display": "32",
-      "description": "Total testable predictions"
-    },
-    "exact_matches": {
-      "value": 5,
-      "display": "5",
-      "description": "Predictions matching experiment exactly"
-    },
-    "mean_sigma": {
-      "value": 0.35,
-      "display": "0.35\u03c3",
-      "description": "Mean deviation from experiment"
-    }
-  },
-  "v11_final_observables": {
-    "higgs_mass": {
-      "m_h_GeV": {
-        "value": 125.1,
-        "unit": "GeV",
-        "display": "125.1",
-        "description": "Higgs boson mass",
-        "experimental_value": 125.25,
-        "experimental_uncertainty": 0.17,
-        "agreement_sigma": 0.88
-      }
-    },
-    "proton_lifetime": {
-      "tau_p_years": {
-        "value": 2.1e34,
-        "unit": "years",
-        "display": "2.1\u00d710\u00b3\u2074",
-        "description": "Proton lifetime prediction"
-      }
-    }
-  },
-  "v12_6_geometric_derivations": {
-    "vev_pneuma": {
-      "v_EW": {
-        "value": 246.0,
-        "unit": "GeV",
-        "display": "246",
-        "description": "Electroweak VEV from Pneuma field",
-        "formula": "v_EW = v_Higgs / \u221a2 = 246.22 GeV",
-        "agreement": "0.017% from SM value"
-      }
-    },
-    "alpha_thermal": {
-      "value": 2.7,
-      "display": "2.7",
-      "description": "Thermal time parameter",
-      "formula": "\u03b1_T = 3 - 1/(3\u00b7n_gen)"
-    }
-  },
+  "neutrino_mass_ordering": {},
+  "proton_decay_channels": {},
   "planck_tension": {
     "initial_sigma": {
       "value": 6.0,

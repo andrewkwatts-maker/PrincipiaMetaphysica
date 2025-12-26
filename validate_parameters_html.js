@@ -1,0 +1,117 @@
+// Node.js script to validate parameters.html logic
+// Run with: node validate_parameters_html.js
+
+const fs = require('fs');
+const path = require('path');
+
+// Load the parameters.json
+const paramsPath = path.join(__dirname, 'AUTO_GENERATED', 'json', 'parameters.json');
+const paramsData = JSON.parse(fs.readFileSync(paramsPath, 'utf8'));
+
+console.log('=== Parameters.json Structure Analysis ===\n');
+console.log(`Version: ${paramsData.version}\n`);
+
+let totalParams = 0;
+let categoryCounts = {};
+
+function isParameter(value) {
+    if (typeof value !== 'object' || value === null) {
+        return typeof value === 'number' || typeof value === 'string';
+    }
+
+    if (Array.isArray(value)) {
+        return true;
+    }
+
+    const paramFields = ['value', 'predicted', 'experimental', 'units', 'status', 'description', 'derivation', 'source'];
+    const hasParamField = paramFields.some(field => field in value);
+
+    if (hasParamField) {
+        return true;
+    }
+
+    const values = Object.values(value);
+    if (values.length > 0) {
+        const allPrimitive = values.every(v =>
+            typeof v === 'number' ||
+            typeof v === 'string' ||
+            typeof v === 'boolean'
+        );
+        if (allPrimitive || (values.some(v => typeof v === 'number') && hasParamField)) {
+            return false;
+        }
+    }
+
+    return false;
+}
+
+function processCategory(category, params, parentKey = '', depth = 0) {
+    const indent = '  '.repeat(depth);
+
+    for (const [key, value] of Object.entries(params)) {
+        const fullKey = parentKey ? `${parentKey}.${key}` : key;
+
+        if (isParameter(value)) {
+            totalParams++;
+            categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+
+            // Extract value
+            let paramValue = value;
+            if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+                paramValue = value.value ?? value.predicted ?? value.experimental ?? value.observed ?? 'complex';
+            }
+
+            console.log(`${indent}✓ ${fullKey} = ${JSON.stringify(paramValue).substring(0, 40)}`);
+        } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            console.log(`${indent}→ ${fullKey}/ (container)`);
+            processCategory(category, value, fullKey, depth + 1);
+        }
+    }
+}
+
+// Process all categories
+for (const [category, params] of Object.entries(paramsData)) {
+    if (category === 'version') continue;
+
+    console.log(`\n=== ${category.toUpperCase()} ===`);
+    processCategory(category, params);
+}
+
+console.log('\n=== SUMMARY ===');
+console.log(`Total parameters found: ${totalParams}`);
+console.log(`\nParameters per category:`);
+for (const [cat, count] of Object.entries(categoryCounts)) {
+    console.log(`  ${cat}: ${count}`);
+}
+
+// Check for parameters with comparisons
+console.log('\n=== PARAMETERS WITH EXPERIMENTAL/OBSERVED COMPARISONS ===');
+function findComparisons(category, params, parentKey = '') {
+    for (const [key, value] of Object.entries(params)) {
+        const fullKey = parentKey ? `${parentKey}.${key}` : key;
+
+        if (isParameter(value)) {
+            if (typeof value === 'object' && value !== null) {
+                if ((value.predicted !== undefined && value.experimental !== undefined) ||
+                    (value.predicted !== undefined && value.observed !== undefined)) {
+                    const compareVal = value.experimental ?? value.observed;
+                    const compareType = value.experimental !== undefined ? 'experimental' : 'observed';
+                    const sigma = value.sigma_agreement ?? 'N/A';
+                    console.log(`  ${category}.${fullKey}:`);
+                    console.log(`    Predicted: ${value.predicted}`);
+                    console.log(`    ${compareType}: ${compareVal}`);
+                    console.log(`    Sigma: ${sigma}`);
+                }
+            }
+        } else if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
+            findComparisons(category, value, fullKey);
+        }
+    }
+}
+
+for (const [category, params] of Object.entries(paramsData)) {
+    if (category === 'version') continue;
+    findComparisons(category, params);
+}
+
+console.log('\n=== VALIDATION COMPLETE ===');

@@ -1,0 +1,143 @@
+FORMULAS WITH related_formulas (from grep -B 20):
+
+1. master-action-26d: ["virasoro-anomaly", "sp2r-constraints"]
+2. virasoro-anomaly: ["master-action-26d"]
+3. sp2r-constraints: ["master-action-26d", "reduction-cascade"]
+4. racetrack-superpotential: ["pneuma-vev", "scalar-potential"]
+5. pneuma-vev: ["racetrack-superpotential"]
+6. reduction-cascade: ["sp2r-constraints", "g2-compactification"]
+7. primordial-spinor-13d: ["reduction-cascade"]
+8. tcs-topology: ["generation-number", "flux-quantization"]
+9. effective-euler: ["tcs-topology", "generation-number"]
+10. flux-quantization: ["tcs-topology", "effective-torsion"]
+11. effective-torsion: ["flux-quantization", "tcs-topology"]
+12. mirror-dm-ratio: ["mirror-temp-ratio"]
+13. so10-breaking: ["gut-scale", "gut-coupling"]
+14. gut-coupling: ["gut-scale", "tcs-topology"]
+15. weak-mixing-angle: ["gut-coupling", "gut-scale"]
+16. higgs-vev: ["top-quark-mass"]
+17. top-quark-mass: ["higgs-vev"]
+18. strong-coupling: ["gut-coupling"]
+19. neutrino-mass-21: ["neutrino-mass-31", "theta23-maximal"]
+20. neutrino-mass-31: ["neutrino-mass-21", "theta23-maximal"]
+21. cp-phase-geometric: ["tcs-topology"]
+22. effective-dimension: ["dark-energy-w0"]
+23. dark-energy-wa: ["dark-energy-w0", "effective-dimension"]
+24. thermal-time: ["dark-energy-w0", "kms-condition"]
+25. gw-dispersion: ["effective-torsion", "tcs-topology"]
+26. gw-dispersion-coeff: ["gw-dispersion", "effective-torsion"]
+27. proton-branching: ["proton-lifetime", "tcs-topology"]
+28. bekenstein-hawking: ["master-action-26d"]
+29. scalar-potential: ["racetrack-superpotential", "pneuma-vev"]
+30. hidden-variables: ["reduction-cascade"]
+31. hierarchy-ratio: ["higgs-vev", "tcs-topology"]
+32. division-algebra: ["reduction-cascade"]
+33. seesaw-mechanism: ["neutrino-mass-21", "neutrino-mass-31"]
+34. ckm-elements: ["theta23-maximal"]
+35. yukawa-instanton: ["top-quark-mass"]
+36. attractor-potential: ["dark-energy-w0", "dark-energy-wa"]
+37. friedmann-constraint: ["dark-energy-w0", "dark-energy-wa"]
+38. de-sitter-attractor: ["attractor-potential", "dark-energy-wa"]
+39. tomita-takesaki: ["thermal-time"]
+40. kms-condition: ["thermal-time", "tomita-takesaki"]
+41. planck-mass-derivation: ["gut-scale", "tcs-topology"]
+42. doublet-triplet: ["proton-lifetime", "so10-breaking"]
+43. dirac-pneuma: ["master-action-26d", "primordial-spinor-13d"]
+44. ghost-coefficient: ["virasoro-anomaly", "effective-dimension"]
+45. kappa-gut-coefficient: ["gut-scale", "tcs-topology"]
+46. effective-torsion-spinor: ["effective-torsion", "flux-quantization"]
+47. gw-dispersion-alt: ["gw-dispersion-coeff", "effective-torsion"]
+48. vacuum-minimization: ["scalar-potential", "pneuma-vev", "racetrack-superpotential"]
+49. mirror-temp-ratio: ["mirror-dm-ratio", "tcs-topology"]
+50. pati-salam-chain: ["so10-breaking", "seesaw-mechanism"]
+51. higgs-potential: ["higgs-vev"]
+52. higgs-quartic: ["higgs-potential", "higgs-vev"]
+53. rg-running-couplings: ["gut-coupling", "weak-mixing-angle", "strong-coupling"]
+54. bottom-quark-mass: ["higgs-vev", "top-quark-mass", "yukawa-instanton"]
+55. tau-lepton-mass: ["higgs-vev", "top-quark-mass", "yukawa-instanton"]
+56. higgs-mass: ["higgs-vev", "higgs-potential"]
+
+Total: 56 formulas shown with related_formulas
+
+But wait - the audit said 55 total formulas and 31 have related_formulas.
+
+Looking at the get_all_formulas() list, there are 55 formulas total.
+The grep shows 56 entries but line 499 shows a duplicate "generation-number" entry.
+
+Let me identify which formulas from get_all_formulas() are NOT in the grep output above:
+
+ALL FORMULAS (from get_all_formulas in config.py):
+1. GENERATION_NUMBER (generation-number)
+2. GUT_SCALE (gut-scale)
+3. DARK_ENERGY_W0 (dark-energy-w0)
+4. PROTON_LIFETIME (proton-lifetime)
+5. THETA23_MAXIMAL (theta23-maximal)
+6. KK_GRAVITON (kk-graviton-mass)
+7. MASTER_ACTION_26D (master-action-26d) ✓
+8. VIRASORO_ANOMALY (virasoro-anomaly) ✓
+9. SP2R_CONSTRAINTS (sp2r-constraints) ✓
+10. RACETRACK_SUPERPOTENTIAL (racetrack-superpotential) ✓
+11. PNEUMA_VEV (pneuma-vev) ✓
+12. BEKENSTEIN_HAWKING (bekenstein-hawking) ✓
+13. SCALAR_POTENTIAL (scalar-potential) ✓
+14. REDUCTION_CASCADE (reduction-cascade) ✓
+15. PRIMORDIAL_SPINOR_13D (primordial-spinor-13d) ✓
+16. HIDDEN_VARIABLES (hidden-variables) ✓
+17. DIVISION_ALGEBRA (division-algebra) ✓
+18. DIRAC_PNEUMA (dirac-pneuma) ✓
+19. TCS_TOPOLOGY (tcs-topology) ✓
+20. EFFECTIVE_EULER (effective-euler) ✓
+21. FLUX_QUANTIZATION (flux-quantization) ✓
+22. EFFECTIVE_TORSION (effective-torsion) ✓
+23. MIRROR_DM_RATIO (mirror-dm-ratio) ✓
+24. HIERARCHY_RATIO (hierarchy-ratio) ✓
+25. PLANCK_MASS_DERIVATION (planck-mass-derivation) ✓
+26. SO10_BREAKING (so10-breaking) ✓
+27. GUT_COUPLING (gut-coupling) ✓
+28. WEAK_MIXING_ANGLE (weak-mixing-angle) ✓
+29. HIGGS_VEV (higgs-vev) ✓
+30. DOUBLET_TRIPLET (doublet-triplet) ✓
+31. TOP_QUARK_MASS (top-quark-mass) ✓
+32. STRONG_COUPLING (strong-coupling) ✓
+33. NEUTRINO_MASS_21 (neutrino-mass-21) ✓
+34. NEUTRINO_MASS_31 (neutrino-mass-31) ✓
+35. CP_PHASE_GEOMETRIC (cp-phase-geometric) ✓
+36. SEESAW_MECHANISM (seesaw-mechanism) ✓
+37. CKM_ELEMENTS (ckm-elements) ✓
+38. YUKAWA_INSTANTON (yukawa-instanton) ✓
+39. EFFECTIVE_DIMENSION (effective-dimension) ✓
+40. DARK_ENERGY_WA (dark-energy-wa) ✓
+41. THERMAL_TIME (thermal-time) ✓
+42. ATTRACTOR_POTENTIAL (attractor-potential) ✓
+43. FRIEDMANN_CONSTRAINT (friedmann-constraint) ✓
+44. DE_SITTER_ATTRACTOR (de-sitter-attractor) ✓
+45. TOMITA_TAKESAKI (tomita-takesaki) ✓
+46. KMS_CONDITION (kms-condition) ✓
+47. GW_DISPERSION (gw-dispersion) ✓
+48. GW_DISPERSION_COEFF (gw-dispersion-coeff) ✓
+49. PROTON_BRANCHING (proton-branching) ✓
+50. GHOST_COEFFICIENT (ghost-coefficient) ✓
+51. KAPPA_GUT_COEFFICIENT (kappa-gut-coefficient) ✓
+52. EFFECTIVE_TORSION_SPINOR (effective-torsion-spinor) ✓
+53. GW_DISPERSION_ALT (gw-dispersion-alt) ✓
+54. VACUUM_MINIMIZATION (vacuum-minimization) ✓
+55. MIRROR_TEMP_RATIO (mirror-temp-ratio) ✓
+56. PATI_SALAM_CHAIN (pati-salam-chain) ✓
+57. HIGGS_POTENTIAL (higgs-potential) ✓
+58. HIGGS_QUARTIC (higgs-quartic) ✓
+59. RG_RUNNING_COUPLINGS (rg-running-couplings) ✓
+60. BOTTOM_QUARK_MASS (bottom-quark-mass) ✓
+61. TAU_LEPTON_MASS (tau-lepton-mass) ✓
+62. HIGGS_MASS (higgs-mass) ✓
+
+FORMULAS WITHOUT related_formulas (24 total):
+1. generation-number
+2. gut-scale
+3. dark-energy-w0
+4. proton-lifetime
+5. theta23-maximal
+6. kk-graviton-mass
+
+Wait - that's only 6. Let me recount the grep output more carefully...
+
+Actually looking at the grep output, the count shows many more than 31. Let me verify by checking if there are conditionals or empty arrays...

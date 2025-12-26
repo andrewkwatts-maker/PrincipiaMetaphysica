@@ -16672,7 +16672,12 @@
     }
   },
   "moduli_racetrack_v15": {
-    "error": "[Errno 22] Invalid argument"
+    "T_stabilized": 1.4885485951586337,
+    "epsilon_dynamic": 0.225700000000003,
+    "cabibbo_agreement_pct": 1.3281356519662927e-12,
+    "validated": true,
+    "mechanism": "Racetrack superpotential with flux-determined exponents",
+    "version": "v15.0"
   },
   "g2_metric_v15": {
     "holonomy_valid": true,
@@ -16704,8 +16709,20 @@
     "version": "v15.1"
   },
   "multi_sector_v16_0": {
-    "error": "[Errno 22] Invalid argument",
-    "source": "fallback"
+    "n_sectors": 4,
+    "sampling_position": 0.5,
+    "modulation_width": 0.25042618808873585,
+    "width_source": "G2_wavefunction_overlap",
+    "is_geometric": true,
+    "sm_weight": 0.07266354119615957,
+    "mirror_weight": 0.42733645880384036,
+    "hierarchy_ratio": 2.7220059815688672e+17,
+    "gravity_dilution": 0.25,
+    "mirror_dm_fraction": 5.881029905358178,
+    "dm_deviation_pct": 8.907961210336616,
+    "overall_valid": true,
+    "mechanism": "Width from G2 wavefunction overlap (geometric)",
+    "version": "v16.0"
   },
   "microtubule_v15_2": {
     "n_tubulins": 312000.0,
@@ -16715,6 +16732,55 @@
     "timescale_valid": true,
     "status": "SPECULATIVE",
     "version": "v15.2"
+  },
+  "lattice_dispersion_v16_0": {
+    "delta_lat": 1.0,
+    "g_geom_base": 0.1,
+    "g_eff": 0.1,
+    "g_eff_range": [
+      0.06999999999999999,
+      0.15000000000000002
+    ],
+    "relative_uncertainty": 0.40000000000000013,
+    "dof_added": 1,
+    "overall_valid": true,
+    "status": "MAIN PAPER - Neutral structural parameter",
+    "version": "v16.0"
+  },
+  "evolutionary_orchestration_v16_1": {
+    "delta_lat_human": 1.45,
+    "alpha_evo_human": 0.8999999999999999,
+    "coherence_enhancement": 2.1025,
+    "species_count": 8,
+    "overall_valid": true,
+    "status": "SPECULATIVE - Appendix material",
+    "version": "v16.1"
+  },
+  "subleading_dispersion_v16_1": {
+    "theta_23_deg": 45.0,
+    "theta_23_band": [
+      45.0,
+      42.75,
+      47.25
+    ],
+    "delta_cp_deg": 235.0,
+    "delta_cp_discrete": [
+      194.0,
+      235.0,
+      286.0
+    ],
+    "w0_band": [
+      -0.8526812021213906,
+      -0.8526812021213906,
+      -0.8526812021213906
+    ],
+    "nufit_theta_23_sigma": 2.6666666666666665,
+    "nufit_delta_cp_sigma": 0.12,
+    "desi_w0_sigma": 5.772751915144374,
+    "defaults_used": true,
+    "overall_valid": false,
+    "status": "MAIN PAPER - Theoretical uncertainty bands",
+    "version": "v16.1"
   },
   "pmns_geometric_v14_1": {
     "theta_13_deg": 8.647304725338865,
@@ -16737,8 +16803,15 @@
     "version": "v14.1"
   },
   "g2_landscape_v14_1": {
-    "error": "[Errno 22] Invalid argument",
-    "source": "fallback"
+    "n_valid_topologies": 49,
+    "chi_eff_values": [
+      144
+    ],
+    "m_gut_variation": 0.0,
+    "reference_is_minimal": true,
+    "validated": true,
+    "mechanism": "49 valid topologies with chi_eff=144",
+    "version": "v14.1"
   },
   "superpartner_bounds_v14_1": {
     "m_susy_min": null,
@@ -16783,8 +16856,13 @@
     "version": "v12.8"
   },
   "sp2r_validation_v13_0": {
-    "error": "[Errno 22] Invalid argument",
-    "source": "fallback"
+    "bulk_dim": 26,
+    "shadow_dim": 13,
+    "signature_reduced": true,
+    "dim_reduction_correct": true,
+    "stabilizer_group": "SO(12,1)",
+    "validated": true,
+    "version": "v13.0"
   },
   "orientation_sum_v12_8": {
     "orientation_sum": 12,

@@ -141,7 +141,7 @@ class PMFormula extends HTMLElement {
     }
 
     static get observedAttributes() {
-        return ['formula-id', 'html', 'plain', 'label', 'show-label', 'show-derivation'];
+        return ['formula-id', 'data-id', 'html', 'plain', 'label', 'show-label', 'show-derivation'];
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -151,7 +151,8 @@ class PMFormula extends HTMLElement {
     }
 
     render() {
-        const formulaId = this.getAttribute('formula-id');
+        // Support both formula-id and data-id attributes
+        const formulaId = this.getAttribute('formula-id') || this.getAttribute('data-id');
         const inlineHtml = this.getAttribute('html');
         const inlinePlain = this.getAttribute('plain');
         const inlineLabel = this.getAttribute('label');
@@ -161,11 +162,22 @@ class PMFormula extends HTMLElement {
         let formula, category;
 
         if (formulaId) {
-            // Look up in registry
+            // Try to look up in FORMULA_REGISTRY first
             const result = findFormula(formulaId);
             if (result) {
                 formula = result.formula;
                 category = result.category;
+            }
+            // Try PMFormulaLoader if FORMULA_REGISTRY lookup failed
+            else if (window.PMFormulaLoader) {
+                const pmFormula = window.PMFormulaLoader.get(formulaId);
+                if (pmFormula) {
+                    formula = pmFormula;
+                    category = pmFormula.category || 'DERIVED';
+                } else {
+                    this.shadowRoot.innerHTML = `<div style="color: red;">Formula not found: ${formulaId}</div>`;
+                    return;
+                }
             } else {
                 this.shadowRoot.innerHTML = `<div style="color: red;">Formula not found: ${formulaId}</div>`;
                 return;

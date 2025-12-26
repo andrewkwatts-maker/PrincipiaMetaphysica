@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citation System Test - Principia Metaphysica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pm-citations.css">
+    <style>
+        body {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .test-section {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .test-section h2 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+        .test-section p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <script src="js/pm-citations.js"></script>
+</head>
+<body>
+    <h1 style="text-align: center; color: var(--accent-primary);">Citation System Test</h1>
+
+    <div class="test-section">
+        <h2>Example: Generation Number</h2>
+        <p>
+            The framework predicts exactly three generations of fermions through the
+            F-theory index theorem<cite data-ref="vafa1996"></cite>, which relates the
+            Euler characteristic of Calabi-Yau four-folds to the number of chiral generations.
+        </p>
+        <p>
+            This prediction is further supported by M-theory compactifications on G₂ manifolds
+            <cite data-ref="acharya2001_chiral"></cite>, where chiral fermions arise from
+            conical singularities and associative cycles.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Example: TCS Topology</h2>
+        <p>
+            The specific TCS (twisted connected sum) construction<cite data-ref="corti2015"></cite>
+            provides a concrete G₂ manifold with b₂=4 and b₃=24, yielding the correct topological
+            invariants to accommodate three generations with realistic Yukawa couplings.
+        </p>
+        <p>
+            The M-theory framework on G₂ manifolds<cite data-ref="acharya1998"></cite> naturally
+            produces SO(10) gauge symmetry from ADE singularities, providing a unified description
+            of all Standard Model fermions.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Example: Multiple Citations</h2>
+        <p>
+            The gauge hierarchy problem is addressed through dimensional reduction and flux
+            compactification<cite data-ref="vafa1996"></cite><cite data-ref="acharya2001_chiral"></cite>,
+            with the GUT scale emerging geometrically from the size of the internal manifold.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Instructions</h2>
+        <ul style="color: var(--text-secondary);">
+            <li>Hover over citation numbers to see reference details</li>
+            <li>Click citation numbers to navigate to the references section</li>
+            <li>Citations are numbered sequentially [1], [2], etc.</li>
+            <li>Same reference cited multiple times uses the same number</li>
+        </ul>
+    </div>
+
+    <div id="references-container" class="test-section">
+        <h2>References</h2>
+        <p style="color: var(--text-secondary);">
+            References will be auto-generated here by the citation system.
+        </p>
+    </div>
+
+    <script>
+        // Log when citations are loaded
+        console.log('Test page loaded. Waiting for citations to initialize...');
+
+        // Check citation status after a delay
+        setTimeout(() => {
+            const citations = document.querySelectorAll('cite.citation');
+            console.log(`Found ${citations.length} processed citations`);
+
+            if (citations.length === 0) {
+                console.error('Citations not processed! Check that pm-citations.js loaded correctly.');
+            }
+        }, 2000);
+    </script>
+</body>
+</html>

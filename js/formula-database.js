@@ -16,8 +16,7 @@ const FORMULA_DATABASE = {
         symbol: 'M<sub>Pl</sub>',
         htmlSymbol: 'M<sub>Pl</sub>',
         textSymbol: 'M_Pl',
-        value: '2.435 × 10¹⁸ GeV',
-        pmRef: 'PM.scales.M_planck',
+        pmRef: null, // TODO: Add M_Planck to theory_output.json
         description: '4D reduced Planck mass',
         longDescription: 'Reduced Planck mass in 4D spacetime, defined as M_Pl² = 1/(8πG_N)',
         category: 'scales',
@@ -31,8 +30,7 @@ const FORMULA_DATABASE = {
         symbol: 'M<sub>*</sub>',
         htmlSymbol: 'M<sub>*</sub>',
         textSymbol: 'M_*',
-        value: '7.23 × 10¹⁷ GeV',
-        pmRef: 'PM.scales.M_star',
+        pmRef: null, // TODO: Add M_star to theory_output.json
         description: 'Fundamental 26D mass scale',
         longDescription: 'Fundamental mass scale in 26D bulk spacetime before dimensional reduction',
         category: 'scales',
@@ -47,8 +45,7 @@ const FORMULA_DATABASE = {
         symbol: 'M<sub>GUT</sub>',
         htmlSymbol: 'M<sub>GUT</sub>',
         textSymbol: 'M_GUT',
-        value: '2.118 × 10¹⁶ GeV',
-        pmRef: 'PM.proton_decay.M_GUT',
+        pmRef: 'PM.gauge.M_GUT',
         description: 'Grand unified scale',
         longDescription: 'GUT scale derived geometrically from G₂ manifold TCS torsion',
         category: 'scales',
@@ -68,8 +65,7 @@ const FORMULA_DATABASE = {
         symbol: 'w<sub>0</sub>',
         htmlSymbol: 'w<sub>0</sub>',
         textSymbol: 'w_0',
-        value: '-0.8527',
-        pmRef: 'PM.shared_dimensions.w0_from_d_eff',
+        pmRef: 'PM.dark_energy.w0',
         description: 'Dark energy equation of state today',
         longDescription: 'Present-day equation of state parameter derived from effective dimension D_eff = 12.589 (0.01% error - perfect match with DESI DR2)',
         category: 'cosmology',
@@ -86,7 +82,6 @@ const FORMULA_DATABASE = {
         symbol: 'w(z)',
         htmlSymbol: 'w(z)',
         textSymbol: 'w(z)',
-        value: 'w₀[1 + (α_T/3)ln(1+z)]',
         pmRef: 'PM.dark_energy.w0',
         description: 'Redshift evolution of dark energy',
         longDescription: 'Logarithmic evolution derived from frozen modular time dimension at z > 3000',
@@ -103,8 +98,7 @@ const FORMULA_DATABASE = {
         symbol: 'w<sub>a</sub>',
         htmlSymbol: 'w<sub>a</sub>',
         textSymbol: 'w_a',
-        value: '-0.95',
-        pmRef: 'PM.dark_energy.w_a',
+        pmRef: 'PM.dark_energy.wa',
         description: 'Dark energy evolution derivative',
         longDescription: 'First derivative w_a = dw/d(ln a), theory predicts -0.95',
         category: 'cosmology',
@@ -124,8 +118,6 @@ const FORMULA_DATABASE = {
         symbol: 'S<sub>26D</sub>',
         htmlSymbol: 'S<sub>26D</sub>',
         textSymbol: 'S_26D',
-        value: null,
-        pmRef: null,
         description: '26D master action',
         longDescription: 'Complete 26-dimensional bulk action before Sp(2,R) gauge fixing',
         category: 'actions',
@@ -140,8 +132,6 @@ const FORMULA_DATABASE = {
         symbol: 'S<sub>13D</sub>',
         htmlSymbol: 'S<sub>13D</sub>',
         textSymbol: 'S_13D',
-        value: null,
-        pmRef: null,
         description: '13D effective action',
         longDescription: '13D effective action after Sp(2,R) gauge fixing',
         category: 'actions',
@@ -160,8 +150,7 @@ const FORMULA_DATABASE = {
         symbol: 'θ<sub>12</sub>',
         htmlSymbol: 'θ<sub>12</sub>',
         textSymbol: 'theta_12',
-        value: '33.59°',
-        pmRef: 'PM.pmns_matrix.theta_12_deg',
+        pmRef: 'PM.neutrino.pmns_angles.theta_12.predicted',
         description: 'Solar neutrino mixing angle',
         longDescription: 'PMNS solar angle from G₂ associative cycle geometry',
         category: 'neutrinos',
@@ -176,8 +165,7 @@ const FORMULA_DATABASE = {
         symbol: 'θ<sub>23</sub>',
         htmlSymbol: 'θ<sub>23</sub>',
         textSymbol: 'theta_23',
-        value: '45.00°',
-        pmRef: 'PM.pmns_matrix.theta_23_deg',
+        pmRef: 'PM.neutrino.pmns_angles.theta_23.predicted',
         description: 'Atmospheric neutrino mixing angle',
         longDescription: 'PMNS atmospheric angle - EXACT MATCH with experiment (NuFIT 6.0 confirms maximal mixing)',
         category: 'neutrinos',
@@ -193,8 +181,7 @@ const FORMULA_DATABASE = {
         symbol: 'θ<sub>13</sub>',
         htmlSymbol: 'θ<sub>13</sub>',
         textSymbol: 'theta_13',
-        value: '8.57°',
-        pmRef: 'PM.pmns_matrix.theta_13_deg',
+        pmRef: 'PM.neutrino.pmns_angles.theta_13.predicted',
         description: 'Reactor neutrino mixing angle',
         longDescription: 'PMNS reactor angle - EXACT MATCH with experiment',
         category: 'neutrinos',
@@ -210,8 +197,7 @@ const FORMULA_DATABASE = {
         symbol: 'δ<sub>CP</sub>',
         htmlSymbol: 'δ<sub>CP</sub>',
         textSymbol: 'delta_CP',
-        value: '235°',
-        pmRef: 'PM.pmns_matrix.delta_CP_deg',
+        pmRef: 'PM.neutrino.pmns_angles.delta_cp.predicted',
         description: 'Neutrino CP-violating phase',
         longDescription: 'PMNS CP phase from associative 3-cycle phases',
         category: 'neutrinos',
@@ -230,13 +216,12 @@ const FORMULA_DATABASE = {
         symbol: 'τ<sub>p</sub>',
         htmlSymbol: 'τ<sub>p</sub>',
         textSymbol: 'tau_p',
-        value: '4.09 × 10³⁴ years',
-        pmRef: 'PM.proton_decay.tau_p_central',
+        pmRef: 'PM.proton_decay.tau_p_years',
         description: 'Proton lifetime',
-        longDescription: 'Geometric prediction for proton decay lifetime from SO(10) GUT via dimension-6 operators',
+        longDescription: 'Geometric prediction for proton decay lifetime from SO(10) GUT via dimension-6 operators with suppression factor S² = 2.1',
         category: 'predictions',
         experimental: 'Super-K: > 1.67 × 10³⁴ years (consistent)',
-        formula: 'τ<sub>p</sub> ∝ M<sub>GUT</sub><sup>4</sup> / m<sub>p</sub><sup>5</sup>',
+        formula: 'τ<sub>p</sub> = M<sub>GUT</sub><sup>4</sup>/(α<sub>GUT</sub><sup>2</sup> m<sub>p</sub><sup>5</sup>) × S<sup>2</sup>',
         occurrences: 23,
         usedIn: ['predictions', 'gauge-unification', 'fermion-sector', 'paper'],
         prediction: true
@@ -247,8 +232,7 @@ const FORMULA_DATABASE = {
         symbol: 'BR(p→e<sup>+</sup>π<sup>0</sup>)',
         htmlSymbol: 'BR(p→e<sup>+</sup>π<sup>0</sup>)',
         textSymbol: 'BR(p->e+pi0)',
-        value: '64.2% ± 9.4%',
-        pmRef: 'PM.proton_decay.BR_epi0_mean',
+        pmRef: 'PM.proton_decay.BR_epi0',
         description: 'Proton decay branching ratio to e+π0',
         longDescription: 'Branching ratio derived from CKM rotation + geometric Yukawa mixing',
         category: 'predictions',
@@ -268,7 +252,6 @@ const FORMULA_DATABASE = {
         symbol: 'n<sub>gen</sub>',
         htmlSymbol: 'n<sub>gen</sub>',
         textSymbol: 'n_gen',
-        value: '3',
         pmRef: 'PM.topology.n_gen',
         description: 'Number of fermion generations',
         longDescription: 'Derived from effective Euler characteristic: n_gen = χ_eff / 48 = 144 / 48 = 3',
@@ -279,6 +262,126 @@ const FORMULA_DATABASE = {
         usedIn: ['geometric-framework', 'fermion-sector', 'predictions', 'paper'],
         validated: true,
         exactMatch: true
+    },
+
+    // ============================================================================
+    // LATTICE DISPERSION (v16.0)
+    // ============================================================================
+
+    'delta_lat': {
+        id: 'delta_lat',
+        symbol: 'δ<sub>lat</sub>',
+        htmlSymbol: 'δ<sub>lat</sub>',
+        textSymbol: 'δ_lat',
+        pmRef: 'PM.lattice_dispersion.delta_lat',
+        description: 'Lattice configuration dispersion',
+        longDescription: 'Modulates geometric coupling based on lattice-level realization of G₂ holonomy in physical systems. Baseline δ_lat = 1.0 (perfect embedding), range [0.7, 1.5]',
+        category: 'coupling',
+        formula: 'δ<sub>lat</sub> ∈ [0.7, 1.5]',
+        explanation: 'Structural parameter acknowledging imperfect geometric embedding',
+        occurrences: 1,
+        usedIn: ['pneuma-lagrangian', 'paper'],
+        structural: true
+    },
+
+    'g_eff': {
+        id: 'g_eff',
+        symbol: 'g<sub>eff</sub>',
+        htmlSymbol: 'g<sub>eff</sub>',
+        textSymbol: 'g_eff',
+        pmRef: 'PM.lattice_dispersion.g_eff_formula',
+        description: 'Effective geometric coupling',
+        longDescription: 'Geometric coupling modulated by lattice dispersion: g_eff = g_geom × δ_lat. Accounts for imperfect G₂ holonomy realization in physical lattices.',
+        category: 'coupling',
+        formula: 'g<sub>eff</sub> = g<sub>geom</sub> × δ<sub>lat</sub>',
+        derivation: 'Modulated from base g_geom = 0.1 by δ_lat ∈ [0.7, 1.5]',
+        occurrences: 1,
+        usedIn: ['pneuma-lagrangian', 'paper'],
+        structural: true
+    },
+
+    'alpha_evo': {
+        id: 'alpha_evo',
+        symbol: 'α<sub>evo</sub>',
+        htmlSymbol: 'α<sub>evo</sub>',
+        textSymbol: 'α_evo',
+        pmRef: 'PM.lattice_dispersion.alpha_evo',
+        description: 'Evolutionary orchestration factor',
+        longDescription: 'Measures degree of evolutionary enhancement from baseline: α_evo = (δ_lat - 1) / (δ_lat_max - 1) ∈ [0, 1]. SPECULATIVE appendix material.',
+        category: 'speculative',
+        formula: 'α<sub>evo</sub> = (δ<sub>lat</sub> - 1) / (δ<sub>lat,max</sub> - 1)',
+        explanation: 'Quantifies evolutionary optimization of lattice configuration',
+        occurrences: 1,
+        usedIn: ['appendix', 'paper'],
+        speculative: true
+    },
+
+    // ============================================================================
+    // SUBLEADING DISPERSION (v16.1)
+    // ============================================================================
+
+    'epsilon_atm': {
+        id: 'epsilon_atm',
+        symbol: 'ε<sub>atm</sub>',
+        htmlSymbol: 'ε<sub>atm</sub>',
+        textSymbol: 'ε_atm',
+        pmRef: 'PM.subleading_dispersion.epsilon_atm',
+        description: 'Atmospheric mixing deviation',
+        longDescription: 'Subleading correction to maximal θ₂₃ mixing. θ₂₃ = 45° × (1 + ε_atm). Default 0, range ±0.05 allows 42.75°-47.25°.',
+        category: 'subleading',
+        formula: 'θ<sub>23</sub> = 45° × (1 + ε<sub>atm</sub>)',
+        explanation: 'Flux perturbation or Ricci-flow asymmetry',
+        occurrences: 1,
+        usedIn: ['neutrino', 'predictions', 'paper'],
+        defaultZero: true
+    },
+
+    'phi_cp': {
+        id: 'phi_cp',
+        symbol: 'φ<sub>CP</sub>',
+        htmlSymbol: 'φ<sub>CP</sub>',
+        textSymbol: 'φ_CP',
+        pmRef: 'PM.subleading_dispersion.phi_cp_offset',
+        description: 'CP phase dispersion offset',
+        longDescription: 'Allows continuous offset from central δ_CP = 235° OR discrete selection from {194°, 235°, 286°} via Z_n automorphisms.',
+        category: 'subleading',
+        formula: 'δ<sub>CP</sub> = 235° + φ<sub>CP</sub> or {194°, 235°, 286°}',
+        explanation: 'Z_n automorphisms of G₂ cycle graph',
+        occurrences: 1,
+        usedIn: ['neutrino', 'predictions', 'paper'],
+        defaultZero: true
+    },
+
+    'delta_race': {
+        id: 'delta_race',
+        symbol: 'δ<sub>race</sub>',
+        htmlSymbol: 'δ<sub>race</sub>',
+        textSymbol: 'δ_race',
+        pmRef: 'PM.subleading_dispersion.delta_race',
+        description: 'Racetrack coefficient offset',
+        longDescription: 'Integer offset for second racetrack coefficient: N_second = 25 + δ_race ∈ {24, 25, 26}.',
+        category: 'subleading',
+        formula: 'N<sub>second</sub> = 25 + δ<sub>race</sub>',
+        explanation: 'Landscape statistics allow nearby integer fluxes',
+        occurrences: 1,
+        usedIn: ['racetrack', 'dark-matter', 'paper'],
+        defaultZero: true
+    },
+
+    'delta_gamma': {
+        id: 'delta_gamma',
+        symbol: 'Δγ',
+        htmlSymbol: 'Δγ',
+        textSymbol: 'Δγ',
+        pmRef: 'PM.subleading_dispersion.delta_gamma',
+        description: 'Ghost correction uncertainty',
+        longDescription: 'Uncertainty in ghost correction factor γ = 0.5 ± Δγ. Propagates to w₀ band.',
+        category: 'subleading',
+        formula: 'γ = 0.5 ± Δγ → w<sub>0</sub> band',
+        explanation: 'Quantum volume and loop corrections',
+        occurrences: 1,
+        usedIn: ['cosmology', 'dark-energy', 'paper'],
+        defaultZero: true
     }
 };
 
@@ -304,7 +407,7 @@ function formatFormula(formulaId, options = {}) {
     } = options;
 
     const symbol = useHtmlSymbol ? formula.htmlSymbol : formula.textSymbol;
-    const value = formula.value ? ` = ${formula.value}` : '';
+    const value = formula.computedValue ? ` = ${formula.computedValue}` : '';
     const description = formula.description;
 
     return `<span class="${className}" data-formula-id="${formulaId}" title="${description}${displayValue && value ? value : ''}">${symbol}</span>`;

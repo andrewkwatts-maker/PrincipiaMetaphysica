@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References Test - Standalone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+            background: #1a1a2e;
+            color: #eee;
+        }
+        h1 { color: #8b7fff; }
+        .status {
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid #8b7fff;
+            background: rgba(139, 127, 255, 0.1);
+        }
+        .error {
+            border-left-color: #ff6464;
+            background: rgba(255, 100, 100, 0.1);
+            color: #ff6464;
+        }
+        .success {
+            border-left-color: #50c878;
+            background: rgba(80, 200, 120, 0.1);
+            color: #50c878;
+        }
+        .ref-item {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: #16213e;
+            border-radius: 4px;
+            border-left: 3px solid #8b7fff;
+        }
+        .ref-title { font-weight: bold; color: #eee; }
+        .ref-meta { font-size: 0.85rem; color: #aaa; margin-top: 0.5rem; }
+        pre {
+            background: #0f0f1e;
+            padding: 1rem;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>References Loading Test</h1>
+    <p>This page tests loading references.json without any authentication dependencies.</p>
+
+    <div id="status" class="status">Initializing...</div>
+
+    <h2>Console Logs</h2>
+    <div id="logs"></div>
+
+    <h2>References Preview (First 10)</h2>
+    <div id="references"></div>
+
+    <script>
+        const logsDiv = document.getElementById('logs');
+        const statusDiv = document.getElementById('status');
+        const referencesDiv = document.getElementById('references');
+
+        function log(message, data = null) {
+            const logEntry = document.createElement('pre');
+            logEntry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            if (data) {
+                logEntry.textContent += '\n' + JSON.stringify(data, null, 2);
+            }
+            logsDiv.appendChild(logEntry);
+            console.log(message, data || '');
+        }
+
+        async function testLoad() {
+            log('Starting reference load test...');
+            log('Current URL:', window.location.href);
+            log('Document base URI:', document.baseURI);
+
+            const paths = [
+                'AUTO_GENERATED/json/references.json',
+                './AUTO_GENERATED/json/references.json',
+                '/AUTO_GENERATED/json/references.json'
+            ];
+
+            for (const path of paths) {
+                try {
+                    log(`Attempting to fetch: ${path}`);
+                    statusDiv.textContent = `Trying ${path}...`;
+                    statusDiv.className = 'status';
+
+                    const response = await fetch(path);
+                    log(`Response status for ${path}:`, {
+                        status: response.status,
+                        statusText: response.statusText,
+                        ok: response.ok,
+                        headers: {
+                            contentType: response.headers.get('content-type')
+                        }
+                    });
+
+                    if (!response.ok) {
+                        log(`Failed with status ${response.status}`);
+                        continue;
+                    }
+
+                    const text = await response.text();
+                    log(`Received ${text.length} bytes`);
+                    log('First 200 characters:', text.substring(0, 200));
+
+                    const data = JSON.parse(text);
+                    const refs = Object.values(data);
+
+                    log('SUCCESS!', {
+                        path: path,
+                        totalReferences: refs.length,
+                        sampleKeys: Object.keys(data).slice(0, 5)
+                    });
+
+                    statusDiv.textContent = `✓ Successfully loaded ${refs.length} references from ${path}`;
+                    statusDiv.className = 'status success';
+
+                    // Display first 10 references
+                    refs.slice(0, 10).forEach(ref => {
+                        const refDiv = document.createElement('div');
+                        refDiv.className = 'ref-item';
+                        refDiv.innerHTML = `
+                            <div class="ref-title">${ref.title}</div>
+                            <div class="ref-meta">
+                                ${ref.authors} (${ref.year}) [${ref.id}]
+                                ${ref.arxiv ? `• arXiv: ${ref.arxiv}` : ''}
+                                ${ref.doi ? `• DOI: ${ref.doi}` : ''}
+                            </div>
+                        `;
+                        referencesDiv.appendChild(refDiv);
+                    });
+
+                    return; // Success, exit
+                } catch (error) {
+                    log(`Error with ${path}:`, {
+                        name: error.name,
+                        message: error.message,
+                        stack: error.stack
+                    });
+                }
+            }
+
+            // If we get here, all paths failed
+            statusDiv.textContent = '✗ Failed to load references from any path';
+            statusDiv.className = 'status error';
+            log('All paths failed');
+        }
+
+        // Run test on load
+        testLoad();
+    </script>
+</body>
+</html>

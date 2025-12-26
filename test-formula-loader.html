@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Formula Loader Test</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #0a0a0f;
+            color: #e0e0e0;
+        }
+
+        h1 {
+            color: #8b7fff;
+            border-bottom: 2px solid #8b7fff;
+            padding-bottom: 0.5rem;
+        }
+
+        .test-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: #1a1a2e;
+            border-radius: 8px;
+            border: 1px solid #333;
+        }
+
+        .test-section h2 {
+            color: #60a5fa;
+            margin-top: 0;
+        }
+
+        .test-description {
+            color: #888;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .pm-formula-rendered {
+            margin: 1rem 0;
+            padding: 1rem;
+            background: rgba(139, 127, 255, 0.05);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            border-radius: 6px;
+        }
+
+        .formula-display {
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+        }
+
+        code {
+            background: rgba(96, 165, 250, 0.1);
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 0.5rem;
+        }
+
+        .status.success {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+
+        .status.error {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        #debug-info {
+            background: #0f0f1a;
+            border: 1px solid #333;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+        }
+
+        #debug-info pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <h1>PM Formula Loader Test Page</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Using data-formula-id attribute</h2>
+        <p class="test-description">This should automatically render the "generation-number" formula</p>
+        <div data-formula-id="generation-number"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Using pm-formula with data-id</h2>
+        <p class="test-description">This should render the "gut-scale" formula</p>
+        <pm-formula data-id="gut-scale"></pm-formula>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Using formula-id attribute on pm-formula (web component)</h2>
+        <p class="test-description">This uses the web component syntax with formula-id</p>
+        <pm-formula formula-id="alpha-gut"></pm-formula>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 4: Manual rendering via JavaScript</h2>
+        <p class="test-description">This tests the manual <code>PMFormulaLoader.render()</code> API</p>
+        <div id="manual-render-target"></div>
+        <button onclick="testManualRender()" style="padding: 0.5rem 1rem; background: #8b7fff; color: white; border: none; border-radius: 6px; cursor: pointer; margin-top: 1rem;">
+            Render "w0-formula" here
+        </button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 5: Error handling (non-existent formula)</h2>
+        <p class="test-description">This should show an error message for a missing formula</p>
+        <div data-formula-id="non-existent-formula-id"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Debug Information</h2>
+        <div id="debug-info">
+            <div>Loading debug info...</div>
+        </div>
+    </div>
+
+    <!-- Load the formula loader -->
+    <script src="js/pm-formula-loader.js"></script>
+
+    <!-- Load the web component if it exists -->
+    <script src="js/pm-formula-component.js"></script>
+
+    <script>
+        // Manual render test
+        function testManualRender() {
+            const target = document.getElementById('manual-render-target');
+            const success = PMFormulaLoader.render(target, 'w0-formula', {
+                showLabel: true,
+                showPlainText: true,
+                showDerivation: true
+            });
+
+            if (success) {
+                console.log('Manual render succeeded!');
+            } else {
+                console.error('Manual render failed!');
+            }
+        }
+
+        // Debug info display
+        async function updateDebugInfo() {
+            // Wait for loader to finish
+            await PMFormulaLoader.load();
+
+            const stats = PMFormulaLoader.getStats();
+            const debugElement = document.getElementById('debug-info');
+
+            let html = '<pre>';
+            html += 'PMFormulaLoader Status:\n';
+            html += '======================\n\n';
+            html += `Loaded: ${stats.loaded ? '<span class="status success">YES</span>' : '<span class="status error">NO</span>'}\n`;
+            html += `Version: ${stats.version}\n`;
+            html += `Total formulas: ${stats.total}\n\n`;
+
+            if (stats.categories) {
+                html += 'Formulas by category:\n';
+                for (const [cat, count] of Object.entries(stats.categories)) {
+                    html += `  ${cat}: ${count}\n`;
+                }
+            }
+
+            html += `\nWith experimental values: ${stats.withExperimental}\n`;
+            html += `With simulations: ${stats.withSimulations}\n\n`;
+
+            // Show some example formula IDs
+            const allFormulas = PMFormulaLoader.getAll();
+            const formulaIds = Object.keys(allFormulas).slice(0, 10);
+            html += `Example formula IDs (first 10):\n`;
+            formulaIds.forEach(id => {
+                html += `  - ${id}\n`;
+            });
+
+            if (Object.keys(allFormulas).length > 10) {
+                html += `  ... and ${Object.keys(allFormulas).length - 10} more\n`;
+            }
+
+            html += '</pre>';
+            debugElement.innerHTML = html;
+        }
+
+        // Update debug info when ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateDebugInfo);
+        } else {
+            updateDebugInfo();
+        }
+
+        // Also update after a delay to catch async loading
+        setTimeout(updateDebugInfo, 1000);
+    </script>
+</body>
+</html>

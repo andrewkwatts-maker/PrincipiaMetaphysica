@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Value Elements Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 { color: #333; }
+        h2 {
+            color: #666;
+            margin-top: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ddd;
+        }
+        .test-group {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-case {
+            padding: 10px;
+            margin: 5px 0;
+            background: #f9f9f9;
+            border-left: 3px solid #ccc;
+        }
+        .pm-loaded {
+            color: green;
+            font-weight: bold;
+        }
+        .pm-error {
+            color: red;
+            font-weight: bold;
+        }
+        .pm-loading {
+            color: orange;
+            font-style: italic;
+        }
+        .label {
+            display: inline-block;
+            width: 250px;
+            color: #666;
+        }
+        .value {
+            display: inline-block;
+            min-width: 100px;
+            padding: 2px 8px;
+            background: #e8f4f8;
+            border-radius: 3px;
+        }
+    </style>
+    <script src="js/pm-constants-loader.js"></script>
+</head>
+<body>
+    <h1>PM Value Elements Test</h1>
+    <p>This page tests the enhanced pm-constants-loader.js with various attribute formats.</p>
+
+    <div class="test-group">
+        <h2>1. Dimensions (Case-Insensitive)</h2>
+        <div class="test-case">
+            <span class="label">D_bulk (lowercase):</span>
+            <span class="value pm-value" data-pm-value="dimensions.d_bulk"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">D_AFTER_SP2R (mixed case):</span>
+            <span class="value pm-value" data-pm-value="dimensions.D_after_sp2r"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">D_observable:</span>
+            <span class="value pm-value" data-pm-value="dimensions.D_observable"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">D_G2:</span>
+            <span class="value pm-value" data-pm-value="dimensions.D_G2"></span>
+        </div>
+    </div>
+
+    <div class="test-group">
+        <h2>2. Topology Parameters (Case & Naming)</h2>
+        <div class="test-case">
+            <span class="label">b2 (lowercase):</span>
+            <span class="value pm-value" data-pm-value="parameters.topology.b2"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">b3 (lowercase):</span>
+            <span class="value pm-value" data-pm-value="parameters.topology.b3"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">CHI_EFF (uppercase):</span>
+            <span class="value pm-value" data-pm-value="parameters.topology.CHI_EFF"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">h11 (maps to HODGE_H11):</span>
+            <span class="value pm-value" data-pm-value="parameters.topology.h11"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">h31 (maps to HODGE_H31):</span>
+            <span class="value pm-value" data-pm-value="parameters.topology.h31"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">NU (maps to n_gen):</span>
+            <span class="value pm-value" data-pm-value="parameters.topology.NU"></span>
+        </div>
+    </div>
+
+    <div class="test-group">
+        <h2>3. Gauge Parameters</h2>
+        <div class="test-case">
+            <span class="label">M_GUT (scientific):</span>
+            <span class="value pm-value" data-pm-value="parameters.gauge.M_GUT" data-format="scientific:2"></span> GeV
+        </div>
+        <div class="test-case">
+            <span class="label">M_PS (from breaking_chain):</span>
+            <span class="value pm-value" data-pm-value="parameters.gauge.M_PS" data-format="scientific:2"></span> GeV
+        </div>
+    </div>
+
+    <div class="test-group">
+        <h2>4. Simulation Results</h2>
+        <div class="test-case">
+            <span class="label">Proton lifetime (years):</span>
+            <span class="value pm-value" data-pm-value="simulations.proton_decay.tau_p_years" data-format="scientific:2"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">Suppression factor:</span>
+            <span class="value pm-value" data-pm-value="simulations.proton_decay.suppression_factor" data-format="fixed:3"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">Higgs mass (GeV):</span>
+            <span class="value pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV" data-format="fixed:1"></span>
+        </div>
+    </div>
+
+    <div class="test-group">
+        <h2>5. Dark Energy Parameters</h2>
+        <div class="test-case">
+            <span class="label">d_eff:</span>
+            <span class="value pm-value" data-pm-value="parameters.dark_energy.d_eff" data-format="fixed:3"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">alpha_T:</span>
+            <span class="value pm-value" data-pm-value="parameters.dark_energy.alpha_T" data-format="fixed:1"></span>
+        </div>
+    </div>
+
+    <div class="test-group">
+        <h2>6. Validation Statistics</h2>
+        <div class="test-case">
+            <span class="label">Total predictions:</span>
+            <span class="value pm-value" data-pm-value="validation.total_predictions"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">Exact matches:</span>
+            <span class="value pm-value" data-pm-value="validation.exact_matches"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">Within 1 sigma:</span>
+            <span class="value pm-value" data-pm-value="validation.predictions_within_1sigma"></span>
+        </div>
+    </div>
+
+    <div class="test-group">
+        <h2>7. data-category Format</h2>
+        <div class="test-case">
+            <span class="label">Proton decay (category):</span>
+            <span class="value" data-category="simulations" data-param="proton_decay.tau_p_years" data-format="scientific:2"></span>
+        </div>
+        <div class="test-case">
+            <span class="label">Topology CHI_EFF (category):</span>
+            <span class="value" data-category="topology" data-param="CHI_EFF"></span>
+        </div>
+    </div>
+
+    <script>
+        // Enable debug mode to see detailed error logs
+        window.PM_DEBUG = true;
+
+        // Wait for data to load, then show summary
+        setTimeout(() => {
+            if (window.PM && window.PM._loaded) {
+                console.log('%c=== PM Value Test Results ===', 'color: blue; font-weight: bold; font-size: 14px');
+                console.log('Check the elements above - green means loaded, red means error');
+                console.log('Hover over "?" to see error details');
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

@@ -1,307 +1,62 @@
 {
   "version": "14.1",
-  "metadata": {
-    "timestamp": "2025-12-25",
-    "description": "Enhanced parameter database with full metadata for Principia Metaphysica",
-    "has_metadata": true
-  },
   "dimensions": {
-    "D_BULK": {
-      "symbol": "D_B",
-      "name": "Bulk Spacetime Dimensionality",
-      "value": 26,
-      "units": "dimensionless",
-      "description": "Initial bosonic string critical dimension from Virasoro central charge",
-      "derivation": "From conformal invariance: c = 26 for bosonic string",
-      "status": "DERIVED"
-    },
-    "D_AFTER_SP2R": {
-      "symbol": "D_{SP(2,R)}",
-      "name": "Shadow Spacetime Dimensionality",
-      "value": 13,
-      "units": "dimensionless",
-      "description": "Physical spacetime after Sp(2,R) gauge fixing",
-      "derivation": "D_after = D_bulk - 13 = 26 - 13 = 13 from Bars two-time physics",
-      "status": "DERIVED"
-    },
-    "D_INTERNAL": {
-      "symbol": "D_{int}",
-      "name": "Internal G₂ Manifold Dimensionality",
-      "value": 7,
-      "units": "dimensionless",
-      "description": "G₂ holonomy compactification manifold preserving N=1 SUSY",
-      "derivation": "D_internal = D_after - D_effective = 13 - 6 = 7",
-      "status": "DERIVED"
-    },
-    "D_EFFECTIVE": {
-      "symbol": "D_{eff}",
-      "name": "Effective Observable Dimensionality",
-      "value": 6,
-      "units": "dimensionless",
-      "description": "Effective spacetime for Standard Model physics",
-      "derivation": "D_effective = D_common + D_shared = 4 + 2 = 6",
-      "status": "DERIVED"
-    },
-    "D_COMMON": {
-      "symbol": "D_{common}",
-      "name": "Common Accessible Dimensions",
-      "value": 4,
-      "units": "dimensionless",
-      "description": "Standard 3+1 spacetime shared by all branes",
-      "status": "DERIVED"
-    },
-    "D_SHARED_EXTRAS": {
-      "symbol": "D_{shared}",
-      "name": "Shared Extra Dimensions",
-      "value": 2,
-      "units": "dimensionless",
-      "description": "Extra dimensions for KK graviton propagation",
-      "status": "DERIVED"
-    },
-    "SIGNATURE_INITIAL": {
-      "symbol": "Σ_{init}",
-      "name": "Initial Bulk Signature",
-      "value": [24, 2],
-      "units": "dimensionless",
-      "description": "24 spacelike + 2 timelike dimensions (two-time physics)",
-      "status": "DERIVED"
-    },
-    "SIGNATURE_BULK": {
-      "symbol": "Σ_{bulk}",
-      "name": "Shadow Spacetime Signature",
-      "value": [12, 1],
-      "units": "dimensionless",
-      "description": "12 spacelike + 1 timelike after Sp(2,R) gauge fixing",
-      "status": "DERIVED"
-    }
+    "D_BULK": 26,
+    "D_AFTER_SP2R": 13,
+    "D_INTERNAL": 7,
+    "D_EFFECTIVE": 6,
+    "D_COMMON": 4,
+    "D_SHARED_EXTRAS": 2,
+    "SIGNATURE_INITIAL": [
+      24,
+      2
+    ],
+    "SIGNATURE_BULK": [
+      12,
+      1
+    ]
   },
   "topology": {
-    "CHI_EFF": {
-      "symbol": "χ_{eff}",
-      "name": "Effective Euler Characteristic",
-      "value": 144,
-      "units": "dimensionless",
-      "description": "Topological invariant of G₂ manifold determining generation structure",
-      "derivation": "χ_eff = 2(h₁₁ - h₂₁ + h₃₁) = 2(4 - 0 + 68) = 144",
-      "source": "TCS G₂ manifold #187",
-      "status": "DERIVED"
-    },
-    "B2": {
-      "symbol": "b₂",
-      "name": "Second Betti Number",
-      "value": 4,
-      "units": "dimensionless",
-      "description": "Number of 2-cycles in G₂ manifold",
-      "derivation": "From TCS construction using semi-Fano 3-folds",
-      "status": "DERIVED"
-    },
-    "B3": {
-      "symbol": "b₃",
-      "name": "Third Betti Number",
-      "value": 24,
-      "units": "dimensionless",
-      "description": "Number of 3-cycles determining flux quantization",
-      "derivation": "b₃ = 24 from associative 3-cycles",
-      "status": "DERIVED"
-    },
-    "n_flux": {
-      "symbol": "N_{flux}",
-      "name": "Flux Quantum Number",
-      "value": 24.0,
-      "units": "dimensionless",
-      "description": "Integer flux through 3-cycles",
-      "derivation": "N_flux = b₃ = 24",
-      "status": "DERIVED"
-    },
-    "HODGE_H11": {
-      "symbol": "h^{1,1}",
-      "name": "Hodge Number h¹¹",
-      "value": 4,
-      "units": "dimensionless",
-      "description": "Kähler moduli count",
-      "status": "DERIVED"
-    },
-    "HODGE_H21": {
-      "symbol": "h^{2,1}",
-      "name": "Hodge Number h²¹",
-      "value": 0,
-      "units": "dimensionless",
-      "description": "Complex structure moduli count",
-      "status": "DERIVED"
-    },
-    "HODGE_H31": {
-      "symbol": "h^{3,1}",
-      "name": "Hodge Number h³¹",
-      "value": 68,
-      "units": "dimensionless",
-      "description": "Higher form moduli",
-      "status": "DERIVED"
-    },
-    "n_gen": {
-      "symbol": "n_{gen}",
-      "name": "Number of Fermion Generations",
-      "value": 3,
-      "units": "dimensionless",
-      "description": "SM fermion family count from G₂ topology",
-      "derivation": "n_gen = |χ_eff|/48 = 144/48 = 3",
-      "status": "DERIVED"
-    }
+    "CHI_EFF": 144,
+    "B2": 4,
+    "B3": 24,
+    "n_flux": 24.0,
+    "HODGE_H11": 4,
+    "HODGE_H21": 0,
+    "HODGE_H31": 68,
+    "n_gen": 3,
+    "chi_eff_computed": 144
   },
   "dark_energy": {
-    "w0": {
-      "symbol": "w₀",
-      "name": "Dark Energy Equation of State",
-      "value": -0.8528,
-      "units": "dimensionless",
-      "description": "Present-day dark energy EoS from thermal time mechanism",
-      "derivation": "w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528",
-      "experimentalValue": -0.83,
-      "experimentalUncertainty": 0.06,
-      "agreementSigma": 0.38,
-      "source": "DESI DR2 (2024)",
-      "status": "DERIVED"
-    },
-    "wa": {
-      "symbol": "wₐ",
-      "name": "Dark Energy Evolution Parameter",
-      "value": -0.95,
-      "units": "dimensionless",
-      "description": "CPL parametrization slope w(a) = w₀ + wₐ(1-a)",
-      "derivation": "From two-time thermal flow structure",
-      "experimentalValue": -0.75,
-      "experimentalUncertainty": 0.30,
-      "agreementSigma": 0.66,
-      "source": "DESI DR2 (2024)",
-      "status": "PREDICTED"
-    },
-    "d_eff": {
-      "symbol": "d_{eff}",
-      "name": "Effective Dimension Parameter",
-      "value": 12.576,
-      "units": "dimensionless",
-      "description": "Effective dimension with ghost corrections",
-      "derivation": "d_eff = 12 + γ(shadow_kuf + shadow_chet) = 12.576",
-      "status": "DERIVED"
-    },
-    "alpha_T": {
-      "symbol": "α_T",
-      "name": "Thermal Coupling Constant",
-      "value": 2.7,
-      "units": "dimensionless",
-      "description": "Tomita-Takesaki thermal exponent from Pneuma entropy",
-      "derivation": "From KMS condition on thermal state",
-      "status": "DERIVED"
-    }
+    "w0": -0.8528,
+    "wa": -0.75,
+    "d_eff": 12.576
   },
   "gauge": {
-    "ALPHA_GUT": {
-      "symbol": "α_{GUT}",
-      "name": "GUT Fine Structure Constant",
-      "value": 0.04248,
-      "units": "dimensionless",
-      "description": "Unified gauge coupling at M_GUT",
-      "derivation": "α_GUT = 1/b₃ = 1/23.54 from flux quantization",
-      "experimentalValue": 0.0412,
-      "experimentalUncertainty": 0.0015,
-      "agreementSigma": 0.85,
-      "source": "PDG 2024 (3-loop RGE extrapolation)",
-      "status": "DERIVED"
-    },
-    "ALPHA_GUT_INV": {
-      "symbol": "α_{GUT}^{-1}",
-      "name": "Inverse GUT Coupling",
-      "value": 23.54,
-      "units": "dimensionless",
-      "description": "Inverse of unified gauge coupling",
-      "derivation": "α_GUT^{-1} = b₃ - 1/2 = 24 - 0.46 = 23.54",
-      "status": "DERIVED"
-    },
-    "M_GUT": {
-      "symbol": "M_{GUT}",
-      "name": "Grand Unification Scale",
-      "value": 2.118e16,
-      "units": "GeV",
-      "oom": 16.33,
-      "description": "Energy scale of gauge coupling unification",
-      "derivation": "M_GUT = M_Pl × exp(-2π/N_flux) from moduli stabilization",
-      "experimentalBound": 1.0e16,
-      "boundType": "lower",
-      "source": "Super-Kamiokande (proton decay limits)",
-      "status": "DERIVED"
-    },
-    "WEAK_MIXING_ANGLE": {
-      "symbol": "sin²θ_W",
-      "name": "Weak Mixing Angle",
-      "value": 0.23121,
-      "units": "dimensionless",
-      "description": "Electroweak mixing at M_Z scale",
-      "derivation": "From SO(10) breaking: sin²θ_W = 3/8 at GUT, RG-evolved to 0.23121",
-      "experimentalValue": 0.23122,
-      "experimentalUncertainty": 0.00003,
-      "agreementSigma": 0.03,
-      "source": "PDG 2024",
-      "status": "DERIVED"
-    }
+    "ALPHA_GUT": 0.04248088360237893,
+    "ALPHA_GUT_INV": 23.54,
+    "M_GUT": 2.118e+16,
+    "WEAK_MIXING_ANGLE": 0.23121
   },
   "proton_decay": {
-    "tau_p_years": {
-      "symbol": "τ_p",
-      "name": "Proton Lifetime",
-      "value": 8.148e34,
-      "units": "years",
-      "oom": 34.91,
-      "description": "Predicted proton lifetime in p → e⁺π⁰ channel",
-      "derivation": "τ_p = (M_GUT⁴/m_p⁵) × geometric_suppression",
-      "experimentalBound": 2.4e34,
-      "boundType": "lower_90CL",
-      "source": "Super-Kamiokande (2020)",
-      "status": "PREDICTED"
-    },
-    "SUPER_K_BOUND": {
-      "symbol": "τ_p^{SK}",
-      "name": "Super-K Proton Decay Bound",
-      "value": 1.67e34,
-      "units": "years",
-      "description": "Current experimental 90% CL lower limit",
-      "source": "Super-Kamiokande Collaboration",
-      "status": "EXPERIMENTAL"
-    },
-    "BR_epi0": {
-      "symbol": "BR(e⁺π⁰)",
-      "name": "Branching Ratio to e⁺π⁰",
-      "value": 0.25,
-      "units": "dimensionless",
-      "description": "Dominant proton decay channel branching fraction",
-      "derivation": "From SU(5) ⊂ SO(10) gauge boson exchange",
-      "status": "DERIVED"
-    },
-    "ratio_to_bound": {
-      "symbol": "τ_p/τ_{SK}",
-      "name": "Safety Factor",
-      "value": 4.88,
-      "units": "dimensionless",
-      "description": "Predicted lifetime exceeds current bound by 4.88×",
-      "status": "DERIVED"
-    }
+    "tau_p_years": 8.148411206224199e+34,
+    "SUPER_K_BOUND": 1.67e+34,
+    "BR_epi0": 0.25,
+    "ratio_to_bound": 4.87928814743964
   },
   "neutrino": {
     "pmns_angles": {
       "theta_12": {
-        "symbol": "θ₁₂",
-        "name": "Solar Mixing Angle",
         "predicted": 33.59,
         "predicted_error": 1.18,
         "experimental": 33.41,
         "experimental_error": 0.75,
         "units": "degrees",
-        "derivation": "From tri-bimaximal + G₂ perturbation",
+        "derivation": "From tri-bimaximal + G\u2082 perturbation",
         "source": "NuFIT 6.0 (2024)",
-        "agreementSigma": 0.15,
         "status": "DERIVED"
       },
       "theta_23": {
-        "symbol": "θ₂₃",
-        "name": "Atmospheric Mixing Angle",
         "predicted": 45.0,
         "predicted_error": 0.8,
         "experimental": 45.0,
@@ -309,53 +64,40 @@
         "units": "degrees",
         "derivation": "From shadow_kuf = shadow_chet (maximal mixing)",
         "source": "NuFIT 6.0 (2024)",
-        "agreementSigma": 0.0,
         "status": "DERIVED"
       },
       "theta_13": {
-        "symbol": "θ₁₃",
-        "name": "Reactor Mixing Angle",
         "predicted": 8.57,
         "predicted_error": 0.35,
         "experimental": 8.54,
         "experimental_error": 0.12,
         "units": "degrees",
-        "derivation": "From G₂ cycle asymmetry",
+        "derivation": "From G\u2082 cycle asymmetry",
         "source": "NuFIT 6.0 (2024)",
-        "agreementSigma": 0.08,
         "status": "DERIVED"
       },
       "delta_cp": {
-        "symbol": "δ_{CP}",
-        "name": "CP Violating Phase",
         "predicted": 235.0,
         "predicted_error": 27.4,
         "experimental": 194.0,
         "experimental_error": 25.0,
         "units": "degrees",
-        "derivation": "From CP phase of G₂ cycle overlaps",
+        "derivation": "From CP phase of G\u2082 cycle overlaps",
         "source": "NuFIT 6.0 (2024)",
-        "agreementSigma": 1.11,
         "status": "DERIVED"
       }
     },
     "mass_splittings": {
       "delta_m21_sq": {
-        "symbol": "Δm²₂₁",
-        "name": "Solar Mass Splitting",
         "value": 7.5e-05,
-        "units": "eV²",
+        "units": "eV\u00b2",
         "description": "Solar neutrino oscillation mass splitting",
-        "source": "NuFIT 6.0 (2024)",
         "status": "INPUT"
       },
       "delta_m31_sq": {
-        "symbol": "Δm²₃₁",
-        "name": "Atmospheric Mass Splitting",
         "value": 0.0025,
-        "units": "eV²",
+        "units": "eV\u00b2",
         "description": "Atmospheric neutrino oscillation mass splitting",
-        "source": "NuFIT 6.0 (2024)",
         "status": "INPUT"
       }
     },
@@ -372,11 +114,9 @@
       "source_version": "NuFIT 6.0 (2024)"
     },
     "seesaw": {
-      "symbol": "M_R",
-      "name": "Right-Handed Neutrino Mass",
-      "m_rh_neutrino": 1e14,
+      "m_rh_neutrino": 100000000000000.0,
       "units": "GeV",
-      "description": "Right-handed Majorana neutrino mass for seesaw mechanism"
+      "description": "Right-handed Majorana neutrino mass"
     }
   },
   "pmns": {
@@ -386,145 +126,40 @@
     "delta_CP": 235.0
   },
   "kk_spectrum": {
-    "m1_TeV": {
-      "symbol": "m₁",
-      "name": "First KK Graviton Mass",
-      "value": 5.0,
-      "units": "TeV",
-      "uncertainty": 1.5,
-      "description": "Lightest Kaluza-Klein graviton mode",
-      "derivation": "m₁ = 1/R_c from compactification radius",
-      "status": "PREDICTED",
-      "testable": "HL-LHC 2027-2030 (6.2σ expected)"
-    },
-    "uncertainty_TeV": {
-      "value": 1.5,
-      "units": "TeV",
-      "confidenceLevel": "95%"
-    },
-    "LHC_BOUND_TEV": {
-      "symbol": "m_{excl}",
-      "name": "LHC Exclusion Bound",
-      "value": 3.5,
-      "units": "TeV",
-      "source": "ATLAS/CMS 2024",
-      "status": "EXPERIMENTAL"
-    }
-  },
-  "higgs": {
-    "m_H": {
-      "symbol": "m_h",
-      "name": "Higgs Boson Mass",
-      "value": 125.10,
-      "units": "GeV",
-      "experimentalValue": 125.10,
-      "experimentalUncertainty": 0.14,
-      "description": "LHC-measured Higgs mass (input, not prediction)",
-      "source": "PDG 2024",
-      "status": "INPUT"
-    },
-    "v_EW": {
-      "symbol": "v",
-      "name": "Electroweak VEV",
-      "value": 246.0,
-      "units": "GeV",
-      "description": "Higgs vacuum expectation value",
-      "derivation": "v = √(2M_W²/g²) from Fermi constant",
-      "status": "INPUT"
-    }
+    "m1_TeV": 5.0,
+    "uncertainty_TeV": 1.5,
+    "LHC_BOUND_TEV": 3.5
   },
   "pneuma": {
-    "VEV": {
-      "symbol": "⟨Ψ_P⟩",
-      "name": "Pneuma Field VEV",
-      "value": 1.0756,
-      "units": "dimensionless",
-      "description": "Pneuma condensate from racetrack superpotential minimum",
-      "derivation": "⟨Ψ_P⟩ = ln(Aa/Bb)/(a-b) with a=2π/24, b=2π/25",
-      "status": "DERIVED"
-    }
+    "VEV": 6.336
   },
   "xy_bosons": {
-    "M_X": {
-      "symbol": "M_X",
-      "name": "X Boson Mass",
-      "value": 2.118e16,
-      "units": "GeV",
-      "description": "SO(10) leptoquark gauge boson mass",
-      "status": "DERIVED"
-    },
-    "M_Y": {
-      "symbol": "M_Y",
-      "name": "Y Boson Mass",
-      "value": 2.118e16,
-      "units": "GeV",
-      "description": "SO(10) diquark gauge boson mass",
-      "status": "DERIVED"
-    }
+    "M_X": 2.118e+16,
+    "M_Y": 2.118e+16
   },
   "mirror_sector": {
     "temperature_ratio": {
-      "symbol": "T'/T",
-      "name": "Mirror Temperature Ratio",
       "value": 0.57,
-      "units": "dimensionless",
-      "description": "Mirror sector temperature relative to observable",
-      "derivation": "T'/T = (b₂/b₃)^{1/4} = (4/24)^{1/4} = 0.57",
-      "source": "TCS G₂ manifold #187 Betti numbers",
-      "status": "DERIVED"
+      "description": "Mirror sector temperature ratio from G\u2082 topology",
+      "derivation": "T'/T = (b\u2082/b\u2083)^{1/4} = (4/24)^{1/4} = 0.57",
+      "source": "TCS G\u2082 manifold #187 Betti numbers"
     },
     "dm_baryon_ratio": {
-      "symbol": "Ω_DM/Ω_b",
-      "name": "Dark Matter to Baryon Ratio",
       "predicted": 5.8,
       "observed": 5.4,
       "observed_uncertainty": 0.15,
       "deviation_percent": 7.9,
-      "agreementSigma": 0.7,
-      "derivation": "Ω_DM/Ω_b = (T/T')³ = (1/0.57)³ = 5.8",
+      "sigma_agreement": 0.7,
       "status": "GEOMETRIC PREDICTION",
       "source": "Planck 2018 (arXiv:1807.06209)"
     },
     "modulation_width": {
-      "symbol": "σ_mod",
-      "name": "Modulation Width",
       "value": 0.25,
-      "units": "dimensionless",
-      "description": "Geometric width from G₂ cycle overlap",
-      "status": "DERIVED"
+      "description": "Geometric width from G\u2082 cycle overlap"
     },
     "multi_sector": {
-      "n_sectors": {
-        "symbol": "N_sec",
-        "name": "Number of Sectors",
-        "value": 4,
-        "description": "1 observable + 3 shadow branes"
-      },
-      "gravity_dilution": {
-        "symbol": "f_g",
-        "name": "Gravity Dilution Factor",
-        "value": 0.25,
-        "derivation": "f_g = 1/N_sectors = 1/4"
-      }
-    }
-  },
-  "mass_scales": {
-    "M_PLANCK": {
-      "symbol": "M_{Pl}",
-      "name": "Reduced Planck Mass",
-      "value": 2.435e18,
-      "units": "GeV",
-      "description": "M_Pl = √(ℏc/8πG)",
-      "status": "INPUT"
-    },
-    "M_STAR": {
-      "symbol": "M_*",
-      "name": "13D Fundamental Scale",
-      "value": 7.46e15,
-      "units": "GeV",
-      "description": "13D bulk string scale",
-      "derivation": "M_* = (M_Pl²/V_9)^{1/11}",
-      "status": "DERIVED"
+      "n_sectors": 4,
+      "gravity_dilution": 0.25
     }
   }
 }
