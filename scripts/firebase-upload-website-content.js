@@ -232,8 +232,6 @@ function getHtmlPages() {
     'beginners-guide.html',
     'philosophical-implications.html',
     'visualization-index.html',
-    'ancient-numerology.html',
-    'proverbs-31-wife-of-noble-character.html',
     'appendices_content.html'
   ];
 

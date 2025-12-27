@@ -73,8 +73,6 @@ The script processes ALL HTML files in these directories:
 - `beginners-guide.html`
 - `philosophical-implications.html`
 - `visualization-index.html`
-- `ancient-numerology.html`
-- `proverbs-31-wife-of-noble-character.html`
 - `appendices_content.html`
 
 ### Sections (17 files)
