@@ -109,14 +109,6 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
         }
         save_json(output_dir / 'sections.json', sections_data)
 
-    # 8. Paper sections (for paper.html - legacy)
-    if 'paper_sections' in data:
-        paper_data = {
-            'version': data.get('version', '16.0'),
-            'paper_sections': data['paper_sections']
-        }
-        save_json(output_dir / 'paper_sections.json', paper_data)
-
     # 8. Create index file listing all components
     index = {
         'version': data.get('version', '16.0'),
@@ -127,8 +119,8 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
             {'name': 'statistics', 'file': 'statistics.json', 'description': 'Framework statistics'},
             {'name': 'simulations', 'file': 'simulations.json', 'description': 'Simulation results'},
             {'name': 'metadata', 'file': 'metadata.json', 'description': 'Version and validation'},
-            {'name': 'paper_sections', 'file': 'paper_sections.json', 'description': 'Paper content'},
-            {'name': 'sections', 'file': 'sections/', 'description': 'Individual section files'}
+            {'name': 'sections', 'file': 'sections.json', 'description': 'All sections bundled'},
+            {'name': 'sections_individual', 'file': 'sections/', 'description': 'Individual section files (lazy load)'}
         ],
         'sections_dir': 'sections/',
         'cache_strategy': {
