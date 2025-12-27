@@ -34,6 +34,26 @@ References:
 - V12_4_MGUT_GAUGE_APPROACH.md: Detailed theoretical report
 
 DEPENDENCIES: numpy, scipy, matplotlib
+
+# =============================================================================
+# Bi-directional Links
+# =============================================================================
+# IMPLEMENTS: gut-unification, gut-coupling
+# READS:
+#   - gauge/alpha_1_MZ: U(1)_Y coupling at M_Z (1/59.0)
+#   - gauge/alpha_2_MZ: SU(2)_L coupling at M_Z (1/29.6)
+#   - gauge/alpha_3_MZ: SU(3)_c coupling at M_Z (0.1179)
+#   - geometry/h_11: Kähler moduli count (24)
+#   - energy_scales/M_star: KK tower scale (5 TeV)
+# WRITES:
+#   - simulations/gauge_unification/M_GUT: GUT scale (GeV)
+#   - simulations/gauge_unification/alpha_GUT_inv: Unified coupling^-1
+#   - simulations/gauge_unification/precision_percent: Unification quality (%)
+# VALIDATES:
+#   - M_GUT ≈ 2.118×10^16 GeV (within 5% of torsion approach)
+#   - alpha_GUT^-1 ≈ 23.54 (SO(10) + G₂ geometry)
+#   - Unification precision < 1% (coupling spread)
+# =============================================================================
 """
 
 import numpy as np

@@ -210,6 +210,61 @@ SECTION_METADATA = {
             "kk_spectrum.LHC_BOUND_TEV",
             "neutrino.mass_spectrum.sum_m_nu"
         ]
+    },
+    "7": {  # Conclusion (from section-7.json)
+        "order": 7,
+        "category": "framework",
+        "description": "Comprehensive summary of results, predictions, and future research",
+        "formulaRefs": [
+            "generation-number",
+            "gut-scale",
+            "proton-lifetime",
+            "dark-energy-w0",
+            "kk-graviton-mass"
+        ],
+        "paramRefs": [
+            "topology.CHI_EFF",
+            "topology.n_gen",
+            "gauge.M_GUT",
+            "dark_energy.w0",
+            "dark_energy.wa"
+        ]
+    },
+    "8": {  # Predictions and Testability
+        "order": 8,
+        "category": "predictions",
+        "description": "Summary of 58 parameters and testable predictions for experiments",
+        "formulaRefs": [
+            "generation-number",
+            "kk-graviton-mass",
+            "proton-lifetime",
+            "dark-energy-eos",
+            "dark-energy-w0",
+            "dark-energy-wa"
+        ],
+        "paramRefs": [
+            "topology.n_gen",
+            "simulations.kk_graviton.m_KK_TeV",
+            "simulations.proton_decay.tau_p_years",
+            "parameters.dark_energy.w0",
+            "parameters.dark_energy.wa"
+        ]
+    },
+    "9": {  # Discussion and Transparency
+        "order": 9,
+        "category": "framework",
+        "description": "Input summary, model comparison, SUSY, limitations and future work",
+        "formulaRefs": [
+            "generation-number",
+            "susy-breaking-scale",
+            "inflation-spectral-index",
+            "gut-scale"
+        ],
+        "paramRefs": [
+            "parameters.gauge.M_GUT",
+            "simulations.higgs_mass.m_h_GeV",
+            "topology.n_gen"
+        ]
     }
 }
 

@@ -56,8 +56,11 @@ def merge_section_content(existing: Dict[str, Any], detailed: Dict[str, Any]) ->
     ref_fields = ['formulaRefs', 'paramRefs', 'crossRefs']
     for field in ref_fields:
         if field in detailed:
-            existing_refs = set(existing.get(field, []) if isinstance(existing.get(field), list) else [])
-            new_refs = detailed[field] if isinstance(detailed[field], list) else []
+            # Extract string refs only, skip dicts
+            existing_list = existing.get(field, []) if isinstance(existing.get(field), list) else []
+            existing_refs = set(r for r in existing_list if isinstance(r, str))
+            new_list = detailed[field] if isinstance(detailed[field], list) else []
+            new_refs = [r for r in new_list if isinstance(r, str)]
             merged[field] = list(existing_refs.union(set(new_refs)))
 
     # Handle crossRefs as object
@@ -142,13 +145,13 @@ def validate_sections(theory: Dict[str, Any]) -> List[str]:
     issues = []
     sections = theory.get('sections', {})
 
-    # Check main sections 1-7 exist
-    for i in range(1, 8):
+    # Check main sections 1-9 exist
+    for i in range(1, 10):
         if str(i) not in sections:
             issues.append(f"Missing main section {i}")
 
-    # Check appendices A-L exist
-    for letter in 'ABCDEFGHIJKL':
+    # Check appendices A-N exist
+    for letter in 'ABCDEFGHIJKLMN':
         if letter not in sections:
             issues.append(f"Missing appendix {letter}")
 

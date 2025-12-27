@@ -18,6 +18,23 @@ This makes BR(e+pi0) = 0.25 a pure geometric prediction (no calibration).
 Expected test: Hyper-K will measure branching ratios if proton decay is observed.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+# =============================================================================
+# Bi-directional Links
+# =============================================================================
+# IMPLEMENTS: proton-decay-branching-ratio
+# READS:
+#   - geometry/b3: Third Betti number (24 associative 3-cycles)
+#   - geometry/shadow_spatial_dims: Shadow spacetime dimensions (12 spatial)
+#   - topology/orientation_sum: Number of cycles oriented toward e+ channel (12)
+# WRITES:
+#   - simulations/proton_decay/br_e_pi0: Branching ratio p -> e+ + pi0
+#   - simulations/proton_decay/br_mu_pi0: Branching ratio p -> mu+ + pi0
+# VALIDATES:
+#   - BR(e+pi0) = 0.25 (geometric prediction, testable by Hyper-K)
+#   - Sum of branching ratios = 1.0
+#   - Consistency with b3=24 cycle structure
+# =============================================================================
 """
 
 import numpy as np

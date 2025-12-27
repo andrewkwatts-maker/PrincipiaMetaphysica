@@ -27,6 +27,28 @@ References:
 
 Author: Principia Metaphysica v12.4 Development
 Date: 2025-12-07
+
+# =============================================================================
+# Bi-directional Links
+# =============================================================================
+# IMPLEMENTS: higgs-mass, higgs-quartic-coupling
+# READS:
+#   - geometry/b3: Third Betti number (24 associative 3-cycles)
+#   - geometry/chi_eff: Effective Euler characteristic (144)
+#   - geometry/T_omega: Torsion class (-0.884)
+#   - moduli/Re_T: Complex structure modulus real part (1.833 or 7.086)
+#   - yukawa/y_top: Top quark Yukawa coupling (0.99)
+#   - higgs/v_GeV: Higgs VEV (174 GeV)
+# WRITES:
+#   - simulations/higgs_mass/m_h_GeV: Higgs mass (125.1 GeV)
+#   - simulations/higgs_mass/Re_T_modulus: Stabilized modulus value
+#   - simulations/higgs_mass/lambda_quartic: Higgs quartic coupling
+#   - simulations/higgs_mass/mechanism: Moduli stabilization method
+# VALIDATES:
+#   - m_h = 125.1 ± 0.1 GeV (PDG 2024 experimental value)
+#   - Re(T) from attractor mechanism or Higgs mass inversion
+#   - Quartic coupling consistency with RG running
+# =============================================================================
 """
 
 import numpy as np

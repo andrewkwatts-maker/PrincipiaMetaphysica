@@ -1,0 +1,105 @@
+{
+  "id": "8",
+  "title": "Predictions and Testability",
+  "sectionType": "section",
+  "parentId": "",
+  "abstract": "This section summarizes the 58 Standard Model parameters derived from the PM framework and presents key testable predictions. The framework makes specific, falsifiable predictions for upcoming experiments including JUNO (neutrino hierarchy), HL-LHC (KK graviton at 5 TeV), Hyper-K (proton decay), and LISA (gravitational wave dispersion).",
+  "contentBlocks": [
+    {
+      "type": "paragraph",
+      "text": "The PM framework derives all Standard Model parameters from a single TCS G2 manifold with one constraint (Higgs mass fixes Re(T) = 7.086). This section summarizes the parameter derivations and presents testable predictions.",
+      "className": "lead"
+    }
+  ],
+  "subsections": [
+    {
+      "id": "8.1",
+      "title": "Summary of 58 Parameters",
+      "contentBlocks": [
+        {
+          "type": "table",
+          "headers": ["Category", "Parameters", "Status"],
+          "rows": [
+            ["Topology", "$n_{\\text{gen}}$, $\\chi_{\\text{eff}}$, $b_2$, $b_3$", "Derived (exact)"],
+            ["Gauge", "$M_{\\text{GUT}}$, $\\alpha_{\\text{GUT}}$, $\\sin^2\\theta_W$", "Derived"],
+            ["PMNS", "$\\theta_{23}$, $\\theta_{12}$, $\\theta_{13}$, $\\delta_{CP}$", "2 derived, 2 calibrated"],
+            ["Dark Energy", "$w_0$, $w_a$, $d_{\\text{eff}}$", "Derived"],
+            ["Masses", "All quarks, leptons, Higgs", "Derived + 1 constraint"]
+          ],
+          "caption": "Summary of PM Framework Parameter Categories"
+        }
+      ]
+    },
+    {
+      "id": "8.2",
+      "title": "Testable Predictions",
+      "contentBlocks": [
+        {
+          "type": "table",
+          "headers": ["Prediction", "Value", "Experiment", "Timeline"],
+          "rows": [
+            ["Normal Hierarchy", "76% confidence", "JUNO", "2027"],
+            ["KK graviton", "$m_1 = 5.0$ TeV", "HL-LHC", "2029+"],
+            ["Proton decay", "$\\tau_p = 8.15 \\times 10^{34}$ yr", "Hyper-K", "2032-2038"],
+            ["BR$(p\\to e^+\\pi^0)$", "0.25", "Hyper-K", "2035+"],
+            ["GW dispersion", "$\\eta \\approx 0.113$", "LISA", "2037+"],
+            ["$w(z)$ form", "Logarithmic", "Euclid", "2028+"]
+          ],
+          "caption": "Key Experimental Tests of PM Predictions"
+        },
+        {
+          "type": "derivation_box",
+          "title": "Derivation: KK Graviton Mass $m_{\\text{KK}} = 5.0$ TeV",
+          "content": [
+            {"step": 1, "text": "G2 compactification volume: $V_{G_2} = (\\text{Re}(T))^7 \\times \\ell_P^7$ where $\\ell_P = 1.6 \\times 10^{-35}$ m"},
+            {"step": 2, "text": "Modulus from Higgs constraint: $\\text{Re}(T) = 7.086$"},
+            {"step": 3, "text": "Compactification radius: $R_c = V_{G_2}^{1/7} = 7.086 \\times \\ell_P \\approx 1.1 \\times 10^{-34}$ m"},
+            {"step": 4, "text": "First KK mode mass: $m_{\\text{KK},1} = \\frac{\\hbar c}{R_c}$"},
+            {"step": 5, "text": "Result: $m_{\\text{KK},1} \\approx 5.0$ TeV (within HL-LHC reach)"}
+          ],
+          "note": "Signature at HL-LHC: Missing transverse energy + dijets from $pp \\to G^{(1)} \\to \\gamma\\gamma, ZZ, W^+W^-$"
+        }
+      ]
+    },
+    {
+      "id": "8.3",
+      "title": "Hidden Sector Particles",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "text": "The Z2 mirror symmetry and shadow brane structure predict a hidden sector of particles that couple weakly to Standard Model fields."
+        },
+        {
+          "type": "table",
+          "headers": ["Particle", "Mass Range", "Coupling to SM", "Signature"],
+          "rows": [
+            ["Shadow photon $\\gamma'$", "~keV-MeV", "Kinetic mixing $\\epsilon \\sim 10^{-4}$", "Mono-photon + MET"],
+            ["Shadow Z boson $Z'$", "~1-10 TeV", "$g' \\sim g_Z \\cdot 10^{-2}$", "Dilepton resonance"],
+            ["Pneuma axion $a$", "$f_a \\sim 10^{12}$ GeV", "$g_{a\\gamma\\gamma} \\sim \\alpha/(2\\pi f_a)$", "ADMX, light shining through wall"],
+            ["Shadow fermions", "~100 GeV - 1 TeV", "Gravitational + Higgs portal", "Dark matter candidates"]
+          ],
+          "caption": "Hidden Sector Particles from Z2 Mirror Symmetry"
+        },
+        {
+          "type": "derivation_box",
+          "title": "Dark Matter Candidate: Shadow Fermion",
+          "content": [
+            {"step": 1, "text": "Mass: $m_{\\chi_0} \\sim v_{\\text{shadow}} / \\sqrt{2} \\approx 100-500$ GeV (shadow EW breaking)"},
+            {"step": 2, "text": "Relic density: $\\Omega_\\chi h^2 \\sim 0.12$ (matches Planck) via thermal freeze-out"},
+            {"step": 3, "text": "Direct detection: $\\sigma_{SI} \\sim 10^{-47}$ cm$^2$ (Higgs portal, below current limits)"},
+            {"step": 4, "text": "Indirect: $\\chi\\chi \\to W'W', Z'Z' \\to$ SM (cascade annihilation)"}
+          ],
+          "note": "The Z2 mirror sector provides a WIMP dark matter candidate without requiring additional fields."
+        }
+      ]
+    }
+  ],
+  "formulaRefs": ["generation-number", "kk-graviton-mass", "proton-lifetime", "dark-energy-eos", "dark-energy-w0", "dark-energy-wa"],
+  "paramRefs": ["topology.n_gen", "simulations.kk_graviton.m_KK_TeV", "simulations.proton_decay.tau_p_years", "parameters.dark_energy.w0", "parameters.dark_energy.wa"],
+  "figureRefs": [],
+  "citationRefs": [],
+  "navigation": {
+    "prevSection": "7",
+    "nextSection": "9"
+  }
+}
