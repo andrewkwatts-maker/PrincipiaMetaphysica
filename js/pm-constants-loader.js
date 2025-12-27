@@ -329,6 +329,7 @@
     const CACHE_CONFIG = {
         parameters: { ttl: 3600, storage: 'localStorage' },    // 1 hour
         formulas: { ttl: 3600, storage: 'localStorage' },      // 1 hour
+        sections: { ttl: 1800, storage: 'localStorage' },      // 30 minutes
         simulations: { ttl: 300, storage: 'sessionStorage' },  // 5 minutes
         statistics: { ttl: 300, storage: 'sessionStorage' },   // 5 minutes
         metadata: { ttl: 60, storage: 'sessionStorage' }       // 1 minute

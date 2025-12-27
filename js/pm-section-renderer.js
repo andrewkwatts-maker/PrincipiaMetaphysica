@@ -98,15 +98,16 @@ class PMSectionRenderer extends HTMLElement {
         const triedPaths = [];
 
         // ================================================================
-        // STRATEGY 1: Try loading from sections.json (newer format)
+        // STRATEGY 1: Try loading from sections.json (split component)
         // ================================================================
         for (const prefix of pathPrefixes) {
-            const path = prefix + 'json/sections.json';
+            const path = prefix + 'sections.json';
             triedPaths.push(path);
             try {
                 const response = await fetch(path);
                 if (response.ok) {
-                    const sections = await response.json();
+                    const data = await response.json();
+                    const sections = data.sections || data;
                     if (sections && sections[sectionId]) {
                         // Cache in window.PM
                         if (!window.PM) window.PM = {};

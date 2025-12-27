@@ -100,7 +100,16 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     }
     save_json(output_dir / 'metadata.json', metadata)
 
-    # 7. Paper sections (for paper.html)
+    # 7. Sections (for sections.html and paper.html)
+    if 'sections' in data:
+        sections_data = {
+            'version': data.get('version', '16.0'),
+            'count': len(data['sections']),
+            'sections': data['sections']
+        }
+        save_json(output_dir / 'sections.json', sections_data)
+
+    # 8. Paper sections (for paper.html - legacy)
     if 'paper_sections' in data:
         paper_data = {
             'version': data.get('version', '16.0'),
