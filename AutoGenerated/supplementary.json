@@ -1,0 +1,766 @@
+{
+  "version": "16.2",
+  "count": 3,
+  "items": {
+    "delta-lat-probes": {
+      "id": "supp-delta-lat",
+      "title": "Appendix E: Empirical Probes of Lattice Configuration Dispersion (δ lat )",
+      "shortTitle": "Empirical Probes of Lattice Configuration Dispersion (δ_lat)",
+      "category": "speculative",
+      "status": "SPECULATIVE",
+      "description": "Future experimental framework for testing microtubule-PM coupling",
+      "file": "sections/appendix-e-delta-lat-probes.html",
+      "relatedParams": [
+        "delta_lat",
+        "consciousness.coherence_time"
+      ],
+      "relatedFormulas": [
+        "pm-modulation",
+        "orch-or-collapse"
+      ],
+      "sections": [
+        {
+          "id": "introduction",
+          "title": "E.0 Introduction",
+          "paragraphs": [
+            "The lattice configuration dispersion parameter δ lat (main text) provides modest structural feedback, introducing bounded flexibility to the otherwise tightly constrained geometric cascade. While the core predictions of the theory hold at δ lat = 1.0 (pure geometric limit), δ lat ∈ [0.7, 1.5] restores essential \"looseness\" to the moduli/racetrack spinner, preventing over-constraining without undermining geometric predictivity.",
+            "Future experimental evidence will determine whether significant dispersion exists. The theory remains viable if δ lat = 1.0 exactly (no measurable feedback), but positive detection of structural modulation would confirm biological/geometric interplay. Investigations are warranted to guide this conclusion.",
+            "g eff = g geom × δ lat",
+            "where δ lat ∈ [0.7, 1.5], baseline = 1.0"
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": [
+            "Effective Coupling:",
+            "g eff = g geom × δ lat",
+            "where δ lat ∈ [0.7, 1.5], baseline = 1.0"
+          ]
+        },
+        {
+          "id": "cross-species",
+          "title": "E.1 Cross-Species Comparative Tests",
+          "paragraphs": [
+            "Higher predicted δ lat in complex species should correlate with enhanced microtubule-dependent responses, if dispersion is significant.",
+            "Prediction under δ lat > 1: Greater resistance in complex species (mammals > invertebrates > protozoa)."
+          ],
+          "listItems": [
+            "Compare anesthetic sensitivity across phylogeny (protozoa → invertebrates → vertebrates → mammals/primates).",
+            "Use microtubule-stabilizing agents (e.g., epothilone) and measure delay in loss of responsiveness."
+          ],
+          "tables": [
+            [
+              [
+                "Species Class",
+                "Predicted δ lat",
+                "Expected Anesthetic Resistance"
+              ],
+              [
+                "Protozoa",
+                "1.00",
+                "Baseline"
+              ],
+              [
+                "Cnidaria",
+                "1.05",
+                "+5%"
+              ],
+              [
+                "Insects",
+                "1.15",
+                "+15%"
+              ],
+              [
+                "Fish",
+                "1.20",
+                "+20%"
+              ],
+              [
+                "Reptiles",
+                "1.25",
+                "+25%"
+              ],
+              [
+                "Mammals",
+                "1.30",
+                "+30%"
+              ],
+              [
+                "Primates",
+                "1.38",
+                "+38%"
+              ],
+              [
+                "Humans",
+                "1.45",
+                "+45%"
+              ]
+            ]
+          ],
+          "equations": []
+        },
+        {
+          "id": "pharmacological",
+          "title": "E.2 Pharmacological and Genetic Modulation",
+          "paragraphs": [
+            "Direct manipulation of tubulin isoform expression provides controlled access to lattice variability.",
+            "Prediction: Reduced isoform diversity → lower effective δ lat → faster anesthetic onset, impaired behavioral flexibility."
+          ],
+          "listItems": [
+            "Knockdown/overexpress neuronal-specific isoforms (e.g., βIII-tubulin) in mammalian models.",
+            "Assess changes in anesthetic resistance, learning consolidation, or psychedelic sensitivity."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "quantum-sensing",
+          "title": "E.3 Quantum Sensing of Microtubule Coherence",
+          "paragraphs": [
+            "Advanced quantum sensors can probe superposition lifetime or collapse rates in biological samples directly.",
+            "Prediction: Longer coherence times in high-diversity (human/primate) samples would indicate elevated δ lat ."
+          ],
+          "listItems": [
+            "Use nitrogen-vacancy (NV) center probes or optically detected magnetic resonance (ODMR) to measure decoherence rates in isolated microtubules.",
+            "Compare samples from varied sources (species, genetically modified lines)."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "neural-quantum",
+          "title": "E.4 Hybrid Neural-Quantum Interfaces (Future)",
+          "paragraphs": [
+            "An implanted quantum device in close proximity to coherent microtubule networks could amplify any non-local orchestration effects, making δ lat measurable.",
+            "Prediction: Measurable effects (e.g., bias on random outcomes) only if δ lat deviates substantially from 1.0."
+          ],
+          "listItems": [
+            "Future neural-quantum interfaces (room-temperature quantum sensors or superconducting qubit arrays interfaced via advanced BCIs).",
+            "Test attention-dependent anomalies on implanted quantum sensors/qubits."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "indirect-estimation",
+          "title": "E.5 Indirect Estimation from Existing Data",
+          "paragraphs": [
+            "Existing literature on microtubule dynamics provides proxy data for estimating δ lat without new experiments.",
+            "Current estimate: Literature values suggest human neuronal microtubules exhibit ~40-50% greater conformational flexibility than ubiquitous isoforms → δ lat ≈ 1.0-1.5 in neuronal systems, consistent with theoretical predictions."
+          ],
+          "listItems": [
+            "Use known differences in dynamic instability parameters (polymerization rate, catastrophe frequency) across isoforms/species.",
+            "Map measured dynamic variability to effective superposition separation scaling."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "falsifiability",
+          "title": "E.6 Falsifiability and Guidance",
+          "paragraphs": [
+            "The framework provides clear falsification criteria:",
+            "Key principle: Evidence, not prior assumption, must determine the degree of spinner looseness available through structural embedding. The theory remains viable in either outcome."
+          ],
+          "listItems": [
+            "δ lat ≈ 1.0 favored if: No systematic correlation between lattice variability and threshold-related phenotypes across well-controlled species. This supports a purely geometric regime where the theory operates at perfect embedding.",
+            "δ lat > 1.0 indicated if: Positive correlations between tubulin diversity and anesthetic/psychedelic sensitivity, or measurable coherence differences across species.",
+            "Theory constrained if: Quantum sensing shows identical decoherence rates in microtubule samples despite large isoform differences, AND no attention-dependent anomalies in hybrid interfaces."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "conclusion",
+          "title": "E.7 Conclusion",
+          "paragraphs": [
+            "These experiments—spanning near-term pharmacological/comparative studies to far-future quantum-brain interfaces—offer clear pathways to empirically resolve the extent of lattice feedback while preserving the theory's core viability in either outcome.",
+            "The progressive increase in tubulin complexity across evolution offers a natural laboratory: if nature has indeed optimized δ lat toward higher values in cognitively advanced species, the experimental signatures outlined above should be detectable with current or near-future technology."
+          ],
+          "listItems": [
+            "Near-term (1-5 years): Cross-species anesthetic studies, tubulin knockdown experiments, indirect estimation from literature",
+            "Medium-term (5-10 years): NV-center quantum sensing in isolated microtubule samples",
+            "Long-term (10+ years): Hybrid neural-quantum interfaces with attention-dependent protocols"
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "references",
+          "title": "References",
+          "paragraphs": [],
+          "listItems": [
+            "Hameroff, S. & Penrose, R. (2014). Consciousness in the universe: A review of the 'Orch OR' theory. Physics of Life Reviews , 11(1), 39-78.",
+            "Craddock, T.J.A. et al. (2017). Anesthetic alterations of collective terahertz oscillations in tubulin correlate with clinical potency. Scientific Reports , 7, 9877.",
+            "Joyce, D. (2007). Riemannian Holonomy Groups and Calibrated Geometry . Oxford University Press.",
+            "PM v15.2: Microtubule-PM coupling framework.",
+            "PM v16.0: Lattice configuration dispersion analysis."
+          ],
+          "tables": [],
+          "equations": []
+        }
+      ],
+      "sectionCount": 9,
+      "wordCount": 379
+    },
+    "cmb-bubble-collisions": {
+      "id": "supp-cmb-bubble",
+      "title": "Section 7.7: Multiverse Bubble Collisions - From Fringe to Falsifiable",
+      "shortTitle": "CMB Bubble Collisions - Comprehensive Treatment",
+      "category": "speculative",
+      "status": "THEORETICAL",
+      "description": "Multiverse bubble collision signatures in CMB data",
+      "file": "sections/cmb-bubble-collisions-comprehensive.html",
+      "relatedParams": [
+        "bubble_nucleation_rate",
+        "eternal_inflation"
+      ],
+      "relatedFormulas": [
+        "cdl-tunneling",
+        "bubble-collision-rate"
+      ],
+      "sections": [
+        {
+          "id": "7-7-1-physics-foundation-quant",
+          "title": "7-7-1-physics-foundation-quant",
+          "paragraphs": [
+            "Fringe theories like the string landscape (~10 500 vacua from flux compactifications, proposed by Susskind to explain fine-tuning via anthropic selection) lack direct empirical tests. However, we can rigorize the tunneling mechanism (quantum jumps between metastable minima) using CDL bubble nucleation and derive falsifiable CMB signatures.",
+            "Connection to Two-Time Framework: In our D (13,1)+(13,1) framework, wave function delocalization in the moduli potential V(φ) leads to quantum tunneling between landscape minima. The two-time structure provides an enhanced tunneling rate via orthogonal temporal dynamics, potentially boosting Γ from cosmologically negligible (~10 -100 yr -1 Mpc -3 ) to testable levels (~10 -50 ) through reduced effective barriers."
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-7-2-mathematical-derivation-",
+          "title": "7-7-2-mathematical-derivation-",
+          "paragraphs": [
+            "Model the string landscape as a double-well potential (representative of ~10 500 minima):",
+            "Critical points: φ ± = ±√(m²/λ) (minima), φ = 0 (maximum) Barrier height: ΔV = m⁴/(4λ) Stability: Hessian d²V/dφ² = -m² + 3λφ² > 0 at minima",
+            "In quantum field theory, the tunneling probability is given by the semiclassical WKB approximation:",
+            "For thin-wall approximation: B ≈ (8π/3) r b ³ ΔV , where r b is the bubble radius from energy balance.",
+            "In curved spacetime, the bubble nucleation is described by an O(4)-symmetric instanton with metric ds² = dr² + ρ(r)² dΩ₃². The Euclidean action is:",
+            "Thin-wall limit solution:",
+            "where σ is the domain wall surface tension: σ ~ ∫ dφ √(2ΔV) ~ M Pl ³ for Planck-scale barriers, and ΔV = V false - V true is the vacuum energy difference."
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-7-3-cmb-cold-spot-statistics",
+          "title": "7-7-3-cmb-cold-spot-statistics",
+          "paragraphs": [
+            "To establish falsifiability, we derive the statistical distribution of CMB cold spots under two scenarios:",
+            "CMB temperature fluctuations δT/T follow a Gaussian random field on the celestial sphere, with power spectrum C l from ΛCDM. The probability of extreme cold spots follows Gumbel extreme value statistics :",
+            "where: • n = 3/(2πθ²) is the density of minima • A = 4π sr is the sky area • σ² ≈ 10 -5 (Planck measurement) • δ = -ΔT/T > 0 for cold spots",
+            "Implication: Rare 5σ cold spots have probability P ~ 10 -5 . The observed \"Cold Spot\" at ~3σ is marginally consistent with Gaussian statistics (not anomalous).",
+            "In eternal inflation with bubble nucleation, cold spots arise from disk-like temperature decrements due to collision walls. The curvature perturbation is:",
+            "leading to temperature deficit via Sachs-Wolfe effect:",
+            "Poisson Statistics: The number of bubble collision spots follows Poisson distribution:",
+            "where λ = N bubble · f sky , with N bubble = Γ V H / H⁴ (V H ~ (c/H₀)³ ~ 10¹⁰ Mpc³ is the Hubble volume).",
+            "Key rates: • Standard landscape: Γ ~ 10 -100 yr -1 Mpc -3 , giving λ ~ 10 -80 (undetectable) • Two-time boosting: reduced ΔV ~ 10⁶⁰ GeV⁴ gives S E ~ 100, yielding λ ~ 10 -3 (testable threshold)",
+            "Non-Gaussian Kurtosis: Disk-like spots contribute excess kurtosis:",
+            "For δ disk ~ 0.1 (10% temperature deficit) and σ ~ 3×10 -3 , the excess is ~ 3×10¹⁰, vastly exceeding Gaussian expectation (κ = 3)."
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-7-4-sympy-code-computational",
+          "title": "Code Block 1: CDL Tunneling Rate and Bubble Radius",
+          "paragraphs": [
+            "Output (Validated): • Symbolic: r b = 3σ/(4ΔV), S E = 27π²σ⁴/(2ΔV³), Γ = exp(-S E ) • Numerical (testable tuning): r b ~ 10²⁶ cm (Hubble scale), S E ~ 100, Γ ~ 10 -43 • This yields ~1 bubble collision per observable Hubble volume—falsifiable threshold for CMB-S4.",
+            "Output (Validated): • P(Gaussian rare spot) ~ 10 -5 for δ₀ = 5σ • P(1 bubble | λ = 10 -3 ) ~ 10 -3 (testable detection threshold) • Kurtosis: 3 + 3.7×10¹⁰ (non-Gaussian signal vastly exceeds CMB baseline)"
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-7-5-falsifiability-criteria-",
+          "title": "Experimental Tests and Timeline",
+          "paragraphs": [
+            "This prediction satisfies Popperian falsifiability through the following criteria:"
+          ],
+          "listItems": [
+            "Positive Detection (Supports Theory): Disk-like cold spots in CMB with angular size θ ~ 1-10°",
+            "Temperature decrement ΔT/T ~ -100 μK (10 -4 fractional)",
+            "Non-Gaussian kurtosis κ > 3 + 10⁹ (vastly exceeding Planck baseline)",
+            "Detection probability P > 10 -3 would indicate bubble nucleation rate boosted by two-time dynamics",
+            "Falsification (Refutes High-Γ Models): If CMB-S4 finds no cold spots with P > 10 -3 , refutes high tunneling rate scenarios",
+            "Constrains bubble nucleation: Γ / H⁴ -6 (no nucleation during observable epoch)",
+            "Would require ΔV > M Pl ⁴/10 (suppressing tunneling exponentially)",
+            "Does not falsify entire framework—only multiverse bubble collision component",
+            "Current Status: Planck \"Cold Spot\" anomaly: ~3σ significance (marginal, debated)",
+            "Supervoid explanations preferred (2017 study) but not conclusive",
+            "Awaiting CMB-S4 resolution: sensitivity ~1 μK arcmin -1 , resolving ~10 -6 non-Gaussianity"
+          ],
+          "tables": [
+            [
+              [
+                "Experiment",
+                "Timeline",
+                "Capability",
+                "Status"
+              ],
+              [
+                "Planck data re-analysis",
+                "Current",
+                "Search for disk-like cold spots with kurtosis > 5σ",
+                "Marginal 3σ anomaly detected"
+              ],
+              [
+                "CMB-S4",
+                "2027+",
+                "Definitive test: 1 μK arcmin -1 sensitivity",
+                "Primary falsification test"
+              ],
+              [
+                "LiteBIRD",
+                "2028+ launch",
+                "Polarization signatures from bubble walls (B-mode distortions)",
+                "Complementary"
+              ],
+              [
+                "Simons Observatory",
+                "Ongoing",
+                "Intermediate sensitivity; early constraints on f NL",
+                "Early bounds"
+              ],
+              [
+                "Lattice simulations",
+                "Current",
+                "Validate bubble growth in analog systems (superfluids, ferromagnets)",
+                "Confirmatory"
+              ]
+            ]
+          ],
+          "equations": []
+        },
+        {
+          "id": "7-7-6-connection-to-two-time-f",
+          "title": "7-7-6-connection-to-two-time-f",
+          "paragraphs": [
+            "The D two-time structure provides a unique enhancement to the tunneling rate via orthogonal temporal dynamics:",
+            "Speculative Status Note: These multiverse bubble collision predictions are significantly more speculative than our neutrino hierarchy (primary prediction) or dark energy w a = -0.75 (derived from thermal time). However, they demonstrate how the two-time framework provides a rare opportunity to test aspects of the string landscape paradigm with observational CMB data. The key virtue is falsifiability before measurement : we predict P > 10 -3 detection rate with CMB-S4 (2027+). If null result: theory survives but multiverse component constrained.",
+            "This section provides the rigorous mathematical foundation for the bubble nucleation predictions in §7.7, deriving the Coleman-De Luccia (CDL) instanton formulas from first principles in semiclassical quantum field theory."
+          ],
+          "listItems": [
+            "Barrier Reduction: Wave function spread in orthogonal time t ortho reduces the effective potential barrier by factor η Δt ortho (where η ~ M Pl ² is the coupling strength).",
+            "Enhanced Tunneling Rate: Standard landscape: Γ ~ exp(-M Pl ⁴/ΔV³) ~ 10 -100 yr -1 Mpc -3 (unobservable). Two-time boost: effective ΔV eff ~ ΔV / (1 + ηΔt ortho ) reduces S E from ~10²⁰⁰ to ~100, boosting Γ to ~10 -50 (testable via CMB).",
+            "Anthropic Constraint: Observable universe requires Γ < H⁴ for stability over cosmic time. Two-time dynamics sit precisely at this threshold—providing falsifiable prediction without fine-tuning.",
+            "Z₂ Symmetry Breaking: Domain wall tension σ ~ M Pl ³ arises from mirror sector symmetry breaking, connecting bubble nucleation to the fundamental (13,1)+(13,1) structure."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-8-1-path-integral-formulatio",
+          "title": "7-8-1-path-integral-formulatio",
+          "paragraphs": [
+            "In quantum field theory, the vacuum decay rate per unit four-volume is given by the path integral over field configurations in Euclidean spacetime:",
+            "where φ bounce is the \"bounce\" solution: a non-trivial field configuration that interpolates between the false vacuum (at Euclidean time τ → -∞) and returns to false vacuum (τ → +∞), with a \"bounce\" through field space at τ = 0.",
+            "For a scalar field φ coupled to gravity with potential V(φ), the Euclidean action is:",
+            "where g is the determinant of the metric, R is the Ricci scalar, and G is Newton's constant. For O(4)-symmetric solutions in de Sitter background, we use metric ansatz:",
+            "where ξ is the radial Euclidean coordinate and dΩ₃² is the metric on the unit 3-sphere."
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-8-2-thin-wall-approximation-",
+          "title": "7-8-2-thin-wall-approximation-",
+          "paragraphs": [
+            "When the potential barrier between false and true vacua is large compared to the vacuum energy difference (ΔV ≪ barrier height), the bubble wall is thin compared to its radius. In this limit:",
+            "Energy balance for bubble of radius r b :",
+            "Critical radius: dE/dr b = 0 gives:",
+            "Including gravitational corrections (O(4) geometry with de Sitter curvature H² = 8πGΔV/3):"
+          ],
+          "listItems": [
+            "The field φ transitions sharply from φ false to φ true over a thin shell",
+            "Surface tension: σ = ∫ dφ √(2[V(φ) - V false ]) (wall energy per unit area)",
+            "Bubble radius determined by balance of surface tension and volume energy gain"
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-8-3-euclidean-action-and-tun",
+          "title": "7-8-3-euclidean-action-and-tun",
+          "paragraphs": [
+            "Substituting the thin-wall solution into the Euclidean action and integrating over O(4) volume:",
+            "where ρ₀ is the O(4) \"radius\" ~ r b . Minimizing with respect to ρ₀ and substituting back:",
+            "This is the famous CDL result. The tunneling rate per unit four-volume is:",
+            "where A is a prefactor of order ΔV⁴ (dimensional analysis; exact value requires fluctuation determinant calculation)."
+          ],
+          "listItems": [],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-8-4-string-landscape-applica",
+          "title": "7-8-4-string-landscape-applica",
+          "paragraphs": [
+            "In Susskind's string landscape with ~10⁵⁰⁰ metastable vacua from flux compactifications, the parameters are:",
+            "Why standard landscape is unfalsifiable: With S E ~ 10²⁰⁰, the tunneling rate is so suppressed that no bubble nucleation events occur within the age of the universe (~10¹⁷ s), nor within 10¹⁰⁰ universe ages. The theory makes no testable CMB predictions."
+          ],
+          "listItems": [
+            "Vacuum energy differences: ΔV ~ M Pl ⁴ / N flux , where N flux ~ 100-1000 is the number of flux quanta (typical: ΔV ~ 10⁷² GeV⁴)",
+            "Domain wall tensions: σ ~ M string ³ ~ (10¹⁶ GeV)³ for GUT-scale strings, or σ ~ M Pl ³ for Planck-scale barriers",
+            "Euclidean action: S E ~ (M Pl ³)⁴ / (M Pl ⁴)³ ~ M Pl ⁰ ~ 10²⁰⁰ (dimensionless; exponential suppression is overwhelming)",
+            "Tunneling rate: Γ ~ exp(-10²⁰⁰) ~ 10 -10 200 (utterly negligible—no tunneling in observable universe age)"
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "7-8-5-two-time-framework-boost",
+          "title": "7-8-5-two-time-framework-boost",
+          "paragraphs": [
+            "The D two-time structure provides a mechanism to reduce the effective barrier ΔV through wave function delocalization in orthogonal time:",
+            "where η ~ M Pl ² is the coupling between conformal and thermal times, and Δt ortho ~ t Hubble ~ H -1 is the orthogonal temporal extent over which quantum spreading occurs.",
+            "Numerical estimate: Setting ηΔt ortho ~ 10¹² (motivated by hierarchy between Planck and GUT scales), we get:",
+            "This yields λ ~ 10 -3 , placing the prediction precisely at the threshold of detectability for CMB-S4 (2027+). This is the key transformation from unfalsifiable fringe theory to testable science.",
+            "Status: These multiverse predictions are significantly more speculative than our primary prediction (neutrino normal hierarchy) or derived dark energy result (w a = -0.75). The standard string landscape is unfalsifiable due to exponential suppression (S E ~ 10²⁰⁰). Our two-time framework provides a mechanism to boost tunneling rates to testable levels (S E ~ 100), but this requires tuning ηΔt ortho to sit precisely at the anthropic boundary. Key virtue: Despite being speculative, these predictions are falsifiable before measurement . We predict P > 10 -3 bubble collision probability, testable with CMB-S4 (2027+). If null result: multiverse component constrained but framework survives (tunneling simply suppressed below detection threshold). If positive detection: rare empirical window into landscape physics. Honest classification: This work demonstrates the methodology for turning fringe ideas (eternal inflation, landscape multiverse) into rigorous science by deriving concrete observables. Even if ultimately falsified, the exercise shows how two-time physics interfaces with speculative cosmology."
+          ],
+          "listItems": [
+            "ΔV eff ~ ΔV / 10¹² ~ 10⁶⁰ GeV⁴",
+            "S E ~ (10⁵¹ GeV³)⁴ / (10⁶⁰ GeV⁴)³ ~ 10²",
+            "Γ ~ exp(-100) ~ 10 -43 GeV⁴",
+            "Number of bubbles in Hubble volume: N ~ Γ V H t H ~ 10 -43 × 10⁸⁴ × 10⁴² ~ 10 -3"
+          ],
+          "tables": [],
+          "equations": []
+        }
+      ],
+      "sectionCount": 11,
+      "wordCount": 1266
+    },
+    "subleading-dispersion": {
+      "id": "supp-dispersion",
+      "title": "Appendix F: Subleading Dispersion Parameters (v16.1)",
+      "shortTitle": "Subleading Dispersion Parameters (v16.1)",
+      "category": "theoretical",
+      "status": "THEORETICAL",
+      "description": "Theoretical uncertainty bands for brittle predictions",
+      "file": "sections/appendix-f-subleading-dispersion.html",
+      "relatedParams": [
+        "epsilon_atm",
+        "phi_CP",
+        "delta_race",
+        "delta_gamma"
+      ],
+      "relatedFormulas": [
+        "atmospheric-mixing",
+        "cp-phase-dispersion"
+      ],
+      "sections": [
+        {
+          "id": "introduction",
+          "title": "F.0 Introduction: From Brittle Precision to Robust Prediction",
+          "paragraphs": [
+            "Several predictions of Principia Metaphysica exhibit \"brittle precision\"—values determined exactly by geometric or symmetry arguments that happen to lie close to, but not exactly at, experimental central values. This appendix introduces subleading dispersion parameters that transform these fragile predictions into robust ones with well-motivated theoretical uncertainty bands.",
+            "The key principle is that all dispersion parameters default to zero, recovering the leading-order precision of the geometric cascade. Non-zero values provide escape hatches for future experimental refinement, but their activation requires empirical evidence rather than a priori assumption.",
+            "Dispersion Parameters (v16.1):"
+          ],
+          "listItems": [],
+          "tables": [
+            [
+              [
+                "atm",
+                "Atmospheric mixing deviation",
+                "Default: 0"
+              ],
+              [
+                "CP",
+                "CP phase dispersion offset",
+                "Default: 0°"
+              ],
+              [
+                "race",
+                "Racetrack coefficient offset",
+                "Default: 0"
+              ],
+              [
+                "",
+                "Ghost correction uncertainty",
+                "Default: 0"
+              ]
+            ]
+          ],
+          "equations": [
+            "Dispersion Parameters (v16.1):"
+          ]
+        },
+        {
+          "id": "atmospheric-mixing",
+          "title": "F.1 Atmospheric Mixing Angle ( 23 )",
+          "paragraphs": [
+            "The shadow symmetry of PM predicts maximal atmospheric mixing at leading order: 23 = 45° exactly. However, NuFIT 6.0 data shows a preference for the second octant with 23 ≈ 49° ± 1.5°.",
+            "Flux perturbations from discrete G 2 holonomy break the exact shadow symmetry at subleading order. The deviation arises from Ricci-flow asymmetry in the internal geometry.",
+            "where atm ∈ [-0.05, +0.05] (theoretical range)",
+            "Note: Matching NuFIT 6.0 central value requires atm ≈ 0.089, slightly outside the default range. This suggests either: (1) additional subleading effects, or (2) the first octant may yet be viable as DUNE/Hyper-K refine measurements."
+          ],
+          "listItems": [],
+          "tables": [
+            [
+              [
+                "atm",
+                "23",
+                "NuFIT 6.0 Tension"
+              ],
+              [
+                "0.00 (default)",
+                "45.00°",
+                "2.7"
+              ],
+              [
+                "+0.05",
+                "47.25°",
+                "1.2"
+              ],
+              [
+                "+0.089",
+                "49.00°",
+                "0.0 (exact match)"
+              ]
+            ]
+          ],
+          "equations": [
+            "23 = 45° + atm 45°",
+            "where atm ∈ [-0.05, +0.05] (theoretical range)"
+          ]
+        },
+        {
+          "id": "cp-phase",
+          "title": "F.2 CP Phase Dispersion ( CP )",
+          "paragraphs": [
+            "The leading-order prediction of CP = 235° arises from the discrete Z n automorphisms of the G 2 cycle graph. However, the automorphism group permits a discrete set of allowed values.",
+            "The G 2 torus structure admits Z 3 and Z 7 automorphisms that permute the 3-cycle phases. Combined with CP conjugation, this yields three discrete values:",
+            "CP ∈ {194°, 235°, 286°}",
+            "NuFIT 6.0 reports CP = 232° ± 25°, which is consistent with all three discrete values. Future DUNE precision (±10°) will discriminate between these alternatives."
+          ],
+          "listItems": [],
+          "tables": [
+            [
+              [
+                "Discrete Value",
+                "Origin",
+                "NuFIT 6.0 Compatibility"
+              ],
+              [
+                "194°",
+                "Z 3 rotation",
+                "Within 1.5"
+              ],
+              [
+                "235° (central)",
+                "Leading order",
+                "Excellent (0.1)"
+              ],
+              [
+                "286°",
+                "CP conjugate",
+                "Within 2"
+              ]
+            ]
+          ],
+          "equations": [
+            "CP ∈ {194°, 235°, 286°}"
+          ]
+        },
+        {
+          "id": "racetrack",
+          "title": "F.3 Racetrack Coefficient Flexibility ( race )",
+          "paragraphs": [
+            "The dark matter to baryon ratio prediction depends on the secondary racetrack coefficient N second = 25 at leading order. Landscape statistics suggest neighboring integer fluxes are accessible.",
+            "The distribution of flux quanta in the G 2 moduli space follows a peaked distribution around N second = 25, with neighboring integers (±1) having comparable probability.",
+            "where race ∈ {-1, 0, +1}",
+            "The observed ratio DM / b ≈ 5.3 ± 0.1 is well-matched by the default N second = 25, supporting race = 0."
+          ],
+          "listItems": [],
+          "tables": [
+            [
+              [
+                "race",
+                "N second",
+                "b coefficient",
+                "DM / b"
+              ],
+              [
+                "-1",
+                "24",
+                "0.262",
+                "~5.0"
+              ],
+              [
+                "0 (default)",
+                "25",
+                "0.251",
+                "5.31"
+              ],
+              [
+                "+1",
+                "26",
+                "0.242",
+                "~5.6"
+              ]
+            ]
+          ],
+          "equations": [
+            "N second = 25 + race",
+            "where race ∈ {-1, 0, +1}"
+          ]
+        },
+        {
+          "id": "ghost-factor",
+          "title": "F.4 Ghost Correction Factor ()",
+          "paragraphs": [
+            "The dark energy equation of state w 0 depends critically on the ghost correction factor and effective ghost dimension d eff . Loop corrections introduce uncertainty in these parameters.",
+            "The equation of state receives contributions from the effective ghost sector:",
+            "d eff = D ghost + (1-) D physical",
+            "= 0.5 ± , with ∈ [-0.1, +0.1]",
+            "DESI DR2 Tension: The measured w 0 ≈ -0.997 ± 0.025 lies closer to CDM than the PM prediction. This tension may indicate: (1) additional loop corrections beyond , (2) higher-order quintessence effects, or (3) systematic uncertainties in BAO measurements."
+          ],
+          "listItems": [],
+          "tables": [
+            [
+              [
+                "",
+                "",
+                "d eff",
+                "w 0"
+              ],
+              [
+                "-0.10",
+                "0.40",
+                "0.64",
+                "-0.787"
+              ],
+              [
+                "0.00 (default)",
+                "0.50",
+                "0.44",
+                "-0.853"
+              ],
+              [
+                "+0.10",
+                "0.60",
+                "0.24",
+                "-0.920"
+              ]
+            ]
+          ],
+          "equations": [
+            "w 0 = -1 + d eff /3",
+            "d eff = D ghost + (1-) D physical",
+            "= 0.5 ± , with ∈ [-0.1, +0.1]"
+          ]
+        },
+        {
+          "id": "validation",
+          "title": "F.5 Experimental Validation Timeline",
+          "paragraphs": [
+            "The subleading dispersion parameters will be constrained by upcoming experiments:"
+          ],
+          "listItems": [
+            "DUNE: 23 to ±1° precision, CP to ±10°",
+            "Hyper-K: Independent confirmation of octant",
+            "DESI Year 5: w 0 to ±1% precision",
+            "JUNO: Precision mass hierarchy determination",
+            "Euclid + Roman: w a constraints on dark energy evolution",
+            "CMB-S4: N eff to ±0.03 (dark radiation)"
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "falsifiability",
+          "title": "F.6 Falsifiability and Constraints",
+          "paragraphs": [
+            "The subleading dispersion framework provides clear falsification criteria:",
+            "Key Principle: Defaults at zero maintain current precision while providing theoretically motivated escape hatches. Evidence, not assumption, determines required looseness."
+          ],
+          "listItems": [
+            "23 < 42° or > 50°: Would require atm beyond the theoretically motivated range, challenging the shadow symmetry mechanism.",
+            "CP outside discrete set: A confirmed value (e.g., CP ≈ 150°) not in {194°, 235°, 286°} would falsify the Z n automorphism structure.",
+            "w 0 < -1: Phantom dark energy would require fundamentally different ghost sector dynamics.",
+            "DM / b < 4.5 or > 6.0: Would exclude all allowed N second values."
+          ],
+          "tables": [],
+          "equations": []
+        },
+        {
+          "id": "conclusion",
+          "title": "F.7 Conclusion",
+          "paragraphs": [
+            "The subleading dispersion parameters transform the Principia Metaphysica framework from brittle precision to robust prediction with well-motivated uncertainty bands:",
+            "This framework ensures that PM survives current experimental tensions (NuFIT 6.0, DESI DR2) while maintaining falsifiable predictions that will be decisively tested by DUNE, Hyper-K, and next-generation cosmological surveys."
+          ],
+          "listItems": [],
+          "tables": [
+            [
+              [
+                "Parameter",
+                "Leading Order",
+                "Uncertainty Band",
+                "Mechanism"
+              ],
+              [
+                "23",
+                "45.00°",
+                "42.75° - 47.25°",
+                "Flux perturbation"
+              ],
+              [
+                "CP",
+                "235°",
+                "{194°, 235°, 286°}",
+                "Z n automorphisms"
+              ],
+              [
+                "N second",
+                "25",
+                "{24, 25, 26}",
+                "Landscape statistics"
+              ],
+              [
+                "",
+                "0.50",
+                "0.40 - 0.60",
+                "Loop corrections"
+              ],
+              [
+                "w 0",
+                "-0.853",
+                "-0.92 to -0.79",
+                "From uncertainty"
+              ]
+            ]
+          ],
+          "equations": []
+        },
+        {
+          "id": "references",
+          "title": "References",
+          "paragraphs": [],
+          "listItems": [
+            "NuFIT 6.0 Collaboration (2024). Global analysis of neutrino oscillation data. www.nu-fit.org",
+            "DESI Collaboration (2024). Dark Energy Spectroscopic Instrument Year 1 BAO measurements. arXiv:2404.03002",
+            "DUNE Collaboration (2020). Deep Underground Neutrino Experiment Technical Design Report. JINST 15 T08008",
+            "Joyce, D. (2007). Riemannian Holonomy Groups and Calibrated Geometry . Oxford University Press.",
+            "Acharya, B. et al. (2019). String phenomenology and the landscape. Phys. Rep. 757 , 1-50.",
+            "PM v16.0: Lattice configuration dispersion framework.",
+            "PM v16.1: Subleading dispersion analysis."
+          ],
+          "tables": [],
+          "equations": []
+        }
+      ],
+      "sectionCount": 9,
+      "wordCount": 543
+    }
+  }
+}
