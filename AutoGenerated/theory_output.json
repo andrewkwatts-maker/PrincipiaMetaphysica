@@ -1682,23 +1682,23 @@
         "latex": "n_{gen} = \\frac{\\chi_{eff}}{48} = \\frac{144}{48} = 3",
         "plainText": "n_gen = χ_eff/48 = 144/48 = 3",
         "category": "DERIVED",
-        "description": "Number of fermion generations from G₂ topology",
+        "description": "Number of fermion generations derived from G₂ index theorem - exact prediction of 3 generations without tuning",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
-        "section": "4",
+        "section": "Section 1",
         "terms": {
           "n_gen": {
-            "name": "Generations",
-            "description": "Number of fermion families",
+            "name": "Number of Generations",
+            "description": "Number of fermion families - exactly 3 from topology with no free parameters",
             "link": "sections/fermion-sector.html"
           },
           "χ_eff": {
-            "name": "Effective Euler",
-            "description": "χ_eff = 144 from TCS construction"
+            "name": "Effective Euler Characteristic",
+            "description": "χ_eff = 144 from TCS #187 construction - topological invariant of G₂ manifold"
           },
           "48": {
             "name": "Index Divisor",
-            "description": "From G₂ index theorem (2× F-theory's 24)"
+            "description": "From G₂ index theorem (2× F-theory's 24) - relates Euler characteristic to chiral fermion count"
           }
         },
         "derivation": {
@@ -1774,7 +1774,8 @@
         "relatedFormulas": [
           "tcs-topology",
           "effective-euler",
-          "flux-quantization"
+          "flux-quantization",
+          "fermion-chirality"
         ],
         "inputParams": [
           "topology.CHI_EFF"
@@ -1783,10 +1784,11 @@
           "topology.n_gen"
         ],
         "validated": false,
-        "sectionId": "section-4",
-        "equationNumber": "(4.2)",
+        "sectionId": "section-1",
+        "equationNumber": "1.6",
         "derivedFrom": [
-          "tcs-euler-characteristic",
+          "effective-euler",
+          "tcs-topology",
           "g2-index-theorem"
         ]
       },
@@ -1797,22 +1799,26 @@
         "latex": "M_{GUT} = M_{Pl} \\cdot V_{G_2}^{-1/7} = 2.118 \\times 10^{16}\\,\\text{GeV}",
         "plainText": "M_GUT = M_Pl · V_G2^(-1/7) = 2.118 × 10^16 GeV",
         "category": "DERIVED",
-        "description": "Grand unification scale from G₂ compactification volume",
+        "description": "Grand Unification scale where gauge couplings unify",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
         "section": "5",
         "terms": {
-          "M_GUT": {
-            "name": "GUT Scale",
-            "description": "Grand unification mass scale"
-          },
+          "M_GUT": "Grand Unification scale (~10^16 GeV)",
           "M_Pl": {
             "name": "Planck Mass",
-            "description": "Reduced Planck mass 2.435×10¹⁸ GeV"
+            "description": "Reduced Planck mass ~ 2.435 × 10^18 GeV"
           },
           "V_G2": {
             "name": "G₂ Volume",
             "description": "Compactification volume in Planck units"
+          },
+          "M_Z": "Z boson mass (electroweak scale)",
+          "alpha_s": "Strong coupling at M_Z",
+          "alpha_2": "Weak coupling at M_Z",
+          "κ": {
+            "name": "GUT Coefficient",
+            "description": "From G₂ 5-cycle geometry"
           }
         },
         "derivation": {
@@ -1882,22 +1888,23 @@
           "kappa-gut-coefficient"
         ],
         "inputParams": [
-          "dimensions.D_EFFECTIVE"
+          "alpha_s",
+          "alpha_2",
+          "M_Z"
         ],
         "outputParams": [
-          "gauge.M_GUT"
+          "M_GUT"
         ],
         "validated": false,
-        "sectionId": "section-5",
-        "equationNumber": "(5.3)",
+        "sectionId": "5",
+        "equationNumber": "E.5",
         "derivedFrom": [
-          "g2-compactification",
-          "kaluza-klein-reduction"
+          "rg-running-couplings"
         ]
       },
       "dark-energy-w0": {
         "id": "dark-energy-w0",
-        "label": "(7.1) Dark Energy EoS",
+        "label": "(7.2a) Dark Energy EoS",
         "html": "w₀ = -1 + 2/(3α<sub>T</sub>) = -0.8528",
         "latex": "w_0 = -1 + \\frac{2}{3\\alpha_T} = -0.8528",
         "plainText": "w₀ = -1 + 2/(3α_T) = -0.8528",
@@ -1996,7 +2003,7 @@
         ],
         "validated": false,
         "sectionId": "section-7",
-        "equationNumber": "(7.1)",
+        "equationNumber": "(7.2a)",
         "derivedFrom": [
           "thermal-time-flow",
           "mep-constraint",
@@ -2010,27 +2017,32 @@
         "latex": "\\tau_p = \\frac{M_{GUT}^4}{\\alpha_{GUT}^2 m_p^5} \\times S^2 = 8.15 \\times 10^{34}\\,\\text{years}",
         "plainText": "τ_p = M_GUT⁴/(α_GUT² m_p⁵) × S² = 8.15 × 10³⁴ years",
         "category": "PREDICTIONS",
-        "description": "Proton lifetime from GUT scale with TCS suppression",
+        "description": "Complete proton lifetime calculation with phase space and matrix elements",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
         "section": "5",
         "terms": {
           "τ_p": {
             "name": "Proton Lifetime",
-            "description": "p → e⁺π⁰ decay timescale"
+            "description": "Mean lifetime for proton decay"
           },
           "M_GUT": {
             "name": "GUT Scale",
-            "description": "2.118×10¹⁶ GeV"
+            "description": "Grand unified theory mass scale"
           },
           "α_GUT": {
             "name": "GUT Coupling",
-            "description": "1/23.54"
+            "description": "Unified gauge coupling strength"
           },
           "S": {
             "name": "Suppression",
             "description": "TCS cycle separation factor ~2.1"
-          }
+          },
+          "tau_p": "Proton lifetime (~10^34 years)",
+          "M_X": "X gauge boson mass",
+          "alpha_GUT": "GUT coupling",
+          "m_p": "Proton mass",
+          "A_R": "Renormalization factor for hadronic matrix elements"
         },
         "derivation": {
           "parentFormulas": [
@@ -2106,19 +2118,19 @@
           "doublet-triplet"
         ],
         "inputParams": [
-          "gauge.M_GUT",
-          "gauge.ALPHA_GUT"
+          "M_GUT",
+          "alpha_GUT",
+          "m_p",
+          "A_R"
         ],
         "outputParams": [
-          "proton_decay.tau_p_years"
+          "tau_p"
         ],
         "validated": false,
-        "sectionId": "section-5",
-        "equationNumber": "(5.10)",
+        "sectionId": "5",
+        "equationNumber": "H.2",
         "derivedFrom": [
-          "gut-scale",
-          "tcs-suppression",
-          "yang-mills-decay"
+          "proton-lifetime-estimate"
         ]
       },
       "theta23-maximal": {
@@ -2127,15 +2139,17 @@
         "html": "θ<sub>23</sub> = π/4 = 45° (G₂ holonomy symmetry)",
         "latex": "\\theta_{23} = \\frac{\\pi}{4} = 45^\\circ",
         "plainText": "θ_23 = π/4 = 45° (G₂ holonomy symmetry)",
-        "category": "DERIVED",
+        "category": "neutrino",
         "description": "Maximal atmospheric mixing from G₂ holonomy",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
         "section": "6",
         "terms": {
           "θ_23": {
-            "name": "Atmospheric Angle",
-            "description": "PMNS mixing angle"
+            "name": "Atmospheric Mixing Angle",
+            "description": "PMNS mixing angle between second and third neutrino generations",
+            "units": "radians",
+            "value": 0.7854
           },
           "G₂": {
             "name": "G₂ Holonomy",
@@ -2217,23 +2231,22 @@
           "ckm-elements"
         ],
         "outputParams": [
-          "pmns.theta_23"
+          "sin²θ_23"
         ],
         "validated": false,
         "inputParams": [
-          "neutrino.DELTA_M31_SQ"
+          "G2_holonomy"
         ],
         "sectionId": "section-6",
         "equationNumber": "(6.1)",
         "derivedFrom": [
-          "g2-holonomy",
-          "z2-symmetry"
+          "g2_holonomy"
         ]
       },
       "kk-graviton-mass": {
         "id": "kk-graviton-mass",
-        "equationNumber": "7.7",
-        "label": "(7.7) KK Graviton Mass",
+        "equationNumber": "(7.8)",
+        "label": "(7.8) KK Graviton Mass",
         "latex": "m_{\\text{KK},1} = \\frac{\\hbar c}{R_c} = 1.79 \\text{ TeV}",
         "plainText": "m_KK,1 = ℏc/R_c = 1.79 TeV",
         "html": "m<sub>KK,1</sub> = ℏc/R<sub>c</sub> = 1.79 TeV",
@@ -2292,6 +2305,15 @@
         ],
         "derivedFrom": [
           "compactification-scale"
+        ],
+        "learningResources": [
+          {
+            "title": "Kaluza-Klein Theory - Overview",
+            "url": "https://en.wikipedia.org/wiki/Kaluza%E2%80%93Klein_theory",
+            "type": "article",
+            "level": "intermediate",
+            "description": "Introduction to extra dimensions and KK modes"
+          }
         ]
       },
       "master-action-26d": {
@@ -2301,31 +2323,31 @@
         "latex": "S_{26} = \\int d^{26}x \\sqrt{|G_{(24,2)}|} \\left[ M_*^{24} R_{26} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{Sp}(2,\\mathbb{R})} \\right]",
         "plainText": "S_26 = ∫ d²⁶x √|G| [M*²⁴R₂₆ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_Sp(2,ℝ)]",
         "category": "THEORY",
-        "description": "Master action for 26D bulk with Pneuma field and Sp(2,R) gauge constraints",
+        "description": "Master action for 26D bulk spacetime with signature (24,2), including Einstein-Hilbert term, Pneuma field (8192-component spinor from Cl(24,2)), and Sp(2,R) gauge constraints",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "2",
+        "section": "Section 1",
         "terms": {
           "S_26": {
             "name": "26D Action",
-            "description": "Full action in (24,2) signature spacetime",
+            "description": "Full action in (24,2) signature spacetime - fundamental formulation before dimensional reduction",
             "link": "sections/geometric-framework.html"
           },
           "M_*": {
             "name": "Fundamental Scale",
-            "description": "26D Planck scale ~10¹⁶ GeV"
+            "description": "26D Planck scale ~10¹⁶ GeV - sets fundamental mass scale for entire theory"
           },
           "R_26": {
             "name": "Ricci Scalar",
-            "description": "26D curvature scalar"
+            "description": "26D curvature scalar in signature (24,2) - determines gravitational dynamics in bulk"
           },
           "Ψ_P": {
             "name": "Pneuma Field",
-            "description": "8192-component spinor from Cl(24,2)"
+            "description": "8192-component spinor from Cl(24,2) whose condensates generate internal geometry and fermion masses"
           },
           "ℒ_Sp(2,ℝ)": {
             "name": "Gauge Lagrangian",
-            "description": "Sp(2,R) constraint Lagrangian"
+            "description": "Sp(2,R) constraint Lagrangian enforcing three first-class constraints that eliminate ghosts"
           }
         },
         "derivation": {
@@ -2395,13 +2417,19 @@
         ],
         "relatedFormulas": [
           "virasoro-anomaly",
-          "sp2r-constraints"
+          "sp2r-constraints",
+          "reduction-cascade",
+          "pneuma-field-action"
         ],
         "outputParams": [
-          "dimensions.D_BULK"
+          "dimensions.D_BULK",
+          "vev_pneuma.M_PLANCK_26D"
         ],
         "validated": false,
-        "inputParams": []
+        "inputParams": [],
+        "sectionId": "section-1",
+        "equationNumber": "1.2",
+        "derivedFrom": []
       },
       "virasoro-anomaly": {
         "id": "virasoro-anomaly",
@@ -2413,11 +2441,11 @@
         "description": "Virasoro anomaly cancellation fixes critical dimension to 26",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "2",
+        "section": "Appendix D",
         "terms": {
           "c_total": {
             "name": "Total Central Charge",
-            "description": "Must vanish for consistent string"
+            "description": "Sum of matter and ghost contributions"
           },
           "c_matter": {
             "name": "Matter Central Charge",
@@ -2426,6 +2454,10 @@
           "c_ghost": {
             "name": "Ghost Central Charge",
             "description": "= -26 (from reparametrization ghosts)"
+          },
+          "D": {
+            "name": "Bulk Dimension",
+            "description": "Spacetime dimension from anomaly cancellation"
           }
         },
         "computedValue": 26,
@@ -2486,8 +2518,11 @@
         ],
         "validated": false,
         "outputParams": [
-          "anomaly.c_central"
-        ]
+          "constants.C_TOTAL"
+        ],
+        "sectionId": "appendix-d",
+        "equationNumber": "D.3",
+        "derivedFrom": []
       },
       "sp2r-constraints": {
         "id": "sp2r-constraints",
@@ -2496,21 +2531,21 @@
         "latex": "X^2 = 0, \\quad X \\cdot P = 0, \\quad P^2 + M^2 = 0",
         "plainText": "X² = 0, X·P = 0, P² + M² = 0",
         "category": "THEORY",
-        "description": "Three first-class constraints eliminating ghost states from two-time structure",
+        "description": "Three first-class Sp(2,R) gauge constraints that eliminate negative-norm ghost states from two-time structure while reducing effective dimension from 26D to 13D",
         "attribution": "Principia Metaphysica",
-        "section": "2",
+        "section": "Section 1",
         "terms": {
           "X²": {
             "name": "Null Constraint",
-            "description": "Position vector is null in (24,2) signature"
+            "description": "Position vector is null in (24,2) signature: X² = X^M η_MN X^N = 0, constraining trajectory to null cone"
           },
           "X·P": {
             "name": "Orthogonality",
-            "description": "Position and momentum orthogonal"
+            "description": "Position and momentum orthogonal: X^M P_M = 0, enforcing phase space constraint"
           },
           "P²+M²": {
             "name": "Mass Shell",
-            "description": "Modified mass-shell condition in phase space"
+            "description": "Modified mass-shell condition in phase space: P² + M² = 0, generalizing standard mass shell to two-time physics"
           }
         },
         "derivation": {
@@ -2577,8 +2612,9 @@
           }
         ],
         "relatedFormulas": [
+          "reduction-cascade",
           "master-action-26d",
-          "reduction-cascade"
+          "gauge-fixing"
         ],
         "inputParams": [
           "phase_space.X",
@@ -2586,16 +2622,16 @@
           "constants.M"
         ],
         "outputParams": [
-          "constraints.sp2r"
+          "constraints.sp2r",
+          "dimensions.D_AFTER_SP2R"
         ],
         "validated": false,
         "units": "dimensionless",
         "status": "DERIVED",
-        "sectionId": "section-2",
-        "equationNumber": "2.3",
+        "sectionId": "section-1",
+        "equationNumber": "1.3",
         "derivedFrom": [
-          "two-time-physics",
-          "phase-space-structure"
+          "master-action-26d"
         ]
       },
       "racetrack-superpotential": {
@@ -2678,7 +2714,9 @@
         ],
         "inputParams": [
           "topology.flux_numbers",
-          "gauge.condensate_scales"
+          "gauge.condensate_scales",
+          "topology.a_exponent",
+          "topology.b_exponent"
         ],
         "outputParams": [
           "superpotential.W"
@@ -2759,7 +2797,11 @@
         "validated": false,
         "inputParams": [
           "superpotential.W",
-          "topology.flux_numbers"
+          "topology.flux_numbers",
+          "racetrack.A_amplitude",
+          "racetrack.B_amplitude",
+          "racetrack.a_exponent",
+          "racetrack.b_exponent"
         ],
         "equationNumber": "2.9",
         "sectionId": "section-2",
@@ -2777,7 +2819,7 @@
         "description": "Black hole entropy from Pneuma spinor counting",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
-        "section": "2",
+        "section": "Section 2",
         "terms": {
           "S_BH": {
             "name": "BH Entropy",
@@ -2794,6 +2836,10 @@
           "N_Pneuma": {
             "name": "Pneuma Count",
             "description": "Spinor degrees of freedom on horizon"
+          },
+          "log(2)": {
+            "name": "Bit Entropy",
+            "description": "Natural logarithm of 2 (per bit of information)"
           }
         },
         "units": "dimensionless",
@@ -2803,10 +2849,12 @@
         "notes": "Provides microscopic interpretation of black hole entropy",
         "validated": false,
         "inputParams": [
-          "blackhole.A"
+          "blackhole.horizon_area",
+          "constants.planck_length"
         ],
         "outputParams": [
-          "blackhole.S_BH"
+          "blackhole.S_BH",
+          "pneuma.microstate_count"
         ],
         "references": [
           {
@@ -2816,6 +2864,12 @@
             "year": 1973,
             "description": "Black hole entropy formula"
           }
+        ],
+        "sectionId": "section-2",
+        "equationNumber": "2.5",
+        "derivedFrom": [
+          "master-action-26d",
+          "primordial-spinor-13d"
         ]
       },
       "scalar-potential": {
@@ -2828,7 +2882,7 @@
         "description": "F-term scalar potential from racetrack superpotential",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
-        "section": "2",
+        "section": "Section 2",
         "terms": {
           "V": {
             "name": "Scalar Potential",
@@ -2837,6 +2891,14 @@
           "W": {
             "name": "Superpotential",
             "description": "Holomorphic function of moduli"
+          },
+          "∂W/∂Ψ_P": {
+            "name": "Superpotential Derivative",
+            "description": "Derivative with respect to Pneuma modulus"
+          },
+          "|...|²": {
+            "name": "Complex Modulus Squared",
+            "description": "F-term potential structure from supersymmetry"
           }
         },
         "units": "GeV^4",
@@ -2871,10 +2933,12 @@
         ],
         "validated": false,
         "inputParams": [
-          "superpotential.W"
+          "superpotential.W",
+          "pneuma.field_value"
         ],
         "outputParams": [
-          "potential.V_SCALAR"
+          "potential.V_SCALAR",
+          "vacuum.F_term_potential"
         ],
         "references": [
           {
@@ -2885,6 +2949,11 @@
             "arxiv": "hep-th/0301240",
             "description": "KKLT moduli stabilization mechanism"
           }
+        ],
+        "sectionId": "section-2",
+        "equationNumber": "2.7",
+        "derivedFrom": [
+          "racetrack-superpotential"
         ]
       },
       "reduction-cascade": {
@@ -2894,34 +2963,34 @@
         "latex": "\\text{26D}_{(24,2)} \\xrightarrow{\\text{Sp}(2,\\mathbb{R})} \\text{13D}_{(12,1)} \\xrightarrow{G_2} \\text{6D}_{(5,1)} \\xrightarrow{\\text{compactify}} \\text{4D}_{(3,1)}",
         "plainText": "26D_(24,2) → [Sp(2,R)] → 13D_(12,1) → [G₂] → 6D_(5,1) → [compact] → 4D_(3,1)",
         "category": "THEORY",
-        "description": "Dimensional cascade from 26D bulk to 4D observable",
+        "description": "Dimensional cascade from 26D bulk with signature (24,2) through 13D shadow to 4D observable spacetime via Sp(2,R) gauge fixing and G₂ compactification",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
         "section": "Section 1",
         "terms": {
           "26D_(24,2)": {
             "name": "Bulk Spacetime",
-            "description": "24 spatial + 2 timelike dimensions"
+            "description": "24 spatial + 2 timelike dimensions - critical dimension of bosonic string theory with two-time structure"
           },
           "Sp(2,ℝ)": {
             "name": "Symplectic Gauge Group",
-            "description": "Gauge symmetry that reduces 2 time dimensions to 1"
+            "description": "Gauge symmetry that reduces 2 time dimensions to 1, eliminating ghost states while preserving symplectic structure"
           },
           "13D_(12,1)": {
             "name": "Shadow Brane",
-            "description": "12 spatial + 1 time after Sp(2,ℝ) gauge fixing"
+            "description": "12 spatial + 1 time after Sp(2,ℝ) gauge fixing - observable shadow of 26D bulk with unique division algebra structure 13 = 1 + 4 + 8"
           },
           "G₂": {
             "name": "G2 Holonomy",
-            "description": "Exceptional holonomy group for 7D compactification"
+            "description": "Exceptional holonomy group for 7D compactification on TCS manifold with h¹′¹=4 Kähler moduli sectors"
           },
           "6D_(5,1)": {
             "name": "Visible Brane",
-            "description": "5 spatial + 1 time before final compactification"
+            "description": "5 spatial + 1 time before final compactification - intermediate stage after G₂ compactification"
           },
           "4D_(3,1)": {
             "name": "Observable Spacetime",
-            "description": "3 spatial + 1 time dimensions (our universe)"
+            "description": "3 spatial + 1 time dimensions - our observable universe with Lorentzian signature (-,+,+,+)"
           }
         },
         "units": "dimensionless",
@@ -2953,24 +3022,30 @@
         ],
         "relatedFormulas": [
           "sp2r-constraints",
-          "g2-compactification"
+          "g2-compactification",
+          "master-action-26d",
+          "tcs-topology"
         ],
         "inputParams": [
-          "dimensions.D_BULK"
+          "dimensions.D_BULK",
+          "dimensions.SIGNATURE_INITIAL"
         ],
         "outputParams": [
-          "dimensions.D_OBSERVABLE"
+          "dimensions.D_OBSERVABLE",
+          "dimensions.D_AFTER_SP2R",
+          "dimensions.D_G2"
         ],
         "validated": false,
         "sectionId": "section-1",
         "equationNumber": "1.1",
         "derivedFrom": [
-          "master-action-26d"
+          "master-action-26d",
+          "sp2r-constraints"
         ]
       },
       "primordial-spinor-13d": {
         "id": "primordial-spinor-13d",
-        "label": "(3.2) Primordial Spinor",
+        "label": "(2.1) Primordial Spinor",
         "html": "Ψ<sub>64</sub> ∈ Spin(12,1), dim(Ψ) = 2<sup>[13/2]</sup> = 64",
         "latex": "\\Psi_{64} \\in \\text{Spin}(12,1), \\quad \\dim(\\Psi) = 2^{[13/2]} = 64",
         "plainText": "Ψ_64 ∈ Spin(12,1), dim(Ψ) = 2^[13/2] = 64",
@@ -2995,6 +3070,10 @@
           "Majorana-Weyl": {
             "name": "Reality Condition",
             "description": "Reduces 64 complex to 64 real components"
+          },
+          "64": {
+            "name": "Component Count",
+            "description": "Real degrees of freedom in 13D Majorana-Weyl spinor"
           }
         },
         "computedValue": 64,
@@ -3028,21 +3107,24 @@
         ],
         "inputParams": [
           "dimensions.D_SHADOW",
-          "clifford.spin_dim"
+          "clifford.spin_group",
+          "reduction.Sp2R_symmetry"
         ],
         "validated": false,
         "outputParams": [
-          "spinor.dimension_13d"
+          "spinor.dimension_13d",
+          "spinor.Psi_64"
         ],
         "sectionId": "section-2",
         "equationNumber": "2.1",
         "derivedFrom": [
-          "reduction-cascade"
+          "reduction-cascade",
+          "master-action-26d"
         ]
       },
       "hidden-variables": {
         "id": "hidden-variables",
-        "label": "(3.3) Hidden Variables Density Matrix",
+        "label": "(2.2) Hidden Variables Density Matrix",
         "html": "ρ<sub>Σ₁</sub> = Tr<sub>Σ₂,Σ₃,Σ₄</sub>[|Ψ⟩<sub>bulk</sub>⟨Ψ|]",
         "latex": "\\rho_{\\Sigma_1} = \\text{Tr}_{\\Sigma_2,\\Sigma_3,\\Sigma_4} \\left[|\\Psi\\rangle_{\\text{bulk}} \\langle\\Psi|\\right]",
         "plainText": "ρ_Σ₁ = Tr_{Σ₂,Σ₃,Σ₄}[|Ψ⟩_bulk⟨Ψ|]",
@@ -3066,6 +3148,18 @@
           "ω₇": {
             "name": "Fundamental 3-form",
             "description": "Associative calibration on G₂ manifold"
+          },
+          "ρ_Σ₁": {
+            "name": "Observable Density Matrix",
+            "description": "Reduced density matrix in observable sector"
+          },
+          "Tr_{Σ₂,Σ₃,Σ₄}": {
+            "name": "Partial Trace",
+            "description": "Trace over shadow brane sectors"
+          },
+          "|Ψ⟩_bulk": {
+            "name": "Bulk Wavefunction",
+            "description": "Full 26D quantum state"
           }
         },
         "learningResources": [
@@ -3089,12 +3183,15 @@
         ],
         "inputParams": [
           "spinor.dimension_13d",
-          "compactification.dim_G2"
+          "compactification.dim_G2",
+          "bulk.wavefunction"
         ],
         "notes": "Provides geometric origin for quantum hidden variables",
         "validated": false,
         "outputParams": [
-          "hidden_vars.count"
+          "hidden_vars.count",
+          "observable.density_matrix",
+          "shadow.traced_dofs"
         ],
         "units": "GeV",
         "status": "DERIVED",
@@ -3110,7 +3207,8 @@
         "sectionId": "section-2",
         "equationNumber": "2.2",
         "derivedFrom": [
-          "primordial-spinor-13d"
+          "primordial-spinor-13d",
+          "reduction-cascade"
         ]
       },
       "division-algebra": {
@@ -3122,7 +3220,7 @@
         "category": "THEORY",
         "description": "13D as unique combination of division algebra dimensions",
         "attribution": "Principia Metaphysica",
-        "section": "3",
+        "section": "3. Fermion Sector",
         "terms": {
           "ℝ": {
             "name": "Reals",
@@ -3181,7 +3279,9 @@
             "description": "Comprehensive review of division algebras"
           }
         ],
-        "inputParams": []
+        "inputParams": [],
+        "sectionId": "3",
+        "equationNumber": "division-algebra"
       },
       "dirac-pneuma": {
         "id": "dirac-pneuma",
@@ -3192,7 +3292,7 @@
         "category": "THEORY",
         "description": "Dirac equation for Pneuma spinor field",
         "attribution": "Principia Metaphysica",
-        "section": "3",
+        "section": "3. Fermion Sector",
         "terms": {
           "Γ^M": {
             "name": "Gamma Matrices",
@@ -3233,7 +3333,9 @@
             "year": 2024,
             "description": "Pneuma field construction from G2 topology"
           }
-        ]
+        ],
+        "sectionId": "3",
+        "equationNumber": "dirac-pneuma"
       },
       "tcs-topology": {
         "id": "tcs-topology",
@@ -3242,26 +3344,26 @@
         "latex": "b_2 = 4, \\quad b_3 = 24, \\quad \\chi_{\\text{eff}} = 144, \\quad \\nu = 24",
         "plainText": "b₂ = 4, b₃ = 24, χ_eff = 144, ν = 24",
         "category": "THEORY",
-        "description": "TCS G₂ manifold #187 topological parameters",
+        "description": "Topological parameters of TCS (Twisted Connected Sum) G₂ manifold #187 with 4 Kähler moduli sectors enabling racetrack stabilization",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "4",
+        "section": "Section 1",
         "terms": {
           "b_2": {
-            "name": "Second Betti",
-            "description": "= h¹¹ = 4 (Kähler moduli)"
+            "name": "Second Betti Number",
+            "description": "= h¹′¹ = 4 (Kähler moduli) - four independent 2-cycles allowing racetrack moduli stabilization"
           },
           "b_3": {
-            "name": "Third Betti",
-            "description": "= 24 (associative 3-cycles)"
+            "name": "Third Betti Number",
+            "description": "= 24 (associative 3-cycles) - determines chiral fermion spectrum via index theorem"
           },
           "χ_eff": {
-            "name": "Effective Euler",
-            "description": "= 2(h¹¹ - h²¹ + h³¹) = 144"
+            "name": "Effective Euler Characteristic",
+            "description": "= 2(h¹′¹ - h²′¹ + h³′¹) = 144 - determines generation number via χ_eff/48 = 3"
           },
           "ν": {
-            "name": "Flux Quantum",
-            "description": "= χ_eff/6 = 24"
+            "name": "Flux Quantum Number",
+            "description": "= χ_eff/6 = 24 - quantization condition for G-flux on G₂ manifold"
           }
         },
         "simulationFile": "simulations/g2_landscape_scanner_v14_1.py",
@@ -3291,16 +3393,23 @@
         ],
         "relatedFormulas": [
           "generation-number",
-          "flux-quantization"
+          "flux-quantization",
+          "effective-euler",
+          "reduction-cascade"
         ],
         "outputParams": [
           "topology.B2",
-          "topology.B3"
+          "topology.B3",
+          "topology.CHI_EFF",
+          "topology.n_gen"
         ],
         "notes": "49 valid topologies found with identical predictions",
         "validated": false,
         "units": "dimensionless",
-        "inputParams": []
+        "inputParams": [],
+        "sectionId": "section-1",
+        "equationNumber": "1.4",
+        "derivedFrom": []
       },
       "effective-euler": {
         "id": "effective-euler",
@@ -3309,22 +3418,26 @@
         "latex": "\\chi_{\\text{eff}} = 2(h^{1,1} - h^{2,1} + h^{3,1}) = 2(4 - 0 + 68) = 144",
         "plainText": "χ_eff = 2(h^{1,1} - h^{2,1} + h^{3,1}) = 2(4 - 0 + 68) = 144",
         "category": "DERIVED",
-        "description": "Effective Euler characteristic from Hodge numbers",
+        "description": "Effective Euler characteristic computed from Hodge numbers of TCS G₂ manifold - determines fermion generation number",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "4",
+        "section": "Section 1",
         "terms": {
           "h^{1,1}": {
             "name": "Kähler Moduli",
-            "description": "= 4"
+            "description": "= b₂ = 4 - dimension of space of harmonic (1,1)-forms, controls Kähler structure deformations"
           },
           "h^{2,1}": {
-            "name": "Complex Structure",
-            "description": "= 0 (G₂ has none)"
+            "name": "Complex Structure Moduli",
+            "description": "= 0 (G₂ has no complex structure) - G₂ holonomy forbids complex structure unlike Calabi-Yau"
           },
           "h^{3,1}": {
             "name": "Associative Moduli",
-            "description": "= 68"
+            "description": "= 68 - from associative 3-cycles and coassociative 4-cycles specific to G₂ geometry"
+          },
+          "χ_eff": {
+            "name": "Effective Euler",
+            "description": "= 144 - topological invariant determining physical observables via index theorem"
           }
         },
         "computedValue": 144,
@@ -3355,7 +3468,8 @@
         ],
         "relatedFormulas": [
           "tcs-topology",
-          "generation-number"
+          "generation-number",
+          "hodge-numbers"
         ],
         "inputParams": [
           "topology.B2",
@@ -3364,7 +3478,12 @@
         "outputParams": [
           "topology.CHI_EFF"
         ],
-        "validated": false
+        "validated": false,
+        "sectionId": "section-1",
+        "equationNumber": "1.5",
+        "derivedFrom": [
+          "tcs-topology"
+        ]
       },
       "flux-quantization": {
         "id": "flux-quantization",
@@ -3376,7 +3495,7 @@
         "description": "Flux quantization from effective Euler characteristic",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "terms": {
           "N_flux": {
             "name": "Flux Quantum",
@@ -3428,7 +3547,7 @@
           "flux.N_FLUX"
         ],
         "validated": false,
-        "sectionId": "section-4",
+        "sectionId": "4",
         "equationNumber": "4.3",
         "derivedFrom": [
           "effective-euler",
@@ -3442,10 +3561,10 @@
         "latex": "T_{\\omega,\\text{eff}} = -\\frac{b_3}{N_{\\text{flux}}} = -\\frac{24}{24} = -1.0",
         "plainText": "T_ω,eff = -b₃/N_flux = -24/24 = -1.0",
         "category": "DERIVED",
-        "description": "Effective torsion from topology",
+        "description": "Effective torsion from topological flux stabilization",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "4",
+        "section": "Appendix G",
         "terms": {
           "T_ω,eff": {
             "name": "Effective Torsion",
@@ -3458,6 +3577,14 @@
           "N_flux": {
             "name": "Flux Quantum",
             "description": "= 24"
+          },
+          "T_eff": {
+            "name": "Effective Torsion",
+            "description": "Torsion from effective Euler characteristic"
+          },
+          "χ_eff": {
+            "name": "Effective Euler Characteristic",
+            "description": "Flux-corrected topological invariant"
           }
         },
         "computedValue": -1.0,
@@ -3495,8 +3622,11 @@
         ],
         "validated": false,
         "outputParams": [
-          "topology.TAU_EFF"
-        ]
+          "topology.T_EFF"
+        ],
+        "sectionId": "appendix-g",
+        "equationNumber": "G.2",
+        "derivedFrom": []
       },
       "mirror-dm-ratio": {
         "id": "mirror-dm-ratio",
@@ -3508,7 +3638,7 @@
         "description": "Dark matter to baryon ratio from mirror sector",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "computedValue": 5.8,
         "experimentalValue": 5.4,
         "sigmaDeviation": 0.7,
@@ -3546,7 +3676,9 @@
         "inputParams": [
           "mirror.T_MIRROR"
         ],
-        "units": "dimensionless"
+        "units": "dimensionless",
+        "sectionId": "4",
+        "equationNumber": "mirror-dm-ratio"
       },
       "hierarchy-ratio": {
         "id": "hierarchy-ratio",
@@ -3557,7 +3689,7 @@
         "category": "DERIVED",
         "description": "Hierarchy problem solution from multi-sector sampling",
         "attribution": "Principia Metaphysica",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "terms": {
           "M_Pl": {
             "name": "Planck Mass",
@@ -3626,7 +3758,9 @@
           "hierarchy.RATIO"
         ],
         "units": "dimensionless",
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "4",
+        "equationNumber": "hierarchy-ratio"
       },
       "planck-mass-derivation": {
         "id": "planck-mass-derivation",
@@ -3637,7 +3771,7 @@
         "category": "DERIVED",
         "description": "4D Planck mass from 13D fundamental scale and internal volume",
         "attribution": "Principia Metaphysica",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "terms": {
           "M_Pl": {
             "name": "4D Planck Mass",
@@ -3705,7 +3839,7 @@
           "constants.M_STRING"
         ],
         "equationNumber": "4.5",
-        "sectionId": "section-4",
+        "sectionId": "4",
         "derivedFrom": [
           "tcs-topology",
           "g2-compactification"
@@ -3718,7 +3852,7 @@
         "latex": "\\text{SO}(10) \\supset \\text{SU}(3)_C \\times \\text{SU}(2)_L \\times \\text{U}(1)_Y",
         "plainText": "SO(10) ⊃ SU(3)_C × SU(2)_L × U(1)_Y",
         "category": "THEORY",
-        "description": "SO(10) GUT gauge symmetry breaking to Standard Model",
+        "description": "SO(10) symmetry breaking chain to Standard Model gauge group",
         "attribution": "Principia Metaphysica",
         "section": "5",
         "simulationFile": "simulations/breaking_chain_geometric_v14_1.py",
@@ -3750,14 +3884,26 @@
           "gut-coupling"
         ],
         "inputParams": [
-          "gauge.M_GUT"
+          "M_GUT"
         ],
         "validated": false,
         "outputParams": [
-          "breaking.CHAIN_SO10"
+          "M_I"
         ],
         "units": "dimensionless",
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "5",
+        "derivedFrom": [],
+        "terms": {
+          "SO(10)": "Grand Unified Theory gauge group",
+          "SU(4)_C": "Color SU(4) subgroup from Pati-Salam",
+          "SU(2)_L": "Left-handed weak isospin",
+          "SU(2)_R": "Right-handed weak isospin",
+          "SU(3)_C": "Color SU(3) of QCD",
+          "U(1)_Y": "Weak hypercharge",
+          "M_GUT": "Grand Unification scale",
+          "M_I": "Intermediate breaking scale"
+        }
       },
       "gut-coupling": {
         "id": "gut-coupling",
@@ -3766,7 +3912,7 @@
         "latex": "\\frac{1}{\\alpha_{\\text{GUT}}} = 10\\pi \\times \\frac{\\text{Vol}(\\Sigma_{\\text{sing}})}{\\text{Vol}(G_2)} \\times e^{|T_\\omega|/h^{1,1}} = 23.54",
         "plainText": "1/α_GUT = 10π · Vol(Σ_sing)/Vol(G₂) · exp(|T_ω|/h¹¹) = 23.54",
         "category": "DERIVED",
-        "description": "Unified gauge coupling from G₂ geometry",
+        "description": "Unified gauge coupling at GUT scale derived from geometric framework",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
         "section": "5",
@@ -3794,7 +3940,11 @@
           "Σ_sing": {
             "name": "Singularity Locus",
             "description": "Volume of singular calibrated cycles"
-          }
+          },
+          "alpha_GUT": "Unified gauge coupling constant at GUT scale",
+          "alpha_s": "Strong coupling constant (QCD)",
+          "alpha_2": "Weak isospin coupling constant",
+          "alpha_1": "Hypercharge coupling constant"
         },
         "computedValue": 23.54,
         "simulationFile": "simulations/gauge_unification_precision_v12_4.py",
@@ -3827,21 +3977,18 @@
         ],
         "validated": false,
         "inputParams": [
-          "topology.b3",
-          "topology.h11",
-          "topology.torsion_eff",
-          "geometry.vol_g2",
-          "geometry.vol_sing"
+          "alpha_s",
+          "alpha_2",
+          "alpha_1"
         ],
         "outputParams": [
-          "gauge.ALPHA_GUT"
+          "alpha_GUT"
         ],
         "units": "dimensionless",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "equationNumber": "5.2",
         "derivedFrom": [
-          "gut-scale",
-          "tcs-topology"
+          "gut-scale"
         ]
       },
       "weak-mixing-angle": {
@@ -3851,7 +3998,7 @@
         "latex": "\\sin^2\\theta_W(M_Z) = 0.23121",
         "plainText": "sin²θ_W(M_Z) = 0.23121",
         "category": "PREDICTIONS",
-        "description": "Weak mixing angle at Z pole from RG evolution",
+        "description": "Weak mixing angle (Weinberg angle) from gauge coupling ratios",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
         "section": "5",
@@ -3889,19 +4036,17 @@
         ],
         "validated": false,
         "inputParams": [
-          "gauge.ALPHA_GUT",
-          "gauge.M_GUT",
-          "gauge.M_Z"
+          "g_1",
+          "g_2"
         ],
         "outputParams": [
-          "gauge.SIN2_THETA_W"
+          "sin2_theta_w"
         ],
         "units": "dimensionless",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "equationNumber": "5.5",
         "derivedFrom": [
-          "so10-breaking",
-          "rge-evolution"
+          "rg-running-couplings"
         ],
         "terms": {
           "theta_W": {
@@ -3915,7 +4060,11 @@
           "M_GUT": {
             "name": "GUT Scale",
             "description": "M_GUT = 2.118×10¹⁶ GeV unification scale"
-          }
+          },
+          "sin2_theta_w": "Sine squared of weak mixing angle",
+          "theta_w": "Weak mixing angle (Weinberg angle)",
+          "g_1": "U(1)_Y hypercharge coupling",
+          "g_2": "SU(2)_L weak isospin coupling"
         }
       },
       "higgs-vev": {
@@ -3925,7 +4074,7 @@
         "latex": "v_{\\text{EW}} = M_{\\text{Pl}} \\times e^{-h^{2,1}/b_3} \\times e^{|T_\\omega|} = 173.97\\,\\text{GeV}",
         "plainText": "v_EW = M_Pl · exp(-h²¹/b₃) · exp(|T_ω|) = 173.97 GeV",
         "category": "DERIVED",
-        "description": "Electroweak VEV from geometric moduli",
+        "description": "Electroweak vacuum expectation value of Higgs field",
         "attribution": "Principia Metaphysica",
         "section": "5",
         "terms": {
@@ -3944,7 +4093,11 @@
           "b₃": {
             "name": "Third Betti Number",
             "description": "= 11"
-          }
+          },
+          "v": "Higgs VEV (~246 GeV)",
+          "G_F": "Fermi constant",
+          "mu2": "Higgs mass parameter",
+          "lambda": "Higgs quartic coupling"
         },
         "computedValue": 173.97,
         "units": "GeV",
@@ -3969,20 +4122,17 @@
           "top-quark-mass"
         ],
         "inputParams": [
-          "topology.h21",
-          "topology.b3",
-          "topology.torsion_eff",
-          "constants.M_PLANCK"
+          "G_F"
         ],
         "validated": false,
         "outputParams": [
-          "higgs.VEV"
+          "v"
         ],
         "status": "DERIVED",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "equationNumber": "5.6",
         "derivedFrom": [
-          "pneuma-vev"
+          "higgs-potential"
         ]
       },
       "doublet-triplet": {
@@ -3992,7 +4142,7 @@
         "latex": "N_{\\text{doublets}} - N_{\\text{triplets}} = \\int_M \\hat{A}(M) \\wedge \\text{ch}(L_Y) \\mod \\mathbb{Z}_2",
         "plainText": "N_doublets - N_triplets = ∫_M Â(M) ∧ ch(L_Y) mod Z₂",
         "category": "DERIVED",
-        "description": "Index theorem for doublet-triplet splitting in Higgs sector",
+        "description": "Doublet-triplet splitting mechanism for Higgs mass hierarchy",
         "attribution": "Principia Metaphysica",
         "section": "5",
         "terms": {
@@ -4007,7 +4157,12 @@
           "ℤ₂": {
             "name": "Z₂ Quotient",
             "description": "From orbifold projection"
-          }
+          },
+          "m_d": "Higgs doublet mass",
+          "m_t": "Higgs triplet mass",
+          "M_GUT": "GUT scale",
+          "mu": "Higgs mass parameter",
+          "lambda": "Doublet-triplet coupling"
         },
         "references": [
           {
@@ -4053,16 +4208,20 @@
           "so10-breaking"
         ],
         "inputParams": [
-          "gauge.M_GUT",
-          "pneuma.VEV"
+          "M_GUT",
+          "m_d"
         ],
         "notes": "Topological protection against proton decay from Higgs",
         "validated": false,
         "outputParams": [
-          "splitting.DT_RATIO"
+          "m_t"
         ],
         "units": "dimensionless",
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "5",
+        "derivedFrom": [
+          "gut-scale"
+        ]
       },
       "top-quark-mass": {
         "id": "top-quark-mass",
@@ -4083,24 +4242,26 @@
         "experimentalError": 0.3,
         "sigmaDeviation": 0.03,
         "inputParams": [
-          "yukawa.y_t",
-          "higgs.v_EW"
+          "y_t",
+          "v_EW"
         ],
         "outputParams": [
-          "fermion_masses.m_t"
+          "m_t"
         ],
         "terms": {
           "m_t": {
             "name": "Top Quark Mass",
-            "description": "Mass of the top quark"
+            "value": 172.7,
+            "units": "GeV"
           },
           "y_t": {
             "name": "Top Yukawa Coupling",
-            "description": "Yukawa coupling constant for top quark"
+            "value": 0.995
           },
           "v_EW": {
-            "name": "Electroweak VEV",
-            "description": "Higgs vacuum expectation value (246 GeV)"
+            "name": "Higgs VEV",
+            "value": 246,
+            "units": "GeV"
           }
         },
         "derivation": {
@@ -4115,8 +4276,8 @@
         },
         "validated": true,
         "derivedFrom": [
-          "yukawa-lagrangian",
-          "higgs-vev"
+          "yukawa_coupling",
+          "higgs_vev"
         ]
       },
       "strong-coupling": {
@@ -4125,7 +4286,7 @@
         "html": "α<sub>s</sub>(M<sub>Z</sub>) = 0.1179",
         "latex": "\\alpha_s(M_Z) = 0.1179",
         "plainText": "α_s(M_Z) = 0.1179",
-        "category": "PREDICTIONS",
+        "category": "gauge_coupling",
         "description": "Strong coupling constant at Z pole",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
@@ -4163,12 +4324,41 @@
         ],
         "validated": false,
         "inputParams": [
-          "gauge.ALPHA_GUT"
+          "α_GUT",
+          "M_GUT",
+          "M_Z"
         ],
         "outputParams": [
-          "gauge.ALPHA_S"
+          "α_s(M_Z)"
         ],
-        "units": "dimensionless"
+        "units": "dimensionless",
+        "sectionId": "section-6",
+        "derivedFrom": [
+          "rge_running",
+          "gut_unification"
+        ],
+        "terms": {
+          "α_s": {
+            "name": "Strong Coupling Constant",
+            "description": "QCD coupling at Z pole",
+            "value": 0.1179,
+            "experimentalValue": 0.118
+          },
+          "M_Z": {
+            "name": "Z Boson Mass",
+            "value": 91.1876,
+            "units": "GeV"
+          },
+          "α_GUT": {
+            "name": "GUT Coupling",
+            "description": "Unified coupling at GUT scale"
+          },
+          "M_GUT": {
+            "name": "GUT Scale",
+            "units": "GeV"
+          }
+        },
+        "equationNumber": "(6.x)"
       },
       "neutrino-mass-21": {
         "id": "neutrino-mass-21",
@@ -4236,7 +4426,8 @@
             "description": "Mass eigenstate of first neutrino"
           }
         },
-        "sectionId": "section-6"
+        "sectionId": "section-6",
+        "equationNumber": "(6.x)"
       },
       "neutrino-mass-31": {
         "id": "neutrino-mass-31",
@@ -4304,7 +4495,8 @@
             "description": "Mass eigenstate of first neutrino"
           }
         },
-        "sectionId": "section-6"
+        "sectionId": "section-6",
+        "equationNumber": "(6.x)"
       },
       "cp-phase-geometric": {
         "id": "cp-phase-geometric",
@@ -4312,14 +4504,16 @@
         "html": "δ<sub>CP</sub> = π · Σorient<sub>i</sub>/b₃ = π · 12/24 = π/2",
         "latex": "\\delta_{\\text{CP}} = \\pi \\frac{\\sum_i \\text{orientation}_i}{b_3} = \\pi \\frac{12}{24} = \\frac{\\pi}{2}",
         "plainText": "δ_CP = π · Σorient_i/b₃ = π · 12/24 = π/2",
-        "category": "DERIVED",
+        "category": "neutrino",
         "description": "CP phase from cycle orientation sum",
         "attribution": "Principia Metaphysica",
         "section": "6",
         "terms": {
           "δ_CP": {
             "name": "CP Phase",
-            "description": "Dirac CP violation phase"
+            "description": "CP-violating phase in PMNS matrix",
+            "units": "degrees",
+            "value": 232.5
           },
           "orient_i": {
             "name": "Orientations",
@@ -4359,13 +4553,17 @@
           "tcs-topology"
         ],
         "validated": false,
-        "inputParams": [
-          "topology.CHI_EFF"
-        ],
+        "inputParams": [],
         "outputParams": [
-          "mixing.DELTA_CP"
+          "δ_CP"
         ],
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "section-6",
+        "derivedFrom": [
+          "pmns_structure",
+          "cycle_orientation"
+        ],
+        "equationNumber": "(6.x)"
       },
       "seesaw-mechanism": {
         "id": "seesaw-mechanism",
@@ -4379,26 +4577,45 @@
         "sectionId": "section-6",
         "status": "theoretical",
         "inputParams": [
-          "higgs.VEV",
-          "neutrino.M_R",
-          "neutrino.y_nu"
+          "v_EW",
+          "M_R",
+          "y_ν"
         ],
         "outputParams": [
-          "neutrino.m_nu"
+          "m_ν"
         ],
         "experimentalValue": null,
         "sigma": null,
         "derivedFrom": [
-          "yukawa-instanton"
+          "yukawa_coupling",
+          "majorana_mass"
         ],
         "terms": {
-          "m_ν": "Light (active) neutrino mass",
+          "m_ν": {
+            "name": "Light Neutrino Mass",
+            "description": "Effective light neutrino mass from seesaw mechanism",
+            "units": "eV"
+          },
           "v": "Electroweak vacuum expectation value (246 GeV)",
-          "M_R": "Right-handed Majorana neutrino mass scale",
-          "y_ν": "Neutrino Yukawa coupling constant",
-          "~": "Approximately equal (seesaw scaling)"
+          "M_R": {
+            "name": "Right-Handed Neutrino Mass",
+            "description": "Heavy Majorana mass scale",
+            "units": "GeV"
+          },
+          "y_ν": {
+            "name": "Neutrino Yukawa Coupling",
+            "description": "Yukawa coupling for neutrinos"
+          },
+          "~": "Approximately equal (seesaw scaling)",
+          "v_EW": {
+            "name": "Electroweak VEV",
+            "description": "Electroweak vacuum expectation value",
+            "value": 246,
+            "units": "GeV"
+          }
         },
-        "label": "(6.3a) Seesaw Mechanism"
+        "label": "(6.3a) Seesaw Mechanism",
+        "attribution": "Principia Metaphysica"
       },
       "ckm-elements": {
         "id": "ckm-elements",
@@ -4406,7 +4623,7 @@
         "html": "|V<sub>ud</sub>| = 0.974, |V<sub>us</sub>| = 0.225, |V<sub>cb</sub>| = 0.041, |V<sub>ub</sub>| = 0.0036",
         "latex": "|V_{ud}| = 0.974, \\quad |V_{us}| = 0.225, \\quad |V_{cb}| = 0.041, \\quad |V_{ub}| = 0.0036",
         "plainText": "|V_ud| = 0.974, |V_us| = 0.225, |V_cb| = 0.041, |V_ub| = 0.0036",
-        "category": "PREDICTIONS",
+        "category": "mixing",
         "description": "CKM quark mixing matrix elements from geometry",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
@@ -4465,13 +4682,33 @@
         "notes": "Derived from G₂ wavefunction overlaps",
         "validated": false,
         "inputParams": [
-          "yukawa.Y_UP",
-          "yukawa.Y_DOWN"
+          "V_u",
+          "V_d"
         ],
         "outputParams": [
-          "mixing.V_CKM"
+          "V_CKM"
         ],
-        "units": "dimensionless"
+        "units": "dimensionless",
+        "sectionId": "section-6",
+        "derivedFrom": [
+          "quark_mixing",
+          "yukawa_diagonalization"
+        ],
+        "terms": {
+          "V_CKM": {
+            "name": "CKM Matrix",
+            "description": "Quark mixing matrix relating mass and flavor eigenstates"
+          },
+          "V_u": {
+            "name": "Up-type Rotation",
+            "description": "Unitary matrix diagonalizing up-type Yukawa"
+          },
+          "V_d": {
+            "name": "Down-type Rotation",
+            "description": "Unitary matrix diagonalizing down-type Yukawa"
+          }
+        },
+        "equationNumber": "(6.x)"
       },
       "yukawa-instanton": {
         "id": "yukawa-instanton",
@@ -4479,14 +4716,14 @@
         "html": "Y<sub>ij</sub> = Y<sub>ij</sub><sup>(0)</sup> · e<sup>-S<sub>inst</sub></sup> = Y<sup>(0)</sup> · e<sup>-Vol(Σ<sub>ij</sub>)/l<sub>s</sub>³</sup>",
         "latex": "Y_{ij} = Y_{ij}^{(0)} \\cdot e^{-S_{\\text{inst}}} = Y_{ij}^{(0)} \\cdot e^{-\\text{Vol}(\\Sigma_{ij})/l_s^3}",
         "plainText": "Y_ij = Y_ij^(0) · exp(-S_inst) = Y^(0) · exp(-Vol(Σ_ij)/l_s³)",
-        "category": "DERIVED",
+        "category": "yukawa_couplings",
         "description": "Yukawa coupling suppression from worldsheet instantons",
         "attribution": "Principia Metaphysica",
         "section": "6",
         "terms": {
           "Y_ij": {
             "name": "Yukawa Coupling",
-            "description": "Generation-dependent couplings"
+            "description": "Effective Yukawa coupling for generations i,j"
           },
           "S_inst": {
             "name": "Instanton Action",
@@ -4495,6 +4732,14 @@
           "Σ_ij": {
             "name": "Instanton Surface",
             "description": "Minimal area connecting generations"
+          },
+          "n_ij": {
+            "name": "Instanton Number",
+            "description": "Worldsheet instanton winding number"
+          },
+          "S": {
+            "name": "String Dilaton",
+            "description": "String coupling modulus"
           }
         },
         "simulationFile": "simulations/g2_yukawa_overlap_integrals_v15_0.py",
@@ -4541,27 +4786,34 @@
           "top-quark-mass"
         ],
         "inputParams": [
-          "gauge.M_GUT"
+          "n_ij",
+          "S"
         ],
         "notes": "Explains fermion mass hierarchies geometrically",
         "validated": false,
         "outputParams": [
-          "yukawa.Y_INSTANTON"
+          "Y_ij"
         ],
         "units": "dimensionless",
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "section-6",
+        "derivedFrom": [
+          "worldsheet_instantons",
+          "string_theory"
+        ],
+        "equationNumber": "(6.x)"
       },
       "effective-dimension": {
         "id": "effective-dimension",
-        "label": "(7.1) Effective Dimension",
+        "label": "(7.1a) Effective Dimension",
         "html": "d<sub>eff</sub> = 12 + γ(Shadow<sub>ק</sub> + Shadow<sub>ח</sub>) = 12 + 0.5(1.152) = 12.576",
         "latex": "d_{\\text{eff}} = 12 + \\gamma(\\text{Shadow}_ק + \\text{Shadow}_ח) = 12 + 0.5(1.152) = 12.576",
         "plainText": "d_eff = 12 + γ(Shadow_ק + Shadow_ח) = 12 + 0.5(1.152) = 12.576",
         "category": "DERIVED",
-        "description": "Effective dimension with ghost correction",
+        "description": "Effective dimension from ghost-corrected string spectrum",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "7",
+        "section": "Appendix D",
         "terms": {
           "d_eff": {
             "name": "Effective Dimension",
@@ -4569,11 +4821,19 @@
           },
           "γ": {
             "name": "Ghost Coefficient",
-            "description": "= 0.5 from Virasoro"
+            "description": "From ghost central charge structure"
           },
           "Shadow": {
             "name": "Shadow Contributions",
             "description": "= 0.576 each"
+          },
+          "D_eff": {
+            "name": "Effective Dimension",
+            "description": "Ghost-corrected spacetime dimension"
+          },
+          "D_crit": {
+            "name": "Critical Dimension",
+            "description": "Critical bosonic string dimension, equals 26"
           }
         },
         "computedValue": 12.576,
@@ -4606,13 +4866,21 @@
         ],
         "validated": false,
         "outputParams": [
-          "dimensions.D_EFFECTIVE"
+          "dimensions.D_EFF"
         ],
-        "inputParams": []
+        "inputParams": [
+          "constants.D_CRIT",
+          "coefficients.GAMMA"
+        ],
+        "sectionId": "appendix-d",
+        "equationNumber": "D.2",
+        "derivedFrom": [
+          "ghost-coefficient"
+        ]
       },
       "dark-energy-wa": {
         "id": "dark-energy-wa",
-        "label": "(7.4) Dark Energy Evolution",
+        "label": "(7.5) Dark Energy Evolution",
         "html": "w<sub>a</sub> = -α<sub>T</sub>/3 · (w₀ + 1)/(1 - w₀) = -0.95",
         "latex": "w_a = -\\frac{\\alpha_T}{3} \\times \\frac{w_0 + 1}{1 - w_0} = -0.95",
         "plainText": "w_a = -α_T/3 · (w₀ + 1)/(1 - w₀) = -0.95",
@@ -4676,15 +4944,24 @@
         ],
         "validated": false,
         "sectionId": "section-7",
-        "equationNumber": "7.4",
+        "equationNumber": "(7.5)",
         "derivedFrom": [
           "dark-energy-w0",
           "effective-dimension"
+        ],
+        "learningResources": [
+          {
+            "title": "CPL Parametrization - Chevallier & Linder",
+            "url": "https://arxiv.org/abs/gr-qc/0009008",
+            "type": "article",
+            "level": "intermediate",
+            "description": "Original w0-wa parametrization for dark energy evolution"
+          }
         ]
       },
       "thermal-time": {
         "id": "thermal-time",
-        "label": "(7.8) Thermal Time",
+        "label": "(7.10) Thermal Time",
         "html": "t<sub>therm</sub> = α<sub>T</sub> · S<sub>Pneuma</sub> = α<sub>T</sub> · Tr(ρ log ρ)",
         "latex": "t_{\\text{therm}} = \\alpha_T \\cdot S_{\\text{Pneuma}} = \\alpha_T \\cdot \\text{Tr}(\\rho \\log \\rho)",
         "plainText": "t_therm = α_T · S_Pneuma = α_T · Tr(ρ log ρ)",
@@ -4735,15 +5012,15 @@
           }
         ],
         "sectionId": "section-7",
-        "equationNumber": "7.8",
+        "equationNumber": "(7.10)",
         "derivedFrom": [
           "kms-condition"
         ]
       },
       "attractor-potential": {
         "id": "attractor-potential",
-        "equationNumber": "7.5",
-        "label": "(7.5) Attractor Potential",
+        "equationNumber": "(7.6)",
+        "label": "(7.6) Attractor Potential",
         "latex": "V(\\phi_M) = V_{\\text{flux}} e^{-a\\phi_M} + V_{\\text{inst}} e^{-b/\\phi_M} + V_{\\text{axion}} \\cos(\\phi_M/f)",
         "plainText": "V(φ_M) = V_flux·exp(-aφ_M) + V_inst·exp(-b/φ_M) + V_axion·cos(φ_M/f)",
         "html": "V(φ<sub>M</sub>) = V<sub>flux</sub>e<sup>-aφ<sub>M</sub></sup> + V<sub>inst</sub>e<sup>-b/φ<sub>M</sub></sup> + V<sub>axion</sub>cos(φ<sub>M</sub>/f)",
@@ -4813,11 +5090,23 @@
             "description": "KKLT moduli stabilization mechanism"
           }
         ],
-        "derivedFrom": []
+        "derivedFrom": [
+          "kklt-stabilization",
+          "large-volume-scenario"
+        ],
+        "learningResources": [
+          {
+            "title": "String Theory and Cosmology - KKLT",
+            "url": "https://arxiv.org/abs/hep-th/0301240",
+            "type": "article",
+            "level": "advanced",
+            "description": "Moduli stabilization in string theory"
+          }
+        ]
       },
       "friedmann-constraint": {
         "id": "friedmann-constraint",
-        "label": "(7.9) Friedmann Constraint",
+        "label": "(7.11) Friedmann Constraint",
         "html": "H² = (2κ/3)[ρ + ρ<sub>DE</sub>(t)]",
         "latex": "H^2 = \\frac{2\\kappa}{3}[\\rho + \\rho_{\\text{DE}}(t)]",
         "plainText": "H² = (2κ/3)[ρ + ρ_DE(t)]",
@@ -4882,11 +5171,17 @@
             "year": 1999,
             "description": "Discovery of cosmic acceleration"
           }
+        ],
+        "sectionId": "section-7",
+        "equationNumber": "(7.11)",
+        "derivedFrom": [
+          "friedmann-equations",
+          "dark-energy-w0"
         ]
       },
       "de-sitter-attractor": {
         "id": "de-sitter-attractor",
-        "label": "(7.10) de Sitter Attractor",
+        "label": "(7.12) de Sitter Attractor",
         "html": "H → H<sub>∞</sub> (constant), w → -1 as t → ∞",
         "latex": "H \\to H_\\infty \\, (\\text{constant}), \\quad w \\to -1 \\, \\text{as} \\, t \\to \\infty",
         "plainText": "H → H_∞ (constant), w → -1 as t → ∞",
@@ -4933,11 +5228,31 @@
             "year": 1999,
             "description": "Discovery of cosmic acceleration"
           }
-        ]
+        ],
+        "sectionId": "section-7",
+        "equationNumber": "(7.12)",
+        "derivedFrom": [
+          "attractor-potential",
+          "friedmann-constraint"
+        ],
+        "terms": {
+          "H_∞": {
+            "name": "Asymptotic Hubble",
+            "description": "Late-time constant Hubble parameter"
+          },
+          "w": {
+            "name": "EoS Parameter",
+            "description": "Equation of state parameter"
+          },
+          "t → ∞": {
+            "name": "Late-time Limit",
+            "description": "Asymptotic future limit"
+          }
+        }
       },
       "tomita-takesaki": {
         "id": "tomita-takesaki",
-        "label": "(7.7) Tomita-Takesaki Theorem",
+        "label": "(7.13) Tomita-Takesaki Theorem",
         "html": "Δ<sup>it</sup>𝒜Δ<sup>-it</sup> = 𝒜, S = JΔ<sup>1/2</sup>",
         "latex": "\\Delta^{it} \\mathcal{A} \\Delta^{-it} = \\mathcal{A}, \\quad S = J\\Delta^{1/2}",
         "plainText": "Δ^it 𝒜 Δ^{-it} = 𝒜, S = JΔ^{1/2}",
@@ -5008,11 +5323,16 @@
             "arxiv": "gr-qc/9406019",
             "description": "Thermal time hypothesis"
           }
+        ],
+        "sectionId": "section-7",
+        "equationNumber": "(7.13)",
+        "derivedFrom": [
+          "von-neumann-algebra-theory"
         ]
       },
       "kms-condition": {
         "id": "kms-condition",
-        "label": "(7.8) KMS Condition",
+        "label": "(7.14) KMS Condition",
         "html": "⟨A(t + iβ)B⟩ = ⟨BA(t)⟩ with β = 1/(k<sub>B</sub>T)",
         "latex": "\\langle A(t + i\\beta)B \\rangle = \\langle BA(t) \\rangle \\, \\text{with} \\, \\beta = \\frac{1}{k_B T}",
         "plainText": "⟨A(t + iβ)B⟩ = ⟨BA(t)⟩ with β = 1/(k_B T)",
@@ -5073,36 +5393,41 @@
             "arxiv": "gr-qc/9406019",
             "description": "Thermal time hypothesis"
           }
+        ],
+        "sectionId": "section-7",
+        "equationNumber": "(7.14)",
+        "derivedFrom": [
+          "tomita-takesaki",
+          "thermal-equilibrium"
         ]
       },
       "gw-dispersion": {
         "id": "gw-dispersion",
-        "equationNumber": "7.5",
-        "label": "(7.8) Gravitational Wave Dispersion",
+        "equationNumber": "I.1",
+        "label": "(7.9) Gravitational Wave Dispersion",
         "latex": "\\eta = \\frac{e^{|T_\\omega|}}{b_3} = \\frac{e^{1.0}}{24} \\approx 0.113",
         "plainText": "η = exp(|T_ω|)/b_3 = exp(1.0)/24 ≈ 0.113",
         "html": "η = e<sup>|T<sub>ω</sub>|</sup>/b<sub>3</sub> = e<sup>1.0</sup>/24 ≈ 0.113",
-        "description": "Gravitational wave dispersion parameter from Pneuma-graviton coupling",
+        "description": "Gravitational wave frequency-dependent dispersion relation",
         "category": "predictions",
-        "section": "7",
-        "sectionId": "section-7",
+        "section": "Appendix I",
+        "sectionId": "appendix-i",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
         "inputParams": [
-          "cosmology.omega_gw",
-          "cosmology.frequency",
-          "geometry.M_KK"
+          "gw.ETA",
+          "gw.OMEGA_GW"
         ],
         "outputParams": [
-          "cosmology.gw_amplitude"
+          "gw.V_GROUP"
         ],
         "computedValue": 0.113,
         "units": "dimensionless",
         "validated": false,
         "terms": {
           "η": {
-            "name": "GW Dispersion",
-            "description": "Gravitational wave dispersion parameter"
+            "name": "Dispersion Coefficient",
+            "description": "From topological structure"
           },
           "T_ω": {
             "name": "Torsion Invariant",
@@ -5118,7 +5443,7 @@
           },
           "ω": {
             "name": "GW Frequency",
-            "description": "Gravitational wave frequency"
+            "description": "Gravitational wave angular frequency"
           },
           "Ω_GW": {
             "name": "GW Energy Density",
@@ -5127,6 +5452,14 @@
           "h_c": {
             "name": "Characteristic Strain",
             "description": "GW amplitude"
+          },
+          "v_g": {
+            "name": "Group Velocity",
+            "description": "Gravitational wave propagation speed"
+          },
+          "c": {
+            "name": "Speed of Light",
+            "description": "Light speed in vacuum"
           }
         },
         "derivation": {
@@ -5147,7 +5480,16 @@
           "kk-graviton-mass"
         ],
         "derivedFrom": [
-          "kk-graviton-mass"
+          "gw-dispersion-coeff"
+        ],
+        "learningResources": [
+          {
+            "title": "Gravitational Wave Astronomy - LIGO",
+            "url": "https://www.ligo.caltech.edu/page/what-are-gw",
+            "type": "article",
+            "level": "beginner",
+            "description": "Introduction to gravitational waves and detection"
+          }
         ]
       },
       "gw-dispersion-coeff": {
@@ -5157,7 +5499,7 @@
         "latex": "\\eta = \\frac{e^{|T_\\omega|}}{b_3} = \\frac{e}{24} \\approx 0.113",
         "plainText": "η = exp(|T_ω|)/b₃ = e/24 ≈ 0.113",
         "category": "PREDICTIONS",
-        "description": "GW dispersion coefficient from topology",
+        "description": "GW dispersion coefficient from topological torsion structure",
         "attribution": "Principia Metaphysica",
         "section": "Appendix I",
         "computedValue": 0.113,
@@ -5168,10 +5510,11 @@
         ],
         "validated": false,
         "inputParams": [
-          "gw.OMEGA_GW"
+          "topology.T_OMEGA",
+          "topology.B3"
         ],
         "outputParams": [
-          "gw.COEFF"
+          "gw.ETA"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5183,7 +5526,26 @@
             "year": 2016,
             "description": "First detection of gravitational waves"
           }
-        ]
+        ],
+        "sectionId": "appendix-i",
+        "equationNumber": "I.2",
+        "derivedFrom": [
+          "effective-torsion-spinor"
+        ],
+        "terms": {
+          "η": {
+            "name": "Dispersion Coefficient",
+            "description": "Gravitational wave dispersion parameter"
+          },
+          "T_ω": {
+            "name": "Effective Torsion",
+            "description": "Torsion with Spin(7) correction"
+          },
+          "b_3": {
+            "name": "Third Betti Number",
+            "description": "Equals 24, normalizes dispersion"
+          }
+        }
       },
       "proton-branching": {
         "id": "proton-branching",
@@ -5192,7 +5554,7 @@
         "latex": "\\text{BR}(p \\to e^+\\pi^0) = \\left(\\frac{N_{\\text{orient}}}{b_3}\\right)^2 = \\left(\\frac{12}{24}\\right)^2 = 0.25",
         "plainText": "BR(p → e⁺π⁰) = (N_orient/b₃)² = (12/24)² = 0.25",
         "category": "PREDICTIONS",
-        "description": "Proton decay branching ratio to e⁺π⁰",
+        "description": "Proton decay branching ratio to e+π0 from geometric orientations",
         "attribution": "Principia Metaphysica",
         "section": "Appendix H",
         "computedValue": 0.25,
@@ -5204,10 +5566,11 @@
         "testability": "Hyper-K 2030s",
         "validated": false,
         "inputParams": [
-          "decay.TAU_PROTON"
+          "topology.N_ORIENT",
+          "topology.B3"
         ],
         "outputParams": [
-          "decay.BR_E_PI0"
+          "decay.BR_EPION"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5220,7 +5583,26 @@
             "arxiv": "hep-ph/0601023",
             "description": "Review of proton decay in GUT models"
           }
-        ]
+        ],
+        "sectionId": "appendix-h",
+        "equationNumber": "H.1",
+        "derivedFrom": [
+          "tcs-topology"
+        ],
+        "terms": {
+          "BR": {
+            "name": "Branching Ratio",
+            "description": "Probability for specific decay channel"
+          },
+          "N_orient": {
+            "name": "Orientation Count",
+            "description": "Number of coassociative orientations, equals 12"
+          },
+          "b_3": {
+            "name": "Third Betti Number",
+            "description": "Total 3-cycle count, equals 24"
+          }
+        }
       },
       "ghost-coefficient": {
         "id": "ghost-coefficient",
@@ -5229,21 +5611,21 @@
         "latex": "\\gamma = \\frac{|c_{\\text{ghost}}|}{2 c_{\\text{matter}}} = \\frac{26}{2 \\times 26} = 0.5",
         "plainText": "γ = |c_ghost|/(2c_matter) = 26/(2×26) = 0.5",
         "category": "DERIVED",
-        "description": "Ghost coefficient from Virasoro anomaly structure",
+        "description": "Ghost coefficient from Virasoro anomaly cancellation structure",
         "attribution": "Principia Metaphysica",
         "section": "Appendix D",
         "terms": {
           "γ": {
             "name": "Ghost Coefficient",
-            "description": "Contribution factor to effective dimension"
+            "description": "Contribution factor to effective dimension from ghost sector"
           },
           "c_ghost": {
             "name": "Ghost Central Charge",
-            "description": "= -26 from reparametrization ghosts"
+            "description": "Central charge from reparametrization ghosts, equals -26"
           },
           "c_matter": {
             "name": "Matter Central Charge",
-            "description": "= 26 from spacetime dimensions"
+            "description": "Central charge from matter fields, equals 26"
           }
         },
         "computedValue": 0.5,
@@ -5254,10 +5636,11 @@
         ],
         "validated": false,
         "inputParams": [
-          "gauge.ALPHA_GUT"
+          "constants.C_GHOST",
+          "constants.C_MATTER"
         ],
         "outputParams": [
-          "ghost.C_GHOST"
+          "coefficients.GAMMA"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5269,7 +5652,10 @@
             "year": 1967,
             "description": "Faddeev-Popov ghost fields in gauge theory"
           }
-        ]
+        ],
+        "sectionId": "appendix-d",
+        "equationNumber": "D.1",
+        "derivedFrom": []
       },
       "kappa-gut-coefficient": {
         "id": "kappa-gut-coefficient",
@@ -5278,17 +5664,17 @@
         "latex": "\\kappa = \\frac{10\\pi}{V_5^{1/5}} = \\frac{10\\pi}{21.6} = 1.46",
         "plainText": "κ = 10π/V_5^(1/5) = 10π/21.6 = 1.46",
         "category": "DERIVED",
-        "description": "GUT scale coefficient from G₂ 5-cycle volume",
+        "description": "GUT scale coefficient from G₂ 5-cycle volume normalization",
         "attribution": "Principia Metaphysica",
         "section": "Appendix E",
         "terms": {
           "κ": {
             "name": "GUT Coefficient",
-            "description": "Gauge kinetic function normalization"
+            "description": "Gauge kinetic function normalization from G₂ geometry"
           },
           "V_5": {
             "name": "5-Cycle Volume",
-            "description": "= (b₂·b₃/4π)^(5/3) = 21.6"
+            "description": "From (b₂·b₃/4π)^(5/3) = 21.6"
           }
         },
         "computedValue": 1.46,
@@ -5299,10 +5685,10 @@
         ],
         "validated": false,
         "inputParams": [
-          "gauge.M_GUT"
+          "geometry.V5"
         ],
         "outputParams": [
-          "gauge.KAPPA_GUT"
+          "coefficients.KAPPA"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5314,6 +5700,11 @@
             "year": 1974,
             "description": "Original SO(10) grand unification proposal"
           }
+        ],
+        "sectionId": "appendix-e",
+        "equationNumber": "E.4",
+        "derivedFrom": [
+          "g2-volume-5cycle"
         ]
       },
       "effective-torsion-spinor": {
@@ -5323,17 +5714,17 @@
         "latex": "T_\\omega = -1.000 \\times \\frac{7}{8} = -0.875",
         "plainText": "T_ω = -1.000 × (7/8) = -0.875",
         "category": "DERIVED",
-        "description": "Effective torsion with Spin(7) spinor fraction correction",
+        "description": "Effective torsion with Spin(7) spinor fraction stabilization correction",
         "attribution": "Principia Metaphysica",
         "section": "Appendix G",
         "terms": {
           "T_ω": {
             "name": "Effective Torsion",
-            "description": "With spinor stabilization"
+            "description": "Torsion with Spin(7) spinor stabilization"
           },
           "7/8": {
             "name": "Spinor Fraction",
-            "description": "G₄ flux stabilizes 7 of 8 components"
+            "description": "G₄ flux stabilizes 7 of 8 Spin(7) spinor components"
           }
         },
         "computedValue": -0.875,
@@ -5347,10 +5738,11 @@
         "notes": "1.02% agreement with phenomenological value",
         "validated": false,
         "inputParams": [
-          "topology.CHI_EFF"
+          "topology.T_RAW",
+          "spinor.SPIN7_FRACTION"
         ],
         "outputParams": [
-          "topology.TAU_SPINOR"
+          "topology.T_OMEGA"
         ],
         "units": "dimensionless",
         "status": "GEOMETRIC",
@@ -5362,6 +5754,11 @@
             "year": 2000,
             "description": "Comprehensive reference on G2 manifolds and topology"
           }
+        ],
+        "sectionId": "appendix-g",
+        "equationNumber": "G.3",
+        "derivedFrom": [
+          "torsion-raw"
         ]
       },
       "gw-dispersion-alt": {
@@ -5371,21 +5768,21 @@
         "latex": "\\eta^{\\text{alt}} = \\frac{e^{0.882}}{24} \\approx 0.101",
         "plainText": "η_alt = exp(0.882)/24 ≈ 0.101",
         "category": "PREDICTIONS",
-        "description": "Alternative GW dispersion with phenomenological normalization",
+        "description": "Alternative GW dispersion with phenomenological normalization constant",
         "attribution": "Principia Metaphysica",
         "section": "Appendix I",
         "terms": {
           "η_alt": {
             "name": "Alternative Dispersion",
-            "description": "Using C = 27.2 normalization"
+            "description": "Using phenomenological C = 27.2 normalization"
           },
           "T_ω^alt": {
             "name": "Alternative Torsion",
-            "description": "= -b₃/27.2 = -0.882"
+            "description": "Equals -b₃/27.2 = -0.882"
           },
           "e^0.882": {
             "name": "Exponential Factor",
-            "description": "exp(-T_ω^alt) ≈ 2.415"
+            "description": "From alternative torsion magnitude"
           }
         },
         "computedValue": 0.101,
@@ -5397,11 +5794,11 @@
         "notes": "0.2% agreement with phenomenological torsion T_ω = -0.884",
         "validated": false,
         "inputParams": [
-          "topology.b3",
-          "constants.NORMALIZATION"
+          "constants.C_PHENOM",
+          "topology.B3"
         ],
         "outputParams": [
-          "gw.eta_alt"
+          "gw.ETA_ALT"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5417,7 +5814,7 @@
         "sectionId": "appendix-i",
         "equationNumber": "I.4",
         "derivedFrom": [
-          "gw-dispersion-relation"
+          "gw-dispersion-coeff"
         ]
       },
       "vacuum-minimization": {
@@ -5429,7 +5826,7 @@
         "category": "DERIVED",
         "description": "Vacuum stability condition for racetrack potential minimum",
         "attribution": "Principia Metaphysica",
-        "section": "2",
+        "section": "Section 2",
         "terms": {
           "V": {
             "name": "Scalar Potential",
@@ -5498,7 +5895,7 @@
         "description": "Mirror sector temperature ratio from G₂ topology",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "terms": {
           "T'": {
             "name": "Mirror Temperature",
@@ -5547,7 +5944,7 @@
           "mirror.T_RATIO"
         ],
         "units": "dimensionless",
-        "sectionId": "section-4",
+        "sectionId": "4",
         "equationNumber": "4.5a",
         "derivedFrom": [
           "tcs-topology",
@@ -5561,7 +5958,7 @@
         "latex": "\\text{SO}(10) \\to \\text{SU}(4)_C \\times \\text{SU}(2)_L \\times \\text{SU}(2)_R \\to \\text{SU}(3)_C \\times \\text{SU}(2)_L \\times \\text{U}(1)_Y",
         "plainText": "SO(10) → SU(4)_C × SU(2)_L × SU(2)_R → SU(3)_C × SU(2)_L × U(1)_Y",
         "category": "THEORY",
-        "description": "Intermediate Pati-Salam symmetry breaking chain (geometrically preferred)",
+        "description": "Pati-Salam symmetry breaking chain with intermediate scales",
         "attribution": "Principia Metaphysica",
         "section": "5",
         "terms": {
@@ -5572,7 +5969,11 @@
           "SU(2)_R": {
             "name": "Right-Handed Weak",
             "description": "Parity restoration at GUT scale"
-          }
+          },
+          "SU(4)_C × SU(2)_L × SU(2)_R": "Pati-Salam gauge group",
+          "M_PS": "Pati-Salam breaking scale",
+          "M_LR": "Left-Right symmetry breaking scale",
+          "M_EW": "Electroweak symmetry breaking scale"
         },
         "derivation": {
           "parentFormulas": [
@@ -5595,15 +5996,21 @@
           "seesaw-mechanism"
         ],
         "inputParams": [
-          "gauge.M_GUT"
+          "M_GUT"
         ],
         "notes": "Provides right-handed neutrinos for seesaw mechanism",
         "validated": false,
         "outputParams": [
-          "breaking.CHAIN_PS"
+          "M_PS",
+          "M_LR",
+          "M_EW"
         ],
         "units": "dimensionless",
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "5",
+        "derivedFrom": [
+          "so10-breaking"
+        ]
       },
       "higgs-potential": {
         "id": "higgs-potential",
@@ -5612,7 +6019,7 @@
         "latex": "V(H) = -\\mu^2 |H|^2 + \\lambda |H|^4",
         "plainText": "V(H) = -μ²|H|² + λ|H|⁴",
         "category": "ESTABLISHED",
-        "description": "Standard Model Higgs potential from EWSB",
+        "description": "Higgs scalar potential with quartic and quadratic terms",
         "attribution": "Weinberg-Salam",
         "section": "5",
         "terms": {
@@ -5627,7 +6034,11 @@
           "H": {
             "name": "Higgs Doublet",
             "description": "SU(2)_L doublet scalar field"
-          }
+          },
+          "V(phi)": "Higgs potential",
+          "phi": "Higgs field doublet",
+          "lambda": "Higgs quartic coupling",
+          "mu2": "Higgs mass parameter squared"
         },
         "derivation": {
           "parentFormulas": [
@@ -5649,15 +6060,18 @@
           "higgs-vev"
         ],
         "inputParams": [
-          "pneuma.VEV"
+          "lambda",
+          "mu2"
         ],
         "notes": "Minimization gives v_EW = 246 GeV and m_h = √(2λ)v_EW = 125 GeV",
         "validated": false,
         "outputParams": [
-          "potential.V_HIGGS"
+          "V(phi)"
         ],
         "units": "GeV^4",
-        "status": "DERIVED"
+        "status": "DERIVED",
+        "sectionId": "5",
+        "derivedFrom": []
       },
       "higgs-quartic": {
         "id": "higgs-quartic",
@@ -5666,7 +6080,7 @@
         "latex": "\\lambda(M_Z) = \\frac{m_h^2}{2v_{\\text{EW}}^2} = 0.1296",
         "plainText": "λ(M_Z) = m_h²/(2v_EW²) = 0.1296",
         "category": "DERIVED",
-        "description": "Higgs self-coupling from observed Higgs mass",
+        "description": "Higgs quartic coupling from gauge couplings",
         "attribution": "Principia Metaphysica",
         "section": "5",
         "terms": {
@@ -5681,7 +6095,11 @@
           "v_EW": {
             "name": "EW VEV",
             "description": "246 GeV"
-          }
+          },
+          "lambda": "Higgs quartic self-coupling",
+          "g_2": "SU(2)_L gauge coupling",
+          "g_1": "U(1)_Y gauge coupling",
+          "v": "Higgs vacuum expectation value"
         },
         "computedValue": 0.1296,
         "experimentalValue": 0.1296,
@@ -5693,11 +6111,11 @@
         ],
         "validated": false,
         "inputParams": [
-          "higgs.VEV",
-          "higgs.M_H"
+          "g_2",
+          "g_1"
         ],
         "outputParams": [
-          "higgs.LAMBDA"
+          "lambda"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5709,6 +6127,10 @@
             "year": 1964,
             "description": "Spontaneous symmetry breaking and Higgs mechanism"
           }
+        ],
+        "sectionId": "5",
+        "derivedFrom": [
+          "higgs-potential"
         ]
       },
       "rg-running-couplings": {
@@ -5718,7 +6140,7 @@
         "latex": "\\frac{d\\alpha_i^{-1}}{d\\ln(\\mu)} = -\\frac{b_i}{2\\pi}, \\quad b = \\left(\\frac{41}{10}, -\\frac{19}{6}, -7\\right)",
         "plainText": "dα_i^{-1}/d ln(μ) = -b_i/(2π), b = (41/10, -19/6, -7)",
         "category": "ESTABLISHED",
-        "description": "One-loop RG evolution equations for SM gauge couplings",
+        "description": "Renormalization group running of gauge couplings",
         "attribution": "Georgi-Quinn-Weinberg 1974",
         "section": "5",
         "terms": {
@@ -5726,14 +6148,15 @@
             "name": "Gauge Couplings",
             "description": "i = 1(U(1)_Y), 2(SU(2)_L), 3(SU(3)_C)"
           },
-          "b_i": {
-            "name": "Beta Coefficients",
-            "description": "1-loop beta function coefficients"
-          },
+          "b_i": "Beta function coefficient",
           "μ": {
             "name": "Renormalization Scale",
             "description": "Energy scale for running"
-          }
+          },
+          "alpha_i(mu)": "Gauge coupling at scale mu",
+          "alpha_i(M_Z)": "Gauge coupling at Z mass",
+          "mu": "Renormalization scale",
+          "t": "Log of scale ratio"
         },
         "simulationFile": "simulations/gauge_unification_precision_v12_4.py",
         "relatedFormulas": [
@@ -5742,13 +6165,13 @@
           "strong-coupling"
         ],
         "inputParams": [
-          "gauge.ALPHA_GUT",
-          "gauge.M_GUT"
+          "alpha_i(M_Z)",
+          "b_i"
         ],
         "notes": "Evolves from α_GUT = 1/23.54 at M_GUT to SM values at M_Z",
         "validated": false,
         "outputParams": [
-          "gauge.ALPHA_RUN"
+          "alpha_i(mu)"
         ],
         "units": "dimensionless",
         "status": "DERIVED",
@@ -5760,7 +6183,9 @@
             "year": 1991,
             "description": "Renormalization group evolution in GUTs"
           }
-        ]
+        ],
+        "sectionId": "5",
+        "derivedFrom": []
       },
       "bottom-quark-mass": {
         "id": "bottom-quark-mass",
@@ -5781,24 +6206,25 @@
         "experimentalError": 0.03,
         "sigmaDeviation": 0.0,
         "inputParams": [
-          "yukawa.y_b",
-          "higgs.v_EW"
+          "y_b",
+          "v_EW"
         ],
         "outputParams": [
-          "fermion_masses.m_b"
+          "m_b"
         ],
         "terms": {
           "m_b": {
             "name": "Bottom Quark Mass",
-            "description": "Mass of the bottom quark (MS scheme)"
+            "value": 4.18,
+            "units": "GeV"
           },
           "y_b": {
-            "name": "Bottom Yukawa Coupling",
-            "description": "Yukawa coupling constant for bottom quark"
+            "name": "Bottom Yukawa Coupling"
           },
           "v_EW": {
-            "name": "Electroweak VEV",
-            "description": "Higgs vacuum expectation value (246 GeV)"
+            "name": "Higgs VEV",
+            "value": 246,
+            "units": "GeV"
           }
         },
         "derivation": {
@@ -5813,8 +6239,8 @@
         },
         "validated": true,
         "derivedFrom": [
-          "yukawa-lagrangian",
-          "higgs-vev"
+          "yukawa_coupling",
+          "higgs_vev"
         ]
       },
       "tau-lepton-mass": {
@@ -5836,11 +6262,11 @@
         "experimentalError": 0.00012,
         "sigmaDeviation": 0.12,
         "inputParams": [
-          "yukawa.y_tau",
-          "higgs.v_EW"
+          "y_τ",
+          "v_EW"
         ],
         "outputParams": [
-          "fermion_masses.m_tau"
+          "m_τ"
         ],
         "terms": {
           "m_tau": {
@@ -5852,8 +6278,17 @@
             "description": "Yukawa coupling constant for tau lepton"
           },
           "v_EW": {
-            "name": "Electroweak VEV",
-            "description": "Higgs vacuum expectation value (246 GeV)"
+            "name": "Higgs VEV",
+            "value": 246,
+            "units": "GeV"
+          },
+          "m_τ": {
+            "name": "Tau Lepton Mass",
+            "value": 1.777,
+            "units": "GeV"
+          },
+          "y_τ": {
+            "name": "Tau Yukawa Coupling"
           }
         },
         "derivation": {
@@ -5868,8 +6303,8 @@
         },
         "validated": true,
         "derivedFrom": [
-          "yukawa-lagrangian",
-          "higgs-vev"
+          "yukawa_coupling",
+          "higgs_vev"
         ]
       },
       "higgs-mass": {
@@ -5879,19 +6314,19 @@
         "latex": "m_h = 125.10\\,\\text{GeV}",
         "plainText": "m_h = 125.10 GeV",
         "category": "ESTABLISHED",
-        "description": "Higgs mass is phenomenological INPUT that constrains Re(T) modulus",
+        "description": "Higgs boson mass from quartic coupling and VEV",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
         "section": "5",
         "terms": {
-          "m_h": {
-            "name": "Higgs Mass",
-            "description": "LHC measured value"
-          },
+          "m_h": "Higgs boson mass",
           "Re(T)": {
             "name": "Volume Modulus",
             "description": "= 7.086, fixed by m_h constraint"
-          }
+          },
+          "lambda": "Higgs quartic coupling",
+          "v": "Higgs VEV",
+          "mu2": "Higgs mass parameter"
         },
         "computedValue": 125.1,
         "units": "GeV",
@@ -5904,12 +6339,13 @@
           "higgs-potential"
         ],
         "inputParams": [
-          "pneuma.VEV"
+          "lambda",
+          "v"
         ],
         "notes": "NOT a prediction - this is INPUT. The Re(T) = 7.086 value IS derived from m_h.",
         "validated": false,
         "outputParams": [
-          "higgs.M_H"
+          "m_h"
         ],
         "references": [
           {
@@ -5921,10 +6357,10 @@
           }
         ],
         "equationNumber": "5.7",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "derivedFrom": [
-          "higgs-vev",
-          "tcs-topology"
+          "higgs-quartic",
+          "higgs-vev"
         ]
       },
       "sp2r-algebra": {
@@ -5939,7 +6375,7 @@
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
         "section": "Dimensional Shadow",
-        "sectionId": "section-3",
+        "sectionId": "3",
         "terms": {
           "J_{ab}": "Sp(2,R) Lie algebra generators for symplectic gauge symmetry",
           "J_{cd}": "Sp(2,R) Lie algebra generators",
@@ -5957,7 +6393,9 @@
           "4"
         ],
         "inputParams": [],
-        "outputParams": [],
+        "outputParams": [
+          "commutator.J_ab_J_cd"
+        ],
         "references": [
           {
             "id": "green1987_sw1",
@@ -5984,8 +6422,8 @@
         "description": "String worldsheet position vector null constraint",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "3",
-        "sectionId": "3-dimensional-shadow",
+        "section": "Dimensional Shadow",
+        "sectionId": "3",
         "terms": {
           "X^M": {
             "name": "Position Vector",
@@ -6002,8 +6440,13 @@
         "usedInSections": [
           "3"
         ],
-        "inputParams": [],
-        "outputParams": [],
+        "inputParams": [
+          "geometry.X_M",
+          "geometry.eta_MN"
+        ],
+        "outputParams": [
+          "constraint.X_squared"
+        ],
         "references": [
           {
             "id": "polchinski1998_v1",
@@ -6030,8 +6473,8 @@
         "description": "Orthogonality constraint between position and momentum on worldsheet",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "3",
-        "sectionId": "3-dimensional-shadow",
+        "section": "Dimensional Shadow",
+        "sectionId": "3",
         "terms": {
           "X^M": {
             "name": "Position Vector",
@@ -6048,8 +6491,14 @@
         "usedInSections": [
           "3"
         ],
-        "inputParams": [],
-        "outputParams": [],
+        "inputParams": [
+          "geometry.X_M",
+          "geometry.P_N",
+          "geometry.eta_MN"
+        ],
+        "outputParams": [
+          "constraint.X_dot_P"
+        ],
         "references": [
           {
             "id": "polchinski1998_v1",
@@ -6077,13 +6526,16 @@
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
         "section": "Dimensional Shadow",
-        "sectionId": "section-3",
+        "sectionId": "3",
         "terms": {
           "P^M": "String worldsheet momentum vector component",
           "P^N": "String worldsheet momentum vector component",
           "η_{MN}": "26D Minkowski metric tensor",
           "M^2": "String mass operator eigenvalue (squared mass)",
-          "P^2": "Momentum squared norm"
+          "P^2": "Momentum squared norm",
+          "m_f": "Fermion mass",
+          "v": "Higgs vacuum expectation value",
+          "y_f": "Yukawa coupling constant"
         },
         "derivedFrom": [
           "sp2r-algebra"
@@ -6092,8 +6544,13 @@
           "3",
           "4"
         ],
-        "inputParams": [],
-        "outputParams": [],
+        "inputParams": [
+          "geometry.P_M",
+          "geometry.eta_MN"
+        ],
+        "outputParams": [
+          "mass.M_squared"
+        ],
         "references": [
           {
             "id": "polchinski1998_v1",
@@ -6121,7 +6578,7 @@
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
         "section": "Dimensional Shadow",
-        "sectionId": "section-3",
+        "sectionId": "3",
         "terms": {
           "L_0": "Virasoro generator (zero mode) - measures position squared",
           "L_1": "Virasoro generator (positive mode) - position-momentum coupling",
@@ -6139,8 +6596,16 @@
         "usedInSections": [
           "3"
         ],
-        "inputParams": [],
-        "outputParams": [],
+        "inputParams": [
+          "geometry.X_squared",
+          "geometry.P_squared",
+          "geometry.X_dot_P"
+        ],
+        "outputParams": [
+          "virasoro.L_0",
+          "virasoro.L_1",
+          "virasoro.L_minus1"
+        ],
         "references": [
           {
             "id": "polchinski1998_v1",
@@ -6168,7 +6633,7 @@
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
         "section": "Dimensional Shadow",
-        "sectionId": "section-3",
+        "sectionId": "3",
         "terms": {
           "26D": "Bosonic string critical dimension with zero Virasoro anomaly",
           "13D": "Shadow dimension after Sp(2,R) gauge fixing removes 13 redundant coordinates",
@@ -6185,8 +6650,13 @@
           "4",
           "5"
         ],
-        "inputParams": [],
-        "outputParams": [],
+        "inputParams": [
+          "geometry.dimension_26D"
+        ],
+        "outputParams": [
+          "geometry.dimension_13D",
+          "geometry.dimension_4D"
+        ],
         "references": [
           {
             "id": "green1987_sw1",
@@ -6220,8 +6690,8 @@
         "description": "Interaction term coupling shadow sector to observable fermions",
         "attribution": "Principia Metaphysica",
         "status": "GEOMETRIC",
-        "section": "3",
-        "sectionId": "section-3",
+        "section": "Dimensional Shadow",
+        "sectionId": "3",
         "terms": {
           "g_hv": {
             "name": "Hidden Variable Coupling",
@@ -6281,7 +6751,7 @@
       "shadow-brane-action": {
         "id": "shadow-brane-action",
         "equationNumber": "2.3",
-        "label": "(3.5) Shadow Brane Action",
+        "label": "(2.3) Shadow Brane Action",
         "html": "S<sub>shadow</sub> = ∫ d<sup>13</sup>X √g [ R<sub>13</sub> + Ψ̄Γ<sup>M</sup>D<sub>M</sub>Ψ ]",
         "latex": "S_{shadow} = \\int d^{13}X \\sqrt{g} \\left[ R_{13} + \\bar{\\Psi}\\Gamma^M D_M \\Psi \\right]",
         "plainText": "S_shadow = ∫ d^13X √g [ R_13 + Ψ̄Γ^M D_M Ψ ]",
@@ -6311,6 +6781,18 @@
           "d¹³x": {
             "name": "Volume Element",
             "description": "13-dimensional spacetime integration measure"
+          },
+          "Ψ̄": {
+            "name": "Spinor Conjugate",
+            "description": "Dirac conjugate of 13D spinor field"
+          },
+          "Γ^M": {
+            "name": "Gamma Matrices",
+            "description": "13D Clifford algebra generators"
+          },
+          "D_M": {
+            "name": "Covariant Derivative",
+            "description": "Gauge and gravity covariant derivative"
           }
         },
         "derivedFrom": [
@@ -6323,10 +6805,13 @@
         ],
         "inputParams": [
           "gauge.M_PLANCK_13D",
-          "fields.curvature_13d"
+          "fields.curvature_13d",
+          "spinor.Psi_13d",
+          "geometry.metric_13d"
         ],
         "outputParams": [
-          "action.shadow_brane"
+          "action.shadow_brane",
+          "dynamics.shadow_sector"
         ],
         "references": [
           {
@@ -6360,8 +6845,8 @@
         "html": "shadow<sub>μν</sub> = shadow<sub>χη</sub> ⇒ θ₂₃ = π/4 = 45°",
         "description": "G₂ shadow symmetry predicts maximal atmospheric mixing angle from geometric correspondence between μ-ν and χ-η shadows",
         "category": "neutrino",
-        "section": "Fermion Sector",
-        "sectionId": "section-6",
+        "section": "3. Fermion Sector",
+        "sectionId": "3",
         "status": "validated",
         "inputParams": [],
         "outputParams": [
@@ -6384,12 +6869,17 @@
           "shadow_{χη}": "Shadow manifold correspondence for χ-η sector",
           "θ_{23}": "Atmospheric neutrino mixing angle (2-3 mixing)",
           "π/4": "Maximal mixing value (45 degrees)",
-          "⇒": "Implies by G₂ geometric symmetry"
+          "⇒": "Implies by G₂ geometric symmetry",
+          "θ₂₃": {
+            "name": "Atmospheric Angle",
+            "description": "Atmospheric mixing angle"
+          }
         },
         "derivedFrom": [
           "dimensional-reduction",
           "g2-holonomy"
-        ]
+        ],
+        "label": "theta23-g2-symmetry"
       },
       "theta12-geometric": {
         "id": "theta12-geometric",
@@ -6403,32 +6893,12 @@
         "sectionId": "section-6",
         "status": "validated",
         "inputParams": [
-          {
-            "name": "h11",
-            "value": 2,
-            "unit": "dimensionless",
-            "description": "Kähler moduli parameter"
-          },
-          {
-            "name": "b3",
-            "value": 6,
-            "unit": "dimensionless",
-            "description": "Third-family coupling"
-          },
-          {
-            "name": "n_gen",
-            "value": 3,
-            "unit": "dimensionless",
-            "description": "Number of generations"
-          }
+          "h^{1,1}",
+          "b_3",
+          "n_gen"
         ],
         "outputParams": [
-          {
-            "name": "theta_12",
-            "value": 33.68,
-            "unit": "degrees",
-            "description": "Solar mixing angle"
-          }
+          "sin²θ_12"
         ],
         "experimentalValue": {
           "value": 33.41,
@@ -6439,16 +6909,35 @@
         "sigma": 0.73,
         "label": "(6.1a) Solar Mixing Angle",
         "derivedFrom": [
-          "dimensional-reduction",
-          "tcs-topology"
+          "kahler_moduli",
+          "generation_structure"
         ],
         "terms": {
           "sin^2θ_{12}": "Sine squared of solar neutrino mixing angle",
-          "h^{1,1}": "Kähler moduli count (number of (1,1) harmonic forms)",
-          "b_3": "Third Betti number of G₂ manifold (24 for TCS #187)",
+          "h^{1,1}": {
+            "name": "Kähler Moduli",
+            "description": "Number of (1,1)-forms in Calabi-Yau compactification",
+            "value": 11
+          },
+          "b_3": {
+            "name": "Third Family Coupling",
+            "description": "Geometric coupling parameter for third generation",
+            "value": 36
+          },
           "n_{gen}": "Number of fermion generations (3)",
-          "0.307": "Predicted value for sin²θ₁₂"
-        }
+          "0.307": "Predicted value for sin²θ₁₂",
+          "θ_12": {
+            "name": "Solar Mixing Angle",
+            "description": "PMNS mixing angle between first and second neutrino generations",
+            "units": "radians"
+          },
+          "n_gen": {
+            "name": "Number of Generations",
+            "description": "Number of fermion generations",
+            "value": 3
+          }
+        },
+        "attribution": "Principia Metaphysica"
       },
       "theta13-formula": {
         "id": "theta13-formula",
@@ -6462,32 +6951,12 @@
         "sectionId": "section-6",
         "status": "validated",
         "inputParams": [
-          {
-            "name": "b2",
-            "value": 4,
-            "unit": "dimensionless",
-            "description": "Second-family coupling"
-          },
-          {
-            "name": "b3",
-            "value": 6,
-            "unit": "dimensionless",
-            "description": "Third-family coupling"
-          },
-          {
-            "name": "n_gen",
-            "value": 3,
-            "unit": "dimensionless",
-            "description": "Number of generations"
-          }
+          "b_2",
+          "b_3",
+          "n_gen"
         ],
         "outputParams": [
-          {
-            "name": "theta_13",
-            "value": 8.43,
-            "unit": "degrees",
-            "description": "Reactor mixing angle"
-          }
+          "sinθ_13"
         ],
         "experimentalValue": {
           "value": 8.57,
@@ -6498,16 +6967,30 @@
         "sigma": 1.17,
         "label": "(6.1b) Reactor Mixing Angle",
         "derivedFrom": [
-          "dimensional-reduction",
-          "tcs-topology"
+          "family_couplings",
+          "generation_structure"
         ],
         "terms": {
           "sinθ_{13}": "Sine of reactor neutrino mixing angle",
-          "b_2": "Second Betti number of G₂ manifold (4 for TCS #187)",
-          "b_3": "Third Betti number of G₂ manifold (24 for TCS #187)",
+          "b_2": {
+            "name": "Second Family Coupling",
+            "description": "Geometric coupling parameter for second generation",
+            "value": 6
+          },
+          "b_3": {
+            "name": "Third Family Coupling",
+            "description": "Geometric coupling parameter for third generation",
+            "value": 36
+          },
           "n_{gen}": "Number of fermion generations (3)",
-          "0.1465": "Predicted value for sinθ₁₃"
-        }
+          "0.1465": "Predicted value for sinθ₁₃",
+          "θ_13": {
+            "name": "Reactor Mixing Angle",
+            "description": "PMNS mixing angle between first and third neutrino generations",
+            "units": "radians"
+          }
+        },
+        "attribution": "Principia Metaphysica"
       },
       "delta-cp-formula": {
         "id": "delta-cp-formula",
@@ -6522,12 +7005,7 @@
         "status": "validated",
         "inputParams": [],
         "outputParams": [
-          {
-            "name": "delta_cp",
-            "value": 232.5,
-            "unit": "degrees",
-            "description": "CP-violating phase"
-          }
+          "δ_CP"
         ],
         "experimentalValue": {
           "value": 232,
@@ -6538,15 +7016,22 @@
         "sigma": 0.02,
         "label": "(6.1c) CP-Violating Phase",
         "derivedFrom": [
-          "dimensional-reduction",
-          "tcs-topology"
+          "pmns_structure",
+          "cycle_orientation"
         ],
         "terms": {
           "δ_{CP}": "CP-violating phase in PMNS neutrino mixing matrix",
           "π": "Pi (geometric constant)",
           "31/24": "Geometric ratio from G₂ cycle topology",
-          "232.5°": "Predicted CP phase value in degrees"
-        }
+          "232.5°": "Predicted CP phase value in degrees",
+          "δ_CP": {
+            "name": "CP Phase",
+            "description": "CP-violating phase in PMNS matrix",
+            "units": "degrees",
+            "value": 232.5
+          }
+        },
+        "attribution": "Principia Metaphysica"
       },
       "dm21-squared": {
         "id": "dm21-squared",
@@ -6560,16 +7045,12 @@
         "sectionId": "section-6",
         "status": "validated",
         "inputParams": [
-          "neutrino.seesaw_scale",
-          "neutrino.yukawa_couplings"
+          "v_EW",
+          "M_R",
+          "y_ν"
         ],
         "outputParams": [
-          {
-            "name": "dm21_sq",
-            "value": 7.97e-05,
-            "unit": "eV²",
-            "description": "Solar mass-squared difference"
-          }
+          "m_ν"
         ],
         "experimentalValue": {
           "value": 7.42e-05,
@@ -6580,8 +7061,8 @@
         "sigma": 2.62,
         "label": "(6.2) Solar Mass Splitting",
         "derivedFrom": [
-          "seesaw-mechanism",
-          "geometric-parameters"
+          "yukawa_coupling",
+          "majorana_mass"
         ],
         "terms": {
           "dm21_sq": {
@@ -6594,7 +7075,30 @@
           },
           "Δm²_21": {
             "name": "Solar Mass Splitting",
-            "description": "Mass-squared difference Δm²_21 = m²_2 - m²_1"
+            "description": "Neutrino mass-squared difference for solar oscillations",
+            "units": "eV²",
+            "value": 7.97e-05,
+            "experimentalValue": 7.42e-05
+          },
+          "m_ν": {
+            "name": "Light Neutrino Mass",
+            "description": "Effective light neutrino mass from seesaw mechanism",
+            "units": "eV"
+          },
+          "v_EW": {
+            "name": "Electroweak VEV",
+            "description": "Electroweak vacuum expectation value",
+            "value": 246,
+            "units": "GeV"
+          },
+          "M_R": {
+            "name": "Right-Handed Neutrino Mass",
+            "description": "Heavy Majorana mass scale",
+            "units": "GeV"
+          },
+          "y_ν": {
+            "name": "Neutrino Yukawa Coupling",
+            "description": "Yukawa coupling for neutrinos"
           }
         },
         "derivation": {
@@ -6606,7 +7110,8 @@
             "Calculate light neutrino masses via m_ν ≈ m_D M_R^(-1) m_D^T",
             "Extract solar mass splitting Δm²_21 = 7.97 × 10^(-5) eV²"
           ]
-        }
+        },
+        "attribution": "Principia Metaphysica"
       },
       "dm31-squared": {
         "id": "dm31-squared",
@@ -6620,16 +7125,12 @@
         "sectionId": "section-6",
         "status": "validated",
         "inputParams": [
-          "neutrino.seesaw_scale",
-          "neutrino.yukawa_couplings"
+          "v_EW",
+          "M_R",
+          "y_ν"
         ],
         "outputParams": [
-          {
-            "name": "dm31_sq",
-            "value": 0.002525,
-            "unit": "eV²",
-            "description": "Atmospheric mass-squared difference"
-          }
+          "m_ν"
         ],
         "experimentalValue": {
           "value": 0.002515,
@@ -6640,8 +7141,8 @@
         "sigma": 0.36,
         "label": "(6.3) Atmospheric Mass Splitting",
         "derivedFrom": [
-          "seesaw-mechanism",
-          "third-family-coupling"
+          "yukawa_coupling",
+          "majorana_mass"
         ],
         "terms": {
           "dm31_sq": {
@@ -6654,7 +7155,30 @@
           },
           "Δm²_31": {
             "name": "Atmospheric Mass Splitting",
-            "description": "Mass-squared difference Δm²_31 = m²_3 - m²_1"
+            "description": "Neutrino mass-squared difference for atmospheric oscillations",
+            "units": "eV²",
+            "value": 0.002525,
+            "experimentalValue": 0.002515
+          },
+          "m_ν": {
+            "name": "Light Neutrino Mass",
+            "description": "Effective light neutrino mass from seesaw mechanism",
+            "units": "eV"
+          },
+          "v_EW": {
+            "name": "Electroweak VEV",
+            "description": "Electroweak vacuum expectation value",
+            "value": 246,
+            "units": "GeV"
+          },
+          "M_R": {
+            "name": "Right-Handed Neutrino Mass",
+            "description": "Heavy Majorana mass scale",
+            "units": "GeV"
+          },
+          "y_ν": {
+            "name": "Neutrino Yukawa Coupling",
+            "description": "Yukawa coupling for neutrinos"
           }
         },
         "derivation": {
@@ -6666,7 +7190,8 @@
             "Calculate light neutrino masses via m_ν ≈ m_D M_R^(-1) m_D^T",
             "Extract atmospheric mass splitting Δm²_31 = 2.525 × 10^(-3) eV²"
           ]
-        }
+        },
+        "attribution": "Principia Metaphysica"
       },
       "majorana-scale": {
         "id": "majorana-scale",
@@ -6676,8 +7201,8 @@
         "html": "M<sub>R</sub> ~ M<sub>GUT</sub> × e<sup>-b₃/2π</sup> ≈ 10<sup>12</sup> GeV",
         "description": "Right-handed Majorana neutrino mass scale from GUT scale with exponential suppression by third-family coupling b₃",
         "category": "neutrino",
-        "section": "Fermion Sector",
-        "sectionId": "section-6",
+        "section": "3. Fermion Sector",
+        "sectionId": "3",
         "status": "theoretical",
         "inputParams": [
           {
@@ -6713,11 +7238,12 @@
         "derivedFrom": [
           "seesaw-mechanism",
           "tcs-topology"
-        ]
+        ],
+        "label": "majorana-scale"
       },
       "d-eff-formula": {
         "id": "d-eff-formula",
-        "equationNumber": "7.1",
+        "equationNumber": "(7.1)",
         "label": "(7.1) Effective Dimensionality",
         "latex": "d_{\\text{eff}} = 12 + \\gamma(\\text{shadow}_\\mu + \\text{shadow}_\\nu) = 12.576",
         "plainText": "d_eff = 12 + γ(shadow_μ + shadow_ν) = 12.576",
@@ -6768,11 +7294,26 @@
         "derivedFrom": [
           "shadow-sector-structure",
           "dimensional-reduction"
-        ]
+        ],
+        "derivation": {
+          "parentFormulas": [
+            "shadow-sector-structure",
+            "dimensional-reduction"
+          ],
+          "steps": [
+            "Start with 12 base dimensions (4D observable + 8D internal)",
+            "Add shadow brane contributions: γ(shadow_μ + shadow_ν)",
+            "γ = 0.5 from ghost coefficient",
+            "shadow_μ = shadow_ν = 0.576 from TCS topology",
+            "d_eff = 12 + 0.5(0.576 + 0.576) = 12.576"
+          ],
+          "method": "dimensional-analysis",
+          "difficulty": "advanced"
+        }
       },
       "w0-derivation": {
         "id": "w0-derivation",
-        "equationNumber": "7.2",
+        "equationNumber": "(7.2)",
         "label": "(7.2) Dark Energy Equation of State",
         "latex": "w_0 = -\\frac{d_{\\text{eff}} - 1}{d_{\\text{eff}} + 1} = -\\frac{11.576}{13.576} = -0.8528",
         "plainText": "w_0 = -(d_eff - 1)/(d_eff + 1) = -11.576/13.576 = -0.8528",
@@ -6827,11 +7368,20 @@
         ],
         "derivedFrom": [
           "d-eff-formula"
+        ],
+        "learningResources": [
+          {
+            "title": "Dark Energy Equation of State - Review",
+            "url": "https://arxiv.org/abs/astro-ph/0603057",
+            "type": "article",
+            "level": "intermediate",
+            "description": "Comprehensive review of dark energy and equation of state"
+          }
         ]
       },
       "w-evolution": {
         "id": "w-evolution",
-        "equationNumber": "7.3",
+        "equationNumber": "(7.3)",
         "label": "(7.3) Dark Energy Evolution",
         "latex": "w(z) = w_0 \\left[1 + \\frac{\\alpha_T}{3}\\ln(1+z)\\right]",
         "plainText": "w(z) = w_0[1 + (α_T/3)ln(1+z)]",
@@ -6886,11 +7436,14 @@
             "Apply logarithmic evolution with redshift",
             "w(z) = w_0[1 + (α_T/3)ln(1+z)]"
           ]
-        }
+        },
+        "experimentalValue": -0.75,
+        "experimentalError": 0.3,
+        "sigmaDeviation": 0.66
       },
       "alpha-T-derivation": {
         "id": "alpha-T-derivation",
-        "equationNumber": "7.4",
+        "equationNumber": "(7.4)",
         "label": "(7.4) Thermal Coupling Parameter",
         "latex": "\\alpha_T = \\frac{d\\ln\\tau}{d\\ln a} - \\frac{d\\ln H}{d\\ln a} = 2.7",
         "plainText": "α_T = d(ln τ)/d(ln a) - d(ln H)/d(ln a) = 2.7",
@@ -6945,12 +7498,22 @@
             "α_T = d(ln τ)/d(ln a) - d(ln H)/d(ln a)",
             "From moduli dynamics: α_T = 2.7"
           ]
-        }
+        },
+        "references": [
+          {
+            "id": "connes1994",
+            "title": "Von Neumann Algebra Automorphisms and Time-Thermodynamics Relation",
+            "authors": "Connes, A., Rovelli, C.",
+            "year": 1994,
+            "arxiv": "gr-qc/9406019",
+            "description": "Thermal time and modular automorphisms"
+          }
+        ]
       },
       "attractor-modulus": {
         "id": "attractor-modulus",
-        "equationNumber": "7.6",
-        "label": "(7.6) Attractor Modulus Value",
+        "equationNumber": "(7.7)",
+        "label": "(7.7) Attractor Modulus Value",
         "latex": "\\phi_M^{(\\text{att})} = \\frac{1}{a}\\ln\\left(\\frac{a V_{\\text{flux}}}{b V_{\\text{inst}}}\\right)",
         "plainText": "φ_M^(att) = (1/a)ln(a·V_flux / b·V_inst)",
         "html": "φ<sub>M</sub><sup>(att)</sup> = (1/a)ln(a·V<sub>flux</sub> / b·V<sub>inst</sub>)",
@@ -7011,6 +7574,15 @@
         ],
         "derivedFrom": [
           "attractor-potential"
+        ],
+        "learningResources": [
+          {
+            "title": "Moduli Stabilization in String Theory",
+            "url": "https://arxiv.org/abs/hep-th/0502058",
+            "type": "article",
+            "level": "advanced",
+            "description": "Large volume scenario for moduli stabilization"
+          }
         ]
       },
       "planck-mass-effective": {
@@ -7022,7 +7594,7 @@
         "html": "M<sup>2</sup><sub>Pl,eff</sub> = (1/h<sup>1,1</sup>) Σ<sub>i=1</sub><sup>4</sup> w<sub>i</sub> M<sup>2</sup><sub>Pl,bulk</sub>",
         "description": "Effective Planck mass from blended Kähler moduli weighting",
         "category": "hierarchy",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7068,7 +7640,7 @@
         "html": "v<sub>EW</sub> = v<sub>EW,0</sub> × w<sub>0</sub> ≈ 173.97 GeV",
         "description": "Electroweak VEV from modulus weighting (note: this is the vacuum structure VEV, distinct from standard v_EW = 246 GeV)",
         "category": "hierarchy",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7107,7 +7679,7 @@
         "html": "M<sub>Pl</sub>/v<sub>EW</sub> ~ (1/√h<sup>1,1</sup>) × 10<sup>16</sup>",
         "description": "Gauge hierarchy from geometric volume scaling",
         "category": "hierarchy",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7150,7 +7722,7 @@
         "html": "⟨φ⟩ = Σ<sub>i</sub> w<sub>i</sub> φ<sub>i</sub><sup>(sector)</sup>",
         "description": "Vacuum expectation value from weighted sector sampling",
         "category": "topology",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7188,7 +7760,7 @@
         "html": "T'/T = (g<sub>*</sub>/g'<sub>*</sub>)<sup>1/3</sup> ≈ 0.57",
         "description": "Temperature ratio between mirror (dark) and visible sectors",
         "category": "cosmology",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7234,7 +7806,7 @@
         "html": "Ω<sub>DM</sub>/Ω<sub>b</sub> = (1/0.57)<sup>3</sup> ≈ 5.8",
         "description": "Ratio of dark matter to baryon density from temperature asymmetry",
         "category": "cosmology",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7271,23 +7843,23 @@
       },
       "g2-index-theorem": {
         "id": "g2-index-theorem",
-        "equationNumber": "4.8",
+        "equationNumber": "E.2",
         "label": "(4.8) G₂ Index Theorem for Generations",
         "latex": "n_{\\text{gen}} = \\frac{N_{\\text{flux}}}{\\text{spinor}_{\\text{DOF}}} = \\frac{24}{8} = 3",
         "plainText": "n_gen = N_flux/spinor_DOF = 24/8 = 3",
         "html": "n<sub>gen</sub> = N<sub>flux</sub>/spinor<sub>DOF</sub> = 24/8 = 3",
-        "description": "Generation count from G₂ flux and spinor degrees of freedom",
+        "description": "G₂ index theorem relates generation count to flux and spinor degrees of freedom",
         "category": "topology",
-        "section": "4",
-        "sectionId": "hierarchy-blended-vacuum",
+        "section": "Appendix E",
+        "sectionId": "appendix-e",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
         "inputParams": [
-          "geometry.N_flux",
-          "geometry.spinor_DOF"
+          "topology.CHI_G2",
+          "flux.N_FLUX"
         ],
         "outputParams": [
-          "fermions.n_gen"
+          "fermions.N_GEN"
         ],
         "terms": {
           "n_gen": {
@@ -7301,6 +7873,18 @@
           "spinor_DOF": {
             "name": "Spinor DOF",
             "description": "Degrees of freedom per chiral spinor = 8 in 7D"
+          },
+          "N_gen": {
+            "name": "Generation Count",
+            "description": "Number of fermion generations"
+          },
+          "χ": {
+            "name": "Euler Characteristic",
+            "description": "G₂ manifold Euler characteristic"
+          },
+          "n_flux": {
+            "name": "Flux Quanta",
+            "description": "G₄ flux quantization number"
           }
         },
         "units": "dimensionless",
@@ -7330,7 +7914,7 @@
         "html": "n<sub>gen</sub> = |χ<sub>eff</sub>|/(24 × Z<sub>2</sub>) = 144/48 = 3",
         "description": "Generation count from topological stability with Z₂ orbifold action",
         "category": "topology",
-        "section": "4",
+        "section": "4. Gauge Unification",
         "sectionId": "hierarchy-blended-vacuum",
         "status": "DERIVED",
         "attribution": "Principia Metaphysica",
@@ -7392,19 +7976,18 @@
         "latex": "\\frac{1}{\\alpha_{\\text{GUT}}} = 10\\pi \\times \\frac{\\text{Vol}(\\Sigma)}{\\text{Vol}(G_2)} \\times e^{|T_\\omega|/h^{1,1}} = 23.54",
         "plainText": "1/α_GUT = 10π × Vol(Σ)/Vol(G₂) × e^(|T_ω|/h¹¹) = 23.54",
         "html": "1/α<sub>GUT</sub> = 10π × Vol(Σ)/Vol(G₂) × e<sup>|T<sub>ω</sub>|/h<sup>1,1</sup></sup> = 23.54",
-        "description": "GUT coupling derived from G₂ volume ratio and modular torsion",
+        "description": "Derivation of GUT coupling from renormalization group running",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "DERIVED",
         "inputParams": [
-          "topology.VOL_SIGMA",
-          "topology.VOL_G2",
-          "topology.T_OMEGA_MAG",
-          "topology.h11"
+          "alpha_s",
+          "M_Z",
+          "M_GUT"
         ],
         "outputParams": [
-          "gauge.alpha_gut_inv"
+          "alpha_GUT"
         ],
         "computedValue": 23.54,
         "units": "dimensionless",
@@ -7430,7 +8013,11 @@
           "h¹¹": {
             "name": "Hodge Number",
             "description": "Dimension of (1,1)-cohomology"
-          }
+          },
+          "alpha_GUT": "Unified gauge coupling at GUT scale",
+          "beta_i": "Beta function coefficients for gauge groups",
+          "M_Z": "Z boson mass",
+          "M_GUT": "Grand Unification scale"
         },
         "derivation": {
           "parentFormulas": [
@@ -7451,41 +8038,38 @@
           "verificationPage": "sections/gauge-unification.html"
         },
         "simulationFile": "simulations/gauge_unification_precision_v12_4.py",
-        "validated": true
+        "validated": true,
+        "derivedFrom": [
+          "rg-running-couplings",
+          "threshold-corrections"
+        ]
       },
       "gut-scale-volume": {
         "id": "gut-scale-volume",
-        "equationNumber": "5.4",
+        "equationNumber": "E.3",
         "label": "(5.4) GUT Scale from Volume",
         "latex": "M_{\\text{GUT}} = M_{\\text{Pl}} \\times \\left(\\frac{\\text{Vol}(G_2)}{\\ell_P^7}\\right)^{-1/2} \\times e^{|T_\\omega|} = 2.12 \\times 10^{16}",
         "plainText": "M_GUT = M_Pl × (Vol(G₂)/ℓ_P⁷)^(-1/2) × e^|T_ω| = 2.12 × 10¹⁶ GeV",
         "html": "M<sub>GUT</sub> = M<sub>Pl</sub> × (Vol(G₂)/ℓ<sub>P</sub><sup>7</sup>)<sup>-1/2</sup> × e<sup>|T<sub>ω</sub>|</sup> = 2.12 × 10<sup>16</sup> GeV",
-        "description": "Grand unification scale from G₂ volume and torsion modulus",
+        "description": "GUT scale derived from compactification volume",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "DERIVED",
         "inputParams": [
-          "constants.M_PLANCK",
-          "topology.VOL_G2",
-          "topology.T_OMEGA_MAG"
+          "M_Pl",
+          "V_6"
         ],
         "outputParams": [
-          "gauge.M_GUT"
+          "M_GUT"
         ],
         "computedValue": 2.12e+16,
         "units": "GeV",
         "experimentalValue": 2.12e+16,
         "sigmaDeviation": 0.0,
         "terms": {
-          "M_GUT": {
-            "name": "GUT Scale",
-            "description": "Grand unification energy scale"
-          },
-          "M_Pl": {
-            "name": "Planck Mass",
-            "description": "Reduced Planck mass = 2.435 × 10¹⁸ GeV"
-          },
+          "M_GUT": "Grand Unification scale",
+          "M_Pl": "Planck mass",
           "Vol(G₂)": {
             "name": "G₂ Volume",
             "description": "Compactification volume in Planck units"
@@ -7497,6 +8081,16 @@
           "T_ω": {
             "name": "Torsion Magnitude",
             "description": "Modular torsion class |T_ω|"
+          },
+          "V_6": "Volume of internal 6-dimensional manifold",
+          "R": "Characteristic compactification radius",
+          "V_int": {
+            "name": "Internal Volume",
+            "description": "G₂ compactification volume"
+          },
+          "M_s": {
+            "name": "String Scale",
+            "description": "Fundamental string mass scale"
           }
         },
         "derivation": {
@@ -7520,8 +8114,7 @@
         "simulationFile": "simulations/gauge_unification_precision_v12_4.py",
         "validated": true,
         "derivedFrom": [
-          "g2-compactification",
-          "tcs-topology"
+          "gut-scale"
         ]
       },
       "threshold-corrections": {
@@ -7531,18 +8124,18 @@
         "latex": "\\Delta\\left(\\frac{1}{\\alpha_i}\\right) = \\frac{k_i \\cdot h^{1,1}}{2\\pi} \\log\\left(\\frac{M_*}{M_{\\text{GUT}}}\\right)",
         "plainText": "Δ(1/α_i) = (k_i · h¹¹)/(2π) log(M_*/M_GUT)",
         "html": "Δ(1/α<sub>i</sub>) = (k<sub>i</sub> · h<sup>1,1</sup>)/(2π) log(M<sub>*</sub>/M<sub>GUT</sub>)",
-        "description": "Threshold corrections to gauge couplings from KK modes and winding states",
+        "description": "Threshold corrections to gauge coupling unification",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "DERIVED",
         "inputParams": [
-          "gauge.M_GUT",
-          "topology.torsion_eff",
-          "topology.h11"
+          "alpha_i",
+          "M_I",
+          "M_GUT"
         ],
         "outputParams": [
-          "gauge.DELTA_ALPHA_THRESHOLD"
+          "Delta_i"
         ],
         "terms": {
           "Δ(1/α_i)": {
@@ -7561,10 +8154,7 @@
             "name": "String Scale",
             "description": "Fundamental string mass scale"
           },
-          "M_GUT": {
-            "name": "GUT Scale",
-            "description": "2.118×10¹⁶ GeV"
-          },
+          "M_GUT": "GUT scale",
           "Δα": {
             "name": "Threshold Corrections",
             "description": "Corrections from heavy GUT states"
@@ -7572,7 +8162,10 @@
           "T_ω": {
             "name": "Torsion",
             "description": "Effective torsion = -1.0"
-          }
+          },
+          "Delta_i": "Threshold correction for gauge coupling i",
+          "M_I": "Intermediate mass scale",
+          "alpha_i": "Gauge coupling for group i"
         },
         "derivation": {
           "parentFormulas": [
@@ -7594,8 +8187,7 @@
         },
         "validated": false,
         "derivedFrom": [
-          "gut-coupling",
-          "gut-scale"
+          "gut-coupling"
         ]
       },
       "alpha-em-derivation": {
@@ -7605,17 +8197,18 @@
         "latex": "\\alpha_{\\text{em}}^{-1}(M_Z) = \\frac{\\alpha_2^{-1}(M_Z)}{\\sin^2\\theta_W(M_Z)} = 127.9",
         "plainText": "α_em^(-1)(M_Z) = α_2^(-1)(M_Z)/sin²θ_W(M_Z) = 127.9",
         "html": "α<sub>em</sub><sup>-1</sup>(M<sub>Z</sub>) = α<sub>2</sub><sup>-1</sup>(M<sub>Z</sub>)/sin²θ<sub>W</sub>(M<sub>Z</sub>) = 127.9",
-        "description": "Electromagnetic fine structure constant at Z pole from electroweak unification",
+        "description": "Electromagnetic fine structure constant from electroweak symmetry breaking",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "DERIVED",
         "inputParams": [
-          "gauge.alpha_2_inv_MZ",
-          "gauge.sin2theta_W_MZ"
+          "g_1",
+          "g_2",
+          "sin2_theta_w"
         ],
         "outputParams": [
-          "gauge.alpha_em_inv_MZ"
+          "alpha_em"
         ],
         "computedValue": 127.9,
         "units": "dimensionless",
@@ -7623,10 +8216,7 @@
         "experimentalError": 0.019,
         "sigmaDeviation": 2.89,
         "terms": {
-          "alpha_em": {
-            "name": "Fine Structure Constant",
-            "description": "α = 1/137.036 electromagnetic coupling"
-          },
+          "alpha_em": "Electromagnetic fine structure constant",
           "M_Z": {
             "name": "Z Boson Mass",
             "description": "M_Z = 91.1876 GeV"
@@ -7634,7 +8224,11 @@
           "sin2_theta_W": {
             "name": "Weak Mixing Angle",
             "description": "sin²θ_W Weinberg angle"
-          }
+          },
+          "e": "Electric charge",
+          "g_1": "Hypercharge coupling",
+          "g_2": "Weak isospin coupling",
+          "theta_w": "Weak mixing angle"
         },
         "derivation": {
           "parentFormulas": [
@@ -7657,35 +8251,32 @@
         "simulationFile": "simulations/gauge_unification_precision_v12_4.py",
         "validated": true,
         "derivedFrom": [
-          "gut-coupling-unification",
-          "rge-evolution",
-          "weinberg-angle"
+          "weak-mixing-angle"
         ]
       },
       "proton-decay-operator": {
         "id": "proton-decay-operator",
-        "equationNumber": "5.8",
+        "equationNumber": "H.3",
         "label": "(5.8) Proton Decay Operator",
         "latex": "\\mathcal{O}_6 = \\frac{g_{\\text{GUT}}^2}{M_X^2} \\epsilon^{abc} \\epsilon^{ij} (u_a^c \\gamma_\\mu d_b)(Q_{ci} \\gamma^\\mu L_j)",
         "plainText": "O_6 = (g_GUT²/M_X²) ε^(abc) ε^(ij) (u_a^c γ_μ d_b)(Q_ci γ^μ L_j)",
         "html": "O<sub>6</sub> = (g<sub>GUT</sub><sup>2</sup>/M<sub>X</sub><sup>2</sup>) ε<sup>abc</sup> ε<sup>ij</sup> (u<sub>a</sub><sup>c</sup> γ<sub>μ</sub> d<sub>b</sub>)(Q<sub>ci</sub> γ<sup>μ</sup> L<sub>j</sub>)",
-        "description": "Dimension-6 operator mediating proton decay p → e⁺π⁰ via X-boson exchange",
+        "description": "Effective operator for proton decay in GUT theories",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "THEORY",
         "inputParams": [
-          "gauge.M_X",
-          "gauge.ALPHA_GUT",
-          "gauge.M_GUT"
+          "M_GUT",
+          "alpha_GUT"
         ],
         "outputParams": [
-          "proton.decay_amplitude"
+          "C_p"
         ],
         "terms": {
           "O_6": {
-            "name": "Baryon Violation",
-            "description": "Dimension-6 effective operator"
+            "name": "Dimension-6 Operator",
+            "description": "Effective operator mediating proton decay"
           },
           "g_GUT": {
             "name": "GUT Coupling",
@@ -7714,6 +8305,14 @@
           "Λ": {
             "name": "Suppression Scale",
             "description": "~ M_GUT"
+          },
+          "C_p": "Proton decay operator coefficient",
+          "M_GUT": "GUT scale (X boson mass)",
+          "alpha_GUT": "GUT coupling strength",
+          "psi": "Fermion fields",
+          "C": {
+            "name": "Wilson Coefficient",
+            "description": "Coupling strength suppressed by M_GUT^2"
           }
         },
         "derivation": {
@@ -7745,8 +8344,8 @@
         ],
         "validated": false,
         "derivedFrom": [
-          "gut-scale",
-          "proton-lifetime"
+          "gut-coupling",
+          "gut-scale"
         ]
       },
       "gauge-closure-summary": {
@@ -7756,10 +8355,10 @@
         "latex": "\\text{G}_2 \\xrightarrow{\\text{ADE}} \\text{SO}(10) \\xrightarrow{\\text{flux}} \\text{SU}(3) \\times \\text{SU}(2) \\times \\text{U}(1) \\xrightarrow{\\text{Vol}} (\\alpha_1, \\alpha_2, \\alpha_3, M_{\\text{GUT}})",
         "plainText": "G₂ → [ADE] → SO(10) → [flux] → SU(3)×SU(2)×U(1) → [Vol] → (α₁, α₂, α₃, M_GUT)",
         "html": "G₂ &rarr; [ADE] &rarr; SO(10) &rarr; [flux] &rarr; SU(3)×SU(2)×U(1) &rarr; [Vol] &rarr; (α₁, α₂, α₃, M<sub>GUT</sub>)",
-        "description": "Summary: Complete geometric derivation chain from G₂ topology to Standard Model gauge sector",
+        "description": "Summary of gauge sector geometric closure and unification",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "THEORY",
         "terms": {
           "G₂": {
@@ -7785,7 +8384,12 @@
           "Vol": {
             "name": "Volume",
             "description": "G₂ volume determines couplings and scale"
-          }
+          },
+          "M_GUT": "Grand Unification scale",
+          "alpha_GUT": "Unified coupling",
+          "tau_p": "Proton lifetime",
+          "M_Pl": "Planck mass",
+          "geometric_closure": "Consistency of geometric framework"
         },
         "derivation": {
           "parentFormulas": [
@@ -7805,7 +8409,20 @@
           "difficulty": "advanced",
           "verificationPage": "sections/gauge-unification.html"
         },
-        "validated": false
+        "validated": false,
+        "inputParams": [
+          "M_GUT",
+          "alpha_GUT",
+          "M_Pl"
+        ],
+        "outputParams": [
+          "geometric_closure"
+        ],
+        "derivedFrom": [
+          "gut-scale",
+          "gut-coupling",
+          "proton-lifetime"
+        ]
       },
       "master-action-full": {
         "id": "master-action-full",
@@ -7816,7 +8433,7 @@
         "html": "S<sub>26D</sub> = ∫ d<sup>26</sup>X √G [ M<sup>24</sup> R + Ψ̄<sub>P</sub> (iΓ<sup>M</sup> D<sub>M</sub> - m)Ψ<sub>P</sub> + L<sub>Sp(2,ℝ)</sub> ]",
         "description": "Full 26-dimensional master action including gravity, Pneuma spinor, and Sp(2,ℝ) gauge sector",
         "category": "framework",
-        "section": "2",
+        "section": "Section 2",
         "sectionId": "section-2",
         "status": "theoretical",
         "attribution": "Principia Metaphysica",
@@ -7871,14 +8488,14 @@
       },
       "pneuma-stress-energy": {
         "id": "pneuma-stress-energy",
-        "equationNumber": "(2.4)",
+        "equationNumber": "2.4",
         "label": "(2.4) Pneuma Stress-Energy Tensor",
         "latex": "T_{MN}^{(\\text{Pneuma})} = \\frac{i}{4}\\left[\\bar{\\Psi}_P\\Gamma_{(M}D_{N)}\\Psi_P - D_{(M}\\bar{\\Psi}_P\\Gamma_{N)}\\Psi_P\\right] - g_{MN}\\mathcal{L}_{\\Psi}",
         "plainText": "T_MN^(Pneuma) = (i/4)[Ψ̄_P Γ_(M D_N) Ψ_P - D_(M Ψ̄_P Γ_N) Ψ_P] - g_MN L_Ψ",
         "html": "T<sub>MN</sub><sup>(Pneuma)</sup> = (i/4)[Ψ̄<sub>P</sub>Γ<sub>(M</sub>D<sub>N)</sub>Ψ<sub>P</sub> - D<sub>(M</sub>Ψ̄<sub>P</sub>Γ<sub>N)</sub>Ψ<sub>P</sub>] - g<sub>MN</sub>L<sub>Ψ</sub>",
         "description": "Stress-energy tensor of the Pneuma spinor field sourcing 26D gravity",
         "category": "framework",
-        "section": "Geometric Framework",
+        "section": "Section 2",
         "sectionId": "section-2",
         "status": "theoretical",
         "attribution": "Principia Metaphysica",
@@ -7895,13 +8512,16 @@
         "inputParams": [
           "pneuma_field",
           "spacetime_metric",
-          "covariant_derivative"
+          "covariant_derivative",
+          "field_lagrangian"
         ],
         "outputParams": [
-          "stress_energy_tensor"
+          "stress_energy_tensor",
+          "gravity_source"
         ],
         "derivedFrom": [
-          "master-action-full"
+          "master-action-full",
+          "shadow-brane-action"
         ],
         "usedInSections": [
           "section-2",
@@ -7911,14 +8531,14 @@
       },
       "bekenstein-hawking-pneuma": {
         "id": "bekenstein-hawking-pneuma",
-        "equationNumber": "(2.5)",
+        "equationNumber": "2.5",
         "label": "(2.5) Bekenstein-Hawking Entropy with Pneuma",
         "latex": "S_{\\text{BH}} = \\frac{A}{4l_P^2} = \\frac{N_{\\text{Pneuma}}}{4} \\cdot \\log(2)",
         "plainText": "S_BH = A/(4l_P²) = N_Pneuma/4 · log(2)",
         "html": "S<sub>BH</sub> = A/(4l<sub>P</sub><sup>2</sup>) = N<sub>Pneuma</sub>/4 · log(2)",
         "description": "Black hole entropy relating geometric area to Pneuma field microstates",
         "category": "framework",
-        "section": "Geometric Framework",
+        "section": "Section 2",
         "sectionId": "section-2",
         "status": "theoretical",
         "attribution": "Principia Metaphysica",
@@ -7931,7 +8551,8 @@
         },
         "inputParams": [
           "horizon_area",
-          "planck_length"
+          "planck_length",
+          "pneuma_microstates"
         ],
         "outputParams": [
           "black_hole_entropy"
@@ -7962,14 +8583,14 @@
       },
       "racetrack-scalar-potential": {
         "id": "racetrack-scalar-potential",
-        "equationNumber": "(2.7)",
+        "equationNumber": "2.7",
         "label": "(2.7) Racetrack Scalar Potential",
         "latex": "V(\\Psi_P) = \\left| \\frac{\\partial W}{\\partial \\Psi_P} \\right|^2",
         "plainText": "V(Ψ_P) = |∂W/∂Ψ_P|²",
         "html": "V(Ψ<sub>P</sub>) = |∂W/∂Ψ<sub>P</sub>|²",
         "description": "F-term scalar potential derived from racetrack superpotential",
         "category": "vacuum",
-        "section": "Geometric Framework",
+        "section": "Section 2",
         "sectionId": "section-2",
         "status": "theoretical",
         "attribution": "Principia Metaphysica",
@@ -7997,7 +8618,7 @@
       },
       "racetrack-stability": {
         "id": "racetrack-stability",
-        "equationNumber": "(2.8)",
+        "equationNumber": "2.8",
         "label": "(2.8) Racetrack Stability Condition",
         "latex": "\\frac{\\partial V}{\\partial \\Psi_P} = 0 \\Rightarrow Aa e^{-a\\Psi_P} = Bb e^{-b\\Psi_P}",
         "plainText": "∂V/∂Ψ_P = 0 ⇒ Aa·e^(-aΨ_P) = Bb·e^(-bΨ_P)",
@@ -8020,14 +8641,24 @@
           "A,B": {
             "name": "Amplitudes",
             "description": "Instanton prefactors"
+          },
+          "∂V/∂Ψ_P": {
+            "name": "Potential Derivative",
+            "description": "Gradient of scalar potential"
+          },
+          "⇒": {
+            "name": "Implies",
+            "description": "Logical implication from minimization"
           }
         },
         "inputParams": [
           "scalar_potential",
-          "racetrack_exponents"
+          "racetrack_exponents",
+          "instanton_amplitudes"
         ],
         "outputParams": [
-          "stability_condition"
+          "stability_condition",
+          "vacuum_vev"
         ],
         "derivedFrom": [
           "racetrack-scalar-potential"
@@ -8049,15 +8680,15 @@
       },
       "virasoro-central-charge": {
         "id": "virasoro-central-charge",
-        "equationNumber": "2.2",
+        "equationNumber": "D.4",
         "label": "(2.2) Virasoro Algebra",
         "latex": "[L_m, L_n] = (m-n)L_{m+n} + \\frac{c}{12}m(m^2-1)\\delta_{m+n,0}",
         "plainText": "[L_m, L_n] = (m-n)L_(m+n) + (c/12)m(m²-1)δ_(m+n,0)",
         "html": "[L<sub>m</sub>, L<sub>n</sub>] = (m-n)L<sub>m+n</sub> + (c/12)m(m²-1)δ<sub>m+n,0</sub>",
         "description": "Virasoro algebra with central charge c=26 for bosonic string consistency",
         "category": "framework",
-        "section": "2",
-        "sectionId": "section-2",
+        "section": "Appendix D",
+        "sectionId": "appendix-d",
         "status": "theoretical",
         "attribution": "Principia Metaphysica",
         "terms": {
@@ -8067,7 +8698,7 @@
           },
           "c": {
             "name": "Central Charge",
-            "description": "c=26 for critical bosonic string"
+            "description": "Virasoro central charge"
           },
           "[L_m, L_n]": {
             "name": "Virasoro Commutator",
@@ -8076,18 +8707,28 @@
           "δ_(m+n,0)": {
             "name": "Kronecker Delta",
             "description": "Zero mode contribution to central charge"
+          },
+          "δ_{m+n,0}": {
+            "name": "Kronecker Delta",
+            "description": "Unity when m+n=0, zero otherwise"
+          },
+          "m(m²-1)": {
+            "name": "Central Extension",
+            "description": "Central term structure from quantum anomaly"
+          },
+          "L_n": {
+            "name": "Virasoro Generators",
+            "description": "Worldsheet conformal generators"
           }
         },
         "inputParams": [
-          "conformal.L_m",
-          "conformal.L_n"
+          "dimensions.D_MATTER"
         ],
         "outputParams": [
-          "anomaly.c_central"
+          "constants.C_VIRASORO"
         ],
         "derivedFrom": [
-          "worldsheet-cft",
-          "critical-dimension"
+          "virasoro-anomaly"
         ],
         "usedInSections": [
           "section-2"
@@ -8112,23 +8753,23 @@
       },
       "proton-lifetime-estimate": {
         "id": "proton-lifetime-estimate",
-        "equationNumber": "5.9",
+        "equationNumber": "H.4",
         "label": "(5.9) Proton Lifetime Estimate",
         "latex": "\\tau_p = C \\times \\left(\\frac{M_{\\text{GUT}}}{10^{16}}\\right)^4 \\times \\left(\\frac{0.03}{\\alpha_{\\text{GUT}}}\\right)^2 \\times S",
         "plainText": "τ_p = C × (M_GUT/10¹⁶)⁴ × (0.03/α_GUT)² × S",
         "html": "τ<sub>p</sub> = C × (M<sub>GUT</sub>/10<sup>16</sup>)<sup>4</sup> × (0.03/α<sub>GUT</sub>)²</sup> × S",
-        "description": "Proton lifetime estimate including geometric suppression factor from TCS topology",
+        "description": "Estimated proton lifetime from GUT scale and coupling",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "DERIVED",
         "inputParams": [
-          "gauge.M_GUT",
-          "gauge.alpha_gut",
-          "topology.suppression_factor"
+          "M_GUT",
+          "alpha_GUT",
+          "m_p"
         ],
         "outputParams": [
-          "proton.tau_p"
+          "tau_p"
         ],
         "computedValue": 8.15e+34,
         "units": "years",
@@ -8139,16 +8780,13 @@
         "terms": {
           "τ_p": {
             "name": "Proton Lifetime",
-            "description": "Decay time for p → e⁺π⁰"
+            "description": "Estimated lifetime including QCD corrections"
           },
           "C": {
             "name": "Phase Space",
             "description": "Constant ≈ 10³⁴ years from kinematics"
           },
-          "M_GUT": {
-            "name": "GUT Scale",
-            "description": "2.12 × 10¹⁶ GeV"
-          },
+          "M_GUT": "GUT scale",
           "α_GUT": {
             "name": "GUT Coupling",
             "description": "≈ 0.0425 = 1/23.54"
@@ -8156,6 +8794,14 @@
           "S": {
             "name": "Suppression",
             "description": "TCS cycle separation factor ≈ 2.13"
+          },
+          "tau_p": "Proton lifetime",
+          "alpha_GUT": "GUT coupling",
+          "m_p": "Proton mass",
+          "Gamma_p": "Proton decay width",
+          "M_E": {
+            "name": "Matrix Element",
+            "description": "Hadronic matrix element from lattice QCD"
           }
         },
         "derivation": {
@@ -8177,7 +8823,10 @@
           "verificationPage": "sections/predictions.html"
         },
         "simulationFile": "simulations/proton_decay_geometric_v13_0.py",
-        "validated": true
+        "validated": true,
+        "derivedFrom": [
+          "proton-decay-operator"
+        ]
       },
       "alpha-s-mz": {
         "id": "alpha-s-mz",
@@ -8187,7 +8836,7 @@
         "plainText": "α_s(M_Z) = α_GUT / (1 + (7α_GUT/2π)ln(M_GUT/M_Z)) = 0.1179",
         "html": "α<sub>s</sub>(M<sub>Z</sub>) = α<sub>GUT</sub> / (1 + (7α<sub>GUT</sub>/2π)ln(M<sub>GUT</sub>/M<sub>Z</sub>)) = 0.1179",
         "description": "Strong coupling constant at Z boson mass scale from RG running",
-        "category": "fermion_masses",
+        "category": "gauge_coupling",
         "section": "6",
         "sectionId": "section-6",
         "status": "DERIVED",
@@ -8198,12 +8847,12 @@
         "experimentalError": 0.0009,
         "sigmaDeviation": 0.11,
         "inputParams": [
-          "gauge.alpha_GUT",
-          "gauge.M_GUT",
-          "gauge.M_Z"
+          "α_GUT",
+          "M_GUT",
+          "M_Z"
         ],
         "outputParams": [
-          "gauge.alpha_s_MZ"
+          "α_s(M_Z)"
         ],
         "terms": {
           "alpha_s": {
@@ -8212,7 +8861,8 @@
           },
           "M_Z": {
             "name": "Z Boson Mass",
-            "description": "Mass scale of Z boson (91.2 GeV)"
+            "value": 91.1876,
+            "units": "GeV"
           },
           "alpha_GUT": {
             "name": "GUT Coupling",
@@ -8220,7 +8870,17 @@
           },
           "M_GUT": {
             "name": "GUT Scale",
-            "description": "Grand unification scale (~10^16 GeV)"
+            "units": "GeV"
+          },
+          "α_s": {
+            "name": "Strong Coupling Constant",
+            "description": "QCD coupling at Z pole",
+            "value": 0.1179,
+            "experimentalValue": 0.118
+          },
+          "α_GUT": {
+            "name": "GUT Coupling",
+            "description": "Unified coupling at GUT scale"
           }
         },
         "derivation": {
@@ -8235,8 +8895,8 @@
         },
         "validated": true,
         "derivedFrom": [
-          "gauge-unification",
-          "rg-running"
+          "rge_running",
+          "gut_unification"
         ],
         "relatedFormulas": [
           "gauge-unification",
@@ -8258,13 +8918,13 @@
         "attribution": "Principia Metaphysica",
         "units": "MeV/GeV",
         "inputParams": [
-          "yukawa.y_u",
-          "yukawa.y_c",
-          "higgs.v_EW"
+          "y_u",
+          "y_c",
+          "v_EW"
         ],
         "outputParams": [
-          "fermion_masses.m_u",
-          "fermion_masses.m_c"
+          "m_u",
+          "m_c"
         ],
         "terms": {
           "m_u": {
@@ -8286,8 +8946,8 @@
         },
         "validated": false,
         "derivedFrom": [
-          "yukawa-lagrangian",
-          "higgs-vev"
+          "yukawa_coupling",
+          "higgs_vev"
         ],
         "relatedFormulas": [
           "top-quark-mass",
@@ -8309,13 +8969,13 @@
         "attribution": "Principia Metaphysica",
         "units": "MeV",
         "inputParams": [
-          "yukawa.y_d",
-          "yukawa.y_s",
-          "higgs.v_EW"
+          "y_d",
+          "y_s",
+          "v_EW"
         ],
         "outputParams": [
-          "fermion_masses.m_d",
-          "fermion_masses.m_s"
+          "m_d",
+          "m_s"
         ],
         "terms": {
           "m_d": {
@@ -8335,7 +8995,11 @@
             "Second generation: m_s = y_s v_EW/√2 = 95 MeV"
           ]
         },
-        "validated": false
+        "validated": false,
+        "derivedFrom": [
+          "yukawa_coupling",
+          "higgs_vev"
+        ]
       },
       "light-leptons": {
         "id": "light-leptons",
@@ -8352,13 +9016,13 @@
         "attribution": "Principia Metaphysica",
         "units": "MeV",
         "inputParams": [
-          "yukawa.y_e",
-          "yukawa.y_mu",
-          "higgs.v_EW"
+          "y_e",
+          "y_μ",
+          "v_EW"
         ],
         "outputParams": [
-          "fermion_masses.m_e",
-          "fermion_masses.m_mu"
+          "m_e",
+          "m_μ"
         ],
         "terms": {
           "m_e": {
@@ -8378,7 +9042,11 @@
             "Second generation: m_μ = y_μ v_EW/√2 = 105.66 MeV"
           ]
         },
-        "validated": false
+        "validated": false,
+        "derivedFrom": [
+          "yukawa_coupling",
+          "higgs_vev"
+        ]
       },
       "ckm-matrix-def": {
         "id": "ckm-matrix-def",
@@ -8395,16 +9063,16 @@
         "attribution": "Principia Metaphysica",
         "units": "dimensionless",
         "inputParams": [
-          "yukawa.V_u",
-          "yukawa.V_d"
+          "V_u",
+          "V_d"
         ],
         "outputParams": [
-          "mixing.V_CKM"
+          "V_CKM"
         ],
         "terms": {
           "V_CKM": {
             "name": "CKM Matrix",
-            "description": "Quark flavor mixing matrix (3×3 unitary)"
+            "description": "Quark mixing matrix relating mass and flavor eigenstates"
           },
           "V_u": {
             "name": "Up-type Rotation",
@@ -8447,7 +9115,11 @@
             "description": "3×3 quark mixing matrix with CP violation"
           }
         ],
-        "validated": false
+        "validated": false,
+        "derivedFrom": [
+          "quark_mixing",
+          "yukawa_diagonalization"
+        ]
       },
       "higgs-quartic-gut": {
         "id": "higgs-quartic-gut",
@@ -8456,18 +9128,17 @@
         "latex": "\\lambda_0 = \\frac{1}{4}\\left(g_2^2 + \\frac{3}{5}g_1^2\\right) = 2\\pi\\alpha_{\\text{GUT}} = 0.1289",
         "plainText": "λ_0 = (1/4)(g_2² + (3/5)g_1²) = 2πα_GUT = 0.1289",
         "html": "λ<sub>0</sub> = (1/4)(g<sub>2</sub><sup>2</sup> + (3/5)g<sub>1</sub><sup>2</sup>) = 2πα<sub>GUT</sub> = 0.1289",
-        "description": "Higgs quartic coupling at GUT scale from gauge coupling boundary condition",
+        "description": "Higgs quartic coupling at GUT scale from RG evolution",
         "category": "gauge",
         "section": "5",
-        "sectionId": "section-5",
+        "sectionId": "5",
         "status": "DERIVED",
         "inputParams": [
-          "gauge.alpha_gut",
-          "gauge.g1_gut",
-          "gauge.g2_gut"
+          "lambda(M_Z)",
+          "M_GUT"
         ],
         "outputParams": [
-          "higgs.lambda_0"
+          "lambda(M_GUT)"
         ],
         "computedValue": 0.1289,
         "units": "dimensionless",
@@ -8487,7 +9158,11 @@
           "α_GUT": {
             "name": "Unified Coupling",
             "description": "GUT fine structure ≈ 0.0425"
-          }
+          },
+          "lambda(M_GUT)": "Higgs quartic at GUT scale",
+          "lambda(M_Z)": "Higgs quartic at electroweak scale",
+          "beta_lambda": "Beta function for Higgs quartic",
+          "M_GUT": "GUT scale"
         },
         "derivation": {
           "parentFormulas": [
@@ -8507,7 +9182,11 @@
           "difficulty": "intermediate",
           "verificationPage": "sections/gauge-unification.html"
         },
-        "validated": false
+        "validated": false,
+        "derivedFrom": [
+          "higgs-quartic",
+          "rg-running-couplings"
+        ]
       },
       "sum-neutrino-masses": {
         "id": "sum-neutrino-masses",
@@ -8515,7 +9194,7 @@
         "html": "Σm<sub>ν</sub> = m₁ + m₂ + m₃ = 0.060 eV",
         "latex": "\\Sigma m_\\nu = m_1 + m_2 + m_3 = 0.060\\,\\text{eV}",
         "plainText": "Σm_ν = m₁ + m₂ + m₃ = 0.060 eV",
-        "category": "PREDICTIONS",
+        "category": "neutrino",
         "description": "Sum of three neutrino masses from seesaw mechanism",
         "attribution": "Principia Metaphysica",
         "status": "DERIVED",
@@ -8523,42 +9202,22 @@
         "sectionId": "section-6",
         "equationNumber": "(6.4)",
         "inputParams": [
-          {
-            "name": "m1",
-            "value": 0.00083,
-            "unit": "eV",
-            "description": "Lightest neutrino mass"
-          },
-          {
-            "name": "m2",
-            "value": 0.00896,
-            "unit": "eV",
-            "description": "Second neutrino mass"
-          },
-          {
-            "name": "m3",
-            "value": 0.05022,
-            "unit": "eV",
-            "description": "Heaviest neutrino mass"
-          }
+          "v_EW",
+          "M_R",
+          "y_ν"
         ],
         "outputParams": [
-          {
-            "name": "sum_m_nu",
-            "value": 0.06,
-            "unit": "eV",
-            "description": "Sum of neutrino masses"
-          }
+          "m_ν"
         ],
         "derivedFrom": [
-          "seesaw-mechanism",
-          "dm21-squared",
-          "dm31-squared"
+          "yukawa_coupling",
+          "majorana_mass"
         ],
         "terms": {
           "Σm_ν": {
-            "name": "Neutrino Sum",
-            "description": "Sum of three neutrino masses"
+            "name": "Sum of Neutrino Masses",
+            "description": "Total mass of all three neutrino mass eigenstates",
+            "units": "eV"
           },
           "m1": {
             "name": "Lightest Mass",
@@ -8575,6 +9234,38 @@
           "eV": {
             "name": "Electron Volt",
             "description": "Unit of mass/energy"
+          },
+          "m_1": {
+            "name": "Lightest Neutrino Mass",
+            "units": "eV"
+          },
+          "m_2": {
+            "name": "Second Neutrino Mass",
+            "units": "eV"
+          },
+          "m_3": {
+            "name": "Heaviest Neutrino Mass",
+            "units": "eV"
+          },
+          "m_ν": {
+            "name": "Light Neutrino Mass",
+            "description": "Effective light neutrino mass from seesaw mechanism",
+            "units": "eV"
+          },
+          "v_EW": {
+            "name": "Electroweak VEV",
+            "description": "Electroweak vacuum expectation value",
+            "value": 246,
+            "units": "GeV"
+          },
+          "M_R": {
+            "name": "Right-Handed Neutrino Mass",
+            "description": "Heavy Majorana mass scale",
+            "units": "GeV"
+          },
+          "y_ν": {
+            "name": "Neutrino Yukawa Coupling",
+            "description": "Yukawa coupling for neutrinos"
           }
         },
         "derivation": {
