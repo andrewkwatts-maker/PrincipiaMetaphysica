@@ -415,12 +415,19 @@ class PMFormulaLoader {
                     </div>
                 ` : ''}
 
-                ${expandable && (derivedFrom.length || Object.keys(terms).length) ? `
+                ${expandable && (derivedFrom.length || Object.keys(terms).length || formula.plainText) ? `
                     <div class="pm-formula-expandable">
                         <button class="pm-expand-btn" onclick="this.closest('.pm-formula-card').classList.toggle('expanded')">
-                            <span class="expand-icon">▸</span> Details
+                            <span class="expand-icon">▸</span>
+                            <code class="pm-expand-latex">${formula.plainText || 'Formula Details'}</code>
                         </button>
                         <div class="pm-formula-details">
+                            ${formula.latex ? `
+                                <div class="pm-formula-latex-full">
+                                    <h5>📐 LaTeX Source</h5>
+                                    <pre class="pm-latex-source">${formula.latex}</pre>
+                                </div>
+                            ` : ''}
                             ${derivedFrom.length ? `
                                 <div class="pm-formula-derived">
                                     <h5>🔗 Derived From</h5>
@@ -532,11 +539,21 @@ class PMFormulaLoader {
                 overflow: hidden;
                 transition: all 0.3s ease;
                 position: relative;
+                /* Ensure frosted glass effects are clipped to card boundaries */
+                isolation: isolate;
+                contain: paint;
             }
 
             .pm-formula-card.interactive:hover {
                 border-color: rgba(139, 127, 255, 0.4);
                 box-shadow: 0 4px 20px rgba(139, 127, 255, 0.15);
+                /* Frosted glass shimmer effect - clipped to panel */
+                background: linear-gradient(
+                    135deg,
+                    rgba(139, 127, 255, 0.08) 0%,
+                    rgba(255, 255, 255, 0.05) 50%,
+                    rgba(139, 127, 255, 0.08) 100%
+                );
             }
 
             .pm-formula-header {
@@ -721,19 +738,51 @@ class PMFormulaLoader {
                 background: transparent;
                 border: none;
                 color: rgba(255, 255, 255, 0.5);
-                padding: 0.6rem;
+                padding: 0.6rem 1rem;
                 cursor: pointer;
                 font-size: 0.8rem;
                 transition: all 0.2s ease;
                 display: flex;
                 align-items: center;
-                justify-content: center;
-                gap: 0.4rem;
+                justify-content: flex-start;
+                gap: 0.5rem;
+                text-align: left;
             }
 
             .pm-expand-btn:hover {
                 background: rgba(139, 127, 255, 0.1);
                 color: #f8f9fa;
+            }
+
+            .pm-expand-latex {
+                font-family: 'Source Code Pro', 'Fira Code', monospace;
+                font-size: 0.75rem;
+                color: #a3e635;
+                background: rgba(0, 0, 0, 0.2);
+                padding: 0.25rem 0.5rem;
+                border-radius: 4px;
+                max-width: 80%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+            .pm-formula-latex-full {
+                margin-bottom: 1rem;
+            }
+
+            .pm-latex-source {
+                background: rgba(0, 0, 0, 0.4);
+                padding: 0.75rem 1rem;
+                border-radius: 6px;
+                font-family: 'Source Code Pro', 'Fira Code', monospace;
+                font-size: 0.75rem;
+                color: #93c5fd;
+                overflow-x: auto;
+                white-space: pre-wrap;
+                word-break: break-all;
+                margin: 0.5rem 0 0 0;
+                border: 1px solid rgba(139, 127, 255, 0.2);
             }
 
             .expand-icon {
