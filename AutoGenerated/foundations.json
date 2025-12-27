@@ -1,0 +1,1323 @@
+{
+  "version": "14.1",
+  "foundations": [
+    {
+      "id": "boltzmann-entropy",
+      "title": "Boltzmann Entropy",
+      "category": "thermodynamics",
+      "year_established": 1877,
+      "badge_type": "established",
+      "main_equation": "S = k_B ln Ω",
+      "main_equation_latex": "S = k_B \\ln \\Omega",
+      "summary": "The fundamental bridge between microscopic statistical mechanics and macroscopic thermodynamics, connecting the number of microstates to entropy.",
+      "key_properties": [
+        "Entropy is the logarithm of the number of ways a system can be arranged",
+        "S measures macroscopic disorder or information content",
+        "Ω is the number of microscopic configurations (microstates)",
+        "k_B = 1.38×10⁻²³ J/K is the fundamental bridge between energy and temperature",
+        "The logarithm makes entropy additive: S_total = S_1 + S_2",
+        "Always increases in isolated systems (Second Law of Thermodynamics)",
+        "Provides statistical foundation for classical thermodynamics",
+        "Connects to Shannon information theory: entropy measures missing information"
+      ],
+      "pm_connection": "Boltzmann entropy plays a crucial role in PM's dimensional framework through the thermal time hypothesis. The flow of time is related to entropy increase: t ∝ S = k_B ln Ω. In higher dimensions, entropy generalizes to 26D bulk (S_26 = k_B ln Ω_26) and 13D shadow (S_13 = k_B ln Ω_13). Dimensional reduction preserves entropy through compactification. Black hole entropy S_BH = k_B A/(4ℓ_P²) suggests entropy is fundamentally geometric in higher-dimensional theories.",
+      "formulas": [
+        {
+          "id": "boltzmann-entropy-main",
+          "label": "Boltzmann Entropy",
+          "plain_text": "S = k_B ln Ω",
+          "latex": "S = k_B \\ln \\Omega",
+          "description": "The fundamental relation between entropy and microstates"
+        },
+        {
+          "id": "boltzmann-gibbs-generalization",
+          "label": "Gibbs Entropy",
+          "plain_text": "S = -k_B Σ_i p_i ln p_i",
+          "latex": "S = -k_B \\sum_i p_i \\ln p_i",
+          "description": "Generalization for non-equilibrium systems with probability distribution p_i"
+        },
+        {
+          "id": "boltzmann-bh-entropy",
+          "label": "Black Hole Entropy",
+          "plain_text": "S_BH = k_B A/(4ℓ_P²) = k_B ln Ω_horizon",
+          "latex": "S_{\\text{BH}} = \\frac{k_B A}{4\\ell_P^2} = k_B \\ln \\Omega_{\\text{horizon}}",
+          "description": "Bekenstein-Hawking entropy connecting area to microstates"
+        },
+        {
+          "id": "boltzmann-thermal-time",
+          "label": "Thermal Time Hypothesis",
+          "plain_text": "t ∝ S = k_B ln Ω",
+          "latex": "t \\propto S = k_B \\ln \\Omega",
+          "description": "Time emergence from entropy increase (Carlo Rovelli)"
+        },
+        {
+          "id": "boltzmann-microcanonical",
+          "label": "Microcanonical Entropy",
+          "plain_text": "S(E,V,N) = k_B ln Ω(E,V,N)",
+          "latex": "S(E,V,N) = k_B \\ln \\Omega(E,V,N)",
+          "description": "Entropy for isolated system with fixed energy E, volume V, particle number N"
+        },
+        {
+          "id": "boltzmann-sackur-tetrode",
+          "label": "Sackur-Tetrode Equation",
+          "plain_text": "S = Nk_B[ln(V/N) + (3/2)ln(2πmk_BT/h²) + 5/2]",
+          "latex": "S = Nk_B\\left[\\ln\\left(\\frac{V}{N}\\right) + \\frac{3}{2}\\ln\\left(\\frac{2\\pi mk_BT}{h^2}\\right) + \\frac{5}{2}\\right]",
+          "description": "Entropy of ideal monatomic gas from quantum statistical mechanics"
+        },
+        {
+          "id": "boltzmann-von-neumann",
+          "label": "von Neumann Entropy",
+          "plain_text": "S = -k_B Tr(ρ ln ρ)",
+          "latex": "S = -k_B \\text{Tr}(\\rho \\ln \\rho)",
+          "description": "Quantum generalization of Boltzmann entropy for density matrix ρ"
+        },
+        {
+          "id": "boltzmann-canonical-ensemble",
+          "label": "Canonical Ensemble Entropy",
+          "plain_text": "S = k_B(ln Z + βE) = k_B ln Z + E/T",
+          "latex": "S = k_B(\\ln Z + \\beta E) = k_B \\ln Z + \\frac{E}{T}",
+          "description": "Entropy in canonical ensemble with partition function Z and average energy E"
+        }
+      ],
+      "used_in_sections": [
+        {
+          "section": "thermal-time",
+          "description": "Entropy and time emergence"
+        },
+        {
+          "section": "cosmology",
+          "description": "Thermodynamic arrow of time"
+        }
+      ]
+    },
+    {
+      "id": "calabi-yau",
+      "title": "Calabi-Yau Manifolds",
+      "category": "geometry",
+      "year_established": 1977,
+      "badge_type": "established",
+      "main_equation": "R_{i j̄} = 0, c_1(M) = 0",
+      "main_equation_latex": "R_{i\\bar{j}} = 0, \\quad c_1(M) = 0",
+      "summary": "Special geometric spaces that preserve supersymmetry when used for dimensional compactification, central to string theory and F-theory.",
+      "key_properties": [
+        "Compact Kähler manifolds with vanishing first Chern class",
+        "Ricci-flat metric: no intrinsic curvature in compact dimensions",
+        "Preserve N=1 supersymmetry in compactification",
+        "Kähler structure provides geometric stability",
+        "Non-trivial topology allows chiral matter from index theorems",
+        "Holonomy group determines preserved gauge symmetry",
+        "Mirror symmetry relates different CY manifolds"
+      ],
+      "pm_connection": "In the 2T framework, the 26D bulk (24,2) projects via Sp(2,R) to 13D shadow (12,1), which undergoes G₂ compactification rather than CY4 (though CY4 concepts inform topology). Two CY4 spaces (CY4_A and CY4_B) are mirror pairs with χ_A = χ_B = 72, giving χ_eff = 144 total. Fermion generations: n_gen = χ_eff/48 = 144/48 = 3, where divisor 48 comes from SO(10) GUT embedding. KKLT flux stabilization with modulus VEV φ_M = 2.493 M_Pl provides the effective topology.",
+      "formulas": [
+        {
+          "id": "cy-ricci-flat",
+          "label": "Ricci-Flat Condition",
+          "plain_text": "R_{i j̄} = 0",
+          "latex": "R_{i\\bar{j}} = 0",
+          "description": "Ricci curvature vanishes for Calabi-Yau manifolds"
+        },
+        {
+          "id": "cy-chern-class",
+          "label": "First Chern Class",
+          "plain_text": "c_1(M) = 0",
+          "latex": "c_1(M) = 0",
+          "description": "Topological condition equivalent to Ricci-flatness (Calabi conjecture)"
+        },
+        {
+          "id": "cy-euler-characteristic",
+          "label": "Euler Characteristic",
+          "plain_text": "χ = Σ_{p,q} (-1)^{p+q} h^{p,q}",
+          "latex": "\\chi = \\sum_{p,q} (-1)^{p+q} h^{p,q}",
+          "description": "Topological invariant from Hodge numbers"
+        },
+        {
+          "id": "cy-generation-formula",
+          "label": "Fermion Generation Formula",
+          "plain_text": "n_gen = χ_eff/48 = 144/48 = 3",
+          "latex": "n_{\\text{gen}} = \\frac{\\chi_{\\text{eff}}}{48} = \\frac{144}{48} = 3",
+          "description": "Number of generations from effective Euler characteristic in 2T framework"
+        },
+        {
+          "id": "cy-mirror-symmetry",
+          "label": "Mirror Symmetry",
+          "plain_text": "χ_A + χ_B = 72 + 72 = 144",
+          "latex": "\\chi_A + \\chi_B = 72 + 72 = 144",
+          "description": "Combined Euler characteristic from mirror CY4 pair"
+        },
+        {
+          "id": "cy-kklt-flux",
+          "label": "KKLT Flux Stabilization",
+          "plain_text": "χ_eff = χ_bare + Δχ_flux, φ_M = 2.493 M_Pl",
+          "latex": "\\chi_{\\text{eff}} = \\chi_{\\text{bare}} + \\Delta\\chi_{\\text{flux}}, \\quad \\varphi_M = 2.493 M_{\\text{Pl}}",
+          "description": "Flux dressing modifies effective topology with modulus VEV"
+        },
+        {
+          "id": "cy-kahler-form",
+          "label": "Kähler Form",
+          "plain_text": "ω = (i/2)g_{ij̄} dz^i ∧ dz̄^j",
+          "latex": "\\omega = \\frac{i}{2}g_{i\\bar{j}} dz^i \\wedge d\\bar{z}^j",
+          "description": "Kähler form defining the Kähler structure from the metric"
+        },
+        {
+          "id": "cy-holonomy-su3",
+          "label": "SU(3) Holonomy",
+          "plain_text": "Hol(g) ⊆ SU(3) for CY3",
+          "latex": "\\text{Hol}(g) \\subseteq \\text{SU}(3) \\text{ for CY}_3",
+          "description": "Restricted holonomy group for 6D Calabi-Yau threefolds (3 complex dimensions)"
+        }
+      ],
+      "used_in_sections": [
+        {
+          "section": "geometric-framework",
+          "description": "Comparison with G₂ compactification"
+        }
+      ]
+    },
+    {
+      "id": "clifford-algebra",
+      "title": "Clifford Algebra",
+      "category": "algebra",
+      "year_established": 1878,
+      "badge_type": "established",
+      "main_equation": "{γ^μ, γ^ν} = 2g^{μν}",
+      "main_equation_latex": "\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2g^{\\mu\\nu}",
+      "summary": "The mathematical framework that unifies real numbers, complex numbers, quaternions, and geometric algebra - essential for describing spinors and fermions in physics.",
+      "key_properties": [
+        "Natural generalization of complex numbers and quaternions to arbitrary dimensions",
+        "Geometric product combines dot product and wedge product",
+        "Spinors arise as elements of minimal left ideals (irreducible representations)",
+        "Spinor dimension formula: 2^⌊n/2⌋ for n-dimensional space",
+        "360° rotation changes sign of spinor; 720° returns to original (double cover)",
+        "Fundamental for describing fermions (spin-1/2 particles)",
+        "Hierarchy: R → C → H → Cl(p,q) generalizes number systems"
+      ],
+      "pm_connection": "Clifford algebras provide the mathematical framework for spinors at each dimensional level in PM. 26D bulk: Cl(24,2) with 8192-component spinors (2^13). 13D shadow: Cl(12,1) with 64-component spinors (2^6). Reduction factor: 8192/64 = 128 = 2^7 preserves power-of-two structure. The 64 components in 13D encode fermion generation structure: 64 = 4×16 suggests SO(10) GUT embedding with 3 generations from topology.",
+      "formulas": [
+        {
+          "id": "clifford-anticommutator",
+          "label": "Clifford Algebra Relation",
+          "plain_text": "{γ^μ, γ^ν} = 2g^{μν}",
+          "latex": "\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2g^{\\mu\\nu}",
+          "description": "Fundamental anticommutation relation defining Clifford algebra"
+        },
+        {
+          "id": "clifford-geometric-product",
+          "label": "Geometric Product",
+          "plain_text": "ab = a·b + a∧b",
+          "latex": "ab = a \\cdot b + a \\wedge b",
+          "description": "Combines inner and outer products into unified algebraic structure"
+        },
+        {
+          "id": "clifford-spinor-dimension",
+          "label": "Spinor Dimension",
+          "plain_text": "dim(Spinor) = 2^⌊n/2⌋",
+          "latex": "\\dim(\\text{Spinor}) = 2^{\\lfloor n/2 \\rfloor}",
+          "description": "Irreducible spinor representation dimension for Cl(p,q) with n=p+q"
+        },
+        {
+          "id": "clifford-26d-bulk",
+          "label": "26D Bulk Spinor",
+          "plain_text": "Cl(24,2) → 2^13 = 8192 components",
+          "latex": "\\text{Cl}(24,2) \\to 2^{13} = 8192 \\text{ components}",
+          "description": "Spinor dimension in PM's 26D bulk with signature (24,2)"
+        },
+        {
+          "id": "clifford-13d-shadow",
+          "label": "13D Shadow Spinor",
+          "plain_text": "Cl(12,1) → 2^6 = 64 components",
+          "latex": "\\text{Cl}(12,1) \\to 2^6 = 64 \\text{ components}",
+          "description": "Spinor dimension in PM's 13D shadow manifold"
+        },
+        {
+          "id": "clifford-4d-dirac",
+          "label": "4D Dirac Spinor",
+          "plain_text": "Cl(3,1) → 2^2 = 4 components",
+          "latex": "\\text{Cl}(3,1) \\to 2^2 = 4 \\text{ components}",
+          "description": "Standard Dirac spinor in 4D spacetime"
+        },
+        {
+          "id": "clifford-pseudoscalar",
+          "label": "Pseudoscalar (Volume Element)",
+          "plain_text": "I = γ^0 γ^1 γ^2 γ^3, I² = ±1",
+          "latex": "I = \\gamma^0 \\gamma^1 \\gamma^2 \\gamma^3, \\quad I^2 = \\pm 1",
+          "description": "Pseudoscalar element for 4D spacetime, chirality operator γ⁵ = iI"
+        },
+        {
+          "id": "clifford-periodicity",
+          "label": "Bott Periodicity (Clifford)",
+          "plain_text": "Cl(p+8,q) ≅ Cl(p,q) ⊗ Cl(8,0)",
+          "latex": "\\text{Cl}(p+8,q) \\cong \\text{Cl}(p,q) \\otimes \\text{Cl}(8,0)",
+          "description": "Clifford algebras are periodic with period 8 (Bott periodicity)"
+        }
+      ],
+      "used_in_sections": [
+        {
+          "section": "fermion-sector",
+          "description": "Spinor representations and chirality"
+        },
+        {
+          "section": "pneuma-lagrangian",
+          "description": "8192-component bulk spinor"
+        },
+        {
+          "section": "geometric-framework",
+          "description": "Cl(24,2) → Cl(12,1) reduction"
+        }
+      ]
+    },
+    {
+      "id": "dirac-equation",
+      "title": "Dirac Equation",
+      "category": "quantum",
+      "year_established": 1928,
+      "badge_type": "established",
+      "main_equation": "(iγ^μ∂_μ - m)ψ = 0",
+      "main_equation_latex": "(i\\gamma^\\mu\\partial_\\mu - m)\\psi = 0",
+      "summary": "The relativistic wave equation for spin-½ particles, unifying quantum mechanics and special relativity. First equation to predict antimatter.",
+      "key_properties": [
+        "Describes particles with spin-½ (electrons, quarks, neutrinos)",
+        "Combines quantum mechanics, special relativity, and spin",
+        "Predicts existence of antimatter (negative energy solutions)",
+        "Uses 4×4 gamma matrices satisfying Clifford algebra",
+        "ψ is a 4-component Dirac spinor field",
+        "Lorentz invariant under proper Lorentz transformations",
+        "Lagrangian form: L = ψ̄(iγ^μ∂_μ - m)ψ with Dirac adjoint ψ̄ = ψ†γ^0"
+      ],
+      "pm_connection": "The Pneuma Lagrangian is a 26D generalization of the Dirac equation in the 2T framework with fermionic primacy. 26D bulk: Ψ_P has 8192 components from Cl(24,2) - geometry emerges from spinor condensate g_MN ~ ⟨Ψ̄_P Γ_(MN) Ψ_P⟩. 13D shadow: 64 components from Cl(12,1) after dimensional reduction (factor 128 = 2^7). The 64-component shadow spinor connects to SO(10) GUT and 3 generations: 64 = 4×16 with each generation containing 16 fermions in SO(10).",
+      "formulas": [
+        {
+          "id": "dirac-equation-main",
+          "label": "Dirac Equation",
+          "plain_text": "(iγ^μ∂_μ - m)ψ = 0",
+          "latex": "(i\\gamma^\\mu\\partial_\\mu - m)\\psi = 0",
+          "description": "Relativistic wave equation for spin-½ particles"
+        },
+        {
+          "id": "dirac-lagrangian",
+          "label": "Dirac Lagrangian",
+          "plain_text": "L = ψ̄(iγ^μ∂_μ - m)ψ",
+          "latex": "\\mathcal{L} = \\bar{\\psi}(i\\gamma^\\mu\\partial_\\mu - m)\\psi",
+          "description": "Lagrangian density for Dirac field"
+        },
+        {
+          "id": "dirac-adjoint",
+          "label": "Dirac Adjoint",
+          "plain_text": "ψ̄ = ψ†γ^0",
+          "latex": "\\bar{\\psi} = \\psi^\\dagger \\gamma^0",
+          "description": "Adjoint spinor ensuring Lorentz invariance"
+        },
+        {
+          "id": "dirac-pneuma-26d",
+          "label": "26D Pneuma Lagrangian",
+          "plain_text": "Ψ̄_P(iΓ^A D_A - m_P)Ψ_P",
+          "latex": "\\bar{\\Psi}_P(i\\Gamma^A D_A - m_P)\\Psi_P",
+          "description": "26D generalization with 8192-component spinor in Cl(24,2)"
+        },
+        {
+          "id": "dirac-spinor-reduction",
+          "label": "Spinor Reduction Pathway",
+          "plain_text": "8192 (26D) → 64 (13D) → 4 (4D) components",
+          "latex": "8192 \\text{ (26D)} \\to 64 \\text{ (13D)} \\to 4 \\text{ (4D) components}",
+          "description": "Dimensional reduction preserves Clifford structure"
+        },
+        {
+          "id": "dirac-geometry-emergence",
+          "label": "Geometry from Spinor Condensate",
+          "plain_text": "g_MN ~ ⟨Ψ̄_P Γ_(MN) Ψ_P⟩",
+          "latex": "g_{MN} \\sim \\langle \\bar{\\Psi}_P \\Gamma_{(MN)} \\Psi_P \\rangle",
+          "description": "Metric emerges from spinor bivector condensate (fermionic primacy)"
+        },
+        {
+          "id": "dirac-6d-reduction",
+          "label": "6D Dirac Equation",
+          "plain_text": "(iΓ^M∂_M - m)Ψ = 0, M=0,1,2,3,5,6",
+          "latex": "(i\\Gamma^M\\partial_M - m)\\Psi = 0, \\quad M=0,1,2,3,5,6",
+          "description": "Intermediate 6D stage with 8-component spinor from Cl(5,1)"
+        },
+        {
+          "id": "dirac-kk-tower",
+          "label": "KK Mode Expansion",
+          "plain_text": "Ψ(x^μ,y,z) = Σ_{n,m} ψ_{n,m}(x^μ) Y_{n,m}(y,z)",
+          "latex": "\\Psi(x^\\mu,y,z) = \\sum_{n,m} \\psi_{n,m}(x^\\mu) Y_{n,m}(y,z)",
+          "description": "Kaluza-Klein decomposition on T² torus"
+        }
+      ],
+      "used_in_sections": [
+        {
+          "section": "pneuma-lagrangian",
+          "description": "26D generalization of Dirac equation"
+        },
+        {
+          "section": "fermion-sector",
+          "description": "Spinor fields"
+        }
+      ]
+    },
+    {
+      "id": "dirac-spinor",
+      "title": "Dirac Spinors",
+      "category": "quantum_field_theory",
+      "year_established": 1928,
+      "badge_type": "established",
+      "main_equation": "ψ = (ψ₁, ψ₂, ψ₃, ψ₄)ᵀ",
+      "main_equation_latex": "\\psi = \\begin{pmatrix} \\psi_1 \\\\ \\psi_2 \\\\ \\psi_3 \\\\ \\psi_4 \\end{pmatrix}",
+      "summary": "The mathematical objects that describe fermions with spin-1/2 in relativistic quantum mechanics, transforming under Lorentz symmetry in a unique double-valued way.",
+      "key_properties": [
+        "4-component complex column vector in C⁴ space",
+        "Transform under spinor representation of Lorentz group",
+        "Change sign under 360° rotation, return to original after 720°",
+        "Decompose into left-handed and right-handed Weyl spinors",
+        "Double-valued representation: Spin(3,1) → SO(3,1) is 2-to-1 map",
+        "Arise from Clifford algebra Cl(3,1) representation"
+      ],
+      "pm_connection": "In PM, the Pneuma field ΨₚƖ is fundamentally a spinor field in higher dimensions. The framework emphasizes fermionic primacy: spinors are the fundamental entities, and bosonic fields emerge from spinor bilinears. After dimensional reduction from 26D bulk (signature 24,2), the Pneuma field becomes a 64-component spinor in the 13D shadow manifold (signature 12,1). The metric tensor emerges from spinor bivector condensates: g_MN ~ ⟨Ψ̄ₚ Γ_(MN) Ψₚ⟩.",
+      "formulas": [
+        {
+          "id": "dirac-spinor-main",
+          "latex": "\\psi = \\begin{pmatrix} \\psi_1 \\\\ \\psi_2 \\\\ \\psi_3 \\\\ \\psi_4 \\end{pmatrix}",
+          "plaintext": "ψ = (ψ₁, ψ₂, ψ₃, ψ₄)ᵀ",
+          "description": "4-component Dirac spinor - column vector in complex Hilbert space"
+        },
+        {
+          "id": "weyl-decomposition",
+          "latex": "\\psi = \\begin{pmatrix} \\psi_L \\\\ \\psi_R \\end{pmatrix}",
+          "plaintext": "ψ = (ψ_L, ψ_R)ᵀ",
+          "description": "Weyl decomposition into left-handed and right-handed components"
+        },
+        {
+          "id": "chirality-projector-left",
+          "latex": "\\psi_L = P_L \\psi = \\frac{1}{2}(1 - \\gamma^5)\\psi",
+          "plaintext": "ψ_L = P_L ψ = (1/2)(1 - γ⁵)ψ",
+          "description": "Left-handed chirality projector"
+        },
+        {
+          "id": "chirality-projector-right",
+          "latex": "\\psi_R = P_R \\psi = \\frac{1}{2}(1 + \\gamma^5)\\psi",
+          "plaintext": "ψ_R = P_R ψ = (1/2)(1 + γ⁵)ψ",
+          "description": "Right-handed chirality projector"
+        },
+        {
+          "id": "lorentz-transformation",
+          "latex": "\\psi(x) \\to \\psi'(x') = S(\\Lambda)\\psi(x)",
+          "plaintext": "ψ(x) → ψ'(x') = S(Λ)ψ(x)",
+          "description": "Spinor transformation under Lorentz transformation Λ"
+        },
+        {
+          "id": "spin-rotation-matrix",
+          "latex": "S(\\Lambda) = \\exp\\left(\\frac{1}{4}\\omega_{\\mu\\nu}\\sigma^{\\mu\\nu}\\right)",
+          "plaintext": "S(Λ) = exp((1/4)ω_μν σ^μν)",
+          "description": "Spin transformation matrix from gamma matrices"
+        },
+        {
+          "id": "clifford-relation",
+          "latex": "\\{\\gamma^\\mu, \\gamma^\\nu\\} = 2\\eta^{\\mu\\nu}",
+          "plaintext": "{γ^μ, γ^ν} = 2η^μν",
+          "description": "Clifford algebra relation for signature η = diag(+1,-1,-1,-1)"
+        },
+        {
+          "id": "dirac-adjoint",
+          "latex": "\\bar{\\psi} = \\psi^\\dagger \\gamma^0",
+          "plaintext": "ψ̄ = ψ† γ⁰",
+          "description": "Dirac adjoint (row vector)"
+        },
+        {
+          "id": "spinor-dimension-formula",
+          "latex": "\\text{dim}(\\text{Spinor}) = 2^{\\lfloor D/2 \\rfloor}",
+          "plaintext": "dim(Spinor) = 2^⌊D/2⌋",
+          "description": "General spinor dimension formula for D-dimensional spacetime"
+        },
+        {
+          "id": "pm-pneuma-spinor-64",
+          "latex": "\\Psi_{P,\\text{shadow}} \\in \\mathbb{C}^{64}",
+          "plaintext": "Ψ_P,shadow ∈ C⁶⁴",
+          "description": "PM Pneuma spinor: 64 components from Cl(12,1) in 13D shadow manifold"
+        },
+        {
+          "id": "pm-metric-from-spinor",
+          "latex": "g_{MN} \\sim \\langle \\bar{\\Psi}_P \\Gamma_{(MN)} \\Psi_P \\rangle",
+          "plaintext": "g_MN ~ ⟨Ψ̄_P Γ_(MN) Ψ_P⟩",
+          "description": "PM: Metric tensor emerges from spinor bivector condensate"
+        }
+      ]
+    },
+    {
+      "id": "einstein-field-equations",
+      "title": "Einstein Field Equations",
+      "category": "gravity",
+      "year_established": 1915,
+      "badge_type": "established",
+      "main_equation": "G_μν + Λg_μν = 8πG T_μν",
+      "main_equation_latex": "G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = 8\\pi G T_{\\mu\\nu}",
+      "summary": "The fundamental equations of General Relativity that describe how matter and energy curve spacetime, and how curved spacetime tells matter how to move.",
+      "key_properties": [
+        "Connects spacetime curvature (Einstein tensor G_μν) to matter/energy (stress-energy tensor T_μν)",
+        "Diffeomorphism invariant (coordinate independent)",
+        "Einstein tensor is divergence-free: ∇^μ G_μν = 0",
+        "Reduces to Newton's law of gravity in weak-field, slow-velocity limit",
+        "Contains cosmological constant Λ for dark energy",
+        "10 independent components (4D symmetric tensor)"
+      ],
+      "pm_connection": "Principia Metaphysica extends Einstein's General Relativity to higher dimensions in the 2T physics framework. The Einstein Field Equations generalize to each dimensional stage: 26D bulk (24,2), 13D shadow (12,1), 6D bulk (5,1), and 4D observed (3,1). The G₂ compactification maintains Ricci-flatness through TCS gluing, with flux corrections modifying the effective geometry. The cosmological constant connects to PM's dark energy prediction w₀ = -1.0269.",
+      "formulas": [
+        {
+          "id": "efe-main",
+          "latex": "G_{\\mu\\nu} + \\Lambda g_{\\mu\\nu} = 8\\pi G T_{\\mu\\nu}",
+          "plaintext": "G_μν + Λg_μν = 8πG T_μν",
+          "description": "Einstein Field Equations with cosmological constant"
+        },
+        {
+          "id": "einstein-tensor",
+          "latex": "G_{\\mu\\nu} = R_{\\mu\\nu} - \\frac{1}{2}Rg_{\\mu\\nu}",
+          "plaintext": "G_μν = R_μν - (1/2)Rg_μν",
+          "description": "Einstein tensor from Ricci tensor and Ricci scalar"
+        },
+        {
+          "id": "line-element",
+          "latex": "ds^2 = g_{\\mu\\nu} dx^\\mu dx^\\nu",
+          "plaintext": "ds² = g_μν dx^μ dx^ν",
+          "description": "Spacetime interval (line element)"
+        },
+        {
+          "id": "schwarzschild-metric",
+          "latex": "ds^2 = -\\left(1 - \\frac{2GM}{r}\\right)dt^2 + \\left(1 - \\frac{2GM}{r}\\right)^{-1}dr^2 + r^2 d\\Omega^2",
+          "plaintext": "ds² = -(1 - 2GM/r)dt² + (1 - 2GM/r)⁻¹dr² + r²dΩ²",
+          "description": "Schwarzschild metric around spherical mass"
+        },
+        {
+          "id": "pm-efe-26d",
+          "latex": "G_{AB} + \\Lambda_{26} g_{AB} = 8\\pi G_{26} T_{AB}",
+          "plaintext": "G_AB + Λ_26 g_AB = 8πG_26 T_AB",
+          "description": "PM: Einstein equations in 26D bulk with signature (24,2)"
+        },
+        {
+          "id": "pm-efe-13d",
+          "latex": "G_{MN} + \\Lambda_{13} g_{MN} = 8\\pi G_{13} T_{MN}",
+          "plaintext": "G_MN + Λ_13 g_MN = 8πG_13 T_MN",
+          "description": "PM: Einstein equations in 13D shadow after Sp(2,R) gauge fixing"
+        },
+        {
+          "id": "pm-g2-ricci-flat",
+          "latex": "\\text{Ric}(g_{G_2}) = 0",
+          "plaintext": "Ric(g_G₂) = 0",
+          "description": "PM: G₂ manifold is Ricci-flat (satisfies vacuum Einstein equations)"
+        },
+        {
+          "id": "pm-flux-corrected-efe",
+          "latex": "G_{\\mu\\nu} = 8\\pi G\\left(T_{\\mu\\nu} + T_{\\mu\\nu}^{\\text{flux}}\\right)",
+          "plaintext": "G_μν = 8πG(T_μν + T_μν^flux)",
+          "description": "PM: Flux corrections modify effective geometry"
+        }
+      ]
+    },
+    {
+      "id": "einstein-hilbert-action",
+      "title": "Einstein-Hilbert Action",
+      "category": "gravity",
+      "year_established": 1915,
+      "badge_type": "established",
+      "main_equation": "S = (1/16πG) ∫ d⁴x √|g| R",
+      "main_equation_latex": "S = \\frac{1}{16\\pi G} \\int d^4x \\sqrt{|g|} R",
+      "summary": "The action principle from which Einstein's field equations of General Relativity are derived through variational calculus.",
+      "key_properties": [
+        "Variational principle: extremizing δS = 0 yields Einstein field equations",
+        "Proportional to total curvature integrated over spacetime",
+        "Coordinate invariant (diffeomorphism invariant)",
+        "Factor 1/16πG ensures correct coupling strength",
+        "√|g| ensures proper volume element in curved spacetime",
+        "R = Ricci scalar measures total curvature"
+      ],
+      "pm_connection": "In Principia Metaphysica, the Einstein-Hilbert action generalizes to 26 dimensions with signature (24,2) in the 2T physics framework. The action undergoes dimensional reduction: 26D (24,2) bulk → 13D (12,1) shadow via Sp(2,R) gauge fixing → 6D bulk via G₂ compactification → 4D observed. The 4D Planck mass emerges from compactification: M_Pl² = M_*²⁴ × V_22, where V_22 is the 22-dimensional compact volume.",
+      "formulas": [
+        {
+          "id": "eh-action-4d",
+          "latex": "S_{\\text{EH}} = \\frac{1}{16\\pi G} \\int d^4x \\sqrt{|g|} R",
+          "plaintext": "S_EH = (1/16πG) ∫ d⁴x √|g| R",
+          "description": "4D Einstein-Hilbert action"
+        },
+        {
+          "id": "pm-eh-action-26d",
+          "latex": "S_{26D} = M_*^{24} \\int d^{26}X \\sqrt{|G_{(24,2)}|} R_{26}",
+          "plaintext": "S_26D = M_*²⁴ ∫ d²⁶X √|G_(24,2)| R_26",
+          "description": "PM: 26D Einstein-Hilbert action with signature (24,2)"
+        },
+        {
+          "id": "pm-eh-action-14x2",
+          "latex": "S_{14\\times 2} = M_*^{24} \\int \\left[d^{14}x_1 \\sqrt{|g_1|} R_{14,1} + d^{14}x_2 \\sqrt{|g_2|} R_{14,2}\\right]",
+          "plaintext": "S_14×2 = M_*²⁴ ∫ [d¹⁴x₁ √|g₁| R_14,1 + d¹⁴x₂ √|g₂| R_14,2]",
+          "description": "PM: After Sp(2,R) gauge fixing to dual 14D sectors"
+        },
+        {
+          "id": "pm-eh-action-7x2",
+          "latex": "S_{7\\times 2} = M_7^5 \\int \\left[d^7x_1 \\sqrt{|h_1|} R_{7,1} + d^7x_2 \\sqrt{|h_2|} R_{7,2}\\right]",
+          "plaintext": "S_7×2 = M_7⁵ ∫ [d⁷x₁ √|h₁| R_7,1 + d⁷x₂ √|h₂| R_7,2]",
+          "description": "PM: After G₂ compactification to dual 7D sectors"
+        },
+        {
+          "id": "pm-eh-action-4d",
+          "latex": "S_{4D} = M_{\\text{Pl}}^2 \\int d^4x \\sqrt{|g|} R",
+          "plaintext": "S_4D = M_Pl² ∫ d⁴x √|g| R",
+          "description": "PM: 4D effective action after full compactification"
+        },
+        {
+          "id": "pm-planck-mass-kk",
+          "latex": "M_{\\text{Pl}}^2 = M_*^{24} \\times V_{22}",
+          "plaintext": "M_Pl² = M_*²⁴ × V_22",
+          "description": "PM: 4D Planck mass from Kaluza-Klein compactification"
+        },
+        {
+          "id": "pm-v22-volume",
+          "latex": "V_{22} = \\text{Vol}(M_1^7) \\times \\text{Vol}(M_2^7) \\times (\\text{Sp}(2,\\mathbb{R}) \\text{ volume factor})",
+          "plaintext": "V_22 = Vol(M₁⁷) × Vol(M₂⁷) × (Sp(2,R) volume factor)",
+          "description": "PM: 22-dimensional compact volume"
+        }
+      ]
+    },
+    {
+      "id": "g2-manifolds",
+      "title": "G₂ Manifolds",
+      "category": "geometry",
+      "year_established": 1987,
+      "badge_type": "established",
+      "main_equation": "dφ = 0 and d(*φ) = 0",
+      "main_equation_latex": "d\\varphi = 0 \\quad \\text{and} \\quad d(\\star\\varphi) = 0",
+      "summary": "7-dimensional Riemannian manifolds with holonomy group G₂, the smallest exceptional Lie group. These manifolds are Ricci-flat and preserve N=1 supersymmetry in M-theory compactifications.",
+      "key_properties": [
+        "7-dimensional with holonomy group G₂ ⊂ SO(7)",
+        "Ricci-flat: Ric(g) = 0 (satisfy vacuum Einstein equations)",
+        "Exactly one parallel spinor (8 real components)",
+        "Defined by associative 3-form φ satisfying dφ = 0 and d(*φ) = 0",
+        "No complex structure (purely real geometry)",
+        "Preserves N=1 supersymmetry in 4D after M-theory compactification",
+        "Bare Euler characteristic χ(G₂) = 0 for smooth compact G₂ manifolds"
+      ],
+      "pm_connection": "In PM's 2T physics framework, the 13D shadow (from 26D bulk via Sp(2,R) gauge fixing) compactifies on a 7D G₂ manifold constructed via Twisted Connected Sum (TCS). The specific construction uses extra-twisted TCS with involution blocks 3.25₁ and 3.25₂, gluing angle θ = π/6, yielding Betti numbers b₂ = 4, b₃ = 24. G₄ flux backreaction modifies bare topology χ = 0 to effective χ_eff = 72 per G₂ copy, giving 3 fermion generations via n_gen = χ_eff/24 = 3. D₅ ADE singularities provide SO(10) GUT gauge group. The GUT scale M_GUT = 2.118×10¹⁶ GeV emerges topologically via logarithmic torsion formula. Total internal space: V₉ = V₇(G₂) × V₂(T²).",
+      "formulas": [
+        {
+          "id": "g2-defining-equations",
+          "latex": "d\\varphi = 0 \\quad \\text{and} \\quad d(\\star\\varphi) = 0",
+          "plaintext": "dφ = 0 and d(*φ) = 0",
+          "description": "Defining equations for torsion-free G₂ structure"
+        },
+        {
+          "id": "g2-ricci-flat",
+          "latex": "\\text{Ric}(g) = 0",
+          "plaintext": "Ric(g) = 0",
+          "description": "G₂ manifolds are Ricci-flat"
+        },
+        {
+          "id": "g2-parallel-spinor",
+          "latex": "\\nabla \\eta = 0",
+          "plaintext": "∇η = 0",
+          "description": "Unique parallel spinor η (8 real components)"
+        },
+        {
+          "id": "pm-g2-tcs",
+          "latex": "M^7 = M_1^7 \\cup_{S^3 \\times S^1} M_2^7",
+          "plaintext": "M⁷ = M₁⁷ ∪_S³×S¹ M₂⁷",
+          "description": "PM: Twisted Connected Sum construction"
+        },
+        {
+          "id": "pm-g2-bare-euler",
+          "latex": "\\chi(M^7) = 0",
+          "plaintext": "χ(M⁷) = 0",
+          "description": "PM: Bare Euler characteristic (before flux)"
+        },
+        {
+          "id": "pm-g2-flux-dressed-euler",
+          "latex": "\\chi_{\\text{eff}}(M^7) = 72",
+          "plaintext": "χ_eff(M⁷) = 72",
+          "description": "PM: Flux-dressed effective Euler characteristic per G₂ copy"
+        },
+        {
+          "id": "pm-g2-generation-count",
+          "latex": "n_{\\text{gen}} = \\frac{\\chi_{\\text{eff}}}{24} = \\frac{72}{24} = 3",
+          "plaintext": "n_gen = χ_eff/24 = 72/24 = 3",
+          "description": "PM: 3 fermion generations from flux-dressed topology"
+        },
+        {
+          "id": "pm-g2-total-euler",
+          "latex": "\\chi_{\\text{total}} = 144",
+          "plaintext": "χ_total = 144",
+          "description": "PM: Total Euler characteristic from dual G₂ pair"
+        },
+        {
+          "id": "pm-g2-betti-2",
+          "latex": "b_2(M) = 4",
+          "plaintext": "b₂(M) = 4",
+          "description": "PM: Second Betti number (associative 3-cycles)"
+        },
+        {
+          "id": "pm-g2-betti-3",
+          "latex": "b_3(M) = 24",
+          "plaintext": "b₃(M) = 24",
+          "description": "PM: Third Betti number (coassociative 4-cycles)"
+        },
+        {
+          "id": "pm-g2-torsion-invariant",
+          "latex": "\\nu = 24",
+          "plaintext": "ν = 24",
+          "description": "PM: Crowley-Nordenstam torsion invariant mod 48"
+        },
+        {
+          "id": "pm-g2-gut-scale-formula",
+          "latex": "\\ln\\left(\\frac{M_{\\text{GUT}}}{M_{\\text{Planck}}}\\right) = -2\\pi \\frac{b_2 + b_3}{\\nu}",
+          "plaintext": "ln(M_GUT/M_Planck) = -2π(b₂ + b₃)/ν",
+          "description": "PM: Torsion logarithm formula for GUT scale"
+        },
+        {
+          "id": "pm-g2-gut-scale-value",
+          "latex": "M_{\\text{GUT}} = M_{\\text{Planck}} \\times e^{-7.33} = 2.118 \\times 10^{16} \\text{ GeV}",
+          "plaintext": "M_GUT = M_Planck × e^(-7.33) = 2.118×10¹⁶ GeV",
+          "description": "PM: GUT scale from torsion topology"
+        },
+        {
+          "id": "pm-g2-v9-volume",
+          "latex": "V_9 = V_7(G_2) \\times V_2(T^2)",
+          "plaintext": "V₉ = V₇(G₂) × V₂(T²)",
+          "description": "PM: 9D internal volume factorization"
+        },
+        {
+          "id": "pm-g2-susy-preservation",
+          "latex": "\\text{Hol}(g) \\subseteq G_2 \\quad \\Rightarrow \\quad N=1 \\text{ SUSY preserved}",
+          "plaintext": "Hol(g) ⊆ G₂ → N=1 SUSY preserved",
+          "description": "PM: G₂ holonomy preserves N=1 supersymmetry in 4D"
+        },
+        {
+          "id": "pm-g2-flux-quantization",
+          "latex": "\\int_{\\Sigma_4} \\frac{G_4}{2\\pi \\ell_P^3} \\in \\mathbb{Z}",
+          "plaintext": "∫_Σ₄ G₄/(2πℓ_P³) ∈ ℤ",
+          "description": "PM: G₄ flux quantization condition"
+        },
+        {
+          "id": "pm-g2-dimensional-reduction",
+          "latex": "26D(24,2) \\xrightarrow{\\text{Sp}(2,\\mathbb{R})} 14D_1(12,2) \\otimes 14D_2(12,2) \\xrightarrow{G_2} 7D_1 \\otimes 7D_2 \\xrightarrow{\\text{shared time}} 4D(3,1)",
+          "plaintext": "26D(24,2) --[Sp(2,R)]--> 14D₁(12,2)⊗14D₂(12,2) --[G₂]--> 7D₁⊗7D₂ --[shared time]--> 4D(3,1)",
+          "description": "PM: Full dimensional reduction pathway in 2T framework"
+        }
+      ]
+    },
+    {
+      "id": "hawking-temperature",
+      "title": "Hawking Temperature",
+      "category": "thermodynamics",
+      "year_established": 1974,
+      "badge_type": "established",
+      "main_equation": "T_H = ℏc³/(8πGMk_B) = ℏκ/(2πck_B)",
+      "main_equation_latex": "T_H = \\frac{\\hbar c^3}{8\\pi G M k_B} = \\frac{\\hbar \\kappa}{2\\pi c k_B}",
+      "summary": "The temperature at which black holes emit thermal radiation, unifying quantum mechanics, general relativity, and thermodynamics.",
+      "key_properties": [
+        "Black holes are not completely black—they emit thermal radiation at a temperature inversely proportional to their mass",
+        "T_H ∝ 1/M: Smaller black holes are hotter and evaporate faster",
+        "Contains ℏ (quantum), G (gravity), and c (relativity)—a window into quantum gravity",
+        "Surface gravity κ at the event horizon determines the temperature",
+        "For a solar mass black hole: T_H ≈ 60 nanokelvin (much colder than the CMB)",
+        "Evaporation time scales as t_evap ∝ M³, making stellar-mass black holes effectively eternal",
+        "Primordial black holes of mass ~10¹⁵ g could be evaporating now",
+        "Leads to the black hole information paradox: how is quantum information preserved during evaporation?"
+      ],
+      "pm_connection": "Hawking temperature plays a crucial role in PM's treatment of black holes and dimensional reduction. In the thermal time hypothesis, Hawking radiation provides a concrete example where the vacuum state satisfies the KMS condition with β_H = 1/(k_B T_H). The modular flow generates evolution at the horizon, with temperature emerging from geometry (surface gravity κ). PM extends black hole thermodynamics to the 26D bulk, where higher-dimensional horizons have different topology and thermodynamics. In Kaluza-Klein black holes, compactified dimensions affect black hole properties. The Hawking temperature indicates where quantum gravity becomes important: near the Planck mass M_Planck = √(ℏc/G), the semiclassical approximation breaks down and PM's higher-dimensional quantum geometry becomes relevant.",
+      "formulas": [
+        {
+          "name": "Hawking Temperature (Mass Form)",
+          "equation": "T_H = ℏc³/(8πGMk_B)",
+          "latex": "T_H = \\frac{\\hbar c^3}{8\\pi G M k_B}",
+          "description": "Temperature as a function of black hole mass M. Inversely proportional to mass."
+        },
+        {
+          "name": "Hawking Temperature (Surface Gravity Form)",
+          "equation": "T_H = ℏκ/(2πck_B)",
+          "latex": "T_H = \\frac{\\hbar \\kappa}{2\\pi c k_B}",
+          "description": "Temperature expressed in terms of surface gravity κ at the event horizon."
+        },
+        {
+          "name": "Surface Gravity (Schwarzschild)",
+          "equation": "κ = c⁴/(4GM) = GM/r_s²",
+          "latex": "\\kappa = \\frac{c^4}{4GM} = \\frac{GM}{r_s^2}",
+          "description": "Surface gravity for a Schwarzschild black hole, where r_s = 2GM/c² is the Schwarzschild radius."
+        },
+        {
+          "name": "Bekenstein-Hawking Entropy",
+          "equation": "S_BH = k_B A/(4ℓ_P²) = k_B c³A/(4ℏG)",
+          "latex": "S_{BH} = \\frac{k_B A}{4\\ell_P^2} = \\frac{k_B c^3 A}{4\\hbar G}",
+          "description": "Black hole entropy proportional to horizon area A. Holographic principle."
+        },
+        {
+          "name": "Evaporation Time",
+          "equation": "t_evap = (5120πG²M³)/(ℏc⁴)",
+          "latex": "t_{evap} = \\frac{5120\\pi G^2 M^3}{\\hbar c^4}",
+          "description": "Time for a Schwarzschild black hole to completely evaporate via Hawking radiation."
+        },
+        {
+          "name": "First Law of Black Hole Thermodynamics",
+          "equation": "dM = (κ/8πG)dA + Ω_H dJ + Φ_H dQ",
+          "latex": "dM = \\frac{\\kappa}{8\\pi G}dA + \\Omega_H dJ + \\Phi_H dQ",
+          "description": "Analogue of thermodynamic first law for black holes with rotation and charge."
+        },
+        {
+          "name": "Kerr Black Hole Temperature",
+          "equation": "T_H = ℏc³(r₊ - r₋)/(4πGk_B(r₊² + a²))",
+          "latex": "T_H = \\frac{\\hbar c^3 (r_+ - r_-)}{4\\pi G k_B (r_+^2 + a^2)}",
+          "description": "Hawking temperature for rotating (Kerr) black hole with spin parameter a = J/(Mc)."
+        },
+        {
+          "name": "Unruh Temperature",
+          "equation": "T_U = ℏa/(2πck_B)",
+          "latex": "T_U = \\frac{\\hbar a}{2\\pi c k_B}",
+          "description": "Temperature experienced by an accelerating observer with proper acceleration a. Related to Hawking temperature via equivalence principle."
+        }
+      ]
+    },
+    {
+      "id": "kaluza-klein",
+      "title": "Kaluza-Klein Theory",
+      "category": "dimensional_reduction",
+      "year_established": 1921,
+      "badge_type": "established",
+      "main_equation": "Higher D → 4D | Compactification on S¹",
+      "main_equation_latex": "\\text{Higher } D \\rightarrow 4D \\quad | \\quad \\text{Compactification on } S^1",
+      "summary": "The groundbreaking theory showing how extra spatial dimensions can be 'curled up' so small they become invisible, unifying gravity and electromagnetism in higher dimensions.",
+      "key_properties": [
+        "Extra dimensions can be compactified (curled up) to such small sizes that they're invisible at low energies",
+        "Like a garden hose looks 1D from far away but is really 2D with a tiny circular dimension",
+        "Motion in the compact dimension appears as massive particles in 4D with mass m_n = n/R",
+        "The n=0 mode is massless and corresponds to the 4D fields we observe (photon, graviton)",
+        "Heavy KK modes (n≥1) are too massive to produce at current energies",
+        "Current LHC limit: R < 10⁻¹⁹ m from lack of observed KK modes",
+        "5D metric component g_μ5 becomes the electromagnetic potential A_μ in 4D",
+        "Kaluza-Klein theory is the foundation for string theory's extra dimensions"
+      ],
+      "pm_connection": "Principia Metaphysica employs a multi-stage compactification process from 26D down to the observed 4D. The pathway is: 26D → 13D → 6D → 4D. The 26D → 13D stage involves Sp(2,R) gauge fixing in 2T physics (not standard KK compactification but gauge-theoretic reduction). The 13D → 6D stage uses a G₂ manifold compactification (7D with holonomy G₂), preserving N=1 supersymmetry. The specific construction is TCS G₂ with b₂=4, b₃=24, χ=-540. The KK mass scale is m_KK ~ 1/R_G₂ where R_G₂ ~ 10⁻³⁵ m (Planck scale). Finally, 6D → 4D involves further compactification on a 2D surface. Unlike single-scale KK theory, PM has multiple compactification scales at different stages, potentially explaining the hierarchy problem. PM likely employs flux compactification to stabilize the moduli (size and shape of compact dimensions), with background fluxes generating a potential that fixes the compactification radius.",
+      "formulas": [
+        {
+          "name": "5D Kaluza-Klein Metric",
+          "equation": "ds²₍₅D₎ = g_μν dx^μ dx^ν + φ²(dy + A_μ dx^μ)²",
+          "latex": "ds^2_{(5D)} = g_{\\mu\\nu} dx^\\mu dx^\\nu + \\phi^2(dy + A_\\mu dx^\\mu)^2",
+          "description": "5D metric decomposed into 4D metric g_μν, gauge field A_μ (photon), and radion φ (dilaton)."
+        },
+        {
+          "name": "KK Mass Spectrum",
+          "equation": "m_n² = (n/R)²",
+          "latex": "m_n^2 = \\left(\\frac{n}{R}\\right)^2",
+          "description": "Tower of massive states from quantized momentum in compact dimension. n = 0,1,2,3,..."
+        },
+        {
+          "name": "Compactification Periodicity",
+          "equation": "y₅ ~ y₅ + 2πR",
+          "latex": "y_5 \\sim y_5 + 2\\pi R",
+          "description": "Periodic identification for circle compactification of radius R."
+        },
+        {
+          "name": "KK Mode Wavefunction",
+          "equation": "ψ_n(y) = e^(iny/R) / √(2πR)",
+          "latex": "\\psi_n(y) = \\frac{e^{iny/R}}{\\sqrt{2\\pi R}}",
+          "description": "Normalized wavefunction for nth KK mode in compact direction."
+        },
+        {
+          "name": "Higher-Dimensional Bekenstein-Hawking Entropy",
+          "equation": "S_BH = k_B A_{d-2} / (4ℓ_{P,d}^{d-2})",
+          "latex": "S_{BH} = \\frac{k_B A_{d-2}}{4\\ell_{P,d}^{d-2}}",
+          "description": "Black hole entropy in d spacetime dimensions, generalizing 4D formula."
+        },
+        {
+          "name": "Fundamental vs Observed Planck Scale (ADD Model)",
+          "equation": "M_Pl² ~ M_*^{n+2} R^n",
+          "latex": "M_{Pl}^2 \\sim M_*^{n+2} R^n",
+          "description": "Relation between 4D Planck scale M_Pl and fundamental scale M_* with n extra dimensions of size R."
+        }
+      ]
+    },
+    {
+      "id": "kms-condition",
+      "title": "KMS Condition",
+      "category": "thermal_qft",
+      "year_established": 1967,
+      "badge_type": "established",
+      "main_equation": "⟨AB⟩_β = ⟨B α_{iβ}(A)⟩",
+      "main_equation_latex": "\\langle AB \\rangle_\\beta = \\langle B \\alpha_{i\\beta}(A) \\rangle",
+      "summary": "The mathematical condition characterizing thermal equilibrium states in quantum field theory, connecting temperature to the analytic structure of correlation functions.",
+      "key_properties": [
+        "Thermal states exhibit periodicity in imaginary time with period β = 1/(k_B T)",
+        "Left side ⟨AB⟩_β is the thermal correlation between operators A and B",
+        "Right side α_{iβ}(A) is the operator A evolved in imaginary time by iβ (modular automorphism)",
+        "Relates correlation functions to their analytically continued counterparts",
+        "Correlation functions are analytic in the strip 0 < Im(t) < β",
+        "Boundary conditions at Im(t) = 0 and Im(t) = β give the KMS relation",
+        "Generalizes thermal equilibrium beyond systems with a Hamiltonian to arbitrary quantum systems",
+        "Appears naturally in curved spacetime: Hawking radiation and Unruh effect satisfy KMS condition"
+      ],
+      "pm_connection": "The KMS condition plays a crucial role in the thermodynamic properties of the pneuma field and the emergence of time in PM. In the thermal time hypothesis, the flow of time emerges from the thermal properties of quantum states. The modular flow σ_t from the KMS condition provides a notion of 'thermal time' independent of external clocks. Physical time is identified with modular automorphism evolution, with inverse temperature β setting the timescale for thermal processes. The pneuma field Ψ in the 26D bulk exhibits thermal characteristics related to dimensional reduction. Dimensional compactification induces effective thermal states, and each dimensional shadow (26D → 13D → 6D → 4D) has associated KMS thermal properties. The holographic thermality relates KMS states in different dimensions via bulk-boundary correspondence. The observed CMB temperature T_CMB = 2.725 K connects to the KMS condition for the cosmological horizon, with horizon thermality exhibited by both cosmological and black hole horizons. The CMB temperature serves as a fossil record of early universe thermalization.",
+      "formulas": [
+        {
+          "name": "KMS Condition",
+          "equation": "⟨AB⟩_β = ⟨B α_{iβ}(A)⟩",
+          "latex": "\\langle AB \\rangle_\\beta = \\langle B \\alpha_{i\\beta}(A) \\rangle",
+          "description": "Fundamental KMS relation for thermal states at inverse temperature β = 1/(k_B T)."
+        },
+        {
+          "name": "Thermal Density Matrix",
+          "equation": "ρ_β = e^{-βH} / Z",
+          "latex": "\\rho_\\beta = \\frac{e^{-\\beta H}}{Z}",
+          "description": "Gibbs thermal state with partition function Z = Tr(e^{-βH})."
+        },
+        {
+          "name": "Thermal Expectation Value",
+          "equation": "⟨A⟩_β = Tr(e^{-βH}A)/Z",
+          "latex": "\\langle A \\rangle_\\beta = \\frac{\\text{Tr}(e^{-\\beta H}A)}{Z}",
+          "description": "Expectation value in the thermal state."
+        },
+        {
+          "name": "Time Evolution Automorphism",
+          "equation": "α_t(A) = e^{iHt} A e^{-iHt}",
+          "latex": "\\alpha_t(A) = e^{iHt} A e^{-iHt}",
+          "description": "Heisenberg time evolution. For imaginary time t → iβ, becomes modular flow."
+        },
+        {
+          "name": "Euclidean Correlation Function",
+          "equation": "G(τ) = ⟨A(τ)B(0)⟩_β = Tr(e^{-βH} A(e^{-Hτ})B e^{Hτ})/Z",
+          "latex": "G(\\tau) = \\langle A(\\tau)B(0) \\rangle_\\beta = \\frac{\\text{Tr}(e^{-\\beta H} A(e^{-H\\tau})B e^{H\\tau})}{Z}",
+          "description": "Correlation function in imaginary (Euclidean) time, periodic with period β."
+        },
+        {
+          "name": "Imaginary Time Periodicity",
+          "equation": "G(τ + β) = G(τ)",
+          "latex": "G(\\tau + \\beta) = G(\\tau)",
+          "description": "Thermal Green's functions are periodic in imaginary time with period β."
+        },
+        {
+          "name": "Hawking Temperature (KMS Form)",
+          "equation": "T_H = ℏc³/(8πGk_B M) = ℏκ/(2πck_B)",
+          "latex": "T_H = \\frac{\\hbar c^3}{8\\pi G k_B M} = \\frac{\\hbar \\kappa}{2\\pi c k_B}",
+          "description": "Black holes emit thermal radiation satisfying KMS condition with this temperature."
+        },
+        {
+          "name": "Unruh Temperature (KMS Form)",
+          "equation": "T_U = ℏa/(2πck_B)",
+          "latex": "T_U = \\frac{\\hbar a}{2\\pi c k_B}",
+          "description": "Accelerating observer sees Minkowski vacuum as thermal bath at this temperature, satisfying KMS."
+        },
+        {
+          "name": "Modular Automorphism (General)",
+          "equation": "σ_t(A) = Δ^{it} A Δ^{-it}",
+          "latex": "\\sigma_t(A) = \\Delta^{it} A \\Delta^{-it}",
+          "description": "Modular automorphism from Tomita-Takesaki theory, generalizing thermal time evolution."
+        }
+      ]
+    },
+    {
+      "id": "metric-tensor",
+      "title": "Metric Tensor",
+      "category": "differential_geometry",
+      "year_established": 1854,
+      "badge_type": "established",
+      "main_equation": "ds² = g_μν dx^μ dx^ν",
+      "main_equation_latex": "ds^2 = g_{\\mu\\nu} dx^\\mu dx^\\nu",
+      "summary": "The fundamental mathematical object that encodes the geometry of spacetime, defining distances, angles, and the causal structure of the universe.",
+      "key_properties": [
+        "The metric tensor g_μν tells you how to measure distances and time intervals in curved spacetime",
+        "Line element ds² generalizes the Pythagorean theorem to curved spaces",
+        "Metric signature determines which directions are timelike, spacelike, or null",
+        "Standard 4D signature: (3,1) or (-,+,+,+) representing 3 space + 1 time dimensions",
+        "Contains all geometric information: distances, angles, volumes, geodesics, and curvature derive from g_μν",
+        "Invariant under coordinate transformations: all observers agree on ds²",
+        "In 4D, the metric is a symmetric matrix with 10 independent components",
+        "Inverse metric g^μν is used to raise indices and compute curvature tensors"
+      ],
+      "pm_connection": "The metric tensor is fundamental to PM's geometric framework. At each dimensional stage, a metric defines the geometry with specific signatures. The 26D bulk metric g_AB^(26) has signature (24,2) - two timelike directions allowing Sp(2,R) gauge symmetry. The extra time dimension enables causal paradox resolution. After Sp(2,R) gauge fixing, the 13D shadow metric g_MN^(13) has signature (12,1), returning to standard (n-1,1) signature spacetime. The 6D bulk metric g_μν^(6) has signature (5,1), with the G₂ manifold internal space contributing to this geometry. Finally, the observed 4D metric g_μν^(4) has signature (3,1), the standard spacetime metric we measure. The line element generalizes at each stage: ds² = g_AB^(D) dx^A dx^B. The (n,2) signature in higher dimensions is essential for two-time physics. The Sp(2,R) gauge symmetry acts on the two timelike directions, and gauge fixing reduces to a single observed time dimension, resolving the apparent contradiction while maintaining mathematical consistency. All curvature quantities (Ricci tensor, Einstein tensor) are ultimately derived from the metric at each dimensional stage.",
+      "formulas": [
+        {
+          "name": "Spacetime Interval (Line Element)",
+          "equation": "ds² = g_μν dx^μ dx^ν",
+          "latex": "ds^2 = g_{\\mu\\nu} dx^\\mu dx^\\nu",
+          "description": "Infinitesimal distance between nearby events in spacetime. Invariant under coordinate transformations."
+        },
+        {
+          "name": "Minkowski Metric",
+          "equation": "η_μν = diag(-1, 1, 1, 1)",
+          "latex": "\\eta_{\\mu\\nu} = \\text{diag}(-1, 1, 1, 1)",
+          "description": "Flat spacetime metric for Special Relativity. Signature (3,1) or (-,+,+,+)."
+        },
+        {
+          "name": "Minkowski Line Element",
+          "equation": "ds² = -dt² + dx² + dy² + dz²",
+          "latex": "ds^2 = -dt^2 + dx^2 + dy^2 + dz^2",
+          "description": "Flat spacetime interval in Cartesian coordinates."
+        },
+        {
+          "name": "Schwarzschild Metric",
+          "equation": "ds² = -(1-r_s/r)dt² + (1-r_s/r)⁻¹dr² + r²dΩ²",
+          "latex": "ds^2 = -\\left(1-\\frac{r_s}{r}\\right)dt^2 + \\left(1-\\frac{r_s}{r}\\right)^{-1}dr^2 + r^2 d\\Omega^2",
+          "description": "Metric around a non-rotating spherical mass or black hole. r_s = 2GM/c² is Schwarzschild radius."
+        },
+        {
+          "name": "FLRW Metric",
+          "equation": "ds² = -dt² + a(t)²[dr²/(1-kr²) + r²dΩ²]",
+          "latex": "ds^2 = -dt^2 + a(t)^2\\left[\\frac{dr^2}{1-kr^2} + r^2 d\\Omega^2\\right]",
+          "description": "Friedmann-Lemaître-Robertson-Walker metric for expanding universe. a(t) is scale factor, k is curvature."
+        },
+        {
+          "name": "Inverse Metric Relation",
+          "equation": "g^{μλ}g_{λν} = δ^μ_ν",
+          "latex": "g^{\\mu\\lambda}g_{\\lambda\\nu} = \\delta^\\mu_\\nu",
+          "description": "Inverse metric g^μν satisfies this relation (Kronecker delta on right side)."
+        },
+        {
+          "name": "Index Raising",
+          "equation": "V^μ = g^{μν} V_ν",
+          "latex": "V^\\mu = g^{\\mu\\nu} V_\\nu",
+          "description": "Convert covariant vector to contravariant using inverse metric."
+        },
+        {
+          "name": "Index Lowering",
+          "equation": "V_μ = g_{μν} V^ν",
+          "latex": "V_\\mu = g_{\\mu\\nu} V^\\nu",
+          "description": "Convert contravariant vector to covariant using metric."
+        },
+        {
+          "name": "Proper Time",
+          "equation": "dτ² = -ds²/c²",
+          "latex": "d\\tau^2 = -\\frac{ds^2}{c^2}",
+          "description": "Proper time along timelike worldline. Time measured by a clock following the path."
+        },
+        {
+          "name": "Christoffel Symbols",
+          "equation": "Γ^λ_{μν} = ½ g^{λρ}(∂_μ g_{νρ} + ∂_ν g_{ρμ} - ∂_ρ g_{μν})",
+          "latex": "\\Gamma^\\lambda_{\\mu\\nu} = \\frac{1}{2} g^{\\lambda\\rho}(\\partial_\\mu g_{\\nu\\rho} + \\partial_\\nu g_{\\rho\\mu} - \\partial_\\rho g_{\\mu\\nu})",
+          "description": "Connection coefficients derived from metric. Describe parallel transport and geodesics."
+        },
+        {
+          "name": "Volume Element",
+          "equation": "d^4x √|g|",
+          "latex": "d^4x \\sqrt{|g|}",
+          "description": "Invariant volume element in curved spacetime. g = det(g_μν)."
+        },
+        {
+          "name": "Riemann Curvature Tensor (from metric)",
+          "equation": "R^ρ_{σμν} = ∂_μ Γ^ρ_{νσ} - ∂_ν Γ^ρ_{μσ} + Γ^ρ_{μλ}Γ^λ_{νσ} - Γ^ρ_{νλ}Γ^λ_{μσ}",
+          "latex": "R^\\rho_{\\sigma\\mu\\nu} = \\partial_\\mu \\Gamma^\\rho_{\\nu\\sigma} - \\partial_\\nu \\Gamma^\\rho_{\\mu\\sigma} + \\Gamma^\\rho_{\\mu\\lambda}\\Gamma^\\lambda_{\\nu\\sigma} - \\Gamma^\\rho_{\\nu\\lambda}\\Gamma^\\lambda_{\\mu\\sigma}",
+          "description": "Full curvature tensor derived from Christoffel symbols (and thus from metric)."
+        }
+      ]
+    },
+    {
+      "id": "ricci-tensor",
+      "title": "Ricci Tensor & Ricci Scalar",
+      "category": "differential_geometry",
+      "year_established": "1854-1903",
+      "badge_type": "established",
+      "main_equation": "R_μν = R^λ_μλν | R = g^μν R_μν",
+      "main_equation_latex": "R_{\\mu\\nu} = R^{\\lambda}_{\\mu\\lambda\\nu} \\quad | \\quad R = g^{\\mu\\nu} R_{\\mu\\nu}",
+      "summary": "The fundamental measures of spacetime curvature that describe how matter and energy bend space, forming the building blocks of Einstein's field equations.",
+      "key_properties": [
+        "Riemann tensor has 20 independent components in 4D spacetime",
+        "Ricci tensor is a contraction of the Riemann tensor with 10 independent components",
+        "Ricci scalar is the trace of the Ricci tensor - single number measuring total curvature",
+        "Measures volume distortion: geodesic deviation and focusing of geodesics",
+        "Appears in Einstein-Hilbert action as fundamental curvature invariant",
+        "Symmetric tensor: R_μν = R_νμ",
+        "Connected to stress-energy tensor via Einstein field equations"
+      ],
+      "pm_connection": "In Principia Metaphysica's 2T physics framework, the Ricci tensor and scalar generalize to higher dimensions during the dimensional reduction cascade (26D → 13D → 6D → 4D). The Ricci curvature describes how matter/energy curves space at each dimensional level, with G₂ compactification and Kaluza-Klein modes contributing to the effective 4D curvature. The Ricci tensor and scalar are fundamental to PM's geometric framework across all dimensional levels. In the 26D bulk with signature (24,2), the Ricci tensor R_AB describes how the Pneuma field curves spacetime via Einstein equations G_AB + Λ₂₆ g_AB = 8πG₂₆ T_AB. The G₂ manifold satisfies Ric(g_G₂) = 0 (Ricci-flat), ensuring vacuum Einstein equations in the compact directions. Flux backreaction modifies the effective curvature: G₄ flux threading coassociative 4-cycles (b₃ = 24) dresses the bare topology. The 4D Ricci scalar appears in the effective Einstein-Hilbert action after compactification, with corrections from KK modes and flux contributions.",
+      "formulas": [
+        {
+          "symbol": "R^ρ_σμν",
+          "name": "Riemann Curvature Tensor",
+          "latex": "R^{\\rho}_{\\sigma\\mu\\nu} = \\partial_{\\mu}\\Gamma^{\\rho}_{\\nu\\sigma} - \\partial_{\\nu}\\Gamma^{\\rho}_{\\mu\\sigma} + \\Gamma^{\\rho}_{\\mu\\lambda}\\Gamma^{\\lambda}_{\\nu\\sigma} - \\Gamma^{\\rho}_{\\nu\\lambda}\\Gamma^{\\lambda}_{\\mu\\sigma}",
+          "description": "The fundamental measure of spacetime curvature - measures how vectors change when parallel transported around closed loops"
+        },
+        {
+          "symbol": "R_μν",
+          "name": "Ricci Tensor",
+          "latex": "R_{\\mu\\nu} = R^{\\lambda}_{\\mu\\lambda\\nu}",
+          "description": "Contraction of Riemann tensor measuring volume distortion in curved space"
+        },
+        {
+          "symbol": "R",
+          "name": "Ricci Scalar",
+          "latex": "R = g^{\\mu\\nu} R_{\\mu\\nu}",
+          "description": "Trace of Ricci tensor - single number measuring total average curvature at a point"
+        },
+        {
+          "symbol": "Γ^λ_μν",
+          "name": "Christoffel Symbols",
+          "latex": "\\Gamma^{\\lambda}_{\\mu\\nu} = \\frac{1}{2} g^{\\lambda\\rho}(\\partial_{\\mu}g_{\\nu\\rho} + \\partial_{\\nu}g_{\\rho\\mu} - \\partial_{\\rho}g_{\\mu\\nu})",
+          "description": "Connection coefficients describing how basis vectors change in curved spacetime"
+        },
+        {
+          "symbol": "G_μν",
+          "name": "Einstein Tensor",
+          "latex": "G_{\\mu\\nu} = R_{\\mu\\nu} - \\frac{1}{2}Rg_{\\mu\\nu}",
+          "description": "Automatically divergence-free combination used in Einstein field equations"
+        },
+        {
+          "symbol": "d²V/dτ²",
+          "name": "Raychaudhuri Equation",
+          "latex": "\\frac{d^2 V}{d\\tau^2} = -R_{\\mu\\nu} u^{\\mu} u^{\\nu} V",
+          "description": "Describes evolution of volume for geodesic congruences - shows how Ricci tensor controls focusing"
+        }
+      ]
+    },
+    {
+      "id": "so10-gut",
+      "title": "SO(10) Grand Unified Theory",
+      "category": "grand_unification",
+      "year_established": "1974",
+      "badge_type": "theoretical",
+      "main_equation": "SO(10) ⊃ SU(3) × SU(2) × U(1)",
+      "main_equation_latex": "\\text{SO}(10) \\supset \\text{SU}(3) \\times \\text{SU}(2) \\times \\text{U}(1)",
+      "summary": "The most elegant grand unification: all Standard Model forces and one generation of matter (including the right-handed neutrino) fit into a single 16-dimensional spinor representation.",
+      "key_properties": [
+        "16-dimensional spinor contains exactly one generation of fermions plus right-handed neutrino",
+        "45 gauge bosons in adjoint representation (12 SM + 33 new X,Y bosons)",
+        "Gauge coupling unification at M_GUT ≈ 2.118 × 10^16 GeV",
+        "Predicts proton decay: p → e⁺π⁰ with lifetime τ_p ≈ 4.09 × 10^34 years",
+        "Explains charge quantization automatically via group structure",
+        "Seesaw mechanism naturally explains tiny neutrino masses",
+        "Three generations require three copies of 16-plet"
+      ],
+      "pm_connection": "In Principia Metaphysica, SO(10) emerges from G₂ compactification on associative cycles (b₂=4) via D5-brane wrapping. The effective Euler characteristic χ_eff = 144 = 3 × 48 provides topological origin for three generations. The 64-component 13D spinor decomposes as 16_SO(10) × 4_internal, connecting grand unification to fundamental spinor structure. SO(10) grand unification is topologically embedded in PM's framework via D5-branes on the G₂ manifold. The 16-dimensional spinor representation contains exactly one fermion generation plus right-handed neutrino. PM's 64-component 13D shadow spinor from Cl(12,1) decomposes as 64 = 4 × 16, where each of 4 'slots' can hold a 16-plet. Three generations arise from χ_eff = 144 = 3 × 48, with divisor 48 from SO(10) index theorem on G₂. The GUT scale M_GUT = 2.118×10¹⁶ GeV emerges from torsion topology: ln(M_GUT/M_Pl) = -2π(b₂+b₃)/ν = -7.33. Proton decay p → e⁺π⁰ with lifetime τ_p = 4.09×10³⁴ years provides testable prediction.",
+      "formulas": [
+        {
+          "symbol": "16",
+          "name": "Spinor Representation",
+          "latex": "16 = u_{R,G,B}, d_{R,G,B}, Q_L, e_L, e_R, \\nu_L, \\nu_R",
+          "description": "Minimal spinor representation containing all fermions of one generation"
+        },
+        {
+          "symbol": "45",
+          "name": "Gauge Bosons",
+          "latex": "\\dim(\\text{SO}(10)) = \\frac{10 \\times 9}{2} = 45",
+          "description": "Adjoint representation: 12 SM gauge bosons + 33 X,Y bosons mediating proton decay"
+        },
+        {
+          "symbol": "M_GUT",
+          "name": "GUT Scale",
+          "latex": "M_{\\text{GUT}} = 2.118 \\times 10^{16} \\text{ GeV}",
+          "description": "Energy scale where three SM coupling constants unify"
+        },
+        {
+          "symbol": "α_GUT",
+          "name": "Unified Coupling",
+          "latex": "\\alpha_1(M_{\\text{GUT}}) = \\alpha_2(M_{\\text{GUT}}) = \\alpha_3(M_{\\text{GUT}})",
+          "description": "Running coupling constants converge at GUT scale"
+        },
+        {
+          "symbol": "m_ν",
+          "name": "Seesaw Mechanism",
+          "latex": "m_{\\nu} \\sim \\frac{m_D^2}{M_R}",
+          "description": "Type-I seesaw formula explaining tiny neutrino masses via heavy right-handed neutrinos"
+        },
+        {
+          "symbol": "τ_p",
+          "name": "Proton Lifetime",
+          "latex": "\\tau_p = 4.09 \\times 10^{34} \\text{ years}",
+          "description": "PM prediction for proton decay lifetime via X,Y boson exchange"
+        },
+        {
+          "symbol": "χ_eff",
+          "name": "Three Generations",
+          "latex": "\\chi_{\\text{eff}} = 144 = 3 \\times 48 = 3 \\times (16 + \\bar{16} + 16_{\\text{vector}})",
+          "description": "Topological explanation for three generations from G₂ Euler characteristic"
+        }
+      ]
+    },
+    {
+      "id": "unruh-effect",
+      "title": "Unruh Effect",
+      "category": "quantum_field_theory",
+      "year_established": "1976",
+      "badge_type": "established",
+      "main_equation": "T_U = ℏa / (2πck_B)",
+      "main_equation_latex": "T_U = \\frac{\\hbar a}{2\\pi c k_B}",
+      "summary": "Accelerated observers perceive the quantum vacuum as a thermal bath, revealing the profound observer-dependence of temperature and particles in quantum field theory.",
+      "key_properties": [
+        "Uniformly accelerated observers detect thermal radiation in Minkowski vacuum",
+        "Temperature proportional to proper acceleration: T ∝ a",
+        "Rindler horizon at distance c²/a behind accelerated observer",
+        "Particle content is observer-dependent (vacuum for inertial, thermal for accelerated)",
+        "Related to Hawking radiation via equivalence principle",
+        "KMS condition characterizes thermal equilibrium state",
+        "Earth surface acceleration gives T_U ≈ 4 × 10^-20 K (unobservably small)"
+      ],
+      "pm_connection": "The Unruh effect demonstrates observer-dependent temperature crucial to PM's thermal time hypothesis. In the dimensional cascade (26D → 13D → 6D → 4D), each transition induces effective 'acceleration' in compactified dimensions, generating thermal radiation. Temperature emerges from the observer's relationship to the Pneuma field state via modular flow. The Unruh effect demonstrates observer-dependent temperature T_U = ℏa/(2πck_B) that is foundational to PM's thermal time hypothesis. In PM's dimensional cascade, each stage (26D → 13D → 6D → 4D) induces effective 'acceleration' in compactified dimensions, generating thermal radiation via the Unruh mechanism. The Rindler horizon at c²/a provides a local analog to cosmological and black hole horizons. The KMS condition ⟨AB⟩_β = ⟨B α_{iβ}(A)⟩ characterizes thermal equilibrium, with modular flow from Tomita-Takesaki theory generating time evolution. The Pneuma field appears thermal to observers undergoing dimensional transitions, with the CMB temperature T_CMB = 2.725 K emerging from primordial 'deceleration' after inflation.",
+      "formulas": [
+        {
+          "symbol": "T_U",
+          "name": "Unruh Temperature",
+          "latex": "T_U = \\frac{\\hbar a}{2\\pi c k_B}",
+          "description": "Temperature measured by observer with proper acceleration a"
+        },
+        {
+          "symbol": "a",
+          "name": "Proper Acceleration",
+          "latex": "a",
+          "description": "Acceleration in observer's own reference frame (m/s²)"
+        },
+        {
+          "symbol": "β_U",
+          "name": "Inverse Temperature",
+          "latex": "\\beta_U = \\frac{2\\pi c}{a} = \\frac{1}{k_B T_U}",
+          "description": "Inverse Unruh temperature from modular flow period"
+        },
+        {
+          "symbol": "ρ,η",
+          "name": "Rindler Coordinates",
+          "latex": "t = \\frac{\\rho}{a}\\sinh(a\\eta), \\quad x = \\frac{\\rho}{a}\\cosh(a\\eta)",
+          "description": "Coordinate system adapted to uniformly accelerated observer"
+        },
+        {
+          "symbol": "ds²_R",
+          "name": "Rindler Metric",
+          "latex": "ds^2 = -(a\\rho)^2 d\\eta^2 + d\\rho^2 + dy^2 + dz^2",
+          "description": "Metric in Rindler coordinates (looks like gravitational field)"
+        },
+        {
+          "symbol": "ρ_R",
+          "name": "Thermal State",
+          "latex": "\\rho_R = Z^{-1} \\exp(-2\\pi\\omega H_R/a)",
+          "description": "Minkowski vacuum appears as thermal state to Rindler observer"
+        },
+        {
+          "symbol": "κ",
+          "name": "Surface Gravity",
+          "latex": "\\kappa = a \\quad \\text{(Rindler)}, \\quad \\kappa = \\frac{c^4}{4GM} \\quad \\text{(Schwarzschild)}",
+          "description": "Effective surface gravity of horizon - determines temperature"
+        }
+      ]
+    },
+    {
+      "id": "yang-mills",
+      "title": "Yang-Mills Theory",
+      "category": "quantum_field_theory",
+      "year_established": "1954",
+      "badge_type": "established",
+      "main_equation": "ℒ = -¼ F^a_μν F^aμν",
+      "main_equation_latex": "\\mathcal{L} = -\\frac{1}{4} F^a_{\\mu\\nu} F^{a\\mu\\nu}",
+      "summary": "The foundation of modern particle physics: a non-abelian gauge theory that underlies the strong and electroweak forces of the Standard Model.",
+      "key_properties": [
+        "Non-abelian gauge symmetry: transformations don't commute",
+        "Gauge bosons carry charge and self-interact (unlike photons)",
+        "Structure constants f^abc define Lie algebra: [T^a, T^b] = if^abc T^c",
+        "Field strength includes self-interaction: F^a_μν = ∂_μA^a_ν - ∂_νA^a_μ - gf^abc A^b_μ A^c_ν",
+        "3-gluon and 4-gluon vertices arise from non-abelian structure",
+        "Asymptotic freedom: coupling decreases at high energies",
+        "Confinement at low energies: only color-neutral states observed"
+      ],
+      "pm_connection": "Yang-Mills gauge fields emerge from 26D bulk theory via dimensional reduction. SO(10) GUT gauge symmetry arises from D5-branes wrapping b₂=4 associative 3-cycles in the G₂ manifold. The bulk 26D Yang-Mills action reduces to Standard Model SU(3)×SU(2)×U(1) after compactification and symmetry breaking, with gauge couplings unifying at M_GUT. The Yang-Mills gauge principle underlies PM's treatment of all fundamental forces. In the 26D bulk, gauge symmetry is embedded in the Sp(2,R) × G structure, with SO(10) GUT arising from D5-branes wrapping the b₂ = 4 associative 3-cycles of the TCS G₂ manifold. The non-abelian structure constants f^abc encode how gauge bosons self-interact. Dimensional reduction preserves Yang-Mills structure: 26D → 13D (gauge fields on shadow) → 6D → 4D where SU(3)×SU(2)×U(1) emerges. Asymptotic freedom in QCD is crucial for validating coupling unification at M_GUT = 2.118×10¹⁶ GeV.",
+      "formulas": [
+        {
+          "symbol": "F^a_μν",
+          "name": "Field Strength Tensor",
+          "latex": "F^a_{\\mu\\nu} = \\partial_{\\mu}A^a_{\\nu} - \\partial_{\\nu}A^a_{\\mu} - gf^{abc}A^b_{\\mu}A^c_{\\nu}",
+          "description": "Non-abelian field strength - distinguishes from Maxwell theory via gf^abc term"
+        },
+        {
+          "symbol": "A^a_μ",
+          "name": "Gauge Fields",
+          "latex": "A^a_{\\mu}",
+          "description": "Vector potentials in adjoint representation: 8 gluons (SU(3)), 3 weak bosons (SU(2)), 1 photon (U(1))"
+        },
+        {
+          "symbol": "f^abc",
+          "name": "Structure Constants",
+          "latex": "[T^a, T^b] = if^{abc}T^c",
+          "description": "Define Lie algebra commutation relations - completely antisymmetric"
+        },
+        {
+          "symbol": "D_μ",
+          "name": "Covariant Derivative",
+          "latex": "D_{\\mu} = \\partial_{\\mu} + igA^a_{\\mu}T^a",
+          "description": "Ensures gauge covariance of fermion kinetic terms"
+        },
+        {
+          "symbol": "α_s(μ)",
+          "name": "Running Coupling",
+          "latex": "\\alpha_s(\\mu) = \\frac{\\alpha_s(\\mu_0)}{1 + \\alpha_s(\\mu_0)b\\ln(\\mu/\\mu_0)}",
+          "description": "QCD coupling constant evolution - asymptotic freedom when b > 0"
+        },
+        {
+          "symbol": "ℒ_YM",
+          "name": "Yang-Mills Lagrangian",
+          "latex": "\\mathcal{L}_{\\text{YM}} = -\\frac{1}{4} F^a_{\\mu\\nu} F^{a\\mu\\nu} + \\bar{\\psi}(i\\gamma^{\\mu}D_{\\mu} - m)\\psi",
+          "description": "Full Yang-Mills Lagrangian with gauge fields and matter"
+        },
+        {
+          "symbol": "N²-1",
+          "name": "Number of Gluons",
+          "latex": "\\dim(\\text{SU}(N)) = N^2 - 1",
+          "description": "Dimension of Lie algebra: 8 for SU(3), 3 for SU(2)"
+        }
+      ]
+    },
+    {
+      "id": "tomita-takesaki",
+      "title": "Tomita-Takesaki Theory",
+      "category": "operator_algebras",
+      "year_established": "1970",
+      "badge_type": "established",
+      "main_equation": "σ_t(A) = Δ^it A Δ^-it",
+      "main_equation_latex": "\\sigma_t(A) = \\Delta^{it} A \\Delta^{-it}",
+      "summary": "Modular automorphism group and the profound connection between quantum states and intrinsic time evolution in von Neumann algebras.",
+      "key_properties": [
+        "Every faithful normal state naturally defines modular flow σ_t",
+        "Modular operator Δ = S*S is positive self-adjoint",
+        "Modular conjugation J exchanges algebra with commutant: JMJ = M'",
+        "State becomes KMS thermal state with respect to modular flow",
+        "Tomita operator S: AΩ ↦ A*Ω is anti-linear and closed",
+        "Modular Hamiltonian K = -log(Δ) generates time evolution",
+        "Thermal time hypothesis: physical time emerges from modular flow"
+      ],
+      "pm_connection": "Tomita-Takesaki theory is central to PM's thermal time hypothesis. Time at each dimensional level (26D → 13D → 6D → 4D) emerges from modular flow of the Pneuma field state. The observable algebras form type III factors, with modular automorphisms generating intrinsic dynamics and thermodynamic behavior from the KMS condition. The modular operator Δ = S*S from Tomita-Takesaki theory provides the mathematical foundation for PM's thermal time hypothesis at each dimensional level. In the 26D bulk, the Pneuma field algebra forms a type III von Neumann factor, with modular flow σ_t generating intrinsic dynamics. The KMS condition β_H = 1/(k_B T_H) connects to Hawking temperature at horizons. Each dimensional reduction (26D → 13D → 6D → 4D) has an associated modular Hamiltonian K = -log(Δ), with the 4D CMB temperature T_CMB = 2.725 K emerging as a fossil record of primordial thermalization.",
+      "formulas": [
+        {
+          "symbol": "S",
+          "name": "Tomita Operator",
+          "latex": "S(A\\Omega) = A^*\\Omega \\quad \\text{for } A \\in M",
+          "description": "Anti-linear closed operator encoding relation between operator and its adjoint"
+        },
+        {
+          "symbol": "Δ",
+          "name": "Modular Operator",
+          "latex": "\\Delta = S^*S = J\\Delta^{1/2}",
+          "description": "Positive self-adjoint operator generating modular automorphisms"
+        },
+        {
+          "symbol": "J",
+          "name": "Modular Conjugation",
+          "latex": "J = S\\Delta^{-1/2}, \\quad JMJ = M'",
+          "description": "Anti-unitary operator from polar decomposition - exchanges algebra with commutant"
+        },
+        {
+          "symbol": "σ_t",
+          "name": "Modular Automorphism Group",
+          "latex": "\\sigma_t(A) = \\Delta^{it} A \\Delta^{-it}",
+          "description": "One-parameter group of *-automorphisms representing intrinsic time evolution"
+        },
+        {
+          "symbol": "Ω",
+          "name": "Cyclic and Separating Vector",
+          "latex": "\\{A\\Omega | A \\in M\\} \\text{ dense}, \\quad A\\Omega = 0 \\Rightarrow A = 0",
+          "description": "GNS vector representing the state - both cyclic and separating"
+        },
+        {
+          "symbol": "KMS",
+          "name": "KMS Condition",
+          "latex": "\\omega(AB) = \\omega(B\\sigma_{i\\beta}(A))",
+          "description": "Thermal equilibrium condition at inverse temperature β with respect to modular flow"
+        },
+        {
+          "symbol": "K",
+          "name": "Modular Hamiltonian",
+          "latex": "K = -\\log(\\Delta), \\quad \\sigma_t(A) = e^{itK} A e^{-itK}",
+          "description": "Natural notion of energy generating modular time evolution"
+        },
+        {
+          "symbol": "(M,H,J,P_+)",
+          "name": "Standard Form",
+          "latex": "P_+ = \\{A\\Omega | A \\geq 0, A \\in M\\}, \\quad JP_+ = P_+",
+          "description": "Canonical representation with natural positive self-dual cone"
+        }
+      ]
+    }
+  ]
+}
