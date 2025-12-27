@@ -277,34 +277,61 @@
      * @returns {Promise<HTMLElement>} - Rendered section element
      */
     async function renderSection(section, options = {}) {
-        const { loadFormulas = true, loadParameters = true } = options;
+        const { loadFormulas = true, loadParameters = true, useJsonContent = true } = options;
+
+        // Handle new section JSON format (with metadata/content/navigation)
+        const sectionId = section.metadata?.id || section.id;
+        const sectionTitle = section.metadata?.title || section.title;
+        const sectionAbstract = section.metadata?.abstract || section.abstract;
+        const subsections = section.content?.subsections || section.subsections || [];
+        const contentBlocks = section.contentBlocks || [];
 
         const sectionDiv = document.createElement('section');
-        sectionDiv.id = `section-${section.id}`;
+        sectionDiv.id = `section-${sectionId}`;
         sectionDiv.className = 'paper-section';
-        sectionDiv.setAttribute('data-section-id', section.id);
+        sectionDiv.setAttribute('data-section-id', sectionId);
 
         // Section header
         const header = document.createElement('div');
         header.className = 'section-header';
         header.innerHTML = `
             <h2 class="section-title">
-                <span class="section-number">${section.id}</span>
-                ${section.title}
+                <span class="section-number">${sectionId}</span>
+                ${sectionTitle}
             </h2>
         `;
         sectionDiv.appendChild(header);
 
         // Section abstract (if available)
-        if (section.abstract) {
+        if (sectionAbstract) {
             const abstractDiv = document.createElement('div');
             abstractDiv.className = 'section-abstract';
-            abstractDiv.innerHTML = `<p>${section.abstract}</p>`;
+            abstractDiv.innerHTML = `<p>${sectionAbstract}</p>`;
             sectionDiv.appendChild(abstractDiv);
         }
 
-        // Try to load section HTML file if specified
-        if (section.sectionFile) {
+        // Render subsections from JSON (new format)
+        if (useJsonContent && subsections.length > 0) {
+            const subsectionsDiv = document.createElement('div');
+            subsectionsDiv.className = 'section-subsections';
+
+            for (const subsection of subsections) {
+                const subDiv = renderSubsection(subsection);
+                subsectionsDiv.appendChild(subDiv);
+            }
+
+            sectionDiv.appendChild(subsectionsDiv);
+
+            // Process formulas and parameters
+            if (loadFormulas) {
+                processFormulas(subsectionsDiv);
+            }
+            if (loadParameters) {
+                processParameters(subsectionsDiv);
+            }
+        }
+        // Fallback: Try to load section HTML file if no JSON content
+        else if (section.sectionFile && !useJsonContent) {
             const content = await loadSectionFile(section.sectionFile);
             if (content) {
                 const contentDiv = document.createElement('div');
@@ -312,7 +339,6 @@
                 contentDiv.innerHTML = content;
                 sectionDiv.appendChild(contentDiv);
 
-                // Process formulas and parameters in the loaded content
                 if (loadFormulas) {
                     processFormulas(contentDiv);
                 }
@@ -322,9 +348,9 @@
             }
         }
 
-        // Render content blocks (if any)
-        if (section.contentBlocks && section.contentBlocks.length > 0) {
-            const blocksDiv = renderContentBlocks(section.contentBlocks);
+        // Render top-level content blocks (if any)
+        if (contentBlocks.length > 0) {
+            const blocksDiv = renderContentBlocks(contentBlocks);
             sectionDiv.appendChild(blocksDiv);
         }
 
@@ -342,6 +368,46 @@
         }
 
         return sectionDiv;
+    }
+
+    /**
+     * Render a subsection with its content blocks
+     * @private
+     */
+    function renderSubsection(subsection) {
+        const subDiv = document.createElement('div');
+        subDiv.className = 'paper-subsection';
+        subDiv.id = `subsection-${subsection.id || subsection.number}`;
+
+        // Subsection header
+        const header = document.createElement('h3');
+        header.className = 'subsection-title';
+        header.innerHTML = `
+            <span class="subsection-number">${subsection.number || ''}</span>
+            ${subsection.title}
+        `;
+        subDiv.appendChild(header);
+
+        // Render content blocks
+        const blocks = subsection.contentBlocks || subsection.content_blocks || [];
+        if (blocks.length > 0) {
+            for (const block of blocks) {
+                const blockEl = renderContentBlock(block);
+                if (blockEl) {
+                    subDiv.appendChild(blockEl);
+                }
+            }
+        }
+
+        // Handle nested subsections
+        if (subsection.subsections && subsection.subsections.length > 0) {
+            for (const nested of subsection.subsections) {
+                const nestedDiv = renderSubsection(nested);
+                subDiv.appendChild(nestedDiv);
+            }
+        }
+
+        return subDiv;
     }
 
     /**
@@ -413,7 +479,8 @@
 
         switch (block.type) {
             case 'paragraph':
-                blockDiv.innerHTML = `<p>${block.content}</p>`;
+            case 'text':
+                blockDiv.innerHTML = `<p>${block.content || block.text || ''}</p>`;
                 break;
 
             case 'heading':
@@ -423,39 +490,110 @@
 
             case 'formula':
                 blockDiv.innerHTML = `
-                    <div class="formula-block" data-formula-id="${block.formulaId}">
-                        ${block.content || ''}
+                    <div class="formula-block" data-formula-id="${block.formulaId || block.id}">
+                        ${block.content || block.latex || ''}
                     </div>
                 `;
                 break;
 
             case 'equation':
+                const label = block.label ? `<span class="equation-label">${block.label}</span>` : '';
                 blockDiv.innerHTML = `
                     <div class="equation-block">
-                        ${block.latex ? `$$${block.latex}$$` : block.content}
+                        ${block.latex ? `$$${block.latex}$$` : (block.content || '')}
+                        ${label}
                     </div>
                 `;
                 break;
 
             case 'list':
                 const listType = block.ordered ? 'ol' : 'ul';
-                const items = block.items.map(item => `<li>${item}</li>`).join('');
-                blockDiv.innerHTML = `<${listType}>${items}</${listType}>`;
+                const listItems = (block.items || []).map(item => `<li>${item}</li>`).join('');
+                blockDiv.innerHTML = `<${listType}>${listItems}</${listType}>`;
                 break;
 
             case 'code':
-                blockDiv.innerHTML = `<pre><code>${escapeHtml(block.content)}</code></pre>`;
+                const lang = block.language ? ` class="language-${block.language}"` : '';
+                blockDiv.innerHTML = `<pre><code${lang}>${escapeHtml(block.content || '')}</code></pre>`;
                 break;
 
             case 'quote':
-                blockDiv.innerHTML = `<blockquote>${block.content}</blockquote>`;
+            case 'blockquote':
+                blockDiv.innerHTML = `<blockquote>${block.content || ''}</blockquote>`;
+                break;
+
+            case 'table':
+                blockDiv.innerHTML = renderTable(block);
+                break;
+
+            case 'derivation':
+            case 'derivation_box':
+                blockDiv.className = 'derivation-box';
+                blockDiv.innerHTML = `
+                    <div class="derivation-title">${block.title || 'Derivation'}</div>
+                    <div class="derivation-content">${block.content || ''}</div>
+                `;
+                break;
+
+            case 'callout':
+            case 'info_box':
+            case 'highlight':
+                const calloutType = block.calloutType || block.variant || 'info';
+                blockDiv.className = `callout callout-${calloutType}`;
+                blockDiv.innerHTML = `
+                    ${block.title ? `<div class="callout-title">${block.title}</div>` : ''}
+                    <div class="callout-content">${block.content || ''}</div>
+                `;
+                break;
+
+            case 'subsection':
+                // Nested subsection - recursively render
+                if (block.subsection) {
+                    return renderSubsection(block.subsection);
+                }
+                blockDiv.innerHTML = block.content || '';
                 break;
 
             default:
-                blockDiv.innerHTML = block.content || '';
+                // Handle unknown types gracefully
+                blockDiv.innerHTML = block.content || block.text || '';
         }
 
         return blockDiv;
+    }
+
+    /**
+     * Render a table from block data
+     * @private
+     */
+    function renderTable(block) {
+        const headers = block.headers || [];
+        const rows = block.rows || [];
+
+        let html = '<table class="pm-table">';
+
+        if (headers.length > 0) {
+            html += '<thead><tr>';
+            for (const header of headers) {
+                html += `<th>${header}</th>`;
+            }
+            html += '</tr></thead>';
+        }
+
+        if (rows.length > 0) {
+            html += '<tbody>';
+            for (const row of rows) {
+                html += '<tr>';
+                for (const cell of row) {
+                    html += `<td>${cell}</td>`;
+                }
+                html += '</tr>';
+            }
+            html += '</tbody>';
+        }
+
+        html += '</table>';
+        return html;
     }
 
     // ========================================================================
