@@ -107,8 +107,7 @@ function checkHtmlPages() {
   const categories = {
     root: ['index.html', 'principia-metaphysica-paper.html', 'references.html',
            'beginners-guide.html', 'philosophical-implications.html',
-           'visualization-index.html', 'ancient-numerology.html',
-           'proverbs-31-wife-of-noble-character.html'],
+           'visualization-index.html'],
     sections: [],
     foundations: [],
     docs: [],

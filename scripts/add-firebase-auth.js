@@ -24,8 +24,6 @@ const HTML_FILES = {
   'beginners-guide.html': 'beginners-guide',
   'philosophical-implications.html': 'philosophical-implications',
   'visualization-index.html': 'visualization-index',
-  'ancient-numerology.html': 'ancient-numerology',
-  'proverbs-31-wife-of-noble-character.html': 'proverbs-31',
 
   // Sections
   'sections/introduction.html': 'introduction',
