@@ -258,6 +258,161 @@
             margin-top: 2rem;
             border-top: 1px solid var(--border);
         }
+
+        /* Table of Contents Styles */
+        .paper-toc {
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border: 1px solid var(--border);
+        }
+
+        .paper-toc h2 {
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .toc-list {
+            list-style-type: none;
+            padding: 0;
+            counter-reset: section;
+        }
+
+        .toc-list > li {
+            margin: 0.5rem 0;
+        }
+
+        .toc-link {
+            color: var(--text-light);
+            text-decoration: none;
+            display: flex;
+            align-items: baseline;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .toc-link:hover {
+            background: rgba(139, 127, 255, 0.1);
+        }
+
+        .toc-number {
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-right: 0.75rem;
+            min-width: 2rem;
+        }
+
+        .toc-title {
+            flex: 1;
+        }
+
+        .toc-sublist {
+            list-style-type: none;
+            padding-left: 2rem;
+            margin-top: 0.25rem;
+        }
+
+        .toc-sublist .toc-number {
+            color: var(--accent);
+            opacity: 0.8;
+        }
+
+        /* Empty section placeholders */
+        .empty-section-placeholder,
+        .empty-subsection-placeholder {
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-style: italic;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 4px;
+            margin: 1rem 0;
+            border-left: 3px solid rgba(251, 191, 36, 0.3);
+        }
+
+        /* Formula block improvements */
+        .pm-paper-container .formula-block {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            margin: 1rem 0;
+            text-align: center;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+
+        /* References section */
+        .pm-paper-container .references-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--border);
+        }
+
+        .pm-paper-container .references-section h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .pm-paper-container .reference-item {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            text-indent: -1.5rem;
+        }
+
+        /* Improved list styling */
+        .pm-paper-container ul,
+        .pm-paper-container ol {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .pm-paper-container li {
+            margin: 0.5rem 0;
+        }
+
+        /* Code blocks */
+        .pm-paper-container pre {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 6px;
+            padding: 1rem;
+            overflow-x: auto;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pm-paper-container code {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9em;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Scroll margin for section anchors */
+        .paper-section {
+            scroll-margin-top: 2rem;
+        }
+
+        /* Print styles */
+        @media print {
+            .paper-header,
+            .render-stats,
+            .empty-section-placeholder,
+            .empty-subsection-placeholder {
+                display: none;
+            }
+
+            body {
+                background: white;
+                color: black;
+            }
+
+            .pm-paper-container .paper-section {
+                page-break-inside: avoid;
+            }
+        }
     </style>
 </head>
 <body>
@@ -301,13 +456,13 @@
             }
 
             // Render paper using the paper renderer
-            if (typeof renderPaper === 'function') {
-                const success = await renderPaper('paper-content', {
+            if (window.PMPaperRenderer && typeof window.PMPaperRenderer.renderPaper === 'function') {
+                const success = await window.PMPaperRenderer.renderPaper('paper-content', {
                     loadSections: true,
                     loadFormulas: true,
                     loadParameters: true,
                     renderAbstract: true,
-                    renderTOC: false,
+                    renderTOC: true,
                     debug: true
                 });
 

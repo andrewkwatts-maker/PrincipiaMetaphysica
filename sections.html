@@ -397,6 +397,32 @@
             margin-bottom: 0.75rem;
         }
 
+        /* Section type color variations */
+        .section-card[data-category*="framework"] .section-card-type {
+            background: rgba(139, 127, 255, 0.15);
+            border-color: rgba(139, 127, 255, 0.3);
+            color: #8b7fff;
+        }
+
+        .section-card[data-category*="phenomenology"] .section-card-type {
+            background: rgba(255, 126, 182, 0.15);
+            border-color: rgba(255, 126, 182, 0.3);
+            color: #ff7eb6;
+        }
+
+        .section-card[data-category*="content"] .section-card-type,
+        .section-card[data-category*="appendix"] .section-card-type {
+            background: rgba(74, 222, 128, 0.15);
+            border-color: rgba(74, 222, 128, 0.3);
+            color: #4ade80;
+        }
+
+        .section-card[data-category*="mathematical"] .section-card-type {
+            background: rgba(96, 165, 250, 0.15);
+            border-color: rgba(96, 165, 250, 0.3);
+            color: #60a5fa;
+        }
+
         .section-card-description {
             color: var(--text-muted);
             font-size: 0.95rem;
@@ -946,13 +972,13 @@
                 <!-- Search and Filter -->
                 <div class="search-filter-bar">
                     <div class="search-box">
-                        <input type="text" id="search-input" placeholder="Search sections by title or description...">
+                        <input type="text" id="search-input" placeholder="Search sections by title or description... (Ctrl+K)">
                     </div>
                     <div class="filter-buttons">
-                        <button class="filter-btn active" data-filter="all">All</button>
-                        <button class="filter-btn" data-filter="core">Core Theory</button>
-                        <button class="filter-btn" data-filter="mathematical">Mathematical</button>
-                        <button class="filter-btn" data-filter="experimental">Experimental</button>
+                        <button class="filter-btn active" data-filter="all">All Sections</button>
+                        <button class="filter-btn" data-filter="framework">Core Framework</button>
+                        <button class="filter-btn" data-filter="phenomenology">Phenomenology</button>
+                        <button class="filter-btn" data-filter="appendix">Appendices</button>
                     </div>
                 </div>
 
@@ -1029,13 +1055,28 @@
                                         id: id
                                     }));
 
-                                    // Sort by section number
+                                    // Sort sections: numbered (1-9) first, then appendices (A-N), then special
                                     allSections.sort((a, b) => {
-                                        const aNum = parseInt(a.id);
-                                        const bNum = parseInt(b.id);
-                                        if (!isNaN(aNum) && !isNaN(bNum)) {
-                                            return aNum - bNum;
+                                        const aIsNumber = /^\d+$/.test(a.id);
+                                        const bIsNumber = /^\d+$/.test(b.id);
+                                        const aIsLetter = /^[A-Z]$/.test(a.id);
+                                        const bIsLetter = /^[A-Z]$/.test(b.id);
+
+                                        // Numbers first
+                                        if (aIsNumber && !bIsNumber) return -1;
+                                        if (!aIsNumber && bIsNumber) return 1;
+                                        if (aIsNumber && bIsNumber) {
+                                            return parseInt(a.id) - parseInt(b.id);
                                         }
+
+                                        // Then single letters (appendices)
+                                        if (aIsLetter && !bIsLetter) return -1;
+                                        if (!aIsLetter && bIsLetter) return 1;
+                                        if (aIsLetter && bIsLetter) {
+                                            return a.id.localeCompare(b.id);
+                                        }
+
+                                        // Then everything else alphabetically
                                         return a.id.localeCompare(b.id);
                                     });
 
@@ -1076,6 +1117,7 @@
 
                     const subsections = section.subsections || [];
                     const hasSubsections = subsections.length > 0;
+                    const title = getSectionTitle(section);
 
                     if (hasSubsections) {
                         li.classList.add('has-subsections');
@@ -1083,7 +1125,7 @@
                             <div class="section-nav-header">
                                 <a href="${section.sectionFile || '#section-' + section.id}" class="section-nav-link">
                                     <span class="section-number">${section.id}</span>
-                                    <span class="section-title">${section.title}</span>
+                                    <span class="section-title">${title}</span>
                                 </a>
                                 <button class="section-expand-btn" aria-label="Expand subsections">
                                     <span class="expand-arrow">▸</span>
@@ -1107,7 +1149,7 @@
                         li.innerHTML = `
                             <a href="${section.sectionFile || '#section-' + section.id}" class="section-nav-link">
                                 <span class="section-number">${section.id}</span>
-                                <span class="section-title">${section.title}</span>
+                                <span class="section-title">${title}</span>
                             </a>
                         `;
                     }
@@ -1126,12 +1168,89 @@
                 const dropdown = document.getElementById('section-dropdown');
                 if (!dropdown || !allSections.length) return;
 
-                dropdown.innerHTML = allSections.map(section =>
-                    `<a class="dropdown-item" href="${section.sectionFile || 'sections/section-' + section.id + '.html'}">
+                dropdown.innerHTML = allSections.map(section => {
+                    const title = getSectionTitle(section);
+                    return `<a class="dropdown-item" href="${section.sectionFile || 'sections/section-' + section.id + '.html'}">
                         <span class="section-num">${section.id}.</span>
-                        ${section.title}
-                    </a>`
-                ).join('');
+                        ${title}
+                    </a>`;
+                }).join('');
+            }
+
+            /**
+             * Get a better title for a section (handles incomplete titles)
+             */
+            function getSectionTitle(section) {
+                let title = section.title || '';
+
+                // If title is just a single letter or very short, try to extract from description
+                if (title.length <= 2 || title === section.id) {
+                    const desc = section.description || section.abstract || '';
+
+                    // Try to extract "Appendix X: Title" pattern
+                    const appendixMatch = desc.match(/^Appendix\s+[A-Z]:\s*(.+?)(?:\s+-\s+|$)/i);
+                    if (appendixMatch) {
+                        title = appendixMatch[1].split(/[.\n]/)[0].trim();
+                    } else {
+                        // Take first sentence or first 60 chars of description
+                        const firstSentence = desc.split(/[.\n]/)[0].trim();
+                        if (firstSentence.length > 0 && firstSentence.length < 100) {
+                            title = firstSentence;
+                        } else {
+                            title = desc.substring(0, 60).trim() + (desc.length > 60 ? '...' : '');
+                        }
+                    }
+                }
+
+                return title || 'Untitled Section';
+            }
+
+            /**
+             * Get section type label
+             */
+            function getSectionTypeLabel(section) {
+                const cat = section.category || section.sectionType || '';
+
+                // Map categories to readable labels
+                const categoryMap = {
+                    'framework': 'Core Framework',
+                    'phenomenology': 'Phenomenology',
+                    'mathematical': 'Mathematical',
+                    'experimental': 'Experimental',
+                    'content': 'Appendix',
+                    'appendix': 'Appendix'
+                };
+
+                // Check if it's an appendix by ID
+                if (section.id && /^[A-Z]$/.test(section.id)) {
+                    return 'Appendix';
+                }
+
+                // Check if it's a numbered section
+                if (section.id && /^\d+$/.test(section.id)) {
+                    return categoryMap[cat.toLowerCase()] || 'Section';
+                }
+
+                return categoryMap[cat.toLowerCase()] || 'Special';
+            }
+
+            /**
+             * Sanitize and truncate text for display
+             */
+            function sanitizeText(text, maxLength = 200) {
+                if (!text) return '';
+
+                // Remove HTML tags
+                const div = document.createElement('div');
+                div.innerHTML = text;
+                let sanitized = div.textContent || div.innerText || '';
+
+                // Truncate if too long
+                if (maxLength && sanitized.length > maxLength) {
+                    sanitized = sanitized.substring(0, maxLength).trim() + '...';
+                }
+
+                return sanitized;
             }
 
             /**
@@ -1141,19 +1260,21 @@
                 const formulaCount = section.formulaRefs ? section.formulaRefs.length : 0;
                 const paramCount = section.paramRefs ? section.paramRefs.length : 0;
 
-                const description = section.description || section.abstract || 'No description available.';
-                const sectionType = section.category || section.sectionType || 'Section';
+                const title = getSectionTitle(section);
+                const rawDescription = section.description || section.abstract || 'No description available.';
+                const description = sanitizeText(rawDescription, 200);
+                const sectionType = getSectionTypeLabel(section);
 
                 const card = document.createElement('div');
                 card.className = 'section-card';
                 card.dataset.sectionId = section.id;
-                card.dataset.category = sectionType.toLowerCase();
+                card.dataset.category = (section.category || section.sectionType || '').toLowerCase();
 
                 card.innerHTML = `
                     <div class="section-card-header">
                         <h3 class="section-card-title">
                             <span class="section-card-number">${section.id}.</span>
-                            <span>${section.title}</span>
+                            <span>${title}</span>
                         </h3>
                         <div class="section-card-type">${sectionType}</div>
                     </div>
@@ -1161,11 +1282,11 @@
                     <div class="section-card-meta">
                         <div class="section-card-meta-item">
                             <span class="icon">📐</span>
-                            <span><span class="count">${formulaCount}</span> formulas</span>
+                            <span><span class="count">${formulaCount}</span> ${formulaCount === 1 ? 'formula' : 'formulas'}</span>
                         </div>
                         <div class="section-card-meta-item">
                             <span class="icon">🔢</span>
-                            <span><span class="count">${paramCount}</span> parameters</span>
+                            <span><span class="count">${paramCount}</span> ${paramCount === 1 ? 'parameter' : 'parameters'}</span>
                         </div>
                     </div>
                     <a href="${section.sectionFile || `sections/section-${section.id}.html`}" class="section-card-link">
@@ -1185,6 +1306,17 @@
                 if (filteredSections.length === 0) {
                     sectionsGrid.innerHTML = '<div class="no-results">No sections found matching your criteria.</div>';
                     return;
+                }
+
+                // Add a count header if filtering
+                if (filteredSections.length < allSections.length) {
+                    const countHeader = document.createElement('div');
+                    countHeader.style.gridColumn = '1 / -1';
+                    countHeader.style.padding = '0.5rem 0';
+                    countHeader.style.color = 'var(--text-muted)';
+                    countHeader.style.fontSize = '0.9rem';
+                    countHeader.innerHTML = `Showing ${filteredSections.length} of ${allSections.length} sections`;
+                    sectionsGrid.appendChild(countHeader);
                 }
 
                 for (const section of filteredSections) {
@@ -1222,7 +1354,10 @@
                     // Apply filter
                     if (currentFilter !== 'all') {
                         const category = (section.category || section.sectionType || '').toLowerCase();
-                        if (!category.includes(currentFilter)) {
+                        const sectionTypeLabel = getSectionTypeLabel(section).toLowerCase();
+
+                        // Match against both category and type label
+                        if (!category.includes(currentFilter) && !sectionTypeLabel.includes(currentFilter)) {
                             return false;
                         }
                     }
@@ -1230,9 +1365,10 @@
                     // Apply search
                     if (searchQuery) {
                         const query = searchQuery.toLowerCase();
-                        const title = section.title.toLowerCase();
+                        const title = getSectionTitle(section).toLowerCase();
                         const description = (section.description || section.abstract || '').toLowerCase();
-                        return title.includes(query) || description.includes(query);
+                        const id = (section.id || '').toLowerCase();
+                        return title.includes(query) || description.includes(query) || id.includes(query);
                     }
 
                     return true;
@@ -1312,6 +1448,30 @@
             });
 
             /**
+             * Keyboard shortcuts
+             */
+            document.addEventListener('keydown', (e) => {
+                // Ctrl/Cmd + K to focus search
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+                    e.preventDefault();
+                    searchInput.focus();
+                }
+
+                // Escape to clear search
+                if (e.key === 'Escape') {
+                    if (searchInput.value) {
+                        searchInput.value = '';
+                        searchQuery = '';
+                        filterSections();
+                    }
+                    searchInput.blur();
+
+                    // Also close mobile nav if open
+                    closeMobileNav();
+                }
+            });
+
+            /**
              * Initialize app
              */
             async function init() {
@@ -1328,7 +1488,15 @@
                     return;
                 }
 
-                console.log(`Loaded ${allSections.length} sections`);
+                console.log(`%cLoaded ${allSections.length} sections`, 'color: green; font-weight: bold');
+
+                // Log section breakdown
+                const numbered = allSections.filter(s => /^\d+$/.test(s.id)).length;
+                const appendices = allSections.filter(s => /^[A-Z]$/.test(s.id)).length;
+                const special = allSections.length - numbered - appendices;
+                console.log(`  • Numbered sections (1-9): ${numbered}`);
+                console.log(`  • Appendices (A-N): ${appendices}`);
+                console.log(`  • Special sections: ${special}`);
 
                 // Initial render
                 filteredSections = [...allSections];
@@ -1336,7 +1504,7 @@
                 renderSections();
                 updateStats();
 
-                console.log('Sections Browser initialized successfully');
+                console.log('%cSections Browser initialized successfully', 'color: green; font-weight: bold');
             }
 
             // Start the app when DOM is ready

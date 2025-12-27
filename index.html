@@ -298,6 +298,77 @@
             color: var(--text-primary);
             border: 1px solid rgba(139, 127, 255, 0.2);
         }
+
+        /* Responsive Design Enhancements for Mobile */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .section-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .concepts-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .formula-display {
+                font-size: 0.9rem;
+                overflow-x: auto;
+                padding: 1rem;
+            }
+
+            .formula-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .downloads {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Make validation metrics stack on mobile */
+            #validation-metrics > div {
+                grid-template-columns: 1fr !important;
+            }
+
+            /* Adjust verified values grid for mobile */
+            .verified-values-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-card {
+                padding: 1.25rem;
+            }
+
+            .concept-item {
+                padding: 1rem;
+            }
+        }
   </style>
   <script src="js/pm-constants-loader.js"></script>
   <script src="js/pm-formula-loader.js"></script>
@@ -310,6 +381,19 @@
    // Populate values from PM object when page loads
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof PM !== 'undefined') {
+                // Add D_observable to PM.dimensions if not already present
+                if (!PM.dimensions.D_observable) {
+                    PM.dimensions.D_observable = {
+                        value: 4,
+                        unit: "dimensions",
+                        display: "4",
+                        description: "Observable spacetime dimensions",
+                        formula: "4D = (3+1) spacetime after compactification",
+                        derivation: "Standard observable universe",
+                        source: "physical"
+                    };
+                }
+
                 // Update dimensional values using PM object (from theory-constants-enhanced.js)
                 const dimFull = document.getElementById('dim-full');
                 const dimEff = document.getElementById('dim-eff');
@@ -321,14 +405,14 @@
                 const spinorEff = document.getElementById('spinor-eff');
 
                 // Map from PM.dimensions structure
-                if (dimFull) dimFull.textContent = PM.dimensions?.D_bulk || 26;
-                if (dimEff) dimEff.textContent = PM.dimensions?.D_after_sp2r || 13;
+                if (dimFull) dimFull.textContent = PM.dimensions?.D_bulk?.value || PM.dimensions?.D_bulk || 26;
+                if (dimEff) dimEff.textContent = PM.dimensions?.D_after_sp2r?.value || PM.dimensions?.D_after_sp2r || 13;
                 if (sigSpace) sigSpace.textContent = 24; // (24,2) signature
                 if (sigTime) sigTime.textContent = 2;
                 if (sigEffSpace) sigEffSpace.textContent = 12; // (12,1) effective
                 if (sigEffTime) sigEffTime.textContent = 1;
-                if (spinorFull) spinorFull.textContent = 64; // 26D spinor
-                if (spinorEff) spinorEff.textContent = 64; // 13D spinor
+                if (spinorFull) spinorFull.textContent = 8192; // 2^13 = 8192 components in 26D (Cl(24,2))
+                if (spinorEff) spinorEff.textContent = 64; // 2^6 = 64 components in 13D (Cl(12,1))
 
                 // Calculate and display success rate percentage
                 const successRatePct = document.getElementById('success-rate-pct');
@@ -464,7 +548,7 @@
       <span class="formula-op">
        =
       </span>
-      <a class="formula-var" href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+      <a class="formula-var" href="principia-metaphysica-paper.html#section-2" style="text-decoration: none; color: inherit;">
        ∫ d
        <sup>
         26
@@ -551,7 +635,7 @@
       <span class="formula-op">
        +
       </span>
-      <a class="formula-var highlight" href="sections/pneuma-lagrangian.html" style="text-decoration: none; color: inherit;">
+      <a class="formula-var highlight" href="principia-metaphysica-paper.html#pneuma-field" style="text-decoration: none; color: inherit;">
        <span style="text-decoration: overline;">
         Ψ
        </span>
@@ -595,7 +679,7 @@
       <span class="formula-op">
        +
       </span>
-      <a class="formula-var highlight" href="sections/gauge-unification.html" style="text-decoration: none; color: inherit;">
+      <a class="formula-var highlight" href="principia-metaphysica-paper.html#section-3" style="text-decoration: none; color: inherit;">
        ℒ
        <sub>
         Sp(2,ℝ)
@@ -673,7 +757,7 @@
       </div>
       <div class="formula-info-grid">
        <div class="formula-info-item">
-        <a href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+        <a href="principia-metaphysica-paper.html#section-2" style="text-decoration: none; color: inherit;">
          <h5>
           Full Bulk
          </h5>
@@ -694,7 +778,7 @@
         </a>
        </div>
        <div class="formula-info-item">
-        <a href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+        <a href="principia-metaphysica-paper.html#section-2" style="text-decoration: none; color: inherit;">
          <h5>
           Effective Shadow
          </h5>
@@ -715,7 +799,7 @@
         </a>
        </div>
        <div class="formula-info-item">
-        <a href="sections/gauge-unification.html" style="text-decoration: none; color: inherit;">
+        <a href="principia-metaphysica-paper.html#section-3" style="text-decoration: none; color: inherit;">
          <h5>
           Gauge Group
          </h5>
@@ -728,7 +812,7 @@
         </a>
        </div>
        <div class="formula-info-item">
-        <a href="sections/pneuma-lagrangian.html" style="text-decoration: none; color: inherit;">
+        <a href="principia-metaphysica-paper.html#pneuma-field" style="text-decoration: none; color: inherit;">
          <h5>
           Spinor Components
          </h5>
@@ -751,22 +835,22 @@
        </h5>
        <ul>
         <li>
-         <a href="sections/cosmology.html" style="color: var(--text-secondary);">
+         <a href="principia-metaphysica-paper.html#section-6" style="color: var(--text-secondary);">
           Einstein gravity + cosmological dynamics
          </a>
         </li>
         <li>
-         <a href="sections/gauge-unification.html" style="color: var(--text-secondary);">
+         <a href="principia-metaphysica-paper.html#section-3" style="color: var(--text-secondary);">
           SO(10) GUT → Standard Model
          </a>
         </li>
         <li>
-         <a href="sections/fermion-sector.html" style="color: var(--text-secondary);">
+         <a href="principia-metaphysica-paper.html#section-4" style="color: var(--text-secondary);">
           Three fermion generations from topology
          </a>
         </li>
         <li>
-         <a href="sections/thermal-time.html" style="color: var(--text-secondary);">
+         <a href="principia-metaphysica-paper.html#section-5" style="color: var(--text-secondary);">
           Thermal time from Pneuma statistics
          </a>
         </li>
@@ -827,7 +911,7 @@
          </div>
         </a>
         <span class="formula-op"> = </span>
-        <a class="formula-var" href="sections/geometric-framework.html" style="text-decoration: none; color: inherit;">
+        <a class="formula-var" href="principia-metaphysica-paper.html#section-2" style="text-decoration: none; color: inherit;">
          d<sup>13</sup>x |G<sub>(12,1)</sub>|
          <div class="var-tooltip">
           <div class="var-name">d<sup>13</sup>x |G<sub>(12,1)</sub>|</div>
@@ -849,7 +933,7 @@
          </div>
         </a>
         <span class="formula-op"> + </span>
-        <a class="formula-var highlight" href="sections/pneuma-lagrangian.html" style="text-decoration: none; color: inherit;">
+        <a class="formula-var highlight" href="principia-metaphysica-paper.html#pneuma-field" style="text-decoration: none; color: inherit;">
          <span style="text-decoration: overline;">Psi</span><sub>P</sub>(iGamma<sup>M</sup>nabla<sub>M</sub> - m)Psi<sub>P</sub>
          <div class="var-tooltip">
           <div class="var-name">Pneuma Field Lagrangian</div>
@@ -895,7 +979,7 @@
          From <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk
         </span>
        </a>
-       <a class="sub-component" href="sections/pneuma-lagrangian.html" style="text-decoration: none;">
+       <a class="sub-component" href="principia-metaphysica-paper.html#pneuma-field" style="text-decoration: none;">
         <div class="component-symbol">
          <span style="text-decoration: overline;">
           Ψ
@@ -943,7 +1027,7 @@
          Clifford Algebra
         </span>
        </a>
-       <a class="sub-component" href="sections/geometric-framework.html" style="text-decoration: none;">
+       <a class="sub-component" href="principia-metaphysica-paper.html#section-2" style="text-decoration: none;">
         <div class="component-symbol">
          √|G|
         </div>
@@ -1537,7 +1621,7 @@
      </p>
     </div>
     <div class="section-nav">
-     <a class="section-card" href="sections/introduction.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-1">
       <div class="section-number">
        1
       </div>
@@ -1548,7 +1632,7 @@
        The quest for unification, geometrization of forces, and the fermionic foundation for geometry.
       </p>
      </a>
-     <a class="section-card" href="sections/geometric-framework.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-2">
       <div class="section-number">
        2
       </div>
@@ -1556,10 +1640,10 @@
        Geometric Framework
       </h3>
       <p>
-       Kaluza-Klein reduction on the Pneuma manifold with explicit G₂ construction, dimensional reduction, and <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D effective action.
+       Kaluza-Klein reduction on the Pneuma manifold with explicit G₂ construction, dimensional reduction, and 4D effective action.
       </p>
      </a>
-     <a class="section-card" href="sections/gauge-unification.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-3">
       <div class="section-number">
        3
       </div>
@@ -1570,7 +1654,7 @@
        SO(10) grand unified framework, symmetry breaking chains, and doublet-triplet splitting.
       </p>
      </a>
-     <a class="section-card" href="sections/fermion-sector.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-4">
       <div class="section-number">
        4
       </div>
@@ -1581,7 +1665,7 @@
        Fermions in 12D, the Pneuma mechanism for chirality, and SO(10) representation embedding.
       </p>
      </a>
-     <a class="section-card" href="sections/thermal-time.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-5">
       <div class="section-number">
        5
       </div>
@@ -1592,7 +1676,7 @@
        Emergent time from thermodynamics, Tomita-Takesaki theory, and KMS states.
       </p>
      </a>
-     <a class="section-card" href="sections/cosmology.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-6">
       <div class="section-number">
        6
       </div>
@@ -1603,7 +1687,7 @@
        Modified F(R,T) gravity, Mashiach field attractors, and dark energy mechanism.
       </p>
      </a>
-     <a class="section-card" href="sections/predictions.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-7">
       <div class="section-number">
        7
       </div>
@@ -1614,7 +1698,7 @@
        Proton decay, gravitational wave signatures, SME coefficients, and experimental constraints.
       </p>
      </a>
-     <a class="section-card" href="sections/conclusion.html">
+     <a class="section-card" href="principia-metaphysica-paper.html#section-8">
       <div class="section-number">
        8
       </div>
