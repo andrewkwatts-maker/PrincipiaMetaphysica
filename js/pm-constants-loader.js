@@ -35,6 +35,7 @@
             D_BULK: 26,
             D_AFTER_SP2R: 13,
             D_G2: 7,
+            D_SPIN8: 8,         // Octonions dimension (Spin(8) triality)
             D_OBSERVABLE: 4,
             D_COMMON: 4
         },
