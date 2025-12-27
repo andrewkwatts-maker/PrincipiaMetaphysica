@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--
+    Principia Metaphysica: Dynamic Paper Renderer
+    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+    Dynamically renders paper content from theory_output.json sections.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principia Metaphysica - Dynamic Paper</title>
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams',
+                macros: {
+                    shadow: '\\text{shadow}'
+                }
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                skipHtmlClasses: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore',
+                ignoreHtmlClass: 'mathjax-ignore'
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="js/pm-constants-loader.js"></script>
+    <script src="js/pm-formula-loader.js"></script>
+    <script src="js/pm-paper-renderer.js"></script>
+
+    <!-- Common Shared Styles -->
+    <link rel="stylesheet" href="css/pm-common.css">
+    <link rel="stylesheet" href="css/pm-glass-theme.css">
+    <link rel="stylesheet" href="css/pm-header.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-paper: #1a1a2e;
+            --text-light: #f8f9fa;
+            --accent: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            min-height: 100vh;
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 11pt;
+        }
+
+        .paper-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .paper-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .paper-title {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .paper-subtitle {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-style: italic;
+        }
+
+        .paper-author {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .loading-indicator {
+            text-align: center;
+            padding: 3rem;
+            color: var(--accent);
+        }
+
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(139, 127, 255, 0.3);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Paper section styles */
+        .pm-paper-container .paper-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .pm-paper-container .section-header .section-title {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-paper-container .section-number {
+            color: var(--accent-secondary);
+            margin-right: 0.5rem;
+        }
+
+        .pm-paper-container .section-abstract {
+            font-style: italic;
+            padding: 1rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-left: 3px solid var(--accent);
+            margin: 1rem 0;
+            border-radius: 4px;
+        }
+
+        .pm-paper-container .paper-subsection {
+            margin: 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid rgba(139, 127, 255, 0.2);
+        }
+
+        .pm-paper-container .subsection-title {
+            font-size: 1.2rem;
+            color: #f8f9fa;
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-paper-container .subsection-number {
+            color: var(--accent);
+            margin-right: 0.5rem;
+        }
+
+        .pm-paper-container .content-block {
+            margin: 0.75rem 0;
+        }
+
+        .pm-paper-container .content-block p {
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-paper-container .equation-block {
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+            margin: 1rem 0;
+            text-align: center;
+        }
+
+        .pm-paper-container .equation-label {
+            display: block;
+            text-align: right;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        .pm-paper-container .pm-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .pm-paper-container .pm-table th,
+        .pm-paper-container .pm-table td {
+            padding: 0.5rem;
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .pm-paper-container .pm-table th {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--accent);
+        }
+
+        .pm-paper-container .derivation-box {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .pm-paper-container .derivation-title {
+            font-weight: 600;
+            color: #4ade80;
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-paper-container .callout {
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+
+        .pm-paper-container .callout-info {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+        }
+
+        .pm-paper-container .callout-warning {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .pm-paper-container .section-takeaways {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .pm-paper-container .section-takeaways h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-paper-container .section-takeaways ul {
+            margin-left: 1.5rem;
+        }
+
+        .render-stats {
+            text-align: center;
+            padding: 1rem;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <div class="paper-container">
+        <header class="paper-header">
+            <h1 class="paper-title">Principia Metaphysica</h1>
+            <p class="paper-subtitle">A Geometric Unification of the Standard Model and Cosmology from M-Theory on a Single G₂ Manifold</p>
+            <p class="paper-author">Andrew Keith Watts</p>
+            <p style="margin-top: 0.5rem; color: rgba(255,255,255,0.5); font-size: 0.9rem;">
+                Dynamic rendering from theory_output.json
+            </p>
+        </header>
+
+        <div id="paper-content">
+            <div class="loading-indicator">
+                <div class="loading-spinner"></div>
+                <p>Loading paper content from theory_output.json...</p>
+            </div>
+        </div>
+
+        <div class="render-stats" id="render-stats"></div>
+    </div>
+
+    <script type="module">
+        import { injectHeader } from './js/pm-header.js';
+
+        // Inject header
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('paper');
+        });
+    </script>
+
+    <script>
+        // Initialize and render paper
+        document.addEventListener('DOMContentLoaded', async () => {
+            const startTime = performance.now();
+
+            // Wait for PM constants to load
+            if (window.PM && window.PM.load) {
+                await window.PM.load();
+            }
+
+            // Render paper using the paper renderer
+            if (typeof renderPaper === 'function') {
+                const success = await renderPaper('paper-content', {
+                    loadSections: true,
+                    loadFormulas: true,
+                    loadParameters: true,
+                    renderAbstract: true,
+                    renderTOC: false,
+                    debug: true
+                });
+
+                const endTime = performance.now();
+                const statsEl = document.getElementById('render-stats');
+
+                if (success) {
+                    statsEl.innerHTML = `Rendered in ${(endTime - startTime).toFixed(0)}ms from theory_output.json sections`;
+                } else {
+                    statsEl.innerHTML = 'Failed to render - check console for errors';
+                }
+
+                // Trigger MathJax
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    await window.MathJax.typesetPromise();
+                }
+            } else {
+                document.getElementById('paper-content').innerHTML = `
+                    <p style="color: #f87171; text-align: center; padding: 2rem;">
+                        Paper renderer not loaded. Make sure pm-paper-renderer.js is included.
+                    </p>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
