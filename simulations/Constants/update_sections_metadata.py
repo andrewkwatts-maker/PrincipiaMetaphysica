@@ -13,6 +13,7 @@ import json
 import sys
 
 # Section metadata mappings based on abstracts and key takeaways
+# Only use formula IDs that actually exist in theory_output.json
 SECTION_METADATA = {
     "1": {  # Introduction
         "order": 1,
@@ -20,11 +21,10 @@ SECTION_METADATA = {
         "description": "Overview of the 26D geometric framework and dimensional reduction mechanism",
         "formulaRefs": [
             "master-action-26d",
-            "sp2r-constraints",
             "reduction-cascade",
             "effective-euler",
             "generation-number",
-            "tcs-topology"
+            "g2-index-theorem"
         ],
         "paramRefs": [
             "dimensions.D_BULK",
@@ -43,16 +43,14 @@ SECTION_METADATA = {
         "description": "Detailed mathematical structure of dimensional reduction and G2 compactification",
         "formulaRefs": [
             "reduction-cascade",
-            "virasoro-anomaly",
-            "sp2r-constraints",
-            "tcs-topology",
             "effective-euler",
             "flux-quantization",
             "effective-torsion",
             "division-algebra",
             "primordial-spinor-13d",
             "planck-mass-derivation",
-            "effective-dimension"
+            "effective-dimension",
+            "g2-index-theorem"
         ],
         "paramRefs": [
             "dimensions.D_BULK",
@@ -78,17 +76,16 @@ SECTION_METADATA = {
         "description": "Fermion masses, mixing angles, and CP violation from geometric cycles",
         "formulaRefs": [
             "generation-number",
-            "yukawa-instanton",
             "hierarchy-ratio",
-            "top-quark-mass",
             "bottom-quark-mass",
-            "tau-lepton-mass",
             "neutrino-mass-21",
             "neutrino-mass-31",
-            "seesaw-mechanism",
             "ckm-elements",
             "cp-phase-geometric",
-            "theta23-maximal"
+            "majorana-scale",
+            "light-up-quarks",
+            "light-down-quarks",
+            "light-leptons"
         ],
         "paramRefs": [
             "topology.CHI_EFF",
@@ -118,19 +115,17 @@ SECTION_METADATA = {
         "formulaRefs": [
             "gut-scale",
             "gut-coupling",
-            "so10-breaking",
             "pati-salam-chain",
-            "weak-mixing-angle",
             "doublet-triplet",
             "proton-lifetime",
             "proton-branching",
-            "strong-coupling",
             "higgs-vev",
             "higgs-potential",
             "higgs-quartic",
             "higgs-mass",
             "rg-running-couplings",
-            "effective-torsion"
+            "effective-torsion",
+            "gut-coupling-derivation"
         ],
         "paramRefs": [
             "gauge.ALPHA_GUT",
@@ -156,7 +151,7 @@ SECTION_METADATA = {
             "dark-energy-wa",
             "pneuma-vev",
             "racetrack-superpotential",
-            "scalar-potential",
+            "racetrack-scalar-potential",
             "attractor-potential",
             "friedmann-constraint",
             "de-sitter-attractor",
@@ -166,8 +161,6 @@ SECTION_METADATA = {
             "gw-dispersion-alt",
             "mirror-dm-ratio",
             "mirror-temp-ratio",
-            "thermal-time",
-            "tomita-takesaki",
             "kms-condition"
         ],
         "paramRefs": [
@@ -238,16 +231,15 @@ SECTION_METADATA = {
             "generation-number",
             "kk-graviton-mass",
             "proton-lifetime",
-            "dark-energy-eos",
             "dark-energy-w0",
             "dark-energy-wa"
         ],
         "paramRefs": [
             "topology.n_gen",
-            "simulations.kk_graviton.m_KK_TeV",
-            "simulations.proton_decay.tau_p_years",
-            "parameters.dark_energy.w0",
-            "parameters.dark_energy.wa"
+            "kk_spectrum.m1_TeV",
+            "proton_decay.tau_p_years",
+            "dark_energy.w0",
+            "dark_energy.wa"
         ]
     },
     "9": {  # Discussion and Transparency
@@ -256,13 +248,11 @@ SECTION_METADATA = {
         "description": "Input summary, model comparison, SUSY, limitations and future work",
         "formulaRefs": [
             "generation-number",
-            "susy-breaking-scale",
-            "inflation-spectral-index",
-            "gut-scale"
+            "gut-scale",
+            "higgs-mass"
         ],
         "paramRefs": [
-            "parameters.gauge.M_GUT",
-            "simulations.higgs_mass.m_h_GeV",
+            "gauge.M_GUT",
             "topology.n_gen"
         ]
     }
@@ -337,6 +327,12 @@ def update_sections_metadata(theory_output_path):
     return True
 
 if __name__ == '__main__':
-    theory_output_path = r'h:\Github\PrincipiaMetaphysica\theory_output.json'
-    success = update_sections_metadata(theory_output_path)
+    from pathlib import Path
+    import io
+    # Fix Unicode encoding for Windows console
+    sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+    # Use relative path from script location
+    base_dir = Path(__file__).parent.parent.parent
+    theory_output_path = base_dir / 'AutoGenerated' / 'theory_output.json'
+    success = update_sections_metadata(str(theory_output_path))
     sys.exit(0 if success else 1)

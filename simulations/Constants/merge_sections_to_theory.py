@@ -52,16 +52,22 @@ def merge_section_content(existing: Dict[str, Any], detailed: Dict[str, Any]) ->
         if field in detailed and detailed[field]:
             merged[field] = detailed[field]
 
-    # Merge references (combine existing with new)
-    ref_fields = ['formulaRefs', 'paramRefs', 'crossRefs']
+    # Replace reference fields from detailed JSON (overwrite existing)
+    ref_fields = ['formulaRefs', 'paramRefs']
     for field in ref_fields:
         if field in detailed:
             # Extract string refs only, skip dicts
-            existing_list = existing.get(field, []) if isinstance(existing.get(field), list) else []
-            existing_refs = set(r for r in existing_list if isinstance(r, str))
             new_list = detailed[field] if isinstance(detailed[field], list) else []
             new_refs = [r for r in new_list if isinstance(r, str)]
-            merged[field] = list(existing_refs.union(set(new_refs)))
+            merged[field] = new_refs  # Replace, don't merge
+
+    # crossRefs can be merged since they're typically different
+    if 'crossRefs' in detailed and isinstance(detailed['crossRefs'], list):
+        existing_list = existing.get('crossRefs', []) if isinstance(existing.get('crossRefs'), list) else []
+        existing_refs = set(r for r in existing_list if isinstance(r, str))
+        new_list = detailed['crossRefs'] if isinstance(detailed['crossRefs'], list) else []
+        new_refs = [r for r in new_list if isinstance(r, str)]
+        merged['crossRefs'] = list(existing_refs.union(set(new_refs)))
 
     # Handle crossRefs as object
     if 'crossRefs' in detailed and isinstance(detailed['crossRefs'], dict):
