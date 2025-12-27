@@ -22,7 +22,7 @@ const NAV_LINKS = [
   { href: 'references.html', label: 'References', id: 'references' },
   { href: 'formulas.html', label: 'Formulas', id: 'formulas' },
   { href: 'parameters.html', label: 'Parameters', id: 'parameters' },
-  { href: 'principia-metaphysica-paper.html', label: 'Paper', id: 'paper' },
+  { href: 'paper.html', label: 'Paper', id: 'paper' },
   { href: 'simulations.html', label: 'Simulations', id: 'simulations' }
 ];
 
