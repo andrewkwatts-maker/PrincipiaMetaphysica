@@ -658,7 +658,7 @@
 
             <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
                 <p style="margin: 0; text-align: center; font-size: 1rem;">
-                    <strong>Overall Score:</strong> <pm-param id="validation.predictions_within_1sigma"></pm-param>/<pm-param id="validation.total_predictions"></pm-param> predictions match experiment within 1σ
+                    <strong>Overall Score:</strong> <pm-param id="framework_statistics.within_1_sigma"></pm-param>/<pm-param id="framework_statistics.total_sm_parameters"></pm-param> predictions match experiment within 1σ
                 </p>
             </div>
         </div>
@@ -1159,13 +1159,13 @@
             <div class="analogy-box" style="border-left-color: #4facfe; background: linear-gradient(135deg, rgba(79, 172, 254, 0.15), rgba(139, 127, 255, 0.05));">
                 <h4 style="color: #4facfe;">&#x1F3AF; Just One Calibration</h4>
                 <p>
-                    <strong>Think of it like this:</strong> Imagine you're building a complex machine with <span class="pm-value" data-pm-value="validation.total_predictions"></span> different settings.
-                    Most theories require you to carefully adjust all <span class="pm-value" data-pm-value="validation.total_predictions"></span> dials to get it working. That's a lot of guesswork!
+                    <strong>Think of it like this:</strong> Imagine you're building a complex machine with <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> different settings.
+                    Most theories require you to carefully adjust all <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> dials to get it working. That's a lot of guesswork!
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    The framework yields <strong style="color: #51cf66;">central value matches on <span class="pm-value" data-pm-value="validation.exact_matches"></span> key parameters</strong>
+                    The framework yields <strong style="color: #51cf66;">central value matches on <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> key parameters</strong>
                     with only <strong style="color: #4facfe;">1 fitted parameter</strong> (like adjusting a single dial). The other
-                    <strong style="color: #8b7fff;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> parameters</strong> come purely from the geometry of the extra dimensions.
+                    <strong style="color: #8b7fff;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> parameters</strong> come purely from the geometry of the extra dimensions.
                 </p>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
                     <strong>What's calibrated:</strong> Only the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span>).
@@ -1176,7 +1176,7 @@
             <div class="honest-note" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.05)); border-left: 4px solid #51cf66;">
                 <h3>&#x1F4CA; Why This Matters - Complete Framework</h3>
                 <p>
-                    The framework provides complete geometric derivation of ALL <span class="pm-value" data-pm-value="validation.total_predictions"></span> parameters
+                    The framework provides complete geometric derivation of ALL <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> parameters
                     from one TCS G₂ manifold (#187 from the Corti-Haskins-Nordström-Pacini database, arXiv:1809.09083).
                 </p>
                 <p style="margin-top: 0.5rem;">
@@ -1857,7 +1857,7 @@
 
             <p class="simple-explanation">
                 A theory is only as good as its track record. This framework has achieved complete theoretical framework
-                with all theoretical issues resolved. We tested <span class="pm-value" data-pm-value="validation.total_predictions"></span> different predictions against experimental measurements, with <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters derived from geometry (2 calibrated):
+                with all theoretical issues resolved. We tested <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> different predictions against experimental measurements, with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> SM parameters derived from geometry (2 calibrated):
             </p>
 
             <div class="visual-card" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.05), rgba(79, 172, 254, 0.05));">
@@ -1877,7 +1877,7 @@
                 <div class="step-flow" style="margin: 2rem 0;">
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.25), rgba(79, 172, 254, 0.15)); min-width: 150px;">
                         <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #51cf66;">&#x2705;</div>
-                        <div id="bg-step-predictions" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span></div>
+                        <div id="bg-step-predictions" style="font-size: 1.5rem; font-weight: 700; color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span></div>
                         <div style="font-size: 0.9rem; margin-top: 0.5rem;">Match Experiments</div>
                         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
                             <span id="bg-success-rate"></span>% within 1σ
@@ -1886,7 +1886,7 @@
                     <span style="font-size: 2rem; color: var(--text-secondary);">+</span>
                     <div class="step-box" style="background: linear-gradient(135deg, rgba(79, 172, 254, 0.25), rgba(139, 127, 255, 0.15)); min-width: 150px;">
                         <div style="font-size: 2rem; margin-bottom: 0.5rem; color: #4facfe;">&#x2705;</div>
-                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;"><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span></div>
+                        <div style="font-size: 1.5rem; font-weight: 700; color: #4facfe;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span></div>
                         <div style="font-size: 0.9rem; margin-top: 0.5rem;">Parameters Derived</div>
                         <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.25rem;">
                             2 calibrated (θ₁₃, δ_CP)
@@ -1895,8 +1895,8 @@
                 </div>
 
                 <div class="visual-caption">
-                    <strong>V12.8 Final Status:</strong> ALL 14 theoretical issues resolved! <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters derived from first principles with <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> predictions matching experimental
-                    measurements within 1σ (<span id="bg-caption-success-rate"></span>%), including <span class="pm-value" data-pm-value="validation.exact_matches"></span> central value matches (0.0σ) and DESI DR2 validation (<span id="bg-para-desi">0.00σ</span>). 2 calibrated parameters: θ₁₃, δ_CP (pending explicit Yukawa calculation).
+                    <strong>V12.8 Final Status:</strong> ALL 14 theoretical issues resolved! <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> SM parameters derived from first principles with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> predictions matching experimental
+                    measurements within 1σ (<span id="bg-caption-success-rate"></span>%), including <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> central value matches (0.0σ) and DESI DR2 validation (<span id="bg-para-desi">0.00σ</span>). 2 calibrated parameters: θ₁₃, δ_CP (pending explicit Yukawa calculation).
                 </div>
             </div>
 
@@ -1907,7 +1907,7 @@
                     from fundamental principles - no memorization, no guessing, just pure logical derivation.
                 </p>
                 <p style="margin-top: 0.75rem;">
-                    <strong>V12.8 Achievement:</strong> Getting <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> real-world predictions within 1σ (<span id="bg-analogy-success-rate"></span>% success rate, including <span class="pm-value" data-pm-value="validation.exact_matches"></span> exact central value matches at 0.0σ) with <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span> SM parameters
+                    <strong>V12.8 Achievement:</strong> Getting <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> real-world predictions within 1σ (<span id="bg-analogy-success-rate"></span>% success rate, including <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> exact central value matches at 0.0σ) with <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> SM parameters
                     derived geometrically (2 calibrated: θ₁₃, δ_CP) and all 14 theoretical issues resolved. This represents
                     publication-ready work with complete mathematical rigor and honest transparency.
                 </p>
@@ -1925,9 +1925,9 @@
                     geometric derivations in version 8.4. The framework now achieves:
                 </p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
-                    <li><strong>V12.8 Final:</strong> <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> parameters derived from geometry (2 calibrated: θ₁₃, δ_CP)</li>
-                    <li><span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> predictions within 1σ of experimental data (<span id="bg-list-success-rate"></span>% success rate)</li>
-                    <li><span class="pm-value" data-pm-value="validation.exact_matches"></span> exact matches (0.0σ) with experiment (w₀, m_h, Δm²₂₁, Δm²₃₁, θ₂₃, n_gen, etc.)</li>
+                    <li><strong>V12.8 Final:</strong> <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> parameters derived from geometry (2 calibrated: θ₁₃, δ_CP)</li>
+                    <li><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> predictions within 1σ of experimental data (<span id="bg-list-success-rate"></span>% success rate)</li>
+                    <li><span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span> exact matches (0.0σ) with experiment (w₀, m_h, Δm²₂₁, Δm²₃₁, θ₂₃, n_gen, etc.)</li>
                     <li>Strong testable predictions for upcoming experiments (JUNO, DUNE, HL-LHC, Hyper-K)</li>
                 </ul>
                 <p style="margin-top: 0.75rem; color: #51cf66;">
@@ -1940,7 +1940,7 @@
             <div class="validation-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; margin: 1.5rem 0; max-width: 900px;">
                 <div class="stat-box" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center; border: 2px solid rgba(139, 127, 255, 0.3);">
                     <div class="stat-number" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
-                        <span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span> of <span class="pm-value" data-pm-value="validation.total_predictions"></span>
+                        <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span>
                     </div>
                     <div class="stat-label" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
                         Predictions within 1σ
@@ -1948,7 +1948,7 @@
                 </div>
                 <div class="stat-box" style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center; border: 2px solid rgba(79, 172, 254, 0.3);">
                     <div class="stat-number" style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">
-                        <span class="pm-value" data-pm-value="validation.exact_matches"></span>
+                        <span class="pm-value" data-pm-value="framework_statistics.exact_matches"></span>
                     </div>
                     <div class="stat-label" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
                         Central Value Matches
@@ -1970,7 +1970,7 @@
                     <span class="expand-arrow">&#x25BC;</span>
                 </div>
                 <div class="expand-content">
-                    <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="validation.predictions_within_1sigma"></span>/<span class="pm-value" data-pm-value="validation.total_predictions"></span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
+                    <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
                         <li>Generation count: 3 (exact match! Derived from N<sub>flux</sub>/spinor<sub>DOF</sub> = 24/8)</li>
                         <li>PMNS mixing angles: θ₂₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:1"></span>° (maximal mixing), θ₁₂ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:1"></span>°, θ₁₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>° (all within 0.25σ!)</li>
@@ -2110,7 +2110,7 @@
                 </ul>
                 <p><strong>Framework achievements:</strong></p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
-                    <li>ALL <span class="pm-value" data-pm-value="validation.total_predictions"></span> parameters derived from TCS G₂ manifold #187 (ZERO free parameters)</li>
+                    <li>ALL <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> parameters derived from TCS G₂ manifold #187 (ZERO free parameters)</li>
                     <li>Complete CKM and PMNS matrices to 0.09σ average</li>
                     <li>Sp(2,R) reduction rigorously BRST-proven with ghost decoupling</li>
                     <li>Higgs mass matches PDG 2024 central value</li>
@@ -2134,68 +2134,6 @@
         <!-- Downloads -->
         <div class="download-section">
             
-        <!-- Learn More Section -->
-        <div class="concept-card" style="border: 2px solid rgba(81, 207, 102, 0.4); background: linear-gradient(135deg, rgba(81, 207, 102, 0.05), rgba(79, 172, 254, 0.05));">
-            <h2 style="color: #51cf66;">📚 Want to Go Deeper? Learn the Physics!</h2>
-
-            <p class="simple-explanation">
-                Every concept in this theory builds on established physics. Explore the foundations with diagrams,
-                YouTube videos, and practice problems:
-            </p>
-
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
-                <div style="background: var(--bg-card); border: 2px solid rgba(139, 127, 255, 0.3); border-radius: 10px; padding: 1.25rem;">
-                    <h4 style="color: var(--accent-primary); margin-bottom: 0.75rem;">🌌 Gravity & Spacetime</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin: 0.5rem 0;"><a href="foundations/einstein-field-equations.html" style="color: var(--text-primary); text-decoration: none;">→ Einstein Field Equations</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/einstein-hilbert-action.html" style="color: var(--text-primary); text-decoration: none;">→ Einstein-Hilbert Action</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/ricci-tensor.html" style="color: var(--text-primary); text-decoration: none;">→ Ricci Tensor & Curvature</a></li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--bg-card); border: 2px solid rgba(255, 126, 182, 0.3); border-radius: 10px; padding: 1.25rem;">
-                    <h4 style="color: #ff7eb6; margin-bottom: 0.75rem;">⚛️ Quantum Fields & Matter</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin: 0.5rem 0;"><a href="foundations/dirac-equation.html" style="color: var(--text-primary); text-decoration: none;">→ Dirac Equation (Fermions)</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/clifford-algebra.html" style="color: var(--text-primary); text-decoration: none;">→ Clifford Algebra (Spinors)</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/yang-mills.html" style="color: var(--text-primary); text-decoration: none;">→ Yang-Mills (Gauge Theory)</a></li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--bg-card); border: 2px solid rgba(79, 172, 254, 0.3); border-radius: 10px; padding: 1.25rem;">
-                    <h4 style="color: #4facfe; margin-bottom: 0.75rem;">🔄 Extra Dimensions</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin: 0.5rem 0;"><a href="foundations/kaluza-klein.html" style="color: var(--text-primary); text-decoration: none;">→ Kaluza-Klein Theory</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/g2-manifolds.html" style="color: var(--text-primary); text-decoration: none;">→ G₂ Manifolds</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/calabi-yau.html" style="color: var(--text-primary); text-decoration: none;">→ Calabi-Yau Manifolds</a></li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--bg-card); border: 2px solid rgba(255, 193, 7, 0.3); border-radius: 10px; padding: 1.25rem;">
-                    <h4 style="color: #ffc107; margin-bottom: 0.75rem;">🔬 Unification</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin: 0.5rem 0;"><a href="foundations/so10-gut.html" style="color: var(--text-primary); text-decoration: none;">→ SO(10) Grand Unification</a></li>
-                    </ul>
-                </div>
-
-                <div style="background: var(--bg-card); border: 2px solid rgba(255, 126, 182, 0.3); border-radius: 10px; padding: 1.25rem;">
-                    <h4 style="color: #ff7eb6; margin-bottom: 0.75rem;">⏰ Time & Entropy</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0;">
-                        <li style="margin: 0.5rem 0;"><a href="foundations/boltzmann-entropy.html" style="color: var(--text-primary); text-decoration: none;">→ Boltzmann Entropy</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/kms-condition.html" style="color: var(--text-primary); text-decoration: none;">→ KMS Condition (Thermal States)</a></li>
-                        <li style="margin: 0.5rem 0;"><a href="foundations/tomita-takesaki.html" style="color: var(--text-primary); text-decoration: none;">→ Tomita-Takesaki (Modular Time)</a></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div style="text-align: center; margin-top: 2rem;">
-                <a href="foundations/index.html" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #51cf66, #4facfe); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.1rem;">
-                    Browse All Foundation Topics →
-                </a>
-            </div>
-        </div>
-
-        
         <!-- Learn More Section -->
         <div class="concept-card" style="border: 2px solid rgba(81, 207, 102, 0.4); background: linear-gradient(135deg, rgba(81, 207, 102, 0.05), rgba(79, 172, 254, 0.05));">
             <h2 style="color: #51cf66;">📚 Want to Go Deeper? Learn the Physics!</h2>
@@ -2576,10 +2514,10 @@
             return;
         }
 
-        // Use values directly from simulation output (PM.validation)
-        const within1sigma = PM.validation?.predictions_within_1sigma || 45;
-        const total = PM.validation?.total_predictions || 48;
-        const exact = PM.validation?.exact_matches || 12;
+        // Use values directly from framework_statistics (corrected path)
+        const within1sigma = PM.framework_statistics?.within_1_sigma || 45;
+        const total = PM.framework_statistics?.total_sm_parameters || 48;
+        const exact = PM.framework_statistics?.exact_matches || 12;
         const desiSigma = PM.dark_energy?.w0_deviation_sigma || 0.38;
         const percent = ((within1sigma / total) * 100).toFixed(1);
 

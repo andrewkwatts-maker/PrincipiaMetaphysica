@@ -279,12 +279,12 @@
     async function renderSection(section, options = {}) {
         const { loadFormulas = true, loadParameters = true, useJsonContent = true } = options;
 
-        // Handle new section JSON format (with metadata/content/navigation)
+        // Handle both flat structure and metadata/content wrapper
         const sectionId = section.metadata?.id || section.id;
         const sectionTitle = section.metadata?.title || section.title;
         const sectionAbstract = section.metadata?.abstract || section.abstract;
         const subsections = section.content?.subsections || section.subsections || [];
-        const contentBlocks = section.contentBlocks || [];
+        const contentBlocks = section.contentBlocks || section.content_blocks || [];
 
         const sectionDiv = document.createElement('section');
         sectionDiv.id = `section-${sectionId}`;
@@ -310,7 +310,7 @@
             sectionDiv.appendChild(abstractDiv);
         }
 
-        // Render subsections from JSON (new format)
+        // Render subsections from JSON
         if (useJsonContent && subsections.length > 0) {
             const subsectionsDiv = document.createElement('div');
             subsectionsDiv.className = 'section-subsections';
@@ -331,7 +331,7 @@
             }
         }
         // Fallback: Try to load section HTML file if no JSON content
-        else if (section.sectionFile && !useJsonContent) {
+        else if (section.sectionFile) {
             const content = await loadSectionFile(section.sectionFile);
             if (content) {
                 const contentDiv = document.createElement('div');
@@ -345,6 +345,25 @@
                 if (loadParameters) {
                     processParameters(contentDiv);
                 }
+            } else {
+                // No HTML file found - show placeholder
+                if (PaperRenderer._debug) {
+                    const placeholder = document.createElement('div');
+                    placeholder.className = 'empty-section-placeholder';
+                    placeholder.style.cssText = 'padding: 1rem; color: rgba(255,255,255,0.4); font-style: italic; background: rgba(255,255,255,0.02); border-radius: 4px; margin: 1rem 0;';
+                    placeholder.textContent = `[Section content for "${sectionTitle}" is being developed - referenced file: ${section.sectionFile}]`;
+                    sectionDiv.appendChild(placeholder);
+                }
+            }
+        }
+        // No subsections and no section file - completely empty
+        else if (subsections.length === 0 && contentBlocks.length === 0) {
+            if (PaperRenderer._debug) {
+                const placeholder = document.createElement('div');
+                placeholder.className = 'empty-section-placeholder';
+                placeholder.style.cssText = 'padding: 1rem; color: rgba(255,255,255,0.4); font-style: italic; background: rgba(255,255,255,0.02); border-radius: 4px; margin: 1rem 0;';
+                placeholder.textContent = `[Content for this section is being developed]`;
+                sectionDiv.appendChild(placeholder);
             }
         }
 
@@ -377,7 +396,7 @@
     function renderSubsection(subsection) {
         const subDiv = document.createElement('div');
         subDiv.className = 'paper-subsection';
-        subDiv.id = `subsection-${subsection.id || subsection.number}`;
+        subDiv.id = `subsection-${subsection.id || subsection.number || 'unknown'}`;
 
         // Subsection header
         const header = document.createElement('h3');
@@ -388,7 +407,7 @@
         `;
         subDiv.appendChild(header);
 
-        // Render content blocks
+        // Render content blocks (support both camelCase and snake_case)
         const blocks = subsection.contentBlocks || subsection.content_blocks || [];
         if (blocks.length > 0) {
             for (const block of blocks) {
@@ -396,6 +415,15 @@
                 if (blockEl) {
                     subDiv.appendChild(blockEl);
                 }
+            }
+        } else {
+            // Empty subsection - add placeholder message
+            if (PaperRenderer._debug) {
+                const placeholder = document.createElement('p');
+                placeholder.className = 'empty-subsection-placeholder';
+                placeholder.style.cssText = 'color: rgba(255,255,255,0.3); font-style: italic; padding: 0.5rem;';
+                placeholder.textContent = '[Content for this subsection is being developed]';
+                subDiv.appendChild(placeholder);
             }
         }
 
