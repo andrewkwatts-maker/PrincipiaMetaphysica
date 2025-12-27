@@ -26,6 +26,27 @@ References:
 - simulations/kk_spectrum_full.py (v8.2) - VALIDATED implementation
 - Acharya et al. (arXiv:hep-th/0505083) - G_2 KK spectra
 - CHNP #187 - TCS G_2 metric constraints
+
+# =============================================================================
+# Bi-directional Links
+# =============================================================================
+# IMPLEMENTS: kk-graviton-mass, kk-graviton-tower
+# READS:
+#   - config/FundamentalConstants/HODGE_H11: b2 = 4 (2-cycles)
+#   - geometry/b3: Third Betti number (24 co-associative cycles)
+#   - config/FundamentalConstants/euler_characteristic_effective: chi_eff = 144
+#   - compactification/R_c_inv_GeV: Compactification radius^-1 (5000 GeV)
+# WRITES:
+#   - simulations/kk_graviton/m_KK_TeV: First KK mode mass (5.0 TeV)
+#   - simulations/kk_graviton/m_KK_GeV: First KK mode mass (5000 GeV)
+#   - simulations/kk_graviton/tower: KK spectrum m_n = n × 5.0 TeV
+#   - simulations/kk_graviton/hl_lhc_discovery: Accessibility at HL-LHC
+# VALIDATES:
+#   - m_KK = 5.0 ± 0.12 TeV (TCS constraint from cycle volume)
+#   - m_KK = 5.0 ± 1.48 TeV (MC uncertainty from moduli variations)
+#   - Tower structure: equally spaced modes
+#   - HL-LHC discovery reach: m_KK < 7 TeV accessible
+# =============================================================================
 """
 
 import numpy as np

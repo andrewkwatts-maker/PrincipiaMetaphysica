@@ -29,6 +29,30 @@ References:
 - Witten (arXiv:hep-th/0508075) - Flux quantization in M-theory
 
 Version: 8.2 (resolves Issue 2.3 from V7_ISSUES_REPORT.md)
+
+# =============================================================================
+# Bi-directional Links
+# =============================================================================
+# IMPLEMENTS: neutrino-mass-ordering, neutrino-atiyah-singer-index
+# READS:
+#   - config/FundamentalConstants/HODGE_H11: b2 = 4 (2-cycles)
+#   - geometry/b3: Third Betti number (24 associative 3-cycles)
+#   - config/FundamentalConstants/euler_characteristic_effective: chi_eff = 144
+#   - neutrino/Delta_m21_sq: Solar splitting (7.53×10^-5 eV^2)
+#   - neutrino/Delta_m32_sq_NH: Atmospheric splitting NH (2.453×10^-3 eV^2)
+#   - neutrino/Delta_m32_sq_IH: Atmospheric splitting IH (-2.536×10^-3 eV^2)
+# WRITES:
+#   - simulations/neutrino_masses/ordering_predicted: NH or IH
+#   - simulations/neutrino_masses/prob_IH: Probability of inverted hierarchy
+#   - simulations/neutrino_masses/prob_NH: Probability of normal hierarchy
+#   - simulations/neutrino_masses/index_total: Atiyah-Singer index value
+#   - simulations/neutrino_masses/masses_NH_meV: Mass eigenvalues if NH (meV)
+#   - simulations/neutrino_masses/masses_IH_meV: Mass eigenvalues if IH (meV)
+# VALIDATES:
+#   - Ordering prediction consistency with NuFIT 6.0 (NH at 2.7σ)
+#   - Mass splittings within experimental bounds
+#   - Atiyah-Singer index sign determines hierarchy
+# =============================================================================
 """
 
 import numpy as np

@@ -280,7 +280,9 @@ def main():
         print("ISSUES (first 20):")
         print("-" * 70)
         for issue in all_issues[:20]:
-            print(f"  - {issue}")
+            # Handle encoding for Windows console
+            safe_issue = issue.encode('ascii', 'replace').decode('ascii')
+            print(f"  - {safe_issue}")
         if len(all_issues) > 20:
             print(f"  ... and {len(all_issues) - 20} more issues")
 
