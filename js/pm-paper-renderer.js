@@ -416,14 +416,26 @@
         `;
         subDiv.appendChild(header);
 
-        // Render content blocks (support both camelCase and snake_case)
-        const blocks = subsection.contentBlocks || subsection.content_blocks || [];
-        if (blocks.length > 0) {
+        // Render content blocks (support camelCase, snake_case, and plain content)
+        let blocks = subsection.contentBlocks || subsection.content_blocks || subsection.content || [];
+
+        // Handle string content (convert to single paragraph block)
+        if (typeof blocks === 'string') {
+            blocks = [{ type: 'paragraph', text: blocks }];
+        }
+
+        if (Array.isArray(blocks) && blocks.length > 0) {
             for (const block of blocks) {
                 const blockEl = renderContentBlock(block);
                 if (blockEl) {
                     subDiv.appendChild(blockEl);
                 }
+            }
+        } else if (!Array.isArray(blocks) && blocks) {
+            // Object content - treat as single block
+            const blockEl = renderContentBlock(blocks);
+            if (blockEl) {
+                subDiv.appendChild(blockEl);
             }
         } else {
             // Empty subsection - add placeholder message
