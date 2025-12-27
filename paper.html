@@ -679,6 +679,18 @@
                 if (window.MathJax && window.MathJax.typesetPromise) {
                     await window.MathJax.typesetPromise();
                 }
+
+                // Handle hash navigation after content is rendered
+                if (window.location.hash) {
+                    const hash = window.location.hash;
+                    const targetEl = document.querySelector(hash);
+                    if (targetEl) {
+                        // Small delay to ensure layout is complete
+                        setTimeout(() => {
+                            targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 100);
+                    }
+                }
             } else {
                 document.getElementById('paper-content').innerHTML = `
                     <div style="color: #dc3545; text-align: center; padding: 2rem;">
