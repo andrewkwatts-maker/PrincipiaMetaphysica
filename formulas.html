@@ -1038,7 +1038,7 @@
         </div>
 
         <!-- Controls & Filters -->
-        <div class="controls-bar">
+        <div class="controls-bar" id="controls-bar" style="display: none;">
             <div class="controls-grid">
                 <div class="control-group">
                     <label class="control-label" for="search-box">Search</label>
@@ -1182,10 +1182,16 @@
             document.getElementById('loading-state').style.display = 'none';
             document.getElementById('formula-container').style.display = 'block';
             document.getElementById('stats-bar').style.display = 'flex';
+            document.getElementById('controls-bar').style.display = 'block';
 
         } catch (error) {
             console.error('Error loading formulas:', error);
             const errorMsg = error.message || 'Unknown error occurred';
+
+            // Hide controls and stats on error
+            document.getElementById('controls-bar').style.display = 'none';
+            document.getElementById('stats-bar').style.display = 'none';
+
             document.getElementById('loading-state').innerHTML = `
                 <div class="empty-icon">⚠️</div>
                 <h3>Error Loading Formulas</h3>
@@ -1549,7 +1555,7 @@
                 ? formula.experimentalValue.toExponential(4)
                 : formula.experimentalValue;
             const units = formula.units ? ` ${formula.units}` : '';
-            const sigma = formula.sigmaDeviation !== undefined
+            const sigma = (formula.sigmaDeviation != null && typeof formula.sigmaDeviation === 'number')
                 ? ` (${formula.sigmaDeviation.toFixed(2)}σ)`
                 : '';
             details.push({ label: 'Experimental', value: `${value}${units}${sigma}` });
