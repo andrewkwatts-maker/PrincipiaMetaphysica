@@ -39,13 +39,19 @@
             D_COMMON: 4
         },
 
+        // Key electroweak parameters (fallback if not in JSON)
+        electroweak: {
+            v_higgs: 246.22,    // Higgs VEV in GeV
+            v_EW: 246.22,       // Electroweak VEV (alias)
+            m_Z: 91.1876,       // Z boson mass in GeV
+            m_W: 80.377         // W boson mass in GeV
+        },
+
         // Mapping table for legacy/alternate parameter names
         _parameterAliases: {
-            // Dimensions (case-insensitive)
-            'dimensions.d_bulk': 'parameters.dimensions.D_BULK',
-            'dimensions.d_after_sp2r': 'parameters.dimensions.D_AFTER_SP2R',
-            'dimensions.d_observable': 'parameters.dimensions.D_OBSERVABLE',
-            'dimensions.d_g2': 'parameters.dimensions.D_INTERNAL',
+            // Note: dimensions.X paths are handled by built-in fallback, not aliases
+            // Only map dimension aliases that need special handling
+            'dimensions.d_g2': 'dimensions.D_G2',  // Case normalization
             'dimensions.d_spin8': 'parameters.dimensions.D_SPIN8',
 
             // Topology parameters (case and naming variations)
@@ -68,11 +74,11 @@
             'validation.success_rate': 'framework_statistics.success_rate_1sigma',
             'validation.calibrated_parameters': 'framework_statistics.calibrated_parameters',
 
-            // PMNS angles
-            'pmns_matrix.theta_23': 'simulations.pmns_geometric_v14_1.theta_23',
-            'pmns_matrix.theta_12': 'simulations.pmns_geometric_v14_1.theta_12',
-            'pmns_matrix.theta_13': 'simulations.pmns_geometric_v14_1.theta_13',
-            'pmns_matrix.delta_cp': 'simulations.pmns_geometric_v14_1.delta_cp',
+            // PMNS angles (in parameters.pmns, not simulations)
+            'pmns_matrix.theta_23': 'parameters.pmns.theta_23',
+            'pmns_matrix.theta_12': 'parameters.pmns.theta_12',
+            'pmns_matrix.theta_13': 'parameters.pmns.theta_13',
+            'pmns_matrix.delta_cp': 'parameters.pmns.delta_CP',
 
             // Common parameter shortcuts
             'topology.b3': 'parameters.topology.B3',
@@ -90,10 +96,39 @@
 
             // Higgs
             'higgs_mass.m_h_GeV': 'simulations.higgs_mass.m_h_GeV',
+            'v11_final_observables.higgs_mass.m_h_gev': 'simulations.higgs_mass.m_h_GeV',
 
             // Dark energy
             'dark_energy.w0': 'parameters.dark_energy.w0',
             'dark_energy.w0_PM': 'parameters.dark_energy.w0',
+
+            // Beginner's guide aliases
+            'v11_final_observables.proton_lifetime.tau_p_years': 'simulations.proton_decay.tau_p_years',
+            'kk_spectrum.m1_central': 'simulations.kk_graviton.m_KK_TeV',
+            'kk_spectrum.hl_lhc_significance': 'simulations.kk_graviton.hl_lhc_discovery',
+
+            // Validation -> Framework Statistics (comprehensive mapping)
+            'validation.predictions_within_1sigma': 'framework_statistics.within_1_sigma',
+            'validation.within_1_sigma': 'framework_statistics.within_1_sigma',
+            'validation.predictions_within_2sigma': 'framework_statistics.within_2_sigma',
+            'validation.total_sm_parameters': 'framework_statistics.total_sm_parameters',
+            'validation.total_predictions': 'framework_statistics.total_sm_parameters',
+            'validation.exact_matches': 'framework_statistics.exact_matches',
+
+            // Neutrino masses
+            'neutrino_mass.delta_m_sq': 'simulations.neutrino_masses.delta_m21_sq',
+            'neutrino_masses.delta_m21_sq': 'simulations.neutrino_masses.delta_m21_sq',
+            'neutrino_masses.delta_m3l_sq': 'simulations.neutrino_masses.delta_m3l_sq',
+
+            // Proton decay and GUT
+            'proton_decay.m_gut': 'parameters.gauge.M_GUT',
+
+            // KK graviton
+            'kk_graviton.mass_tev': 'simulations.kk_graviton.m_KK_TeV',
+
+            // VEV / Higgs
+            'v12_6_geometric_derivations.vev_pneuma.v_ew': 'parameters.electroweak.v_higgs',
+            'electroweak.v_higgs': 'parameters.electroweak.v_higgs',
         },
 
         /**
@@ -122,21 +157,61 @@
                 }
             }
 
+            // Check built-in electroweak fallbacks
+            if ((parts[0] === 'electroweak' || (parts[0] === 'parameters' && parts[1] === 'electroweak')) && parts.length >= 2) {
+                const ewKey = parts[parts.length - 1].toLowerCase();
+                // Handle "parameters.electroweak.v_higgs.value" -> "v_higgs"
+                if (ewKey === 'value' && parts.length > 2) {
+                    const actualKey = parts[parts.length - 2].toLowerCase();
+                    if (this.electroweak[actualKey] !== undefined) {
+                        return this.electroweak[actualKey];
+                    }
+                }
+                if (this.electroweak[ewKey] !== undefined) {
+                    return this.electroweak[ewKey];
+                }
+            }
+
             if (!this._data) return null;
 
             // Try exact path first
             let value = this._tryPath(this._data, parts);
             if (value !== null && value !== undefined) {
-                return value;
+                // Auto-extract .value from parameter objects
+                return this._extractValue(value);
             }
 
             // Try case-insensitive lookup
             value = this._tryPathCaseInsensitive(this._data, parts);
             if (value !== null && value !== undefined) {
-                return value;
+                // Auto-extract .value from parameter objects
+                return this._extractValue(value);
             }
 
             return null;
+        },
+
+        /**
+         * Extract primitive value from parameter objects
+         * Objects with {value: X, units: Y} structure are common in parameters
+         */
+        _extractValue(value) {
+            if (value === null || value === undefined) return value;
+
+            // If it's a primitive, return as-is
+            if (typeof value !== 'object') return value;
+
+            // If it's an array, return as-is
+            if (Array.isArray(value)) return value;
+
+            // If it has a 'value' property and doesn't look like a formula/complex object
+            // (formulas have 'html' or 'latex' properties)
+            if ('value' in value && !('html' in value) && !('latex' in value)) {
+                return value.value;
+            }
+
+            // Return object as-is for complex structures
+            return value;
         },
 
         /**
@@ -439,6 +514,17 @@
 
     function formatValue(value, format) {
         if (value === null || value === undefined) return '?';
+
+        // Safety net: extract .value from objects that slipped through
+        if (typeof value === 'object' && !Array.isArray(value)) {
+            if ('value' in value && !('html' in value) && !('latex' in value)) {
+                value = value.value;
+            } else {
+                // For complex objects without a value property, return a sensible default
+                console.warn('formatValue received object:', value);
+                return '?';
+            }
+        }
 
         if (typeof value === 'number') {
             // Handle format specifications
