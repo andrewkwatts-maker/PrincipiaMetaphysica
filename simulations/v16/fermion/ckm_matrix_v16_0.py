@@ -333,7 +333,10 @@ class CKMMatrixSimulation(SimulationBase):
         Returns:
             SectionContent with complete narrative and formula references
         """
-        return SectionContent(
+        assert self.metadata.section_id == "4", "Section ID must be '4'"
+        assert self.metadata.subsection_id == "4.3", "Subsection ID must be '4.3'"
+
+        content = SectionContent(
             section_id="4",
             subsection_id="4.3",
             title="CKM Matrix and Quark Mixing",
@@ -510,6 +513,13 @@ class CKMMatrixSimulation(SimulationBase):
             ]
         )
 
+        # Validate that content is not empty
+        assert len(content.content_blocks) > 0, "Content blocks must not be empty"
+        assert len(content.formula_refs) > 0, "Formula references must not be empty"
+        assert content.abstract is not None and len(content.abstract) > 0, "Abstract must not be empty"
+
+        return content
+
     def get_formulas(self) -> List[Formula]:
         """
         Return list of formulas with full derivation chains.
@@ -517,7 +527,7 @@ class CKMMatrixSimulation(SimulationBase):
         Returns:
             List of Formula instances
         """
-        return [
+        formulas = [
             Formula(
                 id="ckm-overlap-integral",
                 label="(4.3.1)",
@@ -713,6 +723,18 @@ class CKMMatrixSimulation(SimulationBase):
                 }
             ),
         ]
+
+        # Validate that formulas list is not empty
+        assert len(formulas) > 0, "Formula list must not be empty"
+        for formula in formulas:
+            assert formula.id is not None and len(formula.id) > 0, f"Formula ID must not be empty"
+            assert formula.latex is not None and len(formula.latex) > 0, f"Formula {formula.id} latex must not be empty"
+            assert formula.description is not None and len(formula.description) > 0, f"Formula {formula.id} description must not be empty"
+            # Validate both camelCase and snake_case params are present
+            assert hasattr(formula, 'inputParams') and hasattr(formula, 'input_params'), f"Formula {formula.id} missing input params"
+            assert hasattr(formula, 'outputParams') and hasattr(formula, 'output_params'), f"Formula {formula.id} missing output params"
+
+        return formulas
 
     def get_output_param_definitions(self) -> List[Parameter]:
         """
@@ -1023,7 +1045,7 @@ class CKMMatrixSimulation(SimulationBase):
         Returns:
             Dictionary with beginner explanation fields
         """
-        return {
+        explanation = {
             "icon": "🔄",
             "title": "Why Quarks Mix Between Generations",
             "simpleExplanation": (
@@ -1070,6 +1092,13 @@ class CKMMatrixSimulation(SimulationBase):
                 "from other approaches to flavor physics."
             )
         }
+
+        # Validate that explanation is not empty
+        assert explanation["simpleExplanation"] is not None and len(explanation["simpleExplanation"]) > 0, "Simple explanation must not be empty"
+        assert explanation["analogy"] is not None and len(explanation["analogy"]) > 0, "Analogy must not be empty"
+        assert explanation["keyTakeaway"] is not None and len(explanation["keyTakeaway"]) > 0, "Key takeaway must not be empty"
+
+        return explanation
 
 
 def main():

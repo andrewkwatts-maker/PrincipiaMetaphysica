@@ -47,15 +47,23 @@ class ContentBlock:
     A block of content in a section.
 
     Attributes:
-        type: Content type ("paragraph", "formula", "list", "table")
+        type: Content type ("paragraph", "formula", "list", "table", "heading")
         content: The actual content (text, LaTeX, etc.)
         formula_id: Optional reference to a formula ID
         label: Optional label for equations/figures
+        level: Optional heading level (for type="heading")
+        items: Optional list items (for type="list")
+        headers: Optional table headers (for type="table")
+        rows: Optional table rows (for type="table")
     """
-    type: str  # "paragraph", "formula", "list", "table"
-    content: str
+    type: str  # "paragraph", "formula", "list", "table", "heading"
+    content: Optional[str] = None
     formula_id: Optional[str] = None
     label: Optional[str] = None
+    level: Optional[int] = None
+    items: Optional[List[str]] = None
+    headers: Optional[List[str]] = None
+    rows: Optional[List[List[str]]] = None
 
 
 @dataclass

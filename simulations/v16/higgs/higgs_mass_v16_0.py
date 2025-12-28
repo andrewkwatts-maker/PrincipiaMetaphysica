@@ -40,8 +40,6 @@ from simulations.base import (
     SectionContent,
     Formula,
     Parameter,
-    Reference,
-    Foundation,
 )
 
 from config import (
@@ -643,60 +641,60 @@ class HiggsMassSimulation(SimulationBase):
             ),
         ]
 
-    def get_references(self) -> List[Reference]:
+    def get_references(self) -> List[Dict[str, Any]]:
         """
         Return reference citations for the Higgs mass simulation.
 
         Returns:
-            List of Reference instances
+            List of reference dictionaries
         """
         return [
-            Reference(
-                id="higgs1964",
-                authors="Higgs, P.W.",
-                title="Broken Symmetries and the Masses of Gauge Bosons",
-                journal="Phys. Rev. Lett.",
-                volume="13",
-                year=1964,
-            ),
-            Reference(
-                id="atlas2012",
-                authors="ATLAS Collaboration",
-                title="Observation of a new particle in the search for the Standard Model Higgs boson",
-                journal="Phys. Lett. B",
-                volume="716",
-                year=2012,
-            ),
-            Reference(
-                id="cms2012",
-                authors="CMS Collaboration",
-                title="Observation of a new boson at a mass of 125 GeV",
-                journal="Phys. Lett. B",
-                volume="716",
-                year=2012,
-            ),
+            {
+                "id": "higgs1964",
+                "authors": "Higgs, P.W.",
+                "title": "Broken Symmetries and the Masses of Gauge Bosons",
+                "journal": "Phys. Rev. Lett.",
+                "volume": "13",
+                "year": 1964,
+            },
+            {
+                "id": "atlas2012",
+                "authors": "ATLAS Collaboration",
+                "title": "Observation of a new particle in the search for the Standard Model Higgs boson",
+                "journal": "Phys. Lett. B",
+                "volume": "716",
+                "year": 2012,
+            },
+            {
+                "id": "cms2012",
+                "authors": "CMS Collaboration",
+                "title": "Observation of a new boson at a mass of 125 GeV",
+                "journal": "Phys. Lett. B",
+                "volume": "716",
+                "year": 2012,
+            },
         ]
 
-    def get_foundations(self) -> List[Foundation]:
+    def get_foundations(self) -> List[Dict[str, Any]]:
         """
         Return foundational concepts for the Higgs mass simulation.
 
         Returns:
-            List of Foundation instances
+            List of foundation dictionaries
         """
         return [
-            Foundation(
-                id="higgs-mechanism",
-                title="Higgs Mechanism",
-                category="particle_physics",
-                description="Spontaneous symmetry breaking giving mass to gauge bosons",
-            ),
-            Foundation(
-                id="electroweak-symmetry",
-                title="Electroweak Symmetry",
-                category="gauge_theory",
-                description="Unified SU(2)_L x U(1)_Y gauge symmetry",
-            ),
+            {
+                "id": "higgs-mechanism",
+                "title": "Higgs Mechanism",
+                "category": "particle_physics",
+                "description": "Spontaneous symmetry breaking giving mass to gauge bosons",
+            },
+            {
+                "id": "electroweak-symmetry",
+                "title": "Electroweak Symmetry",
+                "category": "gauge_theory",
+                "description": "Unified SU(2)_L x U(1)_Y gauge symmetry",
+            },
         ]
 
     def get_beginner_explanation(self) -> Dict[str, Any]:

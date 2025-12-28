@@ -53,8 +53,6 @@ from simulations.base import (
     Parameter,
     ContentBlock,
     SectionContent,
-    ReferenceEntry,
-    FoundationEntry,
 )
 
 
@@ -115,6 +113,7 @@ class G2GeometryV16(SimulationBase):
             "topology.b2",
             "topology.b3",
             "topology.CHI_EFF",
+            "topology.chi_eff",  # Lowercase alias for compatibility
             "topology.n_gen",
             "topology.K_MATCHING",
             "topology.d_over_R"
@@ -194,6 +193,7 @@ class G2GeometryV16(SimulationBase):
             "topology.b2": self._b2,
             "topology.b3": self._b3,
             "topology.CHI_EFF": self._chi_eff,
+            "topology.chi_eff": self._chi_eff,  # Lowercase alias for compatibility
             "topology.n_gen": n_gen,
             "topology.K_MATCHING": K_matching,
             "topology.d_over_R": d_over_R,
@@ -654,65 +654,65 @@ class G2GeometryV16(SimulationBase):
             ),
         ]
 
-    def get_references(self) -> List[ReferenceEntry]:
+    def get_references(self) -> List[Dict[str, Any]]:
         """
         Return academic references for G2 geometry.
 
         Returns:
-            List of ReferenceEntry instances
+            List of reference dictionaries
         """
         return [
-            ReferenceEntry(
-                id="joyce2017",
-                authors="Joyce, D.",
-                title="Conjectures on counting associative 3-folds in G2-manifolds",
-                journal="Advances in Lovelock gravity",
-                year=2017
-            ),
-            ReferenceEntry(
-                id="kovalev2003",
-                authors="Kovalev, A.",
-                title="Twisted connected sums and special Riemannian holonomy",
-                journal="J. Reine Angew. Math.",
-                volume="565",
-                year=2003
-            ),
-            ReferenceEntry(
-                id="chnp2015",
-                authors="Corti, A. et al.",
-                title="G2-manifolds and associative submanifolds via semi-Fano 3-folds",
-                journal="Duke Math. J.",
-                volume="164",
-                year=2015
-            ),
+            {
+                "id": "joyce2017",
+                "authors": "Joyce, D.",
+                "title": "Conjectures on counting associative 3-folds in G2-manifolds",
+                "journal": "Advances in Lovelock gravity",
+                "year": 2017
+            },
+            {
+                "id": "kovalev2003",
+                "authors": "Kovalev, A.",
+                "title": "Twisted connected sums and special Riemannian holonomy",
+                "journal": "J. Reine Angew. Math.",
+                "volume": "565",
+                "year": 2003
+            },
+            {
+                "id": "chnp2015",
+                "authors": "Corti, A. et al.",
+                "title": "G2-manifolds and associative submanifolds via semi-Fano 3-folds",
+                "journal": "Duke Math. J.",
+                "volume": "164",
+                "year": 2015
+            },
         ]
 
-    def get_foundations(self) -> List[FoundationEntry]:
+    def get_foundations(self) -> List[Dict[str, Any]]:
         """
         Return foundational concepts for G2 geometry.
 
         Returns:
-            List of FoundationEntry instances
+            List of foundation dictionaries
         """
         return [
-            FoundationEntry(
-                id="holonomy-groups",
-                title="Holonomy Groups",
-                category="differential_geometry",
-                description="Group of parallel transport transformations on manifold"
-            ),
-            FoundationEntry(
-                id="associative-submanifolds",
-                title="Associative 3-folds",
-                category="differential_geometry",
-                description="Calibrated submanifolds of G2 manifolds"
-            ),
-            FoundationEntry(
-                id="euler-characteristic",
-                title="Euler Characteristic",
-                category="topology",
-                description="Topological invariant counting holes in manifolds"
-            ),
+            {
+                "id": "holonomy-groups",
+                "title": "Holonomy Groups",
+                "category": "differential_geometry",
+                "description": "Group of parallel transport transformations on manifold"
+            },
+            {
+                "id": "associative-submanifolds",
+                "title": "Associative 3-folds",
+                "category": "differential_geometry",
+                "description": "Calibrated submanifolds of G2 manifolds"
+            },
+            {
+                "id": "euler-characteristic",
+                "title": "Euler Characteristic",
+                "category": "topology",
+                "description": "Topological invariant counting holes in manifolds"
+            },
         ]
 
     def get_beginner_explanation(self) -> Dict[str, Any]:

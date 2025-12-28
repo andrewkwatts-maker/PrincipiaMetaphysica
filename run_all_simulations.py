@@ -18,21 +18,37 @@ ARCHITECTURE:
 
 SIMULATION PHASES (Topological Order):
 
+Phase 0 - Introduction (No Dependencies):
+  - introduction_v16_0: Theory introduction and overview (Section 1)
+
 Phase 1 - Root Simulations (No Dependencies):
   - g2_geometry_v16_0: G2 manifold topology (b2, b3, chi_eff, K_MATCHING)
   - gauge_unification_v16_0: GUT scale and unified coupling (M_GUT, ALPHA_GUT)
 
 Phase 2 - Core Physics (Depends on Phase 1):
   - fermion_generations_v16_0: Fermion chirality and Yukawa hierarchy
+  - chirality_v16_0: Chirality spinor structure from G2 holonomy (Section 4.1)
+  - ckm_matrix_v16_0: CKM matrix parameters (Section 4.3)
   - proton_decay_v16_0: Proton lifetime from gauge unification
   - higgs_mass_v16_0: Higgs mass from moduli stabilization
 
-Phase 3 - Precision Observables (Depends on Phase 2):
+Phase 3 - Precision Observables and Cosmology (Depends on Phase 2):
+  - cosmology_intro_v16_0: Cosmological framework introduction (Section 5.1)
+  - dark_energy_v16_0: Dark energy from pneuma field (Section 5.2)
   - neutrino_mixing_v16_0: PMNS matrix from G2 associative cycles
   - multi_sector_v16_0: Multi-sector cosmology (dark energy, mirror sectors)
 
 Phase 4 - Field Dynamics (Depends on All):
   - pneuma_mechanism_v16_0: Pneuma field coupling and flow
+  - thermal_time_v16_0: Thermal time evolution (depends on Pneuma outputs)
+
+Phase 5 - Discussion, Predictions, and Appendices (Depends on All):
+  - discussion_v16_0: Theory discussion and implications (Section 7)
+  - predictions_aggregator_v16_0: Testable predictions summary (Section 6)
+  - appendix_a_math_v16_0: Mathematical foundations (Appendix A)
+  - appendix_b_methods_v16_0: Computational methods (Appendix B)
+  - appendix_c_derivations_v16_0: Extended derivations (Appendix C)
+  - appendix_d_tables_v16_0: Parameter tables (Appendix D)
 
 OUTPUT STRUCTURE:
 {
@@ -88,14 +104,37 @@ from simulations.base import (
 from simulations.base.established import EstablishedPhysics
 
 # Import v16 simulations
+# Phase 0 - Introduction (narrative only, no dependencies)
+from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
+
+# Phase 1 - Root simulations (no dependencies)
 from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
 from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
+
+# Phase 2 - Core physics (depends on Phase 1)
 from simulations.v16.fermion.fermion_generations_v16_0 import FermionGenerationsV16
+from simulations.v16.fermion.chirality_v16_0 import ChiralitySpinorSimulation
+from simulations.v16.fermion.ckm_matrix_v16_0 import CKMMatrixSimulation
 from simulations.v16.proton.proton_decay_v16_0 import ProtonDecaySimulation
 from simulations.v16.higgs.higgs_mass_v16_0 import HiggsMassSimulation
+
+# Phase 3 - Precision observables and cosmology (depends on Phase 2)
+from simulations.v16.cosmology.cosmology_intro_v16_0 import CosmologyIntroV16
+from simulations.v16.cosmology.dark_energy_v16_0 import DarkEnergyV16
+from simulations.v16.thermal.thermal_time_v16_0 import ThermalTimeV16
 from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
 from simulations.v16.cosmology.multi_sector_v16_0 import MultiSectorV16
+
+# Phase 4 - Field dynamics (depends on all)
 from simulations.v16.pneuma.pneuma_mechanism_v16_0 import PneumaMechanismV16
+
+# Phase 5 - Discussion, predictions, and appendices (aggregators and reference material)
+from simulations.v16.discussion.discussion_v16_0 import DiscussionV16
+from simulations.v16.predictions.predictions_aggregator_v16_0 import PredictionsAggregatorV16
+from simulations.v16.appendices.appendix_a_math_v16_0 import AppendixAMathFoundations
+from simulations.v16.appendices.appendix_b_methods_v16_0 import AppendixBComputationalMethods
+from simulations.v16.appendices.appendix_c_derivations_v16_0 import AppendixCExtendedDerivations
+from simulations.v16.appendices.appendix_d_tables_v16_0 import AppendixDParameterTables
 
 
 @dataclass
@@ -132,21 +171,37 @@ class SimulationRunner:
 
         # Define simulation phases in topological order
         self.phases = {
+            0: [
+                IntroductionV16(),
+            ],
             1: [
                 G2GeometryV16(),
                 GaugeUnificationSimulation(),
             ],
             2: [
                 FermionGenerationsV16(),
+                ChiralitySpinorSimulation(),
+                CKMMatrixSimulation(),
                 ProtonDecaySimulation(),
                 HiggsMassSimulation(),
             ],
             3: [
+                CosmologyIntroV16(),
+                DarkEnergyV16(),
                 NeutrinoMixingSimulation(),
                 MultiSectorV16(),
             ],
             4: [
                 PneumaMechanismV16(),
+                ThermalTimeV16(),  # Moved to Phase 4 - depends on Pneuma outputs
+            ],
+            5: [
+                DiscussionV16(),
+                PredictionsAggregatorV16(),
+                AppendixAMathFoundations(),
+                AppendixBComputationalMethods(),
+                AppendixCExtendedDerivations(),
+                AppendixDParameterTables(),
             ],
         }
 
@@ -192,7 +247,7 @@ class SimulationRunner:
     def _load_established_physics(self) -> None:
         """Load experimental constants into the registry."""
         if self.verbose:
-            print("\n[PHASE 0] Loading Established Physics")
+            print("\n[INITIALIZATION] Loading Established Physics")
             print("-" * 80)
 
         EstablishedPhysics.load_into_registry(self.registry)
