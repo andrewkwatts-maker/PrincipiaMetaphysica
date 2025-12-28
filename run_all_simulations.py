@@ -794,22 +794,22 @@ class SimulationRunner:
                     theory_value=value,
                     experimental_value=bounds["experimental"],
                     experimental_sigma=bounds["sigma"],
-                    explanation=f"{sigma_dev:.2f}σ deviation from experimental value"
+                    explanation=f"{sigma_dev:.2f} sigma deviation from experimental value"
                 )
                 self.tensions.append(tension)
 
                 if self.verbose:
-                    print(f"  [TENSION] {param_path}: {sigma_dev:.2f}σ deviation")
+                    print(f"  [TENSION] {param_path}: {sigma_dev:.2f} sigma deviation")
                     print(f"            Theory: {value:.4g}, Experiment: {bounds['experimental']:.4g} ± {bounds['sigma']:.4g}")
 
             elif validation_result["status"] == "PASS" and self.verbose:
-                sigma_str = f" ({sigma_dev:.2f}σ)" if sigma_dev is not None else ""
+                sigma_str = f" ({sigma_dev:.2f}sigma)" if sigma_dev is not None else ""
                 print(f"  [PASS] {param_path}: {value:.4g}{sigma_str}")
 
         if self.verbose:
             print(f"\n[OK] Validated {params_checked} parameters against V16.0 bounds")
             if tensions_found > 0:
-                print(f"[WARNING] Found {tensions_found} parameter(s) with >2σ tension")
+                print(f"[WARNING] Found {tensions_found} parameter(s) with >2sigma tension")
 
     def _generate_validation_report(self) -> Dict[str, Any]:
         """
@@ -917,16 +917,18 @@ class SimulationRunner:
         }
 
         for param_key, param_data in self.registry._parameters.items():
-            # Extract parameter status/type from metadata
-            source = param_data.get("source", "")
-            description = param_data.get("description", "").lower()
+            # Extract parameter status/type from RegistryEntry attributes
+            source = getattr(param_data, "source", "")
+            metadata = getattr(param_data, "metadata", {})
+            description = metadata.get("description", "").lower() if isinstance(metadata, dict) else ""
+            status = getattr(param_data, "status", "DERIVED")
 
-            # Classify based on source and characteristics
-            if source == "EstablishedPhysics" or "pdg" in description or "nufit" in description or "desi" in description:
+            # Classify based on source, status, and characteristics
+            if status == "ESTABLISHED" or "ESTABLISHED" in source or "pdg" in description or "nufit" in description or "desi" in description:
                 classification["established"].append(param_key)
-            elif source == "g2_geometry_v16_0" or param_key.startswith("topology."):
+            elif source == "g2_geometry_v16_0" or param_key.startswith("topology.") or status == "GEOMETRIC":
                 classification["geometric"].append(param_key)
-            elif "calibrated" in description or "phenomenological" in description:
+            elif "calibrated" in description or "phenomenological" in description or status == "CALIBRATED":
                 classification["calibrated"].append(param_key)
             else:
                 classification["derived"].append(param_key)
@@ -970,7 +972,10 @@ class SimulationRunner:
                     for phase_sims in self.phases.values():
                         for sim in phase_sims:
                             if sim.metadata.id == sim_id:
-                                derivation_chain.extend(sim.metadata.depends_on)
+                                # Use getattr to safely access depends_on if it exists
+                                depends_on = getattr(sim.metadata, 'depends_on', [])
+                                if depends_on:
+                                    derivation_chain.extend(depends_on)
 
             # Enrich with provenance data
             enriched_params[param_key] = {
@@ -1224,9 +1229,9 @@ class SimulationRunner:
         # V16.0: Print tension warnings
         tensions = validation_report.get("tensions", [])
         if tensions:
-            print(f"\nTensions (>2σ deviations): {len(tensions)}")
+            print(f"\nTensions (>2sigma deviations): {len(tensions)}")
             for tension in tensions:
-                print(f"  - {tension['param']}: {tension['sigma']:.2f}σ")
+                print(f"  - {tension['param']}: {tension['sigma']:.2f} sigma")
                 print(f"    Theory: {tension['theory_value']:.4g}, Experiment: {tension['experimental_value']:.4g} ± {tension['experimental_sigma']:.4g}")
 
         if failed > 0:
@@ -1242,7 +1247,7 @@ class SimulationRunner:
         if failed == 0:
             print("[OK] ALL SIMULATIONS PASSED")
             if tensions:
-                print(f"[WARNING] {len(tensions)} TENSION(S) DETECTED (>2σ)")
+                print(f"[WARNING] {len(tensions)} TENSION(S) DETECTED (>2sigma)")
         else:
             print(f"[X] {failed} SIMULATION(S) FAILED")
 

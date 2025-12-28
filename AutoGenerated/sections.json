@@ -645,7 +645,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-28T22:19:06.980720"
+      "timestamp": "2025-12-29T07:04:11.845133"
     },
     "2": {
       "id": "2",
@@ -1474,7 +1474,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-28T22:19:07.015854"
+      "timestamp": "2025-12-29T07:04:11.895094"
     },
     "3": {
       "id": "3",
@@ -1675,7 +1675,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2025-12-28T22:19:07.013850"
+      "timestamp": "2025-12-29T07:04:11.893385"
     },
     "4": {
       "id": "4",
@@ -1834,7 +1834,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-28T22:19:07.015563"
+      "timestamp": "2025-12-29T07:04:11.894742"
     },
     "5": {
       "id": "5",
@@ -1846,7 +1846,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The G2 compactification naturally admits multiple sectors related by discrete symmetries. We consider a Z2 mirror sector that couples only gravitationally to the Standard Model sector. The relative strength of sector coupling is governed by a modulation width parameter, which we derive from first principles."
+          "content": "The G2 compactification naturally admits multiple sectors related by discrete symmetries. We consider a Z2 mirror sector that couples only gravitationally to the Standard Model sector. The modulation width between sectors emerges from G2 wavefunction overlap geometry: sigma = sqrt(b3/chi_eff) * L_G2, yielding sigma ~ 0.408 with no free parameters. This is the same geometric mechanism that produces Yukawa hierarchies in the fermion sector."
         },
         {
           "type": "formula",
@@ -1885,7 +1885,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The G2 compactification naturally admits multiple sectors related by discrete symmetries. We consider a Z2 mirror sector that couples only gravitationally to the Standard Model sector. The relative strength of sector coupling is governed by a modulation width parameter, which we derive from first principles."
+          "content": "The G2 compactification naturally admits multiple sectors related by discrete symmetries. We consider a Z2 mirror sector that couples only gravitationally to the Standard Model sector. The modulation width between sectors emerges from G2 wavefunction overlap geometry: sigma = sqrt(b3/chi_eff) * L_G2, yielding sigma ~ 0.408 with no free parameters. This is the same geometric mechanism that produces Yukawa hierarchies in the fermion sector."
         },
         {
           "type": "formula",
@@ -1945,7 +1945,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-28T22:19:07.015698"
+      "timestamp": "2025-12-29T07:04:11.894901"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -2070,7 +2070,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-28T22:19:07.015914"
+      "timestamp": "2025-12-29T07:04:11.895167"
     },
     "7": {
       "id": "7",
@@ -4501,7 +4501,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-28T22:19:07.016023"
+      "timestamp": "2025-12-29T07:04:11.895302"
     },
     "6": {
       "id": "6",
@@ -6644,7 +6644,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-28T22:19:07.016125"
+      "timestamp": "2025-12-29T07:04:11.895431"
     },
     "8": {
       "id": "8",
@@ -7285,7 +7285,7 @@
         "topology.HODGE_H31",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-28T22:19:07.029785"
+      "timestamp": "2025-12-29T07:04:11.913058"
     }
   }
 }
