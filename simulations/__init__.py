@@ -142,9 +142,9 @@ try:
     from .v16.proton import ProtonDecaySimulation
     from .v16.neutrino import NeutrinoMixingSimulation
     from .v16.fermion import FermionGenerationsV16 as FermionGenerationsSimulation
-    from .v16.cosmology import MultiSectorCosmologySimulation
-    from .v16.geometric import G2GeometrySimulation
-    from .v16.pneuma import PneumaMechanismSimulation
+    from .v16.cosmology import MultiSectorV16 as MultiSectorCosmologySimulation
+    from .v16.geometric import G2GeometryV16 as G2GeometrySimulation
+    from .v16.pneuma import PneumaMechanismV16 as PneumaMechanismSimulation
     _V16_SIMULATIONS_AVAILABLE = True
 except ImportError as e:
     _V16_SIMULATIONS_AVAILABLE = False

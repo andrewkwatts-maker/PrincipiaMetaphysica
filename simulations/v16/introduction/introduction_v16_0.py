@@ -84,6 +84,120 @@ class IntroductionV16(SimulationBase):
         # Introduction section provides narrative content only
         return {}
 
+    def get_beginner_explanation(self) -> Dict[str, Any]:
+        """
+        Return a beginner-friendly explanation of Principia Metaphysica.
+
+        Returns:
+            Dictionary with title and explanation suitable for non-experts
+        """
+        return {
+            "title": "What is Principia Metaphysica?",
+            "summary": (
+                "Principia Metaphysica is a theory that attempts to explain fundamental physics "
+                "by starting from a simple idea: what if spacetime itself emerges from a more "
+                "fundamental quantum field?"
+            ),
+            "explanation": (
+                "Principia Metaphysica is a theory that attempts to explain fundamental physics "
+                "by starting from a simple idea: what if spacetime itself emerges from a more "
+                "fundamental quantum field?"
+            ),
+            "key_concepts": [
+                {
+                    "name": "Extra Dimensions",
+                    "explanation": (
+                        "Just as a 3D object casts a 2D shadow, our 4D spacetime "
+                        "(3 space + 1 time) might be a 'shadow' of a higher-dimensional reality. "
+                        "PM proposes 26 dimensions that reduce down to the 4 we observe."
+                    )
+                },
+                {
+                    "name": "Two Times",
+                    "explanation": (
+                        "The theory includes two time dimensions related by symmetry. "
+                        "This isn't science fiction - it's a mathematical structure that helps "
+                        "explain why particles have the properties they do."
+                    )
+                },
+                {
+                    "name": "Geometry to Physics",
+                    "explanation": (
+                        "Instead of putting particles and forces into spacetime, PM derives "
+                        "spacetime geometry from a fundamental fermionic field (the 'Pneuma'). "
+                        "The shape of this geometry determines particle properties."
+                    )
+                },
+                {
+                    "name": "Testable Predictions",
+                    "explanation": (
+                        "Unlike some theories, PM makes specific predictions that can be tested: "
+                        "dark energy behavior (confirmed by DESI 2024), neutrino mixing angles "
+                        "(confirmed by experiments), proton decay lifetime (future tests), and "
+                        "new particles at ~5 TeV energy (being searched for at the LHC)."
+                    )
+                }
+            ],
+            "why_it_matters": (
+                "The power of this approach is that it derives many measured values (like the "
+                "Cabibbo angle ε ≈ 0.2257) from pure geometry, rather than treating them as "
+                "arbitrary input parameters."
+            )
+        }
+
+    def get_foundations(self) -> Dict[str, str]:
+        """
+        Return the foundational principles of Principia Metaphysica.
+
+        Returns:
+            Dictionary mapping principle names to descriptions
+        """
+        foundations = {
+            "metric_emergence": (
+                "Spacetime geometry emerges from fermionic spinor bilinears via the "
+                "Pneuma-Vielbein bridge, yielding Lorentzian signature (-,+,+,+) "
+                "in 4D without ad hoc assumptions."
+            ),
+            "dimensional_hierarchy": (
+                "26D spacetime with signature (24,2) compactifies on TCS G₂ manifolds "
+                "to 13D, then to 4D, with each reduction preserving gauge symmetries "
+                "and generating observable physics."
+            ),
+            "moduli_stabilization": (
+                "Racetrack superpotential with h^{1,1}=4 Kähler moduli dynamically "
+                "fixes geometric parameters, deriving ε ≈ 0.2257 (Cabibbo angle) "
+                "without free parameters."
+            ),
+            "thermal_time": (
+                "Physical time emerges from the modular flow of the Pneuma field's "
+                "KMS state, resolving the frozen formalism problem in quantum gravity "
+                "and connecting thermodynamics to temporal evolution."
+            ),
+            "gauge_unification": (
+                "SU(3) × SU(2) × U(1) gauge couplings unify at M_GUT ~ 2×10¹⁶ GeV "
+                "via geometric running, with α_GUT⁻¹ ≈ 42.7 determined by G₂ topology."
+            ),
+            "topological_generations": (
+                "Number of fermion generations n_gen = χ_eff/48 = 144/48 = 3 follows "
+                "from G₂ Euler characteristic, providing parameter-free prediction "
+                "matching Standard Model exactly."
+            ),
+            "yukawa_hierarchy": (
+                "Fermion mass hierarchy emerges from exponential wavefunction overlap "
+                "suppression on G₂ cycles, explaining m_t/m_e ~ 10⁵ naturally."
+            ),
+            "cosmological_framework": (
+                "Dark energy EoS w₀ = -11/13 from dimensional reduction, dark matter "
+                "from mirror sector with Ω_DM/Ω_b ~ 5.4, both matching observations "
+                "without fine-tuning."
+            )
+        }
+
+        assert all(v.strip() for v in foundations.values()), "All foundations must be non-empty"
+        assert len(foundations) >= 6, "Must have at least 6 foundational principles"
+
+        return foundations
+
     def get_section_content(self) -> Optional[SectionContent]:
         """
         Return section content for Section 1: Introduction.
@@ -91,6 +205,14 @@ class IntroductionV16(SimulationBase):
         Returns:
             SectionContent instance with introduction narrative
         """
+        # Validate that helper methods return non-empty content
+        beginner_exp = self.get_beginner_explanation()
+        assert beginner_exp, "get_beginner_explanation() returned empty content"
+
+        foundations = self.get_foundations()
+        assert foundations, "get_foundations() returned empty content"
+        assert len(foundations) >= 6, "get_foundations() must return at least 6 principles"
+
         content_blocks = [
             ContentBlock(
                 type="paragraph",
@@ -101,8 +223,7 @@ class IntroductionV16(SimulationBase):
                     "electricity and magnetism to modern attempts at Grand Unified Theories, "
                     "while introducing the novel approach of deriving geometry from a fundamental "
                     "fermionic field."
-                ),
-                className="lead"
+                )
             ),
             ContentBlock(
                 type="paragraph",

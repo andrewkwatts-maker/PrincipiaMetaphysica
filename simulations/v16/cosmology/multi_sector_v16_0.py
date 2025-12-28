@@ -758,6 +758,46 @@ class MultiSectorV16(SimulationBase):
 
 
 # ============================================================================
+# Self-Validation Assertions
+# ============================================================================
+
+# Create instance for validation
+_validation_instance = MultiSectorV16()
+
+# Assert metadata is complete
+assert _validation_instance.metadata is not None, "metadata() must not return None"
+assert _validation_instance.metadata.id == "multi_sector_v16_0", "metadata.id must be 'multi_sector_v16_0'"
+assert _validation_instance.metadata.subsection_id == "5.3", "metadata.subsection_id must be '5.3'"
+
+# Assert section content is complete
+_section_content = _validation_instance.get_section_content()
+assert _section_content is not None, "get_section_content() must not return None"
+assert _section_content.subsection_id == "5.3", "section_content.subsection_id must be '5.3'"
+assert len(_section_content.content_blocks) > 0, "section_content must have content_blocks"
+assert len(_section_content.formula_refs) > 0, "section_content must have formula_refs"
+
+# Assert all formulas have both inputParams and outputParams
+_formulas = _validation_instance.get_formulas()
+assert _formulas is not None and len(_formulas) > 0, "get_formulas() must return non-empty list"
+for _formula in _formulas:
+    assert hasattr(_formula, 'inputParams') and _formula.inputParams is not None, f"Formula {_formula.id} missing inputParams"
+    assert hasattr(_formula, 'outputParams') and _formula.outputParams is not None, f"Formula {_formula.id} missing outputParams"
+    assert hasattr(_formula, 'input_params') and _formula.input_params is not None, f"Formula {_formula.id} missing input_params"
+    assert hasattr(_formula, 'output_params') and _formula.output_params is not None, f"Formula {_formula.id} missing output_params"
+
+# Assert beginner explanation is complete
+_beginner = _validation_instance.get_beginner_explanation()
+assert _beginner is not None, "get_beginner_explanation() must not return None"
+assert 'icon' in _beginner, "beginner_explanation must have 'icon'"
+assert 'title' in _beginner, "beginner_explanation must have 'title'"
+assert 'simpleExplanation' in _beginner, "beginner_explanation must have 'simpleExplanation'"
+assert 'analogy' in _beginner, "beginner_explanation must have 'analogy'"
+assert 'keyTakeaway' in _beginner, "beginner_explanation must have 'keyTakeaway'"
+assert 'technicalDetail' in _beginner, "beginner_explanation must have 'technicalDetail'"
+assert 'prediction' in _beginner, "beginner_explanation must have 'prediction'"
+
+
+# ============================================================================
 # Export and Standalone Execution
 # ============================================================================
 
