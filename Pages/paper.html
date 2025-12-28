@@ -615,6 +615,79 @@
             margin-top: 0.25rem;
         }
 
+        /* Appendix list styling in TOC */
+        .toc-appendices {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .toc-appendices li {
+            margin: 0.4rem 0;
+        }
+
+        /* Appendix Navigation Component */
+        .appendix-nav {
+            background: rgba(102, 126, 234, 0.05);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 8px;
+            padding: 1.25rem;
+            margin: 2rem 0;
+        }
+
+        .appendix-nav h3 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .appendix-nav-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .appendix-nav-link {
+            color: #667eea;
+            text-decoration: none;
+            padding: 0.5rem;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+            display: block;
+            font-size: 0.9rem;
+        }
+
+        .appendix-nav-link:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--accent-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            transition: transform 0.2s;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* Appendix section styling */
+        .pm-paper-container .paper-section[data-section-id^="appendix"],
+        .pm-paper-container .paper-section.appendix-section {
+            border-top: 2px solid rgba(102, 126, 234, 0.3);
+            padding-top: 2rem;
+            margin-top: 3rem;
+        }
+
         /* Empty section placeholders */
         .empty-section-placeholder,
         .empty-subsection-placeholder {
@@ -674,6 +747,101 @@
 
         .pm-paper-container li {
             margin: 0.3rem 0;
+        }
+
+        /* Academic block styles - note, theorem, proof, etc. */
+        .pm-paper-container .academic-note,
+        .pm-paper-container .remark-block {
+            background: #f8f9fa;
+            border-left: 3px solid #667eea;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .pm-paper-container .definition-block {
+            background: #e3f2fd;
+            border-left: 4px solid #2196f3;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .pm-paper-container .definition-term {
+            font-weight: 600;
+            color: #1976d2;
+            margin-bottom: 0.5rem;
+        }
+
+        .pm-paper-container .theorem-block {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 6px;
+        }
+
+        .pm-paper-container .theorem-header {
+            font-weight: 600;
+            color: #e65100;
+            margin-bottom: 0.75rem;
+            font-size: 1.05em;
+        }
+
+        .pm-paper-container .theorem-label {
+            font-style: italic;
+            margin-right: 0.5rem;
+        }
+
+        .pm-paper-container .proof-block {
+            background: #fafafa;
+            border-left: 3px solid #9e9e9e;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0 1.5rem 2rem;
+            border-radius: 4px;
+        }
+
+        .pm-paper-container .proof-header {
+            font-style: italic;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #616161;
+        }
+
+        .pm-paper-container .proof-end {
+            text-align: right;
+            font-size: 1.2em;
+            margin-top: 0.75rem;
+            color: #616161;
+        }
+
+        .pm-paper-container .example-block {
+            background: #e8f5e9;
+            border-left: 4px solid #4caf50;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .pm-paper-container .example-header {
+            font-weight: 600;
+            color: #2e7d32;
+            margin-bottom: 0.75rem;
+        }
+
+        .pm-paper-container .highlight-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08), rgba(118, 75, 162, 0.08));
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .pm-paper-container .highlight-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            font-size: 1.05em;
         }
 
         /* Code blocks */
@@ -768,7 +936,8 @@
             .download-btn,
             .render-stats,
             .empty-section-placeholder,
-            .empty-subsection-placeholder {
+            .empty-subsection-placeholder,
+            .appendix-nav {
                 display: none !important;
             }
 
@@ -805,9 +974,19 @@
                 page-break-before: auto;
             }
 
+            /* Appendices start on new page */
+            .pm-paper-container .paper-section.appendix-section {
+                page-break-before: always;
+            }
+
             /* Remove the visual separator in print */
             .pm-paper-container .paper-section::before {
                 display: none;
+            }
+
+            /* Keep tables together when possible */
+            .pm-paper-container table {
+                page-break-inside: avoid;
             }
 
             @page {

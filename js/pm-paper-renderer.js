@@ -274,17 +274,51 @@
         tocDiv.className = 'paper-toc';
         tocDiv.innerHTML = '<h2>Table of Contents</h2>';
 
-        const tocList = document.createElement('ol');
-        tocList.className = 'toc-list';
+        // Create two-column grid for main sections and appendices
+        const tocGrid = document.createElement('div');
+        tocGrid.className = 'toc-grid';
 
-        // Sort sections by order or ID (non-numeric IDs get sorted to end)
-        const sortedSections = Object.values(sections).sort((a, b) => {
-            const orderA = a.order || parseInt(a.id) || 999;
-            const orderB = b.order || parseInt(b.id) || 999;
+        // Split sections into main sections (numeric) and appendices (letters)
+        const mainSections = [];
+        const appendices = [];
+
+        for (const section of Object.values(sections)) {
+            const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' ||
+                              (section.title && section.title.startsWith('Appendix'));
+            if (isAppendix) {
+                appendices.push(section);
+            } else {
+                mainSections.push(section);
+            }
+        }
+
+        // Sort main sections by order or numeric ID
+        mainSections.sort((a, b) => {
+            const orderA = a.order || parseInt(a.id) || 0;
+            const orderB = b.order || parseInt(b.id) || 0;
             return orderA - orderB;
         });
 
-        for (const section of sortedSections) {
+        // Sort appendices by letter ID
+        appendices.sort((a, b) => {
+            // Extract letter from ID or title
+            const getAppendixLetter = (sec) => {
+                if (/^[A-Z]$/.test(sec.id)) return sec.id;
+                const match = sec.title?.match(/Appendix ([A-Z])/);
+                return match ? match[1] : 'Z';
+            };
+            return getAppendixLetter(a).localeCompare(getAppendixLetter(b));
+        });
+
+        // Render main sections column
+        const mainColumn = document.createElement('div');
+        mainColumn.className = 'toc-column';
+        mainColumn.innerHTML = '<div class="toc-column-header">Main Sections</div>';
+
+        const mainList = document.createElement('ol');
+        mainList.className = 'toc-list';
+
+        for (const section of mainSections) {
             const li = document.createElement('li');
             li.innerHTML = `
                 <a href="#section-${section.id}" class="toc-link">
@@ -292,7 +326,7 @@
                     <span class="toc-title">${section.title}</span>
                 </a>
             `;
-            tocList.appendChild(li);
+            mainList.appendChild(li);
 
             // Subsections (if any)
             if (section.subsections && section.subsections.length > 0) {
@@ -312,7 +346,34 @@
             }
         }
 
-        tocDiv.appendChild(tocList);
+        mainColumn.appendChild(mainList);
+        tocGrid.appendChild(mainColumn);
+
+        // Render appendices column (if any)
+        if (appendices.length > 0) {
+            const appendixColumn = document.createElement('div');
+            appendixColumn.className = 'toc-column';
+            appendixColumn.innerHTML = '<div class="toc-column-header">Appendices</div>';
+
+            const appendixList = document.createElement('ul');
+            appendixList.className = 'toc-list toc-appendices';
+
+            for (const appendix of appendices) {
+                const li = document.createElement('li');
+                const appendixId = appendix.id;
+                li.innerHTML = `
+                    <a href="#section-${appendixId}" class="toc-link">
+                        <span class="toc-title">${appendix.title}</span>
+                    </a>
+                `;
+                appendixList.appendChild(li);
+            }
+
+            appendixColumn.appendChild(appendixList);
+            tocGrid.appendChild(appendixColumn);
+        }
+
+        tocDiv.appendChild(tocGrid);
         container.appendChild(tocDiv);
     }
 
@@ -326,14 +387,49 @@
         const sectionsDiv = document.createElement('div');
         sectionsDiv.className = 'paper-sections';
 
-        // Sort sections by order
+        // Sort sections: main sections first (by order/ID), then appendices (alphabetically)
         const sortedSections = Object.values(sections).sort((a, b) => {
+            const isAppendixA = /^[A-Z]$/.test(a.id) || a.type === 'appendix' ||
+                               (a.title && a.title.startsWith('Appendix'));
+            const isAppendixB = /^[A-Z]$/.test(b.id) || b.type === 'appendix' ||
+                               (b.title && b.title.startsWith('Appendix'));
+
+            // Main sections come before appendices
+            if (!isAppendixA && isAppendixB) return -1;
+            if (isAppendixA && !isAppendixB) return 1;
+
+            // Both are appendices - sort by letter
+            if (isAppendixA && isAppendixB) {
+                const getAppendixLetter = (sec) => {
+                    if (/^[A-Z]$/.test(sec.id)) return sec.id;
+                    const match = sec.title?.match(/Appendix ([A-Z])/);
+                    return match ? match[1] : 'Z';
+                };
+                return getAppendixLetter(a).localeCompare(getAppendixLetter(b));
+            }
+
+            // Both are main sections - sort by order or numeric ID
             const orderA = a.order || parseInt(a.id) || 0;
             const orderB = b.order || parseInt(b.id) || 0;
             return orderA - orderB;
         });
 
+        // Track if we've rendered the appendix nav yet
+        let appendixNavRendered = false;
+
         for (const section of sortedSections) {
+            // Insert appendix navigation before first appendix
+            const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' ||
+                              (section.title && section.title.startsWith('Appendix'));
+
+            if (isAppendix && !appendixNavRendered) {
+                const appendixNav = renderAppendixNavigation(sortedSections);
+                if (appendixNav) {
+                    sectionsDiv.appendChild(appendixNav);
+                }
+                appendixNavRendered = true;
+            }
+
             const sectionEl = await renderSection(section, options);
             if (sectionEl) {
                 sectionsDiv.appendChild(sectionEl);
@@ -341,6 +437,49 @@
         }
 
         container.appendChild(sectionsDiv);
+    }
+
+    /**
+     * Render appendix navigation component
+     * @private
+     */
+    function renderAppendixNavigation(allSections) {
+        const appendices = allSections.filter(s =>
+            /^[A-Z]$/.test(s.id) || s.type === 'appendix' ||
+            (s.title && s.title.startsWith('Appendix'))
+        );
+
+        if (appendices.length === 0) return null;
+
+        const navDiv = document.createElement('div');
+        navDiv.className = 'appendix-nav';
+        navDiv.id = 'appendix-navigation';
+
+        const title = document.createElement('h3');
+        title.textContent = `Appendices (${appendices.length})`;
+        navDiv.appendChild(title);
+
+        const grid = document.createElement('div');
+        grid.className = 'appendix-nav-grid';
+
+        for (const appendix of appendices) {
+            const link = document.createElement('a');
+            link.href = `#section-${appendix.id}`;
+            link.className = 'appendix-nav-link';
+            link.textContent = appendix.title;
+            grid.appendChild(link);
+        }
+
+        navDiv.appendChild(grid);
+
+        // Back to top link
+        const backLink = document.createElement('a');
+        backLink.href = '#';
+        backLink.className = 'back-to-top';
+        backLink.textContent = 'Back to Top';
+        navDiv.appendChild(backLink);
+
+        return navDiv;
     }
 
     /**
@@ -364,7 +503,13 @@
         sectionDiv.className = 'paper-section';
         sectionDiv.setAttribute('data-section-id', sectionId);
 
-        // Add appendix alias for letter-based section IDs (e.g., B -> appendix-b)
+        // Add appendix class and alias for letter-based section IDs (e.g., B -> appendix-b)
+        const isAppendix = /^[A-Z]$/.test(sectionId) || section.type === 'appendix' ||
+                          (sectionTitle && sectionTitle.startsWith('Appendix'));
+        if (isAppendix) {
+            sectionDiv.classList.add('appendix-section');
+        }
+
         if (/^[A-Za-z]$/.test(sectionId)) {
             const appendixAlias = document.createElement('a');
             appendixAlias.id = `appendix-${sectionId.toLowerCase()}`;
@@ -660,6 +805,77 @@
                 blockDiv.innerHTML = renderTable(block);
                 break;
 
+            case 'note':
+                // Academic note/aside
+                blockDiv.className = 'academic-note';
+                blockDiv.innerHTML = `<div class="note-content">${block.content || ''}</div>`;
+                blockDiv.setAttribute('role', 'note');
+                break;
+
+            case 'highlight_box':
+                // Highlighted information box
+                blockDiv.className = 'highlight-box';
+                blockDiv.innerHTML = `
+                    ${block.title ? `<div class="highlight-title">${block.title}</div>` : ''}
+                    <div class="highlight-content">${block.content || ''}</div>
+                `;
+                blockDiv.setAttribute('role', 'complementary');
+                break;
+
+            case 'definition':
+                // Mathematical definition block
+                blockDiv.className = 'definition-block';
+                blockDiv.innerHTML = `
+                    ${block.term ? `<div class="definition-term"><strong>Definition:</strong> ${block.term}</div>` : ''}
+                    <div class="definition-content">${block.content || ''}</div>
+                `;
+                blockDiv.setAttribute('role', 'definition');
+                break;
+
+            case 'theorem':
+                // Theorem block
+                blockDiv.className = 'theorem-block';
+                blockDiv.innerHTML = `
+                    <div class="theorem-header">
+                        <span class="theorem-label">${block.label || 'Theorem'}</span>
+                        ${block.title ? `<span class="theorem-title">${block.title}</span>` : ''}
+                    </div>
+                    <div class="theorem-content">${block.content || ''}</div>
+                `;
+                blockDiv.setAttribute('role', 'article');
+                break;
+
+            case 'proof':
+                // Proof block
+                blockDiv.className = 'proof-block';
+                blockDiv.innerHTML = `
+                    <div class="proof-header">Proof.</div>
+                    <div class="proof-content">${block.content || ''}</div>
+                    <div class="proof-end">∎</div>
+                `;
+                blockDiv.setAttribute('role', 'article');
+                break;
+
+            case 'remark':
+                // Remark/observation block
+                blockDiv.className = 'remark-block';
+                blockDiv.innerHTML = `
+                    <div class="remark-header">${block.title || 'Remark'}</div>
+                    <div class="remark-content">${block.content || ''}</div>
+                `;
+                blockDiv.setAttribute('role', 'note');
+                break;
+
+            case 'example':
+                // Worked example block
+                blockDiv.className = 'example-block';
+                blockDiv.innerHTML = `
+                    <div class="example-header">${block.title || 'Example'}</div>
+                    <div class="example-content">${block.content || ''}</div>
+                `;
+                blockDiv.setAttribute('role', 'article');
+                break;
+
             case 'derivation':
             case 'derivation_box':
                 blockDiv.className = 'derivation-box';
@@ -709,6 +925,7 @@
             default:
                 // Handle unknown types gracefully - ensure content is a string
                 blockDiv.innerHTML = safeStringify(block.content || block.text, 'unknown.content');
+                console.warn(`PMPaperRenderer: Unknown block type: ${block.type}`);
         }
 
         return blockDiv;
@@ -1253,7 +1470,12 @@
 
                     // Auto-extract .value property if present
                     if (value !== null && value !== undefined && typeof value === 'object' && 'value' in value) {
-                        value = value.value;
+                        // Check for renderable_value first (for complex values like dicts/lists)
+                        if ('renderable_value' in value) {
+                            value = value.renderable_value;
+                        } else {
+                            value = value.value;
+                        }
                     }
 
                     if (value !== null && value !== undefined) {

@@ -135,3 +135,91 @@ p + .academic-equation {
     margin-top: -80px;
     visibility: hidden;
 }
+
+
+/* Reference Formatting */
+
+.references {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border, #e0e0e0);
+}
+
+.references h3 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.references ol {
+    list-style: none;
+    counter-reset: ref-counter;
+    padding-left: 0;
+}
+
+.references ol li {
+    counter-increment: ref-counter;
+    padding-left: 2.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.references ol li::before {
+    content: "[" counter(ref-counter) "]";
+    position: absolute;
+    left: 0;
+    color: #666;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* arXiv links */
+.arxiv-link {
+    color: #8b7fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+}
+
+.arxiv-link:hover {
+    text-decoration: underline;
+    color: #6b5fd9;
+}
+
+/* DOI links */
+.doi-link {
+    color: #4a9eff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+}
+
+.doi-link:hover {
+    text-decoration: underline;
+    color: #2a7ede;
+}
+
+/* Citation in text */
+.cite {
+    color: #8b7fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.cite:hover {
+    text-decoration: underline;
+}
+
+/* Inline references */
+.inline-ref {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-left: 0.3em;
+}

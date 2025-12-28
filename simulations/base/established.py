@@ -481,6 +481,23 @@ class EstablishedPhysics:
                 source="ESTABLISHED:G2_THEORY",
                 description="Orientation sum for fermion chirality"
             ),
+            # Consciousness parameters for Appendix M (Speculative Extensions)
+            EstablishedParameter(
+                path="consciousness.coherence_fraction",
+                value=1e-5,  # ~0.001% of neurons phase-coherent
+                uncertainty=0.5e-5,
+                units="dimensionless",
+                source="INPUT:SPECULATIVE",
+                description="Fraction of neurons in quantum-coherent state (Penrose-Hameroff Orch-OR)"
+            ),
+            EstablishedParameter(
+                path="consciousness.neuron_count",
+                value=86e9,  # 86 billion neurons in human brain
+                uncertainty=10e9,
+                units="count",
+                source="ESTABLISHED:NEUROSCIENCE",
+                description="Total neuron count in human brain"
+            ),
         ]
 
         for param in params:
