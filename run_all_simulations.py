@@ -537,7 +537,107 @@ class SimulationRunner:
             print(f"  - Beginner guide topics: {len(beginner_explanations['topics'])}")
             print(f"[OK] Beginner guide exported to: {beginner_guide_path}")
 
+        # Split theory_output.json into cacheable components
+        self._split_theory_output(output_path)
+
         return output_data
+
+    def _split_theory_output(self, theory_path: Path) -> None:
+        """
+        Split theory_output.json into smaller cacheable component files.
+
+        Creates: formulas.json, parameters.json, sections.json, metadata.json,
+                 statistics.json, index.json
+        """
+        if self.verbose:
+            print("\n[SPLIT] Generating cacheable component files")
+            print("-" * 80)
+
+        output_dir = theory_path.parent
+
+        with open(theory_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+
+        # 1. Formulas
+        if 'formulas' in data:
+            formulas_data = {
+                'version': data.get('metadata', {}).get('version', '16.0'),
+                'count': len(data['formulas']),
+                'formulas': data['formulas']
+            }
+            formulas_path = output_dir / 'formulas.json'
+            with open(formulas_path, 'w', encoding='utf-8') as f:
+                json.dump(formulas_data, f, indent=2, ensure_ascii=False)
+            if self.verbose:
+                print(f"  Created: formulas.json ({len(data['formulas'])} formulas)")
+
+        # 2. Parameters
+        if 'parameters' in data:
+            params_data = {
+                'version': data.get('metadata', {}).get('version', '16.0'),
+                'parameters': data['parameters']
+            }
+            params_path = output_dir / 'parameters.json'
+            with open(params_path, 'w', encoding='utf-8') as f:
+                json.dump(params_data, f, indent=2, ensure_ascii=False)
+            if self.verbose:
+                print(f"  Created: parameters.json ({len(data['parameters'])} params)")
+
+        # 3. Sections
+        if 'sections' in data:
+            sections_data = {
+                'version': data.get('metadata', {}).get('version', '16.0'),
+                'count': len(data['sections']),
+                'sections': data['sections']
+            }
+            sections_path = output_dir / 'sections.json'
+            with open(sections_path, 'w', encoding='utf-8') as f:
+                json.dump(sections_data, f, indent=2, ensure_ascii=False)
+            if self.verbose:
+                print(f"  Created: sections.json ({len(data['sections'])} sections)")
+
+        # 4. Metadata
+        metadata = {
+            'version': data.get('metadata', {}).get('version', '16.0'),
+            'timestamp': data.get('metadata', {}).get('timestamp'),
+            'validation': data.get('validation', {})
+        }
+        metadata_path = output_dir / 'metadata.json'
+        with open(metadata_path, 'w', encoding='utf-8') as f:
+            json.dump(metadata, f, indent=2, ensure_ascii=False)
+        if self.verbose:
+            print(f"  Created: metadata.json")
+
+        # 5. Statistics
+        stats_data = {
+            'version': data.get('metadata', {}).get('version', '16.0'),
+            'statistics': data.get('statistics', {}),
+            'framework_statistics': data.get('framework_statistics', {})
+        }
+        stats_path = output_dir / 'statistics.json'
+        with open(stats_path, 'w', encoding='utf-8') as f:
+            json.dump(stats_data, f, indent=2, ensure_ascii=False)
+        if self.verbose:
+            print(f"  Created: statistics.json")
+
+        # 6. Index file
+        index = {
+            'version': data.get('metadata', {}).get('version', '16.0'),
+            'components': [
+                {'name': 'formulas', 'file': 'formulas.json'},
+                {'name': 'parameters', 'file': 'parameters.json'},
+                {'name': 'sections', 'file': 'sections.json'},
+                {'name': 'metadata', 'file': 'metadata.json'},
+                {'name': 'statistics', 'file': 'statistics.json'},
+                {'name': 'beginner-guide', 'file': 'beginner-guide.json'},
+            ]
+        }
+        index_path = output_dir / 'index.json'
+        with open(index_path, 'w', encoding='utf-8') as f:
+            json.dump(index, f, indent=2, ensure_ascii=False)
+        if self.verbose:
+            print(f"  Created: index.json")
+            print(f"[OK] Split into {len(index['components'])} component files")
 
     def _print_summary(self, validation_report: Dict[str, Any]) -> None:
         """
