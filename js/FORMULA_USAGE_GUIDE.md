@@ -70,7 +70,7 @@ This demonstrates all features:
 **Derivation chain:**
 - Parent formulas: spacetime-26d, clifford-26d
 - Established physics: f-theory-index
-- Verification page: sections/geometric-framework.html
+- Verification page: sections.html#2
 
 ---
 
@@ -323,7 +323,7 @@ Planned features:
 
 See these pages for live examples:
 
-- `sections/geometric-framework.html` - Generation number and topology
+- `sections.html#2` - Generation number and topology
 - `sections/cosmology.html` - Dark energy formulas
 - `sections/gauge-unification.html` - GUT scale and proton decay
 - `sections/fermion-sector.html` - PMNS mixing angles

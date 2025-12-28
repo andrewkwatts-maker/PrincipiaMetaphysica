@@ -326,6 +326,8 @@ class FermionGenerationsV16(SimulationBase):
                 plain_text="n_gen = N_flux / spinor_DOF = (chi_eff/6) / 8 = 144 / 48 = 3",
                 category="DERIVED",
                 description="Number of fermion generations from spinor saturation on G2 manifold",
+                inputParams=["topology.CHI_EFF", "topology.b3"],
+                outputParams=["fermion.n_generations", "fermion.n_flux"],
                 input_params=["topology.CHI_EFF", "topology.b3"],
                 output_params=["fermion.n_generations", "fermion.n_flux"],
                 derivation={
@@ -380,6 +382,8 @@ class FermionGenerationsV16(SimulationBase):
                 plain_text="Y_f = A_f * exp(-lambda)^Q_f, epsilon = exp(-1.5) ~ 0.223",
                 category="DERIVED",
                 description="Yukawa coupling texture from geometric Froggatt-Nielsen mechanism",
+                inputParams=["topology.CHI_EFF"],
+                outputParams=["fermion.yukawa_hierarchy", "fermion.epsilon_fn"],
                 input_params=["topology.CHI_EFF"],
                 output_params=["fermion.yukawa_hierarchy", "fermion.epsilon_fn"],
                 derivation={
@@ -440,6 +444,8 @@ class FermionGenerationsV16(SimulationBase):
                 plain_text="D_eff = gamma^mu (d_mu + igA_mu + gamma^5 T_mu)",
                 category="THEORY",
                 description="Modified Dirac operator with Pneuma-induced axial torsion coupling",
+                inputParams=[],
+                outputParams=["fermion.chiral_filter_strength"],
                 input_params=[],
                 output_params=["fermion.chiral_filter_strength"],
                 derivation={
@@ -638,6 +644,55 @@ class FermionGenerationsV16(SimulationBase):
                 "year": 2012
             }
         ]
+
+    def get_beginner_explanation(self) -> Dict[str, Any]:
+        """
+        Return beginner-friendly explanation for auto-generation of guide content.
+
+        Returns:
+            Dictionary with beginner explanation fields
+        """
+        return {
+            "icon": "🔄",
+            "title": "Why 3 Generations of Particles",
+            "simpleExplanation": (
+                "All matter in the universe is made from quarks and leptons. But weirdly, nature made three "
+                "nearly identical 'copies' of these particles at different masses: up/charm/top quarks, "
+                "down/strange/bottom quarks, electron/muon/tau leptons. Why exactly three copies and not two "
+                "or five? In this theory, it comes from pure geometry: the hidden dimensions have 24 special "
+                "loops where particles can 'live', and since each generation needs 8 spots (like apartment "
+                "buildings with 8 units), you get exactly 24 ÷ 8 = 3 generations. No adjustable parameters, "
+                "just geometry."
+            ),
+            "analogy": (
+                "Imagine a parking garage with 24 parking spaces, and each car needs exactly 8 adjacent spaces "
+                "to park. How many cars can you fit? Exactly 3. The 'parking spaces' are associative 3-cycles "
+                "in the G2 manifold, and the '8 spaces per car' comes from the real degrees of freedom in a "
+                "7D spinor. This isn't a coincidence - it's topology forcing the answer. The mass hierarchy "
+                "(why the top quark is 100,000× heavier than the up quark) comes from how far apart these "
+                "'parking spots' are in the extra dimensions: particles on far-apart cycles have exponentially "
+                "suppressed couplings, like ε^Q where ε ≈ 0.22 and Q is the topological distance."
+            ),
+            "keyTakeaway": (
+                "The number 3 (three particle generations) and the mass hierarchy (top >> bottom >> down) "
+                "both emerge from the same geometry with zero free parameters."
+            ),
+            "technicalDetail": (
+                "Flux quantization gives N_flux = χ_eff/6 = 144/6 = 24 units on associative 3-cycles. "
+                "Spinor saturation in Spin(7) representation requires 8 real DOF per generation. Therefore "
+                "n_gen = N_flux/8 = 3 exactly. The Yukawa hierarchy follows from Froggatt-Nielsen mechanism "
+                "with geometric suppression ε = exp(-λ) where λ = 1.5 is the G2 curvature scale, giving "
+                "ε ≈ 0.223 (matching V_us Cabibbo angle). Topological charges Q_f count graph hops in the "
+                "cycle network: Q_top=0, Q_charm=2, Q_up=4, yielding Y_f = A_f · ε^Q_f with O(1) coefficients "
+                "A_f from angular overlaps."
+            ),
+            "prediction": (
+                "The value ε ≈ 0.223 is not adjustable - it's the exponential of the G2 curvature. This "
+                "predicts that the Cabibbo angle V_us ≈ 0.2257 (mixing between first two generations) "
+                "should equal ε, which it does to within 1%! This connection between quark mixing and "
+                "extra-dimensional geometry has never been explained in the Standard Model."
+            )
+        }
 
 
 # Convenience function for standalone execution

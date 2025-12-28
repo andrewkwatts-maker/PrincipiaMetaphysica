@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<!--
+    Test Page for PM Beginner Guide Loader
+    Validates the beginner guide loader infrastructure
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test: PM Beginner Guide Loader</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- MathJax for equation rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                processEnvironments: true
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                ignoreHtmlClass: 'mathjax-ignore'
+            }
+        };
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+            color: #f8f9fa;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .test-section h2 {
+            color: #8b7fff;
+            margin-top: 0;
+            font-size: 1.5rem;
+            border-bottom: 2px solid rgba(139, 127, 255, 0.3);
+            padding-bottom: 0.5rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .stat-card {
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #8b7fff;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 0.5rem;
+        }
+
+        .test-controls {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+
+        .test-btn {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, #8b7fff, #a394ff);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .test-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(139, 127, 255, 0.3);
+        }
+
+        .test-btn:active {
+            transform: translateY(0);
+        }
+
+        .console {
+            background: #1a1a2e;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            max-height: 300px;
+            overflow-y: auto;
+            margin: 1rem 0;
+        }
+
+        .console-line {
+            padding: 0.25rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .console-line.success {
+            color: #4ade80;
+        }
+
+        .console-line.error {
+            color: #f87171;
+        }
+
+        .console-line.info {
+            color: #60a5fa;
+        }
+
+        .concept-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .concept-card:hover {
+            border-color: rgba(139, 127, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(139, 127, 255, 0.15);
+        }
+
+        .concept-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #8b7fff;
+            font-size: 1.5rem;
+        }
+
+        .concept-card .icon {
+            font-size: 2rem;
+        }
+
+        .simple-explanation {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+
+        .analogy-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1));
+            border-left: 4px solid #51cf66;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .analogy-box h4 {
+            color: #51cf66;
+            margin: 0 0 0.5rem 0;
+        }
+
+        .key-takeaway-box {
+            background: rgba(251, 191, 36, 0.1);
+            border-left: 4px solid #fbbf24;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .expandable {
+            margin-top: 1rem;
+        }
+
+        .expand-header {
+            cursor: pointer;
+            padding: 0.75rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .expand-header:hover {
+            background: rgba(139, 127, 255, 0.2);
+        }
+
+        .expand-header h4 {
+            margin: 0;
+            color: #8b7fff;
+        }
+
+        .expand-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .expandable.expanded .expand-arrow {
+            transform: rotate(180deg);
+        }
+
+        .expand-content {
+            display: none;
+            padding: 1rem;
+            margin-top: 0.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+
+        .expandable.expanded .expand-content {
+            display: block;
+        }
+
+        .predictions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .prediction-box {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .prediction-box.exact-match {
+            border-color: rgba(74, 222, 128, 0.5);
+            background: rgba(74, 222, 128, 0.05);
+        }
+
+        .prediction-box.testable {
+            border-color: rgba(251, 191, 36, 0.5);
+            background: rgba(251, 191, 36, 0.05);
+        }
+
+        .prediction-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .prediction-icon {
+            font-size: 1.5rem;
+        }
+
+        .prediction-header h4 {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        .prediction-values {
+            font-size: 0.9rem;
+        }
+
+        .prediction-value {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 0;
+        }
+
+        .prediction-value .label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .prediction-value .value {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .prediction-agreement {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: #4ade80;
+        }
+
+        .related-links {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .related-links a {
+            display: inline-block;
+            margin: 0.25rem 0.5rem 0.25rem 0;
+            padding: 0.25rem 0.75rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 4px;
+            color: #8b7fff;
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .related-links a:hover {
+            background: rgba(139, 127, 255, 0.2);
+            border-color: rgba(139, 127, 255, 0.5);
+        }
+
+        .status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status.success {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+
+        .status.error {
+            background: rgba(248, 113, 113, 0.2);
+            color: #f87171;
+        }
+
+        .status.loading {
+            background: rgba(251, 191, 36, 0.2);
+            color: #fbbf24;
+        }
+    </style>
+</head>
+<body>
+    <h1>🧪 PM Beginner Guide Loader Test</h1>
+    <p style="text-align: center; color: rgba(255, 255, 255, 0.6);">
+        Testing infrastructure for dynamic beginner guide content loading
+    </p>
+
+    <!-- Status Section -->
+    <div class="test-section">
+        <h2>📊 Loader Status</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-value" id="stat-loaded">-</div>
+                <div class="stat-label">Loader Status</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-concepts">0</div>
+                <div class="stat-label">Concepts Loaded</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-predictions">0</div>
+                <div class="stat-label">Predictions Loaded</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-value" id="stat-version">-</div>
+                <div class="stat-label">Data Version</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls Section -->
+    <div class="test-section">
+        <h2>🎛️ Test Controls</h2>
+        <div class="test-controls">
+            <button class="test-btn" onclick="testLoad()">Load Data</button>
+            <button class="test-btn" onclick="testRenderAll()">Render All</button>
+            <button class="test-btn" onclick="testGetConcept()">Get Single Concept</button>
+            <button class="test-btn" onclick="testSearch()">Test Search</button>
+            <button class="test-btn" onclick="testStats()">Show Stats</button>
+            <button class="test-btn" onclick="clearConsole()">Clear Console</button>
+        </div>
+    </div>
+
+    <!-- Console Section -->
+    <div class="test-section">
+        <h2>📟 Console Output</h2>
+        <div id="test-console" class="console">
+            <div class="console-line info">Ready to test...</div>
+        </div>
+    </div>
+
+    <!-- Rendered Content Section -->
+    <div class="test-section">
+        <h2>🎨 Rendered Content</h2>
+        <div id="beginner-concepts-container">
+            <p style="color: rgba(255, 255, 255, 0.5); text-align: center;">
+                Click "Render All" to display beginner guide content here
+            </p>
+        </div>
+    </div>
+
+    <!-- Load the beginner guide loader -->
+    <script src="js/pm-beginner-guide-loader.js"></script>
+
+    <script>
+        // Test functions
+        function log(message, type = 'info') {
+            const console = document.getElementById('test-console');
+            const line = document.createElement('div');
+            line.className = `console-line ${type}`;
+            const timestamp = new Date().toLocaleTimeString();
+            line.textContent = `[${timestamp}] ${message}`;
+            console.appendChild(line);
+            console.scrollTop = console.scrollHeight;
+        }
+
+        function clearConsole() {
+            document.getElementById('test-console').innerHTML = '<div class="console-line info">Console cleared</div>';
+        }
+
+        function updateStats() {
+            const stats = PMBeginnerGuideLoader.getStats();
+
+            document.getElementById('stat-loaded').textContent = stats.loaded ? '✓' : '✗';
+            document.getElementById('stat-loaded').style.color = stats.loaded ? '#4ade80' : '#f87171';
+
+            document.getElementById('stat-concepts').textContent = stats.totalConcepts || 0;
+            document.getElementById('stat-predictions').textContent = stats.totalPredictions || 0;
+            document.getElementById('stat-version').textContent = stats.version || '-';
+
+            if (stats.loaded) {
+                log(`Stats: ${stats.totalConcepts} concepts, ${stats.totalPredictions} predictions`, 'success');
+                if (stats.conceptsBySection) {
+                    log(`Concepts by section: ${JSON.stringify(stats.conceptsBySection)}`, 'info');
+                }
+            }
+        }
+
+        async function testLoad() {
+            log('Testing load()...', 'info');
+            try {
+                const result = await PMBeginnerGuideLoader.load();
+                if (result) {
+                    log('✓ Data loaded successfully', 'success');
+                    updateStats();
+                } else {
+                    log('✗ Failed to load data', 'error');
+                }
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testRenderAll() {
+            log('Testing renderAll()...', 'info');
+            try {
+                await PMBeginnerGuideLoader.renderAll('#beginner-concepts-container');
+                log('✓ Content rendered successfully', 'success');
+                updateStats();
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testGetConcept() {
+            log('Testing getConcept()...', 'info');
+            try {
+                await PMBeginnerGuideLoader.load();
+                const concept = PMBeginnerGuideLoader.getConcept('pneuma-field');
+                if (concept) {
+                    log(`✓ Found concept: ${concept.title}`, 'success');
+                    log(`  Icon: ${concept.icon}, Section: ${concept.section}`, 'info');
+                } else {
+                    log('✗ Concept not found', 'error');
+                }
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testSearch() {
+            log('Testing search()...', 'info');
+            try {
+                await PMBeginnerGuideLoader.load();
+                const results = PMBeginnerGuideLoader.search('dimension');
+                log(`✓ Search returned ${results.length} results`, 'success');
+                results.forEach((r, i) => {
+                    log(`  ${i+1}. ${r.title}`, 'info');
+                });
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, 'error');
+            }
+        }
+
+        async function testStats() {
+            log('Testing getStats()...', 'info');
+            try {
+                await PMBeginnerGuideLoader.load();
+                const stats = PMBeginnerGuideLoader.getStats();
+                log(`✓ Stats retrieved`, 'success');
+                log(`  Version: ${stats.version}`, 'info');
+                log(`  Concepts: ${stats.totalConcepts}`, 'info');
+                log(`  Predictions: ${stats.totalPredictions}`, 'info');
+                log(`  Generated: ${stats.generated}`, 'info');
+
+                if (stats.conceptsBySection) {
+                    log('  Concepts by section:', 'info');
+                    Object.entries(stats.conceptsBySection).forEach(([section, count]) => {
+                        log(`    Section ${section}: ${count}`, 'info');
+                    });
+                }
+            } catch (error) {
+                log(`✗ Error: ${error.message}`, 'error');
+            }
+        }
+
+        // Auto-load on page ready
+        window.addEventListener('DOMContentLoaded', async () => {
+            log('Page loaded, initializing...', 'info');
+            updateStats();
+
+            // Auto-load data
+            setTimeout(async () => {
+                log('Auto-loading data...', 'info');
+                await testLoad();
+            }, 500);
+        });
+    </script>
+</body>
+</html>

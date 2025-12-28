@@ -326,7 +326,7 @@ Here's what a typical uploaded document looks like:
 
   links: [
     { href: "../foundations/clifford-algebra.html", text: "Clifford Algebra" },
-    { href: "../foundations/kaluza-klein.html", text: "Kaluza-Klein Theory" }
+    { href: "../foundations.html#kaluza-klein", text: "Kaluza-Klein Theory" }
   ],
 
   lastUpdated: "2025-12-13T10:35:00.000Z",

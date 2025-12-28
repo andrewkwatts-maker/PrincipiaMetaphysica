@@ -929,7 +929,7 @@ class CoreFormulas:
                 units="GeV",
                 oom=16.33,
                 contribution="The derived unification scale",
-                link="sections/gauge-unification.html"
+                link="sections.html#gauge-unification"
             ),
             "M_Pl": FormulaTerm(
                 name="Planck Mass",
@@ -966,7 +966,7 @@ class CoreFormulas:
             FormulaInfoItem(
                 title="Computed Value",
                 content="2.118 × 10¹⁶ GeV",
-                link="sections/gauge-unification.html"
+                link="sections.html#gauge-unification"
             ),
             FormulaInfoItem(
                 title="Comparison",
@@ -1027,7 +1027,7 @@ class CoreFormulas:
                 "Dimensional reduction: M_GUT = M_Pl · V_G2^(-1/7)",
                 "From TCS topology: V_G2 yields M_GUT = 2.118×10¹⁶ GeV"
             ],
-            verification_page="sections/gauge-unification.html"
+            verification_page="sections.html#gauge-unification"
         ),
         simulation_file="simulations/gauge_unification_precision_v12_4.py",
         computed_value=2.118e16,
@@ -1218,7 +1218,7 @@ class CoreFormulas:
                 units="GeV",
                 oom=16.33,
                 contribution="Sets the suppression scale for decay operators",
-                link="sections/gauge-unification.html"
+                link="sections.html#gauge-unification"
             ),
             "α_GUT": FormulaTerm(
                 name="GUT Coupling",
@@ -1227,7 +1227,7 @@ class CoreFormulas:
                 value="1/23.54 ≈ 0.0425",
                 units="dimensionless",
                 contribution="Strength of dimension-6 operators",
-                link="sections/gauge-unification.html"
+                link="sections.html#gauge-unification"
             ),
             "S": FormulaTerm(
                 name="Geometric Suppression Factor",
@@ -1245,12 +1245,12 @@ class CoreFormulas:
             FormulaInfoItem(
                 title="GUT Scale",
                 content="M_GUT = 2.118 × 10¹⁶ GeV",
-                link="sections/gauge-unification.html"
+                link="sections.html#gauge-unification"
             ),
             FormulaInfoItem(
                 title="GUT Coupling",
                 content="α_GUT = 1/23.54",
-                link="sections/gauge-unification.html"
+                link="sections.html#gauge-unification"
             ),
             FormulaInfoItem(
                 title="TCS Suppression",
@@ -1303,7 +1303,7 @@ class CoreFormulas:
             ),
             FormulaDerivationStep(
                 title="GUT Scale from G₂",
-                link="sections/gauge-unification.html",
+                link="sections.html#gauge-unification",
                 badge="DERIVED",
                 badge_type="theory"
             ),
@@ -1323,7 +1323,7 @@ class CoreFormulas:
                 "TCS geometry provides additional suppression S = 2.1 from cycle separation",
                 "Result: τ_p = 8.15×10³⁴ years (4.9× Super-K bound)"
             ],
-            verification_page="sections/gauge-unification.html"
+            verification_page="sections.html#gauge-unification"
         ),
         simulation_file="simulations/proton_decay_geometric_v13_0.py",
         computed_value=8.15e34,
@@ -1481,7 +1481,7 @@ class CoreFormulas:
                 "R_c determined by M_GUT and volume: R_c = 1/(5.0 TeV)",
                 "First mode at 5.0 TeV, accessible at HL-LHC"
             ],
-            verification_page="sections/predictions.html"
+            verification_page="sections.html#predictions"
         ),
         simulation_file="simulations/kk_spectrum_full.py",
         computed_value=5.0,
@@ -1547,7 +1547,7 @@ class CoreFormulas:
         section="2",
         status="FOUNDATIONAL",
         terms={
-            "S_26": FormulaTerm("26D Action", "Full action in (24,2) signature spacetime", "sections/geometric-framework.html"),
+            "S_26": FormulaTerm("26D Action", "Full action in (24,2) signature spacetime", "sections.html#2"),
             "M_*": FormulaTerm("Fundamental Scale", "26D Planck scale ~10¹⁶ GeV"),
             "R_26": FormulaTerm("Ricci Scalar", "26D curvature scalar"),
             "Ψ_P": FormulaTerm("Pneuma Field", "8192-component spinor from Cl(24,2)"),
@@ -1561,7 +1561,7 @@ class CoreFormulas:
                 "Include Pneuma spinor field for fermionic DOF",
                 "Add Sp(2,R) gauge constraints for two-time physics"
             ],
-            verification_page="sections/geometric-framework.html"
+            verification_page="sections.html#2"
         ),
         simulation_file="simulations/sp2r_gauge_fixing_validation_v13_0.py",
         units="dimensionless",

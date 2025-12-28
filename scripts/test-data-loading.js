@@ -53,7 +53,7 @@ const MAIN_PAGES = [
   'beginners-guide.html',
   'references.html',
   'sections/introduction.html',
-  'sections/geometric-framework.html',
+  'sections.html#2', // Migrated to unified sections
   'sections/gauge-unification.html',
   'sections/fermion-sector.html',
   'sections/cosmology.html',

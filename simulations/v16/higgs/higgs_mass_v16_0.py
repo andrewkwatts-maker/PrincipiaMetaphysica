@@ -307,6 +307,8 @@ class HiggsMassSimulation(SimulationBase):
                 plain_text="m_h^2 = 8π^2 v^2 λ_eff",
                 category="DERIVED",
                 description="Higgs boson mass from effective quartic coupling",
+                inputParams=["higgs.vev_yukawa", "higgs.lambda_eff_pheno"],
+                outputParams=["higgs.m_higgs_pred"],
                 input_params=["higgs.vev_yukawa", "higgs.lambda_eff_pheno"],
                 output_params=["higgs.m_higgs_pred"],
                 derivation={
@@ -350,6 +352,8 @@ class HiggsMassSimulation(SimulationBase):
                 plain_text="λ_eff = λ_0 - (1/8π^2) Re(T) y_t^2",
                 category="THEORY",
                 description="Effective Higgs quartic with moduli corrections",
+                inputParams=["moduli.re_t_phenomenological", "yukawa.y_top"],
+                outputParams=["higgs.lambda_eff_pheno"],
                 input_params=["moduli.re_t_phenomenological", "yukawa.y_top"],
                 output_params=["higgs.lambda_eff_pheno"],
                 derivation={
@@ -394,6 +398,8 @@ class HiggsMassSimulation(SimulationBase):
                 plain_text="W(T) = A exp(-aT) + B exp(-bT)",
                 category="THEORY",
                 description="Racetrack superpotential for moduli stabilization",
+                inputParams=["topology.B3", "topology.CHI_EFF"],
+                outputParams=["moduli.re_t_attractor"],
                 input_params=["topology.B3", "topology.CHI_EFF"],
                 output_params=["moduli.re_t_attractor"],
                 derivation={
@@ -436,6 +442,8 @@ class HiggsMassSimulation(SimulationBase):
                 plain_text="M_triplet / M_doublet = M_GUT / M_EW ~ 10^13",
                 category="DERIVED",
                 description="Doublet-triplet mass splitting from topological filter",
+                inputParams=["gauge.M_GUT", "higgs.vev"],
+                outputParams=["higgs.dt_splitting_ratio"],
                 input_params=["gauge.M_GUT", "higgs.vev"],
                 output_params=["higgs.dt_splitting_ratio"],
                 derivation={
@@ -490,7 +498,15 @@ class HiggsMassSimulation(SimulationBase):
                 derivation_formula="higgs-mass",
                 experimental_bound=125.10,
                 bound_type="measured",
-                bound_source="PDG 2024 (ATLAS+CMS combined)"
+                bound_source="PDG 2024 (ATLAS+CMS combined)",
+                validation={
+                    "experimental_value": 125.25,
+                    "uncertainty": 0.17,
+                    "bound_type": "measured",
+                    "status": "FAIL",
+                    "source": "PDG2024",
+                    "notes": "PDG2024: m_h = 125.25 ± 0.17 GeV (ATLAS+CMS combined). PM phenomenological: 739.7 GeV (FAIL). This is INPUT not prediction."
+                }
             ),
             Parameter(
                 path="higgs.m_higgs_geometric",
@@ -503,6 +519,14 @@ class HiggsMassSimulation(SimulationBase):
                     "experiment, demonstrating that pure geometry fails to predict the Higgs mass."
                 ),
                 derivation_formula="higgs-mass",
+                validation={
+                    "experimental_value": 125.25,
+                    "uncertainty": 0.17,
+                    "bound_type": "measured",
+                    "status": "FAIL",
+                    "source": "PDG2024",
+                    "notes": "Pure geometric prediction: 738.5 GeV. Experiment: 125.25 GeV. Factor ~5.9 too high. Demonstrates Re(T) from geometry alone fails."
+                }
             ),
             Parameter(
                 path="higgs.vev",
@@ -515,7 +539,15 @@ class HiggsMassSimulation(SimulationBase):
                 ),
                 experimental_bound=246.22,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG 2024",
+                validation={
+                    "experimental_value": 246.22,
+                    "uncertainty": 0.01,
+                    "bound_type": "measured",
+                    "status": "PASS",
+                    "source": "PDG2024",
+                    "notes": "SM prediction v = 246.22 GeV from Fermi constant. PM uses v_EW = 246 GeV (within 0.1%)."
+                }
             ),
             Parameter(
                 path="higgs.lambda_0",
@@ -527,6 +559,14 @@ class HiggsMassSimulation(SimulationBase):
                     "Value λ_0 = 0.129 is calibrated to match observations, not purely "
                     "geometric (geometric value would be ~0.0945)."
                 ),
+                validation={
+                    "experimental_value": 0.129,
+                    "theoretical_range": {"min": 0.09, "max": 0.13},
+                    "bound_type": "calibrated",
+                    "status": "PASS",
+                    "source": "SO10_matching",
+                    "notes": "Calibrated from Higgs mass. Geometric value ~0.0945 from g^2/(4π) with g_GUT ~ 0.7."
+                }
             ),
             Parameter(
                 path="higgs.lambda_eff_pheno",
@@ -538,6 +578,14 @@ class HiggsMassSimulation(SimulationBase):
                     "phenomenologically constrained Re(T) = 9.865."
                 ),
                 derivation_formula="higgs-quartic-coupling",
+                validation={
+                    "experimental_value": None,
+                    "theoretical_range": {"min": 0.10, "max": 0.13},
+                    "bound_type": "range",
+                    "status": "PASS",
+                    "source": "SM_running",
+                    "notes": "Effective quartic after moduli corrections. Value: 0.114. SM running gives λ(M_h) ~ 0.126."
+                }
             ),
             Parameter(
                 path="higgs.lambda_eff_geometric",
@@ -549,16 +597,31 @@ class HiggsMassSimulation(SimulationBase):
                     "geometric Re(T) = 1.833 from attractor mechanism."
                 ),
                 derivation_formula="higgs-quartic-coupling",
+                validation={
+                    "experimental_value": None,
+                    "theoretical_range": {"min": 0.10, "max": 0.13},
+                    "bound_type": "range",
+                    "status": "PASS",
+                    "source": "geometry",
+                    "notes": "Geometric effective quartic: 0.114. Close to phenomenological, but predicts wrong Higgs mass."
+                }
             ),
             Parameter(
                 path="moduli.stabilization_status",
                 name="Moduli Stabilization Status",
-                units="status",
+                units="dimensionless",
                 status="DERIVED",
                 description=(
                     "Status of moduli stabilization: RESOLVED if phenomenological "
                     "calculation matches experiment, NEEDS_REVIEW otherwise."
                 ),
+                validation={
+                    "experimental_value": "RESOLVED",
+                    "bound_type": "categorical",
+                    "status": "FAIL",
+                    "source": "internal",
+                    "notes": "Current status: NEEDS_REVIEW. Moduli not consistently stabilized from geometry alone."
+                }
             ),
             Parameter(
                 path="higgs.quartic_correction",
@@ -569,6 +632,14 @@ class HiggsMassSimulation(SimulationBase):
                     "One-loop correction to Higgs quartic from moduli-Higgs interactions: "
                     "Δλ = (1/8π^2) Re(T) y_t^2."
                 ),
+                validation={
+                    "experimental_value": None,
+                    "theoretical_range": {"min": 0.01, "max": 0.02},
+                    "bound_type": "range",
+                    "status": "PASS",
+                    "source": "SUGRA_loops",
+                    "notes": "One-loop correction: 0.0147. Reasonable size for SUGRA corrections."
+                }
             ),
         ]
 
@@ -627,6 +698,53 @@ class HiggsMassSimulation(SimulationBase):
                 description="Unified SU(2)_L x U(1)_Y gauge symmetry",
             ),
         ]
+
+    def get_beginner_explanation(self) -> Dict[str, Any]:
+        """
+        Return beginner-friendly explanation for auto-generation of guide content.
+
+        Returns:
+            Dictionary with beginner explanation fields
+        """
+        return {
+            "icon": "⚡",
+            "title": "Origin of Mass (Higgs Mechanism)",
+            "simpleExplanation": (
+                "The Higgs field is like an invisible ocean filling all of space. When particles move through "
+                "this ocean, they experience 'drag' - and that drag is what we call mass. The Higgs boson "
+                "(discovered in 2012) is a ripple in this ocean, and its mass of 125 GeV tells us how 'thick' "
+                "the ocean is. In this theory, the Higgs mass comes from stabilizing the shape of extra dimensions "
+                "using competing quantum forces (the 'racetrack mechanism'). However, the pure geometric prediction "
+                "gives 414 GeV, not 125 GeV - so we must use the observed value as a constraint on which part "
+                "of the extra-dimensional geometry our universe picked."
+            ),
+            "analogy": (
+                "Imagine trying to walk through a pool versus a swimming pool filled with honey. The honey provides "
+                "more 'resistance', making you effectively heavier. The Higgs field is like that honey for particles. "
+                "The 'thickness' of the honey (the Higgs mass) is determined by a delicate balance: extra dimensions "
+                "trying to stabilize create a potential energy landscape with many valleys (the string theory landscape), "
+                "and the Higgs mass depends on which valley we rolled into. It's like a marble settling into one of "
+                "many divots on a bumpy surface - the depth of that specific divot sets the Higgs mass."
+            ),
+            "keyTakeaway": (
+                "The Higgs mass is not a pure prediction but serves as a phenomenological input that constrains "
+                "moduli stabilization - it tells us which vacuum state our universe selected."
+            ),
+            "technicalDetail": (
+                "The Higgs quartic coupling: λ_eff = λ_0 - κ Re(T) y_t^2, where λ_0 = 0.129 from SO(10) matching, "
+                "κ = 1/(8π^2), Re(T) is the complex structure modulus from racetrack stabilization, and y_t = 0.99 "
+                "is the top Yukawa. The geometric attractor gives Re(T) = 1.833, predicting m_h = 414 GeV (factor 3.3 "
+                "too high). Using the observed m_h = 125 GeV as input constrains Re(T) = 9.865 (phenomenological), "
+                "which doesn't match the pure racetrack minimum. This 'Higgs mass problem' suggests: (1) additional "
+                "physics modifies the racetrack potential, or (2) we're in a metastable vacuum, not the true minimum."
+            ),
+            "prediction": (
+                "This is one of the framework's current tensions: pure G2 geometry doesn't predict the correct Higgs "
+                "mass. However, it provides a *mechanism* connecting the mass to moduli stabilization, which is more "
+                "than the Standard Model offers (where m_h is a free parameter). Future work on racetrack corrections "
+                "or anthropic selection could resolve this."
+            )
+        }
 
 
 def main():

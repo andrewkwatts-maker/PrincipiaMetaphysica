@@ -405,7 +405,11 @@
       "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" clean -f \"*.py\" \"*.bat\" \"*.json\" \"*.txt\")",
       "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" clean -f \"test-*.html\")",
       "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" clean -f \"*.md\" \"*.txt\" \"*.csv\")",
-      "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" clean -f \"*.py\" \"*.html\")"
+      "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" clean -f \"*.py\" \"*.html\")",
+      "Bash(git -C h:GithubPrincipiaMetaphysica status --porcelain)",
+      "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" log --oneline -20)",
+      "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" rm sections/index.html sections/formulas.html sections/parameters.html)",
+      "Bash(git -C \"h:\\Github\\PrincipiaMetaphysica\" rm foundations/boltzmann-entropy-dynamic.html)"
     ],
     "deny": [],
     "ask": []
