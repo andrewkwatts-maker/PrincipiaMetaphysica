@@ -645,7 +645,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-28T21:00:54.246027"
+      "timestamp": "2025-12-28T21:38:13.578833"
     },
     "2": {
       "id": "2",
@@ -1474,7 +1474,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-28T21:00:54.279035"
+      "timestamp": "2025-12-28T21:38:13.611585"
     },
     "3": {
       "id": "3",
@@ -1667,7 +1667,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2025-12-28T21:00:54.277297"
+      "timestamp": "2025-12-28T21:38:13.609947"
     },
     "4": {
       "id": "4",
@@ -1826,7 +1826,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-28T21:00:54.278759"
+      "timestamp": "2025-12-28T21:38:13.611307"
     },
     "5": {
       "id": "5",
@@ -1937,7 +1937,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-28T21:00:54.278885"
+      "timestamp": "2025-12-28T21:38:13.611441"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -2044,7 +2044,7 @@
         "thermal.modular_temperature",
         "thermal.entropy_gradient"
       ],
-      "timestamp": "2025-12-28T21:00:54.279094"
+      "timestamp": "2025-12-28T21:38:13.611642"
     },
     "7": {
       "id": "7",
@@ -4475,7 +4475,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-28T21:00:54.279198"
+      "timestamp": "2025-12-28T21:38:13.611749"
     },
     "6": {
       "id": "6",
@@ -6618,7 +6618,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-28T21:00:54.279291"
+      "timestamp": "2025-12-28T21:38:13.611854"
     },
     "8": {
       "id": "8",
@@ -7231,9 +7231,9 @@
       ],
       "formulaRefs": [
         "generation-number",
-        "effective-euler",
-        "tcs-topology",
-        "topology-constraint"
+        "euler-characteristic",
+        "topology-constraint",
+        "generation-counting"
       ],
       "paramRefs": [
         "topology.n_gen",
@@ -7246,9 +7246,9 @@
       ],
       "formula_refs": [
         "generation-number",
-        "effective-euler",
-        "tcs-topology",
-        "topology-constraint"
+        "euler-characteristic",
+        "topology-constraint",
+        "generation-counting"
       ],
       "param_refs": [
         "topology.n_gen",
@@ -7259,7 +7259,7 @@
         "topology.HODGE_H31",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-28T21:00:54.320228"
+      "timestamp": "2025-12-28T21:38:13.624988"
     }
   }
 }

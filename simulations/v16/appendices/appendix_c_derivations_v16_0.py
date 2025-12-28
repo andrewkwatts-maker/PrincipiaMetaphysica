@@ -144,12 +144,11 @@ class AppendixCExtendedDerivations(SimulationBase):
         return SectionContent(
             section_id="8",
             subsection_id="C",
-            title="Appendix C: Atmospheric Mixing Angle Derivation",
+            title="Appendix C: Extended Derivations",
             abstract=(
-                "Appendix C: Atmospheric Mixing Angle Derivation - The maximal atmospheric mixing "
-                "angle θ₂₃ = 45° emerges from G₂ holonomy symmetry. This appendix also provides "
-                "detailed step-by-step derivations of other key physics results in Principia Metaphysica, "
-                "including gauge unification, fermion masses, and proton decay."
+                "Extended step-by-step derivations of key physics results: atmospheric mixing "
+                "angle θ₂₃ = 45° from G₂ holonomy, gauge unification conditions, fermion mass "
+                "hierarchies, neutrino mixing, Higgs mass, and proton lifetime."
             ),
             content_blocks=[
                 ContentBlock(

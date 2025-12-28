@@ -1,6 +1,6 @@
 {
   "version": "16.0",
-  "count": 87,
+  "count": 90,
   "formulas": {
     "g2-holonomy": {
       "id": "g2-holonomy",
@@ -42,7 +42,7 @@
           "symbol": "∇"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.246162"
+      "timestamp": "2025-12-28T21:38:13.579037"
     },
     "euler-characteristic": {
       "id": "euler-characteristic",
@@ -94,7 +94,7 @@
           "value": "68"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.246163"
+      "timestamp": "2025-12-28T21:38:13.579040"
     },
     "betti-numbers": {
       "id": "betti-numbers",
@@ -128,7 +128,7 @@
           "param_id": "topology.b3"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.246165"
+      "timestamp": "2025-12-28T21:38:13.579041"
     },
     "three-generations": {
       "id": "three-generations",
@@ -163,7 +163,7 @@
           "param_id": "topology.n_gen"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.246166"
+      "timestamp": "2025-12-28T21:38:13.579043"
     },
     "cycle-matching": {
       "id": "cycle-matching",
@@ -197,7 +197,109 @@
           "param_id": "topology.K_MATCHING"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.246167"
+      "timestamp": "2025-12-28T21:38:13.579044"
+    },
+    "gauge-initial-conditions": {
+      "id": "gauge-initial-conditions",
+      "label": "(3.1)",
+      "latex": "\\alpha_1(M_Z) = \\frac{5}{3}\\frac{\\alpha_{em}}{\\cos^2\\theta_W}, \\quad \\alpha_2(M_Z) = \\frac{\\alpha_{em}}{\\sin^2\\theta_W}, \\quad \\alpha_3(M_Z) = \\alpha_s",
+      "plain_text": "alpha_1 = (5/3)*alpha_em/cos²θ_W, alpha_2 = alpha_em/sin²θ_W, alpha_3 = alpha_s",
+      "category": "ESTABLISHED",
+      "description": "Initial gauge coupling conditions at M_Z from PDG 2024",
+      "input_params": [
+        "pdg.alpha_s_MZ",
+        "pdg.sin2_theta_W",
+        "constants.alpha_em"
+      ],
+      "output_params": [],
+      "derivation": {
+        "steps": [
+          "GUT-normalized U(1)_Y coupling: α₁ = (5/3)·αₑₘ/cos²θ_W",
+          "SU(2)_L coupling: α₂ = αₑₘ/sin²θ_W",
+          "SU(3)_c coupling: α₃ = αₛ (directly from PDG)"
+        ],
+        "numerical_values": {
+          "alpha_1_MZ": 0.01695,
+          "alpha_2_MZ": 0.03162,
+          "alpha_3_MZ": 0.118
+        },
+        "source": "PDG 2024"
+      },
+      "terms": {
+        "α₁": "U(1)_Y coupling (GUT normalized)",
+        "α₂": "SU(2)_L coupling",
+        "α₃": "SU(3)_c coupling",
+        "θ_W": "Weak mixing angle"
+      },
+      "timestamp": "2025-12-28T21:38:13.609966"
+    },
+    "kk-threshold": {
+      "id": "kk-threshold",
+      "label": "(3.3)",
+      "latex": "\\Delta\\left(\\frac{1}{\\alpha_i}\\right)_{KK} = \\frac{k_i \\cdot h^{1,1}}{2\\pi} \\ln\\frac{M_{GUT}}{M_*}",
+      "plain_text": "Δ(1/α_i)_KK = k_i·h¹¹/(2π)·ln(M_GUT/M_*)",
+      "category": "THEORY",
+      "description": "Kaluza-Klein threshold corrections from CY4 tower modes",
+      "input_params": [
+        "topology.h11"
+      ],
+      "output_params": [],
+      "derivation": {
+        "steps": [
+          "KK tower states from CY4 compactification",
+          "Each state contributes to beta functions above M_*",
+          "Net correction depends on h^{1,1} = 24 (from G2 structure)",
+          "k_i = group-dependent factors for U(1), SU(2), SU(3)"
+        ],
+        "references": [
+          "Dienes et al. (1999)"
+        ],
+        "numerical_values": {
+          "h11": 24,
+          "M_star": "5 TeV"
+        }
+      },
+      "terms": {
+        "k_i": "Group-dependent KK factor",
+        "h^{1,1}": "Hodge number (24 for TCS G2)",
+        "M_*": "KK threshold scale"
+      },
+      "timestamp": "2025-12-28T21:38:13.609967"
+    },
+    "asymptotic-safety-fixed-point": {
+      "id": "asymptotic-safety-fixed-point",
+      "label": "(3.4)",
+      "latex": "\\Delta_{AS}\\left(\\frac{1}{\\alpha_i}\\right) = -\\omega \\cdot \\left(\\frac{1}{\\alpha_i} - \\frac{1}{\\alpha^*}\\right), \\quad \\alpha^* = \\frac{1}{24} = \\frac{1}{b_3}",
+      "plain_text": "Δ_AS(1/α_i) = -ω·(1/α_i - 1/α*), α* = 1/24 = 1/b₃",
+      "category": "THEORY",
+      "description": "Asymptotic safety correction pulling toward UV fixed point",
+      "input_params": [
+        "topology.b3"
+      ],
+      "output_params": [],
+      "derivation": {
+        "steps": [
+          "Near Planck scale, asymptotic safety UV fixed point emerges",
+          "Fixed point value α* = 1/b₃ = 1/24 from G2 topology",
+          "Weight factor ω ≈ 0.15 (15% pull toward fixed point)",
+          "Net correction Δ_AS ≈ -3.0 to 1/α_GUT"
+        ],
+        "references": [
+          "Reuter (1998)",
+          "G2 topology connection"
+        ],
+        "numerical_values": {
+          "omega": 0.15,
+          "alpha_star": 0.041666666666666664
+        },
+        "connection_to_topology": "Fixed point 1/α* = 24 = b₃ (G2 third Betti number)"
+      },
+      "terms": {
+        "ω": "Asymptotic safety weight factor",
+        "α*": "UV fixed point coupling",
+        "b₃": "Third Betti number of G2 manifold"
+      },
+      "timestamp": "2025-12-28T21:38:13.609968"
     },
     "gut-scale": {
       "id": "gut-scale",
@@ -235,7 +337,7 @@
         "alpha_i": "Gauge couplings for U(1)_Y, SU(2)_L, SU(3)_c",
         "sigma": "Standard deviation (unification spread measure)"
       },
-      "timestamp": "2025-12-28T21:00:54.277310"
+      "timestamp": "2025-12-28T21:38:13.609969"
     },
     "gauge-coupling-unification": {
       "id": "gauge-coupling-unification",
@@ -280,7 +382,7 @@
         "alpha_GUT": "Unified gauge coupling (dimensionless)",
         "b3": "Third Betti number of G2 manifold"
       },
-      "timestamp": "2025-12-28T21:00:54.277311"
+      "timestamp": "2025-12-28T21:38:13.609970"
     },
     "gauge-rg-evolution": {
       "id": "gauge-rg-evolution",
@@ -309,7 +411,7 @@
         "b_i": "1-loop beta function coefficient",
         "b_ij": "2-loop beta function coefficient"
       },
-      "timestamp": "2025-12-28T21:00:54.277312"
+      "timestamp": "2025-12-28T21:38:13.609971"
     },
     "generation-number": {
       "id": "generation-number",
@@ -369,7 +471,7 @@
           "value": "8"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.277415"
+      "timestamp": "2025-12-28T21:38:13.610082"
     },
     "yukawa-texture": {
       "id": "yukawa-texture",
@@ -434,7 +536,7 @@
           "value": "1.5"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.277416"
+      "timestamp": "2025-12-28T21:38:13.610083"
     },
     "pneuma-chiral-filter": {
       "id": "pneuma-chiral-filter",
@@ -495,7 +597,7 @@
           "units": "GeV"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.277417"
+      "timestamp": "2025-12-28T21:38:13.610084"
     },
     "g2-spinor-preservation": {
       "id": "g2-spinor-preservation",
@@ -535,7 +637,7 @@
         "S": "Spinor bundle on G2 manifold",
         "dim(S)": "Fiber dimension (8 real components)"
       },
-      "timestamp": "2025-12-28T21:00:54.277941"
+      "timestamp": "2025-12-28T21:38:13.610529"
     },
     "associative-chirality-projector": {
       "id": "associative-chirality-projector",
@@ -580,7 +682,7 @@
         "*Φ": "Hodge dual of associative 4-form (coassociative 3-form)",
         "Φ": "Associative 4-form defining G2 structure"
       },
-      "timestamp": "2025-12-28T21:00:54.277943"
+      "timestamp": "2025-12-28T21:38:13.610531"
     },
     "dirac-zero-modes": {
       "id": "dirac-zero-modes",
@@ -629,7 +731,7 @@
         "A_μ": "Gauge connection (from flux)",
         "g": "Gauge coupling constant"
       },
-      "timestamp": "2025-12-28T21:00:54.277944"
+      "timestamp": "2025-12-28T21:38:13.610533"
     },
     "chirality-index-theorem": {
       "id": "chirality-index-theorem",
@@ -680,7 +782,7 @@
         "M_7": "Seven-dimensional G2 manifold",
         "χ_eff": "Effective Euler characteristic (topological invariant)"
       },
-      "timestamp": "2025-12-28T21:00:54.277950"
+      "timestamp": "2025-12-28T21:38:13.610534"
     },
     "spinor-saturation-generations": {
       "id": "spinor-saturation-generations",
@@ -727,7 +829,7 @@
         "b_3": "Third Betti number (counts associative 3-cycles)",
         "spinor_DOF": "Spinor degrees of freedom (8 for Spin(7))"
       },
-      "timestamp": "2025-12-28T21:00:54.277951"
+      "timestamp": "2025-12-28T21:38:13.610535"
     },
     "ckm-overlap-integral": {
       "id": "ckm-overlap-integral",
@@ -761,7 +863,7 @@
         "W_mu": "W boson field mediating weak transitions",
         "G_2": "Seven-dimensional G2 holonomy manifold"
       },
-      "timestamp": "2025-12-28T21:00:54.278106"
+      "timestamp": "2025-12-28T21:38:13.610671"
     },
     "ckm-hierarchy": {
       "id": "ckm-hierarchy",
@@ -800,7 +902,7 @@
         "epsilon": "Froggatt-Nielsen parameter ~ 0.223",
         "A": "Geometric coefficient ~ 0.81"
       },
-      "timestamp": "2025-12-28T21:00:54.278107"
+      "timestamp": "2025-12-28T21:38:13.610672"
     },
     "jarlskog-invariant": {
       "id": "jarlskog-invariant",
@@ -840,7 +942,7 @@
         "eta": "Imaginary Wolfenstein parameter ~ sin(delta_CP)",
         "delta_CP": "CP-violating phase ~ pi/6 from topology"
       },
-      "timestamp": "2025-12-28T21:00:54.278108"
+      "timestamp": "2025-12-28T21:38:13.610673"
     },
     "wolfenstein-parametrization": {
       "id": "wolfenstein-parametrization",
@@ -881,7 +983,7 @@
         "rho": "Real Wolfenstein parameter ~ 0.22",
         "eta": "Imaginary Wolfenstein parameter ~ 0.125"
       },
-      "timestamp": "2025-12-28T21:00:54.278109"
+      "timestamp": "2025-12-28T21:38:13.610674"
     },
     "ckm-unitarity": {
       "id": "ckm-unitarity",
@@ -911,7 +1013,7 @@
         "V_ij": "CKM matrix elements",
         "i, j": "Generation indices (1, 2, 3)"
       },
-      "timestamp": "2025-12-28T21:00:54.278110"
+      "timestamp": "2025-12-28T21:38:13.610675"
     },
     "cycle-separation-suppression": {
       "id": "cycle-separation-suppression",
@@ -946,7 +1048,7 @@
         "R": "Characteristic scale of G2 manifold",
         "K": "K3 fibre matching number (K=4 for TCS G2 #187)"
       },
-      "timestamp": "2025-12-28T21:00:54.278178"
+      "timestamp": "2025-12-28T21:38:13.610739"
     },
     "proton-lifetime": {
       "id": "proton-lifetime",
@@ -987,7 +1089,7 @@
         "alpha_GUT": "GUT coupling constant",
         "S": "Geometric suppression factor from cycle separation"
       },
-      "timestamp": "2025-12-28T21:00:54.278179"
+      "timestamp": "2025-12-28T21:38:13.610740"
     },
     "higgs-mass": {
       "id": "higgs-mass",
@@ -1040,7 +1142,7 @@
           "units": "dimensionless"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.278493"
+      "timestamp": "2025-12-28T21:38:13.610813"
     },
     "higgs-quartic-coupling": {
       "id": "higgs-quartic-coupling",
@@ -1095,7 +1197,7 @@
           "units": "dimensionless"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.278494"
+      "timestamp": "2025-12-28T21:38:13.610814"
     },
     "racetrack-potential": {
       "id": "racetrack-potential",
@@ -1147,7 +1249,7 @@
           "units": "dimensionless"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.278495"
+      "timestamp": "2025-12-28T21:38:13.610815"
     },
     "doublet-triplet-splitting": {
       "id": "doublet-triplet-splitting",
@@ -1195,7 +1297,7 @@
           "units": "GeV"
         }
       },
-      "timestamp": "2025-12-28T21:00:54.278496"
+      "timestamp": "2025-12-28T21:38:13.610817"
     },
     "metric-13D": {
       "id": "metric-13D",
@@ -1238,7 +1340,7 @@
         "A_μ^a": "Gauge fields from off-diagonal components",
         "K_a^m": "Killing vectors of SO(10) isometry"
       },
-      "timestamp": "2025-12-28T21:00:54.278577"
+      "timestamp": "2025-12-28T21:38:13.611147"
     },
     "einstein-hilbert-14D": {
       "id": "einstein-hilbert-14D",
@@ -1281,7 +1383,7 @@
         "R_14": "14D Ricci scalar",
         "V_9": "9-dimensional internal volume"
       },
-      "timestamp": "2025-12-28T21:00:54.278580"
+      "timestamp": "2025-12-28T21:38:13.611148"
     },
     "sp2r-constraint": {
       "id": "sp2r-constraint",
@@ -1323,7 +1425,7 @@
         "Φ": "Scalar field configurations",
         "Sp(2,R)": "Symplectic gauge group"
       },
-      "timestamp": "2025-12-28T21:00:54.278581"
+      "timestamp": "2025-12-28T21:38:13.611149"
     },
     "breathing-mode": {
       "id": "breathing-mode",
@@ -1367,7 +1469,7 @@
         "g⁰_mn": "Fixed internal metric",
         "T": "Volume modulus"
       },
-      "timestamp": "2025-12-28T21:00:54.278585"
+      "timestamp": "2025-12-28T21:38:13.611150"
     },
     "bps-bound": {
       "id": "bps-bound",
@@ -1411,7 +1513,7 @@
         "Z_p,q": "Central charge",
         "V_p": "Brane worldvolume"
       },
-      "timestamp": "2025-12-28T21:00:54.278586"
+      "timestamp": "2025-12-28T21:38:13.611151"
     },
     "pneuma-reduction": {
       "id": "pneuma-reduction",
@@ -1457,7 +1559,7 @@
         "Ψ_4D": "4D Dirac spinor (4 components)",
         "χ_SO(10)": "SO(10) spinor (16 components)"
       },
-      "timestamp": "2025-12-28T21:00:54.278587"
+      "timestamp": "2025-12-28T21:38:13.611152"
     },
     "dimensional-reduction-cascade": {
       "id": "dimensional-reduction-cascade",
@@ -1500,7 +1602,7 @@
         "D_observable": "Observable spacetime dimensions (4)",
         "alpha_shadow": "Shadow dimension contribution (0.576)"
       },
-      "timestamp": "2025-12-28T21:00:54.278688"
+      "timestamp": "2025-12-28T21:38:13.611237"
     },
     "effective-dimension": {
       "id": "effective-dimension",
@@ -1547,7 +1649,7 @@
         "chi_eff": "Effective Euler characteristic (144)",
         "b3": "Number of associative 3-cycles (24)"
       },
-      "timestamp": "2025-12-28T21:00:54.278689"
+      "timestamp": "2025-12-28T21:38:13.611238"
     },
     "dark-energy-eos-derivation": {
       "id": "dark-energy-eos-derivation",
@@ -1595,7 +1697,7 @@
         "D_eff": "Effective dimension (12)",
         "sigma": "Standard deviation from DESI measurement (0.3σ)"
       },
-      "timestamp": "2025-12-28T21:00:54.278690"
+      "timestamp": "2025-12-28T21:38:13.611239"
     },
     "dark-energy-time-evolution": {
       "id": "dark-energy-time-evolution",
@@ -1640,7 +1742,7 @@
         "w_a": "Evolution parameter (≈0.29)",
         "z": "Redshift"
       },
-      "timestamp": "2025-12-28T21:00:54.278691"
+      "timestamp": "2025-12-28T21:38:13.611240"
     },
     "pmns-theta-13": {
       "id": "pmns-theta-13",
@@ -1686,7 +1788,7 @@
         "chi_eff": "Effective Euler characteristic",
         "S_orient": "Flux orientation sum"
       },
-      "timestamp": "2025-12-28T21:00:54.278771"
+      "timestamp": "2025-12-28T21:38:13.611319"
     },
     "pmns-delta-cp": {
       "id": "pmns-delta-cp",
@@ -1727,7 +1829,7 @@
         "b2": "Kähler moduli count",
         "b3": "Associative 3-cycle count"
       },
-      "timestamp": "2025-12-28T21:00:54.278772"
+      "timestamp": "2025-12-28T21:38:13.611320"
     },
     "pmns-theta-12": {
       "id": "pmns-theta-12",
@@ -1765,7 +1867,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.278773"
+      "timestamp": "2025-12-28T21:38:13.611321"
     },
     "pmns-theta-23": {
       "id": "pmns-theta-23",
@@ -1801,7 +1903,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.278774"
+      "timestamp": "2025-12-28T21:38:13.611323"
     },
     "neutrino-mass-spectrum": {
       "id": "neutrino-mass-spectrum",
@@ -1844,7 +1946,7 @@
         "M_nu": "Neutrino mass matrix (Majorana)",
         "epsilon": "Off-diagonal mixing ~ b2/chi_eff"
       },
-      "timestamp": "2025-12-28T21:00:54.278774"
+      "timestamp": "2025-12-28T21:38:13.611324"
     },
     "dark-energy-eos": {
       "id": "dark-energy-eos",
@@ -1884,7 +1986,7 @@
         "w_eff": "Effective dark energy equation of state",
         "alpha_shadow": "Shadow dimension contribution (0.576)"
       },
-      "timestamp": "2025-12-28T21:00:54.278896"
+      "timestamp": "2025-12-28T21:38:13.611451"
     },
     "moduli-potential": {
       "id": "moduli-potential",
@@ -1924,7 +2026,7 @@
         "V_0": "Potential scale",
         "a, b, c": "Instanton coefficients from topology"
       },
-      "timestamp": "2025-12-28T21:00:54.278897"
+      "timestamp": "2025-12-28T21:38:13.611452"
     },
     "sector-temperature-ratio": {
       "id": "sector-temperature-ratio",
@@ -1971,7 +2073,7 @@
         "chi_eff": "Effective Euler characteristic (144)",
         "b_3": "Number of 3-cycles (24)"
       },
-      "timestamp": "2025-12-28T21:00:54.278898"
+      "timestamp": "2025-12-28T21:38:13.611453"
     },
     "dark-matter-abundance": {
       "id": "dark-matter-abundance",
@@ -2016,7 +2118,7 @@
         "T'/T": "Temperature ratio (0.57)",
         "n, n'": "Number densities"
       },
-      "timestamp": "2025-12-28T21:00:54.278899"
+      "timestamp": "2025-12-28T21:38:13.611454"
     },
     "pneuma-lagrangian": {
       "id": "pneuma-lagrangian",
@@ -2051,7 +2153,7 @@
         "potential": "V(\\Psi_P) = |dW/d\\Psi_P|^2",
         "vielbein": "\\mathcal{L}_{\\text{vielbein}} = \\bar{\\eta} \\Gamma^a e_a^\\mu D_\\mu \\eta"
       },
-      "timestamp": "2025-12-28T21:00:54.279053"
+      "timestamp": "2025-12-28T21:38:13.611600"
     },
     "pneuma-flow": {
       "id": "pneuma-flow",
@@ -2083,7 +2185,7 @@
         "flow_parameter": "\\lambda = \\sqrt{2 V''(\\langle\\Psi_P\\rangle)}",
         "derivative": "\\frac{\\partial V}{\\partial \\Psi_P} = 2 \\frac{dW}{d\\Psi_P} \\frac{d^2W}{d\\Psi_P^2}"
       },
-      "timestamp": "2025-12-28T21:00:54.279054"
+      "timestamp": "2025-12-28T21:38:13.611601"
     },
     "modular-hamiltonian": {
       "id": "modular-hamiltonian",
@@ -2113,7 +2215,7 @@
         "rho": "Thermal density matrix",
         "Z": "Partition function"
       },
-      "timestamp": "2025-12-28T21:00:54.279099"
+      "timestamp": "2025-12-28T21:38:13.611648"
     },
     "thermal-flow": {
       "id": "thermal-flow",
@@ -2146,7 +2248,7 @@
         "K": "Modular Hamiltonian",
         "t": "Thermal time parameter"
       },
-      "timestamp": "2025-12-28T21:00:54.279100"
+      "timestamp": "2025-12-28T21:38:13.611649"
     },
     "entropy-gradient": {
       "id": "entropy-gradient",
@@ -2178,7 +2280,7 @@
         "t_thermal": "Thermal time parameter",
         ">=": "Non-negative (second law)"
       },
-      "timestamp": "2025-12-28T21:00:54.279101"
+      "timestamp": "2025-12-28T21:38:13.611650"
     },
     "g2-holonomy-condition": {
       "id": "g2-holonomy-condition",
@@ -2204,7 +2306,7 @@
         "∇": "Levi-Civita connection",
         "φ": "Associative 3-form (calibration)"
       },
-      "timestamp": "2025-12-28T21:00:54.279349"
+      "timestamp": "2025-12-28T21:38:13.611928"
     },
     "associative-calibration": {
       "id": "associative-calibration",
@@ -2223,7 +2325,7 @@
         "Ω³(M)": "Space of 3-forms on M",
         "G2": "Exceptional Lie group (14-dimensional)"
       },
-      "timestamp": "2025-12-28T21:00:54.279351"
+      "timestamp": "2025-12-28T21:38:13.611929"
     },
     "coassociative-calibration": {
       "id": "coassociative-calibration",
@@ -2250,7 +2352,7 @@
         "ψ": "Coassociative 4-form",
         "*": "Hodge star operator"
       },
-      "timestamp": "2025-12-28T21:00:54.279352"
+      "timestamp": "2025-12-28T21:38:13.611930"
     },
     "parallel-spinor-condition": {
       "id": "parallel-spinor-condition",
@@ -2280,7 +2382,7 @@
         "∇_X": "Covariant derivative along X",
         "TM": "Tangent bundle of M"
       },
-      "timestamp": "2025-12-28T21:00:54.279353"
+      "timestamp": "2025-12-28T21:38:13.611932"
     },
     "clifford-multiplication": {
       "id": "clifford-multiplication",
@@ -2298,7 +2400,7 @@
         "γ(X)": "Clifford multiplication by vector X",
         "g(X,Y)": "Metric inner product"
       },
-      "timestamp": "2025-12-28T21:00:54.279354"
+      "timestamp": "2025-12-28T21:38:13.611933"
     },
     "ricci-flatness-g2": {
       "id": "ricci-flatness-g2",
@@ -2325,7 +2427,7 @@
       "terms": {
         "Ric(g)": "Ricci curvature tensor"
       },
-      "timestamp": "2025-12-28T21:00:54.279354"
+      "timestamp": "2025-12-28T21:38:13.611934"
     },
     "rg-beta-function": {
       "id": "rg-beta-function",
@@ -2346,7 +2448,7 @@
         "α_i": "Gauge coupling for group i (U(1), SU(2), SU(3))",
         "β_i": "Beta function (anomalous dimension)"
       },
-      "timestamp": "2025-12-28T21:00:54.279427"
+      "timestamp": "2025-12-28T21:38:13.612018"
     },
     "one-loop-beta": {
       "id": "one-loop-beta",
@@ -2363,7 +2465,7 @@
       "terms": {
         "b^(1)": "One-loop coefficient vector"
       },
-      "timestamp": "2025-12-28T21:00:54.279428"
+      "timestamp": "2025-12-28T21:38:13.612020"
     },
     "kk-threshold-correction": {
       "id": "kk-threshold-correction",
@@ -2392,7 +2494,7 @@
         "m_n": "Mass of n-th KK mode (n/R)",
         "N_max": "Cutoff for KK sum (typically 100)"
       },
-      "timestamp": "2025-12-28T21:00:54.279429"
+      "timestamp": "2025-12-28T21:38:13.612020"
     },
     "asymptotic-safety-correction": {
       "id": "asymptotic-safety-correction",
@@ -2420,7 +2522,7 @@
         "β_i^AS": "Asymptotic safety corrected beta function",
         "γ": "Critical exponent (≈0.5)"
       },
-      "timestamp": "2025-12-28T21:00:54.279430"
+      "timestamp": "2025-12-28T21:38:13.612021"
     },
     "yukawa-rg-equation": {
       "id": "yukawa-rg-equation",
@@ -2441,7 +2543,7 @@
         "C_i": "Yukawa self-coupling coefficient",
         "C_a": "Gauge coupling coefficient"
       },
-      "timestamp": "2025-12-28T21:00:54.279431"
+      "timestamp": "2025-12-28T21:38:13.612022"
     },
     "mass-running-equation": {
       "id": "mass-running-equation",
@@ -2462,7 +2564,7 @@
         "m̄": "Running MS-bar mass",
         "α_s": "Strong coupling constant"
       },
-      "timestamp": "2025-12-28T21:00:54.279432"
+      "timestamp": "2025-12-28T21:38:13.612023"
     },
     "g2-holonomy-derivation": {
       "id": "g2-holonomy-derivation",
@@ -2490,7 +2592,7 @@
         "Hol(g)": "Holonomy group of metric g",
         "φ": "Parallel 3-form (associative calibration)"
       },
-      "timestamp": "2025-12-28T21:00:54.279487"
+      "timestamp": "2025-12-28T21:38:13.612081"
     },
     "unification-condition-derivation": {
       "id": "unification-condition-derivation",
@@ -2521,7 +2623,7 @@
         "M_GUT": "GUT unification scale",
         "α_GUT": "Unified gauge coupling"
       },
-      "timestamp": "2025-12-28T21:00:54.279488"
+      "timestamp": "2025-12-28T21:38:13.612082"
     },
     "yukawa-hierarchy-derivation": {
       "id": "yukawa-hierarchy-derivation",
@@ -2543,7 +2645,7 @@
         "d_i": "Cycle separation distance",
         "λ": "Wavefunction localization scale"
       },
-      "timestamp": "2025-12-28T21:00:54.279489"
+      "timestamp": "2025-12-28T21:38:13.612084"
     },
     "tribimaximal-mixing-derivation": {
       "id": "tribimaximal-mixing-derivation",
@@ -2564,7 +2666,7 @@
       "terms": {
         "U_TB": "Tribimaximal mixing matrix"
       },
-      "timestamp": "2025-12-28T21:00:54.279490"
+      "timestamp": "2025-12-28T21:38:13.612085"
     },
     "higgs-mass-derivation": {
       "id": "higgs-mass-derivation",
@@ -2587,7 +2689,7 @@
         "v": "Higgs VEV (246 GeV)",
         "M_KK": "KK scale from compactification"
       },
-      "timestamp": "2025-12-28T21:00:54.279491"
+      "timestamp": "2025-12-28T21:38:13.612085"
     },
     "proton-lifetime-derivation": {
       "id": "proton-lifetime-derivation",
@@ -2610,7 +2712,7 @@
         "C": "Hadronic matrix element prefactor",
         "K": "TCS K3 matching number"
       },
-      "timestamp": "2025-12-28T21:00:54.279492"
+      "timestamp": "2025-12-28T21:38:13.612086"
     },
     "proton-decay-rate": {
       "id": "proton-decay-rate",
@@ -2629,7 +2731,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279615"
+      "timestamp": "2025-12-28T21:38:13.612222"
     },
     "proton-decay-lifetime": {
       "id": "proton-decay-lifetime",
@@ -2646,7 +2748,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279618"
+      "timestamp": "2025-12-28T21:38:13.612223"
     },
     "geometric-suppression-factor": {
       "id": "geometric-suppression-factor",
@@ -2663,7 +2765,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279619"
+      "timestamp": "2025-12-28T21:38:13.612224"
     },
     "sp2r-gauge-constraint": {
       "id": "sp2r-gauge-constraint",
@@ -2678,7 +2780,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279660"
+      "timestamp": "2025-12-28T21:38:13.612273"
     },
     "shadow-reduction": {
       "id": "shadow-reduction",
@@ -2695,7 +2797,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279661"
+      "timestamp": "2025-12-28T21:38:13.612274"
     },
     "orientation-sum": {
       "id": "orientation-sum",
@@ -2713,7 +2815,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279662"
+      "timestamp": "2025-12-28T21:38:13.612275"
     },
     "flux-quantization": {
       "id": "flux-quantization",
@@ -2730,7 +2832,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279716"
+      "timestamp": "2025-12-28T21:38:13.612322"
     },
     "effective-torsion": {
       "id": "effective-torsion",
@@ -2759,7 +2861,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279717"
+      "timestamp": "2025-12-28T21:38:13.612323"
     },
     "effective-torsion-spinor": {
       "id": "effective-torsion-spinor",
@@ -2790,7 +2892,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279718"
+      "timestamp": "2025-12-28T21:38:13.612324"
     },
     "proton-branching": {
       "id": "proton-branching",
@@ -2820,7 +2922,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279750"
+      "timestamp": "2025-12-28T21:38:13.612358"
     },
     "gw-dispersion-relation": {
       "id": "gw-dispersion-relation",
@@ -2836,7 +2938,7 @@
       "output_params": [],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279787"
+      "timestamp": "2025-12-28T21:38:13.612395"
     },
     "gw-dispersion-coefficient": {
       "id": "gw-dispersion-coefficient",
@@ -2866,7 +2968,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-28T21:00:54.279788"
+      "timestamp": "2025-12-28T21:38:13.612396"
     },
     "mc-error-propagation": {
       "id": "mc-error-propagation",
@@ -2888,7 +2990,7 @@
         "x_i": "Sample value",
         "x̄": "Sample mean"
       },
-      "timestamp": "2025-12-28T21:00:54.319502"
+      "timestamp": "2025-12-28T21:38:13.624707"
     },
     "correlation-matrix": {
       "id": "correlation-matrix",
@@ -2910,7 +3012,7 @@
         "σ_i": "Standard deviation of parameter i",
         "σ_j": "Standard deviation of parameter j"
       },
-      "timestamp": "2025-12-28T21:00:54.319504"
+      "timestamp": "2025-12-28T21:38:13.624709"
     },
     "orch-or-collapse": {
       "id": "orch-or-collapse",
@@ -2938,7 +3040,7 @@
         "m_total": "Total mass in superposition",
         "r": "Characteristic separation"
       },
-      "timestamp": "2025-12-28T21:00:54.320110"
+      "timestamp": "2025-12-28T21:38:13.624932"
     },
     "pm-modulation": {
       "id": "pm-modulation",
@@ -2967,7 +3069,7 @@
         "φ_0": "Stable vacuum position (0.5)",
         "σ": "Coherence falloff scale (0.25)"
       },
-      "timestamp": "2025-12-28T21:00:54.320113"
+      "timestamp": "2025-12-28T21:38:13.624933"
     },
     "topology-constraint": {
       "id": "topology-constraint",
@@ -2996,7 +3098,7 @@
         "h^{1,1}": "Hodge number (Kähler moduli)",
         "h^{3,1}": "Hodge number (complex structure moduli)"
       },
-      "timestamp": "2025-12-28T21:00:54.320237"
+      "timestamp": "2025-12-28T21:38:13.624995"
     },
     "generation-counting": {
       "id": "generation-counting",
@@ -3027,7 +3129,7 @@
         "n_gen": "Number of fermion generations",
         "b_3": "Third Betti number"
       },
-      "timestamp": "2025-12-28T21:00:54.320243"
+      "timestamp": "2025-12-28T21:38:13.624997"
     }
   }
 }
