@@ -678,7 +678,7 @@ class PMSectionRenderer extends HTMLElement {
                 max-width: 850px;
                 margin: 0 auto;
                 padding: 2rem 0;
-                background: transparent;
+                background: #ffffff;
                 color: var(--text-dark);
             }
 
@@ -720,10 +720,11 @@ class PMSectionRenderer extends HTMLElement {
 
             .section-abstract,
             .abstract {
-                background: #f8f9fa;
+                background: #f0f2f5;
                 padding: 20px 25px;
                 border-left: 4px solid var(--accent);
                 margin: 2rem 0;
+                color: #1a1a1a;
             }
 
             .section-abstract h2,
@@ -857,15 +858,16 @@ class PMSectionRenderer extends HTMLElement {
 
             /* Note blocks with visual hierarchy */
             .note-block {
-                background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05));
-                border-left: 4px solid var(--accent);
+                background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.10));
+                border-left: 4px solid #6b5dd3;
                 padding: 1.25rem 1.5rem;
                 margin: 1.5rem 0;
                 border-radius: 0 8px 8px 0;
+                color: #1a1a1a;
             }
 
             .note-block h4 {
-                color: var(--accent);
+                color: #6b5dd3;
                 margin: 0 0 0.75rem 0;
                 font-size: 1rem;
                 font-weight: 600;
@@ -874,6 +876,7 @@ class PMSectionRenderer extends HTMLElement {
             .note-block p {
                 margin: 0.5rem 0;
                 line-height: 1.7;
+                color: #1a1a1a;
             }
 
             /* Content blocks with hover effects */
@@ -885,14 +888,15 @@ class PMSectionRenderer extends HTMLElement {
             }
 
             .content-block:hover {
-                border-left-color: rgba(139, 127, 255, 0.3);
+                border-left-color: rgba(107, 93, 211, 0.4);
             }
 
             .content-block.highlighted {
-                background: rgba(139, 127, 255, 0.05);
-                border-left-color: var(--accent);
+                background: rgba(139, 127, 255, 0.08);
+                border-left-color: #6b5dd3;
                 padding: 1rem;
                 border-radius: 4px;
+                color: #1a1a1a;
             }
 
             /* Content lists with better spacing */
@@ -912,10 +916,11 @@ class PMSectionRenderer extends HTMLElement {
                 align-items: center;
                 justify-content: space-between;
                 padding: 1rem;
-                background: rgba(139, 127, 255, 0.05);
-                border: 1px solid rgba(139, 127, 255, 0.15);
+                background: rgba(139, 127, 255, 0.08);
+                border: 1px solid rgba(107, 93, 211, 0.25);
                 border-radius: 8px;
                 margin: 1.5rem 0;
+                color: #1a1a1a;
             }
 
             .equation-content {
@@ -928,7 +933,7 @@ class PMSectionRenderer extends HTMLElement {
             .equation-number {
                 min-width: 40px;
                 text-align: right;
-                color: var(--accent);
+                color: #6b5dd3;
                 font-weight: 600;
                 font-size: 0.9rem;
             }
@@ -1087,11 +1092,12 @@ class PMSectionRenderer extends HTMLElement {
             }
 
             .content-panel {
-                background: #f8f9fa;
+                background: #f0f2f5;
                 border: 1px solid var(--border);
                 border-radius: 8px;
                 padding: 1.5rem;
                 margin: 1.5rem 0;
+                color: #1a1a1a;
             }
 
             .panel-title {
@@ -1108,10 +1114,11 @@ class PMSectionRenderer extends HTMLElement {
             }
 
             .grid-cell {
-                background: #f8f9fa;
+                background: #f0f2f5;
                 padding: 1rem;
                 border-radius: 6px;
                 border-left: 3px solid var(--accent);
+                color: #1a1a1a;
             }
 
             .expandable-block {
@@ -1120,11 +1127,11 @@ class PMSectionRenderer extends HTMLElement {
 
             .expandable-block summary {
                 cursor: pointer;
-                color: var(--accent);
+                color: #6b5dd3;
                 font-weight: 600;
                 list-style: none;
                 padding: 0.5rem;
-                background: #f8f9fa;
+                background: #e9ecef;
                 border-radius: 4px;
             }
 
@@ -1162,11 +1169,11 @@ class PMSectionRenderer extends HTMLElement {
 
             .simulation-code summary {
                 cursor: pointer;
-                color: var(--accent);
+                color: #6b5dd3;
                 font-weight: 600;
                 list-style: none;
                 padding: 0.5rem;
-                background: #f8f9fa;
+                background: #e9ecef;
                 border-radius: 4px;
             }
 
@@ -1193,7 +1200,7 @@ class PMSectionRenderer extends HTMLElement {
             }
 
             .section-nav a {
-                color: var(--accent);
+                color: #6b5dd3;
                 text-decoration: none;
                 padding: 0.5rem 1rem;
                 border: 1px solid var(--border);
@@ -1202,8 +1209,9 @@ class PMSectionRenderer extends HTMLElement {
             }
 
             .section-nav a:hover {
-                background: #f8f9fa;
-                border-color: var(--accent);
+                background: #e9ecef;
+                border-color: #6b5dd3;
+                color: #5a4ac2;
             }
 
             p {

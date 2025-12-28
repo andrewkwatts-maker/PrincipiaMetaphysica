@@ -50,7 +50,7 @@
     max-width: 850px;
     margin: 0 auto;
     padding: 2rem 0;
-    background: transparent;
+    background: #ffffff;
     color: var(--text-dark);
 }
 
@@ -101,10 +101,11 @@ h3.subsection-title {
 
 .section-abstract,
 .abstract {
-    background: #f8f9fa;
+    background: #f0f2f5;
     padding: 20px 25px;
     border-left: 4px solid var(--accent);
     margin: 2rem 0;
+    color: #1a1a1a;
 }
 
 .section-abstract h2,
@@ -440,11 +441,12 @@ ul ul, ol ol, ul ol, ol ul {
 /* ========================================================================== */
 
 .content-panel {
-    background: #f8f9fa;
+    background: #f0f2f5;
     border: 1px solid var(--border);
     border-radius: 8px;
     padding: 1.5rem;
     margin: 1.5rem 0;
+    color: #1a1a1a;
 }
 
 .panel-title {
@@ -461,10 +463,11 @@ ul ul, ol ol, ul ol, ol ul {
 }
 
 .grid-cell {
-    background: #f8f9fa;
+    background: #f0f2f5;
     padding: 1rem;
     border-radius: 6px;
     border-left: 3px solid var(--accent);
+    color: #1a1a1a;
 }
 
 /* ========================================================================== */
@@ -477,11 +480,11 @@ ul ul, ol ol, ul ol, ol ul {
 
 .expandable-block summary {
     cursor: pointer;
-    color: var(--accent);
+    color: #6b5dd3;
     font-weight: 600;
     list-style: none;
     padding: 0.5rem;
-    background: #f8f9fa;
+    background: #e9ecef;
     border-radius: 4px;
 }
 
@@ -523,11 +526,11 @@ ul ul, ol ol, ul ol, ol ul {
 
 .simulation-code summary {
     cursor: pointer;
-    color: var(--accent);
+    color: #6b5dd3;
     font-weight: 600;
     list-style: none;
     padding: 0.5rem;
-    background: #f8f9fa;
+    background: #e9ecef;
     border-radius: 4px;
 }
 
@@ -558,7 +561,7 @@ ul ul, ol ol, ul ol, ol ul {
 }
 
 .section-nav a {
-    color: var(--accent);
+    color: #6b5dd3;
     text-decoration: none;
     padding: 0.5rem 1rem;
     border: 1px solid var(--border);
@@ -567,8 +570,9 @@ ul ul, ol ol, ul ol, ol ul {
 }
 
 .section-nav a:hover {
-    background: #f8f9fa;
-    border-color: var(--accent);
+    background: #e9ecef;
+    border-color: #6b5dd3;
+    color: #5a4ac2;
 }
 
 /* ========================================================================== */
