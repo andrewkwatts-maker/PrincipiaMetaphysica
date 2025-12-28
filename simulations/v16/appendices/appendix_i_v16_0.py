@@ -300,7 +300,7 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
                 "topology.b3",
                 "topology.N_flux",
                 "topology.T_omega",
-                "mass_scales.M_GUT",
+                "gauge.M_GUT",
                 "gw_dispersion.eta",
                 "gw_dispersion.M_GW",
             ]

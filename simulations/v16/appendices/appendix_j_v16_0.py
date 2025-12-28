@@ -374,12 +374,12 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 "topology.chi_eff",
                 "topology.b2",
                 "topology.b3",
-                "moduli.Re_T",
-                "mixing.theta_23",
+                "moduli.re_t_phenomenological",
+                "neutrino.theta_23_pred",
                 "gauge.M_GUT",
-                "mixing.delta_CP",
-                "dark_energy.w0",
-                "dark_energy.w_a",
+                "neutrino.delta_CP_pred",
+                "cosmology.w0_derived",
+                "cosmology.wa_derived",
             ]
         )
 
