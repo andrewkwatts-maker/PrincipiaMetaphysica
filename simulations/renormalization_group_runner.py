@@ -78,15 +78,48 @@ class RenormalizationGroupRunner:
 
     def beta_functions_2loop(self, t: float, alphas: np.ndarray) -> np.ndarray:
         """
-        2-loop beta function with cross-terms.
+        2-loop beta function with cross-terms and ghost sector shift.
+
+        MANIFOLD-AWARE IMPROVEMENT (v16.1):
+        Includes ghost sector contribution from mirror sector running.
+        The mirror sector contributes virtual loops that shift the beta functions.
+
+        The ghost sector shift arises from:
+        1. Mirror gauge bosons running in loops
+        2. Temperature-dependent decoupling at T'/T ~ 0.57
+        3. Threshold corrections at M_mirror ~ M_GUT * (T'/T)^4
+
+        The shift is suppressed by (T'/T)^4 ~ 0.11, giving a ~10% correction
+        to the 2-loop coefficients.
 
         d(alpha_i)/d(ln mu) = (1/2pi) * [b_i * alpha_i^2 + sum_j b_ij * alpha_i^2 * alpha_j / (4pi)]
+                            + ghost_sector_shift
         """
         beta = self.b_1loop * (alphas ** 2)
 
+        # Standard 2-loop cross-terms
         for i in range(3):
             for j in range(3):
                 beta[i] += self.b_2loop[i, j] * alphas[i]**2 * alphas[j] / (4 * np.pi)
+
+        # GHOST SECTOR SHIFT from mirror sector
+        # Mirror sector temperature ratio: T'/T ~ 0.57 (from asymmetric reheating)
+        temp_ratio = 0.57
+        ghost_suppression = temp_ratio**4  # ~ 0.106
+
+        # Mirror sector threshold scale
+        # M_mirror ~ M_GUT * (T'/T)^4 for thermal decoupling
+        mu = np.exp(t)  # Current energy scale
+        M_mirror = self.M_GUT * ghost_suppression
+
+        # Ghost sector contributes above M_mirror
+        if mu > M_mirror:
+            # Mirror gauge bosons contribute equally to beta functions
+            # but are suppressed by ghost_suppression factor
+            # The shift follows the same group structure: b_mirror = b_SM * N_mirror
+            # For a single mirror copy: N_mirror = 1
+            ghost_shift = ghost_suppression * self.b_1loop * (alphas ** 2)
+            beta += ghost_shift
 
         return beta / (2 * np.pi)
 

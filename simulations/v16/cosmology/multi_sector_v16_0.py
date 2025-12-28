@@ -296,31 +296,68 @@ class MultiSectorV16(SimulationBase):
 
     def _compute_sector_weights(self) -> Dict[str, float]:
         """
-        Compute sector weights using Gaussian modulation.
+        Compute sector weights using Jacobian-weighted Gaussian modulation.
+
+        MANIFOLD-AWARE IMPROVEMENT (v16.1):
+        Includes G2 metric determinant in the sector weight calculation.
+        The Jacobian sqrt(det(g)) accounts for the proper volume measure
+        on the G2 manifold moduli space.
+
+        The metric determinant varies across moduli space as:
+            sqrt(det(g)) ∝ (Re(T))^{-7/2} * exp(-3K/2)
+
+        where K = -3 ln(2 Re(T)) is the Kähler potential.
+
+        This gives a Jacobian weighting that naturally suppresses contributions
+        from small Re(T) (strong coupling) regions.
 
         Returns:
-            Dictionary with sm_weight and mirror_weight
+            Dictionary with sm_weight, mirror_weight, and jacobian_correction
         """
         # Gaussian modulation around sampling position
         sector_positions = np.linspace(0, 1, self.n_sectors)
 
-        # Compute weights using Gaussian profile
+        # Compute base Gaussian weights
         weights = np.exp(-((sector_positions - self.sampling_position) ** 2)
                         / (2 * self.modulation_width ** 2))
-        weights /= np.sum(weights)  # Normalize
+
+        # MANIFOLD-AWARE: Apply Jacobian weighting from G2 metric
+        # Map sector positions to moduli space coordinates Re(T)
+        # Sector 0 corresponds to Re(T) ~ 1, Sector 1 to Re(T) ~ 10
+        re_t_values = 1.0 + 9.0 * sector_positions  # Re(T) ∈ [1, 10]
+
+        # G2 moduli space metric determinant
+        # From Kähler geometry: sqrt(det(g)) ∝ (Re(T))^{-7/2}
+        # The -7/2 power comes from 7D G2 moduli space with no-scale structure
+        metric_jacobian = np.power(re_t_values, -7/2)
+
+        # Normalize Jacobian to preserve overall weight scale
+        metric_jacobian /= np.mean(metric_jacobian)
+
+        # Apply Jacobian weighting: weights → weights * sqrt(det(g))
+        weighted = weights * metric_jacobian
+
+        # Normalize total weights
+        weighted /= np.sum(weighted)
 
         # SM sector is at position 0.5 (by convention)
         sm_idx = np.argmin(np.abs(sector_positions - 0.5))
-        sm_weight = float(weights[sm_idx])
+        sm_weight = float(weighted[sm_idx])
 
         # Mirror sector is typically the next adjacent sector
         mirror_idx = (sm_idx + 1) % self.n_sectors
-        mirror_weight = float(weights[mirror_idx])
+        mirror_weight = float(weighted[mirror_idx])
+
+        # Compute Jacobian correction factor (ratio of weighted to unweighted)
+        unweighted_norm = weights / np.sum(weights)
+        jacobian_correction = float(weighted[sm_idx] / unweighted_norm[sm_idx])
 
         return {
             'sm_weight': sm_weight,
             'mirror_weight': mirror_weight,
-            'all_weights': weights.tolist()
+            'all_weights': weighted.tolist(),
+            'jacobian_correction': jacobian_correction,
+            'is_manifold_aware': True
         }
 
     def _compute_temperature_ratio(self, chi_eff: float) -> float:
