@@ -339,8 +339,6 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                     "Orch OR gravitational collapse criterion. Superposition collapse time "
                     "determined by gravitational self-energy of the quantum superposition."
                 ),
-                inputParams=[],
-                outputParams=["consciousness.tau_collapse_ms"],
                 input_params=[],
                 output_params=["consciousness.tau_collapse_ms"],
                 derivation={
@@ -369,8 +367,6 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                     "PM vacuum modulation of consciousness event frequency. Speculative "
                     "connection between vacuum position and quantum coherence."
                 ),
-                inputParams=[],
-                outputParams=["consciousness.f_base_hz"],
                 input_params=[],
                 output_params=["consciousness.f_base_hz"],
                 derivation={

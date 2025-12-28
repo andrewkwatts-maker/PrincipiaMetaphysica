@@ -144,13 +144,13 @@ class PneumaMechanismV16(SimulationBase):
         m_higgs = registry.get_param("pdg.m_higgs")
 
         # Get topology parameters (if available) or use defaults
-        if registry.has_param("topology.CHI_EFF"):
-            chi_eff = registry.get_param("topology.CHI_EFF")
+        if registry.has_param("topology.chi_eff"):
+            chi_eff = registry.get_param("topology.chi_eff")
         else:
             chi_eff = 144  # Standard TCS #187 topology
 
-        if registry.has_param("topology.B3"):
-            b3 = registry.get_param("topology.B3")
+        if registry.has_param("topology.b3"):
+            b3 = registry.get_param("topology.b3")
         else:
             b3 = 24  # Associative 3-cycles
 
@@ -794,9 +794,9 @@ class PneumaMechanismV16(SimulationBase):
                 plain_text="L_pneuma = (1/2) ∂_μ Ψ_P ∂^μ Ψ_P - V(Ψ_P) + L_vielbein",
                 category="THEORY",
                 description="Full Pneuma Lagrangian with kinetic, potential, and vielbein terms",
-                inputParams=["topology.CHI_EFF", "topology.B3"],
+                inputParams=["topology.chi_eff", "topology.b3"],
                 outputParams=["pneuma.coupling"],
-                input_params=["topology.CHI_EFF", "topology.B3"],
+                input_params=["topology.chi_eff", "topology.b3"],
                 output_params=["pneuma.coupling"],
                 derivation={
                     "source": "G2 holonomy geometry",
@@ -1058,8 +1058,8 @@ def main():
     EstablishedPhysics.load_into_registry(registry)
 
     # Set topology parameters
-    registry.set_param("topology.CHI_EFF", 144, source="TCS_187", status="ESTABLISHED")
-    registry.set_param("topology.B3", 24, source="TCS_187", status="ESTABLISHED")
+    registry.set_param("topology.chi_eff", 144, source="TCS_187", status="ESTABLISHED")
+    registry.set_param("topology.b3", 24, source="TCS_187", status="ESTABLISHED")
 
     # Run simulation
     print("RUNNING SIMULATION...")

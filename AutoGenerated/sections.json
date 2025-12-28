@@ -645,7 +645,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-28T21:38:13.578833"
+      "timestamp": "2025-12-28T22:01:01.925640"
     },
     "2": {
       "id": "2",
@@ -1474,7 +1474,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-28T21:38:13.611585"
+      "timestamp": "2025-12-28T22:01:01.958009"
     },
     "3": {
       "id": "3",
@@ -1557,6 +1557,10 @@
         {
           "type": "paragraph",
           "content": "The unified coupling alpha_GUT^-1 ~ 43 shows the influence of the asymptotic safety fixed point pulling toward the G2 topological value 1/alpha* ~ 24 = b3. The GUT scale M_GUT ~ 6 × 10^15 GeV from standard 3-loop running is lower than the geometric/torsion prediction M_GUT ~ 2 × 10^16 GeV, suggesting intermediate physics (e.g., Pati-Salam at M_PS ~ 10^12 GeV) may modify the running. This represents an active area of refinement in the Principia Metaphysica framework."
+        },
+        {
+          "type": "paragraph",
+          "content": "It is important to distinguish two GUT scales arising from different physical mechanisms: (1) M_GUT = 6.3 × 10^15 GeV from 3-loop RG evolution with KK and asymptotic safety corrections, used for gauge coupling evolution, and (2) M_GUT_geometric = 2.1 × 10^16 GeV from torsion class T_omega = -0.875 and moduli stabilization Re(T) ~ 9.865, used for proton decay calculations. The geometric scale corresponds to alpha_GUT = 1/23.54 (not 1/42.7) and arises from the explicit G2 manifold geometry rather than perturbative running. This higher scale ensures proton lifetime tau_p ~ 3.9×10^34 years passes the Super-Kamiokande bound."
         }
       ],
       "content_blocks": [
@@ -1633,6 +1637,10 @@
         {
           "type": "paragraph",
           "content": "The unified coupling alpha_GUT^-1 ~ 43 shows the influence of the asymptotic safety fixed point pulling toward the G2 topological value 1/alpha* ~ 24 = b3. The GUT scale M_GUT ~ 6 × 10^15 GeV from standard 3-loop running is lower than the geometric/torsion prediction M_GUT ~ 2 × 10^16 GeV, suggesting intermediate physics (e.g., Pati-Salam at M_PS ~ 10^12 GeV) may modify the running. This represents an active area of refinement in the Principia Metaphysica framework."
+        },
+        {
+          "type": "paragraph",
+          "content": "It is important to distinguish two GUT scales arising from different physical mechanisms: (1) M_GUT = 6.3 × 10^15 GeV from 3-loop RG evolution with KK and asymptotic safety corrections, used for gauge coupling evolution, and (2) M_GUT_geometric = 2.1 × 10^16 GeV from torsion class T_omega = -0.875 and moduli stabilization Re(T) ~ 9.865, used for proton decay calculations. The geometric scale corresponds to alpha_GUT = 1/23.54 (not 1/42.7) and arises from the explicit G2 manifold geometry rather than perturbative running. This higher scale ensures proton lifetime tau_p ~ 3.9×10^34 years passes the Super-Kamiokande bound."
         }
       ],
       "formulaRefs": [
@@ -1667,7 +1675,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2025-12-28T21:38:13.609947"
+      "timestamp": "2025-12-28T22:01:01.956394"
     },
     "4": {
       "id": "4",
@@ -1826,7 +1834,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-28T21:38:13.611307"
+      "timestamp": "2025-12-28T22:01:01.957730"
     },
     "5": {
       "id": "5",
@@ -1937,7 +1945,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-28T21:38:13.611441"
+      "timestamp": "2025-12-28T22:01:01.957867"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -1945,7 +1953,7 @@
       "title": "The Thermal Time Hypothesis and Two-Time Framework",
       "shortTitle": "The Thermal Time Hypothesis and Two-Time Framework",
       "order": 99,
-      "abstract": "We implement the thermal time hypothesis in the Principia Metaphysica framework, extending it to include a two-time structure with Sp(2,R) gauge symmetry. Time emerges from the Pneuma field's thermodynamic properties via the modular Hamiltonian.",
+      "abstract": "We implement the thermal time hypothesis in the Principia Metaphysica framework, extending it to include a two-time structure with Sp(2,R) gauge symmetry. Time emerges from the Pneuma field's thermodynamic properties via the modular Hamiltonian. The thermal time coupling alpha_T is derived from G2 topology (b3 = 24).",
       "contentBlocks": [
         {
           "type": "paragraph",
@@ -1971,7 +1979,14 @@
         },
         {
           "type": "paragraph",
-          "content": "In Principia Metaphysica, we extend this to a two-time framework with signature (24,2). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while a hidden orthogonal time t_ortho is related by Sp(2,R) gauge symmetry. The coupling alpha_T ~ 2.7 governs the strength of time evolution."
+          "content": "In Principia Metaphysica, we extend this to a two-time framework with signature (24,2). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while a hidden orthogonal time t_ortho is related by Sp(2,R) gauge symmetry. The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
+        },
+        {
+          "type": "formula",
+          "content": "\\alpha_T = \\frac{2\\pi}{b_3} \\cdot \\gamma_{\\text{correction}} = \\frac{2\\pi}{24} \\cdot 10.313 = 2.7",
+          "formula_id": "alpha-t-derivation",
+          "label": "(TT.4)",
+          "equationNumber": "(TT.4)"
         },
         {
           "type": "formula",
@@ -2010,7 +2025,14 @@
         },
         {
           "type": "paragraph",
-          "content": "In Principia Metaphysica, we extend this to a two-time framework with signature (24,2). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while a hidden orthogonal time t_ortho is related by Sp(2,R) gauge symmetry. The coupling alpha_T ~ 2.7 governs the strength of time evolution."
+          "content": "In Principia Metaphysica, we extend this to a two-time framework with signature (24,2). The observable thermal time t_therm emerges from the Pneuma field's modular flow, while a hidden orthogonal time t_ortho is related by Sp(2,R) gauge symmetry. The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
+        },
+        {
+          "type": "formula",
+          "content": "\\alpha_T = \\frac{2\\pi}{b_3} \\cdot \\gamma_{\\text{correction}} = \\frac{2\\pi}{24} \\cdot 10.313 = 2.7",
+          "formula_id": "alpha-t-derivation",
+          "label": "(TT.4)",
+          "equationNumber": "(TT.4)"
         },
         {
           "type": "formula",
@@ -2027,24 +2049,28 @@
       "formulaRefs": [
         "modular-hamiltonian",
         "thermal-flow",
+        "alpha-t-derivation",
         "entropy-gradient"
       ],
       "paramRefs": [
         "thermal.alpha_T",
         "thermal.modular_temperature",
-        "thermal.entropy_gradient"
+        "thermal.entropy_gradient",
+        "topology.b3"
       ],
       "formula_refs": [
         "modular-hamiltonian",
         "thermal-flow",
+        "alpha-t-derivation",
         "entropy-gradient"
       ],
       "param_refs": [
         "thermal.alpha_T",
         "thermal.modular_temperature",
-        "thermal.entropy_gradient"
+        "thermal.entropy_gradient",
+        "topology.b3"
       ],
-      "timestamp": "2025-12-28T21:38:13.611642"
+      "timestamp": "2025-12-28T22:01:01.958067"
     },
     "7": {
       "id": "7",
@@ -4475,7 +4501,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-28T21:38:13.611749"
+      "timestamp": "2025-12-28T22:01:01.958165"
     },
     "6": {
       "id": "6",
@@ -6618,7 +6644,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-28T21:38:13.611854"
+      "timestamp": "2025-12-28T22:01:01.958254"
     },
     "8": {
       "id": "8",
@@ -7237,9 +7263,9 @@
       ],
       "paramRefs": [
         "topology.n_gen",
-        "topology.CHI_EFF",
+        "topology.chi_eff",
         "topology.B2",
-        "topology.B3",
+        "topology.b3",
         "topology.HODGE_H11",
         "topology.HODGE_H31",
         "landscape.num_valid_topologies"
@@ -7252,14 +7278,14 @@
       ],
       "param_refs": [
         "topology.n_gen",
-        "topology.CHI_EFF",
+        "topology.chi_eff",
         "topology.B2",
-        "topology.B3",
+        "topology.b3",
         "topology.HODGE_H11",
         "topology.HODGE_H31",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-28T21:38:13.624988"
+      "timestamp": "2025-12-28T22:01:01.971824"
     }
   }
 }

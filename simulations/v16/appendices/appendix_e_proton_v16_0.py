@@ -68,18 +68,29 @@ class AppendixEProtonDecay(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
         return [
-            "gauge.M_GUT",
-            "constants.M_PLANCK",
+            # Read from main proton decay simulation (already computed)
+            "proton_decay.tau_p_years",
+            "proton_decay.suppression_factor",
+            "proton_decay.super_k_ratio",
+            "proton_decay.status",
+            # For documentation context
+            "gauge.M_GUT_GEOMETRIC",
+            "gauge.ALPHA_GUT_GEOMETRIC",
             "constants.m_proton",
         ]
 
     @property
     def output_params(self) -> List[str]:
-        """Return list of output parameter paths."""
+        """Return list of output parameter paths.
+
+        Note: This appendix documents the proton decay calculation but does NOT
+        override the values computed by proton_decay_v16_0. It only adds supplementary
+        parameters like branching ratios.
+        """
         return [
-            "proton_decay.tau_p_years",
-            "proton_decay.gamma_p",
-            "proton_decay.geometric_suppression",
+            "proton_decay.BR_e_pi0",
+            "proton_decay.BR_mu_pi0",
+            "proton_decay.BR_nu_K",
         ]
 
     @property
@@ -101,63 +112,45 @@ class AppendixEProtonDecay(SimulationBase):
         Returns:
             Dictionary with proton decay predictions
         """
-        # Get input parameters
-        M_GUT = registry.get_param("gauge.M_GUT")  # GeV
-        M_PLANCK = registry.get_param("constants.M_PLANCK")  # GeV
+        # Read computed values from main proton decay simulation
+        # (proton_decay_v16_0 already computed these with the correct formula)
+        tau_p_years = registry.get_param("proton_decay.tau_p_years")
+        suppression_factor = registry.get_param("proton_decay.suppression_factor")
+        super_k_ratio = registry.get_param("proton_decay.super_k_ratio")
+        status = registry.get_param("proton_decay.status")
+
+        # Get context parameters for documentation
+        M_GUT = registry.get_param("gauge.M_GUT_GEOMETRIC")  # GeV
+        alpha_GUT = registry.get_param("gauge.ALPHA_GUT_GEOMETRIC")
         m_p = registry.get_param("constants.m_proton")  # GeV
-        alpha_s = 0.118  # Strong coupling at M_Z (hardcoded)
 
-        # Cycle separation parameter (dimensionless)
-        # Measures geometric separation of 3-cycles in G₂ manifold
-        cycle_sep = 0.5  # Default from TCS G2 geometry
-
-        # === Proton Decay Rate Calculation ===
-
-        # 1. GUT coupling at M_GUT
-        # alpha_GUT ≈ 1/24 from gauge coupling unification
-        alpha_GUT = 1.0 / 24.0
-
-        # 2. Dimension-6 operator suppression
-        # Γ ∝ (α_GUT/M_GUT)² m_p⁵
-        prefactor = (alpha_GUT / M_GUT)**2 * m_p**5
-
-        # 3. Geometric suppression from cycle separation
-        # Wavefunction overlap between quark and lepton zero modes
-        # exp(-Δ/ℓ) where Δ is cycle separation, ℓ is string length
-        geometric_suppression = np.exp(-cycle_sep / 0.1)  # ℓ ~ 0.1 in Planck units
-
-        # 4. QCD corrections (hadronic matrix elements)
-        # Including chiral Lagrangian and lattice QCD results
-        QCD_factor = 0.003  # Dimensionless (from lattice calculations)
-
-        # 5. Total decay rate (in GeV)
-        Gamma_p = prefactor * geometric_suppression * QCD_factor
-
-        # 6. Lifetime in seconds
-        # τ = ℏ / Γ, with ℏ ≈ 6.582 × 10⁻²⁵ GeV·s
-        hbar = 6.582119569e-25  # GeV·s
-        tau_p_seconds = hbar / Gamma_p
-
-        # 7. Convert to years
-        seconds_per_year = 365.25 * 24 * 3600
-        tau_p_years = tau_p_seconds / seconds_per_year
-
-        # === Branching ratios ===
-        # From flavor structure of dimension-6 operators
-        BR_e_pi0 = 0.25  # p → e⁺ π⁰ (from Appendix H)
+        # === Branching Ratios ===
+        # From flavor structure of dimension-6 operators (p → e⁺ π⁰ dominant)
+        # These are supplementary outputs not computed by main simulation
+        BR_e_pi0 = 0.25  # p → e⁺ π⁰ (geometric flux orientation)
         BR_mu_pi0 = 0.15  # p → μ⁺ π⁰
-        BR_nu_K = 0.60  # p → ν̄ K⁺
+        BR_nu_K = 0.60  # p → ν̄ K⁺ (SUSY channel, suppressed in PM)
 
+        # Convert lifetime to seconds for documentation
+        seconds_per_year = 365.25 * 24 * 3600
+        tau_p_seconds = tau_p_years * seconds_per_year if tau_p_years else 0
+
+        # Only return supplementary parameters (branching ratios)
+        # Do NOT return tau_p_years - that's already computed by proton_decay_v16_0
         return {
-            "proton_decay.tau_p_years": tau_p_years,
-            "proton_decay.tau_p_seconds": tau_p_seconds,
-            "proton_decay.gamma_p": Gamma_p,
-            "proton_decay.geometric_suppression": geometric_suppression,
             "proton_decay.BR_e_pi0": BR_e_pi0,
             "proton_decay.BR_mu_pi0": BR_mu_pi0,
             "proton_decay.BR_nu_K": BR_nu_K,
-            "proton_decay.alpha_GUT": alpha_GUT,
-            "proton_decay.M_GUT_used": M_GUT,
+            # For internal documentation/logging only (not injected)
+            "_context": {
+                "tau_p_years": tau_p_years,
+                "tau_p_seconds": tau_p_seconds,
+                "suppression_factor": suppression_factor,
+                "super_k_ratio": super_k_ratio,
+                "status": status,
+                "M_GUT_GEOMETRIC": M_GUT,
+                "alpha_GUT": alpha_GUT,
+            }
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
@@ -357,8 +350,6 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                     "Proton decay rate from dimension-6 effective operators. "
                     "Includes GUT scale suppression and hadronic matrix elements."
                 ),
-                inputParams=["mass_scales.M_GUT", "fermions.proton_mass", "gauge.alpha_GUT"],
-                outputParams=["proton_decay.gamma_p"],
                 input_params=["mass_scales.M_GUT", "fermions.proton_mass", "gauge.alpha_GUT"],
                 output_params=["proton_decay.gamma_p"],
             ),
@@ -372,8 +363,6 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                     "Predicted proton lifetime for p → π⁰e⁺ channel. "
                     "Testable by Hyper-Kamiokande (2027+)."
                 ),
-                inputParams=["proton_decay.gamma_p"],
-                outputParams=["proton_decay.tau_p_years"],
                 input_params=["proton_decay.gamma_p"],
                 output_params=["proton_decay.tau_p_years"],
             ),
@@ -387,8 +376,6 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                     "Geometric suppression from wavefunction overlap between quark "
                     "and lepton cycles in G₂ manifold."
                 ),
-                inputParams=["topology.cycle_separation"],
-                outputParams=["proton_decay.geometric_suppression"],
                 input_params=["topology.cycle_separation"],
                 output_params=["proton_decay.geometric_suppression"],
             ),

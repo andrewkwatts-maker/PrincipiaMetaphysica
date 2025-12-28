@@ -76,7 +76,7 @@ class AppendixNG2Landscape(SimulationBase):
         """Return list of required input parameter paths."""
         return [
             "topology.n_gen",
-            "topology.CHI_EFF",
+            "topology.chi_eff",
         ]
 
     @property
@@ -115,7 +115,7 @@ class AppendixNG2Landscape(SimulationBase):
         """
         # Get requirements
         n_gen = registry.get_param("topology.n_gen")
-        chi_eff = registry.get_param("topology.CHI_EFF")
+        chi_eff = registry.get_param("topology.chi_eff")
 
         # All valid topologies share chi_eff = 144 and n_gen = 3
         # Constraint: h^{1,1} + h^{3,1} = 72
@@ -280,9 +280,9 @@ class AppendixNG2Landscape(SimulationBase):
             ],
             param_refs=[
                 "topology.n_gen",
-                "topology.CHI_EFF",
+                "topology.chi_eff",
                 "topology.B2",
-                "topology.B3",
+                "topology.b3",
                 "topology.HODGE_H11",
                 "topology.HODGE_H31",
                 "landscape.num_valid_topologies",
@@ -307,9 +307,7 @@ class AppendixNG2Landscape(SimulationBase):
                     "Hodge number constraint for valid topologies. Fixed relation from "
                     "effective Euler characteristic chi_eff = 144."
                 ),
-                inputParams=["topology.CHI_EFF"],
-                outputParams=["topology.HODGE_H11", "topology.HODGE_H31"],
-                input_params=["topology.CHI_EFF"],
+                input_params=["topology.chi_eff"],
                 output_params=["topology.HODGE_H11", "topology.HODGE_H31"],
                 derivation={
                     "method": "Euler characteristic relation for TCS G2 manifolds",
@@ -335,9 +333,7 @@ class AppendixNG2Landscape(SimulationBase):
                     "Generation number from third Betti number. Identical for all 49 "
                     "valid topologies."
                 ),
-                inputParams=["topology.B3"],
-                outputParams=["topology.n_gen"],
-                input_params=["topology.B3"],
+                input_params=["topology.b3"],
                 output_params=["topology.n_gen"],
                 derivation={
                     "parentFormulas": ["generation-number"],
@@ -505,7 +501,7 @@ def main():
 
     # Add required topology parameters
     registry.set_param("topology.n_gen", 3, source="foundational")
-    registry.set_param("topology.CHI_EFF", 144, source="foundational")
+    registry.set_param("topology.chi_eff", 144, source="foundational")
 
     # Create and run appendix
     appendix = AppendixNG2Landscape()

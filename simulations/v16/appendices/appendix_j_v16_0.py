@@ -63,7 +63,7 @@ class AppendixJMonteCarloError(SimulationBase):
         """Return list of required input parameter paths."""
         return [
             "topology.n_gen",
-            "topology.CHI_EFF",
+            "topology.chi_eff",
             "topology.b2",
             "topology.b3",
             "gauge.M_GUT",
@@ -401,8 +401,6 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                     "Monte Carlo standard deviation formula for error propagation through "
                     "N samples of parameter x."
                 ),
-                inputParams=["monte_carlo.n_samples"],
-                outputParams=["monte_carlo.mean_relative_error"],
                 input_params=["monte_carlo.n_samples"],
                 output_params=["monte_carlo.mean_relative_error"],
                 terms={
@@ -422,8 +420,6 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                     "Pearson correlation coefficient between parameters i and j, "
                     "forming the 58×58 correlation matrix."
                 ),
-                inputParams=["monte_carlo.n_parameters"],
-                outputParams=["monte_carlo.correlation_matrix_shape"],
                 input_params=["monte_carlo.n_parameters"],
                 output_params=["monte_carlo.correlation_matrix_shape"],
                 terms={

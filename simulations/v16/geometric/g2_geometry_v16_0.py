@@ -19,7 +19,7 @@ KEY FEATURES:
 
 OUTPUTS:
 - topology.b3: Third Betti number (24 associative 3-cycles)
-- topology.CHI_EFF: Effective Euler characteristic (144)
+- topology.chi_eff: Effective Euler characteristic (144)
 - topology.n_gen: Number of generations (3)
 - topology.K_MATCHING: K3 matching fibres (4)
 - topology.d_over_R: Cycle separation ratio (0.12)
@@ -112,8 +112,7 @@ class G2GeometryV16(SimulationBase):
         return [
             "topology.b2",
             "topology.b3",
-            "topology.CHI_EFF",
-            "topology.chi_eff",  # Lowercase alias for compatibility
+            "topology.chi_eff",
             "topology.n_gen",
             "topology.K_MATCHING",
             "topology.d_over_R"
@@ -192,8 +191,7 @@ class G2GeometryV16(SimulationBase):
         return {
             "topology.b2": self._b2,
             "topology.b3": self._b3,
-            "topology.CHI_EFF": self._chi_eff,
-            "topology.chi_eff": self._chi_eff,  # Lowercase alias for compatibility
+            "topology.chi_eff": self._chi_eff,
             "topology.n_gen": n_gen,
             "topology.K_MATCHING": K_matching,
             "topology.d_over_R": d_over_R,
@@ -860,7 +858,7 @@ class G2GeometryV16(SimulationBase):
             abstract="This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the 26-dimensional action with signature (24,2) decomposing as M_26 = M_A^14 ⊗_T M_B^14, where each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, projecting onto an effective 13D (12,1) shadow. We derive the 4D effective action through Kaluza-Klein dimensional reduction on a TCS (Twisted Connected Sum) G₂ manifold with h1,1=4 Kähler moduli sectors. Racetrack moduli stabilization across these sectors dynamically derives ε ≈ 0.2257 (Cabibbo angle) from flux quantization N₁=24, N₂=23. The 26D→13D shadow framework provides a Z₂ mirror brane structure with geometrically-derived generation count n_gen = 3. The Pneuma-Vielbein bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+).",
             content_blocks=blocks,
             formula_refs=["g2-holonomy", "euler-characteristic", "betti-numbers", "three-generations", "cycle-matching"],
-            param_refs=["topology.b2", "topology.b3", "topology.CHI_EFF", "topology.n_gen", "topology.K_MATCHING", "topology.d_over_R"]
+            param_refs=["topology.b2", "topology.b3", "topology.chi_eff", "topology.n_gen", "topology.K_MATCHING", "topology.d_over_R"]
         )
 
     def get_formulas(self) -> List[Formula]:
@@ -928,9 +926,9 @@ class G2GeometryV16(SimulationBase):
             category="THEORY",
             description="Effective Euler characteristic from Hodge numbers",
             inputParams=[],
-            outputParams=["topology.CHI_EFF"],
+            outputParams=["topology.chi_eff"],
             input_params=["topology.h11", "topology.h21", "topology.h31"],
-            output_params=["topology.CHI_EFF"],
+            output_params=["topology.chi_eff"],
             derivation={
                 "steps": [
                     "Hodge decomposition: H^k(M) = ⊕_p H^{p,k-p}",
@@ -948,7 +946,7 @@ class G2GeometryV16(SimulationBase):
                     "description": "Effective Euler characteristic",
                     "symbol": "χ_eff",
                     "value": "144",
-                    "param_id": "topology.CHI_EFF"
+                    "param_id": "topology.chi_eff"
                 },
                 "h11": {
                     "description": "Kahler moduli count",
@@ -1010,9 +1008,9 @@ class G2GeometryV16(SimulationBase):
             plain_text="n_gen = χ_eff / 48",
             category="THEORY",
             description="Number of fermion generations from index theorem",
-            inputParams=["topology.CHI_EFF"],
+            inputParams=["topology.chi_eff"],
             outputParams=["topology.n_gen"],
-            input_params=["topology.CHI_EFF"],
+            input_params=["topology.chi_eff"],
             output_params=["topology.n_gen"],
             derivation={
                 "steps": [
@@ -1098,7 +1096,7 @@ class G2GeometryV16(SimulationBase):
                 derivation_formula="betti-numbers"
             ),
             Parameter(
-                path="topology.CHI_EFF",
+                path="topology.chi_eff",
                 name="Effective Euler Characteristic",
                 units="dimensionless",
                 status="GEOMETRIC",
@@ -1266,7 +1264,7 @@ def main():
     print(f"{'='*70}")
     print(f"  b2 (Kahler moduli):       {results['topology.b2']}")
     print(f"  b3 (associative cycles):  {results['topology.b3']}")
-    print(f"  chi_eff:                  {results['topology.CHI_EFF']}")
+    print(f"  chi_eff:                  {results['topology.chi_eff']}")
     print(f"  n_gen:                    {results['topology.n_gen']}")
     print(f"  K_matching:               {results['topology.K_MATCHING']}")
     print(f"  d/R:                      {results['topology.d_over_R']}")

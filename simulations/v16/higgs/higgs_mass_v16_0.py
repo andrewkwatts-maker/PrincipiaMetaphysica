@@ -99,8 +99,8 @@ class HiggsMassSimulation(SimulationBase):
         """
         return [
             # Topology parameters (GEOMETRIC)
-            "topology.CHI_EFF",
-            "topology.b3",  # lowercase from G2 geometry
+            "topology.chi_eff",
+            "topology.b3",
             "topology.T_OMEGA",
 
             # Established physics (PHENOMENOLOGICAL)
@@ -161,8 +161,8 @@ class HiggsMassSimulation(SimulationBase):
         self.validate_inputs(registry)
 
         # Get input parameters
-        chi_eff = registry.get_param("topology.CHI_EFF")
-        b3 = registry.get_param("topology.b3")  # lowercase from G2 geometry
+        chi_eff = registry.get_param("topology.chi_eff")
+        b3 = registry.get_param("topology.b3")
         t_omega = registry.get_param("topology.T_OMEGA")  # From TorsionClass
 
         v_yukawa = registry.get_param("higgs.vev_yukawa")
@@ -396,9 +396,9 @@ class HiggsMassSimulation(SimulationBase):
                 plain_text="W(T) = A exp(-aT) + B exp(-bT)",
                 category="THEORY",
                 description="Racetrack superpotential for moduli stabilization",
-                inputParams=["topology.B3", "topology.CHI_EFF"],
+                inputParams=["topology.b3", "topology.chi_eff"],
                 outputParams=["moduli.re_t_attractor"],
-                input_params=["topology.B3", "topology.CHI_EFF"],
+                input_params=["topology.b3", "topology.chi_eff"],
                 output_params=["moduli.re_t_attractor"],
                 derivation={
                     "parent_formulas": ["kklt-stabilization"],
@@ -761,13 +761,13 @@ def main():
 
     # Load input parameters from config
     registry.set_param(
-        "topology.CHI_EFF",
+        "topology.chi_eff",
         TCSTopologyParameters.CHI_EFF,
         source="ESTABLISHED:TCS_CONSTRUCTION",
         status="GEOMETRIC"
     )
     registry.set_param(
-        "topology.B3",
+        "topology.b3",
         TCSTopologyParameters.B3,
         source="ESTABLISHED:TCS_CONSTRUCTION",
         status="GEOMETRIC"

@@ -370,8 +370,6 @@ def dimensional_reduction() -> dict:
                     "Sp(2,ℝ) gauge constraint in two-time physics. Eliminates half the "
                     "degrees of freedom, reducing (24,2) to (12,1) shadow spacetime."
                 ),
-                inputParams=[],
-                outputParams=["dimensions.shadow_signature"],
                 input_params=[],
                 output_params=["dimensions.shadow_signature"],
             ),
@@ -385,8 +383,6 @@ def dimensional_reduction() -> dict:
                     "Dimensional reduction from bulk (24,2) signature to shadow (12,1) "
                     "via Sp(2,ℝ) gauge fixing."
                 ),
-                inputParams=["dimensions.bulk_signature"],
-                outputParams=["dimensions.shadow_signature"],
                 input_params=["dimensions.bulk_signature"],
                 output_params=["dimensions.shadow_signature"],
             ),
@@ -400,8 +396,6 @@ def dimensional_reduction() -> dict:
                     "Orientation sum parameter from shadow spatial dimensions or TCS cycle symmetry. "
                     "Both methods give Σ = 12, providing geometric consistency check."
                 ),
-                inputParams=["dimensions.shadow_signature", "topology.b3"],
-                outputParams=["dimensions.orientation_sum"],
                 input_params=["dimensions.shadow_signature", "topology.b3"],
                 output_params=["dimensions.orientation_sum"],
             ),
