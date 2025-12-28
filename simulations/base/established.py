@@ -412,6 +412,7 @@ class EstablishedPhysics:
 
         # Electroweak VEV and Yukawa couplings
         v_ew = 246.22  # GeV, electroweak VEV
+        v_yukawa = v_ew / np.sqrt(2)  # 174 GeV, Yukawa coupling scale (m_f = y_f * v_yukawa)
         m_top = 172.69  # GeV
         y_top = m_top * np.sqrt(2) / v_ew  # Top Yukawa coupling ~ 0.994
 
@@ -422,11 +423,11 @@ class EstablishedPhysics:
             # Higgs/Yukawa parameters
             EstablishedParameter(
                 path="higgs.vev_yukawa",
-                value=v_ew,
+                value=v_yukawa,  # 174 GeV, not 246 GeV - for Higgs mass formula
                 uncertainty=0.01,
                 units="GeV",
                 source="ESTABLISHED:SM_EW",
-                description="Electroweak VEV from Fermi constant"
+                description="Yukawa coupling scale v/√2 = 174 GeV (NOT the EW VEV)"
             ),
             EstablishedParameter(
                 path="yukawa.y_top",
@@ -444,22 +445,24 @@ class EstablishedPhysics:
                 source="ESTABLISHED:GUT_THEORY",
                 description="GUT gauge coupling"
             ),
-            # Moduli stabilization parameters (phenomenological)
+            # Moduli stabilization parameters
+            # RE_T_ATTRACTOR: From TCS G2 flux/membrane instanton geometry
+            # RE_T_PHENOMENOLOGICAL: Inverted from m_H = 125.10 GeV constraint
             EstablishedParameter(
                 path="moduli.re_t_attractor",
-                value=1.21,
+                value=1.833,  # GEOMETRIC: from TCS #187 attractor mechanism
                 uncertainty=0.05,
                 units="dimensionless",
-                source="ESTABLISHED:MODULI_THEORY",
-                description="Attractor value for Re(T) modulus"
+                source="ESTABLISHED:G2_GEOMETRY",
+                description="Attractor value for Re(T) from G2 flux instantons"
             ),
             EstablishedParameter(
                 path="moduli.re_t_phenomenological",
-                value=1.18,
-                uncertainty=0.08,
+                value=9.865,  # CONSTRAINED: gives m_H = 125.10 GeV with v_yukawa = 174 GeV
+                uncertainty=0.1,
                 units="dimensionless",
-                source="ESTABLISHED:MODULI_THEORY",
-                description="Phenomenological Re(T) from Higgs mass fitting"
+                source="CONSTRAINED:HIGGS_MASS",
+                description="Re(T) constrained by m_H = 125.10 GeV (phenomenological input)"
             ),
             # Topology parameters (from G2 geometry)
             EstablishedParameter(
