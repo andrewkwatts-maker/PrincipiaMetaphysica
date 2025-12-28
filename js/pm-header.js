@@ -13,12 +13,13 @@
 
 /**
  * Navigation links - single source of truth
+ * All pages are now in the /Pages/ folder
  */
 const NAV_LINKS = [
-  { href: 'index.html', label: 'Home', id: 'home' },
+  { href: '../index.html', label: 'Home', id: 'home', isRoot: true },
   { href: 'beginners-guide.html', label: "Beginner's Guide", id: 'beginners-guide' },
   { href: 'sections.html', label: 'Sections', id: 'sections' },
-  { href: 'foundations/index.html', label: 'Foundations', id: 'foundations' },
+  { href: 'foundations.html', label: 'Foundations', id: 'foundations' },
   { href: 'references.html', label: 'References', id: 'references' },
   { href: 'formulas.html', label: 'Formulas', id: 'formulas' },
   { href: 'parameters.html', label: 'Parameters', id: 'parameters' },
@@ -27,14 +28,20 @@ const NAV_LINKS = [
 ];
 
 /**
- * Get the base path for links based on current page location
+ * Get the base path for resources (CSS, images) based on current page location
+ * Resources are always at the root level
  */
 function getBasePath() {
   const path = window.location.pathname;
-  // If in subdirectory (e.g., foundations/, sections/), add ../
+  // If in Pages folder, go up one level to reach root resources
+  if (path.includes('/Pages/')) {
+    return '../';
+  }
+  // If in nested subdirectory, go up appropriately
   if (path.includes('/foundations/') || path.includes('/sections/')) {
     return '../';
   }
+  // At root level
   return '';
 }
 
@@ -59,18 +66,30 @@ function ensureCSS() {
  */
 function createHeaderHTML(activePageId = '') {
   const basePath = getBasePath();
+  const path = window.location.pathname;
+  const isInPages = path.includes('/Pages/');
 
   const navItems = NAV_LINKS.map(link => {
     const isActive = link.id === activePageId;
     const activeClass = isActive ? ' class="active"' : '';
-    const href = basePath + link.href;
+    let href;
+    if (link.isRoot) {
+      // Home link - always goes to root index.html
+      href = isInPages ? '../index.html' : 'index.html';
+    } else {
+      // Other links - in Pages folder
+      href = isInPages ? link.href : 'Pages/' + link.href;
+    }
     return `<li><a href="${href}"${activeClass}>${link.label}</a></li>`;
   }).join('\n            ');
+
+  // Site title always links to root
+  const homeHref = isInPages ? '../index.html' : 'index.html';
 
   return `
     <header class="pm-header">
       <div class="header-content">
-        <a href="${basePath}index.html" class="site-title">Principia Metaphysica</a>
+        <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
         <nav class="main-nav">
           <ul>
             ${navItems}
