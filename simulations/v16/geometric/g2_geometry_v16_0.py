@@ -323,64 +323,544 @@ class G2GeometryV16(SimulationBase):
 
     def get_section_content(self) -> Optional[SectionContent]:
         """
-        Generate Section 2 content on G2 Geometry.
+        Generate Section 2 content on G2 Geometry (COMPLETE MIGRATION from section-2.json).
 
         Returns:
-            SectionContent for Section 2 appendices
+            SectionContent for Section 2 with ALL subsections and content blocks
         """
-        blocks = [
+        blocks = []
+
+        # =====================================================================
+        # SUBSECTION 2.1: 26D→13D shadow Action and Sp(2,R) Gauge Symmetry
+        # =====================================================================
+        blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="2.1 26D→13D shadow Action and Sp(2,R) Gauge Symmetry"
+            ),
             ContentBlock(
                 type="paragraph",
-                content="""The TCS (Twisted Connected Sum) construction provides explicit
-                examples of compact G2 manifolds with known topology. We use TCS manifold #187
-                from the Corti et al. classification, which has particularly favorable properties
-                for phenomenology."""
+                content="The starting point is a gravitational theory in 26 dimensions decomposing as M_26 = M_A^14 ⊗_T M_B^14 — the critical dimension of bosonic string theory — coupled to the fundamental Pneuma field. Each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) local gauge symmetry eliminates ghost states from the two-time structure. The full 26D action takes the form:"
             ),
             ContentBlock(
                 type="formula",
-                content=r"\text{Hol}(g) \subseteq G_2 \iff \exists \eta: \nabla \eta = 0",
-                formula_id="g2-holonomy",
-                label="(2.1)"
+                content="S_26D = ∫ d^26 x √|G| [M_*^24 R_26 + Ψ̄_P (iΓ^M D_M - m)Ψ_P + ℒ_Sp(2,R)]",
+                label="(2.0) — 26D Master Action"
             ),
             ContentBlock(
                 type="paragraph",
-                content="""The G2 holonomy condition is equivalent to the existence of a
-                covariantly constant spinor, which automatically implies Ricci-flatness and
-                the closure conditions on the associative 3-form and coassociative 4-form."""
+                content="where Ψ_P is the Pneuma spinor with 8192 components before gauge reduction (from Cl(24,2), with dimension 2^13 = 8192), and ℒ_Sp(2,R) contains the local gauge constraints that eliminate ghosts from the two shared time dimensions. After Sp(2,R) gauge fixing, this reduces to 64 physical components (2^6). The three Sp(2,R) first-class constraints are:"
             ),
             ContentBlock(
                 type="formula",
-                content=r"\chi_{\text{eff}} = 2(h^{1,1} - h^{2,1} + h^{3,1}) = 2(4 - 0 + 68) = 144",
-                formula_id="euler-characteristic",
-                label="(2.2)"
+                content="X^2 = 0, X·P = 0, P^2 + M^2 = 0 — Sp(2,R) gauge constraints (two-time physics)",
+                label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content=f"""For TCS #187, the effective Euler characteristic is χ_eff = {self._chi_eff},
-                which determines the number of fermion generations via the index theorem:"""
+                content="These constraints eliminate the ghost degrees of freedom from the two shared timelike dimensions, projecting the full M_26 = M_A^14 ⊗_T M_B^14 structure onto physically observable states. After Sp(2,R) gauge fixing, the 8192-component spinor reduces to 64 effective components. Each 14D half independently contributes physical degrees of freedom while sharing the two timelike dimensions through the Sp(2,R) gauge connection."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="26D→13D shadow Decomposition with Shared Time (December 2025)",
+                content="The 26-dimensional spacetime decomposes as a tensor product of 13D shadow (from 26D bulk) sharing 2 timelike dimensions. Key Features: signature (24,2) → (12,1) effective after gauge fixing; Sp(2,R) removes ghosts; 8192 → 64 components."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Algebraic Origin of D=13 (November 2025)",
+                content="The dimension D=13 has a unique algebraic decomposition in terms of the normed division algebras: 13 = 1 + 4 + 8 (R + H + O). Why D=13 is unique: Unlike D=10 (C+O, requiring worldsheet) or D=11 (R+C+O, 7D internal), the decomposition 1+4+8 naturally accommodates CY4 internal geometry with thermal time emergence. The cobordism group Ω^String_13 = 0 ensures global anomaly freedom."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Here G_MN denotes the effective 13D metric (with indices M,N = 0,1,...,12), R_13 is the effective 13D Ricci scalar, M_* is the fundamental mass scale, and D_M is the spinor covariant derivative in the effective 13D. The interaction Lagrangian ℒ_int contains higher-dimensional operators suppressed by powers of M_*."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="warning",
+                title="The Non-Renormalizability Issue",
+                content="General relativity in D > 4 dimensions is power-counting non-renormalizable. The gravitational coupling has mass dimension [κ_13] = (2-13)/2, which is negative for D > 2. This means infinitely many counterterms would be required at each loop order if treated as a fundamental theory."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The modern perspective, articulated by Weinberg and developed in the context of quantum gravity by Donoghue and others, treats the higher-dimensional theory as an Effective Field Theory (EFT) valid below some cutoff scale Λ ~ M_*. The key insight is that at energies E << M_*, the theory makes well-defined predictions despite containing infinitely many possible operators."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Dimensional analysis determines the structure of the effective Lagrangian. Each operator is characterized by its mass dimension and suppressed by appropriate powers of M_*:"
+            ),
+            ContentBlock(
+                type="table",
+                content={
+                    "headers": ["Operator Type", "Mass Dimension", "Suppression", "Example"],
+                    "rows": [
+                        ["Kinetic terms", "[D] = 13", "M_*^11", "M_*^11 R"],
+                        ["Four-fermion", "[D] = 13", "M_*^-1", "(ΨΓΨ)^2 / M_*"],
+                        ["Curvature squared", "[D] = 13", "M_*^9", "M_*^9 R^2"],
+                        ["R^3 corrections", "[D] = 13", "M_*^7", "M_*^7 R^3"],
+                        ["Higher derivative", "[D] = 13", "M_*^7", "M_*^7 (∇R)^2"]
+                    ]
+                }
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="At energies E << M_*, higher-dimension operators contribute corrections of order (E/M_*)^n with n ≥ 1. These corrections are systematically small and calculable in the EFT expansion. The predictive power comes from organizing operators by their relevance at low energies."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="UV Completion",
+                content="The EFT description remains agnostic about the UV completion at E ~ M_*. Candidate UV completions include string theory (where M_* ~ M_string), asymptotic safety, or other quantum gravity frameworks. The low-energy predictions are largely independent of these UV details."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Critical Distinction: Three Conceptually Different Processes",
+                content="Update (v14.1): The dimensional reduction from 26D to 4D proceeds through five distinct stages, with a crucial distinction between gauge fixing (Stages 1-2), G₂ holonomy (Stage 3), and compactification (Stages 4-5). The explicit 7D G₂ holonomy stage is critical for generating SO(10) gauge symmetry and 3 fermion families."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The fundamental scale M_* is related to the observed 4D Planck mass through the volume of the internal manifold:"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="For V_9 ~ (1/M_GUT)^9 with M_GUT = 2.118×10^16 GeV (Grand Unification scale - geometrically derived from G₂ topology and gauge coupling unification), and M_Pl = 2.435×10^19 GeV (measured, PDG 2024), we obtain M_* ~ M_GUT. This natural emergence of the GUT scale provides a consistency check on the framework."
+            ),
+        ])
+
+        # =====================================================================
+        # SUBSECTION 2.2: The Pneuma Manifold: G₂ Manifold with F-Theory Connection
+        # =====================================================================
+        blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="2.2 The Pneuma Manifold: G₂ Manifold with F-Theory Connection"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The central geometric object is K_Pneuma, a 7-dimensional G₂ manifold that emerges from Pneuma field condensates and compactifies the 13D effective theory down to a 6D bulk."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="warning",
+                title="Important Clarification: G₂ Manifold, Not Coset Space",
+                content="K_Pneuma is not a homogeneous space (coset G/H). G₂ manifolds generically have trivial continuous isometry groups, so gauge symmetry cannot arise from isometries as in traditional Kaluza-Klein theory. Instead, SO(10) gauge symmetry arises from ADE-type singularities (specifically D_5-type) that can develop on the G₂ manifold."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The SO(10) gauge symmetry arises from a D_5-type singularity in the G₂ manifold, where the holonomy group can develop ADE-type singularities that enhance the gauge symmetry."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="G₂ Manifold Origin of SO(10)",
+                content="In M-theory compactifications on G₂ manifolds, gauge symmetries arise from ADE-type singularities that can develop on the manifold [Acharya 1996]. An SO(10) gauge group corresponds to a D_5-type singularity where the G₂ holonomy degenerates locally. This connects to F-theory via M-theory/F-theory duality, where the G₂ manifold relates to elliptically fibered geometries [Vafa 1996]. This is fundamentally different from Kaluza-Klein gauge symmetry from isometries [Kaluza 1921]. [→ Full SO(10) GUT details in Gauge Unification Section]"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The D_5 singularity structure determines:"
+            ),
+            ContentBlock(
+                type="table",
+                content={
+                    "headers": ["Property", "F-Theory Realization", "Physical Consequence"],
+                    "rows": [
+                        ["Gauge Group", "D_5 ≅ SO(10)", "45 gauge bosons from 7-brane stack"],
+                        ["Matter Curves", "Codimension-2 enhancement", "Chiral fermions in 16 representation"],
+                        ["Yukawa Couplings", "Codimension-3 points", "Triple intersection of matter curves"],
+                        ["GUT Breaking", "G-flux on D_5 locus", "SO(10) → G_SM via hypercharge flux"]
+                    ]
+                }
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The G₂ manifold K_Pneuma is realized as an elliptic fibration over a three-fold base B_3. The SO(10) gauge symmetry lives on a divisor S ⊂ B_3 where the elliptic fiber develops a D_5 singularity. Matter fields localize on curves within S where the singularity enhances, and Yukawa couplings arise at points where three matter curves meet."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Generation Count from G₂ Topology",
+                content="For M-theory compactifications on a G₂ manifold with Z₂ mirror structure, the number of chiral generations is determined by the effective Euler characteristic via an index formula. While G₂ manifolds generically have χ(G₂) = 0, flux dressing and the Z₂ mirror structure yield χ_eff ≠ 0 [Acharya 1996], [Atiyah-Singer 1963]."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Generation Count: Geometrically Derived from Flux-Dressed Topology",
+                content="The three generations of Standard Model fermions emerge geometrically from the G₂ manifold's flux-dressed Euler characteristic χ_eff = 144, which accounts for both the intrinsic topology and flux stabilization of the compactification. This represents a complete geometric derivation of n_gen = 3 from the fundamental 26D structure, connecting the dimensionality of bosonic string theory to observed particle physics through G₂ topology."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Pneuma Chiral Filter Mechanism (v13.0)",
+                content="The Pneuma field provides a dynamical chiral filter via axial torsion coupling in the modified Dirac operator: iΓ^M D_M → iΓ^M D_M + γ^5 T_μ, where T_μ ~ ∇_μ ⟨Ψ_P⟩ is the axial torsion arising from the Pneuma gradient. This coupling projects onto chiral modes and filters out 7/8 of fermion states via topological barrier. References: Kaplan (1992) domain wall fermions; Acharya-Witten (2001) chiral fermions from G₂; Joyce (2000) spinor structures on G₂ manifolds."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Twisted Connected Sum (TCS) Construction with b₂=4, b₃=24",
+                content="The G₂ manifold K_Pneuma is explicitly constructed using the Twisted Connected Sum (TCS) method developed by Kovalev [arXiv:math/0012189] with extra-twist modifications from Corti-Haskins-Nordenstam-Pacini (CHNP) [arXiv:1809.09083]. This construction achieves the precise topology required for 3 generations and geometric alpha parameter derivation."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The TCS method builds a compact G₂ manifold by gluing two asymptotically cylindrical (ACyl) pieces:"
             ),
             ContentBlock(
                 type="formula",
-                content=r"n_{\text{gen}} = \frac{\chi_{\text{eff}}}{48} = \frac{144}{48} = 3",
-                formula_id="three-generations",
-                label="(2.3)"
+                content="The K3 surfaces S₊ and S₋ at asymptotic infinity have Picard lattices N₊ and N₋ (both rank 2) that must embed primitively into the K3 lattice: Λ = U³ ⊕ (-E₈)² with rank 22, signature (3,19). For the π/6 extra-twisted matching (CHNP involution blocks 3.25₁ and 3.25₂): N₊ = N₋ = [[4,7],[7,6]], det(N) = -25, rk(N₊ ∩ N₋) = 2 (full overlap for involution), rk(N₊ + N₋) = 2 ≤ 11 (genericity satisfied)",
+                label=""
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="b₂ formula (Theorem of arXiv:1809.09083)",
+                content="For π/6 involution: rk(N₊ ∩ N₋) = 2, dim(k₊) = dim(k₋) = 0. Adjusted for involution structure: b₂ = 4"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="b₃ formula (Theorem 7.2 of arXiv:1809.09083)",
+                content="With b₃(Z₊) = 14 (adjusted via genus), b₃(Z₋) = 14, orthogonality terms = 0, rk(N₊+N₋) = 2: b₃(M) = 14 + 14 + 0 + 0 + 23 - 2 = 24 (after genus adjustment of C₊)"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Geometric Sitra Shadow Coupling",
+                content="The geometric Sitra Shadow Coupling Shadow_ק and Shadow_ח are derived entirely from G₂ topology: Shadow_ק = b₂/χ_eff, Shadow_ח = b₃/χ_eff (geometry-derived). First-principles geometric derivation."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="warning",
+                title="Explicit Construction via TCS Method",
+                content="The TCS (Twisted Connected Sum) construction provides a mathematically rigorous realization of the G₂ manifold with: b₂=4 (Kähler moduli), b₃=24 (associative 3-cycles), χ_eff=144 (effective Euler characteristic)."
             ),
             ContentBlock(
                 type="paragraph",
-                content=f"""The third Betti number b3 = {self._b3} counts the number of
-                associative 3-cycles, which serve as localization sites for matter fields
-                in the topological Yukawa framework."""
+                content="Two concrete constructions achieve χ = 72 for 3 generations: Direct CY4 construction via complete intersection, or M/F-theory duality interpretation using G₂ geometry."
             ),
-        ]
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="⚠ Holonomy Clarification (Correction)",
+                content="Mathematical fact: G₂ × S¹ produces Spin(7) holonomy, NOT SU(4). This is unavoidable: Spin(7) ⊃ G₂ as holonomy groups, and the product structure cannot reduce below Spin(7). A Calabi-Yau fourfold requires SU(4) ⊂ Spin(8) holonomy. The earlier claim of \"SU(4) holonomy from G₂ fibration\" was in error and has been corrected."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Correct CY4 Construction: Direct Methods",
+                content="For K_Pneuma with χ = 72, the following construction methods yield valid CY4 manifolds: complete intersection in weighted projective space, or resolved quotients of product manifolds. Advantages: rigorous SU(4) holonomy, controlled moduli space."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Alternative: M-theory/F-theory Duality Interpretation",
+                content="If one wishes to use G₂ geometry, the correct interpretation uses M/F-theory duality: M-theory on G₂ × S¹ → F-theory on elliptically fibered CY4. This duality explains how G₂ manifolds connect to CY4 physics without the erroneous claim of direct SU(4) holonomy from G₂ × S¹."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="warning",
+                title="Common Error: Using n_gen = χ/2",
+                content="The formula n_gen = χ/2 applies to Calabi-Yau three-folds (6 real dimensions), as used in heterotic string compactifications. For 8-dimensional CY4 manifolds (F-theory compactifications), the correct formula is n_gen = χ/24. This distinction is crucial."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="A CY4 with χ = 72 can be realized with the following Hodge diamond structure: h^{1,1}=4, h^{2,1}=0, h^{3,1}=0, h^{2,2}=60."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Pneuma Condensate Interpretation",
+                content="In the Pneuma framework, the specific geometry of K_Pneuma is not postulated but dynamically selected via the racetrack mechanism (see Section 2.7). The Pneuma field Ψ_P develops a vacuum expectation value ⟨ΨP⟩ = 1.0756 from competing non-perturbative effects (racetrack potential minimum), whose structure determines the internal metric g_mn through relations of the form: g_mn ∝ ⟨Ψ_P Γ_mn Ψ_P⟩"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="2.2.2 Z₂ Mirror Structure: K_Pneuma × K̃_Pneuma (χ = 144 Total)",
+                content="The h^{1,1} = 4 Kähler moduli correspond to four gauge sectors (Σ₁, Σ₂, Σ₃, Σ₄) within K_Pneuma. In the full 26D framework, these four branes have Z₂ mirror partners, giving 8 total branes. The 1 + 3 pattern (one observable + three hidden) on each side of the Z₂ mirror reflects the universal structure. Physical implications: 4 sectors × 2 mirrors = 8 total gauge groups; observable sector on one mirror brane; dark sectors from 3 shadow + 4 mirror branes."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="v16.0: Multi-Sector Blended Sampling with Geometric Width",
+                content="The h1,1=4 Kähler moduli sectors of the TCS G₂ manifold provide a natural framework for understanding 4D physics as a weighted average over sector contributions: ⟨Observable⟩ = Σ_i w_i Observable_i, where w_i are the sector weights determined by the racetrack-stabilized Kähler moduli. Physical interpretation: each sector has slightly different cycle sizes → different wavefunction overlaps → sector-dependent Yukawa couplings. Reference: simulations/g2_yukawa_overlap_integrals_v15_0.py implements sector-weighted Monte Carlo with 10^5 samples per sector."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Explicit CY4 Construction for K_Pneuma (χ = 72)",
+                content="Three mathematically rigorous constructions achieve the required Hodge numbers (h^{1,1}=4, h^{2,1}=0, h^{3,1}=0, h^{2,2}=60) with χ = 72."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Below the GUT scale, SO(10) breaks to the Standard Model gauge group, and the couplings run separately according to their respective beta functions. The observed approximate unification of SM couplings at ~10^16 GeV provides empirical support for this picture."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The scalar potential V(φ) plays a crucial role in determining the vacuum structure. Contributions include:"
+            ),
+            ContentBlock(
+                type="table",
+                content={
+                    "headers": ["Source", "Contribution to V(φ)", "Effect"],
+                    "rows": [
+                        ["Internal curvature", "-M_*^11 R_8 V_8", "Runaway to large volume (for R_8 > 0)"],
+                        ["Form fluxes", "+∫|F_p|^2", "Stabilization at finite volume"],
+                        ["Casimir energy", "+ζ_G₂(-1)/R8", "Quantum stabilization (subleading)"],
+                        ["Non-perturbative", "~exp(-S_inst)", "Exponentially suppressed corrections"]
+                    ]
+                }
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="The Mashiach Field",
+                content="In the Principia Metaphysica framework, the overall volume modulus r_K is identified with the \"Mashiach field\" φ_M. Its dynamics drive late-time cosmic acceleration through a quintessence-like mechanism, as elaborated in Section 6. Volume Modulus Stabilization: The Mashiach field is identified with φM = Re(T), the real part of the Kähler modulus T. Its VEV ⟨Re(T)⟩ = 7.086 is stabilized via the standard racetrack mechanism from hidden sector gaugino condensation, with the specific value fixed by the Higgs mass constraint m_h = 125.10 GeV. This prevents decompactification runaway and ensures natural lightness through exponential suppression in the non-perturbative superpotential."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The moduli are stabilized via the racetrack mechanism, where two competing non-perturbative effects from hidden sector gauge dynamics generate a stable minimum for the volume modulus T."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Racetrack Stabilization Result",
+                content="Minimizing the scalar potential ∂V/∂T = 0 yields the stabilized modulus value: ⟨Re(T)⟩ = 7.086. This value directly determines the ratio of internal cycle volumes. The inverse of this ratio gives the Froggatt-Nielsen suppression parameter: ε ≈ 0.2257. Key Result: This value of ε ≈ 0.2257 matches the Cabibbo angle (sin θ_C ≈ 0.225), demonstrating that flavor physics is derived from flux dynamics with zero tuning. The parameter λ = T_min ≈ 1.4885 is an output of moduli stabilization, not an input."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="A crucial question for any compactification scenario is: How do quantum corrections modify the classical Freund-Rubin ansatz? The resolution involves understanding the interplay between classical geometry and quantum vacuum fluctuations."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Effective Potential Components",
+                content="The full effective potential governing the compactification radius R consists of four key contributions: classical potential from curvature, flux stabilization, Casimir energy, and racetrack non-perturbative effects."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The Casimir energy arises from zero-point fluctuations of the Kaluza-Klein tower of Pneuma modes on the compact G₂ manifold. While subleading compared to the racetrack potential, this quantum correction plays a critical role in preventing gravitational collapse and ensuring the stability of the compactification against quantum fluctuations."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The positive Casimir energy provides a quantum pressure that resists compression of the internal space. This can be understood intuitively: as R decreases, more KK modes become light, increasing vacuum energy."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="While the racetrack mechanism is the dominant stabilizer (as derived in Section 2.7 and confirmed by the Higgs mass constraint m_h = 125.10 GeV fixing Re(T) = 7.086), the Casimir contribution ensures that the vacuum remains stable even in the presence of perturbations that might momentarily shift the modulus away from its racetrack-determined minimum."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Resolution Summary: Open Question 4",
+                content="Question: How do quantum corrections modify the classical Freund-Rubin ansatz? Answer: Quantum corrections (Casimir energy) provide additional stability beyond classical flux stabilization, preventing collapse via vacuum pressure. This resolution demonstrates that the classical Freund-Rubin geometry is quantum mechanically stable, with quantum corrections providing additional safeguards beyond the primary racetrack stabilization mechanism."
+            ),
+        ])
+
+        # =====================================================================
+        # SUBSECTION 2.3: Kaluza-Klein Mass Spectrum from G₂ Compactification
+        # =====================================================================
+        blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="2.3 Kaluza-Klein Mass Spectrum from G₂ Compactification"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The Kaluza-Klein (KK) mass spectrum emerges from the Laplacian eigenvalue problem on the compact G₂ manifold. Unlike traditional KK theories where masses scale simply as m_n = n/R, the G₂ geometry produces a rich tower structure with degeneracies from the T² fiber and characteristic splittings from the associative 3-cycles."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The KK masses arise from solving the eigenvalue problem for the Laplacian Δ on the Ricci-flat G₂ manifold:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="Δφ = λφ — Laplacian eigenvalue problem on Ricci-flat G₂",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="For a compact manifold with volume V_G₂, the discrete spectrum satisfies:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="λ_n ~ n² / Vol(G₂) — Eigenvalue scaling with mode number",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The normalized volume is computed from the effective Euler characteristic and Betti numbers:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="Vol(G₂) = √(χ_eff / b₃) = √(144/24) = √6 ≈ 2.45 — G₂ manifold normalized volume",
+                label=""
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Unified Derivation Chain — No Circular Inputs (v15.0 Update)",
+                content="The KK mass scale is derived from flux quantization and moduli stabilization: N_flux = 24 (from χ_eff=144) → racetrack coefficients a,b → T_min = 7.086 → ε = exp(-π(b-a)T_min) ≈ 0.2257 → k_eff = b₃/(2+ε) ≈ 10.80 → M_KK = M_Pl × exp(-k_eff π) ≈ 4.5 TeV. Deep Connection: The parameter λ = T_min ≈ 1.4885 is the OUTPUT of racetrack moduli stabilization, not an input. Flux dynamics directly generates the Cabibbo angle with zero tuning, unifying UV topology → moduli dynamics → flavor physics → IR phenomenology. Reference: simulations/kk_spectrum_derived_v14_2.py"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Geometric Torsion vs Effective Torsion",
+                content="CRITICAL CLARIFICATION: The TCS G₂ manifold is Ricci-flat with zero geometric torsion. The torsion parameter T_ω = -0.884 arises from G-flux backreaction, not geometric torsion. The G₂ holonomy is validated by 4 conditions: parallel spinor existence (N=1), Ricci flatness (R=0), 3-form closure, and b₃=24 matching TCS prediction. Reference: simulations/g2_metric_ricci_validator_v15_0.py"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Active Geometry Validation via Hitchin Deformations",
+                content="To verify that the code actively evaluates the G₂ geometry rather than assuming Ricci-flatness, we perform a perturbation test based on Hitchin deformation theory (2000). Expected Result: For a genuine Ricci-flat manifold under small perturbations, the Ricci deviation scales linearly with the perturbation amplitude: ||R_μν|| ∝ δ. Mathematical Foundation: This test is grounded in Hitchin deformation theory (Hitchin 2000), which establishes that the space of torsion-free G₂ structures is a smooth manifold. Perturbations transverse to this manifold introduce Ricci curvature at leading order O(δ), validating that our numerical implementation correctly distinguishes Ricci-flat from non-Ricci-flat geometries. Reference: N. Hitchin, \"The geometry of three-forms in six and seven dimensions,\" J. Diff. Geom. 55 (2000) 547-576"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The 24 base modes correspond to the b₃ = 24 associative 3-cycles of the G₂ manifold. The KK mass scale is derived via k_eff = b₃/(2+ε):"
+            ),
+            ContentBlock(
+                type="formula",
+                content="m_KK,1 = 1/R_c ≈ 4.5 TeV ± 1.5 TeV (95% CL) — First KK mode from compactification radius",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The compactification radius is constrained by the effective dimension D_eff = 12.576, which determines the coupling of matter to the shared extra dimensions. Higher modes follow the eigenvalue scaling:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="m_KK,n = √λ_n × (1/R_c) ≈ √(n²/Vol(G₂)) × 5 TeV — nth KK mode mass",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Each base KK mode gains a degeneracy tower from the T² fiber in the G₂ manifold's elliptic fibration structure. For quantum numbers (n,m) labeling the two T² cycles:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="m_KK(n,m) = √(n² + m²) × 5 TeV — T² Degeneracy Tower Formula",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The first few states in the tower are:"
+            ),
+            ContentBlock(
+                type="table",
+                content={
+                    "headers": ["Quantum Numbers (n,m)", "Mass (TeV)", "Degeneracy", "Physical Interpretation"],
+                    "rows": [
+                        ["(1,0) or (0,1)", "5.0", "2", "First KK graviton (base modes)"],
+                        ["(1,1)", "7.1", "1", "First T² excitation"],
+                        ["(2,0) or (0,2)", "10.0", "2", "Second harmonic"],
+                        ["(2,1) or (1,2)", "11.2", "2", "Mixed T² excitation"],
+                        ["(2,2)", "14.1", "1", "Second T² diagonal"],
+                        ["(3,0) or (0,3)", "15.0", "2", "Third harmonic"]
+                    ]
+                }
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The lightest KK graviton at 5 TeV is within reach of the High-Luminosity LHC (HL-LHC) operating at √s = 14 TeV with 3 ab⁻¹ integrated luminosity. Production occurs primarily through gluon fusion:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="σ(pp → KK₁ + X) ≈ 0.1 fb (at √s = 14 TeV) — First KK mode production cross-section",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="With 3000 fb⁻¹ (3 ab⁻¹) at HL-LHC, this yields ~300 signal events. Monte Carlo simulations including SM backgrounds predict a discovery significance of:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="Discovery Significance = 5.2σ with 3 ab⁻¹ — Expected discovery significance at HL-LHC",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The KK gravitons decay democratically to all SM particle pairs, weighted by phase space and couplings:"
+            ),
+            ContentBlock(
+                type="table",
+                content={
+                    "headers": ["Decay Channel", "Branching Ratio", "LHC Signature", "Discovery Mode"],
+                    "rows": [
+                        ["KK → gg (gluons)", "65%", "Dijets", "Primary (huge backgrounds)"],
+                        ["KK → qq̄ (quarks)", "25%", "Dijets, top pairs", "Supporting channel"],
+                        ["KK → ℓℓ (leptons)", "8%", "Dilepton resonance", "Clean channel (low BR)"],
+                        ["KK → γγ (diphoton)", "2%", "Diphoton resonance", "Golden mode (clean, rare)"]
+                    ]
+                }
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The diphoton channel (BR = 2%) provides the cleanest signature with excellent mass resolution (~1%). The dilepton channel (BR = 8%) offers a balance between statistics and background rejection. Combined analysis across all channels maximizes discovery potential."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Key Features of G₂ KK Spectrum",
+                content="Rich tower structure from T² fiber degeneracy; Characteristic spacing from b₃ = 24 cycles; First mode at ~5 TeV (HL-LHC reach); Democratic decays to all SM particles."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Comparison with Warped Extra Dimensions",
+                content="Unlike Randall-Sundrum (RS) models where KK gravitons arise from warped 5D AdS geometry, the PM framework predicts: Nearly equal spacing (flat extra dimensions) vs exponential hierarchy (warped); T² degeneracy pattern unique to G₂ fibration; Different coupling structure to SM fields. Measurement of the mass spacing between first few KK modes can discriminate G₂ compactification from RS warping, providing a geometric test of the manifold structure."
+            ),
+        ])
+
+        # =====================================================================
+        # SUBSECTION 2.4: Dimensional Consistency Validation
+        # =====================================================================
+        blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="2.4 Dimensional Consistency Validation ✅ VALIDATED"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Update: The full dimensional reduction pathway 26D (24,2) → 13D (12,1) → 6D (5,1) → 4D (3,1) is now rigorously validated through 9 independent consistency checks, with clear distinction between gauge fixing and compactification. This section documents the complete 4-stage chain and validation results."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Key Result",
+                content="M_Pl² = M_*^11 × V_9 where V_9 = V_7(G₂) × V_2(T²) = 1.488×10^-138 GeV^-9, with M_Pl = 2.435×10^19 GeV measured (PDG 2024), not derived. Critical Distinction: Stage 2 (Sp(2,R)) is gauge fixing, NOT compactification. The 13D is an effective projection/shadow of 26D after gauge redundancy removal, not 26D with 13 dimensions compactified."
+            ),
+            ContentBlock(
+                type="table",
+                content={
+                    "headers": ["#", "Check", "Requirement", "Status"],
+                    "rows": [
+                        ["1", "Sp(2,R) Gauge Symmetry", "26D = 13D shadow with Sp(2,R) local gauge must preserve physics and eliminate ghosts", "PASS"],
+                        ["2", "Two-Time Ghost Elimination", "Gauge fixing removes negative-norm states from 2 shared timelike dimensions in (12,2) signature", "PASS"],
+                        ["3", "G₂ Holonomy Preservation", "13D compactification preserves exceptional G₂ structure", "PASS"],
+                        ["4", "Dimensional Analysis M_Pl", "[M²] = [M^11][L^9] must be dimensionally correct", "PASS"],
+                        ["5", "Brane Heterogeneity", "4 distinct brane types + Z₂ mirrors = 8 total in 6D bulk", "PASS"],
+                        ["6", "Shared Dimensions", "2 extra dimensions shared across all 4 branes", "PASS"],
+                        ["7", "Chirality Mechanism (v13.0)", "Pneuma γ⁵T_μ coupling creates topological chiral filter (7/8 = 0.875)", "PASS"],
+                        ["8", "Gauge Group Emergence", "SO(10) from D₅-type ADE singularities on G₂", "PASS"],
+                        ["9", "Generation Count (v13.0)", "n_gen = N_flux / spinor_DOF = 24/8 = 3 (Pneuma γ⁵ chiral filter)", "PASS"]
+                    ]
+                }
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Heterogeneous Brane Structure Validated",
+                content="The 6D bulk contains 4 distinct brane types, each with different effective dimensions: Observable 5-brane (5,1), Shadow 3-brane #1 (3,1), Shadow 3-brane #2 (3,1), Shadow 3-brane #3 (3,1). All branes share 2 common extra dimensions, enabling controlled flavor mixing and hierarchical Yukawa couplings via wavefunction overlap."
+            ),
+        ])
 
         return SectionContent(
             section_id="2",
             subsection_id=None,
-            title="G2 Geometry and Topology",
-            abstract="Fundamental topology of TCS G2 manifold #187",
+            title="Geometric Framework",
+            abstract="This section establishes the mathematical foundation of the Principia Metaphysica framework. We introduce the 26-dimensional action with signature (24,2) decomposing as M_26 = M_A^14 ⊗_T M_B^14, where each 14D half has signature (12,2) with 2 shared timelike dimensions. Sp(2,R) gauge symmetry eliminates ghost states from the two-time structure, projecting onto an effective 13D (12,1) shadow. We derive the 4D effective action through Kaluza-Klein dimensional reduction on a TCS (Twisted Connected Sum) G₂ manifold with h1,1=4 Kähler moduli sectors. Racetrack moduli stabilization across these sectors dynamically derives ε ≈ 0.2257 (Cabibbo angle) from flux quantization N₁=24, N₂=23. The 26D→13D shadow framework provides a Z₂ mirror brane structure with geometrically-derived generation count n_gen = 3. The Pneuma-Vielbein bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature (-,+,+,+).",
             content_blocks=blocks,
-            formula_refs=["g2-holonomy", "euler-characteristic", "betti-numbers", "three-generations"],
-            param_refs=["topology.b3", "topology.CHI_EFF", "topology.n_gen"]
+            formula_refs=["g2-holonomy", "euler-characteristic", "betti-numbers", "three-generations", "cycle-matching"],
+            param_refs=["topology.b2", "topology.b3", "topology.CHI_EFF", "topology.n_gen", "topology.K_MATCHING", "topology.d_over_R"]
         )
 
     def get_formulas(self) -> List[Formula]:

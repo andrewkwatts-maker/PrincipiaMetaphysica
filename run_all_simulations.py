@@ -49,6 +49,8 @@ Phase 5 - Discussion, Predictions, and Appendices (Depends on All):
   - appendix_b_methods_v16_0: Computational methods (Appendix B)
   - appendix_c_derivations_v16_0: Extended derivations (Appendix C)
   - appendix_d_tables_v16_0: Parameter tables (Appendix D)
+  - appendix_m_consciousness_v16_0: Speculative consciousness extensions (Appendix M)
+  - appendix_n_g2_landscape_v16_0: G2 topology landscape (Appendix N)
 
 OUTPUT STRUCTURE:
 {
@@ -135,6 +137,16 @@ from simulations.v16.appendices.appendix_a_math_v16_0 import AppendixAMathFounda
 from simulations.v16.appendices.appendix_b_methods_v16_0 import AppendixBComputationalMethods
 from simulations.v16.appendices.appendix_c_derivations_v16_0 import AppendixCExtendedDerivations
 from simulations.v16.appendices.appendix_d_tables_v16_0 import AppendixDParameterTables
+from simulations.v16.appendices.appendix_e_proton_v16_0 import AppendixEProtonDecay
+from simulations.v16.appendices.appendix_f_v16_0 import AppendixFDimensionalDecomposition
+from simulations.v16.appendices.appendix_g_v16_0 import AppendixGEffectiveTorsion
+from simulations.v16.appendices.appendix_h_v16_0 import AppendixHProtonBranching
+from simulations.v16.appendices.appendix_i_v16_0 import AppendixIGWDispersion
+from simulations.v16.appendices.appendix_j_v16_0 import AppendixJMonteCarloError
+from simulations.v16.appendices.appendix_k_v16_0 import AppendixKTransparency
+from simulations.v16.appendices.appendix_l_v16_0 import AppendixLValuesSummary
+from simulations.v16.appendices.appendix_m_v16_0 import AppendixMConsciousnessSpeculation
+from simulations.v16.appendices.appendix_n_v16_0 import AppendixNG2Landscape
 
 
 @dataclass
@@ -202,6 +214,16 @@ class SimulationRunner:
                 AppendixBComputationalMethods(),
                 AppendixCExtendedDerivations(),
                 AppendixDParameterTables(),
+                AppendixEProtonDecay(),
+                AppendixFDimensionalDecomposition(),
+                AppendixGEffectiveTorsion(),
+                AppendixHProtonBranching(),
+                AppendixIGWDispersion(),
+                AppendixJMonteCarloError(),
+                AppendixKTransparency(),
+                AppendixLValuesSummary(),
+                AppendixMConsciousnessSpeculation(),
+                AppendixNG2Landscape(),
             ],
         }
 

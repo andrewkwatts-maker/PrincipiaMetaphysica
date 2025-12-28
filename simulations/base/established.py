@@ -110,6 +110,23 @@ class EstablishedPhysics:
                 source="ESTABLISHED:PDG2024",
                 description="Proton mass"
             ),
+            # Additional fundamental constants
+            EstablishedParameter(
+                path="constants.HBAR",
+                value=6.582119569e-25,  # GeV·s
+                uncertainty=1e-33,
+                units="GeV·s",
+                source="ESTABLISHED:CODATA2018",
+                description="Reduced Planck constant"
+            ),
+            EstablishedParameter(
+                path="constants.G_NEWTON",
+                value=6.70883e-39,  # GeV^-2 (in natural units)
+                uncertainty=3e-44,
+                units="GeV^-2",
+                source="ESTABLISHED:CODATA2018",
+                description="Newton's gravitational constant"
+            ),
         ]
 
         for param in params:
