@@ -83,19 +83,29 @@ class GeometricYukawaTextures:
             'electron': 6  # Furthest
         }
 
-        # O(1) geometric coefficients (from angular overlaps)
-        # These encode the precise intersection geometry and tan β effects
-        # Fit to reproduce observed masses with geometric FN charges
+        # O(1) geometric coefficients A_f
+        # DERIVATION: These should come from G2 overlap integrals computed in
+        # g2_yukawa_overlap_integrals_v14_2.py. However, for phenomenological
+        # accuracy, we calibrate them to reproduce observed masses.
+        #
+        # INTERPRETATION:
+        # - A_f encodes angular overlaps between fermion and Higgs wave functions
+        # - Includes tan β effects for down-type quarks and charged leptons
+        # - The hierarchy ε^Q_f provides the exponential suppression
+        # - A_f provides the O(1) prefactors that distinguish families
+        #
+        # FUTURE WORK: Derive these directly from G2 manifold geometry
+        # (associative 3-cycle intersections, holonomy angles, etc.)
         self.geometric_coeffs = {
             'top': 1.0,           # Reference (at H_u location)
-            'bottom': 0.48,       # Includes tan β ≈ 10 effect
-            'charm': 0.147,       # From overlap geometry
-            'strange': 0.042,     # From overlap geometry
-            'up': 0.0044,         # Fit to data
-            'down': 0.0077,       # Fit to data
-            'tau': 0.205,         # Includes tan β effect
-            'muon': 0.245,        # From overlap geometry
-            'electron': 0.024     # Highly suppressed (far from Higgs)
+            'bottom': 0.48,       # Phenomenological (includes tan β ≈ 10)
+            'charm': 0.147,       # Phenomenological fit
+            'strange': 0.042,     # Phenomenological fit
+            'up': 0.0044,         # Phenomenological fit
+            'down': 0.0077,       # Phenomenological fit
+            'tau': 0.205,         # Phenomenological (includes tan β)
+            'muon': 0.245,        # Phenomenological fit
+            'electron': 0.024     # Phenomenological fit
         }
 
     def derive_epsilon(self) -> float:

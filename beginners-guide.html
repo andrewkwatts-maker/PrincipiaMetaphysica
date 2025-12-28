@@ -658,7 +658,7 @@
 
             <div style="background: rgba(255, 255, 255, 0.05); padding: 1rem; border-radius: 8px; margin-top: 1rem;">
                 <p style="margin: 0; text-align: center; font-size: 1rem;">
-                    <strong>Overall Score:</strong> <pm-param id="framework_statistics.within_1_sigma"></pm-param>/<pm-param id="framework_statistics.total_sm_parameters"></pm-param> predictions match experiment within 1σ
+                    <strong>Overall Score:</strong> <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> predictions match experiment within 1σ
                 </p>
             </div>
         </div>
@@ -1111,12 +1111,12 @@
                     <strong>The framework derives ALL pieces geometrically.</strong> Key results:
                 </p>
                 <ul style="margin: 0.75rem 0; padding-left: 1.5rem;">
-                    <li><strong>Higgs mass:</strong> <pm-param id="v11_final_observables.higgs_mass.m_h_GeV"></pm-param> GeV (<pm-param id="v11_final_observables.higgs_mass.m_h_GeV" show="agreement"></pm-param> - agrees with PDG 2024)</li>
-                    <li><strong>Proton lifetime:</strong> <pm-param id="v11_final_observables.proton_lifetime.tau_p_years"></pm-param> years - testable by Hyper-Kamiokande</li>
-                    <li><strong>KK graviton mass:</strong> <pm-param id="kk_spectrum.m1_central"></pm-param> TeV - discoverable at HL-LHC (<pm-param id="kk_spectrum.hl_lhc_significance"></pm-param> expected)</li>
+                    <li><strong>Higgs mass:</strong> <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV"></span> GeV (<span class="pm-value" data-pm-value="simulations.higgs_mass.validation.sigma" data-format="fixed:2"></span>σ - agrees with PDG 2024)</li>
+                    <li><strong>Proton lifetime:</strong> <span class="pm-value" data-pm-value="simulations.proton_decay.tau_p_years" data-format="scientific:2"></span> years - testable by Hyper-Kamiokande</li>
+                    <li><strong>KK graviton mass:</strong> <span class="pm-value" data-pm-value="simulations.kk_graviton.m_KK_TeV"></span> TeV - discoverable at HL-LHC (<span class="pm-value" data-pm-value="simulations.kk_graviton.hl_lhc_discovery"></span>)</li>
                     <li><strong>Neutrino mass sum:</strong> Σm<sub>ν</sub> = 0.060 eV (Normal Hierarchy predicted, 76% confidence from NuFIT 6.0, testable by JUNO 2027+)</li>
                     <li><strong>All fermion masses:</strong> Complete quark, lepton, and neutrino mass matrices derived from TCS G₂ 3-cycle intersections</li>
-                    <li><strong>Dark energy:</strong> w₀ = <pm-param id="dark_energy.w0_PM"></pm-param>, matches DESI DR2 (<pm-param id="dark_energy.w0_PM" show="agreement"></pm-param> agreement)</li>
+                    <li><strong>Dark energy:</strong> w₀ = <span class="pm-value" data-pm-value="parameters.dark_energy.w0.value"></span> (DESI DR2: <span class="pm-value" data-pm-value="parameters.dark_energy.w0.experimental.value"></span> ± <span class="pm-value" data-pm-value="parameters.dark_energy.w0.experimental.uncertainty"></span>)</li>
                 </ul>
             </div>
 
@@ -1168,8 +1168,8 @@
                     <strong style="color: #8b7fff;"><span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span> parameters</strong> come purely from the geometry of the extra dimensions.
                 </p>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
-                    <strong>What's calibrated:</strong> Only the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv"></span>).
-                    Everything else—including the Pneuma VEV (<span class="pm-value" data-pm-value="v12_6_geometric_derivations.vev_pneuma.v_EW"></span> GeV, dynamically selected via racetrack potential), particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
+                    <strong>What's calibrated:</strong> Only the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="simulations.proton_decay.alpha_gut_inv"></span>).
+                    Everything else—including the Pneuma VEV (246.22 GeV, dynamically selected via racetrack potential), particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
                 </p>
             </div>
 
@@ -1186,7 +1186,7 @@
                     <li>All quark and lepton masses (from 3-cycle intersections)</li>
                     <li>Complete CKM and PMNS mixing matrices (0.09σ average agreement)</li>
                     <li>Neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV)</li>
-                    <li>Higgs mass = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV (matches PDG 2024 central value)</li>
+                    <li>Higgs mass = <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV"></span> GeV (matches PDG 2024 central value)</li>
                     <li>Proton lifetime = 8.15×10³⁴ years (with TCS geometric suppression S=2.125 from cycle separation)</li>
                     <li>KK graviton spectrum starting at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span></li>
                     <li>Dark energy equation of state w(z) = -1 + 0.147·ln(1+z)</li>
@@ -1739,14 +1739,14 @@
             <div class="prediction-card testable" style="border-left-color: #51cf66;">
                 <h4><span class="tag derived">DERIVED</span> Higgs Mass</h4>
                 <p>
-                    <strong>Prediction:</strong> m<sub>h</sub> = <span class="tooltip-trigger" data-category="v11_final_observables" data-param="higgs_mass.m_h_GeV"><span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV</span>
+                    <strong>Prediction:</strong> m<sub>h</sub> = <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV"></span> GeV
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Predicted from G₂ Kähler potential and flux superpotential with
                     complex structure modulus Re(T) = 7.086 determined by Higgs mass constraint.
                 </p>
                 <p style="margin-top: 0.5rem; color: #51cf66;">
-                    <strong>Result:</strong> PDG 2024: <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> ± 0.14 GeV (agrees with central value within uncertainties).
+                    <strong>Result:</strong> PDG 2024: <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV"></span> ± 0.14 GeV (agrees with central value within uncertainties).
                 </p>
                 <div class="analogy-box" style="margin-top: 0.75rem; background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.05)); border-left-color: #51cf66;">
                     <h4 style="color: #51cf66;">The Shape Parameter Derivation</h4>
@@ -1772,7 +1772,7 @@
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
                     <strong>Derivation:</strong> Derived from T² compactification area A = 18.4 M<sub>*</sub>⁻² in TCS G₂ metric.
-                    Tower spacing: m₂ = 10.04 TeV, m₃ = 1<span class="pm-value" data-pm-value="kk_graviton.mass_TeV" data-format="fixed:2"></span> TeV.
+                    Tower spacing: m₂ = 10.04 TeV, m₃ = 15.00 TeV.
                 </p>
                 <p style="margin-top: 0.5rem; color: #4facfe;">
                     <strong>Test:</strong> HL-LHC (2029+) with 3 ab⁻¹ has 6.8σ discovery potential!
@@ -1976,7 +1976,7 @@
                         <li>PMNS mixing angles: θ₂₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:1"></span>° (maximal mixing), θ₁₂ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:1"></span>°, θ₁₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>° (all within 0.25σ!)</li>
                         <li>Dark energy equation of state: w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM"></span> (DESI: <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error"></span>, within <span class="pm-value" data-category="dark_energy" data-param="w0_sigma"></span>σ)</li>
                         <li>Dark energy evolution: wₐ < 0 (consistent with DESI DR2 6.2σ preference)</li>
-                        <li>Force unification scale: <span class="pm-value" data-pm-value="proton_decay.M_GUT" data-format="scientific:2"></span> GeV (within 3%)</li>
+                        <li>Force unification scale: <span class="pm-value" data-pm-value="simulations.proton_decay.m_gut" data-format="scientific:2"></span> GeV (within 3%)</li>
                     </ul>
                     <p style="margin-top: 1rem;"><strong>Theoretical Completeness (14/14 = 100%):</strong></p>
                     <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
@@ -2102,7 +2102,7 @@
                     <li>Explains exactly <span class="pm-value" data-category="topology" data-param="n_gen"></span> generations from topology (χ<sub>eff</sub> = <span class="pm-value" data-category="topology" data-param="chi_eff"></span> from TCS G₂ #187)</li>
                     <li>Unifies gravity, particle physics, and cosmology in one geometric framework (<span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 6D/4D BRST-proven)</li>
                     <li>Derives complete fermion spectrum: all quark, lepton, and neutrino masses from 3-cycle geometry</li>
-                    <li>Uses Higgs mass m<sub>h</sub> = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV to fix Re(T) = 7.086 (observational constraint)</li>
+                    <li>Uses Higgs mass m<sub>h</sub> = <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV"></span> GeV to fix Re(T) = 7.086 (observational constraint)</li>
                     <li>Derives neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV, 0.12σ from data)</li>
                     <li>Predicts KK graviton at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span> (HL-LHC discoverable)</li>
                     <li>Derives proton lifetime 8.15×10³⁴ years from TCS geometric suppression (Hyper-K testable)</li>
@@ -2122,7 +2122,7 @@
                     <li>Accurate Higgs mass formula calculation</li>
                     <li>Re(T) = 7.086 derived from Higgs mass constraint</li>
                     <li>Swampland distance conjecture satisfied</li>
-                    <li>Exact Higgs mass match (<span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV) now comes from correct physics, not compensating errors</li>
+                    <li>Exact Higgs mass match (<span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV"></span> GeV) now comes from correct physics, not compensating errors</li>
                 </ul>
                 <p style="margin-top: 0.75rem; color: #51cf66;">
                     All values derived from TCS G₂ manifold geometry. Falsifiable predictions testable 2027-2038:

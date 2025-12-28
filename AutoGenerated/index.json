@@ -32,14 +32,14 @@
       "description": "Version and validation"
     },
     {
-      "name": "paper_sections",
-      "file": "paper_sections.json",
-      "description": "Paper content"
+      "name": "sections",
+      "file": "sections.json",
+      "description": "All sections bundled"
     },
     {
-      "name": "sections",
+      "name": "sections_individual",
       "file": "sections/",
-      "description": "Individual section files"
+      "description": "Individual section files (lazy load)"
     }
   ],
   "sections_dir": "sections/",

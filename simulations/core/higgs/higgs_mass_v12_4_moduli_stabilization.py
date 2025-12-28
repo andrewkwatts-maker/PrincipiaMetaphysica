@@ -1,22 +1,31 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v12.4 - Higgs Mass from Moduli Stabilization
-Enhanced derivation with full geometric rigor
+PRINCIPIA METAPHYSICA v12.6 - Higgs Mass from Moduli Stabilization
+CIRCULAR DEPENDENCY RESOLVED
 
-This module implements the complete moduli stabilization approach to the
-Higgs mass, expanding from v11.0's exact match (125.10 GeV) with detailed
-geometric derivation.
+CRITICAL UPDATE: This module previously claimed to "predict" the Higgs mass,
+but this was CIRCULAR! The analysis has been corrected to be honest about
+what is geometric vs. phenomenological.
 
-Theory Chain:
-  G₂ Complex Structure Modulus → Higgs Quartic → Higgs Mass
-       Re(T) = 1.833          →    λ ≈ 0.129   →  m_h = 125.10 GeV
+The Circular Dependency:
+  OLD CLAIM: Re(T) = 1.833 (geometric) → m_h = 125.10 GeV (predicted)
+  REALITY:   m_h = 125.10 GeV (input) → Re(T) = 7.086 (constrained)
 
-Key Features:
-  - Flux superpotential W(T) from G₄ on TCS G₂ #187
-  - Membrane instanton contributions W_np
-  - Attractor mechanism for Re(T) = 1.833
-  - SUGRA-derived Higgs quartic correction
-  - Sensitivity analysis and validation
+Truth:
+  - The attractor mechanism gives Re(T) = 1.833 (GEOMETRIC)
+  - This predicts m_h ≈ 414 GeV (WRONG!)
+  - To match experiment, we need Re(T) = 7.086 (PHENOMENOLOGICAL)
+  - The value Re(T) = 7.086 is obtained by INVERTING the Higgs mass formula
+  - This is a CONSTRAINT, not a PREDICTION
+
+What This Module Actually Does:
+  1. GEOMETRIC: Calculate Re(T) = 1.833 from attractor mechanism
+  2. GEOMETRIC: Predict m_h ≈ 414 GeV (fails experiment)
+  3. PHENOMENOLOGICAL: Invert formula to get Re(T) = 7.086 from m_h = 125.10 GeV
+  4. CIRCULAR: Use Re(T) = 7.086 to "predict" m_h = 125.10 GeV (not a prediction!)
+
+The honest conclusion: The moduli stabilization approach FAILS to predict
+the Higgs mass. We must use the experimental value as input.
 
 References:
   - Acharya (2002): arXiv:hep-th/0212294 (moduli fixing in M-theory)
@@ -25,8 +34,8 @@ References:
   - Kachru et al. (2003): arXiv:hep-th/0301240 (KKLT stabilization)
   - See reports/V12_4_HIGGS_MODULI_APPROACH.md for full derivation
 
-Author: Principia Metaphysica v12.4 Development
-Date: 2025-12-07
+Author: Principia Metaphysica v12.6 Development
+Date: 2025-12-28 (Circular dependency fix)
 
 # =============================================================================
 # Bi-directional Links
@@ -54,6 +63,12 @@ Date: 2025-12-07
 import numpy as np
 import matplotlib.pyplot as plt
 from typing import Tuple, Optional
+import sys
+import os
+
+# Add parent directory to path for config import
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../..')))
+from config import HiggsMassParameters, HiggsVEVs
 
 # ==============================================================================
 # PART 1: G₂ MODULI SPACE AND FLUX STABILIZATION
@@ -258,8 +273,15 @@ class HiggsQuarticFromModuli:
     """
     Compute Higgs quartic coupling from stabilized moduli
 
+    v12.6 UPDATE: Now imports parameters from config.py to avoid hardcoding.
+
+    CRITICAL: The tree-level quartic λ₀ = 0.129 is actually CALIBRATED,
+    not purely geometric! The true geometric value is λ₀ ≈ 0.0945.
+    The value 0.129 was chosen to match the Higgs mass when Re(T) = 1.833,
+    which means there's TUNING hidden in this "prediction".
+
     The Higgs quartic receives corrections from moduli through:
-      1. Tree-level matching: λ₀ from SO(10) → MSSM
+      1. Tree-level matching: λ₀ from SO(10) → MSSM (CALIBRATED!)
       2. Moduli loops: Δλ = -(1/8π²) Re(T) y_t²
 
     Physical mechanism:
@@ -268,40 +290,47 @@ class HiggsQuarticFromModuli:
       - F-term contributions from moduli stabilization
     """
 
-    def __init__(self, Re_T: float = 1.833):
+    def __init__(self, Re_T: float = None):
         """
         Initialize with stabilized modulus value
 
         Args:
-            Re_T: Real part of complex structure modulus (default: 1.833)
+            Re_T: Real part of complex structure modulus
+                  None = use geometric attractor value (1.833)
+                  Or specify phenomenological value (7.086)
         """
-        self.Re_T = Re_T
+        if Re_T is None:
+            # Default to geometric attractor value
+            self.Re_T = HiggsMassParameters.RE_T_ATTRACTOR
+        else:
+            self.Re_T = Re_T
 
     def tree_level_quartic(self, g_GUT: Optional[float] = None) -> float:
         """
         Tree-level Higgs quartic from SO(10) → MSSM matching
 
-        At GUT scale:
-          λ₀ = (g²_GUT / 8) × (3/5 cos²θ_W + 1)
+        v12.6 UPDATE: Now imports from config.py
 
-        with RG evolution M_GUT → M_Z included.
+        IMPORTANT: The value λ₀ = 0.129 is CALIBRATED, not purely geometric!
+        The true geometric calculation gives λ₀ ≈ 0.0945 (see config.py).
+        This calibration is necessary to match the Higgs mass, which means
+        there's hidden tuning in the "prediction".
 
         Args:
-            g_GUT: Unified coupling (default: from α_GUT^(-1) = 24.3)
+            g_GUT: Unified coupling (ignored - value from config.py)
 
         Returns:
-            λ₀: Tree-level quartic at M_Z
+            λ₀: Tree-level quartic at M_Z (from config)
         """
-        # NOTE: Using v11.0 calibrated value for exact match
-        # Full derivation requires careful RG running from GUT to EW scale
-        # See reports/V12_4_HIGGS_MODULI_APPROACH.md for theoretical framework
-        return 0.129
+        return HiggsMassParameters.LAMBDA_0
 
-    def moduli_correction(self, y_t: float = 0.99) -> float:
+    def moduli_correction(self, y_t: float = None) -> float:
         """
         Moduli-induced correction to Higgs quartic
 
         Δλ = (1/8π²) Re(T) y_t²
+
+        v12.6 UPDATE: Now imports y_t from config.py
 
         Physical origin:
           - SUGRA 1-loop diagram: t-quark loop with modulus exchange
@@ -311,21 +340,24 @@ class HiggsQuarticFromModuli:
         This correction is SUBTRACTED from λ₀ due to sign conventions.
 
         Args:
-            y_t: Top Yukawa coupling (default: 0.99 from geometry)
+            y_t: Top Yukawa coupling (None = use value from config)
 
         Returns:
             Δλ: Moduli correction (positive value, to be subtracted)
         """
-        kappa = 1 / (8 * np.pi**2)
+        if y_t is None:
+            y_t = HiggsMassParameters.Y_TOP
+
+        kappa = HiggsMassParameters.KAPPA
         Delta_lambda = kappa * self.Re_T * y_t**2
         return Delta_lambda
 
-    def effective_quartic(self, y_t: float = 0.99) -> Tuple[float, float, float]:
+    def effective_quartic(self, y_t: float = None) -> Tuple[float, float, float]:
         """
         Total effective quartic: λ_eff = λ₀ - Δλ
 
         Args:
-            y_t: Top Yukawa coupling
+            y_t: Top Yukawa coupling (None = use value from config)
 
         Returns:
             (λ_eff, λ₀, Δλ): Effective quartic, tree-level, correction
@@ -342,26 +374,48 @@ class HiggsQuarticFromModuli:
 # PART 3: HIGGS MASS PREDICTION
 # ==============================================================================
 
-def predict_higgs_mass_v12_4(Re_T: float = 1.833, verbose: bool = True) -> float:
+def predict_higgs_mass_v12_4(Re_T: float = None, verbose: bool = True) -> float:
     """
-    v12.4: Higgs mass from moduli stabilization (enhanced)
+    v12.6: Higgs mass from moduli stabilization (CIRCULAR DEPENDENCY FIXED)
+
+    CRITICAL UPDATE: This function previously claimed to "predict" m_h,
+    but this was CIRCULAR when Re(T) = 7.086 was used!
+
+    Two modes:
+    1. GEOMETRIC (Re_T = 1.833): TRUE prediction, gives m_h ≈ 414 GeV (WRONG!)
+    2. PHENOMENOLOGICAL (Re_T = 7.086): CIRCULAR, gives m_h = 125.10 GeV by construction
 
     Formula:
       m_h² = 8π² v² λ_eff
       λ_eff = λ₀ - (1/8π²) Re(T) y_t²
 
+    v12.6 UPDATE: Now imports all parameters from config.py
+
     Args:
-        Re_T: Complex structure modulus (default: 1.833 from TCS #187)
+        Re_T: Complex structure modulus
+              None = use geometric attractor (1.833) - TRUE prediction
+              1.833 = geometric attractor - TRUE prediction (m_h ≈ 414 GeV)
+              7.086 = phenomenological - CIRCULAR (m_h = 125.10 GeV)
         verbose: Print detailed output
 
     Returns:
         m_h: Higgs mass in GeV
     """
-    # Electroweak VEV (PDG 2025)
-    v = 174.0  # GeV
+    # Import VEV from config (v12.6 - no more hardcoding!)
+    # NOTE: Using HiggsMassParameters.V_YUKAWA (174.0) instead of HiggsVEVs.V_YUKAWA (173.948)
+    # because the phenomenological constraint Re(T) = 7.086 was derived using v = 174.0
+    v = HiggsMassParameters.V_YUKAWA  # 174.0 GeV (Yukawa coupling scale)
 
-    # Top Yukawa from geometry (from Yukawa sector calculations)
-    y_t = 0.99
+    # Top Yukawa from config (v12.6)
+    y_t = HiggsMassParameters.Y_TOP
+
+    # Determine which Re(T) to use
+    if Re_T is None:
+        Re_T = HiggsMassParameters.RE_T_ATTRACTOR  # Geometric default
+
+    # Determine if this is geometric or phenomenological
+    is_geometric = abs(Re_T - HiggsMassParameters.RE_T_ATTRACTOR) < 0.01
+    is_phenomenological = abs(Re_T - HiggsMassParameters.RE_T_PHENOMENOLOGICAL) < 0.01
 
     # Initialize Higgs coupling calculator
     higgs = HiggsQuarticFromModuli(Re_T=Re_T)
@@ -373,10 +427,25 @@ def predict_higgs_mass_v12_4(Re_T: float = 1.833, verbose: bool = True) -> float
 
     if verbose:
         print("="*70)
-        print("PRINCIPIA METAPHYSICA v12.4 - HIGGS MASS")
-        print("Enhanced Moduli Stabilization Derivation")
+        print("PRINCIPIA METAPHYSICA v12.6 - HIGGS MASS")
+        print("Enhanced Moduli Stabilization - CIRCULAR DEPENDENCY FIXED")
         print("="*70)
         print()
+
+        # Determine calculation mode
+        if is_geometric:
+            print("=== MODE: GEOMETRIC PREDICTION ===")
+            print("Using Re(T) from attractor mechanism (TRUE prediction)")
+            print()
+        elif is_phenomenological:
+            print("=== MODE: PHENOMENOLOGICAL CONSTRAINT (CIRCULAR!) ===")
+            print(f"WARNING: Re(T) = {Re_T:.3f} was obtained by INVERTING this formula!")
+            print("This is NOT a prediction - it's a circular consistency check.")
+            print()
+        else:
+            print(f"=== MODE: CUSTOM Re(T) = {Re_T} ===")
+            print()
+
         print("=== GEOMETRIC INPUT ===")
         print(f"TCS G_2 manifold #187:")
         print(f"  b_3 = 24 (associative 3-cycles)")
@@ -385,17 +454,27 @@ def predict_higgs_mass_v12_4(Re_T: float = 1.833, verbose: bool = True) -> float
         print()
         print("=== MODULI STABILIZATION ===")
         print(f"Complex structure modulus: Re(T) = {Re_T}")
-        print(f"  (from flux + membrane instantons)")
+        if is_geometric:
+            print(f"  Source: Attractor mechanism (flux + membrane instantons)")
+            print(f"  Formula: Re(T) = sqrt(chi_eff/b_3) x f(T_omega)")
+            print(f"         = sqrt(144/24) x 0.748 = 1.833")
+            print(f"  Status: GEOMETRIC PREDICTION")
+        elif is_phenomenological:
+            print(f"  Source: INVERTED from m_h = 125.10 GeV (experimental input)")
+            print(f"  Formula: Re(T) = (lambda_0 - lambda_eff) / (kappa y_t^2)")
+            print(f"  Status: PHENOMENOLOGICAL CONSTRAINT (CIRCULAR!)")
         print()
         print("=== HIGGS QUARTIC COUPLING ===")
         print(f"Tree-level (SO(10) -> MSSM): lambda_0 = {lambda_0:.4f}")
+        print(f"  NOTE: This value is CALIBRATED, not purely geometric!")
+        print(f"  Geometric value would be: lambda_0 ~ {HiggsMassParameters.LAMBDA_0_GEOMETRIC:.4f}")
         print(f"Moduli correction: Delta_lambda = {Delta_lambda:.4f}")
         print(f"  Formula: Delta_lambda = (1/8pi^2) x Re(T) x y_t^2")
-        print(f"  Numerics: Delta_lambda = {1/(8*np.pi**2):.5f} x {Re_T} x {y_t**2:.4f}")
+        print(f"  Numerics: Delta_lambda = {HiggsMassParameters.KAPPA:.5f} x {Re_T} x {y_t**2:.4f}")
         print(f"Effective quartic: lambda_eff = lambda_0 - Delta_lambda = {lambda_eff:.4f}")
         print()
-        print("=== HIGGS MASS PREDICTION ===")
-        print(f"Electroweak VEV: v = {v} GeV")
+        print("=== HIGGS MASS CALCULATION ===")
+        print(f"Yukawa coupling scale: v = {v} GeV (from config.HiggsMassParameters)")
         print(f"Formula: m_h^2 = 8pi^2 v^2 lambda_eff")
         print(f"Calculation:")
         print(f"  m_h^2 = {8*np.pi**2:.4f} x {v**2:.1f} x {lambda_eff:.4f}")
@@ -403,28 +482,45 @@ def predict_higgs_mass_v12_4(Re_T: float = 1.833, verbose: bool = True) -> float
         print(f"  m_h = {m_h:.2f} GeV")
         print()
         print("=== EXPERIMENTAL COMPARISON ===")
-        print(f"PDG 2025 (ATLAS+CMS combined):")
-        print(f"  m_h = 125.10 ± 0.14 GeV")
+        m_h_exp = HiggsMassParameters.M_HIGGS_EXPERIMENTAL
+        sigma_exp = HiggsMassParameters.M_HIGGS_EXPERIMENTAL_ERROR
+        print(f"PDG 2024 (ATLAS+CMS combined):")
+        print(f"  m_h = {m_h_exp} ± {sigma_exp} GeV")
         print()
-        m_h_exp = 125.10
-        sigma_exp = 0.14
         deviation = abs(m_h - m_h_exp) / sigma_exp
-        print(f"Prediction: m_h = {m_h:.2f} GeV")
+        print(f"Calculation result: m_h = {m_h:.2f} GeV")
         print(f"Deviation: {deviation:.2f} sigma")
         print()
-        if deviation < 1.0:
-            print("-> EXACT MATCH within 1 sigma!")
-        elif deviation < 2.0:
-            print("-> Excellent agreement within 2 sigma")
-        else:
-            print(f"-> {deviation:.1f} sigma deviation")
+        if is_phenomenological:
+            if deviation < 1.0:
+                print("-> EXACT MATCH within 1 sigma!")
+                print("   BUT THIS IS CIRCULAR - Re(T) was tuned to match m_h!")
+            else:
+                print(f"-> {deviation:.1f} sigma deviation")
+                print("   UNEXPECTED - Re(T) should give exact match (circular!)")
+        elif is_geometric:
+            if deviation < 1.0:
+                print("-> EXACT MATCH within 1 sigma!")
+                print("   TRUE GEOMETRIC PREDICTION - REMARKABLE!")
+            elif deviation < 2.0:
+                print("-> Excellent agreement within 2 sigma")
+                print("   TRUE GEOMETRIC PREDICTION")
+            else:
+                print(f"-> {deviation:.1f} sigma deviation")
+                print("   PREDICTION FAILS - Attractor mechanism doesn't predict Higgs mass")
         print()
-        print("=== KEY ACHIEVEMENT ===")
-        print("Zero free parameters:")
-        print("  [CHECK] Re(T) = 1.833 from G_2 geometry (no tuning)")
-        print("  [CHECK] lambda_0 from SO(10) GUT matching")
-        print("  [CHECK] y_t from Yukawa sector geometry")
-        print("  [CHECK] v = 174 GeV from electroweak symmetry breaking")
+        print("=== HONESTY CHECK ===")
+        if is_geometric:
+            print("GEOMETRIC MODE:")
+            print("  [FAIL] Re(T) = 1.833 from G_2 geometry gives m_h ~ 414 GeV")
+            print("  [FAIL] Moduli stabilization FAILS to predict Higgs mass")
+            print("  Conclusion: Need phenomenological input to fix Re(T)")
+        elif is_phenomenological:
+            print("PHENOMENOLOGICAL MODE (CIRCULAR!):")
+            print("  [CIRCULAR] Re(T) = 7.086 inverted from experimental m_h = 125.10 GeV")
+            print("  [CIRCULAR] Using Re(T) to 'predict' m_h is not a prediction!")
+            print("  [TUNED] lambda_0 = 0.129 is calibrated (geometric ~ 0.0945)")
+            print("  Conclusion: This is a CONSTRAINT, not a prediction")
         print()
         print("="*70)
 
@@ -643,40 +739,69 @@ def comparison_with_v11(Re_T: float = 1.833) -> None:
 
 if __name__ == "__main__":
     print("\n" + "="*70)
-    print("PRINCIPIA METAPHYSICA v12.4")
+    print("PRINCIPIA METAPHYSICA v12.6")
     print("HIGGS MASS FROM MODULI STABILIZATION")
-    print("Enhanced Geometric Derivation")
+    print("CIRCULAR DEPENDENCY RESOLVED")
     print("="*70 + "\n")
 
-    # 1. Main prediction
+    # 1. GEOMETRIC prediction (Re(T) = 1.833 from attractor)
     print("="*70)
-    print("MAIN PREDICTION")
+    print("PART 1: GEOMETRIC PREDICTION (TRUE)")
     print("="*70)
-    m_h = predict_higgs_mass_v12_4(Re_T=1.833, verbose=True)
+    m_h_geometric = predict_higgs_mass_v12_4(Re_T=HiggsMassParameters.RE_T_ATTRACTOR, verbose=True)
+    print()
 
-    # 2. Attractor mechanism analysis
+    # 2. PHENOMENOLOGICAL constraint (Re(T) = 7.086 from m_h)
+    print("="*70)
+    print("PART 2: PHENOMENOLOGICAL CONSTRAINT (CIRCULAR)")
+    print("="*70)
+    m_h_phenomenological = predict_higgs_mass_v12_4(Re_T=HiggsMassParameters.RE_T_PHENOMENOLOGICAL, verbose=True)
+    print()
+
+    # 3. Attractor mechanism analysis
     Re_T_attractor = attractor_analysis(save_plot=True)
 
-    # 3. Sensitivity scan
+    # 4. Sensitivity scan
     Re_T_range, m_h_values = scan_Re_T_sensitivity(save_plot=True)
 
-    # 4. Comparison with v11.0
-    comparison_with_v11(Re_T=1.833)
+    # 5. Comparison with v11.0
+    comparison_with_v11(Re_T=HiggsMassParameters.RE_T_ATTRACTOR)
 
-    # 5. Summary
+    # 6. HONEST Summary
     print("\n" + "="*70)
-    print("SUMMARY - v12.4 HIGGS MASS DERIVATION")
+    print("SUMMARY - v12.6 HIGGS MASS ANALYSIS (HONEST)")
     print("="*70)
-    print("\n[CHECK] Exact prediction: m_h = 125.10 GeV (PDG 2025)")
-    print("[CHECK] Zero free parameters (all from G_2 geometry)")
-    print("[CHECK] Complete derivation: Re(T) -> lambda -> m_h")
-    print("[CHECK] Literature-grounded (Acharya, CHNP, KKLT)")
-    print("[CHECK] Sensitivity analyzed: robust to small Re(T) variations")
-    print("\nKey insight:")
-    print("  The complex structure modulus Re(T) = 1.833,")
-    print("  stabilized by flux on TCS G_2 manifold #187,")
-    print("  determines the Higgs quartic coupling through")
-    print("  SUGRA loops, yielding the observed Higgs mass.")
+    print()
+    print("=== GEOMETRIC PREDICTION (Re(T) = 1.833) ===")
+    print(f"  Result: m_h = {m_h_geometric:.2f} GeV")
+    print(f"  Experiment: m_h = {HiggsMassParameters.M_HIGGS_EXPERIMENTAL} GeV")
+    print(f"  Status: FAILS by ~{m_h_geometric - HiggsMassParameters.M_HIGGS_EXPERIMENTAL:.0f} GeV")
+    print()
+    print(f"=== PHENOMENOLOGICAL CONSTRAINT (Re(T) = {HiggsMassParameters.RE_T_PHENOMENOLOGICAL:.3f}) ===")
+    print(f"  Result: m_h = {m_h_phenomenological:.2f} GeV")
+    print(f"  Experiment: m_h = {HiggsMassParameters.M_HIGGS_EXPERIMENTAL} GeV")
+    print(f"  Status: CIRCULAR - Re(T) was inverted from m_h!")
+    print()
+    print("=== CONCLUSION ===")
+    print("  [FAIL] Moduli stabilization FAILS to predict Higgs mass")
+    print(f"  [CIRCULAR] Exact match requires Re(T) = {HiggsMassParameters.RE_T_PHENOMENOLOGICAL:.3f} (phenomenological)")
+    print("  [TUNED] Tree-level quartic lambda_0 = 0.129 is calibrated")
+    print("  [HONEST] The Higgs mass is an INPUT, not an OUTPUT")
+    print()
+    print("What is actually geometric vs phenomenological:")
+    print("  GEOMETRIC:")
+    print(f"    - Re(T) = {HiggsMassParameters.RE_T_ATTRACTOR} (attractor mechanism)")
+    print(f"    - b_3 = 24, chi_eff = 144, T_omega = -0.884")
+    print("    - Flux superpotential and membrane instantons")
+    print("  PHENOMENOLOGICAL:")
+    print(f"    - m_h = {HiggsMassParameters.M_HIGGS_EXPERIMENTAL} GeV (experimental input)")
+    print(f"    - Re(T) = {HiggsMassParameters.RE_T_PHENOMENOLOGICAL} (inverted from m_h)")
+    print(f"    - lambda_0 = {HiggsMassParameters.LAMBDA_0} (calibrated, not geometric {HiggsMassParameters.LAMBDA_0_GEOMETRIC:.4f})")
+    print()
+    print("The honest story:")
+    print("  We use the experimental Higgs mass as a phenomenological")
+    print("  constraint to fix the complex structure modulus Re(T).")
+    print("  This is not a prediction from geometry.")
     print("\n" + "="*70)
-    print("v12.4 ENHANCEMENT COMPLETE")
+    print("v12.6 CIRCULAR DEPENDENCY RESOLUTION COMPLETE")
     print("="*70 + "\n")

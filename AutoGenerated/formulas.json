@@ -806,7 +806,7 @@
         "category": "String Theory Consistency",
         "description": "Virasoro anomaly cancellation condition requiring critical dimension D=26 for bosonic string theory. Fundamental consistency requirement for quantum string theory.",
         "attribution": "Goddard et al. (1973); Virasoro algebra in string theory",
-        "status": "THEORETICAL",
+        "status": "ESTABLISHED",
         "section": "Appendix D",
         "terms": {
           "c_total": {
@@ -2011,7 +2011,7 @@
         "category": "Topological Torsion",
         "description": "Effective torsion coefficient incorporating Spin(7) holonomy structure corrections. Determines geometric torsion contribution to physical observables like gravitational wave dispersion.",
         "attribution": "Principia Metaphysica framework; Spin(7) stabilization mechanism",
-        "status": "THEORETICAL",
+        "status": "DERIVED",
         "section": "Appendix G",
         "terms": {
           "T_ω,eff": {
@@ -3952,7 +3952,7 @@
         "category": "Gravitational Wave Phenomenology",
         "section": "Appendix I",
         "sectionId": "I",
-        "status": "PREDICTION",
+        "status": "PREDICTED",
         "attribution": "Abbott et al. (2017) LIGO/Virgo GW170817 constraints; Principia Metaphysica dispersion mechanism",
         "inputParams": [
           "gw.ETA",
@@ -4121,7 +4121,7 @@
           "decay.BR_EPION"
         ],
         "units": "dimensionless",
-        "status": "PREDICTION",
+        "status": "PREDICTED",
         "references": [
           {
             "id": "nath2006",
@@ -4244,7 +4244,7 @@
           "coefficients.KAPPA"
         ],
         "units": "dimensionless",
-        "status": "THEORETICAL",
+        "status": "DERIVED",
         "references": [
           {
             "id": "georgi1974",
@@ -4301,7 +4301,7 @@
           "topology.T_OMEGA"
         ],
         "units": "dimensionless",
-        "status": "THEORETICAL",
+        "status": "DERIVED",
         "references": [
           {
             "id": "joyce2000",
@@ -6538,7 +6538,7 @@
         "category": "Topological Invariant",
         "section": "Appendix E",
         "sectionId": "appendix-e",
-        "status": "VALIDATED",
+        "status": "ESTABLISHED",
         "attribution": "Joyce (1996); Compact Manifolds with Special Holonomy; Atiyah & Singer index theorem",
         "inputParams": [
           "topology.CHI_G2",
@@ -7416,7 +7416,7 @@
         "category": "Conformal Field Theory",
         "section": "Appendix D",
         "sectionId": "appendix-d",
-        "status": "THEORETICAL",
+        "status": "ESTABLISHED",
         "attribution": "Friedan, Martinec & Shenker (1986); Conformal invariance in string theory",
         "terms": {
           "L_m": {

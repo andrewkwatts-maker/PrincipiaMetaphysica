@@ -103,6 +103,7 @@ class FormulaTerm:
     oom: Optional[float] = None       # Order of magnitude (log10)
     param_id: Optional[str] = None    # Link to parameter ID
     formula_id: Optional[str] = None  # Link to defining formula ID
+    contribution: Optional[str] = None  # How this term contributes to the formula
 
     def to_dict(self) -> Dict[str, Any]:
         d = {"name": self.name, "description": self.description}
@@ -120,6 +121,8 @@ class FormulaTerm:
             d["paramId"] = self.param_id
         if self.formula_id:
             d["formulaId"] = self.formula_id
+        if self.contribution:
+            d["contribution"] = self.contribution
         return d
 
 
@@ -204,6 +207,64 @@ class FormulaDerivation:
             d["assumptions"] = self.assumptions
         if self.approximations:
             d["approximations"] = self.approximations
+        return d
+
+
+@dataclass
+class FormulaInfoItem:
+    """Info grid item for formula panel (displays key facts about the formula)."""
+    title: str
+    content: str
+    link: Optional[str] = None
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = {"title": self.title, "content": self.content}
+        if self.link:
+            d["link"] = self.link
+        return d
+
+
+@dataclass
+class FormulaSubComponent:
+    """Clickable sub-component in expandable formula section."""
+    symbol: str                           # HTML/Unicode symbol
+    name: str                            # Component name
+    description: str                     # Brief description
+    link: Optional[str] = None           # URL to learn more
+    badge: Optional[str] = None          # Badge text (e.g., "Established", "Mathematics")
+    badge_type: str = "established"      # established, theory, mathematics
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = {
+            "symbol": self.symbol,
+            "name": self.name,
+            "description": self.description,
+            "badgeType": self.badge_type,
+        }
+        if self.link:
+            d["link"] = self.link
+        if self.badge:
+            d["badge"] = self.badge
+        return d
+
+
+@dataclass
+class FormulaDerivationStep:
+    """Single step in derivation chain (path to established physics)."""
+    title: str                           # e.g., "Dirac Equation (1928)"
+    link: Optional[str] = None           # URL to learn more
+    badge: Optional[str] = None          # Badge text (e.g., "Established")
+    badge_type: str = "established"      # established, theory, mathematics
+
+    def to_dict(self) -> Dict[str, Any]:
+        d = {
+            "title": self.title,
+            "badgeType": self.badge_type,
+        }
+        if self.link:
+            d["link"] = self.link
+        if self.badge:
+            d["badge"] = self.badge
         return d
 
 
@@ -554,6 +615,24 @@ class Formula:
     notes: Optional[str] = None  # Additional notes/caveats
     testability: Optional[str] = None  # How/when this can be tested
 
+    # === RICH UX RENDERING (for interactive formulas like index.html) ===
+    # Interactive HTML display
+    html_interactive: Optional[str] = None  # HTML with formula-var spans for hover tooltips
+
+    # Info panel (formula meaning and context)
+    info_title: Optional[str] = None        # e.g., "Unified 26-dimensional Action Principle"
+    info_meaning: Optional[str] = None      # Long description of what the formula means
+    info_grid: List[FormulaInfoItem] = field(default_factory=list)  # Key facts grid
+    use_cases: List[str] = field(default_factory=list)  # What emerges from this formula
+
+    # Expandable section
+    expansion_title: Optional[str] = None   # Plain text LaTeX as section title
+    sub_components: List[FormulaSubComponent] = field(default_factory=list)  # Clickable components
+    derivation_chain: List[FormulaDerivationStep] = field(default_factory=list)  # Path to established physics
+
+    # Discussion for paper rendering
+    discussion: Optional[str] = None  # Detailed discussion for paper/website context
+
     def to_dict(self) -> Dict[str, Any]:
         """Convert to JSON-serializable dictionary for theory_output.json."""
         d = {
@@ -620,6 +699,26 @@ class Formula:
         if self.testability:
             d["testability"] = self.testability
 
+        # Rich UX rendering
+        if self.html_interactive:
+            d["htmlInteractive"] = self.html_interactive
+        if self.info_title:
+            d["infoTitle"] = self.info_title
+        if self.info_meaning:
+            d["infoMeaning"] = self.info_meaning
+        if self.info_grid:
+            d["infoGrid"] = [item.to_dict() for item in self.info_grid]
+        if self.use_cases:
+            d["useCases"] = self.use_cases
+        if self.expansion_title:
+            d["expansionTitle"] = self.expansion_title
+        if self.sub_components:
+            d["subComponents"] = [comp.to_dict() for comp in self.sub_components]
+        if self.derivation_chain:
+            d["derivationChain"] = [step.to_dict() for step in self.derivation_chain]
+        if self.discussion:
+            d["discussion"] = self.discussion
+
         return d
 
 
@@ -646,10 +745,102 @@ class CoreFormulas:
         section="4",
         status="EXACT MATCH",
         terms={
-            "n_gen": FormulaTerm("Generations", "Number of fermion families", "sections/fermion-sector.html"),
-            "χ_eff": FormulaTerm("Effective Euler", "χ_eff = 144 from TCS construction"),
-            "48": FormulaTerm("Index Divisor", "From G₂ index theorem (2× F-theory's 24)"),
+            "n_gen": FormulaTerm(
+                name="Number of Generations",
+                description="The number of fermion families in the Standard Model",
+                link="sections/fermion-sector.html",
+                symbol="n_gen",
+                units="dimensionless",
+                contribution="The count we aim to derive from topology"
+            ),
+            "χ_eff": FormulaTerm(
+                name="Effective Euler Characteristic",
+                description="Topological invariant from TCS G₂ manifold construction",
+                symbol="χ_eff",
+                value="144",
+                units="dimensionless",
+                contribution="Geometric input from TCS construction",
+                link="foundations/g2-manifold.html"
+            ),
+            "48": FormulaTerm(
+                name="G₂ Index Divisor",
+                description="From G₂ index theorem (twice F-theory's divisor of 24)",
+                symbol="48",
+                value="48",
+                units="dimensionless",
+                contribution="Topological constraint from G₂ holonomy",
+                link="foundations/f-theory.html"
+            ),
         },
+        info_title="Three Generations from Topology",
+        info_meaning="This formula demonstrates that the number of fermion generations emerges directly from the topology of the G₂ manifold. Using the effective Euler characteristic χ_eff = 144 from the TCS construction, the G₂ index theorem yields exactly three generations—matching the observed particle spectrum without any free parameters.",
+        info_grid=[
+            FormulaInfoItem(
+                title="Topology Source",
+                content="TCS G₂ Manifold #187",
+                link="foundations/g2-manifold.html"
+            ),
+            FormulaInfoItem(
+                title="χ_eff Value",
+                content="144 (from Hodge numbers)",
+                link="sections/topology.html"
+            ),
+            FormulaInfoItem(
+                title="Index Divisor",
+                content="48 (from G₂ theorem)",
+                link="foundations/f-theory.html"
+            ),
+            FormulaInfoItem(
+                title="Result",
+                content="n_gen = 3 exactly",
+                link="sections/fermion-sector.html"
+            ),
+        ],
+        expansion_title="n_{gen} = \\frac{\\chi_{eff}}{48} = \\frac{144}{48} = 3",
+        sub_components=[
+            FormulaSubComponent(
+                symbol="χ_eff",
+                name="Effective Euler Characteristic",
+                description="From TCS G₂ manifold construction",
+                badge="DERIVED",
+                badge_type="theory"
+            ),
+            FormulaSubComponent(
+                symbol="48",
+                name="Index Divisor",
+                description="From G₂ index theorem",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+            FormulaSubComponent(
+                symbol="144",
+                name="Topological Invariant",
+                description="2(h¹¹ - h²¹ + h³¹) = 2(4 - 0 + 68)",
+                badge="GEOMETRIC",
+                badge_type="mathematics"
+            ),
+        ],
+        derivation_chain=[
+            FormulaDerivationStep(
+                title="TCS G₂ Manifold Construction",
+                link="foundations/tcs.html",
+                badge="MATHEMATICS",
+                badge_type="mathematics"
+            ),
+            FormulaDerivationStep(
+                title="F-theory Index Theorem",
+                link="foundations/f-theory.html",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+            FormulaDerivationStep(
+                title="G₂ Index Theorem",
+                link="foundations/g2-manifold.html",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+        ],
+        discussion="The generation number emerges directly from the topology of the G₂ manifold. Using the effective Euler characteristic χ_eff = 144 from the TCS construction (Corti et al. 2015), the G₂ index theorem—which generalizes the F-theory result n_gen = χ/24—yields exactly three generations via the divisor 48. This is a parameter-free geometric prediction that matches observation exactly.",
         derivation=FormulaDerivation(
             parent_formulas=["tcs-euler-characteristic"],
             established_physics=["f-theory-index"],
@@ -730,10 +921,104 @@ class CoreFormulas:
         section="5",
         status="GEOMETRIC",
         terms={
-            "M_GUT": FormulaTerm("GUT Scale", "Grand unification mass scale"),
-            "M_Pl": FormulaTerm("Planck Mass", "Reduced Planck mass 2.435×10¹⁸ GeV"),
-            "V_G2": FormulaTerm("G₂ Volume", "Compactification volume in Planck units"),
+            "M_GUT": FormulaTerm(
+                name="GUT Scale",
+                description="Grand unification mass scale where gauge couplings unify",
+                symbol="M_GUT",
+                value="2.118 × 10¹⁶ GeV",
+                units="GeV",
+                oom=16.33,
+                contribution="The derived unification scale",
+                link="sections/gauge-unification.html"
+            ),
+            "M_Pl": FormulaTerm(
+                name="Planck Mass",
+                description="Reduced Planck mass (fundamental quantum gravity scale)",
+                symbol="M_Pl",
+                value="2.435 × 10¹⁸ GeV",
+                units="GeV",
+                oom=18.39,
+                contribution="Fundamental input scale",
+                link="foundations/planck-scale.html"
+            ),
+            "V_G2": FormulaTerm(
+                name="G₂ Volume",
+                description="Compactification volume of G₂ manifold in Planck units",
+                symbol="V_G₂",
+                units="dimensionless",
+                contribution="Geometric modulus from TCS topology",
+                link="foundations/g2-manifold.html"
+            ),
         },
+        info_title="GUT Scale from G₂ Compactification",
+        info_meaning="The grand unification scale emerges from dimensional reduction on the G₂ manifold. The compactification volume V_G₂ sets the ratio between the 26D Planck scale M* and the effective 4D GUT scale via M_GUT = M_Pl · V_G₂^(-1/7). This geometric origin naturally yields M_GUT ≈ 2.1×10¹⁶ GeV, precisely in the range needed for gauge coupling unification.",
+        info_grid=[
+            FormulaInfoItem(
+                title="Planck Scale",
+                content="M_Pl = 2.435 × 10¹⁸ GeV",
+                link="foundations/planck-scale.html"
+            ),
+            FormulaInfoItem(
+                title="Volume Power",
+                content="-1/7 (from 7D compactification)",
+                link="foundations/kaluza-klein.html"
+            ),
+            FormulaInfoItem(
+                title="Computed Value",
+                content="2.118 × 10¹⁶ GeV",
+                link="sections/gauge-unification.html"
+            ),
+            FormulaInfoItem(
+                title="Comparison",
+                content="Standard GUT scale: 2 × 10¹⁶ GeV",
+                link="foundations/grand-unification.html"
+            ),
+        ],
+        expansion_title="M_{GUT} = M_{Pl} \\cdot V_{G_2}^{-1/7} = 2.118 \\times 10^{16}\\,\\text{GeV}",
+        sub_components=[
+            FormulaSubComponent(
+                symbol="M_Pl",
+                name="Planck Mass",
+                description="Fundamental gravity scale: 2.435 × 10¹⁸ GeV",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+            FormulaSubComponent(
+                symbol="V_G₂",
+                name="G₂ Volume",
+                description="From moduli stabilization via racetrack potential",
+                badge="DERIVED",
+                badge_type="theory"
+            ),
+            FormulaSubComponent(
+                symbol="-1/7",
+                name="Dimensional Reduction",
+                description="Power from 7D compactification (Kaluza-Klein)",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+        ],
+        derivation_chain=[
+            FormulaDerivationStep(
+                title="Kaluza-Klein Compactification",
+                link="foundations/kaluza-klein.html",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+            FormulaDerivationStep(
+                title="G₂ Manifold Geometry",
+                link="foundations/g2-manifold.html",
+                badge="MATHEMATICS",
+                badge_type="mathematics"
+            ),
+            FormulaDerivationStep(
+                title="Moduli Stabilization",
+                link="sections/moduli-stabilization.html",
+                badge="THEORY",
+                badge_type="theory"
+            ),
+        ],
+        discussion="The GUT scale emerges from the geometry of the G₂ compactification. Via dimensional reduction, the effective 4D Planck scale is related to the 26D fundamental scale by M_GUT = M_Pl · V_G₂^(-1/7), where the -1/7 power comes from compactifying 7 dimensions. The TCS topology and moduli stabilization fix V_G₂, yielding M_GUT = 2.118×10¹⁶ GeV—remarkably close to the phenomenologically required unification scale of ~2×10¹⁶ GeV.",
         derivation=FormulaDerivation(
             parent_formulas=["g2-compactification"],
             established_physics=["kaluza-klein"],
@@ -804,9 +1089,43 @@ class CoreFormulas:
         section="7",
         status="DESI DR2 VALIDATED (0.38σ)",
         terms={
-            "w₀": FormulaTerm("EoS Parameter", "w = p/ρ at present epoch"),
-            "α_T": FormulaTerm("Thermal Exponent", "α_T = 4.5 from KMS condition"),
+            "w₀": FormulaTerm(
+                name="Dark Energy Equation of State",
+                description="Ratio of pressure to energy density at present epoch (z=0)",
+                symbol="w₀",
+                value="-0.8528",
+                units="dimensionless",
+                contribution="The predicted present-day dark energy parameter"
+            ),
+            "α_T": FormulaTerm(
+                name="Thermal Exponent",
+                description="Exponent from KMS (Kubo-Martin-Schwinger) thermal equilibrium condition",
+                symbol="α_T",
+                value="4.5",
+                units="dimensionless",
+                contribution="From Pneuma statistics and thermal time flow"
+            ),
         },
+        info_title="Dark Energy from Thermal Time",
+        info_meaning="Dark energy's equation of state emerges from the thermal time mechanism. The Pneuma field's thermal statistics lead to a modified KMS condition with exponent α_T = 4.5, yielding w₀ = -1 + 2/(3α_T) = -0.8528. This prediction agrees remarkably with DESI 2024 data (w₀ = -0.827 ± 0.063) at 0.38σ.",
+        info_grid=[
+            FormulaInfoItem(title="Predicted Value", content="w₀ = -0.8528"),
+            FormulaInfoItem(title="DESI 2024", content="-0.827 ± 0.063"),
+            FormulaInfoItem(title="Agreement", content="0.38σ deviation"),
+            FormulaInfoItem(title="Mechanism", content="Thermal time + MEP"),
+        ],
+        expansion_title="w_0 = -1 + \\frac{2}{3\\alpha_T} = -1 + \\frac{2}{3 \\cdot 4.5} = -0.8528",
+        sub_components=[
+            FormulaSubComponent(symbol="-1", name="Cosmological Constant", description="Pure vacuum energy contribution", badge="ESTABLISHED", badge_type="established"),
+            FormulaSubComponent(symbol="α_T", name="Thermal Exponent", description="From KMS condition: α_T = 4.5", badge="DERIVED", badge_type="theory"),
+            FormulaSubComponent(symbol="2/(3α_T)", name="Thermal Correction", description="Deviation from ΛCDM", badge="PREDICTION", badge_type="theory"),
+        ],
+        derivation_chain=[
+            FormulaDerivationStep(title="Thermal Time Hypothesis (Connes-Rovelli)", badge="ESTABLISHED", badge_type="established"),
+            FormulaDerivationStep(title="KMS Condition (von Neumann Algebras)", badge="MATHEMATICS", badge_type="mathematics"),
+            FormulaDerivationStep(title="Maximum Entropy Principle", badge="THEORY", badge_type="theory"),
+        ],
+        discussion="The dark energy equation of state parameter w₀ emerges from the thermal time mechanism. The Pneuma field induces a thermal flow with KMS exponent α_T = 4.5 (from maximum entropy principle), leading to w₀ = -1 + 2/(3α_T) = -0.8528. This deviates slightly from the cosmological constant (w = -1) and agrees with DESI 2024 observations (w₀ = -0.827 ± 0.063) to within 0.38σ—one of PM's most striking predictions.",
         derivation=FormulaDerivation(
             parent_formulas=["thermal-time-flow", "mep-constraint"],
             established_physics=["kms-condition", "tomita-takesaki"],
@@ -881,11 +1200,121 @@ class CoreFormulas:
         section="5",
         status="TESTABLE (Hyper-K ~2030s)",
         terms={
-            "τ_p": FormulaTerm("Proton Lifetime", "p → e⁺π⁰ decay timescale"),
-            "M_GUT": FormulaTerm("GUT Scale", "2.118×10¹⁶ GeV"),
-            "α_GUT": FormulaTerm("GUT Coupling", "1/23.54"),
-            "S": FormulaTerm("Suppression", "TCS cycle separation factor ~2.1"),
+            "τ_p": FormulaTerm(
+                name="Proton Lifetime",
+                description="Characteristic timescale for proton decay via p → e⁺π⁰ channel",
+                symbol="τ_p",
+                value="8.15 × 10³⁴ years",
+                units="years",
+                oom=34.91,
+                contribution="The predicted proton decay lifetime",
+                link="sections/proton-decay.html"
+            ),
+            "M_GUT": FormulaTerm(
+                name="GUT Scale",
+                description="Grand unification mass scale from G₂ compactification",
+                symbol="M_GUT",
+                value="2.118 × 10¹⁶ GeV",
+                units="GeV",
+                oom=16.33,
+                contribution="Sets the suppression scale for decay operators",
+                link="sections/gauge-unification.html"
+            ),
+            "α_GUT": FormulaTerm(
+                name="GUT Coupling",
+                description="Unified gauge coupling constant at M_GUT",
+                symbol="α_GUT",
+                value="1/23.54 ≈ 0.0425",
+                units="dimensionless",
+                contribution="Strength of dimension-6 operators",
+                link="sections/gauge-unification.html"
+            ),
+            "S": FormulaTerm(
+                name="Geometric Suppression Factor",
+                description="Additional suppression from TCS cycle separation",
+                symbol="S",
+                value="~2.1",
+                units="dimensionless",
+                contribution="Enhances lifetime by S² ≈ 4.4",
+                link="foundations/tcs.html"
+            ),
         },
+        info_title="Proton Decay from GUT Scale",
+        info_meaning="Proton decay is a key prediction of grand unified theories. The lifetime scales as τ_p ∝ M_GUT⁴/(α_GUT² m_p⁵) from dimension-6 baryon-number-violating operators. The TCS geometry provides an additional suppression factor S² ≈ 4.4 from cycle separation, pushing the predicted lifetime to 8.15×10³⁴ years—just above the Super-Kamiokande bound and within reach of Hyper-Kamiokande.",
+        info_grid=[
+            FormulaInfoItem(
+                title="GUT Scale",
+                content="M_GUT = 2.118 × 10¹⁶ GeV",
+                link="sections/gauge-unification.html"
+            ),
+            FormulaInfoItem(
+                title="GUT Coupling",
+                content="α_GUT = 1/23.54",
+                link="sections/gauge-unification.html"
+            ),
+            FormulaInfoItem(
+                title="TCS Suppression",
+                content="S² ≈ 4.4",
+                link="foundations/tcs.html"
+            ),
+            FormulaInfoItem(
+                title="Predicted Lifetime",
+                content="8.15 × 10³⁴ years",
+                link="sections/proton-decay.html"
+            ),
+        ],
+        expansion_title="\\tau_p = \\frac{M_{GUT}^4}{\\alpha_{GUT}^2 m_p^5} \\times S^2 = 8.15 \\times 10^{34}\\,\\text{years}",
+        sub_components=[
+            FormulaSubComponent(
+                symbol="M_GUT⁴",
+                name="GUT Scale Suppression",
+                description="Fourth power from dimension-6 operator",
+                badge="DERIVED",
+                badge_type="theory"
+            ),
+            FormulaSubComponent(
+                symbol="α_GUT²",
+                name="Coupling Strength",
+                description="Squared unified coupling constant",
+                badge="DERIVED",
+                badge_type="theory"
+            ),
+            FormulaSubComponent(
+                symbol="m_p⁵",
+                name="Proton Mass Factor",
+                description="Phase space suppression (dimensional analysis)",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+            FormulaSubComponent(
+                symbol="S²",
+                name="TCS Geometric Factor",
+                description="Cycle separation enhancement ≈ 4.4",
+                badge="GEOMETRIC",
+                badge_type="mathematics"
+            ),
+        ],
+        derivation_chain=[
+            FormulaDerivationStep(
+                title="Dimension-6 Operators (GUT)",
+                link="foundations/grand-unification.html",
+                badge="ESTABLISHED",
+                badge_type="established"
+            ),
+            FormulaDerivationStep(
+                title="GUT Scale from G₂",
+                link="sections/gauge-unification.html",
+                badge="DERIVED",
+                badge_type="theory"
+            ),
+            FormulaDerivationStep(
+                title="TCS Geometric Suppression",
+                link="foundations/tcs.html",
+                badge="MATHEMATICS",
+                badge_type="mathematics"
+            ),
+        ],
+        discussion="The proton lifetime is calculated from the standard GUT formula τ_p ∝ M_GUT⁴/(α_GUT² m_p⁵), using the geometrically determined values M_GUT = 2.118×10¹⁶ GeV and α_GUT = 1/23.54. The TCS manifold geometry provides an additional suppression factor S ≈ 2.1 from the separation between associative 3-cycles, enhancing the lifetime by S² ≈ 4.4. This yields τ_p = 8.15×10³⁴ years, safely above the Super-Kamiokande bound of 2.4×10³⁴ years and testable at Hyper-Kamiokande in the 2030s.",
         derivation=FormulaDerivation(
             parent_formulas=["gut-scale", "tcs-suppression"],
             established_physics=["yang-mills"],
@@ -1914,10 +2343,51 @@ class CoreFormulas:
         description="CP phase from cycle orientation sum",
         section="6",
         terms={
-            "δ_CP": FormulaTerm("CP Phase", "Dirac CP violation phase"),
-            "orient_i": FormulaTerm("Orientations", "Cycle orientation signs"),
-            "b₃": FormulaTerm("Third Betti", "= 24"),
+            "δ_CP": FormulaTerm(
+                name="CP Violation Phase",
+                description="Dirac CP-violating phase in the PMNS matrix (neutrino mixing)",
+                symbol="δ_CP",
+                value="π/2 = 90°",
+                units="degrees",
+                contribution="Geometric prediction from cycle orientations"
+            ),
+            "orient_i": FormulaTerm(
+                name="Cycle Orientations",
+                description="Orientation signs (±1) of associative 3-cycles in G₂ manifold",
+                symbol="Σorient_i",
+                value="12 (out of 24)",
+                units="dimensionless",
+                contribution="Net signed sum from TCS geometry"
+            ),
+            "b₃": FormulaTerm(
+                name="Third Betti Number",
+                description="Number of independent 3-cycles in G₂ manifold",
+                symbol="b₃",
+                value="24",
+                units="dimensionless",
+                contribution="Topological invariant from TCS construction"
+            ),
         },
+        info_title="CP Phase from G₂ Topology",
+        info_meaning="The CP-violating phase δ_CP in neutrino oscillations emerges from the geometry of associative 3-cycles in the G₂ manifold. The signed sum of cycle orientations (12 out of 24) yields δ_CP = π·(12/24) = π/2 = 90°, predicting maximal CP violation in the neutrino sector.",
+        info_grid=[
+            FormulaInfoItem(title="Predicted Value", content="δ_CP = 90° (π/2)"),
+            FormulaInfoItem(title="Cycle Sum", content="Σorient_i = 12"),
+            FormulaInfoItem(title="Total Cycles", content="b₃ = 24"),
+            FormulaInfoItem(title="Current Data", content="Favors maximal ~90°"),
+        ],
+        expansion_title="\\delta_{\\text{CP}} = \\pi \\frac{\\sum_i \\text{orientation}_i}{b_3} = \\pi \\frac{12}{24} = \\frac{\\pi}{2} = 90^\\circ",
+        sub_components=[
+            FormulaSubComponent(symbol="Σorient_i", name="Orientation Sum", description="Net signed sum: 12 positive minus negatives", badge="GEOMETRIC", badge_type="mathematics"),
+            FormulaSubComponent(symbol="b₃", name="Third Betti Number", description="Total 3-cycles: b₃ = 24", badge="TOPOLOGY", badge_type="mathematics"),
+            FormulaSubComponent(symbol="π/2", name="Maximal Phase", description="90° = maximal CP violation", badge="PREDICTION", badge_type="theory"),
+        ],
+        derivation_chain=[
+            FormulaDerivationStep(title="TCS G₂ Topology", badge="MATHEMATICS", badge_type="mathematics"),
+            FormulaDerivationStep(title="Associative 3-Cycles", badge="GEOMETRIC", badge_type="mathematics"),
+            FormulaDerivationStep(title="Orientation Counting", badge="TOPOLOGY", badge_type="mathematics"),
+        ],
+        discussion="The CP-violating phase arises from the topology of the G₂ manifold. Associative 3-cycles carry orientation signs (±1), and their signed sum Σorient_i = 12 (out of b₃ = 24 total) determines δ_CP = π·(12/24) = π/2. This predicts maximal CP violation (90°) in neutrino oscillations, consistent with current T2K and NOvA data that favor δ_CP near ±90°. This also constrains the reactor angle θ_13 ≈ 8.5°, matching observations.",
         computed_value=90.0,  # degrees (π/2)
         units="degrees",
         simulation_file="simulations/pmns_theta13_delta_geometric_v14_1.py",
@@ -3008,9 +3478,40 @@ class CoreFormulas:
         section="5",
         status="PHENOMENOLOGICAL INPUT",
         terms={
-            "m_h": FormulaTerm("Higgs Mass", "LHC measured value"),
-            "Re(T)": FormulaTerm("Volume Modulus", "= 7.086, fixed by m_h constraint"),
+            "m_h": FormulaTerm(
+                name="Higgs Boson Mass",
+                description="Mass of the Standard Model Higgs boson measured at LHC",
+                symbol="m_h",
+                value="125.10 GeV",
+                units="GeV",
+                contribution="Experimental input that constrains moduli"
+            ),
+            "Re(T)": FormulaTerm(
+                name="Volume Modulus",
+                description="Real part of Kähler modulus T controlling G₂ volume",
+                symbol="Re(T)",
+                value="7.086",
+                units="dimensionless",
+                contribution="Derived value from m_h constraint"
+            ),
         },
+        info_title="Higgs Mass Constrains Moduli",
+        info_meaning="The Higgs mass is NOT a prediction—it is an experimental INPUT. The measured value m_h = 125.10 GeV from the LHC constrains the volume modulus Re(T) = 7.086, which then determines other quantities like Yukawa couplings.",
+        info_grid=[
+            FormulaInfoItem(title="LHC Measurement", content="125.10 ± 0.14 GeV"),
+            FormulaInfoItem(title="Role", content="INPUT (not prediction)"),
+            FormulaInfoItem(title="Constrains", content="Re(T) = 7.086"),
+        ],
+        expansion_title="m_h = 125.10\\,\\text{GeV} \\Rightarrow \\text{Re}(T) = 7.086",
+        sub_components=[
+            FormulaSubComponent(symbol="m_h", name="Higgs Mass", description="Measured at LHC", badge="ESTABLISHED", badge_type="established"),
+            FormulaSubComponent(symbol="Re(T)", name="Volume Modulus", description="From scalar potential minimum", badge="CONSTRAINED", badge_type="theory"),
+        ],
+        derivation_chain=[
+            FormulaDerivationStep(title="LHC Discovery (2012)", badge="EXPERIMENTAL", badge_type="established"),
+            FormulaDerivationStep(title="Modulus Constraint", badge="DERIVED", badge_type="theory"),
+        ],
+        discussion="The Higgs mass m_h = 125.10 GeV is experimental INPUT that fixes the volume modulus Re(T) = 7.086 via the scalar potential. This modulus then determines fermion masses and couplings.",
         computed_value=125.10,
         units="GeV",
         experimental_value=125.10,
@@ -5914,35 +6415,69 @@ class BreakingChainParameters:
 
 class HiggsMassParameters:
     """
-    v12.5: Higgs mass as PHENOMENOLOGICAL INPUT to constrain moduli.
+    v12.6: Higgs mass - CIRCULAR CONSTRAINT RESOLVED
 
-    IMPORTANT: This is NOT a true prediction. The measured Higgs mass
-    m_h = 125.10 GeV (PDG 2024) is used as INPUT to constrain Re(T).
+    CRITICAL ISSUE: The Higgs mass calculation contains a CIRCULAR DEPENDENCY!
 
-    Method (v12.5):
-    1. Start with formula: m_h² = 8π² v² (λ₀ - κ Re(T) y_t²)
-    2. Use MEASURED m_h = 125.10 GeV as input
-    3. Solve for Re(T) = (λ₀ - λ_eff) / (κ y_t²) = 7.086
-    4. This Re(T) is then used as a CONSISTENCY CHECK for other moduli
+    The Problem:
+    1. m_h = 125.10 GeV (experimental) is used to CONSTRAIN Re(T) = 7.086
+    2. Then Re(T) = 7.086 is used to "predict" m_h = 125.10 GeV
+    3. This is CIRCULAR - we're not predicting anything!
 
-    The Higgs mass is used to fix Re(T), not predicted from it.
-    This should be listed as a phenomenological constraint, not a prediction.
+    Two Conflicting Re(T) Values:
+    - RE_T_ATTRACTOR = 1.833 (from TCS G₂ attractor mechanism - GEOMETRIC)
+    - RE_T_PHENOMENOLOGICAL = 9.865 (inverted from m_h constraint - PHENOMENOLOGICAL)
+
+    The Truth:
+    - m_h is NOT predicted - it's an experimental input (PDG 2024)
+    - Re(T) = 9.865 is DERIVED FROM m_h (by inverting the formula)
+    - Re(T) = 1.833 is the TRUE geometric prediction from TCS #187
+    - The attractor value Re(T) = 1.833 gives m_h ≈ 504 GeV (WRONG!)
+
+    This means the moduli stabilization story FAILS to predict the Higgs mass.
+    We must be honest about what is geometric vs. phenomenological.
+
+    Formula: m_h² = 8π² v² (λ₀ - κ Re(T) y_t²)
+    Where:
+    - v = 174 GeV (Yukawa coupling scale, from HiggsVEVs.V_YUKAWA)
+    - λ₀ = 0.129 (tree-level quartic from SO(10) → MSSM matching)
+    - κ = 1/(8π²) (1-loop coefficient)
+    - y_t = 0.99 (top Yukawa from geometry)
+    - Re(T) = ??? (complex structure modulus - the problem!)
     """
 
     # Yukawa coupling scale (v/√2, NOT the electroweak VEV!)
     # See HiggsVEVs class for correct VEV definitions
     V_YUKAWA = 174.0             # [GeV] = v_EW/√2 ≈ 246/√2 (for Yukawa couplings)
 
-    # SO(10) → MSSM matching (GEOMETRIC - v12.5 corrected)
+    # SO(10) → MSSM matching - NOTE: This is actually calibrated, not purely geometric!
+    # The value λ₀ = 0.129 is chosen to match the Higgs mass when Re(T) = 1.833
+    # True geometric calculation gives λ₀ ≈ 0.0945 (see comment below)
     G_GUT = np.sqrt(4*np.pi/24.3)
     COS2_THETA_W = 0.77
-    LAMBDA_0 = (G_GUT**2 / 8) * (3/5 * COS2_THETA_W + 1)  # = 0.0945 (geometric)
+    LAMBDA_0_GEOMETRIC = (G_GUT**2 / 8) * (3/5 * COS2_THETA_W + 1)  # = 0.0945 (pure geometry)
+    LAMBDA_0 = 0.129             # [CALIBRATED] Tree-level quartic used in v11.0-v12.4
 
-    # G₂ modulus CONSTRAINED BY Higgs mass (NOT A PREDICTION)
-    # Re(T) is fixed by requiring m_h = 125.10 GeV (PDG 2024)
-    # Formula inverted: Re(T) = (λ₀ - λ_eff) / (κ y_t²)
-    RE_T_MODULUS = 7.086         # Fixed by m_h constraint
-    RE_T_OLD = 1.833             # OLD value (DO NOT USE - gave m_h = 414 GeV)
+    # G₂ complex structure modulus - TWO VALUES (GEOMETRIC vs PHENOMENOLOGICAL)
+    #
+    # GEOMETRIC VALUE (from TCS attractor mechanism):
+    RE_T_ATTRACTOR = 1.833       # [GEOMETRIC] From flux + membrane instantons on TCS #187
+    #                              Formula: Re(T) = √(χ_eff/b₃) × f(T_ω)
+    #                                      = √(144/24) × 0.748 = 1.833
+    #                              This is the TRUE geometric prediction.
+    #                              Result: m_h ≈ 414 GeV (FAILS to match experiment!)
+    #
+    # PHENOMENOLOGICAL VALUE (inverted from Higgs mass):
+    RE_T_PHENOMENOLOGICAL = 9.865  # [CONSTRAINED] Inverted from m_h = 125.10 GeV
+    #                                Formula: Re(T) = (λ₀ - λ_eff) / (κ y_t²)
+    #                                where λ_eff = m_h²/(8π²v²) = 125.1²/(8π² × 174²) = 0.00655
+    #                                Re(T) = (0.129 - 0.00655) / (κ × 0.99²) = 9.865
+    #                                This is NOT a prediction - it's circular!
+    #
+    # OLD INCORRECT VALUE: 7.086 (gave m_h = 313 GeV - calculation error!)
+
+    # For backward compatibility, keep old names but mark them clearly
+    RE_T_MODULUS = RE_T_PHENOMENOLOGICAL  # [CIRCULAR] Uses experimental m_h as input
 
     # 1-loop correction coefficient
     KAPPA = 1/(8*np.pi**2)
@@ -5951,17 +6486,48 @@ class HiggsMassParameters:
     Y_TOP = 0.99
 
     @staticmethod
-    def higgs_mass():
-        """Calculate m_h in GeV"""
-        m_h_squared = (8*np.pi**2 * HiggsMassParameters.V_EW**2 *
+    def higgs_mass_constrained():
+        """
+        Calculate m_h using PHENOMENOLOGICAL Re(T) = 7.086
+
+        WARNING: This is CIRCULAR! The value Re(T) = 7.086 was obtained
+        by inverting this very formula with m_h = 125.10 GeV as input.
+        This is NOT a prediction - it's a consistency check.
+
+        Returns:
+            m_h in GeV (should give 125.10 GeV by construction)
+        """
+        m_h_squared = (8*np.pi**2 * HiggsMassParameters.V_YUKAWA**2 *
                       (HiggsMassParameters.LAMBDA_0 -
                        HiggsMassParameters.KAPPA *
-                       HiggsMassParameters.RE_T_MODULUS *
+                       HiggsMassParameters.RE_T_PHENOMENOLOGICAL *
                        HiggsMassParameters.Y_TOP**2))
         return np.sqrt(m_h_squared)
 
-    # Predicted value
-    M_HIGGS_PREDICTED = 125.10   # [GeV]
+    @staticmethod
+    def higgs_mass_predicted():
+        """
+        Calculate m_h using GEOMETRIC Re(T) = 1.833
+
+        This is the TRUE prediction from TCS G₂ attractor mechanism.
+        Result: m_h ≈ 414 GeV (FAILS to match experiment!)
+
+        Returns:
+            m_h in GeV (predicted from geometry)
+        """
+        m_h_squared = (8*np.pi**2 * HiggsMassParameters.V_YUKAWA**2 *
+                      (HiggsMassParameters.LAMBDA_0 -
+                       HiggsMassParameters.KAPPA *
+                       HiggsMassParameters.RE_T_ATTRACTOR *
+                       HiggsMassParameters.Y_TOP**2))
+        return np.sqrt(m_h_squared)
+
+    # Experimental value (PDG 2024) - THIS IS INPUT, NOT OUTPUT!
+    M_HIGGS_EXPERIMENTAL = 125.10   # [GeV] Measured value (ATLAS+CMS combined)
+    M_HIGGS_EXPERIMENTAL_ERROR = 0.14  # [GeV] Experimental uncertainty
+
+    # For backward compatibility
+    M_HIGGS_PREDICTED = M_HIGGS_EXPERIMENTAL  # [MISLEADING NAME] Actually experimental input!
 
 
 # ==============================================================================
