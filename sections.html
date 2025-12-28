@@ -2111,19 +2111,119 @@
             });
 
             /**
-             * Handle hash navigation for tabs
+             * Section name to ID mapping for URL-based navigation
+             * Built dynamically from loaded section data
+             */
+            let SECTION_NAME_MAP = {};
+
+            /**
+             * Build section name map from loaded sections
+             * Creates URL-friendly slugs from section titles
+             */
+            function buildSectionNameMap() {
+                SECTION_NAME_MAP = {};
+
+                for (const section of allSections) {
+                    const id = section.id;
+                    const title = getSectionTitle(section);
+
+                    // Create URL-friendly slug from title
+                    const slug = title
+                        .toLowerCase()
+                        .replace(/[^\w\s-]/g, '')  // Remove special chars
+                        .replace(/\s+/g, '-')       // Replace spaces with hyphens
+                        .replace(/-+/g, '-')        // Collapse multiple hyphens
+                        .replace(/^-|-$/g, '');     // Trim hyphens
+
+                    if (slug) {
+                        SECTION_NAME_MAP[slug] = id;
+                    }
+
+                    // Also add common variations
+                    // Single words from title (first word)
+                    const firstWord = slug.split('-')[0];
+                    if (firstWord && firstWord.length > 3 && !SECTION_NAME_MAP[firstWord]) {
+                        SECTION_NAME_MAP[firstWord] = id;
+                    }
+
+                    // For appendices, add "appendix-X" format
+                    if (/^[A-Z]$/.test(id)) {
+                        SECTION_NAME_MAP[`appendix-${id.toLowerCase()}`] = id;
+                    }
+                }
+
+                // Add common URL patterns used by redirect files
+                // These are fallbacks if titles don't generate the expected slugs
+                const commonPatterns = {
+                    'introduction': '1',
+                    'geometric-framework': '2',
+                    'geometry': '2',
+                    'gauge-unification': '3',
+                    'gauge': '3',
+                    'fermion-sector': '4',
+                    'fermions': '4',
+                    'thermal-time': '5',
+                    'time': '5',
+                    'cosmology': '6',
+                    'predictions': '7',
+                    'conclusion': '8',
+                    'pneuma-lagrangian': '2',
+                    'einstein-hilbert-term': '2'
+                };
+
+                // Add common patterns (but don't override section-derived slugs)
+                for (const [pattern, sectionId] of Object.entries(commonPatterns)) {
+                    if (!SECTION_NAME_MAP[pattern]) {
+                        SECTION_NAME_MAP[pattern] = sectionId;
+                    }
+                }
+
+                console.log('Built section name map:', Object.keys(SECTION_NAME_MAP).length, 'entries');
+            }
+
+            /**
+             * Handle hash navigation for tabs AND sections
              */
             function handleHash() {
                 const hash = window.location.hash.substring(1);
-                if (hash && ['all', 'foundations', 'physics', 'experimental'].includes(hash)) {
+                if (!hash) return;
+
+                // First check if it's a tab name
+                if (['all', 'foundations', 'physics', 'experimental'].includes(hash)) {
                     const tab = document.querySelector(`.tab[data-tab="${hash}"]`);
                     if (tab) {
                         tab.click();
                     }
+                    return;
+                }
+
+                // Check if it's a section number (1-8, A-N)
+                let sectionId = hash;
+
+                // Check if it's a friendly name like "geometric-framework"
+                if (SECTION_NAME_MAP[hash.toLowerCase()]) {
+                    sectionId = SECTION_NAME_MAP[hash.toLowerCase()];
+                }
+
+                // Check for "section-X" format
+                const sectionMatch = hash.match(/^section-?(\d+|[A-Z])$/i);
+                if (sectionMatch) {
+                    sectionId = sectionMatch[1].toUpperCase();
+                }
+
+                // Try to open the section
+                if (sectionId && allSections.length > 0) {
+                    // Small delay to ensure sections are rendered
+                    setTimeout(() => {
+                        scrollToAndOpenSection(sectionId);
+                    }, 300);
                 }
             }
 
             window.addEventListener('hashchange', handleHash);
+
+            // Make scrollToAndOpenSection available globally for external links
+            window.scrollToAndOpenSection = scrollToAndOpenSection;
 
             /**
              * Keyboard shortcuts
@@ -2182,13 +2282,16 @@
                 console.log(`  • Appendices (A-N): ${appendices}`);
                 console.log(`  • Special sections: ${special}`);
 
+                // Build dynamic section name map for URL navigation
+                buildSectionNameMap();
+
                 // Initial render
                 filteredSections = [...allSections];
                 renderNavigation();
                 renderSections();
                 updateStats();
 
-                // Handle initial hash (for tab navigation)
+                // Handle initial hash (for tab and section navigation)
                 handleHash();
 
                 console.log('%cSections Browser initialized successfully', 'color: green; font-weight: bold');
