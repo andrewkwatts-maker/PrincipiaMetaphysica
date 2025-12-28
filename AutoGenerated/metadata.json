@@ -1,26 +1,26 @@
 {
   "version": "16.0",
-  "timestamp": "2025-12-28T19:48:54.445862",
+  "timestamp": "2025-12-28T19:51:59.809004",
   "validation": {
-    "timestamp": "2025-12-28T19:48:54.445812",
+    "timestamp": "2025-12-28T19:51:59.808943",
     "simulations_run": 20,
     "simulations_passed": 20,
     "simulations_failed": 0,
     "simulations_skipped": 0,
-    "total_execution_time_ms": 31.078999999999997,
+    "total_execution_time_ms": 32.297,
     "results": [
       {
         "simulation_id": "introduction_v16_0",
         "phase": 0,
         "status": "PASSED",
-        "execution_time_ms": 0.026,
+        "execution_time_ms": 0.028,
         "outputs_computed": []
       },
       {
         "simulation_id": "g2_geometry_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.064,
+        "execution_time_ms": 0.06899999999999999,
         "outputs_computed": [
           "topology.b2",
           "topology.b3",
@@ -38,7 +38,7 @@
         "simulation_id": "gauge_unification_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 29.648999999999997,
+        "execution_time_ms": 30.607,
         "outputs_computed": [
           "gauge.M_GUT",
           "gauge.ALPHA_GUT",
@@ -50,7 +50,7 @@
         "simulation_id": "fermion_generations_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.055,
+        "execution_time_ms": 0.056,
         "outputs_computed": [
           "fermion.n_generations",
           "fermion.yukawa_hierarchy",
@@ -69,7 +69,7 @@
         "simulation_id": "chirality_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.449,
+        "execution_time_ms": 0.428,
         "outputs_computed": [
           "chirality.spinor_dimension",
           "chirality.preserved_spinors",
@@ -90,7 +90,7 @@
         "simulation_id": "ckm_matrix_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.10500000000000001,
+        "execution_time_ms": 0.125,
         "outputs_computed": [
           "ckm.V_us",
           "ckm.V_cb",
@@ -126,7 +126,7 @@
         "simulation_id": "proton_decay_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.04,
+        "execution_time_ms": 0.043000000000000003,
         "outputs_computed": [
           "proton_decay.tau_p_years",
           "proton_decay.tau_p_base",
@@ -142,7 +142,7 @@
         "simulation_id": "higgs_mass_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.054,
+        "execution_time_ms": 0.062,
         "outputs_computed": [
           "higgs.m_higgs_pred",
           "higgs.m_higgs_geometric",
@@ -158,7 +158,7 @@
         "simulation_id": "cosmology_intro_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.055,
+        "execution_time_ms": 0.060000000000000005,
         "outputs_computed": [
           "cosmology.H0_theory",
           "cosmology.Omega_Lambda",
@@ -172,7 +172,7 @@
         "simulation_id": "dark_energy_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.063,
+        "execution_time_ms": 0.079,
         "outputs_computed": [
           "cosmology.w0_derived",
           "cosmology.wa_derived",
@@ -185,7 +185,7 @@
         "simulation_id": "neutrino_mixing_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.064,
+        "execution_time_ms": 0.066,
         "outputs_computed": [
           "neutrino.theta_12_pred",
           "neutrino.theta_13_pred",
@@ -197,7 +197,7 @@
         "simulation_id": "multi_sector_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.106,
+        "execution_time_ms": 0.11699999999999999,
         "outputs_computed": [
           "cosmology.w_eff",
           "cosmology.Omega_DM_over_b",
@@ -212,7 +212,7 @@
         "simulation_id": "pneuma_mechanism_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.07100000000000001,
+        "execution_time_ms": 0.08,
         "outputs_computed": [
           "pneuma.coupling",
           "pneuma.flow_parameter",
@@ -225,7 +225,7 @@
         "simulation_id": "thermal_time_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.027,
+        "execution_time_ms": 0.029,
         "outputs_computed": [
           "thermal.alpha_T",
           "thermal.modular_temperature",
@@ -237,14 +237,14 @@
         "simulation_id": "discussion_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.034999999999999996,
+        "execution_time_ms": 0.037,
         "outputs_computed": []
       },
       {
         "simulation_id": "predictions_aggregator_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.037,
+        "execution_time_ms": 0.041,
         "outputs_computed": [
           "predictions.summary",
           "predictions.falsifiable_count"
@@ -254,7 +254,7 @@
         "simulation_id": "appendix_a_math_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.039,
+        "execution_time_ms": 0.04,
         "outputs_computed": [
           "math.g2_dimension",
           "math.spinor_dimension",
@@ -269,7 +269,7 @@
         "simulation_id": "appendix_b_methods_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.054,
+        "execution_time_ms": 0.25,
         "outputs_computed": [
           "methods.rg_loop_order",
           "methods.integration_method",
@@ -286,7 +286,7 @@
         "simulation_id": "appendix_c_derivations_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.041,
+        "execution_time_ms": 0.04,
         "outputs_computed": [
           "derivations.n_gen_derived",
           "derivations.generation_check",
@@ -299,7 +299,7 @@
         "simulation_id": "appendix_d_tables_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.045000000000000005,
+        "execution_time_ms": 0.04,
         "outputs_computed": [
           "tables.n_constants",
           "tables.n_pdg_inputs",
