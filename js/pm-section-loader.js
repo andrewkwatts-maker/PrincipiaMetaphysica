@@ -350,12 +350,13 @@
             }
 
             // Map section IDs to filenames
+            // NOTE: Legacy mapping - most sections now load from sections.html with anchors
             const filenameMap = {
                 '1': 'introduction.html',
-                '2': 'geometric-framework.html',
+                '2': 'sections.html#2', // Migrated to unified sections
                 '3': 'fermion-sector.html',
                 '4': 'gauge-unification.html',
-                '5': 'cosmology.html',
+                '5': 'section-5.html',
                 '6': 'conclusion.html',
             };
 

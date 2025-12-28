@@ -278,7 +278,7 @@ const FORMULA_REGISTRY = {
                 "Ψ₂₆": {
                     name: "Pneuma Spinor Field",
                     description: "8192 components in Cl(24,2)",
-                    link: "sections/pneuma-lagrangian.html"
+                    link: "sections.html#pneuma-lagrangian"
                 },
                 "ℒ<sub>Sp(2,ℝ)</sub>": {
                     name: "Sp(2,R) Gauge Lagrangian",
@@ -295,7 +295,7 @@ const FORMULA_REGISTRY = {
                     "Include Sp(2,R) gauge symmetry to eliminate ghosts from second time",
                     "Result: gauge-invariant action with 8192-component Pneuma spinor"
                 ],
-                verificationPage: "sections/einstein-hilbert-term.html"
+                verificationPage: "sections.html#geometric-framework"
             }
         },
 
@@ -324,7 +324,7 @@ const FORMULA_REGISTRY = {
                     "Project to 13D shadow brane with signature (12,1)",
                     "Result: effective 13D action for shadow physics"
                 ],
-                verificationPage: "sections/einstein-hilbert-term.html"
+                verificationPage: "sections.html#geometric-framework"
             }
         },
 
@@ -352,7 +352,7 @@ const FORMULA_REGISTRY = {
                     "Integrate out heavy modes",
                     "Result: 4D Einstein gravity + Standard Model"
                 ],
-                verificationPage: "sections/einstein-hilbert-term.html"
+                verificationPage: "sections.html#geometric-framework"
             }
         },
 
@@ -390,7 +390,7 @@ const FORMULA_REGISTRY = {
                     "Compactify on CY4 × mirror CY4 with Z₂ identification",
                     "Result: 26 = 6 + 10 + 10 dimensions"
                 ],
-                verificationPage: "sections/geometric-framework.html"
+                verificationPage: "sections.html#2"
             }
         },
 
@@ -475,17 +475,17 @@ const FORMULA_REGISTRY = {
                 "n<sub>gen</sub>": {
                     name: "Number of Generations",
                     description: "= 3 (electron/muon/tau + up/down/charm/strange/top/bottom quarks). This is the observed number of fermion families in nature.",
-                    link: "sections/geometric-framework.html#generations"
+                    link: "sections.html#2#generations"
                 },
                 "χ<sub>eff</sub>": {
                     name: "Effective Euler Characteristic",
                     description: "= 144 from flux-dressed TCS G₂ topology. The Euler characteristic is a topological invariant that counts the 'shape' of the compactified dimensions.",
-                    link: "sections/geometric-framework.html#euler-char"
+                    link: "sections.html#2#euler-char"
                 },
                 "48": {
                     name: "Two-Time Index Divisor",
                     description: "= 24 × 2, where 24 comes from the F-theory index theorem and the factor of 2 accounts for the two-time structure of the 26D framework.",
-                    link: "sections/geometric-framework.html#index-theorem"
+                    link: "sections.html#2#index-theorem"
                 }
             },
             derivation: {
@@ -497,7 +497,7 @@ const FORMULA_REGISTRY = {
                     "G₂ manifold with χ_eff = 144: n_gen = 144/48 = 3",
                     "Result: exactly 3 generations topologically fixed"
                 ],
-                verificationPage: "sections/geometric-framework.html"
+                verificationPage: "sections.html#2"
             }
         },
 
@@ -528,7 +528,7 @@ const FORMULA_REGISTRY = {
                     "Effective Euler: χ_eff = 2(4 - 0 + 68) = 144",
                     "This gives n_gen = χ_eff/48 = 3"
                 ],
-                verificationPage: "sections/geometric-framework.html"
+                verificationPage: "sections.html#2"
             }
         },
 
@@ -670,7 +670,7 @@ const FORMULA_REGISTRY = {
                 "M<sub>GUT</sub>": {
                     name: "GUT Unification Scale",
                     description: "= 2.118 × 10¹⁶ GeV. The energy scale where the three Standard Model forces (electromagnetic, weak, strong) merge into a single unified force. About 10 trillion times higher than the Large Hadron Collider can reach.",
-                    link: "sections/gauge-unification.html#gut-scale"
+                    link: "sections.html#gauge-unification"
                 },
                 "M<sub>*</sub>": {
                     name: "Fundamental Scale",
@@ -679,12 +679,12 @@ const FORMULA_REGISTRY = {
                 "T<sub>ω</sub>": {
                     name: "G₂ Torsion",
                     description: "= -0.875 from Spin(7) spinor fraction 7/8. The intrinsic torsion of the TCS G₂ manifold, derived from flux stabilization. This is the key geometric input that fixes M_GUT with no adjustable parameters.",
-                    link: "sections/geometric-framework.html#torsion"
+                    link: "sections.html#2#torsion"
                 },
                 "s": {
                     name: "Moduli Parameter",
                     description: "= 1.178 from G₂ volume modulus stabilization via racetrack superpotential. Determines the size of the compactified dimensions.",
-                    link: "sections/geometric-framework.html#moduli"
+                    link: "sections.html#2#moduli"
                 }
             },
             derivation: {
@@ -696,7 +696,7 @@ const FORMULA_REGISTRY = {
                     "M_GUT = M_* × exp(T_ω × s / 2)",
                     "Result: M_GUT = 2.118 × 10^16 GeV (no fitting)"
                 ],
-                verificationPage: "sections/gauge-unification.html"
+                verificationPage: "sections.html#gauge-unification"
             }
         },
 
@@ -727,7 +727,7 @@ const FORMULA_REGISTRY = {
                     "Apply TCS volume and torsion corrections",
                     "Result: 1/α_GUT = 23.54 (0.8% from RG prediction)"
                 ],
-                verificationPage: "sections/gauge-unification.html"
+                verificationPage: "sections.html#gauge-unification"
             }
         },
 
@@ -841,7 +841,7 @@ const FORMULA_REGISTRY = {
                     "Bayesian analysis: 76% NH, 24% IH",
                     "JUNO 2027 will provide definitive test"
                 ],
-                verificationPage: "sections/predictions.html"
+                verificationPage: "sections.html#predictions"
             }
         },
 
@@ -864,17 +864,17 @@ const FORMULA_REGISTRY = {
                 "τ<sub>p</sub>": {
                     name: "Proton Lifetime",
                     description: "= 3.83 × 10³⁴ years (central value). This is about a trillion trillion times the age of the universe. If you watched 10³³ protons for a year, you'd expect to see about one decay.",
-                    link: "sections/predictions.html#proton-decay"
+                    link: "sections.html#predictions"
                 },
                 "M<sub>GUT</sub>": {
                     name: "GUT Scale",
                     description: "= 2.118 × 10¹⁶ GeV from G₂ torsion geometry. Heavier X and Y bosons (which mediate proton decay) mean longer proton lifetime. M_GUT appears to the 4th power, making the lifetime extremely sensitive to this scale.",
-                    link: "sections/gauge-unification.html#gut-scale"
+                    link: "sections.html#gauge-unification"
                 },
                 "α<sub>GUT</sub>": {
                     name: "GUT Coupling",
                     description: "= 1/23.54 from geometric Casimir scaling. The unified gauge coupling strength at M_GUT. Appears squared in the denominator.",
-                    link: "sections/gauge-unification.html#alpha-gut"
+                    link: "sections.html#gauge-unification"
                 },
                 "m<sub>p</sub>": {
                     name: "Proton Mass",
@@ -890,7 +890,7 @@ const FORMULA_REGISTRY = {
                     "α_GUT = 1/23.54 from geometric derivation",
                     "Result: τ_p = 3.83 × 10³⁴ years"
                 ],
-                verificationPage: "sections/predictions.html"
+                verificationPage: "sections.html#predictions"
             }
         },
 
@@ -921,7 +921,7 @@ const FORMULA_REGISTRY = {
                     "m_KK = 1/R_c from cycle volumes",
                     "Result: m₁ = 5.0 TeV, m₂ = 7.1 TeV"
                 ],
-                verificationPage: "sections/predictions.html"
+                verificationPage: "sections.html#predictions"
             }
         },
 
@@ -952,7 +952,7 @@ const FORMULA_REGISTRY = {
                     "BR = (12/24)² = 0.25 from amplitude squared",
                     "Dominant channel at 25%"
                 ],
-                verificationPage: "sections/predictions.html"
+                verificationPage: "sections.html#predictions"
             }
         },
 
@@ -984,7 +984,7 @@ const FORMULA_REGISTRY = {
                     "η = exp(|-0.875|)/24 = 2.40/24 ≈ 0.100",
                     "Detectable by next-generation GW observatories"
                 ],
-                verificationPage: "sections/predictions.html"
+                verificationPage: "sections.html#predictions"
             }
         },
 

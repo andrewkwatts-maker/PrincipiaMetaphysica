@@ -326,6 +326,8 @@ class PneumaMechanismV16(SimulationBase):
                 plain_text="L_pneuma = (1/2) ∂_μ Ψ_P ∂^μ Ψ_P - V(Ψ_P) + L_vielbein",
                 category="THEORY",
                 description="Full Pneuma Lagrangian with kinetic, potential, and vielbein terms",
+                inputParams=["topology.CHI_EFF", "topology.B3"],
+                outputParams=["pneuma.coupling"],
                 input_params=["topology.CHI_EFF", "topology.B3"],
                 output_params=["pneuma.coupling"],
                 derivation={
@@ -355,6 +357,8 @@ class PneumaMechanismV16(SimulationBase):
                 plain_text="dΨ_P/dt = -λ ∂V/∂Ψ_P",
                 category="THEORY",
                 description="Flow equation governing Pneuma field dynamics",
+                inputParams=["pneuma.flow_parameter"],
+                outputParams=["pneuma.vev"],
                 input_params=["pneuma.flow_parameter"],
                 output_params=["pneuma.vev"],
                 derivation={
@@ -411,7 +415,7 @@ class PneumaMechanismV16(SimulationBase):
             Parameter(
                 path="pneuma.lagrangian_valid",
                 name="Lagrangian Validity Flag",
-                units="boolean",
+                units="dimensionless",
                 status="DERIVED",
                 description="Boolean flag indicating whether Pneuma Lagrangian has stable vacuum",
                 derivation_formula="pneuma-lagrangian",
@@ -501,6 +505,54 @@ class PneumaMechanismV16(SimulationBase):
                 "year": "2002"
             },
         ]
+
+    def get_beginner_explanation(self) -> Dict[str, Any]:
+        """
+        Return beginner-friendly explanation for auto-generation of guide content.
+
+        Returns:
+            Dictionary with beginner explanation fields
+        """
+        return {
+            "icon": "🌊",
+            "title": "The Pneuma Field (Breathing Life into Geometry)",
+            "simpleExplanation": (
+                "The word 'pneuma' comes from ancient Greek meaning 'breath' or 'spirit'. In this theory, the Pneuma "
+                "field is a special quantum field that 'breathes' in the hidden dimensions - it's always present, "
+                "permeating all of space like an invisible mist. But unlike the Higgs field (which gives particles mass), "
+                "the Pneuma field does something even more fundamental: it *creates spacetime itself*. The way it couples "
+                "to geometry through 'vielbein emergence' means that the smooth fabric of space and time that Einstein "
+                "described isn't fundamental - it emerges from the collective behavior of this deeper field living in "
+                "7 extra dimensions."
+            ),
+            "analogy": (
+                "Think of spacetime like the surface of the ocean. From a distance, it looks smooth and continuous. "
+                "But zoom in close enough, and you see it's made of countless water molecules jostling around. The Pneuma "
+                "field is like those water molecules - individual quantum 'drops' whose collective motion creates the "
+                "illusion of a smooth surface (spacetime). When the Pneuma field 'flows' (changes its value), it's like "
+                "a current in the ocean: the curvature of spacetime (Einstein's gravity) emerges from how fast this flow "
+                "is changing. The 'racetrack potential' that governs the Pneuma field is like the seafloor topology - "
+                "it has valleys and hills that the field naturally settles into, and our universe's Pneuma VEV (vacuum "
+                "expectation value) is which valley we ended up in."
+            ),
+            "keyTakeaway": (
+                "The Pneuma field provides a mechanism for spacetime emergence: 4D gravity arises from 7D geometry "
+                "via vielbein coupling, with dynamics governed by a racetrack potential."
+            ),
+            "technicalDetail": (
+                "The Pneuma Lagrangian: L = (1/2)∂_μΨ_P ∂^μΨ_P - V(Ψ_P) + L_vielbein, where V(Ψ_P) = |dW/dΨ_P|² from "
+                "racetrack superpotential W = A exp(-aΨ) - B exp(-bΨ). Instanton coefficients: a = 2π/N_flux, b = 2π/(N_flux-1) "
+                "with N_flux = χ_eff/6 = 24. VEV from analytic minimum: <Ψ_P> = ln(Bb/Aa)/(b-a). Vielbein emergence: "
+                "e_a^μ ∝ ⟨η̄ γ^a η⟩ where η is the G2 parallel spinor, coupling Pneuma gradient ∇_μΨ_P to spacetime "
+                "metric via L_vielbein = κ_P (∇_μΨ_P)(η̄ Γ^a e_a^μ D_μ η). This creates effective Einstein-Hilbert "
+                "action from spinor kinetic term: S_EH ~ ∫ d⁴x √g R emerges from integrating out Pneuma-spinor loops."
+            ),
+            "prediction": (
+                "Pneuma field excitations around the VEV would manifest as ultra-light scalar particles (m_Ψ ~ M_Planck/√χ_eff ~ "
+                "10^16 GeV) that couple to curvature. These are inaccessible to colliders but could affect early universe "
+                "cosmology (inflation, reheating) or be detectable as modifications to General Relativity at extreme scales."
+            )
+        }
 
 
 # =============================================================================

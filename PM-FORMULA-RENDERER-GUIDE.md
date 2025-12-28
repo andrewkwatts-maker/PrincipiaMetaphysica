@@ -318,12 +318,12 @@ Formulas are loaded from `PM.formulas` (via `pm-formula-loader.js`) or `FORMULA_
             description: "= 3 (electron/muon/tau families)",
             units: "dimensionless",
             contribution: "Topologically required from G₂ manifold",
-            link: "sections/geometric-framework.html#generations"
+            link: "sections.html#2#generations"
         },
         "χ<sub>eff</sub>": {
             name: "Effective Euler Characteristic",
             description: "= 144 from flux-dressed TCS G₂ topology",
-            link: "sections/geometric-framework.html#euler-char"
+            link: "sections.html#2#euler-char"
         }
     },
 
@@ -332,7 +332,7 @@ Formulas are loaded from `PM.formulas` (via `pm-formula-loader.js`) or `FORMULA_
         {
             title: "Topology Source",
             content: "G₂ manifold with χ_eff = 144",
-            link: "sections/geometric-framework.html"
+            link: "sections.html#2"
         },
         {
             title: "Agreement",
@@ -377,7 +377,7 @@ Formulas are loaded from `PM.formulas` (via `pm-formula-loader.js`) or `FORMULA_
             "PM two-time framework doubles divisor: n_gen = χ_eff/48",
             "G₂ manifold with χ_eff = 144: n_gen = 144/48 = 3"
         ],
-        verificationPage: "sections/geometric-framework.html"
+        verificationPage: "sections.html#2"
     }
 }
 ```

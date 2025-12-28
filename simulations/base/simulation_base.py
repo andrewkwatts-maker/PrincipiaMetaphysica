@@ -93,8 +93,10 @@ class Formula:
         plain_text: Plain text representation
         category: Category ("ESTABLISHED", "THEORY", "DERIVED", "PREDICTIONS")
         description: What the formula computes
-        input_params: List of input parameter paths
-        output_params: List of output parameter paths
+        inputParams: List of input parameter paths (camelCase for JSON)
+        outputParams: List of output parameter paths (camelCase for JSON)
+        input_params: List of input parameter paths (snake_case for Python - legacy)
+        output_params: List of output parameter paths (snake_case for Python - legacy)
         derivation: Optional derivation dict with steps
         terms: Dictionary of term definitions
     """
@@ -104,6 +106,8 @@ class Formula:
     plain_text: str
     category: str
     description: str
+    inputParams: List[str] = field(default_factory=list)
+    outputParams: List[str] = field(default_factory=list)
     input_params: List[str] = field(default_factory=list)
     output_params: List[str] = field(default_factory=list)
     derivation: Optional[Dict[str, Any]] = None
@@ -263,13 +267,27 @@ class SimulationBase(ABC):
             registry: PMRegistry instance to inject into
             results: Dictionary of computed results from run()
         """
+        # Get parameter definitions to extract units and other metadata
+        param_defs = {p.path: p for p in self.get_output_param_definitions()}
+
         for param_path in self.output_params:
             if param_path in results:
+                param_def = param_defs.get(param_path)
+
+                # Build metadata dictionary with units
+                metadata = {}
+                if param_def:
+                    if param_def.units:
+                        metadata['units'] = param_def.units
+                    if param_def.description:
+                        metadata['description'] = param_def.description
+
                 registry.set_param(
                     path=param_path,
                     value=results[param_path],
                     source=self.metadata.id,
-                    status="DERIVED"
+                    status=param_def.status if param_def else "DERIVED",
+                    metadata=metadata if metadata else None
                 )
 
     def inject_section(self, registry: 'PMRegistry') -> None:

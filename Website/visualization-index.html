@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualization Index - Principia Metaphysica 2T Physics</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #0a0e1a;
+            --bg-card: #1a1f3a;
+            --bg-elevated: #252b47;
+            --text-primary: #e9ecef;
+            --text-secondary: #adb5bd;
+            --text-muted: #6c757d;
+            --accent-primary: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --border-primary: #2a2f4a;
+            --success: #51cf66;
+            --warning: #ffd43b;
+            --info: #4facfe;
+            --danger: #ff6b6b;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg-primary: #f8f9fa;
+                --bg-card: #ffffff;
+                --bg-elevated: #f1f3f5;
+                --text-primary: #212529;
+                --text-secondary: #495057;
+                --text-muted: #868e96;
+                --border-primary: #dee2e6;
+            }
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background: var(--success);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            margin: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+
+        .status-badge.twotime {
+            background: var(--accent-primary);
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+
+        .toc h2 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8em;
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .toc-item {
+            padding: 0.75rem 1rem;
+            background: var(--bg-elevated);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: var(--text-primary);
+            display: block;
+        }
+
+        .toc-item:hover {
+            transform: translateX(5px);
+            border-left-color: var(--accent-secondary);
+            background: var(--bg-primary);
+        }
+
+        .toc-item .count {
+            color: var(--text-muted);
+            font-size: 0.85em;
+            margin-left: 0.5rem;
+        }
+
+        /* Filter Controls */
+        .filter-section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .filter-section h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .filter-controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .filter-group label {
+            display: block;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .filter-group select {
+            width: 100%;
+            padding: 0.6rem;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            font-size: 0.95em;
+            cursor: pointer;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: var(--bg-elevated);
+            color: var(--text-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            font-size: 1em;
+            margin-top: 1rem;
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+        }
+
+        /* Featured Section */
+        .featured-section {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.05));
+            border: 2px solid var(--accent-primary);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .featured-section h2 {
+            color: var(--accent-primary);
+            font-size: 2em;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            background: var(--bg-card);
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+            border: 1px solid var(--border-primary);
+            border-bottom: none;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .category-header h2 {
+            color: var(--accent-primary);
+            font-size: 1.8em;
+            margin-bottom: 0.5rem;
+        }
+
+        .category-description {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 0 0 12px 12px;
+        }
+
+        /* Visualization Cards */
+        .viz-card {
+            background: var(--bg-elevated);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 2px solid var(--border-primary);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .viz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 127, 255, 0.3);
+            border-color: var(--accent-primary);
+        }
+
+        .viz-card.hidden {
+            display: none;
+        }
+
+        .viz-thumbnail {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.05));
+            border-bottom: 2px solid var(--border-primary);
+        }
+
+        .viz-info {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .viz-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+        }
+
+        .viz-title {
+            color: var(--text-primary);
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .badge-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge.type-svg { background: #9b59b6; color: white; }
+        .badge.type-png { background: #e67e22; color: white; }
+        .badge.type-interactive { background: #3498db; color: white; }
+        .badge.level-beginner { background: #51cf66; color: white; }
+        .badge.level-intermediate { background: #ffd43b; color: #333; }
+        .badge.level-advanced { background: #ff6b6b; color: white; }
+        .badge.twotime-badge { background: var(--accent-primary); color: white; }
+
+        .viz-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            flex: 1;
+        }
+
+        .viz-concepts {
+            background: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .viz-concepts h4 {
+            color: var(--accent-secondary);
+            font-size: 0.9em;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+        }
+
+        .concept-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .concept-tag {
+            background: var(--bg-elevated);
+            color: var(--text-secondary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.85em;
+            border: 1px solid var(--border-primary);
+        }
+
+        .viz-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-primary);
+            margin-top: auto;
+        }
+
+        .viz-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            background: var(--bg-primary);
+            transition: all 0.3s ease;
+        }
+
+        .viz-link:hover {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .viz-source {
+            color: var(--text-muted);
+            font-size: 0.85em;
+        }
+
+        /* Results Count */
+        .results-count {
+            text-align: center;
+            padding: 1rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+
+        footer a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 { font-size: 2em; }
+            .viz-grid, .featured-grid {
+                grid-template-columns: 1fr;
+            }
+            .filter-controls {
+                flex-direction: column;
+            }
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            body { background: white; color: black; }
+            .filter-section, .search-box { display: none; }
+            .viz-card { break-inside: avoid; }
+        }
+    </style>
+
+    <!-- Tooltip System CSS -->
+    <link rel="stylesheet" href="../css/pm-tooltip.css">
+    <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/auth.css">
+  </head>
+<body class="auth-loading">
+  <div id="main-content" style="display: none;">
+    <div class="container">
+        <header>
+            <h1>Visualization Index</h1>
+            <p>Principia Metaphysica - Two-Time Physics Framework</p>
+            <div>
+                <span class="status-badge">46 Total Visualizations</span>
+                <span class="status-badge twotime">22 Updated for 2T Physics</span>
+            </div>
+        
+    <div class="user-controls">
+      <img id="user-avatar" src="images/default-avatar.svg" alt="User">
+      <span id="user-email"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+        <!-- Table of Contents -->
+        <div class="toc">
+            <h2>Quick Navigation</h2>
+            <div class="toc-grid">
+                <a href="#featured" class="toc-item">
+                    Featured 2T Visualizations <span class="count">(8)</span>
+                </a>
+                <a href="#dimensional" class="toc-item">
+                    Dimensional Structure <span class="count">(6)</span>
+                </a>
+                <a href="#twotime" class="toc-item">
+                    Two-Time Physics <span class="count">(5)</span>
+                </a>
+                <a href="#branes" class="toc-item">
+                    Brane Configuration <span class="count">(4)</span>
+                </a>
+                <a href="#consciousness" class="toc-item">
+                    Consciousness & Time <span class="count">(5)</span>
+                </a>
+                <a href="#cosmology" class="toc-item">
+                    Cosmology <span class="count">(7)</span>
+                </a>
+                <a href="#particle" class="toc-item">
+                    Particle Physics <span class="count">(6)</span>
+                </a>
+                <a href="#validation" class="toc-item">
+                    Validation & Testing <span class="count">(5)</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Filter Section -->
+        <div class="filter-section">
+            <h3>Filter & Search Visualizations</h3>
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="topicFilter">Topic Area</label>
+                    <select id="topicFilter" onchange="filterVisualizations()">
+                        <option value="all">All Topics</option>
+                        <option value="dimensional">Dimensional Structure</option>
+                        <option value="twotime">Two-Time Physics</option>
+                        <option value="branes">Brane Configuration</option>
+                        <option value="consciousness">Consciousness & Time</option>
+                        <option value="cosmology">Cosmology</option>
+                        <option value="particle">Particle Physics</option>
+                        <option value="validation">Validation & Testing</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="levelFilter">Technical Level</label>
+                    <select id="levelFilter" onchange="filterVisualizations()">
+                        <option value="all">All Levels</option>
+                        <option value="beginner">Beginner</option>
+                        <option value="intermediate">Intermediate</option>
+                        <option value="advanced">Advanced</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="typeFilter">Visualization Type</label>
+                    <select id="typeFilter" onchange="filterVisualizations()">
+                        <option value="all">All Types</option>
+                        <option value="interactive">Interactive</option>
+                        <option value="static">Static</option>
+                        <option value="svg">SVG Diagrams</option>
+                        <option value="png">PNG Plots</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="twotimeFilter">2T Physics</label>
+                    <select id="twotimeFilter" onchange="filterVisualizations()">
+                        <option value="all">All Visualizations</option>
+                        <option value="yes">2T Specific Only</option>
+                        <option value="no">General Only</option>
+                    </select>
+                </div>
+            </div>
+            <input type="text" class="search-box" id="searchBox" placeholder="Search by title, description, or concepts..." oninput="filterVisualizations()">
+        </div>
+
+        <div class="results-count" id="resultsCount"></div>
+
+        <!-- Featured 2T Visualizations -->
+        <section id="featured" class="featured-section">
+            <h2>Featured 2T Physics Visualizations</h2>
+            <div class="featured-grid">
+                <!-- Featured Viz 1 -->
+                <div class="viz-card" data-topic="dimensional twotime" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/dimensional-reduction-pathway.svg" alt="Dimensional Reduction Pathway" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 14D×2 Reduction Pathway</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Complete dimensional reduction sequence showing the transformation from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>-dimensional two-time bulk spacetime (24,2) to 4D observable universe through Sp(2,R) gauge fixing, G₂ compactification, and brane localization. Color-coded stages illustrate the preservation of signature structure.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Sp(2,R) Gauge Fixing</span>
+                                <span class="concept-tag">Signature (24,2)→(12,1)</span>
+                                <span class="concept-tag">G₂ Holonomy</span>
+                                <span class="concept-tag">14D×2 Framework</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">dimensional-reduction-pathway.svg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 2 -->
+                <div class="viz-card" data-topic="branes twotime" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/heterogeneous-brane-structure.svg" alt="Heterogeneous Brane Structure" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">(5,2)+3×(3,2) Brane Configuration</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            3D perspective showing heterogeneous brane structure before and after gauge fixing. Observable brane (5+1D with KK access to 2 shared dimensions) versus shadow branes (3+1D localized) on shared (3+1)D common base. Demonstrates dimensional heterogeneity in the 2T framework.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Heterogeneous Branes</span>
+                                <span class="concept-tag">Shared Dimensions</span>
+                                <span class="concept-tag">Gauge Fixing</span>
+                                <span class="concept-tag">KK Modes</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">heterogeneous-brane-structure.svg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 3 -->
+                <div class="viz-card" data-topic="cosmology twotime" data-level="intermediate" data-type="interactive" data-twotime="yes">
+                    <img src="images/cosmology-evolution-diagram.png" alt="Cosmological Evolution" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Cosmological Evolution in 14D×2</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive SVG diagram showing cosmological evolution from early universe to dark energy domination within the two-time framework. Includes attractor mechanisms, moduli stabilization, and the role of Mashiach (An Attractor Scalar) fields in driving acceleration.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Mashiach Fields</span>
+                                <span class="concept-tag">Dark Energy</span>
+                                <span class="concept-tag">Attractor Mechanisms</span>
+                                <span class="concept-tag">2T Cosmology</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 4 -->
+                <div class="viz-card" data-topic="particle twotime" data-level="advanced" data-type="svg" data-twotime="yes">
+                    <img src="images/generation-count-consistency.svg" alt="Generation Count" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Generation Count from Cl(12,2)⊗Cl(12,2)</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Flowchart showing three independent topological paths to n_gen = <span class="pm-value" data-pm-value="topology.n_gen"></span> fermion generations. Demonstrates how the Clifford algebra structure Cl(12,2)⊗Cl(12,2) from 14D×2 framework naturally produces exactly three generations through G₂ holonomy and index theorems.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Clifford Algebras</span>
+                                <span class="concept-tag">3 Generations</span>
+                                <span class="concept-tag">G₂ Topology</span>
+                                <span class="concept-tag">Spinor Structure</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">generation-count-consistency.svg</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 5 -->
+                <div class="viz-card" data-topic="particle twotime" data-level="intermediate" data-type="png" data-twotime="yes">
+                    <img src="images/kk-spectrum-2d-grid.png" alt="KK Graviton Spectrum" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">KK Graviton Spectrum from Shared Dimensions</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            2D grid plot of first 20 Kaluza-Klein graviton modes arising from the 2 shared extra dimensions (T²) accessible only to the observable brane. Lightest modes (1,0) and (0,1) at ~5 TeV, compared against LHC bounds of 3.5 TeV (95% CL).
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">KK Modes</span>
+                                <span class="concept-tag">Shared Dimensions</span>
+                                <span class="concept-tag">LHC Phenomenology</span>
+                                <span class="concept-tag">TeV Physics</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">kk-spectrum-2d-grid.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 6 -->
+                <div class="viz-card" data-topic="cosmology twotime" data-level="advanced" data-type="png" data-twotime="yes">
+                    <img src="images/cmb-bubble-parameter-space.png" alt="CMB Bubble Parameter Space" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">CMB Bubble Nucleation Parameter Space</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Log-log plot showing testable (green) versus unfalsifiable (red) regimes for Coleman-De Luccia bubble nucleation in the 2T framework. PM framework positioned at S_E ~ 100, at the edge of CMB-S4 detection capabilities, providing crucial falsifiability.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Bubble Nucleation</span>
+                                <span class="concept-tag">CMB Testability</span>
+                                <span class="concept-tag">Swampland Constraints</span>
+                                <span class="concept-tag">Falsifiability</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">cmb-bubble-parameter-space.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 7 -->
+                <div class="viz-card" data-topic="twotime consciousness" data-level="beginner" data-type="interactive" data-twotime="yes">
+                    <img src="images/gauge-fixing-time.png" alt="Gauge Fixing and Time" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Observer-Dependent Time via Gauge Fixing</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-beginner">Beginner</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Visual explanation of how conscious observers fix the Sp(2,R) gauge symmetry, selecting a unique time direction from the 2-time bulk. Shows the BRST gauge-fixing procedure and its relationship to the emergence of subjective time experience.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Gauge Fixing</span>
+                                <span class="concept-tag">Observer Selection</span>
+                                <span class="concept-tag">BRST Cohomology</span>
+                                <span class="concept-tag">Consciousness</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#thermal-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Featured Viz 8 -->
+                <div class="viz-card" data-topic="validation" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/validation-dashboard.svg" alt="Validation Dashboard" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">2T Framework Validation Dashboard</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Comprehensive 3×3 grid showing all 9 critical validation checks for the 2T physics framework. Includes dimensional consistency, generation count, swampland constraints, KK hierarchy, dark energy, M_Pl, CMB testability, shared dimensions, and signature conservation. All checks PASSED.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Validation Checks</span>
+                                <span class="concept-tag">Internal Consistency</span>
+                                <span class="concept-tag">Testability</span>
+                                <span class="concept-tag">Framework Verification</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="visualization-index.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">validation-dashboard.svg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dimensional Structure -->
+        <section id="dimensional" class="category-section">
+            <div class="category-header">
+                <h2>Dimensional Structure</h2>
+                <p class="category-description">Visualizations of the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D→14D×2 framework, dimensional reduction pathways, and signature structures</p>
+            </div>
+            <div class="viz-grid">
+                <!-- Already included in featured: dimensional-reduction-pathway.svg -->
+
+                <!-- Additional dimensional visualizations -->
+                <div class="viz-card" data-topic="dimensional" data-level="intermediate" data-type="interactive" data-twotime="yes">
+                    <img src="images/signature-structure.png" alt="Signature Structure" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Signature Structure (24,2)→(12,1)</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive diagram showing how the bulk signature (24,2) with two timelike dimensions reduces to (12,1) through Sp(2,R) gauge fixing, preserving signature structure through the dimensional reduction cascade.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Metric Signature</span>
+                                <span class="concept-tag">Two Times</span>
+                                <span class="concept-tag">Gauge Symmetry</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="dimensional" data-level="advanced" data-type="svg" data-twotime="no">
+                    <img src="images/g2-manifold.png" alt="G2 Manifold" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">G₂ Holonomy Manifold Structure</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                        </div>
+                        <p class="viz-description">
+                            Detailed visualization of the 7-dimensional G₂ holonomy manifold used for compactification. Shows the associative 3-cycles and coassociative 4-cycles relevant for brane wrapping and chirality.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">G₂ Holonomy</span>
+                                <span class="concept-tag"><span class="pm-value" data-pm-value="dimensions.D_G2"></span>D Geometry</span>
+                                <span class="concept-tag">Compactification</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="dimensional" data-level="beginner" data-type="interactive" data-twotime="no">
+                    <img src="images/dimension-analogy.png" alt="Dimensional Analogy" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Understanding Higher Dimensions</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Beginner-friendly interactive visualization using Flatland-style analogies to help understand the concept of extra spatial dimensions and how 3D beings perceive higher-dimensional objects.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Extra Dimensions</span>
+                                <span class="concept-tag">Visualization</span>
+                                <span class="concept-tag">Pedagogy</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="dimensional" data-level="intermediate" data-type="png" data-twotime="yes">
+                    <img src="images/mpl-consistency-vs-k.png" alt="Planck Mass Consistency" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">M_Pl Consistency vs Warp Parameter</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Plot of M_Pl(calculated) / M_Pl(observed) versus warp parameter k. Shows parameter calibration needed to match observed Planck mass from dimensional reduction. Reveals tension requiring Phase 2 adjustments.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Planck Mass</span>
+                                <span class="concept-tag">Warping</span>
+                                <span class="concept-tag">Parameter Tuning</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">mpl-consistency-vs-k.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="dimensional" data-level="intermediate" data-type="svg" data-twotime="no">
+                    <img src="images/compactification-scales.png" alt="Compactification Scales" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Hierarchy of Compactification Scales</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                        </div>
+                        <p class="viz-description">
+                            Logarithmic scale diagram showing the hierarchy of length scales: Planck length, GUT scale, TeV scale (KK modes), and cosmological scale. Illustrates the separation between different compactification radii.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Scale Hierarchy</span>
+                                <span class="concept-tag">Compactification</span>
+                                <span class="concept-tag">Energy Scales</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="dimensional" data-level="beginner" data-type="interactive" data-twotime="no">
+                    <img src="images/kaluza-klein-intro.png" alt="KK Introduction" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Kaluza-Klein Theory Introduction</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Simple interactive visualization showing how compact extra dimensions give rise to tower of massive states (KK modes). Demonstrates circle compactification and momentum quantization.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">KK Theory</span>
+                                <span class="concept-tag">Compactification</span>
+                                <span class="concept-tag">Mode Expansion</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two-Time Physics -->
+        <section id="twotime" class="category-section">
+            <div class="category-header">
+                <h2>Two-Time Physics</h2>
+                <p class="category-description">Sp(2,R) gauge symmetry, BRST cohomology, and the 14D×2 framework foundations</p>
+            </div>
+            <div class="viz-grid">
+                <div class="viz-card" data-topic="twotime" data-level="advanced" data-type="interactive" data-twotime="yes">
+                    <img src="images/sp2r-gauge-symmetry.png" alt="Sp(2,R) Gauge Symmetry" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Sp(2,R) Gauge Symmetry Structure</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive visualization of the Sp(2,R) symplectic group structure that provides gauge redundancy in 2T physics. Shows the 3 generators and how gauge fixing eliminates unphysical degrees of freedom.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Sp(2,R) Symmetry</span>
+                                <span class="concept-tag">Gauge Redundancy</span>
+                                <span class="concept-tag">Lie Algebra</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="twotime" data-level="advanced" data-type="svg" data-twotime="yes">
+                    <img src="images/brst-cohomology.png" alt="BRST Cohomology" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">BRST Gauge-Fixing Procedure</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Diagram showing the BRST cohomology approach to gauge fixing in 2T physics. Illustrates ghost fields, BRST charge Q, and the condition Q|phys⟩ = 0 for physical states.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">BRST Quantization</span>
+                                <span class="concept-tag">Ghost Fields</span>
+                                <span class="concept-tag">Physical States</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="twotime" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/2t-vs-1t-comparison.png" alt="2T vs 1T Comparison" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">2T Physics vs Traditional 1T Frameworks</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Side-by-side comparison showing key differences between traditional one-time physics and the two-time framework. Highlights advantages: unified description, observer independence, and resolution of time's arrow paradox.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Framework Comparison</span>
+                                <span class="concept-tag">Conceptual Advantages</span>
+                                <span class="concept-tag">Unification</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="twotime" data-level="beginner" data-type="interactive" data-twotime="yes">
+                    <img src="images/two-time-analogy.png" alt="Two-Time Analogy" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Understanding Two-Time Physics</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-beginner">Beginner</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Accessible introduction to two-time physics using the analogy of stereo vision. Just as two eyes provide depth perception, two time coordinates provide a richer structure that reduces to our single experienced time.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">2T Introduction</span>
+                                <span class="concept-tag">Intuitive Analogy</span>
+                                <span class="concept-tag">Pedagogy</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="twotime" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/14d-times-2-structure.png" alt="14D×2 Structure" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">14D×2 Framework Architecture</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Schematic showing the product structure of two 14-dimensional spaces in the 2T framework. Illustrates how Clifford algebra Cl(12,2)⊗Cl(12,2) emerges from this structure and relates to particle physics.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">14D×2 Structure</span>
+                                <span class="concept-tag">Tensor Product</span>
+                                <span class="concept-tag">Clifford Algebras</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brane Configuration -->
+        <section id="branes" class="category-section">
+            <div class="category-header">
+                <h2>Brane Configuration</h2>
+                <p class="category-description">Heterogeneous brane structure, dimensional access, and multi-brane dynamics</p>
+            </div>
+            <div class="viz-grid">
+                <!-- Already featured: heterogeneous-brane-structure.svg -->
+
+                <div class="viz-card" data-topic="branes" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/brane-before-after-gauge.png" alt="Branes Before/After Gauge Fixing" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Brane Structure: Before & After Gauge Fixing</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Split diagram showing brane configuration in the (24,2) bulk before gauge fixing versus the (12,1) effective structure after Sp(2,R) gauge fixing. Demonstrates how dimensional heterogeneity emerges from the fixing process.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Gauge Fixing</span>
+                                <span class="concept-tag">Brane Evolution</span>
+                                <span class="concept-tag">Dimensional Reduction</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="branes" data-level="intermediate" data-type="interactive" data-twotime="no">
+                    <img src="images/brane-world-scenario.png" alt="Brane World Scenario" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Brane World Cosmology</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive visualization of brane world cosmology showing how matter is confined to branes while gravity propagates in the bulk. Demonstrates the Randall-Sundrum mechanism and hierarchy problem solution.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Brane Worlds</span>
+                                <span class="concept-tag">Bulk Gravity</span>
+                                <span class="concept-tag">Hierarchy Problem</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="branes" data-level="beginner" data-type="svg" data-twotime="no">
+                    <img src="images/brane-analogy.png" alt="Brane Analogy" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Understanding Branes: The Sheet Analogy</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Simple visual analogy comparing branes to sheets of paper in a 3D room. Helps beginners understand how lower-dimensional objects (branes) can exist in higher-dimensional spaces (bulk).
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Brane Introduction</span>
+                                <span class="concept-tag">Dimensional Embedding</span>
+                                <span class="concept-tag">Pedagogy</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="branes" data-level="advanced" data-type="png" data-twotime="yes">
+                    <img src="images/inter-brane-forces.png" alt="Inter-Brane Forces" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Forces Between Observable and Shadow Branes</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Plot showing gravitational interactions between observable and shadow branes mediated by bulk gravitons. Demonstrates suppression factors and potential dark matter connections.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Inter-Brane Forces</span>
+                                <span class="concept-tag">Dark Matter</span>
+                                <span class="concept-tag">Bulk Mediation</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Consciousness & Time -->
+        <section id="consciousness" class="category-section">
+            <div class="category-header">
+                <h2>Consciousness & Time</h2>
+                <p class="category-description">Observer-dependent time, thermal time hypothesis, and the role of consciousness in gauge fixing</p>
+            </div>
+            <div class="viz-grid">
+                <!-- Already featured: gauge-fixing-time visualization -->
+
+                <div class="viz-card" data-topic="consciousness" data-level="intermediate" data-type="interactive" data-twotime="yes">
+                    <img src="images/thermal-time-flow.png" alt="Thermal Time Flow" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Thermal Time Hypothesis</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive visualization showing how thermal time emerges from the statistical state of systems. Demonstrates how observer-dependent partitioning into system and environment naturally defines a time flow.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Thermal Time</span>
+                                <span class="concept-tag">Statistical Mechanics</span>
+                                <span class="concept-tag">Observer Dependence</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#thermal-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="consciousness" data-level="beginner" data-type="svg" data-twotime="yes">
+                    <img src="images/observer-time-selection.png" alt="Observer Time Selection" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">How Observers Select a Time Direction</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-beginner">Beginner</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Simple diagram showing how conscious observers fix gauge freedom by selecting a preferred time coordinate from the 2-time bulk, analogous to choosing a viewing angle in 3D space.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Observer Role</span>
+                                <span class="concept-tag">Gauge Choice</span>
+                                <span class="concept-tag">Time Emergence</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#thermal-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="consciousness" data-level="advanced" data-type="svg" data-twotime="yes">
+                    <img src="images/integrated-information.png" alt="Integrated Information" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Integrated Information Theory & 2T Physics</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Diagram connecting Integrated Information Theory (IIT) to the 2T framework. Shows how Φ (integrated information) measures an observer's capacity to perform gauge fixing and define subjective time.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">IIT</span>
+                                <span class="concept-tag">Consciousness Measure</span>
+                                <span class="concept-tag">Gauge Capacity</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#thermal-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="consciousness" data-level="intermediate" data-type="interactive" data-twotime="no">
+                    <img src="images/arrow-of-time.png" alt="Arrow of Time" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Resolving the Arrow of Time Paradox</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive visualization showing how the apparent contradiction between time-symmetric physics and experienced time asymmetry is resolved through thermodynamics and observer partitioning.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Time's Arrow</span>
+                                <span class="concept-tag">Entropy</span>
+                                <span class="concept-tag">Thermodynamics</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#thermal-time</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="consciousness" data-level="beginner" data-type="svg" data-twotime="no">
+                    <img src="images/subjective-time.png" alt="Subjective Time" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">The Nature of Subjective Time</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Accessible explanation of why time feels like it flows, despite physics treating it as just another coordinate. Uses everyday examples to illustrate the difference between physical and experiential time.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Subjective Experience</span>
+                                <span class="concept-tag">Time Flow</span>
+                                <span class="concept-tag">Philosophy</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="philosophical-implications.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">philosophical-implications.html</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cosmology -->
+        <section id="cosmology" class="category-section">
+            <div class="category-header">
+                <h2>Cosmology</h2>
+                <p class="category-description">Dark energy, cosmological evolution, Mashiach fields, and CMB predictions in the 2T framework</p>
+            </div>
+            <div class="viz-grid">
+                <!-- Already featured: cosmological-evolution, cmb-bubble-parameter-space -->
+
+                <div class="viz-card" data-topic="cosmology" data-level="intermediate" data-type="png" data-twotime="yes">
+                    <img src="moduli_evolution_plot.png" alt="Moduli Evolution" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Moduli Field Evolution</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Time evolution of moduli fields (dilaton, volume, shape) showing attractor behavior toward stable minima. Demonstrates how dimensional stabilization occurs in the 2T cosmological framework.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Moduli Fields</span>
+                                <span class="concept-tag">Attractor Mechanism</span>
+                                <span class="concept-tag">Stabilization</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">moduli_evolution_plot.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="cosmology" data-level="intermediate" data-type="png" data-twotime="yes">
+                    <img src="gw_dispersion_plot.png" alt="Gravitational Wave Dispersion" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Gravitational Wave Dispersion Relations</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Dispersion relations for gravitational waves in the 2T framework showing standard GR limit and deviations from extra-dimensional effects. Predictions testable with LIGO/Virgo and future detectors.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Gravitational Waves</span>
+                                <span class="concept-tag">Modified Dispersion</span>
+                                <span class="concept-tag">LIGO Testability</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">gw_dispersion_plot.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="cosmology" data-level="advanced" data-type="svg" data-twotime="yes">
+                    <img src="images/dark-energy-mechanism.png" alt="Dark Energy Mechanism" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Dark Energy in 14D×2 Framework</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Detailed mechanism showing how Mashiach field energy density contributes to observed dark energy. Demonstrates attractor dynamics that naturally produce Ω_Λ ~ 0.7 without fine-tuning.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Dark Energy</span>
+                                <span class="concept-tag">Mashiach Fields</span>
+                                <span class="concept-tag">No Fine-Tuning</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="cosmology" data-level="beginner" data-type="interactive" data-twotime="no">
+                    <img src="images/expanding-universe.png" alt="Expanding Universe" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Understanding Cosmic Expansion</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive visualization using the balloon analogy to explain cosmic expansion. Shows how galaxies recede from each other without any central point, illustrating the geometry of an expanding universe.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Cosmic Expansion</span>
+                                <span class="concept-tag">Hubble Law</span>
+                                <span class="concept-tag">Cosmology Basics</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="cosmology" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/cmb-power-spectrum.png" alt="CMB Power Spectrum" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">CMB Power Spectrum Predictions</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Comparison of standard ΛCDM CMB power spectrum with 2T framework predictions. Shows potential deviations at large scales from bubble nucleation signatures and at small scales from extra-dimensional effects.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">CMB</span>
+                                <span class="concept-tag">Power Spectrum</span>
+                                <span class="concept-tag">Testable Predictions</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="cosmology" data-level="advanced" data-type="png" data-twotime="yes">
+                    <img src="kk_spectrum_shared_dimensions.png" alt="KK Spectrum Shared Dimensions" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Full KK Spectrum Analysis</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Comprehensive analysis of KK graviton and gauge boson spectra from shared dimensions. Includes coupling strengths, decay channels, and collider signatures for LHC and future accelerators.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">KK Spectrum</span>
+                                <span class="concept-tag">Collider Physics</span>
+                                <span class="concept-tag">Phenomenology</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">kk_spectrum_shared_dimensions.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="cosmology" data-level="beginner" data-type="svg" data-twotime="no">
+                    <img src="images/dark-energy-intro.png" alt="Dark Energy Introduction" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">What is Dark Energy?</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Beginner-friendly introduction to dark energy using pie charts of cosmic composition and timeline diagrams. Explains the observational evidence from supernovae and the accelerating expansion of the universe.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Dark Energy Basics</span>
+                                <span class="concept-tag">Cosmic Acceleration</span>
+                                <span class="concept-tag">Observations</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Particle Physics -->
+        <section id="particle" class="category-section">
+            <div class="category-header">
+                <h2>Particle Physics</h2>
+                <p class="category-description">Fermion generations, SO(10) unification, spinor structure, and Standard Model emergence</p>
+            </div>
+            <div class="viz-grid">
+                <!-- Already featured: generation-count-consistency.svg -->
+
+                <div class="viz-card" data-topic="particle" data-level="advanced" data-type="svg" data-twotime="yes">
+                    <img src="images/clifford-algebra-structure.png" alt="Clifford Algebra Structure" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Cl(12,2)⊗Cl(12,2) Spinor Structure</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Detailed diagram of the Clifford algebra tensor product structure that emerges from 14D×2 framework. Shows how spinor representations decompose to produce three generations of fermions with correct quantum numbers.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Clifford Algebras</span>
+                                <span class="concept-tag">Spinor Reps</span>
+                                <span class="concept-tag">Tensor Product</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#gauge-unification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="particle" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/so10-breaking.png" alt="SO(10) Breaking" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">SO(10) → SU(3)×SU(2)×U(1) Breaking</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Flowchart showing symmetry breaking chain from SO(10) grand unified symmetry down to Standard Model gauge group. Demonstrates how fermions fit into 16-dimensional spinor representation.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">SO(10) GUT</span>
+                                <span class="concept-tag">Symmetry Breaking</span>
+                                <span class="concept-tag">Standard Model</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#gauge-unification</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="particle" data-level="intermediate" data-type="png" data-twotime="yes">
+                    <img src="gauge_unification_threshold_corrections.png" alt="Gauge Unification" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Gauge Coupling Unification with Thresholds</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Running of gauge couplings α₁, α₂, α₃ showing unification at M_GUT ~ 10¹⁶ GeV including threshold corrections from KK modes and string states. Demonstrates improvement over minimal MSSM.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Gauge Unification</span>
+                                <span class="concept-tag">RG Running</span>
+                                <span class="concept-tag">Threshold Corrections</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">gauge_unification_threshold_corrections.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="particle" data-level="intermediate" data-type="png" data-twotime="yes">
+                    <img src="rg_flows.png" alt="RG Flows" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Renormalization Group Flows</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            RG flow diagrams for coupling constants and mass parameters in the 2T framework. Shows flow toward IR and UV fixed points, demonstrating stability and predictivity of the framework.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">RG Flows</span>
+                                <span class="concept-tag">Fixed Points</span>
+                                <span class="concept-tag">Beta Functions</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">rg_flows.png</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="particle" data-level="beginner" data-type="svg" data-twotime="no">
+                    <img src="images/standard-model-particles.png" alt="Standard Model Particles" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Standard Model Particle Zoo</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Colorful diagram showing all Standard Model particles organized by type (quarks, leptons, gauge bosons, Higgs) and generation. Includes masses, charges, and basic properties in an accessible format.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Standard Model</span>
+                                <span class="concept-tag">Particle Types</span>
+                                <span class="concept-tag">Introduction</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="particle" data-level="advanced" data-type="svg" data-twotime="yes">
+                    <img src="images/yukawa-couplings.png" alt="Yukawa Couplings" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Yukawa Coupling Texture from Geometry</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Matrix structure of Yukawa couplings arising from overlap integrals of zero modes on G₂ manifold. Shows how geometric structure naturally produces hierarchical fermion masses without parameter tuning.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Yukawa Couplings</span>
+                                <span class="concept-tag">Mass Hierarchy</span>
+                                <span class="concept-tag">Geometric Origin</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#gauge-unification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Validation & Testing -->
+        <section id="validation" class="category-section">
+            <div class="category-header">
+                <h2>Validation & Testing</h2>
+                <p class="category-description">Consistency checks, experimental predictions, and falsifiability criteria</p>
+            </div>
+            <div class="viz-grid">
+                <!-- Already featured: validation-dashboard.svg -->
+
+                <div class="viz-card" data-topic="validation" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/swampland-criteria.png" alt="Swampland Criteria" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Swampland Conjectures Verification</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Checklist showing how the 2T framework satisfies key swampland conjectures: Distance Conjecture, de Sitter Conjecture, Weak Gravity Conjecture. Demonstrates consistency with quantum gravity constraints.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Swampland Program</span>
+                                <span class="concept-tag">Quantum Gravity</span>
+                                <span class="concept-tag">Consistency Checks</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="validation" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/experimental-signatures.png" alt="Experimental Signatures" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Experimental Signatures Summary</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Comprehensive table of testable predictions: KK gravitons at LHC, CMB bubble signatures, modified GW dispersion, proton decay, etc. Lists experiments, sensitivity levels, and timeline.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Testable Predictions</span>
+                                <span class="concept-tag">Experiments</span>
+                                <span class="concept-tag">Falsifiability</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="validation" data-level="beginner" data-type="interactive" data-twotime="no">
+                    <img src="images/scientific-method.png" alt="Scientific Method" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">How Science Tests Theories</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-interactive">Interactive</span>
+                            <span class="badge level-beginner">Beginner</span>
+                        </div>
+                        <p class="viz-description">
+                            Interactive flowchart explaining the scientific method and how theories like PM are tested. Emphasizes the importance of falsifiable predictions and experimental verification.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Scientific Method</span>
+                                <span class="concept-tag">Falsifiability</span>
+                                <span class="concept-tag">Pedagogy</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <span class="viz-source">beginners-guide-printable.html</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="validation" data-level="intermediate" data-type="svg" data-twotime="yes">
+                    <img src="images/parameter-space.png" alt="Parameter Space" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Allowed Parameter Space</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-svg">SVG</span>
+                            <span class="badge level-intermediate">Intermediate</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Multi-dimensional plot showing allowed regions in parameter space constrained by observations (LHC, CMB, BBN, etc.). Demonstrates that framework makes definite predictions within viable parameter region.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Parameter Space</span>
+                                <span class="concept-tag">Constraints</span>
+                                <span class="concept-tag">Predictivity</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#cosmology</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="viz-card" data-topic="validation" data-level="advanced" data-type="png" data-twotime="yes">
+                    <img src="images/anomaly-cancellation.png" alt="Anomaly Cancellation" class="viz-thumbnail">
+                    <div class="viz-info">
+                        <div class="viz-header">
+                            <h3 class="viz-title">Anomaly Cancellation Verification</h3>
+                        </div>
+                        <div class="badge-container">
+                            <span class="badge type-png">PNG</span>
+                            <span class="badge level-advanced">Advanced</span>
+                            <span class="badge twotime-badge">2T Physics</span>
+                        </div>
+                        <p class="viz-description">
+                            Detailed calculation showing cancellation of gauge and gravitational anomalies in the 2T framework. Demonstrates that fermion content from Cl(12,2)⊗Cl(12,2) automatically satisfies anomaly-free conditions.
+                        </p>
+                        <div class="viz-concepts">
+                            <h4>Key Concepts</h4>
+                            <div class="concept-tags">
+                                <span class="concept-tag">Anomaly Cancellation</span>
+                                <span class="concept-tag">Consistency Conditions</span>
+                                <span class="concept-tag">Quantum Corrections</span>
+                            </div>
+                        </div>
+                        <div class="viz-meta">
+                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <span class="viz-source">sections.html#gauge-unification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+            <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+  </div>
+    </div>
+
+    <!-- Filter JavaScript -->
+    <script>
+        function filterVisualizations() {
+            const topicFilter = document.getElementById('topicFilter').value;
+            const levelFilter = document.getElementById('levelFilter').value;
+            const typeFilter = document.getElementById('typeFilter').value;
+            const twotimeFilter = document.getElementById('twotimeFilter').value;
+            const searchBox = document.getElementById('searchBox').value.toLowerCase();
+
+            const cards = document.querySelectorAll('.viz-card');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                let show = true;
+
+                // Topic filter
+                if (topicFilter !== 'all') {
+                    const topics = card.dataset.topic || '';
+                    if (!topics.includes(topicFilter)) {
+                        show = false;
+                    }
+                }
+
+                // Level filter
+                if (levelFilter !== 'all') {
+                    const level = card.dataset.level || '';
+                    if (level !== levelFilter) {
+                        show = false;
+                    }
+                }
+
+                // Type filter
+                if (typeFilter !== 'all') {
+                    const type = card.dataset.type || '';
+                    if (typeFilter === 'static' && (type === 'interactive')) {
+                        show = false;
+                    } else if (typeFilter === 'interactive' && type !== 'interactive') {
+                        show = false;
+                    } else if (typeFilter === 'svg' && type !== 'svg') {
+                        show = false;
+                    } else if (typeFilter === 'png' && type !== 'png') {
+                        show = false;
+                    }
+                }
+
+                // 2T filter
+                if (twotimeFilter !== 'all') {
+                    const twotime = card.dataset.twotime || 'no';
+                    if (twotime !== twotimeFilter) {
+                        show = false;
+                    }
+                }
+
+                // Search filter
+                if (searchBox) {
+                    const cardText = card.textContent.toLowerCase();
+                    if (!cardText.includes(searchBox)) {
+                        show = false;
+                    }
+                }
+
+                // Show/hide card
+                if (show) {
+                    card.classList.remove('hidden');
+                    visibleCount++;
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+
+            // Update results count
+            const resultsCount = document.getElementById('resultsCount');
+            resultsCount.textContent = `Showing ${visibleCount} of ${cards.length} visualizations`;
+        }
+
+        // Initialize results count on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            filterVisualizations();
+        });
+
+        // Smooth scrolling for table of contents
+        document.querySelectorAll('.toc-item').forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(item.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+  <script type="module">
+    import { setupAuthGuard } from './js/auth-guard.js';
+    setupAuthGuard('visualization-index');
+  </script>
+
+  <!-- Tooltip System -->
+  <script src="theory-constants-enhanced.js"></script>
+  <script src="../js/pm-tooltip-system.js"></script>
+  <script src="../js/pm-formula-loader.js"></script>
+</body>
+</html>

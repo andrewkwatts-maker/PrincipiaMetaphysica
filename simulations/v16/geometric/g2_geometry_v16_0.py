@@ -402,6 +402,8 @@ class G2GeometryV16(SimulationBase):
             plain_text="Hol(g) ⊆ G2 ⟺ ∃η: ∇η = 0",
             category="THEORY",
             description="G2 holonomy equivalent to parallel spinor existence",
+            inputParams=[],
+            outputParams=[],
             input_params=[],
             output_params=[],
             derivation={
@@ -445,6 +447,8 @@ class G2GeometryV16(SimulationBase):
             plain_text="χ_eff = 2(h^{1,1} - h^{2,1} + h^{3,1})",
             category="THEORY",
             description="Effective Euler characteristic from Hodge numbers",
+            inputParams=[],
+            outputParams=["topology.CHI_EFF"],
             input_params=["topology.h11", "topology.h21", "topology.h31"],
             output_params=["topology.CHI_EFF"],
             derivation={
@@ -492,6 +496,8 @@ class G2GeometryV16(SimulationBase):
             plain_text="b₀=1, b₁=0, b₂=4, b₃=24, b₄=24, b₅=4, b₆=0, b₇=1",
             category="THEORY",
             description="Betti number sequence for TCS G2 manifold #187",
+            inputParams=[],
+            outputParams=["topology.b2", "topology.b3"],
             input_params=[],
             output_params=["topology.b2", "topology.b3"],
             derivation={
@@ -524,6 +530,8 @@ class G2GeometryV16(SimulationBase):
             plain_text="n_gen = χ_eff / 48",
             category="THEORY",
             description="Number of fermion generations from index theorem",
+            inputParams=["topology.CHI_EFF"],
+            outputParams=["topology.n_gen"],
             input_params=["topology.CHI_EFF"],
             output_params=["topology.n_gen"],
             derivation={
@@ -556,6 +564,8 @@ class G2GeometryV16(SimulationBase):
             plain_text="K_matching = h^{1,1} = b₂",
             category="THEORY",
             description="K3 matching fibres in TCS gluing",
+            inputParams=["topology.b2"],
+            outputParams=["topology.K_MATCHING"],
             input_params=["topology.b2"],
             output_params=["topology.K_MATCHING"],
             derivation={
@@ -704,6 +714,52 @@ class G2GeometryV16(SimulationBase):
                 description="Topological invariant counting holes in manifolds"
             ),
         ]
+
+    def get_beginner_explanation(self) -> Dict[str, Any]:
+        """
+        Return beginner-friendly explanation for auto-generation of guide content.
+
+        Returns:
+            Dictionary with beginner explanation fields
+        """
+        return {
+            "icon": "🌀",
+            "title": "Hidden Dimensions and G2 Manifolds",
+            "simpleExplanation": (
+                "Our universe might have 7 hidden dimensions curled up so small we can't see them. "
+                "These hidden dimensions have a special shape called a 'G2 manifold' - think of it "
+                "like origami in 7 dimensions. The way this origami is folded determines everything "
+                "we see in our 3D world: how many types of particles exist, why they have the masses "
+                "they do, and even why protons don't decay instantly."
+            ),
+            "analogy": (
+                "Imagine rolling up a 2D sheet of paper into a thin tube. From far away, the tube "
+                "looks like a 1D line, but up close you'd see it has a hidden circular dimension "
+                "wrapped around it. Now imagine doing this with 7 dimensions instead of 1, and "
+                "folding them into a very specific shape (like a Calabi-Yau origami) - that's a "
+                "G2 manifold. The number of 'holes' and 'loops' in this origami (called Betti "
+                "numbers) directly determines particle physics: 24 special loops give us 3 "
+                "generations of particles (24 ÷ 8 = 3)."
+            ),
+            "keyTakeaway": (
+                "The shape of hidden dimensions isn't random - it's a precise geometric structure "
+                "that predicts exactly 3 generations of particles with no free parameters."
+            ),
+            "technicalDetail": (
+                "The TCS (Twisted Connected Sum) construction #187 provides an explicit example of "
+                "a compact G2 manifold with Betti numbers b2=4, b3=24, and effective Euler "
+                "characteristic χ_eff=144. The number of fermion generations follows from the "
+                "Atiyah-Singer index theorem: n_gen = χ_eff/48 = 3. The third Betti number b3=24 "
+                "counts associative 3-cycles where matter fields localize, while b2=4 counts Kähler "
+                "moduli that control the compactification geometry."
+            ),
+            "prediction": (
+                "This geometric structure makes no adjustable predictions, but it *derives* why we "
+                "observe exactly 3 generations of quarks and leptons rather than 2, 4, or any other "
+                "number. Traditional particle physics simply accepts 3 generations as an empirical "
+                "fact; G2 geometry explains it from pure mathematics."
+            )
+        }
 
 
 def main():

@@ -27,7 +27,7 @@
       "category": "THEORY",
       "registryId": "master-action-26d",
       "paperLocation": "Abstract, Section 1",
-      "htmlFiles": ["index.html", "principia-metaphysica-paper.html", "sections/einstein-hilbert-term.html"]
+      "htmlFiles": ["index.html", "principia-metaphysica-paper.html", "sections.html"]
     },
     "shadow-action-13d": {
       "equationNumber": "1.2",
@@ -57,7 +57,7 @@
       "category": "THEORY",
       "registryId": "spacetime-26d",
       "paperLocation": "Section 2",
-      "htmlFiles": ["sections/geometric-framework.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html#2", "principia-metaphysica-paper.html"]
     },
     "euler-characteristic": {
       "equationNumber": "2.5",
@@ -67,7 +67,7 @@
       "category": "DERIVED",
       "registryId": "euler-characteristic",
       "paperLocation": "Section 2.2",
-      "htmlFiles": ["sections/geometric-framework.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html#2", "principia-metaphysica-paper.html"]
     },
     "generation-number": {
       "equationNumber": "2.6",
@@ -80,7 +80,7 @@
       "experimentalValue": 3,
       "sigma": 0,
       "paperLocation": "Section 2.3",
-      "htmlFiles": ["index.html", "sections/geometric-framework.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["index.html", "sections.html#2", "principia-metaphysica-paper.html"]
     },
     "clifford-26d": {
       "equationNumber": "3.3",
@@ -103,7 +103,7 @@
       "experimentalValue": 2.118e16,
       "sigma": 0,
       "paperLocation": "Section 4.1",
-      "htmlFiles": ["sections/gauge-unification.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html#gauge-unification", "principia-metaphysica-paper.html"]
     },
     "alpha-gut": {
       "equationNumber": "4.2",
@@ -116,7 +116,7 @@
       "experimentalValue": 24.1,
       "sigma": 2.5,
       "paperLocation": "Section 4.2",
-      "htmlFiles": ["sections/gauge-unification.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html#gauge-unification", "principia-metaphysica-paper.html"]
     },
     "two-time-structure": {
       "equationNumber": "5.1",
@@ -225,7 +225,7 @@
       "experimentalLimit": ">2.4e34 years",
       "futureTest": "Hyper-K 2032-2038",
       "paperLocation": "Section 8.1",
-      "htmlFiles": ["sections/predictions.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html", "principia-metaphysica-paper.html"]
     },
     "kk-graviton-mass": {
       "equationNumber": "8.2",
@@ -238,7 +238,7 @@
       "experimentalLimit": "Not yet observed",
       "futureTest": "HL-LHC 2029-2040",
       "paperLocation": "Section 8.2",
-      "htmlFiles": ["sections/predictions.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html", "principia-metaphysica-paper.html"]
     },
     "proton-br": {
       "equationNumber": "8.3",
@@ -251,7 +251,7 @@
       "experimentalLimit": "Not yet observed",
       "futureTest": "Hyper-K 2032-2038",
       "paperLocation": "Section 8.3",
-      "htmlFiles": ["sections/predictions.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html", "principia-metaphysica-paper.html"]
     },
     "gw-dispersion": {
       "equationNumber": "8.4",
@@ -264,7 +264,7 @@
       "experimentalLimit": "Beyond current sensitivity",
       "futureTest": "LISA 2037+",
       "paperLocation": "Section 8.4",
-      "htmlFiles": ["sections/predictions.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html", "principia-metaphysica-paper.html"]
     },
     "normal-hierarchy": {
       "equationNumber": "8.5",
@@ -276,7 +276,7 @@
       "pmConstant": "PM.neutrino_mass_ordering.ordering_predicted",
       "futureTest": "JUNO 2027",
       "paperLocation": "Section 8.5",
-      "htmlFiles": ["sections/predictions.html", "principia-metaphysica-paper.html"]
+      "htmlFiles": ["sections.html", "principia-metaphysica-paper.html"]
     }
   },
   "crossReferences": {
