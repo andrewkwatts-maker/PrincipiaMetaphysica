@@ -314,6 +314,19 @@ class PMSectionRenderer extends HTMLElement {
         };
 
         switch (block.type) {
+            case 'heading':
+                // Handle heading with optional subsection collapsing
+                const headingLevel = block.level || 2;
+                const headingId = block.label || block.equationNumber || '';
+                const headingClass = block.level >= 3 ? 'subsection-heading' : 'section-heading';
+                return `<h${headingLevel} class="${headingClass}" id="${headingId}">${block.content}</h${headingLevel}>`;
+
+            case 'paragraph':
+                // Process text for formula/param references
+                const processedContent = this.processTextContent(block.content || '');
+                const blockClass = block.label ? `content-block ${block.label}` : 'content-block';
+                return `<div class="${blockClass}">${processedContent}</div>`;
+
             case 'text':
                 // Ensure text is a string, not an object
                 let textContent = typeof block.text === 'object' ? JSON.stringify(block.text) : (block.text || '');
@@ -391,8 +404,53 @@ class PMSectionRenderer extends HTMLElement {
                     </div>
                 `);
 
+            case 'list':
+                // Handle bullet/numbered lists
+                const listType = block.ordered ? 'ol' : 'ul';
+                const listItems = (block.items || []).map(item => {
+                    const itemContent = this.processTextContent(item);
+                    return `<li>${itemContent}</li>`;
+                }).join('');
+                return wrapExpandable(`<${listType} class="content-list">${listItems}</${listType}>`);
+
+            case 'note':
+            case 'callout-note':
+                // Render note/callout blocks with special styling
+                const noteContent = this.processTextContent(block.content || '');
+                return wrapExpandable(`
+                    <aside class="note-block ${block.type}">
+                        ${block.title ? `<h4>${block.title}</h4>` : ''}
+                        ${noteContent}
+                    </aside>
+                `);
+
+            case 'highlight_box':
+                // Highlight boxes are emphasized callouts
+                const highlightContent = this.processTextContent(block.content || '');
+                return wrapExpandable(`
+                    <aside class="callout callout-highlight">
+                        ${block.title ? `<h4>${block.title}</h4>` : ''}
+                        <div class="highlight-content">${highlightContent}</div>
+                    </aside>
+                `);
+
+            case 'equation':
+                // Inline equation blocks (not full pm-formula components)
+                const eqContent = block.content || '';
+                const eqLabel = block.label || block.equationNumber || '';
+                return wrapExpandable(`
+                    <div class="equation-block" id="${eqLabel}">
+                        <div class="equation-content">${eqContent}</div>
+                        ${eqLabel ? `<span class="equation-number">(${eqLabel})</span>` : ''}
+                    </div>
+                `);
+
             default:
-                return `<div class="unknown-block">Unknown block type: ${block.type}</div>`;
+                console.warn(`Unknown block type: ${block.type}`, block);
+                return `<div class="unknown-block" style="background: rgba(255,0,0,0.1); padding: 1rem; border-radius: 4px;">
+                    <strong>Unknown block type: ${block.type}</strong>
+                    <pre style="font-size: 0.8rem; margin-top: 0.5rem;">${JSON.stringify(block, null, 2).substring(0, 200)}</pre>
+                </div>`;
         }
     }
 
@@ -795,6 +853,84 @@ class PMSectionRenderer extends HTMLElement {
                 left: 0;
                 color: var(--accent);
                 font-weight: 600;
+            }
+
+            /* Note blocks with visual hierarchy */
+            .note-block {
+                background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05));
+                border-left: 4px solid var(--accent);
+                padding: 1.25rem 1.5rem;
+                margin: 1.5rem 0;
+                border-radius: 0 8px 8px 0;
+            }
+
+            .note-block h4 {
+                color: var(--accent);
+                margin: 0 0 0.75rem 0;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            .note-block p {
+                margin: 0.5rem 0;
+                line-height: 1.7;
+            }
+
+            /* Content blocks with hover effects */
+            .content-block {
+                margin: 1.5rem 0;
+                padding-left: 0.5rem;
+                border-left: 2px solid transparent;
+                transition: all 0.3s ease;
+            }
+
+            .content-block:hover {
+                border-left-color: rgba(139, 127, 255, 0.3);
+            }
+
+            .content-block.highlighted {
+                background: rgba(139, 127, 255, 0.05);
+                border-left-color: var(--accent);
+                padding: 1rem;
+                border-radius: 4px;
+            }
+
+            /* Content lists with better spacing */
+            .content-list {
+                margin: 1rem 0;
+                padding-left: 2rem;
+                line-height: 1.8;
+            }
+
+            .content-list li {
+                margin-bottom: 0.5rem;
+            }
+
+            /* Equation blocks */
+            .equation-block {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem;
+                background: rgba(139, 127, 255, 0.05);
+                border: 1px solid rgba(139, 127, 255, 0.15);
+                border-radius: 8px;
+                margin: 1.5rem 0;
+            }
+
+            .equation-content {
+                flex: 1;
+                text-align: center;
+                font-family: 'Crimson Text', Georgia, serif;
+                font-size: 1.1rem;
+            }
+
+            .equation-number {
+                min-width: 40px;
+                text-align: right;
+                color: var(--accent);
+                font-weight: 600;
+                font-size: 0.9rem;
             }
 
             .derivation-box ol {

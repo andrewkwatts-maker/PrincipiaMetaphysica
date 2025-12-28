@@ -277,10 +277,10 @@
         const tocList = document.createElement('ol');
         tocList.className = 'toc-list';
 
-        // Sort sections by order or ID
+        // Sort sections by order or ID (non-numeric IDs get sorted to end)
         const sortedSections = Object.values(sections).sort((a, b) => {
-            const orderA = a.order || parseInt(a.id) || 0;
-            const orderB = b.order || parseInt(b.id) || 0;
+            const orderA = a.order || parseInt(a.id) || 999;
+            const orderB = b.order || parseInt(b.id) || 999;
             return orderA - orderB;
         });
 
@@ -688,6 +688,24 @@
                 blockDiv.innerHTML = safeStringify(block.content, 'subsection.content');
                 break;
 
+            case 'note':
+                // Note blocks are similar to callouts but with a subtle style
+                blockDiv.className = 'callout callout-note note-block';
+                blockDiv.innerHTML = `
+                    ${block.title ? `<div class="callout-title">${block.title}</div>` : ''}
+                    <div class="callout-content">${safeStringify(block.content, 'note.content')}</div>
+                `;
+                break;
+
+            case 'highlight_box':
+                // Highlight boxes are emphasized callouts
+                blockDiv.className = 'callout callout-highlight';
+                blockDiv.innerHTML = `
+                    ${block.title ? `<div class="callout-title">${block.title}</div>` : ''}
+                    <div class="callout-content">${safeStringify(block.content, 'highlight.content')}</div>
+                `;
+                break;
+
             default:
                 // Handle unknown types gracefully - ensure content is a string
                 blockDiv.innerHTML = safeStringify(block.content || block.text, 'unknown.content');
@@ -745,7 +763,7 @@
     // ========================================================================
 
     /**
-     * Render an equation in academic paper style
+     * Render an equation in academic paper style with complete metadata
      * @param {Object} block - Formula/equation content block
      * @returns {string|null} - HTML string for academic-style equation
      * @private
@@ -767,10 +785,23 @@
 
         // Get LaTeX code
         let latex = block.latex || formulaData?.latex || '';
+        const plainText = block.plain_text || formulaData?.plain_text || '';
 
-        // Build the equation HTML with anchor ID
+        // Build the equation HTML with anchor ID and hover tooltip
         const anchorId = equationNumber ? `eq-${equationNumber}` : `eq-${formulaId}`;
-        let html = `<div class="equation-wrapper academic-equation" id="${anchorId}">`;
+
+        // Create tooltip text from description or formula metadata
+        let tooltipText = '';
+        if (formulaData?.description || block.description) {
+            tooltipText = (formulaData?.description || block.description).replace(/"/g, '&quot;');
+        } else if (formulaData?.label) {
+            tooltipText = formulaData.label.replace(/"/g, '&quot;');
+        } else if (label) {
+            tooltipText = label.replace(/"/g, '&quot;');
+        }
+
+        const titleAttr = tooltipText ? ` title="${tooltipText}"` : '';
+        let html = `<div class="equation-wrapper academic-equation" id="${anchorId}" data-formula-id="${formulaId}"${titleAttr}>`;
 
         // Main equation with number
         html += '<div class="equation-line">';
@@ -780,12 +811,17 @@
         }
         html += '</div>';
 
+        // Plain text fallback (for accessibility and copying)
+        if (plainText) {
+            html += `<div class="equation-plaintext" title="Plain text representation">${escapeHtml(plainText)}</div>`;
+        }
+
         // Parameter definitions (from terms)
-        if (formulaData?.terms) {
+        if (formulaData?.terms && Object.keys(formulaData.terms).length > 0) {
             html += '<div class="equation-terms">';
             const termsList = renderTermsDefinition(formulaData.terms);
             if (termsList) {
-                html += `<p class="terms-intro">where ${termsList}</p>`;
+                html += `<div class="terms-intro">where ${termsList}</div>`;
             }
             html += '</div>';
         }
@@ -796,32 +832,135 @@
             html += `<div class="equation-discussion"><p>${description}</p></div>`;
         }
 
-        // Derivation reference
-        if (formulaData?.derivation?.parentFormulas) {
-            const parents = formulaData.derivation.parentFormulas;
-            if (parents.length > 0) {
-                const refs = parents.map(pid => {
-                    const parentFormula = PaperRenderer._data?.formulas?.formulas?.[pid];
-                    return parentFormula ? formatFormulaReference(parentFormula) : pid;
-                }).join(', ');
-                html += `<div class="equation-derivation"><p class="derived-from">Derived from ${refs}</p></div>`;
+        // Expandable metadata panel
+        const hasMetadata = formulaData && (
+            (formulaData.input_params && formulaData.input_params.length > 0) ||
+            (formulaData.output_params && formulaData.output_params.length > 0) ||
+            (formulaData.derivation && (formulaData.derivation.steps || formulaData.derivation.references)) ||
+            formulaData.category ||
+            formulaData.notes ||
+            (formulaData.experimental_value !== undefined) ||
+            (formulaData.computed_value !== undefined)
+        );
+
+        if (hasMetadata) {
+            html += '<div class="equation-metadata-panel">';
+            html += '<button class="metadata-toggle" onclick="this.parentElement.classList.toggle(\'expanded\');">';
+            html += '<span class="toggle-icon">▸</span>';
+            html += '<span class="toggle-text">Show formula metadata and derivation</span>';
+            html += '</button>';
+            html += '<div class="metadata-content">';
+
+            // Input/Output Parameters
+            if (formulaData.input_params && formulaData.input_params.length > 0) {
+                html += '<div class="metadata-section metadata-inputs">';
+                html += '<h5 class="metadata-section-title">📥 Input Parameters</h5>';
+                html += '<ul class="param-list">';
+                for (const param of formulaData.input_params) {
+                    html += `<li class="param-item"><code class="param-link" data-param="${param}">${param}</code></li>`;
+                }
+                html += '</ul></div>';
             }
+
+            if (formulaData.output_params && formulaData.output_params.length > 0) {
+                html += '<div class="metadata-section metadata-outputs">';
+                html += '<h5 class="metadata-section-title">📤 Output Parameters</h5>';
+                html += '<ul class="param-list">';
+                for (const param of formulaData.output_params) {
+                    html += `<li class="param-item"><code class="param-link" data-param="${param}">${param}</code></li>`;
+                }
+                html += '</ul></div>';
+            }
+
+            // Derivation steps
+            if (formulaData.derivation?.steps && formulaData.derivation.steps.length > 0) {
+                html += '<div class="metadata-section metadata-derivation">';
+                html += '<h5 class="metadata-section-title">🔬 Derivation</h5>';
+                html += '<ol class="derivation-steps">';
+                for (const step of formulaData.derivation.steps) {
+                    html += `<li class="derivation-step">${step}</li>`;
+                }
+                html += '</ol></div>';
+            }
+
+            // References
+            if (formulaData.derivation?.references && formulaData.derivation.references.length > 0) {
+                html += '<div class="metadata-section metadata-references">';
+                html += '<h5 class="metadata-section-title">📚 References</h5>';
+                html += '<ul class="reference-list">';
+                for (const ref of formulaData.derivation.references) {
+                    html += `<li class="reference-item">${ref}</li>`;
+                }
+                html += '</ul></div>';
+            }
+
+            // Category and status
+            if (formulaData.category) {
+                html += '<div class="metadata-section metadata-category">';
+                html += '<h5 class="metadata-section-title">📊 Category</h5>';
+                const categoryBadge = getCategoryBadge(formulaData.category);
+                html += `<div class="category-badge">${categoryBadge}</div>`;
+                html += '</div>';
+            }
+
+            // Experimental vs Computed values
+            if (formulaData.experimental_value !== undefined || formulaData.computed_value !== undefined) {
+                html += '<div class="metadata-section metadata-values">';
+                html += '<h5 class="metadata-section-title">🎯 Values</h5>';
+                html += '<div class="value-comparison">';
+
+                if (formulaData.computed_value !== undefined) {
+                    html += `<div class="value-item value-computed">`;
+                    html += `<span class="value-label">Theory:</span> `;
+                    html += `<span class="value-number">${formatScientificValue(formulaData.computed_value)}</span>`;
+                    if (formulaData.units) {
+                        html += ` <span class="value-units">${formulaData.units}</span>`;
+                    }
+                    html += `</div>`;
+                }
+
+                if (formulaData.experimental_value !== undefined) {
+                    html += `<div class="value-item value-experimental">`;
+                    html += `<span class="value-label">Experiment:</span> `;
+                    html += `<span class="value-number">${formatScientificValue(formulaData.experimental_value)}</span>`;
+                    if (formulaData.units) {
+                        html += ` <span class="value-units">${formulaData.units}</span>`;
+                    }
+                    html += `</div>`;
+                }
+
+                if (formulaData.sigma_deviation !== undefined) {
+                    const sigma = formulaData.sigma_deviation;
+                    const sigmaClass = Math.abs(sigma) < 1 ? 'excellent' : Math.abs(sigma) < 2 ? 'good' : 'fair';
+                    html += `<div class="value-item value-deviation ${sigmaClass}">`;
+                    html += `<span class="value-label">Deviation:</span> `;
+                    html += `<span class="value-number">${sigma.toFixed(2)}σ</span>`;
+                    html += `</div>`;
+                }
+
+                html += '</div></div>';
+            }
+
+            // Notes
+            if (formulaData.notes) {
+                html += '<div class="metadata-section metadata-notes">';
+                html += '<h5 class="metadata-section-title">📝 Notes</h5>';
+                html += `<p class="metadata-notes-text">${formulaData.notes}</p>`;
+                html += '</div>';
+            }
+
+            html += '</div>'; // metadata-content
+            html += '</div>'; // equation-metadata-panel
         }
 
-        // Custom derivation note
-        if (formulaData?.derivation?.note || block.derivationNote) {
-            const note = formulaData?.derivation?.note || block.derivationNote;
-            html += `<div class="equation-derivation"><p>${note}</p></div>`;
-        }
-
-        html += '</div>';
+        html += '</div>'; // equation-wrapper
         return html;
     }
 
     /**
      * Extract equation number from label string
-     * @param {string} label - Formula label like "(4.2) Three Generations"
-     * @returns {string|null} - Equation number like "4.2"
+     * @param {string} label - Formula label like "(4.2) Three Generations", "(TT.1)", "Main Equation"
+     * @returns {string|null} - Equation number like "4.2", "TT.1", or null
      * @private
      */
     function extractEquationNumber(label) {
@@ -834,6 +973,20 @@
         // Match patterns like "4.2" or "Eq. 4.2"
         const simpleMatch = label.match(/^(?:Eq\.\s*)?([0-9]+\.[0-9]+)/);
         if (simpleMatch) return simpleMatch[1];
+
+        // Match special section labels like "(TT.1)", "(TT.2)", etc.
+        const specialMatch = label.match(/^\(([A-Z]+\.[0-9]+)\)/);
+        if (specialMatch) return specialMatch[1];
+
+        // Match special patterns without parens like "TT.1"
+        const specialSimple = label.match(/^([A-Z]+\.[0-9]+)/);
+        if (specialSimple) return specialSimple[1];
+
+        // If label is just a descriptive name like "Main Equation", return it as-is
+        // (This allows the equation to have a label even without a formal number)
+        if (label && label.length > 0 && !label.match(/^[\s\(\)]+$/)) {
+            return label;
+        }
 
         return null;
     }
@@ -917,7 +1070,7 @@
 
     /**
      * Process equation cross-references in text
-     * Converts "Eq. (4.2)" to clickable links
+     * Converts "Eq. (4.2)" to clickable links with hover tooltips
      * @param {HTMLElement} container - Container to process
      * @private
      */
@@ -963,11 +1116,17 @@
                         tempDiv.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
                     }
 
-                    // Create link to equation
+                    // Create link to equation with tooltip
                     const link = document.createElement('a');
                     link.href = `#eq-${eqNum}`;
                     link.className = 'equation-ref';
                     link.textContent = fullMatch;
+
+                    // Add tooltip with formula preview
+                    link.setAttribute('data-equation-ref', eqNum);
+                    link.addEventListener('mouseenter', showEquationTooltip);
+                    link.addEventListener('mouseleave', hideEquationTooltip);
+
                     tempDiv.appendChild(link);
 
                     lastIndex = match.index + fullMatch.length;
@@ -987,6 +1146,65 @@
                     parent.removeChild(textNode);
                 }
             }
+        }
+    }
+
+    /**
+     * Show equation tooltip on hover
+     * @private
+     */
+    function showEquationTooltip(event) {
+        const link = event.target;
+        const eqNum = link.getAttribute('data-equation-ref');
+        const targetEq = document.getElementById(`eq-${eqNum}`);
+
+        if (!targetEq) return;
+
+        // Find the formula data
+        const formulaId = targetEq.getAttribute('data-formula-id');
+        let formulaData = null;
+        if (formulaId && PaperRenderer._data?.formulas?.formulas) {
+            formulaData = PaperRenderer._data.formulas.formulas[formulaId];
+        }
+
+        // Create tooltip
+        const tooltip = document.createElement('div');
+        tooltip.className = 'equation-tooltip';
+        tooltip.innerHTML = `
+            <div class="tooltip-header">Equation ${eqNum}</div>
+            ${formulaData ? `
+                <div class="tooltip-latex">$$${formulaData.latex}$$</div>
+                ${formulaData.description ? `<div class="tooltip-desc">${formulaData.description}</div>` : ''}
+            ` : ''}
+            <div class="tooltip-hint">Click to jump to equation</div>
+        `;
+
+        document.body.appendChild(tooltip);
+
+        // Position tooltip
+        const rect = link.getBoundingClientRect();
+        tooltip.style.position = 'fixed';
+        tooltip.style.left = rect.left + 'px';
+        tooltip.style.top = (rect.bottom + 10) + 'px';
+
+        // Typeset MathJax in tooltip
+        if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
+            MathJax.typesetPromise([tooltip]).catch(() => {});
+        }
+
+        // Store reference for cleanup
+        link._tooltip = tooltip;
+    }
+
+    /**
+     * Hide equation tooltip
+     * @private
+     */
+    function hideEquationTooltip(event) {
+        const link = event.target;
+        if (link._tooltip) {
+            link._tooltip.remove();
+            delete link._tooltip;
         }
     }
 
@@ -1128,6 +1346,38 @@
             "'": '&#039;'
         };
         return text.replace(/[&<>"']/g, m => map[m]);
+    }
+
+    /**
+     * Format a scientific value with proper notation
+     * @private
+     */
+    function formatScientificValue(value) {
+        if (typeof value === 'number') {
+            if (Math.abs(value) >= 1e4 || (Math.abs(value) < 0.001 && value !== 0)) {
+                return value.toExponential(3);
+            } else if (Number.isInteger(value)) {
+                return value.toString();
+            } else {
+                return value.toFixed(4);
+            }
+        }
+        return String(value);
+    }
+
+    /**
+     * Get category badge HTML
+     * @private
+     */
+    function getCategoryBadge(category) {
+        const badges = {
+            'ESTABLISHED': '<span class="badge badge-established">ESTABLISHED</span><p class="badge-desc">Well-established result from literature</p>',
+            'THEORY': '<span class="badge badge-theory">THEORY</span><p class="badge-desc">Core theoretical prediction of Principia Metaphysica</p>',
+            'DERIVED': '<span class="badge badge-derived">DERIVED</span><p class="badge-desc">Derived from fundamental principles</p>',
+            'PREDICTION': '<span class="badge badge-prediction">PREDICTION</span><p class="badge-desc">Novel prediction to be tested</p>',
+            'EXPERIMENTAL': '<span class="badge badge-experimental">EXPERIMENTAL</span><p class="badge-desc">Experimental measurement or constraint</p>'
+        };
+        return badges[category] || `<span class="badge badge-unknown">${category}</span>`;
     }
 
     /**
