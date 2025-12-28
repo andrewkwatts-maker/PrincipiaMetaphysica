@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <!--
-    Principia Metaphysica - Foundations & Beginner's Guide
-    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
 
-    An introductory guide to the theory, auto-populated from theory_output.json
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundations - Principia Metaphysica</title>
+    <meta name="description" content="Foundational Physics - The established equations that underpin Principia Metaphysica">
+    <title>Foundational Physics - Principia Metaphysica</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/auth.css">
 
     <!-- MathJax Configuration -->
     <script>
@@ -30,7 +36,9 @@
     <!-- PM Dynamic Loaders -->
     <script src="js/pm-constants-loader.js"></script>
     <script src="js/pm-formula-loader.js"></script>
-    <script src="js/pm-section-renderer.js"></script>
+    <script src="theory-constants-enhanced.js"></script>
+    <script src="js/pm-tooltip-system.js"></script>
+    <script src="js/formula-expansion.js" defer></script>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
@@ -38,6 +46,7 @@
         :root {
             --bg-dark: #0a0a0f;
             --bg-card: #1a1a2e;
+            --bg-secondary: #16172e;
             --bg-card-hover: #252540;
             --text-primary: #e0e0e0;
             --text-secondary: #b0b0b0;
@@ -69,14 +78,160 @@
             padding: 2rem;
         }
 
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .breadcrumb .separator {
+            color: var(--text-secondary);
+        }
+
+        /* Intro Section with Frosted Glass */
+        .intro {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .intro h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        /* Horizontal Tabs Component */
+        .tabs-container {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-list {
+            display: flex;
+            gap: 0.25rem;
+            border-bottom: 2px solid var(--border-primary);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+            background: var(--bg-secondary);
+        }
+
+        .tab {
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+            background: rgba(139, 127, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            color: var(--accent-primary);
+            background: var(--bg-card);
+            border-bottom-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Foundation Badges */
+        .foundation-badge {
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: inline-block;
+        }
+
+        .foundation-badge.established {
+            background: rgba(81, 207, 102, 0.2);
+            color: #51cf66;
+            border: 1px solid rgba(81, 207, 102, 0.3);
+        }
+
+        .foundation-badge.derived {
+            background: rgba(79, 172, 254, 0.2);
+            color: #4dabf7;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .foundation-badge.pm-specific {
+            background: rgba(139, 127, 255, 0.2);
+            color: #8b7fff;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
         /* Header */
         .page-header {
             text-align: center;
             padding: 3rem 0;
             margin-bottom: 3rem;
-            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.05));
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-radius: 20px;
-            border: 2px solid var(--border-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .page-header h1 {
@@ -171,17 +326,40 @@
         }
 
         .level-card {
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
             border-radius: 16px;
             padding: 1.5rem;
-            border: 2px solid var(--border-primary);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .level-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
             border-color: var(--accent-primary);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 24px rgba(139, 127, 255, 0.2);
+        }
+
+        .level-card:hover::before {
+            opacity: 1;
         }
 
         .level-card.beginner {
@@ -225,16 +403,40 @@
         }
 
         .concept-card {
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
             border-radius: 16px;
             padding: 2rem;
-            border: 1px solid var(--border-primary);
-            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .concept-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
             border-color: var(--accent-primary);
-            box-shadow: 0 8px 24px rgba(139, 127, 255, 0.15);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
+        }
+
+        .concept-card:hover::before {
+            opacity: 1;
         }
 
         .concept-card h3 {
@@ -294,11 +496,14 @@
 
         /* Key Formulas */
         .key-formulas {
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
             border-radius: 16px;
             padding: 2rem;
             margin: 2rem 0;
-            border: 2px solid var(--border-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .key-formulas h3 {
@@ -357,10 +562,14 @@
 
         /* Section Links */
         .section-links {
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
             border-radius: 16px;
             padding: 2rem;
             margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .section-links h3 {
@@ -403,16 +612,20 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: var(--bg-card);
+            background: rgba(26, 31, 58, 0.4);
+            backdrop-filter: blur(8px) saturate(180%);
+            -webkit-backdrop-filter: blur(8px) saturate(180%);
             padding: 1rem 1.5rem;
             border-radius: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            border: 1px solid var(--border-primary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .expand-header:hover {
-            background: var(--bg-card-hover);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
             border-color: var(--accent-primary);
         }
 
@@ -482,12 +695,13 @@
         .site-nav-header {
             background: rgba(26, 31, 58, 0.8);
             backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
         .site-nav-header nav ul {
@@ -545,44 +759,34 @@
         }
     </style>
 </head>
-<body>
-    <!-- Site Navigation Header -->
-    <header class="site-nav-header">
-        <div style="max-width: 1400px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-            <div style="font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">
-                Principia Metaphysica
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html#abstract">Abstract</a></li>
-                    <li><a href="beginners-guide.html">Beginner's Guide</a></li>
-                    <li><a href="sections.html">Sections</a></li>
-                    <li><a href="foundations/index.html">Foundations</a></li>
-                    <li><a href="references.html">References</a></li>
-                    <li><a href="formulas.html">Formulas</a></li>
-                    <li><a href="parameters.html">Parameters</a></li>
-                    <li><a href="paper.html">Paper</a></li>
-                    <li><a href="simulations.html">Simulations</a></li>
-                    <li class="user-controls-nav">
-                        <div class="user-controls">
-                            <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-                            <span id="user-email"></span>
-                            <button id="logout-btn">Logout</button>
-                        </div>
-                        <button id="header-login-btn" class="header-login-btn">
-                            <img src="images/google-icon.svg" alt="G" class="google-icon-small">
-                            Login
-                        </button>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
 
-    <div class="container">
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Foundational Physics</span>
+        </nav>
+
+        <div class="intro">
+            <h2>Foundational Physics</h2>
+            <p>
+                Principia Metaphysica builds upon well-established physics. This section provides detailed explanations
+                of the foundational equations from which the framework derives. Each formula can be traced back to
+                experimentally verified physics.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <span class="foundation-badge established">Established Physics</span>
+                <span class="foundation-badge derived">Derived in PM</span>
+                <span class="foundation-badge pm-specific">PM-Specific</span>
+            </div>
+        </div>
+
         <!-- Page Header -->
         <header class="page-header">
-            <h1>Foundations of Principia Metaphysica</h1>
+            <h1>Learning Path</h1>
             <p class="subtitle">A Progressive Guide to Geometric Unification</p>
             <div class="stats">
                 <div class="stat-badge">
@@ -597,16 +801,17 @@
             </div>
         </header>
 
-        <!-- Navigation Tabs -->
-        <nav class="nav-tabs">
-            <a href="#basics" class="nav-tab active" onclick="showTab('basics')">Basics</a>
-            <a href="#concepts" class="nav-tab" onclick="showTab('concepts')">Key Concepts</a>
-            <a href="#formulas" class="nav-tab" onclick="showTab('formulas')">Core Formulas</a>
-            <a href="#sections" class="nav-tab" onclick="showTab('sections')">Detailed Sections</a>
-        </nav>
+        <!-- Tabbed Content with Glass Morphism -->
+        <div class="tabs-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab active" onclick="showTab(event, 'basics')">Basics</button>
+                <button class="tab" onclick="showTab(event, 'concepts')">Key Concepts</button>
+                <button class="tab" onclick="showTab(event, 'formulas')">Core Formulas</button>
+                <button class="tab" onclick="showTab(event, 'sections')">Detailed Sections</button>
+            </div>
 
-        <!-- Tab: Basics -->
-        <div id="basics-content" class="tab-content">
+            <!-- Tab: Basics -->
+            <div id="basics-content" class="tab-content active">
             <section class="learning-path">
                 <div class="path-header">
                     <span class="path-icon">🎓</span>
@@ -1023,29 +1228,40 @@
                 </div>
             </section>
         </div>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
     </div>
 
     <script>
         // Tab switching
-        function showTab(tabName) {
+        function showTab(event, tabName) {
             // Hide all tab contents
             const tabs = ['basics', 'concepts', 'formulas', 'sections'];
             tabs.forEach(tab => {
                 const content = document.getElementById(tab + '-content');
-                if (content) content.style.display = 'none';
+                if (content) content.classList.remove('active');
             });
 
             // Remove active class from all tabs
-            document.querySelectorAll('.nav-tab').forEach(tab => {
+            document.querySelectorAll('.tab').forEach(tab => {
                 tab.classList.remove('active');
             });
 
             // Show selected tab
             const selectedContent = document.getElementById(tabName + '-content');
-            if (selectedContent) selectedContent.style.display = 'block';
+            if (selectedContent) selectedContent.classList.add('active');
 
             // Add active class to clicked tab
-            event.target.classList.add('active');
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
         }
 
         // Expandable sections
@@ -1309,7 +1525,15 @@
     </script>
 
     <script type="module">
+        import { injectHeader } from './js/pm-header.js';
         import { setupAuthGuard } from './js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations');
+        });
+
+        // Setup auth after header
         setupAuthGuard('foundations');
     </script>
 </body>

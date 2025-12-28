@@ -924,21 +924,97 @@
             opacity: 0.5;
         }
 
-        /* Interactive Formula Term Tooltips */
-        .formula-var {
+        /* ================================
+           INTERACTIVE FORMULA SYSTEM
+           ================================ */
+
+        /* Interactive formula container */
+        .interactive-formula {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(255, 126, 182, 0.08));
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
             position: relative;
-            overflow: visible !important;
+            cursor: help;
+            transition: all 0.3s ease;
+            overflow: visible;
+        }
+
+        .interactive-formula:hover {
+            border-color: rgba(139, 127, 255, 0.5);
+            box-shadow: 0 8px 32px rgba(139, 127, 255, 0.15);
+        }
+
+        .interactive-formula::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 16px 16px 0 0;
+        }
+
+        /* Formula display area */
+        .formula-display {
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            padding: 1rem 0;
+            line-height: 2.2;
+            position: relative;
+            overflow: visible;
+        }
+
+        .formula-display.large {
+            font-size: 1.75rem;
+        }
+
+        /* Interactive variable terms */
+        .formula-var {
+            display: inline-block;
+            position: relative;
+            padding: 0.25rem 0.5rem;
+            margin: 0 0.15rem;
+            background: rgba(139, 127, 255, 0.15);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            font-weight: 500;
+            overflow: visible;
             z-index: 1;
         }
 
         .formula-var:hover {
-            background: rgba(139, 127, 255, 0.3) !important;
-            border-color: var(--accent-primary) !important;
+            background: rgba(139, 127, 255, 0.3);
+            border-color: var(--accent-primary);
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(139, 127, 255, 0.25);
             z-index: 100;
         }
 
+        .formula-var.highlight {
+            background: rgba(255, 126, 182, 0.2);
+            border-color: var(--accent-secondary);
+        }
+
+        .formula-var.highlight:hover {
+            background: rgba(255, 126, 182, 0.35);
+        }
+
+        /* Operator symbols (non-interactive) */
+        .formula-op {
+            display: inline-block;
+            padding: 0 0.3rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        /* Variable tooltip */
         .var-tooltip {
             position: absolute;
             bottom: 100%;
@@ -1004,6 +1080,190 @@
             font-weight: 500;
         }
 
+        .var-tooltip .var-units::before {
+            content: 'Units:';
+            color: var(--text-muted);
+        }
+
+        /* Formula info panel */
+        .formula-info {
+            margin-top: 1.5rem;
+            background: rgba(17, 20, 38, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border: 1px solid rgba(139, 127, 255, 0.25);
+        }
+
+        .formula-info .formula-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 0.75rem;
+        }
+
+        .formula-info .formula-meaning {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .formula-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .formula-info-item {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 0.75rem;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-primary);
+        }
+
+        .formula-info-item h5 {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.35rem;
+        }
+
+        .formula-info-item p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        /* Expandable formula system */
+        .expandable-formula {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.08), rgba(255, 126, 182, 0.05));
+            border: 1px solid rgba(139, 127, 255, 0.25);
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            overflow: visible;
+        }
+
+        .expandable-formula .formula-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .expandable-formula .formula-header:hover {
+            background: rgba(139, 127, 255, 0.1);
+        }
+
+        .expandable-formula .expand-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: rgba(139, 127, 255, 0.15);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 8px;
+            color: var(--accent-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .expandable-formula .expand-btn:hover {
+            background: rgba(139, 127, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        /* Sub-components */
+        .sub-components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .sub-component {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 10px;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .sub-component:hover {
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.15);
+        }
+
+        .sub-component .component-symbol {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.3rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .sub-component .component-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.35rem;
+        }
+
+        .sub-component .component-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Derivation chain */
+        .derivation-chain {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(139, 127, 255, 0.2);
+        }
+
+        .derivation-chain .chain-title {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+        }
+
+        .derivation-chain .chain-step {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.5rem 0.75rem;
+            background: rgba(139, 127, 255, 0.05);
+            border-radius: 6px;
+            font-size: 0.9rem;
+        }
+
+        .derivation-chain .chain-step .step-arrow {
+            color: var(--accent-secondary);
+            font-size: 0.8rem;
+        }
+
+        .derivation-chain .chain-step a {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+
+        .derivation-chain .chain-step a:hover {
+            text-decoration: underline;
+        }
+
         /* Ensure formula containers don't clip tooltips */
         .interactive-formula,
         .formula-display,
@@ -1018,10 +1278,67 @@
             overflow-x: auto !important;
             overflow-y: visible !important;
         }
+
+        /* Mobile responsiveness for formulas */
+        @media (max-width: 768px) {
+            .formula-display {
+                font-size: 1.2rem;
+            }
+
+            .formula-display.large {
+                font-size: 1.4rem;
+            }
+
+            .formula-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sub-components {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .interactive-formula {
+                padding: 1rem;
+            }
+
+            .formula-display {
+                font-size: 1rem;
+            }
+
+            .formula-display.large {
+                font-size: 1.2rem;
+            }
+
+            .formula-var {
+                padding: 0.15rem 0.35rem;
+                font-size: 0.9rem;
+            }
+
+            .var-tooltip {
+                width: calc(100vw - 2rem);
+                bottom: auto;
+                top: 100%;
+                transform: translateY(8px);
+            }
+
+            .formula-var:hover .var-tooltip {
+                transform: translateY(12px);
+            }
+
+            .var-tooltip::after {
+                top: auto;
+                bottom: 100%;
+                border-top-color: transparent;
+                border-bottom-color: rgba(139, 127, 255, 0.4);
+            }
+        }
     </style>
 
     <script src="js/pm-constants-loader.js"></script>
     <script src="js/pm-formula-loader.js"></script>
+    <script src="js/pm-formula-component.js"></script>
     <script src="theory-constants-enhanced.js"></script>
     <script src="js/pm-tooltip-system.js"></script>
 </head>
@@ -1511,13 +1828,73 @@
             return `$$${formula.latex}$$`;
         }
 
-        // Otherwise use HTML if available
+        // If we have HTML with interactive terms support
         if (formula.html) {
+            // Check if formula has terms definitions for tooltips
+            if (formula.terms && typeof formula.terms === 'object' && Object.keys(formula.terms).length > 0) {
+                return wrapFormulaTermsWithTooltips(formula.html, formula.terms);
+            }
             return formula.html;
         }
 
         // Fallback to plain text
         return escapeHtml(formula.plainText || 'No equation available');
+    }
+
+    // Wrap formula terms with hoverable tooltips
+    function wrapFormulaTermsWithTooltips(html, terms) {
+        if (!terms || !html) return html;
+
+        let result = html;
+
+        // Sort terms by length (longest first) to avoid partial replacements
+        const sortedTerms = Object.entries(terms).sort((a, b) => b[0].length - a[0].length);
+
+        for (const [symbol, termData] of sortedTerms) {
+            // Handle both string and object term definitions
+            const termInfo = typeof termData === 'string'
+                ? { name: symbol, description: termData }
+                : termData;
+
+            const tooltip = `
+                <div class="var-tooltip">
+                    <div class="var-name">${escapeHtml(termInfo.name || symbol)}</div>
+                    <div class="var-description">${escapeHtml(termInfo.description || termData)}</div>
+                    ${termInfo.units ? `<div class="var-units">${escapeHtml(termInfo.units)}</div>` : ''}
+                </div>
+            `;
+
+            // Create a safe regex pattern for the symbol
+            const escapedSymbol = symbol.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+            // Replace symbol with hoverable span (avoid double-wrapping)
+            const regex = new RegExp(`(?<!class=["']formula-var["'][^>]*>)\\b${escapedSymbol}\\b(?![^<]*<\\/span>)`, 'gi');
+            result = result.replace(regex, `<span class="formula-var">${symbol}${tooltip}</span>`);
+        }
+
+        return result;
+    }
+
+    // Render formula info panel (meaning, context, etc.)
+    function renderFormulaInfoPanel(formula) {
+        // Only show if formula has meaningful description
+        if (!formula.description || formula.description.length < 20) return '';
+
+        const category = formula.category ? `<strong>Category:</strong> ${escapeHtml(formula.category)}` : '';
+        const section = formula.section ? `<strong>Section:</strong> ${escapeHtml(formula.section)}` : '';
+
+        return `
+            <div class="formula-info">
+                <div class="formula-title">About this formula</div>
+                <div class="formula-meaning">${escapeHtml(formula.description)}</div>
+                ${category || section ? `
+                    <div class="formula-info-grid">
+                        ${category ? `<div class="formula-info-item"><h5>Category</h5><p>${escapeHtml(formula.category)}</p></div>` : ''}
+                        ${section ? `<div class="formula-info-item"><h5>Section</h5><p>${escapeHtml(formula.section)}</p></div>` : ''}
+                    </div>
+                ` : ''}
+            </div>
+        `;
     }
 
     // Render individual formula card
@@ -1541,9 +1918,12 @@
                     ${statusBadge}
                 </div>
 
-                <!-- Formula Display -->
-                <div class="formula-display" style="margin: 1.5rem 0; text-align: center; font-size: 1.3rem; padding: 1.5rem; background: rgba(17, 20, 38, 0.5); backdrop-filter: blur(16px); border-radius: 12px; border: 1px solid rgba(139, 127, 255, 0.3); position: relative; overflow-x: auto; overflow-y: visible;">
-                    ${renderInteractiveFormula(formula)}
+                <!-- Interactive Formula Display -->
+                <div class="interactive-formula" style="margin: 1.5rem 0;">
+                    <div class="formula-display large">
+                        ${renderInteractiveFormula(formula)}
+                    </div>
+                    ${renderFormulaInfoPanel(formula)}
                 </div>
 
                 <!-- Expandable LaTeX Code Section -->
@@ -1680,6 +2060,28 @@
 
         if (!hasContent) return '';
 
+        // Render derivation chain if parent formulas exist
+        const derivationChain = deriv.parentFormulas && deriv.parentFormulas.length > 0 ? `
+            <div class="derivation-chain">
+                <div class="chain-title">Derivation Chain</div>
+                ${deriv.parentFormulas.map(parentId => {
+                    const parent = allFormulas.find(f => f.id === parentId);
+                    return `
+                        <div class="chain-step">
+                            <span class="step-arrow">→</span>
+                            <a href="#formula-${parentId}">
+                                ${parent ? escapeHtml(parent.label || parentId) : escapeHtml(parentId)}
+                            </a>
+                        </div>
+                    `;
+                }).join('')}
+                <div class="chain-step">
+                    <span class="step-arrow">⇒</span>
+                    <strong>${escapeHtml(formula.label || formula.id)}</strong>
+                </div>
+            </div>
+        ` : '';
+
         return `
             <div class="expandable-section">
                 <div class="expand-toggle">
@@ -1695,9 +2097,7 @@
                             </ul>
                         ` : ''}
                         ${deriv.method ? `<p><strong>Method:</strong> ${escapeHtml(deriv.method)}</p>` : ''}
-                        ${deriv.parentFormulas && deriv.parentFormulas.length > 0 ? `
-                            <p><strong>Derived from:</strong> ${deriv.parentFormulas.map(f => `<a href="#formula-${f}" class="reference-link">${f}</a>`).join(', ')}</p>
-                        ` : ''}
+                        ${derivationChain}
                         ${deriv.verificationPage ? `
                             <p><strong>Verification:</strong>
                                 <a href="${escapeHtml(deriv.verificationPage)}" class="reference-link" target="_blank">

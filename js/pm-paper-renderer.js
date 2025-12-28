@@ -403,13 +403,15 @@
 
             sectionDiv.appendChild(subsectionsDiv);
 
-            // Process formulas and parameters
+            // Process formulas, parameters, and equation references
             if (loadFormulas) {
                 processFormulas(subsectionsDiv);
             }
             if (loadParameters) {
                 processParameters(subsectionsDiv);
             }
+            // Always process equation cross-references in paper mode
+            processEquationReferences(subsectionsDiv);
         }
         // Fallback: Try to load section HTML file if no JSON content
         else if (section.sectionFile) {
@@ -426,6 +428,7 @@
                 if (loadParameters) {
                     processParameters(contentDiv);
                 }
+                processEquationReferences(contentDiv);
             } else {
                 // No HTML file found - show placeholder
                 if (PaperRenderer._debug) {
@@ -595,41 +598,51 @@
      * @private
      */
     function renderContentBlock(block) {
+        // Helper function to safely convert values to strings
+        const safeStringify = (value, fieldName = 'content') => {
+            if (value === null || value === undefined) return '';
+            if (typeof value === 'object') {
+                console.warn(`PMPaperRenderer: Found object in ${fieldName} field of ${block.type} block, converting to JSON:`, value);
+                return JSON.stringify(value);
+            }
+            return String(value);
+        };
+
         const blockDiv = document.createElement('div');
         blockDiv.className = `content-block content-block-${block.type}`;
 
         switch (block.type) {
             case 'paragraph':
             case 'text':
-                blockDiv.innerHTML = `<p>${block.content || block.text || ''}</p>`;
+                blockDiv.innerHTML = `<p>${safeStringify(block.content || block.text, 'text/content')}</p>`;
                 break;
 
             case 'heading':
                 const level = block.level || 3;
-                blockDiv.innerHTML = `<h${level}>${block.content}</h${level}>`;
+                blockDiv.innerHTML = `<h${level}>${safeStringify(block.content, 'heading.content')}</h${level}>`;
                 break;
 
             case 'formula':
-                blockDiv.innerHTML = `
-                    <div class="formula-block" data-formula-id="${block.formulaId || block.id}">
-                        ${block.content || block.latex || ''}
-                    </div>
-                `;
-                break;
-
             case 'equation':
-                const label = block.label ? `<span class="equation-label">${block.label}</span>` : '';
-                blockDiv.innerHTML = `
-                    <div class="equation-block">
-                        ${block.latex ? `$$${block.latex}$$` : (block.content || '')}
-                        ${label}
-                    </div>
-                `;
+                // Render equation in academic paper style
+                const formulaHtml = renderEquation(block);
+                if (formulaHtml) {
+                    blockDiv.innerHTML = formulaHtml;
+                } else {
+                    // Fallback for simple formula blocks
+                    blockDiv.innerHTML = `
+                        <div class="formula-block" data-formula-id="${block.formulaId || block.id || block.label}">
+                            ${block.latex ? `$$${block.latex}$$` : (block.content || '')}
+                        </div>
+                    `;
+                }
                 break;
 
             case 'list':
                 const listType = block.ordered ? 'ol' : 'ul';
-                const listItems = (block.items || []).map(item => `<li>${item}</li>`).join('');
+                const listItems = (block.items || []).map((item, idx) =>
+                    `<li>${safeStringify(item, `list.items[${idx}]`)}</li>`
+                ).join('');
                 blockDiv.innerHTML = `<${listType}>${listItems}</${listType}>`;
                 break;
 
@@ -640,7 +653,7 @@
 
             case 'quote':
             case 'blockquote':
-                blockDiv.innerHTML = `<blockquote>${block.content || ''}</blockquote>`;
+                blockDiv.innerHTML = `<blockquote>${safeStringify(block.content, 'quote.content')}</blockquote>`;
                 break;
 
             case 'table':
@@ -672,12 +685,12 @@
                 if (block.subsection) {
                     return renderSubsection(block.subsection);
                 }
-                blockDiv.innerHTML = block.content || '';
+                blockDiv.innerHTML = safeStringify(block.content, 'subsection.content');
                 break;
 
             default:
-                // Handle unknown types gracefully
-                blockDiv.innerHTML = block.content || block.text || '';
+                // Handle unknown types gracefully - ensure content is a string
+                blockDiv.innerHTML = safeStringify(block.content || block.text, 'unknown.content');
         }
 
         return blockDiv;
@@ -691,25 +704,35 @@
         const headers = block.headers || [];
         const rows = block.rows || [];
 
+        // Helper to safely stringify table values
+        const safeTableValue = (value, type, index) => {
+            if (value === null || value === undefined) return '';
+            if (typeof value === 'object') {
+                console.warn(`PMPaperRenderer: Found object in table ${type}[${index}], converting to JSON:`, value);
+                return JSON.stringify(value);
+            }
+            return String(value);
+        };
+
         let html = '<table class="pm-table">';
 
         if (headers.length > 0) {
             html += '<thead><tr>';
-            for (const header of headers) {
-                html += `<th>${header}</th>`;
-            }
+            headers.forEach((header, idx) => {
+                html += `<th>${safeTableValue(header, 'header', idx)}</th>`;
+            });
             html += '</tr></thead>';
         }
 
         if (rows.length > 0) {
             html += '<tbody>';
-            for (const row of rows) {
+            rows.forEach((row, rowIdx) => {
                 html += '<tr>';
-                for (const cell of row) {
-                    html += `<td>${cell}</td>`;
-                }
+                row.forEach((cell, cellIdx) => {
+                    html += `<td>${safeTableValue(cell, `row[${rowIdx}].cell`, cellIdx)}</td>`;
+                });
                 html += '</tr>';
-            }
+            });
             html += '</tbody>';
         }
 
@@ -720,6 +743,144 @@
     // ========================================================================
     // FORMULA AND PARAMETER PROCESSING
     // ========================================================================
+
+    /**
+     * Render an equation in academic paper style
+     * @param {Object} block - Formula/equation content block
+     * @returns {string|null} - HTML string for academic-style equation
+     * @private
+     */
+    function renderEquation(block) {
+        // Get formula ID from various possible fields
+        const formulaId = block.formulaId || block.id || block.label;
+        if (!formulaId) return null;
+
+        // Try to get full formula metadata from global data
+        let formulaData = null;
+        if (PaperRenderer._data?.formulas?.formulas) {
+            formulaData = PaperRenderer._data.formulas.formulas[formulaId];
+        }
+
+        // Extract equation number from label (e.g., "(4.2)" from label or formulaData)
+        const label = block.label || formulaData?.label || '';
+        const equationNumber = extractEquationNumber(label);
+
+        // Get LaTeX code
+        let latex = block.latex || formulaData?.latex || '';
+
+        // Build the equation HTML with anchor ID
+        const anchorId = equationNumber ? `eq-${equationNumber}` : `eq-${formulaId}`;
+        let html = `<div class="equation-wrapper academic-equation" id="${anchorId}">`;
+
+        // Main equation with number
+        html += '<div class="equation-line">';
+        html += `<div class="equation-content">$$${latex}$$</div>`;
+        if (equationNumber) {
+            html += `<div class="equation-number">(${equationNumber})</div>`;
+        }
+        html += '</div>';
+
+        // Parameter definitions (from terms)
+        if (formulaData?.terms) {
+            html += '<div class="equation-terms">';
+            const termsList = renderTermsDefinition(formulaData.terms);
+            if (termsList) {
+                html += `<p class="terms-intro">where ${termsList}</p>`;
+            }
+            html += '</div>';
+        }
+
+        // Discussion/description
+        if (formulaData?.description || block.description) {
+            const description = formulaData?.description || block.description;
+            html += `<div class="equation-discussion"><p>${description}</p></div>`;
+        }
+
+        // Derivation reference
+        if (formulaData?.derivation?.parentFormulas) {
+            const parents = formulaData.derivation.parentFormulas;
+            if (parents.length > 0) {
+                const refs = parents.map(pid => {
+                    const parentFormula = PaperRenderer._data?.formulas?.formulas?.[pid];
+                    return parentFormula ? formatFormulaReference(parentFormula) : pid;
+                }).join(', ');
+                html += `<div class="equation-derivation"><p class="derived-from">Derived from ${refs}</p></div>`;
+            }
+        }
+
+        // Custom derivation note
+        if (formulaData?.derivation?.note || block.derivationNote) {
+            const note = formulaData?.derivation?.note || block.derivationNote;
+            html += `<div class="equation-derivation"><p>${note}</p></div>`;
+        }
+
+        html += '</div>';
+        return html;
+    }
+
+    /**
+     * Extract equation number from label string
+     * @param {string} label - Formula label like "(4.2) Three Generations"
+     * @returns {string|null} - Equation number like "4.2"
+     * @private
+     */
+    function extractEquationNumber(label) {
+        if (!label) return null;
+
+        // Match patterns like "(4.2)" or "(Eq. 4.2)" at the start
+        const match = label.match(/^\((?:Eq\.\s*)?([0-9]+\.[0-9]+)\)/);
+        if (match) return match[1];
+
+        // Match patterns like "4.2" or "Eq. 4.2"
+        const simpleMatch = label.match(/^(?:Eq\.\s*)?([0-9]+\.[0-9]+)/);
+        if (simpleMatch) return simpleMatch[1];
+
+        return null;
+    }
+
+    /**
+     * Render terms as inline definition list
+     * @param {Object} terms - Terms object with parameter definitions
+     * @returns {string} - Formatted "X is..., Y represents..." string
+     * @private
+     */
+    function renderTermsDefinition(terms) {
+        if (!terms || Object.keys(terms).length === 0) return '';
+
+        const definitions = [];
+        for (const [symbol, termData] of Object.entries(terms)) {
+            const desc = termData.description || termData.name || '';
+            if (desc) {
+                // Format: "X is the description" or "X represents the description"
+                const verb = definitions.length === 0 ? 'is' : 'is';
+                const cleanDesc = desc.replace(/^(is|represents|denotes)\s+/i, '');
+                definitions.push(`<i>${symbol}</i> ${verb} ${cleanDesc}`);
+            }
+        }
+
+        return definitions.join(', ');
+    }
+
+    /**
+     * Format a formula reference for citation
+     * @param {Object} formula - Formula data object
+     * @returns {string} - Formatted reference like "[Section 2.3, Eq. (2.7)]"
+     * @private
+     */
+    function formatFormulaReference(formula) {
+        const eqNum = extractEquationNumber(formula.label);
+        const section = formula.section || '';
+
+        if (eqNum && section) {
+            return `[${section}, Eq. (${eqNum})]`;
+        } else if (eqNum) {
+            return `[Eq. (${eqNum})]`;
+        } else if (section) {
+            return `[${section}]`;
+        } else {
+            return `[${formula.label || formula.id}]`;
+        }
+    }
 
     /**
      * Process formulas in a container
@@ -752,6 +913,81 @@
                 }
             }
         });
+    }
+
+    /**
+     * Process equation cross-references in text
+     * Converts "Eq. (4.2)" to clickable links
+     * @param {HTMLElement} container - Container to process
+     * @private
+     */
+    function processEquationReferences(container) {
+        // Find all text nodes
+        const walker = document.createTreeWalker(
+            container,
+            NodeFilter.SHOW_TEXT,
+            null,
+            false
+        );
+
+        const textNodes = [];
+        let node;
+        while (node = walker.nextNode()) {
+            // Skip if parent is script, style, or already a link
+            const parent = node.parentElement;
+            if (parent && !['SCRIPT', 'STYLE', 'A', 'CODE', 'PRE'].includes(parent.tagName)) {
+                textNodes.push(node);
+            }
+        }
+
+        // Process each text node
+        for (const textNode of textNodes) {
+            const text = textNode.textContent;
+
+            // Match patterns like "Eq. (4.2)", "equation (4.2)", "(4.2)"
+            const pattern = /\b(?:Eq\.|equation)\s*\(([0-9]+\.[0-9]+)\)|\(([0-9]+\.[0-9]+)\)/gi;
+
+            if (pattern.test(text)) {
+                // Create a temporary container to build the replacement HTML
+                const tempDiv = document.createElement('div');
+                let lastIndex = 0;
+                let match;
+                pattern.lastIndex = 0; // Reset regex
+
+                while ((match = pattern.exec(text)) !== null) {
+                    const eqNum = match[1] || match[2];
+                    const fullMatch = match[0];
+
+                    // Add text before match
+                    if (match.index > lastIndex) {
+                        tempDiv.appendChild(document.createTextNode(text.substring(lastIndex, match.index)));
+                    }
+
+                    // Create link to equation
+                    const link = document.createElement('a');
+                    link.href = `#eq-${eqNum}`;
+                    link.className = 'equation-ref';
+                    link.textContent = fullMatch;
+                    tempDiv.appendChild(link);
+
+                    lastIndex = match.index + fullMatch.length;
+                }
+
+                // Add remaining text
+                if (lastIndex < text.length) {
+                    tempDiv.appendChild(document.createTextNode(text.substring(lastIndex)));
+                }
+
+                // Replace the text node with the new content
+                if (tempDiv.childNodes.length > 0) {
+                    const parent = textNode.parentNode;
+                    while (tempDiv.firstChild) {
+                        parent.insertBefore(tempDiv.firstChild, textNode);
+                    }
+                    parent.removeChild(textNode);
+                }
+            }
+        }
     }
 
     /**
@@ -916,8 +1152,10 @@
         renderPaper,
         renderSection,
         renderFormula,
+        renderEquation,
         processFormulas,
         processParameters,
+        processEquationReferences,
         typesetMathJax,
         get data() { return PaperRenderer._data; },
         get loaded() { return PaperRenderer._loaded; }

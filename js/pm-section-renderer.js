@@ -274,6 +274,35 @@ class PMSectionRenderer extends HTMLElement {
         }
 
         this.shadowRoot.innerHTML = `<style>${styles}</style><section class="pm-section">${content}</section>`;
+
+        // Trigger MathJax after rendering
+        if (typeof window !== 'undefined' && window.MathJax && window.MathJax.typesetPromise) {
+            setTimeout(() => {
+                window.MathJax.typesetPromise([this.shadowRoot]).catch(err => {
+                    console.warn('MathJax typesetting error in section:', err);
+                });
+            }, 100);
+        }
+    }
+
+    /**
+     * Process text to detect and replace formula/parameter references
+     * Supports: {{formula:id}}, {{param:id}}, <pm-formula>, <pm-param>
+     */
+    processTextContent(text) {
+        if (!text || typeof text !== 'string') return text;
+
+        // Replace formula references: {{formula:id}}
+        text = text.replace(/\{\{formula:([^}]+)\}\}/g, (match, id) => {
+            return `<pm-formula formula-id="${id}" inline="true"></pm-formula>`;
+        });
+
+        // Replace parameter references: {{param:id}}
+        text = text.replace(/\{\{param:([^}]+)\}\}/g, (match, id) => {
+            return `<pm-param id="${id}" mode="inline"></pm-param>`;
+        });
+
+        return text;
     }
 
     renderContentBlockHTML(block) {
@@ -286,13 +315,25 @@ class PMSectionRenderer extends HTMLElement {
 
         switch (block.type) {
             case 'text':
-                return wrapExpandable(`<div class="text-block">${block.text}</div>`);
+                // Ensure text is a string, not an object
+                let textContent = typeof block.text === 'object' ? JSON.stringify(block.text) : (block.text || '');
+                // Process text for formula/param references
+                textContent = this.processTextContent(textContent);
+                return wrapExpandable(`<div class="text-block">${textContent}</div>`);
 
             case 'formula':
-                // Render using pm-formula component
+                // Render using pm-formula component with interactive display
                 const derivAttr = block.showDerivation ? ' show-derivation="true"' : '';
                 const termsAttr = block.showTerms === false ? ' show-terms="false"' : '';
-                return wrapExpandable(`<pm-formula formula-id="${block.formulaId}"${derivAttr}${termsAttr}></pm-formula>`);
+                const inlineAttr = block.inline ? ' inline="true"' : '';
+
+                // Add link to formula page
+                const formulaLink = `<a href="formulas.html#formula-${block.formulaId}" class="formula-link" target="_blank">View full details →</a>`;
+
+                return wrapExpandable(`
+                    <pm-formula formula-id="${block.formulaId}"${derivAttr}${termsAttr}${inlineAttr}></pm-formula>
+                    ${!block.inline ? formulaLink : ''}
+                `);
 
             case 'param':
                 // Render using pm-param component
@@ -307,7 +348,11 @@ class PMSectionRenderer extends HTMLElement {
                 `);
 
             case 'table':
-                const headerRow = block.columns.map(c => `<th>${c}</th>`).join('');
+                // Ensure column headers are strings, not objects
+                const headerRow = (block.columns || []).map(c => {
+                    const safeCol = typeof c === 'object' ? JSON.stringify(c) : c;
+                    return `<th>${safeCol}</th>`;
+                }).join('');
                 const bodyRows = (block.rows || []).map(row =>
                     `<tr>${row.map(cell => `<td>${this.processTableCell(cell)}</td>`).join('')}</tr>`
                 ).join('');
@@ -360,8 +405,10 @@ class PMSectionRenderer extends HTMLElement {
             // Check for param reference: {{param:id}}
             cell = cell.replace(/\{\{param:([^}]+)\}\}/g,
                 (match, id) => `<pm-param id="${id}" mode="inline"></pm-param>`);
+            return cell;
         }
-        return cell;
+        // If cell is an object, convert to JSON string to avoid [object Object]
+        return typeof cell === 'object' ? JSON.stringify(cell) : String(cell);
     }
 
     renderAppendixHTML(appendix) {

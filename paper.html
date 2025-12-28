@@ -91,12 +91,64 @@
             box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
         }
 
+        /* A4 page dimensions: 210mm x 297mm */
         .paper-container {
-            max-width: 850px;
+            max-width: 210mm;
             margin: 0 auto;
-            padding: 50px 60px;
+            padding: 0;
+            background: transparent;
+        }
+
+        /* Individual A4 pages */
+        .paper-page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 25mm 20mm;
             background: var(--bg-paper);
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+            page-break-after: always;
+        }
+
+        /* First page (title page) */
+        .paper-page.title-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            padding-top: 40mm;
+        }
+
+        /* Download metadata bar */
+        .paper-download-meta {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 8px;
+            padding: 12px 20px;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .paper-download-meta .user-info {
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        .paper-download-meta .date-info {
+            color: var(--text-muted);
+        }
+
+        /* Legacy fallback for non-page structure */
+        .paper-container > .paper-header,
+        .paper-container > .pm-paper-container {
+            max-width: 210mm;
+            padding: 25mm 20mm;
+            background: var(--bg-paper);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
         }
 
         .paper-header {
@@ -186,6 +238,26 @@
         /* Paper section styles */
         .pm-paper-container .paper-section {
             margin-bottom: 2.5rem;
+            page-break-before: always;
+            page-break-inside: avoid;
+        }
+
+        /* First section doesn't need page break */
+        .pm-paper-container .paper-section:first-child {
+            page-break-before: auto;
+        }
+
+        /* Section separator line for on-screen viewing */
+        .pm-paper-container .paper-section::before {
+            content: '';
+            display: block;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.3), transparent);
+            margin-bottom: 2rem;
+        }
+
+        .pm-paper-container .paper-section:first-child::before {
+            display: none;
         }
 
         .pm-paper-container .section-header .section-title {
@@ -248,6 +320,118 @@
             float: right;
             color: var(--text-muted);
             font-size: 0.9rem;
+        }
+
+        /* Academic equation wrapper - comprehensive formatting */
+        .pm-paper-container .equation-wrapper.academic-equation {
+            margin: 1.75rem 0;
+            padding: 0.75rem 0;
+            clear: both;
+        }
+
+        /* Equation line with number at right margin */
+        .pm-paper-container .equation-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .pm-paper-container .equation-line .equation-content {
+            flex: 1;
+            text-align: center;
+            padding: 0.5rem 1rem;
+        }
+
+        .pm-paper-container .equation-line .equation-number {
+            flex-shrink: 0;
+            padding-left: 1rem;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-family: 'Crimson Text', Georgia, serif;
+            float: none;
+        }
+
+        /* Parameter definitions */
+        .pm-paper-container .equation-terms {
+            margin: 0.75rem 0;
+            padding: 0 1rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .pm-paper-container .equation-terms .terms-intro {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pm-paper-container .equation-terms i {
+            font-style: italic;
+            font-weight: 500;
+        }
+
+        /* Equation discussion text */
+        .pm-paper-container .equation-discussion {
+            margin: 0.75rem 0;
+            padding: 0 1rem;
+            color: #333;
+            font-size: 0.95rem;
+        }
+
+        .pm-paper-container .equation-discussion p {
+            text-align: justify;
+            line-height: 1.6;
+            margin: 0 0 0.5rem 0;
+        }
+
+        /* Derivation references */
+        .pm-paper-container .equation-derivation {
+            margin: 0.5rem 0;
+            padding: 0 1rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        .pm-paper-container .equation-derivation p {
+            margin: 0;
+            text-align: left;
+        }
+
+        .pm-paper-container .equation-derivation .derived-from {
+            color: #555;
+        }
+
+        .pm-paper-container .equation-derivation a {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .pm-paper-container .equation-derivation a:hover {
+            text-decoration: underline;
+        }
+
+        /* Equation cross-reference links in text */
+        .pm-paper-container .equation-ref {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .pm-paper-container .equation-ref:hover {
+            color: var(--accent);
+            text-decoration: underline;
+        }
+
+        /* Highlight effect when navigating to an equation */
+        .pm-paper-container .equation-wrapper.academic-equation:target {
+            background: rgba(102, 126, 234, 0.08);
+            border-left: 3px solid var(--accent);
+            padding-left: 1rem;
+            margin-left: -1rem;
+            transition: background 0.3s ease;
         }
 
         /* Table styling */
@@ -519,9 +703,12 @@
             scroll-behavior: smooth;
         }
 
-        /* Scroll margin for section anchors */
-        .paper-section {
-            scroll-margin-top: 2rem;
+        /* Scroll margin for section anchors - account for fixed header */
+        .paper-section,
+        .paper-subsection,
+        [id^="section-"],
+        [id^="subsection-"] {
+            scroll-margin-top: 100px;
         }
 
         /* Mobile responsive */
@@ -569,11 +756,11 @@
             .render-stats,
             .empty-section-placeholder,
             .empty-subsection-placeholder {
-                display: none;
+                display: none !important;
             }
 
             body {
-                background: white;
+                background: white !important;
             }
 
             .paper-container {
@@ -582,24 +769,58 @@
                 box-shadow: none;
             }
 
+            .paper-container > .paper-header,
+            .paper-container > .pm-paper-container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            /* Show download meta at top of print */
+            .paper-download-meta {
+                background: #f5f5f5 !important;
+                border: 1px solid #ddd !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
             .pm-paper-container .paper-section {
+                page-break-before: always;
                 page-break-inside: avoid;
+            }
+
+            .pm-paper-container .paper-section:first-child {
+                page-break-before: auto;
+            }
+
+            /* Remove the visual separator in print */
+            .pm-paper-container .paper-section::before {
+                display: none;
             }
 
             @page {
                 size: A4;
-                margin: 25mm 20mm;
+                margin: 20mm 15mm;
+            }
+
+            @page :first {
+                margin-top: 15mm;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Download Button -->
-    <a href="principia-metaphysica-paper.html" class="download-btn" id="download-btn">
-        View Full Paper
-    </a>
+    <!-- Print Button -->
+    <button class="download-btn" id="print-btn" onclick="window.print()">
+        Print Paper
+    </button>
 
     <div class="paper-container">
+        <!-- Download metadata - who/when -->
+        <div class="paper-download-meta" id="paper-download-meta">
+            <span class="user-info" id="download-user">Preparing document...</span>
+            <span class="date-info" id="download-date"></span>
+        </div>
+
         <header class="paper-header">
             <p class="paper-meta" id="paper-meta">
                 Version 16.2 | Dynamically rendered from theory_output.json
@@ -633,6 +854,27 @@
         // Initialize and render paper
         document.addEventListener('DOMContentLoaded', async () => {
             const startTime = performance.now();
+
+            // Populate download metadata (user and date)
+            const userEl = document.getElementById('download-user');
+            const dateEl = document.getElementById('download-date');
+            if (userEl && dateEl) {
+                // Get user from Firebase auth if available, otherwise use generic
+                const displayName = window.auth?.currentUser?.displayName ||
+                                    window.auth?.currentUser?.email?.split('@')[0] ||
+                                    'Guest Reader';
+                userEl.textContent = `Downloaded by: ${displayName}`;
+
+                const now = new Date();
+                const dateStr = now.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+                dateEl.textContent = dateStr;
+            }
 
             // Wait for PM constants to load
             if (window.PM && window.PM.load) {

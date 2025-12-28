@@ -41,12 +41,15 @@
     <!-- PM Loaders -->
     <script src="js/pm-constants-loader.js"></script>
     <script src="js/pm-formula-loader.js"></script>
+    <script src="js/pm-formula-component.js"></script>
+    <script src="js/pm-parameter-component.js"></script>
     <script src="js/content-templates.js"></script>
     <script src="js/pm-section-renderer.js"></script>
 
     <!-- Common Shared Styles -->
     <link rel="stylesheet" href="css/pm-common.css">
     <link rel="stylesheet" href="css/pm-header.css">
+    <link rel="stylesheet" href="css/formula-hover.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
@@ -55,13 +58,19 @@
             --bg-dark: #0a0a0f;
             --bg-paper: #1a1a2e;
             --bg-sidebar: #16213e;
+            --bg-secondary: rgba(26, 31, 58, 0.8);
+            --bg-card: rgba(42, 42, 62, 0.6);
             --text-dark: #1a1a1a;
             --text-light: #e0e0e0;
+            --text-primary: #f8f9fa;
+            --text-secondary: rgba(255, 255, 255, 0.7);
             --text-muted: #888;
             --accent: #8b7fff;
+            --accent-primary: #8b7fff;
             --accent-hover: #a394ff;
             --accent-secondary: #ff7eb6;
             --border: #2a2a3e;
+            --border-primary: rgba(255, 255, 255, 0.1);
             --border-light: #3a3a4e;
             --shadow: rgba(0, 0, 0, 0.3);
         }
@@ -81,29 +90,208 @@
             overflow-x: hidden;
         }
 
-        /* Layout Grid */
+        /* Overview Box */
+        .overview-box {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .overview-box h2 {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-size: 1.75rem;
+        }
+
+        .overview-box p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Downloads */
+        .downloads {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .download-btn:hover {
+            background: rgba(139, 127, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.2);
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            background: rgba(139, 127, 255, 0.1);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .quick-nav h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .quick-link:hover {
+            background: rgba(139, 127, 255, 0.2);
+            border-color: var(--accent-primary);
+            transform: translateY(-2px);
+        }
+
+        .quick-link .num {
+            color: var(--accent-primary);
+            font-weight: 700;
+        }
+
+        /* Horizontal Tabs Component */
+        .tabs-container {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-list {
+            display: flex;
+            gap: 0.25rem;
+            border-bottom: 2px solid var(--border-primary);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+            background: var(--bg-secondary);
+        }
+
+        .tab {
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Inter', 'Source Sans Pro', sans-serif;
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+            background: rgba(139, 127, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            color: var(--accent-primary);
+            background: var(--bg-card);
+            border-bottom-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Group Headers (inside tabs) */
+        .group-header {
+            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .group-description {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        /* Topic Tags */
+        .topic-tag {
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--accent-primary);
+            padding: 0.25rem 0.6rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Layout Grid - NO SIDEBAR */
         .app-container {
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            grid-template-rows: 1fr auto;
-            grid-template-areas:
-                "sidebar main"
-                "sidebar footer";
+            display: flex;
+            flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Sidebar Navigation */
+        /* Sidebar Navigation - HIDDEN */
         .app-sidebar {
-            grid-area: sidebar;
-            background: var(--bg-sidebar);
-            border-right: 1px solid var(--border);
-            overflow-y: auto;
-            padding: 1.5rem 0 0 0;
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
+            display: none;
         }
 
         .sidebar-title {
@@ -266,7 +454,7 @@
 
         /* Main Content Area */
         .app-main {
-            grid-area: main;
+            flex: 1;
             background: var(--bg-paper);
             padding: 2rem;
             overflow-y: auto;
@@ -342,27 +530,52 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 1.5rem;
-            margin-bottom: 2rem;
         }
 
-        /* Section Card */
+        .tab-content .sections-grid {
+            margin-top: 0;
+        }
+
+        /* Section Card with Glass Morphism */
         .section-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             height: 100%;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
         .section-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4),
-                        0 0 24px rgba(139, 127, 255, 0.15);
-            border-color: var(--accent);
-            background: rgba(255, 255, 255, 0.06);
+            transform: translateY(-8px) scale(1.02);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
+            border-color: var(--accent-primary);
+        }
+
+        .section-card:hover::before {
+            opacity: 1;
         }
 
         .section-card:hover .section-card-title {
@@ -374,23 +587,84 @@
             color: #fff;
         }
 
+        /* Expanded section view */
+        .section-card.expanded {
+            grid-column: 1 / -1;
+            max-width: 100%;
+            transform: none;
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent);
+        }
+
+        .section-card-content {
+            display: none;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--accent);
+            max-width: 100%;
+        }
+
+        .section-card.expanded .section-card-content {
+            display: block;
+        }
+
+        .section-card.expanded .section-card-link {
+            background: rgba(139, 127, 255, 0.2);
+            border-color: rgba(139, 127, 255, 0.4);
+        }
+
+        .section-card.expanded .section-card-link::after {
+            content: ' ✕';
+        }
+
+        .section-content-loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        .section-content-error {
+            padding: 1.5rem;
+            background: rgba(248, 113, 113, 0.1);
+            border: 1px solid rgba(248, 113, 113, 0.3);
+            border-radius: 8px;
+            color: #f87171;
+        }
+
         .section-card-header {
             margin-bottom: 1rem;
         }
 
         .section-card-title {
             font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.75rem;
             display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-card-title > span:not(.section-card-number) {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            flex: 1;
         }
 
         .section-card-number {
-            color: var(--accent);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 50%;
+            color: white;
             font-weight: 700;
+            font-size: 0.85rem;
             font-family: 'Source Sans Pro', sans-serif;
+            padding: 0 0.5rem;
         }
 
         .section-card-type {
@@ -443,6 +717,14 @@
             -webkit-line-clamp: 3;
             -webkit-box-orient: vertical;
             overflow: hidden;
+        }
+
+        .section-card .topics {
+            margin-top: 0.75rem;
+            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
         }
 
         .section-card-meta {
@@ -574,7 +856,6 @@
 
         /* Footer */
         .app-footer {
-            grid-area: footer;
             background: var(--bg-sidebar);
             border-top: 1px solid var(--border);
             padding: 1.5rem 2rem;
@@ -729,6 +1010,173 @@
             border-radius: 4px;
         }
 
+        /* Inline Formula Rendering in Sections */
+        pm-formula {
+            display: block;
+            margin: 1rem 0;
+        }
+
+        pm-formula[inline] {
+            display: inline-block;
+            margin: 0 0.25rem;
+        }
+
+        /* Section context: slightly smaller formulas than formulas.html */
+        .section-card-content pm-formula {
+            font-size: 0.95rem;
+        }
+
+        .section-card-content .formula-container {
+            background: rgba(139, 127, 255, 0.06);
+            border: 1px solid rgba(139, 127, 255, 0.15);
+            border-left: 3px solid var(--accent);
+            border-radius: 6px;
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+        }
+
+        .section-card-content .formula-display {
+            font-size: 1.1rem;
+            text-align: center;
+            padding: 0.5rem 0;
+        }
+
+        /* Formula variables in sections */
+        .section-card-content .formula-var {
+            display: inline-block;
+            position: relative;
+            padding: 0.15rem 0.3rem;
+            margin: 0 0.05rem;
+            background: rgba(139, 127, 255, 0.12);
+            border: 1px solid rgba(139, 127, 255, 0.25);
+            border-radius: 3px;
+            cursor: help;
+            transition: all 0.2s ease;
+        }
+
+        .section-card-content .formula-var:hover {
+            background: rgba(139, 127, 255, 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(139, 127, 255, 0.15);
+        }
+
+        /* Tooltips for formulas in sections */
+        .section-card-content .var-tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-8px);
+            min-width: 200px;
+            max-width: 300px;
+            background: rgba(26, 26, 46, 0.98);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(139, 127, 255, 0.4);
+            border-radius: 8px;
+            padding: 0.75rem;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            text-align: left;
+            font-size: 0.85rem;
+            pointer-events: none;
+        }
+
+        .section-card-content .formula-var:hover .var-tooltip {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(-12px);
+        }
+
+        /* Expandable formula details in sections */
+        .section-card-content .expandable-section {
+            margin: 0.75rem 0;
+        }
+
+        .section-card-content .expand-toggle {
+            cursor: pointer;
+            padding: 0.5rem 0.75rem;
+            background: rgba(139, 127, 255, 0.08);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            border-radius: 6px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+
+        .section-card-content .expand-toggle:hover {
+            background: rgba(139, 127, 255, 0.15);
+            border-color: rgba(139, 127, 255, 0.3);
+        }
+
+        .section-card-content .expand-title {
+            color: var(--text-primary);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .section-card-content .expand-icon {
+            color: var(--accent);
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .section-card-content .expandable-section.open .expand-icon {
+            transform: rotate(90deg);
+        }
+
+        .section-card-content .expand-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .section-card-content .expandable-section.open .expand-content {
+            max-height: 2000px;
+            padding-top: 0.75rem;
+        }
+
+        /* Parameter display in sections */
+        .section-card-content pm-param {
+            display: inline-block;
+            position: relative;
+            padding: 0.2rem 0.5rem;
+            background: rgba(79, 172, 254, 0.12);
+            border: 1px solid rgba(79, 172, 254, 0.25);
+            border-radius: 4px;
+            cursor: help;
+            transition: all 0.2s ease;
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.9em;
+        }
+
+        .section-card-content pm-param:hover {
+            background: rgba(79, 172, 254, 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 6px rgba(79, 172, 254, 0.15);
+        }
+
+        /* Link to full formula page */
+        .formula-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .formula-link:hover {
+            background: rgba(139, 127, 255, 0.15);
+            text-decoration: underline;
+        }
+
         .beginner-summary {
             background: rgba(96, 165, 250, 0.1);
             border: 1px solid rgba(96, 165, 250, 0.3);
@@ -793,60 +1241,6 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .app-container {
-                grid-template-columns: 1fr;
-                grid-template-areas:
-                    "main"
-                    "footer";
-            }
-
-            .app-sidebar {
-                display: none;
-            }
-
-            .mobile-nav-toggle {
-                display: block;
-                position: fixed;
-                bottom: 20px;
-                right: 20px;
-                width: 56px;
-                height: 56px;
-                background: var(--accent);
-                border: none;
-                border-radius: 50%;
-                color: white;
-                font-size: 1.5rem;
-                cursor: pointer;
-                box-shadow: 0 4px 12px var(--shadow);
-                z-index: 1000;
-            }
-
-            .app-sidebar.mobile-open {
-                display: block;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                z-index: 999;
-                height: 100vh;
-            }
-
-            .sidebar-overlay {
-                display: none;
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                background: rgba(0, 0, 0, 0.5);
-                z-index: 998;
-            }
-
-            .sidebar-overlay.active {
-                display: block;
-            }
-
             /* Section cards on mobile */
             .sections-grid {
                 grid-template-columns: 1fr;
@@ -869,10 +1263,13 @@
             }
         }
 
-        @media (min-width: 769px) {
-            .mobile-nav-toggle {
-                display: none;
-            }
+        /* Mobile nav toggle - HIDDEN */
+        .mobile-nav-toggle {
+            display: none !important;
+        }
+
+        .sidebar-overlay {
+            display: none !important;
         }
 
         @media (max-width: 480px) {
@@ -892,16 +1289,9 @@
 
         /* Print Styles */
         @media print {
-            .app-sidebar,
             .pm-header,
-            .app-footer,
-            .mobile-nav-toggle {
+            .app-footer {
                 display: none;
-            }
-
-            .app-container {
-                grid-template-areas: "main";
-                grid-template-columns: 1fr;
             }
 
             body {
@@ -914,33 +1304,6 @@
 <body>
     <div class="app-container">
         <!-- Header injected by pm-header.js -->
-
-        <!-- Sidebar Navigation -->
-        <aside class="app-sidebar" id="sidebar">
-            <div class="sidebar-title">Sections</div>
-            <nav>
-                <ul class="section-nav-list" id="section-nav-list">
-                    <!-- Populated dynamically -->
-                    <li class="section-nav-item">
-                        <a href="#" class="section-nav-link">
-                            <div class="loading">Loading sections</div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-
-            <!-- Sidebar Stats -->
-            <div class="sidebar-stats">
-                <div class="sidebar-stat">
-                    <span class="stat-count" id="sidebar-formula-count">0</span>
-                    <span class="stat-label">Formulas</span>
-                </div>
-                <div class="sidebar-stat">
-                    <span class="stat-count" id="sidebar-param-count">0</span>
-                    <span class="stat-label">Parameters</span>
-                </div>
-            </div>
-        </aside>
 
         <!-- Main Content -->
         <main class="app-main" id="main-content">
@@ -962,6 +1325,48 @@
 
                 <h1 style="color: #fff; font-size: 2rem; margin-bottom: 1rem;">Paper Sections</h1>
                 <p style="color: var(--text-muted); margin-bottom: 2rem;">Explore the sections of Principia Metaphysica. Each section presents a key aspect of the theory.</p>
+
+                <!-- Overview Section -->
+                <div class="overview-box">
+                    <h2>Principia Metaphysica</h2>
+                    <p style="color: #8b7fff; font-size: 0.95rem; margin-bottom: 0.75rem;">
+                        <em><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Two-Time Framework with Signature (24,2)</em>
+                    </p>
+                    <p>
+                        Navigate through all sections of the unified physics framework. The theory achieves complete unification
+                        through <strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 7D (G₂) → 6D → 4D via M-theory</strong>, deriving all <strong>58+ Standard Model
+                        parameters from pure geometry with zero free parameters</strong>. The paper covers Theoretical Foundations, Physical
+                        Mechanisms (Standard Model, cosmology, Z₂ mirror sectors), and Experimental Tests with
+                        falsifiable predictions including w₀ = -11/13 and w<sub>a</sub> ≈ -0.75 (matching DESI 2024).
+                    </p>
+                    <div class="downloads">
+                        <a href="paper.html" class="download-btn">
+                            <span>📄</span> Full Paper
+                        </a>
+                        <a href="sections/thermal-time.html" class="download-btn">
+                            <span>🕐</span> Two-Time TTH
+                        </a>
+                        <a href="beginners-guide.html" class="download-btn">
+                            <span>🎓</span> Beginner's Guide
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="quick-nav">
+                    <h3>Quick Navigation</h3>
+                    <div class="quick-links">
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('1'); return false;"><span class="num">1</span> Introduction</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('2'); return false;"><span class="num">2</span> Geometry</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('3'); return false;"><span class="num">3</span> Gauge</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('4'); return false;"><span class="num">4</span> Fermions</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('5'); return false;"><span class="num">5</span> Time</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('6'); return false;"><span class="num">6</span> Cosmology</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('7'); return false;"><span class="num">7</span> Predictions</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('8'); return false;"><span class="num">8</span> Conclusion</a>
+                        <a href="formulas.html" class="quick-link" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(139, 127, 255, 0.15)); border-color: rgba(81, 207, 102, 0.4);"><span class="num">&Sigma;</span> Formulas</a>
+                    </div>
+                </div>
 
                 <!-- Stats Summary -->
                 <div class="stats-summary" id="stats-summary">
@@ -992,9 +1397,66 @@
                     </div>
                 </div>
 
-                <!-- Section Cards Grid -->
-                <div class="sections-grid" id="sections-grid">
-                    <div class="loading">Loading sections...</div>
+                <!-- Horizontal Tabs -->
+                <div class="tabs-container">
+                    <div class="tab-list" role="tablist">
+                        <button class="tab active" role="tab" data-tab="all" aria-selected="true" aria-controls="all" id="tab-all-btn">
+                            All Sections
+                        </button>
+                        <button class="tab" role="tab" data-tab="foundations" aria-selected="false" aria-controls="foundations" id="tab-foundations-btn">
+                            Theoretical Foundations
+                        </button>
+                        <button class="tab" role="tab" data-tab="physics" aria-selected="false" aria-controls="physics" id="tab-physics-btn">
+                            Physical Mechanisms
+                        </button>
+                        <button class="tab" role="tab" data-tab="experimental" aria-selected="false" aria-controls="experimental" id="tab-experimental-btn">
+                            Experimental Tests
+                        </button>
+                    </div>
+
+                    <!-- All Sections Tab -->
+                    <div class="tab-content active" id="tab-all" role="tabpanel" aria-labelledby="tab-all-btn">
+                        <div class="sections-grid" id="sections-grid-all">
+                            <div class="loading">Loading sections...</div>
+                        </div>
+                    </div>
+
+                    <!-- Foundations Tab -->
+                    <div class="tab-content" id="tab-foundations" role="tabpanel" aria-labelledby="tab-foundations-btn">
+                        <h2 class="group-header">Theoretical Foundations</h2>
+                        <p class="group-description">
+                            The mathematical and geometric foundations of the framework, establishing the
+                            (12,1)-dimensional bulk structure, the Pneuma field, and the Kaluza-Klein reduction
+                            that produces <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D physics.
+                        </p>
+                        <div class="sections-grid" id="sections-grid-foundations">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Physics Tab -->
+                    <div class="tab-content" id="tab-physics" role="tabpanel" aria-labelledby="tab-physics-btn">
+                        <h2 class="group-header">Physical Mechanisms</h2>
+                        <p class="group-description">
+                            Derivation of the Standard Model gauge structure, fermion spectrum, and cosmological
+                            dynamics from the geometric framework. How the abstract mathematics connects to observable physics.
+                        </p>
+                        <div class="sections-grid" id="sections-grid-physics">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- Experimental Tab -->
+                    <div class="tab-content" id="tab-experimental" role="tabpanel" aria-labelledby="tab-experimental-btn">
+                        <h2 class="group-header">Experimental Tests</h2>
+                        <p class="group-description">
+                            Concrete, falsifiable predictions that connect the theoretical framework to
+                            experimental physics. Current constraints and future experimental prospects.
+                        </p>
+                        <div class="sections-grid" id="sections-grid-experimental">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -1005,14 +1467,6 @@
             <p>Dedicated to my Dearest Wife, Elizabeth May Watts &amp; The Ruler and Restorer of all, The final Logos, The Messiah, Jesus of Nazareth</p>
         </footer>
     </div>
-
-    <!-- Mobile Navigation Toggle -->
-    <button class="mobile-nav-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
-        &#9776;
-    </button>
-
-    <!-- Sidebar Overlay (mobile) -->
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
     <!-- Application Script -->
     <script>
@@ -1030,13 +1484,8 @@
             let searchQuery = '';
 
             // DOM Elements
-            const navList = document.getElementById('section-nav-list');
-            const sectionsGrid = document.getElementById('sections-grid');
             const searchInput = document.getElementById('search-input');
             const filterButtons = document.querySelectorAll('.filter-btn');
-            const mobileToggle = document.getElementById('mobile-nav-toggle');
-            const sidebar = document.getElementById('sidebar');
-            const sidebarOverlay = document.getElementById('sidebar-overlay');
 
             /**
              * Load sections from sections.json or theory_output.json
@@ -1149,60 +1598,12 @@
             }
 
             /**
-             * Render navigation sidebar
+             * Render navigation - now just handles breadcrumb dropdown
              */
             function renderNavigation() {
                 if (!allSections.length) return;
 
-                navList.innerHTML = '';
-
-                for (const section of allSections) {
-                    const li = document.createElement('li');
-                    li.className = 'section-nav-item';
-
-                    const subsections = section.subsections || [];
-                    const hasSubsections = subsections.length > 0;
-                    const title = getSectionTitle(section);
-
-                    if (hasSubsections) {
-                        li.classList.add('has-subsections');
-                        li.innerHTML = `
-                            <div class="section-nav-header">
-                                <a href="${section.sectionFile || '#section-' + section.id}" class="section-nav-link">
-                                    <span class="section-number">${section.id}</span>
-                                    <span class="section-title">${title}</span>
-                                </a>
-                                <button class="section-expand-btn" aria-label="Expand subsections">
-                                    <span class="expand-arrow">▸</span>
-                                </button>
-                            </div>
-                            <ul class="subsection-list">
-                                ${subsections.map(sub => `
-                                    <li><a href="#subsection-${sub.id}">${sub.id}. ${sub.title}</a></li>
-                                `).join('')}
-                            </ul>
-                        `;
-
-                        // Add expand/collapse handler
-                        const expandBtn = li.querySelector('.section-expand-btn');
-                        expandBtn.addEventListener('click', (e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            li.classList.toggle('expanded');
-                        });
-                    } else {
-                        li.innerHTML = `
-                            <a href="${section.sectionFile || '#section-' + section.id}" class="section-nav-link">
-                                <span class="section-number">${section.id}</span>
-                                <span class="section-title">${title}</span>
-                            </a>
-                        `;
-                    }
-
-                    navList.appendChild(li);
-                }
-
-                // Also populate breadcrumb dropdown
+                // Populate breadcrumb dropdown
                 populateBreadcrumbDropdown();
             }
 
@@ -1215,11 +1616,21 @@
 
                 dropdown.innerHTML = allSections.map(section => {
                     const title = getSectionTitle(section);
-                    return `<a class="dropdown-item" href="${section.sectionFile || 'sections/section-' + section.id + '.html'}">
+                    return `<a class="dropdown-item" href="#" data-section-id="${section.id}">
                         <span class="section-num">${section.id}.</span>
                         ${title}
                     </a>`;
                 }).join('');
+
+                // Add click handlers to dropdown items
+                dropdown.querySelectorAll('.dropdown-item').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const sectionId = item.getAttribute('data-section-id');
+                        scrollToAndOpenSection(sectionId);
+                        dropdown.classList.remove('open');
+                    });
+                });
             }
 
             /**
@@ -1310,6 +1721,9 @@
                 const description = sanitizeText(rawDescription, 200);
                 const sectionType = getSectionTypeLabel(section);
 
+                // Extract topic tags from keywords or generate from section data
+                const topics = getTopicTags(section);
+
                 const card = document.createElement('div');
                 card.className = 'section-card';
                 card.dataset.sectionId = section.id;
@@ -1318,12 +1732,17 @@
                 card.innerHTML = `
                     <div class="section-card-header">
                         <h3 class="section-card-title">
-                            <span class="section-card-number">${section.id}.</span>
+                            <span class="section-card-number">${section.id}</span>
                             <span>${title}</span>
                         </h3>
                         <div class="section-card-type">${sectionType}</div>
                     </div>
                     <p class="section-card-description">${description}</p>
+                    ${topics.length > 0 ? `
+                    <div class="topics">
+                        ${topics.map(tag => `<span class="topic-tag">${tag}</span>`).join('')}
+                    </div>
+                    ` : ''}
                     <div class="section-card-meta">
                         <div class="section-card-meta-item">
                             <span class="icon">📐</span>
@@ -1334,22 +1753,59 @@
                             <span><span class="count">${paramCount}</span> ${paramCount === 1 ? 'parameter' : 'parameters'}</span>
                         </div>
                     </div>
-                    <a href="${section.sectionFile || `sections/section-${section.id}.html`}" class="section-card-link">
+                    <button class="section-card-link">
                         Read Section
-                    </a>
+                    </button>
+                    <div class="section-card-content">
+                        <!-- Section content will be loaded here dynamically -->
+                    </div>
                 `;
 
+                // Add click handler to toggle section content
+                const toggleButton = card.querySelector('.section-card-link');
+                toggleButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    toggleSectionCard(card, section);
+                });
+
                 return card;
+            }
+
+            /**
+             * Get topic tags for a section
+             */
+            function getTopicTags(section) {
+                // If section has explicit keywords, use those
+                if (section.keywords && Array.isArray(section.keywords)) {
+                    return section.keywords.slice(0, 4);
+                }
+
+                // Otherwise, generate based on section ID and category
+                const tagMap = {
+                    '1': ['Unification', 'Geometry', 'Pneuma'],
+                    '2': ['Kaluza-Klein', 'K_Pneuma', 'EFT'],
+                    '3': ['SO(10)', 'GUT', 'Symmetry Breaking'],
+                    '4': ['Chirality', 'Spinors', '16-plet'],
+                    '5': ['Modular Theory', 'KMS', 'Entropy'],
+                    '6': ['Dark Energy', 'Mashiach', 'F(R,T)'],
+                    '7': ['Proton Decay', 'SME', 'GW Dispersion', 'LIGO/Virgo'],
+                    '8': ['Summary', 'Future Work', 'Falsifiability']
+                };
+
+                return tagMap[section.id] || [];
             }
 
             /**
              * Render section cards
              */
             function renderSections() {
-                sectionsGrid.innerHTML = '';
+                // Render all sections in "All" tab
+                const allGrid = document.getElementById('sections-grid-all');
+                allGrid.innerHTML = '';
 
                 if (filteredSections.length === 0) {
-                    sectionsGrid.innerHTML = '<div class="no-results">No sections found matching your criteria.</div>';
+                    allGrid.innerHTML = '<div class="no-results">No sections found matching your criteria.</div>';
                     return;
                 }
 
@@ -1361,12 +1817,46 @@
                     countHeader.style.color = 'var(--text-muted)';
                     countHeader.style.fontSize = '0.9rem';
                     countHeader.innerHTML = `Showing ${filteredSections.length} of ${allSections.length} sections`;
-                    sectionsGrid.appendChild(countHeader);
+                    allGrid.appendChild(countHeader);
                 }
 
                 for (const section of filteredSections) {
                     const card = createSectionCard(section);
-                    sectionsGrid.appendChild(card);
+                    allGrid.appendChild(card);
+                }
+
+                // Render categorized tabs
+                renderCategorizedTabs();
+            }
+
+            /**
+             * Render sections in categorized tabs
+             */
+            function renderCategorizedTabs() {
+                // Define section categories for each tab
+                const categories = {
+                    foundations: ['1', '2', '5'],  // Introduction, Geometric Framework, Thermal Time
+                    physics: ['3', '4', '6'],       // Gauge, Fermions, Cosmology
+                    experimental: ['7', '8']        // Predictions, Conclusion
+                };
+
+                for (const [tabName, sectionIds] of Object.entries(categories)) {
+                    const grid = document.getElementById(`sections-grid-${tabName}`);
+                    if (!grid) continue;
+
+                    grid.innerHTML = '';
+
+                    const tabSections = allSections.filter(s => sectionIds.includes(s.id));
+
+                    if (tabSections.length === 0) {
+                        grid.innerHTML = '<div class="no-results">No sections in this category.</div>';
+                        continue;
+                    }
+
+                    for (const section of tabSections) {
+                        const card = createSectionCard(section);
+                        grid.appendChild(card);
+                    }
                 }
             }
 
@@ -1383,12 +1873,6 @@
                 const totalParams = allSections.reduce((sum, s) =>
                     sum + (s.paramRefs ? s.paramRefs.length : 0), 0);
                 document.getElementById('stat-params').textContent = totalParams;
-
-                // Update sidebar stats as well
-                const sidebarFormulaCount = document.getElementById('sidebar-formula-count');
-                const sidebarParamCount = document.getElementById('sidebar-param-count');
-                if (sidebarFormulaCount) sidebarFormulaCount.textContent = totalFormulas;
-                if (sidebarParamCount) sidebarParamCount.textContent = totalParams;
             }
 
             /**
@@ -1475,28 +1959,6 @@
                 `;
             }
 
-            /**
-             * Mobile navigation handlers
-             */
-            function openMobileNav() {
-                sidebar.classList.add('mobile-open');
-                sidebarOverlay.classList.add('active');
-            }
-
-            function closeMobileNav() {
-                sidebar.classList.remove('mobile-open');
-                sidebarOverlay.classList.remove('active');
-            }
-
-            mobileToggle.addEventListener('click', () => {
-                if (sidebar.classList.contains('mobile-open')) {
-                    closeMobileNav();
-                } else {
-                    openMobileNav();
-                }
-            });
-
-            sidebarOverlay.addEventListener('click', closeMobileNav);
 
             /**
              * Setup breadcrumb dropdown toggle
@@ -1514,6 +1976,156 @@
             });
 
             /**
+             * Scroll to and open a section by ID
+             */
+            function scrollToAndOpenSection(sectionId) {
+                // Find the card with this section ID
+                const card = document.querySelector(`.section-card[data-section-id="${sectionId}"]`);
+                if (!card) {
+                    console.warn(`Section card not found for ID: ${sectionId}`);
+                    return;
+                }
+
+                // If card is not visible (filtered out), show all sections first
+                if (card.style.display === 'none' || !card.offsetParent) {
+                    // Reset filter to show all
+                    searchInput.value = '';
+                    searchQuery = '';
+                    currentFilter = 'all';
+                    filterButtons.forEach(btn => {
+                        btn.classList.toggle('active', btn.dataset.filter === 'all');
+                    });
+                    filterSections();
+                }
+
+                // Wait a bit for the card to be visible, then scroll and open
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Open the section after scrolling
+                    setTimeout(() => {
+                        // Find the section object
+                        const section = allSections.find(s => s.id === sectionId);
+                        if (section && !card.classList.contains('expanded')) {
+                            toggleSectionCard(card, section);
+                        }
+                    }, 500);
+                }, 100);
+            }
+
+            /**
+             * Toggle section card expansion
+             */
+            async function toggleSectionCard(card, section) {
+                const isExpanded = card.classList.contains('expanded');
+
+                // Collapse if already expanded
+                if (isExpanded) {
+                    card.classList.remove('expanded');
+                    const contentDiv = card.querySelector('.section-card-content');
+                    contentDiv.innerHTML = '';
+                    return;
+                }
+
+                // Close any other expanded cards
+                document.querySelectorAll('.section-card.expanded').forEach(otherCard => {
+                    otherCard.classList.remove('expanded');
+                    otherCard.querySelector('.section-card-content').innerHTML = '';
+                });
+
+                // Expand this card
+                card.classList.add('expanded');
+                const contentDiv = card.querySelector('.section-card-content');
+
+                // Show loading state
+                contentDiv.innerHTML = '<div class="section-content-loading">Loading section content...</div>';
+
+                try {
+                    // Try to render using pm-section-renderer web component
+                    if (customElements.get('pm-section')) {
+                        const sectionRenderer = document.createElement('pm-section');
+                        sectionRenderer.setAttribute('section-id', section.id);
+                        sectionRenderer.setAttribute('format', 'html');
+                        sectionRenderer.setAttribute('level', 'full');
+
+                        contentDiv.innerHTML = '';
+                        contentDiv.appendChild(sectionRenderer);
+
+                        // Trigger MathJax after a short delay
+                        setTimeout(() => {
+                            if (window.MathJax && window.MathJax.typesetPromise) {
+                                window.MathJax.typesetPromise([contentDiv]).catch(err => {
+                                    console.warn('MathJax typesetting error:', err);
+                                });
+                            }
+
+                            // Also refresh for any pm-formula components
+                            if (window.refreshMathJax) {
+                                window.refreshMathJax(contentDiv);
+                            }
+                        }, 300);
+                    } else {
+                        throw new Error('pm-section web component not available');
+                    }
+                } catch (error) {
+                    console.error('Error loading section:', error);
+                    contentDiv.innerHTML = `
+                        <div class="section-content-error">
+                            <h4>Error Loading Section</h4>
+                            <p>${error.message}</p>
+                            <p style="margin-top: 0.5rem; font-size: 0.9rem;">
+                                The section content could not be loaded. Please check the console for details.
+                            </p>
+                        </div>
+                    `;
+                }
+
+                // Scroll the card into view
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+
+            /**
+             * Tab switching functionality
+             */
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    const tabsContainer = tab.closest('.tabs-container');
+
+                    // Remove active from all tabs and content
+                    tabsContainer.querySelectorAll('.tab').forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    tabsContainer.querySelectorAll('.tab-content').forEach(c => {
+                        c.classList.remove('active');
+                    });
+
+                    // Add active to selected tab and content
+                    tab.classList.add('active');
+                    tab.setAttribute('aria-selected', 'true');
+                    document.getElementById('tab-' + tabId).classList.add('active');
+                });
+            });
+
+            /**
+             * Handle hash navigation for tabs
+             */
+            function handleHash() {
+                const hash = window.location.hash.substring(1);
+                if (hash && ['all', 'foundations', 'physics', 'experimental'].includes(hash)) {
+                    const tab = document.querySelector(`.tab[data-tab="${hash}"]`);
+                    if (tab) {
+                        tab.click();
+                    }
+                }
+            }
+
+            window.addEventListener('hashchange', handleHash);
+
+            /**
              * Keyboard shortcuts
              */
             document.addEventListener('keydown', (e) => {
@@ -1523,17 +2135,23 @@
                     searchInput.focus();
                 }
 
-                // Escape to clear search
+                // Escape to clear search or close expanded section
                 if (e.key === 'Escape') {
+                    // First, close any expanded section
+                    const expandedCard = document.querySelector('.section-card.expanded');
+                    if (expandedCard) {
+                        expandedCard.classList.remove('expanded');
+                        expandedCard.querySelector('.section-card-content').innerHTML = '';
+                        return;
+                    }
+
+                    // Then clear search
                     if (searchInput.value) {
                         searchInput.value = '';
                         searchQuery = '';
                         filterSections();
                     }
                     searchInput.blur();
-
-                    // Also close mobile nav if open
-                    closeMobileNav();
                 }
             });
 
@@ -1570,6 +2188,9 @@
                 renderSections();
                 updateStats();
 
+                // Handle initial hash (for tab navigation)
+                handleHash();
+
                 console.log('%cSections Browser initialized successfully', 'color: green; font-weight: bold');
             }
 
@@ -1589,10 +2210,41 @@
         // Inject header first (no breadcrumbs - we have custom dynamic ones)
         document.addEventListener('DOMContentLoaded', () => {
             injectHeader('sections');
+
+            // Setup expandable sections for formulas
+            setupExpandableSections();
         });
 
         // Setup auth after header
         setupAuthGuard('sections');
+
+        /**
+         * Setup expandable sections for formulas and other content
+         */
+        function setupExpandableSections() {
+            // Use event delegation for dynamically loaded content
+            document.addEventListener('click', (e) => {
+                const toggle = e.target.closest('.expand-toggle');
+                if (toggle) {
+                    const section = toggle.closest('.expandable-section');
+                    if (section) {
+                        section.classList.toggle('open');
+                    }
+                }
+            });
+        }
+
+        /**
+         * Global function to refresh MathJax after dynamic content loads
+         */
+        window.refreshMathJax = function(element) {
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                const target = element || document.body;
+                window.MathJax.typesetPromise([target]).catch(err => {
+                    console.warn('MathJax typesetting error:', err);
+                });
+            }
+        };
     </script>
 </body>
 </html>
