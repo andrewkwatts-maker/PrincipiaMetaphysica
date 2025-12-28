@@ -579,7 +579,7 @@
                 if (PaperRenderer._debug) {
                     const placeholder = document.createElement('div');
                     placeholder.className = 'empty-section-placeholder';
-                    placeholder.style.cssText = 'padding: 1rem; color: rgba(255,255,255,0.4); font-style: italic; background: rgba(255,255,255,0.02); border-radius: 4px; margin: 1rem 0;';
+                    placeholder.style.cssText = 'padding: 1rem; color: #999; font-style: italic; background: #f8f9fa; border-radius: 4px; margin: 1rem 0; border-left: 3px solid #f9a825;';
                     placeholder.textContent = `[Section content for "${sectionTitle}" is being developed - referenced file: ${section.sectionFile}]`;
                     sectionDiv.appendChild(placeholder);
                 }
@@ -590,7 +590,7 @@
             if (PaperRenderer._debug) {
                 const placeholder = document.createElement('div');
                 placeholder.className = 'empty-section-placeholder';
-                placeholder.style.cssText = 'padding: 1rem; color: rgba(255,255,255,0.4); font-style: italic; background: rgba(255,255,255,0.02); border-radius: 4px; margin: 1rem 0;';
+                placeholder.style.cssText = 'padding: 1rem; color: #999; font-style: italic; background: #f8f9fa; border-radius: 4px; margin: 1rem 0; border-left: 3px solid #f9a825;';
                 placeholder.textContent = `[Content for this section is being developed]`;
                 sectionDiv.appendChild(placeholder);
             }
@@ -662,7 +662,7 @@
             if (PaperRenderer._debug) {
                 const placeholder = document.createElement('p');
                 placeholder.className = 'empty-subsection-placeholder';
-                placeholder.style.cssText = 'color: rgba(255,255,255,0.3); font-style: italic; padding: 0.5rem;';
+                placeholder.style.cssText = 'color: #999; font-style: italic; padding: 0.5rem; background: #f8f9fa; border-radius: 4px; margin: 0.5rem 0;';
                 placeholder.textContent = '[Content for this subsection is being developed]';
                 subDiv.appendChild(placeholder);
             }
@@ -992,8 +992,8 @@
 
         // Try to get full formula metadata from global data
         let formulaData = null;
-        if (PaperRenderer._data?.formulas?.formulas) {
-            formulaData = PaperRenderer._data.formulas.formulas[formulaId];
+        if (PaperRenderer._data?.formulas) {
+            formulaData = PaperRenderer._data.formulas[formulaId];
         }
 
         // Extract equation number from label (e.g., "(4.2)" from label or formulaData)
@@ -1380,8 +1380,8 @@
         // Find the formula data
         const formulaId = targetEq.getAttribute('data-formula-id');
         let formulaData = null;
-        if (formulaId && PaperRenderer._data?.formulas?.formulas) {
-            formulaData = PaperRenderer._data.formulas.formulas[formulaId];
+        if (formulaId && PaperRenderer._data?.formulas) {
+            formulaData = PaperRenderer._data.formulas[formulaId];
         }
 
         // Create tooltip

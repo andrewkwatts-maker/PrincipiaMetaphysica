@@ -212,6 +212,19 @@
             }
         }
 
+        /* Webkit/Chrome-specific dropdown styling */
+        @supports (-webkit-appearance: none) {
+            .filter-group select {
+                -webkit-appearance: none;
+                appearance: none;
+                background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23f8f9fa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+                background-repeat: no-repeat;
+                background-position: right 0.75rem center;
+                background-size: 1em;
+                padding-right: 2.5rem;
+            }
+        }
+
         /* Statistics bar */
         .stats-bar {
             background: rgba(26, 31, 58, 0.5);
@@ -963,6 +976,7 @@
             'gauge': 'Gauge Unification',
             'electroweak': 'Electroweak Parameters',
             'yukawa': 'Yukawa Couplings',
+            'fermion': 'Fermion Parameters',
             'fermion_masses': 'Fermion Masses',
             'ckm': 'CKM Mixing Matrix',
             'pmns': 'PMNS Mixing Angles',
@@ -976,11 +990,36 @@
             'xy_bosons': 'X/Y Gauge Bosons',
             'mirror_sector': 'Mirror Sector',
             'cosmology': 'Cosmology',
+            'thermal': 'Thermal Dynamics',
+            'chirality': 'Chiral Structure',
 
-            // Data Sources
+            // Data Sources & References
+            'constants': 'Physical Constants',
+            'pdg': 'PDG Reference Values',
+            'nufit': 'NuFIT Neutrino Data',
+            'desi': 'DESI Cosmology Data',
+            'bounds': 'Experimental Bounds',
+
+            // Computational
             'simulations': 'Simulation Results',
             'formulas': 'Formula Validations',
             'nested_validations': 'Detailed Validations',
+            'monte_carlo': 'Monte Carlo Studies',
+            'landscape': 'Landscape Scans',
+            'methods': 'Computational Methods',
+            'math': 'Mathematical Framework',
+
+            // Theory Structure
+            'moduli': 'Moduli Parameters',
+            'derivations': 'Theoretical Derivations',
+            'predictions': 'Theory Predictions',
+            'validation': 'Validation Statistics',
+            'summary': 'Summary Statistics',
+            'tables': 'Reference Tables',
+            'consciousness': 'Consciousness Parameters',
+            'gw_dispersion': 'Gravitational Wave Dispersion',
+
+            // Fallback
             'uncategorized': 'Other Parameters'
         };
 
@@ -1741,20 +1780,27 @@
                 .join(' ');
         }
 
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
         function formatValue(value) {
             if (value === null || value === undefined) return '—';
             if (typeof value === 'boolean') return value ? 'Yes' : 'No';
-            if (Array.isArray(value)) return value.join(', ');
+            if (Array.isArray(value)) return value.map(v => escapeHtml(String(v))).join(', ');
 
             if (typeof value === 'number') {
                 const abs = Math.abs(value);
                 if (abs === 0) return '0';
+                if (!isFinite(value)) return value.toString();
 
                 // Use scientific notation for very large or very small numbers
                 if (abs >= 1e6 || (abs < 0.001 && abs > 0)) {
                     const exp = value.toExponential(3);
-                    // Format with proper superscript if possible
-                    return exp.replace(/e([+-]?\d+)/, ' × 10<sup>$1</sup>');
+                    // Format with proper superscript - remove leading + from exponent
+                    return exp.replace(/e\+?(-?\d+)/, ' × 10<sup>$1</sup>');
                 } else if (abs >= 1000) {
                     // Format with commas for thousands
                     return value.toLocaleString(undefined, { maximumFractionDigits: 4 });
@@ -1766,7 +1812,7 @@
                 }
             }
 
-            return String(value);
+            return escapeHtml(String(value));
         }
 
         function inferUnits(key) {
@@ -1899,20 +1945,22 @@
 
             // Value display with tooltip
             const hasUncertainty = param.uncertainty !== null && param.uncertainty !== undefined;
-            const unitsText = param.units ? ` ${param.units}` : '';
+            // Format units with superscripts
+            const formattedUnits = param.units ? param.units.replace(/\^(-?\d+)/g, '<sup>$1</sup>').replace(/\*\*/g, '') : '';
+            const unitsText = formattedUnits ? ` ${formattedUnits}` : '';
             const uncertaintyText = hasUncertainty ? `±${formatValue(param.uncertainty)}${unitsText}` : '';
 
             html += `
                 <div class="param-value-display tooltip">
                     <span class="param-value">${param.displayValue}</span>
-                    ${param.units ? `<span class="param-units">${param.units}</span>` : ''}
+                    ${formattedUnits ? `<span class="param-units">${formattedUnits}</span>` : ''}
                     ${hasUncertainty ? `<span class="param-uncertainty">± ${formatValue(param.uncertainty)}</span>` : ''}
                     <span class="tooltip-content">
                         <span class="tooltip-label">Value</span>
                         <span class="tooltip-value">
                             ${param.displayValue}${unitsText}
                             ${uncertaintyText ? `<br>Uncertainty: ${uncertaintyText}` : ''}
-                            ${param.source ? `<br>Source: ${param.source}` : ''}
+                            ${param.source ? `<br>Source: ${escapeHtml(param.source)}` : ''}
                         </span>
                     </span>
                 </div>
@@ -1953,11 +2001,11 @@
                         <div class="comparison-values">
                             <div class="comparison-item">
                                 <span class="comparison-label">PM Computed</span>
-                                <span class="comparison-value">${formatValue(param.computed)} ${param.units || ''}</span>
+                                <span class="comparison-value">${formatValue(param.computed)} ${formattedUnits}</span>
                             </div>
                             <div class="comparison-item">
                                 <span class="comparison-label">Experimental</span>
-                                <span class="comparison-value">${formatValue(param.experimental)} ${param.units || ''}</span>
+                                <span class="comparison-value">${formatValue(param.experimental)} ${formattedUnits}</span>
                             </div>
                         </div>
                         <div class="deviation-indicator ${deviationClass}">
@@ -1977,11 +2025,11 @@
                         <div class="comparison-values">
                             <div class="comparison-item">
                                 <span class="comparison-label">Predicted</span>
-                                <span class="comparison-value">${formatValue(param.predicted)} ${param.units || ''}</span>
+                                <span class="comparison-value">${formatValue(param.predicted)} ${formattedUnits}</span>
                             </div>
                             <div class="comparison-item">
                                 <span class="comparison-label">Experimental</span>
-                                <span class="comparison-value">${formatValue(param.experimental)} ${param.units || ''}</span>
+                                <span class="comparison-value">${formatValue(param.experimental)} ${formattedUnits}</span>
                             </div>
                         </div>
                         <div class="deviation-indicator ${deviationClass}">
@@ -2316,6 +2364,27 @@
             });
         }
 
+        function parseNumericValue(text) {
+            // Handle scientific notation like "1.234 × 10^16" or "1.234e16"
+            const scientificMatch = text.match(/([-+]?\d+\.?\d*)\s*[×x]\s*10\s*(?:<sup>)?([-+]?\d+)(?:<\/sup>)?/i);
+            if (scientificMatch) {
+                const mantissa = parseFloat(scientificMatch[1]);
+                const exponent = parseInt(scientificMatch[2]);
+                return mantissa * Math.pow(10, exponent);
+            }
+
+            // Handle regular exponential notation
+            const expMatch = text.match(/([-+]?\d+\.?\d*)\s*e\s*([-+]?\d+)/i);
+            if (expMatch) {
+                return parseFloat(text);
+            }
+
+            // Handle regular numbers with commas
+            const cleanText = text.replace(/,/g, '');
+            const num = parseFloat(cleanText);
+            return isNaN(num) ? 0 : num;
+        }
+
         function sortTable() {
             const tbody = document.getElementById('oom-table-body');
             const rows = Array.from(tbody.querySelectorAll('tr'));
@@ -2333,24 +2402,30 @@
                         valB = b.dataset.category.toLowerCase();
                         break;
                     case 'status':
-                        valA = a.cells[2].textContent.toLowerCase();
-                        valB = b.cells[2].textContent.toLowerCase();
+                        valA = a.cells[2].textContent.trim().toLowerCase();
+                        valB = b.cells[2].textContent.trim().toLowerCase();
                         break;
                     case 'sigma':
-                        valA = parseFloat(a.cells[3].textContent) || -1;
-                        valB = parseFloat(b.cells[3].textContent) || -1;
+                        valA = parseNumericValue(a.cells[3].textContent);
+                        if (valA === 0 && a.cells[3].textContent.includes('—')) valA = -1;
+                        valB = parseNumericValue(b.cells[3].textContent);
+                        if (valB === 0 && b.cells[3].textContent.includes('—')) valB = -1;
                         break;
                     case 'computed':
-                        valA = parseFloat(a.cells[4].textContent) || 0;
-                        valB = parseFloat(b.cells[4].textContent) || 0;
+                        valA = parseNumericValue(a.cells[4].textContent);
+                        if (a.cells[4].textContent.includes('—')) valA = -Infinity;
+                        valB = parseNumericValue(b.cells[4].textContent);
+                        if (b.cells[4].textContent.includes('—')) valB = -Infinity;
                         break;
                     case 'experimental':
-                        valA = parseFloat(a.cells[5].textContent) || 0;
-                        valB = parseFloat(b.cells[5].textContent) || 0;
+                        valA = parseNumericValue(a.cells[5].textContent);
+                        if (a.cells[5].textContent.includes('—')) valA = -Infinity;
+                        valB = parseNumericValue(b.cells[5].textContent);
+                        if (b.cells[5].textContent.includes('—')) valB = -Infinity;
                         break;
                     default:
-                        valA = a.cells[6].textContent;
-                        valB = b.cells[6].textContent;
+                        valA = a.cells[6] ? a.cells[6].textContent.trim() : '';
+                        valB = b.cells[6] ? b.cells[6].textContent.trim() : '';
                 }
 
                 if (typeof valA === 'string') {

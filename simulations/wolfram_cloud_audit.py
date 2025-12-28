@@ -83,7 +83,7 @@ class WolframCloudAuditor:
             "category": "GEOMETRIC",
             "wl_code": "N[24/2 + 1/Pi, 10]",
             "expected": "12.31830989",
-            "goal": "Verify k_gimel = b₃/2 + 1/π"
+            "goal": "Verify k_gimel = b3/2 + 1/pi"
         },
         {
             "id": "c_kaf_derivation",
@@ -91,7 +91,7 @@ class WolframCloudAuditor:
             "category": "GEOMETRIC",
             "wl_code": "Simplify[24 * (24 - 7) / (24 - 9)]",
             "expected": "136/5 = 27.2",
-            "goal": "Verify C_kaf = b₃(b₃-7)/(b₃-9)"
+            "goal": "Verify C_kaf = b3*(b3-7)/(b3-9)"
         },
         {
             "id": "chi_eff_derivation",
@@ -99,7 +99,7 @@ class WolframCloudAuditor:
             "category": "GEOMETRIC",
             "wl_code": "6 * 24",
             "expected": "144",
-            "goal": "Verify χ_eff = 6 × b₃"
+            "goal": "Verify chi_eff = 6 * b3"
         },
 
         # === EULER-LAGRANGE DERIVATIONS ===
@@ -124,7 +124,7 @@ class WolframCloudAuditor:
                 (* δS/δg^μν = R_μν - (1/2)g_μν R = 8πG T_μν *)
                 Solve[R - (1/2) * g * R == 8 * Pi * G * T, {R}]
             """,
-            "expected": "R = 8πG T (trace)",
+            "expected": "R = 8*pi*G*T (trace)",
             "goal": "Verify Einstein equations from action variation"
         },
 
@@ -144,7 +144,7 @@ class WolframCloudAuditor:
         },
         {
             "id": "hubble_evolution",
-            "label": "H₀ from Dynamical DE",
+            "label": "H0 from Dynamical DE",
             "category": "COSMOLOGY",
             "wl_code": """
                 H0early = 67.4;
@@ -158,31 +158,31 @@ class WolframCloudAuditor:
         # === NEUTRINO SECTOR (NuFIT 6.0) ===
         {
             "id": "delta_cp_io",
-            "label": "Inverted Ordering δ_CP",
+            "label": "Inverted Ordering delta_CP",
             "category": "NEUTRINO",
             "wl_code": """
-                (* G₂ complex structure gives phase *)
+                (* G2 complex structure gives phase *)
                 z = 7.102 + 1.054 * I;
                 N[Arg[z] * (180/Pi) + 180, 5]
             """,
-            "expected": "268.4° (matches NuFIT 6.0 IO)",
-            "goal": "Verify δ_CP prediction for Inverted Ordering"
+            "expected": "268.4 deg (matches NuFIT 6.0 IO)",
+            "goal": "Verify delta_CP prediction for Inverted Ordering"
         },
         {
             "id": "theta_12_tribimaximal",
-            "label": "Solar Angle θ₁₂",
+            "label": "Solar Angle theta_12",
             "category": "NEUTRINO",
             "wl_code": """
                 N[ArcSin[Sqrt[1/3]] * (180/Pi), 5]
             """,
-            "expected": "35.26° (tribimaximal base)",
-            "goal": "Verify tribimaximal contribution to θ₁₂"
+            "expected": "35.26 deg (tribimaximal base)",
+            "goal": "Verify tribimaximal contribution to theta_12"
         },
 
         # === PROTON DECAY ===
         {
             "id": "proton_lifetime",
-            "label": "Proton Lifetime τ_p",
+            "label": "Proton Lifetime tau_p",
             "category": "FERMION",
             "wl_code": """
                 MGUT = 2.1 * 10^16; (* GeV *)
@@ -195,8 +195,8 @@ class WolframCloudAuditor:
                 tauYears = tauSec / (3.154 * 10^7);
                 N[tauYears, 3]
             """,
-            "expected": "~10³⁵ years",
-            "goal": "Verify τ_p > Super-K bound (1.67×10³⁴ yr)"
+            "expected": "~10^35 years",
+            "goal": "Verify tau_p > Super-K bound (1.67e34 yr)"
         },
 
         # === QUANTUM BIOLOGY ===
@@ -205,7 +205,7 @@ class WolframCloudAuditor:
             "label": "Orch-OR Collapse Time",
             "category": "QUANTUM",
             "wl_code": """
-                hbar = 1.055 * 10^(-34); (* J·s *)
+                hbar = 1.055 * 10^(-34); (* J*s *)
                 EG = 10^(-32); (* J - gravitational self-energy *)
                 tau = hbar / EG;
                 N[tau * 1000, 3] (* milliseconds *)
@@ -214,30 +214,30 @@ class WolframCloudAuditor:
             "goal": "Verify Penrose-Hameroff gravitational collapse"
         },
 
-        # === G₂ COMPACTIFICATION ===
+        # === G2 COMPACTIFICATION ===
         {
             "id": "g2_holonomy_group",
-            "label": "G₂ Maximal Subgroup",
+            "label": "G2 Maximal Subgroup",
             "category": "MASTER_ACTION",
             "wl_code": """
-                (* G₂ contains SU(3) as maximal subgroup *)
-                (* Branching: 7 → 1 + 3 + 3̄ under SU(3) *)
+                (* G2 contains SU(3) as maximal subgroup *)
+                (* Branching: 7 -> 1 + 3 + 3bar under SU(3) *)
                 7 == 1 + 3 + 3
             """,
             "expected": "True",
-            "goal": "Verify G₂ → SU(3) branching for color"
+            "goal": "Verify G2 -> SU(3) branching for color"
         },
         {
             "id": "betti_three",
             "label": "Third Betti Number",
             "category": "GEOMETRIC",
             "wl_code": """
-                (* For TCS G₂ with K3 × S³/Γ structure *)
-                (* b₃ = b₂(K3) × b₁(S³/Γ) + ... = 22 + 2 = 24 *)
+                (* For TCS G2 with K3 x S3/Gamma structure *)
+                (* b3 = b2(K3) x b1(S3/Gamma) + ... = 22 + 2 = 24 *)
                 22 + 2
             """,
             "expected": "24",
-            "goal": "Verify b₃ = 24 for TCS construction"
+            "goal": "Verify b3 = 24 for TCS construction"
         }
     ]
 
@@ -285,7 +285,7 @@ class WolframCloudAuditor:
         Returns:
             ProofCertificate with result
         """
-        print(f"\n🔬 Executing: {proof['label']}")
+        print(f"\n[PROOF] Executing: {proof['label']}")
         print(f"   Goal: {proof['goal']}")
 
         timestamp = datetime.now().isoformat()
@@ -299,14 +299,14 @@ class WolframCloudAuditor:
                 code = proof['wl_code'].strip()
                 result = str(session.evaluate(wlexpr(code)))
                 verified = True
-                print(f"   ✓ Result: {result[:80]}...")
+                print(f"   [OK] Result: {result[:80]}...")
             except Exception as e:
                 result = f"Error: {str(e)}"
-                print(f"   ✗ Error: {e}")
+                print(f"   [ERROR] {e}")
         else:
             # Mock mode - use expected value
             result = f"[Mock] {proof['expected']}"
-            print(f"   → Mock result: {proof['expected']}")
+            print(f"   [MOCK] Result: {proof['expected']}")
 
         cert = ProofCertificate(
             proof_id=proof['id'],
@@ -380,7 +380,7 @@ class WolframCloudAuditor:
         }
         with open(filepath, 'w') as f:
             json.dump(data, f, indent=2)
-        print(f"\n✅ Manifest saved to: {filepath}")
+        print(f"\n[SAVED] Manifest saved to: {filepath}")
 
     def generate_web_data(self) -> Dict:
         """
