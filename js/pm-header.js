@@ -14,6 +14,15 @@
 /**
  * Navigation links - single source of truth
  * All pages are now in the /Pages/ folder
+ *
+ * To add a new navigation item, simply add an object to this array:
+ * { href: 'new-page.html', label: 'New Page', id: 'new-page' }
+ *
+ * Properties:
+ * - href: The URL (relative to /Pages/ folder, or absolute with isRoot)
+ * - label: Display text for the link
+ * - id: Unique identifier for highlighting active page
+ * - isRoot: (optional) If true, the link points to root directory
  */
 const NAV_LINKS = [
   { href: '../index.html', label: 'Home', id: 'home', isRoot: true },
@@ -26,6 +35,31 @@ const NAV_LINKS = [
   { href: 'paper.html', label: 'Paper', id: 'paper' },
   { href: 'simulations.html', label: 'Simulations', id: 'simulations' }
 ];
+
+/**
+ * Validate a navigation link object
+ * @param {Object} link - Navigation link object to validate
+ * @returns {boolean} True if valid, false otherwise
+ */
+function validateNavLink(link) {
+  if (!link || typeof link !== 'object') {
+    console.warn('[PM Header] Invalid nav link: not an object', link);
+    return false;
+  }
+  if (!link.href || typeof link.href !== 'string') {
+    console.warn('[PM Header] Invalid nav link: missing or invalid href', link);
+    return false;
+  }
+  if (!link.label || typeof link.label !== 'string') {
+    console.warn('[PM Header] Invalid nav link: missing or invalid label', link);
+    return false;
+  }
+  if (!link.id || typeof link.id !== 'string') {
+    console.warn('[PM Header] Invalid nav link: missing or invalid id', link);
+    return false;
+  }
+  return true;
+}
 
 /**
  * Get the base path for resources (CSS, images) based on current page location
@@ -69,7 +103,7 @@ function createHeaderHTML(activePageId = '') {
   const path = window.location.pathname;
   const isInPages = path.includes('/Pages/');
 
-  const navItems = NAV_LINKS.map(link => {
+  const navItems = NAV_LINKS.filter(validateNavLink).map(link => {
     const isActive = link.id === activePageId;
     const activeClass = isActive ? ' class="active"' : '';
     let href;
@@ -87,11 +121,12 @@ function createHeaderHTML(activePageId = '') {
   const homeHref = isInPages ? '../index.html' : 'index.html';
 
   return `
+    <a href="#main-content" class="skip-to-content">Skip to main content</a>
     <header class="pm-header">
       <div class="header-content">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
-        <nav class="main-nav">
-          <ul>
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <ul role="list">
             ${navItems}
             <li class="user-controls-nav">
               <div class="user-controls" style="display: none;">
@@ -106,7 +141,7 @@ function createHeaderHTML(activePageId = '') {
             </li>
           </ul>
         </nav>
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
+        <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
           <span></span>
           <span></span>
           <span></span>
@@ -217,9 +252,38 @@ function setupMobileMenu() {
 
   if (menuBtn && nav) {
     menuBtn.addEventListener('click', () => {
-      nav.classList.toggle('mobile-open');
+      const isOpen = nav.classList.toggle('mobile-open');
       menuBtn.classList.toggle('active');
+
+      // Update ARIA attributes for accessibility
+      menuBtn.setAttribute('aria-expanded', isOpen);
+      nav.setAttribute('aria-hidden', !isOpen);
     });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !nav.contains(e.target)) {
+        nav.classList.remove('mobile-open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+      }
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && nav.classList.contains('mobile-open')) {
+        nav.classList.remove('mobile-open');
+        menuBtn.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        nav.setAttribute('aria-hidden', 'true');
+        menuBtn.focus(); // Return focus to button
+      }
+    });
+
+    // Initialize ARIA attributes
+    menuBtn.setAttribute('aria-expanded', 'false');
+    nav.setAttribute('aria-hidden', 'true');
   }
 }
 

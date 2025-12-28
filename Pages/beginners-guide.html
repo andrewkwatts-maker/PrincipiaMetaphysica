@@ -599,12 +599,178 @@
             transform: translateY(-2px);
         }
 
+        /* Topic Navigation Styles */
+        .topic-navigation {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .topic-navigation h3 {
+            color: var(--accent-primary);
+            margin: 0 0 1rem 0;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .topic-nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            margin: 0.5rem 0;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .topic-nav-item:hover {
+            background: rgba(139, 127, 255, 0.15);
+            border-color: var(--accent-primary);
+            transform: translateX(5px);
+        }
+
+        .topic-nav-item.active {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.15));
+            border-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .topic-icon {
+            font-size: 1.5rem;
+        }
+
+        .topic-nav-title {
+            flex: 1;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Navigation Buttons */
+        .topic-nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-primary);
+        }
+
+        .nav-btn {
+            flex: 1;
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 127, 255, 0.4);
+        }
+
+        .nav-btn.prev {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.8), rgba(255, 126, 182, 0.6));
+        }
+
+        /* Key Concepts Grid */
+        .key-concepts {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .concept-item {
+            background: rgba(139, 127, 255, 0.08);
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .concept-item:hover {
+            background: rgba(139, 127, 255, 0.15);
+            border-color: var(--accent-primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(139, 127, 255, 0.2);
+        }
+
+        .concept-item h4 {
+            color: var(--accent-primary);
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .concept-item p {
+            margin: 0;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        /* Key Takeaway Box */
+        .key-takeaway-box {
+            background: linear-gradient(135deg, rgba(74, 222, 128, 0.1), rgba(81, 207, 102, 0.05));
+            border-left: 4px solid #4ade80;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .key-takeaway-box h4 {
+            color: #2d8659;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .key-takeaway-box p {
+            margin: 0;
+            line-height: 1.8;
+        }
+
+        /* Prediction Box */
+        .prediction-box {
+            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1), rgba(96, 165, 250, 0.05));
+            border-left: 4px solid #60a5fa;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .prediction-box h4 {
+            color: #2563eb;
+            margin: 0 0 0.75rem 0;
+            font-size: 1.1rem;
+        }
+
+        .prediction-box p {
+            margin: 0;
+            line-height: 1.8;
+        }
+
         @media (max-width: 768px) {
             .step-flow {
                 flex-direction: column;
             }
             .step-arrow {
                 transform: rotate(90deg);
+            }
+            .key-concepts {
+                grid-template-columns: 1fr;
+            }
+            .topic-nav-buttons {
+                flex-direction: column;
             }
         }
     </style>
@@ -2503,6 +2669,194 @@
             const content = header.nextElementSibling;
             content.classList.toggle('active');
         }
+
+        /**
+         * Beginner's Guide Dynamic Topic Loader
+         * Loads topics from AutoGenerated/beginner-guide.json
+         * Applies SOLID principles: Single Responsibility, Open/Closed
+         */
+        class BeginnerGuideLoader {
+            constructor() {
+                this.topics = [];
+                this.currentTopicIndex = 0;
+            }
+
+            async loadTopics() {
+                const pathPrefixes = [
+                    '/AutoGenerated/',
+                    'AutoGenerated/',
+                    './AutoGenerated/',
+                    '../AutoGenerated/'
+                ];
+
+                for (const prefix of pathPrefixes) {
+                    const path = prefix + 'beginner-guide.json';
+                    try {
+                        const response = await fetch(path);
+                        if (response.ok) {
+                            const data = await response.json();
+                            this.topics = data.topics || [];
+                            console.log(`✓ Loaded ${this.topics.length} beginner topics from ${path}`);
+                            return true;
+                        }
+                    } catch (e) {
+                        console.debug(`Failed to load from ${path}: ${e.message}`);
+                        continue;
+                    }
+                }
+
+                console.warn('Could not load beginner-guide.json, using static content');
+                return false;
+            }
+
+            renderTopicNavigation() {
+                if (this.topics.length === 0) return '';
+
+                const navItems = this.topics.map((topic, index) => {
+                    const icon = topic.icon || '📚';
+                    const activeClass = index === this.currentTopicIndex ? 'active' : '';
+                    return `
+                        <div class="topic-nav-item ${activeClass}" onclick="beginnerGuide.navigateToTopic(${index})">
+                            <span class="topic-icon">${icon}</span>
+                            <span class="topic-nav-title">${topic.title}</span>
+                        </div>
+                    `;
+                }).join('');
+
+                return `
+                    <div class="topic-navigation">
+                        <h3>Topics</h3>
+                        ${navItems}
+                    </div>
+                `;
+            }
+
+            renderTopic(index) {
+                if (index < 0 || index >= this.topics.length) {
+                    return '<div class="error">Topic not found</div>';
+                }
+
+                const topic = this.topics[index];
+                this.currentTopicIndex = index;
+
+                let html = `
+                    <div class="concept-card dynamic-topic" data-topic-index="${index}">
+                        <h2>
+                            ${topic.icon ? `<span class="icon">${topic.icon}</span>` : ''}
+                            ${topic.title}
+                        </h2>
+                `;
+
+                if (topic.simpleExplanation) {
+                    html += `<p class="simple-explanation">${topic.simpleExplanation}</p>`;
+                }
+
+                if (topic.analogy) {
+                    html += `
+                        <div class="analogy-box">
+                            <h4>💡 Analogy:</h4>
+                            <p>${topic.analogy}</p>
+                        </div>
+                    `;
+                }
+
+                if (topic.keyTakeaway) {
+                    html += `
+                        <div class="key-takeaway-box">
+                            <h4>🎯 Key Takeaway:</h4>
+                            <p>${topic.keyTakeaway}</p>
+                        </div>
+                    `;
+                }
+
+                if (topic.technicalDetail) {
+                    html += `
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>🔬 Technical Details (Click to Expand)</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p>${topic.technicalDetail}</p>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                if (topic.prediction) {
+                    html += `
+                        <div class="prediction-box">
+                            <h4>🎯 Prediction:</h4>
+                            <p>${topic.prediction}</p>
+                        </div>
+                    `;
+                }
+
+                if (topic.key_concepts && topic.key_concepts.length > 0) {
+                    html += '<div class="key-concepts">';
+                    topic.key_concepts.forEach(concept => {
+                        html += `
+                            <div class="concept-item">
+                                <h4>${concept.name}</h4>
+                                <p>${concept.explanation}</p>
+                            </div>
+                        `;
+                    });
+                    html += '</div>';
+                }
+
+                // Navigation buttons
+                html += `
+                    <div class="topic-nav-buttons">
+                        ${index > 0 ? `<button class="nav-btn prev" onclick="beginnerGuide.navigateToTopic(${index - 1})">← Previous</button>` : ''}
+                        ${index < this.topics.length - 1 ? `<button class="nav-btn next" onclick="beginnerGuide.navigateToTopic(${index + 1})">Next →</button>` : ''}
+                    </div>
+                `;
+
+                html += '</div>';
+                return html;
+            }
+
+            navigateToTopic(index) {
+                const container = document.getElementById('dynamic-topics-container');
+                if (container) {
+                    container.innerHTML = this.renderTopic(index);
+                    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+
+                // Update navigation
+                const nav = document.getElementById('topic-navigation-sidebar');
+                if (nav) {
+                    nav.innerHTML = this.renderTopicNavigation();
+                }
+            }
+
+            async init() {
+                const loaded = await this.loadTopics();
+                if (!loaded) return;
+
+                // Check if there's a container for dynamic topics
+                const container = document.getElementById('dynamic-topics-container');
+                if (container && this.topics.length > 0) {
+                    // Render first topic
+                    container.innerHTML = this.renderTopic(0);
+
+                    // Add navigation sidebar
+                    const nav = document.getElementById('topic-navigation-sidebar');
+                    if (nav) {
+                        nav.innerHTML = this.renderTopicNavigation();
+                    }
+                }
+            }
+        }
+
+        // Global instance
+        const beginnerGuide = new BeginnerGuideLoader();
+
+        // Initialize on DOM ready
+        document.addEventListener('DOMContentLoaded', () => {
+            beginnerGuide.init();
+        });
     </script>
 
     <!-- Dynamic Validation Statistics -->

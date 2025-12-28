@@ -662,6 +662,182 @@ pm-value {
 }
 
 /* ========================================================================== */
+/* ACADEMIC BLOCK TYPES */
+/* ========================================================================== */
+
+/* Academic Notes - styled like callouts but with different emphasis */
+.academic-note {
+    background: rgba(139, 127, 255, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.note-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.note-content h4 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+/* Highlight Boxes - for key information */
+.highlight-box {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border: 1px solid #f9a825;
+    border-left: 4px solid #f57c00;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.highlight-title {
+    font-weight: 600;
+    color: #e65100;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.highlight-content {
+    font-size: 0.95rem;
+}
+
+/* Definition Blocks - for mathematical definitions */
+.definition-block {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-left: 4px solid #6c757d;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+.definition-term {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.definition-content {
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Theorem Blocks - for formal mathematical statements */
+.theorem-block {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 1px solid #81c784;
+    border-left: 4px solid #2e7d32;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+.theorem-header {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.theorem-label {
+    font-weight: 700;
+    color: #1b5e20;
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+.theorem-title {
+    font-weight: 600;
+    color: #2e7d32;
+    margin-left: 0.5rem;
+}
+
+.theorem-content {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+}
+
+/* Proof Blocks - for mathematical proofs */
+.proof-block {
+    background: #fafafa;
+    border-left: 3px solid #9e9e9e;
+    padding: 1rem 1.5rem 0.5rem;
+    margin: 1rem 0 1.5rem 1rem;
+    border-radius: 4px;
+}
+
+.proof-header {
+    font-weight: 600;
+    font-style: italic;
+    color: #616161;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.proof-content {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.proof-end {
+    text-align: right;
+    font-size: 1.1rem;
+    color: #757575;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Remark Blocks - for observations and side notes */
+.remark-block {
+    background: rgba(96, 165, 250, 0.03);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-left: 3px solid #60a5fa;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.remark-header {
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-variant: small-caps;
+}
+
+.remark-content {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Example Blocks - for worked examples */
+.example-block {
+    background: rgba(147, 51, 234, 0.03);
+    border: 1px solid rgba(147, 51, 234, 0.15);
+    border-left: 4px solid #9333ea;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+.example-header {
+    font-weight: 600;
+    color: #6b21a8;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+.example-content {
+    font-size: 0.95rem;
+}
+
+/* ========================================================================== */
 /* ERROR STATES */
 /* ========================================================================== */
 

@@ -39,6 +39,7 @@
     <link rel="stylesheet" href="../css/pm-common.css">
     <link rel="stylesheet" href="../css/pm-glass-theme.css">
     <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/pm-scientific-typography.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
@@ -423,6 +424,18 @@
         .pm-paper-container .equation-ref:hover {
             color: var(--accent);
             text-decoration: underline;
+        }
+
+        /* Hover effect on equations - show tooltip and highlight */
+        .pm-paper-container .equation-wrapper.academic-equation {
+            cursor: help;
+            transition: background 0.2s ease, transform 0.2s ease;
+            border-radius: 4px;
+        }
+
+        .pm-paper-container .equation-wrapper.academic-equation:hover {
+            background: rgba(102, 126, 234, 0.04);
+            transform: translateX(2px);
         }
 
         /* Highlight effect when navigating to an equation */

@@ -48,6 +48,7 @@
 
     <!-- Common Shared Styles -->
     <link rel="stylesheet" href="../css/pm-common.css">
+    <link rel="stylesheet" href="../css/pm-scientific-typography.css">
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
 
@@ -1007,6 +1008,89 @@
             background: rgba(139, 127, 255, 0.1);
             border-left: 3px solid var(--accent);
             margin-bottom: 1.5rem;
+            border-radius: 4px;
+        }
+
+        /* Collapsible subsections */
+        .subsection-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: rgba(139, 127, 255, 0.08);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 1rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+
+        .subsection-header:hover {
+            background: rgba(139, 127, 255, 0.15);
+            border-color: var(--accent-primary);
+        }
+
+        .subsection-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .subsection-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            border-radius: 6px;
+            color: white;
+            font-weight: 700;
+            font-size: 0.8rem;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+
+        .subsection-toggle {
+            font-size: 1.2rem;
+            color: var(--accent-primary);
+            transition: transform 0.3s ease;
+        }
+
+        .subsection-header.open .subsection-toggle {
+            transform: rotate(180deg);
+        }
+
+        .subsection-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease, padding 0.3s ease;
+            padding: 0 1rem;
+        }
+
+        .subsection-header.open + .subsection-content {
+            max-height: 5000px;
+            padding: 1rem;
+        }
+
+        /* Visual hierarchy for content blocks */
+        .content-block {
+            margin: 1.5rem 0;
+            padding-left: 1rem;
+            border-left: 2px solid transparent;
+            transition: border-color 0.3s ease;
+        }
+
+        .content-block:hover {
+            border-left-color: rgba(139, 127, 255, 0.3);
+        }
+
+        .content-block.highlighted {
+            background: rgba(139, 127, 255, 0.05);
+            border-left-color: var(--accent-primary);
+            padding: 1rem;
             border-radius: 4px;
         }
 

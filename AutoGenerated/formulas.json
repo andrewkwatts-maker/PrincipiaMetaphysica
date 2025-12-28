@@ -5,7 +5,7 @@
     "g2-holonomy": {
       "id": "g2-holonomy",
       "label": "(2.1)",
-      "latex": "\\text{Hol}(g) \\subseteq G_2 \\iff \\exists \\eta: \\nabla \\eta = 0",
+      "latex": "\\text{Hol}(\\,\\mathrm{g}) \\subseteq G_2 \\iff \\exists \\eta: \\nabla \\eta = 0",
       "plain_text": "Hol(g) ⊆ G2 ⟺ ∃η: ∇η = 0",
       "category": "THEORY",
       "description": "G2 holonomy equivalent to parallel spinor existence",
@@ -47,7 +47,7 @@
     "euler-characteristic": {
       "id": "euler-characteristic",
       "label": "(2.2)",
-      "latex": "\\chi_{\\text{eff}} = 2(h^{1,1} - h^{2,1} + h^{3,1})",
+      "latex": "\\chi_{\\mathrm{eff}} = 2(h^{1,1} - h^{2,1} + h^{3,1})",
       "plain_text": "χ_eff = 2(h^{1,1} - h^{2,1} + h^{3,1})",
       "category": "THEORY",
       "description": "Effective Euler characteristic from Hodge numbers",
@@ -133,7 +133,7 @@
     "three-generations": {
       "id": "three-generations",
       "label": "(2.3)",
-      "latex": "n_{\\text{gen}} = \\frac{\\chi_{\\text{eff}}}{48}",
+      "latex": "n_{\\mathrm{gen}} = \\frac{\\chi_{\\mathrm{eff}}}{48}",
       "plain_text": "n_gen = χ_eff / 48",
       "category": "THEORY",
       "description": "Number of fermion generations from index theorem",
@@ -168,7 +168,7 @@
     "cycle-matching": {
       "id": "cycle-matching",
       "label": "(2.4)",
-      "latex": "K_{\\text{matching}} = h^{1,1} = b_2",
+      "latex": "\\,\\mathrm{K}_{\\text{matching}} = h^{1,1} = b_2",
       "plain_text": "K_matching = h^{1,1} = b₂",
       "category": "THEORY",
       "description": "K3 matching fibres in TCS gluing",
@@ -342,7 +342,7 @@
     "gauge-coupling-unification": {
       "id": "gauge-coupling-unification",
       "label": "(3.6)",
-      "latex": "M_{GUT} = (6.3 \\pm 0.3) \\times 10^{15}\\,\\text{GeV}, \\quad \\frac{1}{\\alpha_{GUT}} = 42.7 \\pm 2.0",
+      "latex": "M_{GUT} = (6.3 \\pm 0.3) \\times 10^{15}\\,\\,\\mathrm{GeV}, \\quad \\frac{1}{\\alpha_{GUT}} = 42.7 \\pm 2.0",
       "plain_text": "M_GUT = 6.3e15 GeV, 1/alpha_GUT = 42.7 +/- 2.0",
       "category": "PREDICTIONS",
       "description": "Predicted GUT scale and unified coupling from gauge unification",
@@ -416,7 +416,7 @@
     "generation-number": {
       "id": "generation-number",
       "label": "(4.2.1)",
-      "latex": "n_{\\text{gen}} = \\frac{N_{\\text{flux}}}{\\text{spinor DOF}} = \\frac{\\chi_{\\text{eff}}/6}{8} = \\frac{144}{48} = 3",
+      "latex": "n_{\\mathrm{gen}} = \\frac{N_{\\mathrm{flux}}}{\\text{spinor DOF}} = \\frac{\\chi_{\\mathrm{eff}}/6}{8} = \\frac{144}{48} = 3",
       "plain_text": "n_gen = N_flux / spinor_DOF = (chi_eff/6) / 8 = 144 / 48 = 3",
       "category": "DERIVED",
       "description": "Number of fermion generations from spinor saturation on G2 manifold",
@@ -541,7 +541,7 @@
     "pneuma-chiral-filter": {
       "id": "pneuma-chiral-filter",
       "label": "(4.2.3)",
-      "latex": "D_{\\text{eff}} = \\gamma^\\mu \\left(\\partial_\\mu + igA_\\mu + \\gamma^5 T_\\mu\\right)",
+      "latex": "D_{\\mathrm{eff}} = \\gamma^\\mu \\left(\\partial_\\mu + igA_\\mu + \\gamma^5 T_\\mu\\right)",
       "plain_text": "D_eff = gamma^mu (d_mu + igA_mu + gamma^5 T_mu)",
       "category": "THEORY",
       "description": "Modified Dirac operator with Pneuma-induced axial torsion coupling",
@@ -787,7 +787,7 @@
     "spinor-saturation-generations": {
       "id": "spinor-saturation-generations",
       "label": "(4.1.6)",
-      "latex": "n_{\\text{gen}} = \\frac{b_3}{\\text{spinor DOF}} = \\frac{24}{8} = 3",
+      "latex": "n_{\\mathrm{gen}} = \\frac{b_3}{\\text{spinor DOF}} = \\frac{24}{8} = 3",
       "plain_text": "n_gen = b_3 / spinor_DOF = 24 / 8 = 3",
       "category": "PREDICTIONS",
       "description": "Number of fermion generations from spinor saturation on G2 manifold. The third Betti number b_3 = 24 gives flux units, each generation requires 8 spinor DOF (Spin(7) representation), yielding exactly 3 generations. This is parameter-free and topological.",
@@ -1053,7 +1053,7 @@
     "proton-lifetime": {
       "id": "proton-lifetime",
       "label": "(4.6.3)",
-      "latex": "\\tau_p = C \\left(\\frac{M_{\\text{GUT}}}{10^{16}\\,\\text{GeV}}\\right)^4 \\left(\\frac{0.03}{\\alpha_{\\text{GUT}}}\\right)^2 \\times S",
+      "latex": "\\tau_p = C \\left(\\frac{M_{\\mathrm{GUT}}}{10^{16}\\,\\,\\mathrm{GeV}}\\right)^4 \\left(\\frac{0.03}{\\alpha_{\\mathrm{GUT}}}\\right)^2 \\times S",
       "plain_text": "tau_p = C * (M_GUT/10^16)^4 * (0.03/alpha_GUT)^2 * S",
       "category": "PREDICTIONS",
       "description": "Proton lifetime including TCS geometric suppression. Combines standard GUT decay rate with cycle separation selection rule to give testable prediction.",
@@ -1094,7 +1094,7 @@
     "higgs-mass": {
       "id": "higgs-mass",
       "label": "(4.4.1)",
-      "latex": "m_h^2 = 8\\pi^2 v^2 \\lambda_{\\text{eff}}",
+      "latex": "\\,\\mathrm{m}_h^2 = 8\\pi^2 v^2 \\lambda_{\\mathrm{eff}}",
       "plain_text": "m_h^2 = 8π^2 v^2 λ_eff",
       "category": "DERIVED",
       "description": "Higgs boson mass from effective quartic coupling",
@@ -1147,7 +1147,7 @@
     "higgs-quartic-coupling": {
       "id": "higgs-quartic-coupling",
       "label": "(4.4.2)",
-      "latex": "\\lambda_{\\text{eff}} = \\lambda_0 - \\frac{1}{8\\pi^2} \\text{Re}(T) y_t^2",
+      "latex": "\\lambda_{\\mathrm{eff}} = \\lambda_0 - \\frac{1}{8\\pi^2} \\text{Re}(T) y_t^2",
       "plain_text": "λ_eff = λ_0 - (1/8π^2) Re(T) y_t^2",
       "category": "THEORY",
       "description": "Effective Higgs quartic with moduli corrections",
@@ -1254,7 +1254,7 @@
     "doublet-triplet-splitting": {
       "id": "doublet-triplet-splitting",
       "label": "(4.4.4)",
-      "latex": "\\frac{M_{\\text{triplet}}}{M_{\\text{doublet}}} = \\frac{M_{\\text{GUT}}}{M_{\\text{EW}}} \\sim 10^{13}",
+      "latex": "\\frac{M_{\\mathrm{triplet}}}{M_{\\text{doublet}}} = \\frac{M_{\\mathrm{GUT}}}{M_{\\text{EW}}} \\sim 10^{13}",
       "plain_text": "M_triplet / M_doublet = M_GUT / M_EW ~ 10^13",
       "category": "DERIVED",
       "description": "Doublet-triplet mass splitting from topological filter",
@@ -1302,7 +1302,7 @@
     "metric-13D": {
       "id": "metric-13D",
       "label": "(5.1)",
-      "latex": "ds²_{13} = g_{μν}(x)dx^μdx^ν + g_{mn}(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
+      "latex": "ds²_{13} = \\,\\mathrm{g}_{μν}(x)dx^μdx^ν + \\,\\mathrm{g}_{mn}(x,y)dy^\\,\\mathrm{m} dy^n + 2A_μ^a(x)\\,\\mathrm{K}_a^\\,\\mathrm{m} dx^μ dy^\\,\\mathrm{m}",
       "plain_text": "ds²_13 = g_μν(x)dx^μdx^ν + g_mn(x,y)dy^m dy^n + 2A_μ^a(x)K_a^m dx^μ dy^m",
       "category": "THEORY",
       "description": "13-dimensional metric decomposition for Kaluza-Klein reduction",
@@ -1430,7 +1430,7 @@
     "breathing-mode": {
       "id": "breathing-mode",
       "label": "(5.4)",
-      "latex": "g_{mn}(x,y) = e^{2σ(x)} g_{mn}^{(0)}(y)",
+      "latex": "\\,\\mathrm{g}_{mn}(x,y) = e^{2σ(x)} \\,\\mathrm{g}_{mn}^{(0)}(y)",
       "plain_text": "g_mn(x,y) = exp(2σ(x)) g⁰_mn(y)",
       "category": "THEORY",
       "description": "Breathing mode controlling overall volume of K_Pneuma",
@@ -1747,7 +1747,7 @@
     "pmns-theta-13": {
       "id": "pmns-theta-13",
       "label": "(4.13)",
-      "latex": "\\sin\\theta_{13} = \\frac{\\sqrt{b_2 \\times n_{\\text{gen}}}}{b_3} \\left(1 + \\frac{S_{\\text{orient}}}{2\\chi_{\\text{eff}}}\\right)",
+      "latex": "\\sin\\theta_{13} = \\frac{\\sqrt{b_2 \\times n_{\\mathrm{gen}}}}{b_3} \\left(1 + \\frac{S_{\\mathrm{orient}}}{2\\chi_{\\mathrm{eff}}}\\right)",
       "plain_text": "sin(theta_13) = sqrt(b2 * n_gen) / b3 * (1 + S_orient/(2*chi_eff))",
       "category": "DERIVED",
       "description": "Reactor neutrino mixing angle from (1,3) cycle intersections",
@@ -1793,7 +1793,7 @@
     "pmns-delta-cp": {
       "id": "pmns-delta-cp",
       "label": "(4.14)",
-      "latex": "\\delta_{CP} = \\pi \\left(\\frac{n_{\\text{gen}} + b_2}{2n_{\\text{gen}}} + \\frac{n_{\\text{gen}}}{b_3}\\right)",
+      "latex": "\\delta_{CP} = \\pi \\left(\\frac{n_{\\mathrm{gen}} + b_2}{2n_{\\mathrm{gen}}} + \\frac{n_{\\mathrm{gen}}}{b_3}\\right)",
       "plain_text": "delta_CP = pi * ((n_gen + b2)/(2*n_gen) + n_gen/b3)",
       "category": "DERIVED",
       "description": "CP-violating phase from cycle intersection complex structure",
@@ -1834,7 +1834,7 @@
     "pmns-theta-12": {
       "id": "pmns-theta-12",
       "label": "(4.15)",
-      "latex": "\\sin\\theta_{12} = \\frac{1}{\\sqrt{3}} \\left(1 - \\frac{b_3 - b_2 n_{\\text{gen}}}{2\\chi_{\\text{eff}}}\\right)",
+      "latex": "\\sin\\theta_{12} = \\frac{1}{\\sqrt{3}} \\left(1 - \\frac{b_3 - b_2 n_{\\mathrm{gen}}}{2\\chi_{\\mathrm{eff}}}\\right)",
       "plain_text": "sin(theta_12) = 1/sqrt(3) * (1 - (b3 - b2*n_gen)/(2*chi_eff))",
       "category": "DERIVED",
       "description": "Solar neutrino mixing angle from tri-bimaximal base",
@@ -1872,7 +1872,7 @@
     "pmns-theta-23": {
       "id": "pmns-theta-23",
       "label": "(4.16)",
-      "latex": "\\theta_{23} = 45° + \\frac{(b_2 - n_{\\text{gen}}) n_{\\text{gen}}}{b_2}",
+      "latex": "\\theta_{23} = 45° + \\frac{(b_2 - n_{\\mathrm{gen}}) n_{\\mathrm{gen}}}{b_2}",
       "plain_text": "theta_23 = 45 + (b2 - n_gen) * n_gen / b2",
       "category": "DERIVED",
       "description": "Atmospheric neutrino mixing angle from octonionic maximal mixing",
@@ -1908,7 +1908,7 @@
     "neutrino-mass-spectrum": {
       "id": "neutrino-mass-spectrum",
       "label": "(4.17)",
-      "latex": "m_i^2 = \\lambda_i(\\mathbf{M}_\\nu), \\quad \\mathbf{M}_\\nu = \\mathbf{Y}_\\nu \\mathbf{Y}_\\nu^T",
+      "latex": "\\,\\mathrm{m}_i^2 = \\lambda_i(\\mathbf{M}_\\nu), \\quad \\mathbf{M}_\\nu = \\mathbf{Y}_\\nu \\mathbf{Y}_\\nu^T",
       "plain_text": "m_i^2 = eigenvalues(M_nu), M_nu = Y_nu * Y_nu^T",
       "category": "DERIVED",
       "description": "Neutrino mass eigenvalues from Yukawa texture",
@@ -2031,7 +2031,7 @@
     "sector-temperature-ratio": {
       "id": "sector-temperature-ratio",
       "label": "(5.16)",
-      "latex": "\\frac{T'}{T} = \\left(\\frac{g_*}{g'_*}\\right)^{1/3} \\left(\\frac{\\Gamma'}{\\Gamma}\\right)^{1/2} = 0.57",
+      "latex": "\\frac{T'}{T} = \\left(\\frac{\\,\\mathrm{g}_*}{\\,\\mathrm{g}'_*}\\right)^{1/3} \\left(\\frac{\\Gamma'}{\\Gamma}\\right)^{1/2} = 0.57",
       "plain_text": "T'/T = (g_*/g'_*)^(1/3) * (Gamma'/Gamma)^(1/2) = 0.57",
       "category": "DERIVED",
       "description": "Mirror sector temperature ratio from asymmetric reheating",
@@ -2123,7 +2123,7 @@
     "pneuma-lagrangian": {
       "id": "pneuma-lagrangian",
       "label": "(2.1)",
-      "latex": "\\mathcal{L}_{\\text{pneuma}} = \\frac{1}{2} \\partial_\\mu \\Psi_P \\partial^\\mu \\Psi_P - V(\\Psi_P) + \\mathcal{L}_{\\text{vielbein}}",
+      "latex": "\\mathcal{L}_{\\mathrm{pneuma}} = \\frac{1}{2} \\partial_\\mu \\Psi_P \\partial^\\mu \\Psi_P - V(\\Psi_P) + \\mathcal{L}_{\\mathrm{vielbein}}",
       "plain_text": "L_pneuma = (1/2) ∂_μ Ψ_P ∂^μ Ψ_P - V(Ψ_P) + L_vielbein",
       "category": "THEORY",
       "description": "Full Pneuma Lagrangian with kinetic, potential, and vielbein terms",
@@ -2190,7 +2190,7 @@
     "modular-hamiltonian": {
       "id": "modular-hamiltonian",
       "label": "(TT.1)",
-      "latex": "K = -\\log(\\rho) - \\log(Z)",
+      "latex": "\\,\\mathrm{K} = -\\log(\\rho) - \\log(Z)",
       "plain_text": "K = -log(rho) - log(Z)",
       "category": "THEORY",
       "description": "Modular Hamiltonian from thermal density matrix",
@@ -2253,7 +2253,7 @@
     "entropy-gradient": {
       "id": "entropy-gradient",
       "label": "(TT.3)",
-      "latex": "\\frac{dS_{\\text{Pneuma}}}{dt_{\\text{thermal}}} \\geq 0",
+      "latex": "\\frac{dS_{\\mathrm{Pneuma}}}{dt_{\\mathrm{thermal}}} \\geq 0",
       "plain_text": "dS_Pneuma/dt_thermal >= 0",
       "category": "THEORY",
       "description": "Entropy gradient defining the arrow of time",
@@ -2285,7 +2285,7 @@
     "alpha-t-derivation": {
       "id": "alpha-t-derivation",
       "label": "(TT.4)",
-      "latex": "\\alpha_T = \\frac{2\\pi}{b_3} \\cdot \\gamma_{\\text{correction}} = \\frac{2\\pi}{24} \\cdot 10.313 = 2.7",
+      "latex": "\\alpha_T = \\frac{2\\pi}{b_3} \\cdot \\gamma_{\\mathrm{correction}} = \\frac{2\\pi}{24} \\cdot 10.313 = 2.7",
       "plain_text": "alpha_T = (2*pi / b3) * gamma_correction = (2*pi / 24) * 10.313 = 2.7",
       "category": "DERIVED",
       "description": "Thermal time coupling derived from G2 topology",
@@ -2349,7 +2349,7 @@
     "associative-calibration": {
       "id": "associative-calibration",
       "label": "(A.2)",
-      "latex": "\\varphi \\in \\Omega^3(M), \\quad \\text{stabilizer}(\\varphi) = G_2",
+      "latex": "\\varphi \\in \\Omega^3(M), \\quad \\mathrm{stabilizer}(\\varphi) = G_2",
       "plain_text": "φ ∈ Ω³(M), stab(φ) = G2",
       "category": "FOUNDATIONAL",
       "description": "Associative calibration: the fundamental 3-form defining G2 structure. Calibrates associative 3-cycles (minimal volume submanifolds).",
@@ -2425,7 +2425,7 @@
     "clifford-multiplication": {
       "id": "clifford-multiplication",
       "label": "(A.5)",
-      "latex": "\\gamma(X)\\gamma(Y) + \\gamma(Y)\\gamma(X) = 2g(X,Y)",
+      "latex": "\\gamma(X)\\gamma(Y) + \\gamma(Y)\\gamma(X) = 2\\,\\mathrm{g}(X,Y)",
       "plain_text": "γ(X)γ(Y) + γ(Y)γ(X) = 2g(X,Y)",
       "category": "FOUNDATIONAL",
       "description": "Clifford algebra relation for spinors in 7D. Defines the action of tangent vectors on spinor space.",
@@ -2443,7 +2443,7 @@
     "ricci-flatness-g2": {
       "id": "ricci-flatness-g2",
       "label": "(A.6)",
-      "latex": "\\text{Ric}(g) = 0",
+      "latex": "\\text{Ric}(\\,\\mathrm{g}) = 0",
       "plain_text": "Ric(g) = 0",
       "category": "FOUNDATIONAL",
       "description": "Ricci-flatness of G2 manifolds. Automatic consequence of holonomy reduction, making G2 manifolds valid M-theory backgrounds.",
@@ -2508,7 +2508,7 @@
     "kk-threshold-correction": {
       "id": "kk-threshold-correction",
       "label": "(B.5)",
-      "latex": "\\Delta_i^{\\text{KK}}(\\mu) = \\frac{1}{2\\pi} \\sum_{n=1}^{N_{\\text{max}}} \\log\\left(1 + \\frac{m_n^2}{\\mu^2}\\right)",
+      "latex": "\\Delta_i^{\\mathrm{KK}}(\\mu) = \\frac{1}{2\\pi} \\sum_{n=1}^{N_{\\text{max}}} \\log\\left(1 + \\frac{\\,\\mathrm{m}_n^2}{\\mu^2}\\right)",
       "plain_text": "Δ_i^KK(μ) = (1/2π) Σ_n log(1 + m_n²/μ²)",
       "category": "DERIVED",
       "description": "Kaluza-Klein tower threshold correction to gauge coupling running. Accounts for infinite tower of KK modes from compactification.",
@@ -2586,7 +2586,7 @@
     "mass-running-equation": {
       "id": "mass-running-equation",
       "label": "(B.8)",
-      "latex": "m_{\\text{pole}} = \\bar{m}(\\bar{m}) \\left[ 1 + \\frac{4\\alpha_s(\\bar{m})}{3\\pi} + \\mathcal{O}(\\alpha_s^2) \\right]",
+      "latex": "\\,\\mathrm{m}_{\\mathrm{pole}} = \\bar{m}(\\bar{m}) \\left[ 1 + \\frac{4\\alpha_s(\\bar{m})}{3\\pi} + \\mathcal{O}(\\alpha_s^2) \\right]",
       "plain_text": "m_pole = m̄(m̄) [1 + 4α_s(m̄)/(3π) + O(α_s²)]",
       "category": "FOUNDATIONAL",
       "description": "Relation between pole mass and running MS-bar mass for quarks. Includes QCD corrections at one-loop order.",
@@ -2607,7 +2607,7 @@
     "g2-holonomy-derivation": {
       "id": "g2-holonomy-derivation",
       "label": "(C.1)",
-      "latex": "\\nabla \\eta = 0 \\quad \\Longrightarrow \\quad \\text{Hol}(g) \\subseteq G_2 \\quad \\Longrightarrow \\quad \\nabla\\varphi = 0",
+      "latex": "\\nabla \\eta = 0 \\quad \\Longrightarrow \\quad \\text{Hol}(\\,\\mathrm{g}) \\subseteq G_2 \\quad \\Longrightarrow \\quad \\nabla\\varphi = 0",
       "plain_text": "∇η = 0 ⟹ Hol(g) ⊆ G2 ⟹ ∇φ = 0",
       "category": "FOUNDATIONAL",
       "description": "Derivation of G2 holonomy from parallel spinor condition. Shows equivalence between spinor, holonomy, and 3-form formulations.",
@@ -2635,7 +2635,7 @@
     "unification-condition-derivation": {
       "id": "unification-condition-derivation",
       "label": "(C.2)",
-      "latex": "\\alpha_1^{-1}(M_{\\text{GUT}}) = \\alpha_2^{-1}(M_{\\text{GUT}}) = \\alpha_3^{-1}(M_{\\text{GUT}}) = \\alpha_{\\text{GUT}}^{-1} \\approx 23.5",
+      "latex": "\\alpha_1^{-1}(M_{\\mathrm{GUT}}) = \\alpha_2^{-1}(M_{\\mathrm{GUT}}) = \\alpha_3^{-1}(M_{\\mathrm{GUT}}) = \\alpha_{\\mathrm{GUT}}^{-1} \\approx 23.5",
       "plain_text": "α₁⁻¹(M_GUT) = α₂⁻¹(M_GUT) = α₃⁻¹(M_GUT) ≈ 23.5",
       "category": "DERIVED",
       "description": "Gauge coupling unification condition with 3-loop RG evolution and threshold corrections. Determines M_GUT and α_GUT.",
@@ -2666,7 +2666,7 @@
     "yukawa-hierarchy-derivation": {
       "id": "yukawa-hierarchy-derivation",
       "label": "(C.3)",
-      "latex": "y_i \\sim \\exp\\left(-\\frac{d_i^2}{2\\lambda^2}\\right) \\quad \\Rightarrow \\quad \\frac{m_i}{m_j} \\sim \\exp\\left(-\\frac{d_i^2 - d_j^2}{2\\lambda^2}\\right)",
+      "latex": "y_i \\sim \\exp\\left(-\\frac{d_i^2}{2\\lambda^2}\\right) \\quad \\Rightarrow \\quad \\frac{\\,\\mathrm{m}_i}{\\,\\mathrm{m}_j} \\sim \\exp\\left(-\\frac{d_i^2 - d_j^2}{2\\lambda^2}\\right)",
       "plain_text": "y_i ~ exp(-d_i²/(2λ²)) ⟹ m_i/m_j ~ exp(-(d_i²-d_j²)/(2λ²))",
       "category": "DERIVED",
       "description": "Derivation of fermion mass hierarchies from wavefunction overlap on separated associative 3-cycles.",
@@ -2709,7 +2709,7 @@
     "higgs-mass-derivation": {
       "id": "higgs-mass-derivation",
       "label": "(C.5)",
-      "latex": "m_h^2 = 2\\lambda v^2 \\approx \\frac{g^2 M_{\\text{KK}}^2}{4\\pi^2}",
+      "latex": "\\,\\mathrm{m}_h^2 = 2\\lambda v^2 \\approx \\frac{\\,\\mathrm{g}^2 M_{\\mathrm{KK}}^2}{4\\pi^2}",
       "plain_text": "m_h² = 2λv² ≈ g²M_KK²/(4π²)",
       "category": "DERIVED",
       "description": "Derivation of Higgs mass from G2 moduli stabilization and effective potential.",
@@ -2732,7 +2732,7 @@
     "proton-lifetime-derivation": {
       "id": "proton-lifetime-derivation",
       "label": "(C.6)",
-      "latex": "\\tau_p = \\frac{C M_{\\text{GUT}}^4}{m_p^5 \\alpha_{\\text{GUT}}^2} \\times \\exp\\left(\\frac{1}{K}\\right)",
+      "latex": "\\tau_p = \\frac{C M_{\\mathrm{GUT}}^4}{\\,\\mathrm{m}_p^5 \\alpha_{\\mathrm{GUT}}^2} \\times \\exp\\left(\\frac{1}{K}\\right)",
       "plain_text": "τ_p = C M_GUT⁴/(m_p⁵ α_GUT²) × exp(1/K)",
       "category": "PREDICTIONS",
       "description": "Derivation of proton lifetime including geometric suppression from TCS cycle separation.",
@@ -2755,7 +2755,7 @@
     "proton-decay-rate": {
       "id": "proton-decay-rate",
       "label": "(E.2)",
-      "latex": "\\Gamma_{p \\to \\pi^0 e^+} \\sim \\frac{\\alpha_{\\text{GUT}}^2}{M_{\\text{GUT}}^4} m_p^5 \\cdot |\\langle \\pi^0 e^+ | \\mathcal{O}_6 | p \\rangle|^2",
+      "latex": "\\Gamma_{p \\to \\pi^0 e^+} \\sim \\frac{\\alpha_{\\mathrm{GUT}}^2}{M_{\\mathrm{GUT}}^4} \\,\\mathrm{m}_p^5 \\cdot |\\langle \\pi^0 e^+ | \\mathcal{O}_6 | p \\rangle|^2",
       "plain_text": "Γ_p ∝ (α_GUT²/M_GUT⁴) m_p⁵ |⟨π⁰e⁺|O₆|p⟩|²",
       "category": "PREDICTION",
       "description": "Proton decay rate from dimension-6 effective operators. Includes GUT scale suppression and hadronic matrix elements.",
@@ -2791,7 +2791,7 @@
     "geometric-suppression-factor": {
       "id": "geometric-suppression-factor",
       "label": "(E.3)",
-      "latex": "S_{\\text{geom}} = \\exp\\left(-\\frac{\\Delta_{QL}}{\\ell_{\\text{string}}}\\right)",
+      "latex": "S_{\\text{geom}} = \\exp\\left(-\\frac{\\Delta_{QL}}{\\ell_{\\mathrm{string}}}\\right)",
       "plain_text": "S_geom = exp(-Δ_QL/ℓ_string)",
       "category": "FOUNDATIONAL",
       "description": "Geometric suppression from wavefunction overlap between quark and lepton cycles in G₂ manifold.",
@@ -2858,7 +2858,7 @@
     "flux-quantization": {
       "id": "flux-quantization",
       "label": "(G.1)",
-      "latex": "N_{\\text{flux}} = \\frac{\\chi_{\\text{eff}}}{6} = \\frac{144}{6} = 24",
+      "latex": "N_{\\mathrm{flux}} = \\frac{\\chi_{\\mathrm{eff}}}{6} = \\frac{144}{6} = 24",
       "plain_text": "N_flux = χ_eff/6 = 144/6 = 24",
       "category": "FOUNDATIONAL",
       "description": "G₄ flux quantization on G₂ manifolds. The divisor 6 comes from the index theorem on G₂ geometry (Acharya 2001).",
@@ -2875,7 +2875,7 @@
     "effective-torsion": {
       "id": "effective-torsion",
       "label": "(G.2a)",
-      "latex": "T_{\\omega} = -\\frac{b_3}{N_{\\text{flux}}} = -\\frac{24}{24} = -1.000",
+      "latex": "T_{\\omega} = -\\frac{b_3}{N_{\\mathrm{flux}}} = -\\frac{24}{24} = -1.000",
       "plain_text": "T_ω = -b₃/N_flux = -24/24 = -1.000",
       "category": "DERIVED",
       "description": "Topological effective torsion from flux quantization. Each coassociative 3-cycle carries one unit of G₄ flux.",
@@ -2935,7 +2935,7 @@
     "proton-branching": {
       "id": "proton-branching",
       "label": "(H.1)",
-      "latex": "\\text{BR}(p \\to e^+\\pi^0) = \\left(\\frac{N_{\\text{orient}}}{b_3}\\right)^2 = \\left(\\frac{12}{24}\\right)^2 = 0.25",
+      "latex": "\\text{BR}(p \\to e^+\\pi^0) = \\left(\\frac{N_{\\mathrm{orient}}}{b_3}\\right)^2 = \\left(\\frac{12}{24}\\right)^2 = 0.25",
       "plain_text": "BR(p → e⁺π⁰) = (N_orient/b₃)² = (12/24)² = 0.25",
       "category": "PREDICTION",
       "description": "Proton decay branching ratio from geometric orientation of flux. Predicts BR = 0.25 within SO(10) literature range (0.3-0.5).",
@@ -3055,7 +3055,7 @@
     "orch-or-collapse": {
       "id": "orch-or-collapse",
       "label": "(M.1)",
-      "latex": "\\tau = \\frac{\\hbar}{E_G} \\quad \\text{where} \\quad E_G \\approx \\frac{G m_{\\text{total}}^2}{r}",
+      "latex": "\\tau = \\frac{\\hbar}{E_G} \\quad \\text{where} \\quad E_G \\approx \\frac{G \\,\\mathrm{m}_{\\mathrm{total}}^2}{r}",
       "plain_text": "τ = ℏ/E_G where E_G ≈ G m_total²/r",
       "category": "SPECULATIVE",
       "description": "Orch OR gravitational collapse criterion. Superposition collapse time determined by gravitational self-energy of the quantum superposition.",
@@ -3083,7 +3083,7 @@
     "pm-modulation": {
       "id": "pm-modulation",
       "label": "(M.2)",
-      "latex": "f_{\\text{eff}} = f_0 \\times \\exp\\left(-\\frac{(\\phi - \\phi_0)^2}{2\\sigma^2}\\right)",
+      "latex": "f_{\\mathrm{eff}} = f_0 \\times \\exp\\left(-\\frac{(\\phi - \\phi_0)^2}{2\\sigma^2}\\right)",
       "plain_text": "f_eff = f_0 × exp(-(φ - φ_0)²/(2σ²))",
       "category": "SPECULATIVE",
       "description": "PM vacuum modulation of consciousness event frequency. Speculative connection between vacuum position and quantum coherence.",
@@ -3141,7 +3141,7 @@
     "generation-counting": {
       "id": "generation-counting",
       "label": "(N.2)",
-      "latex": "n_{\\text{gen}} = \\frac{b_3}{8} = \\frac{24}{8} = 3",
+      "latex": "n_{\\mathrm{gen}} = \\frac{b_3}{8} = \\frac{24}{8} = 3",
       "plain_text": "n_gen = b_3/8 = 24/8 = 3",
       "category": "THEORY",
       "description": "Generation number from third Betti number. Identical for all 49 valid topologies.",
