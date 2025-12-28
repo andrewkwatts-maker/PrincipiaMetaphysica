@@ -145,17 +145,42 @@ class AppendixAMathFoundations(SimulationBase):
         return SectionContent(
             section_id="8",
             subsection_id="A",
-            title="Appendix A: Mathematical Foundations",
+            title="Appendix A: Virasoro Anomaly Cancellation",
             abstract=(
-                "This appendix provides rigorous mathematical foundations for the geometric "
-                "framework of Principia Metaphysica. We cover G2 holonomy manifolds, spinor "
-                "structures, differential forms, and topological invariants essential for "
-                "understanding the physical model."
+                "Appendix A: Derivation of the critical dimension D = 26 from Virasoro anomaly "
+                "cancellation in bosonic string theory, and demonstration of compatibility with "
+                "the (24,2) signature two-time framework through Sp(2,R) gauge symmetry."
             ),
             content_blocks=[
                 ContentBlock(
                     type="subsection",
-                    content="A.1 G2 Holonomy Manifolds"
+                    content="A.1 Central Charge Calculation"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The critical dimension D = 26 follows from requiring consistent BRST "
+                        "quantization of the bosonic string. The Virasoro algebra central charge "
+                        "must vanish for physical states."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"c_{\text{matter}} = D, \quad c_{\text{ghost}} = -26, \quad c_{\text{total}} = D - 26 = 0",
+                    formula_id="virasoro-central-charge",
+                    label="(A.1)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "Each bosonic coordinate contributes c_matter = +1 to the central charge. "
+                        "The b,c ghost system (with conformal weights 2 and -1) contributes "
+                        "c_ghost = -26. For anomaly cancellation, c_total = D - 26 = 0, requiring D = 26."
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="A.2 G2 Holonomy Manifolds"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -170,7 +195,7 @@ class AppendixAMathFoundations(SimulationBase):
                     type="formula",
                     content=r"\nabla \varphi = 0",
                     formula_id="g2-holonomy-condition",
-                    label="(A.1)"
+                    label="(A.2)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -183,7 +208,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=r"g_{ij} = \frac{1}{6} \varphi_{ikl} \varphi_j{}^{kl}",
-                    label="(A.2)"
+                    label="(A.3)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -196,11 +221,59 @@ class AppendixAMathFoundations(SimulationBase):
                     type="formula",
                     content=r"\psi = *\varphi",
                     formula_id="coassociative-calibration",
-                    label="(A.3)"
+                    label="(A.4)"
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.2 Spinor Structures and Parallel Spinors"
+                    content="A.3 Signature (24,2) Compatibility"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The PM framework employs signature (24,2) with two timelike dimensions. "
+                        "This preserves Virasoro anomaly cancellation:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"D_{\text{total}} = D_{\text{space}} + D_{\text{time}} = 24 + 2 = 26 \quad \Rightarrow \quad c_{\text{total}} = 0",
+                    label="(A.5)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The Sp(2,R) gauge symmetry then constrains the second time dimension, "
+                        "reducing the physical degrees of freedom:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\text{26D}_{(24,2)} \xrightarrow{\text{Sp}(2,\mathbb{R})} \text{13D}_{(12,1)} \xrightarrow{\text{gauge fixing}} \text{Effective 4D}_{(3,1)}",
+                    label="(A.6)"
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="A.4 PM Framework Applications"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The D = 26 constraint and (24,2) signature enable the PM framework's dimensional reduction:"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "- Bulk spacetime: 26D with signature (24,2) automatically satisfies Virasoro anomaly cancellation\n\n"
+                        "- Sp(2,R) gauge fixing: Reduces (24,2) → (12,1) by eliminating half the degrees of freedom\n\n"
+                        "- Shadow reduction: Yields 13-dimensional intermediate spacetime with one effective time\n\n"
+                        "- Compactification: 9 spatial dimensions (from gauge fixing) + 13 shadow dimensions compactify on T^15 × G₂(7D)\n\n"
+                        "- Observable physics: Effective 4D Minkowski (3,1) after full reduction"
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="A.5 Spinor Structures and Parallel Spinors"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -214,7 +287,7 @@ class AppendixAMathFoundations(SimulationBase):
                     type="formula",
                     content=r"\nabla_X \eta = 0 \quad \forall X \in TM",
                     formula_id="parallel-spinor-condition",
-                    label="(A.4)"
+                    label="(A.7)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -227,11 +300,11 @@ class AppendixAMathFoundations(SimulationBase):
                     type="formula",
                     content=r"\gamma(X): S \to S, \quad \gamma(X)\gamma(Y) + \gamma(Y)\gamma(X) = 2g(X,Y)",
                     formula_id="clifford-multiplication",
-                    label="(A.5)"
+                    label="(A.8)"
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.3 Ricci-Flatness and Einstein Metrics"
+                    content="A.6 Ricci-Flatness and Einstein Metrics"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -245,7 +318,7 @@ class AppendixAMathFoundations(SimulationBase):
                     type="formula",
                     content=r"\text{Ric}(g) = 0",
                     formula_id="ricci-flatness-g2",
-                    label="(A.6)"
+                    label="(A.9)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -257,7 +330,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.4 Twisted Connected Sum (TCS) Construction"
+                    content="A.7 Twisted Connected Sum (TCS) Construction"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -270,7 +343,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=r"M_{\text{ACyl}} = M_0 \cup (S^1 \times X \times \mathbb{R}^+)",
-                    label="(A.7)"
+                    label="(A.10)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -282,7 +355,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.5 Cohomology and Betti Numbers"
+                    content="A.8 Cohomology and Betti Numbers"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -294,7 +367,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=r"(b_0, b_1, b_2, b_3, b_4, b_5, b_6, b_7) = (1, 0, 4, 24, 4, 0, 1)",
-                    label="(A.8)"
+                    label="(A.11)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -305,7 +378,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="A.6 Octonions and the Exceptional Jordan Algebra"
+                    content="A.9 Octonions and the Exceptional Jordan Algebra"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -318,7 +391,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=r"e_i e_j = -\delta_{ij} + \sum_k f_{ijk} e_k",
-                    label="(A.9)"
+                    label="(A.12)"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -329,6 +402,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
             ],
             formula_refs=[
+                "virasoro-central-charge",
                 "g2-holonomy-condition",
                 "associative-calibration",
                 "coassociative-calibration",
@@ -341,6 +415,9 @@ class AppendixAMathFoundations(SimulationBase):
                 "math.spinor_dimension",
                 "math.octonion_dimension",
                 "topology.b3",
+                "dimensions.D_bulk",
+                "dimensions.D_after_sp2r",
+                "dimensions.D_observable",
             ]
         )
 

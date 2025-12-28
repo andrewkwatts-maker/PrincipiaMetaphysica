@@ -150,17 +150,173 @@ class AppendixBComputationalMethods(SimulationBase):
         return SectionContent(
             section_id="8",
             subsection_id="B",
-            title="Appendix B: Computational Methods",
+            title="Appendix B: Generation Number Derivation",
             abstract=(
-                "This appendix documents the computational methods used to derive "
-                "the physics predictions in Principia Metaphysica. We provide detailed "
-                "descriptions of RG equation integration, threshold corrections, "
-                "optimization algorithms, and validation procedures."
+                "Appendix B: Detailed derivation of the three-generation fermion count from "
+                "F-theory index theorem with Z₂ factor from Sp(2,R) gauge fixing. This appendix "
+                "also documents the computational methods used throughout Principia Metaphysica, "
+                "including RG equation integration, threshold corrections, and optimization algorithms."
             ),
             content_blocks=[
                 ContentBlock(
                     type="subsection",
-                    content="B.1 Renormalization Group Equations"
+                    content="B.1 Index Formula"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The generation count n_gen = 3 follows from the F-theory index theorem "
+                        "modified by the Z₂ factor from Sp(2,R) gauge fixing."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"n_{\text{gen}} = \frac{|\chi_{\text{eff}}|}{24 \times Z_2} = \frac{144}{24 \times 2} = \frac{144}{48} = 3",
+                    formula_id="generation-number",
+                    label="(B.1)"
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="B.2 Z₂ Mirror Symmetry"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The Z₂ parity arises from Sp(2,R) gauge fixing in two-time physics and "
+                        "implements a mirror symmetry between the observable and hidden sectors:"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Two-time identification**: Ψ_L(t_therm) ~ Ψ_R(t_ortho) identifies "
+                        "spinors across time dimensions."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\Psi_L(t_{\text{therm}}) \sim \Psi_R(t_{\text{ortho}})",
+                    label="(B.2)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Brane doubling**: Each observable brane Σ_i has a shadow mirror Σ̃_i."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\Sigma_i \to \tilde{\Sigma}_i",
+                    label="(B.3)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Parity action**: Z_2: (t_therm, t_ortho) → (t_therm, -t_ortho) "
+                        "(time reversal in hidden sector)."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"Z_2: (t_{\text{therm}}, t_{\text{ortho}}) \to (t_{\text{therm}}, -t_{\text{ortho}})",
+                    label="(B.4)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Chirality correlation**: Left-handed on Σ_i ↔ Right-handed on Σ̃_i."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\Psi_L(\Sigma_i) \leftrightarrow \Psi_R(\tilde{\Sigma}_i)",
+                    label="(B.5)"
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="B.3 Hidden Brane Sector"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The Z₂ symmetry naturally produces the 4-brane structure (1 observable + 3 shadow) "
+                        "from Section 3.3:"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "- Σ₁: Observable universe (Standard Model matter)\n\n"
+                        "- Σ̃₁: Z₂ mirror of Σ₁ (shadow gauge bosons, dark matter candidates)\n\n"
+                        "- Σ₂, Σ₃: Additional branes from orbifold fixed points of G₂ compactification"
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The Z₂ doubles the divisor in the index theorem (24 → 48) while simultaneously "
+                        "providing the hidden variable structure that evades Bell's theorem. "
+                        "See simulations/zero_modes_gen_v12_8.py."
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="B.4 Derivation Steps"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Step 1: Start with effective Euler characteristic**\n"
+                        "The TCS G₂ manifold construction gives χ_eff = 144."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Step 2: Apply F-theory index theorem divisor**\n"
+                        "Standard F-theory gives divisor of 24 from Sethi-Vafa-Witten index theorem."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Step 3: Include Z₂ factor from Sp(2,R) gauge fixing**\n"
+                        "Two-time physics requires Sp(2,R) gauge fixing, which introduces Z₂ parity."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Step 4: Calculate total divisor**\n"
+                        "The Z₂ parity doubles the F-theory divisor: PM_divisor = 24 × 2 = 48."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Step 5: Compute generation number**\n"
+                        "n_gen = |χ_eff| / PM_divisor = 144 / 48 = 3\n\n"
+                        "Result: Exactly 3 generations (perfect agreement with Standard Model)."
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="B.5 Key Insights"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "- The Z₂ factor from Sp(2,R) gauge fixing is essential - without it, we would get n_gen = 6\n\n"
+                        "- The Z₂ symmetry simultaneously solves two problems: correct generation count and "
+                        "hidden variable structure for quantum foundations\n\n"
+                        "- The factor of 48 = 24 × 2 combines F-theory index theorem (24) with two-time physics (2)\n\n"
+                        "- This derivation is parameter-free: all inputs (χ_eff=144, F_divisor=24, Z₂=2) are "
+                        "geometrically determined"
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="B.6 Renormalization Group Equations"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -213,7 +369,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.2 Numerical Integration Methods"
+                    content="B.7 Numerical Integration Methods"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -238,7 +394,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.3 Threshold Corrections"
+                    content="B.8 Threshold Corrections"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -267,7 +423,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.4 Asymptotic Safety Corrections"
+                    content="B.9 Asymptotic Safety Corrections"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -294,7 +450,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.5 Yukawa Coupling Running"
+                    content="B.10 Yukawa Coupling Running"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -321,7 +477,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.6 Mass Running and Pole Masses"
+                    content="B.11 Mass Running and Pole Masses"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -348,7 +504,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.7 Optimization and Root Finding"
+                    content="B.12 Optimization and Root Finding"
                 ),
                 ContentBlock(
                     type="paragraph",
@@ -372,7 +528,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="B.8 Validation and Error Estimates"
+                    content="B.13 Validation and Error Estimates"
                 ),
                 ContentBlock(
                     type="paragraph",

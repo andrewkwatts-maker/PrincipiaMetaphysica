@@ -267,49 +267,517 @@ class PneumaMechanismV16(SimulationBase):
 
     def get_section_content(self) -> Optional[SectionContent]:
         """
-        Return section content for Section 2 (Geometric Framework).
+        Return section content for Section 2 - The Pneuma Lagrangian (COMPLETE MIGRATION from section-pneuma-lagrangian.json).
+
+        This supplementary section provides a detailed derivation of the Pneuma field dynamics,
+        from the fundamental 26D action through dimensional reduction to the 4D effective theory.
         """
-        content_blocks = [
+        content_blocks = []
+
+        # =====================================================================
+        # INTRODUCTION
+        # =====================================================================
+        content_blocks.extend([
             ContentBlock(
                 type="paragraph",
-                content="The Pneuma field emerges as a parallel spinor on the G2 holonomy manifold. "
-                       "Its dynamics are fully specified by the racetrack superpotential, which arises "
-                       "from competing M-theory instantons wrapping associative 3-cycles."
+                content="The Pneuma Lagrangian is the fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content. It represents a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime with signature (24,2)."
             ),
             ContentBlock(
                 type="formula",
-                content=r"\mathcal{L}_{\text{pneuma}} = \frac{1}{2} \partial_\mu \Psi_P \partial^\mu \Psi_P - V(\Psi_P) + \mathcal{L}_{\text{vielbein}}",
-                formula_id="pneuma-lagrangian",
-                label="(2.1)"
+                content="S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P + ℒ_Sp(2,ℝ)]",
+                label="Main Equation"
+            ),
+        ])
+
+        # =====================================================================
+        # COMPONENT BREAKDOWN
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="Component Breakdown"
             ),
             ContentBlock(
                 type="paragraph",
-                content="The potential V(Psi_P) derives from the racetrack superpotential W = A exp(-a Psi) - B exp(-b Psi), "
-                       "where the coefficients a and b are determined by flux quantization on the G2 manifold."
+                content="The Pneuma Lagrangian is a generalized Dirac action for a fundamental fermionic field living in the full 26-dimensional spacetime with signature (24,2). After gauge fixing 13 dimensions, we obtain an effective 13D theory. Each component has specific physical meaning:"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Dirac Adjoint"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The Dirac adjoint of the Pneuma field: Ψ̄_P = Ψ_P† Γ^0. Required for Lorentz-invariant bilinears in higher dimensions."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Pneuma Spinor Field"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="An 8192-component Dirac spinor in full 26D (2^13 = 8192 from Cl(24,2)). Reduces to 64-component effective spinor in 13D via gauge fixing. Further decomposes as 64 = 4 × 16 under 4D spacetime × internal manifold split."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Kinetic Term"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The covariant Dirac operator: Γ^M D_M where M runs over all 26 dimensions (effective 13D after gauge fixing). Γ^M are 8192×8192 matrices in 26D Cl(24,2), 64×64 in effective 13D Cl(12,1)."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Bulk Mass"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The fundamental mass parameter m_P for the Pneuma field. Sets the scale for Pneuma condensation and influences 4D fermion masses through dimensional reduction."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Orthogonal Time Coupling"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Unique to 26D with signature (24,2): coupling constant g times the orthogonal time coordinate t_ortho. The second time dimension enables thermal time emergence and resolves causality issues in lower-dimensional formulations."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Quartic Interaction"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Self-interaction term with coupling constant λ. Responsible for Pneuma condensation and dynamical mass generation through spontaneous symmetry breaking."
+            ),
+        ])
+
+        # =====================================================================
+        # GAMMA MATRICES: 26D to 13D
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="The Gamma Matrices: 26D to 13D"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="In full 26D with signature (24,2), the gamma matrices Γ^M form a representation of the Clifford algebra Cl(24,2) with dimension 2^13 = 8192. Upon gauge fixing 13 dimensions, we obtain the effective Cl(12,1) algebra:"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Dimensional Reduction: Cl(24,2) → Cl(12,1)"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Full 26D: Spinor dimension = 2^⌊26/2⌋ = 2^13 = 8192 components. Effective 13D: After gauge fixing, spinor reduces to 2^⌊13/2⌋ = 2^6 = 64 components. The gauge fixing removes one time dimension, yielding signature (12,1) from (24,2)."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="In the effective 13D theory, the gamma matrices can be constructed from tensor products:"
             ),
             ContentBlock(
                 type="formula",
-                content=r"\dot{\Psi}_P = -\lambda \frac{\partial V}{\partial \Psi_P}",
-                formula_id="pneuma-flow",
-                label="(2.2)"
+                content="Γ^μ = γ^μ ⊗ 1_16 (μ = 0,1,2,3)\nΓ^{a+3} = γ^5 ⊗ Σ^a (a = 1,...,8)\n— Tensor product decomposition",
+                label=""
             ),
             ContentBlock(
                 type="paragraph",
-                content="The flow equation governs the Pneuma field dynamics, with the flow parameter lambda "
-                       "set by the curvature of the potential at the vacuum. The vielbein term couples the "
-                       "Pneuma field to spacetime geometry via spinor bilinears."
+                content="Here γ^μ are the 4D Dirac matrices, γ^5 = iγ^0γ^1γ^2γ^3 is the 4D chirality operator, and Σ^a are 16×16 matrices acting on the internal spinor space."
             ),
-        ]
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Dimensional Reduction: Cl(24,2) → Cl(12,1)",
+                content="Full 26D: Spinor dimension = 2^⌊26/2⌋ = 2^13 = 8192 components. Effective 13D: After gauge fixing, spinor reduces to 2^⌊13/2⌋ = 2^6 = 64 components. The gauge fixing removes one time dimension, yielding signature (12,1) from (24,2)."
+            ),
+        ])
+
+        # =====================================================================
+        # COVARIANT DERIVATIVE
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="The Covariant Derivative"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The full covariant derivative D_M acting on the Pneuma spinor in 26D includes both gravitational and gauge connections. In the full theory, M ranges over all 26 dimensions; in the effective 13D theory, M = 0, 1, ..., 12. The derivative includes spin connection and gauge field contributions."
+            ),
+        ])
+
+        # =====================================================================
+        # PHYSICAL INTERPRETATION
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="Physical Interpretation"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Source of Geometry"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The Pneuma field Ψ_P is not merely a matter field living on a fixed background - it is the fundamental source of spacetime itself. Through its bilinear condensates: g_mn ∝ ⟨Ψ̄_P Γ_mn Ψ_P⟩, these vacuum expectation values generate the metric structure of the internal manifold K_Pneuma, effectively determining the geometry of the extra dimensions."
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="K_Pneuma is realized as an explicit TCS (Twisted Connected Sum) G₂ manifold with Betti numbers b₂=4 (associative cycles hosting D₅ singularity for SO(10) gauge symmetry) and b₃=24 (co-associative cycles controlling Yukawa textures), constructed via π/6 hyper-Kähler rotation following Corti-Haskins-Nordenstam-Pacini (arXiv:1809.09083)."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Source of Matter"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Upon dimensional reduction over K_Pneuma, the full 8192-component 26D spinor (or equivalently, the 64-component effective 13D spinor) decomposes into 4D chiral fermions. The topological structure (zero modes of the Dirac operator on K_Pneuma) determines the number of generations: n_gen = χ_eff / 48 = 144 / 48 = 3."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Key Insight",
+                content="The same field Ψ_P that generates spacetime geometry also gives rise to all observable matter. This is the deep unification at the heart of Principia Metaphysica: geometry and matter share a common fermionic origin."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Field Taxonomy and Statistics",
+                content="Pneuma field (Ψ_P): Chiral spinor field (8192-component in 26D, 64-component in 13D). Mashiach (An Attractor Scalar) field (χ): Attractor scalar field for dark energy (separate from Pneuma). Framework statistics: 45/48 SM parameters within 1σ (93.8%), 12 exact matches."
+            ),
+        ])
+
+        # =====================================================================
+        # THERMAL TIME CONNECTION
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="Connection to Thermal Time"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The Pneuma field statistics also generate the flow of time through the Thermal Time Hypothesis (TTH). The entropy of Pneuma field configurations defines a statistical state ρ, and the modular flow σ_t associated with this state is identified with physical time evolution. This provides a thermodynamic origin for the arrow of time: time flows in the direction of increasing Pneuma field entropy."
+            ),
+            ContentBlock(
+                type="formula",
+                content="t = α_T · S[ρ] — Time from Pneuma entropy",
+                label=""
+            ),
+        ])
+
+        # =====================================================================
+        # CONDENSATE GAP EQUATION
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="Condensate Gap Equation (SymPy Derivation)"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The quartic interaction term λ(Ψ̄Ψ)² combined with the orthogonal time coupling g·t_ortho leads to a self-consistent gap equation for the Pneuma condensate. Using mean-field approximation, we derive the condensate mass gap Δ:"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Mean-Field Derivation"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Starting from the interaction Lagrangian:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="ℒ_int = λ(Ψ̄Ψ)² + g·t_ortho·Ψ̄Ψ — Interaction terms for gap derivation",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Applying the mean-field approximation with vacuum expectation value v = ⟨Ψ̄Ψ⟩, we obtain the gap equation."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Stability Analysis"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="To verify that the condensate solution is stable and exhibits spontaneous symmetry breaking, we compute the derivative of the gap with respect to the VEV. The positivity of dΔ/dv confirms that the condensate exhibits positive feedback: an increase in the VEV leads to an increase in the gap, which is the hallmark of a self-consistent solution and spontaneous symmetry breaking."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Numerical Example"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Using representative parameters to demonstrate the gap equation: λ = 0.1 (Quartic coupling), g = 0.01 (Thermal coupling), t_ortho = 1 (Orthogonal time), E_F = 10 (Fermi energy)."
+            ),
+            ContentBlock(
+                type="formula",
+                content="Results (v = 2): Δ(v=2) = (0.5 × 2) / (1 + 0.01 × 1 / 10) = 1 / 1.01 ≈ 0.99\ndΔ/dv = 0.5 / 1.01 ≈ 0.495 > 0 (stable)\n— Numerical verification of gap stability",
+                label=""
+            ),
+            ContentBlock(
+                type="heading",
+                content="Physical Interpretation"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Condensate Stability and Geometric Emergence",
+                content="Δ > 0 derives condensate stability: the positive gap ensures the Pneuma field develops a non-trivial vacuum expectation value, breaking the original symmetry spontaneously. K_Pneuma Geometry: The stable condensate forms the internal geometry K_Pneuma. The Euler characteristic χ = 72 arises from the Hodge number h^{3,1} which counts Δ-cycles - deformation modes of the gap. Swampland Compliance: The finite gap Δ ensures the theory avoids massless scalar modes in the moduli space, satisfying Swampland constraints. Infinite or zero gap would signal pathological behavior incompatible with quantum gravity."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="SymPy Code Reference",
+                content="The full symbolic derivation of the gap equation, stability analysis, and numerical verification was performed using SymPy. The complete computational notebook demonstrates: symbolic differentiation of gap equation, stability criterion verification, numerical evaluation with physical parameters."
+            ),
+        ])
+
+        # =====================================================================
+        # ORTHOGONAL TIME COUPLING
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="The Orthogonal Time Coupling: g·t_ortho"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="A distinguishing feature of the 26D formulation is the explicit presence of two time dimensions in the signature (24,2). The term g·t_ortho in the Lagrangian couples the Pneuma field to the orthogonal time direction."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Physical Role"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Why Two Time Dimensions?",
+                content="The signature (24,2) arises naturally from the requirement that the Pneuma field generate both spacetime geometry and matter content consistently. The second time dimension is not directly observable but manifests through thermodynamic and entropic phenomena in the effective 13D theory."
+            ),
+        ])
+
+        # =====================================================================
+        # 2T PHYSICS p-BRANE ACTION
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="2T Physics p-Brane Action Formulation"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Complementary to the Pneuma field Lagrangian, we can formulate the theory in terms of extended objects (p-branes) propagating in the full 26D spacetime with signature (24,2). This formulation makes manifest the higher-dimensional origin and the role of Sp(2,R) gauge symmetry."
+            ),
+            ContentBlock(
+                type="heading",
+                content="General 2T p-Brane Action"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The action for a p-brane in 2T physics consists of two parts: the Nambu-Goto term (world-volume) and the Wess-Zumino term (gauge coupling)."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="2T Physics Framework",
+                content="This action is formulated in the full 26D spacetime with two time dimensions. The Sp(2,R) gauge symmetry acts on the embedding coordinates X^M(ξ) and allows us to gauge-fix one time dimension, reducing (d,2) signature to (d,1) while maintaining covariance."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Brane Configuration: Observable and Shadow Branes"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The Pneuma sector consists of four distinct p-branes embedded in the 26D spacetime. Before gauge fixing, each brane has two timelike dimensions:"
+            ),
+            ContentBlock(
+                type="heading",
+                content="Observable 5-Brane"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="5 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (5,2) → (5,1). Hosts the visible matter sector and 4D spacetime as a subspace."
+            ),
+            ContentBlock(
+                type="heading",
+                content="First Shadow 3-Brane"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Contributes to dark sector structure."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Second Shadow 3-Brane"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Second dark sector component."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Third Shadow 3-Brane"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="3 spatial + 2 temporal dimensions before gauge fixing. After Sp(2,R) gauge fixing: (3,2) → (3,1). Third dark sector component."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Gauge Fixing: (d,2) → (d,1)",
+                content="Before gauge fixing: Observable (5,2) + 3×Shadow (3,2) - total 26 dimensions with signature (24,2). After Sp(2,R) gauge fixing: Observable (5,1) + 3×Shadow (3,1) - effective theory with single timelike direction. The gauge fixing procedure removes the second time dimension from each brane while preserving the physical degrees of freedom. The orthogonal time effects persist through the g·t_ortho coupling in the effective action."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Null Constraints"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The 2T physics formulation requires three null constraints on the embedding coordinates X^M(ξ) and their conjugate momenta P^M(ξ):"
+            ),
+            ContentBlock(
+                type="formula",
+                content="X^M X_M = 0 — Position Null Constraint\nX^M P_M = 0 — Mixed Null Constraint\nP^M P_M + M^2 = 0 — Mass-Shell Constraint\n— Null Constraints in 2T Physics (3.8)",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="These constraints are first-class and generate the Sp(2,R) gauge symmetry. They ensure that: ghosts from timelike dimensions are eliminated; physical degrees of freedom are preserved; gauge invariance is manifest."
+            ),
+            ContentBlock(
+                type="heading",
+                content="BPS Bound and Central Charges"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,2): T_p = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Central Charges in SO(24,2)",
+                content="Observable 5-brane: Z_5 ∈ ∧^5(R^{24,2}) - rank-5 antisymmetric tensor charge. Shadow 3-branes: Z_3^(i) ∈ ∧^3(R^{24,2}), i=1,2,3 - three rank-3 antisymmetric tensor charges. These central charges commute with all supersymmetry generators and are topological invariants. The dimensions (5,2) and (3,2) are selected to maximize the allowed central charge structure while satisfying the total dimension constraint 26 = (5+1)+(3+1)+(3+1)+(3+1) + 8 (internal)."
+            ),
+        ])
+
+        # =====================================================================
+        # 4D EFFECTIVE LAGRANGIAN
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="4D Effective Lagrangian"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="Starting from the full 26D Lagrangian (or equivalently, the 2T p-brane action), we first gauge-fix to 13D (with the g·t_ortho term encoding the second time direction), then perform Kaluza-Klein reduction over the 8-dimensional internal manifold K_Pneuma. This yields the 4D fermion sector:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="ℒ_4D,fermion = Σ_{i=1}^3 ψ_i (iγ^μ D_μ - m_i)ψ_i + (Yukawa couplings)\n— 4D effective fermion Lagrangian from dimensional reduction",
+                label=""
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The three generations (i = 1, 2, 3) arise from the three independent zero modes of the internal Dirac operator. The 4D masses m_i and Yukawa couplings are determined by overlap integrals of these zero mode wave functions over K_Pneuma."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Equivalence of Formulations",
+                content="The Pneuma field Lagrangian (fermionic) and the 2T p-brane action (bosonic) are dual descriptions of the same underlying theory. The duality relates: fermionic currents ↔ brane charges; Dirac operator zero modes ↔ brane world-volume fermions; spinor condensates ↔ brane tensions."
+            ),
+        ])
+
+        # =====================================================================
+        # COMPLETE LAGRANGIAN HIERARCHY
+        # =====================================================================
+        content_blocks.extend([
+            ContentBlock(
+                type="heading",
+                content="Complete Lagrangian Hierarchy"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The following presents the complete hierarchy of Lagrangians from the 26D bulk action down to 4D observable physics. Each level emerges naturally from dimensional reduction and gauge fixing, with fermionic primacy maintained throughout."
+            ),
+            ContentBlock(
+                type="heading",
+                content="1. Master Bulk Action (26D)"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The fundamental action in full 26D spacetime with signature (24,2), emphasizing fermionic primacy:"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Fermionic Primacy",
+                content="The Pneuma spinor Ψ_P is not a matter field on a fixed background. The fermionic term sources the Einstein equations: R_MN = T_MN[Ψ_P]. Spacetime geometry emerges from Pneuma condensates, embodying true fermionic primacy."
+            ),
+            ContentBlock(
+                type="heading",
+                content="2. 13D Shadow Effective Lagrangian"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="After Sp(2,R) gauge fixing from 26D to 13D, the spinor reduces from 8192 to 64 components:"
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Dimensional Reduction: 26D → 13D",
+                content="Sp(2,R) gauge fixing removes one time dimension: (24,2) → (12,1). Spinor dimension: 2^13 = 8192 → 2^6 = 64 components. The flux terms ℒ_flux stabilize moduli via KKLT/LVS mechanisms. The complex structure modulus Re(T) = 7.086 is derived from the measured Higgs mass (125.10 GeV), completing the moduli stabilization picture with full swampland compliance."
+            ),
+            ContentBlock(
+                type="heading",
+                content="3. 4D Observable Effective Lagrangian"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The effective 4D Lagrangian includes f(R,T,τ) modified gravity with specific coefficients derived from higher-dimensional reduction: α_F (Starobinsky Coefficient), β_F (Matter Coupling), γ_F (Two-Time Invariant), δ_F (Dynamical Evolution)."
+            ),
+            ContentBlock(
+                type="heading",
+                content="4. Mashiach Attractor Lagrangian"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The dark energy sector is described by the Mashiach scalar field with late-time attractor dynamics ensuring w → -1.0. The potential V(φ) is constructed to have a stable late-time attractor: φ_M VEV ~ 2.5 M_Pl, w = -1.0 exactly at minimum, Λ ~ (2.4 meV)^4, attractor dynamics φ̈ + 3Hφ̇ + V'(φ) = 0."
+            ),
+            ContentBlock(
+                type="callout",
+                callout_type="info",
+                title="Attractor Dynamics",
+                content="The Mashiach field φ evolves according to the Klein-Gordon equation in an FRW background: φ̈ + 3Hφ̇ + V'(φ) = 0. At late times, the field rolls to the minimum of V(φ), where φ̇ → 0, yielding w = -1.0 without fine-tuning. This is the attractor solution - independent of initial conditions."
+            ),
+            ContentBlock(
+                type="heading",
+                content="Summary: The Lagrangian Cascade"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content="The complete descent from fundamental 26D physics to 4D observables:"
+            ),
+            ContentBlock(
+                type="formula",
+                content="Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy",
+                label=""
+            ),
+        ])
 
         return SectionContent(
             section_id="2",
-            subsection_id=None,
-            title="Geometric Framework",
-            abstract="We derive the Pneuma field Lagrangian from G2 holonomy geometry and establish "
-                    "its coupling to spacetime via vielbein emergence.",
+            subsection_id="pneuma-lagrangian",
+            title="The Pneuma Lagrangian",
+            abstract="The fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content.",
             content_blocks=content_blocks,
             formula_refs=["pneuma-lagrangian", "pneuma-flow"],
-            param_refs=["pneuma.coupling", "pneuma.flow_parameter", "pneuma.vev"]
+            param_refs=["pneuma.coupling", "pneuma.flow_parameter", "pneuma.vev", "pneuma.mass_scale"]
         )
 
     # =========================================================================

@@ -47,7 +47,9 @@ class ContentBlock:
     A block of content in a section.
 
     Attributes:
-        type: Content type ("paragraph", "formula", "list", "table", "heading")
+        type: Content type ("paragraph", "formula", "list", "table", "heading",
+              "note", "callout", "equation", "code", "definition", "theorem",
+              "concept_highlight")
         content: The actual content (text, LaTeX, etc.)
         formula_id: Optional reference to a formula ID
         label: Optional label for equations/figures
@@ -55,8 +57,11 @@ class ContentBlock:
         items: Optional list items (for type="list")
         headers: Optional table headers (for type="table")
         rows: Optional table rows (for type="table")
+        callout_type: Callout style ("info", "warning", "success", "error")
+        title: Optional title for callouts, definitions, theorems
+        language: Programming language for code blocks ("python", "javascript", etc.)
     """
-    type: str  # "paragraph", "formula", "list", "table", "heading"
+    type: str  # "paragraph", "formula", "list", "table", "heading", "callout", etc.
     content: Optional[str] = None
     formula_id: Optional[str] = None
     label: Optional[str] = None
@@ -64,6 +69,9 @@ class ContentBlock:
     items: Optional[List[str]] = None
     headers: Optional[List[str]] = None
     rows: Optional[List[List[str]]] = None
+    callout_type: Optional[str] = None  # "info", "warning", "success", "error"
+    title: Optional[str] = None  # For callouts, definitions, theorems
+    language: Optional[str] = None  # For code blocks: "python", "javascript", etc.
 
 
 @dataclass
