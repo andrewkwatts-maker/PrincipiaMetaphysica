@@ -141,7 +141,7 @@ try:
     from .v16.higgs import HiggsMassSimulation
     from .v16.proton import ProtonDecaySimulation
     from .v16.neutrino import NeutrinoMixingSimulation
-    from .v16.fermion import FermionGenerationsSimulation
+    from .v16.fermion import FermionGenerationsV16 as FermionGenerationsSimulation
     from .v16.cosmology import MultiSectorCosmologySimulation
     from .v16.geometric import G2GeometrySimulation
     from .v16.pneuma import PneumaMechanismSimulation

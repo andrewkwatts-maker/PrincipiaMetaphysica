@@ -6,6 +6,48 @@ This module contains version 16.0 implementations of cosmological simulations fo
 
 ## Available Simulations
 
+### DarkEnergyV16 (`dark_energy_v16_0.py`)
+
+**ID:** `dark_energy_v16_0`
+**Version:** 16.0
+**Domain:** cosmology
+**Section:** 5.2
+
+Dark energy equation of state from dimensional reduction cascade 26D → 13D → 4D.
+
+#### Key Features
+
+1. **Dimensional Reduction**: Derives w₀ = -11/13 from string theory dimensions
+2. **Shadow Dimensions**: Effective dimension D_eff = 12.576 from residual DOF
+3. **DESI Agreement**: w₀ = -0.846 vs DESI DR2 -0.827 ± 0.063 (0.3σ deviation)
+4. **Time Evolution**: Computes w_a ≈ 0.29 from moduli dynamics
+
+#### Required Inputs
+
+- `topology.chi_eff` - Effective Euler characteristic (default: 144)
+- `topology.b3` - Number of associative 3-cycles (default: 24)
+- `desi.w0` - DESI measurement for validation
+- `desi.wa` - DESI evolution parameter for validation
+
+#### Computed Outputs
+
+| Parameter | Description | Typical Value | Status |
+|-----------|-------------|---------------|--------|
+| `cosmology.w0_derived` | Dark energy EoS at z=0 | -0.846 | PREDICTED |
+| `cosmology.wa_derived` | Evolution parameter | 0.29 | PREDICTED |
+| `cosmology.D_eff` | Effective dimension | 12.576 | DERIVED |
+| `cosmology.alpha_shadow` | Shadow contribution | 0.576 | DERIVED |
+| `cosmology.w0_deviation` | Deviation from DESI (σ) | 0.30 | VALIDATION |
+
+#### Formulas
+
+1. **dimensional-reduction-cascade** (5.8): 26D → 13D → 4D cascade
+2. **effective-dimension** (5.9): D_eff = 12 + α_shadow = 12.576
+3. **dark-energy-eos-derivation** (5.10): w₀ = -11/13 ≈ -0.846
+4. **dark-energy-time-evolution** (5.11): w(a) = w₀ + w_a(1-a)
+
+---
+
 ### MultiSectorV16 (`multi_sector_v16_0.py`)
 
 **ID:** `multi_sector_v16_0`
@@ -78,7 +120,41 @@ The simulation generates complete section content for Section 5.3, including:
 
 ## Usage
 
-### Basic Usage
+### DarkEnergyV16 Basic Usage
+
+```python
+from simulations.v16.cosmology import DarkEnergyV16
+from simulations.base import PMRegistry
+from simulations.base.established import EstablishedPhysics
+
+# Create registry and load established parameters
+registry = PMRegistry.get_instance()
+EstablishedPhysics.load_into_registry(registry)
+
+# Add topology parameters if needed
+registry.set_param('topology.chi_eff', 144,
+                  source='ESTABLISHED:G2_topology',
+                  status='ESTABLISHED')
+registry.set_param('topology.b3', 24,
+                  source='ESTABLISHED:G2_topology',
+                  status='ESTABLISHED')
+
+# Create and run simulation
+sim = DarkEnergyV16()
+results = sim.execute(registry, verbose=True)
+
+# Access results
+w0 = registry.get_param('cosmology.w0_derived')
+wa = registry.get_param('cosmology.wa_derived')
+D_eff = registry.get_param('cosmology.D_eff')
+
+print(f"Dark energy EoS: w₀ = {w0:.6f}")
+print(f"Evolution parameter: w_a = {wa:.3f}")
+print(f"Effective dimension: D_eff = {D_eff:.3f}")
+print(f"Exact value: w₀ = -11/13 = {-11/13:.9f}")
+```
+
+### MultiSectorV16 Basic Usage
 
 ```python
 from simulations.v16.cosmology import MultiSectorV16
@@ -90,7 +166,7 @@ registry = PMRegistry.get_instance()
 EstablishedPhysics.load_into_registry(registry)
 
 # Add topology parameter if needed
-registry.set_param('topology.chi_eff', 144,
+registry.set_param('topology.CHI_EFF', 144,
                   source='ESTABLISHED:G2_topology',
                   status='ESTABLISHED')
 
@@ -109,15 +185,24 @@ print(f"DM/baryon ratio: {dm_ratio}")
 ### Standalone Execution
 
 ```bash
+# Run DarkEnergyV16
 cd h:\Github\PrincipiaMetaphysica
+python simulations/v16/cosmology/dark_energy_v16_0.py
+
+# Run MultiSectorV16
 python simulations/v16/cosmology/multi_sector_v16_0.py
 ```
 
 ### Export for Integration
 
 ```python
-from simulations.v16.cosmology.multi_sector_v16_0 import export_multi_sector_v16
+# DarkEnergyV16
+from simulations.v16.cosmology.dark_energy_v16_0 import export_dark_energy_v16
+results = export_dark_energy_v16()
+print(results['outputs'])
 
+# MultiSectorV16
+from simulations.v16.cosmology.multi_sector_v16_0 import export_multi_sector_v16
 results = export_multi_sector_v16()
 print(results['outputs'])
 ```
@@ -226,21 +311,27 @@ print('All tests passed!')
 
 ```
 simulations/v16/cosmology/
-├── __init__.py                  # Module initialization
-├── multi_sector_v16_0.py        # Main simulation implementation
+├── __init__.py                  # Module initialization (exports DarkEnergyV16, MultiSectorV16)
+├── dark_energy_v16_0.py         # Dark energy from dimensional reduction (Section 5.2)
+├── multi_sector_v16_0.py        # Multi-sector cosmology (Section 5.3)
 └── README.md                    # This file
 ```
 
 ## Version History
 
 ### v16.0 (2025-12-28)
-- Initial implementation using SimulationBase infrastructure
-- Geometric width derivation from G2 wavefunction overlaps
-- Dark matter abundance as geometric prediction
-- Dark energy EoS from dimensional reduction
-- Complete formula derivation chains
-- Full section content generation
-- Integration with PMRegistry system
+- **DarkEnergyV16**: Dark energy equation of state from dimensional reduction
+  - Derives w₀ = -11/13 from 26D → 13D → 4D cascade
+  - Computes effective dimension D_eff = 12.576
+  - Time evolution w_a ≈ 0.29 from moduli dynamics
+  - 0.3σ agreement with DESI DR2 measurements
+- **MultiSectorV16**: Multi-sector cosmology with geometric width
+  - Geometric width derivation from G2 wavefunction overlaps
+  - Dark matter abundance as geometric prediction
+  - Dark energy EoS from dimensional reduction
+  - Complete formula derivation chains
+  - Full section content generation
+  - Integration with PMRegistry system
 
 ## Copyright
 

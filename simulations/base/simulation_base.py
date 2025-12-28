@@ -129,6 +129,7 @@ class Parameter:
         experimental_bound: Optional experimental constraint value
         bound_type: Type of bound ("upper", "lower", "range", "measured")
         bound_source: Citation for the bound
+        validation: Optional validation metadata dict
     """
     path: str
     name: str
@@ -139,6 +140,7 @@ class Parameter:
     experimental_bound: Optional[float] = None
     bound_type: Optional[str] = None
     bound_source: Optional[str] = None
+    validation: Optional[Dict[str, Any]] = None
 
 
 class SimulationBase(ABC):
