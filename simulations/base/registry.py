@@ -373,20 +373,40 @@ class PMRegistry:
         result = {}
         for section_id, entry in self._sections.items():
             s = entry.content
+            # Build content_blocks with all fields
+            content_blocks = []
+            for block in s.content_blocks:
+                block_data = {
+                    'type': block.type,
+                    'content': block.content,
+                }
+                if block.formula_id:
+                    block_data['formula_id'] = block.formula_id
+                if block.label:
+                    block_data['label'] = block.label
+                    block_data['equationNumber'] = block.label
+                if block.level:
+                    block_data['level'] = block.level
+                if block.items:
+                    block_data['items'] = block.items
+                if block.headers:
+                    block_data['headers'] = block.headers
+                if block.rows:
+                    block_data['rows'] = block.rows
+                content_blocks.append(block_data)
+
+            # Use 'id' as expected by website renderer (not 'section_id')
             result[section_id] = {
-                'section_id': s.section_id,
-                'subsection_id': s.subsection_id,
+                'id': s.section_id,
+                'type': 'section',
                 'title': s.title,
+                'shortTitle': s.title,
+                'order': int(s.section_id.split('.')[0]) if s.section_id and s.section_id[0].isdigit() else 99,
                 'abstract': s.abstract,
-                'content_blocks': [
-                    {
-                        'type': block.type,
-                        'content': block.content,
-                        'formula_id': block.formula_id,
-                        'label': block.label,
-                    }
-                    for block in s.content_blocks
-                ],
+                'contentBlocks': content_blocks,  # camelCase for website compatibility
+                'content_blocks': content_blocks,  # snake_case for Python compatibility
+                'formulaRefs': s.formula_refs,
+                'paramRefs': s.param_refs,
                 'formula_refs': s.formula_refs,
                 'param_refs': s.param_refs,
                 'timestamp': entry.timestamp,
