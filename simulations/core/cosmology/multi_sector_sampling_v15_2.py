@@ -14,21 +14,21 @@ CORE CONCEPT:
 DERIVATION:
     1. Kähler moduli (h^{1,1}=4) define 4 distinct sector 'nodes':
        - Sector 0: SM/Higgs brane (where gauge fields localize)
-       - Sector 1: Mirror/Shadow brane (gravity-only coupling → dark matter)
+       - Sector 1: Mirror/Shadow brane (gravity-only coupling -> dark matter)
        - Sectors 2-3: Hidden sectors (stabilization, moduli fields)
 
     2. Racetrack potential stabilizes "sampling coordinate" at middle (0.5):
-       W = A·exp(-a·T) + B·exp(-b·T) → T_min ≈ 1.4885 (from v15.0)
+       W = A*exp(-a*T) + B*exp(-b*T) -> T_min ~ 1.4885 (from v15.0)
        This "middle" position is the stable vacuum we observe.
 
-    3. Gravity samples ALL nodes (bulk propagation) → appears diluted
-       Gauge fields LOCALIZED to SM brane → full strength
+    3. Gravity samples ALL nodes (bulk propagation) -> appears diluted
+       Gauge fields LOCALIZED to SM brane -> full strength
        This naturally explains the hierarchy problem!
 
 PHYSICAL INTERPRETATION:
     - Hierarchy: Gravity weak because spread across all 4 sectors (1/4 dilution)
-    - Mirror DM: Parallel sector (1) couples only via gravity → invisible
-    - Constants Stability: Racetrack lock → no moduli drift → fixed physics
+    - Mirror DM: Parallel sector (1) couples only via gravity -> invisible
+    - Constants Stability: Racetrack lock -> no moduli drift -> fixed physics
     - Vacuum Selection: "Middle" position is dynamically selected, not tuned
 
 KEY ACHIEVEMENT: Hierarchy emerges from geometry, not fine-tuning!
@@ -220,7 +220,7 @@ class MultiSectorSampling:
         Estimate mirror dark matter contribution.
 
         The mirror sector mass/energy contributes to total matter
-        but only interacts gravitationally → dark matter.
+        but only interacts gravitationally -> dark matter.
 
         Returns:
             Mirror DM weight relative to visible matter
@@ -307,7 +307,7 @@ class MultiSectorSampling:
             'dark_matter': {
                 'mirror_coupling': float(mirror_coupling),
                 'mirror_dm_fraction': float(mirror_dm),
-                'interpretation': 'Mirror sector couples via gravity only → DM candidate'
+                'interpretation': 'Mirror sector couples via gravity only -> DM candidate'
             },
             'hierarchy_validation': hierarchy_valid,
             'overall_valid': overall_valid,
@@ -330,8 +330,8 @@ class MultiSectorSampling:
         print()
         print("CORE CONCEPT:")
         print("  Our 4D physics = weighted sampling across h^{1,1}=4 sectors")
-        print("  Gravity samples ALL sectors (bulk) → appears diluted")
-        print("  Gauge forces LOCALIZE on SM brane → full strength")
+        print("  Gravity samples ALL sectors (bulk) -> appears diluted")
+        print("  Gauge forces LOCALIZE on SM brane -> full strength")
         print()
         print("=" * 70)
         print(" SECTOR STRUCTURE")
@@ -383,7 +383,7 @@ class MultiSectorSampling:
         print("    - Sector count (4) fixed by topology (h^{1,1})")
         print("    - Position (0.5) fixed by racetrack minimum")
         print("    - Cycle width from G₂ geometry")
-        print("    → All parameters DERIVED, not tuned!")
+        print("    -> All parameters DERIVED, not tuned!")
         print()
         status = "VALID ✓" if results['overall_valid'] else "CHECK"
         print(f"  Overall Status: {status}")

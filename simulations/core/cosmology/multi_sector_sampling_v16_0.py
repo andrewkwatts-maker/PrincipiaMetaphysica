@@ -45,10 +45,13 @@ import sys
 import os
 from typing import Dict, Optional
 
-sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to path
+project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+sys.path.insert(0, project_root)
+sys.path.insert(0, os.path.join(project_root, 'simulations'))
 
-# Import v15.2 as base class
-from simulations.multi_sector_sampling_v15_2 import MultiSectorSampling as MultiSectorSamplingV15
+# Import v15.2 as base class (same directory)
+from simulations.core.cosmology.multi_sector_sampling_v15_2 import MultiSectorSampling as MultiSectorSamplingV15
 
 try:
     from config import TopologicalParameters
@@ -111,7 +114,7 @@ class MultiSectorSamplingV16(MultiSectorSamplingV15):
         """
         # PRIMARY: Wavefunction overlap from Yukawa integrator
         try:
-            from simulations.g2_yukawa_overlap_integrals_v15_0 import G2YukawaOverlapIntegralsV15
+            from simulations.core.geometric.g2_yukawa_overlap_integrals_v15_0 import G2YukawaOverlapIntegralsV15
 
             yukawa = G2YukawaOverlapIntegralsV15(
                 n_mc_samples=100000  # Faster for width estimation
@@ -132,7 +135,7 @@ class MultiSectorSamplingV16(MultiSectorSamplingV15):
 
         # SECONDARY: Racetrack curvature
         try:
-            from simulations.racetrack_width_estimator import RacetrackWidthEstimator
+            from simulations.core.moduli.racetrack_width_estimator import RacetrackWidthEstimator
 
             estimator = RacetrackWidthEstimator()
             derived_width = estimator.get_geometric_width()
