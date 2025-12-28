@@ -145,11 +145,11 @@ class AppendixAMathFoundations(SimulationBase):
         return SectionContent(
             section_id="8",
             subsection_id="A",
-            title="Appendix A: Virasoro Anomaly Cancellation",
+            title="Appendix A: Mathematical Foundations",
             abstract=(
-                "Appendix A: Derivation of the critical dimension D = 26 from Virasoro anomaly "
-                "cancellation in bosonic string theory, and demonstration of compatibility with "
-                "the (24,2) signature two-time framework through Sp(2,R) gauge symmetry."
+                "Mathematical foundations for Principia Metaphysica: derivation of the critical "
+                "dimension D = 26 from Virasoro anomaly cancellation, G₂ holonomy and spinor "
+                "structures, and compatibility with the (24,2) two-time framework."
             ),
             content_blocks=[
                 ContentBlock(

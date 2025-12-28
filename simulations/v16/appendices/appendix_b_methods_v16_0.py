@@ -150,12 +150,11 @@ class AppendixBComputationalMethods(SimulationBase):
         return SectionContent(
             section_id="8",
             subsection_id="B",
-            title="Appendix B: Generation Number Derivation",
+            title="Appendix B: Computational Methods",
             abstract=(
-                "Appendix B: Detailed derivation of the three-generation fermion count from "
-                "F-theory index theorem with Z₂ factor from Sp(2,R) gauge fixing. This appendix "
-                "also documents the computational methods used throughout Principia Metaphysica, "
-                "including RG equation integration, threshold corrections, and optimization algorithms."
+                "Computational methods used throughout Principia Metaphysica: RG equation "
+                "integration, KK threshold corrections, asymptotic safety corrections, and "
+                "optimization algorithms. Includes derivation of three-generation fermion count."
             ),
             content_blocks=[
                 ContentBlock(

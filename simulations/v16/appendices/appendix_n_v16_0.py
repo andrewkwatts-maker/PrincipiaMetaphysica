@@ -274,9 +274,9 @@ class AppendixNG2Landscape(SimulationBase):
             ],
             formula_refs=[
                 "generation-number",
-                "effective-euler",
-                "tcs-topology",
+                "euler-characteristic",
                 "topology-constraint",
+                "generation-counting",
             ],
             param_refs=[
                 "topology.n_gen",

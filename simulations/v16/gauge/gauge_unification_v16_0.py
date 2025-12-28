@@ -118,9 +118,12 @@ class GaugeUnificationSimulation(SimulationBase):
             List of formula IDs
         """
         return [
+            "gauge-initial-conditions",
+            "gauge-rg-evolution",
+            "kk-threshold",
+            "asymptotic-safety-fixed-point",
             "gut-scale",
             "gauge-coupling-unification",
-            "gauge-rg-evolution",
         ]
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
@@ -313,6 +316,94 @@ class GaugeUnificationSimulation(SimulationBase):
             List of Formula instances
         """
         return [
+            Formula(
+                id="gauge-initial-conditions",
+                label="(3.1)",
+                latex=r"\alpha_1(M_Z) = \frac{5}{3}\frac{\alpha_{em}}{\cos^2\theta_W}, \quad "
+                      r"\alpha_2(M_Z) = \frac{\alpha_{em}}{\sin^2\theta_W}, \quad "
+                      r"\alpha_3(M_Z) = \alpha_s",
+                plain_text="alpha_1 = (5/3)*alpha_em/cos²θ_W, alpha_2 = alpha_em/sin²θ_W, alpha_3 = alpha_s",
+                category="ESTABLISHED",
+                description="Initial gauge coupling conditions at M_Z from PDG 2024",
+                inputParams=["pdg.alpha_s_MZ", "pdg.sin2_theta_W", "constants.alpha_em"],
+                outputParams=[],
+                input_params=["pdg.alpha_s_MZ", "pdg.sin2_theta_W", "constants.alpha_em"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        "GUT-normalized U(1)_Y coupling: α₁ = (5/3)·αₑₘ/cos²θ_W",
+                        "SU(2)_L coupling: α₂ = αₑₘ/sin²θ_W",
+                        "SU(3)_c coupling: α₃ = αₛ (directly from PDG)",
+                    ],
+                    "numerical_values": {
+                        "alpha_1_MZ": 0.01695,
+                        "alpha_2_MZ": 0.03162,
+                        "alpha_3_MZ": 0.1180,
+                    },
+                    "source": "PDG 2024",
+                },
+                terms={
+                    "α₁": "U(1)_Y coupling (GUT normalized)",
+                    "α₂": "SU(2)_L coupling",
+                    "α₃": "SU(3)_c coupling",
+                    "θ_W": "Weak mixing angle",
+                }
+            ),
+            Formula(
+                id="kk-threshold",
+                label="(3.3)",
+                latex=r"\Delta\left(\frac{1}{\alpha_i}\right)_{KK} = \frac{k_i \cdot h^{1,1}}{2\pi} \ln\frac{M_{GUT}}{M_*}",
+                plain_text="Δ(1/α_i)_KK = k_i·h¹¹/(2π)·ln(M_GUT/M_*)",
+                category="THEORY",
+                description="Kaluza-Klein threshold corrections from CY4 tower modes",
+                inputParams=["topology.h11"],
+                outputParams=[],
+                input_params=["topology.h11"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        "KK tower states from CY4 compactification",
+                        "Each state contributes to beta functions above M_*",
+                        "Net correction depends on h^{1,1} = 24 (from G2 structure)",
+                        "k_i = group-dependent factors for U(1), SU(2), SU(3)",
+                    ],
+                    "references": ["Dienes et al. (1999)"],
+                    "numerical_values": {"h11": 24, "M_star": "5 TeV"},
+                },
+                terms={
+                    "k_i": "Group-dependent KK factor",
+                    "h^{1,1}": "Hodge number (24 for TCS G2)",
+                    "M_*": "KK threshold scale",
+                }
+            ),
+            Formula(
+                id="asymptotic-safety-fixed-point",
+                label="(3.4)",
+                latex=r"\Delta_{AS}\left(\frac{1}{\alpha_i}\right) = -\omega \cdot \left(\frac{1}{\alpha_i} - \frac{1}{\alpha^*}\right), \quad \alpha^* = \frac{1}{24} = \frac{1}{b_3}",
+                plain_text="Δ_AS(1/α_i) = -ω·(1/α_i - 1/α*), α* = 1/24 = 1/b₃",
+                category="THEORY",
+                description="Asymptotic safety correction pulling toward UV fixed point",
+                inputParams=["topology.b3"],
+                outputParams=[],
+                input_params=["topology.b3"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        "Near Planck scale, asymptotic safety UV fixed point emerges",
+                        "Fixed point value α* = 1/b₃ = 1/24 from G2 topology",
+                        "Weight factor ω ≈ 0.15 (15% pull toward fixed point)",
+                        "Net correction Δ_AS ≈ -3.0 to 1/α_GUT",
+                    ],
+                    "references": ["Reuter (1998)", "G2 topology connection"],
+                    "numerical_values": {"omega": 0.15, "alpha_star": 1/24},
+                    "connection_to_topology": "Fixed point 1/α* = 24 = b₃ (G2 third Betti number)",
+                },
+                terms={
+                    "ω": "Asymptotic safety weight factor",
+                    "α*": "UV fixed point coupling",
+                    "b₃": "Third Betti number of G2 manifold",
+                }
+            ),
             Formula(
                 id="gut-scale",
                 label="(3.5)",
