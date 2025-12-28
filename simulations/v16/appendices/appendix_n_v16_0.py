@@ -281,10 +281,8 @@ class AppendixNG2Landscape(SimulationBase):
             param_refs=[
                 "topology.n_gen",
                 "topology.chi_eff",
-                "topology.B2",
+                "topology.b2",
                 "topology.b3",
-                "topology.HODGE_H11",
-                "topology.HODGE_H31",
                 "landscape.num_valid_topologies",
             ]
         )
@@ -308,7 +306,7 @@ class AppendixNG2Landscape(SimulationBase):
                     "effective Euler characteristic chi_eff = 144."
                 ),
                 input_params=["topology.chi_eff"],
-                output_params=["topology.HODGE_H11", "topology.HODGE_H31"],
+                output_params=[],
                 derivation={
                     "method": "Euler characteristic relation for TCS G2 manifolds",
                     "steps": [

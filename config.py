@@ -5396,6 +5396,13 @@ class ComputationalSettings:
     TOLERANCE_UNITARITY = 1e-10   # Unitary evolution check
     TOLERANCE_CONVERGENCE = 1e-8  # Convergence criterion
 
+    # G₂ Ricci Flow Tolerances (v16.0)
+    TORSION_TOLERANCE = 1e-15     # Geometric torsion threshold (dφ=0, d(*φ)=0)
+    RICCI_TOLERANCE = 1e-12       # Ricci-flatness check (Ric=0)
+    INTEGRATION_RTOL = 1e-10      # Relative tolerance for ODE solver
+    INTEGRATION_ATOL = 1e-12      # Absolute tolerance for ODE solver
+    AUTO_TORSION_SURGERY = True   # Enable automatic torsion surgery
+
     # Asymptotic Limits
     A_LIMIT_EXPONENT = 10     # Late-time scale factor: a → exp(10) ≈ 22026
     # For w(a→∞) limit evaluation
