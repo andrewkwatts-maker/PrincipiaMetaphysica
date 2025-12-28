@@ -562,8 +562,6 @@ class AppendixCExtendedDerivations(SimulationBase):
                     "Derivation of G2 holonomy from parallel spinor condition. "
                     "Shows equivalence between spinor, holonomy, and 3-form formulations."
                 ),
-                inputParams=[],
-                outputParams=["math.g2_dimension"],
                 input_params=[],
                 output_params=["math.g2_dimension"],
                 derivation={
@@ -595,8 +593,6 @@ class AppendixCExtendedDerivations(SimulationBase):
                     "Gauge coupling unification condition with 3-loop RG evolution "
                     "and threshold corrections. Determines M_GUT and α_GUT."
                 ),
-                inputParams=["pdg.alpha_s_MZ", "pdg.sin2_theta_W"],
-                outputParams=["gauge.M_GUT", "gauge.ALPHA_GUT"],
                 input_params=["pdg.alpha_s_MZ", "pdg.sin2_theta_W"],
                 output_params=["gauge.M_GUT", "gauge.ALPHA_GUT"],
                 derivation={
@@ -624,8 +620,6 @@ class AppendixCExtendedDerivations(SimulationBase):
                     "Derivation of fermion mass hierarchies from wavefunction overlap "
                     "on separated associative 3-cycles."
                 ),
-                inputParams=["topology.b3", "topology.cycle_separations"],
-                outputParams=["fermions.yukawa_hierarchy"],
                 input_params=["topology.b3", "topology.cycle_separations"],
                 output_params=["fermions.yukawa_hierarchy"],
                 terms={
@@ -650,8 +644,6 @@ class AppendixCExtendedDerivations(SimulationBase):
                     "Derivation of tribimaximal neutrino mixing matrix from A₄ "
                     "discrete symmetry of associative 3-cycles."
                 ),
-                inputParams=["topology.b3"],
-                outputParams=["neutrino.theta_12", "neutrino.theta_23", "neutrino.theta_13"],
                 input_params=["topology.b3"],
                 output_params=["neutrino.theta_12", "neutrino.theta_23", "neutrino.theta_13"],
                 terms={
@@ -668,8 +660,6 @@ class AppendixCExtendedDerivations(SimulationBase):
                     "Derivation of Higgs mass from G2 moduli stabilization and "
                     "effective potential."
                 ),
-                inputParams=["topology.M_KK", "pdg.higgs_quartic"],
-                outputParams=["higgs.m_h"],
                 input_params=["topology.M_KK", "pdg.higgs_quartic"],
                 output_params=["higgs.m_h"],
                 terms={
@@ -692,8 +682,6 @@ class AppendixCExtendedDerivations(SimulationBase):
                     "Derivation of proton lifetime including geometric suppression "
                     "from TCS cycle separation."
                 ),
-                inputParams=["gauge.M_GUT", "gauge.ALPHA_GUT", "topology.K_MATCHING"],
-                outputParams=["proton_decay.tau_p_years"],
                 input_params=["gauge.M_GUT", "gauge.ALPHA_GUT", "topology.K_MATCHING"],
                 output_params=["proton_decay.tau_p_years"],
                 terms={

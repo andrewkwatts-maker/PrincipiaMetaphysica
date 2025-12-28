@@ -107,7 +107,7 @@ class NeutrinoMixingSimulation(SimulationBase):
         return [
             "topology.b2",              # Kahler moduli (h^{1,1})
             "topology.b3",              # Associative 3-cycles
-            "topology.CHI_EFF",         # Effective Euler characteristic (uppercase)
+            "topology.chi_eff",         # Effective Euler characteristic (uppercase)
             "topology.n_gen",           # Number of generations
             "topology.orientation_sum", # Flux orientation sum
         ]
@@ -146,7 +146,7 @@ class NeutrinoMixingSimulation(SimulationBase):
         # Load inputs from registry
         self._b2 = registry.get_param("topology.b2")
         self._b3 = registry.get_param("topology.b3")
-        self._chi_eff = registry.get_param("topology.CHI_EFF")  # uppercase
+        self._chi_eff = registry.get_param("topology.chi_eff")  # uppercase
         self._n_gen = registry.get_param("topology.n_gen")
         self._orientation_sum = registry.get_param("topology.orientation_sum")
 

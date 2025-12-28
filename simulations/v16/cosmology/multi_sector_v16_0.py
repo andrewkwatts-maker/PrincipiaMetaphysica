@@ -84,7 +84,7 @@ class MultiSectorV16(SimulationBase):
             "desi.wa",          # Dark energy evolution parameter
             "desi.H0",          # Hubble constant
             "desi.Omega_m",     # Matter density parameter
-            "topology.CHI_EFF", # Effective Euler characteristic (uppercase)
+            "topology.chi_eff", # Effective Euler characteristic (uppercase)
         ]
 
     @property
@@ -135,7 +135,7 @@ class MultiSectorV16(SimulationBase):
 
         # Get topology if available
         try:
-            chi_eff = registry.get_param("topology.CHI_EFF")  # uppercase
+            chi_eff = registry.get_param("topology.chi_eff")  # uppercase
         except KeyError:
             chi_eff = 144  # Default for G2 manifold
 
@@ -452,9 +452,9 @@ class MultiSectorV16(SimulationBase):
                 plain_text="V(T) = V_0 [exp(-a*T) - b*exp(-c*T)]^2",
                 category="THEORY",
                 description="Racetrack moduli potential with two exponentials",
-                inputParams=["topology.CHI_EFF"],
+                inputParams=["topology.chi_eff"],
                 outputParams=["cosmology.modulation_width"],
-                input_params=["topology.CHI_EFF"],
+                input_params=["topology.chi_eff"],
                 output_params=["cosmology.modulation_width"],
                 derivation={
                     "steps": [
@@ -489,9 +489,9 @@ class MultiSectorV16(SimulationBase):
                 plain_text="T'/T = (g_*/g'_*)^(1/3) * (Gamma'/Gamma)^(1/2) = 0.57",
                 category="DERIVED",
                 description="Mirror sector temperature ratio from asymmetric reheating",
-                inputParams=["topology.CHI_EFF"],
+                inputParams=["topology.chi_eff"],
                 outputParams=["cosmology.T_mirror_ratio"],
-                input_params=["topology.CHI_EFF"],
+                input_params=["topology.chi_eff"],
                 output_params=["cosmology.T_mirror_ratio"],
                 derivation={
                     "steps": [
@@ -816,9 +816,9 @@ def export_multi_sector_v16() -> Dict[str, Any]:
     EstablishedPhysics.load_into_registry(registry)
 
     # Add topology if not present
-    if not registry.has_param("topology.CHI_EFF"):
+    if not registry.has_param("topology.chi_eff"):
         registry.set_param(
-            "topology.CHI_EFF",
+            "topology.chi_eff",
             144,
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"

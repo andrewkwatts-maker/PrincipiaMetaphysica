@@ -324,8 +324,6 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
                     "Gravitational wave dispersion relation with frequency-dependent correction. "
                     "High-frequency GWs arrive slightly before low-frequency components."
                 ),
-                inputParams=["gw_dispersion.eta", "gw_dispersion.M_GW"],
-                outputParams=[],
                 input_params=["gw_dispersion.eta", "gw_dispersion.M_GW"],
                 output_params=[],
             ),
@@ -339,8 +337,6 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
                     "Dispersion coefficient from torsion class and third Betti number. "
                     "Testable by LISA (2037+)."
                 ),
-                inputParams=["topology.T_omega", "topology.b3"],
-                outputParams=["gw_dispersion.eta"],
                 input_params=["topology.T_omega", "topology.b3"],
                 output_params=["gw_dispersion.eta"],
                 derivation={

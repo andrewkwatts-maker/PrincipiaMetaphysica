@@ -22,7 +22,7 @@ PHYSICAL PICTURE:
 - Saturation: 24 flux units / 8 spinor DOF = 3 generations
 
 DERIVATION CHAIN:
-topology.CHI_EFF = 144 (TCS G2 manifold #187)
+topology.chi_eff = 144 (TCS G2 manifold #187)
 topology.b3 = 24 (third Betti number)
   -> spinor components = 8 (Spin(7) representation)
   -> preserved spinors = 1 (G2 holonomy)
@@ -99,7 +99,7 @@ class ChiralitySpinorSimulation(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
         return [
-            "topology.CHI_EFF",
+            "topology.chi_eff",
             "topology.b3",
             "constants.M_PLANCK",
         ]
@@ -140,7 +140,7 @@ class ChiralitySpinorSimulation(SimulationBase):
             Dictionary of computed results
         """
         # Extract inputs from registry
-        chi_eff = registry.get_param("topology.CHI_EFF")
+        chi_eff = registry.get_param("topology.chi_eff")
         b3 = registry.get_param("topology.b3")
 
         # Spinor structure from G2 holonomy
@@ -420,7 +420,7 @@ class ChiralitySpinorSimulation(SimulationBase):
                 "spinor-saturation-generations",
             ],
             param_refs=[
-                "topology.CHI_EFF",
+                "topology.chi_eff",
                 "topology.b3",
                 "chirality.spinor_dimension",
                 "chirality.preserved_spinors",
@@ -499,9 +499,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "left-handed and right-handed components. The parallel spinor η is "
                     "automatically left-handed."
                 ),
-                inputParams=["topology.CHI_EFF"],
+                inputParams=["topology.chi_eff"],
                 outputParams=["chirality.chiral_index"],
-                input_params=["topology.CHI_EFF"],
+                input_params=["topology.chi_eff"],
                 output_params=["chirality.chiral_index"],
                 derivation={
                     "parentFormulas": ["g2-spinor-preservation"],
@@ -592,9 +592,9 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "(associative 4-form Φ) and gauge flux (F). For TCS G2 #187: "
                     "index = χ_eff/24 = 6."
                 ),
-                inputParams=["topology.CHI_EFF", "topology.b3"],
+                inputParams=["topology.chi_eff", "topology.b3"],
                 outputParams=["chirality.chiral_index", "chirality.imbalance"],
-                input_params=["topology.CHI_EFF", "topology.b3"],
+                input_params=["topology.chi_eff", "topology.b3"],
                 output_params=["chirality.chiral_index", "chirality.imbalance"],
                 derivation={
                     "parentFormulas": ["dirac-zero-modes", "associative-chirality-projector"],
@@ -1026,7 +1026,7 @@ def main():
 
     # Add required topology parameters (from TCS G2 manifold #187)
     registry.set_param(
-        path="topology.CHI_EFF",
+        path="topology.chi_eff",
         value=144,
         source="ESTABLISHED:TCS_G2_187",
         status="GEOMETRIC",

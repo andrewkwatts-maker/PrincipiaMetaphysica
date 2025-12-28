@@ -260,8 +260,6 @@ def proton_decay_br(b3: int = 24, orientation_Σ: int = 12) -> dict:
                     "Proton decay branching ratio from geometric orientation of flux. "
                     "Predicts BR = 0.25 within SO(10) literature range (0.3-0.5)."
                 ),
-                inputParams=["dimensions.orientation_sum", "topology.b3"],
-                outputParams=["proton_decay.BR_e_pi0"],
                 input_params=["dimensions.orientation_sum", "topology.b3"],
                 output_params=["proton_decay.BR_e_pi0"],
                 derivation={

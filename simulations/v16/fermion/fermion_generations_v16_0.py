@@ -23,7 +23,7 @@ KEY RESULTS:
 - Chiral filter strength: 7/8 from spinor stabilization
 
 DERIVATION CHAIN:
-topology.CHI_EFF = 144 (TCS G2 manifold #187)
+topology.chi_eff = 144 (TCS G2 manifold #187)
   -> N_flux = chi_eff / 6 = 24
   -> n_gen = N_flux / 8 = 3
   -> epsilon = exp(-1.5) ~ 0.223
@@ -56,7 +56,7 @@ class FermionGenerationsV16(SimulationBase):
     3. Pneuma chiral filter mechanism
 
     Inputs:
-        - topology.CHI_EFF: Effective Euler characteristic (144)
+        - topology.chi_eff: Effective Euler characteristic (144)
         - topology.b3: Third Betti number (24)
 
     Outputs:
@@ -134,7 +134,7 @@ class FermionGenerationsV16(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths."""
         return [
-            "topology.CHI_EFF",
+            "topology.chi_eff",
             "topology.b3"
         ]
 
@@ -169,7 +169,7 @@ class FermionGenerationsV16(SimulationBase):
             Dictionary mapping parameter paths to computed values
         """
         # Get inputs from registry
-        chi_eff = registry.get_param("topology.CHI_EFF")
+        chi_eff = registry.get_param("topology.chi_eff")
         b3 = registry.get_param("topology.b3")
 
         # Compute flux quanta
@@ -303,7 +303,7 @@ class FermionGenerationsV16(SimulationBase):
             content_blocks=blocks,
             formula_refs=["generation-number", "yukawa-texture", "pneuma-chiral-filter"],
             param_refs=[
-                "topology.CHI_EFF",
+                "topology.chi_eff",
                 "topology.b3",
                 "fermion.n_generations",
                 "fermion.yukawa_hierarchy",
@@ -326,9 +326,9 @@ class FermionGenerationsV16(SimulationBase):
                 plain_text="n_gen = N_flux / spinor_DOF = (chi_eff/6) / 8 = 144 / 48 = 3",
                 category="DERIVED",
                 description="Number of fermion generations from spinor saturation on G2 manifold",
-                inputParams=["topology.CHI_EFF", "topology.b3"],
+                inputParams=["topology.chi_eff", "topology.b3"],
                 outputParams=["fermion.n_generations", "fermion.n_flux"],
-                input_params=["topology.CHI_EFF", "topology.b3"],
+                input_params=["topology.chi_eff", "topology.b3"],
                 output_params=["fermion.n_generations", "fermion.n_flux"],
                 derivation={
                     "steps": [
@@ -382,9 +382,9 @@ class FermionGenerationsV16(SimulationBase):
                 plain_text="Y_f = A_f * exp(-lambda)^Q_f, epsilon = exp(-1.5) ~ 0.223",
                 category="DERIVED",
                 description="Yukawa coupling texture from geometric Froggatt-Nielsen mechanism",
-                inputParams=["topology.CHI_EFF"],
+                inputParams=["topology.chi_eff"],
                 outputParams=["fermion.yukawa_hierarchy", "fermion.epsilon_fn"],
-                input_params=["topology.CHI_EFF"],
+                input_params=["topology.chi_eff"],
                 output_params=["fermion.yukawa_hierarchy", "fermion.epsilon_fn"],
                 derivation={
                     "steps": [
@@ -711,7 +711,7 @@ def run_fermion_generations(verbose: bool = True) -> Dict[str, Any]:
 
     # Set topology inputs (from TCS G2 manifold #187)
     registry.set_param(
-        "topology.CHI_EFF",
+        "topology.chi_eff",
         value=144,
         source="ESTABLISHED:TCS_G2_187",
         status="GEOMETRIC"

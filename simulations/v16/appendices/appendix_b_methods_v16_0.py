@@ -589,8 +589,6 @@ class AppendixBComputationalMethods(SimulationBase):
                     "Renormalization group β-function governing the energy scale "
                     "dependence of gauge couplings."
                 ),
-                inputParams=["pdg.alpha_s_MZ"],
-                outputParams=["gauge.ALPHA_GUT"],
                 input_params=["pdg.alpha_s_MZ"],
                 output_params=["gauge.ALPHA_GUT"],
                 terms={
@@ -609,8 +607,6 @@ class AppendixBComputationalMethods(SimulationBase):
                     "One-loop beta function coefficients for Standard Model gauge "
                     "couplings (U(1)_Y, SU(2)_L, SU(3)_C)."
                 ),
-                inputParams=[],
-                outputParams=["methods.rg_loop_order"],
                 input_params=[],
                 output_params=["methods.rg_loop_order"],
                 terms={
@@ -630,8 +626,6 @@ class AppendixBComputationalMethods(SimulationBase):
                     "Kaluza-Klein tower threshold correction to gauge coupling running. "
                     "Accounts for infinite tower of KK modes from compactification."
                 ),
-                inputParams=["topology.R_compactification"],
-                outputParams=["methods.n_kk_modes"],
                 input_params=["topology.R_compactification"],
                 output_params=["methods.n_kk_modes"],
                 derivation={
@@ -662,8 +656,6 @@ class AppendixBComputationalMethods(SimulationBase):
                     "Asymptotic safety correction near Planck scale. Suppresses "
                     "beta function approaching UV fixed point."
                 ),
-                inputParams=["constants.M_PLANCK"],
-                outputParams=["gauge.M_GUT"],
                 input_params=["constants.M_PLANCK"],
                 output_params=["gauge.M_GUT"],
                 derivation={
@@ -693,8 +685,6 @@ class AppendixBComputationalMethods(SimulationBase):
                     "Renormalization group equation for Yukawa couplings. Includes "
                     "Yukawa self-coupling and gauge coupling contributions."
                 ),
-                inputParams=["pdg.yukawa_top"],
-                outputParams=["fermions.yukawa_top_GUT"],
                 input_params=["pdg.yukawa_top"],
                 output_params=["fermions.yukawa_top_GUT"],
                 terms={
@@ -716,8 +706,6 @@ class AppendixBComputationalMethods(SimulationBase):
                     "Relation between pole mass and running MS-bar mass for quarks. "
                     "Includes QCD corrections at one-loop order."
                 ),
-                inputParams=["pdg.m_top_pole"],
-                outputParams=["fermions.m_top_MSbar"],
                 input_params=["pdg.m_top_pole"],
                 output_params=["fermions.m_top_MSbar"],
                 terms={

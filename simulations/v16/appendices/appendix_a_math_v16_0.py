@@ -439,8 +439,6 @@ class AppendixAMathFoundations(SimulationBase):
                     "G2 holonomy condition: parallel 3-form. The existence of a "
                     "covariantly constant 3-form φ reduces the holonomy to G2 ⊂ SO(7)."
                 ),
-                inputParams=[],
-                outputParams=["math.g2_dimension"],
                 input_params=[],
                 output_params=["math.g2_dimension"],
                 derivation={
@@ -467,8 +465,6 @@ class AppendixAMathFoundations(SimulationBase):
                     "Associative calibration: the fundamental 3-form defining G2 structure. "
                     "Calibrates associative 3-cycles (minimal volume submanifolds)."
                 ),
-                inputParams=[],
-                outputParams=["math.g2_dimension"],
                 input_params=[],
                 output_params=["math.g2_dimension"],
                 terms={
@@ -487,8 +483,6 @@ class AppendixAMathFoundations(SimulationBase):
                     "Coassociative calibration: Hodge dual of φ. Calibrates coassociative "
                     "4-cycles and determines the 4-form part of G2 structure."
                 ),
-                inputParams=[],
-                outputParams=[],
                 input_params=[],
                 output_params=[],
                 derivation={
@@ -516,8 +510,6 @@ class AppendixAMathFoundations(SimulationBase):
                     "Parallel spinor condition on G2 manifolds. Equivalent to holonomy "
                     "reduction and Ricci-flatness."
                 ),
-                inputParams=[],
-                outputParams=["math.spinor_dimension"],
                 input_params=[],
                 output_params=["math.spinor_dimension"],
                 derivation={
@@ -546,8 +538,6 @@ class AppendixAMathFoundations(SimulationBase):
                     "Clifford algebra relation for spinors in 7D. Defines the action of "
                     "tangent vectors on spinor space."
                 ),
-                inputParams=[],
-                outputParams=["math.spinor_dimension"],
                 input_params=[],
                 output_params=["math.spinor_dimension"],
                 terms={
@@ -565,8 +555,6 @@ class AppendixAMathFoundations(SimulationBase):
                     "Ricci-flatness of G2 manifolds. Automatic consequence of holonomy "
                     "reduction, making G2 manifolds valid M-theory backgrounds."
                 ),
-                inputParams=[],
-                outputParams=[],
                 input_params=[],
                 output_params=[],
                 derivation={

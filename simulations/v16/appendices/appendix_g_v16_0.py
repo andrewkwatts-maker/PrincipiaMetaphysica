@@ -284,8 +284,6 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                     "G₄ flux quantization on G₂ manifolds. The divisor 6 comes from the index "
                     "theorem on G₂ geometry (Acharya 2001)."
                 ),
-                inputParams=["topology.chi_eff"],
-                outputParams=["topology.N_flux"],
                 input_params=["topology.chi_eff"],
                 output_params=["topology.N_flux"],
             ),
@@ -299,8 +297,6 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                     "Topological effective torsion from flux quantization. Each coassociative "
                     "3-cycle carries one unit of G₄ flux."
                 ),
-                inputParams=["topology.b3", "topology.N_flux"],
-                outputParams=["topology.T_omega_topological"],
                 input_params=["topology.b3", "topology.N_flux"],
                 output_params=["topology.T_omega_topological"],
                 derivation={
@@ -324,8 +320,6 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                     "Effective torsion with Spin(7) spinor fraction correction. G₄ flux "
                     "stabilizes 7 of 8 spinor components in 7D G₂ manifolds."
                 ),
-                inputParams=["topology.T_omega_topological", "topology.spinor_fraction"],
-                outputParams=["topology.T_omega"],
                 input_params=["topology.T_omega_topological", "topology.spinor_fraction"],
                 output_params=["topology.T_omega"],
                 derivation={

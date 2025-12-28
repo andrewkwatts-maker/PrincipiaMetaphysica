@@ -69,7 +69,7 @@ class AppendixLValuesSummary(SimulationBase):
         """Return list of required input parameter paths."""
         return [
             "topology.n_gen",
-            "topology.CHI_EFF",
+            "topology.chi_eff",
             "topology.b2",
             "topology.b3",
             "gauge.M_GUT",
@@ -197,14 +197,14 @@ class AppendixLValuesSummary(SimulationBase):
                                 "value": "24",
                                 "formula": "Associative 3-cycles",
                                 "status": "Exact",
-                                "param_ref": "topology.B3"
+                                "param_ref": "topology.b3"
                             },
                             {
                                 "parameter": "χ_eff",
                                 "value": "144",
                                 "formula": "Flux-dressed Euler characteristic",
                                 "status": "Exact",
-                                "param_ref": "topology.CHI_EFF"
+                                "param_ref": "topology.chi_eff"
                             },
                             {
                                 "parameter": "n_gen",
@@ -589,8 +589,8 @@ class AppendixLValuesSummary(SimulationBase):
                 "dimensions.D_AFTER_SP2R",
                 "dimensions.D_INTERNAL",
                 "topology.B2",
-                "topology.B3",
-                "topology.CHI_EFF",
+                "topology.b3",
+                "topology.chi_eff",
                 "topology.n_gen",
                 "gauge.M_GUT",
                 "gauge.ALPHA_GUT_INV",
