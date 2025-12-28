@@ -155,22 +155,22 @@ class LQGTimescaleCompatibility:
             'planck_to_gut': {
                 'ratio': self.SCALES['gut']['time_s'] / self.t_planck,
                 'orders': np.log10(self.SCALES['gut']['time_s'] / self.t_planck),
-                'description': 'Planck → GUT (quantum gravity → unification)'
+                'description': 'Planck -> GUT (quantum gravity -> unification)'
             },
             'gut_to_compactification': {
                 'ratio': self.SCALES['compactification']['time_s'] / self.SCALES['gut']['time_s'],
                 'orders': np.log10(self.SCALES['compactification']['time_s'] / self.SCALES['gut']['time_s']),
-                'description': 'GUT → Compactification (unification → extra dims)'
+                'description': 'GUT -> Compactification (unification -> extra dims)'
             },
             'compactification_to_tev': {
                 'ratio': self.t_ortho / self.SCALES['compactification']['time_s'],
                 'orders': np.log10(self.t_ortho / self.SCALES['compactification']['time_s']),
-                'description': 'Compactification → TeV (extra dims → t_ortho)'
+                'description': 'Compactification -> TeV (extra dims -> t_ortho)'
             },
             'total': {
                 'ratio': self.scale_ratio(),
                 'orders': self.orders_of_magnitude_gap(),
-                'description': 'Total gap Planck → t_ortho'
+                'description': 'Total gap Planck -> t_ortho'
             }
         }
         return result
@@ -198,7 +198,7 @@ class LQGTimescaleCompatibility:
             'reconciliation': {
                 'hypothesis': 'Complementary regimes, not contradictory',
                 'analogy': 'Like QCD (GeV) vs Planck (10^19 GeV) - different regimes',
-                'bridge': 'LQG discreteness → continuous at compactification → t_ortho emerges',
+                'bridge': 'LQG discreteness -> continuous at compactification -> t_ortho emerges',
                 'status': 'OPEN PROBLEM - full derivation not yet achieved'
             },
             'possible_resolutions': [
