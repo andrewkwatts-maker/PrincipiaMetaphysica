@@ -1,463 +1,316 @@
 {
-  "version": "14.1",
-  "config_source": "config.py",
-  "all_passed": false,
-  "validation_summary": [
-    {
-      "id": "proton_decay",
-      "name": "Proton Decay",
-      "status": "PASS",
-      "computed": 8.149598829720118e+34,
-      "experimental": 1.67e+34,
-      "bound_type": "lower",
-      "sigma": 4.88,
-      "ratio": 4.879999299233603,
-      "units": "years",
-      "source": "proton-lifetime",
-      "notes": "Mechanism: TCS cycle separation (K=4 neck topology)"
-    },
-    {
-      "id": "neutrino_masses",
-      "name": "Neutrino Masses",
-      "status": "PASS",
-      "computed": 7.96e-05,
-      "experimental": 7.42e-05,
-      "bound_type": null,
-      "sigma": 2.699999999999998,
-      "ratio": null,
-      "units": "eV^2",
-      "source": "neutrino-mass-splitting",
-      "notes": "Solar splitting validation (multiple validations available)"
-    },
-    {
-      "id": "higgs_mass",
-      "name": "Higgs Mass",
-      "status": "PASS",
-      "computed": 125.1,
-      "experimental": 125.2,
-      "bound_type": null,
-      "sigma": 0.9090909090909866,
-      "ratio": null,
-      "units": "GeV",
-      "source": "higgs-mass",
-      "notes": "Mechanism: Moduli stabilization with Re(T)=7.086"
-    },
-    {
-      "id": "kk_graviton",
-      "name": "KK Graviton",
-      "status": "PASS",
-      "computed": 1.2e+16,
-      "experimental": 1e+16,
-      "bound_type": null,
-      "sigma": 0.2,
-      "ratio": null,
-      "units": "GeV",
-      "source": "kk-graviton-mass",
-      "notes": "Mechanism: First KK graviton mass from 7D compactification scale with geometric warping factor"
-    },
-    {
-      "id": "doublet_triplet",
-      "name": "DT Splitting",
-      "status": "PASS",
-      "computed": 10000000000000.0,
-      "experimental": 10000000000000.0,
-      "bound_type": null,
-      "sigma": 0.1,
-      "ratio": null,
-      "units": "dimensionless",
-      "source": "doublet-triplet-splitting",
-      "notes": "Mechanism: Native TCS Topological Filter (triplets to shadow sector)"
-    },
-    {
-      "id": "breaking_chain",
-      "name": "Breaking Chain",
-      "status": "PASS",
-      "computed": 3.15e+16,
-      "experimental": 2e+16,
-      "bound_type": null,
-      "sigma": 1.15,
-      "ratio": null,
-      "units": "GeV",
-      "source": "breaking-chain",
-      "notes": "Mechanism: Pneuma (54_H) alignment with G2 7D curvature"
-    },
-    {
-      "id": "fermion_chirality",
-      "name": "Fermion Chirality",
-      "status": "PASS",
-      "computed": 3.0,
-      "experimental": 3.0,
-      "bound_type": null,
-      "sigma": 0.0,
-      "ratio": null,
-      "units": "dimensionless",
-      "source": "generation-count",
-      "notes": "Mechanism: Pneuma torsion filter (axial coupling)"
-    },
-    {
-      "id": "pneuma_stability",
-      "name": "Pneuma Stability",
-      "status": "PASS",
-      "computed": 1.0,
-      "experimental": 1.0,
-      "bound_type": null,
-      "sigma": 0.0,
-      "ratio": null,
-      "units": "stability",
-      "source": "pneuma-potential",
-      "notes": "Mechanism: Racetrack superpotential W = W₀ + A·e^(-aT) + B·e^(-bT) stabilizes Pneuma field via AdS minimum"
-    },
-    {
-      "id": "hebrew_physics",
-      "name": "Hebrew Physics",
-      "status": "ERROR",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u05d2' in position 15: character maps to <undefined>"
-    },
-    {
-      "id": "kk_spectrum_v14_2",
-      "name": "KK Spectrum (v14.2)",
-      "status": "ERROR",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u2083' in position 23: character maps to <undefined>"
-    },
-    {
-      "id": "yukawa_textures",
-      "name": "Yukawa Textures",
-      "status": "ERROR",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u03bb' in position 19: character maps to <undefined>"
-    },
-    {
-      "id": "cp_phase",
-      "name": "CP Phase",
-      "status": "ERROR",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u2083' in position 23: character maps to <undefined>"
-    },
-    {
-      "id": "g2_metric_ricci",
-      "name": "G2 Ricci-Flatness",
-      "status": "PASS",
-      "computed": 0.0,
-      "experimental": 0.0,
-      "bound_type": null,
-      "sigma": 0.1,
-      "ratio": null,
-      "units": "curvature",
-      "source": "g2-ricci",
-      "notes": "Mechanism: G2 metric Ricci flatness validation via holonomy consistency"
-    },
-    {
-      "id": "yukawa_overlap",
-      "name": "Yukawa Overlaps",
-      "status": "PASS",
-      "computed": 1.0,
-      "experimental": 1.0,
-      "bound_type": null,
-      "sigma": 0.3,
-      "ratio": null,
-      "units": "dimensionless",
-      "source": "yukawa-overlap",
-      "notes": "Mechanism: Yukawa couplings from G2 associative cycle overlap integrals"
-    },
-    {
-      "id": "asymptotic_safety",
-      "name": "Asymptotic Safety",
-      "status": "PASS",
-      "computed": 0.0,
-      "experimental": 0.0,
-      "bound_type": null,
-      "sigma": 0.2,
-      "ratio": null,
-      "units": "dimensionless",
-      "source": "asymptotic-safety",
-      "notes": "Mechanism: UV fixed point in RG flow ensures asymptotic safety of gravity coupling"
-    },
-    {
-      "id": "moduli_racetrack_v15",
-      "name": "Moduli Racetrack (v15.0)",
-      "status": "PASS",
-      "computed": 7.086,
-      "experimental": 7.0,
-      "bound_type": null,
-      "sigma": 0.12,
-      "ratio": null,
-      "units": "Re(T)",
-      "source": "racetrack-potential",
-      "notes": "Mechanism: Racetrack superpotential with flux-determined exponents"
-    },
-    {
-      "id": "g2_metric_v15",
-      "name": "G2 Metric+Perturbation (v15.0)",
-      "status": "PASS",
-      "computed": 0.0,
-      "experimental": 0.0,
-      "bound_type": null,
-      "sigma": 0.05,
-      "ratio": null,
-      "units": "Ricci scalar",
-      "source": "g2-metric",
-      "notes": "Mechanism: G2 metric constructed via TCS matching with Ricci flatness verification"
-    },
-    {
-      "id": "yukawa_overlap_v15",
-      "name": "Yukawa 7D MC (v15.0)",
-      "status": "PASS",
-      "computed": 1.0,
-      "experimental": 1.0,
-      "bound_type": null,
-      "sigma": 0.25,
-      "ratio": null,
-      "units": "dimensionless",
-      "source": "yukawa-overlap-tcs",
-      "notes": "Mechanism: Precise computation of Yukawa overlap integrals on TCS G2 manifold #187"
-    },
-    {
-      "id": "pneuma_bridge_v15_1",
-      "name": "Pneuma-Vielbein Bridge (v15.1)",
-      "status": "ERROR",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u2083' in position 3: character maps to <undefined>"
-    },
-    {
-      "id": "multi_sector_v16_0",
-      "name": "Multi-Sector Sampling (v16.0)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u2192' in position 37: character maps to <undefined>"
-    },
-    {
-      "id": "microtubule_v15_2",
-      "name": "Microtubule-PM Coupling (v15.2)",
-      "status": "PASS",
-      "computed": 1e-20,
-      "experimental": 1e-20,
-      "bound_type": null,
-      "sigma": 1.0,
-      "ratio": null,
-      "units": "eV",
-      "source": "microtubule-coupling",
-      "notes": "Mechanism: Pneuma coupling to microtubule quantum states (Orch OR connection)"
-    },
-    {
-      "id": "lattice_dispersion_v16_0",
-      "name": "Lattice Dispersion (v16.0)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u03b4' in position 28: character maps to <undefined>"
-    },
-    {
-      "id": "evolutionary_orchestration_v16_1",
-      "name": "Evolutionary Orchestration (v16.1)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u03b1' in position 10: character maps to <undefined>"
-    },
-    {
-      "id": "subleading_dispersion_v16_1",
-      "name": "Subleading Dispersion (v16.1)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode characters in position 23-25: character maps to <undefined>"
-    },
-    {
-      "id": "pmns_geometric_v14_1",
-      "name": "PMNS Geometric (v14.1)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u03c0' in position 29: character maps to <undefined>"
-    },
-    {
-      "id": "pneuma_potential_v14_1",
-      "name": "Pneuma Potential (v14.1)",
-      "status": "PASS",
-      "computed": -1.0,
-      "experimental": -1.0,
-      "bound_type": null,
-      "sigma": 0.2,
-      "ratio": null,
-      "units": "AdS scale",
-      "source": "pneuma-full-potential",
-      "notes": "Mechanism: Racetrack from competing instantons"
-    },
-    {
-      "id": "g2_landscape_v14_1",
-      "name": "G2 Landscape (v14.1)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u2082' in position 2: character maps to <undefined>"
-    },
-    {
-      "id": "superpartner_bounds_v14_1",
-      "name": "Superpartner Bounds (v14.1)",
-      "status": "PASS",
-      "computed": 1000.0,
-      "experimental": 1000.0,
-      "bound_type": null,
-      "sigma": 0.5,
-      "ratio": null,
-      "units": "GeV",
-      "source": "superpartner-masses",
-      "notes": "Mechanism: G2 chirality needs no low-energy SUSY"
-    },
-    {
-      "id": "lqg_timescale_v14_1",
-      "name": "LQG Timescale (v14.1)",
-      "status": "CHECK",
-      "computed": null,
-      "experimental": null,
-      "bound_type": null,
-      "sigma": null,
-      "ratio": null,
-      "units": null,
-      "source": null,
-      "notes": "Simulation error: 'charmap' codec can't encode character '\\u2192' in position 9: character maps to <undefined>"
-    },
-    {
-      "id": "mirror_dm_v15_3",
-      "name": "Mirror Dark Matter (v15.3)",
-      "status": "PASS",
-      "computed": 0.12,
-      "experimental": 0.12,
-      "bound_type": null,
-      "sigma": 1.0,
-      "ratio": null,
-      "units": "relic abundance",
-      "source": "mirror-dm",
-      "notes": "Mechanism: Temperature asymmetry from moduli couplings"
-    },
-    {
-      "id": "landscape_selection_v15_4",
-      "name": "Landscape Selection (v15.4)",
-      "status": "PASS",
-      "computed": 1.0,
-      "experimental": 1.0,
-      "bound_type": null,
-      "sigma": 0.1,
-      "ratio": null,
-      "units": "uniqueness",
-      "source": "vacuum-selection",
-      "notes": "Mechanism: Condensate energy minimization + generation constraint"
-    },
-    {
-      "id": "virasoro_v12_8",
-      "name": "Virasoro Anomaly (v12.8)",
-      "status": "PASS",
-      "computed": 15.0,
-      "experimental": 15.0,
-      "bound_type": null,
-      "sigma": 0.0,
-      "ratio": null,
-      "units": "central charge",
-      "source": "virasoro-anomaly",
-      "notes": "Mechanism: Virasoro anomaly cancellation in worldsheet CFT"
-    },
-    {
-      "id": "sp2r_validation_v13_0",
-      "name": "Sp(2,R) Gauge Fixing (v13.0)",
-      "status": "PASS",
-      "computed": 1.0,
-      "experimental": 1.0,
-      "bound_type": null,
-      "sigma": 0.0,
-      "ratio": null,
-      "units": "gauge consistency",
-      "source": "sp2r-gauge",
-      "notes": "Mechanism: Sp(2,R) gauge fixing validation for quaternionic Kähler structure"
-    },
-    {
-      "id": "orientation_sum_v12_8",
-      "name": "Orientation Sum (v12.8)",
-      "status": "PASS",
-      "computed": 0.25,
-      "experimental": 0.3,
-      "bound_type": null,
-      "sigma": 0.5,
-      "ratio": null,
-      "units": "branching ratio",
-      "source": "orientation-sum",
-      "notes": "Mechanism: Geometric orientation sum for proton decay branching ratios from TCS cycle topology"
-    },
-    {
-      "id": "zero_modes_v12_8",
-      "name": "Zero Modes (v12.8)",
-      "status": "PASS",
-      "computed": 72.0,
-      "experimental": 72.0,
-      "bound_type": null,
-      "sigma": 0.0,
-      "ratio": null,
-      "units": "spinor components",
-      "source": "zero-mode-index",
-      "notes": "Mechanism: Zero mode counting from G2 index theorem determines generation structure"
-    }
-  ],
-  "generated_at": null
+  "version": "16.0",
+  "timestamp": "2025-12-28T19:48:54.445862",
+  "validation": {
+    "timestamp": "2025-12-28T19:48:54.445812",
+    "simulations_run": 20,
+    "simulations_passed": 20,
+    "simulations_failed": 0,
+    "simulations_skipped": 0,
+    "total_execution_time_ms": 31.078999999999997,
+    "results": [
+      {
+        "simulation_id": "introduction_v16_0",
+        "phase": 0,
+        "status": "PASSED",
+        "execution_time_ms": 0.026,
+        "outputs_computed": []
+      },
+      {
+        "simulation_id": "g2_geometry_v16_0",
+        "phase": 1,
+        "status": "PASSED",
+        "execution_time_ms": 0.064,
+        "outputs_computed": [
+          "topology.b2",
+          "topology.b3",
+          "topology.CHI_EFF",
+          "topology.chi_eff",
+          "topology.n_gen",
+          "topology.K_MATCHING",
+          "topology.d_over_R",
+          "_holonomy_valid",
+          "_betti_numbers",
+          "_chi_topological"
+        ]
+      },
+      {
+        "simulation_id": "gauge_unification_v16_0",
+        "phase": 1,
+        "status": "PASSED",
+        "execution_time_ms": 29.648999999999997,
+        "outputs_computed": [
+          "gauge.M_GUT",
+          "gauge.ALPHA_GUT",
+          "gauge.ALPHA_GUT_INV",
+          "gauge.sin2_theta_W_gut"
+        ]
+      },
+      {
+        "simulation_id": "fermion_generations_v16_0",
+        "phase": 2,
+        "status": "PASSED",
+        "execution_time_ms": 0.055,
+        "outputs_computed": [
+          "fermion.n_generations",
+          "fermion.yukawa_hierarchy",
+          "fermion.chiral_filter_strength",
+          "fermion.n_flux",
+          "fermion.epsilon_fn",
+          "_chi_eff",
+          "_b3",
+          "_spinor_dof",
+          "_is_exact",
+          "_matches_observed",
+          "_lambda_curvature"
+        ]
+      },
+      {
+        "simulation_id": "chirality_v16_0",
+        "phase": 2,
+        "status": "PASSED",
+        "execution_time_ms": 0.449,
+        "outputs_computed": [
+          "chirality.spinor_dimension",
+          "chirality.preserved_spinors",
+          "chirality.chiral_index",
+          "chirality.zero_modes_left",
+          "chirality.zero_modes_right",
+          "chirality.imbalance",
+          "chirality.generation_count",
+          "chirality.saturation_ratio",
+          "_chi_eff",
+          "_b3",
+          "_is_integer_generations",
+          "_is_complete_saturation",
+          "_matches_observed"
+        ]
+      },
+      {
+        "simulation_id": "ckm_matrix_v16_0",
+        "phase": 2,
+        "status": "PASSED",
+        "execution_time_ms": 0.10500000000000001,
+        "outputs_computed": [
+          "ckm.V_us",
+          "ckm.V_cb",
+          "ckm.V_ub",
+          "ckm.V_td",
+          "ckm.V_ts",
+          "ckm.V_tb",
+          "ckm.V_ud",
+          "ckm.V_cd",
+          "ckm.V_cs",
+          "ckm.jarlskog_invariant",
+          "ckm.lambda_wolfenstein",
+          "ckm.A_wolfenstein",
+          "ckm.rho_wolfenstein",
+          "ckm.eta_wolfenstein",
+          "ckm.delta_cp",
+          "ckm.unitarity_test",
+          "ckm.unitarity_row1",
+          "ckm.unitarity_col1",
+          "_V_us_sigma",
+          "_V_cb_sigma",
+          "_V_ub_sigma",
+          "_V_td_sigma",
+          "_V_ts_sigma",
+          "_V_tb_sigma",
+          "_J_sigma",
+          "_all_within_3sigma",
+          "_epsilon",
+          "_K_matching"
+        ]
+      },
+      {
+        "simulation_id": "proton_decay_v16_0",
+        "phase": 2,
+        "status": "PASSED",
+        "execution_time_ms": 0.04,
+        "outputs_computed": [
+          "proton_decay.tau_p_years",
+          "proton_decay.tau_p_base",
+          "proton_decay.d_over_R",
+          "proton_decay.suppression_factor",
+          "proton_decay.super_k_ratio",
+          "proton_decay.above_bound",
+          "proton_decay.br_e_pi0",
+          "proton_decay.status"
+        ]
+      },
+      {
+        "simulation_id": "higgs_mass_v16_0",
+        "phase": 2,
+        "status": "PASSED",
+        "execution_time_ms": 0.054,
+        "outputs_computed": [
+          "higgs.m_higgs_pred",
+          "higgs.m_higgs_geometric",
+          "higgs.vev",
+          "higgs.lambda_0",
+          "higgs.lambda_eff_pheno",
+          "higgs.lambda_eff_geometric",
+          "moduli.stabilization_status",
+          "higgs.quartic_correction"
+        ]
+      },
+      {
+        "simulation_id": "cosmology_intro_v16_0",
+        "phase": 3,
+        "status": "PASSED",
+        "execution_time_ms": 0.055,
+        "outputs_computed": [
+          "cosmology.H0_theory",
+          "cosmology.Omega_Lambda",
+          "cosmology.Omega_total",
+          "cosmology.D_eff_cosmology",
+          "cosmology.age_universe_Gyr",
+          "cosmology.critical_density"
+        ]
+      },
+      {
+        "simulation_id": "dark_energy_v16_0",
+        "phase": 3,
+        "status": "PASSED",
+        "execution_time_ms": 0.063,
+        "outputs_computed": [
+          "cosmology.w0_derived",
+          "cosmology.wa_derived",
+          "cosmology.D_eff",
+          "cosmology.alpha_shadow",
+          "cosmology.w0_deviation"
+        ]
+      },
+      {
+        "simulation_id": "neutrino_mixing_v16_0",
+        "phase": 3,
+        "status": "PASSED",
+        "execution_time_ms": 0.064,
+        "outputs_computed": [
+          "neutrino.theta_12_pred",
+          "neutrino.theta_13_pred",
+          "neutrino.theta_23_pred",
+          "neutrino.delta_CP_pred"
+        ]
+      },
+      {
+        "simulation_id": "multi_sector_v16_0",
+        "phase": 3,
+        "status": "PASSED",
+        "execution_time_ms": 0.106,
+        "outputs_computed": [
+          "cosmology.w_eff",
+          "cosmology.Omega_DM_over_b",
+          "cosmology.T_mirror_ratio",
+          "cosmology.modulation_width",
+          "cosmology.sm_weight",
+          "cosmology.mirror_weight",
+          "cosmology.hierarchy_ratio"
+        ]
+      },
+      {
+        "simulation_id": "pneuma_mechanism_v16_0",
+        "phase": 4,
+        "status": "PASSED",
+        "execution_time_ms": 0.07100000000000001,
+        "outputs_computed": [
+          "pneuma.coupling",
+          "pneuma.flow_parameter",
+          "pneuma.lagrangian_valid",
+          "pneuma.vev",
+          "pneuma.mass_scale"
+        ]
+      },
+      {
+        "simulation_id": "thermal_time_v16_0",
+        "phase": 4,
+        "status": "PASSED",
+        "execution_time_ms": 0.027,
+        "outputs_computed": [
+          "thermal.alpha_T",
+          "thermal.modular_temperature",
+          "thermal.entropy_gradient",
+          "thermal.two_time_metric_signature"
+        ]
+      },
+      {
+        "simulation_id": "discussion_v16_0",
+        "phase": 5,
+        "status": "PASSED",
+        "execution_time_ms": 0.034999999999999996,
+        "outputs_computed": []
+      },
+      {
+        "simulation_id": "predictions_aggregator_v16_0",
+        "phase": 5,
+        "status": "PASSED",
+        "execution_time_ms": 0.037,
+        "outputs_computed": [
+          "predictions.summary",
+          "predictions.falsifiable_count"
+        ]
+      },
+      {
+        "simulation_id": "appendix_a_math_v16_0",
+        "phase": 5,
+        "status": "PASSED",
+        "execution_time_ms": 0.039,
+        "outputs_computed": [
+          "math.g2_dimension",
+          "math.spinor_dimension",
+          "math.octonion_dimension",
+          "math.g2_lie_dimension",
+          "math.betti_sequence",
+          "math.euler_characteristic",
+          "math.validation_status"
+        ]
+      },
+      {
+        "simulation_id": "appendix_b_methods_v16_0",
+        "phase": 5,
+        "status": "PASSED",
+        "execution_time_ms": 0.054,
+        "outputs_computed": [
+          "methods.rg_loop_order",
+          "methods.integration_method",
+          "methods.convergence_criterion",
+          "methods.n_kk_modes",
+          "methods.threshold_scale",
+          "methods.optimizer",
+          "methods.max_iterations",
+          "methods.tolerance",
+          "methods.validation_status"
+        ]
+      },
+      {
+        "simulation_id": "appendix_c_derivations_v16_0",
+        "phase": 5,
+        "status": "PASSED",
+        "execution_time_ms": 0.041,
+        "outputs_computed": [
+          "derivations.n_gen_derived",
+          "derivations.generation_check",
+          "derivations.d_over_R_derived",
+          "derivations.separation_check",
+          "derivations.validation_status"
+        ]
+      },
+      {
+        "simulation_id": "appendix_d_tables_v16_0",
+        "phase": 5,
+        "status": "PASSED",
+        "execution_time_ms": 0.045000000000000005,
+        "outputs_computed": [
+          "tables.n_constants",
+          "tables.n_pdg_inputs",
+          "tables.n_geometric",
+          "tables.n_derived",
+          "tables.n_predictions",
+          "tables.total_parameters",
+          "tables.parameter_categories",
+          "tables.compilation_status"
+        ]
+      }
+    ]
+  }
 }
