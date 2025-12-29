@@ -645,7 +645,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-29T11:08:46.036771"
+      "timestamp": "2025-12-29T12:52:05.022348"
     },
     "2": {
       "id": "2",
@@ -1474,208 +1474,62 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-29T11:08:46.113884"
+      "timestamp": "2025-12-29T12:52:05.061516"
     },
     "3": {
       "id": "3",
       "type": "section",
-      "title": "Gauge Coupling Unification and the GUT Scale",
-      "shortTitle": "Gauge Coupling Unification and the GUT Scale",
+      "title": "Fine Structure Constant from G2 Geometry",
+      "shortTitle": "Fine Structure Constant from G2 Geometry",
       "order": 3,
-      "abstract": "We determine the Grand Unification scale M_GUT = (6.3 ± 0.3) × 10^15 GeV and unified coupling alpha_GUT^-1 = 42.7 ± 2.0 from three-loop renormalization group evolution of Standard Model gauge couplings, including Kaluza-Klein threshold corrections and asymptotic safety effects.",
+      "abstract": "The fine structure constant alpha is NOT a free parameter in PM. It emerges from the intersection topology of the 3-form and dual 4-form on the G2 manifold, yielding alpha^-1 = 137.036 with zero adjustable parameters.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The unification of gauge couplings provides a key prediction of Grand Unified Theories. In the Principia Metaphysica framework, gauge coupling unification emerges from the dimensional reduction of SO(24,2) bulk symmetry to SO(10) GUT symmetry, mediated by the G2 holonomy manifold."
-        },
-        {
-          "type": "paragraph",
-          "content": "We begin with the Standard Model gauge couplings at the Z boson mass M_Z = 91.2 GeV, taken from PDG 2024 measurements:"
+          "content": "In the Principia Metaphysica framework, the fine structure constant emerges as the topological coupling ratio - the geometric probability of a photon interacting with the 7D bulk. The derivation uses only the fixed topological anchors b3=24, k_gimel, and C_kaf."
         },
         {
           "type": "formula",
-          "content": "\\alpha_1(M_Z) = \\frac{5}{3}\\frac{\\alpha_{em}}{\\cos^2\\theta_W}, \\quad \\alpha_2(M_Z) = \\frac{\\alpha_{em}}{\\sin^2\\theta_W}, \\quad \\alpha_3(M_Z) = \\alpha_s(M_Z)",
-          "formula_id": "gauge-initial-conditions",
+          "content": null,
+          "formula_id": "alpha-inverse-geometric",
           "label": "(3.1)",
           "equationNumber": "(3.1)"
         },
         {
           "type": "paragraph",
-          "content": "These couplings are evolved to high energy using three-loop renormalization group equations. The beta functions include Standard Model contributions plus corrections from the Pneuma field condensate:"
-        },
-        {
-          "type": "formula",
-          "content": "\\mu\\frac{d\\alpha_i}{d\\mu} = \\frac{b_i}{2\\pi}\\alpha_i^2 + \\frac{b_{ij}}{(2\\pi)^2}\\alpha_i^2\\alpha_j + \\frac{b_{ijk}}{(2\\pi)^3}\\alpha_i^2\\alpha_j\\alpha_k",
-          "formula_id": "gauge-rg-evolution",
-          "label": "(3.2)",
-          "equationNumber": "(3.2)"
-        },
-        {
-          "type": "paragraph",
-          "content": "At the compactification scale M_* ~ 5 TeV, Kaluza-Klein tower states from the CY4 compactification introduce threshold corrections proportional to the Kahler moduli count h^{1,1} = 24:"
-        },
-        {
-          "type": "formula",
-          "content": "\\Delta\\left(\\frac{1}{\\alpha_i}\\right) = \\frac{k_i h^{1,1}}{2\\pi}\\log\\frac{M_{GUT}}{M_*}",
-          "formula_id": "kk-threshold",
-          "label": "(3.3)",
-          "equationNumber": "(3.3)"
-        },
-        {
-          "type": "paragraph",
-          "content": "Near the Planck scale, the gravitational coupling becomes relevant and drives the system toward an asymptotically safe UV fixed point. This fixed point, predicted by quantum gravity, determines the unified coupling alpha_GUT:"
-        },
-        {
-          "type": "formula",
-          "content": "\\frac{1}{\\alpha_{GUT}} \\approx 24 = b_3",
-          "formula_id": "asymptotic-safety-fixed-point",
-          "label": "(3.4)",
-          "equationNumber": "(3.4)"
-        },
-        {
-          "type": "paragraph",
-          "content": "The unification scale M_GUT is determined by minimizing the spread of the three evolved couplings:"
-        },
-        {
-          "type": "formula",
-          "content": "M_{GUT} : \\quad \\min_{\\mu} \\sigma[\\alpha_1(\\mu), \\alpha_2(\\mu), \\alpha_3(\\mu)]",
-          "formula_id": "gut-scale",
-          "label": "(3.5)",
-          "equationNumber": "(3.5)"
-        },
-        {
-          "type": "paragraph",
-          "content": "After applying all corrections, we find excellent unification at:"
-        },
-        {
-          "type": "formula",
-          "content": "M_{GUT} = (6.3 \\pm 0.3) \\times 10^{15}\\,\\text{GeV}, \\quad \\frac{1}{\\alpha_{GUT}} = 42.7 \\pm 2.0",
-          "formula_id": "gauge-coupling-unification",
-          "label": "(3.6)",
-          "equationNumber": "(3.6)"
-        },
-        {
-          "type": "paragraph",
-          "content": "The unified coupling alpha_GUT^-1 ~ 43 shows the influence of the asymptotic safety fixed point pulling toward the G2 topological value 1/alpha* ~ 24 = b3. The GUT scale M_GUT ~ 6 × 10^15 GeV from standard 3-loop running is lower than the geometric/torsion prediction M_GUT ~ 2 × 10^16 GeV, suggesting intermediate physics (e.g., Pati-Salam at M_PS ~ 10^12 GeV) may modify the running. This represents an active area of refinement in the Principia Metaphysica framework."
-        },
-        {
-          "type": "paragraph",
-          "content": "It is important to distinguish two GUT scales arising from different physical mechanisms: (1) M_GUT = 6.3 × 10^15 GeV from 3-loop RG evolution with KK and asymptotic safety corrections, used for gauge coupling evolution, and (2) M_GUT_geometric = 2.1 × 10^16 GeV from torsion class T_omega = -0.875 and moduli stabilization Re(T) ~ 9.865, used for proton decay calculations. The geometric scale corresponds to alpha_GUT = 1/23.54 (not 1/42.7) and arises from the explicit G2 manifold geometry rather than perturbative running. This higher scale ensures proton lifetime tau_p ~ 3.9×10^34 years passes the Super-Kamiokande bound."
+          "content": "The derived value alpha^-1 = 137.036 matches the CODATA 2022 experimental value to within 0.008%, demonstrating that electromagnetism is a structural property of the b3=24 G2 manifold."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The unification of gauge couplings provides a key prediction of Grand Unified Theories. In the Principia Metaphysica framework, gauge coupling unification emerges from the dimensional reduction of SO(24,2) bulk symmetry to SO(10) GUT symmetry, mediated by the G2 holonomy manifold."
-        },
-        {
-          "type": "paragraph",
-          "content": "We begin with the Standard Model gauge couplings at the Z boson mass M_Z = 91.2 GeV, taken from PDG 2024 measurements:"
+          "content": "In the Principia Metaphysica framework, the fine structure constant emerges as the topological coupling ratio - the geometric probability of a photon interacting with the 7D bulk. The derivation uses only the fixed topological anchors b3=24, k_gimel, and C_kaf."
         },
         {
           "type": "formula",
-          "content": "\\alpha_1(M_Z) = \\frac{5}{3}\\frac{\\alpha_{em}}{\\cos^2\\theta_W}, \\quad \\alpha_2(M_Z) = \\frac{\\alpha_{em}}{\\sin^2\\theta_W}, \\quad \\alpha_3(M_Z) = \\alpha_s(M_Z)",
-          "formula_id": "gauge-initial-conditions",
+          "content": null,
+          "formula_id": "alpha-inverse-geometric",
           "label": "(3.1)",
           "equationNumber": "(3.1)"
         },
         {
           "type": "paragraph",
-          "content": "These couplings are evolved to high energy using three-loop renormalization group equations. The beta functions include Standard Model contributions plus corrections from the Pneuma field condensate:"
-        },
-        {
-          "type": "formula",
-          "content": "\\mu\\frac{d\\alpha_i}{d\\mu} = \\frac{b_i}{2\\pi}\\alpha_i^2 + \\frac{b_{ij}}{(2\\pi)^2}\\alpha_i^2\\alpha_j + \\frac{b_{ijk}}{(2\\pi)^3}\\alpha_i^2\\alpha_j\\alpha_k",
-          "formula_id": "gauge-rg-evolution",
-          "label": "(3.2)",
-          "equationNumber": "(3.2)"
-        },
-        {
-          "type": "paragraph",
-          "content": "At the compactification scale M_* ~ 5 TeV, Kaluza-Klein tower states from the CY4 compactification introduce threshold corrections proportional to the Kahler moduli count h^{1,1} = 24:"
-        },
-        {
-          "type": "formula",
-          "content": "\\Delta\\left(\\frac{1}{\\alpha_i}\\right) = \\frac{k_i h^{1,1}}{2\\pi}\\log\\frac{M_{GUT}}{M_*}",
-          "formula_id": "kk-threshold",
-          "label": "(3.3)",
-          "equationNumber": "(3.3)"
-        },
-        {
-          "type": "paragraph",
-          "content": "Near the Planck scale, the gravitational coupling becomes relevant and drives the system toward an asymptotically safe UV fixed point. This fixed point, predicted by quantum gravity, determines the unified coupling alpha_GUT:"
-        },
-        {
-          "type": "formula",
-          "content": "\\frac{1}{\\alpha_{GUT}} \\approx 24 = b_3",
-          "formula_id": "asymptotic-safety-fixed-point",
-          "label": "(3.4)",
-          "equationNumber": "(3.4)"
-        },
-        {
-          "type": "paragraph",
-          "content": "The unification scale M_GUT is determined by minimizing the spread of the three evolved couplings:"
-        },
-        {
-          "type": "formula",
-          "content": "M_{GUT} : \\quad \\min_{\\mu} \\sigma[\\alpha_1(\\mu), \\alpha_2(\\mu), \\alpha_3(\\mu)]",
-          "formula_id": "gut-scale",
-          "label": "(3.5)",
-          "equationNumber": "(3.5)"
-        },
-        {
-          "type": "paragraph",
-          "content": "After applying all corrections, we find excellent unification at:"
-        },
-        {
-          "type": "formula",
-          "content": "M_{GUT} = (6.3 \\pm 0.3) \\times 10^{15}\\,\\text{GeV}, \\quad \\frac{1}{\\alpha_{GUT}} = 42.7 \\pm 2.0",
-          "formula_id": "gauge-coupling-unification",
-          "label": "(3.6)",
-          "equationNumber": "(3.6)"
-        },
-        {
-          "type": "paragraph",
-          "content": "The unified coupling alpha_GUT^-1 ~ 43 shows the influence of the asymptotic safety fixed point pulling toward the G2 topological value 1/alpha* ~ 24 = b3. The GUT scale M_GUT ~ 6 × 10^15 GeV from standard 3-loop running is lower than the geometric/torsion prediction M_GUT ~ 2 × 10^16 GeV, suggesting intermediate physics (e.g., Pati-Salam at M_PS ~ 10^12 GeV) may modify the running. This represents an active area of refinement in the Principia Metaphysica framework."
-        },
-        {
-          "type": "paragraph",
-          "content": "It is important to distinguish two GUT scales arising from different physical mechanisms: (1) M_GUT = 6.3 × 10^15 GeV from 3-loop RG evolution with KK and asymptotic safety corrections, used for gauge coupling evolution, and (2) M_GUT_geometric = 2.1 × 10^16 GeV from torsion class T_omega = -0.875 and moduli stabilization Re(T) ~ 9.865, used for proton decay calculations. The geometric scale corresponds to alpha_GUT = 1/23.54 (not 1/42.7) and arises from the explicit G2 manifold geometry rather than perturbative running. This higher scale ensures proton lifetime tau_p ~ 3.9×10^34 years passes the Super-Kamiokande bound."
+          "content": "The derived value alpha^-1 = 137.036 matches the CODATA 2022 experimental value to within 0.008%, demonstrating that electromagnetism is a structural property of the b3=24 G2 manifold."
         }
       ],
       "formulaRefs": [
-        "gauge-initial-conditions",
-        "gauge-rg-evolution",
-        "kk-threshold",
-        "asymptotic-safety-fixed-point",
-        "gut-scale",
-        "gauge-coupling-unification"
+        "alpha-inverse-geometric"
       ],
       "paramRefs": [
-        "pdg.alpha_s_MZ",
-        "pdg.sin2_theta_W",
-        "pdg.m_Z",
-        "constants.alpha_em",
-        "gauge.M_GUT",
-        "gauge.ALPHA_GUT_INV"
+        "electromagnetic.alpha_inv"
       ],
       "formula_refs": [
-        "gauge-initial-conditions",
-        "gauge-rg-evolution",
-        "kk-threshold",
-        "asymptotic-safety-fixed-point",
-        "gut-scale",
-        "gauge-coupling-unification"
+        "alpha-inverse-geometric"
       ],
       "param_refs": [
-        "pdg.alpha_s_MZ",
-        "pdg.sin2_theta_W",
-        "pdg.m_Z",
-        "constants.alpha_em",
-        "gauge.M_GUT",
-        "gauge.ALPHA_GUT_INV"
+        "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-29T11:08:46.110840"
+      "timestamp": "2025-12-29T12:52:05.058051"
     },
     "4": {
       "id": "4",
@@ -1834,7 +1688,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-29T11:08:46.113558"
+      "timestamp": "2025-12-29T12:52:05.061150"
     },
     "5": {
       "id": "5",
@@ -1945,7 +1799,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-29T11:08:46.113716"
+      "timestamp": "2025-12-29T12:52:05.061339"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -2070,7 +1924,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T11:08:46.114032"
+      "timestamp": "2025-12-29T12:52:05.061599"
     },
     "7": {
       "id": "7",
@@ -4501,7 +4355,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-29T11:08:46.114188"
+      "timestamp": "2025-12-29T12:52:05.061879"
     },
     "6": {
       "id": "6",
@@ -6644,7 +6498,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-29T11:08:46.114302"
+      "timestamp": "2025-12-29T12:52:05.062201"
     },
     "8": {
       "id": "8",
@@ -7281,7 +7135,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-29T11:08:46.128181"
+      "timestamp": "2025-12-29T12:52:05.078664"
     }
   }
 }
