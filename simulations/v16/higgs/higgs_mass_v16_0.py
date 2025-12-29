@@ -3,7 +3,6 @@
 Higgs Mass Simulation v16.0
 ============================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Unified Higgs mass calculation from moduli stabilization using SimulationBase.
@@ -26,6 +25,10 @@ References:
 - CHNP (2013): arXiv:1207.4470 (TCS G2 constructions)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

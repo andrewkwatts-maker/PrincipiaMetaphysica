@@ -22,6 +22,10 @@ References:
 - Joyce (2000) "Compact Manifolds with Special Holonomy"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -351,6 +355,9 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of G₄ flux units from χ_eff/6 quantization",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="topology.T_omega_topological",
@@ -358,6 +365,9 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 units="dimensionless",
                 status="DERIVED",
                 description="Torsion class before spinor corrections: T_ω = -b₃/N_flux",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="topology.T_omega",

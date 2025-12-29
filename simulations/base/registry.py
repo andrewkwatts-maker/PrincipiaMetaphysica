@@ -6,6 +6,10 @@ Singleton registry for managing all computed parameters, formulas,
 and section content in Principia Metaphysica simulations.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from dataclasses import dataclass, field

@@ -16,6 +16,7 @@
     <meta name="description" content="Philosophical Implications of Principia Metaphysica - Exploring consciousness, reality, and the nature of existence">
     <title>Philosophical Implications - Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/auth.css">
     <style>
         .diagram-container {
@@ -136,25 +137,12 @@
     <!-- Tooltip System CSS -->
     <link rel="stylesheet" href="../css/pm-tooltip.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
 </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
-    <header>
-        <nav>
-            <a href="../index.html" class="logo">Principia Metaphysica</a>
-            <div class="nav-links">
-                <a href="beginners-guide.html">Beginner's Guide</a>
-                <a href="sections.html">Sections</a>
-                <a href="paper.html">Full Paper</a>
-            </div>
-        </nav>
-    
-    <div class="user-controls">
-      <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-      <span id="user-email"></span>
-      <button id="logout-btn">Logout</button>
-    </div>
-  </header>
+    <!-- Header injected by pm-header.js -->
 
     <main class="container" style="max-width: 1000px; padding: 2rem;">
         <h1 style="text-align: center; margin-bottom: 0.5rem;">Philosophical Implications</h1>
@@ -2492,7 +2480,15 @@
   </div>
 
   <script type="module">
+    import { injectHeader } from '../js/pm-header.js';
     import { setupAuthGuard } from '../js/auth-guard.js';
+
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+        injectHeader('philosophical-implications');
+    });
+
+    // Setup auth after header
     setupAuthGuard('philosophical-implications');
   </script>
 

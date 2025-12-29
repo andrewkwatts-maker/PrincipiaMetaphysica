@@ -9,6 +9,10 @@ Adds missing parameters discovered by validate_param_references.py:
 - Dimension parameters (D_SPIN8)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import json

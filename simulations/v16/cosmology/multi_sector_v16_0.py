@@ -2,7 +2,6 @@
 Multi-Sector Cosmology v16.0
 =============================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Implements multi-sector cosmological dynamics with geometric modulation width
@@ -27,6 +26,10 @@ topology.chi_eff = 144, topology.b3 = 24 (TCS G2 manifold #187)
   -> modulation_width ≈ 0.408 (parameter-free, pure geometry)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

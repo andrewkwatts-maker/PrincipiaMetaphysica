@@ -6,6 +6,10 @@ Defines the comprehensive return schema that all v16 simulations must follow.
 All fields are mandatory (but can be empty lists/dicts) to ensure schema compliance.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from dataclasses import dataclass, field, asdict

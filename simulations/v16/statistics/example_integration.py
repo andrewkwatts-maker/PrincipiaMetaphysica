@@ -14,6 +14,10 @@ Workflow:
 5. Results written back to registry and exported
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import sys
@@ -63,7 +67,6 @@ def run_full_validation_workflow(verbose: bool = True):
         33.59,  # Example: PM prediction for solar angle
         source="neutrino_mixing_v16_0",
         status="PREDICTED",
-        uncertainty=0.70,
         metadata={"units": "degrees", "description": "Solar mixing angle from G2 geometry"}
     )
     registry.set_param(
@@ -71,7 +74,6 @@ def run_full_validation_workflow(verbose: bool = True):
         8.33,  # Example: PM prediction for reactor angle
         source="neutrino_mixing_v16_0",
         status="PREDICTED",
-        uncertainty=0.11,
         metadata={"units": "degrees", "description": "Reactor mixing angle from G2 geometry"}
     )
     registry.set_param(
@@ -79,7 +81,6 @@ def run_full_validation_workflow(verbose: bool = True):
         42.75,  # Example: PM prediction for atmospheric angle
         source="neutrino_mixing_v16_0",
         status="PREDICTED",
-        uncertainty=1.0,
         metadata={"units": "degrees", "description": "Atmospheric mixing angle from G2 geometry"}
     )
     registry.set_param(
@@ -87,7 +88,6 @@ def run_full_validation_workflow(verbose: bool = True):
         232.5,  # Example: PM prediction for CP phase
         source="neutrino_mixing_v16_0",
         status="PREDICTED",
-        uncertainty=31.0,
         metadata={"units": "degrees", "description": "CP-violating phase from G2 geometry"}
     )
 
@@ -99,7 +99,6 @@ def run_full_validation_workflow(verbose: bool = True):
         -11/13,  # PM prediction: w0 = -11/13 ≈ -0.846
         source="dark_energy_v16_0",
         status="PREDICTED",
-        uncertainty=0.067,
         metadata={"units": "dimensionless", "description": "Dark energy EoS at z=0 from pneuma mechanism"}
     )
     registry.set_param(
@@ -107,7 +106,6 @@ def run_full_validation_workflow(verbose: bool = True):
         0.288,  # Example: PM prediction for time evolution
         source="dark_energy_v16_0",
         status="PREDICTED",
-        uncertainty=0.32,
         metadata={"units": "dimensionless", "description": "Dark energy evolution parameter"}
     )
 
@@ -119,7 +117,6 @@ def run_full_validation_workflow(verbose: bool = True):
         0.310,  # Example: PM prediction for matter density
         source="cosmology_parameters_v16_0",
         status="PREDICTED",
-        uncertainty=0.005,
         metadata={"units": "dimensionless", "description": "Matter density parameter"}
     )
     registry.set_param(
@@ -127,7 +124,6 @@ def run_full_validation_workflow(verbose: bool = True):
         68.5,  # Example: PM prediction for Hubble constant
         source="cosmology_parameters_v16_0",
         status="PREDICTED",
-        uncertainty=0.62,
         metadata={"units": "km/s/Mpc", "description": "Hubble constant"}
     )
 

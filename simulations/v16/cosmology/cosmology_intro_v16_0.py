@@ -2,7 +2,6 @@
 Cosmological Framework Introduction v16.0
 ==========================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Section 5.1: Deriving 4D Gravity from Kaluza-Klein Reduction
@@ -19,6 +18,10 @@ This simulation covers:
 Includes ALL equations, derivations, and cross-references from section-5.json.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -650,6 +653,9 @@ class CosmologyIntroV16(SimulationBase):
                 units="GeV",
                 status="DERIVED",
                 description="Breathing mode VEV ⟨σ⟩ = φ₀ ≈ 0.075 M_Pl from racetrack stabilization",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula="breathing-mode",
             ),
             Parameter(

@@ -8,6 +8,12 @@ This script updates theory_output.json to add bi-directional links:
 3. Ensures consistency between simulations and theory data
 
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import json

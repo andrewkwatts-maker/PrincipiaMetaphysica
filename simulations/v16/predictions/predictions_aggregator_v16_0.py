@@ -3,7 +3,6 @@
 PRINCIPIA METAPHYSICA v16.0 - Predictions Aggregator
 =====================================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Aggregates all predictions from individual simulations and generates
@@ -24,6 +23,10 @@ OUTPUTS:
     - predictions.falsifiable_count: Number of testable predictions
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import sys
@@ -122,7 +125,7 @@ class PredictionsAggregatorV16(SimulationBase):
             "neutrino_mixing": {
                 "parameter": "θ₁₂, θ₁₃, θ₂₃, δ_CP",
                 "prediction": "33.34°, 8.63°, 45.75°, 232.5°",
-                "experiment": "NuFIT 5.2 global fit",
+                "experiment": "NuFIT 6.0 global fit",
                 "measured": "33.41° ± 0.75°, 8.57° ± 0.12°, 45.0° ± 1.5°, 232° ± 28°",
                 "agreement": "0.09σ, 0.50σ, 0.50σ, 0.02σ",
                 "status": "CONFIRMED"
@@ -146,7 +149,7 @@ class PredictionsAggregatorV16(SimulationBase):
             "cabibbo_angle": {
                 "parameter": "sin θ_C (ε)",
                 "prediction": "0.2257 (racetrack moduli)",
-                "experiment": "PDG 2022",
+                "experiment": "PDG 2024",
                 "measured": "0.2257 ± 0.0010",
                 "agreement": "Exact match (central value)",
                 "status": "CONFIRMED"
@@ -223,7 +226,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "experimental_value": 33.41,
                 "experimental_error": 0.75,
                 "sigma_deviation": 0.09,
-                "experiment": "NuFIT 5.2",
+                "experiment": "NuFIT 6.0",
                 "testability": "CONFIRMED",
                 "derivation": "G₂ associative cycle geometry"
             },
@@ -235,7 +238,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "experimental_value": 8.57,
                 "experimental_error": 0.12,
                 "sigma_deviation": 0.50,
-                "experiment": "NuFIT 5.2",
+                "experiment": "NuFIT 6.0",
                 "testability": "CONFIRMED",
                 "derivation": "G₂ associative cycle geometry"
             },
@@ -247,7 +250,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "experimental_value": 45.0,
                 "experimental_error": 1.5,
                 "sigma_deviation": 0.50,
-                "experiment": "NuFIT 5.2",
+                "experiment": "NuFIT 6.0",
                 "testability": "CONFIRMED",
                 "derivation": "G₂ associative cycle geometry"
             },
@@ -259,7 +262,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "experimental_value": 232.0,
                 "experimental_error": 28.0,
                 "sigma_deviation": 0.02,
-                "experiment": "NuFIT 5.2",
+                "experiment": "NuFIT 6.0",
                 "testability": "CONFIRMED",
                 "derivation": "Topological phases in G₂ compactification"
             },
@@ -295,7 +298,7 @@ class PredictionsAggregatorV16(SimulationBase):
                 "experimental_value": 0.2257,
                 "experimental_error": 0.0010,
                 "sigma_deviation": 0.0,
-                "experiment": "PDG 2022",
+                "experiment": "PDG 2024",
                 "testability": "CONFIRMED",
                 "derivation": "Racetrack moduli stabilization with h^{1,1}=4"
             },

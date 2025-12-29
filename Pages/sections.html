@@ -50,7 +50,9 @@
     <link rel="stylesheet" href="../css/pm-common.css">
     <link rel="stylesheet" href="../css/pm-scientific-typography.css">
     <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
@@ -593,7 +595,7 @@
             grid-column: 1 / -1;
             max-width: 100%;
             transform: none;
-            background: rgba(255, 255, 255, 0.05);
+            background: var(--bg-card);
             border-color: var(--accent);
         }
 
@@ -709,7 +711,7 @@
         }
 
         .section-card-description {
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.8);
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 1rem;
@@ -742,7 +744,7 @@
             display: flex;
             align-items: center;
             gap: 0.4rem;
-            color: var(--text-muted);
+            color: rgba(255, 255, 255, 0.7);
         }
 
         .section-card-meta-item .icon {
@@ -1009,6 +1011,24 @@
             border-left: 3px solid var(--accent);
             margin-bottom: 1.5rem;
             border-radius: 4px;
+        }
+
+        /* Override shadow DOM styles for better white background display */
+        pm-section {
+            display: block;
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Ensure section card content has proper white background */
+        .section-card-content {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem !important;
+            margin-top: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
         }
 
         /* Collapsible subsections */
@@ -1438,7 +1458,7 @@
 
                 <!-- Quick Navigation -->
                 <div class="quick-nav">
-                    <h3>Quick Navigation</h3>
+                    <h3>Quick Navigation - Main Sections</h3>
                     <div class="quick-links">
                         <a href="#" class="quick-link" onclick="scrollToAndOpenSection('1'); return false;"><span class="num">1</span> Introduction</a>
                         <a href="#" class="quick-link" onclick="scrollToAndOpenSection('2'); return false;"><span class="num">2</span> Geometry</a>
@@ -1449,6 +1469,27 @@
                         <a href="#" class="quick-link" onclick="scrollToAndOpenSection('7'); return false;"><span class="num">7</span> Predictions</a>
                         <a href="#" class="quick-link" onclick="scrollToAndOpenSection('8'); return false;"><span class="num">8</span> Conclusion</a>
                         <a href="formulas.html" class="quick-link" style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(139, 127, 255, 0.15)); border-color: rgba(81, 207, 102, 0.4);"><span class="num">&Sigma;</span> Formulas</a>
+                    </div>
+                </div>
+
+                <!-- Appendices Quick Navigation -->
+                <div class="quick-nav">
+                    <h3>Quick Navigation - Appendices</h3>
+                    <div class="quick-links">
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('A'); return false;"><span class="num">A</span> Math Framework</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('B'); return false;"><span class="num">B</span> G2 Details</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('C'); return false;"><span class="num">C</span> RG Flow</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('D'); return false;"><span class="num">D</span> Neutrinos</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('E'); return false;"><span class="num">E</span> Proton Decay</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('F'); return false;"><span class="num">F</span> Cosmology</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('G'); return false;"><span class="num">G</span> Wolfram Proofs</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('H'); return false;"><span class="num">H</span> Experiments</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('I'); return false;"><span class="num">I</span> Methods</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('J'); return false;"><span class="num">J</span> Tables</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('K'); return false;"><span class="num">K</span> Derivations</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('L'); return false;"><span class="num">L</span> Mirror Sector</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('M'); return false;"><span class="num">M</span> Moduli</a>
+                        <a href="#" class="quick-link" onclick="scrollToAndOpenSection('N'); return false;"><span class="num">N</span> Future</a>
                     </div>
                 </div>
 

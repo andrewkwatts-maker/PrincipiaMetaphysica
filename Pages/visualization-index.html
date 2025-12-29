@@ -14,6 +14,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualization Index - Principia Metaphysica 2T Physics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/auth.css">
     <style>
         * {
             margin: 0;
@@ -465,24 +468,23 @@
     <link rel="stylesheet" href="../css/pm-tooltip.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
     <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
   </head>
 <body class="auth-loading">
   <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
+
     <div class="container">
-        <header>
-            <h1>Visualization Index</h1>
-            <p>Principia Metaphysica - Two-Time Physics Framework</p>
+        <!-- Page Title Header -->
+        <div style="background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); color: white; padding: 3rem 2rem; text-align: center; border-radius: 15px; margin-bottom: 2rem; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            <h1 style="font-size: 3em; margin-bottom: 0.5rem; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Visualization Index</h1>
+            <p style="font-size: 1.2em; opacity: 0.9; margin-bottom: 1rem;">Principia Metaphysica - Two-Time Physics Framework</p>
             <div>
                 <span class="status-badge">46 Total Visualizations</span>
                 <span class="status-badge twotime">22 Updated for 2T Physics</span>
             </div>
-        
-    <div class="user-controls">
-      <img id="user-avatar" src="images/default-avatar.svg" alt="User">
-      <span id="user-email"></span>
-      <button id="logout-btn">Logout</button>
-    </div>
-  </header>
+        </div>
 
         <!-- Table of Contents -->
         <div class="toc">
@@ -2088,7 +2090,15 @@
     </script>
 
   <script type="module">
+    import { injectHeader } from '../js/pm-header.js';
     import { setupAuthGuard } from '../js/auth-guard.js';
+
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+        injectHeader('visualization-index');
+    });
+
+    // Setup auth after header
     setupAuthGuard('visualization-index');
   </script>
 

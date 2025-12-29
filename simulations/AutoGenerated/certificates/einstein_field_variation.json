@@ -1,0 +1,9 @@
+{
+  "proof_id": "einstein_field_variation",
+  "label": "Einstein Field Equations",
+  "wl_code": "\n                (* Metric variation of Einstein-Hilbert action *)\n                (* \u00ce\u00b4S/\u00ce\u00b4g^\u00ce\u00bc\u00ce\u00bd = R_\u00ce\u00bc\u00ce\u00bd - (1/2)g_\u00ce\u00bc\u00ce\u00bd R = 8\u00cf\u20acG T_\u00ce\u00bc\u00ce\u00bd *)\n                Solve[R - (1/2) * g * R == 8 * Pi * G * T, {R}]\n            ",
+  "result": "[Mock] R = 8*pi*G*T (trace)",
+  "hash": "880212096ecb98f4",
+  "timestamp": "2025-12-29T12:13:34.532194",
+  "verified": false
+}

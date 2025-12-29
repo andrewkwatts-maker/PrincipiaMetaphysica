@@ -19,6 +19,10 @@ References:
 - Penrose, R. (1989) "The Emperor's New Mind" Oxford University Press
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -541,6 +545,9 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="DERIVED: Number of tubulins in coherent superposition = coherence_fraction × neurons × 10^9",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="consciousness.tau_collapse_ms",
@@ -555,6 +562,9 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="J",
                 status="SPECULATIVE",
                 description="Total gravitational self-energy of tubulin superposition",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="consciousness.tau_scaling_exponent",
@@ -569,6 +579,9 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="Hz",
                 status="SPECULATIVE",
                 description="DERIVED: Baseline frequency = 1/tau_collapse",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="consciousness.phi_peak",

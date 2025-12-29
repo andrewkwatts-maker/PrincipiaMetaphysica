@@ -10,6 +10,10 @@ Proper initialization order for the PM simulation framework:
 3. SIMULATIONS: Run v16 simulations using both GEOMETRIC and ESTABLISHED inputs
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from simulations.base import PMRegistry

@@ -3,7 +3,6 @@
 Chirality and Spinorial Structure v16.0
 =========================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Derives fermion chirality from G2 holonomy and spinorial representations.
@@ -40,6 +39,10 @@ References:
 - Harvey-Lawson (1982): Calibrated geometries
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -811,7 +814,6 @@ class ChiralitySpinorSimulation(SimulationBase):
                 bound_type="measured",
                 bound_source="Standard Model (PDG 2024)"
             ),
-
             Parameter(
                 path="chirality.saturation_ratio",
                 name="Saturation Ratio",

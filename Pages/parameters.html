@@ -17,6 +17,9 @@
     <link href="../css/styles.css" rel="stylesheet"/>
     <link href="../css/pm-common.css" rel="stylesheet"/>
     <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
 
     <!-- MathJax for mathematical symbols -->
     <script>
@@ -963,6 +966,9 @@
         // PARAMETERS PAGE - Dynamic Loading from parameters.json
         // ====================================================================
 
+        console.log('%c[PARAMETERS] Script loaded', 'color: cyan; font-weight: bold; font-size: 14px');
+        console.log('[PARAMETERS] Starting parameters page initialization...');
+
         let allParameters = [];
         let parametersByCategory = {};
         let formulaDatabase = {};
@@ -1209,43 +1215,59 @@
 
         // Initialize the page
         async function initializePage() {
+            console.log('[PARAMETERS] Starting initialization...');
             try {
                 // Load ALL data from theory_output.json
+                console.log('[PARAMETERS] Loading data...');
                 const theoryData = await loadTheoryOutputJSON();
+                console.log('[PARAMETERS] Data loaded successfully:', theoryData);
 
                 // Load formulas for cross-referencing
+                console.log('[PARAMETERS] Loading formulas...');
                 await loadFormulasJSON();
 
                 // Process and organize ALL parameters
+                console.log('[PARAMETERS] Processing parameters...');
                 processAllParameters(theoryData);
+                console.log(`[PARAMETERS] Processed ${allParameters.length} parameters in ${Object.keys(parametersByCategory).length} categories`);
 
                 // Populate category filter
+                console.log('[PARAMETERS] Populating category filter...');
                 populateCategoryFilter();
 
                 // Render the parameters
+                console.log('[PARAMETERS] Rendering parameters...');
                 renderParameters();
 
                 // Render the OOM table
+                console.log('[PARAMETERS] Rendering OOM table...');
                 renderOOMTable();
 
                 // Setup event listeners
+                console.log('[PARAMETERS] Setting up event listeners...');
                 setupEventListeners();
 
                 // Setup view toggle
+                console.log('[PARAMETERS] Setting up view toggle...');
                 setupViewToggle();
 
                 // Setup table sorting
+                console.log('[PARAMETERS] Setting up table sorting...');
                 setupTableSorting();
 
                 // Update statistics
+                console.log('[PARAMETERS] Updating statistics...');
                 updateStatistics();
 
                 // Hide loading, show content
+                console.log('[PARAMETERS] Hiding loading indicator...');
                 hideLoading();
 
+                console.log('[PARAMETERS] ✓ Initialization complete!');
             } catch (error) {
-                console.error('Error initializing parameters page:', error);
-                showError(error.message);
+                console.error('[PARAMETERS] ❌ Error initializing parameters page:', error);
+                console.error('[PARAMETERS] Stack trace:', error.stack);
+                showError(error.message + '\n\nCheck browser console for details.');
             }
         }
 
@@ -1259,18 +1281,25 @@
                 '../theory_output.json'
             ];
 
+            console.log('[PARAMETERS] Attempting to load from paths:', paths);
+
             for (const path of paths) {
                 try {
+                    console.log(`[PARAMETERS] Trying: ${path}`);
                     const response = await fetch(path);
+                    console.log(`[PARAMETERS] Response status for ${path}: ${response.status}`);
+
                     if (response.ok) {
                         const data = await response.json();
-                        console.log(`✓ Loaded data from ${path}`);
-                        console.log(`  Version: ${data.version}`);
+                        console.log(`[PARAMETERS] ✓ Loaded data from ${path}`);
+                        console.log(`[PARAMETERS]   Version: ${data.version}`);
 
                         // Handle both parameters.json and theory_output.json formats
                         if (data.parameters && !data.simulations) {
                             // This is parameters.json format - wrap it
-                            console.log(`  Parameters: ${Object.keys(data.parameters).length} categories`);
+                            console.log(`[PARAMETERS]   Format: parameters.json`);
+                            console.log(`[PARAMETERS]   Parameters keys: ${Object.keys(data.parameters).length}`);
+                            console.log(`[PARAMETERS]   Sample keys:`, Object.keys(data.parameters).slice(0, 10));
                             return {
                                 version: data.version,
                                 parameters: data.parameters,
@@ -1280,28 +1309,32 @@
                             };
                         } else {
                             // This is theory_output.json format
-                            console.log(`  Simulations: ${Object.keys(data.simulations || {}).length}`);
-                            console.log(`  Parameters: ${Object.keys(data.parameters || {}).length}`);
-                            console.log(`  Framework Stats: ${data.framework_statistics ? 'YES' : 'NO'}`);
+                            console.log(`[PARAMETERS]   Format: theory_output.json`);
+                            console.log(`[PARAMETERS]   Simulations: ${Object.keys(data.simulations || {}).length}`);
+                            console.log(`[PARAMETERS]   Parameters: ${Object.keys(data.parameters || {}).length}`);
+                            console.log(`[PARAMETERS]   Framework Stats: ${data.framework_statistics ? 'YES' : 'NO'}`);
                             return data;
                         }
                     }
                 } catch (e) {
-                    console.debug(`  Failed to load ${path}: ${e.message}`);
+                    console.debug(`[PARAMETERS]   ✗ Failed to load ${path}: ${e.message}`);
                     continue;
                 }
             }
 
+            console.error('[PARAMETERS] ❌ Could not load data from any path!');
             throw new Error('Could not load parameters.json or theory_output.json. Please run: python run_all_simulations.py');
         }
 
         // Extract ALL parameters from theory_output.json
         function processAllParameters(theoryData) {
+            console.log('[PARAMETERS] processAllParameters called with data:', theoryData);
             allParameters = [];
             parametersByCategory = {};
 
             // 1. Extract from parameters (primary source for parameters.json)
             if (theoryData.parameters) {
+                console.log(`[PARAMETERS] Processing ${Object.keys(theoryData.parameters).length} parameter entries...`);
                 for (const [fullKey, param] of Object.entries(theoryData.parameters)) {
                     // Split key like "constants.M_PLANCK" into category and key
                     const parts = fullKey.split('.');
@@ -1493,7 +1526,11 @@
                 }
             }
 
-            console.log(`Processed ${allParameters.length} total parameters across ${Object.keys(parametersByCategory).length} categories`);
+            console.log(`[PARAMETERS] ✓ Processed ${allParameters.length} total parameters across ${Object.keys(parametersByCategory).length} categories`);
+            console.log('[PARAMETERS] Categories:', Object.keys(parametersByCategory));
+            console.log('[PARAMETERS] Category counts:', Object.fromEntries(
+                Object.entries(parametersByCategory).map(([cat, params]) => [cat, params.length])
+            ));
         }
 
         function extractNestedValidations(obj, parentKey, depth = 0) {
@@ -1877,20 +1914,36 @@
         }
 
         function renderParameters() {
+            console.log('[PARAMETERS] renderParameters called');
             const container = document.getElementById('parameters-container');
+            if (!container) {
+                console.error('[PARAMETERS] ❌ parameters-container element not found!');
+                return;
+            }
+
             container.innerHTML = '';
+            let totalRendered = 0;
 
             // Render each category
             for (const [category, params] of Object.entries(parametersByCategory)) {
                 if (params.length === 0) continue;
 
+                console.log(`[PARAMETERS] Rendering category: ${category} (${params.length} parameters)`);
                 const section = renderCategorySection(category, params);
                 container.appendChild(section);
+                totalRendered += params.length;
             }
+
+            console.log(`[PARAMETERS] ✓ Rendered ${totalRendered} parameters in ${Object.keys(parametersByCategory).length} categories`);
 
             // Trigger MathJax rendering
             if (window.MathJax) {
-                MathJax.typesetPromise();
+                console.log('[PARAMETERS] Triggering MathJax typeset...');
+                MathJax.typesetPromise().then(() => {
+                    console.log('[PARAMETERS] ✓ MathJax typeset complete');
+                }).catch(err => {
+                    console.warn('[PARAMETERS] MathJax typeset error:', err);
+                });
             }
         }
 
@@ -2454,6 +2507,8 @@
             ).length;
             const within1sigma = allParameters.filter(p => p.sigma !== null && p.sigma < 1).length;
 
+            console.log(`[PARAMETERS] Updating statistics: total=${total}, categories=${categories}, validated=${validated}, within1σ=${within1sigma}`);
+
             document.getElementById('stat-total').textContent = total;
             document.getElementById('stat-visible').textContent = total;
             document.getElementById('stat-categories').textContent = categories;
@@ -2462,8 +2517,23 @@
         }
 
         function hideLoading() {
-            document.getElementById('loading-indicator').style.display = 'none';
-            document.getElementById('parameters-container').style.display = 'block';
+            console.log('[PARAMETERS] hideLoading called');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const parametersContainer = document.getElementById('parameters-container');
+
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+                console.log('[PARAMETERS] ✓ Hidden loading indicator');
+            } else {
+                console.warn('[PARAMETERS] ⚠ loading-indicator element not found');
+            }
+
+            if (parametersContainer) {
+                parametersContainer.style.display = 'block';
+                console.log('[PARAMETERS] ✓ Shown parameters container');
+            } else {
+                console.warn('[PARAMETERS] ⚠ parameters-container element not found');
+            }
         }
 
         function showError(message) {
@@ -2474,10 +2544,24 @@
 
         // Initialize when DOM is ready
         if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', initializePage);
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('[PARAMETERS] DOM loaded, starting initialization...');
+                initializePage();
+            });
         } else {
+            console.log('[PARAMETERS] DOM already loaded, starting initialization immediately...');
             initializePage();
         }
+
+        // Fallback: ensure main content is visible after 2 seconds if auth guard fails
+        setTimeout(() => {
+            const mainContent = document.getElementById('main-content');
+            if (mainContent && mainContent.style.display === 'none') {
+                console.warn('[PARAMETERS] Auth guard timeout - forcing content visible');
+                mainContent.style.display = 'block';
+                document.body.classList.remove('auth-loading');
+            }
+        }, 2000);
     </script>
 </body>
 </html>

@@ -7,6 +7,10 @@ Validates all derivation steps against known results and
 ensures Wolfram validation strings are correctly formatted.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import sys

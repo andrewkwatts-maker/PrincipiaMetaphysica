@@ -50,6 +50,10 @@ REFERENCES:
 - Hitchin, N. (2000) "The Geometry of Three-Forms in Six and Seven Dimensions"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -612,6 +616,9 @@ class G2RicciFlowRigorous(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="L² norm of Ricci tensor after flow",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula="g2-ricci-flow"
             ),
             Parameter(
@@ -620,6 +627,9 @@ class G2RicciFlowRigorous(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of torsion surgery interventions during flow",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula=None
             ),
             Parameter(
@@ -628,6 +638,9 @@ class G2RicciFlowRigorous(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Total Ricci flow time parameter",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula=None
             ),
         ]

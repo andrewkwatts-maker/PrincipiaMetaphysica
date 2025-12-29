@@ -15,6 +15,10 @@ All values are marked with source "ESTABLISHED" and cannot be overridden by simu
 Includes accuracy validation that computes sigma deviations during generation.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import sys

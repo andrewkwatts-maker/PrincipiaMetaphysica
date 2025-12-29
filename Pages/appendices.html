@@ -12,6 +12,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Appendices - Principia Metaphysica</title>
 
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
+
     <!-- MathJax Configuration -->
     <script>
         MathJax = {
@@ -227,13 +233,12 @@
         }
     </style>
 </head>
-<body>
-    <div class="paper">
-        <!-- Header Navigation -->
-        <div class="header-nav">
-            <a href="paper.html">← Back to Main Paper</a>
-        </div>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
 
+    <main>
+        <div class="paper">
         <!-- Title -->
         <h1>Appendices</h1>
         <p style="text-align: center; font-style: italic; color: #777; margin-bottom: 2rem;">
@@ -562,6 +567,21 @@
                 Copyright &copy; 2025-2026 Andrew Keith Watts. All rights reserved.
             </p>
         </div>
+        </div>
+    </main>
     </div>
+
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('appendices');
+        });
+
+        // Setup auth after header
+        setupAuthGuard('appendices');
+    </script>
 </body>
 </html>

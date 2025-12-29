@@ -13,6 +13,10 @@ FORMULA: orch-or-coherence-time (Eq. 7.2)
 PARAMETER: quantum_bio.coherence_time_ms
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -328,8 +332,8 @@ if SCHEMA_AVAILABLE:
                     experimental_bound=None,
                     bound_type="theoretical_prediction",
                     bound_source="Penrose-Hameroff Orch-OR model"
-                ),
-                Parameter(
+            ),
+            Parameter(
                     path="quantum_bio.topological_pitch",
                     name="Microtubule Topological Pitch",
                     units="protofilaments",
@@ -344,8 +348,8 @@ if SCHEMA_AVAILABLE:
                     experimental_bound=13.0,
                     bound_type="biological_measurement",
                     bound_source="Microtubule crystallography"
-                ),
-                Parameter(
+            ),
+            Parameter(
                     path="quantum_bio.eg_joules",
                     name="Gravitational Self-Energy",
                     units="Joules",

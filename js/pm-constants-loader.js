@@ -14,7 +14,7 @@
  *   window.PM_FORMULAS - Access to CoreFormulas
  *
  * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
- * Version: 2.2.0 - Enhanced path resolution with case-insensitive lookups and auto-refresh
+ * Version: 2.3.0 - Production-ready with enhanced caching, error handling, and path resolution
  */
 
 (function() {
@@ -37,7 +37,15 @@
             D_G2: 7,
             D_SPIN8: 8,         // Octonions dimension (Spin(8) triality)
             D_OBSERVABLE: 4,
-            D_COMMON: 4
+            D_COMMON: 4,
+            // Signature components
+            SIGNATURE_SPACE: 24,      // Spacelike dimensions in (24,2) signature
+            SIGNATURE_TIME: 2,        // Timelike dimensions in (24,2) signature
+            SIGNATURE_EFF_SPACE: 12,  // Spacelike dimensions in 13D (12,1) signature
+            SIGNATURE_EFF_TIME: 1,    // Timelike dimension in 13D (12,1) signature
+            // Spinor components
+            SPINOR_26D: 8192,         // 2^13 spinor components in 26D Cl(24,2)
+            SPINOR_13D: 64            // 2^6 spinor components in 13D Cl(12,1)
         },
 
         // Key electroweak parameters (fallback if not in JSON)
@@ -899,7 +907,7 @@
     // Export globally
     window.PM = PM;
 
-    console.log('PM: Constants loader ready (v2.2.0 - Enhanced path resolution)');
+    console.log('PM: Constants loader ready (v2.3.0 - Production-ready)');
 
     // ========================================================================
     // MUTATION OBSERVER - Re-process when new elements are added

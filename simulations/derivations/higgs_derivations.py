@@ -30,6 +30,12 @@ References:
 - Joyce (2000) "TCS G2 Construction"
 
 Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

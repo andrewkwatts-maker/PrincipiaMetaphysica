@@ -3,7 +3,6 @@
 PRINCIPIA METAPHYSICA v16.0 - G2 Geometry and Topology
 ========================================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Unified G2 geometry simulation implementing SimulationBase interface.
@@ -38,6 +37,10 @@ REFERENCES:
 - Corti et al. (2015) "G2 Manifolds and M-Theory" arXiv:1503.05500
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -1244,6 +1247,9 @@ class G2GeometryV16(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Number of associative 3-cycles; localization sites for matter",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula="betti-numbers"
             ),
             Parameter(
@@ -1252,6 +1258,9 @@ class G2GeometryV16(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Effective Euler characteristic from Hodge numbers",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula="euler-characteristic"
             ),
             Parameter(
@@ -1271,6 +1280,9 @@ class G2GeometryV16(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Number of K3 matching fibres in TCS gluing",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula="cycle-matching"
             ),
             Parameter(
@@ -1279,6 +1291,9 @@ class G2GeometryV16(SimulationBase):
                 units="dimensionless",
                 status="GEOMETRIC",
                 description="Ratio of cycle separation to compactification radius; controls Yukawa suppression and proton decay",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
                 derivation_formula=None  # Geometric input from TCS construction
             ),
         ]

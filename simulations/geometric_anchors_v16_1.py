@@ -7,6 +7,10 @@ All parameters are derived from the single topological invariant b₃=24.
 This eliminates tuning by anchoring everything to G₂ topology.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

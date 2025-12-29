@@ -3,7 +3,6 @@
 Proton Decay Simulation v16.0
 ===============================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Computes proton lifetime from TCS G2 cycle separation geometry using the
@@ -28,6 +27,10 @@ References:
 - Friedmann-Witten (2002): Brane models and proton stability
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

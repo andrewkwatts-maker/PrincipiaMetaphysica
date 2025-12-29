@@ -17,6 +17,10 @@ All tests use experimentally measured values from ESTABLISHED physics
 and theoretical predictions from simulations/v16/gauge/.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import pytest

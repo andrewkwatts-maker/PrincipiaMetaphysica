@@ -15,6 +15,12 @@ The hash registry serves as:
 Author: Principia Metaphysica Research Team
 Created: 2025-12-29
 License: MIT (for the registry tool; theory content has separate IP status)
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import json

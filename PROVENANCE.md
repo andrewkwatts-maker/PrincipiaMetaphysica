@@ -112,7 +112,7 @@ This hash provides a timestamped proof of discovery that cannot be backdated.
 ## 7. Contact
 
 **Principal Discoverer:** Andrew K. Watts
-**Repository:** https://github.com/AndrewKeithWatts/PrincipiaMetaphysica
+**Repository:** https://github.com/andrewkwatts-maker/PrincipiaMetaphysica
 **Website:** https://www.metaphysicæ.com
 
 ---

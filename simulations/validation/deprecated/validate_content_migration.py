@@ -4,6 +4,12 @@ Content Validation Script - Verify all old paper content exists in new JSON outp
 
 This script validates that all formulas, parameters, references, and sections
 from the old hardcoded HTML are present in the new JSON-based system.
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import json

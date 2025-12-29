@@ -17,6 +17,10 @@
    Principia Metaphysica - Andrew Keith Watts
   </title>
   <link href="css/styles.css" rel="stylesheet"/>
+  <link href="css/pm-common.css" rel="stylesheet"/>
+  <link href="css/pm-header.css" rel="stylesheet"/>
+  <link href="css/pm-ux-consistency.css" rel="stylesheet"/>
+  <link href="css/mobile-responsive.css" rel="stylesheet"/>
   <style>
    /* Enhanced styles for physics theory website */
         .hero {
@@ -404,15 +408,15 @@
                 const spinorFull = document.getElementById('spinor-full');
                 const spinorEff = document.getElementById('spinor-eff');
 
-                // Map from PM.dimensions structure
-                if (dimFull) dimFull.textContent = PM.dimensions?.D_bulk?.value || PM.dimensions?.D_bulk || 26;
-                if (dimEff) dimEff.textContent = PM.dimensions?.D_after_sp2r?.value || PM.dimensions?.D_after_sp2r || 13;
-                if (sigSpace) sigSpace.textContent = 24; // (24,2) signature
-                if (sigTime) sigTime.textContent = 2;
-                if (sigEffSpace) sigEffSpace.textContent = 12; // (12,1) effective
-                if (sigEffTime) sigEffTime.textContent = 1;
-                if (spinorFull) spinorFull.textContent = 8192; // 2^13 = 8192 components in 26D (Cl(24,2))
-                if (spinorEff) spinorEff.textContent = 64; // 2^6 = 64 components in 13D (Cl(12,1))
+                // Map from PM.dimensions structure - all values from pm-constants-loader.js
+                if (dimFull) dimFull.textContent = PM.dimensions?.D_bulk?.value || PM.dimensions?.D_BULK;
+                if (dimEff) dimEff.textContent = PM.dimensions?.D_after_sp2r?.value || PM.dimensions?.D_AFTER_SP2R;
+                if (sigSpace) sigSpace.textContent = PM.dimensions?.SIGNATURE_SPACE;
+                if (sigTime) sigTime.textContent = PM.dimensions?.SIGNATURE_TIME;
+                if (sigEffSpace) sigEffSpace.textContent = PM.dimensions?.SIGNATURE_EFF_SPACE;
+                if (sigEffTime) sigEffTime.textContent = PM.dimensions?.SIGNATURE_EFF_TIME;
+                if (spinorFull) spinorFull.textContent = PM.dimensions?.SPINOR_26D;
+                if (spinorEff) spinorEff.textContent = PM.dimensions?.SPINOR_13D;
 
                 // Calculate and display success rate percentage
                 const successRatePct = document.getElementById('success-rate-pct');

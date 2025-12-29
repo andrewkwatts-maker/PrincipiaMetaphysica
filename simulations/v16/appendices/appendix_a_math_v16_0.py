@@ -20,6 +20,10 @@ References:
 - Salamon, S. (1989) "Riemannian Geometry and Holonomy Groups"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -601,6 +605,9 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of the octonion division algebra",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
         ]
 

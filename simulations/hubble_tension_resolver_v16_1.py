@@ -33,6 +33,10 @@ References:
 - Poulin et al. (2021): EDE peak at log10(z_c) ~ 3.5 (z ~ 3160)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

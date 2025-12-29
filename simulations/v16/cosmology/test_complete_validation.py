@@ -6,6 +6,12 @@ This script runs a comprehensive validation to ensure:
 2. Observable Omega_DM/b ~ 5.4 is maintained
 3. Yukawa overlaps are consistent
 4. All geometric formulas are self-consistent
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

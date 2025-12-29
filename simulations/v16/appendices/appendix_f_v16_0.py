@@ -20,6 +20,10 @@ References:
 - Vafa (1996) "Evidence for F-theory"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -429,6 +433,9 @@ def dimensional_reduction() -> dict:
                 units="dimensionless",
                 status="DERIVED",
                 description="Σ = 12 from shadow spatial dimensions or TCS cycle symmetry",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="dimensions.spatial_shadow",

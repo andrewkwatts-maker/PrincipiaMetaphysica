@@ -2,7 +2,6 @@
 Dark Energy from Dimensional Reduction v16.0
 =============================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Derives dark energy equation of state from G2 compactification and dimensional
@@ -18,6 +17,10 @@ This simulation computes:
 Key prediction: w₀ = -11/13 = -0.846153... (validated against DESI 2025 via registry)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -756,7 +759,7 @@ class DarkEnergyV16(SimulationBase):
             {
                 "id": "desi2024",
                 "authors": "DESI Collaboration",
-                "title": "DESI 2024 VI: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
+                "title": "DESI 2024: Cosmological Constraints from the Measurements of Baryon Acoustic Oscillations",
                 "journal": "arXiv",
                 "year": 2024,
                 "arxiv": "2404.03002",

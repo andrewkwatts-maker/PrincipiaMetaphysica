@@ -19,6 +19,10 @@ References:
 - Fileviez Perez (2017) "SO(10) GUTs in the LHC era"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -395,6 +399,9 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="years",
                 status="PREDICTED",
                 description="Predicted lifetime for p → π⁰e⁺ decay channel",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="proton_decay.gamma_p",
@@ -409,6 +416,9 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="dimensionless",
                 status="DERIVED",
                 description="Wavefunction overlap suppression from G₂ cycle separation",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
         ]
 

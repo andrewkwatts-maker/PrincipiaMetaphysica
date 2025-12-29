@@ -3,7 +3,6 @@
 PRINCIPIA METAPHYSICA v16.0 - Thermal Time Hypothesis
 ======================================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Implements the thermal time hypothesis with two-time framework:
@@ -45,6 +44,10 @@ REFERENCES:
     - PM framework: Two-time physics with Sp(2,R) gauge symmetry
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import sys
