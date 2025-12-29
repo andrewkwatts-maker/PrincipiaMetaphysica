@@ -285,7 +285,7 @@ class TorsionalConstantsV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"k_\gimel = \frac{b_3}{2} + \frac{1}{\pi} = 12.31831...",
+                    content=r"k_{\gimel} = \frac{b_3}{2} + \frac{1}{\pi} = 12.31831...",
                     formula_id="geometric-anchor-k-gimel",
                     label="(3.15)"
                 ),
@@ -309,7 +309,7 @@ class TorsionalConstantsV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"c = \frac{b_3 \cdot C_{kaf}}{k_\gimel^2} \times \mathcal{N}_c",
+                    content=r"c = \frac{b_3 \cdot C_{kaf}}{k_{\gimel}^2} \times \mathcal{N}_c",
                     formula_id="torsional-velocity-derivation",
                     label="(3.17)"
                 ),
@@ -334,7 +334,7 @@ class TorsionalConstantsV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"G = \frac{k_\gimel}{b_3^3} \times \mathcal{N}_G",
+                    content=r"G = \frac{k_{\gimel}}{b_3^3} \times \mathcal{N}_G",
                     formula_id="gravitational-resilience-derivation",
                     label="(3.18)"
                 ),
@@ -380,7 +380,7 @@ class TorsionalConstantsV16(SimulationBase):
             Formula(
                 id="geometric-anchor-k-gimel",
                 label="(3.15)",
-                latex=r"k_\gimel = \frac{b_3}{2} + \frac{1}{\pi}",
+                latex=r"k_{\gimel} = \frac{b_3}{2} + \frac{1}{\pi}",
                 plain_text="k_gimel = b3/2 + 1/pi",
                 category="GEOMETRIC",
                 description="Geometric anchor representing harmonic center of G2 geometry",
@@ -400,7 +400,7 @@ class TorsionalConstantsV16(SimulationBase):
                         },
                         {
                             "description": "Total anchor",
-                            "formula": r"k_\gimel = 12.31831..."
+                            "formula": r"k_{\gimel} = 12.31831..."
                         }
                     ],
                     "references": ["PM Section 3.1 - Geometric Anchors"]
@@ -446,7 +446,7 @@ class TorsionalConstantsV16(SimulationBase):
             Formula(
                 id="torsional-velocity-derivation",
                 label="(3.17)",
-                latex=r"c = \frac{b_3 \cdot C_{kaf}}{k_\gimel^2} \times \mathcal{N}_c",
+                latex=r"c = \frac{b_3 \cdot C_{kaf}}{k_{\gimel}^2} \times \mathcal{N}_c",
                 plain_text="c = (b3 * C_kaf / k_gimel^2) * N_c",
                 category="DERIVED",
                 description="Speed of light derived from G2 torsional dynamics",
@@ -458,7 +458,7 @@ class TorsionalConstantsV16(SimulationBase):
                     "steps": [
                         {
                             "description": "Compute stiffness ratio",
-                            "formula": r"\text{Stiffness} = \frac{b_3 \cdot C_{kaf}}{k_\gimel^2} = 4.329..."
+                            "formula": r"\text{Stiffness} = \frac{b_3 \cdot C_{kaf}}{k_{\gimel}^2} = 4.329..."
                         },
                         {
                             "description": "Apply Planck velocity normalization",
@@ -483,7 +483,7 @@ class TorsionalConstantsV16(SimulationBase):
             Formula(
                 id="gravitational-resilience-derivation",
                 label="(3.18)",
-                latex=r"G = \frac{k_\gimel}{b_3^3} \times \mathcal{N}_G",
+                latex=r"G = \frac{k_{\gimel}}{b_3^3} \times \mathcal{N}_G",
                 plain_text="G = (k_gimel / b3^3) * N_G",
                 category="DERIVED",
                 description="Gravitational constant derived from manifold resilience",
@@ -495,7 +495,7 @@ class TorsionalConstantsV16(SimulationBase):
                     "steps": [
                         {
                             "description": "Compute resilience (inverse coupling)",
-                            "formula": r"\text{Resilience} = \frac{b_3^3}{k_\gimel} = 1122.9..."
+                            "formula": r"\text{Resilience} = \frac{b_3^3}{k_{\gimel}} = 1122.9..."
                         },
                         {
                             "description": "Apply Planck coupling normalization",

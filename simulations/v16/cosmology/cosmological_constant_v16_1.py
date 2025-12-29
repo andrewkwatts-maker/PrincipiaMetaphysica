@@ -286,7 +286,7 @@ class CosmologicalConstantV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"S_{G_2} = b_3 \cdot \ln(k_\gimel) = 24 \cdot \ln(12.318) \approx 60.2",
+                    content=r"S_{G_2} = b_3 \cdot \ln(k_{\gimel}) = 24 \cdot \ln(12.318) \approx 60.2",
                     formula_id="g2-entropy-density",
                     label="(5.25)"
                 ),
@@ -305,7 +305,7 @@ class CosmologicalConstantV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"\Lambda = \frac{k_\gimel \cdot [\ln(k_\gimel)]^2}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2",
+                    content=r"\Lambda = \frac{k_{\gimel} \cdot [\ln(k_{\gimel})]^2}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2",
                     formula_id="cosmological-constant-geometric",
                     label="(5.26)"
                 ),
@@ -356,7 +356,7 @@ class CosmologicalConstantV16(SimulationBase):
             Formula(
                 id="g2-entropy-density",
                 label="(5.25)",
-                latex=r"S_{G_2} = b_3 \cdot \ln(k_\gimel)",
+                latex=r"S_{G_2} = b_3 \cdot \ln(k_{\gimel})",
                 plain_text="S_G2 = b3 * ln(k_gimel)",
                 category="DERIVED",
                 description="Total entropy of G2 manifold from 3-cycle count",
@@ -368,7 +368,7 @@ class CosmologicalConstantV16(SimulationBase):
                     "steps": [
                         {
                             "description": "Entropy per cycle",
-                            "formula": r"s_{cycle} = \ln(k_\gimel) = \ln(12.318) \approx 2.51"
+                            "formula": r"s_{cycle} = \ln(k_{\gimel}) = \ln(12.318) \approx 2.51"
                         },
                         {
                             "description": "Total for b3 cycles",
@@ -386,7 +386,7 @@ class CosmologicalConstantV16(SimulationBase):
             Formula(
                 id="cosmological-constant-geometric",
                 label="(5.26)",
-                latex=r"\Lambda = \frac{k_\gimel \cdot [\ln(k_\gimel)]^2}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2",
+                latex=r"\Lambda = \frac{k_{\gimel} \cdot [\ln(k_{\gimel})]^2}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2",
                 plain_text="Lambda = (k_gimel * ln(k_gimel)^2 / b3^3) * (l_Pl/R_H)^2",
                 category="PREDICTIONS",
                 description="Cosmological constant from G2 entropy density",
@@ -398,11 +398,11 @@ class CosmologicalConstantV16(SimulationBase):
                     "steps": [
                         {
                             "description": "Geometric factor",
-                            "formula": r"\frac{k_\gimel}{b_3^3} = \frac{12.318}{13824} \approx 8.9 \times 10^{-4}"
+                            "formula": r"\frac{k_{\gimel}}{b_3^3} = \frac{12.318}{13824} \approx 8.9 \times 10^{-4}"
                         },
                         {
                             "description": "Entropy factor",
-                            "formula": r"[\ln(k_\gimel)]^2 = (2.51)^2 \approx 6.3"
+                            "formula": r"[\ln(k_{\gimel})]^2 = (2.51)^2 \approx 6.3"
                         },
                         {
                             "description": "Horizon ratio",
@@ -461,7 +461,7 @@ class CosmologicalConstantV16(SimulationBase):
             Formula(
                 id="lambda-hierarchy",
                 label="(5.27)",
-                latex=r"\frac{\Lambda}{\Lambda_{Pl}} = \frac{k_\gimel \cdot \ln^2(k_\gimel)}{b_3^3} \cdot \left(\frac{H_0}{M_{Pl}}\right)^2 \sim 10^{-122}",
+                latex=r"\frac{\Lambda}{\Lambda_{\text{Pl}}} = \frac{k_{\gimel} \cdot \ln^2(k_{\gimel})}{b_3^3} \cdot \left(\frac{H_0}{M_{\text{Pl}}}\right)^2 \sim 10^{-122}",
                 plain_text="Lambda/Lambda_Pl ~ 10^-122",
                 category="THEORY",
                 description="Hierarchy between Planck and observed Lambda",

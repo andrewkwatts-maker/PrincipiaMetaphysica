@@ -247,7 +247,7 @@ class CosmologyIntroV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"S_{14} = \frac{1}{2κ_{14}^2} \int d^{14}x \sqrt{-G} R_{14}",
+                    content=r"S_{14} = \frac{1}{2\kappa_{14}^{2}} \int d^{14}x \sqrt{-G} R_{14}",
                     formula_id="einstein-hilbert-14D",
                     label="(5.2)"
                 ),
@@ -492,8 +492,8 @@ class CosmologyIntroV16(SimulationBase):
             Formula(
                 id="einstein-hilbert-14D",
                 label="(5.2)",
-                latex=r"S_{14} = \frac{1}{2κ_{14}^2} \int d^{14}x \sqrt{-G} R_{14}",
-                plain_text="S_14 = (1/2κ²_14) ∫ d¹⁴x √(-G) R_14",
+                latex=r"S_{14} = \frac{1}{2\kappa_{14}^{2}} \int d^{14}x \sqrt{-G} R_{14}",
+                plain_text="S_14 = (1/2kappa^2_14) integral d^14 x sqrt(-G) R_14",
                 category="THEORY",
                 description="14D Einstein-Hilbert action before compactification",
                 inputParams=[],
@@ -502,15 +502,15 @@ class CosmologyIntroV16(SimulationBase):
                 output_params=["cosmology.M_Pl_4D", "cosmology.V_9_internal"],
                 derivation={
                     "steps": [
-                        {"description": "Start with 14D action", "formula": r"S_{14} = \frac{1}{2κ²_{14}} \int d^{14}x \sqrt{-G} R_{14}"},
+                        {"description": "Start with 14D action", "formula": r"S_{14} = \frac{1}{2\kappa_{14}^{2}} \int d^{14}x \sqrt{-G} R_{14}"},
                         {"description": "Integrate over internal space", "formula": r"\int_{K_{Pneuma}} d^9y \sqrt{g_{internal}}"},
-                        {"description": "Get 4D Planck mass", "formula": r"M_{Pl}^2 = M_*^{11} \times V_9"},
+                        {"description": "Get 4D Planck mass", "formula": r"M_{\text{Pl}}^2 = M_*^{11} \times V_9"},
                         {"description": "V9 from G2 topology", "formula": r"V_9 = V_7(G_2) \times V_2(T^2)"}
                     ],
                     "references": ["Compactification", "Kaluza-Klein"]
                 },
                 terms={
-                    "κ_14": "14D gravitational constant",
+                    "kappa_14": "14D gravitational constant",
                     "R_14": "14D Ricci scalar",
                     "V_9": "9-dimensional internal volume"
                 }
@@ -557,7 +557,7 @@ class CosmologyIntroV16(SimulationBase):
                         {"description": "Separate volume dependence", "formula": r"g_{mn} = e^{2σ} g_{mn}^{(0)}"},
                         {"description": "Volume modulus T from racetrack", "formula": r"W = A e^{-aT} + B e^{-bT}"},
                         {"description": "Minimize potential", "formula": r"\partial_T V = 0 \Rightarrow T_{min} = 1.4885"},
-                        {"description": "Breathing mode VEV", "formula": r"\langle σ \rangle = \phi_0 \approx 0.075 M_{Pl}"}
+                        {"description": "Breathing mode VEV", "formula": r"\langle σ \rangle = \phi_0 \approx 0.075 M_{\text{Pl}}"}
                     ],
                     "references": ["Moduli stabilization", "KKLT mechanism"]
                 },
@@ -583,7 +583,7 @@ class CosmologyIntroV16(SimulationBase):
                         {"description": "BPS bound", "formula": r"T \geq |Z|/V"},
                         {"description": "For (5,2) brane", "formula": r"p = 5 \text{ spatial} + 2 \text{ time} = 7"},
                         {"description": "SO(24,2) Casimir", "formula": r"C_2 = p(p+22)/4 = 7 \times 29/4 = 50.75"},
-                        {"description": "Tension", "formula": r"T_{BPS} = \sqrt{C_2} \times M_{Pl}^6"}
+                        {"description": "Tension", "formula": r"T_{BPS} = \sqrt{C_2} \times M_{\text{Pl}}^6"}
                     ],
                     "references": ["BPS states", "Brane dynamics"]
                 },

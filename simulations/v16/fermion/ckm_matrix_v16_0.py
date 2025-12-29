@@ -390,9 +390,11 @@ class CKMMatrixSimulation(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=(
+                        r"\begin{aligned} "
                         r"V_{\text{us}} &\sim \epsilon \approx 0.223 \quad \text{(Cabibbo angle)}\\ "
                         r"V_{\text{cb}} &\sim A\epsilon^2 \approx 0.040 \quad \text{(second generation mixing)}\\ "
                         r"V_{\text{ub}} &\sim A\epsilon^3 \approx 0.004 \quad \text{(third generation mixing)}"
+                        r" \end{aligned}"
                     ),
                     formula_id="ckm-hierarchy",
                     label="(4.3.2)"
@@ -469,9 +471,11 @@ class CKMMatrixSimulation(SimulationBase):
                 ContentBlock(
                     type="formula",
                     content=(
+                        r"\begin{aligned} "
                         r"\lambda &= \epsilon = e^{-1.5} \approx 0.223\\ "
                         r"A &\approx 0.81/\epsilon \approx 3.6\\ "
                         r"\rho + i\eta &\sim e^{i\delta_{\text{CP}}} \cdot \epsilon^3/\lambda^3"
+                        r" \end{aligned}"
                     ),
                     label="(4.3.6)"
                 ),

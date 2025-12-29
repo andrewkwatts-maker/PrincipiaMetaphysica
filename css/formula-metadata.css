@@ -603,10 +603,177 @@
 }
 
 /* ========================================================================
+   COMPACT INLINE LAYOUT - Grid-based params, inline refs/category
+   ======================================================================== */
+
+/* Parameters Grid - Two columns for input/output */
+.metadata-params-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.params-column {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+.params-column.inputs {
+    border-left: 3px solid rgba(59, 130, 246, 0.6);
+}
+
+.params-column.outputs {
+    border-left: 3px solid rgba(251, 146, 60, 0.6);
+}
+
+.params-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    opacity: 0.7;
+}
+
+.params-column.inputs .params-label {
+    color: #60a5fa;
+}
+
+.params-column.outputs .params-label {
+    color: #fb923c;
+}
+
+.params-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.param-chip {
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    background: rgba(139, 127, 255, 0.12);
+    border: 1px solid rgba(139, 127, 255, 0.25);
+    border-radius: 4px;
+    font-family: 'Source Code Pro', 'Fira Code', monospace;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.85);
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.param-chip:hover {
+    background: rgba(139, 127, 255, 0.22);
+    border-color: rgba(139, 127, 255, 0.45);
+    transform: translateY(-1px);
+}
+
+.params-column.inputs .param-chip {
+    background: rgba(59, 130, 246, 0.12);
+    border-color: rgba(59, 130, 246, 0.25);
+    color: #93c5fd;
+}
+
+.params-column.inputs .param-chip:hover {
+    background: rgba(59, 130, 246, 0.22);
+    border-color: rgba(59, 130, 246, 0.45);
+}
+
+.params-column.outputs .param-chip {
+    background: rgba(251, 146, 60, 0.12);
+    border-color: rgba(251, 146, 60, 0.25);
+    color: #fdba74;
+}
+
+.params-column.outputs .param-chip:hover {
+    background: rgba(251, 146, 60, 0.22);
+    border-color: rgba(251, 146, 60, 0.45);
+}
+
+/* Derivation Steps - with description and formula */
+.derivation-step .step-description {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.derivation-step .step-formula {
+    font-family: 'Source Code Pro', 'Fira Code', monospace;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Category - Compact inline badge */
+.metadata-category-inline {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.metadata-category-inline .badge {
+    margin-bottom: 0;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.7rem;
+}
+
+.metadata-category-inline .badge-desc {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+/* References - Compact inline list */
+.metadata-references-inline {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.35rem;
+    padding: 0.5rem 0;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 0.75rem;
+}
+
+.refs-label {
+    font-weight: 600;
+    color: #a855f7;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.ref-item {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.ref-item::after {
+    content: " •";
+    color: rgba(139, 127, 255, 0.4);
+    margin-left: 0.25rem;
+}
+
+.ref-item:last-child::after {
+    content: none;
+}
+
+/* ========================================================================
    RESPONSIVE DESIGN
    ======================================================================== */
 
 @media screen and (max-width: 768px) {
+    /* Compact layout responsiveness */
+    .metadata-params-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .metadata-references-inline {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+    }
     .equation-line {
         padding: 1rem 1.5rem;
         flex-direction: column;

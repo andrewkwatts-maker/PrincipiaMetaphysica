@@ -348,14 +348,23 @@
 
         // Sort appendices by letter ID
         appendices.sort((a, b) => {
-            // Extract letter from ID or title
+            // Extract letter from subsection_id, id, or title
             const getAppendixLetter = (sec) => {
+                if (sec.subsection_id && /^[A-Z]$/.test(sec.subsection_id)) return sec.subsection_id;
                 if (/^[A-Z]$/.test(sec.id)) return sec.id;
                 const match = sec.title?.match(/Appendix ([A-Z])/);
                 return match ? match[1] : 'Z';
             };
             return getAppendixLetter(a).localeCompare(getAppendixLetter(b));
         });
+
+        // Helper to get appendix ID for linking
+        const getAppendixId = (sec) => {
+            if (sec.subsection_id && /^[A-Z]$/.test(sec.subsection_id)) return sec.subsection_id;
+            if (/^[A-Z]$/.test(sec.id)) return sec.id;
+            const match = sec.title?.match(/Appendix ([A-Z])/);
+            return match ? match[1] : sec.id;
+        };
 
         // Render main sections column
         const mainColumn = document.createElement('div');
@@ -407,7 +416,7 @@
 
             for (const appendix of appendices) {
                 const li = document.createElement('li');
-                const appendixId = appendix.id;
+                const appendixId = getAppendixId(appendix);
                 li.innerHTML = `
                     <a href="#section-${appendixId}" class="toc-link">
                         <span class="toc-title">${appendix.title}</span>
@@ -448,6 +457,7 @@
             // Both are appendices - sort by letter
             if (isAppendixA && isAppendixB) {
                 const getAppendixLetter = (sec) => {
+                    if (sec.subsection_id && /^[A-Z]$/.test(sec.subsection_id)) return sec.subsection_id;
                     if (/^[A-Z]$/.test(sec.id)) return sec.id;
                     const match = sec.title?.match(/Appendix ([A-Z])/);
                     return match ? match[1] : 'Z';
@@ -511,7 +521,11 @@
 
         for (const appendix of appendices) {
             const link = document.createElement('a');
-            link.href = `#section-${appendix.id}`;
+            // Use subsection_id for appendices (e.g., "A"), fallback to id, or extract from title
+            const appendixId = (appendix.subsection_id && /^[A-Z]$/.test(appendix.subsection_id))
+                ? appendix.subsection_id
+                : (/^[A-Z]$/.test(appendix.id) ? appendix.id : appendix.title?.match(/Appendix ([A-Z])/)?.[1] || appendix.id);
+            link.href = `#section-${appendixId}`;
             link.className = 'appendix-nav-link';
             link.textContent = appendix.title;
             grid.appendChild(link);
@@ -539,7 +553,12 @@
         const { loadFormulas = true, loadParameters = true, useJsonContent = true } = options;
 
         // Handle both flat structure and metadata/content wrapper
-        const sectionId = section.metadata?.id || section.id;
+        // For appendices, use subsection_id (e.g., "A") instead of id (which may be "2")
+        const isAppendixSection = section.appendix === true || section.type === 'appendix' ||
+                                  (section.title && section.title.startsWith('Appendix'));
+        const sectionId = isAppendixSection && section.subsection_id
+            ? section.subsection_id
+            : (section.metadata?.id || section.id);
         const sectionTitle = section.metadata?.title || section.title;
         const sectionAbstract = section.metadata?.abstract || section.abstract;
         const subsections = section.content?.subsections || section.subsections || [];
@@ -1159,10 +1178,8 @@
         }
         html += '</div>';
 
-        // Plain text fallback (for accessibility and copying)
-        if (plainText) {
-            html += `<div class="equation-plaintext" title="Plain text representation">${escapeHtml(plainText)}</div>`;
-        }
+        // Plain text is removed from display - LaTeX is the primary representation
+        // (Plain text kept in data for search/accessibility but not rendered visually)
 
         // Parameter definitions (from terms)
         if (formulaData?.terms && Object.keys(formulaData.terms).length > 0) {
@@ -1199,56 +1216,66 @@
             html += '</button>';
             html += '<div class="metadata-content">';
 
-            // Input/Output Parameters
-            if (formulaData.input_params && formulaData.input_params.length > 0) {
-                html += '<div class="metadata-section metadata-inputs">';
-                html += '<h5 class="metadata-section-title">📥 Input Parameters</h5>';
-                html += '<ul class="param-list">';
-                for (const param of formulaData.input_params) {
-                    html += `<li class="param-item"><code class="param-link" data-param="${param}">${param}</code></li>`;
+            // Input/Output Parameters - compact grid layout
+            if ((formulaData.input_params && formulaData.input_params.length > 0) ||
+                (formulaData.output_params && formulaData.output_params.length > 0)) {
+                html += '<div class="metadata-params-grid">';
+
+                if (formulaData.input_params && formulaData.input_params.length > 0) {
+                    html += '<div class="params-column params-inputs">';
+                    html += '<span class="params-label">Inputs:</span>';
+                    html += '<div class="params-list">';
+                    for (const param of formulaData.input_params) {
+                        html += `<code class="param-chip" data-param="${param}">${param}</code>`;
+                    }
+                    html += '</div></div>';
                 }
-                html += '</ul></div>';
+
+                if (formulaData.output_params && formulaData.output_params.length > 0) {
+                    html += '<div class="params-column params-outputs">';
+                    html += '<span class="params-label">Outputs:</span>';
+                    html += '<div class="params-list">';
+                    for (const param of formulaData.output_params) {
+                        html += `<code class="param-chip" data-param="${param}">${param}</code>`;
+                    }
+                    html += '</div></div>';
+                }
+
+                html += '</div>';
             }
 
-            if (formulaData.output_params && formulaData.output_params.length > 0) {
-                html += '<div class="metadata-section metadata-outputs">';
-                html += '<h5 class="metadata-section-title">📤 Output Parameters</h5>';
-                html += '<ul class="param-list">';
-                for (const param of formulaData.output_params) {
-                    html += `<li class="param-item"><code class="param-link" data-param="${param}">${param}</code></li>`;
-                }
-                html += '</ul></div>';
-            }
-
-            // Derivation steps
+            // Derivation steps - render as LaTeX formulas with descriptions
             if (formulaData.derivation?.steps && formulaData.derivation.steps.length > 0) {
                 html += '<div class="metadata-section metadata-derivation">';
-                html += '<h5 class="metadata-section-title">🔬 Derivation</h5>';
                 html += '<ol class="derivation-steps">';
                 for (const step of formulaData.derivation.steps) {
-                    html += `<li class="derivation-step">${step}</li>`;
+                    // Handle both object steps and string steps
+                    if (typeof step === 'object' && step !== null) {
+                        const desc = step.description || '';
+                        const formula = step.formula || '';
+                        html += '<li class="derivation-step">';
+                        if (desc) html += `<span class="step-description">${escapeHtml(desc)}:</span> `;
+                        if (formula) html += `<span class="step-formula">$${formula}$</span>`;
+                        html += '</li>';
+                    } else {
+                        html += `<li class="derivation-step">${escapeHtml(String(step))}</li>`;
+                    }
                 }
                 html += '</ol></div>';
             }
 
-            // References
+            // References - compact inline display
             if (formulaData.derivation?.references && formulaData.derivation.references.length > 0) {
-                html += '<div class="metadata-section metadata-references">';
-                html += '<h5 class="metadata-section-title">📚 References</h5>';
-                html += '<ul class="reference-list">';
-                for (const ref of formulaData.derivation.references) {
-                    html += `<li class="reference-item">${ref}</li>`;
-                }
-                html += '</ul></div>';
+                html += '<div class="metadata-references-inline">';
+                html += '<span class="refs-label">Refs:</span> ';
+                html += formulaData.derivation.references.map(ref => `<span class="ref-item">${ref}</span>`).join(', ');
+                html += '</div>';
             }
 
-            // Category and status
+            // Category - single line with badge
             if (formulaData.category) {
-                html += '<div class="metadata-section metadata-category">';
-                html += '<h5 class="metadata-section-title">📊 Category</h5>';
                 const categoryBadge = getCategoryBadge(formulaData.category);
-                html += `<div class="category-badge">${categoryBadge}</div>`;
-                html += '</div>';
+                html += `<div class="metadata-category-inline">${categoryBadge}</div>`;
             }
 
             // Experimental vs Computed values
