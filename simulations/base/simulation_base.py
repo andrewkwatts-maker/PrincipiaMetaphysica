@@ -149,7 +149,11 @@ class Formula:
 @dataclass
 class Parameter:
     """
-    A parameter definition.
+    A parameter definition with required experimental value metadata.
+
+    SCHEMA REQUIREMENT: All parameters MUST have either:
+    1. experimental_bound + bound_source (from PDG 2024, NuFIT 6.0, DESI 2025, etc.)
+    2. no_experimental_value=True with justification in description
 
     Attributes:
         path: Dot-notation path (e.g., "proton_decay.tau_p_years")
@@ -158,9 +162,11 @@ class Parameter:
         status: Status ("ESTABLISHED", "GEOMETRIC", "DERIVED", "PREDICTED", "CALIBRATED")
         description: What the parameter represents
         derivation_formula: Optional formula ID that derives this parameter
-        experimental_bound: Optional experimental constraint value
-        bound_type: Type of bound ("upper", "lower", "range", "measured")
-        bound_source: Citation for the bound
+        experimental_bound: Experimental constraint value (REQUIRED unless no_experimental_value=True)
+        bound_type: Type of bound ("upper", "lower", "range", "measured", "central_value")
+        bound_source: Citation for bound (e.g., "PDG2024", "NuFIT6.0", "DESI2025", "Super-K")
+        uncertainty: Experimental uncertainty (1-sigma)
+        no_experimental_value: Set True if no experimental measurement exists (e.g., topological params)
         validation: Optional validation metadata dict
     """
     path: str
@@ -173,6 +179,7 @@ class Parameter:
     bound_type: Optional[str] = None
     bound_source: Optional[str] = None
     uncertainty: Optional[float] = None
+    no_experimental_value: bool = False
     validation: Optional[Dict[str, Any]] = None
 
 
