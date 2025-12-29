@@ -507,29 +507,38 @@ class PMSectionRenderer extends HTMLElement {
                 return wrapExpandable(`<div class="text-block">${textContent}</div>`);
 
             case 'formula':
-                // Validate that formulaId exists
-                if (!block.formulaId) {
-                    console.warn('PMSectionRenderer: Formula block missing formulaId', block);
+                if (block.formulaId) {
+                    // Render using pm-formula component with interactive display
+                    const derivAttr = block.showDerivation ? ' show-derivation="true"' : '';
+                    const termsAttr = block.showTerms === false ? ' show-terms="false"' : '';
+                    const inlineAttr = block.inline ? ' inline="true"' : '';
+
+                    // Add link to formula page
+                    const formulaLink = `<a href="formulas.html#formula-${block.formulaId}" class="formula-link" target="_blank">View full details →</a>`;
+
+                    return wrapExpandable(`
+                        <pm-formula formula-id="${block.formulaId}"${derivAttr}${termsAttr}${inlineAttr}></pm-formula>
+                        ${!block.inline ? formulaLink : ''}
+                    `);
+                } else if (block.content) {
+                    // Render inline formula content directly with MathJax
+                    const label = block.label || block.equationNumber || '';
+                    return wrapExpandable(`
+                        <div class="equation-block inline-formula" id="${label}">
+                            <div class="equation-content">$$${block.content}$$</div>
+                            ${label ? `<span class="equation-number">(${label})</span>` : ''}
+                        </div>
+                    `);
+                } else {
+                    // Show error only if both formulaId and content are missing
+                    console.warn('PMSectionRenderer: Formula block missing both formulaId and content', block);
                     return wrapExpandable(`
                         <div class="formula-error" style="background: rgba(244, 67, 54, 0.1); border: 1px solid rgba(244, 67, 54, 0.3); border-radius: 4px; padding: 0.75rem; color: #f44336;">
-                            <strong>⚠️ Formula Reference Error</strong>
-                            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Formula block is missing an ID. This formula cannot be displayed.</p>
+                            <strong>Formula Reference Error</strong>
+                            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Formula block is missing both an ID and content. This formula cannot be displayed.</p>
                         </div>
                     `);
                 }
-
-                // Render using pm-formula component with interactive display
-                const derivAttr = block.showDerivation ? ' show-derivation="true"' : '';
-                const termsAttr = block.showTerms === false ? ' show-terms="false"' : '';
-                const inlineAttr = block.inline ? ' inline="true"' : '';
-
-                // Add link to formula page
-                const formulaLink = `<a href="formulas.html#formula-${block.formulaId}" class="formula-link" target="_blank">View full details →</a>`;
-
-                return wrapExpandable(`
-                    <pm-formula formula-id="${block.formulaId}"${derivAttr}${termsAttr}${inlineAttr}></pm-formula>
-                    ${!block.inline ? formulaLink : ''}
-                `);
 
             case 'param':
                 // Render using pm-param component
@@ -627,6 +636,11 @@ class PMSectionRenderer extends HTMLElement {
                         ${eqLabel ? `<span class="equation-number">(${eqLabel})</span>` : ''}
                     </div>
                 `);
+
+            case 'subsection':
+                const subsectionId = block.label || '';
+                const subsectionContent = this.processTextContent(block.content || '');
+                return `<h3 class="subsection-title" id="${subsectionId}">${subsectionContent}</h3>`;
 
             default:
                 console.warn(`Unknown block type: ${block.type}`, block);

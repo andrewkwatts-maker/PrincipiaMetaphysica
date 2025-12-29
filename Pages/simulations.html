@@ -542,30 +542,70 @@
             if (githubFolderCache) return githubFolderCache;
 
             try {
-                console.log('[GITHUB API] Fetching GitHub folder structure...');
+                console.log('[GITHUB API] ========================================');
+                console.log('[GITHUB API] Fetching folder structure from GitHub...');
                 console.log('[GITHUB API] API URL:', `${GITHUB_API_BASE}/simulations`);
+                console.log('[GITHUB API] ========================================');
 
                 // Fetch main simulations folder
                 const response = await fetch(`${GITHUB_API_BASE}/simulations`);
                 if (!response.ok) {
                     // Check for rate limiting
+                    const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+                    const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+
                     if (response.status === 403) {
-                        const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
-                        const rateLimitReset = response.headers.get('X-RateLimit-Reset');
-                        if (rateLimitRemaining === '0') {
-                            const resetTime = new Date(parseInt(rateLimitReset) * 1000);
-                            console.error(`[GITHUB API] Rate limited! Reset at: ${resetTime.toLocaleTimeString()}`);
+                        if (rateLimitRemaining === '0' || rateLimitRemaining === null) {
+                            const resetTime = rateLimitReset
+                                ? new Date(parseInt(rateLimitReset) * 1000)
+                                : new Date(Date.now() + 3600000); // Assume 1 hour if not provided
+
+                            console.error('[GITHUB API] ========================================');
+                            console.error('[GITHUB API] RATE LIMITED!');
+                            console.error(`[GITHUB API] Reset time: ${resetTime.toLocaleTimeString()}`);
                             console.error('[GITHUB API] GitHub API allows 60 requests/hour for unauthenticated users.');
+                            console.error('[GITHUB API] To avoid this: Deploy simulations-index.json to your site.');
+                            console.error('[GITHUB API] ========================================');
+
+                            // Show user-friendly error in UI
+                            const container = document.getElementById('index-container');
+                            if (container) {
+                                container.innerHTML = `
+                                    <div class="file-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                                        <strong>GitHub API Rate Limit Exceeded</strong><br>
+                                        <small>The GitHub API allows 60 requests/hour for anonymous users.</small><br>
+                                        <small>Rate limit resets at: ${resetTime.toLocaleTimeString()}</small><br>
+                                        <br>
+                                        <small style="color: var(--text-muted);">
+                                            This usually happens when loading from GitHub API instead of the local index file.
+                                            Please try again later or contact the site administrator.
+                                        </small>
+                                    </div>`;
+                            }
+                            return null;
                         }
+                    } else if (response.status === 404) {
+                        console.error('[GITHUB API] Repository or path not found (404)');
+                    } else if (response.status === 500 || response.status === 502 || response.status === 503) {
+                        console.error(`[GITHUB API] GitHub server error (${response.status}). Try again later.`);
                     }
-                    console.warn(`[GITHUB API] Could not fetch simulations folder structure from GitHub. Status: ${response.status}`);
+
+                    console.warn(`[GITHUB API] Could not fetch folder structure. Status: ${response.status}`);
                     return null;
                 }
 
-                // Log rate limit info
+                // Log rate limit info for debugging
                 const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+                const rateLimitLimit = response.headers.get('X-RateLimit-Limit');
                 if (rateLimitRemaining) {
-                    console.log(`[GITHUB API] Rate limit remaining: ${rateLimitRemaining}/60`);
+                    const remaining = parseInt(rateLimitRemaining);
+                    const limit = parseInt(rateLimitLimit) || 60;
+                    console.log(`[GITHUB API] Rate limit: ${remaining}/${limit} requests remaining`);
+
+                    // Warn if running low
+                    if (remaining < 10) {
+                        console.warn(`[GITHUB API] WARNING: Only ${remaining} API requests remaining!`);
+                    }
                 }
 
                 const mainItems = await response.json();
@@ -782,37 +822,84 @@
         let simulationsIndex = null;
         let filteredSimulations = [];
 
+        // Helper function to detect base URL for unicode domains and various hosting configurations
+        function getBaseUrl() {
+            const href = window.location.href;
+            const origin = window.location.origin;
+            const pathname = window.location.pathname;
+
+            // Check if we're in the Pages directory
+            const pagesIndex = pathname.toLowerCase().indexOf('/pages/');
+            if (pagesIndex !== -1) {
+                // Return origin + path up to (but not including) /Pages/
+                return origin + pathname.substring(0, pagesIndex);
+            }
+
+            // Fallback: try to extract from full URL
+            const hrefPagesIndex = href.toLowerCase().lastIndexOf('/pages/');
+            if (hrefPagesIndex !== -1) {
+                return href.substring(0, hrefPagesIndex);
+            }
+
+            // If not in Pages directory, use origin
+            return origin;
+        }
+
         // Load simulations index from AutoGenerated/simulations-index.json or dynamically from GitHub
         async function loadSimulationIndex() {
             const container = document.getElementById('index-container');
             const statsDiv = document.getElementById('index-stats');
             const loadingDiv = document.getElementById('simulations-loading');
 
+            // Get base URL to handle unicode domains (e.g., metaphysicae.com) and different hosting configurations
+            const baseUrl = getBaseUrl();
+
             // Try multiple paths for live site compatibility
-            // Get base URL to handle unicode domains and different hosting configurations
-            const baseUrl = window.location.href.substring(0, window.location.href.lastIndexOf('/Pages/') + 1);
+            // Order matters: most likely to work first
             const paths = [
-                '../AutoGenerated/simulations-index.json', // Relative to Pages/
-                baseUrl + 'AutoGenerated/simulations-index.json', // Absolute from base URL
-                '/AutoGenerated/simulations-index.json',  // Absolute path (for live site)
-                'AutoGenerated/simulations-index.json',   // Relative from root
-                './simulations-index.json'                // Local copy in Pages/
+                '../AutoGenerated/simulations-index.json',           // Relative to Pages/ (works locally)
+                baseUrl + '/AutoGenerated/simulations-index.json',   // Absolute from detected base URL
+                '/AutoGenerated/simulations-index.json',             // Absolute from site root
+                new URL('AutoGenerated/simulations-index.json', window.location.origin).href, // Full URL from origin
+                'AutoGenerated/simulations-index.json',              // Relative from current location
+                './simulations-index.json'                           // Local copy in Pages/ (fallback)
             ];
 
-            console.log('[SIMULATIONS] Attempting to load simulations index...');
-            console.log('[SIMULATIONS] Base URL:', baseUrl);
-            
+            console.log('[SIMULATIONS] ========================================');
+            console.log('[SIMULATIONS] Loading simulations index...');
+            console.log('[SIMULATIONS] Current URL:', window.location.href);
+            console.log('[SIMULATIONS] Origin:', window.location.origin);
+            console.log('[SIMULATIONS] Pathname:', window.location.pathname);
+            console.log('[SIMULATIONS] Detected base URL:', baseUrl);
+            console.log('[SIMULATIONS] Will try paths:', paths);
+            console.log('[SIMULATIONS] ========================================');
+
             let response = null;
+            let successPath = null;
+
             for (const path of paths) {
                 try {
-                    console.log(`[SIMULATIONS] Trying path: ${path}`);
-                    const resp = await fetch(path);
+                    console.log(`[SIMULATIONS] Trying: ${path}`);
+                    const resp = await fetch(path, {
+                        method: 'GET',
+                        headers: { 'Accept': 'application/json' }
+                    });
+
                     if (resp.ok) {
-                        response = resp;
-                        console.log(`[SIMULATIONS] SUCCESS - Loaded simulations index from: ${path}`);
-                        break;
+                        // Verify it's actually JSON before accepting
+                        const contentType = resp.headers.get('content-type');
+                        if (contentType && contentType.includes('application/json')) {
+                            response = resp;
+                            successPath = path;
+                            console.log(`[SIMULATIONS] SUCCESS - Loaded from: ${path}`);
+                            console.log(`[SIMULATIONS] Content-Type: ${contentType}`);
+                            break;
+                        } else {
+                            // Some servers return HTML 404 pages with 200 status
+                            console.log(`[SIMULATIONS] Path ${path} returned non-JSON content-type: ${contentType}`);
+                        }
                     } else {
-                        console.log(`[SIMULATIONS] Path ${path} returned ${resp.status}`);
+                        console.log(`[SIMULATIONS] Path ${path} returned HTTP ${resp.status}`);
                     }
                 } catch (e) {
                     console.log(`[SIMULATIONS] Path ${path} failed: ${e.message}`);
@@ -823,11 +910,16 @@
             try {
                 // If index file not found, build index dynamically from GitHub
                 if (!response) {
-                    console.log('[SIMULATIONS] Index file not found at any path, building dynamically from GitHub...');
-                    console.log('[SIMULATIONS] Note: GitHub API has 60 requests/hour limit for unauthenticated users');
+                    console.warn('[SIMULATIONS] ========================================');
+                    console.warn('[SIMULATIONS] Index file not found at any path!');
+                    console.warn('[SIMULATIONS] Falling back to GitHub API...');
+                    console.warn('[SIMULATIONS] Note: GitHub API has 60 requests/hour limit for unauthenticated users');
+                    console.warn('[SIMULATIONS] To fix: Ensure AutoGenerated/simulations-index.json exists and is deployed');
+                    console.warn('[SIMULATIONS] ========================================');
                     await buildIndexFromGitHub();
                 } else {
                     simulationsIndex = await response.json();
+                    console.log(`[SIMULATIONS] Successfully parsed index with ${simulationsIndex.total_scripts} scripts`);
                 }
 
                 filteredSimulations = getAllScripts();
@@ -855,14 +947,52 @@
                 });
 
             } catch (error) {
-                console.error('Error loading simulation index:', error);
-                if (container) {
-                    container.innerHTML = `<div class="file-error" style="grid-column: 1 / -1;">Error loading simulation index: ${error.message}<br><small>Attempting to load from GitHub failed. Please check console for details.</small></div>`;
+                console.error('[SIMULATIONS] ========================================');
+                console.error('[SIMULATIONS] ERROR loading simulation index:', error);
+                console.error('[SIMULATIONS] Error message:', error.message);
+                console.error('[SIMULATIONS] Stack trace:', error.stack);
+                console.error('[SIMULATIONS] ========================================');
+
+                // Determine if this is a rate limit error or other issue
+                const isRateLimitError = error.message && error.message.toLowerCase().includes('rate');
+                const isNetworkError = error.message && (
+                    error.message.toLowerCase().includes('network') ||
+                    error.message.toLowerCase().includes('fetch') ||
+                    error.message.toLowerCase().includes('cors')
+                );
+
+                let errorTitle = 'Error Loading Simulations';
+                let errorDetails = error.message;
+                let errorSuggestion = 'Please check the browser console for more details.';
+
+                if (isRateLimitError) {
+                    errorTitle = 'GitHub API Rate Limit';
+                    errorSuggestion = 'The GitHub API rate limit has been exceeded. Please try again in about an hour.';
+                } else if (isNetworkError) {
+                    errorTitle = 'Network Error';
+                    errorSuggestion = 'Please check your internet connection and try refreshing the page.';
+                } else if (error.message.includes('folder structure')) {
+                    errorTitle = 'Could Not Load From GitHub';
+                    errorSuggestion = 'The simulations-index.json file may not be deployed. Contact the site administrator.';
                 }
+
+                if (container) {
+                    container.innerHTML = `
+                        <div class="file-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                            <strong>${errorTitle}</strong><br>
+                            <small style="display: block; margin: 0.5rem 0;">${errorDetails}</small>
+                            <small style="color: var(--text-muted);">${errorSuggestion}</small>
+                        </div>`;
+                }
+
                 // Also update simulations container
                 const simContainer = document.getElementById('simulation-categories-container');
                 if (simContainer) {
-                    simContainer.innerHTML = `<div class="file-error">Could not load simulations: ${error.message}</div>`;
+                    simContainer.innerHTML = `
+                        <div class="file-error" style="padding: 1.5rem;">
+                            <strong>Could not load simulations</strong><br>
+                            <small>${errorDetails}</small>
+                        </div>`;
                 }
                 if (loadingDiv) loadingDiv.style.display = 'none';
             }

@@ -14,7 +14,7 @@
  *   window.PM_FORMULAS - Access to CoreFormulas
  *
  * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
- * Version: 2.3.0 - Production-ready with enhanced caching, error handling, and path resolution
+ * Version: 2.4.0 - Enhanced alias system with flat key lookup and field extraction
  */
 
 (function() {
@@ -57,87 +57,136 @@
         },
 
         // Mapping table for legacy/alternate parameter names
+        // Maps HTML paths to actual flat keys in parameters.json
         _parameterAliases: {
             // Note: dimensions.X paths are handled by built-in fallback, not aliases
             // Only map dimension aliases that need special handling
             'dimensions.d_g2': 'dimensions.D_G2',  // Case normalization
             'dimensions.d_spin8': 'parameters.dimensions.D_SPIN8',
 
-            // Topology parameters (case and naming variations)
-            'parameters.topology.b2': 'parameters.topology.B2',
-            'parameters.topology.b3': 'parameters.topology.B3',
+            // ================================================================
+            // Framework Statistics / Validation mapping
+            // HTML uses framework_statistics.X, JSON uses validation.X or summary.X
+            // ================================================================
+            'framework_statistics.within_1_sigma': 'validation.within_1sigma',
+            'framework_statistics.total_sm_parameters': 'validation.total_parameters',
+            'framework_statistics.exact_matches': 'summary.exact_parameters',
+            'framework_statistics.within_2_sigma': 'validation.within_2sigma',
+            'framework_statistics.calibrated_parameters': 'validation.calibrated_count',
+            'framework_statistics.success_rate_1sigma': 'validation.within_1sigma',  // percentage computed elsewhere
+
+            // Validation aliases (reverse mapping for other pages)
+            'validation.total_predictions': 'validation.total_parameters',
+            'validation.predictions_within_1sigma': 'validation.within_1sigma',
+            'validation.predictions_within_2sigma': 'validation.within_2sigma',
+            'validation.exact_matches': 'summary.exact_parameters',
+            'validation.within_1_sigma': 'validation.within_1sigma',
+            'validation.success_rate': 'validation.within_1sigma',
+
+            // ================================================================
+            // PMNS / Neutrino mixing angles
+            // HTML uses pmns_matrix.X, JSON uses neutrino.X_pred
+            // ================================================================
+            'pmns_matrix.theta_23': 'neutrino.theta_23_pred',
+            'pmns_matrix.theta_12': 'neutrino.theta_12_pred',
+            'pmns_matrix.theta_13': 'neutrino.theta_13_pred',
+            'pmns_matrix.delta_cp': 'neutrino.delta_CP_pred',
+            'parameters.pmns.theta_23': 'neutrino.theta_23_pred',
+            'parameters.pmns.theta_12': 'neutrino.theta_12_pred',
+            'parameters.pmns.theta_13': 'neutrino.theta_13_pred',
+            'parameters.pmns.delta_CP': 'neutrino.delta_CP_pred',
+
+            // ================================================================
+            // Dark Energy
+            // HTML uses dark_energy.X, JSON uses cosmology.X or desi.X
+            // ================================================================
+            'dark_energy.w0': 'cosmology.w0_derived',
+            'dark_energy.w0_PM': 'cosmology.w0_derived',
+            'dark_energy.w0_DESI_central': 'desi.w0',
+            'dark_energy.w0_DESI_error': 'desi.w0.uncertainty',  // Special: need uncertainty
+            'dark_energy.w0_sigma': 'cosmology.w0_deviation',
+            'parameters.dark_energy.w0': 'cosmology.w0_derived',
+            'parameters.dark_energy.w0.value': 'cosmology.w0_derived',
+            'parameters.dark_energy.w0.experimental.value': 'desi.w0',
+            'parameters.dark_energy.w0.experimental.uncertainty': 'desi.w0.uncertainty',
+
+            // ================================================================
+            // Higgs mass
+            // HTML uses simulations.higgs_mass.X, JSON uses higgs.X or pdg.X
+            // ================================================================
+            'simulations.higgs_mass.m_h_GeV': 'pdg.m_higgs',  // Use experimental value 125.1 GeV
+            'simulations.higgs_mass.m_h_gev': 'pdg.m_higgs',
+            'simulations.higgs_mass.validation.sigma': 'higgs.m_higgs_pred.sigma_deviation',
+            'higgs_mass.m_h_GeV': 'pdg.m_higgs',
+            'v11_final_observables.higgs_mass.m_h_gev': 'pdg.m_higgs',
+
+            // ================================================================
+            // Proton decay
+            // HTML uses simulations.proton_decay.X, JSON uses proton_decay.X or gauge.X
+            // ================================================================
+            'simulations.proton_decay.tau_p_years': 'proton_decay.tau_p_years',
+            'simulations.proton_decay.alpha_gut_inv': 'gauge.ALPHA_GUT_INV',
+            'simulations.proton_decay.m_gut': 'gauge.M_GUT',
+            'proton_decay.tau_p_years': 'proton_decay.tau_p_years',
+            'proton_decay.alpha_GUT_inv': 'gauge.ALPHA_GUT_INV',
+            'proton_decay.m_gut': 'gauge.M_GUT',
+
+            // ================================================================
+            // KK spectrum / graviton
+            // These are hardcoded as 5.0 TeV - no JSON entry exists
+            // ================================================================
+            'simulations.kk_graviton.m_KK_TeV': '_hardcoded.kk_m1_TeV',
+            'simulations.kk_graviton.hl_lhc_discovery': '_hardcoded.kk_hl_lhc',
+            'kk_spectrum.m1': '_hardcoded.kk_m1_TeV',
+            'kk_spectrum.m1_central': '_hardcoded.kk_m1_TeV',
+            'kk_spectrum.m1_TeV': '_hardcoded.kk_m1_TeV',
+            'kk_spectrum.hl_lhc_significance': '_hardcoded.kk_hl_lhc',
+            'kk_graviton.mass_tev': '_hardcoded.kk_m1_TeV',
+
+            // ================================================================
+            // Topology parameters
+            // ================================================================
+            'topology.b3': 'topology.b3',
+            'topology.b2': 'topology.b2',
+            'topology.chi_eff': 'topology.chi_eff',
+            'topology.n_gen': 'topology.n_gen',
+            'parameters.topology.b2': 'topology.b2',
+            'parameters.topology.b3': 'topology.b3',
+            'parameters.topology.B2': 'topology.b2',
+            'parameters.topology.B3': 'topology.b3',
             'parameters.topology.h11': 'parameters.topology.HODGE_H11',
             'parameters.topology.h21': 'parameters.topology.HODGE_H21',
             'parameters.topology.h31': 'parameters.topology.HODGE_H31',
-            'parameters.topology.nu': 'parameters.topology.n_gen',
+            'parameters.topology.nu': 'topology.n_gen',
+            'parameters.topology.CHI_EFF': 'topology.chi_eff',
 
-            // Gauge parameters - M_PS is in breaking_chain
-            'parameters.gauge.m_ps': 'simulations.breaking_chain.m_ps',
-
-            // Validation -> Framework Statistics mapping (use framework_statistics for accurate counts)
-            'validation.total_predictions': 'framework_statistics.total_sm_parameters',
-            'validation.total_parameters': 'framework_statistics.total_sm_parameters',
-            'validation.exact_matches': 'framework_statistics.exact_matches',
-            'validation.predictions_within_1sigma': 'framework_statistics.within_1_sigma',
-            'validation.predictions_within_2sigma': 'framework_statistics.within_2_sigma',
-            'validation.success_rate': 'framework_statistics.success_rate_1sigma',
-            'validation.calibrated_parameters': 'framework_statistics.calibrated_parameters',
-
-            // PMNS angles (in parameters.pmns, not simulations)
-            'pmns_matrix.theta_23': 'parameters.pmns.theta_23',
-            'pmns_matrix.theta_12': 'parameters.pmns.theta_12',
-            'pmns_matrix.theta_13': 'parameters.pmns.theta_13',
-            'pmns_matrix.delta_cp': 'parameters.pmns.delta_CP',
-
-            // Common parameter shortcuts
-            'topology.b3': 'parameters.topology.B3',
-            'topology.b2': 'parameters.topology.B2',
-            'topology.chi_eff': 'parameters.topology.CHI_EFF',
-            'topology.n_gen': 'parameters.topology.n_gen',
-
-            // KK spectrum
-            'kk_spectrum.m1_central': 'simulations.kk_graviton.m_KK_TeV',
-            'kk_spectrum.m1_TeV': 'simulations.kk_graviton.m_KK_TeV',
-
-            // Proton decay
-            'proton_decay.tau_p_years': 'simulations.proton_decay.tau_p_years',
-            'proton_decay.alpha_GUT_inv': 'simulations.proton_decay.alpha_gut_inv',
-
-            // Higgs
-            'higgs_mass.m_h_GeV': 'simulations.higgs_mass.m_h_GeV',
-            'v11_final_observables.higgs_mass.m_h_gev': 'simulations.higgs_mass.m_h_GeV',
-
-            // Dark energy
-            'dark_energy.w0': 'parameters.dark_energy.w0',
-            'dark_energy.w0_PM': 'parameters.dark_energy.w0',
-
-            // Beginner's guide aliases
-            'v11_final_observables.proton_lifetime.tau_p_years': 'simulations.proton_decay.tau_p_years',
-            'kk_spectrum.m1_central': 'simulations.kk_graviton.m_KK_TeV',
-            'kk_spectrum.hl_lhc_significance': 'simulations.kk_graviton.hl_lhc_discovery',
-
-            // Validation -> Framework Statistics (comprehensive mapping)
-            'validation.predictions_within_1sigma': 'framework_statistics.within_1_sigma',
-            'validation.within_1_sigma': 'framework_statistics.within_1_sigma',
-            'validation.predictions_within_2sigma': 'framework_statistics.within_2_sigma',
-            'validation.total_sm_parameters': 'framework_statistics.total_sm_parameters',
-            'validation.total_predictions': 'framework_statistics.total_sm_parameters',
-            'validation.exact_matches': 'framework_statistics.exact_matches',
-
+            // ================================================================
             // Neutrino masses
-            'neutrino_mass.delta_m_sq': 'simulations.neutrino_masses.delta_m21_sq',
-            'neutrino_masses.delta_m21_sq': 'simulations.neutrino_masses.delta_m21_sq',
-            'neutrino_masses.delta_m3l_sq': 'simulations.neutrino_masses.delta_m3l_sq',
+            // ================================================================
+            'neutrino_mass.delta_m_sq': 'neutrino.dm2_21',
+            'neutrino_masses.delta_m21_sq': 'neutrino.dm2_21',
+            'neutrino_masses.delta_m3l_sq': 'neutrino.dm2_32',
+            'simulations.neutrino_masses.delta_m21_sq': 'neutrino.dm2_21',
+            'simulations.neutrino_masses.delta_m3l_sq': 'neutrino.dm2_32',
 
-            // Proton decay and GUT
-            'proton_decay.m_gut': 'parameters.gauge.M_GUT',
+            // ================================================================
+            // Gauge parameters
+            // ================================================================
+            'parameters.gauge.m_ps': 'simulations.breaking_chain.m_ps',
+            'parameters.gauge.M_GUT': 'gauge.M_GUT',
 
-            // KK graviton
-            'kk_graviton.mass_tev': 'simulations.kk_graviton.m_KK_TeV',
+            // ================================================================
+            // VEV / Higgs / Electroweak
+            // ================================================================
+            'v12_6_geometric_derivations.vev_pneuma.v_ew': 'higgs.vev',
+            'electroweak.v_higgs': 'higgs.vev',
+            'parameters.electroweak.v_higgs': 'higgs.vev',
+        },
 
-            // VEV / Higgs
-            'v12_6_geometric_derivations.vev_pneuma.v_ew': 'parameters.electroweak.v_higgs',
-            'electroweak.v_higgs': 'parameters.electroweak.v_higgs',
+        // Hardcoded values for parameters not in JSON
+        _hardcodedValues: {
+            'kk_m1_TeV': '5.0 TeV',
+            'kk_hl_lhc': '5σ discovery potential',
         },
 
         /**
@@ -147,11 +196,38 @@
         get(path) {
             if (!path) return null;
 
+            // Track if we need to extract a specific field (e.g., .uncertainty)
+            let extractField = null;
+
             // Check parameter aliases first (case-insensitive)
             const normalizedPath = path.toLowerCase();
             for (const [alias, realPath] of Object.entries(this._parameterAliases)) {
                 if (normalizedPath === alias.toLowerCase()) {
                     path = realPath;
+                    break;
+                }
+            }
+
+            // Check for hardcoded values (paths starting with _hardcoded.)
+            if (path.startsWith('_hardcoded.')) {
+                const key = path.replace('_hardcoded.', '');
+                return this._hardcodedValues[key] || null;
+            }
+
+            // Handle special field suffixes - extract specific fields from parameter objects
+            const fieldSuffixes = ['.uncertainty', '.sigma_deviation', '.experimental_value', '.experimental_uncertainty'];
+            for (const suffix of fieldSuffixes) {
+                if (path.endsWith(suffix)) {
+                    extractField = suffix.substring(1);  // Remove leading dot
+                    path = path.substring(0, path.length - suffix.length);
+                    // Re-check aliases for the base path
+                    const basePath = path.toLowerCase();
+                    for (const [alias, realPath] of Object.entries(this._parameterAliases)) {
+                        if (basePath === alias.toLowerCase()) {
+                            path = realPath;
+                            break;
+                        }
+                    }
                     break;
                 }
             }
@@ -183,16 +259,52 @@
 
             if (!this._data) return null;
 
-            // Try exact path first
-            let value = this._tryPath(this._data, parts);
-            if (value !== null && value !== undefined) {
-                // Auto-extract .value from parameter objects
-                return this._extractValue(value);
+            let value = null;
+
+            // Strategy 1: Try flat key lookup in parameters (e.g., "validation.within_1sigma")
+            if (this._data.parameters && parts.length >= 2) {
+                const flatKey = parts.join('.');
+                if (this._data.parameters[flatKey]) {
+                    value = this._data.parameters[flatKey];
+                }
             }
 
-            // Try case-insensitive lookup
-            value = this._tryPathCaseInsensitive(this._data, parts);
+            // Strategy 2: Try exact path traversal
+            if (value === null || value === undefined) {
+                value = this._tryPath(this._data, parts);
+            }
+
+            // Strategy 3: Try with 'parameters.' prefix for flat keys
+            if ((value === null || value === undefined) && this._data.parameters) {
+                const flatKey = parts.join('.');
+                if (this._data.parameters[flatKey]) {
+                    value = this._data.parameters[flatKey];
+                }
+            }
+
+            // Strategy 4: Try case-insensitive lookup
+            if (value === null || value === undefined) {
+                value = this._tryPathCaseInsensitive(this._data, parts);
+            }
+
+            // Strategy 5: If path doesn't start with 'parameters.', try adding it
+            if ((value === null || value === undefined) && parts[0] !== 'parameters') {
+                const withParams = ['parameters', ...parts];
+                value = this._tryPath(this._data, withParams);
+                if (value === null || value === undefined) {
+                    // Also try flat key with parameters prefix
+                    const flatKey = withParams.join('.');
+                    if (this._data.parameters && this._data.parameters[flatKey]) {
+                        value = this._data.parameters[flatKey];
+                    }
+                }
+            }
+
             if (value !== null && value !== undefined) {
+                // If we need a specific field (like uncertainty), extract it
+                if (extractField && typeof value === 'object' && extractField in value) {
+                    return value[extractField];
+                }
                 // Auto-extract .value from parameter objects
                 return this._extractValue(value);
             }
@@ -331,7 +443,7 @@
     // ========================================================================
 
     const CACHE_PREFIX = 'pm_';
-    const CACHE_VERSION = '16.2';
+    const CACHE_VERSION = '16.3';
 
     // Cache configuration per component (TTL in seconds)
     const CACHE_CONFIG = {
@@ -907,7 +1019,7 @@
     // Export globally
     window.PM = PM;
 
-    console.log('PM: Constants loader ready (v2.3.0 - Production-ready)');
+    console.log('PM: Constants loader ready (v2.4.0 - Enhanced alias system)');
 
     // ========================================================================
     // MUTATION OBSERVER - Re-process when new elements are added
