@@ -1271,63 +1271,56 @@ class G2GeometryV16(SimulationBase):
                 name="Second Betti Number",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="Number of 2-cycles (Kahler moduli); equals h^{1,1}",
-                derivation_formula="betti-numbers"
+                description="Number of 2-cycles (Kahler moduli); equals h^{1,1}. Topological invariant from TCS G2 construction.",
+                derivation_formula="betti-numbers",
+                no_experimental_value=True
             ),
             Parameter(
                 path="topology.b3",
                 name="Third Betti Number",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="Number of associative 3-cycles; localization sites for matter",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula="betti-numbers"
+                description="Number of associative 3-cycles; localization sites for matter. Topological invariant from TCS G2 construction.",
+                derivation_formula="betti-numbers",
+                no_experimental_value=True
             ),
             Parameter(
                 path="topology.chi_eff",
                 name="Effective Euler Characteristic",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="Effective Euler characteristic from Hodge numbers",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula="euler-characteristic"
+                description="Effective Euler characteristic from Hodge numbers. Topological invariant: chi_eff = 2(h11 - h21 + h31) = 144.",
+                derivation_formula="euler-characteristic",
+                no_experimental_value=True
             ),
             Parameter(
                 path="topology.n_gen",
                 name="Number of Generations",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="Number of fermion generations from index theorem",
+                description="Number of fermion generations from index theorem: n_gen = chi_eff / 48 = 144 / 48 = 3",
                 derivation_formula="three-generations",
-                experimental_bound=3.0,
+                experimental_bound=3,
                 bound_type="measured",
-                bound_source="Standard Model (exactly 3 generations observed)"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="topology.K_MATCHING",
                 name="K3 Matching Parameter",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="Number of K3 matching fibres in TCS gluing",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula="cycle-matching"
+                description="Number of K3 matching fibres in TCS gluing. Topological invariant: K = h^{1,1} = b2 = 4.",
+                derivation_formula="cycle-matching",
+                no_experimental_value=True
             ),
             Parameter(
                 path="topology.d_over_R",
                 name="Cycle Separation Ratio",
                 units="dimensionless",
                 status="GEOMETRIC",
-                description="Ratio of cycle separation to compactification radius; controls Yukawa suppression and proton decay",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula=None  # Geometric input from TCS construction
+                description="Ratio of cycle separation to compactification radius; controls Yukawa suppression and proton decay. Geometric parameter from TCS gluing geometry.",
+                derivation_formula=None,
+                no_experimental_value=True
             ),
         ]
 

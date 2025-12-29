@@ -404,9 +404,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of fundamental constants in Table D.1",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
             Parameter(
                 path="tables.n_pdg_inputs",
@@ -414,9 +412,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of experimental inputs in Table D.2",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
             Parameter(
                 path="tables.n_geometric",
@@ -424,9 +420,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of topology parameters in Table D.3",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
             Parameter(
                 path="tables.n_predictions",
@@ -434,9 +428,7 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of theory predictions in Table D.7",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Table metadata - no experimental measurement
             ),
         ]
 

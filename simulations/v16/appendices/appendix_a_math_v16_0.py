@@ -593,6 +593,7 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of G2 holonomy manifolds (always 7)",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="math.spinor_dimension",
@@ -600,6 +601,7 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of minimal real spinor representation in SO(7)",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="math.octonion_dimension",
@@ -607,9 +609,7 @@ class AppendixAMathFoundations(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Dimension of the octonion division algebra",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Mathematical structure - no experimental measurement
             ),
         ]
 

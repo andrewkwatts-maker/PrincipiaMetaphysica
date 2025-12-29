@@ -763,9 +763,10 @@ class CKMMatrixSimulation(SimulationBase):
                     "Geometric prediction differs by 1.2% (2.9 sigma), within theoretical uncertainties."
                 ),
                 derivation_formula="ckm-hierarchy",
-                experimental_bound=self.PDG_V_us,
+                experimental_bound=0.2245,
+                uncertainty=0.0008,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.V_cb",
@@ -779,9 +780,10 @@ class CKMMatrixSimulation(SimulationBase):
                     "Agreement within experimental error."
                 ),
                 derivation_formula="ckm-hierarchy",
-                experimental_bound=self.PDG_V_cb,
+                experimental_bound=0.0410,
+                uncertainty=0.0014,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.V_ub",
@@ -795,9 +797,10 @@ class CKMMatrixSimulation(SimulationBase):
                     "Matches inclusive measurement."
                 ),
                 derivation_formula="ckm-hierarchy",
-                experimental_bound=self.PDG_V_ub,
+                experimental_bound=0.00382,
+                uncertainty=0.00024,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.V_td",
@@ -811,8 +814,9 @@ class CKMMatrixSimulation(SimulationBase):
                 ),
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_td,
+                uncertainty=self.PDG_V_td_err,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.V_ts",
@@ -826,8 +830,9 @@ class CKMMatrixSimulation(SimulationBase):
                 ),
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_ts,
+                uncertainty=self.PDG_V_ts_err,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.V_tb",
@@ -841,8 +846,9 @@ class CKMMatrixSimulation(SimulationBase):
                 ),
                 derivation_formula="wolfenstein-parametrization",
                 experimental_bound=self.PDG_V_tb,
+                uncertainty=self.PDG_V_tb_err,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.jarlskog_invariant",
@@ -858,8 +864,9 @@ class CKMMatrixSimulation(SimulationBase):
                 ),
                 derivation_formula="jarlskog-invariant",
                 experimental_bound=self.PDG_J,
+                uncertainty=self.PDG_J_err,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.lambda_wolfenstein",
@@ -871,9 +878,10 @@ class CKMMatrixSimulation(SimulationBase):
                     "epsilon = exp(-1.5) ~ 0.223 from G2 curvature scale."
                 ),
                 derivation_formula="wolfenstein-parametrization",
-                experimental_bound=self.PDG_V_us,
+                experimental_bound=0.2245,
+                uncertainty=0.0008,
                 bound_type="measured",
-                bound_source="PDG 2024"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="ckm.A_wolfenstein",
@@ -881,13 +889,11 @@ class CKMMatrixSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    "Wolfenstein A parameter ~ 3.6. Derived from geometric overlap "
-                    "coefficient 0.81/epsilon, controlling second/third generation mixing."
+                    "Wolfenstein A parameter derived from geometric overlap "
+                    "coefficient. Geometric derivation parameter, no direct experimental measurement."
                 ),
                 derivation_formula="wolfenstein-parametrization",
-                experimental_bound=0.81,  # PDG central value
-                bound_type="measured",
-                bound_source="PDG 2024"
+                no_experimental_value=True
             ),
             Parameter(
                 path="ckm.rho_wolfenstein",
@@ -895,13 +901,11 @@ class CKMMatrixSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    "Real Wolfenstein parameter rho ~ 0.22. Emerges from geometric "
-                    "CP phase structure combined with unitarity triangle constraints."
+                    "Real Wolfenstein parameter rho. Emerges from geometric "
+                    "CP phase structure. Geometric derivation parameter from unitarity triangle."
                 ),
                 derivation_formula="wolfenstein-parametrization",
-                experimental_bound=0.159,  # PDG unitarity triangle fit
-                bound_type="measured",
-                bound_source="PDG 2024 unitarity fit"
+                no_experimental_value=True
             ),
             Parameter(
                 path="ckm.eta_wolfenstein",
@@ -909,13 +913,12 @@ class CKMMatrixSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    "Imaginary Wolfenstein parameter eta ~ 0.125. Controls CP violation "
-                    "magnitude, derived from topological phase delta_CP ~ pi/6."
+                    "Imaginary Wolfenstein parameter eta. Controls CP violation "
+                    "magnitude, derived from topological phase delta_CP ~ pi/6. "
+                    "Geometric derivation parameter."
                 ),
                 derivation_formula="wolfenstein-parametrization",
-                experimental_bound=0.348,  # PDG unitarity triangle fit
-                bound_type="measured",
-                bound_source="PDG 2024 unitarity fit"
+                no_experimental_value=True
             ),
             Parameter(
                 path="ckm.delta_cp",
@@ -923,13 +926,12 @@ class CKMMatrixSimulation(SimulationBase):
                 units="radians",
                 status="DERIVED",
                 description=(
-                    "CP-violating phase in CKM matrix. Emerges as delta_CP ~ pi/6 ~ 30° "
-                    "from K=4 topological matching fibres in TCS G2 manifold."
+                    "CP-violating phase in CKM matrix. Emerges as delta_CP ~ pi/6 ~ 30 degrees "
+                    "from K=4 topological matching fibres in TCS G2 manifold. "
+                    "Topological derivation parameter."
                 ),
                 derivation_formula="jarlskog-invariant",
-                experimental_bound=1.196,  # PDG: 68.5° ~ 1.196 rad
-                bound_type="measured",
-                bound_source="PDG 2024 unitarity fit"
+                no_experimental_value=True
             ),
             Parameter(
                 path="ckm.unitarity_test",
@@ -938,12 +940,11 @@ class CKMMatrixSimulation(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Maximum deviation from CKM unitarity condition. Should be < 10^-10 "
-                    "for exact geometric construction. Tests completeness of G2 eigenstates."
+                    "for exact geometric construction. Tests completeness of G2 eigenstates. "
+                    "Mathematical constraint, no experimental measurement."
                 ),
                 derivation_formula="ckm-unitarity",
-                experimental_bound=0.0,
-                bound_type="exact",
-                bound_source="Mathematical constraint"
+                no_experimental_value=True
             ),
         ]
 

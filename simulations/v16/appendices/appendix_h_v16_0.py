@@ -296,6 +296,7 @@ def proton_decay_br(b3: int = 24, orientation_Σ: int = 12) -> dict:
                 units="dimensionless",
                 status="PREDICTED",
                 description="Branching ratio for proton decay to positron and neutral pion",
+                no_experimental_value=True,  # Future test - awaiting Hyper-K detection
             ),
             Parameter(
                 path="proton_decay.BR_mu_pi0",
@@ -303,6 +304,7 @@ def proton_decay_br(b3: int = 24, orientation_Σ: int = 12) -> dict:
                 units="dimensionless",
                 status="PREDICTED",
                 description="Branching ratio for proton decay to muon and neutral pion",
+                no_experimental_value=True,  # Future test - awaiting Hyper-K detection
             ),
             Parameter(
                 path="proton_decay.BR_other",
@@ -310,6 +312,7 @@ def proton_decay_br(b3: int = 24, orientation_Σ: int = 12) -> dict:
                 units="dimensionless",
                 status="PREDICTED",
                 description="Branching ratio for other proton decay channels",
+                no_experimental_value=True,  # Future test - awaiting Hyper-K detection
             ),
         ]
 

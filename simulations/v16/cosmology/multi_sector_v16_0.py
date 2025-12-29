@@ -739,36 +739,22 @@ class MultiSectorV16(SimulationBase):
                 status="DERIVED",
                 description="Effective dark energy equation of state from dimensional reduction",
                 derivation_formula="dark-energy-eos",
-                experimental_bound=-0.827,
-                bound_type="measured",
-                bound_source="DESI DR2 (2024)",
-                validation={
-                    "experimental_value": -0.99,
-                    "uncertainty": 0.15,
-                    "bound_type": "measured",
-                    "status": "MARGINAL",
-                    "source": "DESI_DR2",
-                    "notes": "DESI DR2 (2024): w0 = -0.99 ± 0.15. PM prediction: -0.853 (0.9σ deviation). Consistent within 1σ but tension with ΛCDM."
-                }
+                experimental_bound=-0.728,
+                bound_type="central_value",
+                bound_source="DESI2025",
+                uncertainty=0.067
             ),
             Parameter(
                 path="cosmology.Omega_DM_over_b",
                 name="Dark Matter to Baryon Ratio",
                 units="dimensionless",
                 status="PREDICTED",
-                description="Ratio of dark matter to baryon density from mirror sector",
+                description="Ratio of dark matter to baryon density from mirror sector. Planck 2018: 5.38 ± 0.15.",
                 derivation_formula="dark-matter-abundance",
                 experimental_bound=5.38,
-                bound_type="measured",
-                bound_source="Planck 2018",
-                validation={
-                    "experimental_value": 5.4,
-                    "uncertainty": 0.15,
-                    "bound_type": "measured",
-                    "status": "PASS",
-                    "source": "Planck2018",
-                    "notes": "Planck 2018: Omega_DM/Omega_b = 5.38 ± 0.15. PM prediction: 5.40 (0.13σ deviation). Excellent agreement."
-                }
+                bound_type="central_value",
+                bound_source="Planck2018",
+                uncertainty=0.15
             ),
             Parameter(
                 path="cosmology.T_mirror_ratio",
@@ -776,7 +762,8 @@ class MultiSectorV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Ratio of mirror to visible sector temperature (T'/T)",
-                derivation_formula="sector-temperature-ratio"
+                derivation_formula="sector-temperature-ratio",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.modulation_width",
@@ -789,28 +776,32 @@ class MultiSectorV16(SimulationBase):
                     "This is the same geometric mechanism that produces Yukawa hierarchies, "
                     "eliminating the phenomenological gap between particle physics and cosmology."
                 ),
-                derivation_formula="moduli-potential"
+                derivation_formula="moduli-potential",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.sm_weight",
                 name="Standard Model Sector Weight",
                 units="dimensionless",
                 status="DERIVED",
-                description="Relative weight of Standard Model sector in multi-sector blend"
+                description="Relative weight of Standard Model sector in multi-sector blend",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.mirror_weight",
                 name="Mirror Sector Weight",
                 units="dimensionless",
                 status="DERIVED",
-                description="Relative weight of mirror sector in multi-sector blend"
+                description="Relative weight of mirror sector in multi-sector blend",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.hierarchy_ratio",
                 name="Mass Hierarchy Ratio",
                 units="dimensionless",
                 status="DERIVED",
-                description="Mass hierarchy ratio after sector blending"
+                description="Mass hierarchy ratio after sector blending",
+                no_experimental_value=True
             ),
         ]
 

@@ -290,20 +290,22 @@ if SCHEMA_AVAILABLE:
                     status="PREDICTED",
                     description=(
                         f"S8 predicted by PM bulk viscosity: {result['s8_predicted']:.3f}. "
-                        f"Planck: 0.832, Weak Lensing: 0.76. "
+                        f"DESI 2025 sigma8: 0.827 ± 0.011. Weak Lensing: 0.76. "
                         f"Deviation: {result['deviation_sigma']:.2f}σ from WL."
                     ),
                     derivation_formula="s8-viscosity-suppression",
-                    experimental_bound=0.76,
-                    bound_type="measured",
-                    bound_source="DES Y3 Weak Lensing"
+                    experimental_bound=0.827,
+                    bound_type="central_value",
+                    bound_source="DESI2025",
+                    uncertainty=0.011
             ),
             Parameter(
                     path="cosmology.viscosity_coefficient",
                     name="G2 Viscosity Coefficient",
                     units="dimensionless",
                     status="DERIVED",
-                    description=f"Bulk viscosity coefficient ζ = {result['viscosity_coefficient']:.4f} at z=0.45"
+                    description=f"Bulk viscosity coefficient ζ = {result['viscosity_coefficient']:.4f} at z=0.45",
+                    no_experimental_value=True
                 )
             ]
 

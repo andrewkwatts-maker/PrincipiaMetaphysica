@@ -451,6 +451,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Number of Monte Carlo samples used in error propagation (10,000)",
+                no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
                 path="monte_carlo.n_parameters",
@@ -458,6 +459,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Total number of Standard Model parameters (58)",
+                no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
                 path="monte_carlo.mean_relative_error",
@@ -465,6 +467,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 units="dimensionless",
                 status="DERIVED",
                 description="Average relative uncertainty across all parameters (~5%)",
+                no_experimental_value=True,  # Statistical quantity - no experimental measurement
             ),
             Parameter(
                 path="monte_carlo.correlation_matrix_shape",
@@ -472,6 +475,7 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 units="dimensionless",
                 status="DERIVED",
                 description="Shape of parameter correlation matrix (58×58)",
+                no_experimental_value=True,  # Statistical quantity - no experimental measurement
             ),
         ]
 

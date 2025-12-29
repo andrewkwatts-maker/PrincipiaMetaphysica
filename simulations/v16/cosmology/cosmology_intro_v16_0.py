@@ -637,7 +637,8 @@ class CosmologyIntroV16(SimulationBase):
                 description="4D Planck mass M_Pl = 1.22×10¹⁹ GeV (PDG 2024, measured not derived)",
                 experimental_bound=1.22e19,
                 bound_type="measured",
-                bound_source="PDG 2024",
+                bound_source="PDG2024",
+                uncertainty=0.01e19
             ),
             Parameter(
                 path="cosmology.V_9_internal",
@@ -646,6 +647,7 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="9-dimensional internal volume V9 = V7(G2) × V2(T²)",
                 derivation_formula="einstein-hilbert-14D",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.breathing_mode_vev",
@@ -653,10 +655,8 @@ class CosmologyIntroV16(SimulationBase):
                 units="GeV",
                 status="DERIVED",
                 description="Breathing mode VEV ⟨σ⟩ = φ₀ ≈ 0.075 M_Pl from racetrack stabilization",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
                 derivation_formula="breathing-mode",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.epsilon_KK",
@@ -665,6 +665,7 @@ class CosmologyIntroV16(SimulationBase):
                 status="GEOMETRIC",
                 description="KK spectrum parameter ε = 0.2257 emerges from volume ratio Vol(K3)/Vol(S³) = 4.43",
                 derivation_formula="breathing-mode",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.D_eff_shadow",
@@ -673,6 +674,7 @@ class CosmologyIntroV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Effective dimension D_eff = 12 + (Shadow_ק + Shadow_ח)/2 = 12.576",
                 derivation_formula="sp2r-constraint",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.brane_tension_5_2",
@@ -681,6 +683,7 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="BPS-saturated tension for (5,2) brane from SO(24,2) Casimir",
                 derivation_formula="bps-bound",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.pneuma_components_4D",
@@ -689,6 +692,7 @@ class CosmologyIntroV16(SimulationBase):
                 status="DERIVED",
                 description="Effective 4D Pneuma components: 64 (reduced from 8192 in 26D)",
                 derivation_formula="pneuma-reduction",
+                no_experimental_value=True
             ),
         ]
 

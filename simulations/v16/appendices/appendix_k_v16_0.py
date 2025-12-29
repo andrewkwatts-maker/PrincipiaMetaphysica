@@ -462,6 +462,7 @@ class AppendixKTransparency(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Total number of testable Standard Model parameters (48)",
+                no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
                 path="validation.within_1sigma",
@@ -469,6 +470,7 @@ class AppendixKTransparency(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of predictions within 1σ experimental bounds (45)",
+                no_experimental_value=True,  # Statistical count - no experimental measurement
             ),
             Parameter(
                 path="validation.within_2sigma",
@@ -476,6 +478,7 @@ class AppendixKTransparency(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of predictions within 2σ experimental bounds (47)",
+                no_experimental_value=True,  # Statistical count - no experimental measurement
             ),
             Parameter(
                 path="validation.calibrated_count",
@@ -483,6 +486,7 @@ class AppendixKTransparency(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of calibrated parameters (0 as of v14.1)",
+                no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
                 path="validation.constraints_count",
@@ -490,6 +494,7 @@ class AppendixKTransparency(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of experimental constraints (1: Higgs mass)",
+                no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
         ]
 

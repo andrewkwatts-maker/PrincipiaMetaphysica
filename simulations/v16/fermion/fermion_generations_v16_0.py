@@ -525,9 +525,9 @@ class FermionGenerationsV16(SimulationBase):
                     "saturation. Computed as n_gen = N_flux / spinor_DOF = 24 / 8 = 3."
                 ),
                 derivation_formula="generation-number",
-                experimental_bound=3.0,
+                experimental_bound=3,
                 bound_type="measured",
-                bound_source="Standard Model (observed)"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="fermion.yukawa_hierarchy",
@@ -537,12 +537,11 @@ class FermionGenerationsV16(SimulationBase):
                 description=(
                     "Froggatt-Nielsen suppression parameter epsilon = exp(-lambda) where "
                     "lambda = 1.5 is the G2 curvature scale. Controls the geometric "
-                    "hierarchy in Yukawa couplings Y_f = A_f * epsilon^Q_f."
+                    "hierarchy in Yukawa couplings Y_f = A_f * epsilon^Q_f. "
+                    "Geometric derivation parameter from G2 curvature."
                 ),
                 derivation_formula="yukawa-texture",
-                experimental_bound=0.2257,
-                bound_type="measured",
-                bound_source="PDG 2024: Cabibbo angle V_us"
+                no_experimental_value=True
             ),
             Parameter(
                 path="fermion.chiral_filter_strength",
@@ -552,12 +551,11 @@ class FermionGenerationsV16(SimulationBase):
                 description=(
                     "Strength of the Pneuma chiral filter mechanism that traps left-handed "
                     "fermions on the brane. Computed as 7/8 from the fraction of Spin(7) "
-                    "components that couple to axial torsion."
+                    "components that couple to axial torsion. "
+                    "Theoretical geometric parameter, no experimental measurement."
                 ),
                 derivation_formula="pneuma-chiral-filter",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -567,12 +565,11 @@ class FermionGenerationsV16(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Number of quantized flux units on associative 3-cycles. Computed as "
-                    "N_flux = chi_eff / 6 = 24 from the effective Euler characteristic."
+                    "N_flux = chi_eff / 6 = 24 from the effective Euler characteristic. "
+                    "Topological derivation parameter, no experimental measurement."
                 ),
                 derivation_formula="generation-number",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -582,12 +579,11 @@ class FermionGenerationsV16(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Geometric suppression parameter in Yukawa texture. Same as "
-                    "fermion.yukawa_hierarchy, provided for compatibility."
+                    "fermion.yukawa_hierarchy, provided for compatibility. "
+                    "Geometric derivation parameter from G2 curvature scale."
                 ),
                 derivation_formula="yukawa-texture",
-                experimental_bound=0.2257,
-                bound_type="measured",
-                bound_source="PDG 2024: Cabibbo angle V_us"
+                no_experimental_value=True
             ),
         ]
 

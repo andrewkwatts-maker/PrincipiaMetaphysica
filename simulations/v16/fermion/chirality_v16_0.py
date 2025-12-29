@@ -707,12 +707,10 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "Real dimension of the spinor representation in 7D. For Spin(7), "
                     "this is 8 real components corresponding to a Majorana spinor. "
                     "This is a fixed mathematical property of the Clifford algebra Cl(7). "
-                    "Theoretical value: 8 (from Clifford algebra Cl(7))."
+                    "Theoretical geometric constant, no experimental measurement."
                 ),
                 derivation_formula="g2-spinor-preservation",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -724,12 +722,10 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "Number of parallel spinors preserved by G2 holonomy. This is "
                     "exactly 1 (up to scaling), which is the defining characteristic "
                     "of G2 manifolds. Contrast with SU(3) (2 spinors) or generic "
-                    "Spin(7) (0 spinors). Theoretical value: 1 (G2 holonomy theorem)."
+                    "Spin(7) (0 spinors). Theoretical geometric constant."
                 ),
                 derivation_formula="g2-spinor-preservation",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -738,15 +734,13 @@ class ChiralitySpinorSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    "Topological index of the Dirac operator: index(∂/) = n_L - n_R. "
-                    "For TCS G2 manifold #187, this equals χ_eff/24 = 144/24 = 6. "
-                    "Represents the net chirality imbalance from topology. Theoretical "
-                    "value: 6 (Atiyah-Singer index theorem)."
+                    "Topological index of the Dirac operator: index(D-slash) = n_L - n_R. "
+                    "For TCS G2 manifold #187, this equals chi_eff/24 = 144/24 = 6. "
+                    "Represents the net chirality imbalance from topology. "
+                    "Topological derivation parameter, no experimental measurement."
                 ),
                 derivation_formula="chirality-index-theorem",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -757,13 +751,11 @@ class ChiralitySpinorSimulation(SimulationBase):
                 description=(
                     "Number of left-handed Dirac zero modes. In the minimal scenario, "
                     "this equals the chiral index = 6. In general, both n_L and n_R "
-                    "can be large, but their difference is fixed by topology. Minimal "
-                    "scenario: n_L = 6."
+                    "can be large, but their difference is fixed by topology. "
+                    "Topological derivation parameter, no experimental measurement."
                 ),
                 derivation_formula="dirac-zero-modes",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -774,12 +766,11 @@ class ChiralitySpinorSimulation(SimulationBase):
                 description=(
                     "Number of right-handed Dirac zero modes. Set to 0 in minimal "
                     "scenario. In reality could be n_R = n_L - 6 for large n_L, but "
-                    "difference is always 6 from topology. Minimal scenario: n_R = 0."
+                    "difference is always 6 from topology. "
+                    "Topological derivation parameter, no experimental measurement."
                 ),
                 derivation_formula="dirac-zero-modes",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -790,12 +781,11 @@ class ChiralitySpinorSimulation(SimulationBase):
                 description=(
                     "Net chirality imbalance: n_L - n_R. This is the topological "
                     "invariant that cannot be changed by continuous deformations. "
-                    "For TCS G2 #187: imbalance = 6 (from χ_eff = 144)."
+                    "For TCS G2 #187: imbalance = 6 (from chi_eff = 144). "
+                    "Topological derivation parameter, no experimental measurement."
                 ),
                 derivation_formula="chirality-index-theorem",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
 
             Parameter(
@@ -807,12 +797,12 @@ class ChiralitySpinorSimulation(SimulationBase):
                     "Number of fermion generations from spinor saturation. Computed "
                     "as b_3 / spinor_DOF = 24 / 8 = 3. This is an exact, parameter-free "
                     "prediction from topology that perfectly matches the observed 3 "
-                    "generations (PDG 2024)."
+                    "generations."
                 ),
                 derivation_formula="spinor-saturation-generations",
-                experimental_bound=3.0,
+                experimental_bound=3,
                 bound_type="measured",
-                bound_source="Standard Model (PDG 2024)"
+                bound_source="PDG2024"
             ),
             Parameter(
                 path="chirality.saturation_ratio",
@@ -820,14 +810,13 @@ class ChiralitySpinorSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description=(
-                    "Spinor saturation ratio: (n_gen × spinor_DOF) / b_3. Should equal "
+                    "Spinor saturation ratio: (n_gen x spinor_DOF) / b_3. Should equal "
                     "1 for complete saturation with no remainder. For n_gen = 3: "
-                    "ratio = (3 × 8) / 24 = 1 exactly (complete saturation)."
+                    "ratio = (3 x 8) / 24 = 1 exactly (complete saturation). "
+                    "Topological derivation parameter, no experimental measurement."
                 ),
                 derivation_formula="spinor-saturation-generations",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True
             ),
         ]
 

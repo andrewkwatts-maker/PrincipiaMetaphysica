@@ -736,6 +736,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 units="dimensionless",
                 status="COMPUTATIONAL",
                 description="Perturbative order for RG beta functions (3-loop)",
+                no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
                 path="methods.integration_method",
@@ -743,6 +744,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 units="dimensionless",
                 status="COMPUTATIONAL",
                 description="Numerical integration algorithm (LSODA)",
+                no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
                 path="methods.convergence_criterion",
@@ -750,6 +752,7 @@ class AppendixBComputationalMethods(SimulationBase):
                 units="dimensionless",
                 status="COMPUTATIONAL",
                 description="Relative tolerance for numerical integration (10⁻⁶)",
+                no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
         ]
 

@@ -261,8 +261,9 @@ if SCHEMA_AVAILABLE:
                     ),
                     derivation_formula="mass-ratio-geometric",
                     experimental_bound=1836.15267343,
+                    uncertainty=0.00000011,
                     bound_type="measured",
-                    bound_source="CODATA 2022"
+                    bound_source="CODATA2022"
                 )
             ]
 

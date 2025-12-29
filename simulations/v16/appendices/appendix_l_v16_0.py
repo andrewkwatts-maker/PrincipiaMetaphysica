@@ -629,6 +629,7 @@ class AppendixLValuesSummary(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Total number of parameters documented in summary tables (27)",
+                no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
                 path="summary.exact_parameters",
@@ -636,6 +637,7 @@ class AppendixLValuesSummary(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Number of topologically exact parameters (7)",
+                no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
                 path="summary.derived_parameters",
@@ -643,9 +645,7 @@ class AppendixLValuesSummary(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of parameters derived from first principles",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
         ]
 
