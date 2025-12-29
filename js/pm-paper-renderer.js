@@ -888,16 +888,31 @@
                 break;
 
             case 'list':
-                const listType = block.ordered ? 'ol' : 'ul';
-                const listItems = (block.items || []).map((item, idx) =>
+                // Handle list blocks - items might be in block.items or block.content.items
+                let listItemsArray = block.items;
+                let isOrdered = block.ordered;
+                if (!listItemsArray && typeof block.content === 'object' && block.content !== null) {
+                    listItemsArray = block.content.items || [];
+                    isOrdered = block.content.type === 'ordered' || isOrdered;
+                }
+                const listType = isOrdered ? 'ol' : 'ul';
+                const listItems = (listItemsArray || []).map((item, idx) =>
                     `<li>${safeStringify(item, `list.items[${idx}]`)}</li>`
                 ).join('');
                 blockDiv.innerHTML = `<${listType}>${listItems}</${listType}>`;
                 break;
 
             case 'code':
-                const lang = block.language ? ` class="language-${block.language}"` : '';
-                blockDiv.innerHTML = `<pre><code${lang}>${escapeHtml(block.content || '')}</code></pre>`;
+                // Handle code blocks - content might be string or object with nested structure
+                let codeContent = block.content;
+                let codeLang = block.language;
+                if (typeof codeContent === 'object' && codeContent !== null) {
+                    // Extract from nested structure if present
+                    codeLang = codeContent.language || codeLang;
+                    codeContent = codeContent.code || codeContent.content || JSON.stringify(codeContent, null, 2);
+                }
+                const lang = codeLang ? ` class="language-${codeLang}"` : '';
+                blockDiv.innerHTML = `<pre><code${lang}>${escapeHtml(codeContent || '')}</code></pre>`;
                 break;
 
             case 'quote':
@@ -906,13 +921,21 @@
                 break;
 
             case 'table':
-                blockDiv.innerHTML = renderTable(block);
+                // Handle table blocks - data might be in block directly or in block.content
+                let tableData = block;
+                if (typeof block.content === 'object' && block.content !== null) {
+                    // If content is an object with headers/rows, use it
+                    if (block.content.headers || block.content.rows) {
+                        tableData = { ...block, ...block.content };
+                    }
+                }
+                blockDiv.innerHTML = renderTable(tableData);
                 break;
 
             case 'note':
                 // Academic note/aside
                 blockDiv.className = 'academic-note';
-                blockDiv.innerHTML = `<div class="note-content">${block.content || ''}</div>`;
+                blockDiv.innerHTML = `<div class="note-content">${safeStringify(block.content, 'note.content')}</div>`;
                 blockDiv.setAttribute('role', 'note');
                 break;
 
@@ -920,8 +943,8 @@
                 // Highlighted information box
                 blockDiv.className = 'highlight-box';
                 blockDiv.innerHTML = `
-                    ${block.title ? `<div class="highlight-title">${block.title}</div>` : ''}
-                    <div class="highlight-content">${block.content || ''}</div>
+                    ${block.title ? `<div class="highlight-title">${safeStringify(block.title, 'highlight.title')}</div>` : ''}
+                    <div class="highlight-content">${safeStringify(block.content, 'highlight.content')}</div>
                 `;
                 blockDiv.setAttribute('role', 'complementary');
                 break;
@@ -930,8 +953,8 @@
                 // Mathematical definition block
                 blockDiv.className = 'definition-block';
                 blockDiv.innerHTML = `
-                    ${block.term ? `<div class="definition-term"><strong>Definition:</strong> ${block.term}</div>` : ''}
-                    <div class="definition-content">${block.content || ''}</div>
+                    ${block.term ? `<div class="definition-term"><strong>Definition:</strong> ${safeStringify(block.term, 'definition.term')}</div>` : ''}
+                    <div class="definition-content">${safeStringify(block.content, 'definition.content')}</div>
                 `;
                 blockDiv.setAttribute('role', 'definition');
                 break;
@@ -941,10 +964,10 @@
                 blockDiv.className = 'theorem-block';
                 blockDiv.innerHTML = `
                     <div class="theorem-header">
-                        <span class="theorem-label">${block.label || 'Theorem'}</span>
-                        ${block.title ? `<span class="theorem-title">${block.title}</span>` : ''}
+                        <span class="theorem-label">${safeStringify(block.label, 'theorem.label') || 'Theorem'}</span>
+                        ${block.title ? `<span class="theorem-title">${safeStringify(block.title, 'theorem.title')}</span>` : ''}
                     </div>
-                    <div class="theorem-content">${block.content || ''}</div>
+                    <div class="theorem-content">${safeStringify(block.content, 'theorem.content')}</div>
                 `;
                 blockDiv.setAttribute('role', 'article');
                 break;
@@ -954,7 +977,7 @@
                 blockDiv.className = 'proof-block';
                 blockDiv.innerHTML = `
                     <div class="proof-header">Proof.</div>
-                    <div class="proof-content">${block.content || ''}</div>
+                    <div class="proof-content">${safeStringify(block.content, 'proof.content')}</div>
                     <div class="proof-end">∎</div>
                 `;
                 blockDiv.setAttribute('role', 'article');
@@ -964,8 +987,8 @@
                 // Remark/observation block
                 blockDiv.className = 'remark-block';
                 blockDiv.innerHTML = `
-                    <div class="remark-header">${block.title || 'Remark'}</div>
-                    <div class="remark-content">${block.content || ''}</div>
+                    <div class="remark-header">${safeStringify(block.title, 'remark.title') || 'Remark'}</div>
+                    <div class="remark-content">${safeStringify(block.content, 'remark.content')}</div>
                 `;
                 blockDiv.setAttribute('role', 'note');
                 break;
@@ -974,8 +997,8 @@
                 // Worked example block
                 blockDiv.className = 'example-block';
                 blockDiv.innerHTML = `
-                    <div class="example-header">${block.title || 'Example'}</div>
-                    <div class="example-content">${block.content || ''}</div>
+                    <div class="example-header">${safeStringify(block.title, 'example.title') || 'Example'}</div>
+                    <div class="example-content">${safeStringify(block.content, 'example.content')}</div>
                 `;
                 blockDiv.setAttribute('role', 'article');
                 break;
@@ -984,8 +1007,8 @@
             case 'derivation_box':
                 blockDiv.className = 'derivation-box';
                 blockDiv.innerHTML = `
-                    <div class="derivation-title">${block.title || 'Derivation'}</div>
-                    <div class="derivation-content">${block.content || ''}</div>
+                    <div class="derivation-title">${safeStringify(block.title, 'derivation.title') || 'Derivation'}</div>
+                    <div class="derivation-content">${safeStringify(block.content, 'derivation.content')}</div>
                 `;
                 break;
 
@@ -995,8 +1018,8 @@
                 const calloutType = block.calloutType || block.variant || 'info';
                 blockDiv.className = `callout callout-${calloutType}`;
                 blockDiv.innerHTML = `
-                    ${block.title ? `<div class="callout-title">${block.title}</div>` : ''}
-                    <div class="callout-content">${block.content || ''}</div>
+                    ${block.title ? `<div class="callout-title">${safeStringify(block.title, 'callout.title')}</div>` : ''}
+                    <div class="callout-content">${safeStringify(block.content, 'callout.content')}</div>
                 `;
                 break;
 
@@ -1006,24 +1029,6 @@
                     return renderSubsection(block.subsection);
                 }
                 blockDiv.innerHTML = safeStringify(block.content, 'subsection.content');
-                break;
-
-            case 'note':
-                // Note blocks are similar to callouts but with a subtle style
-                blockDiv.className = 'callout callout-note note-block';
-                blockDiv.innerHTML = `
-                    ${block.title ? `<div class="callout-title">${block.title}</div>` : ''}
-                    <div class="callout-content">${safeStringify(block.content, 'note.content')}</div>
-                `;
-                break;
-
-            case 'highlight_box':
-                // Highlight boxes are emphasized callouts
-                blockDiv.className = 'callout callout-highlight';
-                blockDiv.innerHTML = `
-                    ${block.title ? `<div class="callout-title">${block.title}</div>` : ''}
-                    <div class="callout-content">${safeStringify(block.content, 'highlight.content')}</div>
-                `;
                 break;
 
             default:
@@ -1762,6 +1767,15 @@
      * @private
      */
     function escapeHtml(text) {
+        // Handle non-string inputs
+        if (text === null || text === undefined) return '';
+        if (typeof text === 'object') {
+            console.warn('PMPaperRenderer: escapeHtml received object, converting:', text);
+            text = JSON.stringify(text);
+        }
+        if (typeof text !== 'string') {
+            text = String(text);
+        }
         const map = {
             '&': '&amp;',
             '<': '&lt;',

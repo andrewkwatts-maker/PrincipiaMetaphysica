@@ -1129,6 +1129,112 @@ class SimulationRunner:
 
         return output_data
 
+    def _generate_simulations_index(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """
+        Generate simulations index from running simulations.
+
+        Only includes v16 Python files, excluding ip/, reports/, and tests/.
+
+        Args:
+            data: Theory output data
+
+        Returns:
+            Simulations index dictionary
+        """
+        from datetime import datetime, timezone
+        import re
+
+        simulations_dir = Path(__file__).parent / "simulations" / "v16"
+        index_data = {
+            "version": data.get('metadata', {}).get('version', '16.0'),
+            "generated": datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
+            "total_scripts": 0,
+            "categories": {}
+        }
+
+        # Excluded folders
+        excluded_folders = {'ip', 'reports', 'tests', '__pycache__', 'deprecated'}
+
+        # Scan v16 folder for Python files
+        all_scripts = []
+        for py_file in simulations_dir.rglob("*.py"):
+            # Skip excluded folders and __init__.py
+            rel_parts = py_file.relative_to(simulations_dir).parts
+            if any(part in excluded_folders for part in rel_parts):
+                continue
+            if py_file.name.startswith('__'):
+                continue
+
+            # Get category from folder structure
+            category = rel_parts[0] if len(rel_parts) > 1 else 'root'
+
+            # Extract version from filename
+            version = None
+            match = re.search(r'_v(\d+)_(\d+)\.py$', py_file.name)
+            if match:
+                version = f"{match.group(1)}.{match.group(2)}"
+
+            # Get metadata from phase simulations if available
+            title = None
+            description = "Physics simulation module"
+            status = None
+
+            for phase_sims in self.phases.values():
+                for sim in phase_sims:
+                    if py_file.stem in sim.metadata.id:
+                        title = sim.metadata.title
+                        description = sim.metadata.description
+                        break
+
+            script_info = {
+                "file": py_file.name,
+                "path": f"simulations/v16/{'/'.join(rel_parts)}".replace('\\', '/'),
+                "version": version,
+                "title": title,
+                "description": description,
+                "status": status,
+                "category": f"v16/{category}"
+            }
+            all_scripts.append(script_info)
+
+        # Group by category
+        categories = {}
+        for script in all_scripts:
+            cat = script['category']
+            if cat not in categories:
+                categories[cat] = {
+                    "title": cat.replace('v16/', '').replace('_', ' ').title(),
+                    "path": f"simulations/{cat}",
+                    "folderName": cat.replace('v16/', ''),
+                    "isV16": True,
+                    "scripts": [],
+                    "count": 0
+                }
+
+            categories[cat]['scripts'].append({
+                "file": script['file'],
+                "path": script['path'],
+                "version": script['version'],
+                "title": script['title'],
+                "description": script['description'],
+                "status": script['status']
+            })
+            categories[cat]['count'] += 1
+
+        # Sort scripts within each category by version (descending)
+        for cat_data in categories.values():
+            cat_data['scripts'].sort(
+                key=lambda s: (
+                    -float(s['version']) if s['version'] else 0,
+                    s['file']
+                )
+            )
+
+        index_data['categories'] = categories
+        index_data['total_scripts'] = len(all_scripts)
+
+        return index_data
+
     def _split_theory_output(self, theory_path: Path) -> None:
         """
         Split theory_output.json into smaller cacheable component files.
@@ -1231,7 +1337,15 @@ class SimulationRunner:
         if self.verbose:
             print(f"  Created: statistics.json")
 
-        # 6. Index file
+        # 6. Simulations index (for simulations page)
+        simulations_data = self._generate_simulations_index(data)
+        sims_path = output_dir / 'simulations.json'
+        with open(sims_path, 'w', encoding='utf-8') as f:
+            json.dump(simulations_data, f, indent=2, ensure_ascii=False)
+        if self.verbose:
+            print(f"  Created: simulations.json ({simulations_data['total_scripts']} scripts)")
+
+        # 7. Index file
         index = {
             'version': data.get('metadata', {}).get('version', '16.0'),
             'components': [
@@ -1240,6 +1354,7 @@ class SimulationRunner:
                 {'name': 'sections', 'file': 'sections.json'},
                 {'name': 'metadata', 'file': 'metadata.json'},
                 {'name': 'statistics', 'file': 'statistics.json'},
+                {'name': 'simulations', 'file': 'simulations.json'},
                 {'name': 'beginner-guide', 'file': 'beginner-guide.json'},
             ]
         }
