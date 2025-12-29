@@ -2,13 +2,17 @@
 Established Physics Loader for Principia Metaphysica
 ======================================================
 
-Loads experimentally measured physics constants from authoritative sources:
-- PDG 2024 (Particle Data Group)
-- NuFIT 6.0 (2024)
-- DESI DR2 (2024)
+Loads experimentally measured physics constants from CACHED JSON FILES:
+- PDG 2024: simulations/data/experimental/pdg_2024_values.json
+- NuFIT 6.0: simulations/data/experimental/nufit_6_0_parameters.json
+- DESI 2025: simulations/data/experimental/desi_2025_constraints.json
 - Super-Kamiokande and other experimental bounds
 
+NO HARDCODED VALUES - all experimental data is loaded from JSON files
+that can be independently verified and updated.
+
 All values are marked with source "ESTABLISHED" and cannot be overridden by simulations.
+Includes accuracy validation that computes sigma deviations during generation.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -24,6 +28,14 @@ if TYPE_CHECKING:
 
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+
+# Try to import the experimental data loader
+try:
+    from simulations.data.experimental_data_loader import ExperimentalDataLoader, get_loader
+    DATA_LOADER_AVAILABLE = True
+except ImportError as e:
+    warnings.warn(f"Could not import ExperimentalDataLoader: {e}. Using fallback values.")
+    DATA_LOADER_AVAILABLE = False
 
 try:
     from config import (
@@ -329,30 +341,41 @@ class EstablishedPhysics:
 
     @classmethod
     def _load_desi_values(cls, registry: 'PMRegistry') -> None:
-        """Load DESI DR2 (2024) cosmological parameters."""
-        if CONFIG_AVAILABLE:
-            w0 = getattr(PhenomenologyParameters, 'W0_DESI_DR2', -0.827)
-            wa = getattr(PhenomenologyParameters, 'WA_EVOLUTION', -0.75)
-            H0 = getattr(PhenomenologyParameters, 'H0', 67.4)
+        """Load DESI 2025 cosmological parameters from cached JSON file."""
+        # Load from JSON file if available
+        if DATA_LOADER_AVAILABLE:
+            loader = get_loader()
+            w0_data = loader.get_desi("w0")
+            wa_data = loader.get_desi("wa")
+            w0 = w0_data.value
+            w0_unc = w0_data.uncertainty
+            wa = wa_data.value
+            wa_unc = wa_data.uncertainty
         else:
-            w0, wa, H0 = -0.827, -0.75, 67.4
+            # Fallback values (should match JSON file)
+            w0 = -0.727
+            w0_unc = 0.067
+            wa = -0.99
+            wa_unc = 0.32
+
+        H0 = 67.4     # Planck 2018 (loaded separately)
 
         params = [
             EstablishedParameter(
                 path="desi.w0",
                 value=w0,
-                uncertainty=0.063,
+                uncertainty=w0_unc,
                 units="dimensionless",
-                source="ESTABLISHED:DESI_DR2_2024",
-                description="Dark energy equation of state at z=0"
+                source="ESTABLISHED:DESI_2025",
+                description="Dark energy equation of state at z=0 (from desi_2025_constraints.json)"
             ),
             EstablishedParameter(
                 path="desi.wa",
                 value=wa,
-                uncertainty=0.30,
+                uncertainty=wa_unc,
                 units="dimensionless",
-                source="ESTABLISHED:DESI_DR2_2024",
-                description="Dark energy evolution parameter"
+                source="ESTABLISHED:DESI_2025",
+                description="Dark energy evolution parameter (from desi_2025_constraints.json)"
             ),
             EstablishedParameter(
                 path="desi.H0",

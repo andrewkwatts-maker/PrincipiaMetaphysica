@@ -511,3 +511,149 @@ class PMRegistry:
             if entry.status == "DERIVED" and not self._provenance.get(path):
                 issues.append(f"{path}: DERIVED but no source simulation")
         return issues
+
+    # -------------------------------------------------------------------------
+    # Accuracy Validation (Sigma Deviation Computation)
+    # -------------------------------------------------------------------------
+
+    def compute_sigma_deviation(
+        self,
+        predicted_value: float,
+        experimental_path: str
+    ) -> Dict[str, Any]:
+        """
+        Compute sigma deviation between predicted and experimental values.
+
+        Args:
+            predicted_value: The theory prediction
+            experimental_path: Path to experimental value (e.g., "desi.w0")
+
+        Returns:
+            Dictionary with deviation analysis:
+            {
+                'predicted': float,
+                'experimental': float,
+                'uncertainty': float,
+                'sigma': float,
+                'status': str,  # 'EXCELLENT'/'GOOD'/'ACCEPTABLE'/'TENSION'
+                'source': str
+            }
+        """
+        if not self.has_param(experimental_path):
+            return {
+                'predicted': predicted_value,
+                'experimental': None,
+                'uncertainty': None,
+                'sigma': None,
+                'status': 'MISSING_DATA',
+                'source': None
+            }
+
+        entry = self.get_entry(experimental_path)
+        exp_value = entry.value
+        uncertainty = entry.uncertainty or 0.0
+
+        if uncertainty == 0:
+            # No uncertainty available
+            sigma = None
+            status = 'NO_UNCERTAINTY'
+        else:
+            sigma = abs(predicted_value - exp_value) / uncertainty
+            if sigma < 1.0:
+                status = 'EXCELLENT'
+            elif sigma < 2.0:
+                status = 'GOOD'
+            elif sigma < 3.0:
+                status = 'ACCEPTABLE'
+            else:
+                status = 'TENSION'
+
+        return {
+            'predicted': predicted_value,
+            'experimental': exp_value,
+            'uncertainty': uncertainty,
+            'sigma': sigma,
+            'status': status,
+            'source': entry.source
+        }
+
+    def validate_prediction(
+        self,
+        prediction_path: str,
+        experimental_path: str,
+        metadata_key: str = 'validation'
+    ) -> Dict[str, Any]:
+        """
+        Validate a prediction against experimental data and store result.
+
+        Args:
+            prediction_path: Path to predicted parameter
+            experimental_path: Path to experimental parameter
+            metadata_key: Key to store validation result in metadata
+
+        Returns:
+            Validation result dictionary
+        """
+        if not self.has_param(prediction_path):
+            raise KeyError(f"Prediction '{prediction_path}' not in registry")
+
+        pred_entry = self.get_entry(prediction_path)
+        result = self.compute_sigma_deviation(pred_entry.value, experimental_path)
+
+        # Store validation in metadata
+        pred_entry.metadata[metadata_key] = result
+
+        return result
+
+    def get_accuracy_report(self) -> Dict[str, Any]:
+        """
+        Generate accuracy report for all predictions with validation data.
+
+        Returns:
+            Dictionary with accuracy statistics and details
+        """
+        report = {
+            'excellent': [],  # < 1σ
+            'good': [],       # 1-2σ
+            'acceptable': [], # 2-3σ
+            'tension': [],    # > 3σ
+            'unvalidated': [],
+            'summary': {}
+        }
+
+        for path, entry in self._parameters.items():
+            if entry.status in ('DERIVED', 'PREDICTED'):
+                validation = entry.metadata.get('validation')
+                if validation:
+                    status = validation.get('status', 'UNKNOWN')
+                    item = {
+                        'path': path,
+                        'predicted': validation.get('predicted'),
+                        'experimental': validation.get('experimental'),
+                        'sigma': validation.get('sigma'),
+                        'source': validation.get('source')
+                    }
+                    if status == 'EXCELLENT':
+                        report['excellent'].append(item)
+                    elif status == 'GOOD':
+                        report['good'].append(item)
+                    elif status == 'ACCEPTABLE':
+                        report['acceptable'].append(item)
+                    elif status == 'TENSION':
+                        report['tension'].append(item)
+                else:
+                    report['unvalidated'].append(path)
+
+        # Compute summary
+        total = (len(report['excellent']) + len(report['good']) +
+                 len(report['acceptable']) + len(report['tension']))
+        report['summary'] = {
+            'total_validated': total,
+            'excellent_count': len(report['excellent']),
+            'good_count': len(report['good']),
+            'acceptable_count': len(report['acceptable']),
+            'tension_count': len(report['tension']),
+            'unvalidated_count': len(report['unvalidated'])
+        }
+
+        return report
