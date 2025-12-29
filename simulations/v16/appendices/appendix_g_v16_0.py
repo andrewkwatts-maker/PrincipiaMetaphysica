@@ -372,7 +372,8 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 name="Effective Torsion",
                 units="dimensionless",
                 status="DERIVED",
-                description="Corrected torsion with Spin(7) fraction: T_ω = -0.875",
+                description="Corrected torsion with Spin(7) fraction",
+                description_template="Corrected torsion with Spin(7) fraction: T_ω = {value}",
                 no_experimental_value=True,  # Topological quantity - no experimental measurement
             ),
             Parameter(
@@ -380,7 +381,8 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 name="Spin(7) Spinor Fraction",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Fraction of stabilized spinor components: 7/8",
+                description="Fraction of stabilized spinor components",
+                description_template="Fraction of stabilized spinor components: {value}",
                 no_experimental_value=True,  # Geometric quantity - no experimental measurement
             ),
         ]

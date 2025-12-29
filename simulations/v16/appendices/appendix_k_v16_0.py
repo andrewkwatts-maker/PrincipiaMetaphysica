@@ -461,7 +461,8 @@ class AppendixKTransparency(SimulationBase):
                 name="Total Parameters",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Total number of testable Standard Model parameters (48)",
+                description="Total number of testable Standard Model parameters",
+                description_template="Total number of testable Standard Model parameters ({value})",
                 no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
@@ -469,7 +470,8 @@ class AppendixKTransparency(SimulationBase):
                 name="Predictions Within 1σ",
                 units="dimensionless",
                 status="DERIVED",
-                description="Number of predictions within 1σ experimental bounds (45)",
+                description="Number of predictions within 1σ experimental bounds",
+                description_template="Number of predictions within 1σ experimental bounds ({value})",
                 no_experimental_value=True,  # Statistical count - no experimental measurement
             ),
             Parameter(
@@ -477,7 +479,8 @@ class AppendixKTransparency(SimulationBase):
                 name="Predictions Within 2σ",
                 units="dimensionless",
                 status="DERIVED",
-                description="Number of predictions within 2σ experimental bounds (47)",
+                description="Number of predictions within 2σ experimental bounds",
+                description_template="Number of predictions within 2σ experimental bounds ({value})",
                 no_experimental_value=True,  # Statistical count - no experimental measurement
             ),
             Parameter(
@@ -485,7 +488,8 @@ class AppendixKTransparency(SimulationBase):
                 name="Calibrated Parameters Count",
                 units="dimensionless",
                 status="DERIVED",
-                description="Number of calibrated parameters (0 as of v14.1)",
+                description="Number of calibrated parameters",
+                description_template="Number of calibrated parameters ({value})",
                 no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
@@ -493,7 +497,8 @@ class AppendixKTransparency(SimulationBase):
                 name="Constraints Count",
                 units="dimensionless",
                 status="DERIVED",
-                description="Number of experimental constraints (1: Higgs mass)",
+                description="Number of experimental constraints (Higgs mass)",
+                description_template="Number of experimental constraints ({value})",
                 no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
         ]
