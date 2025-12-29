@@ -355,12 +355,28 @@ class SimulationBase(ABC):
                     elif param_def.description:
                         metadata['description'] = param_def.description
 
+                # Extract experimental comparison data from parameter definition
+                exp_value = None
+                exp_uncertainty = None
+                exp_source = None
+                bound_type = None
+
+                if param_def:
+                    exp_value = param_def.experimental_bound
+                    exp_uncertainty = param_def.uncertainty
+                    exp_source = param_def.bound_source
+                    bound_type = param_def.bound_type
+
                 registry.set_param(
                     path=param_path,
                     value=results[param_path],
                     source=self.metadata.id,
                     status=param_def.status if param_def else "DERIVED",
-                    metadata=metadata if metadata else None
+                    metadata=metadata if metadata else None,
+                    experimental_value=exp_value,
+                    experimental_uncertainty=exp_uncertainty,
+                    experimental_source=exp_source,
+                    bound_type=bound_type
                 )
 
     def inject_section(self, registry: 'PMRegistry') -> None:

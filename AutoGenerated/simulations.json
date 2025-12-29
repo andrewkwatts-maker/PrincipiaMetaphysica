@@ -1,7 +1,7 @@
 {
   "version": "16.0",
-  "generated": "2025-12-29T10:25:55.328886Z",
-  "total_scripts": 47,
+  "generated": "2025-12-29T11:21:50.487356Z",
+  "total_scripts": 51,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -131,6 +131,22 @@
       "isV16": true,
       "scripts": [
         {
+          "file": "cosmological_constant_v16_1.py",
+          "path": "simulations/v16/cosmology/cosmological_constant_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "ricci_flow_h0_v16_1.py",
+          "path": "simulations/v16/cosmology/ricci_flow_h0_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "s8_suppression_v16_1.py",
           "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
           "version": "16.1",
@@ -195,7 +211,7 @@
           "status": null
         }
       ],
-      "count": 8
+      "count": 10
     },
     "v16/discussion": {
       "title": "Discussion",
@@ -295,6 +311,14 @@
           "status": null
         },
         {
+          "file": "torsional_constants_v16_1.py",
+          "path": "simulations/v16/geometric/torsional_constants_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "g2_geometry_v16_0.py",
           "path": "simulations/v16/geometric/g2_geometry_v16_0.py",
           "version": "16.0",
@@ -311,7 +335,7 @@
           "status": null
         }
       ],
-      "count": 4
+      "count": 5
     },
     "v16/higgs": {
       "title": "Higgs",
@@ -319,6 +343,14 @@
       "folderName": "higgs",
       "isV16": true,
       "scripts": [
+        {
+          "file": "higgs_vev_derivation_v16_1.py",
+          "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
         {
           "file": "higgs_mass_v16_0.py",
           "path": "simulations/v16/higgs/higgs_mass_v16_0.py",
@@ -328,7 +360,7 @@
           "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/introduction": {
       "title": "Introduction",
