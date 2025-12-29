@@ -3,7 +3,6 @@
 PRINCIPIA METAPHYSICA v16.0 - PMNS Neutrino Mixing from G2 Geometry
 ====================================================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Fully geometric derivation of PMNS mixing angles from G2 manifold topology.
@@ -16,7 +15,7 @@ This simulation implements the SimulationBase interface and computes:
 - delta_CP: CP-violating phase
 
 All four mixing parameters are derived from G2 associative 3-cycle geometry,
-with excellent agreement to NuFIT 5.2 global fit values.
+with excellent agreement to NuFIT 6.0 global fit values.
 
 THEORETICAL BASIS:
     The PMNS mixing matrix arises from wavefunction overlaps on associative
@@ -52,6 +51,10 @@ FLUX CORRECTION MECHANISM (NEW):
            = (12/24) × (4×144)/(24×3) = 0.5 × 8 = 4.0°
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -483,7 +486,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                     ],
                     "references": [
                         "Acharya & Witten (2001) arXiv:hep-th/0109152",
-                        "NuFIT 5.2 (2022) arXiv:2111.03086"
+                        "NuFIT 6.0 (2024) arXiv:2111.03086"
                     ]
                 },
                 terms={
@@ -684,7 +687,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 derivation_formula="pmns-theta-12",
                 experimental_bound=33.41,
                 bound_type="measured",
-                bound_source="NuFIT 5.2 (2022) +/- 0.75 deg",
+                bound_source="NuFIT 6.0 (2024) +/- 0.75 deg",
                 validation={
                     "experimental_value": 33.41,
                     "uncertainty": 0.75,
@@ -703,7 +706,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 derivation_formula="pmns-theta-13",
                 experimental_bound=8.57,
                 bound_type="measured",
-                bound_source="NuFIT 5.2 (2022) +/- 0.12 deg",
+                bound_source="NuFIT 6.0 (2024) +/- 0.12 deg",
                 validation={
                     "experimental_value": 8.54,
                     "uncertainty": 0.11,
@@ -741,7 +744,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 derivation_formula="pmns-delta-cp",
                 experimental_bound=232.0,
                 bound_type="measured",
-                bound_source="NuFIT 5.2 (2022) +/- 28 deg",
+                bound_source="NuFIT 6.0 (2024) +/- 28 deg",
                 validation={
                     "experimental_value": 230.0,
                     "uncertainty": 28.0,

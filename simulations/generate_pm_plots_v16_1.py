@@ -12,6 +12,10 @@ This module creates four key plots for Principia Metaphysica v16.1:
 4. Theory residuals (σ-deviation horizontal bars)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import matplotlib.pyplot as plt

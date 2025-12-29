@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PM Tooltip System Test</title>
+    <link rel="stylesheet" href="css/pm-tooltip.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+        h1 {
+            color: #64ffda;
+            border-bottom: 2px solid #0f3460;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #90caf9;
+            margin-top: 30px;
+        }
+        .test-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .instruction {
+            background: rgba(33, 150, 243, 0.1);
+            border-left: 4px solid #2196F3;
+            padding: 12px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 3px;
+            color: #64ffda;
+        }
+    </style>
+</head>
+<body class="auth-loading">
+    <h1>Principia Metaphysica - Tooltip System Test</h1>
+
+    <div class="instruction">
+        <strong>Instructions:</strong> Hover over any <span class="pm-value" style="display: inline;">blue underlined value</span>
+        to see its formula, derivation, uncertainty, and experimental agreement.
+    </div>
+
+    <div class="test-section">
+        <h2>1. Generation Count (Exact Match)</h2>
+        <p>
+            The framework predicts exactly
+            <span class="pm-value"
+                  data-category="topology"
+                  data-param="n_gen"
+                  data-format="display"></span>
+            fermion generations from the flux-dressed Euler characteristic
+            <span class="pm-value"
+                  data-category="topology"
+                  data-param="chi_eff"
+                  data-format="display"></span>
+            via the relation n<sub>gen</sub> = χ<sub>eff</sub>/48.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>2. Proton Decay (Monte Carlo with Uncertainty)</h2>
+        <p>
+            The grand unification scale is
+            <span class="pm-value"
+                  data-category="proton_decay"
+                  data-param="M_GUT"
+                  data-format="display"></span> GeV,
+            geometrically derived from TCS G₂ torsion logarithms.
+        </p>
+        <p>
+            This yields a proton lifetime of
+            <span class="pm-value"
+                  data-category="proton_decay"
+                  data-param="tau_p_median"
+                  data-format="display"></span> years
+            with
+            <span class="pm-value"
+                  data-category="proton_decay"
+                  data-param="uncertainty_oom"
+                  data-format="fixed:3"></span>
+            orders of magnitude uncertainty (68% CI),
+            calculated via 3-loop renormalization group running with KK threshold corrections.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>3. Dark Energy (DESI 2024 Agreement)</h2>
+        <p>
+            The framework predicts dark energy equation of state
+            w₀ = <span class="pm-value"
+                      data-category="dark_energy"
+                      data-param="w0_PM"
+                      data-format="fixed:4"></span>,
+            which agrees with DESI 2024 measurements
+            (w₀ = <span class="pm-value"
+                       data-category="dark_energy"
+                       data-param="w0_DESI_central"
+                       data-format="fixed:2"></span>
+            ± <span class="pm-value"
+                    data-category="dark_energy"
+                    data-param="w0_DESI_error"
+                    data-format="fixed:2"></span>)
+            to within
+            <span class="pm-value"
+                  data-category="dark_energy"
+                  data-param="w0_sigma"
+                  data-format="fixed:2"></span>σ.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>4. PMNS Mixing Angles (Exact Matches)</h2>
+        <p>
+            The atmospheric mixing angle is
+            θ₂₃ = <span class="pm-value"
+                       data-category="pmns_matrix"
+                       data-param="theta_23"
+                       data-format="fixed:2"></span>°,
+            an <strong>EXACT MATCH</strong> to NuFIT 5.2
+            (<span class="pm-value"
+                   data-category="pmns_matrix"
+                   data-param="theta_23_sigma"
+                   data-format="fixed:2"></span>σ deviation).
+        </p>
+        <p>
+            The reactor angle is
+            θ₁₃ = <span class="pm-value"
+                       data-category="pmns_matrix"
+                       data-param="theta_13"
+                       data-format="fixed:2"></span>°,
+            also an <strong>EXACT MATCH</strong>
+            (<span class="pm-value"
+                   data-category="pmns_matrix"
+                   data-param="theta_13_sigma"
+                   data-format="fixed:2"></span>σ).
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>5. Dimensional Structure</h2>
+        <p>
+            Starting from
+            <span class="pm-value"
+                  data-category="dimensions"
+                  data-param="D_bulk"
+                  data-format="display"></span>-dimensional
+            bosonic string spacetime, the Sp(2,R) gauge symmetry projects to an effective
+            <span class="pm-value"
+                  data-category="dimensions"
+                  data-param="D_after_sp2r"
+                  data-format="display"></span>-dimensional
+            shadow manifold, which then compactifies on a
+            <span class="pm-value"
+                  data-category="dimensions"
+                  data-param="D_G2"
+                  data-format="display"></span>-dimensional
+            G₂ manifold.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>6. Gauge Coupling Unification</h2>
+        <p>
+            The fine structure constant at the GUT scale is
+            1/α<sub>GUT</sub> = <span class="pm-value"
+                                      data-category="gauge_unification"
+                                      data-param="alpha_GUT_inv"
+                                      data-format="fixed:2"></span>,
+            achieving
+            <span class="pm-value"
+                  data-category="gauge_unification"
+                  data-param="unification_precision"
+                  data-format="percent"></span>
+            precision in unification.
+        </p>
+    </div>
+
+    <div class="test-section">
+        <h2>Test Console Output</h2>
+        <p>
+            Open browser console (F12) to see initialization messages:
+        </p>
+        <ul>
+            <li><code>[PM] Tooltip system initialized</code></li>
+            <li><code>[PM] Populated N constant values</code></li>
+        </ul>
+        <p>
+            If you see warnings about missing categories or parameters,
+            check that theory-constants-enhanced.js loaded correctly.
+        </p>
+    </div>
+
+    <!-- Load theory constants first -->
+    <script src="theory-constants-enhanced.js"></script>
+
+    <!-- Then load tooltip system -->
+    <script src="js/pm-tooltip-system.js"></script>
+
+    <script>
+        // Verify PM loaded
+        window.addEventListener('load', () => {
+            if (typeof PM === 'undefined') {
+                document.body.innerHTML += '<div style="color:red; border:2px solid red; padding:20px; margin:20px;">ERROR: PM constants not loaded!</div>';
+            } else {
+                console.log('[TEST] PM constants loaded:', Object.keys(PM));
+                console.log('[TEST] Version:', PM.meta.version);
+            }
+        });
+    </script>
+
+  <script type="module">
+    import { setupAuthGuard } from '../js/auth-guard.js';
+    setupAuthGuard('tests-test-tooltip-system');
+  </script>
+</body>
+</html>

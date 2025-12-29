@@ -3,7 +3,6 @@
 Fermion Generations v16.0 - Three Generations from G2 Topology
 ================================================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Derives the number of fermion generations and Yukawa hierarchy from G2 manifold
@@ -33,6 +32,10 @@ topology.chi_eff = 144 (TCS G2 manifold #187)
   -> Y_f = A_f * epsilon^Q_f
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -526,7 +529,6 @@ class FermionGenerationsV16(SimulationBase):
                 bound_type="measured",
                 bound_source="Standard Model (observed)"
             ),
-
             Parameter(
                 path="fermion.yukawa_hierarchy",
                 name="Yukawa Hierarchy Parameter (epsilon)",
@@ -542,7 +544,6 @@ class FermionGenerationsV16(SimulationBase):
                 bound_type="measured",
                 bound_source="PDG 2024: Cabibbo angle V_us"
             ),
-
             Parameter(
                 path="fermion.chiral_filter_strength",
                 name="Pneuma Chiral Filter Strength",

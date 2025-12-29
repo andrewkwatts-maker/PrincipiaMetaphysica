@@ -3,7 +3,6 @@
 CKM Matrix and Quark Mixing v16.0
 ==================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Derives CKM matrix elements and quark mixing from G2 geometry phase structure
@@ -61,6 +60,10 @@ References:
 - Acharya et al. (2008): Yukawa couplings from M-theory on G2 manifolds
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

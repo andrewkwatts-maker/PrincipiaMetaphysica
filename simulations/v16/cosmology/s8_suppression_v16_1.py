@@ -29,6 +29,10 @@ Resolution Strategy:
    weak lensing (0.77), representing a modest improvement over ΛCDM
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -247,7 +251,6 @@ class S8SuppressionV16(SimulationBase):
             'Planck': S8Measurement(
                 name='Planck 2018',
                 value=0.832,
-                uncertainty=0.013,
                 redshift=1100.0,  # CMB last scattering
                 source='Planck Collaboration (2020) A&A 641, A6',
                 measurement_type='S8'
@@ -255,7 +258,6 @@ class S8SuppressionV16(SimulationBase):
             'KiDS-1000': S8Measurement(
                 name='KiDS-1000',
                 value=0.766,
-                uncertainty=0.020,
                 redshift=0.5,  # Effective weak lensing redshift
                 source='Heymans et al. (2021) A&A 646, A140',
                 measurement_type='S8'
@@ -263,7 +265,6 @@ class S8SuppressionV16(SimulationBase):
             'DES-Y3': S8Measurement(
                 name='DES Year 3',
                 value=0.776,
-                uncertainty=0.017,
                 redshift=0.6,
                 source='DES Collaboration (2022) PRD 105, 023520',
                 measurement_type='S8'
@@ -1003,7 +1004,7 @@ class S8SuppressionV16(SimulationBase):
             {
                 "id": "desi2025",
                 "authors": "DESI Collaboration",
-                "title": "DESI 2024 VII: Cosmological Constraints from Full-Shape Analysis",
+                "title": "DESI 2024I: Cosmological Constraints from Full-Shape Analysis",
                 "journal": "arXiv",
                 "year": 2024,
                 "arxiv": "2411.12022",
@@ -1072,7 +1073,6 @@ def export_s8_suppression_v16() -> Dict[str, Any]:
             "desi.sigma8",
             0.827,
             source="ESTABLISHED:DESI_2025",
-            uncertainty=0.011,
             status="ESTABLISHED",
             metadata={'units': 'dimensionless', 'description': 'RMS matter fluctuation amplitude'}
         )
@@ -1083,7 +1083,6 @@ def export_s8_suppression_v16() -> Dict[str, Any]:
             "planck.S8",
             0.832,
             source="ESTABLISHED:Planck2018",
-            uncertainty=0.013,
             status="ESTABLISHED",
             metadata={'units': 'dimensionless', 'description': 'S8 from Planck CMB'}
         )
@@ -1094,7 +1093,6 @@ def export_s8_suppression_v16() -> Dict[str, Any]:
             "cosmology.w0_derived",
             -11/13,
             source="dark_energy_v16_0",
-            uncertainty=0.067,
             status="PREDICTED",
             metadata={'units': 'dimensionless', 'description': 'PM dark energy EoS'}
         )
@@ -1104,7 +1102,6 @@ def export_s8_suppression_v16() -> Dict[str, Any]:
             "cosmology.wa_derived",
             0.288,
             source="dark_energy_v16_0",
-            uncertainty=0.1,
             status="PREDICTED",
             metadata={'units': 'dimensionless', 'description': 'PM evolution parameter'}
         )

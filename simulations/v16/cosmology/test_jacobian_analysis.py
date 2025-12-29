@@ -15,6 +15,12 @@ Mathematical background:
 - For G2: different relationship between Vol and moduli
 
 Key question: What is the correct power law for sqrt(det(g))?
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

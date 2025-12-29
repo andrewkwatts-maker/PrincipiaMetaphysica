@@ -26,6 +26,10 @@ References:
 - Bars (2011) "Survey of two-time physics"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -367,6 +371,9 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
                 units="dimensionless",
                 status="PREDICTED",
                 description="Coefficient for frequency-dependent GW dispersion: η ≈ 0.100",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="gw_dispersion.M_GW",

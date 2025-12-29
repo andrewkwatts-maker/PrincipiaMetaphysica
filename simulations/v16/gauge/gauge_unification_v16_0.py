@@ -3,7 +3,6 @@
 Gauge Unification Simulation v16.0
 ====================================
 
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 Licensed under the MIT License. See LICENSE file for details.
 
 Implements gauge coupling unification to determine M_GUT and alpha_GUT
@@ -30,6 +29,10 @@ References:
 - v12_4 gauge_unification_precision.py: Previous implementation
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np

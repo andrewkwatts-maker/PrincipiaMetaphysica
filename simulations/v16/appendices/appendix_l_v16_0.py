@@ -17,6 +17,10 @@ and exact values presented in the theory, spanning 60 orders of magnitude
 from neutrino masses (~10⁻³ eV) to the GUT scale (~10¹⁶ GeV).
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -637,6 +641,9 @@ class AppendixLValuesSummary(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of parameters derived from first principles",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
         ]
 

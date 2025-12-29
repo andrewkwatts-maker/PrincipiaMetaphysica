@@ -1,0 +1,4021 @@
+{
+  "generated": "2025-12-29",
+  "total_files": 142,
+  "domains": {
+    "root": {
+      "name": "Root Simulations",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/__init__.py",
+          "description": "Principia Metaphysica Simulation Framework",
+          "version": "1.0",
+          "lines": 299,
+          "size_kb": 10.2
+        },
+        {
+          "name": "baryogenesis_calculator.py",
+          "path": "simulations/baryogenesis_calculator.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/baryogenesis_calculator.py",
+          "description": "Baryogenesis Calculator - Leptogenesis from G2 CP Violation",
+          "version": "1.0",
+          "lines": 334,
+          "size_kb": 10.81
+        },
+        {
+          "name": "dm_direct_detection_limits.py",
+          "path": "simulations/dm_direct_detection_limits.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/dm_direct_detection_limits.py",
+          "description": "Dark Matter Direct Detection Limits",
+          "version": "1.0",
+          "lines": 300,
+          "size_kb": 9.78
+        },
+        {
+          "name": "g2_dynamical_flow_v16_2.py",
+          "path": "simulations/g2_dynamical_flow_v16_2.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/g2_dynamical_flow_v16_2.py",
+          "description": "PRINCIPIA METAPHYSICA v16.2 - G₂ Dynamical Flow",
+          "version": "16.2",
+          "lines": 303,
+          "size_kb": 10.47
+        },
+        {
+          "name": "generate_pm_plots_v16_1.py",
+          "path": "simulations/generate_pm_plots_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/generate_pm_plots_v16_1.py",
+          "description": "PM Publication Plots v16.1",
+          "version": "16.1",
+          "lines": 462,
+          "size_kb": 15.32
+        },
+        {
+          "name": "geometric_anchors_v16_1.py",
+          "path": "simulations/geometric_anchors_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/geometric_anchors_v16_1.py",
+          "description": "Geometric Anchors v16.1 - First Principles Parameter Derivation",
+          "version": "16.1",
+          "lines": 174,
+          "size_kb": 5.72
+        },
+        {
+          "name": "global_validator.py",
+          "path": "simulations/global_validator.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/global_validator.py",
+          "description": "Global Validator for Principia Metaphysica Simulation Outputs",
+          "version": "1.0",
+          "lines": 754,
+          "size_kb": 28.84
+        },
+        {
+          "name": "hubble_tension_resolver_v16_1.py",
+          "path": "simulations/hubble_tension_resolver_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/hubble_tension_resolver_v16_1.py",
+          "description": "Hubble Tension Resolver v16.1",
+          "version": "16.1",
+          "lines": 206,
+          "size_kb": 7.66
+        },
+        {
+          "name": "initialize_pm_framework.py",
+          "path": "simulations/initialize_pm_framework.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/initialize_pm_framework.py",
+          "description": "Principia Metaphysica Framework Initialization",
+          "version": "1.0",
+          "lines": 156,
+          "size_kb": 4.97
+        },
+        {
+          "name": "kahler_metric_geometry.py",
+          "path": "simulations/kahler_metric_geometry.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/kahler_metric_geometry.py",
+          "description": "Kahler Metric Geometry - Moduli Space Cross-Talk",
+          "version": "1.0",
+          "lines": 323,
+          "size_kb": 10.9
+        },
+        {
+          "name": "neutrino_seesaw_solver.py",
+          "path": "simulations/neutrino_seesaw_solver.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/neutrino_seesaw_solver.py",
+          "description": "Neutrino Seesaw Solver - Type-I Seesaw Mechanism",
+          "version": "1.0",
+          "lines": 317,
+          "size_kb": 10.35
+        },
+        {
+          "name": "pm_config_v16_1.py",
+          "path": "simulations/pm_config_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/pm_config_v16_1.py",
+          "description": "PM Config v16.1 - High-Precision Simulation Configuration",
+          "version": "16.1",
+          "lines": 143,
+          "size_kb": 4.8
+        },
+        {
+          "name": "post_processing.py",
+          "path": "simulations/post_processing.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/post_processing.py",
+          "description": "Post-Processing Validation for Principia Metaphysica",
+          "version": "1.0",
+          "lines": 872,
+          "size_kb": 28.15
+        },
+        {
+          "name": "publication_plotter.py",
+          "path": "simulations/publication_plotter.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/publication_plotter.py",
+          "description": "Publication Plotter - High-Quality Scientific Graphics",
+          "version": "1.0",
+          "lines": 401,
+          "size_kb": 12.05
+        },
+        {
+          "name": "quantum_decoherence_solver.py",
+          "path": "simulations/quantum_decoherence_solver.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/quantum_decoherence_solver.py",
+          "description": "Quantum Decoherence Solver - Thermal Noise and Topological Protection",
+          "version": "1.0",
+          "lines": 311,
+          "size_kb": 10.81
+        },
+        {
+          "name": "renormalization_group_runner.py",
+          "path": "simulations/renormalization_group_runner.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/renormalization_group_runner.py",
+          "description": "Renormalization Group Runner - 3-Loop Beta Function Evolution",
+          "version": "1.0",
+          "lines": 298,
+          "size_kb": 10.89
+        },
+        {
+          "name": "renormalization_group_runner_fixed.py",
+          "path": "simulations/renormalization_group_runner_fixed.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/renormalization_group_runner_fixed.py",
+          "description": "Renormalization Group Runner - FIXED VERSION - 2-Loop Beta Function Evolution",
+          "version": "1.0",
+          "lines": 370,
+          "size_kb": 13.03
+        },
+        {
+          "name": "secrets_config.py",
+          "path": "simulations/secrets_config.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/secrets_config.py",
+          "description": "SECRETS CONFIGURATION - DO NOT COMMIT TO GIT",
+          "version": "1.0",
+          "lines": 27,
+          "size_kb": 0.83
+        },
+        {
+          "name": "symbolic_lagrangian_bridge.py",
+          "path": "simulations/symbolic_lagrangian_bridge.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/symbolic_lagrangian_bridge.py",
+          "description": "PRINCIPIA METAPHYSICA v16.1 - Symbolic Lagrangian Bridge",
+          "version": "1.0",
+          "lines": 458,
+          "size_kb": 17.01
+        },
+        {
+          "name": "test_vacuum_stability_integration.py",
+          "path": "simulations/test_vacuum_stability_integration.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/test_vacuum_stability_integration.py",
+          "description": "Test integration between vacuum_stability_monitor.py and vacuum_stability_derivations.py",
+          "version": "1.0",
+          "lines": 95,
+          "size_kb": 3.26
+        },
+        {
+          "name": "vacuum_stability_monitor.py",
+          "path": "simulations/vacuum_stability_monitor.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/vacuum_stability_monitor.py",
+          "description": "Vacuum Stability Monitor - Coleman-De Luccia Instanton Analysis",
+          "version": "1.0",
+          "lines": 349,
+          "size_kb": 11.8
+        },
+        {
+          "name": "validate_all.py",
+          "path": "simulations/validate_all.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validate_all.py",
+          "description": "Principia Metaphysica - Comprehensive Validation Suite",
+          "version": "1.0",
+          "lines": 739,
+          "size_kb": 26.27
+        },
+        {
+          "name": "validate_rg_ghost_sector.py",
+          "path": "simulations/validate_rg_ghost_sector.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validate_rg_ghost_sector.py",
+          "description": "Validation Script for RG Ghost Sector Implementation",
+          "version": "1.0",
+          "lines": 380,
+          "size_kb": 13.52
+        },
+        {
+          "name": "wolfram_cloud_audit.py",
+          "path": "simulations/wolfram_cloud_audit.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/wolfram_cloud_audit.py",
+          "description": "PRINCIPIA METAPHYSICA v16.2 - Wolfram Cloud Formal Audit",
+          "version": "1.0",
+          "lines": 446,
+          "size_kb": 14.81
+        },
+        {
+          "name": "wolfram_validator_v16.py",
+          "path": "simulations/wolfram_validator_v16.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/wolfram_validator_v16.py",
+          "description": "PRINCIPIA METAPHYSICA v16.1 - Wolfram Alpha Validation Framework",
+          "version": "16.0",
+          "lines": 513,
+          "size_kb": 17.27
+        }
+      ]
+    },
+    "base": {
+      "name": "Base Infrastructure",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/base/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/__init__.py",
+          "description": "Simulations Base Module",
+          "version": "1.0",
+          "lines": 112,
+          "size_kb": 2.46
+        },
+        {
+          "name": "established.py",
+          "path": "simulations/base/established.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/established.py",
+          "description": "Established Physics Loader for Principia Metaphysica",
+          "version": "1.0",
+          "lines": 597,
+          "size_kb": 22.09
+        },
+        {
+          "name": "formulas.py",
+          "path": "simulations/base/formulas.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/formulas.py",
+          "description": "Formula Registry for Principia Metaphysica",
+          "version": "1.0",
+          "lines": 380,
+          "size_kb": 14.3
+        },
+        {
+          "name": "injector.py",
+          "path": "simulations/base/injector.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/injector.py",
+          "description": "Injection Utilities",
+          "version": "1.0",
+          "lines": 249,
+          "size_kb": 6.81
+        },
+        {
+          "name": "registry.py",
+          "path": "simulations/base/registry.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/registry.py",
+          "description": "PMRegistry - Central Parameter, Formula, and Section Registry",
+          "version": "1.0",
+          "lines": 659,
+          "size_kb": 21.58
+        },
+        {
+          "name": "schema.py",
+          "path": "simulations/base/schema.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/schema.py",
+          "description": "Simulation Return Schema",
+          "version": "1.0",
+          "lines": 698,
+          "size_kb": 28.3
+        },
+        {
+          "name": "sections.py",
+          "path": "simulations/base/sections.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/sections.py",
+          "description": "Section Registry for Principia Metaphysica",
+          "version": "1.0",
+          "lines": 356,
+          "size_kb": 11.51
+        },
+        {
+          "name": "simulation_base.py",
+          "path": "simulations/base/simulation_base.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/simulation_base.py",
+          "description": "Simulation Base Classes",
+          "version": "1.0",
+          "lines": 649,
+          "size_kb": 23.38
+        },
+        {
+          "name": "validator.py",
+          "path": "simulations/base/validator.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/validator.py",
+          "description": "Validation Utilities",
+          "version": "1.0",
+          "lines": 452,
+          "size_kb": 15.78
+        }
+      ]
+    },
+    "constants": {
+      "name": "Constants & Utilities",
+      "files": [
+        {
+          "name": "add_missing_params.py",
+          "path": "simulations/Constants/ad-hoc/add_missing_params.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/add_missing_params.py",
+          "description": "Add Missing Parameters to theory_output.json",
+          "version": "1.0",
+          "lines": 362,
+          "size_kb": 11.34
+        },
+        {
+          "name": "extract_supplementary.py",
+          "path": "simulations/Constants/extract_supplementary.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/extract_supplementary.py",
+          "description": "Extract Supplementary Content to JSON",
+          "version": "1.0",
+          "lines": 315,
+          "size_kb": 12.25
+        },
+        {
+          "name": "generate_simulations_index.py",
+          "path": "simulations/Constants/generate_simulations_index.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/generate_simulations_index.py",
+          "description": "PRINCIPIA METAPHYSICA - Simulations Index Generator",
+          "version": "1.0",
+          "lines": 280,
+          "size_kb": 9.81
+        },
+        {
+          "name": "html_to_section_json.py",
+          "path": "simulations/Constants/ad-hoc/html_to_section_json.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/html_to_section_json.py",
+          "description": "HTML to Section JSON Converter",
+          "version": "1.0",
+          "lines": 181,
+          "size_kb": 6.13
+        },
+        {
+          "name": "merge_sections_to_theory.py",
+          "path": "simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+          "description": "Merge Section JSONs into theory_output.json",
+          "version": "1.0",
+          "lines": 210,
+          "size_kb": 7.94
+        },
+        {
+          "name": "section_schema.py",
+          "path": "simulations/Constants/section_schema.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/section_schema.py",
+          "description": "Principia Metaphysica - Section JSON Schema",
+          "version": "1.0",
+          "lines": 157,
+          "size_kb": 6.36
+        },
+        {
+          "name": "split_theory_output.py",
+          "path": "simulations/Constants/split_theory_output.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/split_theory_output.py",
+          "description": "Split theory_output.json into Cacheable Components",
+          "version": "1.0",
+          "lines": 158,
+          "size_kb": 5.93
+        },
+        {
+          "name": "update_sections_metadata.py",
+          "path": "simulations/Constants/ad-hoc/update_sections_metadata.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/update_sections_metadata.py",
+          "description": "Update sections metadata in theory_output.json",
+          "version": "1.0",
+          "lines": 338,
+          "size_kb": 11.24
+        },
+        {
+          "name": "update_values.py",
+          "path": "simulations/Constants/ad-hoc/update_values.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/update_values.py",
+          "description": "Helper script to update the gauge unification values in the HTML file",
+          "version": "1.0",
+          "lines": 32,
+          "size_kb": 1.19
+        }
+      ]
+    },
+    "data": {
+      "name": "Data Loaders",
+      "files": [
+        {
+          "name": "experimental_data_loader.py",
+          "path": "simulations/data/experimental_data_loader.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/data/experimental_data_loader.py",
+          "description": "Experimental Data Loader for Principia Metaphysica",
+          "version": "1.0",
+          "lines": 434,
+          "size_kb": 14.97
+        }
+      ]
+    },
+    "derivations": {
+      "name": "Mathematical Derivations",
+      "files": [
+        {
+          "name": "baryogenesis_derivations.py",
+          "path": "simulations/derivations/baryogenesis_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/baryogenesis_derivations.py",
+          "description": "Baryogenesis Derivations - Wolfram Alpha Chain for Leptogenesis",
+          "version": "1.0",
+          "lines": 807,
+          "size_kb": 29.34
+        },
+        {
+          "name": "cosmology_derivations.py",
+          "path": "simulations/derivations/cosmology_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/cosmology_derivations.py",
+          "description": "COSMOLOGY DERIVATION CHAIN - Principia Metaphysica",
+          "version": "1.0",
+          "lines": 868,
+          "size_kb": 29.42
+        },
+        {
+          "name": "dark_matter_derivations.py",
+          "path": "simulations/derivations/dark_matter_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/dark_matter_derivations.py",
+          "description": "Dark Matter Derivations - Wolfram Alpha Chain for Mirror Sector DM",
+          "version": "1.0",
+          "lines": 604,
+          "size_kb": 23.88
+        },
+        {
+          "name": "fermion_derivations.py",
+          "path": "simulations/derivations/fermion_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/fermion_derivations.py",
+          "description": "Fermion Sector Wolfram Alpha Derivation Chain",
+          "version": "1.0",
+          "lines": 928,
+          "size_kb": 32.7
+        },
+        {
+          "name": "g2_geometry_derivations.py",
+          "path": "simulations/derivations/g2_geometry_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/g2_geometry_derivations.py",
+          "description": "PRINCIPIA METAPHYSICA - G₂ GEOMETRY DERIVATION CHAIN",
+          "version": "1.0",
+          "lines": 737,
+          "size_kb": 25.17
+        },
+        {
+          "name": "gauge_derivations.py",
+          "path": "simulations/derivations/gauge_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/gauge_derivations.py",
+          "description": "GAUGE SECTOR DERIVATION CHAIN - Wolfram Alpha Validation",
+          "version": "1.0",
+          "lines": 565,
+          "size_kb": 22.5
+        },
+        {
+          "name": "geometric_anchors_derivations.py",
+          "path": "simulations/derivations/geometric_anchors_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/geometric_anchors_derivations.py",
+          "description": "PRINCIPIA METAPHYSICA v16.2 - Geometric Anchors Derivation Chains",
+          "version": "1.0",
+          "lines": 822,
+          "size_kb": 30.84
+        },
+        {
+          "name": "higgs_derivations.py",
+          "path": "simulations/derivations/higgs_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/higgs_derivations.py",
+          "description": "Higgs Sector Derivations - Wolfram Alpha Chain",
+          "version": "1.0",
+          "lines": 664,
+          "size_kb": 22.93
+        },
+        {
+          "name": "master_action_derivations.py",
+          "path": "simulations/derivations/master_action_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/master_action_derivations.py",
+          "description": "Master Action Compactification Derivations",
+          "version": "1.0",
+          "lines": 1172,
+          "size_kb": 45.4
+        },
+        {
+          "name": "neutrino_derivations.py",
+          "path": "simulations/derivations/neutrino_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/neutrino_derivations.py",
+          "description": "PRINCIPIA METAPHYSICA - Neutrino Physics Wolfram Alpha Derivation Chain",
+          "version": "1.0",
+          "lines": 655,
+          "size_kb": 26.11
+        },
+        {
+          "name": "quantum_bio_derivations.py",
+          "path": "simulations/derivations/quantum_bio_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/quantum_bio_derivations.py",
+          "description": "Quantum Biology Derivations - Penrose-Hameroff Orch-OR Mechanism",
+          "version": "1.0",
+          "lines": 575,
+          "size_kb": 21.2
+        },
+        {
+          "name": "test_baryogenesis_derivations.py",
+          "path": "simulations/derivations/test_baryogenesis_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/test_baryogenesis_derivations.py",
+          "description": "Test Suite for Baryogenesis Derivations",
+          "version": "1.0",
+          "lines": 531,
+          "size_kb": 16.05
+        },
+        {
+          "name": "vacuum_stability_derivations.py",
+          "path": "simulations/derivations/vacuum_stability_derivations.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/vacuum_stability_derivations.py",
+          "description": "VACUUM STABILITY DERIVATIONS - Wolfram Alpha Integration",
+          "version": "1.0",
+          "lines": 714,
+          "size_kb": 24.61
+        },
+        {
+          "name": "validate_chain.py",
+          "path": "simulations/derivations/validate_chain.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_chain.py",
+          "description": "Validation Script for Cosmology Derivation Chain",
+          "version": "1.0",
+          "lines": 365,
+          "size_kb": 13.0
+        },
+        {
+          "name": "validate_dark_matter.py",
+          "path": "simulations/derivations/validate_dark_matter.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_dark_matter.py",
+          "description": "Dark Matter Derivation Validation Script",
+          "version": "1.0",
+          "lines": 150,
+          "size_kb": 5.21
+        },
+        {
+          "name": "validate_geometric_anchors.py",
+          "path": "simulations/derivations/validate_geometric_anchors.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_geometric_anchors.py",
+          "description": "Quick validation script for geometric anchors derivations.",
+          "version": "1.0",
+          "lines": 286,
+          "size_kb": 8.01
+        }
+      ]
+    },
+    "ip": {
+      "name": "Intellectual Property",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/ip/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/__init__.py",
+          "description": "Intellectual Property Protection Module",
+          "version": "1.0",
+          "lines": 33,
+          "size_kb": 0.85
+        },
+        {
+          "name": "discovery_hash_registry.py",
+          "path": "simulations/ip/discovery_hash_registry.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/discovery_hash_registry.py",
+          "description": "Discovery Hash Registry for Intellectual Property Protection",
+          "version": "1.0",
+          "lines": 445,
+          "size_kb": 19.13
+        },
+        {
+          "name": "ip_protector_v16.py",
+          "path": "simulations/ip/ip_protector_v16.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/ip_protector_v16.py",
+          "description": "IP Protection and Citation Manager for Principia Metaphysica v16.2",
+          "version": "16.0",
+          "lines": 412,
+          "size_kb": 12.93
+        },
+        {
+          "name": "verify_hashes.py",
+          "path": "simulations/ip/verify_hashes.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/verify_hashes.py",
+          "description": "Verification script for discovery hash registry.",
+          "version": "1.0",
+          "lines": 94,
+          "size_kb": 2.75
+        }
+      ]
+    },
+    "reports": {
+      "name": "Reports & Analysis",
+      "files": [
+        {
+          "name": "report_generator_v16.py",
+          "path": "simulations/reports/report_generator_v16.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/reports/report_generator_v16.py",
+          "description": "Technical Summary Report Generator v16.0",
+          "version": "16.0",
+          "lines": 684,
+          "size_kb": 25.47
+        },
+        {
+          "name": "test_report_generator.py",
+          "path": "simulations/reports/test_report_generator.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/reports/test_report_generator.py",
+          "description": "Test Script for report_generator_v16.py",
+          "version": "1.0",
+          "lines": 227,
+          "size_kb": 6.42
+        }
+      ]
+    },
+    "tests": {
+      "name": "Test Suite",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/tests/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/__init__.py",
+          "description": "Test suite for Principia Metaphysica simulation framework.",
+          "version": "1.0",
+          "lines": 5,
+          "size_kb": 0.13
+        },
+        {
+          "name": "conftest.py",
+          "path": "simulations/tests/conftest.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/conftest.py",
+          "description": "Pytest Configuration for Principia Metaphysica Tests",
+          "version": "1.0",
+          "lines": 78,
+          "size_kb": 2.47
+        },
+        {
+          "name": "test_data_loader.py",
+          "path": "simulations/tests/test_data_loader.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_data_loader.py",
+          "description": "Comprehensive Unit Tests for ExperimentalDataLoader",
+          "version": "1.0",
+          "lines": 873,
+          "size_kb": 31.65
+        },
+        {
+          "name": "test_gauge_invariance.py",
+          "path": "simulations/tests/test_gauge_invariance.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_gauge_invariance.py",
+          "description": "Gauge Invariance Tests for Principia Metaphysica Theory",
+          "version": "1.0",
+          "lines": 820,
+          "size_kb": 29.97
+        },
+        {
+          "name": "test_registry.py",
+          "path": "simulations/tests/test_registry.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_registry.py",
+          "description": "Comprehensive Unit Tests for PMRegistry",
+          "version": "1.0",
+          "lines": 878,
+          "size_kb": 31.68
+        }
+      ]
+    },
+    "v16/__init__.py": {
+      "name": "V16/__Init__.Py",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/__init__.py",
+          "description": "Principia Metaphysica Simulations v16",
+          "version": "1.0",
+          "lines": 58,
+          "size_kb": 1.78
+        }
+      ]
+    },
+    "validation": {
+      "name": "Validation Tools",
+      "files": [
+        {
+          "name": "add_simulation_links_to_theory.py",
+          "path": "simulations/validation/add_simulation_links_to_theory.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/add_simulation_links_to_theory.py",
+          "description": "Add Simulation File Links to theory_output.json",
+          "version": "1.0",
+          "lines": 219,
+          "size_kb": 8.48
+        },
+        {
+          "name": "validate_bidirectional_links.py",
+          "path": "simulations/validation/validate_bidirectional_links.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_bidirectional_links.py",
+          "description": "Validate Bi-directional Links in theory_output.json",
+          "version": "1.0",
+          "lines": 301,
+          "size_kb": 10.67
+        },
+        {
+          "name": "validate_bindings_final.py",
+          "path": "simulations/validation/validate_bindings_final.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_bindings_final.py",
+          "description": "PM Binding Validation Script",
+          "version": "1.0",
+          "lines": 292,
+          "size_kb": 11.65
+        },
+        {
+          "name": "validate_content_migration.py",
+          "path": "simulations/validation/deprecated/validate_content_migration.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_content_migration.py",
+          "description": "Content Validation Script - Verify all old paper content exists in new JSON output",
+          "version": "1.0",
+          "lines": 334,
+          "size_kb": 12.24
+        },
+        {
+          "name": "validate_dynamic_vs_hardcoded.py",
+          "path": "simulations/validation/validate_dynamic_vs_hardcoded.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_dynamic_vs_hardcoded.py",
+          "description": "Validation script to compare dynamic content from theory_output.json",
+          "version": "1.0",
+          "lines": 364,
+          "size_kb": 14.08
+        },
+        {
+          "name": "validate_formula_lookups.py",
+          "path": "simulations/validation/validate_formula_lookups.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_formula_lookups.py",
+          "description": "Validate Formula and Parameter Lookups",
+          "version": "1.0",
+          "lines": 322,
+          "size_kb": 11.16
+        },
+        {
+          "name": "validate_json.py",
+          "path": "simulations/validation/deprecated/validate_json.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_json.py",
+          "description": "Simulation module: validate_json",
+          "version": "1.0",
+          "lines": 15,
+          "size_kb": 0.57
+        },
+        {
+          "name": "validate_metadata_fix.py",
+          "path": "simulations/validation/validate_metadata_fix.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_metadata_fix.py",
+          "description": "Validate that all parameter metadata has been properly fixed.",
+          "version": "1.0",
+          "lines": 165,
+          "size_kb": 5.91
+        },
+        {
+          "name": "validate_param_references.py",
+          "path": "simulations/validation/validate_param_references.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_param_references.py",
+          "description": "Validate Parameter References in HTML Files",
+          "version": "1.0",
+          "lines": 407,
+          "size_kb": 13.91
+        },
+        {
+          "name": "validate_pm_bindings.py",
+          "path": "simulations/validation/deprecated/validate_pm_bindings.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_pm_bindings.py",
+          "description": "# PM Binding Validation Report",
+          "version": "1.0",
+          "lines": 175,
+          "size_kb": 6.96
+        },
+        {
+          "name": "validate_section_references.py",
+          "path": "simulations/validation/validate_section_references.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_section_references.py",
+          "description": "Validate that all formula and parameter references in sections actually exist",
+          "version": "1.0",
+          "lines": 154,
+          "size_kb": 5.14
+        },
+        {
+          "name": "validate_simulation_chain.py",
+          "path": "simulations/validation/validate_simulation_chain.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_simulation_chain.py",
+          "description": "Principia Metaphysica - Simulation Chain Validator",
+          "version": "1.0",
+          "lines": 222,
+          "size_kb": 7.54
+        },
+        {
+          "name": "validate_simulation_links.py",
+          "path": "simulations/validation/validate_simulation_links.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_simulation_links.py",
+          "description": "Simulation Link Validation Script",
+          "version": "1.0",
+          "lines": 412,
+          "size_kb": 14.43
+        },
+        {
+          "name": "validate_theory_output.py",
+          "path": "simulations/validation/validate_theory_output.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_theory_output.py",
+          "description": "Principia Metaphysica - Theory Output Validator",
+          "version": "1.0",
+          "lines": 569,
+          "size_kb": 22.6
+        },
+        {
+          "name": "verify_content_migration.py",
+          "path": "simulations/validation/verify_content_migration.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/verify_content_migration.py",
+          "description": "Content Migration Verification Script",
+          "version": "1.0",
+          "lines": 408,
+          "size_kb": 14.47
+        }
+      ]
+    },
+    "v16/appendices": {
+      "name": "Appendices",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/appendices/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/__init__.py",
+          "description": "Principia Metaphysica v16 - Appendices Module",
+          "version": "1.0",
+          "lines": 192,
+          "size_kb": 6.98
+        },
+        {
+          "name": "appendix_a_math_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_a_math_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_a_math_v16_0.py",
+          "description": "Appendix A: Mathematical Foundations v16.0",
+          "version": "16.0",
+          "lines": 731,
+          "size_kb": 29.0
+        },
+        {
+          "name": "appendix_b_methods_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_b_methods_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_b_methods_v16_0.py",
+          "description": "Appendix B: Computational Methods v16.0",
+          "version": "16.0",
+          "lines": 872,
+          "size_kb": 35.4
+        },
+        {
+          "name": "appendix_c_derivations_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+          "description": "Appendix C: Extended Derivations v16.0",
+          "version": "16.0",
+          "lines": 828,
+          "size_kb": 34.48
+        },
+        {
+          "name": "appendix_d_tables_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_tables_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_d_tables_v16_0.py",
+          "description": "Appendix D: Parameter Tables v16.0",
+          "version": "16.0",
+          "lines": 562,
+          "size_kb": 28.74
+        },
+        {
+          "name": "appendix_e_proton_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_e_proton_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_e_proton_v16_0.py",
+          "description": "Appendix E: Proton Decay Calculation v16.0",
+          "version": "16.0",
+          "lines": 462,
+          "size_kb": 18.23
+        },
+        {
+          "name": "appendix_f_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_f_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_f_v16_0.py",
+          "description": "Appendix F: Dimensional Decomposition v16.0",
+          "version": "16.0",
+          "lines": 488,
+          "size_kb": 18.38
+        },
+        {
+          "name": "appendix_g_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_g_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_g_v16_0.py",
+          "description": "Appendix G: Effective Torsion from Flux Quantization v16.0",
+          "version": "16.0",
+          "lines": 428,
+          "size_kb": 16.86
+        },
+        {
+          "name": "appendix_h_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_h_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_h_v16_0.py",
+          "description": "Appendix H: Proton Decay Branching Ratio v16.0",
+          "version": "16.0",
+          "lines": 359,
+          "size_kb": 13.3
+        },
+        {
+          "name": "appendix_i_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_i_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_i_v16_0.py",
+          "description": "Appendix I: Gravitational Wave Dispersion v16.0",
+          "version": "16.0",
+          "lines": 431,
+          "size_kb": 16.66
+        },
+        {
+          "name": "appendix_j_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_j_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_j_v16_0.py",
+          "description": "Appendix J: Monte Carlo Error Propagation v16.0",
+          "version": "16.0",
+          "lines": 520,
+          "size_kb": 20.63
+        },
+        {
+          "name": "appendix_k_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_k_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_k_v16_0.py",
+          "description": "Appendix K: Transparency Statement v16.0",
+          "version": "16.0",
+          "lines": 541,
+          "size_kb": 23.32
+        },
+        {
+          "name": "appendix_l_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_l_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_l_v16_0.py",
+          "description": "Appendix L: Complete PM Values Summary v16.0",
+          "version": "16.0",
+          "lines": 693,
+          "size_kb": 29.14
+        },
+        {
+          "name": "appendix_m_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_m_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_m_v16_0.py",
+          "description": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum v16.0",
+          "version": "16.0",
+          "lines": 728,
+          "size_kb": 31.52
+        },
+        {
+          "name": "appendix_n_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_n_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_n_v16_0.py",
+          "description": "Appendix N: G2 Topology Landscape v16.0",
+          "version": "16.0",
+          "lines": 537,
+          "size_kb": 19.88
+        }
+      ]
+    },
+    "v16/cosmology": {
+      "name": "Cosmological Models",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/cosmology/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/__init__.py",
+          "description": "Cosmology Simulations v16",
+          "version": "1.0",
+          "lines": 23,
+          "size_kb": 0.77
+        },
+        {
+          "name": "cosmology_intro_v16_0.py",
+          "path": "simulations/v16/cosmology/cosmology_intro_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/cosmology_intro_v16_0.py",
+          "description": "Cosmological Framework Introduction v16.0",
+          "version": "16.0",
+          "lines": 850,
+          "size_kb": 39.59
+        },
+        {
+          "name": "dark_energy_v16_0.py",
+          "path": "simulations/v16/cosmology/dark_energy_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/dark_energy_v16_0.py",
+          "description": "Dark Energy from Dimensional Reduction v16.0",
+          "version": "16.0",
+          "lines": 964,
+          "size_kb": 41.85
+        },
+        {
+          "name": "jacobian_mathematical_validation.py",
+          "path": "simulations/v16/cosmology/jacobian_mathematical_validation.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/jacobian_mathematical_validation.py",
+          "description": "Mathematical Validation of G2 Moduli Space Jacobian",
+          "version": "1.0",
+          "lines": 404,
+          "size_kb": 14.47
+        },
+        {
+          "name": "multi_sector_v16_0.py",
+          "path": "simulations/v16/cosmology/multi_sector_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/multi_sector_v16_0.py",
+          "description": "Multi-Sector Cosmology v16.0",
+          "version": "16.0",
+          "lines": 1023,
+          "size_kb": 44.03
+        },
+        {
+          "name": "s8_suppression_v16_1.py",
+          "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/s8_suppression_v16_1.py",
+          "description": "S8 Tension Resolution via Dynamical Dark Energy v16.1",
+          "version": "16.1",
+          "lines": 1156,
+          "size_kb": 47.44
+        },
+        {
+          "name": "test_complete_validation.py",
+          "path": "simulations/v16/cosmology/test_complete_validation.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/test_complete_validation.py",
+          "description": "Complete Validation Test Suite for Multi-Sector Jacobian Implementation",
+          "version": "1.0",
+          "lines": 298,
+          "size_kb": 9.31
+        },
+        {
+          "name": "test_jacobian_analysis.py",
+          "path": "simulations/v16/cosmology/test_jacobian_analysis.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/test_jacobian_analysis.py",
+          "description": "Test and analyze different Jacobian formulations for G2 moduli space sampling.",
+          "version": "1.0",
+          "lines": 388,
+          "size_kb": 13.7
+        }
+      ]
+    },
+    "v16/discussion": {
+      "name": "Discussion & Analysis",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/discussion/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/discussion/__init__.py",
+          "description": "Discussion section for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.14
+        },
+        {
+          "name": "discussion_v16_0.py",
+          "path": "simulations/v16/discussion/discussion_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/discussion/discussion_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Discussion, Conclusions, and Theory Analysis",
+          "version": "16.0",
+          "lines": 1386,
+          "size_kb": 64.37
+        }
+      ]
+    },
+    "v16/fermion": {
+      "name": "Fermion Sector",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/fermion/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/__init__.py",
+          "description": "Fermion Simulations v16",
+          "version": "1.0",
+          "lines": 19,
+          "size_kb": 0.7
+        },
+        {
+          "name": "chirality_v16_0.py",
+          "path": "simulations/v16/fermion/chirality_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/chirality_v16_0.py",
+          "description": "Chirality and Spinorial Structure v16.0",
+          "version": "16.0",
+          "lines": 1129,
+          "size_kb": 51.51
+        },
+        {
+          "name": "ckm_matrix_v16_0.py",
+          "path": "simulations/v16/fermion/ckm_matrix_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/ckm_matrix_v16_0.py",
+          "description": "CKM Matrix and Quark Mixing v16.0",
+          "version": "16.0",
+          "lines": 1219,
+          "size_kb": 53.74
+        },
+        {
+          "name": "fermion_generations_v16_0.py",
+          "path": "simulations/v16/fermion/fermion_generations_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/fermion_generations_v16_0.py",
+          "description": "Fermion Generations v16.0 - Three Generations from G2 Topology",
+          "version": "16.0",
+          "lines": 748,
+          "size_kb": 31.44
+        }
+      ]
+    },
+    "v16/gauge": {
+      "name": "Gauge Unification",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/gauge/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/gauge/__init__.py",
+          "description": "Gauge Simulations v16",
+          "version": "1.0",
+          "lines": 16,
+          "size_kb": 0.35
+        },
+        {
+          "name": "gauge_unification_v16_0.py",
+          "path": "simulations/v16/gauge/gauge_unification_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/gauge/gauge_unification_v16_0.py",
+          "description": "Gauge Unification Simulation v16.0",
+          "version": "16.0",
+          "lines": 1055,
+          "size_kb": 43.65
+        }
+      ]
+    },
+    "v16/geometric": {
+      "name": "Geometric Foundations",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/geometric/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/__init__.py",
+          "description": "Geometric Domain Simulations v16",
+          "version": "1.0",
+          "lines": 19,
+          "size_kb": 0.51
+        },
+        {
+          "name": "g2_geometry_v16_0.py",
+          "path": "simulations/v16/geometric/g2_geometry_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/g2_geometry_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - G2 Geometry and Topology",
+          "version": "16.0",
+          "lines": 1427,
+          "size_kb": 72.95
+        },
+        {
+          "name": "g2_ricci_flow_rigorous.py",
+          "path": "simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Rigorous G₂ Ricci Flow with Torsion Monitoring",
+          "version": "1.0",
+          "lines": 668,
+          "size_kb": 22.0
+        }
+      ]
+    },
+    "v16/higgs": {
+      "name": "Higgs Mechanism",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/higgs/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/higgs/__init__.py",
+          "description": "Higgs Simulations v16",
+          "version": "1.0",
+          "lines": 15,
+          "size_kb": 0.35
+        },
+        {
+          "name": "higgs_mass_v16_0.py",
+          "path": "simulations/v16/higgs/higgs_mass_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/higgs/higgs_mass_v16_0.py",
+          "description": "Higgs Mass Simulation v16.0",
+          "version": "16.0",
+          "lines": 858,
+          "size_kb": 35.54
+        }
+      ]
+    },
+    "v16/introduction": {
+      "name": "Introduction",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/introduction/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/introduction/__init__.py",
+          "description": "Introduction simulations for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.15
+        },
+        {
+          "name": "introduction_v16_0.py",
+          "path": "simulations/v16/introduction/introduction_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/introduction/introduction_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Introduction",
+          "version": "16.0",
+          "lines": 986,
+          "size_kb": 52.99
+        }
+      ]
+    },
+    "v16/neutrino": {
+      "name": "Neutrino Physics",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/neutrino/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/neutrino/__init__.py",
+          "description": "Neutrino Simulations v16",
+          "version": "1.0",
+          "lines": 20,
+          "size_kb": 0.47
+        },
+        {
+          "name": "neutrino_mixing_v16_0.py",
+          "path": "simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - PMNS Neutrino Mixing from G2 Geometry",
+          "version": "16.0",
+          "lines": 917,
+          "size_kb": 41.91
+        }
+      ]
+    },
+    "v16/pneuma": {
+      "name": "Consciousness & Pneuma",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/pneuma/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/pneuma/__init__.py",
+          "description": "Pneuma Simulations v16",
+          "version": "1.0",
+          "lines": 20,
+          "size_kb": 0.55
+        },
+        {
+          "name": "pneuma_mechanism_v16_0.py",
+          "path": "simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Pneuma Mechanism (Geometric Framework)",
+          "version": "16.0",
+          "lines": 1102,
+          "size_kb": 53.32
+        }
+      ]
+    },
+    "v16/predictions": {
+      "name": "Predictions & Tests",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/predictions/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/predictions/__init__.py",
+          "description": "Predictions aggregator for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.17
+        },
+        {
+          "name": "predictions_aggregator_v16_0.py",
+          "path": "simulations/v16/predictions/predictions_aggregator_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/predictions/predictions_aggregator_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Predictions Aggregator",
+          "version": "16.0",
+          "lines": 1183,
+          "size_kb": 58.15
+        }
+      ]
+    },
+    "v16/proton": {
+      "name": "Proton Decay",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/proton/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/proton/__init__.py",
+          "description": "Proton Decay Simulations v16",
+          "version": "1.0",
+          "lines": 15,
+          "size_kb": 0.39
+        },
+        {
+          "name": "proton_decay_v16_0.py",
+          "path": "simulations/v16/proton/proton_decay_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/proton/proton_decay_v16_0.py",
+          "description": "Proton Decay Simulation v16.0",
+          "version": "16.0",
+          "lines": 697,
+          "size_kb": 29.24
+        }
+      ]
+    },
+    "v16/statistics": {
+      "name": "Statistical Analysis",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/statistics/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/__init__.py",
+          "description": "Statistics Module for Principia Metaphysica v16",
+          "version": "1.0",
+          "lines": 26,
+          "size_kb": 0.65
+        },
+        {
+          "name": "example_integration.py",
+          "path": "simulations/v16/statistics/example_integration.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/example_integration.py",
+          "description": "Example: Integration of Covariance Analysis in PM Workflow",
+          "version": "1.0",
+          "lines": 278,
+          "size_kb": 10.73
+        },
+        {
+          "name": "rigor_covariance_v16_1.py",
+          "path": "simulations/v16/statistics/rigor_covariance_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/rigor_covariance_v16_1.py",
+          "description": "PRINCIPIA METAPHYSICA v16.1 - Rigorous Covariance Matrix Analysis",
+          "version": "16.1",
+          "lines": 1077,
+          "size_kb": 42.01
+        },
+        {
+          "name": "test_covariance_data.py",
+          "path": "simulations/v16/statistics/test_covariance_data.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/test_covariance_data.py",
+          "description": "Test script for covariance matrix data validation.",
+          "version": "1.0",
+          "lines": 131,
+          "size_kb": 4.74
+        }
+      ]
+    },
+    "v16/thermal": {
+      "name": "Thermal Physics",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/thermal/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/thermal/__init__.py",
+          "description": "Thermal Time simulations for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.15
+        },
+        {
+          "name": "thermal_time_v16_0.py",
+          "path": "simulations/v16/thermal/thermal_time_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/thermal/thermal_time_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Thermal Time Hypothesis",
+          "version": "16.0",
+          "lines": 578,
+          "size_kb": 22.73
+        }
+      ]
+    },
+    "v16/validation": {
+      "name": "Validation Suite",
+      "files": [
+        {
+          "name": "__init__.py",
+          "path": "simulations/v16/validation/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/__init__.py",
+          "description": "Principia Metaphysica v16 Validation Module",
+          "version": "1.0",
+          "lines": 21,
+          "size_kb": 0.57
+        },
+        {
+          "name": "example_usage.py",
+          "path": "simulations/v16/validation/example_usage.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/example_usage.py",
+          "description": "Example usage of RigorousValidatorV16_1",
+          "version": "1.0",
+          "lines": 140,
+          "size_kb": 5.62
+        },
+        {
+          "name": "rigorous_validator_v16_1.py",
+          "path": "simulations/v16/validation/rigorous_validator_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/rigorous_validator_v16_1.py",
+          "description": "PRINCIPIA METAPHYSICA v16.1 - Rigorous Validation Against Latest Observational Data",
+          "version": "16.1",
+          "lines": 988,
+          "size_kb": 39.88
+        }
+      ]
+    }
+  },
+  "file_tree": {
+    "baryogenesis_calculator.py": {
+      "name": "baryogenesis_calculator.py",
+      "path": "simulations/baryogenesis_calculator.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/baryogenesis_calculator.py",
+      "description": "Baryogenesis Calculator - Leptogenesis from G2 CP Violation",
+      "version": "1.0",
+      "lines": 334,
+      "size_kb": 10.81
+    },
+    "dm_direct_detection_limits.py": {
+      "name": "dm_direct_detection_limits.py",
+      "path": "simulations/dm_direct_detection_limits.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/dm_direct_detection_limits.py",
+      "description": "Dark Matter Direct Detection Limits",
+      "version": "1.0",
+      "lines": 300,
+      "size_kb": 9.78
+    },
+    "g2_dynamical_flow_v16_2.py": {
+      "name": "g2_dynamical_flow_v16_2.py",
+      "path": "simulations/g2_dynamical_flow_v16_2.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/g2_dynamical_flow_v16_2.py",
+      "description": "PRINCIPIA METAPHYSICA v16.2 - G₂ Dynamical Flow",
+      "version": "16.2",
+      "lines": 303,
+      "size_kb": 10.47
+    },
+    "generate_pm_plots_v16_1.py": {
+      "name": "generate_pm_plots_v16_1.py",
+      "path": "simulations/generate_pm_plots_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/generate_pm_plots_v16_1.py",
+      "description": "PM Publication Plots v16.1",
+      "version": "16.1",
+      "lines": 462,
+      "size_kb": 15.32
+    },
+    "geometric_anchors_v16_1.py": {
+      "name": "geometric_anchors_v16_1.py",
+      "path": "simulations/geometric_anchors_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/geometric_anchors_v16_1.py",
+      "description": "Geometric Anchors v16.1 - First Principles Parameter Derivation",
+      "version": "16.1",
+      "lines": 174,
+      "size_kb": 5.72
+    },
+    "global_validator.py": {
+      "name": "global_validator.py",
+      "path": "simulations/global_validator.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/global_validator.py",
+      "description": "Global Validator for Principia Metaphysica Simulation Outputs",
+      "version": "1.0",
+      "lines": 754,
+      "size_kb": 28.84
+    },
+    "hubble_tension_resolver_v16_1.py": {
+      "name": "hubble_tension_resolver_v16_1.py",
+      "path": "simulations/hubble_tension_resolver_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/hubble_tension_resolver_v16_1.py",
+      "description": "Hubble Tension Resolver v16.1",
+      "version": "16.1",
+      "lines": 206,
+      "size_kb": 7.66
+    },
+    "initialize_pm_framework.py": {
+      "name": "initialize_pm_framework.py",
+      "path": "simulations/initialize_pm_framework.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/initialize_pm_framework.py",
+      "description": "Principia Metaphysica Framework Initialization",
+      "version": "1.0",
+      "lines": 156,
+      "size_kb": 4.97
+    },
+    "kahler_metric_geometry.py": {
+      "name": "kahler_metric_geometry.py",
+      "path": "simulations/kahler_metric_geometry.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/kahler_metric_geometry.py",
+      "description": "Kahler Metric Geometry - Moduli Space Cross-Talk",
+      "version": "1.0",
+      "lines": 323,
+      "size_kb": 10.9
+    },
+    "neutrino_seesaw_solver.py": {
+      "name": "neutrino_seesaw_solver.py",
+      "path": "simulations/neutrino_seesaw_solver.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/neutrino_seesaw_solver.py",
+      "description": "Neutrino Seesaw Solver - Type-I Seesaw Mechanism",
+      "version": "1.0",
+      "lines": 317,
+      "size_kb": 10.35
+    },
+    "pm_config_v16_1.py": {
+      "name": "pm_config_v16_1.py",
+      "path": "simulations/pm_config_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/pm_config_v16_1.py",
+      "description": "PM Config v16.1 - High-Precision Simulation Configuration",
+      "version": "16.1",
+      "lines": 143,
+      "size_kb": 4.8
+    },
+    "post_processing.py": {
+      "name": "post_processing.py",
+      "path": "simulations/post_processing.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/post_processing.py",
+      "description": "Post-Processing Validation for Principia Metaphysica",
+      "version": "1.0",
+      "lines": 872,
+      "size_kb": 28.15
+    },
+    "publication_plotter.py": {
+      "name": "publication_plotter.py",
+      "path": "simulations/publication_plotter.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/publication_plotter.py",
+      "description": "Publication Plotter - High-Quality Scientific Graphics",
+      "version": "1.0",
+      "lines": 401,
+      "size_kb": 12.05
+    },
+    "quantum_decoherence_solver.py": {
+      "name": "quantum_decoherence_solver.py",
+      "path": "simulations/quantum_decoherence_solver.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/quantum_decoherence_solver.py",
+      "description": "Quantum Decoherence Solver - Thermal Noise and Topological Protection",
+      "version": "1.0",
+      "lines": 311,
+      "size_kb": 10.81
+    },
+    "renormalization_group_runner.py": {
+      "name": "renormalization_group_runner.py",
+      "path": "simulations/renormalization_group_runner.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/renormalization_group_runner.py",
+      "description": "Renormalization Group Runner - 3-Loop Beta Function Evolution",
+      "version": "1.0",
+      "lines": 298,
+      "size_kb": 10.89
+    },
+    "renormalization_group_runner_fixed.py": {
+      "name": "renormalization_group_runner_fixed.py",
+      "path": "simulations/renormalization_group_runner_fixed.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/renormalization_group_runner_fixed.py",
+      "description": "Renormalization Group Runner - FIXED VERSION - 2-Loop Beta Function Evolution",
+      "version": "1.0",
+      "lines": 370,
+      "size_kb": 13.03
+    },
+    "secrets_config.py": {
+      "name": "secrets_config.py",
+      "path": "simulations/secrets_config.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/secrets_config.py",
+      "description": "SECRETS CONFIGURATION - DO NOT COMMIT TO GIT",
+      "version": "1.0",
+      "lines": 27,
+      "size_kb": 0.83
+    },
+    "symbolic_lagrangian_bridge.py": {
+      "name": "symbolic_lagrangian_bridge.py",
+      "path": "simulations/symbolic_lagrangian_bridge.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/symbolic_lagrangian_bridge.py",
+      "description": "PRINCIPIA METAPHYSICA v16.1 - Symbolic Lagrangian Bridge",
+      "version": "1.0",
+      "lines": 458,
+      "size_kb": 17.01
+    },
+    "test_vacuum_stability_integration.py": {
+      "name": "test_vacuum_stability_integration.py",
+      "path": "simulations/test_vacuum_stability_integration.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/test_vacuum_stability_integration.py",
+      "description": "Test integration between vacuum_stability_monitor.py and vacuum_stability_derivations.py",
+      "version": "1.0",
+      "lines": 95,
+      "size_kb": 3.26
+    },
+    "vacuum_stability_monitor.py": {
+      "name": "vacuum_stability_monitor.py",
+      "path": "simulations/vacuum_stability_monitor.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/vacuum_stability_monitor.py",
+      "description": "Vacuum Stability Monitor - Coleman-De Luccia Instanton Analysis",
+      "version": "1.0",
+      "lines": 349,
+      "size_kb": 11.8
+    },
+    "validate_all.py": {
+      "name": "validate_all.py",
+      "path": "simulations/validate_all.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validate_all.py",
+      "description": "Principia Metaphysica - Comprehensive Validation Suite",
+      "version": "1.0",
+      "lines": 739,
+      "size_kb": 26.27
+    },
+    "validate_rg_ghost_sector.py": {
+      "name": "validate_rg_ghost_sector.py",
+      "path": "simulations/validate_rg_ghost_sector.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validate_rg_ghost_sector.py",
+      "description": "Validation Script for RG Ghost Sector Implementation",
+      "version": "1.0",
+      "lines": 380,
+      "size_kb": 13.52
+    },
+    "wolfram_cloud_audit.py": {
+      "name": "wolfram_cloud_audit.py",
+      "path": "simulations/wolfram_cloud_audit.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/wolfram_cloud_audit.py",
+      "description": "PRINCIPIA METAPHYSICA v16.2 - Wolfram Cloud Formal Audit",
+      "version": "1.0",
+      "lines": 446,
+      "size_kb": 14.81
+    },
+    "wolfram_validator_v16.py": {
+      "name": "wolfram_validator_v16.py",
+      "path": "simulations/wolfram_validator_v16.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/wolfram_validator_v16.py",
+      "description": "PRINCIPIA METAPHYSICA v16.1 - Wolfram Alpha Validation Framework",
+      "version": "16.0",
+      "lines": 513,
+      "size_kb": 17.27
+    },
+    "__init__.py": {
+      "name": "__init__.py",
+      "path": "simulations/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/__init__.py",
+      "description": "Principia Metaphysica Simulation Framework",
+      "version": "1.0",
+      "lines": 299,
+      "size_kb": 10.2
+    },
+    "base": {
+      "established.py": {
+        "name": "established.py",
+        "path": "simulations/base/established.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/established.py",
+        "description": "Established Physics Loader for Principia Metaphysica",
+        "version": "1.0",
+        "lines": 597,
+        "size_kb": 22.09
+      },
+      "formulas.py": {
+        "name": "formulas.py",
+        "path": "simulations/base/formulas.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/formulas.py",
+        "description": "Formula Registry for Principia Metaphysica",
+        "version": "1.0",
+        "lines": 380,
+        "size_kb": 14.3
+      },
+      "injector.py": {
+        "name": "injector.py",
+        "path": "simulations/base/injector.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/injector.py",
+        "description": "Injection Utilities",
+        "version": "1.0",
+        "lines": 249,
+        "size_kb": 6.81
+      },
+      "registry.py": {
+        "name": "registry.py",
+        "path": "simulations/base/registry.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/registry.py",
+        "description": "PMRegistry - Central Parameter, Formula, and Section Registry",
+        "version": "1.0",
+        "lines": 659,
+        "size_kb": 21.58
+      },
+      "schema.py": {
+        "name": "schema.py",
+        "path": "simulations/base/schema.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/schema.py",
+        "description": "Simulation Return Schema",
+        "version": "1.0",
+        "lines": 698,
+        "size_kb": 28.3
+      },
+      "sections.py": {
+        "name": "sections.py",
+        "path": "simulations/base/sections.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/sections.py",
+        "description": "Section Registry for Principia Metaphysica",
+        "version": "1.0",
+        "lines": 356,
+        "size_kb": 11.51
+      },
+      "simulation_base.py": {
+        "name": "simulation_base.py",
+        "path": "simulations/base/simulation_base.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/simulation_base.py",
+        "description": "Simulation Base Classes",
+        "version": "1.0",
+        "lines": 649,
+        "size_kb": 23.38
+      },
+      "validator.py": {
+        "name": "validator.py",
+        "path": "simulations/base/validator.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/validator.py",
+        "description": "Validation Utilities",
+        "version": "1.0",
+        "lines": 452,
+        "size_kb": 15.78
+      },
+      "__init__.py": {
+        "name": "__init__.py",
+        "path": "simulations/base/__init__.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/__init__.py",
+        "description": "Simulations Base Module",
+        "version": "1.0",
+        "lines": 112,
+        "size_kb": 2.46
+      }
+    },
+    "Constants": {
+      "extract_supplementary.py": {
+        "name": "extract_supplementary.py",
+        "path": "simulations/Constants/extract_supplementary.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/extract_supplementary.py",
+        "description": "Extract Supplementary Content to JSON",
+        "version": "1.0",
+        "lines": 315,
+        "size_kb": 12.25
+      },
+      "generate_simulations_index.py": {
+        "name": "generate_simulations_index.py",
+        "path": "simulations/Constants/generate_simulations_index.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/generate_simulations_index.py",
+        "description": "PRINCIPIA METAPHYSICA - Simulations Index Generator",
+        "version": "1.0",
+        "lines": 280,
+        "size_kb": 9.81
+      },
+      "section_schema.py": {
+        "name": "section_schema.py",
+        "path": "simulations/Constants/section_schema.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/section_schema.py",
+        "description": "Principia Metaphysica - Section JSON Schema",
+        "version": "1.0",
+        "lines": 157,
+        "size_kb": 6.36
+      },
+      "split_theory_output.py": {
+        "name": "split_theory_output.py",
+        "path": "simulations/Constants/split_theory_output.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/split_theory_output.py",
+        "description": "Split theory_output.json into Cacheable Components",
+        "version": "1.0",
+        "lines": 158,
+        "size_kb": 5.93
+      },
+      "ad-hoc": {
+        "add_missing_params.py": {
+          "name": "add_missing_params.py",
+          "path": "simulations/Constants/ad-hoc/add_missing_params.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/add_missing_params.py",
+          "description": "Add Missing Parameters to theory_output.json",
+          "version": "1.0",
+          "lines": 362,
+          "size_kb": 11.34
+        },
+        "html_to_section_json.py": {
+          "name": "html_to_section_json.py",
+          "path": "simulations/Constants/ad-hoc/html_to_section_json.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/html_to_section_json.py",
+          "description": "HTML to Section JSON Converter",
+          "version": "1.0",
+          "lines": 181,
+          "size_kb": 6.13
+        },
+        "merge_sections_to_theory.py": {
+          "name": "merge_sections_to_theory.py",
+          "path": "simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+          "description": "Merge Section JSONs into theory_output.json",
+          "version": "1.0",
+          "lines": 210,
+          "size_kb": 7.94
+        },
+        "update_sections_metadata.py": {
+          "name": "update_sections_metadata.py",
+          "path": "simulations/Constants/ad-hoc/update_sections_metadata.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/update_sections_metadata.py",
+          "description": "Update sections metadata in theory_output.json",
+          "version": "1.0",
+          "lines": 338,
+          "size_kb": 11.24
+        },
+        "update_values.py": {
+          "name": "update_values.py",
+          "path": "simulations/Constants/ad-hoc/update_values.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/update_values.py",
+          "description": "Helper script to update the gauge unification values in the HTML file",
+          "version": "1.0",
+          "lines": 32,
+          "size_kb": 1.19
+        }
+      }
+    },
+    "data": {
+      "experimental_data_loader.py": {
+        "name": "experimental_data_loader.py",
+        "path": "simulations/data/experimental_data_loader.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/data/experimental_data_loader.py",
+        "description": "Experimental Data Loader for Principia Metaphysica",
+        "version": "1.0",
+        "lines": 434,
+        "size_kb": 14.97
+      }
+    },
+    "derivations": {
+      "baryogenesis_derivations.py": {
+        "name": "baryogenesis_derivations.py",
+        "path": "simulations/derivations/baryogenesis_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/baryogenesis_derivations.py",
+        "description": "Baryogenesis Derivations - Wolfram Alpha Chain for Leptogenesis",
+        "version": "1.0",
+        "lines": 807,
+        "size_kb": 29.34
+      },
+      "cosmology_derivations.py": {
+        "name": "cosmology_derivations.py",
+        "path": "simulations/derivations/cosmology_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/cosmology_derivations.py",
+        "description": "COSMOLOGY DERIVATION CHAIN - Principia Metaphysica",
+        "version": "1.0",
+        "lines": 868,
+        "size_kb": 29.42
+      },
+      "dark_matter_derivations.py": {
+        "name": "dark_matter_derivations.py",
+        "path": "simulations/derivations/dark_matter_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/dark_matter_derivations.py",
+        "description": "Dark Matter Derivations - Wolfram Alpha Chain for Mirror Sector DM",
+        "version": "1.0",
+        "lines": 604,
+        "size_kb": 23.88
+      },
+      "fermion_derivations.py": {
+        "name": "fermion_derivations.py",
+        "path": "simulations/derivations/fermion_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/fermion_derivations.py",
+        "description": "Fermion Sector Wolfram Alpha Derivation Chain",
+        "version": "1.0",
+        "lines": 928,
+        "size_kb": 32.7
+      },
+      "g2_geometry_derivations.py": {
+        "name": "g2_geometry_derivations.py",
+        "path": "simulations/derivations/g2_geometry_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/g2_geometry_derivations.py",
+        "description": "PRINCIPIA METAPHYSICA - G₂ GEOMETRY DERIVATION CHAIN",
+        "version": "1.0",
+        "lines": 737,
+        "size_kb": 25.17
+      },
+      "gauge_derivations.py": {
+        "name": "gauge_derivations.py",
+        "path": "simulations/derivations/gauge_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/gauge_derivations.py",
+        "description": "GAUGE SECTOR DERIVATION CHAIN - Wolfram Alpha Validation",
+        "version": "1.0",
+        "lines": 565,
+        "size_kb": 22.5
+      },
+      "geometric_anchors_derivations.py": {
+        "name": "geometric_anchors_derivations.py",
+        "path": "simulations/derivations/geometric_anchors_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/geometric_anchors_derivations.py",
+        "description": "PRINCIPIA METAPHYSICA v16.2 - Geometric Anchors Derivation Chains",
+        "version": "1.0",
+        "lines": 822,
+        "size_kb": 30.84
+      },
+      "higgs_derivations.py": {
+        "name": "higgs_derivations.py",
+        "path": "simulations/derivations/higgs_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/higgs_derivations.py",
+        "description": "Higgs Sector Derivations - Wolfram Alpha Chain",
+        "version": "1.0",
+        "lines": 664,
+        "size_kb": 22.93
+      },
+      "master_action_derivations.py": {
+        "name": "master_action_derivations.py",
+        "path": "simulations/derivations/master_action_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/master_action_derivations.py",
+        "description": "Master Action Compactification Derivations",
+        "version": "1.0",
+        "lines": 1172,
+        "size_kb": 45.4
+      },
+      "neutrino_derivations.py": {
+        "name": "neutrino_derivations.py",
+        "path": "simulations/derivations/neutrino_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/neutrino_derivations.py",
+        "description": "PRINCIPIA METAPHYSICA - Neutrino Physics Wolfram Alpha Derivation Chain",
+        "version": "1.0",
+        "lines": 655,
+        "size_kb": 26.11
+      },
+      "quantum_bio_derivations.py": {
+        "name": "quantum_bio_derivations.py",
+        "path": "simulations/derivations/quantum_bio_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/quantum_bio_derivations.py",
+        "description": "Quantum Biology Derivations - Penrose-Hameroff Orch-OR Mechanism",
+        "version": "1.0",
+        "lines": 575,
+        "size_kb": 21.2
+      },
+      "test_baryogenesis_derivations.py": {
+        "name": "test_baryogenesis_derivations.py",
+        "path": "simulations/derivations/test_baryogenesis_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/test_baryogenesis_derivations.py",
+        "description": "Test Suite for Baryogenesis Derivations",
+        "version": "1.0",
+        "lines": 531,
+        "size_kb": 16.05
+      },
+      "vacuum_stability_derivations.py": {
+        "name": "vacuum_stability_derivations.py",
+        "path": "simulations/derivations/vacuum_stability_derivations.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/vacuum_stability_derivations.py",
+        "description": "VACUUM STABILITY DERIVATIONS - Wolfram Alpha Integration",
+        "version": "1.0",
+        "lines": 714,
+        "size_kb": 24.61
+      },
+      "validate_chain.py": {
+        "name": "validate_chain.py",
+        "path": "simulations/derivations/validate_chain.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_chain.py",
+        "description": "Validation Script for Cosmology Derivation Chain",
+        "version": "1.0",
+        "lines": 365,
+        "size_kb": 13.0
+      },
+      "validate_dark_matter.py": {
+        "name": "validate_dark_matter.py",
+        "path": "simulations/derivations/validate_dark_matter.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_dark_matter.py",
+        "description": "Dark Matter Derivation Validation Script",
+        "version": "1.0",
+        "lines": 150,
+        "size_kb": 5.21
+      },
+      "validate_geometric_anchors.py": {
+        "name": "validate_geometric_anchors.py",
+        "path": "simulations/derivations/validate_geometric_anchors.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_geometric_anchors.py",
+        "description": "Quick validation script for geometric anchors derivations.",
+        "version": "1.0",
+        "lines": 286,
+        "size_kb": 8.01
+      }
+    },
+    "ip": {
+      "discovery_hash_registry.py": {
+        "name": "discovery_hash_registry.py",
+        "path": "simulations/ip/discovery_hash_registry.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/discovery_hash_registry.py",
+        "description": "Discovery Hash Registry for Intellectual Property Protection",
+        "version": "1.0",
+        "lines": 445,
+        "size_kb": 19.13
+      },
+      "ip_protector_v16.py": {
+        "name": "ip_protector_v16.py",
+        "path": "simulations/ip/ip_protector_v16.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/ip_protector_v16.py",
+        "description": "IP Protection and Citation Manager for Principia Metaphysica v16.2",
+        "version": "16.0",
+        "lines": 412,
+        "size_kb": 12.93
+      },
+      "verify_hashes.py": {
+        "name": "verify_hashes.py",
+        "path": "simulations/ip/verify_hashes.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/verify_hashes.py",
+        "description": "Verification script for discovery hash registry.",
+        "version": "1.0",
+        "lines": 94,
+        "size_kb": 2.75
+      },
+      "__init__.py": {
+        "name": "__init__.py",
+        "path": "simulations/ip/__init__.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/__init__.py",
+        "description": "Intellectual Property Protection Module",
+        "version": "1.0",
+        "lines": 33,
+        "size_kb": 0.85
+      }
+    },
+    "reports": {
+      "report_generator_v16.py": {
+        "name": "report_generator_v16.py",
+        "path": "simulations/reports/report_generator_v16.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/reports/report_generator_v16.py",
+        "description": "Technical Summary Report Generator v16.0",
+        "version": "16.0",
+        "lines": 684,
+        "size_kb": 25.47
+      },
+      "test_report_generator.py": {
+        "name": "test_report_generator.py",
+        "path": "simulations/reports/test_report_generator.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/reports/test_report_generator.py",
+        "description": "Test Script for report_generator_v16.py",
+        "version": "1.0",
+        "lines": 227,
+        "size_kb": 6.42
+      }
+    },
+    "tests": {
+      "conftest.py": {
+        "name": "conftest.py",
+        "path": "simulations/tests/conftest.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/conftest.py",
+        "description": "Pytest Configuration for Principia Metaphysica Tests",
+        "version": "1.0",
+        "lines": 78,
+        "size_kb": 2.47
+      },
+      "test_data_loader.py": {
+        "name": "test_data_loader.py",
+        "path": "simulations/tests/test_data_loader.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_data_loader.py",
+        "description": "Comprehensive Unit Tests for ExperimentalDataLoader",
+        "version": "1.0",
+        "lines": 873,
+        "size_kb": 31.65
+      },
+      "test_gauge_invariance.py": {
+        "name": "test_gauge_invariance.py",
+        "path": "simulations/tests/test_gauge_invariance.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_gauge_invariance.py",
+        "description": "Gauge Invariance Tests for Principia Metaphysica Theory",
+        "version": "1.0",
+        "lines": 820,
+        "size_kb": 29.97
+      },
+      "test_registry.py": {
+        "name": "test_registry.py",
+        "path": "simulations/tests/test_registry.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_registry.py",
+        "description": "Comprehensive Unit Tests for PMRegistry",
+        "version": "1.0",
+        "lines": 878,
+        "size_kb": 31.68
+      },
+      "__init__.py": {
+        "name": "__init__.py",
+        "path": "simulations/tests/__init__.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/__init__.py",
+        "description": "Test suite for Principia Metaphysica simulation framework.",
+        "version": "1.0",
+        "lines": 5,
+        "size_kb": 0.13
+      }
+    },
+    "v16": {
+      "__init__.py": {
+        "name": "__init__.py",
+        "path": "simulations/v16/__init__.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/__init__.py",
+        "description": "Principia Metaphysica Simulations v16",
+        "version": "1.0",
+        "lines": 58,
+        "size_kb": 1.78
+      },
+      "appendices": {
+        "appendix_a_math_v16_0.py": {
+          "name": "appendix_a_math_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_a_math_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_a_math_v16_0.py",
+          "description": "Appendix A: Mathematical Foundations v16.0",
+          "version": "16.0",
+          "lines": 731,
+          "size_kb": 29.0
+        },
+        "appendix_b_methods_v16_0.py": {
+          "name": "appendix_b_methods_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_b_methods_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_b_methods_v16_0.py",
+          "description": "Appendix B: Computational Methods v16.0",
+          "version": "16.0",
+          "lines": 872,
+          "size_kb": 35.4
+        },
+        "appendix_c_derivations_v16_0.py": {
+          "name": "appendix_c_derivations_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+          "description": "Appendix C: Extended Derivations v16.0",
+          "version": "16.0",
+          "lines": 828,
+          "size_kb": 34.48
+        },
+        "appendix_d_tables_v16_0.py": {
+          "name": "appendix_d_tables_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_tables_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_d_tables_v16_0.py",
+          "description": "Appendix D: Parameter Tables v16.0",
+          "version": "16.0",
+          "lines": 562,
+          "size_kb": 28.74
+        },
+        "appendix_e_proton_v16_0.py": {
+          "name": "appendix_e_proton_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_e_proton_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_e_proton_v16_0.py",
+          "description": "Appendix E: Proton Decay Calculation v16.0",
+          "version": "16.0",
+          "lines": 462,
+          "size_kb": 18.23
+        },
+        "appendix_f_v16_0.py": {
+          "name": "appendix_f_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_f_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_f_v16_0.py",
+          "description": "Appendix F: Dimensional Decomposition v16.0",
+          "version": "16.0",
+          "lines": 488,
+          "size_kb": 18.38
+        },
+        "appendix_g_v16_0.py": {
+          "name": "appendix_g_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_g_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_g_v16_0.py",
+          "description": "Appendix G: Effective Torsion from Flux Quantization v16.0",
+          "version": "16.0",
+          "lines": 428,
+          "size_kb": 16.86
+        },
+        "appendix_h_v16_0.py": {
+          "name": "appendix_h_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_h_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_h_v16_0.py",
+          "description": "Appendix H: Proton Decay Branching Ratio v16.0",
+          "version": "16.0",
+          "lines": 359,
+          "size_kb": 13.3
+        },
+        "appendix_i_v16_0.py": {
+          "name": "appendix_i_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_i_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_i_v16_0.py",
+          "description": "Appendix I: Gravitational Wave Dispersion v16.0",
+          "version": "16.0",
+          "lines": 431,
+          "size_kb": 16.66
+        },
+        "appendix_j_v16_0.py": {
+          "name": "appendix_j_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_j_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_j_v16_0.py",
+          "description": "Appendix J: Monte Carlo Error Propagation v16.0",
+          "version": "16.0",
+          "lines": 520,
+          "size_kb": 20.63
+        },
+        "appendix_k_v16_0.py": {
+          "name": "appendix_k_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_k_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_k_v16_0.py",
+          "description": "Appendix K: Transparency Statement v16.0",
+          "version": "16.0",
+          "lines": 541,
+          "size_kb": 23.32
+        },
+        "appendix_l_v16_0.py": {
+          "name": "appendix_l_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_l_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_l_v16_0.py",
+          "description": "Appendix L: Complete PM Values Summary v16.0",
+          "version": "16.0",
+          "lines": 693,
+          "size_kb": 29.14
+        },
+        "appendix_m_v16_0.py": {
+          "name": "appendix_m_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_m_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_m_v16_0.py",
+          "description": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum v16.0",
+          "version": "16.0",
+          "lines": 728,
+          "size_kb": 31.52
+        },
+        "appendix_n_v16_0.py": {
+          "name": "appendix_n_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_n_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_n_v16_0.py",
+          "description": "Appendix N: G2 Topology Landscape v16.0",
+          "version": "16.0",
+          "lines": 537,
+          "size_kb": 19.88
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/appendices/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/__init__.py",
+          "description": "Principia Metaphysica v16 - Appendices Module",
+          "version": "1.0",
+          "lines": 192,
+          "size_kb": 6.98
+        }
+      },
+      "cosmology": {
+        "cosmology_intro_v16_0.py": {
+          "name": "cosmology_intro_v16_0.py",
+          "path": "simulations/v16/cosmology/cosmology_intro_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/cosmology_intro_v16_0.py",
+          "description": "Cosmological Framework Introduction v16.0",
+          "version": "16.0",
+          "lines": 850,
+          "size_kb": 39.59
+        },
+        "dark_energy_v16_0.py": {
+          "name": "dark_energy_v16_0.py",
+          "path": "simulations/v16/cosmology/dark_energy_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/dark_energy_v16_0.py",
+          "description": "Dark Energy from Dimensional Reduction v16.0",
+          "version": "16.0",
+          "lines": 964,
+          "size_kb": 41.85
+        },
+        "jacobian_mathematical_validation.py": {
+          "name": "jacobian_mathematical_validation.py",
+          "path": "simulations/v16/cosmology/jacobian_mathematical_validation.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/jacobian_mathematical_validation.py",
+          "description": "Mathematical Validation of G2 Moduli Space Jacobian",
+          "version": "1.0",
+          "lines": 404,
+          "size_kb": 14.47
+        },
+        "multi_sector_v16_0.py": {
+          "name": "multi_sector_v16_0.py",
+          "path": "simulations/v16/cosmology/multi_sector_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/multi_sector_v16_0.py",
+          "description": "Multi-Sector Cosmology v16.0",
+          "version": "16.0",
+          "lines": 1023,
+          "size_kb": 44.03
+        },
+        "s8_suppression_v16_1.py": {
+          "name": "s8_suppression_v16_1.py",
+          "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/s8_suppression_v16_1.py",
+          "description": "S8 Tension Resolution via Dynamical Dark Energy v16.1",
+          "version": "16.1",
+          "lines": 1156,
+          "size_kb": 47.44
+        },
+        "test_complete_validation.py": {
+          "name": "test_complete_validation.py",
+          "path": "simulations/v16/cosmology/test_complete_validation.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/test_complete_validation.py",
+          "description": "Complete Validation Test Suite for Multi-Sector Jacobian Implementation",
+          "version": "1.0",
+          "lines": 298,
+          "size_kb": 9.31
+        },
+        "test_jacobian_analysis.py": {
+          "name": "test_jacobian_analysis.py",
+          "path": "simulations/v16/cosmology/test_jacobian_analysis.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/test_jacobian_analysis.py",
+          "description": "Test and analyze different Jacobian formulations for G2 moduli space sampling.",
+          "version": "1.0",
+          "lines": 388,
+          "size_kb": 13.7
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/cosmology/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/__init__.py",
+          "description": "Cosmology Simulations v16",
+          "version": "1.0",
+          "lines": 23,
+          "size_kb": 0.77
+        }
+      },
+      "discussion": {
+        "discussion_v16_0.py": {
+          "name": "discussion_v16_0.py",
+          "path": "simulations/v16/discussion/discussion_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/discussion/discussion_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Discussion, Conclusions, and Theory Analysis",
+          "version": "16.0",
+          "lines": 1386,
+          "size_kb": 64.37
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/discussion/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/discussion/__init__.py",
+          "description": "Discussion section for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.14
+        }
+      },
+      "fermion": {
+        "chirality_v16_0.py": {
+          "name": "chirality_v16_0.py",
+          "path": "simulations/v16/fermion/chirality_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/chirality_v16_0.py",
+          "description": "Chirality and Spinorial Structure v16.0",
+          "version": "16.0",
+          "lines": 1129,
+          "size_kb": 51.51
+        },
+        "ckm_matrix_v16_0.py": {
+          "name": "ckm_matrix_v16_0.py",
+          "path": "simulations/v16/fermion/ckm_matrix_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/ckm_matrix_v16_0.py",
+          "description": "CKM Matrix and Quark Mixing v16.0",
+          "version": "16.0",
+          "lines": 1219,
+          "size_kb": 53.74
+        },
+        "fermion_generations_v16_0.py": {
+          "name": "fermion_generations_v16_0.py",
+          "path": "simulations/v16/fermion/fermion_generations_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/fermion_generations_v16_0.py",
+          "description": "Fermion Generations v16.0 - Three Generations from G2 Topology",
+          "version": "16.0",
+          "lines": 748,
+          "size_kb": 31.44
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/fermion/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/__init__.py",
+          "description": "Fermion Simulations v16",
+          "version": "1.0",
+          "lines": 19,
+          "size_kb": 0.7
+        }
+      },
+      "gauge": {
+        "gauge_unification_v16_0.py": {
+          "name": "gauge_unification_v16_0.py",
+          "path": "simulations/v16/gauge/gauge_unification_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/gauge/gauge_unification_v16_0.py",
+          "description": "Gauge Unification Simulation v16.0",
+          "version": "16.0",
+          "lines": 1055,
+          "size_kb": 43.65
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/gauge/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/gauge/__init__.py",
+          "description": "Gauge Simulations v16",
+          "version": "1.0",
+          "lines": 16,
+          "size_kb": 0.35
+        }
+      },
+      "geometric": {
+        "g2_geometry_v16_0.py": {
+          "name": "g2_geometry_v16_0.py",
+          "path": "simulations/v16/geometric/g2_geometry_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/g2_geometry_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - G2 Geometry and Topology",
+          "version": "16.0",
+          "lines": 1427,
+          "size_kb": 72.95
+        },
+        "g2_ricci_flow_rigorous.py": {
+          "name": "g2_ricci_flow_rigorous.py",
+          "path": "simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Rigorous G₂ Ricci Flow with Torsion Monitoring",
+          "version": "1.0",
+          "lines": 668,
+          "size_kb": 22.0
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/geometric/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/__init__.py",
+          "description": "Geometric Domain Simulations v16",
+          "version": "1.0",
+          "lines": 19,
+          "size_kb": 0.51
+        }
+      },
+      "higgs": {
+        "higgs_mass_v16_0.py": {
+          "name": "higgs_mass_v16_0.py",
+          "path": "simulations/v16/higgs/higgs_mass_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/higgs/higgs_mass_v16_0.py",
+          "description": "Higgs Mass Simulation v16.0",
+          "version": "16.0",
+          "lines": 858,
+          "size_kb": 35.54
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/higgs/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/higgs/__init__.py",
+          "description": "Higgs Simulations v16",
+          "version": "1.0",
+          "lines": 15,
+          "size_kb": 0.35
+        }
+      },
+      "introduction": {
+        "introduction_v16_0.py": {
+          "name": "introduction_v16_0.py",
+          "path": "simulations/v16/introduction/introduction_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/introduction/introduction_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Introduction",
+          "version": "16.0",
+          "lines": 986,
+          "size_kb": 52.99
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/introduction/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/introduction/__init__.py",
+          "description": "Introduction simulations for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.15
+        }
+      },
+      "neutrino": {
+        "neutrino_mixing_v16_0.py": {
+          "name": "neutrino_mixing_v16_0.py",
+          "path": "simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - PMNS Neutrino Mixing from G2 Geometry",
+          "version": "16.0",
+          "lines": 917,
+          "size_kb": 41.91
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/neutrino/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/neutrino/__init__.py",
+          "description": "Neutrino Simulations v16",
+          "version": "1.0",
+          "lines": 20,
+          "size_kb": 0.47
+        }
+      },
+      "pneuma": {
+        "pneuma_mechanism_v16_0.py": {
+          "name": "pneuma_mechanism_v16_0.py",
+          "path": "simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Pneuma Mechanism (Geometric Framework)",
+          "version": "16.0",
+          "lines": 1102,
+          "size_kb": 53.32
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/pneuma/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/pneuma/__init__.py",
+          "description": "Pneuma Simulations v16",
+          "version": "1.0",
+          "lines": 20,
+          "size_kb": 0.55
+        }
+      },
+      "predictions": {
+        "predictions_aggregator_v16_0.py": {
+          "name": "predictions_aggregator_v16_0.py",
+          "path": "simulations/v16/predictions/predictions_aggregator_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/predictions/predictions_aggregator_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Predictions Aggregator",
+          "version": "16.0",
+          "lines": 1183,
+          "size_kb": 58.15
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/predictions/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/predictions/__init__.py",
+          "description": "Predictions aggregator for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.17
+        }
+      },
+      "proton": {
+        "proton_decay_v16_0.py": {
+          "name": "proton_decay_v16_0.py",
+          "path": "simulations/v16/proton/proton_decay_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/proton/proton_decay_v16_0.py",
+          "description": "Proton Decay Simulation v16.0",
+          "version": "16.0",
+          "lines": 697,
+          "size_kb": 29.24
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/proton/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/proton/__init__.py",
+          "description": "Proton Decay Simulations v16",
+          "version": "1.0",
+          "lines": 15,
+          "size_kb": 0.39
+        }
+      },
+      "statistics": {
+        "example_integration.py": {
+          "name": "example_integration.py",
+          "path": "simulations/v16/statistics/example_integration.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/example_integration.py",
+          "description": "Example: Integration of Covariance Analysis in PM Workflow",
+          "version": "1.0",
+          "lines": 278,
+          "size_kb": 10.73
+        },
+        "rigor_covariance_v16_1.py": {
+          "name": "rigor_covariance_v16_1.py",
+          "path": "simulations/v16/statistics/rigor_covariance_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/rigor_covariance_v16_1.py",
+          "description": "PRINCIPIA METAPHYSICA v16.1 - Rigorous Covariance Matrix Analysis",
+          "version": "16.1",
+          "lines": 1077,
+          "size_kb": 42.01
+        },
+        "test_covariance_data.py": {
+          "name": "test_covariance_data.py",
+          "path": "simulations/v16/statistics/test_covariance_data.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/test_covariance_data.py",
+          "description": "Test script for covariance matrix data validation.",
+          "version": "1.0",
+          "lines": 131,
+          "size_kb": 4.74
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/statistics/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/__init__.py",
+          "description": "Statistics Module for Principia Metaphysica v16",
+          "version": "1.0",
+          "lines": 26,
+          "size_kb": 0.65
+        }
+      },
+      "thermal": {
+        "thermal_time_v16_0.py": {
+          "name": "thermal_time_v16_0.py",
+          "path": "simulations/v16/thermal/thermal_time_v16_0.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/thermal/thermal_time_v16_0.py",
+          "description": "PRINCIPIA METAPHYSICA v16.0 - Thermal Time Hypothesis",
+          "version": "16.0",
+          "lines": 578,
+          "size_kb": 22.73
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/thermal/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/thermal/__init__.py",
+          "description": "Thermal Time simulations for Principia Metaphysica v16.0",
+          "version": "1.0",
+          "lines": 7,
+          "size_kb": 0.15
+        }
+      },
+      "validation": {
+        "example_usage.py": {
+          "name": "example_usage.py",
+          "path": "simulations/v16/validation/example_usage.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/example_usage.py",
+          "description": "Example usage of RigorousValidatorV16_1",
+          "version": "1.0",
+          "lines": 140,
+          "size_kb": 5.62
+        },
+        "rigorous_validator_v16_1.py": {
+          "name": "rigorous_validator_v16_1.py",
+          "path": "simulations/v16/validation/rigorous_validator_v16_1.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/rigorous_validator_v16_1.py",
+          "description": "PRINCIPIA METAPHYSICA v16.1 - Rigorous Validation Against Latest Observational Data",
+          "version": "16.1",
+          "lines": 988,
+          "size_kb": 39.88
+        },
+        "__init__.py": {
+          "name": "__init__.py",
+          "path": "simulations/v16/validation/__init__.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/__init__.py",
+          "description": "Principia Metaphysica v16 Validation Module",
+          "version": "1.0",
+          "lines": 21,
+          "size_kb": 0.57
+        }
+      }
+    },
+    "validation": {
+      "add_simulation_links_to_theory.py": {
+        "name": "add_simulation_links_to_theory.py",
+        "path": "simulations/validation/add_simulation_links_to_theory.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/add_simulation_links_to_theory.py",
+        "description": "Add Simulation File Links to theory_output.json",
+        "version": "1.0",
+        "lines": 219,
+        "size_kb": 8.48
+      },
+      "validate_bidirectional_links.py": {
+        "name": "validate_bidirectional_links.py",
+        "path": "simulations/validation/validate_bidirectional_links.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_bidirectional_links.py",
+        "description": "Validate Bi-directional Links in theory_output.json",
+        "version": "1.0",
+        "lines": 301,
+        "size_kb": 10.67
+      },
+      "validate_bindings_final.py": {
+        "name": "validate_bindings_final.py",
+        "path": "simulations/validation/validate_bindings_final.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_bindings_final.py",
+        "description": "PM Binding Validation Script",
+        "version": "1.0",
+        "lines": 292,
+        "size_kb": 11.65
+      },
+      "validate_dynamic_vs_hardcoded.py": {
+        "name": "validate_dynamic_vs_hardcoded.py",
+        "path": "simulations/validation/validate_dynamic_vs_hardcoded.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_dynamic_vs_hardcoded.py",
+        "description": "Validation script to compare dynamic content from theory_output.json",
+        "version": "1.0",
+        "lines": 364,
+        "size_kb": 14.08
+      },
+      "validate_formula_lookups.py": {
+        "name": "validate_formula_lookups.py",
+        "path": "simulations/validation/validate_formula_lookups.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_formula_lookups.py",
+        "description": "Validate Formula and Parameter Lookups",
+        "version": "1.0",
+        "lines": 322,
+        "size_kb": 11.16
+      },
+      "validate_metadata_fix.py": {
+        "name": "validate_metadata_fix.py",
+        "path": "simulations/validation/validate_metadata_fix.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_metadata_fix.py",
+        "description": "Validate that all parameter metadata has been properly fixed.",
+        "version": "1.0",
+        "lines": 165,
+        "size_kb": 5.91
+      },
+      "validate_param_references.py": {
+        "name": "validate_param_references.py",
+        "path": "simulations/validation/validate_param_references.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_param_references.py",
+        "description": "Validate Parameter References in HTML Files",
+        "version": "1.0",
+        "lines": 407,
+        "size_kb": 13.91
+      },
+      "validate_section_references.py": {
+        "name": "validate_section_references.py",
+        "path": "simulations/validation/validate_section_references.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_section_references.py",
+        "description": "Validate that all formula and parameter references in sections actually exist",
+        "version": "1.0",
+        "lines": 154,
+        "size_kb": 5.14
+      },
+      "validate_simulation_chain.py": {
+        "name": "validate_simulation_chain.py",
+        "path": "simulations/validation/validate_simulation_chain.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_simulation_chain.py",
+        "description": "Principia Metaphysica - Simulation Chain Validator",
+        "version": "1.0",
+        "lines": 222,
+        "size_kb": 7.54
+      },
+      "validate_simulation_links.py": {
+        "name": "validate_simulation_links.py",
+        "path": "simulations/validation/validate_simulation_links.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_simulation_links.py",
+        "description": "Simulation Link Validation Script",
+        "version": "1.0",
+        "lines": 412,
+        "size_kb": 14.43
+      },
+      "validate_theory_output.py": {
+        "name": "validate_theory_output.py",
+        "path": "simulations/validation/validate_theory_output.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_theory_output.py",
+        "description": "Principia Metaphysica - Theory Output Validator",
+        "version": "1.0",
+        "lines": 569,
+        "size_kb": 22.6
+      },
+      "verify_content_migration.py": {
+        "name": "verify_content_migration.py",
+        "path": "simulations/validation/verify_content_migration.py",
+        "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/verify_content_migration.py",
+        "description": "Content Migration Verification Script",
+        "version": "1.0",
+        "lines": 408,
+        "size_kb": 14.47
+      },
+      "deprecated": {
+        "validate_content_migration.py": {
+          "name": "validate_content_migration.py",
+          "path": "simulations/validation/deprecated/validate_content_migration.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_content_migration.py",
+          "description": "Content Validation Script - Verify all old paper content exists in new JSON output",
+          "version": "1.0",
+          "lines": 334,
+          "size_kb": 12.24
+        },
+        "validate_json.py": {
+          "name": "validate_json.py",
+          "path": "simulations/validation/deprecated/validate_json.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_json.py",
+          "description": "Simulation module: validate_json",
+          "version": "1.0",
+          "lines": 15,
+          "size_kb": 0.57
+        },
+        "validate_pm_bindings.py": {
+          "name": "validate_pm_bindings.py",
+          "path": "simulations/validation/deprecated/validate_pm_bindings.py",
+          "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_pm_bindings.py",
+          "description": "# PM Binding Validation Report",
+          "version": "1.0",
+          "lines": 175,
+          "size_kb": 6.96
+        }
+      }
+    }
+  },
+  "all_files": [
+    {
+      "name": "add_missing_params.py",
+      "path": "simulations/Constants/ad-hoc/add_missing_params.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/add_missing_params.py",
+      "description": "Add Missing Parameters to theory_output.json",
+      "version": "1.0",
+      "lines": 362,
+      "size_kb": 11.34
+    },
+    {
+      "name": "html_to_section_json.py",
+      "path": "simulations/Constants/ad-hoc/html_to_section_json.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/html_to_section_json.py",
+      "description": "HTML to Section JSON Converter",
+      "version": "1.0",
+      "lines": 181,
+      "size_kb": 6.13
+    },
+    {
+      "name": "merge_sections_to_theory.py",
+      "path": "simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/merge_sections_to_theory.py",
+      "description": "Merge Section JSONs into theory_output.json",
+      "version": "1.0",
+      "lines": 210,
+      "size_kb": 7.94
+    },
+    {
+      "name": "update_sections_metadata.py",
+      "path": "simulations/Constants/ad-hoc/update_sections_metadata.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/update_sections_metadata.py",
+      "description": "Update sections metadata in theory_output.json",
+      "version": "1.0",
+      "lines": 338,
+      "size_kb": 11.24
+    },
+    {
+      "name": "update_values.py",
+      "path": "simulations/Constants/ad-hoc/update_values.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/ad-hoc/update_values.py",
+      "description": "Helper script to update the gauge unification values in the HTML file",
+      "version": "1.0",
+      "lines": 32,
+      "size_kb": 1.19
+    },
+    {
+      "name": "extract_supplementary.py",
+      "path": "simulations/Constants/extract_supplementary.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/extract_supplementary.py",
+      "description": "Extract Supplementary Content to JSON",
+      "version": "1.0",
+      "lines": 315,
+      "size_kb": 12.25
+    },
+    {
+      "name": "generate_simulations_index.py",
+      "path": "simulations/Constants/generate_simulations_index.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/generate_simulations_index.py",
+      "description": "PRINCIPIA METAPHYSICA - Simulations Index Generator",
+      "version": "1.0",
+      "lines": 280,
+      "size_kb": 9.81
+    },
+    {
+      "name": "section_schema.py",
+      "path": "simulations/Constants/section_schema.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/section_schema.py",
+      "description": "Principia Metaphysica - Section JSON Schema",
+      "version": "1.0",
+      "lines": 157,
+      "size_kb": 6.36
+    },
+    {
+      "name": "split_theory_output.py",
+      "path": "simulations/Constants/split_theory_output.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/Constants/split_theory_output.py",
+      "description": "Split theory_output.json into Cacheable Components",
+      "version": "1.0",
+      "lines": 158,
+      "size_kb": 5.93
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/__init__.py",
+      "description": "Principia Metaphysica Simulation Framework",
+      "version": "1.0",
+      "lines": 299,
+      "size_kb": 10.2
+    },
+    {
+      "name": "baryogenesis_calculator.py",
+      "path": "simulations/baryogenesis_calculator.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/baryogenesis_calculator.py",
+      "description": "Baryogenesis Calculator - Leptogenesis from G2 CP Violation",
+      "version": "1.0",
+      "lines": 334,
+      "size_kb": 10.81
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/base/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/__init__.py",
+      "description": "Simulations Base Module",
+      "version": "1.0",
+      "lines": 112,
+      "size_kb": 2.46
+    },
+    {
+      "name": "established.py",
+      "path": "simulations/base/established.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/established.py",
+      "description": "Established Physics Loader for Principia Metaphysica",
+      "version": "1.0",
+      "lines": 597,
+      "size_kb": 22.09
+    },
+    {
+      "name": "formulas.py",
+      "path": "simulations/base/formulas.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/formulas.py",
+      "description": "Formula Registry for Principia Metaphysica",
+      "version": "1.0",
+      "lines": 380,
+      "size_kb": 14.3
+    },
+    {
+      "name": "injector.py",
+      "path": "simulations/base/injector.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/injector.py",
+      "description": "Injection Utilities",
+      "version": "1.0",
+      "lines": 249,
+      "size_kb": 6.81
+    },
+    {
+      "name": "registry.py",
+      "path": "simulations/base/registry.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/registry.py",
+      "description": "PMRegistry - Central Parameter, Formula, and Section Registry",
+      "version": "1.0",
+      "lines": 659,
+      "size_kb": 21.58
+    },
+    {
+      "name": "schema.py",
+      "path": "simulations/base/schema.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/schema.py",
+      "description": "Simulation Return Schema",
+      "version": "1.0",
+      "lines": 698,
+      "size_kb": 28.3
+    },
+    {
+      "name": "sections.py",
+      "path": "simulations/base/sections.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/sections.py",
+      "description": "Section Registry for Principia Metaphysica",
+      "version": "1.0",
+      "lines": 356,
+      "size_kb": 11.51
+    },
+    {
+      "name": "simulation_base.py",
+      "path": "simulations/base/simulation_base.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/simulation_base.py",
+      "description": "Simulation Base Classes",
+      "version": "1.0",
+      "lines": 649,
+      "size_kb": 23.38
+    },
+    {
+      "name": "validator.py",
+      "path": "simulations/base/validator.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/base/validator.py",
+      "description": "Validation Utilities",
+      "version": "1.0",
+      "lines": 452,
+      "size_kb": 15.78
+    },
+    {
+      "name": "experimental_data_loader.py",
+      "path": "simulations/data/experimental_data_loader.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/data/experimental_data_loader.py",
+      "description": "Experimental Data Loader for Principia Metaphysica",
+      "version": "1.0",
+      "lines": 434,
+      "size_kb": 14.97
+    },
+    {
+      "name": "baryogenesis_derivations.py",
+      "path": "simulations/derivations/baryogenesis_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/baryogenesis_derivations.py",
+      "description": "Baryogenesis Derivations - Wolfram Alpha Chain for Leptogenesis",
+      "version": "1.0",
+      "lines": 807,
+      "size_kb": 29.34
+    },
+    {
+      "name": "cosmology_derivations.py",
+      "path": "simulations/derivations/cosmology_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/cosmology_derivations.py",
+      "description": "COSMOLOGY DERIVATION CHAIN - Principia Metaphysica",
+      "version": "1.0",
+      "lines": 868,
+      "size_kb": 29.42
+    },
+    {
+      "name": "dark_matter_derivations.py",
+      "path": "simulations/derivations/dark_matter_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/dark_matter_derivations.py",
+      "description": "Dark Matter Derivations - Wolfram Alpha Chain for Mirror Sector DM",
+      "version": "1.0",
+      "lines": 604,
+      "size_kb": 23.88
+    },
+    {
+      "name": "fermion_derivations.py",
+      "path": "simulations/derivations/fermion_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/fermion_derivations.py",
+      "description": "Fermion Sector Wolfram Alpha Derivation Chain",
+      "version": "1.0",
+      "lines": 928,
+      "size_kb": 32.7
+    },
+    {
+      "name": "g2_geometry_derivations.py",
+      "path": "simulations/derivations/g2_geometry_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/g2_geometry_derivations.py",
+      "description": "PRINCIPIA METAPHYSICA - G₂ GEOMETRY DERIVATION CHAIN",
+      "version": "1.0",
+      "lines": 737,
+      "size_kb": 25.17
+    },
+    {
+      "name": "gauge_derivations.py",
+      "path": "simulations/derivations/gauge_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/gauge_derivations.py",
+      "description": "GAUGE SECTOR DERIVATION CHAIN - Wolfram Alpha Validation",
+      "version": "1.0",
+      "lines": 565,
+      "size_kb": 22.5
+    },
+    {
+      "name": "geometric_anchors_derivations.py",
+      "path": "simulations/derivations/geometric_anchors_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/geometric_anchors_derivations.py",
+      "description": "PRINCIPIA METAPHYSICA v16.2 - Geometric Anchors Derivation Chains",
+      "version": "1.0",
+      "lines": 822,
+      "size_kb": 30.84
+    },
+    {
+      "name": "higgs_derivations.py",
+      "path": "simulations/derivations/higgs_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/higgs_derivations.py",
+      "description": "Higgs Sector Derivations - Wolfram Alpha Chain",
+      "version": "1.0",
+      "lines": 664,
+      "size_kb": 22.93
+    },
+    {
+      "name": "master_action_derivations.py",
+      "path": "simulations/derivations/master_action_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/master_action_derivations.py",
+      "description": "Master Action Compactification Derivations",
+      "version": "1.0",
+      "lines": 1172,
+      "size_kb": 45.4
+    },
+    {
+      "name": "neutrino_derivations.py",
+      "path": "simulations/derivations/neutrino_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/neutrino_derivations.py",
+      "description": "PRINCIPIA METAPHYSICA - Neutrino Physics Wolfram Alpha Derivation Chain",
+      "version": "1.0",
+      "lines": 655,
+      "size_kb": 26.11
+    },
+    {
+      "name": "quantum_bio_derivations.py",
+      "path": "simulations/derivations/quantum_bio_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/quantum_bio_derivations.py",
+      "description": "Quantum Biology Derivations - Penrose-Hameroff Orch-OR Mechanism",
+      "version": "1.0",
+      "lines": 575,
+      "size_kb": 21.2
+    },
+    {
+      "name": "test_baryogenesis_derivations.py",
+      "path": "simulations/derivations/test_baryogenesis_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/test_baryogenesis_derivations.py",
+      "description": "Test Suite for Baryogenesis Derivations",
+      "version": "1.0",
+      "lines": 531,
+      "size_kb": 16.05
+    },
+    {
+      "name": "vacuum_stability_derivations.py",
+      "path": "simulations/derivations/vacuum_stability_derivations.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/vacuum_stability_derivations.py",
+      "description": "VACUUM STABILITY DERIVATIONS - Wolfram Alpha Integration",
+      "version": "1.0",
+      "lines": 714,
+      "size_kb": 24.61
+    },
+    {
+      "name": "validate_chain.py",
+      "path": "simulations/derivations/validate_chain.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_chain.py",
+      "description": "Validation Script for Cosmology Derivation Chain",
+      "version": "1.0",
+      "lines": 365,
+      "size_kb": 13.0
+    },
+    {
+      "name": "validate_dark_matter.py",
+      "path": "simulations/derivations/validate_dark_matter.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_dark_matter.py",
+      "description": "Dark Matter Derivation Validation Script",
+      "version": "1.0",
+      "lines": 150,
+      "size_kb": 5.21
+    },
+    {
+      "name": "validate_geometric_anchors.py",
+      "path": "simulations/derivations/validate_geometric_anchors.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/derivations/validate_geometric_anchors.py",
+      "description": "Quick validation script for geometric anchors derivations.",
+      "version": "1.0",
+      "lines": 286,
+      "size_kb": 8.01
+    },
+    {
+      "name": "dm_direct_detection_limits.py",
+      "path": "simulations/dm_direct_detection_limits.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/dm_direct_detection_limits.py",
+      "description": "Dark Matter Direct Detection Limits",
+      "version": "1.0",
+      "lines": 300,
+      "size_kb": 9.78
+    },
+    {
+      "name": "g2_dynamical_flow_v16_2.py",
+      "path": "simulations/g2_dynamical_flow_v16_2.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/g2_dynamical_flow_v16_2.py",
+      "description": "PRINCIPIA METAPHYSICA v16.2 - G₂ Dynamical Flow",
+      "version": "16.2",
+      "lines": 303,
+      "size_kb": 10.47
+    },
+    {
+      "name": "generate_pm_plots_v16_1.py",
+      "path": "simulations/generate_pm_plots_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/generate_pm_plots_v16_1.py",
+      "description": "PM Publication Plots v16.1",
+      "version": "16.1",
+      "lines": 462,
+      "size_kb": 15.32
+    },
+    {
+      "name": "geometric_anchors_v16_1.py",
+      "path": "simulations/geometric_anchors_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/geometric_anchors_v16_1.py",
+      "description": "Geometric Anchors v16.1 - First Principles Parameter Derivation",
+      "version": "16.1",
+      "lines": 174,
+      "size_kb": 5.72
+    },
+    {
+      "name": "global_validator.py",
+      "path": "simulations/global_validator.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/global_validator.py",
+      "description": "Global Validator for Principia Metaphysica Simulation Outputs",
+      "version": "1.0",
+      "lines": 754,
+      "size_kb": 28.84
+    },
+    {
+      "name": "hubble_tension_resolver_v16_1.py",
+      "path": "simulations/hubble_tension_resolver_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/hubble_tension_resolver_v16_1.py",
+      "description": "Hubble Tension Resolver v16.1",
+      "version": "16.1",
+      "lines": 206,
+      "size_kb": 7.66
+    },
+    {
+      "name": "initialize_pm_framework.py",
+      "path": "simulations/initialize_pm_framework.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/initialize_pm_framework.py",
+      "description": "Principia Metaphysica Framework Initialization",
+      "version": "1.0",
+      "lines": 156,
+      "size_kb": 4.97
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/ip/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/__init__.py",
+      "description": "Intellectual Property Protection Module",
+      "version": "1.0",
+      "lines": 33,
+      "size_kb": 0.85
+    },
+    {
+      "name": "discovery_hash_registry.py",
+      "path": "simulations/ip/discovery_hash_registry.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/discovery_hash_registry.py",
+      "description": "Discovery Hash Registry for Intellectual Property Protection",
+      "version": "1.0",
+      "lines": 445,
+      "size_kb": 19.13
+    },
+    {
+      "name": "ip_protector_v16.py",
+      "path": "simulations/ip/ip_protector_v16.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/ip_protector_v16.py",
+      "description": "IP Protection and Citation Manager for Principia Metaphysica v16.2",
+      "version": "16.0",
+      "lines": 412,
+      "size_kb": 12.93
+    },
+    {
+      "name": "verify_hashes.py",
+      "path": "simulations/ip/verify_hashes.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/ip/verify_hashes.py",
+      "description": "Verification script for discovery hash registry.",
+      "version": "1.0",
+      "lines": 94,
+      "size_kb": 2.75
+    },
+    {
+      "name": "kahler_metric_geometry.py",
+      "path": "simulations/kahler_metric_geometry.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/kahler_metric_geometry.py",
+      "description": "Kahler Metric Geometry - Moduli Space Cross-Talk",
+      "version": "1.0",
+      "lines": 323,
+      "size_kb": 10.9
+    },
+    {
+      "name": "neutrino_seesaw_solver.py",
+      "path": "simulations/neutrino_seesaw_solver.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/neutrino_seesaw_solver.py",
+      "description": "Neutrino Seesaw Solver - Type-I Seesaw Mechanism",
+      "version": "1.0",
+      "lines": 317,
+      "size_kb": 10.35
+    },
+    {
+      "name": "pm_config_v16_1.py",
+      "path": "simulations/pm_config_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/pm_config_v16_1.py",
+      "description": "PM Config v16.1 - High-Precision Simulation Configuration",
+      "version": "16.1",
+      "lines": 143,
+      "size_kb": 4.8
+    },
+    {
+      "name": "post_processing.py",
+      "path": "simulations/post_processing.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/post_processing.py",
+      "description": "Post-Processing Validation for Principia Metaphysica",
+      "version": "1.0",
+      "lines": 872,
+      "size_kb": 28.15
+    },
+    {
+      "name": "publication_plotter.py",
+      "path": "simulations/publication_plotter.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/publication_plotter.py",
+      "description": "Publication Plotter - High-Quality Scientific Graphics",
+      "version": "1.0",
+      "lines": 401,
+      "size_kb": 12.05
+    },
+    {
+      "name": "quantum_decoherence_solver.py",
+      "path": "simulations/quantum_decoherence_solver.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/quantum_decoherence_solver.py",
+      "description": "Quantum Decoherence Solver - Thermal Noise and Topological Protection",
+      "version": "1.0",
+      "lines": 311,
+      "size_kb": 10.81
+    },
+    {
+      "name": "renormalization_group_runner.py",
+      "path": "simulations/renormalization_group_runner.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/renormalization_group_runner.py",
+      "description": "Renormalization Group Runner - 3-Loop Beta Function Evolution",
+      "version": "1.0",
+      "lines": 298,
+      "size_kb": 10.89
+    },
+    {
+      "name": "renormalization_group_runner_fixed.py",
+      "path": "simulations/renormalization_group_runner_fixed.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/renormalization_group_runner_fixed.py",
+      "description": "Renormalization Group Runner - FIXED VERSION - 2-Loop Beta Function Evolution",
+      "version": "1.0",
+      "lines": 370,
+      "size_kb": 13.03
+    },
+    {
+      "name": "report_generator_v16.py",
+      "path": "simulations/reports/report_generator_v16.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/reports/report_generator_v16.py",
+      "description": "Technical Summary Report Generator v16.0",
+      "version": "16.0",
+      "lines": 684,
+      "size_kb": 25.47
+    },
+    {
+      "name": "test_report_generator.py",
+      "path": "simulations/reports/test_report_generator.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/reports/test_report_generator.py",
+      "description": "Test Script for report_generator_v16.py",
+      "version": "1.0",
+      "lines": 227,
+      "size_kb": 6.42
+    },
+    {
+      "name": "secrets_config.py",
+      "path": "simulations/secrets_config.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/secrets_config.py",
+      "description": "SECRETS CONFIGURATION - DO NOT COMMIT TO GIT",
+      "version": "1.0",
+      "lines": 27,
+      "size_kb": 0.83
+    },
+    {
+      "name": "symbolic_lagrangian_bridge.py",
+      "path": "simulations/symbolic_lagrangian_bridge.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/symbolic_lagrangian_bridge.py",
+      "description": "PRINCIPIA METAPHYSICA v16.1 - Symbolic Lagrangian Bridge",
+      "version": "1.0",
+      "lines": 458,
+      "size_kb": 17.01
+    },
+    {
+      "name": "test_vacuum_stability_integration.py",
+      "path": "simulations/test_vacuum_stability_integration.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/test_vacuum_stability_integration.py",
+      "description": "Test integration between vacuum_stability_monitor.py and vacuum_stability_derivations.py",
+      "version": "1.0",
+      "lines": 95,
+      "size_kb": 3.26
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/tests/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/__init__.py",
+      "description": "Test suite for Principia Metaphysica simulation framework.",
+      "version": "1.0",
+      "lines": 5,
+      "size_kb": 0.13
+    },
+    {
+      "name": "conftest.py",
+      "path": "simulations/tests/conftest.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/conftest.py",
+      "description": "Pytest Configuration for Principia Metaphysica Tests",
+      "version": "1.0",
+      "lines": 78,
+      "size_kb": 2.47
+    },
+    {
+      "name": "test_data_loader.py",
+      "path": "simulations/tests/test_data_loader.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_data_loader.py",
+      "description": "Comprehensive Unit Tests for ExperimentalDataLoader",
+      "version": "1.0",
+      "lines": 873,
+      "size_kb": 31.65
+    },
+    {
+      "name": "test_gauge_invariance.py",
+      "path": "simulations/tests/test_gauge_invariance.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_gauge_invariance.py",
+      "description": "Gauge Invariance Tests for Principia Metaphysica Theory",
+      "version": "1.0",
+      "lines": 820,
+      "size_kb": 29.97
+    },
+    {
+      "name": "test_registry.py",
+      "path": "simulations/tests/test_registry.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/tests/test_registry.py",
+      "description": "Comprehensive Unit Tests for PMRegistry",
+      "version": "1.0",
+      "lines": 878,
+      "size_kb": 31.68
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/__init__.py",
+      "description": "Principia Metaphysica Simulations v16",
+      "version": "1.0",
+      "lines": 58,
+      "size_kb": 1.78
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/appendices/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/__init__.py",
+      "description": "Principia Metaphysica v16 - Appendices Module",
+      "version": "1.0",
+      "lines": 192,
+      "size_kb": 6.98
+    },
+    {
+      "name": "appendix_a_math_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_a_math_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_a_math_v16_0.py",
+      "description": "Appendix A: Mathematical Foundations v16.0",
+      "version": "16.0",
+      "lines": 731,
+      "size_kb": 29.0
+    },
+    {
+      "name": "appendix_b_methods_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_b_methods_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_b_methods_v16_0.py",
+      "description": "Appendix B: Computational Methods v16.0",
+      "version": "16.0",
+      "lines": 872,
+      "size_kb": 35.4
+    },
+    {
+      "name": "appendix_c_derivations_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+      "description": "Appendix C: Extended Derivations v16.0",
+      "version": "16.0",
+      "lines": 828,
+      "size_kb": 34.48
+    },
+    {
+      "name": "appendix_d_tables_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_d_tables_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_d_tables_v16_0.py",
+      "description": "Appendix D: Parameter Tables v16.0",
+      "version": "16.0",
+      "lines": 562,
+      "size_kb": 28.74
+    },
+    {
+      "name": "appendix_e_proton_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_e_proton_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_e_proton_v16_0.py",
+      "description": "Appendix E: Proton Decay Calculation v16.0",
+      "version": "16.0",
+      "lines": 462,
+      "size_kb": 18.23
+    },
+    {
+      "name": "appendix_f_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_f_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_f_v16_0.py",
+      "description": "Appendix F: Dimensional Decomposition v16.0",
+      "version": "16.0",
+      "lines": 488,
+      "size_kb": 18.38
+    },
+    {
+      "name": "appendix_g_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_g_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_g_v16_0.py",
+      "description": "Appendix G: Effective Torsion from Flux Quantization v16.0",
+      "version": "16.0",
+      "lines": 428,
+      "size_kb": 16.86
+    },
+    {
+      "name": "appendix_h_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_h_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_h_v16_0.py",
+      "description": "Appendix H: Proton Decay Branching Ratio v16.0",
+      "version": "16.0",
+      "lines": 359,
+      "size_kb": 13.3
+    },
+    {
+      "name": "appendix_i_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_i_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_i_v16_0.py",
+      "description": "Appendix I: Gravitational Wave Dispersion v16.0",
+      "version": "16.0",
+      "lines": 431,
+      "size_kb": 16.66
+    },
+    {
+      "name": "appendix_j_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_j_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_j_v16_0.py",
+      "description": "Appendix J: Monte Carlo Error Propagation v16.0",
+      "version": "16.0",
+      "lines": 520,
+      "size_kb": 20.63
+    },
+    {
+      "name": "appendix_k_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_k_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_k_v16_0.py",
+      "description": "Appendix K: Transparency Statement v16.0",
+      "version": "16.0",
+      "lines": 541,
+      "size_kb": 23.32
+    },
+    {
+      "name": "appendix_l_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_l_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_l_v16_0.py",
+      "description": "Appendix L: Complete PM Values Summary v16.0",
+      "version": "16.0",
+      "lines": 693,
+      "size_kb": 29.14
+    },
+    {
+      "name": "appendix_m_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_m_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_m_v16_0.py",
+      "description": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum v16.0",
+      "version": "16.0",
+      "lines": 728,
+      "size_kb": 31.52
+    },
+    {
+      "name": "appendix_n_v16_0.py",
+      "path": "simulations/v16/appendices/appendix_n_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/appendices/appendix_n_v16_0.py",
+      "description": "Appendix N: G2 Topology Landscape v16.0",
+      "version": "16.0",
+      "lines": 537,
+      "size_kb": 19.88
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/cosmology/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/__init__.py",
+      "description": "Cosmology Simulations v16",
+      "version": "1.0",
+      "lines": 23,
+      "size_kb": 0.77
+    },
+    {
+      "name": "cosmology_intro_v16_0.py",
+      "path": "simulations/v16/cosmology/cosmology_intro_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/cosmology_intro_v16_0.py",
+      "description": "Cosmological Framework Introduction v16.0",
+      "version": "16.0",
+      "lines": 850,
+      "size_kb": 39.59
+    },
+    {
+      "name": "dark_energy_v16_0.py",
+      "path": "simulations/v16/cosmology/dark_energy_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/dark_energy_v16_0.py",
+      "description": "Dark Energy from Dimensional Reduction v16.0",
+      "version": "16.0",
+      "lines": 964,
+      "size_kb": 41.85
+    },
+    {
+      "name": "jacobian_mathematical_validation.py",
+      "path": "simulations/v16/cosmology/jacobian_mathematical_validation.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/jacobian_mathematical_validation.py",
+      "description": "Mathematical Validation of G2 Moduli Space Jacobian",
+      "version": "1.0",
+      "lines": 404,
+      "size_kb": 14.47
+    },
+    {
+      "name": "multi_sector_v16_0.py",
+      "path": "simulations/v16/cosmology/multi_sector_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/multi_sector_v16_0.py",
+      "description": "Multi-Sector Cosmology v16.0",
+      "version": "16.0",
+      "lines": 1023,
+      "size_kb": 44.03
+    },
+    {
+      "name": "s8_suppression_v16_1.py",
+      "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/s8_suppression_v16_1.py",
+      "description": "S8 Tension Resolution via Dynamical Dark Energy v16.1",
+      "version": "16.1",
+      "lines": 1156,
+      "size_kb": 47.44
+    },
+    {
+      "name": "test_complete_validation.py",
+      "path": "simulations/v16/cosmology/test_complete_validation.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/test_complete_validation.py",
+      "description": "Complete Validation Test Suite for Multi-Sector Jacobian Implementation",
+      "version": "1.0",
+      "lines": 298,
+      "size_kb": 9.31
+    },
+    {
+      "name": "test_jacobian_analysis.py",
+      "path": "simulations/v16/cosmology/test_jacobian_analysis.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/cosmology/test_jacobian_analysis.py",
+      "description": "Test and analyze different Jacobian formulations for G2 moduli space sampling.",
+      "version": "1.0",
+      "lines": 388,
+      "size_kb": 13.7
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/discussion/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/discussion/__init__.py",
+      "description": "Discussion section for Principia Metaphysica v16.0",
+      "version": "1.0",
+      "lines": 7,
+      "size_kb": 0.14
+    },
+    {
+      "name": "discussion_v16_0.py",
+      "path": "simulations/v16/discussion/discussion_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/discussion/discussion_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - Discussion, Conclusions, and Theory Analysis",
+      "version": "16.0",
+      "lines": 1386,
+      "size_kb": 64.37
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/fermion/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/__init__.py",
+      "description": "Fermion Simulations v16",
+      "version": "1.0",
+      "lines": 19,
+      "size_kb": 0.7
+    },
+    {
+      "name": "chirality_v16_0.py",
+      "path": "simulations/v16/fermion/chirality_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/chirality_v16_0.py",
+      "description": "Chirality and Spinorial Structure v16.0",
+      "version": "16.0",
+      "lines": 1129,
+      "size_kb": 51.51
+    },
+    {
+      "name": "ckm_matrix_v16_0.py",
+      "path": "simulations/v16/fermion/ckm_matrix_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/ckm_matrix_v16_0.py",
+      "description": "CKM Matrix and Quark Mixing v16.0",
+      "version": "16.0",
+      "lines": 1219,
+      "size_kb": 53.74
+    },
+    {
+      "name": "fermion_generations_v16_0.py",
+      "path": "simulations/v16/fermion/fermion_generations_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/fermion/fermion_generations_v16_0.py",
+      "description": "Fermion Generations v16.0 - Three Generations from G2 Topology",
+      "version": "16.0",
+      "lines": 748,
+      "size_kb": 31.44
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/gauge/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/gauge/__init__.py",
+      "description": "Gauge Simulations v16",
+      "version": "1.0",
+      "lines": 16,
+      "size_kb": 0.35
+    },
+    {
+      "name": "gauge_unification_v16_0.py",
+      "path": "simulations/v16/gauge/gauge_unification_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/gauge/gauge_unification_v16_0.py",
+      "description": "Gauge Unification Simulation v16.0",
+      "version": "16.0",
+      "lines": 1055,
+      "size_kb": 43.65
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/geometric/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/__init__.py",
+      "description": "Geometric Domain Simulations v16",
+      "version": "1.0",
+      "lines": 19,
+      "size_kb": 0.51
+    },
+    {
+      "name": "g2_geometry_v16_0.py",
+      "path": "simulations/v16/geometric/g2_geometry_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/g2_geometry_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - G2 Geometry and Topology",
+      "version": "16.0",
+      "lines": 1427,
+      "size_kb": 72.95
+    },
+    {
+      "name": "g2_ricci_flow_rigorous.py",
+      "path": "simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - Rigorous G₂ Ricci Flow with Torsion Monitoring",
+      "version": "1.0",
+      "lines": 668,
+      "size_kb": 22.0
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/higgs/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/higgs/__init__.py",
+      "description": "Higgs Simulations v16",
+      "version": "1.0",
+      "lines": 15,
+      "size_kb": 0.35
+    },
+    {
+      "name": "higgs_mass_v16_0.py",
+      "path": "simulations/v16/higgs/higgs_mass_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/higgs/higgs_mass_v16_0.py",
+      "description": "Higgs Mass Simulation v16.0",
+      "version": "16.0",
+      "lines": 858,
+      "size_kb": 35.54
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/introduction/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/introduction/__init__.py",
+      "description": "Introduction simulations for Principia Metaphysica v16.0",
+      "version": "1.0",
+      "lines": 7,
+      "size_kb": 0.15
+    },
+    {
+      "name": "introduction_v16_0.py",
+      "path": "simulations/v16/introduction/introduction_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/introduction/introduction_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - Introduction",
+      "version": "16.0",
+      "lines": 986,
+      "size_kb": 52.99
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/neutrino/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/neutrino/__init__.py",
+      "description": "Neutrino Simulations v16",
+      "version": "1.0",
+      "lines": 20,
+      "size_kb": 0.47
+    },
+    {
+      "name": "neutrino_mixing_v16_0.py",
+      "path": "simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - PMNS Neutrino Mixing from G2 Geometry",
+      "version": "16.0",
+      "lines": 917,
+      "size_kb": 41.91
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/pneuma/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/pneuma/__init__.py",
+      "description": "Pneuma Simulations v16",
+      "version": "1.0",
+      "lines": 20,
+      "size_kb": 0.55
+    },
+    {
+      "name": "pneuma_mechanism_v16_0.py",
+      "path": "simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - Pneuma Mechanism (Geometric Framework)",
+      "version": "16.0",
+      "lines": 1102,
+      "size_kb": 53.32
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/predictions/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/predictions/__init__.py",
+      "description": "Predictions aggregator for Principia Metaphysica v16.0",
+      "version": "1.0",
+      "lines": 7,
+      "size_kb": 0.17
+    },
+    {
+      "name": "predictions_aggregator_v16_0.py",
+      "path": "simulations/v16/predictions/predictions_aggregator_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/predictions/predictions_aggregator_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - Predictions Aggregator",
+      "version": "16.0",
+      "lines": 1183,
+      "size_kb": 58.15
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/proton/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/proton/__init__.py",
+      "description": "Proton Decay Simulations v16",
+      "version": "1.0",
+      "lines": 15,
+      "size_kb": 0.39
+    },
+    {
+      "name": "proton_decay_v16_0.py",
+      "path": "simulations/v16/proton/proton_decay_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/proton/proton_decay_v16_0.py",
+      "description": "Proton Decay Simulation v16.0",
+      "version": "16.0",
+      "lines": 697,
+      "size_kb": 29.24
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/statistics/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/__init__.py",
+      "description": "Statistics Module for Principia Metaphysica v16",
+      "version": "1.0",
+      "lines": 26,
+      "size_kb": 0.65
+    },
+    {
+      "name": "example_integration.py",
+      "path": "simulations/v16/statistics/example_integration.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/example_integration.py",
+      "description": "Example: Integration of Covariance Analysis in PM Workflow",
+      "version": "1.0",
+      "lines": 278,
+      "size_kb": 10.73
+    },
+    {
+      "name": "rigor_covariance_v16_1.py",
+      "path": "simulations/v16/statistics/rigor_covariance_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/rigor_covariance_v16_1.py",
+      "description": "PRINCIPIA METAPHYSICA v16.1 - Rigorous Covariance Matrix Analysis",
+      "version": "16.1",
+      "lines": 1077,
+      "size_kb": 42.01
+    },
+    {
+      "name": "test_covariance_data.py",
+      "path": "simulations/v16/statistics/test_covariance_data.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/statistics/test_covariance_data.py",
+      "description": "Test script for covariance matrix data validation.",
+      "version": "1.0",
+      "lines": 131,
+      "size_kb": 4.74
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/thermal/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/thermal/__init__.py",
+      "description": "Thermal Time simulations for Principia Metaphysica v16.0",
+      "version": "1.0",
+      "lines": 7,
+      "size_kb": 0.15
+    },
+    {
+      "name": "thermal_time_v16_0.py",
+      "path": "simulations/v16/thermal/thermal_time_v16_0.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/thermal/thermal_time_v16_0.py",
+      "description": "PRINCIPIA METAPHYSICA v16.0 - Thermal Time Hypothesis",
+      "version": "16.0",
+      "lines": 578,
+      "size_kb": 22.73
+    },
+    {
+      "name": "__init__.py",
+      "path": "simulations/v16/validation/__init__.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/__init__.py",
+      "description": "Principia Metaphysica v16 Validation Module",
+      "version": "1.0",
+      "lines": 21,
+      "size_kb": 0.57
+    },
+    {
+      "name": "example_usage.py",
+      "path": "simulations/v16/validation/example_usage.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/example_usage.py",
+      "description": "Example usage of RigorousValidatorV16_1",
+      "version": "1.0",
+      "lines": 140,
+      "size_kb": 5.62
+    },
+    {
+      "name": "rigorous_validator_v16_1.py",
+      "path": "simulations/v16/validation/rigorous_validator_v16_1.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/v16/validation/rigorous_validator_v16_1.py",
+      "description": "PRINCIPIA METAPHYSICA v16.1 - Rigorous Validation Against Latest Observational Data",
+      "version": "16.1",
+      "lines": 988,
+      "size_kb": 39.88
+    },
+    {
+      "name": "vacuum_stability_monitor.py",
+      "path": "simulations/vacuum_stability_monitor.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/vacuum_stability_monitor.py",
+      "description": "Vacuum Stability Monitor - Coleman-De Luccia Instanton Analysis",
+      "version": "1.0",
+      "lines": 349,
+      "size_kb": 11.8
+    },
+    {
+      "name": "validate_all.py",
+      "path": "simulations/validate_all.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validate_all.py",
+      "description": "Principia Metaphysica - Comprehensive Validation Suite",
+      "version": "1.0",
+      "lines": 739,
+      "size_kb": 26.27
+    },
+    {
+      "name": "validate_rg_ghost_sector.py",
+      "path": "simulations/validate_rg_ghost_sector.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validate_rg_ghost_sector.py",
+      "description": "Validation Script for RG Ghost Sector Implementation",
+      "version": "1.0",
+      "lines": 380,
+      "size_kb": 13.52
+    },
+    {
+      "name": "add_simulation_links_to_theory.py",
+      "path": "simulations/validation/add_simulation_links_to_theory.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/add_simulation_links_to_theory.py",
+      "description": "Add Simulation File Links to theory_output.json",
+      "version": "1.0",
+      "lines": 219,
+      "size_kb": 8.48
+    },
+    {
+      "name": "validate_content_migration.py",
+      "path": "simulations/validation/deprecated/validate_content_migration.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_content_migration.py",
+      "description": "Content Validation Script - Verify all old paper content exists in new JSON output",
+      "version": "1.0",
+      "lines": 334,
+      "size_kb": 12.24
+    },
+    {
+      "name": "validate_json.py",
+      "path": "simulations/validation/deprecated/validate_json.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_json.py",
+      "description": "Simulation module: validate_json",
+      "version": "1.0",
+      "lines": 15,
+      "size_kb": 0.57
+    },
+    {
+      "name": "validate_pm_bindings.py",
+      "path": "simulations/validation/deprecated/validate_pm_bindings.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/deprecated/validate_pm_bindings.py",
+      "description": "# PM Binding Validation Report",
+      "version": "1.0",
+      "lines": 175,
+      "size_kb": 6.96
+    },
+    {
+      "name": "validate_bidirectional_links.py",
+      "path": "simulations/validation/validate_bidirectional_links.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_bidirectional_links.py",
+      "description": "Validate Bi-directional Links in theory_output.json",
+      "version": "1.0",
+      "lines": 301,
+      "size_kb": 10.67
+    },
+    {
+      "name": "validate_bindings_final.py",
+      "path": "simulations/validation/validate_bindings_final.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_bindings_final.py",
+      "description": "PM Binding Validation Script",
+      "version": "1.0",
+      "lines": 292,
+      "size_kb": 11.65
+    },
+    {
+      "name": "validate_dynamic_vs_hardcoded.py",
+      "path": "simulations/validation/validate_dynamic_vs_hardcoded.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_dynamic_vs_hardcoded.py",
+      "description": "Validation script to compare dynamic content from theory_output.json",
+      "version": "1.0",
+      "lines": 364,
+      "size_kb": 14.08
+    },
+    {
+      "name": "validate_formula_lookups.py",
+      "path": "simulations/validation/validate_formula_lookups.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_formula_lookups.py",
+      "description": "Validate Formula and Parameter Lookups",
+      "version": "1.0",
+      "lines": 322,
+      "size_kb": 11.16
+    },
+    {
+      "name": "validate_metadata_fix.py",
+      "path": "simulations/validation/validate_metadata_fix.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_metadata_fix.py",
+      "description": "Validate that all parameter metadata has been properly fixed.",
+      "version": "1.0",
+      "lines": 165,
+      "size_kb": 5.91
+    },
+    {
+      "name": "validate_param_references.py",
+      "path": "simulations/validation/validate_param_references.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_param_references.py",
+      "description": "Validate Parameter References in HTML Files",
+      "version": "1.0",
+      "lines": 407,
+      "size_kb": 13.91
+    },
+    {
+      "name": "validate_section_references.py",
+      "path": "simulations/validation/validate_section_references.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_section_references.py",
+      "description": "Validate that all formula and parameter references in sections actually exist",
+      "version": "1.0",
+      "lines": 154,
+      "size_kb": 5.14
+    },
+    {
+      "name": "validate_simulation_chain.py",
+      "path": "simulations/validation/validate_simulation_chain.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_simulation_chain.py",
+      "description": "Principia Metaphysica - Simulation Chain Validator",
+      "version": "1.0",
+      "lines": 222,
+      "size_kb": 7.54
+    },
+    {
+      "name": "validate_simulation_links.py",
+      "path": "simulations/validation/validate_simulation_links.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_simulation_links.py",
+      "description": "Simulation Link Validation Script",
+      "version": "1.0",
+      "lines": 412,
+      "size_kb": 14.43
+    },
+    {
+      "name": "validate_theory_output.py",
+      "path": "simulations/validation/validate_theory_output.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/validate_theory_output.py",
+      "description": "Principia Metaphysica - Theory Output Validator",
+      "version": "1.0",
+      "lines": 569,
+      "size_kb": 22.6
+    },
+    {
+      "name": "verify_content_migration.py",
+      "path": "simulations/validation/verify_content_migration.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/validation/verify_content_migration.py",
+      "description": "Content Migration Verification Script",
+      "version": "1.0",
+      "lines": 408,
+      "size_kb": 14.47
+    },
+    {
+      "name": "wolfram_cloud_audit.py",
+      "path": "simulations/wolfram_cloud_audit.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/wolfram_cloud_audit.py",
+      "description": "PRINCIPIA METAPHYSICA v16.2 - Wolfram Cloud Formal Audit",
+      "version": "1.0",
+      "lines": 446,
+      "size_kb": 14.81
+    },
+    {
+      "name": "wolfram_validator_v16.py",
+      "path": "simulations/wolfram_validator_v16.py",
+      "github_url": "https://raw.githubusercontent.com/nshkrdotcom/PrincipiaMetaphysica/main/simulations/wolfram_validator_v16.py",
+      "description": "PRINCIPIA METAPHYSICA v16.1 - Wolfram Alpha Validation Framework",
+      "version": "16.0",
+      "lines": 513,
+      "size_kb": 17.27
+    }
+  ]
+}

@@ -6,6 +6,10 @@ This module defines the schema for section JSON files that will be
 merged into theory_output.json. Each section file follows this structure.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 SECTION_SCHEMA = {

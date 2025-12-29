@@ -14,6 +14,10 @@ FORMULA: s8-viscosity-suppression (Eq. 5.5)
 PARAMETER: cosmology.s8_predicted
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -293,8 +297,8 @@ if SCHEMA_AVAILABLE:
                     experimental_bound=0.76,
                     bound_type="measured",
                     bound_source="DES Y3 Weak Lensing"
-                ),
-                Parameter(
+            ),
+            Parameter(
                     path="cosmology.viscosity_coefficient",
                     name="G2 Viscosity Coefficient",
                     units="dimensionless",

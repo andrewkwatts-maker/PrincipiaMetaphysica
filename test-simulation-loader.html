@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulation Loader - Principia Metaphysica</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #1a1a1a;
+            color: #e0e0e0;
+        }
+        h1 {
+            color: #4CAF50;
+            border-bottom: 2px solid #4CAF50;
+            padding-bottom: 10px;
+        }
+        .stats {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+        }
+        .stat-item {
+            padding: 10px;
+            background: #333;
+            border-radius: 5px;
+        }
+        .stat-label {
+            color: #888;
+            font-size: 0.9em;
+        }
+        .stat-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .domains {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .domain {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #444;
+        }
+        .domain-header {
+            font-weight: bold;
+            color: #4CAF50;
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .domain-header:hover {
+            color: #66BB6A;
+        }
+        .file-count {
+            background: #444;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+        .file-list {
+            margin-top: 10px;
+            display: none;
+        }
+        .file-list.expanded {
+            display: block;
+        }
+        .file-item {
+            padding: 8px;
+            margin: 5px 0;
+            background: #333;
+            border-radius: 5px;
+            border-left: 3px solid #4CAF50;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .file-item:hover {
+            background: #3a3a3a;
+            border-left-color: #66BB6A;
+            transform: translateX(5px);
+        }
+        .file-name {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        .file-desc {
+            font-size: 0.85em;
+            color: #aaa;
+            margin-top: 3px;
+        }
+        .file-meta {
+            font-size: 0.75em;
+            color: #666;
+            margin-top: 3px;
+        }
+        .code-viewer {
+            display: none;
+            position: fixed;
+            top: 50px;
+            left: 50px;
+            right: 50px;
+            bottom: 50px;
+            background: #1a1a1a;
+            border: 2px solid #4CAF50;
+            border-radius: 8px;
+            padding: 20px;
+            overflow: auto;
+            z-index: 1000;
+        }
+        .code-viewer.visible {
+            display: block;
+        }
+        .code-viewer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #444;
+        }
+        .close-btn {
+            background: #f44336;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .close-btn:hover {
+            background: #d32f2f;
+        }
+        .code-content {
+            background: #2a2a2a;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        pre {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .loading {
+            color: #4CAF50;
+            font-style: italic;
+        }
+        .error {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>Principia Metaphysica - Simulation Index</h1>
+
+    <div class="stats" id="stats"></div>
+
+    <div class="domains" id="domains"></div>
+
+    <div class="code-viewer" id="codeViewer">
+        <div class="code-viewer-header">
+            <div>
+                <h2 id="viewerTitle">Loading...</h2>
+                <div id="viewerMeta"></div>
+            </div>
+            <button class="close-btn" onclick="closeViewer()">Close</button>
+        </div>
+        <div class="code-content">
+            <pre id="codeContent"></pre>
+        </div>
+    </div>
+
+    <script>
+        let indexData = null;
+
+        // Load the simulation index
+        async function loadIndex() {
+            try {
+                const response = await fetch('AutoGenerated/simulation_index.json');
+                indexData = await response.json();
+                displayStats();
+                displayDomains();
+            } catch (error) {
+                console.error('Error loading index:', error);
+                document.getElementById('stats').innerHTML =
+                    '<div class="error">Error loading simulation index</div>';
+            }
+        }
+
+        function displayStats() {
+            const stats = document.getElementById('stats');
+            const totalLines = Object.values(indexData.domains)
+                .flatMap(d => d.files)
+                .reduce((sum, f) => sum + f.lines, 0);
+            const totalSize = Object.values(indexData.domains)
+                .flatMap(d => d.files)
+                .reduce((sum, f) => sum + f.size_kb, 0);
+
+            stats.innerHTML = `
+                <div class="stat-item">
+                    <div class="stat-label">Total Files</div>
+                    <div class="stat-value">${indexData.total_files}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Domains</div>
+                    <div class="stat-value">${Object.keys(indexData.domains).length}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Total Lines</div>
+                    <div class="stat-value">${totalLines.toLocaleString()}</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Total Size</div>
+                    <div class="stat-value">${(totalSize / 1024).toFixed(2)} MB</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-label">Generated</div>
+                    <div class="stat-value">${indexData.generated}</div>
+                </div>
+            `;
+        }
+
+        function displayDomains() {
+            const domainsContainer = document.getElementById('domains');
+
+            // Sort domains by file count
+            const sortedDomains = Object.entries(indexData.domains)
+                .sort((a, b) => b[1].files.length - a[1].files.length);
+
+            domainsContainer.innerHTML = sortedDomains.map(([key, domain]) => `
+                <div class="domain">
+                    <div class="domain-header" onclick="toggleDomain('${key}')">
+                        <span>${domain.name}</span>
+                        <span class="file-count">${domain.files.length} files</span>
+                    </div>
+                    <div class="file-list" id="domain-${key.replace(/\//g, '-')}">
+                        ${domain.files.map(file => `
+                            <div class="file-item" onclick="loadFile('${file.github_url}', '${file.name}', ${file.lines}, ${file.size_kb})">
+                                <div class="file-name">${file.name}</div>
+                                <div class="file-desc">${file.description}</div>
+                                <div class="file-meta">v${file.version} • ${file.lines} lines • ${file.size_kb} KB</div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function toggleDomain(domainKey) {
+            const fileList = document.getElementById(`domain-${domainKey.replace(/\//g, '-')}`);
+            fileList.classList.toggle('expanded');
+        }
+
+        async function loadFile(githubUrl, fileName, lines, sizeKb) {
+            const viewer = document.getElementById('codeViewer');
+            const title = document.getElementById('viewerTitle');
+            const meta = document.getElementById('viewerMeta');
+            const content = document.getElementById('codeContent');
+
+            viewer.classList.add('visible');
+            title.textContent = fileName;
+            meta.innerHTML = `<span class="file-meta">${lines} lines • ${sizeKb} KB</span>`;
+            content.innerHTML = '<div class="loading">Loading file content...</div>';
+
+            try {
+                const response = await fetch(githubUrl);
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+                const code = await response.text();
+                content.textContent = code;
+            } catch (error) {
+                console.error('Error loading file:', error);
+                content.innerHTML = `<div class="error">Error loading file: ${error.message}</div>`;
+            }
+        }
+
+        function closeViewer() {
+            document.getElementById('codeViewer').classList.remove('visible');
+        }
+
+        // Load index on page load
+        loadIndex();
+
+        // Close viewer on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeViewer();
+            }
+        });
+    </script>
+</body>
+</html>

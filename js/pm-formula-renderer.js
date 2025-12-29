@@ -19,23 +19,43 @@
 (function(window) {
     'use strict';
 
-    // Wait for PM.formulas to be loaded
-    if (typeof PM === 'undefined') {
-        console.error('PM object not loaded! Include theory-constants-enhanced.js first.');
-        return;
-    }
+    // State management
+    const state = {
+        loadingFormulas: new Set(),
+        failedFormulas: new Set(),
+        eventListeners: new WeakMap() // Track listeners for cleanup
+    };
 
     const PMFormulaRenderer = {
         /**
-         * Get formula data from PM.formulas or FORMULA_REGISTRY
+         * Get formula data from multiple sources with fallback strategy
+         * @param {string} formulaId - Formula identifier
+         * @returns {Object|null} - Formula data object or null if not found
+         * @private
          */
         getFormula(formulaId) {
-            // Try PM.formulas first (from pm-formula-loader.js)
+            if (!formulaId) {
+                console.warn('PMFormulaRenderer: Empty formula ID provided');
+                return null;
+            }
+
+            // Strategy 1: Try PM.formulas first (from pm-constants-loader.js)
             if (window.PM && window.PM.formulas && window.PM.formulas[formulaId]) {
                 return window.PM.formulas[formulaId];
             }
 
-            // Try FORMULA_REGISTRY (from formula-registry.js)
+            // Strategy 2: Try PM_FORMULAS global (exported by pm-constants-loader.js)
+            if (window.PM_FORMULAS && window.PM_FORMULAS[formulaId]) {
+                return window.PM_FORMULAS[formulaId];
+            }
+
+            // Strategy 3: Try PM._data.formulas.formulas (direct access)
+            if (window.PM && window.PM._data && window.PM._data.formulas && window.PM._data.formulas.formulas) {
+                const formula = window.PM._data.formulas.formulas[formulaId];
+                if (formula) return formula;
+            }
+
+            // Strategy 4: Try FORMULA_REGISTRY (legacy support)
             if (window.FORMULA_REGISTRY) {
                 for (const category of ['ESTABLISHED', 'THEORY', 'DERIVED', 'PREDICTIONS']) {
                     const formulas = window.FORMULA_REGISTRY[category];
@@ -45,23 +65,37 @@
                 }
             }
 
-            // Try window.findFormula if available
-            if (window.findFormula) {
+            // Strategy 5: Try window.findFormula if available (legacy support)
+            if (typeof window.findFormula === 'function') {
                 const result = window.findFormula(formulaId);
                 if (result) {
                     return { ...result.formula, category: result.category };
                 }
             }
 
-            console.warn(`Formula not found: ${formulaId}`);
+            // Cache failure to avoid repeated lookups
+            if (!state.failedFormulas.has(formulaId)) {
+                console.warn(`PMFormulaRenderer: Formula not found: ${formulaId}`);
+                state.failedFormulas.add(formulaId);
+            }
+
             return null;
         },
 
         /**
-         * Parse HTML formula into hoverable variables
+         * Parse HTML formula into hoverable variables with tooltips
+         * @param {string} formulaHtml - Formula HTML string
+         * @param {Object} terms - Map of term symbols to their metadata
+         * @returns {string} - HTML with hoverable term elements
+         * @private
          */
         parseToHoverable(formulaHtml, terms) {
-            if (!terms || Object.keys(terms).length === 0) {
+            if (!formulaHtml) {
+                console.warn('PMFormulaRenderer: Empty formula HTML provided');
+                return '';
+            }
+
+            if (!terms || typeof terms !== 'object' || Object.keys(terms).length === 0) {
                 return formulaHtml;
             }
 
@@ -126,7 +160,7 @@
         renderInteractive(formulaId, container, options = {}) {
             const formula = this.getFormula(formulaId);
             if (!formula) {
-                this.renderError(container, `Formula not found: ${formulaId}`);
+                this.renderError(container, `Formula not found: ${formulaId}`, { formulaId });
                 return;
             }
 
@@ -168,7 +202,7 @@
         renderInfoPanel(formulaId, container) {
             const formula = this.getFormula(formulaId);
             if (!formula) {
-                this.renderError(container, `Formula not found: ${formulaId}`);
+                this.renderError(container, `Formula not found: ${formulaId}`, { formulaId });
                 return;
             }
 
@@ -239,7 +273,7 @@
         renderExpandable(formulaId, container, options = {}) {
             const formula = this.getFormula(formulaId);
             if (!formula) {
-                this.renderError(container, `Formula not found: ${formulaId}`);
+                this.renderError(container, `Formula not found: ${formulaId}`, { formulaId });
                 return;
             }
 
@@ -362,7 +396,7 @@
         renderPlainText(formulaId, container) {
             const formula = this.getFormula(formulaId);
             if (!formula) {
-                this.renderError(container, `Formula not found: ${formulaId}`);
+                this.renderError(container, `Formula not found: ${formulaId}`, { formulaId });
                 return;
             }
 
@@ -405,7 +439,7 @@
         renderFull(formulaId, container, options = {}) {
             const formula = this.getFormula(formulaId);
             if (!formula) {
-                this.renderError(container, `Formula not found: ${formulaId}`);
+                this.renderError(container, `Formula not found: ${formulaId}`, { formulaId });
                 return;
             }
 
@@ -459,56 +493,149 @@
         },
 
         /**
-         * Render error message
+         * Render loading state
+         * @param {string|HTMLElement} container - Container element or selector
+         * @param {string} message - Loading message
+         * @private
          */
-        renderError(container, message) {
+        renderLoading(container, message = 'Loading formula...') {
             const containerEl = typeof container === 'string'
                 ? document.getElementById(container) || document.querySelector(container)
                 : container;
 
             if (!containerEl) {
-                console.error(`Container not found: ${container}`);
+                console.error(`PMFormulaRenderer: Container not found: ${container}`);
                 return;
             }
 
             containerEl.innerHTML = `
-                <div style="
-                    background: rgba(244, 67, 54, 0.1);
-                    border: 1px solid rgba(244, 67, 54, 0.3);
+                <div class="pm-loading" style="
+                    background: rgba(96, 165, 250, 0.1);
+                    border: 1px solid rgba(96, 165, 250, 0.3);
                     border-radius: 8px;
                     padding: 1rem;
-                    color: #f44336;
+                    color: #60a5fa;
                     text-align: center;
+                    animation: pulse 1.5s ease-in-out infinite;
                 ">
-                    <strong>Error:</strong> ${message}
+                    <span class="loading-spinner" style="display: inline-block; margin-right: 0.5rem;">⏳</span>
+                    ${message}
                 </div>
             `;
         },
 
         /**
-         * Setup tooltip handlers for mobile touch support
+         * Render error message with helpful diagnostic information
+         * @param {string|HTMLElement} container - Container element or selector
+         * @param {string} message - Error message
+         * @param {Object} details - Additional error details
+         * @private
+         */
+        renderError(container, message, details = {}) {
+            const containerEl = typeof container === 'string'
+                ? document.getElementById(container) || document.querySelector(container)
+                : container;
+
+            if (!containerEl) {
+                console.error(`PMFormulaRenderer: Container not found: ${container}`);
+                return;
+            }
+
+            let errorHtml = `
+                <div class="pm-error" style="
+                    background: rgba(244, 67, 54, 0.1);
+                    border: 1px solid rgba(244, 67, 54, 0.3);
+                    border-left: 4px solid #f44336;
+                    border-radius: 8px;
+                    padding: 1rem;
+                    color: #f44336;
+                ">
+                    <div style="font-weight: 600; margin-bottom: 0.5rem;">
+                        <span style="margin-right: 0.5rem;">⚠️</span>
+                        Error
+                    </div>
+                    <div style="color: #d32f2f;">${message}</div>
+            `;
+
+            // Add troubleshooting hints
+            if (details.formulaId) {
+                errorHtml += `
+                    <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(244, 67, 54, 0.2); color: #666; font-size: 0.9rem;">
+                        <strong>Troubleshooting:</strong>
+                        <ul style="margin: 0.5rem 0 0 1.5rem; padding: 0;">
+                            <li>Ensure <code>pm-constants-loader.js</code> is loaded</li>
+                            <li>Check that <code>AutoGenerated/formulas.json</code> exists</li>
+                            <li>Verify formula ID: <code>${details.formulaId}</code></li>
+                            <li>Check browser console for more details</li>
+                        </ul>
+                    </div>
+                `;
+            }
+
+            errorHtml += '</div>';
+            containerEl.innerHTML = errorHtml;
+            containerEl.classList.add('pm-error-state');
+        },
+
+        /**
+         * Setup tooltip handlers for mobile touch support with proper cleanup
+         * @param {HTMLElement} containerEl - Container element
+         * @private
          */
         setupTooltipHandlers(containerEl) {
-            // This ensures tooltips work on touch devices
+            if (!containerEl) return;
+
+            // Clean up any existing listeners for this container
+            this.cleanupTooltipHandlers(containerEl);
+
             const formulaVars = containerEl.querySelectorAll('.formula-var');
+            const handlers = [];
 
             formulaVars.forEach(el => {
-                // Touch start - show tooltip
-                el.addEventListener('touchstart', (e) => {
+                // Touch start handler - show tooltip
+                const touchHandler = (e) => {
                     e.preventDefault();
                     // Remove touched from all other elements
                     formulaVars.forEach(other => other.classList.remove('touched'));
                     // Add touched to this element
                     el.classList.add('touched');
-                }, { passive: false });
+                };
+
+                el.addEventListener('touchstart', touchHandler, { passive: false });
+
+                // Store handler for cleanup
+                handlers.push({ element: el, event: 'touchstart', handler: touchHandler });
             });
 
             // Touch outside to dismiss
-            document.addEventListener('touchstart', (e) => {
+            const dismissHandler = (e) => {
                 if (!containerEl.contains(e.target)) {
                     formulaVars.forEach(el => el.classList.remove('touched'));
                 }
-            }, { passive: true });
+            };
+
+            document.addEventListener('touchstart', dismissHandler, { passive: true });
+            handlers.push({ element: document, event: 'touchstart', handler: dismissHandler });
+
+            // Store handlers in WeakMap for cleanup
+            state.eventListeners.set(containerEl, handlers);
+        },
+
+        /**
+         * Clean up tooltip handlers to prevent memory leaks
+         * @param {HTMLElement} containerEl - Container element
+         * @private
+         */
+        cleanupTooltipHandlers(containerEl) {
+            if (!containerEl) return;
+
+            const handlers = state.eventListeners.get(containerEl);
+            if (handlers) {
+                handlers.forEach(({ element, event, handler }) => {
+                    element.removeEventListener(event, handler);
+                });
+                state.eventListeners.delete(containerEl);
+            }
         },
 
         /**

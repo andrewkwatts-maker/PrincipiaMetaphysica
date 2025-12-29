@@ -9,6 +9,12 @@ protection manifests for all Python files in the project.
 Licensed under MIT via Principia Metaphysica v16.2
 CITATION DOI: 10.5281/zenodo.18079602
 Repository: https://github.com/andrewkwatts-maker/PrincipiaMetaphysica
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import os

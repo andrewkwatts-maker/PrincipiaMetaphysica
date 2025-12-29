@@ -19,6 +19,10 @@ References:
 - Planck Collaboration (2020) "Cosmological parameters"
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 import numpy as np
@@ -168,11 +172,11 @@ class AppendixDParameterTables(SimulationBase):
             {"name": "CKM θ₂₃", "symbol": "θ₂₃^CKM", "value": 2.38, "uncertainty": 0.06, "units": "degrees", "source": "PDG 2024"},
             {"name": "CKM θ₁₃", "symbol": "θ₁₃^CKM", "value": 0.201, "uncertainty": 0.011, "units": "degrees", "source": "PDG 2024"},
             {"name": "CKM δ_CP", "symbol": "δ_CP^CKM", "value": 1.196, "uncertainty": 0.045, "units": "radians", "source": "PDG 2024"},
-            {"name": "PMNS θ₁₂", "symbol": "θ₁₂^PMNS", "value": 33.45, "uncertainty": 0.77, "units": "degrees", "source": "NuFIT 5.2"},
-            {"name": "PMNS θ₂₃", "symbol": "θ₂₃^PMNS", "value": 49.0, "uncertainty": 1.3, "units": "degrees", "source": "NuFIT 5.2"},
-            {"name": "PMNS θ₁₃", "symbol": "θ₁₃^PMNS", "value": 8.62, "uncertainty": 0.13, "units": "degrees", "source": "NuFIT 5.2"},
-            {"name": "Δm²₂₁", "symbol": "Δm²₂₁", "value": 7.53e-5, "uncertainty": 0.18e-5, "units": "eV²", "source": "NuFIT 5.2"},
-            {"name": "Δm²₃₁", "symbol": "|Δm²₃₁|", "value": 2.453e-3, "uncertainty": 0.033e-3, "units": "eV²", "source": "NuFIT 5.2"},
+            {"name": "PMNS θ₁₂", "symbol": "θ₁₂^PMNS", "value": 33.45, "uncertainty": 0.77, "units": "degrees", "source": "NuFIT 6.0"},
+            {"name": "PMNS θ₂₃", "symbol": "θ₂₃^PMNS", "value": 49.0, "uncertainty": 1.3, "units": "degrees", "source": "NuFIT 6.0"},
+            {"name": "PMNS θ₁₃", "symbol": "θ₁₃^PMNS", "value": 8.62, "uncertainty": 0.13, "units": "degrees", "source": "NuFIT 6.0"},
+            {"name": "Δm²₂₁", "symbol": "Δm²₂₁", "value": 7.53e-5, "uncertainty": 0.18e-5, "units": "eV²", "source": "NuFIT 6.0"},
+            {"name": "Δm²₃₁", "symbol": "|Δm²₃₁|", "value": 2.453e-3, "uncertainty": 0.033e-3, "units": "eV²", "source": "NuFIT 6.0"},
         ]
 
     def _get_geometric_table(self) -> List[Dict[str, Any]]:
@@ -331,7 +335,7 @@ class AppendixDParameterTables(SimulationBase):
                     type="paragraph",
                     content=(
                         "Table D.6 lists neutrino masses, mixing angles, and CP phases. "
-                        "Experimental values are from NuFIT 5.2 (2022) and T2K (2023). "
+                        "Experimental values are from NuFIT 6.0 (2024) and T2K (2023). "
                         "Theoretical values from tribimaximal mixing with A₄ breaking."
                     )
                 ),
@@ -398,6 +402,9 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of fundamental constants in Table D.1",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="tables.n_pdg_inputs",
@@ -405,6 +412,9 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of experimental inputs in Table D.2",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="tables.n_geometric",
@@ -412,6 +422,9 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of topology parameters in Table D.3",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
             Parameter(
                 path="tables.n_predictions",
@@ -419,6 +432,9 @@ class AppendixDParameterTables(SimulationBase):
                 units="dimensionless",
                 status="TABULATED",
                 description="Count of theory predictions in Table D.7",
+                experimental_bound=None,
+                bound_type="theoretical_prediction",
+                bound_source="No direct measurement",
             ),
         ]
 
@@ -441,7 +457,7 @@ class AppendixDParameterTables(SimulationBase):
             {
                 "id": "nufit2022",
                 "authors": "Esteban, I. et al.",
-                "title": "NuFIT 5.2: Global Analysis of Neutrino Oscillations",
+                "title": "NuFIT 6.0: Global Analysis of Neutrino Oscillations",
                 "journal": "Website",
                 "year": "2022",
                 "url": "http://www.nu-fit.org/",

@@ -1,0 +1,9 @@
+{
+  "proof_id": "w_cpl_parameterization",
+  "label": "CPL w(z) at z=0.45",
+  "wl_code": "\n                w0 = -0.85;\n                wa = -0.24;\n                z = 0.45;\n                w0 + wa * (z / (1 + z))\n            ",
+  "result": "[Mock] -0.925 (phantom phase)",
+  "hash": "8795ee0d0484bbf0",
+  "timestamp": "2025-12-29T12:13:34.532479",
+  "verified": false
+}
