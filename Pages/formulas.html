@@ -882,6 +882,31 @@
             font-size: 0.8rem;
         }
 
+        .param-card .param-experimental {
+            display: block;
+            font-size: 0.75rem;
+            color: rgba(248, 249, 250, 0.6);
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+
+        .param-card .param-deviation {
+            font-weight: 600;
+            margin-left: 0.25rem;
+        }
+
+        .param-card .param-deviation.good {
+            color: #51cf66;
+        }
+
+        .param-card .param-deviation.moderate {
+            color: #ffd43b;
+        }
+
+        .param-card .param-deviation.poor {
+            color: #ff6b6b;
+        }
+
         /* Input parameters - blue tint */
         .formula-params.inputs .param-card {
             background: rgba(77, 182, 255, 0.12);
@@ -2406,11 +2431,15 @@
             formula.derivation.parentFormulas.forEach(parentId => {
                 const parent = allFormulas.find(f => f.id === parentId);
                 if (parent && parent.pmConstant) {
+                    const paramData = getParameterData(parent.pmConstant);
                     inputs.push({
                         name: parent.label || parentId,
                         constant: parent.pmConstant,
-                        value: parent.experimentalValue || parent.computedValue,
-                        units: parent.units
+                        value: paramData?.value || parent.experimentalValue || parent.computedValue,
+                        units: paramData?.metadata?.units || parent.units,
+                        experimental: paramData?.experimental,
+                        sigma: paramData?.sigma,
+                        sigma_deviation: paramData?.sigma_deviation
                     });
                 }
             });
@@ -2420,11 +2449,15 @@
         if (formula.terms) {
             Object.entries(formula.terms).forEach(([symbol, termData]) => {
                 if (typeof termData === 'object' && termData.input === true) {
+                    const paramData = getParameterData(termData.pmConstant);
                     inputs.push({
                         name: symbol,
                         constant: termData.pmConstant,
-                        value: termData.value,
-                        units: termData.units
+                        value: paramData?.value || termData.value,
+                        units: paramData?.metadata?.units || termData.units,
+                        experimental: paramData?.experimental,
+                        sigma: paramData?.sigma,
+                        sigma_deviation: paramData?.sigma_deviation
                     });
                 }
             });
@@ -2439,15 +2472,39 @@
 
         // The formula's pmConstant is the primary output
         if (formula.pmConstant) {
+            // Try to get experimental data from PM.parameters
+            const paramData = getParameterData(formula.pmConstant);
             outputs.push({
                 name: formula.label || formula.id,
                 constant: formula.pmConstant,
-                value: formula.experimentalValue || formula.computedValue,
-                units: formula.units
+                value: paramData?.value || formula.experimentalValue || formula.computedValue,
+                units: paramData?.metadata?.units || formula.units,
+                experimental: paramData?.experimental,
+                sigma: paramData?.sigma,
+                sigma_deviation: paramData?.sigma_deviation
             });
         }
 
         return outputs;
+    }
+
+    // Get parameter data from PM.parameters
+    function getParameterData(pmConstant) {
+        if (!pmConstant) return null;
+
+        // Try to get from PM._data.parameters
+        if (window.PM && window.PM._data && window.PM._data.parameters) {
+            const params = window.PM._data.parameters;
+            if (params[pmConstant]) {
+                return params[pmConstant];
+            }
+            // Also check inside parameters.parameters
+            if (params.parameters && params.parameters[pmConstant]) {
+                return params.parameters[pmConstant];
+            }
+        }
+
+        return null;
     }
 
     // Render a single parameter card
@@ -2458,12 +2515,23 @@
         const units = param.units ? ` ${escapeHtml(param.units)}` : '';
         const symbol = param.constant.split('.').pop(); // Extract last part like "M_GUT"
 
+        // Build experimental value display if available
+        let experimentalHtml = '';
+        if (param.experimental !== null && param.experimental !== undefined) {
+            const expValue = formatParameterValue(param.experimental);
+            const deviation = (param.sigma_deviation != null && typeof param.sigma_deviation === 'number')
+                ? ` <span class="param-deviation ${param.sigma_deviation < 1 ? 'good' : param.sigma_deviation < 2 ? 'moderate' : 'poor'}">(${param.sigma_deviation.toFixed(2)}σ)</span>`
+                : '';
+            experimentalHtml = `<span class="param-experimental" title="Experimental: ${expValue}${deviation}">Exp: ${expValue}${deviation}</span>`;
+        }
+
         return `
             <span class="param-card" title="${escapeHtml(param.constant)}">
                 <span class="param-symbol">${escapeHtml(symbol)}</span>
                 <span class="param-equals">=</span>
                 <span class="param-value">${value}</span>
                 ${units ? `<span class="param-units">${units}</span>` : ''}
+                ${experimentalHtml}
             </span>
         `;
     }
