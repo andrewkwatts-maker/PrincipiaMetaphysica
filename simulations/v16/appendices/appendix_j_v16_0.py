@@ -450,7 +450,8 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 name="Number of Monte Carlo Samples",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Number of Monte Carlo samples used in error propagation (10,000)",
+                description="Number of Monte Carlo samples used in error propagation",
+                description_template="Number of Monte Carlo samples used in error propagation ({value})",
                 no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
@@ -458,7 +459,8 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 name="Number of Parameters",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Total number of Standard Model parameters (58)",
+                description="Total number of Standard Model parameters",
+                description_template="Total number of Standard Model parameters ({value})",
                 no_experimental_value=True,  # Computational setting - no experimental measurement
             ),
             Parameter(
@@ -466,7 +468,8 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 name="Mean Relative Error",
                 units="dimensionless",
                 status="DERIVED",
-                description="Average relative uncertainty across all parameters (~5%)",
+                description="Average relative uncertainty across all parameters",
+                description_template="Average relative uncertainty across all parameters ({value})",
                 no_experimental_value=True,  # Statistical quantity - no experimental measurement
             ),
             Parameter(
@@ -474,7 +477,8 @@ def mc_error_propagation(n_mc: int = 10000, n_params: int = 58) -> Dict:
                 name="Correlation Matrix Dimensions",
                 units="dimensionless",
                 status="DERIVED",
-                description="Shape of parameter correlation matrix (58×58)",
+                description="Shape of parameter correlation matrix",
+                description_template="Shape of parameter correlation matrix ({value})",
                 no_experimental_value=True,  # Statistical quantity - no experimental measurement
             ),
         ]

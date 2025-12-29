@@ -628,7 +628,8 @@ class AppendixLValuesSummary(SimulationBase):
                 name="Total Parameters in Summary",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Total number of parameters documented in summary tables (27)",
+                description="Total number of parameters documented in summary tables",
+                description_template="Total number of parameters documented in summary tables ({value})",
                 no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(
@@ -636,7 +637,8 @@ class AppendixLValuesSummary(SimulationBase):
                 name="Exact Parameters Count",
                 units="dimensionless",
                 status="FOUNDATIONAL",
-                description="Number of topologically exact parameters (7)",
+                description="Number of topologically exact parameters",
+                description_template="Number of topologically exact parameters ({value})",
                 no_experimental_value=True,  # Metadata count - no experimental measurement
             ),
             Parameter(

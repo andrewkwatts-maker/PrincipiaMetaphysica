@@ -436,7 +436,8 @@ def dimensional_reduction() -> dict:
                 name="Orientation Sum Parameter",
                 units="dimensionless",
                 status="DERIVED",
-                description="Σ = 12 from shadow spatial dimensions or TCS cycle symmetry",
+                description="Σ from shadow spatial dimensions or TCS cycle symmetry",
+                description_template="Σ = {value} from shadow spatial dimensions or TCS cycle symmetry",
                 no_experimental_value=True,  # Theoretical/geometric - no experimental measurement
             ),
             Parameter(
@@ -444,7 +445,8 @@ def dimensional_reduction() -> dict:
                 name="Shadow Spatial Dimensions",
                 units="dimensionless",
                 status="DERIVED",
-                description="Number of spatial dimensions in shadow spacetime (12)",
+                description="Number of spatial dimensions in shadow spacetime",
+                description_template="Number of spatial dimensions in shadow spacetime ({value})",
                 no_experimental_value=True,  # Theoretical dimension - no experimental measurement
             ),
         ]

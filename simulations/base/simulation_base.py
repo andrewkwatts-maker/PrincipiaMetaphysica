@@ -160,7 +160,8 @@ class Parameter:
         name: Display name (e.g., "Proton Lifetime")
         units: Units string (e.g., "years", "GeV", "dimensionless")
         status: Status ("ESTABLISHED", "GEOMETRIC", "DERIVED", "PREDICTED", "CALIBRATED")
-        description: What the parameter represents
+        description: What the parameter represents (static text)
+        description_template: Optional template with {value} placeholder for dynamic descriptions
         derivation_formula: Optional formula ID that derives this parameter
         experimental_bound: Experimental constraint value (REQUIRED unless no_experimental_value=True)
         bound_type: Type of bound ("upper", "lower", "range", "measured", "central_value")
@@ -168,12 +169,19 @@ class Parameter:
         uncertainty: Experimental uncertainty (1-sigma)
         no_experimental_value: Set True if no experimental measurement exists (e.g., topological params)
         validation: Optional validation metadata dict
+
+    Dynamic Descriptions:
+        Use description_template with {value} placeholder for descriptions that reference
+        the parameter's computed value. Example:
+            description_template="Total number of parameters in summary tables ({value})"
+        The template is resolved at export time using the actual computed value.
     """
     path: str
     name: str
     units: str
     status: str
     description: str
+    description_template: Optional[str] = None  # Template with {value} placeholder
     derivation_formula: Optional[str] = None
     experimental_bound: Optional[float] = None
     bound_type: Optional[str] = None
@@ -315,13 +323,36 @@ class SimulationBase(ABC):
         for param_path in self.output_params:
             if param_path in results:
                 param_def = param_defs.get(param_path)
+                computed_value = results[param_path]
 
                 # Build metadata dictionary with units
                 metadata = {}
                 if param_def:
                     if param_def.units:
                         metadata['units'] = param_def.units
-                    if param_def.description:
+
+                    # Handle dynamic description templates
+                    if param_def.description_template:
+                        # Resolve {value} placeholder with computed value
+                        try:
+                            # Format value appropriately
+                            if isinstance(computed_value, float):
+                                if computed_value >= 1e4 or (computed_value != 0 and abs(computed_value) < 0.01):
+                                    formatted_value = f"{computed_value:.2e}"
+                                else:
+                                    formatted_value = f"{computed_value:.4g}"
+                            elif isinstance(computed_value, int):
+                                formatted_value = str(computed_value)
+                            else:
+                                formatted_value = str(computed_value)
+
+                            metadata['description'] = param_def.description_template.format(
+                                value=formatted_value
+                            )
+                        except (KeyError, ValueError):
+                            # Fallback to template as-is if formatting fails
+                            metadata['description'] = param_def.description_template
+                    elif param_def.description:
                         metadata['description'] = param_def.description
 
                 registry.set_param(
