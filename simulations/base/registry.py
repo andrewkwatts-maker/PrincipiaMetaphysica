@@ -288,11 +288,21 @@ class PMRegistry:
         Args:
             section_id: Section identifier (e.g., "4", "4.6")
             content: SectionContent instance
-        """
-        if section_id in self._sections:
-            warnings.warn(f"Overwriting section {section_id}")
 
-        self._sections[section_id] = SectionEntry(content=content)
+        Note:
+            For appendices (where subsection_id is a letter like A, B, C...),
+            the subsection_id is used as the key to allow multiple appendices
+            under the same parent section (e.g., section 8).
+        """
+        # Use subsection_id as key for appendices (single letter IDs)
+        key = section_id
+        if content.subsection_id and len(content.subsection_id) == 1 and content.subsection_id.isalpha():
+            key = content.subsection_id
+
+        if key in self._sections:
+            warnings.warn(f"Overwriting section {key}")
+
+        self._sections[key] = SectionEntry(content=content)
 
     def get_section(self, section_id: str) -> Optional['SectionContent']:
         """
@@ -400,12 +410,23 @@ class PMRegistry:
                 content_blocks.append(block_data)
 
             # Use 'id' as expected by website renderer (not 'section_id')
+            # Determine order based on section type
+            if s.section_type == 'appendix' and s.subsection_id:
+                # Appendices come after main sections (100+)
+                order = 100 + ord(s.subsection_id.upper()) - ord('A')
+            elif s.section_id and s.section_id[0].isdigit():
+                order = int(s.section_id.split('.')[0])
+            else:
+                order = 99
+
             result[section_id] = {
                 'id': s.section_id,
-                'type': 'section',
+                'type': s.section_type or 'section',  # Use section_type if available
+                'section_type': s.section_type,  # Explicit field for renderer
+                'subsection_id': s.subsection_id,  # Include subsection ID
                 'title': s.title,
                 'shortTitle': s.title,
-                'order': int(s.section_id.split('.')[0]) if s.section_id and s.section_id[0].isdigit() else 99,
+                'order': order,
                 'abstract': s.abstract,
                 'contentBlocks': content_blocks,  # camelCase for website compatibility
                 'content_blocks': content_blocks,  # snake_case for Python compatibility

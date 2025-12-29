@@ -5,6 +5,8 @@
     "1": {
       "id": "1",
       "type": "section",
+      "section_type": null,
+      "subsection_id": null,
       "title": "Introduction",
       "shortTitle": "Introduction",
       "order": 1,
@@ -645,11 +647,13 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-29T17:25:03.371385"
+      "timestamp": "2025-12-29T17:51:18.006373"
     },
     "2": {
       "id": "2",
       "type": "section",
+      "section_type": null,
+      "subsection_id": "pneuma-lagrangian",
       "title": "The Pneuma Lagrangian",
       "shortTitle": "The Pneuma Lagrangian",
       "order": 2,
@@ -1474,11 +1478,13 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-29T17:25:03.408620"
+      "timestamp": "2025-12-29T17:51:18.040488"
     },
     "3": {
       "id": "3",
       "type": "section",
+      "section_type": null,
+      "subsection_id": "3.1",
       "title": "Fine Structure Constant from G2 Geometry",
       "shortTitle": "Fine Structure Constant from G2 Geometry",
       "order": 3,
@@ -1529,11 +1535,13 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-29T17:25:03.405033"
+      "timestamp": "2025-12-29T17:51:18.037541"
     },
     "4": {
       "id": "4",
       "type": "section",
+      "section_type": null,
+      "subsection_id": "4.5",
       "title": "Neutrino Mixing from G2 Geometry",
       "shortTitle": "Neutrino Mixing from G2 Geometry",
       "order": 4,
@@ -1688,11 +1696,13 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-29T17:25:03.408225"
+      "timestamp": "2025-12-29T17:51:18.039775"
     },
     "5": {
       "id": "5",
       "type": "section",
+      "section_type": null,
+      "subsection_id": "5.3",
       "title": "Multi-Sector Cosmological Dynamics",
       "shortTitle": "Multi-Sector Cosmological Dynamics",
       "order": 5,
@@ -1799,11 +1809,13 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-29T17:25:03.408414"
+      "timestamp": "2025-12-29T17:51:18.039929"
     },
     "thermal-time": {
       "id": "thermal-time",
       "type": "section",
+      "section_type": null,
+      "subsection_id": null,
       "title": "The Thermal Time Hypothesis and Two-Time Framework",
       "shortTitle": "The Thermal Time Hypothesis and Two-Time Framework",
       "order": 99,
@@ -1924,11 +1936,13 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T17:25:03.408706"
+      "timestamp": "2025-12-29T17:51:18.040631"
     },
     "7": {
       "id": "7",
       "type": "section",
+      "section_type": null,
+      "subsection_id": null,
       "title": "Discussion, Conclusions, and Theory Analysis",
       "shortTitle": "Discussion, Conclusions, and Theory Analysis",
       "order": 7,
@@ -4355,11 +4369,13 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-29T17:25:03.408980"
+      "timestamp": "2025-12-29T17:51:18.040870"
     },
     "6": {
       "id": "6",
       "type": "section",
+      "section_type": null,
+      "subsection_id": null,
       "title": "Falsifiable Predictions via the Standard-Model Extension (SME)",
       "shortTitle": "Falsifiable Predictions via the Standard-Model Extension (SME)",
       "order": 6,
@@ -6498,14 +6514,16 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-29T17:25:03.409143"
+      "timestamp": "2025-12-29T17:51:18.040977"
     },
     "A": {
-      "id": "A",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "A",
       "title": "Appendix A: Mathematical Foundations",
       "shortTitle": "Appendix A: Mathematical Foundations",
-      "order": 99,
+      "order": 100,
       "abstract": "Mathematical foundations for Principia Metaphysica: derivation of the critical dimension D = 26 from Virasoro anomaly cancellation, G₂ holonomy and spinor structures, and compatibility with the (24,2) two-time framework.",
       "contentBlocks": [
         {
@@ -6927,14 +6945,16 @@
         "dimensions.D_after_sp2r",
         "dimensions.D_observable"
       ],
-      "timestamp": "2025-12-29T17:25:03.409219"
+      "timestamp": "2025-12-29T17:51:18.041032"
     },
     "B": {
-      "id": "B",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "B",
       "title": "Appendix B: Computational Methods",
       "shortTitle": "Appendix B: Computational Methods",
-      "order": 99,
+      "order": 101,
       "abstract": "Computational methods used throughout Principia Metaphysica: RG equation integration, KK threshold corrections, asymptotic safety corrections, and optimization algorithms. Includes derivation of three-generation fermion count.",
       "contentBlocks": [
         {
@@ -7524,14 +7544,16 @@
         "methods.convergence_criterion",
         "methods.n_kk_modes"
       ],
-      "timestamp": "2025-12-29T17:25:03.409301"
+      "timestamp": "2025-12-29T17:51:18.041112"
     },
     "C": {
-      "id": "C",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "C",
       "title": "Appendix C: Extended Derivations",
       "shortTitle": "Appendix C: Extended Derivations",
-      "order": 99,
+      "order": 102,
       "abstract": "Extended step-by-step derivations of key physics results: atmospheric mixing angle θ₂₃ = 45° from G₂ holonomy, gauge unification conditions, fermion mass hierarchies, neutrino mixing, Higgs mass, and proton lifetime.",
       "contentBlocks": [
         {
@@ -8031,14 +8053,16 @@
         "topology.K_MATCHING",
         "gauge.M_GUT"
       ],
-      "timestamp": "2025-12-29T17:25:03.409370"
+      "timestamp": "2025-12-29T17:51:18.041181"
     },
     "D": {
-      "id": "D",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "D",
       "title": "Appendix D: Comprehensive Parameter Tables",
       "shortTitle": "Appendix D: Comprehensive Parameter Tables",
-      "order": 99,
+      "order": 103,
       "abstract": "This appendix provides complete tables of all parameters used in Principia Metaphysica, including physical constants, experimental inputs, geometric invariants, and theory predictions. Each parameter includes its value, uncertainty, source, and experimental status.",
       "contentBlocks": [
         {
@@ -8188,14 +8212,16 @@
         "gauge.M_GUT",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-29T17:25:03.409446"
+      "timestamp": "2025-12-29T17:51:18.041289"
     },
     "E": {
-      "id": "E",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "E",
       "title": "Appendix E: Proton Decay Calculation",
       "shortTitle": "Appendix E: Proton Decay Calculation",
-      "order": 99,
+      "order": 104,
       "abstract": "Detailed calculation of proton decay lifetime from dimension-6 effective operators. Predicts τ_p→π⁰e⁺ = 1.3 × 10³⁵ years, testable by Hyper-Kamiokande. Includes geometric suppression factors from G₂ structure.",
       "contentBlocks": [
         {
@@ -8393,14 +8419,16 @@
         "proton_decay.tau_p_years",
         "topology.cycle_separation"
       ],
-      "timestamp": "2025-12-29T17:25:03.409493"
+      "timestamp": "2025-12-29T17:51:18.041367"
     },
     "F": {
-      "id": "F",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "F",
       "title": "Appendix F: Dimensional Decomposition",
       "shortTitle": "Appendix F: Dimensional Decomposition",
-      "order": 99,
+      "order": 105,
       "abstract": "Mathematical framework for reducing 26-dimensional (24,2) signature spacetime to 13-dimensional (12,1) physical space via gauge fixing. Shows how the orientation sum parameter emerges from compactified spatial dimensions.",
       "contentBlocks": [
         {
@@ -8626,14 +8654,16 @@
         "dimensions.orientation_sum",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T17:25:03.409540"
+      "timestamp": "2025-12-29T17:51:18.041441"
     },
     "G": {
-      "id": "G",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "G",
       "title": "Appendix G: Effective Torsion from Flux Quantization",
       "shortTitle": "Appendix G: Effective Torsion from Flux Quantization",
-      "order": 99,
+      "order": 106,
       "abstract": "TCS G₂ manifolds are Ricci-flat (geometric torsion τ = 0). The effective torsion arises from G₄ flux quantization, yielding T_ω = -0.875 with Spin(7) spinor fraction correction.",
       "contentBlocks": [
         {
@@ -8771,14 +8801,16 @@
         "topology.N_flux",
         "topology.T_omega"
       ],
-      "timestamp": "2025-12-29T17:25:03.409634"
+      "timestamp": "2025-12-29T17:51:18.041557"
     },
     "H": {
-      "id": "H",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "H",
       "title": "Appendix H: Proton Decay Branching Ratio",
       "shortTitle": "Appendix H: Proton Decay Branching Ratio",
-      "order": 99,
+      "order": 107,
       "abstract": "The branching ratio BR(p → e⁺π⁰) is predicted from flux orientation on the TCS G₂ manifold. Geometric derivation yields BR = 0.25 from shadow spacetime dimensions.",
       "contentBlocks": [
         {
@@ -8874,14 +8906,16 @@
         "dimensions.orientation_sum",
         "proton_decay.BR_e_pi0"
       ],
-      "timestamp": "2025-12-29T17:25:03.409705"
+      "timestamp": "2025-12-29T17:51:18.041634"
     },
     "I": {
-      "id": "I",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "I",
       "title": "Appendix I: Gravitational Wave Dispersion",
       "shortTitle": "Appendix I: Gravitational Wave Dispersion",
-      "order": 99,
+      "order": 108,
       "abstract": "The two-time framework predicts a small frequency-dependent dispersion for gravitational waves propagating through compactified dimensions. The dispersion coefficient η emerges from quantum fluctuations in the orthogonal time coordinate τ, modulated by G₂ torsion effects.",
       "contentBlocks": [
         {
@@ -9061,14 +9095,16 @@
         "gw_dispersion.eta",
         "gw_dispersion.M_GW"
       ],
-      "timestamp": "2025-12-29T17:25:03.409762"
+      "timestamp": "2025-12-29T17:51:18.041697"
     },
     "J": {
-      "id": "J",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "J",
       "title": "Appendix J: Monte Carlo Error Propagation",
       "shortTitle": "Appendix J: Monte Carlo Error Propagation",
-      "order": 99,
+      "order": 109,
       "abstract": "Appendix J: Monte Carlo Error Propagation - Uncertainties propagated through 10,000 Monte Carlo samples to compute the 58×58 parameter correlation matrix with mean relative error ~5%",
       "contentBlocks": [
         {
@@ -9402,14 +9438,16 @@
         "cosmology.w0_derived",
         "cosmology.wa_derived"
       ],
-      "timestamp": "2025-12-29T17:25:03.421926"
+      "timestamp": "2025-12-29T17:51:18.058214"
     },
     "K": {
-      "id": "K",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "K",
       "title": "Appendix K: Transparency Statement",
       "shortTitle": "Appendix K: Transparency Statement",
-      "order": 99,
+      "order": 110,
       "abstract": "Appendix K: Comprehensive transparency statement documenting the classification of all 58 Standard Model parameters (derived, semi-derived, calibrated, constrained), validation statistics showing predictions within experimental bounds, and resolution status of all previously identified theoretical issues including moduli stabilization, EFT validity, and parameter derivations.",
       "contentBlocks": [
         {
@@ -9951,14 +9989,16 @@
         "pdg.m_higgs",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-29T17:25:03.422060"
+      "timestamp": "2025-12-29T17:51:18.058311"
     },
     "L": {
-      "id": "L",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "L",
       "title": "Appendix L: Complete PM Values Summary",
       "shortTitle": "Appendix L: Complete PM Values Summary",
-      "order": 99,
+      "order": 111,
       "abstract": "Appendix L: A comprehensive summary of all parameter values in the Principia Metaphysica framework, organized by category: topological parameters, gauge unification, PMNS mixing angles, dark energy equation of state, proton decay predictions, and fermion masses. This table serves as a complete reference for all derived, calibrated, and exact values presented in the theory.",
       "contentBlocks": [
         {
@@ -10836,14 +10876,16 @@
         "pdg.m_bottom",
         "pdg.m_tau"
       ],
-      "timestamp": "2025-12-29T17:25:03.422153"
+      "timestamp": "2025-12-29T17:51:18.058395"
     },
     "M": {
-      "id": "M",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "M",
       "title": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
       "shortTitle": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
-      "order": 99,
+      "order": 112,
       "abstract": "This appendix explores purely speculative connections between PM vacuum structure and quantum consciousness models. This is NOT a core prediction of the theory and should be considered preliminary future work requiring extensive experimental and theoretical development.",
       "contentBlocks": [
         {
@@ -11161,14 +11203,16 @@
         "consciousness.tau_collapse_ms",
         "consciousness.f_base_hz"
       ],
-      "timestamp": "2025-12-29T17:25:03.422249"
+      "timestamp": "2025-12-29T17:51:18.058485"
     },
     "N": {
-      "id": "N",
-      "type": "section",
+      "id": "8",
+      "type": "appendix",
+      "section_type": "appendix",
+      "subsection_id": "N",
       "title": "Appendix N: G2 Topology Landscape",
       "shortTitle": "Appendix N: G2 Topology Landscape",
-      "order": 99,
+      "order": 113,
       "abstract": "This appendix provides the complete list of valid G2 manifold topologies that yield exactly n_gen = 3 fermion generations under the physical constraints described in Section 4.1.",
       "contentBlocks": [
         {
@@ -11798,7 +11842,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-29T17:25:03.422342"
+      "timestamp": "2025-12-29T17:51:18.058569"
     }
   }
 }

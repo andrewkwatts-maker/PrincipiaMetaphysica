@@ -71,8 +71,9 @@ class AppendixNG2Landscape(SimulationBase):
                 "Complete catalog of 49 valid G2 topologies yielding n_gen = 3. "
                 "Demonstrates generic predictions across topology class."
             ),
-            section_id="N",
-            subsection_id=None
+            section_id="8",
+            subsection_id="N",
+            section_type="appendix"
         )
 
     @property
@@ -156,8 +157,9 @@ class AppendixNG2Landscape(SimulationBase):
             SectionContent with topology catalog
         """
         return SectionContent(
-            section_id="N",
-            subsection_id=None,
+            section_id="8",
+            subsection_id="N",
+            section_type="appendix",
             title="Appendix N: G2 Topology Landscape",
             abstract=(
                 "This appendix provides the complete list of valid G2 manifold topologies "

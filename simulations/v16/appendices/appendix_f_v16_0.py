@@ -65,8 +65,9 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                 "Mathematical framework for reducing 26-dimensional (24,2) signature spacetime "
                 "to 13-dimensional (12,1) physical space via gauge fixing."
             ),
-            section_id="F",
-            subsection_id=None
+            section_id="8",
+            subsection_id="F",
+            section_type="appendix"
         )
 
     @property
@@ -160,8 +161,9 @@ class AppendixFDimensionalDecomposition(SimulationBase):
             SectionContent with dimensional reduction derivation
         """
         return SectionContent(
-            section_id="F",
-            subsection_id=None,
+            section_id="8",
+            subsection_id="F",
+            section_type="appendix",
             title="Appendix F: Dimensional Decomposition",
             abstract=(
                 "Mathematical framework for reducing 26-dimensional (24,2) signature spacetime "
