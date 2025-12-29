@@ -433,9 +433,14 @@ class PMSectionRenderer extends HTMLElement {
         // Trigger MathJax after rendering
         if (typeof window !== 'undefined' && window.MathJax && window.MathJax.typesetPromise) {
             setTimeout(() => {
-                window.MathJax.typesetPromise([this.shadowRoot]).catch(err => {
-                    console.warn('MathJax typesetting error in section:', err);
-                });
+                // MathJax needs a DOM element, not a ShadowRoot
+                // Get the section element inside the shadowRoot
+                const sectionEl = this.shadowRoot.querySelector('.pm-section');
+                if (sectionEl) {
+                    window.MathJax.typesetPromise([sectionEl]).catch(err => {
+                        console.warn('MathJax typesetting error in section:', err);
+                    });
+                }
             }, 100);
         }
     }

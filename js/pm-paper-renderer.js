@@ -1072,9 +1072,23 @@
             html += '<tbody>';
             rows.forEach((row, rowIdx) => {
                 html += '<tr>';
-                row.forEach((cell, cellIdx) => {
-                    html += `<td>${safeTableValue(cell, `row[${rowIdx}].cell`, cellIdx)}</td>`;
-                });
+                // Handle both array format [cell1, cell2] and object format {col1: val1, col2: val2}
+                if (Array.isArray(row)) {
+                    row.forEach((cell, cellIdx) => {
+                        html += `<td>${safeTableValue(cell, `row[${rowIdx}].cell`, cellIdx)}</td>`;
+                    });
+                } else if (row && typeof row === 'object') {
+                    // Object format: iterate over values in order of headers or object keys
+                    const values = headers.length > 0
+                        ? headers.map(h => row[h] || row[h.toLowerCase()] || '')
+                        : Object.values(row);
+                    values.forEach((cell, cellIdx) => {
+                        html += `<td>${safeTableValue(cell, `row[${rowIdx}].cell`, cellIdx)}</td>`;
+                    });
+                } else {
+                    // Single value - render as single cell
+                    html += `<td>${safeTableValue(row, `row[${rowIdx}]`, 0)}</td>`;
+                }
                 html += '</tr>';
             });
             html += '</tbody>';
