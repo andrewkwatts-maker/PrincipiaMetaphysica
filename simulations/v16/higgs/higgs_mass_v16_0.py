@@ -3,6 +3,9 @@
 Higgs Mass Simulation v16.0
 ============================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Unified Higgs mass calculation from moduli stabilization using SimulationBase.
 
 This simulation computes the Higgs mass from G2 moduli stabilization, incorporating:

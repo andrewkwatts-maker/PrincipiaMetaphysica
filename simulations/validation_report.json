@@ -1,243 +1,164 @@
 {
-  "timestamp": "2025-12-29T07:26:12.234693",
-  "theory_version": "16.0",
-  "overall_status": "TENSION",
-  "total_chi_squared": 4.231630956702505,
-  "n_parameters": 20,
-  "summary": {
-    "n_pass": 19,
-    "n_tension": 1,
-    "n_warning": 0,
-    "n_fail": 0
-  },
-  "parameter_validations": [
-    {
-      "parameter_path": "nufit.theta_12",
-      "computed_value": 33.41,
-      "experimental_value": 33.41,
-      "experimental_uncertainty": 0.75,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (2025)",
-      "geometric_derivation": "ESTABLISHED:NuFIT6.0",
-      "notes": "Solar mixing angle (3-sigma range: 31.27-35.86)"
+  "timestamp": "2025-12-29T10:59:01.885217",
+  "duration_seconds": 0.055937,
+  "all_passed": true,
+  "sections": {
+    "Theory Output Structure": {
+      "passed": true,
+      "details": {
+        "file_size_kb": 614.193359375,
+        "parameters_count": 176,
+        "formulas_count": 91,
+        "sections_count": 9,
+        "provenance_entries": 176
+      },
+      "errors": [],
+      "warnings": []
     },
-    {
-      "parameter_path": "nufit.theta_23",
-      "computed_value": 45.0,
-      "experimental_value": 45.0,
-      "experimental_uncertainty": 1.0,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (2025)",
-      "geometric_derivation": "ESTABLISHED:NuFIT6.0",
-      "notes": "Atmospheric mixing angle (3-sigma range: 41.8-50.7)"
+    "Experimental Data Files": {
+      "passed": true,
+      "details": {
+        "total_files": 4,
+        "valid_files": 4,
+        "invalid_files": 0,
+        "files": [
+          "desi_2025_constraints.json",
+          "nufit_6_0_covariance.json",
+          "nufit_6_0_parameters.json",
+          "pdg_2024_values.json"
+        ]
+      },
+      "errors": [],
+      "warnings": []
     },
-    {
-      "parameter_path": "nufit.theta_13",
-      "computed_value": 8.54,
-      "experimental_value": 8.54,
-      "experimental_uncertainty": 0.12,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (2025)",
-      "geometric_derivation": "ESTABLISHED:NuFIT6.0",
-      "notes": "Reactor mixing angle (3-sigma range: 8.20-8.91)"
+    "Formula Metadata": {
+      "passed": true,
+      "details": {
+        "total_formulas": 91,
+        "formulas_with_errors": 0,
+        "formulas_with_warnings": 91
+      },
+      "errors": [],
+      "warnings": [
+        "g2-holonomy: Missing recommended fields: domain",
+        "euler-characteristic: Missing recommended fields: domain",
+        "betti-numbers: Missing recommended fields: domain",
+        "three-generations: Missing recommended fields: domain",
+        "cycle-matching: Missing recommended fields: domain",
+        "gauge-initial-conditions: Missing recommended fields: domain",
+        "kk-threshold: Missing recommended fields: domain",
+        "asymptotic-safety-fixed-point: Missing recommended fields: domain",
+        "gut-scale: Missing recommended fields: domain",
+        "gauge-coupling-unification: Missing recommended fields: domain",
+        "gauge-rg-evolution: Missing recommended fields: domain",
+        "generation-number: Missing recommended fields: domain",
+        "yukawa-texture: Missing recommended fields: domain",
+        "pneuma-chiral-filter: Missing recommended fields: domain",
+        "g2-spinor-preservation: Missing recommended fields: domain",
+        "associative-chirality-projector: Missing recommended fields: domain",
+        "dirac-zero-modes: Missing recommended fields: domain",
+        "chirality-index-theorem: Missing recommended fields: domain",
+        "spinor-saturation-generations: Missing recommended fields: domain",
+        "ckm-overlap-integral: Missing recommended fields: domain",
+        "ckm-hierarchy: Missing recommended fields: domain",
+        "jarlskog-invariant: Missing recommended fields: domain",
+        "wolfenstein-parametrization: Missing recommended fields: domain",
+        "ckm-unitarity: Missing recommended fields: domain",
+        "cycle-separation-suppression: Missing recommended fields: domain",
+        "proton-lifetime: Missing recommended fields: domain",
+        "higgs-mass: Missing recommended fields: domain",
+        "higgs-quartic-coupling: Missing recommended fields: domain",
+        "racetrack-potential: Missing recommended fields: domain",
+        "doublet-triplet-splitting: Missing recommended fields: domain",
+        "metric-13D: Missing recommended fields: domain",
+        "einstein-hilbert-14D: Missing recommended fields: domain",
+        "sp2r-constraint: Missing recommended fields: domain",
+        "breathing-mode: Missing recommended fields: domain",
+        "bps-bound: Missing recommended fields: domain",
+        "pneuma-reduction: Missing recommended fields: domain",
+        "dimensional-reduction-cascade: Missing recommended fields: domain",
+        "effective-dimension: Missing recommended fields: domain",
+        "dark-energy-eos-derivation: Missing recommended fields: domain",
+        "dark-energy-time-evolution: Missing recommended fields: domain",
+        "pmns-theta-13: Missing recommended fields: domain",
+        "pmns-delta-cp: Missing recommended fields: domain",
+        "pmns-theta-12: Missing recommended fields: domain",
+        "pmns-theta-23: Missing recommended fields: domain",
+        "neutrino-mass-spectrum: Missing recommended fields: domain",
+        "dark-energy-eos: Missing recommended fields: domain",
+        "moduli-potential: Missing recommended fields: domain",
+        "sector-temperature-ratio: Missing recommended fields: domain",
+        "dark-matter-abundance: Missing recommended fields: domain",
+        "pneuma-lagrangian: Missing recommended fields: domain",
+        "pneuma-flow: Missing recommended fields: domain",
+        "modular-hamiltonian: Missing recommended fields: domain",
+        "thermal-flow: Missing recommended fields: domain",
+        "entropy-gradient: Missing recommended fields: domain",
+        "alpha-t-derivation: Missing recommended fields: domain",
+        "g2-holonomy-condition: Missing recommended fields: domain",
+        "associative-calibration: Missing recommended fields: domain",
+        "coassociative-calibration: Missing recommended fields: domain",
+        "parallel-spinor-condition: Missing recommended fields: domain",
+        "clifford-multiplication: Missing recommended fields: domain",
+        "ricci-flatness-g2: Missing recommended fields: domain",
+        "rg-beta-function: Missing recommended fields: domain",
+        "one-loop-beta: Missing recommended fields: domain",
+        "kk-threshold-correction: Missing recommended fields: domain",
+        "asymptotic-safety-correction: Missing recommended fields: domain",
+        "yukawa-rg-equation: Missing recommended fields: domain",
+        "mass-running-equation: Missing recommended fields: domain",
+        "g2-holonomy-derivation: Missing recommended fields: domain",
+        "unification-condition-derivation: Missing recommended fields: domain",
+        "yukawa-hierarchy-derivation: Missing recommended fields: domain",
+        "tribimaximal-mixing-derivation: Missing recommended fields: domain",
+        "higgs-mass-derivation: Missing recommended fields: domain",
+        "proton-lifetime-derivation: Missing recommended fields: domain",
+        "proton-decay-rate: Missing recommended fields: domain",
+        "proton-decay-lifetime: Missing recommended fields: domain",
+        "geometric-suppression-factor: Missing recommended fields: domain",
+        "sp2r-gauge-constraint: Missing recommended fields: domain",
+        "shadow-reduction: Missing recommended fields: domain",
+        "orientation-sum: Missing recommended fields: domain",
+        "flux-quantization: Missing recommended fields: domain",
+        "effective-torsion: Missing recommended fields: domain",
+        "effective-torsion-spinor: Missing recommended fields: domain",
+        "proton-branching: Missing recommended fields: domain",
+        "gw-dispersion-relation: Missing recommended fields: domain",
+        "gw-dispersion-coefficient: Missing recommended fields: domain",
+        "mc-error-propagation: Missing recommended fields: domain",
+        "correlation-matrix: Missing recommended fields: domain",
+        "orch-or-collapse: Missing recommended fields: domain",
+        "pm-modulation: Missing recommended fields: domain",
+        "topology-constraint: Missing recommended fields: domain",
+        "generation-counting: Missing recommended fields: domain"
+      ]
     },
-    {
-      "parameter_path": "nufit.delta_CP",
-      "computed_value": 194.0,
-      "experimental_value": 194.0,
-      "experimental_uncertainty": 25.0,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (2025)",
-      "geometric_derivation": "ESTABLISHED:NuFIT6.0",
-      "notes": "CP-violating phase (3-sigma range: 120-360)"
+    "Parameter Provenance": {
+      "passed": true,
+      "details": {
+        "total_parameters": 176,
+        "parameters_with_provenance": 176,
+        "parameters_missing_fields": 0,
+        "parameters_without_provenance": 0
+      },
+      "errors": [],
+      "warnings": []
     },
-    {
-      "parameter_path": "nufit.delta_m21_sq",
-      "computed_value": 7.5e-05,
-      "experimental_value": 7.42e-05,
-      "experimental_uncertainty": 2.1e-06,
-      "sigma_deviation": 0.3809523809523773,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (2025)",
-      "geometric_derivation": "ESTABLISHED:NuFIT6.0",
-      "notes": "Solar mass splitting (3-sigma range: 6.82-8.04 x10^-5)"
-    },
-    {
-      "parameter_path": "nufit.delta_m31_sq",
-      "computed_value": 0.0025,
-      "experimental_value": 0.002515,
-      "experimental_uncertainty": 2.8e-05,
-      "sigma_deviation": 0.5357142857142794,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (2025)",
-      "geometric_derivation": "ESTABLISHED:NuFIT6.0",
-      "notes": "Atmospheric mass splitting (3-sigma range: 2.431-2.598 x10^-3)"
-    },
-    {
-      "parameter_path": "desi.w0",
-      "computed_value": -0.827,
-      "experimental_value": -0.827,
-      "experimental_uncertainty": 0.063,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "DESI DR2 (2025)",
-      "geometric_derivation": "ESTABLISHED:DESI_DR2_2024",
-      "notes": "Dark energy EOS at z=0 (prefers dynamic DE over LambdaCDM)"
-    },
-    {
-      "parameter_path": "desi.wa",
-      "computed_value": -0.75,
-      "experimental_value": -0.75,
-      "experimental_uncertainty": 0.3,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "DESI DR2 (2025)",
-      "geometric_derivation": "ESTABLISHED:DESI_DR2_2024",
-      "notes": "Dark energy evolution parameter"
-    },
-    {
-      "parameter_path": "desi.H0",
-      "computed_value": 67.4,
-      "experimental_value": 67.4,
-      "experimental_uncertainty": 0.5,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "Planck 2025",
-      "geometric_derivation": "ESTABLISHED:Planck2018",
-      "notes": "Hubble constant (CMB-based, in tension with local measurements ~73)"
-    },
-    {
-      "parameter_path": "desi.Omega_m",
-      "computed_value": 0.3111,
-      "experimental_value": 0.3111,
-      "experimental_uncertainty": 0.0056,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "Planck 2025",
-      "geometric_derivation": "ESTABLISHED:Planck2018",
-      "notes": "Matter density parameter"
-    },
-    {
-      "parameter_path": "bounds.sum_m_nu_upper",
-      "computed_value": 0.12,
-      "experimental_value": 0.12,
-      "experimental_uncertainty": 0.0,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "Planck 2025 + BAO",
-      "geometric_derivation": "ESTABLISHED:Planck2018",
-      "notes": "Upper bound on sum of neutrino masses (95% CL)"
-    },
-    {
-      "parameter_path": "bounds.tau_proton_lower",
-      "computed_value": 1.67e+34,
-      "experimental_value": 1.67e+34,
-      "experimental_uncertainty": 3e+32,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "Super-Kamiokande 2024",
-      "geometric_derivation": "ESTABLISHED:SuperK_2024",
-      "notes": "Lower bound on p->e+ pi0 lifetime (90% CL)"
-    },
-    {
-      "parameter_path": "pdg.m_higgs",
-      "computed_value": 125.1,
-      "experimental_value": 125.1,
-      "experimental_uncertainty": 0.14,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "PDG 2024 / LHC",
-      "geometric_derivation": "ESTABLISHED:PDG2024",
-      "notes": "Higgs boson mass (combined ATLAS+CMS)"
-    },
-    {
-      "parameter_path": "pdg.m_top",
-      "computed_value": 172.69,
-      "experimental_value": 172.76,
-      "experimental_uncertainty": 0.3,
-      "sigma_deviation": 0.2333333333333106,
-      "status": "PASS",
-      "source": "PDG 2024 / LHC",
-      "geometric_derivation": "ESTABLISHED:PDG2024",
-      "notes": "Top quark pole mass"
-    },
-    {
-      "parameter_path": "pdg.m_W",
-      "computed_value": 80.377,
-      "experimental_value": 80.377,
-      "experimental_uncertainty": 0.012,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "PDG 2024",
-      "geometric_derivation": "ESTABLISHED:PDG2024",
-      "notes": "W boson mass"
-    },
-    {
-      "parameter_path": "pdg.m_Z",
-      "computed_value": 91.1876,
-      "experimental_value": 91.1876,
-      "experimental_uncertainty": 0.0021,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "PDG 2024",
-      "geometric_derivation": "ESTABLISHED:PDG2024",
-      "notes": "Z boson mass"
-    },
-    {
-      "parameter_path": "pdg.alpha_s_MZ",
-      "computed_value": 0.118,
-      "experimental_value": 0.118,
-      "experimental_uncertainty": 0.0009,
-      "sigma_deviation": 0.0,
-      "status": "PASS",
-      "source": "PDG 2024",
-      "geometric_derivation": "ESTABLISHED:PDG2024",
-      "notes": "Strong coupling at M_Z"
-    },
-    {
-      "parameter_path": "neutrino.theta_12_pred",
-      "computed_value": 33.59329049922625,
-      "experimental_value": 33.41,
-      "experimental_uncertainty": 0.75,
-      "sigma_deviation": 0.2443873323016703,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (target)",
-      "geometric_derivation": "neutrino_mixing_v16_0",
-      "notes": "PM prediction should match NuFIT"
-    },
-    {
-      "parameter_path": "neutrino.theta_23_pred",
-      "computed_value": 45.75,
-      "experimental_value": 45.0,
-      "experimental_uncertainty": 1.0,
-      "sigma_deviation": 0.75,
-      "status": "PASS",
-      "source": "NuFIT 6.0 (target)",
-      "geometric_derivation": "neutrino_mixing_v16_0",
-      "notes": "PM prediction should match NuFIT"
-    },
-    {
-      "parameter_path": "neutrino.theta_13_pred",
-      "computed_value": 8.327941059195808,
-      "experimental_value": 8.54,
-      "experimental_uncertainty": 0.12,
-      "sigma_deviation": 1.767157840034924,
-      "status": "TENSION",
-      "source": "NuFIT 6.0 (target)",
-      "geometric_derivation": "neutrino_mixing_v16_0",
-      "notes": "PM prediction should match NuFIT"
+    "AutoGenerated JSON Files": {
+      "passed": true,
+      "details": {
+        "total_files": 40,
+        "valid_files": 40,
+        "invalid_files": 0
+      },
+      "errors": [],
+      "warnings": []
     }
-  ],
-  "geometric_inconsistencies": [],
-  "dataset_conflicts": [
-    "H0=67.40 aligns with Planck/CMB (67.40 \u00b1 0.50), but conflicts with local measurements (~73 km/s/Mpc)"
-  ],
-  "recommended_fixes": [
-    "Neutrino sector: 3 parameter(s) show >1-sigma deviation. Review geometric derivation in neutrino_mixing_v16_0.py or neutrino_seesaw_solver.py",
-    "Some parameters show 1-2-sigma tension. Review geometric assumptions and RG evolution"
-  ]
+  },
+  "summary": {
+    "total_checks": 5,
+    "passed": 5,
+    "failed": 0,
+    "warnings": 91
+  }
 }

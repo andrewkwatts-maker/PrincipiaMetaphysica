@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - Pneuma Mechanism (Geometric Framework)
 ====================================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Implements the Pneuma field dynamics and geometric coupling mechanism.
 
 This simulation computes:

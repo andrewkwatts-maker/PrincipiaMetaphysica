@@ -360,6 +360,16 @@ class EstablishedPhysics:
 
         H0 = 67.4     # Planck 2018 (loaded separately)
 
+        # Load sigma8 from DESI if available
+        if DATA_LOADER_AVAILABLE:
+            loader = get_loader()
+            sigma8_data = loader.get_desi("sigma8")
+            sigma8 = sigma8_data.value
+            sigma8_unc = sigma8_data.uncertainty
+        else:
+            sigma8 = 0.827
+            sigma8_unc = 0.011
+
         params = [
             EstablishedParameter(
                 path="desi.w0",
@@ -378,6 +388,14 @@ class EstablishedPhysics:
                 description="Dark energy evolution parameter (from desi_2025_constraints.json)"
             ),
             EstablishedParameter(
+                path="desi.sigma8",
+                value=sigma8,
+                uncertainty=sigma8_unc,
+                units="dimensionless",
+                source="ESTABLISHED:DESI_2025",
+                description="RMS matter fluctuation amplitude at 8 h^-1 Mpc (from desi_2025_constraints.json)"
+            ),
+            EstablishedParameter(
                 path="desi.H0",
                 value=H0,
                 uncertainty=0.5,
@@ -392,6 +410,14 @@ class EstablishedPhysics:
                 units="dimensionless",
                 source="ESTABLISHED:Planck2018",
                 description="Matter density parameter"
+            ),
+            EstablishedParameter(
+                path="planck.S8",
+                value=0.832,
+                uncertainty=0.013,
+                units="dimensionless",
+                source="ESTABLISHED:Planck2018",
+                description="S8 parameter from Planck 2018 CMB (S8 = sigma8 * sqrt(Omega_m/0.3))"
             ),
         ]
 
@@ -563,8 +589,9 @@ ESTABLISHED_PARAMS = {
             "nufit.theta_12", "nufit.theta_23", "nufit.theta_13",
             "nufit.delta_CP", "nufit.delta_m21_sq", "nufit.delta_m31_sq"
         ],
-        "desi": ["desi.w0", "desi.wa", "desi.H0", "desi.Omega_m"],
+        "desi": ["desi.w0", "desi.wa", "desi.sigma8", "desi.H0", "desi.Omega_m"],
+        "planck": ["planck.S8"],
         "bounds": ["bounds.tau_proton_lower", "bounds.sum_m_nu_upper"]
     },
-    "total_count": 29
+    "total_count": 31
 }

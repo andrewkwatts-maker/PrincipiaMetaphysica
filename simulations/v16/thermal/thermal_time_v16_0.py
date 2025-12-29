@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - Thermal Time Hypothesis
 ======================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Implements the thermal time hypothesis with two-time framework:
 - Observable thermal time (t_therm) from modular flow
 - Hidden orthogonal time (t_ortho) related by Sp(2,R) gauge symmetry

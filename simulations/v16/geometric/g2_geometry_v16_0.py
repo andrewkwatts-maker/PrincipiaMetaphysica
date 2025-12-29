@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - G2 Geometry and Topology
 ========================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Unified G2 geometry simulation implementing SimulationBase interface.
 Combines G2 holonomy validation, Ricci-flatness checks, and topology
 invariants into a single foundational simulation.

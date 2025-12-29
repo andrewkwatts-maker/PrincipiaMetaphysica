@@ -3,6 +3,9 @@
 Fermion Generations v16.0 - Three Generations from G2 Topology
 ================================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Derives the number of fermion generations and Yukawa hierarchy from G2 manifold
 topology via the Pneuma Mechanism.
 

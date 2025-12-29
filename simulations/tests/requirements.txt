@@ -1,0 +1,19 @@
+# Test Requirements for Principia Metaphysica
+# Install with: pip install -r requirements.txt
+
+# Core testing framework
+pytest>=7.0.0
+
+# Optional but recommended testing tools
+pytest-cov>=4.0.0        # Coverage reports
+pytest-xdist>=3.0.0      # Parallel test execution
+pytest-timeout>=2.1.0    # Test timeout enforcement
+pytest-mock>=3.10.0      # Mocking utilities
+
+# Code quality
+pytest-flake8>=1.1.1     # Linting during tests
+pytest-mypy>=0.10.0      # Type checking during tests
+
+# Test output formatting
+pytest-html>=3.2.0       # HTML test reports
+pytest-json-report>=1.5.0  # JSON test reports
