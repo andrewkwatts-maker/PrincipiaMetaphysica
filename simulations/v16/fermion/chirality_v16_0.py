@@ -3,6 +3,9 @@
 Chirality and Spinorial Structure v16.0
 =========================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Derives fermion chirality from G2 holonomy and spinorial representations.
 This simulation implements the complete chirality mechanism in PM theory.
 

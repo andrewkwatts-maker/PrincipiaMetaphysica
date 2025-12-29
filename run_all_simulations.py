@@ -3,6 +3,9 @@
 Principia Metaphysica - Run All Simulations v16.0
 ===================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Unified simulation runner using the v16 infrastructure with:
 - PMRegistry for centralized parameter/formula/section management
 - EstablishedPhysics for loading experimental constants
@@ -35,6 +38,7 @@ Phase 2 - Core Physics (Depends on Phase 1):
 Phase 3 - Precision Observables and Cosmology (Depends on Phase 2):
   - cosmology_intro_v16_0: Cosmological framework introduction (Section 5.1)
   - dark_energy_v16_0: Dark energy from pneuma field (Section 5.2)
+  - s8_suppression_v16_1: S8 tension analysis with dynamical dark energy (Section 5.4)
   - neutrino_mixing_v16_0: PMNS matrix from G2 associative cycles
   - multi_sector_v16_0: Multi-sector cosmology (dark energy, mirror sectors)
 
@@ -176,6 +180,7 @@ from simulations.v16.higgs.higgs_mass_v16_0 import HiggsMassSimulation
 # Phase 3 - Precision observables and cosmology (depends on Phase 2)
 from simulations.v16.cosmology.cosmology_intro_v16_0 import CosmologyIntroV16
 from simulations.v16.cosmology.dark_energy_v16_0 import DarkEnergyV16
+from simulations.v16.cosmology.s8_suppression_v16_1 import S8SuppressionV16
 from simulations.v16.thermal.thermal_time_v16_0 import ThermalTimeV16
 from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
 from simulations.v16.cosmology.multi_sector_v16_0 import MultiSectorV16
@@ -420,6 +425,7 @@ class SimulationRunner:
             3: [
                 CosmologyIntroV16(),
                 DarkEnergyV16(),
+                S8SuppressionV16(),
                 NeutrinoMixingSimulation(),
                 MultiSectorV16(),
             ],

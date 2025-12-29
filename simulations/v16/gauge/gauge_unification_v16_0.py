@@ -3,6 +3,9 @@
 Gauge Unification Simulation v16.0
 ====================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Implements gauge coupling unification to determine M_GUT and alpha_GUT
 using the SimulationBase interface for Principia Metaphysica.
 

@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - Predictions Aggregator
 =====================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Aggregates all predictions from individual simulations and generates
 a comprehensive summary for Section 6.
 

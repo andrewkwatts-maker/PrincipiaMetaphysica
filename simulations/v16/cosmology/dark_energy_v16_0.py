@@ -2,6 +2,9 @@
 Dark Energy from Dimensional Reduction v16.0
 =============================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Derives dark energy equation of state from G2 compactification and dimensional
 reduction. The cascade 26D → 13D → 4D leaves residual "shadow" dimensions that
 manifest as dark energy with equation of state w₀ = -11/13 ≈ -0.846.

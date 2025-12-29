@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - Discussion, Conclusions, and Theory Analysis
 ============================================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Provides comprehensive section content for:
 - Section 7: Conclusion (Summary, Predictions, Future Research)
 - Section 8: Predictions and Testability

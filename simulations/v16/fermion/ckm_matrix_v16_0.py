@@ -3,6 +3,9 @@
 CKM Matrix and Quark Mixing v16.0
 ==================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Derives CKM matrix elements and quark mixing from G2 geometry phase structure
 via the Pneuma Mechanism.
 

@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - PMNS Neutrino Mixing from G2 Geometry
 ====================================================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Fully geometric derivation of PMNS mixing angles from G2 manifold topology.
 NO CALIBRATION - all values derived from topological invariants.
 

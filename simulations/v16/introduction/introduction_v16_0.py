@@ -3,6 +3,9 @@
 PRINCIPIA METAPHYSICA v16.0 - Introduction
 ===========================================
 
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+Licensed under the MIT License. See LICENSE file for details.
+
 Provides section content for the Introduction (Section 1).
 
 This simulation does not compute physics parameters, but instead generates
