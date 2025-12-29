@@ -106,10 +106,9 @@ body:not(.paper) .section-content {
     color: var(--text-primary) !important;
 }
 
-/* Override any white backgrounds in dark mode */
-body:not(.paper) *:not(code):not(pre) {
-    background-color: var(--bg-base, inherit);
-}
+/* NOTE: Removed overly broad rule that was causing black backgrounds
+   on transparent elements. Background should be set explicitly on
+   containers that need it, not forced on all elements. */
 
 /* Ensure panels extend to edges properly */
 .panel,
