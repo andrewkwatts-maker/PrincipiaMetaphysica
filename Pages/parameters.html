@@ -1352,7 +1352,7 @@
                     }
 
                     // Get experimental value if available
-                    let experimentalValue = param.experimental ?? null;
+                    let experimentalValue = param.experimental_value ?? param.experimental ?? null;
                     if (typeof experimentalValue === 'object' && experimentalValue !== null && 'value' in experimentalValue) {
                         experimentalValue = experimentalValue.value;
                     }
@@ -1364,7 +1364,7 @@
                     }
 
                     // Get uncertainty
-                    let uncertainty = param.uncertainty ?? null;
+                    let uncertainty = param.uncertainty ?? param.experimental_uncertainty ?? null;
                     if (typeof param.experimental === 'object' && param.experimental?.uncertainty) {
                         uncertainty = param.experimental.uncertainty;
                     }
@@ -1377,7 +1377,7 @@
                         displayName: formatParameterName(shortKey),
                         category,
                         status: param.status || 'DERIVED',
-                        sigma: param.sigma ?? null,
+                        sigma: param.sigma_deviation ?? param.sigma ?? null,
                         value: computedValue,
                         computed: computedValue,
                         experimental: experimentalValue,
@@ -1412,7 +1412,7 @@
                     }
 
                     // Get experimental value if available
-                    let experimentalValue = param.experimental ?? null;
+                    let experimentalValue = param.experimental_value ?? param.experimental ?? null;
                     if (typeof experimentalValue === 'object' && experimentalValue !== null && 'value' in experimentalValue) {
                         experimentalValue = experimentalValue.value;
                     }
@@ -1424,7 +1424,7 @@
                     }
 
                     // Get uncertainty
-                    let uncertainty = param.uncertainty ?? null;
+                    let uncertainty = param.uncertainty ?? param.experimental_uncertainty ?? null;
                     if (typeof param.experimental === 'object' && param.experimental?.uncertainty) {
                         uncertainty = param.experimental.uncertainty;
                     }
@@ -1434,7 +1434,7 @@
                         displayName: param.name || formatParameterName(key),
                         category,
                         status: param.status || 'DERIVED',
-                        sigma: param.sigma ?? null,
+                        sigma: param.sigma_deviation ?? param.sigma ?? null,
                         value: computedValue,
                         computed: computedValue,
                         experimental: experimentalValue,
