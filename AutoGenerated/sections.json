@@ -645,7 +645,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-29T07:32:16.999521"
+      "timestamp": "2025-12-29T10:46:14.527801"
     },
     "2": {
       "id": "2",
@@ -1474,7 +1474,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-29T07:32:17.048530"
+      "timestamp": "2025-12-29T10:46:14.561799"
     },
     "3": {
       "id": "3",
@@ -1675,7 +1675,7 @@
         "gauge.M_GUT",
         "gauge.ALPHA_GUT_INV"
       ],
-      "timestamp": "2025-12-29T07:32:17.046223"
+      "timestamp": "2025-12-29T10:46:14.560008"
     },
     "4": {
       "id": "4",
@@ -1834,7 +1834,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-29T07:32:17.048134"
+      "timestamp": "2025-12-29T10:46:14.561501"
     },
     "5": {
       "id": "5",
@@ -1945,7 +1945,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-29T07:32:17.048327"
+      "timestamp": "2025-12-29T10:46:14.561654"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -2070,7 +2070,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T07:32:17.048604"
+      "timestamp": "2025-12-29T10:46:14.561851"
     },
     "7": {
       "id": "7",
@@ -4501,7 +4501,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-29T07:32:17.048744"
+      "timestamp": "2025-12-29T10:46:14.561955"
     },
     "6": {
       "id": "6",
@@ -6644,7 +6644,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-29T07:32:17.048871"
+      "timestamp": "2025-12-29T10:46:14.562060"
     },
     "8": {
       "id": "8",
@@ -7264,10 +7264,8 @@
       "paramRefs": [
         "topology.n_gen",
         "topology.chi_eff",
-        "topology.B2",
+        "topology.b2",
         "topology.b3",
-        "topology.HODGE_H11",
-        "topology.HODGE_H31",
         "landscape.num_valid_topologies"
       ],
       "formula_refs": [
@@ -7279,13 +7277,11 @@
       "param_refs": [
         "topology.n_gen",
         "topology.chi_eff",
-        "topology.B2",
+        "topology.b2",
         "topology.b3",
-        "topology.HODGE_H11",
-        "topology.HODGE_H31",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-29T07:32:17.066282"
+      "timestamp": "2025-12-29T10:46:14.574541"
     }
   }
 }
