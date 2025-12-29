@@ -1,0 +1,433 @@
+{
+  "package_name": "Principia Metaphysica - Interactive Website",
+  "package_version": "1.0.0",
+  "created": "2025-12-29T11:25:09.803977Z",
+  "description": "Complete interactive website for Principia Metaphysica theory, including all HTML pages, JavaScript components, CSS styles, and data files.",
+  "files": [
+    {
+      "path": "index.html",
+      "size": 84200,
+      "sha256": "028cca2af997fc97ca72864b1b04533b3f894880eb36043c38978765438e9665",
+      "description": "Main landing page for Principia Metaphysica website"
+    },
+    {
+      "path": "Pages/paper.html",
+      "size": 37051,
+      "sha256": "cad05a1babb94696277a01d50c0a0d360214a6d9404caaf343c33a6fa78f747a",
+      "description": "Full academic paper view with dynamic rendering"
+    },
+    {
+      "path": "Pages/sections.html",
+      "size": 87606,
+      "sha256": "4539929d27b09b34520fb69aab8f9c5e99883026802cea7a63fe9f6e6e2e7d08",
+      "description": "Interactive section browser"
+    },
+    {
+      "path": "Pages/formulas.html",
+      "size": 86341,
+      "sha256": "eb5d0aec174ba436da92d039baff48e78152b002593f30ee24717d091f6d5da5",
+      "description": "Formula reference and search page"
+    },
+    {
+      "path": "Pages/parameters.html",
+      "size": 98938,
+      "sha256": "897db5bf24e8fe859e6dcfbc0a38fe95592f30a44deb565122e4e1036a457986",
+      "description": "Parameter database with experimental comparisons"
+    },
+    {
+      "path": "Pages/beginners-guide.html",
+      "size": 176096,
+      "sha256": "c4b93529da7f5aa5895251a1bbc74f01124a08393584f4280fc9969137871009",
+      "description": "Accessible introduction to the theory"
+    },
+    {
+      "path": "Pages/foundations.html",
+      "size": 61660,
+      "sha256": "2462debe9b06deeea515283573f39160d4929fe8a5c8dcfba119e2dee7799e86",
+      "description": "Mathematical and physical foundations"
+    },
+    {
+      "path": "Pages/appendices.html",
+      "size": 24064,
+      "sha256": "a8174691f2469efb9036b3490fc70c488ec2e079d5d08d69ef285e6bdf4c0770",
+      "description": "Technical appendices and derivations"
+    },
+    {
+      "path": "Pages/references.html",
+      "size": 29520,
+      "sha256": "8115644420eb51742c7a4e09a52d25173d904ed8aeae8f36849ce209433e1302",
+      "description": "Bibliography and citations"
+    },
+    {
+      "path": "Pages/simulations.html",
+      "size": 52389,
+      "sha256": "2707d1d866a7dd5d7a65596c452cf7b6f6072427a023ff1c5cdba503d5dec417",
+      "description": "Simulation results and visualizations"
+    },
+    {
+      "path": "Pages/visualization-index.html",
+      "size": 111724,
+      "sha256": "e9d8e1b5f4659ff4abae71241f6b5a07e0097d40851fcdb4e9242113b7411b29",
+      "description": "Interactive visualization gallery"
+    },
+    {
+      "path": "Pages/philosophical-implications.html",
+      "size": 201089,
+      "sha256": "aae5e085c04c6031b55207f235f71a4482d843898964ca4f687335bcdf1ba9ec",
+      "description": "Philosophical discussion and implications"
+    },
+    {
+      "path": "js/pm-paper-renderer.js",
+      "size": 66643,
+      "sha256": "dfbcd6798ecbd63dfa92598114746f62ce8e89e8285f279f1a812e6b17284101",
+      "description": "Main paper rendering engine with block processing"
+    },
+    {
+      "path": "js/pm-section-renderer.js",
+      "size": 48857,
+      "sha256": "cefcd134ce710c20349e087a7163cc40063a12f2af39ecf641d89a28d3f38ea2",
+      "description": "Section content renderer with formula integration"
+    },
+    {
+      "path": "js/pm-section-loader.js",
+      "size": 22189,
+      "sha256": "0bf2c68717b8781dc61ffa3e6dfefa1f9c41c1a5969a7c6d65cc64a3b92b6919",
+      "description": "Dynamic section loading and navigation"
+    },
+    {
+      "path": "js/pm-formula-renderer.js",
+      "size": 21984,
+      "sha256": "789390699bacfd35e64332c00e52cef140464adbd1dda791614d61af3d05b1c4",
+      "description": "Academic formula display with LaTeX support"
+    },
+    {
+      "path": "js/pm-formula-loader.js",
+      "size": 34943,
+      "sha256": "61006e5fd3ff8740be92b20fb7a35457e5ae5261e9c6a26cb9a843313caaf2ff",
+      "description": "Formula data loader and cache manager"
+    },
+    {
+      "path": "js/pm-parameter-component.js",
+      "size": 19281,
+      "sha256": "302457490f1caa8f682f91c39fb854f8578092ae0c9794c6f0649c7182cefada",
+      "description": "Parameter display component"
+    },
+    {
+      "path": "js/pm-parameter-table.js",
+      "size": 18064,
+      "sha256": "55c2897e92fc841220f199ab03e73ce90fb5c8b631c3efd1c4b1349857afac65",
+      "description": "Interactive parameter comparison tables"
+    },
+    {
+      "path": "js/pm-beginner-guide-loader.js",
+      "size": 18769,
+      "sha256": "a9685333f5f1cc76f1f4bab621ad950b5099e8dc2ab7f956715961337ff547ca",
+      "description": "Beginner guide content loader"
+    },
+    {
+      "path": "js/pm-foundations-loader.js",
+      "size": 8253,
+      "sha256": "e8ee406e02b39e1bb37d5746d2bdc4113cb41a8ccb2be6c38aab78e94a12196a",
+      "description": "Foundations page content loader"
+    },
+    {
+      "path": "js/pm-formula-component.js",
+      "size": 16703,
+      "sha256": "205252403b830d1d2d0b172f276ea589b951a66fff1d3a91796c5efde238b4d3",
+      "description": "Reusable formula display component"
+    },
+    {
+      "path": "js/pm-header.js",
+      "size": 11646,
+      "sha256": "fb086e5e1fcb8591a24b19956ff3446f96f1e95602aab86718e6450fdf0f69d6",
+      "description": "Site header and navigation component"
+    },
+    {
+      "path": "js/pm-tooltip-system.js",
+      "size": 30181,
+      "sha256": "40bb6e75336c49d3600dee672d035a55072648e2ac62b45ccd73b1cca04bd165",
+      "description": "Interactive tooltip system for parameters"
+    },
+    {
+      "path": "js/pm-paper-tooltips.js",
+      "size": 29151,
+      "sha256": "572432a2e34e537d95947eb0e4d48ebf76d16a8487034b5dc7c4fd81ed28091b",
+      "description": "Paper-specific tooltip integration"
+    },
+    {
+      "path": "js/pm-paper-param-processor.js",
+      "size": 4646,
+      "sha256": "17295d5569491913a8536e1a70474697c66f787aa25195ec428051c480b16b0f",
+      "description": "Parameter reference processor for paper"
+    },
+    {
+      "path": "js/pm-paper-tooltips-integration.js",
+      "size": 9293,
+      "sha256": "45c704f114db6c0b86218fad5711c6be100c00eba7b8131bcadb54ff7ceb7dc5",
+      "description": "Tooltip integration with paper renderer"
+    },
+    {
+      "path": "js/pm-paper-renderer-blocks-patch.js",
+      "size": 5045,
+      "sha256": "c5d67848d73c95367ec7ac70879af3f8f2b5b15c593eb3570f2fad9baa00836e",
+      "description": "Block rendering enhancements"
+    },
+    {
+      "path": "js/pm-citations.js",
+      "size": 10083,
+      "sha256": "2200386436fd660867f79982f4970a2de5057ebe363722fbff2742879259695e",
+      "description": "Citation management and display"
+    },
+    {
+      "path": "js/pm-parameter-schema.js",
+      "size": 11321,
+      "sha256": "f033c0310f1ef730f84cf1c1f15d0f432be5fe23cdd1486121411c294c4dbfdb",
+      "description": "Parameter data schema definitions"
+    },
+    {
+      "path": "js/pm-parameter-data.js",
+      "size": 18784,
+      "sha256": "ba1422337ca84573197e993c044a8d3fabbbffcb2017316ca46629847e937832",
+      "description": "Parameter metadata and descriptions"
+    },
+    {
+      "path": "js/pm-constants-loader.js",
+      "size": 41018,
+      "sha256": "55895970be97a945e69f1016ea702a8348f35aeeb4d1fb29088bc4b105487501",
+      "description": "Physical constants loader"
+    },
+    {
+      "path": "js/pm-template-engine.js",
+      "size": 14277,
+      "sha256": "e0a91f9b1e8f691b8ea036abce33720578e9466478cadb1d63bad5b56e60d7be",
+      "description": "Content template processor"
+    },
+    {
+      "path": "js/theory-constants.js",
+      "size": 13793,
+      "sha256": "e71223964964806351258b3dc45a9b16b0c221584eda9019061b832526a8cd85",
+      "description": "Theory-specific physical constants"
+    },
+    {
+      "path": "js/theory-constants-enhanced.js",
+      "size": 15841,
+      "sha256": "66deb92f8fa16f14f887cd7ef13c8c13e9fd048936ef7e030f1276339ad7965d",
+      "description": "Enhanced constants with metadata"
+    },
+    {
+      "path": "js/theory-computations.js",
+      "size": 13756,
+      "sha256": "5c4d6bef917720a4fc9d0dc25ac10d2b57d2bfeeda5c977312bccd47cbf9a092",
+      "description": "Theory computation functions"
+    },
+    {
+      "path": "js/theory-derivations.js",
+      "size": 14236,
+      "sha256": "03506eec5418c561a547f87f3fa0166a991a720def0ed131d72fec17218d7f47",
+      "description": "Mathematical derivation utilities"
+    },
+    {
+      "path": "js/pm-validation-stats.js",
+      "size": 12432,
+      "sha256": "262a8cfa7ecd9ea6b8ce873c9b3a7aeb51dc6d6a8549273d5b9b201ad2d4d132",
+      "description": "Validation statistics processor"
+    },
+    {
+      "path": "js/validation-stats.js",
+      "size": 9524,
+      "sha256": "ad8e373618f75fd71813a8e8fea515ea2a873c0df468a1f7dc2047152192eb46",
+      "description": "Validation data utilities"
+    },
+    {
+      "path": "js/simulation-stats.js",
+      "size": 11891,
+      "sha256": "2db30d1d9d6395867b41050766799d2a8d53f41f074311019fa35eecf2bd38d8",
+      "description": "Simulation results processor"
+    },
+    {
+      "path": "js/formula-registry.js",
+      "size": 59514,
+      "sha256": "8dc47f82fffedae521f49678161ff7cd1409900df81cdf060864b3aa455fd57f",
+      "description": "Formula registration and lookup system"
+    },
+    {
+      "path": "js/formula-database.js",
+      "size": 18386,
+      "sha256": "5e0a268be07bb8361d4bdfc720f379c6f5b5d2ae23cf23b71e5d04a5a7623689",
+      "description": "Formula database with metadata"
+    },
+    {
+      "path": "js/formula-definitions.js",
+      "size": 60346,
+      "sha256": "d9f01777818a40e75a0bd032eb02c4d59384af726b416df4b2db26093ce61b20",
+      "description": "Formula LaTeX definitions"
+    },
+    {
+      "path": "js/formula-expansion.js",
+      "size": 7983,
+      "sha256": "6df03cfa7714b3eb08d936e6c20650f36548565b6bba500f1f38dd507a1b308e",
+      "description": "Formula expansion and detail views"
+    },
+    {
+      "path": "js/content-templates.js",
+      "size": 13389,
+      "sha256": "4be2d5447a51ea1caa4e174b7658e285a74eba792af92360230d0448975b2961",
+      "description": "Reusable content templates"
+    },
+    {
+      "path": "js/pm-param-paper.js",
+      "size": 17470,
+      "sha256": "2ab40213c63afceffa763b0caea6ef378696577c75aa586894e4739a5b414229",
+      "description": "Paper parameter integration utilities"
+    },
+    {
+      "path": "js/pm-foundation-page.js",
+      "size": 17088,
+      "sha256": "a4aba2709753b28ae2d161880c3fe290e95d833c6176942a6408d5590ce8f492",
+      "description": "Foundations page utilities"
+    },
+    {
+      "path": "css/styles.css",
+      "size": 91202,
+      "sha256": "03f25392db3746c7c05a9c2713975fd0d5789e73047cb5d2da9e8c3a845089a7",
+      "description": "Main stylesheet with base styles"
+    },
+    {
+      "path": "css/pm-common.css",
+      "size": 17677,
+      "sha256": "0a50ca4b6feb56e812ef80e9b3947de62c2eb07649020017bd9bb2d70c966f1e",
+      "description": "Common UI components and utilities"
+    },
+    {
+      "path": "css/pm-glass-theme.css",
+      "size": 984,
+      "sha256": "98b969a9f5d8499aa6b347b0b66086ba0d40a44a83f0f89360c165c7abd9b92a",
+      "description": "Glass morphism visual theme"
+    },
+    {
+      "path": "css/pm-scientific-typography.css",
+      "size": 4285,
+      "sha256": "96df64d01076469a370b1a790cc7b9c5898f3910dbdecd3526753af33fee2b3f",
+      "description": "Academic typography and formatting"
+    },
+    {
+      "path": "css/pm-section-paper.css",
+      "size": 21969,
+      "sha256": "f23976da6a7418e2539a04e9970eef4080f408d3d0aa8ef52284675c6322d423",
+      "description": "Section and paper page styles"
+    },
+    {
+      "path": "css/pm-tooltip.css",
+      "size": 6281,
+      "sha256": "c80042d12bafdecd36e25ede03e414f8d99a4fafbefa1568e4657ce6f21ff739",
+      "description": "Tooltip visual styles"
+    },
+    {
+      "path": "css/pm-paper-tooltips.css",
+      "size": 14451,
+      "sha256": "c0887adad657a253772dc9f81fbac690d304299e2ba919b9a2cc555b6e1f245e",
+      "description": "Paper-specific tooltip styles"
+    },
+    {
+      "path": "css/pm-header.css",
+      "size": 8608,
+      "sha256": "d2ca70451e4a65776d518260fa6f56a78857684b3df1cc79d6f7bf1fc7cdda09",
+      "description": "Header component styles"
+    },
+    {
+      "path": "css/pm-citations.css",
+      "size": 4960,
+      "sha256": "7b87572cff989f943a0de49f2023ef7d3cb8ca36d69dff7c1281f0b58b0e2c83",
+      "description": "Citation formatting styles"
+    },
+    {
+      "path": "css/formula-metadata.css",
+      "size": 16975,
+      "sha256": "72d5b2f4848f9bf5458ea2fb56f0711ca34a443c36a90fb48e353bc65993d7af",
+      "description": "Formula metadata display styles"
+    },
+    {
+      "path": "css/formula-display-fix.css",
+      "size": 8472,
+      "sha256": "d98ce6838679d6bf34c83ccb00ba73edc0a4bda539337df1d640da0c4c9290d4",
+      "description": "Formula rendering fixes"
+    },
+    {
+      "path": "css/formula-hover.css",
+      "size": 3408,
+      "sha256": "e395f3d504d64e6b63ef6358f1082c345021b2cc9aa730eb135c54c54e8d4734",
+      "description": "Formula hover interaction styles"
+    },
+    {
+      "path": "css/mobile-responsive.css",
+      "size": 15472,
+      "sha256": "5b7a8430171496e018aea34c69389f3e2968bbececd36604938ca7b3e5b1bd2e",
+      "description": "Mobile device optimizations"
+    },
+    {
+      "path": "css/styles-mobile-enhanced.css",
+      "size": 4823,
+      "sha256": "445d104078b8b335e5e8abdc07e8f8d0a2e8fb35011319e155069ebea81b7eb2",
+      "description": "Enhanced mobile styles"
+    },
+    {
+      "path": "css/desktop-optimizations.css",
+      "size": 7944,
+      "sha256": "55f4e779c3cb0aec9e6dec9a87f992a1337bd3e1c8a8c0ddc99610ba89e71baf",
+      "description": "Desktop display optimizations"
+    },
+    {
+      "path": "AutoGenerated/theory_output.json",
+      "size": 643945,
+      "sha256": "3b53627bdea659e2a0267fa6e0076f5b471174a03b4107c14213c0036a00a1b1",
+      "description": "Complete theory output with all predictions"
+    },
+    {
+      "path": "AutoGenerated/formulas.json",
+      "size": 132208,
+      "sha256": "b80d8fe740d2abf3a5adafe4a2657acafccb92058257de573d5e2e75259578ff",
+      "description": "Formula database with LaTeX and metadata"
+    },
+    {
+      "path": "AutoGenerated/parameters.json",
+      "size": 98776,
+      "sha256": "dff7b2e2790d6202b4f6280486e54baf4b7df22a818eab3fc98333af2d344f93",
+      "description": "Parameter values with experimental comparisons"
+    },
+    {
+      "path": "AutoGenerated/sections.json",
+      "size": 343960,
+      "sha256": "2ce48c3993db98d47ef0a2fd0d86b30714dedb0165d628072390d412fceedc9c",
+      "description": "Section content and structure"
+    },
+    {
+      "path": "AutoGenerated/metadata.json",
+      "size": 14841,
+      "sha256": "c8139ae921b04d308d000632cbf133f33ea4884c2481d079d3cc6cf49bae79bd",
+      "description": "Paper metadata and configuration"
+    },
+    {
+      "path": "AutoGenerated/beginner-guide.json",
+      "size": 34016,
+      "sha256": "b28b96bae1942a1fa6e03d6b376210bf65f301f27dd77301a4d370f23c92ffb1",
+      "description": "Beginner guide content data"
+    },
+    {
+      "path": "AutoGenerated/index.json",
+      "size": 507,
+      "sha256": "208685ae36b63fa46abc760623ca22bf21c803ff652361181870acb419a9e525",
+      "description": "Site index and navigation data"
+    },
+    {
+      "path": "AutoGenerated/statistics.json",
+      "size": 77,
+      "sha256": "13a7e49c68a790e400f4f24309699cb92b4e2c860ae98c5a8b1fe55db39aedc0",
+      "description": "Theory validation statistics"
+    }
+  ],
+  "summary": {
+    "total_files": 70,
+    "total_size": 3293299,
+    "total_size_mb": 3.14
+  }
+}

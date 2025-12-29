@@ -1,0 +1,45 @@
+Principia Metaphysica - Zenodo Upload Package
+==============================================
+
+Version: v16.2
+DOI: 10.5281/zenodo.18079602
+Created: 2025-12-29 11:22:30
+Total Files: 29
+Total Size: 2.33 MB
+
+DIRECTORY STRUCTURE
+-------------------
+data/           - Generated theory data (JSON files)
+code/           - Python configuration and scripts
+docs/           - Documentation files
+web/            - Web interface files (HTML, JS, CSS)
+metadata/       - Package manifests and checksums
+
+IMPORTANT FILES
+--------------
+LICENSE         - Copyright and licensing information
+CITATION.cff    - Citation metadata in CFF format
+README.md       - Project overview and documentation
+config.py       - Master configuration file
+
+DATA FILES
+----------
+data/theory_output.json  - Complete theory calculations
+data/formulas.json       - All 109 formulas with metadata
+data/parameters.json     - All 58 parameters with values
+data/sections.json       - Paper section content
+
+VERIFICATION
+-----------
+Use metadata/CHECKSUMS.txt to verify file integrity:
+  sha256sum -c metadata/CHECKSUMS.txt
+
+CITATION
+--------
+Please cite this work as:
+Watts, A. K. (2025). Principia Metaphysica: A Unified Theory of Gravity,
+Gauge Forces, and Time (Version v16.2). Zenodo. 10.5281/zenodo.18079602
+
+For more information, visit:
+https://principiametaphysica.com
+https://github.com/andrewkwatts/PrincipiaMetaphysica

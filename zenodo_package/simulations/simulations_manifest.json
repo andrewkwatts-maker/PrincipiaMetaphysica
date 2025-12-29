@@ -1,0 +1,1121 @@
+{
+  "package": "simulations",
+  "description": "Simulation framework for Principia Metaphysica theory predictions and validations",
+  "version": "1.0.0",
+  "categories": {
+    "base": {
+      "files": [
+        {
+          "path": "base/established.py",
+          "name": "established.py",
+          "size_bytes": 22620,
+          "lines": 597
+        },
+        {
+          "path": "base/formulas.py",
+          "name": "formulas.py",
+          "size_bytes": 14640,
+          "lines": 380
+        },
+        {
+          "path": "base/injector.py",
+          "name": "injector.py",
+          "size_bytes": 6970,
+          "lines": 249
+        },
+        {
+          "path": "base/registry.py",
+          "name": "registry.py",
+          "size_bytes": 22094,
+          "lines": 659
+        },
+        {
+          "path": "base/schema.py",
+          "name": "schema.py",
+          "size_bytes": 28982,
+          "lines": 698
+        },
+        {
+          "path": "base/sections.py",
+          "name": "sections.py",
+          "size_bytes": 11783,
+          "lines": 356
+        },
+        {
+          "path": "base/simulation_base.py",
+          "name": "simulation_base.py",
+          "size_bytes": 23938,
+          "lines": 649
+        },
+        {
+          "path": "base/validator.py",
+          "name": "validator.py",
+          "size_bytes": 16160,
+          "lines": 452
+        },
+        {
+          "path": "base/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 2516,
+          "lines": 112
+        }
+      ],
+      "file_count": 9,
+      "line_count": 4152
+    },
+    "data/experimental": {
+      "files": [
+        {
+          "path": "data/experimental/desi_2025_constraints.json",
+          "name": "desi_2025_constraints.json",
+          "size_bytes": 2514,
+          "lines": null
+        },
+        {
+          "path": "data/experimental/nufit_6_0_covariance.json",
+          "name": "nufit_6_0_covariance.json",
+          "size_bytes": 8939,
+          "lines": null
+        },
+        {
+          "path": "data/experimental/nufit_6_0_parameters.json",
+          "name": "nufit_6_0_parameters.json",
+          "size_bytes": 2755,
+          "lines": null
+        },
+        {
+          "path": "data/experimental/pdg_2024_values.json",
+          "name": "pdg_2024_values.json",
+          "size_bytes": 3485,
+          "lines": null
+        },
+        {
+          "path": "tests/test_data_loader.py",
+          "name": "test_data_loader.py",
+          "size_bytes": 32407,
+          "lines": 873
+        }
+      ],
+      "file_count": 5,
+      "line_count": 873
+    },
+    "root": {
+      "files": [
+        {
+          "path": "config.py",
+          "name": "config.py",
+          "size_bytes": 372165,
+          "lines": 8294
+        },
+        {
+          "path": "run_all_simulations.py",
+          "name": "run_all_simulations.py",
+          "size_bytes": 50873,
+          "lines": 1302
+        },
+        {
+          "path": "__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 10440,
+          "lines": 299
+        }
+      ],
+      "file_count": 3,
+      "line_count": 9895
+    },
+    "tests": {
+      "files": [
+        {
+          "path": "tests/conftest.py",
+          "name": "conftest.py",
+          "size_bytes": 2525,
+          "lines": 78
+        },
+        {
+          "path": "tests/test_gauge_invariance.py",
+          "name": "test_gauge_invariance.py",
+          "size_bytes": 30694,
+          "lines": 820
+        },
+        {
+          "path": "tests/test_registry.py",
+          "name": "test_registry.py",
+          "size_bytes": 32438,
+          "lines": 878
+        },
+        {
+          "path": "tests/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 138,
+          "lines": 5
+        }
+      ],
+      "file_count": 4,
+      "line_count": 1781
+    },
+    "v16/__init__.py": {
+      "files": [
+        {
+          "path": "v16/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 1827,
+          "lines": 58
+        }
+      ],
+      "file_count": 1,
+      "line_count": 58
+    },
+    "v16/appendices": {
+      "files": [
+        {
+          "path": "v16/appendices/appendix_a_math_v16_0.py",
+          "name": "appendix_a_math_v16_0.py",
+          "size_bytes": 29697,
+          "lines": 731
+        },
+        {
+          "path": "v16/appendices/appendix_b_methods_v16_0.py",
+          "name": "appendix_b_methods_v16_0.py",
+          "size_bytes": 36246,
+          "lines": 872
+        },
+        {
+          "path": "v16/appendices/appendix_c_derivations_v16_0.py",
+          "name": "appendix_c_derivations_v16_0.py",
+          "size_bytes": 35307,
+          "lines": 828
+        },
+        {
+          "path": "v16/appendices/appendix_d_tables_v16_0.py",
+          "name": "appendix_d_tables_v16_0.py",
+          "size_bytes": 29425,
+          "lines": 562
+        },
+        {
+          "path": "v16/appendices/appendix_e_proton_v16_0.py",
+          "name": "appendix_e_proton_v16_0.py",
+          "size_bytes": 18667,
+          "lines": 462
+        },
+        {
+          "path": "v16/appendices/appendix_f_v16_0.py",
+          "name": "appendix_f_v16_0.py",
+          "size_bytes": 18824,
+          "lines": 488
+        },
+        {
+          "path": "v16/appendices/appendix_g_v16_0.py",
+          "name": "appendix_g_v16_0.py",
+          "size_bytes": 17265,
+          "lines": 428
+        },
+        {
+          "path": "v16/appendices/appendix_h_v16_0.py",
+          "name": "appendix_h_v16_0.py",
+          "size_bytes": 13615,
+          "lines": 359
+        },
+        {
+          "path": "v16/appendices/appendix_i_v16_0.py",
+          "name": "appendix_i_v16_0.py",
+          "size_bytes": 17055,
+          "lines": 431
+        },
+        {
+          "path": "v16/appendices/appendix_j_v16_0.py",
+          "name": "appendix_j_v16_0.py",
+          "size_bytes": 21126,
+          "lines": 520
+        },
+        {
+          "path": "v16/appendices/appendix_k_v16_0.py",
+          "name": "appendix_k_v16_0.py",
+          "size_bytes": 23884,
+          "lines": 541
+        },
+        {
+          "path": "v16/appendices/appendix_l_v16_0.py",
+          "name": "appendix_l_v16_0.py",
+          "size_bytes": 29835,
+          "lines": 693
+        },
+        {
+          "path": "v16/appendices/appendix_m_v16_0.py",
+          "name": "appendix_m_v16_0.py",
+          "size_bytes": 32281,
+          "lines": 728
+        },
+        {
+          "path": "v16/appendices/appendix_n_v16_0.py",
+          "name": "appendix_n_v16_0.py",
+          "size_bytes": 20353,
+          "lines": 537
+        },
+        {
+          "path": "v16/appendices/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 7149,
+          "lines": 192
+        }
+      ],
+      "file_count": 15,
+      "line_count": 8372
+    },
+    "v16/cosmology": {
+      "files": [
+        {
+          "path": "v16/cosmology/cosmology_intro_v16_0.py",
+          "name": "cosmology_intro_v16_0.py",
+          "size_bytes": 40540,
+          "lines": 850
+        },
+        {
+          "path": "v16/cosmology/dark_energy_v16_0.py",
+          "name": "dark_energy_v16_0.py",
+          "size_bytes": 42851,
+          "lines": 964
+        },
+        {
+          "path": "v16/cosmology/jacobian_mathematical_validation.py",
+          "name": "jacobian_mathematical_validation.py",
+          "size_bytes": 14821,
+          "lines": 404
+        },
+        {
+          "path": "v16/cosmology/multi_sector_v16_0.py",
+          "name": "multi_sector_v16_0.py",
+          "size_bytes": 45086,
+          "lines": 1023
+        },
+        {
+          "path": "v16/cosmology/s8_suppression_v16_1.py",
+          "name": "s8_suppression_v16_1.py",
+          "size_bytes": 48578,
+          "lines": 1156
+        },
+        {
+          "path": "v16/cosmology/test_complete_validation.py",
+          "name": "test_complete_validation.py",
+          "size_bytes": 9536,
+          "lines": 298
+        },
+        {
+          "path": "v16/cosmology/test_jacobian_analysis.py",
+          "name": "test_jacobian_analysis.py",
+          "size_bytes": 14032,
+          "lines": 388
+        },
+        {
+          "path": "v16/cosmology/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 785,
+          "lines": 23
+        }
+      ],
+      "file_count": 8,
+      "line_count": 5106
+    },
+    "v16/discussion": {
+      "files": [
+        {
+          "path": "v16/discussion/discussion_v16_0.py",
+          "name": "discussion_v16_0.py",
+          "size_bytes": 65910,
+          "lines": 1386
+        },
+        {
+          "path": "v16/discussion/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 140,
+          "lines": 7
+        }
+      ],
+      "file_count": 2,
+      "line_count": 1393
+    },
+    "v16/fermion": {
+      "files": [
+        {
+          "path": "v16/fermion/chirality_v16_0.py",
+          "name": "chirality_v16_0.py",
+          "size_bytes": 52750,
+          "lines": 1129
+        },
+        {
+          "path": "v16/fermion/ckm_matrix_v16_0.py",
+          "name": "ckm_matrix_v16_0.py",
+          "size_bytes": 55034,
+          "lines": 1219
+        },
+        {
+          "path": "v16/fermion/fermion_generations_v16_0.py",
+          "name": "fermion_generations_v16_0.py",
+          "size_bytes": 32192,
+          "lines": 748
+        },
+        {
+          "path": "v16/fermion/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 720,
+          "lines": 19
+        }
+      ],
+      "file_count": 4,
+      "line_count": 3115
+    },
+    "v16/gauge": {
+      "files": [
+        {
+          "path": "v16/gauge/gauge_unification_v16_0.py",
+          "name": "gauge_unification_v16_0.py",
+          "size_bytes": 44693,
+          "lines": 1055
+        },
+        {
+          "path": "v16/gauge/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 359,
+          "lines": 16
+        }
+      ],
+      "file_count": 2,
+      "line_count": 1071
+    },
+    "v16/geometric": {
+      "files": [
+        {
+          "path": "v16/geometric/g2_geometry_v16_0.py",
+          "name": "g2_geometry_v16_0.py",
+          "size_bytes": 74702,
+          "lines": 1427
+        },
+        {
+          "path": "v16/geometric/g2_ricci_flow_rigorous.py",
+          "name": "g2_ricci_flow_rigorous.py",
+          "size_bytes": 22524,
+          "lines": 668
+        },
+        {
+          "path": "v16/geometric/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 526,
+          "lines": 19
+        }
+      ],
+      "file_count": 3,
+      "line_count": 2114
+    },
+    "v16/higgs": {
+      "files": [
+        {
+          "path": "v16/higgs/higgs_mass_v16_0.py",
+          "name": "higgs_mass_v16_0.py",
+          "size_bytes": 36396,
+          "lines": 858
+        },
+        {
+          "path": "v16/higgs/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 362,
+          "lines": 15
+        }
+      ],
+      "file_count": 2,
+      "line_count": 873
+    },
+    "v16/introduction": {
+      "files": [
+        {
+          "path": "v16/introduction/introduction_v16_0.py",
+          "name": "introduction_v16_0.py",
+          "size_bytes": 54257,
+          "lines": 986
+        },
+        {
+          "path": "v16/introduction/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 152,
+          "lines": 7
+        }
+      ],
+      "file_count": 2,
+      "line_count": 993
+    },
+    "v16/neutrino": {
+      "files": [
+        {
+          "path": "v16/neutrino/neutrino_mixing_v16_0.py",
+          "name": "neutrino_mixing_v16_0.py",
+          "size_bytes": 42919,
+          "lines": 917
+        },
+        {
+          "path": "v16/neutrino/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 477,
+          "lines": 20
+        }
+      ],
+      "file_count": 2,
+      "line_count": 937
+    },
+    "v16/pneuma": {
+      "files": [
+        {
+          "path": "v16/pneuma/pneuma_mechanism_v16_0.py",
+          "name": "pneuma_mechanism_v16_0.py",
+          "size_bytes": 54602,
+          "lines": 1102
+        },
+        {
+          "path": "v16/pneuma/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 567,
+          "lines": 20
+        }
+      ],
+      "file_count": 2,
+      "line_count": 1122
+    },
+    "v16/predictions": {
+      "files": [
+        {
+          "path": "v16/predictions/predictions_aggregator_v16_0.py",
+          "name": "predictions_aggregator_v16_0.py",
+          "size_bytes": 59541,
+          "lines": 1183
+        },
+        {
+          "path": "v16/predictions/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 178,
+          "lines": 7
+        }
+      ],
+      "file_count": 2,
+      "line_count": 1190
+    },
+    "v16/proton": {
+      "files": [
+        {
+          "path": "v16/proton/proton_decay_v16_0.py",
+          "name": "proton_decay_v16_0.py",
+          "size_bytes": 29938,
+          "lines": 697
+        },
+        {
+          "path": "v16/proton/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 402,
+          "lines": 15
+        }
+      ],
+      "file_count": 2,
+      "line_count": 712
+    },
+    "v16/statistics": {
+      "files": [
+        {
+          "path": "v16/statistics/example_integration.py",
+          "name": "example_integration.py",
+          "size_bytes": 10988,
+          "lines": 278
+        },
+        {
+          "path": "v16/statistics/rigor_covariance_v16_1.py",
+          "name": "rigor_covariance_v16_1.py",
+          "size_bytes": 43018,
+          "lines": 1077
+        },
+        {
+          "path": "v16/statistics/test_covariance_data.py",
+          "name": "test_covariance_data.py",
+          "size_bytes": 4849,
+          "lines": 131
+        },
+        {
+          "path": "v16/statistics/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 663,
+          "lines": 26
+        }
+      ],
+      "file_count": 4,
+      "line_count": 1512
+    },
+    "v16/thermal": {
+      "files": [
+        {
+          "path": "v16/thermal/thermal_time_v16_0.py",
+          "name": "thermal_time_v16_0.py",
+          "size_bytes": 23280,
+          "lines": 578
+        },
+        {
+          "path": "v16/thermal/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 150,
+          "lines": 7
+        }
+      ],
+      "file_count": 2,
+      "line_count": 585
+    },
+    "v16/validation": {
+      "files": [
+        {
+          "path": "v16/validation/example_usage.py",
+          "name": "example_usage.py",
+          "size_bytes": 5759,
+          "lines": 140
+        },
+        {
+          "path": "v16/validation/rigorous_validator_v16_1.py",
+          "name": "rigorous_validator_v16_1.py",
+          "size_bytes": 40839,
+          "lines": 988
+        },
+        {
+          "path": "v16/validation/__init__.py",
+          "name": "__init__.py",
+          "size_bytes": 585,
+          "lines": 21
+        }
+      ],
+      "file_count": 3,
+      "line_count": 1149
+    }
+  },
+  "files": [
+    {
+      "path": "__init__.py",
+      "category": "root",
+      "size_bytes": 10440,
+      "lines": 299
+    },
+    {
+      "path": "base/__init__.py",
+      "category": "base",
+      "size_bytes": 2516,
+      "lines": 112
+    },
+    {
+      "path": "base/established.py",
+      "category": "base",
+      "size_bytes": 22620,
+      "lines": 597
+    },
+    {
+      "path": "base/formulas.py",
+      "category": "base",
+      "size_bytes": 14640,
+      "lines": 380
+    },
+    {
+      "path": "base/injector.py",
+      "category": "base",
+      "size_bytes": 6970,
+      "lines": 249
+    },
+    {
+      "path": "base/registry.py",
+      "category": "base",
+      "size_bytes": 22094,
+      "lines": 659
+    },
+    {
+      "path": "base/schema.py",
+      "category": "base",
+      "size_bytes": 28982,
+      "lines": 698
+    },
+    {
+      "path": "base/sections.py",
+      "category": "base",
+      "size_bytes": 11783,
+      "lines": 356
+    },
+    {
+      "path": "base/simulation_base.py",
+      "category": "base",
+      "size_bytes": 23938,
+      "lines": 649
+    },
+    {
+      "path": "base/validator.py",
+      "category": "base",
+      "size_bytes": 16160,
+      "lines": 452
+    },
+    {
+      "path": "config.py",
+      "category": "root",
+      "size_bytes": 372165,
+      "lines": 8294
+    },
+    {
+      "path": "data/experimental/desi_2025_constraints.json",
+      "category": "data/experimental",
+      "size_bytes": 2514,
+      "lines": null
+    },
+    {
+      "path": "data/experimental/nufit_6_0_covariance.json",
+      "category": "data/experimental",
+      "size_bytes": 8939,
+      "lines": null
+    },
+    {
+      "path": "data/experimental/nufit_6_0_parameters.json",
+      "category": "data/experimental",
+      "size_bytes": 2755,
+      "lines": null
+    },
+    {
+      "path": "data/experimental/pdg_2024_values.json",
+      "category": "data/experimental",
+      "size_bytes": 3485,
+      "lines": null
+    },
+    {
+      "path": "run_all_simulations.py",
+      "category": "root",
+      "size_bytes": 50873,
+      "lines": 1302
+    },
+    {
+      "path": "tests/__init__.py",
+      "category": "tests",
+      "size_bytes": 138,
+      "lines": 5
+    },
+    {
+      "path": "tests/conftest.py",
+      "category": "tests",
+      "size_bytes": 2525,
+      "lines": 78
+    },
+    {
+      "path": "tests/test_data_loader.py",
+      "category": "data/experimental",
+      "size_bytes": 32407,
+      "lines": 873
+    },
+    {
+      "path": "tests/test_gauge_invariance.py",
+      "category": "tests",
+      "size_bytes": 30694,
+      "lines": 820
+    },
+    {
+      "path": "tests/test_registry.py",
+      "category": "tests",
+      "size_bytes": 32438,
+      "lines": 878
+    },
+    {
+      "path": "v16/__init__.py",
+      "category": "v16/__init__.py",
+      "size_bytes": 1827,
+      "lines": 58
+    },
+    {
+      "path": "v16/appendices/__init__.py",
+      "category": "v16/appendices",
+      "size_bytes": 7149,
+      "lines": 192
+    },
+    {
+      "path": "v16/appendices/appendix_a_math_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 29697,
+      "lines": 731
+    },
+    {
+      "path": "v16/appendices/appendix_b_methods_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 36246,
+      "lines": 872
+    },
+    {
+      "path": "v16/appendices/appendix_c_derivations_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 35307,
+      "lines": 828
+    },
+    {
+      "path": "v16/appendices/appendix_d_tables_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 29425,
+      "lines": 562
+    },
+    {
+      "path": "v16/appendices/appendix_e_proton_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 18667,
+      "lines": 462
+    },
+    {
+      "path": "v16/appendices/appendix_f_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 18824,
+      "lines": 488
+    },
+    {
+      "path": "v16/appendices/appendix_g_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 17265,
+      "lines": 428
+    },
+    {
+      "path": "v16/appendices/appendix_h_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 13615,
+      "lines": 359
+    },
+    {
+      "path": "v16/appendices/appendix_i_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 17055,
+      "lines": 431
+    },
+    {
+      "path": "v16/appendices/appendix_j_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 21126,
+      "lines": 520
+    },
+    {
+      "path": "v16/appendices/appendix_k_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 23884,
+      "lines": 541
+    },
+    {
+      "path": "v16/appendices/appendix_l_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 29835,
+      "lines": 693
+    },
+    {
+      "path": "v16/appendices/appendix_m_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 32281,
+      "lines": 728
+    },
+    {
+      "path": "v16/appendices/appendix_n_v16_0.py",
+      "category": "v16/appendices",
+      "size_bytes": 20353,
+      "lines": 537
+    },
+    {
+      "path": "v16/cosmology/__init__.py",
+      "category": "v16/cosmology",
+      "size_bytes": 785,
+      "lines": 23
+    },
+    {
+      "path": "v16/cosmology/cosmology_intro_v16_0.py",
+      "category": "v16/cosmology",
+      "size_bytes": 40540,
+      "lines": 850
+    },
+    {
+      "path": "v16/cosmology/dark_energy_v16_0.py",
+      "category": "v16/cosmology",
+      "size_bytes": 42851,
+      "lines": 964
+    },
+    {
+      "path": "v16/cosmology/jacobian_mathematical_validation.py",
+      "category": "v16/cosmology",
+      "size_bytes": 14821,
+      "lines": 404
+    },
+    {
+      "path": "v16/cosmology/multi_sector_v16_0.py",
+      "category": "v16/cosmology",
+      "size_bytes": 45086,
+      "lines": 1023
+    },
+    {
+      "path": "v16/cosmology/s8_suppression_v16_1.py",
+      "category": "v16/cosmology",
+      "size_bytes": 48578,
+      "lines": 1156
+    },
+    {
+      "path": "v16/cosmology/test_complete_validation.py",
+      "category": "v16/cosmology",
+      "size_bytes": 9536,
+      "lines": 298
+    },
+    {
+      "path": "v16/cosmology/test_jacobian_analysis.py",
+      "category": "v16/cosmology",
+      "size_bytes": 14032,
+      "lines": 388
+    },
+    {
+      "path": "v16/discussion/__init__.py",
+      "category": "v16/discussion",
+      "size_bytes": 140,
+      "lines": 7
+    },
+    {
+      "path": "v16/discussion/discussion_v16_0.py",
+      "category": "v16/discussion",
+      "size_bytes": 65910,
+      "lines": 1386
+    },
+    {
+      "path": "v16/fermion/__init__.py",
+      "category": "v16/fermion",
+      "size_bytes": 720,
+      "lines": 19
+    },
+    {
+      "path": "v16/fermion/chirality_v16_0.py",
+      "category": "v16/fermion",
+      "size_bytes": 52750,
+      "lines": 1129
+    },
+    {
+      "path": "v16/fermion/ckm_matrix_v16_0.py",
+      "category": "v16/fermion",
+      "size_bytes": 55034,
+      "lines": 1219
+    },
+    {
+      "path": "v16/fermion/fermion_generations_v16_0.py",
+      "category": "v16/fermion",
+      "size_bytes": 32192,
+      "lines": 748
+    },
+    {
+      "path": "v16/gauge/__init__.py",
+      "category": "v16/gauge",
+      "size_bytes": 359,
+      "lines": 16
+    },
+    {
+      "path": "v16/gauge/gauge_unification_v16_0.py",
+      "category": "v16/gauge",
+      "size_bytes": 44693,
+      "lines": 1055
+    },
+    {
+      "path": "v16/geometric/__init__.py",
+      "category": "v16/geometric",
+      "size_bytes": 526,
+      "lines": 19
+    },
+    {
+      "path": "v16/geometric/g2_geometry_v16_0.py",
+      "category": "v16/geometric",
+      "size_bytes": 74702,
+      "lines": 1427
+    },
+    {
+      "path": "v16/geometric/g2_ricci_flow_rigorous.py",
+      "category": "v16/geometric",
+      "size_bytes": 22524,
+      "lines": 668
+    },
+    {
+      "path": "v16/higgs/__init__.py",
+      "category": "v16/higgs",
+      "size_bytes": 362,
+      "lines": 15
+    },
+    {
+      "path": "v16/higgs/higgs_mass_v16_0.py",
+      "category": "v16/higgs",
+      "size_bytes": 36396,
+      "lines": 858
+    },
+    {
+      "path": "v16/introduction/__init__.py",
+      "category": "v16/introduction",
+      "size_bytes": 152,
+      "lines": 7
+    },
+    {
+      "path": "v16/introduction/introduction_v16_0.py",
+      "category": "v16/introduction",
+      "size_bytes": 54257,
+      "lines": 986
+    },
+    {
+      "path": "v16/neutrino/__init__.py",
+      "category": "v16/neutrino",
+      "size_bytes": 477,
+      "lines": 20
+    },
+    {
+      "path": "v16/neutrino/neutrino_mixing_v16_0.py",
+      "category": "v16/neutrino",
+      "size_bytes": 42919,
+      "lines": 917
+    },
+    {
+      "path": "v16/pneuma/__init__.py",
+      "category": "v16/pneuma",
+      "size_bytes": 567,
+      "lines": 20
+    },
+    {
+      "path": "v16/pneuma/pneuma_mechanism_v16_0.py",
+      "category": "v16/pneuma",
+      "size_bytes": 54602,
+      "lines": 1102
+    },
+    {
+      "path": "v16/predictions/__init__.py",
+      "category": "v16/predictions",
+      "size_bytes": 178,
+      "lines": 7
+    },
+    {
+      "path": "v16/predictions/predictions_aggregator_v16_0.py",
+      "category": "v16/predictions",
+      "size_bytes": 59541,
+      "lines": 1183
+    },
+    {
+      "path": "v16/proton/__init__.py",
+      "category": "v16/proton",
+      "size_bytes": 402,
+      "lines": 15
+    },
+    {
+      "path": "v16/proton/proton_decay_v16_0.py",
+      "category": "v16/proton",
+      "size_bytes": 29938,
+      "lines": 697
+    },
+    {
+      "path": "v16/statistics/__init__.py",
+      "category": "v16/statistics",
+      "size_bytes": 663,
+      "lines": 26
+    },
+    {
+      "path": "v16/statistics/example_integration.py",
+      "category": "v16/statistics",
+      "size_bytes": 10988,
+      "lines": 278
+    },
+    {
+      "path": "v16/statistics/rigor_covariance_v16_1.py",
+      "category": "v16/statistics",
+      "size_bytes": 43018,
+      "lines": 1077
+    },
+    {
+      "path": "v16/statistics/test_covariance_data.py",
+      "category": "v16/statistics",
+      "size_bytes": 4849,
+      "lines": 131
+    },
+    {
+      "path": "v16/thermal/__init__.py",
+      "category": "v16/thermal",
+      "size_bytes": 150,
+      "lines": 7
+    },
+    {
+      "path": "v16/thermal/thermal_time_v16_0.py",
+      "category": "v16/thermal",
+      "size_bytes": 23280,
+      "lines": 578
+    },
+    {
+      "path": "v16/validation/__init__.py",
+      "category": "v16/validation",
+      "size_bytes": 585,
+      "lines": 21
+    },
+    {
+      "path": "v16/validation/example_usage.py",
+      "category": "v16/validation",
+      "size_bytes": 5759,
+      "lines": 140
+    },
+    {
+      "path": "v16/validation/rigorous_validator_v16_1.py",
+      "category": "v16/validation",
+      "size_bytes": 40839,
+      "lines": 988
+    }
+  ],
+  "statistics": {
+    "total_files": 77,
+    "total_lines": 47003,
+    "by_domain": {
+      "appendices": {
+        "name": "Mathematical Appendices",
+        "simulation_count": 14
+      },
+      "cosmology": {
+        "name": "Cosmology",
+        "simulation_count": 3
+      },
+      "discussion": {
+        "name": "Discussion & Implications",
+        "simulation_count": 1
+      },
+      "fermion": {
+        "name": "Fermion Physics",
+        "simulation_count": 3
+      },
+      "gauge": {
+        "name": "Gauge Theory",
+        "simulation_count": 1
+      },
+      "geometric": {
+        "name": "Geometric Framework",
+        "simulation_count": 1
+      },
+      "higgs": {
+        "name": "Higgs Mechanism",
+        "simulation_count": 1
+      },
+      "introduction": {
+        "name": "Theory Introduction",
+        "simulation_count": 1
+      },
+      "neutrino": {
+        "name": "Neutrino Physics",
+        "simulation_count": 1
+      },
+      "pneuma": {
+        "name": "Pneuma Mechanism",
+        "simulation_count": 1
+      },
+      "predictions": {
+        "name": "Predictions & Validation",
+        "simulation_count": 1
+      },
+      "proton": {
+        "name": "Proton Decay",
+        "simulation_count": 1
+      },
+      "thermal": {
+        "name": "Thermal Physics",
+        "simulation_count": 1
+      }
+    },
+    "by_type": {
+      "python_files": 73,
+      "json_files": 4
+    }
+  },
+  "summary": {
+    "total_simulations": 30,
+    "domains_covered": 13,
+    "experimental_datasets": 4,
+    "test_coverage": 4
+  }
+}

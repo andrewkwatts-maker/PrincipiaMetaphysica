@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="References - Academic papers and resources for Principia Metaphysica">
+    <title>References - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/pm-common.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <style>
+        .search-container {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid var(--border-primary);
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.875rem 1.25rem;
+            font-size: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: #f8f9fa;
+            font-family: 'Source Sans Pro', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(139, 127, 255, 0.5);
+            box-shadow:
+                0 0 0 3px rgba(139, 127, 255, 0.1),
+                0 0 20px rgba(139, 127, 255, 0.2);
+        }
+
+        .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .filter-buttons {
+            margin-top: 1rem;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover {
+            background: rgba(139, 127, 255, 0.2);
+            border-color: rgba(139, 127, 255, 0.4);
+            transform: translateY(-1px);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(135deg, #8b7fff, #ff7eb6);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(139, 127, 255, 0.4);
+        }
+
+        .ref-stats {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .ref-category {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+
+        .ref-category h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+            font-size: 1.4rem;
+        }
+
+        .ref-item {
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 8px;
+            border-left: 3px solid var(--accent-primary);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .ref-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .ref-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .ref-item.hidden {
+            display: none;
+        }
+
+        .ref-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        .ref-authors {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .ref-year {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .ref-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .ref-links {
+            margin-top: 0.75rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .ref-links a {
+            display: inline-block;
+            font-size: 0.85rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .ref-links a:hover {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
+
+        .ref-tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: rgba(139, 127, 255, 0.15);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--accent-primary);
+            margin-right: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .ref-id {
+            font-family: 'Source Code Pro', monospace;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            opacity: 0.7;
+        }
+
+        .citation-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.7rem;
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.2), rgba(255, 126, 182, 0.2));
+            border: 1px solid rgba(139, 127, 255, 0.3);
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-left: 0.5rem;
+        }
+
+        .citation-count {
+            font-size: 0.85rem;
+            font-weight: 700;
+        }
+
+        .journal-info {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
+        .loading-indicator {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        .loading-indicator::before {
+            content: "⟳ ";
+            display: inline-block;
+            animation: spin 1s linear infinite;
+            font-size: 1.5rem;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            padding: 2rem;
+            background: rgba(255, 100, 100, 0.1);
+            border: 2px solid rgba(255, 100, 100, 0.3);
+            border-radius: 8px;
+            color: #ff6464;
+            text-align: center;
+        }
+
+        .no-results {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-style: italic;
+        }
+    </style>
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+</head>
+<body class="auth-loading">
+  <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span>References</span>
+        </nav>
+
+        <div class="intro">
+            <h1>References</h1>
+            <p>
+                Principia Metaphysica builds upon established physics and mathematics. This page provides
+                links to the foundational papers, textbooks, and resources that underpin the framework.
+            </p>
+            <p style="margin-top: 1rem; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px; border-left: 3px solid var(--accent-primary);">
+                <strong>Compactification Note:</strong> The framework uses G₂ manifold compactifications via M-theory. The dimensional flow is:
+                <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (bosonic string) → 13D (half dimensions) → 7D (G₂ compactification) → 6D (heterogeneous brane) → 4D (observed).
+            </p>
+            <p style="margin-top: 1rem; padding: 1rem; background: rgba(80, 200, 120, 0.1); border-radius: 8px; border-left: 3px solid #50c878;">
+                <strong>Methodological Approach (Updated December 2025):</strong> The framework demonstrates a fundamental shift from top-down
+                to bottom-up methodology. Rather than assuming moduli values (like Re(T)) from string theory constructions, they are derived
+                from measured observables (Higgs mass M_H = <span class="pm-value" data-pm-value="v11_final_observables.higgs_mass.m_h_GeV"></span> GeV). This inverts the traditional approach: the compactification geometry
+                is constrained by nature's choices rather than theoretical assumptions. Parameters are explicitly classified as either
+                topologically derived (generation count), dynamically emergent (gauge couplings), or observationally constrained (moduli values).
+                See <a href="philosophical-implications.html#predictivity" style="color: #50c878; text-decoration: underline;">Philosophical Implications: Predictivity vs Postdictivity</a> for full discussion.
+            </p>
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="search-container">
+            <input type="text" id="search-input" class="search-input" placeholder="Search references by title, author, or description..." />
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All References</button>
+                <button class="filter-btn" data-filter="year">Sort by Year</button>
+                <button class="filter-btn" data-filter="author">Sort by Author</button>
+                <button class="filter-btn" data-filter="cited">Most Cited</button>
+            </div>
+            <div class="ref-stats" id="ref-stats">
+                Loading references...
+            </div>
+            <div id="citation-summary" style="margin-top: 1rem; padding: 1rem; background: rgba(81, 207, 102, 0.1); border-radius: 8px; border-left: 3px solid #50c878; display: none;">
+                <strong>Most Cited:</strong> <span id="most-cited-refs"></span>
+            </div>
+        </div>
+
+        <!-- References Container -->
+        <div id="references-container">
+            <div class="loading-indicator" id="loading-indicator">
+                Loading references from AutoGenerated/references.json...<br>
+                <small style="margin-top: 0.5rem; display: block; opacity: 0.7;">
+                    If this message persists, check the browser console (F12) for errors.
+                </small>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025-2026 Andrew Keith Watts. All rights reserved.</p>
+            <p>Principia Metaphysica: A Geometric Unification Framework</p>
+        </div>
+    </footer>
+  </div>
+
+  <script type="module">
+    import { injectHeader } from '../js/pm-header.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
+
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+        injectHeader('references');
+    });
+
+    // Setup auth after header
+    setupAuthGuard('references');
+  </script>
+
+  <script>
+    // References data
+    let allReferences = [];
+    let currentFilter = 'all';
+
+    // Load references from JSON
+    async function loadReferences() {
+        console.log('[References] Starting to load references...');
+        console.log('[References] Current URL:', window.location.href);
+
+        // Update loading indicator
+        const loadingIndicator = document.getElementById('loading-indicator');
+        if (loadingIndicator) {
+            loadingIndicator.innerHTML = `
+                Fetching references from AutoGenerated/references.json...<br>
+                <small style="margin-top: 0.5rem; display: block; opacity: 0.7;">
+                    Trying multiple paths to locate the file...
+                </small>
+            `;
+        }
+
+        try {
+            // Try multiple paths to handle different serving contexts
+            const paths = [
+                'AutoGenerated/references.json',
+                './AutoGenerated/references.json',
+                '/AutoGenerated/references.json',
+                'AutoGenerated/theory_output.json',  // Fallback to theory_output.json
+                './AutoGenerated/theory_output.json',
+                '/AutoGenerated/theory_output.json'
+            ];
+
+            let data = null;
+            let successPath = null;
+
+            for (const path of paths) {
+                try {
+                    console.log(`[References] Attempting to fetch from: ${path}`);
+                    const response = await fetch(path);
+                    console.log(`[References] Response status for ${path}:`, response.status, response.statusText);
+
+                    if (response.ok) {
+                        const text = await response.text();
+                        console.log(`[References] Fetched ${text.length} bytes from ${path}`);
+                        console.log(`[References] First 100 chars:`, text.substring(0, 100));
+
+                        const parsedData = JSON.parse(text);
+
+                        // Check if this is theory_output.json and extract references
+                        if (path.includes('theory_output') && parsedData.references) {
+                            data = parsedData.references;
+                            console.log(`[References] Extracted references from theory_output.json`);
+                        } else if (path.includes('references.json')) {
+                            data = parsedData;
+                        } else {
+                            console.warn(`[References] ${path} does not contain references data`);
+                            continue;
+                        }
+
+                        successPath = path;
+                        console.log(`[References] Successfully parsed JSON from ${path}`);
+                        break;
+                    }
+                } catch (fetchError) {
+                    console.warn(`[References] Failed to fetch from ${path}:`, fetchError.message);
+                }
+            }
+
+            if (!data) {
+                throw new Error('Could not load references from any path. Tried: ' + paths.join(', '));
+            }
+
+            console.log('[References] Successfully loaded from:', successPath);
+            console.log('[References] Data type:', typeof data);
+            console.log('[References] Data keys:', Object.keys(data).slice(0, 5));
+
+            // Convert object to array
+            allReferences = Object.values(data);
+            console.log('[References] Converted to array, length:', allReferences.length);
+            console.log('[References] Sample reference:', allReferences[0]);
+
+            // Validate data structure
+            if (allReferences.length === 0) {
+                throw new Error('No references found in JSON file');
+            }
+
+            // Update stats
+            updateStats();
+
+            // Display references
+            displayReferences(allReferences);
+
+            console.log('[References] Successfully rendered references');
+        } catch (error) {
+            console.error('[References] Error loading references:', error);
+            console.error('[References] Error stack:', error.stack);
+
+            document.getElementById('references-container').innerHTML = `
+                <div class="error-message">
+                    <strong>Error loading references</strong><br>
+                    Could not load AutoGenerated/references.json<br>
+                    <small>${error.message}</small><br><br>
+                    <strong>Troubleshooting:</strong><br>
+                    • Ensure you're viewing this page through a web server (not file://)<br>
+                    • Check that AutoGenerated/references.json exists<br>
+                    • Open browser console (F12) for detailed error logs
+                </div>
+            `;
+        }
+    }
+
+    // Update statistics
+    function updateStats() {
+        console.log('[References] Updating stats...');
+        const totalRefs = allReferences.length;
+        const withArxiv = allReferences.filter(ref => ref.arxiv && ref.arxiv.length > 0).length;
+        const withDOI = allReferences.filter(ref => ref.doi && ref.doi.length > 0).length;
+        const avgYear = Math.round(allReferences.reduce((sum, ref) => sum + ref.year, 0) / totalRefs);
+
+        // Calculate citation statistics
+        const refsWithCitations = allReferences.map(ref => ({
+            ...ref,
+            totalCitations: (ref.citedByFormulas?.length || 0) + (ref.citedByParams?.length || 0)
+        }));
+        const totalCitations = refsWithCitations.reduce((sum, ref) => sum + ref.totalCitations, 0);
+
+        // Find most cited references
+        const mostCited = refsWithCitations
+            .filter(ref => ref.totalCitations > 0)
+            .sort((a, b) => b.totalCitations - a.totalCitations)
+            .slice(0, 5);
+
+        const statsHTML = `
+            <strong>${totalRefs}</strong> total references •
+            <strong>${withArxiv}</strong> with arXiv •
+            <strong>${withDOI}</strong> with DOI •
+            Average year: <strong>${avgYear}</strong> •
+            <strong>${totalCitations}</strong> total citations
+        `;
+
+        document.getElementById('ref-stats').innerHTML = statsHTML;
+
+        // Update most cited summary
+        if (mostCited.length > 0) {
+            const citationSummary = document.getElementById('citation-summary');
+            const mostCitedHTML = mostCited
+                .map(ref => `<a href="#${ref.id}" style="color: #50c878; text-decoration: none; margin-right: 0.75rem;" title="${ref.title}">${ref.authors.split(',')[0]} (${ref.year}) - ${ref.totalCitations} citations</a>`)
+                .join('');
+            document.getElementById('most-cited-refs').innerHTML = mostCitedHTML;
+            citationSummary.style.display = 'block';
+        }
+
+        console.log('[References] Stats updated:', { totalRefs, withArxiv, withDOI, avgYear, totalCitations });
+    }
+
+    // Display references
+    function displayReferences(references) {
+        console.log('[References] Displaying references, count:', references.length);
+        const container = document.getElementById('references-container');
+
+        if (!container) {
+            console.error('[References] Container element not found!');
+            return;
+        }
+
+        if (references.length === 0) {
+            console.log('[References] No references to display');
+            container.innerHTML = '<div class="no-results">No references found matching your search.</div>';
+            return;
+        }
+
+        // Group references by decade for better organization
+        console.log('[References] Grouping references by decade...');
+        const grouped = groupByDecade(references);
+        console.log('[References] Grouped into decades:', Object.keys(grouped));
+
+        let html = '';
+        for (const [decade, refs] of Object.entries(grouped)) {
+            console.log(`[References] Processing decade ${decade}s with ${refs.length} references`);
+            html += `
+                <section class="ref-category">
+                    <h3>${decade}s</h3>
+            `;
+
+            refs.forEach(ref => {
+                html += createReferenceHTML(ref);
+            });
+
+            html += '</section>';
+        }
+
+        console.log('[References] Generated HTML length:', html.length);
+        container.innerHTML = html;
+        console.log('[References] References rendered to DOM');
+    }
+
+    // Group references by decade
+    function groupByDecade(references) {
+        console.log('[References] Grouping by decade, input count:', references.length);
+        const grouped = {};
+
+        references.forEach((ref, index) => {
+            if (!ref || typeof ref.year !== 'number') {
+                console.warn('[References] Invalid reference at index', index, ref);
+                return;
+            }
+            const decade = Math.floor(ref.year / 10) * 10;
+            if (!grouped[decade]) {
+                grouped[decade] = [];
+            }
+            grouped[decade].push(ref);
+        });
+
+        console.log('[References] Grouped by decade (before sort):', Object.keys(grouped));
+
+        // Sort decades in descending order
+        const sorted = {};
+        Object.keys(grouped).sort((a, b) => b - a).forEach(decade => {
+            // Sort references within decade by year (descending) then by author
+            sorted[decade] = grouped[decade].sort((a, b) => {
+                if (b.year !== a.year) return b.year - a.year;
+                return a.authors.localeCompare(b.authors);
+            });
+        });
+
+        console.log('[References] Final sorted decades:', Object.keys(sorted));
+        return sorted;
+    }
+
+    // Create HTML for a single reference
+    function createReferenceHTML(ref) {
+        try {
+            const arxivLink = ref.arxiv ? `https://arxiv.org/abs/${ref.arxiv}` : null;
+            const doiLink = ref.doi ? `https://doi.org/${ref.doi}` : null;
+
+            // Calculate total citations
+            const formulaCitations = ref.citedByFormulas?.length || 0;
+            const paramCitations = ref.citedByParams?.length || 0;
+            const totalCitations = formulaCitations + paramCitations;
+
+            // Create citation badge
+            const citationBadgeHTML = totalCitations > 0 ?
+                `<span class="citation-badge" title="${formulaCitations} formula citations, ${paramCitations} parameter citations">
+                    <span class="citation-count">${totalCitations}</span> citation${totalCitations !== 1 ? 's' : ''}
+                </span>` : '';
+
+            let linksHTML = '<div class="ref-links">';
+            if (arxivLink) {
+                linksHTML += `<a href="${arxivLink}" target="_blank">arXiv: ${ref.arxiv} →</a>`;
+            }
+            if (doiLink) {
+                linksHTML += `<a href="${doiLink}" target="_blank">DOI: ${ref.doi} →</a>`;
+            }
+            linksHTML += '</div>';
+
+            const descriptionHTML = ref.description ?
+                `<div class="ref-description">${ref.description}</div>` : '';
+
+            // Journal info
+            const journalHTML = ref.journal ?
+                `<div class="journal-info">${ref.journal}</div>` : '';
+
+            // Cited by formulas (clickable tags)
+            const citedByHTML = (ref.citedByFormulas && ref.citedByFormulas.length > 0) ?
+                '<div style="margin-top: 0.5rem;">' +
+                ref.citedByFormulas.map(f => `<span class="ref-tag" title="Click to view formula"><a href="formulas.html#${f}" style="color: inherit; text-decoration: none;">Formula: ${f}</a></span>`).join('') +
+                '</div>' : '';
+
+            return `
+                <div class="ref-item" data-ref-id="${ref.id}" id="${ref.id}">
+                    <div class="ref-title">
+                        ${ref.title}
+                        ${citationBadgeHTML}
+                    </div>
+                    <div class="ref-authors">${ref.authors}</div>
+                    <div class="ref-year">${ref.year} <span class="ref-id">[${ref.id}]</span></div>
+                    ${journalHTML}
+                    ${descriptionHTML}
+                    ${linksHTML}
+                    ${citedByHTML}
+                </div>
+            `;
+        } catch (error) {
+            console.error('[References] Error creating HTML for reference:', ref, error);
+            return `<div class="ref-item"><div class="ref-title">Error rendering reference: ${ref?.id || 'unknown'}</div></div>`;
+        }
+    }
+
+    // Search functionality
+    function searchReferences(query) {
+        console.log('[References] Search called with query:', query);
+
+        if (!query.trim()) {
+            console.log('[References] Empty query, displaying all references');
+            displayReferences(allReferences);
+            return;
+        }
+
+        const searchTerm = query.toLowerCase();
+        const filtered = allReferences.filter(ref => {
+            return ref.title.toLowerCase().includes(searchTerm) ||
+                   ref.authors.toLowerCase().includes(searchTerm) ||
+                   (ref.description && ref.description.toLowerCase().includes(searchTerm)) ||
+                   ref.id.toLowerCase().includes(searchTerm);
+        });
+
+        console.log('[References] Search results:', filtered.length, 'out of', allReferences.length);
+        displayReferences(filtered);
+    }
+
+    // Sort references
+    function sortReferences(sortBy) {
+        console.log('[References] Sort called with:', sortBy);
+        let sorted = [...allReferences];
+
+        switch(sortBy) {
+            case 'year':
+                sorted.sort((a, b) => b.year - a.year);
+                console.log('[References] Sorted by year');
+                break;
+            case 'author':
+                sorted.sort((a, b) => a.authors.localeCompare(b.authors));
+                console.log('[References] Sorted by author');
+                break;
+            case 'cited':
+                sorted.sort((a, b) => {
+                    const aCount = (a.citedByFormulas?.length || 0) + (a.citedByParams?.length || 0);
+                    const bCount = (b.citedByFormulas?.length || 0) + (b.citedByParams?.length || 0);
+                    return bCount - aCount;
+                });
+                console.log('[References] Sorted by citation count');
+                break;
+            default:
+                console.log('[References] Using default sort (grouped by decade)');
+                break;
+        }
+
+        if (sortBy !== 'all') {
+            // For non-grouped views, display as single list
+            console.log('[References] Displaying as single list');
+            const container = document.getElementById('references-container');
+            let html = '<section class="ref-category"><h3>All References</h3>';
+            sorted.forEach(ref => {
+                html += createReferenceHTML(ref);
+            });
+            html += '</section>';
+            container.innerHTML = html;
+        } else {
+            console.log('[References] Displaying grouped by decade');
+            displayReferences(sorted);
+        }
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        console.log('[References] DOMContentLoaded event fired');
+        console.log('[References] Document ready state:', document.readyState);
+
+        // Load references
+        loadReferences();
+
+        // Search input
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+            console.log('[References] Search input found, attaching listener');
+            searchInput.addEventListener('input', (e) => {
+                console.log('[References] Search query:', e.target.value);
+                searchReferences(e.target.value);
+            });
+        } else {
+            console.error('[References] Search input element not found!');
+        }
+
+        // Filter buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        console.log('[References] Found filter buttons:', filterButtons.length);
+        filterButtons.forEach((btn, index) => {
+            console.log(`[References] Attaching listener to filter button ${index}:`, btn.dataset.filter);
+            btn.addEventListener('click', () => {
+                console.log('[References] Filter clicked:', btn.dataset.filter);
+                // Update active state
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                // Apply filter
+                const filter = btn.dataset.filter;
+                currentFilter = filter;
+                sortReferences(filter);
+            });
+        });
+
+        console.log('[References] All event listeners attached');
+    });
+
+    // Also handle the case where DOMContentLoaded already fired
+    if (document.readyState === 'loading') {
+        console.log('[References] Document still loading, waiting for DOMContentLoaded');
+    } else {
+        console.log('[References] Document already loaded, executing immediately');
+        // DOM already loaded, execute immediately
+        setTimeout(() => {
+            console.log('[References] Executing delayed load');
+            loadReferences();
+        }, 100);
+    }
+  </script>
+</body>
+</html>
