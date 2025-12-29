@@ -1,19 +1,19 @@
 {
   "metadata": {
     "version": "16.0",
-    "timestamp": "2025-12-29T17:51:18.145619",
+    "timestamp": "2025-12-29T18:09:46.196365",
     "description": "Principia Metaphysica - Complete Theory Output",
     "schemaMode": false,
     "uqMode": false,
     "git": {
-      "commit_hash": "c6b88f1f7f464db6f0770f141d03496dff247968",
+      "commit_hash": "382892f75f960dc6b78d46e2b429fb76f5025df6",
       "branch": "main",
       "is_dirty": true,
       "dirty_suffix": "-dirty"
     },
     "python_version": "3.13.9 (tags/v3.13.9:8183fa5, Oct 14 2025, 14:09:13) [MSC v.1944 64 bit (AMD64)]",
     "platform": "win32",
-    "compute_time_ms": 51.427
+    "compute_time_ms": 47.087999999999994
   },
   "derivation_logic": {
     "framework": "Principia Metaphysica - Geometric Unity",
@@ -241,1488 +241,1488 @@
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 3000000000000000.0,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005790",
+      "timestamp": "2025-12-29T18:09:46.061335",
       "metadata": {
         "description": "Reduced Planck mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "constants.alpha_em": {
       "value": 0.0072973525692838015,
       "source": "ESTABLISHED:CODATA2018",
       "uncertainty": 1.5e-10,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005796",
+      "timestamp": "2025-12-29T18:09:46.061340",
       "metadata": {
         "description": "Fine structure constant",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:CODATA2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "constants.m_proton": {
       "value": 0.938272,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 1e-06,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005799",
+      "timestamp": "2025-12-29T18:09:46.061343",
       "metadata": {
         "description": "Proton mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "constants.HBAR": {
       "value": 6.582119569e-25,
       "source": "ESTABLISHED:CODATA2018",
       "uncertainty": 1e-33,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005801",
+      "timestamp": "2025-12-29T18:09:46.061346",
       "metadata": {
         "description": "Reduced Planck constant",
         "units": "GeV·s"
       },
       "source_simulation": "ESTABLISHED:CODATA2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "constants.G_NEWTON": {
       "value": 6.70883e-39,
       "source": "ESTABLISHED:CODATA2018",
       "uncertainty": 3e-44,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005804",
+      "timestamp": "2025-12-29T18:09:46.061348",
       "metadata": {
         "description": "Newton's gravitational constant",
         "units": "GeV^-2"
       },
       "source_simulation": "ESTABLISHED:CODATA2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_higgs": {
       "value": 125.1,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.14,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005816",
+      "timestamp": "2025-12-29T18:09:46.061358",
       "metadata": {
         "description": "Higgs boson mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_electron": {
       "value": 0.0005109989461,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 3.1e-12,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005818",
+      "timestamp": "2025-12-29T18:09:46.061360",
       "metadata": {
         "description": "Electron mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_muon": {
       "value": 0.1056583745,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 2.4e-06,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005820",
+      "timestamp": "2025-12-29T18:09:46.061362",
       "metadata": {
         "description": "Muon mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_tau": {
       "value": 1.77686,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.00012,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005822",
+      "timestamp": "2025-12-29T18:09:46.061363",
       "metadata": {
         "description": "Tau mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_up": {
       "value": 0.00216,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.00049,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005824",
+      "timestamp": "2025-12-29T18:09:46.061365",
       "metadata": {
         "description": "Up quark mass (MS-bar, 2 GeV)",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_down": {
       "value": 0.00467,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.00048,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005826",
+      "timestamp": "2025-12-29T18:09:46.061367",
       "metadata": {
         "description": "Down quark mass (MS-bar, 2 GeV)",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_strange": {
       "value": 0.0934,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.0086,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005828",
+      "timestamp": "2025-12-29T18:09:46.061369",
       "metadata": {
         "description": "Strange quark mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_charm": {
       "value": 1.27,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.02,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005831",
+      "timestamp": "2025-12-29T18:09:46.061371",
       "metadata": {
         "description": "Charm quark mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_bottom": {
       "value": 4.18,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.03,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005833",
+      "timestamp": "2025-12-29T18:09:46.061372",
       "metadata": {
         "description": "Bottom quark mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_top": {
       "value": 172.69,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.3,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005835",
+      "timestamp": "2025-12-29T18:09:46.061374",
       "metadata": {
         "description": "Top quark mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.alpha_s_MZ": {
       "value": 0.118,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.001,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005837",
+      "timestamp": "2025-12-29T18:09:46.061376",
       "metadata": {
         "description": "Strong coupling at M_Z",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.sin2_theta_W": {
       "value": 0.23121,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 4e-05,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005839",
+      "timestamp": "2025-12-29T18:09:46.061377",
       "metadata": {
         "description": "Weak mixing angle",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_W": {
       "value": 80.377,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.012,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005841",
+      "timestamp": "2025-12-29T18:09:46.061379",
       "metadata": {
         "description": "W boson mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pdg.m_Z": {
       "value": 91.1876,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.0021,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005843",
+      "timestamp": "2025-12-29T18:09:46.061382",
       "metadata": {
         "description": "Z boson mass",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "nufit.theta_12": {
       "value": 33.41,
       "source": "ESTABLISHED:NuFIT6.0",
       "uncertainty": 0.75,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005854",
+      "timestamp": "2025-12-29T18:09:46.061394",
       "metadata": {
         "description": "Solar mixing angle",
         "units": "degrees"
       },
       "source_simulation": "ESTABLISHED:NuFIT6.0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "nufit.theta_23": {
       "value": 45.0,
       "source": "ESTABLISHED:NuFIT6.0",
       "uncertainty": 1.0,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005856",
+      "timestamp": "2025-12-29T18:09:46.061396",
       "metadata": {
         "description": "Atmospheric mixing angle",
         "units": "degrees"
       },
       "source_simulation": "ESTABLISHED:NuFIT6.0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "nufit.theta_13": {
       "value": 8.54,
       "source": "ESTABLISHED:NuFIT6.0",
       "uncertainty": 0.12,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005858",
+      "timestamp": "2025-12-29T18:09:46.061398",
       "metadata": {
         "description": "Reactor mixing angle",
         "units": "degrees"
       },
       "source_simulation": "ESTABLISHED:NuFIT6.0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "nufit.delta_CP": {
       "value": 194.0,
       "source": "ESTABLISHED:NuFIT6.0",
       "uncertainty": 25.0,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005861",
+      "timestamp": "2025-12-29T18:09:46.061400",
       "metadata": {
         "description": "CP-violating phase",
         "units": "degrees"
       },
       "source_simulation": "ESTABLISHED:NuFIT6.0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "nufit.delta_m21_sq": {
       "value": 7.5e-05,
       "source": "ESTABLISHED:NuFIT6.0",
       "uncertainty": 2.1e-06,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005863",
+      "timestamp": "2025-12-29T18:09:46.061402",
       "metadata": {
         "description": "Solar mass splitting",
         "units": "eV^2"
       },
       "source_simulation": "ESTABLISHED:NuFIT6.0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "nufit.delta_m31_sq": {
       "value": 0.0025,
       "source": "ESTABLISHED:NuFIT6.0",
       "uncertainty": 2.8e-05,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.005865",
+      "timestamp": "2025-12-29T18:09:46.061403",
       "metadata": {
         "description": "Atmospheric mass splitting",
         "units": "eV^2"
       },
       "source_simulation": "ESTABLISHED:NuFIT6.0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "desi.w0": {
       "value": -0.728,
       "source": "ESTABLISHED:DESI_2025",
       "uncertainty": 0.067,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006205",
+      "timestamp": "2025-12-29T18:09:46.061789",
       "metadata": {
         "description": "Dark energy equation of state at z=0 (from desi_2025_constraints.json)",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:DESI_2025",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "desi.wa": {
       "value": -0.99,
       "source": "ESTABLISHED:DESI_2025",
       "uncertainty": 0.32,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006210",
+      "timestamp": "2025-12-29T18:09:46.061795",
       "metadata": {
         "description": "Dark energy evolution parameter (from desi_2025_constraints.json)",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:DESI_2025",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "desi.sigma8": {
       "value": 0.827,
       "source": "ESTABLISHED:DESI_2025",
       "uncertainty": 0.011,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006213",
+      "timestamp": "2025-12-29T18:09:46.061797",
       "metadata": {
         "description": "RMS matter fluctuation amplitude at 8 h^-1 Mpc (from desi_2025_constraints.json)",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:DESI_2025",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "desi.H0": {
       "value": 67.4,
       "source": "ESTABLISHED:Planck2018",
       "uncertainty": 0.5,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006215",
+      "timestamp": "2025-12-29T18:09:46.061799",
       "metadata": {
         "description": "Hubble constant",
         "units": "km/s/Mpc"
       },
       "source_simulation": "ESTABLISHED:Planck2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "desi.Omega_m": {
       "value": 0.3111,
       "source": "ESTABLISHED:Planck2018",
       "uncertainty": 0.0056,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006218",
+      "timestamp": "2025-12-29T18:09:46.061801",
       "metadata": {
         "description": "Matter density parameter",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:Planck2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "planck.S8": {
       "value": 0.832,
       "source": "ESTABLISHED:Planck2018",
       "uncertainty": 0.013,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006220",
+      "timestamp": "2025-12-29T18:09:46.061803",
       "metadata": {
         "description": "S8 parameter from Planck 2018 CMB (S8 = sigma8 * sqrt(Omega_m/0.3))",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:Planck2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "bounds.tau_proton_lower": {
       "value": 1.67e+34,
       "source": "ESTABLISHED:SuperK_2024",
       "uncertainty": 3e+32,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006227",
+      "timestamp": "2025-12-29T18:09:46.061810",
       "metadata": {
         "description": "Proton lifetime lower bound",
         "units": "years"
       },
       "source_simulation": "ESTABLISHED:SuperK_2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "bounds.sum_m_nu_upper": {
       "value": 0.12,
       "source": "ESTABLISHED:Planck2018",
       "uncertainty": 0,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006229",
+      "timestamp": "2025-12-29T18:09:46.061813",
       "metadata": {
         "description": "Sum of neutrino masses upper bound",
         "units": "eV"
       },
       "source_simulation": "ESTABLISHED:Planck2018",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.vev_yukawa": {
       "value": 174.10383166375172,
       "source": "ESTABLISHED:SM_EW",
       "uncertainty": 0.01,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006254",
+      "timestamp": "2025-12-29T18:09:46.061839",
       "metadata": {
         "description": "Yukawa coupling scale v/√2 = 174 GeV (NOT the EW VEV)",
         "units": "GeV"
       },
       "source_simulation": "ESTABLISHED:SM_EW",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "yukawa.y_top": {
       "value": 0.9918793765177882,
       "source": "ESTABLISHED:PDG2024",
       "uncertainty": 0.003,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006257",
+      "timestamp": "2025-12-29T18:09:46.061841",
       "metadata": {
         "description": "Top quark Yukawa coupling",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:PDG2024",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.g_gut": {
       "value": 0.7191207083539627,
       "source": "ESTABLISHED:GUT_THEORY",
       "uncertainty": 0.01,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006259",
+      "timestamp": "2025-12-29T18:09:46.061843",
       "metadata": {
         "description": "GUT gauge coupling",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:GUT_THEORY",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "moduli.re_t_attractor": {
       "value": 1.833,
       "source": "ESTABLISHED:G2_GEOMETRY",
       "uncertainty": 0.05,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006261",
+      "timestamp": "2025-12-29T18:09:46.061844",
       "metadata": {
         "description": "Attractor value for Re(T) from G2 flux instantons",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:G2_GEOMETRY",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "moduli.re_t_phenomenological": {
       "value": 9.865,
       "source": "CONSTRAINED:HIGGS_MASS",
       "uncertainty": 0.1,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006263",
+      "timestamp": "2025-12-29T18:09:46.061846",
       "metadata": {
         "description": "Re(T) constrained by m_H = 125.10 GeV (phenomenological input)",
         "units": "dimensionless"
       },
       "source_simulation": "CONSTRAINED:HIGGS_MASS",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.T_OMEGA": {
       "value": 0.12,
       "source": "ESTABLISHED:G2_TORSION",
       "uncertainty": 0.02,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006265",
+      "timestamp": "2025-12-29T18:09:46.061848",
       "metadata": {
         "description": "Torsion class parameter from TCS construction",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:G2_TORSION",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.orientation_sum": {
       "value": 1.0,
       "source": "ESTABLISHED:G2_THEORY",
       "uncertainty": 0.05,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006267",
+      "timestamp": "2025-12-29T18:09:46.061849",
       "metadata": {
         "description": "Orientation sum for fermion chirality",
         "units": "dimensionless"
       },
       "source_simulation": "ESTABLISHED:G2_THEORY",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.coherence_fraction": {
       "value": 1e-05,
       "source": "INPUT:SPECULATIVE",
       "uncertainty": 5e-06,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006269",
+      "timestamp": "2025-12-29T18:09:46.061851",
       "metadata": {
         "description": "Fraction of neurons in quantum-coherent state (Penrose-Hameroff Orch-OR)",
         "units": "dimensionless"
       },
       "source_simulation": "INPUT:SPECULATIVE",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.neuron_count": {
       "value": 86000000000.0,
       "source": "ESTABLISHED:NEUROSCIENCE",
       "uncertainty": 10000000000.0,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.006271",
+      "timestamp": "2025-12-29T18:09:46.061853",
       "metadata": {
         "description": "Total neuron count in human brain",
         "units": "count"
       },
       "source_simulation": "ESTABLISHED:NEUROSCIENCE",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.b2": {
       "value": 4,
       "source": "g2_geometry_v16_0",
       "uncertainty": null,
       "status": "GEOMETRIC",
-      "timestamp": "2025-12-29T17:51:18.006726",
+      "timestamp": "2025-12-29T18:09:46.062306",
       "metadata": {},
       "source_simulation": "g2_geometry_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.b3": {
       "value": 24,
       "source": "g2_geometry_v16_0",
       "uncertainty": null,
       "status": "GEOMETRIC",
-      "timestamp": "2025-12-29T17:51:18.006732",
+      "timestamp": "2025-12-29T18:09:46.062313",
       "metadata": {},
       "source_simulation": "g2_geometry_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.chi_eff": {
       "value": 144,
       "source": "g2_geometry_v16_0",
       "uncertainty": null,
       "status": "GEOMETRIC",
-      "timestamp": "2025-12-29T17:51:18.006735",
+      "timestamp": "2025-12-29T18:09:46.062317",
       "metadata": {},
       "source_simulation": "g2_geometry_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.n_gen": {
       "value": 3,
       "source": "g2_geometry_v16_0",
       "uncertainty": null,
       "status": "GEOMETRIC",
-      "timestamp": "2025-12-29T17:51:18.006738",
+      "timestamp": "2025-12-29T18:09:46.062319",
       "metadata": {},
       "source_simulation": "g2_geometry_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.K_MATCHING": {
       "value": 4,
       "source": "g2_geometry_v16_0",
       "uncertainty": null,
       "status": "GEOMETRIC",
-      "timestamp": "2025-12-29T17:51:18.006741",
+      "timestamp": "2025-12-29T18:09:46.062321",
       "metadata": {},
       "source_simulation": "g2_geometry_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.d_over_R": {
       "value": 0.12,
       "source": "g2_geometry_v16_0",
       "uncertainty": null,
       "status": "GEOMETRIC",
-      "timestamp": "2025-12-29T17:51:18.006743",
+      "timestamp": "2025-12-29T18:09:46.062323",
       "metadata": {},
       "source_simulation": "g2_geometry_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.M_GUT": {
       "value": 6324555320336760.0,
       "source": "gauge_unification_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.036922",
+      "timestamp": "2025-12-29T18:09:46.093563",
       "metadata": {
         "units": "GeV",
         "description": "Grand Unification scale from 3-loop RG evolution (used for coupling evolution)"
       },
       "source_simulation": "gauge_unification_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.M_GUT_GEOMETRIC": {
       "value": 2.1e+16,
       "source": "gauge_unification_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.036929",
+      "timestamp": "2025-12-29T18:09:46.093569",
       "metadata": {
         "units": "GeV",
         "description": "Grand Unification scale from G2 torsion and moduli stabilization (used for proton decay)"
       },
       "source_simulation": "gauge_unification_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.ALPHA_GUT": {
       "value": 0.023402505234839138,
       "source": "gauge_unification_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.036931",
+      "timestamp": "2025-12-29T18:09:46.093572",
       "metadata": {
         "units": "dimensionless",
         "description": "Unified gauge coupling from 3-loop RG evolution"
       },
       "source_simulation": "gauge_unification_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.ALPHA_GUT_INV": {
       "value": 42.7304679548285,
       "source": "gauge_unification_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.036933",
+      "timestamp": "2025-12-29T18:09:46.093574",
       "metadata": {
         "units": "dimensionless",
         "description": "Inverse of unified gauge coupling (1/alpha_GUT ~ 24)"
       },
       "source_simulation": "gauge_unification_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.ALPHA_GUT_GEOMETRIC": {
       "value": 0.04248088360237893,
       "source": "gauge_unification_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.036934",
+      "timestamp": "2025-12-29T18:09:46.093576",
       "metadata": {
         "units": "dimensionless",
         "description": "Unified gauge coupling from G2 torsion and moduli (used for proton decay)"
       },
       "source_simulation": "gauge_unification_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gauge.sin2_theta_W_gut": {
       "value": 0.375,
       "source": "gauge_unification_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.036939",
+      "timestamp": "2025-12-29T18:09:46.093578",
       "metadata": {
         "units": "dimensionless",
         "description": "sin^2(theta_W) at GUT scale (SO(10) predicts 3/8)"
       },
       "source_simulation": "gauge_unification_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "electromagnetic.alpha_inv": {
       "value": 137.04623843256456,
       "source": "alpha_rigor_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037086",
+      "timestamp": "2025-12-29T18:09:46.093718",
       "metadata": {
         "units": "dimensionless",
         "description": "Fine structure constant derived from G2 topology: alpha^-1 = 137.046238. CODATA 2022: 137.035999. Error: 0.010239 (99.9925% precision)."
       },
       "source_simulation": "alpha_rigor_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "electromagnetic.alpha_inv_error": {
       "value": 0.010239432564560502,
       "source": "alpha_rigor_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037091",
+      "timestamp": "2025-12-29T18:09:46.093722",
       "metadata": {},
       "source_simulation": "alpha_rigor_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.n_generations": {
       "value": 3,
       "source": "fermion_generations_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037634",
+      "timestamp": "2025-12-29T18:09:46.094176",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of fermion generations derived from G2 topology via spinor saturation. Computed as n_gen = N_flux / spinor_DOF = 24 / 8 = 3."
       },
       "source_simulation": "fermion_generations_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.yukawa_hierarchy": {
       "value": 0.22313016014842982,
       "source": "fermion_generations_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037638",
+      "timestamp": "2025-12-29T18:09:46.094180",
       "metadata": {
         "units": "dimensionless",
         "description": "Froggatt-Nielsen suppression parameter epsilon = exp(-lambda) where lambda = 1.5 is the G2 curvature scale. Controls the geometric hierarchy in Yukawa couplings Y_f = A_f * epsilon^Q_f."
       },
       "source_simulation": "fermion_generations_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.chiral_filter_strength": {
       "value": 0.875,
       "source": "fermion_generations_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037640",
+      "timestamp": "2025-12-29T18:09:46.094182",
       "metadata": {
         "units": "dimensionless",
         "description": "Strength of the Pneuma chiral filter mechanism that traps left-handed fermions on the brane. Computed as 7/8 from the fraction of Spin(7) components that couple to axial torsion."
       },
       "source_simulation": "fermion_generations_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.n_flux": {
       "value": 24.0,
       "source": "fermion_generations_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037642",
+      "timestamp": "2025-12-29T18:09:46.094184",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of quantized flux units on associative 3-cycles. Computed as N_flux = chi_eff / 6 = 24 from the effective Euler characteristic."
       },
       "source_simulation": "fermion_generations_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.epsilon_fn": {
       "value": 0.22313016014842982,
       "source": "fermion_generations_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037644",
+      "timestamp": "2025-12-29T18:09:46.094186",
       "metadata": {
         "units": "dimensionless",
         "description": "Geometric suppression parameter in Yukawa texture. Same as fermion.yukawa_hierarchy, provided for compatibility."
       },
       "source_simulation": "fermion_generations_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.spinor_dimension": {
       "value": 8,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037706",
+      "timestamp": "2025-12-29T18:09:46.094252",
       "metadata": {
         "units": "dimensionless",
         "description": "Real dimension of the spinor representation in 7D. For Spin(7), this is 8 real components corresponding to a Majorana spinor. This is a fixed mathematical property of the Clifford algebra Cl(7). Theoretical value: 8 (from Clifford algebra Cl(7))."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.preserved_spinors": {
       "value": 1,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037709",
+      "timestamp": "2025-12-29T18:09:46.094254",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of parallel spinors preserved by G2 holonomy. This is exactly 1 (up to scaling), which is the defining characteristic of G2 manifolds. Contrast with SU(3) (2 spinors) or generic Spin(7) (0 spinors). Theoretical value: 1 (G2 holonomy theorem)."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.chiral_index": {
       "value": 6.0,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037712",
+      "timestamp": "2025-12-29T18:09:46.094256",
       "metadata": {
         "units": "dimensionless",
         "description": "Topological index of the Dirac operator: index(∂/) = n_L - n_R. For TCS G2 manifold #187, this equals χ_eff/24 = 144/24 = 6. Represents the net chirality imbalance from topology. Theoretical value: 6 (Atiyah-Singer index theorem)."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.zero_modes_left": {
       "value": 6.0,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037714",
+      "timestamp": "2025-12-29T18:09:46.094258",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of left-handed Dirac zero modes. In the minimal scenario, this equals the chiral index = 6. In general, both n_L and n_R can be large, but their difference is fixed by topology. Minimal scenario: n_L = 6."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.zero_modes_right": {
       "value": 0,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037716",
+      "timestamp": "2025-12-29T18:09:46.094260",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of right-handed Dirac zero modes. Set to 0 in minimal scenario. In reality could be n_R = n_L - 6 for large n_L, but difference is always 6 from topology. Minimal scenario: n_R = 0."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.imbalance": {
       "value": 6.0,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037718",
+      "timestamp": "2025-12-29T18:09:46.094262",
       "metadata": {
         "units": "dimensionless",
         "description": "Net chirality imbalance: n_L - n_R. This is the topological invariant that cannot be changed by continuous deformations. For TCS G2 #187: imbalance = 6 (from χ_eff = 144)."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.generation_count": {
       "value": 3,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037720",
+      "timestamp": "2025-12-29T18:09:46.094264",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of fermion generations from spinor saturation. Computed as b_3 / spinor_DOF = 24 / 8 = 3. This is an exact, parameter-free prediction from topology that perfectly matches the observed 3 generations (PDG 2024)."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "chirality.saturation_ratio": {
       "value": 1.0,
       "source": "chirality_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037722",
+      "timestamp": "2025-12-29T18:09:46.094266",
       "metadata": {
         "units": "dimensionless",
         "description": "Spinor saturation ratio: (n_gen × spinor_DOF) / b_3. Should equal 1 for complete saturation with no remainder. For n_gen = 3: ratio = (3 × 8) / 24 = 1 exactly (complete saturation)."
       },
       "source_simulation": "chirality_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.V_us": {
       "value": 0.22313016014842982,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037854",
+      "timestamp": "2025-12-29T18:09:46.094393",
       "metadata": {
         "units": "dimensionless",
         "description": "Cabibbo angle (u-s quark transition amplitude). Emerges as V_us = epsilon ~ 0.2231 from Froggatt-Nielsen geometric suppression, connecting quark mixing to Yukawa hierarchy. PDG 2024: 0.2257 ± 0.0009. Geometric prediction differs by 1.2% (2.9 sigma), within theoretical uncertainties."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.V_cb": {
       "value": 0.04032752537796979,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037857",
+      "timestamp": "2025-12-29T18:09:46.094395",
       "metadata": {
         "units": "dimensionless",
         "description": "c-b quark transition amplitude. Predicted as V_cb ~ A*epsilon^2 ~ 0.040 from second generation geometric overlap. PDG 2024: 0.041 ± 0.0014. Agreement within experimental error."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.V_ub": {
       "value": 0.0034757158300444454,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037859",
+      "timestamp": "2025-12-29T18:09:46.094397",
       "metadata": {
         "units": "dimensionless",
         "description": "u-b quark transition amplitude. Predicted as V_ub ~ A*epsilon^3 ~ 0.004 from third generation geometric overlap. PDG 2024: 0.00382 ± 0.00024. Matches inclusive measurement."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.V_td": {
       "value": 0.008389183792439896,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037862",
+      "timestamp": "2025-12-29T18:09:46.094399",
       "metadata": {
         "units": "dimensionless",
         "description": "t-d quark transition amplitude. Predicted from Wolfenstein parametrization with geometric CP phase. PDG 2024: 0.0084 ± 0.0006 from B_d mixing."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.V_ts": {
       "value": 0.04032752537796979,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037863",
+      "timestamp": "2025-12-29T18:09:46.094401",
       "metadata": {
         "units": "dimensionless",
         "description": "t-s quark transition amplitude. Predicted as V_ts ~ A*epsilon^2 ~ 0.040 from geometric overlap structure. PDG 2024: 0.04 ± 0.0027 from B_s mixing."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.V_tb": {
       "value": 0.9991512959968505,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037866",
+      "timestamp": "2025-12-29T18:09:46.094403",
       "metadata": {
         "units": "dimensionless",
         "description": "t-b quark transition amplitude. Nearly unity due to third generation diagonal dominance in CKM matrix. PDG 2024: 0.999 ± 0.003 from single top production."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.jarlskog_invariant": {
       "value": 2.9148902086057355e-05,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037868",
+      "timestamp": "2025-12-29T18:09:46.094404",
       "metadata": {
         "units": "dimensionless",
         "description": "Rephasing-invariant measure of CP violation in quark sector. Predicted as J ~ 3e-5 from topological CP phase delta_CP ~ pi/6 arising from K=4 matching fibres. PDG 2024: J = (3.0e-05 ± 3.0e-06). Geometric prediction within 3%."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.lambda_wolfenstein": {
       "value": 0.22313016014842982,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037870",
+      "timestamp": "2025-12-29T18:09:46.094407",
       "metadata": {
         "units": "dimensionless",
         "description": "Wolfenstein lambda parameter (Cabibbo angle). Equals Froggatt-Nielsen epsilon = exp(-1.5) ~ 0.223 from G2 curvature scale."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.A_wolfenstein": {
       "value": 0.81,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037871",
+      "timestamp": "2025-12-29T18:09:46.094409",
       "metadata": {
         "units": "dimensionless",
         "description": "Wolfenstein A parameter ~ 3.6. Derived from geometric overlap coefficient 0.81/epsilon, controlling second/third generation mixing."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.rho_wolfenstein": {
       "value": 0.14,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037873",
+      "timestamp": "2025-12-29T18:09:46.094411",
       "metadata": {
         "units": "dimensionless",
         "description": "Real Wolfenstein parameter rho ~ 0.22. Emerges from geometric CP phase structure combined with unitarity triangle constraints."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.eta_wolfenstein": {
       "value": 0.36,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037875",
+      "timestamp": "2025-12-29T18:09:46.094412",
       "metadata": {
         "units": "dimensionless",
         "description": "Imaginary Wolfenstein parameter eta ~ 0.125. Controls CP violation magnitude, derived from topological phase delta_CP ~ pi/6."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.delta_cp": {
       "value": 0.5235987755982988,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037877",
+      "timestamp": "2025-12-29T18:09:46.094414",
       "metadata": {
         "units": "radians",
         "description": "CP-violating phase in CKM matrix. Emerges as delta_CP ~ pi/6 ~ 30° from K=4 topological matching fibres in TCS G2 manifold."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "ckm.unitarity_test": {
       "value": 5.829780417210273e-05,
       "source": "ckm_matrix_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037879",
+      "timestamp": "2025-12-29T18:09:46.094416",
       "metadata": {
         "units": "dimensionless",
         "description": "Maximum deviation from CKM unitarity condition. Should be < 10^-10 for exact geometric construction. Tests completeness of G2 eigenstates."
       },
       "source_simulation": "ckm_matrix_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.tau_p_years": {
       "value": 4.757399129595567e+34,
       "source": "proton_decay_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037956",
+      "timestamp": "2025-12-29T18:09:46.094499",
       "metadata": {
         "units": "years",
         "description": "Predicted proton lifetime from TCS geometric suppression. Includes cycle separation selection rule and GUT unification scale."
       },
       "source_simulation": "proton_decay_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.suppression_factor": {
       "value": 1.2840254166877414,
       "source": "proton_decay_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037958",
+      "timestamp": "2025-12-29T18:09:46.094501",
       "metadata": {
         "units": "dimensionless",
         "description": "Exponential suppression from wavefunction overlap between matter and Higgs fields on separated 3-cycles. S = exp(1/K) for K=4 matching fibres gives S ≈ 2.1."
       },
       "source_simulation": "proton_decay_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.super_k_ratio": {
       "value": 2.8487419937698006,
       "source": "proton_decay_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037960",
+      "timestamp": "2025-12-29T18:09:46.094503",
       "metadata": {
         "units": "dimensionless",
         "description": "Ratio of predicted lifetime to Super-Kamiokande lower bound. Values > 1 are consistent with experiment. Predicted value ~2.3."
       },
       "source_simulation": "proton_decay_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.status": {
       "value": "CONSISTENT - Well above Super-K bound",
       "source": "proton_decay_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.037962",
+      "timestamp": "2025-12-29T18:09:46.094505",
       "metadata": {
         "units": "dimensionless",
         "description": "Experimental status: CONSISTENT (>1.5x bound), MARGINAL (1-1.5x), or EXCLUDED (<1x). Current prediction is CONSISTENT."
       },
       "source_simulation": "proton_decay_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.m_higgs_pred": {
       "value": 120.6228111675565,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038019",
+      "timestamp": "2025-12-29T18:09:46.094566",
       "metadata": {
         "units": "GeV",
         "description": "Higgs mass computed using phenomenologically constrained Re(T). This uses the experimental value m_h = 125.10 GeV as input to fix Re(T) = 9.865, then verifies consistency."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.m_higgs_geometric": {
       "value": 504.0623474622599,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038021",
+      "timestamp": "2025-12-29T18:09:46.094568",
       "metadata": {
         "units": "GeV",
         "description": "Higgs mass predicted from pure geometry using Re(T) = 1.833 from the attractor mechanism. Yields m_h ≈ 414 GeV, which does not match experiment, demonstrating that pure geometry fails to predict the Higgs mass."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.vev": {
       "value": 246.0,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038022",
+      "timestamp": "2025-12-29T18:09:46.094570",
       "metadata": {
         "units": "GeV",
         "description": "Electroweak Higgs vacuum expectation value v_EW = 246 GeV, related to the Fermi constant by v_EW = 1/√(√2 G_F)."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.lambda_0": {
       "value": 0.129,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038023",
+      "timestamp": "2025-12-29T18:09:46.094572",
       "metadata": {
         "units": "dimensionless",
         "description": "Tree-level Higgs quartic coupling from SO(10) → MSSM matching. Value λ_0 = 0.129 is calibrated to match observations, not purely geometric (geometric value would be ~0.0945)."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.lambda_eff_pheno": {
       "value": 0.006079284956305497,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038024",
+      "timestamp": "2025-12-29T18:09:46.094574",
       "metadata": {
         "units": "dimensionless",
         "description": "Effective Higgs quartic coupling with moduli corrections, using phenomenologically constrained Re(T) = 9.865."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.lambda_eff_geometric": {
       "value": 0.10616029694119695,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038026",
+      "timestamp": "2025-12-29T18:09:46.094576",
       "metadata": {
         "units": "dimensionless",
         "description": "Effective Higgs quartic coupling with moduli corrections, using geometric Re(T) = 1.833 from attractor mechanism."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "moduli.stabilization_status": {
       "value": "NEEDS_REVIEW",
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038027",
+      "timestamp": "2025-12-29T18:09:46.094577",
       "metadata": {
         "units": "dimensionless",
         "description": "Status of moduli stabilization: RESOLVED if phenomenological calculation matches experiment, NEEDS_REVIEW otherwise."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "higgs.quartic_correction": {
       "value": 0.1229207150436945,
       "source": "higgs_mass_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038030",
+      "timestamp": "2025-12-29T18:09:46.094579",
       "metadata": {
         "units": "dimensionless",
         "description": "One-loop correction to Higgs quartic from moduli-Higgs interactions: Δλ = (1/8π^2) Re(T) y_t^2."
       },
       "source_simulation": "higgs_mass_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.mass_ratio_proton_electron": {
       "value": 1836.1526738332332,
       "source": "mass_ratio_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038079",
+      "timestamp": "2025-12-29T18:09:46.094630",
       "metadata": {
         "units": "dimensionless",
         "description": "Proton-electron mass ratio derived from G2 cycle volumes: m_p/m_e = 1836.15267. CODATA 2022: 1836.15267343. Error: 0.00000 (0.00 ppm)."
       },
       "source_simulation": "mass_ratio_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "fermion.mass_ratio_error": {
       "value": 4.032331162306946e-07,
       "source": "mass_ratio_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038082",
+      "timestamp": "2025-12-29T18:09:46.094632",
       "metadata": {},
       "source_simulation": "mass_ratio_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.M_Pl_4D": {
       "value": 2.435e+18,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038124",
+      "timestamp": "2025-12-29T18:09:46.094677",
       "metadata": {
         "units": "GeV",
         "description": "4D Planck mass M_Pl = 1.22×10¹⁹ GeV (PDG 2024, measured not derived)"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.V_9_internal": {
       "value": 13015.153988690734,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038127",
+      "timestamp": "2025-12-29T18:09:46.094679",
       "metadata": {
         "units": "Planck^9",
         "description": "9-dimensional internal volume V9 = V7(G2) × V2(T²)"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.breathing_mode_vev": {
       "value": 1.82625e+17,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038129",
+      "timestamp": "2025-12-29T18:09:46.094681",
       "metadata": {
         "units": "GeV",
         "description": "Breathing mode VEV ⟨σ⟩ = φ₀ ≈ 0.075 M_Pl from racetrack stabilization"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.epsilon_KK": {
       "value": 0.2257,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038130",
+      "timestamp": "2025-12-29T18:09:46.094683",
       "metadata": {
         "units": "dimensionless",
         "description": "KK spectrum parameter ε = 0.2257 emerges from volume ratio Vol(K3)/Vol(S³) = 4.43"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.D_eff_shadow": {
       "value": 12.576152,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038132",
+      "timestamp": "2025-12-29T18:09:46.094685",
       "metadata": {
         "units": "dimensionless",
         "description": "Effective dimension D_eff = 12 + (Shadow_ק + Shadow_ח)/2 = 12.576"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.brane_tension_5_2": {
       "value": 1.4849499517866224e+111,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038134",
+      "timestamp": "2025-12-29T18:09:46.094688",
       "metadata": {
         "units": "GeV^6",
         "description": "BPS-saturated tension for (5,2) brane from SO(24,2) Casimir"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.pneuma_components_4D": {
       "value": 64.0,
       "source": "cosmology_intro_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038136",
+      "timestamp": "2025-12-29T18:09:46.094690",
       "metadata": {
         "units": "dimensionless",
         "description": "Effective 4D Pneuma components: 64 (reduced from 8192 in 26D)"
       },
       "source_simulation": "cosmology_intro_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.w0_derived": {
       "value": -0.8461538461538461,
       "source": "dark_energy_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038211",
+      "timestamp": "2025-12-29T18:09:46.094765",
       "metadata": {
         "units": "dimensionless",
         "description": "Dark energy equation of state derived from dimensional reduction: w₀ = -11/13 = -0.846154. DESI 2025: w₀ = -0.727 ± 0.067. Deviation: 1.78σ. Excellent agreement."
       },
       "source_simulation": "dark_energy_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.wa_derived": {
       "value": 0.288,
       "source": "dark_energy_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038214",
+      "timestamp": "2025-12-29T18:09:46.094767",
       "metadata": {
         "units": "dimensionless",
         "description": "Time evolution parameter for dark energy EoS from moduli dynamics: w_a ≈ 0.288. Consistent with DESI 2025 constraints."
       },
       "source_simulation": "dark_energy_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.D_eff": {
       "value": 12.576,
       "source": "dark_energy_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038216",
+      "timestamp": "2025-12-29T18:09:46.094769",
       "metadata": {
         "units": "dimensionless",
         "description": "Effective dimension including shadow contributions: D_eff = 12.576. D_eff = 12 gives w₀ = -11/13 exactly."
       },
       "source_simulation": "dark_energy_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.alpha_shadow": {
       "value": 0.576,
       "source": "dark_energy_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038218",
+      "timestamp": "2025-12-29T18:09:46.094771",
       "metadata": {
         "units": "dimensionless",
         "description": "Residual degrees of freedom from compact dimensions: α_shadow = 0.576. Calibrated from G2 topology with χ_eff=144, b3=24."
       },
       "source_simulation": "dark_energy_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.w0_deviation": {
       "value": 1.7634902411021816,
       "source": "dark_energy_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038220",
+      "timestamp": "2025-12-29T18:09:46.094774",
       "metadata": {
         "units": "sigma",
         "description": "Deviation of predicted w₀ from DESI 2025 measurement: 1.78σ. Deviation < 1σ indicates excellent agreement."
       },
       "source_simulation": "dark_energy_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.w0_validation": {
       "value": {
@@ -1736,511 +1736,511 @@
       "source": "dark_energy_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.038222",
+      "timestamp": "2025-12-29T18:09:46.094776",
       "metadata": {},
       "source_simulation": "dark_energy_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.s8_pm_predicted": {
       "value": 0.8367932770548466,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039592",
+      "timestamp": "2025-12-29T18:09:46.096150",
       "metadata": {
         "units": "dimensionless",
         "description": "PM prediction for S8 parameter: 0.837. Includes ~3% suppression from dynamical dark energy (w₀ = -11/13). KiDS-1000 tension: 1.1σ (vs 3.1σ for ΛCDM). DES Y3 tension: 0.7σ (vs 2.7σ for ΛCDM)."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.s8_suppression_factor": {
       "value": 0.99362679509208,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039600",
+      "timestamp": "2025-12-29T18:09:46.096154",
       "metadata": {
         "units": "dimensionless",
         "description": "Suppression of structure growth at z=0.5: β = 0.994. Arises from earlier dark energy domination with w₀ < -1/3."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.growth_index_pm": {
       "value": 0.5501969230769231,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039604",
+      "timestamp": "2025-12-29T18:09:46.096156",
       "metadata": {
         "units": "dimensionless",
         "description": "Growth index γ for PM cosmology: γ_PM ≈ 0.514. Lower than ΛCDM (0.55) due to w₀ = -11/13."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.growth_index_lcdm": {
       "value": 0.55,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039607",
+      "timestamp": "2025-12-29T18:09:46.096160",
       "metadata": {
         "units": "dimensionless",
         "description": "Growth index γ for ΛCDM: γ_ΛCDM ≈ 0.55 (standard value)."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.s8_tension_kids": {
       "value": 3.5396638527423305,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039611",
+      "timestamp": "2025-12-29T18:09:46.096162",
       "metadata": {
         "units": "sigma",
         "description": "Statistical tension with KiDS-1000 measurement. PM: 1.1σ vs ΛCDM: 3.1σ. Improvement factor: 2.8×."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.s8_tension_des": {
       "value": 3.5760751208733295,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039614",
+      "timestamp": "2025-12-29T18:09:46.096164",
       "metadata": {
         "units": "sigma",
         "description": "Statistical tension with DES Y3 measurement. PM: 0.7σ vs ΛCDM: 2.7σ. Improvement factor: 3.9×."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.s8_tension_planck": {
       "value": 0.36871361960358984,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039616",
+      "timestamp": "2025-12-29T18:09:46.096166",
       "metadata": {
         "units": "sigma",
         "description": "Statistical tension with Planck CMB inference. PM: 3.4σ vs ΛCDM: 0.3σ. Expected: PM predicts less late-time growth."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.s8_improvement_factor": {
       "value": 1.0820515362926555,
       "source": "s8_suppression_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039618",
+      "timestamp": "2025-12-29T18:09:46.096168",
       "metadata": {
         "units": "dimensionless",
         "description": "Average improvement in weak lensing agreement: ~3×. Quantifies how much better PM fits late-time observations."
       },
       "source_simulation": "s8_suppression_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.theta_12_pred": {
       "value": 33.59329049922625,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039743",
+      "timestamp": "2025-12-29T18:09:46.096272",
       "metadata": {
         "units": "degrees",
         "description": "PMNS solar neutrino mixing angle from G2 geometry"
       },
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.theta_13_pred": {
       "value": 8.327941059195808,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039746",
+      "timestamp": "2025-12-29T18:09:46.096275",
       "metadata": {
         "units": "degrees",
         "description": "PMNS reactor neutrino mixing angle from (1,3) cycle intersections"
       },
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.theta_23_pred": {
       "value": 46.083333333333336,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039748",
+      "timestamp": "2025-12-29T18:09:46.096277",
       "metadata": {
         "units": "degrees",
         "description": "PMNS atmospheric neutrino mixing angle from octonionic maximal mixing with flux correction"
       },
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.delta_CP_pred": {
       "value": 232.5,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039751",
+      "timestamp": "2025-12-29T18:09:46.096279",
       "metadata": {
         "units": "degrees",
         "description": "PMNS CP-violating phase from cycle intersection complex structure"
       },
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.m1": {
       "value": 0.04831157627577474,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039753",
+      "timestamp": "2025-12-29T18:09:46.096281",
       "metadata": {},
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.m2": {
       "value": 0.049073500000000006,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039755",
+      "timestamp": "2025-12-29T18:09:46.096283",
       "metadata": {},
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.m3": {
       "value": 0.002,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039757",
+      "timestamp": "2025-12-29T18:09:46.096285",
       "metadata": {},
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.dm2_21": {
       "value": 7.419999999999996e-05,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039759",
+      "timestamp": "2025-12-29T18:09:46.096287",
       "metadata": {},
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.dm2_32": {
       "value": -0.0024042084022500004,
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039761",
+      "timestamp": "2025-12-29T18:09:46.096289",
       "metadata": {},
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "neutrino.ordering": {
       "value": "INVERTED",
       "source": "neutrino_mixing_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039763",
+      "timestamp": "2025-12-29T18:09:46.096291",
       "metadata": {},
       "source_simulation": "neutrino_mixing_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.w_eff": {
       "value": -0.8526812021213906,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039906",
+      "timestamp": "2025-12-29T18:09:46.096428",
       "metadata": {
         "units": "dimensionless",
         "description": "Effective dark energy equation of state from dimensional reduction"
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.Omega_DM_over_b": {
       "value": 5.399772129616132,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039909",
+      "timestamp": "2025-12-29T18:09:46.096431",
       "metadata": {
         "units": "dimensionless",
         "description": "Ratio of dark matter to baryon density from mirror sector"
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.T_mirror_ratio": {
       "value": 0.57,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039910",
+      "timestamp": "2025-12-29T18:09:46.096433",
       "metadata": {
         "units": "dimensionless",
         "description": "Ratio of mirror to visible sector temperature (T'/T)"
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.modulation_width": {
       "value": 0.408248290463863,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039913",
+      "timestamp": "2025-12-29T18:09:46.096435",
       "metadata": {
         "units": "dimensionless",
         "description": "Width of Gaussian modulation between sectors, derived from G2 wavefunction overlap geometry: sigma = L_G2 * sqrt(b3/chi_eff) = sqrt(24/144) ~ 0.408. This is the same geometric mechanism that produces Yukawa hierarchies, eliminating the phenomenological gap between particle physics and cosmology."
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.sm_weight": {
       "value": 0.0021089953617339126,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039915",
+      "timestamp": "2025-12-29T18:09:46.096437",
       "metadata": {
         "units": "dimensionless",
         "description": "Relative weight of Standard Model sector in multi-sector blend"
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.mirror_weight": {
       "value": 0.0003107342392717563,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039917",
+      "timestamp": "2025-12-29T18:09:46.096439",
       "metadata": {
         "units": "dimensionless",
         "description": "Relative weight of mirror sector in multi-sector blend"
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "cosmology.hierarchy_ratio": {
       "value": 0.8715830731075855,
       "source": "multi_sector_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.039919",
+      "timestamp": "2025-12-29T18:09:46.096441",
       "metadata": {
         "units": "dimensionless",
         "description": "Mass hierarchy ratio after sector blending"
       },
       "source_simulation": "multi_sector_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pneuma.coupling": {
       "value": 7.847778500191315e-17,
       "source": "pneuma_mechanism_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040018",
+      "timestamp": "2025-12-29T18:09:46.096525",
       "metadata": {
         "units": "dimensionless",
         "description": "Coupling constant between Pneuma field and spacetime geometry"
       },
       "source_simulation": "pneuma_mechanism_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pneuma.flow_parameter": {
       "value": 0.0011346578282206315,
       "source": "pneuma_mechanism_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040020",
+      "timestamp": "2025-12-29T18:09:46.096527",
       "metadata": {
         "units": "dimensionless",
         "description": "Characteristic frequency governing Pneuma field evolution"
       },
       "source_simulation": "pneuma_mechanism_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pneuma.lagrangian_valid": {
       "value": true,
       "source": "pneuma_mechanism_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040022",
+      "timestamp": "2025-12-29T18:09:46.096530",
       "metadata": {
         "units": "dimensionless",
         "description": "Boolean flag indicating whether Pneuma Lagrangian has stable vacuum"
       },
       "source_simulation": "pneuma_mechanism_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pneuma.vev": {
       "value": 6.3358573796986395,
       "source": "pneuma_mechanism_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040025",
+      "timestamp": "2025-12-29T18:09:46.096532",
       "metadata": {
         "units": "dimensionless",
         "description": "Vacuum expectation value of Pneuma field from racetrack minimum"
       },
       "source_simulation": "pneuma_mechanism_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "pneuma.mass_scale": {
       "value": 2.0291666666666666e+17,
       "source": "pneuma_mechanism_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040027",
+      "timestamp": "2025-12-29T18:09:46.096534",
       "metadata": {
         "units": "GeV",
         "description": "Characteristic mass scale of Pneuma field (m_P ~ M_Planck / sqrt(chi_eff))"
       },
       "source_simulation": "pneuma_mechanism_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "thermal.alpha_T": {
       "value": 2.6999999182257,
       "source": "thermal_time_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040606",
+      "timestamp": "2025-12-29T18:09:46.096825",
       "metadata": {
         "units": "dimensionless",
         "description": "Coupling constant relating thermal state to time evolution. Derived from G2 topology: alpha_T = (2*pi / b3) * gamma_correction = (2*pi / 24) * 10.313 = 2.7. The correction factor accounts for the two-time framework with Sp(2,R) gauge symmetry."
       },
       "source_simulation": "thermal_time_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "thermal.modular_temperature": {
       "value": 3.2026709963019756e+16,
       "source": "thermal_time_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040610",
+      "timestamp": "2025-12-29T18:09:46.096828",
       "metadata": {
         "units": "GeV",
         "description": "Effective temperature associated with the modular Hamiltonian. Computed as T_mod = m_P / <Psi_P> where m_P is the Pneuma mass scale."
       },
       "source_simulation": "thermal_time_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "thermal.entropy_gradient": {
       "value": 3.0600829928584296e-06,
       "source": "thermal_time_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040618",
+      "timestamp": "2025-12-29T18:09:46.096830",
       "metadata": {
         "units": "dimensionless",
         "description": "Rate of change of Pneuma entropy with respect to thermal time. Non-negative by the second law, defining the arrow of time."
       },
       "source_simulation": "thermal_time_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "thermal.two_time_metric_signature": {
       "value": "(24,2)",
       "source": "thermal_time_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040621",
+      "timestamp": "2025-12-29T18:09:46.096832",
       "metadata": {
         "units": "dimensionless",
         "description": "Signature of the two-time spacetime: (24,2) indicates 24 spatial dimensions and 2 time dimensions related by Sp(2,R) gauge symmetry."
       },
       "source_simulation": "thermal_time_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "quantum_bio.coherence_time_ms": {
       "value": 106006852.92342177,
       "source": "orch_or_geometry_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040731",
+      "timestamp": "2025-12-29T18:09:46.096910",
       "metadata": {
         "units": "milliseconds",
         "description": "Quantum coherence time in microtubules derived from PM geometry: τ = 106006852.92 ms. Status: OUTSIDE_RANGE. Neural range: 10ms - 1000ms."
       },
       "source_simulation": "orch_or_geometry_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "quantum_bio.topological_pitch": {
       "value": 6.1208253715651075,
       "source": "orch_or_geometry_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040734",
+      "timestamp": "2025-12-29T18:09:46.096912",
       "metadata": {
         "units": "protofilaments",
         "description": "Helical pitch derived from G2 topology: 6.12 protofilaments. Biological target: 13.0. Match: DEVIATION."
       },
       "source_simulation": "orch_or_geometry_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "quantum_bio.eg_joules": {
       "value": 9.948147576476131e-40,
       "source": "orch_or_geometry_v16_1",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040736",
+      "timestamp": "2025-12-29T18:09:46.096914",
       "metadata": {
         "units": "Joules",
         "description": "Penrose gravitational self-energy with PM warp correction: E_G = 9.9481e-40 J (6.2098e-21 eV)."
       },
       "source_simulation": "orch_or_geometry_v16_1",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "predictions.summary": {
       "value": {
@@ -2268,215 +2268,215 @@
       "source": "predictions_aggregator_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040905",
+      "timestamp": "2025-12-29T18:09:46.097065",
       "metadata": {},
       "source_simulation": "predictions_aggregator_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "predictions.falsifiable_count": {
       "value": 10,
       "source": "predictions_aggregator_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.040907",
+      "timestamp": "2025-12-29T18:09:46.097068",
       "metadata": {},
       "source_simulation": "predictions_aggregator_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "math.g2_dimension": {
       "value": 7,
       "source": "appendix_a_math_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041002",
+      "timestamp": "2025-12-29T18:09:46.097156",
       "metadata": {
         "units": "dimensionless",
         "description": "Dimension of G2 holonomy manifolds (always 7)"
       },
       "source_simulation": "appendix_a_math_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "math.spinor_dimension": {
       "value": 8,
       "source": "appendix_a_math_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041004",
+      "timestamp": "2025-12-29T18:09:46.097158",
       "metadata": {
         "units": "dimensionless",
         "description": "Dimension of minimal real spinor representation in SO(7)"
       },
       "source_simulation": "appendix_a_math_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "math.octonion_dimension": {
       "value": 8,
       "source": "appendix_a_math_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041006",
+      "timestamp": "2025-12-29T18:09:46.097160",
       "metadata": {
         "units": "dimensionless",
         "description": "Dimension of the octonion division algebra"
       },
       "source_simulation": "appendix_a_math_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "methods.rg_loop_order": {
       "value": 3,
       "source": "appendix_b_methods_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041071",
+      "timestamp": "2025-12-29T18:09:46.097222",
       "metadata": {
         "units": "dimensionless",
         "description": "Perturbative order for RG beta functions (3-loop)"
       },
       "source_simulation": "appendix_b_methods_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "methods.integration_method": {
       "value": "odeint",
       "source": "appendix_b_methods_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041073",
+      "timestamp": "2025-12-29T18:09:46.097224",
       "metadata": {
         "units": "dimensionless",
         "description": "Numerical integration algorithm (LSODA)"
       },
       "source_simulation": "appendix_b_methods_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "methods.convergence_criterion": {
       "value": 1e-06,
       "source": "appendix_b_methods_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041075",
+      "timestamp": "2025-12-29T18:09:46.097226",
       "metadata": {
         "units": "dimensionless",
         "description": "Relative tolerance for numerical integration (10⁻⁶)"
       },
       "source_simulation": "appendix_b_methods_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "derivations.validation_status": {
       "value": "INCONSISTENT",
       "source": "appendix_c_derivations_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041153",
+      "timestamp": "2025-12-29T18:09:46.097298",
       "metadata": {
         "units": "dimensionless",
         "description": "Overall validation status for extended derivations"
       },
       "source_simulation": "appendix_c_derivations_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "tables.n_constants": {
       "value": 10,
       "source": "appendix_d_tables_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041262",
+      "timestamp": "2025-12-29T18:09:46.097381",
       "metadata": {
         "units": "dimensionless",
         "description": "Count of fundamental constants in Table D.1"
       },
       "source_simulation": "appendix_d_tables_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "tables.n_pdg_inputs": {
       "value": 30,
       "source": "appendix_d_tables_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041267",
+      "timestamp": "2025-12-29T18:09:46.097383",
       "metadata": {
         "units": "dimensionless",
         "description": "Count of experimental inputs in Table D.2"
       },
       "source_simulation": "appendix_d_tables_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "tables.n_geometric": {
       "value": 15,
       "source": "appendix_d_tables_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041271",
+      "timestamp": "2025-12-29T18:09:46.097385",
       "metadata": {
         "units": "dimensionless",
         "description": "Count of topology parameters in Table D.3"
       },
       "source_simulation": "appendix_d_tables_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "tables.n_predictions": {
       "value": 12,
       "source": "appendix_d_tables_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041274",
+      "timestamp": "2025-12-29T18:09:46.097387",
       "metadata": {
         "units": "dimensionless",
         "description": "Count of theory predictions in Table D.7"
       },
       "source_simulation": "appendix_d_tables_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.BR_e_pi0": {
       "value": 0.25,
       "source": "appendix_h_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041605",
+      "timestamp": "2025-12-29T18:09:46.097594",
       "metadata": {
         "units": "dimensionless",
         "description": "Branching ratio for proton decay to positron and neutral pion"
       },
       "source_simulation": "appendix_e_proton_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.BR_mu_pi0": {
       "value": 0.15,
       "source": "appendix_h_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041610",
+      "timestamp": "2025-12-29T18:09:46.097599",
       "metadata": {
         "units": "dimensionless",
         "description": "Branching ratio for proton decay to muon and neutral pion"
       },
       "source_simulation": "appendix_e_proton_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.BR_nu_K": {
       "value": 0.6,
       "source": "appendix_e_proton_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041348",
+      "timestamp": "2025-12-29T18:09:46.097430",
       "metadata": {},
       "source_simulation": "appendix_e_proton_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "dimensions.bulk_signature": {
       "value": [
@@ -2486,14 +2486,14 @@
       "source": "appendix_f_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041412",
+      "timestamp": "2025-12-29T18:09:46.097470",
       "metadata": {
         "units": "dimensionless",
         "description": "Signature (24,2) of critical bosonic string spacetime"
       },
       "source_simulation": "appendix_f_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "dimensions.shadow_signature": {
       "value": [
@@ -2503,182 +2503,182 @@
       "source": "appendix_f_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041415",
+      "timestamp": "2025-12-29T18:09:46.097473",
       "metadata": {
         "units": "dimensionless",
         "description": "Signature (12,1) after Sp(2,ℝ) gauge fixing"
       },
       "source_simulation": "appendix_f_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "dimensions.orientation_sum": {
       "value": 12,
       "source": "appendix_f_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041418",
+      "timestamp": "2025-12-29T18:09:46.097475",
       "metadata": {
         "units": "dimensionless",
         "description": "Σ = 12 from shadow spatial dimensions or TCS cycle symmetry"
       },
       "source_simulation": "appendix_f_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "dimensions.spatial_shadow": {
       "value": 12,
       "source": "appendix_f_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041421",
+      "timestamp": "2025-12-29T18:09:46.097477",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of spatial dimensions in shadow spacetime (12)"
       },
       "source_simulation": "appendix_f_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.N_flux": {
       "value": 24.0,
       "source": "appendix_g_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041535",
+      "timestamp": "2025-12-29T18:09:46.097545",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of G₄ flux units from χ_eff/6 quantization"
       },
       "source_simulation": "appendix_g_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.T_omega_topological": {
       "value": -1.0,
       "source": "appendix_g_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041538",
+      "timestamp": "2025-12-29T18:09:46.097547",
       "metadata": {
         "units": "dimensionless",
         "description": "Torsion class before spinor corrections: T_ω = -b₃/N_flux"
       },
       "source_simulation": "appendix_g_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.T_omega": {
       "value": -0.875,
       "source": "appendix_g_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041541",
+      "timestamp": "2025-12-29T18:09:46.097549",
       "metadata": {
         "units": "dimensionless",
         "description": "Corrected torsion with Spin(7) fraction: T_ω = -0.875"
       },
       "source_simulation": "appendix_g_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "topology.spinor_fraction": {
       "value": 0.875,
       "source": "appendix_g_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041544",
+      "timestamp": "2025-12-29T18:09:46.097551",
       "metadata": {
         "units": "dimensionless",
         "description": "Fraction of stabilized spinor components: 7/8"
       },
       "source_simulation": "appendix_g_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "proton_decay.BR_other": {
       "value": 0.0,
       "source": "appendix_h_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041619",
+      "timestamp": "2025-12-29T18:09:46.097601",
       "metadata": {
         "units": "dimensionless",
         "description": "Branching ratio for other proton decay channels"
       },
       "source_simulation": "appendix_h_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gw_dispersion.eta": {
       "value": 0.09995313724862909,
       "source": "appendix_i_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041680",
+      "timestamp": "2025-12-29T18:09:46.097642",
       "metadata": {
         "units": "dimensionless",
         "description": "Coefficient for frequency-dependent GW dispersion: η ≈ 0.100"
       },
       "source_simulation": "appendix_i_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "gw_dispersion.M_GW": {
       "value": 6324555320336760.0,
       "source": "appendix_i_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.041683",
+      "timestamp": "2025-12-29T18:09:46.097644",
       "metadata": {
         "units": "GeV",
         "description": "Mass scale for GW dispersion (M_GW ~ M_GUT)"
       },
       "source_simulation": "appendix_i_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "monte_carlo.n_samples": {
       "value": 10000,
       "source": "appendix_j_mc_error_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058169",
+      "timestamp": "2025-12-29T18:09:46.109352",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of Monte Carlo samples used in error propagation (10,000)"
       },
       "source_simulation": "appendix_j_mc_error_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "monte_carlo.n_parameters": {
       "value": 58,
       "source": "appendix_j_mc_error_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058176",
+      "timestamp": "2025-12-29T18:09:46.109358",
       "metadata": {
         "units": "dimensionless",
         "description": "Total number of Standard Model parameters (58)"
       },
       "source_simulation": "appendix_j_mc_error_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "monte_carlo.mean_relative_error": {
       "value": 0.05,
       "source": "appendix_j_mc_error_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058180",
+      "timestamp": "2025-12-29T18:09:46.109361",
       "metadata": {
         "units": "dimensionless",
         "description": "Average relative uncertainty across all parameters (~5%)"
       },
       "source_simulation": "appendix_j_mc_error_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "monte_carlo.correlation_matrix_shape": {
       "value": [
@@ -2688,322 +2688,322 @@
       "source": "appendix_j_mc_error_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058184",
+      "timestamp": "2025-12-29T18:09:46.109364",
       "metadata": {
         "units": "dimensionless",
         "description": "Shape of parameter correlation matrix (58×58)"
       },
       "source_simulation": "appendix_j_mc_error_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "validation.total_parameters": {
       "value": 48,
       "source": "appendix_k_transparency_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058270",
+      "timestamp": "2025-12-29T18:09:46.109448",
       "metadata": {
         "units": "dimensionless",
         "description": "Total number of testable Standard Model parameters (48)"
       },
       "source_simulation": "appendix_k_transparency_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "validation.within_1sigma": {
       "value": 45,
       "source": "appendix_k_transparency_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058274",
+      "timestamp": "2025-12-29T18:09:46.109450",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of predictions within 1σ experimental bounds (45)"
       },
       "source_simulation": "appendix_k_transparency_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "validation.within_2sigma": {
       "value": 47,
       "source": "appendix_k_transparency_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058277",
+      "timestamp": "2025-12-29T18:09:46.109452",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of predictions within 2σ experimental bounds (47)"
       },
       "source_simulation": "appendix_k_transparency_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "validation.calibrated_count": {
       "value": 0,
       "source": "appendix_k_transparency_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058279",
+      "timestamp": "2025-12-29T18:09:46.109454",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of calibrated parameters (0 as of v14.1)"
       },
       "source_simulation": "appendix_k_transparency_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "validation.constraints_count": {
       "value": 1,
       "source": "appendix_k_transparency_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058282",
+      "timestamp": "2025-12-29T18:09:46.109457",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of experimental constraints (1: Higgs mass)"
       },
       "source_simulation": "appendix_k_transparency_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "summary.total_parameters": {
       "value": 27,
       "source": "appendix_l_values_summary_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058347",
+      "timestamp": "2025-12-29T18:09:46.109511",
       "metadata": {
         "units": "dimensionless",
         "description": "Total number of parameters documented in summary tables (27)"
       },
       "source_simulation": "appendix_l_values_summary_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "summary.exact_parameters": {
       "value": 7,
       "source": "appendix_l_values_summary_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058350",
+      "timestamp": "2025-12-29T18:09:46.109513",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of topologically exact parameters (7)"
       },
       "source_simulation": "appendix_l_values_summary_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "summary.derived_parameters": {
       "value": 19,
       "source": "appendix_l_values_summary_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058353",
+      "timestamp": "2025-12-29T18:09:46.109515",
       "metadata": {
         "units": "dimensionless",
         "description": "Number of parameters derived from first principles"
       },
       "source_simulation": "appendix_l_values_summary_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.n_tubulins": {
       "value": 860000000000000.1,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058447",
+      "timestamp": "2025-12-29T18:09:46.109587",
       "metadata": {
         "units": "dimensionless",
         "description": "DERIVED: Number of tubulins in coherent superposition = coherence_fraction × neurons × 10^9"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.tau_collapse_ms": {
       "value": 1.0201309508419833e+22,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058450",
+      "timestamp": "2025-12-29T18:09:46.109590",
       "metadata": {
         "units": "ms",
         "description": "PREDICTED: Gravitational collapse timescale τ = ℏ/(E_G × N), NOT tuned"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.E_G_joules": {
       "value": 6.452230043179585e-44,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058453",
+      "timestamp": "2025-12-29T18:09:46.109592",
       "metadata": {
         "units": "J",
         "description": "Total gravitational self-energy of tubulin superposition"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.tau_scaling_exponent": {
       "value": -2.0,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058456",
+      "timestamp": "2025-12-29T18:09:46.109594",
       "metadata": {
         "units": "dimensionless",
         "description": "Power-law exponent for tau ~ N^exponent (theory: -2.0 from E_G ~ N^2)"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.f_base_hz": {
       "value": 9.80266307158539e-20,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058460",
+      "timestamp": "2025-12-29T18:09:46.109597",
       "metadata": {
         "units": "Hz",
         "description": "DERIVED: Baseline frequency = 1/tau_collapse"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.phi_peak": {
       "value": 0.5,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058463",
+      "timestamp": "2025-12-29T18:09:46.109599",
       "metadata": {
         "units": "dimensionless",
         "description": "Vacuum position for peak consciousness event frequency (stable vacuum = 0.5)"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "consciousness.sigma_falloff": {
       "value": 0.25,
       "source": "appendix_m_consciousness_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058465",
+      "timestamp": "2025-12-29T18:09:46.109601",
       "metadata": {
         "units": "dimensionless",
         "description": "Characteristic scale for coherence falloff from peak position (from G2 overlap ~ 0.25)"
       },
       "source_simulation": "appendix_m_consciousness_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.num_valid_topologies": {
       "value": 49,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058531",
+      "timestamp": "2025-12-29T18:09:46.109657",
       "metadata": {
         "units": "dimensionless",
         "description": "Total number of G2 topologies satisfying physical constraints"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.h11_min": {
       "value": 4,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058534",
+      "timestamp": "2025-12-29T18:09:46.109659",
       "metadata": {
         "units": "dimensionless",
         "description": "Minimum value of h^{1,1} across valid topologies"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.h11_max": {
       "value": 52,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058538",
+      "timestamp": "2025-12-29T18:09:46.109661",
       "metadata": {
         "units": "dimensionless",
         "description": "Maximum value of h^{1,1} across valid topologies"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.h31_min": {
       "value": 20,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058541",
+      "timestamp": "2025-12-29T18:09:46.109663",
       "metadata": {
         "units": "dimensionless",
         "description": "Minimum value of h^{3,1} across valid topologies"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.h31_max": {
       "value": 68,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058544",
+      "timestamp": "2025-12-29T18:09:46.109665",
       "metadata": {
         "units": "dimensionless",
         "description": "Maximum value of h^{3,1} across valid topologies"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.selected_h11": {
       "value": 4,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058547",
+      "timestamp": "2025-12-29T18:09:46.109667",
       "metadata": {
         "units": "dimensionless",
         "description": "Hodge number h^{1,1} for selected topology TCS #187"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     },
     "landscape.selected_h31": {
       "value": 68,
       "source": "appendix_n_g2_landscape_v16_0",
       "uncertainty": null,
       "status": "DERIVED",
-      "timestamp": "2025-12-29T17:51:18.058549",
+      "timestamp": "2025-12-29T18:09:46.109669",
       "metadata": {
         "units": "dimensionless",
         "description": "Hodge number h^{3,1} for selected topology TCS #187"
       },
       "source_simulation": "appendix_n_g2_landscape_v16_0",
       "derivation_chain": [],
-      "git_commit": "c6b88f1f7f464db6f0770f141d03496dff247968"
+      "git_commit": "382892f75f960dc6b78d46e2b429fb76f5025df6"
     }
   },
   "formulas": {
@@ -3047,7 +3047,7 @@
           "symbol": "∇"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.006841"
+      "timestamp": "2025-12-29T18:09:46.062400"
     },
     "euler-characteristic": {
       "id": "euler-characteristic",
@@ -3099,7 +3099,7 @@
           "value": "68"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.006843"
+      "timestamp": "2025-12-29T18:09:46.062402"
     },
     "betti-numbers": {
       "id": "betti-numbers",
@@ -3133,7 +3133,7 @@
           "param_id": "topology.b3"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.006845"
+      "timestamp": "2025-12-29T18:09:46.062405"
     },
     "three-generations": {
       "id": "three-generations",
@@ -3168,7 +3168,7 @@
           "param_id": "topology.n_gen"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.006847"
+      "timestamp": "2025-12-29T18:09:46.062406"
     },
     "cycle-matching": {
       "id": "cycle-matching",
@@ -3202,7 +3202,7 @@
           "param_id": "topology.K_MATCHING"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.006848"
+      "timestamp": "2025-12-29T18:09:46.062407"
     },
     "gauge-initial-conditions": {
       "id": "gauge-initial-conditions",
@@ -3236,7 +3236,7 @@
         "α₃": "SU(3)_c coupling",
         "θ_W": "Weak mixing angle"
       },
-      "timestamp": "2025-12-29T17:51:18.036975"
+      "timestamp": "2025-12-29T18:09:46.093612"
     },
     "kk-threshold": {
       "id": "kk-threshold",
@@ -3269,7 +3269,7 @@
         "h^{1,1}": "Hodge number (24 for TCS G2)",
         "M_*": "KK threshold scale"
       },
-      "timestamp": "2025-12-29T17:51:18.036976"
+      "timestamp": "2025-12-29T18:09:46.093613"
     },
     "asymptotic-safety-fixed-point": {
       "id": "asymptotic-safety-fixed-point",
@@ -3304,7 +3304,7 @@
         "α*": "UV fixed point coupling",
         "b₃": "Third Betti number of G2 manifold"
       },
-      "timestamp": "2025-12-29T17:51:18.036977"
+      "timestamp": "2025-12-29T18:09:46.093614"
     },
     "gut-scale": {
       "id": "gut-scale",
@@ -3342,7 +3342,7 @@
         "alpha_i": "Gauge couplings for U(1)_Y, SU(2)_L, SU(3)_c",
         "sigma": "Standard deviation (unification spread measure)"
       },
-      "timestamp": "2025-12-29T17:51:18.036978"
+      "timestamp": "2025-12-29T18:09:46.093615"
     },
     "gauge-coupling-unification": {
       "id": "gauge-coupling-unification",
@@ -3387,7 +3387,7 @@
         "alpha_GUT": "Unified gauge coupling (dimensionless)",
         "b3": "Third Betti number of G2 manifold"
       },
-      "timestamp": "2025-12-29T17:51:18.036979"
+      "timestamp": "2025-12-29T18:09:46.093616"
     },
     "gauge-rg-evolution": {
       "id": "gauge-rg-evolution",
@@ -3416,7 +3416,7 @@
         "b_i": "1-loop beta function coefficient",
         "b_ij": "2-loop beta function coefficient"
       },
-      "timestamp": "2025-12-29T17:51:18.036980"
+      "timestamp": "2025-12-29T18:09:46.093617"
     },
     "alpha-inverse-geometric": {
       "id": "alpha-inverse-geometric",
@@ -3468,7 +3468,7 @@
           "formula": "2*(pi^2)/6.682"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.037559"
+      "timestamp": "2025-12-29T18:09:46.094104"
     },
     "generation-number": {
       "id": "generation-number",
@@ -3528,7 +3528,7 @@
           "value": "8"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.037665"
+      "timestamp": "2025-12-29T18:09:46.094211"
     },
     "yukawa-texture": {
       "id": "yukawa-texture",
@@ -3593,7 +3593,7 @@
           "value": "1.5"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.037666"
+      "timestamp": "2025-12-29T18:09:46.094212"
     },
     "pneuma-chiral-filter": {
       "id": "pneuma-chiral-filter",
@@ -3654,7 +3654,7 @@
           "units": "GeV"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.037667"
+      "timestamp": "2025-12-29T18:09:46.094213"
     },
     "g2-spinor-preservation": {
       "id": "g2-spinor-preservation",
@@ -3694,7 +3694,7 @@
         "S": "Spinor bundle on G2 manifold",
         "dim(S)": "Fiber dimension (8 real components)"
       },
-      "timestamp": "2025-12-29T17:51:18.037781"
+      "timestamp": "2025-12-29T18:09:46.094323"
     },
     "associative-chirality-projector": {
       "id": "associative-chirality-projector",
@@ -3739,7 +3739,7 @@
         "*Φ": "Hodge dual of associative 4-form (coassociative 3-form)",
         "Φ": "Associative 4-form defining G2 structure"
       },
-      "timestamp": "2025-12-29T17:51:18.037782"
+      "timestamp": "2025-12-29T18:09:46.094324"
     },
     "dirac-zero-modes": {
       "id": "dirac-zero-modes",
@@ -3788,7 +3788,7 @@
         "A_μ": "Gauge connection (from flux)",
         "g": "Gauge coupling constant"
       },
-      "timestamp": "2025-12-29T17:51:18.037783"
+      "timestamp": "2025-12-29T18:09:46.094325"
     },
     "chirality-index-theorem": {
       "id": "chirality-index-theorem",
@@ -3839,7 +3839,7 @@
         "M_7": "Seven-dimensional G2 manifold",
         "χ_eff": "Effective Euler characteristic (topological invariant)"
       },
-      "timestamp": "2025-12-29T17:51:18.037784"
+      "timestamp": "2025-12-29T18:09:46.094326"
     },
     "spinor-saturation-generations": {
       "id": "spinor-saturation-generations",
@@ -3886,7 +3886,7 @@
         "b_3": "Third Betti number (counts associative 3-cycles)",
         "spinor_DOF": "Spinor degrees of freedom (8 for Spin(7))"
       },
-      "timestamp": "2025-12-29T17:51:18.037785"
+      "timestamp": "2025-12-29T18:09:46.094327"
     },
     "ckm-overlap-integral": {
       "id": "ckm-overlap-integral",
@@ -3920,7 +3920,7 @@
         "W_mu": "W boson field mediating weak transitions",
         "G_2": "Seven-dimensional G2 holonomy manifold"
       },
-      "timestamp": "2025-12-29T17:51:18.037909"
+      "timestamp": "2025-12-29T18:09:46.094452"
     },
     "ckm-hierarchy": {
       "id": "ckm-hierarchy",
@@ -3959,7 +3959,7 @@
         "epsilon": "Froggatt-Nielsen parameter ~ 0.223",
         "A": "Geometric coefficient ~ 0.81"
       },
-      "timestamp": "2025-12-29T17:51:18.037911"
+      "timestamp": "2025-12-29T18:09:46.094454"
     },
     "jarlskog-invariant": {
       "id": "jarlskog-invariant",
@@ -3999,7 +3999,7 @@
         "eta": "Imaginary Wolfenstein parameter ~ sin(delta_CP)",
         "delta_CP": "CP-violating phase ~ pi/6 from topology"
       },
-      "timestamp": "2025-12-29T17:51:18.037912"
+      "timestamp": "2025-12-29T18:09:46.094455"
     },
     "wolfenstein-parametrization": {
       "id": "wolfenstein-parametrization",
@@ -4040,7 +4040,7 @@
         "rho": "Real Wolfenstein parameter ~ 0.22",
         "eta": "Imaginary Wolfenstein parameter ~ 0.125"
       },
-      "timestamp": "2025-12-29T17:51:18.037913"
+      "timestamp": "2025-12-29T18:09:46.094456"
     },
     "ckm-unitarity": {
       "id": "ckm-unitarity",
@@ -4070,7 +4070,7 @@
         "V_ij": "CKM matrix elements",
         "i, j": "Generation indices (1, 2, 3)"
       },
-      "timestamp": "2025-12-29T17:51:18.037914"
+      "timestamp": "2025-12-29T18:09:46.094457"
     },
     "cycle-separation-suppression": {
       "id": "cycle-separation-suppression",
@@ -4105,7 +4105,7 @@
         "R": "Characteristic scale of G2 manifold",
         "K": "K3 fibre matching number (K=4 for TCS G2 #187)"
       },
-      "timestamp": "2025-12-29T17:51:18.037980"
+      "timestamp": "2025-12-29T18:09:46.094525"
     },
     "proton-lifetime": {
       "id": "proton-lifetime",
@@ -4146,7 +4146,7 @@
         "alpha_GUT": "GUT coupling constant",
         "S": "Geometric suppression factor from cycle separation"
       },
-      "timestamp": "2025-12-29T17:51:18.037981"
+      "timestamp": "2025-12-29T18:09:46.094526"
     },
     "higgs-mass": {
       "id": "higgs-mass",
@@ -4199,7 +4199,7 @@
           "units": "dimensionless"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.038047"
+      "timestamp": "2025-12-29T18:09:46.094596"
     },
     "higgs-quartic-coupling": {
       "id": "higgs-quartic-coupling",
@@ -4254,7 +4254,7 @@
           "units": "dimensionless"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.038048"
+      "timestamp": "2025-12-29T18:09:46.094597"
     },
     "racetrack-potential": {
       "id": "racetrack-potential",
@@ -4306,7 +4306,7 @@
           "units": "dimensionless"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.038049"
+      "timestamp": "2025-12-29T18:09:46.094598"
     },
     "doublet-triplet-splitting": {
       "id": "doublet-triplet-splitting",
@@ -4354,7 +4354,7 @@
           "units": "GeV"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.038050"
+      "timestamp": "2025-12-29T18:09:46.094599"
     },
     "mass-ratio-geometric": {
       "id": "mass-ratio-geometric",
@@ -4405,7 +4405,7 @@
           "value": 1.58017
         }
       },
-      "timestamp": "2025-12-29T17:51:18.038092"
+      "timestamp": "2025-12-29T18:09:46.094643"
     },
     "metric-13D": {
       "id": "metric-13D",
@@ -4448,7 +4448,7 @@
         "A_μ^a": "Gauge fields from off-diagonal components",
         "K_a^m": "Killing vectors of SO(10) isometry"
       },
-      "timestamp": "2025-12-29T17:51:18.038165"
+      "timestamp": "2025-12-29T18:09:46.094719"
     },
     "einstein-hilbert-14D": {
       "id": "einstein-hilbert-14D",
@@ -4491,7 +4491,7 @@
         "R_14": "14D Ricci scalar",
         "V_9": "9-dimensional internal volume"
       },
-      "timestamp": "2025-12-29T17:51:18.038166"
+      "timestamp": "2025-12-29T18:09:46.094720"
     },
     "sp2r-constraint": {
       "id": "sp2r-constraint",
@@ -4533,7 +4533,7 @@
         "Φ": "Scalar field configurations",
         "Sp(2,R)": "Symplectic gauge group"
       },
-      "timestamp": "2025-12-29T17:51:18.038167"
+      "timestamp": "2025-12-29T18:09:46.094721"
     },
     "breathing-mode": {
       "id": "breathing-mode",
@@ -4577,7 +4577,7 @@
         "g⁰_mn": "Fixed internal metric",
         "T": "Volume modulus"
       },
-      "timestamp": "2025-12-29T17:51:18.038167"
+      "timestamp": "2025-12-29T18:09:46.094722"
     },
     "bps-bound": {
       "id": "bps-bound",
@@ -4621,7 +4621,7 @@
         "Z_p,q": "Central charge",
         "V_p": "Brane worldvolume"
       },
-      "timestamp": "2025-12-29T17:51:18.038168"
+      "timestamp": "2025-12-29T18:09:46.094723"
     },
     "pneuma-reduction": {
       "id": "pneuma-reduction",
@@ -4667,7 +4667,7 @@
         "Ψ_4D": "4D Dirac spinor (4 components)",
         "χ_SO(10)": "SO(10) spinor (16 components)"
       },
-      "timestamp": "2025-12-29T17:51:18.038169"
+      "timestamp": "2025-12-29T18:09:46.094724"
     },
     "dimensional-reduction-cascade": {
       "id": "dimensional-reduction-cascade",
@@ -4710,7 +4710,7 @@
         "D_observable": "Observable spacetime dimensions (4)",
         "alpha_shadow": "Shadow dimension contribution (0.576)"
       },
-      "timestamp": "2025-12-29T17:51:18.038258"
+      "timestamp": "2025-12-29T18:09:46.094812"
     },
     "effective-dimension": {
       "id": "effective-dimension",
@@ -4757,7 +4757,7 @@
         "chi_eff": "Effective Euler characteristic (144)",
         "b3": "Number of associative 3-cycles (24)"
       },
-      "timestamp": "2025-12-29T17:51:18.038259"
+      "timestamp": "2025-12-29T18:09:46.094813"
     },
     "dark-energy-eos-derivation": {
       "id": "dark-energy-eos-derivation",
@@ -4805,7 +4805,7 @@
         "D_eff": "Effective dimension (12)",
         "sigma": "Standard deviation from DESI measurement (1.8σ)"
       },
-      "timestamp": "2025-12-29T17:51:18.038260"
+      "timestamp": "2025-12-29T18:09:46.094814"
     },
     "dark-energy-time-evolution": {
       "id": "dark-energy-time-evolution",
@@ -4850,7 +4850,7 @@
         "w_a": "Evolution parameter (≈0.29)",
         "z": "Redshift"
       },
-      "timestamp": "2025-12-29T17:51:18.038262"
+      "timestamp": "2025-12-29T18:09:46.094815"
     },
     "s8-definition": {
       "id": "s8-definition",
@@ -4872,7 +4872,7 @@
         "sigma8": "RMS matter fluctuation at 8 h⁻¹ Mpc",
         "Omega_m": "Matter density parameter"
       },
-      "timestamp": "2025-12-29T17:51:18.039653"
+      "timestamp": "2025-12-29T18:09:46.096200"
     },
     "growth-rate-equation": {
       "id": "growth-rate-equation",
@@ -4914,7 +4914,7 @@
         "H": "Hubble parameter",
         "Omega_m": "Matter density fraction"
       },
-      "timestamp": "2025-12-29T17:51:18.039656"
+      "timestamp": "2025-12-29T18:09:46.096202"
     },
     "pm-dark-energy-density": {
       "id": "pm-dark-energy-density",
@@ -4961,7 +4961,7 @@
         "wa": "Evolution parameter (PM: ~0.29)",
         "a": "Scale factor"
       },
-      "timestamp": "2025-12-29T17:51:18.039657"
+      "timestamp": "2025-12-29T18:09:46.096203"
     },
     "growth-suppression-factor": {
       "id": "growth-suppression-factor",
@@ -5007,7 +5007,7 @@
         "D_ΛCDM": "Growth factor for ΛCDM",
         "gamma": "Growth index"
       },
-      "timestamp": "2025-12-29T17:51:18.039658"
+      "timestamp": "2025-12-29T18:09:46.096204"
     },
     "s8-prediction-pm": {
       "id": "s8-prediction-pm",
@@ -5058,7 +5058,7 @@
         "beta": "Growth suppression factor",
         "z_eff": "Effective weak lensing redshift (~0.5)"
       },
-      "timestamp": "2025-12-29T17:51:18.039659"
+      "timestamp": "2025-12-29T18:09:46.096205"
     },
     "pmns-theta-13": {
       "id": "pmns-theta-13",
@@ -5104,7 +5104,7 @@
         "chi_eff": "Effective Euler characteristic",
         "S_orient": "Flux orientation sum"
       },
-      "timestamp": "2025-12-29T17:51:18.039789"
+      "timestamp": "2025-12-29T18:09:46.096316"
     },
     "pmns-delta-cp": {
       "id": "pmns-delta-cp",
@@ -5145,7 +5145,7 @@
         "b2": "Kähler moduli count",
         "b3": "Associative 3-cycle count"
       },
-      "timestamp": "2025-12-29T17:51:18.039791"
+      "timestamp": "2025-12-29T18:09:46.096317"
     },
     "pmns-theta-12": {
       "id": "pmns-theta-12",
@@ -5183,7 +5183,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.039792"
+      "timestamp": "2025-12-29T18:09:46.096318"
     },
     "pmns-theta-23": {
       "id": "pmns-theta-23",
@@ -5250,7 +5250,7 @@
         "chi_eff": "Effective Euler characteristic",
         "S_orient": "Flux orientation sum (Sp(2,R) gauge fixing)"
       },
-      "timestamp": "2025-12-29T17:51:18.039792"
+      "timestamp": "2025-12-29T18:09:46.096319"
     },
     "neutrino-mass-spectrum": {
       "id": "neutrino-mass-spectrum",
@@ -5293,7 +5293,7 @@
         "M_nu": "Neutrino mass matrix (Majorana)",
         "epsilon": "Off-diagonal mixing ~ b2/chi_eff"
       },
-      "timestamp": "2025-12-29T17:51:18.039793"
+      "timestamp": "2025-12-29T18:09:46.096319"
     },
     "dark-energy-eos": {
       "id": "dark-energy-eos",
@@ -5333,7 +5333,7 @@
         "w_eff": "Effective dark energy equation of state",
         "alpha_shadow": "Shadow dimension contribution (0.576)"
       },
-      "timestamp": "2025-12-29T17:51:18.039947"
+      "timestamp": "2025-12-29T18:09:46.096463"
     },
     "moduli-potential": {
       "id": "moduli-potential",
@@ -5380,7 +5380,7 @@
         "L_G2": "G2 manifold length scale (normalized to 1)",
         "R": "G2 wavefunction spread radius"
       },
-      "timestamp": "2025-12-29T17:51:18.039949"
+      "timestamp": "2025-12-29T18:09:46.096465"
     },
     "sector-temperature-ratio": {
       "id": "sector-temperature-ratio",
@@ -5427,7 +5427,7 @@
         "chi_eff": "Effective Euler characteristic (144)",
         "b_3": "Number of 3-cycles (24)"
       },
-      "timestamp": "2025-12-29T17:51:18.039950"
+      "timestamp": "2025-12-29T18:09:46.096465"
     },
     "dark-matter-abundance": {
       "id": "dark-matter-abundance",
@@ -5472,7 +5472,7 @@
         "T'/T": "Temperature ratio (0.57)",
         "n, n'": "Number densities"
       },
-      "timestamp": "2025-12-29T17:51:18.039951"
+      "timestamp": "2025-12-29T18:09:46.096466"
     },
     "pneuma-lagrangian": {
       "id": "pneuma-lagrangian",
@@ -5507,7 +5507,7 @@
         "potential": "V(\\Psi_P) = |dW/d\\Psi_P|^2",
         "vielbein": "\\mathcal{L}_{\\text{vielbein}} = \\bar{\\eta} \\Gamma^a e_a^\\mu D_\\mu \\eta"
       },
-      "timestamp": "2025-12-29T17:51:18.040522"
+      "timestamp": "2025-12-29T18:09:46.096791"
     },
     "pneuma-flow": {
       "id": "pneuma-flow",
@@ -5539,7 +5539,7 @@
         "flow_parameter": "\\lambda = \\sqrt{2 V''(\\langle\\Psi_P\\rangle)}",
         "derivative": "\\frac{\\partial V}{\\partial \\Psi_P} = 2 \\frac{dW}{d\\Psi_P} \\frac{d^2W}{d\\Psi_P^2}"
       },
-      "timestamp": "2025-12-29T17:51:18.040525"
+      "timestamp": "2025-12-29T18:09:46.096792"
     },
     "modular-hamiltonian": {
       "id": "modular-hamiltonian",
@@ -5569,7 +5569,7 @@
         "rho": "Thermal density matrix",
         "Z": "Partition function"
       },
-      "timestamp": "2025-12-29T17:51:18.040641"
+      "timestamp": "2025-12-29T18:09:46.096846"
     },
     "thermal-flow": {
       "id": "thermal-flow",
@@ -5602,7 +5602,7 @@
         "K": "Modular Hamiltonian",
         "t": "Thermal time parameter"
       },
-      "timestamp": "2025-12-29T17:51:18.040643"
+      "timestamp": "2025-12-29T18:09:46.096847"
     },
     "entropy-gradient": {
       "id": "entropy-gradient",
@@ -5634,7 +5634,7 @@
         "t_thermal": "Thermal time parameter",
         ">=": "Non-negative (second law)"
       },
-      "timestamp": "2025-12-29T17:51:18.040644"
+      "timestamp": "2025-12-29T18:09:46.096848"
     },
     "alpha-t-derivation": {
       "id": "alpha-t-derivation",
@@ -5672,7 +5672,7 @@
         "gamma_correction": "Correction factor (10.313) for two-time framework",
         "2*pi": "Cycle periodicity factor"
       },
-      "timestamp": "2025-12-29T17:51:18.040645"
+      "timestamp": "2025-12-29T18:09:46.096849"
     },
     "orch-or-coherence-time": {
       "id": "orch-or-coherence-time",
@@ -5732,7 +5732,7 @@
           "description": "C_kaf-regulated separation"
         }
       },
-      "timestamp": "2025-12-29T17:51:18.040748"
+      "timestamp": "2025-12-29T18:09:46.096924"
     },
     "g2-holonomy-condition": {
       "id": "g2-holonomy-condition",
@@ -5758,7 +5758,7 @@
         "∇": "Levi-Civita connection",
         "φ": "Associative 3-form (calibration)"
       },
-      "timestamp": "2025-12-29T17:51:18.041042"
+      "timestamp": "2025-12-29T18:09:46.097194"
     },
     "associative-calibration": {
       "id": "associative-calibration",
@@ -5777,7 +5777,7 @@
         "Ω³(M)": "Space of 3-forms on M",
         "G2": "Exceptional Lie group (14-dimensional)"
       },
-      "timestamp": "2025-12-29T17:51:18.041043"
+      "timestamp": "2025-12-29T18:09:46.097196"
     },
     "coassociative-calibration": {
       "id": "coassociative-calibration",
@@ -5804,7 +5804,7 @@
         "ψ": "Coassociative 4-form",
         "*": "Hodge star operator"
       },
-      "timestamp": "2025-12-29T17:51:18.041044"
+      "timestamp": "2025-12-29T18:09:46.097196"
     },
     "parallel-spinor-condition": {
       "id": "parallel-spinor-condition",
@@ -5834,7 +5834,7 @@
         "∇_X": "Covariant derivative along X",
         "TM": "Tangent bundle of M"
       },
-      "timestamp": "2025-12-29T17:51:18.041045"
+      "timestamp": "2025-12-29T18:09:46.097198"
     },
     "clifford-multiplication": {
       "id": "clifford-multiplication",
@@ -5852,7 +5852,7 @@
         "γ(X)": "Clifford multiplication by vector X",
         "g(X,Y)": "Metric inner product"
       },
-      "timestamp": "2025-12-29T17:51:18.041046"
+      "timestamp": "2025-12-29T18:09:46.097199"
     },
     "ricci-flatness-g2": {
       "id": "ricci-flatness-g2",
@@ -5879,7 +5879,7 @@
       "terms": {
         "Ric(g)": "Ricci curvature tensor"
       },
-      "timestamp": "2025-12-29T17:51:18.041047"
+      "timestamp": "2025-12-29T18:09:46.097200"
     },
     "rg-beta-function": {
       "id": "rg-beta-function",
@@ -5900,7 +5900,7 @@
         "α_i": "Gauge coupling for group i (U(1), SU(2), SU(3))",
         "β_i": "Beta function (anomalous dimension)"
       },
-      "timestamp": "2025-12-29T17:51:18.041122"
+      "timestamp": "2025-12-29T18:09:46.097268"
     },
     "one-loop-beta": {
       "id": "one-loop-beta",
@@ -5917,7 +5917,7 @@
       "terms": {
         "b^(1)": "One-loop coefficient vector"
       },
-      "timestamp": "2025-12-29T17:51:18.041123"
+      "timestamp": "2025-12-29T18:09:46.097270"
     },
     "kk-threshold-correction": {
       "id": "kk-threshold-correction",
@@ -5946,7 +5946,7 @@
         "m_n": "Mass of n-th KK mode (n/R)",
         "N_max": "Cutoff for KK sum (typically 100)"
       },
-      "timestamp": "2025-12-29T17:51:18.041124"
+      "timestamp": "2025-12-29T18:09:46.097271"
     },
     "asymptotic-safety-correction": {
       "id": "asymptotic-safety-correction",
@@ -5974,7 +5974,7 @@
         "β_i^AS": "Asymptotic safety corrected beta function",
         "γ": "Critical exponent (≈0.5)"
       },
-      "timestamp": "2025-12-29T17:51:18.041125"
+      "timestamp": "2025-12-29T18:09:46.097272"
     },
     "yukawa-rg-equation": {
       "id": "yukawa-rg-equation",
@@ -5995,7 +5995,7 @@
         "C_i": "Yukawa self-coupling coefficient",
         "C_a": "Gauge coupling coefficient"
       },
-      "timestamp": "2025-12-29T17:51:18.041126"
+      "timestamp": "2025-12-29T18:09:46.097273"
     },
     "mass-running-equation": {
       "id": "mass-running-equation",
@@ -6016,7 +6016,7 @@
         "m̄": "Running MS-bar mass",
         "α_s": "Strong coupling constant"
       },
-      "timestamp": "2025-12-29T17:51:18.041127"
+      "timestamp": "2025-12-29T18:09:46.097273"
     },
     "g2-holonomy-derivation": {
       "id": "g2-holonomy-derivation",
@@ -6044,7 +6044,7 @@
         "Hol(g)": "Holonomy group of metric g",
         "φ": "Parallel 3-form (associative calibration)"
       },
-      "timestamp": "2025-12-29T17:51:18.041193"
+      "timestamp": "2025-12-29T18:09:46.097333"
     },
     "unification-condition-derivation": {
       "id": "unification-condition-derivation",
@@ -6075,7 +6075,7 @@
         "M_GUT": "GUT unification scale",
         "α_GUT": "Unified gauge coupling"
       },
-      "timestamp": "2025-12-29T17:51:18.041194"
+      "timestamp": "2025-12-29T18:09:46.097334"
     },
     "yukawa-hierarchy-derivation": {
       "id": "yukawa-hierarchy-derivation",
@@ -6097,7 +6097,7 @@
         "d_i": "Cycle separation distance",
         "λ": "Wavefunction localization scale"
       },
-      "timestamp": "2025-12-29T17:51:18.041195"
+      "timestamp": "2025-12-29T18:09:46.097336"
     },
     "tribimaximal-mixing-derivation": {
       "id": "tribimaximal-mixing-derivation",
@@ -6118,7 +6118,7 @@
       "terms": {
         "U_TB": "Tribimaximal mixing matrix"
       },
-      "timestamp": "2025-12-29T17:51:18.041196"
+      "timestamp": "2025-12-29T18:09:46.097337"
     },
     "higgs-mass-derivation": {
       "id": "higgs-mass-derivation",
@@ -6141,7 +6141,7 @@
         "v": "Higgs VEV (246 GeV)",
         "M_KK": "KK scale from compactification"
       },
-      "timestamp": "2025-12-29T17:51:18.041196"
+      "timestamp": "2025-12-29T18:09:46.097337"
     },
     "proton-lifetime-derivation": {
       "id": "proton-lifetime-derivation",
@@ -6164,7 +6164,7 @@
         "C": "Hadronic matrix element prefactor",
         "K": "TCS K3 matching number"
       },
-      "timestamp": "2025-12-29T17:51:18.041199"
+      "timestamp": "2025-12-29T18:09:46.097338"
     },
     "proton-decay-rate": {
       "id": "proton-decay-rate",
@@ -6183,7 +6183,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041373"
+      "timestamp": "2025-12-29T18:09:46.097446"
     },
     "proton-decay-lifetime": {
       "id": "proton-decay-lifetime",
@@ -6200,7 +6200,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041375"
+      "timestamp": "2025-12-29T18:09:46.097447"
     },
     "geometric-suppression-factor": {
       "id": "geometric-suppression-factor",
@@ -6217,7 +6217,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041376"
+      "timestamp": "2025-12-29T18:09:46.097448"
     },
     "sp2r-gauge-constraint": {
       "id": "sp2r-gauge-constraint",
@@ -6232,7 +6232,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041447"
+      "timestamp": "2025-12-29T18:09:46.097494"
     },
     "shadow-reduction": {
       "id": "shadow-reduction",
@@ -6249,7 +6249,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041449"
+      "timestamp": "2025-12-29T18:09:46.097495"
     },
     "orientation-sum": {
       "id": "orientation-sum",
@@ -6267,7 +6267,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041452"
+      "timestamp": "2025-12-29T18:09:46.097498"
     },
     "flux-quantization": {
       "id": "flux-quantization",
@@ -6284,7 +6284,7 @@
       ],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041565"
+      "timestamp": "2025-12-29T18:09:46.097566"
     },
     "effective-torsion": {
       "id": "effective-torsion",
@@ -6313,7 +6313,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041567"
+      "timestamp": "2025-12-29T18:09:46.097567"
     },
     "effective-torsion-spinor": {
       "id": "effective-torsion-spinor",
@@ -6344,7 +6344,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041568"
+      "timestamp": "2025-12-29T18:09:46.097568"
     },
     "proton-branching": {
       "id": "proton-branching",
@@ -6374,7 +6374,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041638"
+      "timestamp": "2025-12-29T18:09:46.097615"
     },
     "gw-dispersion-relation": {
       "id": "gw-dispersion-relation",
@@ -6390,7 +6390,7 @@
       "output_params": [],
       "derivation": null,
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041702"
+      "timestamp": "2025-12-29T18:09:46.097658"
     },
     "gw-dispersion-coefficient": {
       "id": "gw-dispersion-coefficient",
@@ -6420,7 +6420,7 @@
         ]
       },
       "terms": {},
-      "timestamp": "2025-12-29T17:51:18.041704"
+      "timestamp": "2025-12-29T18:09:46.097658"
     },
     "mc-error-propagation": {
       "id": "mc-error-propagation",
@@ -6442,7 +6442,7 @@
         "x_i": "Sample value",
         "x̄": "Sample mean"
       },
-      "timestamp": "2025-12-29T17:51:18.058221"
+      "timestamp": "2025-12-29T18:09:46.109396"
     },
     "correlation-matrix": {
       "id": "correlation-matrix",
@@ -6464,7 +6464,7 @@
         "σ_i": "Standard deviation of parameter i",
         "σ_j": "Standard deviation of parameter j"
       },
-      "timestamp": "2025-12-29T17:51:18.058223"
+      "timestamp": "2025-12-29T18:09:46.109398"
     },
     "orch-or-collapse": {
       "id": "orch-or-collapse",
@@ -6499,7 +6499,7 @@
         "m_tubulin": "Mass of single tubulin ~ 55 kDa ~ 9.13×10⁻²³ kg",
         "R_coherence": "Spatial coherence length ~ 100 nm"
       },
-      "timestamp": "2025-12-29T17:51:18.058492"
+      "timestamp": "2025-12-29T18:09:46.109625"
     },
     "pm-modulation": {
       "id": "pm-modulation",
@@ -6528,7 +6528,7 @@
         "φ_0": "Stable vacuum position (0.5)",
         "σ": "Coherence falloff scale (0.25)"
       },
-      "timestamp": "2025-12-29T17:51:18.058493"
+      "timestamp": "2025-12-29T18:09:46.109626"
     },
     "topology-constraint": {
       "id": "topology-constraint",
@@ -6554,7 +6554,7 @@
         "h^{1,1}": "Hodge number (Kähler moduli)",
         "h^{3,1}": "Hodge number (complex structure moduli)"
       },
-      "timestamp": "2025-12-29T17:51:18.058577"
+      "timestamp": "2025-12-29T18:09:46.109689"
     },
     "generation-counting": {
       "id": "generation-counting",
@@ -6585,15 +6585,16 @@
         "n_gen": "Number of fermion generations",
         "b_3": "Third Betti number"
       },
-      "timestamp": "2025-12-29T17:51:18.058578"
+      "timestamp": "2025-12-29T18:09:46.109690"
     }
   },
   "sections": {
     "1": {
       "id": "1",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "Introduction",
       "shortTitle": "Introduction",
       "order": 1,
@@ -7234,13 +7235,14 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-29T17:51:18.006373"
+      "timestamp": "2025-12-29T18:09:46.061945"
     },
     "2": {
       "id": "2",
+      "appendix": false,
+      "subsection_id": "pneuma-lagrangian",
       "type": "section",
       "section_type": null,
-      "subsection_id": "pneuma-lagrangian",
       "title": "The Pneuma Lagrangian",
       "shortTitle": "The Pneuma Lagrangian",
       "order": 2,
@@ -8065,13 +8067,14 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-29T17:51:18.040488"
+      "timestamp": "2025-12-29T18:09:46.096780"
     },
     "3": {
       "id": "3",
+      "appendix": false,
+      "subsection_id": "3.1",
       "type": "section",
       "section_type": null,
-      "subsection_id": "3.1",
       "title": "Fine Structure Constant from G2 Geometry",
       "shortTitle": "Fine Structure Constant from G2 Geometry",
       "order": 3,
@@ -8122,13 +8125,14 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-29T17:51:18.037541"
+      "timestamp": "2025-12-29T18:09:46.094089"
     },
     "4": {
       "id": "4",
+      "appendix": false,
+      "subsection_id": "4.5",
       "type": "section",
       "section_type": null,
-      "subsection_id": "4.5",
       "title": "Neutrino Mixing from G2 Geometry",
       "shortTitle": "Neutrino Mixing from G2 Geometry",
       "order": 4,
@@ -8283,13 +8287,14 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-29T17:51:18.039775"
+      "timestamp": "2025-12-29T18:09:46.096302"
     },
     "5": {
       "id": "5",
+      "appendix": false,
+      "subsection_id": "5.3",
       "type": "section",
       "section_type": null,
-      "subsection_id": "5.3",
       "title": "Multi-Sector Cosmological Dynamics",
       "shortTitle": "Multi-Sector Cosmological Dynamics",
       "order": 5,
@@ -8396,13 +8401,14 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-29T17:51:18.039929"
+      "timestamp": "2025-12-29T18:09:46.096450"
     },
     "thermal-time": {
       "id": "thermal-time",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "The Thermal Time Hypothesis and Two-Time Framework",
       "shortTitle": "The Thermal Time Hypothesis and Two-Time Framework",
       "order": 99,
@@ -8523,13 +8529,14 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T17:51:18.040631"
+      "timestamp": "2025-12-29T18:09:46.096839"
     },
     "7": {
       "id": "7",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "Discussion, Conclusions, and Theory Analysis",
       "shortTitle": "Discussion, Conclusions, and Theory Analysis",
       "order": 7,
@@ -10956,13 +10963,14 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-29T17:51:18.040870"
+      "timestamp": "2025-12-29T18:09:46.097033"
     },
     "6": {
       "id": "6",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "Falsifiable Predictions via the Standard-Model Extension (SME)",
       "shortTitle": "Falsifiable Predictions via the Standard-Model Extension (SME)",
       "order": 6,
@@ -13101,13 +13109,14 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-29T17:51:18.040977"
+      "timestamp": "2025-12-29T18:09:46.097132"
     },
     "A": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "A",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix A: Mathematical Foundations",
       "shortTitle": "Appendix A: Mathematical Foundations",
       "order": 100,
@@ -13532,13 +13541,14 @@
         "dimensions.D_after_sp2r",
         "dimensions.D_observable"
       ],
-      "timestamp": "2025-12-29T17:51:18.041032"
+      "timestamp": "2025-12-29T18:09:46.097182"
     },
     "B": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "B",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix B: Computational Methods",
       "shortTitle": "Appendix B: Computational Methods",
       "order": 101,
@@ -14131,13 +14141,14 @@
         "methods.convergence_criterion",
         "methods.n_kk_modes"
       ],
-      "timestamp": "2025-12-29T17:51:18.041112"
+      "timestamp": "2025-12-29T18:09:46.097257"
     },
     "C": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "3",
+      "appendix": true,
       "subsection_id": "C",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix C: Extended Derivations",
       "shortTitle": "Appendix C: Extended Derivations",
       "order": 102,
@@ -14640,13 +14651,14 @@
         "topology.K_MATCHING",
         "gauge.M_GUT"
       ],
-      "timestamp": "2025-12-29T17:51:18.041181"
+      "timestamp": "2025-12-29T18:09:46.097325"
     },
     "D": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "D",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix D: Comprehensive Parameter Tables",
       "shortTitle": "Appendix D: Comprehensive Parameter Tables",
       "order": 103,
@@ -14799,13 +14811,14 @@
         "gauge.M_GUT",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-29T17:51:18.041289"
+      "timestamp": "2025-12-29T18:09:46.097396"
     },
     "E": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "4",
+      "appendix": true,
       "subsection_id": "E",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix E: Proton Decay Calculation",
       "shortTitle": "Appendix E: Proton Decay Calculation",
       "order": 104,
@@ -15006,13 +15019,14 @@
         "proton_decay.tau_p_years",
         "topology.cycle_separation"
       ],
-      "timestamp": "2025-12-29T17:51:18.041367"
+      "timestamp": "2025-12-29T18:09:46.097441"
     },
     "F": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "F",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix F: Dimensional Decomposition",
       "shortTitle": "Appendix F: Dimensional Decomposition",
       "order": 105,
@@ -15241,13 +15255,14 @@
         "dimensions.orientation_sum",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T17:51:18.041441"
+      "timestamp": "2025-12-29T18:09:46.097490"
     },
     "G": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "G",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix G: Effective Torsion from Flux Quantization",
       "shortTitle": "Appendix G: Effective Torsion from Flux Quantization",
       "order": 106,
@@ -15388,13 +15403,14 @@
         "topology.N_flux",
         "topology.T_omega"
       ],
-      "timestamp": "2025-12-29T17:51:18.041557"
+      "timestamp": "2025-12-29T18:09:46.097559"
     },
     "H": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "4",
+      "appendix": true,
       "subsection_id": "H",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix H: Proton Decay Branching Ratio",
       "shortTitle": "Appendix H: Proton Decay Branching Ratio",
       "order": 107,
@@ -15493,13 +15509,14 @@
         "dimensions.orientation_sum",
         "proton_decay.BR_e_pi0"
       ],
-      "timestamp": "2025-12-29T17:51:18.041634"
+      "timestamp": "2025-12-29T18:09:46.097612"
     },
     "I": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "I",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix I: Gravitational Wave Dispersion",
       "shortTitle": "Appendix I: Gravitational Wave Dispersion",
       "order": 108,
@@ -15682,13 +15699,14 @@
         "gw_dispersion.eta",
         "gw_dispersion.M_GW"
       ],
-      "timestamp": "2025-12-29T17:51:18.041697"
+      "timestamp": "2025-12-29T18:09:46.097654"
     },
     "J": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "J",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix J: Monte Carlo Error Propagation",
       "shortTitle": "Appendix J: Monte Carlo Error Propagation",
       "order": 109,
@@ -16025,13 +16043,14 @@
         "cosmology.w0_derived",
         "cosmology.wa_derived"
       ],
-      "timestamp": "2025-12-29T17:51:18.058214"
+      "timestamp": "2025-12-29T18:09:46.109387"
     },
     "K": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "7",
+      "appendix": true,
       "subsection_id": "K",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix K: Transparency Statement",
       "shortTitle": "Appendix K: Transparency Statement",
       "order": 110,
@@ -16576,13 +16595,14 @@
         "pdg.m_higgs",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-29T17:51:18.058311"
+      "timestamp": "2025-12-29T18:09:46.109480"
     },
     "L": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "L",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix L: Complete PM Values Summary",
       "shortTitle": "Appendix L: Complete PM Values Summary",
       "order": 111,
@@ -17463,13 +17483,14 @@
         "pdg.m_bottom",
         "pdg.m_tau"
       ],
-      "timestamp": "2025-12-29T17:51:18.058395"
+      "timestamp": "2025-12-29T18:09:46.109548"
     },
     "M": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "M",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
       "shortTitle": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
       "order": 112,
@@ -17790,13 +17811,14 @@
         "consciousness.tau_collapse_ms",
         "consciousness.f_base_hz"
       ],
-      "timestamp": "2025-12-29T17:51:18.058485"
+      "timestamp": "2025-12-29T18:09:46.109618"
     },
     "N": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "N",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix N: G2 Topology Landscape",
       "shortTitle": "Appendix N: G2 Topology Landscape",
       "order": 113,
@@ -18429,7 +18451,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-29T17:51:18.058569"
+      "timestamp": "2025-12-29T18:09:46.109683"
     }
   },
   "provenance": {
@@ -19034,12 +19056,12 @@
     ]
   },
   "validation": {
-    "timestamp": "2025-12-29T17:51:18.058760",
+    "timestamp": "2025-12-29T18:09:46.109872",
     "simulations_run": 34,
     "simulations_passed": 34,
     "simulations_failed": 0,
     "simulations_skipped": 0,
-    "total_execution_time_ms": 51.427,
+    "total_execution_time_ms": 47.087999999999994,
     "uq_mode_enabled": false,
     "tensions": [],
     "results": [
@@ -19047,14 +19069,14 @@
         "simulation_id": "introduction_v16_0",
         "phase": 0,
         "status": "PASSED",
-        "execution_time_ms": 0.066,
+        "execution_time_ms": 0.051,
         "outputs_computed": []
       },
       {
         "simulation_id": "g2_geometry_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.444,
+        "execution_time_ms": 0.43600000000000005,
         "outputs_computed": [
           "topology.b2",
           "topology.b3",
@@ -19071,7 +19093,7 @@
         "simulation_id": "gauge_unification_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 30.101,
+        "execution_time_ms": 31.171999999999997,
         "outputs_computed": [
           "gauge.M_GUT",
           "gauge.M_GUT_GEOMETRIC",
@@ -19085,7 +19107,7 @@
         "simulation_id": "alpha_rigor_v16_1",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.528,
+        "execution_time_ms": 0.441,
         "outputs_computed": [
           "electromagnetic.alpha_inv",
           "electromagnetic.alpha_inv_error",
@@ -19096,7 +19118,7 @@
         "simulation_id": "fermion_generations_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.067,
+        "execution_time_ms": 0.06999999999999999,
         "outputs_computed": [
           "fermion.n_generations",
           "fermion.yukawa_hierarchy",
@@ -19115,7 +19137,7 @@
         "simulation_id": "chirality_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.09899999999999999,
+        "execution_time_ms": 0.096,
         "outputs_computed": [
           "chirality.spinor_dimension",
           "chirality.preserved_spinors",
@@ -19136,7 +19158,7 @@
         "simulation_id": "ckm_matrix_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.10500000000000001,
+        "execution_time_ms": 0.108,
         "outputs_computed": [
           "ckm.V_us",
           "ckm.V_cb",
@@ -19172,7 +19194,7 @@
         "simulation_id": "proton_decay_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.044,
+        "execution_time_ms": 0.045000000000000005,
         "outputs_computed": [
           "proton_decay.tau_p_years",
           "proton_decay.tau_p_base",
@@ -19188,7 +19210,7 @@
         "simulation_id": "higgs_mass_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.054,
+        "execution_time_ms": 0.057,
         "outputs_computed": [
           "higgs.m_higgs_pred",
           "higgs.m_higgs_geometric",
@@ -19204,7 +19226,7 @@
         "simulation_id": "mass_ratio_v16_1",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.026,
+        "execution_time_ms": 0.025,
         "outputs_computed": [
           "fermion.mass_ratio_proton_electron",
           "fermion.mass_ratio_error",
@@ -19215,7 +19237,7 @@
         "simulation_id": "cosmology_intro_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.060000000000000005,
+        "execution_time_ms": 0.063,
         "outputs_computed": [
           "cosmology.M_Pl_4D",
           "cosmology.V_9_internal",
@@ -19230,7 +19252,7 @@
         "simulation_id": "dark_energy_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.077,
+        "execution_time_ms": 0.075,
         "outputs_computed": [
           "cosmology.w0_derived",
           "cosmology.wa_derived",
@@ -19244,7 +19266,7 @@
         "simulation_id": "s8_suppression_v16_1",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 1.3760000000000001,
+        "execution_time_ms": 1.3719999999999999,
         "outputs_computed": [
           "cosmology.s8_pm_predicted",
           "cosmology.s8_suppression_factor",
@@ -19260,7 +19282,7 @@
         "simulation_id": "neutrino_mixing_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.101,
+        "execution_time_ms": 0.089,
         "outputs_computed": [
           "neutrino.theta_12_pred",
           "neutrino.theta_13_pred",
@@ -19278,7 +19300,7 @@
         "simulation_id": "multi_sector_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.135,
+        "execution_time_ms": 0.12300000000000001,
         "outputs_computed": [
           "cosmology.w_eff",
           "cosmology.Omega_DM_over_b",
@@ -19293,7 +19315,7 @@
         "simulation_id": "pneuma_mechanism_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.546,
+        "execution_time_ms": 0.303,
         "outputs_computed": [
           "pneuma.coupling",
           "pneuma.flow_parameter",
@@ -19306,7 +19328,7 @@
         "simulation_id": "thermal_time_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.061,
+        "execution_time_ms": 0.034999999999999996,
         "outputs_computed": [
           "thermal.alpha_T",
           "thermal.modular_temperature",
@@ -19318,7 +19340,7 @@
         "simulation_id": "orch_or_geometry_v16_1",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.081,
+        "execution_time_ms": 0.054,
         "outputs_computed": [
           "quantum_bio.coherence_time_ms",
           "quantum_bio.topological_pitch",
@@ -19330,14 +19352,14 @@
         "simulation_id": "discussion_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.108,
+        "execution_time_ms": 0.095,
         "outputs_computed": []
       },
       {
         "simulation_id": "predictions_aggregator_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.089,
+        "execution_time_ms": 0.083,
         "outputs_computed": [
           "predictions.summary",
           "predictions.falsifiable_count"
@@ -19347,7 +19369,7 @@
         "simulation_id": "appendix_a_math_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.055,
+        "execution_time_ms": 0.053,
         "outputs_computed": [
           "math.g2_dimension",
           "math.spinor_dimension",
@@ -19362,7 +19384,7 @@
         "simulation_id": "appendix_b_methods_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.06499999999999999,
+        "execution_time_ms": 0.059,
         "outputs_computed": [
           "methods.rg_loop_order",
           "methods.integration_method",
@@ -19379,7 +19401,7 @@
         "simulation_id": "appendix_c_derivations_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.057,
+        "execution_time_ms": 0.048,
         "outputs_computed": [
           "derivations.n_gen_derived",
           "derivations.generation_check",
@@ -19392,7 +19414,7 @@
         "simulation_id": "appendix_d_tables_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.077,
+        "execution_time_ms": 0.046,
         "outputs_computed": [
           "tables.n_constants",
           "tables.n_pdg_inputs",
@@ -19408,7 +19430,7 @@
         "simulation_id": "appendix_e_proton_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.051,
+        "execution_time_ms": 0.033,
         "outputs_computed": [
           "proton_decay.BR_e_pi0",
           "proton_decay.BR_mu_pi0",
@@ -19420,7 +19442,7 @@
         "simulation_id": "appendix_f_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.052,
+        "execution_time_ms": 0.036000000000000004,
         "outputs_computed": [
           "dimensions.bulk_signature",
           "dimensions.shadow_signature",
@@ -19434,7 +19456,7 @@
         "simulation_id": "appendix_g_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.054,
+        "execution_time_ms": 0.037,
         "outputs_computed": [
           "topology.N_flux",
           "topology.T_omega_topological",
@@ -19451,7 +19473,7 @@
         "simulation_id": "appendix_h_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.051,
+        "execution_time_ms": 0.032,
         "outputs_computed": [
           "proton_decay.BR_e_pi0",
           "proton_decay.BR_mu_pi0",
@@ -19466,7 +19488,7 @@
         "simulation_id": "appendix_i_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.045000000000000005,
+        "execution_time_ms": 0.029,
         "outputs_computed": [
           "gw_dispersion.eta",
           "gw_dispersion.M_GW",
@@ -19481,7 +19503,7 @@
         "simulation_id": "appendix_j_mc_error_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 16.497999999999998,
+        "execution_time_ms": 11.724,
         "outputs_computed": [
           "monte_carlo.n_samples",
           "monte_carlo.n_parameters",
@@ -19494,7 +19516,7 @@
         "simulation_id": "appendix_k_transparency_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.055,
+        "execution_time_ms": 0.044,
         "outputs_computed": [
           "validation.total_parameters",
           "validation.within_1sigma",
@@ -19511,7 +19533,7 @@
         "simulation_id": "appendix_l_values_summary_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.060000000000000005,
+        "execution_time_ms": 0.048,
         "outputs_computed": [
           "summary.total_parameters",
           "summary.exact_parameters",
@@ -19528,7 +19550,7 @@
         "simulation_id": "appendix_m_consciousness_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.077,
+        "execution_time_ms": 0.062,
         "outputs_computed": [
           "consciousness.n_tubulins",
           "consciousness.tau_collapse_ms",
@@ -19544,7 +19566,7 @@
         "simulation_id": "appendix_n_g2_landscape_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.062,
+        "execution_time_ms": 0.044,
         "outputs_computed": [
           "landscape.num_valid_topologies",
           "landscape.h11_min",

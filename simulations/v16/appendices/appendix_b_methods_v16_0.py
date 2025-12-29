@@ -70,9 +70,9 @@ class AppendixBComputationalMethods(SimulationBase):
                 "Comprehensive documentation of computational techniques including "
                 "RG equations, threshold corrections, and numerical optimization."
             ),
-            section_id="8",
+            section_id="2",
             subsection_id="B",
-            section_type="appendix"
+            appendix=True
         )
 
     @property
@@ -153,9 +153,9 @@ class AppendixBComputationalMethods(SimulationBase):
             SectionContent with comprehensive methods documentation
         """
         return SectionContent(
-            section_id="8",
+            section_id="2",
             subsection_id="B",
-            section_type="appendix",
+            appendix=True,
             title="Appendix B: Computational Methods",
             abstract=(
                 "Computational methods used throughout Principia Metaphysica: RG equation "

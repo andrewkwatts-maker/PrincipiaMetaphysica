@@ -67,9 +67,9 @@ class AppendixAMathFoundations(SimulationBase):
                 "Comprehensive mathematical foundations covering G2 holonomy, "
                 "spinor structures, differential geometry, and topological invariants."
             ),
-            section_id="8",
+            section_id="2",
             subsection_id="A",
-            section_type="appendix"
+            appendix=True
         )
 
     @property
@@ -148,9 +148,9 @@ class AppendixAMathFoundations(SimulationBase):
             SectionContent with comprehensive mathematical background
         """
         return SectionContent(
-            section_id="8",
+            section_id="2",
             subsection_id="A",
-            section_type="appendix",
+            appendix=True,
             title="Appendix A: Mathematical Foundations",
             abstract=(
                 "Mathematical foundations for Principia Metaphysica: derivation of the critical "

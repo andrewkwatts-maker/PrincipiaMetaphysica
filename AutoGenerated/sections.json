@@ -4,9 +4,10 @@
   "sections": {
     "1": {
       "id": "1",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "Introduction",
       "shortTitle": "Introduction",
       "order": 1,
@@ -647,13 +648,14 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-29T17:51:18.006373"
+      "timestamp": "2025-12-29T18:09:46.061945"
     },
     "2": {
       "id": "2",
+      "appendix": false,
+      "subsection_id": "pneuma-lagrangian",
       "type": "section",
       "section_type": null,
-      "subsection_id": "pneuma-lagrangian",
       "title": "The Pneuma Lagrangian",
       "shortTitle": "The Pneuma Lagrangian",
       "order": 2,
@@ -1478,13 +1480,14 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-29T17:51:18.040488"
+      "timestamp": "2025-12-29T18:09:46.096780"
     },
     "3": {
       "id": "3",
+      "appendix": false,
+      "subsection_id": "3.1",
       "type": "section",
       "section_type": null,
-      "subsection_id": "3.1",
       "title": "Fine Structure Constant from G2 Geometry",
       "shortTitle": "Fine Structure Constant from G2 Geometry",
       "order": 3,
@@ -1535,13 +1538,14 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-29T17:51:18.037541"
+      "timestamp": "2025-12-29T18:09:46.094089"
     },
     "4": {
       "id": "4",
+      "appendix": false,
+      "subsection_id": "4.5",
       "type": "section",
       "section_type": null,
-      "subsection_id": "4.5",
       "title": "Neutrino Mixing from G2 Geometry",
       "shortTitle": "Neutrino Mixing from G2 Geometry",
       "order": 4,
@@ -1696,13 +1700,14 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-29T17:51:18.039775"
+      "timestamp": "2025-12-29T18:09:46.096302"
     },
     "5": {
       "id": "5",
+      "appendix": false,
+      "subsection_id": "5.3",
       "type": "section",
       "section_type": null,
-      "subsection_id": "5.3",
       "title": "Multi-Sector Cosmological Dynamics",
       "shortTitle": "Multi-Sector Cosmological Dynamics",
       "order": 5,
@@ -1809,13 +1814,14 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-29T17:51:18.039929"
+      "timestamp": "2025-12-29T18:09:46.096450"
     },
     "thermal-time": {
       "id": "thermal-time",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "The Thermal Time Hypothesis and Two-Time Framework",
       "shortTitle": "The Thermal Time Hypothesis and Two-Time Framework",
       "order": 99,
@@ -1936,13 +1942,14 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T17:51:18.040631"
+      "timestamp": "2025-12-29T18:09:46.096839"
     },
     "7": {
       "id": "7",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "Discussion, Conclusions, and Theory Analysis",
       "shortTitle": "Discussion, Conclusions, and Theory Analysis",
       "order": 7,
@@ -4369,13 +4376,14 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-29T17:51:18.040870"
+      "timestamp": "2025-12-29T18:09:46.097033"
     },
     "6": {
       "id": "6",
+      "appendix": false,
+      "subsection_id": null,
       "type": "section",
       "section_type": null,
-      "subsection_id": null,
       "title": "Falsifiable Predictions via the Standard-Model Extension (SME)",
       "shortTitle": "Falsifiable Predictions via the Standard-Model Extension (SME)",
       "order": 6,
@@ -6514,13 +6522,14 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-29T17:51:18.040977"
+      "timestamp": "2025-12-29T18:09:46.097132"
     },
     "A": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "A",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix A: Mathematical Foundations",
       "shortTitle": "Appendix A: Mathematical Foundations",
       "order": 100,
@@ -6945,13 +6954,14 @@
         "dimensions.D_after_sp2r",
         "dimensions.D_observable"
       ],
-      "timestamp": "2025-12-29T17:51:18.041032"
+      "timestamp": "2025-12-29T18:09:46.097182"
     },
     "B": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "B",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix B: Computational Methods",
       "shortTitle": "Appendix B: Computational Methods",
       "order": 101,
@@ -7544,13 +7554,14 @@
         "methods.convergence_criterion",
         "methods.n_kk_modes"
       ],
-      "timestamp": "2025-12-29T17:51:18.041112"
+      "timestamp": "2025-12-29T18:09:46.097257"
     },
     "C": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "3",
+      "appendix": true,
       "subsection_id": "C",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix C: Extended Derivations",
       "shortTitle": "Appendix C: Extended Derivations",
       "order": 102,
@@ -8053,13 +8064,14 @@
         "topology.K_MATCHING",
         "gauge.M_GUT"
       ],
-      "timestamp": "2025-12-29T17:51:18.041181"
+      "timestamp": "2025-12-29T18:09:46.097325"
     },
     "D": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "D",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix D: Comprehensive Parameter Tables",
       "shortTitle": "Appendix D: Comprehensive Parameter Tables",
       "order": 103,
@@ -8212,13 +8224,14 @@
         "gauge.M_GUT",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-29T17:51:18.041289"
+      "timestamp": "2025-12-29T18:09:46.097396"
     },
     "E": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "4",
+      "appendix": true,
       "subsection_id": "E",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix E: Proton Decay Calculation",
       "shortTitle": "Appendix E: Proton Decay Calculation",
       "order": 104,
@@ -8419,13 +8432,14 @@
         "proton_decay.tau_p_years",
         "topology.cycle_separation"
       ],
-      "timestamp": "2025-12-29T17:51:18.041367"
+      "timestamp": "2025-12-29T18:09:46.097441"
     },
     "F": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "F",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix F: Dimensional Decomposition",
       "shortTitle": "Appendix F: Dimensional Decomposition",
       "order": 105,
@@ -8654,13 +8668,14 @@
         "dimensions.orientation_sum",
         "topology.b3"
       ],
-      "timestamp": "2025-12-29T17:51:18.041441"
+      "timestamp": "2025-12-29T18:09:46.097490"
     },
     "G": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "G",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix G: Effective Torsion from Flux Quantization",
       "shortTitle": "Appendix G: Effective Torsion from Flux Quantization",
       "order": 106,
@@ -8801,13 +8816,14 @@
         "topology.N_flux",
         "topology.T_omega"
       ],
-      "timestamp": "2025-12-29T17:51:18.041557"
+      "timestamp": "2025-12-29T18:09:46.097559"
     },
     "H": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "4",
+      "appendix": true,
       "subsection_id": "H",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix H: Proton Decay Branching Ratio",
       "shortTitle": "Appendix H: Proton Decay Branching Ratio",
       "order": 107,
@@ -8906,13 +8922,14 @@
         "dimensions.orientation_sum",
         "proton_decay.BR_e_pi0"
       ],
-      "timestamp": "2025-12-29T17:51:18.041634"
+      "timestamp": "2025-12-29T18:09:46.097612"
     },
     "I": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "I",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix I: Gravitational Wave Dispersion",
       "shortTitle": "Appendix I: Gravitational Wave Dispersion",
       "order": 108,
@@ -9095,13 +9112,14 @@
         "gw_dispersion.eta",
         "gw_dispersion.M_GW"
       ],
-      "timestamp": "2025-12-29T17:51:18.041697"
+      "timestamp": "2025-12-29T18:09:46.097654"
     },
     "J": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "J",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix J: Monte Carlo Error Propagation",
       "shortTitle": "Appendix J: Monte Carlo Error Propagation",
       "order": 109,
@@ -9438,13 +9456,14 @@
         "cosmology.w0_derived",
         "cosmology.wa_derived"
       ],
-      "timestamp": "2025-12-29T17:51:18.058214"
+      "timestamp": "2025-12-29T18:09:46.109387"
     },
     "K": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "7",
+      "appendix": true,
       "subsection_id": "K",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix K: Transparency Statement",
       "shortTitle": "Appendix K: Transparency Statement",
       "order": 110,
@@ -9989,13 +10008,14 @@
         "pdg.m_higgs",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-29T17:51:18.058311"
+      "timestamp": "2025-12-29T18:09:46.109480"
     },
     "L": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "L",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix L: Complete PM Values Summary",
       "shortTitle": "Appendix L: Complete PM Values Summary",
       "order": 111,
@@ -10876,13 +10896,14 @@
         "pdg.m_bottom",
         "pdg.m_tau"
       ],
-      "timestamp": "2025-12-29T17:51:18.058395"
+      "timestamp": "2025-12-29T18:09:46.109548"
     },
     "M": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "6",
+      "appendix": true,
       "subsection_id": "M",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
       "shortTitle": "Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
       "order": 112,
@@ -11203,13 +11224,14 @@
         "consciousness.tau_collapse_ms",
         "consciousness.f_base_hz"
       ],
-      "timestamp": "2025-12-29T17:51:18.058485"
+      "timestamp": "2025-12-29T18:09:46.109618"
     },
     "N": {
-      "id": "8",
-      "type": "appendix",
-      "section_type": "appendix",
+      "id": "2",
+      "appendix": true,
       "subsection_id": "N",
+      "type": "appendix",
+      "section_type": null,
       "title": "Appendix N: G2 Topology Landscape",
       "shortTitle": "Appendix N: G2 Topology Landscape",
       "order": 113,
@@ -11842,7 +11864,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-29T17:51:18.058569"
+      "timestamp": "2025-12-29T18:09:46.109683"
     }
   }
 }

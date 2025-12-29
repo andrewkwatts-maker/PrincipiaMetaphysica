@@ -67,9 +67,9 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 "SPECULATIVE: Explores potential connections between PM vacuum structure "
                 "and quantum consciousness models (Orch OR). This is NOT a core prediction."
             ),
-            section_id="8",
+            section_id="6",
             subsection_id="M",
-            section_type="appendix"
+            appendix=True
         )
 
     @property
@@ -255,9 +255,9 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
             SectionContent with speculative consciousness framework
         """
         return SectionContent(
-            section_id="8",
+            section_id="6",
             subsection_id="M",
-            section_type="appendix",
+            appendix=True,
             title="Appendix M: Speculative Extensions - Consciousness and the Pneuma Vacuum",
             abstract=(
                 "This appendix explores purely speculative connections between PM vacuum "
