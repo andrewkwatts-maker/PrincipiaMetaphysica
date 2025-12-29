@@ -727,7 +727,8 @@ class RigorousValidatorV16_1(SimulationBase):
                     f"Overall validation status: {self.overall_status}. "
                     f"PASS: all checks < 2σ. MARGINAL: 1-2 checks ≥ 2σ. "
                     f"TENSION: >2 checks ≥ 2σ."
-                )
+                ),
+                no_experimental_value=True,
             ),
             Parameter(
                 path="validation.tension_count",
@@ -737,7 +738,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 description=(
                     f"Number of parameters with σ ≥ 2.0: {self.tension_count}. "
                     f"Each tension requires geometric justification."
-                )
+                ),
+                no_experimental_value=True,
             ),
             Parameter(
                 path="validation.pass_count",
@@ -747,7 +749,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 description=(
                     f"Number of parameters with σ < 2.0: {self.pass_count}. "
                     f"These predictions agree with observations."
-                )
+                ),
+                no_experimental_value=True,
             ),
             Parameter(
                 path="validation.total_checks",
@@ -756,7 +759,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 status="VALIDATION",
                 description=(
                     f"Total number of validation checks performed: {len(self.validation_entries)}."
-                )
+                ),
+                no_experimental_value=True,
             ),
             Parameter(
                 path="validation.neutrino_status",
@@ -765,7 +769,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 status="VALIDATION",
                 description=(
                     "Validation status for neutrino mixing parameters against NuFIT 6.0 (2025)."
-                )
+                ),
+                no_experimental_value=True,
             ),
             Parameter(
                 path="validation.dark_energy_status",
@@ -774,7 +779,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 status="VALIDATION",
                 description=(
                     "Validation status for dark energy parameters against DESI 2025."
-                )
+                ),
+                no_experimental_value=True,
             ),
             Parameter(
                 path="validation.cosmology_status",
@@ -783,7 +789,8 @@ class RigorousValidatorV16_1(SimulationBase):
                 status="VALIDATION",
                 description=(
                     "Validation status for cosmological parameters against Planck 2025."
-                )
+                ),
+                no_experimental_value=True,
             ),
         ]
 

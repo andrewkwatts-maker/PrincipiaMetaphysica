@@ -580,15 +580,13 @@ class GaugeUnificationSimulation(SimulationBase):
                 name="GUT Scale (RG)",
                 units="GeV",
                 status="DERIVED",
-                description="Grand Unification scale from 3-loop RG evolution (used for coupling evolution)",
+                description="Grand Unification scale from 3-loop RG evolution (used for coupling evolution). Predicted value with no direct experimental measurement possible at this energy scale.",
                 derivation_formula="gut-scale",
-                experimental_bound=None,
-                bound_type="theoretical_range",
-                bound_source="GUT_RG_Theory",
+                no_experimental_value=True,
                 validation={
                     "theoretical_range": {"min": 1e15, "max": 1e17},
                     "status": "UNTESTED",
-                    "notes": "Theoretical range from 3-loop RG evolution. Standard SUSY GUTs predict ~2e16 GeV, non-SUSY ~6e15 GeV. No direct experimental measurement."
+                    "notes": "Theoretical range from 3-loop RG evolution. Standard SUSY GUTs predict ~2e16 GeV, non-SUSY ~6e15 GeV. No direct experimental measurement possible - probes ~10^15 GeV energy scale."
                 }
             ),
             Parameter(
@@ -596,15 +594,13 @@ class GaugeUnificationSimulation(SimulationBase):
                 name="GUT Scale (Geometric)",
                 units="GeV",
                 status="DERIVED",
-                description="Grand Unification scale from G2 torsion and moduli stabilization (used for proton decay)",
+                description="Grand Unification scale from G2 torsion and moduli stabilization (used for proton decay). Constrained indirectly by proton lifetime.",
                 derivation_formula="gauge-coupling-unification",
-                experimental_bound=1.67e34,  # Indirect constraint from proton lifetime (Super-K)
-                bound_type="lower_indirect",
-                bound_source="ESTABLISHED:SuperK_2024",
+                no_experimental_value=True,
                 validation={
                     "theoretical_range": {"min": 1.9e16, "max": 2.3e16},
                     "status": "PASS",
-                    "notes": "Derived from TCS G2 torsion class T_omega = -0.875, moduli Re(T) ~ 9.865, alpha_GUT = 1/23.54. Value: 2.1e16 ± 0.09e16 GeV. Constrained indirectly by proton lifetime tau_p > 1.67e34 years (Super-Kamiokande)."
+                    "notes": "Derived from TCS G2 torsion class T_omega = -0.875, moduli Re(T) ~ 9.865, alpha_GUT = 1/23.54. Value: 2.1e16 +/- 0.09e16 GeV. Constrained indirectly by proton lifetime tau_p > 1.67e34 years (Super-Kamiokande). No direct measurement of M_GUT possible."
                 }
             ),
             Parameter(
@@ -612,15 +608,13 @@ class GaugeUnificationSimulation(SimulationBase):
                 name="Unified Coupling (RG)",
                 units="dimensionless",
                 status="DERIVED",
-                description="Unified gauge coupling from 3-loop RG evolution",
+                description="Unified gauge coupling from 3-loop RG evolution. Theoretical prediction with no direct experimental access.",
                 derivation_formula="gauge-coupling-unification",
-                experimental_bound=None,
-                bound_type="theoretical_range",
-                bound_source="GUT_RG_Theory",
+                no_experimental_value=True,
                 validation={
                     "theoretical_range": {"min": 0.02, "max": 0.04},
                     "status": "UNTESTED",
-                    "notes": "Expected range: alpha_GUT ~ 0.02-0.04, corresponding to alpha_GUT^-1 ~ 25-50. No direct experimental measurement."
+                    "notes": "Expected range: alpha_GUT ~ 0.02-0.04, corresponding to alpha_GUT^-1 ~ 25-50. No direct experimental measurement - requires probing GUT-scale energies ~10^16 GeV."
                 }
             ),
             Parameter(
@@ -628,15 +622,13 @@ class GaugeUnificationSimulation(SimulationBase):
                 name="Unified Coupling (Geometric)",
                 units="dimensionless",
                 status="DERIVED",
-                description="Unified gauge coupling from G2 torsion and moduli (used for proton decay)",
+                description="Unified gauge coupling from G2 torsion and moduli (used for proton decay). Theoretical prediction from geometry.",
                 derivation_formula="gauge-coupling-unification",
-                experimental_bound=None,
-                bound_type="theoretical_constraint",
-                bound_source="G2_Torsion_Theory",
+                no_experimental_value=True,
                 validation={
                     "theoretical_range": {"min": 0.04, "max": 0.045},
                     "status": "PASS",
-                    "notes": "From torsion/moduli: alpha_GUT = 1/23.54 ≈ 0.0425. Stronger than RG value (1/42.7 ≈ 0.0234). Constrained by G2 geometry."
+                    "notes": "From torsion/moduli: alpha_GUT = 1/23.54 = 0.0425. Stronger than RG value (1/42.7 = 0.0234). Constrained by G2 geometry. No direct experimental measurement."
                 }
             ),
             Parameter(
@@ -644,15 +636,13 @@ class GaugeUnificationSimulation(SimulationBase):
                 name="Inverse Unified Coupling",
                 units="dimensionless",
                 status="DERIVED",
-                description="Inverse of unified gauge coupling (1/alpha_GUT ~ 24)",
+                description="Inverse of unified gauge coupling (1/alpha_GUT ~ 24). Theoretical prediction from asymptotic safety.",
                 derivation_formula="gauge-coupling-unification",
-                experimental_bound=None,
-                bound_type="theoretical_range",
-                bound_source="Asymptotic_Safety_Theory",
+                no_experimental_value=True,
                 validation={
                     "theoretical_range": {"min": 24, "max": 50},
                     "status": "PASS",
-                    "notes": "AS fixed point predicts alpha_GUT^-1 ~ 24 (from b3=24). Standard 3-loop gives ~42-50. PM prediction: 42.7 ± 2.0."
+                    "notes": "AS fixed point predicts alpha_GUT^-1 ~ 24 (from b3=24). Standard 3-loop gives ~42-50. PM prediction: 42.7 +/- 2.0. No direct experimental measurement."
                 }
             ),
             Parameter(
@@ -660,14 +650,12 @@ class GaugeUnificationSimulation(SimulationBase):
                 name="Weak Mixing Angle at GUT",
                 units="dimensionless",
                 status="DERIVED",
-                description="sin^2(theta_W) at GUT scale (SO(10) predicts 3/8)",
+                description="sin^2(theta_W) at GUT scale (SO(10) predicts 3/8). Theoretical prediction - measured value at M_Z is 0.23121 +/- 0.00004 (PDG 2024).",
                 derivation_formula="gauge-coupling-unification",
-                experimental_bound=0.375,  # SO(10) theoretical prediction
-                bound_type="theoretical_prediction",
-                bound_source="SO(10)_GUT_Theory",
+                no_experimental_value=True,
                 validation={
                     "status": "PASS",
-                    "notes": "SO(10) GUT prediction: sin^2(theta_W)_GUT = 3/8 = 0.375 exactly. This is a theoretical prediction, not an experimental measurement. Measured value at M_Z is 0.23121 ± 0.00004 (PDG 2024)."
+                    "notes": "SO(10) GUT prediction: sin^2(theta_W)_GUT = 3/8 = 0.375 exactly. This is a theoretical prediction at the GUT scale, not an experimental measurement. No direct measurement possible at GUT energies."
                 }
             ),
         ]

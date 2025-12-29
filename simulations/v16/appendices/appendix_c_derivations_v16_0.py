@@ -712,9 +712,7 @@ class AppendixCExtendedDerivations(SimulationBase):
                 units="dimensionless",
                 status="VALIDATED",
                 description="Overall validation status for extended derivations",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Validation status - no experimental measurement
             ),
         ]
 

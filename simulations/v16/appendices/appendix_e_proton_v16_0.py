@@ -401,9 +401,9 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="years",
                 status="PREDICTED",
                 description="Predicted lifetime for p → π⁰e⁺ decay channel",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                experimental_bound=2.4e34,  # Super-K lower bound (years)
+                bound_type="lower",
+                bound_source="Super-K",
             ),
             Parameter(
                 path="proton_decay.gamma_p",
@@ -411,6 +411,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="GeV",
                 status="PREDICTED",
                 description="Total decay rate for proton (all channels)",
+                no_experimental_value=True,  # Future test - no direct measurement yet
             ),
             Parameter(
                 path="proton_decay.geometric_suppression",
@@ -418,9 +419,7 @@ def calculate_proton_lifetime(M_GUT: float, m_p: float, alpha_GUT: float = 1/24,
                 units="dimensionless",
                 status="DERIVED",
                 description="Wavefunction overlap suppression from G₂ cycle separation",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric quantity - no experimental measurement
             ),
         ]
 

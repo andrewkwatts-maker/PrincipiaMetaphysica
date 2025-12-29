@@ -357,9 +357,7 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of G₄ flux units from χ_eff/6 quantization",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Topological quantity - no experimental measurement
             ),
             Parameter(
                 path="topology.T_omega_topological",
@@ -367,9 +365,7 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 units="dimensionless",
                 status="DERIVED",
                 description="Torsion class before spinor corrections: T_ω = -b₃/N_flux",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Topological quantity - no experimental measurement
             ),
             Parameter(
                 path="topology.T_omega",
@@ -377,6 +373,7 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 units="dimensionless",
                 status="DERIVED",
                 description="Corrected torsion with Spin(7) fraction: T_ω = -0.875",
+                no_experimental_value=True,  # Topological quantity - no experimental measurement
             ),
             Parameter(
                 path="topology.spinor_fraction",
@@ -384,6 +381,7 @@ def effective_torsion(b3: int = 24, chi_eff: int = 144) -> float:
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Fraction of stabilized spinor components: 7/8",
+                no_experimental_value=True,  # Geometric quantity - no experimental measurement
             ),
         ]
 

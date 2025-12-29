@@ -607,41 +607,36 @@ class G2RicciFlowRigorous(SimulationBase):
                 name="Final Torsion Norm",
                 units="dimensionless",
                 status="DERIVED",
-                description="L² norm of torsion after Ricci flow: ||dφ|| + ||d(*φ)||",
-                derivation_formula="torsion-surgery"
+                description="L² norm of torsion after Ricci flow: ||dφ|| + ||d(*φ)||. Numerical simulation output, not directly measurable.",
+                derivation_formula="torsion-surgery",
+                no_experimental_value=True
             ),
             Parameter(
                 path="ricci_flow.final_ricci_norm",
                 name="Final Ricci Norm",
                 units="dimensionless",
                 status="DERIVED",
-                description="L² norm of Ricci tensor after flow",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula="g2-ricci-flow"
+                description="L² norm of Ricci tensor after flow. Numerical simulation output, not directly measurable.",
+                derivation_formula="g2-ricci-flow",
+                no_experimental_value=True
             ),
             Parameter(
                 path="ricci_flow.surgery_count",
                 name="Surgery Count",
                 units="dimensionless",
                 status="DERIVED",
-                description="Number of torsion surgery interventions during flow",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula=None
+                description="Number of torsion surgery interventions during flow. Numerical simulation output, not directly measurable.",
+                derivation_formula=None,
+                no_experimental_value=True
             ),
             Parameter(
                 path="ricci_flow.flow_time",
                 name="Flow Time",
                 units="dimensionless",
                 status="DERIVED",
-                description="Total Ricci flow time parameter",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
-                derivation_formula=None
+                description="Total Ricci flow time parameter. Numerical simulation output, not directly measurable.",
+                derivation_formula=None,
+                no_experimental_value=True
             ),
         ]
 

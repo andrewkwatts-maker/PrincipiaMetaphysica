@@ -523,6 +523,7 @@ class HiggsMassSimulation(SimulationBase):
                     "experiment, demonstrating that pure geometry fails to predict the Higgs mass."
                 ),
                 derivation_formula="higgs-mass",
+                no_experimental_value=True,
                 validation={
                     "experimental_value": 125.25,
                     "uncertainty": 0.17,
@@ -563,6 +564,7 @@ class HiggsMassSimulation(SimulationBase):
                     "Value λ_0 = 0.129 is calibrated to match observations, not purely "
                     "geometric (geometric value would be ~0.0945)."
                 ),
+                no_experimental_value=True,
                 validation={
                     "experimental_value": 0.129,
                     "theoretical_range": {"min": 0.09, "max": 0.13},
@@ -582,6 +584,7 @@ class HiggsMassSimulation(SimulationBase):
                     "phenomenologically constrained Re(T) = 9.865."
                 ),
                 derivation_formula="higgs-quartic-coupling",
+                no_experimental_value=True,
                 validation={
                     "experimental_value": None,
                     "theoretical_range": {"min": 0.10, "max": 0.13},
@@ -601,6 +604,7 @@ class HiggsMassSimulation(SimulationBase):
                     "geometric Re(T) = 1.833 from attractor mechanism."
                 ),
                 derivation_formula="higgs-quartic-coupling",
+                no_experimental_value=True,
                 validation={
                     "experimental_value": None,
                     "theoretical_range": {"min": 0.10, "max": 0.13},
@@ -619,6 +623,7 @@ class HiggsMassSimulation(SimulationBase):
                     "Status of moduli stabilization: RESOLVED if phenomenological "
                     "calculation matches experiment, NEEDS_REVIEW otherwise."
                 ),
+                no_experimental_value=True,
                 validation={
                     "experimental_value": "RESOLVED",
                     "bound_type": "categorical",
@@ -636,6 +641,7 @@ class HiggsMassSimulation(SimulationBase):
                     "One-loop correction to Higgs quartic from moduli-Higgs interactions: "
                     "Δλ = (1/8π^2) Re(T) y_t^2."
                 ),
+                no_experimental_value=True,
                 validation={
                     "experimental_value": None,
                     "theoretical_range": {"min": 0.01, "max": 0.02},

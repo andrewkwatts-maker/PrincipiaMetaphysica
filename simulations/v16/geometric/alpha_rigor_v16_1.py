@@ -269,12 +269,13 @@ if SCHEMA_AVAILABLE:
                     description=(
                         f"Fine structure constant derived from G2 topology: "
                         f"alpha^-1 = {result['derived_alpha_inv']:.6f}. "
-                        f"CODATA 2022: 137.035999. Error: {result['absolute_error']:.6f} ({result['precision_percent']:.4f}% precision)."
+                        f"PDG 2024: 137.035999084. Error: {result['absolute_error']:.6f} ({result['precision_percent']:.4f}% precision)."
                     ),
                     derivation_formula="alpha-inverse-geometric",
-                    experimental_bound=137.035999,
+                    experimental_bound=137.035999084,
                     bound_type="measured",
-                    bound_source="CODATA 2022"
+                    bound_source="PDG2024",
+                    uncertainty=0.000000021
                 )
             ]
 

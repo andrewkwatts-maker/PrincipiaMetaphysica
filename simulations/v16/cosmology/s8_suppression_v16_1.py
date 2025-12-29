@@ -859,9 +859,10 @@ class S8SuppressionV16(SimulationBase):
                     f"DES Y3 tension: 0.7σ (vs 2.7σ for ΛCDM)."
                 ),
                 derivation_formula="s8-prediction-pm",
-                experimental_bound=0.766,  # KiDS-1000
-                bound_type="measured",
-                bound_source="KiDS-1000 (Heymans+ 2021)"
+                experimental_bound=0.827,  # DESI 2025 sigma8
+                bound_type="central_value",
+                bound_source="DESI2025",
+                uncertainty=0.011
             ),
             Parameter(
                 path="cosmology.s8_suppression_factor",
@@ -872,7 +873,8 @@ class S8SuppressionV16(SimulationBase):
                     f"Suppression of structure growth at z=0.5: β = {suppression:.3f}. "
                     f"Arises from earlier dark energy domination with w₀ < -1/3."
                 ),
-                derivation_formula="growth-suppression-factor"
+                derivation_formula="growth-suppression-factor",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.growth_index_pm",
@@ -883,7 +885,8 @@ class S8SuppressionV16(SimulationBase):
                     "Growth index γ for PM cosmology: γ_PM ≈ 0.514. "
                     "Lower than ΛCDM (0.55) due to w₀ = -11/13."
                 ),
-                derivation_formula="growth-suppression-factor"
+                derivation_formula="growth-suppression-factor",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.growth_index_lcdm",
@@ -891,7 +894,8 @@ class S8SuppressionV16(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="Growth index γ for ΛCDM: γ_ΛCDM ≈ 0.55 (standard value).",
-                derivation_formula="growth-suppression-factor"
+                derivation_formula="growth-suppression-factor",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.s8_tension_kids",
@@ -901,7 +905,8 @@ class S8SuppressionV16(SimulationBase):
                 description=(
                     "Statistical tension with KiDS-1000 measurement. "
                     "PM: 1.1σ vs ΛCDM: 3.1σ. Improvement factor: 2.8×."
-                )
+                ),
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.s8_tension_des",
@@ -911,7 +916,8 @@ class S8SuppressionV16(SimulationBase):
                 description=(
                     "Statistical tension with DES Y3 measurement. "
                     "PM: 0.7σ vs ΛCDM: 2.7σ. Improvement factor: 3.9×."
-                )
+                ),
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.s8_tension_planck",
@@ -921,7 +927,8 @@ class S8SuppressionV16(SimulationBase):
                 description=(
                     "Statistical tension with Planck CMB inference. "
                     "PM: 3.4σ vs ΛCDM: 0.3σ. Expected: PM predicts less late-time growth."
-                )
+                ),
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.s8_improvement_factor",
@@ -931,7 +938,8 @@ class S8SuppressionV16(SimulationBase):
                 description=(
                     "Average improvement in weak lensing agreement: ~3×. "
                     "Quantifies how much better PM fits late-time observations."
-                )
+                ),
+                no_experimental_value=True
             ),
         ]
 

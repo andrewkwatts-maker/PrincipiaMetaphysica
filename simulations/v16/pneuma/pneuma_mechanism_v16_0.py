@@ -871,9 +871,7 @@ class PneumaMechanismV16(SimulationBase):
                 status="GEOMETRIC",
                 description="Coupling constant between Pneuma field and spacetime geometry",
                 derivation_formula="pneuma-lagrangian",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True,
             ),
             Parameter(
                 path="pneuma.flow_parameter",
@@ -882,9 +880,7 @@ class PneumaMechanismV16(SimulationBase):
                 status="DERIVED",
                 description="Characteristic frequency governing Pneuma field evolution",
                 derivation_formula="pneuma-flow",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True,
             ),
             Parameter(
                 path="pneuma.lagrangian_valid",
@@ -893,9 +889,7 @@ class PneumaMechanismV16(SimulationBase):
                 status="DERIVED",
                 description="Boolean flag indicating whether Pneuma Lagrangian has stable vacuum",
                 derivation_formula="pneuma-lagrangian",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True,
             ),
             Parameter(
                 path="pneuma.vev",
@@ -904,9 +898,7 @@ class PneumaMechanismV16(SimulationBase):
                 status="DERIVED",
                 description="Vacuum expectation value of Pneuma field from racetrack minimum",
                 derivation_formula="pneuma-flow",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True,
             ),
             Parameter(
                 path="pneuma.mass_scale",
@@ -915,9 +907,7 @@ class PneumaMechanismV16(SimulationBase):
                 status="DERIVED",
                 description="Characteristic mass scale of Pneuma field (m_P ~ M_Planck / sqrt(chi_eff))",
                 derivation_formula="pneuma-lagrangian",
-                experimental_bound=None,
-                bound_type=None,
-                bound_source=None
+                no_experimental_value=True,
             ),
         ]
 

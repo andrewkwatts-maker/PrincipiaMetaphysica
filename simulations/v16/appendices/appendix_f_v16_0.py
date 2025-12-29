@@ -421,6 +421,7 @@ def dimensional_reduction() -> dict:
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Signature (24,2) of critical bosonic string spacetime",
+                no_experimental_value=True,  # Theoretical dimension - no experimental measurement
             ),
             Parameter(
                 path="dimensions.shadow_signature",
@@ -428,6 +429,7 @@ def dimensional_reduction() -> dict:
                 units="dimensionless",
                 status="DERIVED",
                 description="Signature (12,1) after Sp(2,ℝ) gauge fixing",
+                no_experimental_value=True,  # Theoretical dimension - no experimental measurement
             ),
             Parameter(
                 path="dimensions.orientation_sum",
@@ -435,9 +437,7 @@ def dimensional_reduction() -> dict:
                 units="dimensionless",
                 status="DERIVED",
                 description="Σ = 12 from shadow spatial dimensions or TCS cycle symmetry",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Theoretical/geometric - no experimental measurement
             ),
             Parameter(
                 path="dimensions.spatial_shadow",
@@ -445,6 +445,7 @@ def dimensional_reduction() -> dict:
                 units="dimensionless",
                 status="DERIVED",
                 description="Number of spatial dimensions in shadow spacetime (12)",
+                no_experimental_value=True,  # Theoretical dimension - no experimental measurement
             ),
         ]
 

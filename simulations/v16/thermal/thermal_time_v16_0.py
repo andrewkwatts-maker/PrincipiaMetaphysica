@@ -444,6 +444,7 @@ class ThermalTimeV16(SimulationBase):
                     "the two-time framework with Sp(2,R) gauge symmetry."
                 ),
                 derivation_formula="alpha-t-derivation",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="thermal.modular_temperature",
@@ -455,6 +456,7 @@ class ThermalTimeV16(SimulationBase):
                     "Computed as T_mod = m_P / <Psi_P> where m_P is the Pneuma mass scale."
                 ),
                 derivation_formula="modular-hamiltonian",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="thermal.entropy_gradient",
@@ -466,6 +468,7 @@ class ThermalTimeV16(SimulationBase):
                     "Non-negative by the second law, defining the arrow of time."
                 ),
                 derivation_formula="entropy-gradient",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="thermal.two_time_metric_signature",
@@ -476,6 +479,7 @@ class ThermalTimeV16(SimulationBase):
                     "Signature of the two-time spacetime: (24,2) indicates 24 spatial "
                     "dimensions and 2 time dimensions related by Sp(2,R) gauge symmetry."
                 ),
+                no_experimental_value=True,
             ),
         ]
 

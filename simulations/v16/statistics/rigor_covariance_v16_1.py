@@ -878,28 +878,32 @@ class RigorCovarianceV16_1(SimulationBase):
                 name="Neutrino Chi-Square",
                 units="dimensionless",
                 status="VALIDATION",
-                description="Chi-square statistic for neutrino sector with NuFIT 6.0 covariance"
+                description="Chi-square statistic for neutrino sector with NuFIT 6.0 covariance",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.neutrino_ndof",
                 name="Neutrino Degrees of Freedom",
                 units="count",
                 status="VALIDATION",
-                description="Degrees of freedom for neutrino sector (n_params - n_free)"
+                description="Degrees of freedom for neutrino sector (n_params - n_free)",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.neutrino_p_value",
                 name="Neutrino P-Value",
                 units="probability",
                 status="VALIDATION",
-                description="Goodness-of-fit p-value for neutrino sector"
+                description="Goodness-of-fit p-value for neutrino sector",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.neutrino_status",
                 name="Neutrino Fit Status",
                 units="categorical",
                 status="VALIDATION",
-                description="Neutrino fit quality: EXCELLENT/GOOD/ACCEPTABLE/MARGINAL/TENSION"
+                description="Neutrino fit quality: EXCELLENT/GOOD/ACCEPTABLE/MARGINAL/TENSION",
+                no_experimental_value=True,
             ),
 
             # Cosmology
@@ -908,28 +912,32 @@ class RigorCovarianceV16_1(SimulationBase):
                 name="Cosmology Chi-Square",
                 units="dimensionless",
                 status="VALIDATION",
-                description="Chi-square statistic for cosmology sector with DESI 2025 covariance"
+                description="Chi-square statistic for cosmology sector with DESI 2025 covariance",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.cosmology_ndof",
                 name="Cosmology Degrees of Freedom",
                 units="count",
                 status="VALIDATION",
-                description="Degrees of freedom for cosmology sector"
+                description="Degrees of freedom for cosmology sector",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.cosmology_p_value",
                 name="Cosmology P-Value",
                 units="probability",
                 status="VALIDATION",
-                description="Goodness-of-fit p-value for cosmology sector"
+                description="Goodness-of-fit p-value for cosmology sector",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.cosmology_status",
                 name="Cosmology Fit Status",
                 units="categorical",
                 status="VALIDATION",
-                description="Cosmology fit quality: EXCELLENT/GOOD/ACCEPTABLE/MARGINAL/TENSION"
+                description="Cosmology fit quality: EXCELLENT/GOOD/ACCEPTABLE/MARGINAL/TENSION",
+                no_experimental_value=True,
             ),
 
             # Combined
@@ -938,28 +946,32 @@ class RigorCovarianceV16_1(SimulationBase):
                 name="Combined Chi-Square",
                 units="dimensionless",
                 status="VALIDATION",
-                description="Combined chi-square across all sectors"
+                description="Combined chi-square across all sectors",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.combined_ndof",
                 name="Combined Degrees of Freedom",
                 units="count",
                 status="VALIDATION",
-                description="Combined degrees of freedom"
+                description="Combined degrees of freedom",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.combined_p_value",
                 name="Combined P-Value",
                 units="probability",
                 status="VALIDATION",
-                description="Overall goodness-of-fit p-value"
+                description="Overall goodness-of-fit p-value",
+                no_experimental_value=True,
             ),
             Parameter(
                 path="statistics.combined_status",
                 name="Combined Fit Status",
                 units="categorical",
                 status="VALIDATION",
-                description="Overall fit quality"
+                description="Overall fit quality",
+                no_experimental_value=True,
             ),
         ]
 

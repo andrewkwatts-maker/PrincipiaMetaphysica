@@ -268,8 +268,8 @@ class ProtonDecaySimulation(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "This is 2.3 times above the Super-Kamiokande lower bound of "
-                        "1.67 × 10³⁴ years (90% CL), making it consistent with current "
+                        "This is above the Super-Kamiokande lower bound of "
+                        "2.4 × 10³⁴ years (90% CL), making it consistent with current "
                         "experimental constraints while remaining testable in future "
                         "experiments like Hyper-Kamiokande."
                     )
@@ -422,16 +422,16 @@ class ProtonDecaySimulation(SimulationBase):
                     "Includes cycle separation selection rule and GUT unification scale."
                 ),
                 derivation_formula="proton-lifetime",
-                experimental_bound=1.67e34,
+                experimental_bound=2.4e34,
                 bound_type="lower",
-                bound_source="Super-Kamiokande (2024) 90% CL",
+                bound_source="Super-K",
                 validation={
-                    "experimental_value": 1.67e34,
+                    "experimental_value": 2.4e34,
                     "uncertainty": None,
                     "bound_type": "lower",
                     "status": "PASS",
-                    "source": "Super-K_2024",
-                    "notes": "Super-K bound: tau_p > 1.67e34 years (90% CL) for p -> e+pi0. PM prediction using M_GUT_geometric = 2.1e16 GeV: 3.9e34 years (2.3x above bound, PASS)."
+                    "source": "Super-K",
+                    "notes": "Super-K bound: tau_p > 2.4e34 years (90% CL) for p -> e+pi0. PM prediction using M_GUT_geometric = 2.1e16 GeV: 3.9e34 years (above bound, PASS)."
                 }
             ),
             Parameter(
@@ -442,9 +442,10 @@ class ProtonDecaySimulation(SimulationBase):
                 description=(
                     "Exponential suppression from wavefunction overlap between "
                     "matter and Higgs fields on separated 3-cycles. S = exp(1/K) "
-                    "for K=4 matching fibres gives S ≈ 2.1."
+                    "for K=4 matching fibres gives S ~ 1.28. Theoretical geometric factor, no direct experimental measurement."
                 ),
                 derivation_formula="cycle-separation-suppression",
+                no_experimental_value=True,
                 validation={
                     "experimental_value": None,
                     "theoretical_range": {"min": 1.0, "max": 3.0},
@@ -461,15 +462,16 @@ class ProtonDecaySimulation(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Ratio of predicted lifetime to Super-Kamiokande lower bound. "
-                    "Values > 1 are consistent with experiment. Predicted value ~2.3."
+                    "Values > 1 are consistent with experiment. Predicted value ~1.6. Derived ratio, no direct measurement."
                 ),
+                no_experimental_value=True,
                 validation={
                     "experimental_value": 1.0,
                     "uncertainty": None,
                     "bound_type": "lower",
                     "status": "PASS",
-                    "source": "Super-K_2024",
-                    "notes": "Ratio must be > 1 for consistency. PM value with M_GUT_geometric: 2.3 (PASS, well above bound)."
+                    "source": "Super-K",
+                    "notes": "Ratio must be > 1 for consistency. PM value with M_GUT_geometric: ~1.6 (PASS, above bound)."
                 }
             ),
             Parameter(
@@ -479,14 +481,92 @@ class ProtonDecaySimulation(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Experimental status: CONSISTENT (>1.5x bound), MARGINAL (1-1.5x), "
-                    "or EXCLUDED (<1x). Current prediction is CONSISTENT."
+                    "or EXCLUDED (<1x). Categorical status indicator, no direct measurement."
                 ),
+                no_experimental_value=True,
                 validation={
                     "experimental_value": "CONSISTENT",
                     "bound_type": "categorical",
                     "status": "PASS",
                     "source": "comparison",
-                    "notes": "Prediction with M_GUT_geometric = 2.1e16 GeV: CONSISTENT - Well above Super-K bound (2.3x)."
+                    "notes": "Prediction with M_GUT_geometric = 2.1e16 GeV: CONSISTENT - Above Super-K bound."
+                }
+            ),
+            Parameter(
+                path="proton_decay.br_e_pi0",
+                name="Branching Ratio (p -> e+pi0)",
+                units="dimensionless",
+                status="PREDICTED",
+                description=(
+                    "Branching ratio for proton decay to positron and neutral pion. "
+                    "Geometric prediction BR = (12/24)^2 = 0.25 from orientation sum. "
+                    "No experimental measurement exists (proton decay not yet observed)."
+                ),
+                no_experimental_value=True,
+                validation={
+                    "experimental_value": None,
+                    "bound_type": None,
+                    "status": "PREDICTED",
+                    "source": "TCS_geometry",
+                    "notes": "Predicted branching ratio from geometric orientation factors. Awaiting proton decay observation for experimental test."
+                }
+            ),
+            Parameter(
+                path="proton_decay.d_over_R",
+                name="Cycle Separation Ratio",
+                units="dimensionless",
+                status="GEOMETRIC",
+                description=(
+                    "Ratio of cycle separation distance to G2 manifold scale. "
+                    "d/R = 1/(2*pi*K) for K=4 matching fibres gives d/R ~ 0.04. "
+                    "Topological parameter, no direct experimental measurement."
+                ),
+                derivation_formula="cycle-separation-suppression",
+                no_experimental_value=True,
+                validation={
+                    "experimental_value": None,
+                    "bound_type": None,
+                    "status": "GEOMETRIC",
+                    "source": "TCS_topology",
+                    "notes": "Geometric parameter from TCS G2 cycle separation topology. No direct measurement possible."
+                }
+            ),
+            Parameter(
+                path="proton_decay.tau_p_base",
+                name="Base Proton Lifetime (unsuppressed)",
+                units="years",
+                status="DERIVED",
+                description=(
+                    "Base GUT proton lifetime without geometric suppression. "
+                    "Computed from M_GUT and alpha_GUT using standard dimension-6 operators. "
+                    "Intermediate calculation, no direct experimental measurement."
+                ),
+                derivation_formula="proton-lifetime",
+                no_experimental_value=True,
+                validation={
+                    "experimental_value": None,
+                    "bound_type": None,
+                    "status": "DERIVED",
+                    "source": "GUT_calculation",
+                    "notes": "Intermediate value before geometric suppression. Not directly observable."
+                }
+            ),
+            Parameter(
+                path="proton_decay.above_bound",
+                name="Above Experimental Bound",
+                units="boolean",
+                status="DERIVED",
+                description=(
+                    "Boolean indicator: True if predicted lifetime exceeds Super-K bound. "
+                    "Derived comparison result, no direct measurement."
+                ),
+                no_experimental_value=True,
+                validation={
+                    "experimental_value": None,
+                    "bound_type": None,
+                    "status": "DERIVED",
+                    "source": "comparison",
+                    "notes": "Boolean flag from comparison with Super-K bound. Not a measurable quantity."
                 }
             ),
         ]
@@ -585,8 +665,8 @@ class ProtonDecaySimulation(SimulationBase):
                 "gives τ_p ~ 10^33 years (excluded). Geometric suppression from TCS cycle separation d/R ≈ "
                 "1/(2πK) = 0.04 (for K=4) gives S = exp(2πd/R) = exp(1/K) ≈ 1.28. With M_GUT = 6.3×10^15 GeV "
                 "from 3-loop running, this yields τ_p ≈ 1.3×10^33 years. However, the geometric/torsion "
-                "prediction M_GUT ~ 2×10^16 GeV gives τ_p ~ 4×10^34 years, comfortably above the Super-K "
-                "bound of 1.67×10^34 years. The dominant channel is p → e^+ π^0 with BR ≈ 0.25 from geometric "
+                "prediction M_GUT ~ 2×10^16 GeV gives τ_p ~ 4×10^34 years, above the Super-K "
+                "bound of 2.4×10^34 years. The dominant channel is p → e^+ π^0 with BR ≈ 0.25 from geometric "
                 "orientation sums (12/24)^2."
             ),
             "prediction": (

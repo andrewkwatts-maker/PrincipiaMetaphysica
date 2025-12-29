@@ -370,9 +370,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Total number of G2 topologies satisfying physical constraints",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology count - no experimental measurement
             ),
             Parameter(
                 path="landscape.h11_min",
@@ -380,9 +378,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Minimum value of h^{1,1} across valid topologies",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="landscape.h11_max",
@@ -390,9 +386,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Maximum value of h^{1,1} across valid topologies",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="landscape.h31_min",
@@ -400,9 +394,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Minimum value of h^{3,1} across valid topologies",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="landscape.h31_max",
@@ -410,9 +402,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Maximum value of h^{3,1} across valid topologies",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="landscape.selected_h11",
@@ -420,9 +410,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Hodge number h^{1,1} for selected topology TCS #187",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
             Parameter(
                 path="landscape.selected_h31",
@@ -430,9 +418,7 @@ class AppendixNG2Landscape(SimulationBase):
                 units="dimensionless",
                 status="FOUNDATIONAL",
                 description="Hodge number h^{3,1} for selected topology TCS #187",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Geometric topology - no experimental measurement
             ),
         ]
 

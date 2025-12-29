@@ -533,6 +533,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="Fraction of neurons in coherent quantum superposition (0 to 1)",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.neuron_count",
@@ -540,6 +541,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="Total number of neurons (human brain: 86 billion)",
+                no_experimental_value=True,  # Speculative model input - no direct measurement
             ),
             Parameter(
                 path="consciousness.n_tubulins",
@@ -547,9 +549,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="DERIVED: Number of tubulins in coherent superposition = coherence_fraction × neurons × 10^9",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.tau_collapse_ms",
@@ -557,6 +557,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="ms",
                 status="SPECULATIVE",
                 description="PREDICTED: Gravitational collapse timescale τ = ℏ/(E_G × N), NOT tuned",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.E_G_joules",
@@ -564,9 +565,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="J",
                 status="SPECULATIVE",
                 description="Total gravitational self-energy of tubulin superposition",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.tau_scaling_exponent",
@@ -574,6 +573,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="Power-law exponent for tau ~ N^exponent (theory: -2.0 from E_G ~ N^2)",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.f_base_hz",
@@ -581,9 +581,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="Hz",
                 status="SPECULATIVE",
                 description="DERIVED: Baseline frequency = 1/tau_collapse",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.phi_peak",
@@ -591,6 +589,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="Vacuum position for peak consciousness event frequency (stable vacuum = 0.5)",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
             Parameter(
                 path="consciousness.sigma_falloff",
@@ -598,6 +597,7 @@ class AppendixMConsciousnessSpeculation(SimulationBase):
                 units="dimensionless",
                 status="SPECULATIVE",
                 description="Characteristic scale for coherence falloff from peak position (from G2 overlap ~ 0.25)",
+                no_experimental_value=True,  # Speculative/theoretical - no experimental measurement
             ),
         ]
 

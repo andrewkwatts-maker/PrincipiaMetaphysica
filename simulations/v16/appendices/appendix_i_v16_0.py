@@ -373,9 +373,7 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
                 units="dimensionless",
                 status="PREDICTED",
                 description="Coefficient for frequency-dependent GW dispersion: η ≈ 0.100",
-                experimental_bound=None,
-                bound_type="theoretical_prediction",
-                bound_source="No direct measurement",
+                no_experimental_value=True,  # LISA future test (2037+)
             ),
             Parameter(
                 path="gw_dispersion.M_GW",
@@ -383,6 +381,7 @@ def gw_dispersion(T_omega: float = T_OMEGA_GEOMETRIC, b3: int = B3) -> dict:
                 units="GeV",
                 status="DERIVED",
                 description="Mass scale for GW dispersion (M_GW ~ M_GUT)",
+                no_experimental_value=True,  # LISA future test (2037+)
             ),
         ]
 

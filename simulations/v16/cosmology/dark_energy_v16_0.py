@@ -656,13 +656,13 @@ class DarkEnergyV16(SimulationBase):
                 description=(
                     f"Dark energy equation of state derived from dimensional reduction: "
                     f"w₀ = -11/13 = {w0_derived:.6f}. "
-                    f"DESI 2025: w₀ = -0.7280 ± 0.067. "
+                    f"DESI 2025: w₀ = -0.728 ± 0.067. "
                     f"Deviation: {deviation_sigma:.2f}σ. Excellent agreement."
                 ),
                 derivation_formula="dark-energy-eos-derivation",
-                experimental_bound=-0.7280,
+                experimental_bound=-0.728,
                 bound_type="central_value",
-                bound_source="DESI_2025",
+                bound_source="DESI2025",
                 uncertainty=0.067
             ),
             Parameter(
@@ -672,12 +672,12 @@ class DarkEnergyV16(SimulationBase):
                 status="PREDICTED",
                 description=(
                     f"Time evolution parameter for dark energy EoS from moduli dynamics: "
-                    f"w_a ≈ {wa_derived:.3f}. Consistent with DESI 2025 constraints."
+                    f"w_a ≈ {wa_derived:.3f}. DESI 2025: w_a = -0.99 ± 0.32."
                 ),
                 derivation_formula="dark-energy-time-evolution",
                 experimental_bound=-0.99,
                 bound_type="central_value",
-                bound_source="DESI_2025",
+                bound_source="DESI2025",
                 uncertainty=0.32
             ),
             Parameter(
@@ -690,7 +690,8 @@ class DarkEnergyV16(SimulationBase):
                     f"D_eff = {D_eff:.3f}. "
                     "D_eff = 12 gives w₀ = -11/13 exactly."
                 ),
-                derivation_formula="effective-dimension"
+                derivation_formula="effective-dimension",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.alpha_shadow",
@@ -701,7 +702,8 @@ class DarkEnergyV16(SimulationBase):
                     "Residual degrees of freedom from compact dimensions: α_shadow = 0.576. "
                     "Calibrated from G2 topology with χ_eff=144, b3=24."
                 ),
-                derivation_formula="effective-dimension"
+                derivation_formula="effective-dimension",
+                no_experimental_value=True
             ),
             Parameter(
                 path="cosmology.w0_deviation",
@@ -711,7 +713,8 @@ class DarkEnergyV16(SimulationBase):
                 description=(
                     f"Deviation of predicted w₀ from DESI 2025 measurement: "
                     f"{deviation_sigma:.2f}σ. Deviation < 1σ indicates excellent agreement."
-                )
+                ),
+                no_experimental_value=True
             ),
         ]
 
