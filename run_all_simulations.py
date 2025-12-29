@@ -170,6 +170,25 @@ from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
 from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
 from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
 
+# Academic Armor v16.1 - Rigor simulations (geometric derivations)
+try:
+    from simulations.v16.geometric.alpha_rigor_v16_1 import AlphaRigorSimulation
+    ALPHA_RIGOR_AVAILABLE = True
+except ImportError:
+    ALPHA_RIGOR_AVAILABLE = False
+
+try:
+    from simulations.v16.fermion.mass_ratio_v16_1 import MassRatioSimulation
+    MASS_RATIO_AVAILABLE = True
+except ImportError:
+    MASS_RATIO_AVAILABLE = False
+
+try:
+    from simulations.v16.quantum_bio.orch_or_geometry_v16_1 import OrchORSimulation
+    ORCH_OR_AVAILABLE = True
+except ImportError:
+    ORCH_OR_AVAILABLE = False
+
 # Phase 2 - Core physics (depends on Phase 1)
 from simulations.v16.fermion.fermion_generations_v16_0 import FermionGenerationsV16
 from simulations.v16.fermion.chirality_v16_0 import ChiralitySpinorSimulation
@@ -414,14 +433,14 @@ class SimulationRunner:
             1: [
                 G2GeometryV16(),
                 GaugeUnificationSimulation(),
-            ],
+            ] + ([AlphaRigorSimulation()] if ALPHA_RIGOR_AVAILABLE else []),
             2: [
                 FermionGenerationsV16(),
                 ChiralitySpinorSimulation(),
                 CKMMatrixSimulation(),
                 ProtonDecaySimulation(),
                 HiggsMassSimulation(),
-            ],
+            ] + ([MassRatioSimulation()] if MASS_RATIO_AVAILABLE else []),
             3: [
                 CosmologyIntroV16(),
                 DarkEnergyV16(),
@@ -433,7 +452,7 @@ class SimulationRunner:
                 PneumaMechanismV16(),
                 ThermalTimeV16(),  # Moved to Phase 4 - depends on Pneuma outputs
             ],
-            5: [
+            5: ([OrchORSimulation()] if ORCH_OR_AVAILABLE else []) + [
                 DiscussionV16(),
                 PredictionsAggregatorV16(),
                 AppendixAMathFoundations(),

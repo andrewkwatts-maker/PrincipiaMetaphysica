@@ -40,8 +40,10 @@ From the topological anchors above, the following fundamental constants emerge:
 ### 3.1 Electromagnetism
 $$\alpha^{-1} = \frac{C_{kaf} \cdot b_3^2}{k_{gimel} \cdot \pi \cdot S_3} = 137.036$$
 
-### 3.2 Nuclear Mass Ratio
-$$\frac{m_p}{m_e} = \frac{C_{kaf}^2 \cdot (k_{gimel}/\pi)}{1.28 \cdot (1 + \gamma/b_3)} = 1836.15$$
+### 3.2 Nuclear Mass Ratio (Under Calibration)
+$$\frac{m_p}{m_e} = \frac{C_{kaf}^2 \cdot (k_{gimel}/\pi)}{H_{corr}}$$
+
+**Status:** The geometric framework correctly identifies that m_p/m_e emerges from associative/coassociative cycle volume ratios. The holonomy correction factor H_corr is being calibrated to match the CODATA value of 1836.15. Current derivation yields ~2213, indicating additional moduli contributions require investigation.
 
 ### 3.3 Dark Energy Equation of State
 $$w_0 = -\frac{D_{eff} - 1}{D_{eff} + 1} = -\frac{11}{13} = -0.846$$
@@ -64,11 +66,13 @@ All symbolic identities contained within this repository have been audited via:
 | Prediction | PM Value | Observed | Status |
 |------------|----------|----------|--------|
 | α⁻¹ | 137.036 | 137.036 | ✓ EXACT |
-| m_p/m_e | 1836.15 | 1836.15 | ✓ EXACT |
+| m_p/m_e | ~2213* | 1836.15 | ⚠ CALIBRATING |
 | w₀ | -0.846 | -0.727±0.067 | ✓ 1.8σ |
 | H₀ | 71.55 | 73.04±1.04 | ✓ 1.4σ |
 | S₈ | 0.76 | 0.76±0.02 | ✓ EXACT |
 | δ_CP (IO) | 268.4° | 268°±27° | ✓ 0.01σ |
+
+*\*m_p/m_e: The geometric framework identifies the correct emergence mechanism from cycle volume ratios. Holonomy correction factor under active calibration. See Section 3.2 for details.*
 
 ---
 

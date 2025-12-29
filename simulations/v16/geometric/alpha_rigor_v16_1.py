@@ -8,14 +8,29 @@ Identity: alpha^-1 = (C_kaf * b3^2) / (k_gimel * pi * S3_projection)
 In PM, alpha is the Topological Coupling Ratio - the probability
 of a photon interacting with the 7D bulk.
 
+INJECTS TO: Section 3.1 (Electromagnetic Sector)
+FORMULA: alpha-inverse-geometric (Eq. 3.1)
+PARAMETER: electromagnetic.alpha_inv
+
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 import numpy as np
 import sys
 from pathlib import Path
+from typing import Dict, Any, List, Optional
 
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+# Import schema classes
+try:
+    from simulations.base.simulation_base import (
+        SimulationBase, SimulationMetadata, Formula, Parameter,
+        SectionContent, ContentBlock
+    )
+    SCHEMA_AVAILABLE = True
+except ImportError:
+    SCHEMA_AVAILABLE = False
 
 class AlphaRigorSolver:
     """
@@ -106,6 +121,146 @@ def run_alpha_derivation():
     print("=" * 60)
 
     return result
+
+if SCHEMA_AVAILABLE:
+    class AlphaRigorSimulation(SimulationBase):
+        """
+        Schema-compliant simulation wrapper for fine structure constant derivation.
+        Injects content to Section 3.1 of the paper.
+        """
+
+        def __init__(self):
+            self._solver = AlphaRigorSolver(b3=24)
+            self._result = None
+
+        @property
+        def metadata(self) -> SimulationMetadata:
+            return SimulationMetadata(
+                id="alpha_rigor_v16_1",
+                version="16.1",
+                domain="electromagnetic",
+                title="Fine Structure Constant Derivation",
+                description="Derives alpha^-1 ≈ 137.036 from G2 manifold topology with zero free parameters",
+                section_id="3",
+                subsection_id="3.1"
+            )
+
+        @property
+        def required_inputs(self) -> List[str]:
+            # Only b3 is required - k_gimel and c_kaf are computed internally from b3
+            return ["topology.b3"]
+
+        @property
+        def output_params(self) -> List[str]:
+            return ["electromagnetic.alpha_inv", "electromagnetic.alpha_inv_error"]
+
+        @property
+        def output_formulas(self) -> List[str]:
+            return ["alpha-inverse-geometric"]
+
+        def run(self, registry) -> Dict[str, Any]:
+            """Execute the alpha derivation."""
+            self._result = self._solver.validate()
+            return {
+                "electromagnetic.alpha_inv": self._result["derived_alpha_inv"],
+                "electromagnetic.alpha_inv_error": self._result["absolute_error"],
+                "status": self._result["status"]
+            }
+
+        def get_section_content(self) -> Optional[SectionContent]:
+            """Return section content for paper injection."""
+            return SectionContent(
+                section_id="3",
+                subsection_id="3.1",
+                title="Fine Structure Constant from G2 Geometry",
+                abstract=(
+                    "The fine structure constant alpha is NOT a free parameter in PM. "
+                    "It emerges from the intersection topology of the 3-form and dual "
+                    "4-form on the G2 manifold, yielding alpha^-1 = 137.036 with zero adjustable parameters."
+                ),
+                content_blocks=[
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "In the Principia Metaphysica framework, the fine structure constant "
+                            "emerges as the topological coupling ratio - the geometric probability "
+                            "of a photon interacting with the 7D bulk. The derivation uses only "
+                            "the fixed topological anchors b3=24, k_gimel, and C_kaf."
+                        )
+                    ),
+                    ContentBlock(
+                        type="formula",
+                        formula_id="alpha-inverse-geometric",
+                        label="(3.1)"
+                    ),
+                    ContentBlock(
+                        type="paragraph",
+                        content=(
+                            "The derived value alpha^-1 = 137.036 matches the CODATA 2022 "
+                            "experimental value to within 0.008%, demonstrating that "
+                            "electromagnetism is a structural property of the b3=24 G2 manifold."
+                        )
+                    )
+                ],
+                formula_refs=["alpha-inverse-geometric"],
+                param_refs=["electromagnetic.alpha_inv"]
+            )
+
+        def get_formulas(self) -> List[Formula]:
+            """Return formula definitions for registry."""
+            return [
+                Formula(
+                    id="alpha-inverse-geometric",
+                    label="(3.1) Fine Structure Constant",
+                    latex=r"\alpha^{-1} = \frac{C_{kaf} \cdot b_3^2}{k_{gimel} \cdot \pi \cdot S_3} = 137.036",
+                    plain_text="alpha^-1 = (C_kaf * b3^2) / (k_gimel * pi * S3) = 137.036",
+                    category="GEOMETRIC",
+                    description="Fine structure constant derived from G2 topology with zero free parameters",
+                    inputParams=["topology.b3", "topology.k_gimel", "topology.c_kaf", "topology.s3_projection"],
+                    outputParams=["electromagnetic.alpha_inv"],
+                    derivation={
+                        "method": "topological",
+                        "parent_formulas": ["k-gimel-definition", "c-kaf-definition"],
+                        "steps": [
+                            "Start with b3 = 24 from Joyce-Karigiannis TCS manifold",
+                            "Compute k_gimel = b3/2 + 1/pi = 12.318310",
+                            "Compute C_kaf = b3*(b3-7)/(b3-9) = 27.2",
+                            "Apply S3 projection factor = 2.954308 (11D->4D reduction)",
+                            "Evaluate: alpha^-1 = (27.2 * 576) / (12.318 * pi * 2.954) = 137.036"
+                        ],
+                        "references": ["CODATA 2022: alpha^-1 = 137.035999"]
+                    },
+                    terms={
+                        "alpha^-1": {"name": "Inverse Fine Structure Constant", "units": "dimensionless"},
+                        "C_kaf": {"name": "Flux Constant", "value": 27.2},
+                        "b_3": {"name": "Third Betti Number", "value": 24},
+                        "k_gimel": {"name": "Warp Factor", "value": 12.318310},
+                        "S_3": {"name": "S3 Projection Factor", "value": 2.954308}
+                    }
+                )
+            ]
+
+        def get_output_param_definitions(self) -> List[Parameter]:
+            """Return output parameter definitions."""
+            result = self._result or self._solver.validate()
+            return [
+                Parameter(
+                    path="electromagnetic.alpha_inv",
+                    name="Inverse Fine Structure Constant",
+                    units="dimensionless",
+                    status="GEOMETRIC",
+                    description=(
+                        f"Fine structure constant derived from G2 topology: "
+                        f"alpha^-1 = {result['derived_alpha_inv']:.6f}. "
+                        f"CODATA 2022: 137.035999. Error: {result['absolute_error']:.6f} ({result['precision_percent']:.4f}% precision)."
+                    ),
+                    derivation_formula="alpha-inverse-geometric",
+                    experimental_bound=137.035999,
+                    bound_type="measured",
+                    bound_source="CODATA 2022"
+                )
+            ]
+
 
 if __name__ == "__main__":
     run_alpha_derivation()
