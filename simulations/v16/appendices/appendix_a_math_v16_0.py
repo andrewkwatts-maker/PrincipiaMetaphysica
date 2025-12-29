@@ -135,7 +135,7 @@ class AppendixAMathFoundations(SimulationBase):
             "math.spinor_dimension": spinor_dim,
             "math.octonion_dimension": octonion_dim,
             "math.g2_lie_dimension": g2_lie_dim,
-            "math.betti_sequence": [1, 0, 4, 24, 4, 0, 1],  # TCS G2 #187
+            "math.betti_sequence": [1, 0, 4, 24, 24, 4, 0, 1],  # TCS G2 #187 (Poincare duality: b_k = b_{7-k})
             "math.euler_characteristic": 0,  # All G2 manifolds have chi=0
             "math.validation_status": "CONSISTENT",
         }
@@ -372,7 +372,7 @@ class AppendixAMathFoundations(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"(b_0, b_1, b_2, b_3, b_4, b_5, b_6, b_7) = (1, 0, 4, 24, 4, 0, 1)",
+                    content=r"(b_0, b_1, b_2, b_3, b_4, b_5, b_6, b_7) = (1, 0, 4, 24, 24, 4, 0, 1)",
                     label="(A.11)"
                 ),
                 ContentBlock(

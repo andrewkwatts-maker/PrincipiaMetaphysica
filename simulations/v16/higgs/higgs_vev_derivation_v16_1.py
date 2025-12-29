@@ -272,7 +272,7 @@ class HiggsVEVDerivationV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"\frac{v}{M_{Pl}} = \frac{k_\gimel}{b_3 \cdot C_{kaf}} \cdot e^{-b_3/2\pi} \cdot \sqrt{\alpha_{GUT}}",
+                    content=r"\frac{v}{M_{\text{Pl}}} = \frac{k_{\gimel}}{b_3 \cdot C_{\text{kaf}}} \cdot e^{-b_3/2\pi} \cdot \sqrt{\alpha_{\text{GUT}}}",
                     formula_id="electroweak-hierarchy",
                     label="(4.16)"
                 ),
@@ -289,7 +289,7 @@ class HiggsVEVDerivationV16(SimulationBase):
                 ),
                 ContentBlock(
                     type="formula",
-                    content=r"v = M_{Pl} \cdot \mathcal{G} \cdot \sqrt{\alpha_{GUT}} = 246 \text{ GeV}",
+                    content=r"v = M_{\text{Pl}} \cdot \mathcal{G} \cdot \sqrt{\alpha_{\text{GUT}}} = 246 \text{ GeV}",
                     formula_id="higgs-vev-geometric-derivation",
                     label="(4.17)"
                 ),
@@ -357,7 +357,7 @@ class HiggsVEVDerivationV16(SimulationBase):
             Formula(
                 id="electroweak-hierarchy",
                 label="(4.16)",
-                latex=r"\frac{v}{M_{Pl}} = \frac{k_\gimel}{b_3 \cdot C_{kaf}} \cdot e^{-b_3/2\pi} \cdot \sqrt{\alpha_{GUT}}",
+                latex=r"\frac{v}{M_{\text{Pl}}} = \frac{k_{\gimel}}{b_3 \cdot C_{\text{kaf}}} \cdot e^{-b_3/2\pi} \cdot \sqrt{\alpha_{\text{GUT}}}",
                 plain_text="v/M_Pl = (k_gimel / (b3 * C_kaf)) * exp(-b3/2pi) * sqrt(alpha_GUT)",
                 category="THEORY",
                 description="Geometric formula for electroweak hierarchy",
@@ -369,7 +369,7 @@ class HiggsVEVDerivationV16(SimulationBase):
                     "steps": [
                         {
                             "description": "Geometric suppression",
-                            "formula": r"\frac{k_\gimel}{b_3 \cdot C_{kaf}} = \frac{12.318}{24 \times 27.2} = 0.0189"
+                            "formula": r"\frac{k_{\gimel}}{b_3 \cdot C_{kaf}} = \frac{12.318}{24 \times 27.2} = 0.0189"
                         },
                         {
                             "description": "Warp factor",
@@ -381,7 +381,7 @@ class HiggsVEVDerivationV16(SimulationBase):
                         },
                         {
                             "description": "Combined ratio",
-                            "formula": r"v/M_{Pl} \sim 10^{-16}"
+                            "formula": r"v/M_{\text{Pl}} \sim 10^{-16}"
                         }
                     ],
                     "references": ["Hierarchy problem literature"]
@@ -395,7 +395,7 @@ class HiggsVEVDerivationV16(SimulationBase):
             Formula(
                 id="higgs-vev-geometric-derivation",
                 label="(4.17)",
-                latex=r"v = M_{Pl} \cdot \mathcal{G} \cdot \sqrt{\alpha_{GUT}} = 246 \text{ GeV}",
+                latex=r"v = M_{\text{Pl}} \cdot \mathcal{G} \cdot \sqrt{\alpha_{\text{GUT}}} = 246 \text{ GeV}",
                 plain_text="v = M_Pl * G * sqrt(alpha_GUT) = 246 GeV",
                 category="PREDICTIONS",
                 description="Higgs VEV derived from G2 geometry",
@@ -407,11 +407,11 @@ class HiggsVEVDerivationV16(SimulationBase):
                     "steps": [
                         {
                             "description": "Planck scale input",
-                            "formula": r"M_{Pl} = 2.435 \times 10^{18} \text{ GeV}"
+                            "formula": r"M_{\text{Pl}} = 2.435 \times 10^{18} \text{ GeV}"
                         },
                         {
                             "description": "Geometric factor",
-                            "formula": r"\mathcal{G} = \frac{k_\gimel}{b_3 C_{kaf}} e^{-b_3/2\pi}"
+                            "formula": r"\mathcal{G} = \frac{k_{\gimel}}{b_3 C_{kaf}} e^{-b_3/2\pi}"
                         },
                         {
                             "description": "Final result",

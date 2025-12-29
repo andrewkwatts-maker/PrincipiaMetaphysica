@@ -547,7 +547,7 @@ class NeutrinoMixingSimulation(SimulationBase):
             ),
             ContentBlock(
                 type="formula",
-                content=r"\theta_{23} = 45° + \frac{(b_2 - n_{\text{gen}}) n_{\text{gen}}}{b_2} "
+                content=r"\theta_{23} = 45^\circ + \frac{(b_2 - n_{\text{gen}}) n_{\text{gen}}}{b_2} "
                        r"+ \frac{S_{\text{orient}}}{b_3} \cdot \frac{b_2 \chi_{\text{eff}}}{b_3 n_{\text{gen}}}",
                 formula_id="pmns-theta-23",
                 label="(4.16)"
@@ -709,7 +709,7 @@ class NeutrinoMixingSimulation(SimulationBase):
             Formula(
                 id="pmns-theta-23",
                 label="(4.16)",
-                latex=r"\theta_{23} = 45° + \frac{(b_2 - n_{\text{gen}}) n_{\text{gen}}}{b_2} "
+                latex=r"\theta_{23} = 45^\circ + \frac{(b_2 - n_{\text{gen}}) n_{\text{gen}}}{b_2} "
                       r"+ \frac{S_{\text{orient}}}{b_3} \cdot \frac{b_2 \chi_{\text{eff}}}{b_3 n_{\text{gen}}}",
                 plain_text="theta_23 = 45 + (b2 - n_gen)*n_gen/b2 + (S_orient/b3)*(b2*chi_eff)/(b3*n_gen)",
                 category="DERIVED",
@@ -724,7 +724,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                     "steps": [
                         {
                             "description": "Maximal mixing from G2 ~ Aut(O)",
-                            "formula": r"\theta_{23}^{(0)} = 45°"
+                            "formula": r"\theta_{23}^{(0)} = 45^\circ"
                         },
                         {
                             "description": "Correction from Kähler moduli",
@@ -744,7 +744,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                         },
                         {
                             "description": "Flux shift",
-                            "formula": r"\Delta\theta_{23}^{\text{flux}} = w \times A_{\text{geo}} = 0.5 \times 8.0 = 4.0°"
+                            "formula": r"\Delta\theta_{23}^{\text{flux}} = w \times A_{\text{geo}} = 0.5 \times 8.0 = 4.0^\circ"
                         },
                         {
                             "description": "Total angle with flux correction",
@@ -752,7 +752,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                         },
                         {
                             "description": "Numerical prediction",
-                            "formula": r"\theta_{23} = 45° + 0.75° + 4.0° = 49.75°"
+                            "formula": r"\theta_{23} = 45^\circ + 0.75^\circ + 4.0^\circ = 49.75^\circ"
                         }
                     ],
                     "references": [
