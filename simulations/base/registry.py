@@ -24,12 +24,22 @@ class RegistryEntry:
     Entry in the parameter registry.
 
     Attributes:
-        value: The parameter value
+        value: The parameter value (theory prediction or established value)
         source: Source of the value (simulation ID or "ESTABLISHED:SOURCE")
-        uncertainty: Optional uncertainty/error
+        uncertainty: Optional uncertainty/error on the theory prediction
         status: Status ("ESTABLISHED", "GEOMETRIC", "DERIVED", "PREDICTED", "CALIBRATED")
         timestamp: When the value was set
         metadata: Additional metadata
+
+        # Experimental comparison fields (for validation)
+        experimental_value: Experimental measurement for comparison (PDG, NuFIT, DESI, etc.)
+        experimental_uncertainty: 1-sigma uncertainty on experimental value
+        experimental_source: Citation for experimental value (e.g., "PDG2024", "NuFIT6.0")
+        bound_type: Type of comparison ("measured", "upper", "lower", "range")
+
+        # Validation results (computed from theory vs experiment)
+        sigma_deviation: Number of sigmas between theory and experiment
+        validation_status: "PASS", "MARGINAL", "TENSION", "FAIL", or "NO_DATA"
     """
     value: Any
     source: str
@@ -37,6 +47,16 @@ class RegistryEntry:
     status: str = "DERIVED"
     timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
     metadata: Dict[str, Any] = field(default_factory=dict)
+
+    # Experimental comparison fields
+    experimental_value: Optional[float] = None
+    experimental_uncertainty: Optional[float] = None
+    experimental_source: Optional[str] = None
+    bound_type: Optional[str] = None  # "measured", "upper", "lower", "range"
+
+    # Validation results
+    sigma_deviation: Optional[float] = None
+    validation_status: Optional[str] = None  # "PASS", "MARGINAL", "TENSION", "FAIL", "NO_DATA"
 
 
 @dataclass
@@ -196,18 +216,26 @@ class PMRegistry:
         source: str,
         uncertainty: Optional[float] = None,
         status: str = "DERIVED",
-        metadata: Optional[Dict[str, Any]] = None
+        metadata: Optional[Dict[str, Any]] = None,
+        experimental_value: Optional[float] = None,
+        experimental_uncertainty: Optional[float] = None,
+        experimental_source: Optional[str] = None,
+        bound_type: Optional[str] = None
     ) -> None:
         """
         Set a parameter in the registry.
 
         Args:
             path: Parameter path (e.g., "gauge.M_GUT")
-            value: Parameter value
+            value: Parameter value (theory prediction)
             source: Source identifier (simulation ID or "ESTABLISHED:SOURCE")
-            uncertainty: Optional uncertainty
+            uncertainty: Optional uncertainty on theory prediction
             status: Status ("ESTABLISHED", "GEOMETRIC", "DERIVED", "PREDICTED", "CALIBRATED")
             metadata: Optional additional metadata
+            experimental_value: Experimental measurement for comparison
+            experimental_uncertainty: 1-sigma uncertainty on experimental value
+            experimental_source: Citation (e.g., "PDG2024", "NuFIT6.0", "DESI2025")
+            bound_type: Type of bound ("measured", "upper", "lower", "range")
         """
         # Check for overwrites and warn if value differs significantly
         if path in self._parameters:
@@ -217,12 +245,75 @@ class PMRegistry:
                 raise ValueError(f"Cannot override ESTABLISHED param '{path}'")
             self.warn_mismatch(path, value, source)
 
+        # Compute sigma deviation if we have experimental data
+        sigma_deviation = None
+        validation_status = "NO_DATA"
+
+        if experimental_value is not None and value is not None:
+            try:
+                theory_val = float(value)
+                exp_val = float(experimental_value)
+
+                if bound_type in ("measured", "central_value") and experimental_uncertainty is not None and experimental_uncertainty > 0:
+                    # Standard sigma calculation: |theory - exp| / sigma
+                    sigma_deviation = abs(theory_val - exp_val) / experimental_uncertainty
+
+                    if sigma_deviation < 1.0:
+                        validation_status = "PASS"
+                    elif sigma_deviation < 2.0:
+                        validation_status = "MARGINAL"
+                    elif sigma_deviation < 3.0:
+                        validation_status = "TENSION"
+                    else:
+                        validation_status = "FAIL"
+
+                elif bound_type in ("measured", "central_value") and experimental_uncertainty is None:
+                    # No uncertainty provided - compute relative error
+                    if exp_val != 0:
+                        relative_error = abs(theory_val - exp_val) / abs(exp_val)
+                        if relative_error < 0.01:  # Within 1%
+                            validation_status = "PASS"
+                        elif relative_error < 0.05:  # Within 5%
+                            validation_status = "MARGINAL"
+                        elif relative_error < 0.10:  # Within 10%
+                            validation_status = "TENSION"
+                        else:
+                            validation_status = "FAIL"
+
+                elif bound_type == "lower":
+                    # Theory must exceed lower bound
+                    if theory_val > exp_val:
+                        validation_status = "PASS"
+                        sigma_deviation = (theory_val - exp_val) / exp_val if exp_val != 0 else None
+                    else:
+                        validation_status = "FAIL"
+                        sigma_deviation = (exp_val - theory_val) / exp_val if exp_val != 0 else None
+
+                elif bound_type == "upper":
+                    # Theory must be below upper bound
+                    if theory_val < exp_val:
+                        validation_status = "PASS"
+                        sigma_deviation = (exp_val - theory_val) / exp_val if exp_val != 0 else None
+                    else:
+                        validation_status = "FAIL"
+                        sigma_deviation = (theory_val - exp_val) / exp_val if exp_val != 0 else None
+
+            except (TypeError, ValueError):
+                # Non-numeric values, can't compute sigma
+                pass
+
         entry = RegistryEntry(
             value=value,
             source=source,
             uncertainty=uncertainty,
             status=status,
-            metadata=metadata or {}
+            metadata=metadata or {},
+            experimental_value=experimental_value,
+            experimental_uncertainty=experimental_uncertainty,
+            experimental_source=experimental_source,
+            bound_type=bound_type,
+            sigma_deviation=sigma_deviation,
+            validation_status=validation_status
         )
 
         self._parameters[path] = entry
@@ -335,10 +426,20 @@ class PMRegistry:
 
     def export_parameters(self) -> Dict[str, Dict[str, Any]]:
         """
-        Export all parameters as a dictionary.
+        Export all parameters as a dictionary with full experimental validation data.
 
         Returns:
-            Dictionary mapping parameter paths to their full entries
+            Dictionary mapping parameter paths to their full entries including:
+            - value: Theory prediction or established value
+            - source: Source simulation or ESTABLISHED:* citation
+            - uncertainty: Uncertainty on theory prediction
+            - status: Parameter status (ESTABLISHED, GEOMETRIC, DERIVED, etc.)
+            - experimental_value: Experimental measurement for comparison
+            - experimental_uncertainty: 1-sigma uncertainty on experiment
+            - experimental_source: Citation for experimental value
+            - bound_type: Type of bound (measured, upper, lower, range)
+            - sigma_deviation: Number of sigmas between theory and experiment
+            - validation_status: PASS, MARGINAL, TENSION, FAIL, or NO_DATA
         """
         result = {}
         for path, entry in self._parameters.items():
@@ -349,6 +450,14 @@ class PMRegistry:
                 'status': entry.status,
                 'timestamp': entry.timestamp,
                 'metadata': entry.metadata,
+                # Experimental comparison fields
+                'experimental_value': entry.experimental_value,
+                'experimental_uncertainty': entry.experimental_uncertainty,
+                'experimental_source': entry.experimental_source,
+                'bound_type': entry.bound_type,
+                # Validation results
+                'sigma_deviation': entry.sigma_deviation,
+                'validation_status': entry.validation_status,
             }
         return result
 

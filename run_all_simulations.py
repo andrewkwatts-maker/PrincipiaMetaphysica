@@ -1264,29 +1264,24 @@ class SimulationRunner:
             if self.verbose:
                 print(f"  Created: formulas.json ({len(data['formulas'])} formulas)")
 
-        # 2. Parameters (enriched with experimental values from V16_VALIDATION_BOUNDS)
+        # 2. Parameters (preserve registry values, supplement with V16_VALIDATION_BOUNDS)
         if 'parameters' in data:
             enriched_params = {}
             for param_path, param_data in data['parameters'].items():
-                enriched = dict(param_data)  # Copy original data
+                enriched = dict(param_data)  # Copy original data (includes registry's experimental data)
 
-                # Add experimental values from V16_VALIDATION_BOUNDS if available
+                # Add V16_VALIDATION_BOUNDS as supplementary data (don't overwrite registry values)
                 bounds = V16_VALIDATION_BOUNDS.get(param_path)
                 if bounds:
-                    if 'experimental' in bounds:
-                        enriched['experimental'] = bounds['experimental']
-                    if 'sigma' in bounds:
-                        enriched['sigma'] = bounds['sigma']
-                    if 'target' in bounds:
+                    # Add target from bounds if not already present
+                    if 'target' in bounds and 'target' not in enriched:
                         enriched['target'] = bounds['target']
 
-                    # Calculate sigma deviation if we have experimental and sigma
-                    if 'experimental' in bounds and 'sigma' in bounds and 'value' in enriched:
-                        try:
-                            sigma_dev = abs(float(enriched['value']) - bounds['experimental']) / bounds['sigma']
-                            enriched['sigma_deviation'] = round(sigma_dev, 3)
-                        except (TypeError, ZeroDivisionError):
-                            pass
+                    # Only add V16 experimental data if registry didn't provide it
+                    if enriched.get('experimental_value') is None and 'experimental' in bounds:
+                        enriched['v16_experimental'] = bounds['experimental']
+                        if 'sigma' in bounds:
+                            enriched['v16_sigma'] = bounds['sigma']
 
                 enriched_params[param_path] = enriched
 
