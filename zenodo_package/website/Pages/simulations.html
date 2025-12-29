@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Principia Metaphysica Simulation Code - Python implementations of the theoretical framework">
+    <title>Simulations - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+
+    <style>
+        /* Simulation Page Specific Styles */
+        .sim-hero {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08));
+            border: 1px solid rgba(81, 207, 102, 0.25);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sim-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #51cf66, #8b7fff);
+        }
+
+        .sim-hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #51cf66, #8b7fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .sim-hero .lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 900px;
+        }
+
+        /* Index Section */
+        .sim-index {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .sim-index h2 {
+            background: linear-gradient(135deg, #51cf66, #8b7fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+
+        .index-category {
+            background: rgba(139, 127, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .index-category h3 {
+            color: var(--accent-primary);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .index-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .index-category li {
+            margin: 0.5rem 0;
+        }
+
+        .index-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .index-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .index-link::before {
+            content: '>';
+            color: #51cf66;
+            font-weight: bold;
+        }
+
+        /* Index Stats */
+        .index-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            padding: 0.75rem;
+            background: rgba(139, 127, 255, 0.05);
+            border-radius: 8px;
+        }
+
+        .index-stats span {
+            white-space: nowrap;
+        }
+
+        /* Status badges in index */
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: rgba(139, 127, 255, 0.2);
+            color: var(--accent-primary);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        /* File Section */
+        .file-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .file-section:hover {
+            border-color: var(--border-accent);
+        }
+
+        .file-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            background: rgba(139, 127, 255, 0.05);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+
+        .file-header:hover {
+            background: rgba(139, 127, 255, 0.1);
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .file-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #51cf66, #40c057);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .file-icon.json {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+        }
+
+        .file-icon.js {
+            background: linear-gradient(135deg, #f0db4f, #e6c200);
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .file-path {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .expand-icon {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .file-section.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .file-content {
+            display: none;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .file-section.expanded .file-content {
+            display: block;
+        }
+
+        .file-loading {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .file-loading .spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(139, 127, 255, 0.2);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.75rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .file-error {
+            padding: 1.5rem;
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            border-radius: 8px;
+            margin: 1rem;
+        }
+
+        /* Code Display */
+        .code-wrapper {
+            max-height: 600px;
+            overflow: auto;
+            background: #1e1e1e;
+        }
+
+        .code-wrapper pre {
+            margin: 0;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .code-wrapper code {
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+        }
+
+        /* Stats Bar */
+        .file-stats {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .file-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Category Headers */
+        .category-header {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(81, 207, 102, 0.05));
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2.5rem 0 1.5rem;
+            border-left: 4px solid #51cf66;
+            scroll-margin-top: 100px;
+        }
+
+        .category-header h2 {
+            color: var(--text-primary);
+            margin: 0 0 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .category-header p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Smooth scroll for anchor navigation */
+        .file-section {
+            scroll-margin-top: 100px;
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.hidden {
+            display: none;
+        }
+
+        .loading-text {
+            color: var(--text-primary);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Architecture Diagram */
+        .architecture-box {
+            background: rgba(139, 127, 255, 0.08);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            overflow-x: auto;
+        }
+
+        .architecture-box .highlight {
+            color: #51cf66;
+        }
+
+        .architecture-box .accent {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sim-hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .sim-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .file-header {
+                padding: 1rem;
+            }
+
+            .file-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .file-stats {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+
+    <!-- Tooltip System CSS -->
+    <link rel="stylesheet" href="../css/pm-tooltip.css">
+    <link rel="stylesheet" href="../css/formula-hover.css">
+</head>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+        <!-- Header injected by pm-header.js -->
+
+        <main>
+            <!-- Hero Section -->
+            <section class="sim-hero">
+                <h1>Simulation Framework</h1>
+                <p class="lead">
+                    The Principia Metaphysica simulation suite provides rigorous numerical validation of the
+                    theoretical framework. Written in Python, these simulations compute observable predictions
+                    from first principles, validate consistency across all parameter derivations, and compare
+                    results against experimental data from PDG, NuFIT, DESI, and other sources.
+                </p>
+                <div class="architecture-box">
+<span class="highlight">SIMULATION ARCHITECTURE</span>
+
+<span class="accent">config.py</span>                  Single source of truth for all parameters
+    |
+    v
+<span class="accent">run_all_simulations.py</span>    Master orchestrator - runs all canonical simulations
+    |
+    +---> <span class="accent">simulations/*.py</span>      Individual physics modules (v13.0-v15.x)
+    |
+    v
+<span class="accent">theory_output.json</span>        Machine-readable results with validation status
+    |
+    v
+<span class="accent">theory-constants-enhanced.js</span>  Website integration layer
+
+<span class="highlight">DESIGN PRINCIPLES:</span>
+- Single Source of Truth: All parameters derive from config.py
+- No Duplicates: Each observable computed exactly once
+- Experimental Validation: All outputs checked against PDG/NuFIT/DESI
+- Geometric Derivation: Parameters emerge from G2 structure, not fitting
+                </div>
+            </section>
+
+            <!-- Dynamic Index -->
+            <section class="sim-index">
+                <h2>Simulation Index</h2>
+                <div class="controls-section" style="margin-bottom: 1.5rem;">
+                    <input type="text" id="sim-search" placeholder="Search simulations by name, description, or version..." style="width: 100%; padding: 0.75rem; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-primary); border-radius: 8px; color: var(--text-primary); font-size: 0.95rem;">
+                </div>
+                <div id="index-stats" class="index-stats" style="margin-bottom: 1rem; display: none;">
+                    <span id="total-scripts">0 scripts</span>
+                    <span style="margin: 0 1rem; color: var(--text-muted);">•</span>
+                    <span id="total-categories">0 categories</span>
+                    <span style="margin: 0 1rem; color: var(--text-muted);">•</span>
+                    <span id="latest-version">v0.0</span>
+                </div>
+                <div id="index-container" class="index-grid">
+                    <div class="file-loading" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                        <span class="spinner"></span>Loading simulation index...
+                    </div>
+                </div>
+            </section>
+
+            <!-- Core Files Section -->
+            <div class="category-header">
+                <h2>Core Framework Files</h2>
+                <p>Central configuration and orchestration files that define the simulation architecture</p>
+            </div>
+
+            <div id="core-files-container">
+                <!-- config.py -->
+                <div class="file-section" id="section-config.py">
+                    <div class="file-header" onclick="toggleSection('config.py', 'config.py')">
+                        <div class="file-info">
+                            <div class="file-icon">py</div>
+                            <div>
+                                <div class="file-name">config.py</div>
+                                <div class="file-path">Single source of truth for all PM parameters</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+
+                <!-- run_all_simulations.py -->
+                <div class="file-section" id="section-run_all_simulations.py">
+                    <div class="file-header" onclick="toggleSection('run_all_simulations.py', 'run_all_simulations.py')">
+                        <div class="file-info">
+                            <div class="file-icon">py</div>
+                            <div>
+                                <div class="file-name">run_all_simulations.py</div>
+                                <div class="file-path">Master orchestrator for all canonical simulations</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- AutoGenerated Files Section -->
+            <div class="category-header">
+                <h2>AutoGenerated Files</h2>
+                <p>Machine-readable output files generated by the simulation pipeline</p>
+            </div>
+
+            <div id="autogen-files-container">
+                <!-- theory_output.json -->
+                <div class="file-section" id="section-theory_output.json">
+                    <div class="file-header" onclick="toggleSection('theory_output.json', 'AutoGenerated/theory_output.json')">
+                        <div class="file-info">
+                            <div class="file-icon json">{ }</div>
+                            <div>
+                                <div class="file-name">theory_output.json</div>
+                                <div class="file-path">AutoGenerated/ - Complete simulation results with validation</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+
+                <!-- foundations_data.json -->
+                <div class="file-section" id="section-foundations_data.json">
+                    <div class="file-header" onclick="toggleSection('foundations_data.json', 'AutoGenerated/foundations_data.json')">
+                        <div class="file-info">
+                            <div class="file-icon json">{ }</div>
+                            <div>
+                                <div class="file-name">foundations_data.json</div>
+                                <div class="file-path">AutoGenerated/ - Physics foundations metadata</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Constants Files Section -->
+            <div class="category-header">
+                <h2>Constants &amp; Update Scripts</h2>
+                <p>Scripts that populate parameters, sections, and formulas into theory_output.json</p>
+            </div>
+
+            <div id="constants-files-container">
+                <div class="file-section" id="section-update_sections_metadata.py">
+                    <div class="file-header" onclick="toggleSection('update_sections_metadata.py', 'simulations/Constants/ad-hoc/update_sections_metadata.py')">
+                        <div class="file-info">
+                            <div class="file-icon">py</div>
+                            <div>
+                                <div class="file-name">update_sections_metadata.py</div>
+                                <div class="file-path">simulations/Constants/ad-hoc/ - Section metadata injector</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+
+                <div class="file-section" id="section-update_values.py">
+                    <div class="file-header" onclick="toggleSection('update_values.py', 'simulations/Constants/ad-hoc/update_values.py')">
+                        <div class="file-info">
+                            <div class="file-icon">py</div>
+                            <div>
+                                <div class="file-name">update_values.py</div>
+                                <div class="file-path">simulations/Constants/ad-hoc/ - Computed value injector</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Validation Files Section -->
+            <div class="category-header">
+                <h2>Validation Scripts</h2>
+                <p>Scripts that verify simulation outputs against experimental data</p>
+            </div>
+
+            <div id="validation-files-container">
+                <div class="file-section" id="section-validate_theory_output.py">
+                    <div class="file-header" onclick="toggleSection('validate_theory_output.py', 'simulations/validation/validate_theory_output.py')">
+                        <div class="file-info">
+                            <div class="file-icon">py</div>
+                            <div>
+                                <div class="file-name">validate_theory_output.py</div>
+                                <div class="file-path">simulations/validation/ - Full output validation</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+
+                <div class="file-section" id="section-validate_simulation_chain.py">
+                    <div class="file-header" onclick="toggleSection('validate_simulation_chain.py', 'simulations/validation/validate_simulation_chain.py')">
+                        <div class="file-info">
+                            <div class="file-icon">py</div>
+                            <div>
+                                <div class="file-name">validate_simulation_chain.py</div>
+                                <div class="file-path">simulations/validation/ - Dependency chain validator</div>
+                            </div>
+                        </div>
+                        <span class="expand-icon">&#x25BC;</span>
+                    </div>
+                    <div class="file-content">
+                        <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Simulation Modules Section -->
+            <div class="category-header">
+                <h2>Simulation Modules</h2>
+                <p>Individual physics simulations implementing specific aspects of the PM framework</p>
+            </div>
+
+            <div id="simulation-files-container">
+                <div class="file-loading" id="simulations-loading">
+                    <span class="spinner"></span>Loading simulation files from repository...
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Andrew Keith Watts. All rights reserved.</p>
+                <p>Principia Metaphysica - A Unified Geometric Theory</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <script>
+        // GitHub API configuration
+        const GITHUB_REPO = 'andrewkwatts-maker/PrincipiaMetaphysica';
+        const GITHUB_BRANCH = 'main';
+        const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
+        const GITHUB_API_BASE = `https://api.github.com/repos/${GITHUB_REPO}/contents`;
+
+        // File cache
+        const fileCache = new Map();
+
+        // Core files configuration
+        const CORE_FILES = [
+            { name: 'config.py', path: 'config.py', language: 'python' },
+            { name: 'run_all_simulations.py', path: 'run_all_simulations.py', language: 'python' }
+        ];
+
+        // AutoGenerated files configuration
+        const AUTOGEN_FILES = [
+            { name: 'theory_output.json', path: 'AutoGenerated/theory_output.json', language: 'json' },
+            { name: 'foundations_data.json', path: 'AutoGenerated/foundations_data.json', language: 'json' }
+        ];
+
+        // Constants files configuration
+        const CONSTANTS_FILES = [
+            { name: 'update_sections_metadata.py', path: 'simulations/Constants/ad-hoc/update_sections_metadata.py', language: 'python' },
+            { name: 'update_values.py', path: 'simulations/Constants/ad-hoc/update_values.py', language: 'python' }
+        ];
+
+        // Validation files configuration
+        const VALIDATION_FILES = [
+            { name: 'validate_theory_output.py', path: 'simulations/validation/validate_theory_output.py', language: 'python' },
+            { name: 'validate_simulation_chain.py', path: 'simulations/validation/validate_simulation_chain.py', language: 'python' },
+            { name: 'validate_bindings_final.py', path: 'simulations/validation/validate_bindings_final.py', language: 'python' }
+        ];
+
+        // Simulation file descriptions
+        const SIM_DESCRIPTIONS = {
+            'moduli_racetrack_stabilization': 'Racetrack superpotential for moduli stabilization',
+            'g2_metric_ricci_validator': 'G2 metric Ricci-flatness validation',
+            'g2_yukawa_overlap_integrals': '7D Monte Carlo Yukawa coupling integrals',
+            'pneuma_bridge': 'Pneuma-vielbein emergence bridge',
+            'multi_sector_sampling': 'Multi-sector blended vacuum sampling',
+            'fermion_chirality_generations': 'Fermion chirality and generations',
+            'proton_decay_geometric': 'Geometric proton decay predictions',
+            'breaking_chain_geometric': 'E8 -> SO(10) -> SM breaking chain',
+            'doublet_triplet_splitting': 'Doublet-triplet splitting mechanism',
+            'kk_spectrum_full': 'Full Kaluza-Klein spectrum',
+            'wz_evolution_desi_dr2': 'Dark energy w(z) evolution (DESI DR2)',
+            'pmns_full_matrix': 'Full PMNS neutrino mixing matrix',
+            'neutrino_mass_ordering': 'Neutrino mass ordering predictions',
+            'microtubule_threshold': 'Orch OR microtubule threshold model',
+            'photosynthetic_threshold': 'Photosynthetic quantum coherence',
+            'biological_quantum_threshold': 'Unified biological quantum thresholds',
+            'microtubule_temperature': 'Temperature-dependent Orch OR decoherence',
+            'pneuma_racetrack_stability': 'Pneuma field racetrack stability',
+            'asymptotic_safety': 'Asymptotic safety UV completion'
+        };
+
+        // Get description for a simulation file
+        function getSimDescription(filename) {
+            const baseName = filename.replace('.py', '').replace(/_v\d+_?\d*/g, '');
+            return SIM_DESCRIPTIONS[baseName] || 'Physics simulation module';
+        }
+
+        // Toggle section expansion
+        function toggleSection(filename, filePath = null) {
+            const section = document.getElementById(`section-${filename}`);
+            if (!section) return;
+
+            const isExpanded = section.classList.contains('expanded');
+
+            if (isExpanded) {
+                section.classList.remove('expanded');
+            } else {
+                section.classList.add('expanded');
+                loadFileContent(filename, filePath);
+            }
+        }
+
+        // Scroll to section
+        function scrollToSection(filename) {
+            const section = document.getElementById(`section-${filename}`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Expand after scrolling
+                setTimeout(() => {
+                    if (!section.classList.contains('expanded')) {
+                        toggleSection(filename);
+                    }
+                }, 300);
+            }
+        }
+
+        // Load file content from GitHub
+        async function loadFileContent(filename, filePath = null) {
+            const section = document.getElementById(`section-${filename}`);
+            if (!section) return;
+
+            const contentDiv = section.querySelector('.file-content');
+
+            // Check cache first
+            if (fileCache.has(filename)) {
+                displayFileContent(contentDiv, filename, fileCache.get(filename));
+                return;
+            }
+
+            // Show loading state
+            contentDiv.innerHTML = '<div class="file-loading"><span class="spinner"></span>Loading file content...</div>';
+
+            try {
+                // Determine file path
+                let resolvedPath = filePath;
+
+                // If no path provided, try to find it in the index
+                if (!resolvedPath) {
+                    // Check all static file lists first
+                    const allStaticFiles = [
+                        ...CORE_FILES,
+                        ...AUTOGEN_FILES,
+                        ...CONSTANTS_FILES,
+                        ...VALIDATION_FILES
+                    ];
+
+                    const staticFile = allStaticFiles.find(f => f.name === filename);
+                    if (staticFile) {
+                        resolvedPath = staticFile.path;
+                    } else {
+                        // Search in simulation index
+                        if (simulationsIndex) {
+                            for (const [catName, catData] of Object.entries(simulationsIndex.categories)) {
+                                const script = catData.scripts.find(s => s.file === filename);
+                                if (script) {
+                                    resolvedPath = script.path;
+                                    break;
+                                }
+                            }
+                        }
+
+                        // Fallback to simulations directory
+                        if (!resolvedPath) {
+                            resolvedPath = `simulations/${filename}`;
+                        }
+                    }
+                }
+
+                const response = await fetch(`${GITHUB_RAW_BASE}/${resolvedPath}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load file: ${response.status}`);
+                }
+
+                const content = await response.text();
+                fileCache.set(filename, content);
+                displayFileContent(contentDiv, filename, content);
+
+            } catch (error) {
+                contentDiv.innerHTML = `<div class="file-error">Error loading file: ${error.message}</div>`;
+            }
+        }
+
+        // Display file content with syntax highlighting
+        function displayFileContent(contentDiv, filename, content) {
+            // Determine language
+            let language = 'python';
+            if (filename.endsWith('.json')) language = 'json';
+            if (filename.endsWith('.js')) language = 'javascript';
+
+            // Count lines
+            const lines = content.split('\n').length;
+            const size = new Blob([content]).size;
+            const sizeStr = size > 1024 ? `${(size / 1024).toFixed(1)} KB` : `${size} bytes`;
+
+            contentDiv.innerHTML = `
+                <div class="code-wrapper">
+                    <pre class="line-numbers"><code class="language-${language}">${escapeHtml(content)}</code></pre>
+                </div>
+                <div class="file-stats">
+                    <span>Lines: ${lines}</span>
+                    <span>Size: ${sizeStr}</span>
+                    <span>Language: ${language}</span>
+                </div>
+            `;
+
+            // Apply Prism highlighting
+            Prism.highlightAllUnder(contentDiv);
+        }
+
+        // Escape HTML entities
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // State for simulation index
+        let simulationsIndex = null;
+        let filteredSimulations = [];
+
+        // Load simulations index from AutoGenerated/simulations-index.json
+        async function loadSimulationIndex() {
+            const container = document.getElementById('index-container');
+            const statsDiv = document.getElementById('index-stats');
+            const loadingDiv = document.getElementById('simulations-loading');
+
+            // Try multiple paths for live site compatibility
+            const paths = [
+                '/AutoGenerated/simulations-index.json',  // Absolute path (for live site)
+                'AutoGenerated/simulations-index.json',   // Relative from root
+                './AutoGenerated/simulations-index.json'  // Explicit relative
+            ];
+
+            let response = null;
+            for (const path of paths) {
+                try {
+                    const resp = await fetch(path);
+                    if (resp.ok) {
+                        response = resp;
+                        console.log(`Loaded simulations index from: ${path}`);
+                        break;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+
+            try {
+                if (!response) {
+                    throw new Error('Could not find simulations-index.json');
+                }
+
+                simulationsIndex = await response.json();
+                filteredSimulations = getAllScripts();
+
+                // Update stats
+                document.getElementById('total-scripts').textContent = `${simulationsIndex.total_scripts} scripts`;
+                document.getElementById('total-categories').textContent = `${Object.keys(simulationsIndex.categories).length} categories`;
+                document.getElementById('latest-version').textContent = `v${simulationsIndex.version}`;
+                if (statsDiv) statsDiv.style.display = 'block';
+
+                // Render index
+                renderSimulationIndex();
+
+                // Render simulation sections
+                renderSimulationSections();
+
+                // Setup search
+                document.getElementById('sim-search').addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    filterSimulations(query);
+                });
+
+            } catch (error) {
+                console.error('Error loading simulation index:', error);
+                if (container) {
+                    container.innerHTML = `<div class="file-error" style="grid-column: 1 / -1;">Error loading simulation index: ${error.message}<br><small>Run simulations/Constants/generate_simulations_index.py to generate the index.</small></div>`;
+                }
+                // Also update simulations container
+                const simContainer = document.getElementById('simulation-files-container');
+                if (simContainer) {
+                    simContainer.innerHTML = `<div class="file-error">Could not load simulations. Please generate the index first.</div>`;
+                }
+                if (loadingDiv) loadingDiv.style.display = 'none';
+            }
+        }
+
+        // Get all scripts from index
+        function getAllScripts() {
+            if (!simulationsIndex) return [];
+            const scripts = [];
+            for (const [catName, catData] of Object.entries(simulationsIndex.categories)) {
+                catData.scripts.forEach(script => {
+                    scripts.push({ ...script, categoryName: catName });
+                });
+            }
+            return scripts;
+        }
+
+        // Filter simulations by search query
+        function filterSimulations(query) {
+            if (!query) {
+                filteredSimulations = getAllScripts();
+            } else {
+                filteredSimulations = getAllScripts().filter(script => {
+                    return (
+                        script.file.toLowerCase().includes(query) ||
+                        (script.description && script.description.toLowerCase().includes(query)) ||
+                        (script.title && script.title.toLowerCase().includes(query)) ||
+                        (script.version && script.version.includes(query)) ||
+                        (script.status && script.status.toLowerCase().includes(query))
+                    );
+                });
+            }
+            renderSimulationIndex();
+            renderSimulationSections();
+        }
+
+        // Render simulation index as category cards
+        function renderSimulationIndex() {
+            const container = document.getElementById('index-container');
+
+            if (filteredSimulations.length === 0) {
+                container.innerHTML = '<div class="file-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">No simulations match your search.</div>';
+                return;
+            }
+
+            // Group filtered simulations by category - split Core Physics by folder
+            const categories = {};
+            filteredSimulations.forEach(script => {
+                let catName = script.categoryName;
+
+                // For Core Physics, create separate categories by folder
+                if (catName === 'Core Physics') {
+                    const folderName = getFolderFromPath(script.path);
+                    if (folderName) {
+                        catName = `Core: ${folderName}`;
+                    }
+                }
+
+                if (!categories[catName]) {
+                    categories[catName] = {
+                        title: simulationsIndex.categories[script.categoryName]?.title || catName,
+                        scripts: []
+                    };
+                }
+                categories[catName].scripts.push(script);
+            });
+
+            // Custom sort order for index
+            const coreSubfolderOrder = ['gauge', 'geometric', 'fermion', 'neutrino', 'higgs', 'proton',
+                                        'moduli', 'pneuma', 'cosmology', 'quantum_bio', 'foundations', 'misc'];
+
+            // Render categories
+            const html = Object.entries(categories)
+                .sort((a, b) => {
+                    const [keyA, dataA] = a;
+                    const [keyB, dataB] = b;
+
+                    const isCoreA = keyA.startsWith('Core:');
+                    const isCoreB = keyB.startsWith('Core:');
+
+                    if (isCoreA && !isCoreB) return -1;
+                    if (!isCoreA && isCoreB) return 1;
+
+                    if (isCoreA && isCoreB) {
+                        const folderA = keyA.replace('Core: ', '');
+                        const folderB = keyB.replace('Core: ', '');
+                        const orderA = coreSubfolderOrder.indexOf(folderA);
+                        const orderB = coreSubfolderOrder.indexOf(folderB);
+                        if (orderA !== -1 && orderB !== -1) return orderA - orderB;
+                        return folderA.localeCompare(folderB);
+                    }
+
+                    const orderMap = {
+                        'Ad-Hoc / Experimental': 90,
+                        'Constants & Utilities': 91,
+                        'Validation': 92,
+                        'Deprecated': 99
+                    };
+
+                    const orderA = orderMap[keyA] || 50;
+                    const orderB = orderMap[keyB] || 50;
+                    if (orderA !== orderB) return orderA - orderB;
+                    return keyA.localeCompare(keyB);
+                })
+                .map(([catName, catData]) => {
+                    let displayTitle = escapeHtml(catData.title);
+                    if (catName.startsWith('Core:')) {
+                        const folder = catName.replace('Core: ', '');
+                        displayTitle = escapeHtml(folder.charAt(0).toUpperCase() + folder.slice(1).replace(/_/g, ' '));
+                    }
+
+                    return `
+                    <div class="index-category">
+                        <h3>${displayTitle} <span style="color: var(--text-muted); font-size: 0.8em;">(${catData.scripts.length})</span></h3>
+                        <ul>
+                            ${catData.scripts.map(script => {
+                                const statusBadge = script.status ? `<span class="status-badge" style="font-size: 0.65rem; padding: 0.2rem 0.4rem; margin-left: 0.5rem;">${escapeHtml(script.status)}</span>` : '';
+                                const versionLabel = script.version ? `<span style="color: var(--text-muted); font-size: 0.8em;">v${script.version}</span>` : '';
+                                return `
+                                    <li>
+                                        <span class="index-link" onclick="scrollToSection('${script.file}')">
+                                            ${escapeHtml(script.file)} ${versionLabel}${statusBadge}
+                                        </span>
+                                        ${script.title || script.description ? `<div style="font-size: 0.8em; color: var(--text-muted); padding-left: 1.5rem; margin-top: 0.25rem;">${escapeHtml(script.title || script.description)}</div>` : ''}
+                                    </li>
+                                `;
+                            }).join('')}
+                        </ul>
+                    </div>
+                `).join('');
+
+            container.innerHTML = html;
+        }
+
+        // Get folder name from path
+        function getFolderFromPath(path) {
+            if (!path) return '';
+            const match = path.match(/simulations\/core\/([^\/]+)/);
+            return match ? match[1] : '';
+        }
+
+        // Get folder description
+        function getFolderDescription(folderName) {
+            const descriptions = {
+                'cosmology': 'Dark energy, gravitational waves, thermal time, and cosmological observables',
+                'fermion': 'Fermion mass matrices, Yukawa textures, CKM parameters, and chirality',
+                'foundations': 'Foundation data schemas and physics foundation metadata',
+                'gauge': 'Gauge unification, breaking chains, asymptotic safety, and Sp(2,R) symmetry',
+                'geometric': 'G2 manifold geometry, Yukawa overlap integrals, CP phases, and torsion classes',
+                'higgs': 'Higgs mass, doublet-triplet splitting, and Yukawa couplings',
+                'misc': 'KK spectrum, attractor scalars, threshold corrections, and utility modules',
+                'moduli': 'Moduli stabilization, racetrack potentials, and flux configurations',
+                'neutrino': 'Neutrino masses, PMNS matrix, mass ordering, and mixing angles',
+                'pneuma': 'Pneuma field dynamics, vacuum selection, vielbein emergence, and lattice dispersion',
+                'proton': 'Proton lifetime, decay branching ratios, and geometric suppression',
+                'quantum_bio': 'Microtubule quantum coherence, Orch-OR, and biological quantum thresholds'
+            };
+            return descriptions[folderName] || '';
+        }
+
+        // Render simulation file sections dynamically
+        function renderSimulationSections() {
+            const container = document.getElementById('simulation-files-container');
+
+            if (!filteredSimulations || filteredSimulations.length === 0) {
+                container.innerHTML = '<div class="file-error">No simulation files to display.</div>';
+                return;
+            }
+
+            // Group by category - but split Core Physics by subfolder
+            const categories = {};
+            filteredSimulations.forEach(script => {
+                let catName = script.categoryName;
+
+                // For Core Physics, create separate categories by folder
+                if (catName === 'Core Physics') {
+                    const folderName = getFolderFromPath(script.path);
+                    if (folderName) {
+                        catName = `Core: ${folderName}`;
+                    }
+                }
+
+                if (!categories[catName]) {
+                    categories[catName] = {
+                        title: simulationsIndex.categories[script.categoryName]?.title || catName,
+                        path: simulationsIndex.categories[script.categoryName]?.path || '',
+                        originalCategory: script.categoryName,
+                        scripts: []
+                    };
+                }
+                categories[catName].scripts.push(script);
+            });
+
+            // Custom sort order - Core Physics folders first, then others
+            const coreSubfolderOrder = ['gauge', 'geometric', 'fermion', 'neutrino', 'higgs', 'proton',
+                                        'moduli', 'pneuma', 'cosmology', 'quantum_bio', 'foundations', 'misc'];
+
+            // Render sections
+            const html = Object.entries(categories)
+                .sort((a, b) => {
+                    const [keyA, dataA] = a;
+                    const [keyB, dataB] = b;
+
+                    // Core Physics folders come first
+                    const isCoreA = keyA.startsWith('Core:');
+                    const isCoreB = keyB.startsWith('Core:');
+
+                    if (isCoreA && !isCoreB) return -1;
+                    if (!isCoreA && isCoreB) return 1;
+
+                    // Within Core Physics, use custom order
+                    if (isCoreA && isCoreB) {
+                        const folderA = keyA.replace('Core: ', '');
+                        const folderB = keyB.replace('Core: ', '');
+                        const orderA = coreSubfolderOrder.indexOf(folderA);
+                        const orderB = coreSubfolderOrder.indexOf(folderB);
+                        if (orderA !== -1 && orderB !== -1) return orderA - orderB;
+                        if (orderA !== -1) return -1;
+                        if (orderB !== -1) return 1;
+                        return folderA.localeCompare(folderB);
+                    }
+
+                    // Non-core categories
+                    const orderMap = {
+                        'Ad-Hoc / Experimental': 90,
+                        'Constants & Utilities': 91,
+                        'Validation': 92,
+                        'Deprecated': 99
+                    };
+
+                    const orderA = orderMap[keyA] || 50;
+                    const orderB = orderMap[keyB] || 50;
+                    if (orderA !== orderB) return orderA - orderB;
+                    return keyA.localeCompare(keyB);
+                })
+                .map(([catName, catData]) => {
+                    // Try to extract folder name from first script's path
+                    const firstScript = catData.scripts[0];
+                    const folderName = getFolderFromPath(firstScript.path);
+                    const folderDesc = getFolderDescription(folderName);
+
+                    // Show folder name for Core Physics category
+                    let displayTitle = escapeHtml(catData.title);
+                    if (catName.startsWith('Core:')) {
+                        const folder = catName.replace('Core: ', '');
+                        displayTitle = escapeHtml(folder.charAt(0).toUpperCase() + folder.slice(1).replace(/_/g, ' '));
+                    }
+
+                    const description = folderDesc || `${catData.scripts.length} simulation${catData.scripts.length !== 1 ? 's' : ''}`;
+
+                    return `
+                    <div class="category-header" id="category-${catName.replace(/\s+/g, '-').replace(/:/g, '')}">
+                        <h2>${displayTitle}</h2>
+                        <p>${escapeHtml(description)}</p>
+                    </div>
+                    ${catData.scripts.map(script => `
+                        <div class="file-section" id="section-${script.file}">
+                            <div class="file-header" onclick="toggleSection('${script.file}', '${script.path}')">
+                                <div class="file-info">
+                                    <div class="file-icon">py</div>
+                                    <div>
+                                        <div class="file-name">
+                                            ${escapeHtml(script.file)}
+                                            ${script.version ? `<span style="color: var(--text-muted); font-size: 0.8em; margin-left: 0.5rem;">v${script.version}</span>` : ''}
+                                            ${script.status ? `<span class="status-badge" style="font-size: 0.7rem; padding: 0.3rem 0.6rem; margin-left: 0.75rem;">${escapeHtml(script.status)}</span>` : ''}
+                                        </div>
+                                        <div class="file-path">${escapeHtml(script.title || script.description || 'Physics simulation module')}</div>
+                                    </div>
+                                </div>
+                                <span class="expand-icon">&#x25BC;</span>
+                            </div>
+                            <div class="file-content">
+                                <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                `).join('');
+
+            container.innerHTML = html;
+            const loadingEl = document.getElementById('simulations-loading');
+            if (loadingEl) loadingEl.style.display = 'none';
+        }
+
+        // Initialize index link clicks
+        function initIndexLinks() {
+            document.querySelectorAll('.index-link[data-file]').forEach(link => {
+                link.addEventListener('click', () => {
+                    scrollToSection(link.dataset.file);
+                });
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSimulationIndex();
+            initIndexLinks();
+
+            // Show main content (auth system will handle this normally)
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                mainContent.style.display = 'block';
+                document.body.classList.remove('auth-loading');
+            }
+        });
+    </script>
+
+    <!-- Header and Auth system integration -->
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('simulations');
+        });
+
+        // Setup auth after header
+        setupAuthGuard('simulations');
+    </script>
+
+    <!-- Tooltip System -->
+    <script src="theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+</body>
+</html>

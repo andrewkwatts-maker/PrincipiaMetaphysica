@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foundational Physics - The established equations that underpin Principia Metaphysica">
+    <title>Foundational Physics - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Dynamic Loaders -->
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="theory-constants-enhanced.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #1a1a2e;
+            --bg-secondary: #16172e;
+            --bg-card-hover: #252540;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-primary: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --accent-success: #51cf66;
+            --accent-info: #4facfe;
+            --border-primary: rgba(139, 127, 255, 0.2);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .breadcrumb .separator {
+            color: var(--text-secondary);
+        }
+
+        /* Intro Section with Frosted Glass */
+        .intro {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 2rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            margin-bottom: 2rem;
+        }
+
+        .intro h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        /* Horizontal Tabs Component */
+        .tabs-container {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            overflow: hidden;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .tab-list {
+            display: flex;
+            gap: 0.25rem;
+            border-bottom: 2px solid var(--border-primary);
+            padding: 0.5rem;
+            flex-wrap: wrap;
+            background: var(--bg-secondary);
+        }
+
+        .tab {
+            padding: 0.75rem 1.25rem;
+            background: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.95rem;
+            font-weight: 500;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+            background: rgba(139, 127, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .tab.active {
+            color: var(--accent-primary);
+            background: var(--bg-card);
+            border-bottom-color: var(--accent-primary);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Foundation Badges */
+        .foundation-badge {
+            padding: 0.3rem 0.6rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            display: inline-block;
+        }
+
+        .foundation-badge.established {
+            background: rgba(81, 207, 102, 0.2);
+            color: #51cf66;
+            border: 1px solid rgba(81, 207, 102, 0.3);
+        }
+
+        .foundation-badge.derived {
+            background: rgba(79, 172, 254, 0.2);
+            color: #4dabf7;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .foundation-badge.pm-specific {
+            background: rgba(139, 127, 255, 0.2);
+            color: #8b7fff;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .page-header .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(139, 127, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent-primary);
+            font-size: 0.9rem;
+        }
+
+        .stat-badge strong {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-tab {
+            padding: 0.75rem 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: var(--accent-primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.3);
+        }
+
+        /* Learning Path */
+        .learning-path {
+            margin-bottom: 3rem;
+        }
+
+        .path-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .path-header h2 {
+            color: var(--accent-primary);
+            font-size: 2rem;
+        }
+
+        .path-icon {
+            font-size: 2.5rem;
+        }
+
+        .difficulty-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .level-card {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .level-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .level-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
+            border-color: var(--accent-primary);
+        }
+
+        .level-card:hover::before {
+            opacity: 1;
+        }
+
+        .level-card.beginner {
+            border-color: var(--accent-success);
+        }
+
+        .level-card.intermediate {
+            border-color: var(--accent-info);
+        }
+
+        .level-card.advanced {
+            border-color: var(--accent-secondary);
+        }
+
+        .level-card h3 {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .level-card.beginner h3 { color: var(--accent-success); }
+        .level-card.intermediate h3 { color: var(--accent-info); }
+        .level-card.advanced h3 { color: var(--accent-secondary); }
+
+        .level-badge {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            background: rgba(139, 127, 255, 0.2);
+            font-weight: normal;
+        }
+
+        /* Concept Cards */
+        .concept-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .concept-card {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .concept-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .concept-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
+        }
+
+        .concept-card:hover::before {
+            opacity: 1;
+        }
+
+        .concept-card h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .concept-icon {
+            font-size: 1.8rem;
+        }
+
+        .concept-description {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Prerequisites */
+        .prerequisites {
+            background: rgba(79, 172, 254, 0.1);
+            border-left: 4px solid var(--accent-info);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .prerequisites h4 {
+            color: var(--accent-info);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .prerequisites ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .prerequisites li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .prerequisites li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent-info);
+            font-weight: bold;
+        }
+
+        /* Key Formulas */
+        .key-formulas {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .key-formulas h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .formula-item {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-primary);
+        }
+
+        .formula-item .formula-label {
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .formula-item .formula-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        /* Parameters Display */
+        .param-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .param-item {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+        }
+
+        .param-label {
+            color: var(--accent-info);
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .param-value {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            font-family: 'Source Code Pro', monospace;
+        }
+
+        /* Section Links */
+        .section-links {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-links h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .section-link-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: rgba(139, 127, 255, 0.05);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-primary);
+            text-decoration: none;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        .section-link-item:hover {
+            background: rgba(139, 127, 255, 0.15);
+            transform: translateX(8px);
+        }
+
+        .section-number {
+            font-weight: bold;
+            color: var(--accent-primary);
+            margin-right: 1rem;
+            font-size: 1.2rem;
+            min-width: 2rem;
+        }
+
+        /* Expandable Details */
+        .expandable {
+            margin: 1.5rem 0;
+        }
+
+        .expand-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(26, 31, 58, 0.4);
+            backdrop-filter: blur(8px) saturate(180%);
+            -webkit-backdrop-filter: blur(8px) saturate(180%);
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .expand-header:hover {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-color: var(--accent-primary);
+        }
+
+        .expand-header h4 {
+            color: var(--accent-primary);
+            margin: 0;
+        }
+
+        .expand-arrow {
+            transition: transform 0.3s ease;
+            color: var(--accent-primary);
+            font-size: 1.5rem;
+        }
+
+        .expand-content {
+            display: none;
+            padding: 1.5rem;
+            background: rgba(139, 127, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            margin-top: -1px;
+        }
+
+        .expand-content.active {
+            display: block;
+        }
+
+        .expand-header.active .expand-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Analogy Box */
+        .analogy-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.1));
+            border-left: 4px solid var(--accent-success);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 12px 12px 0;
+        }
+
+        .analogy-box h4 {
+            color: var(--accent-success);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Loading States */
+        .pm-loading {
+            color: var(--accent-info);
+            font-style: italic;
+        }
+
+        .pm-error {
+            color: #ff6b6b;
+            font-style: italic;
+        }
+
+        .pm-loaded {
+            color: var(--accent-primary);
+            font-weight: 600;
+        }
+
+        /* Site Header Navigation */
+        .site-nav-header {
+            background: rgba(26, 31, 58, 0.8);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .site-nav-header nav ul {
+            list-style: none;
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-nav-header nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .site-nav-header nav a:hover {
+            background: rgba(139, 127, 255, 0.2);
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .concept-grid,
+            .difficulty-levels {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tabs {
+                flex-direction: column;
+            }
+
+            .site-nav-header nav ul {
+                flex-direction: column;
+                gap: 0.25rem;
+            }
+
+            .site-nav-header nav a {
+                padding: 0.75rem 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Foundational Physics</span>
+        </nav>
+
+        <div class="intro">
+            <h2>Foundational Physics</h2>
+            <p>
+                Principia Metaphysica builds upon well-established physics. This section provides detailed explanations
+                of the foundational equations from which the framework derives. Each formula can be traced back to
+                experimentally verified physics.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <span class="foundation-badge established">Established Physics</span>
+                <span class="foundation-badge derived">Derived in PM</span>
+                <span class="foundation-badge pm-specific">PM-Specific</span>
+            </div>
+        </div>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1>Learning Path</h1>
+            <p class="subtitle">A Progressive Guide to Geometric Unification</p>
+            <div class="stats">
+                <div class="stat-badge">
+                    <strong id="formula-count">...</strong> Formulas
+                </div>
+                <div class="stat-badge">
+                    <strong id="section-count">...</strong> Sections
+                </div>
+                <div class="stat-badge">
+                    <strong id="dimension-count">26 → 4</strong> Dimensions
+                </div>
+            </div>
+        </header>
+
+        <!-- Tabbed Content with Glass Morphism -->
+        <div class="tabs-container">
+            <div class="tab-list" role="tablist">
+                <button class="tab active" onclick="showTab(event, 'basics')">Basics</button>
+                <button class="tab" onclick="showTab(event, 'concepts')">Key Concepts</button>
+                <button class="tab" onclick="showTab(event, 'formulas')">Core Formulas</button>
+                <button class="tab" onclick="showTab(event, 'sections')">Detailed Sections</button>
+            </div>
+
+            <!-- Tab: Basics -->
+            <div id="basics-content" class="tab-content active">
+            <section class="learning-path">
+                <div class="path-header">
+                    <span class="path-icon">🎓</span>
+                    <h2>Learning Path</h2>
+                </div>
+
+                <div class="prerequisites">
+                    <h4>📋 Recommended Prerequisites</h4>
+                    <ul>
+                        <li>Basic understanding of differential geometry (manifolds, metrics)</li>
+                        <li>Familiarity with the Standard Model of particle physics</li>
+                        <li>Knowledge of general relativity fundamentals</li>
+                        <li>Basic string theory concepts (optional but helpful)</li>
+                        <li>Kaluza-Klein theory and compactification (recommended)</li>
+                    </ul>
+                </div>
+
+                <div class="difficulty-levels">
+                    <div class="level-card beginner">
+                        <h3>
+                            🌱 Beginner
+                            <span class="level-badge">Start Here</span>
+                        </h3>
+                        <p><strong>What you'll learn:</strong></p>
+                        <ul id="beginner-topics" style="margin-top: 1rem; line-height: 2;">
+                            <li>The basic idea: unifying physics through geometry</li>
+                            <li>Why 26 dimensions? (Bosonic string theory critical dimension)</li>
+                            <li>What is a G₂ manifold?</li>
+                            <li>How dimensions reduce: 26 → 13 → 7 → 4</li>
+                            <li>The role of Sp(2,R) gauge symmetry</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <strong>Key Formula:</strong>
+                            <div class="formula-item">
+                                <div class="formula-label">Dimension Progression</div>
+                                <div style="font-size: 1.2rem; text-align: center; margin: 1rem 0;">
+                                    D = <span data-pm-value="dimensions.D_BULK" class="pm-value">26</span> →
+                                    <span data-pm-value="dimensions.D_AFTER_SP2R" class="pm-value">13</span> →
+                                    <span data-pm-value="dimensions.D_G2" class="pm-value">7</span> →
+                                    <span data-pm-value="dimensions.D_OBSERVABLE" class="pm-value">4</span>
+                                </div>
+                                <div class="formula-description">
+                                    From bosonic string theory to observable spacetime
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="level-card intermediate">
+                        <h3>
+                            🔬 Intermediate
+                            <span class="level-badge">Build Understanding</span>
+                        </h3>
+                        <p><strong>What you'll learn:</strong></p>
+                        <ul id="intermediate-topics" style="margin-top: 1rem; line-height: 2;">
+                            <li>Fermion generations from G₂ topology (χ = -16)</li>
+                            <li>Gauge coupling unification and evolution</li>
+                            <li>The Pneuma Lagrangian and stress-energy</li>
+                            <li>Kaluza-Klein spectrum and mass scales</li>
+                            <li>Neutrino masses via geometric seesaw</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <strong>Key Formula:</strong>
+                            <div class="formula-item">
+                                <div class="formula-label">Generation Number</div>
+                                <div id="gen-formula-display" style="text-align: center; margin: 1rem 0; font-size: 1.1rem;">
+                                    Loading formula...
+                                </div>
+                                <div class="formula-description">
+                                    Three generations emerge from G₂ Euler characteristic
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="level-card advanced">
+                        <h3>
+                            🚀 Advanced
+                            <span class="level-badge">Deep Dive</span>
+                        </h3>
+                        <p><strong>What you'll learn:</strong></p>
+                        <ul id="advanced-topics" style="margin-top: 1rem; line-height: 2;">
+                            <li>Full derivation of phenomenological predictions</li>
+                            <li>Proton decay mechanisms and lifetime bounds</li>
+                            <li>CMB anomalies from bubble collisions</li>
+                            <li>W/Z boson mass evolution (DESI DR2 data)</li>
+                            <li>Connections to 2T-physics and holography</li>
+                        </ul>
+                        <div style="margin-top: 1.5rem;">
+                            <strong>Key Prediction:</strong>
+                            <div class="formula-item">
+                                <div class="formula-label">Proton Lifetime</div>
+                                <div style="text-align: center; margin: 1rem 0; font-size: 1.3rem;">
+                                    τ<sub>p</sub> ≈ <span data-pm-value="simulations.proton_decay.tau_p_years" data-format="scientific:2" class="pm-value">...</span> years
+                                </div>
+                                <div class="formula-description">
+                                    Testable prediction from geometric proton decay
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="analogy-box">
+                    <h4>💡 The Big Picture Analogy</h4>
+                    <p>
+                        Think of our universe as a 4D shadow cast by a higher-dimensional geometric structure,
+                        much like a 2D shadow is cast by a 3D object. The theory proposes that all fundamental
+                        particles and forces are not separate entities, but different aspects of the <em>geometry</em>
+                        of a special 7-dimensional space called a G₂ manifold. Just as a prism splits white light
+                        into a rainbow, the compactification of extra dimensions "splits" geometric structure into
+                        the particles and forces we observe.
+                    </p>
+                </div>
+
+                <!-- Section Summaries (Loaded Dynamically) -->
+                <div id="section-summaries" style="margin-top: 3rem;">
+                    <h2 style="color: var(--accent-primary); margin-bottom: 1.5rem; font-size: 2rem;">
+                        📖 Theory Overview
+                    </h2>
+                    <div id="summaries-grid" class="concept-grid">
+                        <!-- Will be populated from sections.json -->
+                        <p style="text-align: center; color: var(--accent-info);">Loading section summaries...</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab: Key Concepts -->
+        <div id="concepts-content" class="tab-content" style="display: none;">
+            <section>
+                <h2 style="color: var(--accent-primary); margin-bottom: 2rem; font-size: 2rem;">
+                    🔑 Core Concepts
+                </h2>
+
+                <div class="concept-grid">
+                    <div class="concept-card">
+                        <h3>
+                            <span class="concept-icon">📐</span>
+                            G₂ Manifolds
+                        </h3>
+                        <p class="concept-description">
+                            Special 7-dimensional spaces with exceptional holonomy group G₂. These manifolds
+                            have unique properties that preserve supersymmetry and provide natural compactification
+                            from 11D M-theory to 4D spacetime.
+                        </p>
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>Learn More</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p><strong>Why G₂?</strong></p>
+                                <ul style="margin: 1rem 0; line-height: 1.8;">
+                                    <li>Only compact 7D manifolds that preserve N=1 SUSY</li>
+                                    <li>Euler characteristic χ = -16 predicts 3 generations</li>
+                                    <li>Natural emergence of SU(3) × SU(2) × U(1) gauge symmetry</li>
+                                    <li>Geometric explanation for fermion chirality</li>
+                                </ul>
+                                <p style="margin-top: 1rem;">
+                                    <strong>Mathematical Foundation:</strong> A G₂ manifold is defined by a closed
+                                    and co-closed associative 3-form φ, which determines both the metric and the
+                                    holonomy group.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>
+                            <span class="concept-icon">🎯</span>
+                            Dimensional Reduction
+                        </h3>
+                        <p class="concept-description">
+                            The process by which extra dimensions become "compactified" or curled up at tiny scales,
+                            reducing the effective dimensionality from 26D to our observable 4D spacetime.
+                        </p>
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>Learn More</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p><strong>The Reduction Chain:</strong></p>
+                                <ol style="margin: 1rem 0 1rem 1.5rem; line-height: 2;">
+                                    <li><strong>26D → 13D:</strong> Sp(2,R) gauge symmetry breaking</li>
+                                    <li><strong>13D → 7D:</strong> Further compactification to G₂ manifold</li>
+                                    <li><strong>7D → 4D:</strong> G₂ compactification to Minkowski spacetime</li>
+                                </ol>
+                                <p style="margin-top: 1rem;">
+                                    Each reduction step leaves signatures in the low-energy physics, manifesting as
+                                    particle masses, coupling constants, and symmetry patterns.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>
+                            <span class="concept-icon">⚛️</span>
+                            Gauge Unification
+                        </h3>
+                        <p class="concept-description">
+                            All three fundamental forces (strong, weak, electromagnetic) emerge from the geometry
+                            of the G₂ manifold and unify at high energies around the GUT scale.
+                        </p>
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>Learn More</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p><strong>Unification Energy Scale:</strong></p>
+                                <div style="text-align: center; margin: 1rem 0; font-size: 1.3rem;">
+                                    Λ<sub>GUT</sub> ≈ <span data-pm-value="simulations.gauge_unification.lambda_gut_gev"
+                                        data-format="scientific:2" class="pm-value">...</span> GeV
+                                </div>
+                                <p style="margin-top: 1rem;">
+                                    <strong>Running Couplings:</strong> The three gauge couplings α₁, α₂, α₃
+                                    evolve with energy according to the renormalization group equations and
+                                    converge at the GUT scale, with corrections from the G₂ geometry.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>
+                            <span class="concept-icon">🌊</span>
+                            Pneuma Field
+                        </h3>
+                        <p class="concept-description">
+                            A geometric scalar field that couples to the G₂ structure, providing stress-energy
+                            contributions and potential cosmological effects (dark energy candidate).
+                        </p>
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>Learn More</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p><strong>Physical Role:</strong></p>
+                                <ul style="margin: 1rem 0; line-height: 1.8;">
+                                    <li>Modulates G₂ structure through coupling parameter ξ</li>
+                                    <li>Contributes to effective stress-energy tensor</li>
+                                    <li>May drive cosmic acceleration (quintessence-like)</li>
+                                    <li>Affects stability and dynamics of compactification</li>
+                                </ul>
+                                <div style="margin-top: 1rem;">
+                                    <strong>Coupling Parameter:</strong>
+                                    <div style="text-align: center; margin: 0.5rem 0; font-size: 1.2rem;">
+                                        ξ = <span data-pm-value="simulations.pneuma_stability.xi" class="pm-value">...</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>
+                            <span class="concept-icon">🔢</span>
+                            Fermion Generations
+                        </h3>
+                        <p class="concept-description">
+                            The three generations of matter (electron/muon/tau families) emerge from topological
+                            properties of the G₂ manifold, specifically its Euler characteristic.
+                        </p>
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>Learn More</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p><strong>Topological Origin:</strong></p>
+                                <div id="generation-formula-detail" style="margin: 1rem 0;">
+                                    Loading formula details...
+                                </div>
+                                <p style="margin-top: 1rem;">
+                                    The number 3 is not arbitrary but derived from the allowed topology of
+                                    compact G₂ manifolds. The Euler characteristic χ = -16 directly determines
+                                    the index of the Dirac operator, yielding exactly three chiral fermion families.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="concept-card">
+                        <h3>
+                            <span class="concept-icon">🔭</span>
+                            Kaluza-Klein Modes
+                        </h3>
+                        <p class="concept-description">
+                            Excited states from the compact dimensions that manifest as heavy particles. Their
+                            mass spectrum encodes information about the geometry of the extra dimensions.
+                        </p>
+                        <div class="expandable">
+                            <div class="expand-header" onclick="toggleExpand(this)">
+                                <h4>Learn More</h4>
+                                <span class="expand-arrow">▼</span>
+                            </div>
+                            <div class="expand-content">
+                                <p><strong>Mass Scale:</strong></p>
+                                <div style="text-align: center; margin: 1rem 0; font-size: 1.2rem;">
+                                    M<sub>KK</sub> ≈ <span data-pm-value="simulations.kk_spectrum.m_kk_gev"
+                                        data-format="scientific:2" class="pm-value">...</span> GeV
+                                </div>
+                                <p style="margin-top: 1rem;">
+                                    <strong>Observable Effects:</strong> While too heavy for direct production at
+                                    current colliders, KK modes affect precision observables through virtual loops
+                                    and modify gauge coupling running.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab: Core Formulas -->
+        <div id="formulas-content" class="tab-content" style="display: none;">
+            <section class="key-formulas">
+                <h3>🧮 Essential Formulas</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    These are the fundamental equations that define the theory. All formulas are loaded
+                    dynamically from theory_output.json.
+                </p>
+
+                <div id="formulas-list">
+                    <!-- Formulas will be populated dynamically -->
+                    <p style="text-align: center; color: var(--accent-info);">Loading formulas...</p>
+                </div>
+            </section>
+
+            <section class="key-formulas" style="margin-top: 2rem;">
+                <h3>📊 Key Parameters</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                    Critical numerical values from simulations and theory.
+                </p>
+
+                <div class="param-grid">
+                    <div class="param-item">
+                        <div class="param-label">Bulk Dimensions</div>
+                        <div class="param-value">
+                            <span data-pm-value="dimensions.D_BULK" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">G₂ Dimensions</div>
+                        <div class="param-value">
+                            <span data-pm-value="dimensions.D_G2" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">Observable Dimensions</div>
+                        <div class="param-value">
+                            <span data-pm-value="dimensions.D_OBSERVABLE" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">Euler Characteristic</div>
+                        <div class="param-value">
+                            <span data-pm-value="simulations.fermion_generations.chi" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">GUT Scale (GeV)</div>
+                        <div class="param-value">
+                            <span data-pm-value="simulations.gauge_unification.lambda_gut_gev" data-format="scientific:2" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">KK Mass (GeV)</div>
+                        <div class="param-value">
+                            <span data-pm-value="simulations.kk_spectrum.m_kk_gev" data-format="scientific:2" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">Proton Lifetime (years)</div>
+                        <div class="param-value">
+                            <span data-pm-value="simulations.proton_decay.tau_p_years" data-format="scientific:2" class="pm-value">...</span>
+                        </div>
+                    </div>
+                    <div class="param-item">
+                        <div class="param-label">Pneuma Coupling ξ</div>
+                        <div class="param-value">
+                            <span data-pm-value="simulations.pneuma_stability.xi" class="pm-value">...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Tab: Detailed Sections -->
+        <div id="sections-content" class="tab-content" style="display: none;">
+            <section class="section-links">
+                <h3>📚 Detailed Theory Sections</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                    Explore the complete theory in depth. Click any section to view the full content.
+                </p>
+
+                <div id="sections-list">
+                    <!-- Sections will be populated dynamically from sections.json -->
+                    <p style="text-align: center; color: var(--accent-info);">Loading sections...</p>
+                </div>
+
+                <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(139, 127, 255, 0.1); border-radius: 12px;">
+                    <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">🔗 Additional Resources</h4>
+                    <ul style="line-height: 2;">
+                        <li><a href="simulations.html" style="color: var(--accent-info);">Computational Simulations</a> - View all simulation results</li>
+                        <li><a href="references.html" style="color: var(--accent-info);">References</a> - Complete bibliography</li>
+                        <li><a href="appendices.html" style="color: var(--accent-info);">Technical Appendices</a> - Detailed derivations</li>
+                        <li><a href="paper.html" style="color: var(--accent-info);">Full Paper</a> - Complete academic manuscript</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+    </div>
+
+    <script>
+        // Tab switching
+        function showTab(event, tabName) {
+            // Hide all tab contents
+            const tabs = ['basics', 'concepts', 'formulas', 'sections'];
+            tabs.forEach(tab => {
+                const content = document.getElementById(tab + '-content');
+                if (content) content.classList.remove('active');
+            });
+
+            // Remove active class from all tabs
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            const selectedContent = document.getElementById(tabName + '-content');
+            if (selectedContent) selectedContent.classList.add('active');
+
+            // Add active class to clicked tab
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
+        }
+
+        // Expandable sections
+        function toggleExpand(header) {
+            header.classList.toggle('active');
+            const content = header.nextElementSibling;
+            content.classList.toggle('active');
+        }
+
+        // Load sections from sections.json
+        async function loadSections() {
+            const pathPrefixes = ['', 'AutoGenerated/', '../', '../AutoGenerated/'];
+
+            for (const prefix of pathPrefixes) {
+                try {
+                    const response = await fetch(prefix + 'json/sections.json');
+                    if (response.ok) {
+                        const sections = await response.json();
+                        console.log(`Loaded sections from ${prefix}json/sections.json`);
+                        return sections;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+
+            console.error('Failed to load sections.json');
+            return null;
+        }
+
+        // Initialize when PM data is loaded
+        async function initializePage() {
+            // Wait for PM to load
+            if (window.PM && window.PM.load) {
+                await window.PM.load();
+            }
+
+            // Wait for PMFormulaLoader to load
+            if (window.PMFormulaLoader && window.PMFormulaLoader.load) {
+                await window.PMFormulaLoader.load();
+            }
+
+            // Load sections
+            const sections = await loadSections();
+            if (sections) {
+                window.PM_SECTIONS = sections;
+            }
+
+            // Update stats in header
+            updateStats();
+
+            // Populate sections tab
+            populateSections();
+
+            // Populate concepts tab with beginner summaries
+            populateConcepts();
+
+            // Populate formulas section
+            populateFormulas();
+
+            // Load specific formula displays
+            loadSpecificFormulas();
+        }
+
+        function updateStats() {
+            // Formula count
+            const formulaCount = Object.keys(window.PM?.formulas || {}).length;
+            document.getElementById('formula-count').textContent = formulaCount;
+
+            // Section count from loaded sections
+            const sectionCount = window.PM_SECTIONS ? Object.keys(window.PM_SECTIONS).length : 6;
+            document.getElementById('section-count').textContent = sectionCount;
+        }
+
+        function populateSections() {
+            const sectionsList = document.getElementById('sections-list');
+            if (!sectionsList || !window.PM_SECTIONS) return;
+
+            const sections = window.PM_SECTIONS;
+            const sectionKeys = Object.keys(sections).sort((a, b) => parseInt(a) - parseInt(b));
+
+            if (sectionKeys.length === 0) {
+                sectionsList.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No sections loaded. Run: python run_all_simulations.py --export</p>';
+                return;
+            }
+
+            let html = '';
+            sectionKeys.forEach(key => {
+                const section = sections[key];
+                if (section.sectionType === 'section') { // Only main sections, not appendices
+                    html += `
+                        <a href="${section.sectionFile || 'sections/' + section.title.toLowerCase().replace(/\s+/g, '-') + '.html'}" class="section-link-item">
+                            <span class="section-number">${section.id}</span>
+                            <div>
+                                <strong>${section.title}</strong>
+                                <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.25rem;">
+                                    ${section.beginnerSummary || section.abstract || ''}
+                                </div>
+                            </div>
+                        </a>
+                    `;
+                }
+            });
+
+            sectionsList.innerHTML = html;
+        }
+
+        function populateConcepts() {
+            // Update the Key Concepts tab with beginner summaries from sections.json
+            if (!window.PM_SECTIONS) return;
+
+            const sections = window.PM_SECTIONS;
+            const sectionKeys = Object.keys(sections).sort((a, b) => parseInt(a) - parseInt(b));
+
+            // Populate section summaries in the Basics tab
+            const summariesGrid = document.getElementById('summaries-grid');
+            if (summariesGrid) {
+                let html = '';
+                sectionKeys.forEach(key => {
+                    const section = sections[key];
+                    if (section.sectionType === 'section' && section.beginnerSummary) {
+                        const icons = ['🎯', '📐', '⚛️', '🔬', '🌌', '🎓'];
+                        const icon = icons[parseInt(key) - 1] || '📄';
+
+                        html += `
+                            <div class="concept-card">
+                                <h3>
+                                    <span class="concept-icon">${icon}</span>
+                                    ${section.title}
+                                </h3>
+                                <p class="concept-description">
+                                    ${section.beginnerSummary}
+                                </p>
+                                ${section.keyTakeaways && section.keyTakeaways.length > 0 ? `
+                                    <div class="expandable">
+                                        <div class="expand-header" onclick="toggleExpand(this)">
+                                            <h4>Key Takeaways</h4>
+                                            <span class="expand-arrow">▼</span>
+                                        </div>
+                                        <div class="expand-content">
+                                            <ul style="margin: 1rem 0; line-height: 1.8;">
+                                                ${section.keyTakeaways.map(t => `<li>${t}</li>`).join('')}
+                                            </ul>
+                                        </div>
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `;
+                    }
+                });
+
+                if (html) {
+                    summariesGrid.innerHTML = html;
+                } else {
+                    summariesGrid.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No section summaries available.</p>';
+                }
+            }
+        }
+
+        function populateFormulas() {
+            const formulasList = document.getElementById('formulas-list');
+            if (!formulasList) return;
+
+            const formulas = window.PMFormulaLoader?.getAll() || {};
+            const formulaKeys = Object.keys(formulas);
+
+            if (formulaKeys.length === 0) {
+                formulasList.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">No formulas loaded. Run: python run_all_simulations.py --export</p>';
+                return;
+            }
+
+            // Select key formulas to display
+            const keyFormulaIds = [
+                'generation-number',
+                'gauge-coupling-evolution',
+                'proton-decay-rate',
+                'kk-mass-scale',
+                'neutrino-mass-seesaw',
+                'pneuma-lagrangian'
+            ];
+
+            let html = '';
+            keyFormulaIds.forEach(id => {
+                const formula = formulas[id];
+                if (formula) {
+                    html += `
+                        <div class="formula-item">
+                            <div class="formula-label">${formula.label || id}</div>
+                            <div style="margin: 1rem 0; font-size: 1.1rem; text-align: center;">
+                                ${formula.html || formula.latex || 'Formula not available'}
+                            </div>
+                            ${formula.description ? `<div class="formula-description">${formula.description}</div>` : ''}
+                        </div>
+                    `;
+                }
+            });
+
+            if (html) {
+                formulasList.innerHTML = html;
+                // Trigger MathJax rendering
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise([formulasList]);
+                }
+            } else {
+                formulasList.innerHTML = '<p style="text-align: center; color: var(--text-secondary);">Key formulas not found in theory_output.json</p>';
+            }
+        }
+
+        function loadSpecificFormulas() {
+            // Load generation number formula for intermediate card
+            const genFormula = window.PMFormulaLoader?.get('generation-number');
+            if (genFormula) {
+                const genDisplay = document.getElementById('gen-formula-display');
+                if (genDisplay) {
+                    genDisplay.innerHTML = genFormula.html || genFormula.latex || 'N<sub>gen</sub> = |χ|/16 = 3';
+                }
+
+                const genDetail = document.getElementById('generation-formula-detail');
+                if (genDetail) {
+                    genDetail.innerHTML = `
+                        <div style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 8px; text-align: center;">
+                            ${genFormula.html || genFormula.latex || 'N<sub>gen</sub> = |χ|/16 = 3'}
+                        </div>
+                        <p style="margin-top: 1rem;">
+                            Where χ = <span data-pm-value="simulations.fermion_generations.chi" class="pm-value">-16</span>
+                            is the Euler characteristic of the G₂ manifold.
+                        </p>
+                    `;
+                    // Update PM values
+                    if (window.PM && window.PM.updateDOM) {
+                        window.PM.updateDOM();
+                    }
+                }
+
+                // Trigger MathJax
+                if (window.MathJax && window.MathJax.typesetPromise) {
+                    window.MathJax.typesetPromise();
+                }
+            }
+        }
+
+        // Initialize on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
+
+        // Refresh when PM finishes loading
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                if (window.PM && window.PM._loaded) {
+                    updateStats();
+                    populateSections();
+                    populateConcepts();
+                    populateFormulas();
+                    loadSpecificFormulas();
+                }
+            }, 500);
+        });
+    </script>
+
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations');
+        });
+
+        // Setup auth after header
+        setupAuthGuard('foundations');
+    </script>
+</body>
+</html>
