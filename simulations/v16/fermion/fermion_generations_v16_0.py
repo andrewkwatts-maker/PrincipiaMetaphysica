@@ -519,7 +519,7 @@ class FermionGenerationsV16(SimulationBase):
                 path="fermion.n_generations",
                 name="Number of Generations",
                 units="dimensionless",
-                status="DERIVED",
+                status="PREDICTED",
                 description=(
                     "Number of fermion generations derived from G2 topology via spinor "
                     "saturation. Computed as n_gen = N_flux / spinor_DOF = 24 / 8 = 3."

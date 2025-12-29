@@ -449,12 +449,24 @@ class PMSectionRenderer extends HTMLElement {
 
         // Replace formula references: {{formula:id}}
         text = text.replace(/\{\{formula:([^}]+)\}\}/g, (match, id) => {
-            return `<pm-formula formula-id="${id}" inline="true"></pm-formula>`;
+            // Validate that id is not empty, undefined, or null
+            const trimmedId = id.trim();
+            if (!trimmedId || trimmedId === 'undefined' || trimmedId === 'null') {
+                console.warn('PMSectionRenderer: Empty or invalid formula reference in text:', match);
+                return `<span class="formula-error" style="color: #f44336; font-style: italic;">[Invalid formula reference]</span>`;
+            }
+            return `<pm-formula formula-id="${trimmedId}" inline="true"></pm-formula>`;
         });
 
         // Replace parameter references: {{param:id}}
         text = text.replace(/\{\{param:([^}]+)\}\}/g, (match, id) => {
-            return `<pm-param id="${id}" mode="inline"></pm-param>`;
+            // Validate that id is not empty, undefined, or null
+            const trimmedId = id.trim();
+            if (!trimmedId || trimmedId === 'undefined' || trimmedId === 'null') {
+                console.warn('PMSectionRenderer: Empty or invalid parameter reference in text:', match);
+                return `<span class="param-error" style="color: #f44336; font-style: italic;">[Invalid parameter reference]</span>`;
+            }
+            return `<pm-param id="${trimmedId}" mode="inline"></pm-param>`;
         });
 
         return text;
@@ -490,6 +502,17 @@ class PMSectionRenderer extends HTMLElement {
                 return wrapExpandable(`<div class="text-block">${textContent}</div>`);
 
             case 'formula':
+                // Validate that formulaId exists
+                if (!block.formulaId) {
+                    console.warn('PMSectionRenderer: Formula block missing formulaId', block);
+                    return wrapExpandable(`
+                        <div class="formula-error" style="background: rgba(244, 67, 54, 0.1); border: 1px solid rgba(244, 67, 54, 0.3); border-radius: 4px; padding: 0.75rem; color: #f44336;">
+                            <strong>⚠️ Formula Reference Error</strong>
+                            <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem;">Formula block is missing an ID. This formula cannot be displayed.</p>
+                        </div>
+                    `);
+                }
+
                 // Render using pm-formula component with interactive display
                 const derivAttr = block.showDerivation ? ' show-derivation="true"' : '';
                 const termsAttr = block.showTerms === false ? ' show-terms="false"' : '';
@@ -613,11 +636,23 @@ class PMSectionRenderer extends HTMLElement {
         // Handle formula and param references in table cells
         if (typeof cell === 'string') {
             // Check for formula reference: {{formula:id}}
-            cell = cell.replace(/\{\{formula:([^}]+)\}\}/g,
-                (match, id) => `<pm-formula formula-id="${id}" show-label="false"></pm-formula>`);
+            cell = cell.replace(/\{\{formula:([^}]+)\}\}/g, (match, id) => {
+                const trimmedId = id.trim();
+                if (!trimmedId || trimmedId === 'undefined' || trimmedId === 'null') {
+                    console.warn('PMSectionRenderer: Empty or invalid formula reference in table cell:', match);
+                    return `<span class="formula-error" style="color: #f44336; font-style: italic;">[Invalid formula]</span>`;
+                }
+                return `<pm-formula formula-id="${trimmedId}" show-label="false"></pm-formula>`;
+            });
             // Check for param reference: {{param:id}}
-            cell = cell.replace(/\{\{param:([^}]+)\}\}/g,
-                (match, id) => `<pm-param id="${id}" mode="inline"></pm-param>`);
+            cell = cell.replace(/\{\{param:([^}]+)\}\}/g, (match, id) => {
+                const trimmedId = id.trim();
+                if (!trimmedId || trimmedId === 'undefined' || trimmedId === 'null') {
+                    console.warn('PMSectionRenderer: Empty or invalid parameter reference in table cell:', match);
+                    return `<span class="param-error" style="color: #f44336; font-style: italic;">[Invalid param]</span>`;
+                }
+                return `<pm-param id="${trimmedId}" mode="inline"></pm-param>`;
+            });
             return cell;
         }
         // If cell is an object, convert to JSON string to avoid [object Object]

@@ -161,7 +161,7 @@ class PMFormula extends HTMLElement {
 
         let formula, category;
 
-        if (formulaId) {
+        if (formulaId && formulaId !== 'undefined' && formulaId !== 'null') {
             // Try to look up in FORMULA_REGISTRY first
             const result = findFormula(formulaId);
             if (result) {
@@ -175,11 +175,11 @@ class PMFormula extends HTMLElement {
                     formula = pmFormula;
                     category = pmFormula.category || 'DERIVED';
                 } else {
-                    this.shadowRoot.innerHTML = `<div style="color: red;">Formula not found: ${formulaId}</div>`;
+                    this.renderError(`Formula not found in database: <code>${formulaId}</code>`);
                     return;
                 }
             } else {
-                this.shadowRoot.innerHTML = `<div style="color: red;">Formula not found: ${formulaId}</div>`;
+                this.renderError(`Formula not found: <code>${formulaId}</code>`);
                 return;
             }
         } else if (inlineHtml) {
@@ -192,7 +192,7 @@ class PMFormula extends HTMLElement {
             };
             category = 'INLINE';
         } else {
-            this.shadowRoot.innerHTML = `<div style="color: red;">No formula specified</div>`;
+            this.renderError('No formula ID or inline content specified');
             return;
         }
 
@@ -443,6 +443,43 @@ class PMFormula extends HTMLElement {
                 ` : ''}
 
                 ${derivationHtml}
+            </div>
+        `;
+    }
+
+    /**
+     * Render an error message
+     * @param {string} message - Error message to display
+     */
+    renderError(message) {
+        this.shadowRoot.innerHTML = `
+            <style>
+                .formula-error {
+                    background: rgba(244, 67, 54, 0.1);
+                    border: 1px solid rgba(244, 67, 54, 0.3);
+                    border-left: 4px solid #f44336;
+                    border-radius: 6px;
+                    padding: 0.75rem 1rem;
+                    color: #d32f2f;
+                    font-family: 'Source Sans Pro', sans-serif;
+                    font-size: 0.9rem;
+                }
+                .formula-error strong {
+                    display: block;
+                    margin-bottom: 0.25rem;
+                    color: #f44336;
+                }
+                .formula-error code {
+                    background: rgba(0, 0, 0, 0.1);
+                    padding: 0.15rem 0.4rem;
+                    border-radius: 3px;
+                    font-family: 'Source Code Pro', monospace;
+                    font-size: 0.85em;
+                }
+            </style>
+            <div class="formula-error">
+                <strong>⚠️ Formula Error</strong>
+                ${message}
             </div>
         `;
     }

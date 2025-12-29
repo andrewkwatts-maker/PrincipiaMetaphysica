@@ -848,7 +848,7 @@ class CKMMatrixSimulation(SimulationBase):
                 path="ckm.jarlskog_invariant",
                 name="Jarlskog Invariant J",
                 units="dimensionless",
-                status="PREDICTIONS",
+                status="PREDICTED",
                 description=(
                     "Rephasing-invariant measure of CP violation in quark sector. "
                     "Predicted as J ~ 3e-5 from topological CP phase delta_CP ~ pi/6 "

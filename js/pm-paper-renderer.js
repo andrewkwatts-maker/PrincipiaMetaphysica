@@ -330,7 +330,7 @@
         const appendices = [];
 
         for (const section of Object.values(sections)) {
-            const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' ||
+            const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' || section.appendix === true ||
                               (section.title && section.title.startsWith('Appendix'));
             if (isAppendix) {
                 appendices.push(section);
@@ -436,9 +436,9 @@
 
         // Sort sections: main sections first (by order/ID), then appendices (alphabetically)
         const sortedSections = Object.values(sections).sort((a, b) => {
-            const isAppendixA = /^[A-Z]$/.test(a.id) || a.type === 'appendix' ||
+            const isAppendixA = /^[A-Z]$/.test(a.id) || a.type === 'appendix' || a.appendix === true ||
                                (a.title && a.title.startsWith('Appendix'));
-            const isAppendixB = /^[A-Z]$/.test(b.id) || b.type === 'appendix' ||
+            const isAppendixB = /^[A-Z]$/.test(b.id) || b.type === 'appendix' || b.appendix === true ||
                                (b.title && b.title.startsWith('Appendix'));
 
             // Main sections come before appendices
@@ -466,7 +466,7 @@
 
         for (const section of sortedSections) {
             // Insert appendix navigation before first appendix
-            const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' ||
+            const isAppendix = /^[A-Z]$/.test(section.id) || section.type === 'appendix' || section.appendix === true ||
                               (section.title && section.title.startsWith('Appendix'));
 
             if (isAppendix && !appendixNavRendered) {
@@ -492,7 +492,7 @@
      */
     function renderAppendixNavigation(allSections) {
         const appendices = allSections.filter(s =>
-            /^[A-Z]$/.test(s.id) || s.type === 'appendix' ||
+            /^[A-Z]$/.test(s.id) || s.type === 'appendix' || s.appendix === true ||
             (s.title && s.title.startsWith('Appendix'))
         );
 
@@ -551,7 +551,7 @@
         sectionDiv.setAttribute('data-section-id', sectionId);
 
         // Add appendix class and alias for letter-based section IDs (e.g., B -> appendix-b)
-        const isAppendix = /^[A-Z]$/.test(sectionId) || section.type === 'appendix' ||
+        const isAppendix = /^[A-Z]$/.test(sectionId) || section.type === 'appendix' || section.appendix === true ||
                           (sectionTitle && sectionTitle.startsWith('Appendix'));
         if (isAppendix) {
             sectionDiv.classList.add('appendix-section');
