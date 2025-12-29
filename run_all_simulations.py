@@ -1158,17 +1158,41 @@ class SimulationRunner:
             if self.verbose:
                 print(f"  Created: formulas.json ({len(data['formulas'])} formulas)")
 
-        # 2. Parameters
+        # 2. Parameters (enriched with experimental values from V16_VALIDATION_BOUNDS)
         if 'parameters' in data:
+            enriched_params = {}
+            for param_path, param_data in data['parameters'].items():
+                enriched = dict(param_data)  # Copy original data
+
+                # Add experimental values from V16_VALIDATION_BOUNDS if available
+                bounds = V16_VALIDATION_BOUNDS.get(param_path)
+                if bounds:
+                    if 'experimental' in bounds:
+                        enriched['experimental'] = bounds['experimental']
+                    if 'sigma' in bounds:
+                        enriched['sigma'] = bounds['sigma']
+                    if 'target' in bounds:
+                        enriched['target'] = bounds['target']
+
+                    # Calculate sigma deviation if we have experimental and sigma
+                    if 'experimental' in bounds and 'sigma' in bounds and 'value' in enriched:
+                        try:
+                            sigma_dev = abs(float(enriched['value']) - bounds['experimental']) / bounds['sigma']
+                            enriched['sigma_deviation'] = round(sigma_dev, 3)
+                        except (TypeError, ZeroDivisionError):
+                            pass
+
+                enriched_params[param_path] = enriched
+
             params_data = {
                 'version': data.get('metadata', {}).get('version', '16.0'),
-                'parameters': data['parameters']
+                'parameters': enriched_params
             }
             params_path = output_dir / 'parameters.json'
             with open(params_path, 'w', encoding='utf-8') as f:
                 json.dump(params_data, f, indent=2, ensure_ascii=False)
             if self.verbose:
-                print(f"  Created: parameters.json ({len(data['parameters'])} params)")
+                print(f"  Created: parameters.json ({len(enriched_params)} params, enriched with experimental values)")
 
         # 3. Sections
         if 'sections' in data:

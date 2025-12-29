@@ -71,8 +71,8 @@ class AppendixIGWDispersion(SimulationBase):
                 "Dispersion coefficient η emerges from quantum fluctuations in orthogonal time τ, "
                 "modulated by G₂ torsion effects."
             ),
-            section_id="8",
-            subsection_id="I"
+            section_id="I",
+            subsection_id=None
         )
 
     @property
@@ -170,8 +170,8 @@ class AppendixIGWDispersion(SimulationBase):
             SectionContent with GW dispersion derivation
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="I",
+            section_id="I",
+            subsection_id=None,
             title="Appendix I: Gravitational Wave Dispersion",
             abstract=(
                 "The two-time framework predicts a small frequency-dependent dispersion for "

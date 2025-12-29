@@ -64,8 +64,8 @@ class AppendixEProtonDecay(SimulationBase):
                 "Detailed calculation of proton decay lifetime from dimension-6 effective "
                 "operators. Predicts τ_p = 1.3 × 10³⁵ years, testable by Hyper-Kamiokande."
             ),
-            section_id="8",
-            subsection_id="E"
+            section_id="E",
+            subsection_id=None
         )
 
     @property
@@ -165,8 +165,8 @@ class AppendixEProtonDecay(SimulationBase):
             SectionContent with proton decay derivation
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="E",
+            section_id="E",
+            subsection_id=None,
             title="Appendix E: Proton Decay Calculation",
             abstract=(
                 "Detailed calculation of proton decay lifetime from dimension-6 effective operators. "
