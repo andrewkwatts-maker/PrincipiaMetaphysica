@@ -67,8 +67,8 @@ class AppendixCExtendedDerivations(SimulationBase):
                 "Detailed derivations of gauge unification, fermion masses, "
                 "neutrino mixing, and proton decay from G2 geometry."
             ),
-            section_id="8",
-            subsection_id="C"
+            section_id="C",
+            subsection_id=None
         )
 
     @property
@@ -146,8 +146,8 @@ class AppendixCExtendedDerivations(SimulationBase):
             SectionContent with comprehensive derivations
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="C",
+            section_id="C",
+            subsection_id=None,
             title="Appendix C: Extended Derivations",
             abstract=(
                 "Extended step-by-step derivations of key physics results: atmospheric mixing "

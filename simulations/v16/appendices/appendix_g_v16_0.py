@@ -66,8 +66,8 @@ class AppendixGEffectiveTorsion(SimulationBase):
                 "TCS G₂ manifolds are Ricci-flat (geometric torsion τ = 0). The effective torsion "
                 "arises from G₄ flux quantization, yielding T_ω = -0.875 with Spin(7) spinor fraction correction."
             ),
-            section_id="8",
-            subsection_id="G"
+            section_id="G",
+            subsection_id=None
         )
 
     @property
@@ -164,8 +164,8 @@ class AppendixGEffectiveTorsion(SimulationBase):
             SectionContent with torsion derivation
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="G",
+            section_id="G",
+            subsection_id=None,
             title="Appendix G: Effective Torsion from Flux Quantization",
             abstract=(
                 "TCS G₂ manifolds are Ricci-flat (geometric torsion τ = 0). The effective torsion "

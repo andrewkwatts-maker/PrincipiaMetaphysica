@@ -64,8 +64,8 @@ class AppendixLValuesSummary(SimulationBase):
                 "(4 angles), dark energy (3 parameters), proton decay "
                 "(5 predictions), and fermion masses (3 selected)."
             ),
-            section_id="8",
-            subsection_id="L"
+            section_id="L",
+            subsection_id=None
         )
 
     @property
@@ -138,8 +138,8 @@ class AppendixLValuesSummary(SimulationBase):
             SectionContent with comprehensive parameter tables
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="L",
+            section_id="L",
+            subsection_id=None,
             title="Appendix L: Complete PM Values Summary",
             abstract=(
                 "Appendix L: A comprehensive summary of all parameter values in the "

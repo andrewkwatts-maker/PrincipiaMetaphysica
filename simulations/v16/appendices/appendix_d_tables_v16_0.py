@@ -66,8 +66,8 @@ class AppendixDParameterTables(SimulationBase):
                 "Complete listing of all physical constants, experimental inputs, "
                 "geometric parameters, and theory predictions with sources."
             ),
-            section_id="8",
-            subsection_id="D"
+            section_id="D",
+            subsection_id=None
         )
 
     @property
@@ -259,8 +259,8 @@ class AppendixDParameterTables(SimulationBase):
             SectionContent with comprehensive parameter tables
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="D",
+            section_id="D",
+            subsection_id=None,
             title="Appendix D: Comprehensive Parameter Tables",
             abstract=(
                 "This appendix provides complete tables of all parameters used in "

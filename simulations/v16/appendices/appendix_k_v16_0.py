@@ -62,8 +62,8 @@ class AppendixKTransparency(SimulationBase):
                 "validation statistics (45/48 within 1σ), and outstanding "
                 "issues resolution status."
             ),
-            section_id="8",
-            subsection_id="K"
+            section_id="K",
+            subsection_id=None
         )
 
     @property
@@ -135,8 +135,8 @@ class AppendixKTransparency(SimulationBase):
             SectionContent with complete transparency documentation
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="K",
+            section_id="K",
+            subsection_id=None,
             title="Appendix K: Transparency Statement",
             abstract=(
                 "Appendix K: Comprehensive transparency statement documenting the "

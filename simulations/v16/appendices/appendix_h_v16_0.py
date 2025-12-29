@@ -63,8 +63,8 @@ class AppendixHProtonBranching(SimulationBase):
                 "The branching ratio BR(p → e⁺π⁰) is predicted from flux orientation on the "
                 "TCS G₂ manifold. Geometric derivation yields BR = 0.25 from shadow spacetime dimensions."
             ),
-            section_id="8",
-            subsection_id="H"
+            section_id="H",
+            subsection_id=None
         )
 
     @property
@@ -164,8 +164,8 @@ class AppendixHProtonBranching(SimulationBase):
             SectionContent with branching ratio derivation
         """
         return SectionContent(
-            section_id="8",
-            subsection_id="H",
+            section_id="H",
+            subsection_id=None,
             title="Appendix H: Proton Decay Branching Ratio",
             abstract=(
                 "The branching ratio BR(p → e⁺π⁰) is predicted from flux orientation on the "

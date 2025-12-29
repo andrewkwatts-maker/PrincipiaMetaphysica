@@ -438,12 +438,6 @@ class PMFormulaLoader {
                             <code class="pm-expand-latex">${formula.plainText || 'Formula Details'}</code>
                         </button>
                         <div class="pm-formula-details">
-                            ${formula.latex ? `
-                                <div class="pm-formula-latex-full">
-                                    <h5>📐 LaTeX Source</h5>
-                                    <pre class="pm-latex-source">${formula.latex}</pre>
-                                </div>
-                            ` : ''}
                             ${derivedFrom.length ? `
                                 <div class="pm-formula-derived">
                                     <h5>🔗 Derived From</h5>
