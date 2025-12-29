@@ -1,5 +1,12 @@
 """
-Principia Metaphysica v16 - Appendices Module
+Principia Metaphysica - Appendices Module
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
+
 ==============================================
 
 Section 8: Appendices (A-N)
@@ -153,8 +160,6 @@ Usage:
         'M': appendix_m.execute(registry, verbose=True),
         'N': appendix_n.execute(registry, verbose=True),
     }
-
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 from .appendix_a_math_v16_0 import AppendixAMathFoundations

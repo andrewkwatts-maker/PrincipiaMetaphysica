@@ -1,16 +1,11 @@
 """
-Pneuma Simulations v16
-======================
-
-V16 simulations for the Pneuma field dynamics and geometric framework.
-
-This module contains simulations for Section 2 (Geometric Framework) that
-compute Pneuma field properties, coupling constants, and Lagrangian validity.
-
-Simulations:
-- pneuma_mechanism_v16_0: Core Pneuma field dynamics and geometric coupling
+Principia Metaphysica - Pneuma Simulations v16
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from .pneuma_mechanism_v16_0 import PneumaMechanismV16

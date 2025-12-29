@@ -130,6 +130,22 @@ The simulation validates G2 holonomy via four conditions:
 
 All conditions are satisfied for TCS #187.
 
+## Holonomy Precision Limit
+
+The warp factor k_gimel = b3/2 + 1/π exhibits a fundamental precision limit:
+
+```
+k_gimel = 24/2 + 1/π = 12.318309886183791...
+```
+
+**Precision Note:**
+- The value 12.318309 (6 decimal places) represents the **Holonomy Precision Limit**
+- Using 12.319 (3 decimal places) introduces ~0.008% error in alpha^-1 derivation
+- This is NOT a free parameter - it is exactly determined by b3=24 and π
+- The transcendental 1/π term encodes the curved geometry of the G2 manifold
+
+In `alpha_rigor_v16_1.py`, we maintain full precision throughout the computation to achieve the CODATA match for the fine structure constant alpha^-1 = 137.035999.
+
 ## References
 
 1. **Joyce, D. (2000)** "Compact Manifolds with Special Holonomy"

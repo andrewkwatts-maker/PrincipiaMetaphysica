@@ -251,6 +251,7 @@ class S8SuppressionV16(SimulationBase):
             'Planck': S8Measurement(
                 name='Planck 2018',
                 value=0.832,
+                uncertainty=0.013,  # Planck 2018 uncertainty
                 redshift=1100.0,  # CMB last scattering
                 source='Planck Collaboration (2020) A&A 641, A6',
                 measurement_type='S8'
@@ -258,6 +259,7 @@ class S8SuppressionV16(SimulationBase):
             'KiDS-1000': S8Measurement(
                 name='KiDS-1000',
                 value=0.766,
+                uncertainty=0.020,  # KiDS-1000 uncertainty
                 redshift=0.5,  # Effective weak lensing redshift
                 source='Heymans et al. (2021) A&A 646, A140',
                 measurement_type='S8'
@@ -265,6 +267,7 @@ class S8SuppressionV16(SimulationBase):
             'DES-Y3': S8Measurement(
                 name='DES Year 3',
                 value=0.776,
+                uncertainty=0.017,  # DES Y3 uncertainty
                 redshift=0.6,
                 source='DES Collaboration (2022) PRD 105, 023520',
                 measurement_type='S8'

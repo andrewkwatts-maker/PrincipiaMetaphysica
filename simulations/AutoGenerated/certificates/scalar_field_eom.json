@@ -3,7 +3,7 @@
   "label": "Scalar Field EoM",
   "wl_code": "\n                Needs[\"VariationalMethods`\"];\n                L = (1/2) * D[phi[x, t], t]^2 - (1/2) * D[phi[x, t], x]^2 - V[phi[x, t]];\n                EulerEquations[L, phi[x, t], {x, t}]\n            ",
   "result": "[Mock] D[phi,{t,2}] - D[phi,{x,2}] + V'[phi] == 0",
-  "hash": "da4c76d8069cef99",
-  "timestamp": "2025-12-29T12:13:34.531924",
+  "hash": "0ad7cc8d0718c626",
+  "timestamp": "2025-12-29T15:39:58.270522",
   "verified": false
 }

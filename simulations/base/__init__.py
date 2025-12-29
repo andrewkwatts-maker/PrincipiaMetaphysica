@@ -1,5 +1,12 @@
 """
-Simulations Base Module
+Principia Metaphysica - Base Module
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
+
 ========================
 
 This module provides the foundational classes and utilities for the Principia
@@ -10,8 +17,6 @@ Metaphysica simulation framework. It includes:
 - Validation: Schema-based validation for simulations and data
 - Injection: Utilities for injecting computed results into the registry
 - Schema: Comprehensive return schema for v16 simulations
-
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 from .simulation_base import (

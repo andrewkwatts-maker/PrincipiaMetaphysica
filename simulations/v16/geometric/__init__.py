@@ -1,17 +1,11 @@
 """
-Geometric Domain Simulations v16
-=================================
-
-G2 geometry, topology, and cycle structure simulations.
-
-This module contains root simulations that compute fundamental
-geometric parameters from the TCS G2 manifold topology.
-
-Available simulations:
-- G2GeometryV16: G2 holonomy, Betti numbers, and topology invariants
-- AlphaRigorSolver: Fine structure constant derivation from G2 topology
+Principia Metaphysica - Geometric Domain Simulations v16
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from .g2_geometry_v16_0 import G2GeometryV16
