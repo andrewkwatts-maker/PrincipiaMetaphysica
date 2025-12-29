@@ -42,7 +42,7 @@
       "label": "Einstein Field Equations",
       "category": "MASTER_ACTION",
       "goal": "Verify Einstein equations from action variation",
-      "wolfram_code": "(* Metric variation of Einstein-Hilbert action *)\n                (* \u00ce\u00b4S/\u00ce\u00b4g^\u00ce\u00bc\u00ce\u00bd = R_\u00ce\u00bc\u00ce\u00bd - (1/2)g_\u00ce\u00bc\u00ce\u00bd R = 8\u00cf\u20acG T_\u00ce\u00bc\u00ce\u00bd *)\n                Solve[R - (1/2) * g * R == 8 * Pi * G * T, {R}]",
+      "wolfram_code": "(* Metric variation of Einstein-Hilbert action *)\n                (* \u03b4S/\u03b4g^\u03bc\u03bd = R_\u03bc\u03bd - (1/2)g_\u03bc\u03bd R = 8\u03c0G T_\u03bc\u03bd *)\n                Solve[R - (1/2) * g * R == 8 * Pi * G * T, {R}]",
       "expected_result": "R = 8*pi*G*T (trace)",
       "verify_url": "https://www.wolframalpha.com/input/?i=%28%2A%20Metric%20variation%20of%20Einstein-Hilbert%20action%20%2A%29"
     },

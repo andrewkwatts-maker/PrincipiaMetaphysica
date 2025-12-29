@@ -357,7 +357,7 @@ class EstablishedPhysics:
             wa_unc = wa_data.uncertainty
         else:
             # Fallback values (should match JSON file)
-            w0 = -0.727
+            w0 = -0.7280
             w0_unc = 0.067
             wa = -0.99
             wa_unc = 0.32

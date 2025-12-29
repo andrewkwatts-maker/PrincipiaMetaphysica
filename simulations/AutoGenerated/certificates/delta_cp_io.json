@@ -3,7 +3,7 @@
   "label": "Inverted Ordering delta_CP",
   "wl_code": "\n                (* G2 complex structure gives phase *)\n                z = 7.102 + 1.054 * I;\n                N[Arg[z] * (180/Pi) + 180, 5]\n            ",
   "result": "[Mock] 268.4 deg (matches NuFIT 6.0 IO)",
-  "hash": "22e87b01761e8e97",
-  "timestamp": "2025-12-29T12:13:34.533247",
+  "hash": "4928ceb2a3f369e9",
+  "timestamp": "2025-12-29T15:39:58.271686",
   "verified": false
 }

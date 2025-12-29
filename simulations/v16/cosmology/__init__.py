@@ -1,17 +1,11 @@
 """
-Cosmology Simulations v16
-==========================
-
-Multi-sector cosmology with geometric width derivation and dark energy dynamics.
-
-This module contains v16 implementations of cosmological simulations that
-implement the SimulationBase interface from simulations.base.
-
-Available simulations:
-- DarkEnergyV16: Dark energy from dimensional reduction (Section 5.2)
-- MultiSectorV16: Multi-sector sampling with geometric modulation width (Section 5.3)
+Principia Metaphysica - Cosmology Simulations v16
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from .cosmology_intro_v16_0 import CosmologyIntroV16

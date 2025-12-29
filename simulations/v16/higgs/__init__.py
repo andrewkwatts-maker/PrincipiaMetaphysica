@@ -1,13 +1,11 @@
 """
-Higgs Simulations v16
-======================
-
-Higgs mass and moduli stabilization simulations.
-
-Available simulations:
-- HiggsMassSimulation (v16.0): Higgs mass from moduli stabilization
+Principia Metaphysica - Higgs Simulations v16
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
 """
 
 from .higgs_mass_v16_0 import HiggsMassSimulation

@@ -1,5 +1,12 @@
 """
-Principia Metaphysica Simulation Framework
+Principia Metaphysica - Simulation Framework
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
+
 ===========================================
 
 This package provides the simulation infrastructure for the Principia Metaphysica
@@ -92,8 +99,6 @@ Execution Order (Topological):
 4. Tier 3: Cosmology
 
 Total execution time: ~200 ms for all 8 domains
-
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 # Version information

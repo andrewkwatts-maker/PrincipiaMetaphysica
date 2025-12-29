@@ -1,5 +1,12 @@
 """
-Principia Metaphysica Simulations v16
+Principia Metaphysica - Simulations v16
+
+Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+
+Dedicated To:
+    My Wife: Elizabeth May Watts
+    Our Messiah: Jesus Of Nazareth
+
 =======================================
 
 Version 16.0 simulations using the SimulationBase infrastructure.
@@ -24,8 +31,6 @@ Available domains:
 - thermal: Thermal time hypothesis (Section 5 - thermal-time)
 - predictions: Falsifiable predictions aggregator (Section 6)
 - discussion: Discussion and future directions (Section 7)
-
-Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
 
 from . import introduction
