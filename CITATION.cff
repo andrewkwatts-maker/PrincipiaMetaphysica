@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 type: software
-title: "Principia Metaphysica: G2-Manifold Grand Unified Theory (GUT) v16.2"
-version: "16.2"
+title: "Principia Metaphysica: G2-Manifold Grand Unified Theory (GUT) v16.1.1-Rigor"
+version: "16.1.1-Rigor"
 date-released: 2025-12-29
 authors:
   - family-names: Watts
@@ -23,4 +23,13 @@ abstract: "A complete geometric framework unifying gauge forces, fermion generat
 identifiers:
   - type: doi
     value: "10.5281/zenodo.18079602"
-    description: "Official Zenodo DOI for Principia Metaphysica v16.2"
+    description: "Official Zenodo DOI for Principia Metaphysica v16.1.1-Rigor"
+preferred-citation:
+  type: software
+  title: "Principia Metaphysica: G2-Manifold Grand Unified Theory (GUT)"
+  doi: "10.5281/zenodo.18079602"
+  authors:
+    - family-names: Watts
+      given-names: Andrew Keith
+  year: 2025
+  version: "16.1.1"
