@@ -1,0 +1,145 @@
+{
+  "metadata": {
+    "source": "Particle Data Group",
+    "version": "PDG 2024",
+    "website": "https://pdg.lbl.gov/",
+    "retrieved": "2025-01-15",
+    "notes": "Review of Particle Physics 2024"
+  },
+  "fundamental_constants": {
+    "M_PLANCK_REDUCED": {
+      "value": 2.435e18,
+      "uncertainty": 3.0e15,
+      "units": "GeV",
+      "description": "Reduced Planck mass"
+    },
+    "alpha_em": {
+      "value": 7.2973525693e-3,
+      "uncertainty": 1.1e-12,
+      "units": "dimensionless",
+      "description": "Fine structure constant (1/137.036)"
+    },
+    "G_NEWTON": {
+      "value": 6.70883e-39,
+      "uncertainty": 3e-44,
+      "units": "GeV^-2",
+      "description": "Newton's gravitational constant"
+    },
+    "HBAR": {
+      "value": 6.582119569e-25,
+      "uncertainty": 1e-33,
+      "units": "GeV·s",
+      "description": "Reduced Planck constant"
+    }
+  },
+  "gauge_bosons": {
+    "m_W": {
+      "value": 80.377,
+      "uncertainty": 0.012,
+      "units": "GeV",
+      "description": "W boson mass"
+    },
+    "m_Z": {
+      "value": 91.1876,
+      "uncertainty": 0.0021,
+      "units": "GeV",
+      "description": "Z boson mass"
+    },
+    "m_higgs": {
+      "value": 125.10,
+      "uncertainty": 0.14,
+      "units": "GeV",
+      "description": "Higgs boson mass"
+    }
+  },
+  "leptons": {
+    "m_electron": {
+      "value": 0.5109989461e-3,
+      "uncertainty": 3.1e-12,
+      "units": "GeV",
+      "description": "Electron mass"
+    },
+    "m_muon": {
+      "value": 105.6583745e-3,
+      "uncertainty": 2.4e-6,
+      "units": "GeV",
+      "description": "Muon mass"
+    },
+    "m_tau": {
+      "value": 1.77686,
+      "uncertainty": 0.00012,
+      "units": "GeV",
+      "description": "Tau mass"
+    }
+  },
+  "quarks": {
+    "m_up": {
+      "value": 2.16e-3,
+      "uncertainty": 0.49e-3,
+      "units": "GeV",
+      "description": "Up quark mass (MS-bar, 2 GeV)"
+    },
+    "m_down": {
+      "value": 4.67e-3,
+      "uncertainty": 0.48e-3,
+      "units": "GeV",
+      "description": "Down quark mass (MS-bar, 2 GeV)"
+    },
+    "m_strange": {
+      "value": 93.4e-3,
+      "uncertainty": 8.6e-3,
+      "units": "GeV",
+      "description": "Strange quark mass"
+    },
+    "m_charm": {
+      "value": 1.27,
+      "uncertainty": 0.02,
+      "units": "GeV",
+      "description": "Charm quark mass"
+    },
+    "m_bottom": {
+      "value": 4.18,
+      "uncertainty": 0.03,
+      "units": "GeV",
+      "description": "Bottom quark mass"
+    },
+    "m_top": {
+      "value": 172.69,
+      "uncertainty": 0.30,
+      "units": "GeV",
+      "description": "Top quark mass"
+    }
+  },
+  "couplings": {
+    "alpha_s_MZ": {
+      "value": 0.1180,
+      "uncertainty": 0.0010,
+      "units": "dimensionless",
+      "description": "Strong coupling at M_Z"
+    },
+    "sin2_theta_W": {
+      "value": 0.23121,
+      "uncertainty": 0.00004,
+      "units": "dimensionless",
+      "description": "Weak mixing angle"
+    }
+  },
+  "baryons": {
+    "m_proton": {
+      "value": 0.938272088,
+      "uncertainty": 0.000000058,
+      "units": "GeV",
+      "description": "Proton mass"
+    },
+    "m_neutron": {
+      "value": 0.939565421,
+      "uncertainty": 0.000000057,
+      "units": "GeV",
+      "description": "Neutron mass"
+    }
+  },
+  "verification": {
+    "checksum_sha256": "pending",
+    "last_verified": "2025-01-15"
+  }
+}
