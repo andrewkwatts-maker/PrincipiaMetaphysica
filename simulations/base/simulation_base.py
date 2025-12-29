@@ -33,10 +33,11 @@ class SimulationMetadata:
         domain: Domain category (e.g., "proton", "neutrino", "gauge")
         title: Human-readable title
         description: Detailed description of what the simulation computes
-        section_id: Paper section ID (e.g., "4", "4.6", "A", "B")
-        subsection_id: Optional subsection ID
-        parent_section_id: Optional parent section (e.g., "8" for appendices)
-        section_type: Optional type hint ("main", "appendix", "supplementary")
+        section_id: Paper section ID this content relates to (e.g., "2", "4", "5")
+        subsection_id: Optional subsection ID (e.g., "A", "B" for appendices)
+        appendix: If True, render at end of paper as appendix (default False)
+        parent_section_id: Optional parent section (deprecated, use appendix instead)
+        section_type: Optional type hint (deprecated, use appendix instead)
     """
     id: str
     version: str
@@ -45,6 +46,7 @@ class SimulationMetadata:
     description: str
     section_id: str
     subsection_id: Optional[str] = None
+    appendix: bool = False
     parent_section_id: Optional[str] = None
     section_type: Optional[str] = None
 
@@ -88,15 +90,16 @@ class SectionContent:
     Complete content for a paper section.
 
     Attributes:
-        section_id: Section number (e.g., "4", "4.6", "A", "B")
-        subsection_id: Optional subsection identifier
+        section_id: Section number this content relates to (e.g., "2", "4", "5")
+        subsection_id: Subsection identifier (e.g., "A", "B" for appendices)
         title: Section title
         abstract: Brief summary of the section
         content_blocks: List of content blocks in order
         formula_refs: List of formula IDs referenced in this section
         param_refs: List of parameter paths referenced in this section
-        parent_section_id: Optional parent section (e.g., "8" for appendices A-N)
-        section_type: Optional type hint ("main", "appendix", "supplementary")
+        appendix: If True, render at end of paper as appendix (default False)
+        parent_section_id: Optional parent section (deprecated, use appendix instead)
+        section_type: Optional type hint (deprecated, use appendix instead)
     """
     section_id: str
     subsection_id: Optional[str]
@@ -105,6 +108,7 @@ class SectionContent:
     content_blocks: List[ContentBlock] = field(default_factory=list)
     formula_refs: List[str] = field(default_factory=list)
     param_refs: List[str] = field(default_factory=list)
+    appendix: bool = False
     parent_section_id: Optional[str] = None
     section_type: Optional[str] = None
 

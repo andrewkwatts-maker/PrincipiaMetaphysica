@@ -58,9 +58,9 @@ class AppendixJMonteCarloError(SimulationBase):
                 "10,000 samples computing 58×58 correlation matrix. "
                 "Mean relative error ~5%, topological parameters exact."
             ),
-            section_id="8",
+            section_id="2",
             subsection_id="J",
-            section_type="appendix"
+            appendix=True
         )
 
     @property
@@ -168,9 +168,9 @@ class AppendixJMonteCarloError(SimulationBase):
             SectionContent with complete Monte Carlo error analysis
         """
         return SectionContent(
-            section_id="8",
+            section_id="2",
             subsection_id="J",
-            section_type="appendix",
+            appendix=True,
             title="Appendix J: Monte Carlo Error Propagation",
             abstract=(
                 "Appendix J: Monte Carlo Error Propagation - Uncertainties propagated "

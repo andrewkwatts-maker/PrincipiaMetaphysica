@@ -286,17 +286,17 @@ class PMRegistry:
         Add section content to the registry.
 
         Args:
-            section_id: Section identifier (e.g., "4", "4.6")
+            section_id: Section identifier (e.g., "2", "4", "5")
             content: SectionContent instance
 
         Note:
-            For appendices (where subsection_id is a letter like A, B, C...),
-            the subsection_id is used as the key to allow multiple appendices
-            under the same parent section (e.g., section 8).
+            For appendices (where appendix=True), the subsection_id is used
+            as the storage key to allow multiple appendices. The section_id
+            indicates which section the appendix relates to.
         """
-        # Use subsection_id as key for appendices (single letter IDs)
+        # Use subsection_id as key for appendices (e.g., "A", "B", "C"...)
         key = section_id
-        if content.subsection_id and len(content.subsection_id) == 1 and content.subsection_id.isalpha():
+        if content.appendix and content.subsection_id:
             key = content.subsection_id
 
         if key in self._sections:
@@ -410,8 +410,8 @@ class PMRegistry:
                 content_blocks.append(block_data)
 
             # Use 'id' as expected by website renderer (not 'section_id')
-            # Determine order based on section type
-            if s.section_type == 'appendix' and s.subsection_id:
+            # Determine order based on appendix flag
+            if s.appendix and s.subsection_id:
                 # Appendices come after main sections (100+)
                 order = 100 + ord(s.subsection_id.upper()) - ord('A')
             elif s.section_id and s.section_id[0].isdigit():
@@ -421,9 +421,10 @@ class PMRegistry:
 
             result[section_id] = {
                 'id': s.section_id,
-                'type': s.section_type or 'section',  # Use section_type if available
-                'section_type': s.section_type,  # Explicit field for renderer
-                'subsection_id': s.subsection_id,  # Include subsection ID
+                'appendix': s.appendix,  # Boolean: render at end of paper
+                'subsection_id': s.subsection_id,  # Appendix letter (A, B, C...)
+                'type': 'appendix' if s.appendix else 'section',  # For renderer compatibility
+                'section_type': s.section_type,  # Deprecated, kept for compatibility
                 'title': s.title,
                 'shortTitle': s.title,
                 'order': order,
