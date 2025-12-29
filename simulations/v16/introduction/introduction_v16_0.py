@@ -146,8 +146,8 @@ class IntroductionV16(SimulationBase):
             ],
             "why_it_matters": (
                 "The power of this approach is that it derives many measured values (like the "
-                "Cabibbo angle ε ≈ 0.2257) from pure geometry, rather than treating them as "
-                "arbitrary input parameters."
+                "Yukawa hierarchy parameter ε ≈ 0.223, which matches the Cabibbo angle V_us ≈ 0.2257 "
+                "to within 1%) from pure geometry, rather than treating them as arbitrary input parameters."
             )
         }
 

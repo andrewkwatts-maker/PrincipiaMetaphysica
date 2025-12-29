@@ -34,8 +34,9 @@
          * @private
          */
         getFormula(formulaId) {
-            if (!formulaId) {
-                console.warn('PMFormulaRenderer: Empty formula ID provided');
+            // Validate formulaId - check for null, undefined, empty string, and string "undefined"/"null"
+            if (!formulaId || formulaId === 'undefined' || formulaId === 'null') {
+                console.warn('PMFormulaRenderer: Invalid or empty formula ID provided:', formulaId);
                 return null;
             }
 

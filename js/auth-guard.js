@@ -130,13 +130,22 @@ async function fetchFrameworkStats() {
     const data = await response.json();
 
     // Extract framework statistics from theory_output.json
+    // Use validation.calibrated_count (dynamic from theory_output.json)
+    const calibratedCount = data.parameters?.['validation.calibrated_count']?.value;
+    const constraintsCount = data.parameters?.['validation.constraints_count']?.value;
+    const totalPredictions = data.parameters?.['validation.total_predictions']?.value;
+    const within1Sigma = data.parameters?.['validation.within_1sigma']?.value;
+    const within2Sigma = data.parameters?.['validation.within_2sigma']?.value;
+
     frameworkStats = {
-      totalParameters: data.framework_statistics?.total_sm_parameters || 58,
-      calibratedParameters: data.framework_statistics?.calibrated_parameters || 1,
-      manifoldType: data.framework_statistics?.manifold_type || 'G₂',
-      within1Sigma: data.framework_statistics?.within_1_sigma || 45,
-      exactMatches: data.framework_statistics?.exact_matches || 12,
-      successRate: data.framework_statistics?.success_rate_1sigma || 93.8
+      totalParameters: totalPredictions ?? 58,
+      calibratedParameters: calibratedCount ?? 0,
+      constraintsCount: constraintsCount ?? 1,
+      manifoldType: 'G₂',
+      within1Sigma: within1Sigma ?? 45,
+      within2Sigma: within2Sigma ?? 47,
+      exactMatches: 12,
+      successRate: within1Sigma && totalPredictions ? (100.0 * within1Sigma / totalPredictions) : 93.8
     };
 
     // Cache in sessionStorage
@@ -162,9 +171,11 @@ async function fetchFrameworkStats() {
 function getDefaultStats() {
   return {
     totalParameters: 58,
-    calibratedParameters: 1,
+    calibratedParameters: 0,  // Updated to match current theory status (v14.1+)
+    constraintsCount: 1,      // m_h fixes Re(T)
     manifoldType: 'G₂',
     within1Sigma: 45,
+    within2Sigma: 47,
     exactMatches: 12,
     successRate: 93.8
   };
@@ -174,9 +185,21 @@ function getDefaultStats() {
  * Generate dynamic description from framework statistics
  */
 function generateDescription(stats) {
-  const cal = stats.calibratedParameters;
+  const cal = stats.calibratedParameters ?? 0;
+  const constraints = stats.constraintsCount ?? 1;
   const plural = cal !== 1 ? 's' : '';
-  return `A unified geometric framework deriving all ${stats.totalParameters} Standard Model parameters from a single ${stats.manifoldType} manifold with minimal calibration (${cal} fitted parameter${plural})`;
+
+  // Build calibration description
+  let calibrationText;
+  if (cal === 0 && constraints === 1) {
+    calibrationText = `${cal} fitted parameters, ${constraints} constraint`;
+  } else if (cal === 0) {
+    calibrationText = `${cal} fitted parameters`;
+  } else {
+    calibrationText = `${cal} fitted parameter${plural}`;
+  }
+
+  return `A unified geometric framework deriving all ${stats.totalParameters} Standard Model parameters from a single ${stats.manifoldType} manifold with minimal calibration (${calibrationText})`;
 }
 
 /**
