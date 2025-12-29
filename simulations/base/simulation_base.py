@@ -33,8 +33,10 @@ class SimulationMetadata:
         domain: Domain category (e.g., "proton", "neutrino", "gauge")
         title: Human-readable title
         description: Detailed description of what the simulation computes
-        section_id: Paper section ID (e.g., "4", "4.6")
+        section_id: Paper section ID (e.g., "4", "4.6", "A", "B")
         subsection_id: Optional subsection ID
+        parent_section_id: Optional parent section (e.g., "8" for appendices)
+        section_type: Optional type hint ("main", "appendix", "supplementary")
     """
     id: str
     version: str
@@ -43,6 +45,8 @@ class SimulationMetadata:
     description: str
     section_id: str
     subsection_id: Optional[str] = None
+    parent_section_id: Optional[str] = None
+    section_type: Optional[str] = None
 
 
 @dataclass
@@ -84,13 +88,15 @@ class SectionContent:
     Complete content for a paper section.
 
     Attributes:
-        section_id: Section number (e.g., "4", "4.6")
+        section_id: Section number (e.g., "4", "4.6", "A", "B")
         subsection_id: Optional subsection identifier
         title: Section title
         abstract: Brief summary of the section
         content_blocks: List of content blocks in order
         formula_refs: List of formula IDs referenced in this section
         param_refs: List of parameter paths referenced in this section
+        parent_section_id: Optional parent section (e.g., "8" for appendices A-N)
+        section_type: Optional type hint ("main", "appendix", "supplementary")
     """
     section_id: str
     subsection_id: Optional[str]
@@ -99,6 +105,8 @@ class SectionContent:
     content_blocks: List[ContentBlock] = field(default_factory=list)
     formula_refs: List[str] = field(default_factory=list)
     param_refs: List[str] = field(default_factory=list)
+    parent_section_id: Optional[str] = None
+    section_type: Optional[str] = None
 
 
 @dataclass
