@@ -1,0 +1,9 @@
+{
+  "proof_id": "proton_lifetime",
+  "label": "Proton Lifetime tau_p",
+  "wl_code": "\n                MGUT = 2.1 * 10^16; (* GeV *)\n                alphaGUT = 1/24;\n                mp = 0.938; (* GeV *)\n                S = 2.125; (* Suppression factor *)\n                tau = (MGUT^4 / (alphaGUT^2 * mp^5)) * S^2;\n                (* Convert to years: 1 GeV^-1 = 6.58e-25 s *)\n                tauSec = tau * 6.58 * 10^(-25);\n                tauYears = tauSec / (3.154 * 10^7);\n                N[tauYears, 3]\n            ",
+  "result": "[Mock] ~10^35 years",
+  "hash": "db13e31707ca8726",
+  "timestamp": "2025-12-29T15:39:58.272227",
+  "verified": false
+}

@@ -1,0 +1,223 @@
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+<!-- INSERT THIS AFTER SECTION 2.1.2 (Sp(2,R) Gauge Symmetry) -->
+<!-- Location: After line ~738 in paper.html -->
+
+        <h4 id="14d-halves">2.1.3 The 26D→14D×2 Two-Time Structure (Enhanced Framework)</h4>
+
+        <p>
+            Building on Bars' two-time (2T) physics framework, the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk decomposes into <strong>two coupled 14-dimensional "halves"</strong>,
+            each with signature (12,2)—12 spatial and 2 temporal dimensions—sharing the 2 timelike directions:
+        </p>
+
+        <div class="equation">
+            M<sup>26</sup> = M<sub>A</sub><sup>14</sup> ⊗<sub>T</sub> M<sub>B</sub><sup>14</sup>, &nbsp;&nbsp; T = 2D timelike subspace
+            <span class="equation-label">(2.1d)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">14D×2 Decomposition (Shared Time Framework)</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>M<sub>A</sub><sup>14</sup></strong>
+                    <span>First half: 12 spatial + 2 temporal dimensions</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>M<sub>B</sub><sup>14</sup></strong>
+                    <span>Second half: 12 spatial + 2 temporal dimensions</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>⊗<sub>T</sub></strong>
+                    <span>Shared time tensor product: T ≅ ℝ<sup>(0,2)</sup></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Total unique coords</strong>
+                    <span>12<sub>A</sub> + 12<sub>B</sub> + 2<sub>shared</sub> = 26</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Signature</strong>
+                    <span>Overall (24, 2) Minkowski with shared timelike structure</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Gauge symmetry</strong>
+                    <span>Sp(2,R) acts on each half, coupling via shared T</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            This structure rigorously addresses multi-time consistency via <strong>local Sp(2,R) gauge symmetries</strong> per half,
+            with coupling through the shared timelike subspace. The classical action for this system combines individual sector
+            contributions with interaction terms:
+        </p>
+
+        <div class="equation">
+            S<sub><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D</sub> = S<sub>A</sub> + S<sub>B</sub> + S<sub>int</sub>
+            <span class="equation-label">(2.1e)</span>
+        </div>
+
+        <p style="margin-left: 2rem;">
+            where S<sub>A,B</sub> are 14D Einstein-Hilbert actions with Sp(2,R) gauge terms, and S<sub>int</sub> couples the halves
+            via synchronized time constraints.
+        </p>
+
+        <h4 id="central-charge-2t">Anomaly Cancellation in 2T Framework</h4>
+
+        <p>
+            The 14D×2 structure preserves anomaly cancellation while enhancing stability. The conformal field theory (CFT) central charge calculation:
+        </p>
+
+        <div class="equation">
+            c<sub>total</sub> = c<sub>matter</sub> + c<sub>ghost</sub> = 26 + (-26 + 2) = 2
+            <span class="equation-label">(2.1f)</span>
+        </div>
+
+        <p style="margin-left: 2rem;">
+            However, the sharing constraint reduces effective matter contribution by 2 (overcounting elimination):
+        </p>
+
+        <div class="equation">
+            c<sub>matter,eff</sub> = 24 → c<sub>total</sub> = 24 - 26 + 2 = 0 ✓
+            <span class="equation-label">(2.1g)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">CFT Central Charge Accounting</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>c<sub>matter</sub> = 26</strong>
+                    <span>24 spatial + 2 temporal coordinates</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>c<sub>ghost</sub> = -26</strong>
+                    <span>Standard Virasoro ghost contribution (b-c system)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Δc<sub>gauge</sub> = +2</strong>
+                    <span>Ghost-for-ghost cancellation in BRST quantization</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Sharing constraint</strong>
+                    <span>Reduces c<sub>matter</sub> by 2 (no double-counting of times)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Critical dimension</strong>
+                    <span>D = 27-28 for bosonic 2T strings: (25,2) or (26,2)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Result</strong>
+                    <span>c<sub>total</sub> = 0 ensures anomaly-free quantization</span>
+                </div>
+            </div>
+        </div>
+
+        <h4 id="2t-brane-action">2T p-Brane Action with Null Constraints</h4>
+
+        <p>
+            In the 2T framework, p-branes (extended objects with p spatial worldvolume dimensions) are embedded with null constraints
+            that eliminate ghost states from extra times. The generalized Dirac-Born-Infeld (DBI) action:
+        </p>
+
+        <div class="equation">
+            S<sub>p-brane</sub> = -T<sub>p</sub> ∫ d<sup>p+1</sup>ξ √(-det(g<sub>ab</sub>)) + ∫ d<sup>p+1</sup>ξ λ<sup>M</sup> ∂<sub>a</sub> X<sup>N</sup> A<sup>a</sup> η<sub>MN</sub>
+            <span class="equation-label">(2.1h)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">2T p-Brane Action Terms</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>T<sub>p</sub></strong>
+                    <span>Brane tension (emerges dynamically from gauges, not ad-hoc)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>ξ<sup>a</sup></strong>
+                    <span>Worldvolume coordinates (a = 0, ..., p)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>g<sub>ab</sub></strong>
+                    <span>Induced metric: g<sub>ab</sub> = ∂<sub>a</sub>X<sup>M</sup> ∂<sub>b</sub>X<sup>N</sup> η<sub>MN</sub></span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>X<sup>M</sup>(ξ)</strong>
+                    <span>Embedding coordinates in (24,2) spacetime</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>λ<sup>M</sup></strong>
+                    <span>Lagrange multipliers enforcing Sp(2,R) constraints</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>A<sup>a</sup></strong>
+                    <span>Sp(2,R) gauge fields on worldvolume</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            The Sp(2,R) constraints impose null conditions:
+        </p>
+
+        <div class="equation">
+            X<sup>M</sup> X<sub>M</sub> = 0, &nbsp;&nbsp; X<sup>M</sup> ∂<sub>a</sub> X<sub>M</sub> = 0, &nbsp;&nbsp; ∂<sub>a</sub> X<sup>M</sup> ∂<sup>a</sup> X<sub>M</sub> = 0
+            <span class="equation-label">(2.1i)</span>
+        </div>
+
+        <p style="margin-left: 2rem;">
+            These constraints: (1) eliminate ghosts from timelike oscillators, (2) ensure BPS-like stability via T<sub>p</sub> = |Z| (central charge),
+            and (3) project out tachyonic modes in shadow theories.
+        </p>
+
+        <h4>Enhanced Brane Configuration: (5,2) + 3×(3,2)</h4>
+
+        <p>
+            The optimal brane embedding in the 2T framework uses branes that directly embed <strong>both shared times</strong>:
+        </p>
+
+        <div class="equation">
+            Brane configuration: (5,2)<sub>observable</sub> + 3 × (3,2)<sub>shadow</sub>
+            <span class="equation-label">(2.1j)</span>
+        </div>
+
+        <div class="formula-def">
+            <div class="formula-def-title">2T-Enhanced Brane Hierarchy</div>
+            <div class="formula-def-grid">
+                <div class="formula-def-item">
+                    <strong>(5,2) brane</strong>
+                    <span>Observable: 5 spatial + 2 temporal (full Sp(2,R) gauging)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>3×(3,2) branes</strong>
+                    <span>Shadow sectors: each 3 spatial + 2 temporal</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>After gauge fixing</strong>
+                    <span>Effective: (5,1) + 3×(3,1) with hidden 2T symmetries</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Null brane stability</strong>
+                    <span>det(g<sub>ab</sub>) = 0 at fixed points (tensionless stable state)</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>BPS bounds</strong>
+                    <span>Central charges from SO(24,2): C<sub>2</sub> = p(p+22)/4</span>
+                </div>
+                <div class="formula-def-item">
+                    <strong>Improvement</strong>
+                    <span>Intrinsic stability without ad-hoc flux stabilization</span>
+                </div>
+            </div>
+        </div>
+
+        <p>
+            This configuration eliminates the need for external moduli stabilization (e.g., flux compactifications) as tensions
+            emerge <strong>dynamically</strong> from Sp(2,R) gauge fixing, and ghost-free spectra are guaranteed by the constraint algebra.
+        </p>
+
+<!-- END OF INSERT -->

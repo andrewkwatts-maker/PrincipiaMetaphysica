@@ -1,0 +1,713 @@
+/**
+ * Formula Metadata Display - Scientific Rigor Styling
+ * ====================================================
+ *
+ * Complete metadata display for formulas in Principia Metaphysica paper.
+ * Shows input/output parameters, derivations, experimental comparisons,
+ * and scientific context with expandable panels.
+ *
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+ */
+
+/* ========================================================================
+   EQUATION WRAPPER - Main container
+   ======================================================================== */
+
+.equation-wrapper.academic-equation {
+    margin: 2rem 0;
+    padding: 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(139, 127, 255, 0.15);
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.equation-wrapper.academic-equation:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(139, 127, 255, 0.25);
+}
+
+/* ========================================================================
+   EQUATION DISPLAY - Main formula with number
+   ======================================================================== */
+
+.equation-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem 2rem;
+    position: relative;
+    background: linear-gradient(135deg, rgba(139, 127, 255, 0.03), rgba(255, 255, 255, 0.01));
+}
+
+.equation-content {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2em;
+    color: var(--text-primary, #f8f9fa);
+}
+
+.equation-number {
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    color: rgba(139, 127, 255, 0.8);
+    font-family: 'Crimson Text', Georgia, serif;
+    font-weight: 600;
+}
+
+/* ========================================================================
+   PLAIN TEXT FALLBACK - For accessibility
+   ======================================================================== */
+
+.equation-plaintext {
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    font-family: 'Source Code Pro', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: rgba(163, 230, 53, 0.9);
+    text-align: center;
+    cursor: help;
+}
+
+/* ========================================================================
+   EQUATION TERMS - Parameter definitions
+   ======================================================================== */
+
+.equation-terms {
+    padding: 1rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.terms-intro {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+}
+
+.terms-intro i {
+    color: #8b7fff;
+    font-weight: 600;
+    font-family: 'Times New Roman', serif;
+    font-style: italic;
+}
+
+/* ========================================================================
+   EQUATION DISCUSSION - Description
+   ======================================================================== */
+
+.equation-discussion {
+    padding: 1rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.01);
+}
+
+.equation-discussion p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+    font-style: italic;
+}
+
+/* ========================================================================
+   METADATA PANEL - Expandable scientific information
+   ======================================================================== */
+
+.equation-metadata-panel {
+    border-top: 2px solid rgba(139, 127, 255, 0.2);
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.metadata-toggle {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0.9rem 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: rgba(139, 127, 255, 0.9);
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.metadata-toggle:hover {
+    background: rgba(139, 127, 255, 0.08);
+    color: #a394ff;
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8rem;
+    color: #8b7fff;
+}
+
+.equation-metadata-panel.expanded .toggle-icon {
+    transform: rotate(90deg);
+}
+
+.metadata-content {
+    display: none;
+    padding: 1.5rem 2rem 2rem;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.equation-metadata-panel.expanded .metadata-content {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 2000px;
+    }
+}
+
+/* ========================================================================
+   METADATA SECTIONS - Different types of metadata
+   ======================================================================== */
+
+.metadata-section {
+    margin-bottom: 1.5rem;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+    border-left: 4px solid rgba(139, 127, 255, 0.4);
+}
+
+.metadata-section:last-child {
+    margin-bottom: 0;
+}
+
+.metadata-section-title {
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #a394ff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Input Parameters */
+.metadata-inputs {
+    border-left-color: rgba(59, 130, 246, 0.6);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.metadata-inputs .metadata-section-title {
+    color: #60a5fa;
+}
+
+/* Output Parameters */
+.metadata-outputs {
+    border-left-color: rgba(251, 146, 60, 0.6);
+    background: linear-gradient(135deg, rgba(251, 146, 60, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.metadata-outputs .metadata-section-title {
+    color: #fb923c;
+}
+
+/* Derivation */
+.metadata-derivation {
+    border-left-color: rgba(74, 222, 128, 0.6);
+    background: linear-gradient(135deg, rgba(74, 222, 128, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.metadata-derivation .metadata-section-title {
+    color: #4ade80;
+}
+
+/* References */
+.metadata-references {
+    border-left-color: rgba(168, 85, 247, 0.6);
+    background: linear-gradient(135deg, rgba(168, 85, 247, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.metadata-references .metadata-section-title {
+    color: #a855f7;
+}
+
+/* Category */
+.metadata-category {
+    border-left-color: rgba(139, 127, 255, 0.6);
+}
+
+/* Values/Comparison */
+.metadata-values {
+    border-left-color: rgba(34, 197, 94, 0.6);
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.metadata-values .metadata-section-title {
+    color: #22c55e;
+}
+
+/* Notes */
+.metadata-notes {
+    border-left-color: rgba(255, 212, 59, 0.6);
+    background: linear-gradient(135deg, rgba(255, 212, 59, 0.05), rgba(255, 255, 255, 0.02));
+}
+
+.metadata-notes .metadata-section-title {
+    color: #ffd43b;
+}
+
+/* ========================================================================
+   PARAMETER LISTS
+   ======================================================================== */
+
+.param-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.param-item {
+    display: inline-block;
+}
+
+.param-link {
+    display: inline-block;
+    padding: 0.4rem 0.75rem;
+    background: rgba(139, 127, 255, 0.15);
+    border: 1px solid rgba(139, 127, 255, 0.3);
+    border-radius: 6px;
+    font-family: 'Source Code Pro', 'Fira Code', monospace;
+    font-size: 0.85rem;
+    color: #93c5fd;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.param-link:hover {
+    background: rgba(139, 127, 255, 0.25);
+    border-color: rgba(139, 127, 255, 0.5);
+    color: #bfdbfe;
+    transform: translateY(-1px);
+}
+
+/* Input parameter styling */
+.metadata-inputs .param-link {
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.3);
+    color: #93c5fd;
+}
+
+.metadata-inputs .param-link:hover {
+    background: rgba(59, 130, 246, 0.25);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+/* Output parameter styling */
+.metadata-outputs .param-link {
+    background: rgba(251, 146, 60, 0.15);
+    border-color: rgba(251, 146, 60, 0.3);
+    color: #fdba74;
+}
+
+.metadata-outputs .param-link:hover {
+    background: rgba(251, 146, 60, 0.25);
+    border-color: rgba(251, 146, 60, 0.5);
+}
+
+/* ========================================================================
+   DERIVATION STEPS
+   ======================================================================== */
+
+.derivation-steps {
+    list-style: none;
+    counter-reset: step-counter;
+    padding: 0;
+    margin: 0;
+}
+
+.derivation-step {
+    counter-increment: step-counter;
+    margin-bottom: 0.75rem;
+    padding-left: 2.5rem;
+    position: relative;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.derivation-step:last-child {
+    margin-bottom: 0;
+}
+
+.derivation-step::before {
+    content: counter(step-counter) ".";
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #4ade80;
+    width: 2rem;
+}
+
+/* ========================================================================
+   REFERENCE LIST
+   ======================================================================== */
+
+.reference-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.reference-item {
+    margin-bottom: 0.6rem;
+    padding-left: 1.25rem;
+    position: relative;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.reference-item:last-child {
+    margin-bottom: 0;
+}
+
+.reference-item::before {
+    content: "›";
+    position: absolute;
+    left: 0;
+    color: #a855f7;
+    font-weight: 700;
+}
+
+/* ========================================================================
+   CATEGORY BADGES
+   ======================================================================== */
+
+.category-badge {
+    display: inline-block;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.badge-desc {
+    margin: 0.5rem 0 0 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.badge-established {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid rgba(34, 197, 94, 0.4);
+}
+
+.badge-theory {
+    background: rgba(139, 127, 255, 0.2);
+    color: #8b7fff;
+    border: 1px solid rgba(139, 127, 255, 0.4);
+}
+
+.badge-derived {
+    background: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+}
+
+.badge-prediction {
+    background: rgba(255, 212, 59, 0.2);
+    color: #ffd43b;
+    border: 1px solid rgba(255, 212, 59, 0.4);
+}
+
+.badge-experimental {
+    background: rgba(251, 146, 60, 0.2);
+    color: #fb923c;
+    border: 1px solid rgba(251, 146, 60, 0.4);
+}
+
+/* ========================================================================
+   VALUE COMPARISON - Theory vs Experiment
+   ======================================================================== */
+
+.value-comparison {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.value-item {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    border-left: 3px solid rgba(139, 127, 255, 0.5);
+}
+
+.value-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+    min-width: 90px;
+}
+
+.value-number {
+    font-family: 'Source Code Pro', 'Fira Code', monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f8f9fa;
+}
+
+.value-units {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.value-computed {
+    border-left-color: rgba(59, 130, 246, 0.6);
+}
+
+.value-experimental {
+    border-left-color: rgba(251, 146, 60, 0.6);
+}
+
+.value-deviation {
+    border-left-color: rgba(168, 85, 247, 0.6);
+}
+
+.value-deviation.excellent .value-number {
+    color: #22c55e;
+}
+
+.value-deviation.good .value-number {
+    color: #ffd43b;
+}
+
+.value-deviation.fair .value-number {
+    color: #fb923c;
+}
+
+/* ========================================================================
+   NOTES SECTION
+   ======================================================================== */
+
+.metadata-notes-text {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========================================================================
+   EQUATION REFERENCE TOOLTIPS
+   ======================================================================== */
+
+.equation-ref {
+    color: #8b7fff;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(139, 127, 255, 0.5);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.equation-ref:hover {
+    color: #a394ff;
+    border-bottom-color: #a394ff;
+}
+
+.equation-tooltip {
+    position: fixed;
+    z-index: 10000;
+    background: rgba(26, 31, 58, 0.98);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border: 1px solid rgba(139, 127, 255, 0.4);
+    border-radius: 8px;
+    padding: 1rem;
+    max-width: 400px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+.tooltip-header {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #8b7fff;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.tooltip-latex {
+    padding: 0.75rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.tooltip-desc {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+
+.tooltip-hint {
+    font-size: 0.75rem;
+    color: rgba(139, 127, 255, 0.7);
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================================================
+   RESPONSIVE DESIGN
+   ======================================================================== */
+
+@media screen and (max-width: 768px) {
+    .equation-line {
+        padding: 1rem 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .equation-number {
+        position: static;
+        transform: none;
+        margin-top: 0.5rem;
+    }
+
+    .equation-plaintext {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .equation-terms,
+    .equation-discussion {
+        padding: 0.75rem 1.5rem;
+    }
+
+    .metadata-toggle {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.85rem;
+    }
+
+    .metadata-content {
+        padding: 1rem 1.5rem;
+    }
+
+    .metadata-section {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .value-comparison {
+        gap: 0.5rem;
+    }
+
+    .value-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.25rem;
+        padding: 0.5rem 0.75rem;
+    }
+
+    .equation-tooltip {
+        max-width: 300px;
+        padding: 0.75rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .equation-content {
+        font-size: 1em;
+    }
+
+    .param-list {
+        flex-direction: column;
+        gap: 0.35rem;
+    }
+
+    .param-link {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* ========================================================================
+   PRINT STYLES
+   ======================================================================== */
+
+@media print {
+    .equation-wrapper.academic-equation {
+        border: 1px solid #000;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .equation-metadata-panel {
+        border-top: 1px solid #000;
+    }
+
+    .metadata-toggle {
+        display: none;
+    }
+
+    .metadata-content {
+        display: block !important;
+        background: transparent;
+    }
+
+    .equation-tooltip {
+        display: none;
+    }
+
+    .badge,
+    .param-link,
+    .value-item {
+        border-color: #000;
+        background: transparent;
+    }
+}
