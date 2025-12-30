@@ -14,23 +14,19 @@
  * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
-// Import or use global FORMULA_REGISTRY
-let FORMULA_REGISTRY;
-
-// Check if running in Node.js or browser
-if (typeof window !== 'undefined') {
-    // Browser environment - registry should be loaded globally
-    FORMULA_REGISTRY = window.FORMULA_REGISTRY;
-}
+// Use global FORMULA_REGISTRY from formula-registry.js
+// Note: FORMULA_REGISTRY is declared globally in formula-registry.js, so we reference it directly
+// without re-declaring to avoid "Identifier already declared" errors
 
 /**
  * Find a formula by ID across all categories
  */
 function findFormula(id) {
-    if (!FORMULA_REGISTRY) return null;
+    const registry = window.FORMULA_REGISTRY;
+    if (!registry) return null;
 
     for (const category of ['ESTABLISHED', 'THEORY', 'DERIVED', 'PREDICTIONS']) {
-        const categoryFormulas = FORMULA_REGISTRY[category];
+        const categoryFormulas = registry[category];
         if (categoryFormulas && categoryFormulas[id]) {
             return {
                 formula: categoryFormulas[id],

@@ -11,5 +11,6 @@ Dedicated To:
 from .chirality_v16_0 import ChiralitySpinorSimulation
 from .fermion_generations_v16_0 import FermionGenerationsV16
 from .ckm_matrix_v16_0 import CKMMatrixSimulation
+from .muon_g2_anomaly_v16_1 import MuonG2AnomalySimulation
 
-__all__ = ['ChiralitySpinorSimulation', 'FermionGenerationsV16', 'CKMMatrixSimulation']
+__all__ = ['ChiralitySpinorSimulation', 'FermionGenerationsV16', 'CKMMatrixSimulation', 'MuonG2AnomalySimulation']

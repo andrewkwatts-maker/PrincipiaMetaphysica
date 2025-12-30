@@ -147,6 +147,28 @@ pip install numpy scipy sympy
 pip install wolframclient
 ```
 
+### Viewing the Website Locally
+
+The HTML documentation requires a local web server due to browser security (CORS) restrictions. Use one of these methods:
+
+**Method 1: Use the included server (Recommended)**
+```bash
+# Windows
+start_server.bat
+
+# Linux/Mac
+python serve.py
+```
+This will start a local server and automatically open the website in your browser.
+
+**Method 2: Python's built-in server**
+```bash
+python -m http.server 8000
+# Then open: http://localhost:8000/index.html
+```
+
+**Note:** Opening index.html directly (double-clicking) will NOT work due to browser security restrictions on loading local JSON files.
+
 ### Quick Start
 
 ```python

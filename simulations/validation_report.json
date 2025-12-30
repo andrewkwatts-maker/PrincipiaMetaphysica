@@ -1,16 +1,37 @@
 {
-  "timestamp": "2025-12-29T10:59:01.885217",
-  "duration_seconds": 0.055937,
-  "all_passed": true,
+  "timestamp": "2025-12-30T16:24:13.366701",
+  "duration_seconds": 2.475851,
+  "all_passed": false,
   "sections": {
+    "Simulations": {
+      "passed": true,
+      "details": {
+        "exit_code": 0,
+        "stdout_lines": 0,
+        "stderr_lines": 14
+      },
+      "errors": [],
+      "warnings": []
+    },
+    "Pytest Tests": {
+      "passed": false,
+      "details": {
+        "exit_code": 2,
+        "output_preview": "============================= test session starts =============================\nplatform win32 -- Python 3.13.9, pytest-8.4.1, pluggy-1.6.0 -- C:\\Users\\Andrew\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe\ncachedir: .pytest_cache\nrootdir: H:\\Github\\PrincipiaMetaphysica\nplugins: anyio-4.9.0, cov-6.2.1\ncollecting ... collected 3 items / 1 error\n\n=================================== ERRORS ====================================\n_____________________ E"
+      },
+      "errors": [
+        "Pytest failed with exit code 2"
+      ],
+      "warnings": []
+    },
     "Theory Output Structure": {
       "passed": true,
       "details": {
-        "file_size_kb": 614.193359375,
-        "parameters_count": 176,
-        "formulas_count": 91,
-        "sections_count": 9,
-        "provenance_entries": 176
+        "file_size_kb": 943.974609375,
+        "parameters_count": 222,
+        "formulas_count": 117,
+        "sections_count": 22,
+        "provenance_entries": 222
       },
       "errors": [],
       "warnings": []
@@ -34,9 +55,9 @@
     "Formula Metadata": {
       "passed": true,
       "details": {
-        "total_formulas": 91,
+        "total_formulas": 117,
         "formulas_with_errors": 0,
-        "formulas_with_warnings": 91
+        "formulas_with_warnings": 117
       },
       "errors": [],
       "warnings": [
@@ -45,12 +66,22 @@
         "betti-numbers: Missing recommended fields: domain",
         "three-generations: Missing recommended fields: domain",
         "cycle-matching: Missing recommended fields: domain",
+        "leech-dimension-uniqueness: Missing recommended fields: domain",
+        "g2-automorphism-relation: Missing recommended fields: domain",
+        "octonionic-partition: Missing recommended fields: domain",
+        "generation-theorem: Missing recommended fields: domain",
+        "dedekind-eta-definition: Missing recommended fields: domain",
+        "partition-function-eta: Missing recommended fields: domain",
+        "vacuum-energy-formula: Missing recommended fields: domain",
+        "modular-anomaly-condition: Missing recommended fields: domain",
+        "critical-dimension: Missing recommended fields: domain",
         "gauge-initial-conditions: Missing recommended fields: domain",
         "kk-threshold: Missing recommended fields: domain",
         "asymptotic-safety-fixed-point: Missing recommended fields: domain",
         "gut-scale: Missing recommended fields: domain",
         "gauge-coupling-unification: Missing recommended fields: domain",
         "gauge-rg-evolution: Missing recommended fields: domain",
+        "alpha-inverse-geometric: Missing recommended fields: domain",
         "generation-number: Missing recommended fields: domain",
         "yukawa-texture: Missing recommended fields: domain",
         "pneuma-chiral-filter: Missing recommended fields: domain",
@@ -70,6 +101,7 @@
         "higgs-quartic-coupling: Missing recommended fields: domain",
         "racetrack-potential: Missing recommended fields: domain",
         "doublet-triplet-splitting: Missing recommended fields: domain",
+        "mass-ratio-geometric: Missing recommended fields: domain",
         "metric-13D: Missing recommended fields: domain",
         "einstein-hilbert-14D: Missing recommended fields: domain",
         "sp2r-constraint: Missing recommended fields: domain",
@@ -80,21 +112,36 @@
         "effective-dimension: Missing recommended fields: domain",
         "dark-energy-eos-derivation: Missing recommended fields: domain",
         "dark-energy-time-evolution: Missing recommended fields: domain",
+        "s8-definition: Missing recommended fields: domain",
+        "growth-rate-equation: Missing recommended fields: domain",
+        "pm-dark-energy-density: Missing recommended fields: domain",
+        "growth-suppression-factor: Missing recommended fields: domain",
+        "s8-prediction-pm: Missing recommended fields: domain",
+        "ricci-flow-equation: Missing recommended fields: domain",
+        "effective-curvature-evolution: Missing recommended fields: domain",
+        "hubble-evolution-ode: Missing recommended fields: domain",
+        "hubble-tension-resolution: Missing recommended fields: domain",
         "pmns-theta-13: Missing recommended fields: domain",
         "pmns-delta-cp: Missing recommended fields: domain",
         "pmns-theta-12: Missing recommended fields: domain",
         "pmns-theta-23: Missing recommended fields: domain",
         "neutrino-mass-spectrum: Missing recommended fields: domain",
+        "neutrino-mass-sum: Missing recommended fields: domain",
         "dark-energy-eos: Missing recommended fields: domain",
         "moduli-potential: Missing recommended fields: domain",
         "sector-temperature-ratio: Missing recommended fields: domain",
         "dark-matter-abundance: Missing recommended fields: domain",
+        "g2-entropy-density: Missing recommended fields: domain",
+        "cosmological-constant-geometric: Missing recommended fields: domain",
+        "vacuum-energy-density: Missing recommended fields: domain",
+        "lambda-hierarchy: Missing recommended fields: domain",
         "pneuma-lagrangian: Missing recommended fields: domain",
         "pneuma-flow: Missing recommended fields: domain",
         "modular-hamiltonian: Missing recommended fields: domain",
         "thermal-flow: Missing recommended fields: domain",
         "entropy-gradient: Missing recommended fields: domain",
         "alpha-t-derivation: Missing recommended fields: domain",
+        "orch-or-coherence-time: Missing recommended fields: domain",
         "g2-holonomy-condition: Missing recommended fields: domain",
         "associative-calibration: Missing recommended fields: domain",
         "coassociative-calibration: Missing recommended fields: domain",
@@ -136,8 +183,8 @@
     "Parameter Provenance": {
       "passed": true,
       "details": {
-        "total_parameters": 176,
-        "parameters_with_provenance": 176,
+        "total_parameters": 222,
+        "parameters_with_provenance": 222,
         "parameters_missing_fields": 0,
         "parameters_without_provenance": 0
       },
@@ -147,8 +194,8 @@
     "AutoGenerated JSON Files": {
       "passed": true,
       "details": {
-        "total_files": 40,
-        "valid_files": 40,
+        "total_files": 46,
+        "valid_files": 46,
         "invalid_files": 0
       },
       "errors": [],
@@ -156,9 +203,9 @@
     }
   },
   "summary": {
-    "total_checks": 5,
-    "passed": 5,
-    "failed": 0,
-    "warnings": 91
+    "total_checks": 7,
+    "passed": 6,
+    "failed": 1,
+    "warnings": 117
   }
 }
