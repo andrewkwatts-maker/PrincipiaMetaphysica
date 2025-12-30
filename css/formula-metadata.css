@@ -167,6 +167,15 @@
     animation: slideDown 0.3s ease;
 }
 
+/* Paper mode: always show metadata without toggle */
+.equation-metadata-panel.always-expanded .metadata-content {
+    display: block;
+}
+
+.equation-metadata-panel.always-expanded {
+    border-top: none;
+}
+
 @keyframes slideDown {
     from {
         opacity: 0;

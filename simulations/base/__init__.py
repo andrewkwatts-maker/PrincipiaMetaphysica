@@ -17,6 +17,7 @@ Metaphysica simulation framework. It includes:
 - Validation: Schema-based validation for simulations and data
 - Injection: Utilities for injecting computed results into the registry
 - Schema: Comprehensive return schema for v16 simulations
+- Units: Unit conversion utilities (Planck, SI, cosmological, HEP)
 """
 
 from .simulation_base import (
@@ -62,6 +63,29 @@ from .schema import (
     SIMULATION_RESULT_SCHEMA,
     validate_simulation_result,
     SchemaCompliantSimulation,
+)
+
+# Unit conversion utilities
+from .units import (
+    PhysicalConstants,
+    CONST,
+    UnitValidator,
+    # Cosmological
+    MPC_IN_M,
+    MPC_IN_KM,
+    hubble_time_gyr,
+    hubble_distance_mpc,
+    # HEP
+    GEV_IN_J,
+    gev_to_kg,
+    kg_to_gev,
+    # Planck
+    planck_to_si,
+    si_to_planck,
+    planck_to_gev,
+    # Cross-system
+    planck_length_to_mpc,
+    mpc_to_planck_length,
 )
 
 # Aliases for backward compatibility
@@ -112,6 +136,23 @@ __all__ = [
     # Aliases
     'Reference',
     'Foundation',
+
+    # Unit conversions
+    'PhysicalConstants',
+    'CONST',
+    'UnitValidator',
+    'MPC_IN_M',
+    'MPC_IN_KM',
+    'GEV_IN_J',
+    'hubble_time_gyr',
+    'hubble_distance_mpc',
+    'gev_to_kg',
+    'kg_to_gev',
+    'planck_to_si',
+    'si_to_planck',
+    'planck_to_gev',
+    'planck_length_to_mpc',
+    'mpc_to_planck_length',
 ]
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"

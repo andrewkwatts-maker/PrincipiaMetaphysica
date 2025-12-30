@@ -1209,11 +1209,8 @@
         );
 
         if (hasMetadata) {
-            html += '<div class="equation-metadata-panel">';
-            html += '<button class="metadata-toggle" onclick="this.parentElement.classList.toggle(\'expanded\');">';
-            html += '<span class="toggle-icon">▸</span>';
-            html += '<span class="toggle-text">Show formula metadata and derivation</span>';
-            html += '</button>';
+            // Paper mode: always show metadata expanded (no toggle)
+            html += '<div class="equation-metadata-panel always-expanded">';
             html += '<div class="metadata-content">';
 
             // Input/Output Parameters - compact grid layout

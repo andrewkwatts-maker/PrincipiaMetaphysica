@@ -1936,14 +1936,29 @@
 
             console.log(`[PARAMETERS] ✓ Rendered ${totalRendered} parameters in ${Object.keys(parametersByCategory).length} categories`);
 
-            // Trigger MathJax rendering
-            if (window.MathJax) {
+            // Trigger MathJax rendering (with proper check for async loading)
+            if (window.MathJax && typeof window.MathJax.typesetPromise === 'function') {
                 console.log('[PARAMETERS] Triggering MathJax typeset...');
                 MathJax.typesetPromise().then(() => {
                     console.log('[PARAMETERS] ✓ MathJax typeset complete');
                 }).catch(err => {
                     console.warn('[PARAMETERS] MathJax typeset error:', err);
                 });
+            } else if (window.MathJax) {
+                // MathJax is loading but typesetPromise not ready - wait and retry
+                console.log('[PARAMETERS] MathJax loading, waiting for typesetPromise...');
+                const checkMathJax = setInterval(() => {
+                    if (typeof window.MathJax.typesetPromise === 'function') {
+                        clearInterval(checkMathJax);
+                        window.MathJax.typesetPromise().then(() => {
+                            console.log('[PARAMETERS] ✓ MathJax typeset complete (delayed)');
+                        }).catch(err => {
+                            console.warn('[PARAMETERS] MathJax typeset error:', err);
+                        });
+                    }
+                }, 100);
+                // Clear after 5 seconds to prevent infinite loop
+                setTimeout(() => clearInterval(checkMathJax), 5000);
             }
         }
 

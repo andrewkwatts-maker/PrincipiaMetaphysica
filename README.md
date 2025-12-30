@@ -21,6 +21,22 @@ Six critical mathematical issues have been resolved: (1) Generation count correc
 
 ---
 
+## The Octonionic Constraint: Why 3 Generations?
+
+Principia Metaphysica v16.1 demonstrates that the 3 generations of matter are not arbitrary parameters but **topological necessities**.
+
+- **Vacuum Capacity:** The G₂ manifold has a transverse dimensionality of 24 (the third Betti number b₃ = 24), representing the total "capacity" for independent matter modes.
+- **Matter Structure:** The fundamental degrees of freedom are defined by the Octonions (𝕆), which have dimension 8. This reflects the 8-brane structure of the two-time framework.
+- **The Partition Limit:** N_gen = Vacuum Dim / Field Dim = 24 / 8 = **3**
+
+This is not a fitted parameter—it is a consequence of dividing the G₂ manifold's topological capacity by the octonionic field dimension. The number 3 emerges from pure geometry.
+
+## Modular Invariance
+
+The framework exhibits modular invariance through the Dedekind eta function η(τ), ensuring consistency of the partition function under modular transformations. This connects the geometric structure to string-theoretic consistency conditions.
+
+---
+
 ## Quick Start
 
 ### Making Parameter Changes

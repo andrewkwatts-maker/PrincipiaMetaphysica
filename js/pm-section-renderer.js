@@ -569,11 +569,14 @@ class PMSectionRenderer extends HTMLElement {
                 `);
 
             case 'callout':
-                const children = (block.children || []).map(c => this.renderContentBlockHTML(c)).join('');
+                // Handle both content (direct text) and children (nested blocks)
+                const calloutContent = block.content ? this.processTextContent(block.content) : '';
+                const calloutChildren = (block.children || []).map(c => this.renderContentBlockHTML(c)).join('');
                 return wrapExpandable(`
-                    <aside class="callout callout-${block.calloutType}">
+                    <aside class="callout callout-${block.calloutType || 'info'}">
                         ${block.title ? `<h4>${block.title}</h4>` : ''}
-                        ${children}
+                        ${calloutContent}
+                        ${calloutChildren}
                     </aside>
                 `);
 
@@ -588,10 +591,13 @@ class PMSectionRenderer extends HTMLElement {
                 `);
 
             case 'panel':
+                // Handle both content (direct text) and children (nested blocks)
+                const panelContent = block.content ? this.processTextContent(block.content) : '';
                 const panelChildren = (block.children || []).map(c => this.renderContentBlockHTML(c)).join('');
                 return wrapExpandable(`
                     <div class="content-panel">
                         ${block.title ? `<h4 class="panel-title">${block.title}</h4>` : ''}
+                        ${panelContent}
                         ${panelChildren}
                     </div>
                 `);
@@ -641,6 +647,29 @@ class PMSectionRenderer extends HTMLElement {
                 const subsectionId = block.label || '';
                 const subsectionContent = this.processTextContent(block.content || '');
                 return `<h3 class="subsection-title" id="${subsectionId}">${subsectionContent}</h3>`;
+
+            case 'code':
+                // Code blocks with syntax highlighting
+                const language = block.language || 'text';
+                const codeContent = block.content || block.code || '';
+                return wrapExpandable(`
+                    <div class="code-block">
+                        ${block.title ? `<div class="code-title">${block.title}</div>` : ''}
+                        <pre class="code-content" data-language="${language}"><code>${this.escapeHTML(codeContent)}</code></pre>
+                    </div>
+                `);
+
+            case 'info_box':
+                // Information boxes with optional icon and styling
+                const infoContent = this.processTextContent(block.content || '');
+                const infoType = block.infoType || 'info'; // info, warning, tip, note
+                const infoChildren = (block.children || []).map(c => this.renderContentBlockHTML(c)).join('');
+                return wrapExpandable(`
+                    <aside class="info-box info-box-${infoType}">
+                        ${block.title ? `<h4 class="info-box-title">${block.title}</h4>` : ''}
+                        <div class="info-box-content">${infoContent}${infoChildren}</div>
+                    </aside>
+                `);
 
             default:
                 console.warn(`Unknown block type: ${block.type}`, block);
@@ -1145,6 +1174,78 @@ class PMSectionRenderer extends HTMLElement {
                 color: #6b5dd3;
                 font-weight: 600;
                 font-size: 0.9rem;
+            }
+
+            /* Code blocks */
+            .code-block {
+                background: #1e1e2e;
+                border: 1px solid rgba(139, 127, 255, 0.2);
+                border-radius: 8px;
+                margin: 1.5rem 0;
+                overflow: hidden;
+            }
+
+            .code-block .code-title {
+                background: rgba(139, 127, 255, 0.15);
+                padding: 0.5rem 1rem;
+                font-size: 0.85rem;
+                color: #a3a3a3;
+                border-bottom: 1px solid rgba(139, 127, 255, 0.2);
+            }
+
+            .code-block .code-content {
+                margin: 0;
+                padding: 1rem;
+                font-family: 'Fira Code', 'Source Code Pro', monospace;
+                font-size: 0.9rem;
+                line-height: 1.6;
+                color: #e0e0e0;
+                overflow-x: auto;
+            }
+
+            .code-block code {
+                background: transparent;
+                padding: 0;
+            }
+
+            /* Info boxes */
+            .info-box {
+                background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(99, 102, 241, 0.08));
+                border-left: 4px solid #3b82f6;
+                padding: 1.25rem 1.5rem;
+                border-radius: 0 8px 8px 0;
+                margin: 1.5rem 0;
+                color: #1a1a1a;
+            }
+
+            .info-box-warning {
+                background: linear-gradient(135deg, rgba(245, 158, 11, 0.12), rgba(251, 191, 36, 0.08));
+                border-left-color: #f59e0b;
+            }
+
+            .info-box-tip {
+                background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(52, 211, 153, 0.08));
+                border-left-color: #10b981;
+            }
+
+            .info-box-note {
+                background: linear-gradient(135deg, rgba(139, 127, 255, 0.12), rgba(167, 139, 250, 0.08));
+                border-left-color: #8b7fff;
+            }
+
+            .info-box-title {
+                color: #3b82f6;
+                margin: 0 0 0.75rem 0;
+                font-size: 1rem;
+                font-weight: 600;
+            }
+
+            .info-box-warning .info-box-title { color: #f59e0b; }
+            .info-box-tip .info-box-title { color: #10b981; }
+            .info-box-note .info-box-title { color: #8b7fff; }
+
+            .info-box-content {
+                line-height: 1.7;
             }
 
             .derivation-box ol {
