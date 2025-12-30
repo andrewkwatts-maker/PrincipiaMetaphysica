@@ -1,7 +1,7 @@
 {
   "version": "16.0",
-  "generated": "2025-12-30T06:24:11.507245Z",
-  "total_scripts": 54,
+  "generated": "2025-12-30T09:36:54.787480Z",
+  "total_scripts": 57,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -34,11 +34,35 @@
           "status": null
         },
         {
+          "file": "appendix_d_sp2r_invariance_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_sp2r_invariance_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "appendix_d_tables_v16_0.py",
           "path": "simulations/v16/appendices/appendix_d_tables_v16_0.py",
           "version": "16.0",
           "title": "Appendix D: Comprehensive Parameter Tables",
           "description": "Complete listing of all physical constants, experimental inputs, geometric parameters, and theory predictions with sources.",
+          "status": null
+        },
+        {
+          "file": "appendix_d_unitarity_proofs_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_unitarity_proofs_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_d_weyl_anomaly_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_weyl_anomaly_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         },
         {
@@ -122,7 +146,7 @@
           "status": null
         }
       ],
-      "count": 14
+      "count": 17
     },
     "v16/cosmology": {
       "title": "Cosmology",

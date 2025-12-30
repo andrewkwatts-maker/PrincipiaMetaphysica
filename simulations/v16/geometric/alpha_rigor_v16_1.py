@@ -56,7 +56,7 @@ class AlphaRigorSolver:
         Derive S3 projection volume from first principles.
         Not hardcoded - computed from geometric formula.
 
-        S3 volume factor from G2 compactification (11D -> 4D reduction).
+        S3 volume factor from G₂ compactification (PM: 26D→13D→6D→4D via G₂ 7-manifold).
         Formula: S3_proj = 2 * (pi**2) / 6.682
 
         Returns:
@@ -242,7 +242,7 @@ if SCHEMA_AVAILABLE:
                             "Start with b3 = 24 from Joyce-Karigiannis TCS manifold",
                             "Compute k_gimel = b3/2 + 1/pi = 12.318309 (Holonomy Precision Limit)",
                             "Compute C_kaf = b3*(b3-7)/(b3-9) = 27.2",
-                            "Derive S3 projection: S3_proj = 2*(pi^2)/6.682 = 2.954060 (11D->4D reduction)",
+                            "Derive S3 projection: S3_proj = 2*(pi^2)/6.682 = 2.954060 (G₂ 7D→4D reduction)",
                             "Evaluate: alpha^-1 = (27.2 * 576) / (12.318309 * pi * 2.954060) = 137.036"
                         ],
                         "references": ["CODATA 2022: alpha^-1 = 137.035999"]

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--
+    Firebase References System - Integration Example
+
+    This file demonstrates how to integrate the firebase-references.js module
+    into both the references page and the main paper.
+
+    Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References System - Integration Example</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <style>
+        .example-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border-radius: 8px;
+            border: 1px solid var(--border-primary);
+        }
+
+        .example-section h3 {
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .code-block {
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-primary);
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+        }
+
+        .inline-citation {
+            color: var(--accent-secondary);
+            cursor: pointer;
+        }
+
+        .inline-citation:hover {
+            text-decoration: underline;
+        }
+
+        .ref-preview {
+            margin-top: 1rem;
+            padding: 1rem;
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+
+        button {
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+        }
+
+        button:hover {
+            background: var(--accent-secondary);
+        }
+
+        .status {
+            padding: 0.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        .status.success {
+            background: rgba(80, 200, 120, 0.2);
+            color: #50c878;
+        }
+
+        .status.error {
+            background: rgba(255, 100, 100, 0.2);
+            color: #ff6464;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Firebase References System - Integration Example</h1>
+        <p>Demonstrates loading and rendering academic references from Firestore</p>
+    </header>
+
+    <main>
+        <!-- Example 1: Load All References -->
+        <section class="example-section">
+            <h3>Example 1: Load All References</h3>
+            <p>Load all references from Firestore and display summary statistics.</p>
+            <button onclick="loadAllReferencesExample()">Load All References</button>
+            <div id="all-refs-status" class="status" style="display: none;"></div>
+            <div id="all-refs-result"></div>
+        </section>
+
+        <!-- Example 2: Load by Category -->
+        <section class="example-section">
+            <h3>Example 2: Load References by Category</h3>
+            <p>Load references from a specific category (e.g., Geometry & Topology).</p>
+            <select id="category-select">
+                <option value="geometry-topology">Geometry & Topology</option>
+                <option value="string-m-theory">String Theory & M-Theory</option>
+                <option value="cosmology">Cosmology & Dark Energy</option>
+                <option value="quantum-field-theory">Quantum Field Theory</option>
+            </select>
+            <button onclick="loadByCategoryExample()">Load Category</button>
+            <div id="category-status" class="status" style="display: none;"></div>
+            <div id="category-result"></div>
+        </section>
+
+        <!-- Example 3: Citation Key Lookup -->
+        <section class="example-section">
+            <h3>Example 3: Citation Key Lookup</h3>
+            <p>Look up a reference by its citation key (e.g., "Einstein 1915").</p>
+            <input type="text" id="citation-input" placeholder="Enter citation key (e.g., Einstein 1915)" style="width: 300px; padding: 0.5rem;">
+            <button onclick="citationLookupExample()">Look Up</button>
+            <div id="citation-status" class="status" style="display: none;"></div>
+            <div id="citation-result"></div>
+        </section>
+
+        <!-- Example 4: Inline Citations -->
+        <section class="example-section">
+            <h3>Example 4: Inline Citations (Paper Style)</h3>
+            <p>Replace citation keys with linked references in text:</p>
+            <div style="padding: 1rem; background: var(--bg-secondary); border-radius: 4px; margin: 1rem 0;">
+                <p>
+                    The framework uses G₂ manifold compactifications
+                    <span class="citation-key">[Joyce 2000]</span> via M-theory
+                    <span class="citation-key">[Acharya 1998]</span>. The dimensional flow
+                    follows from bosonic string theory and the Einstein-Hilbert action
+                    <span class="citation-key">[Einstein 1915]</span>.
+                </p>
+            </div>
+            <button onclick="replaceCitationsExample()">Replace Citations</button>
+            <div id="inline-status" class="status" style="display: none;"></div>
+        </section>
+
+        <!-- Example 5: Full Reference Rendering -->
+        <section class="example-section">
+            <h3>Example 5: Full Reference Rendering</h3>
+            <p>Render a complete reference (as shown on references.html).</p>
+            <input type="text" id="ref-id-input" placeholder="Reference ID (e.g., joyce2000)" style="width: 300px; padding: 0.5rem;">
+            <button onclick="renderFullRefExample()">Render Reference</button>
+            <div id="render-status" class="status" style="display: none;"></div>
+            <div id="render-result" class="ref-preview"></div>
+        </section>
+
+        <!-- Example 6: BibTeX Export -->
+        <section class="example-section">
+            <h3>Example 6: BibTeX Export</h3>
+            <p>Generate and copy BibTeX citation to clipboard.</p>
+            <input type="text" id="bibtex-id-input" placeholder="Reference ID (e.g., einstein1915)" style="width: 300px; padding: 0.5rem;">
+            <button onclick="getBibTeXExample()">Get BibTeX</button>
+            <button onclick="copyBibTeXExample()">Copy to Clipboard</button>
+            <div id="bibtex-status" class="status" style="display: none;"></div>
+            <div id="bibtex-result" class="code-block" style="display: none;"></div>
+        </section>
+
+        <!-- Example 7: Search References -->
+        <section class="example-section">
+            <h3>Example 7: Search References</h3>
+            <p>Search references by author, title, or keywords.</p>
+            <input type="text" id="search-input" placeholder="Search (e.g., G₂ manifold)" style="width: 300px; padding: 0.5rem;">
+            <button onclick="searchReferencesExample()">Search</button>
+            <div id="search-status" class="status" style="display: none;"></div>
+            <div id="search-result"></div>
+        </section>
+
+        <!-- Example 8: Render All References (Full Page) -->
+        <section class="example-section">
+            <h3>Example 8: Render All References (Full Page)</h3>
+            <p>Render all references grouped by category (as on references.html).</p>
+            <button onclick="renderAllReferencesExample()">Render All References</button>
+            <div id="render-all-status" class="status" style="display: none;"></div>
+            <div id="render-all-result"></div>
+        </section>
+    </main>
+
+    <script type="module">
+        import {
+            loadAllReferences,
+            loadReference,
+            loadReferencesByCategory,
+            loadReferenceByCitation,
+            searchReferences,
+            renderFullReference,
+            renderInlineCitation,
+            renderAllReferences,
+            getBibTeX,
+            copyBibTeXToClipboard,
+            initializeReferences
+        } from '../js/firebase-references.js';
+
+        // Make functions available globally for onclick handlers
+        window.loadAllReferencesExample = async function() {
+            const statusEl = document.getElementById('all-refs-status');
+            const resultEl = document.getElementById('all-refs-result');
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Loading...';
+
+            try {
+                const refs = await loadAllReferences();
+
+                statusEl.className = 'status success';
+                statusEl.textContent = `✓ Loaded ${refs.length} references`;
+
+                // Show summary
+                const byCategory = {};
+                refs.forEach(ref => {
+                    byCategory[ref.category] = (byCategory[ref.category] || 0) + 1;
+                });
+
+                resultEl.innerHTML = `
+                    <h4>Summary:</h4>
+                    <ul>
+                        ${Object.entries(byCategory).map(([cat, count]) =>
+                            `<li>${cat}: ${count} references</li>`
+                        ).join('')}
+                    </ul>
+                `;
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.loadByCategoryExample = async function() {
+            const category = document.getElementById('category-select').value;
+            const statusEl = document.getElementById('category-status');
+            const resultEl = document.getElementById('category-result');
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Loading...';
+
+            try {
+                const refs = await loadReferencesByCategory(category);
+
+                statusEl.className = 'status success';
+                statusEl.textContent = `✓ Loaded ${refs.length} references`;
+
+                resultEl.innerHTML = `
+                    <h4>References:</h4>
+                    <ul>
+                        ${refs.slice(0, 5).map(ref =>
+                            `<li><strong>${ref.citation_key}</strong>: ${ref.title}</li>`
+                        ).join('')}
+                        ${refs.length > 5 ? `<li><em>... and ${refs.length - 5} more</em></li>` : ''}
+                    </ul>
+                `;
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.citationLookupExample = async function() {
+            const citationKey = document.getElementById('citation-input').value;
+            const statusEl = document.getElementById('citation-status');
+            const resultEl = document.getElementById('citation-result');
+
+            if (!citationKey) {
+                statusEl.style.display = 'block';
+                statusEl.className = 'status error';
+                statusEl.textContent = '✗ Please enter a citation key';
+                return;
+            }
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Looking up...';
+
+            try {
+                const ref = await loadReferenceByCitation(citationKey);
+
+                if (ref) {
+                    statusEl.className = 'status success';
+                    statusEl.textContent = `✓ Found reference: ${ref.id}`;
+
+                    resultEl.innerHTML = `
+                        <div class="ref-preview">
+                            <strong>${ref.citation_key}</strong><br>
+                            <em>${ref.title}</em><br>
+                            ${ref.authors}<br>
+                            ${ref.journal}
+                        </div>
+                    `;
+                } else {
+                    statusEl.className = 'status error';
+                    statusEl.textContent = `✗ Citation key "${citationKey}" not found`;
+                    resultEl.innerHTML = '';
+                }
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.replaceCitationsExample = async function() {
+            const statusEl = document.getElementById('inline-status');
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Replacing citations...';
+
+            try {
+                const citationElements = document.querySelectorAll('.citation-key');
+                let replaced = 0;
+
+                for (const el of citationElements) {
+                    const citationKey = el.textContent.replace(/[\[\]]/g, '').trim();
+                    const ref = await loadReferenceByCitation(citationKey);
+
+                    if (ref) {
+                        const citation = renderInlineCitation(ref, { link: true });
+                        el.replaceWith(citation);
+                        replaced++;
+                    }
+                }
+
+                statusEl.className = 'status success';
+                statusEl.textContent = `✓ Replaced ${replaced} citations`;
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.renderFullRefExample = async function() {
+            const refId = document.getElementById('ref-id-input').value;
+            const statusEl = document.getElementById('render-status');
+            const resultEl = document.getElementById('render-result');
+
+            if (!refId) {
+                statusEl.style.display = 'block';
+                statusEl.className = 'status error';
+                statusEl.textContent = '✗ Please enter a reference ID';
+                return;
+            }
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Loading...';
+
+            try {
+                const ref = await loadReference(refId);
+
+                if (ref) {
+                    statusEl.className = 'status success';
+                    statusEl.textContent = `✓ Reference loaded: ${ref.citation_key}`;
+
+                    resultEl.innerHTML = '';
+                    const refElement = renderFullReference(ref);
+                    resultEl.appendChild(refElement);
+                } else {
+                    statusEl.className = 'status error';
+                    statusEl.textContent = `✗ Reference "${refId}" not found`;
+                    resultEl.innerHTML = '';
+                }
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.getBibTeXExample = async function() {
+            const refId = document.getElementById('bibtex-id-input').value;
+            const statusEl = document.getElementById('bibtex-status');
+            const resultEl = document.getElementById('bibtex-result');
+
+            if (!refId) {
+                statusEl.style.display = 'block';
+                statusEl.className = 'status error';
+                statusEl.textContent = '✗ Please enter a reference ID';
+                return;
+            }
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Loading...';
+
+            try {
+                const ref = await loadReference(refId);
+
+                if (ref) {
+                    const bibtex = getBibTeX(ref);
+
+                    statusEl.className = 'status success';
+                    statusEl.textContent = `✓ BibTeX generated`;
+
+                    resultEl.style.display = 'block';
+                    resultEl.textContent = bibtex;
+                } else {
+                    statusEl.className = 'status error';
+                    statusEl.textContent = `✗ Reference "${refId}" not found`;
+                    resultEl.style.display = 'none';
+                }
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.copyBibTeXExample = async function() {
+            const refId = document.getElementById('bibtex-id-input').value;
+            const statusEl = document.getElementById('bibtex-status');
+
+            if (!refId) {
+                statusEl.style.display = 'block';
+                statusEl.className = 'status error';
+                statusEl.textContent = '✗ Please enter a reference ID';
+                return;
+            }
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Copying...';
+
+            try {
+                const success = await copyBibTeXToClipboard(refId);
+
+                if (success) {
+                    statusEl.className = 'status success';
+                    statusEl.textContent = `✓ BibTeX copied to clipboard!`;
+                } else {
+                    statusEl.className = 'status error';
+                    statusEl.textContent = `✗ Failed to copy to clipboard`;
+                }
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.searchReferencesExample = async function() {
+            const searchText = document.getElementById('search-input').value;
+            const statusEl = document.getElementById('search-status');
+            const resultEl = document.getElementById('search-result');
+
+            if (!searchText) {
+                statusEl.style.display = 'block';
+                statusEl.className = 'status error';
+                statusEl.textContent = '✗ Please enter search text';
+                return;
+            }
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Searching...';
+
+            try {
+                const results = await searchReferences(searchText);
+
+                statusEl.className = 'status success';
+                statusEl.textContent = `✓ Found ${results.length} results`;
+
+                resultEl.innerHTML = `
+                    <h4>Search Results:</h4>
+                    <ul>
+                        ${results.slice(0, 10).map(ref =>
+                            `<li><strong>${ref.citation_key}</strong>: ${ref.title}</li>`
+                        ).join('')}
+                        ${results.length > 10 ? `<li><em>... and ${results.length - 10} more</em></li>` : ''}
+                    </ul>
+                `;
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        window.renderAllReferencesExample = async function() {
+            const statusEl = document.getElementById('render-all-status');
+            const resultEl = document.getElementById('render-all-result');
+
+            statusEl.style.display = 'block';
+            statusEl.className = 'status';
+            statusEl.textContent = 'Loading and rendering all references...';
+
+            try {
+                resultEl.innerHTML = '';
+                await renderAllReferences(resultEl);
+
+                statusEl.className = 'status success';
+                statusEl.textContent = `✓ All references rendered successfully`;
+            } catch (error) {
+                statusEl.className = 'status error';
+                statusEl.textContent = `✗ Error: ${error.message}`;
+            }
+        };
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            console.log('Initializing references module...');
+            try {
+                await initializeReferences();
+                console.log('References module initialized successfully');
+            } catch (error) {
+                console.error('Failed to initialize references:', error);
+            }
+        });
+    </script>
+</body>
+</html>

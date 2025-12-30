@@ -164,7 +164,7 @@ PAPER_SECTIONS: Dict[str, SectionInfo] = {
     "F": SectionInfo(
         id="F",
         title="Dimensional Decomposition",
-        description="11D to 4D reduction details",
+        description="26D to 4D reduction via 13D shadow (PM chain: 26D→13D→6D→4D)",
         section_type="appendix"
     ),
     "G": SectionInfo(

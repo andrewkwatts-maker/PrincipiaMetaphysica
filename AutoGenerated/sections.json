@@ -648,7 +648,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-30T16:24:11.355915"
+      "timestamp": "2025-12-30T19:36:54.627380"
     },
     "2": {
       "id": "2",
@@ -1480,7 +1480,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-30T16:24:11.390962"
+      "timestamp": "2025-12-30T19:36:54.662406"
     },
     "3": {
       "id": "3",
@@ -1538,7 +1538,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-30T16:24:11.387209"
+      "timestamp": "2025-12-30T19:36:54.658356"
     },
     "4": {
       "id": "4",
@@ -1700,7 +1700,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-30T16:24:11.390658"
+      "timestamp": "2025-12-30T19:36:54.662057"
     },
     "5": {
       "id": "5",
@@ -1836,7 +1836,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2025-12-30T16:24:11.390838"
+      "timestamp": "2025-12-30T19:36:54.662268"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -1964,7 +1964,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-30T16:24:11.391007"
+      "timestamp": "2025-12-30T19:36:54.662461"
     },
     "7": {
       "id": "7",
@@ -3133,7 +3133,7 @@
           "rows": [
             [
               "Principia Metaphysica",
-              "11D (TCS G₂)",
+              "26D → 13D → 4D via G₂",
               "G₂ holonomy manifold with torsion",
               "Near-term (2027-2030s)"
             ],
@@ -4342,7 +4342,7 @@
           "rows": [
             [
               "Principia Metaphysica",
-              "11D (TCS G₂)",
+              "26D → 13D → 4D via G₂",
               "G₂ holonomy manifold with torsion",
               "Near-term (2027-2030s)"
             ],
@@ -4398,7 +4398,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-30T16:24:11.391152"
+      "timestamp": "2025-12-30T19:36:54.662640"
     },
     "6": {
       "id": "6",
@@ -6544,7 +6544,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-30T16:24:11.391235"
+      "timestamp": "2025-12-30T19:36:54.662740"
     },
     "A": {
       "id": "2",
@@ -6976,7 +6976,7 @@
         "dimensions.D_after_sp2r",
         "dimensions.D_observable"
       ],
-      "timestamp": "2025-12-30T16:24:11.391270"
+      "timestamp": "2025-12-30T19:36:54.662787"
     },
     "B": {
       "id": "2",
@@ -7576,7 +7576,7 @@
         "methods.convergence_criterion",
         "methods.n_kk_modes"
       ],
-      "timestamp": "2025-12-30T16:24:11.391328"
+      "timestamp": "2025-12-30T19:36:54.662861"
     },
     "C": {
       "id": "3",
@@ -8086,7 +8086,7 @@
         "topology.K_MATCHING",
         "gauge.M_GUT"
       ],
-      "timestamp": "2025-12-30T16:24:11.391374"
+      "timestamp": "2025-12-30T19:36:54.662920"
     },
     "D": {
       "id": "6",
@@ -8246,7 +8246,7 @@
         "gauge.M_GUT",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-30T16:24:11.391434"
+      "timestamp": "2025-12-30T19:36:54.662992"
     },
     "E": {
       "id": "4",
@@ -8454,7 +8454,7 @@
         "proton_decay.tau_p_years",
         "topology.cycle_separation"
       ],
-      "timestamp": "2025-12-30T16:24:11.391464"
+      "timestamp": "2025-12-30T19:36:54.663027"
     },
     "F": {
       "id": "2",
@@ -8513,6 +8513,44 @@
         },
         {
           "type": "subsection",
+          "content": "F.2.1 13D Effective Lagrangian (after Sp(2,R))"
+        },
+        {
+          "type": "paragraph",
+          "content": "After Sp(2,R) gauge fixing, the 26D master action reduces to a 13D effective Lagrangian. The fermion representation reorganizes from 8192-dimensional Pneuma spinor to a 64-dimensional representation of Spin(12,1):"
+        },
+        {
+          "type": "formula",
+          "content": "\\mathcal{L}_{13D} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}}",
+          "formula_id": "lagrangian-13d-effective",
+          "label": "(F.3a)",
+          "equationNumber": "(F.3a)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The effective mass m_eff arises from the gauge-fixing procedure and the dilaton stabilization. The flux Lagrangian L_flux contains G-form contributions quantized through the b3 = 24 associative cycles."
+        },
+        {
+          "type": "subsection",
+          "content": "F.2.2 Intermediate Action Reduction (Step-by-Step)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The reduction from 26D to 13D proceeds through the following steps:\n\n**Step 1**: Start with 26D action S_26 with (24,2) signature\n**Step 2**: Introduce Sp(2,R) gauge-fixing action:\n"
+        },
+        {
+          "type": "formula",
+          "content": "S_{\\text{gf}} = \\int d^{26}x \\left[ \\lambda (X \\cdot P) + \\zeta (X^2 - \\tau^2) \\right]",
+          "formula_id": "sp2r-gauge-fixing-action",
+          "label": "(F.3b)",
+          "equationNumber": "(F.3b)"
+        },
+        {
+          "type": "paragraph",
+          "content": "**Step 3**: Impose constraints X.P = 0, X^2 = tau^2, eliminating 13 DOF\n**Step 4**: Project spinor representation: 8192 -> 64 (Clifford reduction)\n**Step 5**: Integrate out unphysical modes, yielding L_13D\n\nThe Lagrange multipliers lambda and zeta enforce the first-class constraints, each removing 2 phase space degrees of freedom."
+        },
+        {
+          "type": "subsection",
           "content": "F.3 G₂ Compactification"
         },
         {
@@ -8558,7 +8596,59 @@
         },
         {
           "type": "subsection",
-          "content": "F.5 Simulation Code"
+          "content": "F.5 Formal Symplectic Constraint Derivation"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Sp(2,ℝ) gauge symmetry arises from the symplectic structure of the extended phase space. Here we provide the formal derivation connecting the constraint structure to dimensional reduction."
+        },
+        {
+          "type": "paragraph",
+          "content": "**Symplectic Structure**: The extended phase space (X^M, P_M) with M = 0,...,25 carries a natural symplectic 2-form:"
+        },
+        {
+          "type": "formula",
+          "content": "\\omega = dX^M \\wedge dP_M = \\sum_{M=0}^{25} dX^M \\wedge dP_M",
+          "formula_id": "symplectic-form",
+          "label": "(F.6)",
+          "equationNumber": "(F.6)"
+        },
+        {
+          "type": "paragraph",
+          "content": "**Sp(2,ℝ) Generators**: The three generators of Sp(2,ℝ) are constructed from the phase space variables:"
+        },
+        {
+          "type": "formula",
+          "content": "J_0 = \\frac{1}{2}(X \\cdot P + P \\cdot X), \\quad J_+ = \\frac{1}{2}X^2, \\quad J_- = \\frac{1}{2}P^2",
+          "formula_id": "sp2r-generators-formal",
+          "label": "(F.7)",
+          "equationNumber": "(F.7)"
+        },
+        {
+          "type": "paragraph",
+          "content": "These satisfy the sp(2,ℝ) ≅ sl(2,ℝ) algebra:\n- {J_0, J_+} = J_+\n- {J_0, J_-} = -J_-\n- {J_+, J_-} = 2J_0\n\nwhere {·,·} denotes the Poisson bracket."
+        },
+        {
+          "type": "paragraph",
+          "content": "**First-Class Constraints**: Setting J_0 = J_+ = J_- = 0 gives first-class constraints (they commute weakly). Each first-class constraint removes 2 phase space DOF: one from the constraint equation, one from gauge freedom."
+        },
+        {
+          "type": "formula",
+          "content": "\\text{dim}(\\mathcal{M}_{\\text{phys}}) = \\text{dim}(\\mathcal{M}_{\\text{ext}}) - 2 \\times (\\text{number of first-class constraints})",
+          "label": "(F.8)",
+          "equationNumber": "(F.8)"
+        },
+        {
+          "type": "paragraph",
+          "content": "**Coordinate Space Reduction**: In the extended phase space formulation, the constraint X · P = 0 implies that position and momentum are orthogonal in the (24,2) metric. Combined with the mass-shell constraints X² = 0 and P² = 0, this projects the 26D bulk onto a 13D hypersurface."
+        },
+        {
+          "type": "paragraph",
+          "content": "**Physical Time Selection**: The gauge fixing procedure selects thermodynamic time t_therm as the physical time coordinate. The orthogonal time τ becomes pure gauge, with all configurations differing only in τ identified as physically equivalent. This eliminates CTCs (see Appendix D')."
+        },
+        {
+          "type": "subsection",
+          "content": "F.6 Simulation Code"
         },
         {
           "type": "code",
@@ -8614,6 +8704,44 @@
         },
         {
           "type": "subsection",
+          "content": "F.2.1 13D Effective Lagrangian (after Sp(2,R))"
+        },
+        {
+          "type": "paragraph",
+          "content": "After Sp(2,R) gauge fixing, the 26D master action reduces to a 13D effective Lagrangian. The fermion representation reorganizes from 8192-dimensional Pneuma spinor to a 64-dimensional representation of Spin(12,1):"
+        },
+        {
+          "type": "formula",
+          "content": "\\mathcal{L}_{13D} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}}",
+          "formula_id": "lagrangian-13d-effective",
+          "label": "(F.3a)",
+          "equationNumber": "(F.3a)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The effective mass m_eff arises from the gauge-fixing procedure and the dilaton stabilization. The flux Lagrangian L_flux contains G-form contributions quantized through the b3 = 24 associative cycles."
+        },
+        {
+          "type": "subsection",
+          "content": "F.2.2 Intermediate Action Reduction (Step-by-Step)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The reduction from 26D to 13D proceeds through the following steps:\n\n**Step 1**: Start with 26D action S_26 with (24,2) signature\n**Step 2**: Introduce Sp(2,R) gauge-fixing action:\n"
+        },
+        {
+          "type": "formula",
+          "content": "S_{\\text{gf}} = \\int d^{26}x \\left[ \\lambda (X \\cdot P) + \\zeta (X^2 - \\tau^2) \\right]",
+          "formula_id": "sp2r-gauge-fixing-action",
+          "label": "(F.3b)",
+          "equationNumber": "(F.3b)"
+        },
+        {
+          "type": "paragraph",
+          "content": "**Step 3**: Impose constraints X.P = 0, X^2 = tau^2, eliminating 13 DOF\n**Step 4**: Project spinor representation: 8192 -> 64 (Clifford reduction)\n**Step 5**: Integrate out unphysical modes, yielding L_13D\n\nThe Lagrange multipliers lambda and zeta enforce the first-class constraints, each removing 2 phase space degrees of freedom."
+        },
+        {
+          "type": "subsection",
           "content": "F.3 G₂ Compactification"
         },
         {
@@ -8659,7 +8787,59 @@
         },
         {
           "type": "subsection",
-          "content": "F.5 Simulation Code"
+          "content": "F.5 Formal Symplectic Constraint Derivation"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Sp(2,ℝ) gauge symmetry arises from the symplectic structure of the extended phase space. Here we provide the formal derivation connecting the constraint structure to dimensional reduction."
+        },
+        {
+          "type": "paragraph",
+          "content": "**Symplectic Structure**: The extended phase space (X^M, P_M) with M = 0,...,25 carries a natural symplectic 2-form:"
+        },
+        {
+          "type": "formula",
+          "content": "\\omega = dX^M \\wedge dP_M = \\sum_{M=0}^{25} dX^M \\wedge dP_M",
+          "formula_id": "symplectic-form",
+          "label": "(F.6)",
+          "equationNumber": "(F.6)"
+        },
+        {
+          "type": "paragraph",
+          "content": "**Sp(2,ℝ) Generators**: The three generators of Sp(2,ℝ) are constructed from the phase space variables:"
+        },
+        {
+          "type": "formula",
+          "content": "J_0 = \\frac{1}{2}(X \\cdot P + P \\cdot X), \\quad J_+ = \\frac{1}{2}X^2, \\quad J_- = \\frac{1}{2}P^2",
+          "formula_id": "sp2r-generators-formal",
+          "label": "(F.7)",
+          "equationNumber": "(F.7)"
+        },
+        {
+          "type": "paragraph",
+          "content": "These satisfy the sp(2,ℝ) ≅ sl(2,ℝ) algebra:\n- {J_0, J_+} = J_+\n- {J_0, J_-} = -J_-\n- {J_+, J_-} = 2J_0\n\nwhere {·,·} denotes the Poisson bracket."
+        },
+        {
+          "type": "paragraph",
+          "content": "**First-Class Constraints**: Setting J_0 = J_+ = J_- = 0 gives first-class constraints (they commute weakly). Each first-class constraint removes 2 phase space DOF: one from the constraint equation, one from gauge freedom."
+        },
+        {
+          "type": "formula",
+          "content": "\\text{dim}(\\mathcal{M}_{\\text{phys}}) = \\text{dim}(\\mathcal{M}_{\\text{ext}}) - 2 \\times (\\text{number of first-class constraints})",
+          "label": "(F.8)",
+          "equationNumber": "(F.8)"
+        },
+        {
+          "type": "paragraph",
+          "content": "**Coordinate Space Reduction**: In the extended phase space formulation, the constraint X · P = 0 implies that position and momentum are orthogonal in the (24,2) metric. Combined with the mass-shell constraints X² = 0 and P² = 0, this projects the 26D bulk onto a 13D hypersurface."
+        },
+        {
+          "type": "paragraph",
+          "content": "**Physical Time Selection**: The gauge fixing procedure selects thermodynamic time t_therm as the physical time coordinate. The orthogonal time τ becomes pure gauge, with all configurations differing only in τ identified as physically equivalent. This eliminates CTCs (see Appendix D')."
+        },
+        {
+          "type": "subsection",
+          "content": "F.6 Simulation Code"
         },
         {
           "type": "code",
@@ -8671,7 +8851,9 @@
       "formulaRefs": [
         "sp2r-gauge-constraint",
         "shadow-reduction",
-        "orientation-sum"
+        "orientation-sum",
+        "symplectic-form",
+        "sp2r-generators-formal"
       ],
       "paramRefs": [
         "dimensions.bulk_signature",
@@ -8682,7 +8864,9 @@
       "formula_refs": [
         "sp2r-gauge-constraint",
         "shadow-reduction",
-        "orientation-sum"
+        "orientation-sum",
+        "symplectic-form",
+        "sp2r-generators-formal"
       ],
       "param_refs": [
         "dimensions.bulk_signature",
@@ -8690,7 +8874,7 @@
         "dimensions.orientation_sum",
         "topology.b3"
       ],
-      "timestamp": "2025-12-30T16:24:11.391506"
+      "timestamp": "2025-12-30T19:36:54.663082"
     },
     "G": {
       "id": "2",
@@ -8838,7 +9022,7 @@
         "topology.N_flux",
         "topology.T_omega"
       ],
-      "timestamp": "2025-12-30T16:24:11.391547"
+      "timestamp": "2025-12-30T19:36:54.663129"
     },
     "H": {
       "id": "4",
@@ -8944,7 +9128,7 @@
         "dimensions.orientation_sum",
         "proton_decay.BR_e_pi0"
       ],
-      "timestamp": "2025-12-30T16:24:11.391581"
+      "timestamp": "2025-12-30T19:36:54.663166"
     },
     "I": {
       "id": "6",
@@ -9134,7 +9318,7 @@
         "gw_dispersion.eta",
         "gw_dispersion.M_GW"
       ],
-      "timestamp": "2025-12-30T16:24:11.391610"
+      "timestamp": "2025-12-30T19:36:54.663198"
     },
     "J": {
       "id": "2",
@@ -9478,7 +9662,7 @@
         "cosmology.w0_derived",
         "cosmology.wa_derived"
       ],
-      "timestamp": "2025-12-30T16:24:11.402676"
+      "timestamp": "2025-12-30T19:36:54.674667"
     },
     "K": {
       "id": "7",
@@ -10030,7 +10214,7 @@
         "pdg.m_higgs",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-30T16:24:11.402739"
+      "timestamp": "2025-12-30T19:36:54.674748"
     },
     "L": {
       "id": "6",
@@ -10918,7 +11102,7 @@
         "pdg.m_bottom",
         "pdg.m_tau"
       ],
-      "timestamp": "2025-12-30T16:24:11.402914"
+      "timestamp": "2025-12-30T19:36:54.674803"
     },
     "M": {
       "id": "6",
@@ -11246,7 +11430,7 @@
         "consciousness.tau_collapse_ms",
         "consciousness.f_base_hz"
       ],
-      "timestamp": "2025-12-30T16:24:11.402970"
+      "timestamp": "2025-12-30T19:36:54.674862"
     },
     "N": {
       "id": "2",
@@ -11886,7 +12070,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-30T16:24:11.403022"
+      "timestamp": "2025-12-30T19:36:54.674917"
     }
   }
 }

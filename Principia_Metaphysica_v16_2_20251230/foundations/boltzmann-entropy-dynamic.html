@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+
+    DYNAMIC VERSION - Loads content from theory_output.json
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Boltzmann Entropy - Learn the statistical foundation of thermodynamics with diagrams, explanations, and educational resources">
+    <title>Boltzmann Entropy - Foundational Physics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+    <script src="../js/pm-foundation-page.js"></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'Boltzmann Entropy'
+            });
+        });
+    </script>
+</head>
+<body class="auth-loading" data-pm-foundation-auto-load>
+    <div id="main-content" style="display: none;">
+
+    <main id="foundation-content">
+
+        <!-- Hero Section (dynamically populated) -->
+        <div id="foundation-hero" class="equation-hero"></div>
+
+        <!-- Key Properties Section (dynamically populated) -->
+        <section id="key-properties" class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(255, 179, 71, 0.03)); border-left: 4px solid #ff7eb6;">
+            <!-- Will be populated by pm-foundation-page.js -->
+        </section>
+
+        <!-- Expandable Formula List (dynamically populated) -->
+        <div id="formula-list">
+            <!-- Will be populated by pm-foundation-page.js -->
+        </div>
+
+        <!-- Visual Diagram (static content - can be kept or made dynamic later) -->
+        <section class="subsection">
+            <h2>Visual Understanding: Microstates and Entropy</h2>
+            <p>Boltzmann's equation connects the microscopic world of particle arrangements to the macroscopic concept of entropy:</p>
+
+            <svg width="100%" height="500" viewBox="0 0 900 500" style="background: rgba(255, 126, 182, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <linearGradient id="lowEntropyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#51cf66;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#51cf66;stop-opacity:0.05" />
+                    </linearGradient>
+                    <linearGradient id="highEntropyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0.05" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Low Entropy State (Ordered) -->
+                <g>
+                    <rect x="30" y="30" width="380" height="210" fill="url(#lowEntropyGrad)" stroke="#51cf66" stroke-width="3" rx="10"/>
+                    <text x="220" y="60" text-anchor="middle" fill="#51cf66" font-size="20" font-weight="bold">LOW ENTROPY (Ordered)</text>
+
+                    <!-- Ordered particles in a grid -->
+                    <circle cx="100" cy="100" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="150" cy="100" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="200" cy="100" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="250" cy="100" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="300" cy="100" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="350" cy="100" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+
+                    <circle cx="100" cy="150" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="150" cy="150" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="200" cy="150" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="250" cy="150" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="300" cy="150" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="350" cy="150" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+
+                    <circle cx="100" cy="200" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="150" cy="200" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="200" cy="200" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="250" cy="200" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="300" cy="200" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+                    <circle cx="350" cy="200" r="12" fill="#4facfe" stroke="#2d7dcc" stroke-width="2"/>
+
+                    <text x="220" y="230" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">&Omega; &asymp; 1 (few microstates)</text>
+                </g>
+
+                <!-- High Entropy State (Disordered) -->
+                <g>
+                    <rect x="490" y="30" width="380" height="210" fill="url(#highEntropyGrad)" stroke="#ff7eb6" stroke-width="3" rx="10"/>
+                    <text x="680" y="60" text-anchor="middle" fill="#ff7eb6" font-size="20" font-weight="bold">HIGH ENTROPY (Disordered)</text>
+
+                    <!-- Random particles -->
+                    <circle cx="530" cy="85" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="590" cy="120" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="650" cy="95" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="710" cy="140" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="770" cy="105" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="830" cy="125" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+
+                    <circle cx="520" cy="175" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="610" cy="190" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="680" cy="165" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="735" cy="205" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="800" cy="180" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="845" cy="195" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+
+                    <circle cx="555" cy="140" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="625" cy="160" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="695" cy="210" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="755" cy="170" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="815" cy="150" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <circle cx="565" cy="205" r="12" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+
+                    <text x="680" y="230" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">&Omega; &gt;&gt; 1 (many microstates)</text>
+                </g>
+
+                <!-- Arrow showing entropy increase -->
+                <g>
+                    <path d="M 420 135 L 480 135" stroke="#8b7fff" stroke-width="4" marker-end="url(#arrowhead2)"/>
+                    <text x="450" y="125" text-anchor="middle" fill="#8b7fff" font-size="16" font-weight="bold">Time</text>
+                    <text x="450" y="160" text-anchor="middle" fill="#8b7fff" font-size="14">S increases</text>
+                </g>
+
+                <!-- Phase Space Representation -->
+                <g>
+                    <text x="450" y="280" text-anchor="middle" fill="var(--text-primary)" font-size="20" font-weight="bold">Phase Space Volume</text>
+
+                    <!-- Low entropy - small volume -->
+                    <rect x="150" y="300" width="100" height="100" fill="none" stroke="#51cf66" stroke-width="3" rx="5"/>
+                    <circle cx="200" cy="350" r="8" fill="#51cf66" opacity="0.8"/>
+                    <circle cx="210" cy="340" r="8" fill="#51cf66" opacity="0.8"/>
+                    <circle cx="190" cy="360" r="8" fill="#51cf66" opacity="0.8"/>
+                    <text x="200" y="425" text-anchor="middle" fill="#51cf66" font-size="14" font-weight="600">Small volume</text>
+                    <text x="200" y="445" text-anchor="middle" fill="var(--text-secondary)" font-size="13">Low entropy</text>
+
+                    <!-- High entropy - large volume -->
+                    <rect x="550" y="280" width="200" height="160" fill="none" stroke="#ff7eb6" stroke-width="3" rx="5"/>
+                    <circle cx="580" cy="310" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="620" cy="330" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="660" cy="320" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="700" cy="350" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="590" cy="370" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="640" cy="390" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="690" cy="380" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="730" cy="400" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="610" cy="410" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="670" cy="420" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="720" cy="360" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <circle cx="580" cy="340" r="6" fill="#ff7eb6" opacity="0.6"/>
+                    <text x="650" y="460" text-anchor="middle" fill="#ff7eb6" font-size="14" font-weight="600">Large volume</text>
+                    <text x="650" y="480" text-anchor="middle" fill="var(--text-secondary)" font-size="13">High entropy</text>
+                </g>
+
+                <!-- Equation -->
+                <text x="450" y="40" text-anchor="middle" fill="var(--accent-primary)" font-size="22" font-weight="bold">
+                    S = k<tspan font-size="16" baseline-shift="sub">B</tspan> ln &Omega;
+                </text>
+
+                <defs>
+                    <marker id="arrowhead2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#8b7fff" />
+                    </marker>
+                </defs>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                The number of ways to arrange particles increases dramatically as they become disordered. Entropy (S) measures this increase logarithmically.
+            </p>
+        </section>
+
+        <!-- PM Connection Section (dynamically populated) -->
+        <section id="pm-connection" class="subsection">
+            <!-- Will be populated by pm-foundation-page.js -->
+        </section>
+
+        <!-- Where This Is Used in PM (dynamically populated) -->
+        <section id="pm-usage" class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <!-- Will be populated by pm-foundation-page.js -->
+        </section>
+
+        <!-- Navigation -->
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="../Pages/foundations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="einstein-field-equations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Einstein Field Equations &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+    </div>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff7eb6, #ffb347);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #51cf66;
+        }
+        .highlight-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <script type="module">
+        import { setupAuthGuard } from '../js/auth-guard.js';
+        setupAuthGuard('foundations-boltzmann-entropy');
+    </script>
+</body>
+</html>

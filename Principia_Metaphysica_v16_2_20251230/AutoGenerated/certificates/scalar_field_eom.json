@@ -1,0 +1,9 @@
+{
+  "proof_id": "scalar_field_eom",
+  "label": "Scalar Field EoM",
+  "wl_code": "\n                Needs[\"VariationalMethods`\"];\n                L = (1/2) * D[phi[x, t], t]^2 - (1/2) * D[phi[x, t], x]^2 - V[phi[x, t]];\n                EulerEquations[L, phi[x, t], {x, t}]\n            ",
+  "result": "[Mock] D[phi,{t,2}] - D[phi,{x,2}] + V'[phi] == 0",
+  "hash": "73dc772ca2af0669",
+  "timestamp": "2025-12-29T08:47:05.046176",
+  "verified": false
+}

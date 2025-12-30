@@ -65,7 +65,7 @@ def generate_compactification_scales(output_path: str = "../../images/compactifi
 
     Shows the scale hierarchy from Planck scale down to electroweak scale,
     indicating where different physics becomes relevant:
-    - Planck scale: 10^19 GeV / 10^-35 m (quantum gravity, 11D unified)
+    - Planck scale: 10^19 GeV / 10^-35 m (quantum gravity, PM: 26D unified)
     - GUT scale: 10^16 GeV / 10^-32 m (gauge unification)
     - Intermediate scale: Compactification becomes important
     - Electroweak scale: 10^2 GeV / 10^-18 m (Standard Model)
@@ -116,9 +116,9 @@ def generate_compactification_scales(output_path: str = "../../images/compactifi
             "energy": r"$10^{19}$ GeV",
             "length": r"$\ell_{Pl} \sim 10^{-35}$ m",
             "name": "Planck Scale",
-            "description": "Quantum gravity\n11D unified (14D total)",
+            "description": "Quantum gravity\n26D unified (PM framework)",
             "color": PM_COLORS["purple"],
-            "dimensions": "14D",
+            "dimensions": "26D",
         },
         {
             "y": 7.0,
@@ -127,7 +127,7 @@ def generate_compactification_scales(output_path: str = "../../images/compactifi
             "name": "GUT Scale",
             "description": "Gauge unification\n$SU(3) \\times SU(2) \\times U(1)$ merge",
             "color": PM_COLORS["dark_purple"],
-            "dimensions": "11D",
+            "dimensions": "13D→6D",
         },
         {
             "y": 5.0,

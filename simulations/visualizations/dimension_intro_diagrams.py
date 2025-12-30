@@ -196,9 +196,9 @@ def generate_dimension_analogy(output_path: str = "../../images/dimension-analog
                                   facecolor='white',
                                   edgecolor=PM_COLORS["purple"],
                                   linewidth=1.5))
-    ax3.text(8.25, -2.2, "4D + 7D = 11D", fontsize=10, ha='center',
+    ax3.text(8.25, -2.2, "4D + 7D G₂ internal", fontsize=10, ha='center',
             fontweight='bold', color=PM_COLORS["dark_purple"])
-    ax3.text(8.25, -2.6, "(G$_2$ holonomy)", fontsize=9, ha='center',
+    ax3.text(8.25, -2.6, "(PM: 26D→13D→6D→4D)", fontsize=9, ha='center',
             color=PM_COLORS["text_light"])
 
     # Annotation
@@ -229,7 +229,7 @@ def generate_kaluza_klein_intro(output_path: str = "../../images/kaluza-klein-in
     Shows:
     - 5D to 4D+1 compactification (original Kaluza-Klein)
     - How gauge fields emerge from geometry
-    - PM extension to 11D with G2 holonomy
+    - PM extension: 26D → G₂ holonomy → 4D
     """
     set_publication_style()
     fig, axes = plt.subplots(1, 2, figsize=(14, 6))
@@ -297,26 +297,26 @@ def generate_kaluza_klein_intro(output_path: str = "../../images/kaluza-klein-in
     ax1.set_title("Classic Kaluza-Klein (1921-1926)", fontsize=14,
                  fontweight='bold', color=PM_COLORS["text"], pad=10)
 
-    # === Panel 2: PM Extension (11D -> 4D + G2) ===
+    # === Panel 2: PM Extension (26D -> 13D -> 4D + G2) ===
     ax2 = axes[1]
     ax2.set_xlim(-2, 12)
     ax2.set_ylim(-4, 4)
     ax2.set_aspect('equal')
     ax2.axis('off')
 
-    # 11D total spacetime
+    # 26D total spacetime (PM framework)
     ax2.add_patch(FancyBboxPatch((-1, -2), 5, 4,
                                   boxstyle="round,pad=0.1",
                                   facecolor=PM_COLORS["light_purple"],
                                   edgecolor=PM_COLORS["purple"],
                                   alpha=0.5, linewidth=2))
-    ax2.text(1.5, 2.5, "11D Total", fontsize=12, ha='center',
+    ax2.text(1.5, 2.5, "26D Total", fontsize=12, ha='center',
             fontweight='bold', color=PM_COLORS["purple"])
-    ax2.text(1.5, 1.7, r"$M^{11}$", fontsize=11, ha='center',
+    ax2.text(1.5, 1.7, r"$M^{26}_{(24,2)}$", fontsize=11, ha='center',
             color=PM_COLORS["dark_purple"])
 
-    # Breakdown inside the 11D box
-    ax2.text(1.5, 0.3, "= 4D + 7D", fontsize=10, ha='center',
+    # Breakdown inside the 26D box
+    ax2.text(1.5, 0.3, "→ 13D → 6D → 4D", fontsize=10, ha='center',
             color=PM_COLORS["text"])
     ax2.text(1.5, -0.5, r"$M^4 \times X^7$", fontsize=10, ha='center',
             color=PM_COLORS["text_light"])
@@ -386,11 +386,11 @@ def generate_kaluza_klein_intro(output_path: str = "../../images/kaluza-klein-in
     ax2.text(5.75, -3.5, r"Compactification scale: $\ell_{G_2} \sim \ell_{Pl}$",
             fontsize=10, ha='center', color=PM_COLORS["text_light"], style='italic')
 
-    ax2.set_title("PM: 11D with G$_2$ Holonomy", fontsize=14,
+    ax2.set_title("PM: 26D with G$_2$ Holonomy", fontsize=14,
                  fontweight='bold', color=PM_COLORS["text"], pad=10)
 
     # Main title
-    fig.suptitle("Kaluza-Klein Compactification: From 5D to 11D", fontsize=16,
+    fig.suptitle("Kaluza-Klein Compactification: From 5D to PM's 26D", fontsize=16,
                 fontweight='bold', y=1.02, color=PM_COLORS["text"])
 
     plt.tight_layout()

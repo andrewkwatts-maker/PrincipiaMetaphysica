@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "source": "DESI Collaboration",
+    "paper": "DESI 2024 VII: Cosmological Constraints from Full-Shape Analysis",
+    "arxiv": "2411.12022",
+    "data_url": "https://data.desi.lbl.gov/public/papers/y1-kp/",
+    "retrieved": "2025-01-15",
+    "notes": "Values from BAO+CMB+PantheonPlus combined analysis",
+    "license": "DESI Public Data Release"
+  },
+  "cosmological_parameters": {
+    "w0": {
+      "value": -0.7280,
+      "uncertainty_plus": 0.067,
+      "uncertainty_minus": 0.067,
+      "units": "dimensionless",
+      "description": "Dark energy equation of state at z=0 (CPL parameterization)",
+      "table": "Table 3",
+      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    },
+    "wa": {
+      "value": -0.99,
+      "uncertainty_plus": 0.32,
+      "uncertainty_minus": 0.32,
+      "units": "dimensionless",
+      "description": "Dark energy evolution parameter (CPL parameterization)",
+      "table": "Table 3",
+      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    },
+    "H0": {
+      "value": 68.52,
+      "uncertainty_plus": 0.62,
+      "uncertainty_minus": 0.62,
+      "units": "km/s/Mpc",
+      "description": "Hubble constant",
+      "table": "Table 3",
+      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    },
+    "Omega_m": {
+      "value": 0.3069,
+      "uncertainty_plus": 0.0050,
+      "uncertainty_minus": 0.0050,
+      "units": "dimensionless",
+      "description": "Matter density parameter",
+      "table": "Table 3",
+      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    },
+    "Omega_DE": {
+      "value": 0.6931,
+      "uncertainty_plus": 0.0050,
+      "uncertainty_minus": 0.0050,
+      "units": "dimensionless",
+      "description": "Dark energy density parameter",
+      "table": "Table 3",
+      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    },
+    "sigma8": {
+      "value": 0.827,
+      "uncertainty_plus": 0.011,
+      "uncertainty_minus": 0.011,
+      "units": "dimensionless",
+      "description": "RMS matter fluctuation amplitude",
+      "table": "Table 3",
+      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    }
+  },
+  "alternative_datasets": {
+    "BAO_only": {
+      "w0": {"value": -0.55, "uncertainty": 0.21},
+      "wa": {"value": -1.32, "uncertainty": 0.82}
+    },
+    "BAO_CMB": {
+      "w0": {"value": -0.45, "uncertainty": 0.21},
+      "wa": {"value": -1.79, "uncertainty": 0.65}
+    }
+  },
+  "verification": {
+    "checksum_sha256": "pending",
+    "last_verified": "2025-01-15"
+  }
+}

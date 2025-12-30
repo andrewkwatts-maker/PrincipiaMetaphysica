@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SO(10) Grand Unified Theory - Learn how all Standard Model forces and matter unify in one representation">
+    <title>SO(10) Grand Unified Theory - Foundational Physics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'SO(10) Grand Unified Theory'
+            });
+        });
+    </script>
+</head>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+
+    <main>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <span class="foundation-badge theoretical" style="margin-bottom: 1rem;">Theoretical Physics (1974)</span>
+            <h1 style="background: linear-gradient(135deg, #8b7fff, #ff7eb6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">SO(10) Grand Unified Theory</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The most elegant grand unification: all Standard Model forces and one generation of matter (including the right-handed neutrino) fit into a single 16-dimensional spinor representation.
+            </p>
+            <div class="main-equation" style="background: rgba(139, 127, 255, 0.1);">
+                SO(10) &sup; SU(3) &times; SU(2) &times; U(1)
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Proposed by Georgi (1974), Fritzsch & Minkowski (1975) | The 16-plet unification
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.03)); border-left: 4px solid #8b7fff;">
+            <h2>What Does SO(10) Unify?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>"One representation to rule them all: all Standard Model fermions of one generation fit into a single 16-dimensional spinor."</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Grand Unification</h4>
+                    <p>At energies above ~10<sup>16</sup> GeV, the three Standard Model forces (strong, weak, electromagnetic) merge into a single SO(10) force with one coupling constant.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Matter Unification</h4>
+                    <p>All 15 Standard Model fermions (quarks and leptons) plus the <em>right-handed neutrino</em> fit perfectly into one 16-dimensional spinor representation.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Predictions</h4>
+                    <p>Charge quantization explained, neutrino masses from seesaw mechanism, and proton decay (p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) with lifetime &tau; ~ 10<sup>34</sup> years.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">SO(10) Gauge Group: 16 spinor &oplus; 45 gauge bosons</div>
+                <div class="formula-controls">
+                    <span class="foundation-badge theoretical">Theoretical</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">16</div>
+                        <div class="component-name">Spinor Representation (One Generation)</div>
+                        <div class="component-desc">
+                            Contains all fermions of one generation:<br>
+                            <strong>Quarks:</strong> u<sub>R,G,B</sub>, d<sub>R,G,B</sub> (left &amp; right-handed, 3 colors) = 12 states<br>
+                            <strong>Leptons:</strong> e<sub>L</sub>, e<sub>R</sub>, &nu;<sub>L</sub>, &nu;<sub>R</sub> = 4 states<br>
+                            Total: 16 Weyl spinors
+                        </div>
+                        <span class="foundation-badge theoretical" style="margin-top: 0.5rem;">Minimal representation</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">45</div>
+                        <div class="component-name">Gauge Bosons (Adjoint Representation)</div>
+                        <div class="component-desc">
+                            SO(10) has 45 generators = 45 gauge bosons:<br>
+                            <strong>SM bosons:</strong> 8 gluons + 3 weak bosons + 1 photon = 12<br>
+                            <strong>New X,Y bosons:</strong> 33 additional bosons (mediate proton decay)<br>
+                            dim(SO(10)) = 10×9/2 = 45
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Adjoint_representation" target="_blank" class="component-link">Learn about adjoint representation &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">SO(10) &rarr; SU(5) &rarr; SM</div>
+                        <div class="component-name">Symmetry Breaking Chain</div>
+                        <div class="component-desc">
+                            <strong>GUT scale (M<sub>GUT</sub> ~ 10<sup>16</sup> GeV):</strong><br>
+                            SO(10) &rarr; SU(5) &times; U(1) (or Pati-Salam SU(4)&times;SU(2)&times;SU(2))<br><br>
+                            <strong>Intermediate scale:</strong><br>
+                            SU(5) &rarr; SU(3) &times; SU(2) &times; U(1)<br><br>
+                            <strong>Electroweak scale (M<sub>EW</sub> ~ 246 GeV):</strong><br>
+                            SU(2) &times; U(1) &rarr; U(1)<sub>EM</sub> (Higgs mechanism)
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Georgi%E2%80%93Glashow_model" target="_blank" class="component-link">Wikipedia: SU(5) GUT &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">16 &times; 16 &times; 10</div>
+                        <div class="component-name">Yukawa Couplings</div>
+                        <div class="component-desc">
+                            Fermion masses arise from Yukawa couplings:<br>
+                            <strong>16 &times; 16 = 10 &oplus; 120 &oplus; 126</strong><br><br>
+                            The <strong>10-plet Higgs</strong> gives SM masses<br>
+                            The <strong>126-plet Higgs</strong> gives Majorana neutrino masses &rarr; seesaw mechanism<br><br>
+                            m<sub>&nu;</sub> ~ m<sub>Dirac</sub><sup>2</sup> / M<sub>R</sub> explains tiny neutrino masses
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Seesaw_mechanism" target="_blank" class="component-link">Wikipedia: Seesaw Mechanism &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">M<sub>GUT</sub></div>
+                        <div class="component-name">GUT Scale</div>
+                        <div class="component-desc">
+                            M<sub>GUT</sub> = 2.118 &times; 10<sup>16</sup> GeV<br><br>
+                            Determined by <strong>coupling constant unification</strong>:<br>
+                            At M<sub>GUT</sub>, the three SM couplings (g<sub>1</sub>, g<sub>2</sub>, g<sub>3</sub>) converge:<br>
+                            &alpha;<sub>1</sub>(M<sub>GUT</sub>) = &alpha;<sub>2</sub>(M<sub>GUT</sub>) = &alpha;<sub>3</sub>(M<sub>GUT</sub>) with 1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv" data-format="fixed:2"></span><br><br>
+                            Measured via renormalization group equations (RGE)
+                        </div>
+                        <span class="foundation-badge theoretical" style="margin-top: 0.5rem;">Testable Prediction</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&tau;<sub>p</sub></div>
+                        <div class="component-name">Proton Decay Lifetime</div>
+                        <div class="component-desc">
+                            SO(10) predicts proton decay via X,Y boson exchange:<br>
+                            <strong>p &rarr; e<sup>+</sup> &pi;<sup>0</sup></strong> (main channel)<br><br>
+                            Lifetime: &tau;<sub>p</sub> = 4.09 &times; 10<sup>34</sup> years (PM prediction)<br><br>
+                            <strong>Current limit:</strong> &tau;<sub>p</sub> &gt; 1.6 &times; 10<sup>34</sup> years (Super-Kamiokande)<br>
+                            PM prediction is within experimental reach!
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Proton_decay" target="_blank" class="component-link">Wikipedia: Proton Decay &rarr;</a>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Historical Development</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Gell-Mann: SU(3) quarks (1964)</span>
+                        <span class="foundation-badge established">Strong force</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Glashow-Weinberg-Salam: SU(2)&times;U(1) (1967)</span>
+                        <span class="foundation-badge established">Electroweak</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Georgi-Glashow: SU(5) GUT (1974)</span>
+                        <span class="foundation-badge theoretical">First GUT</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Georgi, Fritzsch-Minkowski: SO(10) (1974-75)</span>
+                        <span class="foundation-badge theoretical">Minimal GUT</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Supersymmetric SO(10) (1981+)</span>
+                        <span class="foundation-badge theoretical">Modern framework</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: The 16-Plet</h2>
+            <p>All Standard Model fermions of one generation fit perfectly into SO(10)'s 16-dimensional spinor representation:</p>
+
+            <svg width="100%" height="500" viewBox="0 0 900 500" style="background: rgba(139, 127, 255, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <linearGradient id="so10Gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0.2" />
+                    </linearGradient>
+                    <linearGradient id="quarkGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#ff0000;stop-opacity:0.3" />
+                        <stop offset="50%" style="stop-color:#00ff00;stop-opacity:0.3" />
+                        <stop offset="100%" style="stop-color:#0000ff;stop-opacity:0.3" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Main SO(10) circle -->
+                <circle cx="450" cy="250" r="180" fill="url(#so10Gradient)" stroke="#8b7fff" stroke-width="4"/>
+                <text x="450" y="100" text-anchor="middle" fill="#8b7fff" font-size="28" font-weight="bold">SO(10) 16-plet</text>
+
+                <!-- Quarks section (top half) -->
+                <g id="quarks">
+                    <!-- Up quarks (3 colors) -->
+                    <g id="up-quarks">
+                        <circle cx="350" cy="160" r="15" fill="#ff6b6b" stroke="#ff0000" stroke-width="2"/>
+                        <text x="350" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">u<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+
+                        <circle cx="390" cy="160" r="15" fill="#51cf66" stroke="#00aa00" stroke-width="2"/>
+                        <text x="390" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">u<tspan baseline-shift="sub" font-size="8">G</tspan></text>
+
+                        <circle cx="430" cy="160" r="15" fill="#4facfe" stroke="#0066ff" stroke-width="2"/>
+                        <text x="430" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">u<tspan baseline-shift="sub" font-size="8">B</tspan></text>
+
+                        <text x="390" y="145" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="600">up (right)</text>
+                    </g>
+
+                    <!-- Down quarks (3 colors) -->
+                    <g id="down-quarks">
+                        <circle cx="470" cy="160" r="15" fill="#ff6b6b" stroke="#ff0000" stroke-width="2"/>
+                        <text x="470" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">d<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+
+                        <circle cx="510" cy="160" r="15" fill="#51cf66" stroke="#00aa00" stroke-width="2"/>
+                        <text x="510" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">d<tspan baseline-shift="sub" font-size="8">G</tspan></text>
+
+                        <circle cx="550" cy="160" r="15" fill="#4facfe" stroke="#0066ff" stroke-width="2"/>
+                        <text x="550" y="165" text-anchor="middle" fill="white" font-size="12" font-weight="bold">d<tspan baseline-shift="sub" font-size="8">B</tspan></text>
+
+                        <text x="510" y="145" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="600">down (right)</text>
+                    </g>
+
+                    <!-- Left-handed doublet -->
+                    <g id="quark-doublet">
+                        <rect x="325" y="210" width="80" height="50" rx="8" fill="rgba(139, 127, 255, 0.15)" stroke="#8b7fff" stroke-width="2"/>
+                        <text x="365" y="230" text-anchor="middle" fill="var(--text-primary)" font-size="13" font-weight="bold">Q<tspan baseline-shift="sub" font-size="9">L</tspan> = (u,d)<tspan baseline-shift="sub" font-size="9">L</tspan></text>
+                        <text x="365" y="245" text-anchor="middle" fill="var(--text-secondary)" font-size="10">RGB colors</text>
+                        <text x="365" y="257" text-anchor="middle" fill="var(--text-muted)" font-size="9">6 states</text>
+                    </g>
+                </g>
+
+                <!-- Leptons section (bottom half) -->
+                <g id="leptons">
+                    <!-- Electron left & right -->
+                    <circle cx="350" cy="310" r="15" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <text x="350" y="315" text-anchor="middle" fill="white" font-size="12" font-weight="bold">e<tspan baseline-shift="sub" font-size="8">L</tspan></text>
+
+                    <circle cx="390" cy="310" r="15" fill="#ffb347" stroke="#ff9500" stroke-width="2"/>
+                    <text x="390" y="315" text-anchor="middle" fill="white" font-size="12" font-weight="bold">e<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+
+                    <!-- Neutrino left & right -->
+                    <circle cx="470" cy="310" r="15" fill="#b197fc" stroke="#8b7fff" stroke-width="2"/>
+                    <text x="470" y="315" text-anchor="middle" fill="white" font-size="12" font-weight="bold">&nu;<tspan baseline-shift="sub" font-size="8">L</tspan></text>
+
+                    <circle cx="510" cy="310" r="15" fill="#ff7eb6" stroke="#ff4da6" stroke-width="2"/>
+                    <text x="510" y="315" text-anchor="middle" fill="white" font-size="12" font-weight="bold">&nu;<tspan baseline-shift="sub" font-size="8">R</tspan></text>
+
+                    <text x="350" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="600">electron</text>
+                    <text x="490" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="11" font-weight="600">neutrino</text>
+
+                    <!-- Highlight right-handed neutrino -->
+                    <rect x="490" y="285" width="40" height="70" rx="8" fill="none" stroke="#ff7eb6" stroke-width="2" stroke-dasharray="4,4"/>
+                    <text x="510" y="365" text-anchor="middle" fill="#ff7eb6" font-size="10" font-weight="bold">New in SO(10)!</text>
+                </g>
+
+                <!-- Count labels -->
+                <text x="450" y="410" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="600">
+                    Total: 12 quarks + 4 leptons = 16 Weyl fermions
+                </text>
+
+                <!-- Legend -->
+                <g id="legend" transform="translate(650, 150)">
+                    <rect x="0" y="0" width="220" height="180" rx="10" fill="rgba(0,0,0,0.05)" stroke="var(--border-primary)" stroke-width="1"/>
+                    <text x="110" y="25" text-anchor="middle" fill="var(--text-primary)" font-size="14" font-weight="bold">Components</text>
+
+                    <circle cx="20" cy="50" r="8" fill="#ff6b6b" stroke="#ff0000" stroke-width="1"/>
+                    <text x="40" y="55" fill="var(--text-secondary)" font-size="12">Red quarks (3)</text>
+
+                    <circle cx="20" cy="75" r="8" fill="#51cf66" stroke="#00aa00" stroke-width="1"/>
+                    <text x="40" y="80" fill="var(--text-secondary)" font-size="12">Green quarks (3)</text>
+
+                    <circle cx="20" cy="100" r="8" fill="#4facfe" stroke="#0066ff" stroke-width="1"/>
+                    <text x="40" y="105" fill="var(--text-secondary)" font-size="12">Blue quarks (3)</text>
+
+                    <circle cx="20" cy="125" r="8" fill="#ffb347" stroke="#ff9500" stroke-width="1"/>
+                    <text x="40" y="130" fill="var(--text-secondary)" font-size="12">Electron (2)</text>
+
+                    <circle cx="20" cy="150" r="8" fill="#b197fc" stroke="#8b7fff" stroke-width="1"/>
+                    <text x="40" y="155" fill="var(--text-secondary)" font-size="12">Neutrinos (2)</text>
+                </g>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                The 16-dimensional spinor of SO(10) contains exactly one generation of fermions, including the right-handed neutrino.
+            </p>
+        </section>
+
+        <!-- Symmetry Breaking Diagram -->
+        <section class="subsection">
+            <h2>Symmetry Breaking: From Unification to Observed Physics</h2>
+            <p>SO(10) breaks down to the Standard Model through intermediate stages:</p>
+
+            <svg width="100%" height="400" viewBox="0 0 900 400" style="background: rgba(255, 126, 182, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <!-- Energy scale axis -->
+                <defs>
+                    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="var(--text-muted)" />
+                    </marker>
+                </defs>
+
+                <line x1="100" y1="350" x2="800" y2="350" stroke="var(--text-muted)" stroke-width="2" marker-end="url(#arrow)"/>
+                <text x="810" y="355" fill="var(--text-muted)" font-size="14">Energy (GeV)</text>
+
+                <!-- Energy scale markers -->
+                <g id="scales">
+                    <!-- Electroweak scale -->
+                    <line x1="150" y1="340" x2="150" y2="355" stroke="var(--text-muted)" stroke-width="2"/>
+                    <text x="150" y="375" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="600">10<tspan baseline-shift="super" font-size="8">2</tspan></text>
+                    <text x="150" y="390" text-anchor="middle" fill="var(--text-muted)" font-size="10">EW scale</text>
+
+                    <!-- Intermediate scale -->
+                    <line x1="400" y1="340" x2="400" y2="355" stroke="var(--text-muted)" stroke-width="2"/>
+                    <text x="400" y="375" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="600">10<tspan baseline-shift="super" font-size="8">11-15</tspan></text>
+                    <text x="400" y="390" text-anchor="middle" fill="var(--text-muted)" font-size="10">Intermediate?</text>
+
+                    <!-- GUT scale -->
+                    <line x1="700" y1="340" x2="700" y2="355" stroke="var(--text-muted)" stroke-width="2"/>
+                    <text x="700" y="375" text-anchor="middle" fill="var(--text-primary)" font-size="12" font-weight="600">10<tspan baseline-shift="super" font-size="8">16</tspan></text>
+                    <text x="700" y="390" text-anchor="middle" fill="var(--text-muted)" font-size="10">GUT scale</text>
+                </g>
+
+                <!-- Breaking chain -->
+                <g id="symmetry-stages">
+                    <!-- SO(10) - unified -->
+                    <rect x="630" y="50" width="140" height="80" rx="12" fill="rgba(139, 127, 255, 0.2)" stroke="#8b7fff" stroke-width="3"/>
+                    <text x="700" y="80" text-anchor="middle" fill="#8b7fff" font-size="20" font-weight="bold">SO(10)</text>
+                    <text x="700" y="100" text-anchor="middle" fill="var(--text-primary)" font-size="12">45 bosons</text>
+                    <text x="700" y="115" text-anchor="middle" fill="var(--text-secondary)" font-size="11">g<tspan baseline-shift="sub" font-size="8">GUT</tspan> = single coupling</text>
+
+                    <!-- Arrow down -->
+                    <path d="M 670 130 L 620 180" stroke="#8b7fff" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+                    <text x="640" y="155" fill="#8b7fff" font-size="11">Higgs VEV</text>
+                    <text x="635" y="170" fill="var(--text-muted)" font-size="10">~10<tspan baseline-shift="super" font-size="7">16</tspan> GeV</text>
+
+                    <!-- SU(5) (optional intermediate) -->
+                    <rect x="430" y="50" width="140" height="80" rx="12" fill="rgba(255, 126, 182, 0.15)" stroke="#ff7eb6" stroke-width="2" stroke-dasharray="5,5"/>
+                    <text x="500" y="80" text-anchor="middle" fill="#ff7eb6" font-size="18" font-weight="bold">SU(5)</text>
+                    <text x="500" y="100" text-anchor="middle" fill="var(--text-primary)" font-size="11">24 bosons</text>
+                    <text x="500" y="115" text-anchor="middle" fill="var(--text-secondary)" font-size="10">(intermediate step)</text>
+
+                    <!-- Standard Model -->
+                    <rect x="280" y="180" width="220" height="90" rx="12" fill="rgba(81, 207, 102, 0.15)" stroke="#51cf66" stroke-width="3"/>
+                    <text x="390" y="210" text-anchor="middle" fill="#51cf66" font-size="18" font-weight="bold">SU(3) &times; SU(2) &times; U(1)</text>
+                    <text x="390" y="230" text-anchor="middle" fill="var(--text-primary)" font-size="12">Standard Model</text>
+                    <text x="390" y="248" text-anchor="middle" fill="var(--text-secondary)" font-size="11">12 bosons (8g + W<tspan baseline-shift="super" font-size="8">&pm;</tspan>, Z, &gamma;)</text>
+                    <text x="390" y="262" text-anchor="middle" fill="var(--text-secondary)" font-size="11">g<tspan baseline-shift="sub" font-size="8">s</tspan>, g, g'</text>
+
+                    <!-- Arrow down to SM -->
+                    <path d="M 570 110 L 480 180" stroke="#ff7eb6" stroke-width="2" marker-end="url(#arrow)" fill="none" stroke-dasharray="5,5"/>
+
+                    <!-- Arrow down to EM -->
+                    <path d="M 330 270 L 240 290" stroke="#51cf66" stroke-width="2" marker-end="url(#arrow)" fill="none"/>
+                    <text x="280" y="280" fill="#51cf66" font-size="11">Higgs mechanism</text>
+                    <text x="285" y="295" fill="var(--text-muted)" font-size="10">~246 GeV</text>
+
+                    <!-- U(1)_EM -->
+                    <rect x="120" y="290" width="140" height="50" rx="12" fill="rgba(79, 172, 254, 0.15)" stroke="#4facfe" stroke-width="3"/>
+                    <text x="190" y="315" text-anchor="middle" fill="#4facfe" font-size="18" font-weight="bold">U(1)<tspan baseline-shift="sub" font-size="12">EM</tspan></text>
+                    <text x="190" y="332" text-anchor="middle" fill="var(--text-secondary)" font-size="11">Electromagnetism (&gamma;)</text>
+                </g>
+
+                <!-- Coupling constant unification -->
+                <g id="coupling-unification" transform="translate(550, 200)">
+                    <text x="0" y="0" fill="var(--text-primary)" font-size="13" font-weight="600">Coupling Unification:</text>
+                    <text x="0" y="20" fill="var(--text-secondary)" font-size="11">&alpha;<tspan baseline-shift="sub" font-size="8">1</tspan>, &alpha;<tspan baseline-shift="sub" font-size="8">2</tspan>, &alpha;<tspan baseline-shift="sub" font-size="8">3</tspan> converge at M<tspan baseline-shift="sub" font-size="8">GUT</tspan></text>
+
+                    <!-- Mini coupling graph -->
+                    <path d="M 0 40 L 0 90 L 100 90" stroke="var(--text-muted)" stroke-width="1"/>
+                    <path d="M 5 45 Q 50 50, 95 40" stroke="#ff6b6b" stroke-width="1.5" fill="none"/>
+                    <path d="M 5 65 Q 50 60, 95 40" stroke="#51cf66" stroke-width="1.5" fill="none"/>
+                    <path d="M 5 85 Q 50 70, 95 40" stroke="#4facfe" stroke-width="1.5" fill="none"/>
+                    <circle cx="95" cy="40" r="3" fill="#8b7fff"/>
+                    <text x="105" y="43" fill="#8b7fff" font-size="9" font-weight="bold">M<tspan baseline-shift="sub" font-size="7">GUT</tspan></text>
+                </g>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                The symmetry breaking pattern from SO(10) to U(1)<sub>EM</sub> spans 14 orders of magnitude in energy.
+            </p>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
+
+            <h3>1. Why SO(10)?</h3>
+            <p>SO(10) is the minimal group that:</p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Contains the Standard Model:</strong> SO(10) &sup; SU(5) &sup; SU(3) &times; SU(2) &times; U(1)</li>
+                <li><strong>Fits one generation perfectly:</strong> The 16-spinor is irreducible and matches exactly</li>
+                <li><strong>Includes right-handed neutrinos:</strong> Automatically present, explaining neutrino masses via seesaw</li>
+                <li><strong>Unifies all forces:</strong> One gauge group with one coupling constant at M<sub>GUT</sub></li>
+                <li><strong>Explains charge quantization:</strong> Why Q<sub>proton</sub> = -Q<sub>electron</sub> exactly</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">2. Charge Quantization</h3>
+            <p>
+                One of SO(10)'s most elegant predictions: <strong>electric charge is automatically quantized</strong>.
+            </p>
+            <div class="equation-box">
+                Q = T<sub>3</sub> + Y/2
+                <span class="equation-label">Gell-Mann-Nishijima formula</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                In SO(10), all charges arise from the <strong>same representation</strong>, so:
+            </p>
+            <div class="equation-box">
+                Q<sub>u</sub> = +2/3, &nbsp; Q<sub>d</sub> = -1/3, &nbsp; Q<sub>e</sub> = -1, &nbsp; Q<sub>&nu;</sub> = 0
+            </div>
+            <p style="margin-top: 1rem;">
+                The quantization condition <strong>3Q<sub>d</sub> + Q<sub>e</sub> = 0</strong> (anomaly cancellation) is <em>automatic</em> in SO(10)!<br>
+                This explains why the proton charge exactly cancels the electron charge.
+            </p>
+
+            <h3 style="margin-top: 2rem;">3. Neutrino Masses: The Seesaw Mechanism</h3>
+            <p>SO(10) naturally explains tiny neutrino masses through the <strong>Type-I seesaw mechanism</strong>:</p>
+            <div class="equation-box">
+                m<sub>&nu;</sub> &asymp; m<sup>2</sup><sub>Dirac</sub> / M<sub>R</sub>
+                <span class="equation-label">Type-I seesaw formula</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                <strong>Example:</strong> If m<sub>Dirac</sub> ~ 100 GeV (top mass scale) and M<sub>R</sub> ~ 10<sup>14</sup> GeV, then:
+            </p>
+            <div class="equation-box">
+                m<sub>&nu;</sub> ~ (100 GeV)<sup>2</sup> / 10<sup>14</sup> GeV ~ 0.1 eV
+            </div>
+            <p style="margin-top: 1rem;">
+                This matches the observed neutrino mass scale perfectly! The <strong>126-plet Higgs</strong> in SO(10) gives<br>
+                Majorana masses to right-handed neutrinos, enabling the seesaw.
+            </p>
+
+            <h3 style="margin-top: 2rem;">4. Proton Decay</h3>
+            <p>
+                SO(10) predicts that quarks can transform into leptons via X and Y bosons, leading to <strong>proton decay</strong>:
+            </p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem;">
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Main Decay Channel</h4>
+                    <p style="font-size: 1.1rem; font-weight: 600;">p &rarr; e<sup>+</sup> &pi;<sup>0</sup></p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        A quark in the proton transforms into a positron via an X boson.
+                    </p>
+                </div>
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Predicted Lifetime (PM)</h4>
+                    <p style="font-size: 1.1rem; font-weight: 600;">&tau;<sub>p</sub> = 4.09 &times; 10<sup>34</sup> years</p>
+                    <p style="font-size: 0.9rem; margin-top: 0.5rem;">
+                        Current limit: &tau;<sub>p</sub> &gt; 1.6 &times; 10<sup>34</sup> years<br>
+                        <span style="color: #ff7eb6; font-weight: 600;">PM prediction within experimental reach!</span>
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">5. Three Generations</h3>
+            <p>
+                SO(10) describes <strong>one generation</strong> perfectly. But we observe <strong>three generations</strong> (e,&mu;,&tau;).
+            </p>
+            <p style="margin-top: 1rem;">
+                <strong>Solution:</strong> We need <strong>three copies</strong> of the 16-plet:
+            </p>
+            <div class="equation-box">
+                16<sub>I</sub> &oplus; 16<sub>II</sub> &oplus; 16<sub>III</sub>
+                <span class="equation-label">Three generations of fermions</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                <strong>Open question:</strong> Why exactly three? SO(10) itself doesn't explain this.<br>
+                <strong>Hint from Principia Metaphysica:</strong> χ<sub>eff</sub> = 144 = 3 &times; 48 suggests a topological origin!
+            </p>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>Grand Unification - PBS Space Time</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Excellent introduction to GUTs and how forces unify at high energies.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=TfgqEF5LLvI" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">14 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>SO(10) GUT - ParticlePhysicsTV</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Deep dive into SO(10) representations and breaking chains.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=QcHAkYYoU7k" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">25 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Proton Decay & GUTs - Fermilab</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Experimental searches for proton decay and GUT predictions.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=d2LtW8MS_D8" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">12 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Neutrino Masses & Seesaw - MinutePhysics</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Visual explanation of why neutrinos are so light.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=K0K44D2vXEw" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">5 min</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Textbooks</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/SO(10)" target="_blank" style="color: var(--accent-primary);">SO(10) (Lie group)</a> |
+                    <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory" target="_blank" style="color: var(--accent-primary);">Grand Unified Theory</a> |
+                    <a href="https://en.wikipedia.org/wiki/Georgi%E2%80%93Glashow_model" target="_blank" style="color: var(--accent-primary);">Georgi-Glashow (SU(5))</a>
+                </li>
+                <li>
+                    <strong>Original Papers:</strong>
+                    Georgi, H. "The State of the Art—Gauge Theories" (1975) |
+                    Fritzsch, H. & Minkowski, P. "Unified Interactions of Leptons and Hadrons" (1975)
+                </li>
+                <li>
+                    <strong>Textbook (Graduate):</strong>
+                    "Grand Unified Theories" by Graham Ross
+                    <a href="https://www.worldcat.org/title/grand-unified-theories/oclc/11537100" target="_blank" style="color: var(--accent-primary);">[WorldCat]</a>
+                </li>
+                <li>
+                    <strong>Review Article:</strong>
+                    Langacker, P. "Grand Unified Theories and Proton Decay" (1981)
+                    <a href="https://doi.org/10.1016/0370-1573(81)90059-4" target="_blank" style="color: var(--accent-primary);">[Physics Reports]</a>
+                </li>
+                <li>
+                    <strong>Modern Review:</strong>
+                    Babu, K.S. et al. "SO(10) GUTs: A Guide" (2022)
+                    <a href="https://arxiv.org/abs/2204.07938" target="_blank" style="color: var(--accent-primary);">[arXiv:2204.07938]</a>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem;">Interactive Tools</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Group Theory Calculator:</strong>
+                    <a href="http://groupprops.subwiki.org/wiki/SO(10)" target="_blank" style="color: var(--accent-primary);">GroupProps Wiki - SO(10)</a>
+                </li>
+                <li>
+                    <strong>Coupling Constant Evolution:</strong>
+                    <a href="https://www.wolframalpha.com/input/?i=renormalization+group+equations" target="_blank" style="color: var(--accent-primary);">Wolfram Alpha RGE Calculator</a>
+                </li>
+                <li>
+                    <strong>Proton Decay Calculator:</strong>
+                    <a href="https://pdg.lbl.gov/" target="_blank" style="color: var(--accent-primary);">Particle Data Group - Searches for Proton Decay</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>GUT (Grand Unified Theory)</h4>
+                    <p>A theory that unifies the strong, weak, and electromagnetic forces into a single gauge group at high energies (~10<sup>16</sup> GeV).</p>
+                    <a href="https://en.wikipedia.org/wiki/Grand_Unified_Theory" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Spinor Representation</h4>
+                    <p>A representation of SO(n) that transforms like fermions. SO(10) has a 16-dimensional spinor representation.</p>
+                    <a href="https://en.wikipedia.org/wiki/Spinor" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Symmetry Breaking</h4>
+                    <p>The process by which a high-energy symmetric state transitions to a lower-energy, less-symmetric state via the Higgs mechanism.</p>
+                    <a href="https://en.wikipedia.org/wiki/Spontaneous_symmetry_breaking" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Higgs Mechanism</h4>
+                    <p>The process by which gauge bosons acquire mass through spontaneous symmetry breaking via a scalar field (Higgs field).</p>
+                    <a href="https://en.wikipedia.org/wiki/Higgs_mechanism" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Seesaw Mechanism</h4>
+                    <p>A mechanism explaining tiny neutrino masses through heavy right-handed neutrinos: m<sub>&nu;</sub> ~ m<sup>2</sup><sub>D</sub>/M<sub>R</sub>.</p>
+                    <a href="https://en.wikipedia.org/wiki/Seesaw_mechanism" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Proton Decay</h4>
+                    <p>The predicted decay of protons into lighter particles (e.g., p &rarr; e<sup>+</sup>&pi;<sup>0</sup>) mediated by X,Y bosons in GUTs.</p>
+                    <a href="https://en.wikipedia.org/wiki/Proton_decay" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Coupling Constant Unification</h4>
+                    <p>The convergence of the three SM coupling constants (&alpha;<sub>1,2,3</sub>) to a single value at the GUT scale M<sub>GUT</sub>.</p>
+                    <a href="https://en.wikipedia.org/wiki/Gauge_coupling_unification" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Right-Handed Neutrino</h4>
+                    <p>A sterile neutrino (&nu;<sub>R</sub>) that doesn't interact via weak force. Predicted by SO(10) and crucial for seesaw mechanism.</p>
+                    <a href="https://en.wikipedia.org/wiki/Sterile_neutrino" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Yukawa Coupling</h4>
+                    <p>The interaction strength between fermions and the Higgs field, determining fermion masses after symmetry breaking.</p>
+                    <a href="https://en.wikipedia.org/wiki/Yukawa_interaction" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experimental Status -->
+        <section class="subsection">
+            <h2>Experimental Status & Predictions</h2>
+            <p>SO(10) makes several testable predictions that are being actively searched for:</p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Proton Decay (Not Yet Observed)</h4>
+                    <p>
+                        <strong>PM Prediction:</strong> &tau;<sub>p</sub> = 4.09 &times; 10<sup>34</sup> years<br>
+                        <strong>Current limit:</strong> &tau;<sub>p</sub> &gt; 1.6 &times; 10<sup>34</sup> years (Super-K)<br>
+                        <strong>Status:</strong> PM prediction within reach of next-generation experiments (Hyper-K, DUNE)
+                    </p>
+                </div>
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Neutrino Masses (Confirmed)</h4>
+                    <p>
+                        <strong>Prediction:</strong> m<sub>&nu;</sub> ~ 0.01-0.1 eV (seesaw)<br>
+                        <strong>Observation:</strong> &Delta;m<sup>2</sup><sub>atm</sub> ~ 2.5&times;10<sup>-3</sup> eV<sup>2</sup><br>
+                        <strong>Status:</strong> Consistent with SO(10) seesaw mechanism!
+                    </p>
+                </div>
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Coupling Unification (Suggestive)</h4>
+                    <p>
+                        <strong>Prediction:</strong> &alpha;<sub>1,2,3</sub> meet at M<sub>GUT</sub> ~ 10<sup>16</sup> GeV<br>
+                        <strong>SM evolution:</strong> Couplings nearly meet (slight mismatch)<br>
+                        <strong>MSSM:</strong> Perfect unification with SUSY!
+                    </p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Magnetic Monopoles (Not Found)</h4>
+                    <p>
+                        <strong>Prediction:</strong> M<sub>monopole</sub> ~ M<sub>GUT</sub>/&alpha;<sub>GUT</sub> ~ 10<sup>16</sup> GeV<br>
+                        <strong>Status:</strong> None detected (Parker bound: &Phi; &lt; 10<sup>-15</sup> cm<sup>-2</sup>s<sup>-1</sup>sr<sup>-1</sup>)<br>
+                        Cosmic inflation may dilute them
+                    </p>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2rem;">Major Experiments</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Super-Kamiokande (Japan):</strong> 50,000-ton water Cherenkov detector searching for proton decay
+                    <a href="http://www-sk.icrr.u-tokyo.ac.jp/sk/index-e.html" target="_blank" style="color: var(--accent-primary);">[Website]</a>
+                </li>
+                <li>
+                    <strong>Hyper-Kamiokande (Future):</strong> 260,000-ton upgrade, will improve sensitivity 10-fold
+                    <a href="https://www.hyperk.org/" target="_blank" style="color: var(--accent-primary);">[Website]</a>
+                </li>
+                <li>
+                    <strong>DUNE (USA):</strong> Long-baseline neutrino experiment, also searches for proton decay
+                    <a href="https://www.dunescience.org/" target="_blank" style="color: var(--accent-primary);">[Website]</a>
+                </li>
+                <li>
+                    <strong>IceCube (Antarctica):</strong> Searches for atmospheric neutrino anomalies from proton decay
+                    <a href="https://icecube.wisc.edu/" target="_blank" style="color: var(--accent-primary);">[Website]</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                Principia Metaphysica provides a <strong>geometric origin</strong> for SO(10) Grand Unification:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">SO(10) from G₂ Compactification</h4>
+                <p style="color: var(--text-secondary);">
+                    In the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow theory (12,1 signature), compactification on a <strong>G₂ manifold</strong> can yield SO(10) gauge symmetry in 6D:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D (24,2) bulk:</strong> Full theory with Sp(2,R) gauge symmetry</li>
+                    <li><strong>13D (12,1) shadow:</strong> After Sp(2,R) gauge fixing, 2T physics</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_G2"></span>D G₂ manifold:</strong> Exceptional holonomy compactification</li>
+                    <li><strong>6D (5,1) with SO(10):</strong> GUT symmetry emerges from geometry!</li>
+                    <li><strong><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D (3,1):</strong> Further compactification to observed spacetime</li>
+                </ul>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 600;">
+                    <strong>D₅ Singularity Wrapping:</strong>
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                    <li><strong>D₅ ADE singularity:</strong> Conical singularity in the G₂ manifold with D₅ ≅ SO(10) symmetry</li>
+                    <li><strong>Wrapping on associative cycles:</strong> D5-branes wrap on b₂=4 associative 3-cycles</li>
+                    <li><strong>Gauge bosons from wrapping modes:</strong> 45 SO(10) gauge bosons emerge from wrapped brane modes</li>
+                    <li><strong>Partial resolution by flux:</strong> G₄ flux threading cycles partially resolves singularity</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
+                <h4 style="color: #ff7eb6;">Three Generations from χ<sub>eff</sub> = 144</h4>
+                <p style="color: var(--text-secondary);">
+                    The effective Euler characteristic χ<sub>eff</sub> = 144 in PM's compactification provides a precise topological explanation:
+                </p>
+                <div class="equation-box" style="margin-top: 1rem;">
+                    χ<sub>eff</sub> = 144 = 3 &times; 48 = 3 &times; (16 + 16* + 16<sub>vector</sub>)
+                    <span class="equation-label">Topological origin of three generations</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem; font-weight: 600;">
+                    <strong>Derivation from G₂ topology:</strong>
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                    <li><strong>Base topology:</strong> TCS G₂ with b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> coassociative 4-cycles</li>
+                    <li><strong>Flux quantization:</strong> G₄ flux threads the b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> cycles with integer quanta</li>
+                    <li><strong>Index theorem:</strong> n_gen = χ_eff / 48 where χ_eff includes flux backreaction</li>
+                    <li><strong>Calculation:</strong> χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> → n_gen = 144/48 = <strong>3</strong></li>
+                    <li><strong>b₃ connection:</strong> The 24 cycles directly control Yukawa texture through wavefunction overlaps</li>
+                </ul>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    This provides a <strong>topological explanation</strong> for why we observe exactly <strong>three generations</strong>
+                    of the SO(10) 16-plet, derived from the specific TCS construction with b₂=4, b₃ = <span class="pm-value" data-pm-value="topology.b3"></span>.
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">Yukawa Matrices from b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> Cycles</h4>
+                <p style="color: var(--text-secondary);">
+                    The <strong>24 coassociative 4-cycles</strong> determine the structure of fermion mass matrices:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.5rem;">
+                    <li><strong>Wavefunction localization:</strong> Each generation localizes on different cycles in the G₂</li>
+                    <li><strong>Yukawa couplings:</strong> Y<sub>ij</sub> ~ ∫_Σ₄ ψ<sub>i</sub> ψ<sub>j</sub> Φ where Σ₄ are the 24 cycles</li>
+                    <li><strong>Hierarchy from geometry:</strong> Exponential hierarchy from cycle separations in moduli space</li>
+                    <li><strong>Neutrino mixing:</strong> PMNS matrix elements from overlaps on coassociative cycles</li>
+                    <li><strong>θ₂₃ ≈ 45°:</strong> Maximal mixing from TCS gluing symmetry, corrected by Shadow_ק - Shadow_ח</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">64-Component Spinor Connection</h4>
+                <p style="color: var(--text-secondary);">
+                    The <strong><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D spinor</strong> in (12,1) signature has 64 real components (or 32 complex Weyl spinors):
+                </p>
+                <div class="equation-box" style="margin-top: 1rem;">
+                    64<sub><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D</sub> &rarr; 16<sub>SO(10)</sub> &times; 4<sub>internal</sub>
+                    <span class="equation-label">Spinor decomposition under dimensional reduction</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    This natural splitting provides a <strong>higher-dimensional origin</strong> for the SO(10) 16-plet,<br>
+                    connecting grand unification to the fundamental spinor structure of spacetime itself.
+                </p>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                See the <a href="../Pages/sections.html#cosmology" style="color: var(--accent-primary);">Cosmology section</a> and
+                <a href="../docs/computational-appendices.html" style="color: var(--accent-primary);">Computational Appendices</a>
+                for detailed calculations of how SO(10) emerges from the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 6D → 4D descent.
+            </p>
+        </section>
+
+        <!-- Practice Problems -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding with these exercises:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: Counting States</h4>
+                <p>
+                    Verify that the 16-dimensional spinor of SO(10) contains exactly 15 Standard Model fermions<br>
+                    plus one right-handed neutrino. List all components explicitly.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        <strong>Quarks (12):</strong> u<sub>R,G,B</sub> (right), d<sub>R,G,B</sub> (right), Q<sub>L</sub> = (u,d)<sub>R,G,B</sub> (left doublet, 6 states)<br>
+                        <strong>Leptons (4):</strong> e<sub>L</sub>, e<sub>R</sub>, &nu;<sub>L</sub>, &nu;<sub>R</sub><br>
+                        <strong>Total:</strong> 12 + 4 = 16 Weyl fermions
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Seesaw Numerics</h4>
+                <p>
+                    Using the seesaw formula m<sub>&nu;</sub> = m<sup>2</sup><sub>D</sub>/M<sub>R</sub>, calculate the right-handed<br>
+                    neutrino mass M<sub>R</sub> needed to give m<sub>&nu;</sub> = 0.05 eV if m<sub>D</sub> = 1 GeV.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        M<sub>R</sub> = m<sup>2</sup><sub>D</sub> / m<sub>&nu;</sub> = (1 GeV)<sup>2</sup> / (0.05 eV) = (10<sup>9</sup> eV)<sup>2</sup> / (5 × 10<sup>-2</sup> eV)<br>
+                        = 2 × 10<sup>19</sup> eV = <strong>2 × 10<sup>10</sup> GeV</strong><br><br>
+                        This is close to the GUT scale, supporting the SO(10) seesaw mechanism!
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Proton Lifetime</h4>
+                <p>
+                    Estimate the proton decay lifetime using dimensional analysis: &tau;<sub>p</sub> ~ M<sup>4</sup><sub>X</sub> / (m<sup>5</sup><sub>p</sub> &alpha;<sup>2</sup><sub>GUT</sub>)<br>
+                    for M<sub>X</sub> = 3 × 10<sup>15</sup> GeV, m<sub>p</sub> = 1 GeV, &alpha;<sub>GUT</sub> = 1/40.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Use natural units (ℏ = c = 1). Convert GeV to seconds using 1 GeV<sup>-1</sup> ≈ 6.6 × 10<sup>-25</sup> s.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where SO(10) GUT Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Gauge Unification</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        SO(10) from G₂ compactification
+                    </p>
+                    <a href="../sections.html#gauge-unification" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Fermion Sector</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        16-spinor and 3 generations
+                    </p>
+                    <a href="../Pages/sections.html#fermion-sector" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where SO(10) GUT Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Gauge Unification</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        SO(10) from G₂ compactification
+                    </p>
+                    <a href="../sections.html#gauge-unification" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Fermion Sector</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        16-spinor and 3 generations
+                    </p>
+                    <a href="../Pages/sections.html#fermion-sector" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="../Pages/foundations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="../Pages/sections.html#cosmology" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                PM Cosmology &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b7fff, #ff7eb6);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #8b7fff;
+        }
+        .highlight-box h4 {
+            color: #8b7fff;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '../js/auth-guard.js';
+        setupAuthGuard('foundations-so10-gut');
+    </script>
+</body>
+</html>

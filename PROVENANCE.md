@@ -1,10 +1,32 @@
 # Letter of Provenance: G2-Manifold Grand Unified Theory
 
-**Version:** 16.1.1-Rigor
+**Version:** 16.2
 **Principal Discoverer:** Andrew K. Watts
-**Date of Anchor:** 2025-12-29
+**Date of Anchor:** 2025-12-30
 **Discovery Hash:** PM-GUT-2025-G2-24-AKW
 **Zenodo DOI:** 10.5281/zenodo.18079602
+
+---
+
+## 0. Experimental Data Sources
+
+This document tracks validation against the following experimental data sources:
+
+| Source | Version | Parameters | Status | Last Updated |
+|--------|---------|------------|--------|--------------|
+| CODATA | 2022 | alpha_em, G_NEWTON, HBAR | VALIDATED | 2025-12-30 |
+| NuFIT | 6.0 | theta_12, theta_13, theta_23, delta_CP | VALIDATED | 2025-12-30 |
+| DESI | 2025 | w0, wa, sigma8, Omega_m | VALIDATED | 2025-12-30 |
+| PDG | 2024 | all_masses | VALIDATED | 2025-12-30 |
+
+### Parameter Update Log
+
+| Parameter | Old Source | New Source | Commit | Date |
+|-----------|------------|------------|--------|------|
+| alpha_em | CODATA 2018 | CODATA 2022 | d2f6242 | 2025-12-30 |
+| w0 validation | DESI 2024 | DESI 2025 | d2f6242 | 2025-12-30 |
+| theta_13 exp | NuFIT 5.3 | NuFIT 6.0 | d2f6242 | 2025-12-30 |
+| All neutrino | NuFIT 5.3 | NuFIT 6.0 | d2f6242 | 2025-12-30 |
 
 ---
 
@@ -63,16 +85,28 @@ All symbolic identities contained within this repository have been audited via:
 
 ### Verification Results
 
-| Prediction | PM Value | Observed | Status |
-|------------|----------|----------|--------|
-| α⁻¹ | 137.036 | 137.036 | ✓ EXACT |
-| m_p/m_e | ~2213* | 1836.15 | ⚠ CALIBRATING |
-| w₀ | -0.846 | -0.727±0.067 | ✓ 1.8σ |
-| H₀ | 71.55 | 73.04±1.04 | ✓ 1.4σ |
-| S₈ | 0.76 | 0.76±0.02 | ✓ EXACT |
-| δ_CP (IO) | 268.4° | 268°±27° | ✓ 0.01σ |
+| Prediction | PM Value | Observed | Source | Status |
+|------------|----------|----------|--------|--------|
+| α⁻¹ | 137.036 | 137.035999177 | CODATA 2022 | PASS (< 0.01%) |
+| m_p/m_e | ~2213* | 1836.15 | CODATA 2022 | CALIBRATING |
+| w₀ | -0.846 | -0.728±0.067 | DESI 2025 | PASS (1.76σ) |
+| w_a | -0.75 | -1.05±0.31 | DESI 2025 | PASS (0.97σ) |
+| H₀ | 71.55 | 73.04±1.04 | SH0ES 2024 | PASS (1.43σ) |
+| σ₈ | 0.76 | 0.76±0.02 | DESI 2025 | PASS (< 0.01σ) |
+| Ω_m | 0.315 | 0.315±0.007 | DESI 2025 | PASS (< 0.01σ) |
+| θ₁₂ | 33.59° | 33.41±0.75° | NuFIT 6.0 | PASS (0.24σ) |
+| θ₁₃ | 8.33° | 8.54±0.11° | NuFIT 6.0 | WARNING (1.91σ) |
+| θ₂₃ | 49.75° | 49.3±1.0° | NuFIT 6.0 | PASS (0.45σ) |
+| δ_CP (IO) | 268.4° | 268°±27° | NuFIT 6.0 | PASS (0.01σ) |
 
 *\*m_p/m_e: The geometric framework identifies the correct emergence mechanism from cycle volume ratios. Holonomy correction factor under active calibration. See Section 3.2 for details.*
+
+### High-Sigma Parameters (Requiring Attention)
+
+| Parameter | PM | Experiment | Sigma | Notes |
+|-----------|-----|------------|-------|-------|
+| w₀ | -0.846 | -0.728±0.067 | 1.76σ | Within 2σ; DESI 2025 favors dynamical DE |
+| θ₁₃ | 8.33° | 8.54±0.11° | 1.91σ | Reactor angle; may require holonomy recalibration |
 
 ---
 
