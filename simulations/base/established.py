@@ -558,14 +558,23 @@ class EstablishedPhysics:
 
     @classmethod
     def _register_param(cls, registry: 'PMRegistry', param: EstablishedParameter) -> None:
-        """Register a single parameter with the registry."""
+        """Register a single parameter with the registry.
+
+        For ESTABLISHED parameters, the value IS the experimental value.
+        We set experimental_value = value to indicate this is a measured constant.
+        """
         registry.set_param(
             path=param.path,
             value=param.value,
             source=param.source,
             uncertainty=param.uncertainty,
             status=param.status,
-            metadata={'description': param.description, 'units': param.units}
+            metadata={'description': param.description, 'units': param.units},
+            # For established physics, the value IS the experimental measurement
+            experimental_value=param.value,
+            experimental_uncertainty=param.uncertainty,
+            experimental_source=param.source,
+            bound_type="measured"  # Established constants are direct measurements
         )
 
 

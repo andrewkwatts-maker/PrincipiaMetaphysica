@@ -471,6 +471,10 @@ class PMRegistry:
         result = {}
         for formula_id, entry in self._formulas.items():
             f = entry.formula
+            # Generate title from description if not set
+            title = getattr(f, 'title', None)
+            if not title and f.description:
+                title = f.description.split('.')[0].strip()[:80]
             result[formula_id] = {
                 'id': f.id,
                 'label': f.label,
@@ -478,6 +482,7 @@ class PMRegistry:
                 'plain_text': f.plain_text,
                 'category': f.category,
                 'description': f.description,
+                'title': title,
                 'input_params': f.input_params,
                 'output_params': f.output_params,
                 'derivation': f.derivation,

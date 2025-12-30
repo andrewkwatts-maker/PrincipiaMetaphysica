@@ -83,9 +83,16 @@ class CosmologicalConstantV16(SimulationBase):
         """Return required input parameter paths."""
         return [
             "topology.b3",           # Third Betti number
-            "constants.k_gimel",     # Geometric anchor
             "desi.H0",               # Hubble constant for horizon scale
         ]
+
+    def _compute_k_gimel(self, b3: int) -> float:
+        """
+        Compute geometric anchor k_gimel from b3.
+
+        k_gimel = b3/2 + 1/pi = 12 + 1/pi ≈ 12.318 for b3=24
+        """
+        return (b3 / 2.0) + (1.0 / np.pi)
 
     @property
     def output_params(self) -> List[str]:
@@ -124,7 +131,7 @@ class CosmologicalConstantV16(SimulationBase):
 
         # Get inputs
         b3 = registry.get_param("topology.b3")
-        k_gimel = registry.get_param("constants.k_gimel")
+        k_gimel = self._compute_k_gimel(b3)  # Derived from b3, not a separate input
         H0 = registry.get_param("desi.H0")  # km/s/Mpc
 
         # Convert H0 to SI units (s^-1)

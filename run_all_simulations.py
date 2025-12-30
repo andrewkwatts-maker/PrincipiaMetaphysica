@@ -170,6 +170,10 @@ from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
 from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
 from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
 
+# v16.2 - Two-Time Physics and Leech Partition (foundational geometric proofs)
+from simulations.v16.geometric.leech_partition_v16_2 import LeechPartitionV16
+from simulations.v16.geometric.modular_invariance_v16_2 import ModularInvarianceV16
+
 # Academic Armor v16.1 - Rigor simulations (geometric derivations)
 try:
     from simulations.v16.geometric.alpha_rigor_v16_1 import AlphaRigorSimulation
@@ -200,9 +204,17 @@ from simulations.v16.higgs.higgs_mass_v16_0 import HiggsMassSimulation
 from simulations.v16.cosmology.cosmology_intro_v16_0 import CosmologyIntroV16
 from simulations.v16.cosmology.dark_energy_v16_0 import DarkEnergyV16
 from simulations.v16.cosmology.s8_suppression_v16_1 import S8SuppressionV16
+from simulations.v16.cosmology.ricci_flow_h0_v16_1 import RicciFlowH0V16
 from simulations.v16.thermal.thermal_time_v16_0 import ThermalTimeV16
 from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
 from simulations.v16.cosmology.multi_sector_v16_0 import MultiSectorV16
+
+# Optional v16.1 cosmology simulations
+try:
+    from simulations.v16.cosmology.cosmological_constant_v16_1 import CosmologicalConstantV16
+    COSMOLOGICAL_CONSTANT_AVAILABLE = True
+except ImportError:
+    COSMOLOGICAL_CONSTANT_AVAILABLE = False
 
 # Phase 4 - Field dynamics (depends on all)
 from simulations.v16.pneuma.pneuma_mechanism_v16_0 import PneumaMechanismV16
@@ -432,6 +444,8 @@ class SimulationRunner:
             ],
             1: [
                 G2GeometryV16(),
+                LeechPartitionV16(),       # v16.2 - Proves 24/8=3 generations
+                ModularInvarianceV16(),    # v16.2 - Proves b3=24 uniqueness
                 GaugeUnificationSimulation(),
             ] + ([AlphaRigorSimulation()] if ALPHA_RIGOR_AVAILABLE else []),
             2: [
@@ -445,9 +459,10 @@ class SimulationRunner:
                 CosmologyIntroV16(),
                 DarkEnergyV16(),
                 S8SuppressionV16(),
+                RicciFlowH0V16(),
                 NeutrinoMixingSimulation(),
                 MultiSectorV16(),
-            ],
+            ] + ([CosmologicalConstantV16()] if COSMOLOGICAL_CONSTANT_AVAILABLE else []),
             4: [
                 PneumaMechanismV16(),
                 ThermalTimeV16(),  # Moved to Phase 4 - depends on Pneuma outputs

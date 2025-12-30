@@ -1,7 +1,7 @@
 {
   "version": "16.0",
-  "generated": "2025-12-29T13:00:10.562220Z",
-  "total_scripts": 51,
+  "generated": "2025-12-30T05:17:08.921620Z",
+  "total_scripts": 53,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -134,16 +134,16 @@
           "file": "cosmological_constant_v16_1.py",
           "path": "simulations/v16/cosmology/cosmological_constant_v16_1.py",
           "version": "16.1",
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Cosmological Constant from Entropy Density",
+          "description": "Derives cosmological constant Lambda from G2 manifold entropy density. Solves the cosmological constant problem by showing Lambda ~ 10^-52 m^-2 emerges geometrically from b3=24.",
           "status": null
         },
         {
           "file": "ricci_flow_h0_v16_1.py",
           "path": "simulations/v16/cosmology/ricci_flow_h0_v16_1.py",
           "version": "16.1",
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Ricci Flow Hubble Evolution",
+          "description": "Derives dynamically evolving H(z) from G2 Ricci flow. Resolves Hubble tension by natural interpolation between H0_early=67.4 and H0_local=73.04 km/s/Mpc.",
           "status": null
         },
         {
@@ -295,6 +295,22 @@
       "isV16": true,
       "scripts": [
         {
+          "file": "leech_partition_v16_2.py",
+          "path": "simulations/v16/geometric/leech_partition_v16_2.py",
+          "version": "16.2",
+          "title": "Leech Lattice Generation Partition",
+          "description": "Proves n_gen = 24/8 = 3 from octonionic partition of the 24-dimensional Leech lattice. This is a mathematical theorem, not a parameter fit.",
+          "status": null
+        },
+        {
+          "file": "modular_invariance_v16_2.py",
+          "path": "simulations/v16/geometric/modular_invariance_v16_2.py",
+          "version": "16.2",
+          "title": "Modular Invariance and b3=24 Uniqueness",
+          "description": "Proves that modular invariance of the partition function requires exactly b3 = 24. This is the mathematical origin of the critical dimension.",
+          "status": null
+        },
+        {
           "file": "alpha_rigor_v16_1.py",
           "path": "simulations/v16/geometric/alpha_rigor_v16_1.py",
           "version": "16.1",
@@ -335,7 +351,7 @@
           "status": null
         }
       ],
-      "count": 5
+      "count": 7
     },
     "v16/higgs": {
       "title": "Higgs",

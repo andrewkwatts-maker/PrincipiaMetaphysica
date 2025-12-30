@@ -95,10 +95,16 @@ class RicciFlowH0V16(SimulationBase):
         """Return required input parameter paths."""
         return [
             "topology.b3",           # Third Betti number
-            "constants.k_gimel",     # Geometric anchor
-            "desi.Omega_m",          # Matter density
-            "desi.Omega_de",         # Dark energy density
+            "desi.Omega_m",          # Matter density (Omega_de derived from flat universe)
         ]
+
+    def _compute_k_gimel(self, b3: int) -> float:
+        """
+        Compute geometric anchor k_gimel from b3.
+
+        k_gimel = b3/2 + 1/pi = 12 + 1/pi ≈ 12.318 for b3=24
+        """
+        return (b3 / 2.0) + (1.0 / np.pi)
 
     @property
     def output_params(self) -> List[str]:
@@ -138,9 +144,11 @@ class RicciFlowH0V16(SimulationBase):
 
         # Get inputs
         b3 = registry.get_param("topology.b3")
-        k_gimel = registry.get_param("constants.k_gimel")
+        k_gimel = self._compute_k_gimel(b3)  # Derived from b3, not a separate input
         Omega_m = registry.get_param("desi.Omega_m")
-        Omega_de = registry.get_param("desi.Omega_de")
+        # For flat universe: Omega_m + Omega_de + Omega_r ≈ 1
+        # Omega_r ~ 10^-5 is negligible at late times
+        Omega_de = 1.0 - Omega_m
 
         # Step 1: Compute Ricci flow parameters
         ricci_params = self._compute_ricci_params(b3, k_gimel)

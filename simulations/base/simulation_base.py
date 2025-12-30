@@ -125,6 +125,7 @@ class Formula:
         plain_text: Plain text representation
         category: Category ("ESTABLISHED", "THEORY", "DERIVED", "PREDICTIONS")
         description: What the formula computes
+        title: Short descriptive title for display (derived from description if not provided)
         inputParams: List of input parameter paths (camelCase for JSON)
         outputParams: List of output parameter paths (camelCase for JSON)
         input_params: List of input parameter paths (snake_case for Python - legacy)
@@ -138,12 +139,20 @@ class Formula:
     plain_text: str
     category: str
     description: str
+    title: Optional[str] = None  # Short title, defaults to first sentence of description
     inputParams: List[str] = field(default_factory=list)
     outputParams: List[str] = field(default_factory=list)
     input_params: List[str] = field(default_factory=list)
     output_params: List[str] = field(default_factory=list)
     derivation: Optional[Dict[str, Any]] = None
     terms: Dict[str, Any] = field(default_factory=dict)
+
+    def __post_init__(self):
+        """Generate title from description if not provided."""
+        if not self.title and self.description:
+            # Take first sentence or first 60 chars as title
+            first_sentence = self.description.split('.')[0].strip()
+            self.title = first_sentence[:80] if len(first_sentence) > 80 else first_sentence
 
 
 @dataclass

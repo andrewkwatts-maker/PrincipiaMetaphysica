@@ -11,5 +11,16 @@ Dedicated To:
 from .g2_geometry_v16_0 import G2GeometryV16
 from .alpha_rigor_v16_1 import AlphaRigorSolver, run_alpha_derivation
 
-__all__ = ['G2GeometryV16', 'AlphaRigorSolver', 'run_alpha_derivation']
-__version__ = "16.1"
+# v16.2 - Two-Time Physics and Leech Partition
+from .leech_partition_v16_2 import LeechPartitionV16
+from .modular_invariance_v16_2 import ModularInvarianceV16
+
+__all__ = [
+    'G2GeometryV16',
+    'AlphaRigorSolver',
+    'run_alpha_derivation',
+    # v16.2
+    'LeechPartitionV16',
+    'ModularInvarianceV16',
+]
+__version__ = "16.2"

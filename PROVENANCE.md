@@ -101,8 +101,8 @@ The cryptographic signature of this discovery (quantum-resistant SHA-512):
 
 ```
 Discovery ID: PM-GUT-2025-G2-24-AKW
-SHA-512: c08b955983b9d2100f9f012af16477cde91d88d8bf8b5d8f571c7f180e1765a5a4990d9008206224e44539351a8dffa587c5fbabe8db79bee900372297e3dbd5
-Timestamp: 2025-12-29T00:00:00Z
+SHA-512: c352748519fce55f301439cb926a00d6d181f60c074391d81e2e09b8a44b332284135c5ca0ab611d5e3829f71c6ae023514b01856cc9375071de3956c8e4103a
+Timestamp: 2025-12-29T13:21:01Z
 Algorithm: SHA-512 (quantum-resistant)
 ```
 
