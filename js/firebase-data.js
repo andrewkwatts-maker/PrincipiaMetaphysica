@@ -31,19 +31,25 @@ const dataCache = {
 const CACHE_TTL = 5 * 60 * 1000;
 
 /**
- * Load theory constants (PM object) from Firestore
- * Falls back to static file if Firestore fails
+ * Load theory constants (PM object)
+ * Tries static JSON files FIRST (faster, no auth required), then falls back to Firestore
  * @returns {Promise<Object>} PM constants object
  */
 export async function loadTheoryConstants() {
   // Check cache
   if (dataCache.theoryConstants && isCacheValid()) {
-    console.log('[PM Data] Returning cached theory constants');
     return dataCache.theoryConstants;
   }
 
+  // Strategy 1: Try static JSON files first (faster, no auth needed)
+  const staticResult = await loadStaticTheoryConstants();
+  if (staticResult && Object.keys(staticResult).length > 0) {
+    return staticResult;
+  }
+
+  // Strategy 2: Fall back to Firestore only if static files failed
   try {
-    console.log('[PM Data] Loading theory constants from Firestore...');
+    console.log('[PM Data] Static files unavailable, trying Firestore...');
     const docRef = doc(db, 'theory_constants', 'current');
     const docSnap = await getDoc(docRef);
 
@@ -52,18 +58,15 @@ export async function loadTheoryConstants() {
       dataCache.theoryConstants = data;
       dataCache.lastUpdated = Date.now();
       console.log('[PM Data] Theory constants loaded from Firestore');
-
-      // Make available globally as PM object
       window.PM = buildPMObject(data);
       return window.PM;
-    } else {
-      console.warn('[PM Data] No theory constants document found in Firestore');
-      return await loadStaticFallback();
     }
   } catch (error) {
-    console.error('[PM Data] Error loading from Firestore:', error);
-    return await loadStaticFallback();
+    // Silently fail - static files are the primary source
   }
+
+  console.warn('[PM Data] No data sources available');
+  return {};
 }
 
 /**
@@ -103,17 +106,23 @@ function buildPMObject(data) {
 }
 
 /**
- * Load formulas from Firestore
+ * Load formulas - tries static JSON files first, falls back to Firestore
  * @returns {Promise<Array>} Array of formula objects
  */
 export async function loadFormulas() {
   if (dataCache.formulas && isCacheValid()) {
-    console.log('[PM Data] Returning cached formulas');
     return dataCache.formulas;
   }
 
+  // Strategy 1: Try static JSON files first
+  const staticFormulas = await loadStaticFormulas();
+  if (staticFormulas && staticFormulas.length > 0) {
+    dataCache.formulas = staticFormulas;
+    return staticFormulas;
+  }
+
+  // Strategy 2: Fall back to Firestore
   try {
-    console.log('[PM Data] Loading formulas from Firestore...');
     const formulasRef = collection(db, 'formulas');
     const q = query(formulasRef, orderBy('category'));
     const snapshot = await getDocs(q);
@@ -123,27 +132,36 @@ export async function loadFormulas() {
       formulas.push({ id: doc.id, ...doc.data() });
     });
 
-    dataCache.formulas = formulas;
-    console.log(`[PM Data] Loaded ${formulas.length} formulas from Firestore`);
+    if (formulas.length > 0) {
+      dataCache.formulas = formulas;
+      console.log(`[PM Data] Loaded ${formulas.length} formulas from Firestore`);
+    }
     return formulas;
   } catch (error) {
-    console.error('[PM Data] Error loading formulas:', error);
+    // Silently fail - static files are the primary source
     return [];
   }
 }
 
 /**
- * Load formula database (tooltip metadata) from Firestore
+ * Load formula database (tooltip metadata) - tries static files first
  * @returns {Promise<Object>} Formula database object
  */
 export async function loadFormulaDatabase() {
   if (dataCache.formulaDatabase && isCacheValid()) {
-    console.log('[PM Data] Returning cached formula database');
     return dataCache.formulaDatabase;
   }
 
+  // Strategy 1: Try static JSON files first (formulas.json contains the database)
+  const staticDb = await loadStaticFormulaDatabase();
+  if (staticDb && Object.keys(staticDb).length > 0) {
+    dataCache.formulaDatabase = staticDb;
+    window.FORMULA_DATABASE = staticDb;
+    return staticDb;
+  }
+
+  // Strategy 2: Fall back to Firestore
   try {
-    console.log('[PM Data] Loading formula database from Firestore...');
     const dbRef = collection(db, 'formula_database');
     const snapshot = await getDocs(dbRef);
 
@@ -152,14 +170,14 @@ export async function loadFormulaDatabase() {
       database[doc.id] = doc.data();
     });
 
-    dataCache.formulaDatabase = database;
-    console.log(`[PM Data] Loaded ${Object.keys(database).length} formula entries`);
-
-    // Make available globally
-    window.FORMULA_DATABASE = database;
+    if (Object.keys(database).length > 0) {
+      dataCache.formulaDatabase = database;
+      window.FORMULA_DATABASE = database;
+      console.log(`[PM Data] Loaded ${Object.keys(database).length} formula entries from Firestore`);
+    }
     return database;
   } catch (error) {
-    console.error('[PM Data] Error loading formula database:', error);
+    // Silently fail - static files are the primary source
     return {};
   }
 }
@@ -274,51 +292,116 @@ export function clearCache() {
 }
 
 /**
- * Fallback to load from AutoGenerated JSON files
+ * Get base path for AutoGenerated files based on current page location
+ */
+function getBasePath() {
+  const path = window.location.pathname;
+  return (path.includes('/Pages/') || path.includes('/foundations/') ||
+          path.includes('/docs/') || path.includes('/diagrams/'))
+    ? '../AutoGenerated/' : 'AutoGenerated/';
+}
+
+/**
+ * Load theory constants from static JSON files
  * @returns {Promise<Object>} PM object from static JSON files
  */
-async function loadStaticFallback() {
-  console.log('[PM Data] Falling back to AutoGenerated JSON files');
+async function loadStaticTheoryConstants() {
+  const basePath = getBasePath();
+  const paths = [
+    '/AutoGenerated/theory_output.json',
+    `${basePath}theory_output.json`,
+    'AutoGenerated/theory_output.json',
+    '../AutoGenerated/theory_output.json'
+  ];
 
-  // Determine base path based on current page location
-  const path = window.location.pathname;
-  const basePath = (path.includes('/Pages/') || path.includes('/foundations/') ||
-                   path.includes('/docs/') || path.includes('/diagrams/'))
-    ? '../AutoGenerated/' : 'AutoGenerated/';
-
-  try {
-    // Try loading from AutoGenerated JSON files (same approach as pm-constants-loader.js)
-    const paths = [
-      '/AutoGenerated/theory_output.json',
-      `${basePath}theory_output.json`,
-      'AutoGenerated/theory_output.json',
-      '../AutoGenerated/theory_output.json'
-    ];
-
-    for (const jsonPath of paths) {
-      try {
-        const response = await fetch(jsonPath);
-        if (response.ok) {
-          const data = await response.json();
-          console.log(`[PM Data] Static fallback loaded from ${jsonPath}`);
-
-          // Build PM object from JSON data
-          const PM = buildPMObject(data);
-          window.PM = PM;
-          dataCache.theoryConstants = PM;
-          dataCache.lastUpdated = Date.now();
-          return PM;
-        }
-      } catch (e) {
-        continue;
+  for (const jsonPath of paths) {
+    try {
+      const response = await fetch(jsonPath);
+      if (response.ok) {
+        const data = await response.json();
+        console.log(`[PM Data] Loaded theory constants from ${jsonPath}`);
+        const PM = buildPMObject(data);
+        window.PM = PM;
+        dataCache.theoryConstants = PM;
+        dataCache.lastUpdated = Date.now();
+        return PM;
       }
+    } catch (e) {
+      continue;
     }
-  } catch (error) {
-    console.error('[PM Data] Static fallback failed:', error);
   }
+  return {};
+}
 
-  // Return empty object if all fails
-  console.error('[PM Data] All data loading methods failed');
+/**
+ * Load formulas from static JSON files
+ * @returns {Promise<Array>} Array of formula objects
+ */
+async function loadStaticFormulas() {
+  const basePath = getBasePath();
+  const paths = [
+    '/AutoGenerated/formulas.json',
+    `${basePath}formulas.json`,
+    'AutoGenerated/formulas.json',
+    '../AutoGenerated/formulas.json'
+  ];
+
+  for (const jsonPath of paths) {
+    try {
+      const response = await fetch(jsonPath);
+      if (response.ok) {
+        const data = await response.json();
+        // formulas.json has structure { formulas: {...}, count: N }
+        // Convert to array format expected by consumers
+        if (data.formulas && typeof data.formulas === 'object') {
+          const formulas = Object.entries(data.formulas).map(([id, formula]) => ({
+            id,
+            ...formula
+          }));
+          console.log(`[PM Data] Loaded ${formulas.length} formulas from ${jsonPath}`);
+          return formulas;
+        }
+        // If it's already an array, return it
+        if (Array.isArray(data)) {
+          console.log(`[PM Data] Loaded ${data.length} formulas from ${jsonPath}`);
+          return data;
+        }
+      }
+    } catch (e) {
+      continue;
+    }
+  }
+  return [];
+}
+
+/**
+ * Load formula database from static JSON files
+ * @returns {Promise<Object>} Formula database object
+ */
+async function loadStaticFormulaDatabase() {
+  const basePath = getBasePath();
+  const paths = [
+    '/AutoGenerated/formulas.json',
+    `${basePath}formulas.json`,
+    'AutoGenerated/formulas.json',
+    '../AutoGenerated/formulas.json'
+  ];
+
+  for (const jsonPath of paths) {
+    try {
+      const response = await fetch(jsonPath);
+      if (response.ok) {
+        const data = await response.json();
+        // formulas.json has structure { formulas: {...}, count: N }
+        if (data.formulas && typeof data.formulas === 'object') {
+          console.log(`[PM Data] Loaded formula database from ${jsonPath}`);
+          return data.formulas;
+        }
+      }
+    } catch (e) {
+      continue;
+    }
+  }
   return {};
 }
 
