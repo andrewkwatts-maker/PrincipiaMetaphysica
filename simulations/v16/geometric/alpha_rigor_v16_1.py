@@ -95,7 +95,7 @@ class AlphaRigorSolver:
             dict: Validation results
         """
         alpha_inv = self.derive_alpha_inverse()
-        target = 137.035999  # CODATA 2022
+        target = 137.035999177  # CODATA 2022 (12-digit precision)
 
         error = abs(alpha_inv - target)
         precision = (1 - error / target) * 100

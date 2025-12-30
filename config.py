@@ -3750,7 +3750,7 @@ class PhenomenologyParameters:
     H0 = 67.4                # Hubble constant [km/s/Mpc]
 
     # Fine Structure Constant
-    ALPHA_EM = 1/137.035999084  # QED coupling (CODATA 2018)
+    ALPHA_EM = 1/137.035999177  # QED coupling (CODATA 2022, 12-digit precision)
 
     @staticmethod
     def w0_value():

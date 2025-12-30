@@ -1,10 +1,13 @@
 @echo off
 REM Start local web server for testing Principia Metaphysica
 REM Copyright (c) 2025 Andrew Keith Watts
+REM
+REM This script starts a local web server with CORS headers enabled,
+REM allowing the HTML pages to load JSON data files properly.
 
-echo ========================================
-echo Principia Metaphysica - Local Server
-echo ========================================
+echo ============================================================
+echo   PRINCIPIA METAPHYSICA - Local Server
+echo ============================================================
 echo.
 
 REM Check if Python is available
@@ -16,14 +19,10 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo Starting local web server on port 8000...
+echo Starting local web server with CORS support...
 echo.
-echo Open your browser to:
-echo   - Main site: http://localhost:8000/
-echo   - References: http://localhost:8000/Pages/references.html
-echo   - Test page: http://localhost:8000/test_references_page.html
-echo.
-echo Press Ctrl+C to stop the server
+echo The website will open automatically in your browser.
+echo Press Ctrl+C to stop the server.
 echo.
 
-python -m http.server 8000
+python serve.py
