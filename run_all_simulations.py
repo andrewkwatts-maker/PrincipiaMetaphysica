@@ -174,6 +174,14 @@ from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimula
 from simulations.v16.geometric.leech_partition_v16_2 import LeechPartitionV16
 from simulations.v16.geometric.modular_invariance_v16_2 import ModularInvarianceV16
 
+# v16.2 - Ghost-Free Stability Check (The Guardian) - BLOCKS simulations if anomaly not cancelled
+try:
+    from simulations.validation.unitary_filter_v16_2 import UnitaryFilterSimulation, UnitaryFilter
+    UNITARY_FILTER_AVAILABLE = True
+except ImportError:
+    UNITARY_FILTER_AVAILABLE = False
+    warnings.warn("UnitaryFilter not available - ghost-free validation disabled")
+
 # Academic Armor v16.1 - Rigor simulations (geometric derivations)
 try:
     from simulations.v16.geometric.alpha_rigor_v16_1 import AlphaRigorSimulation
@@ -444,6 +452,8 @@ class SimulationRunner:
             ],
             1: [
                 G2GeometryV16(),
+            ] + ([UnitaryFilterSimulation()] if UNITARY_FILTER_AVAILABLE else []) + [
+                # After UnitaryFilter validates ghost-free stability:
                 LeechPartitionV16(),       # v16.2 - Proves 24/8=3 generations
                 ModularInvarianceV16(),    # v16.2 - Proves b3=24 uniqueness
                 GaugeUnificationSimulation(),

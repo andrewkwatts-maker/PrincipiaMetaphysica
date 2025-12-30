@@ -272,6 +272,7 @@
 
     /**
      * Generate parameter tooltip content
+     * Shows: value with units, sigma deviation, source/derivation, experimental comparison
      */
     function generateParameterTooltip(paramId) {
         if (!parametersCache) return null;
@@ -281,10 +282,24 @@
 
         const metadata = param.metadata || {};
         const description = metadata.description || 'No description available';
-        const units = metadata.units || '';
+        const units = metadata.units || param.units || '';
         const value = formatValue(param.value);
-        const uncertainty = param.uncertainty ? `±${formatValue(param.uncertainty)}` : '';
-        const source = param.source || '';
+        const uncertainty = param.uncertainty ? `${formatValue(param.uncertainty)}` : '';
+        const source = param.source || param.derivation || '';
+
+        // Experimental comparison data
+        const expValue = param.experimental_value !== undefined ? formatValue(param.experimental_value) : null;
+        const expUncertainty = param.experimental_uncertainty ? formatValue(param.experimental_uncertainty) : '';
+        const expSource = param.experimental_source || '';
+
+        // Sigma deviation
+        const sigma = param.agreement_sigma !== undefined ? param.agreement_sigma : null;
+        const sigmaText = param.agreement_text || param.agreement || (sigma !== null ? `${sigma.toFixed(2)}sigma` : '');
+
+        // Color for sigma (green < 1, yellow < 3, red >= 3)
+        const sigmaColor = sigma !== null
+            ? (sigma < 1 ? '#4caf50' : sigma < 3 ? '#ff9800' : '#f44336')
+            : '#4caf50';
 
         return `
             <div class="pm-tooltip-header">
@@ -292,9 +307,20 @@
                 <span class="pm-tooltip-title">${paramId.split('.').pop()}</span>
             </div>
             <div class="pm-tooltip-value">
-                ${value}${uncertainty ? ' ' + uncertainty : ''} ${units}
+                ${value}${uncertainty ? ' +/- ' + uncertainty : ''} ${units}
             </div>
             <div class="pm-tooltip-description">${description}</div>
+            ${expValue ? `
+                <div class="pm-tooltip-experiment">
+                    <em>Experimental:</em> ${expValue}${expUncertainty ? ' +/- ' + expUncertainty : ''} ${units}
+                    ${expSource ? `<small>(${expSource})</small>` : ''}
+                </div>
+            ` : ''}
+            ${sigmaText ? `
+                <div class="pm-tooltip-agreement" style="color:${sigmaColor}">
+                    <em>Agreement:</em> ${sigmaText}
+                </div>
+            ` : ''}
             ${source || param.status ? `
                 <div class="pm-tooltip-meta">
                     ${param.status ? `
@@ -348,6 +374,61 @@
                 <span class="pm-tooltip-title">${symbol}</span>
             </div>
             <div class="pm-tooltip-description">${description || 'Formula term'}</div>
+        `;
+    }
+
+    /**
+     * Generate formula tooltip content
+     * Shows: Formula ID, Description, Related parameters, Experimental comparison
+     */
+    function generateFormulaTooltip(formulaId, formulaData) {
+        if (!formulaData) return null;
+
+        const label = formulaData.label || formulaId;
+        const description = formulaData.description || formulaData.title || 'No description';
+        const category = formulaData.category || 'DERIVED';
+        const inputParams = formulaData.input_params || [];
+        const outputParams = formulaData.output_params || [];
+
+        // Get category styling
+        const categoryColors = {
+            'ESTABLISHED': '#4ade80',
+            'THEORY': '#8b7fff',
+            'DERIVED': '#60a5fa',
+            'PREDICTIONS': '#f472b6'
+        };
+        const categoryColor = categoryColors[category] || '#888';
+
+        // Build related parameters list
+        const allParams = [...inputParams, ...outputParams];
+        const paramsHtml = allParams.length > 0
+            ? `<div class="pm-tooltip-params">
+                <em>Parameters:</em> ${allParams.map(p => `<code>${p.split('.').pop()}</code>`).join(', ')}
+               </div>`
+            : '';
+
+        // Check for experimental validation
+        const status = formulaData.status || '';
+        const expValidation = formulaData.experimental_comparison || formulaData.validation || '';
+
+        return `
+            <div class="pm-tooltip-header">
+                <span class="pm-tooltip-icon">📐</span>
+                <span class="pm-tooltip-title">Eq. ${label}</span>
+                <span class="pm-tooltip-category" style="color:${categoryColor}; margin-left:auto; font-size:0.75rem;">${category}</span>
+            </div>
+            <div class="pm-tooltip-description">${description}</div>
+            ${paramsHtml}
+            ${status ? `
+                <div class="pm-tooltip-status">
+                    <em>Status:</em> <span style="color:${categoryColor}">${status}</span>
+                </div>
+            ` : ''}
+            ${expValidation ? `
+                <div class="pm-tooltip-experiment">
+                    <em>Validation:</em> ${expValidation}
+                </div>
+            ` : ''}
         `;
     }
 
@@ -544,29 +625,112 @@
                 element.addEventListener('mousemove', handleMouseMove);
             }
         });
+
+        // Enhance formula cards (for formula hovering)
+        document.querySelectorAll('.formula-card[data-formula-id], [data-formula-id]').forEach(element => {
+            if (element.dataset.tooltipEnhanced) return;
+
+            const formulaId = element.dataset.formulaId;
+            if (!formulaId) return;
+
+            // Get formula data from global PMFormulaLoader if available
+            let formulaData = null;
+            if (window.PMFormulaLoader && window.PMFormulaLoader.get) {
+                formulaData = window.PMFormulaLoader.get(formulaId);
+            }
+
+            if (formulaData) {
+                element.dataset.tooltipEnhanced = 'true';
+                element.style.cursor = 'help';
+
+                element.addEventListener('mouseenter', (e) =>
+                    handleMouseEnter(e, element, () => generateFormulaTooltip(formulaId, formulaData))
+                );
+                element.addEventListener('mouseleave', handleMouseLeave);
+                element.addEventListener('mousemove', handleMouseMove);
+            }
+        });
     }
 
     /**
      * Setup hover listeners (legacy PM value support)
      */
     function setupHoverListeners() {
-        document.addEventListener('mouseover', (e) => {
-            if (e.target.classList.contains('pm-value') && e.target._pmObject) {
-                const content = typeof PM !== 'undefined' && PM.getTooltip
-                    ? PM.getTooltip(e.target._pmObject)
-                    : generateParameterTooltip(e.target.dataset.param);
-                if (content) showTooltip(e, content);
-            }
-        });
+        // Check if device is touch-only
+        const isTouchDevice = window.matchMedia('(hover: none) and (pointer: coarse)').matches;
 
-        document.addEventListener('mouseout', (e) => {
-            if (e.target.classList.contains('pm-value')) {
-                removeTooltip();
-            }
-        });
+        if (isTouchDevice) {
+            // Touch device: use touchstart/touchend
+            let activeElement = null;
 
-        // Update tooltip position on mouse move
-        document.addEventListener('mousemove', handleMouseMove);
+            document.addEventListener('touchstart', (e) => {
+                const target = e.target.closest('.pm-value, .param-card, .param-chip, [data-param-id], .status-badge');
+                if (target) {
+                    e.preventDefault();
+
+                    // Toggle tooltip for same element
+                    if (activeElement === target) {
+                        removeTooltip();
+                        activeElement = null;
+                        return;
+                    }
+
+                    activeElement = target;
+
+                    // Generate tooltip content
+                    let content = null;
+                    if (target.classList.contains('pm-value') && target._pmObject) {
+                        content = typeof PM !== 'undefined' && PM.getTooltip
+                            ? PM.getTooltip(target._pmObject)
+                            : generateParameterTooltip(target.dataset.param);
+                    } else if (target.classList.contains('status-badge')) {
+                        content = generateStatusTooltip(target.textContent.trim());
+                    } else {
+                        const paramId = target.dataset.paramId ||
+                                      target.querySelector('.param-symbol')?.textContent?.trim() ||
+                                      target.textContent?.trim().split('=')[0]?.trim();
+                        if (paramId) {
+                            const resolvedId = resolveParameterId(paramId);
+                            content = generateParameterTooltip(resolvedId);
+                        }
+                    }
+
+                    if (content) {
+                        const touch = e.touches[0];
+                        const syntheticEvent = {
+                            clientX: touch.clientX,
+                            clientY: touch.clientY,
+                            pageX: touch.pageX,
+                            pageY: touch.pageY
+                        };
+                        showTooltip(syntheticEvent, content);
+                    }
+                } else {
+                    // Tapped outside - close tooltip
+                    removeTooltip();
+                    activeElement = null;
+                }
+            }, { passive: false });
+        } else {
+            // Desktop: use mouse events
+            document.addEventListener('mouseover', (e) => {
+                if (e.target.classList.contains('pm-value') && e.target._pmObject) {
+                    const content = typeof PM !== 'undefined' && PM.getTooltip
+                        ? PM.getTooltip(e.target._pmObject)
+                        : generateParameterTooltip(e.target.dataset.param);
+                    if (content) showTooltip(e, content);
+                }
+            });
+
+            document.addEventListener('mouseout', (e) => {
+                if (e.target.classList.contains('pm-value')) {
+                    removeTooltip();
+                }
+            });
+
+            // Update tooltip position on mouse move
+            document.addEventListener('mousemove', handleMouseMove);
+        }
 
         // Hide tooltip on scroll
         window.addEventListener('scroll', removeTooltip, { passive: true });
@@ -737,78 +901,79 @@
         PM.getTooltip = (obj) => {
             let tooltip = `<div class="pm-tooltip-content">`;
 
-        // Value and unit
-        tooltip += `<div class="pm-tooltip-value"><strong>${obj.display || obj.value}</strong>`;
-        if (obj.unit) {
-            tooltip += ` ${obj.unit}`;
-        }
-        tooltip += `</div>`;
-
-        // Description
-        if (obj.description) {
-            tooltip += `<div class="pm-tooltip-desc">${obj.description}</div>`;
-        }
-
-        // Formula
-        if (obj.formula) {
-            tooltip += `<div class="pm-tooltip-formula"><em>Formula:</em> ${obj.formula}</div>`;
-        }
-
-        // Derivation
-        if (obj.derivation) {
-            tooltip += `<div class="pm-tooltip-derivation"><em>Derivation:</em> ${obj.derivation}</div>`;
-        }
-
-        // Uncertainty
-        if (obj.uncertainty !== undefined || obj.uncertainty_oom !== undefined) {
-            const unc = obj.uncertainty_oom !== undefined
-                ? `±${obj.uncertainty_oom.toFixed(2)} OOM`
-                : obj.uncertainty_lower && obj.uncertainty_upper
-                    ? `${obj.confidence_level || '68%'} CI: [${obj.uncertainty_lower.toExponential(2)}-${obj.uncertainty_upper.toExponential(2)}]`
-                    : `±${obj.uncertainty}`;
-            tooltip += `<div class="pm-tooltip-uncertainty"><em>Uncertainty:</em> ${unc}</div>`;
-        }
-
-        // Experimental comparison
-        if (obj.experimental_value !== undefined) {
-            tooltip += `<div class="pm-tooltip-experiment">`;
-            tooltip += `<em>Experiment:</em> ${obj.experimental_value}`;
-            if (obj.experimental_uncertainty) {
-                tooltip += ` ± ${obj.experimental_uncertainty}`;
-            }
-            if (obj.experimental_source) {
-                tooltip += ` (${obj.experimental_source})`;
+            // Value and unit
+            tooltip += `<div class="pm-tooltip-value"><strong>${obj.display || obj.value}</strong>`;
+            if (obj.unit) {
+                tooltip += ` ${obj.unit}`;
             }
             tooltip += `</div>`;
-        }
 
-        // Agreement
-        if (obj.agreement_sigma !== undefined || obj.agreement || obj.agreement_text) {
-            const sigma = obj.agreement_sigma || 0;
-            const color = sigma < 1 ? '#4caf50' : sigma < 3 ? '#ff9800' : '#f44336';
-            tooltip += `<div class="pm-tooltip-agreement" style="color:${color}">`;
-            tooltip += `<em>Agreement:</em> ${obj.agreement_text || obj.agreement || `${sigma.toFixed(2)}σ`}`;
+            // Description
+            if (obj.description) {
+                tooltip += `<div class="pm-tooltip-desc">${obj.description}</div>`;
+            }
+
+            // Formula
+            if (obj.formula) {
+                tooltip += `<div class="pm-tooltip-formula"><em>Formula:</em> ${obj.formula}</div>`;
+            }
+
+            // Derivation
+            if (obj.derivation) {
+                tooltip += `<div class="pm-tooltip-derivation"><em>Derivation:</em> ${obj.derivation}</div>`;
+            }
+
+            // Uncertainty
+            if (obj.uncertainty !== undefined || obj.uncertainty_oom !== undefined) {
+                const unc = obj.uncertainty_oom !== undefined
+                    ? `±${obj.uncertainty_oom.toFixed(2)} OOM`
+                    : obj.uncertainty_lower && obj.uncertainty_upper
+                        ? `${obj.confidence_level || '68%'} CI: [${obj.uncertainty_lower.toExponential(2)}-${obj.uncertainty_upper.toExponential(2)}]`
+                        : `±${obj.uncertainty}`;
+                tooltip += `<div class="pm-tooltip-uncertainty"><em>Uncertainty:</em> ${unc}</div>`;
+            }
+
+            // Experimental comparison
+            if (obj.experimental_value !== undefined) {
+                tooltip += `<div class="pm-tooltip-experiment">`;
+                tooltip += `<em>Experiment:</em> ${obj.experimental_value}`;
+                if (obj.experimental_uncertainty) {
+                    tooltip += ` ± ${obj.experimental_uncertainty}`;
+                }
+                if (obj.experimental_source) {
+                    tooltip += ` (${obj.experimental_source})`;
+                }
+                tooltip += `</div>`;
+            }
+
+            // Agreement
+            if (obj.agreement_sigma !== undefined || obj.agreement || obj.agreement_text) {
+                const sigma = obj.agreement_sigma || 0;
+                const color = sigma < 1 ? '#4caf50' : sigma < 3 ? '#ff9800' : '#f44336';
+                tooltip += `<div class="pm-tooltip-agreement" style="color:${color}">`;
+                tooltip += `<em>Agreement:</em> ${obj.agreement_text || obj.agreement || `${sigma.toFixed(2)}σ`}`;
+                tooltip += `</div>`;
+            }
+
+            // Testability
+            if (obj.testable) {
+                tooltip += `<div class="pm-tooltip-testable"><em>Testable:</em> ${obj.testable}</div>`;
+            }
+
+            // Source
+            if (obj.source) {
+                tooltip += `<div class="pm-tooltip-source"><em>Source:</em> <code>${obj.source}</code></div>`;
+            }
+
+            // References
+            if (obj.references && obj.references.length > 0) {
+                tooltip += `<div class="pm-tooltip-refs"><em>References:</em> ${obj.references.join(', ')}</div>`;
+            }
+
             tooltip += `</div>`;
-        }
-
-        // Testability
-        if (obj.testable) {
-            tooltip += `<div class="pm-tooltip-testable"><em>Testable:</em> ${obj.testable}</div>`;
-        }
-
-        // Source
-        if (obj.source) {
-            tooltip += `<div class="pm-tooltip-source"><em>Source:</em> <code>${obj.source}</code></div>`;
-        }
-
-        // References
-        if (obj.references && obj.references.length > 0) {
-            tooltip += `<div class="pm-tooltip-refs"><em>References:</em> ${obj.references.join(', ')}</div>`;
-        }
-
-        tooltip += `</div>`;
-        return tooltip;
-    };
+            return tooltip;
+        };
+    }
 
     // ========================================================================
     // AUTO-INITIALIZATION

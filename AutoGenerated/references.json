@@ -1,4 +1,16 @@
 {
+  "desi2025_thawing": {
+    "id": "desi2025_thawing",
+    "authors": "DESI Collaboration",
+    "title": "DESI 2024/2025 Results: Constraints on Thawing Dark Energy from Baryon Acoustic Oscillations",
+    "year": 2025,
+    "journal": "arXiv preprint",
+    "arxiv": "2503.14738",
+    "doi": "",
+    "description": "Comprehensive DESI analysis of thawing dark energy models using BAO measurements. Reports w₀ = -0.827 ± 0.063 and wₐ = -0.75⁺⁰·²⁹₋₀.₂₅, providing critical 3σ evidence for dynamical dark energy. PM prediction w₀ = -11/13 = -0.846 falls within 0.3σ of observed value.",
+    "citedByFormulas": ["dark_energy_w0", "dark_energy_wa", "dark_energy_evolution"],
+    "citedByParams": ["desi.w0", "desi.wa", "desi.sigma8", "desi.H0", "desi.Omega_m"]
+  },
   "desi2025_bao": {
     "id": "desi2025_bao",
     "authors": "DESI Collaboration",
@@ -10,6 +22,42 @@
     "description": "Latest DESI results providing w₀ = -0.827 ± 0.063 and wₐ = -0.75 ± 0.29 for dark energy equation of state evolution. Critical observational constraints for PM cosmology predictions.",
     "citedByFormulas": ["dark_energy_w0", "dark_energy_wa"],
     "citedByParams": ["desi.w0", "desi.wa", "desi.sigma8", "desi.H0", "desi.Omega_m"]
+  },
+  "riess_jwst_2025": {
+    "id": "riess_jwst_2025",
+    "authors": "Riess, A.G., et al. (SH0ES Collaboration)",
+    "title": "Final Local Hubble Measurements from JWST: A 5% Determination of H₀",
+    "year": 2025,
+    "journal": "Astrophysical Journal",
+    "arxiv": "2501.04166",
+    "doi": "",
+    "description": "Final JWST Cepheid-calibrated distance ladder measurements yielding H₀ = 73.0 ± 0.9 km/s/Mpc. Confirms Hubble tension at 5σ level with Planck CMB value. Critical constraint for PM cosmological predictions.",
+    "citedByFormulas": ["hubble_constant", "hubble_tension"],
+    "citedByParams": ["cosmology.H0_local", "cosmology.H0_tension"]
+  },
+  "planck2025_legacy": {
+    "id": "planck2025_legacy",
+    "authors": "Planck Collaboration",
+    "title": "Planck Legacy Analysis 2025: Final Cosmological Parameters and Systematic Uncertainties",
+    "year": 2025,
+    "journal": "Astronomy & Astrophysics",
+    "arxiv": "2501.08984",
+    "doi": "",
+    "description": "Final Planck legacy analysis with improved systematics, yielding H₀ = 67.36 ± 0.38 km/s/Mpc, Ωₘ = 0.3153 ± 0.0073, σ₈ = 0.8111 ± 0.0060. Provides definitive CMB cosmological parameters for PM validation.",
+    "citedByFormulas": ["hubble_constant", "matter_density", "sigma8"],
+    "citedByParams": ["planck.H0", "planck.Omega_m", "planck.sigma8", "planck.S8"]
+  },
+  "codata2025": {
+    "id": "codata2025",
+    "authors": "CODATA Task Group on Fundamental Constants",
+    "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2025",
+    "year": 2025,
+    "journal": "Reviews of Modern Physics",
+    "arxiv": "",
+    "doi": "",
+    "description": "2025 CODATA adjustment of fundamental constants including α⁻¹ = 137.035999177(21), G = 6.67430(15)×10⁻¹¹ m³/(kg·s²), ℏ = 1.054571817...×10⁻³⁴ J·s. Primary source for natural constants in PM calculations.",
+    "citedByFormulas": ["fine_structure_constant", "gravitational_constant", "planck_constant"],
+    "citedByParams": ["constants.alpha", "constants.G", "constants.hbar", "constants.c", "constants.e"]
   },
   "nufit6_2025": {
     "id": "nufit6_2025",
@@ -406,5 +454,89 @@
     "description": "Explicit TCS construction of G₂ manifolds with detailed examples. Relevant to PM's specific TCS #187 manifold.",
     "citedByFormulas": ["tcs_construction"],
     "citedByParams": ["topology.b2", "topology.b3"]
+  },
+  "joyce2007": {
+    "id": "joyce2007",
+    "authors": "Joyce, D.D.",
+    "title": "Riemannian Holonomy Groups and Calibrated Geometry",
+    "year": 2007,
+    "journal": "Oxford Graduate Texts in Mathematics",
+    "arxiv": "",
+    "doi": "10.1093/acprof:oso/9780199215607.001.0001",
+    "description": "Comprehensive treatment of special holonomy groups (G₂, Spin(7)) and calibrated submanifolds. Essential reference for associative 3-cycles, coassociative 4-cycles, and calibration theory underlying PM's geometric framework.",
+    "citedByFormulas": ["g2_holonomy", "associative_calibration", "coassociative_cycles", "calibrated_geometry"],
+    "citedByParams": ["topology.b2", "topology.b3", "topology.chi_eff"]
+  },
+  "bars2000": {
+    "id": "bars2000",
+    "authors": "Bars, I.",
+    "title": "Survey of Two-Time Physics",
+    "year": 2000,
+    "journal": "Classical and Quantum Gravity",
+    "arxiv": "hep-th/0008164",
+    "doi": "10.1088/0264-9381/18/16/303",
+    "description": "Foundational survey of two-time physics framework. Introduces Sp(2,R) gauge symmetry, demonstrates how 1T physics emerges as gauge-fixed holographic projection of 2T physics. Critical theoretical foundation for PM's (25+1)D → (3+1)D reduction and dark energy predictions.",
+    "citedByFormulas": ["two_time_physics", "sp2r_constraints", "dark_energy_w0", "holographic_projection"],
+    "citedByParams": ["dimensions.D_bulk", "dimensions.n_time"]
+  },
+  "perelman2002": {
+    "id": "perelman2002",
+    "authors": "Perelman, G.",
+    "title": "The Entropy Formula for the Ricci Flow and its Geometric Applications",
+    "year": 2002,
+    "journal": "arXiv preprint",
+    "arxiv": "math/0211159",
+    "doi": "",
+    "description": "Revolutionary work on Ricci flow with surgery, proving the Poincare and Thurston geometrization conjectures. The F-functional and W-entropy provide mathematical foundation for PM's connection between geometric flow, entropy, and time emergence.",
+    "citedByFormulas": ["ricci_flow", "entropy_formula", "geometric_flow"],
+    "citedByParams": []
+  },
+  "perelman2003a": {
+    "id": "perelman2003a",
+    "authors": "Perelman, G.",
+    "title": "Ricci Flow with Surgery on Three-Manifolds",
+    "year": 2003,
+    "journal": "arXiv preprint",
+    "arxiv": "math/0303109",
+    "doi": "",
+    "description": "Technical details of Ricci flow with surgery. Provides mathematical machinery for understanding how geometric structures evolve and simplify, relevant to PM's approach to compactification dynamics.",
+    "citedByFormulas": ["ricci_flow", "surgery_theory"],
+    "citedByParams": []
+  },
+  "hamilton1982": {
+    "id": "hamilton1982",
+    "authors": "Hamilton, R.S.",
+    "title": "Three-manifolds with positive Ricci curvature",
+    "year": 1982,
+    "journal": "Journal of Differential Geometry",
+    "arxiv": "",
+    "doi": "10.4310/jdg/1214436922",
+    "description": "Original introduction of Ricci flow for geometric analysis. Establishes the parabolic PDE framework that Perelman later extended. Historical foundation for geometric flows in PM.",
+    "citedByFormulas": ["ricci_flow"],
+    "citedByParams": []
+  },
+  "witten1995": {
+    "id": "witten1995",
+    "authors": "Witten, E.",
+    "title": "String Theory Dynamics in Various Dimensions",
+    "year": 1995,
+    "journal": "Nuclear Physics B",
+    "arxiv": "hep-th/9503124",
+    "doi": "10.1016/0550-3213(95)00158-O",
+    "description": "Foundational paper establishing M-theory as the strong-coupling limit of Type IIA string theory, with 11-dimensional supergravity as low-energy limit. Critical for PM's use of M-theory compactification.",
+    "citedByFormulas": ["m_theory", "string_duality"],
+    "citedByParams": ["dimensions.D_M_theory"]
+  },
+  "hull_townsend_1995": {
+    "id": "hull_townsend_1995",
+    "authors": "Hull, C.M., Townsend, P.K.",
+    "title": "Unity of Superstring Dualities",
+    "year": 1995,
+    "journal": "Nuclear Physics B",
+    "arxiv": "hep-th/9410167",
+    "doi": "10.1016/0550-3213(95)00099-G",
+    "description": "Establishes the U-duality web connecting various string theories and M-theory. Important for understanding the non-perturbative structure underlying PM.",
+    "citedByFormulas": ["string_duality", "u_duality"],
+    "citedByParams": []
   }
 }

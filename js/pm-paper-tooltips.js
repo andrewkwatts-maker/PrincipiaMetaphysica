@@ -745,9 +745,8 @@
                         showParameterTooltip(syntheticEvent, target);
                     } else if (target.classList.contains('equation-ref')) {
                         showFormulaReferenceTooltip(syntheticEvent, target);
-                    } else if (target.classList.contains('acronym')) {
-                        const acronym = target.textContent.trim();
-                        // ... show acronym tooltip
+                    } else if (target.classList.contains('acronym') || target.tagName === 'ABBR') {
+                        showCitationTooltip(syntheticEvent, target);
                     }
                 }
             } else {

@@ -25,7 +25,9 @@
                 }
             },
             options: {
-                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+                skipHtmlClasses: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore',
+                ignoreHtmlClass: 'mathjax-ignore'
             },
             startup: {
                 pageReady: () => {
@@ -45,6 +47,7 @@
     <script src="../js/pm-parameter-component.js"></script>
     <script src="../js/content-templates.js"></script>
     <script src="../js/pm-section-renderer.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
 
     <!-- Common Shared Styles -->
     <link rel="stylesheet" href="../css/pm-common.css">
@@ -52,6 +55,7 @@
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/formula-display-fix.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
 
     <style>
