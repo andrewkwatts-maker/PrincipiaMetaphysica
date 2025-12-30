@@ -726,3 +726,174 @@ mjx-container {
         scroll-behavior: auto !important;
     }
 }
+
+/* ============================================
+   ADDITIONAL MOBILE UX IMPROVEMENTS
+   ============================================ */
+
+/* Mobile header and hamburger menu fixes */
+@media screen and (max-width: 768px) {
+    /* Ensure hamburger menu is visible and clickable */
+    .pm-header .mobile-menu-btn {
+        display: flex !important;
+        z-index: 1001;
+        touch-action: manipulation;
+    }
+
+    /* Mobile nav dropdown improvements */
+    .pm-header .main-nav.mobile-open {
+        display: block !important;
+        max-height: 80vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Better touch targets for mobile nav links */
+    .pm-header .main-nav a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0.875rem 1rem;
+        margin: 2px 0;
+    }
+
+    /* Cards and grids stack on mobile */
+    .section-nav,
+    .index-grid,
+    .viz-grid,
+    .formula-grid,
+    .param-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    /* Hero section mobile adjustments */
+    .hero,
+    .sim-hero,
+    .paper-hero {
+        padding: 1.5rem 1rem !important;
+        margin: 1rem 0 !important;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.3;
+    }
+
+    /* Fix content overflow */
+    .paper,
+    .content,
+    .main-content,
+    main {
+        max-width: 100vw;
+        overflow-x: hidden;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Simulation code blocks scroll */
+    .sim-code,
+    .code-block,
+    pre.language-python {
+        max-width: 100%;
+        overflow-x: auto;
+        font-size: 0.75rem;
+    }
+
+    /* Better spacing for section cards */
+    .section-card {
+        padding: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    /* Navigation buttons stack */
+    .nav-buttons,
+    .downloads,
+    .button-group {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .nav-buttons a,
+    .download-btn,
+    .nav-btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
+/* Extra small screens - more aggressive fixes */
+@media screen and (max-width: 480px) {
+    /* Very compact header */
+    .pm-header {
+        padding: 0.5rem 1rem;
+    }
+
+    .pm-header .site-title {
+        font-size: 1rem;
+    }
+
+    /* Hide long text, show icons only if available */
+    .pm-header .user-email {
+        display: none !important;
+    }
+
+    /* Compact hero */
+    .hero h1 {
+        font-size: 1.25rem !important;
+    }
+
+    .hero .subtitle {
+        font-size: 0.9rem !important;
+    }
+
+    /* Smaller section numbers */
+    .section-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+
+    /* Tighter formula display */
+    .interactive-formula,
+    .formula-display {
+        padding: 0.5rem;
+        font-size: 0.7rem !important;
+    }
+
+    /* Fix long equations */
+    .equation-highlight,
+    .formula-plaintext {
+        font-size: 0.65rem;
+        padding: 0.75rem 0.5rem;
+        overflow-x: auto;
+    }
+}
+
+/* iOS safe area support for notched devices */
+@supports (padding: env(safe-area-inset-bottom)) {
+    .pm-header {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    body {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+}
+
+/* Fix sticky header on mobile */
+@media screen and (max-width: 768px) {
+    .pm-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+    }
+
+    /* Ensure content doesn't get hidden behind sticky header */
+    main,
+    #main-content {
+        scroll-margin-top: 80px;
+    }
+}

@@ -12,5 +12,12 @@ from .chirality_v16_0 import ChiralitySpinorSimulation
 from .fermion_generations_v16_0 import FermionGenerationsV16
 from .ckm_matrix_v16_0 import CKMMatrixSimulation
 from .muon_g2_anomaly_v16_1 import MuonG2AnomalySimulation
+from .octonionic_mixing_v16_2 import OctonionicMixing
 
-__all__ = ['ChiralitySpinorSimulation', 'FermionGenerationsV16', 'CKMMatrixSimulation', 'MuonG2AnomalySimulation']
+__all__ = [
+    'ChiralitySpinorSimulation',
+    'FermionGenerationsV16',
+    'CKMMatrixSimulation',
+    'MuonG2AnomalySimulation',
+    'OctonionicMixing',
+]
