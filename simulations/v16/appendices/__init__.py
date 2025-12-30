@@ -46,6 +46,13 @@ Appendices:
   * Gauge coupling evolution
   * Theory predictions and experimental status
 
+- Appendix D': Sp(2,R) Invariance and No CTCs
+  * Proof that Sp(2,R) gauge symmetry prevents CTCs
+  * X*P = 0 constraint eliminates second time dimension
+  * (24,2) bulk -> (12,1) shadow signature reduction
+  * Single time implies topologically forbidden CTCs
+  * Physical Hilbert space projection
+
 - Appendix E: Proton Decay Calculation
   * Dimension-6 effective operators
   * Geometric suppression factors
@@ -115,6 +122,7 @@ Usage:
         AppendixBComputationalMethods,
         AppendixCExtendedDerivations,
         AppendixDParameterTables,
+        Sp2RInvarianceProof,  # Appendix D': CTC impossibility proof
         AppendixEProtonDecay,
         AppendixFDimensionalDecomposition,
         AppendixGEffectiveTorsion,
@@ -132,6 +140,7 @@ Usage:
     appendix_b = AppendixBComputationalMethods()
     appendix_c = AppendixCExtendedDerivations()
     appendix_d = AppendixDParameterTables()
+    appendix_d_prime = Sp2RInvarianceProof()  # CTC impossibility proof
     appendix_e = AppendixEProtonDecay()
     appendix_f = AppendixFDimensionalDecomposition()
     appendix_g = AppendixGEffectiveTorsion()
@@ -149,6 +158,7 @@ Usage:
         'B': appendix_b.execute(registry, verbose=True),
         'C': appendix_c.execute(registry, verbose=True),
         'D': appendix_d.execute(registry, verbose=True),
+        'D_prime': appendix_d_prime.execute(registry, verbose=True),  # CTC proof
         'E': appendix_e.execute(registry, verbose=True),
         'F': appendix_f.execute(registry, verbose=True),
         'G': appendix_g.execute(registry, verbose=True),
@@ -166,6 +176,7 @@ from .appendix_a_math_v16_0 import AppendixAMathFoundations
 from .appendix_b_methods_v16_0 import AppendixBComputationalMethods
 from .appendix_c_derivations_v16_0 import AppendixCExtendedDerivations
 from .appendix_d_tables_v16_0 import AppendixDParameterTables
+from .appendix_d_sp2r_invariance_v16_0 import Sp2RInvarianceProof
 from .appendix_e_proton_v16_0 import AppendixEProtonDecay
 from .appendix_f_v16_0 import AppendixFDimensionalDecomposition
 from .appendix_g_v16_0 import AppendixGEffectiveTorsion
@@ -182,6 +193,7 @@ __all__ = [
     'AppendixBComputationalMethods',
     'AppendixCExtendedDerivations',
     'AppendixDParameterTables',
+    'Sp2RInvarianceProof',
     'AppendixEProtonDecay',
     'AppendixFDimensionalDecomposition',
     'AppendixGEffectiveTorsion',

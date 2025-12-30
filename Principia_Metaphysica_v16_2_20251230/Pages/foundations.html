@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foundations - Established physics that Principia Metaphysica builds upon">
+    <title>Foundations - Principia Metaphysica</title>
+
+    <!-- Common Shared Styles -->
+    <link rel="stylesheet" href="../css/pm-common.css">
+    <link rel="stylesheet" href="../css/pm-scientific-typography.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
+
+    <!-- MathJax Configuration -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']],
+                processEscapes: true,
+                tags: 'ams'
+            },
+            options: {
+                skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <!-- PM Dynamic Loaders -->
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+        :root {
+            --bg-dark: #0a0a0f;
+            --bg-card: #1a1a2e;
+            --bg-secondary: #16172e;
+            --bg-card-hover: #252540;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --text-muted: #888;
+            --accent-primary: #8b7fff;
+            --accent-secondary: #ff7eb6;
+            --accent-success: #51cf66;
+            --accent-info: #4facfe;
+            --accent-warning: #ffc107;
+            --border-primary: rgba(139, 127, 255, 0.2);
+            --border-secondary: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        main {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* Breadcrumb Navigation */
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .breadcrumb a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-secondary);
+        }
+
+        .breadcrumb .separator {
+            color: var(--text-secondary);
+        }
+
+        /* Page Header */
+        .page-header {
+            text-align: center;
+            padding: 3rem 0;
+            margin-bottom: 3rem;
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-header .subtitle {
+            font-size: 1.3rem;
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .page-header .intro-text {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .page-header .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-badge {
+            background: rgba(139, 127, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 20px;
+            border: 1px solid var(--accent-primary);
+            font-size: 0.9rem;
+        }
+
+        .stat-badge strong {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+        }
+
+        /* Filter Controls */
+        .filter-controls {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .filter-controls label {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .filter-controls select,
+        .filter-controls input {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.95rem;
+        }
+
+        .filter-controls input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        /* Category Badges */
+        .category-badge {
+            padding: 0.25rem 0.75rem;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            display: inline-block;
+            text-transform: uppercase;
+        }
+
+        .category-badge.general_relativity {
+            background: rgba(139, 127, 255, 0.2);
+            color: #8b7fff;
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        .category-badge.quantum_mechanics,
+        .category-badge.quantum_field_theory {
+            background: rgba(79, 172, 254, 0.2);
+            color: #4facfe;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .category-badge.differential_geometry,
+        .category-badge.mathematics {
+            background: rgba(255, 126, 182, 0.2);
+            color: #ff7eb6;
+            border: 1px solid rgba(255, 126, 182, 0.3);
+        }
+
+        .category-badge.particle_physics,
+        .category-badge.neutrino_physics {
+            background: rgba(81, 207, 102, 0.2);
+            color: #51cf66;
+            border: 1px solid rgba(81, 207, 102, 0.3);
+        }
+
+        .category-badge.cosmology,
+        .category-badge.statistical_mechanics,
+        .category-badge.black_hole_physics {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border: 1px solid rgba(255, 193, 7, 0.3);
+        }
+
+        .category-badge.grand_unification,
+        .category-badge.higher_dimensional_physics {
+            background: rgba(255, 82, 82, 0.2);
+            color: #ff5252;
+            border: 1px solid rgba(255, 82, 82, 0.3);
+        }
+
+        .category-badge.fundamental_constants {
+            background: rgba(255, 215, 0, 0.2);
+            color: #ffd700;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .category-badge.particle_masses {
+            background: rgba(138, 43, 226, 0.2);
+            color: #ba68c8;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+        }
+
+        /* Formula Cards */
+        .formulas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .formula-card {
+            background: rgba(26, 31, 58, 0.6);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .formula-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .formula-card:hover {
+            transform: translateY(-4px);
+            backdrop-filter: blur(20px) saturate(200%);
+            -webkit-backdrop-filter: blur(20px) saturate(200%);
+            border-color: var(--accent-primary);
+            box-shadow: 0 12px 40px rgba(139, 127, 255, 0.2);
+        }
+
+        .formula-card:hover::before {
+            opacity: 1;
+        }
+
+        .formula-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .formula-id {
+            font-family: 'Source Code Pro', monospace;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .formula-label {
+            color: var(--accent-secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .formula-author {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: 0.25rem;
+        }
+
+        .formula-year {
+            color: var(--accent-info);
+            font-weight: 600;
+        }
+
+        .formula-source {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border-secondary);
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .formula-source strong {
+            color: var(--accent-success);
+        }
+
+        .formula-source a {
+            color: var(--accent-info);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .formula-source a:hover {
+            color: var(--accent-primary);
+            text-decoration: underline;
+        }
+
+        .formula-content {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent-primary);
+            font-size: 1.1rem;
+            text-align: center;
+            overflow-x: auto;
+        }
+
+        .formula-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-top: 0.75rem;
+            line-height: 1.6;
+        }
+
+        .formula-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border-secondary);
+        }
+
+        /* Loading State */
+        .loading-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--accent-info);
+            font-style: italic;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: var(--text-secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            main {
+                padding: 1rem;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .formulas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-controls {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-controls input {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
+
+    <main>
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="separator">/</span>
+            <span>Foundations</span>
+        </nav>
+
+        <!-- Page Header -->
+        <header class="page-header">
+            <h1>Foundations</h1>
+            <p class="subtitle">Established Physics That PM Builds Upon</p>
+            <p class="intro-text">
+                This page showcases the well-established equations, constants, and experimental
+                measurements from the scientific literature that Principia Metaphysica builds upon.
+                These are NOT predictions or new formulas—they are the proven foundation of modern physics.
+            </p>
+            <div class="stats">
+                <div class="stat-badge">
+                    <strong id="formula-count">...</strong> Foundational Equations
+                </div>
+                <div class="stat-badge">
+                    <strong id="category-count">...</strong> Physics Domains
+                </div>
+            </div>
+        </header>
+
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+            <label for="category-filter">Physics Domain:</label>
+            <select id="category-filter">
+                <option value="all">All Domains</option>
+            </select>
+
+            <label for="search-filter">Search:</label>
+            <input type="text" id="search-filter" placeholder="Search equations, authors, descriptions...">
+        </div>
+
+        <!-- Formulas Grid -->
+        <div id="formulas-container" class="formulas-grid">
+            <div class="loading-state">Loading foundational physics equations...</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+    </div>
+
+    <script>
+        // Global state
+        let allFoundations = [];
+        let categories = new Set();
+
+        // Load foundations from foundations_registry.json
+        async function loadFoundations() {
+            const pathPrefixes = ['../simulations/base/', '../', 'simulations/base/', ''];
+
+            for (const prefix of pathPrefixes) {
+                try {
+                    const response = await fetch(prefix + 'foundations_registry.json');
+                    if (response.ok) {
+                        const data = await response.json();
+                        console.log(`Loaded foundations_registry.json from ${prefix}`);
+
+                        // Combine all foundation types into one array
+                        const allFoundations = [
+                            ...(data.foundations || []),
+                            ...(data.fundamental_constants || []),
+                            ...(data.experimental_masses || []),
+                            ...(data.neutrino_parameters || []),
+                            ...(data.cosmological_parameters || [])
+                        ];
+
+                        return allFoundations;
+                    }
+                } catch (e) {
+                    continue;
+                }
+            }
+
+            console.error('Failed to load foundations_registry.json');
+            return [];
+        }
+
+        // Format category name for display
+        function formatCategory(category) {
+            return category
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        // Render foundations
+        function renderFoundations(foundations, filter = { category: 'all', search: '' }) {
+            const container = document.getElementById('formulas-container');
+
+            // Filter foundations
+            let filtered = foundations;
+
+            // Category filter
+            if (filter.category !== 'all') {
+                filtered = filtered.filter(f => f.category === filter.category);
+            }
+
+            // Search filter
+            if (filter.search) {
+                const searchLower = filter.search.toLowerCase();
+                filtered = filtered.filter(f => {
+                    const searchableText = [
+                        f.id || '',
+                        f.title || '',
+                        f.author || '',
+                        f.description || '',
+                        f.latex || '',
+                        f.category || ''
+                    ].join(' ').toLowerCase();
+                    return searchableText.includes(searchLower);
+                });
+            }
+
+            if (filtered.length === 0) {
+                container.innerHTML = '<div class="empty-state">No equations match your filters.</div>';
+                return;
+            }
+
+            // Sort by year (oldest first)
+            filtered.sort((a, b) => (a.year || 0) - (b.year || 0));
+
+            let html = '';
+            filtered.forEach(foundation => {
+                const category = foundation.category || 'uncategorized';
+                const title = foundation.title || foundation.id;
+                const description = foundation.description || '';
+                const latex = foundation.latex || '';
+                const author = foundation.author || '';
+                const year = foundation.year || '';
+                const source = foundation.source || '';
+                const references = foundation.references || [];
+
+                html += `
+                    <div class="formula-card" data-category="${category}" data-id="${foundation.id}">
+                        <div class="formula-header">
+                            <div>
+                                <div class="formula-label">${title}</div>
+                                <div class="formula-author">${author}${year ? ` <span class="formula-year">(${year})</span>` : ''}</div>
+                            </div>
+                            <span class="category-badge ${category}">${formatCategory(category)}</span>
+                        </div>
+
+                        <div class="formula-content">
+                            $$${latex}$$
+                        </div>
+
+                        ${description ? `<div class="formula-description">${description}</div>` : ''}
+
+                        ${source || references.length > 0 ? `
+                            <div class="formula-source">
+                                ${source ? `<strong>Source:</strong> <span>${source}</span>` : ''}
+                                ${references.length > 0 ? `
+                                    ${references.map(ref => `<a href="${ref}" target="_blank" rel="noopener noreferrer">Reference →</a>`).join(' ')}
+                                ` : ''}
+                            </div>
+                        ` : ''}
+                    </div>
+                `;
+            });
+
+            container.innerHTML = html;
+
+            // Trigger MathJax rendering
+            if (window.MathJax && window.MathJax.typesetPromise) {
+                window.MathJax.typesetPromise([container]).catch((err) => {
+                    console.error('MathJax rendering error:', err);
+                });
+            }
+        }
+
+        // Update stats
+        function updateStats(foundations) {
+            const foundationCount = foundations.length;
+            const categoryCount = categories.size;
+
+            document.getElementById('formula-count').textContent = foundationCount;
+            document.getElementById('category-count').textContent = categoryCount;
+        }
+
+        // Populate category filter
+        function populateCategoryFilter() {
+            const select = document.getElementById('category-filter');
+
+            const sortedCategories = Array.from(categories).sort();
+            sortedCategories.forEach(cat => {
+                const option = document.createElement('option');
+                option.value = cat;
+                option.textContent = formatCategory(cat);
+                select.appendChild(option);
+            });
+        }
+
+        // Setup filters
+        function setupFilters() {
+            const categoryFilter = document.getElementById('category-filter');
+            const searchFilter = document.getElementById('search-filter');
+
+            categoryFilter.addEventListener('change', () => {
+                renderFoundations(allFoundations, {
+                    category: categoryFilter.value,
+                    search: searchFilter.value
+                });
+            });
+
+            searchFilter.addEventListener('input', () => {
+                renderFoundations(allFoundations, {
+                    category: categoryFilter.value,
+                    search: searchFilter.value
+                });
+            });
+        }
+
+        // Initialize page
+        async function initializePage() {
+            // Load foundations
+            const foundations = await loadFoundations();
+
+            if (foundations.length === 0) {
+                document.getElementById('formulas-container').innerHTML =
+                    '<div class="empty-state">No foundational equations found. Check foundations_registry.json</div>';
+                return;
+            }
+
+            // Store globally
+            allFoundations = foundations;
+
+            // Extract categories
+            foundations.forEach(f => {
+                if (f.category) categories.add(f.category);
+            });
+
+            // Update UI
+            updateStats(foundations);
+            populateCategoryFilter();
+            setupFilters();
+            renderFoundations(foundations);
+        }
+
+        // Initialize on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializePage);
+        } else {
+            initializePage();
+        }
+    </script>
+
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        import { setupAuthGuard } from '../js/auth-guard.js';
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations');
+        });
+
+        // Setup auth after header
+        setupAuthGuard('foundations');
+    </script>
+</body>
+</html>

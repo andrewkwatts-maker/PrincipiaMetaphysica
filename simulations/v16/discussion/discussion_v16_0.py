@@ -1277,7 +1277,7 @@ class DiscussionV16(SimulationBase):
                 type="table",
                 headers=["Framework", "Dimensions", "Fundamental Object", "Testability"],
                 rows=[
-                    ["Principia Metaphysica", "11D (TCS G₂)", "G₂ holonomy manifold with torsion", "Near-term (2027-2030s)"],
+                    ["Principia Metaphysica", "26D → 13D → 4D via G₂", "G₂ holonomy manifold with torsion", "Near-term (2027-2030s)"],
                     ["Type IIA/IIB String", "10", "Strings (1D)", "Far-term (M_Pl scale)"],
                     ["M-Theory", "11", "M2/M5 branes", "Far-term (M_Pl scale)"],
                     ["Loop Quantum Gravity", "4", "Spin networks", "Far-term (Planck scale)"]

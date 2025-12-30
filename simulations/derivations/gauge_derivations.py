@@ -120,7 +120,7 @@ class GaugeDerivationChain:
             wolfram_query="N[1.22 * 10^19 / Sqrt[24], 3] GeV",
             expected_result="M_GUT ≈ 2.49×10¹⁸ GeV",
             pm_value=2.1e16,
-            notes="Dimensional reduction from 11D: M_GUT = M_Planck/√(b₃) with loop corrections"
+            notes="Dimensional reduction (26D→13D→4D): M_GUT = M_Planck/√(b₃) with loop corrections"
         ))
 
         self.derivations.append(WolframDerivation(

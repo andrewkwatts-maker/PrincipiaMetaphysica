@@ -448,7 +448,12 @@
       "Bash(git -C h:/Github/PrincipiaMetaphysica commit -m \"Add .github/ to gitignore \\(PAT lacks workflow scope\\)\")",
       "Bash(npx eslint:*)",
       "Bash(for n in 105 110 115 120)",
-      "Bash(do)"
+      "Bash(do)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nv16.2 Final Polish: G anomaly correction, peer review defense, offline viewing\n\nGravitational Constant G:\n- Add first-order anomaly correction: G = \\(k²/b₃π\\)\\(1-1/b₃²\\)N_G\n- Quantum loop correction \\(1-1/24²\\) = 575/576 from topology\n- G derivation now matches CODATA 2018 to 0.026 ppm\n\nNew Files:\n- PEER_REVIEW_DEFENSE.md: Comprehensive response to 5 objections\n- serve.py: Local HTTP server with CORS headers for offline viewing\n- muon_g2_anomaly_v16_1.py: Muon g-2 simulation \\(a_μ within 1.5σ\\)\n- zenodo_pack_v16.py: Zenodo package builder script\n\nWebsite Fixes:\n- Fix pm-formula-component.js FORMULA_REGISTRY conflict\n- Update start_server.bat to use serve.py\n- Add viewing instructions to PACKAGE_README.md\n\nParameter Updates:\n- ALPHA_EM corrected to 7.2973525693e-3 \\(CODATA 2018\\)\n- Neutrino mass sum: Σm_ν = 0.059 eV \\(matches Planck bound\\)\n- All 38 simulations pass validation\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(dir /b \"h:\\\\Github\\\\PrincipiaMetaphysica\\\\scripts\\\\*.py\")",
+      "Bash(python -m simulations.run_all:*)",
+      "Bash(python simulations/validate_all.py:*)",
+      "Bash(python -m pytest:*)"
     ],
     "deny": [],
     "ask": []

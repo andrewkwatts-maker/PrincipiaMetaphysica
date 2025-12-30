@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Clifford Algebra - Learn the mathematical foundation of spinors, geometric algebra, and fermion generations">
+    <title>Clifford Algebra - Foundational Mathematics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'Clifford Algebra'
+            });
+        });
+    </script>
+</head>
+<body class="auth-loading">
+    <div id="main-content" style="display: none;">
+
+    <main>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.15), rgba(255, 126, 182, 0.1)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Mathematics (1878)</span>
+            <h1 style="background: linear-gradient(135deg, #8b7fff, #ff7eb6); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Clifford Algebra</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                The mathematical framework that unifies real numbers, complex numbers, quaternions, and geometric algebra - essential for describing spinors and fermions in physics.
+            </p>
+            <div class="main-equation" style="background: rgba(139, 127, 255, 0.1);">
+                {&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2g<sup>&mu;&nu;</sup>
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Developed by William Kingdon Clifford in 1878 | Foundation of Spinor Theory
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.03)); border-left: 4px solid #8b7fff;">
+            <h2>What Are Clifford Algebras?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>Clifford algebras are a natural generalization of complex numbers and quaternions to arbitrary dimensions.</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Geometric Algebra</h4>
+                    <p>Clifford algebras provide a <em>geometric product</em> that combines the dot product and wedge product, allowing vectors to be multiplied while preserving geometric meaning.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Spinor Representations</h4>
+                    <p>Clifford algebras naturally give rise to <em>spinors</em> - mathematical objects that describe fermions and transform under rotations in surprising ways (spin-1/2).</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Dimensional Hierarchy</h4>
+                    <p>The sequence <strong>R &rarr; C &rarr; H &rarr; Cl(p,q)</strong> shows how Clifford algebras generalize: reals (1D), complex numbers (2D), quaternions (<span class="pm-value" data-pm-value="dimensions.D_observable"></span>D), and beyond.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">{&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2g<sup>&mu;&nu;</sup></div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">{A, B}</div>
+                        <div class="component-name">Anticommutator</div>
+                        <div class="component-desc">
+                            The anticommutator is defined as: {A, B} = AB + BA<br>
+                            Measures the symmetric part of the product (contrast with commutator [A,B] = AB - BA).
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Anticommutator" target="_blank" class="component-link">Wikipedia: Anticommutator &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">&gamma;<sup>&mu;</sup></div>
+                        <div class="component-name">Gamma Matrices</div>
+                        <div class="component-desc">
+                            Matrix representations of Clifford algebra generators. In <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime, these are 4×4 matrices.<br>
+                            The Dirac equation uses these to describe relativistic fermions.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Gamma_matrices" target="_blank" class="component-link">Wikipedia: Gamma Matrices &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">g<sup>&mu;&nu;</sup></div>
+                        <div class="component-name">Metric Tensor</div>
+                        <div class="component-desc">
+                            Defines the signature of spacetime. For signature (p,q):<br>
+                            g = diag(+1,...,+1, -1,...,-1) with p plus signs and q minus signs.<br>
+                            Standard <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D: (3,1) or (1,3) depending on convention.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Metric_tensor" target="_blank" class="component-link">Wikipedia: Metric Tensor &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Cl(p,q)</div>
+                        <div class="component-name">Clifford Algebra Notation</div>
+                        <div class="component-desc">
+                            Cl(p,q) denotes the Clifford algebra over signature (p,q).<br>
+                            Examples: Cl(0,1) ≅ C (complex numbers), Cl(0,2) ≅ H (quaternions).
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Clifford_algebra" target="_blank" class="component-link">Wikipedia: Clifford Algebra &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Signature (p,q)</div>
+                        <div class="component-name">Dimensional Signatures</div>
+                        <div class="component-desc">
+                            Different dimensional frameworks in PM:<br>
+                            <strong>(3,1)</strong>: 4D spacetime (our universe)<br>
+                            <strong>(12,1)</strong>: 13D shadow manifold<br>
+                            <strong>(24,2)</strong>: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D bulk (2T physics)
+                        </div>
+                        <span class="foundation-badge pm-specific" style="margin-top: 0.5rem; background: rgba(139, 127, 255, 0.1); color: #8b7fff;">PM Framework</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Spinor Dimensions</div>
+                        <div class="component-name">Irreducible Representations</div>
+                        <div class="component-desc">
+                            Spinor dimension formula: <strong>2<sup>⌊n/2⌋</sup></strong> for n-dimensional space<br>
+                            4D: 2<sup>2</sup> = 4 components (Dirac spinor)<br>
+                            13D: 2<sup>6</sup> = 64 components<br>
+                            <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D: 2<sup>13</sup> = 8192 components
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Representation Theory</span>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Historical Development</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Hamilton's Quaternions (1843)</span>
+                        <span class="foundation-badge established">H ≅ Cl(0,2)</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Grassmann's Exterior Algebra (1844)</span>
+                        <span class="foundation-badge established">Wedge Product</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Clifford's Geometric Algebra (1878)</span>
+                        <span class="foundation-badge established">Unified Framework</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Dirac Equation (1928)</span>
+                        <span class="foundation-badge established">Physical Application</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: Algebraic Hierarchy</h2>
+            <p>Clifford algebras form a natural generalization of familiar number systems:</p>
+
+            <svg width="100%" height="500" viewBox="0 0 900 500" style="background: rgba(139, 127, 255, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <linearGradient id="realGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#51cf66;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#51cf66;stop-opacity:0.2" />
+                    </linearGradient>
+                    <linearGradient id="complexGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#4facfe;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#4facfe;stop-opacity:0.2" />
+                    </linearGradient>
+                    <linearGradient id="quaternionGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#ff7eb6;stop-opacity:0.2" />
+                    </linearGradient>
+                    <linearGradient id="cliffordGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" style="stop-color:#8b7fff;stop-opacity:0.6" />
+                        <stop offset="100%" style="stop-color:#8b7fff;stop-opacity:0.2" />
+                    </linearGradient>
+                </defs>
+
+                <!-- Title -->
+                <text x="450" y="30" text-anchor="middle" fill="var(--text-primary)" font-size="20" font-weight="700">
+                    Hierarchy: Real Numbers → Complex → Quaternions → Clifford Algebras
+                </text>
+
+                <!-- Real Numbers -->
+                <rect x="50" y="70" width="180" height="90" fill="url(#realGrad)" stroke="#51cf66" stroke-width="3" rx="10"/>
+                <text x="140" y="95" text-anchor="middle" fill="#51cf66" font-size="16" font-weight="700">Real Numbers R</text>
+                <text x="140" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="14">Cl(0,0) or Cl(1,0)</text>
+                <text x="140" y="135" text-anchor="middle" fill="var(--text-secondary)" font-size="12">1 dimension</text>
+                <text x="140" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Spinors: 1 component</text>
+
+                <!-- Arrow -->
+                <path d="M 230 115 L 280 115" stroke="var(--accent-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <!-- Complex Numbers -->
+                <rect x="280" y="70" width="180" height="90" fill="url(#complexGrad)" stroke="#4facfe" stroke-width="3" rx="10"/>
+                <text x="370" y="95" text-anchor="middle" fill="#4facfe" font-size="16" font-weight="700">Complex Numbers C</text>
+                <text x="370" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="14">Cl(0,1)</text>
+                <text x="370" y="135" text-anchor="middle" fill="var(--text-secondary)" font-size="12">2 dimensions: a + bi</text>
+                <text x="370" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Spinors: 1 component</text>
+
+                <!-- Arrow -->
+                <path d="M 460 115 L 510 115" stroke="var(--accent-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                <!-- Quaternions -->
+                <rect x="510" y="70" width="180" height="90" fill="url(#quaternionGrad)" stroke="#ff7eb6" stroke-width="3" rx="10"/>
+                <text x="600" y="95" text-anchor="middle" fill="#ff7eb6" font-size="16" font-weight="700">Quaternions H</text>
+                <text x="600" y="115" text-anchor="middle" fill="var(--text-primary)" font-size="14">Cl(0,2)</text>
+                <text x="600" y="135" text-anchor="middle" fill="var(--text-secondary)" font-size="12">4 dimensions: a + bi + cj + dk</text>
+                <text x="600" y="150" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Spinors: 2 components</text>
+
+                <!-- Arrow down -->
+                <path d="M 600 160 L 600 195" stroke="var(--accent-primary)" stroke-width="2" marker-end="url(#arrowhead)"/>
+                <text x="620" y="180" fill="var(--accent-primary)" font-size="11">generalize</text>
+
+                <!-- Clifford Algebras -->
+                <rect x="340" y="195" width="520" height="110" fill="url(#cliffordGrad)" stroke="#8b7fff" stroke-width="3" rx="10"/>
+                <text x="600" y="220" text-anchor="middle" fill="#8b7fff" font-size="18" font-weight="700">Clifford Algebras Cl(p,q)</text>
+                <text x="600" y="242" text-anchor="middle" fill="var(--text-primary)" font-size="13">Arbitrary signature (p,q): p space-like, q time-like dimensions</text>
+                <text x="600" y="262" text-anchor="middle" fill="var(--text-secondary)" font-size="12">Algebra dimension: 2<sup>p+q</sup> | Spinor dimension: 2<sup>⌊(p+q)/2⌋</sup></text>
+                <text x="600" y="282" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-style="italic">Examples: Cl(3,0) for 3D space, Cl(3,1) or Cl(1,3) for <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D spacetime</text>
+                <text x="600" y="297" text-anchor="middle" fill="var(--text-muted)" font-size="11" font-weight="600">Unifies rotations, reflections, and spinors in one framework</text>
+
+                <!-- Spinor Dimension Examples -->
+                <text x="450" y="340" text-anchor="middle" fill="var(--text-primary)" font-size="16" font-weight="700">Spinor Dimensions in PM Framework:</text>
+
+                <!-- <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D -->
+                <rect x="100" y="360" width="220" height="100" fill="rgba(81, 207, 102, 0.1)" stroke="#51cf66" stroke-width="2" rx="8"/>
+                <text x="210" y="382" text-anchor="middle" fill="#51cf66" font-size="14" font-weight="700"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Spacetime</text>
+                <text x="210" y="402" text-anchor="middle" fill="var(--text-primary)" font-size="13">Cl(3,1) or Cl(1,3)</text>
+                <text x="210" y="420" text-anchor="middle" fill="var(--text-secondary)" font-size="12">Signature: (3,1)</text>
+                <text x="210" y="438" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-weight="600">Spinors: 2² = 4 components</text>
+                <text x="210" y="452" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-style="italic">(Dirac spinor)</text>
+
+                <!-- <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D -->
+                <rect x="340" y="360" width="220" height="100" fill="rgba(79, 172, 254, 0.1)" stroke="#4facfe" stroke-width="2" rx="8"/>
+                <text x="450" y="382" text-anchor="middle" fill="#4facfe" font-size="14" font-weight="700"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow</text>
+                <text x="450" y="402" text-anchor="middle" fill="var(--text-primary)" font-size="13">Cl(12,1)</text>
+                <text x="450" y="420" text-anchor="middle" fill="var(--text-secondary)" font-size="12">Signature: (12,1)</text>
+                <text x="450" y="438" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-weight="600">Spinors: 2⁶ = 64 components</text>
+                <text x="450" y="452" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-style="italic">(3 generations hint)</text>
+
+                <!-- <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D -->
+                <rect x="580" y="360" width="220" height="100" fill="rgba(255, 126, 182, 0.1)" stroke="#ff7eb6" stroke-width="2" rx="8"/>
+                <text x="690" y="382" text-anchor="middle" fill="#ff7eb6" font-size="14" font-weight="700"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk</text>
+                <text x="690" y="402" text-anchor="middle" fill="var(--text-primary)" font-size="13">Cl(24,2)</text>
+                <text x="690" y="420" text-anchor="middle" fill="var(--text-secondary)" font-size="12">Signature: (24,2)</text>
+                <text x="690" y="438" text-anchor="middle" fill="var(--text-secondary)" font-size="12" font-weight="600">Spinors: 2¹³ = 8192 components</text>
+                <text x="690" y="452" text-anchor="middle" fill="var(--text-muted)" font-size="10" font-style="italic">(massive spinor space)</text>
+
+                <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="var(--accent-primary)" />
+                    </marker>
+                </defs>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                Each level adds structure: R (scalars) → C (rotations in 2D) → H (rotations in 3D) → Cl(p,q) (rotations and reflections in arbitrary dimensions).
+            </p>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
+
+            <h3>1. The Geometric Product</h3>
+            <p>
+                The fundamental operation in Clifford algebra is the <strong>geometric product</strong>, which combines the inner product (dot) and outer product (wedge):
+            </p>
+            <div class="equation-box">
+                ab = a · b + a ∧ b
+                <span class="equation-label">Geometric product = symmetric part + antisymmetric part</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                For two vectors in Euclidean space:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Inner product a · b:</strong> Returns a scalar (magnitude of parallel components)</li>
+                <li><strong>Outer product a ∧ b:</strong> Returns a bivector (oriented plane element)</li>
+                <li><strong>Geometric product ab:</strong> Combines both into a single algebraic structure</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">2. Multivectors and Grades</h3>
+            <p>
+                A general element of a Clifford algebra is called a <strong>multivector</strong> and can be decomposed into components of different <strong>grades</strong>:
+            </p>
+            <div class="equation-box">
+                M = &alpha; + v + B + T + ... + Ω
+                <span class="equation-label">Scalar + Vector + Bivector + Trivector + ... + Pseudoscalar</span>
+            </div>
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Grade</th>
+                        <th>Name</th>
+                        <th>Dimension (in n-D)</th>
+                        <th>Geometric Meaning</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>0</strong></td>
+                        <td>Scalar</td>
+                        <td>1</td>
+                        <td>Magnitude (point)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Vector</td>
+                        <td>n</td>
+                        <td>Directed line segment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2</strong></td>
+                        <td>Bivector</td>
+                        <td>n(n-1)/2</td>
+                        <td>Oriented plane element (rotation)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Trivector</td>
+                        <td>n(n-1)(n-2)/6</td>
+                        <td>Oriented volume element</td>
+                    </tr>
+                    <tr>
+                        <td><strong>n</strong></td>
+                        <td>Pseudoscalar</td>
+                        <td>1</td>
+                        <td>Oriented n-volume (handedness)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">3. Spinors as Minimal Left Ideals</h3>
+            <p>
+                In Clifford algebra, <strong>spinors</strong> emerge naturally as elements of <em>minimal left ideals</em>. These are the irreducible representations of the algebra:
+            </p>
+            <div class="equation-box">
+                dim(Spinor Space) = 2<sup>⌊n/2⌋</sup>
+                <span class="equation-label">For Clifford algebra Cl(p,q) with n = p + q</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                <strong>Key properties of spinors:</strong>
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Double cover:</strong> A 360° rotation changes the sign of a spinor; 720° returns it to the original state</li>
+                <li><strong>Projective nature:</strong> Spinors ψ and -ψ represent the same physical state</li>
+                <li><strong>Transformation:</strong> Under rotations R, spinors transform as ψ → Sψ where S is in the spin group Spin(p,q)</li>
+                <li><strong>Fermions:</strong> In physics, fermions (electrons, quarks) are described by spinor fields</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">4. Gamma Matrix Representations</h3>
+            <p>
+                The defining relation {&gamma;<sup>&mu;</sup>, &gamma;<sup>&nu;</sup>} = 2g<sup>&mu;&nu;</sup> can be satisfied by explicit matrices. Common representations in <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66;">
+                    <h4 style="color: #51cf66;">Dirac Representation</h4>
+                    <p>Standard representation where γ<sup>0</sup> is diagonal. Most common in particle physics textbooks.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Weyl (Chiral) Representation</h4>
+                    <p>Block-diagonal form that separates left-handed and right-handed spinors. Natural for Standard Model.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Majorana Representation</h4>
+                    <p>Real representation useful for Majorana fermions (particles that are their own antiparticles).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>Clifford Algebra - A Visual Introduction</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Beautiful visual introduction to the geometric product and multivectors by sudgylacmoe.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=0bOiy0HVMqA" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">34 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Geometric Algebra</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Comprehensive introduction to geometric algebra and its applications by mathoma.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=PNlgMPzj-7Q" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">23 min</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Spinors for Beginners</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Complete series on spinors and their connection to Clifford algebras by eigenchris.
+                    </p>
+                    <a href="https://www.youtube.com/playlist?list=PLJHszsWbB6hpk5h8lSfBkVrpjsqvUGTCx" target="_blank" class="resource-link">
+                        Watch Playlist &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">27 videos</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Geometric Algebra - Full Course</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        In-depth treatment of geometric algebra from first principles.
+                    </p>
+                    <a href="https://www.youtube.com/watch?v=60z_hpEAtD8" target="_blank" class="resource-link">
+                        Watch on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">2 hours</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Textbooks</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Clifford_algebra" target="_blank" style="color: var(--accent-primary);">Clifford Algebra</a> |
+                    <a href="https://en.wikipedia.org/wiki/Gamma_matrices" target="_blank" style="color: var(--accent-primary);">Gamma Matrices</a> |
+                    <a href="https://en.wikipedia.org/wiki/Spinor" target="_blank" style="color: var(--accent-primary);">Spinor</a> |
+                    <a href="https://en.wikipedia.org/wiki/Geometric_algebra" target="_blank" style="color: var(--accent-primary);">Geometric Algebra</a>
+                </li>
+                <li>
+                    <strong>Original Work:</strong>
+                    Clifford, W. K. (1878). "Applications of Grassmann's Extensive Algebra"
+                    <a href="https://en.wikipedia.org/wiki/William_Kingdon_Clifford" target="_blank" style="color: var(--accent-primary);">[Biography]</a>
+                </li>
+                <li>
+                    <strong>Modern Textbook:</strong>
+                    "Geometric Algebra for Physicists" by Chris Doran & Anthony Lasenby
+                    <a href="https://www.cambridge.org/core/books/geometric-algebra-for-physicists/FB8D3ACB76AB3AB10BA7F27505925091" target="_blank" style="color: var(--accent-primary);">[Cambridge University Press]</a>
+                </li>
+                <li>
+                    <strong>Mathematical Treatment:</strong>
+                    "Clifford Algebras and Spinors" by Pertti Lounesto
+                    <a href="https://www.cambridge.org/core/books/clifford-algebras-and-spinors/2C499BB189CFAFE2C26707FEE32C0945" target="_blank" style="color: var(--accent-primary);">[Cambridge]</a>
+                </li>
+                <li>
+                    <strong>Physics Application:</strong>
+                    "Spinors and Space-Time" by Roger Penrose & Wolfgang Rindler (2 volumes)
+                    <a href="https://en.wikipedia.org/wiki/Spinors_and_Space-Time" target="_blank" style="color: var(--accent-primary);">[Wikipedia]</a>
+                </li>
+                <li>
+                    <strong>Online Tutorial:</strong>
+                    "A Survey of Geometric Algebra and Geometric Calculus"
+                    <a href="https://arxiv.org/abs/1205.5935" target="_blank" style="color: var(--accent-primary);">[arXiv:1205.5935]</a>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem;">Interactive Tools</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>GAViewer:</strong>
+                    <a href="http://www.geometricalgebra.net/gaviewer.html" target="_blank" style="color: var(--accent-primary);">Interactive Geometric Algebra Visualizer</a>
+                </li>
+                <li>
+                    <strong>Ganja.js:</strong>
+                    <a href="https://enkimute.github.io/ganja.js/" target="_blank" style="color: var(--accent-primary);">JavaScript Geometric Algebra Library with Interactive Examples</a>
+                </li>
+                <li>
+                    <strong>GAmphetamine:</strong>
+                    <a href="https://community.wolfram.com/groups/-/m/t/1995878" target="_blank" style="color: var(--accent-primary);">Mathematica Package for Clifford Algebras</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>Anticommutator</h4>
+                    <p>The symmetric product {A,B} = AB + BA. In Clifford algebra, basis elements satisfy {e<sub>i</sub>, e<sub>j</sub>} = 2g<sub>ij</sub>.</p>
+                    <a href="https://en.wikipedia.org/wiki/Anticommutator" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Spinor</h4>
+                    <p>An element of a representation space that transforms under rotations in a "double-valued" way. Describes fermions in physics.</p>
+                    <a href="https://en.wikipedia.org/wiki/Spinor" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Bivector</h4>
+                    <p>A grade-2 element representing an oriented plane. Bivectors generate rotations in the plane they define.</p>
+                    <a href="https://en.wikipedia.org/wiki/Bivector" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Multivector</h4>
+                    <p>A general element of Clifford algebra containing components of all grades (scalar, vector, bivector, etc.).</p>
+                    <a href="https://en.wikipedia.org/wiki/Multivector" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Geometric Product</h4>
+                    <p>The fundamental product in Clifford algebra: ab = a·b + a∧b, combining inner and outer products.</p>
+                    <a href="https://en.wikipedia.org/wiki/Geometric_algebra#Geometric_product" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Exterior Algebra</h4>
+                    <p>The antisymmetric part of Clifford algebra, generated by the wedge product. Grassmann's original formulation.</p>
+                    <a href="https://en.wikipedia.org/wiki/Exterior_algebra" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Pseudoscalar</h4>
+                    <p>The highest-grade element in n dimensions. Represents oriented volume and defines handedness (chirality).</p>
+                    <a href="https://en.wikipedia.org/wiki/Pseudoscalar" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Spin Group</h4>
+                    <p>Spin(p,q) - the double cover of the rotation group SO(p,q). Elements are products of unit vectors in Clifford algebra.</p>
+                    <a href="https://en.wikipedia.org/wiki/Spin_group" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Chirality</h4>
+                    <p>Handedness of spinors. In <span class="pm-value" data-pm-value="dimensions.D_observable"></span>D, left-handed and right-handed spinors are eigenspaces of γ<sup>5</sup> = iγ<sup>0</sup>γ<sup>1</sup>γ<sup>2</sup>γ<sup>3</sup>.</p>
+                    <a href="https://en.wikipedia.org/wiki/Chirality_(physics)" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                Clifford algebras play a central role in the dimensional hierarchy of Principia Metaphysica, providing the mathematical framework for spinors at each level:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;"><span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D Bulk: Cl(24,2) with 8192-Component Spinors</h4>
+                <p style="color: var(--text-secondary);">
+                    The 26-dimensional bulk spacetime has signature (24,2) in the 2T physics framework. The Clifford algebra Cl(24,2) gives rise to massive spinor representations:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Algebra dimension:</strong> 2<sup>26</sup> = 67,108,864 (total Clifford algebra elements)</li>
+                    <li><strong>Spinor dimension:</strong> 2<sup>13</sup> = 8192 components (irreducible representation)</li>
+                    <li><strong>Physical meaning:</strong> Contains all possible fermionic degrees of freedom in the bulk</li>
+                    <li><strong>Factorization:</strong> 8192 = 64 × 128, suggesting <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow structure</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe; margin-top: 1.5rem;">
+                <h4 style="color: #4facfe;"><span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Shadow: Cl(12,1) with 64-Component Spinors</h4>
+                <p style="color: var(--text-secondary);">
+                    After Sp(2,R) gauge fixing, we obtain a <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>-dimensional shadow manifold with signature (12,1):
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Algebra dimension:</strong> 2<sup>13</sup> = 8192</li>
+                    <li><strong>Spinor dimension:</strong> 2<sup>6</sup> = 64 components</li>
+                    <li><strong>Generation structure:</strong> 64 = 4 × 16, suggesting decomposition into 4D spinors</li>
+                    <li><strong>Fermion generations:</strong> The 64 components may encode the <span class="pm-value" data-pm-value="topology.n_gen"></span> generations of fermions plus symmetries</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;"><span class="pm-value" data-pm-value="dimensions.D_observable"></span>D Spacetime: Cl(3,1) with 4-Component Spinors</h4>
+                <p style="color: var(--text-secondary);">
+                    The observed 4-dimensional spacetime uses the familiar Dirac algebra:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Algebra dimension:</strong> 2<sup>4</sup> = 16 (the 16 Dirac matrices)</li>
+                    <li><strong>Spinor dimension:</strong> 2<sup>2</sup> = 4 components (Dirac spinor)</li>
+                    <li><strong>Decomposition:</strong> 4 = 2 (left-handed) + 2 (right-handed) in Weyl representation</li>
+                    <li><strong>Standard Model:</strong> Each fermion (electron, quark, etc.) is a 4-component Dirac spinor</li>
+                </ul>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                The dimensional reduction from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 4D preserves the Clifford algebra structure at each level, with spinor spaces
+                nested inside one another. This hierarchy naturally explains:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem; margin-top: 1rem;">
+                <li><strong>Fermion generations:</strong> The 64 components in <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D may encode 3 generations × (quarks + leptons) structure</li>
+                <li><strong>Chirality:</strong> Left/right-handed decomposition emerges naturally from Clifford algebra's graded structure</li>
+                <li><strong>Unification potential:</strong> All Standard Model fermions as components of a single <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D spinor</li>
+            </ul>
+        </section>
+
+        <!-- Practice Problems -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding with these exercises:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: Verifying the Clifford Relation</h4>
+                <p>
+                    Using the Pauli matrices σ<sub>1</sub>, σ<sub>2</sub>, σ<sub>3</sub>, verify that they satisfy a Clifford algebra relation.
+                    Compute {σ<sub>i</sub>, σ<sub>j</sub>} for all i, j and show it equals 2δ<sub>ij</sub> (where δ<sub>ij</sub> is the Kronecker delta).
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Use σ<sub>1</sub> = [[0,1],[1,0]], σ<sub>2</sub> = [[0,-i],[i,0]], σ<sub>3</sub> = [[1,0],[0,-1]].
+                        Remember that {A,B} = AB + BA. The Pauli matrices satisfy Cl(3,0).
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Spinor Dimension Formula</h4>
+                <p>
+                    Calculate the spinor dimension for Clifford algebras in dimensions n = 1, 2, 3, ..., 10.
+                    Use the formula 2<sup>⌊n/2⌋</sup> and verify your results match known cases (e.g., n=4 gives 4).
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary); font-family: monospace; line-height: 1.8;">
+                        n=1: 2⁰ = 1<br>
+                        n=2: 2¹ = 2<br>
+                        n=3: 2¹ = 2<br>
+                        n=4: 2² = 4 (Dirac spinor)<br>
+                        n=5: 2² = 4<br>
+                        n=6: 2³ = 8<br>
+                        n=7: 2³ = 8<br>
+                        n=8: 2⁴ = 16<br>
+                        n=9: 2⁴ = 16<br>
+                        n=10: 2⁵ = 32
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Geometric Product Calculation</h4>
+                <p>
+                    In 3D Euclidean space with orthonormal basis {e<sub>1</sub>, e<sub>2</sub>, e<sub>3</sub>}, compute the geometric product
+                    (e<sub>1</sub> + e<sub>2</sub>)(e<sub>2</sub> + e<sub>3</sub>). Express your answer in terms of scalars, vectors, and bivectors.
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        (e<sub>1</sub> + e<sub>2</sub>)(e<sub>2</sub> + e<sub>3</sub>) = e<sub>1</sub>e<sub>2</sub> + e<sub>1</sub>e<sub>3</sub> + e<sub>2</sub>e<sub>2</sub> + e<sub>2</sub>e<sub>3</sub><br>
+                        = e<sub>1</sub>e<sub>2</sub> + e<sub>1</sub>e<sub>3</sub> + 1 + e<sub>2</sub>e<sub>3</sub><br>
+                        = <strong>1</strong> (scalar) + <strong>e<sub>1</sub>e<sub>2</sub> + e<sub>1</sub>e<sub>3</sub> + e<sub>2</sub>e<sub>3</sub></strong> (bivectors)
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 4: Double Cover Property of Spinors</h4>
+                <p>
+                    Explain why a 360° rotation changes the sign of a spinor, while a 720° rotation returns it to its original state.
+                    This is the famous "double cover" property of spinors. Can you think of a physical demonstration?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Consider the Dirac belt trick or plate trick. A rotation by angle θ is represented in the spin group
+                        by e<sup>-Bθ/2</sup> where B is a bivector. When θ = 2π, this gives e<sup>-πB</sup> = -1 (for unit bivector).
+                        When θ = 4π, we get e<sup>-2πB</sup> = +1.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 5: PM Framework - <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D Spinor Structure</h4>
+                <p>
+                    In the PM framework, the <span class="pm-value" data-pm-value="dimensions.D_after_sp2r"></span>D shadow has Cl(12,1) with 64-component spinors. If we want to decompose this into
+                    Standard Model fermions (which have 4 components each), how many "slots" do we have? Can you propose a structure
+                    that accommodates <span class="pm-value" data-pm-value="topology.n_gen"></span> generations of fermions?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Discussion</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        64 components ÷ 4 components per fermion = 16 "slots".<br>
+                        Each generation has: (u<sub>L</sub>, d<sub>L</sub>, u<sub>R</sub>, d<sub>R</sub>) quarks in 3 colors = 12 fermions,
+                        plus (e<sub>L</sub>, e<sub>R</sub>, ν<sub>L</sub>, ν<sub>R</sub>) leptons = 4 fermions.<br>
+                        Total per generation: 16 fermions.<br>
+                        For 3 generations: 3 × 16 = 48 slots used out of 64.<br>
+                        The remaining 16 slots might be: gauge bosons as fermion bilinears, or hints of additional structure.
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+        
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where Clifford Algebra Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Fermion Sector</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Spinor representations and chirality
+                    </p>
+                    <a href="../Pages/sections.html#fermion-sector" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        8192-component bulk spinor
+                    </p>
+                    <a href="../sections.html#pneuma-lagrangian" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Geometric Framework</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Cl(24,2) → Cl(12,1) reduction
+                    </p>
+                    <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where Clifford Algebra Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Fermion Sector</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Spinor representations and chirality
+                    </p>
+                    <a href="../Pages/sections.html#fermion-sector" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Pneuma Lagrangian</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        8192-component bulk spinor
+                    </p>
+                    <a href="../sections.html#pneuma-lagrangian" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Geometric Framework</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Cl(24,2) → Cl(12,1) reduction
+                    </p>
+                    <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="../Pages/foundations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="einstein-field-equations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                Einstein Field Equations &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #8b7fff, #ff7eb6);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(255, 126, 182, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #8b7fff;
+        }
+        .highlight-box h4 {
+            color: #8b7fff;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+    </div>
+
+    <script type="module">
+        import { setupAuthGuard } from '../js/auth-guard.js';
+        setupAuthGuard('foundations-clifford-algebra');
+    </script>
+</body>
+</html>

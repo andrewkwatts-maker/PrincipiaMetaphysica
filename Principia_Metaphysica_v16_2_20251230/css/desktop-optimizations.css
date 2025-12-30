@@ -1,0 +1,342 @@
+/* ============================================
+   DESKTOP OPTIMIZATIONS FOR PRINCIPIA METAPHYSICA
+   Responsive Design for screens 1024px and above
+   ============================================ */
+
+/* Desktop Screens (1024px+) */
+@media (min-width: 1025px) {
+    /* Main content max-width for optimal readability */
+    main {
+        max-width: 1600px !important;
+        padding: 0 2.5rem 4rem !important;
+    }
+
+    /* Optimize grid layouts for desktop screens */
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)) !important;
+        gap: 2rem !important;
+    }
+
+    .names-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+
+    .summary-cards {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 2rem !important;
+    }
+
+    /* Better spacing for large screens */
+    .intro, .detail-header, .detail-section {
+        padding: 3rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    /* Header optimizations */
+    header {
+        padding: 1.25rem 2.5rem !important;
+    }
+
+    h1 {
+        font-size: 2rem !important;
+    }
+
+    h2 {
+        font-size: 1.75rem !important;
+    }
+
+    .detail-header h2 {
+        font-size: 3.25rem !important;
+    }
+
+    /* Table handling - no horizontal scroll on desktop */
+    table {
+        overflow-x: visible !important;
+        max-width: 100% !important;
+        font-size: 1rem !important;
+    }
+
+    .dimension-table,
+    .comparison-table,
+    .dim-table {
+        overflow: visible !important;
+    }
+
+    /* Code blocks and pre-formatted text */
+    pre {
+        max-width: 100% !important;
+        overflow-x: auto !important;
+        padding: 1.5rem !important;
+        font-size: 0.95rem !important;
+    }
+
+    code {
+        font-size: 0.9rem !important;
+    }
+
+    /* Tooltips - larger on desktop */
+    .var-tooltip {
+        max-width: 350px !important;
+        width: 350px !important;
+        padding: 1.25rem !important;
+    }
+
+    .var-tooltip .var-name {
+        font-size: 1.4rem !important;
+    }
+
+    .var-tooltip .var-description {
+        font-size: 0.95rem !important;
+    }
+
+    /* Formula display sizing optimized for desktop */
+    .formula-display {
+        font-size: 1.75rem !important;
+        line-height: 2.4 !important;
+    }
+
+    .formula-display.large {
+        font-size: 2rem !important;
+    }
+
+    .interactive-formula {
+        padding: 2.5rem !important;
+        margin: 2.5rem 0 !important;
+    }
+
+    .formula-var {
+        padding: 0.3rem 0.6rem !important;
+        margin: 0 0.2rem !important;
+    }
+
+    /* SVG and diagram scaling for desktop */
+    .diagram-svg {
+        max-width: 1100px !important;
+    }
+
+    .diagram-container {
+        padding: 2.5rem !important;
+        margin: 2.5rem 0 !important;
+        overflow: visible !important;
+    }
+
+    /* Canvas elements - ensure proper scaling */
+    canvas {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Card hover effects more pronounced on desktop */
+    .card:hover {
+        transform: translateY(-10px) scale(1.03) !important;
+    }
+
+    .prediction-card:hover,
+    .summary-card:hover {
+        transform: translateY(-6px) !important;
+    }
+
+    /* Better search box on desktop */
+    .search-container {
+        max-width: 800px !important;
+        margin: 3rem auto !important;
+    }
+
+    #searchBox {
+        padding: 1.25rem 2rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Flow diagrams and scale ladders */
+    .flow-node {
+        min-width: 150px !important;
+        padding: 1.25rem 1.5rem !important;
+    }
+
+    .ladder-container {
+        padding-left: 100px !important;
+    }
+
+    /* Experimental predictions and peer review sections */
+    .experimental-predictions,
+    .peer-review-section,
+    .concerns-section {
+        padding: 2.5rem !important;
+        margin: 2.5rem 0 !important;
+    }
+
+    .prediction-card,
+    .criticism-item {
+        padding: 1.75rem !important;
+    }
+
+    /* Formula calculator inputs */
+    .calc-inputs {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+
+    .calc-input-group input {
+        padding: 0.9rem !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* Hierarchy and tree diagrams */
+    .hierarchy-node {
+        padding: 1rem 1.5rem !important;
+        font-size: 1.05rem !important;
+    }
+
+    /* MathJax formula sizing - ensure readability on desktop */
+    .MathJax {
+        font-size: 120% !important;
+    }
+
+    mjx-container {
+        font-size: 120% !important;
+    }
+
+    /* Ensure no unwanted horizontal scrolling */
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .paper {
+        overflow-x: visible !important;
+        max-width: 850px !important;
+    }
+
+    /* Z-index layering - ensure tooltips always on top */
+    .var-tooltip {
+        z-index: 10000 !important;
+    }
+
+    .formula-info {
+        z-index: 9999 !important;
+    }
+
+    .diagram-tooltip {
+        z-index: 9998 !important;
+    }
+
+    /* Sticky header should stay below tooltips */
+    header {
+        z-index: 1000 !important;
+    }
+
+    /* Navigation improvements */
+    nav a {
+        padding: 0.6rem 1.25rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* Related links better spacing */
+    .related-links {
+        gap: 1.25rem !important;
+    }
+
+    .related-link {
+        padding: 1rem 1.75rem !important;
+        font-size: 1rem !important;
+    }
+
+    /* Breadcrumb navigation */
+    .breadcrumb {
+        font-size: 1rem !important;
+        margin-bottom: 2.5rem !important;
+    }
+
+    /* Back to top button */
+    .back-to-top {
+        width: 56px !important;
+        height: 56px !important;
+        font-size: 1.5rem !important;
+    }
+
+    /* Expandable formulas */
+    .expandable-formula .formula-header {
+        padding: 1.25rem 2rem !important;
+    }
+
+    .expandable-formula .formula-main {
+        font-size: 1.4rem !important;
+    }
+
+    .expandable-formula.expanded .formula-expansion {
+        padding: 2rem !important;
+    }
+
+    .sub-components {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+        gap: 1.5rem !important;
+    }
+}
+
+/* Large Desktop Screens (1440px+) */
+@media (min-width: 1441px) {
+    main {
+        max-width: 1800px !important;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)) !important;
+        gap: 2.5rem !important;
+    }
+
+    h1 {
+        font-size: 2.25rem !important;
+    }
+
+    .detail-header h2 {
+        font-size: 3.5rem !important;
+    }
+
+    .intro, .detail-header, .detail-section {
+        padding: 3.5rem !important;
+    }
+
+    .formula-display {
+        font-size: 2rem !important;
+    }
+
+    .formula-display.large {
+        font-size: 2.25rem !important;
+    }
+
+    .paper {
+        max-width: 900px !important;
+    }
+}
+
+/* Ultra-wide Screens (1920px+) */
+@media (min-width: 1921px) {
+    main {
+        max-width: 2000px !important;
+    }
+
+    .grid {
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)) !important;
+        gap: 3rem !important;
+    }
+
+    .intro, .detail-header, .detail-section {
+        padding: 4rem !important;
+    }
+
+    .paper {
+        max-width: 950px !important;
+    }
+}
+
+/* Print optimization - ensure proper paper layout */
+@media print {
+    .paper {
+        max-width: none !important;
+        padding: 0 !important;
+    }
+
+    table {
+        overflow: visible !important;
+    }
+}

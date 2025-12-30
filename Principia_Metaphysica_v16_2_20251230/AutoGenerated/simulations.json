@@ -1,0 +1,583 @@
+{
+  "version": "16.0",
+  "generated": "2025-12-30T06:24:11.507245Z",
+  "total_scripts": 54,
+  "categories": {
+    "v16/appendices": {
+      "title": "Appendices",
+      "path": "simulations/v16/appendices",
+      "folderName": "appendices",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "appendix_a_math_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_a_math_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix A: Mathematical Foundations",
+          "description": "Comprehensive mathematical foundations covering G2 holonomy, spinor structures, differential geometry, and topological invariants.",
+          "status": null
+        },
+        {
+          "file": "appendix_b_methods_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_b_methods_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix B: Computational Methods",
+          "description": "Comprehensive documentation of computational techniques including RG equations, threshold corrections, and numerical optimization.",
+          "status": null
+        },
+        {
+          "file": "appendix_c_derivations_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_c_derivations_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix C: Extended Derivations",
+          "description": "Detailed derivations of gauge unification, fermion masses, neutrino mixing, and proton decay from G2 geometry.",
+          "status": null
+        },
+        {
+          "file": "appendix_d_tables_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_tables_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix D: Comprehensive Parameter Tables",
+          "description": "Complete listing of all physical constants, experimental inputs, geometric parameters, and theory predictions with sources.",
+          "status": null
+        },
+        {
+          "file": "appendix_e_proton_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_e_proton_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix E: Proton Decay Calculation",
+          "description": "Detailed calculation of proton decay lifetime from dimension-6 effective operators. Predicts τ_p = 1.3 × 10³⁵ years, testable by Hyper-Kamiokande.",
+          "status": null
+        },
+        {
+          "file": "appendix_f_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_f_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix F: Dimensional Decomposition",
+          "description": "Mathematical framework for reducing 26-dimensional (24,2) signature spacetime to 13-dimensional (12,1) physical space via gauge fixing.",
+          "status": null
+        },
+        {
+          "file": "appendix_g_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_g_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix G: Effective Torsion from Flux Quantization",
+          "description": "TCS G₂ manifolds are Ricci-flat (geometric torsion τ = 0). The effective torsion arises from G₄ flux quantization, yielding T_ω = -0.875 with Spin(7) spinor fraction correction.",
+          "status": null
+        },
+        {
+          "file": "appendix_h_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_h_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix H: Proton Decay Branching Ratio",
+          "description": "The branching ratio BR(p → e⁺π⁰) is predicted from flux orientation on the TCS G₂ manifold. Geometric derivation yields BR = 0.25 from shadow spacetime dimensions.",
+          "status": null
+        },
+        {
+          "file": "appendix_i_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_i_v16_0.py",
+          "version": "16.0",
+          "title": "Appendix I: Gravitational Wave Dispersion",
+          "description": "The two-time framework predicts frequency-dependent dispersion for gravitational waves. Dispersion coefficient η emerges from quantum fluctuations in orthogonal time τ, modulated by G₂ torsion effects.",
+          "status": null
+        },
+        {
+          "file": "appendix_j_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_j_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_k_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_k_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_l_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_l_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_m_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_m_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_n_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_n_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 14
+    },
+    "v16/cosmology": {
+      "title": "Cosmology",
+      "path": "simulations/v16/cosmology",
+      "folderName": "cosmology",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "cosmological_constant_v16_1.py",
+          "path": "simulations/v16/cosmology/cosmological_constant_v16_1.py",
+          "version": "16.1",
+          "title": "Cosmological Constant from Entropy Density",
+          "description": "Derives cosmological constant Lambda from G2 manifold entropy density. Solves the cosmological constant problem by showing Lambda ~ 10^-52 m^-2 emerges geometrically from b3=24.",
+          "status": null
+        },
+        {
+          "file": "ricci_flow_h0_v16_1.py",
+          "path": "simulations/v16/cosmology/ricci_flow_h0_v16_1.py",
+          "version": "16.1",
+          "title": "Ricci Flow Hubble Evolution",
+          "description": "Derives dynamically evolving H(z) from G2 Ricci flow. Resolves Hubble tension by natural interpolation between H0_early=67.4 and H0_local=73.04 km/s/Mpc.",
+          "status": null
+        },
+        {
+          "file": "s8_suppression_v16_1.py",
+          "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
+          "version": "16.1",
+          "title": "S8 Tension Resolution via Dynamical Dark Energy",
+          "description": "Resolves S8 tension between CMB (Planck) and weak lensing (KiDS-1000, DES Y3) through PM's w₀ = -11/13 dark energy. Dynamical dark energy with w₀ < -1/3 suppresses late-time structure growth, reducing S8 by ~3% relative to ΛCDM.",
+          "status": null
+        },
+        {
+          "file": "cosmology_intro_v16_0.py",
+          "path": "simulations/v16/cosmology/cosmology_intro_v16_0.py",
+          "version": "16.0",
+          "title": "Deriving 4D Gravity from Kaluza-Klein Reduction",
+          "description": "Complete derivation of 4D gravity from 26D → 13D → 4D dimensional reduction, including breathing mode, BPS branes, and Pneuma field.",
+          "status": null
+        },
+        {
+          "file": "dark_energy_v16_0.py",
+          "path": "simulations/v16/cosmology/dark_energy_v16_0.py",
+          "version": "16.0",
+          "title": "Dark Energy from Dimensional Reduction",
+          "description": "Derives dark energy equation of state w₀ = -11/13 from dimensional reduction cascade 26D → 13D → 4D. Shadow dimensions contribute α_shadow ≈ 0.576 to effective dimension D_eff = 12.576.",
+          "status": null
+        },
+        {
+          "file": "multi_sector_v16_0.py",
+          "path": "simulations/v16/cosmology/multi_sector_v16_0.py",
+          "version": "16.0",
+          "title": "Multi-Sector Cosmological Dynamics",
+          "description": "Computes dark matter abundance, dark energy equation of state, and sector blending from G2 geometry with derived modulation width.",
+          "status": null
+        },
+        {
+          "file": "jacobian_mathematical_validation.py",
+          "path": "simulations/v16/cosmology/jacobian_mathematical_validation.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "s8_bulk_viscosity_solver.py",
+          "path": "simulations/v16/cosmology/s8_bulk_viscosity_solver.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "test_complete_validation.py",
+          "path": "simulations/v16/cosmology/test_complete_validation.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "test_jacobian_analysis.py",
+          "path": "simulations/v16/cosmology/test_jacobian_analysis.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 10
+    },
+    "v16/discussion": {
+      "title": "Discussion",
+      "path": "simulations/v16/discussion",
+      "folderName": "discussion",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "discussion_v16_0.py",
+          "path": "simulations/v16/discussion/discussion_v16_0.py",
+          "version": "16.0",
+          "title": "Discussion, Conclusions, and Theory Analysis",
+          "description": "Comprehensive discussion including theoretical implications, predictions, falsifiability, validation, and future directions",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/fermion": {
+      "title": "Fermion",
+      "path": "simulations/v16/fermion",
+      "folderName": "fermion",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "mass_ratio_v16_1.py",
+          "path": "simulations/v16/fermion/mass_ratio_v16_1.py",
+          "version": "16.1",
+          "title": "Proton-Electron Mass Ratio Derivation",
+          "description": "Derives m_p/m_e ≈ 1836.15 from G2 manifold topology with zero free parameters",
+          "status": null
+        },
+        {
+          "file": "muon_g2_anomaly_v16_1.py",
+          "path": "simulations/v16/fermion/muon_g2_anomaly_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "chirality_v16_0.py",
+          "path": "simulations/v16/fermion/chirality_v16_0.py",
+          "version": "16.0",
+          "title": "Chirality and Spinorial Structure from G2 Holonomy",
+          "description": "Derives fermion chirality from G2 manifold holonomy and spinorial representations. Shows how associative 4-form defines chiral projector, Dirac operator zero modes determine chiral fermion count, and index theorem connects to topology. Links to n_gen = 3 via spinor saturation.",
+          "status": null
+        },
+        {
+          "file": "ckm_matrix_v16_0.py",
+          "path": "simulations/v16/fermion/ckm_matrix_v16_0.py",
+          "version": "16.0",
+          "title": "CKM Matrix and Quark Mixing from G2 Phases",
+          "description": "Derives CKM matrix elements and CP violation from G2 manifold topological phases. CKM angles emerge from geometric overlaps between quark wave functions on associative 3-cycles. Jarlskog invariant J ~ 3e-5 from holonomy phases.",
+          "status": null
+        },
+        {
+          "file": "fermion_generations_v16_0.py",
+          "path": "simulations/v16/fermion/fermion_generations_v16_0.py",
+          "version": "16.0",
+          "title": "Fermion Generations from G2 Topology",
+          "description": "Derives the number of fermion generations (3) and Yukawa texture from G2 manifold topology via the Pneuma Mechanism. Generation count follows from spinor saturation: n_gen = N_flux / spinor_DOF = 24 / 8 = 3. Yukawa hierarchy from geometric Froggatt-Nielsen with epsilon ~ 0.223.",
+          "status": null
+        }
+      ],
+      "count": 5
+    },
+    "v16/gauge": {
+      "title": "Gauge",
+      "path": "simulations/v16/gauge",
+      "folderName": "gauge",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "gauge_unification_v16_0.py",
+          "path": "simulations/v16/gauge/gauge_unification_v16_0.py",
+          "version": "16.0",
+          "title": "Gauge Coupling Unification",
+          "description": "Compute GUT scale and unified coupling from 3-loop RG evolution with KK and asymptotic safety corrections",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/geometric": {
+      "title": "Geometric",
+      "path": "simulations/v16/geometric",
+      "folderName": "geometric",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "leech_partition_v16_2.py",
+          "path": "simulations/v16/geometric/leech_partition_v16_2.py",
+          "version": "16.2",
+          "title": "Leech Lattice Generation Partition",
+          "description": "Proves n_gen = 24/8 = 3 from octonionic partition of the 24-dimensional Leech lattice. This is a mathematical theorem, not a parameter fit.",
+          "status": null
+        },
+        {
+          "file": "modular_invariance_v16_2.py",
+          "path": "simulations/v16/geometric/modular_invariance_v16_2.py",
+          "version": "16.2",
+          "title": "Modular Invariance and b3=24 Uniqueness",
+          "description": "Proves that modular invariance of the partition function requires exactly b3 = 24. This is the mathematical origin of the critical dimension.",
+          "status": null
+        },
+        {
+          "file": "alpha_rigor_v16_1.py",
+          "path": "simulations/v16/geometric/alpha_rigor_v16_1.py",
+          "version": "16.1",
+          "title": "Fine Structure Constant Derivation",
+          "description": "Derives alpha^-1 ≈ 137.036 from G2 manifold topology with zero free parameters",
+          "status": null
+        },
+        {
+          "file": "c_g_lambda_v16_1.py",
+          "path": "simulations/v16/geometric/c_g_lambda_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "torsional_constants_v16_1.py",
+          "path": "simulations/v16/geometric/torsional_constants_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "g2_geometry_v16_0.py",
+          "path": "simulations/v16/geometric/g2_geometry_v16_0.py",
+          "version": "16.0",
+          "title": "G2 Geometry and Topology",
+          "description": "Fundamental G2 holonomy validation and TCS topology invariants",
+          "status": null
+        },
+        {
+          "file": "g2_ricci_flow_rigorous.py",
+          "path": "simulations/v16/geometric/g2_ricci_flow_rigorous.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 7
+    },
+    "v16/higgs": {
+      "title": "Higgs",
+      "path": "simulations/v16/higgs",
+      "folderName": "higgs",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "higgs_vev_derivation_v16_1.py",
+          "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "higgs_mass_v16_0.py",
+          "path": "simulations/v16/higgs/higgs_mass_v16_0.py",
+          "version": "16.0",
+          "title": "Higgs Mass from Moduli Stabilization",
+          "description": "Compute Higgs mass and VEV from G2 moduli stabilization",
+          "status": null
+        }
+      ],
+      "count": 2
+    },
+    "v16/introduction": {
+      "title": "Introduction",
+      "path": "simulations/v16/introduction",
+      "folderName": "introduction",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "introduction_v16_0.py",
+          "path": "simulations/v16/introduction/introduction_v16_0.py",
+          "version": "16.0",
+          "title": "Introduction to Principia Metaphysica",
+          "description": "Narrative introduction to the PM framework and key predictions",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/neutrino": {
+      "title": "Neutrino",
+      "path": "simulations/v16/neutrino",
+      "folderName": "neutrino",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "neutrino_mixing_v16_0.py",
+          "path": "simulations/v16/neutrino/neutrino_mixing_v16_0.py",
+          "version": "16.0",
+          "title": "PMNS Neutrino Mixing from G2 Geometry",
+          "description": "Derives all four PMNS mixing parameters (theta_12, theta_13, theta_23, delta_CP) from G2 manifold topology without calibration",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/pneuma": {
+      "title": "Pneuma",
+      "path": "simulations/v16/pneuma",
+      "folderName": "pneuma",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "pneuma_mechanism_v16_0.py",
+          "path": "simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
+          "version": "16.0",
+          "title": "Pneuma Field Mechanism",
+          "description": "Compute Pneuma field dynamics, coupling constants, and Lagrangian validity from G2 geometry",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/predictions": {
+      "title": "Predictions",
+      "path": "simulations/v16/predictions",
+      "folderName": "predictions",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "predictions_aggregator_v16_0.py",
+          "path": "simulations/v16/predictions/predictions_aggregator_v16_0.py",
+          "version": "16.0",
+          "title": "Falsifiable Predictions Summary",
+          "description": "Aggregates all testable predictions from the PM framework",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/proton": {
+      "title": "Proton",
+      "path": "simulations/v16/proton",
+      "folderName": "proton",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "proton_decay_v16_0.py",
+          "path": "simulations/v16/proton/proton_decay_v16_0.py",
+          "version": "16.0",
+          "title": "Proton Decay Lifetime from TCS Geometry",
+          "description": "Computes proton lifetime using geometric suppression from TCS G2 cycle separation. Derives d/R from K3 matching fibres and applies wavefunction overlap selection rule.",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/quantum_bio": {
+      "title": "Quantum Bio",
+      "path": "simulations/v16/quantum_bio",
+      "folderName": "quantum_bio",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "orch_or_geometry_v16_1.py",
+          "path": "simulations/v16/quantum_bio/orch_or_geometry_v16_1.py",
+          "version": "16.1",
+          "title": "Orch-OR Quantum Consciousness Validation",
+          "description": "Links microtubule geometry to G2 manifold topology and derives coherence time for quantum consciousness",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/statistics": {
+      "title": "Statistics",
+      "path": "simulations/v16/statistics",
+      "folderName": "statistics",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "rigor_covariance_v16_1.py",
+          "path": "simulations/v16/statistics/rigor_covariance_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "example_integration.py",
+          "path": "simulations/v16/statistics/example_integration.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "test_covariance_data.py",
+          "path": "simulations/v16/statistics/test_covariance_data.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 3
+    },
+    "v16/thermal": {
+      "title": "Thermal",
+      "path": "simulations/v16/thermal",
+      "folderName": "thermal",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "thermal_time_v16_0.py",
+          "path": "simulations/v16/thermal/thermal_time_v16_0.py",
+          "version": "16.0",
+          "title": "Thermal Time Hypothesis and Two-Time Framework",
+          "description": "Compute thermal time coupling alpha_T and validate emergent time from thermodynamics",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/validation": {
+      "title": "Validation",
+      "path": "simulations/v16/validation",
+      "folderName": "validation",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "rigorous_validator_v16_1.py",
+          "path": "simulations/v16/validation/rigorous_validator_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "unity_identity_v16_1.py",
+          "path": "simulations/v16/validation/unity_identity_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "example_usage.py",
+          "path": "simulations/v16/validation/example_usage.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "generate_theory_covariance.py",
+          "path": "simulations/v16/validation/generate_theory_covariance.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 4
+    }
+  }
+}

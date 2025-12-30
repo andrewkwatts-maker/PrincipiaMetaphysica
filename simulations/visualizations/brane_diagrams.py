@@ -19,9 +19,12 @@ Principia Metaphysica:
 Physics Context:
 ----------------
 In M-theory, our 4-dimensional spacetime may be a 3-brane (3 spatial
-dimensions + time) embedded in an 11-dimensional bulk. The PM theory
-uses G2 holonomy compactification where 7 extra dimensions are curled
-up on a G2 manifold, leaving an effective 4D description.
+dimensions + time) embedded in an 11-dimensional bulk.
+
+**PM Theory is DISTINCT from M-theory:** PM starts from 26D_{(24,2)} and
+reduces via: 26D → [Sp(2,R)] → 13D → [G₂ 7-manifold] → 6D → 4D.
+The G₂ holonomy operates on a 7D internal manifold, yielding effective 4D physics.
+This diagram shows M-theory concepts for comparison; PM's full framework differs.
 
 Key concepts visualized:
 - Brane as a lower-dimensional subspace

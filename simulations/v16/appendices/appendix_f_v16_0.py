@@ -94,6 +94,8 @@ class AppendixFDimensionalDecomposition(SimulationBase):
             "sp2r-gauge-constraint",
             "shadow-reduction",
             "orientation-sum",
+            "symplectic-form",
+            "sp2r-generators-formal",
         ]
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
@@ -229,6 +231,60 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
+                    content="F.2.1 13D Effective Lagrangian (after Sp(2,R))"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "After Sp(2,R) gauge fixing, the 26D master action reduces to a 13D effective "
+                        "Lagrangian. The fermion representation reorganizes from 8192-dimensional Pneuma "
+                        "spinor to a 64-dimensional representation of Spin(12,1):"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\mathcal{L}_{13D} = M_*^{11}R_{13} + \bar{\Psi}_{64}(i\gamma^\mu\nabla_\mu - m_{\text{eff}})\Psi_{64} + \mathcal{L}_{\text{flux}}",
+                    formula_id="lagrangian-13d-effective",
+                    label="(F.3a)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The effective mass m_eff arises from the gauge-fixing procedure and the dilaton "
+                        "stabilization. The flux Lagrangian L_flux contains G-form contributions "
+                        "quantized through the b3 = 24 associative cycles."
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="F.2.2 Intermediate Action Reduction (Step-by-Step)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The reduction from 26D to 13D proceeds through the following steps:\n\n"
+                        "**Step 1**: Start with 26D action S_26 with (24,2) signature\n"
+                        "**Step 2**: Introduce Sp(2,R) gauge-fixing action:\n"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"S_{\text{gf}} = \int d^{26}x \left[ \lambda (X \cdot P) + \zeta (X^2 - \tau^2) \right]",
+                    formula_id="sp2r-gauge-fixing-action",
+                    label="(F.3b)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Step 3**: Impose constraints X.P = 0, X^2 = tau^2, eliminating 13 DOF\n"
+                        "**Step 4**: Project spinor representation: 8192 -> 64 (Clifford reduction)\n"
+                        "**Step 5**: Integrate out unphysical modes, yielding L_13D\n\n"
+                        "The Lagrange multipliers lambda and zeta enforce the first-class constraints, "
+                        "each removing 2 phase space degrees of freedom."
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
                     content="F.3 G₂ Compactification"
                 ),
                 ContentBlock(
@@ -292,7 +348,86 @@ class AppendixFDimensionalDecomposition(SimulationBase):
                 ),
                 ContentBlock(
                     type="subsection",
-                    content="F.5 Simulation Code"
+                    content="F.5 Formal Symplectic Constraint Derivation"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "The Sp(2,ℝ) gauge symmetry arises from the symplectic structure of the "
+                        "extended phase space. Here we provide the formal derivation connecting "
+                        "the constraint structure to dimensional reduction."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Symplectic Structure**: The extended phase space (X^M, P_M) with M = 0,...,25 "
+                        "carries a natural symplectic 2-form:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\omega = dX^M \wedge dP_M = \sum_{M=0}^{25} dX^M \wedge dP_M",
+                    formula_id="symplectic-form",
+                    label="(F.6)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Sp(2,ℝ) Generators**: The three generators of Sp(2,ℝ) are constructed "
+                        "from the phase space variables:"
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"J_0 = \frac{1}{2}(X \cdot P + P \cdot X), \quad J_+ = \frac{1}{2}X^2, \quad J_- = \frac{1}{2}P^2",
+                    formula_id="sp2r-generators-formal",
+                    label="(F.7)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "These satisfy the sp(2,ℝ) ≅ sl(2,ℝ) algebra:\n"
+                        "- {J_0, J_+} = J_+\n"
+                        "- {J_0, J_-} = -J_-\n"
+                        "- {J_+, J_-} = 2J_0\n\n"
+                        "where {·,·} denotes the Poisson bracket."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**First-Class Constraints**: Setting J_0 = J_+ = J_- = 0 gives first-class "
+                        "constraints (they commute weakly). Each first-class constraint removes "
+                        "2 phase space DOF: one from the constraint equation, one from gauge freedom."
+                    )
+                ),
+                ContentBlock(
+                    type="formula",
+                    content=r"\text{dim}(\mathcal{M}_{\text{phys}}) = \text{dim}(\mathcal{M}_{\text{ext}}) - 2 \times (\text{number of first-class constraints})",
+                    label="(F.8)"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Coordinate Space Reduction**: In the extended phase space formulation, "
+                        "the constraint X · P = 0 implies that position and momentum are orthogonal "
+                        "in the (24,2) metric. Combined with the mass-shell constraints X² = 0 "
+                        "and P² = 0, this projects the 26D bulk onto a 13D hypersurface."
+                    )
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content=(
+                        "**Physical Time Selection**: The gauge fixing procedure selects thermodynamic "
+                        "time t_therm as the physical time coordinate. The orthogonal time τ becomes "
+                        "pure gauge, with all configurations differing only in τ identified as "
+                        "physically equivalent. This eliminates CTCs (see Appendix D')."
+                    )
+                ),
+                ContentBlock(
+                    type="subsection",
+                    content="F.6 Simulation Code"
                 ),
                 ContentBlock(
                     type="code",
@@ -349,6 +484,8 @@ def dimensional_reduction() -> dict:
                 "sp2r-gauge-constraint",
                 "shadow-reduction",
                 "orientation-sum",
+                "symplectic-form",
+                "sp2r-generators-formal",
             ],
             param_refs=[
                 "dimensions.bulk_signature",
@@ -404,6 +541,53 @@ def dimensional_reduction() -> dict:
                 ),
                 input_params=["dimensions.shadow_signature", "topology.b3"],
                 output_params=["dimensions.orientation_sum"],
+            ),
+            Formula(
+                id="symplectic-form",
+                label="(F.6)",
+                latex=r"\omega = dX^M \wedge dP_M = \sum_{M=0}^{25} dX^M \wedge dP_M",
+                plain_text="omega = dX^M ^ dP_M (symplectic 2-form)",
+                category="FOUNDATIONAL",
+                description=(
+                    "Symplectic 2-form on extended phase space. Provides the natural "
+                    "geometric structure from which Sp(2,R) gauge symmetry emerges."
+                ),
+                input_params=[],
+                output_params=[],
+                terms={
+                    "omega": "Symplectic 2-form",
+                    "X^M": "Extended phase space coordinates (M = 0,...,25)",
+                    "P_M": "Conjugate momenta",
+                },
+            ),
+            Formula(
+                id="sp2r-generators-formal",
+                label="(F.7)",
+                latex=r"J_0 = \frac{1}{2}(X \cdot P + P \cdot X), \quad J_+ = \frac{1}{2}X^2, \quad J_- = \frac{1}{2}P^2",
+                plain_text="J_0 = (X.P)/2, J_+ = X^2/2, J_- = P^2/2",
+                category="FOUNDATIONAL",
+                description=(
+                    "Formal generators of Sp(2,R) ~ sl(2,R) Lie algebra constructed from phase space "
+                    "variables. These generate the gauge transformations that eliminate one time dimension."
+                ),
+                input_params=[],
+                output_params=[],
+                derivation={
+                    "method": "Symplectic geometry construction",
+                    "steps": [
+                        "Start with symplectic 2-form omega = dX ^ dP",
+                        "Define bilinear forms on phase space",
+                        "J_0 generates dilatations (scaling)",
+                        "J_+ generates special conformal transformations",
+                        "J_- generates mass-shell constraint",
+                        "Poisson brackets give sl(2,R) algebra",
+                    ]
+                },
+                terms={
+                    "J_0": "Dilatation generator (mixes position and momentum)",
+                    "J_+": "Special conformal generator (position-only)",
+                    "J_-": "Mass-shell generator (momentum-only)",
+                },
             ),
         ]
 
