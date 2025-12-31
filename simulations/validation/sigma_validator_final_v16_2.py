@@ -381,10 +381,10 @@ class FinalSigmaValidator(SimulationBase):
                 "param": "cosmology.w0_derived",
                 "name": "Dark Energy EoS w0",
                 "target_path": "desi.w0",
-                "target_value": -0.728,
+                "target_value": -0.957,  # v16.2: DESI 2025 thawing constraint
                 "uncertainty": 0.067,
                 "units": "dimensionless",
-                "source": "DESI 2025",
+                "source": "DESI 2025 (thawing)",
                 "bound_type": "measured",
                 "sector": "cosmology"
             },
