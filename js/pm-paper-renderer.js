@@ -1795,6 +1795,10 @@
             .replace(/ℓ/g, '\\ell ')
             .replace(/†/g, '^\\dagger ')
             .replace(/′/g, "'")
+            // Hebrew letters (for k_gimel)
+            .replace(/ℷ/g, '\\gimel ')
+            .replace(/ℵ/g, '\\aleph ')
+            .replace(/ℶ/g, '\\beth ')
             // Text dashes as separators
             .replace(/—/g, '\\quad \\text{—} \\quad ')
             .replace(/\n/g, ' \\\\ ');
