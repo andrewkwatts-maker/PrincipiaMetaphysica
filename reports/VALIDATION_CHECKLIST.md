@@ -1,7 +1,7 @@
 # Proton Decay Simulation Validation Checklist
 
 **Simulation:** `proton_decay_geometric_v13_0.py`
-**Validator:** Claude Code
+**Validator:** Automated Validation
 **Date:** December 28, 2025
 **Result:** PASS (9/10 with 1 critical fixable issue)
 
@@ -283,7 +283,7 @@ All 14 parameters present with correct values
 **Approved for:** Production use via run_all_simulations.py
 **Approved for:** Direct execution (after line 38 fix)
 
-**Validator:** Claude Code
+**Validator:** Automated Validation
 **Date:** December 28, 2025
 **Framework:** Principia Metaphysica v14.1
 

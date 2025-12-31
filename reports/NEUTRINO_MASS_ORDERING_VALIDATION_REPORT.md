@@ -536,5 +536,5 @@ The `neutrino_mass_ordering.py` simulation is a **well-integrated, mathematicall
 ---
 
 **Report Generated:** 2025-12-28
-**Validation Tool:** Claude Code Agent
+**Validation Tool:** Automated Validation
 **Framework Version:** PM v14.1

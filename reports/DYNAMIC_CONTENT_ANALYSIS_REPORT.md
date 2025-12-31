@@ -2,7 +2,7 @@
 ## Principia Metaphysica HTML Pages - Static vs Dynamic Content Strategy
 
 **Generated:** 2025-12-28
-**Analyst:** Claude Sonnet 4.5
+**Analyst:** Automated Analysis
 **Purpose:** Identify which HTML pages should be dynamically populated from `theory_output.json` and simulation outputs
 
 ---

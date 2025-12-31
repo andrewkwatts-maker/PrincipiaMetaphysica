@@ -607,7 +607,7 @@ The `proton_decay_geometric_v13_0.py` simulation is **VALIDATED as a canonical c
 
 ---
 
-**Validation performed by:** Claude Code
+**Validation performed by:** Automated Validation
 **Timestamp:** December 28, 2025
 **Framework Version:** Principia Metaphysica v14.1
 

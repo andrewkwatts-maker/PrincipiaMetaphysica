@@ -256,5 +256,5 @@ All three appendix HTML files have been successfully migrated to the centralized
 ---
 
 **Migration Completed:** 2025-12-28
-**Migrated by:** Claude (Sonnet 4.5)
+**Migrated by:** Automated Script
 **Tools Used:** Python 3.13, BeautifulSoup4, JSON

@@ -275,6 +275,6 @@ The validator is production-ready and can be used immediately for:
 ---
 
 **Implementation Date**: 2025-12-29
-**Author**: Claude (Anthropic)
+**Author**: Andrew Watts
 **Status**: Production-ready
 **Version**: 1.0
