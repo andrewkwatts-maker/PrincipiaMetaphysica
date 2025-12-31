@@ -108,7 +108,7 @@ class DarkEnergyEvolution(SimulationBase):
                 "of the G2 3-form torsional leakage."
             ),
             section_id="5",
-            subsection_id="5.3"
+            subsection_id="5.6"
         )
 
     @property
@@ -425,7 +425,7 @@ class DarkEnergyEvolution(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="5",
-            subsection_id="5.3",
+            subsection_id="5.6",
             title="Dark Energy Thawing from G2 Ricci Flow Relaxation",
             abstract=(
                 "We derive the CPL dark energy parameters (w0, wa) from G2 geometry, "
