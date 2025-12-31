@@ -225,6 +225,7 @@ from simulations.v16.fermion.chirality_v16_0 import ChiralitySpinorSimulation
 from simulations.v16.fermion.ckm_matrix_v16_0 import CKMMatrixSimulation
 from simulations.v16.proton.proton_decay_v16_0 import ProtonDecaySimulation
 from simulations.v16.higgs.higgs_mass_v16_0 import HiggsMassSimulation
+from simulations.v16.higgs.higgs_brane_partition_v16_2 import HiggsBranePartitionSimulation
 
 # Phase 3 - Precision observables and cosmology (depends on Phase 2)
 from simulations.v16.cosmology.cosmology_intro_v16_0 import CosmologyIntroV16
@@ -482,6 +483,7 @@ class SimulationRunner:
                 CKMMatrixSimulation(),
                 ProtonDecaySimulation(),
                 HiggsMassSimulation(),
+                HiggsBranePartitionSimulation(),  # v16.2: Brane-partition local Higgs mass
             ] + ([MassRatioSimulation()] if MASS_RATIO_AVAILABLE else []),
             3: [
                 CosmologyIntroV16(),
