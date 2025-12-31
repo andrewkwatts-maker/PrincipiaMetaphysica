@@ -2,7 +2,7 @@
   "metadata": {
     "title": "Gauge Sector Derivation Chain",
     "version": "16.1",
-    "timestamp": "2025-12-29T08:30:29.931183",
+    "timestamp": "2025-12-31T17:15:13.186078",
     "description": "Complete Wolfram Alpha derivation from G₂ topology to SM gauge unification",
     "author": "Andrew Keith Watts",
     "license": "Copyright (c) 2025-2026"
@@ -10,17 +10,17 @@
   "summary": {
     "total_steps": 35,
     "categories": [
-      "beta_3loop",
-      "energy_scale",
-      "beta_functions",
-      "gauge_coupling",
-      "mirror_sector",
-      "rg_running",
       "validation",
-      "beta_2loop",
-      "topology",
+      "beta_3loop",
+      "gauge_coupling",
+      "energy_scale",
+      "rg_running",
+      "mirror_sector",
       "weinberg_angle",
-      "group_theory"
+      "group_theory",
+      "beta_functions",
+      "beta_2loop",
+      "topology"
     ],
     "key_results": {
       "alpha_GUT": 0.041666666666666664,
@@ -81,7 +81,7 @@
       "expected_result": "M_GUT ≈ 2.49×10¹⁸ GeV",
       "pm_value": 2.1e+16,
       "verify_link": "https://www.wolframalpha.com/input/?i=N%5B1.22%20%2A%2010%5E19%20/%20Sqrt%5B24%5D%2C%203%5D%20GeV",
-      "notes": "Dimensional reduction from 11D: M_GUT = M_Planck/√(b₃) with loop corrections"
+      "notes": "Dimensional reduction (26D→13D→4D): M_GUT = M_Planck/√(b₃) with loop corrections"
     },
     {
       "step_id": "GUT-04",

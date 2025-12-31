@@ -1,7 +1,7 @@
 {
   "version": "16.2",
-  "generated": "2025-12-31T00:22:28.576402Z",
-  "total_scripts": 161,
+  "generated": "2025-12-31T07:11:13.173197Z",
+  "total_scripts": 164,
   "categories": {
     "Ad-Hoc / Experimental": {
       "title": "Ad-Hoc / Experimental",
@@ -122,6 +122,14 @@
           "version": null,
           "title": null,
           "description": "Dark Matter Direct Detection Limits",
+          "status": null
+        },
+        {
+          "file": "falsifiability_dashboard.py",
+          "path": "simulations/visualizations/falsifiability_dashboard.py",
+          "version": null,
+          "title": null,
+          "description": "Falsifiability Dashboard - v16.2 Demon-Lock Visualization",
           "status": null
         },
         {
@@ -325,7 +333,7 @@
           "status": null
         }
       ],
-      "count": 39
+      "count": 40
     },
     "G2 Geometry": {
       "title": "G2 Geometry",
@@ -349,7 +357,7 @@
           "path": "simulations/geometric_anchors_v16_1.py",
           "version": "16.1",
           "title": null,
-          "description": "Geometric Anchors v16.1 - First Principles Parameter Derivation",
+          "description": "Geometric Anchors v16.2 - First Principles Parameter Derivation",
           "status": null
         },
         {
@@ -729,6 +737,14 @@
           "status": null
         },
         {
+          "file": "unit_validator_v16_2.py",
+          "path": "simulations/validation/unit_validator_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Unit Validation System v16.2",
+          "status": null
+        },
+        {
           "file": "unitary_filter_v16_2.py",
           "path": "simulations/validation/unitary_filter_v16_2.py",
           "version": "16.2",
@@ -750,6 +766,14 @@
           "version": null,
           "title": null,
           "description": "Pytest Configuration for Principia Metaphysica Tests",
+          "status": null
+        },
+        {
+          "file": "v16_2_logic_check.py",
+          "path": "simulations/validation/v16_2_logic_check.py",
+          "version": null,
+          "title": null,
+          "description": "Validates all v16.2 physics fixes and ensures parameter consistency.",
           "status": null
         },
         {
@@ -873,7 +897,7 @@
           "status": null
         }
       ],
-      "count": 20
+      "count": 22
     },
     "v16/appendices": {
       "title": "Appendices",
@@ -1312,9 +1336,9 @@
           "file": "higgs_brane_partition_v16_2.py",
           "path": "simulations/v16/higgs/higgs_brane_partition_v16_2.py",
           "version": "16.2",
-          "title": "Higgs Mass via 4-Brane Partition (Demon-Lock)",
-          "description": "Derives Higgs mass from 26D bulk tension partitioned across 4 branes. Shows that 414 GeV (bulk) projects to 125 GeV (local) via k_gimel/pi scaling.",
-          "status": "PASS"
+          "title": null,
+          "description": "Higgs Brane-Partition Simulation v16.2 (Demon-Lock)",
+          "status": null
         },
         {
           "file": "higgs_vev_derivation_v16_1.py",

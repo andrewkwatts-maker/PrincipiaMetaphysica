@@ -5,25 +5,24 @@
 
 ## Executive Summary
 
-- **Total Parameters:** 79
+- **Total Parameters:** 259
 - **Parameters with Validation:** 0 (0.0%)
-- **Parameters Missing Validation:** 79 (100.0%)
+- **Parameters Missing Validation:** 259 (100.0%)
 
-- **Total Formulas:** 28
-- **Formulas with Derivation:** 28 (100.0%)
-- **Formulas Missing Derivation:** 0 (0.0%)
+- **Total Formulas:** 137
+- **Formulas with Derivation:** 115 (83.9%)
+- **Formulas Missing Derivation:** 22 (16.1%)
 
 ## Parameter Validation
 
 ### Parameters by Status
 
-- **DERIVED:** 37
-- **ESTABLISHED:** 36
-- **GEOMETRIC:** 6
+- **DERIVED:** 252
+- **GEOMETRIC:** 7
 
 ### Parameters Missing Units
 
-**Count:** 60
+**Count:** 174
 
 - `pdg.m_higgs`: N/A
 - `pdg.m_electron`: N/A
@@ -45,8 +44,10 @@
 - `nufit.delta_m31_sq`: N/A
 - `desi.w0`: N/A
 - `desi.wa`: N/A
+- `desi.sigma8`: N/A
 - `desi.H0`: N/A
 - `desi.Omega_m`: N/A
+- `planck.S8`: N/A
 - `bounds.tau_proton_lower`: N/A
 - `bounds.sum_m_nu_upper`: N/A
 - `higgs.vev_yukawa`: N/A
@@ -55,17 +56,50 @@
 - `moduli.re_t_attractor`: N/A
 - `moduli.re_t_phenomenological`: N/A
 - `topology.T_OMEGA`: N/A
+- `topology.orientation_sum`: N/A
+- `consciousness.coherence_fraction`: N/A
+- `consciousness.neuron_count`: N/A
 - `topology.b2`: N/A
 - `topology.b3`: N/A
-- `topology.CHI_EFF`: N/A
+- `topology.chi_eff`: N/A
 - `topology.n_gen`: N/A
+- `topology.k_gimel`: N/A
 - `topology.K_MATCHING`: N/A
 - `topology.d_over_R`: N/A
+- `unitary.status`: N/A
+- `unitary.c_transverse`: N/A
+- `unitary.c_sp2r`: N/A
+- `unitary.c_ghost`: N/A
+- `topology.n_gen_leech`: N/A
+- `topology.leech_dim`: N/A
+- `topology.octonion_dim`: N/A
+- `topology.b3_modular`: N/A
+- `topology.vacuum_energy`: N/A
+- `topology.critical_dim`: N/A
+- `topology.modular_weight`: N/A
 - `gauge.M_GUT`: N/A
+- `gauge.M_GUT_GEOMETRIC`: N/A
 - `fermion.yukawa_hierarchy`: N/A
 - `fermion.chiral_filter_strength`: N/A
 - `fermion.n_flux`: N/A
 - `fermion.epsilon_fn`: N/A
+- `chirality.spinor_dimension`: N/A
+- `chirality.chiral_index`: N/A
+- `chirality.zero_modes_left`: N/A
+- `chirality.imbalance`: N/A
+- `ckm.V_us`: N/A
+- `ckm.V_cb`: N/A
+- `ckm.V_ub`: N/A
+- `ckm.V_td`: N/A
+- `ckm.V_ts`: N/A
+- `ckm.V_tb`: N/A
+- `ckm.jarlskog_invariant`: N/A
+- `ckm.lambda_wolfenstein`: N/A
+- `ckm.A_wolfenstein`: N/A
+- `ckm.rho_wolfenstein`: N/A
+- `ckm.eta_wolfenstein`: N/A
+- `ckm.delta_cp`: N/A
+- `ckm.unitarity_test`: N/A
 - `proton_decay.tau_p_years`: N/A
 - `proton_decay.suppression_factor`: N/A
 - `proton_decay.status`: N/A
@@ -77,114 +111,456 @@
 - `higgs.lambda_eff_geometric`: N/A
 - `moduli.stabilization_status`: N/A
 - `higgs.quartic_correction`: N/A
+- `higgs.m_higgs_bulk`: N/A
+- `higgs.m_higgs_local`: N/A
+- `higgs.projection_factor`: N/A
+- `higgs.mirror_overlap`: N/A
+- `higgs.sigma_local`: N/A
 - `neutrino.theta_12_pred`: N/A
 - `neutrino.theta_13_pred`: N/A
 - `neutrino.theta_23_pred`: N/A
 - `neutrino.delta_CP_pred`: N/A
+- `neutrino.m1`: N/A
+- `neutrino.m2`: N/A
+- `neutrino.m3`: N/A
+- `neutrino.mass_sum`: N/A
+- `neutrino.dm2_21`: N/A
+- `neutrino.dm2_32`: N/A
+- `neutrino.ordering`: N/A
+- `neutrino.k_gimel`: N/A
+- `neutrino.C_kaf`: N/A
+- `ckm.V_us_triality`: N/A
+- `ckm.V_cb_triality`: N/A
+- `ckm.V_ub_triality`: N/A
+- `ckm.jarlskog_triality`: N/A
+- `pmns.theta_12_triality`: N/A
+- `pmns.theta_23_triality`: N/A
+- `pmns.theta_13_triality`: N/A
+- `triality.theta_g`: N/A
+- `triality.phi_golden`: N/A
+- `triality.associative_dimension`: N/A
+- `triality.coassociative_dimension`: N/A
 - `pneuma.coupling`: N/A
 - `pneuma.flow_parameter`: N/A
 - `pneuma.vev`: N/A
 - `pneuma.mass_scale`: N/A
+- `thermal.modular_temperature`: N/A
+- `thermal.entropy_gradient`: N/A
+- `thermal.two_time_metric_signature`: N/A
+- `quantum_bio.coherence_time_ms`: N/A
+- `quantum_bio.topological_pitch`: N/A
+- `quantum_bio.eg_joules`: N/A
+- `predictions.summary`: N/A
+- `predictions.falsifiable_count`: N/A
+- `math.g2_dimension`: N/A
+- `math.spinor_dimension`: N/A
+- `math.octonion_dimension`: N/A
+- `methods.rg_loop_order`: N/A
+- `methods.convergence_criterion`: N/A
+- `derivations.validation_status`: N/A
+- `tables.n_pdg_inputs`: N/A
+- `tables.n_geometric`: N/A
+- `tables.n_predictions`: N/A
+- `proton_decay.BR_e_pi0`: N/A
+- `proton_decay.BR_mu_pi0`: N/A
+- `proton_decay.BR_nu_K`: N/A
+- `dimensions.bulk_signature`: N/A
+- `dimensions.shadow_signature`: N/A
+- `dimensions.orientation_sum`: N/A
+- `dimensions.spatial_shadow`: N/A
+- `topology.N_flux`: N/A
+- `topology.T_omega_topological`: N/A
+- `topology.T_omega`: N/A
+- `topology.spinor_fraction`: N/A
+- `gw_dispersion.eta`: N/A
+- `gw_dispersion.M_GW`: N/A
+- `monte_carlo.n_samples`: N/A
+- `monte_carlo.n_parameters`: N/A
+- `monte_carlo.mean_relative_error`: N/A
+- `monte_carlo.correlation_matrix_shape`: N/A
+- `validation.total_parameters`: N/A
+- `validation.within_1sigma`: N/A
+- `validation.within_2sigma`: N/A
+- `summary.total_parameters`: N/A
+- `summary.exact_parameters`: N/A
+- `summary.derived_parameters`: N/A
+- `consciousness.n_tubulins`: N/A
+- `consciousness.tau_collapse_ms`: N/A
+- `consciousness.E_G_joules`: N/A
+- `consciousness.tau_scaling_exponent`: N/A
+- `consciousness.f_base_hz`: N/A
+- `consciousness.phi_peak`: N/A
+- `consciousness.sigma_falloff`: N/A
+- `landscape.num_valid_topologies`: N/A
+- `landscape.h11_min`: N/A
+- `landscape.h11_max`: N/A
+- `landscape.h31_min`: N/A
+- `landscape.h31_max`: N/A
+- `landscape.selected_h11`: N/A
+- `landscape.selected_h31`: N/A
 
 ### Derived Parameters Without Validation
 
-**Count:** 37
+**Count:** 252
 
 These DERIVED parameters should have experimental validation data:
 
+- `constants.M_PLANCK`: N/A = 2.435e+18
+- `constants.alpha_em`: N/A = 0.0072973525643314245
+- `constants.m_proton`: N/A = 0.938272
+- `constants.HBAR`: N/A = 6.582119569e-25
+- `constants.G_NEWTON`: N/A = 6.70883e-39
+- `pdg.m_higgs`: N/A = 125.1
+- `pdg.m_electron`: N/A = 0.0005109989461
+- `pdg.m_muon`: N/A = 0.1056583745
+- `pdg.m_tau`: N/A = 1.77686
+- `pdg.m_up`: N/A = 0.00216
+- `pdg.m_down`: N/A = 0.00467
+- `pdg.m_strange`: N/A = 0.0934
+- `pdg.m_charm`: N/A = 1.27
+- `pdg.m_bottom`: N/A = 4.18
+- `pdg.m_top`: N/A = 172.69
+- `pdg.alpha_s_MZ`: N/A = 0.118
+- `pdg.sin2_theta_W`: N/A = 0.23121
+- `pdg.m_W`: N/A = 80.377
+- `pdg.m_Z`: N/A = 91.1876
+- `nufit.theta_12`: N/A = 33.41
+- `nufit.theta_23`: N/A = 45.0
+- `nufit.theta_13`: N/A = 8.54
+- `nufit.delta_CP`: N/A = 194.0
+- `nufit.delta_m21_sq`: N/A = 7.5e-05
+- `nufit.delta_m31_sq`: N/A = 0.0025
+- `desi.w0`: N/A = -0.728
+- `desi.wa`: N/A = -0.99
+- `desi.sigma8`: N/A = 0.827
+- `desi.H0`: N/A = 67.4
+- `desi.Omega_m`: N/A = 0.3111
+- `planck.S8`: N/A = 0.832
+- `bounds.tau_proton_lower`: N/A = 1.67e+34
+- `bounds.sum_m_nu_upper`: N/A = 0.12
+- `higgs.vev_yukawa`: N/A = 174.10383166375172
+- `yukawa.y_top`: N/A = 0.9918793765177882
+- `gauge.g_gut`: N/A = 0.7191207083539627
+- `moduli.re_t_attractor`: N/A = 1.833
+- `moduli.re_t_phenomenological`: N/A = 9.865
+- `topology.T_OMEGA`: N/A = 0.12
+- `topology.orientation_sum`: N/A = 12
+- `consciousness.coherence_fraction`: N/A = 1e-05
+- `consciousness.neuron_count`: N/A = 86000000000.0
+- `unitary.central_charge`: N/A = 0
+- `unitary.is_ghost_free`: N/A = True
+- `unitary.status`: N/A = UNITARY_STABLE: GHOST_FREE
+- `unitary.c_transverse`: N/A = 24
+- `unitary.c_sp2r`: N/A = 2
+- `unitary.c_ghost`: N/A = -26
+- `topology.n_gen_leech`: N/A = 3
+- `topology.leech_dim`: N/A = 24
+- `topology.octonion_dim`: N/A = 8
+- `topology.partition_exact`: N/A = True
+- `topology.g2_compatible`: N/A = True
+- `topology.b3_modular`: N/A = 24
+- `topology.vacuum_energy`: N/A = -1.0
+- `topology.anomaly_free`: N/A = True
+- `topology.critical_dim`: N/A = 26
+- `topology.modular_weight`: N/A = -12.0
 - `gauge.M_GUT`: N/A = 6324555320336760.0
-- `gauge.ALPHA_GUT`: N/A = 0.023402505234839138
-- `gauge.ALPHA_GUT_INV`: N/A = 42.7304679548285
+- `gauge.M_GUT_GEOMETRIC`: N/A = 2.1e+16
+- `gauge.ALPHA_GUT`: N/A = 0.023402505224827168
+- `gauge.ALPHA_GUT_INV`: N/A = 42.730467973109285
+- `gauge.ALPHA_GUT_GEOMETRIC`: N/A = 0.04248088360237893
 - `gauge.sin2_theta_W_gut`: N/A = 0.375
+- `electromagnetic.alpha_inv`: N/A = 137.04623843256456
+- `electromagnetic.alpha_inv_error`: N/A = 0.010239255564556515
 - `fermion.n_generations`: N/A = 3
 - `fermion.yukawa_hierarchy`: N/A = 0.22313016014842982
 - `fermion.chiral_filter_strength`: N/A = 0.875
 - `fermion.n_flux`: N/A = 24.0
 - `fermion.epsilon_fn`: N/A = 0.22313016014842982
-- `proton_decay.tau_p_years`: N/A = 1.289658643987891e+33
+- `chirality.spinor_dimension`: N/A = 8
+- `chirality.preserved_spinors`: N/A = 1
+- `chirality.chiral_index`: N/A = 6.0
+- `chirality.zero_modes_left`: N/A = 6.0
+- `chirality.zero_modes_right`: N/A = 0
+- `chirality.imbalance`: N/A = 6.0
+- `chirality.generation_count`: N/A = 3
+- `chirality.saturation_ratio`: N/A = 1.0
+- `ckm.V_us`: N/A = 0.22313016014842982
+- `ckm.V_cb`: N/A = 0.04032752537796979
+- `ckm.V_ub`: N/A = 0.0034757158300444454
+- `ckm.V_td`: N/A = 0.008389183792439896
+- `ckm.V_ts`: N/A = 0.04032752537796979
+- `ckm.V_tb`: N/A = 0.9991512959968505
+- `ckm.jarlskog_invariant`: N/A = 2.9148902086057355e-05
+- `ckm.lambda_wolfenstein`: N/A = 0.22313016014842982
+- `ckm.A_wolfenstein`: N/A = 0.81
+- `ckm.rho_wolfenstein`: N/A = 0.14
+- `ckm.eta_wolfenstein`: N/A = 0.36
+- `ckm.delta_cp`: N/A = 0.5235987755982988
+- `ckm.unitarity_test`: N/A = 5.829780417210273e-05
+- `proton_decay.tau_p_years`: N/A = 4.757399129595567e+34
 - `proton_decay.suppression_factor`: N/A = 1.2840254166877414
-- `proton_decay.super_k_ratio`: N/A = 0.07722506850226891
-- `proton_decay.status`: N/A = EXCLUDED - Below Super-K bound
-- `higgs.m_higgs_pred`: N/A = 739.6654772293541
-- `higgs.m_higgs_geometric`: N/A = 738.4549465193717
+- `proton_decay.super_k_ratio`: N/A = 2.8487419937698006
+- `proton_decay.status`: N/A = CONSISTENT - Well above Super-K bound
+- `higgs.m_higgs_pred`: N/A = 120.6228111675565
+- `higgs.m_higgs_geometric`: N/A = 504.0623474622599
 - `higgs.vev`: N/A = 246.0
 - `higgs.lambda_0`: N/A = 0.129
-- `higgs.lambda_eff_pheno`: N/A = 0.11429686327911207
-- `higgs.lambda_eff_geometric`: N/A = 0.11392305471841152
+- `higgs.lambda_eff_pheno`: N/A = 0.006079284956305497
+- `higgs.lambda_eff_geometric`: N/A = 0.10616029694119695
 - `moduli.stabilization_status`: N/A = NEEDS_REVIEW
-- `higgs.quartic_correction`: N/A = 0.014703136720887938
+- `higgs.quartic_correction`: N/A = 0.1229207150436945
+- `higgs.m_higgs_bulk`: N/A = 414.22
+- `higgs.m_higgs_local`: N/A = 125.10242591991029
+- `higgs.brane_partition_ratio`: N/A = 0.30201927941651846
+- `higgs.projection_factor`: N/A = 3.921039817847826
+- `higgs.mirror_overlap`: N/A = 1.1842296203498772
+- `higgs.sigma_local`: N/A = 0.8680828240571258
+- `fermion.mass_ratio_proton_electron`: N/A = 1836.1526738332332
+- `fermion.mass_ratio_error`: N/A = 4.032331162306946e-07
+- `cosmology.M_Pl_4D`: N/A = 2.435e+18
+- `cosmology.V_9_internal`: N/A = 13015.153988690734
+- `cosmology.breathing_mode_vev`: N/A = 1.82625e+17
+- `cosmology.epsilon_KK`: N/A = 0.2257
+- `cosmology.D_eff_shadow`: N/A = 12.576152
+- `cosmology.brane_tension_5_2`: N/A = 1.4849499517866224e+111
+- `cosmology.pneuma_components_4D`: N/A = 64.0
+- `cosmology.w0_derived`: N/A = -0.8461538461538461
+- `cosmology.wa_derived`: N/A = -0.20412414523193154
+- `cosmology.D_eff`: N/A = 12.576
+- `cosmology.alpha_shadow`: N/A = 0.576
+- `cosmology.w0_deviation`: N/A = 1.7634902411021816
+- `cosmology.w0_validation`: N/A = {'predicted': -0.8461538461538461, 'experimental': -0.728, 'uncertainty': 0.067, 'sigma': 1.7634902411021816, 'status': 'GOOD', 'source': 'ESTABLISHED:DESI_2025'}
+- `cosmology.w0_thawing`: N/A = -0.9583333333333334
+- `cosmology.wa_thawing`: N/A = -0.08250673181549914
+- `cosmology.z_thaw`: N/A = 4.898979485566356
+- `cosmology.torsional_leakage`: N/A = 0.13264597579467807
+- `cosmology.w0_desi_sigma`: N/A = -3.656084656084657
+- `cosmology.wa_desi_sigma`: N/A = 2.835916463076565
+- `cosmology.thawing_validated`: N/A = False
+- `cosmology.H0_late_evolved`: N/A = 73.04
+- `cosmology.H0_early_normalized`: N/A = 67.40001769345331
+- `cosmology.relaxation_z1100`: N/A = 1.2918322556967783
+- `cosmology.ricci_flow_consistency`: N/A = 0.758334723639454
+- `cosmology.h_evolution_sigma`: N/A = 3.5386906603207535e-05
+- `cosmology.s8_pm_predicted`: N/A = 0.8404645939091319
+- `cosmology.s8_suppression_factor`: N/A = 0.9979861977064629
+- `cosmology.growth_index_pm`: N/A = 0.5551181645292425
+- `cosmology.growth_index_lcdm`: N/A = 0.55
+- `cosmology.s8_tension_kids`: N/A = 3.723229695456592
+- `cosmology.s8_tension_des`: N/A = 3.7920349358312846
+- `cosmology.s8_tension_planck`: N/A = 0.6511226083947617
+- `cosmology.s8_improvement_factor`: N/A = 1.0245416717722942
+- `cosmology.H0_local`: N/A = 73.04
+- `cosmology.H0_early`: N/A = 67.4
+- `cosmology.z_transition`: N/A = 10.0
+- `cosmology.H0_tension_sigma`: N/A = 0.0
+- `cosmology.ricci_flow_rate`: N/A = 1.9483192273737477
 - `neutrino.theta_12_pred`: N/A = 33.59329049922625
-- `neutrino.theta_13_pred`: N/A = 8.327941059195808
-- `neutrino.theta_23_pred`: N/A = 45.75
+- `neutrino.theta_13_pred`: N/A = 8.647304725338865
+- `neutrino.theta_23_pred`: N/A = 49.75
 - `neutrino.delta_CP_pred`: N/A = 232.5
+- `neutrino.m1`: N/A = 0.04831157627577474
+- `neutrino.m2`: N/A = 0.049073500000000006
+- `neutrino.m3`: N/A = 0.002
+- `neutrino.mass_sum`: N/A = 0.09938507627577475
+- `neutrino.dm2_21`: N/A = 7.419999999999996e-05
+- `neutrino.dm2_32`: N/A = -0.0024042084022500004
+- `neutrino.ordering`: N/A = INVERTED
+- `neutrino.k_gimel`: N/A = 1.5
+- `neutrino.C_kaf`: N/A = 2.0
+- `ckm.V_us_triality`: N/A = 0.22757316418928888
+- `ckm.V_cb_triality`: N/A = 0.04027155023797563
+- `ckm.V_ub_triality`: N/A = 0.0039061875267409857
+- `ckm.jarlskog_triality`: N/A = 1.3424674133228134e-05
+- `pmns.theta_12_triality`: N/A = 33.59329049922625
+- `pmns.theta_23_triality`: N/A = 49.75
+- `pmns.theta_13_triality`: N/A = 8.647304725338865
+- `triality.theta_g`: N/A = 31.717474411461005
+- `triality.phi_golden`: N/A = 1.618033988749895
+- `triality.associative_dimension`: N/A = 3
+- `triality.coassociative_dimension`: N/A = 4
+- `triality.mixing_ratio`: N/A = 2.431279671943996
 - `cosmology.w_eff`: N/A = -0.8526812021213906
 - `cosmology.Omega_DM_over_b`: N/A = 5.399772129616132
 - `cosmology.T_mirror_ratio`: N/A = 0.57
-- `cosmology.modulation_width`: N/A = 0.35
-- `cosmology.sm_weight`: N/A = 0.3561959588810605
-- `cosmology.mirror_weight`: N/A = 0.14380404111893952
-- `cosmology.hierarchy_ratio`: N/A = 0.712391917762121
+- `cosmology.modulation_width`: N/A = 0.408248290463863
+- `cosmology.sm_weight`: N/A = 0.0021089953617339126
+- `cosmology.mirror_weight`: N/A = 0.0003107342392717563
+- `cosmology.hierarchy_ratio`: N/A = 0.8715830731075855
+- `cosmology.Lambda_derived`: N/A = 1.2266298633892773e-52
+- `cosmology.rho_vacuum`: N/A = 1.1730108700558416e+77
+- `cosmology.entropy_density`: N/A = 5.563065417483114e-78
+- `cosmology.Lambda_ratio`: N/A = 3.203289916527108e-122
+- `cosmology.Lambda_deviation_log`: N/A = 0.04732084860536037
 - `pneuma.coupling`: N/A = 7.847778500191315e-17
 - `pneuma.flow_parameter`: N/A = 0.0011346578282206315
 - `pneuma.lagrangian_valid`: N/A = True
 - `pneuma.vev`: N/A = 6.3358573796986395
 - `pneuma.mass_scale`: N/A = 2.0291666666666666e+17
+- `thermal.alpha_T`: N/A = 2.6999999182257
+- `thermal.modular_temperature`: N/A = 3.2026709963019756e+16
+- `thermal.entropy_gradient`: N/A = 3.0600829928584296e-06
+- `thermal.two_time_metric_signature`: N/A = (24,2)
+- `quantum_bio.coherence_time_ms`: N/A = 98.97244755967617
+- `quantum_bio.topological_pitch`: N/A = 6.1208253715651075
+- `quantum_bio.eg_joules`: N/A = 1.0655205999266998e-33
+- `predictions.summary`: N/A = {'gauge_unification': {'M_GUT': 6324555320336760.0, 'alpha_GUT_inv': 42.730467973109285}, 'proton_decay': {'tau_p_years': 4.757399129595567e+34}, 'neutrino_mixing': {'theta_12': 33.59329049922625, 'theta_13': 8.647304725338865, 'theta_23': 49.75, 'delta_CP': 232.5}, 'cosmology': {'w_eff': -0.8526812021213906, 'Omega_DM_over_b': 5.399772129616132}, 'topology': {'n_gen': 3}}
+- `predictions.falsifiable_count`: N/A = 10
+- `math.g2_dimension`: N/A = 7
+- `math.spinor_dimension`: N/A = 8
+- `math.octonion_dimension`: N/A = 8
+- `methods.rg_loop_order`: N/A = 3
+- `methods.integration_method`: N/A = odeint
+- `methods.convergence_criterion`: N/A = 1e-06
+- `derivations.validation_status`: N/A = INCONSISTENT
+- `tables.n_constants`: N/A = 10
+- `tables.n_pdg_inputs`: N/A = 30
+- `tables.n_geometric`: N/A = 15
+- `tables.n_predictions`: N/A = 12
+- `proton_decay.BR_e_pi0`: N/A = 0.25
+- `proton_decay.BR_mu_pi0`: N/A = 0.15
+- `proton_decay.BR_nu_K`: N/A = 0.6
+- `dimensions.bulk_signature`: N/A = [24, 2]
+- `dimensions.shadow_signature`: N/A = [12, 1]
+- `dimensions.orientation_sum`: N/A = 12
+- `dimensions.spatial_shadow`: N/A = 12
+- `topology.N_flux`: N/A = 24.0
+- `topology.T_omega_topological`: N/A = -1.0
+- `topology.T_omega`: N/A = -0.875
+- `topology.spinor_fraction`: N/A = 0.875
+- `proton_decay.BR_other`: N/A = 0.0
+- `gw_dispersion.eta`: N/A = 0.09995313724862909
+- `gw_dispersion.M_GW`: N/A = 6324555320336760.0
+- `monte_carlo.n_samples`: N/A = 10000
+- `monte_carlo.n_parameters`: N/A = 58
+- `monte_carlo.mean_relative_error`: N/A = 0.05
+- `monte_carlo.correlation_matrix_shape`: N/A = [58, 58]
+- `validation.total_parameters`: N/A = 48
+- `validation.within_1sigma`: N/A = 45
+- `validation.within_2sigma`: N/A = 47
+- `validation.calibrated_count`: N/A = 0
+- `validation.constraints_count`: N/A = 1
+- `summary.total_parameters`: N/A = 27
+- `summary.exact_parameters`: N/A = 7
+- `summary.derived_parameters`: N/A = 19
+- `consciousness.n_tubulins`: N/A = 860000000000000.1
+- `consciousness.tau_collapse_ms`: N/A = 1.0201309508419833e+22
+- `consciousness.E_G_joules`: N/A = 6.452230043179585e-44
+- `consciousness.tau_scaling_exponent`: N/A = -2.0
+- `consciousness.f_base_hz`: N/A = 9.80266307158539e-20
+- `consciousness.phi_peak`: N/A = 0.5
+- `consciousness.sigma_falloff`: N/A = 0.25
+- `landscape.num_valid_topologies`: N/A = 49
+- `landscape.h11_min`: N/A = 4
+- `landscape.h11_max`: N/A = 52
+- `landscape.h31_min`: N/A = 20
+- `landscape.h31_max`: N/A = 68
+- `landscape.selected_h11`: N/A = 4
+- `landscape.selected_h31`: N/A = 68
 
 ### All Parameters Missing Validation
 
-**Count:** 79
+**Count:** 259
 
-- `constants.M_PLANCK` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `constants.alpha_em` (ESTABLISHED, ESTABLISHED:CODATA2018): N/A
-- `constants.m_proton` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_higgs` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_electron` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_muon` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_tau` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_up` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_down` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_strange` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_charm` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_bottom` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_top` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.alpha_s_MZ` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.sin2_theta_W` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_W` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `pdg.m_Z` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `nufit.theta_12` (ESTABLISHED, ESTABLISHED:NuFIT6.0): N/A
-- `nufit.theta_23` (ESTABLISHED, ESTABLISHED:NuFIT6.0): N/A
-- `nufit.theta_13` (ESTABLISHED, ESTABLISHED:NuFIT6.0): N/A
-- `nufit.delta_CP` (ESTABLISHED, ESTABLISHED:NuFIT6.0): N/A
-- `nufit.delta_m21_sq` (ESTABLISHED, ESTABLISHED:NuFIT6.0): N/A
-- `nufit.delta_m31_sq` (ESTABLISHED, ESTABLISHED:NuFIT6.0): N/A
-- `desi.w0` (ESTABLISHED, ESTABLISHED:DESI_DR2_2024): N/A
-- `desi.wa` (ESTABLISHED, ESTABLISHED:DESI_DR2_2024): N/A
-- `desi.H0` (ESTABLISHED, ESTABLISHED:Planck2018): N/A
-- `desi.Omega_m` (ESTABLISHED, ESTABLISHED:Planck2018): N/A
-- `bounds.tau_proton_lower` (ESTABLISHED, ESTABLISHED:SuperK_2024): N/A
-- `bounds.sum_m_nu_upper` (ESTABLISHED, ESTABLISHED:Planck2018): N/A
-- `higgs.vev_yukawa` (ESTABLISHED, ESTABLISHED:SM_EW): N/A
-- `yukawa.y_top` (ESTABLISHED, ESTABLISHED:PDG2024): N/A
-- `gauge.g_gut` (ESTABLISHED, ESTABLISHED:GUT_THEORY): N/A
-- `moduli.re_t_attractor` (ESTABLISHED, ESTABLISHED:MODULI_THEORY): N/A
-- `moduli.re_t_phenomenological` (ESTABLISHED, ESTABLISHED:MODULI_THEORY): N/A
-- `topology.T_OMEGA` (ESTABLISHED, ESTABLISHED:G2_TORSION): N/A
-- `topology.orientation_sum` (ESTABLISHED, ESTABLISHED:G2_THEORY): N/A
+- `constants.M_PLANCK` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `constants.alpha_em` (DERIVED, ESTABLISHED:CODATA2018): N/A
+- `constants.m_proton` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `constants.HBAR` (DERIVED, ESTABLISHED:CODATA2018): N/A
+- `constants.G_NEWTON` (DERIVED, ESTABLISHED:CODATA2018): N/A
+- `pdg.m_higgs` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_electron` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_muon` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_tau` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_up` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_down` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_strange` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_charm` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_bottom` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_top` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.alpha_s_MZ` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.sin2_theta_W` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_W` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `pdg.m_Z` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `nufit.theta_12` (DERIVED, ESTABLISHED:NuFIT6.0): N/A
+- `nufit.theta_23` (DERIVED, ESTABLISHED:NuFIT6.0): N/A
+- `nufit.theta_13` (DERIVED, ESTABLISHED:NuFIT6.0): N/A
+- `nufit.delta_CP` (DERIVED, ESTABLISHED:NuFIT6.0): N/A
+- `nufit.delta_m21_sq` (DERIVED, ESTABLISHED:NuFIT6.0): N/A
+- `nufit.delta_m31_sq` (DERIVED, ESTABLISHED:NuFIT6.0): N/A
+- `desi.w0` (DERIVED, ESTABLISHED:DESI_2025): N/A
+- `desi.wa` (DERIVED, ESTABLISHED:DESI_2025): N/A
+- `desi.sigma8` (DERIVED, ESTABLISHED:DESI_2025): N/A
+- `desi.H0` (DERIVED, ESTABLISHED:Planck2018): N/A
+- `desi.Omega_m` (DERIVED, ESTABLISHED:Planck2018): N/A
+- `planck.S8` (DERIVED, ESTABLISHED:Planck2018): N/A
+- `bounds.tau_proton_lower` (DERIVED, ESTABLISHED:SuperK_2024): N/A
+- `bounds.sum_m_nu_upper` (DERIVED, ESTABLISHED:Planck2018): N/A
+- `higgs.vev_yukawa` (DERIVED, ESTABLISHED:SM_EW): N/A
+- `yukawa.y_top` (DERIVED, ESTABLISHED:PDG2024): N/A
+- `gauge.g_gut` (DERIVED, ESTABLISHED:GUT_THEORY): N/A
+- `moduli.re_t_attractor` (DERIVED, ESTABLISHED:G2_GEOMETRY): N/A
+- `moduli.re_t_phenomenological` (DERIVED, CONSTRAINED:HIGGS_MASS): N/A
+- `topology.T_OMEGA` (DERIVED, ESTABLISHED:G2_TORSION): N/A
+- `topology.orientation_sum` (DERIVED, ESTABLISHED:Sp(2,R)_GAUGE_FIXING): N/A
+- `consciousness.coherence_fraction` (DERIVED, INPUT:SPECULATIVE): N/A
+- `consciousness.neuron_count` (DERIVED, ESTABLISHED:NEUROSCIENCE): N/A
 - `topology.b2` (GEOMETRIC, g2_geometry_v16_0): N/A
 - `topology.b3` (GEOMETRIC, g2_geometry_v16_0): N/A
-- `topology.CHI_EFF` (GEOMETRIC, g2_geometry_v16_0): N/A
+- `topology.chi_eff` (GEOMETRIC, g2_geometry_v16_0): N/A
 - `topology.n_gen` (GEOMETRIC, g2_geometry_v16_0): N/A
+- `topology.k_gimel` (GEOMETRIC, g2_geometry_v16_0): N/A
 - `topology.K_MATCHING` (GEOMETRIC, g2_geometry_v16_0): N/A
 - `topology.d_over_R` (GEOMETRIC, g2_geometry_v16_0): N/A
+- `unitary.central_charge` (DERIVED, unitary_filter_v16_2): N/A
+- `unitary.is_ghost_free` (DERIVED, unitary_filter_v16_2): N/A
+- `unitary.status` (DERIVED, unitary_filter_v16_2): N/A
+- `unitary.c_transverse` (DERIVED, unitary_filter_v16_2): N/A
+- `unitary.c_sp2r` (DERIVED, unitary_filter_v16_2): N/A
+- `unitary.c_ghost` (DERIVED, unitary_filter_v16_2): N/A
+- `topology.n_gen_leech` (DERIVED, leech_partition_v16_2): N/A
+- `topology.leech_dim` (DERIVED, leech_partition_v16_2): N/A
+- `topology.octonion_dim` (DERIVED, leech_partition_v16_2): N/A
+- `topology.partition_exact` (DERIVED, leech_partition_v16_2): N/A
+- `topology.g2_compatible` (DERIVED, leech_partition_v16_2): N/A
+- `topology.b3_modular` (DERIVED, modular_invariance_v16_2): N/A
+- `topology.vacuum_energy` (DERIVED, modular_invariance_v16_2): N/A
+- `topology.anomaly_free` (DERIVED, modular_invariance_v16_2): N/A
+- `topology.critical_dim` (DERIVED, modular_invariance_v16_2): N/A
+- `topology.modular_weight` (DERIVED, modular_invariance_v16_2): N/A
 - `gauge.M_GUT` (DERIVED, gauge_unification_v16_0): N/A
+- `gauge.M_GUT_GEOMETRIC` (DERIVED, gauge_unification_v16_0): N/A
 - `gauge.ALPHA_GUT` (DERIVED, gauge_unification_v16_0): N/A
 - `gauge.ALPHA_GUT_INV` (DERIVED, gauge_unification_v16_0): N/A
+- `gauge.ALPHA_GUT_GEOMETRIC` (DERIVED, gauge_unification_v16_0): N/A
 - `gauge.sin2_theta_W_gut` (DERIVED, gauge_unification_v16_0): N/A
+- `electromagnetic.alpha_inv` (DERIVED, alpha_rigor_v16_1): N/A
+- `electromagnetic.alpha_inv_error` (DERIVED, alpha_rigor_v16_1): N/A
 - `fermion.n_generations` (DERIVED, fermion_generations_v16_0): N/A
 - `fermion.yukawa_hierarchy` (DERIVED, fermion_generations_v16_0): N/A
 - `fermion.chiral_filter_strength` (DERIVED, fermion_generations_v16_0): N/A
 - `fermion.n_flux` (DERIVED, fermion_generations_v16_0): N/A
 - `fermion.epsilon_fn` (DERIVED, fermion_generations_v16_0): N/A
+- `chirality.spinor_dimension` (DERIVED, chirality_v16_0): N/A
+- `chirality.preserved_spinors` (DERIVED, chirality_v16_0): N/A
+- `chirality.chiral_index` (DERIVED, chirality_v16_0): N/A
+- `chirality.zero_modes_left` (DERIVED, chirality_v16_0): N/A
+- `chirality.zero_modes_right` (DERIVED, chirality_v16_0): N/A
+- `chirality.imbalance` (DERIVED, chirality_v16_0): N/A
+- `chirality.generation_count` (DERIVED, chirality_v16_0): N/A
+- `chirality.saturation_ratio` (DERIVED, chirality_v16_0): N/A
+- `ckm.V_us` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.V_cb` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.V_ub` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.V_td` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.V_ts` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.V_tb` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.jarlskog_invariant` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.lambda_wolfenstein` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.A_wolfenstein` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.rho_wolfenstein` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.eta_wolfenstein` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.delta_cp` (DERIVED, ckm_matrix_v16_0): N/A
+- `ckm.unitarity_test` (DERIVED, ckm_matrix_v16_0): N/A
 - `proton_decay.tau_p_years` (DERIVED, proton_decay_v16_0): N/A
 - `proton_decay.suppression_factor` (DERIVED, proton_decay_v16_0): N/A
 - `proton_decay.super_k_ratio` (DERIVED, proton_decay_v16_0): N/A
@@ -197,10 +573,77 @@ These DERIVED parameters should have experimental validation data:
 - `higgs.lambda_eff_geometric` (DERIVED, higgs_mass_v16_0): N/A
 - `moduli.stabilization_status` (DERIVED, higgs_mass_v16_0): N/A
 - `higgs.quartic_correction` (DERIVED, higgs_mass_v16_0): N/A
+- `higgs.m_higgs_bulk` (DERIVED, higgs_brane_partition_v16_2): N/A
+- `higgs.m_higgs_local` (DERIVED, higgs_brane_partition_v16_2): N/A
+- `higgs.brane_partition_ratio` (DERIVED, higgs_brane_partition_v16_2): N/A
+- `higgs.projection_factor` (DERIVED, higgs_brane_partition_v16_2): N/A
+- `higgs.mirror_overlap` (DERIVED, higgs_brane_partition_v16_2): N/A
+- `higgs.sigma_local` (DERIVED, higgs_brane_partition_v16_2): N/A
+- `fermion.mass_ratio_proton_electron` (DERIVED, mass_ratio_v16_1): N/A
+- `fermion.mass_ratio_error` (DERIVED, mass_ratio_v16_1): N/A
+- `cosmology.M_Pl_4D` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.V_9_internal` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.breathing_mode_vev` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.epsilon_KK` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.D_eff_shadow` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.brane_tension_5_2` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.pneuma_components_4D` (DERIVED, cosmology_intro_v16_0): N/A
+- `cosmology.w0_derived` (DERIVED, dark_energy_v16_0): N/A
+- `cosmology.wa_derived` (DERIVED, dark_energy_v16_0): N/A
+- `cosmology.D_eff` (DERIVED, dark_energy_v16_0): N/A
+- `cosmology.alpha_shadow` (DERIVED, dark_energy_v16_0): N/A
+- `cosmology.w0_deviation` (DERIVED, dark_energy_v16_0): N/A
+- `cosmology.w0_validation` (DERIVED, dark_energy_v16_0): N/A
+- `cosmology.w0_thawing` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.wa_thawing` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.z_thaw` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.torsional_leakage` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.w0_desi_sigma` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.wa_desi_sigma` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.thawing_validated` (DERIVED, dark_energy_thawing_v16_2): N/A
+- `cosmology.H0_late_evolved` (DERIVED, evolution_engine_v16_2): N/A
+- `cosmology.H0_early_normalized` (DERIVED, evolution_engine_v16_2): N/A
+- `cosmology.relaxation_z1100` (DERIVED, evolution_engine_v16_2): N/A
+- `cosmology.ricci_flow_consistency` (DERIVED, evolution_engine_v16_2): N/A
+- `cosmology.h_evolution_sigma` (DERIVED, evolution_engine_v16_2): N/A
+- `cosmology.s8_pm_predicted` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.s8_suppression_factor` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.growth_index_pm` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.growth_index_lcdm` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.s8_tension_kids` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.s8_tension_des` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.s8_tension_planck` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.s8_improvement_factor` (DERIVED, s8_suppression_v16_1): N/A
+- `cosmology.H0_local` (DERIVED, ricci_flow_h0_v16_1): N/A
+- `cosmology.H0_early` (DERIVED, ricci_flow_h0_v16_1): N/A
+- `cosmology.z_transition` (DERIVED, ricci_flow_h0_v16_1): N/A
+- `cosmology.H0_tension_sigma` (DERIVED, ricci_flow_h0_v16_1): N/A
+- `cosmology.ricci_flow_rate` (DERIVED, ricci_flow_h0_v16_1): N/A
 - `neutrino.theta_12_pred` (DERIVED, neutrino_mixing_v16_0): N/A
 - `neutrino.theta_13_pred` (DERIVED, neutrino_mixing_v16_0): N/A
 - `neutrino.theta_23_pred` (DERIVED, neutrino_mixing_v16_0): N/A
 - `neutrino.delta_CP_pred` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.m1` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.m2` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.m3` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.mass_sum` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.dm2_21` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.dm2_32` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.ordering` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.k_gimel` (DERIVED, neutrino_mixing_v16_0): N/A
+- `neutrino.C_kaf` (DERIVED, neutrino_mixing_v16_0): N/A
+- `ckm.V_us_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `ckm.V_cb_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `ckm.V_ub_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `ckm.jarlskog_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `pmns.theta_12_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `pmns.theta_23_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `pmns.theta_13_triality` (DERIVED, octonionic_mixing_v16_2): N/A
+- `triality.theta_g` (DERIVED, octonionic_mixing_v16_2): N/A
+- `triality.phi_golden` (DERIVED, octonionic_mixing_v16_2): N/A
+- `triality.associative_dimension` (DERIVED, octonionic_mixing_v16_2): N/A
+- `triality.coassociative_dimension` (DERIVED, octonionic_mixing_v16_2): N/A
+- `triality.mixing_ratio` (DERIVED, octonionic_mixing_v16_2): N/A
 - `cosmology.w_eff` (DERIVED, multi_sector_v16_0): N/A
 - `cosmology.Omega_DM_over_b` (DERIVED, multi_sector_v16_0): N/A
 - `cosmology.T_mirror_ratio` (DERIVED, multi_sector_v16_0): N/A
@@ -208,15 +651,406 @@ These DERIVED parameters should have experimental validation data:
 - `cosmology.sm_weight` (DERIVED, multi_sector_v16_0): N/A
 - `cosmology.mirror_weight` (DERIVED, multi_sector_v16_0): N/A
 - `cosmology.hierarchy_ratio` (DERIVED, multi_sector_v16_0): N/A
+- `cosmology.Lambda_derived` (DERIVED, cosmological_constant_v16_1): N/A
+- `cosmology.rho_vacuum` (DERIVED, cosmological_constant_v16_1): N/A
+- `cosmology.entropy_density` (DERIVED, cosmological_constant_v16_1): N/A
+- `cosmology.Lambda_ratio` (DERIVED, cosmological_constant_v16_1): N/A
+- `cosmology.Lambda_deviation_log` (DERIVED, cosmological_constant_v16_1): N/A
 - `pneuma.coupling` (DERIVED, pneuma_mechanism_v16_0): N/A
 - `pneuma.flow_parameter` (DERIVED, pneuma_mechanism_v16_0): N/A
 - `pneuma.lagrangian_valid` (DERIVED, pneuma_mechanism_v16_0): N/A
 - `pneuma.vev` (DERIVED, pneuma_mechanism_v16_0): N/A
 - `pneuma.mass_scale` (DERIVED, pneuma_mechanism_v16_0): N/A
+- `thermal.alpha_T` (DERIVED, thermal_time_v16_0): N/A
+- `thermal.modular_temperature` (DERIVED, thermal_time_v16_0): N/A
+- `thermal.entropy_gradient` (DERIVED, thermal_time_v16_0): N/A
+- `thermal.two_time_metric_signature` (DERIVED, thermal_time_v16_0): N/A
+- `quantum_bio.coherence_time_ms` (DERIVED, orch_or_geometry_v16_1): N/A
+- `quantum_bio.topological_pitch` (DERIVED, orch_or_geometry_v16_1): N/A
+- `quantum_bio.eg_joules` (DERIVED, orch_or_geometry_v16_1): N/A
+- `predictions.summary` (DERIVED, predictions_aggregator_v16_0): N/A
+- `predictions.falsifiable_count` (DERIVED, predictions_aggregator_v16_0): N/A
+- `math.g2_dimension` (DERIVED, appendix_a_math_v16_0): N/A
+- `math.spinor_dimension` (DERIVED, appendix_a_math_v16_0): N/A
+- `math.octonion_dimension` (DERIVED, appendix_a_math_v16_0): N/A
+- `methods.rg_loop_order` (DERIVED, appendix_b_methods_v16_0): N/A
+- `methods.integration_method` (DERIVED, appendix_b_methods_v16_0): N/A
+- `methods.convergence_criterion` (DERIVED, appendix_b_methods_v16_0): N/A
+- `derivations.validation_status` (DERIVED, appendix_c_derivations_v16_0): N/A
+- `tables.n_constants` (DERIVED, appendix_d_tables_v16_0): N/A
+- `tables.n_pdg_inputs` (DERIVED, appendix_d_tables_v16_0): N/A
+- `tables.n_geometric` (DERIVED, appendix_d_tables_v16_0): N/A
+- `tables.n_predictions` (DERIVED, appendix_d_tables_v16_0): N/A
+- `proton_decay.BR_e_pi0` (DERIVED, appendix_h_v16_0): N/A
+- `proton_decay.BR_mu_pi0` (DERIVED, appendix_h_v16_0): N/A
+- `proton_decay.BR_nu_K` (DERIVED, appendix_e_proton_v16_0): N/A
+- `dimensions.bulk_signature` (DERIVED, appendix_f_v16_0): N/A
+- `dimensions.shadow_signature` (DERIVED, appendix_f_v16_0): N/A
+- `dimensions.orientation_sum` (DERIVED, appendix_f_v16_0): N/A
+- `dimensions.spatial_shadow` (DERIVED, appendix_f_v16_0): N/A
+- `topology.N_flux` (DERIVED, appendix_g_v16_0): N/A
+- `topology.T_omega_topological` (DERIVED, appendix_g_v16_0): N/A
+- `topology.T_omega` (DERIVED, appendix_g_v16_0): N/A
+- `topology.spinor_fraction` (DERIVED, appendix_g_v16_0): N/A
+- `proton_decay.BR_other` (DERIVED, appendix_h_v16_0): N/A
+- `gw_dispersion.eta` (DERIVED, appendix_i_v16_0): N/A
+- `gw_dispersion.M_GW` (DERIVED, appendix_i_v16_0): N/A
+- `monte_carlo.n_samples` (DERIVED, appendix_j_mc_error_v16_0): N/A
+- `monte_carlo.n_parameters` (DERIVED, appendix_j_mc_error_v16_0): N/A
+- `monte_carlo.mean_relative_error` (DERIVED, appendix_j_mc_error_v16_0): N/A
+- `monte_carlo.correlation_matrix_shape` (DERIVED, appendix_j_mc_error_v16_0): N/A
+- `validation.total_parameters` (DERIVED, appendix_k_transparency_v16_0): N/A
+- `validation.within_1sigma` (DERIVED, appendix_k_transparency_v16_0): N/A
+- `validation.within_2sigma` (DERIVED, appendix_k_transparency_v16_0): N/A
+- `validation.calibrated_count` (DERIVED, appendix_k_transparency_v16_0): N/A
+- `validation.constraints_count` (DERIVED, appendix_k_transparency_v16_0): N/A
+- `summary.total_parameters` (DERIVED, appendix_l_values_summary_v16_0): N/A
+- `summary.exact_parameters` (DERIVED, appendix_l_values_summary_v16_0): N/A
+- `summary.derived_parameters` (DERIVED, appendix_l_values_summary_v16_0): N/A
+- `consciousness.n_tubulins` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `consciousness.tau_collapse_ms` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `consciousness.E_G_joules` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `consciousness.tau_scaling_exponent` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `consciousness.f_base_hz` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `consciousness.phi_peak` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `consciousness.sigma_falloff` (DERIVED, appendix_m_consciousness_v16_0): N/A
+- `landscape.num_valid_topologies` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
+- `landscape.h11_min` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
+- `landscape.h11_max` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
+- `landscape.h31_min` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
+- `landscape.h31_max` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
+- `landscape.selected_h11` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
+- `landscape.selected_h31` (DERIVED, appendix_n_g2_landscape_v16_0): N/A
 
 ## Simulations Responsible for Missing Validation
 
 The following simulations need to provide validation data for DERIVED parameters:
+
+### CONSTRAINED:HIGGS_MASS
+
+**Parameters needing validation:** 1
+
+- `moduli.re_t_phenomenological`: N/A = 9.865
+
+### ESTABLISHED:CODATA2018
+
+**Parameters needing validation:** 3
+
+- `constants.alpha_em`: N/A = 0.0072973525643314245
+- `constants.HBAR`: N/A = 6.582119569e-25
+- `constants.G_NEWTON`: N/A = 6.70883e-39
+
+### ESTABLISHED:DESI_2025
+
+**Parameters needing validation:** 3
+
+- `desi.w0`: N/A = -0.728
+- `desi.wa`: N/A = -0.99
+- `desi.sigma8`: N/A = 0.827
+
+### ESTABLISHED:G2_GEOMETRY
+
+**Parameters needing validation:** 1
+
+- `moduli.re_t_attractor`: N/A = 1.833
+
+### ESTABLISHED:G2_TORSION
+
+**Parameters needing validation:** 1
+
+- `topology.T_OMEGA`: N/A = 0.12
+
+### ESTABLISHED:GUT_THEORY
+
+**Parameters needing validation:** 1
+
+- `gauge.g_gut`: N/A = 0.7191207083539627
+
+### ESTABLISHED:NEUROSCIENCE
+
+**Parameters needing validation:** 1
+
+- `consciousness.neuron_count`: N/A = 86000000000.0
+
+### ESTABLISHED:NuFIT6.0
+
+**Parameters needing validation:** 6
+
+- `nufit.theta_12`: N/A = 33.41
+- `nufit.theta_23`: N/A = 45.0
+- `nufit.theta_13`: N/A = 8.54
+- `nufit.delta_CP`: N/A = 194.0
+- `nufit.delta_m21_sq`: N/A = 7.5e-05
+- `nufit.delta_m31_sq`: N/A = 0.0025
+
+### ESTABLISHED:PDG2024
+
+**Parameters needing validation:** 17
+
+- `constants.M_PLANCK`: N/A = 2.435e+18
+- `constants.m_proton`: N/A = 0.938272
+- `pdg.m_higgs`: N/A = 125.1
+- `pdg.m_electron`: N/A = 0.0005109989461
+- `pdg.m_muon`: N/A = 0.1056583745
+- `pdg.m_tau`: N/A = 1.77686
+- `pdg.m_up`: N/A = 0.00216
+- `pdg.m_down`: N/A = 0.00467
+- `pdg.m_strange`: N/A = 0.0934
+- `pdg.m_charm`: N/A = 1.27
+- `pdg.m_bottom`: N/A = 4.18
+- `pdg.m_top`: N/A = 172.69
+- `pdg.alpha_s_MZ`: N/A = 0.118
+- `pdg.sin2_theta_W`: N/A = 0.23121
+- `pdg.m_W`: N/A = 80.377
+- `pdg.m_Z`: N/A = 91.1876
+- `yukawa.y_top`: N/A = 0.9918793765177882
+
+### ESTABLISHED:Planck2018
+
+**Parameters needing validation:** 4
+
+- `desi.H0`: N/A = 67.4
+- `desi.Omega_m`: N/A = 0.3111
+- `planck.S8`: N/A = 0.832
+- `bounds.sum_m_nu_upper`: N/A = 0.12
+
+### ESTABLISHED:SM_EW
+
+**Parameters needing validation:** 1
+
+- `higgs.vev_yukawa`: N/A = 174.10383166375172
+
+### ESTABLISHED:Sp(2,R)_GAUGE_FIXING
+
+**Parameters needing validation:** 1
+
+- `topology.orientation_sum`: N/A = 12
+
+### ESTABLISHED:SuperK_2024
+
+**Parameters needing validation:** 1
+
+- `bounds.tau_proton_lower`: N/A = 1.67e+34
+
+### INPUT:SPECULATIVE
+
+**Parameters needing validation:** 1
+
+- `consciousness.coherence_fraction`: N/A = 1e-05
+
+### alpha_rigor_v16_1
+
+**Parameters needing validation:** 2
+
+- `electromagnetic.alpha_inv`: N/A = 137.04623843256456
+- `electromagnetic.alpha_inv_error`: N/A = 0.010239255564556515
+
+### appendix_a_math_v16_0
+
+**Parameters needing validation:** 3
+
+- `math.g2_dimension`: N/A = 7
+- `math.spinor_dimension`: N/A = 8
+- `math.octonion_dimension`: N/A = 8
+
+### appendix_b_methods_v16_0
+
+**Parameters needing validation:** 3
+
+- `methods.rg_loop_order`: N/A = 3
+- `methods.integration_method`: N/A = odeint
+- `methods.convergence_criterion`: N/A = 1e-06
+
+### appendix_c_derivations_v16_0
+
+**Parameters needing validation:** 1
+
+- `derivations.validation_status`: N/A = INCONSISTENT
+
+### appendix_d_tables_v16_0
+
+**Parameters needing validation:** 4
+
+- `tables.n_constants`: N/A = 10
+- `tables.n_pdg_inputs`: N/A = 30
+- `tables.n_geometric`: N/A = 15
+- `tables.n_predictions`: N/A = 12
+
+### appendix_e_proton_v16_0
+
+**Parameters needing validation:** 1
+
+- `proton_decay.BR_nu_K`: N/A = 0.6
+
+### appendix_f_v16_0
+
+**Parameters needing validation:** 4
+
+- `dimensions.bulk_signature`: N/A = [24, 2]
+- `dimensions.shadow_signature`: N/A = [12, 1]
+- `dimensions.orientation_sum`: N/A = 12
+- `dimensions.spatial_shadow`: N/A = 12
+
+### appendix_g_v16_0
+
+**Parameters needing validation:** 4
+
+- `topology.N_flux`: N/A = 24.0
+- `topology.T_omega_topological`: N/A = -1.0
+- `topology.T_omega`: N/A = -0.875
+- `topology.spinor_fraction`: N/A = 0.875
+
+### appendix_h_v16_0
+
+**Parameters needing validation:** 3
+
+- `proton_decay.BR_e_pi0`: N/A = 0.25
+- `proton_decay.BR_mu_pi0`: N/A = 0.15
+- `proton_decay.BR_other`: N/A = 0.0
+
+### appendix_i_v16_0
+
+**Parameters needing validation:** 2
+
+- `gw_dispersion.eta`: N/A = 0.09995313724862909
+- `gw_dispersion.M_GW`: N/A = 6324555320336760.0
+
+### appendix_j_mc_error_v16_0
+
+**Parameters needing validation:** 4
+
+- `monte_carlo.n_samples`: N/A = 10000
+- `monte_carlo.n_parameters`: N/A = 58
+- `monte_carlo.mean_relative_error`: N/A = 0.05
+- `monte_carlo.correlation_matrix_shape`: N/A = [58, 58]
+
+### appendix_k_transparency_v16_0
+
+**Parameters needing validation:** 5
+
+- `validation.total_parameters`: N/A = 48
+- `validation.within_1sigma`: N/A = 45
+- `validation.within_2sigma`: N/A = 47
+- `validation.calibrated_count`: N/A = 0
+- `validation.constraints_count`: N/A = 1
+
+### appendix_l_values_summary_v16_0
+
+**Parameters needing validation:** 3
+
+- `summary.total_parameters`: N/A = 27
+- `summary.exact_parameters`: N/A = 7
+- `summary.derived_parameters`: N/A = 19
+
+### appendix_m_consciousness_v16_0
+
+**Parameters needing validation:** 7
+
+- `consciousness.n_tubulins`: N/A = 860000000000000.1
+- `consciousness.tau_collapse_ms`: N/A = 1.0201309508419833e+22
+- `consciousness.E_G_joules`: N/A = 6.452230043179585e-44
+- `consciousness.tau_scaling_exponent`: N/A = -2.0
+- `consciousness.f_base_hz`: N/A = 9.80266307158539e-20
+- `consciousness.phi_peak`: N/A = 0.5
+- `consciousness.sigma_falloff`: N/A = 0.25
+
+### appendix_n_g2_landscape_v16_0
+
+**Parameters needing validation:** 7
+
+- `landscape.num_valid_topologies`: N/A = 49
+- `landscape.h11_min`: N/A = 4
+- `landscape.h11_max`: N/A = 52
+- `landscape.h31_min`: N/A = 20
+- `landscape.h31_max`: N/A = 68
+- `landscape.selected_h11`: N/A = 4
+- `landscape.selected_h31`: N/A = 68
+
+### chirality_v16_0
+
+**Parameters needing validation:** 8
+
+- `chirality.spinor_dimension`: N/A = 8
+- `chirality.preserved_spinors`: N/A = 1
+- `chirality.chiral_index`: N/A = 6.0
+- `chirality.zero_modes_left`: N/A = 6.0
+- `chirality.zero_modes_right`: N/A = 0
+- `chirality.imbalance`: N/A = 6.0
+- `chirality.generation_count`: N/A = 3
+- `chirality.saturation_ratio`: N/A = 1.0
+
+### ckm_matrix_v16_0
+
+**Parameters needing validation:** 13
+
+- `ckm.V_us`: N/A = 0.22313016014842982
+- `ckm.V_cb`: N/A = 0.04032752537796979
+- `ckm.V_ub`: N/A = 0.0034757158300444454
+- `ckm.V_td`: N/A = 0.008389183792439896
+- `ckm.V_ts`: N/A = 0.04032752537796979
+- `ckm.V_tb`: N/A = 0.9991512959968505
+- `ckm.jarlskog_invariant`: N/A = 2.9148902086057355e-05
+- `ckm.lambda_wolfenstein`: N/A = 0.22313016014842982
+- `ckm.A_wolfenstein`: N/A = 0.81
+- `ckm.rho_wolfenstein`: N/A = 0.14
+- `ckm.eta_wolfenstein`: N/A = 0.36
+- `ckm.delta_cp`: N/A = 0.5235987755982988
+- `ckm.unitarity_test`: N/A = 5.829780417210273e-05
+
+### cosmological_constant_v16_1
+
+**Parameters needing validation:** 5
+
+- `cosmology.Lambda_derived`: N/A = 1.2266298633892773e-52
+- `cosmology.rho_vacuum`: N/A = 1.1730108700558416e+77
+- `cosmology.entropy_density`: N/A = 5.563065417483114e-78
+- `cosmology.Lambda_ratio`: N/A = 3.203289916527108e-122
+- `cosmology.Lambda_deviation_log`: N/A = 0.04732084860536037
+
+### cosmology_intro_v16_0
+
+**Parameters needing validation:** 7
+
+- `cosmology.M_Pl_4D`: N/A = 2.435e+18
+- `cosmology.V_9_internal`: N/A = 13015.153988690734
+- `cosmology.breathing_mode_vev`: N/A = 1.82625e+17
+- `cosmology.epsilon_KK`: N/A = 0.2257
+- `cosmology.D_eff_shadow`: N/A = 12.576152
+- `cosmology.brane_tension_5_2`: N/A = 1.4849499517866224e+111
+- `cosmology.pneuma_components_4D`: N/A = 64.0
+
+### dark_energy_thawing_v16_2
+
+**Parameters needing validation:** 7
+
+- `cosmology.w0_thawing`: N/A = -0.9583333333333334
+- `cosmology.wa_thawing`: N/A = -0.08250673181549914
+- `cosmology.z_thaw`: N/A = 4.898979485566356
+- `cosmology.torsional_leakage`: N/A = 0.13264597579467807
+- `cosmology.w0_desi_sigma`: N/A = -3.656084656084657
+- `cosmology.wa_desi_sigma`: N/A = 2.835916463076565
+- `cosmology.thawing_validated`: N/A = False
+
+### dark_energy_v16_0
+
+**Parameters needing validation:** 6
+
+- `cosmology.w0_derived`: N/A = -0.8461538461538461
+- `cosmology.wa_derived`: N/A = -0.20412414523193154
+- `cosmology.D_eff`: N/A = 12.576
+- `cosmology.alpha_shadow`: N/A = 0.576
+- `cosmology.w0_deviation`: N/A = 1.7634902411021816
+- `cosmology.w0_validation`: N/A = {'predicted': -0.8461538461538461, 'experimental': -0.728, 'uncertainty': 0.067, 'sigma': 1.7634902411021816, 'status': 'GOOD', 'source': 'ESTABLISHED:DESI_2025'}
+
+### evolution_engine_v16_2
+
+**Parameters needing validation:** 5
+
+- `cosmology.H0_late_evolved`: N/A = 73.04
+- `cosmology.H0_early_normalized`: N/A = 67.40001769345331
+- `cosmology.relaxation_z1100`: N/A = 1.2918322556967783
+- `cosmology.ricci_flow_consistency`: N/A = 0.758334723639454
+- `cosmology.h_evolution_sigma`: N/A = 3.5386906603207535e-05
 
 ### fermion_generations_v16_0
 
@@ -230,25 +1064,65 @@ The following simulations need to provide validation data for DERIVED parameters
 
 ### gauge_unification_v16_0
 
-**Parameters needing validation:** 4
+**Parameters needing validation:** 6
 
 - `gauge.M_GUT`: N/A = 6324555320336760.0
-- `gauge.ALPHA_GUT`: N/A = 0.023402505234839138
-- `gauge.ALPHA_GUT_INV`: N/A = 42.7304679548285
+- `gauge.M_GUT_GEOMETRIC`: N/A = 2.1e+16
+- `gauge.ALPHA_GUT`: N/A = 0.023402505224827168
+- `gauge.ALPHA_GUT_INV`: N/A = 42.730467973109285
+- `gauge.ALPHA_GUT_GEOMETRIC`: N/A = 0.04248088360237893
 - `gauge.sin2_theta_W_gut`: N/A = 0.375
+
+### higgs_brane_partition_v16_2
+
+**Parameters needing validation:** 6
+
+- `higgs.m_higgs_bulk`: N/A = 414.22
+- `higgs.m_higgs_local`: N/A = 125.10242591991029
+- `higgs.brane_partition_ratio`: N/A = 0.30201927941651846
+- `higgs.projection_factor`: N/A = 3.921039817847826
+- `higgs.mirror_overlap`: N/A = 1.1842296203498772
+- `higgs.sigma_local`: N/A = 0.8680828240571258
 
 ### higgs_mass_v16_0
 
 **Parameters needing validation:** 8
 
-- `higgs.m_higgs_pred`: N/A = 739.6654772293541
-- `higgs.m_higgs_geometric`: N/A = 738.4549465193717
+- `higgs.m_higgs_pred`: N/A = 120.6228111675565
+- `higgs.m_higgs_geometric`: N/A = 504.0623474622599
 - `higgs.vev`: N/A = 246.0
 - `higgs.lambda_0`: N/A = 0.129
-- `higgs.lambda_eff_pheno`: N/A = 0.11429686327911207
-- `higgs.lambda_eff_geometric`: N/A = 0.11392305471841152
+- `higgs.lambda_eff_pheno`: N/A = 0.006079284956305497
+- `higgs.lambda_eff_geometric`: N/A = 0.10616029694119695
 - `moduli.stabilization_status`: N/A = NEEDS_REVIEW
-- `higgs.quartic_correction`: N/A = 0.014703136720887938
+- `higgs.quartic_correction`: N/A = 0.1229207150436945
+
+### leech_partition_v16_2
+
+**Parameters needing validation:** 5
+
+- `topology.n_gen_leech`: N/A = 3
+- `topology.leech_dim`: N/A = 24
+- `topology.octonion_dim`: N/A = 8
+- `topology.partition_exact`: N/A = True
+- `topology.g2_compatible`: N/A = True
+
+### mass_ratio_v16_1
+
+**Parameters needing validation:** 2
+
+- `fermion.mass_ratio_proton_electron`: N/A = 1836.1526738332332
+- `fermion.mass_ratio_error`: N/A = 4.032331162306946e-07
+
+### modular_invariance_v16_2
+
+**Parameters needing validation:** 5
+
+- `topology.b3_modular`: N/A = 24
+- `topology.vacuum_energy`: N/A = -1.0
+- `topology.anomaly_free`: N/A = True
+- `topology.critical_dim`: N/A = 26
+- `topology.modular_weight`: N/A = -12.0
 
 ### multi_sector_v16_0
 
@@ -257,19 +1131,53 @@ The following simulations need to provide validation data for DERIVED parameters
 - `cosmology.w_eff`: N/A = -0.8526812021213906
 - `cosmology.Omega_DM_over_b`: N/A = 5.399772129616132
 - `cosmology.T_mirror_ratio`: N/A = 0.57
-- `cosmology.modulation_width`: N/A = 0.35
-- `cosmology.sm_weight`: N/A = 0.3561959588810605
-- `cosmology.mirror_weight`: N/A = 0.14380404111893952
-- `cosmology.hierarchy_ratio`: N/A = 0.712391917762121
+- `cosmology.modulation_width`: N/A = 0.408248290463863
+- `cosmology.sm_weight`: N/A = 0.0021089953617339126
+- `cosmology.mirror_weight`: N/A = 0.0003107342392717563
+- `cosmology.hierarchy_ratio`: N/A = 0.8715830731075855
 
 ### neutrino_mixing_v16_0
 
-**Parameters needing validation:** 4
+**Parameters needing validation:** 13
 
 - `neutrino.theta_12_pred`: N/A = 33.59329049922625
-- `neutrino.theta_13_pred`: N/A = 8.327941059195808
-- `neutrino.theta_23_pred`: N/A = 45.75
+- `neutrino.theta_13_pred`: N/A = 8.647304725338865
+- `neutrino.theta_23_pred`: N/A = 49.75
 - `neutrino.delta_CP_pred`: N/A = 232.5
+- `neutrino.m1`: N/A = 0.04831157627577474
+- `neutrino.m2`: N/A = 0.049073500000000006
+- `neutrino.m3`: N/A = 0.002
+- `neutrino.mass_sum`: N/A = 0.09938507627577475
+- `neutrino.dm2_21`: N/A = 7.419999999999996e-05
+- `neutrino.dm2_32`: N/A = -0.0024042084022500004
+- `neutrino.ordering`: N/A = INVERTED
+- `neutrino.k_gimel`: N/A = 1.5
+- `neutrino.C_kaf`: N/A = 2.0
+
+### octonionic_mixing_v16_2
+
+**Parameters needing validation:** 12
+
+- `ckm.V_us_triality`: N/A = 0.22757316418928888
+- `ckm.V_cb_triality`: N/A = 0.04027155023797563
+- `ckm.V_ub_triality`: N/A = 0.0039061875267409857
+- `ckm.jarlskog_triality`: N/A = 1.3424674133228134e-05
+- `pmns.theta_12_triality`: N/A = 33.59329049922625
+- `pmns.theta_23_triality`: N/A = 49.75
+- `pmns.theta_13_triality`: N/A = 8.647304725338865
+- `triality.theta_g`: N/A = 31.717474411461005
+- `triality.phi_golden`: N/A = 1.618033988749895
+- `triality.associative_dimension`: N/A = 3
+- `triality.coassociative_dimension`: N/A = 4
+- `triality.mixing_ratio`: N/A = 2.431279671943996
+
+### orch_or_geometry_v16_1
+
+**Parameters needing validation:** 3
+
+- `quantum_bio.coherence_time_ms`: N/A = 98.97244755967617
+- `quantum_bio.topological_pitch`: N/A = 6.1208253715651075
+- `quantum_bio.eg_joules`: N/A = 1.0655205999266998e-33
 
 ### pneuma_mechanism_v16_0
 
@@ -281,94 +1189,397 @@ The following simulations need to provide validation data for DERIVED parameters
 - `pneuma.vev`: N/A = 6.3358573796986395
 - `pneuma.mass_scale`: N/A = 2.0291666666666666e+17
 
+### predictions_aggregator_v16_0
+
+**Parameters needing validation:** 2
+
+- `predictions.summary`: N/A = {'gauge_unification': {'M_GUT': 6324555320336760.0, 'alpha_GUT_inv': 42.730467973109285}, 'proton_decay': {'tau_p_years': 4.757399129595567e+34}, 'neutrino_mixing': {'theta_12': 33.59329049922625, 'theta_13': 8.647304725338865, 'theta_23': 49.75, 'delta_CP': 232.5}, 'cosmology': {'w_eff': -0.8526812021213906, 'Omega_DM_over_b': 5.399772129616132}, 'topology': {'n_gen': 3}}
+- `predictions.falsifiable_count`: N/A = 10
+
 ### proton_decay_v16_0
 
 **Parameters needing validation:** 4
 
-- `proton_decay.tau_p_years`: N/A = 1.289658643987891e+33
+- `proton_decay.tau_p_years`: N/A = 4.757399129595567e+34
 - `proton_decay.suppression_factor`: N/A = 1.2840254166877414
-- `proton_decay.super_k_ratio`: N/A = 0.07722506850226891
-- `proton_decay.status`: N/A = EXCLUDED - Below Super-K bound
+- `proton_decay.super_k_ratio`: N/A = 2.8487419937698006
+- `proton_decay.status`: N/A = CONSISTENT - Well above Super-K bound
+
+### ricci_flow_h0_v16_1
+
+**Parameters needing validation:** 5
+
+- `cosmology.H0_local`: N/A = 73.04
+- `cosmology.H0_early`: N/A = 67.4
+- `cosmology.z_transition`: N/A = 10.0
+- `cosmology.H0_tension_sigma`: N/A = 0.0
+- `cosmology.ricci_flow_rate`: N/A = 1.9483192273737477
+
+### s8_suppression_v16_1
+
+**Parameters needing validation:** 8
+
+- `cosmology.s8_pm_predicted`: N/A = 0.8404645939091319
+- `cosmology.s8_suppression_factor`: N/A = 0.9979861977064629
+- `cosmology.growth_index_pm`: N/A = 0.5551181645292425
+- `cosmology.growth_index_lcdm`: N/A = 0.55
+- `cosmology.s8_tension_kids`: N/A = 3.723229695456592
+- `cosmology.s8_tension_des`: N/A = 3.7920349358312846
+- `cosmology.s8_tension_planck`: N/A = 0.6511226083947617
+- `cosmology.s8_improvement_factor`: N/A = 1.0245416717722942
+
+### thermal_time_v16_0
+
+**Parameters needing validation:** 4
+
+- `thermal.alpha_T`: N/A = 2.6999999182257
+- `thermal.modular_temperature`: N/A = 3.2026709963019756e+16
+- `thermal.entropy_gradient`: N/A = 3.0600829928584296e-06
+- `thermal.two_time_metric_signature`: N/A = (24,2)
+
+### unitary_filter_v16_2
+
+**Parameters needing validation:** 6
+
+- `unitary.central_charge`: N/A = 0
+- `unitary.is_ghost_free`: N/A = True
+- `unitary.status`: N/A = UNITARY_STABLE: GHOST_FREE
+- `unitary.c_transverse`: N/A = 24
+- `unitary.c_sp2r`: N/A = 2
+- `unitary.c_ghost`: N/A = -26
 
 ## Formula Validation
 
 ### Formulas by Category
 
-- **DERIVED:** 13
-- **PREDICTIONS:** 3
-- **THEORY:** 12
+- **DERIVED:** 44
+- **ESTABLISHED:** 3
+- **FOUNDATION:** 1
+- **FOUNDATIONAL:** 18
+- **GEOMETRIC:** 6
+- **PREDICTION:** 4
+- **PREDICTIONS:** 17
+- **QUANTUM_BIOLOGY:** 1
+- **SPECULATIVE:** 2
+- **STATISTICAL:** 2
+- **THEORY:** 39
+
+### Formulas Missing Derivation
+
+**Count:** 22
+
+- `s8-definition` (ESTABLISHED)
+- `associative-calibration` (FOUNDATIONAL)
+- `clifford-multiplication` (FOUNDATIONAL)
+- `rg-beta-function` (FOUNDATIONAL)
+- `one-loop-beta` (FOUNDATIONAL)
+- `yukawa-rg-equation` (FOUNDATIONAL)
+- `mass-running-equation` (FOUNDATIONAL)
+- `yukawa-hierarchy-derivation` (DERIVED)
+- `tribimaximal-mixing-derivation` (DERIVED)
+- `higgs-mass-derivation` (DERIVED)
+- `proton-lifetime-derivation` (PREDICTIONS)
+- `proton-decay-rate` (PREDICTION)
+- `proton-decay-lifetime` (PREDICTION)
+- `geometric-suppression-factor` (FOUNDATIONAL)
+- `sp2r-gauge-constraint` (FOUNDATIONAL)
+- `shadow-reduction` (FOUNDATIONAL)
+- `orientation-sum` (DERIVED)
+- `symplectic-form` (FOUNDATIONAL)
+- `flux-quantization` (FOUNDATIONAL)
+- `gw-dispersion-relation` (PREDICTION)
+- `mc-error-propagation` (STATISTICAL)
+- `correlation-matrix` (STATISTICAL)
 
 ### Formulas Missing inputParams Field
 
-**Count:** 28
+**Count:** 137
 
 - `g2-holonomy`
 - `euler-characteristic`
 - `betti-numbers`
 - `three-generations`
 - `cycle-matching`
+- `weyl-anomaly-cancellation`
+- `central-charge-unitarity`
+- `leech-dimension-uniqueness`
+- `g2-automorphism-relation`
+- `octonionic-partition`
+- `generation-theorem`
+- `dedekind-eta-definition`
+- `partition-function-eta`
+- `vacuum-energy-formula`
+- `modular-anomaly-condition`
+- `critical-dimension`
+- `gauge-initial-conditions`
+- `kk-threshold`
+- `asymptotic-safety-fixed-point`
 - `gut-scale`
 - `gauge-coupling-unification`
 - `gauge-rg-evolution`
+- `alpha-inverse-geometric`
 - `generation-number`
 - `yukawa-texture`
 - `pneuma-chiral-filter`
+- `g2-spinor-preservation`
+- `associative-chirality-projector`
+- `dirac-zero-modes`
+- `chirality-index-theorem`
+- `spinor-saturation-generations`
+- `ckm-overlap-integral`
+- `ckm-hierarchy`
+- `jarlskog-invariant`
+- `wolfenstein-parametrization`
+- `ckm-unitarity`
 - `cycle-separation-suppression`
 - `proton-lifetime`
 - `higgs-mass`
 - `higgs-quartic-coupling`
 - `racetrack-potential`
 - `doublet-triplet-splitting`
+- `higgs-bulk-attractor`
+- `higgs-brane-projection`
+- `higgs-local-mass`
+- `mass-ratio-geometric`
+- `metric-13D`
+- `einstein-hilbert-14D`
+- `sp2r-constraint`
+- `breathing-mode`
+- `bps-bound`
+- `pneuma-reduction`
+- `dimensional-reduction-cascade`
+- `effective-dimension`
+- `dark-energy-eos-derivation`
+- `dark-energy-time-evolution`
+- `thawing-w0-derivation`
+- `thawing-wa-derivation`
+- `cpl-parametrization`
+- `torsional-leakage-formula`
+- `ricci-thawing-mechanism`
+- `h-evolution-log-scaling`
+- `relaxation-factor`
+- `ricci-flow-evolution`
+- `s8-definition`
+- `growth-rate-equation`
+- `pm-dark-energy-density`
+- `growth-suppression-factor`
+- `s8-prediction-pm`
+- `ricci-flow-equation`
+- `effective-curvature-evolution`
+- `hubble-evolution-ode`
+- `hubble-tension-resolution`
 - `pmns-theta-13`
 - `pmns-delta-cp`
 - `pmns-theta-12`
 - `pmns-theta-23`
 - `neutrino-mass-spectrum`
+- `neutrino-mass-sum`
+- `golden-angle`
+- `ckm-from-theta-g`
+- `pmns-from-triality`
+- `triality-split`
+- `mixing-dimension-ratio`
 - `dark-energy-eos`
 - `moduli-potential`
 - `sector-temperature-ratio`
 - `dark-matter-abundance`
+- `g2-entropy-density`
+- `cosmological-constant-geometric`
+- `vacuum-energy-density`
+- `lambda-hierarchy`
 - `pneuma-lagrangian`
 - `pneuma-flow`
+- `modular-hamiltonian`
+- `thermal-flow`
+- `entropy-gradient`
+- `alpha-t-derivation`
+- `orch-or-coherence-time`
+- `g2-holonomy-condition`
+- `associative-calibration`
+- `coassociative-calibration`
+- `parallel-spinor-condition`
+- `clifford-multiplication`
+- `ricci-flatness-g2`
+- `rg-beta-function`
+- `one-loop-beta`
+- `kk-threshold-correction`
+- `asymptotic-safety-correction`
+- `yukawa-rg-equation`
+- `mass-running-equation`
+- `g2-holonomy-derivation`
+- `unification-condition-derivation`
+- `yukawa-hierarchy-derivation`
+- `tribimaximal-mixing-derivation`
+- `higgs-mass-derivation`
+- `proton-lifetime-derivation`
+- `proton-decay-rate`
+- `proton-decay-lifetime`
+- `geometric-suppression-factor`
+- `sp2r-gauge-constraint`
+- `shadow-reduction`
+- `orientation-sum`
+- `symplectic-form`
+- `sp2r-generators-formal`
+- `flux-quantization`
+- `effective-torsion`
+- `effective-torsion-spinor`
+- `proton-branching`
+- `gw-dispersion-relation`
+- `gw-dispersion-coefficient`
+- `mc-error-propagation`
+- `correlation-matrix`
+- `orch-or-collapse`
+- `pm-modulation`
+- `topology-constraint`
+- `generation-counting`
 
 ### Formulas Missing outputParams Field
 
-**Count:** 28
+**Count:** 137
 
 - `g2-holonomy`
 - `euler-characteristic`
 - `betti-numbers`
 - `three-generations`
 - `cycle-matching`
+- `weyl-anomaly-cancellation`
+- `central-charge-unitarity`
+- `leech-dimension-uniqueness`
+- `g2-automorphism-relation`
+- `octonionic-partition`
+- `generation-theorem`
+- `dedekind-eta-definition`
+- `partition-function-eta`
+- `vacuum-energy-formula`
+- `modular-anomaly-condition`
+- `critical-dimension`
+- `gauge-initial-conditions`
+- `kk-threshold`
+- `asymptotic-safety-fixed-point`
 - `gut-scale`
 - `gauge-coupling-unification`
 - `gauge-rg-evolution`
+- `alpha-inverse-geometric`
 - `generation-number`
 - `yukawa-texture`
 - `pneuma-chiral-filter`
+- `g2-spinor-preservation`
+- `associative-chirality-projector`
+- `dirac-zero-modes`
+- `chirality-index-theorem`
+- `spinor-saturation-generations`
+- `ckm-overlap-integral`
+- `ckm-hierarchy`
+- `jarlskog-invariant`
+- `wolfenstein-parametrization`
+- `ckm-unitarity`
 - `cycle-separation-suppression`
 - `proton-lifetime`
 - `higgs-mass`
 - `higgs-quartic-coupling`
 - `racetrack-potential`
 - `doublet-triplet-splitting`
+- `higgs-bulk-attractor`
+- `higgs-brane-projection`
+- `higgs-local-mass`
+- `mass-ratio-geometric`
+- `metric-13D`
+- `einstein-hilbert-14D`
+- `sp2r-constraint`
+- `breathing-mode`
+- `bps-bound`
+- `pneuma-reduction`
+- `dimensional-reduction-cascade`
+- `effective-dimension`
+- `dark-energy-eos-derivation`
+- `dark-energy-time-evolution`
+- `thawing-w0-derivation`
+- `thawing-wa-derivation`
+- `cpl-parametrization`
+- `torsional-leakage-formula`
+- `ricci-thawing-mechanism`
+- `h-evolution-log-scaling`
+- `relaxation-factor`
+- `ricci-flow-evolution`
+- `s8-definition`
+- `growth-rate-equation`
+- `pm-dark-energy-density`
+- `growth-suppression-factor`
+- `s8-prediction-pm`
+- `ricci-flow-equation`
+- `effective-curvature-evolution`
+- `hubble-evolution-ode`
+- `hubble-tension-resolution`
 - `pmns-theta-13`
 - `pmns-delta-cp`
 - `pmns-theta-12`
 - `pmns-theta-23`
 - `neutrino-mass-spectrum`
+- `neutrino-mass-sum`
+- `golden-angle`
+- `ckm-from-theta-g`
+- `pmns-from-triality`
+- `triality-split`
+- `mixing-dimension-ratio`
 - `dark-energy-eos`
 - `moduli-potential`
 - `sector-temperature-ratio`
 - `dark-matter-abundance`
+- `g2-entropy-density`
+- `cosmological-constant-geometric`
+- `vacuum-energy-density`
+- `lambda-hierarchy`
 - `pneuma-lagrangian`
 - `pneuma-flow`
+- `modular-hamiltonian`
+- `thermal-flow`
+- `entropy-gradient`
+- `alpha-t-derivation`
+- `orch-or-coherence-time`
+- `g2-holonomy-condition`
+- `associative-calibration`
+- `coassociative-calibration`
+- `parallel-spinor-condition`
+- `clifford-multiplication`
+- `ricci-flatness-g2`
+- `rg-beta-function`
+- `one-loop-beta`
+- `kk-threshold-correction`
+- `asymptotic-safety-correction`
+- `yukawa-rg-equation`
+- `mass-running-equation`
+- `g2-holonomy-derivation`
+- `unification-condition-derivation`
+- `yukawa-hierarchy-derivation`
+- `tribimaximal-mixing-derivation`
+- `higgs-mass-derivation`
+- `proton-lifetime-derivation`
+- `proton-decay-rate`
+- `proton-decay-lifetime`
+- `geometric-suppression-factor`
+- `sp2r-gauge-constraint`
+- `shadow-reduction`
+- `orientation-sum`
+- `symplectic-form`
+- `sp2r-generators-formal`
+- `flux-quantization`
+- `effective-torsion`
+- `effective-torsion-spinor`
+- `proton-branching`
+- `gw-dispersion-relation`
+- `gw-dispersion-coefficient`
+- `mc-error-propagation`
+- `correlation-matrix`
+- `orch-or-collapse`
+- `pm-modulation`
+- `topology-constraint`
+- `generation-counting`
 
 ## Recommendations
 
-1. **Add Validation for Derived Parameters:** Run simulations to generate experimental validation data for 37 DERIVED parameters
+1. **Add Validation for Derived Parameters:** Run simulations to generate experimental validation data for 252 DERIVED parameters
 2. **Link Formula Parameters:** Add inputParams and outputParams fields to formulas
-3. **Add Units:** Specify units for 60 dimensional parameters
+3. **Add Units:** Specify units for 174 dimensional parameters
 
 ---
 

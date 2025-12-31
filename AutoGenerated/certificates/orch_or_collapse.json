@@ -3,7 +3,7 @@
   "label": "Orch-OR Collapse Time",
   "wl_code": "\n                hbar = 1.055 * 10^(-34); (* J*s *)\n                EG = 10^(-32); (* J - gravitational self-energy *)\n                tau = hbar / EG;\n                N[tau * 1000, 3] (* milliseconds *)\n            ",
   "result": "[Mock] ~10 ms (neural timescale)",
-  "hash": "5371e8e8d0828832",
-  "timestamp": "2025-12-29T08:47:05.048149",
+  "hash": "408841ca5814b50e",
+  "timestamp": "2025-12-31T17:16:26.453981",
   "verified": false
 }
