@@ -188,6 +188,9 @@ from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
 from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
 from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
 
+# v16.2 - Geometric Anchors (fundamental constants from b3=24)
+from simulations.geometric_anchors_v16_1 import GeometricAnchors
+
 # v16.2 - Two-Time Physics and Leech Partition (foundational geometric proofs)
 from simulations.v16.geometric.leech_partition_v16_2 import LeechPartitionV16
 from simulations.v16.geometric.modular_invariance_v16_2 import ModularInvarianceV16
@@ -535,8 +538,11 @@ class SimulationRunner:
         """
         self._print_header()
 
-        # Step 1: Load established physics
+        # Step 1: Load established physics (experimental constants)
         self._load_established_physics()
+
+        # Step 1b: Load geometric anchors (v16.2 - derived from b3=24)
+        self._load_geometric_anchors()
 
         # Step 2: Execute simulations in phases
         for phase_num in sorted(self.phases.keys()):
@@ -585,6 +591,60 @@ class SimulationRunner:
             print("  - NuFIT 6.0 neutrino parameters")
             print("  - DESI DR2 cosmological parameters")
             print("  - Experimental bounds (Super-K, LHC, etc.)")
+
+    def _load_geometric_anchors(self) -> None:
+        """
+        v16.2: Load geometric anchors (fundamental constants) from b3=24.
+
+        All parameters are derived from the single topological invariant b3=24.
+        This is the "Truth Source" for the simulation framework - every constant
+        is a derived topological residue, not an experimental fit.
+
+        Includes:
+        - alpha_inverse: Fine structure constant from Leech lattice
+        - alpha_s: Strong coupling with QCD lattice correction
+        - sin2_theta_W: Weak mixing angle
+        - higgs_vev: Higgs VEV from 20 non-trivial cycles
+        - m_planck_4d: Planck mass with volumetric projection
+        - mu_pe: Proton-to-electron mass ratio
+        - w0, wa: Dark energy parameters with 4-form scaling
+        - n_s: Spectral index from b3
+        - And 20+ more fundamental parameters
+        """
+        if self.verbose:
+            print("\n[INITIALIZATION] Loading Geometric Anchors (v16.2 Demon-Lock)")
+            print("-" * 80)
+
+        try:
+            anchors = GeometricAnchors(b3=24)
+            all_anchors = anchors.get_all_anchors()
+
+            # Register each anchor to the registry
+            for name, value in all_anchors.items():
+                param_path = f"geometry.{name}"
+                self.registry.set_param(
+                    path=param_path,
+                    value=value,
+                    source="geometric_anchors_v16_2",
+                    status="GEOMETRIC",
+                    metadata={
+                        "derivation": "Derived from b3=24 topological invariant",
+                        "fundamental": True,
+                        "tuning_free": True
+                    }
+                )
+
+            if self.verbose:
+                print(f"[OK] Loaded {len(all_anchors)} geometric anchors from b3=24")
+                print(f"  - k_gimel = {anchors.k_gimel:.6f}")
+                print(f"  - alpha_inverse = {anchors.alpha_inverse:.6f}")
+                print(f"  - alpha_s = {anchors.alpha_s:.6f}")
+                print(f"  - w_zero = {anchors.w_zero:.6f}")
+                print(f"  - n_s = {anchors.n_s:.6f}")
+
+        except Exception as e:
+            if self.verbose:
+                print(f"[WARN] Could not load geometric anchors: {e}")
 
     def _run_phase(self, phase_num: int) -> None:
         """
