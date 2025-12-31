@@ -1851,10 +1851,15 @@
 
             // Wait for PM constants to be loaded before rendering
             // This ensures parameter values are available for display
-            if (window.PM && !window.PM._loaded) {
+            // Note: firebase-data.js may overwrite window.PM without the load function
+            if (window.PM && typeof window.PM.load === 'function' && !window.PM._loaded) {
                 console.log('Waiting for PM constants to load...');
                 await window.PM.load();
                 console.log('PM constants loaded');
+            } else if (window.PM) {
+                console.log('PM data already available (loaded via firebase-data or other source)');
+            } else {
+                console.log('PM not available, proceeding without parameter values');
             }
 
             // Initialize UI
