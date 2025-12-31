@@ -61,13 +61,13 @@
 }
 
 /* ========================================================================
-   DERIVATION BOXES - Match old paper
+   DERIVATION BOXES - Dark theme with good contrast
    ======================================================================== */
 
 .derivation-section,
 .derivation-box {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
-    border: 1px solid #dee2e6 !important;
+    background: rgba(26, 31, 58, 0.8) !important;
+    border: 1px solid rgba(139, 127, 255, 0.3) !important;
     border-radius: 8px !important;
     padding: 20px !important;
     margin: 1.5rem 0 !important;
@@ -78,7 +78,7 @@
     font-size: 1rem;
     color: var(--accent-primary, #8b7fff);
     margin-bottom: 0.8rem;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid rgba(139, 127, 255, 0.25);
     padding-bottom: 0.5rem;
 }
 
@@ -86,6 +86,7 @@
     margin: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
+    color: var(--text-secondary, #b0b0b0);
 }
 
 .derivation-step::before {
@@ -101,6 +102,21 @@
     counter-reset: step;
     list-style: none;
     padding: 0;
+}
+
+.derivation-steps li {
+    color: var(--text-secondary, #c0c0c0);
+    line-height: 1.6;
+}
+
+.derivation-section p,
+.derivation-box p {
+    color: var(--text-secondary, #b0b0b0);
+}
+
+.derivation-section strong,
+.derivation-box strong {
+    color: var(--text-primary, #f0f0f0);
 }
 
 /* ========================================================================

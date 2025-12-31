@@ -94,6 +94,9 @@
             position: relative;
             /* Clip shimmer effect to card bounds */
             overflow: hidden;
+            /* Create stacking context and contain paint to prevent shimmer bleeding outside */
+            isolation: isolate;
+            contain: paint;
         }
 
         /* Wrapper for content that allows tooltips to overflow */
@@ -148,7 +151,7 @@
         .formula-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
+            align-items: flex-start;
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
             gap: 1rem;
@@ -156,13 +159,36 @@
 
         .formula-title {
             flex: 1;
+            min-width: 0;
+        }
+
+        .formula-header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 0.5rem;
+            flex-shrink: 0;
         }
 
         .formula-label {
             font-size: 1.4rem;
             font-weight: 700;
             color: var(--accent-primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0;
+            text-align: right;
+        }
+
+        .category-badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: rgba(139, 127, 255, 0.15);
+            color: var(--accent-primary, #8b7fff);
+            border: 1px solid rgba(139, 127, 255, 0.3);
         }
 
         .formula-description {
@@ -718,9 +744,15 @@
             text-shadow: 0 0 8px rgba(80, 200, 120, 0.3);
         }
 
-        /* Expandable Sections */
+        /* Expandable Sections - Enhanced hover support */
         .expandable-section {
             margin: 1rem 0;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .expandable-section:hover {
+            transform: translateX(2px);
         }
 
         .expand-toggle {
@@ -735,18 +767,30 @@
             align-items: center;
             transition: all 0.2s ease;
             border: 1px solid rgba(139, 127, 255, 0.2);
+            border-left: 3px solid transparent;
             box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
         }
 
         .expand-toggle:hover {
             background: rgba(139, 127, 255, 0.15);
             border-color: rgba(139, 127, 255, 0.4);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-left-color: var(--accent-primary, #8b7fff);
+            box-shadow: 0 4px 12px rgba(139, 127, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .expand-toggle:hover .expand-title {
+            color: var(--accent-primary, #8b7fff);
+        }
+
+        .expand-toggle:hover .expand-icon {
+            transform: scale(1.2);
         }
 
         .expand-title {
             font-weight: 600;
             color: var(--text-primary);
+            transition: color 0.2s ease;
         }
 
         .expand-icon {
@@ -2074,16 +2118,20 @@
 
         const statusClass = getStatusClass(formula.status);
         const statusBadge = formula.status ? `<span class="status-badge ${statusClass}">${escapeHtml(formula.status)}</span>` : '';
+        const categoryBadge = formula.category ? `<span class="category-badge">${escapeHtml(formula.category)}</span>` : '';
 
         return `
             <div class="formula-card" id="formula-${escapeHtml(formula.id)}">
-                <!-- Header -->
+                <!-- Header with formula number and category on RHS -->
                 <div class="formula-header">
                     <div class="formula-title">
-                        <div class="formula-label">${escapeHtml(formula.label || formula.id || 'Unknown')}</div>
                         <div class="formula-description">${escapeHtml(formula.description || '')}</div>
                     </div>
-                    ${statusBadge}
+                    <div class="formula-header-right">
+                        <div class="formula-label">${escapeHtml(formula.label || formula.id || 'Unknown')}</div>
+                        ${categoryBadge}
+                        ${statusBadge}
+                    </div>
                 </div>
 
                 <!-- Interactive Formula Display -->
@@ -2094,7 +2142,8 @@
                     ${renderFormulaInfoPanel(formula)}
                 </div>
 
-                <!-- Expandable LaTeX Code Section -->
+                <!-- Expandable LaTeX Code Section - Only show if there's content -->
+                ${(formula.plainText || formula.latex) ? `
                 <div class="expandable-section" style="margin: 1rem 0;">
                     <div class="expand-toggle" style="cursor: pointer; user-select: none;">
                         <span class="expand-title">View LaTeX Code</span>
@@ -2103,10 +2152,11 @@
                     <div class="expand-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
                         <div style="background: rgba(17, 20, 38, 0.6); padding: 1rem; border-radius: 8px; margin-top: 0.5rem; border: 1px solid rgba(139, 127, 255, 0.2);">
                             <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Plain Text Formula</div>
-                            <code style="display: block; font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.9rem; color: #50c878; background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">${escapeHtml(formula.plainText || formula.latex || 'No plain text available')}</code>
+                            <code style="display: block; font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.9rem; color: #50c878; background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">${escapeHtml(formula.plainText || formula.latex)}</code>
                         </div>
                     </div>
                 </div>
+                ` : ''}
 
                 <!-- Parameter Input/Output Cards -->
                 ${renderParameterIO(formula)}
@@ -2279,19 +2329,28 @@
         `;
     }
 
-    // Render references
+    // Render references - supports both formula.references (structured) and derivation.references (string array)
     function renderReferences(formula) {
-        if (!formula.references || formula.references.length === 0) return '';
+        // Check for structured references at top level
+        const structuredRefs = formula.references && formula.references.length > 0 ? formula.references : [];
+        // Check for string references in derivation
+        const derivationRefs = formula.derivation && formula.derivation.references && formula.derivation.references.length > 0 
+            ? formula.derivation.references : [];
+        
+        // No references at all
+        if (structuredRefs.length === 0 && derivationRefs.length === 0) return '';
+        
+        const totalCount = structuredRefs.length + derivationRefs.length;
 
         return `
             <div class="expandable-section">
                 <div class="expand-toggle">
-                    <span class="expand-title">References (${formula.references.length})</span>
+                    <span class="expand-title">References (${totalCount})</span>
                     <span class="expand-icon">▶</span>
                 </div>
                 <div class="expand-content">
                     <div class="references-list">
-                        ${formula.references.map(ref => {
+                        ${structuredRefs.map(ref => {
                             const title = escapeHtml(ref.title || 'Untitled');
                             const authors = escapeHtml(ref.authors || 'Unknown');
                             const year = ref.year || 'n.d.';
@@ -2314,6 +2373,23 @@
                                         </a>
                                     ` : ''}
                                     ${ref.description ? `<p style="margin-top: 0.5rem; font-size: 0.85rem; color: var(--text-muted);">${escapeHtml(ref.description)}</p>` : ''}
+                                </div>
+                            `;
+                        }).join('')}
+                        ${derivationRefs.map(refString => {
+                            // Parse string references like "Author (Year) 'Title' arXiv:XXXX"
+                            const arxivMatch = refString.match(/arXiv:([\w./\-]+)/i);
+                            const arxivId = arxivMatch ? arxivMatch[1] : null;
+                            return `
+                                <div class="reference-item">
+                                    <div class="reference-title">${escapeHtml(refString)}</div>
+                                    ${arxivId ? `
+                                        <a href="https://arxiv.org/abs/${escapeHtml(arxivId)}"
+                                           class="reference-link"
+                                           target="_blank">
+                                            View on arXiv →
+                                        </a>
+                                    ` : ''}
                                 </div>
                             `;
                         }).join('')}
