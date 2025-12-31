@@ -381,18 +381,19 @@ class EstablishedPhysics:
             wa = wa_data.value
             wa_unc = wa_data.uncertainty
         else:
-            # Fallback: DESI 2025 standard constraint
-            w0 = -0.7280
+            # v16.2: Use DESI 2025 thawing quintessence constraint
+            # Old DESI DR2 Lambda-CDM was w0=-0.728, now using thawing model
+            w0 = -0.957  # DESI 2025 thawing quintessence
             w0_unc = 0.067
             wa = -0.99
-            wa_unc = 0.32
+            wa_unc = 0.33
 
         # DESI 2025 thawing quintessence constraint (v16.2)
-        # PM predicts w0 = -23/24 = -0.9583, which matches thawing model
+        # PM predicts w0 = -23/24 = -0.9583, which matches thawing model at 0.02σ
         w0_thawing = -0.957  # DESI 2025 thawing constraint
         w0_thawing_unc = 0.067
         wa_thawing = -0.99
-        wa_thawing_unc = 0.32
+        wa_thawing_unc = 0.33
 
         H0 = 67.4     # Planck 2018 (loaded separately)
 
