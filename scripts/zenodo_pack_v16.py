@@ -50,8 +50,8 @@ SOURCE_DIR = Path(__file__).parent.parent  # Project root
 BUILD_DIR = SOURCE_DIR / f"Principia_Metaphysica_v{VERSION.replace('.', '_')}_{RELEASE_DATE}"
 ZIP_NAME = f"Principia_Metaphysica_v{VERSION.replace('.', '_')}_{RELEASE_DATE}.zip"
 
-# Directories to exclude entirely
-EXCLUDE_DIRS: Set[str] = {
+# Directories to exclude entirely (base set)
+EXCLUDE_DIRS_BASE: Set[str] = {
     '.git',
     '.github',
     '__pycache__',
@@ -64,10 +64,17 @@ EXCLUDE_DIRS: Set[str] = {
     '.claude',
     'zenodo_submission',  # Temporary submission folder
     'firebase-backup',
-    'simulations',  # Exclude Python simulations (large, separate Zenodo upload)
-    'reports',      # Generated reports
     'tests',        # Test files
 }
+
+# Additional excludes for website-only package
+EXCLUDE_DIRS_WEBSITE_ONLY: Set[str] = {
+    'simulations',  # Exclude Python simulations (large)
+    'reports',      # Generated reports
+}
+
+# Default to website-only
+EXCLUDE_DIRS: Set[str] = EXCLUDE_DIRS_BASE | EXCLUDE_DIRS_WEBSITE_ONLY
 
 # Files to exclude
 EXCLUDE_FILES: Set[str] = {
@@ -810,10 +817,20 @@ def run_clean_room_test():
 # ============================================================================
 
 def main():
+    global EXCLUDE_DIRS, ZIP_NAME, BUILD_DIR
+
     parser = argparse.ArgumentParser(description="Build Zenodo package for Principia Metaphysica")
     parser.add_argument("--test", action="store_true", help="Run clean-room verification after building")
     parser.add_argument("--no-zip", action="store_true", help="Build directory only, don't create ZIP")
+    parser.add_argument("--full", action="store_true", help="Include simulations (for full research package)")
+    parser.add_argument("--validate", action="store_true", help="Run 42-certificate validation before building")
     args = parser.parse_args()
+
+    # Adjust excludes based on package type
+    if args.full:
+        EXCLUDE_DIRS = EXCLUDE_DIRS_BASE  # Include simulations
+        ZIP_NAME = ZIP_NAME.replace('.zip', '_FULL.zip')
+        BUILD_DIR = Path(str(BUILD_DIR) + "_FULL")
 
     print("=" * 70)
     print(f" PRINCIPIA METAPHYSICA - ZENODO PACKAGE BUILDER v{VERSION}")
@@ -821,6 +838,42 @@ def main():
     print(f"\nSource: {SOURCE_DIR}")
     print(f"Build:  {BUILD_DIR.name}")
     print(f"Output: {ZIP_NAME}")
+    if args.full:
+        print(f"Mode:   FULL (includes simulations)")
+    else:
+        print(f"Mode:   Website-only")
+
+    # Optional: Run 42-certificate validation
+    if args.validate:
+        print("\n" + "=" * 70)
+        print(" PRE-BUILD VALIDATION: 42-Certificate Demon-Lock")
+        print("=" * 70)
+        try:
+            import subprocess
+            result = subprocess.run(
+                [sys.executable, str(SOURCE_DIR / "simulations" / "validation" / "CERTIFICATES_v16_2.py")],
+                capture_output=True,
+                text=True,
+                encoding='utf-8',
+                errors='replace',
+                cwd=SOURCE_DIR
+            )
+            # Check for DEMON-LOCK COMPLETE in output
+            if result.stdout and "DEMON-LOCK COMPLETE" in result.stdout:
+                print("  [PASS] 42/42 certificates LOCKED")
+            elif result.stdout and "LOCKED:" in result.stdout:
+                # Extract locked count
+                import re
+                match = re.search(r'LOCKED:\s*(\d+)/(\d+)', result.stdout)
+                if match:
+                    locked, total = match.groups()
+                    print(f"  [INFO] {locked}/{total} certificates locked")
+            else:
+                print("  [WARN] Could not parse validation output")
+                if result.stderr:
+                    print(f"  stderr: {result.stderr[:200]}")
+        except Exception as e:
+            print(f"  [ERROR] Could not run validation: {e}")
 
     # Step 1: Clean and prepare
     print("\n[1/6] Preparing build directory...")
