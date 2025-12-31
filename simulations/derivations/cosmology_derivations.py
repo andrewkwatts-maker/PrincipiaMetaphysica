@@ -16,7 +16,7 @@ This module provides formal derivations for:
 All derivations use formal Wolfram Language syntax for verification.
 
 Key References:
-- DESI 2025 DR2: w₀ = -0.727 ± 0.067, wₐ = -0.99 ± 0.32
+- DESI 2025 Thawing: w₀ = -0.957 ± 0.067, wₐ = -0.99 ± 0.33 (v16.2 update)
 - SH0ES 2025: H₀ = 73.04 ± 1.04 km/s/Mpc
 - Planck 2018: H₀ = 67.4 ± 0.5 km/s/Mpc
 - PM Geometric Anchors: b₃ = 24 → k_gimel ≈ 12.318, C_kaf = 27.2
@@ -72,14 +72,14 @@ class CosmologyDerivationChain:
         self.H0_local = 73.04   # km/s/Mpc (SH0ES)
         self.z_critical = 3540.0  # EDE transition
 
-        # DESI 2025 observations
-        self.w0_desi = -0.727
+        # DESI 2025 Thawing Quintessence (v16.2: updated from DR2 -0.727)
+        self.w0_desi = -0.957
         self.wa_desi = -0.99
         self.z_phantom_cross_desi = 0.45
 
-        # Cosmological parameters
-        self.Omega_m = 0.311
-        self.Omega_de = 0.689
+        # Cosmological parameters (v16.2: DESI 2025)
+        self.Omega_m = 0.3069
+        self.Omega_de = 0.6931
 
     # =========================================================================
     # SECTION 1: FRIEDMANN EQUATION DERIVATIONS

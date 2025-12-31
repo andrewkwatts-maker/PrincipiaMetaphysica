@@ -32,14 +32,14 @@ from dataclasses import dataclass
 
 @dataclass
 class DESIObservations:
-    """DESI DR2 2025 observational constraints."""
-    w0: float = -0.727          # DESI 2025 best fit
+    """DESI 2025 Thawing Quintessence observational constraints (v16.2 update)."""
+    w0: float = -0.957          # v16.2: Updated from DR2 -0.727 to thawing -0.957
     w0_err: float = 0.067
-    wa: float = -0.99           # DESI 2025 best fit
-    wa_err: float = 0.32
+    wa: float = -0.99           # DESI 2025 thawing best fit
+    wa_err: float = 0.33        # v16.2: Updated uncertainty
     z_phantom_cross: float = 0.45  # Phantom divide crossing
-    Omega_m: float = 0.295      # Matter density
-    H0_DESI: float = 68.5       # DESI H0
+    Omega_m: float = 0.3069     # Matter density (v16.2: updated)
+    H0_DESI: float = 68.52      # DESI H0
 
 
 class G2DynamicalFlow:

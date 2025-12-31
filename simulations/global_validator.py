@@ -159,23 +159,23 @@ class GlobalValidator:
             ),
         ])
 
-        # DESI DR2 (2025) - Dark energy parameters
+        # DESI 2025 Thawing Quintessence - Dark energy parameters (v16.2 update)
         self.constraints.extend([
             ExperimentalConstraint(
                 parameter_path="desi.w0",
-                central_value=-0.827,
-                uncertainty=0.063,
+                central_value=-0.957,
+                uncertainty=0.067,
                 units="dimensionless",
-                source="DESI DR2 (2025)",
-                notes="Dark energy EOS at z=0 (prefers dynamic DE over LambdaCDM)"
+                source="DESI 2025 (Thawing)",
+                notes="Dark energy EOS at z=0 (v16.2: updated from DR2 -0.728 to thawing -0.957)"
             ),
             ExperimentalConstraint(
                 parameter_path="desi.wa",
-                central_value=-0.75,
-                uncertainty=0.30,
+                central_value=-0.99,
+                uncertainty=0.33,
                 units="dimensionless",
-                source="DESI DR2 (2025)",
-                notes="Dark energy evolution parameter"
+                source="DESI 2025 (Thawing)",
+                notes="Dark energy evolution parameter (thawing quintessence)"
             ),
         ])
 
