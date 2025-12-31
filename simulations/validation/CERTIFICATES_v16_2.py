@@ -14,6 +14,10 @@ Each certificate derives a fundamental constant from the G2 manifold topology:
 A certificate is "LOCKED" when the derived value matches the experimental
 measurement within the required precision.
 
+PRECISION: This module uses Decimal-50 sterile constants to prevent float
+leakage. The Unity Seal (Certificate 42) requires 50-decimal precision to
+maintain topological stability across all 42 certificates.
+
 Author: Andrew Keith Watts
 License: MIT
 """
@@ -25,17 +29,40 @@ from typing import Tuple, Optional
 from enum import Enum
 
 # =============================================================================
-# CORE CONSTANTS
+# STERILE PRECISION IMPORTS (Decimal-50)
 # =============================================================================
 
-# The three fundamental constants of the Demon-Lock
-B3 = 24  # Betti number b3 (associative 3-cycles in G2)
-K_GIMEL = 12.3183098862  # Gimel constant from Leech lattice
-PHI = (1 + np.sqrt(5)) / 2  # Golden ratio φ ≈ 1.618033988749895
+# Import sterile constants from precision module
+# This ensures the Demon-Lock precision context is initialized
+try:
+    from simulations.base.precision import (
+        B3, K_GIMEL, PHI, PI, E,
+        B3_STERILE, K_GIMEL_STERILE, PHI_STERILE, PI_STERILE,
+        verify_precision,
+    )
+    PRECISION_INITIALIZED = True
+except ImportError:
+    # Fallback for standalone execution
+    from decimal import Decimal, getcontext, ROUND_HALF_EVEN
+    getcontext().prec = 50
+    getcontext().rounding = ROUND_HALF_EVEN
 
-# Derived constants
-PI = np.pi
-E = np.e
+    B3 = 24
+    K_GIMEL = 12.3183098862
+    PHI = (1 + np.sqrt(5)) / 2
+    PI = np.pi
+    E = np.e
+
+    # Sterile versions for high-precision calculations
+    B3_STERILE = Decimal('24')
+    K_GIMEL_STERILE = Decimal('12.31830988618379067153776752674502872406891929148091')
+    PHI_STERILE = Decimal('1.61803398874989484820458683436563811772030917980576')
+    PI_STERILE = Decimal('3.14159265358979323846264338327950288419716939937510')
+
+    def verify_precision():
+        return {"status": "FALLBACK", "precision": getcontext().prec}
+
+    PRECISION_INITIALIZED = False
 
 
 class CertificateStatus(Enum):
