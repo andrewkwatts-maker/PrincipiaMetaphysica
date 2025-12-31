@@ -283,7 +283,7 @@ class EvolutionEngineV16(SimulationBase):
                 "H(z) = H0_late * (1+z)^1.5 / (1 + ln(1+z)/b3)."
             ),
             section_id="5",
-            subsection_id="5.5"
+            subsection_id="5.7"
         )
 
     @property
@@ -608,7 +608,7 @@ class EvolutionEngineV16(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="5",
-            subsection_id="5.5",
+            subsection_id="5.7",
             title="Unified Hubble Evolution Engine (v16.2)",
             abstract=(
                 "We present a unified evolution engine that merges v14.2 log-scaling "

@@ -236,6 +236,11 @@ from simulations.v16.thermal.thermal_time_v16_0 import ThermalTimeV16
 from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulation
 from simulations.v16.cosmology.multi_sector_v16_0 import MultiSectorV16
 
+# v16.2 - Dark Energy Thawing and Evolution Engine (Three Bridges)
+from simulations.v16.cosmology.dark_energy_thawing_v16_2 import DarkEnergyEvolution
+from simulations.v16.cosmology.evolution_engine_v16_2 import EvolutionEngineV16
+from simulations.v16.fermion.octonionic_mixing_v16_2 import OctonionicMixing
+
 # Optional v16.1 cosmology simulations
 try:
     from simulations.v16.cosmology.cosmological_constant_v16_1 import CosmologicalConstantV16
@@ -488,9 +493,12 @@ class SimulationRunner:
             3: [
                 CosmologyIntroV16(),
                 DarkEnergyV16(),
+                DarkEnergyEvolution(),       # v16.2 - Thawing dark energy from G2 Ricci flow
+                EvolutionEngineV16(),        # v16.2 - H(z) evolution with Ricci flow
                 S8SuppressionV16(),
                 RicciFlowH0V16(),
                 NeutrinoMixingSimulation(),
+                OctonionicMixing(),          # v16.2 - CKM/PMNS from octonionic structure
                 MultiSectorV16(),
             ] + ([CosmologicalConstantV16()] if COSMOLOGICAL_CONSTANT_AVAILABLE else []),
             4: [
@@ -688,6 +696,20 @@ class SimulationRunner:
                 if self.verbose:
                     print(f"  [OK] All outputs validated")
                     print(f"  Computed: {len(result.outputs_computed)} parameters")
+
+                # Step 4: Collect section content from simulation (v16.2+)
+                if hasattr(sim, 'get_section_content') and callable(sim.get_section_content):
+                    try:
+                        section_content = sim.get_section_content()
+                        if section_content is not None:
+                            # Use subsection_id if present, else section_id
+                            section_key = section_content.subsection_id or section_content.section_id
+                            self.registry.add_section_content(section_key, section_content)
+                            if self.verbose:
+                                print(f"  [+] Section content registered: {section_key}")
+                    except Exception as sec_e:
+                        if self.verbose:
+                            print(f"  [!] Could not collect section content: {sec_e}")
 
         except Exception as e:
             result.status = "FAILED"

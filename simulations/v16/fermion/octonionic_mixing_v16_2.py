@@ -155,7 +155,7 @@ class OctonionicMixing(SimulationBase):
                 "golden angle theta_g = arctan(1/phi) sets the fundamental mixing scale."
             ),
             section_id="4",
-            subsection_id="4.3"
+            subsection_id="4.7"
         )
 
     @property
@@ -617,7 +617,7 @@ class OctonionicMixing(SimulationBase):
 
         return SectionContent(
             section_id="4",
-            subsection_id="4.3",
+            subsection_id="4.7",
             title="Unified CKM/PMNS from G2 Triality",
             abstract=(
                 "Both CKM and PMNS mixing matrices derive from the same octonionic "

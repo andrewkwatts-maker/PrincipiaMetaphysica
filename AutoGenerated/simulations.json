@@ -1,7 +1,7 @@
 {
-  "version": "16.2",
-  "generated": "2025-12-31T02:52:53.423757Z",
-  "total_scripts": 62,
+  "version": "16.0",
+  "generated": "2025-12-31T04:29:34.526812Z",
+  "total_scripts": 61,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -158,16 +158,16 @@
           "file": "dark_energy_thawing_v16_2.py",
           "path": "simulations/v16/cosmology/dark_energy_thawing_v16_2.py",
           "version": "16.2",
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Dark Energy Thawing from G2 Geometry",
+          "description": "Derives CPL parameters w0, wa from G2 geometry matching DESI 2025 thawing dark energy signature. The 'thawing' is Ricci flow relaxation of the G2 3-form torsional leakage.",
           "status": null
         },
         {
           "file": "evolution_engine_v16_2.py",
           "path": "simulations/v16/cosmology/evolution_engine_v16_2.py",
           "version": "16.2",
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Unified Hubble Evolution Engine",
+          "description": "Merges v14.2 log-scaling numerical success with v16.1 Ricci flow theoretical rigor into a proof-grade evolution model. H(z) = H0_late * (1+z)^1.5 / (1 + ln(1+z)/b3).",
           "status": null
         },
         {
@@ -280,8 +280,8 @@
           "file": "octonionic_mixing_v16_2.py",
           "path": "simulations/v16/fermion/octonionic_mixing_v16_2.py",
           "version": "16.2",
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Unified CKM/PMNS from G2 Triality",
+          "description": "Derives both CKM and PMNS mixing matrices from the same octonionic structure (G2 ~ Aut(O)). Quarks map to associative 3-form Phi (small mixing), leptons to co-associative 4-form *Phi (large mixing). The golden angle theta_g = arctan(1/phi) sets the fundamental mixing scale.",
           "status": null
         },
         {
@@ -420,16 +420,16 @@
           "path": "simulations/v16/higgs/higgs_brane_partition_v16_2.py",
           "version": "16.2",
           "title": "Higgs Mass via 4-Brane Partition (Demon-Lock)",
-          "description": "Derives Higgs mass from 26D bulk tension partitioned across 4 branes. Shows that 414 GeV (bulk) projects to 125 GeV (local) via k_gimel/pi scaling.",
-          "status": "PASS"
+          "description": "Derives Higgs mass from 26D bulk tension partitioned across 4 branes. Shows that 414 GeV (bulk) projects to 125 GeV (local) via k_gimel/π scaling.",
+          "status": null
         },
         {
           "file": "higgs_vev_derivation_v16_1.py",
           "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
           "version": "16.1",
           "title": null,
-          "description": "Higgs VEV Geometric Derivation v16.1",
-          "status": "GEOMETRIC"
+          "description": "Physics simulation module",
+          "status": null
         },
         {
           "file": "higgs_mass_v16_0.py",
