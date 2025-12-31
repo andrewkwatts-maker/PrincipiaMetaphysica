@@ -71,6 +71,15 @@
       "units": "dimensionless",
       "description": "S8 = sigma8 * sqrt(Omega_m/0.3)",
       "source": "Planck2018"
+    },
+    "eta_baryon": {
+      "value": 6.12e-10,
+      "uncertainty_plus": 0.04e-10,
+      "uncertainty_minus": 0.04e-10,
+      "units": "dimensionless",
+      "description": "Baryon-to-photon ratio from BBN (Planck 2018)",
+      "source": "Planck2018+BBN",
+      "note": "η = n_b/n_γ at CMB decoupling"
     }
   },
   "alternative_datasets": {

@@ -1255,7 +1255,7 @@
                     html += '<span class="params-label">Inputs:</span>';
                     html += '<div class="params-list">';
                     for (const param of formulaData.input_params) {
-                        html += `<code class="param-chip" data-param="${param}">${param}</code>`;
+                        html += `<code class="param-chip" data-param-id="${param}">${param}</code>`;
                     }
                     html += '</div></div>';
                 }
@@ -1265,7 +1265,7 @@
                     html += '<span class="params-label">Outputs:</span>';
                     html += '<div class="params-list">';
                     for (const param of formulaData.output_params) {
-                        html += `<code class="param-chip" data-param="${param}">${param}</code>`;
+                        html += `<code class="param-chip" data-param-id="${param}">${param}</code>`;
                     }
                     html += '</div></div>';
                 }
@@ -1874,7 +1874,71 @@
             .replace(/\^(\d{2,})/g, '^{$1}')
             // Combining overline for Dirac adjoint: Ψ̄ -> \bar{\Psi}
             .replace(/([A-Za-z\u0391-\u03C9])̄/g, '\\bar{$1}')
-            .replace(/([A-Za-z\u0391-\u03C9])̅/g, '\\bar{$1}');
+            .replace(/([A-Za-z\u0391-\u03C9])̅/g, '\\bar{$1}')
+            // Unicode superscript digits to LaTeX
+            .replace(/⁰/g, '^{0}')
+            .replace(/¹/g, '^{1}')
+            .replace(/²/g, '^{2}')
+            .replace(/³/g, '^{3}')
+            .replace(/⁴/g, '^{4}')
+            .replace(/⁵/g, '^{5}')
+            .replace(/⁶/g, '^{6}')
+            .replace(/⁷/g, '^{7}')
+            .replace(/⁸/g, '^{8}')
+            .replace(/⁹/g, '^{9}')
+            .replace(/⁺/g, '^{+}')
+            .replace(/⁻/g, '^{-}')
+            .replace(/⁽/g, '^{(')
+            .replace(/⁾/g, ')}')
+            // Unicode subscript digits to LaTeX
+            .replace(/₀/g, '_{0}')
+            .replace(/₁/g, '_{1}')
+            .replace(/₂/g, '_{2}')
+            .replace(/₃/g, '_{3}')
+            .replace(/₄/g, '_{4}')
+            .replace(/₅/g, '_{5}')
+            .replace(/₆/g, '_{6}')
+            .replace(/₇/g, '_{7}')
+            .replace(/₈/g, '_{8}')
+            .replace(/₉/g, '_{9}')
+            .replace(/₊/g, '_{+}')
+            .replace(/₋/g, '_{-}')
+            .replace(/₍/g, '_{(')
+            .replace(/₎/g, ')}')
+            // Common subscript letters
+            .replace(/ₐ/g, '_{a}')
+            .replace(/ₑ/g, '_{e}')
+            .replace(/ₕ/g, '_{h}')
+            .replace(/ᵢ/g, '_{i}')
+            .replace(/ⱼ/g, '_{j}')
+            .replace(/ₖ/g, '_{k}')
+            .replace(/ₗ/g, '_{l}')
+            .replace(/ₘ/g, '_{m}')
+            .replace(/ₙ/g, '_{n}')
+            .replace(/ₒ/g, '_{o}')
+            .replace(/ₚ/g, '_{p}')
+            .replace(/ᵣ/g, '_{r}')
+            .replace(/ₛ/g, '_{s}')
+            .replace(/ₜ/g, '_{t}')
+            .replace(/ᵤ/g, '_{u}')
+            .replace(/ᵥ/g, '_{v}')
+            .replace(/ₓ/g, '_{x}')
+            // Merge adjacent braces: ^{5}^{(} -> ^{5(}
+            .replace(/\}\^?\{/g, '')
+            .replace(/\}_?\{/g, '')
+            // Fix double backslashes from newlines in math mode
+            .replace(/\s*\\\\\s*/g, ' \\quad ')
+            // Common gauge group patterns: SU(3)C -> SU(3)_C
+            .replace(/SU\((\d)\)([CLRYW])/g, 'SU($1)_{$2}')
+            .replace(/U\(1\)([CLRYW])/g, 'U(1)_{$1}')
+            .replace(/SO\((\d+)\)([CLRYW])/g, 'SO($1)_{$2}')
+            .replace(/Spin\((\d+),(\d+)\)([CLRYW])?/g, (m, a, b, c) => c ? `\\text{Spin}($1,$2)_{${c}}` : `\\text{Spin}(${a},${b})`)
+            // Direct product notation
+            .replace(/⊕/g, '\\oplus ')
+            .replace(/⊗/g, '\\otimes ')
+            .replace(/⊖/g, '\\ominus ')
+            // Fix common patterns like 8s, 8c, 8v -> 8_s, 8_c, 8_v (spinor/conjugate/vector)
+            .replace(/(\d+)([scv])(?=\s|\)|,|\}|$)/g, '$1_{$2}');
     }
 
     /**
