@@ -91,7 +91,7 @@ Total derivation steps: 35
   Expected: M_GUT ≈ 2.49×10¹⁸ GeV
   PM Value: 2.1e+16
   Verify: https://www.wolframalpha.com/input/?i=N%5B1.22%20%2A%2010%5E19%20/%20Sqrt%5B24%5D%2C%203%5D%20GeV
-  Notes: Dimensional reduction from 11D: M_GUT = M_Planck/√(b₃) with loop corrections
+  Notes: Dimensional reduction (26D→13D→4D): M_GUT = M_Planck/√(b₃) with loop corrections
 
 [GUT-04] Refined GUT scale with threshold corrections
   Query: N[2.49 * 10^18 / Exp[Log[24]/4], 3] GeV
