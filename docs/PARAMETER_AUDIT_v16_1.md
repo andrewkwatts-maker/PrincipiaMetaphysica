@@ -2,7 +2,7 @@
 **Principia Metaphysica Framework Parameter Provenance Audit**
 
 **Date:** 2025-12-29
-**Auditor:** Claude Opus 4.5
+**Auditor:** Automated Audit
 **Scope:** All parameters in h:\Github\PrincipiaMetaphysica\simulations\v16\
 **Reference:** h:\Github\PrincipiaMetaphysica\simulations\base\established.py
 

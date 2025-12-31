@@ -379,4 +379,4 @@ For detailed API documentation, see:
 ---
 
 **Last Updated:** 2025-12-28
-**Migration Author:** Claude (Opus 4.5)
+**Migration Author:** Andrew Watts

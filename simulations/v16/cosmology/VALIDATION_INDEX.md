@@ -271,4 +271,3 @@ For questions about this validation:
 ---
 
 *Index compiled from validation analysis (2025-12-29)*
-*Validated by Claude Code (Sonnet 4.5)*

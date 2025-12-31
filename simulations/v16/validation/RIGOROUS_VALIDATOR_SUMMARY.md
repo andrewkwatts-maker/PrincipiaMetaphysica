@@ -203,5 +203,5 @@ The rigorous validator v16.1 successfully implements comprehensive validation of
 
 ---
 *Generated: 2025-12-29*
-*Author: Claude Opus 4.5 (via Claude Code)*
+*Author: Andrew Watts*
 *Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.*

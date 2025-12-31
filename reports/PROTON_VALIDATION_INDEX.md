@@ -285,7 +285,7 @@ print(f"Monte Carlo Results (n = {n_samples}):")
 
 ## Validator Information
 
-**Validator:** Claude Code
+**Validator:** Automated Validation
 **Date:** December 28, 2025
 **Framework Version:** Principia Metaphysica v14.1
 **Simulation:** proton_decay_geometric_v13_0.py (v13.0)

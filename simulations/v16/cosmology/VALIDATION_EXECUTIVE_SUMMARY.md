@@ -140,4 +140,4 @@ The `Vol^3` formulation has fundamental mathematical errors.
 
 ---
 
-*Validated by Claude Code (Sonnet 4.5) on 2025-12-29*
+*Validated on 2025-12-29*
