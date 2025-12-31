@@ -244,6 +244,7 @@ class PMParameterComponent extends HTMLElement {
 
     renderTooltip(param) {
         const statusColor = this.getStatusColor(param);
+        const value = this.formatValue(param);
 
         return `
             <div class="pm-tooltip">
@@ -251,17 +252,31 @@ class PMParameterComponent extends HTMLElement {
                     <strong>${param.title || param.id}</strong>
                     ${param.symbol ? `<span class="pm-tooltip-symbol">${param.symbol}</span>` : ''}
                 </div>
+                ${param.classification || param.category ? `
+                    <div class="pm-tooltip-category">
+                        <span class="pm-badge ${(param.classification || param.category).toLowerCase()}">${param.classification || param.category}</span>
+                    </div>
+                ` : ''}
                 ${param.shortDescription ? `<div class="pm-tooltip-desc">${param.shortDescription}</div>` : ''}
+                <div class="pm-tooltip-value">
+                    <em>Value:</em> ${value}${param.unit ? ` ${param.unit}` : ''}
+                </div>
                 ${param.formula ? `<div class="pm-tooltip-formula"><em>Formula:</em> ${param.formulaHtml || param.formula}</div>` : ''}
+                ${param.derivation ? `<div class="pm-tooltip-deriv"><em>Derivation:</em> ${param.derivation}</div>` : ''}
                 ${param.experimentalValue !== null && param.experimentalValue !== undefined ? `
                     <div class="pm-tooltip-exp">
-                        <em>Exp:</em> ${param.experimentalValue}${param.experimentalUncertainty ? ` ± ${param.experimentalUncertainty}` : ''}
-                        ${param.experimentalSource ? `(${param.experimentalSource})` : ''}
+                        <em>Experimental:</em> ${param.experimentalValue}${param.experimentalUncertainty ? ` ± ${param.experimentalUncertainty}` : ''}${param.unit ? ` ${param.unit}` : ''}
+                        ${param.experimentalSource ? `<br><small>(${param.experimentalSource})</small>` : ''}
                     </div>
                 ` : ''}
                 ${param.agreementSigma !== null && param.agreementSigma !== undefined ? `
                     <div class="pm-tooltip-sigma" style="color: ${statusColor}">
-                        ${param.agreementSigma.toFixed(2)}σ from experiment
+                        <strong>${param.agreementSigma.toFixed(2)}σ</strong> from experiment
+                    </div>
+                ` : ''}
+                ${param.simulationFile ? `
+                    <div class="pm-tooltip-source">
+                        <em>Source:</em> <code>${param.simulationFile}</code>
                     </div>
                 ` : ''}
                 ${param.testable ? `

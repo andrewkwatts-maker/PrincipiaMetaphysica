@@ -153,6 +153,7 @@ class G2GeometryV16(SimulationBase):
             "topology.b3",
             "topology.chi_eff",
             "topology.n_gen",
+            "topology.k_gimel",
             "topology.K_MATCHING",
             "topology.d_over_R"
         ]
@@ -232,6 +233,7 @@ class G2GeometryV16(SimulationBase):
             "topology.b3": self._b3,
             "topology.chi_eff": self._chi_eff,
             "topology.n_gen": n_gen,
+            "topology.k_gimel": self._k_gimel,
             "topology.K_MATCHING": K_matching,
             "topology.d_over_R": d_over_R,
             # Metadata for validation

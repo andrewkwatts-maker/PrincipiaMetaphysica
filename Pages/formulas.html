@@ -2092,19 +2092,10 @@
         // Only show if formula has meaningful description
         if (!formula.description || formula.description.length < 20) return '';
 
-        const category = formula.category ? `<strong>Category:</strong> ${escapeHtml(formula.category)}` : '';
-        const section = formula.section ? `<strong>Section:</strong> ${escapeHtml(formula.section)}` : '';
-
         return `
             <div class="formula-info">
                 <div class="formula-title">About this formula</div>
                 <div class="formula-meaning">${escapeHtml(formula.description)}</div>
-                ${category || section ? `
-                    <div class="formula-info-grid">
-                        ${category ? `<div class="formula-info-item"><h5>Category</h5><p>${escapeHtml(formula.category)}</p></div>` : ''}
-                        ${section ? `<div class="formula-info-item"><h5>Section</h5><p>${escapeHtml(formula.section)}</p></div>` : ''}
-                    </div>
-                ` : ''}
             </div>
         `;
     }
@@ -2142,19 +2133,10 @@
                     ${renderFormulaInfoPanel(formula)}
                 </div>
 
-                <!-- Expandable LaTeX Code Section - Only show if there's content -->
+                <!-- Plain text formula (visible below main formula) -->
                 ${(formula.plainText || formula.plain_text || formula.latex) ? `
-                <div class="expandable-section" style="margin: 1rem 0;">
-                    <div class="expand-toggle" style="cursor: pointer; user-select: none;">
-                        <span class="expand-title">View LaTeX Code</span>
-                        <span class="expand-icon">▶</span>
-                    </div>
-                    <div class="expand-content" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease;">
-                        <div style="background: rgba(17, 20, 38, 0.6); padding: 1rem; border-radius: 8px; margin-top: 0.5rem; border: 1px solid rgba(139, 127, 255, 0.2);">
-                            <div style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px;">Plain Text Formula</div>
-                            <code style="display: block; font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.9rem; color: #50c878; background: rgba(0, 0, 0, 0.3); padding: 0.75rem; border-radius: 6px; overflow-x: auto; white-space: pre-wrap; word-break: break-all;">${escapeHtml(formula.plainText || formula.plain_text || formula.latex)}</code>
-                        </div>
-                    </div>
+                <div class="plain-text-formula" style="margin: 0.5rem 0 1rem 0; padding: 0.75rem; background: rgba(17, 20, 38, 0.5); border-radius: 6px; border: 1px solid rgba(139, 127, 255, 0.15);">
+                    <code style="display: block; font-family: 'Fira Code', 'Courier New', monospace; font-size: 0.8rem; color: #a0a0a0; white-space: pre-wrap; word-break: break-all;">${escapeHtml(formula.plainText || formula.plain_text || formula.latex)}</code>
                 </div>
                 ` : ''}
 
@@ -2163,9 +2145,6 @@
 
                 <!-- Details Grid -->
                 ${renderDetails(formula)}
-
-                <!-- Terms/Parameters -->
-                ${renderTerms(formula)}
 
                 <!-- Derivation -->
                 ${renderDerivation(formula)}
@@ -2189,10 +2168,7 @@
     function renderDetails(formula) {
         const details = [];
 
-        if (formula.category) {
-            details.push({ label: 'Category', value: formula.category });
-        }
-
+        // Category is already shown in header badge, no need to duplicate
         if (formula.section) {
             details.push({ label: 'Section', value: formula.section });
         }
