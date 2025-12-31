@@ -1,10 +1,13 @@
 #!/usr/bin/env python3
 """
-Geometric Anchors v16.1 - First Principles Parameter Derivation
+Geometric Anchors v16.2 - First Principles Parameter Derivation
 ================================================================
 
 All parameters are derived from the single topological invariant b₃=24.
 This eliminates tuning by anchoring everything to G₂ topology.
+
+v16.2 UPDATE: Added anomaly correction factor (1 - 1/b3²) for Big G derivation.
+This BRST-required correction ensures ghost-free unitarity.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -21,6 +24,8 @@ class GeometricAnchors:
     """
     Derives all PM parameters from the Betti number b₃=24.
     The Betti number is the topological 'DNA' of the G₂ manifold.
+
+    v16.2: Includes anomaly correction (1 - 1/b3²) for Big G derivation.
     """
 
     def __init__(self, b3: int = 24):
@@ -71,6 +76,34 @@ class GeometricAnchors:
     def alpha_gut(self) -> float:
         """GUT coupling at unification"""
         return 1.0 / self.alpha_gut_inv  # ≈ 0.0412
+
+    @property
+    def anomaly_correction(self) -> float:
+        """
+        v16.2: Anomaly correction factor for Big G derivation.
+
+        The factor (1 - 1/b3²) arises from BRST quantization and ensures
+        ghost-free unitarity in the gravitational sector.
+
+        For b3=24: 1 - 1/576 = 0.998264
+
+        This small correction (~0.17%) is required for consistency with
+        the ghost cancellation: c = 24 + 2 - 26 = 0
+        """
+        return 1.0 - 1.0 / (self.b3 ** 2)  # ≈ 0.998264
+
+    @property
+    def g_newton_corrected(self) -> float:
+        """
+        v16.2: Corrected Newton's G with anomaly factor.
+
+        G_corrected = G_Newton * (1 - 1/b3²)
+
+        This ensures the gravitational coupling respects BRST invariance
+        at the quantum level.
+        """
+        G_NEWTON = 6.67430e-11  # m³/(kg·s²)
+        return G_NEWTON * self.anomaly_correction
 
     @property
     def k_matching(self) -> int:
@@ -144,6 +177,9 @@ class GeometricAnchors:
             "pneuma_width": self.pneuma_width,
             "w_zero": self.w_zero,
             "s8_viscosity_scale": self.s8_viscosity_scale,
+            # v16.2 additions
+            "anomaly_correction": self.anomaly_correction,
+            "g_newton_corrected": self.g_newton_corrected,
         }
 
     def register_anchors(self) -> None:

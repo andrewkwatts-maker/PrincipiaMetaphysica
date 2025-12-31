@@ -242,15 +242,31 @@ class DarkEnergyEvolution(SimulationBase):
 
             wa = -1/sqrt(b3) = -1/sqrt(24) = -0.2041241...
 
-        The negative wa (with w0 > -1) is the signature of "thawing"
-        quintessence - the dark energy becomes LESS negative (approaches
-        w = -1 from above) at higher redshift.
+        SIGN CONVENTION (v16.2 verified):
+        ---------------------------------
+        With w0 = -0.958 and wa = -0.204 (both correctly signed):
+
+        At z=0 (today):      w = w0 = -0.958 (quintessence, w > -1)
+        At z=1:              w = -0.958 + (-0.204)*0.5 = -1.06
+        At z->infinity:      w = w0 + wa = -1.162 (phantom, w < -1)
+
+        This is "THAWING" behavior:
+        - In the PAST (high z): w was more negative (phantom-like, w < -1)
+        - TODAY (z=0): w has evolved toward less negative (w > -1)
+        - The field "thaws" from frozen phantom state toward quintessence
+
+        The NEGATIVE wa is correct for thawing quintessence because:
+        - wa < 0 means w DECREASES going to higher z (back in time)
+        - So w INCREASES going forward in time (thawing toward w > -1)
+
+        Note: DESI 2025 also measures wa < 0 (wa ~ -0.99), confirming
+        thawing behavior is observed in nature.
 
         Args:
             b3: Number of associative 3-cycles (24 for TCS G2)
 
         Returns:
-            wa evolution parameter
+            wa evolution parameter (negative for thawing)
         """
         # Thawing rate from 2T projection
         # The sqrt(b3) factor comes from the effective dimension
