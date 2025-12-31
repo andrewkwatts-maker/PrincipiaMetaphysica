@@ -1,7 +1,7 @@
 {
   "version": "16.2",
   "generated": "2025-12-31T00:22:28.576402Z",
-  "total_scripts": 160,
+  "total_scripts": 161,
   "categories": {
     "Ad-Hoc / Experimental": {
       "title": "Ad-Hoc / Experimental",
@@ -1309,6 +1309,14 @@
       "sectionId": "4.4",
       "scripts": [
         {
+          "file": "higgs_brane_partition_v16_2.py",
+          "path": "simulations/v16/higgs/higgs_brane_partition_v16_2.py",
+          "version": "16.2",
+          "title": "Higgs Mass via 4-Brane Partition (Demon-Lock)",
+          "description": "Derives Higgs mass from 26D bulk tension partitioned across 4 branes. Shows that 414 GeV (bulk) projects to 125 GeV (local) via k_gimel/pi scaling.",
+          "status": "PASS"
+        },
+        {
           "file": "higgs_vev_derivation_v16_1.py",
           "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
           "version": "16.1",
@@ -1325,7 +1333,7 @@
           "status": null
         }
       ],
-      "count": 2
+      "count": 3
     },
     "v16/introduction": {
       "title": "Introduction",

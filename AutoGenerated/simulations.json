@@ -1,7 +1,7 @@
 {
-  "version": "16.0",
+  "version": "16.2",
   "generated": "2025-12-31T02:52:53.423757Z",
-  "total_scripts": 61,
+  "total_scripts": 62,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -419,17 +419,17 @@
           "file": "higgs_brane_partition_v16_2.py",
           "path": "simulations/v16/higgs/higgs_brane_partition_v16_2.py",
           "version": "16.2",
-          "title": null,
-          "description": "Physics simulation module",
-          "status": null
+          "title": "Higgs Mass via 4-Brane Partition (Demon-Lock)",
+          "description": "Derives Higgs mass from 26D bulk tension partitioned across 4 branes. Shows that 414 GeV (bulk) projects to 125 GeV (local) via k_gimel/pi scaling.",
+          "status": "PASS"
         },
         {
           "file": "higgs_vev_derivation_v16_1.py",
           "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
           "version": "16.1",
           "title": null,
-          "description": "Physics simulation module",
-          "status": null
+          "description": "Higgs VEV Geometric Derivation v16.1",
+          "status": "GEOMETRIC"
         },
         {
           "file": "higgs_mass_v16_0.py",
