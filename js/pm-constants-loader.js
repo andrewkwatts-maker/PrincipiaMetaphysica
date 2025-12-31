@@ -174,6 +174,19 @@
             // ================================================================
             'parameters.gauge.m_ps': 'simulations.breaking_chain.m_ps',
             'parameters.gauge.M_GUT': 'gauge.M_GUT',
+            'parameters.gauge.ALPHA_GUT_INV': 'gauge.ALPHA_GUT_INV',
+            'parameters.gauge.alpha_gut_inv': 'gauge.ALPHA_GUT_INV',
+
+            // ================================================================
+            // Topology parameters - extended aliases
+            // ================================================================
+            'parameters.topology.n_gen': 'topology.n_gen',
+
+            // ================================================================
+            // Proton decay branching ratios
+            // ================================================================
+            'parameters.proton_decay.BR_epi0': '_hardcoded.BR_epi0',
+            'proton_decay.BR_epi0': '_hardcoded.BR_epi0',
 
             // ================================================================
             // VEV / Higgs / Electroweak
@@ -187,6 +200,7 @@
         _hardcodedValues: {
             'kk_m1_TeV': '5.0 TeV',
             'kk_hl_lhc': '5σ discovery potential',
+            'BR_epi0': 0.45,
         },
 
         /**
