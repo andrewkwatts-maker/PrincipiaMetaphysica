@@ -818,5 +818,54 @@ def main():
     return guardian
 
 
+# =============================================================================
+# Self-Validation Assertions (catch silent failures at import time)
+# =============================================================================
+
+# Test with correct values (b3=24, D=26)
+_guardian_correct = UnitaryFilter(b3_val=24, dim_total=26)
+assert _guardian_correct.central_charge == 0, \
+    f"UnitaryFilter: central charge should be 0 for b3=24, got {_guardian_correct.central_charge}"
+_is_stable, _message = _guardian_correct.check_stability()
+assert _is_stable is True, f"UnitaryFilter: should be stable for b3=24, got: {_message}"
+assert "GHOST_FREE" in _message, f"UnitaryFilter: message should contain GHOST_FREE, got: {_message}"
+
+# Test validation method doesn't raise for correct values
+try:
+    _guardian_correct.validate_before_simulation()
+except UnitaryFilterError:
+    raise AssertionError("UnitaryFilter: should not raise for b3=24")
+
+# Test with wrong b3=23 (should fail)
+_guardian_wrong_low = UnitaryFilter(b3_val=23, dim_total=26)
+assert _guardian_wrong_low.central_charge == -1, \
+    f"UnitaryFilter: central charge should be -1 for b3=23, got {_guardian_wrong_low.central_charge}"
+_is_stable_23, _message_23 = _guardian_wrong_low.check_stability()
+assert _is_stable_23 is False, "UnitaryFilter: b3=23 should be unstable"
+assert "ANOMALY" in _message_23, f"UnitaryFilter: message should contain ANOMALY, got: {_message_23}"
+
+# Test with wrong b3=25 (should fail)
+_guardian_wrong_high = UnitaryFilter(b3_val=25, dim_total=26)
+assert _guardian_wrong_high.central_charge == 1, \
+    f"UnitaryFilter: central charge should be 1 for b3=25, got {_guardian_wrong_high.central_charge}"
+_is_stable_25, _ = _guardian_wrong_high.check_stability()
+assert _is_stable_25 is False, "UnitaryFilter: b3=25 should be unstable"
+
+# Test that wrong values raise UnitaryFilterError
+try:
+    _guardian_wrong_low.validate_before_simulation()
+    raise AssertionError("UnitaryFilter: should raise for b3=23")
+except UnitaryFilterError:
+    pass  # Expected
+
+# Test DIM constants
+assert UnitaryFilter.DIM_SP2R == 2, "UnitaryFilter: DIM_SP2R should be 2"
+assert UnitaryFilter.DIM_GHOST == 26, "UnitaryFilter: DIM_GHOST should be 26"
+
+# Cleanup
+del _guardian_correct, _guardian_wrong_low, _guardian_wrong_high
+del _is_stable, _message, _is_stable_23, _message_23, _is_stable_25
+
+
 if __name__ == "__main__":
     main()

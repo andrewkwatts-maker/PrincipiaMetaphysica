@@ -1238,5 +1238,67 @@ def run_octonionic_mixing(verbose: bool = True) -> Dict[str, Any]:
     return results
 
 
+# =============================================================================
+# Self-Validation Assertions (catch silent failures at import time)
+# =============================================================================
+
+# Create validation instance
+_validation_instance = OctonionicMixing()
+
+# Validate metadata
+assert _validation_instance.metadata is not None, "OctonionicMixing: metadata is None"
+assert _validation_instance.metadata.id == "octonionic_mixing_v16_2", \
+    f"OctonionicMixing: unexpected id {_validation_instance.metadata.id}"
+assert _validation_instance.metadata.version == "16.2", \
+    f"OctonionicMixing: unexpected version {_validation_instance.metadata.version}"
+
+# Validate formulas exist
+assert len(_validation_instance.get_formulas()) >= 5, \
+    f"OctonionicMixing: expected at least 5 formulas, got {len(_validation_instance.get_formulas())}"
+
+# Validate golden ratio and angle are correct
+assert abs(_validation_instance.PHI - 1.618033988749895) < 1e-10, \
+    f"OctonionicMixing: golden ratio incorrect {_validation_instance.PHI}"
+_expected_theta_g = np.arctan(1 / _validation_instance.PHI)
+assert abs(_validation_instance.THETA_G - _expected_theta_g) < 1e-10, \
+    f"OctonionicMixing: golden angle incorrect {_validation_instance.THETA_G}"
+assert abs(np.degrees(_validation_instance.THETA_G) - 31.72) < 0.1, \
+    f"OctonionicMixing: golden angle should be ~31.72 deg, got {np.degrees(_validation_instance.THETA_G)}"
+
+# Test key CKM calculation (with known inputs)
+_validation_instance._b2 = 4
+_validation_instance._b3 = 24
+_validation_instance._chi_eff = 144
+_validation_instance._n_gen = 3
+_validation_instance._orientation_sum = 12
+_validation_instance._epsilon_fn = 0.22313
+
+# Test CKM calculations
+_ckm = _validation_instance.get_ckm_matrix()
+assert not np.isnan(_ckm["ckm.V_us_triality"]), "OctonionicMixing: V_us is NaN"
+assert not np.isinf(_ckm["ckm.V_us_triality"]), "OctonionicMixing: V_us is Inf"
+assert 0.15 < _ckm["ckm.V_us_triality"] < 0.30, \
+    f"OctonionicMixing: V_us out of range {_ckm['ckm.V_us_triality']}"
+assert 0.02 < _ckm["ckm.V_cb_triality"] < 0.06, \
+    f"OctonionicMixing: V_cb out of range {_ckm['ckm.V_cb_triality']}"
+assert 0.002 < _ckm["ckm.V_ub_triality"] < 0.006, \
+    f"OctonionicMixing: V_ub out of range {_ckm['ckm.V_ub_triality']}"
+
+# Test PMNS calculations
+_pmns = _validation_instance.get_pmns_matrix()
+assert not np.isnan(_pmns["pmns.theta_12_triality"]), "OctonionicMixing: theta_12 is NaN"
+assert not np.isnan(_pmns["pmns.theta_23_triality"]), "OctonionicMixing: theta_23 is NaN"
+assert not np.isnan(_pmns["pmns.theta_13_triality"]), "OctonionicMixing: theta_13 is NaN"
+assert 30 < _pmns["pmns.theta_12_triality"] < 38, \
+    f"OctonionicMixing: theta_12 out of range {_pmns['pmns.theta_12_triality']}"
+assert 45 < _pmns["pmns.theta_23_triality"] < 55, \
+    f"OctonionicMixing: theta_23 out of range {_pmns['pmns.theta_23_triality']}"
+assert 5 < _pmns["pmns.theta_13_triality"] < 12, \
+    f"OctonionicMixing: theta_13 out of range {_pmns['pmns.theta_13_triality']}"
+
+# Cleanup validation variables
+del _validation_instance, _expected_theta_g, _ckm, _pmns
+
+
 if __name__ == "__main__":
     run_octonionic_mixing(verbose=True)

@@ -1229,6 +1229,55 @@ def run_symplectic_descent_validation(verbose: bool = True) -> Dict[str, Any]:
     return results
 
 
+# =============================================================================
+# Self-Validation Assertions (catch silent failures at import time)
+# =============================================================================
+
+# Create validation instance
+_validation_instance = SymplecticDescentValidator()
+
+# Validate metadata
+assert _validation_instance.metadata is not None, "SymplecticDescent: metadata is None"
+assert _validation_instance.metadata.id == "symplectic_descent_validator_v16_2", \
+    f"SymplecticDescent: unexpected id {_validation_instance.metadata.id}"
+assert _validation_instance.metadata.version == "16.2", \
+    f"SymplecticDescent: unexpected version {_validation_instance.metadata.version}"
+
+# Validate formulas exist
+assert len(_validation_instance.get_formulas()) >= 7, \
+    f"SymplecticDescent: expected at least 7 formulas, got {len(_validation_instance.get_formulas())}"
+
+# Validate critical dimension constant
+assert _validation_instance.D_CRITICAL == 26, \
+    f"SymplecticDescent: D_CRITICAL should be 26, got {_validation_instance.D_CRITICAL}"
+assert _validation_instance.H_GHOST == 2, \
+    f"SymplecticDescent: H_GHOST should be 2, got {_validation_instance.H_GHOST}"
+
+# Test ghost central charge calculation
+_ghost_c = _validation_instance._compute_ghost_central_charge(2)
+assert _ghost_c == -26, f"SymplecticDescent: ghost central charge should be -26, got {_ghost_c}"
+
+# Test signature uniqueness verification
+_is_unique, _valid_count = _validation_instance.verify_signature_uniqueness()
+assert _is_unique is True, "SymplecticDescent: (24,2) should be unique but uniqueness check failed"
+assert _valid_count == 1, f"SymplecticDescent: expected 1 valid signature, got {_valid_count}"
+
+# Test Weyl anomaly cancellation for (24,2)
+_weyl_cancelled = _validation_instance.check_weyl_anomaly_cancellation(24, 2, -26)
+assert _weyl_cancelled is True, "SymplecticDescent: Weyl anomaly should cancel for (24,2)"
+
+# Test that (25,1) fails
+_weyl_25_1 = _validation_instance.check_weyl_anomaly_cancellation(25, 1, -26)
+assert _weyl_25_1 is True, "SymplecticDescent: c=0 for any p+q=26"
+
+# Test dimensional descent with b3=24
+_descent_ok = _validation_instance._verify_dimensional_descent(24)
+assert _descent_ok is True, "SymplecticDescent: dimensional descent 26D->13D should verify"
+
+# Cleanup
+del _validation_instance, _ghost_c, _is_unique, _valid_count, _weyl_cancelled, _weyl_25_1, _descent_ok
+
+
 if __name__ == "__main__":
     import io
     sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
