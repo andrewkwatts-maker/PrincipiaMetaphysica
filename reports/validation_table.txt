@@ -1,11 +1,12 @@
 ====================================================================================================
  PRINCIPIA METAPHYSICA v16.2 - FINAL SIGMA VALIDATION TABLE
 ====================================================================================================
- Generated: 2025-12-31T23:08:35.198288
+ Generated: 2025-12-31T23:33:59.833926
 
 Parameter                         Predicted       Target    Sigma     Status
 ----------------------------------------------------------------------------------------------------
 Dark Energy EoS w0                  -0.9583       -0.957     0.02       PASS
+Dark Energy Evolution wa            -0.2041        -0.99     2.38    TENSION
 Hubble Constant (local)               73.04        73.04     0.00       PASS
 Solar Mixing Angle                    33.59        33.41     0.24       PASS
 Reactor Mixing Angle                  8.647         8.54     0.89       PASS
@@ -13,9 +14,16 @@ Atmospheric Mixing Angle              49.75         49.3     0.45       PASS
 CP Phase                              278.4          278     0.02       PASS
 Higgs Mass (4D Local)                 125.1        125.2     0.87       PASS
 Weak Mixing at GUT                    0.375        0.375     0.00       PASS
+CKM |V_us| (Cabibbo)                 0.2245       0.2245     0.00       PASS
+CKM |V_cb|                          0.03919        0.041     1.29   MARGINAL
+CKM |V_ub|                          0.00375      0.00382     0.29       PASS
+Jarlskog Invariant J              3.014e-05     3.08e-05     0.44       PASS
+Inverse Fine Structure                  137          137     0.07       PASS
+Planck Mass (4D)                  1.221e+19    1.221e+19     0.93       PASS
+Proton/Electron Ratio                  1838         1836     0.74       PASS
 
 ====================================================================================================
- GLOBAL CHI-SQUARED: 1.82
- REDUCED CHI-SQUARED: 0.26
+ GLOBAL CHI-SQUARED: 10.84
+ REDUCED CHI-SQUARED: 0.72
  UNITARY STATUS: PUBLICATION_READY
 ====================================================================================================

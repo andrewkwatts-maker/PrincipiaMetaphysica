@@ -124,6 +124,32 @@
       "description": "Weak mixing angle"
     }
   },
+  "ckm": {
+    "V_us": {
+      "value": 0.2245,
+      "uncertainty": 0.0008,
+      "units": "dimensionless",
+      "description": "CKM |V_us| Cabibbo angle"
+    },
+    "V_cb": {
+      "value": 0.0410,
+      "uncertainty": 0.0014,
+      "units": "dimensionless",
+      "description": "CKM |V_cb|"
+    },
+    "V_ub": {
+      "value": 0.00382,
+      "uncertainty": 0.00024,
+      "units": "dimensionless",
+      "description": "CKM |V_ub|"
+    },
+    "jarlskog": {
+      "value": 3.08e-5,
+      "uncertainty": 0.15e-5,
+      "units": "dimensionless",
+      "description": "Jarlskog invariant J"
+    }
+  },
   "baryons": {
     "m_proton": {
       "value": 0.938272088,

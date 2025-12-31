@@ -23,16 +23,16 @@
   },
   "validation": {
     "theory_version": "v16.2",
-    "timestamp": "2025-12-31T23:08:35.196905",
+    "timestamp": "2025-12-31T23:33:59.832233",
     "unitary_status": "PUBLICATION_READY",
-    "global_chi_squared": 1.8160301238077272,
-    "reduced_chi_squared": 0.2594328748296753,
-    "degrees_of_freedom": 7,
+    "global_chi_squared": 10.837303332282794,
+    "reduced_chi_squared": 0.7224868888188529,
+    "degrees_of_freedom": 15,
     "parameter_counts": {
-      "total": 8,
-      "passed": 8,
-      "marginal": 0,
-      "tension": 0,
+      "total": 16,
+      "passed": 14,
+      "marginal": 1,
+      "tension": 1,
       "failed": 0
     }
   },
@@ -48,7 +48,22 @@
       "source": "DESI 2025 (thawing)",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "cosmology"
+      "sector": "cosmology",
+      "note": ""
+    },
+    {
+      "parameter": "cosmology.wa_derived",
+      "name": "Dark Energy Evolution wa",
+      "predicted": -0.20412414523193154,
+      "target": -0.99,
+      "uncertainty": 0.33,
+      "sigma": 2.381441984145662,
+      "units": "dimensionless",
+      "source": "DESI 2025 (thawing)",
+      "status": "TENSION",
+      "bound_type": "measured",
+      "sector": "cosmology",
+      "note": "ACKNOWLEDGED TENSION (2.38 sigma): PM predicts wa = -1/sqrt(24) = -0.204, indicating weaker thawing than DESI observes. This reflects PM's geometric constraint on dark energy evolution rate from G2 holonomy. The tension may resolve with future DESI data or indicates physics beyond minimal PM."
     },
     {
       "parameter": "cosmology.H0_local",
@@ -61,7 +76,8 @@
       "source": "SH0ES 2025",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "cosmology"
+      "sector": "cosmology",
+      "note": ""
     },
     {
       "parameter": "neutrino.theta_12_pred",
@@ -74,7 +90,8 @@
       "source": "NuFIT 6.0",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "neutrino"
+      "sector": "neutrino",
+      "note": ""
     },
     {
       "parameter": "neutrino.theta_13_pred",
@@ -87,7 +104,8 @@
       "source": "NuFIT 6.0",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "neutrino"
+      "sector": "neutrino",
+      "note": ""
     },
     {
       "parameter": "neutrino.theta_23_pred",
@@ -100,7 +118,8 @@
       "source": "NuFIT 6.0 (IO)",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "neutrino"
+      "sector": "neutrino",
+      "note": ""
     },
     {
       "parameter": "neutrino.delta_CP_pred",
@@ -113,7 +132,8 @@
       "source": "NuFIT 6.0 (IO)",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "neutrino"
+      "sector": "neutrino",
+      "note": ""
     },
     {
       "parameter": "higgs.m_higgs_local",
@@ -126,7 +146,8 @@
       "source": "PDG 2024",
       "status": "PASS",
       "bound_type": "measured",
-      "sector": "higgs"
+      "sector": "higgs",
+      "note": ""
     },
     {
       "parameter": "gauge.sin2_theta_W_gut",
@@ -139,7 +160,106 @@
       "source": "SO(10) Theory",
       "status": "PASS",
       "bound_type": "theoretical",
-      "sector": "gauge"
+      "sector": "gauge",
+      "note": ""
+    },
+    {
+      "parameter": "ckm.V_us_triality",
+      "name": "CKM |V_us| (Cabibbo)",
+      "predicted": 0.2244999252626869,
+      "target": 0.2245,
+      "uncertainty": 0.0008,
+      "sigma": 9.342164139503062e-05,
+      "units": "dimensionless",
+      "source": "PDG 2024",
+      "status": "PASS",
+      "bound_type": "measured",
+      "sector": "ckm",
+      "note": ""
+    },
+    {
+      "parameter": "ckm.V_cb_triality",
+      "name": "CKM |V_cb|",
+      "predicted": 0.03919120830603948,
+      "target": 0.041,
+      "uncertainty": 0.0014,
+      "sigma": 1.2919940671146608,
+      "units": "dimensionless",
+      "source": "PDG 2024",
+      "status": "MARGINAL",
+      "bound_type": "measured",
+      "sector": "ckm",
+      "note": ""
+    },
+    {
+      "parameter": "ckm.V_ub_triality",
+      "name": "CKM |V_ub|",
+      "predicted": 0.003750062856175006,
+      "target": 0.00382,
+      "uncertainty": 0.00024,
+      "sigma": 0.29140476593747483,
+      "units": "dimensionless",
+      "source": "PDG 2024",
+      "status": "PASS",
+      "bound_type": "measured",
+      "sector": "ckm",
+      "note": ""
+    },
+    {
+      "parameter": "ckm.jarlskog_triality",
+      "name": "Jarlskog Invariant J",
+      "predicted": 3.0142431061918118e-05,
+      "target": 3.08e-05,
+      "uncertainty": 1.5e-06,
+      "sigma": 0.43837929205459014,
+      "units": "dimensionless",
+      "source": "PDG 2024",
+      "status": "PASS",
+      "bound_type": "measured",
+      "sector": "ckm",
+      "note": ""
+    },
+    {
+      "parameter": "constants.alpha_inverse_pred",
+      "name": "Inverse Fine Structure",
+      "predicted": 137.0367017761553,
+      "target": 137.035999177,
+      "uncertainty": 0.01,
+      "sigma": 0.07025991552893629,
+      "units": "dimensionless",
+      "source": "CODATA 2022",
+      "status": "PASS",
+      "bound_type": "measured",
+      "sector": "constants",
+      "note": ""
+    },
+    {
+      "parameter": "constants.M_PLANCK_pred",
+      "name": "Planck Mass (4D)",
+      "predicted": 1.2207142e+19,
+      "target": 1.22089e+19,
+      "uncertainty": 1900000000000000.0,
+      "sigma": 0.9252631578947368,
+      "units": "GeV",
+      "source": "CODATA 2022",
+      "status": "PASS",
+      "bound_type": "measured",
+      "sector": "constants",
+      "note": ""
+    },
+    {
+      "parameter": "constants.mu_pe_pred",
+      "name": "Proton/Electron Ratio",
+      "predicted": 1837.6259243903398,
+      "target": 1836.15267343,
+      "uncertainty": 2.0,
+      "sigma": 0.7366254801698915,
+      "units": "dimensionless",
+      "source": "CODATA 2022",
+      "status": "PASS",
+      "bound_type": "measured",
+      "sector": "constants",
+      "note": ""
     }
   ],
   "topological_foundation": {

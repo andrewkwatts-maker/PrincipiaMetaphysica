@@ -63,6 +63,14 @@
       "description": "RMS matter fluctuation amplitude",
       "table": "Table 3",
       "dataset": "BAO+CMB+DESY5+PantheonPlus"
+    },
+    "S8": {
+      "value": 0.832,
+      "uncertainty_plus": 0.013,
+      "uncertainty_minus": 0.013,
+      "units": "dimensionless",
+      "description": "S8 = sigma8 * sqrt(Omega_m/0.3)",
+      "source": "Planck2018"
     }
   },
   "alternative_datasets": {

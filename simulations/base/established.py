@@ -86,10 +86,12 @@ class EstablishedPhysics:
         """Load all established physics parameters into the registry."""
         cls._load_constants(registry)
         cls._load_pdg_values(registry)
+        cls._load_ckm_values(registry)
         cls._load_nufit_values(registry)
         cls._load_desi_values(registry)
         cls._load_experimental_bounds(registry)
         cls._load_theory_constants(registry)
+        cls._load_codata_values(registry)
 
     @classmethod
     def _load_constants(cls, registry: 'PMRegistry') -> None:
@@ -275,6 +277,54 @@ class EstablishedPhysics:
             cls._register_param(registry, param)
 
     @classmethod
+    def _load_ckm_values(cls, registry: 'PMRegistry') -> None:
+        """Load CKM matrix elements from PDG 2024.
+
+        CKM (Cabibbo-Kobayashi-Maskawa) matrix elements describe quark mixing.
+        These are established values that serve as validation targets for the
+        octonionic mixing simulation (simulations.v16.fermion.octonionic_mixing_v16_2).
+        """
+        # PDG 2024 CKM values
+        # Source: https://pdg.lbl.gov/
+        params = [
+            EstablishedParameter(
+                path="pdg.V_us",
+                value=0.2245,
+                uncertainty=0.0008,
+                units="dimensionless",
+                source="ESTABLISHED:PDG2024",
+                description="CKM |V_us| Cabibbo angle"
+            ),
+            EstablishedParameter(
+                path="pdg.V_cb",
+                value=0.0410,
+                uncertainty=0.0014,
+                units="dimensionless",
+                source="ESTABLISHED:PDG2024",
+                description="CKM |V_cb|"
+            ),
+            EstablishedParameter(
+                path="pdg.V_ub",
+                value=0.00382,
+                uncertainty=0.00024,
+                units="dimensionless",
+                source="ESTABLISHED:PDG2024",
+                description="CKM |V_ub|"
+            ),
+            EstablishedParameter(
+                path="pdg.J_ckm",
+                value=3.08e-5,
+                uncertainty=0.15e-5,
+                units="dimensionless",
+                source="ESTABLISHED:PDG2024",
+                description="Jarlskog invariant J"
+            ),
+        ]
+
+        for param in params:
+            cls._register_param(registry, param)
+
+    @classmethod
     def _load_nufit_values(cls, registry: 'PMRegistry') -> None:
         """Load NuFIT 6.0 (2024) neutrino oscillation parameters."""
         if CONFIG_AVAILABLE:
@@ -397,15 +447,21 @@ class EstablishedPhysics:
 
         H0 = 67.4     # Planck 2018 (loaded separately)
 
-        # Load sigma8 from DESI if available
+        # Load sigma8 and S8 from DESI if available
         if DATA_LOADER_AVAILABLE:
             loader = get_loader()
             sigma8_data = loader.get_desi("sigma8")
             sigma8 = sigma8_data.value
             sigma8_unc = sigma8_data.uncertainty
+            # S8 = sigma8 * sqrt(Omega_m/0.3) - Planck 2018 value
+            S8_data = loader.get_desi("S8")
+            S8 = S8_data.value
+            S8_unc = S8_data.uncertainty
         else:
             sigma8 = 0.827
             sigma8_unc = 0.011
+            S8 = 0.832
+            S8_unc = 0.013
 
         params = [
             EstablishedParameter(
@@ -467,11 +523,19 @@ class EstablishedPhysics:
             ),
             EstablishedParameter(
                 path="planck.S8",
-                value=0.832,
-                uncertainty=0.013,
+                value=S8,
+                uncertainty=S8_unc,
                 units="dimensionless",
                 source="ESTABLISHED:Planck2018",
                 description="S8 parameter from Planck 2018 CMB (S8 = sigma8 * sqrt(Omega_m/0.3))"
+            ),
+            EstablishedParameter(
+                path="desi.S8",
+                value=S8,
+                uncertainty=S8_unc,
+                units="dimensionless",
+                source="ESTABLISHED:Planck2018",
+                description="S8 = sigma8 * sqrt(Omega_m/0.3) - loaded from desi_2025_constraints.json"
             ),
         ]
 
@@ -607,6 +671,107 @@ class EstablishedPhysics:
             cls._register_param(registry, param)
 
     @classmethod
+    def _load_codata_values(cls, registry: 'PMRegistry') -> None:
+        """Load CODATA 2022 fundamental constants from JSON file.
+
+        These high-precision constants are loaded from:
+        simulations/data/experimental/codata_2022.json
+
+        Values include:
+        - codata.alpha_inverse: Inverse fine structure constant (1/alpha)
+        - codata.mu_pe: Proton-to-electron mass ratio
+        - codata.M_PLANCK: Planck mass (full, not reduced)
+        """
+        import json
+        from pathlib import Path
+
+        # Path to CODATA JSON file
+        data_dir = Path(__file__).parent.parent / "data" / "experimental"
+        codata_file = data_dir / "codata_2022.json"
+
+        # Load from JSON file
+        try:
+            with open(codata_file, 'r', encoding='utf-8') as f:
+                codata_data = json.load(f)
+            codata_available = True
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            warnings.warn(f"Could not load CODATA 2022 data: {e}. Using fallback values.")
+            codata_available = False
+
+        if codata_available:
+            fc = codata_data.get("fundamental_constants", {})
+
+            # Inverse fine structure constant
+            alpha_inv = fc.get("alpha_inverse", {})
+            params = [
+                EstablishedParameter(
+                    path="codata.alpha_inverse",
+                    value=alpha_inv.get("value", 137.035999177),
+                    uncertainty=alpha_inv.get("uncertainty", 0.01),
+                    units=alpha_inv.get("units", "dimensionless"),
+                    source="ESTABLISHED:CODATA2022",
+                    description=alpha_inv.get("description", "Inverse fine structure constant")
+                ),
+            ]
+
+            # Proton-to-electron mass ratio (mu_pe)
+            mu_pe = fc.get("proton_electron_mass_ratio", {})
+            params.append(
+                EstablishedParameter(
+                    path="codata.mu_pe",
+                    value=mu_pe.get("value", 1836.15267343),
+                    uncertainty=mu_pe.get("uncertainty", 2.0),
+                    units=mu_pe.get("units", "dimensionless"),
+                    source="ESTABLISHED:CODATA2022",
+                    description=mu_pe.get("description", "Proton-to-electron mass ratio")
+                )
+            )
+
+            # Planck mass (full, not reduced)
+            m_planck = fc.get("M_PLANCK", {})
+            params.append(
+                EstablishedParameter(
+                    path="codata.M_PLANCK",
+                    value=m_planck.get("value", 1.220890e19),
+                    uncertainty=m_planck.get("uncertainty", 1.9e15),
+                    units=m_planck.get("units", "GeV"),
+                    source="ESTABLISHED:CODATA2022",
+                    description=m_planck.get("description", "Planck mass")
+                )
+            )
+        else:
+            # Fallback values if JSON not available
+            params = [
+                EstablishedParameter(
+                    path="codata.alpha_inverse",
+                    value=137.035999177,
+                    uncertainty=0.01,  # Theory uncertainty
+                    units="dimensionless",
+                    source="ESTABLISHED:CODATA2022",
+                    description="Inverse fine structure constant"
+                ),
+                EstablishedParameter(
+                    path="codata.mu_pe",
+                    value=1836.15267343,
+                    uncertainty=2.0,  # Theory uncertainty
+                    units="dimensionless",
+                    source="ESTABLISHED:CODATA2022",
+                    description="Proton-to-electron mass ratio"
+                ),
+                EstablishedParameter(
+                    path="codata.M_PLANCK",
+                    value=1.220890e19,
+                    uncertainty=1.9e15,
+                    units="GeV",
+                    source="ESTABLISHED:CODATA2022",
+                    description="Planck mass"
+                ),
+            ]
+
+        for param in params:
+            cls._register_param(registry, param)
+
+    @classmethod
     def _register_param(cls, registry: 'PMRegistry', param: EstablishedParameter) -> None:
         """Register a single parameter with the registry.
 
@@ -631,14 +796,15 @@ class EstablishedPhysics:
 # Documentation of all established parameters
 ESTABLISHED_PARAMS = {
     "metadata": {
-        "version": "1.0",
+        "version": "1.1",
         "description": "Complete registry of established experimental physics values",
         "sources": [
             "PDG 2024 - Particle Data Group Review",
             "NuFIT 6.0 (2024) - Neutrino oscillation global fit",
             "DESI DR2 (2024) - Dark energy survey",
             "Planck 2018 - CMB observations",
-            "Super-Kamiokande - Proton decay bounds"
+            "Super-Kamiokande - Proton decay bounds",
+            "CODATA 2022 - Fundamental physical constants"
         ]
     },
     "categories": {
@@ -648,13 +814,15 @@ ESTABLISHED_PARAMS = {
             "pdg.m_up", "pdg.m_down", "pdg.m_strange", "pdg.m_charm", "pdg.m_bottom", "pdg.m_top",
             "pdg.alpha_s_MZ", "pdg.sin2_theta_W", "pdg.m_W", "pdg.m_Z"
         ],
+        "ckm": ["pdg.V_us", "pdg.V_cb", "pdg.V_ub", "pdg.J_ckm"],
         "nufit": [
             "nufit.theta_12", "nufit.theta_23", "nufit.theta_13",
             "nufit.delta_CP", "nufit.delta_m21_sq", "nufit.delta_m31_sq"
         ],
-        "desi": ["desi.w0", "desi.wa", "desi.sigma8", "desi.H0", "desi.Omega_m"],
+        "desi": ["desi.w0", "desi.wa", "desi.sigma8", "desi.S8", "desi.H0", "desi.Omega_m"],
         "planck": ["planck.S8"],
-        "bounds": ["bounds.tau_proton_lower", "bounds.sum_m_nu_upper"]
+        "bounds": ["bounds.tau_proton_lower", "bounds.sum_m_nu_upper"],
+        "codata": ["codata.alpha_inverse", "codata.mu_pe", "codata.M_PLANCK"]
     },
-    "total_count": 31
+    "total_count": 39
 }

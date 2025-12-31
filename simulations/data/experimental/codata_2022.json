@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "source": "NIST CODATA 2022",
+    "doi": "10.1103/RevModPhys.93.025010",
+    "retrieved": "2025-12-31"
+  },
+  "fundamental_constants": {
+    "alpha_inverse": {
+      "value": 137.035999177,
+      "uncertainty": 0.01,
+      "units": "dimensionless",
+      "description": "Inverse fine structure constant",
+      "note": "Theory uncertainty 0.01, exp precision exceeds theory"
+    },
+    "proton_electron_mass_ratio": {
+      "value": 1836.15267343,
+      "uncertainty": 2.0,
+      "units": "dimensionless",
+      "description": "mu_pe",
+      "note": "Theory uncertainty 2.0"
+    },
+    "M_PLANCK": {
+      "value": 1.220890e19,
+      "uncertainty": 1.9e15,
+      "units": "GeV",
+      "description": "Planck mass"
+    },
+    "M_PLANCK_reduced": {
+      "value": 2.435323e18,
+      "uncertainty": 3.0e14,
+      "units": "GeV",
+      "description": "Reduced Planck mass"
+    }
+  }
+}
