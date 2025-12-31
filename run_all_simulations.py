@@ -190,6 +190,7 @@ from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimula
 
 # v16.2 - Geometric Anchors (fundamental constants from b3=24)
 from simulations.geometric_anchors_v16_1 import GeometricAnchors
+from simulations.v16.geometric.geometric_anchors_simulation_v16_2 import GeometricAnchorsSimulation
 
 # v16.2 - Two-Time Physics and Leech Partition (foundational geometric proofs)
 from simulations.v16.geometric.leech_partition_v16_2 import LeechPartitionV16
@@ -479,6 +480,8 @@ class SimulationRunner:
                 IntroductionV16(),
             ],
             1: [
+                # v16.2: GeometricAnchors FIRST - provides fundamental constants for all other simulations
+                GeometricAnchorsSimulation(),
                 G2GeometryV16(),
             ] + ([UnitaryFilterSimulation()] if UNITARY_FILTER_AVAILABLE else []) + [
                 # After UnitaryFilter validates ghost-free stability:
@@ -594,57 +597,45 @@ class SimulationRunner:
 
     def _load_geometric_anchors(self) -> None:
         """
-        v16.2: Load geometric anchors (fundamental constants) from b3=24.
+        v16.2: Pre-load geometric anchor parameters from b3=24.
 
-        All parameters are derived from the single topological invariant b3=24.
-        This is the "Truth Source" for the simulation framework - every constant
-        is a derived topological residue, not an experimental fit.
+        NOTE: The full GeometricAnchorsSimulation runs in Phase 1 with schema
+        validation. This method just pre-loads essential parameters needed
+        before Phase 1 begins.
 
-        Includes:
-        - alpha_inverse: Fine structure constant from Leech lattice
-        - alpha_s: Strong coupling with QCD lattice correction
-        - sin2_theta_W: Weak mixing angle
-        - higgs_vev: Higgs VEV from 20 non-trivial cycles
-        - m_planck_4d: Planck mass with volumetric projection
-        - mu_pe: Proton-to-electron mass ratio
-        - w0, wa: Dark energy parameters with 4-form scaling
-        - n_s: Spectral index from b3
-        - And 20+ more fundamental parameters
+        The simulation will check for duplicates and skip already-registered params.
         """
         if self.verbose:
-            print("\n[INITIALIZATION] Loading Geometric Anchors (v16.2 Demon-Lock)")
+            print("\n[INITIALIZATION] Pre-loading Geometric Anchors (v16.2 Demon-Lock)")
             print("-" * 80)
 
         try:
-            anchors = GeometricAnchors(b3=24)
-            all_anchors = anchors.get_all_anchors()
+            # Only pre-load critical topology params needed before simulations start
+            # The full set will be registered by GeometricAnchorsSimulation in Phase 1
+            if not self.registry.has_param("topology.b3"):
+                self.registry.set_param("topology.b3", 24,
+                                         source="ESTABLISHED:G2_topology", status="ESTABLISHED")
+            if not self.registry.has_param("topology.chi_eff"):
+                self.registry.set_param("topology.chi_eff", 144,
+                                         source="ESTABLISHED:G2_topology", status="ESTABLISHED")
 
-            # Register each anchor to the registry
-            for name, value in all_anchors.items():
-                param_path = f"geometry.{name}"
-                self.registry.set_param(
-                    path=param_path,
-                    value=value,
-                    source="geometric_anchors_v16_2",
-                    status="GEOMETRIC",
-                    metadata={
-                        "derivation": "Derived from b3=24 topological invariant",
-                        "fundamental": True,
-                        "tuning_free": True
-                    }
-                )
+            # Pre-compute k_gimel for early use
+            import numpy as np
+            k_gimel = 24 / 2 + 1 / np.pi
+            if not self.registry.has_param("topology.k_gimel"):
+                self.registry.set_param("topology.k_gimel", k_gimel,
+                                         source="DERIVED:k_gimel_formula", status="GEOMETRIC")
 
             if self.verbose:
-                print(f"[OK] Loaded {len(all_anchors)} geometric anchors from b3=24")
-                print(f"  - k_gimel = {anchors.k_gimel:.6f}")
-                print(f"  - alpha_inverse = {anchors.alpha_inverse:.6f}")
-                print(f"  - alpha_s = {anchors.alpha_s:.6f}")
-                print(f"  - w_zero = {anchors.w_zero:.6f}")
-                print(f"  - n_s = {anchors.n_s:.6f}")
+                print(f"[OK] Pre-loaded core topology parameters")
+                print(f"  - topology.b3 = 24")
+                print(f"  - topology.chi_eff = 144")
+                print(f"  - topology.k_gimel = {k_gimel:.6f}")
+                print(f"  Note: Full geometric anchors will be computed in Phase 1")
 
         except Exception as e:
             if self.verbose:
-                print(f"[WARN] Could not load geometric anchors: {e}")
+                print(f"[WARN] Could not pre-load geometric anchors: {e}")
 
     def _run_phase(self, phase_num: int) -> None:
         """
