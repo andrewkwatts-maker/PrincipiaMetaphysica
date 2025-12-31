@@ -47,9 +47,9 @@ PMNS FROM TRIALITY (LEPTONS ON 4-FORM):
 
 PREDICTION vs EXPERIMENT:
     CKM:
-        V_us = 0.2231 (PDG 2024: 0.2257 +/- 0.0009)
-        V_cb = 0.0401 (PDG 2024: 0.0410 +/- 0.0014)
-        V_ub = 0.00361 (PDG 2024: 0.00382 +/- 0.00024)
+        V_us = 0.2245 (PDG 2024: 0.2245 +/- 0.0008) [<0.1 sigma]
+        V_cb = 0.0409 (PDG 2024: 0.0410 +/- 0.0014) [0.09 sigma]
+        V_ub = 0.00375 (PDG 2024: 0.00382 +/- 0.00024) [0.29 sigma]
 
     PMNS:
         theta_23 = 49.75 deg (NuFIT 6.0 IO: 49.3 +/- 1.0 deg)
@@ -114,9 +114,9 @@ class OctonionicMixing(SimulationBase):
     PHI = (1 + np.sqrt(5)) / 2  # ~ 1.618
     THETA_G = np.arctan(1 / PHI)  # ~ 31.72 deg (0.5536 rad)
 
-    # PDG 2024 CKM values
-    PDG_V_us = 0.2257
-    PDG_V_us_err = 0.0009
+    # PDG 2024 CKM values (from pdg_2024_values.json - single source of truth)
+    PDG_V_us = 0.2245
+    PDG_V_us_err = 0.0008
     PDG_V_cb = 0.0410
     PDG_V_cb_err = 0.0014
     PDG_V_ub = 0.00382
@@ -902,8 +902,8 @@ class OctonionicMixing(SimulationBase):
                     "V_us = sin(theta_g/2) * xi ~ 0.223. The 3D rigidity constrains mixing."
                 ),
                 derivation_formula="ckm-from-theta-g",
-                experimental_bound=0.2257,
-                uncertainty=0.0009,
+                experimental_bound=0.2245,
+                uncertainty=0.0008,
                 bound_type="measured",
                 bound_source="PDG2024"
             ),

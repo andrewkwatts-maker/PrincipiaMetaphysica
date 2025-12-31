@@ -303,7 +303,11 @@ class MasterActionDerivations(SimulationBase):
         print("="*70)
 
         # Expected values
-        M_Pl_4D_expected = 2.435e18  # GeV
+        # NOTE: This is checking dimensional reduction CONSISTENCY, not absolute Planck mass prediction.
+        # The input M_Pl_7D = constants.M_PLANCK = 2.435e18 GeV (reduced Planck mass)
+        # The output M_Pl_4D should be ~same scale if volume cancels correctly.
+        # This is NOT the same as geometry.m_planck_4d = 1.2207e19 GeV (the PM prediction).
+        M_Pl_4D_expected = 2.435e18  # GeV (dimensional reduction consistency check)
         n_gen_expected = 3
         m_top_expected = 173.0  # GeV
         v_higgs_expected = 246.0  # GeV
