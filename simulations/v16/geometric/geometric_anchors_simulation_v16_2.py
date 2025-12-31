@@ -26,9 +26,63 @@ from simulations.base.simulation_base import (
     SimulationMetadata,
     ContentBlock,
     SectionContent,
+    Formula,
+    Parameter,
 )
-from simulations.base.formulas import Formula
 from simulations.geometric_anchors_v16_1 import GeometricAnchors
+
+
+# Output parameter paths for this simulation
+_OUTPUT_PARAMS = [
+    # Core topology
+    "geometry.b3",
+    "geometry.chi_eff",
+    "geometry.n_generations",
+    "geometry.phi",
+    # Geometric constants
+    "geometry.k_gimel",
+    "geometry.c_kaf",
+    "geometry.f_heh",
+    "geometry.s_mem",
+    "geometry.delta_lamed",
+    "geometry.k_matching",
+    # GUT parameters
+    "geometry.alpha_gut",
+    "geometry.alpha_gut_inv",
+    # Pneuma/Dark Energy
+    "geometry.pneuma_amplitude",
+    "geometry.pneuma_width",
+    "geometry.w_zero",
+    "geometry.wa",
+    "geometry.s8_viscosity_scale",
+    # v16.2 anomaly correction
+    "geometry.anomaly_correction",
+    "geometry.g_newton_corrected",
+    # Fundamental Constants from Demon-Lock
+    "geometry.alpha_inverse",
+    "geometry.alpha_s",
+    "geometry.sin2_theta_W",
+    "geometry.higgs_vev",
+    "geometry.m_planck_4d",
+    "geometry.mu_pe",
+    "geometry.G_F",
+    "geometry.T_CMB",
+    "geometry.eta_baryon",
+    "geometry.unity_seal",
+    # Cosmological Parameters
+    "geometry.n_s",
+    "geometry.sigma8",
+    "geometry.S8",
+]
+
+# Output formula IDs
+_OUTPUT_FORMULAS = [
+    "k-gimel-anchor",
+    "alpha-inverse-anchor",
+    "w0-thawing-anchor",
+    "spectral-index-anchor",
+    "unity-seal-anchor",
+]
 
 
 class GeometricAnchorsSimulation(SimulationBase):
@@ -60,6 +114,21 @@ class GeometricAnchorsSimulation(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return self._metadata
+
+    @property
+    def required_inputs(self) -> List[str]:
+        """No inputs required - this is a root simulation."""
+        return []
+
+    @property
+    def output_params(self) -> List[str]:
+        """Return list of output parameter paths."""
+        return _OUTPUT_PARAMS
+
+    @property
+    def output_formulas(self) -> List[str]:
+        """Return list of formula IDs this simulation provides."""
+        return _OUTPUT_FORMULAS
 
     def get_dependencies(self) -> List[str]:
         """No dependencies - this is a root simulation."""
@@ -311,20 +380,27 @@ class GeometricAnchorsSimulation(SimulationBase):
 
         # Also register under common alias paths for compatibility
         alias_mapping = {
+            # Constants aliases
             "geometry.alpha_inverse": "constants.alpha_inverse_pred",
             "geometry.alpha_s": "constants.alpha_s_pred",
             "geometry.sin2_theta_W": "constants.sin2_theta_W_pred",
+            "geometry.mu_pe": "constants.mu_pe_pred",
+            "geometry.G_F": "constants.G_F_pred",
+            # Higgs alias
             "geometry.higgs_vev": "higgs.vev_pred",
+            # Cosmology aliases
             "geometry.m_planck_4d": "cosmology.M_Pl_4D",
             "geometry.w_zero": "cosmology.w0_derived",
             "geometry.wa": "cosmology.wa_derived",
             "geometry.n_s": "cosmology.n_s_pred",
-            "geometry.mu_pe": "constants.mu_pe_pred",
-            "geometry.G_F": "constants.G_F_pred",
             "geometry.T_CMB": "cosmology.T_CMB_pred",
             "geometry.sigma8": "cosmology.sigma8_pred",
             "geometry.S8": "cosmology.S8_pred",
             "geometry.eta_baryon": "cosmology.eta_baryon_pred",
+            # Topology aliases for backward compatibility
+            "geometry.n_generations": "topology.n_gen",
+            "geometry.chi_eff": "topology.chi_eff",
+            # Note: topology.b3 is pre-loaded as ESTABLISHED, don't alias
         }
 
         for source_path, alias_path in alias_mapping.items():
@@ -351,6 +427,72 @@ class GeometricAnchorsSimulation(SimulationBase):
             print(f"  - unity_seal = {self._anchors.unity_seal:.6f}")
 
         return results
+
+    def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
+        """Execute the simulation (required by SimulationBase)."""
+        return self.execute(registry, verbose=True)
+
+    def get_output_param_definitions(self) -> List[Parameter]:
+        """Return parameter definitions for outputs."""
+        return [
+            Parameter(
+                path="geometry.b3",
+                name="Third Betti Number",
+                units="dimensionless",
+                status="GEOMETRIC",
+                description="Third Betti number of TCS G2 manifold (#187)",
+                no_experimental_value=True
+            ),
+            Parameter(
+                path="geometry.k_gimel",
+                name="Gimel Constant",
+                units="dimensionless",
+                status="GEOMETRIC",
+                description="Geometric anchor: k_gimel = b3/2 + 1/pi",
+                no_experimental_value=True
+            ),
+            Parameter(
+                path="geometry.alpha_inverse",
+                name="Inverse Fine Structure Constant",
+                units="dimensionless",
+                status="DERIVED",
+                description="alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi)",
+                experimental_bound=137.036,
+                bound_type="measured",
+                bound_source="CODATA2022",
+                uncertainty=0.01
+            ),
+            Parameter(
+                path="geometry.w_zero",
+                name="Dark Energy EoS (z=0)",
+                units="dimensionless",
+                status="DERIVED",
+                description="w0 = -1 + 1/b3 = -23/24 (thawing quintessence)",
+                experimental_bound=-0.957,
+                bound_type="measured",
+                bound_source="DESI2025",
+                uncertainty=0.067
+            ),
+            Parameter(
+                path="geometry.n_s",
+                name="Scalar Spectral Index",
+                units="dimensionless",
+                status="DERIVED",
+                description="n_s = 1 - 2/b3 (sterile prediction)",
+                experimental_bound=0.9649,
+                bound_type="measured",
+                bound_source="Planck2018",
+                uncertainty=0.0042
+            ),
+            Parameter(
+                path="geometry.unity_seal",
+                name="Unity Seal",
+                units="dimensionless",
+                status="GEOMETRIC",
+                description="I_unity = k_gimel*phi/(b3-4) - consistency check",
+                no_experimental_value=True
+            ),
+        ]
 
 
 # Standalone test
