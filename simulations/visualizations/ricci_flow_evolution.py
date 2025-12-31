@@ -118,14 +118,14 @@ def compute_pm_w_correction_H(z, H0_local=H0_SHOES, H0_early=H0_PLANCK, z_star=Z
     """
     Compute H(z) with PM w(z) dark energy correction.
 
-    In PM, dark energy has w0 = -11/13 and evolves with redshift.
-    This provides additional evolution beyond pure interpolation.
+    In PM v16.2, dark energy has w0 = -23/24 (thawing quintessence from b₃=24)
+    and evolves with redshift via wₐ = -1/√24 ≈ -0.204.
     """
-    # w0 from dimensional reduction
-    w0 = -11 / 13  # ~-0.846
+    # w0 from G2 thawing quintessence (v16.2)
+    w0 = -23 / 24  # ~-0.9583 (from b₃=24 associative 3-cycles)
 
     # w(z) evolution (CPL-like parametrization)
-    wa = 0.1  # Approximate evolution parameter
+    wa = -1 / np.sqrt(24)  # ~-0.204 (v16.2 thawing)
 
     # Dark energy density evolution
     def rho_de(z_val):

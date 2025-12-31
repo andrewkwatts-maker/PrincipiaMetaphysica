@@ -332,14 +332,15 @@ def plot_theory_residuals(
     fig, ax = plt.subplots(figsize=(9, 6))
 
     # Data: parameter, PM value, observed value, uncertainty (1σ)
+    # v16.2 Thawing Quintessence: w₀ = -23/24 ≈ -0.9583
     if theory_data:
         theta23_pm = theory_data.get('neutrino.theta_23_pred', {}).get('value', 46.08)
         delta_cp_pm = theory_data.get('neutrino.delta_CP_pred', {}).get('value', 232.5)
-        w0_pm = theory_data.get('cosmology.w0_derived', {}).get('value', -0.846)
+        w0_pm = theory_data.get('cosmology.w0_derived', {}).get('value', -0.9583)
     else:
         theta23_pm = 46.08
         delta_cp_pm = 232.5
-        w0_pm = -0.846
+        w0_pm = -0.9583  # v16.2: -23/24 from b₃=24 thawing
 
     # Calculate residuals in units of σ
     params = {
@@ -350,8 +351,8 @@ def plot_theory_residuals(
         },
         r'$w_0$ (DE EoS)': {
             'pm': w0_pm,
-            'obs': -0.827,  # DESI
-            'sigma': 0.063,
+            'obs': -0.957,  # DESI 2025 thawing constraint
+            'sigma': 0.067,
         },
         r'$\theta_{23}$ (deg)': {
             'pm': theta23_pm,

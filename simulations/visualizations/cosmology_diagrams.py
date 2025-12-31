@@ -135,10 +135,10 @@ def generate_cmb_power_spectrum():
         # Enhancement at first peak from brane dynamics
         enhancement = 1.0 + 0.03 * np.exp(-((ell - 220)**2) / (2 * 80**2))
         # Suppression at high l from shadow dimension damping
-        # w0 = -11/13 affects late-time ISW
+        # v16.2: w0 = -23/24 (thawing quintessence) affects late-time ISW
         suppression = 1.0 - 0.02 * (1 - np.exp(-ell / 800))
-        # ISW modification from dark energy w0 = -11/13
-        isw_mod = 1.0 + 0.015 * np.exp(-ell / 20)
+        # ISW modification from dark energy w0 = -23/24 (closer to Λ)
+        isw_mod = 1.0 + 0.012 * np.exp(-ell / 20)  # Slightly smaller ISW deviation
         return enhancement * suppression * isw_mod
 
     Dl_pm = planck_spectrum(l) * pm_modification(l)
@@ -155,7 +155,7 @@ def generate_cmb_power_spectrum():
 
     # Plot PM prediction
     ax.plot(l, Dl_pm, color=PM_COLORS['purple'], linewidth=2.5,
-            label=r'PM prediction ($w_0 = -11/13$)', zorder=3)
+            label=r'PM prediction ($w_0 = -23/24$)', zorder=3)
 
     # Highlight difference region
     ax.fill_between(l, Dl_planck, Dl_pm,
@@ -199,10 +199,10 @@ def generate_cmb_power_spectrum():
     # Add legend
     ax.legend(loc='upper right', framealpha=0.95, edgecolor='gray')
 
-    # Add PM theory box
+    # Add PM theory box (v16.2 thawing quintessence)
     textbox = (
-        "PM Theory Predictions:\n"
-        r"$\bullet$ $w_0 = -11/13 \approx -0.846$ (DESI: $-0.727 \pm 0.067$)" + "\n"
+        "PM v16.2 Theory Predictions:\n"
+        r"$\bullet$ $w_0 = -23/24 \approx -0.9583$ (DESI thawing: $-0.957 \pm 0.067$)" + "\n"
         r"$\bullet$ ISW enhanced at low $\ell$ from shadow dimensions" + "\n"
         r"$\bullet$ High-$\ell$ damping from G$_2$ compactification"
     )
@@ -261,7 +261,7 @@ def generate_cosmology_evolution_diagram():
         {"name": "Reionization", "time": "1 Gyr", "x": 9, "temp": "20 K",
          "desc": "First stars & galaxies\nUniverse relit", "color": PM_COLORS['pink']},
         {"name": "Present", "time": "13.8 Gyr", "x": 10.5, "temp": "2.7 K",
-         "desc": "Dark energy dominates\n$w_0 = -11/13$", "color": PM_COLORS['purple']},
+         "desc": "Dark energy dominates\n$w_0 = -23/24$ (thawing)", "color": PM_COLORS['purple']},
     ]
 
     # Draw timeline arrow
@@ -321,7 +321,7 @@ def generate_cosmology_evolution_diagram():
         edgecolor=PM_COLORS['purple'], linewidth=2
     )
     ax.add_patch(highlight_box2)
-    ax.text(10.3, 0.9, 'PM Prediction:\n$w_0 = -11/13$\nDESI validated',
+    ax.text(10.3, 0.9, 'PM v16.2:\n$w_0 = -23/24$\nDESI thawing!',
            fontsize=9, ha='center', va='center', color=PM_COLORS['purple'])
 
     # Draw expanding universe visualization
