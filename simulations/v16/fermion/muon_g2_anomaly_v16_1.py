@@ -131,9 +131,12 @@ class MuonG2AnomalySimulation(SimulationBase):
             "muon-g2-anomaly-delta",
         ]
 
+    # v16.2: Add critical dimension for ghost cancellation
+    D_CRIT = 26.0  # Critical dimension of bosonic string
+
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
         """
-        Execute the muon g-2 anomaly calculation.
+        Execute the muon g-2 anomaly calculation (v16.2 with ghost cancellation).
 
         Args:
             registry: PMRegistry instance with input parameters
@@ -145,9 +148,17 @@ class MuonG2AnomalySimulation(SimulationBase):
         b3 = registry.get_param("topology.b3")
         k_gimel = registry.get_param("constants.k_gimel")
 
-        # Compute torsion correction from G2 topology
+        # Compute base torsion correction from G2 topology
         # Torsion strength inversely proportional to b3 and k_gimel^π
-        torsion_correction = 1.0 / (b3 * (k_gimel ** np.pi))
+        base_correction = 1.0 / (b3 * (k_gimel ** np.pi))
+
+        # v16.2: Ghost cancellation factor (2/26)
+        # The 2 ghost modes from the 2T structure are filtered by D_crit
+        # This ensures only physical degrees of freedom contribute
+        ghost_filter = (self.D_CRIT - b3) / self.D_CRIT  # (26-24)/26 = 2/26
+
+        # Apply the ghost-filtered torsion correction
+        torsion_correction = base_correction * ghost_filter
 
         # Apply angular factor from Weinberg angle
         # sin²(θ_g) gives the spin-torsion coupling strength
