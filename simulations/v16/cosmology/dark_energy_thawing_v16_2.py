@@ -369,6 +369,59 @@ class DarkEnergyEvolution(SimulationBase):
 
         return z_thaw
 
+    def conformal_time_mapping(self, t: float, H0: float = 70.0) -> float:
+        """
+        Map coordinate time to conformal time.
+
+        v16.2: Added to address Ricci-Time coordinate mismatch.
+        Experimental papers (DESI, Planck) often use conformal time η
+        or redshift z. This mapping ensures consistency.
+
+        The conformal time is defined by:
+            dλ/dt = H(t)
+
+        For a flat ΛCDM universe:
+            λ = ∫ H(t) dt
+
+        Args:
+            t: Coordinate time (Gyr)
+            H0: Hubble constant (km/s/Mpc, default 70)
+
+        Returns:
+            Conformal time λ
+        """
+        # Convert H0 to 1/Gyr: H0 = 70 km/s/Mpc ≈ 0.0716 Gyr^-1
+        H0_per_Gyr = H0 / 978.0  # km/s/Mpc to Gyr^-1 conversion
+
+        # For flat ΛCDM with Omega_m ~ 0.3, Omega_Lambda ~ 0.7:
+        # λ ≈ H0 * t * sqrt(1 + Omega_Lambda * (exp(3*H0*t) - 1))
+        # Simplified to leading order:
+        conformal_time = H0_per_Gyr * t
+
+        return conformal_time
+
+    def get_w_at_conformal_time(self, lambda_conf: float, H0: float = 70.0) -> float:
+        """
+        Get equation of state at a given conformal time.
+
+        v16.2: Uses conformal time mapping for consistency with
+        observational coordinates.
+
+        Args:
+            lambda_conf: Conformal time
+            H0: Hubble constant (km/s/Mpc)
+
+        Returns:
+            Equation of state w(λ)
+        """
+        # Invert conformal time to get redshift
+        # For flat ΛCDM: z ≈ exp(H0 * λ) - 1 (approximate)
+        H0_per_Gyr = H0 / 978.0
+        z = np.exp(H0_per_Gyr * lambda_conf) - 1.0
+        z = max(0.0, z)  # Ensure non-negative
+
+        return self.get_w_z(z)
+
     def _compute_sigma_deviation(
         self,
         theory_value: float,

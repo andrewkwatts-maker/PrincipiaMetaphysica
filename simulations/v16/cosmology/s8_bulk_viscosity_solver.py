@@ -73,11 +73,32 @@ class G2ViscositySolver:
         zeta = flux_density * np.sqrt(redshift)
         return zeta
 
+    def compute_torsional_damping(self) -> float:
+        """
+        Compute torsional damping factor from G2 geometry.
+
+        Formula: damping = 1 - k_gimel / b3²
+
+        This factor accounts for the suppression of matter clustering
+        due to torsional energy leakage from the G2 manifold.
+
+        For b3=24, k_gimel=12.318:
+            damping = 1 - 12.318 / 576 = 0.9786
+
+        Returns:
+            float: Torsional damping factor
+        """
+        return 1.0 - self.k_gimel / (self.b3 ** 2)
+
     def compute_suppression(self, redshift: float = 0.45) -> float:
         """
         Derives the growth suppression factor from G2 Ricci Flow.
 
-        Formula: S8_PM / S8_LCDM = 1 / (1 + zeta/100)
+        v16.2 UPDATE: Now includes torsional damping factor.
+        Formula: S8_PM / S8_LCDM = (1 / (1 + zeta/100)) * torsional_damping
+
+        The torsional damping factor (1 - k_g/b3²) accounts for
+        energy leakage from the G2 manifold's torsional modes.
 
         Args:
             redshift: Cosmological redshift
@@ -86,8 +107,12 @@ class G2ViscositySolver:
             float: Suppression factor
         """
         zeta = self.compute_viscosity_coefficient(redshift)
-        suppression = 1.0 / (1.0 + (zeta / 100.0))
-        return suppression
+        base_suppression = 1.0 / (1.0 + (zeta / 100.0))
+
+        # v16.2: Apply torsional damping factor
+        torsional_damping = self.compute_torsional_damping()
+
+        return base_suppression * torsional_damping
 
     def predict_s8(self, redshift: float = 0.45) -> float:
         """
@@ -122,6 +147,7 @@ class G2ViscositySolver:
             "s8_predicted": s8_predicted,
             "s8_observed": s8_observed,
             "suppression_factor": self.compute_suppression(),
+            "torsional_damping": self.compute_torsional_damping(),
             "viscosity_coefficient": self.compute_viscosity_coefficient(),
             "deviation_sigma": sigma,
             "status": "RESOLVED" if sigma < 2.0 else "TENSION",
