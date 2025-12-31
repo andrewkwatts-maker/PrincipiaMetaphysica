@@ -21,7 +21,7 @@
         },
         {
           "name": "Testable Predictions",
-          "explanation": "Unlike some theories, PM makes specific predictions that can be tested: dark energy behavior (confirmed by DESI 2025), neutrino mixing angles (confirmed by NuFIT 6.0 2025), proton decay lifetime (future tests), and new particles at ~5 TeV energy (being searched for at the LHC)."
+          "explanation": "Unlike some theories, PM makes specific predictions that can be tested: dark energy behavior (confirmed by DESI 2024), neutrino mixing angles (confirmed by experiments), proton decay lifetime (future tests), and new particles at ~5 TeV energy (being searched for at the LHC)."
         }
       ],
       "why_it_matters": "The power of this approach is that it derives many measured values (like the Yukawa hierarchy parameter ε ≈ 0.223, which matches the Cabibbo angle V_us ≈ 0.2257 to within 1%) from pure geometry, rather than treating them as arbitrary input parameters.",
@@ -40,6 +40,18 @@
       "simulation_id": "g2_geometry_v16_0",
       "domain": "geometric",
       "section": "2"
+    },
+    {
+      "icon": "G",
+      "title": "The Guardian: Keeping Physics Real",
+      "simpleExplanation": "In quantum physics, we need probabilities to add up to exactly 100%. Some mathematical frameworks can accidentally create 'ghost' states - invisible particles with negative probability that would make the math work out to more than 100% or less than 0%. The Guardian checks that our theory is 'ghost-free' before any calculation runs. If the check fails, the entire simulation is blocked because any results would be unphysical.",
+      "analogy": "Imagine a bank that must balance its books exactly at the end of each day. The Guardian is like an auditor who checks the books BEFORE any transaction can be processed. If the books don't balance (like if someone tried to withdraw more money than exists), the transaction is blocked. In physics, the 'books' are the central charge, and they must add up to exactly zero: 24 (from extra dimensions) + 2 (from time structure) - 26 (from ghost accounting) = 0. Only when this balance is perfect can physics proceed.",
+      "keyTakeaway": "The UnitaryFilter is the 'Guardian' that ensures PM never produces unphysical predictions by blocking any simulation where the Weyl anomaly is not perfectly cancelled.",
+      "technicalDetail": "Central charge calculation: c = b3 + 2 - 26, where b3 = 24 is the third Betti number (transverse modes from G2 compactification), 2 comes from the Sp(2,R) two-time physics structure, and -26 is the bc ghost system contribution. For c = 0, the Weyl anomaly cancels and the theory is unitary (ghost-free). For c != 0, negative-norm states appear and all predictions are invalid. The Guardian enforces c = 0 before any simulation runs.",
+      "prediction": "If b3 is ever measured or computed to be anything other than 24, or if the spacetime dimension differs from 26, the entire PM framework would require fundamental revision. The Guardian would block all simulations until the geometry is corrected.",
+      "simulation_id": "unitary_filter_v16_2",
+      "domain": "validation",
+      "section": "validation"
     },
     {
       "icon": "8",

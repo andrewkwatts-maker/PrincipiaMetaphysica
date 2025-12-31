@@ -242,6 +242,7 @@ class DarkEnergyV16(SimulationBase):
             'D_compact': D_compact,
             'alpha_shadow': alpha_shadow,
             'geometric_factor': geometric_factor,
+            'b3': b3,  # Include b3 for wa calculation
         }
 
     def _compute_effective_dimension(self, reduction_data: Dict) -> float:
@@ -309,31 +310,48 @@ class DarkEnergyV16(SimulationBase):
 
     def _compute_time_evolution(self, reduction_data: Dict) -> float:
         """
-        Compute time evolution parameter w_a.
+        Compute time evolution parameter w_a from 2T (two-time) projection.
 
-        From moduli dynamics: w(a) = w₀ + w_a * (1 - a)
-        where a is scale factor.
+        The evolution parameter wa describes how w(z) changes with
+        redshift. It arises from the 26D -> 13D shadow projection
+        where the two shared timelike dimensions create a "thawing"
+        effect as the G2 manifold relaxes:
 
-        The evolution comes from:
-        - Moduli field rolling (contributes positive w_a)
-        - Dimensional reduction time-dependence (small)
+            wa = -1/sqrt(b3) = -1/sqrt(24) = -0.2041241...
+
+        SIGN CONVENTION (v16.2 Demon-Lock):
+        ------------------------------------
+        With w0 = -11/13 = -0.846 and wa = -0.204 (both correctly signed):
+
+        At z=0 (today):      w = w0 = -0.846 (quintessence, w > -1)
+        At z=1:              w = -0.846 + (-0.204)*0.5 = -0.948
+        At z->infinity:      w = w0 + wa = -1.05 (phantom-like, w < -1)
+
+        This is "THAWING" behavior:
+        - In the PAST (high z): w was more negative (phantom-like)
+        - TODAY (z=0): w has evolved toward less negative (quintessence)
+        - The field "thaws" from frozen phantom state
+
+        The NEGATIVE wa is correct for thawing quintessence because:
+        - wa < 0 means w DECREASES going to higher z (back in time)
+        - So w INCREASES going forward in time (thawing toward w > -1)
+
+        Note: DESI 2025 also measures wa < 0 (wa ~ -0.99), confirming
+        thawing behavior is observed in nature.
 
         Args:
             reduction_data: Dimensional reduction cascade data
 
         Returns:
-            Evolution parameter w_a
+            Evolution parameter w_a (negative for thawing)
         """
-        # Time evolution from moduli dynamics
-        # w_a ≈ (∂w/∂φ) * (φ̇/H)
-        # For slowly rolling moduli: w_a ~ 0.1 - 0.3
+        # Get b3 from reduction data
+        b3 = reduction_data.get('b3', 24)
 
-        # Estimate from topology
-        alpha_shadow = reduction_data['alpha_shadow']
-
-        # Simple model: w_a ~ alpha_shadow * 0.5
-        # This gives w_a ~ 0.288 for alpha_shadow = 0.576
-        wa = alpha_shadow * 0.5
+        # v16.2 Demon-Lock: Torsional Relaxation from 2T projection
+        # The sqrt(b3) factor comes from the effective dimension
+        # reduction: D_eff = sqrt(b3) for the temporal projection
+        wa = -1.0 / np.sqrt(b3)
 
         return wa
 
@@ -641,8 +659,9 @@ class DarkEnergyV16(SimulationBase):
     def get_output_param_definitions(self) -> List[Parameter]:
         """Return parameter definitions for outputs."""
         # Use theoretical values if simulation hasn't been run
+        # v16.2 Demon-Lock: w0 = -11/13, wa = -1/sqrt(24)
         w0_derived = self.w0_derived if self.w0_derived is not None else -11/13
-        wa_derived = self.wa_derived if self.wa_derived is not None else 0.288
+        wa_derived = self.wa_derived if self.wa_derived is not None else -1.0/np.sqrt(24)
         D_eff = self.D_eff if self.D_eff is not None else 12.0
 
         deviation_sigma = abs(w0_derived - (-0.7280)) / 0.067

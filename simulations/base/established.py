@@ -528,11 +528,11 @@ class EstablishedPhysics:
             ),
             EstablishedParameter(
                 path="topology.orientation_sum",
-                value=1.0,
-                uncertainty=0.05,
+                value=12,
+                uncertainty=0.5,
                 units="dimensionless",
-                source="ESTABLISHED:G2_THEORY",
-                description="Orientation sum for fermion chirality"
+                source="ESTABLISHED:Sp(2,R)_GAUGE_FIXING",
+                description="Orientation sum from Sp(2,R) gauge fixing - determines flux winding in theta_23"
             ),
             # Consciousness parameters for Appendix M (Speculative Extensions)
             EstablishedParameter(

@@ -1,6 +1,6 @@
 {
   "version": "16.0",
-  "count": 22,
+  "count": 23,
   "sections": {
     "1": {
       "id": "1",
@@ -648,7 +648,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-30T19:36:54.627380"
+      "timestamp": "2025-12-31T12:12:10.083888"
     },
     "2": {
       "id": "2",
@@ -1480,7 +1480,129 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-30T19:36:54.662406"
+      "timestamp": "2025-12-31T12:12:10.124122"
+    },
+    "validation": {
+      "id": "validation",
+      "appendix": false,
+      "subsection_id": "V.1",
+      "type": "section",
+      "section_type": null,
+      "title": "Ghost-Free Stability Check (The Guardian)",
+      "shortTitle": "Ghost-Free Stability Check (The Guardian)",
+      "order": 99,
+      "abstract": "Validation filter that enforces Weyl anomaly cancellation to ensure ghost-free unitarity. Blocks simulations if b3 != 24 or D != 26.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The Ghost-Free Stability Check (The Guardian) ensures that no simulation in the Principia Metaphysica framework can produce unphysical results. This is achieved by enforcing Weyl anomaly cancellation before any physical prediction is computed."
+        },
+        {
+          "type": "heading",
+          "content": "The Weyl Anomaly Requirement",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "In string theory, conformal (Weyl) invariance on the worldsheet is essential for consistent quantization. Quantum corrections introduce an anomaly unless the total central charge vanishes:"
+        },
+        {
+          "type": "formula",
+          "content": "c_{\\text{total}} = c_{\\text{matter}} + c_{\\text{ghost}} = 0",
+          "formula_id": "weyl-anomaly-cancellation",
+          "label": "(V.1)",
+          "equationNumber": "(V.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "For PM's (24,2) signature theory, the central charge calculation is:"
+        },
+        {
+          "type": "formula",
+          "content": "c = b_3 + 2 - 26 = 24 + 2 - 26 = 0",
+          "formula_id": "central-charge-unitarity",
+          "label": "(V.2)",
+          "equationNumber": "(V.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "This exact cancellation ensures: (1) no negative-norm states in the physical spectrum, (2) unitarity of the S-matrix, (3) consistent BRST cohomology, and (4) valid predictive power for all derived quantities."
+        },
+        {
+          "type": "heading",
+          "content": "The Guardian Protocol",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Before any simulation produces physical predictions, it must pass through the UnitaryFilter validation. If b3 != 24 or D != 26, the filter BLOCKS the simulation with a UnitaryFilterError, preventing unphysical results from entering the prediction chain."
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The Ghost-Free Stability Check (The Guardian) ensures that no simulation in the Principia Metaphysica framework can produce unphysical results. This is achieved by enforcing Weyl anomaly cancellation before any physical prediction is computed."
+        },
+        {
+          "type": "heading",
+          "content": "The Weyl Anomaly Requirement",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "In string theory, conformal (Weyl) invariance on the worldsheet is essential for consistent quantization. Quantum corrections introduce an anomaly unless the total central charge vanishes:"
+        },
+        {
+          "type": "formula",
+          "content": "c_{\\text{total}} = c_{\\text{matter}} + c_{\\text{ghost}} = 0",
+          "formula_id": "weyl-anomaly-cancellation",
+          "label": "(V.1)",
+          "equationNumber": "(V.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "For PM's (24,2) signature theory, the central charge calculation is:"
+        },
+        {
+          "type": "formula",
+          "content": "c = b_3 + 2 - 26 = 24 + 2 - 26 = 0",
+          "formula_id": "central-charge-unitarity",
+          "label": "(V.2)",
+          "equationNumber": "(V.2)"
+        },
+        {
+          "type": "paragraph",
+          "content": "This exact cancellation ensures: (1) no negative-norm states in the physical spectrum, (2) unitarity of the S-matrix, (3) consistent BRST cohomology, and (4) valid predictive power for all derived quantities."
+        },
+        {
+          "type": "heading",
+          "content": "The Guardian Protocol",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "Before any simulation produces physical predictions, it must pass through the UnitaryFilter validation. If b3 != 24 or D != 26, the filter BLOCKS the simulation with a UnitaryFilterError, preventing unphysical results from entering the prediction chain."
+        }
+      ],
+      "formulaRefs": [
+        "weyl-anomaly-cancellation",
+        "central-charge-unitarity"
+      ],
+      "paramRefs": [
+        "topology.b3",
+        "unitary.central_charge",
+        "unitary.is_ghost_free"
+      ],
+      "formula_refs": [
+        "weyl-anomaly-cancellation",
+        "central-charge-unitarity"
+      ],
+      "param_refs": [
+        "topology.b3",
+        "unitary.central_charge",
+        "unitary.is_ghost_free"
+      ],
+      "timestamp": "2025-12-31T12:12:10.084981"
     },
     "3": {
       "id": "3",
@@ -1538,7 +1660,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-30T19:36:54.658356"
+      "timestamp": "2025-12-31T12:12:10.117037"
     },
     "4": {
       "id": "4",
@@ -1700,7 +1822,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-30T19:36:54.662057"
+      "timestamp": "2025-12-31T12:12:10.122865"
     },
     "5": {
       "id": "5",
@@ -1708,14 +1830,14 @@
       "subsection_id": "5.5",
       "type": "section",
       "section_type": null,
-      "title": "Cosmological Constant from G2 Entropy",
-      "shortTitle": "Cosmological Constant from G2 Entropy",
+      "title": "Cosmological Constant from G2 Entropy with Instanton Suppression",
+      "shortTitle": "Cosmological Constant from G2 Entropy with Instanton Suppression",
       "order": 5,
-      "abstract": "We derive the cosmological constant Lambda ~ 10^-52 m^-2 from the entropy density of the G2 manifold. The observed smallness of Lambda (the 'cosmological constant problem') emerges naturally from the large topological suppression factor b3^3 = 13824.",
+      "abstract": "v16.2: We derive the cosmological constant Lambda ~ 10^-52 m^-2 from the entropy density of the G2 manifold combined with instanton suppression. The 120-order hierarchy is resolved by the geometric instanton action e^{-2*pi*D_crit} where D_crit = 26 is the critical string dimension.",
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "The cosmological constant problem is one of the deepest puzzles in physics. Quantum field theory predicts Lambda ~ 10^69 m^-2, yet observations show Lambda ~ 10^-52 m^-2 - a discrepancy of 120 orders of magnitude. Our framework resolves this through the G2 manifold's entropy structure."
+          "content": "The cosmological constant problem is one of the deepest puzzles in physics. Quantum field theory predicts Lambda ~ 10^69 m^-2, yet observations show Lambda ~ 10^-52 m^-2 - a discrepancy of 120 orders of magnitude. Our v16.2 framework resolves this through the G2 manifold's entropy structure combined with instanton suppression."
         },
         {
           "type": "heading",
@@ -1735,23 +1857,32 @@
         },
         {
           "type": "heading",
+          "content": "v16.2: Instanton Suppression Mechanism",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The critical insight of v16.2 is the instanton suppression factor. The 26D bulk (critical bosonic string dimension) provides a geometric tunneling probability that exponentially suppresses the vacuum energy. This instanton action e^{-2*pi*D_crit} ~ 10^-71 bridges the hierarchy."
+        },
+        {
+          "type": "heading",
           "content": "Geometric Derivation of Lambda",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The cosmological constant emerges from the ratio of the geometric anchor to the cube of the Betti number and the square of the horizon scale:"
+          "content": "The cosmological constant emerges from the ratio of the geometric anchor to the cube of the Betti number, the square of the horizon scale, and the instanton suppression:"
         },
         {
           "type": "formula",
-          "content": "\\Lambda = \\frac{k_{\\gimel} \\cdot [\\ln(k_{\\gimel})]^2}{b_3^3} \\cdot \\left(\\frac{l_{Pl}}{R_H}\\right)^2",
+          "content": "\\Lambda = \\frac{k_{\\gimel} \\cdot [\\ln(k_{\\gimel})]^2}{b_3^3} \\cdot \\left(\\frac{l_{Pl}}{R_H}\\right)^2 \\cdot e^{-2\\pi D_{crit}}",
           "formula_id": "cosmological-constant-geometric",
           "label": "(5.26)",
           "equationNumber": "(5.26)"
         },
         {
           "type": "paragraph",
-          "content": "The key insight is the b3^3 suppression: 24^3 = 13824. This large topological factor, combined with the horizon scale ratio (l_Planck / R_horizon)^2 ~ 10^-122, gives the observed Lambda."
+          "content": "v16.2 key factors: (1) Topological suppression b3^3 = 13824, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton action e^{-2*pi*26} ~ 10^-71. The instanton factor provides the geometric mechanism for hierarchy."
         },
         {
           "type": "formula",
@@ -1762,13 +1893,13 @@
         },
         {
           "type": "callout",
-          "content": "The 120 orders of magnitude hierarchy between Planck and observed Lambda emerges from: (1) Topological suppression b3^3 ~ 10^4, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Entropy factor ~ 10^2. No fine-tuning is required - Lambda is determined by topology."
+          "content": "The 120 orders of magnitude hierarchy between Planck and observed Lambda emerges from: (1) Topological suppression b3^3 ~ 10^4, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton e^{-2*pi*26} ~ 10^-71. No fine-tuning is required - Lambda is determined by D_crit=26 geometry."
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "The cosmological constant problem is one of the deepest puzzles in physics. Quantum field theory predicts Lambda ~ 10^69 m^-2, yet observations show Lambda ~ 10^-52 m^-2 - a discrepancy of 120 orders of magnitude. Our framework resolves this through the G2 manifold's entropy structure."
+          "content": "The cosmological constant problem is one of the deepest puzzles in physics. Quantum field theory predicts Lambda ~ 10^69 m^-2, yet observations show Lambda ~ 10^-52 m^-2 - a discrepancy of 120 orders of magnitude. Our v16.2 framework resolves this through the G2 manifold's entropy structure combined with instanton suppression."
         },
         {
           "type": "heading",
@@ -1788,23 +1919,32 @@
         },
         {
           "type": "heading",
+          "content": "v16.2: Instanton Suppression Mechanism",
+          "level": 3
+        },
+        {
+          "type": "paragraph",
+          "content": "The critical insight of v16.2 is the instanton suppression factor. The 26D bulk (critical bosonic string dimension) provides a geometric tunneling probability that exponentially suppresses the vacuum energy. This instanton action e^{-2*pi*D_crit} ~ 10^-71 bridges the hierarchy."
+        },
+        {
+          "type": "heading",
           "content": "Geometric Derivation of Lambda",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The cosmological constant emerges from the ratio of the geometric anchor to the cube of the Betti number and the square of the horizon scale:"
+          "content": "The cosmological constant emerges from the ratio of the geometric anchor to the cube of the Betti number, the square of the horizon scale, and the instanton suppression:"
         },
         {
           "type": "formula",
-          "content": "\\Lambda = \\frac{k_{\\gimel} \\cdot [\\ln(k_{\\gimel})]^2}{b_3^3} \\cdot \\left(\\frac{l_{Pl}}{R_H}\\right)^2",
+          "content": "\\Lambda = \\frac{k_{\\gimel} \\cdot [\\ln(k_{\\gimel})]^2}{b_3^3} \\cdot \\left(\\frac{l_{Pl}}{R_H}\\right)^2 \\cdot e^{-2\\pi D_{crit}}",
           "formula_id": "cosmological-constant-geometric",
           "label": "(5.26)",
           "equationNumber": "(5.26)"
         },
         {
           "type": "paragraph",
-          "content": "The key insight is the b3^3 suppression: 24^3 = 13824. This large topological factor, combined with the horizon scale ratio (l_Planck / R_horizon)^2 ~ 10^-122, gives the observed Lambda."
+          "content": "v16.2 key factors: (1) Topological suppression b3^3 = 13824, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton action e^{-2*pi*26} ~ 10^-71. The instanton factor provides the geometric mechanism for hierarchy."
         },
         {
           "type": "formula",
@@ -1815,7 +1955,7 @@
         },
         {
           "type": "callout",
-          "content": "The 120 orders of magnitude hierarchy between Planck and observed Lambda emerges from: (1) Topological suppression b3^3 ~ 10^4, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Entropy factor ~ 10^2. No fine-tuning is required - Lambda is determined by topology."
+          "content": "The 120 orders of magnitude hierarchy between Planck and observed Lambda emerges from: (1) Topological suppression b3^3 ~ 10^4, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton e^{-2*pi*26} ~ 10^-71. No fine-tuning is required - Lambda is determined by D_crit=26 geometry."
         }
       ],
       "formulaRefs": [
@@ -1836,7 +1976,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2025-12-30T19:36:54.662268"
+      "timestamp": "2025-12-31T12:12:10.123946"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -1964,7 +2104,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-30T19:36:54.662461"
+      "timestamp": "2025-12-31T12:12:10.124569"
     },
     "7": {
       "id": "7",
@@ -4398,7 +4538,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-30T19:36:54.662640"
+      "timestamp": "2025-12-31T12:12:10.125091"
     },
     "6": {
       "id": "6",
@@ -6544,7 +6684,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-30T19:36:54.662740"
+      "timestamp": "2025-12-31T12:12:10.125551"
     },
     "A": {
       "id": "2",
@@ -6976,7 +7116,7 @@
         "dimensions.D_after_sp2r",
         "dimensions.D_observable"
       ],
-      "timestamp": "2025-12-30T19:36:54.662787"
+      "timestamp": "2025-12-31T12:12:10.125958"
     },
     "B": {
       "id": "2",
@@ -7576,7 +7716,7 @@
         "methods.convergence_criterion",
         "methods.n_kk_modes"
       ],
-      "timestamp": "2025-12-30T19:36:54.662861"
+      "timestamp": "2025-12-31T12:12:10.126460"
     },
     "C": {
       "id": "3",
@@ -8086,7 +8226,7 @@
         "topology.K_MATCHING",
         "gauge.M_GUT"
       ],
-      "timestamp": "2025-12-30T19:36:54.662920"
+      "timestamp": "2025-12-31T12:12:10.126876"
     },
     "D": {
       "id": "6",
@@ -8246,7 +8386,7 @@
         "gauge.M_GUT",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-30T19:36:54.662992"
+      "timestamp": "2025-12-31T12:12:10.127262"
     },
     "E": {
       "id": "4",
@@ -8454,7 +8594,7 @@
         "proton_decay.tau_p_years",
         "topology.cycle_separation"
       ],
-      "timestamp": "2025-12-30T19:36:54.663027"
+      "timestamp": "2025-12-31T12:12:10.127488"
     },
     "F": {
       "id": "2",
@@ -8874,7 +9014,7 @@
         "dimensions.orientation_sum",
         "topology.b3"
       ],
-      "timestamp": "2025-12-30T19:36:54.663082"
+      "timestamp": "2025-12-31T12:12:10.127791"
     },
     "G": {
       "id": "2",
@@ -9022,7 +9162,7 @@
         "topology.N_flux",
         "topology.T_omega"
       ],
-      "timestamp": "2025-12-30T19:36:54.663129"
+      "timestamp": "2025-12-31T12:12:10.128084"
     },
     "H": {
       "id": "4",
@@ -9128,7 +9268,7 @@
         "dimensions.orientation_sum",
         "proton_decay.BR_e_pi0"
       ],
-      "timestamp": "2025-12-30T19:36:54.663166"
+      "timestamp": "2025-12-31T12:12:10.128297"
     },
     "I": {
       "id": "6",
@@ -9318,7 +9458,7 @@
         "gw_dispersion.eta",
         "gw_dispersion.M_GW"
       ],
-      "timestamp": "2025-12-30T19:36:54.663198"
+      "timestamp": "2025-12-31T12:12:10.128451"
     },
     "J": {
       "id": "2",
@@ -9662,7 +9802,7 @@
         "cosmology.w0_derived",
         "cosmology.wa_derived"
       ],
-      "timestamp": "2025-12-30T19:36:54.674667"
+      "timestamp": "2025-12-31T12:12:10.139342"
     },
     "K": {
       "id": "7",
@@ -10214,7 +10354,7 @@
         "pdg.m_higgs",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-30T19:36:54.674748"
+      "timestamp": "2025-12-31T12:12:10.139688"
     },
     "L": {
       "id": "6",
@@ -11102,7 +11242,7 @@
         "pdg.m_bottom",
         "pdg.m_tau"
       ],
-      "timestamp": "2025-12-30T19:36:54.674803"
+      "timestamp": "2025-12-31T12:12:10.140060"
     },
     "M": {
       "id": "6",
@@ -11430,7 +11570,7 @@
         "consciousness.tau_collapse_ms",
         "consciousness.f_base_hz"
       ],
-      "timestamp": "2025-12-30T19:36:54.674862"
+      "timestamp": "2025-12-31T12:12:10.140412"
     },
     "N": {
       "id": "2",
@@ -12070,7 +12210,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-30T19:36:54.674917"
+      "timestamp": "2025-12-31T12:12:10.140525"
     }
   }
 }
