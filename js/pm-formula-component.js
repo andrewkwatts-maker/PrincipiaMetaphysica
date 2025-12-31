@@ -66,8 +66,12 @@ function parseFormulaToHoverable(formula) {
         const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
         // Replace term with hoverable span (only if not already wrapped)
-        const regex = new RegExp(`(?<!class="formula-var">)${escapedTerm}(?!</span>)`, 'g');
-        html = html.replace(regex, `<span class="formula-var">${term}${tooltip}</span>`);
+        // Safari-compatible: avoid lookbehind by checking if already wrapped
+        const replacement = `<span class="formula-var">${term}${tooltip}</span>`;
+        if (!html.includes(`class="formula-var">${term}`)) {
+            const regex = new RegExp(`${escapedTerm}(?!</span>)`, 'g');
+            html = html.replace(regex, replacement);
+        }
     }
 
     return html;
@@ -93,11 +97,21 @@ class PMFormula extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        // Bound handlers for proper cleanup
+        this._boundDocumentTouchHandler = null;
     }
 
     connectedCallback() {
         this.render();
         this.setupTouchHandlers();
+    }
+
+    disconnectedCallback() {
+        // Clean up document-level event listeners to prevent memory leaks
+        if (this._boundDocumentTouchHandler) {
+            document.removeEventListener('touchstart', this._boundDocumentTouchHandler);
+            this._boundDocumentTouchHandler = null;
+        }
     }
 
     setupTouchHandlers() {
@@ -120,12 +134,13 @@ class PMFormula extends HTMLElement {
                 }, { passive: false });
             });
 
-            // Touch outside to dismiss
-            document.addEventListener('touchstart', (e) => {
+            // Touch outside to dismiss - store bound handler for cleanup
+            this._boundDocumentTouchHandler = (e) => {
                 if (!shadowRoot.contains(e.target)) {
                     formulaVars.forEach(el => el.classList.remove('touched'));
                 }
-            }, { passive: true });
+            };
+            document.addEventListener('touchstart', this._boundDocumentTouchHandler, { passive: true });
 
             // Click outside shadow root to dismiss (for hybrid devices)
             shadowRoot.addEventListener('click', (e) => {

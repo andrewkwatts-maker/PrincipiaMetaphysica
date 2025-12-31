@@ -28,10 +28,28 @@ class PMParameterComponent extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
+        // Track bound event handlers for cleanup
+        this._boundMouseEnter = null;
+        this._boundMouseLeave = null;
     }
 
     connectedCallback() {
         this.render();
+    }
+
+    disconnectedCallback() {
+        // Clean up event listeners to prevent memory leaks
+        this._cleanupHoverListeners();
+    }
+
+    _cleanupHoverListeners() {
+        const wrapper = this.shadowRoot?.querySelector('.pm-hoverable');
+        if (wrapper && this._boundMouseEnter) {
+            wrapper.removeEventListener('mouseenter', this._boundMouseEnter);
+            wrapper.removeEventListener('mouseleave', this._boundMouseLeave);
+        }
+        this._boundMouseEnter = null;
+        this._boundMouseLeave = null;
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
@@ -292,18 +310,24 @@ class PMParameterComponent extends HTMLElement {
     }
 
     setupHover() {
+        // Clean up any existing listeners first
+        this._cleanupHoverListeners();
+
         const wrapper = this.shadowRoot.querySelector('.pm-hoverable');
         const tooltip = this.shadowRoot.querySelector('.pm-tooltip');
 
         if (!wrapper || !tooltip) return;
 
-        wrapper.addEventListener('mouseenter', () => {
+        // Create bound handlers for cleanup
+        this._boundMouseEnter = () => {
             tooltip.classList.add('pm-tooltip-visible');
-        });
-
-        wrapper.addEventListener('mouseleave', () => {
+        };
+        this._boundMouseLeave = () => {
             tooltip.classList.remove('pm-tooltip-visible');
-        });
+        };
+
+        wrapper.addEventListener('mouseenter', this._boundMouseEnter);
+        wrapper.addEventListener('mouseleave', this._boundMouseLeave);
     }
 
     getStyles() {

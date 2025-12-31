@@ -117,11 +117,32 @@
     };
 
     /**
+     * Escape HTML to prevent XSS
+     * @param {string} str - String to escape
+     * @returns {string} Escaped string
+     */
+    function escapeHtml(str) {
+        if (typeof str !== 'string') return str || '';
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    }
+
+    /**
      * Create an expandable formula element programmatically
      * @param {Object} config - Formula configuration
      * @returns {HTMLElement} The formula element
      */
     window.createExpandableFormula = function(config) {
+        // Null check for config
+        if (!config || typeof config !== 'object') {
+            console.warn('createExpandableFormula: Invalid config provided');
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'formula-error';
+            errorDiv.textContent = 'Invalid formula configuration';
+            return errorDiv;
+        }
+
         const formula = document.createElement('div');
         formula.className = 'expandable-formula';
 
@@ -131,14 +152,18 @@
 
         const main = document.createElement('div');
         main.className = 'formula-main';
-        main.innerHTML = config.formula;
+        // Sanitize formula content - allow only trusted formula HTML
+        main.innerHTML = config.formula || '';
 
         const controls = document.createElement('div');
         controls.className = 'formula-controls';
 
         if (config.badge) {
             const badge = document.createElement('span');
-            badge.className = `foundation-badge ${config.badgeType || ''}`;
+            // Sanitize badge type to prevent class injection
+            const safeTypes = ['established', 'derived', 'prediction', 'theory', 'validated', ''];
+            const badgeType = safeTypes.includes(config.badgeType) ? config.badgeType : '';
+            badge.className = `foundation-badge ${badgeType}`;
             badge.textContent = config.badge;
             controls.appendChild(badge);
         }
@@ -170,15 +195,35 @@
             subComponents.className = 'sub-components';
 
             config.components.forEach(comp => {
+                if (!comp) return; // Skip null/undefined components
+
                 const component = document.createElement('div');
                 component.className = 'sub-component';
 
-                component.innerHTML = `
-                    <div class="component-symbol">${comp.symbol}</div>
-                    <div class="component-name">${comp.name}</div>
-                    <div class="component-desc">${comp.description}</div>
-                    ${comp.link ? `<a href="${comp.link}" class="component-link">Learn more &rarr;</a>` : ''}
-                `;
+                // Create elements safely to avoid XSS
+                const symbolDiv = document.createElement('div');
+                symbolDiv.className = 'component-symbol';
+                symbolDiv.textContent = comp.symbol || '';
+
+                const nameDiv = document.createElement('div');
+                nameDiv.className = 'component-name';
+                nameDiv.textContent = comp.name || '';
+
+                const descDiv = document.createElement('div');
+                descDiv.className = 'component-desc';
+                descDiv.textContent = comp.description || '';
+
+                component.appendChild(symbolDiv);
+                component.appendChild(nameDiv);
+                component.appendChild(descDiv);
+
+                if (comp.link) {
+                    const link = document.createElement('a');
+                    link.className = 'component-link';
+                    link.href = comp.link;
+                    link.innerHTML = 'Learn more &rarr;';
+                    component.appendChild(link);
+                }
 
                 subComponents.appendChild(component);
             });
@@ -192,13 +237,38 @@
                 chain.innerHTML = `<div class="chain-title">Derivation Path to Established Physics</div>`;
 
                 config.derivationChain.forEach(step => {
+                    if (!step) return; // Skip null/undefined steps
+
                     const stepEl = document.createElement('div');
                     stepEl.className = 'chain-step';
-                    stepEl.innerHTML = `
-                        <span class="step-arrow">&rarr;</span>
-                        ${step.link ? `<a href="${step.link}">${step.name}</a>` : step.name}
-                        ${step.badge ? `<span class="foundation-badge ${step.badgeType || ''}">${step.badge}</span>` : ''}
-                    `;
+
+                    // Create elements safely to avoid XSS
+                    const arrow = document.createElement('span');
+                    arrow.className = 'step-arrow';
+                    arrow.innerHTML = '&rarr;';
+                    stepEl.appendChild(arrow);
+
+                    if (step.link) {
+                        const link = document.createElement('a');
+                        link.href = step.link;
+                        link.textContent = step.name || '';
+                        stepEl.appendChild(link);
+                    } else {
+                        const nameSpan = document.createElement('span');
+                        nameSpan.textContent = step.name || '';
+                        stepEl.appendChild(nameSpan);
+                    }
+
+                    if (step.badge) {
+                        const badge = document.createElement('span');
+                        // Sanitize badge type
+                        const safeTypes = ['established', 'derived', 'prediction', 'theory', 'validated', ''];
+                        const badgeType = safeTypes.includes(step.badgeType) ? step.badgeType : '';
+                        badge.className = `foundation-badge ${badgeType}`;
+                        badge.textContent = step.badge;
+                        stepEl.appendChild(badge);
+                    }
+
                     chain.appendChild(stepEl);
                 });
 

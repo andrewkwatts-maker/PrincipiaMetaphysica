@@ -156,20 +156,25 @@
                 icon = '⚠️'
             } = options;
 
-            const retryButton = retry
-                ? `<button class="btn btn-primary error-action" onclick="${retry}">${retryText}</button>`
-                : '';
-
             const errorHTML = `
                 <div class="error-container" data-pm-error>
-                    <div class="error-icon">${icon}</div>
-                    <h3 class="error-title">${title}</h3>
-                    <p class="error-message">${message}</p>
-                    ${retryButton}
+                    <div class="error-icon">${this.escapeHtml(icon)}</div>
+                    <h3 class="error-title">${this.escapeHtml(title)}</h3>
+                    <p class="error-message">${this.escapeHtml(message)}</p>
+                    ${retry ? '<button class="btn btn-primary error-action" data-retry-action>'+this.escapeHtml(retryText)+'</button>' : ''}
                 </div>
             `;
 
             element.innerHTML = errorHTML;
+
+            // Bind retry handler safely (avoid inline onclick XSS)
+            if (retry) {
+                const retryBtn = element.querySelector('[data-retry-action]');
+                if (retryBtn && typeof retry === 'function') {
+                    retryBtn.addEventListener('click', retry);
+                }
+            }
+
             return element.querySelector('[data-pm-error]');
         },
 
@@ -246,20 +251,25 @@
                 icon = '📭'
             } = options;
 
-            const actionButton = action
-                ? `<button class="btn btn-primary empty-action" onclick="${action}">${actionText}</button>`
-                : '';
-
             const emptyHTML = `
                 <div class="empty-state" data-pm-empty>
-                    <div class="empty-icon">${icon}</div>
-                    <h3 class="empty-title">${title}</h3>
-                    <p class="empty-message">${message}</p>
-                    ${actionButton}
+                    <div class="empty-icon">${this.escapeHtml(icon)}</div>
+                    <h3 class="empty-title">${this.escapeHtml(title)}</h3>
+                    <p class="empty-message">${this.escapeHtml(message)}</p>
+                    ${action ? '<button class="btn btn-primary empty-action" data-empty-action>'+this.escapeHtml(actionText)+'</button>' : ''}
                 </div>
             `;
 
             element.innerHTML = emptyHTML;
+
+            // Bind action handler safely (avoid inline onclick XSS)
+            if (action) {
+                const actionBtn = element.querySelector('[data-empty-action]');
+                if (actionBtn && typeof action === 'function') {
+                    actionBtn.addEventListener('click', action);
+                }
+            }
+
             return element.querySelector('[data-pm-empty]');
         },
 
@@ -419,6 +429,18 @@
             }
 
             return toast;
+        },
+
+        /**
+         * Escape HTML to prevent XSS
+         * @param {string} str - String to escape
+         * @returns {string} Escaped string
+         */
+        escapeHtml(str) {
+            if (typeof str !== 'string') return str;
+            const div = document.createElement('div');
+            div.textContent = str;
+            return div.innerHTML;
         }
     };
 

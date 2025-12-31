@@ -287,8 +287,13 @@ function setupMobileMenu() {
     });
 
     // Initialize ARIA attributes
+    // Note: Don't set aria-hidden on nav initially - it's always visible on desktop
+    // Only set aria-hidden when menu is actually closed on mobile
     menuBtn.setAttribute('aria-expanded', 'false');
-    nav.setAttribute('aria-hidden', 'true');
+    // Check if we're on mobile before setting aria-hidden
+    if (window.matchMedia('(max-width: 768px)').matches) {
+      nav.setAttribute('aria-hidden', 'true');
+    }
   }
 }
 

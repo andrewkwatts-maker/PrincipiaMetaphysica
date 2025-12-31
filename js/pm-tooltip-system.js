@@ -205,6 +205,12 @@
      * Populate all .pm-value elements with their values
      */
     function setupPMValues() {
+        // Guard: PM must be defined
+        if (typeof PM === 'undefined') {
+            console.warn('[PM Tooltip] PM constants not loaded yet, skipping value population');
+            return;
+        }
+
         const elements = document.querySelectorAll('.pm-value, [data-category][data-param]');
 
         elements.forEach(el => {
