@@ -168,6 +168,7 @@ class RenormalizationGroupRunner:
 
         # Integrate from high to low energy
         # Use Radau method for stiff equations - stable over 14 orders of magnitude
+        # v16.2 fix: explicit first_step prevents overshoot on logarithmic spans
         sol = solve_ivp(
             beta,
             [t_start, t_end],
@@ -175,7 +176,8 @@ class RenormalizationGroupRunner:
             method='Radau',  # Stiff-aware solver per v16.2 guidance
             dense_output=True,
             rtol=1e-10,
-            atol=1e-12
+            atol=1e-12,
+            first_step=1e-12  # Critical for 17 order-of-magnitude spans
         )
 
         if not sol.success:
@@ -312,13 +314,15 @@ def run_alpha_rg_evolution(alpha_bare_inv: float, m_start: float = 1.22e19, m_en
         return np.array([beta_0_exact])  # d(alpha_inv)/dt with Gimel correction
 
     # Use Radau for stiff equations
+    # v16.2 fix: explicit first_step prevents overshoot on logarithmic spans
     sol = solve_ivp(
         beta_alpha_v16_2,
         t_span,
         [alpha_bare_inv],
         method='Radau',
         rtol=1e-12,
-        atol=1e-14
+        atol=1e-14,
+        first_step=1e-12  # Critical for Planck to Z-mass span
     )
 
     if not sol.success:
