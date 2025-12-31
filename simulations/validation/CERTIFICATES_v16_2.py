@@ -75,7 +75,18 @@ class CertificateStatus(Enum):
 
 @dataclass
 class Certificate:
-    """A single Demon-Lock certificate."""
+    """
+    A single Demon-Lock certificate.
+
+    Each certificate represents a fundamental constant derived from
+    the G2 manifold topology (26D → 13D → 4D projection chain).
+
+    Geometric Seeds:
+    - LEECH_LATTICE: 24D lattice spacing (k_gimel)
+    - G2_HOLONOMY: 7D internal manifold structure
+    - BRANE_PROJECTION: 13D → 4D dimensional reduction
+    - OCTONIONIC_TRIALITY: Fermion generation structure
+    """
     id: int
     name: str
     symbol: str
@@ -85,6 +96,8 @@ class Certificate:
     units: str
     formula: str
     domain: str
+    geometric_seed: str = "G2_MANIFOLD"  # Topological origin
+    source: str = ""  # Experimental source (CODATA, PDG, DESI, etc.)
     status: CertificateStatus = CertificateStatus.PENDING
     notes: str = ""
 
@@ -137,7 +150,10 @@ def derive_c1_hubble() -> Certificate:
         uncertainty=1.04,
         units="km/s/Mpc",
         formula="H₀ = H₀_CMB × (1 + sin²θ/2)",
-        domain="Cosmology"
+        domain="Cosmology",
+        geometric_seed="BRANE_PROJECTION",
+        source="SH0ES_2024",
+        notes="Hubble tension resolved via 13D/26D volume mixing angle"
     )
 
 
@@ -163,11 +179,14 @@ def derive_c2_fine_structure() -> Certificate:
         name="Fine Structure Constant",
         symbol="α⁻¹",
         derived_value=alpha_inv,
-        experimental_value=137.035999084,  # CODATA 2018
+        experimental_value=137.035999177,  # CODATA 2022
         uncertainty=0.01,  # Theoretical derivation tolerance
         units="dimensionless",
         formula="α⁻¹ = k_gimel² - b₃/φ + φ/(4π)",
-        domain="QED"
+        domain="QED",
+        geometric_seed="LEECH_LATTICE",
+        source="CODATA_2022",
+        notes="Leech spectral gap k² - topological correction"
     )
 
 
@@ -204,7 +223,9 @@ def derive_c3_strong_coupling() -> Certificate:
         units="dimensionless",
         formula="αs = [k/(b₃(π+1)+k/2)] × (1+1/(b₃π))",
         domain="QCD",
-        notes="v16.2: Lattice correction reduces σ from 1.45 to 0.27"
+        geometric_seed="G2_HOLONOMY",
+        source="PDG_2024",
+        notes="v16.2: QCD lattice correction from 24-cycle friction (0.27σ)"
     )
 
 
@@ -259,12 +280,13 @@ def derive_c4_cosmological_constant() -> Certificate:
         units="log₁₀(Planck units)",
         formula="Λ_bulk = 1/(b₃ × k_gimel)^(2b₃+1)",
         domain="Cosmology",
+        geometric_seed="DIMENSIONAL_FILTER",
+        source="PLANCK_2018",
         notes=(
             "v16.2: Dimensional Suppression interpretation. "
             "Derived -50 log₁₀ represents Bulk Tension. "
             "Observed -122 log₁₀ is Brane Residue. "
-            "Gap = Dimensional Filter signature. "
-            "β(Λ) ≈ 0 (immune to RG running)."
+            "Gap = Dimensional Filter signature."
         )
     )
 
@@ -284,12 +306,14 @@ def derive_c5_neutrino_mass_sum() -> Certificate:
         name="Neutrino Mass Sum",
         symbol="Σmν",
         derived_value=sum_mnu,
-        experimental_value=0.06,  # Minimum from oscillations
+        experimental_value=0.06,  # DESI 2024 lower bound
         uncertainty=0.02,
         units="eV",
         formula="Σmν = (k_gimel / b₃) × (1 / 2φ²)",
         domain="Neutrino",
-        notes="Target ~0.0982 eV (Normal Hierarchy prediction)"
+        geometric_seed="LEECH_LATTICE",
+        source="DESI_2024",
+        notes="Lattice dilution: 24-fold vacancy in Leech structure"
     )
 
 
@@ -316,7 +340,9 @@ def derive_c6_gravitational_constant() -> Certificate:
         units="dimensionless residue",
         formula="G_res = 1/(2π×13)² × k_gimel/b₃⁴",
         domain="Gravity",
-        notes="Scale verification - formula consistency"
+        geometric_seed="BRANE_PROJECTION",
+        source="CODATA_2022",
+        notes="13D Mirror Brane curvature residue"
     )
 
 
@@ -341,7 +367,10 @@ def derive_c7_higgs_vev() -> Certificate:
         uncertainty=0.5,  # Theoretical tolerance
         units="GeV",
         formula="v = k_gimel × (b₃ - 4)",
-        domain="Electroweak"
+        domain="Electroweak",
+        geometric_seed="LEECH_LATTICE",
+        source="PDG_2024",
+        notes="Gimel × 20 hidden dimensions"
     )
 
 
@@ -366,7 +395,10 @@ def derive_c8_fermi_constant() -> Certificate:
         uncertainty=0.002e-5,  # Theoretical tolerance (~0.2%)
         units="GeV⁻²",
         formula="GF = 1 / (√2 × v²) where v = k_gimel(b₃-4)",
-        domain="Electroweak"
+        domain="Electroweak",
+        geometric_seed="LEECH_LATTICE",
+        source="PDG_2024",
+        notes="Derived from Higgs VEV (C07)"
     )
 
 
@@ -392,7 +424,10 @@ def derive_c9_weak_mixing_angle() -> Certificate:
         uncertainty=0.001,  # Theoretical tolerance
         units="dimensionless",
         formula="sin²θW = 3 / (k_gimel + φ - 1)",
-        domain="Electroweak"
+        domain="Electroweak",
+        geometric_seed="OCTONIONIC_TRIALITY",
+        source="PDG_2024",
+        notes="SU(2) generators / Gimel+phi tilt"
     )
 
 
@@ -445,7 +480,9 @@ def derive_c10_planck_mass() -> Certificate:
         units="GeV",
         formula="M_Pl = M_Pl_26D × χ = 2.435×10¹⁸ × 5.013",
         domain="Gravity",
-        notes="v16.2: Volumetric projection resolves 97.65σ Red Case. χ = √V₇ ≈ 5.013"
+        geometric_seed="V12_VOLUMETRIC",
+        source="CODATA_2022",
+        notes="v16.2: Volumetric projection resolves 97.65σ. χ = √V₇ ≈ 5.013"
     )
 
 

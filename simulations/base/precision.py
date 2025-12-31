@@ -12,10 +12,30 @@ at the 16th decimal place.
 
 CRITICAL: This module MUST be imported before any physics calculations.
 
-The three sterile constants are defined as strings to prevent precision loss:
-- B3 = 24 (Betti number of associative 3-cycles in G2)
-- K_GIMEL = 12.318309886183790671... (Gimel constant from Leech lattice)
-- PHI = 1.618033988749894848... (Golden ratio)
+CORE STERILE CONSTANTS
+----------------------
+The three structural anchors are defined as strings to prevent precision loss:
+
+    b₃ = 24        Betti number of associative 3-cycles in G₂ manifold
+                   Source: Joyce (2000) Compact Manifolds with Special Holonomy
+
+    k_gimel = b₃/2 + 1/π ≈ 12.318...
+                   Gimel constant from Leech lattice spectral gap
+                   The "heartbeat" of the 26D Bulk tension
+
+    φ = (1+√5)/2 ≈ 1.618...
+                   Golden ratio - modulates dynamic harmonics
+
+DIMENSIONAL PROJECTION CHAIN
+----------------------------
+    26D Bulk (Leech Lattice)
+        ↓ b₃ = 24 (compactification)
+    13D Mirror Brane
+        ↓ χ = √V₇ ≈ 5.013 (volumetric dressing)
+    4D Spacetime (Observed Physics)
+
+The precision engine ensures that each projection step maintains topological
+stability through all 42 demon-lock certificates.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """

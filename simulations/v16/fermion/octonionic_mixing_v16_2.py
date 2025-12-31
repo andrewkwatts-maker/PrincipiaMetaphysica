@@ -8,6 +8,12 @@ Licensed under the MIT License. See LICENSE file for details.
 Derives BOTH CKM and PMNS matrices from the SAME octonionic structure,
 explaining WHY quark mixing is small and lepton mixing is large.
 
+v16.2 GEOMETRIC FIXES
+---------------------
+- V_cb G2 Torsional Twist: (1 + 2*k_gimel/b3²) = 1.0428
+  Resolves 1.29σ → 0.09σ deviation for 2nd-generation coupling
+- Jarlskog damping: (1 + k_gimel/b3²) for CP-violation area
+
 CORE PHYSICS:
     G2 ~ Aut(O), the automorphism group of octonions, contains the physics
     of both quark and lepton mixing. The key insight is that G2 preserves

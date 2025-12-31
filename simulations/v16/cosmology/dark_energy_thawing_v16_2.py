@@ -7,20 +7,30 @@ Licensed under the MIT License. See LICENSE file for details.
 Derives w_0 and w_a (CPL parametrization) from G2 geometry, matching
 DESI 2025 "thawing dark energy" signature.
 
+GEOMETRIC DERIVATION
+--------------------
+    w₀ = -1 + 1/b₃ = -1 + 1/24 = -23/24 ≈ -0.9583
+
+    The factor 1/b₃ represents the "thawing pressure" from the 24
+    associative 3-cycles of the G₂ manifold. As the universe expands,
+    this pressure is released, driving w above the cosmological constant.
+
+    wₐ = -1/√b₃ = -1/√24 ≈ -0.204
+
+    The evolution parameter comes from the square root of the cycle count,
+    representing the rate of torsional leakage from the G₂ 3-form.
+
+EXPERIMENTAL COMPARISON (DESI 2025 Thawing)
+-------------------------------------------
+    w₀: PM = -0.9583, DESI = -0.957 ± 0.067  → 0.02σ PASS
+    wₐ: PM = -0.204,  DESI = -0.99 ± 0.33   → 2.38σ TENSION (acknowledged)
+
+    The wₐ tension is acknowledged as a geometric constraint: PM predicts
+    weaker thawing from G₂ holonomy than current DESI measurements indicate.
+    This may be resolved by future DESI data releases.
+
 The key insight: What DESI calls "thawing" is actually the torsional
-leakage from the G2 3-form as the manifold relaxes under Ricci flow.
-This connects to v15.2 history where torsional coupling was first identified.
-
-This simulation computes:
-1. w_0 = -1 + 1/b3 ~ -0.958 (static pressure of 24-cycle)
-2. w_a = -(1/b3) * sqrt(k_gimel/pi) ~ -0.0825 (G2 holonomy projection)
-3. w(z) evolution via CPL parametrization
-4. Sigma verification against DESI 2025 benchmarks
-5. Torsional leakage mechanism linking to v15.2 heritage
-
-Key Result: The G2 manifold's Ricci flow relaxation signature manifests
-as the "thawing" behavior observed by DESI. The equation of state
-naturally evolves from w ~ -1 at early times toward w > -1 today.
+leakage from the G₂ 3-form as the manifold relaxes under Ricci flow.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
