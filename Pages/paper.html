@@ -555,6 +555,45 @@
             background: #f8f9fa;
         }
 
+        /* Figure and visualization styling */
+        .pm-paper-container .figure-block,
+        .pm-paper-container .paper-figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .pm-paper-container .paper-figure {
+            background: #f8f9fa;
+            border: 1px solid var(--border-light);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .pm-paper-container .figure-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pm-paper-container .figure-caption {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #555;
+            font-style: italic;
+        }
+
+        .pm-paper-container .figure-caption strong {
+            color: var(--accent);
+            font-style: normal;
+        }
+
+        /* SVG visualization styling */
+        .pm-paper-container .paper-figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
         /* Derivation box styling */
         .pm-paper-container .derivation-box {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);

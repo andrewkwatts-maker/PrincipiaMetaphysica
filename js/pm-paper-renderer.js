@@ -1058,6 +1058,30 @@
                 blockDiv.innerHTML = safeStringify(block.content, 'subsection.content');
                 break;
 
+            case 'image':
+            case 'figure':
+            case 'visualization':
+                // Render images/figures with captions
+                blockDiv.className = 'figure-block';
+                const imgSrc = block.src || block.path || block.url || '';
+                const imgAlt = block.alt || block.title || block.caption || '';
+                const imgCaption = block.caption || block.description || '';
+                const figLabel = block.label || block.id || '';
+
+                // Handle relative paths - prepend ../images/ if not absolute
+                let resolvedSrc = imgSrc;
+                if (imgSrc && !imgSrc.startsWith('http') && !imgSrc.startsWith('/') && !imgSrc.startsWith('../')) {
+                    resolvedSrc = '../images/' + imgSrc;
+                }
+
+                blockDiv.innerHTML = `
+                    <figure class="paper-figure" ${figLabel ? `id="fig-${figLabel}"` : ''}>
+                        <img src="${escapeHtml(resolvedSrc)}" alt="${escapeHtml(imgAlt)}" class="figure-image" loading="lazy">
+                        ${imgCaption ? `<figcaption class="figure-caption">${figLabel ? `<span class="figure-label">Figure ${figLabel}:</span> ` : ''}${safeStringify(imgCaption, 'figure.caption')}</figcaption>` : ''}
+                    </figure>
+                `;
+                break;
+
             default:
                 // Handle unknown types gracefully - ensure content is a string
                 blockDiv.innerHTML = safeStringify(block.content || block.text, 'unknown.content');
