@@ -391,7 +391,7 @@ def validate_against_bounds(param_path: str, value: float) -> Dict[str, Any]:
 
 @dataclass
 class TensionWarning:
-    """Warning for parameters with >2sigma deviation from experiment."""
+    """Warning for parameters with >1sigma deviation from experiment."""
     param_path: str
     sigma_deviation: float
     theory_value: float
@@ -468,7 +468,7 @@ class SimulationRunner:
         self.registry = PMRegistry.get_instance()
         self.results: List[SimulationResult] = []
         self.schema_results: List[Dict[str, Any]] = []  # Schema-compliant results
-        self.tensions: List[TensionWarning] = []  # Track >2sigma deviations
+        self.tensions: List[TensionWarning] = []  # Track >1sigma deviations
 
         # Validate UQ mode
         if self.uq_mode and not NUMPY_AVAILABLE:
@@ -931,9 +931,9 @@ class SimulationRunner:
                     print(f"  [FAIL] {param_path}: {value} out of range")
                     print(f"         Expected: [{bounds.get('min', 'N/A')}, {bounds.get('max', 'N/A')}]")
 
-            # Check for >2sigma tension
+            # Check for >1sigma tension (v16.2: stricter threshold)
             sigma_dev = validation_result.get("sigma_deviation")
-            if sigma_dev is not None and sigma_dev > 2.0:
+            if sigma_dev is not None and sigma_dev > 1.0:
                 tensions_found += 1
 
                 tension = TensionWarning(
@@ -957,7 +957,7 @@ class SimulationRunner:
         if self.verbose:
             print(f"\n[OK] Validated {params_checked} parameters against V16.0 bounds")
             if tensions_found > 0:
-                print(f"[WARNING] Found {tensions_found} parameter(s) with >2sigma tension")
+                print(f"[WARNING] Found {tensions_found} parameter(s) with >1sigma tension")
 
     def _generate_validation_report(self) -> Dict[str, Any]:
         """
@@ -978,7 +978,7 @@ class SimulationRunner:
             "simulations_skipped": len(skipped),
             "total_execution_time_ms": sum(r.execution_time_ms for r in self.results),
             "uq_mode_enabled": self.uq_mode,
-            "tensions": [],  # V16.0: Track >2sigma deviations
+            "tensions": [],  # V16.2: Track >1sigma deviations
             "results": []
         }
 
@@ -1562,10 +1562,10 @@ class SimulationRunner:
         print(f"Success Rate:       {100.0 * passed / total:.1f}%")
         print(f"Total Time:         {total_time:.2f}ms")
 
-        # V16.0: Print tension warnings
+        # V16.2: Print tension warnings (>1sigma threshold)
         tensions = validation_report.get("tensions", [])
         if tensions:
-            print(f"\nTensions (>2sigma deviations): {len(tensions)}")
+            print(f"\nTensions (>1sigma deviations): {len(tensions)}")
             for tension in tensions:
                 print(f"  - {tension['param']}: {tension['sigma']:.2f} sigma")
                 print(f"    Theory: {tension['theory_value']:.4g}, Experiment: {tension['experimental_value']:.4g} ± {tension['experimental_sigma']:.4g}")
@@ -1583,7 +1583,7 @@ class SimulationRunner:
         if failed == 0:
             print("[OK] ALL SIMULATIONS PASSED")
             if tensions:
-                print(f"[WARNING] {len(tensions)} TENSION(S) DETECTED (>2sigma)")
+                print(f"[WARNING] {len(tensions)} TENSION(S) DETECTED (>1sigma)")
         else:
             print(f"[X] {failed} SIMULATION(S) FAILED")
 
