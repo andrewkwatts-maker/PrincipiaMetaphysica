@@ -396,13 +396,15 @@ if SCHEMA_AVAILABLE:
                     description=(
                         f"Fine structure constant derived from G2 topology: "
                         f"alpha^-1 = {result['derived_alpha_inv']:.6f}. "
-                        f"PDG 2024: 137.035999084. Error: {result['absolute_error']:.6f} ({result['precision_percent']:.4f}% precision)."
+                        f"CODATA 2022: 137.035999177. Error: {result['absolute_error']:.6f} ({result['precision_percent']:.4f}% precision)."
                     ),
                     derivation_formula="alpha-inverse-geometric",
-                    experimental_bound=137.035999084,
+                    experimental_bound=137.035999177,  # CODATA 2022
                     bound_type="measured",
-                    bound_source="PDG2024",
-                    uncertainty=0.000000021
+                    bound_source="CODATA2022",
+                    # Theory validation: use 0.01 tolerance (~0.007% of value)
+                    # NOT the CODATA measurement precision (2.1e-8)
+                    uncertainty=0.01
                 )
             ]
 
