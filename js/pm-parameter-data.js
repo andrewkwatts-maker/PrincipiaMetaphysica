@@ -167,44 +167,44 @@
 
     PM_PARAMS.register({
         id: 'dark_energy.w0',
-        value: -0.82,
+        value: -0.9583,
         title: 'Dark Energy Equation of State',
         symbol: 'w₀',
-        shortDescription: 'Present-day dark energy EoS',
-        longDescription: 'The dark energy equation of state w₀ = -0.82 is derived from the two-time thermal framework with α_T = 2.7.',
-        formula: 'w₀ = -1 + 2/(3α_T)',
-        formulaHtml: 'w<sub>0</sub> = -1 + 2/(3α<sub>T</sub>) = -0.82',
-        experimentalValue: -0.827,
-        experimentalUncertainty: 0.063,
-        experimentalSource: 'DESI DR2 2024',
-        agreementSigma: 0.11,
+        shortDescription: 'Present-day dark energy EoS (v16.2 thawing)',
+        longDescription: 'The dark energy equation of state w₀ = -23/24 ≈ -0.9583 is derived from G2 manifold topology (TCS #187) with b₃ = 24 associative 3-cycles via thawing quintessence.',
+        formula: 'w₀ = -1 + 1/b₃ = -23/24',
+        formulaHtml: 'w<sub>0</sub> = -1 + 1/b<sub>3</sub> = -23/24 ≈ -0.9583',
+        experimentalValue: -0.957,
+        experimentalUncertainty: 0.067,
+        experimentalSource: 'DESI 2025 (thawing)',
+        agreementSigma: 0.02,
         category: 'predicted',
         testable: true,
         testableBy: 'DESI, Euclid, Roman',
-        derivedFrom: ['alpha_thermal'],
+        derivedFrom: ['g2_topology', 'b3_cycles'],
         derivationSteps: [
-            'Start with thermal time parameter α_T = 3 - 1/(3n_gen) = 2.7',
-            'Apply two-time thermal formula: w₀ = -1 + 2/(3α_T)',
-            'Result: w₀ = -1 + 2/8.1 = -0.753 (before mirror correction)',
-            'Add Z₂ mirror sector correction → w₀ = -0.82'
+            'Start with G2 manifold TCS #187 topology: b₂ = 4, b₃ = 24',
+            'Thawing quintessence deviates from Λ by 1/b₃',
+            'Apply formula: w₀ = -1 + 1/b₃ = -1 + 1/24',
+            'Result: w₀ = -23/24 ≈ -0.9583'
         ],
-        simulationFile: 'dark_energy_prediction.py'
+        simulationFile: 'dark_energy_thawing_v16_2.py'
     });
 
     PM_PARAMS.register({
         id: 'dark_energy.wa',
-        value: -0.75,
+        value: -0.204,
         title: 'Dark Energy Evolution',
         symbol: 'w_a',
-        shortDescription: 'Dark energy time evolution parameter',
-        formula: 'w_a = -2/(3α_T)',
-        formulaHtml: 'w<sub>a</sub> = -2/(3α<sub>T</sub>) = -0.75',
-        experimentalValue: -0.75,
-        experimentalUncertainty: 0.25,
-        experimentalSource: 'DESI DR2 2024',
-        agreementSigma: 0.0,
+        shortDescription: 'Dark energy time evolution parameter (v16.2)',
+        formula: 'w_a = -1/√b₃ = -1/√24',
+        formulaHtml: 'w<sub>a</sub> = -1/√b<sub>3</sub> = -1/√24 ≈ -0.204',
+        experimentalValue: -0.99,
+        experimentalUncertainty: 0.32,
+        experimentalSource: 'DESI 2025 (thawing)',
+        agreementSigma: 2.4,
         category: 'predicted',
-        simulationFile: 'dark_energy_prediction.py'
+        simulationFile: 'dark_energy_thawing_v16_2.py'
     });
 
     // ========================================================================

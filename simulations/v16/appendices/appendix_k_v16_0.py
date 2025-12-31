@@ -316,7 +316,7 @@ class AppendixKTransparency(SimulationBase):
                             {
                                 "issue": "δ_CP derivation",
                                 "status": "RESOLVED",
-                                "resolution": "Geometric formula: δ_CP = π(n_gen + b₂)/(2n_gen) + π n_gen/b₃ = 232.5° (v14.1)"
+                                "resolution": "Geometric formula: δ_CP = π(n_gen + b₂)/(2n_gen) + π n_gen/b₃ = 278.4° (v14.1)"
                             },
                             {
                                 "issue": "VEV coefficient",

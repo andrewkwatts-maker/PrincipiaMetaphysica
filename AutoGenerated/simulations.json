@@ -1,6 +1,6 @@
 {
   "version": "16.0",
-  "generated": "2025-12-31T07:10:38.266049Z",
+  "generated": "2025-12-31T08:19:36.236554Z",
   "total_scripts": 61,
   "categories": {
     "v16/appendices": {
@@ -191,7 +191,7 @@
           "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
           "version": "16.1",
           "title": "S8 Tension Resolution via Dynamical Dark Energy",
-          "description": "Resolves S8 tension between CMB (Planck) and weak lensing (KiDS-1000, DES Y3) through PM's w₀ = -11/13 dark energy. Dynamical dark energy with w₀ < -1/3 suppresses late-time structure growth, reducing S8 by ~3% relative to ΛCDM.",
+          "description": "Resolves S8 tension between CMB (Planck) and weak lensing (KiDS-1000, DES Y3) through PM's w₀ = -1 + 1/b₃ = -23/24 dark energy.Dynamical dark energy with w₀ < -1/3 suppresses late-time structure growth, reducing S8 by ~3% relative to ΛCDM.",
           "status": null
         },
         {
@@ -207,7 +207,7 @@
           "path": "simulations/v16/cosmology/dark_energy_v16_0.py",
           "version": "16.0",
           "title": "Dark Energy from Dimensional Reduction",
-          "description": "Derives dark energy equation of state w₀ = -11/13 from dimensional reduction cascade 26D → 13D → 4D. Shadow dimensions contribute α_shadow ≈ 0.576 to effective dimension D_eff = 12.576.",
+          "description": "Derives dark energy equation of state w₀ = -1 + 1/b₃ = -23/24 = -0.9583 from G2 thawing dynamics. The b₃=24 associative 3-cycles determine the quintessence parameter via topological invariants.",
           "status": null
         },
         {

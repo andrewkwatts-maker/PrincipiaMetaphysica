@@ -125,7 +125,7 @@ const TheoryConstants = {
         alphaTz2: 2.59,          // 2.59 (matter-dominated, z=2)
         alphaTHighZ: 2.7,   // 2.7 (deep matter, z>3)
 
-        get waFormula() { return `w_a = w_0 × α_T / 3 ≈ -0.846 × 2.7 / 3 ≈ -0.76`; }
+        get waFormula() { return `w_a = -1/√b₃ = -1/√24 ≈ -0.204`; }
     },
 
     // ================================================================

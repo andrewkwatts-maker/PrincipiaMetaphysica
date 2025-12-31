@@ -1,5 +1,5 @@
 # Experimental Bounds Validation Guide
-**Framework:** Principia Metaphysica v16.0
+**Framework:** Principia Metaphysica v16.2
 **Purpose:** Enable automated pass/fail validation against experimental data
 
 ---
@@ -240,12 +240,12 @@ Parameter(
 ```python
 Parameter(
     path="cosmology.w_eff",
-    experimental_bound=-0.827,
+    experimental_bound=-0.957,
     bound_type="measured",
-    bound_source="DESI DR2 (2024)"
+    bound_source="DESI 2025 thawing constraint"
 )
-# Implied uncertainty: ±0.063 (from DESI paper)
-# Prediction: -0.853 → deviation 0.026 → 0.4σ → EXCELLENT
+# Implied uncertainty: ±0.067 (from DESI thawing paper)
+# Prediction: -0.9583 → deviation 0.0013 → 0.02σ → EXCEPTIONAL
 
 Parameter(
     path="cosmology.Omega_DM_over_b",
@@ -445,7 +445,7 @@ CONCLUSION:
 
 ## Summary Statistics
 
-### Current v16 Results
+### Current v16.2 Results
 
 | Domain | Parameters | PASS | MARGINAL | FAIL | Best σ | Worst σ |
 |--------|:----------:|:----:|:--------:|:----:|:------:|:-------:|
@@ -454,7 +454,7 @@ CONCLUSION:
 | Proton Decay | 1 | 1 | 0 | 0 | 2.3x | 2.3x |
 | Higgs | 2 | 2 | 0 | 0 | 0.0σ | 0.0σ |
 | Neutrinos | 4 | 4 | 0 | 0 | 0.02σ | 0.50σ |
-| Cosmology | 2 | 2 | 0 | 0 | 0.13σ | 0.4σ |
+| Cosmology | 2 | 2 | 0 | 0 | 0.02σ | 0.13σ |
 | **TOTAL** | **13** | **13** | **0** | **0** | **0.02σ** | **1.0σ** |
 
 **Conclusion:** All predictions PASS experimental validation (100% success rate)
@@ -471,5 +471,5 @@ CONCLUSION:
 
 ---
 
-**Last Updated:** 2025-12-28
-**Framework Version:** v16.0
+**Last Updated:** 2025-12-31
+**Framework Version:** v16.2

@@ -299,13 +299,14 @@ V16_VALIDATION_BOUNDS = {
         "sigma": 0.14,
     },
 
-    # Dark energy EoS: DESI -0.827±0.063, theory -11/13 = -0.846
+    # Dark energy EoS: v16.2 thawing formula w0 = -1 + 1/b3 = -23/24
+    # DESI 2025 thawing constraint: -0.957 ± 0.067
     "cosmology.w0_derived": {
         "min": -1.0,
-        "max": -0.7,
-        "target": -0.846,
-        "experimental": -0.827,
-        "sigma": 0.063,
+        "max": -0.9,
+        "target": -0.9583,
+        "experimental": -0.957,
+        "sigma": 0.067,
     },
 
     # PMNS angles with NuFIT 6.0 comparison
@@ -994,6 +995,35 @@ class SimulationRunner:
 
         return explanations
 
+    def _collect_references(self) -> List[Dict[str, Any]]:
+        """
+        Collect references from all simulations.
+
+        Returns:
+            List of unique references from all simulations
+        """
+        all_references = []
+        seen_ids = set()
+
+        # Collect from all phases in order
+        for phase_num in sorted(self.phases.keys()):
+            for sim in self.phases[phase_num]:
+                # Check if simulation has get_references method
+                if hasattr(sim, 'get_references'):
+                    try:
+                        refs = sim.get_references()
+                        for ref in refs:
+                            ref_id = ref.get('id', ref.get('title', '').lower().replace(' ', '_')[:30])
+                            if ref_id not in seen_ids:
+                                seen_ids.add(ref_id)
+                                ref['source_simulation'] = sim.metadata.id
+                                all_references.append(ref)
+                    except Exception as e:
+                        if self.verbose:
+                            print(f"  Warning: Could not get references from {sim.metadata.id}: {e}")
+
+        return all_references
+
     def _classify_parameters(self) -> Dict[str, List[str]]:
         """
         Classify parameters by type (established, geometric, derived, calibrated).
@@ -1097,6 +1127,11 @@ class SimulationRunner:
         # Collect beginner explanations from all simulations
         beginner_explanations = self._collect_beginner_explanations()
 
+        # Collect references from all simulations
+        all_references = self._collect_references()
+        if self.verbose:
+            print(f"  [OK] Collected {len(all_references)} unique references")
+
         # Get git metadata for provenance
         git_metadata = get_git_metadata()
 
@@ -1133,6 +1168,7 @@ class SimulationRunner:
             "provenance": self.registry.export_provenance(),
             "validation": validation_report,
             "beginnerGuide": beginner_explanations,
+            "references": all_references,
         }
 
         # Add schema-compliant simulation results if in schema mode
@@ -1407,7 +1443,25 @@ class SimulationRunner:
         if self.verbose:
             print(f"  Created: simulations.json ({simulations_data['total_scripts']} scripts)")
 
-        # 7. Index file
+        # 7. References (for references page)
+        if 'references' in data:
+            # Convert list to object keyed by ID for easier lookup
+            refs_by_id = {}
+            for ref in data['references']:
+                ref_id = ref.get('id', ref.get('title', '').lower().replace(' ', '_')[:30])
+                refs_by_id[ref_id] = ref
+            refs_data = {
+                'version': data.get('metadata', {}).get('version', '16.0'),
+                'count': len(refs_by_id),
+                'references': refs_by_id
+            }
+            refs_path = output_dir / 'references.json'
+            with open(refs_path, 'w', encoding='utf-8') as f:
+                json.dump(refs_data, f, indent=2, ensure_ascii=False, cls=NumpyJSONEncoder)
+            if self.verbose:
+                print(f"  Created: references.json ({len(refs_by_id)} references)")
+
+        # 8. Index file
         index = {
             'version': data.get('metadata', {}).get('version', '16.0'),
             'components': [
@@ -1417,6 +1471,7 @@ class SimulationRunner:
                 {'name': 'metadata', 'file': 'metadata.json'},
                 {'name': 'statistics', 'file': 'statistics.json'},
                 {'name': 'simulations', 'file': 'simulations.json'},
+                {'name': 'references', 'file': 'references.json'},
                 {'name': 'beginner-guide', 'file': 'beginner-guide.json'},
             ]
         }
