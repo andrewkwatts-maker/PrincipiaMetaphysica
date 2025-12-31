@@ -130,11 +130,11 @@ def generate_falsifiability_dashboard(data=None, output_path=None):
         matplotlib Figure object
     """
     if data is None:
-        # Default values from PM v16.2
+        # Default values from PM v16.2 (thawing quintessence)
         data = {
-            'h0': 73.2104,      # Hubble constant
-            'wa': -0.0825,      # Dark energy drift
-            'nu_sum': 0.0991    # Neutrino mass sum
+            'h0': 73.2104,      # Hubble constant (resolved via EDE mechanism)
+            'wa': -0.204,       # Dark energy drift (v16.2: -1/√24 from b₃=24)
+            'nu_sum': 0.0991    # Neutrino mass sum (normal hierarchy)
         }
 
     # Create figure with dark background
