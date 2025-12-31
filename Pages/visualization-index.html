@@ -414,6 +414,99 @@
             font-size: 0.85em;
         }
 
+        /* Simulation Code Viewer */
+        .sim-code-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--info);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85em;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            background: rgba(79, 172, 254, 0.1);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 0.5rem;
+        }
+
+        .sim-code-toggle:hover {
+            background: rgba(79, 172, 254, 0.2);
+            border-color: var(--info);
+        }
+
+        .sim-code-toggle.loading {
+            opacity: 0.7;
+            cursor: wait;
+        }
+
+        .sim-code-panel {
+            display: none;
+            margin-top: 1rem;
+            background: #1e1e2e;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-primary);
+        }
+
+        .sim-code-panel.active {
+            display: block;
+        }
+
+        .sim-code-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            background: rgba(139, 127, 255, 0.1);
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .sim-code-header .file-name {
+            color: var(--accent-primary);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85em;
+        }
+
+        .sim-code-header .copy-btn {
+            padding: 0.3rem 0.6rem;
+            font-size: 0.75em;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border-primary);
+            border-radius: 4px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .sim-code-header .copy-btn:hover {
+            background: var(--accent-primary);
+            color: white;
+        }
+
+        .sim-code-content {
+            max-height: 400px;
+            overflow: auto;
+            padding: 1rem;
+        }
+
+        .sim-code-content pre {
+            margin: 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.8em;
+            line-height: 1.5;
+            color: #cdd6f4;
+            white-space: pre;
+        }
+
+        .sim-code-error {
+            padding: 1rem;
+            color: var(--danger);
+            text-align: center;
+        }
+
         /* Results Count */
         .results-count {
             text-align: center;
@@ -731,7 +824,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">dimensional-reduction-pathway.svg</span>
                         </div>
                     </div>
@@ -762,7 +855,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">heterogeneous-brane-structure.svg</span>
                         </div>
                     </div>
@@ -793,7 +886,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -824,7 +917,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <a href="sections.html#gauge-unification" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">generation-count-consistency.svg</span>
                         </div>
                     </div>
@@ -855,7 +948,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">kk-spectrum-2d-grid.png</span>
                         </div>
                     </div>
@@ -886,7 +979,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">cmb-bubble-parameter-space.png</span>
                         </div>
                     </div>
@@ -917,7 +1010,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <a href="sections.html#thermal-time" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#thermal-time</span>
                         </div>
                     </div>
@@ -948,7 +1041,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="visualization-index.html" class="viz-link">View Source →</a>
+                            <a href="visualization-index.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">validation-dashboard.svg</span>
                         </div>
                     </div>
@@ -989,7 +1082,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1017,7 +1110,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1045,7 +1138,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1074,7 +1167,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">mpl-consistency-vs-k.png</span>
                         </div>
                     </div>
@@ -1102,7 +1195,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1130,7 +1223,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1168,7 +1261,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1197,7 +1290,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1226,7 +1319,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1255,7 +1348,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1284,7 +1377,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1324,7 +1417,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1352,7 +1445,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#2" class="viz-link">View Source →</a>
+                            <a href="sections.html#2" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#2</span>
                         </div>
                     </div>
@@ -1380,7 +1473,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1409,7 +1502,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -1449,7 +1542,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <a href="sections.html#thermal-time" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#thermal-time</span>
                         </div>
                     </div>
@@ -1478,7 +1571,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <a href="sections.html#thermal-time" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#thermal-time</span>
                         </div>
                     </div>
@@ -1508,7 +1601,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <a href="sections.html#thermal-time" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#thermal-time</span>
                         </div>
                     </div>
@@ -1537,7 +1630,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#thermal-time" class="viz-link">View Source →</a>
+                            <a href="sections.html#thermal-time" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#thermal-time</span>
                         </div>
                     </div>
@@ -1565,7 +1658,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="philosophical-implications.html" class="viz-link">View Source →</a>
+                            <a href="philosophical-implications.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">philosophical-implications.html</span>
                         </div>
                     </div>
@@ -1605,7 +1698,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">moduli_evolution_plot.png</span>
                         </div>
                     </div>
@@ -1634,7 +1727,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">gw_dispersion_plot.png</span>
                         </div>
                     </div>
@@ -1663,7 +1756,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -1691,7 +1784,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1720,7 +1813,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -1749,7 +1842,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">kk_spectrum_shared_dimensions.png</span>
                         </div>
                     </div>
@@ -1777,7 +1870,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1817,7 +1910,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <a href="sections.html#gauge-unification" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#gauge-unification</span>
                         </div>
                     </div>
@@ -1846,7 +1939,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <a href="sections.html#gauge-unification" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#gauge-unification</span>
                         </div>
                     </div>
@@ -1887,7 +1980,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -1916,7 +2009,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <a href="sections.html#gauge-unification" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#gauge-unification</span>
                         </div>
                     </div>
@@ -1956,7 +2049,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -1985,7 +2078,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -2014,7 +2107,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Source →</a>
+                            <a href="../docs/beginners-guide-printable.html" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">beginners-guide-printable.html</span>
                         </div>
                     </div>
@@ -2044,7 +2137,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#cosmology" class="viz-link">View Source →</a>
+                            <a href="sections.html#cosmology" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#cosmology</span>
                         </div>
                     </div>
@@ -2073,7 +2166,7 @@
                             </div>
                         </div>
                         <div class="viz-meta">
-                            <a href="sections.html#gauge-unification" class="viz-link">View Source →</a>
+                            <a href="sections.html#gauge-unification" class="viz-link">View Paper Section →</a>
                             <span class="viz-source">sections.html#gauge-unification</span>
                         </div>
                     </div>
@@ -2277,6 +2370,166 @@
         if (e.key === 'ArrowLeft') navigate(-1);
         if (e.key === 'ArrowRight') navigate(1);
       });
+    })();
+  </script>
+
+  <!-- Simulation Code Viewer -->
+  <script>
+    (function() {
+      // Simulation file cache
+      const simCodeCache = new Map();
+
+      // Simulation mapping based on image names
+      const simMappings = {
+        'dimensional-reduction-pathway.svg': 'derivations/g2_geometry_derivations.py',
+        'g2-manifold.png': 'v16/geometric/g2_geometry_v16_0.py',
+        'gauge-fixing-time.png': 'renormalization_group_runner_fixed.py',
+        'parameter-space.png': 'v16/neutrino/neutrino_mixing_v16_0.py',
+        'octonionic-triality-ckm-pmns.png': 'v16/fermion/ckm_matrix_v16_0.py',
+        'ricci-flow-hubble-evolution.png': 'v16/cosmology/dark_energy_thawing_v16_2.py',
+        'cosmology-evolution-diagram.png': 'v16/cosmology/s8_suppression_v16_1.py',
+        'cmb-power-spectrum.png': 'v16/cosmology/cosmology_intro_v16_0.py',
+        'generation-count-consistency.svg': 'v16/fermion/ckm_matrix_v16_0.py',
+        'kk-spectrum-2d-grid.png': 'v16/cosmology/cosmology_intro_v16_0.py',
+        'cmb-bubble-parameter-space.png': 'v16/cosmology/cosmology_intro_v16_0.py',
+        'heterogeneous-brane-structure.svg': 'derivations/g2_geometry_derivations.py',
+        'clifford-algebra-structure.png': 'v16/fermion/ckm_matrix_v16_0.py',
+        'so10-breaking.png': 'v16/fermion/ckm_matrix_v16_0.py',
+        'yukawa-couplings.png': 'v16/fermion/ckm_matrix_v16_0.py',
+        'validation-dashboard.svg': 'validation/CERTIFICATES_v16_2.py',
+        'swampland-criteria.png': 'v16/cosmology/cosmology_intro_v16_0.py',
+        'experimental-signatures.png': 'v16/cosmology/cosmology_intro_v16_0.py'
+      };
+
+      // GitHub raw URL base
+      const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/AndrewKWatts/PrincipiaMetaphysica/main/simulations/';
+
+      // Fetch and cache simulation code
+      async function fetchSimCode(simPath) {
+        if (simCodeCache.has(simPath)) {
+          return simCodeCache.get(simPath);
+        }
+
+        try {
+          const url = GITHUB_RAW_BASE + simPath;
+          const response = await fetch(url);
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+          const code = await response.text();
+          simCodeCache.set(simPath, code);
+          return code;
+        } catch (error) {
+          console.warn(`Failed to fetch simulation: ${simPath}`, error);
+          return null;
+        }
+      }
+
+      // Create code panel HTML
+      function createCodePanel(simPath, code) {
+        return `
+          <div class="sim-code-panel active">
+            <div class="sim-code-header">
+              <span class="file-name">${simPath}</span>
+              <button class="copy-btn" onclick="copySimCode(this)">Copy</button>
+            </div>
+            <div class="sim-code-content">
+              <pre>${escapeHtml(code)}</pre>
+            </div>
+          </div>
+        `;
+      }
+
+      // Escape HTML for safe display
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+
+      // Copy code to clipboard
+      window.copySimCode = function(btn) {
+        const panel = btn.closest('.sim-code-panel');
+        const code = panel.querySelector('pre').textContent;
+        navigator.clipboard.writeText(code).then(() => {
+          const originalText = btn.textContent;
+          btn.textContent = 'Copied!';
+          setTimeout(() => btn.textContent = originalText, 2000);
+        });
+      };
+
+      // Toggle code panel
+      async function toggleCodePanel(card, toggle) {
+        const existingPanel = card.querySelector('.sim-code-panel');
+
+        if (existingPanel) {
+          // Toggle visibility
+          existingPanel.classList.toggle('active');
+          toggle.textContent = existingPanel.classList.contains('active')
+            ? 'Hide Code ▲'
+            : 'View Simulation Code ▼';
+          return;
+        }
+
+        // Get simulation path from image
+        const img = card.querySelector('.viz-thumbnail');
+        const imgName = img?.src?.split('/').pop();
+        const simPath = simMappings[imgName];
+
+        if (!simPath) {
+          toggle.textContent = 'No Simulation';
+          toggle.disabled = true;
+          return;
+        }
+
+        // Show loading state
+        toggle.classList.add('loading');
+        toggle.textContent = 'Loading...';
+
+        // Fetch code
+        const code = await fetchSimCode(simPath);
+
+        toggle.classList.remove('loading');
+
+        if (code) {
+          // Insert panel after viz-info
+          const vizInfo = card.querySelector('.viz-info');
+          vizInfo.insertAdjacentHTML('beforeend', createCodePanel(simPath, code));
+          toggle.textContent = 'Hide Code ▲';
+        } else {
+          toggle.textContent = 'Code Unavailable';
+          toggle.disabled = true;
+        }
+      }
+
+      // Initialize code toggles on all viz-cards
+      function initCodeToggles() {
+        document.querySelectorAll('.viz-card').forEach(card => {
+          const vizMeta = card.querySelector('.viz-meta');
+          if (!vizMeta) return;
+
+          // Check if already has toggle
+          if (vizMeta.querySelector('.sim-code-toggle')) return;
+
+          // Add toggle button
+          const toggle = document.createElement('button');
+          toggle.className = 'sim-code-toggle';
+          toggle.textContent = 'View Simulation Code ▼';
+          toggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            toggleCodePanel(card, toggle);
+          });
+
+          vizMeta.appendChild(toggle);
+        });
+      }
+
+      // Initialize when DOM is ready
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCodeToggles);
+      } else {
+        initCodeToggles();
+      }
     })();
   </script>
 </body>
