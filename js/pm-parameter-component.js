@@ -333,16 +333,39 @@ class PMParameterComponent extends HTMLElement {
 
         if (!wrapper || !tooltip) return;
 
-        // Create bound handlers for cleanup
+        let hoverTimeout = null;
+
+        // Create bound handlers for cleanup with delay to prevent flicker
         this._boundMouseEnter = () => {
-            tooltip.classList.add('pm-tooltip-visible');
+            // Clear any pending hide
+            if (hoverTimeout) clearTimeout(hoverTimeout);
+            // Small delay before showing to prevent flicker on quick mouse movements
+            hoverTimeout = setTimeout(() => {
+                tooltip.classList.add('pm-tooltip-visible');
+            }, 100);
         };
         this._boundMouseLeave = () => {
-            tooltip.classList.remove('pm-tooltip-visible');
+            // Clear any pending show
+            if (hoverTimeout) clearTimeout(hoverTimeout);
+            // Small delay before hiding to allow moving to tooltip
+            hoverTimeout = setTimeout(() => {
+                tooltip.classList.remove('pm-tooltip-visible');
+            }, 150);
         };
 
         wrapper.addEventListener('mouseenter', this._boundMouseEnter);
         wrapper.addEventListener('mouseleave', this._boundMouseLeave);
+
+        // Also handle tooltip hover to keep it visible
+        tooltip.addEventListener('mouseenter', () => {
+            if (hoverTimeout) clearTimeout(hoverTimeout);
+            tooltip.classList.add('pm-tooltip-visible');
+        });
+        tooltip.addEventListener('mouseleave', () => {
+            hoverTimeout = setTimeout(() => {
+                tooltip.classList.remove('pm-tooltip-visible');
+            }, 150);
+        });
     }
 
     getStyles() {
@@ -385,13 +408,14 @@ class PMParameterComponent extends HTMLElement {
             /* Tooltip styles */
             .pm-tooltip {
                 position: absolute;
-                bottom: 100%;
+                bottom: calc(100% + 8px);
                 left: 50%;
                 transform: translateX(-50%);
                 background: linear-gradient(135deg, rgba(20, 20, 35, 0.98), rgba(30, 30, 50, 0.95));
                 border: 1px solid rgba(139, 127, 255, 0.3);
                 border-radius: 8px;
                 padding: 12px 16px;
+                padding-bottom: 16px;
                 min-width: 280px;
                 max-width: 400px;
                 box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
@@ -400,8 +424,20 @@ class PMParameterComponent extends HTMLElement {
                 line-height: 1.5;
                 opacity: 0;
                 visibility: hidden;
-                transition: opacity 0.2s, visibility 0.2s;
-                pointer-events: none;
+                transition: opacity 0.15s ease-out, visibility 0.15s ease-out;
+                pointer-events: auto;
+            }
+
+            /* Bridge gap between trigger and tooltip */
+            .pm-tooltip::after {
+                content: '';
+                position: absolute;
+                bottom: -12px;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 12px;
+                background: transparent;
             }
 
             .pm-tooltip-visible {
