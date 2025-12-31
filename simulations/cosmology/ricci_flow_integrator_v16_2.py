@@ -157,6 +157,52 @@ class RicciFlowCosmology(SimulationBase):
         """
         return 1.0 / (self.b3 * np.log(self.z_start + 1))
 
+    def _compute_mixing_angle_h0(self, H0_early: float) -> Dict[str, float]:
+        """
+        Compute H0 local from H0 early via mixing angle projection.
+
+        v16.2 GEOMETRIC DERIVATION:
+        ---------------------------
+        The G2 holonomy introduces a mixing angle theta between bulk and
+        local metrics. The mixing angle is defined by:
+
+            sin^2(theta) = 1/k_gimel
+
+        This gives a projection factor:
+
+            H0_local = H0_early / cos^2(theta)
+
+        where the cos^2 enhancement accounts for the metric "opening"
+        as the G2 manifold relaxes from early to late universe.
+
+        Physical interpretation:
+        - Early universe (CMB): full G2 holonomy constraint -> H0=67.4
+        - Late universe (local): partial relaxation -> H0=73.04
+
+        Returns:
+            Dictionary with mixing angle parameters
+        """
+        # Mixing angle from G2 holonomy
+        # sin^2(theta) = 1/k_gimel (geometrically determined)
+        sin2_theta = 1.0 / self.k_gimel  # ~ 0.0812
+        cos2_theta = 1.0 - sin2_theta     # ~ 0.9188
+
+        # H0 projection
+        # H0_local = H0_early / cos^2(theta)
+        # This gives 67.4 / 0.9188 = 73.35 km/s/Mpc
+        H0_local_mixing = H0_early / cos2_theta
+
+        # Sigma deviation from SH0ES
+        sigma = abs(H0_local_mixing - H0_SHOES) / H0_SHOES_SIGMA
+
+        return {
+            "sin2_theta": sin2_theta,
+            "cos2_theta": cos2_theta,
+            "mixing_angle_deg": np.degrees(np.arcsin(np.sqrt(sin2_theta))),
+            "H0_local_mixing": H0_local_mixing,
+            "H0_local_mixing_sigma": sigma,
+        }
+
     # -------------------------------------------------------------------------
     # SimulationBase Interface - Metadata
     # -------------------------------------------------------------------------
@@ -195,6 +241,10 @@ class RicciFlowCosmology(SimulationBase):
             "cosmology.lambda_flow",         # Ricci flow coefficient
             "cosmology.H0_tension_resolved", # Boolean: tension resolved?
             "cosmology.ricci_betti_density", # Betti number density function
+            # Mixing angle projection (v16.2)
+            "cosmology.H0_local_mixing",     # H0 local via mixing angle
+            "cosmology.mixing_angle_sin2",   # sin^2(theta) = 1/k_gimel
+            "cosmology.mixing_angle_deg",    # theta in degrees
         ]
 
     @property
@@ -206,6 +256,7 @@ class RicciFlowCosmology(SimulationBase):
             "ricci-curvature-evolution",
             "hubble-ricci-corrected",
             "betti-density-function",
+            "h0-mixing-angle-projection",  # v16.2: Mixing angle H0 derivation
         ]
 
     # -------------------------------------------------------------------------
@@ -367,12 +418,19 @@ class RicciFlowCosmology(SimulationBase):
         early_match = abs(self.H0_early - H0_PLANCK) < 2 * H0_PLANCK_SIGMA
         tension_resolved = local_match and early_match
 
+        # v16.2: Compute mixing angle H0 projection as alternative method
+        mixing_angle_results = self._compute_mixing_angle_h0(H0_PLANCK)
+
         return {
             "cosmology.H0_local_ricci": self.H0_local,
             "cosmology.H0_early_ricci": self.H0_early,
             "cosmology.lambda_flow": self.lambda_flow,
             "cosmology.H0_tension_resolved": tension_resolved,
             "cosmology.ricci_betti_density": self.b3 / (1.0 + (1.0 / (self.k_gimel / self.b3)) ** 2),
+            # Mixing angle projection outputs
+            "cosmology.H0_local_mixing": mixing_angle_results["H0_local_mixing"],
+            "cosmology.mixing_angle_sin2": mixing_angle_results["sin2_theta"],
+            "cosmology.mixing_angle_deg": mixing_angle_results["mixing_angle_deg"],
         }
 
     def verify_boundary_conditions(self) -> Dict[str, Any]:
@@ -755,6 +813,48 @@ class RicciFlowCosmology(SimulationBase):
                     "R(z)": "Ricci curvature at redshift z"
                 }
             ),
+            Formula(
+                id="h0-mixing-angle-projection",
+                label="(5.35)",
+                latex=r"H_0^{\text{local}} = \frac{H_0^{\text{early}}}{\cos^2\theta}, \quad \sin^2\theta = \frac{1}{k_\gimel}",
+                plain_text="H0_local = H0_early / cos^2(theta), sin^2(theta) = 1/k_gimel",
+                category="PREDICTIONS",
+                description="H0 projection via G2 mixing angle from early (CMB) to late (local) universe",
+                inputParams=["topology.k_gimel"],
+                outputParams=["cosmology.H0_local_mixing"],
+                input_params=["topology.k_gimel"],
+                output_params=["cosmology.H0_local_mixing"],
+                derivation={
+                    "steps": [
+                        {
+                            "description": "G2 holonomy introduces mixing angle",
+                            "formula": r"\sin^2\theta = \frac{1}{k_\gimel} = \frac{1}{12.318} \approx 0.0812"
+                        },
+                        {
+                            "description": "Compute cos^2(theta)",
+                            "formula": r"\cos^2\theta = 1 - \sin^2\theta = 0.9188"
+                        },
+                        {
+                            "description": "Apply projection factor",
+                            "formula": r"H_0^{\text{local}} = \frac{67.4}{0.9188} = 73.35 \text{ km/s/Mpc}"
+                        },
+                        {
+                            "description": "Compare with SH0ES measurement",
+                            "formula": r"H_0^{\text{SH0ES}} = 73.04 \pm 1.04 \text{ km/s/Mpc}"
+                        }
+                    ],
+                    "references": [
+                        "Planck 2018: H0 = 67.4 +/- 0.5 km/s/Mpc",
+                        "SH0ES 2025: H0 = 73.04 +/- 1.04 km/s/Mpc"
+                    ]
+                },
+                terms={
+                    "H0_local": "Local Hubble constant (73.35 km/s/Mpc predicted)",
+                    "H0_early": "Early-universe Hubble constant (67.4 km/s/Mpc from Planck)",
+                    "theta": "G2 mixing angle (~16.5 degrees)",
+                    "k_gimel": "Holonomy precision limit (12.318)"
+                }
+            ),
         ]
 
     # -------------------------------------------------------------------------
@@ -991,7 +1091,7 @@ _validation_instance = RicciFlowCosmology()
 
 assert _validation_instance.metadata is not None
 assert _validation_instance.metadata.id == "ricci_flow_integrator_v16_2"
-assert len(_validation_instance.get_formulas()) == 5
+assert len(_validation_instance.get_formulas()) == 6  # Added h0-mixing-angle-projection in v16.2
 assert _validation_instance.lambda_flow > 0
 assert _validation_instance.k_gimel > 12
 
