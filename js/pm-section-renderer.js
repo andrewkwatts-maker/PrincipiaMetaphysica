@@ -881,20 +881,32 @@ class PMSectionRenderer extends HTMLElement {
         latex = latex.replace(/<em>([^<]*)<\/em>/gi, '\\textit{$1}');
         latex = latex.replace(/<i>([^<]*)<\/i>/gi, '\\textit{$1}');
 
-        // Unicode Greek letters to LaTeX
+        // Unicode Greek letters to LaTeX (includes both Greek and Mathematical Greek blocks)
         const greekMap = {
+            // Lowercase Greek (U+03B1-U+03C9)
             'α': '\\alpha', 'β': '\\beta', 'γ': '\\gamma', 'δ': '\\delta',
             'ε': '\\epsilon', 'ζ': '\\zeta', 'η': '\\eta', 'θ': '\\theta',
             'ι': '\\iota', 'κ': '\\kappa', 'λ': '\\lambda', 'μ': '\\mu',
             'ν': '\\nu', 'ξ': '\\xi', 'π': '\\pi', 'ρ': '\\rho',
             'σ': '\\sigma', 'τ': '\\tau', 'υ': '\\upsilon', 'φ': '\\phi',
             'χ': '\\chi', 'ψ': '\\psi', 'ω': '\\omega',
+            // Uppercase Greek (U+0391-U+03A9)
             'Α': 'A', 'Β': 'B', 'Γ': '\\Gamma', 'Δ': '\\Delta',
             'Ε': 'E', 'Ζ': 'Z', 'Η': 'H', 'Θ': '\\Theta',
             'Ι': 'I', 'Κ': 'K', 'Λ': '\\Lambda', 'Μ': 'M',
             'Ν': 'N', 'Ξ': '\\Xi', 'Π': '\\Pi', 'Ρ': 'P',
             'Σ': '\\Sigma', 'Τ': 'T', 'Υ': '\\Upsilon', 'Φ': '\\Phi',
-            'Χ': 'X', 'Ψ': '\\Psi', 'Ω': '\\Omega'
+            'Χ': 'X', 'Ψ': '\\Psi', 'Ω': '\\Omega',
+            // Mathematical Greek (U+1D6AA-U+1D6E1) - often used in formatted text
+            '𝛤': '\\Gamma', '𝛥': '\\Delta', '𝛩': '\\Theta', '𝛬': '\\Lambda',
+            '𝛯': '\\Xi', '𝛱': '\\Pi', '𝛴': '\\Sigma', '𝛶': '\\Upsilon',
+            '𝛷': '\\Phi', '𝛹': '\\Psi', '𝛺': '\\Omega',
+            '𝛼': '\\alpha', '𝛽': '\\beta', '𝛾': '\\gamma', '𝛿': '\\delta',
+            '𝜀': '\\epsilon', '𝜁': '\\zeta', '𝜂': '\\eta', '𝜃': '\\theta',
+            '𝜄': '\\iota', '𝜅': '\\kappa', '𝜆': '\\lambda', '𝜇': '\\mu',
+            '𝜈': '\\nu', '𝜉': '\\xi', '𝜋': '\\pi', '𝜌': '\\rho',
+            '𝜎': '\\sigma', '𝜏': '\\tau', '𝜐': '\\upsilon', '𝜑': '\\phi',
+            '𝜒': '\\chi', '𝜓': '\\psi', '𝜔': '\\omega'
         };
 
         for (const [unicode, latex_cmd] of Object.entries(greekMap)) {
@@ -909,20 +921,30 @@ class PMSectionRenderer extends HTMLElement {
             '∫': '\\int', '∮': '\\oint', '∑': '\\sum', '∏': '\\prod',
             '→': '\\rightarrow', '←': '\\leftarrow', '↔': '\\leftrightarrow',
             '⇒': '\\Rightarrow', '⇐': '\\Leftarrow', '⇔': '\\Leftrightarrow',
-            '↦': '\\mapsto', '⊂': '\\subset', '⊃': '\\supset',
+            '↦': '\\mapsto', '⊂': '\\subset', '⊃': '\\supset', '↓': '\\downarrow',
             '⊆': '\\subseteq', '⊇': '\\supseteq', '∈': '\\in', '∉': '\\notin',
             '∪': '\\cup', '∩': '\\cap', '∅': '\\emptyset',
             '⟨': '\\langle', '⟩': '\\rangle', '⌈': '\\lceil', '⌉': '\\rceil',
-            '⌊': '\\lfloor', '⌋': '\\rfloor',
-            '≤': '\\leq', '≥': '\\geq', '≠': '\\neq', '≈': '\\approx',
+            '⌊': '\\lfloor', '⌋': '\\rfloor', '|': '|',
+            '≤': '\\leq', '≥': '\\geq', '≠': '\\neq', '≈': '\\approx', '~': '\\sim',
             '≡': '\\equiv', '∝': '\\propto', '∼': '\\sim', '≃': '\\simeq',
             '⊕': '\\oplus', '⊗': '\\otimes', '⊖': '\\ominus',
             'ℒ': '\\mathcal{L}', 'ℋ': '\\mathcal{H}', 'ℝ': '\\mathbb{R}',
             'ℂ': '\\mathbb{C}', 'ℤ': '\\mathbb{Z}', 'ℕ': '\\mathbb{N}', 'ℚ': '\\mathbb{Q}',
             '†': '\\dagger', '‡': '\\ddagger', '∀': '\\forall', '∃': '\\exists',
             '¬': '\\neg', '∧': '\\wedge', '∨': '\\vee',
-            '′': "'", '″': "''", '‴': "'''"
+            '′': "'", '″': "''", '‴': "'''",
+            // Combining diacritics (overline/bar for Dirac adjoint notation)
+            '̄': '', // Handled separately with regex below
+            '̅': '', // Alternative overline
+            // Additional physics symbols
+            'ℏ': '\\hbar', '℧': '\\mho'
         };
+
+        // Handle combining overline (Ψ̄ -> \bar{\Psi})
+        // The combining overline U+0304 appears AFTER the base character
+        latex = latex.replace(/([A-Za-z\u0391-\u03C9\u1D6AA-\u1D6E1])̄/g, '\\bar{$1}');
+        latex = latex.replace(/([A-Za-z\u0391-\u03C9\u1D6AA-\u1D6E1])̅/g, '\\bar{$1}');
 
         for (const [unicode, latex_cmd] of Object.entries(symbolMap)) {
             latex = latex.split(unicode).join(latex_cmd);

@@ -1,0 +1,125 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "principia-metaphysica"
+version = "16.2.0"
+description = "A topological field simulator for G2 manifold constant derivation (v16.2 Demon-Lock)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Andrew Keith Watts", email = "andrew@principia-metaphysica.org"}
+]
+keywords = [
+    "physics",
+    "simulation",
+    "G2-manifold",
+    "standard-model",
+    "cosmology",
+    "unified-field-theory",
+    "M-theory",
+    "neutrino-physics",
+    "dark-energy"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Astronomy",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 4 - Beta",
+    "Operating System :: OS Independent"
+]
+
+# Enforcing the Sterile Environment Dependencies
+dependencies = [
+    "numpy>=1.24.0",
+    "mpmath>=1.3.0",     # Required for G2 Holonomy expansion (Decimal-50 precision)
+    "pandas>=2.0.0",     # For Validation Matrix exports
+    "matplotlib>=3.7.0", # For Sigma Pull Plot generation
+    "scipy>=1.10.0",     # For numerical integrations
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=23.0.0",
+    "mypy>=1.0.0",
+]
+docs = [
+    "sphinx>=6.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://principia-metaphysica.org"
+Repository = "https://github.com/PrincipiaMetaphysica/v16.2-True-Lock"
+Documentation = "https://principia-metaphysica.org/docs"
+"Bug Tracker" = "https://github.com/PrincipiaMetaphysica/v16.2-True-Lock/issues"
+
+[project.scripts]
+# One-click verification command for reviewers
+pm-verify = "simulations.validation.sigma_validator_final_v16_2:main"
+pm-certificates = "simulations.validation.CERTIFICATES_v16_2:main"
+
+[tool.setuptools]
+packages = [
+    "simulations",
+    "simulations.base",
+    "simulations.validation",
+    "simulations.v16",
+    "simulations.v16.cosmology",
+    "simulations.v16.fermion",
+    "simulations.v16.gauge",
+    "simulations.v16.higgs",
+    "simulations.v16.neutrino",
+    "simulations.data",
+    "simulations.data.experimental",
+]
+
+[tool.setuptools.package-data]
+# Crucial: Ensures the DNA of the theory (JSONs) is included in the build
+"*" = ["*.json", "*.md"]
+"simulations.data.experimental" = ["*.json"]
+"simulations.validation" = ["*.json", "*.py"]
+
+[tool.setuptools.exclude-package-data]
+"*" = ["tests/*", "drafts/*", "__pycache__/*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+    | \.git
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+)/
+'''
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
+addopts = "-v --tb=short"

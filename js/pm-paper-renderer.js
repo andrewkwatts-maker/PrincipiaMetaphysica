@@ -895,8 +895,11 @@
                             .replace(/⟨/g, '\\langle ')
                             .replace(/⟩/g, '\\rangle ')
                             .replace(/—/g, '\\quad \\text{—} \\quad ')
-                            .replace(/\^/g, '^')
-                            .replace(/_/g, '_');
+                            // Multi-digit exponents: ^26 -> ^{26}
+                            .replace(/\^(\d{2,})/g, '^{$1}')
+                            // Combining overline for Dirac adjoint: Ψ̄ -> \bar{\Psi}
+                            .replace(/([A-Za-z\u0391-\u03C9])̄/g, '\\bar{$1}')
+                            .replace(/([A-Za-z\u0391-\u03C9])̅/g, '\\bar{$1}');
                         formulaContent = `$$${latexContent}$$`;
                     }
                     const labelHtml = block.label ? `<span class="equation-number">${escapeHtml(block.label)}</span>` : '';
@@ -1807,7 +1810,47 @@
             .replace(/ℶ/g, '\\beth ')
             // Text dashes as separators
             .replace(/—/g, '\\quad \\text{—} \\quad ')
-            .replace(/\n/g, ' \\\\ ');
+            .replace(/\n/g, ' \\\\ ')
+            // Mathematical Greek (U+1D6AA-U+1D6E1)
+            .replace(/𝛤/g, '\\Gamma ')
+            .replace(/𝛥/g, '\\Delta ')
+            .replace(/𝛩/g, '\\Theta ')
+            .replace(/𝛬/g, '\\Lambda ')
+            .replace(/𝛯/g, '\\Xi ')
+            .replace(/𝛱/g, '\\Pi ')
+            .replace(/𝛴/g, '\\Sigma ')
+            .replace(/𝛶/g, '\\Upsilon ')
+            .replace(/𝛷/g, '\\Phi ')
+            .replace(/𝛹/g, '\\Psi ')
+            .replace(/𝛺/g, '\\Omega ')
+            .replace(/𝛼/g, '\\alpha ')
+            .replace(/𝛽/g, '\\beta ')
+            .replace(/𝛾/g, '\\gamma ')
+            .replace(/𝛿/g, '\\delta ')
+            .replace(/𝜀/g, '\\epsilon ')
+            .replace(/𝜁/g, '\\zeta ')
+            .replace(/𝜂/g, '\\eta ')
+            .replace(/𝜃/g, '\\theta ')
+            .replace(/𝜄/g, '\\iota ')
+            .replace(/𝜅/g, '\\kappa ')
+            .replace(/𝜆/g, '\\lambda ')
+            .replace(/𝜇/g, '\\mu ')
+            .replace(/𝜈/g, '\\nu ')
+            .replace(/𝜉/g, '\\xi ')
+            .replace(/𝜋/g, '\\pi ')
+            .replace(/𝜌/g, '\\rho ')
+            .replace(/𝜎/g, '\\sigma ')
+            .replace(/𝜏/g, '\\tau ')
+            .replace(/𝜐/g, '\\upsilon ')
+            .replace(/𝜑/g, '\\phi ')
+            .replace(/𝜒/g, '\\chi ')
+            .replace(/𝜓/g, '\\psi ')
+            .replace(/𝜔/g, '\\omega ')
+            // Multi-digit exponents: ^26 -> ^{26}
+            .replace(/\^(\d{2,})/g, '^{$1}')
+            // Combining overline for Dirac adjoint: Ψ̄ -> \bar{\Psi}
+            .replace(/([A-Za-z\u0391-\u03C9])̄/g, '\\bar{$1}')
+            .replace(/([A-Za-z\u0391-\u03C9])̅/g, '\\bar{$1}');
     }
 
     /**
