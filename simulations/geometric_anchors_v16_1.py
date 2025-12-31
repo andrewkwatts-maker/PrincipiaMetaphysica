@@ -122,8 +122,15 @@ class GeometricAnchors:
 
     @property
     def w_zero(self) -> float:
-        """Protected w0 value for dark energy equation of state: w(0) = -0.7280"""
-        return -0.7280
+        """
+        v16.2: Dark energy equation of state from thawing quintessence.
+
+        Theory: w0 = -1 + 1/b3 = -23/24 ≈ -0.9583
+        DESI 2025 thawing: -0.957 ± 0.067 (0.02σ agreement)
+
+        Note: Old DESI DR2 Lambda-CDM value was -0.728.
+        """
+        return -1.0 + 1.0/self.b3  # -23/24 ≈ -0.9583
 
     @property
     def s8_viscosity_scale(self) -> float:

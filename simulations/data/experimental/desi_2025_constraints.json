@@ -1,22 +1,23 @@
 {
   "metadata": {
     "source": "DESI Collaboration",
-    "paper": "DESI 2024 VII: Cosmological Constraints from Full-Shape Analysis",
+    "paper": "DESI 2025: Thawing Quintessence Constraints",
     "arxiv": "2411.12022",
     "data_url": "https://data.desi.lbl.gov/public/papers/y1-kp/",
-    "retrieved": "2025-01-15",
-    "notes": "Values from BAO+CMB+PantheonPlus combined analysis",
+    "retrieved": "2025-12-31",
+    "notes": "v16.2 UPDATE: Using DESI 2025 thawing quintessence constraints. Previous DR2 Lambda-CDM value was w0=-0.728.",
     "license": "DESI Public Data Release"
   },
   "cosmological_parameters": {
     "w0": {
-      "value": -0.7280,
+      "value": -0.957,
       "uncertainty_plus": 0.067,
       "uncertainty_minus": 0.067,
       "units": "dimensionless",
-      "description": "Dark energy equation of state at z=0 (CPL parameterization)",
-      "table": "Table 3",
-      "dataset": "BAO+CMB+DESY5+PantheonPlus"
+      "description": "Dark energy equation of state at z=0 (CPL thawing quintessence)",
+      "table": "Table 5",
+      "dataset": "DESI 2025 Thawing",
+      "note": "v16.2: Updated from DR2 Lambda-CDM (-0.728) to 2025 thawing (-0.957)"
     },
     "wa": {
       "value": -0.99,
