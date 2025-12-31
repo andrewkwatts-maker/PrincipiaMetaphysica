@@ -2843,10 +2843,39 @@
 
     <script>
         function toggleExpand(header) {
-            header.classList.toggle('active');
+            const isExpanded = header.classList.toggle('active');
             const content = header.nextElementSibling;
             content.classList.toggle('active');
+            // Update ARIA attributes for accessibility
+            header.setAttribute('aria-expanded', isExpanded);
+            content.setAttribute('aria-hidden', !isExpanded);
         }
+
+        // Initialize ARIA attributes on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.expandable').forEach(function(expandable) {
+                const header = expandable.querySelector('.expand-header');
+                const content = expandable.querySelector('.expand-content');
+                if (header && content) {
+                    // Generate unique ID for content
+                    const id = 'expand-content-' + Math.random().toString(36).substr(2, 9);
+                    content.id = id;
+                    // Set up ARIA attributes
+                    header.setAttribute('role', 'button');
+                    header.setAttribute('tabindex', '0');
+                    header.setAttribute('aria-expanded', 'false');
+                    header.setAttribute('aria-controls', id);
+                    content.setAttribute('aria-hidden', 'true');
+                    // Add keyboard support
+                    header.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleExpand(header);
+                        }
+                    });
+                }
+            });
+        });
 
         /**
          * Beginner's Guide Dynamic Topic Loader

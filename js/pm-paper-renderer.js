@@ -35,6 +35,7 @@
         _sectionsCache: new Map(),
         _formulaCache: new Map(),
         _eventListeners: new WeakMap(), // Track event listeners for cleanup
+        _tooltipCache: new WeakMap(), // Track tooltips for memory-safe cleanup
         _debug: false,
         _abortControllers: new Set() // Track fetch requests for cleanup
     };
@@ -216,7 +217,9 @@
                                 const formulasData = await formulasResponse.json();
                                 PaperRenderer._data.formulas = formulasData.formulas || formulasData;
                             }
-                        } catch (e) { /* Optional */ }
+                        } catch (e) {
+                            if (PaperRenderer._debug) console.debug('PMPaperRenderer: formulas.json not available');
+                        }
 
                         try {
                             const paramsResponse = await fetch(prefix + 'parameters.json');
@@ -224,7 +227,9 @@
                                 const paramsData = await paramsResponse.json();
                                 PaperRenderer._data.parameters = paramsData.parameters || paramsData;
                             }
-                        } catch (e) { /* Optional */ }
+                        } catch (e) {
+                            if (PaperRenderer._debug) console.debug('PMPaperRenderer: parameters.json not available');
+                        }
 
                         PaperRenderer._loaded = true;
                         PaperRenderer._basePath = prefix;
@@ -1564,8 +1569,8 @@
             MathJax.typesetPromise([tooltip]).catch(() => {});
         }
 
-        // Store reference for cleanup
-        link._tooltip = tooltip;
+        // Store reference for memory-safe cleanup (WeakMap auto-releases when link is GC'd)
+        PaperRenderer._tooltipCache.set(link, tooltip);
     }
 
     /**
@@ -1574,9 +1579,10 @@
      */
     function hideEquationTooltip(event) {
         const link = event.target;
-        if (link._tooltip) {
-            link._tooltip.remove();
-            delete link._tooltip;
+        const tooltip = PaperRenderer._tooltipCache.get(link);
+        if (tooltip) {
+            tooltip.remove();
+            PaperRenderer._tooltipCache.delete(link);
         }
     }
 
