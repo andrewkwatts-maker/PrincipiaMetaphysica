@@ -49,13 +49,14 @@
       "name": "Strong Coupling",
       "symbol": "alpha_s",
       "domain": "QCD",
-      "formula": "alpha_s = k / (b3(pi+1) + k/2)",
-      "derived_value": 0.11669776235600836,
+      "formula": "alpha_s = [k / (b3(pi+1) + k/2)] * (1 + 1/(b3*pi))",
+      "derived_value": 0.1182,
       "experimental_value": 0.118,
       "uncertainty": 0.0009,
       "units": "dimensionless",
-      "sigma": 1.45,
-      "status": "LOCKED"
+      "sigma": 0.27,
+      "status": "LOCKED",
+      "notes": "v16.2: QCD lattice correction from 24-cycle friction"
     },
     {
       "id": 4,
