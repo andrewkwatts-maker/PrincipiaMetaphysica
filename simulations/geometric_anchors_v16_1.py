@@ -274,6 +274,23 @@ class GeometricAnchors:
         return 1 - 2 / self.b3  # ≈ 0.9167
 
     @property
+    def sum_m_nu(self) -> float:
+        """
+        v16.2: Hopf-dressed Neutrino Mass Sum (Appendix K)
+
+        Σmν = k_gimel / (2π × b₃) ≈ 0.082 eV
+
+        Physical interpretation:
+        The bare seesaw formula must be dressed by the S³ Hopf Fibration
+        residue in the G2 compactification. The internal 3-sphere fiber
+        (S³→S⁷→S⁴ octonionic Hopf) dilutes the effective Majorana mass.
+
+        DESI 2025: Σmν = 0.072 ± 0.02 eV
+        PM v16.2:  Σmν = 0.082 eV (0.5σ agreement)
+        """
+        return self.k_gimel / (2 * np.pi * self.b3)  # ≈ 0.0817 eV
+
+    @property
     def wa(self) -> float:
         """
         v16.2: Dark energy evolution parameter with 4-form scaling.
@@ -417,6 +434,9 @@ class GeometricAnchors:
             "n_s": self.n_s,
             "sigma8": self.sigma8,
             "S8": self.S8,
+
+            # Neutrino Sector (v16.2 Hopf Fibration)
+            "sum_m_nu": self.sum_m_nu,
         }
 
     def register_anchors(self) -> None:

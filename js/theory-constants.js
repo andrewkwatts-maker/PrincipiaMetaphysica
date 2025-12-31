@@ -262,7 +262,7 @@ const TheoryConstants = {
         mNu1: 0.001,        // 0.001 eV
         mNu2: 0.009,        // 0.009 eV
         mNu3: 0.05,        // 0.050 eV
-        sumMNu: 0.06,    // 0.060 eV (WARNING: not unique)
+        sumMNu: 0.082,    // 0.082 eV (v16.2 Hopf Fibration: k_gimel/(2π×b3))
 
         // Oscillation data
         deltaMSq21: 7.5e-05, // 7.5×10^-5 eV^2
