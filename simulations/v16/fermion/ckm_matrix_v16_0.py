@@ -96,9 +96,9 @@ class CKMMatrixSimulation(SimulationBase):
     5. Verify unitarity and compare with PDG experimental values
     """
 
-    # PDG 2024 experimental values for validation
-    PDG_V_us = 0.2257
-    PDG_V_us_err = 0.0009
+    # PDG 2024 experimental values for validation (from pdg_2024_values.json)
+    PDG_V_us = 0.2245
+    PDG_V_us_err = 0.0008
     PDG_V_cb = 0.0410
     PDG_V_cb_err = 0.0014
     PDG_V_ub = 0.00382

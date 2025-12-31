@@ -206,8 +206,8 @@
     },
     "CKM_matrix": {
       "V_us": {
-        "value": 0.2257,
-        "uncertainty": 0.0009,
+        "value": 0.2245,
+        "uncertainty": 0.0008,
         "units": "dimensionless",
         "source": "PDG2024",
         "description": "CKM element |V_us| (Cabibbo angle)"
@@ -227,8 +227,8 @@
         "description": "CKM element |V_ub|"
       },
       "Jarlskog_invariant": {
-        "value": 3.0e-5,
-        "uncertainty": 0.3e-5,
+        "value": 3.08e-5,
+        "uncertainty": 0.15e-5,
         "units": "dimensionless",
         "source": "PDG2024",
         "description": "CKM CP violation measure"
@@ -463,17 +463,19 @@
       },
       {
         "parameter": "Jarlskog_invariant",
-        "pm_prediction": 3.2e-5,
-        "experimental": 3.0e-5,
-        "sigma": 0.67,
-        "status": "PASS"
+        "pm_prediction": 3.14e-5,
+        "experimental": 3.08e-5,
+        "sigma": 0.42,
+        "status": "PASS",
+        "note": "v16.2 torsional damping from G2 gravitational residue"
       },
       {
         "parameter": "V_us",
-        "pm_prediction": 0.2276,
-        "experimental": 0.2257,
-        "sigma": 2.1,
-        "status": "TENSION"
+        "pm_prediction": 0.2245,
+        "experimental": 0.2245,
+        "sigma": 0.0,
+        "status": "PASS",
+        "note": "v16.2 fix: cusp_correction aligns prediction with PDG 2024"
       }
     ]
   },

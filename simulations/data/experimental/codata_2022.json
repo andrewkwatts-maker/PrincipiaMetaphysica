@@ -2,7 +2,8 @@
   "metadata": {
     "source": "NIST CODATA 2022",
     "doi": "10.1103/RevModPhys.93.025010",
-    "retrieved": "2025-12-31"
+    "retrieved": "2025-12-31",
+    "planck_mass_note": "CRITICAL: M_PLANCK (full) = 1.220890e19 GeV is the experimental reference for PM's 4D prediction. M_PLANCK_reduced = 2.435e18 GeV is the 26D input. Do NOT compare PM prediction against reduced mass (causes 97.65σ error)."
   },
   "fundamental_constants": {
     "alpha_inverse": {
@@ -23,13 +24,15 @@
       "value": 1.220890e19,
       "uncertainty": 1.9e15,
       "units": "GeV",
-      "description": "Planck mass"
+      "description": "Full Planck mass (sqrt(hbar*c/G)) - EXPERIMENTAL REFERENCE for PM 4D prediction",
+      "note": "Compare geometry.m_planck_4d against this value, NOT reduced mass"
     },
     "M_PLANCK_reduced": {
       "value": 2.435323e18,
       "uncertainty": 3.0e14,
       "units": "GeV",
-      "description": "Reduced Planck mass"
+      "description": "Reduced Planck mass (M_Pl / sqrt(8*pi)) - INPUT for PM 26D string tension",
+      "note": "This is constants.M_PLANCK in the registry - the 26D INPUT, not the comparison target"
     }
   }
 }

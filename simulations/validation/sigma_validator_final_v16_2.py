@@ -491,6 +491,17 @@ class FinalSigmaValidator(SimulationBase):
         # M_Pl_4D = M_Pl_26D * chi
         # The 4D effective Planck mass is derived from the 26D bare tension
         # through the volumetric dressing factor chi from G2 manifold volume
+        #
+        # CRITICAL - Planck Mass Distinction (v16.2 FIX):
+        # ------------------------------------------------
+        # INPUT: M_Pl_26D = 2.435e18 GeV (reduced Planck mass, 26D string tension)
+        #        This is constants.M_PLANCK in the registry
+        # PREDICTION: M_Pl_4D = M_Pl_26D * chi = 1.2207e19 GeV
+        #        This should be compared against FULL Planck mass
+        # EXPERIMENTAL: codata.M_PLANCK = 1.220890e19 GeV (CODATA 2022 full Planck)
+        #        This is the correct comparison target
+        # ERROR CASE: Comparing 1.22e19 against 2.435e18 gives 97.65σ (WRONG)
+        #        This happened when comparing prediction vs INPUT instead of EXPERIMENT
         M_Pl_26D = 2.435e18  # GeV (bare reduced Planck mass, 26D string tension)
         chi = 5.0132  # G2 manifold volume factor sqrt(V_7)
         M_PLANCK_pred = M_Pl_26D * chi  # ~1.2207e19 GeV

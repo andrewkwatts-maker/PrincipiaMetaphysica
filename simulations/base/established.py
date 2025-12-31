@@ -95,7 +95,20 @@ class EstablishedPhysics:
 
     @classmethod
     def _load_constants(cls, registry: 'PMRegistry') -> None:
-        """Load fundamental constants (Planck mass, alpha_em, etc.)."""
+        """Load fundamental constants (Planck mass, alpha_em, etc.).
+
+        IMPORTANT - Planck Mass Distinction:
+        -------------------------------------
+        constants.M_PLANCK = 2.435e18 GeV - REDUCED Planck mass (M_Pl / sqrt(8*pi))
+            This is the INPUT for PM's 26D string tension (M_Pl_26D).
+
+        codata.M_PLANCK = 1.220890e19 GeV - FULL Planck mass (CODATA standard)
+            This is the EXPERIMENTAL REFERENCE for comparing PM's 4D prediction.
+
+        PM Prediction: geometry.m_planck_4d = M_Pl_26D * chi = 2.435e18 * 5.0132 = 1.2207e19 GeV
+            This should be compared against codata.M_PLANCK (full), NOT constants.M_PLANCK (reduced).
+            The 97.65σ error occurred when comparing 1.2207e19 against 2.435e18 (wrong quantity).
+        """
         if CONFIG_AVAILABLE:
             M_PLANCK = getattr(PhenomenologyParameters, 'M_PLANCK_REDUCED', 2.435e18)
             ALPHA_EM = getattr(PhenomenologyParameters, 'ALPHA_EM', 1/137.036)
@@ -110,7 +123,7 @@ class EstablishedPhysics:
                 uncertainty=3.0e15,
                 units="GeV",
                 source="ESTABLISHED:PDG2024",
-                description="Reduced Planck mass"
+                description="Reduced Planck mass (M_Pl / sqrt(8*pi)) - INPUT for 26D string tension"
             ),
             EstablishedParameter(
                 path="constants.alpha_em",
