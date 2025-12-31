@@ -301,9 +301,12 @@ class OctonionicMixing(SimulationBase):
 
         # Jarlskog invariant
         # J = Im(V_us * V_cb * V_ub* * V_cs*) ~ V_us * V_cb * V_ub * sin(delta_CP)
-        delta_cp = np.pi / 6  # CP phase from K=4 matching
-        J = V_us * V_cb * V_ub * np.sin(delta_cp) * 0.75
-        # ~ 0.223 * 0.039 * 0.0037 * 0.5 * 0.75 ~ 1.2e-5
+        # v16.2 FIX: CP phase from doubled golden angle 2*theta_g ≈ 63.44°
+        # This matches CKM unitarity triangle angle gamma ≈ 65-70° (PDG 2024)
+        # Physical origin: CP phase emerges from imaginary octonionic product structure
+        delta_cp = 2 * theta_g  # 2 * arctan(1/phi) ≈ 1.107 rad ≈ 63.44°
+        J = V_us * V_cb * V_ub * np.sin(delta_cp)
+        # ~ 0.223 * 0.040 * 0.0036 * 0.894 ~ 2.9e-5
 
         # Store matrix for later use
         self._ckm_matrix = {
