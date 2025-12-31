@@ -456,6 +456,25 @@ class PMFormula extends HTMLElement {
                 ${derivationHtml}
             </div>
         `;
+
+        // Trigger MathJax typesetting for Shadow DOM content
+        this.typesetMathJax();
+    }
+
+    /**
+     * Typeset MathJax content within Shadow DOM
+     */
+    typesetMathJax() {
+        // MathJax can't automatically find Shadow DOM content, so we need to typeset explicitly
+        if (window.MathJax && window.MathJax.typesetPromise) {
+            // MathJax 3 - typeset the shadow root
+            window.MathJax.typesetPromise([this.shadowRoot]).catch((err) => {
+                console.warn('MathJax typesetting error in pm-formula:', err);
+            });
+        } else if (window.MathJax && window.MathJax.Hub) {
+            // MathJax 2 fallback
+            window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub, this.shadowRoot]);
+        }
     }
 
     /**
