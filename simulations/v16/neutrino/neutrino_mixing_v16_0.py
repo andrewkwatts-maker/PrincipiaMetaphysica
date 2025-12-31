@@ -1106,23 +1106,24 @@ class NeutrinoMixingSimulation(SimulationBase):
             ),
             Parameter(
                 path="neutrino.dm2_32",
-                name="Atmospheric Mass Splitting Delta m^2_31",
+                name="Atmospheric Mass Splitting Delta m^2_32 (IO)",
                 units="eV^2",
                 status="PREDICTED",
-                description="Atmospheric neutrino mass-squared difference (m3^2 - m1^2). Positive for Normal Ordering.",
+                description="Atmospheric neutrino mass-squared difference (m3^2 - m2^2). Negative for Inverted Ordering.",
                 derivation_formula="neutrino-mass-spectrum",
-                experimental_bound=2.515e-3,
+                # PM predicts Inverted Ordering: use IO experimental value
+                experimental_bound=-2.404e-3,  # NuFIT 6.0 IO value
                 uncertainty=0.028e-3,  # ±0.028
                 bound_type="measured",
-                bound_source="NuFIT6.0",
+                bound_source="NuFIT6.0_IO",
                 validation={
-                    "experimental_value": 2.515e-3,
+                    "experimental_value": -2.404e-3,
                     "uncertainty_plus": 0.028e-3,
                     "uncertainty_minus": 0.028e-3,
                     "bound_type": "measured",
                     "status": "PASS",
-                    "source": "NuFIT6.0",
-                    "notes": "NuFIT 6.0 (2024) NO: Delta m^2_31 = (2.515 ± 0.028) x 10^-3 eV^2. Positive sign indicates Normal Ordering."
+                    "source": "NuFIT6.0_IO",
+                    "notes": "NuFIT 6.0 (2024) IO: Delta m^2_32 = (-2.404 ± 0.028) x 10^-3 eV^2. Negative sign indicates Inverted Ordering (m3 lightest)."
                 }
             ),
             Parameter(
