@@ -522,10 +522,12 @@ class PMSectionRenderer extends HTMLElement {
                     `);
                 } else if (block.content) {
                     // Render inline formula content directly with MathJax
+                    // Convert HTML/Unicode to LaTeX first
+                    const formulaContent = this.convertToLaTeX(block.content);
                     const label = block.label || block.equationNumber || '';
                     return wrapExpandable(`
                         <div class="equation-block inline-formula" id="${label}">
-                            <div class="equation-content">$$${block.content}$$</div>
+                            <div class="equation-content">$$${formulaContent}$$</div>
                             ${label ? `<span class="equation-number">(${label})</span>` : ''}
                         </div>
                     `);
@@ -634,11 +636,13 @@ class PMSectionRenderer extends HTMLElement {
 
             case 'equation':
                 // Inline equation blocks (not full pm-formula components)
-                const eqContent = block.content || '';
+                let eqContent = block.content || '';
+                // Convert HTML/Unicode to LaTeX for MathJax rendering
+                eqContent = this.convertToLaTeX(eqContent);
                 const eqLabel = block.label || block.equationNumber || '';
                 return wrapExpandable(`
                     <div class="equation-block" id="${eqLabel}">
-                        <div class="equation-content">${eqContent}</div>
+                        <div class="equation-content">$$${eqContent}$$</div>
                         ${eqLabel ? `<span class="equation-number">(${eqLabel})</span>` : ''}
                     </div>
                 `);
@@ -851,6 +855,109 @@ class PMSectionRenderer extends HTMLElement {
         const div = document.createElement('div');
         div.textContent = str;
         return div.innerHTML;
+    }
+
+    /**
+     * Convert HTML/Unicode formatted equations to proper LaTeX for MathJax
+     * @param {string} content - Equation content with HTML tags or Unicode symbols
+     * @returns {string} - Proper LaTeX formatted string
+     */
+    convertToLaTeX(content) {
+        if (!content) return '';
+
+        let latex = content;
+
+        // Convert HTML subscripts: <sub>...</sub> -> _{...}
+        latex = latex.replace(/<sub>([^<]*)<\/sub>/gi, '_{$1}');
+
+        // Convert HTML superscripts: <sup>...</sup> -> ^{...}
+        latex = latex.replace(/<sup>([^<]*)<\/sup>/gi, '^{$1}');
+
+        // Convert HTML bold: <strong>...</strong> or <b>...</b> -> \mathbf{...}
+        latex = latex.replace(/<strong>([^<]*)<\/strong>/gi, '\\mathbf{$1}');
+        latex = latex.replace(/<b>([^<]*)<\/b>/gi, '\\mathbf{$1}');
+
+        // Convert HTML italic: <em>...</em> or <i>...</i> -> \textit{...}
+        latex = latex.replace(/<em>([^<]*)<\/em>/gi, '\\textit{$1}');
+        latex = latex.replace(/<i>([^<]*)<\/i>/gi, '\\textit{$1}');
+
+        // Unicode Greek letters to LaTeX
+        const greekMap = {
+            'α': '\\alpha', 'β': '\\beta', 'γ': '\\gamma', 'δ': '\\delta',
+            'ε': '\\epsilon', 'ζ': '\\zeta', 'η': '\\eta', 'θ': '\\theta',
+            'ι': '\\iota', 'κ': '\\kappa', 'λ': '\\lambda', 'μ': '\\mu',
+            'ν': '\\nu', 'ξ': '\\xi', 'π': '\\pi', 'ρ': '\\rho',
+            'σ': '\\sigma', 'τ': '\\tau', 'υ': '\\upsilon', 'φ': '\\phi',
+            'χ': '\\chi', 'ψ': '\\psi', 'ω': '\\omega',
+            'Α': 'A', 'Β': 'B', 'Γ': '\\Gamma', 'Δ': '\\Delta',
+            'Ε': 'E', 'Ζ': 'Z', 'Η': 'H', 'Θ': '\\Theta',
+            'Ι': 'I', 'Κ': 'K', 'Λ': '\\Lambda', 'Μ': 'M',
+            'Ν': 'N', 'Ξ': '\\Xi', 'Π': '\\Pi', 'Ρ': 'P',
+            'Σ': '\\Sigma', 'Τ': 'T', 'Υ': '\\Upsilon', 'Φ': '\\Phi',
+            'Χ': 'X', 'Ψ': '\\Psi', 'Ω': '\\Omega'
+        };
+
+        for (const [unicode, latex_cmd] of Object.entries(greekMap)) {
+            latex = latex.split(unicode).join(latex_cmd);
+        }
+
+        // Unicode math symbols to LaTeX
+        const symbolMap = {
+            '×': '\\times', '÷': '\\div', '±': '\\pm', '∓': '\\mp',
+            '·': '\\cdot', '∘': '\\circ', '√': '\\sqrt', '∛': '\\sqrt[3]',
+            '∞': '\\infty', '∂': '\\partial', '∇': '\\nabla',
+            '∫': '\\int', '∮': '\\oint', '∑': '\\sum', '∏': '\\prod',
+            '→': '\\rightarrow', '←': '\\leftarrow', '↔': '\\leftrightarrow',
+            '⇒': '\\Rightarrow', '⇐': '\\Leftarrow', '⇔': '\\Leftrightarrow',
+            '↦': '\\mapsto', '⊂': '\\subset', '⊃': '\\supset',
+            '⊆': '\\subseteq', '⊇': '\\supseteq', '∈': '\\in', '∉': '\\notin',
+            '∪': '\\cup', '∩': '\\cap', '∅': '\\emptyset',
+            '⟨': '\\langle', '⟩': '\\rangle', '⌈': '\\lceil', '⌉': '\\rceil',
+            '⌊': '\\lfloor', '⌋': '\\rfloor',
+            '≤': '\\leq', '≥': '\\geq', '≠': '\\neq', '≈': '\\approx',
+            '≡': '\\equiv', '∝': '\\propto', '∼': '\\sim', '≃': '\\simeq',
+            '⊕': '\\oplus', '⊗': '\\otimes', '⊖': '\\ominus',
+            'ℒ': '\\mathcal{L}', 'ℋ': '\\mathcal{H}', 'ℝ': '\\mathbb{R}',
+            'ℂ': '\\mathbb{C}', 'ℤ': '\\mathbb{Z}', 'ℕ': '\\mathbb{N}', 'ℚ': '\\mathbb{Q}',
+            '†': '\\dagger', '‡': '\\ddagger', '∀': '\\forall', '∃': '\\exists',
+            '¬': '\\neg', '∧': '\\wedge', '∨': '\\vee',
+            '′': "'", '″': "''", '‴': "'''"
+        };
+
+        for (const [unicode, latex_cmd] of Object.entries(symbolMap)) {
+            latex = latex.split(unicode).join(latex_cmd);
+        }
+
+        // Fix common patterns:
+        // d^26 -> d^{26} (multi-digit exponents need braces)
+        latex = latex.replace(/\^(\d{2,})/g, '^{$1}');
+
+        // Fix subscripts with numbers: _123 -> _{123}
+        latex = latex.replace(/_(\d{2,})/g, '_{$1}');
+
+        // Unicode superscript digits
+        const superscriptMap = {
+            '⁰': '^{0}', '¹': '^{1}', '²': '^{2}', '³': '^{3}', '⁴': '^{4}',
+            '⁵': '^{5}', '⁶': '^{6}', '⁷': '^{7}', '⁸': '^{8}', '⁹': '^{9}',
+            '⁺': '^{+}', '⁻': '^{-}', '⁽': '^{(}', '⁾': '^{)}'
+        };
+
+        for (const [unicode, latex_cmd] of Object.entries(superscriptMap)) {
+            latex = latex.split(unicode).join(latex_cmd);
+        }
+
+        // Unicode subscript digits
+        const subscriptMap = {
+            '₀': '_{0}', '₁': '_{1}', '₂': '_{2}', '₃': '_{3}', '₄': '_{4}',
+            '₅': '_{5}', '₆': '_{6}', '₇': '_{7}', '₈': '_{8}', '₉': '_{9}',
+            '₊': '_{+}', '₋': '_{-}', '₌': '_{=}', '₍': '_{(}', '₎': '_{)}'
+        };
+
+        for (const [unicode, latex_cmd] of Object.entries(subscriptMap)) {
+            latex = latex.split(unicode).join(latex_cmd);
+        }
+
+        return latex;
     }
 
     escapeLatex(str) {
