@@ -1,7 +1,7 @@
 {
   "version": "16.2",
-  "generated": "2025-12-29T04:47:37.966075Z",
-  "total_scripts": 129,
+  "generated": "2025-12-31T00:22:28.576402Z",
+  "total_scripts": 160,
   "categories": {
     "Ad-Hoc / Experimental": {
       "title": "Ad-Hoc / Experimental",
@@ -12,6 +12,14 @@
       "order": 90,
       "sectionId": null,
       "scripts": [
+        {
+          "file": "ricci_flow_integrator_v16_2.py",
+          "path": "simulations/cosmology/ricci_flow_integrator_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Ricci Flow Integrator v16.2 - The Hubble Tension Bridge",
+          "status": null
+        },
         {
           "file": "generate_pm_plots_v16_1.py",
           "path": "simulations/generate_pm_plots_v16_1.py",
@@ -45,6 +53,14 @@
           "status": null
         },
         {
+          "file": "algebra_diagrams.py",
+          "path": "simulations/visualizations/algebra_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Algebraic Structure Visualization Diagrams",
+          "status": null
+        },
+        {
           "file": "baryogenesis_calculator.py",
           "path": "simulations/baryogenesis_calculator.py",
           "version": null,
@@ -53,11 +69,75 @@
           "status": null
         },
         {
+          "file": "brane_diagrams.py",
+          "path": "simulations/visualizations/brane_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Brane Diagrams Generator",
+          "status": null
+        },
+        {
+          "file": "brane_gauge_diagrams.py",
+          "path": "simulations/visualizations/brane_gauge_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Brane Gauge Diagrams Generator",
+          "status": null
+        },
+        {
+          "file": "compactification_diagrams.py",
+          "path": "simulations/visualizations/compactification_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Compactification Diagrams",
+          "status": null
+        },
+        {
+          "file": "cosmology_diagrams.py",
+          "path": "simulations/visualizations/cosmology_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Cosmology Diagrams for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "dark_energy_diagrams.py",
+          "path": "simulations/visualizations/dark_energy_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Dark Energy Diagrams for Principia Metaphysica",
+          "status": null
+        },
+        {
+          "file": "dimension_intro_diagrams.py",
+          "path": "simulations/visualizations/dimension_intro_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Dimension Introduction Diagrams",
+          "status": null
+        },
+        {
           "file": "dm_direct_detection_limits.py",
           "path": "simulations/dm_direct_detection_limits.py",
           "version": null,
           "title": null,
           "description": "Dark Matter Direct Detection Limits",
+          "status": null
+        },
+        {
+          "file": "g2_geometry_diagrams.py",
+          "path": "simulations/visualizations/g2_geometry_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "g2_geometry_diagrams.py - G2 Geometry Visualization Diagrams",
+          "status": null
+        },
+        {
+          "file": "gauge_theory_diagrams.py",
+          "path": "simulations/visualizations/gauge_theory_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Gauge Theory Diagrams for Principia Metaphysica",
           "status": null
         },
         {
@@ -77,11 +157,51 @@
           "status": null
         },
         {
+          "file": "goldilocks_plot.py",
+          "path": "simulations/visualizations/goldilocks_plot.py",
+          "version": null,
+          "title": null,
+          "description": "Goldilocks Plot: Visual Proof that b3=24 is Unique",
+          "status": null
+        },
+        {
+          "file": "gut_diagrams.py",
+          "path": "simulations/visualizations/gut_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "GUT Diagrams for Principia Metaphysica",
+          "status": null
+        },
+        {
           "file": "initialize_pm_framework.py",
           "path": "simulations/initialize_pm_framework.py",
           "version": null,
           "title": null,
           "description": "Principia Metaphysica Framework Initialization",
+          "status": null
+        },
+        {
+          "file": "observer_time_diagrams.py",
+          "path": "simulations/visualizations/observer_time_diagrams.py",
+          "version": null,
+          "title": "Observer and Consciousness Time Visualization Diagrams",
+          "description": "Licensed under the MIT License. See LICENSE file for details.",
+          "status": null
+        },
+        {
+          "file": "octonionic_triality.py",
+          "path": "simulations/visualizations/octonionic_triality.py",
+          "version": null,
+          "title": null,
+          "description": "Octonionic Triality: CKM vs PMNS Mixing Explanation",
+          "status": null
+        },
+        {
+          "file": "particle_diagrams.py",
+          "path": "simulations/visualizations/particle_diagrams.py",
+          "version": null,
+          "title": null,
+          "description": "Particle Physics Visualization Diagrams",
           "status": null
         },
         {
@@ -117,6 +237,14 @@
           "status": null
         },
         {
+          "file": "ricci_flow_evolution.py",
+          "path": "simulations/visualizations/ricci_flow_evolution.py",
+          "version": null,
+          "title": null,
+          "description": "Ricci Flow Hubble Evolution: Visual Hubble Tension Resolution",
+          "status": null
+        },
+        {
           "file": "secrets_config.py",
           "path": "simulations/secrets_config.py",
           "version": null,
@@ -133,11 +261,35 @@
           "status": null
         },
         {
-          "file": "test_vacuum_stability_integration.py",
-          "path": "simulations/test_vacuum_stability_integration.py",
+          "file": "theory_overview_diagrams.py",
+          "path": "simulations/visualizations/theory_overview_diagrams.py",
           "version": null,
           "title": null,
-          "description": "Test integration between vacuum_stability_monitor.py and vacuum_stability_derivations.py",
+          "description": "theory_overview_diagrams.py - Theory Overview Visualization Diagrams",
+          "status": null
+        },
+        {
+          "file": "time_flow_diagrams.py",
+          "path": "simulations/visualizations/time_flow_diagrams.py",
+          "version": null,
+          "title": "Time Flow Visualization Diagrams",
+          "description": "Licensed under the MIT License. See LICENSE file for details.",
+          "status": null
+        },
+        {
+          "file": "two_time_comparison.py",
+          "path": "simulations/visualizations/two_time_comparison.py",
+          "version": null,
+          "title": null,
+          "description": "Two-Time Comparison Visualizations",
+          "status": null
+        },
+        {
+          "file": "two_time_structure.py",
+          "path": "simulations/visualizations/two_time_structure.py",
+          "version": null,
+          "title": null,
+          "description": "Two-Time Structure Visualizations",
           "status": null
         },
         {
@@ -173,7 +325,7 @@
           "status": null
         }
       ],
-      "count": 20
+      "count": 39
     },
     "G2 Geometry": {
       "title": "G2 Geometry",
@@ -261,22 +413,6 @@
       "sectionId": null,
       "scripts": [
         {
-          "file": "ip_protector_v16.py",
-          "path": "simulations/ip/ip_protector_v16.py",
-          "version": "16.0",
-          "title": null,
-          "description": "IP Protection and Citation Manager for Principia Metaphysica v16.2",
-          "status": null
-        },
-        {
-          "file": "report_generator_v16.py",
-          "path": "simulations/reports/report_generator_v16.py",
-          "version": "16.0",
-          "title": null,
-          "description": "Technical Summary Report Generator v16.0",
-          "status": null
-        },
-        {
           "file": "add_missing_params.py",
           "path": "simulations/Constants/ad-hoc/add_missing_params.py",
           "version": null,
@@ -301,6 +437,14 @@
           "status": null
         },
         {
+          "file": "csv_loader.py",
+          "path": "simulations/data/experimental/csv_loader.py",
+          "version": null,
+          "title": null,
+          "description": "CSV Loader for Experimental Physics Data",
+          "status": null
+        },
+        {
           "file": "dark_matter_derivations.py",
           "path": "simulations/derivations/dark_matter_derivations.py",
           "version": null,
@@ -309,11 +453,11 @@
           "status": null
         },
         {
-          "file": "discovery_hash_registry.py",
-          "path": "simulations/ip/discovery_hash_registry.py",
+          "file": "dimensional_reduction_derivations.py",
+          "path": "simulations/derivations/dimensional_reduction_derivations.py",
           "version": null,
           "title": null,
-          "description": "Discovery Hash Registry for Intellectual Property Protection",
+          "description": "Dimensional Reduction Derivations: 26D -> 13D -> 6D -> 4D",
           "status": null
         },
         {
@@ -493,19 +637,11 @@
           "status": null
         },
         {
-          "file": "test_baryogenesis_derivations.py",
-          "path": "simulations/derivations/test_baryogenesis_derivations.py",
+          "file": "units.py",
+          "path": "simulations/base/units.py",
           "version": null,
           "title": null,
-          "description": "Test Suite for Baryogenesis Derivations",
-          "status": null
-        },
-        {
-          "file": "test_report_generator.py",
-          "path": "simulations/reports/test_report_generator.py",
-          "version": null,
-          "title": null,
-          "description": "Test Script for report_generator_v16.py",
+          "description": "Unit Conversion Utilities for Principia Metaphysica",
           "status": null
         },
         {
@@ -563,17 +699,9 @@
           "title": null,
           "description": "Validation Utilities",
           "status": null
-        },
-        {
-          "file": "verify_hashes.py",
-          "path": "simulations/ip/verify_hashes.py",
-          "version": null,
-          "title": null,
-          "description": "Verification script for discovery hash registry.",
-          "status": null
         }
       ],
-      "count": 39
+      "count": 36
     },
     "Validation": {
       "title": "Validation",
@@ -584,6 +712,30 @@
       "order": 92,
       "sectionId": null,
       "scripts": [
+        {
+          "file": "sigma_validator_final_v16_2.py",
+          "path": "simulations/validation/sigma_validator_final_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Final Sigma Validator and Zenodo Manifest Generator v16.2",
+          "status": null
+        },
+        {
+          "file": "symplectic_descent_validator_v16_2.py",
+          "path": "simulations/validation/symplectic_descent_validator_v16_2.py",
+          "version": "16.2",
+          "title": "Symplectic Descent Validator",
+          "description": "The Ghost-Free Proof: Demonstrates that the (24,2) signature is the UNIQUE",
+          "status": null
+        },
+        {
+          "file": "unitary_filter_v16_2.py",
+          "path": "simulations/validation/unitary_filter_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Principia Metaphysica - Ghost-Free Stability Check v16.2",
+          "status": null
+        },
         {
           "file": "add_simulation_links_to_theory.py",
           "path": "simulations/validation/add_simulation_links_to_theory.py",
@@ -598,30 +750,6 @@
           "version": null,
           "title": null,
           "description": "Pytest Configuration for Principia Metaphysica Tests",
-          "status": null
-        },
-        {
-          "file": "test_data_loader.py",
-          "path": "simulations/tests/test_data_loader.py",
-          "version": null,
-          "title": null,
-          "description": "Comprehensive Unit Tests for ExperimentalDataLoader",
-          "status": null
-        },
-        {
-          "file": "test_gauge_invariance.py",
-          "path": "simulations/tests/test_gauge_invariance.py",
-          "version": null,
-          "title": null,
-          "description": "Gauge Invariance Tests for Principia Metaphysica Theory",
-          "status": null
-        },
-        {
-          "file": "test_registry.py",
-          "path": "simulations/tests/test_registry.py",
-          "version": null,
-          "title": null,
-          "description": "Comprehensive Unit Tests for PMRegistry",
           "status": null
         },
         {
@@ -654,6 +782,14 @@
           "version": null,
           "title": null,
           "description": "Validation script to compare dynamic content from theory_output.json",
+          "status": null
+        },
+        {
+          "file": "validate_experimental_compliance.py",
+          "path": "simulations/validation/validate_experimental_compliance.py",
+          "version": null,
+          "title": null,
+          "description": "Validate Experimental Value Compliance",
           "status": null
         },
         {
@@ -737,7 +873,7 @@
           "status": null
         }
       ],
-      "count": 19
+      "count": 20
     },
     "v16/appendices": {
       "title": "Appendices",
@@ -773,11 +909,35 @@
           "status": null
         },
         {
+          "file": "appendix_d_sp2r_invariance_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_sp2r_invariance_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Appendix D': Sp(2,R) Invariance and No Closed Timelike Curves v16.0",
+          "status": null
+        },
+        {
           "file": "appendix_d_tables_v16_0.py",
           "path": "simulations/v16/appendices/appendix_d_tables_v16_0.py",
           "version": "16.0",
           "title": null,
           "description": "Appendix D: Parameter Tables v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_d_unitarity_proofs_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_unitarity_proofs_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Appendix D.2: Unitarity Proofs for Mixing Matrices v16.0",
+          "status": null
+        },
+        {
+          "file": "appendix_d_weyl_anomaly_v16_0.py",
+          "path": "simulations/v16/appendices/appendix_d_weyl_anomaly_v16_0.py",
+          "version": "16.0",
+          "title": null,
+          "description": "Appendix D: Weyl Anomaly Cancellation & Unitary Stability v16.0",
           "status": null
         },
         {
@@ -861,7 +1021,7 @@
           "status": null
         }
       ],
-      "count": 14
+      "count": 17
     },
     "v16/cosmology": {
       "title": "Cosmology",
@@ -872,6 +1032,38 @@
       "order": 9,
       "sectionId": "5",
       "scripts": [
+        {
+          "file": "dark_energy_thawing_v16_2.py",
+          "path": "simulations/v16/cosmology/dark_energy_thawing_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Dark Energy Thawing Evolution v16.2 - DESI 2025 \"Thawing\" Alignment",
+          "status": null
+        },
+        {
+          "file": "evolution_engine_v16_2.py",
+          "path": "simulations/v16/cosmology/evolution_engine_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Evolution Engine v16.2 - Merged Historical Logic",
+          "status": "GEOMETRIC"
+        },
+        {
+          "file": "cosmological_constant_v16_1.py",
+          "path": "simulations/v16/cosmology/cosmological_constant_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Cosmological Constant from Entropy Density v16.1",
+          "status": null
+        },
+        {
+          "file": "ricci_flow_h0_v16_1.py",
+          "path": "simulations/v16/cosmology/ricci_flow_h0_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Ricci Flow Hubble Evolution v16.1",
+          "status": null
+        },
         {
           "file": "s8_suppression_v16_1.py",
           "path": "simulations/v16/cosmology/s8_suppression_v16_1.py",
@@ -937,7 +1129,7 @@
           "status": null
         }
       ],
-      "count": 8
+      "count": 12
     },
     "v16/discussion": {
       "title": "Discussion",
@@ -969,11 +1161,27 @@
       "sectionId": "4",
       "scripts": [
         {
+          "file": "octonionic_mixing_v16_2.py",
+          "path": "simulations/v16/fermion/octonionic_mixing_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "mass_ratio_v16_1.py",
           "path": "simulations/v16/fermion/mass_ratio_v16_1.py",
           "version": "16.1",
           "title": null,
           "description": "Proton-to-Electron Mass Ratio Derivation v16.1",
+          "status": null
+        },
+        {
+          "file": "muon_g2_anomaly_v16_1.py",
+          "path": "simulations/v16/fermion/muon_g2_anomaly_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Muon g-2 Anomaly from Topological Torsion v16.1",
           "status": null
         },
         {
@@ -1001,7 +1209,7 @@
           "status": null
         }
       ],
-      "count": 4
+      "count": 6
     },
     "v16/gauge": {
       "title": "Gauge Unification",
@@ -1033,6 +1241,22 @@
       "sectionId": "2",
       "scripts": [
         {
+          "file": "leech_partition_v16_2.py",
+          "path": "simulations/v16/geometric/leech_partition_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Leech Lattice Generation Partition v16.2",
+          "status": null
+        },
+        {
+          "file": "modular_invariance_v16_2.py",
+          "path": "simulations/v16/geometric/modular_invariance_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Modular Invariance and b₃=24 Uniqueness v16.2",
+          "status": null
+        },
+        {
           "file": "alpha_rigor_v16_1.py",
           "path": "simulations/v16/geometric/alpha_rigor_v16_1.py",
           "version": "16.1",
@@ -1047,6 +1271,14 @@
           "title": null,
           "description": "Universal Constants Geometric Derivation v16.1",
           "status": "GEOMETRIC"
+        },
+        {
+          "file": "torsional_constants_v16_1.py",
+          "path": "simulations/v16/geometric/torsional_constants_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Torsional Constants Derivation v16.1.1",
+          "status": null
         },
         {
           "file": "g2_geometry_v16_0.py",
@@ -1065,7 +1297,7 @@
           "status": null
         }
       ],
-      "count": 4
+      "count": 7
     },
     "v16/higgs": {
       "title": "Higgs Sector",
@@ -1077,6 +1309,14 @@
       "sectionId": "4.4",
       "scripts": [
         {
+          "file": "higgs_vev_derivation_v16_1.py",
+          "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
+          "version": "16.1",
+          "title": null,
+          "description": "Higgs VEV Geometric Derivation v16.1",
+          "status": "GEOMETRIC"
+        },
+        {
           "file": "higgs_mass_v16_0.py",
           "path": "simulations/v16/higgs/higgs_mass_v16_0.py",
           "version": "16.0",
@@ -1085,7 +1325,7 @@
           "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/introduction": {
       "title": "Introduction",
@@ -1281,6 +1521,14 @@
           "status": null
         },
         {
+          "file": "unity_identity_v16_1.py",
+          "path": "simulations/v16/validation/unity_identity_v16_1.py",
+          "version": "16.1",
+          "title": "Unity Identity Validation",
+          "description": "Proves the fundamental identity linking fine structure constant α",
+          "status": null
+        },
+        {
           "file": "example_usage.py",
           "path": "simulations/v16/validation/example_usage.py",
           "version": null,
@@ -1297,7 +1545,7 @@
           "status": null
         }
       ],
-      "count": 3
+      "count": 4
     }
   }
 }
