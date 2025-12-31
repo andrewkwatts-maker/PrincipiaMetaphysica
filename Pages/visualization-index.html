@@ -384,7 +384,8 @@
 
         .viz-meta {
             display: flex;
-            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
             align-items: center;
             padding-top: 1rem;
             border-top: 1px solid var(--border-primary);
@@ -402,6 +403,7 @@
             border-radius: 8px;
             background: var(--bg-primary);
             transition: all 0.3s ease;
+            flex-shrink: 0;
         }
 
         .viz-link:hover {
@@ -411,7 +413,17 @@
 
         .viz-source {
             color: var(--text-muted);
-            font-size: 0.85em;
+            font-size: 0.8em;
+            font-family: 'Fira Code', monospace;
+            background: var(--bg-elevated);
+            padding: 0.3rem 0.6rem;
+            border-radius: 4px;
+            flex-shrink: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 200px;
         }
 
         /* Simulation Code Viewer */
@@ -429,7 +441,7 @@
             border: 1px solid rgba(79, 172, 254, 0.3);
             cursor: pointer;
             transition: all 0.3s ease;
-            margin-left: 0.5rem;
+            flex-shrink: 0;
         }
 
         .sim-code-toggle:hover {
@@ -2402,7 +2414,7 @@
       };
 
       // GitHub raw URL base
-      const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/AndrewKWatts/PrincipiaMetaphysica/main/simulations/';
+      const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/andrewkwatts-maker/PrincipiaMetaphysica/main/simulations/';
 
       // Fetch and cache simulation code
       async function fetchSimCode(simPath) {
