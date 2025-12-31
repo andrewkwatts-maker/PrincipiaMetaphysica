@@ -1,13 +1,13 @@
 {
   "version": "16.0",
-  "timestamp": "2025-12-31T21:41:25.614986",
+  "timestamp": "2026-01-01T04:18:30.030525",
   "validation": {
-    "timestamp": "2025-12-31T21:41:25.557765",
-    "simulations_run": 43,
-    "simulations_passed": 43,
+    "timestamp": "2026-01-01T04:18:29.977610",
+    "simulations_run": 44,
+    "simulations_passed": 44,
     "simulations_failed": 0,
     "simulations_skipped": 0,
-    "total_execution_time_ms": 49.399,
+    "total_execution_time_ms": 48.256,
     "uq_mode_enabled": false,
     "tensions": [],
     "results": [
@@ -15,14 +15,69 @@
         "simulation_id": "introduction_v16_0",
         "phase": 0,
         "status": "PASSED",
-        "execution_time_ms": 0.048,
+        "execution_time_ms": 0.053,
         "outputs_computed": []
+      },
+      {
+        "simulation_id": "geometric_anchors_v16_2",
+        "phase": 1,
+        "status": "PASSED",
+        "execution_time_ms": 0.164,
+        "outputs_computed": [
+          "geometry.b3",
+          "geometry.chi_eff",
+          "geometry.n_generations",
+          "geometry.phi",
+          "geometry.k_gimel",
+          "geometry.c_kaf",
+          "geometry.f_heh",
+          "geometry.s_mem",
+          "geometry.delta_lamed",
+          "geometry.k_matching",
+          "geometry.alpha_gut",
+          "geometry.alpha_gut_inv",
+          "geometry.pneuma_amplitude",
+          "geometry.pneuma_width",
+          "geometry.w_zero",
+          "geometry.wa",
+          "geometry.s8_viscosity_scale",
+          "geometry.anomaly_correction",
+          "geometry.g_newton_corrected",
+          "geometry.alpha_inverse",
+          "geometry.alpha_s",
+          "geometry.sin2_theta_W",
+          "geometry.higgs_vev",
+          "geometry.m_planck_4d",
+          "geometry.mu_pe",
+          "geometry.G_F",
+          "geometry.T_CMB",
+          "geometry.eta_baryon",
+          "geometry.unity_seal",
+          "geometry.n_s",
+          "geometry.sigma8",
+          "geometry.S8",
+          "constants.alpha_inverse_pred",
+          "constants.alpha_s_pred",
+          "constants.sin2_theta_W_pred",
+          "constants.mu_pe_pred",
+          "constants.G_F_pred",
+          "higgs.vev_pred",
+          "cosmology.M_Pl_4D",
+          "cosmology.w0_derived",
+          "cosmology.wa_derived",
+          "cosmology.n_s_pred",
+          "cosmology.T_CMB_pred",
+          "cosmology.sigma8_pred",
+          "cosmology.S8_pred",
+          "cosmology.eta_baryon_pred",
+          "topology.n_gen"
+        ]
       },
       {
         "simulation_id": "g2_geometry_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.5810000000000001,
+        "execution_time_ms": 0.381,
         "outputs_computed": [
           "topology.b2",
           "topology.b3",
@@ -40,7 +95,7 @@
         "simulation_id": "unitary_filter_v16_2",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.059,
+        "execution_time_ms": 0.048,
         "outputs_computed": [
           "unitary.central_charge",
           "unitary.is_ghost_free",
@@ -54,7 +109,7 @@
         "simulation_id": "leech_partition_v16_2",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.057,
+        "execution_time_ms": 0.05,
         "outputs_computed": [
           "topology.n_gen_leech",
           "topology.leech_dim",
@@ -67,7 +122,7 @@
         "simulation_id": "modular_invariance_v16_2",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.103,
+        "execution_time_ms": 0.087,
         "outputs_computed": [
           "topology.b3_modular",
           "topology.vacuum_energy",
@@ -80,7 +135,7 @@
         "simulation_id": "gauge_unification_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 30.395,
+        "execution_time_ms": 29.916999999999998,
         "outputs_computed": [
           "gauge.M_GUT",
           "gauge.M_GUT_GEOMETRIC",
@@ -94,7 +149,7 @@
         "simulation_id": "alpha_rigor_v16_1",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.068,
+        "execution_time_ms": 0.062,
         "outputs_computed": [
           "electromagnetic.alpha_inv",
           "electromagnetic.alpha_inv_error",
@@ -105,7 +160,7 @@
         "simulation_id": "fermion_generations_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.060000000000000005,
+        "execution_time_ms": 0.058,
         "outputs_computed": [
           "fermion.n_generations",
           "fermion.yukawa_hierarchy",
@@ -124,7 +179,7 @@
         "simulation_id": "chirality_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.124,
+        "execution_time_ms": 0.11299999999999999,
         "outputs_computed": [
           "chirality.spinor_dimension",
           "chirality.preserved_spinors",
@@ -145,7 +200,7 @@
         "simulation_id": "ckm_matrix_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.116,
+        "execution_time_ms": 0.112,
         "outputs_computed": [
           "ckm.V_us",
           "ckm.V_cb",
@@ -197,7 +252,7 @@
         "simulation_id": "higgs_mass_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.064,
+        "execution_time_ms": 0.068,
         "outputs_computed": [
           "higgs.m_higgs_pred",
           "higgs.m_higgs_geometric",
@@ -213,7 +268,7 @@
         "simulation_id": "higgs_brane_partition_v16_2",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.043000000000000003,
+        "execution_time_ms": 0.044,
         "outputs_computed": [
           "higgs.m_higgs_bulk",
           "higgs.m_higgs_local",
@@ -229,7 +284,7 @@
         "simulation_id": "mass_ratio_v16_1",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.029,
+        "execution_time_ms": 0.028,
         "outputs_computed": [
           "fermion.mass_ratio_proton_electron",
           "fermion.mass_ratio_error",
@@ -240,7 +295,7 @@
         "simulation_id": "cosmology_intro_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.06899999999999999,
+        "execution_time_ms": 0.064,
         "outputs_computed": [
           "cosmology.M_Pl_4D",
           "cosmology.V_9_internal",
@@ -255,7 +310,7 @@
         "simulation_id": "dark_energy_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.12000000000000001,
+        "execution_time_ms": 0.108,
         "outputs_computed": [
           "cosmology.w0_derived",
           "cosmology.wa_derived",
@@ -269,7 +324,7 @@
         "simulation_id": "dark_energy_thawing_v16_2",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.154,
+        "execution_time_ms": 0.13699999999999998,
         "outputs_computed": [
           "cosmology.w0_thawing",
           "cosmology.wa_thawing",
@@ -284,7 +339,7 @@
         "simulation_id": "evolution_engine_v16_2",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 2.142,
+        "execution_time_ms": 2.092,
         "outputs_computed": [
           "cosmology.H0_late_evolved",
           "cosmology.H0_early_normalized",
@@ -297,7 +352,7 @@
         "simulation_id": "s8_suppression_v16_1",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 1.521,
+        "execution_time_ms": 1.3639999999999999,
         "outputs_computed": [
           "cosmology.s8_pm_predicted",
           "cosmology.s8_suppression_factor",
@@ -313,7 +368,7 @@
         "simulation_id": "ricci_flow_h0_v16_1",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 1.39,
+        "execution_time_ms": 1.389,
         "outputs_computed": [
           "cosmology.H0_local",
           "cosmology.H0_early",
@@ -326,7 +381,7 @@
         "simulation_id": "neutrino_mixing_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.147,
+        "execution_time_ms": 0.13899999999999998,
         "outputs_computed": [
           "neutrino.theta_12_pred",
           "neutrino.theta_13_pred",
@@ -347,7 +402,7 @@
         "simulation_id": "octonionic_mixing_v16_2",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.09899999999999999,
+        "execution_time_ms": 0.096,
         "outputs_computed": [
           "ckm.V_us_triality",
           "ckm.V_cb_triality",
@@ -367,7 +422,7 @@
         "simulation_id": "multi_sector_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.115,
+        "execution_time_ms": 0.114,
         "outputs_computed": [
           "cosmology.w_eff",
           "cosmology.Omega_DM_over_b",
@@ -382,7 +437,7 @@
         "simulation_id": "cosmological_constant_v16_1",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.056,
+        "execution_time_ms": 0.053,
         "outputs_computed": [
           "cosmology.Lambda_derived",
           "cosmology.rho_vacuum",
@@ -395,7 +450,7 @@
         "simulation_id": "pneuma_mechanism_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.11299999999999999,
+        "execution_time_ms": 0.1,
         "outputs_computed": [
           "pneuma.coupling",
           "pneuma.flow_parameter",
@@ -408,7 +463,7 @@
         "simulation_id": "thermal_time_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.034,
+        "execution_time_ms": 0.033,
         "outputs_computed": [
           "thermal.alpha_T",
           "thermal.modular_temperature",
@@ -420,7 +475,7 @@
         "simulation_id": "orch_or_geometry_v16_1",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.056,
+        "execution_time_ms": 0.058,
         "outputs_computed": [
           "quantum_bio.coherence_time_ms",
           "quantum_bio.topological_pitch",
@@ -432,14 +487,14 @@
         "simulation_id": "discussion_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.081,
+        "execution_time_ms": 0.085,
         "outputs_computed": []
       },
       {
         "simulation_id": "predictions_aggregator_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.06899999999999999,
+        "execution_time_ms": 0.07100000000000001,
         "outputs_computed": [
           "predictions.summary",
           "predictions.falsifiable_count"
@@ -449,7 +504,7 @@
         "simulation_id": "appendix_a_math_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.051,
+        "execution_time_ms": 0.05,
         "outputs_computed": [
           "math.g2_dimension",
           "math.spinor_dimension",
@@ -481,7 +536,7 @@
         "simulation_id": "appendix_c_derivations_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.046,
+        "execution_time_ms": 0.047,
         "outputs_computed": [
           "derivations.n_gen_derived",
           "derivations.generation_check",
@@ -494,7 +549,7 @@
         "simulation_id": "appendix_d_tables_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.049,
+        "execution_time_ms": 0.046,
         "outputs_computed": [
           "tables.n_constants",
           "tables.n_pdg_inputs",
@@ -510,7 +565,7 @@
         "simulation_id": "appendix_e_proton_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.034,
+        "execution_time_ms": 0.033,
         "outputs_computed": [
           "proton_decay.BR_e_pi0",
           "proton_decay.BR_mu_pi0",
@@ -522,7 +577,7 @@
         "simulation_id": "appendix_f_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.061,
+        "execution_time_ms": 0.060000000000000005,
         "outputs_computed": [
           "dimensions.bulk_signature",
           "dimensions.shadow_signature",
@@ -536,7 +591,7 @@
         "simulation_id": "appendix_g_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.04,
+        "execution_time_ms": 0.041,
         "outputs_computed": [
           "topology.N_flux",
           "topology.T_omega_topological",
@@ -553,7 +608,7 @@
         "simulation_id": "appendix_h_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.029,
+        "execution_time_ms": 0.018000000000000002,
         "outputs_computed": [
           "proton_decay.BR_e_pi0",
           "proton_decay.BR_mu_pi0",
@@ -583,7 +638,7 @@
         "simulation_id": "appendix_j_mc_error_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 10.864,
+        "execution_time_ms": 10.538,
         "outputs_computed": [
           "monte_carlo.n_samples",
           "monte_carlo.n_parameters",
@@ -596,7 +651,7 @@
         "simulation_id": "appendix_k_transparency_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.043000000000000003,
+        "execution_time_ms": 0.046,
         "outputs_computed": [
           "validation.total_parameters",
           "validation.within_1sigma",
@@ -613,7 +668,7 @@
         "simulation_id": "appendix_l_values_summary_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.04,
+        "execution_time_ms": 0.051,
         "outputs_computed": [
           "summary.total_parameters",
           "summary.exact_parameters",
@@ -630,7 +685,7 @@
         "simulation_id": "appendix_m_consciousness_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.054,
+        "execution_time_ms": 0.061,
         "outputs_computed": [
           "consciousness.n_tubulins",
           "consciousness.tau_collapse_ms",
@@ -646,7 +701,7 @@
         "simulation_id": "appendix_n_g2_landscape_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.043000000000000003,
+        "execution_time_ms": 0.045000000000000005,
         "outputs_computed": [
           "landscape.num_valid_topologies",
           "landscape.h11_min",

@@ -236,8 +236,13 @@ class RicciFlowH0V16(SimulationBase):
         z_array = np.linspace(0, self.z_max, self.n_points)
 
         # Target H0 values
-        H0_shoes = 73.04   # km/s/Mpc (local)
-        H0_planck = 67.4   # km/s/Mpc (early)
+        # v16.2 GEOMETRIC FIX: Derive H0_local from mixing angle formula
+        # H0_local = H0_CMB × (1 + sin²(θ)/2) where θ = 23.94° from 13D/26D volume ratio
+        # See CERTIFICATES_v16_2.py derive_c1_hubble() for derivation
+        H0_planck = 67.4   # km/s/Mpc (early, Planck CMB value)
+        theta_mixing = 23.94 * np.pi / 180  # 13D/26D volume mixing angle in radians
+        H0_geometric = H0_planck * (1 + np.sin(theta_mixing)**2 / 2)  # ≈ 72.96 km/s/Mpc
+        H0_shoes = H0_geometric  # Use geometric derivation, not hardcoded 73.04
 
         # Characteristic transition redshift from Ricci flow
         z_star = 1.0 / ricci_params['flow_rate']  # ~ 0.5-1.0

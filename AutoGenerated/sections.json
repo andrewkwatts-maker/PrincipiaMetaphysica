@@ -265,13 +265,6 @@
           "content": "This hierarchical structure moves from the foundational 26D geometric framework through the particle physics phenomenology to cosmological implications and experimental tests. Each section builds upon the preceding material, developing a coherent picture of unified physics from 26D origins through 13D shadow to observable 4D consequences."
         },
         {
-          "type": "figure",
-          "src": "dimensional-reduction-pathway.svg",
-          "caption": "The 26D → 13D → 4D Volumetric Projection Chain: Starting from the 26D Leech lattice bulk with signature (24,2), the Sp(2,R) gauge fixing reduces to a 13D mirror brane. Further compactification on the TCS G₂ manifold with b₃=24 3-cycles yields observable 4D spacetime. The volumetric dressing factor χ = √V₇ ≈ 5.01 accounts for the 'weakness' of gravity.",
-          "label": "1",
-          "alt": "Dimensional reduction from 26D to 13D to 4D"
-        },
-        {
           "type": "note",
           "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to derive Re(T) = 7.086 from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. This ensures swampland compliance (Δφ = 1.958 > 0.816) and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>Calibration Transparency:</strong> The framework uses minimal calibrations: VEV factor 1.5859 (semi-derived via ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ + |T<sub>ω</sub>|/b₃) and α<sub>GUT</sub> coefficient 0.032177—both fully documented. <strong>v14.2:</strong> With the derivation of the KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ Standard Model + compactification parameters purely predictive</strong>. <strong>v15.0:</strong> Racetrack moduli stabilization now <em>dynamically derives</em> the Cabibbo angle ε = 0.2257 from flux competition—no tuning needed. Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles, and perturbation tests confirm active geometry evaluation robustness.</p>",
           "label": "derived-modulus",
@@ -576,13 +569,6 @@
           "content": "This hierarchical structure moves from the foundational 26D geometric framework through the particle physics phenomenology to cosmological implications and experimental tests. Each section builds upon the preceding material, developing a coherent picture of unified physics from 26D origins through 13D shadow to observable 4D consequences."
         },
         {
-          "type": "figure",
-          "src": "dimensional-reduction-pathway.svg",
-          "caption": "The 26D → 13D → 4D Volumetric Projection Chain: Starting from the 26D Leech lattice bulk with signature (24,2), the Sp(2,R) gauge fixing reduces to a 13D mirror brane. Further compactification on the TCS G₂ manifold with b₃=24 3-cycles yields observable 4D spacetime. The volumetric dressing factor χ = √V₇ ≈ 5.01 accounts for the 'weakness' of gravity.",
-          "label": "1",
-          "alt": "Dimensional reduction from 26D to 13D to 4D"
-        },
-        {
           "type": "note",
           "content": "<h4>Key Feature: Derived Modulus</h4><p>A significant advancement was achieved by inverting the Higgs mass formula to derive Re(T) = 7.086 from the measured Higgs mass (125.25 GeV), rather than choosing it arbitrarily. This ensures swampland compliance (Δφ = 1.958 > 0.816) and completes the geometric unification where both λ₀ (from SO(10) matching) and Re(T) (from experimental data) are now fully determined.</p><p><strong>Calibration Transparency:</strong> The framework uses minimal calibrations: VEV factor 1.5859 (semi-derived via ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ + |T<sub>ω</sub>|/b₃) and α<sub>GUT</sub> coefficient 0.032177—both fully documented. <strong>v14.2:</strong> With the derivation of the KK scale (M<sub>KK</sub> ≈ 4.5 TeV from k<sub>eff</sub> = b₃/(2+ε)), Yukawa textures (ε = exp(-λ) with λ=1.5), and CP phase (δ<sub>CP</sub> = π/2 from topological orientations), this leaves <strong>58+ Standard Model + compactification parameters purely predictive</strong>. <strong>v15.0:</strong> Racetrack moduli stabilization now <em>dynamically derives</em> the Cabibbo angle ε = 0.2257 from flux competition—no tuning needed. Yukawa overlaps validated via 7D Monte Carlo on explicit G₂ associative cycles, and perturbation tests confirm active geometry evaluation robustness.</p>",
           "label": "derived-modulus",
@@ -662,7 +648,7 @@
         "proton_lifetime.tau_p_years",
         "vev_pneuma.v_EW"
       ],
-      "timestamp": "2025-12-31T21:41:25.506444"
+      "timestamp": "2026-01-01T04:18:29.927464"
     },
     "2": {
       "id": "2",
@@ -1494,7 +1480,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-31T21:41:25.545001"
+      "timestamp": "2026-01-01T04:18:29.965143"
     },
     "validation": {
       "id": "validation",
@@ -1616,7 +1602,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2025-12-31T21:41:25.507234"
+      "timestamp": "2026-01-01T04:18:29.928213"
     },
     "V.1": {
       "id": "validation",
@@ -1738,7 +1724,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2025-12-31T21:41:25.507261"
+      "timestamp": "2026-01-01T04:18:29.928235"
     },
     "3": {
       "id": "3",
@@ -1796,7 +1782,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-31T21:41:25.538016"
+      "timestamp": "2026-01-01T04:18:29.958456"
     },
     "3.4": {
       "id": "3",
@@ -1960,7 +1946,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2025-12-31T21:41:25.507348"
+      "timestamp": "2026-01-01T04:18:29.928309"
     },
     "3.5": {
       "id": "3",
@@ -2132,7 +2118,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2025-12-31T21:41:25.507485"
+      "timestamp": "2026-01-01T04:18:29.928418"
     },
     "3.1": {
       "id": "3",
@@ -2190,7 +2176,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2025-12-31T21:41:25.538035"
+      "timestamp": "2026-01-01T04:18:29.958473"
     },
     "4": {
       "id": "4",
@@ -2299,13 +2285,6 @@
         {
           "type": "paragraph",
           "content": "This is the deep answer to why quark mixing is small and lepton mixing is large: it is NOT separate physics, but the SAME octonionic structure viewed through different dimensional projections."
-        },
-        {
-          "type": "figure",
-          "src": "octonionic-triality-ckm-pmns.png",
-          "caption": "G₂ Triality and the Unitarity Triangle: The octonionic automorphism group G₂ ≃ Aut(O) generates both quark (CKM) and lepton (PMNS) mixing from the same geometric structure. Quarks localize on rigid 3-form cycles with small mixing angles (V_us ≈ 0.22), while leptons localize on flexible 4-form cycles with large mixing (θ₂₃ ≈ 49°). The V_cb torsional twist correction from G₂ holonomy brings theory into sub-σ agreement with PDG measurements.",
-          "label": "4",
-          "alt": "G2 triality structure showing CKM and PMNS derivation"
         }
       ],
       "content_blocks": [
@@ -2441,7 +2420,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2025-12-31T21:41:25.544620"
+      "timestamp": "2026-01-01T04:18:29.964797"
     },
     "4.2": {
       "id": "4",
@@ -2499,7 +2478,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2025-12-31T21:41:25.538729"
+      "timestamp": "2026-01-01T04:18:29.959149"
     },
     "4.1": {
       "id": "4",
@@ -2787,7 +2766,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2025-12-31T21:41:25.538280"
+      "timestamp": "2026-01-01T04:18:29.958707"
     },
     "4.3": {
       "id": "4",
@@ -3027,7 +3006,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2025-12-31T21:41:25.538432"
+      "timestamp": "2026-01-01T04:18:29.958852"
     },
     "4.6": {
       "id": "4",
@@ -3207,7 +3186,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2025-12-31T21:41:25.538507"
+      "timestamp": "2026-01-01T04:18:29.958926"
     },
     "4.4": {
       "id": "4",
@@ -3297,7 +3276,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2025-12-31T21:41:25.538673"
+      "timestamp": "2026-01-01T04:18:29.959094"
     },
     "5": {
       "id": "5",
@@ -3358,13 +3337,6 @@
         {
           "type": "paragraph",
           "content": "v16.2 key factors: (1) Topological suppression b3^3 = 13824, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton action e^{-2*pi*26} ~ 10^-71. The instanton factor provides the geometric mechanism for hierarchy."
-        },
-        {
-          "type": "figure",
-          "src": "goldilocks-b3-uniqueness.png",
-          "caption": "Leech Lattice Node Dilution and the b₃=24 Goldilocks Zone: The Betti number b₃=24 emerges uniquely from the TCS G₂ construction. Too few 3-cycles (b₃<24) would fail to stabilize moduli; too many (b₃>24) would introduce unwanted massless modes. The 24 associative 3-cycles of the G₂ manifold correspond to the 24 minimal vectors of the Leech lattice, providing the geometric suppression factor b₃³=13,824 that partially resolves the cosmological constant hierarchy.",
-          "label": "7",
-          "alt": "b3=24 uniqueness diagram showing Leech lattice connection"
         },
         {
           "type": "formula",
@@ -3429,13 +3401,6 @@
           "content": "v16.2 key factors: (1) Topological suppression b3^3 = 13824, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton action e^{-2*pi*26} ~ 10^-71. The instanton factor provides the geometric mechanism for hierarchy."
         },
         {
-          "type": "figure",
-          "src": "goldilocks-b3-uniqueness.png",
-          "caption": "Leech Lattice Node Dilution and the b₃=24 Goldilocks Zone: The Betti number b₃=24 emerges uniquely from the TCS G₂ construction. Too few 3-cycles (b₃<24) would fail to stabilize moduli; too many (b₃>24) would introduce unwanted massless modes. The 24 associative 3-cycles of the G₂ manifold correspond to the 24 minimal vectors of the Leech lattice, providing the geometric suppression factor b₃³=13,824 that partially resolves the cosmological constant hierarchy.",
-          "label": "7",
-          "alt": "b3=24 uniqueness diagram showing Leech lattice connection"
-        },
-        {
           "type": "formula",
           "content": "\\Lambda \\approx 1.1 \\times 10^{-52} \\text{ m}^{-2}",
           "formula_id": "lambda-hierarchy",
@@ -3465,7 +3430,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2025-12-31T21:41:25.544870"
+      "timestamp": "2026-01-01T04:18:29.965020"
     },
     "5.1": {
       "id": "5",
@@ -3773,7 +3738,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2025-12-31T21:41:25.538834"
+      "timestamp": "2026-01-01T04:18:29.959248"
     },
     "5.2": {
       "id": "5",
@@ -3909,7 +3874,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2025-12-31T21:41:25.538990"
+      "timestamp": "2026-01-01T04:18:29.959393"
     },
     "5.6": {
       "id": "5",
@@ -4145,7 +4110,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2025-12-31T21:41:25.539174"
+      "timestamp": "2026-01-01T04:18:29.959561"
     },
     "5.7": {
       "id": "5",
@@ -4289,7 +4254,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2025-12-31T21:41:25.541348"
+      "timestamp": "2026-01-01T04:18:29.961683"
     },
     "5.4": {
       "id": "5",
@@ -4451,7 +4416,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2025-12-31T21:41:25.544348"
+      "timestamp": "2026-01-01T04:18:29.964518"
     },
     "4.5": {
       "id": "4",
@@ -4613,7 +4578,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2025-12-31T21:41:25.544526"
+      "timestamp": "2026-01-01T04:18:29.964707"
     },
     "4.7": {
       "id": "4",
@@ -4722,13 +4687,6 @@
         {
           "type": "paragraph",
           "content": "This is the deep answer to why quark mixing is small and lepton mixing is large: it is NOT separate physics, but the SAME octonionic structure viewed through different dimensional projections."
-        },
-        {
-          "type": "figure",
-          "src": "octonionic-triality-ckm-pmns.png",
-          "caption": "G₂ Triality and the Unitarity Triangle: The octonionic automorphism group G₂ ≃ Aut(O) generates both quark (CKM) and lepton (PMNS) mixing from the same geometric structure. Quarks localize on rigid 3-form cycles with small mixing angles (V_us ≈ 0.22), while leptons localize on flexible 4-form cycles with large mixing (θ₂₃ ≈ 49°). The V_cb torsional twist correction from G₂ holonomy brings theory into sub-σ agreement with PDG measurements.",
-          "label": "4",
-          "alt": "G2 triality structure showing CKM and PMNS derivation"
         }
       ],
       "content_blocks": [
@@ -4864,7 +4822,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2025-12-31T21:41:25.544655"
+      "timestamp": "2026-01-01T04:18:29.964832"
     },
     "5.3": {
       "id": "5",
@@ -4978,7 +4936,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2025-12-31T21:41:25.544794"
+      "timestamp": "2026-01-01T04:18:29.964969"
     },
     "5.5": {
       "id": "5",
@@ -5039,13 +4997,6 @@
         {
           "type": "paragraph",
           "content": "v16.2 key factors: (1) Topological suppression b3^3 = 13824, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton action e^{-2*pi*26} ~ 10^-71. The instanton factor provides the geometric mechanism for hierarchy."
-        },
-        {
-          "type": "figure",
-          "src": "goldilocks-b3-uniqueness.png",
-          "caption": "Leech Lattice Node Dilution and the b₃=24 Goldilocks Zone: The Betti number b₃=24 emerges uniquely from the TCS G₂ construction. Too few 3-cycles (b₃<24) would fail to stabilize moduli; too many (b₃>24) would introduce unwanted massless modes. The 24 associative 3-cycles of the G₂ manifold correspond to the 24 minimal vectors of the Leech lattice, providing the geometric suppression factor b₃³=13,824 that partially resolves the cosmological constant hierarchy.",
-          "label": "7",
-          "alt": "b3=24 uniqueness diagram showing Leech lattice connection"
         },
         {
           "type": "formula",
@@ -5110,13 +5061,6 @@
           "content": "v16.2 key factors: (1) Topological suppression b3^3 = 13824, (2) Horizon ratio (l_Pl/R_H)^2 ~ 10^-122, (3) Instanton action e^{-2*pi*26} ~ 10^-71. The instanton factor provides the geometric mechanism for hierarchy."
         },
         {
-          "type": "figure",
-          "src": "goldilocks-b3-uniqueness.png",
-          "caption": "Leech Lattice Node Dilution and the b₃=24 Goldilocks Zone: The Betti number b₃=24 emerges uniquely from the TCS G₂ construction. Too few 3-cycles (b₃<24) would fail to stabilize moduli; too many (b₃>24) would introduce unwanted massless modes. The 24 associative 3-cycles of the G₂ manifold correspond to the 24 minimal vectors of the Leech lattice, providing the geometric suppression factor b₃³=13,824 that partially resolves the cosmological constant hierarchy.",
-          "label": "7",
-          "alt": "b3=24 uniqueness diagram showing Leech lattice connection"
-        },
-        {
           "type": "formula",
           "content": "\\Lambda \\approx 1.1 \\times 10^{-52} \\text{ m}^{-2}",
           "formula_id": "lambda-hierarchy",
@@ -5146,7 +5090,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2025-12-31T21:41:25.544896"
+      "timestamp": "2026-01-01T04:18:29.965045"
     },
     "pneuma-lagrangian": {
       "id": "2",
@@ -5978,7 +5922,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2025-12-31T21:41:25.545062"
+      "timestamp": "2026-01-01T04:18:29.965197"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -6106,7 +6050,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2025-12-31T21:41:25.545131"
+      "timestamp": "2026-01-01T04:18:29.965266"
     },
     "7": {
       "id": "7",
@@ -6230,13 +6174,6 @@
             "✅ v16.0: Multi-sector blended sampling (hierarchy from geometry, gravity dilution 1/4, modulation width σ ≈ 0.25)",
             "✅ v16.0: Hidden sector dark matter (DM/baryon ratio ≈ 5.8 predicted from geometry, 7.9% from Planck 5.4)"
           ]
-        },
-        {
-          "type": "figure",
-          "src": "validation-dashboard.svg",
-          "caption": "Global Residual Pull Plot (v16.2 Validation Summary): Comprehensive validation of 24 parameters across 6 physics sectors. The validation shows 23 parameters at <1σ (PASS), 0 MARGINAL (1-2σ), and 1 TENSION (wₐ at 2.38σ, acknowledged geometric constraint). Reduced χ² = 0.48 demonstrates excellent global fit. All predictions derive from G₂ topology with minimal calibration—the framework achieves a 2.3:1 prediction-to-input ratio.",
-          "label": "10",
-          "alt": "Validation dashboard showing 24 parameter sigma deviations"
         },
         {
           "type": "paragraph",
@@ -7446,13 +7383,6 @@
             "✅ v16.0: Multi-sector blended sampling (hierarchy from geometry, gravity dilution 1/4, modulation width σ ≈ 0.25)",
             "✅ v16.0: Hidden sector dark matter (DM/baryon ratio ≈ 5.8 predicted from geometry, 7.9% from Planck 5.4)"
           ]
-        },
-        {
-          "type": "figure",
-          "src": "validation-dashboard.svg",
-          "caption": "Global Residual Pull Plot (v16.2 Validation Summary): Comprehensive validation of 24 parameters across 6 physics sectors. The validation shows 23 parameters at <1σ (PASS), 0 MARGINAL (1-2σ), and 1 TENSION (wₐ at 2.38σ, acknowledged geometric constraint). Reduced χ² = 0.48 demonstrates excellent global fit. All predictions derive from G₂ topology with minimal calibration—the framework achieves a 2.3:1 prediction-to-input ratio.",
-          "label": "10",
-          "alt": "Validation dashboard showing 24 parameter sigma deviations"
         },
         {
           "type": "paragraph",
@@ -8554,7 +8484,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2025-12-31T21:41:25.545356"
+      "timestamp": "2026-01-01T04:18:29.965495"
     },
     "7.2": {
       "id": "7",
@@ -8622,7 +8552,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2025-12-31T21:41:25.545210"
+      "timestamp": "2026-01-01T04:18:29.965345"
     },
     "6": {
       "id": "6",
@@ -10768,7 +10698,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2025-12-31T21:41:25.545494"
+      "timestamp": "2026-01-01T04:18:29.965631"
     },
     "A": {
       "id": "2",
@@ -11200,7 +11130,7 @@
         "dimensions.D_after_sp2r",
         "dimensions.D_observable"
       ],
-      "timestamp": "2025-12-31T21:41:25.545584"
+      "timestamp": "2026-01-01T04:18:29.965721"
     },
     "B": {
       "id": "2",
@@ -11800,7 +11730,7 @@
         "methods.convergence_criterion",
         "methods.n_kk_modes"
       ],
-      "timestamp": "2025-12-31T21:41:25.545682"
+      "timestamp": "2026-01-01T04:18:29.965817"
     },
     "C": {
       "id": "3",
@@ -12310,7 +12240,7 @@
         "topology.K_MATCHING",
         "gauge.M_GUT"
       ],
-      "timestamp": "2025-12-31T21:41:25.545767"
+      "timestamp": "2026-01-01T04:18:29.965902"
     },
     "D": {
       "id": "6",
@@ -12470,7 +12400,7 @@
         "gauge.M_GUT",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-31T21:41:25.545847"
+      "timestamp": "2026-01-01T04:18:29.965978"
     },
     "E": {
       "id": "4",
@@ -12678,7 +12608,7 @@
         "proton_decay.tau_p_years",
         "topology.cycle_separation"
       ],
-      "timestamp": "2025-12-31T21:41:25.546020"
+      "timestamp": "2026-01-01T04:18:29.966109"
     },
     "F": {
       "id": "2",
@@ -13098,7 +13028,7 @@
         "dimensions.orientation_sum",
         "topology.b3"
       ],
-      "timestamp": "2025-12-31T21:41:25.546119"
+      "timestamp": "2026-01-01T04:18:29.966213"
     },
     "G": {
       "id": "2",
@@ -13246,7 +13176,7 @@
         "topology.N_flux",
         "topology.T_omega"
       ],
-      "timestamp": "2025-12-31T21:41:25.546186"
+      "timestamp": "2026-01-01T04:18:29.966283"
     },
     "H": {
       "id": "4",
@@ -13352,7 +13282,7 @@
         "dimensions.orientation_sum",
         "proton_decay.BR_e_pi0"
       ],
-      "timestamp": "2025-12-31T21:41:25.546241"
+      "timestamp": "2026-01-01T04:18:29.966327"
     },
     "I": {
       "id": "6",
@@ -13542,7 +13472,7 @@
         "gw_dispersion.eta",
         "gw_dispersion.M_GW"
       ],
-      "timestamp": "2025-12-31T21:41:25.546299"
+      "timestamp": "2026-01-01T04:18:29.966385"
     },
     "J": {
       "id": "2",
@@ -13886,7 +13816,7 @@
         "cosmology.w0_derived",
         "cosmology.wa_derived"
       ],
-      "timestamp": "2025-12-31T21:41:25.557211"
+      "timestamp": "2026-01-01T04:18:29.976969"
     },
     "K": {
       "id": "7",
@@ -14438,7 +14368,7 @@
         "pdg.m_higgs",
         "proton_decay.tau_p_years"
       ],
-      "timestamp": "2025-12-31T21:41:25.557301"
+      "timestamp": "2026-01-01T04:18:29.977060"
     },
     "L": {
       "id": "6",
@@ -15326,7 +15256,7 @@
         "pdg.m_bottom",
         "pdg.m_tau"
       ],
-      "timestamp": "2025-12-31T21:41:25.557387"
+      "timestamp": "2026-01-01T04:18:29.977168"
     },
     "M": {
       "id": "6",
@@ -15654,7 +15584,7 @@
         "consciousness.tau_collapse_ms",
         "consciousness.f_base_hz"
       ],
-      "timestamp": "2025-12-31T21:41:25.557481"
+      "timestamp": "2026-01-01T04:18:29.977281"
     },
     "N": {
       "id": "2",
@@ -16294,128 +16224,7 @@
         "topology.b3",
         "landscape.num_valid_topologies"
       ],
-      "timestamp": "2025-12-31T21:41:25.557557"
-    },
-    "O": {
-      "id": "O",
-      "appendix": true,
-      "subsection_id": "O",
-      "type": "appendix",
-      "section_type": null,
-      "title": "Appendix O: Theorem of Dimensional Projection",
-      "shortTitle": "Appendix O: Dimensional Projection Theorem",
-      "order": 114,
-      "abstract": "This appendix provides the formal mathematical framework for dimensional scaling between the 26D Bulk, 13D Mirror Brane, and 4D observable spacetime. The scaling factors (4, √8π, 4/3) are derived as topological residues, not arbitrary parameters.",
-      "contentBlocks": [
-        {
-          "type": "heading",
-          "content": "O.1 Statement of the Theorem",
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "content": "Given a D-dimensional manifold M (the Bulk) compactifying to a d-dimensional submanifold N (the Brane), any physical constant C derived as a density residue of the Bulk action S_D must be scaled by the volumetric holonomy ratio R when observed in N."
-        },
-        {
-          "type": "formula",
-          "content": "\\mathcal{C}_{obs} = \\mathcal{C}_{seed} \\cdot \\left( \\frac{\\text{Vol}(\\text{Residue}_D)}{\\text{Vol}(\\text{Projection}_d)} \\right)",
-          "formula_id": "dimensional-projection-theorem",
-          "label": "(O.1)",
-          "equationNumber": "(O.1)"
-        },
-        {
-          "type": "heading",
-          "content": "O.2 The wₐ Scaling (4-Form Residue)",
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "content": "In G₂ holonomy, the manifold is defined by an associative 3-form Φ and a co-associative 4-form Ψ. The 3D spatial slice is governed by Φ, defining the 'frozen' vacuum state w₀ = -1. The 4D spacetime bulk is governed by Ψ, defining the 'thawing' or kinetic evolution wₐ."
-        },
-        {
-          "type": "paragraph",
-          "content": "Because wₐ measures the evolution of energy across the temporal dimension of the 4D brane, its magnitude is a residue of the 4-form. The v16.1 engine calculated the 1D linear 'thaw'. The projection into 4D spacetime requires scaling by dim(Ψ) = 4."
-        },
-        {
-          "type": "formula",
-          "content": "w_a = w_{a,\\text{linear}} \\times 4 \\approx -0.204 \\times 4 = -0.816",
-          "formula_id": "wa-4form-scaling",
-          "label": "(O.2)",
-          "equationNumber": "(O.2)"
-        },
-        {
-          "type": "heading",
-          "content": "O.3 The Planck Mass Scaling (V₁₂ Volumetric Weight)",
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "content": "The discrepancy in the Planck Mass arose from using the Reduced Planck Mass (Mₚ), which treats gravity as a 4D-surface phenomenon. However, gravity is the only force that permeates the 13D Bulk. The relationship between the fundamental gravity scale in the bulk and the observed gravity on the brane is governed by the volume of the 12-dimensional internal space (V₁₂)."
-        },
-        {
-          "type": "paragraph",
-          "content": "Standard Planck Mass (mₚ): The total bulk energy. Reduced Planck Mass (Mₚ): The 4D surface tension. The conversion factor is exactly √(8π). In a G₂ manifold, 8π represents the closed-loop holonomy of the 7 internal dimensions plus the 5 degrees of the Leech Lattice hexagonal sections (7+5=12)."
-        },
-        {
-          "type": "formula",
-          "content": "m_P = M_p \\sqrt{8\\pi}",
-          "formula_id": "planck-volumetric-scaling",
-          "label": "(O.3)",
-          "equationNumber": "(O.3)"
-        },
-        {
-          "type": "heading",
-          "content": "O.4 The Flavor Twist (4/3 Jarlskog Ratio)",
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "content": "The Jarlskog Invariant (J_CP) measures CP-violation, which is an 'area' in the flavor space. In a flat 3D projection, this area is minimized. However, the G₂ manifold possesses a non-zero twist between the 3-form and the 4-form."
-        },
-        {
-          "type": "paragraph",
-          "content": "The 'Area' of the Unitarity Triangle is projected from the 4-form bulk onto the 3-form brane. The geometric ratio is 4/3. Applying this 'twist' corrects the CKM sector tension."
-        },
-        {
-          "type": "formula",
-          "content": "J_{CP,\\text{locked}} = J_{CP,\\text{base}} \\times \\left( \\frac{4}{3} \\right)",
-          "formula_id": "jarlskog-twist-scaling",
-          "label": "(O.4)",
-          "equationNumber": "(O.4)"
-        },
-        {
-          "type": "heading",
-          "content": "O.5 The Complete Scaling Architecture",
-          "level": 2
-        },
-        {
-          "type": "table",
-          "content": null,
-          "label": "Table O.1: Dimensional Scaling Factors",
-          "equationNumber": "Table O.1",
-          "headers": ["Parameter", "Seed Value", "Scaling Factor", "Locked Value", "Source"],
-          "rows": [
-            ["wₐ", "-0.204", "4 (4-form)", "-0.816", "DESI 2025"],
-            ["M_Pl", "2.435×10¹⁸", "√8π ≈ 5.01", "1.22×10¹⁹ GeV", "CODATA 2022"],
-            ["J_CP", "2.3×10⁻⁵", "4/3", "3.08×10⁻⁵", "PDG 2024"],
-            ["αs(MZ)", "0.1167", "1+1/(b₃π)", "0.1182", "PDG 2024"]
-          ]
-        },
-        {
-          "type": "heading",
-          "content": "O.6 Theorem Conclusion",
-          "level": 2
-        },
-        {
-          "type": "paragraph",
-          "content": "By applying this theorem, we move from a 'best fit' model to a topological derivation. The constants are not random; they are what you get when you observe a 26D lattice through a 4D lens. The Reduced χ² of ~0.54 demonstrates that the entire 42-parameter stack moves as a single topological unit."
-        }
-      ],
-      "formulaRefs": ["dimensional-projection-theorem", "wa-4form-scaling", "planck-volumetric-scaling", "jarlskog-twist-scaling"],
-      "paramRefs": ["cosmology.wa_derived", "cosmology.M_Pl_4D", "ckm.jarlskog_invariant"],
-      "formula_refs": ["dimensional-projection-theorem", "wa-4form-scaling", "planck-volumetric-scaling", "jarlskog-twist-scaling"],
-      "param_refs": ["cosmology.wa_derived", "cosmology.M_Pl_4D", "ckm.jarlskog_invariant"],
-      "timestamp": "2026-01-01T00:00:00.000000"
+      "timestamp": "2026-01-01T04:18:29.977366"
     }
   }
 }

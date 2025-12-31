@@ -1,7 +1,7 @@
 {
   "version": "16.0",
-  "generated": "2025-12-31T11:41:25.685249Z",
-  "total_scripts": 61,
+  "generated": "2025-12-31T18:18:30.103160Z",
+  "total_scripts": 64,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -9,6 +9,22 @@
       "folderName": "appendices",
       "isV16": true,
       "scripts": [
+        {
+          "file": "appendix_g_ricci_flow_v16_2.py",
+          "path": "simulations/v16/appendices/appendix_g_ricci_flow_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "appendix_h_cp_phase_v16_2.py",
+          "path": "simulations/v16/appendices/appendix_h_cp_phase_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
         {
           "file": "appendix_a_math_v16_0.py",
           "path": "simulations/v16/appendices/appendix_a_math_v16_0.py",
@@ -146,7 +162,7 @@
           "status": null
         }
       ],
-      "count": 17
+      "count": 19
     },
     "v16/cosmology": {
       "title": "Cosmology",
@@ -351,6 +367,14 @@
       "isV16": true,
       "scripts": [
         {
+          "file": "geometric_anchors_simulation_v16_2.py",
+          "path": "simulations/v16/geometric/geometric_anchors_simulation_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "leech_partition_v16_2.py",
           "path": "simulations/v16/geometric/leech_partition_v16_2.py",
           "version": "16.2",
@@ -407,7 +431,7 @@
           "status": null
         }
       ],
-      "count": 7
+      "count": 8
     },
     "v16/higgs": {
       "title": "Higgs",
