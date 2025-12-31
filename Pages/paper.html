@@ -20,13 +20,18 @@
                 processEscapes: true,
                 tags: 'ams',
                 macros: {
-                    shadow: '\\text{shadow}'
+                    shadow: '\\text{shadow}',
+                    gimel: '\\gimel',
+                    kgimel: 'k_{\\gimel}'
                 }
             },
             options: {
                 skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
                 skipHtmlClasses: 'pm-value|pm-loaded|pm-loading|pm-error|mathjax-ignore',
                 ignoreHtmlClass: 'mathjax-ignore'
+            },
+            loader: {
+                load: ['[tex]/amscd', '[tex]/physics']
             }
         };
     </script>
@@ -1089,7 +1094,7 @@
 
         <header class="paper-header">
             <p class="paper-meta" id="paper-meta">
-                Version 16.0 | Dynamically rendered from theory_output.json
+                Version 16.2 | Dynamically rendered from theory_output.json
             </p>
             <h1 class="paper-title">Principia Metaphysica</h1>
             <p class="paper-subtitle">A Geometric Unification of the Standard Model and Cosmology from M-Theory on a Single G₂ Manifold</p>
@@ -1180,16 +1185,15 @@
                     statsEl.innerHTML = `Rendered in ${renderTime}ms from theory_output.json`;
 
                     // Update meta with version info if available
-                    if (window.PMPaperRenderer.getData) {
-                        const data = window.PMPaperRenderer.getData();
-                        if (data && data.version) {
-                            const timestamp = new Date().toLocaleDateString('en-US', {
-                                year: 'numeric',
-                                month: 'long',
-                                day: 'numeric'
-                            });
-                            metaEl.innerHTML = `Version ${data.version} | ${timestamp} | Dynamically rendered`;
-                        }
+                    if (window.PMPaperRenderer.data) {
+                        const data = window.PMPaperRenderer.data;
+                        const version = data.version || data.metadata?.version || '16.2';
+                        const timestamp = new Date().toLocaleDateString('en-US', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        metaEl.innerHTML = `Version ${version} | ${timestamp} | Dynamically rendered`;
                     }
                 } else {
                     statsEl.innerHTML = 'Failed to render - check console for errors';

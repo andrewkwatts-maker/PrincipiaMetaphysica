@@ -356,7 +356,7 @@
                     </div>
                     <div class="file-actions">
                         ${script.version ? `<span class="version-badge">v${script.version}</span>` : ''}
-                        ${script.status ? `<span class="status-badge">${script.status}</span>` : ''}
+                        ${script.status ? `<span class="status-badge" data-status="${script.status}">${script.status}</span>` : ''}
                         <span class="toggle-icon">+</span>
                     </div>
                 </div>

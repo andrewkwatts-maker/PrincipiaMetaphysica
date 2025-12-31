@@ -194,6 +194,44 @@
             border: 1px solid rgba(139, 127, 255, 0.3);
         }
 
+        /* Validation status colors */
+        .status-badge.status-pass,
+        .status-badge[data-status="PASS"],
+        .status-badge[data-status="LOCKED"] {
+            background: rgba(81, 207, 102, 0.2);
+            color: #51cf66;
+            border-color: rgba(81, 207, 102, 0.4);
+        }
+
+        .status-badge.status-marginal,
+        .status-badge[data-status="MARGINAL"] {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border-color: rgba(255, 193, 7, 0.4);
+        }
+
+        .status-badge.status-fail,
+        .status-badge[data-status="FAIL"],
+        .status-badge[data-status="TENSION"] {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            border-color: rgba(255, 107, 107, 0.4);
+        }
+
+        .status-badge.status-geometric,
+        .status-badge[data-status="GEOMETRIC"] {
+            background: rgba(139, 127, 255, 0.2);
+            color: #8b7fff;
+            border-color: rgba(139, 127, 255, 0.4);
+        }
+
+        .status-badge.status-prediction,
+        .status-badge[data-status="PREDICTION"] {
+            background: rgba(102, 178, 255, 0.2);
+            color: #66b2ff;
+            border-color: rgba(102, 178, 255, 0.4);
+        }
+
         /* File Section */
         .file-section {
             background: var(--bg-card);
@@ -1239,7 +1277,7 @@
                         ${catData.description ? `<p style="font-size: 0.8em; color: var(--text-muted); margin: 0.5rem 0;">${escapeHtml(catData.description)}</p>` : ''}
                         <ul>
                             ${catData.scripts.map(script => {
-                                const statusBadge = script.status ? `<span class="status-badge" style="font-size: 0.65rem; padding: 0.2rem 0.4rem; margin-left: 0.5rem;">${escapeHtml(script.status)}</span>` : '';
+                                const statusBadge = script.status ? `<span class="status-badge" data-status="${escapeHtml(script.status)}" style="font-size: 0.65rem; padding: 0.2rem 0.4rem; margin-left: 0.5rem;">${escapeHtml(script.status)}</span>` : '';
                                 const versionLabel = script.version ? `<span style="color: var(--text-muted); font-size: 0.8em;">v${script.version}</span>` : '';
                                 return `
                                     <li>
@@ -1392,7 +1430,7 @@
                                         <div class="file-name">
                                             ${escapeHtml(script.file)}
                                             ${script.version ? `<span style="color: var(--text-muted); font-size: 0.8em; margin-left: 0.5rem;">v${script.version}</span>` : ''}
-                                            ${script.status ? `<span class="status-badge" style="font-size: 0.7rem; padding: 0.3rem 0.6rem; margin-left: 0.75rem;">${escapeHtml(script.status)}</span>` : ''}
+                                            ${script.status ? `<span class="status-badge" data-status="${escapeHtml(script.status)}" style="font-size: 0.7rem; padding: 0.3rem 0.6rem; margin-left: 0.75rem;">${escapeHtml(script.status)}</span>` : ''}
                                         </div>
                                         <div class="file-path">${escapeHtml(script.title || script.description || 'Physics simulation module')}</div>
                                     </div>
