@@ -190,7 +190,10 @@ class UnitaryFilter:
         """
         c = self.central_charge
 
-        if c == 0:
+        # Use floating point tolerance to avoid numerical noise issues
+        # The central charge should be exactly 0, but floating point
+        # arithmetic may produce tiny residuals like 1e-15
+        if abs(c) < 1e-14:
             self._is_stable = True
             self._status_message = "UNITARY_STABLE: GHOST_FREE"
         else:
