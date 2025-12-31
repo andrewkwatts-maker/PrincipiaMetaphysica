@@ -631,14 +631,15 @@ class CosmologyIntroV16(SimulationBase):
         return [
             Parameter(
                 path="cosmology.M_Pl_4D",
-                name="4D Planck Mass",
+                name="4D Reduced Planck Mass",
                 units="GeV",
                 status="MEASURED",
-                description="4D Planck mass M_Pl = 1.22×10¹⁹ GeV (PDG 2024, measured not derived)",
-                experimental_bound=1.22e19,
+                # Uses REDUCED Planck mass: M_Pl_reduced = M_Pl / sqrt(8π) = 2.435e18 GeV
+                description="4D reduced Planck mass M_Pl_red = 2.435×10¹⁸ GeV (PDG 2024)",
+                experimental_bound=2.435e18,  # Reduced Planck mass
                 bound_type="measured",
                 bound_source="PDG2024",
-                uncertainty=0.01e19
+                uncertainty=3.0e15  # Same as constants.M_PLANCK uncertainty
             ),
             Parameter(
                 path="cosmology.V_9_internal",
