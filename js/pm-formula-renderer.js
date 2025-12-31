@@ -113,11 +113,16 @@
                 const escapedTerm = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
                 // Replace term with hoverable link (only if not already wrapped)
-                const regex = new RegExp(`(?<!class="formula-var[^>]*>)${escapedTerm}(?![^<]*</a>)`, 'g');
+                // Safari-compatible: avoid lookbehind by using split/join approach
                 const link = info.link || '#';
-                html = html.replace(regex,
-                    `<a class="formula-var" href="${link}" style="text-decoration: none; color: inherit;">${term}${tooltip}</a>`
-                );
+                const replacement = `<a class="formula-var" href="${link}" style="text-decoration: none; color: inherit;">${term}${tooltip}</a>`;
+
+                // Skip if already wrapped (check for formula-var before term)
+                if (!html.includes(`class="formula-var">${term}`)) {
+                    // Use simple regex without lookbehind for Safari compatibility
+                    const regex = new RegExp(`${escapedTerm}(?![^<]*</a>)`, 'g');
+                    html = html.replace(regex, replacement);
+                }
             }
 
             return html;
