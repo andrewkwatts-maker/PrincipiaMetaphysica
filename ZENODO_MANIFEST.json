@@ -23,15 +23,15 @@
   },
   "validation": {
     "theory_version": "v16.2",
-    "timestamp": "2026-01-01T00:53:41.899392",
+    "timestamp": "2026-01-01T01:10:18.714318",
     "unitary_status": "PUBLICATION_READY",
-    "global_chi_squared": 13.664847921145691,
-    "reduced_chi_squared": 0.6211294509611678,
+    "global_chi_squared": 10.61171980152204,
+    "reduced_chi_squared": 0.4823509000691837,
     "degrees_of_freedom": 22,
     "parameter_counts": {
       "total": 24,
-      "passed": 21,
-      "marginal": 2,
+      "passed": 23,
+      "marginal": 0,
       "tension": 1,
       "failed": 0
     }
@@ -180,13 +180,13 @@
     {
       "parameter": "ckm.V_cb_triality",
       "name": "CKM |V_cb|",
-      "predicted": 0.03919120830603948,
+      "predicted": 0.04086749111412203,
       "target": 0.041,
       "uncertainty": 0.0014,
-      "sigma": 1.2919940671146608,
+      "sigma": 0.09464920419855115,
       "units": "dimensionless",
       "source": "PDG 2024",
-      "status": "MARGINAL",
+      "status": "PASS",
       "bound_type": "measured",
       "sector": "ckm",
       "note": ""
@@ -208,10 +208,10 @@
     {
       "parameter": "ckm.jarlskog_triality",
       "name": "Jarlskog Invariant J",
-      "predicted": 3.0142431061918118e-05,
+      "predicted": 3.143168039019464e-05,
       "target": 3.08e-05,
       "uncertainty": 1.5e-06,
-      "sigma": 0.43837929205459014,
+      "sigma": 0.42112026012975956,
       "units": "dimensionless",
       "source": "PDG 2024",
       "status": "PASS",
@@ -278,13 +278,13 @@
     {
       "parameter": "cosmology.S8_pred",
       "name": "Structure Growth S8",
-      "predicted": 0.8474228283448588,
+      "predicted": 0.8297681860876742,
       "target": 0.832,
       "uncertainty": 0.013,
-      "sigma": 1.1863714111429895,
+      "sigma": 0.1716779932558263,
       "units": "dimensionless",
       "source": "Planck 2018",
-      "status": "MARGINAL",
+      "status": "PASS",
       "bound_type": "measured",
       "sector": "cosmology",
       "note": ""
