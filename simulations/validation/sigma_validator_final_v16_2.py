@@ -869,8 +869,17 @@ class FinalSigmaValidator(SimulationBase):
 
         self.sigma_results = []
 
-        def get_experimental_value(target_path: str, fallback_value: float, fallback_unc: float):
-            """Load experimental value and uncertainty from registry, with fallback.
+        # v16.2 STRICT MODE: No silent failures
+        # Set to True in production to catch missing experimental data early
+        strict_mode = True
+
+        def get_experimental_value(target_path: str, fallback_value: float, fallback_unc: float, param_name: str = ""):
+            """Load experimental value and uncertainty from registry.
+
+            v16.2 STRICT MODE:
+            - In strict mode, raises AssertionError if target_path is set but value is missing
+            - This prevents silent use of fallback values that could mask data issues
+            - Only uses fallback when target_path is explicitly None (theoretical predictions)
 
             Uses registry.get_entry() to retrieve the full RegistryEntry which includes:
             - value: The experimental measurement value
@@ -880,7 +889,11 @@ class FinalSigmaValidator(SimulationBase):
 
             For ESTABLISHED parameters, value == experimental_value.
             """
-            if target_path and registry.has_param(target_path):
+            if target_path is None:
+                # No registry path specified - use fallback (e.g., theoretical predictions)
+                return fallback_value, fallback_unc
+
+            if registry.has_param(target_path):
                 entry = registry.get_entry(target_path)
                 if entry:
                     # For established physics, value IS the experimental measurement
@@ -895,7 +908,20 @@ class FinalSigmaValidator(SimulationBase):
                         exp_unc = fallback_unc
 
                     return exp_val, exp_unc
-            return fallback_value, fallback_unc
+
+            # Registry path specified but not found
+            if strict_mode:
+                raise AssertionError(
+                    f"STRICT MODE VIOLATION: Experimental value not found in registry for '{param_name}'.\n"
+                    f"  Expected path: {target_path}\n"
+                    f"  Fallback would be: {fallback_value} +/- {fallback_unc}\n"
+                    f"  Action: Run EstablishedPhysics to load experimental data, or update target_path.\n"
+                    f"  To temporarily disable strict mode, set strict_mode = False in _collect_sigma_results()."
+                )
+            else:
+                if self.verbose:
+                    print(f"  [WARN] Fallback used for {param_name}: {fallback_value} (target_path={target_path} not found)")
+                return fallback_value, fallback_unc
 
         # Define predictions to validate with their experimental targets
         # NOTE: target_value and uncertainty are FALLBACKS - the actual values
@@ -1250,10 +1276,12 @@ class FinalSigmaValidator(SimulationBase):
                 predicted = registry.get_param(param_path)
 
                 # DYNAMIC LOADING: Get experimental value from registry if available
+                # STRICT MODE: Will raise AssertionError if target_path is set but missing
                 target, unc = get_experimental_value(
                     pred.get("target_path"),
                     pred["target_value"],
-                    pred["uncertainty"]
+                    pred["uncertainty"],
+                    param_name=pred["name"]  # For error messages in strict mode
                 )
 
                 # Compute sigma deviation
