@@ -184,6 +184,10 @@ class G2GeometryV16(SimulationBase):
 
         for param_path in self.output_params:
             if param_path in results:
+                # Skip if already registered (avoid ESTABLISHED override conflict)
+                if registry.has_param(param_path):
+                    continue
+
                 param_def = param_defs.get(param_path)
                 status = param_def.status if param_def else "DERIVED"
 

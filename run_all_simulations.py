@@ -597,41 +597,45 @@ class SimulationRunner:
 
     def _load_geometric_anchors(self) -> None:
         """
-        v16.2: Pre-load geometric anchor parameters from b3=24.
+        v16.2: Pre-load minimal topology parameters for bootstrap.
 
-        NOTE: The full GeometricAnchorsSimulation runs in Phase 1 with schema
-        validation. This method just pre-loads essential parameters needed
-        before Phase 1 begins.
+        NOTE: The full GeometricAnchorsSimulation runs in Phase 1 and provides
+        all derived constants. This method only pre-loads the minimum needed
+        for simulation ordering. Use GEOMETRIC status (not ESTABLISHED) since
+        these are derived from G2 manifold topology, not experimental data.
 
-        The simulation will check for duplicates and skip already-registered params.
+        Key principle: derived values should be checked against experimental,
+        not marked as ESTABLISHED which prevents override.
         """
         if self.verbose:
             print("\n[INITIALIZATION] Pre-loading Geometric Anchors (v16.2 Demon-Lock)")
             print("-" * 80)
 
         try:
-            # Only pre-load critical topology params needed before simulations start
-            # The full set will be registered by GeometricAnchorsSimulation in Phase 1
+            # Pre-load minimal topology params with GEOMETRIC status
+            # GeometricAnchorsSimulation will register the full set in Phase 1
+            # Using GEOMETRIC (not ESTABLISHED) allows validation against experiment
+            import numpy as np
+
             if not self.registry.has_param("topology.b3"):
                 self.registry.set_param("topology.b3", 24,
-                                         source="ESTABLISHED:G2_topology", status="ESTABLISHED")
+                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
             if not self.registry.has_param("topology.chi_eff"):
                 self.registry.set_param("topology.chi_eff", 144,
-                                         source="ESTABLISHED:G2_topology", status="ESTABLISHED")
+                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
 
             # Pre-compute k_gimel for early use
-            import numpy as np
             k_gimel = 24 / 2 + 1 / np.pi
             if not self.registry.has_param("topology.k_gimel"):
                 self.registry.set_param("topology.k_gimel", k_gimel,
-                                         source="DERIVED:k_gimel_formula", status="GEOMETRIC")
+                                         source="GEOMETRIC:k_gimel_formula", status="GEOMETRIC")
 
             if self.verbose:
-                print(f"[OK] Pre-loaded core topology parameters")
-                print(f"  - topology.b3 = 24")
-                print(f"  - topology.chi_eff = 144")
-                print(f"  - topology.k_gimel = {k_gimel:.6f}")
-                print(f"  Note: Full geometric anchors will be computed in Phase 1")
+                print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")
+                print(f"  - topology.b3 = 24 (derived from G2 manifold)")
+                print(f"  - topology.chi_eff = 144 (derived from TCS #187)")
+                print(f"  - topology.k_gimel = {k_gimel:.6f} (derived: b3/2 + 1/π)")
+                print(f"  Note: Full geometric anchors computed in Phase 1")
 
         except Exception as e:
             if self.verbose:
