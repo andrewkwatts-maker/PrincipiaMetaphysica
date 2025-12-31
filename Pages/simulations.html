@@ -80,8 +80,21 @@
 
         .index-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 1rem;
+        }
+
+        /* Responsive: 2 columns on tablet, 1 on mobile */
+        @media (max-width: 1200px) {
+            .index-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .index-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .index-category {
@@ -138,15 +151,9 @@
             font-weight: bold;
         }
 
-        /* Index Stats - compact inline display */
+        /* Index Stats - hidden as per user request */
         .index-stats {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-left: 1rem;
-            font-weight: normal;
+            display: none !important;
         }
 
         .index-stats span {
