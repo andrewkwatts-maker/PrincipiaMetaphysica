@@ -18,7 +18,21 @@ Metaphysica simulation framework. It includes:
 - Injection: Utilities for injecting computed results into the registry
 - Schema: Comprehensive return schema for v16 simulations
 - Units: Unit conversion utilities (Planck, SI, cosmological, HEP)
+- Precision: Decimal-50 sterile constants for topological stability
 """
+
+# CRITICAL: Import precision module FIRST to initialize Decimal-50 context
+from .precision import (
+    initialize_demon_lock,
+    B3, K_GIMEL, PHI, PI, E,
+    B3_STERILE, K_GIMEL_STERILE, PHI_STERILE, PI_STERILE, E_STERILE,
+    CHI_EFF, CHI_EFF_STERILE,
+    V_G2, V_G2_STERILE,
+    UNITY_SEAL, UNITY_SEAL_STERILE,
+    to_decimal,
+    verify_precision,
+    get_sterile_constants,
+)
 
 from .simulation_base import (
     SimulationMetadata,
@@ -102,6 +116,17 @@ Reference = ReferenceEntry
 Foundation = FoundationEntry
 
 __all__ = [
+    # Precision (CRITICAL: Must be first for Decimal-50 context)
+    'initialize_demon_lock',
+    'B3', 'K_GIMEL', 'PHI', 'PI', 'E',
+    'B3_STERILE', 'K_GIMEL_STERILE', 'PHI_STERILE', 'PI_STERILE', 'E_STERILE',
+    'CHI_EFF', 'CHI_EFF_STERILE',
+    'V_G2', 'V_G2_STERILE',
+    'UNITY_SEAL', 'UNITY_SEAL_STERILE',
+    'to_decimal',
+    'verify_precision',
+    'get_sterile_constants',
+
     # Base classes and data structures
     'SimulationMetadata',
     'SimulationBase',

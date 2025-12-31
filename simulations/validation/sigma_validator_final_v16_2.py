@@ -58,6 +58,9 @@ from simulations.base import (
     Formula,
     Parameter,
     PMRegistry,
+    # Sterile precision constants (Decimal-50)
+    B3, K_GIMEL, PHI, PI, E,
+    verify_precision,
 )
 from simulations.base.established import EstablishedPhysics
 
@@ -420,11 +423,9 @@ class FinalSigmaValidator(SimulationBase):
         Note: Theory uncertainties are used since experimental precision exceeds
         the precision of the geometric derivations.
         """
-        # Core constants from G2 topology
-        B3 = 24  # Betti number
-        K_GIMEL = 12.3183098862  # Gimel constant from Leech lattice
-        PHI = (1 + np.sqrt(5)) / 2  # Golden ratio
-        PI = np.pi
+        # Core constants from G2 topology (imported from precision.py)
+        # B3 = 24, K_GIMEL = 12.3183098862..., PHI = 1.6180339887...
+        # These are now sterile Decimal-50 constants to prevent float leakage
 
         # Certificate C02: Inverse Fine Structure Constant
         # alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi)
