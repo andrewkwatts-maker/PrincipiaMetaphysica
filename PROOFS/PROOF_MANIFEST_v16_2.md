@@ -346,6 +346,7 @@ to accelerate scrutiny, not bypass it. Errors should be reported to the author.
 |------|---------|--------|
 | `Mirror_Brane_Metric_Derivation_v16_2.md` | w0 = -23/24 thawing proof | Validated |
 | `Mirror_Brane_Resonance_v16_2.wl` | Wolfram Mathematica symbolic validation | Complete |
+| `Holonomy_Phase_Strain_v16_2.md` | delta_CP mass ordering analysis | Documented |
 | `PROOF_MANIFEST_v16_2.md` | This document | Complete |
 | `v16_2_logic_check.py` | Python validation script | 6/6 PASS |
 
@@ -356,11 +357,12 @@ to accelerate scrutiny, not bypass it. Errors should be reported to the author.
 The theory would be **falsified** if:
 1. Future measurements confirm w0 = -1.000 ± 0.005 (pure cosmological constant)
 2. Proton decay observed at < 10^34 years
-3. Inverted neutrino mass hierarchy confirmed
+3. Normal Ordering confirmed AND delta_CP outside 260-300 deg range
+   (Note: PM predicts delta_CP = 278.4 deg, matching IO at 0.02 sigma)
 4. α variation exceeds PM predictions
 
 ---
 
-**Document Version:** 1.0
-**Last Updated:** December 31, 2025
+**Document Version:** 1.1
+**Last Updated:** January 1, 2026
 **Copyright:** (c) 2025-2026 Andrew Keith Watts. All rights reserved.

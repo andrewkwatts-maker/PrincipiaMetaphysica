@@ -970,7 +970,11 @@ class FinalSigmaValidator(SimulationBase):
                 "units": "degrees",
                 "source": "NuFIT 6.0 (IO)",
                 "bound_type": "measured",
-                "sector": "neutrino"
+                "sector": "neutrino",
+                "note": "v16.2 Mass Ordering Dependence: PM prediction δ_CP = 278.4° matches IO "
+                        "(278° ± 26°) at 0.02σ. For NO (232° ± 28°), tension is 1.7σ. If NO is "
+                        "confirmed, the 46° discrepancy may indicate holonomy phase strain during "
+                        "13D→4D projection. See PROOFS/Holonomy_Phase_Strain_v16_2.md"
             },
             # Higgs - v16.2 Brane Partition: 414 GeV bulk projects to 125 GeV local
             {
