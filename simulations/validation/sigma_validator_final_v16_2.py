@@ -318,17 +318,37 @@ class FinalSigmaValidator(SimulationBase):
             if self.verbose:
                 print(f"  [SKIP] Neutrino Mixing: {e}")
 
-        # 4. Dark Energy
+        # 4. Dark Energy (v16.2 Thawing with 4-form scaling)
         try:
-            from simulations.v16.cosmology.dark_energy_v16_0 import DarkEnergyV16
-            sim = DarkEnergyV16()
+            from simulations.v16.cosmology.dark_energy_thawing_v16_2 import DarkEnergyEvolution
+            sim = DarkEnergyEvolution()
             results = sim.execute(registry, verbose=False)
-            sectors_run.append("Dark Energy")
+            sectors_run.append("Dark Energy Thawing")
+
+            # v16.2: Set wa_derived and w0_derived with 4-form projection
+            # wa = -1/√24 × 4 = -0.816 (4-form scaling)
+            if "cosmology.wa_thawing" in results:
+                registry.set_param(
+                    "cosmology.wa_derived",
+                    results["cosmology.wa_thawing"],
+                    source="dark_energy_thawing_v16_2",
+                    status="PREDICTED"
+                )
+            if "cosmology.w0_thawing" in results:
+                registry.set_param(
+                    "cosmology.w0_derived",
+                    results["cosmology.w0_thawing"],
+                    source="dark_energy_thawing_v16_2",
+                    status="PREDICTED"
+                )
+
             if self.verbose:
-                print(f"  [OK] Dark Energy: w0={results.get('cosmology.w0_derived', 'N/A'):.4f}")
+                w0 = results.get('cosmology.w0_thawing', 'N/A')
+                wa = results.get('cosmology.wa_thawing', 'N/A')
+                print(f"  [OK] Dark Energy Thawing: w0={w0:.4f}, wa={wa:.4f} (4-form)")
         except Exception as e:
             if self.verbose:
-                print(f"  [SKIP] Dark Energy: {e}")
+                print(f"  [SKIP] Dark Energy Thawing: {e}")
 
         # 5. Higgs Mass via Brane Partition (v16.2)
         try:
