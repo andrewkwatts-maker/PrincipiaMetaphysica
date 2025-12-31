@@ -54,7 +54,7 @@ generations = FC.fermion_generations() # 3
 
 # Phenomenology
 M_Pl = PP.M_PLANCK                    # 1.2195e19 GeV
-w_0 = PP.w0_value()                   # -0.846154
+w_0 = PP.w0_value()                   # -0.9583 (v16.2 thawing)
 
 # Multi-time physics
 g = MTP.G_COUPLING                    # 0.1
@@ -122,14 +122,14 @@ M_Pl = CONFIG['M_Pl']          # 1.2195e19
 | `M_PLANCK` | 1.2195×10¹⁹ GeV | PDG 2024 |
 | `M_STAR` | 1×10¹⁹ GeV | 13D fundamental scale |
 | `TAU_PROTON` | 3.5×10³⁴ years | SO(10) GUT central value |
-| `W0_NUMERATOR` | -11 | Dark energy w(z=0) numerator |
-| `W0_DENOMINATOR` | 13 | w_0 = -11/13 from MEP |
-| `WA_EVOLUTION` | -0.75 | Dark energy evolution |
+| `W0_NUMERATOR` | -23 | Dark energy w(z=0) numerator |
+| `W0_DENOMINATOR` | 24 | w₀ = -23/24 from thawing (b₃) |
+| `WA_EVOLUTION` | -0.204 | Dark energy evolution (-1/√24) |
 | `OMEGA_LAMBDA` | 0.6889 | Dark energy density (Planck) |
 | `H0` | 67.4 km/s/Mpc | Hubble constant |
 
 **Derived Methods:**
-- `w0_value()` → -0.846154 (= -11/13)
+- `w0_value()` → -0.9583 (= -23/24 from b₃ = 24)
 
 ### 3. MultiTimeParameters
 
@@ -271,7 +271,7 @@ from config import PhenomenologyParameters as PP
 from config import MultiTimeParameters as MTP
 
 M_Pl = PP.M_PLANCK  # PDG 2024 value with documentation
-w_0 = PP.w0_value()  # Derived from -11/13 (MEP principle)
+w_0 = PP.w0_value()  # Derived from -23/24 (thawing quintessence)
 xi = MTP.XI_QUADRATIC  # 1-loop estimate, clearly documented
 ```
 

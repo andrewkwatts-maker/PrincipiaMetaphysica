@@ -176,7 +176,7 @@ class DiscussionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "w₀ = -11/13 is SEMI-DERIVED via Maximum Entropy Principle from 13D effective shadow. "
+                    "w₀ = -23/24 is SEMI-DERIVED via Maximum Entropy Principle from 13D effective shadow. "
                     "w_a is DERIVED from two-time dynamics (α_T = 2.7). The Mashiach attractor drives "
                     "w → -1 at late times."
                 )
@@ -678,7 +678,7 @@ class DiscussionV16(SimulationBase):
                 content=(
                     "The Principia Metaphysica framework presents a 26D unified vision with signature (24,2), "
                     "where the two-time structure enables DERIVATION of w_a = -0.30 (via α_T = 2.7) and predicts "
-                    "a mirror sector (Z₂). The 13D observable shadow yields w₀ = -11/13 via MEP, and n_gen = 3 "
+                    "a mirror sector (Z₂). The 13D observable shadow yields w₀ = -1 + 1/b₃ = -23/24 via MEP, and n_gen = 3 "
                     "from G₂ flux-dressed topology χ_eff/48 = 144/48 = 3. With v15.0, the dynamic derivation of "
                     "the Cabibbo angle ε = 0.2257 from racetrack moduli stabilization, coupled with full 7D Monte "
                     "Carlo integration and active perturbation tests of geometric consistency, completes the "
@@ -1122,7 +1122,7 @@ class DiscussionV16(SimulationBase):
                 type="list",
                 items=[
                     "α_T = 2.7 (DERIVED from 26D two-time modular flow dynamics)",
-                    "w₀ = -11/13 ≈ -0.846 (SEMI-DERIVED via MEP from 13D effective shadow)",
+                    "w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 (SEMI-DERIVED via MEP from 13D effective shadow)",
                     "w_a (DERIVED: follows from α_T = 2.7 and two-time dynamics)",
                     "de Sitter attractor preserved (w → -1 as t → ∞)",
                     "Z₂ mirror sector provides dark matter candidate",

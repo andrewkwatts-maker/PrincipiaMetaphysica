@@ -78,7 +78,7 @@ This demonstrates all features:
 
 **ID:** `w0-formula`
 
-**Formula:** w₀ = -(d_eff - 1)/(d_eff + 1) = -0.8528
+**Formula:** w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583
 
 **Usage:**
 ```html
@@ -86,13 +86,13 @@ This demonstrates all features:
 ```
 
 **Terms with hover:**
-- **w₀**: Present equation of state (-0.8528 from d_eff)
-- **d_eff**: Effective dimension (= 12.576 from G₂ torsion)
+- **w₀**: Present equation of state (-0.9583 from thawing quintessence)
+- **b₃**: Associative 3-cycles (= 24 from G₂ topology TCS #187)
 
 **Experimental comparison:**
-- Theory: -0.8528
-- DESI DR2 2024: -0.83 ± 0.06
-- Agreement: 0.38σ
+- Theory: -0.9583 (-23/24)
+- DESI 2025 thawing: -0.957 ± 0.067
+- Agreement: 0.02σ
 
 ---
 

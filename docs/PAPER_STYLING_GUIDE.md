@@ -249,7 +249,7 @@ Always use span elements with data attributes for dynamic values:
 | χ_eff = 144 | `topology.chi_eff` |
 | b₃ = 24 | `topology.b3` |
 | θ₂₃ = 45° | `pmns_matrix.theta_23` |
-| w₀ = -0.8528 | `dark_energy.w0_PM` |
+| w₀ = -0.9583 (-23/24) | `dark_energy.w0_PM` |
 | M_GUT | `proton_decay.M_GUT` |
 | α_GUT⁻¹ | `proton_decay.alpha_GUT_inv` |
 | τ_p | `proton_decay.tau_p_median` |

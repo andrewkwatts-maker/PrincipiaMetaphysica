@@ -65,6 +65,15 @@ from .schema import (
     SchemaCompliantSimulation,
 )
 
+# Dynamic metadata helpers (v16.2)
+from .dynamic_metadata import (
+    MetadataBuilder,
+    DynamicFormula,
+    w0_from_b3,
+    wa_from_b3,
+    delta_cp_with_parity,
+)
+
 # Unit conversion utilities
 from .units import (
     PhysicalConstants,
@@ -136,6 +145,13 @@ __all__ = [
     # Aliases
     'Reference',
     'Foundation',
+
+    # Dynamic metadata (v16.2)
+    'MetadataBuilder',
+    'DynamicFormula',
+    'w0_from_b3',
+    'wa_from_b3',
+    'delta_cp_with_parity',
 
     # Unit conversions
     'PhysicalConstants',

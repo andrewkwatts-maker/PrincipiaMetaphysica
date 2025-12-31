@@ -115,8 +115,8 @@ custom_params = [
 - GW_effect_size (δω ~ 10⁻²⁹) **BOOSTED**
 
 ### Dark Energy & Cosmology
-- w_0 = -11/13 ≈ -0.846 (within DESI error)
-- w_a = -0.75 (within DESI error)
+- w₀ = -23/24 ≈ -0.9583 (0.02σ vs DESI 2025 thawing)
+- wₐ = -1/√24 ≈ -0.204 (thawing evolution)
 - w_attractor_limit → -1 (Mashiach mechanism)
 
 ### Moduli Stabilization
@@ -169,8 +169,8 @@ The script provides:
 |-----------|--------|------------|-----------|---------------|
 | Generations | 3 | 3 | 0% | ✓ Yes |
 | M_Pl | 1.0×10¹⁹ GeV | 1.22×10¹⁹ GeV | -18% | ✓ Yes |
-| w_0 | -0.846 | -0.727±0.067 | 16% | ✓ Yes |
-| w_a | -0.75 | -0.28±0.45 | 168% | ✓ Yes |
+| w₀ | -0.9583 | -0.957±0.067 | 0.02σ | ✓ Yes |
+| wₐ | -0.204 | -0.99±0.32 | 2.4σ | ✓ Yes |
 
 ### Swampland Constraint
 

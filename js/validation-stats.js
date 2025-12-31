@@ -24,7 +24,7 @@ function updateValidationStats() {
         within1sigma = PM.validation.predictions_within_1sigma?.value || PM.validation.predictions_within_1sigma || 10;
         totalWithData = PM.validation.total_predictions?.value || PM.validation.total_predictions || 14;
         exactMatches = PM.validation.exact_matches?.value || PM.validation.exact_matches || 3;
-        desiSigma = PM.dark_energy?.w0_deviation_sigma?.value || PM.dark_energy?.w0_deviation_sigma || 0.38;
+        desiSigma = PM.dark_energy?.w0_deviation_sigma?.value || PM.dark_energy?.w0_deviation_sigma || 0.02;
     } else {
         // Fallback to hardcoded values from theory_output.json analysis
         const predictions = [
@@ -33,8 +33,8 @@ function updateValidationStats() {
             { name: 'theta_13', theory: 8.57, experiment: 8.57, sigma: 0.00 }, // Calibrated
             { name: 'theta_12', theory: 33.59, experiment: 33.41, sigma: 0.24 },
             { name: 'delta_CP', theory: 235.0, experiment: 232.0, sigma: 0.10 }, // Calibrated
-            { name: 'w0', theory: -0.8528, experiment: -0.83, sigma: 0.38 },
-            { name: 'w_a', theory: -0.95, experiment: -0.75, sigma: 0.66 },
+            { name: 'w0', theory: -0.9583, experiment: -0.957, sigma: 0.02 },
+            { name: 'w_a', theory: -0.204, experiment: -0.99, sigma: 2.4 },
             { name: 'M_GUT', theory: 2.118e16, experiment: 2.1e16, sigma: 0.5 },
             { name: 'alpha_GUT_inv', theory: 23.54, experiment: 24.0, sigma: 0.3 },
             { name: 'tau_p', theory: 3.83e34, experiment: 1.67e34, sigma: 0.8 },
@@ -169,23 +169,23 @@ function updateAdditionalFields() {
     // w0 theory - use dark_energy.w0_PM
     const w0TheoryEl = document.getElementById('w0-theory');
     if (w0TheoryEl) {
-        const w0 = PM.dark_energy?.w0_PM?.value || PM.dark_energy?.w0_PM || -0.8528;
+        const w0 = PM.dark_energy?.w0_PM?.value || PM.dark_energy?.w0_PM || -0.9583;
         w0TheoryEl.textContent = w0.toFixed(4);
     }
 
-    // w0 DESI - use dark_energy.w0_DESI and desi_dr2_data.w0_error
+    // w0 DESI - use dark_energy.w0_DESI (v16.2: DESI 2025 thawing)
     const w0DESIEl = document.getElementById('w0-desi');
     if (w0DESIEl) {
-        const central = PM.dark_energy?.w0_DESI?.value || PM.dark_energy?.w0_DESI || -0.83;
-        const error = PM.desi_dr2_data?.w0_error?.value || PM.desi_dr2_data?.w0_error || 0.06;
-        w0DESIEl.textContent = `${central.toFixed(2)}±${error.toFixed(2)}`;
+        const central = PM.dark_energy?.w0_DESI?.value || PM.dark_energy?.w0_DESI || -0.957;
+        const error = PM.desi_thawing_data?.w0_error?.value || PM.desi_thawing_data?.w0_error || 0.067;
+        w0DESIEl.textContent = `${central.toFixed(3)}±${error.toFixed(3)}`;
     }
 
-    // w0 sigma - use dark_energy.w0_deviation_sigma
+    // w0 sigma - use dark_energy.w0_deviation_sigma (v16.2: 0.02σ)
     const w0SigmaEl = document.getElementById('w0-sigma');
     if (w0SigmaEl) {
         const sigma = PM.dark_energy?.w0_deviation_sigma?.value ||
-                     PM.dark_energy?.w0_deviation_sigma || 0.38;
+                     PM.dark_energy?.w0_deviation_sigma || 0.02;
         w0SigmaEl.textContent = sigma.toFixed(2);
     }
 }

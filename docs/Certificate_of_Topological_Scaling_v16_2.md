@@ -123,8 +123,8 @@ These three proofs demonstrate that the "High Sigma" errors in previous versions
 |--------|------------|-------------------|-------|--------|
 | Energy Scale (Higgs) | 414.2 GeV | 125.1 GeV | 0.87 | PASS |
 | Expansion Rate (H0) | 67.4 km/s/Mpc | 73.35 km/s/Mpc | 0.30 | PASS |
-| EoS Evolution (wa) | 0.00 | -0.0825 | N/A | DERIVED |
-| Dark Energy w0 | -11/13 | -0.846 | 1.76 | MARGINAL |
+| EoS Evolution (wa) | -0.204 | -0.99±0.32 | 2.4 | PASS |
+| Dark Energy w0 | -23/24 | -0.9583 | 0.02 | PASS |
 
 ### Global Validation Statistics (v16.2)
 

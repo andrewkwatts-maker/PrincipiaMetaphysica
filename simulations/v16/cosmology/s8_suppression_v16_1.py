@@ -3,7 +3,7 @@ S8 Tension Resolution via Dynamical Dark Energy v16.1
 =======================================================
 
 Analyzes the S8 tension between weak lensing surveys and CMB predictions in the
-context of PM's dynamical dark energy with w₀ = -0.846. The S8 parameter quantifies
+context of PM's dynamical dark energy with w₀ = -0.9583. The S8 parameter quantifies
 matter clustering amplitude: S8 ≡ σ8 × (Ωm/0.3)^0.5.
 
 The tension arises because:
@@ -13,8 +13,8 @@ The tension arises because:
 - DESI 2025 (BAO+CMB): σ8 = 0.827 ± 0.011
 
 Key Physics:
-PM's w₀ = -11/13 ≈ -0.846 is between ΛCDM (w=-1) and quintessence (w>-1).
-Since -0.846 > -1, it provides LESS acceleration than ΛCDM at early times,
+PM's w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 is between ΛCDM (w=-1) and quintessence (w>-1).
+Since -0.9583 > -1, it provides LESS acceleration than ΛCDM at early times,
 allowing MORE structure growth. This actually predicts HIGHER S8 than ΛCDM,
 which is opposite to what's needed to resolve the tension.
 
@@ -73,7 +73,7 @@ class S8SuppressionV16(SimulationBase):
     S8 tension resolution through dynamical dark energy.
 
     This simulation:
-    1. Computes growth rate f(z) for PM dark energy (w₀ = -11/13)
+    1. Computes growth rate f(z) for PM dark energy (w₀ = -1 + 1/b₃ = -23/24)
     2. Calculates structure growth suppression relative to ΛCDM
     3. Predicts S8 from DESI σ8 measurement with PM cosmology
     4. Validates against KiDS-1000, DES Y3, Planck measurements
@@ -113,7 +113,7 @@ class S8SuppressionV16(SimulationBase):
             title="S8 Tension Resolution via Dynamical Dark Energy",
             description=(
                 "Resolves S8 tension between CMB (Planck) and weak lensing "
-                "(KiDS-1000, DES Y3) through PM's w₀ = -11/13 dark energy. "
+                "(KiDS-1000, DES Y3) through PM's w₀ = -1 + 1/b₃ = -23/24 dark energy."
                 "Dynamical dark energy with w₀ < -1/3 suppresses late-time "
                 "structure growth, reducing S8 by ~3% relative to ΛCDM."
             ),
@@ -175,7 +175,7 @@ class S8SuppressionV16(SimulationBase):
         self.validate_inputs(registry)
 
         # Read inputs
-        w0_pm = registry.get_param("cosmology.w0_derived")  # -11/13 = -0.846
+        w0_pm = registry.get_param("cosmology.w0_derived")  # -1 + 1/b₃ = -23/24 = -0.9583
         wa_pm = registry.get_param("cosmology.wa_derived")  # ~0.29
         sigma8_desi = registry.get_param("desi.sigma8")     # 0.827 ± 0.011
         Omega_m = registry.get_param("desi.Omega_m")        # 0.3069 ± 0.005
@@ -392,8 +392,8 @@ class S8SuppressionV16(SimulationBase):
         Physical interpretation:
         - w0 < -1/3 means stronger acceleration → weaker gravity → slower growth → smaller γ
         - For ΛCDM (w0=-1): γ = 0.55 + 0.05*(0) = 0.55
-        - For PM (w0=-11/13≈-0.846, wa=0.29):
-          γ ≈ 0.55 + 0.05*(-0.846 + 1 + 0.145) = 0.55 + 0.05*0.299 ≈ 0.565
+        - For PM (w0=-23/24≈-0.9583, wa=0.29):
+          γ ≈ 0.55 + 0.05*(-0.9583 + 1 + 0.145) = 0.55 + 0.05*0.187 ≈ 0.559
 
         However, the correct formula accounting for early dark energy is:
         γ ≈ 0.55 + 0.02*(1 + w0) - 0.01*wa
@@ -484,7 +484,7 @@ class S8SuppressionV16(SimulationBase):
                 "The S8 ≡ σ8 × (Ωm/0.3)^0.5 tension between CMB (Planck: 0.832±0.013) "
                 "and weak lensing surveys (KiDS-1000: 0.766±0.020, DES Y3: 0.776±0.017) "
                 "is a significant challenge for ΛCDM cosmology. We analyze PM's prediction "
-                "for S8 given dynamical dark energy with w₀ = -11/13 and DESI 2025's "
+                "for S8 given dynamical dark energy with w₀ = -1 + 1/b₃ = -23/24 and DESI 2025's"
                 "σ8 = 0.827 ± 0.011. PM predicts S8 ≈ 0.837, intermediate between Planck "
                 "and weak lensing, representing the integrated expansion history with "
                 "time-evolving dark energy."
@@ -526,7 +526,7 @@ class S8SuppressionV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "PM's dark energy with w₀ = -11/13 ≈ -0.846 and w_a ≈ 0.29 evolves "
+                        "PM's dark energy with w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 and w_a ≈ 0.29 evolves"
                         "according to w(a) = w₀ + w_a(1-a). At high redshift (small a), "
                         "w becomes more negative, approaching phantom-like behavior. This "
                         "affects the integrated expansion history and growth rate:"
@@ -541,7 +541,7 @@ class S8SuppressionV16(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "For PM's w₀ = -11/13 ≈ -0.846, the Hubble parameter evolves as:"
+                        "For PM's w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583, the Hubble parameter evolves as:"
                     )
                 ),
                 ContentBlock(
@@ -618,7 +618,7 @@ class S8SuppressionV16(SimulationBase):
                     callout_type="info",
                     title="S8 Tension Status",
                     content=(
-                        "PM's w₀ = -11/13 gives S8 ≈ 0.837, intermediate between Planck "
+                        "PM's w₀ = -1 + 1/b₃ = -23/24 gives S8 ≈ 0.837, intermediate between Planck"
                         "(0.832) and weak lensing (0.77). The 0.6% difference from ΛCDM is "
                         "too small to resolve the 8% weak lensing discrepancy. Future work "
                         "should explore: (1) neutrino mass effects (Σmν < 0.12 eV), "
@@ -741,7 +741,7 @@ class S8SuppressionV16(SimulationBase):
                 },
                 terms={
                     "H": "Hubble parameter",
-                    "w0": "Dark energy EoS at z=0 (PM: -11/13)",
+                    "w0": "Dark energy EoS at z=0 (PM: -23/24)",
                     "wa": "Evolution parameter (PM: ~0.29)",
                     "a": "Scale factor"
                 }
@@ -854,7 +854,7 @@ class S8SuppressionV16(SimulationBase):
                 status="PREDICTED",
                 description=(
                     f"PM prediction for S8 parameter: {s8_pm:.3f}. Includes ~3% "
-                    f"suppression from dynamical dark energy (w₀ = -11/13). "
+                    f"suppression from dynamical dark energy (w₀ = -1 + 1/b₃ = -23/24). "
                     f"KiDS-1000 tension: 1.1σ (vs 3.1σ for ΛCDM). "
                     f"DES Y3 tension: 0.7σ (vs 2.7σ for ΛCDM)."
                 ),
@@ -883,7 +883,7 @@ class S8SuppressionV16(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Growth index γ for PM cosmology: γ_PM ≈ 0.514. "
-                    "Lower than ΛCDM (0.55) due to w₀ = -11/13."
+                    "Lower than ΛCDM (0.55) due to w₀ = -1 + 1/b₃ = -23/24."
                 ),
                 derivation_formula="growth-suppression-factor",
                 no_experimental_value=True
@@ -1102,7 +1102,7 @@ def export_s8_suppression_v16() -> Dict[str, Any]:
     if not registry.has_param("cosmology.w0_derived"):
         registry.set_param(
             "cosmology.w0_derived",
-            -11/13,
+            -23/24,
             source="dark_energy_v16_0",
             status="PREDICTED",
             metadata={'units': 'dimensionless', 'description': 'PM dark energy EoS'}

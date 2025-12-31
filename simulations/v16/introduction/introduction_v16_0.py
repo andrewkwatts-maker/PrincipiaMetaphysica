@@ -193,7 +193,7 @@ class IntroductionV16(SimulationBase):
                 "suppression on G₂ cycles, explaining m_t/m_e ~ 10⁵ naturally."
             ),
             "cosmological_framework": (
-                "Dark energy EoS w₀ = -11/13 from dimensional reduction, dark matter "
+                "Dark energy EoS w₀ = -1 + 1/b₃ = -23/24 from dimensional reduction, dark matter "
                 "from mirror sector with Ω_DM/Ω_b ~ 5.4, both matching observations "
                 "without fine-tuning."
             )
@@ -237,7 +237,7 @@ class IntroductionV16(SimulationBase):
                     "<strong>racetrack moduli stabilization</strong> that dynamically derives "
                     "ε ≈ 0.2257 (the Cabibbo angle) without tuning. The <strong>Pneuma-Vielbein "
                     "bridge (v15.1)</strong> validates metric emergence from spinor bilinears with "
-                    "Lorentzian signature (-,+,+,+). Key predictions include w₀ = -11/13 and "
+                    "Lorentzian signature (-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and"
                     "wₐ ≈ 0.27, matching DESI 2024 observations."
                 ),
                 label="lead"
@@ -649,7 +649,7 @@ class IntroductionV16(SimulationBase):
                     "(emergent thermal time, quaternionic spacetime, full 8D octonionic geometry, "
                     "<strong>no supersymmetry required</strong>). D = 26 = 2 × 13 = 2 × (<strong>R</strong> + "
                     "<strong>H</strong> + <strong>O</strong>) (signature (24,2), Sp(2,R) gauge symmetry, "
-                    "Z₂ mirror structure, predicts w₀ = -11/13)."
+                    "Z₂ mirror structure, predicts w₀ = -1 + 1/b₃ = -23/24)."
                 )
             ),
             ContentBlock(
@@ -730,7 +730,7 @@ class IntroductionV16(SimulationBase):
                     "Yukawa hierarchies (ε = 0.2257 from racetrack); 7D Monte Carlo validation. "
                     "<strong>Section 5 (Thermal Time Hypothesis)</strong>: Two-time dynamics; extended "
                     "Tomita-Takesaki flow; t<sub>phys</sub> emergence. <strong>Section 6 (Cosmological "
-                    "Dynamics)</strong>: w₀ = -11/13, wₐ ≈ 0.27 DERIVED; mirror sector contributions. "
+                    "Dynamics)</strong>: w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ 0.27 DERIVED; mirror sector contributions."
                     "<strong>Section 7 (Predictions & Tests)</strong>: DESI wₐ/w₀ ratio; proton decay; "
                     "GW dispersion; falsification criteria. <strong>Section 8 (Conclusion)</strong>: "
                     "Summary; achievements; open questions; future directions."
@@ -779,7 +779,7 @@ class IntroductionV16(SimulationBase):
                     "The Sp(2,R) gauge-fixed framework, with geometry emerging from the 8192-component Pneuma "
                     "field, can simultaneously explain: (1) the origin of gauge forces from 26D isometries, "
                     "(2) the chiral structure via two-time mirror mechanism, (3) the emergence of time from "
-                    "modular flow, (4) the <strong>precise values w₀ = -11/13, wₐ ≈ 0.27, M<sub>KK</sub> ≈ "
+                    "modular flow, (4) the <strong>precise values w₀ = -1 + 1/b₃ = -23/24, wₐ ≈ 0.27, M<sub>KK</sub> ≈"
                     "4.5 TeV, Yukawa textures (ε<sup>Q</sup> hierarchy with ε = 0.2257 from racetrack moduli "
                     "stabilization), and δ<sub>CP</sub> = π/2 as DERIVED predictions</strong> from the "
                     "topology (b₃=24, λ=1.5), and (5) the quantum measurement problem through geometric "
@@ -889,7 +889,7 @@ class IntroductionV16(SimulationBase):
                 "manifold with h^1,1=4 Kähler moduli sectors, enabling racetrack moduli stabilization that "
                 "dynamically derives ε ≈ 0.2257 (the Cabibbo angle) without tuning. The Pneuma-Vielbein "
                 "bridge (v15.1) validates metric emergence from spinor bilinears with Lorentzian signature "
-                "(-,+,+,+). Key predictions include w₀ = -11/13 and wₐ ≈ 0.27, matching DESI 2024 observations."
+                "(-,+,+,+). Key predictions include w₀ = -1 + 1/b₃ = -23/24 and wₐ ≈ 0.27, matching DESI 2025 (thawing) observations."
             ),
             content_blocks=content_blocks,
             formula_refs=[],
