@@ -1549,6 +1549,7 @@
     <script src="../js/pm-constants-loader.js"></script>
     <script src="../js/pm-formula-loader.js"></script>
     <script src="../js/pm-formula-component.js"></script>
+    <script src="../js/pm-parameter-component.js"></script>
     <script src="../js/pm-tooltip-system.js"></script>
 </head>
 <body class="auth-loading">
@@ -2609,6 +2610,7 @@
     function renderParameterCard(param) {
         if (!param || !param.constant) return '';
 
+        const hasValue = param.value !== null && param.value !== undefined && param.value !== '';
         const value = formatParameterValue(param.value);
         const units = param.units ? ` ${escapeHtml(param.units)}` : '';
         const symbol = param.constant.split('.').pop(); // Extract last part like "M_GUT"
@@ -2620,17 +2622,22 @@
             const deviation = (param.sigma_deviation != null && typeof param.sigma_deviation === 'number')
                 ? ` <span class="param-deviation ${param.sigma_deviation < 1 ? 'good' : param.sigma_deviation < 2 ? 'moderate' : 'poor'}">(${param.sigma_deviation.toFixed(2)}σ)</span>`
                 : '';
-            experimentalHtml = `<span class="param-experimental" title="Experimental: ${expValue}${deviation}">Exp: ${expValue}${deviation}</span>`;
+            experimentalHtml = `<span class="param-experimental">Exp: ${expValue}${deviation}</span>`;
         }
 
+        // Only show "= value" if we have a value
+        const valueSection = hasValue
+            ? `<span class="param-equals">=</span><span class="param-value">${value}</span>${units ? `<span class="param-units">${units}</span>` : ''}`
+            : '';
+
         return `
-            <span class="param-card" title="${escapeHtml(param.constant)}">
-                <span class="param-symbol">${escapeHtml(symbol)}</span>
-                <span class="param-equals">=</span>
-                <span class="param-value">${value}</span>
-                ${units ? `<span class="param-units">${units}</span>` : ''}
-                ${experimentalHtml}
-            </span>
+            <pm-param id="${escapeHtml(param.constant)}" mode="inline" show="symbol" hover="true">
+                <span class="param-card" slot="fallback">
+                    <span class="param-symbol">${escapeHtml(symbol)}</span>
+                    ${valueSection}
+                    ${experimentalHtml}
+                </span>
+            </pm-param>
         `;
     }
 
