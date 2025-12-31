@@ -10,16 +10,16 @@
 
 /* Value elements that trigger tooltips */
 .pm-value {
-    color: #2196F3;
+    color: #8b7fff;
     cursor: help;
-    border-bottom: 1px dotted #2196F3;
+    border-bottom: 1px dotted #8b7fff;
     transition: all 0.2s ease;
 }
 
 .pm-value:hover {
-    color: #1976D2;
-    border-bottom-color: #1976D2;
-    background-color: rgba(33, 150, 243, 0.05);
+    color: #a99cff;
+    border-bottom-color: #a99cff;
+    background-color: rgba(139, 127, 255, 0.08);
 }
 
 /* Tooltip popup */
@@ -75,17 +75,17 @@
 
 /* Formula */
 .pm-tooltip-formula {
-    background: rgba(33, 150, 243, 0.1);
-    border-left: 3px solid #2196F3;
+    background: rgba(139, 127, 255, 0.1);
+    border-left: 3px solid #8b7fff;
     padding: 8px 12px;
     margin: 8px 0;
     border-radius: 4px;
     font-family: 'Courier New', monospace;
-    color: #90caf9;
+    color: #b3aaff;
 }
 
 .pm-tooltip-formula em {
-    color: #64b5f6;
+    color: #8b7fff;
     font-style: normal;
     font-weight: bold;
     margin-right: 8px;
