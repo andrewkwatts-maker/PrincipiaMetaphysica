@@ -403,6 +403,11 @@
                             // Wrapped format: { references: [...] }
                             data = parsedData.references;
                             console.log(`[References] Detected wrapped array format with ${data.length} references`);
+                        } else if (parsedData.references && typeof parsedData.references === 'object') {
+                            // Wrapped object format: { references: { ref_id: {...}, ... } }
+                            // This is the current v16.0 format from run_all_simulations.py
+                            data = parsedData.references;
+                            console.log(`[References] Detected wrapped object format with ${Object.keys(data).length} references`);
                         } else if (typeof parsedData === 'object' && parsedData !== null) {
                             // Object format with ref IDs as keys - this is the current format
                             const keys = Object.keys(parsedData);
