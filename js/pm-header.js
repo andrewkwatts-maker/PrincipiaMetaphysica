@@ -36,7 +36,8 @@ const NAV_LINKS = [
   { href: 'simulations.html', label: 'Simulations', id: 'simulations' },
   { href: 'appendices.html', label: 'Appendices', id: 'appendices' },
   { href: 'philosophical-implications.html', label: 'Philosophy', id: 'philosophical-implications' },
-  { href: 'visualization-index.html', label: 'Visualizations', id: 'visualization-index' }
+  { href: 'visualization-index.html', label: 'Visualizations', id: 'visualization-index' },
+  { href: 'faq.html', label: 'FAQ', id: 'faq' }
 ];
 
 /**
