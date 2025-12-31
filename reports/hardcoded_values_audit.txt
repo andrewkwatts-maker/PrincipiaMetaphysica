@@ -1,0 +1,420 @@
+======================================================================
+HARDCODED VALUES AUDIT REPORT
+Principia Metaphysica v16.2
+======================================================================
+
+SUMMARY
+----------------------------------------
+Total values extracted from JS:  365
+Matched to theory_output.json:   213
+Unmatched (need migration):      152
+Theory output parameters:        311
+
+BY CATEGORY
+----------------------------------------
+  other                  204
+  dimensions              72
+  particle                36
+  cosmology               20
+  topology                16
+  neutrino                16
+  constants                1
+
+BY FILE
+----------------------------------------
+  js\theory-constants.js                           85 values
+  js\formula-definitions.js                        83 values
+  js\formula-registry.js                           83 values
+  js\pm-parameter-data.js                          70 values
+  js\pm-constants-loader.js                        17 values
+  js\theory-constants-enhanced.js                  14 values
+  js\formula-database.js                           13 values
+
+TOP UNMATCHED VALUES (need geometric derivation)
+----------------------------------------
+  equals_34                      = 13.0            (dimensions)
+  full26D                        = 8192.0          (dimensions)
+  mStar                          = 1e+19           (dimensions)
+  w0Denominator                  = 13.0            (dimensions)
+  w0Observed                     = -0.827          (cosmology)
+  w0Error                        = 0.063           (cosmology)
+  waObserved                     = -0.75           (cosmology)
+  omegaLambda                    = 0.6889          (cosmology)
+  alphaTBase                     = 2.5             (particle)
+  z2Correction                   = 0.2             (other)
+  alphaTz0                       = 1.67            (particle)
+  alphaTz1                       = 2.38            (particle)
+  alphaTz2                       = 2.59            (particle)
+  alphaRSquared                  = 0.0045          (particle)
+  phi0Breathing                  = 0.075           (other)
+  xi                             = 10000000000.0   (other)
+  etaBoosted                     = 1000000000.0    (other)
+  kLISATypical                   = 0.001           (other)
+  theta45Deg                     = 0.7853981633974483 (other)
+  fTermPhysical                  = 10000000000.0   (other)
+  ... and 132 more
+
+MATCHED VALUES WITH DIFFERENCES
+----------------------------------------
+  codata.M_PLANCK                         
+    JS:     1.2195e+19
+    Theory: 1.22089e+19
+    Diff:   -1.39e+16
+  gauge.M_GUT_GEOMETRIC                   
+    JS:     2.118e+16
+    Theory: 2.1e+16
+    Diff:   180000000000000.0
+  pdg.V_cb                                
+    JS:     0.0411522633744856
+    Theory: 0.041
+    Diff:   0.00015226337448559502
+  cosmology.w_eff                         
+    JS:     -0.8527
+    Theory: -0.8526812021213906
+    Diff:   -1.879787860936677e-05
+  cosmology.D_eff_shadow                  
+    JS:     12.589
+    Theory: 12.576152
+    Diff:   0.01284799999999997
+  desi.w0                                 
+    JS:     -0.9476
+    Theory: -0.957
+    Diff:   0.009399999999999964
+  higgs.brane_partition_ratio             
+    JS:     0.3
+    Theory: 0.30201927941651846
+    Diff:   -0.0020192794165184713
+  neutrino.m1                             
+    JS:     0.0486
+    Theory: 0.04831157627577474
+    Diff:   0.0002884237242252591
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  gw_dispersion.eta                       
+    JS:     0.1
+    Theory: 0.09995313724862909
+    Diff:   4.6862751370918554e-05
+  gw_dispersion.eta                       
+    JS:     0.1
+    Theory: 0.09995313724862909
+    Diff:   4.6862751370918554e-05
+  neutrino.mass_sum                       
+    JS:     0.1
+    Theory: 0.09938507627577475
+    Diff:   0.0006149237242252525
+  ckm.A_wolfenstein                       
+    JS:     0.816496580927726
+    Theory: 0.81
+    Diff:   0.006496580927725981
+  geometry.n_s                            
+    JS:     0.9090909090909091
+    Theory: 0.9166666666666666
+    Diff:   -0.007575757575757569
+  geometry.n_s                            
+    JS:     0.909
+    Theory: 0.9166666666666666
+    Diff:   -0.0076666666666665995
+  higgs.m_higgs_geometric                 
+    JS:     500.0
+    Theory: 504.0623474622599
+    Diff:   -4.062347462259879
+  neutrino.mass_sum                       
+    JS:     0.1
+    Theory: 0.09938507627577475
+    Diff:   0.0006149237242252525
+  proton_decay.super_k_ratio              
+    JS:     2.828028
+    Theory: 2.8487419937698006
+    Diff:   -0.02071399376980043
+  cosmology.D_eff_shadow                  
+    JS:     12.566370614359172
+    Theory: 12.576152
+    Diff:   -0.009781385640827978
+  neutrino.mass_sum                       
+    JS:     0.1
+    Theory: 0.09938507627577475
+    Diff:   0.0006149237242252525
+  higgs.mirror_overlap                    
+    JS:     1.178
+    Theory: 1.1842296203498772
+    Diff:   -0.006229620349877285
+  higgs.mirror_overlap                    
+    JS:     1.178
+    Theory: 1.1842296203498772
+    Diff:   -0.006229620349877285
+  cosmology.D_eff_shadow                  
+    JS:     12.589
+    Theory: 12.576152
+    Diff:   0.01284799999999997
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  gauge.M_GUT_GEOMETRIC                   
+    JS:     2.118e+16
+    Theory: 2.1e+16
+    Diff:   180000000000000.0
+  higgs.mirror_overlap                    
+    JS:     1.178
+    Theory: 1.1842296203498772
+    Diff:   -0.006229620349877285
+  gauge.M_GUT_GEOMETRIC                   
+    JS:     2.118e+16
+    Theory: 2.1e+16
+    Diff:   180000000000000.0
+  desi.sigma8                             
+    JS:     0.82
+    Theory: 0.827
+    Diff:   -0.007000000000000006
+  cosmology.w0_validation.value.sigma     
+    JS:     0.02
+    Theory: 0.01990049751243893
+    Diff:   9.950248756106922e-05
+  desi.w0                                 
+    JS:     -0.9583
+    Theory: -0.957
+    Diff:   -0.0013000000000000789
+  pdg.m_top                               
+    JS:     173.97
+    Theory: 172.69
+    Diff:   1.2800000000000011
+  cosmology.w0_deviation                  
+    JS:     0.02
+    Theory: 0.01990049751243893
+    Diff:   9.950248756106922e-05
+  nufit.theta_12                          
+    JS:     33.59
+    Theory: 33.41
+    Diff:   0.18000000000000682
+  nufit.theta_13                          
+    JS:     8.57
+    Theory: 8.54
+    Diff:   0.030000000000001137
+  nufit.theta_12                          
+    JS:     33.59
+    Theory: 33.41
+    Diff:   0.18000000000000682
+  nufit.theta_13                          
+    JS:     8.57
+    Theory: 8.54
+    Diff:   0.030000000000001137
+  cosmology.pneuma_components_4D          
+    JS:     64.2
+    Theory: 64.0
+    Diff:   0.20000000000000284
+  cosmology.pneuma_components_4D          
+    JS:     64.2
+    Theory: 64.0
+    Diff:   0.20000000000000284
+  desi.w0                                 
+    JS:     -0.9583
+    Theory: -0.957
+    Diff:   -0.0013000000000000789
+  desi.w0                                 
+    JS:     -0.9583
+    Theory: -0.957
+    Diff:   -0.0013000000000000789
+  cosmology.w0_validation.value.sigma     
+    JS:     0.02
+    Theory: 0.01990049751243893
+    Diff:   9.950248756106922e-05
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  thermal.alpha_T                         
+    JS:     2.7
+    Theory: 2.6999999182257
+    Diff:   8.177430022016097e-08
+  nufit.theta_12                          
+    JS:     33.44
+    Theory: 33.41
+    Diff:   0.030000000000001137
+  cosmology.alpha_shadow                  
+    JS:     0.576152
+    Theory: 0.576
+    Diff:   0.000152000000000041
+  nufit.theta_12                          
+    JS:     33.59
+    Theory: 33.41
+    Diff:   0.18000000000000682
+  cosmology.D_eff_shadow                  
+    JS:     12.576
+    Theory: 12.576152
+    Diff:   -0.00015199999999992997
+  cosmology.D_eff_shadow                  
+    JS:     12.576
+    Theory: 12.576152
+    Diff:   -0.00015199999999992997
+  cosmology.D_eff_shadow                  
+    JS:     12.576
+    Theory: 12.576152
+    Diff:   -0.00015199999999992997
+  cosmology.D_eff_shadow                  
+    JS:     12.576
+    Theory: 12.576152
+    Diff:   -0.00015199999999992997
+  cosmology.alpha_shadow                  
+    JS:     0.576152
+    Theory: 0.576
+    Diff:   0.000152000000000041
+  cosmology.D_eff_shadow                  
+    JS:     12.576
+    Theory: 12.576152
+    Diff:   -0.00015199999999992997
+  gauge.M_GUT_GEOMETRIC                   
+    JS:     2.118e+16
+    Theory: 2.1e+16
+    Diff:   180000000000000.0
+  gauge.M_GUT_GEOMETRIC                   
+    JS:     2.118e+16
+    Theory: 2.1e+16
+    Diff:   180000000000000.0
+  higgs.mirror_overlap                    
+    JS:     1.178
+    Theory: 1.1842296203498772
+    Diff:   -0.006229620349877285
+  higgs.mirror_overlap                    
+    JS:     1.178
+    Theory: 1.1842296203498772
+    Diff:   -0.006229620349877285
+  desi.sigma8                             
+    JS:     0.82
+    Theory: 0.827
+    Diff:   -0.007000000000000006
+  cosmology.w0_validation.value.sigma     
+    JS:     0.02
+    Theory: 0.01990049751243893
+    Diff:   9.950248756106922e-05
+  desi.w0                                 
+    JS:     -0.9583
+    Theory: -0.957
+    Diff:   -0.0013000000000000789
+  desi.w0                                 
+    JS:     -0.9583
+    Theory: -0.957
+    Diff:   -0.0013000000000000789
+  cosmology.alpha_shadow                  
+    JS:     0.576152
+    Theory: 0.576
+    Diff:   0.000152000000000041
+  higgs.m_higgs_pred                      
+    JS:     120.0
+    Theory: 120.6228111675565
+    Diff:   -0.622811167556506
+  cosmology.D_eff_shadow                  
+    JS:     12.589
+    Theory: 12.576152
+    Diff:   0.01284799999999997
+  desi.w0                                 
+    JS:     -0.95
+    Theory: -0.957
+    Diff:   0.007000000000000006
+  neutrino.mass_sum                       
+    JS:     0.1
+    Theory: 0.09938507627577475
+    Diff:   0.0006149237242252525
+  pdg.m_higgs                             
+    JS:     125.25
+    Theory: 125.1
+    Diff:   0.15000000000000568
+  fermion.chiral_filter_strength          
+    JS:     0.88
+    Theory: 0.875
+    Diff:   0.0050000000000000044
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  ckm.V_cb                                
+    JS:     0.04
+    Theory: 0.04032752537796979
+    Diff:   -0.00032752537796978953
+  cosmology.w0_validation.value.predicted 
+    JS:     -0.9583
+    Theory: -0.9583333333333334
+    Diff:   3.333333333332966e-05
+  cosmology.w0_deviation                  
+    JS:     0.02
+    Theory: 0.01990049751243893
+    Diff:   9.950248756106922e-05
+  predictions.summary.value.neutrino_mixing.theta_12
+    JS:     33.41
+    Theory: 33.59329049922625
+    Diff:   -0.18329049922625273
+  predictions.summary.value.neutrino_mixing.theta_13
+    JS:     8.65
+    Theory: 8.647304725338865
+    Diff:   0.002695274661135727
+  nufit.theta_13                          
+    JS:     8.57
+    Theory: 8.54
+    Diff:   0.030000000000001137
+  cosmology.w0_deviation                  
+    JS:     0.02
+    Theory: 0.01990049751243893
+    Diff:   9.950248756106922e-05
+  higgs.brane_partition_ratio             
+    JS:     0.3
+    Theory: 0.30201927941651846
+    Diff:   -0.0020192794165184713
+  gauge.M_GUT_GEOMETRIC                   
+    JS:     2.118e+16
+    Theory: 2.1e+16
+    Diff:   180000000000000.0
+  cosmology.Omega_DM_over_b               
+    JS:     5.4
+    Theory: 5.399772129616132
+    Diff:   0.00022787038386873348
+  nufit.delta_m31_sq                      
+    JS:     0.002515
+    Theory: 0.0025
+    Diff:   1.4999999999999823e-05
+  nufit.delta_m31_sq                      
+    JS:     0.002515
+    Theory: 0.0025
+    Diff:   1.4999999999999823e-05
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+  geometry.higgs_vev                      
+    JS:     246.22
+    Theory: 246.3661977236758
+    Diff:   -0.14619772367581163
+
+======================================================================
