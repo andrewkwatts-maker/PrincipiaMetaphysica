@@ -67,8 +67,22 @@ wolfram_api_key.txt
 temp/
 tmp/
 nul
+
+# Archive files (generated, not source)
+*.zip
+*.7z
 zenodo_submission/
-Principia_Metaphysica_v16.2_20251229.zip
+zenodo_package/
+Principia_Metaphysica_v16*/
+
+# Test files (development only)
+test-*.html
+test_*.html
+test-*.js
 
 # GitHub Actions (PAT lacks workflow scope)
 .github/
+
+# Discussion logs
+*_Discussion_Log_*.txt
+*.pytest_cache/

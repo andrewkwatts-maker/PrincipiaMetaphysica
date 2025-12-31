@@ -1,9 +1,0 @@
-{
-  "proof_id": "s8_viscosity",
-  "label": "S8 Bulk Viscosity",
-  "wl_code": "\n                With[{ckaf = 27.2, z = 0.45},\n                     suppression = 1/(1 + (ckaf/(2*Pi^2) * Sqrt[z])/100);\n                     0.832 * suppression]\n            ",
-  "result": "[Mock] 0.76",
-  "hash": "3d813160ba85ec57",
-  "timestamp": "2025-12-29T15:39:58.274080",
-  "verified": false
-}
