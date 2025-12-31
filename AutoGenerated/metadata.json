@@ -1,29 +1,28 @@
 {
   "version": "16.0",
-  "timestamp": "2025-12-31T12:12:10.190648",
+  "timestamp": "2025-12-31T12:52:53.369683",
   "validation": {
-    "timestamp": "2025-12-31T12:12:10.140750",
+    "timestamp": "2025-12-31T12:52:53.313216",
     "simulations_run": 39,
-    "simulations_passed": 30,
-    "simulations_failed": 9,
+    "simulations_passed": 39,
+    "simulations_failed": 0,
     "simulations_skipped": 0,
-    "total_execution_time_ms": 51.87,
+    "total_execution_time_ms": 46.228,
     "uq_mode_enabled": false,
     "tensions": [],
     "results": [
       {
         "simulation_id": "introduction_v16_0",
         "phase": 0,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "simulations.base.schema.FoundationEntry() argument after ** must be a mapping, not str"
+        "status": "PASSED",
+        "execution_time_ms": 0.048,
+        "outputs_computed": []
       },
       {
         "simulation_id": "g2_geometry_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.9359999999999999,
+        "execution_time_ms": 0.33,
         "outputs_computed": [
           "topology.b2",
           "topology.b3",
@@ -40,7 +39,7 @@
         "simulation_id": "unitary_filter_v16_2",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.221,
+        "execution_time_ms": 0.046,
         "outputs_computed": [
           "unitary.central_charge",
           "unitary.is_ghost_free",
@@ -54,7 +53,7 @@
         "simulation_id": "leech_partition_v16_2",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.266,
+        "execution_time_ms": 0.048,
         "outputs_computed": [
           "topology.n_gen_leech",
           "topology.leech_dim",
@@ -66,16 +65,21 @@
       {
         "simulation_id": "modular_invariance_v16_2",
         "phase": 1,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'publisher'"
+        "status": "PASSED",
+        "execution_time_ms": 0.324,
+        "outputs_computed": [
+          "topology.b3_modular",
+          "topology.vacuum_energy",
+          "topology.anomaly_free",
+          "topology.critical_dim",
+          "topology.modular_weight"
+        ]
       },
       {
         "simulation_id": "gauge_unification_v16_0",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 31.094,
+        "execution_time_ms": 30.015,
         "outputs_computed": [
           "gauge.M_GUT",
           "gauge.M_GUT_GEOMETRIC",
@@ -89,7 +93,7 @@
         "simulation_id": "alpha_rigor_v16_1",
         "phase": 1,
         "status": "PASSED",
-        "execution_time_ms": 0.13699999999999998,
+        "execution_time_ms": 0.052,
         "outputs_computed": [
           "electromagnetic.alpha_inv",
           "electromagnetic.alpha_inv_error",
@@ -100,7 +104,7 @@
         "simulation_id": "fermion_generations_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.283,
+        "execution_time_ms": 0.054,
         "outputs_computed": [
           "fermion.n_generations",
           "fermion.yukawa_hierarchy",
@@ -118,16 +122,29 @@
       {
         "simulation_id": "chirality_v16_0",
         "phase": 2,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'publisher'"
+        "status": "PASSED",
+        "execution_time_ms": 0.102,
+        "outputs_computed": [
+          "chirality.spinor_dimension",
+          "chirality.preserved_spinors",
+          "chirality.chiral_index",
+          "chirality.zero_modes_left",
+          "chirality.zero_modes_right",
+          "chirality.imbalance",
+          "chirality.generation_count",
+          "chirality.saturation_ratio",
+          "_chi_eff",
+          "_b3",
+          "_is_integer_generations",
+          "_is_complete_saturation",
+          "_matches_observed"
+        ]
       },
       {
         "simulation_id": "ckm_matrix_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.518,
+        "execution_time_ms": 0.108,
         "outputs_computed": [
           "ckm.V_us",
           "ckm.V_cb",
@@ -163,7 +180,7 @@
         "simulation_id": "proton_decay_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.363,
+        "execution_time_ms": 0.047,
         "outputs_computed": [
           "proton_decay.tau_p_years",
           "proton_decay.tau_p_base",
@@ -179,7 +196,7 @@
         "simulation_id": "higgs_mass_v16_0",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.449,
+        "execution_time_ms": 0.062,
         "outputs_computed": [
           "higgs.m_higgs_pred",
           "higgs.m_higgs_geometric",
@@ -195,7 +212,7 @@
         "simulation_id": "mass_ratio_v16_1",
         "phase": 2,
         "status": "PASSED",
-        "execution_time_ms": 0.102,
+        "execution_time_ms": 0.025,
         "outputs_computed": [
           "fermion.mass_ratio_proton_electron",
           "fermion.mass_ratio_error",
@@ -206,7 +223,7 @@
         "simulation_id": "cosmology_intro_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.43,
+        "execution_time_ms": 0.063,
         "outputs_computed": [
           "cosmology.M_Pl_4D",
           "cosmology.V_9_internal",
@@ -220,32 +237,51 @@
       {
         "simulation_id": "dark_energy_v16_0",
         "phase": 3,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'notes'"
+        "status": "PASSED",
+        "execution_time_ms": 0.07200000000000001,
+        "outputs_computed": [
+          "cosmology.w0_derived",
+          "cosmology.wa_derived",
+          "cosmology.D_eff",
+          "cosmology.alpha_shadow",
+          "cosmology.w0_deviation",
+          "cosmology.w0_validation"
+        ]
       },
       {
         "simulation_id": "s8_suppression_v16_1",
         "phase": 3,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'notes'"
+        "status": "PASSED",
+        "execution_time_ms": 1.418,
+        "outputs_computed": [
+          "cosmology.s8_pm_predicted",
+          "cosmology.s8_suppression_factor",
+          "cosmology.growth_index_pm",
+          "cosmology.growth_index_lcdm",
+          "cosmology.s8_tension_kids",
+          "cosmology.s8_tension_des",
+          "cosmology.s8_tension_planck",
+          "cosmology.s8_improvement_factor"
+        ]
       },
       {
         "simulation_id": "ricci_flow_h0_v16_1",
         "phase": 3,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'notes'"
+        "status": "PASSED",
+        "execution_time_ms": 1.338,
+        "outputs_computed": [
+          "cosmology.H0_local",
+          "cosmology.H0_early",
+          "cosmology.z_transition",
+          "cosmology.H0_tension_sigma",
+          "cosmology.ricci_flow_rate"
+        ]
       },
       {
         "simulation_id": "neutrino_mixing_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.633,
+        "execution_time_ms": 0.11699999999999999,
         "outputs_computed": [
           "neutrino.theta_12_pred",
           "neutrino.theta_13_pred",
@@ -266,7 +302,7 @@
         "simulation_id": "multi_sector_v16_0",
         "phase": 3,
         "status": "PASSED",
-        "execution_time_ms": 0.432,
+        "execution_time_ms": 0.112,
         "outputs_computed": [
           "cosmology.w_eff",
           "cosmology.Omega_DM_over_b",
@@ -280,16 +316,21 @@
       {
         "simulation_id": "cosmological_constant_v16_1",
         "phase": 3,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'notes'"
+        "status": "PASSED",
+        "execution_time_ms": 0.163,
+        "outputs_computed": [
+          "cosmology.Lambda_derived",
+          "cosmology.rho_vacuum",
+          "cosmology.entropy_density",
+          "cosmology.Lambda_ratio",
+          "cosmology.Lambda_deviation_log"
+        ]
       },
       {
         "simulation_id": "pneuma_mechanism_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.496,
+        "execution_time_ms": 0.115,
         "outputs_computed": [
           "pneuma.coupling",
           "pneuma.flow_parameter",
@@ -302,7 +343,7 @@
         "simulation_id": "thermal_time_v16_0",
         "phase": 4,
         "status": "PASSED",
-        "execution_time_ms": 0.262,
+        "execution_time_ms": 0.036000000000000004,
         "outputs_computed": [
           "thermal.alpha_T",
           "thermal.modular_temperature",
@@ -314,7 +355,7 @@
         "simulation_id": "orch_or_geometry_v16_1",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.16799999999999998,
+        "execution_time_ms": 0.046,
         "outputs_computed": [
           "quantum_bio.coherence_time_ms",
           "quantum_bio.topological_pitch",
@@ -326,14 +367,14 @@
         "simulation_id": "discussion_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.446,
+        "execution_time_ms": 0.085,
         "outputs_computed": []
       },
       {
         "simulation_id": "predictions_aggregator_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.425,
+        "execution_time_ms": 0.07200000000000001,
         "outputs_computed": [
           "predictions.summary",
           "predictions.falsifiable_count"
@@ -343,7 +384,7 @@
         "simulation_id": "appendix_a_math_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.378,
+        "execution_time_ms": 0.05,
         "outputs_computed": [
           "math.g2_dimension",
           "math.spinor_dimension",
@@ -358,7 +399,7 @@
         "simulation_id": "appendix_b_methods_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.488,
+        "execution_time_ms": 0.052,
         "outputs_computed": [
           "methods.rg_loop_order",
           "methods.integration_method",
@@ -375,7 +416,7 @@
         "simulation_id": "appendix_c_derivations_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.36200000000000004,
+        "execution_time_ms": 0.047,
         "outputs_computed": [
           "derivations.n_gen_derived",
           "derivations.generation_check",
@@ -388,7 +429,7 @@
         "simulation_id": "appendix_d_tables_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.22599999999999998,
+        "execution_time_ms": 0.043000000000000003,
         "outputs_computed": [
           "tables.n_constants",
           "tables.n_pdg_inputs",
@@ -404,7 +445,7 @@
         "simulation_id": "appendix_e_proton_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.266,
+        "execution_time_ms": 0.030000000000000002,
         "outputs_computed": [
           "proton_decay.BR_e_pi0",
           "proton_decay.BR_mu_pi0",
@@ -416,7 +457,7 @@
         "simulation_id": "appendix_f_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.289,
+        "execution_time_ms": 0.052,
         "outputs_computed": [
           "dimensions.bulk_signature",
           "dimensions.shadow_signature",
@@ -430,7 +471,7 @@
         "simulation_id": "appendix_g_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.204,
+        "execution_time_ms": 0.04,
         "outputs_computed": [
           "topology.N_flux",
           "topology.T_omega_topological",
@@ -447,7 +488,7 @@
         "simulation_id": "appendix_h_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.14200000000000002,
+        "execution_time_ms": 0.026,
         "outputs_computed": [
           "proton_decay.BR_e_pi0",
           "proton_decay.BR_mu_pi0",
@@ -462,7 +503,7 @@
         "simulation_id": "appendix_i_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.177,
+        "execution_time_ms": 0.028,
         "outputs_computed": [
           "gw_dispersion.eta",
           "gw_dispersion.M_GW",
@@ -477,7 +518,7 @@
         "simulation_id": "appendix_j_mc_error_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 10.992999999999999,
+        "execution_time_ms": 10.777999999999999,
         "outputs_computed": [
           "monte_carlo.n_samples",
           "monte_carlo.n_parameters",
@@ -490,7 +531,7 @@
         "simulation_id": "appendix_k_transparency_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.358,
+        "execution_time_ms": 0.046,
         "outputs_computed": [
           "validation.total_parameters",
           "validation.within_1sigma",
@@ -507,7 +548,7 @@
         "simulation_id": "appendix_l_values_summary_v16_0",
         "phase": 5,
         "status": "PASSED",
-        "execution_time_ms": 0.326,
+        "execution_time_ms": 0.041,
         "outputs_computed": [
           "summary.total_parameters",
           "summary.exact_parameters",
@@ -523,18 +564,36 @@
       {
         "simulation_id": "appendix_m_consciousness_v16_0",
         "phase": 5,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'issue'"
+        "status": "PASSED",
+        "execution_time_ms": 0.057,
+        "outputs_computed": [
+          "consciousness.n_tubulins",
+          "consciousness.tau_collapse_ms",
+          "consciousness.E_G_joules",
+          "consciousness.tau_scaling_exponent",
+          "consciousness.f_base_hz",
+          "consciousness.phi_peak",
+          "consciousness.sigma_falloff",
+          "consciousness.speculative_status"
+        ]
       },
       {
         "simulation_id": "appendix_n_g2_landscape_v16_0",
         "phase": 5,
-        "status": "FAILED",
-        "execution_time_ms": 0.0,
-        "outputs_computed": [],
-        "error_message": "ReferenceEntry.__init__() got an unexpected keyword argument 'issue'"
+        "status": "PASSED",
+        "execution_time_ms": 0.04,
+        "outputs_computed": [
+          "landscape.num_valid_topologies",
+          "landscape.h11_min",
+          "landscape.h11_max",
+          "landscape.h31_min",
+          "landscape.h31_max",
+          "landscape.selected_h11",
+          "landscape.selected_h31",
+          "landscape.chi_eff_fixed",
+          "landscape.n_gen_fixed",
+          "landscape.variation_percent"
+        ]
       }
     ]
   }

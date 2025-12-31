@@ -9,5 +9,6 @@ Dedicated To:
 """
 
 from .higgs_mass_v16_0 import HiggsMassSimulation
+from .higgs_brane_partition_v16_2 import HiggsBranePartitionSimulation
 
-__all__ = ['HiggsMassSimulation']
+__all__ = ['HiggsMassSimulation', 'HiggsBranePartitionSimulation']

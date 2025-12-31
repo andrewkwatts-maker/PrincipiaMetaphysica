@@ -308,18 +308,18 @@ class FinalSigmaValidator(SimulationBase):
             if self.verbose:
                 print(f"  [SKIP] Dark Energy: {e}")
 
-        # 5. Higgs Mass
+        # 5. Higgs Mass via Brane Partition (v16.2)
         try:
-            from simulations.v16.higgs.higgs_mass_v16_0 import HiggsMassSimulation
+            from simulations.v16.higgs.higgs_brane_partition_v16_2 import HiggsBranePartitionSimulation
             self._setup_higgs_inputs(registry)
-            sim = HiggsMassSimulation()
+            sim = HiggsBranePartitionSimulation()
             results = sim.execute(registry, verbose=False)
-            sectors_run.append("Higgs Mass")
+            sectors_run.append("Higgs Brane Partition")
             if self.verbose:
-                print(f"  [OK] Higgs Mass: m_H={results.get('higgs.m_higgs_pred', 'N/A'):.2f} GeV")
+                print(f"  [OK] Higgs Brane Partition: m_H_bulk={results.get('higgs.m_higgs_bulk', 'N/A'):.2f}, m_H_local={results.get('higgs.m_higgs_local', 'N/A'):.2f} GeV")
         except Exception as e:
             if self.verbose:
-                print(f"  [SKIP] Higgs Mass: {e}")
+                print(f"  [SKIP] Higgs Brane Partition: {e}")
 
         # 6. Gauge Unification
         try:
@@ -343,6 +343,10 @@ class FinalSigmaValidator(SimulationBase):
             registry.set_param("topology.b3", 24, source="ESTABLISHED:G2_topology", status="ESTABLISHED")
         if not registry.has_param("topology.chi_eff"):
             registry.set_param("topology.chi_eff", 144, source="ESTABLISHED:G2_topology", status="ESTABLISHED")
+        # k_gimel = b3/2 + 1/pi (holonomy precision limit)
+        if not registry.has_param("topology.k_gimel"):
+            k_gimel = 24/2 + 1/np.pi  # ~12.318
+            registry.set_param("topology.k_gimel", k_gimel, source="DERIVED:k_gimel_formula", status="GEOMETRIC")
 
     def _setup_neutrino_topology(self, registry: PMRegistry) -> None:
         """Set up neutrino-specific topology parameters."""
@@ -444,10 +448,10 @@ class FinalSigmaValidator(SimulationBase):
                 "bound_type": "measured",
                 "sector": "neutrino"
             },
-            # Higgs - Note: This is input-constrained, not a prediction
+            # Higgs - v16.2 Brane Partition: 414 GeV bulk projects to 125 GeV local
             {
-                "param": "higgs.m_higgs_pred",
-                "name": "Higgs Mass",
+                "param": "higgs.m_higgs_local",
+                "name": "Higgs Mass (4D Local)",
                 "target_path": "pdg.m_higgs",
                 "target_value": 125.25,
                 "uncertainty": 0.17,

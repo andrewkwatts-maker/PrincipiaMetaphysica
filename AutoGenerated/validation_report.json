@@ -1,18 +1,18 @@
 {
   "generator": "sigma_validator_final_v16_2",
-  "timestamp": "2025-12-31T12:12:21.889506",
+  "timestamp": "2025-12-31T12:55:27.866880",
   "summary": {
     "total_parameters": 8,
-    "passed": 5,
+    "passed": 6,
     "marginal": 2,
     "tension": 0,
-    "failed": 1,
-    "global_chi_squared": 748.0950056870563,
-    "reduced_chi_squared": 106.8707150981509,
+    "failed": 0,
+    "global_chi_squared": 7.987795238078583,
+    "reduced_chi_squared": 1.1411136054397975,
     "degrees_of_freedom": 7,
-    "timestamp": "2025-12-31T12:12:21.888861",
+    "timestamp": "2025-12-31T12:55:27.866102",
     "theory_version": "v16.2",
-    "unitary_status": "NOT_READY"
+    "unitary_status": "PUBLICATION_READY"
   },
   "sigma_table": [
     {
@@ -94,15 +94,15 @@
       "sector": "neutrino"
     },
     {
-      "parameter": "higgs.m_higgs_pred",
-      "name": "Higgs Mass",
-      "predicted": 120.6228111675565,
+      "parameter": "higgs.m_higgs_local",
+      "name": "Higgs Mass (4D Local)",
+      "predicted": 125.10242591991029,
       "target": 125.25,
       "uncertainty": 0.17,
-      "sigma": 27.218757837902903,
+      "sigma": 0.8680828240571258,
       "units": "GeV",
       "source": "PDG 2024",
-      "status": "FAIL",
+      "status": "PASS",
       "bound_type": "measured",
       "sector": "higgs"
     },

@@ -1,7 +1,7 @@
 {
   "version": "16.0",
-  "generated": "2025-12-31T02:12:10.268768Z",
-  "total_scripts": 60,
+  "generated": "2025-12-31T02:52:53.423757Z",
+  "total_scripts": 61,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -416,6 +416,14 @@
       "isV16": true,
       "scripts": [
         {
+          "file": "higgs_brane_partition_v16_2.py",
+          "path": "simulations/v16/higgs/higgs_brane_partition_v16_2.py",
+          "version": "16.2",
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "higgs_vev_derivation_v16_1.py",
           "path": "simulations/v16/higgs/higgs_vev_derivation_v16_1.py",
           "version": "16.1",
@@ -432,7 +440,7 @@
           "status": null
         }
       ],
-      "count": 2
+      "count": 3
     },
     "v16/introduction": {
       "title": "Introduction",
