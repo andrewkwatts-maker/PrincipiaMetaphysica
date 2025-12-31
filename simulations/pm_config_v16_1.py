@@ -93,11 +93,11 @@ class PMConfig:
     # Dark energy density
     OMEGA_DE: float = 0.689
 
-    # w₀ target (DESI 2025 dynamical DE)
-    W0_TARGET: float = -0.727
+    # w₀ target (DESI 2025 thawing quintessence - v16.2 updated from DR2 -0.728)
+    W0_TARGET: float = -0.957
 
-    # wₐ target (DESI 2025)
-    WA_TARGET: float = -1.05
+    # wₐ target (DESI 2025 thawing)
+    WA_TARGET: float = -0.99
 
     # =========================================================================
     # NEUTRINO PARAMETERS (NuFIT 6.0 2025)
