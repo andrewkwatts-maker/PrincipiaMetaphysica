@@ -524,8 +524,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 
+    <!-- PM Simulation Loader Module -->
+    <script src="../js/pm-simulation-loader.js"></script>
+
     <script>
-        // GitHub API configuration
+        // GitHub API configuration (kept for backwards compatibility)
         const GITHUB_REPO = 'andrewkwatts-maker/PrincipiaMetaphysica';
         const GITHUB_BRANCH = 'main';
         const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
@@ -1462,15 +1465,63 @@
         }
 
         // Initialize page
-        document.addEventListener('DOMContentLoaded', () => {
-            loadSimulationIndex();
-            initIndexLinks();
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Try using PMSimLoader if available (new approach)
+            if (window.PMSimLoader) {
+                console.log('[Simulations] Using PMSimLoader module');
+
+                // Listen for simulations ready event
+                document.addEventListener('pm-simulations-ready', (e) => {
+                    console.log('[Simulations] Ready:', e.detail);
+                    const statsEl = document.getElementById('index-stats');
+                    if (statsEl) {
+                        statsEl.style.display = 'flex';
+                        document.getElementById('total-scripts').textContent = `${e.detail.scriptCount} scripts`;
+                        document.getElementById('total-categories').textContent = `${PMSimLoader.getSortedCategories().length} categories`;
+                        document.getElementById('latest-version').textContent = `v${e.detail.index.version}`;
+                    }
+                });
+
+                // Render using new loader
+                await PMSimLoader.render({
+                    indexContainer: 'index-container',
+                    categoriesContainer: 'simulation-categories-container',
+                    loadingIndicator: 'simulations-loading'
+                });
+
+                // Setup search
+                const searchInput = document.getElementById('sim-search');
+                if (searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        const query = e.target.value.trim();
+                        if (query.length >= 2) {
+                            const results = PMSimLoader.searchScripts(query);
+                            console.log('[Simulations] Search results:', results.length);
+                            // Highlight matching scripts (future enhancement)
+                        }
+                    });
+                }
+            } else {
+                // Fallback to original inline implementation
+                console.log('[Simulations] Using fallback inline implementation');
+                loadSimulationIndex();
+                initIndexLinks();
+            }
 
             // Show main content (auth system will handle this normally)
             const mainContent = document.getElementById('main-content');
             if (mainContent) {
                 mainContent.style.display = 'block';
                 document.body.classList.remove('auth-loading');
+            }
+        });
+
+        // Listen for auth/data ready events
+        document.addEventListener('pm-data-ready', () => {
+            console.log('[Simulations] pm-data-ready event received');
+            const mainContent = document.getElementById('main-content');
+            if (mainContent && mainContent.style.display === 'none') {
+                mainContent.style.display = 'block';
             }
         });
     </script>

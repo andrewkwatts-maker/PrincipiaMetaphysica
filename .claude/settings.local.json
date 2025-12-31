@@ -459,7 +459,8 @@
       "Bash(xargs rm -rf)",
       "Bash(for f in Pages/beginners-guide.html Pages/formulas.html Pages/foundations.html Pages/paper.html Pages/philosophical-implications.html Pages/references.html Pages/sections.html Pages/simulations.html Pages/visualization-index.html)",
       "Bash(do [ -f \"$f\" ])",
-      "Bash(for f in js/formula-expansion.js js/formula-registry.js js/pm-constants-loader.js js/pm-formula-component.js js/pm-formula-loader.js js/pm-parameter-component.js js/pm-parameter-data.js js/pm-parameter-schema.js js/pm-tooltip-system.js js/simulation-stats.js js/validation-stats.js js/content-templates.js js/pm-paper-renderer.js js/pm-paper-tooltips.js js/pm-section-renderer.js js/pm-validation-stats.js)"
+      "Bash(for f in js/formula-expansion.js js/formula-registry.js js/pm-constants-loader.js js/pm-formula-component.js js/pm-formula-loader.js js/pm-parameter-component.js js/pm-parameter-data.js js/pm-parameter-schema.js js/pm-tooltip-system.js js/simulation-stats.js js/validation-stats.js js/content-templates.js js/pm-paper-renderer.js js/pm-paper-tooltips.js js/pm-section-renderer.js js/pm-validation-stats.js)",
+      "Bash(powershell -Command \"Get-ChildItem ''h:\\\\Github\\\\PrincipiaMetaphysica\\\\simulations'' -Directory | ForEach-Object {$_Name}\")"
     ],
     "deny": [],
     "ask": []
