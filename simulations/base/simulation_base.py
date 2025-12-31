@@ -331,6 +331,11 @@ class SimulationBase(ABC):
 
         for param_path in self.output_params:
             if param_path in results:
+                # Skip if already registered (avoid duplicate/conflict warnings)
+                # This allows GeometricAnchors to be the source of truth
+                if registry.has_param(param_path):
+                    continue
+
                 param_def = param_defs.get(param_path)
                 computed_value = results[param_path]
 
