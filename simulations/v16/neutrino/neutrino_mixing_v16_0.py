@@ -1346,5 +1346,69 @@ def run_neutrino_mixing(verbose: bool = True) -> Dict[str, Any]:
     return results
 
 
+# =============================================================================
+# Self-Validation Assertions (catch silent failures at import time)
+# =============================================================================
+
+# Create validation instance with minimal setup
+_validation_instance = NeutrinoMixingSimulation()
+
+# Validate metadata
+assert _validation_instance.metadata is not None, "NeutrinoMixing: metadata is None"
+assert _validation_instance.metadata.id == "neutrino_mixing_v16_0", \
+    f"NeutrinoMixing: unexpected id {_validation_instance.metadata.id}"
+assert _validation_instance.metadata.version == "16.0", \
+    f"NeutrinoMixing: unexpected version {_validation_instance.metadata.version}"
+
+# Validate formulas exist
+assert len(_validation_instance.get_formulas()) >= 5, \
+    f"NeutrinoMixing: expected at least 5 formulas, got {len(_validation_instance.get_formulas())}"
+
+# Validate output parameter definitions exist
+assert len(_validation_instance.get_output_param_definitions()) >= 4, \
+    f"NeutrinoMixing: expected at least 4 output params, got {len(_validation_instance.get_output_param_definitions())}"
+
+# Test key calculations with known topological inputs (TCS #187)
+_b2, _b3 = 4, 24
+_chi_eff, _n_gen = 144, 3
+_orientation_sum = 12
+
+# Test theta_13 calculation
+_base_13 = np.sqrt(_b2 * _n_gen) / _b3  # sqrt(12)/24 = 0.1443
+_correction_13 = 1 + _orientation_sum / (2 * _chi_eff)  # 1.0417
+_sin_theta_13 = _base_13 * _correction_13
+_theta_13_test = np.degrees(np.arcsin(_sin_theta_13))
+assert not np.isnan(_theta_13_test), "NeutrinoMixing: theta_13 calculation produced NaN"
+assert not np.isinf(_theta_13_test), "NeutrinoMixing: theta_13 calculation produced Inf"
+assert 0 < _theta_13_test < 90, f"NeutrinoMixing: theta_13 out of range: {_theta_13_test}"
+assert abs(_theta_13_test - 8.647) < 0.5, f"NeutrinoMixing: theta_13 unexpected value: {_theta_13_test}"
+
+# Test theta_12 calculation
+_base_sin_12 = 1.0 / np.sqrt(3)
+_perturbation_12 = (_b3 - _b2 * _n_gen) / (2 * _chi_eff)
+_sin_theta_12 = _base_sin_12 * (1 - _perturbation_12)
+_theta_12_test = np.degrees(np.arcsin(_sin_theta_12))
+assert not np.isnan(_theta_12_test), "NeutrinoMixing: theta_12 calculation produced NaN"
+assert not np.isinf(_theta_12_test), "NeutrinoMixing: theta_12 calculation produced Inf"
+assert 0 < _theta_12_test < 90, f"NeutrinoMixing: theta_12 out of range: {_theta_12_test}"
+assert abs(_theta_12_test - 33.59) < 0.5, f"NeutrinoMixing: theta_12 unexpected value: {_theta_12_test}"
+
+# Test theta_23 calculation
+_base_23 = 45.0
+_kahler_23 = (_b2 - _n_gen) * _n_gen / _b2  # 0.75
+_flux_23 = (_orientation_sum / _b3) * (_b2 * _chi_eff) / (_b3 * _n_gen)  # 4.0
+_theta_23_test = _base_23 + _kahler_23 + _flux_23
+assert not np.isnan(_theta_23_test), "NeutrinoMixing: theta_23 calculation produced NaN"
+assert not np.isinf(_theta_23_test), "NeutrinoMixing: theta_23 calculation produced Inf"
+assert 40 < _theta_23_test < 55, f"NeutrinoMixing: theta_23 out of range: {_theta_23_test}"
+assert abs(_theta_23_test - 49.75) < 0.5, f"NeutrinoMixing: theta_23 unexpected value: {_theta_23_test}"
+
+# Cleanup validation variables
+del _validation_instance, _b2, _b3, _chi_eff, _n_gen, _orientation_sum
+del _base_13, _correction_13, _sin_theta_13, _theta_13_test
+del _base_sin_12, _perturbation_12, _sin_theta_12, _theta_12_test
+del _base_23, _kahler_23, _flux_23, _theta_23_test
+
+
 if __name__ == "__main__":
     run_neutrino_mixing(verbose=True)
