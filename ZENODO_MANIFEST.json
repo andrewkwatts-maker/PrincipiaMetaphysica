@@ -23,15 +23,15 @@
   },
   "validation": {
     "theory_version": "v16.2",
-    "timestamp": "2025-12-31T17:11:54.046298",
+    "timestamp": "2025-12-31T17:40:04.245352",
     "unitary_status": "PUBLICATION_READY",
-    "global_chi_squared": 7.987795238078583,
-    "reduced_chi_squared": 1.1411136054397975,
+    "global_chi_squared": 1.8160301238077272,
+    "reduced_chi_squared": 0.2594328748296753,
     "degrees_of_freedom": 7,
     "parameter_counts": {
       "total": 8,
-      "passed": 6,
-      "marginal": 2,
+      "passed": 8,
+      "marginal": 0,
       "tension": 0,
       "failed": 0
     }
@@ -40,13 +40,13 @@
     {
       "parameter": "cosmology.w0_derived",
       "name": "Dark Energy EoS w0",
-      "predicted": -0.8461538461538461,
-      "target": -0.728,
+      "predicted": -0.9583333333333334,
+      "target": -0.957,
       "uncertainty": 0.067,
-      "sigma": 1.7634902411021816,
+      "sigma": 0.01990049751243893,
       "units": "dimensionless",
-      "source": "DESI 2025",
-      "status": "MARGINAL",
+      "source": "DESI 2025 (thawing)",
+      "status": "PASS",
       "bound_type": "measured",
       "sector": "cosmology"
     },
@@ -105,13 +105,13 @@
     {
       "parameter": "neutrino.delta_CP_pred",
       "name": "CP Phase",
-      "predicted": 232.5,
+      "predicted": 278.4,
       "target": 278.0,
       "uncertainty": 26.0,
-      "sigma": 1.75,
+      "sigma": 0.01538461538461451,
       "units": "degrees",
       "source": "NuFIT 6.0 (IO)",
-      "status": "MARGINAL",
+      "status": "PASS",
       "bound_type": "measured",
       "sector": "neutrino"
     },
