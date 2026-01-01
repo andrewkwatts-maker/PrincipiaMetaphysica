@@ -22,7 +22,9 @@
                 macros: {
                     shadow: '\\text{shadow}',
                     // Note: \gimel is built-in to MathJax 3, no need to redefine
-                    kgimel: 'k_{\\gimel}'
+                    kgimel: 'k_{\\gimel}',
+                    // Force displaystyle for fractions in display mode
+                    dfrac: ['\\displaystyle\\frac{#1}{#2}', 2]
                 }
             },
             options: {
@@ -32,6 +34,14 @@
             },
             loader: {
                 load: ['[tex]/amscd', '[tex]/physics']
+            },
+            chtml: {
+                // Ensure proper scaling of display equations
+                scale: 1.0,
+                minScale: 0.5,
+                matchFontHeight: true,
+                displayAlign: 'center',
+                displayIndent: '0'
             }
         };
     </script>
