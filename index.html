@@ -243,13 +243,15 @@
             background: rgba(139, 127, 255, 0.1);
             border: 1px solid rgba(139, 127, 255, 0.3);
             border-radius: 10px;
-            color: var(--text-primary);
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
+            font-size: 0.95rem;
             transition: all 0.3s ease;
             position: relative;
             z-index: 10;
             cursor: pointer;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
         }
 
         .download-btn:hover {
@@ -1134,10 +1136,10 @@
     <!-- v16.2 Validation Summary Banner -->
     <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.25rem; margin: 0 auto 1.5rem auto; max-width: 800px; text-align: center;">
      <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66; margin-bottom: 0.5rem;">
-      v16.2 Core Validation: <span style="color: #51cf66;">6 PASS</span> | <span style="color: #ffd43b;">2 MARGINAL</span> | <span style="color: #51cf66;">0 FAIL</span>
+      v16.2 Core Validation: <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">6</span> PASS</span> | <span style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.marginal_count">2</span> MARGINAL</span> | <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.fail_count">0</span> FAIL</span>
      </div>
      <div style="font-size: 0.9rem; color: var(--text-secondary);">
-      Reduced chi-squared = 1.14 (7 DOF) | Status: <strong style="color: #51cf66;">PUBLICATION_READY</strong>
+      Reduced chi-squared = <span class="pm-value" data-pm-value="framework_statistics.chi_squared_reduced">1.14</span> (<span class="pm-value" data-pm-value="framework_statistics.degrees_of_freedom">7</span> DOF) | Status: <strong style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.status">PUBLICATION_READY</span></strong>
      </div>
     </div>
     <!-- Dynamic Validation Metrics -->
@@ -1164,7 +1166,7 @@
         H0 Resolved
        </div>
        <div id="h0-validation" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        73.04 km/s/Mpc (0.0σ)
+        <span class="pm-value" data-pm-value="cosmology.H0_local">73.04</span> km/s/Mpc (0.0σ)
        </div>
       </div>
      </div>
@@ -1182,7 +1184,7 @@
      <ul style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.8; margin: 0.75rem 0 0 1.5rem;">
       <li><strong>VEV coefficient</strong> = 1.5859 (<a href="simulations/vev_coefficient_v12_8.py" style="color: #8b7fff;">semi-derived from ln(M<sub>Pl</sub>/v<sub>EW</sub>)/b₃ + |T<sub>ω</sub>|/b₃</a>)</li>
       <li><strong>1/α<sub>GUT</sub> coefficient</strong> = 1/(10π) ≈ 0.0318 (<a href="simulations/derive_alpha_gut.py" style="color: #8b7fff;">geometric from 5-cycle measure</a>)</li>
-      <li><strong>Higgs mass</strong>: m<sub>h</sub> = 125.10 GeV fixes Re(T) = 7.086 (observational constraint)</li>
+      <li><strong>Higgs mass</strong>: m<sub>h</sub> = <span class="pm-value" data-pm-value="simulations.higgs_mass.m_h_GeV">125.10</span> GeV fixes Re(T) = 7.086 (observational constraint)</li>
      </ul>
      <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.75rem; font-style: italic;">
       <strong>Calibrated (pending Yukawa calculation):</strong> θ₁₃, δ<sub>CP</sub> fitted to NuFIT 6.0; geometric derivation from triple cycle intersections planned for v13.0.
@@ -1417,7 +1419,7 @@
        H0 Tension Resolved (v16.2)
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       H0 = 73.04 km/s/Mpc exactly matches SH0ES 2025 (<strong style="color: #51cf66;">0.0σ</strong>). Early-late universe discrepancy explained by scale-dependent dark energy w(z).
+       H0 = <span class="pm-value" data-pm-value="cosmology.H0_local">73.04</span> km/s/Mpc exactly matches SH0ES 2025 (<strong style="color: #51cf66;">0.0σ</strong>). Early-late universe discrepancy explained by scale-dependent dark energy w(z).
       </p>
      </div>
      <div id="issue-pmns-matrix" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="pmns_matrix.complete_derivation">
@@ -1469,7 +1471,7 @@
        DESI 2025 Thawing (v16.2)
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0;">
-       w₀ = -23/24 = -0.9583 matches DESI 2025 thawing constraint (-0.957 ± 0.067) with <strong style="color: #51cf66;">0.02σ (PASS)</strong>. Formula: w₀ = -1 + 1/b₃.
+       w₀ = -23/24 = <span class="pm-value" data-pm-value="parameters.dark_energy.w0">-0.9583</span> matches DESI 2025 thawing constraint (<span class="pm-value" data-pm-value="parameters.dark_energy.w0.experimental.value">-0.957</span> ± <span class="pm-value" data-pm-value="parameters.dark_energy.w0.experimental.uncertainty">0.067</span>) with <strong style="color: #51cf66;">0.02σ (PASS)</strong>. Formula: w₀ = -1 + 1/b₃.
       </p>
      </div>
      <div id="issue-dimensional-framework" style="background: rgba(81, 207, 102, 0.1); padding: 1.25rem; border-radius: 10px; border-left: 3px solid #51cf66;" data-topic-id="geometric_framework.dimensional_reduction">

@@ -48,15 +48,21 @@ def save_json(path: Path, data: Any, indent: int = 2) -> None:
 def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     """Split theory_output.json into component files."""
 
+    # v16.2 DOI for sterile model
+    DOI = "10.5281/zenodo.18079602"
+    DEFAULT_VERSION = "16.2"
+
     print(f"Loading {theory_path}...")
     data = load_json(theory_path)
 
-    print(f"\nSplitting into components in {output_dir}/")
+    version = data.get('version', DEFAULT_VERSION)
+    print(f"\nSplitting into components in {output_dir}/ (v{version}, DOI: {DOI})")
 
     # 1. Formulas - largest component
     if 'formulas' in data:
         formulas_data = {
-            'version': data.get('version', '16.0'),
+            'version': version,
+            'doi': DOI,
             'count': len(data['formulas']),
             'formulas': data['formulas']
         }
@@ -65,7 +71,8 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     # 2. Parameters
     if 'parameters' in data:
         params_data = {
-            'version': data.get('version', '16.0'),
+            'version': version,
+            'doi': DOI,
             'parameters': data['parameters']
         }
         save_json(output_dir / 'parameters.json', params_data)
@@ -73,14 +80,16 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     # 3. Foundations
     if 'foundations' in data:
         foundations_data = {
-            'version': data.get('version', '16.0'),
+            'version': version,
+            'doi': DOI,
             'foundations': data['foundations']
         }
         save_json(output_dir / 'foundations.json', foundations_data)
 
     # 4. Statistics (combine statistics and framework_statistics)
     stats_data = {
-        'version': data.get('version', '16.0'),
+        'version': version,
+        'doi': DOI,
         'statistics': data.get('statistics', {}),
         'framework_statistics': data.get('framework_statistics', {})
     }
@@ -89,14 +98,17 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     # 5. Simulations
     if 'simulations' in data:
         sims_data = {
-            'version': data.get('version', '16.0'),
+            'version': version,
+            'doi': DOI,
             'simulations': data['simulations']
         }
         save_json(output_dir / 'simulations.json', sims_data)
 
     # 6. Metadata (version, validation, config)
     metadata = {
-        'version': data.get('version', '16.0'),
+        'version': version,
+        'doi': DOI,
+        'model_type': 'STERILE',
         'config_source': data.get('config_source', 'config.py'),
         'all_passed': data.get('all_passed', True),
         'validation_summary': data.get('validation_summary', {}),
@@ -107,7 +119,8 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
     # 7. Sections (for sections.html and paper.html)
     if 'sections' in data:
         sections_data = {
-            'version': data.get('version', '16.0'),
+            'version': version,
+            'doi': DOI,
             'count': len(data['sections']),
             'sections': data['sections']
         }
@@ -115,7 +128,8 @@ def split_theory_output(theory_path: Path, output_dir: Path) -> bool:
 
     # 8. Create index file listing all components
     index = {
-        'version': data.get('version', '16.0'),
+        'version': version,
+        'doi': DOI,
         'components': [
             {'name': 'formulas', 'file': 'formulas.json', 'description': 'Formula definitions'},
             {'name': 'parameters', 'file': 'parameters.json', 'description': 'Parameter values'},

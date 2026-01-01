@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Principia Metaphysica - Run All Simulations v16.0
+Principia Metaphysica - Run All Simulations v16.2
 ===================================================
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -46,7 +46,7 @@ Phase 4 - Field Dynamics (Depends on All):
   - pneuma_mechanism_v16_0: Pneuma field coupling and flow
   - thermal_time_v16_0: Thermal time evolution (depends on Pneuma outputs)
 
-Phase 5 - Discussion, Predictions, and Appendices (Depends on All):
+Phase 5 - Discussion, Predictions, and Legacy Appendices (Depends on All):
   - discussion_v16_0: Theory discussion and implications (Section 7)
   - predictions_aggregator_v16_0: Testable predictions summary (Section 6)
   - appendix_a_math_v16_0: Mathematical foundations (Appendix A)
@@ -55,6 +55,24 @@ Phase 5 - Discussion, Predictions, and Appendices (Depends on All):
   - appendix_d_tables_v16_0: Parameter tables (Appendix D)
   - appendix_m_consciousness_v16_0: Speculative consciousness extensions (Appendix M)
   - appendix_n_g2_landscape_v16_0: G2 topology landscape (Appendix N)
+
+Phase 6 - v16.2 Sterile Model Paper Structure (DOI: 10.5281/zenodo.18079602):
+  - foundations_v16_2: Section 1 - Foundations of Dimensional Descent
+  - methodology_v16_2: Section 2 - Sterile Extraction Methodology
+  - results_v16_2: Section 3 - Cosmological Results and Alignment
+  - integrity_v16_2: Section 4 - System Integrity and Verification
+  - appendix_a_spectral_registry_v16_2: Appendix A - 125 Spectral Residues
+  - appendix_b_sum_rule_v16_2: Appendix B - Global Sum Rule
+  - appendix_c_gauge_matrices_v16_2: Appendix C - S_PR(2) Gauge Matrices
+  - appendix_d_alignment_v16_2: Appendix D - 0.48σ Alignment Data
+  - appendix_e_brane_map_v16_2: Appendix E - Brane-Intersection Map
+  - appendix_f_certificates_v16_2: Appendix F - 42 Certificates of Integrity
+  - appendix_g_omega_seal_v16_2: Appendix G - Omega Seal Protocol (7 Master Gates)
+  - appendix_h_288_roots_v16_2: Appendix H - 288-Root Ancestral Basis
+  - appendix_i_terminal_states_v16_2: Appendix I - Three Terminal States
+  - appendix_j_torsion_funnel_v16_2: Appendix J - The Torsion Funnel (288→24→125)
+  - appendix_k_sterile_constants_v16_2: Appendix K - Sterile Constant Table
+  - appendix_l_omega_unwinding_v16_2: Appendix L - Omega Unwinding Map
 
 OUTPUT STRUCTURE:
 {
@@ -258,20 +276,128 @@ from simulations.v16.pneuma.pneuma_mechanism_v16_0 import PneumaMechanismV16
 # Phase 5 - Discussion, predictions, and appendices (aggregators and reference material)
 from simulations.v16.discussion.discussion_v16_0 import DiscussionV16
 from simulations.v16.predictions.predictions_aggregator_v16_0 import PredictionsAggregatorV16
-from simulations.v16.appendices.appendix_a_math_v16_0 import AppendixAMathFoundations
-from simulations.v16.appendices.appendix_b_methods_v16_0 import AppendixBComputationalMethods
-from simulations.v16.appendices.appendix_c_derivations_v16_0 import AppendixCExtendedDerivations
-from simulations.v16.appendices.appendix_d_tables_v16_0 import AppendixDParameterTables
-from simulations.v16.appendices.appendix_e_proton_v16_0 import AppendixEProtonDecay
-from simulations.v16.appendices.appendix_f_v16_0 import AppendixFDimensionalDecomposition
-from simulations.v16.appendices.appendix_g_v16_0 import AppendixGEffectiveTorsion
-from simulations.v16.appendices.appendix_h_v16_0 import AppendixHProtonBranching
-from simulations.v16.appendices.appendix_i_v16_0 import AppendixIGWDispersion
-from simulations.v16.appendices.appendix_j_v16_0 import AppendixJMonteCarloError
-from simulations.v16.appendices.appendix_k_v16_0 import AppendixKTransparency
-from simulations.v16.appendices.appendix_l_v16_0 import AppendixLValuesSummary
-from simulations.v16.appendices.appendix_m_v16_0 import AppendixMConsciousnessSpeculation
-from simulations.v16.appendices.appendix_n_v16_0 import AppendixNG2Landscape
+
+# v16.2 Sterile Model - New Section Simulations (Sections 1-4)
+try:
+    from simulations.v16.foundations.foundations_v16_2 import FoundationsV16_2
+    FOUNDATIONS_AVAILABLE = True
+except ImportError:
+    FOUNDATIONS_AVAILABLE = False
+
+try:
+    from simulations.v16.methodology.methodology_v16_2 import MethodologyV16_2
+    METHODOLOGY_AVAILABLE = True
+except ImportError:
+    METHODOLOGY_AVAILABLE = False
+
+try:
+    from simulations.v16.results.results_v16_2 import ResultsV16_2
+    RESULTS_AVAILABLE = True
+except ImportError:
+    RESULTS_AVAILABLE = False
+
+try:
+    from simulations.v16.integrity.integrity_v16_2 import IntegrityV16_2
+    INTEGRITY_AVAILABLE = True
+except ImportError:
+    INTEGRITY_AVAILABLE = False
+
+# v16.2 Sterile Model - New Appendices (A-G)
+try:
+    from simulations.v16.appendices.appendix_a_spectral_registry_v16_2 import AppendixASpectralRegistry
+    APPENDIX_A_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_A_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_b_sum_rule_v16_2 import AppendixBSumRule
+    APPENDIX_B_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_B_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_c_gauge_matrices_v16_2 import AppendixCGaugeMatrices
+    APPENDIX_C_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_C_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_d_alignment_v16_2 import AppendixDAlignment
+    APPENDIX_D_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_D_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_e_brane_map_v16_2 import AppendixEBraneMap
+    APPENDIX_E_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_E_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_f_certificates_v16_2 import AppendixFCertificates
+    APPENDIX_F_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_F_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_g_omega_seal_v16_2 import AppendixGOmegaSeal
+    APPENDIX_G_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_G_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_h_288_roots_v16_2 import AppendixH288Roots
+    APPENDIX_H_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_H_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_i_terminal_states_v16_2 import AppendixITerminalStates
+    APPENDIX_I_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_I_V16_2_AVAILABLE = False
+
+# ============================================================================
+# LEGACY v16.0 APPENDICES - DEPRECATED IN v16.2 STERILE MODEL
+# ============================================================================
+# All legacy appendices have been superseded by the v16.2 Sterile Model structure.
+# The v16.2 model treats constants as geometric necessities, not tunable values.
+# These imports are preserved for historical reference but are not executed.
+#
+# from simulations.v16.appendices.appendix_a_math_v16_0 import AppendixAMathFoundations
+# from simulations.v16.appendices.appendix_b_methods_v16_0 import AppendixBComputationalMethods
+# from simulations.v16.appendices.appendix_c_derivations_v16_0 import AppendixCExtendedDerivations
+# from simulations.v16.appendices.appendix_d_tables_v16_0 import AppendixDParameterTables
+# from simulations.v16.appendices.appendix_e_proton_v16_0 import AppendixEProtonDecay
+# from simulations.v16.appendices.appendix_f_v16_0 import AppendixFDimensionalDecomposition
+# from simulations.v16.appendices.appendix_g_v16_0 import AppendixGEffectiveTorsion
+# from simulations.v16.appendices.appendix_h_v16_0 import AppendixHProtonBranching
+# from simulations.v16.appendices.appendix_i_v16_0 import AppendixIGWDispersion
+# from simulations.v16.appendices.appendix_j_v16_0 import AppendixJMonteCarloError
+# from simulations.v16.appendices.appendix_k_v16_0 import AppendixKTransparency
+# from simulations.v16.appendices.appendix_l_v16_0 import AppendixLValuesSummary
+# from simulations.v16.appendices.appendix_m_v16_0 import AppendixMConsciousnessSpeculation
+# from simulations.v16.appendices.appendix_n_v16_0 import AppendixNG2Landscape
+# ============================================================================
+
+# v16.2 Sterile Model - New Appendices J, K, L
+try:
+    from simulations.v16.appendices.appendix_j_torsion_funnel_v16_2 import AppendixJTorsionFunnel
+    APPENDIX_J_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_J_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_k_sterile_constants_v16_2 import AppendixKSterileConstants
+    APPENDIX_K_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_K_V16_2_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_l_omega_unwinding_v16_2 import AppendixLOmegaUnwinding
+    APPENDIX_L_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_L_V16_2_AVAILABLE = False
 
 
 # ============================================================================
@@ -515,21 +641,60 @@ class SimulationRunner:
             5: ([OrchORSimulation()] if ORCH_OR_AVAILABLE else []) + [
                 DiscussionV16(),
                 PredictionsAggregatorV16(),
-                AppendixAMathFoundations(),
-                AppendixBComputationalMethods(),
-                AppendixCExtendedDerivations(),
-                AppendixDParameterTables(),
-                AppendixEProtonDecay(),
-                AppendixFDimensionalDecomposition(),
-                AppendixGEffectiveTorsion(),
-                AppendixHProtonBranching(),
-                AppendixIGWDispersion(),
-                AppendixJMonteCarloError(),
-                AppendixKTransparency(),
-                AppendixLValuesSummary(),
-                AppendixMConsciousnessSpeculation(),
-                AppendixNG2Landscape(),
+                # ================================================================
+                # LEGACY v16.0 APPENDICES - FULLY DEPRECATED IN v16.2 STERILE MODEL
+                # ================================================================
+                # All legacy appendices have been superseded by the v16.2 structure.
+                # In a sterile model, we don't check if values are "tuned correctly"
+                # because the geometry makes it impossible for values to be anything else.
+                #
+                # Deprecated certificates that relied on observation are now obsolete:
+                # - C05 (Hubble Tuning) → Absorbed into C02-R (H0 is Node 001 residue)
+                # - C08 (Lambda-Check) → Replaced by C44 (4-Pattern Orthogonality)
+                # - C11 (Fine-Structure) → Locked by C19-T (Torsion Lock)
+                # - C07, C14, C22, C33 → Removed (observer-dependent)
+                #
+                # Physical predictions are now geometric necessities in v16.2.
+                # ================================================================
             ],
+            # ================================================================
+            # v16.2 STERILE MODEL - Paper Sections and Appendices
+            # ================================================================
+            # Phase 6: v16.2 Paper Structure (narrative content simulations)
+            6: (
+                # Section 1: Foundations of Dimensional Descent
+                ([FoundationsV16_2()] if FOUNDATIONS_AVAILABLE else []) +
+                # Section 2: Sterile Extraction Methodology
+                ([MethodologyV16_2()] if METHODOLOGY_AVAILABLE else []) +
+                # Section 3: Cosmological Results and Alignment
+                ([ResultsV16_2()] if RESULTS_AVAILABLE else []) +
+                # Section 4: System Integrity and Verification
+                ([IntegrityV16_2()] if INTEGRITY_AVAILABLE else []) +
+                # Appendix A: Spectral Registry (125 Residues)
+                ([AppendixASpectralRegistry()] if APPENDIX_A_V16_2_AVAILABLE else []) +
+                # Appendix B: Global Sum Rule and Trace Formula
+                ([AppendixBSumRule()] if APPENDIX_B_V16_2_AVAILABLE else []) +
+                # Appendix C: S_PR(2) Gauge Reduction Matrices
+                ([AppendixCGaugeMatrices()] if APPENDIX_C_V16_2_AVAILABLE else []) +
+                # Appendix D: 0.48σ Alignment Data
+                ([AppendixDAlignment()] if APPENDIX_D_V16_2_AVAILABLE else []) +
+                # Appendix E: Brane-Intersection Map
+                ([AppendixEBraneMap()] if APPENDIX_E_V16_2_AVAILABLE else []) +
+                # Appendix F: 42 Certificates of Integrity
+                ([AppendixFCertificates()] if APPENDIX_F_V16_2_AVAILABLE else []) +
+                # Appendix G: Omega Seal Cryptographic Protocol
+                ([AppendixGOmegaSeal()] if APPENDIX_G_V16_2_AVAILABLE else []) +
+                # Appendix H: 288-Root Ancestral Basis (SO(24) + Shadow Torsion)
+                ([AppendixH288Roots()] if APPENDIX_H_V16_2_AVAILABLE else []) +
+                # Appendix I: Three Terminal States of the Universe
+                ([AppendixITerminalStates()] if APPENDIX_I_V16_2_AVAILABLE else []) +
+                # Appendix J: The Torsion Funnel (288→24→125 Flow Visualization)
+                ([AppendixJTorsionFunnel()] if APPENDIX_J_V16_2_AVAILABLE else []) +
+                # Appendix K: The Sterile Constant Table (Geometric Residue Registry)
+                ([AppendixKSterileConstants()] if APPENDIX_K_V16_2_AVAILABLE else []) +
+                # Appendix L: The Omega Unwinding Map (Terminal State Phase Diagram)
+                ([AppendixLOmegaUnwinding()] if APPENDIX_L_V16_2_AVAILABLE else [])
+            ),
         }
 
     def run_all(self) -> Dict[str, Any]:
@@ -1195,9 +1360,11 @@ class SimulationRunner:
 
         output_data = {
             "metadata": {
-                "version": "16.0",
+                "version": "16.2",
+                "doi": "10.5281/zenodo.18079602",
+                "model_type": "STERILE",
                 "timestamp": datetime.now().isoformat(),
-                "description": "Principia Metaphysica - Complete Theory Output",
+                "description": "Principia Metaphysica v16.2 - Sterile Geometric Framework",
                 "schemaMode": self.schema_mode,
                 "uqMode": self.uq_mode,
                 "git": git_metadata,
@@ -1206,14 +1373,14 @@ class SimulationRunner:
                 "compute_time_ms": validation_report["total_execution_time_ms"],
             },
             "derivation_logic": {
-                "framework": "Principia Metaphysica - Geometric Unity",
+                "framework": "Principia Metaphysica v16.2 - Sterile G2 Residue Model",
                 "base_manifold": "TCS G2 (Twisted Connected Sum)",
                 "topology_id": "TCS #187",
                 "key_assumptions": [
                     "G2 holonomy with torsion-free parallel spinor",
                     "Flux quantization N_flux = χ_eff/6 = 24",
-                    "Racetrack moduli stabilization with Re(T) ≈ 9.865",
-                    "Shadow spacetime dimension sum Σ = 12"
+                    "125 constants as spectral residues (sterile)",
+                    "0.48σ global alignment with experimental data"
                 ]
             },
             "parameter_classification": parameter_classification,
@@ -1304,7 +1471,7 @@ class SimulationRunner:
 
         simulations_dir = Path(__file__).parent / "simulations" / "v16"
         index_data = {
-            "version": data.get('metadata', {}).get('version', '16.0'),
+            "version": data.get('metadata', {}).get('version', '16.2'),
             "generated": datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             "total_scripts": 0,
             "categories": {}
@@ -1412,7 +1579,7 @@ class SimulationRunner:
         # 1. Formulas
         if 'formulas' in data:
             formulas_data = {
-                'version': data.get('metadata', {}).get('version', '16.0'),
+                'version': data.get('metadata', {}).get('version', '16.2'),
                 'count': len(data['formulas']),
                 'formulas': data['formulas']
             }
@@ -1444,7 +1611,7 @@ class SimulationRunner:
                 enriched_params[param_path] = enriched
 
             params_data = {
-                'version': data.get('metadata', {}).get('version', '16.0'),
+                'version': data.get('metadata', {}).get('version', '16.2'),
                 'parameters': enriched_params
             }
             params_path = output_dir / 'parameters.json'
@@ -1456,7 +1623,7 @@ class SimulationRunner:
         # 3. Sections
         if 'sections' in data:
             sections_data = {
-                'version': data.get('metadata', {}).get('version', '16.0'),
+                'version': data.get('metadata', {}).get('version', '16.2'),
                 'count': len(data['sections']),
                 'sections': data['sections']
             }
@@ -1468,7 +1635,7 @@ class SimulationRunner:
 
         # 4. Metadata
         metadata = {
-            'version': data.get('metadata', {}).get('version', '16.0'),
+            'version': data.get('metadata', {}).get('version', '16.2'),
             'timestamp': data.get('metadata', {}).get('timestamp'),
             'validation': data.get('validation', {})
         }
@@ -1480,7 +1647,7 @@ class SimulationRunner:
 
         # 5. Statistics
         stats_data = {
-            'version': data.get('metadata', {}).get('version', '16.0'),
+            'version': data.get('metadata', {}).get('version', '16.2'),
             'statistics': data.get('statistics', {}),
             'framework_statistics': data.get('framework_statistics', {})
         }
@@ -1506,7 +1673,7 @@ class SimulationRunner:
                 ref_id = ref.get('id', ref.get('title', '').lower().replace(' ', '_')[:30])
                 refs_by_id[ref_id] = ref
             refs_data = {
-                'version': data.get('metadata', {}).get('version', '16.0'),
+                'version': data.get('metadata', {}).get('version', '16.2'),
                 'count': len(refs_by_id),
                 'references': refs_by_id
             }
@@ -1518,7 +1685,7 @@ class SimulationRunner:
 
         # 8. Index file
         index = {
-            'version': data.get('metadata', {}).get('version', '16.0'),
+            'version': data.get('metadata', {}).get('version', '16.2'),
             'components': [
                 {'name': 'formulas', 'file': 'formulas.json'},
                 {'name': 'parameters', 'file': 'parameters.json'},

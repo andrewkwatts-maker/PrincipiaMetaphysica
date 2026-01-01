@@ -671,6 +671,9 @@
 
             document.addEventListener('touchstart', (e) => {
                 const target = e.target.closest('.pm-value, .param-card, .param-chip, [data-param-id], .status-badge');
+                // Skip elements handled by pm-paper-tooltips.js
+                if (target && target.hasAttribute('data-paper-tooltip')) return;
+
                 if (target) {
                     e.preventDefault();
 
@@ -720,6 +723,9 @@
         } else {
             // Desktop: use mouse events
             document.addEventListener('mouseover', (e) => {
+                // Skip elements handled by pm-paper-tooltips.js
+                if (e.target.hasAttribute('data-paper-tooltip')) return;
+
                 if (e.target.classList.contains('pm-value') && e.target._pmObject) {
                     const content = typeof PM !== 'undefined' && PM.getTooltip
                         ? PM.getTooltip(e.target._pmObject)
@@ -729,6 +735,9 @@
             });
 
             document.addEventListener('mouseout', (e) => {
+                // Skip elements handled by pm-paper-tooltips.js
+                if (e.target.hasAttribute('data-paper-tooltip')) return;
+
                 if (e.target.classList.contains('pm-value')) {
                     removeTooltip();
                 }

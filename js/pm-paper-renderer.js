@@ -1175,10 +1175,22 @@
 
         // Get LaTeX code - try multiple sources
         let latex = block.latex || formulaData?.latex || '';
+        let formulaCaption = '';
 
         // If no LaTeX but has content, try to convert content to LaTeX
         if (!latex && block.content) {
-            latex = convertToLatex(block.content);
+            let contentToParse = block.content;
+
+            // Extract caption (text after em-dash on its own line or at end)
+            // Matches: "\n— Caption" or just "— Caption" at end
+            const captionMatch = contentToParse.match(/(?:\n|^)\s*[—–-]\s*([^\n]+)$/);
+            if (captionMatch) {
+                formulaCaption = captionMatch[1].trim();
+                // Remove caption from content before LaTeX conversion
+                contentToParse = contentToParse.replace(/(?:\n|^)\s*[—–-]\s*[^\n]+$/, '');
+            }
+
+            latex = convertToLatex(contentToParse);
         }
 
         // If we still have no formula ID and no LaTeX, fall back to null
@@ -1209,6 +1221,11 @@
             html += `<div class="equation-number">(${equationNumber})</div>`;
         }
         html += '</div>';
+
+        // Formula caption (extracted from content, styled as italic and light)
+        if (formulaCaption) {
+            html += `<div class="equation-caption"><em>${formulaCaption}</em></div>`;
+        }
 
         // Plain text is removed from display - LaTeX is the primary representation
         // (Plain text kept in data for search/accessibility but not rendered visually)
@@ -1753,6 +1770,11 @@
         if (!content || typeof content !== 'string') return '';
 
         return content
+            // HTML subscripts and superscripts - convert to LaTeX FIRST
+            .replace(/<sub>([^<]+)<\/sub>/gi, '_{$1}')
+            .replace(/<sup>([^<]+)<\/sup>/gi, '^{$1}')
+            // Strip any remaining HTML tags
+            .replace(/<[^>]+>/g, '')
             // Greek letters
             .replace(/α/g, '\\alpha ')
             .replace(/β/g, '\\beta ')
@@ -1832,8 +1854,10 @@
             .replace(/ℷ/g, '\\gimel ')
             .replace(/ℵ/g, '\\aleph ')
             .replace(/ℶ/g, '\\beth ')
-            // Text dashes as separators
-            .replace(/—/g, '\\quad \\text{—} \\quad ')
+            // Text dashes - minimal rendering (captions extracted separately)
+            .replace(/—/g, ' \\text{—} ')
+            .replace(/–/g, ' \\text{–} ')
+            // Newlines become line breaks
             .replace(/\n/g, ' \\\\ ')
             // Mathematical Greek (U+1D6AA-U+1D6E1)
             .replace(/𝛤/g, '\\Gamma ')

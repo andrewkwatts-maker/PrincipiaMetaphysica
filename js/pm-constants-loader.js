@@ -111,6 +111,21 @@
             'parameters.dark_energy.w0.experimental.uncertainty': 'desi.w0.uncertainty',
 
             // ================================================================
+            // Hubble Constant (Cosmology)
+            // H0_local = 73.04 (SH0ES), H0_early = 67.4 (Planck CMB)
+            // ================================================================
+            'cosmology.H0_local': 'cosmology.H0_late_evolved',
+            'cosmology.H0_early': 'cosmology.H0_early_normalized',
+            'cosmology.H0': 'cosmology.H0_late_evolved',
+            'hubble.H0_local': 'cosmology.H0_late_evolved',
+            'hubble.H0_early': 'cosmology.H0_early_normalized',
+            'hubble.H0_SH0ES': 'cosmology.H0_late_evolved',
+            'hubble.H0_Planck': 'cosmology.H0_early_normalized',
+            'parameters.cosmology.H0': 'cosmology.H0_late_evolved',
+            'parameters.cosmology.H0_local': 'cosmology.H0_late_evolved',
+            'parameters.cosmology.H0_early': 'cosmology.H0_early_normalized',
+
+            // ================================================================
             // Higgs mass
             // HTML uses simulations.higgs_mass.X, JSON uses higgs.X or pdg.X
             // ================================================================
