@@ -34,5 +34,23 @@
       "description": "Reduced Planck mass (M_Pl / sqrt(8*pi)) - INPUT for PM 26D string tension",
       "note": "This is constants.M_PLANCK in the registry - the 26D INPUT, not the comparison target"
     }
+  },
+  "alpha_inverse": {
+    "value": 137.035999177,
+    "uncertainty": 0.01,
+    "units": "dimensionless",
+    "description": "Inverse fine structure constant"
+  },
+  "M_PLANCK": {
+    "value": 1.220890e19,
+    "uncertainty": 1.9e15,
+    "units": "GeV",
+    "description": "Full Planck mass (sqrt(hbar*c/G))"
+  },
+  "mu_pe": {
+    "value": 1836.15267343,
+    "uncertainty": 2.0,
+    "units": "dimensionless",
+    "description": "Proton-to-electron mass ratio"
   }
 }
