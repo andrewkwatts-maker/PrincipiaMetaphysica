@@ -101,5 +101,29 @@
   "verification": {
     "checksum_sha256": "pending",
     "last_verified": "2025-01-15"
+  },
+  "theta_12": {
+    "value": 33.41,
+    "uncertainty": 0.75,
+    "units": "degrees",
+    "description": "Solar mixing angle (NO)"
+  },
+  "theta_13": {
+    "value": 8.54,
+    "uncertainty": 0.12,
+    "units": "degrees",
+    "description": "Reactor mixing angle (NO)"
+  },
+  "theta_23_IO": {
+    "value": 49.3,
+    "uncertainty": 1.0,
+    "units": "degrees",
+    "description": "Atmospheric mixing angle (IO, upper octant)"
+  },
+  "delta_CP_IO": {
+    "value": 278,
+    "uncertainty": 26,
+    "units": "degrees",
+    "description": "CP-violating phase (IO)"
   }
 }

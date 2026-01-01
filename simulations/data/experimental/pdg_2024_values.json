@@ -170,6 +170,56 @@
       "description": "Neutron mass"
     }
   },
+  "higgs": {
+    "mass": {
+      "value": 125.10,
+      "uncertainty": 0.14,
+      "units": "GeV",
+      "description": "Higgs boson mass"
+    },
+    "vev": {
+      "value": 246.22,
+      "uncertainty": 0.50,
+      "units": "GeV",
+      "description": "Higgs vacuum expectation value (from G_F)"
+    }
+  },
+  "gauge": {
+    "sin2_theta_W": {
+      "value": 0.23121,
+      "uncertainty": 0.00004,
+      "units": "dimensionless",
+      "description": "Weak mixing angle (on-shell)"
+    },
+    "sin2_theta_W_gut": {
+      "value": 0.375,
+      "uncertainty": 0.010,
+      "units": "dimensionless",
+      "description": "Weak mixing angle at GUT scale (SO(10) theory)",
+      "bound_type": "theoretical"
+    },
+    "alpha_GUT": {
+      "value": 0.0240,
+      "uncertainty": 0.002,
+      "units": "dimensionless",
+      "description": "Unified gauge coupling at GUT scale",
+      "bound_type": "theoretical"
+    }
+  },
+  "constants": {
+    "alpha_s": {
+      "value": 0.1180,
+      "uncertainty": 0.0010,
+      "units": "dimensionless",
+      "description": "Strong coupling constant at M_Z"
+    },
+    "G_F": {
+      "value": 1.1663788e-5,
+      "uncertainty": 0.0000006e-5,
+      "units": "GeV^-2",
+      "description": "Fermi coupling constant"
+    }
+  },
   "verification": {
     "checksum_sha256": "pending",
     "last_verified": "2025-01-15"
