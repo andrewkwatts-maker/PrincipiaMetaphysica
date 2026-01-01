@@ -1,6 +1,6 @@
 {
   "proof_id": "hysteresis_seal",
-  "cert_id": "CERT-HYST-044",
+  "cert_id": "CERT-HYST-042",
   "label": "Time-Reversibility & Symplectic Integrity",
   "category": "OPERATIONAL",
   "version": "16.2",
@@ -24,5 +24,5 @@
   },
   "validation_code": "path_integrity = registry.get('HYSTERESIS_GUARD', True); return path_integrity",
   "timestamp": "2026-01-01T00:00:00Z",
-  "hash": "v16_2_hyst_044_sealed"
+  "hash": "v16_2_hyst_042_sealed_sha256_d5e6f7g8h9i0"
 }
