@@ -1,7 +1,10 @@
 {
   "proof_id": "theta_23_no",
-  "label": "Atmospheric Angle θ₂₃ (Normal Ordering)",
-  "category": "NEUTRINO",
+  "cert_id": "CERT-PMNS-018",
+  "label": "PMNS Theta23 Atmospheric",
+  "category": "COSMOLOGICAL",
+  "version": "16.2",
+  "status": "LOCKED",
   "wolfram_code": "With[{\n  b2 = 14,\n  b3 = 24,\n  nGen = 3,\n  chiEff = 144,\n  S_orient = 12\n},\n  (* Atmospheric angle from maximal mixing + topological perturbation *)\n  (* Base: tribimaximal θ₂₃ = 45° (maximal) *)\n  (* Perturbation from b₂, n_gen asymmetry and orientation *)\n  \n  thetaTBM = 45.0;  (* degrees *)\n  \n  (* Deviation from maximality *)\n  (* δθ₂₃ = (b₂ - n_gen)*n_gen/b₂ + (S_orient/b₃)*(b₂*χ_eff)/(b₃*n_gen) *)\n  \n  term1 = (b2 - nGen) * nGen / b2;  (* Betti asymmetry *)\n  term2 = (S_orient / b3) * (b2 * chiEff) / (b3 * nGen);  (* Orientation *)\n  \n  deltaTheta23 = term1 + term2;\n  theta23Deg = thetaTBM + deltaTheta23;\n  \n  (* NuFIT 6.0 Normal Ordering *)\n  nufit60NO = 49.0;  (* degrees *)\n  nufit60Uncertainty = 1.3;  (* degrees *)\n  \n  deviation = (theta23Deg - nufit60NO) / nufit60Uncertainty;\n  \n  {N[theta23Deg, 4], N[deltaTheta23, 4], N[deviation, 3]}\n]",
   "expected_result": "{46.08°, 1.08°, -2.25σ}",
   "verification_status": "verified",
