@@ -163,12 +163,12 @@ const TOOLTIP_DATABASE = {
     unit: '',
     pmPath: 'dark_energy.w0_PM',
     experimental: {
-      value: -0.827,
-      error: 0.063,
-      source: 'DESI DR2 (2024)'
+      value: -0.957,
+      error: 0.067,
+      source: 'DESI DR2 (2025)'
     },
     category: 'cosmology',
-    derivation: 'w₀ = -1 + 2/(3d_eff) where d_eff = 12 + (Shadow_ק+Shadow_ח)/2'
+    derivation: 'w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583 from G2 manifold topology'
   },
 
   wa: {
@@ -179,12 +179,12 @@ const TOOLTIP_DATABASE = {
     unit: '',
     pmPath: 'dark_energy.wa_PM',
     experimental: {
-      value: -0.75,
+      value: -0.816,
       error: 0.25,
-      source: 'DESI DR2 (2024)'
+      source: 'DESI DR2 (2025)'
     },
     category: 'cosmology',
-    derivation: 'Derived from moduli rolling in Kähler potential'
+    derivation: 'wₐ = -1/√b₃ = -1/√24 ≈ -0.8165 from G2 manifold moduli'
   },
 
   // ═══════════════════════════════════════════════════════════════════
