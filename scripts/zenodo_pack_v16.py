@@ -257,6 +257,8 @@ INCLUDE_ROOT_FILES: List[str] = [
     'IMPLEMENTATION_PLAN_v16_2.md',
     'serve.py',
     'start_server.bat',
+    'Launch.bat',
+    'run_all_simulations.py',  # For full package
 ]
 
 # ============================================================================
@@ -371,6 +373,9 @@ def strip_auth_from_html(file_path: Path) -> bool:
 
     # Remove onAuthStateChanged usage
     content = re.sub(r'onAuthStateChanged\(auth,[^}]+\}\);', '', content, flags=re.DOTALL)
+
+    # Remove auth.css link tags (various path patterns)
+    content = re.sub(r'\s*<link rel="stylesheet" href="[^"]*auth\.css">\s*\n?', '\n', content)
 
     if content != original:
         with open(file_path, 'w', encoding='utf-8') as f:
@@ -496,13 +501,20 @@ def strip_auth_from_js():
             with open(stats_js, 'r', encoding='utf-8') as f:
                 content = f.read()
             original = content
-            # Replace firebase check with offline fallback
-            content = re.sub(
-                r"if \(typeof firebase !== 'undefined' && firebase\.database\) \{.*?^\s*\}",
-                "// Firebase database check removed for offline build\n            // Using local JSON data only",
-                content,
-                flags=re.MULTILINE | re.DOTALL
-            )
+            # Replace entire firebase fallback block (lines 102-112)
+            firebase_block = """            // Fallback to Firebase if available
+            if (typeof firebase !== 'undefined' && firebase.database) {
+                try {
+                    const snapshot = await firebase.database().ref('/simulations').once('value');
+                    this._data = { simulations: snapshot.val() };
+                    this._lastUpdate = new Date().toISOString();
+                    return true;
+                } catch (e) {
+                    console.warn('SimulationStats: Could not load from Firebase:', e);
+                }
+            }"""
+            content = content.replace(firebase_block,
+                "            // Firebase fallback removed for offline build")
             if content != original:
                 with open(stats_js, 'w', encoding='utf-8') as f:
                     f.write(content)
