@@ -162,12 +162,19 @@
 }
 
 .pm-header .ticker-text {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.95);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-family: 'SF Mono', 'Fira Code', 'Monaco', monospace;
+    cursor: help;
+}
+
+/* MathJax content styling in ticker */
+.pm-header .ticker-text mjx-container,
+.pm-header .ticker-text .MathJax {
+    font-size: 1em !important;
+    color: rgba(255, 255, 255, 0.95) !important;
 }
 
 /* Main Navigation */
