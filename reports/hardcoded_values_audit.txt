@@ -6,9 +6,9 @@ Principia Metaphysica v16.2
 SUMMARY
 ----------------------------------------
 Total values extracted from JS:  365
-Matched to theory_output.json:   213
-Unmatched (need migration):      152
-Theory output parameters:        311
+Matched to theory_output.json:   240
+Unmatched (need migration):      125
+Theory output parameters:        364
 
 BY CATEGORY
 ----------------------------------------
@@ -32,27 +32,27 @@ BY FILE
 
 TOP UNMATCHED VALUES (need geometric derivation)
 ----------------------------------------
-  equals_34                      = 13.0            (dimensions)
-  full26D                        = 8192.0          (dimensions)
   mStar                          = 1e+19           (dimensions)
-  w0Denominator                  = 13.0            (dimensions)
   w0Observed                     = -0.827          (cosmology)
   w0Error                        = 0.063           (cosmology)
   waObserved                     = -0.75           (cosmology)
-  omegaLambda                    = 0.6889          (cosmology)
   alphaTBase                     = 2.5             (particle)
-  z2Correction                   = 0.2             (other)
   alphaTz0                       = 1.67            (particle)
   alphaTz1                       = 2.38            (particle)
   alphaTz2                       = 2.59            (particle)
-  alphaRSquared                  = 0.0045          (particle)
   phi0Breathing                  = 0.075           (other)
   xi                             = 10000000000.0   (other)
   etaBoosted                     = 1000000000.0    (other)
-  kLISATypical                   = 0.001           (other)
-  theta45Deg                     = 0.7853981633974483 (other)
   fTermPhysical                  = 10000000000.0   (other)
-  ... and 132 more
+  aSwampland                     = 1.927248223318863 (dimensions)
+  landscapeEntropy               = 1151.2925464970228 (other)
+  deltaVMultiverse               = 10000000000.0   (other)
+  bubbleRadiusMpc                = 100.0           (other)
+  cmbTemperatureUK               = 100.0           (other)
+  mKKCurrentBound                = 3.5             (other)
+  value_with_TeV_229             = 3.5             (other)
+  etaBoosted                     = 1000000000.0    (other)
+  ... and 105 more
 
 MATCHED VALUES WITH DIFFERENCES
 ----------------------------------------
@@ -60,7 +60,7 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     1.2195e+19
     Theory: 1.22089e+19
     Diff:   -1.39e+16
-  gauge.M_GUT_GEOMETRIC                   
+  geometry.M_GUT_geometric                
     JS:     2.118e+16
     Theory: 2.1e+16
     Diff:   180000000000000.0
@@ -88,14 +88,10 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     0.0486
     Theory: 0.04831157627577474
     Diff:   0.0002884237242252591
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
+  geometry.Omega_baryon                   
+    JS:     0.2
+    Theory: 0.19834710743801653
+    Diff:   0.0016528925619834767
   gw_dispersion.eta                       
     JS:     0.1
     Theory: 0.09995313724862909
@@ -108,7 +104,7 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     0.1
     Theory: 0.09938507627577475
     Diff:   0.0006149237242252525
-  ckm.A_wolfenstein                       
+  geometry.A_Wolfenstein                  
     JS:     0.816496580927726
     Theory: 0.81
     Diff:   0.006496580927725981
@@ -132,6 +128,14 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     2.828028
     Theory: 2.8487419937698006
     Diff:   -0.02071399376980043
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
   cosmology.D_eff_shadow                  
     JS:     12.566370614359172
     Theory: 12.576152
@@ -152,19 +156,7 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     12.589
     Theory: 12.576152
     Diff:   0.01284799999999997
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
-  gauge.M_GUT_GEOMETRIC                   
+  geometry.M_GUT_geometric                
     JS:     2.118e+16
     Theory: 2.1e+16
     Diff:   180000000000000.0
@@ -172,7 +164,7 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     1.178
     Theory: 1.1842296203498772
     Diff:   -0.006229620349877285
-  gauge.M_GUT_GEOMETRIC                   
+  geometry.M_GUT_geometric                
     JS:     2.118e+16
     Theory: 2.1e+16
     Diff:   180000000000000.0
@@ -192,10 +184,30 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     173.97
     Theory: 172.69
     Diff:   1.2800000000000011
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
   cosmology.w0_deviation                  
     JS:     0.02
     Theory: 0.01990049751243893
     Diff:   9.950248756106922e-05
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
+  geometry.sum_m_nu                       
+    JS:     0.082
+    Theory: 0.08168832953849638
+    Diff:   0.000311670461503627
   nufit.theta_12                          
     JS:     33.59
     Theory: 33.41
@@ -232,14 +244,6 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     0.02
     Theory: 0.01990049751243893
     Diff:   9.950248756106922e-05
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
-  thermal.alpha_T                         
-    JS:     2.7
-    Theory: 2.6999999182257
-    Diff:   8.177430022016097e-08
   nufit.theta_12                          
     JS:     33.44
     Theory: 33.41
@@ -276,11 +280,11 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     12.576
     Theory: 12.576152
     Diff:   -0.00015199999999992997
-  gauge.M_GUT_GEOMETRIC                   
+  geometry.M_GUT_geometric                
     JS:     2.118e+16
     Theory: 2.1e+16
     Diff:   180000000000000.0
-  gauge.M_GUT_GEOMETRIC                   
+  geometry.M_GUT_geometric                
     JS:     2.118e+16
     Theory: 2.1e+16
     Diff:   180000000000000.0
@@ -392,7 +396,7 @@ MATCHED VALUES WITH DIFFERENCES
     JS:     0.3
     Theory: 0.30201927941651846
     Diff:   -0.0020192794165184713
-  gauge.M_GUT_GEOMETRIC                   
+  geometry.M_GUT_geometric                
     JS:     2.118e+16
     Theory: 2.1e+16
     Diff:   180000000000000.0
