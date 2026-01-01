@@ -5010,7 +5010,7 @@
         },
         {
           "type": "formula",
-          "content": "ℒ_int = λ(Ψ̄Ψ)² + g·t_ortho·Ψ̄Ψ — Interaction terms for gap derivation"
+          "content": "\\mathcal{L}_{\\text{int}} = \\lambda(\\bar{\\Psi}\\Psi)^2 + g \\cdot t_{\\text{ortho}} \\cdot \\bar{\\Psi}\\Psi"
         },
         {
           "type": "paragraph",
@@ -5138,7 +5138,7 @@
         },
         {
           "type": "formula",
-          "content": "X^M X_M = 0 — Position Null Constraint\nX^M P_M = 0 — Mixed Null Constraint\nP^M P_M + M^2 = 0 — Mass-Shell Constraint\n— Null Constraints in 2T Physics (3.8)"
+          "content": "\\begin{aligned} X^M X_M &= 0 \\quad &\\text{(Position Null Constraint)} \\\\ X^M P_M &= 0 \\quad &\\text{(Mixed Null Constraint)} \\\\ P^M P_M + M^2 &= 0 \\quad &\\text{(Mass-Shell Constraint)} \\end{aligned}"
         },
         {
           "type": "paragraph",
@@ -5238,7 +5238,7 @@
         },
         {
           "type": "formula",
-          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
+          "content": "\\begin{aligned} &\\textbf{Level 1 (26D):} \\quad S = \\int d^{26}X \\sqrt{-G}\\left[R + \\bar{\\Psi}_P(i\\Gamma^M D_M - m)\\Psi_P\\right] \\\\ &\\quad\\downarrow \\text{ Sp(2,}\\mathbb{R}\\text{) gauge fixing} \\\\ &\\textbf{Level 2 (13D):} \\quad \\mathcal{L}_{13D} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\ &\\quad\\downarrow \\text{ KK reduction (13D}\\to\\text{4D)} \\\\ &\\textbf{Level 3 (4D):} \\quad f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F(\\partial_t\\tau)R \\\\ &\\textbf{Level 4 (DE):} \\quad \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\; V = V_0\\left[1 + A\\cos\\left(\\tfrac{\\omega\\phi_M}{f}\\right)\\right] \\end{aligned}"
         }
       ],
       "content_blocks": [
@@ -5410,7 +5410,7 @@
         },
         {
           "type": "formula",
-          "content": "ℒ_int = λ(Ψ̄Ψ)² + g·t_ortho·Ψ̄Ψ — Interaction terms for gap derivation"
+          "content": "\\mathcal{L}_{\\text{int}} = \\lambda(\\bar{\\Psi}\\Psi)^2 + g \\cdot t_{\\text{ortho}} \\cdot \\bar{\\Psi}\\Psi"
         },
         {
           "type": "paragraph",
@@ -5538,7 +5538,7 @@
         },
         {
           "type": "formula",
-          "content": "X^M X_M = 0 — Position Null Constraint\nX^M P_M = 0 — Mixed Null Constraint\nP^M P_M + M^2 = 0 — Mass-Shell Constraint\n— Null Constraints in 2T Physics (3.8)"
+          "content": "\\begin{aligned} X^M X_M &= 0 \\quad &\\text{(Position Null Constraint)} \\\\ X^M P_M &= 0 \\quad &\\text{(Mixed Null Constraint)} \\\\ P^M P_M + M^2 &= 0 \\quad &\\text{(Mass-Shell Constraint)} \\end{aligned}"
         },
         {
           "type": "paragraph",
@@ -5638,7 +5638,7 @@
         },
         {
           "type": "formula",
-          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
+          "content": "\\begin{aligned} &\\textbf{Level 1 (26D):} \\quad S = \\int d^{26}X \\sqrt{-G}\\left[R + \\bar{\\Psi}_P(i\\Gamma^M D_M - m)\\Psi_P\\right] \\\\ &\\quad\\downarrow \\text{ Sp(2,}\\mathbb{R}\\text{) gauge fixing} \\\\ &\\textbf{Level 2 (13D):} \\quad \\mathcal{L}_{13D} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\ &\\quad\\downarrow \\text{ KK reduction (13D}\\to\\text{4D)} \\\\ &\\textbf{Level 3 (4D):} \\quad f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F(\\partial_t\\tau)R \\\\ &\\textbf{Level 4 (DE):} \\quad \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\; V = V_0\\left[1 + A\\cos\\left(\\tfrac{\\omega\\phi_M}{f}\\right)\\right] \\end{aligned}"
         }
       ],
       "formulaRefs": [

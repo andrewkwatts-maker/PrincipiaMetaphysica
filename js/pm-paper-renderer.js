@@ -850,7 +850,9 @@
                     const formulaId = block.formulaId || block.id || block.label || '';
                     let formulaContent = '';
                     if (block.latex) {
-                        formulaContent = `$$${block.latex}$$`;
+                        // Add displaystyle for proper fraction rendering
+                        const displayLatex = block.latex.startsWith('\\displaystyle') ? block.latex : `\\displaystyle ${block.latex}`;
+                        formulaContent = `$$${displayLatex}$$`;
                     } else if (block.content) {
                         // Wrap plain text content in LaTeX display mode
                         // Convert common Unicode math symbols to LaTeX
@@ -900,7 +902,8 @@
                             // Combining overline for Dirac adjoint: Ψ̄ -> \bar{\Psi}
                             .replace(/([A-Za-z\u0391-\u03C9])̄/g, '\\bar{$1}')
                             .replace(/([A-Za-z\u0391-\u03C9])̅/g, '\\bar{$1}');
-                        formulaContent = `$$${latexContent}$$`;
+                        // Add displaystyle for proper fraction rendering
+                        formulaContent = `$$\\displaystyle ${latexContent}$$`;
                     }
                     const labelHtml = block.label ? `<span class="equation-number">${escapeHtml(block.label)}</span>` : '';
                     blockDiv.innerHTML = `
@@ -1215,8 +1218,10 @@
         let html = `<div class="equation-wrapper academic-equation" id="${anchorId}" data-formula-id="${formulaId}"${titleAttr}>`;
 
         // Main equation with number
+        // Add \displaystyle to ensure fractions render at full size (prevents cramped rendering)
+        const displayLatex = latex.startsWith('\\displaystyle') ? latex : `\\displaystyle ${latex}`;
         html += '<div class="equation-line">';
-        html += `<div class="equation-content">$$${latex}$$</div>`;
+        html += `<div class="equation-content">$$${displayLatex}$$</div>`;
         if (equationNumber) {
             html += `<div class="equation-number">(${equationNumber})</div>`;
         }

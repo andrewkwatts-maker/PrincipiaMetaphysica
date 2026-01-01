@@ -45,12 +45,28 @@
 .formula-equation mjx-container,
 .formula-equation .MathJax_Display,
 .equation-content .MathJax,
-.equation-content mjx-container {
+.equation-content mjx-container,
+.equation-wrapper .MathJax,
+.equation-wrapper mjx-container {
     font-size: 1.2em !important;
     max-width: 100%;
     /* Allow natural wrapping instead of scroll boxes */
     overflow-x: visible;
     overflow-y: visible;
+}
+
+/* Force display style for all fractions in equations (prevents cramped fractions) */
+.equation-content mjx-mfrac,
+.equation-wrapper mjx-mfrac,
+.formula-equation mjx-mfrac {
+    /* MathJax 3 uses this for proper sizing */
+    display: inline-block !important;
+}
+
+/* Ensure operators (=, +, etc.) stay aligned with fraction middle, not under divisor */
+.equation-content mjx-mo,
+.equation-wrapper mjx-mo {
+    vertical-align: middle;
 }
 
 /* Long formulas: allow breaking at operators */
