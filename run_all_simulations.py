@@ -1590,6 +1590,55 @@ class SimulationRunner:
         print("=" * 80)
 
 
+def run_wolfram_executor(verbose: bool = True, force: bool = False) -> bool:
+    """
+    Run the Wolfram executor to validate certificate code.
+
+    Args:
+        verbose: Show detailed output
+        force: Force re-execution even if cached
+
+    Returns:
+        True if successful, False otherwise
+    """
+    if verbose:
+        print("\n" + "=" * 80)
+        print("WOLFRAM EXECUTOR - Certificate Code Validation")
+        print("=" * 80)
+
+    wolfram_script = Path(__file__).parent / "scripts" / "wolfram_executor.py"
+    if not wolfram_script.exists():
+        if verbose:
+            print("[SKIP] Wolfram executor not found")
+        return True
+
+    try:
+        cmd = [sys.executable, str(wolfram_script), "--update-refs"]
+        if force:
+            cmd.append("--force")
+        if verbose:
+            cmd.append("--verbose")
+
+        result = subprocess.run(
+            cmd,
+            cwd=Path(__file__).parent,
+            capture_output=not verbose,
+            text=True
+        )
+
+        if verbose and result.returncode != 0:
+            print(f"[WARN] Wolfram executor returned code {result.returncode}")
+            if result.stderr:
+                print(result.stderr[:500])
+
+        return result.returncode == 0
+
+    except Exception as e:
+        if verbose:
+            print(f"[ERROR] Could not run Wolfram executor: {e}")
+        return False
+
+
 def main():
     """Main entry point for running all simulations."""
     import argparse
@@ -1610,6 +1659,16 @@ def main():
         action="store_true",
         help="Enable Monte Carlo uncertainty quantification (requires NumPy)"
     )
+    parser.add_argument(
+        "--wolfram", "-w",
+        action="store_true",
+        help="Execute Wolfram code from certificates and store results"
+    )
+    parser.add_argument(
+        "--wolfram-force",
+        action="store_true",
+        help="Force Wolfram re-execution (ignore cache)"
+    )
 
     args = parser.parse_args()
 
@@ -1620,6 +1679,13 @@ def main():
         uq_mode=args.uq
     )
     output_data = runner.run_all()
+
+    # Optionally run Wolfram executor
+    if args.wolfram:
+        run_wolfram_executor(
+            verbose=not args.quiet,
+            force=args.wolfram_force
+        )
 
     # Return exit code based on results
     validation = output_data["validation"]
