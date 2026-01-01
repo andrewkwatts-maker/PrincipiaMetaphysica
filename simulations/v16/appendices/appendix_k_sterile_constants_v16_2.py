@@ -12,6 +12,19 @@ table with the "Geometric Residue Registry." In the v16.2 Sterile Model,
 we no longer "measure" these values; we "derive" them from the 288/24/4
 geometric architecture.
 
+THE 288-ROOT DERIVATION:
+    276 (SO(24) Generators) + 24 (Torsion Pins) - 12 (Manifold Cost) = 288
+
+THE NODE PARTITION:
+    125 Observable Residues + 163 Hidden Supports = 288 Total Potential
+
+THE 163 BULK INSULATION CONSTANT:
+    The 163 hidden supports are the Topological Gap required to prevent
+    the V₇ manifold from collapsing under the tension of the 288 roots.
+    They represent TRANSVERSE PRESSURE, not "dark matter particles."
+    If these supports fail (supports < 163), the branes touch and the
+    universe "short-circuits" into Metric Null.
+
 THE STERILE CONSTANT TABLE:
 - c (Speed of Light) → Torsion Pin 01-06 (Time-like Vector)
 - G (Gravitational Constant) → Node 001 (Metric Anchor)
@@ -52,7 +65,29 @@ class SterileConstantRegistry:
     Maps physical constants to their geometric origins in the
     288/24/4 architecture. Each constant is derived from the
     V₇ manifold structure, not measured from observation.
+
+    THE 288-ROOT ARCHITECTURE:
+        SO24_GENERATORS = 276  # dim(SO(24)) = 24*23/2 = 276
+        SHADOW_TORSION = 24    # 12 per 13D shadow brane
+        MANIFOLD_COST = 12     # V7 holonomy projection overhead
+        TOTAL_ROOTS = 276 + 24 - 12 = 288
+
+    THE NODE PARTITION:
+        OBSERVABLE_NODES = 125 (Standard Model + Cosmology)
+        HIDDEN_SUPPORTS = 163  (Bulk-to-Boundary Insulation Constant)
+        Total: 125 + 163 = 288
     """
+
+    # ================================================================
+    # IMMUTABLE GEOMETRIC CONSTANTS (The 288-Root Architecture)
+    # ================================================================
+    SO24_GENERATORS = 276      # dim(SO(24)) = 24*23/2 = 276
+    SHADOW_TORSION = 24        # 12 per 13D shadow brane
+    MANIFOLD_COST = 12         # V7 holonomy projection overhead
+    TOTAL_ROOTS = SO24_GENERATORS + SHADOW_TORSION - MANIFOLD_COST  # = 288
+
+    OBSERVABLE_NODES = 125     # Standard Model + Cosmology
+    HIDDEN_SUPPORTS = TOTAL_ROOTS - OBSERVABLE_NODES  # = 163 (Bulk Insulation)
 
     # The Sterile Constant Table
     STERILE_CONSTANTS = {
@@ -355,6 +390,70 @@ class AppendixKSterileConstants(SimulationBase):
                     "</table>"
                 ),
                 label="paradigm-shift"
+            ),
+
+            # K.1b The 288-Root Architecture
+            ContentBlock(
+                type="heading",
+                content="K.1b The 288-Root Derivation",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The 288 Ancestral Roots are derived from the algebraic structure of the "
+                    "26D(24,2) bosonic bulk:"
+                )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"276 \text{ (SO(24) Generators)} + 24 \text{ (Torsion Pins)} - 12 \text{ (Manifold Cost)} = 288 \text{ (Net Roots)}",
+                label="288-root-equation"
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<table style='width:100%'>"
+                    "<tr><th>Component</th><th>Value</th><th>Origin</th></tr>"
+                    "<tr><td>SO(24) Generators</td><td>276</td><td>dim(SO(24)) = 24×23/2 = 276</td></tr>"
+                    "<tr><td>Shadow Torsion</td><td>24</td><td>12 per 13D shadow brane</td></tr>"
+                    "<tr><td>Manifold Cost</td><td>-12</td><td>V₇ holonomy projection overhead</td></tr>"
+                    "<tr><td><strong>Total Roots</strong></td><td><strong>288</strong></td><td>The Ancestral Potential</td></tr>"
+                    "</table>"
+                ),
+                label="288-components"
+            ),
+
+            # K.1c The 163 Bulk Insulation
+            ContentBlock(
+                type="heading",
+                content="K.1c The 163 Bulk Insulation Constant",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The 288 roots are partitioned into 125 observable residues and 163 hidden supports:"
+                )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"125 \text{ (Observable)} + 163 \text{ (Hidden)} = 288 \text{ (Total Potential)}",
+                label="node-partition"
+            ),
+            ContentBlock(
+                type="note",
+                content=(
+                    "<h4>The 163 Hidden Supports: Bulk-to-Boundary Insulation</h4>"
+                    "<p>The 163 hidden supports are <strong>not</strong> 'dark matter particles.' They represent "
+                    "the <strong>Transverse Pressure</strong> required to prevent the V₇ manifold from "
+                    "collapsing under the tension of the 288 roots.</p>"
+                    "<p><strong>Physical Interpretation:</strong> These nodes maintain the separation between "
+                    "the two 13D shadow branes. If the supports fail (supports &lt; 163), the branes touch "
+                    "and the universe 'short-circuits' into <strong>Metric Null</strong>.</p>"
+                    "<p><strong>Pressure Ratio:</strong> 163/288 = 0.566 (56.6% of ancestral potential provides insulation)</p>"
+                ),
+                label="bulk-insulation"
             ),
 
             # K.2 The Sterile Constant Table
