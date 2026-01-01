@@ -62,6 +62,23 @@ _OUTPUT_PARAMS = [
     # v16.2 anomaly correction
     "geometry.anomaly_correction",
     "geometry.g_newton_corrected",
+    # Dimensional Structure (v16.2)
+    "geometry.D_bulk",
+    "geometry.D_compact",
+    "geometry.D_G2",
+    "geometry.D_shadow",
+    "geometry.D_eff",
+    "geometry.spinor_26d",
+    "geometry.spinor_4d",
+    "geometry.spinor_reduction_factor",
+    "geometry.spinor_13d",
+    "geometry.flux_reduction",
+    # Kaluza-Klein Mass Scale (v16.2)
+    "geometry.m_KK",
+    "geometry.m_KK_central",
+    "geometry.m_KK_bound",
+    # Pneuma Components (v16.2 - replaces deprecated xi/eta)
+    "geometry.pneuma_components",
     # Fundamental Constants from Demon-Lock
     "geometry.alpha_inverse",
     "geometry.alpha_s",
@@ -77,6 +94,8 @@ _OUTPUT_PARAMS = [
     "geometry.n_s",
     "geometry.sigma8",
     "geometry.S8",
+    # Neutrino (v16.2 Hopf Fibration)
+    "geometry.sum_m_nu",
 ]
 
 # Output formula IDs
