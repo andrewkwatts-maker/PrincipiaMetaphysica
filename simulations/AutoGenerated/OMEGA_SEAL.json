@@ -1,9 +1,7 @@
 {
   "omega_seal": {
     "version": "16.2",
-    "doi": "10.5281/zenodo.18079602",
-    "doi_url": "https://doi.org/10.5281/zenodo.18079602",
-    "generated": "2026-01-01T04:35:05.806625Z",
+    "generated": "2026-01-01T13:25:29.986335Z",
     "generator": "finalize_lockdown.py",
     "description": "Omega Seal - Verification of all 42 certificates"
   },
@@ -15,7 +13,7 @@
     "sealed_count": 14,
     "the_answer": 42,
     "global_sigma": 0.48,
-    "master_hash": "4522f49d44a0f2d6b818ccecb132036185add23f8ff67380cc3b2b4596eaed3f",
+    "master_hash": "5e09a97f412e3da60d696594210d3c076bbbaef43bea0e376702cc56be9a445b",
     "hash_algorithm": "SHA-256"
   },
   "certificates": [
@@ -52,7 +50,7 @@
       "label": "Third Betti Number b3 = 24",
       "category": "FOUNDATIONAL",
       "status": "LOCKED",
-      "file_hash": "929f76b1226828aecf862543fc7477b51645040d251f4f3502505fc27791e62f",
+      "file_hash": "072534bb9ba9fc65129ed32749814af3dae607d110789bf5798b82b1fa75d110",
       "validation": {
         "passed": true,
         "errors": []
@@ -169,7 +167,7 @@
       "label": "Hubble Constant Early Universe",
       "category": "COSMOLOGICAL",
       "status": "LOCKED",
-      "file_hash": "9b7346693b565505ac4f1fea19c6f60d20f4cf0fbe0f3fc70b9c6ae3aa5c5b99",
+      "file_hash": "9cb6bc5329ff679717ee3f3e8bfa08720e9a5f1dd89996ebbf8e340a52631912",
       "validation": {
         "passed": true,
         "errors": []
@@ -234,7 +232,7 @@
       "label": "Time-Reversibility & Symplectic Integrity",
       "category": "OPERATIONAL",
       "status": "SEALED",
-      "file_hash": "30fdb54c0f689db0dda6da6ed6670def506aa1c345deb4f5ffbdced4d4bf54fc",
+      "file_hash": "018d183f67f360f77cba641f4d2f763f99148a1301bcdfd7fa95b2e5782d7155",
       "validation": {
         "passed": true,
         "errors": []
@@ -351,7 +349,7 @@
       "label": "Neutrino Mass Sum (Hopf Fibration)",
       "category": "COSMOLOGICAL",
       "status": "LOCKED",
-      "file_hash": "d872fcf23a7829ff919405a3e24a1516cc322d394b7c215b741537d3c28e0670",
+      "file_hash": "c6fe297d245ace78b38d3b747a050767bf6d12161632b4dddabd71d006038ec6",
       "validation": {
         "passed": true,
         "errors": []
@@ -533,7 +531,7 @@
       "label": "Dark Energy Equation of State w0",
       "category": "COSMOLOGICAL",
       "status": "LOCKED",
-      "file_hash": "2ff70b8735f072d763dd2d82ec1d6deb07861ef27de2a4fec542fb5fdc25ad5d",
+      "file_hash": "f3a79555fc4f8092101b71131c32b66255bd703bb78061e7e61cc4502926db52",
       "validation": {
         "passed": true,
         "errors": []
@@ -574,7 +572,7 @@
     "counts_verified": false
   },
   "git": {
-    "commit": "a3e8edafd1c4c07035a54533cb467068ffeec71b",
+    "commit": "5de93c5a0265edca91f1896f4cbaef80420e516e",
     "branch": "main",
     "is_dirty": true
   }

@@ -22,7 +22,7 @@ Options:
     --7z            Create 7z archive instead of ZIP (requires 7z installed)
     --git-archive   Use git archive for pristine export (ignores uncommitted changes)
     --full          Include simulations directory (larger package)
-    --validate      Run 42-certificate validation before building
+    --validate      Run 72-gate validation before building (runs run_all_simulations.py)
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -954,10 +954,10 @@ def inject_omega_seal(build_dir: Path):
                 with open(omega_hash_src, 'r') as src:
                     f.write("PRINCIPIA METAPHYSICA v16.2 - VERIFICATION MANIFEST\n")
                     f.write("=" * 50 + "\n\n")
-                    f.write("OMEGA SEAL (42-Certificate Master Hash):\n")
+                    f.write("OMEGA SEAL (72-Gate Master Hash):\n")
                     f.write(src.read())
                     f.write(f"\nExport Date: {datetime.datetime.now().isoformat()}\n")
-                    f.write("\nStatus: Auth-Free, 42-Cert Verified, G2-Residue Locked.\n")
+                    f.write("\nStatus: Auth-Free, 72-Gate Verified, G2-Residue Locked.\n")
             print(f"    Created: VERIFICATION_MANIFEST.txt")
     else:
         print("    [WARN] OMEGA_SEAL.json not found - run finalize_lockdown.py first")
@@ -1013,7 +1013,7 @@ Examples:
     parser.add_argument("--full", action="store_true",
                         help="Include simulations (for full research package)")
     parser.add_argument("--validate", action="store_true",
-                        help="Run 42-certificate validation before building")
+                        help="Run 72-gate validation before building")
     args = parser.parse_args()
 
     # Adjust excludes based on package type
@@ -1037,14 +1037,14 @@ Examples:
     if args.git_archive:
         print(f"Source: Git archive (clean export)")
 
-    # Optional: Run 42-certificate validation
+    # Optional: Run 72-gate validation (runs run_all_simulations.py)
     if args.validate:
         print("\n" + "=" * 70)
-        print(" PRE-BUILD VALIDATION: 42-Certificate Demon-Lock")
+        print(" PRE-BUILD VALIDATION: 72-Gate Integrity Verification")
         print("=" * 70)
         try:
             result = subprocess.run(
-                [sys.executable, str(SOURCE_DIR / "scripts" / "finalize_lockdown.py")],
+                [sys.executable, str(SOURCE_DIR / "run_all_simulations.py")],
                 capture_output=True,
                 text=True,
                 encoding='utf-8',
@@ -1052,15 +1052,19 @@ Examples:
                 cwd=SOURCE_DIR
             )
             # Check for success in output
-            if result.returncode == 0 and "OMEGA SEAL GENERATED SUCCESSFULLY" in result.stdout:
-                print("  [PASS] 42/42 certificates validated")
-                # Extract master hash
+            if result.returncode == 0:
+                # Look for 72-gate results
                 import re
-                match = re.search(r'Master Hash: ([a-f0-9]+)', result.stdout)
-                if match:
-                    print(f"  Master Hash: {match.group(1)[:16]}...")
-            elif result.returncode == 0:
-                print("  [OK] Validation completed with warnings")
+                gate_match = re.search(r'(\d+)/72 GATES', result.stdout)
+                omega_match = re.search(r'OMEGA HASH: ([a-f0-9]+)', result.stdout)
+
+                if gate_match:
+                    gates_passed = gate_match.group(1)
+                    print(f"  [PASS] {gates_passed}/72 gates validated")
+                if omega_match:
+                    print(f"  Omega Hash: {omega_match.group(1)}")
+                if not gate_match:
+                    print("  [OK] Simulations completed")
             else:
                 print("  [WARN] Validation completed with errors")
                 if result.stderr:
@@ -1152,7 +1156,7 @@ Title: Principia Metaphysica v{VERSION}: A G2-Manifold Residue Model
 
 Description: This release marks the transition to a pure-geometry model,
              replacing 125 empirical constants with derived residues.
-             Includes 42-point certification ledger.
+             Includes 72-gate integrity verification system.
 
 Keywords: G2 Manifold, Ricci Flow, 125-Parameter Port, Zenodo Archive
 

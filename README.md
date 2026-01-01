@@ -13,6 +13,14 @@
 
 ---
 
+## Live Demo
+
+**Don't want to run setup?** View the complete paper and interactive formula explorer online:
+
+**[https://www.metaphysicæ.com](https://www.metaphysicæ.com)**
+
+---
+
 ## Table of Contents
 
 - [Abstract](#abstract)
