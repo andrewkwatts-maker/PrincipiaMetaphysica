@@ -370,6 +370,10 @@ def strip_auth_from_html(file_path: Path) -> bool:
     # Remove auth.css link tags (various path patterns)
     content = re.sub(r'\s*<link rel="stylesheet" href="[^"]*auth\.css">\s*\n?', '\n', content)
 
+    # Show main-content by default (was hidden waiting for auth)
+    content = content.replace('id="main-content" style="display: none;"', 'id="main-content"')
+    content = content.replace("id='main-content' style='display: none;'", "id='main-content'")
+
     if content != original:
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(content)
