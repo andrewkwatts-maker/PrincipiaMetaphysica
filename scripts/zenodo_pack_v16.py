@@ -241,6 +241,7 @@ INCLUDE_DIRS: List[str] = [
     'PROOFS',
     'sections',
     'tools',
+    'simulations',  # Included with --full, excluded otherwise via EXCLUDE_DIRS
 ]
 
 # Key files to include from root
@@ -501,9 +502,9 @@ def strip_auth_from_js():
             with open(stats_js, 'r', encoding='utf-8') as f:
                 content = f.read()
             original = content
-            # Replace entire firebase fallback block (lines 102-112)
-            firebase_block = """            // Fallback to Firebase if available
-            if (typeof firebase !== 'undefined' && firebase.database) {
+            # Replace firebase fallback block (updated code path)
+            firebase_block = """            // Fallback to Firebase if available (only in online mode)
+            if (typeof firebase !== 'undefined' && firebase.database && !window.PM_OFFLINE) {
                 try {
                     const snapshot = await firebase.database().ref('/simulations').once('value');
                     this._data = { simulations: snapshot.val() };
