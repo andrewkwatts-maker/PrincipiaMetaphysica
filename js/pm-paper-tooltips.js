@@ -199,22 +199,29 @@
      * Setup tooltips for parameter references
      */
     function setupParameterTooltips() {
+        // Mark elements to prevent conflict with pm-tooltip-system.js
+        document.querySelectorAll('[data-pm-value], [data-category][data-param]').forEach(el => {
+            el.setAttribute('data-paper-tooltip', 'true');
+        });
+
         document.addEventListener('mouseover', (e) => {
             const target = e.target;
 
             // Check for parameter elements
             if (target.hasAttribute('data-pm-value') ||
                 (target.hasAttribute('data-category') && target.hasAttribute('data-param'))) {
+                // Prevent other tooltip systems from handling
+                e.stopPropagation();
                 showParameterTooltip(e, target);
             }
-        });
+        }, true); // Use capture phase to handle first
 
         document.addEventListener('mouseout', (e) => {
             if (e.target.hasAttribute('data-pm-value') ||
                 (e.target.hasAttribute('data-category') && e.target.hasAttribute('data-param'))) {
                 scheduleHide();
             }
-        });
+        }, true); // Use capture phase
     }
 
     /**

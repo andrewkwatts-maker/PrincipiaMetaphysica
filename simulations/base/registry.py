@@ -193,9 +193,22 @@ class PMRegistry:
             raise KeyError(f"Parameter '{path}' not found in registry")
         return self._parameters[path].value
 
-    def get(self, path: str) -> Any:
-        """Alias for get_param for convenience."""
-        return self.get_param(path)
+    def get(self, path: str, default: Any = None) -> Any:
+        """
+        Get a parameter value with optional default.
+
+        Args:
+            path: Parameter path
+            default: Value to return if parameter doesn't exist
+
+        Returns:
+            Parameter value or default if not found
+        """
+        if path not in self._parameters:
+            if default is not None:
+                return default
+            raise KeyError(f"Parameter '{path}' not found in registry")
+        return self._parameters[path].value
 
     def get_entry(self, path: str) -> Optional[RegistryEntry]:
         """

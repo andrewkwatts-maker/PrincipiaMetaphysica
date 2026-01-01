@@ -40,14 +40,47 @@
     padding: 1.5rem !important;
 }
 
-/* MathJax size consistency */
+/* MathJax size consistency and wrapping */
 .formula-equation .MathJax,
 .formula-equation mjx-container,
-.formula-equation .MathJax_Display {
+.formula-equation .MathJax_Display,
+.equation-content .MathJax,
+.equation-content mjx-container {
     font-size: 1.2em !important;
-    overflow-x: auto;
-    overflow-y: hidden;
     max-width: 100%;
+    /* Allow natural wrapping instead of scroll boxes */
+    overflow-x: visible;
+    overflow-y: visible;
+}
+
+/* Long formulas: allow breaking at operators */
+.equation-content mjx-mrow {
+    flex-wrap: wrap;
+}
+
+/* Scale down very long formulas to fit */
+.equation-wrapper.long-formula .MathJax,
+.equation-wrapper.long-formula mjx-container {
+    font-size: 0.95em !important;
+}
+
+/* Fallback: if formula is truly too long, allow horizontal scroll on wrapper only */
+.equation-wrapper {
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-bottom: 0.5rem;
+}
+
+/* Hide scrollbar when not needed */
+.equation-wrapper::-webkit-scrollbar {
+    height: 4px;
+}
+.equation-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(139, 127, 255, 0.3);
+    border-radius: 2px;
+}
+.equation-wrapper::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 /* Equation number - right-aligned in parentheses (like old paper) */
@@ -58,6 +91,17 @@
     font-family: 'Crimson Text', Georgia, serif;
     margin-left: 1rem;
     line-height: 2;
+}
+
+/* Equation caption - italic, light, centered below equation */
+.equation-caption {
+    text-align: center;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-muted, #888);
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+    opacity: 0.85;
 }
 
 /* ========================================================================

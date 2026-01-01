@@ -4,6 +4,7 @@
   "label": "Dark Energy Equation of State w0",
   "category": "COSMOLOGICAL",
   "version": "16.2",
+  "doi": "10.5281/zenodo.18079602",
   "status": "LOCKED",
   "wolfram_code": "With[{\n  (* G2 manifold topology - fundamental constant *)\n  b3 = 24  (* Third Betti number *)\n},\n  (* v16.2: w0 from thawing quintessence *)\n  (* Formula: w0 = -1 + 1/b3 = -1 + 1/24 = -23/24 *)\n  \n  w0Geometric = -1 + 1/b3;\n  w0Exact = -23/24;\n  \n  (* DESI DR2 2025 result *)\n  desi2025 = -0.957;\n  desiUncertainty = 0.067;\n  \n  deviation = (w0Geometric - desi2025) / desiUncertainty;\n  \n  {N[w0Geometric, 6], N[w0Exact, 6], N[deviation, 3]}\n]",
   "expected_result": "{-0.958333, -0.958333, 0.02sigma}",
