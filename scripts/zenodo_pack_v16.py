@@ -250,9 +250,7 @@ INCLUDE_ROOT_FILES: List[str] = [
     'PEER_REVIEW_DEFENSE.md',
     'index.html',
     'principia-metaphysica-paper.html',
-    'IMPLEMENTATION_PLAN_v16_2.md',
     'serve.py',
-    'start_server.bat',
     'Launch.bat',
     'run_all_simulations.py',  # For full package
 ]
