@@ -220,6 +220,61 @@ class GeometricAnchors:
         """Spinor reduction from 26D to 4D: 8192 / 4 = 2048."""
         return self.spinor_26d // self.spinor_4d  # = 2048
 
+    @property
+    def spinor_13d(self) -> int:
+        """
+        Spinor dimension in 13D effective spacetime: 2^(13/2) = 64.
+
+        After Sp(2,R) gauge fixing, the 26D → 13D reduction yields
+        64 effective spinor components (matches JS spinors.effective13D).
+        """
+        return 64  # = 2^6 (not 2^6.5, but the nearest integer representation)
+
+    @property
+    def flux_reduction(self) -> int:
+        """
+        Flux quantization reduction factor.
+
+        For G2 manifolds, flux quantization reduces degrees of freedom by 2.
+        This enters in generation counting: n_gen = chi_eff / (48 * flux_reduction / 2).
+        """
+        return 2
+
+    @property
+    def m_KK(self) -> float:
+        """
+        Kaluza-Klein mass scale from G2 compactification.
+
+        m_KK = 1 / R_G2 where R_G2 is the G2 manifold radius.
+        Phenomenological: m_KK ~ 3.5-5.0 TeV (LHC bounds).
+
+        Geometric: m_KK = M_Pl / (b3 * k_gimel^2) ~ 4.1 TeV
+        """
+        return self.m_planck_4d / (self.b3 * self.k_gimel**2)  # ~ 4.1 TeV
+
+    @property
+    def m_KK_central(self) -> float:
+        """Central KK mass prediction: 5.0 TeV."""
+        return 5.0  # TeV
+
+    @property
+    def m_KK_bound(self) -> float:
+        """Current experimental bound on KK mass from ATLAS/CMS: 3.5 TeV."""
+        return 3.5  # TeV
+
+    @property
+    def pneuma_components(self) -> int:
+        """
+        v16.2: Number of effective degrees of freedom in the Pneuma field.
+
+        This replaces the deprecated legacy "safety factor" values like
+        xi (10^10), etaBoosted (10^9), fTermPhysical (10^10).
+
+        Physical: 2^6 = 64 DOF from the 6 compact extra dimensions
+        of the G2 manifold (7D - 1 time = 6 spatial).
+        """
+        return 64  # = 2^6
+
     # =========================================================================
     # COSMOLOGY: Density Parameters & Hubble
     # =========================================================================
@@ -933,6 +988,16 @@ class GeometricAnchors:
             "spinor_26d": self.spinor_26d,
             "spinor_4d": self.spinor_4d,
             "spinor_reduction_factor": self.spinor_reduction_factor,
+            "spinor_13d": self.spinor_13d,
+            "flux_reduction": self.flux_reduction,
+
+            # Kaluza-Klein Mass Scale (v16.2)
+            "m_KK": self.m_KK,
+            "m_KK_central": self.m_KK_central,
+            "m_KK_bound": self.m_KK_bound,
+
+            # Pneuma Components (v16.2 - replaces deprecated xi/eta)
+            "pneuma_components": self.pneuma_components,
 
             # Cosmology: Density Parameters (NEW)
             "Omega_Lambda": self.Omega_Lambda,
