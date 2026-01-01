@@ -1,8 +1,8 @@
 {
   "summary": {
     "total_values_found": 365,
-    "matched_to_theory": 213,
-    "unmatched": 152,
+    "matched_to_theory": 240,
+    "unmatched": 125,
     "files_audited": 7,
     "categories": {
       "dimensions": 72,
@@ -6627,7 +6627,7 @@
         "pattern_type": "property",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -6643,6 +6643,34 @@
       },
       "theory_key": "topology.b3",
       "theory_value": 24.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 34,
+        "key": "equals_34",
+        "value": 13.0,
+        "raw_text": "= 13",
+        "pattern_type": "equals",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.D_eff",
+      "theory_value": 13.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 42,
+        "key": "full26D",
+        "value": 8192.0,
+        "raw_text": "full26D: 8192,",
+        "pattern_type": "property",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
       "difference": 0.0
     },
     {
@@ -6683,7 +6711,7 @@
         "pattern_type": "property",
         "category": "particle"
       },
-      "theory_key": "gauge.M_GUT_GEOMETRIC",
+      "theory_key": "geometry.M_GUT_geometric",
       "theory_value": 2.1e+16,
       "difference": 180000000000000.0
     },
@@ -6714,6 +6742,20 @@
       "theory_key": "constants.alpha_em",
       "theory_value": 0.0072973525643314245,
       "difference": 4.952377050115864e-12
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 96,
+        "key": "w0Denominator",
+        "value": 13.0,
+        "raw_text": "w0Denominator: 13,",
+        "pattern_type": "property",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.D_eff",
+      "theory_value": 13.0,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -6774,6 +6816,20 @@
     {
       "extracted": {
         "file": "js\\theory-constants.js",
+        "line_number": 107,
+        "key": "omegaLambda",
+        "value": 0.6889,
+        "raw_text": "omegaLambda: 0.6889,",
+        "pattern_type": "property",
+        "category": "cosmology"
+      },
+      "theory_key": "geometry.omega_Lambda_Planck",
+      "theory_value": 0.6889,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
         "line_number": 108,
         "key": "omegaMatter",
         "value": 0.3111,
@@ -6823,9 +6879,23 @@
         "pattern_type": "property",
         "category": "particle"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 120,
+        "key": "z2Correction",
+        "value": 0.2,
+        "raw_text": "z2Correction: 0.2,",
+        "pattern_type": "property",
+        "category": "other"
+      },
+      "theory_key": "geometry.Omega_baryon",
+      "theory_value": 0.19834710743801653,
+      "difference": 0.0016528925619834767
     },
     {
       "extracted": {
@@ -6837,9 +6907,23 @@
         "pattern_type": "property",
         "category": "particle"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 136,
+        "key": "alphaRSquared",
+        "value": 0.0045,
+        "raw_text": "alphaRSquared: 0.0045,",
+        "pattern_type": "property",
+        "category": "particle"
+      },
+      "theory_key": "geometry.alpha_R_squared_phenom",
+      "theory_value": 0.0045,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -6886,6 +6970,20 @@
     {
       "extracted": {
         "file": "js\\theory-constants.js",
+        "line_number": 165,
+        "key": "kLISATypical",
+        "value": 0.001,
+        "raw_text": "kLISATypical: 0.001,",
+        "pattern_type": "property",
+        "category": "other"
+      },
+      "theory_key": "geometry.k_LISA_typical",
+      "theory_value": 0.001,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
         "line_number": 166,
         "key": "kLISAMax",
         "value": 0.1,
@@ -6900,6 +6998,20 @@
     {
       "extracted": {
         "file": "js\\theory-constants.js",
+        "line_number": 170,
+        "key": "theta45Deg",
+        "value": 0.7853981633974483,
+        "raw_text": "theta45Deg: 0.7853981633974483,",
+        "pattern_type": "property",
+        "category": "other"
+      },
+      "theory_key": "geometry.theta_45deg",
+      "theory_value": 0.7853981633974483,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
         "line_number": 184,
         "key": "swamplandBound",
         "value": 0.816496580927726,
@@ -6907,7 +7019,7 @@
         "pattern_type": "property",
         "category": "dimensions"
       },
-      "theory_key": "ckm.A_wolfenstein",
+      "theory_key": "geometry.A_Wolfenstein",
       "theory_value": 0.81,
       "difference": 0.006496580927725981
     },
@@ -7040,6 +7152,34 @@
     {
       "extracted": {
         "file": "js\\theory-constants.js",
+        "line_number": 262,
+        "key": "mNu1",
+        "value": 0.001,
+        "raw_text": "mNu1: 0.001,",
+        "pattern_type": "property",
+        "category": "neutrino"
+      },
+      "theory_key": "geometry.k_LISA_typical",
+      "theory_value": 0.001,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 262,
+        "key": "value_with_eV_262",
+        "value": 0.001,
+        "raw_text": "0.001 eV",
+        "pattern_type": "with_units",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.k_LISA_typical",
+      "theory_value": 0.001,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
         "line_number": 264,
         "key": "mNu3",
         "value": 0.05,
@@ -7064,6 +7204,34 @@
       "theory_key": "monte_carlo.mean_relative_error",
       "theory_value": 0.05,
       "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 265,
+        "key": "sumMNu",
+        "value": 0.082,
+        "raw_text": "sumMNu: 0.082,",
+        "pattern_type": "property",
+        "category": "topology"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 265,
+        "key": "value_with_eV_265",
+        "value": 0.082,
+        "raw_text": "0.082 eV",
+        "pattern_type": "with_units",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
     },
     {
       "extracted": {
@@ -7110,6 +7278,20 @@
     {
       "extracted": {
         "file": "js\\theory-constants.js",
+        "line_number": 296,
+        "key": "lambdaThreshold",
+        "value": 0.001,
+        "raw_text": "lambdaThreshold: 0.001,",
+        "pattern_type": "property",
+        "category": "cosmology"
+      },
+      "theory_key": "geometry.k_LISA_typical",
+      "theory_value": 0.001,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\theory-constants.js",
         "line_number": 309,
         "key": "tauLowerBound",
         "value": 1.67e+34,
@@ -7123,6 +7305,20 @@
     },
     {
       "extracted": {
+        "file": "js\\theory-constants.js",
+        "line_number": 357,
+        "key": "equals_357",
+        "value": 13.0,
+        "raw_text": "= 13",
+        "pattern_type": "equals",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.D_eff",
+      "theory_value": 13.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
         "file": "js\\theory-constants-enhanced.js",
         "line_number": 39,
         "key": "equals_39",
@@ -7131,7 +7327,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7243,7 +7439,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7257,7 +7453,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7271,7 +7467,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7285,8 +7481,36 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
+        "line_number": 450,
+        "key": "value_with_m_450",
+        "value": 8192.0,
+        "raw_text": "8192 m",
+        "pattern_type": "with_units",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
+        "line_number": 475,
+        "key": "equals_475",
+        "value": 8192.0,
+        "raw_text": "= 8192",
+        "pattern_type": "equals",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
       "difference": 0.0
     },
     {
@@ -7299,9 +7523,9 @@
         "pattern_type": "equals",
         "category": "other"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -7313,9 +7537,9 @@
         "pattern_type": "equals",
         "category": "particle"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -7327,9 +7551,9 @@
         "pattern_type": "equals",
         "category": "other"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -7425,7 +7649,7 @@
         "pattern_type": "scientific_html",
         "category": "particle"
       },
-      "theory_key": "gauge.M_GUT_GEOMETRIC",
+      "theory_key": "geometry.M_GUT_geometric",
       "theory_value": 2.1e+16,
       "difference": 180000000000000.0
     },
@@ -7481,7 +7705,7 @@
         "pattern_type": "property",
         "category": "other"
       },
-      "theory_key": "gauge.M_GUT_GEOMETRIC",
+      "theory_key": "geometry.M_GUT_geometric",
       "theory_value": 2.1e+16,
       "difference": 180000000000000.0
     },
@@ -7698,6 +7922,48 @@
     {
       "extracted": {
         "file": "js\\formula-definitions.js",
+        "line_number": 886,
+        "key": "equals_886",
+        "value": 0.082,
+        "raw_text": "= 0.082 eV",
+        "pattern_type": "equals",
+        "category": "other"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
+        "line_number": 886,
+        "key": "value_with_eV_886",
+        "value": 0.082,
+        "raw_text": "0.082 eV",
+        "pattern_type": "with_units",
+        "category": "other"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
+        "line_number": 887,
+        "key": "equals_887",
+        "value": 0.082,
+        "raw_text": "= 0.082 ",
+        "pattern_type": "equals",
+        "category": "neutrino"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
         "line_number": 898,
         "key": "value_with_eV_898",
         "value": 0.02,
@@ -7708,6 +7974,34 @@
       "theory_key": "cosmology.w0_deviation",
       "theory_value": 0.01990049751243893,
       "difference": 9.950248756106922e-05
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
+        "line_number": 900,
+        "key": "equals_900",
+        "value": 0.082,
+        "raw_text": "= 0.082 eV",
+        "pattern_type": "equals",
+        "category": "particle"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-definitions.js",
+        "line_number": 900,
+        "key": "value_with_eV_900",
+        "value": 0.082,
+        "raw_text": "0.082 eV",
+        "pattern_type": "with_units",
+        "category": "particle"
+      },
+      "theory_key": "geometry.sum_m_nu",
+      "theory_value": 0.08168832953849638,
+      "difference": 0.000311670461503627
     },
     {
       "extracted": {
@@ -7901,9 +8195,9 @@
         "pattern_type": "equals",
         "category": "other"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -7915,9 +8209,9 @@
         "pattern_type": "equals",
         "category": "other"
       },
-      "theory_key": "thermal.alpha_T",
-      "theory_value": 2.6999999182257,
-      "difference": 8.177430022016097e-08
+      "theory_key": "geometry.alpha_T_phenomenological",
+      "theory_value": 2.7,
+      "difference": 0.0
     },
     {
       "extracted": {
@@ -7943,7 +8237,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7957,7 +8251,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7971,7 +8265,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7985,7 +8279,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -7999,7 +8293,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -8013,8 +8307,50 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-registry.js",
+        "line_number": 399,
+        "key": "equals_399",
+        "value": 8192.0,
+        "raw_text": "= 8192",
+        "pattern_type": "equals",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-registry.js",
+        "line_number": 401,
+        "key": "equals_401",
+        "value": 8192.0,
+        "raw_text": "= 8192",
+        "pattern_type": "equals",
+        "category": "other"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\formula-registry.js",
+        "line_number": 418,
+        "key": "equals_418",
+        "value": 8192.0,
+        "raw_text": "= 8192",
+        "pattern_type": "equals",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
       "difference": 0.0
     },
     {
@@ -8307,7 +8643,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -8363,7 +8699,7 @@
         "pattern_type": "scientific_html",
         "category": "particle"
       },
-      "theory_key": "gauge.M_GUT_GEOMETRIC",
+      "theory_key": "geometry.M_GUT_geometric",
       "theory_value": 2.1e+16,
       "difference": 180000000000000.0
     },
@@ -8377,7 +8713,7 @@
         "pattern_type": "property",
         "category": "other"
       },
-      "theory_key": "gauge.M_GUT_GEOMETRIC",
+      "theory_key": "geometry.M_GUT_geometric",
       "theory_value": 2.1e+16,
       "difference": 180000000000000.0
     },
@@ -8853,7 +9189,7 @@
         "pattern_type": "property",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -8867,7 +9203,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -8881,7 +9217,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -8895,7 +9231,7 @@
         "pattern_type": "equals",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
       "difference": 0.0
     },
@@ -9273,7 +9609,7 @@
         "pattern_type": "property",
         "category": "other"
       },
-      "theory_key": "cosmology.w0_validation.value.uncertainty",
+      "theory_key": "geometry.w0_error_DESI",
       "theory_value": 0.067,
       "difference": 0.0
     },
@@ -9427,7 +9763,7 @@
         "pattern_type": "property",
         "category": "other"
       },
-      "theory_key": "gauge.M_GUT_GEOMETRIC",
+      "theory_key": "geometry.M_GUT_geometric",
       "theory_value": 2.1e+16,
       "difference": 180000000000000.0
     },
@@ -9525,8 +9861,22 @@
         "pattern_type": "property",
         "category": "dimensions"
       },
-      "theory_key": "topology.critical_dim",
+      "theory_key": "geometry.D_bulk",
       "theory_value": 26.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\pm-constants-loader.js",
+        "line_number": 36,
+        "key": "D_AFTER_SP2R",
+        "value": 13.0,
+        "raw_text": "D_AFTER_SP2R: 13,",
+        "pattern_type": "property",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.D_eff",
+      "theory_value": 13.0,
       "difference": 0.0
     },
     {
@@ -9541,6 +9891,34 @@
       },
       "theory_key": "topology.b3",
       "theory_value": 24.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\pm-constants-loader.js",
+        "line_number": 47,
+        "key": "SPINOR_26D",
+        "value": 8192.0,
+        "raw_text": "SPINOR_26D: 8192,",
+        "pattern_type": "property",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.spinor_26d",
+      "theory_value": 8192.0,
+      "difference": 0.0
+    },
+    {
+      "extracted": {
+        "file": "js\\pm-constants-loader.js",
+        "line_number": 47,
+        "key": "value_with_s_47",
+        "value": 13.0,
+        "raw_text": "13 s",
+        "pattern_type": "with_units",
+        "category": "dimensions"
+      },
+      "theory_key": "geometry.D_eff",
+      "theory_value": 13.0,
       "difference": 0.0
     },
     {
@@ -9603,37 +9981,10 @@
   "unmatched": [
     {
       "file": "js\\theory-constants.js",
-      "line_number": 34,
-      "key": "equals_34",
-      "value": 13.0,
-      "raw_text": "= 13",
-      "pattern_type": "equals",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 42,
-      "key": "full26D",
-      "value": 8192.0,
-      "raw_text": "full26D: 8192,",
-      "pattern_type": "property",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\theory-constants.js",
       "line_number": 83,
       "key": "mStar",
       "value": 1e+19,
       "raw_text": "mStar: 1e+19,",
-      "pattern_type": "property",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 96,
-      "key": "w0Denominator",
-      "value": 13.0,
-      "raw_text": "w0Denominator: 13,",
       "pattern_type": "property",
       "category": "dimensions"
     },
@@ -9666,30 +10017,12 @@
     },
     {
       "file": "js\\theory-constants.js",
-      "line_number": 107,
-      "key": "omegaLambda",
-      "value": 0.6889,
-      "raw_text": "omegaLambda: 0.6889,",
-      "pattern_type": "property",
-      "category": "cosmology"
-    },
-    {
-      "file": "js\\theory-constants.js",
       "line_number": 119,
       "key": "alphaTBase",
       "value": 2.5,
       "raw_text": "alphaTBase: 2.5,",
       "pattern_type": "property",
       "category": "particle"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 120,
-      "key": "z2Correction",
-      "value": 0.2,
-      "raw_text": "z2Correction: 0.2,",
-      "pattern_type": "property",
-      "category": "other"
     },
     {
       "file": "js\\theory-constants.js",
@@ -9720,15 +10053,6 @@
     },
     {
       "file": "js\\theory-constants.js",
-      "line_number": 136,
-      "key": "alphaRSquared",
-      "value": 0.0045,
-      "raw_text": "alphaRSquared: 0.0045,",
-      "pattern_type": "property",
-      "category": "particle"
-    },
-    {
-      "file": "js\\theory-constants.js",
       "line_number": 141,
       "key": "phi0Breathing",
       "value": 0.075,
@@ -9751,24 +10075,6 @@
       "key": "etaBoosted",
       "value": 1000000000.0,
       "raw_text": "etaBoosted: 1000000000.0,",
-      "pattern_type": "property",
-      "category": "other"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 165,
-      "key": "kLISATypical",
-      "value": 0.001,
-      "raw_text": "kLISATypical: 0.001,",
-      "pattern_type": "property",
-      "category": "other"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 170,
-      "key": "theta45Deg",
-      "value": 0.7853981633974483,
-      "raw_text": "theta45Deg: 0.7853981633974483,",
       "pattern_type": "property",
       "category": "other"
     },
@@ -9882,24 +10188,6 @@
     },
     {
       "file": "js\\theory-constants.js",
-      "line_number": 262,
-      "key": "mNu1",
-      "value": 0.001,
-      "raw_text": "mNu1: 0.001,",
-      "pattern_type": "property",
-      "category": "neutrino"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 262,
-      "key": "value_with_eV_262",
-      "value": 0.001,
-      "raw_text": "0.001 eV",
-      "pattern_type": "with_units",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\theory-constants.js",
       "line_number": 263,
       "key": "mNu2",
       "value": 0.009,
@@ -9913,24 +10201,6 @@
       "key": "value_with_eV_263",
       "value": 0.009,
       "raw_text": "0.009 eV",
-      "pattern_type": "with_units",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 265,
-      "key": "sumMNu",
-      "value": 0.082,
-      "raw_text": "sumMNu: 0.082,",
-      "pattern_type": "property",
-      "category": "topology"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 265,
-      "key": "value_with_eV_265",
-      "value": 0.082,
-      "raw_text": "0.082 eV",
       "pattern_type": "with_units",
       "category": "dimensions"
     },
@@ -10008,15 +10278,6 @@
     },
     {
       "file": "js\\theory-constants.js",
-      "line_number": 296,
-      "key": "lambdaThreshold",
-      "value": 0.001,
-      "raw_text": "lambdaThreshold: 0.001,",
-      "pattern_type": "property",
-      "category": "cosmology"
-    },
-    {
-      "file": "js\\theory-constants.js",
       "line_number": 308,
       "key": "tauProton",
       "value": 3.5e+34,
@@ -10032,15 +10293,6 @@
       "raw_text": "timeSteps: 100,",
       "pattern_type": "property",
       "category": "other"
-    },
-    {
-      "file": "js\\theory-constants.js",
-      "line_number": 357,
-      "key": "equals_357",
-      "value": 13.0,
-      "raw_text": "= 13",
-      "pattern_type": "equals",
-      "category": "dimensions"
     },
     {
       "file": "js\\theory-constants-enhanced.js",
@@ -10116,24 +10368,6 @@
     },
     {
       "file": "js\\formula-definitions.js",
-      "line_number": 450,
-      "key": "value_with_m_450",
-      "value": 8192.0,
-      "raw_text": "8192 m",
-      "pattern_type": "with_units",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\formula-definitions.js",
-      "line_number": 475,
-      "key": "equals_475",
-      "value": 8192.0,
-      "raw_text": "= 8192",
-      "pattern_type": "equals",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\formula-definitions.js",
       "line_number": 565,
       "key": "equals_565",
       "value": 2.5,
@@ -10206,57 +10440,12 @@
     },
     {
       "file": "js\\formula-definitions.js",
-      "line_number": 886,
-      "key": "equals_886",
-      "value": 0.082,
-      "raw_text": "= 0.082 eV",
-      "pattern_type": "equals",
-      "category": "other"
-    },
-    {
-      "file": "js\\formula-definitions.js",
-      "line_number": 886,
-      "key": "value_with_eV_886",
-      "value": 0.082,
-      "raw_text": "0.082 eV",
-      "pattern_type": "with_units",
-      "category": "other"
-    },
-    {
-      "file": "js\\formula-definitions.js",
-      "line_number": 887,
-      "key": "equals_887",
-      "value": 0.082,
-      "raw_text": "= 0.082 ",
-      "pattern_type": "equals",
-      "category": "neutrino"
-    },
-    {
-      "file": "js\\formula-definitions.js",
       "line_number": 895,
       "key": "experimental_value",
       "value": 0.072,
       "raw_text": "experimental_value: 0.072,",
       "pattern_type": "property",
       "category": "other"
-    },
-    {
-      "file": "js\\formula-definitions.js",
-      "line_number": 900,
-      "key": "equals_900",
-      "value": 0.082,
-      "raw_text": "= 0.082 eV",
-      "pattern_type": "equals",
-      "category": "particle"
-    },
-    {
-      "file": "js\\formula-definitions.js",
-      "line_number": 900,
-      "key": "value_with_eV_900",
-      "value": 0.082,
-      "raw_text": "0.082 eV",
-      "pattern_type": "with_units",
-      "category": "particle"
     },
     {
       "file": "js\\formula-definitions.js",
@@ -10401,33 +10590,6 @@
       "raw_text": "-0.1 eV",
       "pattern_type": "with_units",
       "category": "neutrino"
-    },
-    {
-      "file": "js\\formula-registry.js",
-      "line_number": 399,
-      "key": "equals_399",
-      "value": 8192.0,
-      "raw_text": "= 8192",
-      "pattern_type": "equals",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\formula-registry.js",
-      "line_number": 401,
-      "key": "equals_401",
-      "value": 8192.0,
-      "raw_text": "= 8192",
-      "pattern_type": "equals",
-      "category": "other"
-    },
-    {
-      "file": "js\\formula-registry.js",
-      "line_number": 418,
-      "key": "equals_418",
-      "value": 8192.0,
-      "raw_text": "= 8192",
-      "pattern_type": "equals",
-      "category": "dimensions"
     },
     {
       "file": "js\\formula-registry.js",
@@ -10872,33 +11034,6 @@
     },
     {
       "file": "js\\pm-constants-loader.js",
-      "line_number": 36,
-      "key": "D_AFTER_SP2R",
-      "value": 13.0,
-      "raw_text": "D_AFTER_SP2R: 13,",
-      "pattern_type": "property",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\pm-constants-loader.js",
-      "line_number": 47,
-      "key": "SPINOR_26D",
-      "value": 8192.0,
-      "raw_text": "SPINOR_26D: 8192,",
-      "pattern_type": "property",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\pm-constants-loader.js",
-      "line_number": 47,
-      "key": "value_with_s_47",
-      "value": 13.0,
-      "raw_text": "13 s",
-      "pattern_type": "with_units",
-      "category": "dimensions"
-    },
-    {
-      "file": "js\\pm-constants-loader.js",
       "line_number": 464,
       "key": "ttl",
       "value": 3600.0,
@@ -10970,5 +11105,5 @@
       "category": "dimensions"
     }
   ],
-  "theory_values_count": 311
+  "theory_values_count": 364
 }

@@ -39,6 +39,10 @@ _OUTPUT_PARAMS = [
     "geometry.chi_eff",
     "geometry.n_generations",
     "geometry.phi",
+    # Hodge numbers (TCS #187)
+    "geometry.h11",
+    "geometry.h21",
+    "geometry.h31",
     # Geometric constants
     "geometry.k_gimel",
     "geometry.c_kaf",
