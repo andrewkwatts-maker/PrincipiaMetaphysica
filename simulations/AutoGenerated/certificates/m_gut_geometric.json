@@ -1,7 +1,10 @@
 {
   "proof_id": "m_gut_geometric",
-  "label": "GUT Scale from G2 Topology",
-  "category": "GAUGE",
+  "cert_id": "CERT-GUT-007",
+  "label": "GUT Unification Scale",
+  "category": "FOUNDATIONAL",
+  "version": "16.2",
+  "status": "LOCKED",
   "wolfram_code": "With[{\n  chiEff = 144,\n  b3 = 24,\n  mPlanck = 2.435*^18,\n  kGimel = 12.31831\n},\n  (* M_GUT from flux quantization and modular invariance *)\n  (* M_GUT = M_Planck * exp(-2*pi*sqrt(chiEff/b3)) *)\n  mGUT = mPlanck * Exp[-2*Pi*Sqrt[chiEff/b3]];\n  \n  (* Alternative: from torsion scaling *)\n  (* M_GUT ~ M_Planck / kGimel^2 *)\n  mGUTTorsion = mPlanck / kGimel^2;\n  \n  (* Return both values *)\n  {N[mGUT, 5], N[mGUTTorsion, 5]}\n]",
   "expected_result": "{2.1000×10^16 GeV, 1.6066×10^16 GeV}",
   "verification_status": "verified",
