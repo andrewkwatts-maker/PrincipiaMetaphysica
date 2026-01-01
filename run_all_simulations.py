@@ -399,6 +399,13 @@ try:
 except ImportError:
     APPENDIX_L_V16_2_AVAILABLE = False
 
+# v16.2 Sterile Model - Appendix Z: Terminal Constant Ledger
+try:
+    from simulations.v16.appendices.appendix_z_terminal_ledger_v16_2 import AppendixZTerminalLedger
+    APPENDIX_Z_V16_2_AVAILABLE = True
+except ImportError:
+    APPENDIX_Z_V16_2_AVAILABLE = False
+
 
 # ============================================================================
 # V16.0 VALIDATION BOUNDS
@@ -693,7 +700,9 @@ class SimulationRunner:
                 # Appendix K: The Sterile Constant Table (Geometric Residue Registry)
                 ([AppendixKSterileConstants()] if APPENDIX_K_V16_2_AVAILABLE else []) +
                 # Appendix L: The Omega Unwinding Map (Terminal State Phase Diagram)
-                ([AppendixLOmegaUnwinding()] if APPENDIX_L_V16_2_AVAILABLE else [])
+                ([AppendixLOmegaUnwinding()] if APPENDIX_L_V16_2_AVAILABLE else []) +
+                # Appendix Z: Terminal Constant Ledger (10 Formulas, ZERO Free Parameters)
+                ([AppendixZTerminalLedger()] if APPENDIX_Z_V16_2_AVAILABLE else [])
             ),
         }
 
