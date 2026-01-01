@@ -9,10 +9,17 @@ The Formula Validator is the "Supreme Auditor" of the v16.2 Sterile Model.
 It ensures that symbolic geometric formulas exactly match numerical residues
 to 12 decimal places.
 
+HEBREW LETTER NAMING CONVENTIONS:
+    י (Yod)      - The 288 Ancestral Roots (Yod₁ - Yod₂₈₈)
+    ן (Nun Sofit) - The 24 Torsion Pins (Nun₁ - Nun₂₄), 12/12 shadow split
+    ד (Dalet)    - The 4 Spacetime Dimensions (Dalet₁ - Dalet₄)
+
+    Projection Hierarchy: Yod (288) → Nun (24) → Dalet (4)
+
 VALIDATION PRINCIPLE:
     Every constant in the registry must be a DERIVED value, not a manually
     entered number. If a value is entered from a textbook rather than
-    calculated from the 288-root basis, the validator returns IMPURE_DATA_ERROR.
+    calculated from the Yod-root basis, the validator returns IMPURE_DATA_ERROR.
 
 THE THREE BANKS:
     1. METRIC_BANK: G, Lambda, H0, c
@@ -20,8 +27,8 @@ THE THREE BANKS:
     3. MASS_BANK: Higgs_VEV, Gen_Ratio, theta_s
 
 CLOSURE CHECK:
-    - Total_Potential = Active (125) + Hidden (163) = 288
-    - Root_Parity = SO24 (276) + Pins (24) - Tax (12) = 288
+    - Total_Potential = Yod_active (125) + Yod_hidden (163) = Yod (288)
+    - Root_Parity = SO24 (276) + Nun (24) - Tax (12) = Yod (288)
     - Sterility_Index = Free_Parameters == 0
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -42,16 +49,26 @@ class FormulaValidator:
 
     Cross-references Symbolic Geometric Formulas with Numerical Registry.
     If a single decimal point drifts, it withholds the Omega Seal.
+
+    Hebrew Letter Naming:
+        Yod (י) = 288 ancestral roots
+        Nun (ן) = 24 torsion pins
+        Dalet (ד) = 4 spacetime dimensions
     """
 
-    # Core Geometric Constants (THE ONLY INPUTS)
-    ROOTS = 288
-    ACTIVE = 125
-    HIDDEN = 163
-    PINS = 24
-    SO24_GENERATORS = 276
-    MANIFOLD_TAX = 12
-    PINS_PER_DIM = 6
+    # Hebrew Letter Constants
+    YOD = "י"       # 288 roots
+    NUN = "ן"       # 24 pins
+    DALET = "ד"     # 4 dimensions
+
+    # Core Geometric Constants (Yod-Nun-Dalet Architecture)
+    ROOTS = 288             # Yod total (י₁ - י₂₈₈)
+    ACTIVE = 125            # Yod active (observable)
+    HIDDEN = 163            # Yod hidden (bulk supports)
+    PINS = 24               # Nun total (ן₁ - ן₂₄)
+    SO24_GENERATORS = 276   # SO(24) generators
+    MANIFOLD_TAX = 12       # Tax = Nun/2
+    PINS_PER_DIM = 6        # Nun per Dalet (24/4)
 
     # Derived constants
     THETA_S = np.arcsin(ACTIVE / ROOTS)

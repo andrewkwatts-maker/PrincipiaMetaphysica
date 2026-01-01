@@ -7,21 +7,28 @@ DOI: 10.5281/zenodo.18079602
 
 This module implements the COMPLETE 42-Certificate Stack with hardened
 geometric enforcement. Each certificate is a LOGICAL GATE that cannot
-be bypassed without breaking the 288-root architecture.
+be bypassed without breaking the Yod-Nun-Dalet (288-24-4) architecture.
+
+HEBREW LETTER NAMING CONVENTIONS:
+    י (Yod)      - The 288 Ancestral Roots (Yod₁ - Yod₂₈₈)
+    ן (Nun Sofit) - The 24 Torsion Pins (Nun₁ - Nun₂₄), 12/12 shadow split
+    ד (Dalet)    - The 4 Spacetime Dimensions (Dalet₁ - Dalet₄)
+
+    Projection Hierarchy: Yod (288) → Nun (24) → Dalet (4)
 
 THE 42 CERTIFICATES:
     Vault I   (C01-C14): Ancestral - 26D bulk and SO(24) generators
-    Vault II  (C15-C28): Torsion   - 24 pins and 4-pattern distribution
-    Vault III (C29-C42): Residue   - 125 particles and Omega closure
+    Vault II  (C15-C28): Torsion   - Nun (24) pins and Dalet (4) pattern
+    Vault III (C29-C42): Residue   - Yod_active (125) particles and Omega closure
 
 THE 7 PRIMARY GATES:
-    C02-R:     Root Parity (288 = 125 + 163)
-    C05-M:     Manifold Tax (-12 stabilizer)
-    C19-T:     Torsion Lock (24 pins)
-    C30-S:     Shell Saturation (fermion packing)
-    C37-CP:    Strong CP Lock (theta_QCD = 0)
+    C02-R:     Root Parity (Yod = Yod_active + Yod_hidden = 288)
+    C05-M:     Manifold Tax (Tax = Nun/2 = 12)
+    C19-T:     Torsion Lock (Nun = 24 pins)
+    C30-S:     Shell Saturation (fermion packing in 3 shells)
+    C37-CP:    Strong CP Lock (theta_QCD = 0 by isotropy)
     C38-V7:    Curvature Invariant (Omega = 1)
-    C42-G:     Gravitational Anchor (Zero-Point Residue)
+    C42-G:     Gravitational Anchor (Zero-Point Residue of Yod₁)
 
 TERMINAL CLOSURE:
     Once all 42 certificates pass, the Omega Seal is generated
@@ -79,19 +86,31 @@ class TerminalCertificates:
     The Complete 42-Certificate Terminal Stack.
 
     Each certificate is a LOGICAL GATE enforcing geometric constraints.
+
+    Hebrew Letter Naming:
+        Yod (י) = 288 ancestral roots
+        Nun (ן) = 24 torsion pins
+        Dalet (ד) = 4 spacetime dimensions
     """
 
     # ================================================================
-    # IMMUTABLE GEOMETRIC CONSTANTS (THE ONLY INPUTS)
+    # HEBREW LETTER CONSTANTS
     # ================================================================
-    ROOTS = 288
-    ACTIVE = 125
-    HIDDEN = 163
-    PINS = 24
-    DIMENSIONS = 4
-    PINS_PER_DIM = 6
-    SO24_GENERATORS = 276
-    MANIFOLD_TAX = 12
+    YOD = "י"       # 288 roots
+    NUN = "ן"       # 24 pins
+    DALET = "ד"     # 4 dimensions
+
+    # ================================================================
+    # IMMUTABLE GEOMETRIC CONSTANTS (Yod-Nun-Dalet Architecture)
+    # ================================================================
+    ROOTS = 288             # Yod total (י₁ - י₂₈₈)
+    ACTIVE = 125            # Yod active (observable nodes)
+    HIDDEN = 163            # Yod hidden (bulk supports)
+    PINS = 24               # Nun total (ן₁ - ן₂₄)
+    DIMENSIONS = 4          # Dalet total (ד₁ - ד₄)
+    PINS_PER_DIM = 6        # Nun per Dalet (24/4 = 6)
+    SO24_GENERATORS = 276   # SO(24) generators
+    MANIFOLD_TAX = 12       # Tax = Nun/2 = 12
 
     # Derived constants
     STERILE_ANGLE = np.arcsin(ACTIVE / ROOTS)

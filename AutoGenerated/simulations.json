@@ -1,7 +1,7 @@
 {
   "version": "16.2",
-  "generated": "2026-01-01T10:14:16.089365Z",
-  "total_scripts": 81,
+  "generated": "2026-01-01T10:33:15.580718Z",
+  "total_scripts": 82,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -119,6 +119,14 @@
           "version": "16.2",
           "title": "Appendix L: The Omega Unwinding Map",
           "description": "Terminal State Phase Diagram showing the three basins of attraction",
+          "status": null
+        },
+        {
+          "file": "appendix_z_terminal_ledger_v16_2.py",
+          "path": "simulations/v16/appendices/appendix_z_terminal_ledger_v16_2.py",
+          "version": "16.2",
+          "title": "Appendix Z: Terminal Constant Ledger",
+          "description": "The Terminal Constant Ledger containing all derived constants with complete geometric derivations. Proves ZERO free parameters. DOI: 10.5281/zenodo.18079602",
           "status": null
         },
         {
@@ -258,7 +266,7 @@
           "status": null
         }
       ],
-      "count": 31
+      "count": 32
     },
     "v16/cosmology": {
       "title": "Cosmology",

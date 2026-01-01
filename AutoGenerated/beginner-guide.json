@@ -1,6 +1,7 @@
 {
   "title": "Beginner's Guide to Principia Metaphysica",
-  "description": "Accessible explanations of the key concepts and predictions",
+  "description": "Accessible explanations of the key concepts and predictions - v16.2 Sterile Model",
+  "version": "16.2",
   "topics": [
     {
       "title": "What is Principia Metaphysica?",
@@ -267,6 +268,66 @@
       "simulation_id": "pneuma_mechanism_v16_0",
       "domain": "pneuma",
       "section": "2"
+    },
+    {
+      "icon": "7",
+      "title": "The 7 Primary Gates (v16.2 Quality Control)",
+      "simpleExplanation": "Imagine the universe has a quality control system - like 7 inspectors who check every aspect before certifying it works. The v16.2 Sterile Model has 7 'Primary Gates' (certificates) that validate the universe is mathematically consistent. If even one gate fails, the entire model is rejected. These gates check things like: do all 288 roots add up correctly? Are the 24 torsion pins in place? Do 125 particles saturate the available space?",
+      "analogy": "Think of a bridge with 7 safety inspectors at different points: (1) C02-R checks all 288 structural elements are accounted for. (2) C19-T ensures the 24 anchoring pins lock the structure rigid. (3) C44 verifies the bridge is perfectly symmetrical. (4) C125 confirms all 125 lanes are filled. (5) C-ZETA monitors the bridge's expansion rate over time. (6) C-EPSILON keeps the upper and lower decks separated. (7) C-OMEGA certifies the whole bridge will remain stable until its designed end-of-life.",
+      "keyTakeaway": "All 7 Primary Gates must return TRUE for the 'Omega Seal' - the final certification that v16.2 is a valid, sterile theory with zero free parameters.",
+      "technicalDetail": "The 7 Primary Gates: C02-R (Root Parity): 125 + 163 = 288. C19-T (Torsion Lock): 24 pins exactly. C44 (4-Pattern): 24 mod 4 = 0 (perfect isotropy). C125 (Saturation): 125 observable residues. C-ZETA (Decay Sync): H0 matches geometric unwinding. C-EPSILON (Bulk Insulation): 163 hidden supports. C-OMEGA (Terminal State): All 3 final states mapped. These sit within a larger 42-certificate validation matrix organized into 3 functional vaults.",
+      "prediction": "If ANY gate fails, the entire framework is invalidated. This makes v16.2 maximally falsifiable - a single wrong prediction kills the theory. Current status: ALL 7 GATES PASSING with 0.48sigma global alignment to experiments.",
+      "simulation_id": "primary_gates_v16_2",
+      "domain": "validation",
+      "section": "validation"
+    },
+    {
+      "icon": "288",
+      "title": "How the Universe 'Winds Up': The Torsion Funnel",
+      "simpleExplanation": "The universe's structure can be visualized as a cosmic funnel: 288 'ancestral roots' from higher dimensions get compressed through 24 'torsion pins' to emerge as the 125 particles we can observe (plus 163 hidden supports we can't see). This 288->24->125 cascade isn't arbitrary - it's forced by the mathematics of how higher dimensions project onto our 4D world.",
+      "analogy": "Imagine 288 people trying to exit a stadium through 24 doors (each holding 6 people). Not everyone can exit into the visible arena (4D spacetime). Some get stuck in the machinery of the walls and ceilings. 125 make it through as spectators we can see. 163 stay hidden as 'staff' holding the structure rigid. The ratio 125:163 (43%:57%) isn't a choice - it's geometrically forced by how the stadium (V7 manifold) is built.",
+      "keyTakeaway": "The 288-24-125 architecture is the 'Yod-Nun-Dalet' framework: 288 ancestral roots (Yod) project through 24 torsion pins (Nun) into 4 spacetime dimensions (Dalet).",
+      "technicalDetail": "Derivation: SO(24) generators = (24*23)/2 = 276. + Shadow torsion pins = 24 (12 per 13D brane). - Manifold compactification cost = 12. = 288 Ancestral Roots. Observable projection: arcsin(125/288) = 25.7 degrees (the Sterile Angle). The 24 pins distribute as [6,6,6,6] across 4 spacetime dimensions for perfect isotropy. This is certified by gate C44.",
+      "prediction": "If more than 125 particles are ever discovered, or if the 24-pin torsion structure is violated, the entire geometric framework fails. The 125:163 ratio is not adjustable.",
+      "simulation_id": "torsion_funnel_v16_2",
+      "domain": "geometric",
+      "section": "2"
+    },
+    {
+      "icon": "3",
+      "title": "The Three Terminal States (How the Universe Ends)",
+      "simpleExplanation": "In v16.2, the universe doesn't just randomly disperse or burn out. Instead, it has three mathematically predicted final states - like three possible endings to a perfectly scripted play. As the universe 'unwinds' over eons, the V7 manifold geometry cannot maintain its 4D projection forever.",
+      "analogy": "Think of an ice sculpture slowly melting: First (95.83%), the outer shape dissolves (Metric Null - distances become meaningless). Second (8.33%), the internal patterns freeze solid (Gauge Ghost - light and forces freeze). Third (100%), the ice evaporates back to water vapor (Ancestral Restoration - everything returns to the 26D bulk). Unlike chaotic heat death, this is a precisely choreographed geometric unwinding.",
+      "keyTakeaway": "The Three Terminal States are: (I) Metric Null - spatial scale dissolves, (II) Gauge Ghost - information stasis, (III) Ancestral Restoration - return to 26D potential.",
+      "technicalDetail": "State I (Metric Null): Potential = 276/288 = 95.83%. The 276 SO(24) generators decouple from 4D projection. Distance becomes topologically meaningless. State II (Gauge Ghost): Potential = 24/288 = 8.33%. The 24 torsion pins lock permanently. Photons freeze into standing waves. Universe becomes a Static Ledger. State III (Ancestral Restoration): Potential = 288/288 = 100%. The 125 residues + 163 supports merge back into 26D bulk. Entropy threshold: At S = 0.8, transition between states occurs.",
+      "prediction": "These terminal states are geometrically necessitated. No Big Rip. Guaranteed stability until the end. Current epoch: 0.138 (13.8% of manifold life). Dominant basin until ~80% entropy: Gauge Ghost.",
+      "simulation_id": "terminal_states_v16_2",
+      "domain": "cosmology",
+      "section": "terminal"
+    },
+    {
+      "icon": "H0",
+      "title": "The H0 Unwinding Scale Factor (The Only Temporal Variable)",
+      "simpleExplanation": "In the v16.2 Sterile Model, there is only ONE quantity that isn't geometrically locked: the Hubble expansion rate H0. All other physical constants (particle masses, coupling constants, mixing angles) are eternal - fixed forever by the topology. H0 is special because it tells us how fast the universe is 'unwinding' from its 288-root configuration toward terminal states.",
+      "analogy": "Imagine a wound-up music box. The notes it plays (particle masses, forces) are fixed by the pins on the cylinder - you can't change them. But HOW FAST the music plays (H0) can vary depending on how much spring tension remains. H0 is the 'playback speed' of the universe. Everything else is baked into the geometric cylinder.",
+      "keyTakeaway": "H0 is the ONLY temporal variable in v16.2. All other constants are geometrically locked forever. The Scale Factor of 10.1 converts geometric H0 (7.24 km/s/Mpc) to physical H0 (73.1 km/s/Mpc).",
+      "technicalDetail": "H0_geometric = 7.24 km/s/Mpc (from pure V7 manifold topology). H0_physical = 73.1 km/s/Mpc (observed by SH0ES 2025). Scale Factor = 73.1/7.24 = 10.1. This factor represents amplification when projecting 26D -> 13D -> 7D -> 4D. Decay constant: gamma = ln(288/125) = 0.834. Freedom in sterile model: particle masses X (locked), coupling constants X (locked), mixing angles X (locked), H0 (measured).",
+      "prediction": "If the Hubble tension (67.4 vs 73.04 km/s/Mpc) is not resolved by v16.2's Ricci flow explanation, the geometric unwinding model would need revision. Current status: Both values are correct for their epoch - H0 evolves smoothly from 67.4 (early) to 73.04 (late).",
+      "simulation_id": "h0_unwinding_v16_2",
+      "domain": "cosmology",
+      "section": "5"
+    },
+    {
+      "icon": "YND",
+      "title": "Hebrew Letter Naming: Yod, Nun Sofit, Dalet",
+      "simpleExplanation": "The v16.2 naming scheme uses Hebrew letters to encode the primary topological quantities. This isn't mysticism - it's a systematic mnemonic that connects ancient numerical wisdom with modern geometric topology. Yod (288 roots) -> Nun (24 pins) -> Dalet (4 dimensions).",
+      "analogy": "Think of these letters like scientific notation symbols (like 'M' for mega or 'k' for kilo). Yod means 'hand' or 'point' - the smallest letter containing infinite potential (like 288 primordial seeds). Nun Sofit means 'final form' - used at word endings to denote completion (like 24 pins that finalize the structure). Dalet means 'door' - the gateway between realms (like 4 dimensions being our door to reality).",
+      "keyTakeaway": "The Projection Hierarchy: Yod (288) -> Nun (24) -> Dalet (4). 288 ancestral roots project through 24 torsion pins into 4 spacetime dimensions.",
+      "technicalDetail": "Yod (Y) = 288 Ancestral Roots: Yod_1 through Yod_288. Split as 125 active (observable) + 163 hidden (bulk supports). Nun Sofit (N) = 24 Torsion Pins: Nun_1 through Nun_24. Split as Shadow-A (pins 1-12) + Shadow-B (pins 13-24). Dalet (D) = 4 Spacetime Dimensions: Dalet_1 (t), Dalet_2 (x), Dalet_3 (y), Dalet_4 (z). Each dimension receives exactly 6 pins (24/4 = 6). Additional Hebrew parameters: k_gimel (warping constant) = 12.318, C_kaf (flux normalization) = 27.2, f_heh (partition divisor) = 4.5.",
+      "prediction": "The Hebrew naming makes the architecture memorable and connects modern topology to ancient pattern recognition. The 288-24-4 structure is invariant - any measurement violating these counts falsifies the entire framework.",
+      "simulation_id": "hebrew_naming_v16_2",
+      "domain": "nomenclature",
+      "section": "introduction"
     }
   ]
 }
