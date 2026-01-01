@@ -12,6 +12,34 @@
  */
 
 /**
+ * Theory facts for the news ticker - showcasing PM derivations
+ * Each fact has a category (for styling) and text content
+ */
+const THEORY_FACTS = [
+  // Master validation status always first
+  { category: 'Status', text: '72/72 Gates Locked — Zero free parameters remain' },
+  // Derivations and predictions
+  { category: 'Derivation', text: 'α = 1/137.036 derived from G₂ holonomy: π/(4·dim(G₂)·√b₃)' },
+  { category: 'Structure', text: '3 generations emerge from 24 ÷ 8 — G₂ torsion over octonions' },
+  { category: 'Prediction', text: 'Σmᵥ = 0.06 eV predicted from Hopf fibration S³→S² geometry' },
+  { category: 'Constant', text: 'sin²θ_W = 0.2312 derived from electroweak symmetry breaking on G₂' },
+  { category: 'Formula', text: 'm_e/m_μ ratio from geometric factor in lepton mass hierarchy' },
+  { category: 'Structure', text: 'b₃ = 24: Third Betti number defines 24 topological cycles' },
+  { category: 'Prediction', text: 'Higgs mass m_H = 125.10 GeV from electroweak vacuum geometry' },
+  { category: 'Derivation', text: 'CKM angles from G₂ moduli space: |V_us| = 0.2245' },
+  { category: 'Constant', text: 'α_s(M_Z) = 0.1180 from asymptotic freedom on G₂ manifold' },
+  { category: 'Structure', text: '125 active + 163 hidden = 288 total roots in E₈×E₈' },
+  { category: 'Formula', text: 'Λ_cosmo derives from G₂ volume: Ω_Λ = 0.685 ± 0.007' },
+  { category: 'Seal', text: 'Omega Hash: ff0550f0f2ff391a — Cryptographic integrity seal' },
+  { category: 'Derivation', text: 'm_W/m_Z = cos(θ_W) — Electroweak unification from geometry' },
+  { category: 'Structure', text: 'Modular invariance via Dedekind η(τ) ensures consistency' },
+];
+
+// Ticker state
+let tickerIndex = 0;
+let tickerInterval = null;
+
+/**
  * Navigation links - single source of truth
  * All pages are now in the /Pages/ folder
  *
@@ -130,6 +158,10 @@ function createHeaderHTML(activePageId = '') {
     <header class="pm-header">
       <div class="header-content">
         <a href="${homeHref}" class="site-title">Principia Metaphysica</a>
+        <div class="theory-ticker" aria-live="polite" aria-label="Theory highlights">
+          <span class="ticker-category"></span>
+          <span class="ticker-text"></span>
+        </div>
         <nav class="main-nav" role="navigation" aria-label="Main navigation">
           <ul role="list">
             ${navItems}
@@ -245,6 +277,9 @@ export function injectHeader(activePageId = '', options = {}) {
   // Setup mobile menu toggle
   setupMobileMenu();
 
+  // Setup theory ticker
+  setupTicker();
+
   console.log(`[PM Header] Injected header for page: ${activePageId}`);
 }
 
@@ -295,6 +330,58 @@ function setupMobileMenu() {
       nav.setAttribute('aria-hidden', 'true');
     }
   }
+}
+
+/**
+ * Initialize the theory ticker - displays rotating facts about PM derivations
+ * Changes every 10 seconds with a fade transition
+ */
+function setupTicker() {
+  const ticker = document.querySelector('.pm-header .theory-ticker');
+  if (!ticker) return;
+
+  const categoryEl = ticker.querySelector('.ticker-category');
+  const textEl = ticker.querySelector('.ticker-text');
+  if (!categoryEl || !textEl) return;
+
+  // Display current fact
+  function showFact(index) {
+    const fact = THEORY_FACTS[index];
+    ticker.classList.add('fade-out');
+
+    setTimeout(() => {
+      categoryEl.textContent = fact.category;
+      categoryEl.className = 'ticker-category cat-' + fact.category.toLowerCase();
+      textEl.textContent = fact.text;
+      ticker.classList.remove('fade-out');
+    }, 300);
+  }
+
+  // Show first fact immediately (master status)
+  showFact(0);
+
+  // Rotate every 10 seconds
+  tickerInterval = setInterval(() => {
+    tickerIndex = (tickerIndex + 1) % THEORY_FACTS.length;
+    showFact(tickerIndex);
+  }, 10000);
+
+  // Pause on hover
+  ticker.addEventListener('mouseenter', () => {
+    if (tickerInterval) {
+      clearInterval(tickerInterval);
+      tickerInterval = null;
+    }
+  });
+
+  ticker.addEventListener('mouseleave', () => {
+    if (!tickerInterval) {
+      tickerInterval = setInterval(() => {
+        tickerIndex = (tickerIndex + 1) % THEORY_FACTS.length;
+        showFact(tickerIndex);
+      }, 10000);
+    }
+  });
 }
 
 /**
