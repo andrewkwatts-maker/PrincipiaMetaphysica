@@ -1309,10 +1309,21 @@ class GateRegistry:
             msg = "Recursive loop: T∞ → T0 Möbius seal"
 
         elif gate_id == 72:  # The Omega Hash
-            # Terminal variance = 0.000...
-            variance = 0.0
-            passed = np.isclose(variance, 0.0, atol=1e-12)
-            msg = f"OMEGA HASH: Δ = {variance:.12f} → LOCKED"
+            # Compute actual hash of gates 1-71 results
+            import hashlib
+            gate_bits = ""
+            for gid in range(1, 72):
+                g_passed, _ = cls.validate_gate(gid, model_data)
+                gate_bits += "1" if g_passed else "0"
+
+            # SHA-256 hash of the binary gate results
+            hash_input = f"{gate_bits}|{roots}|{torsion}|{active}|{hidden}"
+            omega_hash = hashlib.sha256(hash_input.encode()).hexdigest()[:16]
+
+            # All 71 gates must pass for Omega seal
+            all_71_passed = all(c == "1" for c in gate_bits)
+            passed = all_71_passed
+            msg = f"OMEGA HASH: {omega_hash} → {'LOCKED' if passed else 'OPEN'}"
 
         else:
             # Fallback (should never reach here)
@@ -1366,13 +1377,24 @@ class GateRegistry:
             results["phase_status"][gate.phase].append(passed)
             results["block_status"][gate.block].append(passed)
 
+        # Compute actual Omega Hash from gate 72 validation
+        import hashlib
+        gate_bits = "".join("1" if results["gate_results"][gid]["passed"] else "0"
+                           for gid in range(1, 72))
+        roots = model_data.get("roots", 288)
+        torsion = model_data.get("torsion", 24)
+        active = model_data.get("active", 125)
+        hidden = roots - active
+        hash_input = f"{gate_bits}|{roots}|{torsion}|{active}|{hidden}"
+        omega_hash = hashlib.sha256(hash_input.encode()).hexdigest()[:16]
+
         # Determine final status
         if results["passed"] == 72:
             results["status"] = "STERILE: 72/72 GATES LOCKED"
-            results["omega_hash"] = "0.000000000000"
+            results["omega_hash"] = omega_hash
         else:
             results["status"] = f"NON-TERMINAL: {results['passed']}/72 GATES"
-            results["omega_hash"] = f"{results['failed'] / 72:.12f}"
+            results["omega_hash"] = f"INCOMPLETE_{omega_hash}"
 
         return results
 

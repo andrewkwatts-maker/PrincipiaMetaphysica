@@ -1,7 +1,7 @@
 {
   "version": "16.2",
-  "generated": "2026-01-01T10:33:15.580718Z",
-  "total_scripts": 82,
+  "generated": "2026-01-01T13:25:19.778417Z",
+  "total_scripts": 83,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -50,11 +50,19 @@
           "status": null
         },
         {
+          "file": "appendix_f_72gates_v16_2.py",
+          "path": "simulations/v16/appendices/appendix_f_72gates_v16_2.py",
+          "version": "16.2",
+          "title": "Appendix F: The 72 Gates of Integrity",
+          "description": "Complete sterile certification framework with 72 hard locks",
+          "status": null
+        },
+        {
           "file": "appendix_f_certificates_v16_2.py",
           "path": "simulations/v16/appendices/appendix_f_certificates_v16_2.py",
           "version": "16.2",
-          "title": "Appendix F: The 42 Certificates of Integrity",
-          "description": "Complete sterile certification framework with 7 Master Gates",
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         },
         {
@@ -266,7 +274,7 @@
           "status": null
         }
       ],
-      "count": 32
+      "count": 33
     },
     "v16/cosmology": {
       "title": "Cosmology",

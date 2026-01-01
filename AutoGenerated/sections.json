@@ -256,13 +256,6 @@
           "content": "<h4>The Descent Path Summary</h4><p>26D(24,2) → 13D [S<sub>PR</sub>(2) Gauge] → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p><p>At each stage, the 'Symmetry Budget' is conserved, and the 125 residues are progressively 'extracted' as the unique spectral eigenvalues of the descended geometry.</p>",
           "label": "descent-summary",
           "equationNumber": "descent-summary"
-        },
-        {
-          "type": "figure",
-          "src": "dimensional-reduction-pathway.svg",
-          "alt": "Dimensional Reduction Pathway: 26D → 13D → 7D → 4D",
-          "caption": "The Dimensional Descent Pathway. The 26D(24,2) ancestral bulk projects through S<sub>PR</sub>(2) gauge fixing to 13D, then through G₂ holonomy to 7D, and finally to our observable 4D spacetime via Calabi-Yau filtering.",
-          "label": "1"
         }
       ],
       "content_blocks": [
@@ -515,7 +508,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-01T20:33:15.457759"
+      "timestamp": "2026-01-01T23:25:19.632817"
     },
     "2": {
       "id": "2",
@@ -941,7 +934,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-01T20:33:15.457808"
+      "timestamp": "2026-01-01T23:25:19.632873"
     },
     "validation": {
       "id": "validation",
@@ -1063,7 +1056,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-01T20:33:15.420001"
+      "timestamp": "2026-01-01T23:25:19.594794"
     },
     "V.1": {
       "id": "validation",
@@ -1185,7 +1178,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-01T20:33:15.420022"
+      "timestamp": "2026-01-01T23:25:19.594826"
     },
     "3": {
       "id": "3",
@@ -1457,7 +1450,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-01T20:33:15.457847"
+      "timestamp": "2026-01-01T23:25:19.632920"
     },
     "3.4": {
       "id": "3",
@@ -1621,7 +1614,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-01T20:33:15.420080"
+      "timestamp": "2026-01-01T23:25:19.594911"
     },
     "3.5": {
       "id": "3",
@@ -1793,7 +1786,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-01T20:33:15.420176"
+      "timestamp": "2026-01-01T23:25:19.595042"
     },
     "3.1": {
       "id": "3",
@@ -1851,7 +1844,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-01T20:33:15.451015"
+      "timestamp": "2026-01-01T23:25:19.625908"
     },
     "4": {
       "id": "4",
@@ -1862,7 +1855,7 @@
       "title": "System Integrity and Verification",
       "shortTitle": "System Integrity and Verification",
       "order": 4,
-      "abstract": "Hysteresis seal, 72 gates of integrity, and data provenance.",
+      "abstract": "Hysteresis seal, 42 certificates of integrity, and data provenance.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -1916,14 +1909,14 @@
         },
         {
           "type": "heading",
-          "content": "Automated Validation: The 72 Gates of Integrity",
+          "content": "Automated Validation: The 42 Certificates of Integrity",
           "label": "4.2",
           "equationNumber": "4.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>72 Gates of Integrity</strong> (G01–G72). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.' The 72-gate architecture aligns with the 3-fold symmetry of the 24 torsion pins (24 × 3 = 72)."
+          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>42 Certificates of Integrity</strong> (C01–C42). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.'"
         },
         {
           "type": "heading",
@@ -1932,20 +1925,20 @@
         },
         {
           "type": "paragraph",
-          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 72 Gates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each gate represents a fundamental physical law or topological constraint that the model must satisfy. If a single gate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
+          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 42 Certificates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each certificate represents a fundamental physical law or topological constraint that the model must satisfy. If a single certificate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
         },
         {
           "type": "heading",
-          "content": "4.2.2 Categorization of the 72 Gates",
+          "content": "4.2.2 Categorization of the 42 Certificates",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The gates are partitioned into five functional phases, ensuring multi-level validation aligned with the 24×3 torsion symmetry:"
+          "content": "The certificates are partitioned into three functional tiers, ensuring multi-level validation:"
         },
         {
           "type": "note",
-          "content": "<h4>Phase 1: Structural Foundations (G01–G10)</h4><p>Integer Root Parity, Holonomy Closure, Ancestral Mapping, Projection Tax, Metric Continuity, Shadow-A/B Parity, Torsion Orthogonality, Sterile Angle Anchor, Pin Isotropic Distribution, and Torsion Tension Floor.</p><h4>Phase 2: Gauge & Matter Registry (G11–G25)</h4><p>Strong Force Saturation, Electroweak Alignment, Photon Zero-Mass, SU(N) Approximation, Gauge-Invariant Projection, Fermionic Dirac Mapping, Generation Triality, Mass-Gap Quantization, Neutrino Neutrality, Chiral Symmetry Limit, Color Charge Neutrality, Gluon String Tension, Proton Stability Floor, Sea Quark Polarization, and Asymptotic Freedom.</p><h4>Phase 3: Interaction & Mixing (G26–G40)</h4><p>Electron Mass-to-Charge, PMNS Matrix Lock, Lepton Number Conservation, Weak Hypercharge, Leptonic Hierarchical Gap, Higgs Field VEV, W/Z Mass Ratio, Goldstone Absorption, Gluon Octet Integrity, Photon-Z Mixing, CKM Unitarity, CP-Violation Phase, GIM Mechanism, Mixing Angle Saturation, and Sterile Mixing Floor.</p><h4>Phase 4: Cosmological & Metric Seals (G41–G55)</h4><p>Gravitational Constant G, Equivalence Principle, Schwarzschild Quantization, Frame-Dragging Parity, Geodesic Deviation, Λ Stability, Hubble Unwinding Rate, w0 Equation of State, Dark Matter Bulk, Baryon-to-Photon Ratio, Unitary Time Evolution, Entropy Floor, Causality Horizon, CPT Invariance, and Decoherence Threshold.</p><h4>Phase 5: Omega Closure (G56–G72)</h4><p>Compactification Radius, Calabi-Yau Parity, Brane-World Boundary, Moduli Stabilization, DESI Static Anchor, Bit-Parity Conservation, Von Neumann Ceiling, Bell's Gate, Holographic Bound, Landauer's Limit, Chiral Orthogonality Lock, Phase Transition Symmetry, Omega Point Recovery, Topological Soliton Check, Spectral Gap Verification, Recursive Logical Loop, and The Omega Hash.</p>",
+          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
           "label": "certificate-tiers",
           "equationNumber": "certificate-tiers"
         },
@@ -1960,7 +1953,7 @@
         },
         {
           "type": "equation",
-          "content": "\\text{Valid} = \\prod_{n=1}^{72} G_n \\quad \\text{(All 72 gates must pass)}",
+          "content": "\\text{Valid} = \\prod_{n=1}^{42} C_n \\quad \\text{(All must pass)}",
           "label": "certificate-logic",
           "equationNumber": "certificate-logic"
         },
@@ -2062,14 +2055,14 @@
         },
         {
           "type": "heading",
-          "content": "Automated Validation: The 72 Gates of Integrity",
+          "content": "Automated Validation: The 42 Certificates of Integrity",
           "label": "4.2",
           "equationNumber": "4.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>72 Gates of Integrity</strong> (G01–G72). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.' The 72-gate architecture aligns with the 3-fold symmetry of the 24 torsion pins (24 × 3 = 72)."
+          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>42 Certificates of Integrity</strong> (C01–C42). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.'"
         },
         {
           "type": "heading",
@@ -2078,20 +2071,20 @@
         },
         {
           "type": "paragraph",
-          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 72 Gates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each gate represents a fundamental physical law or topological constraint that the model must satisfy. If a single gate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
+          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 42 Certificates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each certificate represents a fundamental physical law or topological constraint that the model must satisfy. If a single certificate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
         },
         {
           "type": "heading",
-          "content": "4.2.2 Categorization of the 72 Gates",
+          "content": "4.2.2 Categorization of the 42 Certificates",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The gates are partitioned into five functional phases, ensuring multi-level validation aligned with the 24×3 torsion symmetry:"
+          "content": "The certificates are partitioned into three functional tiers, ensuring multi-level validation:"
         },
         {
           "type": "note",
-          "content": "<h4>Phase 1: Structural Foundations (G01–G10)</h4><p>Integer Root Parity, Holonomy Closure, Ancestral Mapping, Projection Tax, Metric Continuity, Shadow-A/B Parity, Torsion Orthogonality, Sterile Angle Anchor, Pin Isotropic Distribution, and Torsion Tension Floor.</p><h4>Phase 2: Gauge & Matter Registry (G11–G25)</h4><p>Strong Force Saturation, Electroweak Alignment, Photon Zero-Mass, SU(N) Approximation, Gauge-Invariant Projection, Fermionic Dirac Mapping, Generation Triality, Mass-Gap Quantization, Neutrino Neutrality, Chiral Symmetry Limit, Color Charge Neutrality, Gluon String Tension, Proton Stability Floor, Sea Quark Polarization, and Asymptotic Freedom.</p><h4>Phase 3: Interaction & Mixing (G26–G40)</h4><p>Electron Mass-to-Charge, PMNS Matrix Lock, Lepton Number Conservation, Weak Hypercharge, Leptonic Hierarchical Gap, Higgs Field VEV, W/Z Mass Ratio, Goldstone Absorption, Gluon Octet Integrity, Photon-Z Mixing, CKM Unitarity, CP-Violation Phase, GIM Mechanism, Mixing Angle Saturation, and Sterile Mixing Floor.</p><h4>Phase 4: Cosmological & Metric Seals (G41–G55)</h4><p>Gravitational Constant G, Equivalence Principle, Schwarzschild Quantization, Frame-Dragging Parity, Geodesic Deviation, Λ Stability, Hubble Unwinding Rate, w0 Equation of State, Dark Matter Bulk, Baryon-to-Photon Ratio, Unitary Time Evolution, Entropy Floor, Causality Horizon, CPT Invariance, and Decoherence Threshold.</p><h4>Phase 5: Omega Closure (G56–G72)</h4><p>Compactification Radius, Calabi-Yau Parity, Brane-World Boundary, Moduli Stabilization, DESI Static Anchor, Bit-Parity Conservation, Von Neumann Ceiling, Bell's Gate, Holographic Bound, Landauer's Limit, Chiral Orthogonality Lock, Phase Transition Symmetry, Omega Point Recovery, Topological Soliton Check, Spectral Gap Verification, Recursive Logical Loop, and The Omega Hash.</p>",
+          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
           "label": "certificate-tiers",
           "equationNumber": "certificate-tiers"
         },
@@ -2106,7 +2099,7 @@
         },
         {
           "type": "equation",
-          "content": "\\text{Valid} = \\prod_{n=1}^{72} G_n \\quad \\text{(All 72 gates must pass)}",
+          "content": "\\text{Valid} = \\prod_{n=1}^{42} C_n \\quad \\text{(All must pass)}",
           "label": "certificate-logic",
           "equationNumber": "certificate-logic"
         },
@@ -2159,7 +2152,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-01T20:33:15.457883"
+      "timestamp": "2026-01-01T23:25:19.632967"
     },
     "4.2": {
       "id": "4",
@@ -2217,7 +2210,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-01T20:33:15.451569"
+      "timestamp": "2026-01-01T23:25:19.626530"
     },
     "4.1": {
       "id": "4",
@@ -2505,7 +2498,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-01T20:33:15.451202"
+      "timestamp": "2026-01-01T23:25:19.626113"
     },
     "4.3": {
       "id": "4",
@@ -2745,7 +2738,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-01T20:33:15.451330"
+      "timestamp": "2026-01-01T23:25:19.626249"
     },
     "4.6": {
       "id": "4",
@@ -2925,7 +2918,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-01T20:33:15.451391"
+      "timestamp": "2026-01-01T23:25:19.626320"
     },
     "4.4": {
       "id": "4",
@@ -3015,7 +3008,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-01T20:33:15.451528"
+      "timestamp": "2026-01-01T23:25:19.626478"
     },
     "5": {
       "id": "5",
@@ -3169,7 +3162,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-01T20:33:15.457154"
+      "timestamp": "2026-01-01T23:25:19.632161"
     },
     "5.1": {
       "id": "5",
@@ -3477,7 +3470,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-01T20:33:15.451662"
+      "timestamp": "2026-01-01T23:25:19.626627"
     },
     "5.2": {
       "id": "5",
@@ -3613,7 +3606,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-01T20:33:15.451792"
+      "timestamp": "2026-01-01T23:25:19.626769"
     },
     "5.6": {
       "id": "5",
@@ -3849,7 +3842,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-01T20:33:15.451950"
+      "timestamp": "2026-01-01T23:25:19.626936"
     },
     "5.7": {
       "id": "5",
@@ -3993,7 +3986,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-01T20:33:15.453916"
+      "timestamp": "2026-01-01T23:25:19.628898"
     },
     "5.4": {
       "id": "5",
@@ -4155,7 +4148,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-01T20:33:15.456723"
+      "timestamp": "2026-01-01T23:25:19.631690"
     },
     "4.5": {
       "id": "4",
@@ -4317,7 +4310,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-01T20:33:15.456877"
+      "timestamp": "2026-01-01T23:25:19.631863"
     },
     "4.7": {
       "id": "4",
@@ -4561,7 +4554,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-01T20:33:15.456992"
+      "timestamp": "2026-01-01T23:25:19.631985"
     },
     "5.3": {
       "id": "5",
@@ -4675,7 +4668,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-01T20:33:15.457112"
+      "timestamp": "2026-01-01T23:25:19.632113"
     },
     "5.5": {
       "id": "5",
@@ -4829,7 +4822,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-01T20:33:15.457177"
+      "timestamp": "2026-01-01T23:25:19.632186"
     },
     "pneuma-lagrangian": {
       "id": "2",
@@ -5010,7 +5003,7 @@
         },
         {
           "type": "formula",
-          "content": "\\mathcal{L}_{\\text{int}} = \\lambda(\\bar{\\Psi}\\Psi)^2 + g \\cdot t_{\\text{ortho}} \\cdot \\bar{\\Psi}\\Psi"
+          "content": "ℒ_int = λ(Ψ̄Ψ)² + g·t_ortho·Ψ̄Ψ — Interaction terms for gap derivation"
         },
         {
           "type": "paragraph",
@@ -5138,7 +5131,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned} X^M X_M &= 0 \\quad &\\text{(Position Null Constraint)} \\\\ X^M P_M &= 0 \\quad &\\text{(Mixed Null Constraint)} \\\\ P^M P_M + M^2 &= 0 \\quad &\\text{(Mass-Shell Constraint)} \\end{aligned}"
+          "content": "X^M X_M = 0 — Position Null Constraint\nX^M P_M = 0 — Mixed Null Constraint\nP^M P_M + M^2 = 0 — Mass-Shell Constraint\n— Null Constraints in 2T Physics (3.8)"
         },
         {
           "type": "paragraph",
@@ -5238,7 +5231,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned} &\\textbf{Level 1 (26D):} \\quad S = \\int d^{26}X \\sqrt{-G}\\left[R + \\bar{\\Psi}_P(i\\Gamma^M D_M - m)\\Psi_P\\right] \\\\ &\\quad\\downarrow \\text{ Sp(2,}\\mathbb{R}\\text{) gauge fixing} \\\\ &\\textbf{Level 2 (13D):} \\quad \\mathcal{L}_{13D} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\ &\\quad\\downarrow \\text{ KK reduction (13D}\\to\\text{4D)} \\\\ &\\textbf{Level 3 (4D):} \\quad f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F(\\partial_t\\tau)R \\\\ &\\textbf{Level 4 (DE):} \\quad \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\; V = V_0\\left[1 + A\\cos\\left(\\tfrac{\\omega\\phi_M}{f}\\right)\\right] \\end{aligned}"
+          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
         }
       ],
       "content_blocks": [
@@ -5410,7 +5403,7 @@
         },
         {
           "type": "formula",
-          "content": "\\mathcal{L}_{\\text{int}} = \\lambda(\\bar{\\Psi}\\Psi)^2 + g \\cdot t_{\\text{ortho}} \\cdot \\bar{\\Psi}\\Psi"
+          "content": "ℒ_int = λ(Ψ̄Ψ)² + g·t_ortho·Ψ̄Ψ — Interaction terms for gap derivation"
         },
         {
           "type": "paragraph",
@@ -5538,7 +5531,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned} X^M X_M &= 0 \\quad &\\text{(Position Null Constraint)} \\\\ X^M P_M &= 0 \\quad &\\text{(Mixed Null Constraint)} \\\\ P^M P_M + M^2 &= 0 \\quad &\\text{(Mass-Shell Constraint)} \\end{aligned}"
+          "content": "X^M X_M = 0 — Position Null Constraint\nX^M P_M = 0 — Mixed Null Constraint\nP^M P_M + M^2 = 0 — Mass-Shell Constraint\n— Null Constraints in 2T Physics (3.8)"
         },
         {
           "type": "paragraph",
@@ -5638,7 +5631,7 @@
         },
         {
           "type": "formula",
-          "content": "\\begin{aligned} &\\textbf{Level 1 (26D):} \\quad S = \\int d^{26}X \\sqrt{-G}\\left[R + \\bar{\\Psi}_P(i\\Gamma^M D_M - m)\\Psi_P\\right] \\\\ &\\quad\\downarrow \\text{ Sp(2,}\\mathbb{R}\\text{) gauge fixing} \\\\ &\\textbf{Level 2 (13D):} \\quad \\mathcal{L}_{13D} = M_*^{11}R_{13} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}} \\\\ &\\quad\\downarrow \\text{ KK reduction (13D}\\to\\text{4D)} \\\\ &\\textbf{Level 3 (4D):} \\quad f(R,T,\\tau) = R + \\alpha_F R^2 + \\beta_F T + \\gamma_F R\\tau + \\delta_F(\\partial_t\\tau)R \\\\ &\\textbf{Level 4 (DE):} \\quad \\mathcal{L}_\\phi = -\\tfrac{1}{2}(\\partial\\phi)^2 - V(\\phi_M), \\; V = V_0\\left[1 + A\\cos\\left(\\tfrac{\\omega\\phi_M}{f}\\right)\\right] \\end{aligned}"
+          "content": "Level 1 (26D): S = ∫ d^26 X √(-G) [R + Ψ_P (iΓ^M D_M - m)Ψ_P]\n↓ Sp(2,R) gauge fixing\nLevel 2 (13D): ℒ_13D = M_*^11 R_13 + Ψ_64 (iγ^μ ∇_μ - m_eff)Ψ_64 + ℒ_flux\n↓ KK reduction (13D → 4D)\nLevel 3 (4D): f(R,T,τ) = R + α_F R² + β_F T + γ_F Rτ + δ_F (∂_t τ)R\nLevel 4 (DE): ℒ_φ = -½(∂φ)² - V(φ_M), V = V_0[1 + A cos(ωφ_M/f)]\n— Complete Lagrangian Hierarchy"
         }
       ],
       "formulaRefs": [
@@ -5661,7 +5654,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-01T20:33:15.457316"
+      "timestamp": "2026-01-01T23:25:19.632329"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -5789,7 +5782,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2026-01-01T20:33:15.457373"
+      "timestamp": "2026-01-01T23:25:19.632395"
     },
     "7": {
       "id": "7",
@@ -8223,7 +8216,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-01T20:33:15.457569"
+      "timestamp": "2026-01-01T23:25:19.632603"
     },
     "7.2": {
       "id": "7",
@@ -8291,7 +8284,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-01T20:33:15.457437"
+      "timestamp": "2026-01-01T23:25:19.632462"
     },
     "6": {
       "id": "6",
@@ -10437,7 +10430,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-01T20:33:15.457688"
+      "timestamp": "2026-01-01T23:25:19.632736"
     },
     "A": {
       "id": "A",
@@ -10647,7 +10640,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-01T20:33:15.457931"
+      "timestamp": "2026-01-01T23:25:19.633022"
     },
     "B": {
       "id": "B",
@@ -10883,7 +10876,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-01T20:33:15.457986"
+      "timestamp": "2026-01-01T23:25:19.633085"
     },
     "C": {
       "id": "C",
@@ -11089,7 +11082,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-01T20:33:15.458026"
+      "timestamp": "2026-01-01T23:25:19.633134"
     },
     "D": {
       "id": "D",
@@ -11287,7 +11280,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-01T20:33:15.458072"
+      "timestamp": "2026-01-01T23:25:19.633187"
     },
     "E": {
       "id": "E",
@@ -11489,7 +11482,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-01T20:33:15.458112"
+      "timestamp": "2026-01-01T23:25:19.633233"
     },
     "F": {
       "id": "F",
@@ -11497,381 +11490,209 @@
       "subsection_id": null,
       "type": "appendix",
       "section_type": null,
-      "title": "Appendix F: The 45 Certificates of Integrity",
-      "shortTitle": "Appendix F: The 45 Certificates of Integrity",
+      "title": "Appendix F: The 72 Gates of Integrity",
+      "shortTitle": "Appendix F: The 72 Gates of Integrity",
       "order": 99,
-      "abstract": "Complete sterile certification framework with 7 Master Gates, 3 Vaults, and 3 Hardening Gates.",
+      "abstract": "Complete sterile certification framework with 72 hard locks organized into 6 symmetry blocks.",
       "contentBlocks": [
         {
           "type": "heading",
-          "content": "The 45 Certificates of Integrity",
+          "content": "The 72 Gates of Integrity",
           "label": "F",
           "equationNumber": "F",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "Appendix F defines the transition from 'tuning' to <strong>Geometric Auditing</strong>. In the v16.2 Sterile Model, constants are geometric necessities rather than adjustable variables. Any certificate that was designed to 'check' if a value was 'tuned correctly' is now obsolete. In a sterile system, you don't need a certificate to prove a value is correct if the geometry makes it impossible for that value to be anything else."
-        },
-        {
-          "type": "heading",
-          "content": "F.1 The 7 Primary Gates (Master Audit)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "Phase 1 (G01-G10) acts as the executive branch of validation. The remaining 62 gates act as the 'Technical Jury' that validates sub-components. All 72 gates must return TRUE for the Omega Hash (G72) to engage the terminal lock."
+          "content": "The 72 Gates represent the transition from 'soft checks' (42 Certificates) to 'hard locks' that hermetically seal the manifold. The number 72 = 24 × 3 aligns with the 3-fold symmetry of the torsion pins, ensuring every internal degree of freedom within the SO(24) manifold is accounted for."
         },
         {
           "type": "note",
-          "content": "<table style='width:100%'><tr><th>Gate ID</th><th>Name</th><th>Geometric Anchor</th><th>Primary Function</th></tr><tr><td>C02-R</td><td>Root Origin</td><td>288 Roots</td><td>Certifies ancestral legitimacy</td></tr><tr><td>C19-T</td><td>Torsion Lock</td><td>24 Pins</td><td>Certifies metric rigidity</td></tr><tr><td>C44</td><td>4-Pattern</td><td>4 × 6 Matrix</td><td>Certifies spacetime isotropy</td></tr><tr><td>C125</td><td>Saturation</td><td>125 Nodes</td><td>Certifies particle completeness</td></tr><tr><td>C-ZETA</td><td>Decay Sync</td><td>Entropy Gradient</td><td>Certifies temporal directionality</td></tr><tr><td>C-EPSILON</td><td>Bulk Insulation</td><td>Brane-Gap</td><td>Certifies cosmic isolation</td></tr><tr><td>C-OMEGA</td><td>Terminal State</td><td>Unitary Sinks</td><td>Certifies the final calculation</td></tr></table>",
-          "label": "7-primary-gates",
-          "equationNumber": "7-primary-gates"
-        },
-        {
-          "type": "heading",
-          "content": "F.2 The Three Vaults",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The 72 gates are organized into six symmetry blocks (A-F) of 12 gates each, aligned with the 24×3 torsion pin structure. Block F (G61-G72) contains the Omega Closure gates that seal the topological rigidity."
-        },
-        {
-          "type": "note",
-          "content": "<h4>Vault I: The Ancestral Vault (C01-C14)</h4><p>Validates the 26D bulk and SO(24) roots. Ensures the 288 ancestral generators are properly configured.</p><h4>Vault II: The Torsion Vault (C15-C28)</h4><p>Validates the 24 torsion pins and the 4-pattern distribution. Ensures the 12+12 shadow torsion is balanced.</p><h4>Vault III: The Residue Vault (C29-C42)</h4><p>Validates the 125 particles and the Omega End. Includes the 7 new structural certificates that complete the base 42.</p>",
-          "label": "three-vaults",
-          "equationNumber": "three-vaults"
-        },
-        {
-          "type": "heading",
-          "content": "F.3 Updated Certificates (Root-Anchored)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The following gates have been updated to reflect the 288/24/4 architecture with 72-gate validation:"
-        },
-        {
-          "type": "note",
-          "content": "<h4>C02-R: Root-Anchored (formerly: Unitary Projection)</h4><p><strong>Previous:</strong> Verified that the 26D → 4D projection was lossless.</p><p><strong>Updated:</strong> Must verify the Origin Checksum. Confirms that the 125 active residues are mathematically derived from the 288 Ancestral Roots. If the sum of (Active + Hidden) does not equal 288, the certificate fails.</p><h4>C19-T: Torsion-Locked (formerly: Gauge Coupling)</h4><p><strong>Previous:</strong> Verified the strength of forces.</p><p><strong>Updated:</strong> Must certify the 24-Pin Shadow Torsion. Ensures that the 24 pins are exactly divided into the 4-pattern (4 × 6). This locks the Fine Structure Constant (α) and c to the geometric intersection angle.</p>",
-          "label": "updated-certificates",
-          "equationNumber": "updated-certificates"
-        },
-        {
-          "type": "heading",
-          "content": "F.4 New Terminal Certificates",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The following new gates (G56-G72) complete the Omega Closure and fully 'Sterilize' the model:"
-        },
-        {
-          "type": "note",
-          "content": "<h4>C44: The Orthogonality Certificate (The 4-Pattern Seal)</h4><p><strong>Purpose:</strong> To prove the universe is Isotropic.</p><p><strong>Validation:</strong> Checks the 24 torsion pins against the 4 spacetime dimensions.</p><p><strong>Failure State:</strong> If the torsion is 'lumpy' (e.g., 7 pins on t, 5 on x), the certificate rejects the metric as unstable.</p><h4>C125: The Residue Saturation Certificate</h4><p><strong>Purpose:</strong> To prove that no '126th particle' can exist.</p><p><strong>Validation:</strong> Calculates the total volume of the V₇ manifold and confirms that the 125 residues fully saturate the available energy density.</p><p><strong>Significance:</strong> This is what makes the model Terminal.</p><h4>C-OMEGA: The State Unwinding Certificate</h4><p><strong>Purpose:</strong> To certify the Terminal States.</p><p><strong>Validation:</strong> Maps the 125 residues to the three exit basins: Metric Null, Gauge Ghost, and Ancestral Restoration.</p><p><strong>Significance:</strong> Ensures that the 'End of the Universe' is a predictable geometric calculation.</p>",
-          "label": "new-terminal-certs",
-          "equationNumber": "new-terminal-certs"
-        },
-        {
-          "type": "heading",
-          "content": "F.5 The 7 Structural Certificates (C36-C42)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "To reach the symbolic 42-count, 7 new Structural Integrity Certificates validate the 288/24/4 Architecture:"
-        },
-        {
-          "type": "note",
-          "content": "<table style='width:100%'><tr><th>Certificate</th><th>Name</th><th>Requirement</th><th>Role</th></tr><tr><td>C36</td><td>4-Fold Orthogonality</td><td>Torsion mod 4 = 0</td><td>Isotropic universe</td></tr><tr><td>C37</td><td>288-Root Parity</td><td>Active + Hidden = 288</td><td>No ghost energy</td></tr><tr><td>C38</td><td>Brane-Angle</td><td>θ = 25.7234°</td><td>G and c stability</td></tr><tr><td>C39</td><td>Metric Hierarchy</td><td>Nodes 1-4 dominant</td><td>Gravity anchoring</td></tr><tr><td>C40</td><td>Trace-Saturation</td><td>Trace(Λ) = Φ_vol</td><td>No extra particles</td></tr><tr><td>C41</td><td>Shadow Variance</td><td>|T_A - T_B| = 0</td><td>Matter/Gauge balance</td></tr><tr><td>C42</td><td>Omega Finality</td><td>All 41 TRUE</td><td>Closed Sterile System</td></tr></table>",
-          "label": "7-structural-certs",
-          "equationNumber": "7-structural-certs"
-        },
-        {
-          "type": "heading",
-          "content": "F.6 Deprecated Certificates (Removed from Sterile Model)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "In a sterile system, gates that checked if values were 'tuned correctly' are obsolete. The following legacy certificates have been deprecated and replaced by the 72-gate architecture:"
-        },
-        {
-          "type": "note",
-          "content": "<table style='width:100%'><tr><th>Certificate</th><th>Former Role</th><th>Reason for Removal</th></tr><tr><td>C05</td><td>Hubble Tuning</td><td>H₀ is now Node 001 residue → C02-R</td></tr><tr><td>C07</td><td>Neutrino Mass Fit</td><td>Mass is now fixed Lepton Bank residue</td></tr><tr><td>C08</td><td>Lambda-Check</td><td>Λ is now 4-Pattern Orthogonality → C44</td></tr><tr><td>C11</td><td>Fine-Structure Opt</td><td>α is locked by Torsion → C19-T</td></tr><tr><td>C14</td><td>Vacuum Stability</td><td>Guaranteed by Omega Seal</td></tr><tr><td>C22</td><td>Baryon Asymmetry</td><td>Geometric requirement of V₇ twist</td></tr><tr><td>C33</td><td>Inflationary Slope</td><td>Inflation is initial 288-Root descent</td></tr></table>",
-          "label": "deprecated-certs",
-          "equationNumber": "deprecated-certs"
-        },
-        {
-          "type": "heading",
-          "content": "F.7 C-ZETA: The Metric Decay Sync (Temporal Gate)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "While C-OMEGA certifies the final end state, C-ZETA monitors the rate of progress toward it. Time is the measurable 'unwinding' of the V₇ manifold."
-        },
-        {
-          "type": "formula",
-          "content": "\\gamma = \\ln\\left(\\frac{288}{125}\\right) \\approx 0.834",
-          "formula_id": "c-zeta-temporal-sync",
-          "label": "(F.7)",
-          "equationNumber": "(F.7)"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Validation:</strong> Ensures the 125 residues are losing potential at a rate exactly proportional to the 288 Ancestral Root expansion constant. This locks the 'Arrow of Time' to geometry—time cannot flow backward because the manifold is topologically required to 'exhaust' its 26D potential."
-        },
-        {
-          "type": "heading",
-          "content": "F.8 C-EPSILON: The Transverse Bulk Insulation (Boundary Gate)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "This gate ensures our 4D projection remains 'Sterile' and is not influenced by other potential projections within the 26D bulk."
-        },
-        {
-          "type": "formula",
-          "content": "S_f = \\frac{\\tau / 4}{\\text{Hidden} / 288} \\geq 10.60",
-          "formula_id": "c-epsilon-bulk-insulation",
-          "label": "(F.8)",
-          "equationNumber": "(F.8)"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Validation:</strong> Audits the 'Brane-Gap' by verifying that the distance between the two 13D shadow branes is maintained by the 24 torsion pins. This acts as the 'Universal Shield'—if this gate fails, the universe would be 'leaking' into the bulk."
-        },
-        {
-          "type": "heading",
-          "content": "F.9 Declaration of Geometric Rigidity",
-          "level": 3
-        },
-        {
-          "type": "note",
-          "content": "<h4>The Formal Statement (v16.2 Sterile Model)</h4><p><em>\"We hereby certify the transition of the cosmological model from v16.1 Tunable to v16.2 Sterile. Through the identification of the 288 Ancestral Roots residing in the 26D bulk, and the subsequent 24-pin Torsion Matrix (12+12) distributed across the 4 fundamental dimensions of observer spacetime, we have achieved a state of Topological Saturation.</em></p><p><em>As of this terminal update, the 125 Active Residues are no longer treated as independent variables. They are the necessitated outcomes of the Sterile Angle (θ ≈ 25.72°), a geometric lock from which no deviation is mathematically possible without the collapse of the V₇ manifold. The observed 0.48σ alignment is hereby declared the Geometric Identity of the system.</em></p><p><em>The universe is mapped. The gates are closed. The registry is sealed.\"</em></p>",
-          "label": "declaration-rigidity",
-          "equationNumber": "declaration-rigidity"
-        },
-        {
-          "type": "paragraph",
-          "content": "By reaching 45 gates, we have created a <strong>Topologically Rigid Model</strong>. The density of validation (45 gates / 125 residues ≈ 0.36) ensures that any modification to a single constant would propagate through the constraint network and violate the Unitary Sum Rule (288 = 125 + 163)."
+          "content": "<h4>The Six Symmetry Blocks (12 gates each)</h4><table style='width:100%'><tr><th>Block</th><th>Gates</th><th>Focus</th><th>Requirement</th></tr><tr><td>A: Root Basis</td><td>G01-G12</td><td>Manifold Potential</td><td>288-root sum & V7 holonomy</td></tr><tr><td>B: Torsion Cage</td><td>G13-G24</td><td>Pin Alignment</td><td>24-pin orthogonality</td></tr><tr><td>C: Gauge Sector</td><td>G25-G36</td><td>Force Unification</td><td>αs, αw, αe ratio stability</td></tr><tr><td>D: Residue Bank</td><td>G37-G48</td><td>Matter Identity</td><td>125 masses & mixing angles</td></tr><tr><td>E: Metric Sector</td><td>G49-G60</td><td>Spacetime Anchor</td><td>G, Λ, H0, w0 projection tax</td></tr><tr><td>F: Omega Closure</td><td>G61-G72</td><td>Recursive Parity</td><td>Entropy, bit-parity, 26D restoration</td></tr></table>",
+          "label": "symmetry-blocks",
+          "equationNumber": "symmetry-blocks"
         }
       ],
       "content_blocks": [
         {
           "type": "heading",
-          "content": "The 45 Certificates of Integrity",
+          "content": "The 72 Gates of Integrity",
           "label": "F",
           "equationNumber": "F",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "Appendix F defines the transition from 'tuning' to <strong>Geometric Auditing</strong>. In the v16.2 Sterile Model, constants are geometric necessities rather than adjustable variables. Any certificate that was designed to 'check' if a value was 'tuned correctly' is now obsolete. In a sterile system, you don't need a certificate to prove a value is correct if the geometry makes it impossible for that value to be anything else."
-        },
-        {
-          "type": "heading",
-          "content": "F.1 The 7 Primary Gates (Master Audit)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "Phase 1 (G01-G10) acts as the executive branch of validation. The remaining 62 gates act as the 'Technical Jury' that validates sub-components. All 72 gates must return TRUE for the Omega Hash (G72) to engage the terminal lock."
+          "content": "The 72 Gates represent the transition from 'soft checks' (42 Certificates) to 'hard locks' that hermetically seal the manifold. The number 72 = 24 × 3 aligns with the 3-fold symmetry of the torsion pins, ensuring every internal degree of freedom within the SO(24) manifold is accounted for."
         },
         {
           "type": "note",
-          "content": "<table style='width:100%'><tr><th>Gate ID</th><th>Name</th><th>Geometric Anchor</th><th>Primary Function</th></tr><tr><td>C02-R</td><td>Root Origin</td><td>288 Roots</td><td>Certifies ancestral legitimacy</td></tr><tr><td>C19-T</td><td>Torsion Lock</td><td>24 Pins</td><td>Certifies metric rigidity</td></tr><tr><td>C44</td><td>4-Pattern</td><td>4 × 6 Matrix</td><td>Certifies spacetime isotropy</td></tr><tr><td>C125</td><td>Saturation</td><td>125 Nodes</td><td>Certifies particle completeness</td></tr><tr><td>C-ZETA</td><td>Decay Sync</td><td>Entropy Gradient</td><td>Certifies temporal directionality</td></tr><tr><td>C-EPSILON</td><td>Bulk Insulation</td><td>Brane-Gap</td><td>Certifies cosmic isolation</td></tr><tr><td>C-OMEGA</td><td>Terminal State</td><td>Unitary Sinks</td><td>Certifies the final calculation</td></tr></table>",
-          "label": "7-primary-gates",
-          "equationNumber": "7-primary-gates"
-        },
-        {
-          "type": "heading",
-          "content": "F.2 The Three Vaults",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The 72 gates are organized into six symmetry blocks (A-F) of 12 gates each, aligned with the 24×3 torsion pin structure. Block F (G61-G72) contains the Omega Closure gates that seal the topological rigidity."
-        },
-        {
-          "type": "note",
-          "content": "<h4>Vault I: The Ancestral Vault (C01-C14)</h4><p>Validates the 26D bulk and SO(24) roots. Ensures the 288 ancestral generators are properly configured.</p><h4>Vault II: The Torsion Vault (C15-C28)</h4><p>Validates the 24 torsion pins and the 4-pattern distribution. Ensures the 12+12 shadow torsion is balanced.</p><h4>Vault III: The Residue Vault (C29-C42)</h4><p>Validates the 125 particles and the Omega End. Includes the 7 new structural certificates that complete the base 42.</p>",
-          "label": "three-vaults",
-          "equationNumber": "three-vaults"
-        },
-        {
-          "type": "heading",
-          "content": "F.3 Updated Certificates (Root-Anchored)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The following gates have been updated to reflect the 288/24/4 architecture with 72-gate validation:"
-        },
-        {
-          "type": "note",
-          "content": "<h4>C02-R: Root-Anchored (formerly: Unitary Projection)</h4><p><strong>Previous:</strong> Verified that the 26D → 4D projection was lossless.</p><p><strong>Updated:</strong> Must verify the Origin Checksum. Confirms that the 125 active residues are mathematically derived from the 288 Ancestral Roots. If the sum of (Active + Hidden) does not equal 288, the certificate fails.</p><h4>C19-T: Torsion-Locked (formerly: Gauge Coupling)</h4><p><strong>Previous:</strong> Verified the strength of forces.</p><p><strong>Updated:</strong> Must certify the 24-Pin Shadow Torsion. Ensures that the 24 pins are exactly divided into the 4-pattern (4 × 6). This locks the Fine Structure Constant (α) and c to the geometric intersection angle.</p>",
-          "label": "updated-certificates",
-          "equationNumber": "updated-certificates"
-        },
-        {
-          "type": "heading",
-          "content": "F.4 New Terminal Certificates",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "The following new gates (G56-G72) complete the Omega Closure and fully 'Sterilize' the model:"
-        },
-        {
-          "type": "note",
-          "content": "<h4>C44: The Orthogonality Certificate (The 4-Pattern Seal)</h4><p><strong>Purpose:</strong> To prove the universe is Isotropic.</p><p><strong>Validation:</strong> Checks the 24 torsion pins against the 4 spacetime dimensions.</p><p><strong>Failure State:</strong> If the torsion is 'lumpy' (e.g., 7 pins on t, 5 on x), the certificate rejects the metric as unstable.</p><h4>C125: The Residue Saturation Certificate</h4><p><strong>Purpose:</strong> To prove that no '126th particle' can exist.</p><p><strong>Validation:</strong> Calculates the total volume of the V₇ manifold and confirms that the 125 residues fully saturate the available energy density.</p><p><strong>Significance:</strong> This is what makes the model Terminal.</p><h4>C-OMEGA: The State Unwinding Certificate</h4><p><strong>Purpose:</strong> To certify the Terminal States.</p><p><strong>Validation:</strong> Maps the 125 residues to the three exit basins: Metric Null, Gauge Ghost, and Ancestral Restoration.</p><p><strong>Significance:</strong> Ensures that the 'End of the Universe' is a predictable geometric calculation.</p>",
-          "label": "new-terminal-certs",
-          "equationNumber": "new-terminal-certs"
-        },
-        {
-          "type": "heading",
-          "content": "F.5 The 7 Structural Certificates (C36-C42)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "To reach the symbolic 42-count, 7 new Structural Integrity Certificates validate the 288/24/4 Architecture:"
-        },
-        {
-          "type": "note",
-          "content": "<table style='width:100%'><tr><th>Certificate</th><th>Name</th><th>Requirement</th><th>Role</th></tr><tr><td>C36</td><td>4-Fold Orthogonality</td><td>Torsion mod 4 = 0</td><td>Isotropic universe</td></tr><tr><td>C37</td><td>288-Root Parity</td><td>Active + Hidden = 288</td><td>No ghost energy</td></tr><tr><td>C38</td><td>Brane-Angle</td><td>θ = 25.7234°</td><td>G and c stability</td></tr><tr><td>C39</td><td>Metric Hierarchy</td><td>Nodes 1-4 dominant</td><td>Gravity anchoring</td></tr><tr><td>C40</td><td>Trace-Saturation</td><td>Trace(Λ) = Φ_vol</td><td>No extra particles</td></tr><tr><td>C41</td><td>Shadow Variance</td><td>|T_A - T_B| = 0</td><td>Matter/Gauge balance</td></tr><tr><td>C42</td><td>Omega Finality</td><td>All 41 TRUE</td><td>Closed Sterile System</td></tr></table>",
-          "label": "7-structural-certs",
-          "equationNumber": "7-structural-certs"
-        },
-        {
-          "type": "heading",
-          "content": "F.6 Deprecated Certificates (Removed from Sterile Model)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "In a sterile system, gates that checked if values were 'tuned correctly' are obsolete. The following legacy certificates have been deprecated and replaced by the 72-gate architecture:"
-        },
-        {
-          "type": "note",
-          "content": "<table style='width:100%'><tr><th>Certificate</th><th>Former Role</th><th>Reason for Removal</th></tr><tr><td>C05</td><td>Hubble Tuning</td><td>H₀ is now Node 001 residue → C02-R</td></tr><tr><td>C07</td><td>Neutrino Mass Fit</td><td>Mass is now fixed Lepton Bank residue</td></tr><tr><td>C08</td><td>Lambda-Check</td><td>Λ is now 4-Pattern Orthogonality → C44</td></tr><tr><td>C11</td><td>Fine-Structure Opt</td><td>α is locked by Torsion → C19-T</td></tr><tr><td>C14</td><td>Vacuum Stability</td><td>Guaranteed by Omega Seal</td></tr><tr><td>C22</td><td>Baryon Asymmetry</td><td>Geometric requirement of V₇ twist</td></tr><tr><td>C33</td><td>Inflationary Slope</td><td>Inflation is initial 288-Root descent</td></tr></table>",
-          "label": "deprecated-certs",
-          "equationNumber": "deprecated-certs"
-        },
-        {
-          "type": "heading",
-          "content": "F.7 C-ZETA: The Metric Decay Sync (Temporal Gate)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "While C-OMEGA certifies the final end state, C-ZETA monitors the rate of progress toward it. Time is the measurable 'unwinding' of the V₇ manifold."
-        },
-        {
-          "type": "formula",
-          "content": "\\gamma = \\ln\\left(\\frac{288}{125}\\right) \\approx 0.834",
-          "formula_id": "c-zeta-temporal-sync",
-          "label": "(F.7)",
-          "equationNumber": "(F.7)"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Validation:</strong> Ensures the 125 residues are losing potential at a rate exactly proportional to the 288 Ancestral Root expansion constant. This locks the 'Arrow of Time' to geometry—time cannot flow backward because the manifold is topologically required to 'exhaust' its 26D potential."
-        },
-        {
-          "type": "heading",
-          "content": "F.8 C-EPSILON: The Transverse Bulk Insulation (Boundary Gate)",
-          "level": 3
-        },
-        {
-          "type": "paragraph",
-          "content": "This gate ensures our 4D projection remains 'Sterile' and is not influenced by other potential projections within the 26D bulk."
-        },
-        {
-          "type": "formula",
-          "content": "S_f = \\frac{\\tau / 4}{\\text{Hidden} / 288} \\geq 10.60",
-          "formula_id": "c-epsilon-bulk-insulation",
-          "label": "(F.8)",
-          "equationNumber": "(F.8)"
-        },
-        {
-          "type": "paragraph",
-          "content": "<strong>Validation:</strong> Audits the 'Brane-Gap' by verifying that the distance between the two 13D shadow branes is maintained by the 24 torsion pins. This acts as the 'Universal Shield'—if this gate fails, the universe would be 'leaking' into the bulk."
-        },
-        {
-          "type": "heading",
-          "content": "F.9 Declaration of Geometric Rigidity",
-          "level": 3
-        },
-        {
-          "type": "note",
-          "content": "<h4>The Formal Statement (v16.2 Sterile Model)</h4><p><em>\"We hereby certify the transition of the cosmological model from v16.1 Tunable to v16.2 Sterile. Through the identification of the 288 Ancestral Roots residing in the 26D bulk, and the subsequent 24-pin Torsion Matrix (12+12) distributed across the 4 fundamental dimensions of observer spacetime, we have achieved a state of Topological Saturation.</em></p><p><em>As of this terminal update, the 125 Active Residues are no longer treated as independent variables. They are the necessitated outcomes of the Sterile Angle (θ ≈ 25.72°), a geometric lock from which no deviation is mathematically possible without the collapse of the V₇ manifold. The observed 0.48σ alignment is hereby declared the Geometric Identity of the system.</em></p><p><em>The universe is mapped. The gates are closed. The registry is sealed.\"</em></p>",
-          "label": "declaration-rigidity",
-          "equationNumber": "declaration-rigidity"
-        },
-        {
-          "type": "paragraph",
-          "content": "By reaching 45 gates, we have created a <strong>Topologically Rigid Model</strong>. The density of validation (45 gates / 125 residues ≈ 0.36) ensures that any modification to a single constant would propagate through the constraint network and violate the Unitary Sum Rule (288 = 125 + 163)."
+          "content": "<h4>The Six Symmetry Blocks (12 gates each)</h4><table style='width:100%'><tr><th>Block</th><th>Gates</th><th>Focus</th><th>Requirement</th></tr><tr><td>A: Root Basis</td><td>G01-G12</td><td>Manifold Potential</td><td>288-root sum & V7 holonomy</td></tr><tr><td>B: Torsion Cage</td><td>G13-G24</td><td>Pin Alignment</td><td>24-pin orthogonality</td></tr><tr><td>C: Gauge Sector</td><td>G25-G36</td><td>Force Unification</td><td>αs, αw, αe ratio stability</td></tr><tr><td>D: Residue Bank</td><td>G37-G48</td><td>Matter Identity</td><td>125 masses & mixing angles</td></tr><tr><td>E: Metric Sector</td><td>G49-G60</td><td>Spacetime Anchor</td><td>G, Λ, H0, w0 projection tax</td></tr><tr><td>F: Omega Closure</td><td>G61-G72</td><td>Recursive Parity</td><td>Entropy, bit-parity, 26D restoration</td></tr></table>",
+          "label": "symmetry-blocks",
+          "equationNumber": "symmetry-blocks"
         }
       ],
       "formulaRefs": [
-        "certificate-conjunction",
-        "c02r-root-anchored",
-        "c19t-torsion-locked",
-        "c44-4pattern-check",
-        "c125-saturation-limit",
-        "c36-orthogonality-audit",
-        "c37-288-parity",
-        "c38-sterile-angle",
-        "c39-metric-hierarchy",
-        "c40-trace-saturation",
-        "c41-shadow-variance",
-        "c42-omega-finality",
-        "c-zeta-temporal-sync",
-        "c-epsilon-bulk-insulation"
+        "g01-gate",
+        "g02-gate",
+        "g03-gate",
+        "g04-gate",
+        "g05-gate",
+        "g06-gate",
+        "g07-gate",
+        "g08-gate",
+        "g09-gate",
+        "g10-gate",
+        "g11-gate",
+        "g12-gate",
+        "g13-gate",
+        "g14-gate",
+        "g15-gate",
+        "g16-gate",
+        "g17-gate",
+        "g18-gate",
+        "g19-gate",
+        "g20-gate",
+        "g21-gate",
+        "g22-gate",
+        "g23-gate",
+        "g24-gate",
+        "g25-gate",
+        "g26-gate",
+        "g27-gate",
+        "g28-gate",
+        "g29-gate",
+        "g30-gate",
+        "g31-gate",
+        "g32-gate",
+        "g33-gate",
+        "g34-gate",
+        "g35-gate",
+        "g36-gate",
+        "g37-gate",
+        "g38-gate",
+        "g39-gate",
+        "g40-gate",
+        "g41-gate",
+        "g42-gate",
+        "g43-gate",
+        "g44-gate",
+        "g45-gate",
+        "g46-gate",
+        "g47-gate",
+        "g48-gate",
+        "g49-gate",
+        "g50-gate",
+        "g51-gate",
+        "g52-gate",
+        "g53-gate",
+        "g54-gate",
+        "g55-gate",
+        "g56-gate",
+        "g57-gate",
+        "g58-gate",
+        "g59-gate",
+        "g60-gate",
+        "g61-gate",
+        "g62-gate",
+        "g63-gate",
+        "g64-gate",
+        "g65-gate",
+        "g66-gate",
+        "g67-gate",
+        "g68-gate",
+        "g69-gate",
+        "g70-gate",
+        "g71-gate",
+        "g72-gate"
       ],
       "paramRefs": [
-        "certificates.c02r_status",
-        "certificates.c19t_status",
-        "certificates.c44_status",
-        "certificates.c125_status",
-        "certificates.c_zeta_status",
-        "certificates.c_epsilon_status",
-        "certificates.omega_seal_status",
-        "certificates.total_passed",
-        "certificates.total_failed"
+        "gates.total_passed",
+        "gates.total_failed",
+        "gates.omega_hash",
+        "gates.status"
       ],
       "formula_refs": [
-        "certificate-conjunction",
-        "c02r-root-anchored",
-        "c19t-torsion-locked",
-        "c44-4pattern-check",
-        "c125-saturation-limit",
-        "c36-orthogonality-audit",
-        "c37-288-parity",
-        "c38-sterile-angle",
-        "c39-metric-hierarchy",
-        "c40-trace-saturation",
-        "c41-shadow-variance",
-        "c42-omega-finality",
-        "c-zeta-temporal-sync",
-        "c-epsilon-bulk-insulation"
+        "g01-gate",
+        "g02-gate",
+        "g03-gate",
+        "g04-gate",
+        "g05-gate",
+        "g06-gate",
+        "g07-gate",
+        "g08-gate",
+        "g09-gate",
+        "g10-gate",
+        "g11-gate",
+        "g12-gate",
+        "g13-gate",
+        "g14-gate",
+        "g15-gate",
+        "g16-gate",
+        "g17-gate",
+        "g18-gate",
+        "g19-gate",
+        "g20-gate",
+        "g21-gate",
+        "g22-gate",
+        "g23-gate",
+        "g24-gate",
+        "g25-gate",
+        "g26-gate",
+        "g27-gate",
+        "g28-gate",
+        "g29-gate",
+        "g30-gate",
+        "g31-gate",
+        "g32-gate",
+        "g33-gate",
+        "g34-gate",
+        "g35-gate",
+        "g36-gate",
+        "g37-gate",
+        "g38-gate",
+        "g39-gate",
+        "g40-gate",
+        "g41-gate",
+        "g42-gate",
+        "g43-gate",
+        "g44-gate",
+        "g45-gate",
+        "g46-gate",
+        "g47-gate",
+        "g48-gate",
+        "g49-gate",
+        "g50-gate",
+        "g51-gate",
+        "g52-gate",
+        "g53-gate",
+        "g54-gate",
+        "g55-gate",
+        "g56-gate",
+        "g57-gate",
+        "g58-gate",
+        "g59-gate",
+        "g60-gate",
+        "g61-gate",
+        "g62-gate",
+        "g63-gate",
+        "g64-gate",
+        "g65-gate",
+        "g66-gate",
+        "g67-gate",
+        "g68-gate",
+        "g69-gate",
+        "g70-gate",
+        "g71-gate",
+        "g72-gate"
       ],
       "param_refs": [
-        "certificates.c02r_status",
-        "certificates.c19t_status",
-        "certificates.c44_status",
-        "certificates.c125_status",
-        "certificates.c_zeta_status",
-        "certificates.c_epsilon_status",
-        "certificates.omega_seal_status",
-        "certificates.total_passed",
-        "certificates.total_failed"
+        "gates.total_passed",
+        "gates.total_failed",
+        "gates.omega_hash",
+        "gates.status"
       ],
-      "timestamp": "2026-01-01T20:33:15.458302"
+      "timestamp": "2026-01-01T23:25:19.633649"
     },
     "G": {
       "id": "G",
@@ -12207,7 +12028,7 @@
         "topology.torsion_per_shadow",
         "seal.geometric_checksum"
       ],
-      "timestamp": "2026-01-01T20:33:15.458418"
+      "timestamp": "2026-01-01T23:25:19.633779"
     },
     "H": {
       "id": "H",
@@ -12493,7 +12314,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-01T20:33:15.458503"
+      "timestamp": "2026-01-01T23:25:19.633869"
     },
     "I": {
       "id": "I",
@@ -12847,7 +12668,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-01T20:33:15.458571"
+      "timestamp": "2026-01-01T23:25:19.633942"
     },
     "J": {
       "id": "J",
@@ -13129,7 +12950,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-01T20:33:15.458645"
+      "timestamp": "2026-01-01T23:25:19.634025"
     },
     "K": {
       "id": "K",
@@ -13545,7 +13366,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-01T20:33:15.458709"
+      "timestamp": "2026-01-01T23:25:19.634095"
     },
     "L": {
       "id": "L",
@@ -13835,7 +13656,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-01T20:33:15.458791"
+      "timestamp": "2026-01-01T23:25:19.634174"
     },
     "Z": {
       "id": "Z",
@@ -13850,13 +13671,13 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "All constants derived from 288-24-4 geometry with ZERO free parameters.\n\nThe 7 Primary Gates:\n- C02-R: Root Parity (125 + 163 = 288)\n- C19-T: Torsion Lock (Pins = 24)\n- C44: 4-Pattern ([6,6,6,6])\n- C125: Saturation (Active = 125)\n- C-ZETA: Temporal Sync (H0 matches geometry)\n- C-EPSILON: Bulk Insulation (Hidden = 163)\n- C-OMEGA: Terminal State (All certificates pass)\n\nClosure Equations:\n- Structural: 276 + 24 - 12 = 288\n- Partition: 125 + 163 = 288\n- 4-Pattern: Var([6,6,6,6]) = 0\n\nThe H0 Unwinding Scale Factor (10.1) is the only temporal variable.\nIt projects H0_geometric = 7.24 to H0_physical = 73.1 km/s/Mpc.\n\nFREE PARAMETERS: 0"
+          "content": "All constants derived from Yod-Nun-Dalet (י-ן-ד) geometry with ZERO free parameters.\n\nHEBREW LETTER NAMING:\n- י (Yod): 288 Ancestral Roots (Yod₁ - Yod₂₈₈)\n- ן (Nun Sofit): 24 Torsion Pins (Nun₁ - Nun₂₄), 12/12 shadow split\n- ד (Dalet): 4 Spacetime Dimensions (Dalet₁ - Dalet₄)\n\nProjection Hierarchy: Yod (288) → Nun (24) → Dalet (4)\n\nThe 7 Primary Gates:\n- C02-R: Root Parity (Yod_active + Yod_hidden = 288)\n- C19-T: Torsion Lock (Nun = 24)\n- C44: 4-Pattern ([6,6,6,6] Nun per Dalet)\n- C125: Saturation (Yod_active = 125)\n- C-ZETA: Temporal Sync (H0 matches geometry)\n- C-EPSILON: Bulk Insulation (Yod_hidden = 163)\n- C-OMEGA: Terminal State (All certificates pass)\n\nClosure Equations:\n- Structural: SO(24) + Nun - Tax = Yod (276 + 24 - 12 = 288)\n- Partition: Yod_active + Yod_hidden = Yod (125 + 163 = 288)\n- 4-Pattern: Var([6,6,6,6]) = 0\n\nThe H0 Unwinding Scale Factor (10.1) is the only temporal variable.\nIt projects H0_geometric = 7.24 to H0_physical = 73.1 km/s/Mpc.\n\nFREE PARAMETERS: 0"
         }
       ],
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "All constants derived from 288-24-4 geometry with ZERO free parameters.\n\nThe 7 Primary Gates:\n- C02-R: Root Parity (125 + 163 = 288)\n- C19-T: Torsion Lock (Pins = 24)\n- C44: 4-Pattern ([6,6,6,6])\n- C125: Saturation (Active = 125)\n- C-ZETA: Temporal Sync (H0 matches geometry)\n- C-EPSILON: Bulk Insulation (Hidden = 163)\n- C-OMEGA: Terminal State (All certificates pass)\n\nClosure Equations:\n- Structural: 276 + 24 - 12 = 288\n- Partition: 125 + 163 = 288\n- 4-Pattern: Var([6,6,6,6]) = 0\n\nThe H0 Unwinding Scale Factor (10.1) is the only temporal variable.\nIt projects H0_geometric = 7.24 to H0_physical = 73.1 km/s/Mpc.\n\nFREE PARAMETERS: 0"
+          "content": "All constants derived from Yod-Nun-Dalet (י-ן-ד) geometry with ZERO free parameters.\n\nHEBREW LETTER NAMING:\n- י (Yod): 288 Ancestral Roots (Yod₁ - Yod₂₈₈)\n- ן (Nun Sofit): 24 Torsion Pins (Nun₁ - Nun₂₄), 12/12 shadow split\n- ד (Dalet): 4 Spacetime Dimensions (Dalet₁ - Dalet₄)\n\nProjection Hierarchy: Yod (288) → Nun (24) → Dalet (4)\n\nThe 7 Primary Gates:\n- C02-R: Root Parity (Yod_active + Yod_hidden = 288)\n- C19-T: Torsion Lock (Nun = 24)\n- C44: 4-Pattern ([6,6,6,6] Nun per Dalet)\n- C125: Saturation (Yod_active = 125)\n- C-ZETA: Temporal Sync (H0 matches geometry)\n- C-EPSILON: Bulk Insulation (Yod_hidden = 163)\n- C-OMEGA: Terminal State (All certificates pass)\n\nClosure Equations:\n- Structural: SO(24) + Nun - Tax = Yod (276 + 24 - 12 = 288)\n- Partition: Yod_active + Yod_hidden = Yod (125 + 163 = 288)\n- 4-Pattern: Var([6,6,6,6]) = 0\n\nThe H0 Unwinding Scale Factor (10.1) is the only temporal variable.\nIt projects H0_geometric = 7.24 to H0_physical = 73.1 km/s/Mpc.\n\nFREE PARAMETERS: 0"
         }
       ],
       "formulaRefs": [
@@ -13911,7 +13732,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-01T20:33:15.458885"
+      "timestamp": "2026-01-01T23:25:19.634280"
     }
   }
 }

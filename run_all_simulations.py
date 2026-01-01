@@ -66,7 +66,7 @@ Phase 6 - v16.2 Sterile Model Paper Structure (DOI: 10.5281/zenodo.18079602):
   - appendix_c_gauge_matrices_v16_2: Appendix C - S_PR(2) Gauge Matrices
   - appendix_d_alignment_v16_2: Appendix D - 0.48σ Alignment Data
   - appendix_e_brane_map_v16_2: Appendix E - Brane-Intersection Map
-  - appendix_f_certificates_v16_2: Appendix F - 42 Certificates of Integrity
+  - appendix_f_72gates_v16_2: Appendix F - 72 Gates of Integrity
   - appendix_g_omega_seal_v16_2: Appendix G - Omega Seal Protocol (7 Master Gates)
   - appendix_h_288_roots_v16_2: Appendix H - 288-Root Ancestral Basis
   - appendix_i_terminal_states_v16_2: Appendix I - Three Terminal States
@@ -334,7 +334,7 @@ except ImportError:
     APPENDIX_E_V16_2_AVAILABLE = False
 
 try:
-    from simulations.v16.appendices.appendix_f_certificates_v16_2 import AppendixFCertificates
+    from simulations.v16.appendices.appendix_f_72gates_v16_2 import Appendix72Gates
     APPENDIX_F_V16_2_AVAILABLE = True
 except ImportError:
     APPENDIX_F_V16_2_AVAILABLE = False
@@ -687,8 +687,8 @@ class SimulationRunner:
                 ([AppendixDAlignment()] if APPENDIX_D_V16_2_AVAILABLE else []) +
                 # Appendix E: Brane-Intersection Map
                 ([AppendixEBraneMap()] if APPENDIX_E_V16_2_AVAILABLE else []) +
-                # Appendix F: 42 Certificates of Integrity
-                ([AppendixFCertificates()] if APPENDIX_F_V16_2_AVAILABLE else []) +
+                # Appendix F: 72 Gates of Integrity (v16.2 architecture)
+                ([Appendix72Gates()] if APPENDIX_F_V16_2_AVAILABLE else []) +
                 # Appendix G: Omega Seal Cryptographic Protocol
                 ([AppendixGOmegaSeal()] if APPENDIX_G_V16_2_AVAILABLE else []) +
                 # Appendix H: 288-Root Ancestral Basis (SO(24) + Shadow Torsion)
