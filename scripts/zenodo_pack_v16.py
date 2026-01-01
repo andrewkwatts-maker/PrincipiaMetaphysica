@@ -53,8 +53,8 @@ RELEASE_DATE = datetime.datetime.now().strftime("%Y%m%d")
 
 # Source and build directories
 SOURCE_DIR = Path(__file__).parent.parent  # Project root
-BUILD_DIR = SOURCE_DIR / f"Principia_Metaphysica_v{VERSION.replace('.', '_')}_{RELEASE_DATE}"
-ZIP_NAME = f"Principia_Metaphysica_v{VERSION.replace('.', '_')}_{RELEASE_DATE}.zip"
+BUILD_DIR = SOURCE_DIR / "Principia_Metaphysica-Demon_Lock"
+ZIP_NAME = "Principia_Metaphysica-Demon_Lock.zip"
 
 # Directories to exclude entirely (base set)
 EXCLUDE_DIRS_BASE: Set[str] = {
@@ -249,7 +249,6 @@ INCLUDE_ROOT_FILES: List[str] = [
     'PROVENANCE.md',
     'PEER_REVIEW_DEFENSE.md',
     'index.html',
-    'principia-metaphysica-paper.html',
     'serve.py',
     'Launch.bat',
     'run_all_simulations.py',  # For full package
