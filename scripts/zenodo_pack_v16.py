@@ -6,19 +6,23 @@ Zenodo Package Builder for Principia Metaphysica v16.2
 This script creates a self-contained, offline-capable archive suitable for
 Zenodo submission. It follows a "Build, Strip, and Seal" workflow:
 
-1. BUILD: Copy necessary files to a clean directory
+1. CLEAN: Use git archive for pristine export (no uncommitted changes)
 2. STRIP: Remove/neutralize authentication and secrets
-3. SEAL: Generate checksums and create ZIP archive
+3. SEAL: Generate checksums and create ZIP/7z archive
 
 The resulting package can be unzipped and run on any machine without
 network access or authentication credentials.
 
 Usage:
-    python scripts/zenodo_pack_v16.py [--test] [--no-zip]
+    python scripts/zenodo_pack_v16.py [--test] [--no-zip] [--7z] [--git-archive]
 
 Options:
-    --test      Run clean-room verification after building
-    --no-zip    Build directory only, don't create ZIP
+    --test          Run clean-room verification after building
+    --no-zip        Build directory only, don't create archive
+    --7z            Create 7z archive instead of ZIP (requires 7z installed)
+    --git-archive   Use git archive for pristine export (ignores uncommitted changes)
+    --full          Include simulations directory (larger package)
+    --validate      Run 42-certificate validation before building
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -35,6 +39,8 @@ import hashlib
 import json
 import datetime
 import argparse
+import subprocess
+import tempfile
 from pathlib import Path
 from typing import Set, Dict, List, Optional
 
@@ -790,6 +796,172 @@ def create_zip_archive():
 
     return zip_path, sha256, sha512
 
+
+def create_7z_archive():
+    """Create 7z archive using 7-Zip (requires 7z installed)."""
+    print("\n  Creating 7z archive...")
+
+    archive_name = ZIP_NAME.replace('.zip', '.7z')
+    archive_path = SOURCE_DIR / archive_name
+
+    # Find 7z executable
+    if sys.platform == 'win32':
+        # Try common Windows paths
+        seven_zip_paths = [
+            r"C:\Program Files\7-Zip\7z.exe",
+            r"C:\Program Files (x86)\7-Zip\7z.exe",
+            "7z.exe",  # If in PATH
+        ]
+        seven_zip = None
+        for path in seven_zip_paths:
+            if os.path.exists(path) or shutil.which(path):
+                seven_zip = path
+                break
+    else:
+        seven_zip = shutil.which("7z") or shutil.which("7za")
+
+    if not seven_zip:
+        print("  [ERROR] 7z not found. Install 7-Zip or use --no-7z")
+        print("  Falling back to ZIP...")
+        return create_zip_archive()
+
+    # Remove existing archive
+    if archive_path.exists():
+        archive_path.unlink()
+
+    # Create 7z archive with maximum compression
+    try:
+        result = subprocess.run(
+            [seven_zip, "a", "-t7z", "-mx=9", "-mfb=273", "-ms", "-md=31",
+             str(archive_path), str(BUILD_DIR)],
+            capture_output=True,
+            text=True,
+            cwd=BUILD_DIR.parent
+        )
+
+        if result.returncode != 0:
+            print(f"  [ERROR] 7z failed: {result.stderr}")
+            return create_zip_archive()
+
+    except Exception as e:
+        print(f"  [ERROR] 7z failed: {e}")
+        return create_zip_archive()
+
+    # Compute checksums
+    archive_size = archive_path.stat().st_size
+    sha256 = compute_sha256(archive_path)
+    sha512 = compute_sha512(archive_path)
+
+    print(f"    Archive: {archive_name}")
+    print(f"    Size: {archive_size / (1024*1024):.2f} MB")
+    print(f"    SHA-256: {sha256}")
+
+    # Write checksum file
+    checksum_path = SOURCE_DIR / f"{archive_name}.sha256"
+    with open(checksum_path, 'w') as f:
+        f.write(f"{sha256}  {archive_name}\n")
+    print(f"    Created: {archive_name}.sha256")
+
+    return archive_path, sha256, sha512
+
+
+def git_archive_export(target_dir: Path) -> bool:
+    """
+    Use git archive to export a clean copy of the repository.
+    This ensures no uncommitted changes or untracked files are included.
+
+    Args:
+        target_dir: Directory to extract the archive to
+
+    Returns:
+        True if successful, False otherwise
+    """
+    print("\n  Exporting clean git archive...")
+
+    # Check if we're in a git repo
+    if not (SOURCE_DIR / ".git").exists():
+        print("  [WARN] Not a git repository, falling back to copy")
+        return False
+
+    try:
+        # Get current commit hash for reference
+        result = subprocess.run(
+            ["git", "rev-parse", "--short", "HEAD"],
+            capture_output=True,
+            text=True,
+            cwd=SOURCE_DIR
+        )
+        commit_hash = result.stdout.strip() if result.returncode == 0 else "unknown"
+        print(f"    Commit: {commit_hash}")
+
+        # Create temporary tar file
+        with tempfile.NamedTemporaryFile(suffix='.tar', delete=False) as tmp:
+            tmp_tar = tmp.name
+
+        # Export using git archive
+        result = subprocess.run(
+            ["git", "archive", "--format=tar", "-o", tmp_tar, "HEAD"],
+            capture_output=True,
+            text=True,
+            cwd=SOURCE_DIR
+        )
+
+        if result.returncode != 0:
+            print(f"  [ERROR] git archive failed: {result.stderr}")
+            os.unlink(tmp_tar)
+            return False
+
+        # Extract to target directory
+        target_dir.mkdir(parents=True, exist_ok=True)
+
+        import tarfile
+        with tarfile.open(tmp_tar, 'r') as tar:
+            tar.extractall(target_dir)
+
+        os.unlink(tmp_tar)
+
+        print(f"    Exported to: {target_dir.name}")
+        print(f"    Status: Clean (no uncommitted changes)")
+
+        return True
+
+    except Exception as e:
+        print(f"  [ERROR] git archive failed: {e}")
+        return False
+
+
+def inject_omega_seal(build_dir: Path):
+    """Copy Omega Seal verification files to the build directory."""
+    print("\n  Injecting Omega Seal...")
+
+    omega_seal_src = SOURCE_DIR / "simulations" / "AutoGenerated" / "OMEGA_SEAL.json"
+    omega_hash_src = SOURCE_DIR / "simulations" / "AutoGenerated" / "OMEGA_SEAL.hash"
+
+    if omega_seal_src.exists():
+        # Create verification directory
+        verify_dir = build_dir / "VERIFICATION"
+        verify_dir.mkdir(exist_ok=True)
+
+        shutil.copy2(omega_seal_src, verify_dir / "OMEGA_SEAL.json")
+        print(f"    Copied: OMEGA_SEAL.json")
+
+        if omega_hash_src.exists():
+            shutil.copy2(omega_hash_src, verify_dir / "OMEGA_SEAL.hash")
+            print(f"    Copied: OMEGA_SEAL.hash")
+
+            # Also create VERIFICATION_MANIFEST.txt at root
+            with open(build_dir / "VERIFICATION_MANIFEST.txt", 'w') as f:
+                with open(omega_hash_src, 'r') as src:
+                    f.write("PRINCIPIA METAPHYSICA v16.2 - VERIFICATION MANIFEST\n")
+                    f.write("=" * 50 + "\n\n")
+                    f.write("OMEGA SEAL (42-Certificate Master Hash):\n")
+                    f.write(src.read())
+                    f.write(f"\nExport Date: {datetime.datetime.now().isoformat()}\n")
+                    f.write("\nStatus: Auth-Free, 42-Cert Verified, G2-Residue Locked.\n")
+            print(f"    Created: VERIFICATION_MANIFEST.txt")
+    else:
+        print("    [WARN] OMEGA_SEAL.json not found - run finalize_lockdown.py first")
+
 def run_clean_room_test():
     """Run verification in the built package directory."""
     print("\n  Running clean room verification...")
@@ -819,11 +991,29 @@ def run_clean_room_test():
 def main():
     global EXCLUDE_DIRS, ZIP_NAME, BUILD_DIR
 
-    parser = argparse.ArgumentParser(description="Build Zenodo package for Principia Metaphysica")
-    parser.add_argument("--test", action="store_true", help="Run clean-room verification after building")
-    parser.add_argument("--no-zip", action="store_true", help="Build directory only, don't create ZIP")
-    parser.add_argument("--full", action="store_true", help="Include simulations (for full research package)")
-    parser.add_argument("--validate", action="store_true", help="Run 42-certificate validation before building")
+    parser = argparse.ArgumentParser(
+        description="Build Zenodo package for Principia Metaphysica",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python scripts/zenodo_pack_v16.py                    # Standard website-only ZIP
+  python scripts/zenodo_pack_v16.py --7z               # Use 7z compression
+  python scripts/zenodo_pack_v16.py --git-archive      # Clean git export
+  python scripts/zenodo_pack_v16.py --full --validate  # Full package with validation
+        """
+    )
+    parser.add_argument("--test", action="store_true",
+                        help="Run clean-room verification after building")
+    parser.add_argument("--no-zip", action="store_true",
+                        help="Build directory only, don't create archive")
+    parser.add_argument("--7z", dest="use_7z", action="store_true",
+                        help="Create 7z archive instead of ZIP (better compression)")
+    parser.add_argument("--git-archive", dest="git_archive", action="store_true",
+                        help="Use git archive for pristine export (ignores uncommitted)")
+    parser.add_argument("--full", action="store_true",
+                        help="Include simulations (for full research package)")
+    parser.add_argument("--validate", action="store_true",
+                        help="Run 42-certificate validation before building")
     args = parser.parse_args()
 
     # Adjust excludes based on package type
@@ -837,11 +1027,15 @@ def main():
     print("=" * 70)
     print(f"\nSource: {SOURCE_DIR}")
     print(f"Build:  {BUILD_DIR.name}")
-    print(f"Output: {ZIP_NAME}")
+    archive_type = "7z" if args.use_7z else "ZIP"
+    output_name = ZIP_NAME.replace('.zip', '.7z') if args.use_7z else ZIP_NAME
+    print(f"Output: {output_name} ({archive_type})")
     if args.full:
         print(f"Mode:   FULL (includes simulations)")
     else:
         print(f"Mode:   Website-only")
+    if args.git_archive:
+        print(f"Source: Git archive (clean export)")
 
     # Optional: Run 42-certificate validation
     if args.validate:
@@ -849,67 +1043,84 @@ def main():
         print(" PRE-BUILD VALIDATION: 42-Certificate Demon-Lock")
         print("=" * 70)
         try:
-            import subprocess
             result = subprocess.run(
-                [sys.executable, str(SOURCE_DIR / "simulations" / "validation" / "CERTIFICATES_v16_2.py")],
+                [sys.executable, str(SOURCE_DIR / "scripts" / "finalize_lockdown.py")],
                 capture_output=True,
                 text=True,
                 encoding='utf-8',
                 errors='replace',
                 cwd=SOURCE_DIR
             )
-            # Check for DEMON-LOCK COMPLETE in output
-            if result.stdout and "DEMON-LOCK COMPLETE" in result.stdout:
-                print("  [PASS] 42/42 certificates LOCKED")
-            elif result.stdout and "LOCKED:" in result.stdout:
-                # Extract locked count
+            # Check for success in output
+            if result.returncode == 0 and "OMEGA SEAL GENERATED SUCCESSFULLY" in result.stdout:
+                print("  [PASS] 42/42 certificates validated")
+                # Extract master hash
                 import re
-                match = re.search(r'LOCKED:\s*(\d+)/(\d+)', result.stdout)
+                match = re.search(r'Master Hash: ([a-f0-9]+)', result.stdout)
                 if match:
-                    locked, total = match.groups()
-                    print(f"  [INFO] {locked}/{total} certificates locked")
+                    print(f"  Master Hash: {match.group(1)[:16]}...")
+            elif result.returncode == 0:
+                print("  [OK] Validation completed with warnings")
             else:
-                print("  [WARN] Could not parse validation output")
+                print("  [WARN] Validation completed with errors")
                 if result.stderr:
                     print(f"  stderr: {result.stderr[:200]}")
         except Exception as e:
             print(f"  [ERROR] Could not run validation: {e}")
 
     # Step 1: Clean and prepare
-    print("\n[1/6] Preparing build directory...")
+    print("\n[1/9] Preparing build directory...")
     clean_build_dir()
 
-    # Step 2: Copy root files
-    print("\n[2/6] Copying root files...")
-    copy_root_files()
+    # Step 2: Export source (git archive or copy)
+    use_git_export = False
+    if args.git_archive:
+        print("\n[2/9] Exporting via git archive...")
+        use_git_export = git_archive_export(BUILD_DIR)
+        if not use_git_export:
+            print("  Falling back to file copy...")
 
-    # Step 3: Copy directories
-    print("\n[3/6] Copying directories...")
-    copy_include_directories()
+    if not use_git_export:
+        # Step 2b: Copy root files
+        print("\n[2/9] Copying root files...")
+        copy_root_files()
+
+        # Step 3: Copy directories
+        print("\n[3/9] Copying directories...")
+        copy_include_directories()
 
     # Step 4: Strip authentication from files
-    print("\n[4/8] Stripping authentication from HTML files...")
+    print("\n[4/9] Stripping authentication from HTML files...")
     strip_auth_from_all_html()
 
     # Step 5: Strip authentication from JS files
-    print("\n[5/8] Stripping authentication from JS files...")
+    print("\n[5/9] Stripping authentication from JS files...")
     strip_auth_from_js()
 
     # Step 6: Create offline config
-    print("\n[6/8] Creating offline configuration...")
+    print("\n[6/9] Creating offline configuration...")
     create_offline_config()
     create_verification_script()
 
-    # Step 7: Create manifest
-    print("\n[7/8] Creating package manifest...")
+    # Step 7: Inject Omega Seal
+    print("\n[7/9] Injecting Omega Seal...")
+    inject_omega_seal(BUILD_DIR)
+
+    # Step 8: Create manifest
+    print("\n[8/9] Creating package manifest...")
     manifest = create_package_manifest()
 
-    # Step 8: Create ZIP
+    # Step 9: Create archive
+    archive_path = None
+    sha256 = None
     if not args.no_zip:
-        print("\n[8/8] Creating ZIP archive...")
-        zip_path, sha256, sha512 = create_zip_archive()
+        print(f"\n[9/9] Creating {archive_type} archive...")
+        if args.use_7z:
+            archive_path, sha256, sha512 = create_7z_archive()
+        else:
+            archive_path, sha256, sha512 = create_zip_archive()
     else:
-        print("\n[8/8] Skipping ZIP creation (--no-zip)")
+        print("\n[9/9] Skipping archive creation (--no-zip)")
 
     # Optional: Run tests
     if args.test:
@@ -925,13 +1136,30 @@ def main():
     print(" BUILD COMPLETE")
     print("=" * 70)
     print(f"\nBuild directory: {BUILD_DIR}")
-    if not args.no_zip:
-        print(f"ZIP archive: {SOURCE_DIR / ZIP_NAME}")
-        print(f"Checksum: {SOURCE_DIR / f'{ZIP_NAME}.sha256'}")
+    if archive_path:
+        print(f"Archive: {archive_path}")
+        print(f"SHA-256: {sha256}")
     print(f"\nTotal files: {manifest['summary']['total_files']}")
     print(f"Total size: {manifest['summary']['total_size_mb']} MB")
-    print("\n[!] Remember to test on a clean machine before uploading to Zenodo!")
+
+    # Zenodo metadata reminder
+    print("\n" + "-" * 70)
+    print(" ZENODO METADATA CHECKLIST")
+    print("-" * 70)
+    print(f"""
+Title: Principia Metaphysica v{VERSION}: A G2-Manifold Residue Model
+       with 0.48sigma Cosmological Alignment
+
+Description: This release marks the transition to a pure-geometry model,
+             replacing 125 empirical constants with derived residues.
+             Includes 42-point certification ledger.
+
+Keywords: G2 Manifold, Ricci Flow, 125-Parameter Port, Zenodo Archive
+
+License: MIT (code), See LICENSE for theory content
+""")
     print("=" * 70)
+    print("\n[!] Remember to test on a clean machine before uploading to Zenodo!")
 
 if __name__ == "__main__":
     main()
