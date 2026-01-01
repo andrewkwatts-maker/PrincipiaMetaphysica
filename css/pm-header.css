@@ -79,104 +79,6 @@
     outline-offset: 4px;
 }
 
-/* ============================================
-   Theory Ticker - Rotating facts display
-   ============================================ */
-
-.pm-header .theory-ticker {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.25), rgba(236, 72, 153, 0.2));
-    border-radius: 8px;
-    border: 1px solid rgba(139, 92, 246, 0.3);
-    min-width: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease;
-    cursor: default;
-}
-
-.pm-header .theory-ticker.fade-out {
-    opacity: 0;
-}
-
-.pm-header .theory-ticker:hover {
-    border-color: rgba(139, 92, 246, 0.5);
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.25));
-}
-
-.pm-header .ticker-category {
-    font-size: 0.7rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 0.2rem 0.5rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-/* Category color variants */
-.pm-header .ticker-category.cat-status {
-    background: rgba(34, 197, 94, 0.3);
-    color: #4ade80;
-    border: 1px solid rgba(34, 197, 94, 0.4);
-}
-
-.pm-header .ticker-category.cat-derivation {
-    background: rgba(139, 92, 246, 0.3);
-    color: #a78bfa;
-    border: 1px solid rgba(139, 92, 246, 0.4);
-}
-
-.pm-header .ticker-category.cat-structure {
-    background: rgba(59, 130, 246, 0.3);
-    color: #60a5fa;
-    border: 1px solid rgba(59, 130, 246, 0.4);
-}
-
-.pm-header .ticker-category.cat-prediction {
-    background: rgba(236, 72, 153, 0.3);
-    color: #f472b6;
-    border: 1px solid rgba(236, 72, 153, 0.4);
-}
-
-.pm-header .ticker-category.cat-constant {
-    background: rgba(245, 158, 11, 0.3);
-    color: #fbbf24;
-    border: 1px solid rgba(245, 158, 11, 0.4);
-}
-
-.pm-header .ticker-category.cat-formula {
-    background: rgba(20, 184, 166, 0.3);
-    color: #2dd4bf;
-    border: 1px solid rgba(20, 184, 166, 0.4);
-}
-
-.pm-header .ticker-category.cat-seal {
-    background: rgba(239, 68, 68, 0.3);
-    color: #f87171;
-    border: 1px solid rgba(239, 68, 68, 0.4);
-}
-
-.pm-header .ticker-text {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.95);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: help;
-}
-
-/* MathJax content styling in ticker */
-.pm-header .ticker-text mjx-container,
-.pm-header .ticker-text .MathJax {
-    font-size: 1em !important;
-    color: rgba(255, 255, 255, 0.95) !important;
-}
-
 /* Main Navigation */
 .pm-header .main-nav ul {
     list-style: none;
@@ -403,14 +305,6 @@
         padding: 0.75rem 1.5rem;
     }
 
-    .pm-header .theory-ticker {
-        max-width: 350px;
-    }
-
-    .pm-header .ticker-text {
-        font-size: 0.75rem;
-    }
-
     .pm-header .main-nav a {
         padding: 0.4rem 0.7rem;
         font-size: 0.8rem;
@@ -424,11 +318,6 @@
 @media (max-width: 768px) {
     .pm-header .header-content {
         flex-wrap: nowrap;
-    }
-
-    /* Hide ticker on mobile - too cramped */
-    .pm-header .theory-ticker {
-        display: none;
     }
 
     .pm-header .mobile-menu-btn {
