@@ -565,6 +565,26 @@
             color: var(--accent-secondary);
         }
 
+        /* Deriving formula section */
+        .deriving-formula {
+            margin-top: 0.75rem;
+            padding: 0.75rem;
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(139, 127, 255, 0.05));
+            border: 1px solid rgba(81, 207, 102, 0.3);
+            border-radius: 8px;
+        }
+
+        .deriving-formula .formula-link.deriving {
+            background: rgba(81, 207, 102, 0.15);
+            border-color: rgba(81, 207, 102, 0.4);
+            color: #51cf66;
+        }
+
+        .deriving-formula .formula-link.deriving:hover {
+            background: rgba(81, 207, 102, 0.25);
+            border-color: rgba(81, 207, 102, 0.6);
+        }
+
         .formula-links {
             margin-top: 1rem;
             padding-top: 1rem;
@@ -1736,6 +1756,9 @@
 
             let paramValue, units, status, description, experimental, predicted, uncertainty, derivation, source;
             let observed, observedUncertainty, deviationPercent, sigmaAgreement;
+            let derivingFormulas = [];
+            let sigma = null;
+            let computed = null;
 
             if (typeof value === 'object' && value !== null && !Array.isArray(value)) {
                 // Extract primary value in order of preference
@@ -1750,15 +1773,30 @@
                 units = value.units || '';
                 status = value.status || 'DERIVED';
                 description = value.description || value.derivation || PARAMETER_DESCRIPTIONS[key] || PARAMETER_DESCRIPTIONS[lastKey] || '';
-                experimental = value.experimental;
+                experimental = value.experimental ?? value.experimental_value;
                 predicted = value.predicted;
                 observed = value.observed;
-                observedUncertainty = value.observed_uncertainty || value.experimental_error;
+                observedUncertainty = value.observed_uncertainty || value.experimental_error || value.experimental_uncertainty;
                 uncertainty = value.predicted_error || value.experimental_error || value.uncertainty;
                 derivation = value.derivation;
                 source = value.source;
                 deviationPercent = value.deviation_percent;
                 sigmaAgreement = value.sigma_agreement;
+                sigma = value.sigma_deviation ?? value.sigma ?? null;
+                computed = value.value ?? value.predicted ?? null;
+
+                // Extract metadata including deriving formulas
+                if (value.metadata) {
+                    if (value.metadata.deriving_formulas) {
+                        derivingFormulas = value.metadata.deriving_formulas;
+                    }
+                    if (value.metadata.description && !description) {
+                        description = value.metadata.description;
+                    }
+                    if (value.metadata.units && !units) {
+                        units = value.metadata.units;
+                    }
+                }
             } else {
                 // Primitive value (number, string, or array)
                 paramValue = value;
@@ -1786,7 +1824,10 @@
                 source,
                 deviationPercent,
                 sigmaAgreement,
-                relatedFormulas: findRelatedFormulas(key)
+                sigma,
+                computed,
+                relatedFormulas: findRelatedFormulas(key),
+                derivingFormulas: derivingFormulas
             };
         }
 
@@ -2114,6 +2155,26 @@
 
             if (metadata.length > 0) {
                 html += `<div class="param-metadata">${metadata.join('')}</div>`;
+            }
+
+            // Deriving formulas - shows what formula derives this parameter
+            if (param.derivingFormulas && param.derivingFormulas.length > 0) {
+                html += `
+                    <div class="deriving-formula">
+                        <div class="formula-links-header">📐 Derived by:</div>
+                        <div class="formula-link-list">
+                            ${param.derivingFormulas.map(f =>
+                                `<a href="formulas.html#${f.id}" class="formula-link deriving tooltip">
+                                    ${f.label}
+                                    <span class="tooltip-content">
+                                        <span class="tooltip-label">${escapeHtml(f.description || 'Formula')}</span>
+                                        <span class="tooltip-value">$${f.latex || ''}$<br>Click to view derivation</span>
+                                    </span>
+                                </a>`
+                            ).join('')}
+                        </div>
+                    </div>
+                `;
             }
 
             // Related formulas with tooltips
