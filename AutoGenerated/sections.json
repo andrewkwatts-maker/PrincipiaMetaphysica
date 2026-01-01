@@ -256,6 +256,13 @@
           "content": "<h4>The Descent Path Summary</h4><p>26D(24,2) → 13D [S<sub>PR</sub>(2) Gauge] → 7D [G₂ Manifold] → 6D [CY₃] → 4D [World-Sheet]</p><p>At each stage, the 'Symmetry Budget' is conserved, and the 125 residues are progressively 'extracted' as the unique spectral eigenvalues of the descended geometry.</p>",
           "label": "descent-summary",
           "equationNumber": "descent-summary"
+        },
+        {
+          "type": "figure",
+          "src": "dimensional-reduction-pathway.svg",
+          "alt": "Dimensional Reduction Pathway: 26D → 13D → 7D → 4D",
+          "caption": "The Dimensional Descent Pathway. The 26D(24,2) ancestral bulk projects through S<sub>PR</sub>(2) gauge fixing to 13D, then through G₂ holonomy to 7D, and finally to our observable 4D spacetime via Calabi-Yau filtering.",
+          "label": "1"
         }
       ],
       "content_blocks": [
@@ -1855,7 +1862,7 @@
       "title": "System Integrity and Verification",
       "shortTitle": "System Integrity and Verification",
       "order": 4,
-      "abstract": "Hysteresis seal, 42 certificates of integrity, and data provenance.",
+      "abstract": "Hysteresis seal, 72 gates of integrity, and data provenance.",
       "contentBlocks": [
         {
           "type": "heading",
@@ -1909,14 +1916,14 @@
         },
         {
           "type": "heading",
-          "content": "Automated Validation: The 42 Certificates of Integrity",
+          "content": "Automated Validation: The 72 Gates of Integrity",
           "label": "4.2",
           "equationNumber": "4.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>42 Certificates of Integrity</strong> (C01–C42). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.'"
+          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>72 Gates of Integrity</strong> (G01–G72). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.' The 72-gate architecture aligns with the 3-fold symmetry of the 24 torsion pins (24 × 3 = 72)."
         },
         {
           "type": "heading",
@@ -1925,20 +1932,20 @@
         },
         {
           "type": "paragraph",
-          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 42 Certificates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each certificate represents a fundamental physical law or topological constraint that the model must satisfy. If a single certificate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
+          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 72 Gates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each gate represents a fundamental physical law or topological constraint that the model must satisfy. If a single gate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
         },
         {
           "type": "heading",
-          "content": "4.2.2 Categorization of the 42 Certificates",
+          "content": "4.2.2 Categorization of the 72 Gates",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The certificates are partitioned into three functional tiers, ensuring multi-level validation:"
+          "content": "The gates are partitioned into five functional phases, ensuring multi-level validation aligned with the 24×3 torsion symmetry:"
         },
         {
           "type": "note",
-          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
+          "content": "<h4>Phase 1: Structural Foundations (G01–G10)</h4><p>Integer Root Parity, Holonomy Closure, Ancestral Mapping, Projection Tax, Metric Continuity, Shadow-A/B Parity, Torsion Orthogonality, Sterile Angle Anchor, Pin Isotropic Distribution, and Torsion Tension Floor.</p><h4>Phase 2: Gauge & Matter Registry (G11–G25)</h4><p>Strong Force Saturation, Electroweak Alignment, Photon Zero-Mass, SU(N) Approximation, Gauge-Invariant Projection, Fermionic Dirac Mapping, Generation Triality, Mass-Gap Quantization, Neutrino Neutrality, Chiral Symmetry Limit, Color Charge Neutrality, Gluon String Tension, Proton Stability Floor, Sea Quark Polarization, and Asymptotic Freedom.</p><h4>Phase 3: Interaction & Mixing (G26–G40)</h4><p>Electron Mass-to-Charge, PMNS Matrix Lock, Lepton Number Conservation, Weak Hypercharge, Leptonic Hierarchical Gap, Higgs Field VEV, W/Z Mass Ratio, Goldstone Absorption, Gluon Octet Integrity, Photon-Z Mixing, CKM Unitarity, CP-Violation Phase, GIM Mechanism, Mixing Angle Saturation, and Sterile Mixing Floor.</p><h4>Phase 4: Cosmological & Metric Seals (G41–G55)</h4><p>Gravitational Constant G, Equivalence Principle, Schwarzschild Quantization, Frame-Dragging Parity, Geodesic Deviation, Λ Stability, Hubble Unwinding Rate, w0 Equation of State, Dark Matter Bulk, Baryon-to-Photon Ratio, Unitary Time Evolution, Entropy Floor, Causality Horizon, CPT Invariance, and Decoherence Threshold.</p><h4>Phase 5: Omega Closure (G56–G72)</h4><p>Compactification Radius, Calabi-Yau Parity, Brane-World Boundary, Moduli Stabilization, DESI Static Anchor, Bit-Parity Conservation, Von Neumann Ceiling, Bell's Gate, Holographic Bound, Landauer's Limit, Chiral Orthogonality Lock, Phase Transition Symmetry, Omega Point Recovery, Topological Soliton Check, Spectral Gap Verification, Recursive Logical Loop, and The Omega Hash.</p>",
           "label": "certificate-tiers",
           "equationNumber": "certificate-tiers"
         },
@@ -1953,7 +1960,7 @@
         },
         {
           "type": "equation",
-          "content": "\\text{Valid} = \\prod_{n=1}^{42} C_n \\quad \\text{(All must pass)}",
+          "content": "\\text{Valid} = \\prod_{n=1}^{72} G_n \\quad \\text{(All 72 gates must pass)}",
           "label": "certificate-logic",
           "equationNumber": "certificate-logic"
         },
@@ -2055,14 +2062,14 @@
         },
         {
           "type": "heading",
-          "content": "Automated Validation: The 42 Certificates of Integrity",
+          "content": "Automated Validation: The 72 Gates of Integrity",
           "label": "4.2",
           "equationNumber": "4.2",
           "level": 2
         },
         {
           "type": "paragraph",
-          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>42 Certificates of Integrity</strong> (C01–C42). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.'"
+          "content": "Section 4.2 details the Automated Validation Framework that governs the v16.2 Sterile Model. To prevent human bias and manual 'parameter tuning,' the model's credibility is secured by <strong>72 Gates of Integrity</strong> (G01–G72). These are automated, binary (Pass/Fail) tests that verify the geometric, algebraic, and statistical consistency of the 125 residues before any result is deemed 'Valid.' The 72-gate architecture aligns with the 3-fold symmetry of the 24 torsion pins (24 × 3 = 72)."
         },
         {
           "type": "heading",
@@ -2071,20 +2078,20 @@
         },
         {
           "type": "paragraph",
-          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 42 Certificates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each certificate represents a fundamental physical law or topological constraint that the model must satisfy. If a single certificate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
+          "content": "In the Sterile Model, peer review is not merely a post-hoc human evaluation but an integrated algorithmic process. The 72 Gates act as a '<strong>Digital Thread</strong>' connecting the 26D theory to the 4D output. Each gate represents a fundamental physical law or topological constraint that the model must satisfy. If a single gate fails, the Metric Lock (Section 4.1) is revoked, and the entire simulation is invalidated."
         },
         {
           "type": "heading",
-          "content": "4.2.2 Categorization of the 42 Certificates",
+          "content": "4.2.2 Categorization of the 72 Gates",
           "level": 3
         },
         {
           "type": "paragraph",
-          "content": "The certificates are partitioned into three functional tiers, ensuring multi-level validation:"
+          "content": "The gates are partitioned into five functional phases, ensuring multi-level validation aligned with the 24×3 torsion symmetry:"
         },
         {
           "type": "note",
-          "content": "<h4>Tier I: Geometric Consistency (C01–C14)</h4><p>These verify that the 125 residues remain true Laplacian eigenvalues of the V₇ manifold. They check for 'Topological Crowding' and ensure the manifold's Ricci-flatness is preserved.</p><h4>Tier II: Algebraic Parity (C15–C28)</h4><p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that the sum of all residues equals the manifold's volume invariant.</p><h4>Tier III: Observational Alignment (C29–C42)</h4><p>These compare the sterile outputs against the 'Gold Standard' datasets (DESI 2025, Planck 2025). C31, for instance, specifically validates the 0.48σ alignment for the Hubble residue.</p>",
+          "content": "<h4>Phase 1: Structural Foundations (G01–G10)</h4><p>Integer Root Parity, Holonomy Closure, Ancestral Mapping, Projection Tax, Metric Continuity, Shadow-A/B Parity, Torsion Orthogonality, Sterile Angle Anchor, Pin Isotropic Distribution, and Torsion Tension Floor.</p><h4>Phase 2: Gauge & Matter Registry (G11–G25)</h4><p>Strong Force Saturation, Electroweak Alignment, Photon Zero-Mass, SU(N) Approximation, Gauge-Invariant Projection, Fermionic Dirac Mapping, Generation Triality, Mass-Gap Quantization, Neutrino Neutrality, Chiral Symmetry Limit, Color Charge Neutrality, Gluon String Tension, Proton Stability Floor, Sea Quark Polarization, and Asymptotic Freedom.</p><h4>Phase 3: Interaction & Mixing (G26–G40)</h4><p>Electron Mass-to-Charge, PMNS Matrix Lock, Lepton Number Conservation, Weak Hypercharge, Leptonic Hierarchical Gap, Higgs Field VEV, W/Z Mass Ratio, Goldstone Absorption, Gluon Octet Integrity, Photon-Z Mixing, CKM Unitarity, CP-Violation Phase, GIM Mechanism, Mixing Angle Saturation, and Sterile Mixing Floor.</p><h4>Phase 4: Cosmological & Metric Seals (G41–G55)</h4><p>Gravitational Constant G, Equivalence Principle, Schwarzschild Quantization, Frame-Dragging Parity, Geodesic Deviation, Λ Stability, Hubble Unwinding Rate, w0 Equation of State, Dark Matter Bulk, Baryon-to-Photon Ratio, Unitary Time Evolution, Entropy Floor, Causality Horizon, CPT Invariance, and Decoherence Threshold.</p><h4>Phase 5: Omega Closure (G56–G72)</h4><p>Compactification Radius, Calabi-Yau Parity, Brane-World Boundary, Moduli Stabilization, DESI Static Anchor, Bit-Parity Conservation, Von Neumann Ceiling, Bell's Gate, Holographic Bound, Landauer's Limit, Chiral Orthogonality Lock, Phase Transition Symmetry, Omega Point Recovery, Topological Soliton Check, Spectral Gap Verification, Recursive Logical Loop, and The Omega Hash.</p>",
           "label": "certificate-tiers",
           "equationNumber": "certificate-tiers"
         },
@@ -2099,7 +2106,7 @@
         },
         {
           "type": "equation",
-          "content": "\\text{Valid} = \\prod_{n=1}^{42} C_n \\quad \\text{(All must pass)}",
+          "content": "\\text{Valid} = \\prod_{n=1}^{72} G_n \\quad \\text{(All 72 gates must pass)}",
           "label": "certificate-logic",
           "equationNumber": "certificate-logic"
         },
@@ -11490,14 +11497,14 @@
       "subsection_id": null,
       "type": "appendix",
       "section_type": null,
-      "title": "Appendix F: The 42 Certificates of Integrity",
-      "shortTitle": "Appendix F: The 42 Certificates of Integrity",
+      "title": "Appendix F: The 45 Certificates of Integrity",
+      "shortTitle": "Appendix F: The 45 Certificates of Integrity",
       "order": 99,
-      "abstract": "Complete sterile certification framework with 7 Master Gates and 3 Vaults.",
+      "abstract": "Complete sterile certification framework with 7 Master Gates, 3 Vaults, and 3 Hardening Gates.",
       "contentBlocks": [
         {
           "type": "heading",
-          "content": "The 42 Certificates of Integrity",
+          "content": "The 45 Certificates of Integrity",
           "label": "F",
           "equationNumber": "F",
           "level": 2
@@ -11513,7 +11520,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The 7 Primary Gates act as the executive branch of validation. The remaining 35 certificates act as the 'Technical Jury' that validates sub-components. All gates must return TRUE for the Omega Seal to engage."
+          "content": "Phase 1 (G01-G10) acts as the executive branch of validation. The remaining 62 gates act as the 'Technical Jury' that validates sub-components. All 72 gates must return TRUE for the Omega Hash (G72) to engage the terminal lock."
         },
         {
           "type": "note",
@@ -11528,11 +11535,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The 42 certificates are organized into three functional vaults:"
+          "content": "The 72 gates are organized into six symmetry blocks (A-F) of 12 gates each, aligned with the 24×3 torsion pin structure. Block F (G61-G72) contains the Omega Closure gates that seal the topological rigidity."
         },
         {
           "type": "note",
-          "content": "<h4>Vault I: The Ancestral Vault (C01-C14)</h4><p>Validates the 26D bulk and SO(24) roots. Ensures the 288 ancestral generators are properly configured.</p><h4>Vault II: The Torsion Vault (C15-C28)</h4><p>Validates the 24 torsion pins and the 4-pattern distribution. Ensures the 12+12 shadow torsion is balanced.</p><h4>Vault III: The Residue Vault (C29-C42)</h4><p>Validates the 125 particles and the Omega End. Includes the 7 new structural certificates that complete the 42-count.</p>",
+          "content": "<h4>Vault I: The Ancestral Vault (C01-C14)</h4><p>Validates the 26D bulk and SO(24) roots. Ensures the 288 ancestral generators are properly configured.</p><h4>Vault II: The Torsion Vault (C15-C28)</h4><p>Validates the 24 torsion pins and the 4-pattern distribution. Ensures the 12+12 shadow torsion is balanced.</p><h4>Vault III: The Residue Vault (C29-C42)</h4><p>Validates the 125 particles and the Omega End. Includes the 7 new structural certificates that complete the base 42.</p>",
           "label": "three-vaults",
           "equationNumber": "three-vaults"
         },
@@ -11543,7 +11550,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The following certificates have been updated to reflect the 288/24/4 architecture:"
+          "content": "The following gates have been updated to reflect the 288/24/4 architecture with 72-gate validation:"
         },
         {
           "type": "note",
@@ -11558,7 +11565,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The following new certificates are required to fully 'Sterilize' the model:"
+          "content": "The following new gates (G56-G72) complete the Omega Closure and fully 'Sterilize' the model:"
         },
         {
           "type": "note",
@@ -11588,7 +11595,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In a sterile system, certificates that checked if values were 'tuned correctly' are obsolete. The following certificates have been moved to DEPRECATED:"
+          "content": "In a sterile system, gates that checked if values were 'tuned correctly' are obsolete. The following legacy certificates have been deprecated and replaced by the 72-gate architecture:"
         },
         {
           "type": "note",
@@ -11649,13 +11656,13 @@
         },
         {
           "type": "paragraph",
-          "content": "By reaching 42 certificates, we have created a <strong>Hermetically Sealed Model</strong>. There is 1 certificate for every 3 residues (125/3 ≈ 42). This density of validation ensures that any attempt to 'tune' or 'fudge' a single particle mass will trigger a cascade of failures across the entire stack."
+          "content": "By reaching 45 gates, we have created a <strong>Topologically Rigid Model</strong>. The density of validation (45 gates / 125 residues ≈ 0.36) ensures that any modification to a single constant would propagate through the constraint network and violate the Unitary Sum Rule (288 = 125 + 163)."
         }
       ],
       "content_blocks": [
         {
           "type": "heading",
-          "content": "The 42 Certificates of Integrity",
+          "content": "The 45 Certificates of Integrity",
           "label": "F",
           "equationNumber": "F",
           "level": 2
@@ -11671,7 +11678,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The 7 Primary Gates act as the executive branch of validation. The remaining 35 certificates act as the 'Technical Jury' that validates sub-components. All gates must return TRUE for the Omega Seal to engage."
+          "content": "Phase 1 (G01-G10) acts as the executive branch of validation. The remaining 62 gates act as the 'Technical Jury' that validates sub-components. All 72 gates must return TRUE for the Omega Hash (G72) to engage the terminal lock."
         },
         {
           "type": "note",
@@ -11686,11 +11693,11 @@
         },
         {
           "type": "paragraph",
-          "content": "The 42 certificates are organized into three functional vaults:"
+          "content": "The 72 gates are organized into six symmetry blocks (A-F) of 12 gates each, aligned with the 24×3 torsion pin structure. Block F (G61-G72) contains the Omega Closure gates that seal the topological rigidity."
         },
         {
           "type": "note",
-          "content": "<h4>Vault I: The Ancestral Vault (C01-C14)</h4><p>Validates the 26D bulk and SO(24) roots. Ensures the 288 ancestral generators are properly configured.</p><h4>Vault II: The Torsion Vault (C15-C28)</h4><p>Validates the 24 torsion pins and the 4-pattern distribution. Ensures the 12+12 shadow torsion is balanced.</p><h4>Vault III: The Residue Vault (C29-C42)</h4><p>Validates the 125 particles and the Omega End. Includes the 7 new structural certificates that complete the 42-count.</p>",
+          "content": "<h4>Vault I: The Ancestral Vault (C01-C14)</h4><p>Validates the 26D bulk and SO(24) roots. Ensures the 288 ancestral generators are properly configured.</p><h4>Vault II: The Torsion Vault (C15-C28)</h4><p>Validates the 24 torsion pins and the 4-pattern distribution. Ensures the 12+12 shadow torsion is balanced.</p><h4>Vault III: The Residue Vault (C29-C42)</h4><p>Validates the 125 particles and the Omega End. Includes the 7 new structural certificates that complete the base 42.</p>",
           "label": "three-vaults",
           "equationNumber": "three-vaults"
         },
@@ -11701,7 +11708,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The following certificates have been updated to reflect the 288/24/4 architecture:"
+          "content": "The following gates have been updated to reflect the 288/24/4 architecture with 72-gate validation:"
         },
         {
           "type": "note",
@@ -11716,7 +11723,7 @@
         },
         {
           "type": "paragraph",
-          "content": "The following new certificates are required to fully 'Sterilize' the model:"
+          "content": "The following new gates (G56-G72) complete the Omega Closure and fully 'Sterilize' the model:"
         },
         {
           "type": "note",
@@ -11746,7 +11753,7 @@
         },
         {
           "type": "paragraph",
-          "content": "In a sterile system, certificates that checked if values were 'tuned correctly' are obsolete. The following certificates have been moved to DEPRECATED:"
+          "content": "In a sterile system, gates that checked if values were 'tuned correctly' are obsolete. The following legacy certificates have been deprecated and replaced by the 72-gate architecture:"
         },
         {
           "type": "note",
@@ -11807,7 +11814,7 @@
         },
         {
           "type": "paragraph",
-          "content": "By reaching 42 certificates, we have created a <strong>Hermetically Sealed Model</strong>. There is 1 certificate for every 3 residues (125/3 ≈ 42). This density of validation ensures that any attempt to 'tune' or 'fudge' a single particle mass will trigger a cascade of failures across the entire stack."
+          "content": "By reaching 45 gates, we have created a <strong>Topologically Rigid Model</strong>. The density of validation (45 gates / 125 residues ≈ 0.36) ensures that any modification to a single constant would propagate through the constraint network and violate the Unitary Sum Rule (288 = 125 + 163)."
         }
       ],
       "formulaRefs": [
