@@ -34,13 +34,17 @@ from typing import Dict, Any, Optional
 
 def lock_geometric_context():
     """
-    v17.2: Strict Context Locking for cross-platform hash consistency.
+    v17.2-Absolute: Strict Context Locking for cross-platform hash consistency.
 
     Ensures the Sovereign Hash is identical across all hardware architectures
     by enforcing consistent rounding mode and precision limits.
+
+    v17.2 Change: Increased from 28 to 64 to ensure the 24-place tail is pure.
+    If precision is 28 and we quantize to 24, the 28th digit was already
+    rounded by Python's default, "poisoning" the 24th digit.
     """
     ctx = getcontext()
-    ctx.prec = 28
+    ctx.prec = 64  # v17.2-Absolute: Increased from 28 to 64 for clean 24-place tails
     ctx.rounding = ROUND_HALF_EVEN
     # Don't trap on these - we handle precision carefully
     ctx.traps[Overflow] = True
