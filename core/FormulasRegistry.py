@@ -230,6 +230,26 @@ class FormulasRegistry:
     # absolute geometric sovereignty. No hardcoded 163, 144, or 576.
 
     @property
+    def heptagon_scale(self) -> int:
+        """
+        v17.2: The Seven Pillars symmetry multiplier.
+
+        Represents the 7-fold symmetry of the G2 holonomy group.
+        Used in O'Dowd Bulk derivation: (7 * B3) - 5 = 163.
+        """
+        return 7
+
+    @property
+    def pentagonal_offset(self) -> int:
+        """
+        v17.2: The Pentagonal Asymmetry residue.
+
+        Represents the 5-fold asymmetry (visible sector parity).
+        Used in O'Dowd Bulk derivation: (7 * B3) - 5 = 163.
+        """
+        return 5
+
+    @property
     def manifold_area_bulk(self) -> int:
         """
         Total manifold area: B3^2 = 24^2 = 576
@@ -261,7 +281,7 @@ class FormulasRegistry:
 
         This MUST equal odowd_bulk_pressure (163) for sterility.
         """
-        return (7 * self._b3) - 5  # 163
+        return (self.heptagon_scale * self._b3) - self.pentagonal_offset  # 163
 
     def verify_bulk_pressure_derivation(self) -> bool:
         """
