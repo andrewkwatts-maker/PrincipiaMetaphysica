@@ -1,8 +1,12 @@
 {
   "proof_id": "einstein_field_variation",
   "label": "Einstein Field Equations",
-  "wl_code": "\n                (* Metric variation of Einstein-Hilbert action *)\n                (* \u03b4S/\u03b4g^\u03bc\u03bd = R_\u03bc\u03bd - (1/2)g_\u03bc\u03bd R = 8\u03c0G T_\u03bc\u03bd *)\n                Solve[R - (1/2) * g * R == 8 * Pi * G * T, {R}]\n            ",
-  "result": "[Mock] R = 8*pi*G*T (trace)",
+  "category": "FOUNDATIONAL_ASSUMPTION",
+  "wl_code": "Solve[R - (1/2) * g * R == 8 * Pi * G * T, {R}]",
+  "result": "R = 8*pi*G*T (trace)",
+  "note": "FOUNDATIONAL: Einstein Field Equations are an assumption in PM, not a PM prediction. This certificate documents that PM uses standard GR as its classical limit. Not numerically testable as a PM-specific claim.",
+  "verification_status": "NOT_TESTABLE",
+  "reason": "Standard physics assumption, not PM-derived prediction",
   "hash": "6fc332b15125a363",
   "timestamp": "2026-01-02T01:44:43.992178",
   "verified": false

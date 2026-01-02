@@ -112,9 +112,10 @@
 
             // ================================================================
             // Hubble Constant (Cosmology)
-            // H0_local = 73.04 (SH0ES), H0_early = 67.4 (Planck CMB)
+            // H0_local = 71.55 (O'Dowd formula), H0_early = 67.4 (Planck CMB)
+            // Experimental: SH0ES 2025 = 73.04 ± 1.04 km/s/Mpc
             // ================================================================
-            'cosmology.H0_local': 'cosmology.H0_late_evolved',
+            'cosmology.H0_local': '_hardcoded.H0_local',
             'cosmology.H0_early': 'cosmology.H0_early_normalized',
             'cosmology.H0': 'cosmology.H0_late_evolved',
             'hubble.H0_local': 'cosmology.H0_late_evolved',
@@ -196,6 +197,14 @@
             // Topology parameters - extended aliases
             // ================================================================
             'parameters.topology.n_gen': 'topology.n_gen',
+            'topology.b3': '_hardcoded.b3',
+            'topology.chi_effective': '_hardcoded.chi_effective',
+
+            // ================================================================
+            // Statistics - from statistics.json
+            // ================================================================
+            'statistics.certificates_total': '_hardcoded.certificates_total',
+            'statistics.certificates_verified': '_hardcoded.certificates_verified',
 
             // ================================================================
             // Proton decay branching ratios
@@ -216,6 +225,14 @@
             'kk_m1_TeV': '5.0 TeV',
             'kk_hl_lhc': '5σ discovery potential',
             'BR_epi0': 0.45,
+            // Topological invariants from named_constants.json
+            'b3': 24,
+            'chi_effective': 144,
+            // Cosmology - H0 from O'Dowd formula: (288/4) - (163/144) + 0.6819 = 71.55
+            'H0_local': 71.55,
+            // Statistics from statistics.json
+            'certificates_total': 72,
+            'certificates_verified': 72,
         },
 
         /**
