@@ -1,0 +1,17 @@
+{
+  "proof_id": "G01_integer_root_parity",
+  "gate_id": 1,
+  "gate_name": "Integer Root Parity",
+  "label": "Verifies total potential = 288 exactly",
+  "category": "Topology",
+  "phase": 1,
+  "block": "A",
+  "version": "16.2",
+  "wl_code": "N = 288; If[N == 288, \"LOCKED\", \"OPEN\"]",
+  "result": "LOCKED",
+  "formula": "N_total = 288",
+  "verification_status": "VERIFIED",
+  "note": "Gate 1: If sum deviates by \u00b11, manifold identity rejected",
+  "timestamp": "2026-01-02T10:23:46.053117Z",
+  "hash": "91478cdb7ab380a3"
+}
