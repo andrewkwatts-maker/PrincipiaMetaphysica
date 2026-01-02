@@ -565,7 +565,16 @@
       "Bash(git -C \"h:\\\\Github\\\\PrincipiaMetaphysica\" commit -m \"$\\(cat <<''EOF''\nv16.2 Migration Infrastructure: Single Source of Truth Framework\n\nAdd infrastructure for migrating hardcoded JS values to simulation-generated outputs.\n\nNEW SCRIPTS:\n- scripts/audit_hardcoded_values.py: Audits JS files for hardcoded values\n  - Extracts 365 numeric values from 7 JS files\n  - Compares against theory_output.json\n  - Reports 240 matched, 125 unmatched \\(66% match rate\\)\n  - Categorizes by namespace \\(topology, cosmology, neutrino, etc.\\)\n\n- scripts/generate_js_constants.py: Generates JS update recommendations\n  - Maps 39 JS paths to theory_output paths\n  - Shows exact values that should be updated\n  - Supports --updates, --diff, --write modes\n\nGEOMETRIC ANCHORS EXTENSIONS:\n- Added Hodge numbers: h11=4, h21=0, h31=68\n  - Formula: chi_eff = 2\\(h11 - h21 + h31\\) = 144\n- Now computes 100 parameters from b3=24 topological invariant\n- All values derive from single source of truth\n\nVALIDATION STATUS:\n- 25/25 parameters PASS \\(all < 1σ\\)\n- Reduced χ² = 0.17 \\(excellent fit\\)\n- Status: PUBLICATION_READY\n\nThis is Phase 1 of the Single Source of Truth migration:\n  GeometricAnchors → PMRegistry → theory_output.json → Frontend\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git -C \"h:\\\\Github\\\\PrincipiaMetaphysica\" log --oneline --all -20)",
       "Bash(git -C \"h:\\\\Github\\\\PrincipiaMetaphysica\" log --oneline -30)",
-      "Bash(git rev-parse:*)"
+      "Bash(git rev-parse:*)",
+      "Bash(for f in Pages/*.html)",
+      "Bash(do grep -q \"injectHeader\\\\|pm-header\" \"$f\")",
+      "Bash(python scripts/zenodo_pack_v16.py:*)",
+      "Bash(dir /s /b:*)",
+      "Bash(pip install:*)",
+      "Bash(chcp 6500)",
+      "Bash(python scripts/generate_72gates_json.py:*)",
+      "Bash(python scripts/validate_all.py:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd 72-gate Wolfram Alpha validation \\(76/76 pass\\)\n\n- Add validate_all.py: Wolfram API validation for 76 formulas\n- Add generate_72gates_json.py: Generate GATES_72_v16_2.json\n- Fix G46 Lambda Stability query \\(N[Log10[...]] returns numeric\\)\n- Add wolfram_results.json with 76/76 validated formulas\n- Update formulas.html grid to 1400px width \\(matches main content\\)\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")"
     ],
     "deny": [],
     "ask": []

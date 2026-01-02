@@ -1,0 +1,9 @@
+{
+  "proof_id": "mass_ratio_geometric",
+  "label": "Mass Ratio from G2",
+  "wl_code": "\n                With[{b3 = 24, kg = 12.3183, ckaf = 27.2},\n                     (ckaf^2 * (kg / Pi)) / (1.2801 * (1 + 0.5772/24))]\n            ",
+  "result": "[Mock] 1836.15...",
+  "hash": "e5142e98f3b5566a",
+  "timestamp": "2026-01-02T01:44:43.995016",
+  "verified": false
+}

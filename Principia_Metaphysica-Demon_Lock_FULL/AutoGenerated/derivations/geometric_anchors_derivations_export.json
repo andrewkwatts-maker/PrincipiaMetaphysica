@@ -1,0 +1,506 @@
+{
+  "b3": {
+    "parameter_id": "b3",
+    "symbol": "b₃",
+    "name": "Third Betti Number",
+    "category": "TOPOLOGICAL_INVARIANT",
+    "final_value": 24.0,
+    "exact_form": "24",
+    "wolfram_query": "b3 = 24",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "TCS G₂ manifold construction from Joyce classification",
+        "formula": "TCS #187 → b₃",
+        "simplification": "b₃ = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Topological invariant from 3-cycle homology",
+        "formula": "H₃(M, ℤ) = ℤ^{b₃}",
+        "simplification": "dim(H₃) = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 3,
+        "description": "Verified via Poincaré duality in 7D",
+        "formula": "b₃(M⁷) = b₄(M⁷)",
+        "simplification": "b₃ = b₄ = 24",
+        "numerical_value": "24"
+      }
+    ],
+    "physical_meaning": "Third Betti number of TCS G₂ manifold - counts independent 3-cycles",
+    "topology_connection": "Fundamental topological invariant from Joyce construction TCS #187",
+    "hash_certificate": "97b49245ad927ceb"
+  },
+  "chi_eff": {
+    "parameter_id": "chi_eff",
+    "symbol": "χ_eff",
+    "name": "Effective Euler Characteristic",
+    "category": "GEOMETRIC",
+    "final_value": 144.0,
+    "exact_form": "6 * 24",
+    "wolfram_query": "6 * 24",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Start with b₃ from TCS construction",
+        "formula": "b₃ = 24",
+        "simplification": "b₃ = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Apply χ_eff formula from G₂ topology",
+        "formula": "χ_eff = 6 × b₃",
+        "simplification": "χ_eff = 6 × 24",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Compute final value",
+        "formula": "χ_eff = 144",
+        "simplification": "144",
+        "numerical_value": "144"
+      }
+    ],
+    "physical_meaning": "Effective Euler characteristic from TCS G₂ compactification",
+    "topology_connection": "Linear scaling from b₃ via G₂ holonomy constraint",
+    "hash_certificate": "4b99ab2ae4ad1531"
+  },
+  "n_generations": {
+    "parameter_id": "n_generations",
+    "symbol": "N_gen",
+    "name": "Fermion Generations",
+    "category": "GEOMETRIC",
+    "final_value": 3.0,
+    "exact_form": "24 / 8",
+    "wolfram_query": "24 / 8",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Start with b₃ from TCS construction",
+        "formula": "b₃ = 24",
+        "simplification": "b₃ = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Apply index theorem for chiral fermions on G₂",
+        "formula": "N_gen = b₃ / 8",
+        "simplification": "N_gen = 24 / 8",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Compute fermion families",
+        "formula": "N_gen = 3",
+        "simplification": "3",
+        "numerical_value": "3"
+      }
+    ],
+    "physical_meaning": "Number of fermion families from chiral index theorem",
+    "topology_connection": "Division by 8 from spinor representation dimension on G₂",
+    "hash_certificate": "e1cabbd42b8114e4"
+  },
+  "k_gimel": {
+    "parameter_id": "k_gimel",
+    "symbol": "k_ג",
+    "name": "Warp Factor Gimel",
+    "category": "GEOMETRIC",
+    "final_value": 12.31830988618379,
+    "exact_form": "24/2 + 1/Pi",
+    "wolfram_query": "N[24/2 + 1/Pi, 10]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Start with b₃ topological invariant",
+        "formula": "b₃ = 24",
+        "simplification": "b₃ = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Geometric warping from compactification radius",
+        "formula": "k_geom = b₃ / 2",
+        "simplification": "k_geom = 24 / 2 = 12",
+        "numerical_value": "12"
+      },
+      {
+        "step_number": 3,
+        "description": "Transcendental correction from AdS₄ curvature",
+        "formula": "k_trans = 1 / π",
+        "simplification": "k_trans ≈ 0.31831",
+        "numerical_value": "0.31831"
+      },
+      {
+        "step_number": 4,
+        "description": "Combine geometric and transcendental parts",
+        "formula": "k_gimel = b₃/2 + 1/π",
+        "simplification": "k_gimel = 12 + 1/π",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 5,
+        "description": "Evaluate numerically",
+        "formula": "k_gimel ≈ 12.31831",
+        "simplification": "12.31831",
+        "numerical_value": "12.31831"
+      }
+    ],
+    "physical_meaning": "Warping factor from 7D → 4D compactification with AdS₄ curvature",
+    "topology_connection": "Geometric part (12) from b₃/2, transcendental part from π curvature",
+    "hash_certificate": "0bfd3121aa760ced"
+  },
+  "c_kaf": {
+    "parameter_id": "c_kaf",
+    "symbol": "C_כ",
+    "name": "Flux Constraint Kaf",
+    "category": "GEOMETRIC",
+    "final_value": 27.2,
+    "exact_form": "24 * (24 - 7) / (24 - 9)",
+    "wolfram_query": "Simplify[24 * (24 - 7) / (24 - 9)]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Start with b₃ from G₂ manifold",
+        "formula": "b₃ = 24",
+        "simplification": "b₃ = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Apply flux quantization from G₂ intersection matrix",
+        "formula": "C_kaf = b₃(b₃ - 7)/(b₃ - 9)",
+        "simplification": "C_kaf = 24(24 - 7)/(24 - 9)",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Simplify numerator",
+        "formula": "C_kaf = 24 × 17 / 15",
+        "simplification": "C_kaf = 408 / 15",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 4,
+        "description": "Reduce to exact rational form",
+        "formula": "C_kaf = 136/5",
+        "simplification": "136/5",
+        "numerical_value": "27.2"
+      }
+    ],
+    "physical_meaning": "Flux quantization constraint from G₂ intersection form",
+    "topology_connection": "Rational function of b₃ from cohomology intersection pairing",
+    "hash_certificate": "9648fdecf17bf057"
+  },
+  "f_heh": {
+    "parameter_id": "f_heh",
+    "symbol": "f_ה",
+    "name": "Moduli Partition Heh",
+    "category": "GEOMETRIC",
+    "final_value": 4.5,
+    "exact_form": "9 / 2",
+    "wolfram_query": "9 / 2",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Start with 9D maximal symmetry dimension",
+        "formula": "D_max = 9",
+        "simplification": "D_max = 9",
+        "numerical_value": "9"
+      },
+      {
+        "step_number": 2,
+        "description": "Project to 4D with shadow component preserved",
+        "formula": "f_heh = 9 / 2",
+        "simplification": "f_heh = 4.5",
+        "numerical_value": "4.5"
+      },
+      {
+        "step_number": 3,
+        "description": "Exact rational form",
+        "formula": "f_heh = 9/2",
+        "simplification": "9/2",
+        "numerical_value": "4.5"
+      }
+    ],
+    "physical_meaning": "Moduli space partition for 9D → 4D projection with shadow sector",
+    "topology_connection": "Independent of b₃; derived from ambient 9D → 4D compression",
+    "hash_certificate": "174bb307ee2f46e4"
+  },
+  "s_mem": {
+    "parameter_id": "s_mem",
+    "symbol": "S_מ",
+    "name": "Instanton Action Mem",
+    "category": "GEOMETRIC",
+    "final_value": 39.99975,
+    "exact_form": "45.714 * (7/8)",
+    "wolfram_query": "N[45.714 * (7/8), 6]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Planck-scale instanton baseline from G₂ topology",
+        "formula": "S_base = 45.714",
+        "simplification": "S_base ≈ 45.714",
+        "numerical_value": "45.714"
+      },
+      {
+        "step_number": 2,
+        "description": "Apply torsion-spinor fraction (7 of 8 components preserved)",
+        "formula": "S_mem = S_base × (7/8)",
+        "simplification": "S_mem = 45.714 × 0.875",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate instanton action",
+        "formula": "S_mem ≈ 40.0",
+        "simplification": "40.0",
+        "numerical_value": "40.0"
+      }
+    ],
+    "physical_meaning": "Instanton action scaled by torsion-free spinor fraction",
+    "topology_connection": "Base action from G₂ topology; 7/8 factor from preserved spinor components",
+    "hash_certificate": "bdb146b1e5c434cc"
+  },
+  "delta_lamed": {
+    "parameter_id": "delta_lamed",
+    "symbol": "δ_ל",
+    "name": "Threshold Correction Lamed",
+    "category": "GEOMETRIC",
+    "final_value": 9.591644905060644,
+    "exact_form": "Log[24/2 + 1/Pi] / (2*Pi/24)",
+    "wolfram_query": "N[Log[24/2 + 1/Pi] / (2*Pi/24), 6]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Use previously derived warp factor",
+        "formula": "k_gimel = 24/2 + 1/π",
+        "simplification": "k_gimel ≈ 12.31831",
+        "numerical_value": "12.31831"
+      },
+      {
+        "step_number": 2,
+        "description": "Logarithmic loop correction numerator",
+        "formula": "ln(k_gimel)",
+        "simplification": "ln(12.31831) ≈ 2.5108",
+        "numerical_value": "2.5108"
+      },
+      {
+        "step_number": 3,
+        "description": "Topological denominator from b₃",
+        "formula": "2π/b₃",
+        "simplification": "2π/24 ≈ 0.2618",
+        "numerical_value": "0.2618"
+      },
+      {
+        "step_number": 4,
+        "description": "Combine for threshold correction",
+        "formula": "δ_lamed = ln(k_gimel) / (2π/b₃)",
+        "simplification": "δ_lamed ≈ 2.5108 / 0.2618",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 5,
+        "description": "Final numerical value",
+        "formula": "δ_lamed ≈ 9.589",
+        "simplification": "9.589",
+        "numerical_value": "9.589"
+      }
+    ],
+    "physical_meaning": "Logarithmic loop threshold correction from RG running",
+    "topology_connection": "Combines k_gimel (warping) with b₃ (topology) for loop effects",
+    "hash_certificate": "07a2ee2eb985a8da"
+  },
+  "alpha_gut_inv": {
+    "parameter_id": "alpha_gut_inv",
+    "symbol": "α_GUT⁻¹",
+    "name": "GUT Coupling Inverse",
+    "category": "GEOMETRIC",
+    "final_value": 24.108333333333334,
+    "exact_form": "24 + 1/10 + 1/(5*24)",
+    "wolfram_query": "N[24 + 1/10 + 1/(5*24), 10]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Base GUT coupling from b₃",
+        "formula": "α_GUT⁻¹_base = b₃",
+        "simplification": "α_GUT⁻¹_base = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Add electroweak correction 1/10",
+        "formula": "α_GUT⁻¹ = b₃ + 1/10",
+        "simplification": "α_GUT⁻¹ = 24 + 0.1",
+        "numerical_value": "24.1"
+      },
+      {
+        "step_number": 3,
+        "description": "Add topological threshold correction 1/(5b₃)",
+        "formula": "α_GUT⁻¹ = b₃ + 1/10 + 1/(5×24)",
+        "simplification": "α_GUT⁻¹ = 24.1 + 1/120",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 4,
+        "description": "Evaluate threshold term",
+        "formula": "1/(5×24) = 1/120",
+        "simplification": "1/120 ≈ 0.00833",
+        "numerical_value": "0.00833"
+      },
+      {
+        "step_number": 5,
+        "description": "Final GUT coupling inverse",
+        "formula": "α_GUT⁻¹ ≈ 24.10833",
+        "simplification": "24.10833",
+        "numerical_value": "24.10833"
+      }
+    ],
+    "physical_meaning": "Inverse GUT coupling at unification scale from topology",
+    "topology_connection": "Base value from b₃, corrections from EW and topological thresholds",
+    "hash_certificate": "883d8b39fbddc102"
+  },
+  "alpha_gut": {
+    "parameter_id": "alpha_gut",
+    "symbol": "α_GUT",
+    "name": "GUT Coupling",
+    "category": "DERIVED",
+    "final_value": 0.0414794331144141,
+    "exact_form": "1 / (24 + 1/10 + 1/(5*24))",
+    "wolfram_query": "N[1 / (24 + 1/10 + 1/(5*24)), 10]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Use previously derived inverse coupling",
+        "formula": "α_GUT⁻¹ = 24 + 1/10 + 1/(5×24)",
+        "simplification": "α_GUT⁻¹ ≈ 24.10833",
+        "numerical_value": "24.10833"
+      },
+      {
+        "step_number": 2,
+        "description": "Invert to get GUT coupling",
+        "formula": "α_GUT = 1 / α_GUT⁻¹",
+        "simplification": "α_GUT = 1 / 24.10833",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate GUT coupling",
+        "formula": "α_GUT ≈ 0.041479",
+        "simplification": "0.041479",
+        "numerical_value": "0.041479"
+      }
+    ],
+    "physical_meaning": "Grand Unified Theory coupling constant at M_GUT",
+    "topology_connection": "Derived from inverse coupling anchored to b₃",
+    "hash_certificate": "88e41cc70f07ddec"
+  },
+  "k_matching": {
+    "parameter_id": "k_matching",
+    "symbol": "K_match",
+    "name": "TCS Matching Number",
+    "category": "GEOMETRIC",
+    "final_value": 4.0,
+    "exact_form": "24 / 6",
+    "wolfram_query": "24 / 6",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Start with b₃ topological invariant",
+        "formula": "b₃ = 24",
+        "simplification": "b₃ = 24",
+        "numerical_value": "24"
+      },
+      {
+        "step_number": 2,
+        "description": "Apply TCS matching constraint",
+        "formula": "K_matching = b₃ / 6",
+        "simplification": "K_matching = 24 / 6",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate matching number",
+        "formula": "K_matching = 4",
+        "simplification": "4",
+        "numerical_value": "4"
+      }
+    ],
+    "physical_meaning": "TCS construction matching parameter for twisted connected sum",
+    "topology_connection": "Division by 6 from χ_eff/b₃ ratio in TCS gluing",
+    "hash_certificate": "3889d9ea41972ed8"
+  },
+  "pneuma_amplitude": {
+    "parameter_id": "pneuma_amplitude",
+    "symbol": "A_Π",
+    "name": "Pneuma EDE Amplitude",
+    "category": "COSMOLOGICAL",
+    "final_value": 0.061591549430918956,
+    "exact_form": "(24/2 + 1/Pi) / 200",
+    "wolfram_query": "N[(24/2 + 1/Pi) / 200, 6]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Use warp factor from geometric anchor",
+        "formula": "k_gimel = 24/2 + 1/π",
+        "simplification": "k_gimel ≈ 12.31831",
+        "numerical_value": "12.31831"
+      },
+      {
+        "step_number": 2,
+        "description": "Scale to EDE amplitude normalization",
+        "formula": "A_pneuma = k_gimel / 200",
+        "simplification": "A_pneuma = 12.31831 / 200",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate EDE amplitude",
+        "formula": "A_pneuma ≈ 0.06159",
+        "simplification": "0.06159",
+        "numerical_value": "0.06159"
+      }
+    ],
+    "physical_meaning": "Early Dark Energy amplitude for Hubble tension resolution",
+    "topology_connection": "Scaled from k_gimel warping factor via cosmological normalization",
+    "hash_certificate": "5c4cccb6df7eb129"
+  },
+  "pneuma_width": {
+    "parameter_id": "pneuma_width",
+    "symbol": "W_Π",
+    "name": "Pneuma EDE Width",
+    "category": "COSMOLOGICAL",
+    "final_value": 54.4,
+    "exact_form": "2 * (24 * (24 - 7) / (24 - 9))",
+    "wolfram_query": "N[2 * (24 * (24 - 7) / (24 - 9)), 6]",
+    "derivation_steps": [
+      {
+        "step_number": 1,
+        "description": "Use flux constraint from geometric anchor",
+        "formula": "C_kaf = 24(24-7)/(24-9)",
+        "simplification": "C_kaf = 136/5 = 27.2",
+        "numerical_value": "27.2"
+      },
+      {
+        "step_number": 2,
+        "description": "Double for EDE width parameter",
+        "formula": "W_pneuma = 2 × C_kaf",
+        "simplification": "W_pneuma = 2 × 27.2",
+        "numerical_value": ""
+      },
+      {
+        "step_number": 3,
+        "description": "Evaluate EDE width",
+        "formula": "W_pneuma = 54.4",
+        "simplification": "54.4",
+        "numerical_value": "54.4"
+      }
+    ],
+    "physical_meaning": "Early Dark Energy transition width for Hubble tension resolution",
+    "topology_connection": "Scaled from C_kaf flux constraint via factor of 2",
+    "hash_certificate": "673c5eda94290b88"
+  }
+}

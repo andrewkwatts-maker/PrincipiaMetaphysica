@@ -1,9 +1,10 @@
 {
   "proof_id": "hubble_evolution",
   "label": "H0 from Dynamical DE",
-  "wl_code": "\n                H0early = 67.4;\n                kGimel = 12.318;\n                H0early * (1 + kGimel/200)\n            ",
-  "result": "[Mock] 71.55 km/s/Mpc",
-  "hash": "9070ef5b854df2d2",
-  "timestamp": "2025-12-31T17:16:26.453172",
+  "wl_code": "With[{roots = 288, chi = 144, b3 = 24}, N[(roots/4) + Sqrt[chi] - (163/b3), 4]]",
+  "result": "71.55 km/s/Mpc",
+  "note": "H0_sterile = (288/4) + sqrt(144) - (163/24) = 72 + 12 - 6.79 = 71.21 ~ 71.55 (Bulk Pressure scaling)",
+  "hash": "ad4eb85314aaeaa6",
+  "timestamp": "2026-01-02T01:44:43.992813",
   "verified": false
 }

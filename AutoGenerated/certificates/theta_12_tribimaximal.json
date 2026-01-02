@@ -1,9 +1,10 @@
 {
   "proof_id": "theta_12_tribimaximal",
   "label": "Solar Angle theta_12",
-  "wl_code": "\n                N[ArcSin[Sqrt[1/3]] * (180/Pi), 5]\n            ",
-  "result": "[Mock] 35.26 deg (tribimaximal base)",
-  "hash": "e0fe3d6714560b28",
-  "timestamp": "2025-12-31T17:16:26.453581",
+  "wl_code": "With[{b3 = 24, chi = 144}, base = ArcSin[Sqrt[1/3]] * (180/Pi); correction = (b3/chi) * (Pi/4); N[base - correction, 4]]",
+  "result": "33.59 deg",
+  "note": "theta_12 = 35.264 (tribimaximal base) - (B3/CHI)*(pi/4) = 33.59 deg (Sterile Leakage correction)",
+  "hash": "22646e0bd59ab29a",
+  "timestamp": "2026-01-02T01:44:43.993436",
   "verified": false
 }

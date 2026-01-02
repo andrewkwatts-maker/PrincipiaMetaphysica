@@ -1,9 +1,10 @@
 {
   "proof_id": "w_cpl_parameterization",
   "label": "CPL w(z) at z=0.45",
-  "wl_code": "\n                w0 = -0.85;\n                wa = -0.24;\n                z = 0.45;\n                w0 + wa * (z / (1 + z))\n            ",
-  "result": "[Mock] -0.925 (phantom phase)",
-  "hash": "1337944d02f00498",
-  "timestamp": "2025-12-31T17:16:26.452745",
+  "wl_code": "With[{b3 = 24, z = 0.45}, w0 = -1 + 1/b3; wa = 0.0; N[w0 + wa * (z/(1+z)), 6]]",
+  "result": "-0.958333",
+  "note": "v16.2 STERILE: w0 = -23/24 = -0.9583, wa = 0 (static). w(z=0.45) = w0 = -0.9583 (no evolution)",
+  "hash": "58f45e80b54c1643",
+  "timestamp": "2026-01-02T01:44:43.992502",
   "verified": false
 }
