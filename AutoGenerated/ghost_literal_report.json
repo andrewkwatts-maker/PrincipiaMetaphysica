@@ -1,0 +1,2607 @@
+{
+  "timestamp": "2026-01-03T03:44:23.020127Z",
+  "total_files": 115,
+  "total_ghosts": 295,
+  "targets": [
+    0.6819,
+    0.9583,
+    71.549,
+    71.55,
+    144,
+    163,
+    288,
+    576
+  ],
+  "findings": {
+    "config.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 2187,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 2604,
+        "column": 24,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 3849,
+        "column": 15,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 3902,
+        "column": 20,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 3911,
+        "column": 19,
+        "value": 0.6889,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 4071,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 4165,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 4314,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 4395,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 5010,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 5090,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 5926,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 6003,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 6422,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\config.py",
+        "line": 7523,
+        "column": 27,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "run_all_simulations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\run_all_simulations.py",
+        "line": 489,
+        "column": 25,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\run_all_simulations.py",
+        "line": 540,
+        "column": 63,
+        "value": 0.9583,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\run_all_simulations.py",
+        "line": 863,
+        "column": 60,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "scripts\\audit_pm_values_in_paper.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\audit_pm_values_in_paper.py",
+        "line": 26,
+        "column": 29,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\audit_pm_values_in_paper.py",
+        "line": 50,
+        "column": 25,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "scripts\\generate_72gates_json.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\generate_72gates_json.py",
+        "line": 278,
+        "column": 63,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "scripts\\validate_all.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\validate_all.py",
+        "line": 29,
+        "column": 119,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\validate_all.py",
+        "line": 31,
+        "column": 125,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\validate_all.py",
+        "line": 82,
+        "column": 123,
+        "value": 0.9583333,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\validate_all.py",
+        "line": 115,
+        "column": 129,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "scripts\\validate_wolfram_http.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\validate_wolfram_http.py",
+        "line": 44,
+        "column": 20,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\validate_wolfram_http.py",
+        "line": 58,
+        "column": 21,
+        "value": 0.9583,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "scripts\\ad-hoc\\generate_bubble_parameter_space.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\generate_bubble_parameter_space.py",
+        "line": 90,
+        "column": 52,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\generate_bubble_parameter_space.py",
+        "line": 118,
+        "column": 61,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "scripts\\ad-hoc\\generate_mpl_consistency.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\generate_mpl_consistency.py",
+        "line": 99,
+        "column": 53,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\generate_mpl_consistency.py",
+        "line": 127,
+        "column": 61,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "scripts\\ad-hoc\\migrate_geometry_foundations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\migrate_geometry_foundations.py",
+        "line": 118,
+        "column": 29,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\migrate_geometry_foundations.py",
+        "line": 127,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\migrate_geometry_foundations.py",
+        "line": 210,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\scripts\\ad-hoc\\migrate_geometry_foundations.py",
+        "line": 228,
+        "column": 25,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\dm_direct_detection_limits.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\dm_direct_detection_limits.py",
+        "line": 246,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\g2_dynamical_flow_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\g2_dynamical_flow_v16_2.py",
+        "line": 36,
+        "column": 17,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\generate_master_audit_log.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_master_audit_log.py",
+        "line": 96,
+        "column": 18,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_master_audit_log.py",
+        "line": 97,
+        "column": 22,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_master_audit_log.py",
+        "line": 99,
+        "column": 25,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_master_audit_log.py",
+        "line": 102,
+        "column": 16,
+        "value": 0.6819,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_master_audit_log.py",
+        "line": 105,
+        "column": 30,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\generate_pm_plots_v16_1.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_pm_plots_v16_1.py",
+        "line": 40,
+        "column": 71,
+        "value": 0.9583,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\generate_pm_plots_v16_1.py",
+        "line": 366,
+        "column": 20,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\geometric_anchors_v16_1.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\geometric_anchors_v16_1.py",
+        "line": 679,
+        "column": 16,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\geometric_anchors_v16_1.py",
+        "line": 694,
+        "column": 15,
+        "value": 0.6889,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\global_validator.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\global_validator.py",
+        "line": 166,
+        "column": 31,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\kahler_metric_geometry.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\kahler_metric_geometry.py",
+        "line": 229,
+        "column": 52,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\kahler_metric_geometry.py",
+        "line": 324,
+        "column": 43,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\neutrino_seesaw_solver.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\neutrino_seesaw_solver.py",
+        "line": 136,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\neutrino_seesaw_solver.py",
+        "line": 172,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\pm_config_v16_1.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\pm_config_v16_1.py",
+        "line": 94,
+        "column": 22,
+        "value": 0.689,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\pm_config_v16_1.py",
+        "line": 97,
+        "column": 24,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\quantum_decoherence_solver.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\quantum_decoherence_solver.py",
+        "line": 145,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\wolfram_cloud_audit.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\wolfram_cloud_audit.py",
+        "line": 600,
+        "column": 33,
+        "value": 576,
+        "target": 576,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\wolfram_validator_v16.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\wolfram_validator_v16.py",
+        "line": 323,
+        "column": 21,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\base\\dynamic_metadata.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\dynamic_metadata.py",
+        "line": 49,
+        "column": 9,
+        "value": 0.9583333333333333,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\dynamic_metadata.py",
+        "line": 50,
+        "column": 9,
+        "value": 0.9583333333333334,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\dynamic_metadata.py",
+        "line": 126,
+        "column": 25,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\base\\established.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\established.py",
+        "line": 449,
+        "column": 18,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\established.py",
+        "line": 456,
+        "column": 22,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\base\\precision.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\precision.py",
+        "line": 117,
+        "column": 15,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\Constants\\ad-hoc\\add_missing_params.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\Constants\\ad-hoc\\add_missing_params.py",
+        "line": 249,
+        "column": 20,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\Constants\\ad-hoc\\add_missing_params.py",
+        "line": 250,
+        "column": 24,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\cosmology\\ricci_flow_integrator_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\cosmology\\ricci_flow_integrator_v16_2.py",
+        "line": 86,
+        "column": 11,
+        "value": 0.689,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\derivations\\cosmology_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\cosmology_derivations.py",
+        "line": 76,
+        "column": 24,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\derivations\\dark_matter_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\dark_matter_derivations.py",
+        "line": 70,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\dark_matter_derivations.py",
+        "line": 571,
+        "column": 39,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\dimensional_reduction_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\dimensional_reduction_derivations.py",
+        "line": 271,
+        "column": 104,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\g2_geometry_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\g2_geometry_derivations.py",
+        "line": 85,
+        "column": 19,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\g2_geometry_derivations.py",
+        "line": 398,
+        "column": 27,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\g2_geometry_derivations.py",
+        "line": 447,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\g2_geometry_derivations.py",
+        "line": 572,
+        "column": 23,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\g2_geometry_derivations.py",
+        "line": 627,
+        "column": 35,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\gauge_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\gauge_derivations.py",
+        "line": 88,
+        "column": 21,
+        "value": 144.0,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\geometric_anchors_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\geometric_anchors_derivations.py",
+        "line": 180,
+        "column": 24,
+        "value": 144.0,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\higgs_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\higgs_derivations.py",
+        "line": 94,
+        "column": 18,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\master_action_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\master_action_derivations.py",
+        "line": 791,
+        "column": 31,
+        "value": 0.6847,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\derivations\\neutrino_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\neutrino_derivations.py",
+        "line": 62,
+        "column": 19,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\quantum_bio_derivations.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\quantum_bio_derivations.py",
+        "line": 76,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\validate_dark_matter.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\validate_dark_matter.py",
+        "line": 45,
+        "column": 39,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\derivations\\validate_geometric_anchors.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\validate_geometric_anchors.py",
+        "line": 64,
+        "column": 20,
+        "value": 144.0,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\validate_geometric_anchors.py",
+        "line": 221,
+        "column": 24,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\derivations\\validate_geometric_anchors.py",
+        "line": 226,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_a_spectral_registry_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_a_spectral_registry_v16_2.py",
+        "line": 102,
+        "column": 55,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_b_sum_rule_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_b_sum_rule_v16_2.py",
+        "line": 95,
+        "column": 55,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_d_tables_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_d_tables_v16_0.py",
+        "line": 193,
+        "column": 74,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_d_weyl_anomaly_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_d_weyl_anomaly_v16_0.py",
+        "line": 203,
+        "column": 43,
+        "value": 576,
+        "target": 576,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1031,
+        "column": 39,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1053,
+        "column": 51,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1065,
+        "column": 44,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1065,
+        "column": 48,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1134,
+        "column": 50,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1150,
+        "column": 47,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1150,
+        "column": 51,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1167,
+        "column": 32,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1199,
+        "column": 32,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1287,
+        "column": 41,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1388,
+        "column": 40,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1454,
+        "column": 65,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1615,
+        "column": 27,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_72gates_v16_2.py",
+        "line": 1615,
+        "column": 72,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 111,
+        "column": 43,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 116,
+        "column": 31,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 170,
+        "column": 42,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 176,
+        "column": 45,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 179,
+        "column": 50,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 186,
+        "column": 26,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 186,
+        "column": 42,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 207,
+        "column": 50,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 214,
+        "column": 71,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 233,
+        "column": 50,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 244,
+        "column": 16,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 245,
+        "column": 42,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 341,
+        "column": 65,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 1050,
+        "column": 27,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_f_certificates_v16_2.py",
+        "line": 1056,
+        "column": 27,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 65,
+        "column": 16,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 111,
+        "column": 16,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 157,
+        "column": 66,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 171,
+        "column": 43,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 217,
+        "column": 43,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 223,
+        "column": 21,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 334,
+        "column": 16,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 396,
+        "column": 75,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 422,
+        "column": 49,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_omega_seal_v16_2.py",
+        "line": 426,
+        "column": 58,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_g_ricci_flow_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_ricci_flow_v16_2.py",
+        "line": 45,
+        "column": 71,
+        "value": 0.9583,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_ricci_flow_v16_2.py",
+        "line": 48,
+        "column": 16,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_ricci_flow_v16_2.py",
+        "line": 143,
+        "column": 19,
+        "value": 0.685,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_g_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_g_v16_0.py",
+        "line": 410,
+        "column": 47,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_h_288_roots_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_h_288_roots_v16_2.py",
+        "line": 140,
+        "column": 63,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_i_terminal_states_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_i_terminal_states_v16_2.py",
+        "line": 107,
+        "column": 75,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_i_terminal_states_v16_2.py",
+        "line": 111,
+        "column": 75,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_j_torsion_funnel_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_j_torsion_funnel_v16_2.py",
+        "line": 56,
+        "column": 22,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_j_torsion_funnel_v16_2.py",
+        "line": 59,
+        "column": 22,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_j_torsion_funnel_v16_2.py",
+        "line": 148,
+        "column": 16,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_j_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_j_v16_0.py",
+        "line": 117,
+        "column": 24,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_l_omega_unwinding_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_l_omega_unwinding_v16_2.py",
+        "line": 65,
+        "column": 31,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_l_omega_unwinding_v16_2.py",
+        "line": 72,
+        "column": 30,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_l_omega_unwinding_v16_2.py",
+        "line": 79,
+        "column": 25,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_l_omega_unwinding_v16_2.py",
+        "line": 79,
+        "column": 31,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_l_omega_unwinding_v16_2.py",
+        "line": 96,
+        "column": 26,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_l_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_l_v16_0.py",
+        "line": 673,
+        "column": 43,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\appendices\\appendix_z_terminal_ledger_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_z_terminal_ledger_v16_2.py",
+        "line": 88,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\appendices\\appendix_z_terminal_ledger_v16_2.py",
+        "line": 90,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\cosmology_intro_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\cosmology_intro_v16_0.py",
+        "line": 829,
+        "column": 46,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\dark_energy_thawing_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\dark_energy_thawing_v16_2.py",
+        "line": 1179,
+        "column": 24,
+        "value": 0.9583333,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\dark_energy_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\dark_energy_v16_0.py",
+        "line": 200,
+        "column": 19,
+        "value": 144.0,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\dark_energy_v16_0.py",
+        "line": 398,
+        "column": 26,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\dark_energy_v16_0.py",
+        "line": 509,
+        "column": 26,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\dark_energy_v16_0.py",
+        "line": 705,
+        "column": 26,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\dark_energy_v16_0.py",
+        "line": 885,
+        "column": 26,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\evolution_engine_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\evolution_engine_v16_2.py",
+        "line": 401,
+        "column": 19,
+        "value": 0.689,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\evolution_engine_v16_2.py",
+        "line": 442,
+        "column": 19,
+        "value": 0.689,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\jacobian_mathematical_validation.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\jacobian_mathematical_validation.py",
+        "line": 230,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\multi_sector_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\multi_sector_v16_0.py",
+        "line": 167,
+        "column": 22,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\ricci_flow_h0_v16_1.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\ricci_flow_h0_v16_1.py",
+        "line": 797,
+        "column": 44,
+        "value": 0.689,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\test_complete_validation.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\test_complete_validation.py",
+        "line": 42,
+        "column": 47,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\test_complete_validation.py",
+        "line": 105,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\cosmology\\test_jacobian_analysis.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\cosmology\\test_jacobian_analysis.py",
+        "line": 174,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\fermion\\chirality_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\fermion\\chirality_v16_0.py",
+        "line": 1024,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\fermion\\fermion_generations_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\fermion\\fermion_generations_v16_0.py",
+        "line": 715,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\fermion\\octonionic_mixing_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\fermion\\octonionic_mixing_v16_2.py",
+        "line": 1206,
+        "column": 43,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\fermion\\octonionic_mixing_v16_2.py",
+        "line": 1299,
+        "column": 32,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py",
+        "line": 203,
+        "column": 47,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py",
+        "line": 217,
+        "column": 46,
+        "value": 0.9649,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py",
+        "line": 399,
+        "column": 39,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py",
+        "line": 404,
+        "column": 38,
+        "value": 0.9649,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py",
+        "line": 537,
+        "column": 36,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\geometric\\geometric_anchors_simulation_v16_2.py",
+        "line": 548,
+        "column": 35,
+        "value": 0.9649,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\neutrino\\neutrino_mixing_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\neutrino\\neutrino_mixing_v16_0.py",
+        "line": 888,
+        "column": 25,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\neutrino\\neutrino_mixing_v16_0.py",
+        "line": 1297,
+        "column": 43,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\neutrino\\neutrino_mixing_v16_0.py",
+        "line": 1374,
+        "column": 19,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\pneuma\\pneuma_mechanism_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\pneuma\\pneuma_mechanism_v16_0.py",
+        "line": 156,
+        "column": 22,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\pneuma\\pneuma_mechanism_v16_0.py",
+        "line": 1057,
+        "column": 43,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\predictions\\predictions_aggregator_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\predictions\\predictions_aggregator_v16_0.py",
+        "line": 206,
+        "column": 39,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\thermal\\thermal_time_v16_0.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\thermal\\thermal_time_v16_0.py",
+        "line": 160,
+        "column": 51,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\v16\\validation\\CERTIFICATES_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\validation\\CERTIFICATES_v16_2.py",
+        "line": 136,
+        "column": 50,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\validation\\CERTIFICATES_v16_2.py",
+        "line": 137,
+        "column": 36,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\validation\\CERTIFICATES_v16_2.py",
+        "line": 141,
+        "column": 24,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\validation\\CERTIFICATES_v16_2.py",
+        "line": 189,
+        "column": 19,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\v16\\validation\\generate_theory_covariance.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\v16\\validation\\generate_theory_covariance.py",
+        "line": 32,
+        "column": 28,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\validation\\sigma_validator_final_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\sigma_validator_final_v16_2.py",
+        "line": 412,
+        "column": 51,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\sigma_validator_final_v16_2.py",
+        "line": 423,
+        "column": 33,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\sigma_validator_final_v16_2.py",
+        "line": 935,
+        "column": 33,
+        "value": 0.957,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\sigma_validator_final_v16_2.py",
+        "line": 1501,
+        "column": 27,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\validation\\tft_rigor_proofs_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\tft_rigor_proofs_v16_2.py",
+        "line": 74,
+        "column": 14,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\validation\\unit_validator_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\unit_validator_v16_2.py",
+        "line": 353,
+        "column": 16,
+        "value": 0.9583333,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\unit_validator_v16_2.py",
+        "line": 395,
+        "column": 31,
+        "value": 0.958,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\validation\\v16_2_logic_check.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\validation\\v16_2_logic_check.py",
+        "line": 243,
+        "column": 31,
+        "value": 576.0,
+        "target": 576,
+        "type": "exact_ghost"
+      }
+    ],
+    "simulations\\visualizations\\brane_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\brane_diagrams.py",
+        "line": 155,
+        "column": 19,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\brane_gauge_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\brane_gauge_diagrams.py",
+        "line": 279,
+        "column": 39,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\brane_gauge_diagrams.py",
+        "line": 440,
+        "column": 41,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\certificate_dashboard_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\certificate_dashboard_v16_2.py",
+        "line": 289,
+        "column": 59,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\certificate_dashboard_v16_2.py",
+        "line": 382,
+        "column": 48,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\compactification_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\compactification_diagrams.py",
+        "line": 364,
+        "column": 53,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\cosmology_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\cosmology_diagrams.py",
+        "line": 200,
+        "column": 44,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\dark_energy_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\dark_energy_diagrams.py",
+        "line": 332,
+        "column": 53,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\entropy_basin_terminal_map_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\entropy_basin_terminal_map_v16_2.py",
+        "line": 246,
+        "column": 22,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\entropy_basin_terminal_map_v16_2.py",
+        "line": 250,
+        "column": 22,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\entropy_basin_terminal_map_v16_2.py",
+        "line": 280,
+        "column": 58,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\entropy_basin_terminal_map_v16_2.py",
+        "line": 286,
+        "column": 28,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\falsifiability_dashboard.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\falsifiability_dashboard.py",
+        "line": 158,
+        "column": 36,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\four_pattern_orthogonality_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\four_pattern_orthogonality_v16_2.py",
+        "line": 171,
+        "column": 57,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\four_pattern_orthogonality_v16_2.py",
+        "line": 187,
+        "column": 57,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\four_pattern_orthogonality_v16_2.py",
+        "line": 231,
+        "column": 38,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\four_pattern_orthogonality_v16_2.py",
+        "line": 270,
+        "column": 26,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\four_pattern_orthogonality_v16_2.py",
+        "line": 271,
+        "column": 21,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\gauge_theory_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\gauge_theory_diagrams.py",
+        "line": 466,
+        "column": 15,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\goldilocks_plot.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\goldilocks_plot.py",
+        "line": 250,
+        "column": 43,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\goldilocks_plot.py",
+        "line": 260,
+        "column": 53,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\goldilocks_plot.py",
+        "line": 272,
+        "column": 52,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\observer_time_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\observer_time_diagrams.py",
+        "line": 201,
+        "column": 12,
+        "value": 0.69,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\observer_time_diagrams.py",
+        "line": 286,
+        "column": 24,
+        "value": 0.68,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\observer_time_diagrams.py",
+        "line": 400,
+        "column": 9,
+        "value": 0.68,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\observer_time_diagrams.py",
+        "line": 418,
+        "column": 24,
+        "value": 0.96,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\observer_time_diagrams.py",
+        "line": 447,
+        "column": 45,
+        "value": 0.68,
+        "target": 0.6819,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\octonionic_triality.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\octonionic_triality.py",
+        "line": 159,
+        "column": 28,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\octonionic_triality.py",
+        "line": 322,
+        "column": 52,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\octonionic_triality.py",
+        "line": 355,
+        "column": 53,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\ricci_flow_evolution.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\ricci_flow_evolution.py",
+        "line": 57,
+        "column": 11,
+        "value": 0.689,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\ricci_flow_evolution.py",
+        "line": 215,
+        "column": 56,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\ricci_flow_evolution.py",
+        "line": 282,
+        "column": 56,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\ricci_flow_evolution.py",
+        "line": 294,
+        "column": 53,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\time_flow_diagrams.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\time_flow_diagrams.py",
+        "line": 276,
+        "column": 48,
+        "value": 0.68,
+        "target": 0.6819,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\time_flow_diagrams.py",
+        "line": 476,
+        "column": 24,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\torsion_funnel_v16_2.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\torsion_funnel_v16_2.py",
+        "line": 71,
+        "column": 22,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\torsion_funnel_v16_2.py",
+        "line": 74,
+        "column": 22,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\torsion_funnel_v16_2.py",
+        "line": 273,
+        "column": 37,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\torsion_funnel_v16_2.py",
+        "line": 289,
+        "column": 37,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\two_time_comparison.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\two_time_comparison.py",
+        "line": 578,
+        "column": 36,
+        "value": 0.95,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "simulations\\visualizations\\two_time_structure.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\simulations\\visualizations\\two_time_structure.py",
+        "line": 466,
+        "column": 36,
+        "value": 0.96,
+        "target": 0.9583,
+        "type": "float_ghost"
+      }
+    ],
+    "src\\audit\\certificate_stack.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\certificate_stack.py",
+        "line": 80,
+        "column": 18,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\certificate_stack.py",
+        "line": 83,
+        "column": 22,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\certificate_stack.py",
+        "line": 319,
+        "column": 28,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\certificate_stack.py",
+        "line": 319,
+        "column": 34,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\certificate_stack.py",
+        "line": 482,
+        "column": 24,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\audit\\formula_validator.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\formula_validator.py",
+        "line": 65,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\formula_validator.py",
+        "line": 67,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\formula_validator.py",
+        "line": 228,
+        "column": 28,
+        "value": 144.0,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\audit\\hard_certificate_audit.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\hard_certificate_audit.py",
+        "line": 80,
+        "column": 80,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\hard_certificate_audit.py",
+        "line": 81,
+        "column": 32,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\hard_certificate_audit.py",
+        "line": 88,
+        "column": 17,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\hard_certificate_audit.py",
+        "line": 128,
+        "column": 41,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\hard_certificate_audit.py",
+        "line": 143,
+        "column": 37,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\hard_certificate_audit.py",
+        "line": 190,
+        "column": 22,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\audit\\omega_seal_generator.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\omega_seal_generator.py",
+        "line": 149,
+        "column": 39,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\omega_seal_generator.py",
+        "line": 151,
+        "column": 78,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\omega_seal_generator.py",
+        "line": 160,
+        "column": 30,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\omega_seal_generator.py",
+        "line": 165,
+        "column": 29,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\omega_seal_generator.py",
+        "line": 302,
+        "column": 17,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\omega_seal_generator.py",
+        "line": 304,
+        "column": 18,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\audit\\terminal_certificates.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 106,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 108,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 210,
+        "column": 31,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 210,
+        "column": 51,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 210,
+        "column": 71,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 245,
+        "column": 30,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 255,
+        "column": 27,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\audit\\terminal_certificates.py",
+        "line": 436,
+        "column": 19,
+        "value": 144.0,
+        "target": 144,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\constants\\hebrew_naming.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\constants\\hebrew_naming.py",
+        "line": 76,
+        "column": 10,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\constants\\hebrew_naming.py",
+        "line": 113,
+        "column": 16,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\constants\\hebrew_naming.py",
+        "line": 115,
+        "column": 17,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\constants\\hebrew_naming.py",
+        "line": 187,
+        "column": 25,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\chiral_stabilizer.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\chiral_stabilizer.py",
+        "line": 44,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\chiral_stabilizer.py",
+        "line": 48,
+        "column": 45,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\coupling_unification.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\coupling_unification.py",
+        "line": 47,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\coupling_unification.py",
+        "line": 56,
+        "column": 45,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\coupling_unification.py",
+        "line": 99,
+        "column": 35,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\gravity_residue.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\gravity_residue.py",
+        "line": 55,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\gravity_residue.py",
+        "line": 57,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\higgs_torsion_vev.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\higgs_torsion_vev.py",
+        "line": 43,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\higgs_torsion_vev.py",
+        "line": 46,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\manifold_tax.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\manifold_tax.py",
+        "line": 52,
+        "column": 19,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\mixing_matrix.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\mixing_matrix.py",
+        "line": 42,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\mixing_matrix.py",
+        "line": 44,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\root_derivation.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\root_derivation.py",
+        "line": 78,
+        "column": 82,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\root_derivation.py",
+        "line": 226,
+        "column": 41,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\root_derivation.py",
+        "line": 231,
+        "column": 43,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\root_derivation.py",
+        "line": 248,
+        "column": 12,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\root_derivation.py",
+        "line": 253,
+        "column": 27,
+        "value": 144,
+        "target": 144,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\root_derivation.py",
+        "line": 296,
+        "column": 28,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\shell_saturation.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\shell_saturation.py",
+        "line": 49,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\shell_saturation.py",
+        "line": 51,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\shell_saturation.py",
+        "line": 56,
+        "column": 23,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\strong_cp_lock.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\strong_cp_lock.py",
+        "line": 48,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\terminal_closure.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\terminal_closure.py",
+        "line": 41,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\terminal_closure.py",
+        "line": 43,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\physics\\yukawa_torsion.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\physics\\yukawa_torsion.py",
+        "line": 46,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\sim\\isotropic_flow_validator.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\sim\\isotropic_flow_validator.py",
+        "line": 220,
+        "column": 60,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\sim\\manifold_curvature.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\sim\\manifold_curvature.py",
+        "line": 42,
+        "column": 12,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\sim\\manifold_curvature.py",
+        "line": 44,
+        "column": 13,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ],
+    "src\\validation\\stress_test_rigidity.py": [
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\validation\\stress_test_rigidity.py",
+        "line": 138,
+        "column": 48,
+        "value": 288,
+        "target": 288,
+        "type": "exact_ghost"
+      },
+      {
+        "file": "H:\\Github\\PrincipiaMetaphysica\\src\\validation\\stress_test_rigidity.py",
+        "line": 148,
+        "column": 51,
+        "value": 163,
+        "target": 163,
+        "type": "exact_ghost"
+      }
+    ]
+  }
+}
