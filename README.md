@@ -2,7 +2,7 @@
 **Philosophiæ Metaphysicæ Principia Mathematica**
 
 [![Version](https://img.shields.io/badge/version-16.2%20STERILE-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+[![License](LICENSE)
 [![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/v16/appendices/appendix_f_72gates_v16_2.py)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
