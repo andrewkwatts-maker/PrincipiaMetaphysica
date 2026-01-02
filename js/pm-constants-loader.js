@@ -14,7 +14,7 @@
  *   window.PM_FORMULAS - Access to CoreFormulas
  *
  * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
- * Version: 2.4.0 - Enhanced alias system with flat key lookup and field extraction
+ * Version: 2.5.0 - Ten Pillars loaded from named_constants.json (Sacred Heptagon + Mechanical Triad)
  */
 
 (function() {
@@ -160,21 +160,18 @@
             'kk_graviton.mass_tev': '_hardcoded.kk_m1_TeV',
 
             // ================================================================
-            // Topology parameters
+            // Topology parameters (from parameters.json or named_constants.json)
             // ================================================================
-            'topology.b3': 'topology.b3',
-            'topology.b2': 'topology.b2',
-            'topology.chi_eff': 'topology.chi_eff',
             'topology.n_gen': 'topology.n_gen',
-            'parameters.topology.b2': 'topology.b2',
-            'parameters.topology.b3': 'topology.b3',
-            'parameters.topology.B2': 'topology.b2',
-            'parameters.topology.B3': 'topology.b3',
+            'parameters.topology.b2': '_named.b3',  // b2 usually same as b3 for G2
+            'parameters.topology.b3': '_named.b3',
+            'parameters.topology.B2': '_named.b3',
+            'parameters.topology.B3': '_named.b3',
             'parameters.topology.h11': 'parameters.topology.HODGE_H11',
             'parameters.topology.h21': 'parameters.topology.HODGE_H21',
             'parameters.topology.h31': 'parameters.topology.HODGE_H31',
             'parameters.topology.nu': 'topology.n_gen',
-            'parameters.topology.CHI_EFF': 'topology.chi_eff',
+            'parameters.topology.CHI_EFF': '_named.chi_eff',
 
             // ================================================================
             // Neutrino masses
@@ -194,13 +191,6 @@
             'parameters.gauge.alpha_gut_inv': 'gauge.ALPHA_GUT_INV',
 
             // ================================================================
-            // Topology parameters - extended aliases
-            // ================================================================
-            'parameters.topology.n_gen': 'topology.n_gen',
-            'topology.b3': '_hardcoded.b3',
-            'topology.chi_effective': '_hardcoded.chi_effective',
-
-            // ================================================================
             // Statistics - from statistics.json
             // ================================================================
             'statistics.certificates_total': '_hardcoded.certificates_total',
@@ -208,53 +198,77 @@
 
             // ================================================================
             // THE SACRED HEPTAGON (7 Intellectual Anchors)
+            // Loaded dynamically from named_constants.json
             // ================================================================
             // 1. Watts Constant (Ω_W = 1.0) - Observer Unity
-            'constants.watts_constant': '_hardcoded.watts_constant',
-            'constants.omega_W': '_hardcoded.watts_constant',
-            'heptagon.watts_constant': '_hardcoded.watts_constant',
+            'constants.watts_constant': '_named.watts_constant',
+            'constants.omega_W': '_named.watts_constant',
+            'heptagon.watts_constant': '_named.watts_constant',
             // 2. Reid Invariant (χ_R = 1/144) - Sounding Board
-            'constants.reid_invariant': '_hardcoded.reid_invariant',
-            'constants.chi_R': '_hardcoded.reid_invariant',
-            'heptagon.reid_invariant': '_hardcoded.reid_invariant',
+            'constants.reid_invariant': '_named.reid_invariant',
+            'constants.chi_R': '_named.reid_invariant',
+            'heptagon.reid_invariant': '_named.reid_invariant',
             // 3. Weinstein Scale (κ_E = 12.0) - Spinor Process
-            'constants.weinstein_scale': '_hardcoded.weinstein_scale',
-            'constants.kappa_E': '_hardcoded.weinstein_scale',
-            'heptagon.weinstein_scale': '_hardcoded.weinstein_scale',
-            // 4. Hossenfelder Constant (λ_S = √24) - Hidden Root
-            'constants.hossenfelder_constant': '_hardcoded.hossenfelder_constant',
-            'constants.lambda_S': '_hardcoded.hossenfelder_constant',
-            'heptagon.hossenfelder_constant': '_hardcoded.hossenfelder_constant',
-            // 5. O'Dowd Constant (P_O = 163) - Bulk Pressure
-            'constants.odowd_constant': '_hardcoded.odowd_constant',
-            'constants.P_O': '_hardcoded.odowd_constant',
-            'heptagon.odowd_constant': '_hardcoded.odowd_constant',
-            // 6. Penrose-Hameroff Constant (Φ_PH = 13) - Biological Bridge
-            'constants.penrose_hameroff': '_hardcoded.penrose_hameroff',
-            'constants.phi_PH': '_hardcoded.penrose_hameroff',
-            'heptagon.penrose_hameroff': '_hardcoded.penrose_hameroff',
+            'constants.weinstein_scale': '_named.weinstein_scale',
+            'constants.kappa_E': '_named.weinstein_scale',
+            'heptagon.weinstein_scale': '_named.weinstein_scale',
+            // 4. Hossenfelder Root (λ_S = √24) - Hidden Root
+            'constants.hossenfelder_root': '_named.hossenfelder_root',
+            'constants.hossenfelder_constant': '_named.hossenfelder_root',
+            'constants.lambda_S': '_named.hossenfelder_root',
+            'heptagon.hossenfelder_root': '_named.hossenfelder_root',
+            // 5. O'Dowd Bulk Pressure (P_O = 163) - Bulk Pressure
+            'constants.odowd_bulk_pressure': '_named.odowd_bulk_pressure',
+            'constants.odowd_constant': '_named.odowd_bulk_pressure',
+            'constants.P_O': '_named.odowd_bulk_pressure',
+            'heptagon.odowd_bulk_pressure': '_named.odowd_bulk_pressure',
+            // 6. Penrose-Hameroff Bridge (Φ_PH = 13) - Fibonacci Bridge
+            'constants.penrose_hameroff_bridge': '_named.penrose_hameroff_bridge',
+            'constants.penrose_hameroff': '_named.penrose_hameroff_bridge',
+            'constants.phi_PH': '_named.penrose_hameroff_bridge',
+            'heptagon.penrose_hameroff_bridge': '_named.penrose_hameroff_bridge',
             // 7. Christ Constant (Λ_JC = 153) - Logos Potential
-            'constants.christ_constant': '_hardcoded.christ_constant',
-            'constants.lambda_JC': '_hardcoded.christ_constant',
-            'heptagon.christ_constant': '_hardcoded.christ_constant',
+            'constants.christ_constant': '_named.christ_constant',
+            'constants.lambda_JC': '_named.christ_constant',
+            'heptagon.christ_constant': '_named.christ_constant',
 
             // ================================================================
             // THE MECHANICAL TRIAD (Gates 64, 46, 70)
+            // Loaded dynamically from named_constants.json
             // ================================================================
             // 8. Sophian Torsion Drag (η_S = 0.6819) - Gate 64
-            'constants.sophian_drag': '_hardcoded.sophian_drag',
-            'cosmology.eta_S': '_hardcoded.eta_S',
-            'mechanical.sophian_drag': '_hardcoded.sophian_drag',
-            // 9. Demiurgic Coupling (κ_Δ = k_gimel) - Gate 46
-            'constants.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
-            'constants.kappa_Delta': '_hardcoded.kappa_Delta',
-            'constants.k_gimel': '_hardcoded.k_gimel',
-            'mechanical.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
+            'constants.sophian_drag': '_named.sophian_drag',
+            'constants.eta_S': '_named.sophian_drag',
+            'cosmology.eta_S': '_named.sophian_drag',
+            'mechanical.sophian_drag': '_named.sophian_drag',
+            // 9. Demiurgic Coupling (κ_Δ = k_gimel ≈ 12.318) - Gate 46
+            'constants.demiurgic_coupling': '_named.demiurgic_coupling',
+            'constants.kappa_Delta': '_named.demiurgic_coupling',
+            'constants.k_gimel': '_named.demiurgic_coupling',
+            'mechanical.demiurgic_coupling': '_named.demiurgic_coupling',
             // 10. Tzimtzum Pressure (σ_T = 23/24) - Gate 70
-            'constants.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
-            'cosmology.sigma_T': '_hardcoded.sigma_T',
-            'cosmology.w0_magnitude': '_hardcoded.w0_magnitude',
-            'mechanical.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
+            'constants.tzimtzum_pressure': '_named.tzimtzum_pressure',
+            'constants.sigma_T': '_named.tzimtzum_pressure',
+            'cosmology.sigma_T': '_named.tzimtzum_pressure',
+            'cosmology.w0_magnitude': '_named.tzimtzum_pressure',
+            'mechanical.tzimtzum_pressure': '_named.tzimtzum_pressure',
+
+            // ================================================================
+            // DERIVED VALUES (from named_constants.json)
+            // ================================================================
+            'cosmology.H0_local': '_named.hubble_constant',
+            'derived.hubble_constant': '_named.hubble_constant',
+            'derived.dark_energy_w0': '_named.dark_energy_w0',
+            'derived.parity_product': '_named.parity_product',
+
+            // ================================================================
+            // TOPOLOGICAL INVARIANTS (from named_constants.json)
+            // ================================================================
+            'topology.b3': '_named.b3',
+            'topology.chi_eff': '_named.chi_eff',
+            'topology.roots': '_named.roots',
+            'topology.visible': '_named.visible',
+            'topology.sterile': '_named.sterile',
 
             // ================================================================
             // Proton decay branching ratios
@@ -270,46 +284,65 @@
             'parameters.electroweak.v_higgs': 'higgs.vev',
         },
 
-        // Hardcoded values for parameters not in JSON
+        // Fallback hardcoded values (populated dynamically from named_constants.json)
+        // These serve as defaults if JSON loading fails
         _hardcodedValues: {
             'kk_m1_TeV': '5.0 TeV',
             'kk_hl_lhc': '5σ discovery potential',
             'BR_epi0': 0.45,
-            // Topological invariants from named_constants.json
-            'b3': 24,
-            'chi_effective': 144,
-            // Cosmology - H0 from O'Dowd formula: (288/4) - (163/144) + 0.6819 = 71.55
-            'H0_local': 71.55,
             // Statistics from statistics.json
             'certificates_total': 72,
             'certificates_verified': 72,
+        },
+
+        // Named constants loaded from AutoGenerated/named_constants.json
+        _namedConstants: null,
+
+        /**
+         * Get a named constant by key (e.g., "watts_constant", "reid_invariant")
+         * Falls back to hardcoded defaults if named_constants.json not loaded
+         */
+        getNamedConstant(key) {
+            // Try named_constants.json first
+            if (this._namedConstants?.constants?.[key]) {
+                return this._namedConstants.constants[key].value;
+            }
+            // Try derived values
+            if (this._namedConstants?.derived_values?.[key]) {
+                return this._namedConstants.derived_values[key].value;
+            }
+            // Try topological invariants
+            if (this._namedConstants?.topological_invariants?.[key]) {
+                return this._namedConstants.topological_invariants[key].value;
+            }
+            // Fallback to hardcoded defaults
+            return this._defaultNamedConstants[key] ?? null;
+        },
+
+        // Default values (used if named_constants.json fails to load)
+        _defaultNamedConstants: {
+            // === TOPOLOGICAL INVARIANTS ===
+            'b3': 24,
+            'chi_eff': 144,
+            'roots': 288,
+            'visible': 125,
+            'sterile': 163,
             // === THE SACRED HEPTAGON (7 Intellectual Anchors) ===
-            // 1. Watts Constant (Ω_W): Observer invariant - unity across all observers
-            'watts_constant': 1.0,
-            // 2. Reid Invariant (χ_R): Sounding board coefficient
-            'reid_invariant': 0.006944444444444444,  // 1/144
-            // 3. Weinstein Scale (κ_E): Spinor connection to 12D process
-            'weinstein_scale': 12.0,
-            // 4. Hossenfelder Constant (λ_S): Hidden root revealing structure
-            'hossenfelder_constant': 4.898979485566356,  // √24
-            // 5. O'Dowd Constant (P_O): Bulk pressure from 26D
-            'odowd_constant': 163,
-            // 6. Penrose-Hameroff Constant (Φ_PH): Consciousness bridge
-            'penrose_hameroff': 13,
-            // 7. Christ Constant (Λ_JC): Logos potential (153 + 135 = 288)
-            'christ_constant': 153,
+            'watts_constant': 1.0,                    // Ω_W: Observer Unity
+            'reid_invariant': 0.006944444444444444,   // χ_R: 1/144 Sounding Board
+            'weinstein_scale': 12.0,                  // κ_E: Spinor Connection
+            'hossenfelder_root': 4.898979485566356,   // λ_S: √24 Hidden Root
+            'odowd_bulk_pressure': 163,               // P_O: Bulk Pressure
+            'penrose_hameroff_bridge': 13,            // Φ_PH: Fibonacci Bridge
+            'christ_constant': 153,                   // Λ_JC: Logos Potential
             // === THE MECHANICAL TRIAD (Gates 64, 46, 70) ===
-            // Sophian Torsion Drag (η_S): Wisdom's restraint that slows expansion
-            'sophian_drag': 0.6819,
-            'eta_S': 0.6819,
-            // Demiurgic Coupling (κ_Δ): The forge where 26D geometry becomes 4D mass
-            'demiurgic_coupling': 12.31830988618379,
-            'kappa_Delta': 12.31830988618379,
-            'k_gimel': 12.31830988618379,
-            // Tzimtzum Pressure (σ_T): The boundary tension of the contracted vacuum
-            'tzimtzum_pressure': 0.9583333333333334,
-            'sigma_T': 0.9583333333333334,
-            'w0_magnitude': 0.9583333333333334,
+            'sophian_drag': 0.6819,                   // η_S: H0 Friction
+            'demiurgic_coupling': 12.31830988618379,  // κ_Δ: Mass-Energy Gearbox
+            'tzimtzum_pressure': 0.9583333333333334,  // σ_T: Void Seal (23/24)
+            // === DERIVED VALUES ===
+            'hubble_constant': 71.55,                 // H0 = (288/4) - (163/144) + η_S
+            'dark_energy_w0': -0.9583333333333334,    // w0 = -σ_T
+            'parity_product': 144,                    // CHI = Ω_W / χ_R
         },
 
         /**
@@ -335,6 +368,13 @@
             if (path.startsWith('_hardcoded.')) {
                 const key = path.replace('_hardcoded.', '');
                 return this._hardcodedValues[key] || null;
+            }
+
+            // Check for named constants (paths starting with _named.)
+            // These come from named_constants.json or fallback to defaults
+            if (path.startsWith('_named.')) {
+                const key = path.replace('_named.', '');
+                return this.getNamedConstant(key);
             }
 
             // Handle special field suffixes - extract specific fields from parameter objects
@@ -570,12 +610,13 @@
 
     // Cache configuration per component (TTL in seconds)
     const CACHE_CONFIG = {
-        parameters: { ttl: 3600, storage: 'localStorage' },    // 1 hour
-        formulas: { ttl: 3600, storage: 'localStorage' },      // 1 hour
-        sections: { ttl: 1800, storage: 'localStorage' },      // 30 minutes
-        simulations: { ttl: 300, storage: 'sessionStorage' },  // 5 minutes
-        statistics: { ttl: 300, storage: 'sessionStorage' },   // 5 minutes
-        metadata: { ttl: 60, storage: 'sessionStorage' }       // 1 minute
+        parameters: { ttl: 3600, storage: 'localStorage' },        // 1 hour
+        formulas: { ttl: 3600, storage: 'localStorage' },          // 1 hour
+        sections: { ttl: 1800, storage: 'localStorage' },          // 30 minutes
+        simulations: { ttl: 300, storage: 'sessionStorage' },      // 5 minutes
+        statistics: { ttl: 300, storage: 'sessionStorage' },       // 5 minutes
+        metadata: { ttl: 60, storage: 'sessionStorage' },          // 1 minute
+        named_constants: { ttl: 3600, storage: 'localStorage' }    // 1 hour (Ten Pillars)
     };
 
     /**
@@ -683,25 +724,33 @@
             // STRATEGY 1: Load split component files in parallel (preferred)
             // ================================================================
             try {
-                const [parameters, simulations, formulas, statistics, metadata] = await Promise.all([
+                const [parameters, simulations, formulas, statistics, metadata, namedConstants] = await Promise.all([
                     loadComponent('parameters', basePath),
                     loadComponent('simulations', basePath),
                     loadComponent('formulas', basePath),
                     loadComponent('statistics', basePath),
-                    loadComponent('metadata', basePath)
+                    loadComponent('metadata', basePath),
+                    loadComponent('named_constants', basePath)
                 ]);
+
+                // Store named constants for access via getNamedConstant()
+                if (namedConstants) {
+                    PM._namedConstants = namedConstants;
+                    console.log(`[PM] Named constants: loaded ${Object.keys(namedConstants.constants || {}).length} constants`);
+                }
 
                 // If we got at least parameters or simulations, use split files
                 if (parameters || simulations) {
                     PM._data = {
-                        version: metadata?.version || '16.0',
+                        version: metadata?.version || namedConstants?.version || '16.0',
                         parameters: parameters?.parameters || {},
                         simulations: simulations?.simulations || {},
                         formulas: formulas || { formulas: {}, count: 0 },
                         statistics: statistics?.statistics || {},
                         framework_statistics: statistics?.framework_statistics || {},
                         validation_summary: metadata?.validation_summary || [],
-                        all_passed: metadata?.all_passed ?? true
+                        all_passed: metadata?.all_passed ?? true,
+                        named_constants: namedConstants || null
                     };
 
                     PM._loaded = true;
@@ -718,10 +767,12 @@
                     console.log(`  Parameters: ${Object.keys(PM._data.parameters).length} categories`);
                     console.log(`  Simulations: ${Object.keys(PM._data.simulations).length}`);
                     console.log(`  Formulas: ${PM._data.formulas?.count || Object.keys(PM._data.formulas?.formulas || {}).length}`);
+                    console.log(`  Named Constants: ${namedConstants ? 'LOADED (Ten Pillars + Topological Invariants)' : 'using defaults'}`);
 
                     // Expose globally
                     window.PM_DATA = PM._data;
                     window.PM_FORMULAS = PM._data.formulas?.formulas || {};
+                    window.PM_NAMED_CONSTANTS = PM._namedConstants || null;
 
                     updateDOM();
                     setTimeout(() => {
@@ -1142,7 +1193,7 @@
     // Export globally
     window.PM = PM;
 
-    console.log('PM: Constants loader ready (v2.4.0 - Enhanced alias system)');
+    console.log('PM: Constants loader ready (v2.5.0 - Ten Pillars from named_constants.json)');
 
     // ========================================================================
     // MUTATION OBSERVER - Re-process when new elements are added

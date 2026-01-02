@@ -21,8 +21,9 @@ Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 import json
 import math
 import sys
+from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Any, Tuple
+from typing import List, Dict, Any, Tuple, Optional
 
 # Import the SSoT registry
 try:
@@ -287,6 +288,52 @@ class DemonLockGuard:
     # SSoT SYNC VERIFICATION
     # =========================================================================
 
+    def verify_json_freshness(self) -> bool:
+        """
+        Verify JSON is not stale (older than max_age_seconds).
+
+        The JSON volatility metadata includes a timestamp and max_age_seconds.
+        If the JSON is older than max_age_seconds, it should be regenerated
+        from the live Registry to ensure sterility.
+        """
+        if not self.data:
+            return True  # No JSON to check
+
+        volatility = self.data.get('volatility')
+        if not volatility:
+            self.warnings.append("WARNING: No volatility metadata in JSON. Cannot verify freshness.")
+            return True  # Pass with warning if no volatility section
+
+        try:
+            generated_at_str = volatility.get('generated_at', '')
+            max_age = volatility.get('max_age_seconds', 300)
+
+            # Parse the ISO timestamp
+            if generated_at_str.endswith('Z'):
+                generated_at_str = generated_at_str[:-1]  # Remove Z suffix
+            generated_at = datetime.fromisoformat(generated_at_str)
+
+            # Calculate age
+            age_seconds = (datetime.now() - generated_at).total_seconds()
+
+            if age_seconds > max_age:
+                self.warnings.append(
+                    f"STALE JSON: Generated {age_seconds:.0f}s ago (max: {max_age}s). "
+                    f"Recommend regenerating from Registry."
+                )
+                # This is a warning, not a violation - allow execution but warn
+
+            # Check session ID format
+            session_id = self.data.get('session_id', '')
+            if session_id and not session_id.startswith('PM'):
+                self.warnings.append(f"WARNING: Invalid session ID format: {session_id}")
+
+            return True
+
+        except (ValueError, TypeError) as e:
+            self.warnings.append(f"WARNING: Could not parse volatility metadata: {e}")
+            return True  # Pass with warning on parse errors
+
     def verify_ssot_sync(self) -> bool:
         """
         Verify JSON values match live Registry calculations.
@@ -373,6 +420,7 @@ class DemonLockGuard:
 
         if self.data:
             checks.insert(0, ("Structure", self.verify_structure))
+            checks.insert(1, ("JSON Freshness", self.verify_json_freshness))
 
         all_passed = True
         for name, check_fn in checks:
