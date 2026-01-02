@@ -111,7 +111,7 @@ P_O = 163 = ROOTS - VISIBLE = 288 - 125
 The **Bulk Pressure Constant** - the residual curvature from the 26D bulk that determines large-scale cosmic evolution.
 
 ### Role
-- Resolves Hubble Tension: H₀ = (288/4) + √144 - (163/24) = 71.55
+- Resolves Hubble Tension: H₀ = (288/4) - (163/144) + 0.6819 = 71.55
 - Represents sterile background curvature Einstein couldn't see
 - Acts as stress-energy of the hidden manifold
 
