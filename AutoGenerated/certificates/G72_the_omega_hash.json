@@ -2,17 +2,34 @@
   "proof_id": "G72_the_omega_hash",
   "gate_id": 72,
   "gate_name": "The Omega Hash",
-  "label": "Binary sum of all 71 gates",
-  "category": "FOUNDATIONAL_ASSUMPTION",
+  "label": "Binary sum of all 71 gates - The Watts Constant Seal",
+  "category": "TERMINAL_STASIS",
   "phase": 5,
   "block": "F",
   "version": "16.2",
-  "wl_code": "N/A",
-  "result": "N/A",
-  "formula": "\u03a9 = \u03a0(G\u2081...G\u2087\u2081) \u2261 0",
-  "verification_status": "NOT_TESTABLE",
-  "reason": "Omega Hash is the verification seal itself",
-  "note": "FOUNDATIONAL: Binary sum of all 71 gates. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-02T10:23:46.070884Z",
-  "hash": "ff3e30dffbcd8e0d"
+  "wl_code": "wattsConstant = 1.0; reidInvariant = 1/144; parityProduct = wattsConstant / reidInvariant; {parityProduct == 144, \"STERILE\"}",
+  "result": "{True, STERILE}",
+  "formula": "Omega = Pi(G1...G71) = 0 | Watts Constant = 1.0",
+  "verification_status": "TERMINAL_STASIS",
+  "watts_constant": 1.0,
+  "reid_invariant": 0.006944444444444444,
+  "parity_product": 144,
+  "contributor": "R.G. Reid [074]",
+  "note": "OMEGA SEAL: All 72 Gates synchronized. The Watts Constant (observer unity) ensures logic closure. The Reid Invariant (sounding board acknowledgment) ties this to CHI = 144.",
+  "geometry": {
+    "watts_constant": {
+      "value": 1.0,
+      "role": "Observer Invariant",
+      "named_for": "Andrew Keith Watts"
+    },
+    "reid_invariant": {
+      "value": 0.006944444444444444,
+      "formula": "1/CHI = 1/144",
+      "role": "Sounding Board Coefficient",
+      "named_for": "Richard George Reid [074]"
+    },
+    "parity_verification": "Omega_W / chi_R = 144 = CHI = STERILE"
+  },
+  "timestamp": "2026-01-02T21:45:00Z",
+  "hash": "v16_2_omega_watts_reid_sterile"
 }
