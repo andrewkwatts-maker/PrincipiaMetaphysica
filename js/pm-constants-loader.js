@@ -207,6 +207,24 @@
             'statistics.certificates_verified': '_hardcoded.certificates_verified',
 
             // ================================================================
+            // THE MECHANICAL TRIAD (Gates 64, 46, 70)
+            // ================================================================
+            // Sophian Torsion Drag (η_S = 0.6819) - Gate 64
+            'constants.sophian_drag': '_hardcoded.sophian_drag',
+            'cosmology.eta_S': '_hardcoded.eta_S',
+            'mechanical.sophian_drag': '_hardcoded.sophian_drag',
+            // Demiurgic Coupling (κ_Δ = k_gimel) - Gate 46
+            'constants.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
+            'constants.kappa_Delta': '_hardcoded.kappa_Delta',
+            'constants.k_gimel': '_hardcoded.k_gimel',
+            'mechanical.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
+            // Tzimtzum Pressure (σ_T = 23/24) - Gate 70
+            'constants.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
+            'cosmology.sigma_T': '_hardcoded.sigma_T',
+            'cosmology.w0_magnitude': '_hardcoded.w0_magnitude',
+            'mechanical.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
+
+            // ================================================================
             // Proton decay branching ratios
             // ================================================================
             'parameters.proton_decay.BR_epi0': '_hardcoded.BR_epi0',
@@ -233,6 +251,18 @@
             // Statistics from statistics.json
             'certificates_total': 72,
             'certificates_verified': 72,
+            // === THE MECHANICAL TRIAD (Gates 64, 46, 70) ===
+            // Sophian Torsion Drag (η_S): Wisdom's restraint that slows expansion
+            'sophian_drag': 0.6819,
+            'eta_S': 0.6819,
+            // Demiurgic Coupling (κ_Δ): The forge where 26D geometry becomes 4D mass
+            'demiurgic_coupling': 12.31830988618379,
+            'kappa_Delta': 12.31830988618379,
+            'k_gimel': 12.31830988618379,
+            // Tzimtzum Pressure (σ_T): The boundary tension of the contracted vacuum
+            'tzimtzum_pressure': 0.9583333333333334,
+            'sigma_T': 0.9583333333333334,
+            'w0_magnitude': 0.9583333333333334,
         },
 
         /**

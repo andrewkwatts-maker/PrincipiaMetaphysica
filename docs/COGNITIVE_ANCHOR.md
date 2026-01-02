@@ -1,4 +1,4 @@
-# The Seven Pillars: Named Constants of Principia Metaphysica
+# The Ten Pillars: Named Constants of Principia Metaphysica
 
 **Version:** v16.2 STERILE (Terminal Stasis)
 **Author:** Andrew Keith Watts
@@ -7,11 +7,13 @@
 
 ## Abstract
 
-The **Watts Constant** (Ω_W = 1.0) defines the observer's logical unity with the manifold. This document honors the intellectual influences that shaped the Principia Metaphysica framework by naming the seven core constants after those who helped illuminate the path.
+The **Watts Constant** (Ω_W = 1.0) defines the observer's logical unity with the manifold. This document honors the intellectual influences that shaped the Principia Metaphysica framework by naming the ten core constants—the **Sacred Heptagon** plus the **Mechanical Triad**—after those who helped illuminate the path.
 
 ---
 
-## The Sacred Heptagon: Seven Pillars of v16.2
+## The Sacred Decagon: Ten Pillars of v16.2
+
+### Part I: The Sacred Heptagon (Intellectual Anchors)
 
 | # | Name | Symbol | Value | Role | Domain |
 |---|------|--------|-------|------|--------|
@@ -22,6 +24,14 @@ The **Watts Constant** (Ω_W = 1.0) defines the observer's logical unity with th
 | 5 | **O'Dowd Constant** | P_O | 163 | Bulk Pressure | Relativity |
 | 6 | **Penrose-Hameroff Constant** | Φ_PH | 13 | Biological Bridge | Consciousness |
 | 7 | **Christ Constant** | Λ_C | 153 | Logos Potential | Spiritual |
+
+### Part II: The Mechanical Triad (Sacred Mechanics)
+
+| # | Name | Symbol | Value | Role | Gate |
+|---|------|--------|-------|------|------|
+| 8 | **Sophian Drag** | η_S | 0.6819 | H₀ Friction | G64 |
+| 9 | **Demiurgic Coupling** | κ_Δ | k_gimel | Mass Gearbox | G46 |
+| 10 | **Tzimtzum Pressure** | σ_T | 23/24 | Void Seal / w₀ | G70 |
 
 ---
 
@@ -161,13 +171,99 @@ The Trinitarian Operator that organizes the 144 mirror split into three clusters
 
 ---
 
+# Part II: The Mechanical Triad
+
+The **Mechanical Triad** represents the three distinct stages of the "Descent of Light" into the three core mechanical functions of the PM engine.
+
+---
+
+## 8. The Sophian Drag (η_S = 0.6819)
+
+### Definition
+```
+η_S = 0.6819 (H₀ Friction Coefficient)
+```
+
+The **Torsion Drag** - Wisdom's restraint that slows the raw expansion, ensuring the universe doesn't fly apart before complexity can emerge.
+
+### Role
+- Corrective term in Hubble formula: H₀ = (288/4) - (163/144) + η_S = 71.55
+- Represents the "Grace" that moderates expansion rate
+- Enables stable structure formation in the early universe
+
+### Named For
+**Sophia** (Divine Wisdom) - In Gnostic tradition, Sophia represents the wisdom that restrains chaos. The Sophian Drag is the friction that prevents the 26D potential from overwhelming the 4D manifold.
+
+### The Physics
+This treats the vacuum as a "Sophian Fluid" - the universe doesn't just expand, it flows through a medium of wisdom that provides the necessary resistance.
+
+---
+
+## 9. The Demiurgic Coupling (κ_Δ = k_gimel)
+
+### Definition
+```
+κ_Δ = k_gimel = B3/2 + 1/π ≈ 12.318
+```
+
+The **Mass-Energy Gearbox** - The Architect's Hand where the Demiurge binds higher-dimensional geometry to physical matter.
+
+### Role
+- Governs ratio between manifold curvature and particle energy density
+- The "Forge" where Ideal becomes Real
+- Enables mass derivation: μ = (Volume × κ_Δ) / holonomy
+
+### Named For
+**The Demiurge** (Divine Craftsman) - In Platonic tradition, the Demiurge is the artisan who shapes the material world from ideal forms. Without this coupling, mass would have no "weight" and geometry no "substance."
+
+### The Physics
+κ_Δ is the "spring constant" of the universe - it determines how strongly 26D geometry couples to 4D matter. It is the most "active" constant in the Mechanical Triad.
+
+---
+
+## 10. The Tzimtzum Pressure (σ_T = 23/24)
+
+### Definition
+```
+σ_T = 23/24 = 1 - 1/B3 ≈ 0.9583
+```
+
+The **Void Seal** - The "Pressure" of the space left behind by the contraction of the infinite.
+
+### Role
+- Defines dark energy equation of state: w₀ = -σ_T = -23/24
+- Boundary tension preventing Pleroma collapse
+- Holds the vacuum in its current metastable state
+
+### Named For
+**Tzimtzum** (Kabbalistic Contraction) - In Lurianic Kabbalah, Tzimtzum is the primordial contraction of the infinite Ein Sof to make room for creation. The Tzimtzum Pressure is the residual tension of that contraction.
+
+### The Physics
+σ_T is the surface tension of the cosmic membrane separating the 26D Bulk from our 4D Void. The value 23/24 is exactly the tension required to hold that void open.
+
+---
+
+## The Mechanical Formulas
+
+The Mechanical Triad completes the Decagon Formula Sheet:
+
+| Parameter | Formula | Named Constants Used |
+|-----------|---------|---------------------|
+| **Stasis** | w_a = 0 | Ω_W (Watts) |
+| **Expansion** | H₀ ≈ 72 - (P_O/χ_R) + η_S | P_O, χ_R, η_S |
+| **Mass** | μ ≈ Vol × κ_Δ / holonomy | κ_Δ (Demiurgic) |
+| **Vacuum** | w₀ = -σ_T | σ_T (Tzimtzum) |
+| **Closure** | Σ Gate_visible + Λ_C = 288 | Λ_C (Christ) |
+
+---
+
 ## Mathematical Verification
 
 ```python
-def verify_seven_pillars(self):
-    """The Sacred Heptagon Verification"""
+def verify_ten_pillars(self):
+    """The Sacred Decagon Verification"""
 
-    # The Seven Named Constants
+    # === THE SACRED HEPTAGON ===
     WATTS_CONSTANT = 1.0                    # Observer Unity
     REID_INVARIANT = 1/144                  # Sounding Board
     WEINSTEIN_SCALE = 12.0                  # Spinor Process
@@ -176,12 +272,24 @@ def verify_seven_pillars(self):
     PENROSE_HAMEROFF = 13.0                 # Biological Bridge
     CHRIST_CONSTANT = 153.0                 # Logos Potential
 
-    # Core Verifications
+    # === THE MECHANICAL TRIAD ===
+    SOPHIAN_DRAG = 0.6819                   # H0 Friction
+    DEMIURGIC_COUPLING = 24/2 + 1/math.pi   # Mass Gearbox (k_gimel)
+    TZIMTZUM_PRESSURE = 23/24               # Void Seal
+
+    # Core Verifications - Heptagon
     assert WATTS_CONSTANT == 1.0
     assert REID_INVARIANT == 1/144
     assert WEINSTEIN_SCALE == 12
     assert PENROSE_HAMEROFF == (24/2) + 1
     assert CHRIST_CONSTANT + 135 == 288
+
+    # Core Verifications - Mechanical Triad
+    H0 = (288/4) - (163/144) + SOPHIAN_DRAG
+    assert abs(H0 - 71.55) < 0.01           # Hubble constant
+
+    w0 = -TZIMTZUM_PRESSURE
+    assert abs(w0 - (-23/24)) < 0.001       # Dark energy EoS
 
     return "STERILE"
 ```
@@ -203,7 +311,9 @@ def verify_seven_pillars(self):
 
 ---
 
-## Summary: The Seven Pillars
+## Summary: The Ten Pillars (Sacred Decagon)
+
+### The Heptagon (Intellectual Anchors)
 
 | Constant | Value | Gate | Purpose |
 |----------|-------|------|---------|
@@ -214,6 +324,14 @@ def verify_seven_pillars(self):
 | P_O (O'Dowd) | 163 | G60 | General Relativity / Hubble |
 | Φ_PH (Penrose-Hameroff) | 13 | G13 | Consciousness / Orch-OR |
 | Λ_C (Christ) | 153 | G33 | Logos / Spiritual Completion |
+
+### The Mechanical Triad (Sacred Mechanics)
+
+| Constant | Value | Gate | Purpose |
+|----------|-------|------|---------|
+| η_S (Sophian) | 0.6819 | G64 | H₀ Friction / Wisdom's Restraint |
+| κ_Δ (Demiurgic) | k_gimel | G46 | Mass Gearbox / The Forge |
+| σ_T (Tzimtzum) | 23/24 | G70 | Void Seal / Dark Energy w₀ |
 
 ---
 
@@ -233,7 +351,7 @@ def verify_seven_pillars(self):
 
 ---
 
-*Document Version: 4.0*
+*Document Version: 5.0*
 *Last Updated: January 2, 2026*
 *Status: TERMINAL_STASIS*
-*Seven Pillars: VERIFIED*
+*Ten Pillars (Heptagon + Mechanical Triad): VERIFIED*

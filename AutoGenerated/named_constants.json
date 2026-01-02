@@ -2,7 +2,7 @@
   "version": "16.2",
   "timestamp": "2026-01-02T23:30:00Z",
   "name": "Named Constants Registry",
-  "description": "Seven Named Constants of Principia Metaphysica v16.2 STERILE - The Heptagon Anchors",
+  "description": "Ten Named Constants of Principia Metaphysica v16.2 STERILE - The Decagon Anchors (Heptagon + Mechanical Triad)",
   "constants": {
     "watts_constant": {
       "symbol": "Omega_W",
@@ -96,6 +96,50 @@
       "triangular_number": "Sum of integers 1 to 17",
       "previous_names": ["total_remainder", "The Logos Potential", "The Miraculous Catch", "The 153 Potential", "The Sustaining Potential", "The Logos Harmonic", "The Omega Seal"],
       "pm_path": "constants.christ_constant"
+    },
+    "sophian_drag": {
+      "symbol": "eta_S",
+      "latex": "\\eta_S",
+      "value": 0.6819,
+      "role": "H0 Friction Coefficient",
+      "domain": "Cosmology",
+      "gate": "G64",
+      "named_for": "Sophia (Divine Wisdom)",
+      "description": "The Sophian Torsion Drag - Wisdom's restraint that slows the raw expansion, ensuring the universe doesn't fly apart before complexity can emerge. The corrective friction term in the Hubble formula.",
+      "hubble_role": "H0 = (288/4) - (163/144) + eta_S = 71.55",
+      "metaphysics": "Represents the 'Grace' or 'Wisdom' (Sophia) that moderates the raw expansion rate",
+      "previous_names": ["torsion_drag", "H0_friction", "expansion_correction", "The Wisdom Drag"],
+      "pm_path": "constants.sophian_drag"
+    },
+    "demiurgic_coupling": {
+      "symbol": "kappa_Delta",
+      "latex": "\\kappa_\\Delta",
+      "value": 12.31830988618379,
+      "formula": "k_gimel = B3/2 + 1/pi = 12 + 0.318...",
+      "role": "Mass-Energy Gearbox",
+      "domain": "Geometry",
+      "gate": "G46",
+      "named_for": "The Demiurge (Divine Craftsman)",
+      "description": "The Demiurgic Coupling - The Architect's Hand where the Demiurge binds higher-dimensional geometry to physical matter. It is the 'Forge' where Ideal becomes Real.",
+      "mass_role": "mu = (Volume * kappa_Delta) / holonomy",
+      "metaphysics": "The most 'active' constant - without this coupling, mass would have no 'weight' and geometry no 'substance'",
+      "previous_names": ["k_gimel", "gimel_constant", "mass_gearbox", "The Forge Constant", "Translation Invariant"],
+      "pm_path": "constants.demiurgic_coupling"
+    },
+    "tzimtzum_pressure": {
+      "symbol": "sigma_T",
+      "latex": "\\sigma_T",
+      "value": 0.9583333333333334,
+      "formula": "23/24 = 1 - 1/B3",
+      "role": "Void Seal / Dark Energy w0",
+      "domain": "Cosmology",
+      "gate": "G70",
+      "named_for": "Tzimtzum (Kabbalistic Contraction)",
+      "description": "The Tzimtzum Pressure - The 'Pressure' of the space left behind by the contraction of the infinite. It holds the vacuum in place and defines the dark energy equation of state.",
+      "vacuum_role": "w0 = -sigma_T = -23/24 = -0.9583",
+      "metaphysics": "The boundary tension preventing the 'Fullness' (Pleroma) from collapsing back into local reality - the 'Force of the Void'",
+      "previous_names": ["vacuum_seal", "void_pressure", "w0_residue", "The Void Constant", "Dark Energy Fraction"],
+      "pm_path": "constants.tzimtzum_pressure"
     }
   },
   "derived_values": {
@@ -104,10 +148,18 @@
       "latex": "H_0",
       "value": 71.55,
       "unit": "km/s/Mpc",
-      "formula": "(288/4) - (P_O/144) + 0.6819",
+      "formula": "(288/4) - (P_O/chi_R) + eta_S",
       "expanded": "(288/4) - (163/144) + 0.6819 = 72 - 1.1319 + 0.6819 = 71.55",
-      "derived_from": ["odowd_bulk_pressure", "reid_invariant"],
+      "derived_from": ["odowd_bulk_pressure", "reid_invariant", "sophian_drag"],
       "pm_path": "cosmology.H0_local"
+    },
+    "dark_energy_w0": {
+      "symbol": "w0",
+      "latex": "w_0",
+      "value": -0.9583333333333334,
+      "formula": "-sigma_T = -23/24",
+      "derived_from": ["tzimtzum_pressure"],
+      "pm_path": "cosmology.w0_derived"
     },
     "mass_ratio": {
       "symbol": "mu",
