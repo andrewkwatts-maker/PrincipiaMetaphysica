@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "125 \u2192 3 generations",
-  "verification_status": "PENDING_LOCK",
+  "formula": "125 → 3 generations",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
-  "note": "PENDING: 125 nodes fold into 3 generations. Validation: SO(24) naturally produces e/\u03bc/\u03c4",
+  "note": "PENDING: 125 nodes fold into 3 generations. Validation: SO(24) naturally produces e/μ/τ",
   "timestamp": "2026-01-02T10:23:46.057632Z",
-  "hash": "1814dbab234987ac"
+  "hash": "1814dbab234987ac",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

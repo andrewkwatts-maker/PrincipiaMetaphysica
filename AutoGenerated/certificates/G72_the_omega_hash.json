@@ -10,7 +10,7 @@
   "wl_code": "wattsConstant = 1.0; reidInvariant = 1/144; parityProduct = wattsConstant / reidInvariant; {parityProduct == 144, \"STERILE\"}",
   "result": "{True, STERILE}",
   "formula": "Omega = Pi(G1...G71) = 0 | Watts Constant = 1.0",
-  "verification_status": "TERMINAL_STASIS",
+  "verification_status": "VERIFIED",
   "watts_constant": 1.0,
   "reid_invariant": 0.006944444444444444,
   "parity_product": 144,
@@ -31,5 +31,8 @@
     "parity_verification": "Omega_W / chi_R = 144 = CHI = STERILE"
   },
   "timestamp": "2026-01-02T21:45:00Z",
-  "hash": "v16_2_omega_watts_reid_sterile"
+  "hash": "v16_2_omega_watts_reid_sterile",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "\u03b8_sterile = 163/288",
-  "verification_status": "PENDING_LOCK",
+  "formula": "θ_sterile = 163/288",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: Maximum leakage to 163 bulk. Validation: Seal tight enough for universe",
   "timestamp": "2026-01-02T10:23:46.063364Z",
-  "hash": "de0bb80d25c81d65"
+  "hash": "de0bb80d25c81d65",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

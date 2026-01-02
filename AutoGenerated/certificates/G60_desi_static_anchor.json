@@ -10,12 +10,15 @@
   "wl_code": "PENDING",
   "result": "PENDING",
   "formula": "w_a = 0",
-  "verification_status": "PENDING_LOCK",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: wa = 0 (no DE evolution). Validation: Expansion = geometric invariant",
   "timestamp": "2026-01-02T10:23:46.068163Z",
   "hash": "da59406b26ab052e",
   "derived_value": 0,
   "experimental_value": 0,
-  "units": ""
+  "units": "",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

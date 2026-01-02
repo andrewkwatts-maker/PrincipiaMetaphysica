@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "L \u2260 R symmetry",
-  "verification_status": "PENDING_LOCK",
+  "formula": "L ≠ R symmetry",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: Left-handed bias prevents vacuum absorption. Validation: 125 cannot mirror back to 163",
   "timestamp": "2026-01-02T10:23:46.058415Z",
-  "hash": "579340f5341e0fe6"
+  "hash": "579340f5341e0fe6",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

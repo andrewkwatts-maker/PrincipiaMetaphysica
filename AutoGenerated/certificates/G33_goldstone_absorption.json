@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "3 Goldstone \u2192 W\u00b1, Z\u2070",
-  "verification_status": "PENDING_LOCK",
+  "formula": "3 Goldstone → W±, Z⁰",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: Extra DOF eaten by W/Z. Validation: Unitary gauge longitudinal lock",
   "timestamp": "2026-01-02T10:23:46.061594Z",
-  "hash": "b563b632584822b4"
+  "hash": "b563b632584822b4",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

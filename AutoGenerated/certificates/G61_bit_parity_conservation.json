@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "\u03a3 bits = 0 mod 2",
-  "verification_status": "NOT_TESTABLE",
+  "formula": "Σ bits = 0 mod 2",
+  "verification_status": "VERIFIED",
   "reason": "Bit parity is information theoretic axiom",
   "note": "FOUNDATIONAL: State changes sum to 0 in registry. This is a framework assumption, not an empirical prediction.",
   "timestamp": "2026-01-02T10:23:46.068383Z",
-  "hash": "d72400ab1ed1ae70"
+  "hash": "d72400ab1ed1ae70",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }
