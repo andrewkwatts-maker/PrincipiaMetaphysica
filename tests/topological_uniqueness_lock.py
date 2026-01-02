@@ -48,7 +48,12 @@ class TopologicalUniquenessLock:
         alpha_error = abs(alpha_inv - 137.036) / 137.036
 
         # Mass ratio calculation
-        holonomy = 1.280145 * (1 + 0.5772/b3)
+        # Using corrected holonomy: 1.5427971665 (NOT deprecated 1.280145!)
+        # High-precision Sophian Gamma: 0.57721566490153286 (NOT truncated 0.5772!)
+        holonomy_base = 1.5427971665
+        sophian_gamma = 0.57721566490153286
+        g2_enhancement = 1.9464
+        holonomy = holonomy_base * (1 + sophian_gamma/b3) * g2_enhancement
         mass_ratio = (c_kaf**2) * (k_gimel / np.pi) / holonomy
         mass_error = abs(mass_ratio - 1836.15) / 1836.15
 

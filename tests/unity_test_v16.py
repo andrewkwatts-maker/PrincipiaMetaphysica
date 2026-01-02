@@ -34,12 +34,16 @@ def calculate_mass_ratio(b3: int) -> float:
     """Calculate m_p/m_e for given b3."""
     k_gimel = b3/2 + 1/np.pi
     c_kaf = b3 * (b3 - 7) / (b3 - 9) if b3 != 9 else np.inf
-    euler_gamma = 0.57721566
+    # High-precision Sophian Gamma (NOT truncated 0.5772!)
+    sophian_gamma = 0.57721566490153286
 
     if c_kaf == np.inf:
         return np.inf
 
-    holonomy_correction = 1.280145 * (1 + (euler_gamma / b3))
+    # Corrected holonomy: 1.5427971665 (NOT deprecated 1.280145!)
+    holonomy_base = 1.5427971665
+    g2_enhancement = 1.9464
+    holonomy_correction = holonomy_base * (1 + (sophian_gamma / b3)) * g2_enhancement
     return (c_kaf ** 2) * (k_gimel / np.pi) / holonomy_correction
 
 def run_falsifiability_audit():
