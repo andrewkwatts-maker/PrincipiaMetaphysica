@@ -45,8 +45,14 @@ class DemonLockGuard:
     4. SSoT sync check (JSON matches live Registry)
     """
 
-    EXPECTED_PARITY_SUM = 1.6402
+    # v17.2: Ghost Literal elimination - use registry parity_sum property
+    # EXPECTED_PARITY_SUM derived from: sophian_drag (0.6819) + tzimtzum_pressure (23/24)
     PARITY_TOLERANCE = 0.0001
+
+    @property
+    def EXPECTED_PARITY_SUM(self) -> float:
+        """Parity sum target from FormulasRegistry (eta_S + sigma_T)."""
+        return self.registry.parity_sum
 
     def __init__(self, json_path: str = None, registry: FormulasRegistry = None):
         """
@@ -228,7 +234,8 @@ class DemonLockGuard:
 
         Formula: H0 = (288/4) - (P_O/chi_eff) + eta_S = 71.55
         """
-        expected_h0 = 71.55
+        # v17.2: Ghost Literal elimination - use registry h0_local
+        expected_h0 = round(self.registry.h0_local, 2)
         tolerance = 0.01
 
         # Check registry

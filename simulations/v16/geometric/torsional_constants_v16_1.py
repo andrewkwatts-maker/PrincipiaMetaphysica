@@ -49,6 +49,10 @@ from simulations.base import (
     PMRegistry,
 )
 
+# Import Single Source of Truth for derived constants
+from core.FormulasRegistry import get_registry
+_reg = get_registry()
+
 
 class TorsionalConstantsV16(SimulationBase):
     """
@@ -643,7 +647,7 @@ class TorsionalConstantsV16(SimulationBase):
         G_val = self.G_derived if self.G_derived else 6.67430e-11
         k_val = self.k_gimel if self.k_gimel else 12.31831
         c_kaf_val = self.c_kaf if self.c_kaf else 27.2
-        anomaly_val = self.anomaly_correction if self.anomaly_correction else (1 - 1/576)
+        anomaly_val = self.anomaly_correction if self.anomaly_correction else (1 - 1/_reg.manifold_area_bulk)
 
         c_deviation = abs(c_val - 299792458.0) / 299792458.0 * 1e6
         G_deviation = abs(G_val - 6.67430e-11) / 6.67430e-11 * 1e6

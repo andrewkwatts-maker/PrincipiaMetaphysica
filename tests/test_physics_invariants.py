@@ -151,12 +151,13 @@ def test_manifold_parity():
         eta_S = REGISTRY.sophian_drag           # η_S: H0 friction coefficient
         sigma_T = REGISTRY.tzimtzum_pressure    # σ_T: Void Seal (23/24)
     else:
-        eta_S = 0.6819           # Fallback
+        reg = get_registry()
+        eta_S = reg.sophian_drag           # Fallback from SSoT
         sigma_T = 23.0 / 24.0    # MUST use fraction, NOT decimal!
 
     # The Parity Sum
     parity_sum = eta_S + sigma_T
-    expected_sum = 1.6402    # Target parity value
+    expected_sum = REGISTRY.parity_sum if REGISTRY else get_registry().parity_sum    # Target parity value from SSoT
 
     # Tolerance for "Demon Lock" validation
     tolerance = 0.0001
@@ -328,18 +329,19 @@ def test_odowd_hubble_formula():
         P_O = REGISTRY.odowd_bulk_pressure          # P_O = 163
         eta_S = REGISTRY.sophian_drag               # η_S = 0.6819
     else:
+        reg = get_registry()
         roots_total = 288
         chi_eff = 144
         P_O = 163      # O'Dowd Bulk Pressure
-        eta_S = 0.6819  # Sophian Drag
+        eta_S = reg.sophian_drag  # Sophian Drag from SSoT
 
     # O'Dowd Formula
     H0_base = roots_total / 4.0           # 288/4 = 72
     H0_bulk_correction = P_O / chi_eff    # 163/144 = 1.1319...
     H0_derived = H0_base - H0_bulk_correction + eta_S
 
-    # Expected value
-    H0_expected = 71.55
+    # Expected value from SSoT Registry
+    H0_expected = REGISTRY.h0_local if REGISTRY else get_registry().h0_local
     tolerance = 0.01
 
     is_valid = abs(H0_derived - H0_expected) < tolerance

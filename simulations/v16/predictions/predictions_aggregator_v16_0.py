@@ -46,6 +46,10 @@ from simulations.base import (
     SectionContent,
 )
 
+# Import Single Source of Truth for derived constants
+from core.FormulasRegistry import get_registry
+_reg = get_registry()
+
 
 class PredictionsAggregatorV16(SimulationBase):
     """
@@ -1162,7 +1166,7 @@ def main():
     registry.set_param("gauge.ALPHA_GUT_INV", 42.7, "gauge_unification_v16_0", "DERIVED")
     registry.set_param("proton_decay.tau_p_years", 3.9e34, "proton_decay_v16_0", "PREDICTED")
     registry.set_param("neutrino.theta_12_pred", 33.34, "neutrino_mixing_v16_0", "PREDICTED")
-    registry.set_param("cosmology.w_eff", -0.9583, "multi_sector_v16_0", "PREDICTED")
+    registry.set_param("cosmology.w_eff", -_reg.tzimtzum_pressure, "multi_sector_v16_0", "PREDICTED")
     registry.set_param("topology.n_gen", 3, "g2_geometry_v16_0", "GEOMETRIC")
 
     # Create and run simulation

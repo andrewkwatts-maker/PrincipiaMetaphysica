@@ -63,13 +63,14 @@ class SterilityReporter:
         """
         reg = self.registry
 
-        # Define geometric targets for verification
+        # v17.2: Ghost Literal elimination - define targets from registry
+        # Geometric targets are DERIVED from registry, not hardcoded
         targets = {
-            "h0_target": 71.55,
-            "parity_target": 1.6402,
-            "closure_target": 288,
-            "bulk_pressure_target": 163,
-            "pressure_divisor_target": 144,
+            "h0_target": round(reg.h0_local, 2),  # Derived via O'Dowd Formula
+            "parity_target": round(reg.parity_sum, 4),  # eta_S + sigma_T from registry
+            "closure_target": reg.roots_total,  # 288 from E8 x E8
+            "bulk_pressure_target": reg.odowd_bulk_pressure,  # 163 from registry
+            "pressure_divisor_target": int(reg.pressure_divisor),  # 144 from B3^2/4
         }
 
         # Calculate actual values

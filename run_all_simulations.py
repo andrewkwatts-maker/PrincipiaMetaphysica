@@ -220,6 +220,14 @@ try:
 except ImportError:
     DOC_SYNC_AVAILABLE = False
 
+# v17.2: Import FormulasRegistry for Ghost Literal elimination
+try:
+    from core.FormulasRegistry import get_registry as get_formulas_registry
+    FORMULAS_REGISTRY_AVAILABLE = True
+except ImportError:
+    FORMULAS_REGISTRY_AVAILABLE = False
+    warnings.warn("FormulasRegistry not available - using fallback constants")
+
 # Import v16 simulations
 # Phase 0 - Introduction (narrative only, no dependencies)
 from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
@@ -460,10 +468,11 @@ V16_VALIDATION_BOUNDS = {
 
     # Dark energy EoS: v16.2 thawing formula w0 = -1 + 1/b3 = -23/24
     # DESI 2025 thawing constraint: -0.957 ± 0.067
+    # NOTE: target loaded from FormulasRegistry.tzimtzum_pressure at runtime
     "cosmology.w0_derived": {
         "min": -1.0,
         "max": -0.9,
-        "target": -0.9583,
+        "target": None,  # Set dynamically from FormulasRegistry
         "experimental": -0.957,
         "sigma": 0.067,
     },
@@ -507,6 +516,15 @@ V16_VALIDATION_BOUNDS = {
         "sigma": 0.3e-5,
     },
 }
+
+# v17.2: Dynamically populate target values from FormulasRegistry (Ghost Literal elimination)
+if FORMULAS_REGISTRY_AVAILABLE:
+    _formula_reg = get_formulas_registry()
+    # w0_derived target = -tzimtzum_pressure = -23/24
+    V16_VALIDATION_BOUNDS["cosmology.w0_derived"]["target"] = -_formula_reg.tzimtzum_pressure
+else:
+    # Fallback to hardcoded value if registry unavailable
+    V16_VALIDATION_BOUNDS["cosmology.w0_derived"]["target"] = -0.9583
 
 
 def validate_against_bounds(param_path: str, value: float) -> Dict[str, Any]:

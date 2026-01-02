@@ -27,6 +27,18 @@ import os
 from pathlib import Path
 from typing import Dict, Any, Optional, Tuple
 
+# Import Single Source of Truth for derived constants
+try:
+    from core.FormulasRegistry import get_registry
+    _reg = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _reg = None
+    _REGISTRY_AVAILABLE = False
+
+# Module-level constant for tzimtzum_pressure default (w0 = -23/24)
+_TZIMTZUM_DEFAULT = _reg.tzimtzum_pressure if _REGISTRY_AVAILABLE else 0.9583
+
 
 def set_publication_style():
     """Set publication-quality matplotlib style."""
@@ -336,11 +348,11 @@ def plot_theory_residuals(
     if theory_data:
         theta23_pm = theory_data.get('neutrino.theta_23_pred', {}).get('value', 46.08)
         delta_cp_pm = theory_data.get('neutrino.delta_CP_pred', {}).get('value', 232.5)
-        w0_pm = theory_data.get('cosmology.w0_derived', {}).get('value', -0.9583)
+        w0_pm = theory_data.get('cosmology.w0_derived', {}).get('value', -_TZIMTZUM_DEFAULT)
     else:
         theta23_pm = 46.08
         delta_cp_pm = 232.5
-        w0_pm = -0.9583  # v16.2: -23/24 from b₃=24 thawing
+        w0_pm = -_TZIMTZUM_DEFAULT  # v16.2: -23/24 from b₃=24 thawing
 
     # Calculate residuals in units of σ
     params = {
