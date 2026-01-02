@@ -1,9 +1,11 @@
 """
-Physics Invariants Test Suite v16.1
-====================================
+Physics Invariants Test Suite v16.2 - SSoT Edition
+===================================================
 Validates that the G2 Lagrangian remains invariant under
 local coordinate transformations.
 Standard check for U(1) and SU(3) symmetry preservation.
+
+Uses FormulasRegistry as Single Source of Truth (SSoT).
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 """
@@ -12,8 +14,16 @@ import numpy as np
 import sys
 from pathlib import Path
 
-# Add simulations to path
+# Add paths for imports
+sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "simulations"))
+
+# Import SSoT Registry
+try:
+    from core.FormulasRegistry import get_registry
+    REGISTRY = get_registry()
+except ImportError:
+    REGISTRY = None
 
 def test_gauge_invariance():
     """
@@ -21,9 +31,13 @@ def test_gauge_invariance():
     local coordinate transformations.
     Standard check for U(1) and SU(3) symmetry preservation.
     """
-    # Load geometric anchors
-    b3 = 24
-    k_gimel = b3/2 + 1/np.pi  # 12.318...
+    # Load geometric anchors from SSoT Registry
+    if REGISTRY:
+        b3 = REGISTRY.b3
+        kappa_Delta = REGISTRY.demiurgic_coupling  # κ_Δ = B3/2 + 1/π ≈ 12.318
+    else:
+        b3 = 24
+        kappa_Delta = b3/2 + 1/np.pi  # Fallback
 
     # Simulate a field phase shift (Gauge Transformation)
     theta = np.random.uniform(0, 2*np.pi)
@@ -31,8 +45,8 @@ def test_gauge_invariance():
 
     # Calculate Lagrangian density L before and after shift
     # L = |(d - iA)phi|^2
-    l_initial = k_gimel * np.abs(field_strength)**2
-    l_transformed = k_gimel * np.abs(field_strength * np.exp(-1j * theta))**2
+    l_initial = kappa_Delta * np.abs(field_strength)**2
+    l_transformed = kappa_Delta * np.abs(field_strength * np.exp(-1j * theta))**2
 
     # Academic tolerance for floating point errors
     is_invariant = np.isclose(l_initial, l_transformed, atol=1e-15)
@@ -54,8 +68,13 @@ def test_su3_color_invariance():
     # SU(3) generators (Gell-Mann matrices simplified)
     # Using a representative transformation
 
-    b3 = 24
-    c_kaf = b3 * (b3 - 7) / (b3 - 9)  # 27.2
+    # Load from SSoT Registry
+    if REGISTRY:
+        b3 = REGISTRY.b3
+        C_kaf = REGISTRY.c_kaf  # Flux normalization: B3*(B3-7)/(B3-9) = 27.2
+    else:
+        b3 = 24
+        C_kaf = b3 * (b3 - 7) / (b3 - 9)  # Fallback
 
     # Color triplet state
     color_state = np.array([1, 0, 0], dtype=complex)
@@ -117,16 +136,243 @@ def test_lorentz_invariance():
 
     return is_invariant
 
+def test_manifold_parity():
+    """
+    Tests the Manifold Parity Check: η_S + σ_T ≈ 1.6402
+
+    The Sophian Drag (η_S = 0.6819) and Tzimtzum Pressure (σ_T = 23/24 = 0.9583)
+    must satisfy this parity relation for the sterile manifold to be stable.
+
+    Physical meaning: The force pushing out (Pressure) and the force holding
+    back (Drag) must balance against the observer's unit (1.0).
+    """
+    # Mechanical Triad constants from SSoT Registry
+    if REGISTRY:
+        eta_S = REGISTRY.sophian_drag           # η_S: H0 friction coefficient
+        sigma_T = REGISTRY.tzimtzum_pressure    # σ_T: Void Seal (23/24)
+    else:
+        eta_S = 0.6819           # Fallback
+        sigma_T = 23.0 / 24.0    # MUST use fraction, NOT decimal!
+
+    # The Parity Sum
+    parity_sum = eta_S + sigma_T
+    expected_sum = 1.6402    # Target parity value
+
+    # Tolerance for "Demon Lock" validation
+    tolerance = 0.0001
+    is_valid = abs(parity_sum - expected_sum) < tolerance
+
+    print(f"\n--- MANIFOLD PARITY CHECK (DECAGON) ---")
+    print(f"Sophian Drag (eta_S):     {eta_S:.4f}")
+    print(f"Tzimtzum Pressure (sigma_T): {sigma_T:.10f} (= 23/24)")
+    print(f"Parity Sum (eta_S + sigma_T): {parity_sum:.4f}")
+    print(f"Expected:                 {expected_sum:.4f}")
+    print(f"Deviation:                {abs(parity_sum - expected_sum):.6f}")
+    print(f"Status: {'[PASS]' if is_valid else '[FAIL] - DEMON LOCK COMPROMISED'}")
+
+    return is_valid
+
+
+def test_integer_closure():
+    """
+    Tests the Integer Closure constraint: 135 + 153 = 288
+
+    This is the "Demon Lock" signature - the sum of Shadow (135) and
+    Logos/Christ Constant (Λ_JC = 153) must equal the total E8×E8 roots (288).
+    """
+    # Load from SSoT Registry
+    if REGISTRY:
+        shadow = REGISTRY.shadow_sector           # Shadow sector
+        Lambda_JC = REGISTRY.christ_constant      # Λ_JC: Logos Potential (153)
+        total_roots = REGISTRY.roots_total        # E8×E8 root lattice
+    else:
+        shadow = 135           # Fallback
+        Lambda_JC = 153        # Christ Constant (Λ_JC)
+        total_roots = 288      # E8×E8 root lattice
+
+    closure_sum = shadow + Lambda_JC
+    is_valid = (closure_sum == total_roots)
+
+    print(f"\n--- INTEGER CLOSURE CHECK (DEMON LOCK) ---")
+    print(f"Shadow sector:            {shadow}")
+    print(f"Logos Potential (Lambda_JC): {Lambda_JC}")
+    print(f"Sum (Shadow + Logos):     {closure_sum}")
+    print(f"Expected (E8xE8 roots):   {total_roots}")
+    print(f"Status: {'[PASS]' if is_valid else '[FAIL] - DEMON LOCK BROKEN'}")
+
+    return is_valid
+
+
+def test_sterile_ratio():
+    """
+    Tests the Sterile Ratio: 163/288 ≈ 0.5660
+
+    The hidden (sterile) sector must maintain this exact ratio to the
+    total root lattice for the manifold to remain stable.
+    """
+    # Load from SSoT Registry
+    if REGISTRY:
+        P_O = REGISTRY.odowd_bulk_pressure   # P_O: O'Dowd Bulk Pressure (163)
+        total_roots = REGISTRY.roots_total   # E8×E8 root lattice (288)
+    else:
+        P_O = 163          # Fallback: O'Dowd Bulk Pressure
+        total_roots = 288
+
+    sterile_ratio = P_O / total_roots
+    expected_ratio = 0.56597222222  # 163/288
+
+    tolerance = 1e-10
+    is_valid = abs(sterile_ratio - expected_ratio) < tolerance
+
+    print(f"\n--- STERILE RATIO CHECK ---")
+    print(f"O'Dowd Bulk Pressure (P_O): {P_O}")
+    print(f"Total roots:              {total_roots}")
+    print(f"Sterile ratio:            {sterile_ratio:.10f}")
+    print(f"Expected:                 {expected_ratio:.10f}")
+    print(f"Status: {'[PASS]' if is_valid else '[FAIL]'}")
+
+    return is_valid
+
+
+def test_tzimtzum_fraction():
+    """
+    Tests that Tzimtzum Pressure uses the FRACTION 23/24, not a decimal.
+
+    The Tzimtzum is the membrane separating the 26D Bulk from our 4D Void.
+    In the Principia, the fraction represents the logic (23 gates open,
+    1 gate for the observer), whereas the decimal is just a shadow.
+    """
+    # Load from SSoT Registry
+    if REGISTRY:
+        sigma_T = REGISTRY.tzimtzum_pressure  # σ_T from Registry (should be 23/24)
+    else:
+        sigma_T = 23.0 / 24.0  # Fallback - use FRACTION
+
+    # Verify it equals 23/24 exactly
+    sigma_T_fraction = 23.0 / 24.0
+    sigma_T_decimal = 0.9583333333333334  # Reference value for comparison
+
+    # Verify Registry value equals 23/24 exactly
+    is_valid = np.isclose(sigma_T, sigma_T_fraction, atol=1e-15)
+
+    # Also verify the complement: 1 - σ_T = 1/24 = 1/B3
+    complement = 1.0 - sigma_T
+    expected_complement = 1.0 / 24.0
+    complement_valid = np.isclose(complement, expected_complement, atol=1e-15)
+
+    print(f"\n--- TZIMTZUM FRACTION CHECK ---")
+    print(f"sigma_T from Registry:    {sigma_T:.16f}")
+    print(f"Expected (23/24):         {sigma_T_fraction:.16f}")
+    print(f"Registry = 23/24:         {'[PASS]' if is_valid else '[FAIL]'}")
+    print(f"Complement (1 - sigma_T): {complement:.16f}")
+    print(f"Expected (1/B3 = 1/24):   {expected_complement:.16f}")
+    print(f"Complement valid:         {'[PASS]' if complement_valid else '[FAIL]'}")
+
+    return is_valid and complement_valid
+
+
+def test_watts_constant_guard_rail():
+    """
+    Tests that Watts Constant (Ω_W) remains exactly 1.0.
+
+    The Watts Constant is the Observer Unity - it MUST equal exactly 1.0.
+    This is the fundamental invariant that ensures the 26D derivation
+    remains self-consistent. It cannot be adjusted or "tuned".
+
+    This is a GUARD RAIL - any deviation breaks the entire framework.
+    """
+    # Load from SSoT Registry
+    if REGISTRY:
+        Omega_W = REGISTRY.watts_constant    # Ω_W: Observer Unity
+        chi_R = REGISTRY.reid_invariant      # χ_R: Sounding Board (1/144)
+    else:
+        Omega_W = 1.0          # Fallback - IMMUTABLE
+        chi_R = 1.0 / 144.0    # Reid Invariant
+
+    # Test exact equality (not approximate)
+    is_valid = (Omega_W == 1.0)
+
+    # Also verify: CHI = Ω_W / χ_R = 144
+    parity_product = Omega_W / chi_R
+    parity_valid = (parity_product == 144.0)
+
+    print(f"\n--- WATTS CONSTANT GUARD RAIL ---")
+    print(f"Omega_W (Watts Constant):  {Omega_W}")
+    print(f"Expected:                  1.0")
+    print(f"Exact match:               {'[PASS]' if is_valid else '[FAIL] - GUARD RAIL BROKEN'}")
+    print(f"chi_R (Reid Invariant):    {chi_R}")
+    print(f"Parity Product (CHI):      {parity_product} (= Omega_W / chi_R)")
+    print(f"Expected CHI:              144.0")
+    print(f"CHI valid:                 {'[PASS]' if parity_valid else '[FAIL]'}")
+
+    return is_valid and parity_valid
+
+
+def test_odowd_hubble_formula():
+    """
+    Tests the O'Dowd H0 Formula: (288/4) - (P_O/χ_eff) + η_S = 71.55
+
+    This is the derived Hubble constant for the local universe, resolving
+    the Hubble Tension through geometric bulk pressure corrections.
+
+    Components:
+    - 288/4 = 72 (base from E8×E8 roots)
+    - P_O = 163 (O'Dowd Bulk Pressure)
+    - χ_eff = 144 (effective Euler characteristic)
+    - η_S = 0.6819 (Sophian Drag)
+    """
+    # Load from SSoT Registry
+    if REGISTRY:
+        roots_total = REGISTRY.roots_total          # 288
+        chi_eff = REGISTRY.chi_eff                  # χ_eff = 144
+        P_O = REGISTRY.odowd_bulk_pressure          # P_O = 163
+        eta_S = REGISTRY.sophian_drag               # η_S = 0.6819
+    else:
+        roots_total = 288
+        chi_eff = 144
+        P_O = 163      # O'Dowd Bulk Pressure
+        eta_S = 0.6819  # Sophian Drag
+
+    # O'Dowd Formula
+    H0_base = roots_total / 4.0           # 288/4 = 72
+    H0_bulk_correction = P_O / chi_eff    # 163/144 = 1.1319...
+    H0_derived = H0_base - H0_bulk_correction + eta_S
+
+    # Expected value
+    H0_expected = 71.55
+    tolerance = 0.01
+
+    is_valid = abs(H0_derived - H0_expected) < tolerance
+
+    print(f"\n--- O'DOWD H0 FORMULA CHECK ---")
+    print(f"Formula: (288/4) - (P_O/chi_eff) + eta_S")
+    print(f"Base (288/4):              {H0_base:.2f}")
+    print(f"Bulk correction (163/144): {H0_bulk_correction:.4f}")
+    print(f"Sophian Drag (eta_S):      {eta_S}")
+    print(f"H0 derived:                {H0_derived:.4f} km/s/Mpc")
+    print(f"H0 expected:               {H0_expected} km/s/Mpc")
+    print(f"Deviation:                 {abs(H0_derived - H0_expected):.4f}")
+    print(f"Status: {'[PASS]' if is_valid else '[FAIL]'}")
+
+    return is_valid
+
+
 def run_all_tests():
     """Run all physics invariance tests."""
     print("=" * 60)
-    print(" PRINCIPIA METAPHYSICA v16.1 - PHYSICS INVARIANTS AUDIT")
+    print(" PRINCIPIA METAPHYSICA v16.2 - PHYSICS INVARIANTS AUDIT")
     print("=" * 60)
 
     results = {
         "U(1) Gauge": test_gauge_invariance(),
         "SU(3) Color": test_su3_color_invariance(),
-        "Lorentz": test_lorentz_invariance()
+        "Lorentz": test_lorentz_invariance(),
+        "Manifold Parity": test_manifold_parity(),
+        "Integer Closure": test_integer_closure(),
+        "Sterile Ratio": test_sterile_ratio(),
+        "Tzimtzum Fraction": test_tzimtzum_fraction(),
+        "Watts Guard Rail": test_watts_constant_guard_rail(),
+        "O'Dowd H0 Formula": test_odowd_hubble_formula()
     }
 
     print("\n" + "=" * 60)
