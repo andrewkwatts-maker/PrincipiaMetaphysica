@@ -131,7 +131,7 @@ def run_all_audits():
     # Alpha (Fine Structure Constant)
     s3_projection = 2.954060
     alpha_inv = (c_kaf * b3**2) / (kappa_Delta * np.pi * s3_projection)
-    alpha_error = abs(alpha_inv - 137.036) / 137.036 * 100
+    alpha_error = abs(alpha_inv - 137.036) / 137.036 * 100  # alpha inverse (CODATA)
 
     # Mass ratio - CORRECTED HOLONOMY (not 1.280145!)
     # Using the correct value: 1.5427971665 * (1 + gamma/24) * 1.9464
@@ -139,7 +139,7 @@ def run_all_audits():
     g2_enhancement = 1.9464       # G2 curvature enhancement
     holonomy = holonomy_base * (1 + sophian_gamma / b3) * g2_enhancement
     mass_ratio = (c_kaf**2) * (kappa_Delta / np.pi) / holonomy
-    mass_error = abs(mass_ratio - 1836.15) / 1836.15 * 100
+    mass_error = abs(mass_ratio - 1836.15) / 1836.15 * 100  # proton/electron mass ratio (CODATA)
 
     # If registry available, use its calculation
     if registry:
@@ -156,12 +156,12 @@ def run_all_audits():
     results["derived_constants"] = {
         "alpha_inv": {
             "value": float(registry_alpha_inv),
-            "target": 137.036,
+            "target": 137.036,  # alpha inverse (CODATA)
             "error_pct": float(alpha_error)
         },
         "mass_ratio": {
             "value": float(registry_mass_ratio),
-            "target": 1836.15,
+            "target": 1836.15,  # proton/electron mass ratio (CODATA)
             "error_pct": float(mass_error),
             "holonomy_note": "Using corrected 1.5427971665 (NOT deprecated 1.280145)"
         },

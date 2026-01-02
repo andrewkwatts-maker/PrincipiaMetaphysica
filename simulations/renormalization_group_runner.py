@@ -31,7 +31,7 @@ class RenormalizationGroupRunner:
     Evolves couplings from G2 Unification Scale (M_GUT) down to Electroweak Scale (M_Z).
     """
 
-    def __init__(self, M_GUT: float = 2.1e16, M_Z: float = 91.1876, alpha_gut_input: float = 1/24.0):
+    def __init__(self, M_GUT: float = 2.1e16, M_Z: float = 91.1876, alpha_gut_input: float = 1/24.0):  # Z boson mass (PDG)
         """
         Initialize the RG runner.
 
