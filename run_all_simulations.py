@@ -461,8 +461,8 @@ V16_VALIDATION_BOUNDS = {
     "higgs.m_h_predicted": {
         "min": 115,
         "max": 130,
-        "target": 125.10,
-        "experimental": 125.10,
+        "target": 125.10,  # Higgs mass (PDG)
+        "experimental": 125.10,  # Higgs mass (PDG)
         "sigma": 0.14,
     },
 

@@ -675,7 +675,7 @@ def main():
     registry.set_param("topology.b3", 24)
     registry.set_param("gauge.M_GUT", 2.118e16)
     registry.set_param("gauge.alpha_GUT", 1.0/23.54)
-    registry.set_param("higgs.m_h", 125.10)
+    registry.set_param("higgs.m_h", 125.10)  # Higgs mass (PDG)
 
     # Create and run appendix
     appendix = AppendixLValuesSummary()
