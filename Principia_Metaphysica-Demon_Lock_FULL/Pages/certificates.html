@@ -802,7 +802,7 @@
     <footer>
         <p>
             <strong>Principia Metaphysica v16.2</strong><br>
-            &copy; 2026 Andrew Keith Watts. MIT License.
+            &copy; 2025 Andrew Keith Watts. MIT License.
         </p>
     </footer>
   </div>
@@ -847,11 +847,15 @@
     const LEGACY_CERTIFICATES = [
       { id: 1, name: "Hubble Unwinding Rate", symbol: "H\u2080", formula: "H\u2080 = H\u2080_CMB \u00d7 (1 + sin\u00b2\u03b8/2)", derived: 71.55, experimental: 73.04, uncertainty: 1.04, units: "km/s/Mpc", domain: "Cosmology", notes: "O'Dowd formula: (288/4) - (163/144) + η_S = 71.55 [OBSOLETE: Hubble tension resolved via sin\u00b2 geometric correction",
         pythonCode: `# Certificate 1: Hubble Constant (O'Dowd Formula v17)
-b3 = 24  # G2 Betti number (Manifold Base)
-ROOTS = 288  # E8 x E8 root count
-P_O = 163  # O'Dowd Bulk Pressure = (7*24) - 5
-chi_eff = 144  # Effective Euler characteristic = b3^2 / 4
-eta_S = 0.6819  # Sophian Drag
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+b3 = reg.b3                     # 24
+ROOTS = reg.roots_total         # 288
+P_O = reg.odowd_bulk_pressure   # 163
+chi_eff = reg.chi_eff           # 144
+eta_S = reg.sophian_drag        # 0.6819
 
 # O'Dowd Formula: geometric derivation from manifold
 H0_local = (ROOTS / 4) - (P_O / chi_eff) + eta_S
@@ -860,9 +864,13 @@ H0_local = (ROOTS / 4) - (P_O / chi_eff) + eta_S
       },
       { id: 2, name: "Fine Structure Constant", symbol: "\u03b1\u207b\u00b9", formula: "\u03b1\u207b\u00b9 = k\u00b2 - b\u2083/\u03c6 + \u03c6/(4\u03c0)", derived: 137.037, experimental: 137.036, uncertainty: 0.01, units: "", domain: "QED", notes: "Gimel\u00b2 - topological correction + phase",
         pythonCode: `# Certificate 2: Fine Structure Constant
-b3 = 24
-k_gimel = 12.3183098862
-phi = 1.6180339887
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+b3 = reg.b3                     # 24
+k_gimel = reg.k_gimel           # 12.3183098862
+phi = reg.phi                   # 1.6180339887
 
 # The fine structure constant emerges from G2 spectral geometry
 alpha_inv = k_gimel**2 - b3/phi + phi/(4*np.pi)
@@ -876,8 +884,12 @@ alpha_inv = k_gimel**2 - b3/phi + phi/(4*np.pi)
       { id: 3, name: "Strong Coupling", symbol: "\u03b1s(MZ)", formula: "\u03b1s = [k / (b\u2083(\u03c0+1) + k/2)] \u00d7 (1+1/(b\u2083\u03c0))", derived: 0.1182, experimental: 0.1180, uncertainty: 0.0009, units: "", domain: "QCD", notes: "v16.2: Lattice correction from 24-cycle friction (0.27\u03c3)",
         pythonCode: `# Certificate 3: Strong Coupling at M_Z
 # v16.2 FIX: Added QCD lattice correction, 1.45\u03c3 \u2192 0.27\u03c3
-b3 = 24
-k_gimel = 12.3183098862
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+b3 = reg.b3                     # 24
+k_gimel = reg.k_gimel           # 12.3183098862
 
 # Base coupling from G2 dimensional mode count
 denominator = b3 * (np.pi + 1) + k_gimel / 2
@@ -896,8 +908,12 @@ alpha_s = alpha_s_base * lattice_correction
       },
       { id: 4, name: "Cosmological Constant", symbol: "\u039b", formula: "\u039b = 1/(b\u2083 \u00d7 k)^49", derived: -121.96, experimental: -121.96, uncertainty: 1.0, units: "log\u2081\u2080", domain: "Cosmology", notes: "10\u207b\u00b9\u00b2\u00b2 from 49th power (2b\u2083+1)",
         pythonCode: `# Certificate 4: Cosmological Constant
-b3 = 24
-k_gimel = 12.3183098862
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+b3 = reg.b3                     # 24
+k_gimel = reg.k_gimel           # 12.3183098862
 
 # The CC emerges from manifold saturation depth
 # 49 = 2*b3 + 1 (dimensional closure)
@@ -917,8 +933,12 @@ log_Lambda = np.log10(Lambda_bulk)
       { id: 6, name: "Gravitational Constant", symbol: "G_res", formula: "G = 1/(2\u03c0\u00d713)\u00b2 \u00d7 k/b\u2083\u2074", derived: "self", experimental: "self", uncertainty: 0.01, units: "residue", domain: "Gravity", notes: "Scale verification" },
       { id: 7, name: "Higgs VEV", symbol: "v", formula: "v = k \u00d7 (b\u2083 - 4)", derived: 246.37, experimental: 246.22, uncertainty: 0.5, units: "GeV", domain: "Electroweak", notes: "Gimel \u00d7 20 extra dimensions",
         pythonCode: `# Certificate 7: Higgs Vacuum Expectation Value
-b3 = 24
-k_gimel = 12.3183098862
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+b3 = reg.b3                     # 24
+k_gimel = reg.k_gimel           # 12.3183098862
 
 # The Higgs VEV emerges from dimensional reduction
 # (b3 - 4) = 20 extra dimensions above 4D
@@ -934,7 +954,15 @@ v_higgs = k_gimel * extra_dims
       },
       { id: 8, name: "Fermi Constant", symbol: "GF", formula: "GF = 1 / (\u221a2 \u00d7 v\u00b2)", derived: 1.166e-5, experimental: 1.166e-5, uncertainty: 0.002e-5, units: "GeV\u207b\u00b2", domain: "Electroweak", notes: "From Higgs VEV",
         pythonCode: `# Certificate 8: Fermi Constant
-v_higgs = 246.37  # From C07
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+b3 = reg.b3                     # 24
+k_gimel = reg.k_gimel           # 12.3183098862
+
+# v_higgs derived from registry (C07)
+v_higgs = k_gimel * (b3 - 4)    # = 246.37 GeV
 
 # Standard Model relation
 G_F = 1 / (np.sqrt(2) * v_higgs**2)
@@ -947,8 +975,12 @@ G_F = 1 / (np.sqrt(2) * v_higgs**2)
       },
       { id: 9, name: "Weak Mixing Angle", symbol: "sin\u00b2\u03b8W", formula: "sin\u00b2\u03b8W = 3 / (k + \u03c6 - 1)", derived: 0.2319, experimental: 0.2312, uncertainty: 0.001, units: "", domain: "Electroweak", notes: "SU(2) generators / shifted Gimel",
         pythonCode: `# Certificate 9: Weak Mixing Angle
-k_gimel = 12.3183098862
-phi = 1.6180339887
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+k_gimel = reg.k_gimel           # 12.3183098862
+phi = reg.phi                   # 1.6180339887
 
 # SU(2) has 3 generators
 # Denominator is shifted Gimel + golden ratio
@@ -995,8 +1027,12 @@ sin2_theta_W = 3 / (k_gimel + phi - 1)
       { id: 41, name: "Holographic Bound", symbol: "I_total", formula: "I = (b\u2083 \u00d7 k)^49 = 1/\u039b", derived: 121.96, experimental: 121.96, uncertainty: 1.0, units: "log\u2081\u2080(bits)", domain: "Information", notes: "Total addressable bit-depth" },
       { id: 42, name: "Higgs Mass", symbol: "mH", formula: "mH = (k\u00b2 / \u03c6) \u00d7 (4/3)", derived: 125.04, experimental: 125.10, uncertainty: 0.14, units: "GeV", domain: "Electroweak", notes: "The 42nd Lock: Dynamic Harmonic",
         pythonCode: `# Certificate 42: Higgs Mass - The Final Lock
-k_gimel = 12.3183098862
-phi = 1.6180339887
+from core.FormulasRegistry import get_registry
+reg = get_registry()
+
+# Use registry values, not hardcoded numbers
+k_gimel = reg.k_gimel           # 12.3183098862
+phi = reg.phi                   # 1.6180339887
 
 # The Higgs mass emerges from the 42nd certificate
 # Dynamic harmonic from spectral geometry
