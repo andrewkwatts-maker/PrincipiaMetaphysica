@@ -181,15 +181,16 @@ def test_integer_closure():
     This is the "Demon Lock" signature - the sum of Shadow (135) and
     Logos/Christ Constant (Λ_JC = 153) must equal the total E8×E8 roots (288).
     """
-    # Load from SSoT Registry
+    # Load from SSoT Registry - ALWAYS prefer registry values
     if REGISTRY:
         shadow = REGISTRY.shadow_sector           # Shadow sector
         Lambda_JC = REGISTRY.christ_constant      # Λ_JC: Logos Potential (153)
         total_roots = REGISTRY.roots_total        # E8×E8 root lattice
     else:
-        shadow = 135           # Fallback
-        Lambda_JC = 153        # Christ Constant (Λ_JC)
-        total_roots = 288      # E8×E8 root lattice
+        # Fallback only if registry unavailable - must match SSoT values
+        shadow = 135           # Fallback: must match registry.shadow_sector
+        Lambda_JC = 153        # Fallback: must match registry.christ_constant
+        total_roots = 288      # Fallback: must match registry.roots_total
 
     closure_sum = shadow + Lambda_JC
     is_valid = (closure_sum == total_roots)

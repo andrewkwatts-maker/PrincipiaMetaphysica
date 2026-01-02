@@ -50,6 +50,10 @@ from simulations.base import (
     Parameter,
     PMRegistry,
 )
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
 
 
 class MultiSectorV16(SimulationBase):
@@ -966,11 +970,11 @@ def export_multi_sector_v16() -> Dict[str, Any]:
     registry = PMRegistry.get_instance()
     EstablishedPhysics.load_into_registry(registry)
 
-    # Add topology if not present
+    # Add topology if not present - values from FormulasRegistry SSoT
     if not registry.has_param("topology.chi_eff"):
         registry.set_param(
             "topology.chi_eff",
-            144,
+            _REG.chi_eff,  # 144 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )
@@ -978,7 +982,7 @@ def export_multi_sector_v16() -> Dict[str, Any]:
     if not registry.has_param("topology.b3"):
         registry.set_param(
             "topology.b3",
-            24,
+            _REG.b3,  # 24 from SSoT
             source="ESTABLISHED:G2_topology",
             status="ESTABLISHED"
         )

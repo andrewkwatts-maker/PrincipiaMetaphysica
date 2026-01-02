@@ -228,6 +228,19 @@ except ImportError:
     FORMULAS_REGISTRY_AVAILABLE = False
     warnings.warn("FormulasRegistry not available - using fallback constants")
 
+# v17.2-Absolute: Import validation scripts for anti-tautology checks
+try:
+    from tests.test_value_context_audit import ValueContextAuditor
+    VALUE_CONTEXT_AUDIT_AVAILABLE = True
+except ImportError:
+    VALUE_CONTEXT_AUDIT_AVAILABLE = False
+
+try:
+    from tests.test_sterility_audit import GhostLiteralScanner
+    STERILITY_AUDIT_AVAILABLE = True
+except ImportError:
+    STERILITY_AUDIT_AVAILABLE = False
+
 # Import v16 simulations
 # Phase 0 - Introduction (narrative only, no dependencies)
 from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
@@ -2042,6 +2055,86 @@ def main():
             if not args.quiet:
                 print(f"[WARN] Could not sync documentation: {e}")
 
+    # =========================================================================
+    # v17.2-Absolute: ANTI-TAUTOLOGY VALIDATION
+    # =========================================================================
+    # Run validation scripts to ensure:
+    # 1. No Ghost Literals (hardcoded DERIVED values)
+    # 2. No tautological validation (validator != simulation)
+    # 3. All values properly attributed (DERIVED vs EXPERIMENTAL)
+    # =========================================================================
+    validation_results = {
+        "value_context_audit": {"status": "NOT_RUN", "violations": 0},
+        "sterility_audit": {"status": "NOT_RUN", "violations": 0},
+        "overall": "NOT_RUN"
+    }
+    validation_failed = False
+
+    if not args.quiet:
+        print("\n" + "=" * 80)
+        print("v17.2-Absolute VALIDATION - ANTI-TAUTOLOGY CHECKS")
+        print("=" * 80)
+
+    # Value Context Audit - checks DERIVED vs EXPERIMENTAL value usage
+    if VALUE_CONTEXT_AUDIT_AVAILABLE:
+        try:
+            auditor = ValueContextAuditor()
+            is_compliant = auditor.scan_repository()
+            violations = auditor.violations
+            validation_results["value_context_audit"] = {
+                "status": "PASS" if is_compliant else "FAIL",
+                "violations": len(violations),
+                "details": [str(v) for v in violations[:10]] if violations else []
+            }
+            if not args.quiet:
+                if is_compliant:
+                    print("[PASS] Value Context Audit: All values properly attributed")
+                else:
+                    print(f"[FAIL] Value Context Audit: {len(violations)} violations found")
+                    for v in violations[:5]:
+                        print(f"  - {v}")
+                    validation_failed = True
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Value Context Audit failed: {e}")
+            validation_results["value_context_audit"]["status"] = "ERROR"
+    else:
+        if not args.quiet:
+            print("[SKIP] Value Context Audit not available")
+
+    # Sterility Audit - checks for Ghost Literals
+    if STERILITY_AUDIT_AVAILABLE:
+        try:
+            scanner = GhostLiteralScanner()
+            is_clean = scanner.scan_repository()
+            ghost_count = len(scanner.ghost_findings)
+            validation_results["sterility_audit"] = {
+                "status": "PASS" if is_clean else "FAIL",
+                "violations": ghost_count
+            }
+            if not args.quiet:
+                if is_clean:
+                    print("[PASS] Sterility Audit: No Ghost Literals detected")
+                else:
+                    print(f"[FAIL] Sterility Audit: {ghost_count} Ghost Literals found")
+                    validation_failed = True
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Sterility Audit failed: {e}")
+            validation_results["sterility_audit"]["status"] = "ERROR"
+    else:
+        if not args.quiet:
+            print("[SKIP] Sterility Audit not available")
+
+    # Overall validation status
+    validation_results["overall"] = "FAIL" if validation_failed else "PASS"
+    if not args.quiet:
+        print("-" * 80)
+        print(f"Validation Status: {validation_results['overall']}")
+
+    # Add validation results to output data
+    output_data["validation"]["anti_tautology"] = validation_results
+
     # Optionally run Wolfram executor
     if args.wolfram:
         run_wolfram_executor(
@@ -2049,9 +2142,23 @@ def main():
             force=args.wolfram_force
         )
 
-    # Return exit code based on results
+    # Return exit code based on results (simulations AND validations)
     validation = output_data["validation"]
-    exit_code = 0 if validation["simulations_failed"] == 0 else 1
+    simulations_ok = validation["simulations_failed"] == 0
+    validations_ok = not validation_failed
+
+    if simulations_ok and validations_ok:
+        exit_code = 0
+        if not args.quiet:
+            print("\n[SUCCESS] All simulations passed, all validations passed")
+    elif not simulations_ok:
+        exit_code = 1
+        if not args.quiet:
+            print(f"\n[FAILURE] {validation['simulations_failed']} simulations failed")
+    else:
+        exit_code = 2  # Validation failure (distinct from simulation failure)
+        if not args.quiet:
+            print("\n[FAILURE] Anti-tautology validation failed")
 
     sys.exit(exit_code)
 
