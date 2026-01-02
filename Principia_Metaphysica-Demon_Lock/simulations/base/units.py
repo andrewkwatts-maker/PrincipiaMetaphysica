@@ -355,7 +355,7 @@ if __name__ == "__main__":
 
     # HEP conversions
     print("\n3. High Energy Physics Conversions:")
-    m_higgs = 125.1  # GeV
+    m_higgs = 125.1  # Higgs mass (PDG)
     print(f"   Higgs mass = {m_higgs} GeV = {gev_to_kg(m_higgs):.3e} kg")
     print(f"   1 GeV^-1 = {GEV_INV_IN_FM:.3f} fm")
 

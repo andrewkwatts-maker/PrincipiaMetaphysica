@@ -289,24 +289,35 @@ The following table maps PM-specific terminology to standard physics concepts to
 | CHI | Effective Euler Characteristic | chi_eff = 144 | - |
 | Active/Hidden Split | Visible/Dark Sector | 125 + 163 = 288 | - |
 
-### The Seven Pillars (Named Constants)
+### The Ten Pillars (Named Constants)
 
-PM v16.2 honors intellectual influences by naming seven core constants:
+PM v16.2 honors intellectual influences by naming ten core constants - the **Sacred Heptagon** (7 intellectual anchors) plus the **Mechanical Triad** (3 structural constants):
+
+#### The Sacred Heptagon (Intellectual Anchors)
 
 | Constant | Symbol | Value | Role | Named For |
 |----------|--------|-------|------|-----------|
-| **Watts Constant** | Omega_W | 1.0 | Observer Unity | Andrew Keith Watts |
-| **Reid Invariant** | chi_R | 1/144 | Sounding Board | Richard George Reid [074] |
-| **Weinstein Scale** | kappa_E | 12.0 | Spinor Process | Eric Weinstein |
-| **Hossenfelder Constant** | lambda_S | sqrt(24) | Hidden Root | Sabine Hossenfelder |
+| **Watts Constant** | Ω_W | 1.0 | Observer Unity | Andrew Keith Watts |
+| **Reid Invariant** | χ_R | 1/144 | Sounding Board | Richard George Reid [074] |
+| **Weinstein Scale** | κ_E | 12.0 | Spinor Process | Eric Weinstein |
+| **Hossenfelder Constant** | λ_S | √24 | Hidden Root | Sabine Hossenfelder |
 | **O'Dowd Constant** | P_O | 163 | Bulk Pressure | Matt O'Dowd |
-| **Penrose-Hameroff Constant** | Phi_PH | 13 | Biological Bridge | Penrose & Hameroff |
-| **Christ Constant** | Lambda_JC | 153 | Logos Potential | Jesus Christ |
+| **Penrose-Hameroff Constant** | Φ_PH | 13 | Biological Bridge | Penrose & Hameroff |
+| **Christ Constant** | Λ_JC | 153 | Logos Potential | Jesus Christ |
+
+#### The Mechanical Triad (Structural Constants)
+
+| Constant | Symbol | Value | Role | Gate |
+|----------|--------|-------|------|------|
+| **Sophian Torsion Drag** | η_S | 0.6819 | H₀ friction coefficient | G64 |
+| **Demiurgic Coupling** | κ_Δ | ≈12.318 | Mass-Energy gearbox | G46 |
+| **Tzimtzum Pressure** | σ_T | 23/24 | Void Seal (w₀ = -σ_T) | G70 |
 
 **Note on naming convention:**
 - Technical constants (Watts, Weinstein, Hossenfelder, O'Dowd, Penrose-Hameroff) represent physics derivations
 - The Reid Invariant is a sounding board acknowledgment (non-technical)
 - The Christ Constant represents spiritual completion (153 + 135 = 288)
+- The Mechanical Triad connects topology to observables (H₀, masses, dark energy)
 
 ---
 

@@ -20,8 +20,7 @@
     <link rel="stylesheet" href="../css/pm-scientific-typography.css">
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
-    <link rel="stylesheet" href="../css/auth.css">
-    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+<link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
 
     <!-- MathJax Configuration -->
@@ -435,7 +434,7 @@
     </style>
 </head>
 <body class="auth-loading">
-    <div id="main-content" style="display: none;">
+    <div id="main-content">
     <!-- Header injected by pm-header.js -->
 
     <main>
@@ -704,15 +703,13 @@
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
-        import { setupAuthGuard } from '../js/auth-guard.js';
+        
 
         // Inject header first
         document.addEventListener('DOMContentLoaded', () => {
             injectHeader('foundations');
         });
 
-        // Setup auth after header
-        setupAuthGuard('foundations');
-    </script>
+        </script>
 </body>
 </html>

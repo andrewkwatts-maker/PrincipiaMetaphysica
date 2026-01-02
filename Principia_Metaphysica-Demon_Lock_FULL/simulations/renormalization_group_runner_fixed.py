@@ -49,7 +49,7 @@ class RenormalizationGroupRunner:
     Evolves couplings from Electroweak Scale (M_Z) UP to find GUT unification.
     """
 
-    def __init__(self, M_Z: float = 91.1876, include_ghost_sector: bool = True):
+    def __init__(self, M_Z: float = 91.1876, include_ghost_sector: bool = True):  # Z boson mass (PDG)
         """
         Initialize the RG runner.
 
@@ -77,7 +77,7 @@ class RenormalizationGroupRunner:
         # Compute SM gauge couplings from PDG inputs
         alpha_em = 1/137.036  # Fine structure constant
         sin2_theta_W = 0.23122  # Weak mixing angle
-        alpha_s_MZ = 0.1180  # Strong coupling
+        alpha_s_MZ = 0.1180  # alpha_s at M_Z (PDG)
 
         # GUT-normalized U(1)_Y: alpha_1 = (5/3) * alpha_em / cos^2(theta_W)
         cos2_theta_W = 1.0 - sin2_theta_W

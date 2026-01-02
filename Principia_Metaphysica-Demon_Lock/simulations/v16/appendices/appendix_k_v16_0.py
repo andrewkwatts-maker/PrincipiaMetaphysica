@@ -527,7 +527,7 @@ def main():
     registry.set_param("pmns.delta_CP", 235.0)
     registry.set_param("cosmology.w0", -0.8528)
     registry.set_param("cosmology.wa", -0.75)
-    registry.set_param("higgs.m_h", 125.10)
+    registry.set_param("higgs.m_h", 125.10)  # Higgs mass (PDG)
     registry.set_param("moduli.Re_T", 7.086)
 
     # Create and run appendix

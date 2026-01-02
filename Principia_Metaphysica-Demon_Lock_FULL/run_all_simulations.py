@@ -198,6 +198,49 @@ from simulations.base import (
 
 from simulations.base.established import EstablishedPhysics
 
+# v17: Import DemonLockGuard for pre-flight sterility check
+try:
+    from core.demon_lock_guard import DemonLockGuard
+    DEMON_LOCK_AVAILABLE = True
+except ImportError:
+    DEMON_LOCK_AVAILABLE = False
+    warnings.warn("DemonLockGuard not available - sterility pre-flight disabled")
+
+# v17.1: Import SterilityReporter for sovereign audit reports
+try:
+    from core.verify_sterility_report import SterilityReporter
+    STERILITY_REPORTER_AVAILABLE = True
+except ImportError:
+    STERILITY_REPORTER_AVAILABLE = False
+
+# v17.1: Import DocumentationSynchronizer for SSoT sync
+try:
+    from core.sync_docs import DocumentationSynchronizer
+    DOC_SYNC_AVAILABLE = True
+except ImportError:
+    DOC_SYNC_AVAILABLE = False
+
+# v17.2: Import FormulasRegistry for Ghost Literal elimination
+try:
+    from core.FormulasRegistry import get_registry as get_formulas_registry
+    FORMULAS_REGISTRY_AVAILABLE = True
+except ImportError:
+    FORMULAS_REGISTRY_AVAILABLE = False
+    warnings.warn("FormulasRegistry not available - using fallback constants")
+
+# v17.2-Absolute: Import validation scripts for anti-tautology checks
+try:
+    from tests.test_value_context_audit import ValueContextAuditor
+    VALUE_CONTEXT_AUDIT_AVAILABLE = True
+except ImportError:
+    VALUE_CONTEXT_AUDIT_AVAILABLE = False
+
+try:
+    from tests.test_sterility_audit import GhostLiteralScanner
+    STERILITY_AUDIT_AVAILABLE = True
+except ImportError:
+    STERILITY_AUDIT_AVAILABLE = False
+
 # Import v16 simulations
 # Phase 0 - Introduction (narrative only, no dependencies)
 from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
@@ -431,17 +474,18 @@ V16_VALIDATION_BOUNDS = {
     "higgs.m_h_predicted": {
         "min": 115,
         "max": 130,
-        "target": 125.10,
-        "experimental": 125.10,
+        "target": 125.10,  # Higgs mass (PDG)
+        "experimental": 125.10,  # Higgs mass (PDG)
         "sigma": 0.14,
     },
 
     # Dark energy EoS: v16.2 thawing formula w0 = -1 + 1/b3 = -23/24
     # DESI 2025 thawing constraint: -0.957 ± 0.067
+    # NOTE: target loaded from FormulasRegistry.tzimtzum_pressure at runtime
     "cosmology.w0_derived": {
         "min": -1.0,
         "max": -0.9,
-        "target": -0.9583,
+        "target": None,  # Set dynamically from FormulasRegistry
         "experimental": -0.957,
         "sigma": 0.067,
     },
@@ -485,6 +529,15 @@ V16_VALIDATION_BOUNDS = {
         "sigma": 0.3e-5,
     },
 }
+
+# v17.2: Dynamically populate target values from FormulasRegistry (Ghost Literal elimination)
+if FORMULAS_REGISTRY_AVAILABLE:
+    _formula_reg = get_formulas_registry()
+    # w0_derived target = -tzimtzum_pressure = -23/24
+    V16_VALIDATION_BOUNDS["cosmology.w0_derived"]["target"] = -_formula_reg.tzimtzum_pressure
+else:
+    # Fallback to hardcoded value if registry unavailable
+    V16_VALIDATION_BOUNDS["cosmology.w0_derived"]["target"] = -0.9583
 
 
 def validate_against_bounds(param_path: str, value: float) -> Dict[str, Any]:
@@ -1916,8 +1969,39 @@ def main():
         action="store_true",
         help="Force Wolfram re-execution (ignore cache)"
     )
+    parser.add_argument(
+        "--skip-guard",
+        action="store_true",
+        help="Skip DemonLockGuard pre-flight check (use for debugging only)"
+    )
 
     args = parser.parse_args()
+
+    # =========================================================================
+    # v17: DEMON LOCK GUARD - PRE-FLIGHT STERILITY CHECK
+    # =========================================================================
+    # This check MUST pass before any simulations run.
+    # If the manifold is not sterile, simulations cannot produce valid output.
+    # =========================================================================
+    if DEMON_LOCK_AVAILABLE and not args.skip_guard:
+        if not args.quiet:
+            print("\n" + "=" * 80)
+            print("v17 STERILE SOVEREIGN - PRE-FLIGHT STERILITY CHECK")
+            print("=" * 80)
+
+        guard = DemonLockGuard()
+        if not guard.run_preflight():
+            print("\n[CRITICAL] DEMON LOCK GUARD FAILED")
+            print("The manifold is NOT sterile. Simulations blocked.")
+            print("Fix the sterility violations before running simulations.")
+            print("\nRun with --skip-guard to bypass (debugging only).")
+            sys.exit(1)
+
+        if not args.quiet:
+            print("[OK] Pre-flight sterility check passed. Proceeding with simulations.\n")
+
+    elif not DEMON_LOCK_AVAILABLE and not args.quiet:
+        print("\n[WARNING] DemonLockGuard not available - skipping sterility pre-flight")
 
     # Create runner and execute
     runner = SimulationRunner(
@@ -1927,6 +2011,130 @@ def main():
     )
     output_data = runner.run_all()
 
+    # =========================================================================
+    # v17.1: POST-SIMULATION STERILITY REPORT
+    # =========================================================================
+    # Generate formal audit certificate with sovereign hash after all
+    # simulations complete. This proves the manifold state is sterile.
+    # =========================================================================
+    if STERILITY_REPORTER_AVAILABLE:
+        if not args.quiet:
+            print("\n" + "=" * 80)
+            print("v17.1 SOVEREIGN AUDIT - POST-SIMULATION STERILITY REPORT")
+            print("=" * 80)
+
+        try:
+            reporter = SterilityReporter()
+            reporter.print_report()
+            report_path = reporter.write_report("sterility_report.json")
+            if not args.quiet:
+                print(f"[OK] Sterility report written to: {report_path}")
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Could not generate sterility report: {e}")
+
+    # =========================================================================
+    # v17.1: DOCUMENTATION SYNCHRONIZATION
+    # =========================================================================
+    # Sync documentation with current registry state and embed sovereign hash.
+    # =========================================================================
+    if DOC_SYNC_AVAILABLE:
+        if not args.quiet:
+            print("\n" + "=" * 80)
+            print("v17.1 DOCUMENTATION SYNC - EMBEDDING SOVEREIGN HASH")
+            print("=" * 80)
+
+        try:
+            sync = DocumentationSynchronizer()
+            outputs = sync.generate_all()
+            if not args.quiet:
+                print("[OK] Documentation synchronized with sovereign hash")
+                for name, path in outputs.items():
+                    print(f"  - {name}: {path}")
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Could not sync documentation: {e}")
+
+    # =========================================================================
+    # v17.2-Absolute: ANTI-TAUTOLOGY VALIDATION
+    # =========================================================================
+    # Run validation scripts to ensure:
+    # 1. No Ghost Literals (hardcoded DERIVED values)
+    # 2. No tautological validation (validator != simulation)
+    # 3. All values properly attributed (DERIVED vs EXPERIMENTAL)
+    # =========================================================================
+    validation_results = {
+        "value_context_audit": {"status": "NOT_RUN", "violations": 0},
+        "sterility_audit": {"status": "NOT_RUN", "violations": 0},
+        "overall": "NOT_RUN"
+    }
+    validation_failed = False
+
+    if not args.quiet:
+        print("\n" + "=" * 80)
+        print("v17.2-Absolute VALIDATION - ANTI-TAUTOLOGY CHECKS")
+        print("=" * 80)
+
+    # Value Context Audit - checks DERIVED vs EXPERIMENTAL value usage
+    if VALUE_CONTEXT_AUDIT_AVAILABLE:
+        try:
+            auditor = ValueContextAuditor()
+            is_compliant = auditor.scan_repository()
+            violations = auditor.violations
+            validation_results["value_context_audit"] = {
+                "status": "PASS" if is_compliant else "FAIL",
+                "violations": len(violations),
+                "details": [str(v) for v in violations[:10]] if violations else []
+            }
+            if not args.quiet:
+                if is_compliant:
+                    print("[PASS] Value Context Audit: All values properly attributed")
+                else:
+                    print(f"[FAIL] Value Context Audit: {len(violations)} violations found")
+                    for v in violations[:5]:
+                        print(f"  - {v}")
+                    validation_failed = True
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Value Context Audit failed: {e}")
+            validation_results["value_context_audit"]["status"] = "ERROR"
+    else:
+        if not args.quiet:
+            print("[SKIP] Value Context Audit not available")
+
+    # Sterility Audit - checks for Ghost Literals
+    if STERILITY_AUDIT_AVAILABLE:
+        try:
+            scanner = GhostLiteralScanner()
+            is_clean = scanner.scan_repository()
+            ghost_count = len(scanner.ghost_findings)
+            validation_results["sterility_audit"] = {
+                "status": "PASS" if is_clean else "FAIL",
+                "violations": ghost_count
+            }
+            if not args.quiet:
+                if is_clean:
+                    print("[PASS] Sterility Audit: No Ghost Literals detected")
+                else:
+                    print(f"[FAIL] Sterility Audit: {ghost_count} Ghost Literals found")
+                    validation_failed = True
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Sterility Audit failed: {e}")
+            validation_results["sterility_audit"]["status"] = "ERROR"
+    else:
+        if not args.quiet:
+            print("[SKIP] Sterility Audit not available")
+
+    # Overall validation status
+    validation_results["overall"] = "FAIL" if validation_failed else "PASS"
+    if not args.quiet:
+        print("-" * 80)
+        print(f"Validation Status: {validation_results['overall']}")
+
+    # Add validation results to output data
+    output_data["validation"]["anti_tautology"] = validation_results
+
     # Optionally run Wolfram executor
     if args.wolfram:
         run_wolfram_executor(
@@ -1934,9 +2142,23 @@ def main():
             force=args.wolfram_force
         )
 
-    # Return exit code based on results
+    # Return exit code based on results (simulations AND validations)
     validation = output_data["validation"]
-    exit_code = 0 if validation["simulations_failed"] == 0 else 1
+    simulations_ok = validation["simulations_failed"] == 0
+    validations_ok = not validation_failed
+
+    if simulations_ok and validations_ok:
+        exit_code = 0
+        if not args.quiet:
+            print("\n[SUCCESS] All simulations passed, all validations passed")
+    elif not simulations_ok:
+        exit_code = 1
+        if not args.quiet:
+            print(f"\n[FAILURE] {validation['simulations_failed']} simulations failed")
+    else:
+        exit_code = 2  # Validation failure (distinct from simulation failure)
+        if not args.quiet:
+            print("\n[FAILURE] Anti-tautology validation failed")
 
     sys.exit(exit_code)
 

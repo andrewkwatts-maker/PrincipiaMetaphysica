@@ -186,7 +186,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 plain_text="alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.037",
                 category="DERIVED",
                 derivation_chain=["k_gimel", "b3", "phi"],
-                experimental_target={"value": 137.036, "uncertainty": 0.01, "source": "CODATA 2022"},
+                experimental_target={"value": 137.036, "uncertainty": 0.01, "source": "CODATA 2022"},  # alpha inverse (CODATA)
                 source_simulation=self._metadata.id,
                 terms={
                     "alpha^-1": "Inverse fine structure constant",
@@ -523,7 +523,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 units="dimensionless",
                 status="DERIVED",
                 description="alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi)",
-                experimental_bound=137.036,
+                experimental_bound=137.036,  # alpha inverse (CODATA)
                 bound_type="measured",
                 bound_source="CODATA2022",
                 uncertainty=0.01

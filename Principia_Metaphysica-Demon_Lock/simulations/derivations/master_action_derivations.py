@@ -756,7 +756,7 @@ Print["Scalar Field Equation: ", Simplify[EOMScalar]];
             status="DERIVED",
             description="Higgs vacuum expectation value from Kähler modulus",
             derivation_formula="higgs-vev-geometric",
-            experimental_bound=246.22,
+            experimental_bound=246.22,  # Higgs VEV (PDG)
             bound_type="measured",
             bound_source="Electroweak precision measurements"
         ))

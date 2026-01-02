@@ -131,14 +131,14 @@
                 renderTitle(container, PaperRenderer._data.metadata);
             }
 
-            // Abstract
-            if (renderAbstract && PaperRenderer._data.sections?.['1']?.abstract) {
-                renderAbstractSection(container, PaperRenderer._data.sections['1'].abstract);
-            }
-
-            // Table of Contents
+            // Table of Contents (renders before abstract per academic convention)
             if (renderTOC) {
                 renderTableOfContents(container, PaperRenderer._data.sections);
+            }
+
+            // Abstract (renders after TOC)
+            if (renderAbstract && PaperRenderer._data.sections?.['1']?.abstract) {
+                renderAbstractSection(container, PaperRenderer._data.sections['1'].abstract);
             }
 
             // Main sections

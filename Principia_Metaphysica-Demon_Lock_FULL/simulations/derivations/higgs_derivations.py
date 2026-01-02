@@ -61,7 +61,7 @@ except ImportError:
     print("Warning: Could not import from config.py. Using fallback values.")
     # Fallback values
     class HiggsMassParameters:
-        M_HIGGS_EXPERIMENTAL = 125.10  # GeV
+        M_HIGGS_EXPERIMENTAL = 125.10  # Higgs mass (PDG)
         V_YUKAWA = 174.0  # GeV
         LAMBDA_0 = 0.129
         KAPPA = 0.00189
@@ -166,7 +166,7 @@ class HiggsSectorDerivations:
         - sin²(θ_W) = 0.23122 (Weinberg angle)
         """
         M_W = 80.377  # GeV
-        M_Z = 91.1876  # GeV
+        M_Z = 91.1876  # Z boson mass (PDG)
         sin2_theta_W = 0.23122
 
         # Standard relation: v = 2 M_W / (g sin θ_W) ≈ 246 GeV
@@ -481,7 +481,7 @@ class HiggsSectorDerivations:
         # Top Yukawa dominates, drives λ negative
 
         # Scale factor
-        M_Z = 91.1876  # GeV
+        M_Z = 91.1876  # Z boson mass (PDG)
         M_Pl = PhysicalConstants.M_PLANCK_REDUCED
         t = np.log(M_Pl / M_Z)  # log scale
 

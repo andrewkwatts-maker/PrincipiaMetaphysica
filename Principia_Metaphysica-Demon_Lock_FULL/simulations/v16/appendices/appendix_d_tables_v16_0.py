@@ -143,7 +143,7 @@ class AppendixDParameterTables(SimulationBase):
             {"name": "Planck Mass", "symbol": "M_Pl", "value": 1.221e19, "units": "GeV", "source": "PDG 2024"},
             {"name": "Reduced Planck Mass", "symbol": "M̄_Pl", "value": 2.435e18, "units": "GeV", "source": "PDG 2024"},
             {"name": "Gravitational Constant", "symbol": "G_N", "value": 6.708e-39, "units": "GeV⁻²", "source": "PDG 2024"},
-            {"name": "Fine Structure Constant", "symbol": "α_em", "value": 1/137.036, "units": "dimensionless", "source": "PDG 2024"},
+            {"name": "Fine Structure Constant", "symbol": "α_em", "value": 1/137.036, "units": "dimensionless", "source": "PDG 2024"},  # alpha inverse (CODATA)
             {"name": "Fermi Constant", "symbol": "G_F", "value": 1.166e-5, "units": "GeV⁻²", "source": "PDG 2024"},
             {"name": "QCD Scale", "symbol": "Λ_QCD", "value": 0.217, "units": "GeV", "source": "PDG 2024"},
             {"name": "Speed of Light", "symbol": "c", "value": 1.0, "units": "natural", "source": "Definition"},
@@ -167,7 +167,7 @@ class AppendixDParameterTables(SimulationBase):
             {"name": "Tau Mass", "symbol": "m_τ", "value": 1.777, "uncertainty": 0.0016, "units": "GeV", "source": "PDG 2024"},
             {"name": "Muon Mass", "symbol": "m_μ", "value": 0.1057, "uncertainty": 0.00000001, "units": "GeV", "source": "PDG 2024"},
             {"name": "Electron Mass", "symbol": "m_e", "value": 0.000511, "uncertainty": 0.000000001, "units": "GeV", "source": "PDG 2024"},
-            {"name": "Strong Coupling", "symbol": "α_s(M_Z)", "value": 0.1180, "uncertainty": 0.0010, "units": "dimensionless", "source": "PDG 2024"},
+            {"name": "Strong Coupling", "symbol": "α_s(M_Z)", "value": 0.1180, "uncertainty": 0.0010, "units": "dimensionless", "source": "PDG 2024"},  # alpha_s at M_Z (PDG)
             {"name": "Weak Mixing Angle", "symbol": "sin²θ_W(M_Z)", "value": 0.23121, "uncertainty": 0.00004, "units": "dimensionless", "source": "PDG 2024"},
             {"name": "CKM θ₁₂", "symbol": "θ₁₂^CKM", "value": 13.04, "uncertainty": 0.05, "units": "degrees", "source": "PDG 2024"},
             {"name": "CKM θ₂₃", "symbol": "θ₂₃^CKM", "value": 2.38, "uncertainty": 0.06, "units": "degrees", "source": "PDG 2024"},

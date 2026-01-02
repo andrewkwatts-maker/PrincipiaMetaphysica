@@ -47,6 +47,10 @@ from simulations.base import (
     ReferenceEntry,
     FoundationEntry,
 )
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
 
 
 class AppendixNG2Landscape(SimulationBase):
@@ -510,9 +514,9 @@ def main():
     registry = PMRegistry()
     EstablishedPhysics.load_into_registry(registry)
 
-    # Add required topology parameters
+    # Add required topology parameters from FormulasRegistry SSoT
     registry.set_param("topology.n_gen", 3, source="foundational")
-    registry.set_param("topology.chi_eff", 144, source="foundational")
+    registry.set_param("topology.chi_eff", _REG.chi_eff, source="foundational")  # 144 from SSoT
 
     # Create and run appendix
     appendix = AppendixNG2Landscape()

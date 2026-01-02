@@ -367,7 +367,7 @@ class GaugeUnificationSimulation(SimulationBase):
                     "numerical_values": {
                         "alpha_1_MZ": 0.01695,
                         "alpha_2_MZ": 0.03162,
-                        "alpha_3_MZ": 0.1180,
+                        "alpha_3_MZ": 0.1180,  # alpha_s at M_Z (PDG)
                     },
                     "source": "PDG 2024",
                 },

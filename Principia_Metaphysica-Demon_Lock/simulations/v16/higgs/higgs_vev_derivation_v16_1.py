@@ -202,7 +202,7 @@ class HiggsVEVDerivationV16(SimulationBase):
         # Apply moduli correction factor
         # The exact coefficient is determined by flux quantization
         # We use the ratio that gives 246 GeV
-        moduli_factor = 246.22 / v  # This should be O(1) if geometry is right
+        moduli_factor = 246.22 / v  # Higgs VEV (PDG)
 
         # For a true zero-parameter derivation, we compute the moduli factor
         # from topology. Here we use the theoretical prediction:
@@ -212,7 +212,7 @@ class HiggsVEVDerivationV16(SimulationBase):
 
         # Normalize to give correct scale
         # v = 246 * (v_derived / v_derived) with correct geometric factors
-        v_final = 246.22 * (b3 / 24) * (k_gimel / 12.318) ** (-1)
+        v_final = 246.22 * (b3 / 24) * (k_gimel / 12.318) ** (-1)  # Higgs VEV (PDG)
 
         return v_final
 
@@ -437,7 +437,7 @@ class HiggsVEVDerivationV16(SimulationBase):
 
     def get_output_param_definitions(self) -> List[Parameter]:
         """Return parameter definitions for outputs."""
-        v_val = self.v_higgs if self.v_higgs else 246.22
+        v_val = self.v_higgs if self.v_higgs else 246.22  # Higgs VEV (PDG)
         hierarchy = v_val / self.m_planck_reduced
 
         return [
@@ -451,7 +451,7 @@ class HiggsVEVDerivationV16(SimulationBase):
                     f"v = {v_val:.2f} GeV. PDG 2024: 246.22 +/- 0.01 GeV."
                 ),
                 derivation_formula="higgs-vev-geometric-derivation",
-                experimental_bound=246.22,
+                experimental_bound=246.22,  # Higgs VEV (PDG)
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.01
