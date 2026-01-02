@@ -15,7 +15,7 @@
       "contentBlocks": [
         {
           "type": "paragraph",
-          "content": "This paper presents <strong>Principia Metaphysica v16.2</strong>, a sterile geometric framework in which all 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow—without free parameters, tuning, or calibration. Beginning from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge symmetry</strong> freezes one time dimension, projecting the theory through 13D → 7D → 6D → 4D via sequential brane-node descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = 24</strong> and <strong>χ = 144</strong> provides all structure: fermion generations (b₃/8 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> matching DESI thawing (0.02σ) and <strong>H₀ = 73.04 km/s/Mpc</strong> matching SH0ES 2025 (0.0σ). All derivations are cryptographically locked via 42 Wolfram-verified certificates. DOI: 10.5281/zenodo.18079602",
+          "content": "This paper presents <strong>Principia Metaphysica v16.2</strong>, a sterile geometric framework in which all 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow—without free parameters, tuning, or calibration. Beginning from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge symmetry</strong> freezes one time dimension, projecting the theory through 13D → 7D → 6D → 4D via sequential brane-node descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.b3\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.chi_effective\">144</span></strong> provides all structure: fermion generations (b₃/8 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> matching DESI thawing (0.02σ) and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2025. All derivations are cryptographically locked via <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span> Wolfram-verified certificates. DOI: 10.5281/zenodo.18079602",
           "label": "lead",
           "equationNumber": "lead"
         },
@@ -261,7 +261,7 @@
       "content_blocks": [
         {
           "type": "paragraph",
-          "content": "This paper presents <strong>Principia Metaphysica v16.2</strong>, a sterile geometric framework in which all 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow—without free parameters, tuning, or calibration. Beginning from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge symmetry</strong> freezes one time dimension, projecting the theory through 13D → 7D → 6D → 4D via sequential brane-node descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = 24</strong> and <strong>χ = 144</strong> provides all structure: fermion generations (b₃/8 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> matching DESI thawing (0.02σ) and <strong>H₀ = 73.04 km/s/Mpc</strong> matching SH0ES 2025 (0.0σ). All derivations are cryptographically locked via 42 Wolfram-verified certificates. DOI: 10.5281/zenodo.18079602",
+          "content": "This paper presents <strong>Principia Metaphysica v16.2</strong>, a sterile geometric framework in which all 125 fundamental physical constants emerge as spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> under Ricci flow—without free parameters, tuning, or calibration. Beginning from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge symmetry</strong> freezes one time dimension, projecting the theory through 13D → 7D → 6D → 4D via sequential brane-node descent. The internal <strong>V₇ manifold</strong> with <strong>b₃ = <span class=\"pm-value\" data-pm-value=\"topology.b3\">24</span></strong> and <strong>χ = <span class=\"pm-value\" data-pm-value=\"topology.chi_effective\">144</span></strong> provides all structure: fermion generations (b₃/8 = 3), mixing angles, mass hierarchies, and cosmological parameters. The framework achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> matching DESI thawing (0.02σ) and <strong>H₀ = <span class=\"pm-value\" data-pm-value=\"cosmology.H0_local\">71.55</span> km/s/Mpc</strong> within 1.4σ of SH0ES 2025. All derivations are cryptographically locked via <span class=\"pm-value\" data-pm-value=\"statistics.certificates_total\">72</span> Wolfram-verified certificates. DOI: 10.5281/zenodo.18079602",
           "label": "lead",
           "equationNumber": "lead"
         },
@@ -508,7 +508,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-02T02:50:31.695134"
+      "timestamp": "2026-01-03T00:43:57.801567"
     },
     "2": {
       "id": "2",
@@ -934,7 +934,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-02T02:50:31.695190"
+      "timestamp": "2026-01-03T00:43:57.801623"
     },
     "validation": {
       "id": "validation",
@@ -1056,7 +1056,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-02T02:50:31.656852"
+      "timestamp": "2026-01-03T00:43:57.762867"
     },
     "V.1": {
       "id": "validation",
@@ -1178,7 +1178,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-02T02:50:31.656874"
+      "timestamp": "2026-01-03T00:43:57.762896"
     },
     "3": {
       "id": "3",
@@ -1450,7 +1450,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-02T02:50:31.695240"
+      "timestamp": "2026-01-03T00:43:57.801672"
     },
     "3.4": {
       "id": "3",
@@ -1614,7 +1614,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-02T02:50:31.656949"
+      "timestamp": "2026-01-03T00:43:57.762980"
     },
     "3.5": {
       "id": "3",
@@ -1786,7 +1786,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-02T02:50:31.657076"
+      "timestamp": "2026-01-03T00:43:57.763108"
     },
     "3.1": {
       "id": "3",
@@ -1844,7 +1844,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-02T02:50:31.688075"
+      "timestamp": "2026-01-03T00:43:57.794515"
     },
     "4": {
       "id": "4",
@@ -2152,7 +2152,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-02T02:50:31.695286"
+      "timestamp": "2026-01-03T00:43:57.801716"
     },
     "4.2": {
       "id": "4",
@@ -2210,7 +2210,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-02T02:50:31.688708"
+      "timestamp": "2026-01-03T00:43:57.795302"
     },
     "4.1": {
       "id": "4",
@@ -2498,7 +2498,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-02T02:50:31.688287"
+      "timestamp": "2026-01-03T00:43:57.794738"
     },
     "4.3": {
       "id": "4",
@@ -2738,7 +2738,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-02T02:50:31.688426"
+      "timestamp": "2026-01-03T00:43:57.795024"
     },
     "4.6": {
       "id": "4",
@@ -2918,7 +2918,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-02T02:50:31.688502"
+      "timestamp": "2026-01-03T00:43:57.795098"
     },
     "4.4": {
       "id": "4",
@@ -3008,7 +3008,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-02T02:50:31.688655"
+      "timestamp": "2026-01-03T00:43:57.795248"
     },
     "5": {
       "id": "5",
@@ -3162,7 +3162,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-02T02:50:31.694452"
+      "timestamp": "2026-01-03T00:43:57.800822"
     },
     "5.1": {
       "id": "5",
@@ -3470,7 +3470,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-02T02:50:31.688807"
+      "timestamp": "2026-01-03T00:43:57.795403"
     },
     "5.2": {
       "id": "5",
@@ -3606,7 +3606,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-02T02:50:31.688942"
+      "timestamp": "2026-01-03T00:43:57.795540"
     },
     "5.6": {
       "id": "5",
@@ -3842,7 +3842,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-02T02:50:31.689108"
+      "timestamp": "2026-01-03T00:43:57.795706"
     },
     "5.7": {
       "id": "5",
@@ -3986,7 +3986,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-02T02:50:31.691168"
+      "timestamp": "2026-01-03T00:43:57.797623"
     },
     "5.4": {
       "id": "5",
@@ -4148,7 +4148,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-02T02:50:31.693951"
+      "timestamp": "2026-01-03T00:43:57.800367"
     },
     "4.5": {
       "id": "4",
@@ -4310,7 +4310,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-02T02:50:31.694135"
+      "timestamp": "2026-01-03T00:43:57.800527"
     },
     "4.7": {
       "id": "4",
@@ -4554,7 +4554,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-02T02:50:31.694273"
+      "timestamp": "2026-01-03T00:43:57.800648"
     },
     "5.3": {
       "id": "5",
@@ -4668,7 +4668,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-02T02:50:31.694405"
+      "timestamp": "2026-01-03T00:43:57.800774"
     },
     "5.5": {
       "id": "5",
@@ -4822,7 +4822,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-02T02:50:31.694477"
+      "timestamp": "2026-01-03T00:43:57.800846"
     },
     "pneuma-lagrangian": {
       "id": "2",
@@ -5654,7 +5654,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-02T02:50:31.694631"
+      "timestamp": "2026-01-03T00:43:57.800990"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -5782,7 +5782,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2026-01-02T02:50:31.694699"
+      "timestamp": "2026-01-03T00:43:57.801058"
     },
     "7": {
       "id": "7",
@@ -8216,7 +8216,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-02T02:50:31.694917"
+      "timestamp": "2026-01-03T00:43:57.801345"
     },
     "7.2": {
       "id": "7",
@@ -8284,7 +8284,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-02T02:50:31.694772"
+      "timestamp": "2026-01-03T00:43:57.801130"
     },
     "6": {
       "id": "6",
@@ -10430,7 +10430,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-02T02:50:31.695051"
+      "timestamp": "2026-01-03T00:43:57.801485"
     },
     "A": {
       "id": "A",
@@ -10640,7 +10640,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-02T02:50:31.695346"
+      "timestamp": "2026-01-03T00:43:57.801775"
     },
     "B": {
       "id": "B",
@@ -10876,7 +10876,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-02T02:50:31.695412"
+      "timestamp": "2026-01-03T00:43:57.801839"
     },
     "C": {
       "id": "C",
@@ -11082,7 +11082,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-02T02:50:31.695464"
+      "timestamp": "2026-01-03T00:43:57.801890"
     },
     "D": {
       "id": "D",
@@ -11280,7 +11280,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-02T02:50:31.695524"
+      "timestamp": "2026-01-03T00:43:57.801945"
     },
     "E": {
       "id": "E",
@@ -11482,7 +11482,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-02T02:50:31.695572"
+      "timestamp": "2026-01-03T00:43:57.801992"
     },
     "F": {
       "id": "F",
@@ -11692,7 +11692,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-02T02:50:31.696129"
+      "timestamp": "2026-01-03T00:43:57.802475"
     },
     "G": {
       "id": "G",
@@ -12028,7 +12028,7 @@
         "topology.torsion_per_shadow",
         "seal.geometric_checksum"
       ],
-      "timestamp": "2026-01-02T02:50:31.696239"
+      "timestamp": "2026-01-03T00:43:57.802577"
     },
     "H": {
       "id": "H",
@@ -12314,7 +12314,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-02T02:50:31.696336"
+      "timestamp": "2026-01-03T00:43:57.802669"
     },
     "I": {
       "id": "I",
@@ -12668,7 +12668,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-02T02:50:31.696416"
+      "timestamp": "2026-01-03T00:43:57.802749"
     },
     "J": {
       "id": "J",
@@ -12950,7 +12950,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-02T02:50:31.696503"
+      "timestamp": "2026-01-03T00:43:57.802848"
     },
     "K": {
       "id": "K",
@@ -13366,7 +13366,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-02T02:50:31.696583"
+      "timestamp": "2026-01-03T00:43:57.802921"
     },
     "L": {
       "id": "L",
@@ -13656,7 +13656,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-02T02:50:31.696664"
+      "timestamp": "2026-01-03T00:43:57.802997"
     },
     "Z": {
       "id": "Z",
@@ -13732,7 +13732,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-02T02:50:31.696783"
+      "timestamp": "2026-01-03T00:43:57.803095"
     }
   }
 }

@@ -198,6 +198,28 @@ from simulations.base import (
 
 from simulations.base.established import EstablishedPhysics
 
+# v17: Import DemonLockGuard for pre-flight sterility check
+try:
+    from core.demon_lock_guard import DemonLockGuard
+    DEMON_LOCK_AVAILABLE = True
+except ImportError:
+    DEMON_LOCK_AVAILABLE = False
+    warnings.warn("DemonLockGuard not available - sterility pre-flight disabled")
+
+# v17.1: Import SterilityReporter for sovereign audit reports
+try:
+    from core.verify_sterility_report import SterilityReporter
+    STERILITY_REPORTER_AVAILABLE = True
+except ImportError:
+    STERILITY_REPORTER_AVAILABLE = False
+
+# v17.1: Import DocumentationSynchronizer for SSoT sync
+try:
+    from core.sync_docs import DocumentationSynchronizer
+    DOC_SYNC_AVAILABLE = True
+except ImportError:
+    DOC_SYNC_AVAILABLE = False
+
 # Import v16 simulations
 # Phase 0 - Introduction (narrative only, no dependencies)
 from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
@@ -1916,8 +1938,39 @@ def main():
         action="store_true",
         help="Force Wolfram re-execution (ignore cache)"
     )
+    parser.add_argument(
+        "--skip-guard",
+        action="store_true",
+        help="Skip DemonLockGuard pre-flight check (use for debugging only)"
+    )
 
     args = parser.parse_args()
+
+    # =========================================================================
+    # v17: DEMON LOCK GUARD - PRE-FLIGHT STERILITY CHECK
+    # =========================================================================
+    # This check MUST pass before any simulations run.
+    # If the manifold is not sterile, simulations cannot produce valid output.
+    # =========================================================================
+    if DEMON_LOCK_AVAILABLE and not args.skip_guard:
+        if not args.quiet:
+            print("\n" + "=" * 80)
+            print("v17 STERILE SOVEREIGN - PRE-FLIGHT STERILITY CHECK")
+            print("=" * 80)
+
+        guard = DemonLockGuard()
+        if not guard.run_preflight():
+            print("\n[CRITICAL] DEMON LOCK GUARD FAILED")
+            print("The manifold is NOT sterile. Simulations blocked.")
+            print("Fix the sterility violations before running simulations.")
+            print("\nRun with --skip-guard to bypass (debugging only).")
+            sys.exit(1)
+
+        if not args.quiet:
+            print("[OK] Pre-flight sterility check passed. Proceeding with simulations.\n")
+
+    elif not DEMON_LOCK_AVAILABLE and not args.quiet:
+        print("\n[WARNING] DemonLockGuard not available - skipping sterility pre-flight")
 
     # Create runner and execute
     runner = SimulationRunner(
@@ -1926,6 +1979,50 @@ def main():
         uq_mode=args.uq
     )
     output_data = runner.run_all()
+
+    # =========================================================================
+    # v17.1: POST-SIMULATION STERILITY REPORT
+    # =========================================================================
+    # Generate formal audit certificate with sovereign hash after all
+    # simulations complete. This proves the manifold state is sterile.
+    # =========================================================================
+    if STERILITY_REPORTER_AVAILABLE:
+        if not args.quiet:
+            print("\n" + "=" * 80)
+            print("v17.1 SOVEREIGN AUDIT - POST-SIMULATION STERILITY REPORT")
+            print("=" * 80)
+
+        try:
+            reporter = SterilityReporter()
+            reporter.print_report()
+            report_path = reporter.write_report("sterility_report.json")
+            if not args.quiet:
+                print(f"[OK] Sterility report written to: {report_path}")
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Could not generate sterility report: {e}")
+
+    # =========================================================================
+    # v17.1: DOCUMENTATION SYNCHRONIZATION
+    # =========================================================================
+    # Sync documentation with current registry state and embed sovereign hash.
+    # =========================================================================
+    if DOC_SYNC_AVAILABLE:
+        if not args.quiet:
+            print("\n" + "=" * 80)
+            print("v17.1 DOCUMENTATION SYNC - EMBEDDING SOVEREIGN HASH")
+            print("=" * 80)
+
+        try:
+            sync = DocumentationSynchronizer()
+            outputs = sync.generate_all()
+            if not args.quiet:
+                print("[OK] Documentation synchronized with sovereign hash")
+                for name, path in outputs.items():
+                    print(f"  - {name}: {path}")
+        except Exception as e:
+            if not args.quiet:
+                print(f"[WARN] Could not sync documentation: {e}")
 
     # Optionally run Wolfram executor
     if args.wolfram:
