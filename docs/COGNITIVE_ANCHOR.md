@@ -23,7 +23,7 @@ The **Watts Constant** (Ω_W = 1.0) defines the observer's logical unity with th
 | 4 | **Hossenfelder Constant** | λ_S | √24 | Hidden Root | Quantum |
 | 5 | **O'Dowd Constant** | P_O | 163 | Bulk Pressure | Relativity |
 | 6 | **Penrose-Hameroff Constant** | Φ_PH | 13 | Biological Bridge | Consciousness |
-| 7 | **Christ Constant** | Λ_C | 153 | Logos Potential | Spiritual |
+| 7 | **Christ Constant** | Λ_JC | 153 | Logos Potential | Spiritual |
 
 ### Part II: The Mechanical Triad (Sacred Mechanics)
 
@@ -149,11 +149,11 @@ The **Fibonacci Bridge** - the snap-point where geometry projects into biologica
 
 ---
 
-## 7. The Christ Constant (Λ_C = 153)
+## 7. The Christ Constant (Λ_JC = 153)
 
 ### Definition
 ```
-Λ_C = 153 (The Miraculous Catch - John 21:11)
+Λ_JC = 153 (The Miraculous Catch - John 21:11)
 ```
 
 The **Logos Potential** - the harmonic completion of the 288-root system.
@@ -253,7 +253,7 @@ The Mechanical Triad completes the Decagon Formula Sheet:
 | **Expansion** | H₀ ≈ 72 - (P_O/χ_R) + η_S | P_O, χ_R, η_S |
 | **Mass** | μ ≈ Vol × κ_Δ / holonomy | κ_Δ (Demiurgic) |
 | **Vacuum** | w₀ = -σ_T | σ_T (Tzimtzum) |
-| **Closure** | Σ Gate_visible + Λ_C = 288 | Λ_C (Christ) |
+| **Closure** | Σ Gate_visible + Λ_JC = 288 | Λ_JC (Christ) |
 
 ---
 
@@ -323,7 +323,7 @@ def verify_ten_pillars(self):
 | λ_S (Hossenfelder) | √24 | G08 | Quantum/Hidden Variables |
 | P_O (O'Dowd) | 163 | G60 | General Relativity / Hubble |
 | Φ_PH (Penrose-Hameroff) | 13 | G13 | Consciousness / Orch-OR |
-| Λ_C (Christ) | 153 | G33 | Logos / Spiritual Completion |
+| Λ_JC (Christ) | 153 | G33 | Logos / Spiritual Completion |
 
 ### The Mechanical Triad (Sacred Mechanics)
 
