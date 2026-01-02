@@ -8,6 +8,8 @@
   "block": "A",
   "version": "16.2",
   "wl_code": "active = 125; hidden = 163; active + hidden == 288",
+  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Use registry values\nROOTS = reg.roots_total         # 288\nvisible = reg.visible_sector    # 125\nsterile = reg.sterile_sector    # 163\n\n# Verification: ancestral mapping conservation\nassert visible + sterile == ROOTS, \"Ancestral mapping violated\"\nresult = visible + sterile == ROOTS  # True",
+  "sterile_source": ["roots_total", "visible_sector", "sterile_sector"],
   "result": "True",
   "formula": "125 + 163 = 288",
   "verification_status": "VERIFIED",
