@@ -141,6 +141,8 @@ EXCLUDE_FILES: Set[str] = {
     'references-integration-example.html',
     'INTEGRATION_EXAMPLE.html',
     'test-html-extraction.js',
+    # Auth documentation that references auth-guard
+    'QUICK_START.md',
 }
 
 # Files to strip/neutralize (secrets, auth guards)
@@ -373,6 +375,15 @@ def strip_auth_from_html(file_path: Path) -> bool:
     # Show main-content by default (was hidden waiting for auth)
     content = content.replace('id="main-content" style="display: none;"', 'id="main-content"')
     content = content.replace("id='main-content' style='display: none;'", "id='main-content'")
+
+    # Remove auth-loading class from body tags
+    content = content.replace('<body class="auth-loading">', '<body>')
+    content = re.sub(r'<body class="auth-loading"\s+', '<body ', content)
+    content = re.sub(r'(<body[^>]*) class="auth-loading"', r'', content)
+
+    # Remove classList.remove calls
+    content = content.replace("document.body.classList.remove('auth-loading');", '')
+    content = content.replace('document.body.classList.remove("auth-loading");', '')
 
     if content != original:
         with open(file_path, 'w', encoding='utf-8') as f:

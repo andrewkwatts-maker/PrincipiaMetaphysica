@@ -829,7 +829,7 @@
     </style>
     <script src="../js/pm-constants-loader.js"></script>
 </head>
-<body class="auth-loading">
+<body>
     <div id="main-content">
     <!-- Header injected by pm-header.js -->
 
@@ -2632,7 +2632,7 @@
             if (mainContent && mainContent.style.display === 'none') {
                 console.warn('[PARAMETERS] Auth guard timeout - forcing content visible');
                 mainContent.style.display = 'block';
-                document.body.classList.remove('auth-loading');
+                
             }
         }, 2000);
     </script>
