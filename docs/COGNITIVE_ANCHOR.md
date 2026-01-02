@@ -30,7 +30,7 @@ The **Watts Constant** (Ω_W = 1.0) defines the observer's logical unity with th
 | # | Name | Symbol | Value | Role | Gate |
 |---|------|--------|-------|------|------|
 | 8 | **Sophian Drag** | η_S | 0.6819 | H₀ Friction | G64 |
-| 9 | **Demiurgic Coupling** | κ_Δ | k_gimel | Mass Gearbox | G46 |
+| 9 | **Demiurgic Coupling** | κ_Δ | ≈12.318 | Mass Gearbox | G46 |
 | 10 | **Tzimtzum Pressure** | σ_T | 23/24 | Void Seal / w₀ | G70 |
 
 ---
@@ -330,7 +330,7 @@ def verify_ten_pillars(self):
 | Constant | Value | Gate | Purpose |
 |----------|-------|------|---------|
 | η_S (Sophian) | 0.6819 | G64 | H₀ Friction / Wisdom's Restraint |
-| κ_Δ (Demiurgic) | k_gimel | G46 | Mass Gearbox / The Forge |
+| κ_Δ (Demiurgic) | ≈12.318 | G46 | Mass Gearbox / The Forge |
 | σ_T (Tzimtzum) | 23/24 | G70 | Void Seal / Dark Energy w₀ |
 
 ---

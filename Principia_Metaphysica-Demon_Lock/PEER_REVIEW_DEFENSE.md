@@ -301,7 +301,7 @@ PM v16.2 honors intellectual influences by naming seven core constants:
 | **Hossenfelder Constant** | lambda_S | sqrt(24) | Hidden Root | Sabine Hossenfelder |
 | **O'Dowd Constant** | P_O | 163 | Bulk Pressure | Matt O'Dowd |
 | **Penrose-Hameroff Constant** | Phi_PH | 13 | Biological Bridge | Penrose & Hameroff |
-| **Christ Constant** | Lambda_C | 153 | Logos Potential | Spiritual Foundation |
+| **Christ Constant** | Lambda_JC | 153 | Logos Potential | Jesus Christ |
 
 **Note on naming convention:**
 - Technical constants (Watts, Weinstein, Hossenfelder, O'Dowd, Penrose-Hameroff) represent physics derivations

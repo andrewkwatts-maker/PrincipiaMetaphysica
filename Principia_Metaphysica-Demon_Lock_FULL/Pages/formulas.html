@@ -46,16 +46,22 @@
         /* Formula Grid Layout */
         .formula-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 500px), 1fr));
             gap: 2rem;
             margin-top: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 2rem;
+            box-sizing: border-box;
         }
 
-        /* Responsive grid for larger screens */
-        @media (min-width: 1400px) {
-            .formula-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        /* Formula container alignment */
+        #formula-container {
+            max-width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Fade-in animation for cards */

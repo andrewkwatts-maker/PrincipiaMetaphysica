@@ -3,7 +3,7 @@
   "label": "Fine Structure Constant from G2",
   "wl_code": "\n                With[{b3 = 24, kg = 12.318309, ckaf = 27.2, s3v = 2.954060},\n                     FullSimplify[(ckaf * b3^2) / (kg * Pi * s3v)]]\n            ",
   "result": "[Mock] 137.035999...",
-  "hash": "ee9e054bcae0baad",
-  "timestamp": "2025-12-31T17:16:26.454576",
+  "hash": "2b89052695058e35",
+  "timestamp": "2026-01-02T01:44:43.994770",
   "verified": false
 }

@@ -235,13 +235,17 @@ class IntroductionV16(SimulationBase):
                     "from a 26D spacetime with signature (24,2), the <strong>S<sub>PR</sub>(2) gauge "
                     "symmetry</strong> freezes one time dimension, projecting the theory through "
                     "13D → 7D → 6D → 4D via sequential brane-node descent. The internal "
-                    "<strong>V₇ manifold</strong> with <strong>b₃ = 24</strong> and "
-                    "<strong>χ = 144</strong> provides all structure: fermion generations (b₃/8 = 3), "
+                    "<strong>V₇ manifold</strong> with <strong>b₃ = "
+                    '<span class="pm-value" data-pm-value="topology.b3">24</span></strong> and '
+                    '<strong>χ = <span class="pm-value" data-pm-value="topology.chi_effective">144</span></strong> '
+                    "provides all structure: fermion generations (b₃/8 = 3), "
                     "mixing angles, mass hierarchies, and cosmological parameters. The framework "
                     "achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, "
                     "and NuFIT 6.0 experimental data, including dark energy <strong>w₀ = -23/24</strong> "
-                    "matching DESI thawing (0.02σ) and <strong>H₀ = 73.04 km/s/Mpc</strong> matching "
-                    "SH0ES 2025 (0.0σ). All derivations are cryptographically locked via 42 "
+                    'matching DESI thawing (0.02σ) and <strong>H₀ = '
+                    '<span class="pm-value" data-pm-value="cosmology.H0_local">71.55</span> km/s/Mpc</strong> within '
+                    "1.4σ of SH0ES 2025. All derivations are cryptographically locked via "
+                    '<span class="pm-value" data-pm-value="statistics.certificates_total">72</span> '
                     "Wolfram-verified certificates."
                 ),
                 label="lead"

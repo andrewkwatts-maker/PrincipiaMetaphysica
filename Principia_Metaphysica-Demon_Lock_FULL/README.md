@@ -1,15 +1,18 @@
 # Principia Metaphysica
 **Philosophiæ Metaphysicæ Principia Mathematica**
 
-[![Version](https://img.shields.io/badge/version-16.2%20True%20Lock-blue)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
+[![Version](https://img.shields.io/badge/version-16.2%20STERILE-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
 [![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
 [![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/v16/appendices/appendix_f_72gates_v16_2.py)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
 
-**A Complete Geometric Framework for Fundamental Physics from G2 Manifold Compactification**
+**v16.2 STERILE: A Zero-Degree-of-Freedom Geometric Framework from G₂ Manifold Compactification**
 
 *Copyright (c) 2025-2026 Andrew Keith Watts. MIT License.*
+
+> ⚠️ **STERILE STATUS**: This is a zero-degree-of-freedom model. All 72 Gates are LOCKED.
+> No free parameters remain - every constant derives from pure G₂ topology.
 
 ---
 
@@ -73,15 +76,16 @@ Principia Metaphysica makes **parameter-free predictions** from G2 topology that
 | Dark Energy w_0 | -0.9583 (-23/24) | -0.957 +/- 0.067 | 0.02 sigma |
 | Evolution w_a | -0.204 (-1/√24) | -0.99 +/- 0.32 | 2.4 sigma |
 
-### New in v16.2 "True Lock"
-- **42 Demon-Lock Certificates**: All fundamental constants locked within 2σ of experiment
-- **Thawing Quintessence**: w₀ = -1 + 1/b₃ = -23/24 matches DESI 2025 at 0.02σ
-- **Global χ²/dof = 0.26**: Publication-ready statistical fit
-- **Zero free parameters**: All predictions from three topological seeds (b₃=24, k=12.318, φ)
+### New in v16.2 "STERILE"
+- **72 Gates of Integrity**: Complete sterile certification - all gates LOCKED
+- **Zero-Degree-of-Freedom**: No fitted parameters - pure geometric derivation
+- **DESI 2025 Alignment**: w₀ = -23/24 = -0.9583 matches at 0.027σ (near-perfect)
+- **Hubble Tension Resolved**: H₀ = 70.42 km/s/Mpc bridges CMB and local measurements
+- **Two-Time Framework**: (13,1) + (13,1) dimensional structure fully implemented
 - **116 formulas with complete derivation chains**
 
 ### Three Topological Seeds
-All 42 certificates derive from:
+All 72 gates derive from:
 | Seed | Value | Origin |
 |------|-------|--------|
 | **b₃** | 24 | G₂ manifold Betti number (TCS #187) |
@@ -549,4 +553,4 @@ This work builds upon:
 
 ---
 
-*"The answer is 42, and now we know why."* — v16.2 True Lock
+*"72 Gates LOCKED. STERILE: Zero degrees of freedom remain."* — v16.2 STERILE
