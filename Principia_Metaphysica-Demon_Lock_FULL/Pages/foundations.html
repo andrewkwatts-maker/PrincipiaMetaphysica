@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="../css/pm-scientific-typography.css">
     <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
-<link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
 
     <!-- MathJax Configuration -->
@@ -434,7 +435,7 @@
     </style>
 </head>
 <body class="auth-loading">
-    <div id="main-content">
+    <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
     <main>
@@ -483,7 +484,7 @@
     <footer>
         <p>
             <strong>Principia Metaphysica</strong><br>
-            &copy; 2025 Andrew Keith Watts. All rights reserved.
+            &copy; 2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
     </div>
@@ -703,13 +704,15 @@
 
     <script type="module">
         import { injectHeader } from '../js/pm-header.js';
-        
+        import { setupAuthGuard } from '../js/auth-guard.js';
 
         // Inject header first
         document.addEventListener('DOMContentLoaded', () => {
             injectHeader('foundations');
         });
 
-        </script>
+        // Setup auth after header
+        setupAuthGuard('foundations');
+    </script>
 </body>
 </html>
