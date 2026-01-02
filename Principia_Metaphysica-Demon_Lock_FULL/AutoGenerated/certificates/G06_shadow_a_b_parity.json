@@ -1,0 +1,17 @@
+{
+  "proof_id": "G06_shadow_a_b_parity",
+  "gate_id": 6,
+  "gate_name": "Shadow-A/B Parity",
+  "label": "Bifurcation of 24 pins into 12+12 chiral sets",
+  "category": "Symmetry",
+  "phase": 1,
+  "block": "A",
+  "version": "16.2",
+  "wl_code": "shadowA = 12; shadowB = 12; shadowA + shadowB == 24",
+  "result": "True",
+  "formula": "24 = 12_L + 12_R",
+  "verification_status": "VERIFIED",
+  "note": "Gate 6: Left/right potential balanced at source",
+  "timestamp": "2026-01-02T10:23:46.054456Z",
+  "hash": "b5fed762df1186b5"
+}

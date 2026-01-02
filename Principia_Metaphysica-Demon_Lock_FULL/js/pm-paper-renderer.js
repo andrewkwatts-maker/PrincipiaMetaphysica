@@ -854,54 +854,17 @@
                         const displayLatex = block.latex.startsWith('\\displaystyle') ? block.latex : `\\displaystyle ${block.latex}`;
                         formulaContent = `$$${displayLatex}$$`;
                     } else if (block.content) {
-                        // Wrap plain text content in LaTeX display mode
-                        // Convert common Unicode math symbols to LaTeX
-                        let latexContent = block.content
-                            .replace(/∫/g, '\\int ')
-                            .replace(/√/g, '\\sqrt')
-                            .replace(/≈/g, '\\approx ')
-                            .replace(/±/g, '\\pm ')
-                            .replace(/×/g, '\\times ')
-                            .replace(/÷/g, '\\div ')
-                            .replace(/≤/g, '\\leq ')
-                            .replace(/≥/g, '\\geq ')
-                            .replace(/≠/g, '\\neq ')
-                            .replace(/∞/g, '\\infty ')
-                            .replace(/Σ/g, '\\Sigma ')
-                            .replace(/Π/g, '\\Pi ')
-                            .replace(/Δ/g, '\\Delta ')
-                            .replace(/Ω/g, '\\Omega ')
-                            .replace(/α/g, '\\alpha ')
-                            .replace(/β/g, '\\beta ')
-                            .replace(/γ/g, '\\gamma ')
-                            .replace(/δ/g, '\\delta ')
-                            .replace(/ε/g, '\\epsilon ')
-                            .replace(/ζ/g, '\\zeta ')
-                            .replace(/η/g, '\\eta ')
-                            .replace(/θ/g, '\\theta ')
-                            .replace(/λ/g, '\\lambda ')
-                            .replace(/μ/g, '\\mu ')
-                            .replace(/ν/g, '\\nu ')
-                            .replace(/π/g, '\\pi ')
-                            .replace(/ρ/g, '\\rho ')
-                            .replace(/σ/g, '\\sigma ')
-                            .replace(/τ/g, '\\tau ')
-                            .replace(/φ/g, '\\phi ')
-                            .replace(/χ/g, '\\chi ')
-                            .replace(/ψ/g, '\\psi ')
-                            .replace(/ω/g, '\\omega ')
-                            .replace(/Γ/g, '\\Gamma ')
-                            .replace(/Ψ/g, '\\Psi ')
-                            .replace(/Φ/g, '\\Phi ')
-                            .replace(/⊗/g, '\\otimes ')
-                            .replace(/⟨/g, '\\langle ')
-                            .replace(/⟩/g, '\\rangle ')
-                            .replace(/—/g, '\\quad \\text{—} \\quad ')
-                            // Multi-digit exponents: ^26 -> ^{26}
-                            .replace(/\^(\d{2,})/g, '^{$1}')
-                            // Combining overline for Dirac adjoint: Ψ̄ -> \bar{\Psi}
-                            .replace(/([A-Za-z\u0391-\u03C9])̄/g, '\\bar{$1}')
-                            .replace(/([A-Za-z\u0391-\u03C9])̅/g, '\\bar{$1}');
+                        // Check if content is already valid LaTeX (contains backslash commands)
+                        const hasLatexCommands = /\\(frac|alpha|beta|gamma|text|left|right|sum|int|sqrt|quad|begin|end|partial|nabla|infty|times|pm|cdot|leq|geq|neq|approx)\b/.test(block.content);
+
+                        let latexContent;
+                        if (hasLatexCommands) {
+                            // Content is already LaTeX - use as-is
+                            latexContent = block.content;
+                        } else {
+                            // Convert Unicode math symbols to LaTeX
+                            latexContent = convertToLatex(block.content);
+                        }
                         // Add displaystyle for proper fraction rendering
                         formulaContent = `$$\\displaystyle ${latexContent}$$`;
                     }
@@ -1193,7 +1156,17 @@
                 contentToParse = contentToParse.replace(/(?:\n|^)\s*[—–-]\s*[^\n]+$/, '');
             }
 
-            latex = convertToLatex(contentToParse);
+            // Check if content is already valid LaTeX (contains backslash commands)
+            // Common LaTeX commands: \frac, \alpha, \text, \left, \right, \sum, \int, etc.
+            const hasLatexCommands = /\\(frac|alpha|beta|gamma|text|left|right|sum|int|sqrt|quad|begin|end|partial|nabla|infty|times|pm|cdot|leq|geq|neq|approx)\b/.test(contentToParse);
+
+            if (hasLatexCommands) {
+                // Content is already LaTeX - use as-is
+                latex = contentToParse;
+            } else {
+                // Convert Unicode math to LaTeX
+                latex = convertToLatex(contentToParse);
+            }
         }
 
         // If we still have no formula ID and no LaTeX, fall back to null
@@ -1774,7 +1747,11 @@
     function convertToLatex(content) {
         if (!content || typeof content !== 'string') return '';
 
-        return content
+        // Check if this is a multi-line formula (contains newlines with level indicators)
+        const isMultiLineHierarchy = content.includes('\n') &&
+            (content.includes('Level') || content.includes('↓') || content.includes('→'));
+
+        let result = content
             // HTML subscripts and superscripts - convert to LaTeX FIRST
             .replace(/<sub>([^<]+)<\/sub>/gi, '_{$1}')
             .replace(/<sup>([^<]+)<\/sup>/gi, '^{$1}')
@@ -1955,8 +1932,6 @@
             // Merge adjacent braces: ^{5}^{(} -> ^{5(}
             .replace(/\}\^?\{/g, '')
             .replace(/\}_?\{/g, '')
-            // Fix double backslashes from newlines in math mode
-            .replace(/\s*\\\\\s*/g, ' \\quad ')
             // Common gauge group patterns: SU(3)C -> SU(3)_C
             .replace(/SU\((\d)\)([CLRYW])/g, 'SU($1)_{$2}')
             .replace(/U\(1\)([CLRYW])/g, 'U(1)_{$1}')
@@ -1968,6 +1943,30 @@
             .replace(/⊖/g, '\\ominus ')
             // Fix common patterns like 8s, 8c, 8v -> 8_s, 8_c, 8_v (spinor/conjugate/vector)
             .replace(/(\d+)([scv])(?=\s|\)|,|\}|$)/g, '$1_{$2}');
+
+        // For multi-line hierarchy formulas, wrap in aligned environment
+        if (isMultiLineHierarchy) {
+            // Split by newlines and format each line
+            const lines = result.split(/\n/).map(line => {
+                // Trim and skip empty lines
+                line = line.trim();
+                if (!line) return '';
+                // Convert level labels to text mode
+                line = line.replace(/^(Level \d+[^:]*:)/g, '\\textbf{$1} & ');
+                // Convert arrows to proper alignment
+                line = line.replace(/^↓\s*(.*)$/g, '& \\downarrow \\text{$1}');
+                line = line.replace(/^—\s*(.*)$/g, '& \\text{— $1}');
+                return line;
+            }).filter(line => line);
+
+            // Wrap in aligned environment with line breaks
+            result = '\\begin{aligned} ' + lines.join(' \\\\ ') + ' \\end{aligned}';
+        } else {
+            // For non-hierarchy multi-line, use simple line breaks
+            result = result.replace(/\n/g, ' \\\\ ');
+        }
+
+        return result;
     }
 
     /**

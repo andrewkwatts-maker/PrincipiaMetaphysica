@@ -731,11 +731,23 @@ class SimulationRunner:
         # Step 4: Generate validation report
         validation_report = self._generate_validation_report()
 
-        # Step 5: Export to theory_output.json
+        # Step 5: Omega Hash Check (Gate 72 - STERILE validation)
+        omega_hash_passed = self._check_omega_hash()
+        validation_report["omega_hash_passed"] = omega_hash_passed
+
+        # Step 6: Export to theory_output.json
         output_data = self._export_to_json(validation_report)
 
-        # Step 6: Print summary
+        # Step 7: Print summary
         self._print_summary(validation_report)
+
+        # CRITICAL: If Omega Hash fails, terminate with error
+        if not omega_hash_passed:
+            print("\n" + "=" * 80)
+            print("[CRITICAL] OMEGA HASH FAILED - STERILE STATUS COMPROMISED")
+            print("Gate 72 validation: Bit-sum is NOT zero - model is NOT sterile!")
+            print("=" * 80)
+            sys.exit(72)  # Exit code 72 = Gate 72 failure
 
         return output_data
 
@@ -1712,6 +1724,65 @@ class SimulationRunner:
         if self.verbose:
             print(f"  Created: index.json")
             print(f"[OK] Split into {len(index['components'])} component files")
+
+    def _check_omega_hash(self) -> bool:
+        """
+        Gate 72 - Omega Hash Check for STERILE Model Validation.
+
+        The Omega Hash verifies that the model is truly sterile (zero degrees of freedom).
+        It computes a bit-sum from all 72 gate validation statuses:
+        - Each locked gate contributes 0 to the sum
+        - Any unlocked gate contributes 1 to the sum
+        - STERILE model requires bit-sum = 0
+
+        Returns:
+            True if Omega Hash passes (bit-sum = 0), False otherwise
+        """
+        if self.verbose:
+            print("\n[GATE 72] Omega Hash - STERILE Validation Check")
+            print("-" * 80)
+
+        # Count validation bits from simulation results
+        bit_sum = 0
+        gate_status = []
+
+        # Check all simulation results
+        for result in self.results:
+            if result.status != "PASSED":
+                bit_sum += 1
+                gate_status.append(f"  [UNLOCKED] {result.simulation_id}: {result.status}")
+            else:
+                gate_status.append(f"  [LOCKED] {result.simulation_id}")
+
+        # Check for >1 sigma tensions (each tension adds to bit-sum)
+        tension_bits = len(self.tensions)
+        bit_sum += tension_bits
+
+        if self.verbose:
+            print(f"Simulations checked: {len(self.results)}")
+            print(f"Failed simulations: {sum(1 for r in self.results if r.status != 'PASSED')}")
+            print(f"Tensions (>1sigma): {tension_bits}")
+            print(f"Omega Hash bit-sum: {bit_sum}")
+
+            # Show the formula (using ASCII for Windows console compatibility)
+            print("\nGate 72 Formula: OMEGA = SUM(gate_failures) + SUM(tensions)")
+            print(f"OMEGA = {sum(1 for r in self.results if r.status != 'PASSED')} + {tension_bits} = {bit_sum}")
+
+            if bit_sum == 0:
+                print("\n[OMEGA HASH] PASSED - Model is STERILE (OMEGA = 0)")
+                print("All 72 Gates LOCKED. Zero degrees of freedom.")
+            else:
+                print(f"\n[OMEGA HASH] FAILED - Model is NOT sterile (OMEGA = {bit_sum})")
+                print("Unlocked gates detected:")
+                for status in gate_status:
+                    if "UNLOCKED" in status:
+                        print(status)
+                if tension_bits > 0:
+                    print(f"\nTension violations ({tension_bits}):")
+                    for tension in self.tensions:
+                        print(f"  - {tension.param_path}: {tension.sigma_deviation:.2f} sigma deviation")
+
+        return bit_sum == 0
 
     def _print_summary(self, validation_report: Dict[str, Any]) -> None:
         """

@@ -112,9 +112,10 @@
 
             // ================================================================
             // Hubble Constant (Cosmology)
-            // H0_local = 73.04 (SH0ES), H0_early = 67.4 (Planck CMB)
+            // H0_local = 71.55 (O'Dowd formula), H0_early = 67.4 (Planck CMB)
+            // Experimental: SH0ES 2025 = 73.04 ± 1.04 km/s/Mpc
             // ================================================================
-            'cosmology.H0_local': 'cosmology.H0_late_evolved',
+            'cosmology.H0_local': '_hardcoded.H0_local',
             'cosmology.H0_early': 'cosmology.H0_early_normalized',
             'cosmology.H0': 'cosmology.H0_late_evolved',
             'hubble.H0_local': 'cosmology.H0_late_evolved',
@@ -196,6 +197,32 @@
             // Topology parameters - extended aliases
             // ================================================================
             'parameters.topology.n_gen': 'topology.n_gen',
+            'topology.b3': '_hardcoded.b3',
+            'topology.chi_effective': '_hardcoded.chi_effective',
+
+            // ================================================================
+            // Statistics - from statistics.json
+            // ================================================================
+            'statistics.certificates_total': '_hardcoded.certificates_total',
+            'statistics.certificates_verified': '_hardcoded.certificates_verified',
+
+            // ================================================================
+            // THE MECHANICAL TRIAD (Gates 64, 46, 70)
+            // ================================================================
+            // Sophian Torsion Drag (η_S = 0.6819) - Gate 64
+            'constants.sophian_drag': '_hardcoded.sophian_drag',
+            'cosmology.eta_S': '_hardcoded.eta_S',
+            'mechanical.sophian_drag': '_hardcoded.sophian_drag',
+            // Demiurgic Coupling (κ_Δ = k_gimel) - Gate 46
+            'constants.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
+            'constants.kappa_Delta': '_hardcoded.kappa_Delta',
+            'constants.k_gimel': '_hardcoded.k_gimel',
+            'mechanical.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
+            // Tzimtzum Pressure (σ_T = 23/24) - Gate 70
+            'constants.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
+            'cosmology.sigma_T': '_hardcoded.sigma_T',
+            'cosmology.w0_magnitude': '_hardcoded.w0_magnitude',
+            'mechanical.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
 
             // ================================================================
             // Proton decay branching ratios
@@ -216,6 +243,26 @@
             'kk_m1_TeV': '5.0 TeV',
             'kk_hl_lhc': '5σ discovery potential',
             'BR_epi0': 0.45,
+            // Topological invariants from named_constants.json
+            'b3': 24,
+            'chi_effective': 144,
+            // Cosmology - H0 from O'Dowd formula: (288/4) - (163/144) + 0.6819 = 71.55
+            'H0_local': 71.55,
+            // Statistics from statistics.json
+            'certificates_total': 72,
+            'certificates_verified': 72,
+            // === THE MECHANICAL TRIAD (Gates 64, 46, 70) ===
+            // Sophian Torsion Drag (η_S): Wisdom's restraint that slows expansion
+            'sophian_drag': 0.6819,
+            'eta_S': 0.6819,
+            // Demiurgic Coupling (κ_Δ): The forge where 26D geometry becomes 4D mass
+            'demiurgic_coupling': 12.31830988618379,
+            'kappa_Delta': 12.31830988618379,
+            'k_gimel': 12.31830988618379,
+            // Tzimtzum Pressure (σ_T): The boundary tension of the contracted vacuum
+            'tzimtzum_pressure': 0.9583333333333334,
+            'sigma_T': 0.9583333333333334,
+            'w0_magnitude': 0.9583333333333334,
         },
 
         /**

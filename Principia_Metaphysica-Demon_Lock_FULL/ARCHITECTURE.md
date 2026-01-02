@@ -1,14 +1,62 @@
 # Principia Metaphysica - Project Architecture
 
+## v16.2 STERILE: Two-Time Framework
+
+### Theoretical Architecture: (13,1) + (13,1) Dimensional Structure
+
+```
+    26D Bulk (24,2) Signature
+    ┌────────────────────────────────────────────────────────────────┐
+    │                                                                │
+    │   Sp(2,ℝ) Gauge Fixing (removes 13 ghost dimensions)          │
+    │                         ▼                                      │
+    │   ┌──────────────────────────────────────────────────────┐    │
+    │   │           13D Shadow Manifold (12,1)                  │    │
+    │   │                                                       │    │
+    │   │   G₂ Compactification (7 dimensions → geometry)      │    │
+    │   │                         ▼                             │    │
+    │   │   ┌──────────────────────────────────────────────┐   │    │
+    │   │   │        6D Observable Bulk (5,1)              │   │    │
+    │   │   │                                              │   │    │
+    │   │   │   ┌──────────┐  ┌──────────┐  ┌──────────┐  │   │    │
+    │   │   │   │Observable│  │ Shadow 1 │  │ Shadow 2 │  │   │    │
+    │   │   │   │Universe  │  │ (hidden) │  │ (hidden) │  │   │    │
+    │   │   │   │  (3,1)   │  │  (3,1)   │  │  (3,1)   │  │   │    │
+    │   │   │   └──────────┘  └──────────┘  └──────────┘  │   │    │
+    │   │   └──────────────────────────────────────────────┘   │    │
+    │   └──────────────────────────────────────────────────────┘    │
+    └────────────────────────────────────────────────────────────────┘
+```
+
+### 72-Gate Integrity Framework
+
+The v16.2 STERILE model is validated by 72 hard gates organized in 6 blocks:
+
+| Block | Gates   | Domain                                    |
+|-------|---------|-------------------------------------------|
+| A     | G01-G12 | Root Basis (Manifold Potential & Holonomy)|
+| B     | G13-G24 | Torsion Cage (Pin Alignment & Forces)     |
+| C     | G25-G36 | Gauge Sector (Force Unification)          |
+| D     | G37-G48 | Residue Bank (Mixing & Cosmology)         |
+| E     | G49-G60 | Metric Sector (Spacetime Anchoring)       |
+| F     | G61-G72 | Omega Closure (Information & Recursion)   |
+
+**Key Constants (Zero Free Parameters):**
+- **b₃ = 24**: G₂ manifold third Betti number
+- **χ_eff = 144**: Effective Euler characteristic (6 × b₃)
+- **w₀ = -23/24**: Dark energy equation of state
+
+---
+
 ## Simple Answer: What Does What?
 
 ```
                     ┌─────────────────────┐
                     │    config.py        │  ← SINGLE SOURCE OF TRUTH
                     │                     │     • All parameter values
-                    │  M_Pl = 1.22e19     │     • Physical constants
-                    │  w_0 = -11/13       │     • Theory parameters
-                    │  m_KK = 5.0 TeV     │     • Static definitions only
+                    │  M_Pl = 2.435e18    │     • Physical constants
+                    │  w_0 = -23/24       │     • Theory parameters (v16.2)
+                    │  b_3 = 24           │     • Static definitions only
                     └──────────┬──────────┘
                                │
                  ┌─────────────┴─────────────┐

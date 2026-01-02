@@ -28,22 +28,28 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-REM Run simulations if run_all_simulations.py exists
-if exist run_all_simulations.py (
-    echo [1/2] Running simulations to generate data files...
-    echo.
-    python run_all_simulations.py
-    if %errorlevel% neq 0 (
+REM Check if simulations folder exists AND run_all_simulations.py exists
+if exist simulations\ (
+    if exist run_all_simulations.py (
+        echo [1/2] Running simulations to generate data files...
         echo.
-        echo WARNING: Simulations had errors. Website may have missing data.
-        echo.
+        python run_all_simulations.py
+        if %errorlevel% neq 0 (
+            echo.
+            echo WARNING: Simulations had errors. Website may have missing data.
+            echo.
+        ) else (
+            echo.
+            echo Simulations completed successfully.
+            echo.
+        )
     ) else (
-        echo.
-        echo Simulations completed successfully.
+        echo [1/2] Simulations script not found - using pre-generated data files.
         echo.
     )
 ) else (
-    echo [1/2] Simulations not included - using pre-generated data files.
+    echo [1/2] This is a website-only package - using pre-generated data files.
+    echo      (Simulations folder not included for smaller package size)
     echo.
 )
 

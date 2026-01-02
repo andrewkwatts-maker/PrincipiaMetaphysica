@@ -80,23 +80,39 @@
     font-size: 0.95em !important;
 }
 
-/* Fallback: if formula is truly too long, allow horizontal scroll on wrapper only */
+/* Multi-line formulas (aligned environment) - allow natural wrapping */
 .equation-wrapper {
-    overflow-x: auto;
+    overflow-x: visible;
     overflow-y: visible;
     padding-bottom: 0.5rem;
+    max-width: 100%;
 }
 
-/* Hide scrollbar when not needed */
+/* For genuinely overflowing formulas, scale down instead of scroll */
+.equation-content {
+    max-width: 100%;
+    overflow-x: visible;
+}
+
+/* MathJax aligned environment - proper stacking */
+.equation-content mjx-mtable {
+    display: block !important;
+    max-width: 100% !important;
+}
+
+/* Hierarchy formulas get smaller font to fit */
+.equation-wrapper mjx-container[display="true"] {
+    max-width: 100%;
+    overflow-x: visible;
+}
+
+/* Hide scrollbar - we prefer wrapping/scaling */
 .equation-wrapper::-webkit-scrollbar {
-    height: 4px;
+    display: none;
 }
-.equation-wrapper::-webkit-scrollbar-thumb {
-    background: rgba(139, 127, 255, 0.3);
-    border-radius: 2px;
-}
-.equation-wrapper::-webkit-scrollbar-track {
-    background: transparent;
+.equation-wrapper {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
 
 /* Equation number - right-aligned in parentheses (like old paper) */
@@ -377,6 +393,7 @@
 @media print {
     .formula-equation {
         break-inside: avoid;
+        overflow: visible !important;
     }
 
     .formula-card {
@@ -393,6 +410,26 @@
 
     .equation-number {
         color: #000;
+    }
+
+    /* Ensure formulas don't get scroll boxes in print */
+    .equation-wrapper,
+    .equation-content,
+    .formula-block {
+        overflow: visible !important;
+        max-width: 100% !important;
+    }
+
+    /* Scale down large formulas for print */
+    .equation-content mjx-container {
+        max-width: 100% !important;
+        transform-origin: left center;
+    }
+
+    /* Aligned environments should wrap naturally */
+    mjx-mtable {
+        max-width: 100% !important;
+        display: block !important;
     }
 
     /* Remove interactive elements */

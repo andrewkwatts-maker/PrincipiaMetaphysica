@@ -207,18 +207,50 @@
             'statistics.certificates_verified': '_hardcoded.certificates_verified',
 
             // ================================================================
+            // THE SACRED HEPTAGON (7 Intellectual Anchors)
+            // ================================================================
+            // 1. Watts Constant (Ω_W = 1.0) - Observer Unity
+            'constants.watts_constant': '_hardcoded.watts_constant',
+            'constants.omega_W': '_hardcoded.watts_constant',
+            'heptagon.watts_constant': '_hardcoded.watts_constant',
+            // 2. Reid Invariant (χ_R = 1/144) - Sounding Board
+            'constants.reid_invariant': '_hardcoded.reid_invariant',
+            'constants.chi_R': '_hardcoded.reid_invariant',
+            'heptagon.reid_invariant': '_hardcoded.reid_invariant',
+            // 3. Weinstein Scale (κ_E = 12.0) - Spinor Process
+            'constants.weinstein_scale': '_hardcoded.weinstein_scale',
+            'constants.kappa_E': '_hardcoded.weinstein_scale',
+            'heptagon.weinstein_scale': '_hardcoded.weinstein_scale',
+            // 4. Hossenfelder Constant (λ_S = √24) - Hidden Root
+            'constants.hossenfelder_constant': '_hardcoded.hossenfelder_constant',
+            'constants.lambda_S': '_hardcoded.hossenfelder_constant',
+            'heptagon.hossenfelder_constant': '_hardcoded.hossenfelder_constant',
+            // 5. O'Dowd Constant (P_O = 163) - Bulk Pressure
+            'constants.odowd_constant': '_hardcoded.odowd_constant',
+            'constants.P_O': '_hardcoded.odowd_constant',
+            'heptagon.odowd_constant': '_hardcoded.odowd_constant',
+            // 6. Penrose-Hameroff Constant (Φ_PH = 13) - Biological Bridge
+            'constants.penrose_hameroff': '_hardcoded.penrose_hameroff',
+            'constants.phi_PH': '_hardcoded.penrose_hameroff',
+            'heptagon.penrose_hameroff': '_hardcoded.penrose_hameroff',
+            // 7. Christ Constant (Λ_JC = 153) - Logos Potential
+            'constants.christ_constant': '_hardcoded.christ_constant',
+            'constants.lambda_JC': '_hardcoded.christ_constant',
+            'heptagon.christ_constant': '_hardcoded.christ_constant',
+
+            // ================================================================
             // THE MECHANICAL TRIAD (Gates 64, 46, 70)
             // ================================================================
-            // Sophian Torsion Drag (η_S = 0.6819) - Gate 64
+            // 8. Sophian Torsion Drag (η_S = 0.6819) - Gate 64
             'constants.sophian_drag': '_hardcoded.sophian_drag',
             'cosmology.eta_S': '_hardcoded.eta_S',
             'mechanical.sophian_drag': '_hardcoded.sophian_drag',
-            // Demiurgic Coupling (κ_Δ = k_gimel) - Gate 46
+            // 9. Demiurgic Coupling (κ_Δ = k_gimel) - Gate 46
             'constants.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
             'constants.kappa_Delta': '_hardcoded.kappa_Delta',
             'constants.k_gimel': '_hardcoded.k_gimel',
             'mechanical.demiurgic_coupling': '_hardcoded.demiurgic_coupling',
-            // Tzimtzum Pressure (σ_T = 23/24) - Gate 70
+            // 10. Tzimtzum Pressure (σ_T = 23/24) - Gate 70
             'constants.tzimtzum_pressure': '_hardcoded.tzimtzum_pressure',
             'cosmology.sigma_T': '_hardcoded.sigma_T',
             'cosmology.w0_magnitude': '_hardcoded.w0_magnitude',
@@ -251,6 +283,21 @@
             // Statistics from statistics.json
             'certificates_total': 72,
             'certificates_verified': 72,
+            // === THE SACRED HEPTAGON (7 Intellectual Anchors) ===
+            // 1. Watts Constant (Ω_W): Observer invariant - unity across all observers
+            'watts_constant': 1.0,
+            // 2. Reid Invariant (χ_R): Sounding board coefficient
+            'reid_invariant': 0.006944444444444444,  // 1/144
+            // 3. Weinstein Scale (κ_E): Spinor connection to 12D process
+            'weinstein_scale': 12.0,
+            // 4. Hossenfelder Constant (λ_S): Hidden root revealing structure
+            'hossenfelder_constant': 4.898979485566356,  // √24
+            // 5. O'Dowd Constant (P_O): Bulk pressure from 26D
+            'odowd_constant': 163,
+            // 6. Penrose-Hameroff Constant (Φ_PH): Consciousness bridge
+            'penrose_hameroff': 13,
+            // 7. Christ Constant (Λ_JC): Logos potential (153 + 135 = 288)
+            'christ_constant': 153,
             // === THE MECHANICAL TRIAD (Gates 64, 46, 70) ===
             // Sophian Torsion Drag (η_S): Wisdom's restraint that slows expansion
             'sophian_drag': 0.6819,
