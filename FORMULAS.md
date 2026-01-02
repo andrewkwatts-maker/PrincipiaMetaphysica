@@ -1,10 +1,10 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-03 03:51:04
+**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-03 04:14:15
 **Engine Version:** v17.2-ABSOLUTE
-**Sovereign Hash:** `debd518f33c26ce096aea6f632539eb2...`
+**Sovereign Hash:** `36dd11e3a5394054c9e785ea292ffbb1...`
 
-<!-- SOVEREIGN_HASH_FULL: debd518f33c26ce096aea6f632539eb2873aa978293dd706ff553da3d8197b0d -->
+<!-- SOVEREIGN_HASH_FULL: 36dd11e3a5394054c9e785ea292ffbb1f09eefcc2155464fdcd091a3976d6a60 -->
 
 ---
 
