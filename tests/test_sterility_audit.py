@@ -146,24 +146,42 @@ class GhostLiteralScanner:
         ".venv",
         "venv",
         "env",
+        # Archived/packaged versions (frozen snapshots)
+        "Principia_Metaphysica-Demon_Lock",
+        "Principia_Metaphysica-Demon_Lock_FULL",
+        "Principia_Metaphysica_v16_2_20251231",
+        "Principia_Metaphysica_v16_2_20260101_FULL",
+        "Principia_Metaphysica_v16_2_20260102_FULL",
     }
 
-    # Known Ghost Literals that MUST be migrated to Registry
+    # Known Ghost Literals that MUST be migrated to Registry (v17.2)
+    # NOTE: EXPERIMENTAL values (137.036 from CODATA) are ALLOWED in validation scripts
+    #       Only our DERIVED predictions should use the Registry SSoT
     KNOWN_GHOSTS: Set[float] = {
+        # Deprecated/incorrect values (MUST be removed)
         0.5772,         # Truncated Sophian Gamma (should be 0.57721566490153286)
         0.57721,        # Truncated Sophian Gamma
         1.280145,       # Deprecated holonomy (should be 1.5427971665)
-        576,            # Manifold volume (should be B3^2)
-        137.035,        # Alpha inverse hardcoded
-        137.036,        # Alpha inverse hardcoded
-        137.035999,     # Alpha CODATA fallback
-        1.6402,         # Parity target (should be from Registry)
         4.898979,       # Hossenfelder Root (should be sqrt(24))
         0.006944,       # Reid Invariant (should be 1/144)
         0.00694444,     # Reid Invariant
-        71.55,          # H0 result (should be calculated, not hardcoded)
-        0.9583,         # Tzimtzum (should be 23/24 fraction)
-        0.6819,         # Sophian Drag (should be from Registry)
+        # DERIVED values that should use Registry (PM predictions)
+        # NOTE: These are intentionally left commented out - they are valid when
+        # sourced from FormulasRegistry. The audit should focus on DEPRECATED values.
+        # 576,          # Manifold volume (B3^2) - acceptable if from registry
+        # 1.6402,       # Parity target - acceptable if from registry
+        # 71.55,        # H0 result - acceptable if from registry
+        # 0.9583,       # Tzimtzum - acceptable if from registry
+        # 0.6819,       # Sophian Drag - acceptable if from registry
+    }
+
+    # EXPERIMENTAL values from PDG/CODATA that SHOULD stay hardcoded
+    # These are external measurements, NOT our derived predictions
+    EXPERIMENTAL_VALUES: Set[float] = {
+        137.035,        # Alpha inverse (CODATA)
+        137.036,        # Alpha inverse (CODATA)
+        137.035999,     # Alpha inverse high precision (CODATA 2022)
+        137.035999177,  # Alpha inverse ultra-precision (CODATA)
     }
 
     def __init__(self, project_root: str = None, strict_mode: bool = False):

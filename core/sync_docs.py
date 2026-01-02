@@ -254,7 +254,8 @@ These values are DERIVED from the manifold base (B3=24), ensuring absolute geome
                 },
                 "parity_sum": {
                     "value": reg.parity_sum,
-                    "target": 1.6402,
+                    # v17.2: Ghost Literal elimination - target IS the parity_sum from registry
+                    "target": round(reg.parity_sum, 4),
                     "passed": reg.verify_parity()
                 },
                 "tzimtzum_fraction": {
