@@ -273,6 +273,43 @@ Numerology has no such chains - just coincidences.
 
 ---
 
+## Terminology Mapping (For Peer Reviewers)
+
+The following table maps PM-specific terminology to standard physics concepts to assist reviewers unfamiliar with the nomenclature:
+
+| PM Terminology | Standard Physics Equivalent | Mathematical Form | Reference |
+|----------------|----------------------------|-------------------|-----------|
+| Demon Lock | Moduli Stabilization | dV/dphi = 0 | KKLT 2003 |
+| 72-Gate Registry | Topological Constraint Map | Discrete symmetry group | Joyce 2000 |
+| Sterility | Unitary Invariance | U^dag U = I | - |
+| 24 Torsion Pins | Third Betti Number (b3) | b3 = 24 | CHNP 2015 |
+| Pneuma Field | Non-Abelian Gauge Condensate | SU(3) x SU(2) x U(1) | - |
+| Terminal Stasis | Complete Moduli Lock | All parameters fixed | - |
+| ROOTS | Total Root Count | 288 (from Leech Lattice) | Conway 1985 |
+| CHI | Effective Euler Characteristic | chi_eff = 144 | - |
+| Active/Hidden Split | Visible/Dark Sector | 125 + 163 = 288 | - |
+
+### The Seven Pillars (Named Constants)
+
+PM v16.2 honors intellectual influences by naming seven core constants:
+
+| Constant | Symbol | Value | Role | Named For |
+|----------|--------|-------|------|-----------|
+| **Watts Constant** | Omega_W | 1.0 | Observer Unity | Andrew Keith Watts |
+| **Reid Invariant** | chi_R | 1/144 | Sounding Board | Richard George Reid [074] |
+| **Weinstein Scale** | kappa_E | 12.0 | Spinor Process | Eric Weinstein |
+| **Hossenfelder Constant** | lambda_S | sqrt(24) | Hidden Root | Sabine Hossenfelder |
+| **O'Dowd Constant** | P_O | 163 | Bulk Pressure | Matt O'Dowd |
+| **Penrose-Hameroff Constant** | Phi_PH | 13 | Biological Bridge | Penrose & Hameroff |
+| **Christ Constant** | Lambda_C | 153 | Logos Potential | Spiritual Foundation |
+
+**Note on naming convention:**
+- Technical constants (Watts, Weinstein, Hossenfelder, O'Dowd, Penrose-Hameroff) represent physics derivations
+- The Reid Invariant is a sounding board acknowledgment (non-technical)
+- The Christ Constant represents spiritual completion (153 + 135 = 288)
+
+---
+
 ## Conclusion
 
 Principia Metaphysica meets the standard criteria for a legitimate physical theory:

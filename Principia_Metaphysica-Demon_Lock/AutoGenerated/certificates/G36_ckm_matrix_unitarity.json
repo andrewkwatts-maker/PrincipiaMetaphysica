@@ -1,0 +1,18 @@
+{
+  "proof_id": "G36_ckm_matrix_unitarity",
+  "gate_id": 36,
+  "gate_name": "CKM Matrix Unitarity",
+  "label": "Quark mixing probabilities sum to 1",
+  "category": "Quarks",
+  "phase": 3,
+  "block": "D",
+  "version": "16.2",
+  "wl_code": "PENDING",
+  "result": "PENDING",
+  "formula": "V_CKM\u2020 V_CKM = I",
+  "verification_status": "PENDING_LOCK",
+  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
+  "note": "PENDING: Quark mixing probabilities sum to 1. Validation: No quark vanishes, only rotates",
+  "timestamp": "2026-01-02T10:23:46.062434Z",
+  "hash": "ba9962085b00baf7"
+}

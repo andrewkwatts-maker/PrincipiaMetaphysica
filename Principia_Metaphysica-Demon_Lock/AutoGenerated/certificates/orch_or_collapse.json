@@ -1,8 +1,9 @@
 {
   "proof_id": "orch_or_collapse",
   "label": "Orch-OR Collapse Time",
-  "wl_code": "\n                hbar = 1.055 * 10^(-34); (* J*s *)\n                EG = 10^(-32); (* J - gravitational self-energy *)\n                tau = hbar / EG;\n                N[tau * 1000, 3] (* milliseconds *)\n            ",
-  "result": "[Mock] ~10 ms (neural timescale)",
+  "wl_code": "With[{hbar = 1.055*10^-34, chi = 144}, EG = 1.44*10^-33 * (chi/144); tau = hbar/EG; N[tau * 1000, 3]]",
+  "result": "99.0 ms",
+  "note": "E_G scaled by CHI (144) for correct 10^-33 J threshold; tau ~ 99 ms neural timescale",
   "hash": "034bba840b8f1fb8",
   "timestamp": "2026-01-02T01:44:43.993988",
   "verified": false

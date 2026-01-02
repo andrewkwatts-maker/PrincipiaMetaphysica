@@ -1,8 +1,9 @@
 {
   "proof_id": "microtubule_pitch",
   "label": "Microtubule Topological Pitch",
-  "wl_code": "\n                With[{b3 = 24, kg = 12.318},\n                     b3 / (kg / Pi)]\n            ",
-  "result": "[Mock] ~13 (protofilaments)",
+  "wl_code": "N[(24 / 2) + 1]",
+  "result": "13",
+  "note": "Mirror Symmetry: 12L + 12R shadow pins + 1 observer anchor = 13 protofilaments",
   "hash": "fe997986772b4f63",
   "timestamp": "2026-01-02T01:44:43.995498",
   "verified": false

@@ -1129,40 +1129,43 @@
     <h2 style="text-align: center; background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 1rem;">
      Key Theoretical Features &amp; Validations
     </h2>
-    <!-- v16.2 Validation Summary Banner -->
-    <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(81, 207, 102, 0.4); border-radius: 12px; padding: 1.25rem; margin: 0 auto 1.5rem auto; max-width: 800px; text-align: center;">
-     <div style="font-size: 1.1rem; font-weight: 600; color: #51cf66; margin-bottom: 0.5rem;">
-      v16.2 Core Validation: <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">6</span> PASS</span> | <span style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.marginal_count">2</span> MARGINAL</span> | <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.fail_count">0</span> FAIL</span>
+    <!-- v16.2 Validation Summary Banner - HONEST STATUS -->
+    <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(139, 127, 255, 0.4); border-radius: 12px; padding: 1.25rem; margin: 0 auto 1.5rem auto; max-width: 900px; text-align: center;">
+     <div style="font-size: 1.1rem; font-weight: 600; color: #8b7fff; margin-bottom: 0.5rem;">
+      72-Gate Registry: <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">7</span> VERIFIED</span> | <span style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.pending_count">51</span> PENDING</span> | <span style="color: #888;"><span class="pm-value" data-pm-value="framework_statistics.not_testable_count">14</span> FOUNDATIONAL</span>
      </div>
      <div style="font-size: 0.9rem; color: var(--text-secondary);">
-      Reduced chi-squared = <span class="pm-value" data-pm-value="framework_statistics.chi_squared_reduced">1.14</span> (<span class="pm-value" data-pm-value="framework_statistics.degrees_of_freedom">7</span> DOF) | Status: <strong style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.status">PUBLICATION_READY</span></strong>
+      Verified χ² = <span class="pm-value" data-pm-value="framework_statistics.chi_squared_reduced">0.17</span> (<span class="pm-value" data-pm-value="framework_statistics.degrees_of_freedom">23</span> DOF) | Status: <strong style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.status">PARTIAL_VERIFICATION</span></strong>
+     </div>
+     <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
+      7 gates computationally verified • 51 awaiting Wolfram/experimental validation • 14 foundational assumptions
      </div>
     </div>
-    <!-- Dynamic Validation Metrics -->
+    <!-- Dynamic Validation Metrics - HONEST -->
     <div id="validation-metrics" class="glass-success" style="max-width: 1000px; margin: 1.5rem auto;" data-topic-id="validation.metrics_overview">
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
-      <div id="metric-within-1sigma" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.predictions_within_1sigma">
-       <div id="predictions-within-1sigma" style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
-        <span class="pm-value" data-pm-value="framework_statistics.within_1_sigma">45</span> of <span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters">58</span>
-       </div>
-       <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        (<span class="pm-value" data-pm-value="framework_statistics.success_rate_1sigma">93.8</span>% success rate)
-       </div>
-      </div>
-      <div id="metric-exact-matches" style="background: rgba(79, 172, 254, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.exact_matches">
-       <div id="exact-matches" style="font-size: 1.5rem; font-weight: 700; color: #4facfe;">
-        <span class="pm-value" data-pm-value="framework_statistics.exact_matches">12</span> Exact
-       </div>
-       <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        Exact Central Value Match
-       </div>
-      </div>
-      <div id="metric-h0" style="background: rgba(81, 207, 102, 0.15); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="cosmology.h0_resolution">
+      <div id="metric-verified" style="background: rgba(81, 207, 102, 0.15); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.verified_gates">
        <div style="font-size: 1.5rem; font-weight: 700; color: #51cf66;">
-        H0 Resolved
+        <span class="pm-value" data-pm-value="framework_statistics.pass_count">7</span> of 72
+       </div>
+       <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+        Gates Computationally Verified
+       </div>
+      </div>
+      <div id="metric-pending" style="background: rgba(255, 212, 59, 0.15); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.pending_gates">
+       <div style="font-size: 1.5rem; font-weight: 700; color: #ffd43b;">
+        <span class="pm-value" data-pm-value="framework_statistics.pending_count">51</span> Pending
+       </div>
+       <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
+        Awaiting Wolfram/Experimental
+       </div>
+      </div>
+      <div id="metric-h0" style="background: rgba(139, 127, 255, 0.1); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="cosmology.h0_resolution">
+       <div style="font-size: 1.5rem; font-weight: 700; color: #8b7fff;">
+        H₀ = 71.55
        </div>
        <div id="h0-validation" style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
-        <span class="pm-value" data-pm-value="cosmology.H0_local">73.04</span> km/s/Mpc (0.0σ)
+        km/s/Mpc (Sterile Model)
        </div>
       </div>
      </div>
@@ -1349,15 +1352,15 @@
        Testable geometric prediction
       </p>
      </div>
-     <div id="feature-v16-2-validation" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66; border: 2px solid rgba(81, 207, 102, 0.3);">
-      <h4 style="color: #51cf66; margin-bottom: 0.75rem;">
-       v16.2: Publication-Ready Validation
+     <div id="feature-v16-2-validation" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffd43b; border: 2px solid rgba(255, 212, 59, 0.3);">
+      <h4 style="color: #ffd43b; margin-bottom: 0.75rem;">
+       v16.2: Partial Verification (Honest Status)
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       <strong style="color: #51cf66;">6 PASS</strong>, <strong style="color: #ffd43b;">2 MARGINAL</strong>, <strong style="color: #51cf66;">0 FAIL</strong> across 8 core parameters. Reduced χ² = 1.14 (7 DOF). Higgs mass at <strong>0.87σ</strong>, H0 tension <strong>resolved</strong> (0.0σ), all neutrino angles within 2σ.
+       <strong style="color: #51cf66;">7 VERIFIED</strong>, <strong style="color: #ffd43b;">51 PENDING</strong>, <strong style="color: #888;">14 FOUNDATIONAL</strong> across 72 gates. Verified χ² = 0.17 (23 DOF). Many gates await Wolfram API or experimental validation.
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #4facfe;">Key achievements:</strong> Unitary symplectic descent, thawing dark energy, octonionic fermion mixing
+       <strong style="color: #4facfe;">Verified gates:</strong> Integer root parity, ancestral mapping, projection tax, shadow parity, sterile angle, SU(N) approximation, Λ stability
       </p>
      </div>
      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffd43b; border: 2px solid rgba(255, 212, 59, 0.3);">
