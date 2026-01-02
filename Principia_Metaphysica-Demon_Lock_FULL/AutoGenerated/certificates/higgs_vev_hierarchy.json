@@ -1,0 +1,9 @@
+{
+  "proof_id": "higgs_vev_hierarchy",
+  "label": "Higgs VEV from Hierarchy",
+  "wl_code": "\n                (* Electroweak scale from Planck via geometric suppression *)\n                MPl = 2.435 * 10^18; (* Reduced Planck mass GeV *)\n                MGUT = 2.118 * 10^16; (* GUT scale GeV *)\n                (* v_EW = M_Pl * exp(-\u03c0 * Re(T)) where Re(T) \u2248 7.086 *)\n                ReT = 7.086;\n                vEW = MPl * Exp[-Pi * ReT];\n                N[vEW, 5]\n            ",
+  "result": "[Mock] ~246 GeV",
+  "hash": "fbacb754d3abb29a",
+  "timestamp": "2025-12-31T17:16:26.455433",
+  "verified": false
+}

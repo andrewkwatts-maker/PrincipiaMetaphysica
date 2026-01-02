@@ -1,0 +1,225 @@
+
+/* Scientific Typography Enhancements */
+
+/* Math mode - ensure variables are italic */
+.MathJax math {
+    font-style: italic;
+}
+
+/* Operators and units should be upright (MathJax handles this via \mathrm{}) */
+.MathJax .mo {
+    font-style: normal;
+}
+
+/* Equation numbers aligned right */
+.equation-number {
+    float: right;
+    font-family: 'Crimson Text', Georgia, serif;
+    color: #666;
+    font-size: 0.9rem;
+    font-style: normal;
+    padding-left: 1rem;
+}
+
+/* Equation wrapper for proper centering */
+.equation-wrapper {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    overflow-x: auto;
+}
+
+.equation-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.equation-content {
+    flex: 1;
+    text-align: center;
+}
+
+/* Multi-line equations aligned at equals */
+.MathJax .mtable {
+    text-align: left;
+}
+
+.MathJax .mtable .mlabeledtr {
+    text-align: left;
+}
+
+/* Academic paper equation style */
+.academic-equation {
+    display: block;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0;
+}
+
+.academic-equation .equation-content {
+    font-size: 1.1em;
+}
+
+/* Ensure proper spacing around equations */
+.academic-equation + p,
+p + .academic-equation {
+    margin-top: 1rem;
+}
+
+/* Terms definition styling */
+.equation-terms {
+    margin-top: 0.5rem;
+    padding-left: 2rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.terms-intro {
+    font-style: italic;
+    margin: 0.3rem 0;
+}
+
+/* Equation discussion */
+.equation-discussion {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Derivation notes */
+.equation-derivation {
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* Scientific notation - ensure proper rendering */
+.scientific-notation {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-style: normal;
+}
+
+/* Units in text */
+.unit {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-style: normal;
+    margin-left: 0.15em;
+}
+
+/* Uncertainty notation */
+.uncertainty {
+    font-family: 'Crimson Text', Georgia, serif;
+}
+
+/* Equation references as links */
+.equation-ref {
+    color: #8b7fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.equation-ref:hover {
+    color: #6b5fd9;
+    text-decoration: underline;
+}
+
+/* Scroll target for equation anchors */
+.equation-wrapper[id]::before {
+    content: "";
+    display: block;
+    height: 80px;
+    margin-top: -80px;
+    visibility: hidden;
+}
+
+
+/* Reference Formatting */
+
+.references {
+    margin: 2rem 0;
+    padding: 1rem 0;
+    border-top: 1px solid var(--border, #e0e0e0);
+}
+
+.references h3 {
+    font-family: 'Crimson Text', Georgia, serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.references ol {
+    list-style: none;
+    counter-reset: ref-counter;
+    padding-left: 0;
+}
+
+.references ol li {
+    counter-increment: ref-counter;
+    padding-left: 2.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.references ol li::before {
+    content: "[" counter(ref-counter) "]";
+    position: absolute;
+    left: 0;
+    color: #666;
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* arXiv links */
+.arxiv-link {
+    color: #8b7fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+}
+
+.arxiv-link:hover {
+    text-decoration: underline;
+    color: #6b5fd9;
+}
+
+/* DOI links */
+.doi-link {
+    color: #4a9eff;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+}
+
+.doi-link:hover {
+    text-decoration: underline;
+    color: #2a7ede;
+}
+
+/* Citation in text */
+.cite {
+    color: #8b7fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+}
+
+.cite:hover {
+    text-decoration: underline;
+}
+
+/* Inline references */
+.inline-ref {
+    font-size: 0.9em;
+    color: #666;
+    font-style: italic;
+    margin-left: 0.3em;
+}

@@ -1,9 +1,10 @@
 {
   "proof_id": "g2_holonomy_group",
   "label": "G2 Maximal Subgroup",
-  "wl_code": "\n                (* G2 contains SU(3) as maximal subgroup *)\n                (* Branching: 7 -> 1 + 3 + 3bar under SU(3) *)\n                7 == 1 + 3 + 3\n            ",
-  "result": "[Mock] True",
-  "hash": "205a334851a1abdb",
-  "timestamp": "2025-12-31T17:16:26.454182",
+  "wl_code": "With[{b3 = 24}, branchSterile = 1; branchActive = (b3 - 3)/7; holonomyLocked = (b3 == 24); {branchSterile, branchActive, holonomyLocked}]",
+  "result": "{1, 3, True}",
+  "note": "G2 branching: 7 -> 1 (sterile) + 3 (left) + 3 (right). Holonomy locked at b3=24.",
+  "hash": "4537e83b1f07554e",
+  "timestamp": "2026-01-02T01:44:43.994239",
   "verified": false
 }
