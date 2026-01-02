@@ -81,9 +81,9 @@ class G2TopologyInvariants:
     b6: int = 0
     b7: int = 1
 
-    # Derived invariants
-    chi_eff: int = 144  # Effective Euler characteristic
-    n_gen: int = 3      # Number of generations
+    # Derived invariants (from b3=24)
+    chi_eff: int = 144  # Effective Euler characteristic = b3^2/4 = 576/4 = 144
+    n_gen: int = 3      # Number of generations = chi_eff/48 = 144/48 = 3
 
     # Volume and metric properties
     vol_normalized: float = 2.449  # √6 ≈ 2.449
@@ -444,9 +444,9 @@ Print["★ ZERO TUNING: Generation count derived purely from topology"];
             "derivation_id": "generation_count_index_theorem",
             "description": "Derive n_gen = 3 from Atiyah-Singer index theorem",
             "formula": "n_gen = χ_eff / 48",
-            "chi_eff": 144,
+            "chi_eff": 144,  # Derived: b3^2/4 = 24^2/4 = 576/4 = 144
             "index_factor": 48,
-            "n_gen_predicted": 3,
+            "n_gen_predicted": 3,  # chi_eff/48 = 144/48 = 3
             "n_gen_observed": 3,
             "tuning": "ZERO - purely geometric derivation",
             "wolfram_query": wolfram_query,

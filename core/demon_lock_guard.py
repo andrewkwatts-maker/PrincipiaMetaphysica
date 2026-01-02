@@ -124,17 +124,19 @@ class DemonLockGuard:
             self.violations.append("CLOSURE ERROR: Registry reports 135 + 153 != 288")
             return False
 
-        # Check from JSON if loaded
+        # Check from JSON if loaded - compare against registry SSoT values
         if self.data:
             try:
                 christ = self._get_constant_value('christ_constant')
-                if christ != 153:
-                    self.violations.append(f"CLOSURE ERROR: Christ Constant = {christ}, expected 153")
+                expected_christ = self.registry.christ_constant  # 153 from SSoT
+                if christ != expected_christ:
+                    self.violations.append(f"CLOSURE ERROR: Christ Constant = {christ}, expected {expected_christ}")
                     return False
 
                 roots = self._get_invariant_value('roots')
-                if roots != 288:
-                    self.violations.append(f"CLOSURE ERROR: Total roots = {roots}, expected 288")
+                expected_roots = self.registry.roots_total  # 288 from SSoT
+                if roots != expected_roots:
+                    self.violations.append(f"CLOSURE ERROR: Total roots = {roots}, expected {expected_roots}")
                     return False
             except (KeyError, TypeError):
                 self.warnings.append("WARNING: Could not verify closure from JSON (missing keys)")

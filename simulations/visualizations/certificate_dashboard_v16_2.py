@@ -119,7 +119,8 @@ class CertificateDashboard:
     @staticmethod
     def is_primary_gate(cert_num: int) -> bool:
         """Check if certificate is a primary gate."""
-        primary_nums = [2, 19, 44, 125]  # Simplified - actual C02-R, C19-T, etc.
+        # NOTE: 125 here is certificate ID C125, NOT the visible_sector count
+        primary_nums = [2, 19, 44, 125]  # Certificate IDs: C02-R, C19-T, C44, C125
         if cert_num == 2:  # C02-R
             return True
         if cert_num == 19:  # C19-T
