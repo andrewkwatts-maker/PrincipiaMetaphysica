@@ -64,7 +64,7 @@ class FormulasRegistry:
     Everything else is DERIVED through topological formulas.
     """
 
-    VERSION = "17.1"
+    VERSION = "17.2-ABSOLUTE"
     STATUS = "ABSOLUTE_SOVEREIGN"
 
     def __init__(self):
