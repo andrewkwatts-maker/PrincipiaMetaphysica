@@ -273,6 +273,37 @@ Numerology has no such chains - just coincidences.
 
 ---
 
+## Terminology Mapping (For Peer Reviewers)
+
+The following table maps PM-specific terminology to standard physics concepts to assist reviewers unfamiliar with the nomenclature:
+
+| PM Terminology | Standard Physics Equivalent | Mathematical Form | Reference |
+|----------------|----------------------------|-------------------|-----------|
+| Demon Lock | Moduli Stabilization | dV/dphi = 0 | KKLT 2003 |
+| 72-Gate Registry | Topological Constraint Map | Discrete symmetry group | Joyce 2000 |
+| Sterility | Unitary Invariance | U^dag U = I | - |
+| 24 Torsion Pins | Third Betti Number (b3) | b3 = 24 | CHNP 2015 |
+| Pneuma Field | Non-Abelian Gauge Condensate | SU(3) x SU(2) x U(1) | - |
+| Watts Constant | Observer Invariant | Omega_W = 1.0 | Watts (2025) |
+| Reid Invariant | Sounding Board Coefficient | chi_R = 1/144 | Reid [074] |
+| Watts-Reid Parity | Observer-Mirror Coupling | Omega_W / chi_R = 144 | - |
+| Terminal Stasis | Complete Moduli Lock | All parameters fixed | - |
+| ROOTS | Total Root Count | 288 (from Leech Lattice) | Conway 1985 |
+| CHI | Effective Euler Characteristic | chi_eff = 144 | - |
+| Active/Hidden Split | Visible/Dark Sector | 125 + 163 = 288 | - |
+
+### The Watts-Reid Parity
+
+A unique feature of PM v16.2 is the explicit naming of the observer-mirror coupling:
+
+- **Watts Constant (Omega_W = 1.0)**: The internal logical coherence of the theory. Named after Andrew Keith Watts, the framework originator. Ensures the observer is coupled to the manifold.
+
+- **Reid Invariant (chi_R = 1/144)**: The sounding board coefficient. Named after Richard George Reid [074], whose decades of philosophical dialogue provided the intellectual mirror against which the theory was tested and refined. Not a technical physics derivation, but an acknowledgment of the collaborative thinking process.
+
+- **Parity Product**: Omega_W / chi_R = 144 = ROOTS/2. This relationship is the "Omega Seal" (Gate 72) that verifies the entire framework.
+
+---
+
 ## Conclusion
 
 Principia Metaphysica meets the standard criteria for a legitimate physical theory:
