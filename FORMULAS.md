@@ -1,7 +1,7 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-03 00:54:33
-**Engine Version:** v17.1
+**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-03 02:27:10
+**Engine Version:** v17.2-ABSOLUTE
 **Sovereign Hash:** `debd518f33c26ce096aea6f632539eb2...`
 
 <!-- SOVEREIGN_HASH_FULL: debd518f33c26ce096aea6f632539eb2873aa978293dd706ff553da3d8197b0d -->
