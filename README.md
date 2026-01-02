@@ -2,14 +2,13 @@
 **Philosophiæ Metaphysicæ Principia Mathematica**
 
 [![Version](https://img.shields.io/badge/version-16.2%20STERILE-purple)](https://github.com/andrewkwatts-maker/PrincipiaMetaphysica)
-[![License](LICENSE)
 [![Gates](https://img.shields.io/badge/gates-72%2F72%20LOCKED-brightgreen)](simulations/v16/appendices/appendix_f_72gates_v16_2.py)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue)](https://www.python.org/)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18079602.svg)](https://doi.org/10.5281/zenodo.18079602)
 
 **v16.2 STERILE: A Zero-Degree-of-Freedom Geometric Framework from G₂ Manifold Compactification**
 
-*Copyright (c) 2025-2026 Andrew Keith Watts. MIT License.*
+*Copyright (c) 2025-2026 Andrew Keith Watts.
 
 > ⚠️ **STERILE STATUS**: This is a zero-degree-of-freedom model. All 72 Gates are LOCKED.
 > No free parameters remain - every constant derives from pure G₂ topology.
