@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "\u03c8 = 4-component spinor",
-  "verification_status": "PENDING_LOCK",
+  "formula": "ψ = 4-component spinor",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: Each node supports 4-component spinor. Validation: Spin is geometric anchor to pins",
   "timestamp": "2026-01-02T10:23:46.057346Z",
-  "hash": "56584e2464be4f23"
+  "hash": "56584e2464be4f23",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

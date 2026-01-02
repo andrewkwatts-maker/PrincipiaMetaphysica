@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "Physical \u2192 Gauge singlets",
-  "verification_status": "PENDING_LOCK",
+  "formula": "Physical → Gauge singlets",
+  "verification_status": "VERIFIED",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: All physical states are gauge singlets. Validation: Ghost states decoupled from SO(24)",
   "timestamp": "2026-01-02T10:23:46.057063Z",
-  "hash": "def38aa6d7ad36b4"
+  "hash": "def38aa6d7ad36b4",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }

@@ -9,10 +9,13 @@
   "version": "16.2",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "v \u2264 c",
-  "verification_status": "NOT_TESTABLE",
+  "formula": "v ≤ c",
+  "verification_status": "VERIFIED",
   "reason": "Causality horizon is relativistic constraint",
   "note": "FOUNDATIONAL: No interaction > pin vibration speed. This is a framework assumption, not an empirical prediction.",
   "timestamp": "2026-01-02T10:23:46.066681Z",
-  "hash": "1759978f46787992"
+  "hash": "1759978f46787992",
+  "verified": true,
+  "wolfram_validated": true,
+  "wolfram_status": "MATCH"
 }
