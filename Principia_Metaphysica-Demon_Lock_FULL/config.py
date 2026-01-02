@@ -3907,11 +3907,51 @@ class PhenomenologyParameters:
     WA_ERROR = 0.15          # DESI 2025 uncertainty
     WA_DESI_SIGNIFICANCE = 0.0  # No evolving DE in sterile model
 
+    # ==========================================================================
+    # MECHANICAL TRIAD (v16.2 DEMON LOCK)
+    # ==========================================================================
+    # Three structural constants completing the Sacred Decagon (Heptagon + Triad)
+
+    # Sophian Drag (η_S): H0 friction coefficient - Wisdom's restraint
+    ETA_S = 0.6819           # Sophian Drag (cosmological friction)
+    SOPHIAN_DRAG = 0.6819    # Alias for ETA_S
+
+    # Demiurgic Coupling (κ_Δ): Mass-Energy Gearbox (formerly k_gimel)
+    # Formula: κ_Δ = B3/2 + 1/π = 12 + 0.318... = 12.31830988618379
+    KAPPA_DELTA = 12.31830988618379  # Demiurgic Coupling
+    DEMIURGIC_COUPLING = 12.31830988618379  # Alias
+
+    # Tzimtzum Pressure (σ_T): Void Seal - 23/24 (use FRACTION, not decimal!)
+    # This IS w0 (dark energy equation of state)
+    SIGMA_T = 23.0 / 24.0    # = 0.9583333... (Tzimtzum Pressure)
+    TZIMTZUM_PRESSURE = 23.0 / 24.0  # Alias for SIGMA_T
+
+    # Sophian Gamma: High-precision Euler-Mascheroni constant
+    SOPHIAN_GAMMA = 0.57721566490153286  # NOT 0.5772 - precision matters!
+
+    # Manifold Parity Check: η_S + σ_T = 1.6402
+    PARITY_SUM_EXPECTED = 1.6402
+    PARITY_TOLERANCE = 0.0001
+
+    # ==========================================================================
+    # HUBBLE CONSTANT (v16.2 O'Dowd Formula)
+    # ==========================================================================
+    # H0_local = (288/4) - (P_O/χ_eff) + η_S = 72 - 1.1319 + 0.6819 = 71.55
+
+    # O'Dowd Bulk Pressure (P_O = 163 = sterile sector)
+    P_O = 163                # O'Dowd Bulk Pressure constant
+    ODOWD_BULK_PRESSURE = 163  # Alias
+
+    # Hubble values
+    H0_LOCAL = 71.55         # Local universe [km/s/Mpc] (O'Dowd formula)
+    H0_EARLY = 67.4          # Early universe [km/s/Mpc] (Planck CMB)
+    H0 = H0_LOCAL            # Default to local measurement
+    H0_PLANCK = 67.4         # Alias for early/CMB value
+
     # Cosmological Parameters
     OMEGA_LAMBDA = 0.6889    # Dark energy density (Planck 2018)
     OMEGA_MATTER = 0.3111    # Matter density
     OMEGA_BARYON = 0.0486    # Baryon density
-    H0 = 67.4                # Hubble constant [km/s/Mpc]
 
     # Fine Structure Constant
     ALPHA_EM = 1/137.035999177  # QED coupling (CODATA 2022, 12-digit precision)
@@ -5669,6 +5709,22 @@ def get_config_dict():
         'w_0_num': PhenomenologyParameters.W0_NUMERATOR,
         'w_0_denom': PhenomenologyParameters.W0_DENOMINATOR,
         'w_a': PhenomenologyParameters.WA_EVOLUTION,
+
+        # ==================== v16.2 MECHANICAL TRIAD ====================
+        # Ten Pillars: Sacred Heptagon (7) + Mechanical Triad (3)
+        'eta_S': PhenomenologyParameters.ETA_S,
+        'sophian_drag': PhenomenologyParameters.SOPHIAN_DRAG,
+        'kappa_Delta': PhenomenologyParameters.KAPPA_DELTA,
+        'demiurgic_coupling': PhenomenologyParameters.DEMIURGIC_COUPLING,
+        'sigma_T': PhenomenologyParameters.SIGMA_T,
+        'tzimtzum_pressure': PhenomenologyParameters.TZIMTZUM_PRESSURE,
+        'sophian_gamma': PhenomenologyParameters.SOPHIAN_GAMMA,
+        'P_O': PhenomenologyParameters.P_O,
+        'odowd_bulk_pressure': PhenomenologyParameters.ODOWD_BULK_PRESSURE,
+        'H0_local': PhenomenologyParameters.H0_LOCAL,
+        'H0_early': PhenomenologyParameters.H0_EARLY,
+        'H0_planck': PhenomenologyParameters.H0_PLANCK,
+        'parity_sum_expected': PhenomenologyParameters.PARITY_SUM_EXPECTED,
 
         # ==================== v6.1 NEW PARAMETERS ====================
 
