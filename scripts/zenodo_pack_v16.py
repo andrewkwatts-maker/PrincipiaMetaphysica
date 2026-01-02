@@ -237,6 +237,7 @@ INCLUDE_DIRS: List[str] = [
     'components',
     'utils',
     'PROOFS',
+    'core',         # FormulasRegistry and validation scripts - REQUIRED for simulations
     'simulations',  # Included with --full, excluded otherwise via EXCLUDE_DIRS
     # Excluded: docs, scripts, examples, diagrams, tools, sections (not needed for package)
 ]
