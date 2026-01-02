@@ -431,10 +431,11 @@
             }
         });
   </script>
-<link rel="stylesheet" href="css/pm-header.css">
+     <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/pm-header.css">
   </head>
  <body class="auth-loading">
-  <div id="main-content">
+  <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
   <main>
    <section class="hero">
@@ -1953,7 +1954,7 @@
      Principia Metaphysica
     </strong>
     <br/>
-    © 2025 Andrew Keith Watts. All rights reserved.
+    © 2026 Andrew Keith Watts. All rights reserved.
    </p>
    <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">
     <a href="Pages/references.html#acknowledgements" style="color: var(--accent-secondary); text-decoration: none;">Acknowledgements</a>
@@ -1984,13 +1985,15 @@
 
   <script type="module">
     import { injectHeader } from './js/pm-header.js';
-    
+    import { setupAuthGuard } from './js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('home');
     });
 
-    </script>
+    // Setup auth after header
+    setupAuthGuard('index');
+  </script>
 </body>
 </html>

@@ -191,7 +191,7 @@
                 </p>
                 <ul style="margin: 0.75rem 0 0 1.5rem; color: var(--text-secondary);">
                     <li><strong>$b_3 = 24$</strong> — Associative 3-cycles of the G2 manifold</li>
-                    <li><strong>$k_\gimel = 12.3183098862$</strong> — Symplectic stiffness constant</li>
+                    <li><strong>$k_\gimel$ = <span class="pm-value" data-pm-value="seeds.k_gimel" data-format="fixed:10"></span></strong> — Symplectic stiffness constant</li>
                     <li><strong>$\phi = \frac{1+\sqrt{5}}{2}$</strong> — Golden ratio (appears in mixing angles)</li>
                 </ul>
             </div>
@@ -200,7 +200,7 @@
                 <div class="implication-item" style="border-left-color: #50c878;">
                     <h4 style="color: #50c878;">Dark Energy (DESI 2025)</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                        <strong>$w_0 = -1 + \frac{1}{b_3} = -\frac{23}{24} = -0.9583$</strong><br>
+                        <strong>$w_0 = -1 + \frac{1}{b_3} = -\frac{23}{24}$ = <span class="pm-value" data-pm-value="cosmology.w0_dark_energy" data-format="fixed:4"></span></strong><br>
                         Thawing quintessence from G2 topology<br>
                         Agreement: <strong>0.02σ</strong> with DESI 2025 data
                     </p>
@@ -1823,7 +1823,7 @@
             <h3><span class="icon">🔢</span> Why Three Generations? Necessity vs. Contingency</h3>
             <p style="color: var(--text-secondary); line-height: 1.8;">
                 One of the deepest mysteries in particle physics: <strong>why exactly <span class="pm-value" data-pm-value="topology.n_gen"></span> generations of fermions</strong>? Why not 2, or 4, or 17?
-                Principia Metaphysica derives this from topology: χ<sub>eff</sub> = 144 (flux-dressed Euler characteristic) yields
+                Principia Metaphysica derives this from topology: χ<sub>eff</sub> = <span class="pm-value" data-pm-value="topology.chi_eff"></span> (flux-dressed Euler characteristic) yields
                 3 generations via χ<sub>eff</sub> / 48 = 3. But this raises a profound philosophical question: <strong>is the number 3
                 mathematically necessary, or merely contingent?</strong>
             </p>
@@ -1832,7 +1832,7 @@
                 <h5 style="color: #51cf66;">The Generation Count Derivation</h5>
                 <p style="margin: 0; color: var(--text-secondary);">
                     <strong>Topology:</strong> CY4 manifold with h<sup>1,1</sup>=4, h<sup>3,1</sup>=68 → χ<sub>raw</sub> = -300 (unphysical)<br>
-                    <strong>Flux dressing:</strong> G-flux quanta wrap 3-cycles → effective χ<sub>eff</sub> = 144 (mirror symmetry: 72+72)<br>
+                    <strong>Flux dressing:</strong> G-flux quanta wrap 3-cycles → effective χ<sub>eff</sub> = <span class="pm-value" data-pm-value="topology.chi_eff"></span> (mirror symmetry: 72+72)<br>
                     <strong>SO(10) embedding:</strong> Each family occupies 16-dimensional spinor → 144 / 48 (divisor from brane wrapping) = 3 families<br>
                     <strong>Result:</strong> 3 generations (e,μ,τ and quarks) from geometric necessity, not accident
                 </p>
@@ -1842,7 +1842,7 @@
                 <div class="implication-item">
                     <h4>Mathematical Necessity?</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                        If χ<sub>eff</sub> = 144 follows from <strong>topological consistency</strong> (moduli stabilization requires specific
+                        If χ<sub>eff</sub> = <span class="pm-value" data-pm-value="topology.chi_eff"></span> follows from <strong>topological consistency</strong> (moduli stabilization requires specific
                         flux configurations), then 3 generations is <em>mathematically necessary</em>—any other number would violate consistency
                         conditions. This echoes Leibniz's "best of all possible worlds": the universe has 3 generations because that's the only
                         logically coherent option given the geometric constraints. Necessity trumps contingency.
@@ -1851,7 +1851,7 @@
                 <div class="implication-item">
                     <h4>Anthropic Contingency?</h4>
                     <p style="color: var(--text-secondary); font-size: 0.95rem;">
-                        Alternatively: χ<sub>eff</sub> = 144 might be <strong>one solution among many</strong> in the string landscape. Different
+                        Alternatively: χ<sub>eff</sub> = <span class="pm-value" data-pm-value="topology.chi_eff"></span> might be <strong>one solution among many</strong> in the string landscape. Different
                         flux vacua yield different χ, hence different generation counts. We observe 3 because only χ = <span class="pm-value" data-pm-value="topology.chi_eff"></span> vacua produce complex
                         chemistry (via top quark Yukawa coupling stability). This is <em>anthropic selection</em>: 3 is contingent, chosen from
                         a multiverse by observer-selection effects. Contingency trumps necessity.
@@ -1886,7 +1886,7 @@
                 <h5 style="color: #8b7fff;">Modal Metaphysics: Could It Have Been Otherwise?</h5>
                 <p style="margin: 0; color: var(--text-secondary);">
                     The necessity vs. contingency debate connects to <strong>modal metaphysics</strong>: could there be possible worlds with
-                    4 generations? If χ<sub>eff</sub>=144 is required by quantum gravity consistency (swampland conjectures), then 3 is
+                    4 generations? If χ<sub>eff</sub>=<span class="pm-value" data-pm-value="topology.chi_eff"></span> is required by quantum gravity consistency (swampland conjectures), then 3 is
                     <strong>metaphysically necessary</strong>—no alternative is logically possible. But if multiple χ values are swampland-consistent,
                     3 is merely <strong>physically necessary</strong> (required by initial conditions in our vacuum), with other values possible
                     in other pocket universes. The philosophy depends on future swampland progress.
@@ -2464,7 +2464,7 @@
                 <li><strong>Time itself is gauge-dependent</strong>—what you call "now" depends on your gauge-fixing choice, just as electromagnetic potentials are gauge-dependent. Different observers can have different time foliations through the 2T bulk.</li>
                 <li><strong>Note on consciousness (speculative):</strong> The framework does NOT derive or explain consciousness. Any connection between the mathematical structure (gauge-fixing) and subjective experience is purely philosophical speculation beyond the physics.</li>
                 <li><strong>Free will is compatibilist</strong>—even though everything is determined in the <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D gauge-invariant bulk, you can't predict your own choices because you lack access to: (1) hidden-brane correlates, (2) orthogonal time, (3) your own future gauge-fixing. Freedom is unpredictability-in-principle for embedded observers.</li>
-                <li><strong>Three generations are geometrically necessary</strong>—the existence of exactly 3 fermion families (e,μ,τ and quarks) isn't accidental. It follows from χ<sub>eff</sub> = 144 (flux-dressed Euler characteristic) via χ<sub>eff</sub> / 48 = 3. The number 3 is pure topology, not contingent fact. Pythagoras was right: number is essence.</li>
+                <li><strong>Three generations are geometrically necessary</strong>—the existence of exactly 3 fermion families (e,μ,τ and quarks) isn't accidental. It follows from χ<sub>eff</sub> = <span class="pm-value" data-pm-value="topology.chi_eff"></span> (flux-dressed Euler characteristic) via χ<sub>eff</sub> / 48 = 3. The number 3 is pure topology, not contingent fact. Pythagoras was right: number is essence.</li>
                 <li><strong>The universe seeks equilibrium</strong>—dark energy evolves toward w → -1.0 via Mashiach attractor at φ<sub>M</sub> = 2.493 M<sub>Pl</sub>. This looks teleological (goal-directed), but it's mechanical: field rolls down potential gradient. The cosmos has a "telos" (stable equilibrium) without purpose or awareness.</li>
                 <li><strong>Forces are unified at origin</strong>—electromagnetism, weak, and strong forces merge into one at M<sub>GUT</sub> ≈ 2×10<sup>16</sup> GeV with 1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="proton_decay.alpha_GUT_inv" data-format="fixed:2"></span>. Unity is fundamental (SO(10) symmetry); diversity emerges via cooling (symmetry breaking). Pre-Socratic monism vindicated: "All is one."</li>
                 <li><strong>88% empirical validation</strong>—the theory passes 51/58 tests. This is remarkable but imperfect. The 12% failure rate demands epistemic humility: provisional acceptance, not dogmatic certainty. Science is self-correcting—validation rates will improve or the theory will be abandoned.</li>
@@ -2600,7 +2600,7 @@
     <footer style="text-align: center; padding: 2rem; color: var(--text-muted); border-top: 1px solid var(--border-primary); margin-top: 3rem;">
         <p>
             <strong>Principia Metaphysica</strong> - Philosophical Implications<br>
-            © 2025 Andrew Keith Watts. All rights reserved.
+            © 2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
   </div>

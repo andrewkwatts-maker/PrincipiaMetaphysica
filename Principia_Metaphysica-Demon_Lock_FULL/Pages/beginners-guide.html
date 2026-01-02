@@ -15,7 +15,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beginner's Guide to Principia Metaphysica</title>
     <link rel="stylesheet" href="../css/styles.css">
-<link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
     <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
     <script src="../js/pm-constants-loader.js"></script>
@@ -949,7 +950,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body class="auth-loading">
-  <div id="main-content">
+  <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
     <main class="guide-container">
@@ -1453,7 +1454,7 @@
                     <li><strong>KK graviton mass:</strong> <span class="pm-value" data-pm-value="simulations.kk_graviton.m_KK_TeV"></span> TeV - discoverable at HL-LHC (<span class="pm-value" data-pm-value="simulations.kk_graviton.hl_lhc_discovery"></span>)</li>
                     <li><strong>Neutrino mass sum:</strong> Σm<sub>ν</sub> = 0.060 eV (Normal Hierarchy predicted, 76% confidence from NuFIT 6.0, testable by JUNO 2027+)</li>
                     <li><strong>All fermion masses:</strong> Complete quark, lepton, and neutrino mass matrices derived from TCS G₂ 3-cycle intersections</li>
-                    <li><strong>Dark energy:</strong> w₀ = -23/24 ≈ -0.9583 (DESI 2025 thawing: -0.957 ± 0.067 → 0.02σ)</li>
+                    <li><strong>Dark energy:</strong> w₀ = -23/<span class="pm-value" data-pm-value="topology.b3"></span> ≈ <span class="pm-value" data-pm-value="cosmology.w0_derived"></span> (DESI 2025 thawing: -0.957 ± 0.067 → 0.02σ)</li>
                 </ul>
             </div>
 
@@ -1506,7 +1507,7 @@
                 </p>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
                     <strong>What's calibrated:</strong> Only the unification coupling strength (1/α<sub>GUT</sub> = <span class="pm-value" data-pm-value="simulations.proton_decay.alpha_gut_inv"></span>).
-                    Everything else—including the Pneuma VEV (246.22 GeV, dynamically selected via racetrack potential), particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
+                    Everything else—including the Pneuma VEV (<span class="pm-value" data-pm-value="electroweak.v_higgs"></span> GeV, dynamically selected via racetrack potential), particle masses, mixing angles, dark energy—flows automatically from the TCS G₂ manifold geometry.
                 </p>
             </div>
 
@@ -1674,7 +1675,7 @@
                         </div>
                         <div style="font-size: 2.5rem; color: #51cf66;">&#x27A1;</div>
                         <div style="text-align: center;">
-                            <div class="key-number" style="font-size: 1.5rem;">72 &divide; 24 = 3</div>
+                            <div class="key-number" style="font-size: 1.5rem;">72 &divide; <span class="pm-value" data-pm-value="topology.b3"></span> = 3</div>
                             <div style="margin-top: 0.75rem; font-weight: 700; color: var(--accent-primary);">Exactly 3 Families!</div>
                         </div>
                     </div>
@@ -1832,7 +1833,7 @@
                         generations is given by:
                     </p>
                     <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.3rem; margin: 1rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
-                        n<sub>gen</sub> = &chi;(CY4) / 24
+                        n<sub>gen</sub> = &chi;(CY4) / <span class="pm-value" data-pm-value="topology.b3"></span>
                     </p>
                     <p>
                         The Euler characteristic &chi; is computed from Hodge numbers:
@@ -1847,12 +1848,12 @@
                         (These satisfy the CY4 constraint: h<sup>2,2</sup> = 2(22 + 2h<sup>1,1</sup> + 2h<sup>3,1</sup> - h<sup>2,1</sup>) = 60)
                     </p>
                     <p style="text-align: center;">
-                        &chi; = 4 + 8 + 0 + 0 + 60 = <strong>72</strong> &nbsp;&rarr;&nbsp; n<sub>gen</sub> = 72/24 = <strong>3</strong>
+                        &chi; = 4 + 8 + 0 + 0 + 60 = <strong>72</strong> &nbsp;&rarr;&nbsp; n<sub>gen</sub> = 72/<span class="pm-value" data-pm-value="topology.b3"></span> = <strong>3</strong>
                     </p>
                     <p style="margin-top: 1rem; font-size: 0.95rem; color: var(--text-secondary); border-top: 1px solid rgba(139, 127, 255, 0.2); padding-top: 1rem;">
                         <strong>Alternative Derivation (v13.0):</strong> The generation count can also be derived from G<sub>2</sub>
-                        spinor saturation: n<sub>gen</sub> = N<sub>flux</sub>/spinor<sub>DOF</sub> = 24/8 = <strong>3</strong>,
-                        where N<sub>flux</sub> = &chi;<sub>eff</sub>/6 = 144/6 = 24 (flux quanta wrapping b<sub>3</sub> cycles)
+                        spinor saturation: n<sub>gen</sub> = N<sub>flux</sub>/spinor<sub>DOF</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>/8 = <strong>3</strong>,
+                        where N<sub>flux</sub> = &chi;<sub>eff</sub>/6 = <span class="pm-value" data-pm-value="topology.chi_eff"></span>/6 = <span class="pm-value" data-pm-value="topology.b3"></span> (flux quanta wrapping b<sub>3</sub> cycles)
                         and spinor<sub>DOF</sub> = 8 (real components of the parallel G<sub>2</sub> spinor).
                     </p>
                 </div>
@@ -1981,15 +1982,15 @@
                     For transparency, here's how w₀ is derived:
                 </p>
                 <ul style="margin-top: 0.5rem; margin-left: 1.5rem;">
-                    <li><strong>w<sub>0</sub> = -23/24 ≈ -0.9583</strong>
-                        from G₂ thawing quintessence: w₀ = -1 + 1/b₃ where b₃ = 24</li>
+                    <li><strong>w<sub>0</sub> = -23/<span class="pm-value" data-pm-value="topology.b3"></span> ≈ <span class="pm-value" data-pm-value="cosmology.w0_derived"></span></strong>
+                        from G₂ thawing quintessence: w₀ = -1 + 1/b₃ where b₃ = <span class="pm-value" data-pm-value="topology.b3"></span></li>
                     <li>Matches DESI 2025 thawing: w<sub>0</sub> = -0.957 ± 0.067
                         (0.02σ agreement - excellent!)</li>
                     <li><strong>Fully derived:</strong> w<sub>a</sub> = -1/√b₃ = -0.204 from 2T projection dynamics</li>
                     <li><strong>Fully derived:</strong> w<sub>a</sub> &lt; 0 sign (thawing behavior matches DESI)</li>
                 </ul>
                 <p style="margin-top: 0.75rem; color: var(--text-secondary);">
-                    <strong>Bottom line:</strong> v16.2 uses the thawing formula w₀ = -1 + 1/b₃ = -23/24 ≈ -0.9583,
+                    <strong>Bottom line:</strong> v16.2 uses the thawing formula w₀ = -1 + 1/b₃ = -23/<span class="pm-value" data-pm-value="topology.b3"></span> ≈ <span class="pm-value" data-pm-value="cosmology.w0_derived"></span>,
                     which matches DESI 2025 thawing constraints within 0.02σ. The evolution (w<sub>a</sub> &lt; 0)
                     is purely derived from thermal time mechanics.
                 </p>
@@ -2005,11 +2006,11 @@
                     <p style="text-align: center; font-family: 'Crimson Text', serif; font-size: 1.2rem; margin: 1rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.1); border-radius: 8px;">
                         w(z) = w<sub>0</sub>[1 + (&alpha;<sub>T</sub>/3)ln(1+z)]
                     </p>
-                    <p>Where &alpha;<sub>T</sub> = 2.5 is <strong>derived</strong> from thermal time scalings:</p>
+                    <p>Where &alpha;<sub>T</sub> = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.5"></span> is <strong>derived</strong> from thermal time scalings:</p>
                     <ul style="margin: 1rem 0 1rem 1.5rem;">
                         <li>Thermal relaxation time: &tau; &prop; a (increases as universe cools)</li>
                         <li>Hubble time: H &prop; a<sup>-3/2</sup> (matter era)</li>
-                        <li>&alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = 2.5</li>
+                        <li>&alpha;<sub>T</sub> = d ln &tau;/d ln a - d ln H/d ln a = (+1) - (-3/2) = <span class="pm-value" data-pm-value="cosmology.alpha_T" data-fallback="2.5"></span></li>
                     </ul>
                     <p>This naturally gives w<sub>a</sub> &lt; 0, which DESI observes but standard models can't explain.</p>
                 </div>
@@ -2043,10 +2044,10 @@
             <div class="prediction-card" style="border-left-color: #51cf66;">
                 <h4><span class="tag derived" style="background: rgba(81, 207, 102, 0.3); color: #51cf66;">DERIVED</span> Dark Energy Value (w<sub>0</sub>) - v16.2</h4>
                 <p>
-                    <strong>Value:</strong> w<sub>0</sub> = -23/24 ≈ -0.9583 (DESI 2025 thawing: -0.957 ± 0.067 → 0.02σ!)
+                    <strong>Value:</strong> w<sub>0</sub> = -23/<span class="pm-value" data-pm-value="topology.b3"></span> ≈ <span class="pm-value" data-pm-value="cosmology.w0_derived"></span> (DESI 2025 thawing: -0.957 ± 0.067 → 0.02σ!)
                 </p>
                 <p style="margin-top: 0.5rem; color: var(--text-secondary);">
-                    <strong>Derivation:</strong> G₂ thawing quintessence formula w₀ = -1 + 1/b₃ where b₃ = 24 (associative 3-cycles).
+                    <strong>Derivation:</strong> G₂ thawing quintessence formula w₀ = -1 + 1/b₃ where b₃ = <span class="pm-value" data-pm-value="topology.b3"></span> (associative 3-cycles).
                     Matches DESI 2025 thawing constraint to <strong>0.02σ</strong> with zero free parameters.
                 </p>
             </div>
@@ -2308,7 +2309,7 @@
                 <div class="expand-content">
                     <p><strong>Experimental Matches (<span class="pm-value" data-pm-value="framework_statistics.within_1_sigma"></span>/<span class="pm-value" data-pm-value="framework_statistics.total_sm_parameters"></span> = <span id="bg-detailed-percent"></span>% within 1σ):</strong></p>
                     <ul style="margin: 0.5rem 0 1rem 1.5rem; color: #51cf66;">
-                        <li>Generation count: 3 (exact match! Derived from N<sub>flux</sub>/spinor<sub>DOF</sub> = 24/8)</li>
+                        <li>Generation count: 3 (exact match! Derived from N<sub>flux</sub>/spinor<sub>DOF</sub> = <span class="pm-value" data-pm-value="topology.b3"></span>/8)</li>
                         <li>PMNS mixing angles: θ₂₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_23" data-format="fixed:1"></span>° (maximal mixing), θ₁₂ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_12" data-format="fixed:1"></span>°, θ₁₃ = <span class="pm-value" data-category="pmns_matrix" data-param="theta_13" data-format="fixed:2"></span>° (all within 0.25σ!)</li>
                         <li>Dark energy equation of state: w₀ = <span class="pm-value" data-category="dark_energy" data-param="w0_PM"></span> (DESI: <span class="pm-value" data-category="dark_energy" data-param="w0_DESI_central"></span>±<span class="pm-value" data-category="dark_energy" data-param="w0_DESI_error"></span>, within <span class="pm-value" data-category="dark_energy" data-param="w0_sigma"></span>σ)</li>
                         <li>Dark energy evolution: wₐ = -0.204 < 0 (thawing behavior consistent with DESI 2025)</li>
@@ -2442,7 +2443,7 @@
                     <li>Derives neutrino mass matrix with Normal Hierarchy (Σm<sub>ν</sub> = 0.0708 eV, 0.12σ from data)</li>
                     <li>Predicts KK graviton at <span class="pm-value" data-category="kk_spectrum" data-param="m1"></span> (HL-LHC discoverable)</li>
                     <li>Derives proton lifetime 8.15×10³⁴ years from TCS geometric suppression (Hyper-K testable)</li>
-                    <li>Achieves dark energy w₀ = -23/24 ≈ -0.9583 matching DESI 2025 thawing (0.02σ agreement)</li>
+                    <li>Achieves dark energy w₀ = -23/<span class="pm-value" data-pm-value="topology.b3"></span> ≈ <span class="pm-value" data-pm-value="cosmology.w0_derived"></span> matching DESI 2025 thawing (0.02σ agreement)</li>
                 </ul>
                 <p><strong>Framework achievements:</strong></p>
                 <ul style="margin: 0.5rem 0 0 1.5rem; color: #51cf66;">
@@ -2849,7 +2850,7 @@
         <footer>
         <p>
             <strong>Principia Metaphysica</strong><br>
-            &copy; 2025 Andrew Keith Watts. All rights reserved.
+            &copy; 2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
   </div>
@@ -3123,13 +3124,15 @@
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
-    
+    import { setupAuthGuard } from '../js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('beginners-guide');
     });
 
-    </script>
+    // Setup auth after header
+    setupAuthGuard('beginners-guide');
+  </script>
 </body>
 </html>

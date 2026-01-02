@@ -16,7 +16,8 @@
     <title>Visualization Index - Principia Metaphysica 2T Physics</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pm-header.css">
-<style>
+    <link rel="stylesheet" href="../css/auth.css">
+    <style>
         * {
             margin: 0;
             padding: 0;
@@ -694,7 +695,8 @@
     <!-- Tooltip System CSS -->
     <link rel="stylesheet" href="../css/pm-tooltip.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
-<link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/auth.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
   </head>
 <body class="auth-loading">
@@ -710,7 +712,7 @@
     <div id="lightbox-info" class="lightbox-info"></div>
   </div>
 
-  <div id="main-content">
+  <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
 
     <div class="container">
@@ -1686,7 +1688,7 @@
                 <!-- Already featured: cosmological-evolution, cmb-bubble-parameter-space -->
 
                 <div class="viz-card" data-topic="cosmology" data-level="intermediate" data-type="png" data-twotime="yes">
-                    <img src="moduli_evolution_plot.png" alt="Moduli Evolution" class="viz-thumbnail">
+                    <img src="../images/moduli_evolution_plot.png" alt="Moduli Evolution" class="viz-thumbnail">
                     <div class="viz-info">
                         <div class="viz-header">
                             <h3 class="viz-title">Moduli Field Evolution</h3>
@@ -1715,7 +1717,7 @@
                 </div>
 
                 <div class="viz-card" data-topic="cosmology" data-level="intermediate" data-type="png" data-twotime="yes">
-                    <img src="gw_dispersion_plot.png" alt="Gravitational Wave Dispersion" class="viz-thumbnail">
+                    <img src="../images/gw_dispersion_plot.png" alt="Gravitational Wave Dispersion" class="viz-thumbnail">
                     <div class="viz-info">
                         <div class="viz-header">
                             <h3 class="viz-title">Gravitational Wave Dispersion Relations</h3>
@@ -1830,7 +1832,7 @@
                 </div>
 
                 <div class="viz-card" data-topic="cosmology" data-level="advanced" data-type="png" data-twotime="yes">
-                    <img src="kk_spectrum_shared_dimensions.png" alt="KK Spectrum Shared Dimensions" class="viz-thumbnail">
+                    <img src="../images/kk_spectrum_shared_dimensions.png" alt="KK Spectrum Shared Dimensions" class="viz-thumbnail">
                     <div class="viz-info">
                         <div class="viz-header">
                             <h3 class="viz-title">Full KK Spectrum Analysis</h3>
@@ -1959,11 +1961,11 @@
                      These used tree-level approximations invalid in 3-loop framework.
                      See: simulations/renormalization_group_runner.py for dynamic RG evolution
                 <div class="viz-card" data-topic="particle" data-level="intermediate" data-type="png" data-twotime="yes">
-                    <img src="gauge_unification_threshold_corrections.png" alt="Gauge Unification" class="viz-thumbnail">
+                    <img src="../images/gauge_unification_threshold_corrections.png" alt="Gauge Unification" class="viz-thumbnail">
                     ...
                 </div>
                 <div class="viz-card" data-topic="particle" data-level="intermediate" data-type="png" data-twotime="yes">
-                    <img src="rg_flows.png" alt="RG Flows" class="viz-thumbnail">
+                    <img src="../images/rg_flows.png" alt="RG Flows" class="viz-thumbnail">
                     ...
                 </div>
                 -->
@@ -2188,7 +2190,7 @@
             <footer>
         <p>
             <strong>Principia Metaphysica</strong><br>
-            &copy; 2025 Andrew Keith Watts. All rights reserved.
+            &copy; 2026 Andrew Keith Watts. All rights reserved.
         </p>
     </footer>
   </div>
@@ -2288,14 +2290,16 @@
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
-    
+    import { setupAuthGuard } from '../js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('visualization-index');
     });
 
-    </script>
+    // Setup auth after header
+    setupAuthGuard('visualization-index');
+  </script>
 
   <!-- Tooltip System -->
   <script src="../js/pm-constants-loader.js"></script>
