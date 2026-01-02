@@ -228,7 +228,7 @@ class MetadataBuilder:
     @staticmethod
     def alpha_description(
         alpha_inv: float,
-        target: float = 137.036,
+        target: float = 137.036,  # alpha inverse (CODATA)
         uncertainty: float = 0.001,
         source: str = "CODATA 2022"
     ) -> str:

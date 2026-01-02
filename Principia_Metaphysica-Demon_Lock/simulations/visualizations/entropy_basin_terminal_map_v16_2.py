@@ -35,6 +35,15 @@ except ImportError:
     HAS_MATPLOTLIB = False
     print("Warning: matplotlib not available.")
 
+# Add project root for imports
+import sys
+import os
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
+
 # PM Color palette (sterile model)
 PM_COLORS = {
     "metric_null": "#ef4444",     # Red - dissolution
@@ -58,12 +67,12 @@ class EntropyBasinVisualization:
     Shows the three basins of attraction in entropy-potential phase space.
     """
 
-    # Basin definitions
+    # Basin definitions - values from FormulasRegistry SSoT
     BASINS = {
         "Metric_Null": {
             "name": "Metric Null",
             "subtitle": "Scale Dissolution",
-            "potential": 276 / 288,  # 95.83%
+            "potential": (_REG.roots_total - 12) / _REG.roots_total,  # 276/288 = 95.83%
             "description": "SO(24) returns to bulk",
             "physics": "G → 0, spacetime dissolves",
             "color": PM_COLORS["metric_null"],
@@ -71,16 +80,16 @@ class EntropyBasinVisualization:
         "Gauge_Ghost": {
             "name": "Gauge Ghost",
             "subtitle": "Information Stasis",
-            "potential": 24 / 288,   # 8.33%
-            "description": "24 pins lock permanently",
+            "potential": _REG.b3 / _REG.roots_total,   # 24/288 = 8.33%
+            "description": f"{_REG.b3} pins lock permanently",
             "physics": "Forces freeze, time stops",
             "color": PM_COLORS["gauge_ghost"],
         },
         "Ancestral_Restoration": {
             "name": "Ancestral Restoration",
             "subtitle": "Unitary Return",
-            "potential": 288 / 288,  # 100%
-            "description": "125 + 163 merge",
+            "potential": _REG.roots_total / _REG.roots_total,  # 288/288 = 100%
+            "description": f"{_REG.visible_sector} + {_REG.sterile_sector} merge",
             "physics": "Full return to 26D",
             "color": PM_COLORS["restoration"],
         },

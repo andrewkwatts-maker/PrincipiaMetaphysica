@@ -27,10 +27,22 @@ import numpy as np
 from typing import Dict, Tuple, Optional
 import matplotlib.pyplot as plt
 
+# Import Single Source of Truth for derived constants
+try:
+    from core.FormulasRegistry import get_registry
+    _reg = get_registry()
+    _REGISTRY_AVAILABLE = True
+except ImportError:
+    _reg = None
+    _REGISTRY_AVAILABLE = False
+
 # Fundamental constants from G2 topology
 B3 = 24  # Associative 3-cycles in TCS #187
 K_GIMEL = 12.3183098862  # Symplectic stiffness
 PHI = (1 + np.sqrt(5)) / 2  # Golden ratio
+
+# Module-level constant for tzimtzum_pressure (SSoT)
+TZIMTZUM_PRESSURE = _reg.tzimtzum_pressure if _REGISTRY_AVAILABLE else 0.9583
 
 # DESI 2025 Thawing Quintessence values
 DESI_2025_W0 = -0.957
@@ -180,7 +192,7 @@ def generate_figure_6_v16_2(save_path: Optional[str] = None) -> plt.Figure:
     compared to DESI 2025 constraints.
     """
     # v16.2 Theory Point
-    w0_pred = -0.9583
+    w0_pred = -TZIMTZUM_PRESSURE
     wa_pred = -0.204
 
     # DESI 2025 Thawing Contour (1-sigma ellipse approximation)

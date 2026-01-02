@@ -43,6 +43,10 @@ from simulations.base import (
     Formula,
     Parameter,
 )
+from core.FormulasRegistry import get_registry
+
+# Get registry SSoT
+_REG = get_registry()
 
 
 class TerminalBasinAnalysis:
@@ -145,23 +149,29 @@ class TerminalBasinAnalysis:
 
     @staticmethod
     def get_current_basin_trajectory(
-        active_residues: int = 125,
-        hidden_supports: int = 163,
+        active_residues: int = None,
+        hidden_supports: int = None,
         current_epoch: float = 0.138
     ) -> Dict[str, Any]:
         """
         Determine the current trajectory toward terminal basins.
 
         Args:
-            active_residues: Number of active residues (125)
-            hidden_supports: Number of hidden supports (163)
+            active_residues: Number of active residues (from registry: visible_sector)
+            hidden_supports: Number of hidden supports (from registry: sterile_sector)
             current_epoch: Current epoch on manifold life (0 to 1)
 
         Returns:
             Dictionary with trajectory analysis
         """
+        # Use registry SSoT for defaults
+        if active_residues is None:
+            active_residues = _REG.visible_sector  # 125
+        if hidden_supports is None:
+            hidden_supports = _REG.sterile_sector  # 163
+
         # Decay constant gamma
-        gamma = np.log(288 / active_residues)  # ~0.834
+        gamma = np.log(_REG.roots_total / active_residues)  # ~0.834
 
         # Current entropy estimate
         current_entropy = current_epoch * gamma

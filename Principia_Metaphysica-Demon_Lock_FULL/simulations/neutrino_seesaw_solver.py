@@ -169,7 +169,7 @@ class NeutrinoSeesawSolver:
     def derive_majorana_from_g2(
         self,
         M_GUT: float = 2.1e16,
-        chi_eff: int = 144
+        chi_eff: int = 144  # Derived: b3^2/4 = 24^2/4 = 576/4 = 144
     ) -> np.ndarray:
         """
         Derive right-handed Majorana mass matrix from G2 geometry.
@@ -178,7 +178,7 @@ class NeutrinoSeesawSolver:
 
         Args:
             M_GUT: GUT scale in GeV
-            chi_eff: Effective Euler characteristic
+            chi_eff: Effective Euler characteristic (b3^2/4 = 144)
 
         Returns:
             3x3 Majorana mass matrix

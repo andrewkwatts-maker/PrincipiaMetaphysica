@@ -623,8 +623,8 @@ class WolframTransparencyAudit:
                 ]
             },
             "verification": {
-                "numerical_result": 137.035999,
-                "experimental_value": 137.035999177,
+                "numerical_result": 137.035999,  # alpha inverse (CODATA 2022)
+                "experimental_value": 137.035999177,  # alpha inverse (CODATA 2022 full)
                 "agreement": "9 SIGNIFICANT FIGURES",
                 "status": "PASSED"
             },

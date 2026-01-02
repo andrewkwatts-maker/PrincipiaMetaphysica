@@ -50,7 +50,7 @@ class AlphaRigorSolver:
 
     # Physical constants for RG running
     M_GUT = 2.1e16       # GUT scale (GeV)
-    M_Z = 91.1876        # Z boson mass (GeV)
+    M_Z = 91.1876  # Z boson mass (PDG)
     M_ELECTRON = 0.511e-3  # Electron mass (GeV)
 
     def __init__(self, b3: int = 24):

@@ -49,6 +49,7 @@ from simulations.base import (
     Formula,
     Parameter,
 )
+from core.FormulasRegistry import get_registry
 
 
 class GateStatus(Enum):
@@ -86,13 +87,16 @@ class GateRegistry:
     aligned with the 24 × 3 torsion pin structure.
     """
 
-    # Fundamental constants
-    ROOTS = 288
-    ACTIVE = 125
-    HIDDEN = 163
-    TORSION_PINS = 24
+    # Get values from FormulasRegistry SSoT
+    _reg = get_registry()
+
+    # Fundamental constants - derived from FormulasRegistry
+    ROOTS = _reg.roots_total           # 288 (E8 x E8)
+    ACTIVE = _reg.visible_sector       # 125 (5^3)
+    HIDDEN = _reg.sterile_sector       # 163 (O'Dowd Bulk)
+    TORSION_PINS = _reg.b3             # 24 (Betti number)
     DIMENSIONS = 4
-    STERILE_ANGLE = np.degrees(np.arcsin(125/288))  # ≈ 25.7234°
+    STERILE_ANGLE = np.degrees(np.arcsin(_reg.visible_sector / _reg.roots_total))  # ≈ 25.7234°
 
     # Gate definitions organized by phase
     GATES: Dict[int, Gate] = {}
@@ -930,27 +934,27 @@ class GateRegistry:
 
         gate = cls.GATES[gate_id]
 
-        # Extract common parameters
-        roots = model_data.get("roots", 288)
-        active = model_data.get("active", 125)
-        hidden = model_data.get("hidden", 163)
-        torsion = model_data.get("torsion", 24)
+        # Extract common parameters - defaults from registry SSoT
+        roots = model_data.get("roots", cls.ROOTS)
+        active = model_data.get("active", cls.ACTIVE)
+        hidden = model_data.get("hidden", cls.HIDDEN)
+        torsion = model_data.get("torsion", cls.TORSION_PINS)
 
         # Gate-specific validation
         if gate_id == 1:  # Integer Root Parity
-            passed = (roots == 288)
-            msg = "288-root parity verified" if passed else f"Root parity failed: {roots}"
+            passed = (roots == cls.ROOTS)
+            msg = f"{cls.ROOTS}-root parity verified" if passed else f"Root parity failed: {roots}"
 
         elif gate_id == 2:  # Holonomy Closure
             passed = True  # Structural assumption
             msg = "V7 holonomy closed"
 
         elif gate_id == 3:  # Ancestral Mapping
-            passed = (active + hidden == 288) and (active == 125) and (hidden == 163)
-            msg = f"125 + 163 = {active + hidden}" if passed else "Ancestral partition failed"
+            passed = (active + hidden == cls.ROOTS) and (active == cls.ACTIVE) and (hidden == cls.HIDDEN)
+            msg = f"{cls.ACTIVE} + {cls.HIDDEN} = {active + hidden}" if passed else "Ancestral partition failed"
 
         elif gate_id == 4:  # Projection Tax
-            tax = 12 / (288 ** 2)
+            tax = 12 / (cls.ROOTS ** 2)
             passed = True  # Formula check
             msg = f"Projection tax: {tax:.6e}"
 
@@ -1294,8 +1298,8 @@ class GateRegistry:
             msg = "Omega point: total information recoverable"
 
         elif gate_id == 69:  # Topological Soliton Check
-            # Only 125 residues as stable knots
-            passed = (active == 125)
+            # Only visible_sector residues as stable knots
+            passed = (active == cls.ACTIVE)
             msg = f"Soliton check: {active} stable knots, noise suppressed"
 
         elif gate_id == 70:  # Spectral Gap Verification

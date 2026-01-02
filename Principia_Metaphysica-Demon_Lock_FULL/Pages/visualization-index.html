@@ -16,8 +16,7 @@
     <title>Visualization Index - Principia Metaphysica 2T Physics</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/pm-header.css">
-    <link rel="stylesheet" href="../css/auth.css">
-    <style>
+<style>
         * {
             margin: 0;
             padding: 0;
@@ -695,8 +694,7 @@
     <!-- Tooltip System CSS -->
     <link rel="stylesheet" href="../css/pm-tooltip.css">
     <link rel="stylesheet" href="../css/formula-hover.css">
-    <link rel="stylesheet" href="../css/auth.css">
-    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+<link rel="stylesheet" href="../css/pm-ux-consistency.css">
     <link rel="stylesheet" href="../css/mobile-responsive.css">
   </head>
 <body class="auth-loading">
@@ -712,7 +710,7 @@
     <div id="lightbox-info" class="lightbox-info"></div>
   </div>
 
-  <div id="main-content" style="display: none;">
+  <div id="main-content">
     <!-- Header injected by pm-header.js -->
 
     <div class="container">
@@ -2290,16 +2288,14 @@
 
   <script type="module">
     import { injectHeader } from '../js/pm-header.js';
-    import { setupAuthGuard } from '../js/auth-guard.js';
+    
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('visualization-index');
     });
 
-    // Setup auth after header
-    setupAuthGuard('visualization-index');
-  </script>
+    </script>
 
   <!-- Tooltip System -->
   <script src="../js/pm-constants-loader.js"></script>

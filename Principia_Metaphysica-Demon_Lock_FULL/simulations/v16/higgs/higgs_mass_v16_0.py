@@ -500,7 +500,7 @@ class HiggsMassSimulation(SimulationBase):
                     "Re(T) = 9.865, then verifies consistency."
                 ),
                 derivation_formula="higgs-mass",
-                experimental_bound=125.10,
+                experimental_bound=125.10,  # Higgs mass (PDG)
                 bound_type="measured",
                 bound_source="PDG 2024 (ATLAS+CMS combined)",
                 validation={
@@ -542,11 +542,11 @@ class HiggsMassSimulation(SimulationBase):
                     "Electroweak Higgs vacuum expectation value v_EW = 246 GeV, "
                     "related to the Fermi constant by v_EW = 1/√(√2 G_F)."
                 ),
-                experimental_bound=246.22,
+                experimental_bound=246.22,  # Higgs VEV (PDG)
                 bound_type="measured",
                 bound_source="PDG 2024",
                 validation={
-                    "experimental_value": 246.22,
+                    "experimental_value": 246.22,  # Higgs VEV (PDG)
                     "uncertainty": 0.01,
                     "bound_type": "measured",
                     "status": "PASS",

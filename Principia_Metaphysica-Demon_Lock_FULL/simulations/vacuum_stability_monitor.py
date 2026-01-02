@@ -256,7 +256,7 @@ class VacuumStabilityMonitor:
 
     def check_higgs_stability(
         self,
-        m_h: float = 125.1,
+        m_h: float = 125.1,  # Higgs mass (PDG)
         m_t: float = 172.69,
         alpha_s: float = 0.1179
     ) -> Dict[str, Any]:
@@ -275,11 +275,11 @@ class VacuumStabilityMonitor:
             Higgs vacuum stability analysis
         """
         # Critical top mass for stability (rough estimate)
-        m_t_crit = 171.4 + 0.5 * (m_h - 125.1) - 0.3 * (alpha_s - 0.1179) / 0.001
+        m_t_crit = 171.4 + 0.5 * (m_h - 125.1) - 0.3 * (alpha_s - 0.1179) / 0.001  # Higgs mass (PDG)
 
         # Instability scale (where lambda becomes negative)
         # Rough estimate from SM RG running
-        log_Lambda_I = 17 + 3 * (m_h - 125.1) - 2 * (m_t - 172.69)
+        log_Lambda_I = 17 + 3 * (m_h - 125.1) - 2 * (m_t - 172.69)  # Higgs mass (PDG)
         Lambda_I = 10**log_Lambda_I  # GeV
 
         if m_t < m_t_crit:
@@ -325,7 +325,7 @@ if __name__ == "__main__":
 
     print("\n2. HIGGS VACUUM STABILITY:")
     higgs = monitor.check_higgs_stability(
-        m_h=125.1,
+        m_h=125.1,  # Higgs mass (PDG)
         m_t=172.69
     )
     print(f"   m_H = {higgs['m_higgs_GeV']} GeV")

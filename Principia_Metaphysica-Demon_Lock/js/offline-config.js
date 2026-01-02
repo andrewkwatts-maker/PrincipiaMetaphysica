@@ -5,7 +5,7 @@ window.PM_CONFIG = {
     mode: 'offline',
     dataSource: 'local',
     version: '16.2',
-    releaseDate: '20260102',
+    releaseDate: '20260103',
 
     // Local data paths (relative to index.html)
     paths: {

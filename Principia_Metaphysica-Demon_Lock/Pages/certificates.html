@@ -842,19 +842,18 @@
 
     // Legacy certificates for fallback (first 42)
     const LEGACY_CERTIFICATES = [
-      { id: 1, name: "Hubble Parallax", symbol: "H\u2080", formula: "H\u2080 = H\u2080_CMB \u00d7 (1 + sin\u00b2\u03b8/2)", derived: 73.04, experimental: 73.04, uncertainty: 1.04, units: "km/s/Mpc", domain: "Cosmology", notes: "Hubble tension resolved via sin\u00b2 geometric correction",
-        pythonCode: `# Certificate 1: Hubble Constant
-b3 = 24  # G2 Betti number
-k_gimel = 12.3183098862
-phi = 1.6180339887
+      { id: 1, name: "Hubble Unwinding Rate", symbol: "H\u2080", formula: "H\u2080 = H\u2080_CMB \u00d7 (1 + sin\u00b2\u03b8/2)", derived: 71.55, experimental: 73.04, uncertainty: 1.04, units: "km/s/Mpc", domain: "Cosmology", notes: "O'Dowd formula: (288/4) - (163/144) + η_S = 71.55 [OBSOLETE: Hubble tension resolved via sin\u00b2 geometric correction",
+        pythonCode: `# Certificate 1: Hubble Constant (O'Dowd Formula v17)
+b3 = 24  # G2 Betti number (Manifold Base)
+ROOTS = 288  # E8 x E8 root count
+P_O = 163  # O'Dowd Bulk Pressure = (7*24) - 5
+chi_eff = 144  # Effective Euler characteristic = b3^2 / 4
+eta_S = 0.6819  # Sophian Drag
 
-# Hubble tension resolution via geometric parallax
-H0_CMB = 67.4  # Planck 2018 value
-sin2_theta = np.sin(np.radians(33.41/2))**2  # Solar angle
-H0_local = H0_CMB * (1 + sin2_theta / 2)
-
-# Result: 73.04 km/s/Mpc`,
-        derivationChain: ["G2 Manifold (b\u2083=24)", "Solar Mixing Angle \u03b8\u2081\u2082", "Geometric Parallax Factor", "H\u2080 = 73.04 km/s/Mpc"]
+# O'Dowd Formula: geometric derivation from manifold
+H0_local = (ROOTS / 4) - (P_O / chi_eff) + eta_S
+# = 72 - 1.1319 + 0.6819 = 71.55 km/s/Mpc`,
+        derivationChain: ["G2 Manifold (b\u2083=24)", "O'Dowd Bulk P_O = 163 [OLD: Solar Mixing Angle \u03b8\u2081\u2082", "Geometric Parallax Factor", "H\u2080 = 73.04 km/s/Mpc"]
       },
       { id: 2, name: "Fine Structure Constant", symbol: "\u03b1\u207b\u00b9", formula: "\u03b1\u207b\u00b9 = k\u00b2 - b\u2083/\u03c6 + \u03c6/(4\u03c0)", derived: 137.037, experimental: 137.036, uncertainty: 0.01, units: "", domain: "QED", notes: "Gimel\u00b2 - topological correction + phase",
         pythonCode: `# Certificate 2: Fine Structure Constant

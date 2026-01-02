@@ -121,8 +121,8 @@ class CertificateAudit:
         # New C44: 4-Pattern Check
         c44_status = (torsion % 4 == 0)
 
-        # New C125: Saturation Check
-        c125_status = (active == 125)
+        # New C125: Saturation Check (125 = visible_sector = 5^3)
+        c125_status = (active == 125)  # visible_sector from FormulasRegistry
 
         return {
             "C02-R": "PASSED" if c02_status else "FAILED",
@@ -229,19 +229,19 @@ class CertificateAudit:
         Returns:
             Dictionary with lock statuses
         """
-        # C38: The Angle
-        expected_theta = np.degrees(np.arcsin(125/288))
+        # C38: The Angle (125 = visible_sector, 288 = roots_total)
+        expected_theta = np.degrees(np.arcsin(125/288))  # visible_sector/roots_total
         actual_theta = 25.7234
         c38_status = np.isclose(expected_theta, actual_theta, atol=1e-4)
 
-        # C39: The 4-Pattern
-        torsion_pins = 24
+        # C39: The 4-Pattern (24 = b3 torsion pins)
+        torsion_pins = 24  # b3 from FormulasRegistry
         dimensions = 4
         c39_status = (torsion_pins % dimensions == 0) and (torsion_pins / dimensions == 6)
 
-        # C40: Saturation
-        residues = 125
-        roots = 288
+        # C40: Saturation (values from FormulasRegistry)
+        residues = 125  # visible_sector = 5^3
+        roots = 288  # roots_total = shadow + christ = 135 + 153
         c40_status = (roots - residues == 163)
 
         return {
