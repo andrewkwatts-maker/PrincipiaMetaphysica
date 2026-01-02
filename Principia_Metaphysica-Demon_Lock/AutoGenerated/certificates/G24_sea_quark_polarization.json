@@ -8,6 +8,8 @@
   "block": "C",
   "version": "16.2",
   "wl_code": "PENDING",
+  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Use registry values\nsterile = reg.sterile_sector  # 163\n\n# Sea quark polarization: virtual nodes from sterile bulk\n# Baryon mass includes bulk pressure from 163\nresult = \"PENDING\"  # Bulk contribution",
+  "sterile_source": ["sterile_sector"],
   "result": "PENDING",
   "formula": "m_B includes 163 sea",
   "verification_status": "VERIFIED",

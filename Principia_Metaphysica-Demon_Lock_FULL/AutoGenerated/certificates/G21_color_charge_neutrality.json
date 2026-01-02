@@ -8,6 +8,8 @@
   "block": "C",
   "version": "16.2",
   "wl_code": "PENDING",
+  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Use registry values\nvisible = reg.visible_sector  # 125\n\n# Color neutrality: R + G + B = 0 for all baryons\n# Only 'white' baryons stable in 4D\ncolor_sum = 0  # Neutral\nresult = \"PENDING\"  # QCD constraint",
+  "sterile_source": ["visible_sector"],
   "result": "PENDING",
   "formula": "R + G + B = 0",
   "verification_status": "VERIFIED",

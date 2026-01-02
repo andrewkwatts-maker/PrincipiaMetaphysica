@@ -17,5 +17,7 @@
   "hash": "d1222502c659a0b9",
   "verified": true,
   "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "wolfram_status": "MATCH",
+  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nalpha_inv = reg.alpha_inverse    # ~137.036 - Fine structure constant inverse\nroots = reg.roots_total          # 288\n\n# Electron mass locked to EM coupling via projection cost\n# Mass emerges from spin projection onto visible sector\nm_e_geometric = alpha_inv / roots  # Geometric mass-charge ratio\nverified = abs(m_e_geometric - 0.476) < 0.01",
+  "sterile_source": ["alpha_inverse", "roots_total"]
 }

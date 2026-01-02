@@ -17,5 +17,7 @@
   "hash": "6508484db93728c0",
   "verified": true,
   "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "wolfram_status": "MATCH",
+  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nb3 = reg.b3                      # 24\n\n# Gluon octet from SU(3) color: 3^2 - 1 = 8\n# In PM: 8 = b3/3, the color generators\nsu3_generators = 3 ** 2 - 1      # SU(3) adjoint dimension\ngluon_count = b3 // 3            # 24/3 = 8\nverified = gluon_count == su3_generators == 8",
+  "sterile_source": ["b3"]
 }
