@@ -28,6 +28,7 @@ import os
 import sys
 import re
 import shutil
+import stat
 import zipfile
 import json
 import hashlib
@@ -37,6 +38,12 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 from typing import Set, List, Dict, Tuple, Optional
+
+
+def _remove_readonly(func, path, excinfo):
+    """Error handler for shutil.rmtree on Windows read-only files."""
+    os.chmod(path, stat.S_IWRITE)
+    func(path)
 
 # ============================================================
 # CONFIGURATION
@@ -269,7 +276,7 @@ def clone_fresh_repo(temp_dir: Path) -> Path:
     # Remove .git
     git_dir = clone_path / ".git"
     if git_dir.exists():
-        shutil.rmtree(git_dir)
+        shutil.rmtree(git_dir, onerror=_remove_readonly)
         print("  [OK] Removed .git folder")
 
     return clone_path
@@ -289,7 +296,7 @@ def clean_repo(repo_path: Path) -> Dict[str, int]:
             if folder.is_dir():
                 size = sum(f.stat().st_size for f in folder.rglob("*") if f.is_file())
                 stats["bytes"] += size
-                shutil.rmtree(folder)
+                shutil.rmtree(folder, onerror=_remove_readonly)
                 stats["folders"] += 1
                 print(f"  [DELETE] {folder.name}/")
 
@@ -407,7 +414,7 @@ def create_package_structure(source_path: Path, output_path: Path) -> List[Dict]
     print("=" * 60)
 
     if output_path.exists():
-        shutil.rmtree(output_path)
+        shutil.rmtree(output_path, onerror=_remove_readonly)
     output_path.mkdir(parents=True)
 
     file_manifest = []
@@ -636,7 +643,7 @@ def main():
         except Exception as e:
             print(f"[ERROR] {e}")
             if temp_dir and temp_dir.exists():
-                shutil.rmtree(temp_dir)
+                shutil.rmtree(temp_dir, onerror=_remove_readonly)
             sys.exit(1)
 
     try:
@@ -666,7 +673,7 @@ def main():
 
     finally:
         if temp_dir and temp_dir.exists():
-            shutil.rmtree(temp_dir)
+            shutil.rmtree(temp_dir, onerror=_remove_readonly)
 
 
 if __name__ == "__main__":
