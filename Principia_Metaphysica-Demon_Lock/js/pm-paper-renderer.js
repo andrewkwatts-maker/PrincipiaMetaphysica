@@ -1580,11 +1580,37 @@
 
         document.body.appendChild(tooltip);
 
-        // Position tooltip
+        // Position tooltip with viewport boundary checking
         const rect = link.getBoundingClientRect();
+        const tooltipRect = tooltip.getBoundingClientRect();
+        const viewportWidth = window.innerWidth;
+        const viewportHeight = window.innerHeight;
+        const padding = 10; // Padding from viewport edges
+
         tooltip.style.position = 'fixed';
-        tooltip.style.left = rect.left + 'px';
-        tooltip.style.top = (rect.bottom + 10) + 'px';
+
+        // Calculate left position, ensuring tooltip doesn't overflow right edge
+        let left = rect.left;
+        if (left + tooltipRect.width > viewportWidth - padding) {
+            left = viewportWidth - tooltipRect.width - padding;
+        }
+        // Ensure it doesn't go past left edge either
+        if (left < padding) {
+            left = padding;
+        }
+        tooltip.style.left = left + 'px';
+
+        // Calculate top position, prefer below the element but flip above if needed
+        let top = rect.bottom + 10;
+        if (top + tooltipRect.height > viewportHeight - padding) {
+            // Flip to above the element
+            top = rect.top - tooltipRect.height - 10;
+        }
+        // If still off-screen at top, just position at top edge
+        if (top < padding) {
+            top = padding;
+        }
+        tooltip.style.top = top + 'px';
 
         // Typeset MathJax in tooltip
         if (typeof MathJax !== 'undefined' && MathJax.typesetPromise) {
