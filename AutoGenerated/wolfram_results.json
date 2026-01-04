@@ -1,6 +1,6 @@
 {
   "version": "16.2",
-  "timestamp": "2026-01-02T22:11:11",
+  "timestamp": "2026-01-04T23:21:44",
   "total_gates": 72,
   "formula_validations": 76,
   "formula_validated": 76,
@@ -1675,7 +1675,7 @@
     {
       "gate_id": 47,
       "name": "Hubble Unwinding Rate",
-      "formula": "H₀ = 70.42 km/s/Mpc",
+      "formula": "H₀ = 71.55 km/s/Mpc",
       "block": "E",
       "phase": 4,
       "domain": "Cosmology",
@@ -1818,7 +1818,7 @@
     {
       "gate_id": 58,
       "name": "Brane-World Boundary",
-      "formula": "Matter → 4D brane",
+      "formula": "125 Matter → 4D brane",
       "block": "F",
       "phase": 5,
       "domain": "Branes",
@@ -1948,7 +1948,7 @@
     {
       "gate_id": 68,
       "name": "Omega Point Recovery",
-      "formula": "I_final → I_initial",
+      "formula": "I_final(125) → I_initial(163)",
       "block": "F",
       "phase": 5,
       "domain": "Information",

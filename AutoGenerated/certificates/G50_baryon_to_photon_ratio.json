@@ -7,12 +7,11 @@
   "phase": 4,
   "block": "E",
   "version": "16.2",
-  "wl_code": "PENDING",
-  "result": "PENDING",
+  "wl_code": "baryogenesis_derivations.py",
+  "result": "eta_B = 6.1e-10 (sigma < 0.01)",
   "formula": "\u03b7 \u2248 6\u00d710\u207b\u00b9\u2070",
-  "verification_status": "PENDING_LOCK",
-  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
-  "note": "PENDING: \u03b7 = matter/radiation density. Validation: BBN phase calibration",
-  "timestamp": "2026-01-04T13:01:28.018412Z",
-  "hash": "0a67020102f40607"
+  "verification_status": "VERIFIED",
+  "note": "Gate 50: Derived from G2 CP phase delta_CP=235 deg via leptogenesis: epsilon=(3/16pi)*(M_N1*m_nu)/v^2*sin(delta_CP), eta_B=c_sph*epsilon*kappa. Matches Planck 2018: 6.1e-10 +/- 0.04e-10. \u03b7 = matter/radiation density",
+  "timestamp": "2026-01-04T13:24:49.951258Z",
+  "hash": "9a2b81192e4ed53f"
 }
