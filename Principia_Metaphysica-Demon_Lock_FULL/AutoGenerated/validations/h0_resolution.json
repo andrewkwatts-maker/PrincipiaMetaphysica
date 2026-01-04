@@ -1,0 +1,20 @@
+{
+  "id": "h0_resolution",
+  "label": "Hubble Constant Resolution",
+  "category": "COSMOLOGY",
+  "theory_formula": "H₀ = (288/4) - (P_O/χ_R) + η_S = (288/4) - (163/144) + 0.6819",
+  "wolfram_query": "(288/4) - (163/144) + 0.6819",
+  "pm_value": 71.55,
+  "wolfram_result": 71.55,
+  "status": "MATCH",
+  "verify_link": "https://www.wolframalpha.com/input/?i=%28288%2F4%29%20-%20%28163%2F144%29%20%2B%200.6819",
+  "derivation_steps": [
+    "From O'Dowd formula: H₀ = (288/4) - (P_O/χ_R) + η_S",
+    "P_O = 163 (O'Dowd Constant), χ_R = 144 (Reid Mirror), η_S = 0.6819 (Sophian Drag)",
+    "(288/4) = 72",
+    "(163/144) = 1.1319",
+    "72 - 1.1319 + 0.6819 = 71.55 km/s/Mpc"
+  ],
+  "notes": "SH0ES 2025: 73.04 ± 1.04 km/s/Mpc. PM prediction is 1.4σ from experimental.",
+  "timestamp": "2026-01-02T12:00:00.000000"
+}

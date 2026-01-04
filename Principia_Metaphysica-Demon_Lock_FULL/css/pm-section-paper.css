@@ -1,0 +1,1003 @@
+/**
+ * PM Section Renderer - Paper Styling
+ * ====================================
+ *
+ * CSS that matches the principia-metaphysica-paper.html styling exactly
+ * for use with pm-section-renderer.js to ensure visual consistency.
+ *
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+Pro:wght@400;600&family=Source+Code+Pro:wght@400;500&display=swap');
+
+/* ========================================================================== */
+/* CSS VARIABLES - Match paper exactly */
+/* ========================================================================== */
+
+:root {
+    --bg-dark: #0a0a0f;
+    --bg-paper: #ffffff;
+    --text-dark: #1a1a1a;
+    --text-light: #f8f9fa;
+    --accent: #8b7fff;
+    --accent-secondary: #ff7eb6;
+    --border: #e0e0e0;
+    --code-bg: #f5f5f5;
+}
+
+/* ========================================================================== */
+/* PM-SECTION SHADOW ROOT STYLES */
+/* ========================================================================== */
+
+:host {
+    display: block;
+    font-family: 'Crimson Text', Georgia, serif;
+    line-height: 1.7;
+    color: var(--text-dark);
+    font-size: 11pt;
+}
+
+/* When rendered in dark background context, adjust text */
+:host-context(body) {
+    color: var(--text-dark);
+}
+
+/* ========================================================================== */
+/* SECTION CONTAINER */
+/* ========================================================================== */
+
+.pm-section {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    background: #ffffff;
+    color: var(--text-dark);
+}
+
+/* ========================================================================== */
+/* SECTION HEADER */
+/* ========================================================================== */
+
+.section-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-number {
+    display: inline-block;
+    font-size: 1.3rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-right: 0.5rem;
+}
+
+.section-title {
+    display: inline-block;
+    font-size: 1.3rem;
+    margin: 0;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--border);
+    font-weight: 600;
+    color: #333;
+    width: 100%;
+}
+
+/* For h2 section titles within content */
+h2.section-title {
+    font-size: 1.3rem;
+    margin: 2.5rem 0 1rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--border);
+}
+
+h3.subsection-title {
+    font-size: 1.1rem;
+    margin: 1.5rem 0 0.8rem;
+    color: #333;
+}
+
+/* ========================================================================== */
+/* ABSTRACT */
+/* ========================================================================== */
+
+.section-abstract,
+.abstract {
+    background: #f0f2f5;
+    padding: 20px 25px;
+    border-left: 4px solid var(--accent);
+    margin: 2rem 0;
+    color: #1a1a1a;
+}
+
+.section-abstract h2,
+.abstract h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.8rem;
+}
+
+.section-abstract p,
+.abstract p {
+    font-size: 0.95rem;
+    text-align: justify;
+}
+
+/* ========================================================================== */
+/* BEGINNER SUMMARY & KEY TAKEAWAYS */
+/* ========================================================================== */
+
+.beginner-summary {
+    background: rgba(96, 165, 250, 0.05);
+    border: 1px solid rgba(96, 165, 250, 0.2);
+    border-radius: 8px;
+    margin: 1.5rem 0;
+}
+
+.beginner-summary summary {
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: #60a5fa;
+    list-style: none;
+}
+
+.beginner-summary summary::-webkit-details-marker {
+    display: none;
+}
+
+.summary-content {
+    padding: 1rem;
+    border-top: 1px solid rgba(96, 165, 250, 0.1);
+}
+
+.key-takeaways {
+    background: rgba(74, 222, 128, 0.05);
+    border-left: 4px solid #4ade80;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.key-takeaways h4 {
+    color: #2d8659;
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.key-takeaways ul {
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.key-takeaways li {
+    margin-bottom: 0.3rem;
+}
+
+/* ========================================================================== */
+/* CONTENT BLOCKS */
+/* ========================================================================== */
+
+.section-content {
+    margin-bottom: 2rem;
+}
+
+.text-block {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+.text-block p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+/* ========================================================================== */
+/* EQUATIONS */
+/* ========================================================================== */
+
+.equation-block {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    overflow-x: auto;
+}
+
+.equation-number {
+    float: right;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Support for pm-formula elements */
+pm-formula {
+    display: block;
+    margin: 1.5rem 0;
+}
+
+pm-formula[inline] {
+    display: inline-block;
+    margin: 0;
+}
+
+/* ========================================================================== */
+/* DERIVATION BOXES */
+/* ========================================================================== */
+
+/* Color scheme documentation:
+ * Default (gray):  #f8f9fa → #e9ecef  - Standard derivations
+ * Green:           #e8f5e9 → #c8e6c9  - Key results/proofs (border: #2e7d32)
+ * Amber:           #fff8e1 → #ffecb3  - Important equations (border: #f9a825)
+ * Peach:           rgba(255,200,150)  - Predictions/applications
+ */
+
+.derivation-box,
+.callout-derivation {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 1.5rem 0;
+}
+
+.derivation-box h4,
+.callout h4 {
+    font-size: 1rem;
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 0.5rem;
+}
+
+.derivation-step {
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.derivation-step::before {
+    content: counter(step);
+    counter-increment: step;
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.derivation-box ol {
+    counter-reset: step;
+    list-style: none;
+    padding: 0;
+}
+
+/* ========================================================================== */
+/* CALLOUT BOXES */
+/* ========================================================================== */
+
+.callout {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    border-left: 4px solid;
+}
+
+.callout-info {
+    background: rgba(96, 165, 250, 0.05);
+    border-color: #60a5fa;
+}
+
+.callout-warning {
+    background: rgba(251, 191, 36, 0.05);
+    border-color: #fbbf24;
+}
+
+.callout-derivation {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-color: var(--accent);
+}
+
+.callout-example {
+    background: rgba(74, 222, 128, 0.05);
+    border-color: #4ade80;
+}
+
+.callout-success {
+    background: rgba(74, 222, 128, 0.05);
+    border-color: #2e7d32;
+}
+
+.callout-note {
+    background: #f8f9fa;
+    border-color: #666;
+}
+
+.callout h4 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1rem;
+}
+
+.callout p {
+    margin-bottom: 0.5rem;
+}
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
+/* ========================================================================== */
+/* TABLES */
+/* ========================================================================== */
+
+table,
+.section-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.9rem;
+}
+
+th, td,
+.section-table th,
+.section-table td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th,
+.section-table th {
+    background: #f5f5f5;
+    font-weight: 600;
+}
+
+/* Alternate table styling for specific contexts */
+.section-table.bordered th,
+.section-table.bordered td {
+    border: 1px solid var(--border);
+}
+
+/* ========================================================================== */
+/* CODE BLOCKS */
+/* ========================================================================== */
+
+pre {
+    background: var(--code-bg);
+    padding: 15px 20px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin: 1rem 0;
+    border-left: 3px solid var(--accent);
+}
+
+code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+    background: #f0f0f0;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+}
+
+/* ========================================================================== */
+/* FIGURES */
+/* ========================================================================== */
+
+figure,
+.section-figure {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+figure img,
+.section-figure img {
+    max-width: 100%;
+    height: auto;
+}
+
+figcaption,
+.section-figure figcaption,
+.diagram-caption {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.diagram-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.diagram-container svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ========================================================================== */
+/* LISTS */
+/* ========================================================================== */
+
+ul, ol {
+    margin-left: 2rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-bottom: 0.3rem;
+}
+
+/* Nested lists */
+ul ul, ol ol, ul ol, ol ul {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ========================================================================== */
+/* PANELS & GRIDS */
+/* ========================================================================== */
+
+.content-panel {
+    background: #f0f2f5;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    color: #1a1a1a;
+}
+
+.panel-title {
+    color: var(--accent);
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(var(--columns, 2), 1fr);
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.grid-cell {
+    background: #f0f2f5;
+    padding: 1rem;
+    border-radius: 6px;
+    border-left: 3px solid var(--accent);
+    color: #1a1a1a;
+}
+
+/* ========================================================================== */
+/* EXPANDABLE BLOCKS */
+/* ========================================================================== */
+
+.expandable-block {
+    margin: 1rem 0;
+}
+
+.expandable-block summary {
+    cursor: pointer;
+    color: #6b5dd3;
+    font-weight: 600;
+    list-style: none;
+    padding: 0.5rem;
+    background: #e9ecef;
+    border-radius: 4px;
+}
+
+.expandable-block summary::-webkit-details-marker {
+    display: none;
+}
+
+.expandable-block summary:hover {
+    background: #e9ecef;
+}
+
+.expandable-block[open] summary {
+    margin-bottom: 1rem;
+}
+
+/* ========================================================================== */
+/* APPENDICES */
+/* ========================================================================== */
+
+.appendix {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--border);
+}
+
+.appendix-title {
+    color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.section-appendices {
+    margin-top: 3rem;
+}
+
+.simulation-code {
+    margin-top: 1rem;
+}
+
+.simulation-code summary {
+    cursor: pointer;
+    color: #6b5dd3;
+    font-weight: 600;
+    list-style: none;
+    padding: 0.5rem;
+    background: #e9ecef;
+    border-radius: 4px;
+}
+
+.simulation-code summary::-webkit-details-marker {
+    display: none;
+}
+
+.simulation-code pre {
+    background: #1e1e2e;
+    color: #cdd6f4;
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+/* ========================================================================== */
+/* NAVIGATION */
+/* ========================================================================== */
+
+.section-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.section-nav a {
+    color: #6b5dd3;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.section-nav a:hover {
+    background: #e9ecef;
+    border-color: #6b5dd3;
+    color: #5a4ac2;
+}
+
+/* ========================================================================== */
+/* TYPOGRAPHY ENHANCEMENTS */
+/* ========================================================================== */
+
+p {
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+
+strong {
+    font-weight: 600;
+}
+
+em {
+    font-style: italic;
+}
+
+/* Subscripts and superscripts */
+sub, sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+/* ========================================================================== */
+/* PM-FORMULA AND PM-VALUE INTEGRATION */
+/* ========================================================================== */
+
+/* Ensure pm-formula elements inherit paper styling */
+pm-formula::part(container) {
+    font-family: 'Crimson Text', Georgia, serif;
+    color: var(--text-dark);
+}
+
+pm-formula::part(label) {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+pm-formula::part(formula-display) {
+    margin: 1rem 0;
+    font-size: 1.1em;
+}
+
+pm-value {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9em;
+}
+
+/* ========================================================================== */
+/* REFERENCES */
+/* ========================================================================== */
+
+.references {
+    font-size: 0.9rem;
+}
+
+.references li {
+    margin-bottom: 0.5rem;
+}
+
+.references ol {
+    counter-reset: ref-counter;
+    list-style: none;
+}
+
+.references ol li {
+    counter-increment: ref-counter;
+    padding-left: 2.5rem;
+    position: relative;
+}
+
+.references ol li::before {
+    content: "[" counter(ref-counter) "]";
+    position: absolute;
+    left: 0;
+    color: #666;
+    font-weight: 600;
+}
+
+/* ========================================================================== */
+/* ACADEMIC BLOCK TYPES */
+/* ========================================================================== */
+
+/* Academic Notes - styled like callouts but with different emphasis */
+.academic-note {
+    background: rgba(139, 127, 255, 0.05);
+    border-left: 4px solid var(--accent);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.note-content {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.note-content h4 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+/* Highlight Boxes - for key information */
+.highlight-box {
+    background: linear-gradient(135deg, #fff8e1 0%, #ffecb3 100%);
+    border: 1px solid #f9a825;
+    border-left: 4px solid #f57c00;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 8px;
+}
+
+.highlight-title {
+    font-weight: 600;
+    color: #e65100;
+    margin-bottom: 0.5rem;
+    font-size: 1.05rem;
+}
+
+.highlight-content {
+    font-size: 0.95rem;
+}
+
+/* Definition Blocks - for mathematical definitions */
+.definition-block {
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-left: 4px solid #6c757d;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+.definition-term {
+    font-weight: 600;
+    color: #495057;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.definition-content {
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* Theorem Blocks - for formal mathematical statements */
+.theorem-block {
+    background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+    border: 1px solid #81c784;
+    border-left: 4px solid #2e7d32;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+.theorem-header {
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(46, 125, 50, 0.2);
+    padding-bottom: 0.5rem;
+}
+
+.theorem-label {
+    font-weight: 700;
+    color: #1b5e20;
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+.theorem-title {
+    font-weight: 600;
+    color: #2e7d32;
+    margin-left: 0.5rem;
+}
+
+.theorem-content {
+    font-size: 0.95rem;
+    margin-top: 0.75rem;
+}
+
+/* Proof Blocks - for mathematical proofs */
+.proof-block {
+    background: #fafafa;
+    border-left: 3px solid #9e9e9e;
+    padding: 1rem 1.5rem 0.5rem;
+    margin: 1rem 0 1.5rem 1rem;
+    border-radius: 4px;
+}
+
+.proof-header {
+    font-weight: 600;
+    font-style: italic;
+    color: #616161;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.proof-content {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.proof-end {
+    text-align: right;
+    font-size: 1.1rem;
+    color: #757575;
+    margin-top: 0.5rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Remark Blocks - for observations and side notes */
+.remark-block {
+    background: rgba(96, 165, 250, 0.03);
+    border: 1px solid rgba(96, 165, 250, 0.15);
+    border-left: 3px solid #60a5fa;
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 4px;
+}
+
+.remark-header {
+    font-weight: 600;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    font-variant: small-caps;
+}
+
+.remark-content {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Example Blocks - for worked examples */
+.example-block {
+    background: rgba(147, 51, 234, 0.03);
+    border: 1px solid rgba(147, 51, 234, 0.15);
+    border-left: 4px solid #9333ea;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 6px;
+}
+
+.example-header {
+    font-weight: 600;
+    color: #6b21a8;
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    font-variant: small-caps;
+}
+
+.example-content {
+    font-size: 0.95rem;
+}
+
+/* ========================================================================== */
+/* ERROR STATES */
+/* ========================================================================== */
+
+.error {
+    color: #dc3545;
+    padding: 1rem;
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #dc3545;
+}
+
+/* ========================================================================== */
+/* MOBILE RESPONSIVE */
+/* ========================================================================== */
+
+@media screen and (max-width: 768px) {
+    .pm-section {
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.15rem;
+    }
+
+    h3.subsection-title {
+        font-size: 1rem;
+    }
+
+    .abstract,
+    .section-abstract {
+        padding: 15px;
+    }
+
+    .derivation-box,
+    .callout {
+        padding: 15px;
+        margin: 1rem 0;
+    }
+
+    .equation-block {
+        padding: 0.5rem 0;
+        font-size: 0.9rem;
+    }
+
+    table,
+    .section-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 0.8rem;
+    }
+
+    th, td,
+    .section-table th,
+    .section-table td {
+        padding: 8px 10px;
+    }
+
+    pre {
+        padding: 10px 12px;
+        font-size: 0.75rem;
+    }
+
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+
+    ul, ol {
+        margin-left: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .pm-section {
+        padding: 0.5rem;
+    }
+
+    .section-title {
+        font-size: 1.05rem;
+    }
+
+    .derivation-box,
+    .callout {
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .derivation-step {
+        padding-left: 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================================================== */
+/* FINAL VISUAL POLISH */
+/* ========================================================================== */
+
+/* Smooth transitions for all elements */
+* {
+    transition-property: background-color, border-color, color, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Enhanced typography */
+:host {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    letter-spacing: -0.02em;
+}
+
+/* Smooth scrolling */
+* {
+    scroll-behavior: smooth;
+}
+
+/* Selection color */
+::selection {
+    background: rgba(139, 127, 255, 0.2);
+    color: inherit;
+}
+
+::-moz-selection {
+    background: rgba(139, 127, 255, 0.2);
+    color: inherit;
+}
+
+/* ========================================================================== */
+/* PRINT STYLES */
+/* ========================================================================== */
+
+@media print {
+    .pm-section {
+        padding: 0;
+        max-width: none;
+    }
+
+    .section-nav {
+        display: none;
+    }
+
+    .beginner-summary,
+    .expandable-block summary {
+        display: none;
+    }
+
+    .expandable-block[open] {
+        display: block;
+    }
+
+    @page {
+        size: A4;
+        margin: 25mm 20mm;
+    }
+}
