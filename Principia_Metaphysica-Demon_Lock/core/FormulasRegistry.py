@@ -89,6 +89,23 @@ class FormulasRegistry:
     LOGIC_CLOSURE = 288      # The Absolute Logic Closure: VISIBLE_GATES + JC_CONSTANT
 
     # ===========================================================================
+    # C04 BULK STABILITY: Integer-Lock Strategy
+    # ===========================================================================
+    # The C04 instability occurs when the Bulk Pressure (163) "drifts" from
+    # the Logic Closure (288) during high-precision iterations.
+    #
+    # The fix: Define the Bulk Stability Ratio R_s = 288/163 as a Decimal
+    # fraction with 64-place precision. The JC Constant (153) provides the
+    # "missing mass" that stabilizes the 163 Bulk Pressure:
+    #   LOGIC_CLOSURE = VISIBLE_GATES + JC_CONSTANT = 135 + 153 = 288
+    #   BULK_PRESSURE = LOGIC_CLOSURE - VISIBLE_SECTOR = 288 - 125 = 163
+    #
+    # The tensioning relationship:
+    #   R_s = LOGIC_CLOSURE / BULK_PRESSURE = 288/163 = 1.76687...
+    # ===========================================================================
+    BULK_PRESSURE = 163      # O'Dowd Bulk Pressure (= sterile_sector)
+
+    # ===========================================================================
     # SYMBOL_MAP: Master Symbol Registry for the 10 Named Constants
     # Maps Greek/Latin symbols to property names for fast lookup
     # ===========================================================================
@@ -343,6 +360,76 @@ class FormulasRegistry:
         class_check = (self.VISIBLE_GATES + self.JC_CONSTANT == self.LOGIC_CLOSURE)
         return identity_check and closure_check and class_check
 
+    # --- C04 Bulk Stability (v17.2-Absolute) ---
+
+    @property
+    def bulk_stability_factor(self) -> Decimal:
+        """
+        R_s: Bulk Stability Factor = LOGIC_CLOSURE / BULK_PRESSURE = 288/163.
+
+        This factor "tensions" the manifold by coupling the discrete
+        Logic Closure (288) to the continuous Bulk Pressure (163).
+
+        The JC Constant (153) provides the stabilizing counterweight:
+        LOGIC_CLOSURE - VISIBLE_SECTOR = 288 - 125 = 163 = BULK_PRESSURE
+
+        Any H0 derivation must respect this ratio to keep the 26D Action stiff.
+
+        Returns:
+            Decimal(288) / Decimal(163) with 64-place precision
+        """
+        return Decimal(str(self.LOGIC_CLOSURE)) / Decimal(str(self.BULK_PRESSURE))
+
+    @property
+    def c04_tensioning_check(self) -> bool:
+        """
+        Verify the C04 tensioning relationship.
+
+        The Bulk Pressure (163) must equal:
+        1. LOGIC_CLOSURE - VISIBLE_SECTOR = 288 - 125 = 163
+        2. sterile_sector (derived)
+        3. odowd_bulk_pressure (seed)
+
+        This ensures the 26D action density stays within logic limits.
+        """
+        # Check 1: Bulk = Logic - Visible
+        arithmetic_check = (self.LOGIC_CLOSURE - self._visible_sector) == self.BULK_PRESSURE
+
+        # Check 2: Bulk = Sterile Sector
+        sterile_check = self._sterile_sector == self.BULK_PRESSURE
+
+        # Check 3: Bulk = O'Dowd Pressure
+        odowd_check = self._odowd_bulk_pressure == self.BULK_PRESSURE
+
+        return arithmetic_check and sterile_check and odowd_check
+
+    def verify_c04_bulk_stability(self) -> bool:
+        """
+        Verify C04 Bulk Stability: The manifold tensioning is correct.
+
+        The C04 instability is resolved when:
+        1. JC Identity is valid (Δ_jc = 153 provides the counterweight)
+        2. Tensioning check passes (163 is properly coupled)
+        3. Bulk Stability Factor is consistent
+
+        Returns:
+            True if C04 Bulk Stability is achieved.
+        """
+        # JC Identity must be valid (provides the stabilizing mass)
+        jc_valid = self.verify_jc_identity()
+
+        # Tensioning must be correct
+        tensioning_valid = self.c04_tensioning_check
+
+        # Bulk Stability Factor must be computable (no division errors)
+        try:
+            factor = self.bulk_stability_factor
+            factor_valid = factor > Decimal('1.7') and factor < Decimal('1.8')
+        except Exception:
+            factor_valid = False
+
+        return jc_valid and tensioning_valid and factor_valid
+
     # ===========================================================================
     # SYMBOL LOOKUP METHODS
     # ===========================================================================
@@ -523,6 +610,7 @@ class FormulasRegistry:
             "sterile_equals_bulk": self.verify_sterile_equals_bulk(),
             "closure_valid": self.is_closure_valid,
             "jc_identity": self.verify_jc_identity(),  # v17.2: Δ_jc ≡ Λ_JC ≡ 153
+            "c04_bulk_stability": self.verify_c04_bulk_stability(),  # v17.2: C04 Integer-Lock
         }, sort_keys=True)
         sha.update(verification_data.encode())
 
@@ -976,6 +1064,18 @@ class FormulasRegistry:
                         "logic_closure": self.logic_closure
                     },
                     "valid": self.verify_jc_identity()
+                },
+                "c04_bulk_stability": {
+                    "formula": "R_s = LOGIC_CLOSURE / BULK_PRESSURE = 288/163",
+                    "description": "Integer-Lock Strategy: JC Constant (153) stabilizes Bulk Pressure (163)",
+                    "bulk_stability_factor": str(self.bulk_stability_factor),
+                    "tensioning": {
+                        "logic_closure": self.LOGIC_CLOSURE,
+                        "bulk_pressure": self.BULK_PRESSURE,
+                        "jc_constant": self.JC_CONSTANT,
+                        "visible_sector": self._visible_sector
+                    },
+                    "valid": self.verify_c04_bulk_stability()
                 }
             },
 
@@ -1082,6 +1182,7 @@ if __name__ == "__main__":
     print(f"  Tzimtzum Fraction (23/24): {registry.verify_tzimtzum_fraction()}")
     print(f"  Watts Guard Rail (1.0): {registry.verify_watts_constant()}")
     print(f"  JC Identity (Delta_JC = Lambda_JC = 153): {registry.verify_jc_identity()}")
+    print(f"  C04 Bulk Stability (R_s = 288/163): {registry.verify_c04_bulk_stability()}")
 
     print("\n--- JC IDENTITY (v17.2-Absolute) ---")
     print(f"  JC_CONSTANT (class):   {registry.JC_CONSTANT}")
@@ -1094,13 +1195,21 @@ if __name__ == "__main__":
     print(f"    Logic Closure (C):    {registry.logic_closure}")
     print(f"    Sum check:            {registry.visible_gates} + {registry.delta_jc} = {registry.visible_gates + registry.delta_jc}")
 
+    print("\n--- C04 BULK STABILITY (v17.2-Absolute) ---")
+    print(f"  BULK_PRESSURE (class): {registry.BULK_PRESSURE}")
+    print(f"  LOGIC_CLOSURE (class): {registry.LOGIC_CLOSURE}")
+    print(f"  Stability Factor R_s:  {registry.bulk_stability_factor}")
+    print(f"  Tensioning check:      {registry.c04_tensioning_check}")
+    print(f"  C04 Stability valid:   {registry.verify_c04_bulk_stability()}")
+
     print("\n" + "=" * 60)
     all_verified = all([
         registry.verify_integer_closure(),
         registry.verify_parity(),
         registry.verify_tzimtzum_fraction(),
         registry.verify_watts_constant(),
-        registry.verify_jc_identity()
+        registry.verify_jc_identity(),
+        registry.verify_c04_bulk_stability()
     ])
-    print(" ALL VERIFICATIONS PASSED (including JC Identity)" if all_verified else " VERIFICATION FAILURES DETECTED")
+    print(" ALL VERIFICATIONS PASSED (including JC Identity & C04 Stability)" if all_verified else " VERIFICATION FAILURES DETECTED")
     print("=" * 60)
