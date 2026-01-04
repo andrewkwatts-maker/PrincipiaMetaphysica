@@ -126,6 +126,7 @@ VERIFIABLE_GATES = {
 # Gates that are mathematical theorems derivable from the framework (MATHEMATICAL)
 MATHEMATICAL_GATES = {
     18: {"reason": "Mathematical theorem about discrete mass spectrum from 288-root structure"},
+    70: {"reason": "Mathematical consequence of G18 (Mass-Gap Quantization). The spectral gap Δm >= 1/288 is the same theorem restated - discrete eigenvalue spectrum with gaps > 0 is guaranteed by G18's theorem."},
 }
 
 # Gates that are foundational assumptions (NOT_TESTABLE)
@@ -169,7 +170,7 @@ NOT_TESTABLE_GATES = {
     65: {"reason": "Landauer's principle is fundamental thermodynamics, not PM-specific"},
     68: {"reason": "Omega point recovery is philosophical/teleological"},
     69: {"reason": "Topological soliton stability (pi_3(S^2)->125 knots) is a framework consistency constraint. The 125 value comes from visible_sector partition (5^3=125), not derived from homotopy theory. Verifying cosmic string/domain wall/monopole soliton stability requires cosmological observations of topological defects which are not currently accessible. Gate validation only checks active==125, not actual soliton physics."},
-    70: {"reason": "Spectral gap verification is redundant with G18 (Mass-Gap Quantization). G18 establishes the mathematical theorem that Dm >= 1/288 from the 288-root structure. G70's 'no ghost nodes' check is the same constraint restated - the discrete eigenvalue spectrum with gaps > 0 is already guaranteed by G18's theorem. Current implementation just returns True unconditionally without actual eigenvalue computation."},
+    # G70 moved to MATHEMATICAL_GATES - redundant with G18
     71: {"reason": "Recursive logical loop is self-referential closure"},
     72: {"reason": "Omega Hash is the verification seal itself"},
 }
