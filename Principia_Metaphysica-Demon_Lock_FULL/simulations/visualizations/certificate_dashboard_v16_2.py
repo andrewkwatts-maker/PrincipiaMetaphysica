@@ -386,7 +386,7 @@ class CertificateDashboard:
         ax.text(6, 1.4, 'OMEGA SEAL ENGAGED',
                 ha='center', va='center',
                 fontsize=14, fontweight='bold', color='#1a1a2e')
-        ax.text(6, 1.0, '7/7 Gates Passed',
+        ax.text(6, 1.0, '40/72 Gates Verified',
                 ha='center', va='center',
                 fontsize=11, color='#1a1a2e')
 
