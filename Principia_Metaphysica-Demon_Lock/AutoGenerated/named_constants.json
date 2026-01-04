@@ -1,9 +1,9 @@
 {
   "version": "17.2-ABSOLUTE",
-  "timestamp": "2026-01-03T05:24:07.965813Z",
-  "session_id": "PM20260103052407",
+  "timestamp": "2026-01-04T21:49:16.169156Z",
+  "session_id": "PM20260104214916",
   "volatility": {
-    "generated_at": "2026-01-03T05:24:07.965813Z",
+    "generated_at": "2026-01-04T21:49:16.169156Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "17.2-ABSOLUTE",
@@ -247,5 +247,29 @@
       "value": 1.0,
       "valid": true
     }
+  },
+  "symbol_map": {
+    "Omega_W": "watts_constant",
+    "chi_R": "reid_invariant",
+    "kappa_E": "weinstein_scale",
+    "lambda_S": "hossenfelder_root",
+    "P_O": "odowd_bulk_pressure",
+    "Phi_PH": "penrose_hameroff_bridge",
+    "Lambda_JC": "christ_constant",
+    "eta_S": "sophian_drag",
+    "kappa_Delta": "demiurgic_coupling",
+    "sigma_T": "tzimtzum_pressure"
+  },
+  "property_to_symbol": {
+    "watts_constant": "Omega_W",
+    "reid_invariant": "chi_R",
+    "weinstein_scale": "kappa_E",
+    "hossenfelder_root": "lambda_S",
+    "odowd_bulk_pressure": "P_O",
+    "penrose_hameroff_bridge": "Phi_PH",
+    "christ_constant": "Lambda_JC",
+    "sophian_drag": "eta_S",
+    "demiurgic_coupling": "kappa_Delta",
+    "tzimtzum_pressure": "sigma_T"
   }
 }

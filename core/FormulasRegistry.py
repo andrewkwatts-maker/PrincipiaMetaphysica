@@ -71,6 +71,28 @@ class FormulasRegistry:
     VERSION = "17.2-ABSOLUTE"
     STATUS = "ABSOLUTE_SOVEREIGN"
 
+    # ===========================================================================
+    # SYMBOL_MAP: Master Symbol Registry for the 10 Named Constants
+    # Maps Greek/Latin symbols to property names for fast lookup
+    # ===========================================================================
+    SYMBOL_MAP = {
+        # Sacred Heptagon (7)
+        "Omega_W": "watts_constant",        # Ω_W: Observer Unity (1.0)
+        "chi_R": "reid_invariant",          # χ_R: Sounding Board (1/144)
+        "kappa_E": "weinstein_scale",       # κ_E: Spinor Connection (12.0)
+        "lambda_S": "hossenfelder_root",    # λ_S: Hidden Root (√24)
+        "P_O": "odowd_bulk_pressure",       # P_O: Bulk Pressure (163)
+        "Phi_PH": "penrose_hameroff_bridge",  # Φ_PH: Fibonacci Bridge (13)
+        "Lambda_JC": "christ_constant",     # Λ_JC: Logos Potential (153)
+        # Mechanical Triad (3)
+        "eta_S": "sophian_drag",            # η_S: H0 Friction (0.6819)
+        "kappa_Delta": "demiurgic_coupling",  # κ_Δ: Mass-Energy Gearbox
+        "sigma_T": "tzimtzum_pressure",     # σ_T: Void Seal (23/24)
+    }
+
+    # Reverse mapping: property name → symbol
+    PROPERTY_TO_SYMBOL = {v: k for k, v in SYMBOL_MAP.items()}
+
     def __init__(self):
         """Initialize with the Ten Pillar Seeds - the ONLY hardcoded values."""
 
@@ -238,6 +260,29 @@ class FormulasRegistry:
     def shadow_sector(self) -> int:
         """Shadow sector for Integer Closure (135)."""
         return self._shadow_sector
+
+    # ===========================================================================
+    # SYMBOL LOOKUP METHODS
+    # ===========================================================================
+
+    def get_symbol_value(self, symbol: str) -> float:
+        """Get constant value by symbol (e.g., 'Omega_W' → 1.0)."""
+        prop_name = self.SYMBOL_MAP.get(symbol)
+        if not prop_name:
+            raise ValueError(f"Unknown symbol: {symbol}. Valid: {list(self.SYMBOL_MAP.keys())}")
+        return getattr(self, prop_name)
+
+    def get_symbol_for_property(self, property_name: str) -> str:
+        """Get symbol for a property (e.g., 'watts_constant' → 'Omega_W')."""
+        return self.PROPERTY_TO_SYMBOL.get(property_name, None)
+
+    def get_all_symbols_with_values(self) -> dict:
+        """Return {symbol: value} for all 10 Named Constants."""
+        return {symbol: self.get_symbol_value(symbol) for symbol in self.SYMBOL_MAP.keys()}
+
+    def validate_symbol(self, symbol: str) -> bool:
+        """Check if symbol is registered."""
+        return symbol in self.SYMBOL_MAP
 
     # ===========================================================================
     # v17: DERIVED GEOMETRIC INVARIANTS (From Base-24)
@@ -827,7 +872,10 @@ class FormulasRegistry:
                     "value": self.watts_constant,
                     "valid": self.verify_watts_constant()
                 }
-            }
+            },
+
+            "symbol_map": self.SYMBOL_MAP,
+            "property_to_symbol": self.PROPERTY_TO_SYMBOL
         }
 
         if output_path:
