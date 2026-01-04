@@ -267,6 +267,90 @@ def generate_statistics() -> Dict[str, Any]:
         }
     }
 
+    # Also update parameters.json with framework_statistics as registered params
+    # This ensures the JS loader can find them via standard parameter lookup
+    if os.path.exists(PARAMETERS_FILE):
+        try:
+            with open(PARAMETERS_FILE, 'r', encoding='utf-8') as f:
+                params_data = json.load(f)
+
+            # Add framework_statistics as registered parameters
+            fs = statistics['framework_statistics']
+            params_data['parameters']['framework_statistics.pass_count'] = {
+                'value': fs['pass_count'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.pending_count'] = {
+                'value': fs['pending_count'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.not_testable_count'] = {
+                'value': fs['not_testable_count'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.mathematical_count'] = {
+                'value': fs['mathematical_count'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.total_gates'] = {
+                'value': fs['total_gates'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.chi_squared_reduced'] = {
+                'value': fs['chi_squared_reduced'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.degrees_of_freedom'] = {
+                'value': fs['degrees_of_freedom'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.status'] = {
+                'value': fs['status'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.exact_matches'] = {
+                'value': fs['exact_matches'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+
+            # Also add validation section
+            vs = statistics['validation']
+            params_data['parameters']['validation.within_1sigma'] = {
+                'value': vs['within_1sigma'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['validation.within_2sigma'] = {
+                'value': vs['within_2sigma'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['validation.total_predictions'] = {
+                'value': vs['total_predictions'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['validation.success_rate'] = {
+                'value': vs['success_rate'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py'
+            }
+
+            with open(PARAMETERS_FILE, 'w', encoding='utf-8') as f:
+                json.dump(params_data, f, indent=2)
+            print(f"  Updated parameters.json with framework_statistics")
+        except Exception as e:
+            print(f"  Warning: Could not update parameters.json: {e}")
+
     return statistics
 
 
@@ -276,7 +360,7 @@ def main():
     print("Generating Validation Statistics")
     print("=" * 60)
 
-    # Generate statistics
+    # Generate statistics (this also updates parameters.json)
     statistics = generate_statistics()
 
     # Write output

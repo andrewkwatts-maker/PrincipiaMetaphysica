@@ -80,33 +80,22 @@
 
             // ================================================================
             // Framework Statistics / Validation mapping
-            // HTML uses framework_statistics.X, values loaded from statistics.json
+            // These are registered as params in parameters.json by generate_statistics.py
+            // The standard parameter lookup (Strategy 1) finds them as flat keys
+            // No aliases needed - paths like "framework_statistics.chi_squared_reduced"
+            // are looked up directly in parameters["framework_statistics.chi_squared_reduced"]
             // ================================================================
+            // Legacy aliases for compatibility (fallback to _dynamic if not in params)
             'framework_statistics.within_1_sigma': '_dynamic.within_1sigma',
             'framework_statistics.total_sm_parameters': '_dynamic.total_parameters',
-            'framework_statistics.exact_matches': '_dynamic.exact_matches',
-            'framework_statistics.within_2_sigma': '_dynamic.within_2sigma',
             'framework_statistics.calibrated_parameters': '_dynamic.calibrated_count',
             'framework_statistics.success_rate_1sigma': '_dynamic.within_1sigma',
-            // 72-Gate Registry statistics (from GATES_72_CERTIFICATES.json summary)
-            'framework_statistics.pass_count': '_dynamic.pass_count',
-            'framework_statistics.pending_count': '_dynamic.pending_count',
-            'framework_statistics.not_testable_count': '_dynamic.not_testable_count',
-            'framework_statistics.mathematical_count': '_dynamic.mathematical_count',
-            'framework_statistics.total_gates': '_dynamic.total_gates',
-            // Validation summary statistics (from statistics.json framework_statistics)
-            'framework_statistics.chi_squared_reduced': '_dynamic.chi_squared_reduced',
-            'framework_statistics.degrees_of_freedom': '_dynamic.degrees_of_freedom',
-            'framework_statistics.status': '_dynamic.status',
 
-            // Validation aliases (loaded from statistics.json validation section)
-            'validation.total_predictions': '_dynamic.total_predictions',
+            // Validation aliases (loaded from validation section)
             'validation.calibrated_count': '_dynamic.calibrated_count',
             'validation.constraints_count': '_dynamic.constraints_count',
             'validation.predictions_within_1sigma': '_dynamic.within_1sigma',
             'validation.predictions_within_2sigma': '_dynamic.within_2sigma',
-            'validation.exact_matches': '_dynamic.exact_matches',
-            'validation.within_1_sigma': '_dynamic.within_1sigma',
             'validation.success_rate': '_dynamic.success_rate',
 
             // ================================================================
