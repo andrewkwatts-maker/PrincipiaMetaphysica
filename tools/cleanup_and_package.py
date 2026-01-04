@@ -115,13 +115,13 @@ TEMP_PREFIXES = [
 ZENODO_STRUCTURE = {
     "01_Paper": {
         "description": "Complete interactive paper with formula rendering",
-        "files": ["index.html", "validation.html"],
+        "files": ["index.html", "validation.html", "Launch.bat", "serve.py"],
         "folders": ["css", "js", "fonts", "images", "components", "foundations", "Pages"],
     },
     "02_Simulations": {
         "description": "v16 simulation suite with validated scripts",
         "files": ["config.py", "run_all_simulations.py", "requirements.txt"],
-        "folders": ["simulations/v16", "simulations/base"],
+        "folders": ["simulations/v16", "simulations/base", "simulations/validation"],
     },
     "03_Data": {
         "description": "Generated theory output and parameter database",
@@ -130,8 +130,8 @@ ZENODO_STRUCTURE = {
     },
     "04_Documentation": {
         "description": "Architecture, provenance, and usage documentation",
-        "files": ["README.md", "ARCHITECTURE.md", "PROVENANCE.md", "CITATION.cff", "LICENSE"],
-        "folders": ["docs", "diagrams"],
+        "files": ["README.md", "ARCHITECTURE.md", "PROVENANCE.md", "CITATION.cff", "LICENSE", "FORMULAS.md"],
+        "folders": ["docs", "diagrams", "PROOFS"],
     },
     "05_Verification": {
         "description": "Omega Seal and formal proof manifests",

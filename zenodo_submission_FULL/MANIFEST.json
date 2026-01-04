@@ -4,7 +4,7 @@
   "author": "Andrew Keith Watts",
   "affiliation": "Independent Physics Researcher - Brisbane, Australia",
   "repository": "https://github.com/andrewkwatts-maker/PrincipiaMetaphysica",
-  "created": "2026-01-05T07:39:08.165937",
+  "created": "2026-01-05T07:48:45.663204",
   "description": "A unified geometric framework deriving all 58 Standard Model parameters from a single G2 manifold.",
   "keywords": [
     "theoretical physics",
@@ -13,14 +13,14 @@
     "gauge unification"
   ],
   "statistics": {
-    "total_files": 578,
-    "total_size_bytes": 28454312,
-    "total_size_human": "27.1 MB",
+    "total_files": 614,
+    "total_size_bytes": 29041535,
+    "total_size_human": "27.7 MB",
     "files_by_section": {
-      "01_Paper": 1,
-      "root": 569,
+      "01_Paper": 3,
+      "root": 602,
       "02_Simulations": 3,
-      "04_Documentation": 5
+      "04_Documentation": 6
     }
   },
   "files": [
@@ -28,6 +28,16 @@
       "path": "01_Paper/index.html",
       "size": 90148,
       "sha256": "593fbcd3e5cc6735c2249d565cb6b2716e7ca89bec5579145469594e7e6fb808"
+    },
+    {
+      "path": "01_Paper/Launch.bat",
+      "size": 1954,
+      "sha256": "67842e021e63777928b8282b1673b9355c5ef0f10c03c62fe4dc6928eba67c0a"
+    },
+    {
+      "path": "01_Paper/serve.py",
+      "size": 2835,
+      "sha256": "6e755793e717a018be45488f96c8ee287d345ec2e59a748a2e60e56b2ad793ad"
     },
     {
       "path": "01_Paper\\css\\auth.css",
@@ -1665,6 +1675,141 @@
       "sha256": "db0f3c3e9a52215134953f25eec8cd19a1c629f8d9a0a90a37785812ab0a52e0"
     },
     {
+      "path": "02_Simulations\\validation\\add_simulation_links_to_theory.py",
+      "size": 8839,
+      "sha256": "3bb937cc374ba0a4a48a2faf747232b0e79bb9a8aac864061864f2fdc3afb946"
+    },
+    {
+      "path": "02_Simulations\\validation\\CERTIFICATES_v16_2.py",
+      "size": 52196,
+      "sha256": "d89cc14d583aac00cbe4ed83713676a178dabba759b12520782642fca0f0be8b"
+    },
+    {
+      "path": "02_Simulations\\validation\\formula_validator_v16_2.py",
+      "size": 11371,
+      "sha256": "f50e63df15c94352aaf3f7202b01b440267d5b5518e114b203e76851fb54e2e6"
+    },
+    {
+      "path": "02_Simulations\\validation\\output_validator_v16_2.py",
+      "size": 35266,
+      "sha256": "b23dbf0eaf7bb25ad44a36a08bd9744978bdef575d31e8027066b1144522cfa8"
+    },
+    {
+      "path": "02_Simulations\\validation\\recursive_symmetry_gatekeeper.py",
+      "size": 13104,
+      "sha256": "b7058bca4d3528bd38eae17a512fa45f063846cfd2662f66837e1741371f8352"
+    },
+    {
+      "path": "02_Simulations\\validation\\sigma_validator_final_v16_2.py",
+      "size": 75292,
+      "sha256": "0ebdfb4b10e7d9a167ce3b9b9ade22fa77cccc3578fc8d9c25dd28c4c3a7b6d5"
+    },
+    {
+      "path": "02_Simulations\\validation\\symplectic_descent_validator_v16_2.py",
+      "size": 54780,
+      "sha256": "246904478ef026587f0342db211648cdd8f30f73084ccffa736ce60d79a9fe18"
+    },
+    {
+      "path": "02_Simulations\\validation\\tft_rigor_proofs_v16_2.py",
+      "size": 28760,
+      "sha256": "448267ad19e7f9898c9a4fa638afa00fec5da7fe47bd774209be56bc807c71e3"
+    },
+    {
+      "path": "02_Simulations\\validation\\unitary_filter_v16_2.py",
+      "size": 35062,
+      "sha256": "d5d37c97691dbb5190c30ff06a933e792bfe9a6f35ed9369cc677e6a0c8fca59"
+    },
+    {
+      "path": "02_Simulations\\validation\\unit_validator_v16_2.py",
+      "size": 13720,
+      "sha256": "a23c12d820dd76b7addcf8777d842d20a47b93365f06a21ef95f90816ced8f07"
+    },
+    {
+      "path": "02_Simulations\\validation\\v16_2_logic_check.py",
+      "size": 12254,
+      "sha256": "3922f624a11cbc2be768883e6933bfe5e6858bb5e01cac3dd26fc6c9d54e7cf0"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_bidirectional_links.py",
+      "size": 11010,
+      "sha256": "08f6409cb739b96d73b40ca7bc4c22870049fc814c53f91ca5ec784aff99eed6"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_bindings_final.py",
+      "size": 12081,
+      "sha256": "c1d92f9b9455db36811862076653c649c84b2031c1b7fb68bef465ae11015aaa"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_dynamic_vs_hardcoded.py",
+      "size": 14576,
+      "sha256": "21c2562c4d292b347e62b48e95888c405c7039c2c187452dffc28f7b6663c3ef"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_experimental_compliance.py",
+      "size": 10062,
+      "sha256": "16bf31b4901180327d806876be548c60d371363b1bc6d380149fde0a848efd8c"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_formula_lookups.py",
+      "size": 11579,
+      "sha256": "b3b5019177b34a188db49f25e85ff4a2ce3063233ac73fa49fa6a7afa109becc"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_metadata_fix.py",
+      "size": 6209,
+      "sha256": "cab5cf06d3b862d7114debc14b356ca67355e8dee4304e05e5ecb6a067c78f4a"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_param_references.py",
+      "size": 14335,
+      "sha256": "42eeca6a9853d4f18071377f15ac6d82003ace6b4fd6156706a349cfecc6e9a9"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_section_references.py",
+      "size": 5422,
+      "sha256": "d37870bc34bbb7fd6ccf1b39184b02fdd57af86e4b18ef604d9ecefcc7bbe1eb"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_simulation_chain.py",
+      "size": 7880,
+      "sha256": "fdddecafda8981f20f59172d53ed0b94ad1d796ee3d080d5005c99c410b9bf3e"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_simulation_links.py",
+      "size": 14930,
+      "sha256": "8e0acb73ea6dde6df85806bddacbe3125fc3b586c8e666cd6455c226abe67ee7"
+    },
+    {
+      "path": "02_Simulations\\validation\\validate_theory_output.py",
+      "size": 23299,
+      "sha256": "f9ae17cb3b9e5fd6d8853f920ce7b55f78f234baf8ef3d88249fb35362181857"
+    },
+    {
+      "path": "02_Simulations\\validation\\validation_schema_v16_2.py",
+      "size": 21398,
+      "sha256": "eafab268c3981bd531fbd207b6ad11b4cef0e6de7089d53ee9346f0d1e04752c"
+    },
+    {
+      "path": "02_Simulations\\validation\\verify_content_migration.py",
+      "size": 14904,
+      "sha256": "6926691097b20b522fd006f99b68af5d6849d9fde704f5da474b44fcc40dcf8d"
+    },
+    {
+      "path": "02_Simulations\\validation\\deprecated\\validate_content_migration.py",
+      "size": 12685,
+      "sha256": "44b6b8ade1c96d3a46f90d8e0fd61503824f8ee2d987c5525d972479c4610b8b"
+    },
+    {
+      "path": "02_Simulations\\validation\\deprecated\\validate_json.py",
+      "size": 746,
+      "sha256": "40b27db090c2967ec418aafd470b9cf98baf47bcf839d620d3356cea0614cece"
+    },
+    {
+      "path": "02_Simulations\\validation\\deprecated\\validate_pm_bindings.py",
+      "size": 7295,
+      "sha256": "4c85e6628de2f49849eb224548bc6393330c6b00b62b6c8fab7dac27cfd765de"
+    },
+    {
       "path": "03_Data\\AutoGenerated\\beginner-guide.json",
       "size": 48702,
       "sha256": "8106211a0cf560d8b981b03c5e3f231ac485225927c3813eb6c3e2ac270ccc1f"
@@ -2500,6 +2645,11 @@
       "sha256": "5e5614d653059843792ce79adb0f133891172b72041dbadb79091a85a8482096"
     },
     {
+      "path": "04_Documentation/FORMULAS.md",
+      "size": 5223,
+      "sha256": "77b6db44a16cb70a4c2bb49cd7cff06a51e65cc3b27372bc2b7e9fee4851f857"
+    },
+    {
       "path": "04_Documentation\\docs\\72Gates",
       "size": 44468,
       "sha256": "be848367e3707f4f3e62bf233a14d6adf35502d3a10d82fc0d9625fb1b0f3dcb"
@@ -2603,6 +2753,36 @@
       "path": "04_Documentation\\diagrams\\theory-diagrams.html",
       "size": 86580,
       "sha256": "a6deb350326253263bdfe3027b33c8b1edf3d25f94c0db062401542f52020131"
+    },
+    {
+      "path": "04_Documentation\\PROOFS\\Holonomy_Phase_Strain_v16_2.md",
+      "size": 8195,
+      "sha256": "b54e03ffe510ace2b99b9865828be5132c5a475b42167f8c23a509110cd83ad6"
+    },
+    {
+      "path": "04_Documentation\\PROOFS\\Hopf_Fibration_Residue_v16_2.md",
+      "size": 5629,
+      "sha256": "69788c65ea860e7ab2a7e495b146f1a26e5389aec448c565bcd88f3ff1f1de3f"
+    },
+    {
+      "path": "04_Documentation\\PROOFS\\Mirror_Brane_Metric_Derivation_v16_2.md",
+      "size": 6216,
+      "sha256": "b242bbdfe5475f192a74d76b053c541aba990adb6348ab6a81de96aaea287a74"
+    },
+    {
+      "path": "04_Documentation\\PROOFS\\Mirror_Brane_Resonance_v16_2.wl",
+      "size": 9597,
+      "sha256": "28ea8bdf2430ff8d8ca27ac37debf183212905928df2675fa50b4c39453848e3"
+    },
+    {
+      "path": "04_Documentation\\PROOFS\\Precision_Uncertainty_v16_2.md",
+      "size": 6986,
+      "sha256": "3efc48cf54938c7d0842b628aee3e1583e43b3418560641eb5b685c2ae5337ce"
+    },
+    {
+      "path": "04_Documentation\\PROOFS\\PROOF_MANIFEST_v16_2.md",
+      "size": 11533,
+      "sha256": "807432b8f6119e9e1e9c0b0055bfc24cab87d437c769eaeae112f985b2686b1d"
     },
     {
       "path": "05_Verification\\AutoGenerated\\formal_proof_manifest.json",
