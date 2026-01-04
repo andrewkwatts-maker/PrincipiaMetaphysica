@@ -81,6 +81,7 @@ CRITICAL_PM_VALUES = {
 
     # === HIGGS & VEV ===
     "higgs_vev": {
+        # Source: PDG 2024 Higgs boson mass = 125.1 ± 0.1 GeV
         "m_h": {"value": 125.10, "patterns": ["m.*h.*125\\.1", "Higgs.*125", "125\\.1.*GeV"], "section": "5", "derivation": "From Re(T) = 7.086 modulus stabilization"},
         "v_EW": {"value": 174, "patterns": ["v.*EW.*174", "VEV.*174", "174.*GeV"], "section": "5", "derivation": "v = M_Pl * exp(-h21/b3) * exp(|T_omega|)"},
         "Re_T": {"value": 7.086, "patterns": ["Re.*T.*7\\.08", "Re\\(T\\).*7"], "section": "5", "derivation": "Kahler modulus from superpotential minimization"},

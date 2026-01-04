@@ -222,7 +222,7 @@ def plot_hubble_tension(
     ax.axhline(y=73.04, color='#e74c3c', linestyle='--', alpha=0.5, linewidth=1)
 
     # Labels and formatting
-    ax.set_ylabel(r'$H_0$ (km s$^{-1}$ Mpc$^{-1}$)', fontsize=14)
+    ax.set_ylabel(r'$H_0$ ($\mathrm{km\,s^{-1}\,Mpc^{-1}}$)', fontsize=14)
     ax.set_title('Hubble Tension Resolution: Early Dark Energy Mechanism', fontsize=16, pad=20)
     ax.set_ylim(65, 76)
     ax.grid(axis='y', alpha=0.3)
@@ -297,7 +297,7 @@ def plot_hubble_evolution(
 
     # Labels and formatting
     ax.set_xlabel('Redshift z', fontsize=14)
-    ax.set_ylabel(r'H(z) (km s$^{-1}$ Mpc$^{-1}$)', fontsize=14)
+    ax.set_ylabel(r'$H(z)$ ($\mathrm{km\,s^{-1}\,Mpc^{-1}}$)', fontsize=14)
     ax.set_title('Hubble Parameter Evolution: EDE Mechanism from G₂ Moduli', fontsize=16, pad=20)
 
     ax.set_xlim(0.01, 1e4)
