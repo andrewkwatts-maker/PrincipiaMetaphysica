@@ -8474,4 +8474,5 @@ CORRECTLY HARDCODED (phenomenological inputs):
 - Neutrino masses           → Set to match NuFIT 6.0 Δm² values
 - Topological invariants    → Fixed by manifold choice (TCS #187)
 
-Note: This is a living doc
+Note: This is a living document. Update as new simulations are added.
+"""

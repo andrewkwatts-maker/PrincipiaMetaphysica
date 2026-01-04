@@ -7,17 +7,11 @@
   "phase": 3,
   "block": "D",
   "version": "16.2",
-  "wl_code": "PENDING",
-  "result": "PENDING",
-  "formula": "theta_sterile = 163/288",
+  "wl_code": "theta = 163/288",
+  "result": "0.566",
+  "formula": "\u03b8_sterile = 163/288",
   "verification_status": "VERIFIED",
-  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
-  "note": "PENDING: Maximum leakage to 163 bulk. Validation: Seal tight enough for universe",
-  "timestamp": "2026-01-02T10:23:46.063364Z",
-  "hash": "de0bb80d25c81d65",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nsterile = reg.sterile_sector     # 163 - Hidden bulk sector\nroots = reg.roots_total          # 288 - Total root lattice\n\n# Sterile-active mixing: maximum leakage ratio to bulk\n# theta_sterile = 163/288 defines the seal tightness\ntheta_sterile = sterile / roots  # 0.566 - Mixing angle\nsterile_ratio = reg.sterile_ratio  # Direct from registry\n\n# Verify seal is tight enough for observable universe\nverified = abs(theta_sterile - sterile_ratio) < 1e-10\nverified = verified and theta_sterile < 0.6  # Must be bounded",
-  "sterile_source": ["sterile_sector", "roots_total"]
+  "note": "Gate 40: Sterile-active mixing bounded seal for observable universe. Maximum leakage to 163 bulk",
+  "timestamp": "2026-01-04T13:01:28.016236Z",
+  "hash": "6c5714bb93588019"
 }

@@ -7,14 +7,13 @@
   "phase": 4,
   "block": "E",
   "version": "16.2",
+  "wl_code": "N[163/288, 6]",
+  "result": "PENDING",
   "formula": "DM = 163/288 of total",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nROOTS = reg.roots_total       # 288\nhidden = reg.sterile_sector   # 163\nvisible = reg.visible_sector  # 125\n\n# Dark matter fraction from sterile geometry\ndm_fraction = hidden / ROOTS  # 163/288 ≈ 0.566\n\n# Validation: Total mass felt = 288, visible = 125\nassert hidden + visible == ROOTS\nassert abs(dm_fraction - 163/288) < 1e-10",
-  "sterile_source": ["roots_total", "sterile_sector", "visible_sector"],
-  "verification_status": "VERIFIED",
-  "note": "163 hidden roots constitute shadow gravity; full 288 mass felt gravitationally, only 125 visible",
-  "timestamp": "2026-01-03T10:00:00Z",
+  "verification_status": "PENDING_LOCK",
+  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
+  "note": "PENDING: 163 hidden = shadow gravity. Validation: Full 288 mass felt, 125 visible",
+  "timestamp": "2026-01-04T13:01:28.018196Z",
   "hash": "c7d969aa12664dfd",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "derived_value": 0.566
 }

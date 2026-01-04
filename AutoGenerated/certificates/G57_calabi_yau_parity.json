@@ -7,14 +7,12 @@
   "phase": 5,
   "block": "F",
   "version": "16.2",
-  "formula": "h^21 = 3",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nROOTS = reg.roots_total       # 288\nvisible = reg.visible_sector  # 125\n\n# Calabi-Yau topology: Internal holes = fermion generations\n# h^21 = 3 gives exactly 3 generations\n# 125 visible roots distribute across 3 generations\n\ngenerations = 3\nhodge_number_h21 = 3  # From Calabi-Yau geometry",
-  "sterile_source": ["roots_total", "visible_sector"],
-  "verification_status": "VERIFIED",
-  "note": "Calabi-Yau internal topology determines 3 fermion generations",
-  "timestamp": "2026-01-03T10:00:00Z",
-  "hash": "39d9b0494fa66bbe",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "wl_code": "PENDING",
+  "result": "PENDING",
+  "formula": "h\u00b2\u00b9 = 3",
+  "verification_status": "PENDING_LOCK",
+  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
+  "note": "PENDING: Internal holes = 3 generations. Validation: Shape of space = type of matter",
+  "timestamp": "2026-01-04T13:01:28.019894Z",
+  "hash": "39d9b0494fa66bbe"
 }

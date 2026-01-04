@@ -9,15 +9,10 @@
   "version": "16.2",
   "wl_code": "PENDING",
   "result": "PENDING",
-  "formula": "d^2x/dtau^2 + Gamma = 0",
-  "verification_status": "VERIFIED",
+  "formula": "d\u00b2x/d\u03c4\u00b2 + \u0393 = 0",
+  "verification_status": "PENDING_LOCK",
   "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
   "note": "PENDING: Test nodes follow shortest V7 path. Validation: Non-inertial frames rejected",
-  "timestamp": "2026-01-02T10:23:46.064544Z",
-  "hash": "00e4e365e652b5c0",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nchi = reg.chi_eff                # 144 - Euler characteristic\nroots = reg.roots_total          # 288\nb3 = reg.b3                      # 24\n\n# Geodesic equation: test particles follow V7 manifold geodesics\n# d^2x/dtau^2 + Gamma^mu_nu_rho dx^nu/dtau dx^rho/dtau = 0\n# Christoffel symbols emerge from G2 holonomy connection\nconnection_dimension = b3 * 7    # 168 connection components\ngeodesic_constraint = chi / roots  # 0.5 - geodesic curvature bound\n\n# Non-inertial frames rejected by manifold topology\nverified = connection_dimension == 168",
-  "sterile_source": ["chi_eff", "roots_total", "b3"]
+  "timestamp": "2026-01-04T13:01:28.017343Z",
+  "hash": "00e4e365e652b5c0"
 }

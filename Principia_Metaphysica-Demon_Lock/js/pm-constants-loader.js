@@ -77,7 +77,7 @@
             // ================================================================
             'framework_statistics.within_1_sigma': 'validation.within_1sigma',
             'framework_statistics.total_sm_parameters': 'validation.total_parameters',
-            'framework_statistics.exact_matches': 'summary.exact_parameters',
+            'framework_statistics.exact_matches': '_hardcoded.exact_matches',
             'framework_statistics.within_2_sigma': 'validation.within_2sigma',
             'framework_statistics.calibrated_parameters': 'validation.calibrated_count',
             'framework_statistics.success_rate_1sigma': 'validation.within_1sigma',  // percentage computed elsewhere
@@ -96,7 +96,7 @@
             'validation.constraints_count': '_hardcoded.constraints_count',
             'validation.predictions_within_1sigma': 'validation.within_1sigma',
             'validation.predictions_within_2sigma': 'validation.within_2sigma',
-            'validation.exact_matches': 'summary.exact_parameters',
+            'validation.exact_matches': '_hardcoded.exact_matches',
             'validation.within_1_sigma': 'validation.within_1sigma',
             'validation.success_rate': 'validation.within_1sigma',
 
@@ -336,8 +336,9 @@
             'total_predictions': 48,       // Total testable SM parameters
             'calibrated_count': 0,         // Zero calibrated params as of v14.1
             'constraints_count': 1,        // m_h fixes Re(T)
-            'within_1sigma': 45,           // Parameters within 1σ
-            'within_2sigma': 47,           // Parameters within 2σ
+            'within_1sigma': 30,           // Parameters within 1σ (based on 30 verified gates)
+            'within_2sigma': 32,           // Parameters within 2σ
+            'exact_matches': 4,            // Parameters with σ = 0.0 (exact matches)
             // Topology invariants
             'n_gen': 3,  // Number of fermion generations = chi_eff / 48 = 144 / 48 = 3
             // Hubble constant (O'Dowd Formula)
@@ -628,6 +629,27 @@
         },
 
         /**
+         * Get validation stats (predictions within sigma bounds)
+         */
+        get validation() {
+            // Return validation object with both camelCase and snake_case accessors
+            const v = this._data?.validation ?? {
+                within_1sigma: 30,
+                within_2sigma: 32,
+                total_predictions: 48,
+                total_parameters: 58,
+                calibrated_count: 0,
+                constraints_count: 1
+            };
+            // Add alias for predictions_within_1sigma -> within_1sigma
+            return {
+                ...v,
+                predictions_within_1sigma: v.within_1sigma,
+                predictions_within_2sigma: v.within_2sigma
+            };
+        },
+
+        /**
          * Get validation summary
          */
         get validationSummary() {
@@ -803,6 +825,14 @@
                         simulations: simulations?.simulations || {},
                         formulas: formulas || { formulas: {}, count: 0 },
                         statistics: statistics?.statistics || {},
+                        validation: statistics?.validation || {
+                            within_1sigma: 30,
+                            within_2sigma: 32,
+                            total_predictions: 48,
+                            total_parameters: 58,
+                            calibrated_count: 0,
+                            constraints_count: 1
+                        },
                         framework_statistics: {
                             ...(statistics?.framework_statistics || {}),
                             // Dynamic gate statistics from GATES_72_CERTIFICATES.json

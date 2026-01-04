@@ -144,7 +144,7 @@ async function fetchFrameworkStats() {
       manifoldType: 'G₂',
       within1Sigma: within1Sigma ?? 45,
       within2Sigma: within2Sigma ?? 47,
-      exactMatches: 12,
+      exactMatches: 4,
       successRate: within1Sigma && totalPredictions ? (100.0 * within1Sigma / totalPredictions) : 93.8
     };
 

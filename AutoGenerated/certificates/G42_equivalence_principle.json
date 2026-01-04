@@ -10,14 +10,9 @@
   "wl_code": "N/A",
   "result": "N/A",
   "formula": "m_i = m_g",
-  "verification_status": "VERIFIED",
+  "verification_status": "NOT_TESTABLE",
   "reason": "Equivalence principle is foundational physics, not PM-specific",
   "note": "FOUNDATIONAL: Inertial = Gravitational mass. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-02T10:23:46.063777Z",
-  "hash": "363f9b73ec911e6e",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nroots = reg.roots_total          # 288\nchi = reg.chi_eff                # 144\n\n# Equivalence principle: m_inertial = m_gravitational\n# In PM: both masses emerge from same geometric projection cost\n# Inertia = resistance to acceleration in V7 manifold\n# Gravity = coupling to bulk curvature\nm_inertial_source = chi / roots      # Same projection\nm_gravitational_source = chi / roots # Same geometric origin\n\n# FOUNDATIONAL: Verified by construction in PM framework\nverified = m_inertial_source == m_gravitational_source",
-  "sterile_source": ["roots_total", "chi_eff"]
+  "timestamp": "2026-01-04T13:01:28.016652Z",
+  "hash": "363f9b73ec911e6e"
 }

@@ -290,7 +290,7 @@ function generateValidationSummary(data) {
     overall: {
       predictions_within_1sigma: v.predictions_within_1sigma || 45,
       total_predictions: v.total_predictions || 48,
-      exact_matches: v.exact_matches || 12,
+      exact_matches: v.exact_matches || 4,
       success_rate: ((v.predictions_within_1sigma / v.total_predictions) * 100).toFixed(1) + '%',
       overall_grade: v.overall_grade || 'A-'
     },
