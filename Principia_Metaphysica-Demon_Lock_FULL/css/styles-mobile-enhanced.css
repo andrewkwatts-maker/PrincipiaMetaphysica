@@ -1,0 +1,267 @@
+/**
+ * Mobile Enhancements for styles.css
+ * Add these rules to the existing styles.css file
+ * Or include this as an additional stylesheet
+ */
+
+/* ============================================
+   ENHANCED RESPONSIVE DESIGN
+   ============================================ */
+
+/* Override default responsive styles with improved mobile support */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 0.5rem;
+    }
+
+    header {
+        padding: 0.75rem 1rem;
+    }
+
+    /* Navigation - touch friendly */
+    nav ul {
+        justify-content: center;
+        gap: 0.35rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Grid layouts */
+    .grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+    }
+
+    .names-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 1.5rem;
+        line-height: 1.3;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    .detail-header h2 {
+        font-size: 2rem;
+    }
+
+    /* Layout containers */
+    main {
+        padding: 0 1rem 2rem;
+        max-width: 100%;
+    }
+
+    .intro, .detail-header, .detail-section {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Search */
+    .search-container {
+        margin: 1.5rem auto;
+        padding: 0 0.5rem;
+    }
+
+    #searchBox {
+        padding: 0.85rem 1.25rem;
+        font-size: 0.95rem;
+    }
+
+    /* Cards */
+    .card {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+    }
+
+    .card h3 {
+        font-size: 1.15rem;
+    }
+
+    /* Tables - horizontal scroll */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        font-size: 9pt;
+        width: 100%;
+    }
+
+    thead, tbody {
+        display: table;
+        width: 100%;
+    }
+
+    th, td {
+        white-space: nowrap;
+        min-width: 80px;
+        font-size: 9pt;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    /* Related links */
+    .related-links {
+        flex-direction: column;
+    }
+
+    .related-link {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        min-height: 44px;
+    }
+
+    /* Footer */
+    footer {
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* Small phones (480px) */
+@media (max-width: 480px) {
+    header {
+        padding: 0.5rem;
+    }
+
+    h1 {
+        font-size: 1.25rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+
+    .detail-header h2 {
+        font-size: 1.5rem;
+    }
+
+    main {
+        padding: 0 0.5rem 1.5rem;
+    }
+
+    .intro, .detail-header, .detail-section {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+
+    nav a {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+
+    .search-container {
+        margin: 1rem auto;
+    }
+
+    #searchBox {
+        padding: 0.75rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    table {
+        font-size: 8pt;
+    }
+
+    th, td {
+        padding: 0.35rem;
+        font-size: 8pt;
+        min-width: 70px;
+    }
+
+    .sefirah-card .position {
+        width: 36px;
+        height: 36px;
+        font-size: 0.95rem;
+        top: 1rem;
+        right: 1rem;
+    }
+}
+
+/* Extra small phones (320px) */
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+
+    main {
+        padding: 0 0.25rem 1rem;
+    }
+
+    .intro, .detail-header, .detail-section {
+        padding: 0.75rem;
+    }
+
+    table {
+        font-size: 7pt;
+    }
+
+    th, td {
+        padding: 0.25rem;
+        font-size: 7pt;
+        min-width: 60px;
+    }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets (48px iOS/Android standard) */
+    nav a,
+    .related-link,
+    .tag,
+    button,
+    a.card,
+    .name-card {
+        min-height: 48px;
+        min-width: 48px;
+        padding: 12px;
+    }
+
+    /* Disable hover transforms on touch devices */
+    .card:hover,
+    nav a:hover,
+    .related-link:hover,
+    .tag:hover,
+    .name-card:hover {
+        transform: none !important;
+    }
+
+    /* Use active state for visual feedback */
+    .card:active {
+        transform: scale(0.98);
+    }
+
+    button:active,
+    a:active {
+        opacity: 0.7;
+    }
+}

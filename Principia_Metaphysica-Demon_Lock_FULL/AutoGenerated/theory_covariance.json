@@ -1,0 +1,51 @@
+{
+    "theory": "Principia Metaphysica v16.1",
+    "generated": "2025-12-29",
+    "parameters": [
+        "H0",
+        "w0",
+        "wa",
+        "S8"
+    ],
+    "covariance_matrix": [
+        [
+            1.21,
+            -0.05,
+            0.01,
+            0.02
+        ],
+        [
+            -0.05,
+            0.88,
+            -0.12,
+            -0.45
+        ],
+        [
+            0.01,
+            -0.12,
+            0.45,
+            0.01
+        ],
+        [
+            0.02,
+            -0.45,
+            0.01,
+            0.95
+        ]
+    ],
+    "determinant": 0.3287978,
+    "condition_number": 3.746189888469327,
+    "eigenvalues": [
+        1.388752891632177,
+        1.1969765635167617,
+        0.533559787260604,
+        0.37071075759045774
+    ],
+    "is_positive_definite": true,
+    "interpretation": "Matrix is positive-definite. Theory is stable.",
+    "correlations": {
+        "H0_w0": -0.048454708262638736,
+        "w0_S8": -0.49216346916728304,
+        "H0_S8": 0.01865415185609371
+    }
+}
