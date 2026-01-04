@@ -52,7 +52,7 @@ class GhostLiteralHunter(ast.NodeVisitor):
     # Experimental values from external sources - these are ALLOWED hardcoded
     EXPERIMENTAL_VALUES = {
         137.036,  # alpha inverse (CODATA/PDG)
-        137.035999,  # alpha inverse high precision
+        137.035999,  # Source: CODATA 2022 fine structure constant inverse (1/α = 137.035999...)
     }
 
     # Files/directories to exclude from scanning

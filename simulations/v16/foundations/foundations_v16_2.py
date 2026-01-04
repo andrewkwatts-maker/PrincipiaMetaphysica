@@ -177,7 +177,7 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content="\\text{Signature}(M^{26}) = (24, 2) \\quad \\Rightarrow \\quad ds^2 = -dt_1^2 - dt_2^2 + \\sum_{i=1}^{24} dx_i^2",
+                content=r"\text{Signature}(M^{26}) = (24, 2) \quad \Rightarrow \quad ds^2 = -dt_1^2 - dt_2^2 + \sum_{i=1}^{24} dx_i^2",
                 label="26d-signature"
             ),
             ContentBlock(
@@ -267,7 +267,7 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content="t_2 \\xrightarrow{S_{PR}(2)} \\Lambda \\quad \\Rightarrow \\quad \\text{Signature}(24,2) \\to \\text{Signature}(12,1)",
+                content=r"t_2 \xrightarrow{S_{PR}(2)} \Lambda \quad \Rightarrow \quad \text{Signature}(24,2) \to \text{Signature}(12,1)",
                 label="t2-to-lambda"
             ),
             ContentBlock(
@@ -347,7 +347,7 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content="\\text{Hol}(g) \\subseteq G_2 \\iff \\exists \\eta: \\nabla \\eta = 0 \\quad \\Rightarrow \\quad R_{\\mu\\nu} = 0",
+                content=r"\text{Hol}(g) \subseteq G_2 \iff \exists \eta: \nabla \eta = 0 \quad \Rightarrow \quad R_{\mu\nu} = 0",
                 label="g2-holonomy"
             ),
             ContentBlock(
@@ -397,7 +397,7 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content="b_3 = 24 \\quad \\Rightarrow \\quad N_{\\text{gen}} = \\frac{b_3}{8} = 3 \\quad \\text{(three fermion generations)}",
+                content=r"b_3 = 24 \quad \Rightarrow \quad N_{\text{gen}} = \frac{b_3}{8} = 3 \quad \text{(three fermion generations)}",
                 label="b3-generations"
             ),
 
@@ -438,7 +438,7 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content="V_7 \\xrightarrow{\\text{CY}_3} M^4 \\times K^6 \\quad \\Rightarrow \\quad SU(3)_C \\times SU(2)_L \\times U(1)_Y",
+                content=r"V_7 \xrightarrow{\text{CY}_3} M^4 \times K^6 \quad \Rightarrow \quad SU(3)_C \times SU(2)_L \times U(1)_Y",
                 label="cy3-projection"
             ),
             ContentBlock(

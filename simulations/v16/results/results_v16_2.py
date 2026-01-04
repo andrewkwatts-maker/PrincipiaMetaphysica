@@ -319,7 +319,7 @@ class ResultsV16_2(SimulationBase):
             Formula(
                 id="h0-alignment",
                 label="(3.2)",
-                latex=r"H_0 = 73.04 \pm 1.04 \text{ km/s/Mpc}",
+                latex=r"H_0 = 73.04 \pm 1.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}",
                 plain_text="H0 = 73.04 ± 1.04 km/s/Mpc",
                 category="DERIVED",
                 description="Hubble constant from V7 Laplacian fundamental mode.",
@@ -330,7 +330,7 @@ class ResultsV16_2(SimulationBase):
             Formula(
                 id="h0-topology-bridge",
                 label="(3.2b)",
-                latex=r"H_0 = c \cdot \sqrt{\frac{\chi}{b_3 \cdot \text{Vol}(V_7)}} = 73.04 \text{ km/s/Mpc}",
+                latex=r"H_0 = c \cdot \sqrt{\frac{\chi}{b_3 \cdot \text{Vol}(V_7)}} = 73.04~\mathrm{km\,s^{-1}\,Mpc^{-1}}",
                 plain_text="H0 = c * sqrt(chi / (b3 * Vol(V7))) = 73.04 km/s/Mpc",
                 category="STERILE_PROOF",
                 description="H0 Bridge: Direct derivation of Hubble constant from V7 topology.",

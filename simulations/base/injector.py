@@ -78,7 +78,7 @@ def inject_formula(
         formula = Formula(
             id="proton-lifetime",
             label="(4.12)",
-            latex=r"\\tau_p = \\frac{M_{GUT}^4}{\\alpha_{GUT}^2 m_p^5} \\times S^2",
+            latex=r"\tau_p = \frac{M_{GUT}^4}{\alpha_{GUT}^2 m_p^5} \times S^2",
             plain_text="tau_p = M_GUT^4 / (alpha_GUT^2 * m_p^5) * S^2",
             category="DERIVED",
             description="Proton decay lifetime with geometric suppression",

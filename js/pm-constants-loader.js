@@ -326,9 +326,9 @@
             'certificates_total': 72,
             'certificates_verified': 72,
             // 72-Gate Registry statistics (dynamically updated from GATES_72_CERTIFICATES.json)
-            'pass_count': 7,           // Computationally verified gates
-            'pending_count': 51,       // Awaiting Wolfram/experimental validation
-            'not_testable_count': 14,  // Foundational assumptions (axioms)
+            'pass_count': 18,          // Computationally verified gates
+            'pending_count': 36,       // Awaiting Wolfram/experimental validation
+            'not_testable_count': 18,  // Foundational assumptions (axioms)
             // Validation statistics (from appendix_k_v16_0.py)
             'chi_squared_reduced': 0.17,  // Reduced chi-squared
             'degrees_of_freedom': 23,     // DOF for chi-squared test
