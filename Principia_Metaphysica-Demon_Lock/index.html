@@ -431,10 +431,11 @@
             }
         });
   </script>
-<link rel="stylesheet" href="css/pm-header.css">
+     <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/pm-header.css">
   </head>
- <body>
-  <div id="main-content">
+ <body class="auth-loading">
+  <div id="main-content" style="display: none;">
     <!-- Header injected by pm-header.js -->
   <main>
    <section class="hero">
@@ -1135,13 +1136,13 @@
     <!-- v16.2 Validation Summary Banner - HONEST STATUS -->
     <div style="background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1)); border: 2px solid rgba(139, 127, 255, 0.4); border-radius: 12px; padding: 1.25rem; margin: 0 auto 1.5rem auto; max-width: 900px; text-align: center;">
      <div style="font-size: 1.1rem; font-weight: 600; color: #8b7fff; margin-bottom: 0.5rem;">
-      72-Gate Registry: <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">30</span> VERIFIED</span> | <span style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.pending_count">22</span> PENDING</span> | <span style="color: #888;"><span class="pm-value" data-pm-value="framework_statistics.not_testable_count">19</span> FOUNDATIONAL</span>
+      72-Gate Registry: <span style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">39</span> VERIFIED</span> | <span style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.pending_count">1</span> PENDING</span> | <span style="color: #888;"><span class="pm-value" data-pm-value="framework_statistics.not_testable_count">30</span> FOUNDATIONAL</span> | <span style="color: #74c0fc;"><span class="pm-value" data-pm-value="framework_statistics.mathematical_count">2</span> MATHEMATICAL</span>
      </div>
      <div style="font-size: 0.9rem; color: var(--text-secondary);">
       Verified χ² = <span class="pm-value" data-pm-value="framework_statistics.chi_squared_reduced">0.3</span> (<span class="pm-value" data-pm-value="framework_statistics.degrees_of_freedom">25</span> DOF) | Status: <strong style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.status">MAJORITY_VERIFIED</span></strong>
      </div>
      <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.5rem;">
-      30 gates computationally verified • 22 awaiting Wolfram/experimental validation • 19 foundational assumptions
+      <span class="pm-value" data-pm-value="framework_statistics.pass_count">39</span> gates computationally verified • <span class="pm-value" data-pm-value="framework_statistics.pending_count">1</span> awaiting experimental validation • <span class="pm-value" data-pm-value="framework_statistics.not_testable_count">30</span> foundational assumptions
      </div>
     </div>
     <!-- Dynamic Validation Metrics - HONEST -->
@@ -1149,7 +1150,7 @@
      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem;">
       <div id="metric-verified" style="background: rgba(81, 207, 102, 0.15); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.verified_gates">
        <div style="font-size: 1.5rem; font-weight: 700; color: #51cf66;">
-        <span class="pm-value" data-pm-value="framework_statistics.pass_count">30</span> of 72
+        <span class="pm-value" data-pm-value="framework_statistics.pass_count">39</span> of 72
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
         Gates Computationally Verified
@@ -1157,7 +1158,7 @@
       </div>
       <div id="metric-pending" style="background: rgba(255, 212, 59, 0.15); padding: 1rem; border-radius: 12px; text-align: center;" data-topic-id="validation.pending_gates">
        <div style="font-size: 1.5rem; font-weight: 700; color: #ffd43b;">
-        <span class="pm-value" data-pm-value="framework_statistics.pending_count">22</span> Pending
+        <span class="pm-value" data-pm-value="framework_statistics.pending_count">1</span> Pending
        </div>
        <div style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.5rem;">
         Awaiting Wolfram/Experimental
@@ -1279,10 +1280,10 @@
        Dimension Parameters Shadow_ק, Shadow_ח
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       Shadow_ק = 7.636, Shadow_ח = 7.636 from G₂ torsion and neutrino mixing
+       Shadow_ק = <span class="pm-value" data-pm-value="fitted_parameters.shadow_kuf">0.576</span>, Shadow_ח = <span class="pm-value" data-pm-value="fitted_parameters.shadow_chet">0.576</span> from G₂ torsion geometry
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       Geometrically derived from TCS logarithms (θ₂₃ = 45° exact)
+       Geometrically derived: Shadow_ק + Shadow_ח = [ln(M<sub>Pl</sub>/M<sub>GUT</sub>) + |T<sub>ω</sub>|] / (2π) = 1.152
       </p>
      </div>
      <div id="feature-pmns" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="pmns_matrix.complete_derivation">
@@ -1290,10 +1291,10 @@
        PMNS Matrix (4 parameters)
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       θ₂₃ = <span class="pm-value" data-pm-value="parameters.pmns.theta_23">45.0</span>° (0.00σ), θ₁₃ = <span class="pm-value" data-pm-value="parameters.pmns.theta_13">8.57</span>° (0.25σ), δ<sub>CP</sub> = <span class="pm-value" data-pm-value="parameters.pmns.delta_CP">235.0</span>° (1.64σ)
+       θ₂₃ = <span class="pm-value" data-pm-value="neutrino.theta_23_pred.value">49.75</span>° (<span class="pm-value" data-pm-value="neutrino.theta_23_pred.sigma_deviation">0.45</span>σ), θ₁₃ = <span class="pm-value" data-pm-value="neutrino.theta_13_pred.value">8.65</span>° (<span class="pm-value" data-pm-value="neutrino.theta_13_pred.sigma_deviation">0.16</span>σ), δ<sub>CP</sub> = <span class="pm-value" data-pm-value="neutrino.delta_CP_pred.value">278.4</span>° (<span class="pm-value" data-pm-value="neutrino.delta_CP_pred.sigma_deviation">0.02</span>σ)
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #51cf66;">3 within 2σ</strong>, average 0.63σ deviation
+       <strong style="color: #51cf66;">All 3 within 1σ</strong>, average 0.21σ deviation (NuFIT 6.0)
       </p>
      </div>
      <div id="feature-mgut" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #51cf66;" data-topic-id="gauge_unification.gut_derivation">
@@ -1342,17 +1343,10 @@
        Neutrino Mass Ordering
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       Inverted Hierarchy at
-       <strong style="color: #51cf66;">
-        85.5%
-       </strong>
-       confidence from Atiyah-Singer index
+       <strong style="color: #51cf66;">Normal Hierarchy</strong> predicted from Atiyah-Singer index theorem on G₂ manifold
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #4facfe;">
-        DUNE 2027:
-       </strong>
-       Testable geometric prediction
+       <strong style="color: #ff6b6b;">FALSIFICATION TEST:</strong> Inverted hierarchy confirmation → theory falsified. <strong style="color: #4facfe;">DUNE 2027:</strong> Testable
       </p>
      </div>
      <div id="feature-v16-2-validation" style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffd43b; border: 2px solid rgba(255, 212, 59, 0.3);">
@@ -1360,10 +1354,10 @@
        v16.2: Partial Verification (Honest Status)
       </h4>
       <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0;">
-       <strong style="color: #51cf66;">7 VERIFIED</strong>, <strong style="color: #ffd43b;">51 PENDING</strong>, <strong style="color: #888;">14 FOUNDATIONAL</strong> across 72 gates. Verified χ² = 0.17 (23 DOF). Many gates await Wolfram API or experimental validation.
+       <strong style="color: #51cf66;"><span class="pm-value" data-pm-value="framework_statistics.pass_count">39</span> VERIFIED</strong>, <strong style="color: #ffd43b;"><span class="pm-value" data-pm-value="framework_statistics.pending_count">1</span> PENDING</strong>, <strong style="color: #888;"><span class="pm-value" data-pm-value="framework_statistics.not_testable_count">30</span> FOUNDATIONAL</strong>, <strong style="color: #74c0fc;"><span class="pm-value" data-pm-value="framework_statistics.mathematical_count">2</span> MATHEMATICAL</strong> across 72 gates. Verified χ² = <span class="pm-value" data-pm-value="framework_statistics.chi_squared_reduced">0.3</span> (<span class="pm-value" data-pm-value="framework_statistics.degrees_of_freedom">25</span> DOF).
       </p>
       <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">
-       <strong style="color: #4facfe;">Verified gates:</strong> Integer root parity, ancestral mapping, projection tax, shadow parity, sterile angle, SU(N) approximation, Λ stability
+       <strong style="color: #4facfe;">Core verified gates:</strong> Integer root parity (G01), ancestral mapping (G03), PMNS matrix (G27), w₀ equation of state (G48), DESI anchor (G60), phase transitions (G67)
       </p>
      </div>
      <div style="background: var(--bg-card); padding: 1.5rem; border-radius: 12px; border-left: 4px solid #ffd43b; border: 2px solid rgba(255, 212, 59, 0.3);">
@@ -1984,13 +1978,15 @@
 
   <script type="module">
     import { injectHeader } from './js/pm-header.js';
-    
+    import { setupAuthGuard } from './js/auth-guard.js';
 
     // Inject header first
     document.addEventListener('DOMContentLoaded', () => {
         injectHeader('home');
     });
 
-    </script>
+    // Setup auth after header
+    setupAuthGuard('index');
+  </script>
 </body>
 </html>

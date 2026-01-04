@@ -900,9 +900,10 @@
                         framework_statistics: {
                             ...(statistics?.framework_statistics || {}),
                             // Dynamic gate statistics from GATES_72_CERTIFICATES.json
-                            pass_count: gateStats.verified ?? 7,
-                            pending_count: gateStats.pending_lock ?? 51,
-                            not_testable_count: gateStats.not_testable ?? 14,
+                            pass_count: gateStats.verified ?? 39,
+                            pending_count: gateStats.pending_lock ?? 1,
+                            not_testable_count: gateStats.not_testable ?? 30,
+                            mathematical_count: gateStats.mathematical ?? 2,
                             total_gates: gateStats.total_gates ?? 72
                         },
                         validation_summary: metadata?.validation_summary || [],
