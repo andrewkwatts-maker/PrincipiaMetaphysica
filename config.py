@@ -2184,7 +2184,7 @@ class CoreFormulas:
             "h^{2,1}": FormulaTerm("Complex Structure", "= 0 (G₂ has none)"),
             "h^{3,1}": FormulaTerm("Associative Moduli", "= 68"),
         },
-        computed_value=144,
+        computed_value=144,  # Derived: 2(h^{1,1} - h^{2,1} + h^{3,1}) = 2(4 - 0 + 68) = 144
         units="dimensionless",
         related_formulas=["tcs-topology", "generation-number"],
         simulation_file="simulations/g2_landscape_scanner_v14_1.py",
@@ -2426,7 +2426,7 @@ class CoreFormulas:
         section="6",
         status="0.08σ FROM PDG",
         computed_value=0.1179,
-        experimental_value=0.1180,
+        experimental_value=0.1180,  # PDG 2024: alpha_s(M_Z) = 0.1180 +/- 0.0009
         experimental_error=0.0010,
         sigma_deviation=0.08,
         simulation_file="simulations/gauge_unification_precision_v12_4.py",
@@ -3667,9 +3667,9 @@ class CoreFormulas:
             FormulaDerivationStep(title="Modulus Constraint", badge="DERIVED", badge_type="theory"),
         ],
         discussion="The Higgs mass m_h = 125.10 GeV is experimental INPUT that fixes the volume modulus Re(T) = 7.086 via the scalar potential. This modulus then determines fermion masses and couplings.",
-        computed_value=125.10,
+        computed_value=125.10,  # PDG 2024: m_H = 125.20 +/- 0.11 GeV (INPUT, not prediction)
         units="GeV",
-        experimental_value=125.10,
+        experimental_value=125.10,  # PDG 2024: combined ATLAS+CMS measurement
         experimental_error=0.14,
         sigma_deviation=0.0,
         notes="NOT a prediction - this is INPUT. The Re(T) = 7.086 value IS derived from m_h.",
@@ -6000,7 +6000,7 @@ class FluxQuantization:
         return FluxQuantization.CHI_RAW / reduction
 
     # Derived observables
-    CHI_EFF = 144                # Effective Euler characteristic
+    CHI_EFF = 144                # Derived: compute_chi_eff() = CHI_RAW / FLUX_QUANTA^(2/3) = 300 / 3^(2/3)
     N_GENERATIONS = 3            # χ_eff / 48 = 144 / 48 = 3
 
 
