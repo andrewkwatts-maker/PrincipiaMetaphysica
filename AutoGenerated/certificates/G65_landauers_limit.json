@@ -7,14 +7,12 @@
   "phase": 5,
   "block": "F",
   "version": "16.2",
-  "formula": "E >= kT ln2 per bit",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nROOTS = reg.roots_total       # 288\nhidden = reg.sterile_sector   # 163\n\n# Landauer's limit: Minimum energy to erase 1 bit\n# E >= kT * ln(2) per bit erased\n# 163 sterile roots form information reservoir\n# Erasing info in hidden sector costs heat\n\nimport math\nk_B = 1.380649e-23  # Boltzmann constant\nlandauer_cost_per_bit = k_B * math.log(2)  # ~9.57e-24 J/K per bit",
-  "sterile_source": ["roots_total", "sterile_sector"],
-  "verification_status": "VERIFIED",
-  "note": "Heat from erasing information in 163 sterile sector; thermodynamic computation cost",
-  "timestamp": "2026-01-03T10:00:00Z",
-  "hash": "06fc7ddf730bcfd2",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "wl_code": "PENDING",
+  "result": "PENDING",
+  "formula": "E \u2265 kT ln2 per bit",
+  "verification_status": "PENDING_LOCK",
+  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
+  "note": "PENDING: Heat from erasing info in 163. Validation: Thermodynamic computation cost",
+  "timestamp": "2026-01-04T13:01:28.021613Z",
+  "hash": "06fc7ddf730bcfd2"
 }

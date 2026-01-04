@@ -7,15 +7,12 @@
   "phase": 5,
   "block": "F",
   "version": "16.2",
-  "formula": "Sum(bits) = 0 mod 2",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nROOTS = reg.roots_total       # 288\nhidden = reg.sterile_sector   # 163\nvisible = reg.visible_sector  # 125\n\n# Bit-parity conservation: State changes sum to 0\n# Total parity across all 288 roots preserved\n# 125 + 163 = 288 maintains even parity\n\ntotal_parity = (hidden + visible) % 2  # = 0\n\n# FOUNDATIONAL: Information theoretic axiom\nparity_conserved = (total_parity == 0)",
-  "sterile_source": ["roots_total", "sterile_sector", "visible_sector"],
-  "verification_status": "VERIFIED",
+  "wl_code": "N/A",
+  "result": "N/A",
+  "formula": "\u03a3 bits = 0 mod 2",
+  "verification_status": "NOT_TESTABLE",
   "reason": "Bit parity is information theoretic axiom",
-  "note": "FOUNDATIONAL: State changes sum to 0 in registry. Framework assumption, not empirical prediction.",
-  "timestamp": "2026-01-03T10:00:00Z",
-  "hash": "d72400ab1ed1ae70",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "note": "FOUNDATIONAL: State changes sum to 0 in registry. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-04T13:01:28.020768Z",
+  "hash": "d72400ab1ed1ae70"
 }

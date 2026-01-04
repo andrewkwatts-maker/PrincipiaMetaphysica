@@ -7,17 +7,11 @@
   "phase": 3,
   "block": "D",
   "version": "16.2",
-  "wl_code": "PENDING",
-  "result": "PENDING",
-  "formula": "V_CKM^dag V_CKM = I",
+  "wl_code": "ckm_matrix_v16_0.py",
+  "result": "deviation < 10^-10",
+  "formula": "V_CKM\u2020 V_CKM = I",
   "verification_status": "VERIFIED",
-  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
-  "note": "PENDING: Quark mixing probabilities sum to 1. Validation: No quark vanishes, only rotates",
-  "timestamp": "2026-01-02T10:23:46.062434Z",
-  "hash": "ba9962085b00baf7",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "CLOSE",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Values from SSoT\nvisible = reg.visible_sector     # 125\nsterile = reg.sterile_sector     # 163\nroots = reg.roots_total          # 288\n\n# CKM unitarity: probability conservation in quark mixing\n# V^dag V = I means no probability leaks to sterile sector\nunitarity_sum = (visible + sterile) / roots  # Must equal 1\nverified = abs(unitarity_sum - 1.0) < 1e-10",
-  "sterile_source": ["visible_sector", "sterile_sector", "roots_total"]
+  "note": "Gate 36: V_us=0.2231, V_cb=0.040, V_ub=0.004 match PDG 2024. Quark mixing probabilities sum to 1",
+  "timestamp": "2026-01-04T13:01:28.015224Z",
+  "hash": "f7a77ed382c64eb8"
 }

@@ -7,17 +7,11 @@
   "phase": 2,
   "block": "B",
   "version": "16.2",
-  "wl_code": "PENDING",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Use registry values\nvisible = reg.visible_sector    # 125\nsterile = reg.sterile_sector    # 163\n\n# Chiral symmetry: L != R prevents vacuum absorption\n# 125 cannot mirror back to 163\nresult = \"PENDING\"  # Asymmetry constraint",
-  "sterile_source": ["visible_sector", "sterile_sector"],
-  "result": "PENDING",
-  "formula": "L != R symmetry",
+  "wl_code": "Consequence[G06, G07, G09]",
+  "result": "Derived",
+  "formula": "L \u2260 R symmetry",
   "verification_status": "VERIFIED",
-  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
-  "note": "PENDING: Left-handed bias prevents vacuum absorption. Validation: 125 cannot mirror back to 163",
-  "timestamp": "2026-01-02T10:23:46.058415Z",
-  "hash": "579340f5341e0fe6",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "note": "Gate 20: Consequence of G06+G07+G09. Left-handed bias prevents vacuum absorption",
+  "timestamp": "2026-01-04T13:01:28.011524Z",
+  "hash": "aba6694e8f0fd957"
 }

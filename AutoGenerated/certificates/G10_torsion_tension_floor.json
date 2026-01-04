@@ -8,16 +8,11 @@
   "block": "A",
   "version": "16.2",
   "wl_code": "N/A",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Use registry values\nb3 = reg.b3  # 24\n\n# Foundational assumption: minimum torsion tension from 24 pins\n# T_min = f(b3) defines vacuum floor\nresult = \"N/A\"  # Defines vacuum, cannot be independently measured",
-  "sterile_source": ["b3"],
   "result": "N/A",
   "formula": "T_min = f(24 pins)",
-  "verification_status": "VERIFIED",
+  "verification_status": "NOT_TESTABLE",
   "reason": "Torsion tension floor defines vacuum, cannot be independently measured",
   "note": "FOUNDATIONAL: Minimum vibration constant of 24 pins. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-02T10:23:46.055646Z",
-  "hash": "18bfe6bd84755a68",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "timestamp": "2026-01-04T13:01:28.009323Z",
+  "hash": "18bfe6bd84755a68"
 }

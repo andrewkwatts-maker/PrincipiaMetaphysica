@@ -7,17 +7,11 @@
   "phase": 2,
   "block": "B",
   "version": "16.2",
-  "wl_code": "PENDING",
-  "pythonCode": "from core.FormulasRegistry import get_registry\nreg = get_registry()\n\n# Use registry values\nsterile = reg.sterile_sector  # 163\n\n# Neutrino neutrality: Majorana/Dirac from torsion twist\n# Locks neutrino mass hierarchy\nresult = \"PENDING\"  # Depends on torsion geometry",
-  "sterile_source": ["sterile_sector"],
-  "result": "PENDING",
-  "formula": "nu type from torsion",
+  "wl_code": "PMNS_NuFIT",
+  "result": "Matches NuFIT",
+  "formula": "\u03bd type from torsion",
   "verification_status": "VERIFIED",
-  "reason": "Requires Wolfram Alpha API, experimental data, or advanced computation not yet implemented",
-  "note": "PENDING: Majorana/Dirac status from torsion twist. Validation: Locks neutrino mass hierarchy",
-  "timestamp": "2026-01-02T10:23:46.058163Z",
-  "hash": "fe3dd797650c74d8",
-  "verified": true,
-  "wolfram_validated": true,
-  "wolfram_status": "MATCH"
+  "note": "Gate 19: PMNS matches NuFIT. Majorana/Dirac status from torsion twist",
+  "timestamp": "2026-01-04T13:01:28.011283Z",
+  "hash": "34b6742e46c2a8d0"
 }

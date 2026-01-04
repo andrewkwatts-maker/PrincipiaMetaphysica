@@ -216,7 +216,7 @@ The framework employs a two-time \\(\\mathrm{Sp}(2,\\mathbb{R})\\) gauge symmetr
 eliminates ghost modes while preserving predictive power.
 
 Key results: ${data.theoryConstants.validation?.predictions_within_1sigma || 45} of ${data.theoryConstants.validation?.total_predictions || 48}
-predictions agree with experiment within \\(1\\sigma\\), with ${data.theoryConstants.validation?.exact_matches || 12}
+predictions agree with experiment within \\(1\\sigma\\), with ${data.theoryConstants.validation?.exact_matches || 4}
 exact central value matches. The framework predicts:
 \\begin{itemize}
   \\item Dark energy equation of state \\(w_0 = ${formatNumber(data.theoryConstants.dark_energy?.w0_PM || -0.8528)}\\)
@@ -437,7 +437,7 @@ Parameter & PM Value & DESI DR2 & Deviation \\\\
 
 \\begin{itemize}
   \\item Predictions within \\(1\\sigma\\): ${tc.validation?.predictions_within_1sigma || 45} of ${tc.validation?.total_predictions || 48} (${formatNumber(100 * (tc.validation?.predictions_within_1sigma || 45) / (tc.validation?.total_predictions || 48), 1)}\\%)
-  \\item Exact central value matches: ${tc.validation?.exact_matches || 12}
+  \\item Exact central value matches: ${tc.validation?.exact_matches || 4}
   \\item Average deviation: \\(${formatNumber(tc.pmns_matrix?.average_sigma || 0.36, 2)}\\sigma\\)
 \\end{itemize}
 

@@ -3092,7 +3092,7 @@
         // Use values directly from framework_statistics (corrected path)
         const within1sigma = PM.framework_statistics?.within_1_sigma || 45;
         const total = PM.framework_statistics?.total_sm_parameters || 48;
-        const exact = PM.framework_statistics?.exact_matches || 12;
+        const exact = PM.framework_statistics?.exact_matches || 4;
         const desiSigma = PM.dark_energy?.w0_deviation_sigma || 0.38;
         const percent = ((within1sigma / total) * 100).toFixed(1);
 
