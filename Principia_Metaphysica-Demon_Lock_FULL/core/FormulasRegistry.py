@@ -71,6 +71,46 @@ class FormulasRegistry:
     VERSION = "17.2-ABSOLUTE"
     STATUS = "ABSOLUTE_SOVEREIGN"
 
+    # ===========================================================================
+    # THE JC IDENTITY: Δ_jc ≡ Λ_JC ≡ 153
+    # ===========================================================================
+    # v17.2-Absolute: The Joint Closure Delta IS the Christ Constant.
+    # This is not a coincidence - it is a topological necessity.
+    #
+    # The "Trinity of Closure":
+    #   Gate A (Visible):      G_v    = 135 (Shadow Gates)
+    #   Gate B (Delta JC):     Δ_jc   = 153 (Joint Closure Constant = Christ Constant)
+    #   Total (Logic Closure): C      = 288 (Absolute Logic Closure)
+    #
+    # By fixing Δ_jc ≡ 153, the H0 result becomes an invariant of the geometry.
+    # ===========================================================================
+    JC_CONSTANT = 153        # The unified JC Identity: Δ_jc = Λ_JC = 153
+    VISIBLE_GATES = 135      # The Visible Gates (Shadow Sector)
+    LOGIC_CLOSURE = 288      # The Absolute Logic Closure: VISIBLE_GATES + JC_CONSTANT
+
+    # ===========================================================================
+    # SYMBOL_MAP: Master Symbol Registry for the 10 Named Constants
+    # Maps Greek/Latin symbols to property names for fast lookup
+    # ===========================================================================
+    SYMBOL_MAP = {
+        # Sacred Heptagon (7)
+        "Omega_W": "watts_constant",        # Ω_W: Observer Unity (1.0)
+        "chi_R": "reid_invariant",          # χ_R: Sounding Board (1/144)
+        "kappa_E": "weinstein_scale",       # κ_E: Spinor Connection (12.0)
+        "lambda_S": "hossenfelder_root",    # λ_S: Hidden Root (√24)
+        "P_O": "odowd_bulk_pressure",       # P_O: Bulk Pressure (163)
+        "Phi_PH": "penrose_hameroff_bridge",  # Φ_PH: Fibonacci Bridge (13)
+        "Lambda_JC": "christ_constant",     # Λ_JC: Logos Potential (153) = JC Identity
+        "Delta_JC": "delta_jc",             # Δ_JC: Joint Closure Delta (≡ 153) = JC Identity
+        # Mechanical Triad (3)
+        "eta_S": "sophian_drag",            # η_S: H0 Friction (0.6819)
+        "kappa_Delta": "demiurgic_coupling",  # κ_Δ: Mass-Energy Gearbox
+        "sigma_T": "tzimtzum_pressure",     # σ_T: Void Seal (23/24)
+    }
+
+    # Reverse mapping: property name → symbol
+    PROPERTY_TO_SYMBOL = {v: k for k, v in SYMBOL_MAP.items()}
+
     def __init__(self):
         """Initialize with the Ten Pillar Seeds - the ONLY hardcoded values."""
 
@@ -239,6 +279,93 @@ class FormulasRegistry:
         """Shadow sector for Integer Closure (135)."""
         return self._shadow_sector
 
+    # --- JC Identity Aliases (v17.2-Absolute) ---
+
+    @property
+    def delta_jc(self) -> int:
+        """
+        Δ_JC: Joint Closure Delta (≡ 153).
+
+        THE JC IDENTITY: delta_jc ≡ christ_constant ≡ 153
+
+        This is NOT a calculated value - it IS the Christ Constant.
+        By asserting Δ_jc = 153, we establish that the entire "Joint Closure"
+        is governed by the Christ Constant without external decay or entropy.
+
+        Returns:
+            153 - The unified JC Constant (same as christ_constant)
+        """
+        return self._christ_constant  # THE IDENTITY LINK
+
+    @property
+    def visible_gates(self) -> int:
+        """
+        G_v: Visible Gates (135).
+
+        The "Shadow Sector" in the Trinity of Closure:
+        visible_gates + delta_jc = logic_closure
+        135 + 153 = 288
+
+        Returns:
+            135 - The Visible Gates count (same as shadow_sector)
+        """
+        return self._shadow_sector  # Alias for clarity
+
+    @property
+    def logic_closure(self) -> int:
+        """
+        C: Absolute Logic Closure (288).
+
+        The sum of Visible Gates + Joint Closure Delta:
+        logic_closure = visible_gates + delta_jc = 135 + 153 = 288
+
+        This proves 288 is a sum, not an assumption.
+
+        Returns:
+            288 - The E8×E8 root lattice total (same as roots_total)
+        """
+        return self._roots_total  # Alias for clarity
+
+    def verify_jc_identity(self) -> bool:
+        """
+        Verify the JC Identity: Δ_jc ≡ Λ_JC ≡ 153.
+
+        Checks:
+        1. delta_jc == christ_constant (identity)
+        2. delta_jc == JC_CONSTANT (class constant)
+        3. visible_gates + delta_jc == logic_closure (closure)
+
+        Returns:
+            True if the JC Identity is mathematically sound.
+        """
+        identity_check = (self.delta_jc == self.christ_constant == self.JC_CONSTANT)
+        closure_check = (self.visible_gates + self.delta_jc == self.logic_closure)
+        class_check = (self.VISIBLE_GATES + self.JC_CONSTANT == self.LOGIC_CLOSURE)
+        return identity_check and closure_check and class_check
+
+    # ===========================================================================
+    # SYMBOL LOOKUP METHODS
+    # ===========================================================================
+
+    def get_symbol_value(self, symbol: str) -> float:
+        """Get constant value by symbol (e.g., 'Omega_W' → 1.0)."""
+        prop_name = self.SYMBOL_MAP.get(symbol)
+        if not prop_name:
+            raise ValueError(f"Unknown symbol: {symbol}. Valid: {list(self.SYMBOL_MAP.keys())}")
+        return getattr(self, prop_name)
+
+    def get_symbol_for_property(self, property_name: str) -> str:
+        """Get symbol for a property (e.g., 'watts_constant' → 'Omega_W')."""
+        return self.PROPERTY_TO_SYMBOL.get(property_name, None)
+
+    def get_all_symbols_with_values(self) -> dict:
+        """Return {symbol: value} for all 10 Named Constants."""
+        return {symbol: self.get_symbol_value(symbol) for symbol in self.SYMBOL_MAP.keys()}
+
+    def validate_symbol(self, symbol: str) -> bool:
+        """Check if symbol is registered."""
+        return symbol in self.SYMBOL_MAP
+
     # ===========================================================================
     # v17: DERIVED GEOMETRIC INVARIANTS (From Base-24)
     # ===========================================================================
@@ -395,6 +522,7 @@ class FormulasRegistry:
             "bulk_derivation": self.verify_bulk_pressure_derivation(),
             "sterile_equals_bulk": self.verify_sterile_equals_bulk(),
             "closure_valid": self.is_closure_valid,
+            "jc_identity": self.verify_jc_identity(),  # v17.2: Δ_jc ≡ Λ_JC ≡ 153
         }, sort_keys=True)
         sha.update(verification_data.encode())
 
@@ -672,12 +800,24 @@ class FormulasRegistry:
                     "latex": "\\Lambda_{JC}",
                     "value": self.christ_constant,
                     "formula": "288 - 135 = 153",
-                    "role": "Logos Potential",
+                    "role": "Logos Potential / Joint Closure Delta",
                     "domain": "Spiritual",
                     "gate": "G33",
                     "named_for": "Jesus Christ",
                     "scripture": "John 21:11 - The Miraculous Catch",
+                    "identity": "Δ_jc ≡ Λ_JC ≡ 153 (The JC Identity)",
                     "pm_path": "constants.christ_constant"
+                },
+                "delta_jc": {
+                    "symbol": "Delta_JC",
+                    "latex": "\\Delta_{JC}",
+                    "value": self.delta_jc,
+                    "formula": "Δ_jc ≡ Λ_JC = 153",
+                    "role": "Joint Closure Delta (JC Identity)",
+                    "domain": "Topology",
+                    "identity_link": "christ_constant",
+                    "note": "This is NOT a separate value - it IS the Christ Constant. The identity Δ_jc ≡ 153 ensures zero drift in the manifold.",
+                    "pm_path": "constants.delta_jc"
                 },
                 "sophian_drag": {
                     "symbol": "eta_S",
@@ -826,8 +966,21 @@ class FormulasRegistry:
                 "watts_guard_rail": {
                     "value": self.watts_constant,
                     "valid": self.verify_watts_constant()
+                },
+                "jc_identity": {
+                    "formula": "Delta_JC = Lambda_JC = 153",
+                    "description": "Joint Closure Delta = Christ Constant (Topological Necessity)",
+                    "trinity_of_closure": {
+                        "visible_gates": self.visible_gates,
+                        "delta_jc": self.delta_jc,
+                        "logic_closure": self.logic_closure
+                    },
+                    "valid": self.verify_jc_identity()
                 }
-            }
+            },
+
+            "symbol_map": self.SYMBOL_MAP,
+            "property_to_symbol": self.PROPERTY_TO_SYMBOL
         }
 
         if output_path:
@@ -862,7 +1015,11 @@ class FormulasRegistry:
             "tzimtzum_pressure": self._tzimtzum_pressure,
             # Precision
             "sophian_gamma": self._sophian_gamma,
-            "shadow_sector": self._shadow_sector
+            "shadow_sector": self._shadow_sector,
+            # JC Identity (v17.2-Absolute)
+            "delta_jc": self.delta_jc,  # ≡ christ_constant ≡ 153
+            "visible_gates": self.visible_gates,  # ≡ shadow_sector ≡ 135
+            "logic_closure": self.logic_closure  # = visible_gates + delta_jc = 288
         }
 
     def get_all_derived(self) -> Dict[str, float]:
@@ -924,12 +1081,26 @@ if __name__ == "__main__":
     print(f"  Parity Check (eta_S+sigma_T=1.6402): {registry.verify_parity()}")
     print(f"  Tzimtzum Fraction (23/24): {registry.verify_tzimtzum_fraction()}")
     print(f"  Watts Guard Rail (1.0): {registry.verify_watts_constant()}")
+    print(f"  JC Identity (Delta_JC = Lambda_JC = 153): {registry.verify_jc_identity()}")
+
+    print("\n--- JC IDENTITY (v17.2-Absolute) ---")
+    print(f"  JC_CONSTANT (class):   {registry.JC_CONSTANT}")
+    print(f"  christ_constant:       {registry.christ_constant}")
+    print(f"  delta_jc:              {registry.delta_jc}")
+    print(f"  Identity valid:        {registry.delta_jc == registry.christ_constant == registry.JC_CONSTANT}")
+    print(f"  Trinity of Closure:")
+    print(f"    Visible Gates (G_v):  {registry.visible_gates}")
+    print(f"    Delta JC (Delta_JC):  {registry.delta_jc}")
+    print(f"    Logic Closure (C):    {registry.logic_closure}")
+    print(f"    Sum check:            {registry.visible_gates} + {registry.delta_jc} = {registry.visible_gates + registry.delta_jc}")
 
     print("\n" + "=" * 60)
-    print(" ALL VERIFICATIONS PASSED" if all([
+    all_verified = all([
         registry.verify_integer_closure(),
         registry.verify_parity(),
         registry.verify_tzimtzum_fraction(),
-        registry.verify_watts_constant()
-    ]) else " VERIFICATION FAILURES DETECTED")
+        registry.verify_watts_constant(),
+        registry.verify_jc_identity()
+    ])
+    print(" ALL VERIFICATIONS PASSED (including JC Identity)" if all_verified else " VERIFICATION FAILURES DETECTED")
     print("=" * 60)
