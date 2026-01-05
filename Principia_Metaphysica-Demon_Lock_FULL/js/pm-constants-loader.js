@@ -66,9 +66,20 @@
         // Mapping table for legacy/alternate parameter names
         // Maps HTML paths to actual flat keys in parameters.json
         _parameterAliases: {
-            // Note: dimensions.X paths are handled by built-in fallback, not aliases
-            // Only map dimension aliases that need special handling
-            'dimensions.d_g2': 'dimensions.D_G2',  // Case normalization
+            // ================================================================
+            // DIMENSION PARAMETERS (map dimensions.X → geometry.X)
+            // These are the core geometric dimensions from the SSoT
+            // ================================================================
+            'dimensions.D_bulk': 'geometry.D_bulk',           // 26D bulk
+            'dimensions.d_bulk': 'geometry.D_bulk',           // Case variant
+            'dimensions.D_after_sp2r': 'geometry.D_eff',      // 13D after Sp(2,R) projection
+            'dimensions.d_after_sp2r': 'geometry.D_eff',      // Case variant
+            'dimensions.D_observable': '_hardcoded.D_observable',  // 4D spacetime
+            'dimensions.d_observable': '_hardcoded.D_observable',  // Case variant
+            'dimensions.D_G2': 'geometry.D_G2',               // 7D G2 manifold
+            'dimensions.d_g2': 'geometry.D_G2',               // Case normalization
+            'dimensions.D_compact': 'geometry.D_compact',     // 22D compact
+            'dimensions.D_shadow': 'geometry.D_shadow',       // 12D shadow
             'dimensions.d_spin8': 'parameters.dimensions.D_SPIN8',
             'dimensions.bulk_signature': '_hardcoded.bulk_signature',  // (24,2) = 26D
 
@@ -150,6 +161,7 @@
             'simulations.higgs_mass.validation.sigma': 'higgs.m_higgs_pred.sigma_deviation',
             'higgs_mass.m_h_GeV': 'pdg.m_higgs',
             'v11_final_observables.higgs_mass.m_h_gev': 'pdg.m_higgs',
+            'v11_final_observables.higgs_mass.m_h_GeV': 'pdg.m_higgs',
 
             // ================================================================
             // Proton decay
@@ -326,6 +338,7 @@
             'phi': 1.6180339887,               // Golden ratio (mathematical constant)
             'H0_local': 71.55,                 // H0 = (288/4) - (163/144) + 0.6819 (O'Dowd formula)
             'certificates_total': 72,          // Total gates (fixed by framework design)
+            'D_observable': 4,                 // Observable spacetime dimensions (topological)
         },
 
         /**
