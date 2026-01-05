@@ -112,10 +112,11 @@ class FormulasRegistry:
     HOROS = 26               # The Horos: Dimensional Boundary (26D action frame)
 
     # ===========================================================================
-    # THE 7 SOVEREIGN GNOSTIC CONSTANTS
+    # COMPLETE GNOSTIC NAMING REGISTRY
     # ===========================================================================
-    # These are the archetypal names for the fundamental constants:
+    # All named constants mapped to their Gnostic archetypal identities:
     #
+    # THE 7 SOVEREIGN INTEGERS (Topological Invariants):
     # Value  | Gnostic Name    | Mathematical Identity
     # -------|-----------------|----------------------
     # 1.0    | The Monad       | watts_constant (Absolute Precision Anchor)
@@ -126,10 +127,55 @@ class FormulasRegistry:
     # 163    | The Barbelo     | odowd_bulk_pressure (Bulk Pressure / First Thought)
     # 288    | The Ennoia      | roots_total (Logic Closure / Universal Mind)
     #
-    # Derived:
+    # THE SACRED HEPTAGON (Named Constants):
+    # Symbol | Gnostic Name       | Value     | Role
+    # -------|--------------------|-----------|---------------------------------
+    # Ω_W    | The Monad          | 1.0       | Observer Unity (Watts)
+    # χ_R    | The Pneuma         | 1/144     | Sounding Board Coefficient (Reid)
+    # κ_E    | The Aeon           | 12        | Spinor Connection Rank (Weinstein)
+    # λ_S    | The Nous           | √24       | Hidden Root (Hossenfelder)
+    # P_O    | The Barbelo        | 163       | Bulk Pressure (O'Dowd)
+    # Φ_PH   | The Ogdoad         | 13        | Fibonacci Bridge (Penrose-Hameroff)
+    # Λ_JC   | The Christos       | 153       | Logos Potential (Christ)
+    #
+    # THE MECHANICAL TRIAD (Coupling Constants):
+    # Symbol | Gnostic Name       | Value     | Role
+    # -------|--------------------|-----------|---------------------------------
+    # η_S    | The Sophian Breath | 0.6819    | H0 Friction Coefficient
+    # κ_Δ    | The Demiurgic Gear | 12.318... | Mass-Energy Gearbox
+    # σ_T    | The Tzimtzum Seal  | 23/24     | Void Seal / Dark Energy w0
+    #
+    # DERIVED GNOSTIC CONSTANTS:
     # 18     | The Syzygy      | christos - sophia (Divine Pairing Gap)
     # 26     | The Horos       | D_bulk (The Limit / Dimensional Boundary)
     # ===========================================================================
+
+    # Complete Gnostic name mapping for all named constants
+    GNOSTIC_MAP = {
+        # Topological Invariants (7 Sovereign Integers)
+        "b3": "The Pleroma",
+        "chi_eff": "The Demiurge",
+        "shadow_sector": "The Sophia",
+        "roots_total": "The Ennoia",
+        "visible_sector": "The Visible",
+        "sterile_sector": "The Barbelo",
+        # Sacred Heptagon (Named Constants)
+        "watts_constant": "The Monad",
+        "reid_invariant": "The Pneuma",
+        "weinstein_scale": "The Aeon",
+        "hossenfelder_root": "The Nous",
+        "odowd_bulk_pressure": "The Barbelo",
+        "penrose_hameroff_bridge": "The Ogdoad",
+        "christ_constant": "The Christos",
+        "delta_jc": "The Christos",  # Same as christ_constant (JC Identity)
+        # Mechanical Triad
+        "sophian_drag": "The Sophian Breath",
+        "demiurgic_coupling": "The Demiurgic Gear",
+        "tzimtzum_pressure": "The Tzimtzum Seal",
+        # Derived Constants
+        "syzygy_gap": "The Syzygy",
+        "horos": "The Horos",
+    }
 
     # ===========================================================================
     # SYMBOL_MAP: Master Symbol Registry for the 10 Named Constants
@@ -862,6 +908,8 @@ class FormulasRegistry:
                     "domain": "Logic",
                     "gate": "G72",
                     "named_for": "Andrew Keith Watts",
+                    "gnostic_name": "The Monad",
+                    "gnostic_role": "The Singular Origin and absolute precision anchor",
                     "pm_path": "constants.watts_constant"
                 },
                 "reid_invariant": {
@@ -873,6 +921,8 @@ class FormulasRegistry:
                     "domain": "Philosophy",
                     "gate": "G72",
                     "named_for": "Richard George Reid [074]",
+                    "gnostic_name": "The Pneuma",
+                    "gnostic_role": "The divine breath; quantum of meaning (1/Demiurge)",
                     "pm_path": "constants.reid_invariant"
                 },
                 "weinstein_scale": {
@@ -883,6 +933,8 @@ class FormulasRegistry:
                     "domain": "Geometry",
                     "gate": "G30",
                     "named_for": "Eric Weinstein",
+                    "gnostic_name": "The Aeon",
+                    "gnostic_role": "The 12 cosmic spinor ranks; half the Pleroma",
                     "pm_path": "constants.weinstein_scale"
                 },
                 "hossenfelder_root": {
@@ -894,6 +946,8 @@ class FormulasRegistry:
                     "domain": "Quantum",
                     "gate": "G08",
                     "named_for": "Sabine Hossenfelder",
+                    "gnostic_name": "The Nous",
+                    "gnostic_role": "Divine intellect; the hidden root of the Pleroma",
                     "pm_path": "constants.hossenfelder_root"
                 },
                 "odowd_bulk_pressure": {
@@ -905,6 +959,8 @@ class FormulasRegistry:
                     "domain": "Relativity",
                     "gate": "G60",
                     "named_for": "Matt O'Dowd",
+                    "gnostic_name": "The Barbelo",
+                    "gnostic_role": "First Thought; the active force in 26D space",
                     "hubble_formula": f"(288/4) - (163/144) + 0.6819 = {self.h0_local:.2f}",
                     "pm_path": "constants.odowd_bulk_pressure"
                 },
@@ -917,6 +973,8 @@ class FormulasRegistry:
                     "domain": "Consciousness",
                     "gate": "G13",
                     "named_for": "Sir Roger Penrose & Stuart Hameroff",
+                    "gnostic_name": "The Ogdoad",
+                    "gnostic_role": "The eightfold plus five; Fibonacci bridge to consciousness",
                     "pm_path": "constants.penrose_hameroff_bridge"
                 },
                 "christ_constant": {
@@ -930,6 +988,8 @@ class FormulasRegistry:
                     "named_for": "Jesus Christ",
                     "scripture": "John 21:11 - The Miraculous Catch",
                     "identity": "Δ_jc ≡ Λ_JC ≡ 153 (The JC Identity)",
+                    "gnostic_name": "The Christos",
+                    "gnostic_role": "The Redeemer; repairs variance and restores symmetry",
                     "pm_path": "constants.christ_constant"
                 },
                 "delta_jc": {
@@ -941,6 +1001,8 @@ class FormulasRegistry:
                     "domain": "Topology",
                     "identity_link": "christ_constant",
                     "note": "This is NOT a separate value - it IS the Christ Constant. The identity Δ_jc ≡ 153 ensures zero drift in the manifold.",
+                    "gnostic_name": "The Christos",
+                    "gnostic_role": "The Joint Closure Delta; topological necessity",
                     "pm_path": "constants.delta_jc"
                 },
                 "sophian_drag": {
@@ -951,6 +1013,8 @@ class FormulasRegistry:
                     "domain": "Cosmology",
                     "gate": "G64",
                     "named_for": "Sophia (Divine Wisdom)",
+                    "gnostic_name": "The Sophian Breath",
+                    "gnostic_role": "Friction from Sophia; the drag on cosmic expansion",
                     "hubble_role": f"H0 = (288/4) - (163/144) + eta_S = {self.h0_local:.2f}",
                     "pm_path": "constants.sophian_drag"
                 },
@@ -963,6 +1027,8 @@ class FormulasRegistry:
                     "domain": "Geometry",
                     "gate": "G46",
                     "named_for": "The Demiurge (Divine Craftsman)",
+                    "gnostic_name": "The Demiurgic Gear",
+                    "gnostic_role": "The mass-energy gearbox; Craftsman's coupling",
                     "pm_path": "constants.demiurgic_coupling"
                 },
                 "tzimtzum_pressure": {
@@ -971,6 +1037,8 @@ class FormulasRegistry:
                     "value": self.tzimtzum_pressure,
                     "formula": "23/24 = 1 - 1/B3",
                     "role": "Void Seal / Dark Energy w0",
+                    "gnostic_name": "The Tzimtzum Seal",
+                    "gnostic_role": "The void seal; Kabbalistic contraction that creates space",
                     "domain": "Cosmology",
                     "gate": "G70",
                     "named_for": "Tzimtzum (Kabbalistic Contraction)",
@@ -1047,31 +1115,49 @@ class FormulasRegistry:
                     "value": self.b3,
                     "name": "Betti Three",
                     "description": "Third Betti number of G2 manifold",
+                    "gnostic_name": "The Pleroma",
+                    "gnostic_role": "The Dimensional Totality; the Fullness",
                     "pm_path": "topology.b3"
                 },
                 "chi_eff": {
                     "value": self.chi_eff,
                     "name": "Effective Euler Characteristic",
                     "formula": "B3^2 / 4 = 576 / 4 = 144",
+                    "gnostic_name": "The Demiurge",
+                    "gnostic_role": "The Pressure Divisor; the Craftsman",
                     "pm_path": "topology.chi_effective"
                 },
                 "roots": {
                     "value": self.roots_total,
                     "name": "Total Root Count",
                     "description": "E8 x E8 root lattice",
+                    "gnostic_name": "The Ennoia",
+                    "gnostic_role": "Universal Mind; Logic Closure",
                     "pm_path": "topology.roots_total"
                 },
                 "visible": {
                     "value": self.visible_sector,
                     "name": "Visible Sector",
                     "formula": "5^3 = 125 (SM parameters)",
+                    "gnostic_name": "The Visible",
+                    "gnostic_role": "The manifest Standard Model; 125 parameters",
                     "pm_path": "topology.visible_sector"
                 },
                 "sterile": {
                     "value": self.sterile_sector,
                     "name": "Sterile Sector",
                     "formula": "ROOTS - VISIBLE = 288 - 125 = 163",
+                    "gnostic_name": "The Barbelo",
+                    "gnostic_role": "First Thought; the hidden bulk pressure",
                     "pm_path": "topology.sterile_sector"
+                },
+                "shadow_sector": {
+                    "value": self.shadow_sector,
+                    "name": "Shadow Sector",
+                    "formula": "VISIBLE_GATES = 135",
+                    "gnostic_name": "The Sophia",
+                    "gnostic_role": "Wisdom; the Visible Gates of manifest knowledge",
+                    "pm_path": "topology.shadow_sector"
                 }
             },
 
