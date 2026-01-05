@@ -40,6 +40,14 @@ class SectionInfo:
 
 # Define the complete paper structure
 PAPER_SECTIONS: Dict[str, SectionInfo] = {
+    # Abstract (Section 0)
+    "0": SectionInfo(
+        id="0",
+        title="Abstract",
+        description="The 26D(24,2) ancestral bulk, S_PR(2) gauge filter, G2 manifold, and 6D→4D projection.",
+        section_type="abstract",
+        simulation_source="foundations_v16_2"  # Abstract content from foundations
+    ),
     # Main Sections
     "1": SectionInfo(
         id="1",

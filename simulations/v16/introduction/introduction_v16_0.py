@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Introduction
+PRINCIPIA METAPHYSICA v17.2 - Introduction
 ===========================================
 
 DOI: 10.5281/zenodo.18079602
@@ -14,7 +14,7 @@ the narrative content and cross-references for the paper's introduction.
 
 SECTION: 1 (Introduction)
 
-v16.2 STERILE MODEL: All 125 constants are geometric residues, not tuned.
+v17.2 STERILE MODEL: All 125 constants are geometric residues, not tuned.
 
 OUTPUTS:
     - None (narrative content only)
@@ -61,7 +61,7 @@ class IntroductionV16(SimulationBase):
             version="16.2",
             domain="introduction",
             title="Introduction to Principia Metaphysica",
-            description="Narrative introduction to the PM v16.2 sterile framework - 125 geometric residues",
+            description="Narrative introduction to the PM v17.2 sterile framework - 125 geometric residues",
             section_id="1",
             subsection_id=None
         )
@@ -224,11 +224,11 @@ class IntroductionV16(SimulationBase):
         assert len(foundations) >= 6, "get_foundations() must return at least 6 principles"
 
         content_blocks = [
-            # Lead paragraph (abstract) - v16.2 Sterile Model
+            # Lead paragraph (abstract) - v17.2 Sterile Model
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v16.2</strong>, a sterile "
+                    "This paper presents <strong>Principia Metaphysica v17.2</strong>, a sterile "
                     "geometric framework in which all 125 fundamental physical constants emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
@@ -237,7 +237,7 @@ class IntroductionV16(SimulationBase):
                     "13D → 7D → 6D → 4D via sequential brane-node descent. The internal "
                     "<strong>V₇ manifold</strong> with <strong>b₃ = "
                     '<span class="pm-value" data-pm-value="topology.b3">24</span></strong> and '
-                    '<strong>χ = <span class="pm-value" data-pm-value="topology.chi_effective">144</span></strong> '
+                    '<strong>χ = <span class="pm-value" data-pm-value="topology.chi_eff">144</span></strong> '
                     "provides all structure: fermion generations (b₃/8 = 3), "
                     "mixing angles, mass hierarchies, and cosmological parameters. The framework "
                     "achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, "

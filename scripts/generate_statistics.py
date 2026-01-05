@@ -231,7 +231,7 @@ def generate_statistics() -> Dict[str, Any]:
 
     # Build output structure
     statistics = {
-        "version": "16.2",
+        "version": "17.2",
         "generated_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "source_files": {
             "gates_certificates": GATES_CERT_FILE,

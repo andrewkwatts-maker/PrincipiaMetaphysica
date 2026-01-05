@@ -980,7 +980,7 @@
                 // Update stats
                 document.getElementById('total-scripts').textContent = `${simulationsIndex.total_scripts} scripts`;
                 document.getElementById('total-categories').textContent = `${Object.keys(simulationsIndex.categories).length} categories`;
-                document.getElementById('latest-version').textContent = `v${simulationsIndex.version || '16.2'}`;
+                document.getElementById('latest-version').textContent = `v${simulationsIndex.version || '17.2'}`;
                 if (statsDiv) statsDiv.style.display = 'inline-flex';
 
                 // Render index
@@ -1059,7 +1059,7 @@
 
             // Build index structure
             simulationsIndex = {
-                version: '16.2',
+                version: '17.2',
                 generated: new Date().toISOString(),
                 total_scripts: 0,
                 categories: {}

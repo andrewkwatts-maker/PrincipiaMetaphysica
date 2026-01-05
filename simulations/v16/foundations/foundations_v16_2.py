@@ -112,11 +112,11 @@ class FoundationsV16_2(SimulationBase):
             SectionContent instance with the sterile model foundation narrative
         """
         content_blocks = [
-            # Lead paragraph - v16.2 Sterile Abstract
+            # Lead paragraph - v17.2 Sterile Abstract
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v16.2</strong>, a sterile "
+                    "This paper presents <strong>Principia Metaphysica v17.2</strong>, a sterile "
                     "geometric framework in which all 125 fundamental physical constants emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "
@@ -125,7 +125,7 @@ class FoundationsV16_2(SimulationBase):
                     "13D → 7D → 6D → 4D via sequential brane-node descent. The internal "
                     "<strong>V₇ manifold</strong> with <strong>b₃ = "
                     '<span class="pm-value" data-pm-value="topology.b3">24</span></strong> and '
-                    '<strong>χ = <span class="pm-value" data-pm-value="topology.chi_effective">144</span></strong> '
+                    '<strong>χ = <span class="pm-value" data-pm-value="topology.chi_eff">144</span></strong> '
                     "provides all structure: fermion generations (b₃/8 = 3), "
                     "mixing angles, mass hierarchies, and cosmological parameters. The framework "
                     "achieves <strong>0.48σ global alignment</strong> with Planck 2018, DESI 2025, "

@@ -1713,6 +1713,12 @@
                     </select>
                 </div>
                 <div class="control-group">
+                    <label class="control-label" for="category-filter">Type</label>
+                    <select id="category-filter" class="control-input">
+                        <option value="">All Types</option>
+                    </select>
+                </div>
+                <div class="control-group">
                     <label class="control-label" for="status-filter">Status</label>
                     <select id="status-filter" class="control-input">
                         <option value="">All Statuses</option>
@@ -1941,6 +1947,17 @@
             sectionFilter.appendChild(option);
         });
 
+        // Populate category/type dropdown
+        const categories = [...new Set(allFormulas.map(f => f.category).filter(c => c))].sort();
+        const categoryFilter = document.getElementById('category-filter');
+
+        categories.forEach(category => {
+            const option = document.createElement('option');
+            option.value = category;
+            option.textContent = category;
+            categoryFilter.appendChild(option);
+        });
+
         // Populate status dropdown
         const statuses = [...new Set(allFormulas.map(f => f.status).filter(s => s))].sort();
         const statusFilter = document.getElementById('status-filter');
@@ -1960,6 +1977,11 @@
 
         document.getElementById('section-filter').addEventListener('change', (e) => {
             currentFilters.section = e.target.value;
+            applyFilters();
+        });
+
+        document.getElementById('category-filter').addEventListener('change', (e) => {
+            currentFilters.category = e.target.value;
             applyFilters();
         });
 
