@@ -1,0 +1,32 @@
+{
+  "proof_id": "observer_coupling",
+  "cert_id": "CERT-OBSV-043",
+  "label": "Observer Coupling & Decidability (Watts Constant)",
+  "category": "OPERATIONAL",
+  "version": "16.2",
+  "status": "SEALED",
+  "wl_code": "wattsConstant = 1.0; reidInvariant = 1/144; decidability = 1.0; {wattsConstant == 1.0, decidability == 1.0, \"SEALED\"}",
+  "result": "{True, True, SEALED}",
+  "note": "OPERATIONAL: The Watts Constant (observer unity) ensures the observer is coupled to the manifold. The Watts Constant = 1.0 is definitional (internal coherence). The Reid Invariant = 1/144 is a sounding board acknowledgment (non-technical).",
+  "verification_status": "NOT_TESTABLE",
+  "reason": "Philosophical framework assumption. The Watts Constant is definitional (1.0 by construction).",
+  "geometry": {
+    "watts_constant": {
+      "value": 1.0,
+      "symbol": "Omega_W",
+      "role": "Observer Invariant",
+      "named_for": "Andrew Keith Watts"
+    },
+    "reid_invariant": {
+      "value": 0.006944444444444444,
+      "symbol": "chi_R",
+      "role": "Sounding Board Coefficient",
+      "named_for": "Richard George Reid [074]"
+    },
+    "parity_product": 144,
+    "decidability": 1.0,
+    "interpretation": "Observer (Watts) coupled; dialogue acknowledged (Reid)"
+  },
+  "timestamp": "2026-01-02T21:45:00Z",
+  "hash": "v16_2_obsv_watts_reid_sealed"
+}
