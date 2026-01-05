@@ -1,0 +1,17 @@
+{
+  "proof_id": "G04_projection_tax",
+  "gate_id": 4,
+  "gate_name": "Projection Tax",
+  "label": "12\u03b4 vacuum pressure from 26D\u21924D projection",
+  "category": "Cosmology",
+  "phase": 1,
+  "block": "A",
+  "version": "16.2",
+  "wl_code": "Lambda = 12/288^2; N[Lambda, 10]",
+  "result": "1.44676e-4",
+  "formula": "\u039b_base = 12/288\u00b2",
+  "verification_status": "VERIFIED",
+  "note": "Gate 4: \u039b \u2248 12/288\u00b2 as baseline. 12\u03b4 vacuum pressure from 26D\u21924D projection",
+  "timestamp": "2026-01-04T21:02:26.283575Z",
+  "hash": "15954d35a9346c77"
+}

@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unruh Effect - Accelerated observers detect thermal radiation in the Minkowski vacuum, revealing the observer-dependent nature of particles and temperature">
+    <title>Unruh Effect - Foundational Physics</title>
+    <link rel="stylesheet" href="../css/styles.css">
+<link rel="stylesheet" href="../css/pm-header.css">
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/formula-expansion.js" defer></script>
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('foundations', {
+                breadcrumbs: [
+                    { label: 'Home', href: '../index.html' },
+                    { label: 'Foundations', href: 'index.html' }
+                ],
+                currentLabel: 'Unruh Effect'
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main-content">
+
+    <main>
+
+        <div class="equation-hero" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.15), rgba(255, 184, 77, 0.1)); border: 2px solid rgba(255, 126, 182, 0.3);">
+            <span class="foundation-badge established" style="margin-bottom: 1rem;">Established Physics (1976)</span>
+            <h1 style="background: linear-gradient(135deg, #ff7eb6, #ffb84d); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Unruh Effect</h1>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 800px; margin: 0 auto 1.5rem;">
+                Accelerated observers perceive the quantum vacuum as a thermal bath, revealing the profound observer-dependence of temperature and particles in quantum field theory.
+            </p>
+            <div class="main-equation" style="background: rgba(255, 126, 182, 0.1);">
+                T<sub>U</sub> = ℏa / (2πck<sub>B</sub>)
+            </div>
+            <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 1rem;">
+                Discovered by William Unruh (1976) | Foundation of Relativistic Quantum Thermodynamics
+            </p>
+        </div>
+
+        <!-- Quick Summary -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(255, 184, 77, 0.03)); border-left: 4px solid #ff7eb6;">
+            <h2>What Does This Effect Mean?</h2>
+            <p style="font-size: 1.1rem; color: var(--text-primary); margin-bottom: 1.5rem;">
+                <strong>"An accelerating observer detects thermal radiation where an inertial observer sees only vacuum."</strong>
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Acceleration: a</h4>
+                    <p>Constant proper acceleration through Minkowski spacetime creates a <strong>Rindler horizon</strong>, similar to a black hole event horizon.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(255, 184, 77, 0.08); border-left: 4px solid #ffb84d;">
+                    <h4 style="color: #ffb84d;">Temperature: T<sub>U</sub></h4>
+                    <p>The accelerated observer measures a thermal spectrum at temperature T<sub>U</sub> = ℏa/(2πck<sub>B</sub>), proportional to acceleration.</p>
+                </div>
+                <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Observer Dependence</h4>
+                    <p>The <strong>particle content</strong> of a quantum field is not absolute but depends on the observer's state of motion.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expandable Main Formula -->
+        <div class="expandable-formula">
+            <div class="formula-header">
+                <div class="formula-main">T<sub>U</sub> = ℏa / (2πck<sub>B</sub>)</div>
+                <div class="formula-controls">
+                    <span class="foundation-badge established">Established</span>
+                    <button class="expand-btn" title="Expand formula">&#x25BC;</button>
+                </div>
+            </div>
+            <div class="formula-expansion">
+                <div class="sub-components">
+                    <div class="sub-component">
+                        <div class="component-symbol">T<sub>U</sub></div>
+                        <div class="component-name">Unruh Temperature</div>
+                        <div class="component-desc">
+                            The temperature measured by an observer with proper acceleration a.<br>
+                            For Earth's surface gravity (a ≈ 9.8 m/s²): T<sub>U</sub> ≈ 4 × 10<sup>-20</sup> K (unobservably small!).
+                        </div>
+                        <span class="foundation-badge established" style="margin-top: 0.5rem;">Observer-Dependent</span>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">a</div>
+                        <div class="component-name">Proper Acceleration</div>
+                        <div class="component-desc">
+                            The acceleration felt by the observer in their own reference frame.<br>
+                            Measured in m/s². Temperature increases linearly with acceleration.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Proper_acceleration" target="_blank" class="component-link">Wikipedia: Proper Acceleration &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">ℏ</div>
+                        <div class="component-name">Reduced Planck Constant</div>
+                        <div class="component-desc">
+                            ℏ = h/(2π) ≈ 1.055 × 10<sup>-34</sup> J·s<br>
+                            Quantum of action, fundamental to all quantum phenomena.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Planck_constant" target="_blank" class="component-link">Wikipedia: Planck Constant &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">c</div>
+                        <div class="component-name">Speed of Light</div>
+                        <div class="component-desc">
+                            c ≈ 2.998 × 10<sup>8</sup> m/s<br>
+                            Universal speed limit, connects space and time in special relativity.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Speed_of_light" target="_blank" class="component-link">Wikipedia: Speed of Light &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">k<sub>B</sub></div>
+                        <div class="component-name">Boltzmann Constant</div>
+                        <div class="component-desc">
+                            k<sub>B</sub> ≈ 1.381 × 10<sup>-23</sup> J/K<br>
+                            Links temperature to energy. Fundamental constant of thermodynamics.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Boltzmann_constant" target="_blank" class="component-link">Wikipedia: Boltzmann Constant &rarr;</a>
+                    </div>
+                    <div class="sub-component">
+                        <div class="component-symbol">Rindler Horizon</div>
+                        <div class="component-name">Acceleration-Induced Horizon</div>
+                        <div class="component-desc">
+                            The accelerated observer has an event horizon at distance c²/a behind them.<br>
+                            Events beyond this horizon are forever causally disconnected, analogous to a black hole horizon.
+                        </div>
+                        <a href="https://en.wikipedia.org/wiki/Rindler_coordinates" target="_blank" class="component-link">Wikipedia: Rindler Coordinates &rarr;</a>
+                    </div>
+                </div>
+                <div class="derivation-chain">
+                    <div class="chain-title">Foundation Chain</div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Special Relativity (Einstein, 1905)</span>
+                        <span class="foundation-badge established">Lorentz Invariance</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Quantum Field Theory (1940s-1950s)</span>
+                        <span class="foundation-badge established">QFT Framework</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Hawking Radiation (Hawking, 1974)</span>
+                        <span class="foundation-badge established">Black Hole Thermodynamics</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <span>Unruh Effect (Unruh, 1976)</span>
+                        <span class="foundation-badge established">Flat Space Analog</span>
+                    </div>
+                    <div class="chain-step">
+                        <span class="step-arrow">&rarr;</span>
+                        <a href="kms-condition.html">KMS Condition & Thermal States</a>
+                        <span class="foundation-badge established">Mathematical Framework</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Diagram -->
+        <section class="subsection">
+            <h2>Visual Understanding: Rindler Wedge and Thermal Radiation</h2>
+            <p>The Unruh effect arises from the causal structure of accelerated motion in Minkowski spacetime:</p>
+
+            <svg width="100%" height="550" viewBox="0 0 900 550" style="background: rgba(255, 126, 182, 0.03); border-radius: 12px; margin: 1.5rem 0;">
+                <defs>
+                    <linearGradient id="wedgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#ff7eb6;stop-opacity:0.2" />
+                        <stop offset="100%" style="stop-color:#ffb84d;stop-opacity:0.15" />
+                    </linearGradient>
+                    <marker id="arrowhead3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="var(--accent-primary)" />
+                    </marker>
+                </defs>
+
+                <!-- Minkowski light cone axes -->
+                <line x1="100" y1="450" x2="800" y2="450" stroke="var(--text-primary)" stroke-width="2" marker-end="url(#arrowhead3)"/>
+                <text x="810" y="455" fill="var(--text-primary)" font-size="16" font-weight="600">x</text>
+
+                <line x1="100" y1="450" x2="100" y2="50" stroke="var(--text-primary)" stroke-width="2" marker-end="url(#arrowhead3)"/>
+                <text x="70" y="40" fill="var(--text-primary)" font-size="16" font-weight="600">ct</text>
+
+                <!-- Future light cone from origin -->
+                <line x1="100" y1="450" x2="450" y2="100" stroke="#51cf66" stroke-width="2" stroke-dasharray="4,4"/>
+                <text x="460" y="100" fill="#51cf66" font-size="13">Future light cone</text>
+
+                <!-- Past light cone from origin -->
+                <line x1="100" y1="450" x2="450" y2="800" stroke="#51cf66" stroke-width="2" stroke-dasharray="4,4"/>
+
+                <!-- Rindler horizon (hyperbola) -->
+                <path d="M 100 450 Q 200 250, 350 100" stroke="#ff7eb6" stroke-width="3" fill="none"/>
+                <text x="360" y="110" fill="#ff7eb6" font-size="14" font-weight="600">Rindler Horizon</text>
+                <text x="360" y="125" fill="var(--text-secondary)" font-size="11">(x² - (ct)² = (c²/a)²)</text>
+
+                <!-- Right Rindler wedge (accessible to accelerated observer) -->
+                <path d="M 100 450 Q 200 250, 350 100 L 450 100 L 450 450 Z" fill="url(#wedgeGradient)" opacity="0.4"/>
+                <text x="280" y="300" fill="var(--text-primary)" font-size="15" font-weight="bold">Right Rindler Wedge</text>
+                <text x="260" y="320" fill="var(--text-secondary)" font-size="12">(Accessible to observer)</text>
+
+                <!-- Accelerated observer worldline (hyperbola) -->
+                <path d="M 200 450 Q 280 300, 380 150" stroke="#4facfe" stroke-width="3" fill="none"/>
+                <circle cx="280" cy="300" r="6" fill="#4facfe"/>
+                <text x="290" y="295" fill="#4facfe" font-size="13" font-weight="600">Accelerated Observer</text>
+                <text x="290" y="310" fill="var(--text-secondary)" font-size="11">(constant proper acceleration a)</text>
+
+                <!-- Inertial observer worldline (straight line) -->
+                <line x1="550" y1="450" x2="550" y2="100" stroke="#8b7fff" stroke-width="3"/>
+                <circle cx="550" cy="300" r="6" fill="#8b7fff"/>
+                <text x="560" y="295" fill="#8b7fff" font-size="13" font-weight="600">Inertial Observer</text>
+                <text x="560" y="310" fill="var(--text-secondary)" font-size="11">(sees vacuum |0⟩)</text>
+
+                <!-- Thermal radiation annotation for accelerated observer -->
+                <circle cx="280" cy="300" r="40" fill="none" stroke="#ffb84d" stroke-width="2" stroke-dasharray="3,3"/>
+                <text x="210" y="360" fill="#ffb84d" font-size="12" font-weight="600">Detects thermal bath</text>
+                <text x="215" y="375" fill="#ffb84d" font-size="11">T = ℏa/(2πck_B)</text>
+
+                <!-- Inaccessible region label -->
+                <text x="120" y="200" fill="var(--text-muted)" font-size="12" font-style="italic">Inaccessible</text>
+                <text x="130" y="215" fill="var(--text-muted)" font-size="12" font-style="italic">region</text>
+
+                <!-- Origin marker -->
+                <circle cx="100" cy="450" r="4" fill="var(--text-primary)"/>
+                <text x="85" y="470" fill="var(--text-primary)" font-size="13">O</text>
+
+                <!-- Key insight box -->
+                <rect x="50" y="480" width="800" height="60" fill="rgba(255, 126, 182, 0.1)" stroke="#ff7eb6" stroke-width="2" rx="10"/>
+                <text x="450" y="505" text-anchor="middle" fill="var(--text-primary)" font-size="14" font-weight="bold">
+                    Key Insight: The Rindler Horizon Acts Like a Black Hole Event Horizon
+                </text>
+                <text x="450" y="525" text-anchor="middle" fill="var(--text-secondary)" font-size="12">
+                    Quantum fluctuations across the horizon appear as thermal radiation to the accelerated observer
+                </text>
+            </svg>
+
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-style: italic; text-align: center;">
+                The accelerated observer (blue) cannot access events beyond the Rindler horizon (pink hyperbola), leading to entanglement and thermal radiation.
+            </p>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="subsection">
+            <h2>Key Concepts to Understand</h2>
+
+            <h3>1. The Equivalence Principle and Rindler Coordinates</h3>
+            <p>
+                An observer with constant proper acceleration a in flat Minkowski space uses <strong>Rindler coordinates</strong> (ρ, η):
+            </p>
+            <div class="equation-box">
+                t = (ρ/a) sinh(aη), &nbsp; x = (ρ/a) cosh(aη)
+                <span class="equation-label">Transformation to Rindler coordinates (η is proper time)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                In these coordinates, the Minkowski metric becomes:
+            </p>
+            <div class="equation-box">
+                ds² = -(aρ)² dη² + dρ² + dy² + dz²
+                <span class="equation-label">Rindler metric (looks like a gravitational field!)</span>
+            </div>
+
+            <h3 style="margin-top: 2rem;">2. The Rindler Horizon</h3>
+            <p>
+                The accelerated observer has an <strong>event horizon</strong> at x = ct (or ρ = 0 in Rindler coordinates):
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Causal barrier:</strong> Events beyond the horizon can never send signals to the accelerated observer</li>
+                <li><strong>Distance from observer:</strong> The horizon is located at distance c²/a behind the observer</li>
+                <li><strong>Analog to black holes:</strong> Just as a black hole has an event horizon, acceleration creates one too</li>
+                <li><strong>Surface gravity:</strong> The horizon has effective surface gravity κ = a, exactly matching the acceleration</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">3. Bogoliubov Transformation and Particle Creation</h3>
+            <p>
+                Different observers decompose quantum fields into particles differently. The <strong>Bogoliubov transformation</strong> relates:
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div class="equation-box">
+                    |0⟩<sub>M</sub>
+                    <span class="equation-label">Minkowski vacuum (inertial observer)</span>
+                </div>
+                <div class="equation-box">
+                    |0⟩<sub>R</sub>
+                    <span class="equation-label">Rindler vacuum (accelerated observer)</span>
+                </div>
+            </div>
+            <p style="margin-top: 1rem;">
+                These vacua are <strong>inequivalent</strong>! The Minkowski vacuum |0⟩<sub>M</sub> appears to the Rindler observer as a thermal state:
+            </p>
+            <div class="equation-box">
+                ρ<sub>R</sub> = Z<sup>-1</sup> exp(-2πωH<sub>R</sub>/a)
+                <span class="equation-label">The Minkowski vacuum is a thermal state for Rindler observers (Unruh temperature)</span>
+            </div>
+
+            <h3 style="margin-top: 2rem;">4. Connection to Hawking Radiation</h3>
+            <p>
+                The Unruh effect and Hawking radiation are deeply connected via the equivalence principle:
+            </p>
+            <table class="breaking-table" style="margin-top: 1rem;">
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Unruh Effect</th>
+                        <th>Hawking Radiation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Spacetime</strong></td>
+                        <td>Flat Minkowski space</td>
+                        <td>Schwarzschild black hole</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Observer</strong></td>
+                        <td>Uniformly accelerated (a)</td>
+                        <td>Stationary at infinity</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Horizon</strong></td>
+                        <td>Rindler horizon (x = ct)</td>
+                        <td>Event horizon (r = 2GM/c²)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Surface gravity</strong></td>
+                        <td>κ = a</td>
+                        <td>κ = c⁴/(4GM)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Temperature</strong></td>
+                        <td>T<sub>U</sub> = ℏa/(2πck<sub>B</sub>)</td>
+                        <td>T<sub>H</sub> = ℏκ/(2πck<sub>B</sub>)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin-top: 2rem;">5. The KMS Condition and Thermal States</h3>
+            <p>
+                The Unruh effect is mathematically characterized by the <strong>KMS condition</strong> for thermal equilibrium:
+            </p>
+            <div class="equation-box">
+                ⟨φ(x) φ(x')⟩<sub>R</sub> = ⟨φ(x') φ(x + iβ/a)⟩<sub>R</sub>
+                <span class="equation-label">KMS relation with β = 2πc/a (inverse Unruh temperature)</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                This periodicity in imaginary time is the hallmark of a thermal state. See <a href="kms-condition.html" style="color: var(--accent-primary);">KMS Condition</a>
+                and <a href="tomita-takesaki.html" style="color: var(--accent-primary);">Tomita-Takesaki Theory</a> for the full mathematical framework.
+            </p>
+        </section>
+
+        <!-- Learning Resources -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(255, 126, 182, 0.05), rgba(139, 127, 255, 0.05)); border-left: 4px solid #ff7eb6;">
+            <h2>Learning Resources</h2>
+
+            <h3>YouTube Video Explanations</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card">
+                    <h4>The Unruh Effect - PBS Space Time</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Accessible introduction to why accelerated observers see temperature in the vacuum.
+                    </p>
+                    <a href="https://www.youtube.com/results?search_query=PBS+space+time+Unruh+effect" target="_blank" class="resource-link">
+                        Search on YouTube &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">Introductory</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Hawking Radiation and Unruh Effect - Leonard Susskind</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Expert lectures connecting black hole physics to accelerated observers.
+                    </p>
+                    <a href="https://www.youtube.com/results?search_query=Leonard+Susskind+Unruh+Hawking" target="_blank" class="resource-link">
+                        Search Lectures &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">Advanced</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Rindler Coordinates and Horizons</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Technical lectures on coordinate systems for accelerated observers.
+                    </p>
+                    <a href="https://www.youtube.com/results?search_query=Rindler+coordinates+horizon+QFT" target="_blank" class="resource-link">
+                        Search Videos &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">Graduate</span>
+                </div>
+
+                <div class="resource-card">
+                    <h4>Quantum Fields in Curved Spacetime</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0;">
+                        Comprehensive treatment of particle creation in non-inertial frames.
+                    </p>
+                    <a href="https://www.youtube.com/results?search_query=quantum+field+theory+curved+spacetime+lectures" target="_blank" class="resource-link">
+                        Search Courses &rarr;
+                    </a>
+                    <span class="foundation-badge" style="background: rgba(255, 0, 0, 0.1); color: #ff0000; margin-top: 0.5rem;">Research</span>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 2.5rem;">Articles & Textbooks</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>Wikipedia:</strong>
+                    <a href="https://en.wikipedia.org/wiki/Unruh_effect" target="_blank" style="color: var(--accent-primary);">Unruh Effect</a> |
+                    <a href="https://en.wikipedia.org/wiki/Rindler_coordinates" target="_blank" style="color: var(--accent-primary);">Rindler Coordinates</a> |
+                    <a href="https://en.wikipedia.org/wiki/Hawking_radiation" target="_blank" style="color: var(--accent-primary);">Hawking Radiation</a>
+                </li>
+                <li>
+                    <strong>Original Paper:</strong>
+                    Unruh, W.G. "Notes on black-hole evaporation" (1976)
+                    <a href="https://journals.aps.org/prd/abstract/10.1103/PhysRevD.14.870" target="_blank" style="color: var(--accent-primary);">[Phys. Rev. D]</a>
+                </li>
+                <li>
+                    <strong>Textbook (Graduate Level):</strong>
+                    "Quantum Fields in Curved Space" by N.D. Birrell and P.C.W. Davies
+                    <a href="https://www.cambridge.org/core/books/quantum-fields-in-curved-space/" target="_blank" style="color: var(--accent-primary);">[Cambridge University Press]</a>
+                </li>
+                <li>
+                    <strong>Review Article:</strong>
+                    Crispino, L.C.B., Higuchi, A., & Matsas, G.E.A. "The Unruh effect and its applications" (2008)
+                    <a href="https://arxiv.org/abs/0710.5373" target="_blank" style="color: var(--accent-primary);">[arXiv:0710.5373]</a>
+                </li>
+                <li>
+                    <strong>Pedagogical Introduction:</strong>
+                    "The Unruh Effect for Pedestrians" by Roberto Balbinot and Alessandro Fabbri
+                    <a href="https://arxiv.org/abs/gr-qc/0501080" target="_blank" style="color: var(--accent-primary);">[arXiv:gr-qc/0501080]</a>
+                </li>
+                <li>
+                    <strong>Modern Perspective:</strong>
+                    "Introductory Lectures on Quantum Field Theory in Curved Spacetime" by Bernard S. Kay
+                    <a href="https://arxiv.org/abs/0811.0893" target="_blank" style="color: var(--accent-primary);">[arXiv:0811.0893]</a>
+                </li>
+            </ul>
+
+            <h3 style="margin-top: 2.5rem;">Interactive Resources</h3>
+            <ul style="color: var(--text-secondary); line-height: 2.5; margin-left: 1.5rem;">
+                <li>
+                    <strong>nLab Entry:</strong>
+                    <a href="https://ncatlab.org/nlab/show/Unruh+effect" target="_blank" style="color: var(--accent-primary);">Mathematical treatment of the Unruh effect</a>
+                </li>
+                <li>
+                    <strong>Scholarpedia:</strong>
+                    <a href="http://www.scholarpedia.org/article/Unruh_effect" target="_blank" style="color: var(--accent-primary);">Comprehensive encyclopedia article on the Unruh effect</a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Terms Glossary -->
+        <section class="subsection">
+            <h2>Key Terms & Concepts</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                <div class="term-card">
+                    <h4>Rindler Coordinates</h4>
+                    <p>Coordinate system adapted to uniformly accelerated observers in Minkowski space. Reveal the Rindler horizon and thermal properties of the vacuum.</p>
+                    <a href="https://en.wikipedia.org/wiki/Rindler_coordinates" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Proper Acceleration</h4>
+                    <p>Acceleration measured in an observer's instantaneous rest frame. Invariant quantity that determines the Unruh temperature.</p>
+                    <a href="https://en.wikipedia.org/wiki/Proper_acceleration" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Bogoliubov Transformation</h4>
+                    <p>Mathematical transformation relating particle modes as seen by different observers. Explains why vacuum for one observer is thermal for another.</p>
+                    <a href="https://en.wikipedia.org/wiki/Bogoliubov_transformation" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Event Horizon</h4>
+                    <p>Boundary in spacetime beyond which events cannot affect a given observer. Both black holes and accelerated observers have event horizons.</p>
+                    <a href="https://en.wikipedia.org/wiki/Event_horizon" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Thermal Spectrum</h4>
+                    <p>Planck distribution of radiation characteristic of thermal equilibrium. The Unruh effect produces a perfect thermal (blackbody) spectrum.</p>
+                    <a href="https://en.wikipedia.org/wiki/Thermal_radiation" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+                <div class="term-card">
+                    <h4>Observer-Dependent Particle Content</h4>
+                    <p>The number and type of particles detected depends on the observer's state of motion. No absolute notion of "particle" in QFT.</p>
+                    <a href="https://en.wikipedia.org/wiki/Quantum_field_theory_in_curved_spacetime" target="_blank" class="term-link">Learn more &rarr;</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Connection to PM -->
+        <section class="subsection">
+            <h2>Connection to Principia Metaphysica</h2>
+            <p>
+                The Unruh effect plays a foundational role in the thermal and observer-dependent aspects of the Principia Metaphysica framework:
+            </p>
+
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.08); border-left: 4px solid #ff7eb6; margin-top: 1.5rem;">
+                <h4 style="color: #ff7eb6;">1. Observer-Dependent Temperature in PM</h4>
+                <p style="color: var(--text-secondary);">
+                    In the Principia Metaphysica, temperature is not a universal property but emerges from the observer's relationship to the Pneuma field state:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Thermal time hypothesis:</strong> Different observers experience different thermal times (modular flows)</li>
+                    <li><strong>Dimensional acceleration:</strong> Observers at different dimensional levels see different effective temperatures</li>
+                    <li><strong>CMB as Unruh radiation:</strong> Cosmic microwave background as relic thermal radiation from dimensional compactification</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(139, 127, 255, 0.08); border-left: 4px solid #8b7fff; margin-top: 1.5rem;">
+                <h4 style="color: #8b7fff;">2. Horizons and Dimensional Reduction</h4>
+                <p style="color: var(--text-secondary);">
+                    The <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 6D → 4D dimensional cascade creates effective horizons at each stage:
+                </p>
+                <div class="equation-box" style="margin-top: 1rem;">
+                    T<sub>eff</sub>(n) ∝ a<sub>eff</sub>(n) = ∂<sub>t</sub>(dimensional scale)
+                    <span class="equation-label">Effective Unruh temperature from dimensional compactification</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    Each dimensional transition induces an effective "acceleration" in the compactified dimensions, generating thermal radiation.
+                </p>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(79, 172, 254, 0.08); border-left: 4px solid #4facfe; margin-top: 1.5rem;">
+                <h4 style="color: #4facfe;">3. Entanglement Across Horizons</h4>
+                <p style="color: var(--text-secondary);">
+                    The Unruh effect demonstrates that horizons create entanglement and thermal states:
+                </p>
+                <ul style="color: var(--text-secondary); margin-left: 1.5rem; line-height: 1.8; margin-top: 0.75rem;">
+                    <li><strong>Vacuum entanglement:</strong> The Minkowski vacuum is maximally entangled across the Rindler horizon</li>
+                    <li><strong>Entropy from horizons:</strong> S = A/(4G) relates horizon area to entanglement entropy</li>
+                    <li><strong>PM holography:</strong> Bulk-boundary entanglement structure mirrors Unruh effect across dimensional boundaries</li>
+                </ul>
+            </div>
+
+            <div class="highlight-box" style="background: rgba(81, 207, 102, 0.08); border-left: 4px solid #51cf66; margin-top: 1.5rem;">
+                <h4 style="color: #51cf66;">4. Connection to KMS States and Modular Flow</h4>
+                <p style="color: var(--text-secondary);">
+                    The Unruh temperature arises from the KMS condition for the Rindler modular automorphism:
+                </p>
+                <div class="equation-box" style="margin-top: 1rem;">
+                    β<sub>U</sub> = 2πc/a = 1/(k<sub>B</sub>T<sub>U</sub>)
+                    <span class="equation-label">Inverse Unruh temperature from modular flow period</span>
+                </div>
+                <p style="color: var(--text-secondary); margin-top: 1rem;">
+                    This connects directly to the thermal time hypothesis and Tomita-Takesaki theory used throughout PM.
+                </p>
+            </div>
+
+            <p style="margin-top: 1.5rem;">
+                See also:
+                <a href="kms-condition.html" style="color: var(--accent-primary);">KMS Condition</a> |
+                <a href="tomita-takesaki.html" style="color: var(--accent-primary);">Tomita-Takesaki Theory</a> |
+                <a href="../Pages/sections.html#thermal-time" style="color: var(--accent-primary);">Thermal Time Section</a>
+            </p>
+        </section>
+
+        <!-- Advanced Topics -->
+        <section class="subsection" style="background: rgba(79, 172, 254, 0.05); border-left: 4px solid #4facfe;">
+            <h2>Advanced Topics</h2>
+
+            <h3>1. Mathematical Derivation via Path Integral</h3>
+            <p>
+                The Unruh effect can be derived by computing the vacuum two-point function in Rindler coordinates:
+            </p>
+            <div class="equation-box">
+                ⟨0<sub>M</sub>|φ(η, ρ) φ(η', ρ')|0<sub>M</sub>⟩ = (constant) × 1/sinh²[πa(η - η' - iε)/(2πc)]
+                <span class="equation-label">Periodic in imaginary time with period β = 2πc/a</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                This periodicity is characteristic of thermal Green's functions at temperature T = ℏa/(2πck<sub>B</sub>).
+            </p>
+
+            <h3 style="margin-top: 2rem;">2. Experimental Detection Challenges</h3>
+            <p>
+                Direct detection of the Unruh effect is extremely challenging:
+            </p>
+            <ul style="color: var(--text-secondary); line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Tiny temperature:</strong> Even at a = 10²⁰ m/s² (near theoretical maximum), T<sub>U</sub> ≈ 400 K</li>
+                <li><strong>Earth's gravity:</strong> At a = 9.8 m/s², T<sub>U</sub> ≈ 4 × 10⁻²⁰ K (far below CMB)</li>
+                <li><strong>Proposed experiments:</strong> Using circular accelerators, cavities, or analog systems</li>
+                <li><strong>Analog systems:</strong> BEC condensates, optical systems, water waves may show analogous effects</li>
+            </ul>
+
+            <h3 style="margin-top: 2rem;">3. Relation to Black Hole Information Paradox</h3>
+            <p>
+                The Unruh effect provides insight into the black hole information paradox:
+            </p>
+            <div class="highlight-box" style="background: rgba(255, 126, 182, 0.1); border-left: 4px solid #ff7eb6; margin-top: 1rem;">
+                <h4 style="color: #ff7eb6;">Entanglement and Information</h4>
+                <p style="color: var(--text-secondary);">
+                    Just as the Minkowski vacuum appears mixed (thermal) to a Rindler observer due to tracing out the inaccessible region,
+                    Hawking radiation appears thermal because we trace out the black hole interior. The full quantum state remains pure,
+                    but information is hidden behind the horizon.
+                </p>
+            </div>
+
+            <h3 style="margin-top: 2rem;">4. Unruh Effect in Higher Dimensions</h3>
+            <p>
+                In d spatial dimensions, the Unruh temperature generalizes to:
+            </p>
+            <div class="equation-box">
+                T<sub>U</sub>(d) = ℏa / [2πck<sub>B</sub> × f(d)]
+                <span class="equation-label">Dimensional correction factor f(d) depends on field statistics and boundary conditions</span>
+            </div>
+            <p style="margin-top: 1rem;">
+                This is relevant for the PM framework's dimensional reduction from <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D to 4D.
+            </p>
+        </section>
+
+        <!-- Problem Sets -->
+        <section class="subsection" style="background: rgba(255, 126, 182, 0.05); border-left: 4px solid #ff7eb6;">
+            <h2>Practice Problems</h2>
+            <p>Test your understanding with these exercises:</p>
+
+            <div class="problem-card">
+                <h4>Problem 1: Unruh Temperature Calculation</h4>
+                <p>
+                    Calculate the Unruh temperature for: (a) an observer at Earth's surface (a = 9.8 m/s²),
+                    (b) an electron in a synchrotron with centripetal acceleration a = 10²³ m/s².
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Use T = ℏa/(2πck<sub>B</sub>). (a) T ≈ 4 × 10⁻²⁰ K (unobservable).
+                        (b) T ≈ 40 K (potentially observable, but still challenging).
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 2: Rindler Horizon Distance</h4>
+                <p>
+                    For an observer with acceleration a = 10 m/s², calculate the distance to their Rindler horizon.
+                    How does this compare to astronomical distances?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        Distance = c²/a ≈ (3 × 10⁸)²/10 = 9 × 10¹⁵ m ≈ 1 light-year.
+                        Comparable to distance to nearest stars!
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 3: Equivalence with Hawking Temperature</h4>
+                <p>
+                    Show that for a black hole, the surface gravity κ = c⁴/(4GM) gives the same form of temperature
+                    as the Unruh effect: T<sub>H</sub> = ℏκ/(2πck<sub>B</sub>).
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Hint</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        The surface gravity κ plays the role of acceleration a. Both horizons (Rindler and Schwarzschild)
+                        have the same geometric structure locally.
+                    </p>
+                </details>
+            </div>
+
+            <div class="problem-card">
+                <h4>Problem 4: Periodicity in Imaginary Time</h4>
+                <p>
+                    Verify that the inverse Unruh temperature β<sub>U</sub> = 2πc/a has units of time.
+                    What is this period for a = 10²⁰ m/s²?
+                </p>
+                <details style="margin-top: 0.75rem;">
+                    <summary style="cursor: pointer; color: var(--accent-primary); font-weight: 600;">Solution</summary>
+                    <p style="margin-top: 0.5rem; color: var(--text-secondary);">
+                        [β] = [c/a] = (m/s)/(m/s²) = s ✓. For a = 10²⁰ m/s²: β ≈ 2π × 3 × 10⁸/10²⁰ ≈ 2 × 10⁻¹¹ s (~ 20 picoseconds).
+                    </p>
+                </details>
+            </div>
+        </section>
+
+        <!-- Navigation -->
+
+        <!-- Where This Is Used in PM -->
+        <section class="subsection" style="background: linear-gradient(135deg, rgba(139, 127, 255, 0.05), rgba(255, 126, 182, 0.05)); border: 2px solid rgba(139, 127, 255, 0.3);">
+            <h2 style="color: #8b7fff;">Where Unruh Effect Is Used in PM</h2>
+            <p>
+                This foundational physics appears in the following sections of Principia Metaphysica:
+            </p>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div class="resource-card" style="border-left: 4px solid #8b7fff;">
+                    <h4 style="color: #8b7fff;">Thermal Time</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Observer-dependent temperature and thermal time hypothesis
+                    </p>
+                    <a href="../Pages/sections.html#thermal-time" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #ff7eb6;">
+                    <h4 style="color: #ff7eb6;">Dimensional Reduction</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Effective horizons and thermal states from compactification
+                    </p>
+                    <a href="../sections.html#2" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+
+                <div class="resource-card" style="border-left: 4px solid #4facfe;">
+                    <h4 style="color: #4facfe;">Quantum Foundations</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin: 0.75rem 0;">
+                        Observer-dependent particle content and vacuum structure
+                    </p>
+                    <a href="../Pages/sections.html#thermal-time" class="resource-link" style="color: var(--accent-primary);">
+                        Read More &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="../Pages/sections.html#all" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #8b7fff, #ff7eb6); color: white; text-decoration: none; border-radius: 10px; font-weight: 700; font-size: 1.05rem;">
+                    Browse All Theory Sections &rarr;
+                </a>
+            </div>
+        </section>
+
+        <div class="nav-links" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-primary);">
+            <a href="../Pages/foundations.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(139, 127, 255, 0.1); border: 1px solid rgba(139, 127, 255, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                &larr; All Foundations
+            </a>
+            <a href="kms-condition.html" class="nav-link" style="display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.25rem; background: rgba(255, 126, 182, 0.1); border: 1px solid rgba(255, 126, 182, 0.3); border-radius: 10px; color: var(--text-primary); text-decoration: none; font-weight: 500;">
+                KMS Condition &rarr;
+            </a>
+        </div>
+    </main>
+
+        <footer>
+        <p>
+            <strong>Principia Metaphysica</strong><br>
+            &copy; 2025 Andrew Keith Watts. All rights reserved.
+        </p>
+    </footer>
+
+    <style>
+        .equation-hero {
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+            position: relative;
+        }
+        .equation-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #ff7eb6, #ffb84d);
+            border-radius: 20px 20px 0 0;
+        }
+        .main-equation {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            color: var(--text-primary);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            display: inline-block;
+        }
+        .subsection {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: 16px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-primary);
+        }
+        .subsection h2 {
+            background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-primary);
+        }
+        .subsection h3 {
+            color: var(--accent-primary);
+            font-size: 1.2rem;
+            margin: 1.5rem 0 0.75rem;
+        }
+        .subsection p {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        .equation-box {
+            background: rgba(139, 127, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+            text-align: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.15rem;
+        }
+        .equation-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.75rem;
+            font-family: 'Inter', sans-serif;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.1), rgba(79, 172, 254, 0.08));
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #51cf66;
+        }
+        .highlight-box h4 {
+            color: #51cf66;
+            margin-bottom: 0.75rem;
+        }
+        .highlight-box p {
+            margin: 0;
+        }
+        .resource-card {
+            background: var(--bg-card);
+            padding: 1.25rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-primary);
+        }
+        .resource-card h4 {
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+        .resource-link {
+            display: inline-block;
+            margin-top: 0.75rem;
+            color: var(--accent-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .resource-link:hover {
+            text-decoration: underline;
+        }
+        .term-card {
+            background: rgba(139, 127, 255, 0.05);
+            padding: 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(139, 127, 255, 0.2);
+        }
+        .term-card h4 {
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        .term-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        .term-link {
+            display: inline-block;
+            margin-top: 0.5rem;
+            color: var(--accent-secondary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        .term-link:hover {
+            text-decoration: underline;
+        }
+        .problem-card {
+            background: rgba(79, 172, 254, 0.08);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            border: 1px solid rgba(79, 172, 254, 0.2);
+        }
+        .problem-card h4 {
+            color: #4facfe;
+            margin-bottom: 0.75rem;
+        }
+        .problem-card p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+    </style>
+    </div>
+
+    <script type="module">
+        
+        </script>
+</body>
+</html>

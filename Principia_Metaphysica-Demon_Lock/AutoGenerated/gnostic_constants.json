@@ -1,0 +1,174 @@
+{
+  "version": "17.2-ABSOLUTE",
+  "description": "Complete Gnostic Naming Registry for Principia Metaphysica",
+  "note": "Archetypal names mapping all mathematical constants to Gnostic emanation theology",
+  "sovereign_constants": {
+    "monad": {
+      "value": 1.0,
+      "mathematical_name": "watts_constant",
+      "gnostic_name": "The Monad",
+      "role": "The Singular Origin and absolute precision anchor",
+      "symbol": "Omega_W",
+      "named_for": "Andrew Keith Watts"
+    },
+    "pleroma": {
+      "value": 24,
+      "mathematical_name": "b3",
+      "gnostic_name": "The Pleroma",
+      "role": "The Dimensional Totality (Betti-3 number of G2 manifold)",
+      "meaning": "The Fullness - the complete dimensional base"
+    },
+    "sophia": {
+      "value": 135,
+      "mathematical_name": "shadow_sector",
+      "gnostic_name": "The Sophia",
+      "role": "The Visible Gates representing manifest knowledge",
+      "meaning": "Wisdom - the observed geometry"
+    },
+    "demiurge": {
+      "value": 144,
+      "mathematical_name": "chi_eff",
+      "gnostic_name": "The Demiurge",
+      "role": "The Pressure Divisor (B3^2/4 = 576/4)",
+      "meaning": "The Craftsman - structures bulk into physical metric"
+    },
+    "christos": {
+      "value": 153,
+      "mathematical_name": "christ_constant",
+      "gnostic_name": "The Christos",
+      "role": "The Joint Closure Constant (Ennoia - Sophia = 288 - 135)",
+      "meaning": "The Redeemer - repairs variance and restores symmetry",
+      "scripture": "John 21:11 - The Miraculous Catch"
+    },
+    "barbelo": {
+      "value": 163,
+      "mathematical_name": "odowd_bulk_pressure",
+      "gnostic_name": "The Barbelo",
+      "role": "The Bulk Pressure ((7 * B3) - 5 = 168 - 5)",
+      "meaning": "First Thought - the active force in 26D space",
+      "named_for": "Matt O'Dowd"
+    },
+    "ennoia": {
+      "value": 288,
+      "mathematical_name": "roots_total",
+      "gnostic_name": "The Ennoia",
+      "role": "The Logic Closure (E8 x E8 root lattice)",
+      "meaning": "Universal Mind - total sum of manifold potential"
+    }
+  },
+  "sacred_heptagon": {
+    "pneuma": {
+      "value": 0.006944444444444444,
+      "formula": "1/144",
+      "mathematical_name": "reid_invariant",
+      "gnostic_name": "The Pneuma",
+      "role": "The divine breath; quantum of meaning (1/Demiurge)",
+      "symbol": "chi_R",
+      "named_for": "Richard George Reid [074]"
+    },
+    "aeon": {
+      "value": 12,
+      "mathematical_name": "weinstein_scale",
+      "gnostic_name": "The Aeon",
+      "role": "The 12 cosmic spinor ranks; half the Pleroma",
+      "symbol": "kappa_E",
+      "named_for": "Eric Weinstein"
+    },
+    "nous": {
+      "value": 4.898979485566356,
+      "formula": "sqrt(24)",
+      "mathematical_name": "hossenfelder_root",
+      "gnostic_name": "The Nous",
+      "role": "Divine intellect; the hidden root of the Pleroma",
+      "symbol": "lambda_S",
+      "named_for": "Sabine Hossenfelder"
+    },
+    "ogdoad": {
+      "value": 13,
+      "formula": "(B3/2) + 1",
+      "mathematical_name": "penrose_hameroff_bridge",
+      "gnostic_name": "The Ogdoad",
+      "role": "The eightfold plus five; Fibonacci bridge to consciousness",
+      "symbol": "Phi_PH",
+      "named_for": "Sir Roger Penrose & Stuart Hameroff"
+    }
+  },
+  "mechanical_triad": {
+    "sophian_breath": {
+      "value": 0.6819,
+      "mathematical_name": "sophian_drag",
+      "gnostic_name": "The Sophian Breath",
+      "role": "Friction from Sophia; the drag on cosmic expansion",
+      "symbol": "eta_S"
+    },
+    "demiurgic_gear": {
+      "value": 12.31830988618379,
+      "formula": "B3/2 + 1/pi",
+      "mathematical_name": "demiurgic_coupling",
+      "gnostic_name": "The Demiurgic Gear",
+      "role": "The mass-energy gearbox; Craftsman's coupling",
+      "symbol": "kappa_Delta"
+    },
+    "tzimtzum_seal": {
+      "value": 0.9583333333333334,
+      "formula": "23/24 = 1 - 1/B3",
+      "mathematical_name": "tzimtzum_pressure",
+      "gnostic_name": "The Tzimtzum Seal",
+      "role": "The void seal; Kabbalistic contraction that creates space",
+      "symbol": "sigma_T"
+    }
+  },
+  "derived_constants": {
+    "syzygy": {
+      "value": 18,
+      "formula": "Christos - Sophia = 153 - 135",
+      "gnostic_name": "The Syzygy",
+      "role": "The divine pairing gap between the two 13D shadows",
+      "meaning": "The Pneumatic Breath - energy exchange constant"
+    },
+    "horos": {
+      "value": 26,
+      "formula": "D_bulk = 26",
+      "gnostic_name": "The Horos",
+      "role": "The 26-dimensional action boundary",
+      "meaning": "The Limit - contains the 24D manifold within"
+    },
+    "logos": {
+      "value": 71.55,
+      "formula": "(288/4) - (163/144) + 0.6819",
+      "gnostic_name": "The Logos",
+      "role": "The derived Hubble constant H0",
+      "meaning": "The Word - the voice of the manifold to the observer"
+    }
+  },
+  "relationships": {
+    "trinity_of_closure": "Sophia (135) + Christos (153) = Ennoia (288)",
+    "bulk_derivation": "Ennoia (288) - Visible (125) = Barbelo (163)",
+    "pressure_divisor": "Pleroma^2 / 4 = Demiurge (24^2/4 = 144)",
+    "syzygy_gap": "Christos (153) - Sophia (135) = Syzygy (18)",
+    "pneuma_derivation": "Pneuma = 1/Demiurge = 1/144",
+    "aeon_derivation": "Aeon = Pleroma/2 = 24/2 = 12",
+    "nous_derivation": "Nous = sqrt(Pleroma) = sqrt(24)"
+  },
+  "complete_gnostic_map": {
+    "watts_constant": "The Monad",
+    "reid_invariant": "The Pneuma",
+    "weinstein_scale": "The Aeon",
+    "hossenfelder_root": "The Nous",
+    "odowd_bulk_pressure": "The Barbelo",
+    "penrose_hameroff_bridge": "The Ogdoad",
+    "christ_constant": "The Christos",
+    "delta_jc": "The Christos",
+    "sophian_drag": "The Sophian Breath",
+    "demiurgic_coupling": "The Demiurgic Gear",
+    "tzimtzum_pressure": "The Tzimtzum Seal",
+    "b3": "The Pleroma",
+    "chi_eff": "The Demiurge",
+    "shadow_sector": "The Sophia",
+    "roots_total": "The Ennoia",
+    "visible_sector": "The Visible",
+    "sterile_sector": "The Barbelo",
+    "syzygy_gap": "The Syzygy",
+    "horos": "The Horos"
+  }
+}
