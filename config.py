@@ -1,4 +1,18 @@
 #!/usr/bin/env python3
+
+# ===========================================================================
+# GNOSTIC CONSTANT MAPPING (v17.2-ABSOLUTE)
+# ===========================================================================
+# The 7 Sovereign Constants with their Gnostic identities:
+#   MONAD (1.0)     = watts_constant    - The Singular Origin
+#   PLEROMA (24)    = B3                - The Dimensional Fullness
+#   SOPHIA (135)    = shadow_sector     - Wisdom / Visible Gates
+#   DEMIURGE (144)  = chi_eff           - The Craftsman / Pressure Divisor
+#   CHRISTOS (153)  = christ_constant   - The Redeemer / Joint Closure
+#   BARBELO (163)   = sterile_sector    - First Thought / Bulk Pressure
+#   ENNOIA (288)    = roots_total       - Universal Mind / Logic Closure
+# ===========================================================================
+
 """
 config.py - Single Source of Truth for Principia Metaphysica Framework
 

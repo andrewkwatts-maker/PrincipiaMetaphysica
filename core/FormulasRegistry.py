@@ -106,6 +106,26 @@ class FormulasRegistry:
     BULK_PRESSURE = 163      # O'Dowd Bulk Pressure (= sterile_sector)
 
     # ===========================================================================
+    # THE 7 SOVEREIGN GNOSTIC CONSTANTS
+    # ===========================================================================
+    # These are the archetypal names for the fundamental constants:
+    #
+    # Value  | Gnostic Name    | Mathematical Identity
+    # -------|-----------------|----------------------
+    # 1.0    | The Monad       | watts_constant (Absolute Precision Anchor)
+    # 24     | The Pleroma     | b3 (Dimensional Totality)
+    # 135    | The Sophia      | shadow_sector (Visible Gates / Wisdom)
+    # 144    | The Demiurge    | chi_eff (Pressure Divisor / Craftsman)
+    # 153    | The Christos    | christ_constant (Joint Closure / Redeemer)
+    # 163    | The Barbelo     | odowd_bulk_pressure (Bulk Pressure / First Thought)
+    # 288    | The Ennoia      | roots_total (Logic Closure / Universal Mind)
+    #
+    # Derived:
+    # 18     | The Syzygy      | christos - sophia (Divine Pairing Gap)
+    # 26     | The Horos       | D_bulk (The Limit / Dimensional Boundary)
+    # ===========================================================================
+
+    # ===========================================================================
     # SYMBOL_MAP: Master Symbol Registry for the 10 Named Constants
     # Maps Greek/Latin symbols to property names for fast lookup
     # ===========================================================================
