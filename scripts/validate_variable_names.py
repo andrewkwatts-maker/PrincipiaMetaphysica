@@ -84,16 +84,22 @@ CONSUMER_DEPRECATED_PATTERNS = [
 
 # Files that define SSoT values (exclude from deprecated checks)
 SSOT_SOURCE_FILES = {
+    # Core SSoT generators
+    'FormulasRegistry.py',
     'generate_72_certificates.py',
     'generate_statistics.py',
+    'zenodo_pack_v16.py',
+    # Validation/verification scripts
     'rigorous_validator_v16_1.py',
+    'verify_sterility_report.py',
+    'validate_variable_names.py',
+    # Legacy bridges and derivations
     'legacy_bridge.py',
     'root_derivation.py',
-    'FormulasRegistry.py',
-    'validate_variable_names.py',
-    'verify_sterility_report.py',
     'add_gnostic_naming.py',
+    # Config/manifest files
     'MANIFEST.json',
+    'config.py',
 }
 
 # Valid parameter paths in the SSoT
