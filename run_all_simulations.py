@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Principia Metaphysica - Run All Simulations v16.2
+Principia Metaphysica - Run All Simulations v17.2
 ===================================================
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -242,8 +242,9 @@ except ImportError:
     STERILITY_AUDIT_AVAILABLE = False
 
 # Import v16 simulations
-# Phase 0 - Introduction (narrative only, no dependencies)
+# Phase 0 - Abstract and Introduction (narrative only, no dependencies)
 from simulations.v16.introduction.introduction_v16_0 import IntroductionV16
+from simulations.v16.introduction.abstract_v17_2 import AbstractV17_2
 
 # Phase 1 - Root simulations (no dependencies)
 from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
@@ -663,6 +664,7 @@ class SimulationRunner:
         # Define simulation phases in topological order
         self.phases = {
             0: [
+                AbstractV17_2(),  # Section 0: Abstract
                 IntroductionV16(),
             ],
             1: [
@@ -1434,11 +1436,11 @@ class SimulationRunner:
 
         output_data = {
             "metadata": {
-                "version": "16.2",
+                "version": "17.2",
                 "doi": "10.5281/zenodo.18079602",
                 "model_type": "STERILE",
                 "timestamp": datetime.now().isoformat(),
-                "description": "Principia Metaphysica v16.2 - Sterile Geometric Framework",
+                "description": "Principia Metaphysica v17.2 - Sterile Geometric Framework",
                 "schemaMode": self.schema_mode,
                 "uqMode": self.uq_mode,
                 "git": git_metadata,
@@ -1447,7 +1449,7 @@ class SimulationRunner:
                 "compute_time_ms": validation_report["total_execution_time_ms"],
             },
             "derivation_logic": {
-                "framework": "Principia Metaphysica v16.2 - Sterile G2 Residue Model",
+                "framework": "Principia Metaphysica v17.2 - Sterile G2 Residue Model",
                 "base_manifold": "TCS G2 (Twisted Connected Sum)",
                 "topology_id": "TCS #187",
                 "key_assumptions": [
@@ -1545,7 +1547,7 @@ class SimulationRunner:
 
         simulations_dir = Path(__file__).parent / "simulations" / "v16"
         index_data = {
-            "version": data.get('metadata', {}).get('version', '16.2'),
+            "version": data.get('metadata', {}).get('version', '17.2'),
             "generated": datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             "total_scripts": 0,
             "categories": {}

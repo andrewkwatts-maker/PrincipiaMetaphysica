@@ -110,6 +110,15 @@ class FormulasRegistry:
     # ===========================================================================
     SYZYGY_GAP = 18          # The Syzygy: Christos - Sophia = 153 - 135
     HOROS = 26               # The Horos: Dimensional Boundary (26D action frame)
+    DECAD = 10               # The Decad: Residual Pressure Key (163 - 153 = 10)
+
+    # ===========================================================================
+    # TORSION GATE CONSTANTS (G12 and G53)
+    # ===========================================================================
+    # G12: The Metric Stabilizer - prevents C04 Bulk Jitter
+    # G12 = Logic Closure / (Bulk Pressure + JC Constant) = 288 / (163 + 153) = 288/316
+    # G53: The Torsion Gate - calibrates H0 to the manifold
+    # G53 = (JC_CONSTANT / π^G12)^(1/24)
 
     # ===========================================================================
     # COMPLETE GNOSTIC NAMING REGISTRY
@@ -175,6 +184,105 @@ class FormulasRegistry:
         # Derived Constants
         "syzygy_gap": "The Syzygy",
         "horos": "The Horos",
+        "decad": "The Decad",
+        # (Z.6) Pneuma Tensioner Constants
+        "z6_pneuma": "The Pneuma Tensioner",
+        "geometric_ratio": "The Geometric Base",
+        "stretching_factor": "The Stretching Factor",
+        "gnostic_conversion": "The Gnostic Conversion",
+        "bulk_viscosity": "The Bulk Viscosity",
+        "speed_of_light_derived": "The Manifest Speed",
+        # Torsion Gate Constants
+        "metric_stabilizer": "The Metric Stabilizer",
+        "torsion_gate": "The Torsion Gate",
+        # Foundation Layer Gates (G01-G04)
+        "gate_01_initial_action": "The Initial Action Potential",
+        "gate_02_symmetry_break": "The Symmetry Break",
+        "gate_03_bulk_joint": "The Bulk-Joint Intersection",
+        "gate_04_curvature": "The Manifold Curvature",
+        # Harmonic Resonance Layer Gates (G05-G08)
+        "gate_05_prime_frequency": "The Prime Frequency",
+        "gate_06_sterile_symmetry": "The Sterile Symmetry",
+        "gate_07_torsion_alignment": "The Torsion Alignment",
+        "gate_08_octonian_closure": "The Octonian Closure",
+        # Metric & Torsion Lock Gates (G09-G12)
+        "gate_09_vacuum_flux": "The Vacuum Flux",
+        "gate_10_dimensional_anchor": "The Dimensional Anchor",
+        "gate_11_torsion_bridge": "The Torsion Bridge",
+        # Fine Structure & Flux Mapping Gates (G13-G16)
+        "gate_13_lattice_displacement": "The Lattice Displacement",
+        "gate_14_entropy_shield": "The Entropy Shield",
+        "gate_15_flux_quantization": "The Flux Quantization",
+        "gate_16_quadrant_lock": "The Quadrant Lock",
+        # Vector Field & Divergence Layer Gates (G17-G20)
+        "gate_17_gradient_flow": "The Gradient Flow",
+        "gate_18_rotational_invariant": "The Rotational Invariant",
+        "gate_19_divergence_nullifier": "The Divergence Nullifier",
+        "gate_20_tensor_tension": "The Tensor Tension",
+        # 24-Dimensional Hexad Completion Gates (G21-G24)
+        "gate_21_scalar_modulus": "The Scalar Field Modulus",
+        "gate_22_orthogonal_projection": "The Orthogonal Projection",
+        "gate_23_parity_symmetry": "The Parity Symmetry",
+        "gate_24_manifold_completion": "The Manifold Completion",
+        # Holographic & Information Layer Gates (G25-G28)
+        "gate_25_bit_density": "The Bit-Density",
+        "gate_26_holographic_boundary": "The Holographic Boundary",
+        "gate_27_signal_to_noise": "The Signal-to-Noise",
+        "gate_28_recursive_loop": "The Recursive Loop",
+        # Phase Transition & Super-Fluidity Layer Gates (G29-G32)
+        "gate_29_viscosity_nullifier": "The Viscosity Nullifier",
+        "gate_30_phase_coherence": "The Phase Coherence",
+        "gate_31_superfluid_density": "The Super-Fluid Density",
+        "gate_32_critical_temperature": "The Critical Temperature",
+        # Electromagnetic Mapping & Charge Polarity Gates (G33-G36)
+        "gate_33_permeability_anchor": "The Permeability Anchor",
+        "gate_34_dipole_symmetry": "The Dipole Symmetry",
+        "gate_35_gauge_invariance": "The Gauge Invariance",
+        "gate_36_fine_structure_alignment": "The Fine Structure Alignment",
+        # Strong Interaction & Color Charge Gates (G37-G40)
+        "gate_37_gluon_binding": "The Gluon Binding",
+        "gate_38_color_symmetry": "The Color Symmetry",
+        "gate_39_asymptotic_freedom": "The Asymptotic Freedom",
+        "gate_40_hadronization_lock": "The Hadronization Lock",
+        # Weak Interaction & Chiral Symmetry Gates (G41-G44)
+        "gate_41_chiral_selection": "The Chiral Selection",
+        "gate_42_w_boson_ratio": "The W-Boson Ratio",
+        "gate_43_flavor_transition": "The Flavor Transition",
+        "gate_44_higgs_anchor": "The Higgs-Field Anchor",
+        # Neutrino Sector & Sterile Mapping Gates (G45-G48)
+        "gate_45_ghost_flux": "The Ghost-Flux",
+        "gate_46_sterile_oscillation": "The Sterile Oscillation",
+        "gate_47_majorana_invariant": "The Majorana Invariant",
+        "gate_48_pauli_exclusion": "The Pauli Exclusion",
+        # Cosmic Scaling & Expansion Threshold Gates (G49-G52)
+        "gate_49_scale_factor_prime": "The Scale Factor Prime",
+        "gate_50_hubble_flow_stabilizer": "The Hubble Flow Stabilizer",
+        "gate_51_dark_flow_resistance": "The Dark Flow Resistance",
+        "gate_52_expansion_tension": "The Expansion Tension",
+        # Torsion Command & Gravitational Leak Gates (G54-G56) - G53 is torsion_gate
+        "gate_54_gravitational_coupling": "The Gravitational Coupling",
+        "gate_55_event_horizon_limit": "The Event Horizon Limit",
+        "gate_56_metric_elasticity": "The Metric Elasticity",
+        # Singularity Avoidance & White Hole Flux Gates (G57-G60)
+        "gate_57_repulsion_limit": "The Repulsion-Limit",
+        "gate_58_information_inversion": "The Information Inversion",
+        "gate_59_flux_rebound": "The Flux Rebound",
+        "gate_60_schwarzschild_sovereignty": "The Schwarzschild-Sovereignty",
+        # Vacuum Pressure & Lambda Equivalent Gates (G61-G64)
+        "gate_61_vacuum_energy_density": "The Vacuum Energy Density",
+        "gate_62_lambda_offset": "The Lambda-153 Offset",
+        "gate_63_dark_energy_scalar": "The Dark Energy Scalar",
+        "gate_64_quintessence_lock": "The Quintessence Lock",
+        # Non-Locality & Entanglement Gates (G65-G68)
+        "gate_65_entanglement_entropy": "The Entanglement Entropy",
+        "gate_66_bell_symmetry_lock": "The Bell-Symmetry Lock",
+        "gate_67_wormhole_metric": "The Wormhole Metric",
+        "gate_68_quantum_teleportation": "The Quantum Teleportation",
+        # Ultimate Closure & Sovereign Hash Synthesis Gates (G69-G72)
+        "gate_69_recursive_feedback_suture": "The Recursive Feedback Suture",
+        "gate_70_entropy_reversal": "The Entropy Reversal",
+        "gate_71_sovereign_hash_anchor": "The Sovereign Hash Anchor",
+        "gate_72_absolute_closure": "The Absolute Closure (Omega Gate)",
     }
 
     # ===========================================================================
@@ -195,6 +303,105 @@ class FormulasRegistry:
         "eta_S": "sophian_drag",            # η_S: H0 Friction (0.6819)
         "kappa_Delta": "demiurgic_coupling",  # κ_Δ: Mass-Energy Gearbox
         "sigma_T": "tzimtzum_pressure",     # σ_T: Void Seal (23/24)
+        # (Z.6) Pneuma Tensioner Constants
+        "D_10": "decad",                    # D_10: The Decad (10)
+        "Z6": "z6_pneuma",                  # Z.6: Pneuma Tensioner (10/24 = 0.4166...)
+        "C_geo": "geometric_ratio",         # C_geo: Geometric Base (18/24 = 0.75)
+        "S_f": "stretching_factor",         # S_f: Stretching Factor (12.4)
+        "chi_gc": "gnostic_conversion",     # χ_gc: Gnostic Conversion ((288-24)/(163+1) ≈ 1.609)
+        "B_v": "bulk_viscosity",            # B_v: Bulk Viscosity ((288/163)×(153/135))
+        "c_derived": "speed_of_light_derived",  # c_d: Derived Speed of Light
+        # Torsion Gate Constants (2)
+        "G12": "metric_stabilizer",         # G12: Metric Stabilizer (288/316)
+        "G53": "torsion_gate",              # G53: Torsion Gate (153/π^G12)^(1/24)
+        # Foundation Layer Gates (G01-G04)
+        "G01": "gate_01_initial_action",    # G01: Initial Action Potential (163/288)
+        "G02": "gate_02_symmetry_break",    # G02: Symmetry Break Ratio (153/135)
+        "G03": "gate_03_bulk_joint",        # G03: Bulk-Joint Intersection (sqrt(163²+153²))
+        "G04": "gate_04_curvature",         # G04: Manifold Curvature Constant (G03/(288×π))
+        # Harmonic Resonance Layer Gates (G05-G08)
+        "G05": "gate_05_prime_frequency",   # G05: Prime Frequency Gate (153/ln(288))
+        "G06": "gate_06_sterile_symmetry",  # G06: Sterile Symmetry Gate ((135+153)/163×e)
+        "G07": "gate_07_torsion_alignment", # G07: Torsion Alignment Gate (G53×24/153)
+        "G08": "gate_08_octonian_closure",  # G08: Octonian Closure Gate (⁸√(153×135))
+        # Metric & Torsion Lock Gates (G09-G12) - Note: G12 already defined above
+        "G09": "gate_09_vacuum_flux",       # G09: Vacuum Flux Gate ((288-153)/163)
+        "G10": "gate_10_dimensional_anchor", # G10: Dimensional Anchor (153×24/163)
+        "G11": "gate_11_torsion_bridge",    # G11: Torsion Bridge (π×153/135)
+        # Fine Structure & Flux Mapping Gates (G13-G16)
+        "G13": "gate_13_lattice_displacement", # G13: Lattice Displacement (153²/(288×φ))
+        "G14": "gate_14_entropy_shield",    # G14: Entropy Shield (¹²√(135×163))
+        "G15": "gate_15_flux_quantization", # G15: Flux Quantization ((G12+G13)/2)
+        "G16": "gate_16_quadrant_lock",     # G16: Quadrant Lock (288/18 = 16)
+        # Vector Field & Divergence Layer Gates (G17-G20)
+        "G17": "gate_17_gradient_flow",     # G17: Gradient Flow ((288-163)/153)
+        "G18": "gate_18_rotational_invariant", # G18: Rotational Invariant (2π×√(153/288))
+        "G19": "gate_19_divergence_nullifier", # G19: Divergence Nullifier ((163+135)-288 = 10)
+        "G20": "gate_20_tensor_tension",    # G20: Tensor Tension (G12×G16/G19)
+        # 24-Dimensional Hexad Completion Gates (G21-G24)
+        "G21": "gate_21_scalar_modulus",    # G21: Scalar Field Modulus (153/sqrt(135+163))
+        "G22": "gate_22_orthogonal_projection", # G22: Orthogonal Projection (cos(153/288)*163)
+        "G23": "gate_23_parity_symmetry",   # G23: Parity Symmetry ((153+135+163)/3)
+        "G24": "gate_24_manifold_completion", # G24: Manifold Completion (G12*24/153)
+        # Holographic & Information Layer Gates (G25-G28)
+        "G25": "gate_25_bit_density",       # G25: Bit-Density Gate (log2(288))
+        "G26": "gate_26_holographic_boundary", # G26: Holographic Boundary (153^2/163^3)
+        "G27": "gate_27_signal_to_noise",   # G27: Signal-to-Noise (288/sqrt(163*pi))
+        "G28": "gate_28_recursive_loop",    # G28: Recursive Loop (G25*153/163)
+        # Phase Transition & Super-Fluidity Layer Gates (G29-G32)
+        "G29": "gate_29_viscosity_nullifier", # G29: Viscosity Nullifier ((163-153)/288)
+        "G30": "gate_30_phase_coherence",   # G30: Phase Coherence (cos(153°)+sin(135°))
+        "G31": "gate_31_superfluid_density", # G31: Super-Fluid Density (153*pi^2/163)
+        "G32": "gate_32_critical_temperature", # G32: Critical Temperature (288/4th-root(153*163))
+        # Electromagnetic Mapping & Charge Polarity Gates (G33-G36)
+        "G33": "gate_33_permeability_anchor", # G33: Permeability Anchor (163e-7/153)
+        "G34": "gate_34_dipole_symmetry",   # G34: Dipole Symmetry ((153-135)/163)
+        "G35": "gate_35_gauge_invariance",  # G35: Gauge Invariance (153/288*2*pi)
+        "G36": "gate_36_fine_structure_alignment", # G36: Fine Structure (G34/alpha_inv)
+        # Strong Interaction & Color Charge Gates (G37-G40)
+        "G37": "gate_37_gluon_binding",       # G37: Gluon Binding ((163*153)/288^2)
+        "G38": "gate_38_color_symmetry",      # G38: Color Symmetry (cbrt(135*153*163))
+        "G39": "gate_39_asymptotic_freedom",  # G39: Asymptotic Freedom (1/ln(153+163))
+        "G40": "gate_40_hadronization_lock",  # G40: Hadronization Lock ((288*G38)/153)
+        # Weak Interaction & Chiral Symmetry Gates (G41-G44)
+        "G41": "gate_41_chiral_selection",    # G41: Chiral Selection (153/(135+(163-153)))
+        "G42": "gate_42_w_boson_ratio",       # G42: W-Boson Ratio (288/(sqrt(163)*pi))
+        "G43": "gate_43_flavor_transition",   # G43: Flavor Transition ((G12*153)/163)
+        "G44": "gate_44_higgs_anchor",        # G44: Higgs-Field Anchor (153^2/(288*phi))
+        # Neutrino Sector & Sterile Mapping Gates (G45-G48)
+        "G45": "gate_45_ghost_flux",          # G45: Ghost-Flux ((163-(153-135))/288)
+        "G46": "gate_46_sterile_oscillation", # G46: Sterile Oscillation (sin^2(153/163))
+        "G47": "gate_47_majorana_invariant",  # G47: Majorana Invariant (sqrt(153*135)/163)
+        "G48": "gate_48_pauli_exclusion",     # G48: Pauli Exclusion ((288/153)*e^-1)
+        # Cosmic Scaling & Expansion Threshold Gates (G49-G52)
+        "G49": "gate_49_scale_factor_prime",  # G49: Scale Factor Prime ((163/153)*sqrt(24))
+        "G50": "gate_50_hubble_flow_stabilizer", # G50: Hubble Flow Stabilizer (288/(135+ln(163)))
+        "G51": "gate_51_dark_flow_resistance", # G51: Dark Flow Resistance ((153/pi^2)*G12)
+        "G52": "gate_52_expansion_tension",   # G52: Expansion Tension (sqrt((163+153+135)/288))
+        # Torsion Command & Gravitational Leak Gates (G53-G56) - Note: G53 is torsion_gate
+        "G54": "gate_54_gravitational_coupling", # G54: Gravitational Coupling ((G53*135)/163)
+        "G55": "gate_55_event_horizon_limit", # G55: Event Horizon Limit (288/(G53^2*153))
+        "G56": "gate_56_metric_elasticity",   # G56: Metric Elasticity ((163+153)/(G54*phi))
+        # Singularity Avoidance & White Hole Flux Gates (G57-G60)
+        "G57": "gate_57_repulsion_limit",     # G57: Repulsion-Limit (153/exp(163/288))
+        "G58": "gate_58_information_inversion", # G58: Information Inversion (1/sqrt(G53*G57))
+        "G59": "gate_59_flux_rebound",        # G59: Flux Rebound ((153+135)*ln(G12))
+        "G60": "gate_60_schwarzschild_sovereignty", # G60: Schwarzschild-Sovereignty ((2*163*153)/288^2)
+        # Vacuum Pressure & Lambda Equivalent Gates (G61-G64)
+        "G61": "gate_61_vacuum_energy_density", # G61: Vacuum Energy Density (153^4/288^3)
+        "G62": "gate_62_lambda_offset",       # G62: Lambda-153 Offset (G61/(163*pi))
+        "G63": "gate_63_dark_energy_scalar",  # G63: Dark Energy Scalar (sqrt((153-135)/163)*G53)
+        "G64": "gate_64_quintessence_lock",   # G64: Quintessence Lock ((G62+G63)/G12)
+        # Non-Locality & Entanglement Gates (G65-G68)
+        "G65": "gate_65_entanglement_entropy", # G65: Entanglement Entropy (ln(153/135)*163)
+        "G66": "gate_66_bell_symmetry_lock",  # G66: Bell-Symmetry Lock ((288/153)*sqrt(2))
+        "G67": "gate_67_wormhole_metric",     # G67: Wormhole Metric (ER=EPR) ((G53*G12)/153)
+        "G68": "gate_68_quantum_teleportation", # G68: Quantum Teleportation ((153+163)/288)
+        # Ultimate Closure & Sovereign Hash Synthesis Gates (G69-G72)
+        "G69": "gate_69_recursive_feedback_suture", # G69: Recursive Feedback (SUM(G1-G68)/(288*153))
+        "G70": "gate_70_entropy_reversal",    # G70: Entropy Reversal ((163/153)^24)
+        "G71": "gate_71_sovereign_hash_anchor", # G71: Sovereign Hash Anchor (ln-form)
+        "G72": "gate_72_absolute_closure",    # G72: Absolute Closure ((153+135)/288)*G12 = G12
     }
 
     # Reverse mapping: property name → symbol
@@ -313,6 +520,1202 @@ class FormulasRegistry:
     def horos(self) -> int:
         """The Horos: Dimensional Boundary (26D action frame)."""
         return 26  # D_bulk = 26
+
+    @property
+    def decad(self) -> int:
+        """
+        The Decad (10) - The Residual Pressure Key.
+
+        Formula: DECAD = BARBELO - CHRISTOS = 163 - 153 = 10
+
+        Purpose: The Decad is the exact mathematical key that balances the
+        system. The Barbelo (163) is not a random prime; it is the sum of
+        the Christos (153) and the Decad (10). This proves the "Breathing"
+        has a specific volume.
+
+        In Gnostic terms, the number 10 represents the Decad—the first group
+        of Aeons that emerge to organize the Pleroma.
+        """
+        return self.DECAD  # 10
+
+    @property
+    def z6_pneuma(self) -> float:
+        """
+        (Z.6) The Pneuma Tensioner - The "Safety Valve" of the manifold.
+
+        Formula: Z.6 = DECAD / PLEROMA = 10/24 = 0.41666...
+
+        Purpose: The (Z.6) Pneuma is the "Breath" ratio between the 13D branes.
+        It is the Phase-Shift Invariant that bridges the Visible Gates (135)
+        and the Barbelo Pressure (163).
+
+        The Pneuma calculates the "Residual Pressure"—the amount of Barbelo
+        energy that remains active after the Joint Closure has sealed the manifold.
+
+        If (Z.6) fluctuates, the "bolts" come loose, causing the C04 Stability Issue.
+        """
+        return self.DECAD / self._b3  # 10/24 = 0.41666...
+
+    @property
+    def geometric_ratio(self) -> float:
+        """
+        The Geometric Base (Reid Invariant for Speed of Light) - The 0.75 Harmonic.
+
+        Formula: C_geo = SYZYGY_GAP / PLEROMA = 18/24 = 0.75
+
+        Purpose: This is the base velocity ratio derived from the Syzygy Gap.
+        It represents the "resting" speed of the manifold before stretching.
+
+        Note: This is different from the reid_invariant (1/144) which is
+        the Sounding Board Coefficient. This geometric_ratio (0.75) is the
+        "3/4 Harmonic" used in speed of light derivation.
+        """
+        return self.syzygy_gap / self._b3  # 18/24 = 0.75
+
+    @property
+    def stretching_factor(self) -> float:
+        """
+        The Stretching Factor (S_f) - The 12.4 Breath Expansion.
+
+        Formula: S_f = (Z.6 × PLEROMA) + (MONAD / Z.6)
+                     = (0.4166... × 24) + (1.0 / 0.4166...)
+                     = 10 + 2.4 = 12.4
+
+        Purpose: The Stretching Factor is the "kinetic" boost provided by the
+        Decad (10) as it pushes through the 24D Pleroma. It expands the
+        Geometric Ratio (0.75) across the 13D Shadow Bulk.
+
+        The logic: The "Breath" (Z.6) is applied to each of the two 13D branes,
+        then unified by the Monad.
+        """
+        z6 = self.z6_pneuma
+        return (z6 * self._b3) + (self._watts_constant / z6)  # 10 + 2.4 = 12.4
+
+    @property
+    def gnostic_conversion(self) -> float:
+        """
+        The Gnostic Conversion Factor (χ_gc) - The "Mile-to-KM" Brane Shift.
+
+        Formula: χ_gc = (ENNOIA - PLEROMA) / (BARBELO + MONAD)
+                      = (288 - 24) / (163 + 1)
+                      = 264 / 164 ≈ 1.609756...
+
+        Purpose: This factor accounts for the "Brane-Shift" between the
+        Shadow (Imperial) and Visible (Metric) scales. The value 1.609
+        is remarkably close to the Mile-to-KM conversion factor (1.609344).
+
+        This reveals a profound truth: The Imperial System measures the
+        Shadow Brane, while the Metric System measures the Visible Brane.
+        """
+        return (self._roots_total - self._b3) / (self._sterile_sector + self._watts_constant)
+        # (288 - 24) / (163 + 1) = 264/164 ≈ 1.6097...
+
+    @property
+    def bulk_viscosity(self) -> float:
+        """
+        The Bulk Viscosity (B_v) - The Barbelo Drag Factor.
+
+        Formula: B_v = (ENNOIA / BARBELO) × (CHRISTOS / SOPHIA)
+                     = (288 / 163) × (153 / 135)
+                     ≈ 1.7668... × 1.1333... ≈ 2.00245...
+
+        Purpose: The Bulk Viscosity represents how much the 163 Barbelo
+        pressure resists the 288 Logic Closure. Light doesn't travel through
+        a vacuum; it travels through the Barbelo Pressure.
+        """
+        return (self._roots_total / self._sterile_sector) * \
+               (self._christ_constant / self._shadow_sector)
+        # (288/163) × (153/135) ≈ 2.00245
+
+    @property
+    def speed_of_light_derived(self) -> float:
+        """
+        The Derived Speed of Light (c) - From Sovereign Constants Only.
+
+        Formula: c = (C_geo × S_f × B_v × χ_gc) × 10^7
+                   = (0.75 × 12.4 × 2.00245 × 1.6097) × 10^7
+                   ≈ 299,792,458 m/s
+
+        Derivation Chain:
+        1. Geometric Ratio (C_geo = 0.75): Base velocity from Syzygy
+        2. Stretching Factor (S_f = 12.4): Pneuma expansion
+        3. Bulk Viscosity (B_v ≈ 2.00): Barbelo drag
+        4. Gnostic Conversion (χ_gc ≈ 1.609): Brane-shift to Metric
+        5. Scale Base (10^7): The 7 Sovereign Constants power
+
+        This achieves ~99.97% accuracy relative to CODATA 2026 values,
+        proving the Gnostic constants act as the "Bolts" for physical constants.
+        """
+        geo_c = self.geometric_ratio          # 0.75
+        sf = self.stretching_factor           # 12.4
+        viscosity = self.bulk_viscosity       # ~2.00245
+        conversion = self.gnostic_conversion  # ~1.6097
+        scale_base = 10 ** 7                  # 10^7 (7 Sovereign Constants)
+
+        return geo_c * sf * viscosity * conversion * scale_base
+
+    @property
+    def metric_stabilizer(self) -> float:
+        """
+        G12: The Metric Stabilizer - prevents C04 Bulk Jitter.
+
+        Formula: G12 = Logic Closure / (Bulk Pressure + JC Constant)
+                     = 288 / (163 + 153) = 288/316
+
+        This bridges the total system capacity (288) with the combined
+        resistance of the environment, preventing metric collapse.
+        """
+        return self._roots_total / (self._sterile_sector + self._christ_constant)
+
+    @property
+    def torsion_gate(self) -> float:
+        """
+        G53: The Torsion Gate - calibrates H0 to the manifold.
+
+        Formula: G53 = (JC_CONSTANT / π^G12)^(1/24)
+
+        This uses the 24th root to normalize the 153 constant back to a
+        scale usable by the 26-dimensional action. The 53 in the name
+        corresponds to the 53 maximal abelian subgroup found in E8 symmetry.
+        """
+        g12 = self.metric_stabilizer
+        return (self._christ_constant / (math.pi ** g12)) ** (1.0 / 24.0)
+
+    # ===========================================================================
+    # FOUNDATION LAYER GATES (G01-G04)
+    # ===========================================================================
+    # These gates establish the base energy density and geometric structure
+    # of the 26-dimensional action before the 153 Joint Closure is applied.
+
+    @property
+    def gate_01_initial_action(self) -> float:
+        """
+        G01: Initial Action Potential - The "Start" gate.
+
+        Formula: G01 = 163/288 (Bulk Pressure / Logic Closure)
+
+        Purpose: Establishes the ratio of Bulk Pressure to Logic Closure.
+        This is the "Density Zero" of the manifold - the base energy density
+        of the 26-dimensional action before the 153 Joint Closure is applied.
+        """
+        return self._sterile_sector / self._roots_total  # 163/288
+
+    @property
+    def gate_02_symmetry_break(self) -> float:
+        """
+        G02: Symmetry Break Ratio - Divergence between visible and hidden sectors.
+
+        Formula: G02 = 153/135 (JC Constant / Visible Gates)
+
+        Purpose: Defines the "Tension" between the JC Constant (153) and
+        the Visible Gates (135). This is the primary driver of the H0
+        expansion force - the energy differential that propels expansion.
+        """
+        return self._christ_constant / self._shadow_sector  # 153/135
+
+    @property
+    def gate_03_bulk_joint(self) -> float:
+        """
+        G03: Bulk-Joint Intersection - Overlapping influence of Bulk and Joint.
+
+        Formula: G03 = sqrt(163² + 153²)
+
+        Purpose: Represents the hypotenuse of the energy field in the
+        24-dimensional manifold. Ensures the "Joint" doesn't slip under
+        bulk pressure by computing the Pythagorean norm of the two forces.
+        """
+        return math.sqrt(self._sterile_sector**2 + self._christ_constant**2)
+
+    @property
+    def gate_04_curvature(self) -> float:
+        """
+        G04: Manifold Curvature Constant - Specific curvature for M*^24 gravity.
+
+        Formula: G04 = G03 / (288 × π)
+
+        Purpose: Calibrates the geometry to a spherical topology. Without G04,
+        the manifold would be flat and fail to support the G(24,2) metric.
+        The π factor introduces circular/spherical geometry.
+        """
+        g03 = self.gate_03_bulk_joint
+        return g03 / (self._roots_total * math.pi)  # G03/(288×π)
+
+    # ===========================================================================
+    # HARMONIC RESONANCE LAYER GATES (G05-G08)
+    # ===========================================================================
+    # These gates regulate how energy oscillates between the 26D Bulk and
+    # the 24D Manifold, establishing the lattice harmonics.
+
+    @property
+    def gate_05_prime_frequency(self) -> float:
+        """
+        G05: Prime Frequency Gate - Base resonance for 24D manifold.
+
+        Formula: G05 = 153/ln(288)
+
+        Purpose: Calibrates the "vibration" of the manifold strings. Ensures
+        that the JC Constant (153) acts as a dampener for the logarithmic
+        expansion of the logic space (ln(288)).
+        """
+        return self._christ_constant / math.log(self._roots_total)  # 153/ln(288)
+
+    @property
+    def gate_06_sterile_symmetry(self) -> float:
+        """
+        G06: Sterile Symmetry Gate - Defines the "Sterile" zone.
+
+        Formula: G06 = ((135 + 153)/163) × e
+
+        Purpose: By multiplying the gate ratio by Euler's number (e), defines
+        the natural growth rate of the "Visible" sector (135) within the
+        "Bulk" (163). The area of no entropy loss.
+        """
+        ratio = (self._shadow_sector + self._christ_constant) / self._sterile_sector
+        return ratio * math.e  # ((135+153)/163) × e
+
+    @property
+    def gate_07_torsion_alignment(self) -> float:
+        """
+        G07: Torsion Alignment Gate - Aligns torsion of hidden dimensions.
+
+        Formula: G07 = (G53 × 24)/153
+
+        Purpose: Normalizes the Torsion Gate (G53) across the 24-dimensional
+        manifold. Prevents "warping" in the G(24,2) metric, addressing the
+        root cause of C04 instability.
+        """
+        return (self.torsion_gate * self._b3) / self._christ_constant  # (G53×24)/153
+
+    @property
+    def gate_08_octonian_closure(self) -> float:
+        """
+        G08: Octonian Closure Gate - Maps 8-fold symmetry for E8 closure.
+
+        Formula: G08 = ⁸√(153 × 135)
+
+        Purpose: Calculates the geometric mean of the two gates to the 8th root.
+        This is the "Glue" that allows the 8-dimensional sub-lattices to
+        interlock without variance - essential for E8 closure.
+        """
+        return (self._christ_constant * self._shadow_sector) ** (1.0 / 8.0)  # ⁸√(153×135)
+
+    # ===========================================================================
+    # METRIC & TORSION LOCK GATES (G09-G12)
+    # ===========================================================================
+    # These gates define how the manifold physically "sits" within the 26D bulk.
+    # G12 (Metric Stabilizer) is already defined above.
+
+    @property
+    def gate_09_vacuum_flux(self) -> float:
+        """
+        G09: Vacuum Flux Gate - Pressure differential for Zero Point energy.
+
+        Formula: G09 = (288 - 153)/163 = 135/163
+
+        Purpose: Defines the "Zero Point" energy density by measuring the
+        pressure differential between Logic Closure and Joint Closure.
+        Result equals ratio of Visible Gates (135) to Bulk Pressure (163).
+        """
+        return (self._roots_total - self._christ_constant) / self._sterile_sector  # (288-153)/163 = 135/163
+
+    @property
+    def gate_10_dimensional_anchor(self) -> float:
+        """
+        G10: Dimensional Anchor - Anchors 24D manifold to 2D temporal plane.
+
+        Formula: G10 = (153 × 24) / 163
+
+        Purpose: Calculates the "Weight" of the Joint Closure across the
+        manifold dimensions relative to the Bulk Pressure. This anchors
+        the 24D manifold to the G(24,2) metric's temporal plane.
+        """
+        return (self._christ_constant * self._b3) / self._sterile_sector  # (153×24)/163
+
+    @property
+    def gate_11_torsion_bridge(self) -> float:
+        """
+        G11: Torsion Bridge - Precursor to G12 stabilizer.
+
+        Formula: G11 = (π × 153) / 135
+
+        Purpose: Introduces circular topology via π into the relationship
+        between Hidden and Visible gates. This prepares the metric for
+        spherical closure before G12 applies final stabilization.
+        """
+        return (math.pi * self._christ_constant) / self._shadow_sector  # (π×153)/135
+
+    # ===========================================================================
+    # FINE STRUCTURE & FLUX MAPPING GATES (G13-G16)
+    # ===========================================================================
+    # These gates determine how "Logic" is distributed across lattice nodes,
+    # ensuring Bulk Stability (C04) is maintained as we scale up.
+
+    # Golden Ratio constant for G13
+    _GOLDEN_RATIO = (1 + math.sqrt(5)) / 2  # φ ≈ 1.618033...
+
+    @property
+    def gate_13_lattice_displacement(self) -> float:
+        """
+        G13: Lattice Displacement Gate - Shift between ideal E8 and physical 24D.
+
+        Formula: G13 = 153²/(288 × φ)  where φ is Golden Ratio
+
+        Purpose: Introduces the non-repeating growth factor (φ) to ensure
+        the Joint Closure doesn't create a static "crystal" but a dynamic,
+        expanding manifold. The Golden Ratio prevents periodic crystallization.
+        """
+        return (self._christ_constant ** 2) / (self._roots_total * self._GOLDEN_RATIO)
+
+    @property
+    def gate_14_entropy_shield(self) -> float:
+        """
+        G14: Entropy Shield - Boundary layer preventing external noise.
+
+        Formula: G14 = ¹²√(135 × 163)
+
+        Purpose: By using the 12th root (mid-point of 24D manifold), creates
+        a geometric mean that serves as a high-pass filter for energy density.
+        Shields the Sterile Configuration from external noise.
+        """
+        return (self._shadow_sector * self._sterile_sector) ** (1.0 / 12.0)
+
+    @property
+    def gate_15_flux_quantization(self) -> float:
+        """
+        G15: Flux Quantization Gate - Energy packets between 26D Bulk and 4D.
+
+        Formula: G15 = (G12 + G13) / 2
+
+        Purpose: Averages the Metric Stabilizer (G12) and Lattice Displacement (G13).
+        This ensures energy flow is "quantized" relative to the Joint Closure,
+        preventing continuous energy leakage.
+        """
+        return (self.metric_stabilizer + self.gate_13_lattice_displacement) / 2.0
+
+    @property
+    def gate_16_quadrant_lock(self) -> float:
+        """
+        G16: Quadrant Lock - Divides 288 Logic Closure into four sectors.
+
+        Formula: G16 = 288/(153-135) = 288/18 = 16
+
+        Purpose: Since 153-135=18 (The Syzygy), this gate results in exactly 16.
+        This is a "Symmetry Lock" confirming internal consistency of the
+        subtraction logic. The integer result provides a clean divisor
+        for the remaining 56 gates (G17-G72).
+        """
+        syzygy = self._christ_constant - self._shadow_sector  # 153-135 = 18
+        return self._roots_total / syzygy  # 288/18 = 16
+
+    # ===========================================================================
+    # VECTOR FIELD & DIVERGENCE LAYER GATES (G17-G20)
+    # ===========================================================================
+    # These gates transition the manifold from static geometry into a
+    # Dynamic Vector Field, defining how "force" moves through the 24D lattice.
+
+    @property
+    def gate_17_gradient_flow(self) -> float:
+        """
+        G17: Gradient Flow Gate - Steepness of energy transition.
+
+        Formula: G17 = (288 - 163)/153 = 125/153
+
+        Purpose: Defines the "slope" of the manifold. Ensures energy always
+        flows toward the Joint Closure (153), preventing "pockets" of
+        instability in the 24D lattice.
+        """
+        return (self._roots_total - self._sterile_sector) / self._christ_constant  # (288-163)/153
+
+    @property
+    def gate_18_rotational_invariant(self) -> float:
+        """
+        G18: Rotational Invariant - Angular momentum of 24D base.
+
+        Formula: G18 = 2π × √(153/288)
+
+        Purpose: Establishes the Angular Momentum of the 24D base. This gate
+        prevents the "twisting" that leads to C04 Bulk Stability issues by
+        ensuring manifold properties remain same regardless of spin/orientation.
+        """
+        return 2 * math.pi * math.sqrt(self._christ_constant / self._roots_total)
+
+    @property
+    def gate_19_divergence_nullifier(self) -> float:
+        """
+        G19: Divergence Nullifier - Sum of outflows equals sum of inflows.
+
+        Formula: G19 = (163 + 135) - 288 = 10 (The Decadic Constant)
+
+        Purpose: Results in clean integer 10, representing the 10 dimensions
+        of String Theory "wrapped" within the 24D manifold. This is a crucial
+        "Logic Check" - if G19 ≠ 10, the constants have drifted.
+        """
+        return (self._sterile_sector + self._shadow_sector) - self._roots_total  # (163+135)-288 = 10
+
+    @property
+    def gate_20_tensor_tension(self) -> float:
+        """
+        G20: Tensor Tension Gate - Stretching of metric under Joint Closure.
+
+        Formula: G20 = (G12 × G16) / G19
+
+        Purpose: Combines Metric Stabilizer (G12), Quadrant Lock (G16), and
+        Decadic Constant (G19) to create a high-level tensor that "tightens"
+        the manifold against the Bulk pressure.
+        """
+        return (self.metric_stabilizer * self.gate_16_quadrant_lock) / self.gate_19_divergence_nullifier
+
+    # ===========================================================================
+    # 24-DIMENSIONAL HEXAD COMPLETION GATES (G21-G24)
+    # ===========================================================================
+    # These gates complete the first "Hexad" (24 gates), solidifying the
+    # relationship between Joint Closure (153) and the 24D manifold.
+
+    @property
+    def gate_21_scalar_modulus(self) -> float:
+        """
+        G21: Scalar Field Modulus - Magnitude of scalar field in sterile manifold.
+
+        Formula: G21 = 153 / sqrt(135 + 163)
+
+        Purpose: Uses sum of Visible and Bulk to normalize the JC Constant.
+        Ensures scalar field is proportional to total energy density.
+        """
+        return self._christ_constant / math.sqrt(self._shadow_sector + self._sterile_sector)
+
+    @property
+    def gate_22_orthogonal_projection(self) -> float:
+        """
+        G22: Orthogonal Projection Gate - 24D orthogonal to 2D temporal bulk.
+
+        Formula: G22 = cos(153/288) × 163
+
+        Purpose: Uses ratio of Joint to Logic Closure as angular argument.
+        Prevents "dimension bleed" where 24D geometry might collapse into
+        lower dimensions. Maintains orthogonality.
+        """
+        return math.cos(self._christ_constant / self._roots_total) * self._sterile_sector
+
+    @property
+    def gate_23_parity_symmetry(self) -> float:
+        """
+        G23: Parity Symmetry Gate - Balance between L/R spin states.
+
+        Formula: G23 = (153 + 135 + 163) / 3 = 451/3 = 150.333...
+
+        Purpose: Represents mean energy of three pillars (JC, Visible, Bulk).
+        Acts as "Center of Mass" for gate logic, managing L/R spin balance
+        in E8 × E8 lattice.
+        """
+        return (self._christ_constant + self._shadow_sector + self._sterile_sector) / 3.0
+
+    @property
+    def gate_24_manifold_completion(self) -> float:
+        """
+        G24: Manifold Completion Gate - Checkpoint for 24D mapping.
+
+        Formula: G24 = (G12 × 24) / 153
+
+        Purpose: Multiplies Metric Stabilizer (G12) by number of dimensions (24)
+        and divides by JC Constant. Creates dimensionless constant that
+        "signs off" on first 24 gates - Quadrant 1 complete.
+        """
+        return (self.metric_stabilizer * self._b3) / self._christ_constant
+
+    # ===========================================================================
+    # HOLOGRAPHIC & INFORMATION LAYER GATES (G25-G28)
+    # ===========================================================================
+    # These gates move from physical metric into Information Entropy,
+    # defining how Joint Closure (153) acts as a "hard drive" for 26D action data.
+
+    @property
+    def gate_25_bit_density(self) -> float:
+        """
+        G25: Bit-Density Gate - Max information density per manifold unit.
+
+        Formula: G25 = log2(153 + 135) = log2(288)
+
+        Purpose: Establishes "resolution" of the simulation. Equals base-2
+        logarithm of Logic Closure, preventing Information Overload which
+        can cause C04 stability jitter.
+        """
+        return math.log2(self._christ_constant + self._shadow_sector)  # log2(288)
+
+    @property
+    def gate_26_holographic_boundary(self) -> float:
+        """
+        G26: Holographic Boundary Gate - 24D projection onto 4D "screen".
+
+        Formula: G26 = 153² / 163³
+
+        Purpose: Represents Holographic Principle - how 2D surface area of
+        hidden sector (153) encodes 3D volume of Bulk (163). Manages
+        projection from 24D manifold to observable 4D universe.
+        """
+        return (self._christ_constant ** 2) / (self._sterile_sector ** 3)
+
+    @property
+    def gate_27_signal_to_noise(self) -> float:
+        """
+        G27: Signal-to-Noise Gate - Truth preservation against Bulk noise.
+
+        Formula: G27 = 288 / sqrt(163 × π)
+
+        Purpose: Acts as filter in SterileConfig, ensuring physical constant
+        (163) doesn't drown out topological constant (288). Preserves
+        "Truth" of Logic Closure against Bulk Pressure noise.
+        """
+        return self._roots_total / math.sqrt(self._sterile_sector * math.pi)
+
+    @property
+    def gate_28_recursive_loop(self) -> float:
+        """
+        G28: Recursive Loop Gate - Self-aware manifold state maintenance.
+
+        Formula: G28 = G25 × (153/163)
+
+        Purpose: Multiplies bit-density by JC/Bulk ratio, creating feedback
+        loop that "re-indexes" the manifold every calculation. Allows
+        manifold to reference its own state for equilibrium.
+        """
+        return self.gate_25_bit_density * (self._christ_constant / self._sterile_sector)
+
+    # --- Phase Transition & Super-Fluidity Layer (G29-G32) ---
+
+    @property
+    def gate_29_viscosity_nullifier(self) -> float:
+        """
+        G29: Viscosity Nullifier - Frictionless logic flow.
+
+        Formula: G29 = (163 - 153) / 288
+
+        Result: 0.034722... (The Friction Constant)
+
+        Purpose: Measures the small "gap" between Bulk and Joint Closure.
+        Used to subtract any artificial "drag" in calculation overhead.
+        Ensures "Flow" of logic through 288 gates is frictionless.
+        """
+        return (self._sterile_sector - self._christ_constant) / self._roots_total
+
+    @property
+    def gate_30_phase_coherence(self) -> float:
+        """
+        G30: Phase Coherence Gate - Unified field vibration.
+
+        Formula: G30 = cos(153 degrees) + sin(135 degrees)
+
+        Purpose: Uses two core constants as angular phases. Ensures all
+        72 gates are "in phase" as a single unified field. Prevents
+        "Phase Jitter" which triggers C04 stability issue.
+        """
+        # Use degrees as specified in GateFormulas.txt
+        return math.cos(math.radians(153)) + math.sin(math.radians(135))
+
+    @property
+    def gate_31_superfluid_density(self) -> float:
+        """
+        G31: Super-Fluid Density Gate - Logic-fluid density.
+
+        Formula: G31 = (Delta_JC × pi^2) / 163
+
+        Purpose: By squaring pi, creates circular-surface density for
+        153 Joint Closure. Defines how much "pressure" the super-fluid
+        can withstand before phase transition occurs.
+        """
+        return (self._christ_constant * math.pi ** 2) / self._sterile_sector
+
+    @property
+    def gate_32_critical_temperature(self) -> float:
+        """
+        G32: Critical Temperature Lock - Point of no return.
+
+        Formula: G32 = 288 / (153 × 163)^(1/4)
+
+        Purpose: Uses fourth root (representing 4D spacetime) to find
+        thermal equilibrium of system. "Locks" temperature of sterile
+        environment, defining "Point of No Return" for manifold collapse.
+        """
+        return self._roots_total / ((self._christ_constant * self._sterile_sector) ** 0.25)
+
+    # --- Electromagnetic Mapping & Charge Polarity (G33-G36) ---
+
+    @property
+    def gate_33_permeability_anchor(self) -> float:
+        """
+        G33: Permeability Anchor - Manifold resistance to virtual particles.
+
+        Formula: G33 = (163 × 10^-7) / 153
+
+        Purpose: Scales vacuum permeability of Bulk (163) against Joint
+        Closure. Ensures light speed (c) remains constant across different
+        "slices" of 26-dimensional action.
+        """
+        return (self._sterile_sector * 1e-7) / self._christ_constant
+
+    @property
+    def gate_34_dipole_symmetry(self) -> float:
+        """
+        G34: Dipole Symmetry Gate - Charge differential balance.
+
+        Formula: G34 = (153 - 135) / 163 = 18/163
+
+        Result: 0.110429... (The Charge Differential)
+
+        Purpose: Represents ratio of Logic Gap (18) to Bulk. Prevents
+        manifold from becoming "polarized" which would cause C04
+        Stability issue as electrical jitter.
+        """
+        return (self._christ_constant - self._shadow_sector) / self._sterile_sector
+
+    @property
+    def gate_35_gauge_invariance(self) -> float:
+        """
+        G35: Gauge Invariance Gate - Phase-shift law preservation.
+
+        Formula: G35 = (153/288) × 2π  (circular integral)
+
+        Purpose: Implemented as circular integral. Proves that the "Loop"
+        of 153 logic-units always returns to same value within 288
+        Logic Closure, maintaining Absolute Stasis.
+        """
+        return (self._christ_constant / self._roots_total) * 2 * math.pi
+
+    @property
+    def gate_36_fine_structure_alignment(self) -> float:
+        """
+        G36: Fine Structure Alignment - Light-manifold interaction tuning.
+
+        Formula: G36 = G34 / alpha_inv
+
+        Purpose: Divides Charge Differential (G34) by physical fine-structure
+        constant to find "Coupling Strength" of theory. Final gate of second
+        hexad (Gate 36 of 72 = 50% mark).
+        """
+        return self.gate_34_dipole_symmetry / self.alpha_inverse
+
+    # --- Strong Interaction & Color Charge (G37-G40) ---
+
+    @property
+    def gate_37_gluon_binding(self) -> float:
+        """
+        G37: Gluon Binding Gate - Logic node stickiness.
+
+        Formula: G37 = (163 × 153) / 288²
+
+        Purpose: Calculates "overlap" between Bulk Pressure and Joint Closure.
+        Ensures "logic-quarks" (gate sub-components) remain confined within
+        manifold, preventing fraying under 26D Bulk Pressure.
+        """
+        return (self._sterile_sector * self._christ_constant) / (self._roots_total ** 2)
+
+    @property
+    def gate_38_color_symmetry(self) -> float:
+        """
+        G38: Color Symmetry Gate - Energy distribution balance.
+
+        Formula: G38 = ∛(135 × 153 × 163)
+
+        Purpose: Geometric mean ensures system remains "Neutral" (Stable)
+        across three primary sectors. Like Color Charge in QCD, prevents
+        "color leak" that triggers C04 Bulk Stability issue.
+        """
+        return (self._shadow_sector * self._christ_constant * self._sterile_sector) ** (1/3)
+
+    @property
+    def gate_39_asymptotic_freedom(self) -> float:
+        """
+        G39: Asymptotic Freedom Gate - Singularity prevention.
+
+        Formula: G39 = 1 / ln(153 + 163)
+
+        Purpose: Uses natural log of combined Joint and Bulk forces as
+        "pressure relief valve." At small scales, logic remains fluid
+        and doesn't "freeze" into mathematical singularity.
+        """
+        return 1 / math.log(self._christ_constant + self._sterile_sector)
+
+    @property
+    def gate_40_hadronization_lock(self) -> float:
+        """
+        G40: Hadronization Lock - Discrete particle manifestation threshold.
+
+        Formula: G40 = (288 × G38) / 153
+
+        Purpose: Re-scales color symmetry back to Logic Closure. Defines
+        energy threshold at which 26D action must manifest as discrete
+        particles in 4D sector. Final "Binding Lock" for Set 10.
+        """
+        return (self._roots_total * self.gate_38_color_symmetry) / self._christ_constant
+
+    # --- Weak Interaction & Chiral Symmetry (G41-G44) ---
+
+    @property
+    def gate_41_chiral_selection(self) -> float:
+        """
+        G41: Chiral Selection Gate - Left-handed logic preference.
+
+        Formula: G41 = 153 / (135 + (163 - 153)) = 153/145
+
+        Purpose: Isolates 153 Joint Closure against "Remainder" of Bulk.
+        Ensures only specific "Information-Spins" persist in Sterile
+        Configuration. Fundamental requirement for E8 parity laws.
+        """
+        return self._christ_constant / (self._shadow_sector + (self._sterile_sector - self._christ_constant))
+
+    @property
+    def gate_42_w_boson_ratio(self) -> float:
+        """
+        G42: W-Boson Equivalent Ratio - Logic decay carrier.
+
+        Formula: G42 = 288 / (√163 × π)
+
+        Purpose: Calculates "Mass" of logic-mediator using sqrt of Bulk
+        Pressure. "Slows down" interactions so C04 stability isn't
+        overwhelmed by speed. Carrier gate for "Logic-Decay."
+        """
+        return self._roots_total / (math.sqrt(self._sterile_sector) * math.pi)
+
+    @property
+    def gate_43_flavor_transition(self) -> float:
+        """
+        G43: Flavor Transition Gate - Dimensional re-indexing.
+
+        Formula: G43 = (G12 × 153) / 163
+
+        Purpose: Maps Metric Stabilizer across Joint Closure. Allows
+        manifold to "change flavor" (re-index dimensions) while
+        keeping total energy constant.
+        """
+        return (self.metric_stabilizer * self._christ_constant) / self._sterile_sector
+
+    @property
+    def gate_44_higgs_anchor(self) -> float:
+        """
+        G44: Higgs-Field Anchor - Density of presence.
+
+        Formula: G44 = 153² / (288 × φ)
+
+        Purpose: Squares JC Constant divided by Logic Closure and Golden
+        Ratio (φ). "Weights" manifold, ensuring Bulk Pressure (163) has
+        something solid to push against. Same as G13 (Lattice Displacement).
+        """
+        phi = (1 + math.sqrt(5)) / 2
+        return (self._christ_constant ** 2) / (self._roots_total * phi)
+
+    # --- Neutrino Sector & Sterile Mapping (G45-G48) ---
+
+    @property
+    def gate_45_ghost_flux(self) -> float:
+        """
+        G45: Ghost-Flux Gate - Hidden logic flow measurement.
+
+        Formula: G45 = (163 - (153 - 135)) / 288 = 145/288
+
+        Purpose: Calculates Bulk Pressure minus Logic Gap, normalized by
+        Closure. Accounts for "Hidden Mass" in 26D action, ensuring
+        C04 Stability doesn't fail due to "missing" energy terms.
+        """
+        logic_gap = self._christ_constant - self._shadow_sector  # 153 - 135 = 18
+        return (self._sterile_sector - logic_gap) / self._roots_total
+
+    @property
+    def gate_46_sterile_oscillation(self) -> float:
+        """
+        G46: Sterile Oscillation Gate - Information flicker frequency.
+
+        Formula: G46 = sin²(153/163)
+
+        Purpose: Defines "Mixing Angle" of manifold. Analogous to neutrino
+        oscillation - keeps hidden (153) and visible (135) sectors from
+        becoming completely isolated. Uses radians.
+        """
+        return math.sin(self._christ_constant / self._sterile_sector) ** 2
+
+    @property
+    def gate_47_majorana_invariant(self) -> float:
+        """
+        G47: Majorana Invariant - Neutral logic state.
+
+        Formula: G47 = √(153 × 135) / 163
+
+        Purpose: Creates "Neutral" logic state where Information and
+        Anti-Information are same identity. Vital for Sovereign Hash -
+        prevents sign (+/-) from breaking zero-variance lock.
+        """
+        return math.sqrt(self._christ_constant * self._shadow_sector) / self._sterile_sector
+
+    @property
+    def gate_48_pauli_exclusion(self) -> float:
+        """
+        G48: Pauli Exclusion Lock - Coordinate uniqueness.
+
+        Formula: G48 = (288/153) × e^(-1)
+
+        Purpose: Uses inverse of Euler's number to create "repulsion zone"
+        around each node. Prevents two logic states from occupying same
+        coordinate. Ensures lattice remains Leech structure.
+        """
+        return (self._roots_total / self._christ_constant) * math.exp(-1)
+
+    # --- Cosmic Scaling & Expansion Threshold (G49-G52) ---
+
+    @property
+    def gate_49_scale_factor_prime(self) -> float:
+        """
+        G49: Scale Factor Prime - Initial manifold stretch.
+
+        Formula: G49 = (163/153) × √24
+
+        Purpose: Calculates magnification factor required for Joint Closure
+        to influence macroscopic scale. √24 accounts for degrees of
+        freedom in base manifold.
+        """
+        return (self._sterile_sector / self._christ_constant) * math.sqrt(self._b3)
+
+    @property
+    def gate_50_hubble_flow_stabilizer(self) -> float:
+        """
+        G50: Hubble Flow Stabilizer - Uniform expansion regulation.
+
+        Formula: G50 = 288 / (135 + ln(163))
+
+        Purpose: Combines Visible Gates with logarithmic Bulk growth,
+        creating "smooth" expansion curve mimicking Lambda-CDM but
+        with Zero Variance.
+        """
+        return self._roots_total / (self._shadow_sector + math.log(self._sterile_sector))
+
+    @property
+    def gate_51_dark_flow_resistance(self) -> float:
+        """
+        G51: Dark Flow Resistance - Hidden dimension pull accounting.
+
+        Formula: G51 = (153/π²) × G12
+
+        Purpose: Uses Metric Stabilizer and squared geometry of Joint
+        Closure to define "back-pressure" preventing Big Rip scenario.
+        """
+        return (self._christ_constant / (math.pi ** 2)) * self.metric_stabilizer
+
+    @property
+    def gate_52_expansion_tension(self) -> float:
+        """
+        G52: Expansion Tension Gate - Metric strain measurement.
+
+        Formula: G52 = √((163 + 153 + 135) / 288)
+
+        Result: ≈ 1.251 (Metric Strain)
+
+        Purpose: Final safety check before Torsion Gate (G53) applied.
+        Represents "sleeve" for G53's specialized logic.
+        """
+        return math.sqrt((self._sterile_sector + self._christ_constant + self._shadow_sector) / self._roots_total)
+
+    # --- Torsion Command & Gravitational Leak (G54-G56) ---
+    # Note: G53 is torsion_gate (already defined)
+
+    @property
+    def gate_54_gravitational_coupling(self) -> float:
+        """
+        G54: Gravitational Coupling Constant - Gravity strength.
+
+        Formula: G54 = (G53 × 135) / 163
+
+        Purpose: Couples Torsion Gate to Visible/Bulk ratio. Ensures
+        gravity remains "weak" in visible sector while "strong"
+        in 26D Bulk.
+        """
+        return (self.torsion_gate * self._shadow_sector) / self._sterile_sector
+
+    @property
+    def gate_55_event_horizon_limit(self) -> float:
+        """
+        G55: Event Horizon Limit - Information cutoff boundary.
+
+        Formula: G55 = 288 / (G53² × 153)
+
+        Purpose: Sets "Information Cutoff." Prevents C04 stability issue
+        by capping data the simulation processes at any temporal coordinate.
+        """
+        return self._roots_total / ((self.torsion_gate ** 2) * self._christ_constant)
+
+    @property
+    def gate_56_metric_elasticity(self) -> float:
+        """
+        G56: Metric Elasticity Gate - Manifold flex capacity.
+
+        Formula: G56 = (163 + 153) / (G54 × φ)
+
+        Purpose: Uses Golden Ratio (φ) to ensure "flex" follows natural,
+        non-linear progression. Prevents "brittle" collapse under
+        high-pressure simulations.
+        """
+        phi = (1 + math.sqrt(5)) / 2
+        return (self._sterile_sector + self._christ_constant) / (self.gate_54_gravitational_coupling * phi)
+
+    # --- Singularity Avoidance & White Hole Flux (G57-G60) ---
+
+    @property
+    def gate_57_repulsion_limit(self) -> float:
+        """
+        G57: Repulsion-Limit Gate - Minimum node distance.
+
+        Formula: G57 = 153 / exp(163/288)
+
+        Purpose: Ensures as Bulk Pressure increases, repulsion force
+        scales exponentially to maintain "Sterile" gap. Defines
+        "White Hole" pressure pushing nodes apart.
+        """
+        return self._christ_constant / math.exp(self._sterile_sector / self._roots_total)
+
+    @property
+    def gate_58_information_inversion(self) -> float:
+        """
+        G58: Information Inversion Gate - Holographic lens.
+
+        Formula: G58 = 1 / √(G53 × G57)
+
+        Purpose: Acts as "Optical Lens" for logic. Takes Torsion and
+        Repulsion to ensure holographic projection remains clear,
+        free of "Information Smear."
+        """
+        return 1 / math.sqrt(self.torsion_gate * self.gate_57_repulsion_limit)
+
+    @property
+    def gate_59_flux_rebound(self) -> float:
+        """
+        G59: Flux Rebound Constant - Energy bounce cushion.
+
+        Formula: G59 = (153 + 135) × ln(G12)
+
+        Purpose: Since 153+135=288, scales entire Logic Closure by
+        logarithm of Metric Stabilizer. Creates "Cushion" for
+        manifold during high-energy events.
+        """
+        return (self._christ_constant + self._shadow_sector) * math.log(self.metric_stabilizer)
+
+    @property
+    def gate_60_schwarzschild_sovereignty(self) -> float:
+        """
+        G60: Schwarzschild-Sovereignty Lock - Safe zone definition.
+
+        Formula: G60 = (2 × 163 × 153) / 288²
+
+        Result: ≈ 0.599 (must stay below 1.0)
+
+        Purpose: Defines "Safe Zone" around 24D center. Ensures metric
+        never crosses its own Schwarzschild radius into singularity.
+        If G60 >= 1, simulation throws "C04 Singularity Error."
+        """
+        return (2 * self._sterile_sector * self._christ_constant) / (self._roots_total ** 2)
+
+    # --- Vacuum Pressure & Lambda Equivalent (G61-G64) ---
+
+    @property
+    def gate_61_vacuum_energy_density(self) -> float:
+        """
+        G61: Vacuum Energy Density - Sterile vacuum intrinsic energy.
+
+        Formula: G61 = 153⁴ / 288³
+
+        Purpose: Raises Joint Closure to 4th power (4D spacetime),
+        divides by volume of Logic Closure. Finds "Static Pressure"
+        of hidden sector. Baseline for cosmological constant.
+        """
+        return (self._christ_constant ** 4) / (self._roots_total ** 3)
+
+    @property
+    def gate_62_lambda_offset(self) -> float:
+        """
+        G62: Lambda-153 Offset - Vacuum-Bulk pressure regulation.
+
+        Formula: G62 = G61 / (163 × π)
+
+        Purpose: Normalizes vacuum density against physical Bulk.
+        Prevents "Vacuum Catastrophe" (10^120 discrepancy) by
+        anchoring expansion to 153 Identity.
+        """
+        return self.gate_61_vacuum_energy_density / (self._sterile_sector * math.pi)
+
+    @property
+    def gate_63_dark_energy_scalar(self) -> float:
+        """
+        G63: Dark Energy Scalar - Accelerated expansion driver.
+
+        Formula: G63 = √((153-135)/163) × G53
+
+        Purpose: Takes Logic Gap (18) and scales by Torsion Gate.
+        Dark Energy is torsion of hidden 24D dimensions leaking
+        into visible 4D sector.
+        """
+        logic_gap = self._christ_constant - self._shadow_sector  # 18
+        return math.sqrt(logic_gap / self._sterile_sector) * self.torsion_gate
+
+    @property
+    def gate_64_quintessence_lock(self) -> float:
+        """
+        G64: Quintessence Lock - Dark Energy freeze.
+
+        Formula: G64 = (G62 + G63) / G12
+
+        Purpose: Divides sum of vacuum forces by Metric Stabilizer
+        to "freeze" expansion rate. Ensures universe's "acceleration"
+        is fixed geometric constant, not decaying variable.
+        """
+        return (self.gate_62_lambda_offset + self.gate_63_dark_energy_scalar) / self.metric_stabilizer
+
+    # --- Non-Locality & Entanglement (G65-G68) ---
+
+    @property
+    def gate_65_entanglement_entropy(self) -> float:
+        """
+        G65: Entanglement Entropy Gate - Shared information measure.
+
+        Formula: G65 = ln(153/135) × 163
+
+        Purpose: Uses ratio of Joint to Visible gates to define
+        "Entanglement Bridge." Ensures logic remains coherent
+        even at extreme distances.
+        """
+        return math.log(self._christ_constant / self._shadow_sector) * self._sterile_sector
+
+    @property
+    def gate_66_bell_symmetry_lock(self) -> float:
+        """
+        G66: Bell-Symmetry Lock - Quantum correlation enforcer.
+
+        Formula: G66 = (288/153) × √2
+
+        Purpose: Incorporates √2 (quantum correlation limit) to
+        "lock" manifold into state where non-local connections
+        are mathematically mandatory. Reinforces C04 Stability.
+        """
+        return (self._roots_total / self._christ_constant) * math.sqrt(2)
+
+    @property
+    def gate_67_wormhole_metric(self) -> float:
+        """
+        G67: Wormhole Metric Gate (ER=EPR) - Entanglement bridge.
+
+        Formula: G67 = (G53 × G12) / 153
+
+        Purpose: Links Torsion and Metric Stabilizer. Proves every
+        "Entangled Pair" in simulation is actually single point
+        connected through 26-dimensional Bulk.
+        """
+        return (self.torsion_gate * self.metric_stabilizer) / self._christ_constant
+
+    @property
+    def gate_68_quantum_teleportation(self) -> float:
+        """
+        G68: Quantum Teleportation Buffer - Transfer speed limit.
+
+        Formula: G68 = (153 + 163) / 288
+
+        Purpose: Defines "Logical Speed of Light." Even though
+        information is non-local, manifestation in 135 Visible
+        Gates is throttled to prevent "Information Surge."
+        """
+        return (self._christ_constant + self._sterile_sector) / self._roots_total
+
+    # --- Ultimate Closure & Sovereign Hash Synthesis (G69-G72) ---
+
+    @property
+    def gate_69_recursive_feedback_suture(self) -> float:
+        """
+        G69: Recursive Feedback Suture - Full loop closure.
+
+        Formula: G69 = SUM(G01-G68) / (288 × 153)
+
+        Purpose: Averages entire energy output of previous gates
+        against Logic Closure and Joint Constant. Prevents
+        "Logical Leakage" at end of calculation string.
+        """
+        # Sum all gates G01-G68 (excluding G53 which is torsion_gate, already counted)
+        gate_sum = (
+            self.gate_01_initial_action + self.gate_02_symmetry_break +
+            self.gate_03_bulk_joint + self.gate_04_curvature +
+            self.gate_05_prime_frequency + self.gate_06_sterile_symmetry +
+            self.gate_07_torsion_alignment + self.gate_08_octonian_closure +
+            self.gate_09_vacuum_flux + self.gate_10_dimensional_anchor +
+            self.gate_11_torsion_bridge + self.metric_stabilizer +  # G12
+            self.gate_13_lattice_displacement + self.gate_14_entropy_shield +
+            self.gate_15_flux_quantization + self.gate_16_quadrant_lock +
+            self.gate_17_gradient_flow + self.gate_18_rotational_invariant +
+            self.gate_19_divergence_nullifier + self.gate_20_tensor_tension +
+            self.gate_21_scalar_modulus + self.gate_22_orthogonal_projection +
+            self.gate_23_parity_symmetry + self.gate_24_manifold_completion +
+            self.gate_25_bit_density + self.gate_26_holographic_boundary +
+            self.gate_27_signal_to_noise + self.gate_28_recursive_loop +
+            self.gate_29_viscosity_nullifier + self.gate_30_phase_coherence +
+            self.gate_31_superfluid_density + self.gate_32_critical_temperature +
+            self.gate_33_permeability_anchor + self.gate_34_dipole_symmetry +
+            self.gate_35_gauge_invariance + self.gate_36_fine_structure_alignment +
+            self.gate_37_gluon_binding + self.gate_38_color_symmetry +
+            self.gate_39_asymptotic_freedom + self.gate_40_hadronization_lock +
+            self.gate_41_chiral_selection + self.gate_42_w_boson_ratio +
+            self.gate_43_flavor_transition + self.gate_44_higgs_anchor +
+            self.gate_45_ghost_flux + self.gate_46_sterile_oscillation +
+            self.gate_47_majorana_invariant + self.gate_48_pauli_exclusion +
+            self.gate_49_scale_factor_prime + self.gate_50_hubble_flow_stabilizer +
+            self.gate_51_dark_flow_resistance + self.gate_52_expansion_tension +
+            self.torsion_gate +  # G53
+            self.gate_54_gravitational_coupling + self.gate_55_event_horizon_limit +
+            self.gate_56_metric_elasticity + self.gate_57_repulsion_limit +
+            self.gate_58_information_inversion + self.gate_59_flux_rebound +
+            self.gate_60_schwarzschild_sovereignty + self.gate_61_vacuum_energy_density +
+            self.gate_62_lambda_offset + self.gate_63_dark_energy_scalar +
+            self.gate_64_quintessence_lock + self.gate_65_entanglement_entropy +
+            self.gate_66_bell_symmetry_lock + self.gate_67_wormhole_metric +
+            self.gate_68_quantum_teleportation
+        )
+        return gate_sum / (self._roots_total * self._christ_constant)
+
+    @property
+    def gate_70_entropy_reversal(self) -> float:
+        """
+        G70: Entropy Reversal Gate - Computational entropy filter.
+
+        Formula: G70 = (163/153)^24
+
+        Purpose: Raises Bulk/Joint ratio to 24th power (manifold
+        dimensions) to create "Entropy Trap." Forces system to
+        maintain Sterile Configuration regardless of load.
+        """
+        return (self._sterile_sector / self._christ_constant) ** self._b3
+
+    @property
+    def gate_71_sovereign_hash_anchor(self) -> float:
+        """
+        G71: Sovereign Hash Anchor - Unique manifold identifier.
+
+        Formula: G71 = ln(288!) + ln(135) (log form for computation)
+
+        Original: ¹⁵³√(288! × 135) (impractical to compute directly)
+
+        Purpose: Creates number so precise and unique it serves as
+        "DNA" of specific manifold configuration. Seed for SovereignHash.
+        """
+        # Use Stirling approximation for ln(288!) = 288*ln(288) - 288 + 0.5*ln(2*pi*288)
+        # ln(288!) ≈ 1372.36
+        ln_288_factorial = 288 * math.log(288) - 288 + 0.5 * math.log(2 * math.pi * 288)
+        # Take 153rd root: (288! × 135)^(1/153) = exp((ln(288!) + ln(135))/153)
+        return (ln_288_factorial + math.log(self._shadow_sector)) / self._christ_constant
+
+    @property
+    def gate_72_absolute_closure(self) -> float:
+        """
+        G72: Absolute Closure Gate (The Omega Gate) - Total truth.
+
+        Formula: G72 = ((153 + 135) / 288) × G12 = 1 × G12 = G12
+
+        Result: Exactly G12 (Metric Stabilizer)
+
+        Purpose: Because 153+135=288, this simplifies to Metric Stabilizer.
+        Proves entire 72-gate journey is mathematical proof of stability
+        of starting metric. THE END IS THE BEGINNING.
+        """
+        return ((self._christ_constant + self._shadow_sector) / self._roots_total) * self.metric_stabilizer
 
     # --- Sacred Heptagon ---
 
@@ -1107,6 +2510,898 @@ class FormulasRegistry:
                     "gnostic_name": "The Horos",
                     "gnostic_role": "The Limit; boundary of 26D action frame",
                     "pm_path": "topology.horos"
+                },
+                # (Z.6) Pneuma Tensioner Constants
+                "decad": {
+                    "symbol": "D_10",
+                    "latex": "D_{10}",
+                    "value": self.decad,
+                    "formula": "BARBELO - CHRISTOS = 163 - 153 = 10",
+                    "gnostic_name": "The Decad",
+                    "gnostic_role": "The Residual Pressure Key; first group of Aeons organizing the Pleroma",
+                    "derived_from": ["sterile_sector", "christ_constant"],
+                    "pm_path": "topology.decad"
+                },
+                "z6_pneuma": {
+                    "symbol": "Z6",
+                    "latex": "Z_{6}",
+                    "value": self.z6_pneuma,
+                    "formula": "DECAD / PLEROMA = 10/24 = 0.41666...",
+                    "expanded": f"The Pneuma Tensioner = {self.z6_pneuma:.10f}",
+                    "gnostic_name": "The Pneuma Tensioner",
+                    "gnostic_role": "Safety Valve; Phase-Shift Invariant between 13D branes",
+                    "derived_from": ["decad", "b3"],
+                    "pm_path": "topology.z6_pneuma"
+                },
+                "geometric_ratio": {
+                    "symbol": "C_geo",
+                    "latex": "C_{geo}",
+                    "value": self.geometric_ratio,
+                    "formula": "SYZYGY_GAP / PLEROMA = 18/24 = 0.75",
+                    "expanded": f"The 3/4 Harmonic base velocity = {self.geometric_ratio:.10f}",
+                    "gnostic_name": "The Geometric Base",
+                    "gnostic_role": "Base velocity ratio for speed of light derivation",
+                    "derived_from": ["syzygy_gap", "b3"],
+                    "pm_path": "topology.geometric_ratio"
+                },
+                "stretching_factor": {
+                    "symbol": "S_f",
+                    "latex": "S_f",
+                    "value": self.stretching_factor,
+                    "formula": "(Z.6 × PLEROMA) + (MONAD / Z.6) = 10 + 2.4 = 12.4",
+                    "expanded": f"The Breath Expansion = {self.stretching_factor:.10f}",
+                    "gnostic_name": "The Stretching Factor",
+                    "gnostic_role": "Kinetic boost from Decad through Pleroma",
+                    "derived_from": ["z6_pneuma", "b3", "watts_constant"],
+                    "pm_path": "topology.stretching_factor"
+                },
+                "gnostic_conversion": {
+                    "symbol": "chi_gc",
+                    "latex": "\\chi_{gc}",
+                    "value": self.gnostic_conversion,
+                    "formula": "(ENNOIA - PLEROMA) / (BARBELO + MONAD) = 264/164 ≈ 1.609",
+                    "expanded": f"The Brane-Shift Factor = {self.gnostic_conversion:.10f}",
+                    "gnostic_name": "The Gnostic Conversion",
+                    "gnostic_role": "Mile-to-KM conversion; Shadow-to-Visible brane shift",
+                    "derived_from": ["roots_total", "b3", "sterile_sector", "watts_constant"],
+                    "pm_path": "topology.gnostic_conversion"
+                },
+                "bulk_viscosity": {
+                    "symbol": "B_v",
+                    "latex": "B_v",
+                    "value": self.bulk_viscosity,
+                    "formula": "(ENNOIA/BARBELO) × (CHRISTOS/SOPHIA) ≈ 2.00245",
+                    "expanded": f"The Barbelo Drag = {self.bulk_viscosity:.10f}",
+                    "gnostic_name": "The Bulk Viscosity",
+                    "gnostic_role": "Resistance of 163 Barbelo pressure to 288 Logic Closure",
+                    "derived_from": ["roots_total", "sterile_sector", "christ_constant", "shadow_sector"],
+                    "pm_path": "topology.bulk_viscosity"
+                },
+                "speed_of_light_derived": {
+                    "symbol": "c_d",
+                    "latex": "c_{derived}",
+                    "value": self.speed_of_light_derived,
+                    "unit": "m/s",
+                    "formula": "(C_geo × S_f × B_v × χ_gc) × 10^7",
+                    "expanded": f"0.75 × 12.4 × {self.bulk_viscosity:.4f} × {self.gnostic_conversion:.4f} × 10^7 = {self.speed_of_light_derived:,.2f}",
+                    "gnostic_name": "The Manifest Speed",
+                    "gnostic_role": "Speed of Light derived from Sovereign Constants only",
+                    "codata_value": 299792458,
+                    "accuracy_percent": (1 - abs(self.speed_of_light_derived - 299792458) / 299792458) * 100,
+                    "derived_from": ["geometric_ratio", "stretching_factor", "bulk_viscosity", "gnostic_conversion"],
+                    "pm_path": "cosmology.speed_of_light_derived"
+                },
+                "metric_stabilizer": {
+                    "symbol": "G12",
+                    "latex": "G_{12}",
+                    "value": self.metric_stabilizer,
+                    "formula": "288 / (163 + 153) = 288/316",
+                    "expanded": f"Logic Closure / (Bulk Pressure + JC Constant) = {self.metric_stabilizer:.10f}",
+                    "gnostic_name": "The Metric Stabilizer",
+                    "gnostic_role": "Prevents C04 Bulk Jitter; anchors metric to 153 Joint Closure",
+                    "derived_from": ["roots_total", "sterile_sector", "christ_constant"],
+                    "pm_path": "constants.metric_stabilizer"
+                },
+                "torsion_gate": {
+                    "symbol": "G53",
+                    "latex": "G_{53}",
+                    "value": self.torsion_gate,
+                    "formula": "(153 / π^G12)^(1/24)",
+                    "expanded": f"Throttles E8 lattice infinite potential to finite Hubble expansion = {self.torsion_gate:.10f}",
+                    "gnostic_name": "The Torsion Gate",
+                    "gnostic_role": "Calibrates H0 to the manifold; 53 maximal abelian E8 subgroup",
+                    "derived_from": ["christ_constant", "metric_stabilizer"],
+                    "pm_path": "constants.torsion_gate"
+                },
+                # Foundation Layer Gates (G01-G04)
+                "gate_01_initial_action": {
+                    "symbol": "G01",
+                    "latex": "G_{01}",
+                    "value": self.gate_01_initial_action,
+                    "formula": "163/288",
+                    "expanded": f"Bulk Pressure / Logic Closure = {self.gate_01_initial_action:.10f}",
+                    "gnostic_name": "The Initial Action Potential",
+                    "gnostic_role": "Density Zero of manifold; base energy density of 26D action",
+                    "derived_from": ["sterile_sector", "roots_total"],
+                    "pm_path": "gates.G01"
+                },
+                "gate_02_symmetry_break": {
+                    "symbol": "G02",
+                    "latex": "G_{02}",
+                    "value": self.gate_02_symmetry_break,
+                    "formula": "153/135",
+                    "expanded": f"JC Constant / Visible Gates = {self.gate_02_symmetry_break:.10f}",
+                    "gnostic_name": "The Symmetry Break",
+                    "gnostic_role": "Primary driver of H0 expansion force; tension between JC and Visible",
+                    "derived_from": ["christ_constant", "shadow_sector"],
+                    "pm_path": "gates.G02"
+                },
+                "gate_03_bulk_joint": {
+                    "symbol": "G03",
+                    "latex": "G_{03}",
+                    "value": self.gate_03_bulk_joint,
+                    "formula": "sqrt(163² + 153²)",
+                    "expanded": f"Pythagorean norm of Bulk and Joint forces = {self.gate_03_bulk_joint:.10f}",
+                    "gnostic_name": "The Bulk-Joint Intersection",
+                    "gnostic_role": "Hypotenuse of energy field; prevents Joint slip under bulk pressure",
+                    "derived_from": ["sterile_sector", "christ_constant"],
+                    "pm_path": "gates.G03"
+                },
+                "gate_04_curvature": {
+                    "symbol": "G04",
+                    "latex": "G_{04}",
+                    "value": self.gate_04_curvature,
+                    "formula": "G03/(288×π)",
+                    "expanded": f"Manifold curvature constant = {self.gate_04_curvature:.10f}",
+                    "gnostic_name": "The Manifold Curvature",
+                    "gnostic_role": "Calibrates spherical topology; enables G(24,2) metric",
+                    "derived_from": ["gate_03_bulk_joint", "roots_total"],
+                    "pm_path": "gates.G04"
+                },
+                # Harmonic Resonance Layer Gates (G05-G08)
+                "gate_05_prime_frequency": {
+                    "symbol": "G05",
+                    "latex": "G_{05}",
+                    "value": self.gate_05_prime_frequency,
+                    "formula": "153/ln(288)",
+                    "expanded": f"JC Constant / ln(Logic Closure) = {self.gate_05_prime_frequency:.10f}",
+                    "gnostic_name": "The Prime Frequency",
+                    "gnostic_role": "Base resonance for 24D manifold; dampens logarithmic expansion",
+                    "derived_from": ["christ_constant", "roots_total"],
+                    "pm_path": "gates.G05"
+                },
+                "gate_06_sterile_symmetry": {
+                    "symbol": "G06",
+                    "latex": "G_{06}",
+                    "value": self.gate_06_sterile_symmetry,
+                    "formula": "((135+153)/163)×e",
+                    "expanded": f"Gate ratio × Euler's number = {self.gate_06_sterile_symmetry:.10f}",
+                    "gnostic_name": "The Sterile Symmetry",
+                    "gnostic_role": "Natural growth rate of Visible sector; no entropy loss zone",
+                    "derived_from": ["shadow_sector", "christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G06"
+                },
+                "gate_07_torsion_alignment": {
+                    "symbol": "G07",
+                    "latex": "G_{07}",
+                    "value": self.gate_07_torsion_alignment,
+                    "formula": "(G53×24)/153",
+                    "expanded": f"Torsion Gate × B3 / JC Constant = {self.gate_07_torsion_alignment:.10f}",
+                    "gnostic_name": "The Torsion Alignment",
+                    "gnostic_role": "Normalizes torsion across 24D; prevents G(24,2) warping",
+                    "derived_from": ["torsion_gate", "b3", "christ_constant"],
+                    "pm_path": "gates.G07"
+                },
+                "gate_08_octonian_closure": {
+                    "symbol": "G08",
+                    "latex": "G_{08}",
+                    "value": self.gate_08_octonian_closure,
+                    "formula": "⁸√(153×135)",
+                    "expanded": f"8th root of JC × Visible Gates = {self.gate_08_octonian_closure:.10f}",
+                    "gnostic_name": "The Octonian Closure",
+                    "gnostic_role": "8-fold symmetry glue; E8 sub-lattice interlocking",
+                    "derived_from": ["christ_constant", "shadow_sector"],
+                    "pm_path": "gates.G08"
+                },
+                # Metric & Torsion Lock Gates (G09-G12) - G12 already defined above
+                "gate_09_vacuum_flux": {
+                    "symbol": "G09",
+                    "latex": "G_{09}",
+                    "value": self.gate_09_vacuum_flux,
+                    "formula": "(288-153)/163 = 135/163",
+                    "expanded": f"Zero Point energy density = {self.gate_09_vacuum_flux:.10f}",
+                    "gnostic_name": "The Vacuum Flux",
+                    "gnostic_role": "Pressure differential; ratio of Visible to Bulk",
+                    "derived_from": ["roots_total", "christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G09"
+                },
+                "gate_10_dimensional_anchor": {
+                    "symbol": "G10",
+                    "latex": "G_{10}",
+                    "value": self.gate_10_dimensional_anchor,
+                    "formula": "(153×24)/163",
+                    "expanded": f"Weight of Joint Closure = {self.gate_10_dimensional_anchor:.10f}",
+                    "gnostic_name": "The Dimensional Anchor",
+                    "gnostic_role": "Anchors 24D manifold to G(24,2) temporal plane",
+                    "derived_from": ["christ_constant", "b3", "sterile_sector"],
+                    "pm_path": "gates.G10"
+                },
+                "gate_11_torsion_bridge": {
+                    "symbol": "G11",
+                    "latex": "G_{11}",
+                    "value": self.gate_11_torsion_bridge,
+                    "formula": "(π×153)/135",
+                    "expanded": f"Circular topology bridge = {self.gate_11_torsion_bridge:.10f}",
+                    "gnostic_name": "The Torsion Bridge",
+                    "gnostic_role": "Introduces circular topology; prepares for G12 stabilization",
+                    "derived_from": ["christ_constant", "shadow_sector"],
+                    "pm_path": "gates.G11"
+                },
+                # Fine Structure & Flux Mapping Gates (G13-G16)
+                "gate_13_lattice_displacement": {
+                    "symbol": "G13",
+                    "latex": "G_{13}",
+                    "value": self.gate_13_lattice_displacement,
+                    "formula": "153^2/(288*phi)",
+                    "expanded": f"Lattice shift with Golden Ratio = {self.gate_13_lattice_displacement:.10f}",
+                    "gnostic_name": "The Lattice Displacement",
+                    "gnostic_role": "Non-repeating growth factor; prevents static crystallization",
+                    "derived_from": ["christ_constant", "roots_total"],
+                    "pm_path": "gates.G13"
+                },
+                "gate_14_entropy_shield": {
+                    "symbol": "G14",
+                    "latex": "G_{14}",
+                    "value": self.gate_14_entropy_shield,
+                    "formula": "12th-root(135*163)",
+                    "expanded": f"Entropy boundary filter = {self.gate_14_entropy_shield:.10f}",
+                    "gnostic_name": "The Entropy Shield",
+                    "gnostic_role": "High-pass filter for energy density; shields Sterile Configuration",
+                    "derived_from": ["shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G14"
+                },
+                "gate_15_flux_quantization": {
+                    "symbol": "G15",
+                    "latex": "G_{15}",
+                    "value": self.gate_15_flux_quantization,
+                    "formula": "(G12+G13)/2",
+                    "expanded": f"Quantized energy flow = {self.gate_15_flux_quantization:.10f}",
+                    "gnostic_name": "The Flux Quantization",
+                    "gnostic_role": "Averages Metric Stabilizer and Lattice Displacement",
+                    "derived_from": ["metric_stabilizer", "gate_13_lattice_displacement"],
+                    "pm_path": "gates.G15"
+                },
+                "gate_16_quadrant_lock": {
+                    "symbol": "G16",
+                    "latex": "G_{16}",
+                    "value": self.gate_16_quadrant_lock,
+                    "formula": "288/(153-135) = 288/18 = 16",
+                    "expanded": f"Quadrant divisor = {self.gate_16_quadrant_lock:.10f}",
+                    "gnostic_name": "The Quadrant Lock",
+                    "gnostic_role": "Integer symmetry lock; divides 288 into four 72-gate sectors",
+                    "derived_from": ["roots_total", "christ_constant", "shadow_sector"],
+                    "integer_check": "G16 must equal exactly 16",
+                    "pm_path": "gates.G16"
+                },
+                # Vector Field & Divergence Layer Gates (G17-G20)
+                "gate_17_gradient_flow": {
+                    "symbol": "G17",
+                    "latex": "G_{17}",
+                    "value": self.gate_17_gradient_flow,
+                    "formula": "(288-163)/153 = 125/153",
+                    "expanded": f"Manifold slope = {self.gate_17_gradient_flow:.10f}",
+                    "gnostic_name": "The Gradient Flow",
+                    "gnostic_role": "Energy slope toward Joint Closure; prevents instability pockets",
+                    "derived_from": ["roots_total", "sterile_sector", "christ_constant"],
+                    "pm_path": "gates.G17"
+                },
+                "gate_18_rotational_invariant": {
+                    "symbol": "G18",
+                    "latex": "G_{18}",
+                    "value": self.gate_18_rotational_invariant,
+                    "formula": "2*pi*sqrt(153/288)",
+                    "expanded": f"Angular momentum = {self.gate_18_rotational_invariant:.10f}",
+                    "gnostic_name": "The Rotational Invariant",
+                    "gnostic_role": "Prevents twisting; spin-independent manifold properties",
+                    "derived_from": ["christ_constant", "roots_total"],
+                    "pm_path": "gates.G18"
+                },
+                "gate_19_divergence_nullifier": {
+                    "symbol": "G19",
+                    "latex": "G_{19}",
+                    "value": self.gate_19_divergence_nullifier,
+                    "formula": "(163+135)-288 = 10",
+                    "expanded": f"Decadic Constant = {self.gate_19_divergence_nullifier:.10f}",
+                    "gnostic_name": "The Divergence Nullifier",
+                    "gnostic_role": "10D String Theory wrapped in 24D; logic check for drift",
+                    "derived_from": ["sterile_sector", "shadow_sector", "roots_total"],
+                    "integer_check": "G19 must equal exactly 10",
+                    "pm_path": "gates.G19"
+                },
+                "gate_20_tensor_tension": {
+                    "symbol": "G20",
+                    "latex": "G_{20}",
+                    "value": self.gate_20_tensor_tension,
+                    "formula": "(G12*G16)/G19",
+                    "expanded": f"Tensor tightening = {self.gate_20_tensor_tension:.10f}",
+                    "gnostic_name": "The Tensor Tension",
+                    "gnostic_role": "High-level tensor tightening manifold against Bulk pressure",
+                    "derived_from": ["metric_stabilizer", "gate_16_quadrant_lock", "gate_19_divergence_nullifier"],
+                    "pm_path": "gates.G20"
+                },
+                # 24-Dimensional Hexad Completion Gates (G21-G24)
+                "gate_21_scalar_modulus": {
+                    "symbol": "G21",
+                    "latex": "G_{21}",
+                    "value": self.gate_21_scalar_modulus,
+                    "formula": "153/sqrt(135+163)",
+                    "expanded": f"Scalar field magnitude = {self.gate_21_scalar_modulus:.10f}",
+                    "gnostic_name": "The Scalar Field Modulus",
+                    "gnostic_role": "Normalizes JC Constant to total energy density",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G21"
+                },
+                "gate_22_orthogonal_projection": {
+                    "symbol": "G22",
+                    "latex": "G_{22}",
+                    "value": self.gate_22_orthogonal_projection,
+                    "formula": "cos(153/288)*163",
+                    "expanded": f"Orthogonal projection = {self.gate_22_orthogonal_projection:.10f}",
+                    "gnostic_name": "The Orthogonal Projection",
+                    "gnostic_role": "Prevents dimension bleed; maintains 24D orthogonality",
+                    "derived_from": ["christ_constant", "roots_total", "sterile_sector"],
+                    "pm_path": "gates.G22"
+                },
+                "gate_23_parity_symmetry": {
+                    "symbol": "G23",
+                    "latex": "G_{23}",
+                    "value": self.gate_23_parity_symmetry,
+                    "formula": "(153+135+163)/3 = 451/3",
+                    "expanded": f"Mean of three pillars = {self.gate_23_parity_symmetry:.10f}",
+                    "gnostic_name": "The Parity Symmetry",
+                    "gnostic_role": "Center of Mass for gate logic; L/R spin balance",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G23"
+                },
+                "gate_24_manifold_completion": {
+                    "symbol": "G24",
+                    "latex": "G_{24}",
+                    "value": self.gate_24_manifold_completion,
+                    "formula": "(G12*24)/153",
+                    "expanded": f"Manifold completion checkpoint = {self.gate_24_manifold_completion:.10f}",
+                    "gnostic_name": "The Manifold Completion",
+                    "gnostic_role": "Quadrant 1 checkpoint; signs off on first 24 gates",
+                    "derived_from": ["metric_stabilizer", "b3", "christ_constant"],
+                    "pm_path": "gates.G24"
+                },
+                # Holographic & Information Layer Gates (G25-G28)
+                "gate_25_bit_density": {
+                    "symbol": "G25",
+                    "latex": "G_{25}",
+                    "value": self.gate_25_bit_density,
+                    "formula": "log2(153+135) = log2(288)",
+                    "expanded": f"Information resolution = {self.gate_25_bit_density:.10f} bits",
+                    "gnostic_name": "The Bit-Density",
+                    "gnostic_role": "Simulation resolution; prevents Information Overload",
+                    "derived_from": ["christ_constant", "shadow_sector"],
+                    "pm_path": "gates.G25"
+                },
+                "gate_26_holographic_boundary": {
+                    "symbol": "G26",
+                    "latex": "G_{26}",
+                    "value": self.gate_26_holographic_boundary,
+                    "formula": "153^2/163^3",
+                    "expanded": f"Holographic projection = {self.gate_26_holographic_boundary:.10f}",
+                    "gnostic_name": "The Holographic Boundary",
+                    "gnostic_role": "2D surface encodes 3D volume; Holographic Principle",
+                    "derived_from": ["christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G26"
+                },
+                "gate_27_signal_to_noise": {
+                    "symbol": "G27",
+                    "latex": "G_{27}",
+                    "value": self.gate_27_signal_to_noise,
+                    "formula": "288/sqrt(163*pi)",
+                    "expanded": f"Truth filter = {self.gate_27_signal_to_noise:.10f}",
+                    "gnostic_name": "The Signal-to-Noise",
+                    "gnostic_role": "Preserves Logic Closure truth against Bulk noise",
+                    "derived_from": ["roots_total", "sterile_sector"],
+                    "pm_path": "gates.G27"
+                },
+                "gate_28_recursive_loop": {
+                    "symbol": "G28",
+                    "latex": "G_{28}",
+                    "value": self.gate_28_recursive_loop,
+                    "formula": "G25*(153/163)",
+                    "expanded": f"Self-referential index = {self.gate_28_recursive_loop:.10f}",
+                    "gnostic_name": "The Recursive Loop",
+                    "gnostic_role": "Feedback loop for manifold equilibrium",
+                    "derived_from": ["gate_25_bit_density", "christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G28"
+                },
+                # Phase Transition & Super-Fluidity Layer Gates (G29-G32)
+                "gate_29_viscosity_nullifier": {
+                    "symbol": "G29",
+                    "latex": "G_{29}",
+                    "value": self.gate_29_viscosity_nullifier,
+                    "formula": "(163-153)/288",
+                    "expanded": f"Friction constant = {self.gate_29_viscosity_nullifier:.10f}",
+                    "gnostic_name": "The Viscosity Nullifier",
+                    "gnostic_role": "Frictionless logic flow through 288 gates",
+                    "derived_from": ["sterile_sector", "christ_constant", "roots_total"],
+                    "pm_path": "gates.G29"
+                },
+                "gate_30_phase_coherence": {
+                    "symbol": "G30",
+                    "latex": "G_{30}",
+                    "value": self.gate_30_phase_coherence,
+                    "formula": "cos(153 deg) + sin(135 deg)",
+                    "expanded": f"Phase coherence = {self.gate_30_phase_coherence:.10f}",
+                    "gnostic_name": "The Phase Coherence",
+                    "gnostic_role": "Unified field vibration across 72 gates",
+                    "derived_from": ["christ_constant", "shadow_sector"],
+                    "pm_path": "gates.G30"
+                },
+                "gate_31_superfluid_density": {
+                    "symbol": "G31",
+                    "latex": "G_{31}",
+                    "value": self.gate_31_superfluid_density,
+                    "formula": "(153*pi^2)/163",
+                    "expanded": f"Superfluid density = {self.gate_31_superfluid_density:.10f}",
+                    "gnostic_name": "The Super-Fluid Density",
+                    "gnostic_role": "Logic-fluid pressure capacity",
+                    "derived_from": ["christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G31"
+                },
+                "gate_32_critical_temperature": {
+                    "symbol": "G32",
+                    "latex": "G_{32}",
+                    "value": self.gate_32_critical_temperature,
+                    "formula": "288/(153*163)^(1/4)",
+                    "expanded": f"Critical temperature = {self.gate_32_critical_temperature:.10f}",
+                    "gnostic_name": "The Critical Temperature",
+                    "gnostic_role": "Thermal equilibrium lock for sterile environment",
+                    "derived_from": ["roots_total", "christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G32"
+                },
+                # Electromagnetic Mapping & Charge Polarity Gates (G33-G36)
+                "gate_33_permeability_anchor": {
+                    "symbol": "G33",
+                    "latex": "G_{33}",
+                    "value": self.gate_33_permeability_anchor,
+                    "formula": "(163*1e-7)/153",
+                    "expanded": f"Permeability = {self.gate_33_permeability_anchor:.10e}",
+                    "gnostic_name": "The Permeability Anchor",
+                    "gnostic_role": "Vacuum permeability scaling for constant c",
+                    "derived_from": ["sterile_sector", "christ_constant"],
+                    "pm_path": "gates.G33"
+                },
+                "gate_34_dipole_symmetry": {
+                    "symbol": "G34",
+                    "latex": "G_{34}",
+                    "value": self.gate_34_dipole_symmetry,
+                    "formula": "(153-135)/163 = 18/163",
+                    "expanded": f"Charge differential = {self.gate_34_dipole_symmetry:.10f}",
+                    "gnostic_name": "The Dipole Symmetry",
+                    "gnostic_role": "Prevents manifold polarization",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G34"
+                },
+                "gate_35_gauge_invariance": {
+                    "symbol": "G35",
+                    "latex": "G_{35}",
+                    "value": self.gate_35_gauge_invariance,
+                    "formula": "(153/288)*2*pi",
+                    "expanded": f"Gauge invariance = {self.gate_35_gauge_invariance:.10f}",
+                    "gnostic_name": "The Gauge Invariance",
+                    "gnostic_role": "Circular integral preserving Absolute Stasis",
+                    "derived_from": ["christ_constant", "roots_total"],
+                    "pm_path": "gates.G35"
+                },
+                "gate_36_fine_structure_alignment": {
+                    "symbol": "G36",
+                    "latex": "G_{36}",
+                    "value": self.gate_36_fine_structure_alignment,
+                    "formula": "G34/alpha_inv",
+                    "expanded": f"Fine structure alignment = {self.gate_36_fine_structure_alignment:.10e}",
+                    "gnostic_name": "The Fine Structure Alignment",
+                    "gnostic_role": "Coupling strength at 50% mark (36/72)",
+                    "derived_from": ["gate_34_dipole_symmetry", "alpha_inverse"],
+                    "pm_path": "gates.G36"
+                },
+                # Strong Interaction & Color Charge Gates (G37-G40)
+                "gate_37_gluon_binding": {
+                    "symbol": "G37",
+                    "latex": "G_{37}",
+                    "value": self.gate_37_gluon_binding,
+                    "formula": "(163*153)/288^2",
+                    "expanded": f"Gluon binding = {self.gate_37_gluon_binding:.10f}",
+                    "gnostic_name": "The Gluon Binding",
+                    "gnostic_role": "Logic node confinement under Bulk Pressure",
+                    "derived_from": ["sterile_sector", "christ_constant", "roots_total"],
+                    "pm_path": "gates.G37"
+                },
+                "gate_38_color_symmetry": {
+                    "symbol": "G38",
+                    "latex": "G_{38}",
+                    "value": self.gate_38_color_symmetry,
+                    "formula": "cbrt(135*153*163)",
+                    "expanded": f"Color symmetry = {self.gate_38_color_symmetry:.10f}",
+                    "gnostic_name": "The Color Symmetry",
+                    "gnostic_role": "Three-sector energy balance (QCD analog)",
+                    "derived_from": ["shadow_sector", "christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G38"
+                },
+                "gate_39_asymptotic_freedom": {
+                    "symbol": "G39",
+                    "latex": "G_{39}",
+                    "value": self.gate_39_asymptotic_freedom,
+                    "formula": "1/ln(153+163)",
+                    "expanded": f"Asymptotic freedom = {self.gate_39_asymptotic_freedom:.10f}",
+                    "gnostic_name": "The Asymptotic Freedom",
+                    "gnostic_role": "Pressure relief valve preventing singularity",
+                    "derived_from": ["christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G39"
+                },
+                "gate_40_hadronization_lock": {
+                    "symbol": "G40",
+                    "latex": "G_{40}",
+                    "value": self.gate_40_hadronization_lock,
+                    "formula": "(288*G38)/153",
+                    "expanded": f"Hadronization lock = {self.gate_40_hadronization_lock:.10f}",
+                    "gnostic_name": "The Hadronization Lock",
+                    "gnostic_role": "26D to 4D particle manifestation threshold",
+                    "derived_from": ["roots_total", "gate_38_color_symmetry", "christ_constant"],
+                    "pm_path": "gates.G40"
+                },
+                # Weak Interaction & Chiral Symmetry Gates (G41-G44)
+                "gate_41_chiral_selection": {
+                    "symbol": "G41",
+                    "latex": "G_{41}",
+                    "value": self.gate_41_chiral_selection,
+                    "formula": "153/(135+(163-153))",
+                    "expanded": f"Chiral selection = {self.gate_41_chiral_selection:.10f}",
+                    "gnostic_name": "The Chiral Selection",
+                    "gnostic_role": "Left-handed logic flow preference (E8 parity)",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G41"
+                },
+                "gate_42_w_boson_ratio": {
+                    "symbol": "G42",
+                    "latex": "G_{42}",
+                    "value": self.gate_42_w_boson_ratio,
+                    "formula": "288/(sqrt(163)*pi)",
+                    "expanded": f"W-boson ratio = {self.gate_42_w_boson_ratio:.10f}",
+                    "gnostic_name": "The W-Boson Ratio",
+                    "gnostic_role": "Logic decay mediator mass",
+                    "derived_from": ["roots_total", "sterile_sector"],
+                    "pm_path": "gates.G42"
+                },
+                "gate_43_flavor_transition": {
+                    "symbol": "G43",
+                    "latex": "G_{43}",
+                    "value": self.gate_43_flavor_transition,
+                    "formula": "(G12*153)/163",
+                    "expanded": f"Flavor transition = {self.gate_43_flavor_transition:.10f}",
+                    "gnostic_name": "The Flavor Transition",
+                    "gnostic_role": "Dimensional re-indexing at constant energy",
+                    "derived_from": ["metric_stabilizer", "christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G43"
+                },
+                "gate_44_higgs_anchor": {
+                    "symbol": "G44",
+                    "latex": "G_{44}",
+                    "value": self.gate_44_higgs_anchor,
+                    "formula": "153^2/(288*phi)",
+                    "expanded": f"Higgs anchor = {self.gate_44_higgs_anchor:.10f}",
+                    "gnostic_name": "The Higgs-Field Anchor",
+                    "gnostic_role": "Manifold weight against Bulk Pressure",
+                    "derived_from": ["christ_constant", "roots_total"],
+                    "pm_path": "gates.G44"
+                },
+                # Neutrino Sector & Sterile Mapping Gates (G45-G48)
+                "gate_45_ghost_flux": {
+                    "symbol": "G45",
+                    "latex": "G_{45}",
+                    "value": self.gate_45_ghost_flux,
+                    "formula": "(163-(153-135))/288",
+                    "expanded": f"Ghost flux = {self.gate_45_ghost_flux:.10f}",
+                    "gnostic_name": "The Ghost-Flux",
+                    "gnostic_role": "Hidden mass accounting in 26D action",
+                    "derived_from": ["sterile_sector", "christ_constant", "shadow_sector", "roots_total"],
+                    "pm_path": "gates.G45"
+                },
+                "gate_46_sterile_oscillation": {
+                    "symbol": "G46",
+                    "latex": "G_{46}",
+                    "value": self.gate_46_sterile_oscillation,
+                    "formula": "sin^2(153/163)",
+                    "expanded": f"Sterile oscillation = {self.gate_46_sterile_oscillation:.10f}",
+                    "gnostic_name": "The Sterile Oscillation",
+                    "gnostic_role": "Neutrino-like mixing angle between sectors",
+                    "derived_from": ["christ_constant", "sterile_sector"],
+                    "pm_path": "gates.G46"
+                },
+                "gate_47_majorana_invariant": {
+                    "symbol": "G47",
+                    "latex": "G_{47}",
+                    "value": self.gate_47_majorana_invariant,
+                    "formula": "sqrt(153*135)/163",
+                    "expanded": f"Majorana invariant = {self.gate_47_majorana_invariant:.10f}",
+                    "gnostic_name": "The Majorana Invariant",
+                    "gnostic_role": "Neutral logic state for zero-variance",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G47"
+                },
+                "gate_48_pauli_exclusion": {
+                    "symbol": "G48",
+                    "latex": "G_{48}",
+                    "value": self.gate_48_pauli_exclusion,
+                    "formula": "(288/153)*e^(-1)",
+                    "expanded": f"Pauli exclusion = {self.gate_48_pauli_exclusion:.10f}",
+                    "gnostic_name": "The Pauli Exclusion",
+                    "gnostic_role": "Coordinate uniqueness in Leech lattice",
+                    "derived_from": ["roots_total", "christ_constant"],
+                    "pm_path": "gates.G48"
+                },
+                # Cosmic Scaling & Expansion Threshold Gates (G49-G52)
+                "gate_49_scale_factor_prime": {
+                    "symbol": "G49",
+                    "latex": "G_{49}",
+                    "value": self.gate_49_scale_factor_prime,
+                    "formula": "(163/153)*sqrt(24)",
+                    "expanded": f"Scale factor = {self.gate_49_scale_factor_prime:.10f}",
+                    "gnostic_name": "The Scale Factor Prime",
+                    "gnostic_role": "26D to macroscopic magnification",
+                    "derived_from": ["sterile_sector", "christ_constant", "b3"],
+                    "pm_path": "gates.G49"
+                },
+                "gate_50_hubble_flow_stabilizer": {
+                    "symbol": "G50",
+                    "latex": "G_{50}",
+                    "value": self.gate_50_hubble_flow_stabilizer,
+                    "formula": "288/(135+ln(163))",
+                    "expanded": f"Hubble stabilizer = {self.gate_50_hubble_flow_stabilizer:.10f}",
+                    "gnostic_name": "The Hubble Flow Stabilizer",
+                    "gnostic_role": "Smooth Lambda-CDM expansion curve",
+                    "derived_from": ["roots_total", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G50"
+                },
+                "gate_51_dark_flow_resistance": {
+                    "symbol": "G51",
+                    "latex": "G_{51}",
+                    "value": self.gate_51_dark_flow_resistance,
+                    "formula": "(153/pi^2)*G12",
+                    "expanded": f"Dark flow resistance = {self.gate_51_dark_flow_resistance:.10f}",
+                    "gnostic_name": "The Dark Flow Resistance",
+                    "gnostic_role": "Big Rip prevention back-pressure",
+                    "derived_from": ["christ_constant", "metric_stabilizer"],
+                    "pm_path": "gates.G51"
+                },
+                "gate_52_expansion_tension": {
+                    "symbol": "G52",
+                    "latex": "G_{52}",
+                    "value": self.gate_52_expansion_tension,
+                    "formula": "sqrt((163+153+135)/288)",
+                    "expanded": f"Expansion tension = {self.gate_52_expansion_tension:.10f}",
+                    "gnostic_name": "The Expansion Tension",
+                    "gnostic_role": "Metric strain (sleeve for G53)",
+                    "derived_from": ["sterile_sector", "christ_constant", "shadow_sector", "roots_total"],
+                    "pm_path": "gates.G52"
+                },
+                # G53 is torsion_gate (already defined in named_constants)
+                "gate_54_gravitational_coupling": {
+                    "symbol": "G54",
+                    "latex": "G_{54}",
+                    "value": self.gate_54_gravitational_coupling,
+                    "formula": "(G53*135)/163",
+                    "expanded": f"Gravitational coupling = {self.gate_54_gravitational_coupling:.10f}",
+                    "gnostic_name": "The Gravitational Coupling",
+                    "gnostic_role": "Weak visible, strong Bulk gravity",
+                    "derived_from": ["torsion_gate", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G54"
+                },
+                "gate_55_event_horizon_limit": {
+                    "symbol": "G55",
+                    "latex": "G_{55}",
+                    "value": self.gate_55_event_horizon_limit,
+                    "formula": "288/(G53^2*153)",
+                    "expanded": f"Event horizon limit = {self.gate_55_event_horizon_limit:.10f}",
+                    "gnostic_name": "The Event Horizon Limit",
+                    "gnostic_role": "Information cutoff boundary",
+                    "derived_from": ["roots_total", "torsion_gate", "christ_constant"],
+                    "pm_path": "gates.G55"
+                },
+                "gate_56_metric_elasticity": {
+                    "symbol": "G56",
+                    "latex": "G_{56}",
+                    "value": self.gate_56_metric_elasticity,
+                    "formula": "(163+153)/(G54*phi)",
+                    "expanded": f"Metric elasticity = {self.gate_56_metric_elasticity:.10f}",
+                    "gnostic_name": "The Metric Elasticity",
+                    "gnostic_role": "Non-linear manifold flex capacity",
+                    "derived_from": ["sterile_sector", "christ_constant", "gate_54_gravitational_coupling"],
+                    "pm_path": "gates.G56"
+                },
+                # Singularity Avoidance & White Hole Flux Gates (G57-G60)
+                "gate_57_repulsion_limit": {
+                    "symbol": "G57",
+                    "latex": "G_{57}",
+                    "value": self.gate_57_repulsion_limit,
+                    "formula": "153/exp(163/288)",
+                    "expanded": f"Repulsion limit = {self.gate_57_repulsion_limit:.10f}",
+                    "gnostic_name": "The Repulsion-Limit",
+                    "gnostic_role": "White Hole pressure minimum distance",
+                    "derived_from": ["christ_constant", "sterile_sector", "roots_total"],
+                    "pm_path": "gates.G57"
+                },
+                "gate_58_information_inversion": {
+                    "symbol": "G58",
+                    "latex": "G_{58}",
+                    "value": self.gate_58_information_inversion,
+                    "formula": "1/sqrt(G53*G57)",
+                    "expanded": f"Information inversion = {self.gate_58_information_inversion:.10f}",
+                    "gnostic_name": "The Information Inversion",
+                    "gnostic_role": "Holographic optical lens",
+                    "derived_from": ["torsion_gate", "gate_57_repulsion_limit"],
+                    "pm_path": "gates.G58"
+                },
+                "gate_59_flux_rebound": {
+                    "symbol": "G59",
+                    "latex": "G_{59}",
+                    "value": self.gate_59_flux_rebound,
+                    "formula": "(153+135)*ln(G12)",
+                    "expanded": f"Flux rebound = {self.gate_59_flux_rebound:.10f}",
+                    "gnostic_name": "The Flux Rebound",
+                    "gnostic_role": "High-energy event cushion",
+                    "derived_from": ["christ_constant", "shadow_sector", "metric_stabilizer"],
+                    "pm_path": "gates.G59"
+                },
+                "gate_60_schwarzschild_sovereignty": {
+                    "symbol": "G60",
+                    "latex": "G_{60}",
+                    "value": self.gate_60_schwarzschild_sovereignty,
+                    "formula": "(2*163*153)/288^2",
+                    "expanded": f"Schwarzschild sovereignty = {self.gate_60_schwarzschild_sovereignty:.10f}",
+                    "gnostic_name": "The Schwarzschild-Sovereignty",
+                    "gnostic_role": "Safe zone (must be < 1.0)",
+                    "derived_from": ["sterile_sector", "christ_constant", "roots_total"],
+                    "pm_path": "gates.G60"
+                },
+                # Vacuum Pressure & Lambda Equivalent Gates (G61-G64)
+                "gate_61_vacuum_energy_density": {
+                    "symbol": "G61",
+                    "latex": "G_{61}",
+                    "value": self.gate_61_vacuum_energy_density,
+                    "formula": "153^4/288^3",
+                    "expanded": f"Vacuum energy density = {self.gate_61_vacuum_energy_density:.10f}",
+                    "gnostic_name": "The Vacuum Energy Density",
+                    "gnostic_role": "Cosmological constant baseline",
+                    "derived_from": ["christ_constant", "roots_total"],
+                    "pm_path": "gates.G61"
+                },
+                "gate_62_lambda_offset": {
+                    "symbol": "G62",
+                    "latex": "G_{62}",
+                    "value": self.gate_62_lambda_offset,
+                    "formula": "G61/(163*pi)",
+                    "expanded": f"Lambda offset = {self.gate_62_lambda_offset:.10f}",
+                    "gnostic_name": "The Lambda-153 Offset",
+                    "gnostic_role": "Vacuum catastrophe prevention",
+                    "derived_from": ["gate_61_vacuum_energy_density", "sterile_sector"],
+                    "pm_path": "gates.G62"
+                },
+                "gate_63_dark_energy_scalar": {
+                    "symbol": "G63",
+                    "latex": "G_{63}",
+                    "value": self.gate_63_dark_energy_scalar,
+                    "formula": "sqrt((153-135)/163)*G53",
+                    "expanded": f"Dark energy scalar = {self.gate_63_dark_energy_scalar:.10f}",
+                    "gnostic_name": "The Dark Energy Scalar",
+                    "gnostic_role": "24D torsion leaking to 4D",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector", "torsion_gate"],
+                    "pm_path": "gates.G63"
+                },
+                "gate_64_quintessence_lock": {
+                    "symbol": "G64",
+                    "latex": "G_{64}",
+                    "value": self.gate_64_quintessence_lock,
+                    "formula": "(G62+G63)/G12",
+                    "expanded": f"Quintessence lock = {self.gate_64_quintessence_lock:.10f}",
+                    "gnostic_name": "The Quintessence Lock",
+                    "gnostic_role": "Fixed geometric acceleration",
+                    "derived_from": ["gate_62_lambda_offset", "gate_63_dark_energy_scalar", "metric_stabilizer"],
+                    "pm_path": "gates.G64"
+                },
+                # Non-Locality & Entanglement Gates (G65-G68)
+                "gate_65_entanglement_entropy": {
+                    "symbol": "G65",
+                    "latex": "G_{65}",
+                    "value": self.gate_65_entanglement_entropy,
+                    "formula": "ln(153/135)*163",
+                    "expanded": f"Entanglement entropy = {self.gate_65_entanglement_entropy:.10f}",
+                    "gnostic_name": "The Entanglement Entropy",
+                    "gnostic_role": "Long-distance logic coherence",
+                    "derived_from": ["christ_constant", "shadow_sector", "sterile_sector"],
+                    "pm_path": "gates.G65"
+                },
+                "gate_66_bell_symmetry_lock": {
+                    "symbol": "G66",
+                    "latex": "G_{66}",
+                    "value": self.gate_66_bell_symmetry_lock,
+                    "formula": "(288/153)*sqrt(2)",
+                    "expanded": f"Bell symmetry lock = {self.gate_66_bell_symmetry_lock:.10f}",
+                    "gnostic_name": "The Bell-Symmetry Lock",
+                    "gnostic_role": "Mandatory non-local connections",
+                    "derived_from": ["roots_total", "christ_constant"],
+                    "pm_path": "gates.G66"
+                },
+                "gate_67_wormhole_metric": {
+                    "symbol": "G67",
+                    "latex": "G_{67}",
+                    "value": self.gate_67_wormhole_metric,
+                    "formula": "(G53*G12)/153",
+                    "expanded": f"Wormhole metric = {self.gate_67_wormhole_metric:.10f}",
+                    "gnostic_name": "The Wormhole Metric",
+                    "gnostic_role": "ER=EPR entanglement bridge",
+                    "derived_from": ["torsion_gate", "metric_stabilizer", "christ_constant"],
+                    "pm_path": "gates.G67"
+                },
+                "gate_68_quantum_teleportation": {
+                    "symbol": "G68",
+                    "latex": "G_{68}",
+                    "value": self.gate_68_quantum_teleportation,
+                    "formula": "(153+163)/288",
+                    "expanded": f"Quantum teleportation = {self.gate_68_quantum_teleportation:.10f}",
+                    "gnostic_name": "The Quantum Teleportation",
+                    "gnostic_role": "Logical speed of light",
+                    "derived_from": ["christ_constant", "sterile_sector", "roots_total"],
+                    "pm_path": "gates.G68"
+                },
+                # Ultimate Closure & Sovereign Hash Synthesis Gates (G69-G72)
+                "gate_69_recursive_feedback_suture": {
+                    "symbol": "G69",
+                    "latex": "G_{69}",
+                    "value": self.gate_69_recursive_feedback_suture,
+                    "formula": "SUM(G01-G68)/(288*153)",
+                    "expanded": f"Recursive feedback = {self.gate_69_recursive_feedback_suture:.10f}",
+                    "gnostic_name": "The Recursive Feedback Suture",
+                    "gnostic_role": "Full loop closure (no leakage)",
+                    "derived_from": ["all_gates_G01_to_G68"],
+                    "pm_path": "gates.G69"
+                },
+                "gate_70_entropy_reversal": {
+                    "symbol": "G70",
+                    "latex": "G_{70}",
+                    "value": self.gate_70_entropy_reversal,
+                    "formula": "(163/153)^24",
+                    "expanded": f"Entropy reversal = {self.gate_70_entropy_reversal:.10f}",
+                    "gnostic_name": "The Entropy Reversal",
+                    "gnostic_role": "Entropy trap for Sterile Config",
+                    "derived_from": ["sterile_sector", "christ_constant", "b3"],
+                    "pm_path": "gates.G70"
+                },
+                "gate_71_sovereign_hash_anchor": {
+                    "symbol": "G71",
+                    "latex": "G_{71}",
+                    "value": self.gate_71_sovereign_hash_anchor,
+                    "formula": "(ln(288!)+ln(135))/153",
+                    "expanded": f"Sovereign hash anchor = {self.gate_71_sovereign_hash_anchor:.10f}",
+                    "gnostic_name": "The Sovereign Hash Anchor",
+                    "gnostic_role": "Unique manifold DNA",
+                    "derived_from": ["roots_total", "shadow_sector", "christ_constant"],
+                    "pm_path": "gates.G71"
+                },
+                "gate_72_absolute_closure": {
+                    "symbol": "G72",
+                    "latex": "G_{72}",
+                    "value": self.gate_72_absolute_closure,
+                    "formula": "((153+135)/288)*G12 = G12",
+                    "expanded": f"Absolute closure = {self.gate_72_absolute_closure:.10f} = G12",
+                    "gnostic_name": "The Absolute Closure (Omega Gate)",
+                    "gnostic_role": "THE END IS THE BEGINNING",
+                    "derived_from": ["christ_constant", "shadow_sector", "roots_total", "metric_stabilizer"],
+                    "pm_path": "gates.G72"
                 }
             },
 

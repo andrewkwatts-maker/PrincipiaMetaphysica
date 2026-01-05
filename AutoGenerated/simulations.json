@@ -1,7 +1,7 @@
 {
-  "version": "16.2",
-  "generated": "2026-01-05T20:38:25.685283Z",
-  "total_scripts": 83,
+  "version": "17.2",
+  "generated": "2026-01-05T22:48:57.887467Z",
+  "total_scripts": 84,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -619,15 +619,23 @@
       "isV16": true,
       "scripts": [
         {
+          "file": "abstract_v17_2.py",
+          "path": "simulations/v16/introduction/abstract_v17_2.py",
+          "version": "17.2",
+          "title": "Abstract",
+          "description": "Paper abstract for Principia Metaphysica v17.2",
+          "status": null
+        },
+        {
           "file": "introduction_v16_0.py",
           "path": "simulations/v16/introduction/introduction_v16_0.py",
           "version": "16.0",
           "title": "Introduction to Principia Metaphysica",
-          "description": "Narrative introduction to the PM v16.2 sterile framework - 125 geometric residues",
+          "description": "Narrative introduction to the PM v17.2 sterile framework - 125 geometric residues",
           "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/methodology": {
       "title": "Methodology",

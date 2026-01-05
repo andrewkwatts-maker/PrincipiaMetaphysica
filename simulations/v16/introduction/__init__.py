@@ -9,5 +9,6 @@ Dedicated To:
 """
 
 from .introduction_v16_0 import IntroductionV16
+from .abstract_v17_2 import AbstractV17_2
 
-__all__ = ['IntroductionV16']
+__all__ = ['IntroductionV16', 'AbstractV17_2']
