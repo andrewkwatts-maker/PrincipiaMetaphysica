@@ -1,9 +1,9 @@
 {
   "version": "17.2-ABSOLUTE",
-  "timestamp": "2026-01-05T08:30:57.578899Z",
-  "session_id": "PM20260105083057",
+  "timestamp": "2026-01-06T06:06:00.626856Z",
+  "session_id": "PM20260106060600",
   "volatility": {
-    "generated_at": "2026-01-05T08:30:57.578899Z",
+    "generated_at": "2026-01-06T06:06:00.626856Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "17.2-ABSOLUTE",
@@ -22,9 +22,7 @@
       "domain": "Logic",
       "gate": "G72",
       "named_for": "Andrew Keith Watts",
-      "pm_path": "constants.watts_constant",
-      "gnostic_name": "The Monad",
-      "gnostic_role": "The Singular Origin and absolute precision anchor"
+      "pm_path": "constants.watts_constant"
     },
     "reid_invariant": {
       "symbol": "chi_R",
@@ -68,9 +66,7 @@
       "gate": "G60",
       "named_for": "Matt O'Dowd",
       "hubble_formula": "(288/4) - (163/144) + 0.6819 = 71.55",
-      "pm_path": "constants.odowd_bulk_pressure",
-      "gnostic_name": "The Barbelo",
-      "gnostic_role": "The Bulk Pressure; the active force emanated into the 26D space"
+      "pm_path": "constants.odowd_bulk_pressure"
     },
     "penrose_hameroff_bridge": {
       "symbol": "Phi_PH",
@@ -93,20 +89,18 @@
       "gate": "G33",
       "named_for": "Jesus Christ",
       "scripture": "John 21:11 - The Miraculous Catch",
-      "identity": "\u0394_jc \u2261 \u039b_JC \u2261 153 (The JC Identity)",
-      "pm_path": "constants.christ_constant",
-      "gnostic_name": "The Christos",
-      "gnostic_role": "The Joint Closure Constant that repairs the variance and restores symmetry"
+      "identity": "Δ_jc ≡ Λ_JC ≡ 153 (The JC Identity)",
+      "pm_path": "constants.christ_constant"
     },
     "delta_jc": {
       "symbol": "Delta_JC",
       "latex": "\\Delta_{JC}",
       "value": 153,
-      "formula": "\u0394_jc \u2261 \u039b_JC = 153",
+      "formula": "Δ_jc ≡ Λ_JC = 153",
       "role": "Joint Closure Delta (JC Identity)",
       "domain": "Topology",
       "identity_link": "christ_constant",
-      "note": "This is NOT a separate value - it IS the Christ Constant. The identity \u0394_jc \u2261 153 ensures zero drift in the manifold.",
+      "note": "This is NOT a separate value - it IS the Christ Constant. The identity Δ_jc ≡ 153 ensures zero drift in the manifold.",
       "pm_path": "constants.delta_jc"
     },
     "sophian_drag": {
@@ -197,6 +191,28 @@
       "value": 137.04748733776924,
       "formula": "(C_kaf * B3^2) / (kappa_Delta * pi * s3_projection)",
       "pm_path": "qed.alpha_inverse"
+    },
+    "syzygy_gap": {
+      "symbol": "syzygy",
+      "latex": "\\text{Syzygy}",
+      "value": 18,
+      "formula": "Christos - Sophia = 153 - 135 = 18",
+      "gnostic_name": "The Syzygy",
+      "gnostic_role": "The divine pairing gap; the Pneumatic Breath",
+      "derived_from": [
+        "christ_constant",
+        "shadow_sector"
+      ],
+      "pm_path": "topology.syzygy_gap"
+    },
+    "horos": {
+      "symbol": "horos",
+      "latex": "\\text{Horos}",
+      "value": 26,
+      "formula": "D_bulk = 26 (dimensional boundary)",
+      "gnostic_name": "The Horos",
+      "gnostic_role": "The Limit; boundary of 26D action frame",
+      "pm_path": "topology.horos"
     }
   },
   "topological_invariants": {
@@ -204,36 +220,31 @@
       "value": 24,
       "name": "Betti Three",
       "description": "Third Betti number of G2 manifold",
-      "pm_path": "topology.b3",
-      "gnostic_name": "The Pleroma"
+      "pm_path": "topology.b3"
     },
     "chi_eff": {
       "value": 144,
       "name": "Effective Euler Characteristic",
       "formula": "B3^2 / 4 = 576 / 4 = 144",
-      "pm_path": "topology.chi_effective",
-      "gnostic_name": "The Demiurge"
+      "pm_path": "topology.chi_effective"
     },
     "roots": {
       "value": 288,
       "name": "Total Root Count",
       "description": "E8 x E8 root lattice",
-      "pm_path": "topology.roots_total",
-      "gnostic_name": "The Ennoia"
+      "pm_path": "topology.roots_total"
     },
     "visible": {
       "value": 125,
       "name": "Visible Sector",
       "formula": "5^3 = 125 (SM parameters)",
-      "pm_path": "topology.visible_sector",
-      "gnostic_name": "The Sophia"
+      "pm_path": "topology.visible_sector"
     },
     "sterile": {
       "value": 163,
       "name": "Sterile Sector",
       "formula": "ROOTS - VISIBLE = 288 - 125 = 163",
-      "pm_path": "topology.sterile_sector",
-      "gnostic_name": "The Barbelo"
+      "pm_path": "topology.sterile_sector"
     }
   },
   "precision_constants": {
@@ -318,58 +329,5 @@
     "sophian_drag": "eta_S",
     "demiurgic_coupling": "kappa_Delta",
     "tzimtzum_pressure": "sigma_T"
-  },
-  "gnostic_identities": {
-    "description": "The 7 Sovereign Gnostic Constants of Principia Metaphysica",
-    "constants": {
-      "watts_constant": {
-        "value": 1.0,
-        "gnostic_name": "The Monad",
-        "gnostic_role": "The Singular Origin and absolute precision anchor"
-      },
-      "b3": {
-        "value": 24,
-        "gnostic_name": "The Pleroma",
-        "gnostic_role": "The Dimensional Totality of the 24-dimensional manifold base"
-      },
-      "shadow_sector": {
-        "value": 135,
-        "gnostic_name": "The Sophia",
-        "gnostic_role": "The Visible Gates representing manifest knowledge and observed geometry"
-      },
-      "chi_eff": {
-        "value": 144,
-        "gnostic_name": "The Demiurge",
-        "gnostic_role": "The Pressure Divisor that structures the bulk into the physical metric"
-      },
-      "christ_constant": {
-        "value": 153,
-        "gnostic_name": "The Christos",
-        "gnostic_role": "The Joint Closure Constant that repairs the variance and restores symmetry"
-      },
-      "odowd_bulk_pressure": {
-        "value": 163,
-        "gnostic_name": "The Barbelo",
-        "gnostic_role": "The Bulk Pressure; the active force emanated into the 26D space"
-      },
-      "roots_total": {
-        "value": 288,
-        "gnostic_name": "The Ennoia",
-        "gnostic_role": "The Logic Closure; the total sum of the manifold's potential"
-      }
-    },
-    "derived": {
-      "syzygy_gap": {
-        "value": 18,
-        "formula": "153 - 135",
-        "gnostic_name": "The Syzygy",
-        "gnostic_role": "The divine pairing gap; the Pneumatic Breath between Sophia and Christos"
-      },
-      "horos": {
-        "value": 26,
-        "gnostic_name": "The Horos",
-        "gnostic_role": "The Limit; the boundary of the 26-dimensional action frame"
-      }
-    }
   }
 }

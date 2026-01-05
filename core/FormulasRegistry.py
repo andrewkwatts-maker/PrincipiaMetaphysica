@@ -106,6 +106,12 @@ class FormulasRegistry:
     BULK_PRESSURE = 163      # O'Dowd Bulk Pressure (= sterile_sector)
 
     # ===========================================================================
+    # DERIVED GNOSTIC CONSTANTS
+    # ===========================================================================
+    SYZYGY_GAP = 18          # The Syzygy: Christos - Sophia = 153 - 135
+    HOROS = 26               # The Horos: Dimensional Boundary (26D action frame)
+
+    # ===========================================================================
     # THE 7 SOVEREIGN GNOSTIC CONSTANTS
     # ===========================================================================
     # These are the archetypal names for the fundamental constants:
@@ -251,6 +257,16 @@ class FormulasRegistry:
     def sterile_sector(self) -> int:
         """Sterile sector: 288 - 125 = 163."""
         return self._sterile_sector
+
+    @property
+    def syzygy_gap(self) -> int:
+        """The Syzygy: Christos - Sophia = 153 - 135 = 18."""
+        return self._christ_constant - self._shadow_sector  # 153 - 135 = 18
+
+    @property
+    def horos(self) -> int:
+        """The Horos: Dimensional Boundary (26D action frame)."""
+        return 26  # D_bulk = 26
 
     # --- Sacred Heptagon ---
 
@@ -1004,6 +1020,25 @@ class FormulasRegistry:
                     "value": self.alpha_inverse,
                     "formula": "(C_kaf * B3^2) / (kappa_Delta * pi * s3_projection)",
                     "pm_path": "qed.alpha_inverse"
+                },
+                "syzygy_gap": {
+                    "symbol": "syzygy",
+                    "latex": "\\text{Syzygy}",
+                    "value": self.syzygy_gap,
+                    "formula": "Christos - Sophia = 153 - 135 = 18",
+                    "gnostic_name": "The Syzygy",
+                    "gnostic_role": "The divine pairing gap; the Pneumatic Breath",
+                    "derived_from": ["christ_constant", "shadow_sector"],
+                    "pm_path": "topology.syzygy_gap"
+                },
+                "horos": {
+                    "symbol": "horos",
+                    "latex": "\\text{Horos}",
+                    "value": self.horos,
+                    "formula": "D_bulk = 26 (dimensional boundary)",
+                    "gnostic_name": "The Horos",
+                    "gnostic_role": "The Limit; boundary of 26D action frame",
+                    "pm_path": "topology.horos"
                 }
             },
 
