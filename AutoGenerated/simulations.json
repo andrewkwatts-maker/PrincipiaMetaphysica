@@ -1,6 +1,6 @@
 {
   "version": "17.2",
-  "generated": "2026-01-06T10:34:56.540212Z",
+  "generated": "2026-01-06T20:33:10.897236Z",
   "total_scripts": 94,
   "categories": {
     "v16/appendices": {
@@ -672,8 +672,8 @@
           "file": "neutrino_mixing_v16_0.py",
           "path": "simulations/v16/neutrino/neutrino_mixing_v16_0.py",
           "version": "16.0",
-          "title": "PMNS Neutrino Mixing from G2 Geometry",
-          "description": "Derives all four PMNS mixing parameters (theta_12, theta_13, theta_23, delta_CP) from G2 manifold topology without calibration",
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         }
       ],
@@ -689,8 +689,8 @@
           "file": "pneuma_mechanism_v16_0.py",
           "path": "simulations/v16/pneuma/pneuma_mechanism_v16_0.py",
           "version": "16.0",
-          "title": "Pneuma Field Mechanism",
-          "description": "Compute Pneuma field dynamics, coupling constants, and Lagrangian validity from G2 geometry",
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         }
       ],
@@ -723,8 +723,8 @@
           "file": "proton_decay_v16_0.py",
           "path": "simulations/v16/proton/proton_decay_v16_0.py",
           "version": "16.0",
-          "title": "Proton Decay Lifetime from TCS Geometry",
-          "description": "Computes proton lifetime using geometric suppression from TCS G2 cycle separation. Derives d/R from K3 matching fibres and applies wavefunction overlap selection rule.",
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         }
       ],
@@ -888,8 +888,8 @@
           "file": "thermal_time_v16_0.py",
           "path": "simulations/v16/thermal/thermal_time_v16_0.py",
           "version": "16.0",
-          "title": "Thermal Time Hypothesis and Two-Time Framework",
-          "description": "Compute thermal time coupling alpha_T and validate emergent time from thermodynamics",
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         }
       ],

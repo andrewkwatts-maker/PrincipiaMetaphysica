@@ -72,7 +72,7 @@ class MethodologyV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="methodology_v16_2",
-            version="16.2",
+            version="17.2",
             domain="methodology",
             title="The Sterile Extraction Methodology",
             description="Spectral geometry and the 125-residue port",

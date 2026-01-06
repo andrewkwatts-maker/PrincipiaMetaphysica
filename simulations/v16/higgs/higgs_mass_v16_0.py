@@ -82,7 +82,7 @@ class HiggsMassSimulation(SimulationBase):
         """Initialize the Higgs mass simulation."""
         self._metadata = SimulationMetadata(
             id="higgs_mass_v16_0",
-            version="16.0",
+            version="17.2",
             domain="higgs",
             title="Higgs Mass from Moduli Stabilization",
             description="Compute Higgs mass and VEV from G2 moduli stabilization",

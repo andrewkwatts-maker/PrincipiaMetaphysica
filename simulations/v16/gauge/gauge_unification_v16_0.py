@@ -72,7 +72,7 @@ class GaugeUnificationSimulation(SimulationBase):
         """Initialize the gauge unification simulation."""
         self._metadata = SimulationMetadata(
             id="gauge_unification_v16_0",
-            version="16.0",
+            version="17.2",
             domain="gauge",
             title="Gauge Coupling Unification",
             description="Compute GUT scale and unified coupling from 3-loop RG evolution with KK and asymptotic safety corrections",

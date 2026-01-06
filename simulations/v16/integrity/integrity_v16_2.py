@@ -67,7 +67,7 @@ class IntegrityV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="integrity_v16_2",
-            version="16.2",
+            version="17.2",
             domain="integrity",
             title="System Integrity and Verification",
             description="Hysteresis seal, 42 certificates, and data provenance",

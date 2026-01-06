@@ -1,6 +1,6 @@
 {
   "version": "17.2",
-  "count": 53,
+  "count": 54,
   "sections": {
     "0": {
       "id": "0",
@@ -68,7 +68,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.353948"
+      "timestamp": "2026-01-07T06:33:10.707266"
     },
     "1": {
       "id": "1",
@@ -576,7 +576,207 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.393640"
+      "timestamp": "2026-01-07T06:33:10.748144"
+    },
+    "2.0": {
+      "id": "2",
+      "appendix": false,
+      "subsection_id": "2.0",
+      "type": "section",
+      "section_type": null,
+      "title": "Geometric Anchors: First Principles Derivation",
+      "shortTitle": "Geometric Anchors: First Principles Derivation",
+      "order": 2,
+      "abstract": "All fundamental constants are derived from the single topological invariant b3=24. This eliminates fine-tuning by anchoring everything to G2 manifold topology.",
+      "contentBlocks": [
+        {
+          "type": "paragraph",
+          "content": "The Principia Metaphysica framework derives all Standard Model parameters from the third Betti number b3=24 of the TCS G2 manifold. This section presents the core geometric anchors that underpin the entire theory."
+        },
+        {
+          "type": "heading",
+          "content": "The Gimel Constant",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "k-gimel-anchor",
+          "label": "(2.1)",
+          "equationNumber": "(2.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Gimel constant k_gimel encodes the warping between the 26D string frame and the 4D Einstein frame. It combines the purely topological b3/2 with the transcendental 1/π factor."
+        },
+        {
+          "type": "heading",
+          "content": "Fine Structure Constant",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "alpha-inverse-anchor",
+          "label": "(2.2)",
+          "equationNumber": "(2.2)"
+        },
+        {
+          "type": "heading",
+          "content": "Dark Energy Parameters",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "w0-thawing-anchor",
+          "label": "(2.3)",
+          "equationNumber": "(2.3)"
+        },
+        {
+          "type": "heading",
+          "content": "Spectral Index (Inflationary Probe)",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "spectral-index-anchor",
+          "label": "(2.4)",
+          "equationNumber": "(2.4)"
+        },
+        {
+          "type": "callout",
+          "content": "The spectral index n_s = 0.9167 is a 'sterile' prediction that differs from Planck 2018 (0.9649 ± 0.0042) by ~1.6σ. This represents a high-risk, high-reward anchor point for the theory."
+        },
+        {
+          "type": "heading",
+          "content": "The Unity Seal",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "unity-seal-anchor",
+          "label": "(2.5)",
+          "equationNumber": "(2.5)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Unity Seal verifies internal consistency of the entire Demon-Lock framework. A value within 1% of unity confirms that all topological residues are correctly balanced."
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "paragraph",
+          "content": "The Principia Metaphysica framework derives all Standard Model parameters from the third Betti number b3=24 of the TCS G2 manifold. This section presents the core geometric anchors that underpin the entire theory."
+        },
+        {
+          "type": "heading",
+          "content": "The Gimel Constant",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "k-gimel-anchor",
+          "label": "(2.1)",
+          "equationNumber": "(2.1)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Gimel constant k_gimel encodes the warping between the 26D string frame and the 4D Einstein frame. It combines the purely topological b3/2 with the transcendental 1/π factor."
+        },
+        {
+          "type": "heading",
+          "content": "Fine Structure Constant",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "alpha-inverse-anchor",
+          "label": "(2.2)",
+          "equationNumber": "(2.2)"
+        },
+        {
+          "type": "heading",
+          "content": "Dark Energy Parameters",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "w0-thawing-anchor",
+          "label": "(2.3)",
+          "equationNumber": "(2.3)"
+        },
+        {
+          "type": "heading",
+          "content": "Spectral Index (Inflationary Probe)",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "spectral-index-anchor",
+          "label": "(2.4)",
+          "equationNumber": "(2.4)"
+        },
+        {
+          "type": "callout",
+          "content": "The spectral index n_s = 0.9167 is a 'sterile' prediction that differs from Planck 2018 (0.9649 ± 0.0042) by ~1.6σ. This represents a high-risk, high-reward anchor point for the theory."
+        },
+        {
+          "type": "heading",
+          "content": "The Unity Seal",
+          "level": 2
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "unity-seal-anchor",
+          "label": "(2.5)",
+          "equationNumber": "(2.5)"
+        },
+        {
+          "type": "paragraph",
+          "content": "The Unity Seal verifies internal consistency of the entire Demon-Lock framework. A value within 1% of unity confirms that all topological residues are correctly balanced."
+        }
+      ],
+      "formulaRefs": [
+        "k-gimel-anchor",
+        "alpha-inverse-anchor",
+        "w0-thawing-anchor",
+        "spectral-index-anchor",
+        "unity-seal-anchor"
+      ],
+      "paramRefs": [
+        "geometry.b3",
+        "geometry.k_gimel",
+        "geometry.phi",
+        "geometry.alpha_inverse",
+        "geometry.w_zero",
+        "geometry.n_s",
+        "geometry.unity_seal"
+      ],
+      "formula_refs": [
+        "k-gimel-anchor",
+        "alpha-inverse-anchor",
+        "w0-thawing-anchor",
+        "spectral-index-anchor",
+        "unity-seal-anchor"
+      ],
+      "param_refs": [
+        "geometry.b3",
+        "geometry.k_gimel",
+        "geometry.phi",
+        "geometry.alpha_inverse",
+        "geometry.w_zero",
+        "geometry.n_s",
+        "geometry.unity_seal"
+      ],
+      "timestamp": "2026-01-07T06:33:10.707766"
     },
     "2": {
       "id": "2",
@@ -1002,7 +1202,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.393700"
+      "timestamp": "2026-01-07T06:33:10.748204"
     },
     "validation": {
       "id": "validation",
@@ -1124,7 +1324,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-06T20:34:56.355012"
+      "timestamp": "2026-01-07T06:33:10.708229"
     },
     "V.1": {
       "id": "validation",
@@ -1246,7 +1446,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-06T20:34:56.355041"
+      "timestamp": "2026-01-07T06:33:10.708252"
     },
     "3": {
       "id": "3",
@@ -1518,7 +1718,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.393750"
+      "timestamp": "2026-01-07T06:33:10.748255"
     },
     "3.4": {
       "id": "3",
@@ -1682,7 +1882,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-06T20:34:56.355129"
+      "timestamp": "2026-01-07T06:33:10.708321"
     },
     "3.5": {
       "id": "3",
@@ -1854,7 +2054,7 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-06T20:34:56.355254"
+      "timestamp": "2026-01-07T06:33:10.708544"
     },
     "3.1": {
       "id": "3",
@@ -1912,7 +2112,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-06T20:34:56.385949"
+      "timestamp": "2026-01-07T06:33:10.740166"
     },
     "4": {
       "id": "4",
@@ -2220,7 +2420,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.393812"
+      "timestamp": "2026-01-07T06:33:10.748322"
     },
     "4.2": {
       "id": "4",
@@ -2278,7 +2478,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-06T20:34:56.386621"
+      "timestamp": "2026-01-07T06:33:10.740906"
     },
     "4.1": {
       "id": "4",
@@ -2566,7 +2766,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-06T20:34:56.386190"
+      "timestamp": "2026-01-07T06:33:10.740430"
     },
     "4.3": {
       "id": "4",
@@ -2806,7 +3006,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-06T20:34:56.386333"
+      "timestamp": "2026-01-07T06:33:10.740587"
     },
     "4.6": {
       "id": "4",
@@ -2986,7 +3186,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-06T20:34:56.386408"
+      "timestamp": "2026-01-07T06:33:10.740671"
     },
     "4.4": {
       "id": "4",
@@ -3076,7 +3276,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-06T20:34:56.386566"
+      "timestamp": "2026-01-07T06:33:10.740850"
     },
     "5": {
       "id": "5",
@@ -3230,7 +3430,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-06T20:34:56.392842"
+      "timestamp": "2026-01-07T06:33:10.747354"
     },
     "5.1": {
       "id": "5",
@@ -3538,7 +3738,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-06T20:34:56.386730"
+      "timestamp": "2026-01-07T06:33:10.741014"
     },
     "5.2": {
       "id": "5",
@@ -3674,7 +3874,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-06T20:34:56.386873"
+      "timestamp": "2026-01-07T06:33:10.741172"
     },
     "5.6": {
       "id": "5",
@@ -3910,7 +4110,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-06T20:34:56.387069"
+      "timestamp": "2026-01-07T06:33:10.741388"
     },
     "5.7": {
       "id": "5",
@@ -4054,7 +4254,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-06T20:34:56.389074"
+      "timestamp": "2026-01-07T06:33:10.743562"
     },
     "5.4": {
       "id": "5",
@@ -4216,7 +4416,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-06T20:34:56.391901"
+      "timestamp": "2026-01-07T06:33:10.746412"
     },
     "4.5": {
       "id": "4",
@@ -4283,7 +4483,7 @@
         },
         {
           "type": "paragraph",
-          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.33°, θ₂₃=49.75°, δ_CP=278.4°. v16.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters."
+          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.33°, θ₂₃=49.75°, δ_CP=278.4°. v17.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters."
         }
       ],
       "content_blocks": [
@@ -4341,7 +4541,7 @@
         },
         {
           "type": "paragraph",
-          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.33°, θ₂₃=49.75°, δ_CP=278.4°. v16.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters."
+          "content": "With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), we obtain: θ₁₂=33.59°, θ₁₃=8.33°, θ₂₃=49.75°, δ_CP=278.4°. v17.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, with no calibration or free parameters."
         }
       ],
       "formulaRefs": [
@@ -4378,7 +4578,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-06T20:34:56.392070"
+      "timestamp": "2026-01-07T06:33:10.746579"
     },
     "4.7": {
       "id": "4",
@@ -4622,7 +4822,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-06T20:34:56.392196"
+      "timestamp": "2026-01-07T06:33:10.746704"
     },
     "5.3": {
       "id": "5",
@@ -4736,7 +4936,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-06T20:34:56.392331"
+      "timestamp": "2026-01-07T06:33:10.746842"
     },
     "5.8": {
       "id": "5",
@@ -4942,7 +5142,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-06T20:34:56.392451"
+      "timestamp": "2026-01-07T06:33:10.746958"
     },
     "6": {
       "id": "6",
@@ -7088,7 +7288,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-06T20:34:56.393544"
+      "timestamp": "2026-01-07T06:33:10.748048"
     },
     "6.1": {
       "id": "6",
@@ -7148,7 +7348,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392507"
+      "timestamp": "2026-01-07T06:33:10.747016"
     },
     "6.2": {
       "id": "6",
@@ -7188,7 +7388,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392564"
+      "timestamp": "2026-01-07T06:33:10.747073"
     },
     "6.3": {
       "id": "6",
@@ -7216,7 +7416,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392599"
+      "timestamp": "2026-01-07T06:33:10.747110"
     },
     "6.4": {
       "id": "6",
@@ -7244,7 +7444,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392633"
+      "timestamp": "2026-01-07T06:33:10.747145"
     },
     "6.5": {
       "id": "6",
@@ -7272,7 +7472,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392665"
+      "timestamp": "2026-01-07T06:33:10.747178"
     },
     "6.6": {
       "id": "6",
@@ -7300,7 +7500,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392701"
+      "timestamp": "2026-01-07T06:33:10.747211"
     },
     "6.7": {
       "id": "6",
@@ -7328,7 +7528,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392734"
+      "timestamp": "2026-01-07T06:33:10.747242"
     },
     "6.8": {
       "id": "6",
@@ -7364,7 +7564,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392762"
+      "timestamp": "2026-01-07T06:33:10.747271"
     },
     "6.9": {
       "id": "6",
@@ -7400,7 +7600,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.392794"
+      "timestamp": "2026-01-07T06:33:10.747304"
     },
     "5.5": {
       "id": "5",
@@ -7554,7 +7754,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-06T20:34:56.392868"
+      "timestamp": "2026-01-07T06:33:10.747380"
     },
     "pneuma-lagrangian": {
       "id": "2",
@@ -8386,7 +8586,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-06T20:34:56.393031"
+      "timestamp": "2026-01-07T06:33:10.747539"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -8514,7 +8714,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2026-01-06T20:34:56.393114"
+      "timestamp": "2026-01-07T06:33:10.747621"
     },
     "7": {
       "id": "7",
@@ -10948,7 +11148,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-06T20:34:56.393347"
+      "timestamp": "2026-01-07T06:33:10.747852"
     },
     "7.2": {
       "id": "7",
@@ -11016,7 +11216,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-06T20:34:56.393190"
+      "timestamp": "2026-01-07T06:33:10.747694"
     },
     "A": {
       "id": "A",
@@ -11226,7 +11426,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-06T20:34:56.393875"
+      "timestamp": "2026-01-07T06:33:10.748383"
     },
     "B": {
       "id": "B",
@@ -11462,7 +11662,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-06T20:34:56.393940"
+      "timestamp": "2026-01-07T06:33:10.748451"
     },
     "C": {
       "id": "C",
@@ -11668,7 +11868,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-06T20:34:56.393993"
+      "timestamp": "2026-01-07T06:33:10.748504"
     },
     "D": {
       "id": "D",
@@ -11866,7 +12066,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-06T20:34:56.394054"
+      "timestamp": "2026-01-07T06:33:10.748563"
     },
     "E": {
       "id": "E",
@@ -12068,7 +12268,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-06T20:34:56.394109"
+      "timestamp": "2026-01-07T06:33:10.748612"
     },
     "F": {
       "id": "F",
@@ -12278,7 +12478,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-06T20:34:56.394620"
+      "timestamp": "2026-01-07T06:33:10.749114"
     },
     "G": {
       "id": "G",
@@ -12614,7 +12814,7 @@
         "topology.torsion_per_shadow",
         "seal.geometric_checksum"
       ],
-      "timestamp": "2026-01-06T20:34:56.394732"
+      "timestamp": "2026-01-07T06:33:10.749217"
     },
     "H": {
       "id": "H",
@@ -12900,7 +13100,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-06T20:34:56.394818"
+      "timestamp": "2026-01-07T06:33:10.749298"
     },
     "I": {
       "id": "I",
@@ -13254,7 +13454,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-06T20:34:56.394900"
+      "timestamp": "2026-01-07T06:33:10.749380"
     },
     "J": {
       "id": "J",
@@ -13536,7 +13736,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-06T20:34:56.395000"
+      "timestamp": "2026-01-07T06:33:10.749468"
     },
     "K": {
       "id": "K",
@@ -13952,7 +14152,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-06T20:34:56.395085"
+      "timestamp": "2026-01-07T06:33:10.749546"
     },
     "L": {
       "id": "L",
@@ -14242,7 +14442,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-06T20:34:56.395176"
+      "timestamp": "2026-01-07T06:33:10.749626"
     },
     "Z": {
       "id": "Z",
@@ -14318,7 +14518,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-06T20:34:56.395284"
+      "timestamp": "2026-01-07T06:33:10.749735"
     }
   }
 }

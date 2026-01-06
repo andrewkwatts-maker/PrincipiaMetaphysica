@@ -113,7 +113,7 @@ class DarkEnergyEvolution(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="dark_energy_thawing_v16_2",
-            version="16.2",
+            version="17.2",
             domain="cosmology",
             title="Dark Energy Thawing from G2 Geometry",
             description=(
@@ -1159,7 +1159,7 @@ _validation_instance = DarkEnergyEvolution()
 
 assert _validation_instance.metadata is not None
 assert _validation_instance.metadata.id == "dark_energy_thawing_v16_2"
-assert _validation_instance.metadata.version == "16.2"
+assert _validation_instance.metadata.version == "17.2"
 assert len(_validation_instance.get_formulas()) == 5
 
 # Test w0 and wa calculations with b3=24, k_gimel=12.318

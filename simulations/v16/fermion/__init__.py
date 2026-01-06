@@ -14,6 +14,13 @@ from .ckm_matrix_v16_0 import CKMMatrixSimulation
 from .muon_g2_anomaly_v16_1 import MuonG2AnomalySimulation
 from .octonionic_mixing_v16_2 import OctonionicMixing
 
+# Conditionally import MassRatioSimulation (requires schema availability)
+try:
+    from .mass_ratio_v16_1 import MassRatioSimulation
+    _MASS_RATIO_AVAILABLE = True
+except ImportError:
+    _MASS_RATIO_AVAILABLE = False
+
 __all__ = [
     'ChiralitySpinorSimulation',
     'FermionGenerationsV16',
@@ -21,3 +28,6 @@ __all__ = [
     'MuonG2AnomalySimulation',
     'OctonionicMixing',
 ]
+
+if _MASS_RATIO_AVAILABLE:
+    __all__.append('MassRatioSimulation')

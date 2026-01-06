@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.0 - PMNS Neutrino Mixing from G2 Geometry
+PRINCIPIA METAPHYSICA v17.2 - PMNS Neutrino Mixing from G2 Geometry
 ====================================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -34,7 +34,7 @@ TOPOLOGICAL INPUTS (TCS #187):
     - n_gen = 3 (generations = |chi_eff|/48)
     - orientation_sum = 12 (from Sp(2,R) gauge fixing)
 
-PREDICTIONS vs NuFIT 6.0 (v16.2):
+PREDICTIONS vs NuFIT 6.0 (v17.2):
     theta_12 = 33.59° (NuFIT: 33.41 ± 0.75°) → 0.24σ
     theta_13 = 8.33°  (NuFIT: 8.54 ± 0.11°)  → 1.9σ
     theta_23 = 49.75° (NuFIT: 49.0 ± 1.5° upper octant) → 0.50σ
@@ -123,8 +123,8 @@ class NeutrinoMixingSimulation(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return metadata about this simulation."""
         return SimulationMetadata(
-            id="neutrino_mixing_v16_0",
-            version="16.0",
+            id="neutrino_mixing_v17_2",
+            version="17.2",
             domain="neutrino",
             title="PMNS Neutrino Mixing from G2 Geometry",
             description="Derives all four PMNS mixing parameters (theta_12, theta_13, "
@@ -257,7 +257,7 @@ class NeutrinoMixingSimulation(SimulationBase):
         """
         Compute delta_CP from flux orientation phases with 13D parity offset.
 
-        v16.2 FORMULA:
+        v17.2 FORMULA:
             delta_CP = pi * ((n_gen + b2)/(2*n_gen) + n_gen/b3) + parity_offset
 
         DERIVATION:
@@ -282,7 +282,7 @@ class NeutrinoMixingSimulation(SimulationBase):
         delta_cp_rad = np.pi * phase_factor
         delta_cp_bare = np.degrees(delta_cp_rad)
 
-        # v16.2: Add 13D Parity-Flip Offset
+        # v17.2: Add 13D Parity-Flip Offset
         # Arises from torsional rotation in (24, 2) signature
         # projecting from 13D shadow to 4D observable
         parity_offset = 45.9  # degrees
@@ -585,7 +585,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 type="paragraph",
                 content="With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), "
                        "we obtain: θ₁₂=33.59°, θ₁₃=8.33°, θ₂₃=49.75°, δ_CP=278.4°. "
-                       "v16.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. "
+                       "v17.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. "
                        "These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, "
                        "with no calibration or free parameters."
             ),
@@ -1304,7 +1304,7 @@ def run_neutrino_mixing(verbose: bool = True) -> Dict[str, Any]:
 
     if verbose:
         print("\n" + "=" * 75)
-        print("NEUTRINO MIXING RESULTS (v16.0)")
+        print("NEUTRINO MIXING RESULTS (v17.2)")
         print("=" * 75)
         print(f"\ntheta_12 (solar)       = {results['neutrino.theta_12_pred']:.2f} deg "
               f"(NuFIT: {sim.NUFIT_VALUES['theta_12'][0]:.2f} +/- {sim.NUFIT_VALUES['theta_12'][1]:.2f} deg)")
@@ -1356,9 +1356,9 @@ _validation_instance = NeutrinoMixingSimulation()
 
 # Validate metadata
 assert _validation_instance.metadata is not None, "NeutrinoMixing: metadata is None"
-assert _validation_instance.metadata.id == "neutrino_mixing_v16_0", \
+assert _validation_instance.metadata.id == "neutrino_mixing_v17_2", \
     f"NeutrinoMixing: unexpected id {_validation_instance.metadata.id}"
-assert _validation_instance.metadata.version == "16.0", \
+assert _validation_instance.metadata.version == "17.2", \
     f"NeutrinoMixing: unexpected version {_validation_instance.metadata.version}"
 
 # Validate formulas exist

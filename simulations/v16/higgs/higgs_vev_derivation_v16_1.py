@@ -61,7 +61,7 @@ class HiggsVEVDerivationV16(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="higgs_vev_derivation_v16_1",
-            version="16.1",
+            version="17.2",
             domain="higgs",
             title="Higgs VEV Geometric Derivation",
             description=(

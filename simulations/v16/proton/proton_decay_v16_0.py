@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Proton Decay Simulation v16.0
+Proton Decay Simulation v17.2
 ===============================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -72,8 +72,8 @@ class ProtonDecaySimulation(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return SimulationMetadata(
-            id="proton_decay_v16_0",
-            version="16.0",
+            id="proton_decay_v17_2",
+            version="17.2",
             domain="proton",
             title="Proton Decay Lifetime from TCS Geometry",
             description=(
@@ -331,8 +331,6 @@ class ProtonDecaySimulation(SimulationBase):
                 ),
                 inputParams=["topology.K_MATCHING"],
                 outputParams=["proton_decay.suppression_factor", "proton_decay.d_over_R"],
-                input_params=["topology.K_MATCHING"],
-                output_params=["proton_decay.suppression_factor", "proton_decay.d_over_R"],
                 derivation={
                     "parentFormulas": ["tcs-matching-condition"],
                     "method": "Wavefunction overlap integral",
@@ -371,12 +369,6 @@ class ProtonDecaySimulation(SimulationBase):
                     "proton_decay.suppression_factor",
                 ],
                 outputParams=["proton_decay.tau_p_years"],
-                input_params=[
-                    "gauge.M_GUT_GEOMETRIC",
-                    "gauge.ALPHA_GUT_GEOMETRIC",
-                    "proton_decay.suppression_factor",
-                ],
-                output_params=["proton_decay.tau_p_years"],
                 derivation={
                     "parentFormulas": [
                         "gut-proton-decay-rate",
