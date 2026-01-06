@@ -22,8 +22,8 @@ Licensed under the MIT License. See LICENSE file for details.
 This configuration file contains ALL theoretical values, phenomenological parameters,
 and computational settings used throughout the Principia Metaphysica project.
 
-Version: 12.0
-Last Updated: December 2025
+Version: 17.2-ABSOLUTE
+Last Updated: January 2026
 
 CHANGELOG v12.5:
 - v12.0: Added KKGravitonParameters, FinalNeutrinoMasses
@@ -68,9 +68,9 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "16.2"
+VERSION = "17.2-ABSOLUTE"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
-STERILE_STATUS = True  # v16.2: Zero-degree-of-freedom model - all constants derived
+STERILE_STATUS = True  # v17.2: Zero-degree-of-freedom model - all constants derived
 
 import numpy as np
 from dataclasses import dataclass, field, asdict

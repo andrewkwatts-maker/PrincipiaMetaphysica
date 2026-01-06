@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.0 - Thermal Time Hypothesis
+PRINCIPIA METAPHYSICA v17.2 - Thermal Time Hypothesis
 ======================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -73,7 +73,7 @@ from simulations.base import (
 
 class ThermalTimeV16(SimulationBase):
     """
-    Thermal Time Hypothesis simulation (v16.0).
+    Thermal Time Hypothesis simulation (v17.2).
 
     Computes thermal time parameters from Pneuma field thermodynamics
     and validates the two-time framework with Sp(2,R) gauge symmetry.
@@ -92,8 +92,8 @@ class ThermalTimeV16(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return metadata about this simulation."""
         return SimulationMetadata(
-            id="thermal_time_v16_0",
-            version="16.0",
+            id="thermal_time_v17_2",
+            version="17.2",
             domain="thermal",
             title="Thermal Time Hypothesis and Two-Time Framework",
             description="Compute thermal time coupling alpha_T and validate emergent time from thermodynamics",

@@ -81,7 +81,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
         """Initialize the Higgs brane-partition simulation."""
         self._metadata = SimulationMetadata(
             id="higgs_brane_partition_v16_2",
-            version="16.2",
+            version="17.2",
             domain="higgs",
             title="Higgs Mass via 4-Brane Partition (Demon-Lock)",
             description=(
@@ -111,6 +111,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
             "higgs.brane_partition_ratio",
             "higgs.projection_factor",
             "higgs.mirror_overlap",
+            "higgs.effective_scaling",
             "higgs.sigma_local",
         ]
 
@@ -277,6 +278,8 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 description="Total 26D manifold Higgs tension from G2 attractor mechanism",
                 inputParams=["moduli.re_t_attractor", "higgs.vev_yukawa", "yukawa.y_top"],
                 outputParams=["higgs.m_higgs_bulk"],
+                input_params=["moduli.re_t_attractor", "higgs.vev_yukawa", "yukawa.y_top"],
+                output_params=["higgs.m_higgs_bulk"],
                 derivation={
                     "method": "attractor",
                     "steps": [
@@ -297,6 +300,8 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 description="Brane partition scaling from Cl(24,2) symmetry",
                 inputParams=["topology.k_gimel"],
                 outputParams=["higgs.effective_scaling"],
+                input_params=["topology.k_gimel"],
+                output_params=["higgs.effective_scaling"],
                 derivation={
                     "method": "topological",
                     "steps": [
@@ -316,6 +321,8 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 description="Observed Higgs mass as 4D brane projection of 26D bulk tension",
                 inputParams=["higgs.m_higgs_bulk", "higgs.effective_scaling"],
                 outputParams=["higgs.m_higgs_local"],
+                input_params=["higgs.m_higgs_bulk", "higgs.effective_scaling"],
+                output_params=["higgs.m_higgs_local"],
                 derivation={
                     "method": "projection",
                     "steps": [
@@ -397,6 +404,24 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 status="GEOMETRIC",
                 description="13D Mirror overlap factor η = (α × b3)^(1/4) ≈ 1.185",
                 derivation_formula="higgs-brane-projection",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="higgs.effective_scaling",
+                name="Effective Brane Scaling",
+                units="dimensionless",
+                status="GEOMETRIC",
+                description="Effective scaling = projection_factor / mirror_overlap ≈ 3.31",
+                derivation_formula="higgs-brane-projection",
+                no_experimental_value=True,
+            ),
+            Parameter(
+                path="higgs.sigma_local",
+                name="Local Higgs Sigma Deviation",
+                units="dimensionless",
+                status="DERIVED",
+                description="Standard deviation from PDG 2024 measurement: |M_local - 125.25| / 0.17",
+                derivation_formula="higgs-local-mass",
                 no_experimental_value=True,
             ),
         ]

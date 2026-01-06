@@ -108,7 +108,7 @@ class S8SuppressionV16(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="s8_suppression_v16_1",
-            version="16.1",
+            version="17.2",
             domain="cosmology",
             title="S8 Tension Resolution via Dynamical Dark Energy",
             description=(

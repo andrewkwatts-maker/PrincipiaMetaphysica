@@ -77,7 +77,7 @@ Phase 6 - v16.2 Sterile Model Paper Structure (DOI: 10.5281/zenodo.18079602):
 OUTPUT STRUCTURE:
 {
   "metadata": {
-    "version": "16.0",
+    "version": "17.2",
     "timestamp": "2025-12-28T10:30:00.000Z",
     "git": {
       "commit_hash": "abc1234...",
@@ -251,7 +251,6 @@ from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
 from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
 
 # v16.2 - Geometric Anchors (fundamental constants from b3=24)
-from simulations.geometric_anchors_v16_1 import GeometricAnchors
 from simulations.v16.geometric.geometric_anchors_simulation_v16_2 import GeometricAnchorsSimulation
 
 # v16.2 - Two-Time Physics and Leech Partition (foundational geometric proofs)
@@ -839,7 +838,7 @@ class SimulationRunner:
             return
 
         print("=" * 80)
-        print("PRINCIPIA METAPHYSICA - Run All Simulations v16.0")
+        print("PRINCIPIA METAPHYSICA - Run All Simulations v17.2")
         print("=" * 80)
         print(f"Timestamp: {datetime.now().isoformat()}")
         print(f"Total simulations: {sum(len(sims) for sims in self.phases.values())}")

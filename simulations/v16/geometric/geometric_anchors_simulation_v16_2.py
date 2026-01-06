@@ -242,6 +242,7 @@ class GeometricAnchorsSimulation(SimulationBase):
         """Return section content for paper rendering."""
         return SectionContent(
             section_id="2",
+            subsection_id="2.0",
             title="Geometric Anchors: First Principles Derivation",
             abstract=(
                 "All fundamental constants are derived from the single topological "

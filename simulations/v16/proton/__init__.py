@@ -1,5 +1,5 @@
 """
-Principia Metaphysica - Proton Decay Simulations v16
+Principia Metaphysica - Proton Decay Simulations v17.2
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 

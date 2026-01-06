@@ -14,4 +14,4 @@ __all__ = [
     'GaugeUnificationSimulation',
 ]
 
-__version__ = "16.0.0"
+__version__ = "17.2.0"

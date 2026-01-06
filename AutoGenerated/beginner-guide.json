@@ -133,7 +133,7 @@
       "keyTakeaway": "The predicted proton lifetime of ~4×10^34 years is testable and sits just above current experimental limits, providing a smoking-gun prediction for Grand Unification.",
       "technicalDetail": "Proton decay rate: Γ_p ~ α_GUT^2 m_p^5 / M_GUT^4. Standard GUT without extra suppression gives τ_p ~ 10^33 years (excluded). Geometric suppression from TCS cycle separation d/R ≈ 1/(2πK) = 0.04 (for K=4) gives S = exp(2πd/R) = exp(1/K) ≈ 1.28. With M_GUT = 6.3×10^15 GeV from 3-loop running, this yields τ_p ≈ 1.3×10^33 years. However, the geometric/torsion prediction M_GUT ~ 2×10^16 GeV gives τ_p ~ 4×10^34 years, above the Super-K bound of 2.4×10^34 years. The dominant channel is p → e^+ π^0 with BR ≈ 0.25 from geometric orientation sums (12/24)^2.",
       "prediction": "If M_GUT is the higher geometric value ~2×10^16 GeV, then τ_p ~ 4×10^34 years, which is 2.3× above the current experimental lower limit. Next-generation experiments like Hyper-Kamiokande (10× more sensitive) could detect this within 20 years, or push the limit high enough to rule out this value of M_GUT. Either outcome teaches us about the intermediate physics between electroweak and GUT scales.",
-      "simulation_id": "proton_decay_v16_0",
+      "simulation_id": "proton_decay_v17_2",
       "domain": "proton",
       "section": "4"
     },
@@ -216,7 +216,7 @@
       "keyTakeaway": "All four PMNS mixing parameters are predicted from topology with no adjustable constants and match global neutrino oscillation data (NuFIT 6.0) within experimental uncertainties.",
       "technicalDetail": "θ₁₃: sin(θ₁₃) = [√(b₂×n_gen)/b₃] × [1 + S_orient/(2χ_eff)] = [√12/24] × [1 + 12/288] = 0.145 → 8.33° (NuFIT: 8.54 ± 0.11°). δ_CP: π[(n_gen+b₂)/(2n_gen) + n_gen/b₃] = π[7/6 + 1/8] = 278.4° (NuFIT: 230° ± 28°).θ₁₂: (1/√3)[1 - (b₃-b₂n_gen)/(2χ_eff)] = 0.577 × 0.958 → 33.59° (NuFIT: 33.41 ± 0.75°). θ₂₃: 45° + (b₂-n_gen)×n_gen/b₂ + (S_orient/b₃)×(b₂χ_eff)/(b₃n_gen) = 45° + 0.75° + 4.0° = 49.75° (NuFIT: 49° ± 1.5°). The G2 ~ Aut(O) connection explains maximal base mixing, while G4-flux creates winding number w ~ S_orient/b₃ ~ 0.5 with geometric amplitude (b₂χ_eff)/(b₃n_gen) ~ 8°, breaking octant symmetry.",
       "prediction": "These are genuine predictions, not fits. The deviations from experiment (all < 2σ) could shrink as neutrino experiments improve, or they might indicate subtle corrections from non-minimal G2 structures. Either way, getting four independent mixing parameters correct from pure topology is unprecedented in neutrino physics.",
-      "simulation_id": "neutrino_mixing_v16_0",
+      "simulation_id": "neutrino_mixing_v17_2",
       "domain": "neutrino",
       "section": "4"
     },
@@ -264,7 +264,7 @@
       "keyTakeaway": "The Pneuma field provides a mechanism for spacetime emergence: 4D gravity arises from 7D geometry via vielbein coupling, with dynamics governed by a racetrack potential.",
       "technicalDetail": "The Pneuma Lagrangian: L = (1/2)∂_μΨ_P ∂^μΨ_P - V(Ψ_P) + L_vielbein, where V(Ψ_P) = |dW/dΨ_P|² from racetrack superpotential W = A exp(-aΨ) - B exp(-bΨ). Instanton coefficients: a = 2π/N_flux, b = 2π/(N_flux-1) with N_flux = χ_eff/6 = 24. VEV from analytic minimum: <Ψ_P> = ln(Bb/Aa)/(b-a). Vielbein emergence: e_a^μ ∝ ⟨η̄ γ^a η⟩ where η is the G2 parallel spinor, coupling Pneuma gradient ∇_μΨ_P to spacetime metric via L_vielbein = κ_P (∇_μΨ_P)(η̄ Γ^a e_a^μ D_μ η). This creates effective Einstein-Hilbert action from spinor kinetic term: S_EH ~ ∫ d⁴x √g R emerges from integrating out Pneuma-spinor loops.",
       "prediction": "Pneuma field excitations around the VEV would manifest as ultra-light scalar particles (m_Ψ ~ M_Planck/√χ_eff ~ 10^16 GeV) that couple to curvature. These are inaccessible to colliders but could affect early universe cosmology (inflation, reheating) or be detectable as modifications to General Relativity at extreme scales.",
-      "simulation_id": "pneuma_mechanism_v16_0",
+      "simulation_id": "pneuma_mechanism_v17_2",
       "domain": "pneuma",
       "section": "2"
     }

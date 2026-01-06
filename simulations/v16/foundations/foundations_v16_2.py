@@ -77,7 +77,7 @@ class FoundationsV16_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="foundations_v16_2",
-            version="16.2",
+            version="17.2",
             domain="foundations",
             title="Foundations of Dimensional Descent",
             description="The 26D(24,2) → 4D sterile extraction path",

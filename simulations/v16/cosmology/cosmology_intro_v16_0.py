@@ -66,7 +66,7 @@ class CosmologyIntroV16(SimulationBase):
         """Return simulation metadata."""
         return SimulationMetadata(
             id="cosmology_intro_v16_0",
-            version="16.0",
+            version="17.2",
             domain="cosmology",
             title="Deriving 4D Gravity from Kaluza-Klein Reduction",
             description=(

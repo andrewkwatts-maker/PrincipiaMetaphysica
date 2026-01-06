@@ -1,5 +1,5 @@
 """
-Principia Metaphysica - Pneuma Simulations v16
+Principia Metaphysica - Pneuma Simulations v17.2
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -12,4 +12,4 @@ from .pneuma_mechanism_v16_0 import PneumaMechanismV16
 
 __all__ = ['PneumaMechanismV16']
 
-__version__ = "16.0"
+__version__ = "17.2"

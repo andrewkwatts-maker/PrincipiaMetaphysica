@@ -87,7 +87,7 @@ class DarkEnergyV16(SimulationBase):
         w0, w0_frac, _ = w0_from_b3(24)
         return SimulationMetadata(
             id="dark_energy_v16_0",
-            version="16.0",
+            version="17.2",
             domain="cosmology",
             title="Dark Energy from Dimensional Reduction",
             description=(

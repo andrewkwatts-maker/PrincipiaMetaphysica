@@ -50,7 +50,7 @@ class ResultsV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="results_v16_2",
-            version="16.2",
+            version="17.2",
             domain="results",
             title="Cosmological Results and Alignment",
             description="The 0.48σ resolution, dark energy dynamics, and vacuum stability",

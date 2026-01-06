@@ -11,3 +11,5 @@ Dedicated To:
 from .thermal_time_v16_0 import ThermalTimeV16
 
 __all__ = ['ThermalTimeV16']
+
+__version__ = "17.2"

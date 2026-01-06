@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.0 - Pneuma Mechanism (Geometric Framework)
+PRINCIPIA METAPHYSICA v17.2 - Pneuma Mechanism (Geometric Framework)
 ====================================================================
 
 Licensed under the MIT License. See LICENSE file for details.
@@ -70,7 +70,7 @@ from simulations.base import (
 
 class PneumaMechanismV16(SimulationBase):
     """
-    Pneuma Field Mechanism Simulation (v16.0).
+    Pneuma Field Mechanism Simulation (v17.2).
 
     Computes Pneuma field dynamics from G2 topology and validates
     the Lagrangian structure via racetrack potential analysis.
@@ -95,8 +95,8 @@ class PneumaMechanismV16(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return metadata about this simulation."""
         return SimulationMetadata(
-            id="pneuma_mechanism_v16_0",
-            version="16.0",
+            id="pneuma_mechanism_v17_2",
+            version="17.2",
             domain="pneuma",
             title="Pneuma Field Mechanism",
             description="Compute Pneuma field dynamics, coupling constants, and Lagrangian validity from G2 geometry",
