@@ -78,6 +78,7 @@ EXCLUDE_PATTERNS = [
     ".env*",
     ".DS_Store",
     "Thumbs.db",
+    "nul",  # Windows reserved device name
 ]
 
 # Firebase/Auth files to DELETE for offline mode
@@ -292,7 +293,7 @@ def main():
             # Copy to temp location for processing
             temp_dir = Path(tempfile.mkdtemp(prefix="pm_package_"))
             source_path = temp_dir / "PrincipiaMetaphysica"
-            shutil.copytree(ROOT, source_path, ignore=shutil.ignore_patterns(*EXCLUDE_FOLDERS))
+            shutil.copytree(ROOT, source_path, ignore=shutil.ignore_patterns(*EXCLUDE_FOLDERS, *EXCLUDE_PATTERNS))
         else:
             print("\nMode: FRESH CLONE")
             temp_dir = Path(tempfile.mkdtemp(prefix="pm_package_"))
