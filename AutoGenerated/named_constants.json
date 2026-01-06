@@ -1,9 +1,9 @@
 {
   "version": "17.2-ABSOLUTE",
-  "timestamp": "2026-01-06T08:48:57.897689Z",
-  "session_id": "PM20260106084857",
+  "timestamp": "2026-01-06T19:29:23.747894Z",
+  "session_id": "PM20260106192923",
   "volatility": {
-    "generated_at": "2026-01-06T08:48:57.897689Z",
+    "generated_at": "2026-01-06T19:29:23.747894Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "17.2-ABSOLUTE",
@@ -327,21 +327,51 @@
     "speed_of_light_derived": {
       "symbol": "c_d",
       "latex": "c_{derived}",
-      "value": 299782014.0655394,
+      "value": 299792423.16324997,
       "unit": "m/s",
-      "formula": "(C_geo × S_f × B_v × χ_gc) × 10^7",
-      "expanded": "0.75 × 12.4 × 2.0025 × 1.6098 × 10^7 = 299,782,014.07",
+      "formula": "(C_geo × S_f × B_v × χ_gc) × 10^7 × P_3D",
+      "expanded": "0.75 × 12.4 × 2.0025 × 1.6098 × 10^7 × 1.0000347222 = 299,792,423.16",
       "gnostic_name": "The Manifest Speed",
-      "gnostic_role": "Speed of Light derived from Sovereign Constants only",
+      "gnostic_role": "Speed of Light derived from Sovereign Constants with Decad³ projection",
       "codata_value": 299792458,
-      "accuracy_percent": 99.99651627845135,
+      "variance_ms": 34.83675003051758,
+      "accuracy_percent": 99.99998837971098,
       "derived_from": [
         "geometric_ratio",
         "stretching_factor",
         "bulk_viscosity",
-        "gnostic_conversion"
+        "gnostic_conversion",
+        "spatial_projection"
       ],
       "pm_path": "cosmology.speed_of_light_derived"
+    },
+    "spatial_projection": {
+      "symbol": "P_3D",
+      "latex": "P_{3D}",
+      "value": 1.0000347222222221,
+      "formula": "1 + 1/(ENNOIA × DECAD²) = 1 + 1/28800",
+      "expanded": "1 + 1/(288 × 100) = 1.0000347222",
+      "gnostic_name": "The Cubic Projection",
+      "gnostic_role": "3D spatial expansion factor for propagation constants (c, G, h)",
+      "derived_from": [
+        "watts_constant",
+        "roots_total",
+        "decad"
+      ],
+      "pm_path": "projection.spatial_projection"
+    },
+    "torsion_compression": {
+      "symbol": "T_comp",
+      "latex": "T_{comp}",
+      "value": 0.9999652789833687,
+      "formula": "1 / P_3D = 28800/28801",
+      "expanded": "1 / 1.0000347222 = 0.9999652790",
+      "gnostic_name": "The Torsion Compression",
+      "gnostic_role": "Inverse projection for coupling constants (α, w0)",
+      "derived_from": [
+        "spatial_projection"
+      ],
+      "pm_path": "projection.torsion_compression"
     },
     "metric_stabilizer": {
       "symbol": "G12",
@@ -1524,6 +1554,8 @@
     "chi_gc": "gnostic_conversion",
     "B_v": "bulk_viscosity",
     "c_derived": "speed_of_light_derived",
+    "P_3D": "spatial_projection",
+    "T_comp": "torsion_compression",
     "G12": "metric_stabilizer",
     "G53": "torsion_gate",
     "G01": "gate_01_initial_action",
@@ -1616,6 +1648,8 @@
     "gnostic_conversion": "chi_gc",
     "bulk_viscosity": "B_v",
     "speed_of_light_derived": "c_derived",
+    "spatial_projection": "P_3D",
+    "torsion_compression": "T_comp",
     "metric_stabilizer": "G12",
     "torsion_gate": "G53",
     "gate_01_initial_action": "G01",

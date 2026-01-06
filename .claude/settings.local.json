@@ -627,7 +627,9 @@
       "Bash(dir /b \"h:\\\\Github\\\\PrincipiaMetaphysica\\\\*.zip\")",
       "Bash(Select-String -Pattern \"PASS|FAIL|SUCCESS|Error|passed|failed|Statistics\")",
       "Bash(Select-String -Pattern \"PASS|FAIL|SUCCESS|Error|passed|failed|Statistics|Total\")",
-      "Bash(Select-Object -First 25)"
+      "Bash(Select-Object -First 25)",
+      "Bash(git -C \"h:\\\\Github\\\\PrincipiaMetaphysica\" log --oneline -3)",
+      "Bash(git -C \"h:\\\\Github\\\\PrincipiaMetaphysica\" diff --stat core/FormulasRegistry.py)"
     ],
     "deny": [],
     "ask": []
