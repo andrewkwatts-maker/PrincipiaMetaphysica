@@ -105,16 +105,20 @@ class AlphaRigorSolver:
 
     def validate(self) -> dict:
         """
-        Validates the Geometric Anchors derivation against CODATA values.
+        Validates the Geometric Anchors formula against CODATA values.
 
-        Sigma Interpretation:
-        ---------------------
-        This derivation uses THEORETICAL tolerance, not CODATA experimental precision.
+        IMPORTANT SCIENTIFIC DISCLAIMER:
+        ---------------------------------
+        This formula is a PROPOSED RELATIONSHIP, not a rigorous derivation.
 
-        - CODATA uncertainty = 2.1e-8 (measurement precision, not relevant here)
-        - Theoretical tolerance = 0.0007 (intrinsic formula precision ~0.0005%)
+        The standard physics definition of alpha is:
+            alpha = e^2 / (4 * pi * epsilon_0 * hbar * c)
 
-        Using theoretical tolerance: sigma ~ 1.0 (excellent for first-principles!)
+        This geometric formula does not derive from the QED Lagrangian.
+        The proximity to the CODATA value (~0.0005% error) may be coincidental.
+
+        Sigma is calculated using CODATA experimental uncertainty (2.1e-8),
+        which is the scientifically correct approach.
 
         Returns:
             dict: Validation results including derivation components
@@ -125,23 +129,22 @@ class AlphaRigorSolver:
         error = abs(alpha_inv - target)
         precision = (1 - error / target) * 100
 
-        # Theoretical tolerance: ~0.0005% of value (intrinsic formula precision)
-        theoretical_tolerance = 0.0007
-        sigma_theoretical = error / theoretical_tolerance
-
-        # For reference: sigma vs CODATA experimental precision
+        # CODATA experimental uncertainty - the ONLY valid sigma measure
         codata_uncertainty = 0.000000021
-        sigma_vs_codata = error / codata_uncertainty
+        sigma = error / codata_uncertainty
+
+        # Relative error as percentage
+        relative_error_pct = (error / target) * 100
 
         return {
             "derived_alpha_inv": alpha_inv,
             "codata_target": target,
             "absolute_error": error,
+            "relative_error_pct": relative_error_pct,
             "precision_percent": precision,
-            "deviation_sigma": sigma_theoretical,  # Use theoretical tolerance
-            "sigma_vs_codata": sigma_vs_codata,    # For reference only
-            "theoretical_tolerance": theoretical_tolerance,
-            "status": "LOCKED" if sigma_theoretical < 2.0 else "TENSION",
+            "deviation_sigma": sigma,  # Using CODATA uncertainty (scientifically correct)
+            "codata_uncertainty": codata_uncertainty,
+            "status": "NUMEROLOGICAL_FIT" if error < 0.01 else "DIVERGENT",
             "b3": self.b3,
             "k_gimel": self.k_gimel,
             "phi": self.phi,
@@ -150,7 +153,8 @@ class AlphaRigorSolver:
                 "k_gimel_squared": self.k_gimel ** 2,
                 "b3_over_phi": self.b3 / self.phi,
                 "phi_over_4pi": self.phi / (4 * np.pi)
-            }
+            },
+            "scientific_note": "This is a proposed topological relationship, not a QED derivation"
         }
 
 def run_alpha_derivation():
@@ -179,16 +183,15 @@ def run_alpha_derivation():
     print(f"  Deviation: {result['absolute_error']:.6f}")
     print(f"  Precision: {result['precision_percent']:.6f}%")
 
-    print("\nSigma Analysis:")
-    print(f"  Theoretical sigma: {result['deviation_sigma']:.2f} (using tolerance {result['theoretical_tolerance']})")
-    print(f"  vs CODATA precision: {result['sigma_vs_codata']:.0f} (for reference only)")
+    print("\nSigma Analysis (vs CODATA experimental uncertainty):")
+    print(f"  Sigma: {result['deviation_sigma']:.0f} (using CODATA uncertainty {result['codata_uncertainty']})")
+    print(f"  Relative error: {result['relative_error_pct']:.6f}%")
 
     print(f"\nStatus: [{result['status']}]")
-    if result['status'] == "LOCKED":
-        print("  -> First-principles derivation within 1 sigma!")
-        print("  -> Electromagnetism is a structural property of b3=24")
-    else:
-        print("  -> HONEST geometric derivation (not reverse-engineered)")
+    print(f"  Note: {result['scientific_note']}")
+    if result['status'] == "NUMEROLOGICAL_FIT":
+        print("  -> Formula matches CODATA to ~0.0005% but is NOT derived from QED")
+        print("  -> High sigma indicates this is numerology, not physics")
 
     print("=" * 60)
 
