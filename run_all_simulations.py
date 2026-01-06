@@ -307,6 +307,9 @@ from simulations.v16.cosmology.dark_energy_thawing_v16_2 import DarkEnergyEvolut
 from simulations.v16.cosmology.evolution_engine_v16_2 import EvolutionEngineV16
 from simulations.v16.fermion.octonionic_mixing_v16_2 import OctonionicMixing
 
+# v17.2 - Speed of Light from Sovereign Constants
+from simulations.v16.cosmology.speed_of_light_v17_2 import SpeedOfLightV17
+
 # Optional v16.1 cosmology simulations
 try:
     from simulations.v16.cosmology.cosmological_constant_v16_1 import CosmologicalConstantV16
@@ -695,6 +698,7 @@ class SimulationRunner:
                 NeutrinoMixingSimulation(),
                 OctonionicMixing(),          # v16.2 - CKM/PMNS from octonionic structure
                 MultiSectorV16(),
+                SpeedOfLightV17(),           # v17.2 - Speed of Light from Sovereign Constants
             ] + ([CosmologicalConstantV16()] if COSMOLOGICAL_CONSTANT_AVAILABLE else []),
             4: [
                 PneumaMechanismV16(),

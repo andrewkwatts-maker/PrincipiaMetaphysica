@@ -1,6 +1,6 @@
 {
   "version": "17.2",
-  "count": 67,
+  "count": 69,
   "references": {
     "maxwell_1865": {
       "id": "maxwell_1865",
@@ -571,6 +571,24 @@
       "volume": "10",
       "year": 1922,
       "source_simulation": "multi_sector_v16_0"
+    },
+    "codata2022": {
+      "id": "codata2022",
+      "authors": "Tiesinga, E., Mohr, P.J., Newell, D.B., Taylor, B.N.",
+      "title": "CODATA Recommended Values of the Fundamental Physical Constants: 2022",
+      "journal": "Journal of Physical and Chemical Reference Data",
+      "year": 2024,
+      "notes": "c = 299,792,458 m/s (exact by SI definition since 2019)",
+      "source_simulation": "speed_of_light_v17_2"
+    },
+    "bipm2019": {
+      "id": "bipm2019",
+      "authors": "BIPM",
+      "title": "SI Brochure: The International System of Units (9th edition)",
+      "publisher": "Bureau International des Poids et Mesures",
+      "year": 2019,
+      "notes": "Redefinition of SI base units making c exact",
+      "source_simulation": "speed_of_light_v17_2"
     },
     "weinberg1989": {
       "id": "weinberg1989",

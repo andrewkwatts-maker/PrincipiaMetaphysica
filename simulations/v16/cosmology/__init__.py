@@ -15,6 +15,7 @@ from .multi_sector_v16_0 import MultiSectorV16
 from .s8_suppression_v16_1 import S8SuppressionV16
 from .ricci_flow_h0_v16_1 import RicciFlowH0V16
 from .evolution_engine_v16_2 import EvolutionEngineV16
+from .speed_of_light_v17_2 import SpeedOfLightV17
 
 # Optional: cosmological constant derivation
 try:
@@ -31,6 +32,7 @@ __all__ = [
     'S8SuppressionV16',
     'RicciFlowH0V16',
     'EvolutionEngineV16',
+    'SpeedOfLightV17',
 ]
 
 if _COSMOLOGICAL_CONSTANT_AVAILABLE:
