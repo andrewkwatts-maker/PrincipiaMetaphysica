@@ -310,6 +310,19 @@ from simulations.v16.fermion.octonionic_mixing_v16_2 import OctonionicMixing
 # v17.2 - Speed of Light from Sovereign Constants
 from simulations.v16.cosmology.speed_of_light_v17_2 import SpeedOfLightV17
 
+# v17.2 - QED Manifold Constants (Decad-Cubic Projection Engine)
+from simulations.v16.qed import (
+    ComptonWavelengthV17,
+    StefanBoltzmannV17,
+    HartreeEnergyV17,
+    MagneticFluxV17,
+    VonKlitzingV17,
+    AvogadroV17,
+    FaradayV17,
+    MolarGasV17,
+    WeakMixingV17,
+)
+
 # Optional v16.1 cosmology simulations
 try:
     from simulations.v16.cosmology.cosmological_constant_v16_1 import CosmologicalConstantV16
@@ -699,6 +712,16 @@ class SimulationRunner:
                 OctonionicMixing(),          # v16.2 - CKM/PMNS from octonionic structure
                 MultiSectorV16(),
                 SpeedOfLightV17(),           # v17.2 - Speed of Light from Sovereign Constants
+                # v17.2 - QED Manifold Constants (Decad-Cubic Projection Engine)
+                ComptonWavelengthV17(),      # Inverse Cubic - wavelengths contract
+                StefanBoltzmannV17(),        # Quad-Gate - 4D thermal vibration
+                HartreeEnergyV17(),          # Inverse Double-Gate - binding energy
+                MagneticFluxV17(),           # Direct Expansion - flux with h
+                VonKlitzingV17(),            # Direct Expansion - resistance with h
+                AvogadroV17(),               # Inverse Cubic - counts contract
+                FaradayV17(),                # Inverse Cubic - follows N_A
+                MolarGasV17(),               # Neutral Bridge - N_A*k cancellation
+                WeakMixingV17(),             # Torsion Gate - coupling ratio
             ] + ([CosmologicalConstantV16()] if COSMOLOGICAL_CONSTANT_AVAILABLE else []),
             4: [
                 PneumaMechanismV16(),

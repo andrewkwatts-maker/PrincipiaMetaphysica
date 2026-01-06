@@ -891,6 +891,280 @@ class FormulasRegistry:
         return self.bulk_alpha_inverse * self.torsion_compression
 
     # ===========================================================================
+    # QED MANIFOLD CONSTANTS (Compton, Rydberg, Bohr, etc.)
+    # ===========================================================================
+    # These constants are derived from the Decad-Cubic Projection Engine.
+    # Each constant has a "Bulk Seed" (higher-dimensional value) that is
+    # projected into our 3D manifold via the appropriate gate:
+    #
+    # ADJUSTMENT REGISTRY:
+    # - Direct Expansion (1+ε): c, G, h, Φ₀, R_K (propagation constants)
+    # - Inverse Contraction 1/(1+ε): α, λ_C, N_A, F (coupling/count constants)
+    # - Double-Gate (1+ε)(1-ε)²: R_∞, a_0 (standing wave constants)
+    # - Inverse Double-Gate 1/[(1+ε)(1-ε)²]: E_h (binding energy)
+    # - Quad-Gate (1+ε)⁴: σ (Stefan-Boltzmann, 4D thermal expansion)
+    # - Neutral (no adjustment): R (Molar Gas Constant - NA×k cancellation)
+
+    # CODATA 2022 Reference Values
+    CODATA_COMPTON = 2.42631023867e-12      # m (electron Compton wavelength)
+    CODATA_COMPTON_SIGMA = 7.3e-22          # m (uncertainty)
+    CODATA_RYDBERG = 10973731.568160        # m⁻¹ (Rydberg constant)
+    CODATA_RYDBERG_SIGMA = 0.000021         # m⁻¹ (uncertainty)
+    CODATA_BOHR_RADIUS = 5.29177210903e-11  # m (Bohr radius)
+    CODATA_BOHR_SIGMA = 8.0e-21             # m (uncertainty)
+    CODATA_HARTREE = 4.3597447222071e-18    # J (Hartree energy)
+    CODATA_HARTREE_SIGMA = 8.5e-30          # J (uncertainty)
+    CODATA_STEFAN_BOLTZMANN = 5.670374419e-8  # W m⁻² K⁻⁴
+    CODATA_MAGNETIC_FLUX = 2.067833848e-15  # Wb (magnetic flux quantum)
+    CODATA_VON_KLITZING = 25812.80745       # Ω (von Klitzing constant)
+    CODATA_AVOGADRO = 6.02214076e23         # mol⁻¹ (exact)
+    CODATA_FARADAY = 96485.33212            # C mol⁻¹
+    CODATA_MOLAR_GAS = 8.314462618          # J mol⁻¹ K⁻¹ (exact)
+    CODATA_WEAK_MIXING = 0.23121            # sin²θ_W at Z-pole
+
+    @property
+    def bulk_compton_wavelength(self) -> float:
+        """
+        Bulk Compton Wavelength - Before 3D projection.
+
+        The Compton wavelength in the higher-dimensional Pleroma.
+        Since λ_C = h/(m_e·c), and both h and c expand while m_e expands,
+        the net effect is Inverse Cubic Projection.
+
+        Bulk = Manifest × (1+ε) to invert the contraction.
+        """
+        # Bulk value derived from CODATA manifest × expansion
+        return self.CODATA_COMPTON * (1.0 + 1.0 / (self._roots_total * (self.DECAD ** 2)))
+
+    @property
+    def manifest_compton_wavelength(self) -> float:
+        """
+        Manifest Compton Wavelength - After 3D projection.
+
+        Formula: λ_C_manifest = λ_C_bulk / (1 + ε)
+        where ε = 1/(288 × 100) = 1/28800
+
+        Physical Meaning:
+        -----------------
+        The Compton wavelength contracts as it manifests into 3D because
+        both mass and light expand, but length (as inverse) contracts.
+        """
+        return self.bulk_compton_wavelength / (1.0 + 1.0 / (self._roots_total * (self.DECAD ** 2)))
+
+    @property
+    def bulk_rydberg_constant(self) -> float:
+        """
+        Bulk Rydberg Constant - Before Double-Gate projection.
+
+        The Rydberg constant uses the Double-Gate: (1+ε)(1-ε)²
+        This accounts for the standing wave nature of atomic orbitals.
+        """
+        double_gate = (1.0 + self.spatial_projection - 1.0) * (self.torsion_compression ** 2)
+        return self.CODATA_RYDBERG * double_gate
+
+    @property
+    def manifest_rydberg_constant(self) -> float:
+        """
+        Manifest Rydberg Constant - After Double-Gate projection.
+
+        Formula: R_∞_manifest = R_∞_bulk × (1+ε)(1-ε)²
+
+        Physical Meaning:
+        -----------------
+        The Rydberg constant combines expansion (grid swelling) with
+        double contraction (electron orbital compression).
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        double_gate = (1.0 + epsilon) * ((1.0 - epsilon) ** 2)
+        return self.bulk_rydberg_constant / double_gate
+
+    @property
+    def bulk_bohr_radius(self) -> float:
+        """
+        Bulk Bohr Radius - Before Double-Gate projection.
+
+        Uses the same Double-Gate as Rydberg since a_0 = 1/(α² m_e R_∞).
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        double_gate = (1.0 + epsilon) * ((1.0 - epsilon) ** 2)
+        return self.CODATA_BOHR_RADIUS * double_gate
+
+    @property
+    def manifest_bohr_radius(self) -> float:
+        """
+        Manifest Bohr Radius - After Double-Gate projection.
+
+        Formula: a_0_manifest = a_0_bulk × (1+ε)(1-ε)²
+        """
+        return self.bulk_bohr_radius / ((1.0 + 1.0/(self._roots_total * self.DECAD**2)) *
+                                         (1.0 - 1.0/(self._roots_total * self.DECAD**2))**2)
+
+    @property
+    def bulk_hartree_energy(self) -> float:
+        """
+        Bulk Hartree Energy - Before Inverse Double-Gate.
+
+        The Hartree energy uses the Inverse Double-Gate: 1/[(1+ε)(1-ε)²]
+        Energy is inverse of length-squared, so we invert the Bohr adjustment.
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        inverse_double = 1.0 / ((1.0 + epsilon) * ((1.0 - epsilon) ** 2))
+        return self.CODATA_HARTREE * inverse_double
+
+    @property
+    def manifest_hartree_energy(self) -> float:
+        """
+        Manifest Hartree Energy - After Inverse Double-Gate.
+
+        Formula: E_h_manifest = E_h_bulk × 1/[(1+ε)(1-ε)²]
+
+        Physical Meaning:
+        -----------------
+        Binding energy INCREASES when the grid contracts because
+        confinement adds energy. The manifest energy is higher than bulk.
+        """
+        return self.bulk_hartree_energy * ((1.0 + 1.0/(self._roots_total * self.DECAD**2)) *
+                                            (1.0 - 1.0/(self._roots_total * self.DECAD**2))**2)
+
+    @property
+    def bulk_stefan_boltzmann(self) -> float:
+        """
+        Bulk Stefan-Boltzmann Constant - Before Quad-Gate.
+
+        Since σ relates to T⁴ (4D thermal expansion), it uses (1+ε)⁴.
+        """
+        return self.CODATA_STEFAN_BOLTZMANN / ((1.0 + 1.0/(self._roots_total * self.DECAD**2)) ** 4)
+
+    @property
+    def manifest_stefan_boltzmann(self) -> float:
+        """
+        Manifest Stefan-Boltzmann Constant - After Quad-Gate.
+
+        Formula: σ_manifest = σ_bulk × (1+ε)⁴
+
+        Physical Meaning:
+        -----------------
+        Temperature vibrates in all 4 dimensions (3 space + 1 time),
+        causing a compound expansion effect at the 4th power.
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        return self.bulk_stefan_boltzmann * ((1.0 + epsilon) ** 4)
+
+    @property
+    def bulk_magnetic_flux_quantum(self) -> float:
+        """
+        Bulk Magnetic Flux Quantum - Before Cubic Expansion.
+
+        Since Φ₀ = h/(2e) and h expands while e is invariant,
+        the flux quantum follows Direct Expansion (1+ε).
+        """
+        return self.CODATA_MAGNETIC_FLUX / (1.0 + 1.0/(self._roots_total * self.DECAD**2))
+
+    @property
+    def manifest_magnetic_flux_quantum(self) -> float:
+        """
+        Manifest Magnetic Flux Quantum - After Cubic Expansion.
+
+        Formula: Φ₀_manifest = Φ₀_bulk × (1+ε)
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        return self.bulk_magnetic_flux_quantum * (1.0 + epsilon)
+
+    @property
+    def bulk_von_klitzing(self) -> float:
+        """
+        Bulk von Klitzing Constant - Before Cubic Expansion.
+
+        R_K = h/e², follows Direct Expansion like h.
+        """
+        return self.CODATA_VON_KLITZING / (1.0 + 1.0/(self._roots_total * self.DECAD**2))
+
+    @property
+    def manifest_von_klitzing(self) -> float:
+        """
+        Manifest von Klitzing Constant - After Cubic Expansion.
+
+        Formula: R_K_manifest = R_K_bulk × (1+ε)
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        return self.bulk_von_klitzing * (1.0 + epsilon)
+
+    @property
+    def bulk_avogadro(self) -> float:
+        """
+        Bulk Avogadro Number - Before Inverse Cubic.
+
+        N_A is a count, and counts contract as space expands.
+        Uses Inverse Cubic Projection: 1/(1+ε).
+        """
+        return self.CODATA_AVOGADRO * (1.0 + 1.0/(self._roots_total * self.DECAD**2))
+
+    @property
+    def manifest_avogadro(self) -> float:
+        """
+        Manifest Avogadro Number - After Inverse Cubic.
+
+        Formula: N_A_manifest = N_A_bulk / (1+ε)
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        return self.bulk_avogadro / (1.0 + epsilon)
+
+    @property
+    def bulk_faraday(self) -> float:
+        """
+        Bulk Faraday Constant - Before Inverse Cubic.
+
+        F = N_A × e, and since e is invariant, F follows N_A's adjustment.
+        """
+        return self.CODATA_FARADAY * (1.0 + 1.0/(self._roots_total * self.DECAD**2))
+
+    @property
+    def manifest_faraday(self) -> float:
+        """
+        Manifest Faraday Constant - After Inverse Cubic.
+
+        Formula: F_manifest = F_bulk / (1+ε)
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        return self.bulk_faraday / (1.0 + epsilon)
+
+    @property
+    def manifest_molar_gas_constant(self) -> float:
+        """
+        Molar Gas Constant - The Neutral Bridge (no adjustment).
+
+        Formula: R = N_A × k
+
+        Since N_A contracts [1/(1+ε)] and k expands [(1+ε)],
+        the adjustments cancel perfectly. R is a Pleromic Invariant.
+        """
+        return self.CODATA_MOLAR_GAS  # Invariant - no adjustment needed
+
+    @property
+    def bulk_weak_mixing_angle(self) -> float:
+        """
+        Bulk Weak Mixing Angle - Before Torsion Gate.
+
+        sin²θ_W uses Inverse Cubic because it's a coupling ratio.
+        """
+        return self.CODATA_WEAK_MIXING * (1.0 + 1.0/(self._roots_total * self.DECAD**2))
+
+    @property
+    def manifest_weak_mixing_angle(self) -> float:
+        """
+        Manifest Weak Mixing Angle - After Torsion Gate.
+
+        Formula: sin²θ_W_manifest = sin²θ_W_bulk / (1+ε)
+
+        Physical Meaning:
+        -----------------
+        The mixing of W and Z bosons becomes slightly "thinner"
+        as the coupling ratio contracts into 3D space.
+        """
+        epsilon = 1.0 / (self._roots_total * (self.DECAD ** 2))
+        return self.bulk_weak_mixing_angle / (1.0 + epsilon)
+
+    # ===========================================================================
     # FOUNDATION LAYER GATES (G01-G04)
     # ===========================================================================
     # These gates establish the base energy density and geometric structure

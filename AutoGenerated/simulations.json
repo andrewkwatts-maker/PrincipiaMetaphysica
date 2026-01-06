@@ -1,7 +1,7 @@
 {
   "version": "17.2",
-  "generated": "2026-01-06T10:03:43.246542Z",
-  "total_scripts": 85,
+  "generated": "2026-01-06T10:34:56.540212Z",
+  "total_scripts": 94,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -729,6 +729,87 @@
         }
       ],
       "count": 1
+    },
+    "v16/qed": {
+      "title": "Qed",
+      "path": "simulations/v16/qed",
+      "folderName": "qed",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "avogadro_v17_2.py",
+          "path": "simulations/v16/qed/avogadro_v17_2.py",
+          "version": "17.2",
+          "title": "Avogadro from Inverse Cubic",
+          "description": "N_A contracts because counts decrease as space expands.",
+          "status": null
+        },
+        {
+          "file": "compton_wavelength_v17_2.py",
+          "path": "simulations/v16/qed/compton_wavelength_v17_2.py",
+          "version": "17.2",
+          "title": "Compton Wavelength from Decad-Cubic Projection",
+          "description": "Derives the electron Compton wavelength using Inverse Cubic Projection. The bulk value contracts as it manifests into 3D because mass, light, and length all interact with the spatial grid.",
+          "status": null
+        },
+        {
+          "file": "faraday_v17_2.py",
+          "path": "simulations/v16/qed/faraday_v17_2.py",
+          "version": "17.2",
+          "title": "Faraday from Inverse Cubic",
+          "description": "F = N_A * e, follows N_A's adjustment since e is invariant.",
+          "status": null
+        },
+        {
+          "file": "hartree_energy_v17_2.py",
+          "path": "simulations/v16/qed/hartree_energy_v17_2.py",
+          "version": "17.2",
+          "title": "Hartree Energy from Inverse Double-Gate",
+          "description": "Binding energy uses inverse of Bohr radius adjustment.",
+          "status": null
+        },
+        {
+          "file": "magnetic_flux_v17_2.py",
+          "path": "simulations/v16/qed/magnetic_flux_v17_2.py",
+          "version": "17.2",
+          "title": "Magnetic Flux from Direct Expansion",
+          "description": "Phi_0 expands with h since e is invariant.",
+          "status": null
+        },
+        {
+          "file": "molar_gas_v17_2.py",
+          "path": "simulations/v16/qed/molar_gas_v17_2.py",
+          "version": "17.2",
+          "title": "Molar Gas - Neutral Bridge",
+          "description": "R = N_A * k. Expansion and contraction cancel perfectly.",
+          "status": null
+        },
+        {
+          "file": "stefan_boltzmann_v17_2.py",
+          "path": "simulations/v16/qed/stefan_boltzmann_v17_2.py",
+          "version": "17.2",
+          "title": "Stefan-Boltzmann from Quad-Gate Expansion",
+          "description": "Derives sigma using (1+epsilon)^4 for 4D thermal vibration.",
+          "status": null
+        },
+        {
+          "file": "von_klitzing_v17_2.py",
+          "path": "simulations/v16/qed/von_klitzing_v17_2.py",
+          "version": "17.2",
+          "title": "Von Klitzing from Direct Expansion",
+          "description": "R_K expands with h since e is invariant.",
+          "status": null
+        },
+        {
+          "file": "weak_mixing_v17_2.py",
+          "path": "simulations/v16/qed/weak_mixing_v17_2.py",
+          "version": "17.2",
+          "title": "Weak Mixing Angle from Torsion Gate",
+          "description": "sin^2(theta_W) contracts because it's a coupling ratio.",
+          "status": null
+        }
+      ],
+      "count": 9
     },
     "v16/quantum_bio": {
       "title": "Quantum Bio",
