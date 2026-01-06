@@ -1,7 +1,7 @@
 {
   "version": "17.2",
-  "generated": "2026-01-06T09:29:23.736787Z",
-  "total_scripts": 84,
+  "generated": "2026-01-06T09:41:52.402772Z",
+  "total_scripts": 85,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -283,6 +283,14 @@
       "isV16": true,
       "scripts": [
         {
+          "file": "speed_of_light_v17_2.py",
+          "path": "simulations/v16/cosmology/speed_of_light_v17_2.py",
+          "version": "17.2",
+          "title": "Speed of Light from Sovereign Constants",
+          "description": "Derives the speed of light c from Sovereign Gnostic Constants using the (Z.6) Pneuma Tensioner and Decad³ Projection Engine. Achieves 99.99999% accuracy (34.84 m/s variance from CODATA).",
+          "status": null
+        },
+        {
           "file": "dark_energy_thawing_v16_2.py",
           "path": "simulations/v16/cosmology/dark_energy_thawing_v16_2.py",
           "version": "16.2",
@@ -379,7 +387,7 @@
           "status": null
         }
       ],
-      "count": 12
+      "count": 13
     },
     "v16/discussion": {
       "title": "Discussion",
