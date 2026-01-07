@@ -1,7 +1,7 @@
 {
   "version": "17.2",
-  "generated": "2026-01-06T23:40:34.713768Z",
-  "total_scripts": 94,
+  "generated": "2026-01-07T01:10:03.988191Z",
+  "total_scripts": 96,
   "categories": {
     "v16/appendices": {
       "title": "Appendices",
@@ -560,6 +560,14 @@
           "status": null
         },
         {
+          "file": "fine_structure_analysis_v17.py",
+          "path": "simulations/v16/geometric/fine_structure_analysis_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "g2_ricci_flow_rigorous.py",
           "path": "simulations/v16/geometric/g2_ricci_flow_rigorous.py",
           "version": null,
@@ -568,7 +576,7 @@
           "status": null
         }
       ],
-      "count": 8
+      "count": 9
     },
     "v16/higgs": {
       "title": "Higgs",
@@ -824,9 +832,17 @@
           "title": "Orch-OR Quantum Consciousness Validation",
           "description": "Links microtubule geometry to G2 manifold topology and derives coherence time for quantum consciousness using SSoT geometric constants",
           "status": null
+        },
+        {
+          "file": "orch_or_bridge_v17.py",
+          "path": "simulations/v16/quantum_bio/orch_or_bridge_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/results": {
       "title": "Results",
