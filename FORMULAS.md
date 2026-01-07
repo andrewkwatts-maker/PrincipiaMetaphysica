@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-07 07:46:53
+**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-07 09:40:34
 **Engine Version:** v17.2-ABSOLUTE
 **Sovereign Hash:** `ac7d7ec47f2ab9ff80ddf5accad094f7...`
 
@@ -15,7 +15,7 @@
 | **Expansion Rate** | eta_S (Sophian Drag) | (288/4) - (163/144) + eta_S | **71.5500 km/s/Mpc** |
 | **Vacuum Seal** | sigma_T (Tzimtzum) | -23/24 Residue | **-0.9583** |
 | **Mass Coupling** | kappa_Delta (Demiurgic) | (C_kaf^2 * kappa_Delta/pi) / holonomy | **943.36** |
-| **Fine Structure** | alpha^-1 (Residue) | Geometric derivation | **137.047487** |
+| **Fine Structure** | alpha^-1 (Residue) | Geometric derivation | **137.036702** |
 
 ---
 
@@ -106,7 +106,7 @@ The Watts Constant MUST equal exactly 1.0 (immutable).
 | H0 (Local) | `71.5500` km/s/Mpc | (288/4) - (P_O/chi_eff) + eta_S | 71.55 |
 | H0 (Early/Planck) | `67.4` km/s/Mpc | CMB measurement | 67.4 |
 | w0 (Dark Energy) | `-0.9583333333` | -sigma_T = -23/24 | -0.9583... |
-| alpha^-1 | `137.0475` | Geometric derivation | 137.036 |
+| alpha^-1 | `137.0367` | Geometric derivation | 137.036 |
 | Mass Ratio (mu) | `943.36` | Holonomy coupling | 1836.15 |
 
 ---
