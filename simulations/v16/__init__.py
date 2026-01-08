@@ -32,10 +32,18 @@ Available domains:
 - predictions: Falsifiable predictions aggregator (Section 6)
 - discussion: Discussion and future directions (Section 7)
 - master_action: Master action derivations (KK reduction, gauge sectors)
+- angles: Geometric angles (Bazien, octonion, G2 holonomy, SU3 embedding)
+- constants: Physical constants derivations (alpha, c, weak mixing, etc.)
+- dirac: Dirac equation simulations (1+1D, 3+1D, curved spacetime)
+- validation: Validation scripts (residue calculator, cosmology)
 """
 
 from . import introduction
 from . import master_action
+from . import angles
+from . import constants
+from . import dirac
+from . import validation
 from . import geometric
 from . import pneuma
 from . import gauge
@@ -51,6 +59,10 @@ from . import discussion
 __all__ = [
     'introduction',
     'master_action',
+    'angles',
+    'constants',
+    'dirac',
+    'validation',
     'geometric',
     'pneuma',
     'gauge',
@@ -63,4 +75,4 @@ __all__ = [
     'predictions',
     'discussion',
 ]
-__version__ = "16.0"
+__version__ = "17.2"
