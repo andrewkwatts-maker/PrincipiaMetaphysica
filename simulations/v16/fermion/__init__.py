@@ -13,6 +13,7 @@ from .fermion_generations_v16_0 import FermionGenerationsV16
 from .ckm_matrix_v16_0 import CKMMatrixSimulation
 from .muon_g2_anomaly_v16_1 import MuonG2AnomalySimulation
 from .octonionic_mixing_v16_2 import OctonionicMixing
+from .g2_triality_mixing_v17 import G2TrialityMixing
 
 # Conditionally import MassRatioSimulation (requires schema availability)
 try:
@@ -27,6 +28,7 @@ __all__ = [
     'CKMMatrixSimulation',
     'MuonG2AnomalySimulation',
     'OctonionicMixing',
+    'G2TrialityMixing',
 ]
 
 if _MASS_RATIO_AVAILABLE:
