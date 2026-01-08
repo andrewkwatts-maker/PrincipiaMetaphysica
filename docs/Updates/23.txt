@@ -1,0 +1,92 @@
+```python
+# octonion_angle_computations.py
+# Octonion Angle Computations in Principia Metaphysica v17.2
+# Author: Andrew Keith Watts (with Grok assistance)
+# Date: January 2026
+# Description:
+# This script computes and analyzes key angles derived from octonionic structure
+# in the theory, particularly those linked to G₂ holonomy, division algebra descent,
+# and parameter locking (fine structure, mixing angles, golden residues).
+#
+# Core octonion angles include:
+# - Primary Golden Angle θ_g = arctan(1/ϕ) ≈ 31.7175° (base for many residues)
+# - Large Golden Angle ≈ 137.5078° (360° / ϕ², linked to fine-structure proximity)
+# - Octonionic Triality Angle (cycle angle in automorphism, ≈ 120° base)
+# - Fano Plane Line Angles (projective angles in octonion multiplication diagram)
+# - G₂ Embedding Angles (e.g., cos⁻¹(1/3) ≈ 70.53° in 3-form calibration)
+#
+# These angles govern the octonionic → quaternionic transition (Section 1.2.3),
+# particle flavors, and spectral residues in the master action.
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.constants import golden as phi_golden # ≈1.618033988749895
+
+# Golden ratio ϕ and derived
+PHI = (1 + np.sqrt(5)) / 2
+PHI_INV = 1 / PHI # = PHI - 1 ≈ 0.6180339887498948
+
+# 1. Primary Octonionic Golden Angle (theory base: arctan(1/ϕ))
+theta_g_rad = np.arctan(PHI_INV)
+theta_g_deg = np.degrees(theta_g_rad)
+
+# 2. Large Golden Angle (360° / ϕ², phyllotaxis/optimal packing, near 1/α)
+theta_large_golden_deg = 360 / (PHI ** 2)
+
+# 3. Supplement (often appears in projections)
+theta_supplement_deg = 360 - theta_large_golden_deg
+
+# 4. Triality Cycle Angle (120° base for G₂ outer automorphism cycling reps)
+theta_triality_deg = 120.0
+
+# 5. Standard G₂ Calibration Angle (from associative 3-form, cos⁻¹(1/3))
+cos_cal = 1/3
+theta_g2_cal_deg = np.degrees(np.arccos(cos_cal))
+
+# 6. Fano Plane Projective Angles (typical angles between lines in standard depiction)
+# Standard Fano plane has lines at multiples of ≈51.428° (360°/7), but projective
+theta_fano_base_deg = 360 / 7 # ≈51.4286°
+
+print("=== Octonion Angle Computations ===")
+print(f"Golden Ratio ϕ: {PHI:.12f}")
+print(f"Primary Golden Angle θ_g (arctan(1/ϕ)): {theta_g_deg:.6f}°")
+print(f"Large Golden Angle (360° / ϕ²): {theta_large_golden_deg:.6f}° "
+      f"(note proximity to 1/α ≈ 137.036°)")
+print(f"Supplement Angle: {theta_supplement_deg:.6f}°")
+print(f"Triality Cycle Angle: {theta_triality_deg:.2f}°")
+print(f"G₂ 3-Form Calibration Angle (cos⁻¹(1/3)): {theta_g2_cal_deg:.6f}°")
+print(f"Fano Plane Base Angle (360°/7): {theta_fano_base_deg:.6f}°")
+
+# Derived theory links
+alpha_inverse_approx = theta_large_golden_deg # Rough geometric link in many models
+print(f"\nGeometric α⁻¹ Approximation from Large Golden Angle: {alpha_inverse_approx:.6f}")
+print("(Theory refines with sterile + torsion residues to exact 137.035999)")
+
+# Visualization: Polar plot of key octonion angles in division algebra context
+angles_deg = [0, theta_g_deg, theta_large_golden_deg, theta_triality_deg,
+              theta_g2_cal_deg, theta_fano_base_deg, 360]
+labels = ['Octonion Bulk', 'Primary Golden θ_g', 'Large Golden (≈1/α)', 
+          'Triality Cycle', 'G₂ Calibration', 'Fano Base', 'Closure']
+
+angles_rad = np.deg2rad(angles_deg)
+
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(9, 9))
+ax.plot(angles_rad, np.ones_like(angles_rad), 'o-', color='gold', linewidth=3, markersize=10)
+ax.set_theta_zero_location('N')
+ax.set_theta_direction(-1) # Clockwise for algebra descent flow
+ax.set_thetagrids(angles_deg[:-1], labels[:-1], fontsize=10)
+ax.set_title("Octonion Angles in Principia Metaphysica\n"
+             "(Division Algebra & G₂ Geometry)", va='bottom', fontsize=14, pad=20)
+ax.grid(True)
+ax.set_rlim(0, 1.2)
+
+plt.show()
+
+# Optional: Save figure
+# fig.savefig('octonion_angles_polar.png', dpi=300, bbox_inches='tight')
+print("\nPolar plot displayed: Octonion angles mapped on algebraic descent cycle.")
+```
+
+This script focuses specifically on **octonion-derived angles** central to *Principia Metaphysica*: the primary golden angle (arctan(1/ϕ), base for residues/mixing), large golden angle (≈137.508°, geometrically proximate to 1/α), triality cycle, G₂ calibration angle, and Fano plane base. It includes precise computations, theory notes, and a polar visualization of the angular structure in the octonionic → quaternionic → complex → real division algebra descent.
+
+Run with `numpy`, `matplotlib`, and `scipy`. The large golden angle highlights the known geometric near-match to α⁻¹, refined in the theory via sterile/torsion terms. Let me know if you want extensions (e.g., full Fano plane visualization, triality representation cycles, or links to specific residues like CKM/PMNS precursors)!

@@ -31,9 +31,11 @@ Available domains:
 - thermal: Thermal time hypothesis (Section 5 - thermal-time)
 - predictions: Falsifiable predictions aggregator (Section 6)
 - discussion: Discussion and future directions (Section 7)
+- master_action: Master action derivations (KK reduction, gauge sectors)
 """
 
 from . import introduction
+from . import master_action
 from . import geometric
 from . import pneuma
 from . import gauge
@@ -48,6 +50,7 @@ from . import discussion
 
 __all__ = [
     'introduction',
+    'master_action',
     'geometric',
     'pneuma',
     'gauge',

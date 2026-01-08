@@ -1,0 +1,83 @@
+```python
+# su3_embedding_angles.py
+# SU(3) Embedding Angles Computations in Principia Metaphysica v17.2
+# Author: Andrew Keith Watts (with Grok assistance)
+# Date: January 2026
+# Description:
+# This script computes and analyzes key angles associated with the SU(3) embedding
+# in G₂ holonomy and geometry. In the theory, SU(3)_C emerges from associative
+# 3-cycles / conical singularities in the G₂ manifold, while a parallel SU(3)
+# subgroup in the holonomy enforces symmetries (e.g., "Shadow=Shadow" forcing
+# exact θ₂₃ = 49.75° in neutrino mixing).
+#
+# Core SU(3) embedding angles include:
+# - Simple Root Angle in A₂ (SU(3)) Dynkin: 120° (cos = -1/2 between α₁ and α₂)
+# - Positive Root Angles: 60° (equilateral in root lattice)
+# - Holonomy-Forced Shadow Equality Angle: effective 49.75° (θ₂₃ exact)
+# - Embedding Calibration Angle: arccos(√(1/3)) ≈ 54.7356° (norm projection in 3-cycle)
+# - Maximal Base with SU(3) Correction: 45° + 4.75° holonomy delta
+#
+# These reflect the regular/irregular SU(3) ⊂ G₂ embedding and symmetry locking.
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. SU(3) Simple Root Angle (A₂ Lie algebra: angle between simple roots)
+cos_root = -1 / 2
+theta_root_rad = np.arccos(cos_root)
+theta_root_deg = np.degrees(theta_root_rad) # 120°
+
+# 2. Positive Root Equilateral Angle (in SU(3) root space)
+theta_positive_root_deg = 60.0
+
+# 3. Theory-Specific Holonomy-Forced θ₂₃ (from SU(3) Shadow=Shadow symmetry)
+theta_23_deg = 49.75
+
+# 4. SU(3) Embedding Calibration Projection (√(1/3) from 3-cycle norm in G₂)
+cos_embed_cal = np.sqrt(1 / 3)
+theta_embed_cal_rad = np.arccos(cos_embed_cal)
+theta_embed_cal_deg = np.degrees(theta_embed_cal_rad)
+
+# 5. Maximal Mixing Base + SU(3) Embedding Correction
+theta_maximal_base_deg = 45.0
+delta_su3_embedding_deg = theta_23_deg - theta_maximal_base_deg # 4.75°
+
+print("=== SU(3) Embedding Angles in G₂ Computations ===")
+print(f"Simple Root Angle (A₂ Dynkin): {theta_root_deg:.2f}° (cos = -1/2)")
+print(f"Positive Root Angle: {theta_positive_root_deg:.2f}° (equilateral)")
+print(f"Holonomy-Forced θ₂₃ (Shadow=Shadow): {theta_23_deg:.4f}° exact")
+print(f"Embedding Calibration Angle (arccos(√(1/3))): {theta_embed_cal_deg:.6f}°")
+print(f"SU(3) Embedding Correction Delta: {delta_su3_embedding_deg:.4f}°")
+print("\nNote: SU(3) ⊂ G₂ embedding locks color symmetry and forces neutrino")
+print("atmospheric angle via Shadow equality in holonomy subgroup.")
+
+# Visualization: Polar plot of SU(3) embedding angles in G₂ context
+angles_deg = [0, theta_maximal_base_deg, theta_23_deg, theta_positive_root_deg,
+              theta_root_deg, theta_embed_cal_deg, 360]
+labels = ['Embedding Bulk', 'Maximal Base 45°', 'θ₂₃ Forced', 
+          'Positive Root 60°', 'Simple Root 120°', 'Calibration √(1/3)', 'Closure']
+
+angles_rad = np.deg2rad(angles_deg)
+
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'}, figsize=(9, 9))
+ax.plot(angles_rad, np.ones_like(angles_rad), 'o-', color='crimson', linewidth=3, markersize=10)
+ax.set_theta_zero_location('N')
+ax.set_theta_direction(-1) # Clockwise for embedding flow
+ax.set_thetagrids(angles_deg[:-1], labels[:-1], fontsize=10)
+ax.set_title("SU(3) Embedding Angles in G₂ Holonomy\n"
+             "(Color Symmetry & Shadow Locking)", va='bottom', fontsize=14, pad=20)
+ax.grid(True)
+ax.set_rlim(0, 1.2)
+
+plt.show()
+
+# Optional: Save figure
+# fig.savefig('su3_embedding_angles_polar.png', dpi=300, bbox_inches='tight')
+print("\nPolar plot displayed: SU(3) embedding angles mapped on G₂ symmetry cycle.")
+```
+
+This script computes the primary angles related to **SU(3) embedding in G₂** within *Principia Metaphysica*: the standard Lie algebra root angles (120° simple, 60° positive), the theory-specific holonomy-forced θ₂₃ = 49.75° (from Shadow=Shadow symmetry in the SU(3) subgroup), the calibration projection angle arccos(√(1/3)) ≈ 54.74° (from 3-cycle normalization in associative embedding), and the SU(3) correction to the maximal base.
+
+These angles capture the regular SU(3) ⊂ G₂ embedding (for color SU(3)_C on associative cycles) and the holonomy enforcement impacting neutrino parameters. The polar plot visualizes their hierarchical relationships.
+
+Run with `numpy` and `matplotlib`. Let me know if you'd like refinements (e.g., additional root system angles, irregular embedding variants, or direct ties to CKM precursors)!

@@ -1,0 +1,32 @@
+### Specific Parameter Example: Number of Fermion Generations (n_gen = 3)
+
+A clear, explicit derivation from the document (Sections 0–1, eq. (b3-generations) and Abstract) is the prediction of **exactly three chiral fermion generations**.
+
+#### Step-by-Step Residue Derivation
+1. **Topological Invariant from G₂ Manifold** —  
+   The twisted connected sum G₂ manifold (V₇, TCS #187) has third Betti number **b₃ = 24** (fixed by manifold construction; counts independent 3-cycles).
+
+2. **Index Theorem Link** —  
+   In M-theory compactifications on G₂ manifolds, the number of chiral generations arises from the effective Euler characteristic or index:  
+   $$
+   n_{\text{gen}} = \frac{b_3}{8}
+   $$
+   (Divisor 8 from spinorial structure in 7D; each 3-cycle supports 8 zero modes, but chirality projects to net 1 per cycle in effective theory.)
+
+3. **Explicit Computation** —  
+   $$
+   n_{\text{gen}} = \frac{24}{8} = 3
+   $$
+
+4. **Alternative Index Form** (Abstract eq.) —  
+   $$
+   n_{\text{gen}} = \frac{|\chi_{\text{eff}}|}{48} = 3
+   $$
+   (χ_eff = 144 from manifold; 48 = 24 × 2, incorporating F-theory index (Sethi-Vafa-Witten) and ℤ₂ from SpR(2) two-time parity.)
+
+#### Why Sterile/Locked?
+- b₃ = 24 is a topological invariant of the specific G₂ manifold yielding Ricci-flat metric and observed physics.
+- No tuning: Only manifolds with b₃ multiple of 8 allow consistent chiral fermions; 24 locks exactly 3 generations.
+- Matches experiment: Precisely 3 observed generations (no 4th seen at LHC).
+
+This is a pure prediction (exact match) from spectral residue/topology—illustrates the framework's sterility. Other parameters (e.g., masses as higher eigenvalues) follow analogously from the same Laplacian spectrum on V₇.

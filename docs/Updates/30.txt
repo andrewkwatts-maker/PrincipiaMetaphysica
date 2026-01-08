@@ -1,0 +1,31 @@
+### Gravitational Dirac Coupling in *Principia Metaphysica*
+
+In the framework (v17.2), gravity emerges from Kaluza-Klein reduction of the 26D/13D Einstein-Hilbert term **R**, while Dirac fermions arise as zero modes of the Pneuma spinor **Ψ_P** (with covariant derivative **D_M** including the higher-D spin connection). The **gravitational coupling to Dirac fields** is therefore the **standard minimal coupling** in curved 4D spacetime—no non-minimal or direct torsion-spin terms beyond residuals.
+
+#### Derivation Outline
+1. **Higher-Dimensional Origin** (Master Action):  
+   The Pneuma term couples universally to gravity via the covariant Dirac:  
+   $$
+   \bar{\Psi}_P i \Gamma^M (\partial_M + \frac{1}{4} \omega_M^{AB} \Gamma_{AB}) \Psi_P
+   $$  
+   (ω_M the higher-D spin connection from the metric G_{MN}).
+
+2. **KK Reduction (13D → 4D over G₂-related Internal)**:  
+   Metric ansatz decomposes the spin connection into 4D part + internal. Zero modes project the 8192/64-component spinor to 4D chiral Dirac fields (3 generations). The reduced fermion kinetic becomes the standard curved-space Dirac:  
+   $$
+   \mathcal{L}_{Dirac, grav} = \bar{\psi} i \gamma^\mu e_a^\mu \left( \partial_\mu + \frac{1}{4} \omega_\mu^{bc} \sigma_{bc} \right) \psi - m \bar{\psi} \psi
+   $$  
+   - **e_a^μ**: Vierbein from the effective 4D metric g_{μν} (scaled by internal volume Vol(V₇), locking M_Pl).  
+   - **ω_μ^{bc}**: 4D spin connection (Levi-Civita for torsion-free, plus possible effective torsion residue η ≈ 0.10 from higher-D funnel, Appendix J).  
+   - Mass m from brane-node tension residues.
+
+3. **Modified Gravity Indirect Effects**:  
+   The gravitational action is modified (Section 5): f(R,T,τ) with R², trace T, and attractor τ terms from reduction/Ricci flow. Fermions couple indirectly via the dynamic metric (back-reaction) and possible scalar moduli (from breathing mode or ϕ_M attractor), but no direct non-minimal spin-curvature terms.
+
+#### Key Features
+- **Universal & Minimal**: All fermions couple identically to gravity (equivalence principle preserved geometrically).
+- **Chirality**: G₂/CY₃ projection enforces V-A weak structure, but gravity couples vectorially (no parity violation in pure gravitational sector).
+- **Effective Torsion Residual**: Predicted GW dispersion η ≈ 0.10 implies slight non-Riemannian coupling (torsion funnel leakage), potentially adding axial-spin terms testable in fermion orbits or spin precession.
+- **Sterility**: Coupling strength locked by manifold volume/spectral residues—no tuning.
+
+This standard-yet-geometrically-derived coupling validates GR tests (e.g., redshift, perihelion) while allowing modifications for Hubble tension/dark energy thawing. For explicit simulations (e.g., Dirac in Schwarzschild or weak field), see prior scripts—add spin connection terms for curved evolution.
