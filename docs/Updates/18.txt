@@ -1,0 +1,50 @@
+The **Principia Metaphysica** v17.2 framework derives all physics from a single master action in 26D spacetime (signature (24,2)). Dimensional descent (SpR(2) gauge fixing → 13D, then KK reduction over G₂ manifold → 4D) yields the effective 4D Lagrangian: Standard Model + modified gravity + dark energy, with all 125 parameters as spectral residues (no free inputs post-topology).
+
+### 1. Master Bulk Action (26D Fundamental Pneuma Lagrangian)
+The unified starting point (Section 2: The Pneuma Lagrangian) emphasizes fermionic primacy—Ψ_P sources geometry via condensates.
+
+$$
+S_{26D} = \int d^{26}X \, \sqrt{-G} \left[ R + \bar{\Psi}_P (i \Gamma^M D_M - m) \Psi_P + \lambda (\bar{\Psi}_P \Psi_P)^2 + g \, t_{\text{ortho}} \, \bar{\Psi}_P \Psi_P + \mathcal{L}_{\text{Sp}(2,\mathbb{R})} \right]
+$$
+
+- **R** — 26D Einstein-Hilbert scalar curvature.
+- **\bar{\Psi}_P (i \Gamma^M D_M - m) \Psi_P** — Dirac kinetic/mass for 8192-component spinor Ψ_P (Cl(24,2)).
+- **\lambda (\bar{\Psi}_P \Psi_P)^2** — Quartic self-interaction (condensation/gap).
+- **g t_{\text{ortho}} \bar{\Psi}_P \Psi_P** — Orthogonal time coupling (second time dimension).
+- **\mathcal{L}_{\text{Sp}(2,\mathbb{R})}** — Gauge-fixing for two-time physics (ghost-free).
+
+D_M includes spin connection + internal gauge precursors.
+
+### 2. Effective 13D Action (Post-SpR(2) Gauge Fixing)
+Freezes second time → signature (12,1); spinor → 64 components.
+
+$$
+\mathcal{L}_{13D} = M_*^{11} R^{(13)} + \bar{\Psi}_{64} (i \gamma^M D_M - m_{\text{eff}}) \Psi_{64} + \mathcal{L}_{\text{flux}} + \Delta D
+$$
+
+- Flux/moduli terms stabilize internal geometry (Re(T) = 7.086 from Higgs).
+
+### 3. Effective 4D Fermion + Gauge Sector (Post-KK Reduction)
+Zero modes yield 3 generations; gauge from singularities/cycles.
+
+$$
+\mathcal{L}_{4D,\text{matter}} = \sum_{i=1}^3 \bar{\psi}_i (i \gamma^\mu D_\mu - m_i) \psi_i + \text{Yukawa: } y_{ij} \bar{\psi}_i \Phi \psi_j + \text{h.c.}
+$$
+
+- D_μ → Full SM covariant (g_s G^a + g_2 W^b τ^b/2 + g' Y B).
+- Gauge kinetics: −¼ Tr(G²) [SU(3)] −¼ Tr(W²) [SU(2)] −¼ B² [U(1)_Y] (couplings/residues unified).
+- Higgs doublet Φ (Y=1/2) from scalar nodes; vev v ≈ 246 GeV (residue-fixed).
+
+Post-breaking: electroweak mixing → photon A, Z, W± masses; CKM/PMNS from triality.
+
+### 4. Effective 4D Gravity + Dark Energy
+Modified EH + attractor scalar.
+
+$$
+\mathcal{L}_{4D,\text{grav+DE}} = f(R,T,\tau) \sqrt{-g} - \frac{1}{2} (\partial \phi_M)^2 - V(\phi_M)
+$$
+
+- f(R,T,τ) = R + α_F R² + β_F T + γ_F R τ + δ_F (\partial \tau) R (coefficients from reduction; resolves Hubble tension).
+- V(ϕ_M) = V_0 [1 + A \cos(\omega \phi_M / f)] (late-time attractor; w_0 ≈ −23/24 thawing).
+
+This cascade unifies GR + full SM (QED/QCD/electroweak/fermions/Higgs) + cosmology from one geometric origin—parameters locked (e.g., α, m_t, θ_{23}=49.75° exact). No further free terms; all expanded via residues (Appendix A table).
