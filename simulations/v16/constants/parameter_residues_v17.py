@@ -106,7 +106,7 @@ class ParameterResidueExtractor:
             SymmetryBank(
                 bank_id=4,
                 name='Scalar & Unification Nodes',
-                node_range=(113, 125),
+                node_range=(113, 125),  # DERIVED: visible_sector = 5^3 = 125
                 description='Higgs sector and final unifications',
                 example_residues=['m_H (Higgs)', 'v (Higgs vev)', 'lambda_H (quartic)'],
                 tension_level='HIGH (symmetry breaking scale)'

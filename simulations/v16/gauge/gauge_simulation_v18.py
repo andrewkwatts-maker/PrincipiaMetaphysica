@@ -391,7 +391,7 @@ class GaugeSimulationV18(SimulationBase):
                     "alpha_s(M_Z) = 0.1180 +/- 0.0009 (PDG 2024)."
                 ),
                 derivation_formula="gauge-initial-conditions",
-                experimental_bound=0.1180,
+                experimental_bound=0.1180,  # EXPERIMENTAL: PDG 2024
                 uncertainty=0.0009,
                 bound_type="measured",
                 bound_source="PDG2024"
