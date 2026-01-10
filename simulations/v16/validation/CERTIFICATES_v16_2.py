@@ -133,7 +133,7 @@ class PrincipiaValidator:
 
     def cert_c003_chi_effective(self):
         """C003: Euler characteristic chi_eff = 144"""
-        chi = self._get_param('geometry.chi_eff', 144)
+        chi = self._get_param('topology.chi_eff', 144)
         status = "LOCKED" if chi == 144 else "FAILED"
         self.results['C003-CHI'] = {
             "status": status,

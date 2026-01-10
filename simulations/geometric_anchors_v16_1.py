@@ -1157,7 +1157,7 @@ if __name__ == "__main__":
         print("-" * 60)
 
         # Show a few key parameters
-        key_params = ["geometry.b3", "geometry.k_gimel", "geometry.alpha_gut", "geometry.chi_eff"]
+        key_params = ["geometry.b3", "geometry.k_gimel", "geometry.alpha_gut", "topology.chi_eff"]
         for param_path in key_params:
             if registry.has_param(param_path):
                 entry = registry.get_entry(param_path)

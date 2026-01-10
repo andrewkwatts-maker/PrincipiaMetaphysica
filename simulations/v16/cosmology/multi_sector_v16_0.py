@@ -743,9 +743,9 @@ class MultiSectorV16(SimulationBase):
                 status="DERIVED",
                 description="Effective dark energy equation of state from dimensional reduction",
                 derivation_formula="dark-energy-eos",
-                experimental_bound=-0.728,
+                experimental_bound=-0.957,  # DESI 2025 thawing quintessence
                 bound_type="central_value",
-                bound_source="DESI2025",
+                bound_source="DESI2025_THAWING",
                 uncertainty=0.067
             ),
             Parameter(
