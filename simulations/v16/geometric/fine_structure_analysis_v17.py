@@ -111,7 +111,7 @@ class FineStructureAnalysis:
             scientific_note="Uses only b3 and math constants, but lacks QED derivation"
         )
 
-    def analyze_two_time_projection(self, base_alpha_inv: float = 137.036) -> DerivationAttempt:
+    def analyze_two_time_projection(self, base_alpha_inv: float = 137.036) -> DerivationAttempt:  # EXPERIMENTAL: CODATA alpha inverse
         """
         Analyze the proposed two-time projection formula.
 
