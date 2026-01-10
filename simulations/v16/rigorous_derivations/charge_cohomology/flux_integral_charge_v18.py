@@ -67,11 +67,11 @@ _REG = get_registry()
 # Physical Constants
 # =============================================================================
 
-# Fundamental constants (CODATA 2022)
-HBAR = 1.054571817e-34      # J*s (Planck constant / 2*pi)
-C = 299792458               # m/s (speed of light)
-E_CHARGE = 1.602176634e-19  # C (elementary charge, exact)
-ALPHA_EM = 1.0 / 137.035999177  # Fine structure constant (CODATA 2022)
+# Fundamental constants - DEFINED: SI 2019 / EXPERIMENTAL: CODATA 2022
+HBAR = 1.054571817e-34      # DEFINED: SI 2019 (J*s)
+C = 299792458               # DEFINED: SI 2019 (m/s)
+E_CHARGE = 1.602176634e-19  # DEFINED: SI 2019 (C, exact)
+ALPHA_EM = 1.0 / 137.035999177  # EXPERIMENTAL: CODATA 2022
 
 # Derived: Dirac quantization unit
 DIRAC_UNIT = HBAR * C / 2   # = 1.58e-26 J*m (magnetic charge unit)

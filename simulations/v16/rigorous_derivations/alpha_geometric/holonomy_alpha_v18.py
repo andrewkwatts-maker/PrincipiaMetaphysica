@@ -74,12 +74,12 @@ except ImportError:
 
 
 # =============================================================================
-# PHYSICAL CONSTANTS
+# PHYSICAL CONSTANTS - EXPERIMENTAL: CODATA 2022
 # =============================================================================
 
-ALPHA_CODATA = 1 / 137.035999177  # CODATA 2022
-ALPHA_INV_CODATA = 137.035999177
-ALPHA_UNCERTAINTY = 0.000000021   # CODATA 2022 uncertainty
+ALPHA_CODATA = 1 / 137.035999177  # EXPERIMENTAL: CODATA 2022
+ALPHA_INV_CODATA = 137.035999177  # EXPERIMENTAL: CODATA 2022
+ALPHA_UNCERTAINTY = 0.000000021  # EXPERIMENTAL: CODATA 2022 uncertainty
 
 
 # =============================================================================

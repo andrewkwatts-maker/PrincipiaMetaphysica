@@ -408,6 +408,23 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "experimental_uncertainty": 0.0042,
                 "experimental_source": "Planck2018"
             },
+            # v18.0: Added missing certificate params with TRUE experimental uncertainties
+            # High sigma values indicate where geometric derivations deviate from experiment
+            "G_F": {
+                "experimental_value": 1.1663788e-5,  # PDG 2024 (GeV^-2)
+                "experimental_uncertainty": 6e-12,  # PDG 2024 precision
+                "experimental_source": "PDG2024"
+            },
+            "T_CMB": {
+                "experimental_value": 2.7255,  # COBE/Planck 2018 (K)
+                "experimental_uncertainty": 0.0006,  # COBE/Planck precision
+                "experimental_source": "Planck2018"
+            },
+            "eta_baryon": {
+                "experimental_value": 6.12e-10,  # BBN/Planck 2018 (n_b/n_gamma)
+                "experimental_uncertainty": 0.04e-10,  # BBN/Planck precision
+                "experimental_source": "Planck2018_BBN"
+            },
         }
 
         # Register each anchor to the registry

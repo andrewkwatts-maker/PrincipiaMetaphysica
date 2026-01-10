@@ -106,9 +106,9 @@ from simulations.base import (
 )
 
 
-# Physical constants
-ALPHA_EM = 1.0 / 137.035999177  # Fine structure constant (CODATA 2022)
-UNIT_CHARGE = np.sqrt(4 * np.pi * ALPHA_EM)  # Natural units
+# Physical constants - EXPERIMENTAL: CODATA 2022
+ALPHA_EM = 1.0 / 137.035999177  # EXPERIMENTAL: CODATA 2022
+UNIT_CHARGE = np.sqrt(4 * np.pi * ALPHA_EM)  # DERIVED: from alpha_EM
 
 
 @dataclass

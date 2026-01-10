@@ -46,7 +46,7 @@
       "experimental_target": 73.04,
       "experimental_uncertainty": 1.04,
       "experimental_source": "SH0ES 2022",
-      "sigma_deviation": 0.00,
+      "sigma_deviation": 0.09,
       "status": "DEMON_LOCKED"
     },
     {
@@ -132,7 +132,7 @@
       "parameter": "M_Pl_4D",
       "symbol": "M_Pl",
       "formula": "M_Pl_4D = M_Pl_26D * chi, chi = sqrt(8*pi)",
-      "target_value": 1.22091e19,
+      "target_value": 1.2208194772e19,
       "scaling_bridge": "V12_Volumetric_sqrt8pi",
       "topological_invariant": "12D_Holonomy_Volume",
       "geometric_seed": "V12_VOLUMETRIC",
@@ -140,7 +140,7 @@
       "experimental_target": 1.220890e19,
       "experimental_uncertainty": 1.9e15,
       "experimental_source": "CODATA 2022",
-      "sigma_deviation": 0.01,
+      "sigma_deviation": 0.37,
       "status": "DEMON_LOCKED"
     },
     {
@@ -313,14 +313,15 @@
       "parameter": "fermi_constant",
       "symbol": "G_F",
       "formula": "G_F = 1 / (sqrt(2) * v^2)",
-      "target_value": 1.1663e-5,
+      "target_value": 1.165e-5,
       "scaling_bridge": "Higgs_VEV_Derived",
       "topological_invariant": "EW_Coupling",
       "geometric_seed": "G2_HOLONOMY",
-      "experimental_target": 1.1664e-5,
-      "experimental_uncertainty": 6e-10,
+      "experimental_target": 1.1663788e-5,
+      "experimental_uncertainty": 6e-12,
       "experimental_source": "PDG 2024",
-      "sigma_deviation": 0.69,
+      "sigma_deviation": 2298.0,
+      "note": "High sigma due to PDG precision (6e-12). G_F derived from Higgs VEV (v=246.37 GeV).",
       "status": "DEMON_LOCKED"
     },
     {
@@ -334,8 +335,9 @@
       "geometric_seed": "LEECH_LATTICE",
       "experimental_target": 2.7255,
       "experimental_uncertainty": 0.0006,
-      "experimental_source": "COBE/Planck",
-      "sigma_deviation": 0.56,
+      "experimental_source": "COBE/Planck 2018",
+      "sigma_deviation": 19.2,
+      "note": "High sigma due to Planck precision. Geometric formula is heuristic.",
       "status": "DEMON_LOCKED"
     },
     {
@@ -380,7 +382,7 @@
       "experimental_target": 6.12e-10,
       "experimental_uncertainty": 0.04e-10,
       "experimental_source": "Planck 2018 BBN",
-      "sigma_deviation": 0.80,
+      "sigma_deviation": 3.00,
       "status": "DEMON_LOCKED"
     },
     {
@@ -427,7 +429,7 @@
       "experimental_target": 0.042,
       "experimental_uncertainty": 0.005,
       "experimental_source": "Theory estimate",
-      "sigma_deviation": 0.17,
+      "sigma_deviation": 3.72,
       "status": "DEMON_LOCKED"
     },
     {

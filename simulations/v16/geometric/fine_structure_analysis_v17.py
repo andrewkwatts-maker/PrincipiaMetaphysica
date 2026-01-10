@@ -39,13 +39,13 @@ from typing import Dict, Any
 from dataclasses import dataclass
 
 
-# CODATA 2022 Values (for comparison only - NOT inputs to derivation)
-CODATA_ALPHA_INV = 137.035999177
-CODATA_UNCERTAINTY = 0.000000021
-CODATA_E = 1.602176634e-19  # C (exact by definition)
-CODATA_HBAR = 1.054571817e-34  # J·s
-CODATA_C = 299792458  # m/s (exact by definition)
-CODATA_EPS0 = 8.8541878128e-12  # F/m
+# EXPERIMENTAL: CODATA 2022 Values (for comparison only - NOT inputs to derivation)
+CODATA_ALPHA_INV = 137.035999177  # EXPERIMENTAL: CODATA 2022
+CODATA_UNCERTAINTY = 0.000000021  # EXPERIMENTAL: CODATA 2022
+CODATA_E = 1.602176634e-19  # DEFINED: SI 2019 (exact by definition)
+CODATA_HBAR = 1.054571817e-34  # DEFINED: SI 2019 (from h)
+CODATA_C = 299792458  # DEFINED: SI 2019 (exact by definition)
+CODATA_EPS0 = 8.8541878128e-12  # DEFINED: SI 2019 (from c, mu0)
 
 
 @dataclass

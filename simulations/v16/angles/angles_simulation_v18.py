@@ -120,7 +120,7 @@ class AnglesSimulationV18(SimulationBase):
         return _OUTPUT_FORMULAS
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """Execute all angle computations."""
+        """Execute all angle computations and register to PM Registry."""
         results = {}
 
         # Bazien angles
@@ -147,6 +147,20 @@ class AnglesSimulationV18(SimulationBase):
         results["angles.simple_root_deg"] = su3.simple_root_deg
         results["angles.embedding_cal_deg"] = su3.embedding_cal_deg
         results["angles.su3_delta_deg"] = su3.su3_delta_deg
+
+        # v18.0 FIX: Register all computed angles to PM Registry
+        for path, value in results.items():
+            if not registry.has_param(path):
+                registry.set_param(
+                    path=path,
+                    value=value,
+                    source=self._metadata.id,
+                    status="GEOMETRIC",
+                    metadata={
+                        "derivation": "Geometric angle from G2/octonion topology",
+                        "units": "degrees"
+                    }
+                )
 
         return results
 

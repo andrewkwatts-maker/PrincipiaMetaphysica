@@ -246,8 +246,8 @@ class GeometricSimulationV18(SimulationBase):
 
         self._register_if_missing(
             registry, "geometry.alpha_inverse", alpha_inv, "DERIVED",
-            experimental_value=137.035999177,
-            experimental_uncertainty=0.000000021,
+            experimental_value=137.035999177,  # EXPERIMENTAL: CODATA 2022
+            experimental_uncertainty=0.000000021,  # EXPERIMENTAL: CODATA 2022
             experimental_source="CODATA2022"
         )
 

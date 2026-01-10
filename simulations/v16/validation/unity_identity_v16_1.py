@@ -38,9 +38,9 @@ class UnityIdentitySolver:
         self.c_kaf = 27.2  # Kaehler flux: b3(b3-7)/(b3-9)
         self.kappa = 2.101016  # Holonomy bridge constant
 
-        # CODATA 2022 values (fallback)
-        self.alpha_inv_codata = 137.035999
-        self.mass_ratio_codata = 1836.15267343
+        # EXPERIMENTAL: CODATA 2022 reference values (fallback)
+        self.alpha_inv_codata = 137.035999  # EXPERIMENTAL: CODATA 2022
+        self.mass_ratio_codata = 1836.15267343  # EXPERIMENTAL: CODATA 2022
 
     def get_alpha(self) -> float:
         """Get fine structure constant."""

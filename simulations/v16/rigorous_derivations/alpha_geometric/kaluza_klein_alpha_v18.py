@@ -85,14 +85,14 @@ except ImportError:
 
 
 # =============================================================================
-# PHYSICAL CONSTANTS (CODATA 2022)
+# PHYSICAL CONSTANTS - EXPERIMENTAL: CODATA 2022 / DEFINED: SI 2019
 # =============================================================================
-CODATA_ALPHA_INV = 137.035999177  # Inverse fine structure constant
-CODATA_UNCERTAINTY = 0.000000021  # Experimental uncertainty
-CODATA_G_N = 6.67430e-11  # Newton's constant (m^3 kg^-1 s^-2)
-CODATA_HBAR = 1.054571817e-34  # Reduced Planck constant (J*s)
-CODATA_C = 299792458  # Speed of light (m/s)
-CODATA_M_E = 9.1093837015e-31  # Electron mass (kg)
+CODATA_ALPHA_INV = 137.035999177  # EXPERIMENTAL: CODATA 2022
+CODATA_UNCERTAINTY = 0.000000021  # EXPERIMENTAL: CODATA 2022
+CODATA_G_N = 6.67430e-11  # EXPERIMENTAL: CODATA 2022 (m^3 kg^-1 s^-2)
+CODATA_HBAR = 1.054571817e-34  # DEFINED: SI 2019 (J*s)
+CODATA_C = 299792458  # DEFINED: SI 2019 (m/s)
+CODATA_M_E = 9.1093837015e-31  # EXPERIMENTAL: CODATA 2022 (kg)
 M_PLANCK = 2.435e18  # Reduced Planck mass (GeV)
 L_PLANCK = 1.616255e-35  # Planck length (m)
 
