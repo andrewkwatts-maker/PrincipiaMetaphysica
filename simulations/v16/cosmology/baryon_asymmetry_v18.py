@@ -193,6 +193,7 @@ class BaryonAsymmetryV18(SimulationBase):
         result = self.compute_baryon_asymmetry()
 
         # Register results
+        # v18.3: Added theory_uncertainty - CP violation mechanism ~5%
         registry.set_param(
             path="cosmology.eta_baryon_geometric",
             value=result.eta_b,
@@ -204,7 +205,9 @@ class BaryonAsymmetryV18(SimulationBase):
             metadata={
                 "derivation": "Cycle asymmetry + CP violation",
                 "k_bary": result.k_bary,
-                "units": "dimensionless"
+                "units": "dimensionless",
+                "theory_uncertainty": 3e-11,  # ~5% from CP violation mechanism not fully derived
+                "theory_uncertainty_source": "cp_violation_topological_estimate"
             }
         )
 
