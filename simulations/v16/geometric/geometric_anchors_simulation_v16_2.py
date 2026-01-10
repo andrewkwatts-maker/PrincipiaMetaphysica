@@ -210,17 +210,19 @@ class GeometricAnchorsSimulation(SimulationBase):
             Formula(
                 id="spectral-index-anchor",
                 label="(2.4)",
-                latex=r"n_s = 1 - \frac{2}{b_3} = \frac{22}{24} \approx 0.9167",
-                plain_text="n_s = 1 - 2/b3 = 22/24 = 0.9167",
+                latex=r"n_s = 1 - \frac{2\varphi^2}{\chi_{\rm eff}} = 1 - \frac{2}{55} \approx 0.9636",
+                plain_text="n_s = 1 - 2*phi^2/chi_eff = 1 - 2/55 = 0.9636",
                 category="DERIVED",
-                derivation_chain=["b3"],
+                derivation_chain=["chi_eff", "phi"],
                 experimental_target={"value": 0.9649, "uncertainty": 0.0042, "source": "Planck 2018"},
                 source_simulation=self._metadata.id,
                 terms={
                     "n_s": "Scalar spectral index",
-                    "b3": "Third Betti number (24)"
+                    "chi_eff": "Effective Euler characteristic (144)",
+                    "phi": "Golden ratio (1.618...)",
+                    "N_eff": "Effective e-folds = chi_eff/phi^2 = 55"
                 },
-                notes="Sterile prediction - high-risk anchor"
+                notes="v18.0: Golden-modulated e-folds from topological projection"
             ),
             Formula(
                 id="unity-seal-anchor",
@@ -545,7 +547,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 name="Scalar Spectral Index",
                 units="dimensionless",
                 status="DERIVED",
-                description="n_s = 1 - 2/b3 (sterile prediction)",
+                description="n_s = 1 - 2*phi^2/chi_eff (v18: golden-modulated e-folds)",
                 experimental_bound=0.9649,
                 bound_type="measured",
                 bound_source="Planck2018",

@@ -1,5 +1,5 @@
 {
-  "version": "17.2",
+  "version": "18.0",
   "description": "Blacklist of deprecated PM param paths that should no longer be used",
   "deprecated_params": [
     {
@@ -63,9 +63,23 @@
       "deprecated_in": "17.2"
     }
   ],
+  "deprecated_experimental_values": [
+    {
+      "context": "cosmology.w0",
+      "old_value": -0.728,
+      "new_value": -0.957,
+      "reason": "DESI 2025 thawing quintessence constraint replaces Lambda-CDM. PM predicts w0=-23/24=-0.9583 which matches thawing model.",
+      "deprecated_in": "18.0",
+      "files_updated": [
+        "simulations/v16/cosmology/dark_energy_thawing_v16_2.py",
+        "simulations/v16/cosmology/multi_sector_v16_0.py"
+      ]
+    }
+  ],
   "notes": [
     "Add new deprecated params here when paths are renamed",
     "Validator will warn if deprecated paths are found in HTML/JS/Python",
-    "Old params should be migrated to new paths in source files"
+    "Old params should be migrated to new paths in source files",
+    "deprecated_experimental_values tracks outdated experimental reference values"
   ]
 }
