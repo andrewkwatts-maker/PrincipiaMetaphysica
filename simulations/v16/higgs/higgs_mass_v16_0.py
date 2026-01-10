@@ -540,11 +540,12 @@ class HiggsMassSimulation(SimulationBase):
                 status="ESTABLISHED",
                 description=(
                     "Electroweak Higgs vacuum expectation value v_EW = 246 GeV, "
-                    "related to the Fermi constant by v_EW = 1/√(√2 G_F)."
+                    "related to the Fermi constant by v_EW = 1/sqrt(sqrt(2) G_F)."
                 ),
                 experimental_bound=246.22,  # Higgs VEV (PDG)
                 bound_type="measured",
                 bound_source="PDG 2024",
+                uncertainty=0.01,  # PDG uncertainty on v_EW
                 validation={
                     "experimental_value": 246.22,  # Higgs VEV (PDG)
                     "uncertainty": 0.01,
