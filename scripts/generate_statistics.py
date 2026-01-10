@@ -260,6 +260,7 @@ def generate_statistics() -> Dict[str, Any]:
             "not_testable_count": gate_counts["not_testable"],
             "mathematical_count": gate_counts["mathematical"],
             "total_gates": gate_counts["total_gates"],
+            "testable_count": gate_counts["total_gates"] - gate_counts["not_testable"],  # 72 - 30 = 42
             "exact_matches": validation_stats["exact_matches"],
             "chi_squared_reduced": validation_stats["chi_squared_reduced"],
             "degrees_of_freedom": validation_stats["degrees_of_freedom"],
@@ -300,6 +301,12 @@ def generate_statistics() -> Dict[str, Any]:
                 'value': fs['total_gates'],
                 'status': 'COMPUTED',
                 'source': 'generate_statistics.py'
+            }
+            params_data['parameters']['framework_statistics.testable_count'] = {
+                'value': fs['testable_count'],
+                'status': 'COMPUTED',
+                'source': 'generate_statistics.py',
+                'description': 'Number of testable gates (total - axioms)'
             }
             params_data['parameters']['framework_statistics.chi_squared_reduced'] = {
                 'value': fs['chi_squared_reduced'],
@@ -379,14 +386,15 @@ def main():
     print(f"  Total predictions: {statistics['validation']['total_predictions']}")
     print(f"  Success rate:      {statistics['validation']['success_rate']}")
 
-    print(f"\nFramework Statistics:")
-    print(f"  Verified gates:    {statistics['framework_statistics']['pass_count']}")
-    print(f"  Pending gates:     {statistics['framework_statistics']['pending_count']}")
-    print(f"  Not testable:      {statistics['framework_statistics']['not_testable_count']}")
-    print(f"  Mathematical:      {statistics['framework_statistics']['mathematical_count']}")
-    print(f"  Chi-squared (red): {statistics['framework_statistics']['chi_squared_reduced']}")
-    print(f"  Degrees of freedom:{statistics['framework_statistics']['degrees_of_freedom']}")
-    print(f"  Status:            {statistics['framework_statistics']['status']}")
+    print(f"\nFramework Statistics (72 Gates Total):")
+    fs = statistics['framework_statistics']
+    print(f"  Verified gates:    {fs['pass_count']} of {fs['testable_count']} testable")
+    print(f"  Pending gates:     {fs['pending_count']}")
+    print(f"  Not testable:      {fs['not_testable_count']} (axioms)")
+    print(f"  Mathematical:      {fs['mathematical_count']}")
+    print(f"  Chi-squared (red): {fs['chi_squared_reduced']}")
+    print(f"  Degrees of freedom:{fs['degrees_of_freedom']}")
+    print(f"  Status:            {fs['status']}")
 
     print(f"\nOutput written to: {OUTPUT_FILE}")
 
