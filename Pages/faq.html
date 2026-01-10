@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Principia Metaphysica v18.0</title>
+    <title>FAQ - Principia Metaphysica v18.3</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-header.css">
@@ -255,30 +255,15 @@
         }
     </style>
 </head>
-<body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="header-content">
-            <a href="../index.html" class="logo">
-                <span class="logo-icon">&#x2727;</span>
-                <span class="logo-text">Principia Metaphysica</span>
-            </a>
-            <nav class="main-nav">
-                <a href="../index.html">Home</a>
-                <a href="paper.html">Paper</a>
-                <a href="simulations.html">Simulations</a>
-                <a href="formulas.html">Formulas</a>
-                <a href="beginners-guide.html">Guide</a>
-                <a href="faq.html" class="active">FAQ</a>
-            </nav>
-        </div>
-    </header>
+<body class="auth-loading">
+  <div id="main-content" style="display: none;">
+    <!-- Header injected by pm-header.js -->
 
     <main class="faq-container">
         <!-- Header -->
         <div class="faq-header">
             <h1>Frequently Asked Questions</h1>
-            <p class="subtitle">Principia Metaphysica v18.0 - From First Principles to Physical Constants</p>
+            <p class="subtitle">Principia Metaphysica v18.3 - From First Principles to Physical Constants</p>
         </div>
 
         <!-- Quick Navigation -->
@@ -1095,18 +1080,23 @@
     <!-- Footer -->
     <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem;">
         <p>&copy; 2025-2026 Andrew Keith Watts. All rights reserved.</p>
-        <p>Principia Metaphysica v18.0</p>
+        <p>Principia Metaphysica v18.3</p>
     </footer>
+  </div><!-- end main-content -->
 
-    <script src="../js/pm-tooltip-system.js"></script>
-    <script src="../js/pm-constants-loader.js"></script>
-    <script type="module">
-        import { injectHeader } from '../js/pm-header.js';
+  <script src="../js/pm-tooltip-system.js"></script>
+  <script src="../js/pm-constants-loader.js"></script>
+  <script type="module">
+    import { injectHeader } from '../js/pm-header.js';
+    import { setupAuthGuard } from '../js/auth-guard.js';
 
-        // Inject header on DOM load
-        document.addEventListener('DOMContentLoaded', () => {
-            injectHeader('faq');
-        });
-    </script>
+    // Inject header first
+    document.addEventListener('DOMContentLoaded', () => {
+      injectHeader('faq');
+    });
+
+    // Setup auth guard
+    setupAuthGuard('faq');
+  </script>
 </body>
 </html>

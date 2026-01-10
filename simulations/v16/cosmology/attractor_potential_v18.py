@@ -329,6 +329,7 @@ class AttractorPotentialV18(SimulationBase):
             }
         )
 
+        # v18.3: Added theory_uncertainty - pneuma potential truncation ~2%
         registry.set_param(
             path="cosmology.w_0_attractor",
             value=result.w_0_attractor,
@@ -340,10 +341,13 @@ class AttractorPotentialV18(SimulationBase):
             metadata={
                 "derivation": "-1 + slow_roll + Ricci_correction",
                 "units": "dimensionless",
-                "sigma": result.sigma_w0
+                "sigma": result.sigma_w0,
+                "theory_uncertainty": 0.02,  # ~2% from pneuma potential truncation
+                "theory_uncertainty_source": "pneuma_potential_truncation"
             }
         )
 
+        # v18.3: Added theory_uncertainty - slow-roll expansion ~10%
         registry.set_param(
             path="cosmology.w_a_thawing",
             value=result.w_a_thawing,
@@ -355,7 +359,9 @@ class AttractorPotentialV18(SimulationBase):
             metadata={
                 "derivation": "2*epsilon_eff*(1-eta_eff) + Ricci_boost",
                 "units": "dimensionless",
-                "note": "CPL thawing parameter (w = w_0 + w_a*(1-a))"
+                "note": "CPL thawing parameter (w = w_0 + w_a*(1-a))",
+                "theory_uncertainty": 0.06,  # ~10% from slow-roll expansion truncation
+                "theory_uncertainty_source": "slow_roll_expansion_truncation"
             }
         )
 

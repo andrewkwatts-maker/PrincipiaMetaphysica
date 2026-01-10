@@ -196,6 +196,7 @@ class CMBTemperatureV18(SimulationBase):
         result = self.compute_cmb_temperature()
 
         # Register results
+        # v18.3: Added theory_uncertainty - expansion history approximations ~0.5%
         registry.set_param(
             path="cosmology.T_CMB_geometric",
             value=result.T_CMB,
@@ -207,7 +208,9 @@ class CMBTemperatureV18(SimulationBase):
             metadata={
                 "derivation": "Ground mode + entropy damping",
                 "k_CMB": result.k_CMB,
-                "units": "K"
+                "units": "K",
+                "theory_uncertainty": 0.014,  # ~0.5% from expansion history approximations
+                "theory_uncertainty_source": "expansion_history_approximation"
             }
         )
 
