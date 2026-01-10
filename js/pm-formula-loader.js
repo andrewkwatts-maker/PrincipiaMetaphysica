@@ -33,7 +33,7 @@ class PMFormulaLoader {
 
     // Cache configuration
     static CACHE_KEY = 'pm_formulas_cache';
-    static CACHE_VERSION = '16.2';
+    static CACHE_VERSION = '17.2';
     static CACHE_TTL = 3600000; // 1 hour in ms
 
     /**
@@ -85,7 +85,7 @@ class PMFormulaLoader {
             const cached = this._getCached();
             if (cached) {
                 this._formulas = cached.formulas;
-                this._version = cached.version || '16.0';
+                this._version = cached.version || '17.2';
                 this._loaded = true;
 
                 console.log('[PMFormulaLoader] Loaded from cache');
@@ -122,10 +122,10 @@ class PMFormulaLoader {
                             // Handle format: { formulas: {...}, version: "...", count: N }
                             if (data.formulas && typeof data.formulas === 'object') {
                                 this._formulas = data.formulas;
-                                this._version = data.version || '16.0';
+                                this._version = data.version || '17.2';
                             } else {
                                 this._formulas = data;
-                                this._version = '16.0';
+                                this._version = '17.2';
                             }
 
                             this._loaded = true;
@@ -163,7 +163,7 @@ class PMFormulaLoader {
 
                             if (data.formulas && data.formulas.formulas) {
                                 this._formulas = data.formulas.formulas;
-                                this._version = data.formulas.version || data.version || '16.0';
+                                this._version = data.formulas.version || data.version || '17.2';
                                 this._loaded = true;
 
                                 this._setCache({ formulas: this._formulas, version: this._version });

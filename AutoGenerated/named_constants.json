@@ -1,9 +1,9 @@
 {
   "version": "17.2-ABSOLUTE",
-  "timestamp": "2026-01-07T11:10:04.000320Z",
-  "session_id": "PM20260107111004",
+  "timestamp": "2026-01-10T15:39:26.851032Z",
+  "session_id": "PM20260110153926",
   "volatility": {
-    "generated_at": "2026-01-07T11:10:04.000320Z",
+    "generated_at": "2026-01-10T15:39:26.851032Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "17.2-ABSOLUTE",
@@ -1525,7 +1525,7 @@
     "c04_bulk_stability": {
       "formula": "R_s = LOGIC_CLOSURE / BULK_PRESSURE = 288/163",
       "description": "Integer-Lock Strategy: JC Constant (153) stabilizes Bulk Pressure (163)",
-      "bulk_stability_factor": "1.7668711656441717791411042944785276073619631901840",
+      "bulk_stability_factor": "1.766871165644171779141104294478527607361963190184049079754601227",
       "tensioning": {
         "logic_closure": 288,
         "bulk_pressure": 163,

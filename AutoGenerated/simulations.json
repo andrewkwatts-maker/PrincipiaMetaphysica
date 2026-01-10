@@ -1,8 +1,57 @@
 {
   "version": "17.2",
-  "generated": "2026-01-07T01:10:03.988191Z",
-  "total_scripts": 96,
+  "generated": "2026-01-10T05:39:26.834913Z",
+  "total_scripts": 157,
   "categories": {
+    "v16/angles": {
+      "title": "Angles",
+      "path": "simulations/v16/angles",
+      "folderName": "angles",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "angles_simulation_v18.py",
+          "path": "simulations/v16/angles/angles_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "bazien_angles_v17.py",
+          "path": "simulations/v16/angles/bazien_angles_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "g2_holonomy_angles_v17.py",
+          "path": "simulations/v16/angles/g2_holonomy_angles_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "octonion_angles_v17.py",
+          "path": "simulations/v16/angles/octonion_angles_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "su3_embedding_angles_v17.py",
+          "path": "simulations/v16/angles/su3_embedding_angles_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 5
+    },
     "v16/appendices": {
       "title": "Appendices",
       "path": "simulations/v16/appendices",
@@ -276,6 +325,71 @@
       ],
       "count": 33
     },
+    "v16/constants": {
+      "title": "Constants",
+      "path": "simulations/v16/constants",
+      "folderName": "constants",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "constants_simulation_v18.py",
+          "path": "simulations/v16/constants/constants_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "fermion_generations_v17.py",
+          "path": "simulations/v16/constants/fermion_generations_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "fine_structure_v17.py",
+          "path": "simulations/v16/constants/fine_structure_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "parameter_residues_v17.py",
+          "path": "simulations/v16/constants/parameter_residues_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "speed_of_light_v17.py",
+          "path": "simulations/v16/constants/speed_of_light_v17.py",
+          "version": null,
+          "title": "Speed of Light from Sovereign Constants",
+          "description": "Derives the speed of light c from Sovereign Gnostic Constants using the (Z.6) Pneuma Tensioner and Decad³ Projection Engine. Achieves 99.99999% accuracy (34.84 m/s variance from CODATA).",
+          "status": null
+        },
+        {
+          "file": "sterile_angle_v17.py",
+          "path": "simulations/v16/constants/sterile_angle_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "weak_mixing_v17.py",
+          "path": "simulations/v16/constants/weak_mixing_v17.py",
+          "version": null,
+          "title": "Weak Mixing Angle from Torsion Gate",
+          "description": "sin^2(theta_W) contracts because it's a coupling ratio.",
+          "status": null
+        }
+      ],
+      "count": 7
+    },
     "v16/cosmology": {
       "title": "Cosmology",
       "path": "simulations/v16/cosmology",
@@ -355,6 +469,14 @@
           "status": null
         },
         {
+          "file": "cosmology_simulation_v18.py",
+          "path": "simulations/v16/cosmology/cosmology_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "jacobian_mathematical_validation.py",
           "path": "simulations/v16/cosmology/jacobian_mathematical_validation.py",
           "version": null,
@@ -387,7 +509,56 @@
           "status": null
         }
       ],
-      "count": 13
+      "count": 14
+    },
+    "v16/dirac": {
+      "title": "Dirac",
+      "path": "simulations/v16/dirac",
+      "folderName": "dirac",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "dirac_1plus1d_v17.py",
+          "path": "simulations/v16/dirac/dirac_1plus1d_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "dirac_3plus1d_v17.py",
+          "path": "simulations/v16/dirac/dirac_3plus1d_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "dirac_gravity_v17.py",
+          "path": "simulations/v16/dirac/dirac_gravity_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "dirac_simulation_v18.py",
+          "path": "simulations/v16/dirac/dirac_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "wavefunction_validation_v17.py",
+          "path": "simulations/v16/dirac/wavefunction_validation_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 5
     },
     "v16/discussion": {
       "title": "Discussion",
@@ -402,9 +573,17 @@
           "title": "Discussion, Conclusions, and Theory Analysis",
           "description": "Comprehensive discussion including theoretical implications, predictions, falsifiability, validation, and future directions",
           "status": null
+        },
+        {
+          "file": "discussion_simulation_v18.py",
+          "path": "simulations/v16/discussion/discussion_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/fermion": {
       "title": "Fermion",
@@ -459,9 +638,25 @@
           "title": "Fermion Generations from G2 Topology",
           "description": "Derives the number of fermion generations (3) and Yukawa texture from G2 manifold topology via the Pneuma Mechanism. Generation count follows from spinor saturation: n_gen = N_flux / spinor_DOF = 24 / 8 = 3. Yukawa hierarchy from geometric Froggatt-Nielsen with epsilon ~ 0.223.",
           "status": null
+        },
+        {
+          "file": "fermion_simulation_v18.py",
+          "path": "simulations/v16/fermion/fermion_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "g2_triality_mixing_v17.py",
+          "path": "simulations/v16/fermion/g2_triality_mixing_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 6
+      "count": 8
     },
     "v16/foundations": {
       "title": "Foundations",
@@ -493,9 +688,17 @@
           "title": "Gauge Coupling Unification",
           "description": "Compute GUT scale and unified coupling from 3-loop RG evolution with KK and asymptotic safety corrections",
           "status": null
+        },
+        {
+          "file": "gauge_simulation_v18.py",
+          "path": "simulations/v16/gauge/gauge_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/geometric": {
       "title": "Geometric",
@@ -574,9 +777,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "geometric_simulation_v18.py",
+          "path": "simulations/v16/geometric/geometric_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 9
+      "count": 10
     },
     "v16/higgs": {
       "title": "Higgs",
@@ -607,9 +818,17 @@
           "title": "Higgs Mass from Moduli Stabilization",
           "description": "Compute Higgs mass and VEV from G2 moduli stabilization",
           "status": null
+        },
+        {
+          "file": "higgs_simulation_v18.py",
+          "path": "simulations/v16/higgs/higgs_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 3
+      "count": 4
     },
     "v16/integrity": {
       "title": "Integrity",
@@ -649,9 +868,82 @@
           "title": "Introduction to Principia Metaphysica",
           "description": "Narrative introduction to the PM v17.2 sterile framework - 125 geometric residues",
           "status": null
+        },
+        {
+          "file": "introduction_simulation_v18.py",
+          "path": "simulations/v16/introduction/introduction_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 2
+      "count": 3
+    },
+    "v16/master_action": {
+      "title": "Master Action",
+      "path": "simulations/v16/master_action",
+      "folderName": "master_action",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "electroweak_mixing_v17.py",
+          "path": "simulations/v16/master_action/electroweak_mixing_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "kk_reduction_gr_gauge_v17.py",
+          "path": "simulations/v16/master_action/kk_reduction_gr_gauge_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "master_action_simulation_v18.py",
+          "path": "simulations/v16/master_action/master_action_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "non_abelian_kk_gauge_v17.py",
+          "path": "simulations/v16/master_action/non_abelian_kk_gauge_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "su2_weak_gauge_v17.py",
+          "path": "simulations/v16/master_action/su2_weak_gauge_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "su3_qcd_gauge_v17.py",
+          "path": "simulations/v16/master_action/su3_qcd_gauge_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "u1_hypercharge_v17.py",
+          "path": "simulations/v16/master_action/u1_hypercharge_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 7
     },
     "v16/methodology": {
       "title": "Methodology",
@@ -670,6 +962,23 @@
       ],
       "count": 1
     },
+    "v16/moduli": {
+      "title": "Moduli",
+      "path": "simulations/v16/moduli",
+      "folderName": "moduli",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "moduli_simulation_v18.py",
+          "path": "simulations/v16/moduli/moduli_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
     "v16/neutrino": {
       "title": "Neutrino",
       "path": "simulations/v16/neutrino",
@@ -683,9 +992,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "neutrino_simulation_v18.py",
+          "path": "simulations/v16/neutrino/neutrino_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/pneuma": {
       "title": "Pneuma",
@@ -700,9 +1017,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "pneuma_simulation_v18.py",
+          "path": "simulations/v16/pneuma/pneuma_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/predictions": {
       "title": "Predictions",
@@ -717,9 +1042,17 @@
           "title": "Falsifiable Predictions Summary",
           "description": "Aggregates all testable predictions from the PM framework",
           "status": null
+        },
+        {
+          "file": "predictions_simulation_v18.py",
+          "path": "simulations/v16/predictions/predictions_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/proton": {
       "title": "Proton",
@@ -734,9 +1067,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "proton_simulation_v18.py",
+          "path": "simulations/v16/proton/proton_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/qed": {
       "title": "Qed",
@@ -815,9 +1156,17 @@
           "title": "Weak Mixing Angle from Torsion Gate",
           "description": "sin^2(theta_W) contracts because it's a coupling ratio.",
           "status": null
+        },
+        {
+          "file": "qed_simulation_v18.py",
+          "path": "simulations/v16/qed/qed_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 9
+      "count": 10
     },
     "v16/quantum_bio": {
       "title": "Quantum Bio",
@@ -840,9 +1189,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "quantum_bio_simulation_v18.py",
+          "path": "simulations/v16/quantum_bio/quantum_bio_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 2
+      "count": 3
     },
     "v16/results": {
       "title": "Results",
@@ -907,9 +1264,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "thermal_simulation_v18.py",
+          "path": "simulations/v16/thermal/thermal_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 1
+      "count": 2
     },
     "v16/validation": {
       "title": "Validation",
@@ -942,6 +1307,14 @@
           "status": null
         },
         {
+          "file": "cosmology_validation_v17.py",
+          "path": "simulations/v16/validation/cosmology_validation_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "example_usage.py",
           "path": "simulations/v16/validation/example_usage.py",
           "version": null,
@@ -956,9 +1329,178 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "principia_residue_calculator_v17.py",
+          "path": "simulations/v16/validation/principia_residue_calculator_v17.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "validation_simulation_v18.py",
+          "path": "simulations/v16/validation/validation_simulation_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 5
+      "count": 8
+    },
+    "v16/rigorous_derivations": {
+      "title": "Rigorous Derivations",
+      "path": "simulations/v16/rigorous_derivations",
+      "folderName": "rigorous_derivations",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "anomaly_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/anomaly_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "brane_intersection_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/brane_intersection_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "cohomology_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/cohomology_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "cycle_volume_alpha_v18.py",
+          "path": "simulations/v16/rigorous_derivations/alpha_geometric/cycle_volume_alpha_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "decoherence_protection_v18.py",
+          "path": "simulations/v16/rigorous_derivations/orch_or_extended/decoherence_protection_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "dirac_monopole_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/dirac_monopole_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "flux_integral_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/flux_integral_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "gravitational_self_energy_v18.py",
+          "path": "simulations/v16/rigorous_derivations/orch_or_extended/gravitational_self_energy_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "gut_embedding_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/gut_embedding_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "holonomy_alpha_v18.py",
+          "path": "simulations/v16/rigorous_derivations/alpha_geometric/holonomy_alpha_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "hypercharge_u1_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/hypercharge_u1_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "kaluza_klein_alpha_v18.py",
+          "path": "simulations/v16/rigorous_derivations/alpha_geometric/kaluza_klein_alpha_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "ktheory_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/ktheory_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "laplacian_eigenvalue_v18.py",
+          "path": "simulations/v16/rigorous_derivations/dirac_spectral/laplacian_eigenvalue_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "microtubule_geometry_v18.py",
+          "path": "simulations/v16/rigorous_derivations/orch_or_extended/microtubule_geometry_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "spectral_flow_charge_v18.py",
+          "path": "simulations/v16/rigorous_derivations/charge_cohomology/spectral_flow_charge_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "wilson_loop_v18.py",
+          "path": "simulations/v16/rigorous_derivations/confinement/wilson_loop_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "zero_mode_index_v18.py",
+          "path": "simulations/v16/rigorous_derivations/dirac_spectral/zero_mode_index_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 18
     }
   }
 }

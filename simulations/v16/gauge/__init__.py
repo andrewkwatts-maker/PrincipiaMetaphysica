@@ -1,5 +1,5 @@
 """
-Principia Metaphysica - Gauge Simulations v16
+Principia Metaphysica - Gauge Simulations v16/v18
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -9,9 +9,14 @@ Dedicated To:
 """
 
 from .gauge_unification_v16_0 import GaugeUnificationSimulation
+from .gauge_simulation_v18 import GaugeSimulationV18, run_gauge_simulation
 
 __all__ = [
+    # v16 modules
     'GaugeUnificationSimulation',
+    # v18 consolidated wrapper
+    'GaugeSimulationV18',
+    'run_gauge_simulation',
 ]
 
-__version__ = "17.2.0"
+__version__ = "18.0.0"

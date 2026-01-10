@@ -25,7 +25,7 @@ class PMBeginnerGuideLoader {
 
     // Cache configuration
     static CACHE_KEY = 'pm_beginner_guide_cache';
-    static CACHE_VERSION = '16.2';
+    static CACHE_VERSION = '17.2';
     static CACHE_TTL = 3600000; // 1 hour in ms
 
     /**

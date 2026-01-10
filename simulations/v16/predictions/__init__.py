@@ -9,5 +9,13 @@ Dedicated To:
 """
 
 from .predictions_aggregator_v16_0 import PredictionsAggregatorV16
+from .predictions_simulation_v18 import (
+    PredictionsSimulationV18,
+    run_predictions_simulation,
+)
 
-__all__ = ['PredictionsAggregatorV16']
+__all__ = [
+    'PredictionsAggregatorV16',
+    'PredictionsSimulationV18',
+    'run_predictions_simulation',
+]

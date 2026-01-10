@@ -1,5 +1,5 @@
 /**
- * PM Simulation Loader v16.2
+ * PM Simulation Loader v17.2
  *
  * Dynamically loads and displays simulation files from the repository.
  * Creates categories from folder structure with expandable file panels.
@@ -179,7 +179,7 @@
             }
 
             return {
-                version: '16.2-dynamic',
+                version: '17.2-dynamic',
                 generated: new Date().toISOString(),
                 total_scripts: Object.values(categories).reduce((sum, cat) => sum + cat.scripts.length, 0),
                 categories: categories

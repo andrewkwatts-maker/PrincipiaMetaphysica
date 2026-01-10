@@ -1,5 +1,5 @@
 """
-Principia Metaphysica - Validation Module v17.2
+Principia Metaphysica - Validation Module v18.0
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -9,6 +9,8 @@ Dedicated To:
 
 This module contains validation scripts for testing the theory's
 geometric predictions against experimental data.
+
+v18.0: Added consolidated SimulationBase wrapper for unified validation.
 """
 
 from .rigorous_validator_v16_1 import RigorousValidatorV16_1
@@ -20,13 +22,21 @@ from .cosmology_validation_v17 import (
     CosmologyValidation,
     run_cosmology_validation,
 )
+from .validation_simulation_v18 import (
+    ValidationSimulationV18,
+    run_validation_simulation,
+)
 
 __all__ = [
+    # v16/v17 modules
     'RigorousValidatorV16_1',
     'PrincipiaResidueCalculator',
     'CosmologyValidation',
     'run_residue_calculator',
     'run_cosmology_validation',
+    # v18 consolidated wrapper
+    'ValidationSimulationV18',
+    'run_validation_simulation',
 ]
 
-__version__ = "17.2"
+__version__ = "18.0"

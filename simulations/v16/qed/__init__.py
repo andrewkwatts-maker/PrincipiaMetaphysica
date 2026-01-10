@@ -28,7 +28,11 @@ from .faraday_v17_2 import FaradayV17
 from .molar_gas_v17_2 import MolarGasV17
 from .weak_mixing_v17_2 import WeakMixingV17
 
+# v18 SimulationBase wrapper
+from .qed_simulation_v18 import QEDSimulationV18, run_qed_simulation
+
 __all__ = [
+    # V17 classes
     'ComptonWavelengthV17',
     'StefanBoltzmannV17',
     'HartreeEnergyV17',
@@ -38,6 +42,9 @@ __all__ = [
     'FaradayV17',
     'MolarGasV17',
     'WeakMixingV17',
+    # V18 wrapper
+    'QEDSimulationV18',
+    'run_qed_simulation',
 ]
 
-__version__ = "17.2"
+__version__ = "18.0"

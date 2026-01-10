@@ -878,6 +878,22 @@ class SimulationRunner:
             print("\n[INITIALIZATION] Pre-loading Geometric Anchors (v16.2 Demon-Lock)")
             print("-" * 80)
 
+        # Register system version first (SYSTEM status - not counted in scientific stats)
+        try:
+            from core.FormulasRegistry import FormulasRegistry
+            if not self.registry.has_param("system.version"):
+                self.registry.set_param("system.version", FormulasRegistry.VERSION,
+                                         source="SYSTEM:FormulasRegistry",
+                                         status="SYSTEM",
+                                         metadata={
+                                             "description": "Framework version number",
+                                             "is_scientific": False,
+                                             "display_in_params": False
+                                         })
+        except Exception as e:
+            if self.verbose:
+                print(f"[WARN] Could not register system.version: {e}")
+
         try:
             # Pre-load minimal topology params with GEOMETRIC status
             # GeometricAnchorsSimulation will register the full set in Phase 1
@@ -901,7 +917,7 @@ class SimulationRunner:
                 print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")
                 print(f"  - topology.b3 = 24 (derived from G2 manifold)")
                 print(f"  - topology.chi_eff = 144 (derived from TCS #187)")
-                print(f"  - topology.k_gimel = {k_gimel:.6f} (derived: b3/2 + 1/π)")
+                print(f"  - topology.k_gimel = {k_gimel:.6f} (derived: b3/2 + 1/pi)")
                 print(f"  Note: Full geometric anchors computed in Phase 1")
 
         except Exception as e:
@@ -1396,12 +1412,20 @@ class SimulationRunner:
             # Get provenance chain from registry
             provenance = self.registry._provenance.get(param_key, [])
 
-            # Determine status
+            # Determine status - preserve existing status if already set
+            original_status = param_data.get("status", "")
             source = param_data.get("source", "")
-            if source == "EstablishedPhysics":
+
+            # Preserve SYSTEM status (non-scientific metadata params)
+            if original_status == "SYSTEM":
+                status = "SYSTEM"
+            elif source == "EstablishedPhysics":
                 status = "ESTABLISHED"
             elif source == "g2_geometry_v16_0":
                 status = "GEOMETRIC"
+            elif original_status in ("ESTABLISHED", "GEOMETRIC", "PREDICTED", "CALIBRATED"):
+                # Preserve explicitly set statuses
+                status = original_status
             elif "calibrated" in param_data.get("description", "").lower():
                 status = "CALIBRATED"
             else:
