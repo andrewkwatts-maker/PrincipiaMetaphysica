@@ -225,7 +225,7 @@ class PneumaSimulationV18(SimulationBase):
             "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
             "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
             "constants.M_PLANCK": (1.22e19, "ESTABLISHED:CODATA"),
-            "pdg.m_higgs": (125.10, "ESTABLISHED:PDG2024"),
+            "pdg.m_higgs": (125.10, "ESTABLISHED:PDG2024"),  # EXPERIMENTAL: PDG2024
         }
 
         for path, (value, source) in defaults.items():
@@ -545,7 +545,7 @@ def run_pneuma_simulation(verbose: bool = True) -> Dict[str, Any]:
     registry.set_param("topology.chi_eff", 144, source="ESTABLISHED:TCS #187", status="ESTABLISHED")
     registry.set_param("topology.b3", 24, source="ESTABLISHED:TCS #187", status="ESTABLISHED")
     registry.set_param("constants.M_PLANCK", 1.22e19, source="ESTABLISHED:CODATA", status="ESTABLISHED")
-    registry.set_param("pdg.m_higgs", 125.10, source="ESTABLISHED:PDG2024", status="ESTABLISHED")
+    registry.set_param("pdg.m_higgs", 125.10, source="ESTABLISHED:PDG2024", status="ESTABLISHED")  # EXPERIMENTAL: PDG2024
 
     sim = PneumaSimulationV18()
     results = sim.execute(registry, verbose=verbose)

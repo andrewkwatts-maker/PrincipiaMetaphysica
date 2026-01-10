@@ -1,7 +1,7 @@
 {
   "version": "17.2",
-  "generated": "2026-01-10T11:50:15.612162Z",
-  "total_scripts": 158,
+  "generated": "2026-01-10T12:08:57.668809Z",
+  "total_scripts": 161,
   "categories": {
     "v16/angles": {
       "title": "Angles",
@@ -469,6 +469,22 @@
           "status": null
         },
         {
+          "file": "baryon_asymmetry_v18.py",
+          "path": "simulations/v16/cosmology/baryon_asymmetry_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
+          "file": "cmb_temperature_v18.py",
+          "path": "simulations/v16/cosmology/cmb_temperature_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "cosmology_simulation_v18.py",
           "path": "simulations/v16/cosmology/cosmology_simulation_v18.py",
           "version": null,
@@ -517,7 +533,7 @@
           "status": null
         }
       ],
-      "count": 15
+      "count": 17
     },
     "v16/dirac": {
       "title": "Dirac",
@@ -834,9 +850,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "higgs_vev_refined_v18.py",
+          "path": "simulations/v16/higgs/higgs_vev_refined_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 4
+      "count": 5
     },
     "v16/integrity": {
       "title": "Integrity",

@@ -1373,7 +1373,7 @@ def run_zero_mode_index_simulation(verbose: bool = True) -> Dict[str, Any]:
         status="ESTABLISHED"
     )
     registry.set_param(
-        "topology.chi_eff", 144,
+        "topology.chi_eff", 144,  # DERIVED: b3^2/4 = 576/4 = 144
         source="ESTABLISHED:TCS_G2_187",
         status="ESTABLISHED"
     )

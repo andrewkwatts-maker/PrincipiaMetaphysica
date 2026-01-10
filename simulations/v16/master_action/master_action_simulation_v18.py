@@ -337,7 +337,7 @@ class MasterActionSimulationV18(SimulationBase):
                 units="GeV",
                 status="DERIVED",
                 description="M_Z from electroweak symmetry breaking",
-                experimental_bound=91.1876,
+                experimental_bound=91.1876,  # EXPERIMENTAL: PDG2024
                 bound_type="measured",
                 bound_source="PDG2024",
                 uncertainty=0.0021
