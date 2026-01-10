@@ -911,7 +911,9 @@
                             pending_count: gateStats.pending_lock ?? 0,
                             not_testable_count: gateStats.not_testable ?? 30,
                             mathematical_count: gateStats.mathematical ?? 2,
-                            total_gates: gateStats.total_gates ?? 72
+                            total_gates: gateStats.total_gates ?? 72,
+                            // Computed: testable = total - not_testable (72 - 30 = 42)
+                            testable_count: (gateStats.total_gates ?? 72) - (gateStats.not_testable ?? 30)
                         },
                         validation_summary: metadata?.validation_summary || [],
                         all_passed: metadata?.all_passed ?? true,
