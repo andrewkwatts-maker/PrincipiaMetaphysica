@@ -1,0 +1,71 @@
+{
+  "version": "17.2",
+  "description": "Blacklist of deprecated PM param paths that should no longer be used",
+  "deprecated_params": [
+    {
+      "old_path": "constants.alpha",
+      "new_path": "constants.alpha_em",
+      "reason": "Renamed for clarity - alpha_em specifies electromagnetic",
+      "deprecated_in": "16.0"
+    },
+    {
+      "old_path": "geometry.betti_3",
+      "new_path": "topology.b3",
+      "reason": "Consolidated under topology namespace",
+      "deprecated_in": "16.0"
+    },
+    {
+      "old_path": "geometry.chi_eff",
+      "new_path": "topology.chi_eff",
+      "reason": "Consolidated under topology namespace",
+      "deprecated_in": "16.0"
+    },
+    {
+      "old_path": "fermion.generations",
+      "new_path": "topology.n_gen",
+      "reason": "Now derived from topology",
+      "deprecated_in": "16.0"
+    },
+    {
+      "old_path": "pdg.higgs_mass",
+      "new_path": "pdg.m_higgs",
+      "reason": "Standardized naming convention",
+      "deprecated_in": "16.0"
+    },
+    {
+      "old_path": "gauge.gut_scale",
+      "new_path": "gauge.M_GUT",
+      "reason": "Standardized naming convention",
+      "deprecated_in": "16.0"
+    },
+    {
+      "old_path": "cosmology.hubble",
+      "new_path": "cosmology.H0_local",
+      "reason": "Clarified as local measurement",
+      "deprecated_in": "16.2"
+    },
+    {
+      "old_path": "constants.alpha_inv",
+      "new_path": "electromagnetic.alpha_inv",
+      "reason": "Moved to electromagnetic namespace",
+      "deprecated_in": "17.0"
+    },
+    {
+      "old_path": "physics.alpha_inverse",
+      "new_path": "electromagnetic.alpha_inv",
+      "reason": "Consolidated namespace",
+      "deprecated_in": "17.0"
+    },
+    {
+      "old_path": "meta.version",
+      "new_path": "system.version",
+      "reason": "Non-scientific params use system namespace",
+      "deprecated_in": "17.2"
+    }
+  ],
+  "notes": [
+    "Add new deprecated params here when paths are renamed",
+    "Validator will warn if deprecated paths are found in HTML/JS/Python",
+    "Old params should be migrated to new paths in source files"
+  ]
+}

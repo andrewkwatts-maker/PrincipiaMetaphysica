@@ -1,0 +1,67 @@
+{
+  "version": "17.2",
+  "description": "Whitelist of hardcoded values that are allowed without PM param references",
+  "allowed_values": {
+    "mathematical_constants": {
+      "description": "Pure mathematical constants with exact values",
+      "values": [
+        {"value": 3.14159, "name": "pi (approx)", "max_precision": 6},
+        {"value": 3.141592653589793, "name": "pi (full)", "max_precision": 16},
+        {"value": 2.71828, "name": "e (approx)", "max_precision": 6},
+        {"value": 2.718281828459045, "name": "e (full)", "max_precision": 16},
+        {"value": 1.41421, "name": "sqrt(2) (approx)", "max_precision": 6},
+        {"value": 1.4142135623730951, "name": "sqrt(2) (full)", "max_precision": 16},
+        {"value": 1.61803, "name": "phi (approx)", "max_precision": 6},
+        {"value": 1.6180339887498949, "name": "phi (full)", "max_precision": 16},
+        {"value": 0.57721, "name": "Euler-Mascheroni (approx)", "max_precision": 6},
+        {"value": 0.5772156649015329, "name": "Euler-Mascheroni (full)", "max_precision": 16}
+      ]
+    },
+    "integer_constants": {
+      "description": "Framework-defined integers that are axioms",
+      "values": [
+        {"value": 24, "name": "b3 (Betti number)"},
+        {"value": 144, "name": "chi_eff (Euler characteristic)"},
+        {"value": 288, "name": "ancestral_roots (E8xE8)"},
+        {"value": 125, "name": "visible_sector (5^3)"},
+        {"value": 163, "name": "sterile_sector"},
+        {"value": 153, "name": "delta_JC (Christ constant)"},
+        {"value": 135, "name": "shadow_sector"},
+        {"value": 72, "name": "total_gates"},
+        {"value": 42, "name": "testable_gates"},
+        {"value": 30, "name": "axiom_gates"},
+        {"value": 3, "name": "n_generations"},
+        {"value": 26, "name": "critical_dimension"},
+        {"value": 10, "name": "superstring_dimension"},
+        {"value": 7, "name": "G2_dimension"}
+      ]
+    },
+    "display_constants": {
+      "description": "Values used for display/formatting only",
+      "values": [
+        {"value": 100, "name": "percentage base"},
+        {"value": 1000, "name": "kilo multiplier"},
+        {"value": 1e6, "name": "mega multiplier"},
+        {"value": 1e9, "name": "giga multiplier"},
+        {"value": 0, "name": "zero"},
+        {"value": 1, "name": "one/unity"},
+        {"value": 2, "name": "two"},
+        {"value": -1, "name": "negative one"}
+      ]
+    },
+    "physics_bounds": {
+      "description": "Well-known physics values that are definitional",
+      "values": [
+        {"value": 299792458, "name": "c (m/s, exact by definition)"},
+        {"value": 6.62607015e-34, "name": "h (J·s, exact by definition)"},
+        {"value": 1.602176634e-19, "name": "e (C, exact by definition)"},
+        {"value": 6.02214076e23, "name": "N_A (mol^-1, exact by definition)"}
+      ]
+    }
+  },
+  "notes": [
+    "Values in this whitelist will not trigger hardcoded value warnings",
+    "Add new allowed values with justification",
+    "Values matching PM params should use PM.get() instead"
+  ]
+}
