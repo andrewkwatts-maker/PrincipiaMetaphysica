@@ -29,6 +29,7 @@ from .cosmology_simulation_v18 import CosmologySimulationV18, run_cosmology_simu
 # V18 Refined derivations for high-sigma fixes
 from .cmb_temperature_v18 import CMBTemperatureV18
 from .baryon_asymmetry_v18 import BaryonAsymmetryV18
+from .attractor_potential_v18 import AttractorPotentialV18
 
 # Optional: cosmological constant derivation
 try:
@@ -53,6 +54,7 @@ __all__ = [
     # V18 refined derivations
     'CMBTemperatureV18',
     'BaryonAsymmetryV18',
+    'AttractorPotentialV18',
 ]
 
 if _COSMOLOGICAL_CONSTANT_AVAILABLE:
