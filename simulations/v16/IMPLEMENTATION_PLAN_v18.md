@@ -98,17 +98,66 @@ V(φ_M) = V₀ [1 + A cos(ω φ_M / f)]
 
 ---
 
-## Priority 3: Completeness (FUTURE)
+## Priority 3: Critical Experimental Predictions (v18.3)
 
-### 3.1 KK Mode Tower (full)
+### 3.1 Gravitational Wave Speed from f(R,T,τ)
+**File**: `gravity/f_r_t_tau_gravity_v18.py` (EXTEND)
+**Status**: IN PROGRESS - Adding GW predictions
+**Physics**:
+- Tensor mode dispersion: ω²(k) = c²k² × (1 + corrections)
+- GW170817 constraint: |v_gw - c| < 10⁻¹⁵
+- Scalar breathing modes amplitude
+**Prediction**: v_gw/c = 1 - O(α_F) ~ 1 - 0.002 (testable!)
+
+### 3.2 Neutrino Mass Hierarchy & Absolute Scale
+**File**: `spectral/neutrino_masses_v18.py` (NEW)
+**Status**: PLANNED
+**Physics**:
+- Mass eigenvalues from G2 spectral residues
+- Normal vs Inverted hierarchy from brane tensions
+- Absolute scale: m_ν ~ k_gimel × (Δm²_atm)^{1/2} / M_Pl
+**Prediction**: Σm_ν ~ 0.06-0.12 eV (testable by cosmology)
+
+### 3.3 Proton Decay Rate & Channels
+**File**: `predictions/proton_decay_v18.py` (NEW)
+**Status**: PLANNED
+**Physics**:
+- τ_p from dimension-6 operators + G2 suppression
+- Dominant channels: p → e⁺π⁰, p → ν̄K⁺
+- GUT scale: M_GUT ~ M_Pl/√b₃ ~ 5×10¹⁷ GeV
+**Prediction**: τ_p ~ 10³⁴ yr (Hyper-K testable)
+
+### 3.4 Yukawa Matrix & Fermion Mass Hierarchy
+**File**: `fermion/yukawa_matrix_v18.py` (NEW)
+**Status**: PLANNED
+**Physics**:
+- Yukawa couplings from G2 brane overlaps
+- Mass ratios: m_t/m_b, m_c/m_s from node distances
+- Generation suppression: λ^n where λ ~ 1/√b₃
+**Challenge**: Requires full E₈ breaking pattern
+
+### 3.5 Axion Mass & Dark Matter
+**File**: `dark_matter/axion_dm_v18.py` (NEW)
+**Status**: PLANNED
+**Physics**:
+- Axion mass from QCD instanton suppression
+- m_a ~ (Λ_QCD²/f_a) where f_a from G2 modulus
+- Relic density: Ω_a ~ (m_a/10 μeV)^{1.19}
+**Prediction**: m_a ~ 10⁻⁵ eV if f_a ~ 10¹² GeV
+
+---
+
+## Priority 4: Completeness (FUTURE)
+
+### 4.1 KK Mode Tower (full)
 - Currently: toy 2-mode truncation
 - Needed: systematic n-mode expansion
 
-### 3.2 Loop Corrections Beyond Schwinger
+### 4.2 Loop Corrections Beyond Schwinger
 - Currently: 1-loop QED (α/2π)
 - Future: 2-loop, electroweak corrections
 
-### 3.3 Inflation Sector
+### 4.3 Inflation Sector
 - Currently: basic curvature perturbation
 - Needed: full slow-roll derivation from V(φ_M)
 

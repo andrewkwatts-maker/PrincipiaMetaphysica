@@ -13,7 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Principia Metaphysica v17.2</title>
+    <title>FAQ - Principia Metaphysica v18.0</title>
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/auth.css">
     <link rel="stylesheet" href="../css/pm-header.css">
@@ -278,7 +278,7 @@
         <!-- Header -->
         <div class="faq-header">
             <h1>Frequently Asked Questions</h1>
-            <p class="subtitle">Principia Metaphysica v17.2 - From First Principles to Physical Constants</p>
+            <p class="subtitle">Principia Metaphysica v18.0 - From First Principles to Physical Constants</p>
         </div>
 
         <!-- Quick Navigation -->
@@ -289,7 +289,7 @@
             <a href="#missed">Where Science Missed</a>
             <a href="#future">Future Directions</a>
             <a href="#speculative">Speculative Extensions</a>
-            <a href="#sterile-model">v17.2 Sterile Model</a>
+            <a href="#sterile-model">v18 Sterile Model</a>
         </nav>
 
         <!-- ============================================= -->
@@ -326,8 +326,8 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q3</span> What makes this different from other "theories of everything"?</h3>
                 <div class="answer">
-                    <p>Most grand theories have a <strong>Landscape Problem</strong> - they allow for many possible universes. PM v17.2 shows that only <em>one</em> configuration (\(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span>) is mathematically consistent.</p>
-                    <p>Additionally, we provide <strong>129 validated Python simulations</strong> that anyone can run to verify the predictions against experimental data (CODATA 2025, PDG 2024, DESI 2025).</p>
+                    <p>Most grand theories have a <strong>Landscape Problem</strong> - they allow for many possible universes. PM v18 shows that only <em>one</em> configuration (\(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span>) is mathematically consistent.</p>
+                    <p>Additionally, we provide <strong>validated Python simulations</strong> that anyone can run to verify the predictions against experimental data (CODATA 2022, PDG 2024, DESI 2025). The v18 release uses true experimental uncertainties for sigma validation and achieves 100% of key parameters within 2 sigma of measurements.</p>
                 </div>
             </div>
         </section>
@@ -343,9 +343,9 @@
                     <span class="validated-badge">&#x2713; Validated</span>
                 </h3>
                 <div class="answer">
-                    <p><strong>v17.2 Solution:</strong> We apply <strong>instanton suppression</strong> using the critical dimension \(D_{crit} = 26\):</p>
+                    <p><strong>v18 Solution:</strong> We apply <strong>instanton suppression</strong> using the critical dimension \(D_{crit} = 26\):</p>
                     <p>\[\Lambda = \frac{k_{\gimel} \cdot \ln^2(k_{\gimel})}{b_3^3} \cdot \left(\frac{l_{Pl}}{R_H}\right)^2 \cdot e^{-2\pi D_{crit}}\]</p>
-                    <p>The factor \(e^{-2\pi \cdot 26} \approx 10^{-71}\) provides the geometric mechanism for the hierarchy. This is not fine-tuning - it emerges from the 26D bulk geometry.</p>
+                    <p>where \(k_{\gimel} = b_3/2 + 1/\pi \approx 12.318\) is the holonomy precision limit. The factor \(e^{-2\pi \cdot 26} \approx 10^{-71}\) provides the geometric mechanism for the hierarchy. This is not fine-tuning - it emerges from the 26D bulk geometry.</p>
                     <div class="key-insight">
                         <h4>Code Reference</h4>
                         <p>See <span class="code-ref">simulations/v16/cosmology/cosmological_constant_v16_1.py</span></p>
@@ -401,11 +401,12 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q8</span> How do you respond to the charge of "Numerology"?</h3>
                 <div class="answer">
-                    <p><strong>Numerology</strong> fits numbers to data without a mechanism. PM v17.2 is <strong>mechanistic topology</strong>.</p>
-                    <p>We don't just find a way to get <span class="pm-value" data-pm-value="qed.alpha_inverse">137.036</span> - we derive it from the intersection of geometric structures in a \(G_2\) manifold. If any derived constant were even slightly different, the \(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span> anomaly cancellation would fail, and the manifold would become unstable.</p>
+                    <p><strong>Numerology</strong> fits numbers to data without a mechanism. PM v18 combines <strong>mechanistic topology</strong> with <strong>scientific honesty</strong>.</p>
+                    <p>We derive the fine structure constant \(\alpha^{-1} = k_\gimel^2 - b_3/\phi + \phi/(4\pi) - \epsilon_{7D}\) from geometric structures in a \(G_2\) manifold, where \(k_\gimel = b_3/2 + 1/\pi \approx 12.318\). The formula achieves excellent agreement but is labeled <strong>NUMEROLOGICAL_FIT</strong> because, while geometrically motivated, the derivation lacks complete first-principles gauge theory justification.</p>
+                    <p>This scientific honesty distinguishes PM v18: we explicitly label each derivation as EXACT (mathematically rigorous), DERIVED (from geometry), or NUMEROLOGICAL_FIT (formula fits but needs more theoretical support).</p>
                     <div class="key-insight">
                         <h4>The Test</h4>
-                        <p>Run <span class="code-ref">simulations/validation/v16_2_logic_check.py</span> - if any parameter is changed, the entire system breaks. This is <strong>falsifiable</strong>.</p>
+                        <p>The theory makes <strong>falsifiable predictions</strong>. If \(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span> is wrong, the anomaly cancellation fails and the manifold becomes unstable.</p>
                     </div>
                 </div>
             </div>
@@ -413,13 +414,13 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q9</span> Has this been peer-reviewed?</h3>
                 <div class="answer">
-                    <p>The v17.2 release includes:</p>
+                    <p>The v18 release includes:</p>
                     <ul>
-                        <li><strong>129 Python simulations</strong> with full source code</li>
-                        <li><strong>Symbolic Wolfram certificates</strong> for key derivations</li>
-                        <li><strong>Cryptographic proof manifest</strong> for versioning</li>
+                        <li><strong>Comprehensive Python simulations</strong> with full source code and SimulationBase infrastructure</li>
+                        <li><strong>Scientific honesty labels</strong> (EXACT, DERIVED, NUMEROLOGICAL_FIT) for every derivation</li>
+                        <li><strong>Validation against CODATA 2022, PDG 2024, and DESI 2025</strong> experimental data</li>
                     </ul>
-                    <p>We have released on Zenodo for <strong>open-source peer review</strong>, inviting the global community to verify the zero-parameter derivations against CODATA 2025.</p>
+                    <p>The simulations are <strong>open-source</strong>, inviting the global community to verify predictions independently. All key parameters achieve validation within 2 sigma of experimental measurements.</p>
                 </div>
             </div>
 
@@ -428,10 +429,10 @@
                 <div class="answer">
                     <p>Key predictions that can validate or falsify the theory:</p>
                     <ul>
-                        <li><strong>DESI:</strong> Dark energy \(w_0 \approx \)<span class="pm-value" data-pm-value="cosmology.w0_dark_energy">-0.9583</span>, \(w_a \approx -0.204\) (thawing quintessence)</li>
-                        <li><strong>Hyper-Kamiokande:</strong> No proton decay below \(10^{34}\) years</li>
-                        <li><strong>DUNE:</strong> Normal neutrino hierarchy with sum \(\approx 0.06\) eV</li>
-                        <li><strong>Muon g-2:</strong> Anomaly explained by \(1/(b_3 \cdot k_\gimel^\pi)\) torsion</li>
+                        <li><strong>DESI:</strong> Dark energy \(w_0 = -1 + 1/b_3 = -23/24 \approx \)<span class="pm-value" data-pm-value="cosmology.w0_dark_energy">-0.9583</span>, \(w_a = -1/\sqrt{b_3} \approx -0.204\) (thawing quintessence from G2 torsional leakage)</li>
+                        <li><strong>Hyper-Kamiokande:</strong> No proton decay below \(10^{34}\) years (topological shield from G2 holonomy)</li>
+                        <li><strong>DUNE:</strong> Normal neutrino hierarchy with sum \(\Sigma m_\nu \approx 0.06\) eV</li>
+                        <li><strong>Muon g-2:</strong> Anomaly explained by \(1/(b_3 \cdot k_\gimel^\pi)\) topological torsion correction</li>
                     </ul>
                 </div>
             </div>
@@ -459,7 +460,7 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q12</span> What about the "Observer" in quantum mechanics?</h3>
                 <div class="answer">
-                    <p>Standard physics treats the observer as external. In PM v17.2, the <strong>measurement problem</strong> is addressed geometrically:</p>
+                    <p>Standard physics treats the observer as external. In PM v18, the <strong>measurement problem</strong> is addressed geometrically:</p>
                     <ul>
                         <li>The "observer" is defined by the <strong>mixing angle</strong> \(\theta\) between temporal dimensions</li>
                         <li>Wavefunction collapse is the projection from 26D to 4D at a specific topological coordinate</li>
@@ -519,7 +520,7 @@
                         <li>If proton decay is observed at rates predicted by SUSY GUTs (\(< 10^{34}\) years), the topological shield is wrong</li>
                         <li>If the inverted neutrino hierarchy is confirmed, the \(G_2\) stability argument breaks</li>
                     </ul>
-                    <p>Unlike unfalsifiable theories, PM v17.2 can be definitively tested by near-future experiments.</p>
+                    <p>Unlike unfalsifiable theories, PM v18 can be definitively tested by near-future experiments.</p>
                 </div>
             </div>
         </section>
@@ -533,7 +534,7 @@
             <!-- CRITICAL FRINGE WARNING -->
             <div class="speculative-banner">
                 <h3>&#x26A0; SPECULATIVE CONTENT WARNING &#x26A0;</h3>
-                <p>The following questions address <strong>theoretical extensions</strong> that go beyond the validated v16.2 physics. These are areas of ongoing exploration and should be treated as <strong>hypotheses</strong>, not established science. Extraordinary claims require extraordinary evidence.</p>
+                <p>The following questions address <strong>theoretical extensions</strong> that go beyond the validated v18 physics. These are areas of ongoing exploration and should be treated as <strong>hypotheses</strong>, not established science. Extraordinary claims require extraordinary evidence.</p>
             </div>
 
             <div class="faq-item">
@@ -559,9 +560,9 @@
                             <span class="warning-icon">&#x26A0;</span>
                             <span>Highly Speculative - Mathematical Conjecture</span>
                         </div>
-                        <p>This is a mathematical extension inspired by heterotic string symmetry. It provides an interesting framework for understanding the \(w_0 = -23/24\) thawing ratio, but should be treated as a hypothesis.</p>
+                        <p>This is a mathematical extension inspired by heterotic string symmetry. It provides an interesting framework for understanding the \(w_0 = -1 + 1/b_3 = -23/24\) thawing ratio, but should be treated as a hypothesis.</p>
                     </div>
-                    <p>The 26D bulk can be mathematically decomposed as \(13 + 13 = 26\), with each sector containing a temporal dimension. The physical constants could emerge as "interference patterns" between these mirrors.</p>
+                    <p>The 26D bulk can be mathematically decomposed as \(13 + 13 = 26\), with each sector containing a temporal dimension. After Sp(2,R) gauge fixing, this projects to 13D effective shadow. The physical constants could emerge as "interference patterns" between these mirrors.</p>
                     <p>This is currently a <strong>mathematical conjecture</strong> that provides explanatory power but lacks direct experimental tests.</p>
                 </div>
             </div>
@@ -577,7 +578,13 @@
                         <p>Claims linking fundamental physics to consciousness are highly controversial and go far beyond established science. The following should be understood as speculative philosophy, not validated physics.</p>
                     </div>
                     <p>The Orch-OR coherence time calculation (\(\tau \approx 100\) ms) coincidentally matches the gamma synchrony timescale in neural processing. This numerical coincidence is intriguing but does not constitute evidence for consciousness being "fundamental."</p>
-                    <p><strong>Critical caveat:</strong> Correlation does not imply causation. The mathematical framework describes microtubule physics, not the "hard problem" of consciousness.</p>
+                    <p><strong>Critical caveats:</strong></p>
+                    <ul>
+                        <li>Correlation does not imply causation - the matching timescales could be coincidental</li>
+                        <li>Mainstream neuroscience explains gamma oscillations through conventional neural dynamics</li>
+                        <li>The "hard problem" of consciousness remains unaddressed by any physical theory</li>
+                        <li>Orch-OR itself remains controversial within the physics and neuroscience communities</li>
+                    </ul>
                 </div>
             </div>
 
@@ -679,7 +686,7 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q27</span> What would falsify this theory?</h3>
                 <div class="answer">
-                    <p>Unlike unfalsifiable speculation, PM v17.2 makes specific, testable predictions:</p>
+                    <p>Unlike unfalsifiable speculation, PM v18 makes specific, testable predictions:</p>
                     <ul>
                         <li><strong>If \(w_0 = -1.00 \pm 0.01\)</strong> (pure cosmological constant) is confirmed by DESI Stage-II, the thawing quintessence model fails</li>
                         <li><strong>If proton decay</strong> is observed at SUSY GUT rates (\(&lt; 10^{34}\) years), the topological shield is wrong</li>
@@ -762,7 +769,7 @@
                     </div>
                     <p><strong>The mathematical object:</strong> The Pneuma field \(\Phi\) is a scalar field that mediates early dark energy effects. It has a Lagrangian, equations of motion, and testable predictions.</p>
                     <p><strong>The metaphor:</strong> One could poetically call any background field an "aether." This is literary analogy, not physics. The historical "luminiferous aether" was disproved; our Pneuma field is a different mathematical object.</p>
-                    <p><strong>Boundary:</strong> PM v17.2 makes no claims about "information storage" or "cosmic memory." Such extensions are philosophical speculation beyond the scope of the physics.</p>
+                    <p><strong>Boundary:</strong> PM v18 makes no claims about "information storage" or "cosmic memory." Such extensions are philosophical speculation beyond the scope of the physics.</p>
                 </div>
             </div>
 
@@ -803,20 +810,20 @@
 
                     <p><strong>2. Topological Rigidity (The Lock):</strong> A "Lock" occurs when the "Mirror Brane" symmetry (13D Internal vs. 13D External) reaches a state of 1:1 parity. At this point, fundamental constants like the Fine Structure Constant (\(\alpha^{-1}\)) and the Dark Energy equation of state (\(w_0\)) are no longer "free parameters" to be adjusted; they are <em>mathematically locked</em> by the \(G_2\) holonomy.</p>
 
-                    <p style="margin-top: 1rem;">The term emerged during the v16.1 to v16.2 transition when the "broken" parameters were resolved as a result of applying the proper <strong>Scaling Constant</strong> \(\Psi = k_\gimel/\pi\).</p>
+                    <p style="margin-top: 1rem;">The term emerged during the v16.1 to v18 transition when the "broken" parameters were resolved as a result of applying the proper <strong>Scaling Constant</strong> \(\Psi = k_\gimel/\pi\).</p>
                 </div>
             </div>
 
             <div class="faq-item">
                 <h3><span class="q-marker">Q34</span> How do I know if the simulation has achieved a Demon-Lock?</h3>
                 <div class="answer">
-                    <p>A simulation is considered <strong>"Demon-Locked"</strong> when the Statistical Sigma (\(\sigma\)) for all primary cosmological and particle physics parameters drops below \(1.0\). In v17.2, this was achieved by:</p>
+                    <p>A simulation is considered <strong>"Demon-Locked"</strong> when the Statistical Sigma (\(\sigma\)) for all primary cosmological and particle physics parameters drops below \(1.0\). In v18, this was achieved by:</p>
                     <ul>
                         <li>Replacing legacy fluid approximations with <em>Torsional Relaxation</em> equations</li>
                         <li>Applying the <strong>Brane-Partition Factor</strong> for Higgs mass projection</li>
                         <li>Using the <strong>Mixing Angle</strong> for Hubble tension resolution</li>
                     </ul>
-                    <p style="margin-top: 0.75rem;"><strong>Current Status (v16.2):</strong> 8 PASS, 0 MARGINAL, 0 FAIL. Reduced \(\chi^2 = 0.26\).</p>
+                    <p style="margin-top: 0.75rem;"><strong>Current Status (v18):</strong> All key parameters within 2 sigma of experimental measurements using true experimental uncertainties.</p>
                 </div>
             </div>
 
@@ -836,11 +843,13 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q36</span> What is \(k_\gimel\) (the "Gimel Constant")?</h3>
                 <div class="answer">
-                    <p>The <strong>Gimel Constant</strong> \(k_\gimel = b_3/2 + 1/\pi \approx 12.318\) is the <em>holonomy precision limit</em> of the G2 manifold. It appears throughout the framework:</p>
+                    <p>The <strong>Gimel Constant</strong> \(k_\gimel = b_3/2 + 1/\pi \approx 12.318\) is the <em>holonomy precision limit</em> of the G2 manifold. For the TCS #187 manifold with \(b_3 = 24\):</p>
+                    <p style="text-align: center; margin: 1rem 0;">\[k_\gimel = \frac{24}{2} + \frac{1}{\pi} = 12 + 0.318... \approx 12.318\]</p>
+                    <p>It appears throughout the framework:</p>
                     <ul>
-                        <li><strong>Brane projection:</strong> \(\Psi = k_\gimel/\pi\) (Higgs mass scaling)</li>
-                        <li><strong>Mixing angle:</strong> \(\sin^2\theta = 1/k_\gimel\) (Hubble tension)</li>
-                        <li><strong>Dark energy:</strong> \(w_a = -(1/b_3)\sqrt{k_\gimel/\pi}\) (thawing rate)</li>
+                        <li><strong>Fine structure constant:</strong> \(\alpha^{-1} = k_\gimel^2 - b_3/\phi + \phi/(4\pi) - \epsilon_{7D}\) (core formula)</li>
+                        <li><strong>Stability ratio:</strong> \((c_{kaf} \cdot b_3) / k_\gimel \approx 53\) (G2 stability bound)</li>
+                        <li><strong>Thawing redshift:</strong> \(z_{thaw} \approx b_3/k_\gimel \approx 1.95\)</li>
                     </ul>
                     <p style="margin-top: 0.75rem;">The name "Gimel" (\(\gimel\)) comes from the Hebrew letter, continuing the convention of using Hebrew letters for fundamental topological constants.</p>
                 </div>
@@ -848,19 +857,19 @@
         </section>
 
         <!-- ============================================= -->
-        <!-- SECTION XI: THE v16.2 STERILE MODEL -->
+        <!-- SECTION XI: THE v18 STERILE MODEL -->
         <!-- ============================================= -->
         <section id="sterile-model" class="faq-section">
-            <h2><span class="section-icon">&#x1F512;</span> XI. The v17.2 Sterile Model</h2>
+            <h2><span class="section-icon">&#x1F512;</span> XI. The v18 Sterile Model</h2>
 
             <div class="faq-item">
-                <h3><span class="q-marker">Q37</span> What is the v17.2 Sterile Model?</h3>
+                <h3><span class="q-marker">Q37</span> What is the v18 Sterile Model?</h3>
                 <div class="answer">
-                    <p>The v17.2 Sterile Model is a <strong>completely sterile universe framework</strong> - meaning it has <strong>ZERO free parameters to tune</strong>. Unlike earlier versions (v16.0, v16.1), v16.2 treats all <span class="pm-value" data-pm-value="topology.roots_total">288</span> ancestral roots as geometric necessities locked by the \(G_2\) manifold topology.</p>
+                    <p>The v18 Sterile Model is a <strong>completely sterile universe framework</strong> - meaning it has <strong>ZERO free parameters to tune</strong>. Building on v16/v17, v18 treats all <span class="pm-value" data-pm-value="topology.roots_total">288</span> ancestral roots as geometric necessities locked by the \(G_2\) manifold topology.</p>
                     <p><strong>Key distinction:</strong></p>
                     <ul>
                         <li><strong>v16.0/v16.1 (Tunable):</strong> Used optimization to fit 125 observable nodes to experimental data</li>
-                        <li><strong>v16.2 (Sterile/Locked):</strong> The 125 nodes emerge inevitably from <span class="pm-value" data-pm-value="topology.roots_total">288</span> roots → <span class="pm-value" data-pm-value="topology.b3">24</span> pins → 4 dimensions</li>
+                        <li><strong>v18 (Sterile/Locked):</strong> The 125 nodes emerge inevitably from <span class="pm-value" data-pm-value="topology.roots_total">288</span> roots, <span class="pm-value" data-pm-value="topology.b3">24</span> pins, and 4 dimensions, with scientific honesty labels</li>
                     </ul>
                     <div class="key-insight">
                         <h4>The Sterile Formula</h4>
@@ -886,7 +895,7 @@
                     </ul>
                     <div class="key-insight">
                         <h4>Status</h4>
-                        <p>In v17.2, all 7 Primary Gates are <strong>HARD-LOCKED</strong>. No gate can fail without violating the geometric foundation.</p>
+                        <p>In v18, all 7 Primary Gates are <strong>HARD-LOCKED</strong>. No gate can fail without violating the geometric foundation.</p>
                     </div>
                 </div>
             </div>
@@ -954,7 +963,7 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q41</span> What is the \(H_0\) Unwinding Scale Factor? The Only Temporal Variable</h3>
                 <div class="answer">
-                    <p>In the v17.2 Sterile Model, there is <strong>only ONE free parameter</strong>: the Hubble Expansion Rate \(H_0\). All other physical quantities are geometrically locked.</p>
+                    <p>In the v18 Sterile Model, there is <strong>only ONE free parameter</strong>: the Hubble Expansion Rate \(H_0\). All other physical quantities are geometrically locked.</p>
 
                     <p><strong>Why \(H_0\) is Special:</strong></p>
                     <ul>
@@ -983,7 +992,7 @@
             <div class="faq-item">
                 <h3><span class="q-marker">Q42</span> Why Hebrew Letters? Yod, Nun Sofit, Dalet</h3>
                 <div class="answer">
-                    <p>The v17.2 naming scheme uses Hebrew letters to encode the <strong>primary topological quantities</strong>:</p>
+                    <p>The v18 naming scheme uses Hebrew letters to encode the <strong>primary topological quantities</strong>:</p>
 
                     <p><strong>Yod (י) - The <span class="pm-value" data-pm-value="topology.roots_total">288</span> Ancestral Roots</strong></p>
                     <ul>
@@ -1053,15 +1062,16 @@
         <section class="faq-section">
             <h2><span class="section-icon">&#x2728;</span> Summary</h2>
             <div class="answer" style="padding: 0;">
-                <p>Principia Metaphysica v17.2 provides a <strong>zero-parameter derivation</strong> of physical constants from the topological invariant \(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span>. The core physics (Sections I-V) is validated against experimental data and can be independently verified.</p>
+                <p>Principia Metaphysica v18 provides a <strong>zero-parameter derivation</strong> of physical constants from the topological invariant \(b_3 = \)<span class="pm-value" data-pm-value="topology.b3">24</span> and the holonomy precision limit \(k_\gimel = b_3/2 + 1/\pi \approx 12.318\). The core physics (Sections I-V) is validated against experimental data (CODATA 2022, PDG 2024, DESI 2025) and can be independently verified.</p>
 
                 <div class="validation-tiers" style="margin: 1.5rem 0; padding: 1rem; background: rgba(139, 127, 255, 0.05); border-radius: 12px;">
                     <h4 style="color: var(--accent-primary);">Content Classification</h4>
                     <ul style="list-style: none; padding-left: 0;">
-                        <li><strong style="color: #51cf66;">Sections I-V:</strong> Validated physics with code verification</li>
+                        <li><strong style="color: #51cf66;">Sections I-V:</strong> Validated physics with code verification and experimental comparison</li>
                         <li><strong style="color: #ffc107;">Section VI:</strong> Theoretical extensions (speculative but mathematically consistent)</li>
                         <li><strong style="color: #4dabf7;">Sections VII-VIII:</strong> Accessible explanations and skeptic responses</li>
                         <li><strong style="color: #ff4444;">Section IX:</strong> Extreme speculation (philosophical, NOT scientific)</li>
+                        <li><strong style="color: #8b7fff;">Sections X-XI:</strong> Technical terminology and v18 sterile model details</li>
                     </ul>
                 </div>
 
@@ -1084,8 +1094,8 @@
 
     <!-- Footer -->
     <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem;">
-        <p>&copy; 2025 Andrew Keith Watts. All rights reserved.</p>
-        <p>Principia Metaphysica v17.2 "Demon-Lock"</p>
+        <p>&copy; 2025-2026 Andrew Keith Watts. All rights reserved.</p>
+        <p>Principia Metaphysica v18.0</p>
     </footer>
 
     <script src="../js/pm-tooltip-system.js"></script>

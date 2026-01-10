@@ -60,4 +60,4 @@ __all__ = [
 if _COSMOLOGICAL_CONSTANT_AVAILABLE:
     __all__.append('CosmologicalConstantV16')
 
-__version__ = "18.0"
+__version__ = "18.3"

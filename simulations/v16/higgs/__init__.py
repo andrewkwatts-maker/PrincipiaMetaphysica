@@ -25,3 +25,5 @@ __all__ = [
     # v18 refined VEV (addresses G_F precision)
     'HiggsVEVRefinedV18',
 ]
+
+__version__ = "18.3"

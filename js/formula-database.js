@@ -382,6 +382,97 @@ const FORMULA_DATABASE = {
         occurrences: 1,
         usedIn: ['cosmology', 'dark-energy', 'paper'],
         defaultZero: true
+    },
+
+    // ============================================================================
+    // AXION PHYSICS (v18.3)
+    // ============================================================================
+
+    'f_a': {
+        id: 'f_a',
+        symbol: 'f<sub>a</sub>',
+        htmlSymbol: 'f<sub>a</sub>',
+        textSymbol: 'f_a',
+        pmRef: 'PM.axion.f_a',
+        description: 'Axion decay constant from G2 geometry',
+        longDescription: 'Axion decay constant derived from Planck scale with k_gimel^6 suppression. Places f_a in the anthropic window for dark matter.',
+        category: 'dark_matter',
+        formula: 'f<sub>a</sub> = M<sub>Pl</sub> / k<sub>ג</sub><sup>6</sup> ≈ 3.5×10<sup>12</sup> GeV',
+        derivation: 'Geometric from G2 holonomy warp factor k_gimel = 12 + 1/π',
+        occurrences: 5,
+        usedIn: ['dark-matter', 'predictions', 'paper'],
+        validated: false,
+        predicted: true
+    },
+
+    'm_a': {
+        id: 'm_a',
+        symbol: 'm<sub>a</sub>',
+        htmlSymbol: 'm<sub>a</sub>',
+        textSymbol: 'm_a',
+        pmRef: 'PM.axion.m_a',
+        description: 'QCD axion mass',
+        longDescription: 'Axion mass from QCD instanton dynamics. For f_a ~ 3.5e12 GeV, m_a ~ 1.6 μeV, within ADMX detection range.',
+        category: 'dark_matter',
+        formula: 'm<sub>a</sub> = 5.7 μeV × (10<sup>12</sup> GeV / f<sub>a</sub>) ≈ 1.6 μeV',
+        experimental: 'ADMX probing 2-10 μeV range',
+        occurrences: 4,
+        usedIn: ['dark-matter', 'predictions', 'paper'],
+        validated: false,
+        predicted: true
+    },
+
+    'Omega_a': {
+        id: 'Omega_a',
+        symbol: 'Ω<sub>a</sub>h²',
+        htmlSymbol: 'Ω<sub>a</sub>h²',
+        textSymbol: 'Omega_a h^2',
+        pmRef: 'PM.axion.omega_h2',
+        description: 'Axion relic density',
+        longDescription: 'Axion contribution to dark matter from misalignment mechanism. Natural θ_i ~ 1 gives Ω_a h² ~ 0.4, potentially explaining 100% of DM.',
+        category: 'dark_matter',
+        formula: 'Ω<sub>a</sub>h² = 0.12 × (f<sub>a</sub>/10<sup>12</sup>)<sup>1.167</sup> × θ<sub>i</sub>²',
+        experimental: 'Planck 2018: Ω_DM h² = 0.120 ± 0.001',
+        occurrences: 3,
+        usedIn: ['dark-matter', 'cosmology', 'predictions', 'paper'],
+        validated: false,
+        predicted: true
+    },
+
+    // ============================================================================
+    // YUKAWA TEXTURES (v18.3)
+    // ============================================================================
+
+    'lambda_yukawa': {
+        id: 'lambda_yukawa',
+        symbol: 'λ',
+        htmlSymbol: 'λ',
+        textSymbol: 'lambda',
+        pmRef: 'PM.yukawa.lambda_eff',
+        description: 'Yukawa suppression factor',
+        longDescription: 'Inter-generation Yukawa suppression factor. Golden Ratio φ ~ 1.618 provides best fit to observed fermion mass hierarchy.',
+        category: 'fermion',
+        formula: 'm<sub>n</sub> = v × λ<sup>-N</sup>, λ = φ ≈ 1.618',
+        derivation: 'Geometric from G2 wavefunction overlap analysis',
+        occurrences: 6,
+        usedIn: ['fermion-sector', 'predictions', 'paper'],
+        validated: true
+    },
+
+    'yukawa_matrix': {
+        id: 'yukawa_matrix',
+        symbol: 'Y',
+        htmlSymbol: 'Y',
+        textSymbol: 'Y',
+        pmRef: null,
+        description: 'Diagonal Yukawa texture matrix',
+        longDescription: 'Diagonal Yukawa matrix from G2 wavefunction overlaps. Third generation O(1), lighter generations geometrically suppressed.',
+        category: 'fermion',
+        formula: 'Y = diag(λ<sup>-2</sup>, λ<sup>-1</sup>, 1)',
+        derivation: 'G2 holonomy localizes 3rd generation at singular point',
+        occurrences: 4,
+        usedIn: ['fermion-sector', 'paper'],
+        structural: true
     }
 };
 

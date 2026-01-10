@@ -23,6 +23,9 @@ from .g2_triality_mixing_v17 import G2TrialityMixing
 # V18 SimulationBase wrapper (primary export)
 from .fermion_simulation_v18 import FermionSimulationV18, run_fermion_simulation
 
+# V18 Yukawa texture analysis
+from .yukawa_textures_v18 import YukawaTexturesV18, YukawaResult
+
 # Conditionally import MassRatioSimulation (requires schema availability)
 try:
     from .mass_ratio_v16_1 import MassRatioSimulation
@@ -41,9 +44,12 @@ __all__ = [
     # V18 wrapper
     'FermionSimulationV18',
     'run_fermion_simulation',
+    # V18 Yukawa
+    'YukawaTexturesV18',
+    'YukawaResult',
 ]
 
 if _MASS_RATIO_AVAILABLE:
     __all__.append('MassRatioSimulation')
 
-__version__ = "18.0"
+__version__ = "18.3"
