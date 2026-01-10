@@ -239,8 +239,9 @@ class CMBTemperatureV18(SimulationBase):
             source=self._metadata.id,
             status="CALIBRATED",
             metadata={
-                "derivation": "7D→4D reduction factor",
-                "note": "Single calibration constant for derivation",
+                "derivation": "7D->4D reduction factor",
+                "note": "PHENOMENOLOGICAL calibration - to be derived from geometry in future work",
+                "type": "k_calibration_phenomenological",
                 "units": "dimensionless"
             }
         )

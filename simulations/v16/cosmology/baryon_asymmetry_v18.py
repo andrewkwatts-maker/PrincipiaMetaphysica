@@ -237,7 +237,8 @@ class BaryonAsymmetryV18(SimulationBase):
             status="CALIBRATED",
             metadata={
                 "derivation": "4-brane intersection efficiency",
-                "note": "Single calibration constant",
+                "note": "PHENOMENOLOGICAL calibration - to be derived from geometry in future work",
+                "type": "k_calibration_phenomenological",
                 "units": "dimensionless"
             }
         )
