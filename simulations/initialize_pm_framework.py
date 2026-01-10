@@ -107,7 +107,7 @@ def initialize_framework(verbose: bool = True) -> PMRegistry:
             "geometry.n_generations",
             "geometry.k_gimel",
             "geometry.alpha_gut",
-            "geometry.chi_eff",
+            "topology.chi_eff",
         ]
 
         for param_path in key_params:

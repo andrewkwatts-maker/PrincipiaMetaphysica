@@ -547,7 +547,7 @@ class ValidationSimulationV18(SimulationBase):
                     "Unity identity linking fine structure constant and mass ratio. "
                     "Proves alpha and m_p/m_e are coupled projections of Kaehler flux."
                 ),
-                input_params=["constants.alpha", "constants.mass_ratio"],
+                input_params=["constants.alpha_em", "constants.mass_ratio"],
                 output_params=["validation.unity_precision_percent"],
                 derivation={
                     "steps": [
