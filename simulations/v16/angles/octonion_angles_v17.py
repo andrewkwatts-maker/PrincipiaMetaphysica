@@ -71,8 +71,8 @@ class OctonionAngles:
             'theta_deg': theta_deg,
             'supplement_deg': supplement,
             'formula': '360 / phi^2',
-            'alpha_inverse': 137.036,
-            'difference': abs(theta_deg - 137.036),
+            'alpha_inverse': 137.036,  # EXPERIMENTAL: CODATA 2022
+            'difference': abs(theta_deg - 137.036),  # EXPERIMENTAL: CODATA 2022
             'interpretation': 'Geometric near-match to 1/alpha (refined with sterile terms)'
         }
 

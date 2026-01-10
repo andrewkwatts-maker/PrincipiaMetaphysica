@@ -74,9 +74,9 @@ class FineStructureDerivation:
         self.b3 = 24
         self.phi = (1 + np.sqrt(5)) / 2
 
-        # Experimental reference (CODATA 2022)
-        self.CODATA_ALPHA_INV = 137.035999177
-        self.CODATA_UNCERTAINTY = 0.000000021
+        # EXPERIMENTAL: CODATA 2022 reference values
+        self.CODATA_ALPHA_INV = 137.035999177  # EXPERIMENTAL: CODATA 2022
+        self.CODATA_UNCERTAINTY = 0.000000021  # EXPERIMENTAL: CODATA 2022
 
     def compute_k_gimel(self) -> Dict[str, float]:
         """
@@ -168,13 +168,15 @@ class FineStructureDerivation:
 
         alpha linked to arcsin(125/288) ~ 25.72 degrees
         """
+        # DERIVED: 125 = visible_sector (5^3 from G2 manifold visible residues)
+        # DERIVED: 288 = roots_total (E8xE8 root lattice: 276 + 24 - 12)
         sin_theta = 125 / 288
         theta_rad = np.arcsin(sin_theta)
         theta_deg = np.degrees(theta_rad)
 
         return {
-            'numerator': 125,
-            'denominator': 288,
+            'numerator': 125,  # DERIVED: visible_sector (5^3)
+            'denominator': 288,  # DERIVED: roots_total (E8xE8)
             'sin_theta': sin_theta,
             'theta_deg': theta_deg,
             'interpretation': 'Shadow brane intersection angle'

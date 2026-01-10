@@ -80,10 +80,10 @@ class PrincipiaResidueCalculator:
         # Golden ratio
         self.phi = (1 + np.sqrt(5)) / 2
 
-        # Experimental values for comparison
-        self.CODATA_ALPHA_INV = 137.035999177
-        self.CODATA_C = 299792458  # m/s (exact by definition)
-        self.PDG_LAMBDA_CKM = 0.22453
+        # EXPERIMENTAL: Reference values for comparison
+        self.CODATA_ALPHA_INV = 137.035999177  # EXPERIMENTAL: CODATA 2022
+        self.CODATA_C = 299792458  # DEFINED: SI 2019 (exact by definition)
+        self.PDG_LAMBDA_CKM = 0.22453  # EXPERIMENTAL: PDG 2024
 
     def compute_generations(self) -> Dict[str, Any]:
         """

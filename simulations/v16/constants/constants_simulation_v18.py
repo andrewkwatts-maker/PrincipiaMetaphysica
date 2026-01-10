@@ -320,7 +320,7 @@ class ConstantsSimulationV18(SimulationBase):
                 units="dimensionless",
                 status="NUMEROLOGICAL_FIT",
                 description="alpha^-1 from G2 geometry (matches CODATA but numerological)",
-                experimental_bound=137.035999177,
+                experimental_bound=137.035999177,  # EXPERIMENTAL: CODATA 2022
                 bound_type="measured",
                 bound_source="CODATA 2022",
                 uncertainty=0.000000021
