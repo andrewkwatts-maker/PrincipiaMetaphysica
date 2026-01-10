@@ -170,7 +170,7 @@ class GUTSymmetryBreaking:
     def __init__(
         self,
         M_Planck: float = 2.435e18,  # GeV (reduced Planck mass)
-        M_Z: float = 91.1876,        # GeV (Z boson mass)
+        M_Z: float = 91.1876,        # EXPERIMENTAL: PDG2024 Z boson mass
         b3: int = 24,                # G2 third Betti number
     ):
         self.M_Planck = M_Planck
@@ -193,9 +193,9 @@ class GUTSymmetryBreaking:
             b_1 = 41/10, b_2 = -19/6, b_3 = -7
         """
         # SM gauge couplings at M_Z (GUT normalized for U(1))
-        alpha_em = 1 / 137.036
+        alpha_em = 1 / 137.036  # EXPERIMENTAL: CODATA alpha
         sin2_theta_W = 0.23121
-        alpha_s = 0.1180
+        alpha_s = 0.1180  # EXPERIMENTAL: PDG strong coupling
 
         # Convert to GUT-normalized couplings
         alpha_1 = (5/3) * alpha_em / (1 - sin2_theta_W)  # U(1)_Y with GUT normalization
@@ -510,7 +510,7 @@ class GUTEmbeddingChargeSimulation(SimulationBase):
             "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
             "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
             "constants.M_PLANCK": (2.435e18, "CODATA 2018"),
-            "pdg.m_Z": (91.1876, "PDG 2024"),
+            "pdg.m_Z": (91.1876, "PDG 2024"),  # EXPERIMENTAL: PDG2024
         }
 
         for path, (value, source) in defaults.items():

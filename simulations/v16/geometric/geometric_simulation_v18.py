@@ -288,9 +288,8 @@ class GeometricSimulationV18(SimulationBase):
         # =======================================================================
         # STAGE 7: Compute Sigma Deviations
         # =======================================================================
-        # EXPERIMENTAL: CODATA 2022 alpha inverse and uncertainty
         results["_sigma_alpha_inv"] = self._compute_sigma(
-            alpha_inv, 137.035999177, 0.000000021
+            alpha_inv, 137.035999177, 0.000000021  # EXPERIMENTAL: CODATA 2022
         )
 
         return results

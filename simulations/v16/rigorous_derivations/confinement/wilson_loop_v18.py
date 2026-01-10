@@ -127,8 +127,8 @@ L_PLANCK = 1.616255e-35  # meters
 
 # Experimental reference values
 LAMBDA_QCD_EXP = 0.217  # GeV (MS-bar scheme)
-ALPHA_S_MZ = 0.1180  # Strong coupling at M_Z
-M_Z = 91.1876  # GeV
+ALPHA_S_MZ = 0.1180  # EXPERIMENTAL: PDG strong coupling at M_Z
+M_Z = 91.1876  # EXPERIMENTAL: PDG2024 Z boson mass
 
 
 # ============================================================================
@@ -1142,7 +1142,7 @@ class WilsonLoopConfinementV18(SimulationBase):
                     "Predicted from asymptotic freedom running."
                 ),
                 derivation_formula="asymptotic-freedom-running",
-                experimental_bound=0.1180,
+                experimental_bound=0.1180,  # EXPERIMENTAL: PDG2024
                 bound_type="measured",
                 bound_source="PDG 2024",
                 uncertainty=0.0009

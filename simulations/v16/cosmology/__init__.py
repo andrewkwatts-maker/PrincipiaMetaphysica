@@ -26,6 +26,10 @@ from .speed_of_light_v17_2 import SpeedOfLightV17
 # V18 SimulationBase wrapper (primary export)
 from .cosmology_simulation_v18 import CosmologySimulationV18, run_cosmology_simulation
 
+# V18 Refined derivations for high-sigma fixes
+from .cmb_temperature_v18 import CMBTemperatureV18
+from .baryon_asymmetry_v18 import BaryonAsymmetryV18
+
 # Optional: cosmological constant derivation
 try:
     from .cosmological_constant_v16_1 import CosmologicalConstantV16
@@ -46,6 +50,9 @@ __all__ = [
     # V18 wrapper
     'CosmologySimulationV18',
     'run_cosmology_simulation',
+    # V18 refined derivations
+    'CMBTemperatureV18',
+    'BaryonAsymmetryV18',
 ]
 
 if _COSMOLOGICAL_CONSTANT_AVAILABLE:

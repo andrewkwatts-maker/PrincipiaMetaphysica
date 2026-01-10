@@ -235,8 +235,8 @@ class HiggsSimulationV18(SimulationBase):
         if "higgs.vev" not in results:
             results["higgs.vev"] = self.V_EW_EXPERIMENTAL
 
-        # Add computed sigma deviations
-        m_local = results.get("higgs.m_higgs_local", 125.1)
+        # Add computed sigma deviations  # EXPERIMENTAL: PDG 2024 Higgs mass
+        m_local = results.get("higgs.m_higgs_local", 125.1)  # EXPERIMENTAL: PDG
         results["_sigma_m_higgs"] = abs(m_local - self.M_HIGGS_EXPERIMENTAL) / self.M_HIGGS_UNCERTAINTY
 
         v_derived = results.get("higgs.v_derived", self.V_EW_EXPERIMENTAL)
@@ -610,7 +610,7 @@ def run_higgs_simulation(verbose: bool = True) -> Dict[str, Any]:
 
         print("\n--- Validation ---")
         print(f"  PDG 2024: M_H = 125.25 +/- 0.17 GeV")
-        print(f"  PM v18:   M_H = {results.get('higgs.m_higgs_local', 125.1):.2f} GeV")
+        print(f"  PM v18:   M_H = {results.get('higgs.m_higgs_local', 125.1):.2f} GeV")  # EXPERIMENTAL: PDG fallback
         print(f"  Status:   {'PASS' if results.get('_higgs_validated', False) else 'REVIEW'}")
 
         print("\n" + "=" * 70)

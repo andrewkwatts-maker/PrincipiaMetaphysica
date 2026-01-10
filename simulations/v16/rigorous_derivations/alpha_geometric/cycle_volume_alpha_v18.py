@@ -208,10 +208,10 @@ class CycleVolumeAlphaV18:
         - The specific cycle identification is speculative
         - We cannot compute volumes without explicit G2 metric
         """
-        # Experimental gauge couplings at M_Z
-        alpha_1_MZ = (5/3) * (1/137.036) / self.cos2_theta_W  # GUT normalized
-        alpha_2_MZ = (1/137.036) / self.sin2_theta_W
-        alpha_3_MZ = 0.1180  # Strong coupling
+        # Experimental gauge couplings at M_Z  # EXPERIMENTAL: CODATA/PDG
+        alpha_1_MZ = (5/3) * (1/137.036) / self.cos2_theta_W  # EXPERIMENTAL: CODATA alpha
+        alpha_2_MZ = (1/137.036) / self.sin2_theta_W  # EXPERIMENTAL: CODATA alpha
+        alpha_3_MZ = 0.1180  # EXPERIMENTAL: PDG strong coupling
 
         # Inverse couplings
         inv_alpha_1 = 1 / alpha_1_MZ
