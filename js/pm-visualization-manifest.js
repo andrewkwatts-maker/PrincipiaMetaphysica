@@ -1,5 +1,5 @@
 /**
- * PM Visualization Manifest v16.2
+ * PM Visualization Manifest v17.2
  * ===============================
  *
  * Maps high-fidelity visualizations to theoretical sections.
@@ -9,8 +9,8 @@
  */
 
 const PM_VISUALIZATION_MANIFEST = {
-    version: "16.2",
-    manuscript_id: "PM-v16.2-FINAL",
+    version: "17.2",
+    manuscript_id: "PM-v17.2-FINAL",
 
     /**
      * Get the local image path for a visualization

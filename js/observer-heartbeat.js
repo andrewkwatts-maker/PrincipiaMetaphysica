@@ -1,7 +1,7 @@
 /**
  * observer-heartbeat.js - Runtime Integrity Hook for Principia Metaphysica
  *
- * v16.2 Observer Coupling (CERT-OBSV-041) Runtime Implementation
+ * v17.2 Observer Coupling (CERT-OBSV-041) Runtime Implementation
  *
  * This module implements the Observer Heartbeat - a runtime parity check
  * that prevents floating-point "rounding debt" from accumulating during
@@ -12,7 +12,7 @@
  * Certificate: CERT-HYST-042 (Time-Reversibility & Symplectic Integrity)
  *
  * Generated: 2026-01-01
- * Framework Version: v16.2
+ * Framework Version: v17.2
  */
 
 const ObserverHeartbeat = {
@@ -297,7 +297,7 @@ if (typeof window !== 'undefined') {
     window.ObserverHeartbeat = ObserverHeartbeat;
 }
 
-console.log('[ObserverHeartbeat] v16.2 Runtime integrity hook loaded');
+console.log('[ObserverHeartbeat] v17.2 Runtime integrity hook loaded');
 console.log(`  Locked residues: ${ObserverHeartbeat._lockedResidues.size}`);
 console.log(`  Tolerance: ${ObserverHeartbeat.config.tolerance}`);
 console.log(`  Epoch interval: ${ObserverHeartbeat.config.epoch_interval}`);

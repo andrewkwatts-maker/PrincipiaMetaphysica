@@ -2222,9 +2222,19 @@
                 'FOUNDATIONAL': 'Fundamental theoretical input',
                 'VALIDATED': 'Validated against experiment',
                 'TABULATED': 'Listed in reference tables',
-                'PHENOMENOLOGICAL': 'Phenomenologically constrained'
+                'PHENOMENOLOGICAL': 'Phenomenologically constrained',
+                'SYSTEM': 'System metadata (not a scientific parameter)'
             };
             return descriptions[status] || status;
+        }
+
+        /**
+         * Check if a parameter should be excluded from scientific counts
+         */
+        function isSystemParameter(param) {
+            return param?.status === 'SYSTEM' ||
+                   param?.metadata?.is_scientific === false ||
+                   param?.metadata?.display_in_params === false;
         }
 
         function calculateDeviation(predicted, experimental) {

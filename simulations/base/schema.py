@@ -34,6 +34,7 @@ class ParameterStatus(str, Enum):
     DERIVED = "DERIVED"           # Computed from ESTABLISHED + THEORY
     PREDICTED = "PREDICTED"       # Testable predictions
     CALIBRATED = "CALIBRATED"     # O(1) coefficients
+    SYSTEM = "SYSTEM"             # Non-scientific metadata (version, timestamps, etc.)
 
 
 class FormulaCategory(str, Enum):
