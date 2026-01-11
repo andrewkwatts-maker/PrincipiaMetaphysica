@@ -170,9 +170,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 latex=r"k_\gimel = \frac{b_3}{2} + \frac{1}{\pi} = 12.3183...",
                 plain_text="k_gimel = b3/2 + 1/pi = 12.3183...",
                 category="GEOMETRIC",
-                derivation_chain=["b3"],
-                experimental_target=None,
-                source_simulation=self._metadata.id,
+                description="Gimel constant derived from third Betti number b3=24",
                 terms={
                     "k_gimel": "Geometric anchor (Gimel constant)",
                     "b3": "Third Betti number of G2 manifold (24)",
@@ -185,9 +183,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 latex=r"\alpha^{-1} = k_\gimel^2 - \frac{b_3}{\varphi} + \frac{\varphi}{4\pi} = 137.037",
                 plain_text="alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) = 137.037",
                 category="DERIVED",
-                derivation_chain=["k_gimel", "b3", "phi"],
-                experimental_target={"value": 137.036, "uncertainty": 0.01, "source": "CODATA 2022"},  # alpha inverse (CODATA)
-                source_simulation=self._metadata.id,
+                description="Inverse fine structure constant from geometric anchors. Exp: 137.036 (CODATA 2022)",
                 terms={
                     "alpha^-1": "Inverse fine structure constant",
                     "phi": "Golden ratio (1+√5)/2"
@@ -199,9 +195,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 latex=r"w_0 = -1 + \frac{1}{b_3} = -\frac{23}{24} \approx -0.9583",
                 plain_text="w0 = -1 + 1/b3 = -23/24 = -0.9583",
                 category="DERIVED",
-                derivation_chain=["b3"],
-                experimental_target={"value": -0.957, "uncertainty": 0.067, "source": "DESI 2025"},
-                source_simulation=self._metadata.id,
+                description="Dark energy equation of state from Tzimtzum fraction. Exp: -0.957±0.067 (DESI 2025)",
                 terms={
                     "w0": "Dark energy equation of state at z=0",
                     "b3": "Third Betti number (24)"
@@ -213,16 +207,13 @@ class GeometricAnchorsSimulation(SimulationBase):
                 latex=r"n_s = 1 - \frac{2\varphi^2}{\chi_{\rm eff}} = 1 - \frac{2}{55} \approx 0.9636",
                 plain_text="n_s = 1 - 2*phi^2/chi_eff = 1 - 2/55 = 0.9636",
                 category="DERIVED",
-                derivation_chain=["chi_eff", "phi"],
-                experimental_target={"value": 0.9649, "uncertainty": 0.0042, "source": "Planck 2018"},
-                source_simulation=self._metadata.id,
+                description="Scalar spectral index from golden-modulated e-folds. Exp: 0.9649±0.0042 (Planck 2018)",
                 terms={
                     "n_s": "Scalar spectral index",
                     "chi_eff": "Effective Euler characteristic (144)",
                     "phi": "Golden ratio (1.618...)",
                     "N_eff": "Effective e-folds = chi_eff/phi^2 = 55"
-                },
-                notes="v18.0: Golden-modulated e-folds from topological projection"
+                }
             ),
             Formula(
                 id="unity-seal-anchor",
@@ -230,13 +221,10 @@ class GeometricAnchorsSimulation(SimulationBase):
                 latex=r"I_{\text{unity}} = \frac{k_\gimel \cdot \varphi}{b_3 - 4} = 0.9966 \approx 1",
                 plain_text="I_unity = k_gimel * phi / (b3 - 4) = 0.9966",
                 category="GEOMETRIC",
-                derivation_chain=["k_gimel", "phi", "b3"],
-                experimental_target=None,
-                source_simulation=self._metadata.id,
+                description="Unity seal for model consistency. Deviation < 0.01 required for DEMON_LOCKED status",
                 terms={
                     "I_unity": "Unity seal (model consistency check)"
-                },
-                notes="Deviation < 0.01 required for DEMON_LOCKED status"
+                }
             ),
         ]
 

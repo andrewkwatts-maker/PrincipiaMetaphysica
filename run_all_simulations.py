@@ -735,6 +735,7 @@ class SimulationResult:
     error_message: Optional[str] = None
     execution_time_ms: float = 0.0
     outputs_computed: List[str] = field(default_factory=list)
+    formulas_registered: int = 0
 
 
 class SimulationRunner:
@@ -1109,6 +1110,11 @@ class SimulationRunner:
             result.execution_time_ms = (end_time - start_time).total_seconds() * 1000
             result.outputs_computed = list(computed_results.keys())
 
+            # Track formula count for this simulation
+            if hasattr(sim, 'get_formulas') and callable(sim.get_formulas):
+                formulas = sim.get_formulas()
+                result.formulas_registered = len(formulas) if formulas else 0
+
             if self.verbose:
                 print(f"  [OK] Completed in {result.execution_time_ms:.2f}ms")
 
@@ -1230,6 +1236,11 @@ class SimulationRunner:
 
             result.execution_time_ms = (end_time - start_time).total_seconds() * 1000
             result.outputs_computed = list(output_stats.keys())
+
+            # Track formula count for this simulation
+            if hasattr(sim, 'get_formulas') and callable(sim.get_formulas):
+                formulas = sim.get_formulas()
+                result.formulas_registered = len(formulas) if formulas else 0
 
             if self.verbose:
                 print(f"  [OK] Completed in {result.execution_time_ms:.2f}ms")
@@ -2005,11 +2016,15 @@ class SimulationRunner:
         total = validation_report["simulations_run"]
         total_time = validation_report["total_execution_time_ms"]
 
+        # Calculate total formulas registered across all simulations
+        total_formulas = sum(r.formulas_registered for r in self.results)
+
         print(f"Simulations Run:    {total}")
         print(f"Passed:             {passed}")
         print(f"Failed:             {failed}")
         print(f"Success Rate:       {100.0 * passed / total:.1f}%")
         print(f"Total Time:         {total_time:.2f}ms")
+        print(f"Formulas Registered: {total_formulas}")
 
         # V16.2: Print tension warnings (>1sigma threshold)
         tensions = validation_report.get("tensions", [])
