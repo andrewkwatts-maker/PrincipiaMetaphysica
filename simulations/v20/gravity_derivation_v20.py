@@ -27,22 +27,24 @@ import numpy as np
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass
 
-# Import SSOT
+# Import SSOT - use get_registry() to get singleton instance
 try:
-    from core.FormulasRegistry import FormulasRegistry as _REG
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
 except ImportError:
-    from ...core.FormulasRegistry import FormulasRegistry as _REG
+    from ...core.FormulasRegistry import get_registry
+    _REG = get_registry()
 
 try:
-    from simulations.base.simulation_base import SimulationBase, SimulationMetadata
-    from simulations.base.registry import PMRegistry
-    from simulations.base.formulas import Formula, FormulaDerivation
-    from simulations.base.section_content import SectionContent, ContentBlock
+    from simulations.base import (
+        SimulationBase, SimulationMetadata, PMRegistry,
+        Formula, SectionContent, ContentBlock, Parameter
+    )
 except ImportError:
-    from ..base.simulation_base import SimulationBase, SimulationMetadata
-    from ..base.registry import PMRegistry
-    from ..base.formulas import Formula, FormulaDerivation
-    from ..base.section_content import SectionContent, ContentBlock
+    from ..base import (
+        SimulationBase, SimulationMetadata, PMRegistry,
+        Formula, SectionContent, ContentBlock, Parameter
+    )
 
 
 @dataclass
@@ -82,24 +84,114 @@ class GravityDerivationV20(SimulationBase):
 
     def __init__(self):
         super().__init__()
-        self.metadata = SimulationMetadata(
+        self._metadata = SimulationMetadata(
             id="gravity-derivation-v20",
-            title="Gravity from G2 Manifold Volume",
             version="20.0",
+            domain="gravity",
+            title="Gravity from G2 Manifold Volume",
             description="Derives Newton's constant from the holographic "
                        "boundary density of the 7D G2 manifold.",
-            authors=["Andrew Keith Watts"],
-            category="gravity",
-            tags=["gravity", "planck-scale", "hierarchy", "g2-manifold"],
-            dependencies=["topology"],
-            outputs=["G_N_derived", "M_planck", "L_planck", "hierarchy_ratio"]
+            section_id="5.1"
         )
+
+    @property
+    def metadata(self) -> SimulationMetadata:
+        """Return metadata about this simulation."""
+        return self._metadata
+
+    @property
+    def required_inputs(self) -> List[str]:
+        """Return list of required input parameter paths."""
+        return [
+            "geometry.k_gimel",
+            "geometry.V_G2",
+            "geometry.chi_eff",
+            "electroweak.v_higgs"
+        ]
+
+    @property
+    def output_params(self) -> List[str]:
+        """Return list of output parameter paths."""
+        return [
+            "gravity.G_N_derived",
+            "gravity.M_planck_GeV",
+            "gravity.L_planck_m",
+            "gravity.hierarchy_ratio"
+        ]
+
+    @property
+    def output_formulas(self) -> List[str]:
+        """Return list of formula IDs this simulation provides."""
+        return [
+            "gr-newton-from-g2-v20",
+            "gr-hierarchy-ratio-v20",
+            "gr-planck-length-v20"
+        ]
+
+    def get_output_param_definitions(self) -> List[Parameter]:
+        """Return parameter definitions for outputs."""
+        return [
+            Parameter(
+                path="gravity.G_N_derived",
+                name="Newton's Gravitational Constant (Derived)",
+                units="m^3/(kg*s^2)",
+                status="DERIVED",
+                description="Newton's gravitational constant derived from G2 manifold volume. "
+                           "Represents the holographic boundary density of the 7D G2 manifold.",
+                derivation_formula="gr-newton-from-g2-v20",
+                experimental_bound=self.G_N_CODATA,
+                bound_type="measured",
+                bound_source="CODATA2018",
+                uncertainty=self.G_N_UNCERTAINTY
+            ),
+            Parameter(
+                path="gravity.M_planck_GeV",
+                name="Planck Mass",
+                units="GeV",
+                status="DERIVED",
+                description="Planck mass derived from G2 manifold geometry. "
+                           "Emerges as the density limit of the G2 volume.",
+                derivation_formula="gr-newton-from-g2-v20",
+                experimental_bound=1.22e19,
+                bound_type="measured",
+                bound_source="PDG2024",
+                uncertainty=0.01e19
+            ),
+            Parameter(
+                path="gravity.L_planck_m",
+                name="Planck Length",
+                units="m",
+                status="DERIVED",
+                description="Planck length derived from the geometric G_N. "
+                           "Represents the minimum resolvable length scale in the compactified geometry.",
+                derivation_formula="gr-planck-length-v20",
+                experimental_bound=1.616e-35,
+                bound_type="measured",
+                bound_source="CODATA2018",
+                uncertainty=0.001e-35
+            ),
+            Parameter(
+                path="gravity.hierarchy_ratio",
+                name="Hierarchy Ratio",
+                units="dimensionless",
+                status="DERIVED",
+                description="Ratio M_Pl/M_EW explaining why gravity is weak. "
+                           "This enormous ratio emerges naturally from the G2 manifold volume.",
+                derivation_formula="gr-hierarchy-ratio-v20",
+                no_experimental_value=True
+            )
+        ]
 
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure required topology inputs are available."""
+        # k_gimel = demiurgic_coupling in FormulasRegistry (b3/2 + 1/pi = 12.318...)
+        k_gimel = _REG.demiurgic_coupling
+        # V_G2 placeholder - using chi_eff based volume proxy
+        V_G2 = 1.0 / _REG.chi_eff  # Normalized volume ~0.00694
+
         defaults = {
-            "geometry.k_gimel": (_REG.k_gimel, "ESTABLISHED:FormulasRegistry"),
-            "geometry.V_G2": (_REG.V_G2, "ESTABLISHED:FormulasRegistry"),
+            "geometry.k_gimel": (k_gimel, "ESTABLISHED:FormulasRegistry"),
+            "geometry.V_G2": (V_G2, "DERIVED:1/chi_eff"),
             "geometry.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
             "electroweak.v_higgs": (246.22, "ESTABLISHED:PDG2024"),  # GeV
         }
@@ -124,9 +216,14 @@ class GravityDerivationV20(SimulationBase):
         self._ensure_inputs(registry)
 
         # Get geometric parameters from SSOT
-        k_gimel = registry.get("geometry.k_gimel", default=_REG.k_gimel)
-        V_G2 = registry.get("geometry.V_G2", default=_REG.V_G2)
-        chi_eff = registry.get("geometry.chi_eff", default=_REG.chi_eff)
+        # Note: k_gimel = demiurgic_coupling in FormulasRegistry
+        k_gimel_default = _REG.demiurgic_coupling  # b3/2 + 1/pi = 12.318...
+        V_G2_default = 1.0 / _REG.chi_eff  # Normalized volume proxy
+        chi_eff_default = _REG.chi_eff
+
+        k_gimel = registry.get("geometry.k_gimel", default=k_gimel_default)
+        V_G2 = registry.get("geometry.V_G2", default=V_G2_default)
+        chi_eff = registry.get("geometry.chi_eff", default=chi_eff_default)
         v_higgs = registry.get("electroweak.v_higgs", default=246.22)
 
         # Step 1: Compute effective G2 volume in natural units
@@ -137,7 +234,9 @@ class GravityDerivationV20(SimulationBase):
         # Step 2: Derive Planck mass from volume
         # M_pl = v_geom * k_gimel^2 * pi * scaling
         # The key insight: M_pl emerges as the "density limit" of the G2 volume
-        geometric_vev = _REG.V_GEOMETRIC  # From FormulasRegistry
+        # V_GEOMETRIC is chi_R * k_gimel where chi_R = 1/chi_eff
+        chi_R = 1.0 / chi_eff
+        geometric_vev = chi_R * k_gimel  # ~0.0855
 
         # The Planck mass in GeV
         # M_pl = geometric_vev * k_gimel^2 * pi * 10^15 (scale factor)
@@ -258,15 +357,15 @@ class GravityDerivationV20(SimulationBase):
                            "density of the 7D G2 manifold.",
                 input_params=["geometry.k_gimel", "geometry.V_GEOMETRIC"],
                 output_params=["gravity.G_N_derived"],
-                derivation=FormulaDerivation(
-                    steps=[
+                derivation={
+                    "steps": [
                         "1. The 4D Planck mass is set by the G2 volume: M_4^2 = M_11^2 * V_G2",
                         "2. Using k_gimel as the geometric modulus: M_pl = v_geom * k_gimel^2 * pi",
                         "3. Newton's constant follows: G_N = hbar*c / M_pl^2",
                         "4. This explains hierarchy: V_G2 >> V_3-cycles => Gravity weak",
                     ],
-                    references=["Section 5.1", "Appendix N"]
-                )
+                    "references": ["Section 5.1", "Appendix N"]
+                }
             ),
             Formula(
                 id="gr-hierarchy-ratio-v20",
@@ -281,15 +380,15 @@ class GravityDerivationV20(SimulationBase):
                            "G2 manifold relative to the 3-cycles where gauge forces live.",
                 input_params=["gravity.M_planck_GeV", "electroweak.v_higgs"],
                 output_params=["gravity.hierarchy_ratio"],
-                derivation=FormulaDerivation(
-                    steps=[
+                derivation={
+                    "steps": [
                         "1. M_Pl ~ 10^19 GeV (from G2 volume)",
                         "2. M_EW ~ 246 GeV (Higgs VEV)",
                         "3. Ratio ~ 10^17 explains 'weakness' of gravity",
                         "4. Not fine-tuning: geometric necessity",
                     ],
-                    references=["Section 5.1"]
-                )
+                    "references": ["Section 5.1"]
+                }
             ),
             Formula(
                 id="gr-planck-length-v20",
