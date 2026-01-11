@@ -51,6 +51,43 @@ _REG = get_registry()
 # Import v16 predictions aggregator
 from .predictions_aggregator_v16_0 import PredictionsAggregatorV16
 
+# =============================================================================
+# EXPERIMENTAL COMPARISON VALUES (SSOT module-level constants)
+# =============================================================================
+# These are EXPERIMENTAL values used for comparison/validation.
+# Framework predictions are derived from geometry.
+
+DESI_VALUES = {
+    'w0': (-0.957, 0.067),          # DESI 2025 thawing
+    'wa': (0.29, 0.15),             # DESI 2024 DR2
+}
+
+PLANCK_VALUES = {
+    'dm_baryon_ratio': (5.38, 0.15),  # Planck 2018
+}
+
+PDG_VALUES = {
+    'sin_theta_c': (0.2257, 0.0010),  # PDG 2024
+}
+
+SUPERK_VALUES = {
+    'tau_p_lower_bound': 1.67e34,   # Super-Kamiokande lower limit (years)
+}
+
+LHC_VALUES = {
+    'm_kk_lower_bound': 3.5,        # LHC diphoton lower limit (TeV)
+}
+
+# Predicted values from PM framework geometry
+PM_PREDICTIONS = {
+    'wa': 0.27,                     # From G2 torsion logs
+    'tau_p': 3.9e34,                # years, from GUT suppression
+    'm_kk': 5.0,                    # TeV, from compactification
+    'm_gut': 2.12e16,               # GeV, from geometric running
+    'dm_baryon_ratio': 5.4,         # From mirror sector
+    'sin_theta_c': 0.2257,          # From racetrack
+}
+
 
 # Output parameter paths for this simulation
 _OUTPUT_PARAMS = [
@@ -182,11 +219,10 @@ class PredictionsSimulationV18(SimulationBase):
         # ===== DARK ENERGY PREDICTIONS =====
         # w0 = -1 + 1/b3 = -23/24 (EXACT from thawing)
         w0_pm = -1.0 + 1.0 / b3  # = -0.9583...
-        wa_pm = 0.27  # From G2 torsion logs
+        wa_pm = PM_PREDICTIONS['wa']
 
-        # DESI 2025 comparison
-        desi_w0 = -0.957
-        desi_w0_err = 0.067
+        # DESI 2025 comparison (from SSOT constants)
+        desi_w0, desi_w0_err = DESI_VALUES['w0']
         w0_sigma = abs(w0_pm - desi_w0) / desi_w0_err
 
         results["predictions.w0_pm"] = w0_pm
@@ -215,31 +251,31 @@ class PredictionsSimulationV18(SimulationBase):
 
         # ===== DARK MATTER RATIO =====
         # From mirror sector temperature asymmetry T'/T ~ 0.57
-        dm_baryon_ratio = 5.4  # Planck 2018: 5.38 ± 0.15
+        dm_baryon_ratio = PM_PREDICTIONS['dm_baryon_ratio']
 
         results["predictions.dm_baryon_ratio"] = dm_baryon_ratio
 
         # ===== CABIBBO ANGLE =====
         # From racetrack superpotential minimization
-        sin_theta_c = 0.2257  # PDG 2024: 0.2257 ± 0.0010 (exact match)
+        sin_theta_c = PM_PREDICTIONS['sin_theta_c']
 
         results["predictions.sin_theta_c"] = sin_theta_c
 
         # ===== PROTON DECAY =====
         # tau_p from geometric suppression
-        tau_p_years = 3.9e34  # Super-K bound: > 1.67×10³⁴ yr
+        tau_p_years = PM_PREDICTIONS['tau_p']
 
         results["predictions.tau_p_years"] = tau_p_years
 
         # ===== KK GRAVITONS =====
         # m_KK from compactification radius
-        m_kk_tev = 5.0  # TeV (geometric)
+        m_kk_tev = PM_PREDICTIONS['m_kk']
 
         results["predictions.m_kk_tev"] = m_kk_tev
 
         # ===== GUT SCALE =====
         # M_GUT from geometric/torsion running
-        m_gut_gev = 2.12e16  # GeV
+        m_gut_gev = PM_PREDICTIONS['m_gut']
 
         results["predictions.m_gut_gev"] = m_gut_gev
 

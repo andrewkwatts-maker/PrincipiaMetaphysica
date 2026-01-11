@@ -47,6 +47,16 @@ from simulations.base import (
     Parameter,
     PMRegistry,
 )
+from core.FormulasRegistry import get_registry
+
+# =============================================================================
+# CODATA 2022 EXPERIMENTAL REFERENCE VALUES (SSOT module-level constants)
+# =============================================================================
+# These are EXPERIMENTAL values used for comparison/validation only.
+# The derived values come from pure geometry (b3=24, pi, phi).
+CODATA_ALPHA_INV = 137.035999177       # CODATA 2022: Inverse fine structure constant
+CODATA_ALPHA_INV_UNC = 0.000000021     # CODATA 2022: Uncertainty (21 in last digits)
+CODATA_SOURCE = "CODATA2022"           # Source identifier for audit trail
 
 # Import v16/v17 geometric modules we're wrapping
 from .g2_geometry_v16_0 import G2GeometryV16
@@ -75,6 +85,9 @@ class GeometricSimulationV18(SimulationBase):
         # Create underlying simulation instances
         self._g2_geometry = G2GeometryV16()
         self._geometric_anchors = GeometricAnchorsSimulation()
+        # NOTE: b3=24 is the ROOT topological invariant (third Betti number of TCS G2 manifold #187).
+        # This is an INTENTIONAL input parameter, not a hardcoded value to be replaced.
+        # All framework constants derive from this single topological integer.
         self._alpha_solver = AlphaRigorSolver(b3=24)
         self._fine_structure = FineStructureAnalysis(b3=24)
 
@@ -94,8 +107,8 @@ class GeometricSimulationV18(SimulationBase):
             subsection_id="2.1-2.4"
         )
 
-        # Cached results
-        self._phi = (1.0 + np.sqrt(5.0)) / 2.0  # Golden ratio
+        # Get phi from FormulasRegistry (SSOT) instead of computing locally
+        self._phi = get_registry().phi
 
     @property
     def metadata(self) -> SimulationMetadata:
@@ -246,9 +259,9 @@ class GeometricSimulationV18(SimulationBase):
 
         self._register_if_missing(
             registry, "geometry.alpha_inverse", alpha_inv, "DERIVED",
-            experimental_value=137.035999177,  # EXPERIMENTAL: CODATA 2022
-            experimental_uncertainty=0.000000021,  # EXPERIMENTAL: CODATA 2022
-            experimental_source="CODATA2022"
+            experimental_value=CODATA_ALPHA_INV,
+            experimental_uncertainty=CODATA_ALPHA_INV_UNC,
+            experimental_source=CODATA_SOURCE
         )
 
         # =======================================================================
@@ -289,7 +302,7 @@ class GeometricSimulationV18(SimulationBase):
         # STAGE 7: Compute Sigma Deviations
         # =======================================================================
         results["_sigma_alpha_inv"] = self._compute_sigma(
-            alpha_inv, 137.035999177, 0.000000021  # EXPERIMENTAL: CODATA 2022
+            alpha_inv, CODATA_ALPHA_INV, CODATA_ALPHA_INV_UNC
         )
 
         return results
@@ -552,9 +565,9 @@ class GeometricSimulationV18(SimulationBase):
                     "Pure geometric derivation with no magic numbers."
                 ),
                 derivation_formula="alpha-inverse-geometric",
-                experimental_bound=137.035999177,  # EXPERIMENTAL: CODATA 2022
+                experimental_bound=CODATA_ALPHA_INV,
                 bound_type="measured",
-                bound_source="CODATA2022",
+                bound_source=CODATA_SOURCE,
                 uncertainty=0.0007
             ),
             Parameter(
@@ -747,7 +760,7 @@ def run_geometric_simulation(verbose: bool = True) -> Dict[str, Any]:
 
         print("\n--- Fine Structure Constant ---")
         print(f"  alpha^-1 (derived):     {results.get('geometry.alpha_inverse', 'N/A'):.6f}")
-        print(f"  alpha^-1 (CODATA):      137.035999177")
+        print(f"  alpha^-1 (CODATA):      {CODATA_ALPHA_INV}")
         print(f"  deviation:              {results.get('geometry.alpha_inverse_error', 'N/A'):.6f}")
         print(f"  sigma (vs CODATA unc.): {results.get('geometry.alpha_inverse_sigma', 'N/A'):.0f}")
 

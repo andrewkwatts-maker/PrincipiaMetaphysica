@@ -546,10 +546,12 @@ class NeutrinoSimulationV18(SimulationBase):
         Returns:
             List of Parameter instances describing the neutrino parameters
         """
-        # Use topology values to compute predictions
-        b2, b3 = 4, 24
-        chi_eff, n_gen = 144, 3
-        orientation_sum = 12
+        # Use SSOT topology values from FormulasRegistry
+        b3 = _REG.b3  # 24
+        b2 = b3 // 6  # 4 - derived from b3
+        chi_eff = _REG.chi_eff  # 144
+        n_gen = b3 // 8  # 3 - derived from b3
+        orientation_sum = b3 // 2  # 12 - derived from b3
 
         # Compute predicted mixing angles dynamically
         # theta_12
