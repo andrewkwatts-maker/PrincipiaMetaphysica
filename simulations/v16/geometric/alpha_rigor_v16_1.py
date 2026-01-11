@@ -36,6 +36,9 @@ try:
 except ImportError:
     SCHEMA_AVAILABLE = False
 
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 class AlphaRigorSolver:
     """
     Derives the Fine Structure Constant from G2 holonomy.

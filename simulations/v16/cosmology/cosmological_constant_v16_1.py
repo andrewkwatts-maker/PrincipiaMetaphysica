@@ -38,6 +38,9 @@ from simulations.base import (
     PMRegistry,
 )
 
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 
 class CosmologicalConstantV16(SimulationBase):
     """
