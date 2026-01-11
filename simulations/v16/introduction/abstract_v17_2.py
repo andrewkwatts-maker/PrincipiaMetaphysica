@@ -44,10 +44,10 @@ class AbstractV17_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="abstract_v17_2",
-            version="17.2",
+            version="20.0",
             domain="abstract",
             title="Abstract",
-            description="Paper abstract for Principia Metaphysica v17.2",
+            description="Paper abstract for Principia Metaphysica v20.0-RECURSIVE",
             section_id="0",
             subsection_id=None
         )
@@ -86,7 +86,7 @@ class AbstractV17_2(SimulationBase):
                     'We introduce a unified mathematical framework that derives fundamental physical '
                     'constants and cosmological observables from the topological invariants of a '
                     '<span class="pm-value" data-pm-value="dimensions.D_bulk">26</span>D manifold with '
-                    '(24,2) signature. <strong>Principia Metaphysica v17.2</strong> compactifies M-theory '
+                    '(24,2) signature. <strong>Principia Metaphysica v20.0-RECURSIVE</strong> compactifies M-theory '
                     'on a Twisted Connected Sum G\u2082 manifold, where S<sub>PR</sub>(2) gauge fixing yields '
                     'an effective <span class="pm-value" data-pm-value="dimensions.D_after_sp2r">13</span>-dimensional '
                     'intermediate stage (explicit decomposition: 26D = 4D \u00d7 T<sup>15</sup> \u00d7 G\u2082(7D)), '

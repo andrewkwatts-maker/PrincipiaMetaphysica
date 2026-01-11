@@ -432,7 +432,7 @@ class SterilityReporter:
         report = self.generate_report()
 
         print("\n" + "=" * 70)
-        print(" PRINCIPIA METAPHYSICA v17.2-ABSOLUTE - SOVEREIGN AUDIT REPORT")
+        print(" PRINCIPIA METAPHYSICA v20.0-RECURSIVE - SOVEREIGN AUDIT REPORT")
         print("=" * 70)
         print(f" Timestamp: {report['metadata']['timestamp']}")
         print(f" Sovereign Hash: {report['metadata']['sovereign_hash'][:16]}...")

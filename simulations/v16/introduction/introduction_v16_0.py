@@ -58,10 +58,10 @@ class IntroductionV16(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="introduction_v16_0",
-            version="16.2",
+            version="20.0",
             domain="introduction",
             title="Introduction to Principia Metaphysica",
-            description="Narrative introduction to the PM v17.2 sterile framework - 125 geometric residues",
+            description="Narrative introduction to the PM v20.0-RECURSIVE framework - 125 geometric residues",
             section_id="1",
             subsection_id=None
         )
@@ -228,7 +228,7 @@ class IntroductionV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v17.2</strong>, a sterile "
+                    "This paper presents <strong>Principia Metaphysica v20.0-RECURSIVE</strong>, a sterile "
                     "geometric framework in which all 125 fundamental physical constants emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "

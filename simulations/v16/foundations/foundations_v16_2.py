@@ -77,7 +77,7 @@ class FoundationsV16_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="foundations_v16_2",
-            version="17.2",
+            version="20.0",
             domain="foundations",
             title="Foundations of Dimensional Descent",
             description="The 26D(24,2) → 4D sterile extraction path",
@@ -116,7 +116,7 @@ class FoundationsV16_2(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "This paper presents <strong>Principia Metaphysica v17.2</strong>, a sterile "
+                    "This paper presents <strong>Principia Metaphysica v20.0-RECURSIVE</strong>, a sterile "
                     "geometric framework in which all 125 fundamental physical constants emerge as "
                     "spectral residues of a single compact <strong>G₂ manifold (TCS #187)</strong> "
                     "under Ricci flow—without free parameters, tuning, or calibration. Beginning "

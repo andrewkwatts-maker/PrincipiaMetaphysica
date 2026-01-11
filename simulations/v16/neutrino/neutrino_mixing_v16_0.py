@@ -585,7 +585,7 @@ class NeutrinoMixingSimulation(SimulationBase):
                 type="paragraph",
                 content="With the TCS #187 values (b₂=4, b₃=24, χ_eff=144, n_gen=3, S_orient=12), "
                        "we obtain: θ₁₂=33.59°, θ₁₃=8.33°, θ₂₃=49.75°, δ_CP=278.4°. "
-                       "v17.2: The δ_CP includes a 45.9° parity offset from 13D→4D projection. "
+                       "The δ_CP includes a 45.9° parity offset from 13D→4D projection. "
                        "These predictions agree with NuFIT 6.0 (IO) global fit values to within 1σ, "
                        "with no calibration or free parameters."
             ),
