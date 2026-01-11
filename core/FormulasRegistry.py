@@ -76,19 +76,26 @@ class FormulasRegistry:
     ----------------------
     The derivation chain follows a four-level hierarchy:
 
-    Level 0 (Seeds): Ten Pillar constants from E8×E8 and G2 topology
+    Level 0 (Seeds): Ten Pillar constants from G2 and octonionic/24D topology
     Level 1 (Topology): chi_eff, k_gimel, n_gen derived from seeds
     Level 2 (Physics): alpha_em, G_N, G_F derived from topology
     Level 3 (Predictions): H0, w0, masses derived from physics
 
+    RIGOR WARNING (per Gemini peer review 2026-01-11):
+    -------------------------------------------------
+    Many constants in this registry are SPECULATIVE NUMEROLOGY used for
+    phenomenological fitting, NOT rigorous mathematical derivations.
+    See the RIGOR DISCLAIMER section below for details.
+
     SELECTION PRINCIPLE (not anthropic):
     -----------------------------------
-    chi_eff = 144 is determined by CONSISTENCY REQUIREMENTS:
-    1. F-theory anomaly cancellation requires chi divisible by 24
-    2. n_gen = chi/48 must be integer (fermion chirality)
-    3. SU(5) GUT breaking pattern requires specific flux quantization
-    4. chi = 144 is the SMALLEST value satisfying all constraints
-       that yields exactly 3 fermion generations
+    chi_eff = 72 is the effective chiral index determined by:
+    1. n_gen = |chi|/24 (standard M-theory index theorem)
+    2. |chi| = 72 yields exactly 3 fermion generations: 72/24 = 3
+    3. Singular TCS G2 models CAN exhibit non-zero effective Euler
+       characteristic due to singularities (Acharya-Witten 2001)
+
+    Reference: Acharya, B.S. & Witten, E. (2001). arXiv:hep-th/0109152
 
     References:
     - Kovalev, A. (2003). J. Reine Angew. Math. 565: 125-160.
@@ -99,6 +106,28 @@ class FormulasRegistry:
     VERSION = "20.0-RECURSIVE"
     VERSION_SHORT = "20.0"
     STATUS = "PEER_REVIEWED"  # Updated per Gemini review 2026-01-11
+
+    # ===========================================================================
+    # RIGOR DISCLAIMER (per Gemini peer review 2026-01-11)
+    # ===========================================================================
+    # WARNING: Many constants in this registry are SPECULATIVE NUMEROLOGY:
+    #
+    # MATHEMATICALLY VALID:
+    #   - phi (Golden Ratio): (1 + sqrt(5))/2 - mathematical constant
+    #   - pi: Mathematical constant
+    #   - gamma_s (Euler-Mascheroni): 0.5772... - mathematical constant
+    #   - b3 = 24: Plausible Betti number for a G2 manifold (unverified)
+    #
+    # SPECULATIVE/NUMEROLOGICAL (NO RIGOROUS BASIS):
+    #   - chi_eff = 72: Effective chiral index; singular TCS G2 models can have
+    #     non-zero effective Euler characteristic (Acharya-Witten 2001)
+    #   - n_gen = |chi|/24 = 72/24 = 3 (standard M-theory index theorem)
+    #   - roots_total = 288: Octonionic/24D structure (b3*12), NOT E8xE8 roots (480)
+    #   - visible_sector = 125: Effective visible residues (NOT gauge generators)
+    #   - sterile_sector = 163: Derived from arbitrary values (288 - 125)
+    #
+    # This registry is used for PHENOMENOLOGICAL FITTING, not rigorous derivation.
+    # ===========================================================================
 
     # ===========================================================================
     # THE JC IDENTITY: Δ_jc ≡ Λ_JC ≡ 153
@@ -168,7 +197,7 @@ class FormulasRegistry:
     # 1.0    | The Monad       | watts_constant (Absolute Precision Anchor)
     # 24     | The Pleroma     | b3 (Dimensional Totality)
     # 135    | The Sophia      | shadow_sector (Visible Gates / Wisdom)
-    # 144    | The Demiurge    | chi_eff (Pressure Divisor / Craftsman)
+    # 72     | The Demiurge    | chi_eff (Effective Chiral Index / Craftsman)
     # 153    | The Christos    | christ_constant (Joint Closure / Redeemer)
     # 163    | The Barbelo     | odowd_bulk_pressure (Bulk Pressure / First Thought)
     # 288    | The Ennoia      | roots_total (Logic Closure / Universal Mind)
@@ -464,9 +493,20 @@ class FormulasRegistry:
         # =======================================================================
         self._b3 = 24                    # Third Betti number of G2 manifold
 
-        # v17.2-Absolute: Derived values (not hardcoded seeds)
-        # chi_eff is DERIVED from B3^2 / 4
-        self._chi_eff = (self._b3 ** 2) // 4  # 576 / 4 = 144
+        # v20.0: chi_eff = 72 (effective chiral index)
+        # n_gen = |chi|/24 = 72/24 = 3 (standard M-theory index theorem)
+        # Singular TCS G2 models CAN have non-zero effective Euler characteristic
+        # Reference: Acharya-Witten 2001 (arXiv:hep-th/0109152)
+        #
+        # LANDSCAPE SELECTION NOTE: Within the G2 landscape, many TCS constructions
+        # exist with different effective |chi| values. The value |chi| = 72 is
+        # selected because it yields exactly 3 fermion generations via the standard
+        # M-theory index theorem (n_gen = |chi|/24). This is a form of anthropic
+        # selection: we observe 3 generations, therefore we select from the landscape
+        # the manifold that produces this observation. This is NOT a first-principles
+        # derivation of why 3 generations exist, but rather an identification of
+        # which G2 manifold is consistent with observation.
+        self._chi_eff = 72  # Effective chiral index: |chi| = 72
 
         # Shadow and Christ are the ONLY closure seeds
         self._shadow_sector = 135        # Shadow Gates
@@ -560,22 +600,64 @@ class FormulasRegistry:
 
     @property
     def chi_eff(self) -> int:
-        """Effective Euler characteristic: B3^2 / 4."""
+        """
+        Effective chiral index: |chi| = 72.
+
+        n_gen = |chi|/24 = 72/24 = 3 (standard M-theory index theorem)
+
+        JUSTIFICATION (per Gemini peer review, approved 2026-01-11):
+        While smooth compact G2 manifolds have chi = 0, singular TCS (twisted
+        connected sum) G2 models CAN exhibit non-zero effective Euler
+        characteristic due to singularities.
+
+        LANDSCAPE SELECTION: The value |chi| = 72 is selected from the G2 landscape
+        to match the observed 3 fermion generations. This is anthropic selection:
+        we identify which manifold is consistent with observation, not a first-principles
+        derivation of why n_gen = 3.
+
+        Reference: Acharya, B.S. & Witten, E. (2001). arXiv:hep-th/0109152
+        """
         return self._chi_eff
 
     @property
     def roots_total(self) -> int:
-        """E8 x E8 root lattice total."""
+        """
+        Logic Closure Total (288 = b3 * 12 = 24 * 12).
+
+        This represents octonionic/24-dimensional structure counts, NOT E8xE8 roots
+        (which would be 480 = 240 + 240). The 288 arises from b3=24 times the
+        spinor connection rank 12, providing a 24D-dimensional basis for parameter projection.
+
+        Equivalently: 288 = VISIBLE_GATES(135) + JC_CONSTANT(153), showing the
+        Gate Closure interpretation is consistent with the octonionic structure.
+        """
         return self._roots_total
 
     @property
     def visible_sector(self) -> int:
-        """Visible sector: 5^3 = 125."""
+        """
+        Effective Visible Sector Residues: 125 observable parameters (masses, couplings, angles)
+        from manifold spectrum projection.
+
+        NOTE: This is NOT gauge group dimension - no Lie group has 125 generators.
+        The 125 = 5^3 is a counting of effective degrees of freedom:
+        - Standard Model: 12 generators
+        - SU(5) GUT: 24 generators
+        - SO(10) GUT: 45 generators
+        - E6 GUT: 78 generators
+        The value 125 = 5^3 counts phenomenological parameters, not gauge algebra dimension.
+        """
         return self._visible_sector
 
     @property
     def sterile_sector(self) -> int:
-        """Sterile sector: 288 - 125 = 163."""
+        """
+        Sterile sector: 288 - 125 = 163.
+
+        WARNING (per Gemini peer review): This is derived from arbitrary values.
+        Both roots_total(288) and visible_sector(125) are numerological choices
+        without rigorous mathematical basis (see their docstrings for details).
+        """
         return self._sterile_sector
 
     @property
@@ -922,8 +1004,8 @@ class FormulasRegistry:
 
         This is the ADDITIVE correction to the Fine Structure base (137).
         """
-        # DEMIURGE (chi_eff) = 144 = B3²/4
-        # DEMIURGE - PLEROMA/DECAD = 144 - 24/10 = 144 - 2.4 = 141.6
+        # DEMIURGE (chi_eff) = 72 (effective chiral index)
+        # DEMIURGE - PLEROMA/DECAD = 72 - 24/10 = 72 - 2.4 = 69.6
         demiurge_adjusted = self._chi_eff - (self._b3 / self.DECAD)
         # Divide by DECAD to get the transition scale
         transition_scale = demiurge_adjusted / self.DECAD
@@ -1589,7 +1671,7 @@ class FormulasRegistry:
 
         Purpose: Represents mean energy of three pillars (JC, Visible, Bulk).
         Acts as "Center of Mass" for gate logic, managing L/R spin balance
-        in E8 × E8 lattice.
+        in the 24D octonionic lattice.
         """
         return (self._christ_constant + self._shadow_sector + self._sterile_sector) / 3.0
 
@@ -2408,7 +2490,7 @@ class FormulasRegistry:
         This proves 288 is a sum, not an assumption.
 
         Returns:
-            288 - The E8×E8 root lattice total (same as roots_total)
+            288 - Octonionic/24D structure total (same as roots_total = b3*12)
         """
         return self._roots_total  # Alias for clarity
 
@@ -2564,7 +2646,7 @@ class FormulasRegistry:
         The 144 divisor: B3^2 / 4 = 576 / 4 = 144
 
         Represents the Hexagonal Projection of the bulk.
-        Equals chi_eff but derived from base geometry.
+        NOTE: This is a geometric projection constant, distinct from chi_eff (72).
         """
         return self.manifold_area_bulk / 4  # 144
 
@@ -2842,7 +2924,7 @@ class FormulasRegistry:
         """
         Verify the Integer Closure: 135 + 153 = 288
 
-        Shadow + Logos = Total Roots (E8xE8)
+        Shadow + Logos = Logic Closure Total (octonionic/24D structure)
         """
         return (self._shadow_sector + self._christ_constant) == self._roots_total
 
@@ -4040,16 +4122,17 @@ class FormulasRegistry:
                 },
                 "chi_eff": {
                     "value": self.chi_eff,
-                    "name": "Effective Euler Characteristic",
-                    "formula": "B3^2 / 4 = 576 / 4 = 144",
+                    "name": "Effective Chiral Index",
+                    "formula": "|chi| = 72; n_gen = |chi|/24 = 3 (standard M-theory)",
                     "gnostic_name": "The Demiurge",
-                    "gnostic_role": "The Pressure Divisor; the Craftsman",
-                    "pm_path": "topology.chi_effective"
+                    "gnostic_role": "The Effective Chiral Index; the Craftsman",
+                    "pm_path": "topology.chi_effective",
+                    "reference": "Acharya-Witten 2001 (arXiv:hep-th/0109152)"
                 },
                 "roots": {
                     "value": self.roots_total,
-                    "name": "Total Root Count",
-                    "description": "E8 x E8 root lattice",
+                    "name": "Logic Closure Total",
+                    "description": "Octonionic/24D structure (288 = b3 * 12)",
                     "gnostic_name": "The Ennoia",
                     "gnostic_role": "Universal Mind; Logic Closure",
                     "pm_path": "topology.roots_total"
