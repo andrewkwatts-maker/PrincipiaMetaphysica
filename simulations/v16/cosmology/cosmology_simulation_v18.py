@@ -57,6 +57,32 @@ from .speed_of_light_v17_2 import SpeedOfLightV17
 # Get SSOT values
 _REG = get_registry()
 
+# =============================================================================
+# EXPERIMENTAL COMPARISON VALUES (SSOT module-level constants)
+# =============================================================================
+
+# DESI 2025 Dark Energy Survey values
+DESI_COSMOLOGY = {
+    'w0': (-0.957, 0.067),          # w0 ± error
+    'wa': (-0.99, 0.33),            # wa ± error
+    'Omega_m': (0.315, 0.007),      # Matter density ± error
+}
+
+# Planck 2018 CMB values
+PLANCK_COSMOLOGY = {
+    'H0_early': (67.4, 0.5),        # Early universe H0 ± error (km/s/Mpc)
+}
+
+# SH0ES 2025 Local measurements
+SHOES_COSMOLOGY = {
+    'H0_local': (73.04, 1.04),      # Local H0 ± error (km/s/Mpc)
+}
+
+# CODATA 2022 constants
+CODATA_COSMOLOGY = {
+    'c_light': 299792458.0,         # Speed of light (m/s) - exact by definition
+}
+
 
 class CosmologySimulationV18(SimulationBase):
     """
@@ -169,11 +195,9 @@ class CosmologySimulationV18(SimulationBase):
         w0_thawing = -1.0 + 1.0 / b3  # = -23/24 = -0.9583...
         wa_thawing = -1.0 / np.sqrt(b3)  # = -1/sqrt(24) = -0.204
 
-        # DESI 2025 experimental values for validation
-        desi_w0 = -0.957
-        desi_w0_err = 0.067
-        desi_wa = -0.99
-        desi_wa_err = 0.33
+        # DESI 2025 experimental values for validation (from module constants)
+        desi_w0, desi_w0_err = DESI_COSMOLOGY['w0']
+        desi_wa, desi_wa_err = DESI_COSMOLOGY['wa']
 
         # Compute sigma deviations
         w0_sigma = abs(w0_thawing - desi_w0) / desi_w0_err
@@ -189,16 +213,15 @@ class CosmologySimulationV18(SimulationBase):
         sin2_theta = 1.0 / k_gimel  # ~ 0.0812
         cos2_theta = 1.0 - sin2_theta  # ~ 0.9188
 
-        H0_early = 67.4  # Planck CMB value
+        H0_early = PLANCK_COSMOLOGY['H0_early'][0]  # Planck CMB value
         H0_local = H0_early / cos2_theta  # ~ 73.35 km/s/Mpc
 
         results["cosmology.H0_early"] = H0_early
         results["cosmology.H0_local"] = H0_local
         results["cosmology.hubble_tension_resolved"] = True
 
-        # Check Hubble tension resolution
-        shoes_h0 = 73.04
-        shoes_err = 1.04
+        # Check Hubble tension resolution (from module constants)
+        shoes_h0, shoes_err = SHOES_COSMOLOGY['H0_local']
         h0_sigma = abs(H0_local - shoes_h0) / shoes_err
         results["cosmology.H0_sigma"] = h0_sigma
 
@@ -229,7 +252,7 @@ class CosmologySimulationV18(SimulationBase):
         epsilon = 1.0 / 28800
         c_derived = Christos / (Sophia * epsilon)  # Placeholder
         # Actual derivation uses more complex formula
-        c_derived = 299792458.0  # Using CODATA for now (proper derivation in SpeedOfLightV17)
+        c_derived = CODATA_COSMOLOGY['c_light']  # Using CODATA for now (proper derivation in SpeedOfLightV17)
 
         results["cosmology.c_derived"] = c_derived
 

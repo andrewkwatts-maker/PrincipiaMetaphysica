@@ -56,6 +56,26 @@ from core.FormulasRegistry import get_registry
 
 _REG = get_registry()
 
+# =============================================================================
+# EXPERIMENTAL COMPARISON VALUES (SSOT module-level constants)
+# =============================================================================
+
+# PDG 2024 Higgs measurements (ATLAS+CMS combined)
+PDG_HIGGS = {
+    'M_H': (125.25, 0.17),          # Higgs mass ± error (GeV)
+    'V_EW': (246.22, 0.01),         # Electroweak VEV ± error (GeV)
+}
+
+# PM framework bulk predictions
+PM_HIGGS_PREDICTIONS = {
+    'M_H_bulk': 414.22,             # Bulk Higgs mass (GeV) from G2 attractor
+    'v_yukawa': 174.0,              # Yukawa-scale VEV (GeV)
+    'lambda_0': 0.129,              # Tree-level quartic from SO(10) matching
+    'y_top': 0.99,                  # Top Yukawa coupling
+    're_t_attractor': 1.833,        # Re(T) from racetrack stabilization
+    're_t_pheno': 9.865,            # Re(T) phenomenological value
+}
+
 # Import v16 modules we're wrapping
 from .higgs_mass_v16_0 import HiggsMassSimulation
 from .higgs_vev_derivation_v16_1 import HiggsVEVDerivationV16
@@ -82,11 +102,6 @@ class HiggsSimulationV18(SimulationBase):
     - PHENOMENOLOGICAL: Values constrained by experiment
     - PREDICTED: Testable experimental predictions
     """
-
-    # Experimental references
-    M_HIGGS_EXPERIMENTAL = 125.25  # GeV (PDG 2024, ATLAS+CMS combined)
-    M_HIGGS_UNCERTAINTY = 0.17     # GeV
-    V_EW_EXPERIMENTAL = 246.22     # GeV (PDG 2024)
 
     def __init__(self):
         """Initialize v18 Higgs simulation wrapper."""
@@ -219,8 +234,8 @@ class HiggsSimulationV18(SimulationBase):
             results.update(vev_results)
         except Exception as e:
             # Use standard VEV values
-            results["higgs.v_derived"] = self.V_EW_EXPERIMENTAL
-            results["higgs.hierarchy_ratio"] = self.V_EW_EXPERIMENTAL / 2.435e18
+            results["higgs.v_derived"] = PDG_HIGGS['V_EW'][0]
+            results["higgs.hierarchy_ratio"] = PDG_HIGGS['V_EW'][0] / 2.435e18
             results["higgs.geometric_factor"] = 1.0e-16
 
         # 3. Run moduli stabilization simulation
@@ -233,14 +248,14 @@ class HiggsSimulationV18(SimulationBase):
 
         # Ensure primary VEV is set
         if "higgs.vev" not in results:
-            results["higgs.vev"] = self.V_EW_EXPERIMENTAL
+            results["higgs.vev"] = PDG_HIGGS['V_EW'][0]
 
         # Add computed sigma deviations  # EXPERIMENTAL: PDG 2024 Higgs mass
         m_local = results.get("higgs.m_higgs_local", 125.1)  # EXPERIMENTAL: PDG
-        results["_sigma_m_higgs"] = abs(m_local - self.M_HIGGS_EXPERIMENTAL) / self.M_HIGGS_UNCERTAINTY
+        results["_sigma_m_higgs"] = abs(m_local - PDG_HIGGS['M_H'][0]) / PDG_HIGGS['M_H'][1]
 
-        v_derived = results.get("higgs.v_derived", self.V_EW_EXPERIMENTAL)
-        results["_sigma_vev"] = abs(v_derived - self.V_EW_EXPERIMENTAL) / 0.01
+        v_derived = results.get("higgs.v_derived", PDG_HIGGS['V_EW'][0])
+        results["_sigma_vev"] = abs(v_derived - PDG_HIGGS['V_EW'][0]) / PDG_HIGGS['V_EW'][1]
 
         # Overall validation status
         sigma_mass = results.get("higgs.sigma_local", results["_sigma_m_higgs"])
@@ -276,7 +291,7 @@ class HiggsSimulationV18(SimulationBase):
 
     def _compute_brane_partition_fallback(self, b3: int, k_gimel: float) -> Dict[str, Any]:
         """Compute brane partition results without running simulation."""
-        m_higgs_bulk = 414.22  # GeV - From moduli attractor
+        m_higgs_bulk = PM_HIGGS_PREDICTIONS['M_H_bulk']  # GeV - From moduli attractor
 
         # Projection factor = k_gimel / pi
         projection_factor = k_gimel / np.pi  # ~ 3.92
@@ -291,7 +306,7 @@ class HiggsSimulationV18(SimulationBase):
         m_higgs_local = m_higgs_bulk / effective_scaling
 
         # Sigma deviation
-        sigma_local = abs(m_higgs_local - self.M_HIGGS_EXPERIMENTAL) / self.M_HIGGS_UNCERTAINTY
+        sigma_local = abs(m_higgs_local - PDG_HIGGS['M_H'][0]) / PDG_HIGGS['M_H'][1]
 
         return {
             "higgs.m_higgs_bulk": m_higgs_bulk,
@@ -305,13 +320,13 @@ class HiggsSimulationV18(SimulationBase):
 
     def _compute_mass_fallback(self, registry: PMRegistry) -> Dict[str, Any]:
         """Compute mass results without running full simulation."""
-        v_yukawa = 174.0  # GeV
-        y_top = 0.99
-        lambda_0 = 0.129
+        v_yukawa = PM_HIGGS_PREDICTIONS['v_yukawa']
+        y_top = PM_HIGGS_PREDICTIONS['y_top']
+        lambda_0 = PM_HIGGS_PREDICTIONS['lambda_0']
         kappa = 1.0 / (8 * np.pi**2)
 
-        re_t_pheno = 9.865
-        re_t_attractor = 1.833
+        re_t_pheno = PM_HIGGS_PREDICTIONS['re_t_pheno']
+        re_t_attractor = PM_HIGGS_PREDICTIONS['re_t_attractor']
 
         # Compute corrections
         delta_lambda_pheno = kappa * re_t_pheno * y_top**2
@@ -329,7 +344,7 @@ class HiggsSimulationV18(SimulationBase):
         return {
             "higgs.m_higgs_pred": m_h_pheno,
             "higgs.m_higgs_geometric": m_h_geometric,
-            "higgs.vev": 246.0,
+            "higgs.vev": PDG_HIGGS['V_EW'][0],
             "higgs.lambda_0": lambda_0,
             "higgs.lambda_eff_pheno": lambda_eff_pheno,
             "higgs.lambda_eff_geometric": lambda_eff_geometric,

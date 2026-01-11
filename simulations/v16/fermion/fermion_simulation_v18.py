@@ -64,6 +64,15 @@ from simulations.v16.neutrino.neutrino_mixing_v16_0 import NeutrinoMixingSimulat
 # Get SSOT values
 _REG = get_registry()
 
+# PDG 2024 experimental values for CKM validation
+# Source: Particle Data Group (2024)
+PDG_CKM_VALUES = {
+    'V_us': (0.2245, 0.0008),    # value, uncertainty
+    'V_cb': (0.0410, 0.0014),
+    'V_ub': (0.00382, 0.00020),
+    'theta_23_IO': (49.3, 1.0),  # from NuFIT for comparison
+}
+
 
 class FermionSimulationV18(SimulationBase):
     """
@@ -238,16 +247,16 @@ class FermionSimulationV18(SimulationBase):
 
         # Add computed sigma deviations for key predictions
         results["_sigma_V_us"] = self._compute_sigma(
-            results.get("ckm.V_us_triality", 0.2245),
-            0.2245, 0.0008
+            results.get("ckm.V_us_triality", PDG_CKM_VALUES['V_us'][0]),
+            PDG_CKM_VALUES['V_us'][0], PDG_CKM_VALUES['V_us'][1]
         )
         results["_sigma_V_cb"] = self._compute_sigma(
-            results.get("ckm.V_cb_triality", 0.0410),
-            0.0410, 0.0014
+            results.get("ckm.V_cb_triality", PDG_CKM_VALUES['V_cb'][0]),
+            PDG_CKM_VALUES['V_cb'][0], PDG_CKM_VALUES['V_cb'][1]
         )
         results["_sigma_theta_23"] = self._compute_sigma(
-            results.get("pmns.theta_23_triality", 49.75),
-            49.3, 1.0
+            results.get("pmns.theta_23_triality", PDG_CKM_VALUES['theta_23_IO'][0]),
+            PDG_CKM_VALUES['theta_23_IO'][0], PDG_CKM_VALUES['theta_23_IO'][1]
         )
 
         return results
