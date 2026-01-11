@@ -642,7 +642,7 @@ def build_pm_dependency_graph() -> DependencyGraph:
     graph.register(
         "electroweak.v_higgs",
         depends_on=["seeds.chi_eff"],
-        compute_fn=lambda deps: 246.22 * (144.0 / deps["seeds.chi_eff"]) ** 0.5,
+        compute_fn=lambda deps: 246.22 * (72.0 / deps["seeds.chi_eff"]) ** 0.5,
         metadata={'level': 2, 'description': 'Higgs VEV in GeV'}
     )
 
@@ -717,7 +717,7 @@ def build_seed_values() -> Dict[str, Any]:
     """
     return {
         "seeds.b3": 24,
-        "seeds.chi_eff": 144,
+        "seeds.chi_eff": 72,  # chi_eff = 72 per M-theory index theorem (|chi|/24 = 72/24 = 3 generations)
         "seeds.christ_constant": 153,
         "seeds.visible_gates": 135,
         "seeds.bulk_pressure": 163,

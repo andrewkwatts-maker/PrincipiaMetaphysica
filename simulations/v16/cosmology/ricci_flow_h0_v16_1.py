@@ -40,6 +40,9 @@ from simulations.base import (
     PMRegistry,
 )
 
+from core.FormulasRegistry import get_registry
+_REG = get_registry()
+
 
 class RicciFlowH0V16(SimulationBase):
     """
