@@ -151,7 +151,9 @@ class YukawaTexturesV18(SimulationBase):
 
     @property
     def required_inputs(self) -> List[str]:
-        return ["geometry.k_gimel", "topology.b3", "higgs.vev_geometric"]
+        # Uses internal constants (phi, k_gimel, b3) rather than registry values
+        # for consistency with the geometric scaling analysis
+        return []
 
     @property
     def output_params(self) -> List[str]:

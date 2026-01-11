@@ -188,7 +188,16 @@ from .appendix_l_v16_0 import AppendixLValuesSummary
 from .appendix_m_v16_0 import AppendixMConsciousnessSpeculation
 from .appendix_n_v16_0 import AppendixNG2Landscape
 
+# v19 Appendices (M-R: Mathematical Foundations)
+from .appendix_m_tensor_calc_v19 import AppendixMTensorCalculus
+from .appendix_n_vielbein_v19 import AppendixNVielbein
+from .appendix_o_kk_reduction_v19 import AppendixOKKReduction
+from .appendix_p_g2_holonomy_v19 import AppendixPG2Holonomy
+from .appendix_q_index_theorem_v19 import AppendixQIndexTheorem
+from .appendix_r_vacuum_stability_v19 import AppendixRVacuumStabilityV19
+
 __all__ = [
+    # v16.0 Appendices (A-N)
     'AppendixAMathFoundations',
     'AppendixBComputationalMethods',
     'AppendixCExtendedDerivations',
@@ -204,6 +213,13 @@ __all__ = [
     'AppendixLValuesSummary',
     'AppendixMConsciousnessSpeculation',
     'AppendixNG2Landscape',
+    # v19.0 Appendices (M-R: Mathematical Foundations)
+    'AppendixMTensorCalculus',
+    'AppendixNVielbein',
+    'AppendixOKKReduction',
+    'AppendixPG2Holonomy',
+    'AppendixQIndexTheorem',
+    'AppendixRVacuumStabilityV19',
 ]
 
 __version__ = "16.0"

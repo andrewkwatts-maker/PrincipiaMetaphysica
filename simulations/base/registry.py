@@ -540,7 +540,9 @@ class PMRegistry:
             # Determine order based on appendix flag
             if s.appendix and s.subsection_id:
                 # Appendices come after main sections (100+)
-                order = 100 + ord(s.subsection_id.upper()) - ord('A')
+                # Handle subsection_id formats like "R" or "R.1"
+                appendix_letter = s.subsection_id[0].upper()
+                order = 100 + ord(appendix_letter) - ord('A')
             elif s.section_id and s.section_id[0].isdigit():
                 order = int(s.section_id.split('.')[0])
             else:
