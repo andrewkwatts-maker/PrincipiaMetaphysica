@@ -102,7 +102,7 @@ Total execution time: ~200 ms for all 8 domains
 """
 
 # Version information
-__version__ = "16.0.0"
+__version__ = "19.2"
 __framework_version__ = "v16"
 __author__ = "Andrew Keith Watts"
 

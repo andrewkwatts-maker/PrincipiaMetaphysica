@@ -14,4 +14,4 @@ __all__ = [
     "AxionResult",
 ]
 
-__version__ = "18.3"
+__version__ = "19.2"

@@ -196,4 +196,4 @@ __all__ = [
     'mpc_to_planck_length',
 ]
 
-__version__ = "1.1.0"
+__version__ = "19.2"

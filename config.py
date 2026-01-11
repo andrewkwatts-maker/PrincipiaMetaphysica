@@ -68,9 +68,10 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "17.2-ABSOLUTE"
+VERSION = "19.2-SOVEREIGN"
+VERSION_SHORT = "19.2"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
-STERILE_STATUS = True  # v17.2: Zero-degree-of-freedom model - all constants derived
+STERILE_STATUS = True  # v19.2: Zero-degree-of-freedom model - all constants derived
 
 import numpy as np
 from dataclasses import dataclass, field, asdict

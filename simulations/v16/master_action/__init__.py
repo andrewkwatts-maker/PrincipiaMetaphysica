@@ -47,4 +47,4 @@ __all__ = [
     'run_master_action_simulation',
 ]
 
-__version__ = "18.0"
+__version__ = "19.2"

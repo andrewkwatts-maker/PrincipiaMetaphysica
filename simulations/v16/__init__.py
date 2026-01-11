@@ -128,4 +128,4 @@ __all__ = [
     'run_quantum_bio_simulation',
 ]
 
-__version__ = "18.0"
+__version__ = "19.2"

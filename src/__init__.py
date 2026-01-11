@@ -16,7 +16,7 @@ from .validation.anisotropy_check import verify_4_pattern_orthogonality, Anisotr
 from .audit.certificate_stack import CertificateStack, CertificateStatus
 from .audit.omega_seal_generator import generate_omega_seal, OmegaSeal
 
-__version__ = "16.2"
+__version__ = "19.2"
 __all__ = [
     "RootDerivation",
     "BulkInsulationConstant",

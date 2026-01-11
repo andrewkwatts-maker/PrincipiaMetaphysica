@@ -31,4 +31,4 @@ __all__ = [
     'require_demon_lock',
 ]
 
-__version__ = "16.2"
+__version__ = "19.2"
