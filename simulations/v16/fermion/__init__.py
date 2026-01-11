@@ -52,4 +52,4 @@ __all__ = [
 if _MASS_RATIO_AVAILABLE:
     __all__.append('MassRatioSimulation')
 
-__version__ = "18.3"
+__version__ = "19.2"

@@ -464,8 +464,8 @@
             if (!path) return null;
 
             // Handle system.version as special case - single source of truth
-            if (path === 'system.version' || path === 'meta.version') {
-                return this._data?.version || this._namedConstants?.version || '17.2';
+            if (path === 'system.version' || path === 'meta.version' || path === 'pm.version') {
+                return this._data?.version || this._namedConstants?.version || '19.2';
             }
 
             // Track if we need to extract a specific field (e.g., .uncertainty)
@@ -751,7 +751,7 @@
     // ========================================================================
 
     const CACHE_PREFIX = 'pm_';
-    const CACHE_VERSION = '17.2';
+    const CACHE_VERSION = '19.2';
 
     // Cache configuration per component (TTL in seconds)
     const CACHE_CONFIG = {
@@ -891,7 +891,7 @@
                     const gateStats = gates72?.summary || {};
 
                     PM._data = {
-                        version: metadata?.version || namedConstants?.version || '17.2',
+                        version: metadata?.version || namedConstants?.version || '19.2',
                         parameters: parameters?.parameters || {},
                         simulations: simulations?.simulations || {},
                         formulas: formulas || { formulas: {}, count: 0 },

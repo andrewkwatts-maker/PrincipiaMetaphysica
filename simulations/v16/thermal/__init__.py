@@ -17,4 +17,4 @@ __all__ = [
     'run_thermal_simulation',
 ]
 
-__version__ = "18.0"
+__version__ = "19.2"

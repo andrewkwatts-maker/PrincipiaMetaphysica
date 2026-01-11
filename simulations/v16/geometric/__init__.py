@@ -29,4 +29,4 @@ __all__ = [
     'GeometricSimulationV18',
     'run_geometric_simulation',
 ]
-__version__ = "18.0"
+__version__ = "19.2"

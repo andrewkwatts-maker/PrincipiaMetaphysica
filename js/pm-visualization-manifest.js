@@ -1,16 +1,16 @@
 /**
- * PM Visualization Manifest v17.2
+ * PM Visualization Manifest v19.2
  * ===============================
  *
  * Maps high-fidelity visualizations to theoretical sections.
  * Provides GetImagePath for local repo references and code display.
  *
- * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+ * Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
  */
 
 const PM_VISUALIZATION_MANIFEST = {
-    version: "17.2",
-    manuscript_id: "PM-v17.2-FINAL",
+    version: "19.2",
+    manuscript_id: "PM-v19.2-SOVEREIGN",
 
     /**
      * Get the local image path for a visualization

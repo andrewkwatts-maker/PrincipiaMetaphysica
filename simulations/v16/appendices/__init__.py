@@ -222,4 +222,4 @@ __all__ = [
     'AppendixRVacuumStabilityV19',
 ]
 
-__version__ = "16.0"
+__version__ = "19.2"

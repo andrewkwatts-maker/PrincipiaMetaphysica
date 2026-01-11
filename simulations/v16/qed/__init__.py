@@ -47,4 +47,4 @@ __all__ = [
     'run_qed_simulation',
 ]
 
-__version__ = "18.0"
+__version__ = "19.2"

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Principia Metaphysica - Run All Simulations v17.2
+Principia Metaphysica - Run All Simulations v19.2
 ===================================================
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
@@ -77,7 +77,7 @@ Phase 6 - v16.2 Sterile Model Paper Structure (DOI: 10.5281/zenodo.18079602):
 OUTPUT STRUCTURE:
 {
   "metadata": {
-    "version": "17.2",
+    "version": "19.2",
     "timestamp": "2025-12-28T10:30:00.000Z",
     "git": {
       "commit_hash": "abc1234...",
@@ -1131,6 +1131,25 @@ class SimulationRunner:
                                              "is_scientific": False,
                                              "display_in_params": False
                                          })
+            # Register pm.version for simulation access (canonical version param)
+            if not self.registry.has_param("pm.version"):
+                self.registry.set_param("pm.version", FormulasRegistry.VERSION,
+                                         source="SYSTEM:FormulasRegistry",
+                                         status="SYSTEM",
+                                         metadata={
+                                             "description": "PM framework version (full)",
+                                             "is_scientific": False,
+                                             "display_in_params": False
+                                         })
+            if not self.registry.has_param("pm.version.short"):
+                self.registry.set_param("pm.version.short", FormulasRegistry.VERSION_SHORT,
+                                         source="SYSTEM:FormulasRegistry",
+                                         status="SYSTEM",
+                                         metadata={
+                                             "description": "PM framework version (short)",
+                                             "is_scientific": False,
+                                             "display_in_params": False
+                                         })
         except Exception as e:
             if self.verbose:
                 print(f"[WARN] Could not register system.version: {e}")
@@ -1717,6 +1736,8 @@ class SimulationRunner:
         Returns:
             Complete output data structure
         """
+        from core.FormulasRegistry import FormulasRegistry
+
         if self.verbose:
             print("\n[EXPORT] Generating theory_output.json")
             print("-" * 80)
@@ -1737,11 +1758,12 @@ class SimulationRunner:
 
         output_data = {
             "metadata": {
-                "version": "17.2",
+                "version": FormulasRegistry.VERSION_SHORT,
+                "version_full": FormulasRegistry.VERSION,
                 "doi": "10.5281/zenodo.18079602",
                 "model_type": "STERILE",
                 "timestamp": datetime.now().isoformat(),
-                "description": "Principia Metaphysica v17.2 - Sterile Geometric Framework",
+                "description": f"Principia Metaphysica v{FormulasRegistry.VERSION} - Sterile Geometric Framework",
                 "schemaMode": self.schema_mode,
                 "uqMode": self.uq_mode,
                 "git": git_metadata,
@@ -1750,7 +1772,7 @@ class SimulationRunner:
                 "compute_time_ms": validation_report["total_execution_time_ms"],
             },
             "derivation_logic": {
-                "framework": "Principia Metaphysica v17.2 - Sterile G2 Residue Model",
+                "framework": f"Principia Metaphysica v{FormulasRegistry.VERSION} - Sterile G2 Residue Model",
                 "base_manifold": "TCS G2 (Twisted Connected Sum)",
                 "topology_id": "TCS #187",
                 "key_assumptions": [
@@ -1845,10 +1867,11 @@ class SimulationRunner:
         """
         from datetime import datetime, timezone
         import re
+        from core.FormulasRegistry import FormulasRegistry
 
         simulations_dir = Path(__file__).parent / "simulations" / "v16"
         index_data = {
-            "version": data.get('metadata', {}).get('version', '17.2'),
+            "version": data.get('metadata', {}).get('version', FormulasRegistry.VERSION_SHORT),
             "generated": datetime.now(timezone.utc).isoformat().replace('+00:00', 'Z'),
             "total_scripts": 0,
             "categories": {}
