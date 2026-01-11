@@ -1,43 +1,35 @@
 #!/usr/bin/env python3
 """
-Dark Matter Residue Module v20
-==============================
+Dark Matter Residue Module v20 - SPECULATIVE PHENOMENOLOGICAL MODEL
+====================================================================
 
-Derives the dark matter density parameter Omega_DM from the 7D/3D volume ratio
-of the G2 manifold. In Principia Metaphysica v20, dark matter is not a separate
-particle species but a geometric residue - the portion of the E8 x E8 root
-structure that resides in the bulk (hidden) sector.
+STATUS: SPECULATIVE NUMEROLOGY - NOT RIGOROUS PHYSICS
+------------------------------------------------------
+Per Gemini peer review (2026-01-11), this module presents a SPECULATIVE
+phenomenological model with significant caveats:
 
-Key Insight:
-    The 288 roots of E8 x E8 partition into:
+1. THE 288 STRUCTURE: The 288 = b3 * 12 (24 * 12) represents an octonionic/
+   24-dimensional basis structure. It also emerges from "Logic Closure"
+   (135 + 153). This is an internal numerological pattern, not gauge theory.
+
+2. KAPPA = 4.25 IS PURE FINE-TUNING: The calibration factor is explicitly
+   chosen to match Planck 2018 data (DM/baryon ~ 5.37). This is curve-fitting,
+   not derivation from first principles.
+
+3. 125 = 5^3 IS ARBITRARY: The claim that the visible sector has 125 "roots"
+   lacks any clear connection to a known gauge group or particle physics.
+
+4. NO PHYSICAL MECHANISM: What particles constitute this "dark matter"? What
+   are their masses? Cross-sections? Decay channels? None are specified.
+
+This module should be treated as speculative numerology exploring whether
+certain number patterns might correspond to cosmological observations, NOT
+as a rigorous derivation of dark matter physics.
+
+Original claims (preserved for context, but DISPUTED):
+    The 288 roots partition into:
     - N_visible = 125 (5^3): Matter sector roots (observable particles)
     - N_hidden = 163 (O'Dowd Bulk): Hidden sector roots (dark matter)
-
-PHYSICAL MECHANISM (per Gemini 2.5 Pro peer review 2026-01-11):
-    The most plausible mechanism is a hybrid model:
-    1. TOPOLOGICAL HIDING: Hidden E8 sector wrapped around different G2 3-cycles
-    2. FLUX-INDUCED SUSY BREAKING: Hidden sector gaugino as DM candidate
-    3. MASS HIERARCHY: DM particle mass set by moduli stabilization
-
-    The key formula connecting roots to cosmological density is:
-
-    Omega_DM = Omega_b * (m_DM / m_p) * (N_visible / N_hidden)
-
-    Where:
-    - m_DM/m_p ~ 7.05 (from moduli stabilization - DM is ~7x proton mass)
-    - N_visible/N_hidden = 125/163 ~ 0.767
-    - This gives Omega_DM/Omega_b ~ 5.4 (matching observation!)
-
-    The mass ratio is NOT arbitrary - it emerges from G2 moduli VEVs.
-    The hidden sector gaugino mass is set by the SUSY breaking scale.
-
-DERIVATION STATUS:
-    The 163/125 ratio is TOPOLOGICAL (from E8xE8 bundle structure).
-    The m_DM/m_p ratio is PHENOMENOLOGICAL (calibrated to match Omega_DM).
-    Future work: Derive m_DM from first-principles G2 moduli stabilization.
-
-The DM/baryon ratio ~ 5.4 emerges from:
-    (m_DM / m_p) * (N_visible / N_hidden) = 7.05 * (125/163) ~ 5.4
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -92,24 +84,43 @@ class DarkMatterResult:
 
 class DarkMatterResidueV20(SimulationBase):
     """
-    v20 Dark Matter Derivation from Hidden Sector Volume.
+    v20 Dark Matter Derivation - SPECULATIVE PHENOMENOLOGICAL MODEL.
 
-    Derives dark matter density Omega_DM from the partition of E8 x E8
-    roots between visible (125) and hidden (163) sectors. Dark matter
-    is the geometric residue of the bulk manifold structure.
+    WARNING: This is a SPECULATIVE phenomenological model, NOT rigorous physics.
 
-    Key Numbers:
-        N_total = 288 (E8 x E8 roots)
-        N_visible = 125 = 5^3 (matter sector)
-        N_hidden = 163 (O'Dowd bulk, dark sector)
+    This module explores a numerological approach to dark matter density,
+    using internal numbers (288 = b3 * 12 = 24 * 12, octonionic/24D basis).
+    The 288 also emerges from "Logic Closure" (135 + 153). The calibration
+    factor kappa = 4.25 is a PHENOMENOLOGICAL FIT to Planck 2018 data.
 
-    The ratio N_hidden/N_total ~ 0.566 maps to Omega_DM/Omega_m ~ 0.85.
+    Key Numbers (SPECULATIVE - NOT FROM GAUGE THEORY):
+        N_total = 288 = b3 * 12 (24 * 12, octonionic/24D basis)
+        N_visible = 125 = 5^3 (arbitrary assignment, no gauge theory basis)
+        N_hidden = 163 (remainder, claimed as "dark sector")
+
+    The ratio N_hidden/N_total ~ 0.566 is then FITTED via kappa = 4.25
+    to approximately match Omega_DM/Omega_b ~ 5.4.
+
+    Per Gemini peer review (2026-01-11): This should be treated as speculative
+    numerology, not fundamental physics derivation.
     """
 
+    # DISCLAIMER for runtime warning
+    DISCLAIMER = (
+        "WARNING: This module presents a SPECULATIVE phenomenological model. "
+        "The 288 = b3 * 12 (24 * 12) represents an octonionic/24-dimensional structure. "
+        "The calibration kappa = 4.25 is a PHENOMENOLOGICAL FIT "
+        "to match Planck 2018 data, with no rigorous derivation. The dark matter "
+        "interpretation lacks a concrete physical mechanism (particle type, mass, "
+        "interactions). Per Gemini peer review 2026-01-11, this should be treated "
+        "as speculative numerology, not fundamental physics."
+    )
+
     # Topological constants from FormulasRegistry
-    N_TOTAL = 288      # E8 x E8 roots (roots_total)
-    N_VISIBLE = 125    # Matter sector (visible_sector = 5^3)
-    N_HIDDEN = 163     # Bulk sector (sterile_sector)
+    # NOTE: 288 = b3 * 12 (24 * 12, octonionic basis)
+    N_TOTAL = 288      # b3 * 12 = 24 * 12 (octonionic/24D structure)
+    N_VISIBLE = 125    # Arbitrary assignment (5^3, no gauge theory basis)
+    N_HIDDEN = 163     # Remainder (claimed as "sterile sector")
 
     # Planck 2018 cosmological parameters
     OMEGA_M_PLANCK = 0.3111       # Total matter density
@@ -141,12 +152,12 @@ class DarkMatterResidueV20(SimulationBase):
             domain="cosmology",
             title="Dark Matter from Hidden Sector Volume",
             description=(
-                "Derives dark matter density Omega_DM from the geometric "
-                "partition of E8 x E8 roots. The 163/288 volume fraction "
-                "of the hidden sector maps to the observed DM abundance."
+                "SPECULATIVE: Derives dark matter density Omega_DM from the "
+                "partition of 288 = b3 * 12 (octonionic/24D structure). The "
+                "163/288 volume fraction of the hidden sector is fitted to DM abundance."
             ),
-            section_id="5",
-            subsection_id="5.4"
+            section_id="B",
+            subsection_id="B.2"
         )
 
     @property
@@ -193,6 +204,8 @@ class DarkMatterResidueV20(SimulationBase):
         """
         Execute dark matter residue derivation from hidden sector geometry.
 
+        WARNING: This is a SPECULATIVE phenomenological model. See DISCLAIMER.
+
         The derivation chain:
         1. Compute volume ratios from root partition (163/288, 125/288)
         2. Map hidden sector volume to dark matter fraction
@@ -202,6 +215,13 @@ class DarkMatterResidueV20(SimulationBase):
         Returns:
             Dictionary with all derived dark matter quantities
         """
+        # Print disclaimer at start of run
+        print("\n" + "=" * 70)
+        print("DARK MATTER RESIDUE v20 - SPECULATIVE MODEL")
+        print("=" * 70)
+        print(self.DISCLAIMER)
+        print("=" * 70 + "\n")
+
         self._ensure_inputs(registry)
 
         # Get topological parameters from registry (or use defaults)
@@ -269,7 +289,14 @@ class DarkMatterResidueV20(SimulationBase):
         # Use empirical calibration to match Planck
         # The key insight: N_hidden/N_visible controls the ratio
         # Calibration factor accounts for projection details
-        calibration = 4.25  # Empirical: gives DM/b ~ 5.37
+        #
+        # PHENOMENOLOGICAL FIT WARNING (per Gemini peer review 2026-01-11):
+        # This kappa = 4.25 is a PURE PHENOMENOLOGICAL FIT chosen specifically
+        # to reproduce the Planck 2018 DM/baryon ratio of ~5.37. There is NO
+        # rigorous derivation of this value from first principles. It is
+        # curve-fitting, not physics derivation. The value was adjusted until
+        # the output matched observations - this is the definition of fine-tuning.
+        calibration = 4.25  # PHENOMENOLOGICAL FIT - NOT DERIVED (gives DM/b ~ 5.37)
 
         Omega_DM_derived = self.OMEGA_B_PLANCK * volume_ratio * calibration
         Omega_b_derived = self.OMEGA_B_PLANCK
@@ -381,22 +408,23 @@ class DarkMatterResidueV20(SimulationBase):
                 label="(DM.1)",
                 latex=r"\frac{V_{\text{hidden}}}{V_{\text{total}}} = \frac{N_{\text{hidden}}}{N_{\text{total}}} = \frac{163}{288} \approx 0.566",
                 plain_text="V_hidden/V_total = N_hidden/N_total = 163/288 ~ 0.566",
-                category="DERIVED",
+                category="SPECULATIVE",
                 description=(
-                    "Hidden sector volume fraction from E8 x E8 root partition. "
-                    "The 163 bulk roots represent the dark sector, while 125 "
-                    "visible roots represent the matter sector."
+                    "SPECULATIVE: Hidden sector volume fraction. The 288 = b3 * 12 "
+                    "(24 * 12) represents an octonionic/24-dimensional structure. "
+                    "The 125/163 partition is arbitrary, not from gauge theory."
                 ),
                 input_params=["topology.sterile_sector", "topology.roots_total"],
                 output_params=["cosmology.volume_ratio_hidden"],
                 derivation={
                     "steps": [
-                        "1. E8 x E8 has 288 total roots",
-                        "2. Visible sector: 5^3 = 125 roots (gauge-localized)",
-                        "3. Hidden sector: 288 - 125 = 163 roots (bulk)",
+                        "1. 288 = b3 * 12 = 24 * 12 (octonionic/24D basis)",
+                        "2. Visible sector: 5^3 = 125 (arbitrary, no gauge theory basis)",
+                        "3. Hidden sector: 288 - 125 = 163 (remainder)",
                         "4. Volume ratio: 163/288 = 0.5660",
+                        "NOTE: This is SPECULATIVE numerology, not physics derivation",
                     ],
-                    "references": ["Section 5.4", "Appendix H"]
+                    "references": ["Appendix B.2 (Speculative Material)"]
                 }
             ),
             Formula(
@@ -404,11 +432,11 @@ class DarkMatterResidueV20(SimulationBase):
                 label="(DM.2)",
                 latex=r"\Omega_{\text{DM}} = \Omega_b \cdot \frac{N_{\text{hidden}}}{N_{\text{visible}}} \cdot \kappa \approx 0.27",
                 plain_text="Omega_DM = Omega_b * (N_hidden/N_visible) * kappa ~ 0.27",
-                category="DERIVED",
+                category="PHENOMENOLOGICAL_FIT",
                 description=(
-                    "Dark matter density from hidden/visible sector ratio. "
-                    "The calibration factor kappa accounts for projection from "
-                    "7D to 4D and gauge localization effects."
+                    "PHENOMENOLOGICAL FIT: Dark matter density from hidden/visible ratio. "
+                    "The kappa = 4.25 is a PURE FIT to Planck 2018 data, NOT derived. "
+                    "This is curve-fitting, not physics derivation."
                 ),
                 input_params=[
                     "topology.sterile_sector",
@@ -419,12 +447,12 @@ class DarkMatterResidueV20(SimulationBase):
                 derivation={
                     "steps": [
                         "1. Volume ratio: N_hidden/N_visible = 163/125 ~ 1.304",
-                        "2. Projection factor: (163/125)^(3/7) ~ 1.125",
-                        "3. Gauge localization correction: kappa ~ 4.25",
-                        "4. Omega_DM = 0.0493 * 1.304 * 4.25 ~ 0.27",
-                        "5. Matches Planck 2018: 0.265 +/- 0.007",
+                        "2. kappa = 4.25 is PHENOMENOLOGICAL FIT (not derived!)",
+                        "3. Omega_DM = 0.0493 * 1.304 * 4.25 ~ 0.27",
+                        "4. This MATCHES Planck because kappa was FITTED to match",
+                        "WARNING: This is curve-fitting, not derivation",
                     ],
-                    "references": ["Section 5.4"]
+                    "references": ["Appendix B.2 (Speculative Material)"]
                 }
             ),
             Formula(
@@ -432,23 +460,23 @@ class DarkMatterResidueV20(SimulationBase):
                 label="(DM.3)",
                 latex=r"\frac{\Omega_{\text{DM}}}{\Omega_b} = \frac{N_{\text{hidden}}}{N_{\text{visible}}} \cdot \kappa = \frac{163}{125} \cdot 4.25 \approx 5.54",
                 plain_text="DM/baryon = (N_hidden/N_visible) * kappa = 163/125 * 4.25 ~ 5.54",
-                category="DERIVED",
+                category="PHENOMENOLOGICAL_FIT",
                 description=(
-                    "Dark matter to baryon ratio from root partition. "
-                    "Planck 2018 measures DM/baryon ~ 5.38. The small discrepancy "
-                    "is within observational uncertainties."
+                    "PHENOMENOLOGICAL FIT: DM/baryon ratio. The match to Planck 2018 "
+                    "(~5.38) is achieved by FITTING kappa = 4.25. This is not a "
+                    "prediction - it is a fit parameter chosen to match observation."
                 ),
                 input_params=["topology.sterile_sector", "topology.visible_sector"],
                 output_params=["cosmology.DM_to_baryon_ratio"],
                 derivation={
                     "steps": [
-                        "1. Root ratio: 163/125 = 1.304",
-                        "2. Calibration: kappa = 4.25",
+                        "1. Ratio: 163/125 = 1.304 (from arbitrary partition)",
+                        "2. kappa = 4.25 (PHENOMENOLOGICAL FIT to Planck)",
                         "3. DM/baryon = 1.304 * 4.25 = 5.54",
                         "4. Planck 2018: 0.265/0.0493 = 5.38",
-                        "5. Deviation: ~3% (within uncertainties)",
+                        "5. Match achieved BY CONSTRUCTION (kappa was fitted)",
                     ],
-                    "references": ["Section 5.4", "Planck 2018"]
+                    "references": ["Appendix B.2 (Speculative Material)", "Planck 2018"]
                 }
             ),
         ]
@@ -520,28 +548,45 @@ class DarkMatterResidueV20(SimulationBase):
     def get_section_content(self) -> SectionContent:
         """Return paper section content for dark matter derivation."""
         return SectionContent(
-            section_id="5.4",
+            section_id="B.2",
             subsection_id=None,
-            title="Dark Matter as Geometric Residue",
+            title="SPECULATIVE: Dark Matter as Geometric Residue",
             abstract=(
-                "In Principia Metaphysica v20, dark matter is not a new particle species "
-                "but a geometric residue - the portion of the E8 x E8 root structure "
-                "residing in the hidden (bulk) sector. The 288 total roots partition into "
-                "125 visible (gauge-localized) and 163 hidden (bulk). This 163/288 ~ 0.566 "
-                "volume fraction maps to the observed dark matter abundance Omega_DM ~ 0.27."
+                "WARNING: This section presents SPECULATIVE phenomenological material. "
+                "The 288 = b3 * 12 (24 * 12) represents an octonionic/24-dimensional structure. "
+                "The calibration kappa = 4.25 is a phenomenological "
+                "fit to Planck 2018 data, not a derived quantity. This approach lacks a "
+                "concrete physical mechanism (particle type, mass, interactions). Per Gemini "
+                "peer review 2026-01-11, this should be treated as speculative numerology.\n\n"
+                "Original claim (DISPUTED): dark matter is a geometric residue - the portion "
+                "of a 'root structure' residing in the hidden sector. The 288 total partitions "
+                "into 125 visible and 163 hidden. This 163/288 ~ 0.566 volume "
+                "fraction is then FITTED to match Omega_DM ~ 0.27."
             ),
             content_blocks=[
                 ContentBlock(
+                    type="callout",
+                    callout_type="warning",
+                    title="SPECULATIVE MATERIAL",
+                    content=(
+                        "This section presents a SPECULATIVE phenomenological model. "
+                        "The 288 = b3 * 12 (octonionic/24D structure). The kappa = 4.25 calibration "
+                        "is a PHENOMENOLOGICAL FIT, not derived. No concrete dark matter particle, "
+                        "mass, or interaction mechanism is specified. Treat as exploratory numerology."
+                    )
+                ),
+                ContentBlock(
                     type="heading",
                     level=2,
-                    content="5.4 Dark Matter as Geometric Residue"
+                    content="B.2 SPECULATIVE: Dark Matter as Geometric Residue"
                 ),
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The origin of dark matter in Principia Metaphysica is geometric, "
-                        "not particulate. The E8 x E8 heterotic string compactification "
-                        "produces 288 roots, partitioned between visible and hidden sectors."
+                        "This section explores a SPECULATIVE numerological approach to dark matter. "
+                        "The model uses 288 = b3 * 12 (24 * 12), representing an octonionic/24-dimensional "
+                        "structure. The partition into 125 'visible' and 163 'hidden' lacks rigorous "
+                        "gauge-theoretic justification."
                     )
                 ),
                 ContentBlock(
@@ -552,21 +597,21 @@ class DarkMatterResidueV20(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The visible sector contains N_visible = 125 = 5^3 roots, "
-                        "corresponding to the Standard Model degrees of freedom. "
-                        "The remaining N_hidden = 163 roots form the O'Dowd Bulk, "
-                        "which manifests as dark matter in the 4D effective theory."
+                        "The model assigns N_visible = 125 = 5^3 'roots' to the visible sector. "
+                        "NOTE: This is an ARBITRARY assignment - 125 does not correspond to any "
+                        "known gauge group dimension. The remaining N_hidden = 163 is claimed "
+                        "to form a 'dark sector', but no physical mechanism is specified."
                     )
                 ),
                 ContentBlock(
                     type="callout",
-                    callout_type="info",
-                    title="The O'Dowd Bulk (163)",
+                    callout_type="warning",
+                    title="The 163 Assignment (SPECULATIVE)",
                     content=(
-                        "The number 163 is the smallest Heegner number for which the "
-                        "corresponding imaginary quadratic field has class number 1. "
-                        "This mathematical uniqueness may explain why dark matter "
-                        "remains 'hidden' from direct detection."
+                        "The number 163 is mathematically interesting (Heegner number), but "
+                        "its connection to dark matter physics is NUMEROLOGICAL, not physical. "
+                        "No particle type, mass, cross-section, or interaction is specified. "
+                        "This is pattern-matching, not physics derivation."
                     )
                 ),
                 ContentBlock(
@@ -577,10 +622,10 @@ class DarkMatterResidueV20(SimulationBase):
                 ContentBlock(
                     type="paragraph",
                     content=(
-                        "The dark matter density is derived from the hidden/visible "
-                        "sector ratio with a projection factor accounting for "
-                        "dimensional reduction from 7D to 4D. The resulting "
-                        "Omega_DM ~ 0.27 matches Planck 2018 observations."
+                        "The dark matter density is FITTED to match Planck 2018 via "
+                        "the phenomenological calibration kappa = 4.25. This is NOT "
+                        "a derivation - it is curve-fitting. The 'projection factor' "
+                        "and 'dimensional reduction' claims lack rigorous justification."
                     )
                 ),
                 ContentBlock(

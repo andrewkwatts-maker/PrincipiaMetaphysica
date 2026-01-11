@@ -1,31 +1,33 @@
 #!/usr/bin/env python3
 """
-Yukawa Textures Module v20
-===========================
+Yukawa Textures Module v20 - SPECULATIVE NUMEROLOGY
+=====================================================
 
-Derives all 9 fermion masses from the Golden Ratio phi = (1 + sqrt(5)) / 2.
+*** IMPORTANT DISCLAIMER ***
+This module presents SPECULATIVE NUMEROLOGY, NOT a rigorous physical derivation.
+The golden ratio phi-scaling of fermion masses is a purely EMPIRICAL FIT with
+NO established physical mechanism connecting phi to the Standard Model Yukawa
+couplings. Errors of 7-25% between derived and observed masses are UNACCEPTABLE
+for fundamental physics and indicate this is pattern-matching, not predictive theory.
 
-In Principia Metaphysica v20, the fermion mass hierarchy is not arbitrary but
-emerges from the universal scaling constant phi ~ 1.618. Using the top quark
-mass as the anchor, all other masses follow from phi-scaling:
+This module is RETAINED FOR INFORMATIONAL PURPOSES ONLY per Gemini peer review
+(2026-01-11). It should NOT be cited as evidence for phi-based mass generation.
+
+Original Description:
+---------------------
+Attempts to derive all 9 fermion masses from the Golden Ratio phi = (1 + sqrt(5)) / 2.
+Uses phi ~ 1.618 as a scaling constant with top quark mass as anchor:
 
     m_i / m_j ~ phi^n for integer n
 
-Key Insight (WORKING HYPOTHESIS per Gemini peer review 2026-01-11):
-    The Golden Ratio MAY appear in G2 holonomy through the octonionic structure.
-    The automorphism group G2 ~ Aut(O) contains triality, and the golden angle
-    theta_g = arctan(1/phi) governs mixing.
+Key Caveats (per Gemini peer review 2026-01-11):
+    - The phi-scaling is a PHENOMENOLOGICAL FIT, not a proven derivation
+    - NO rigorous proof exists showing phi must emerge from G2 geometry
+    - The claimed connection to G2 holonomy is UNSUBSTANTIATED SPECULATION
+    - Integer powers are FITTED to match observations, not derived from first principles
+    - This approach lacks predictive power for new physics
 
-    STATUS: The phi-scaling is a PHENOMENOLOGICAL FIT, not a proven derivation.
-    No rigorous proof exists showing phi must emerge from G2 geometry.
-    The connection to G2 is a working hypothesis based on:
-    - Octonionic structure in G2 holonomy
-    - Triality symmetry in octonions
-    - Fibonacci patterns in cycle intersections
-
-    FUTURE WORK: Derive phi from explicit G2 metric or Hodge dual structure.
-
-Derivation Strategy:
+Fitting Strategy (NOT derivation):
     1. Top quark mass m_t = 172.69 GeV (anchor, PDG 2024)
     2. Up-type quarks: m_c/m_t ~ phi^(-6), m_u/m_t ~ phi^(-12)
     3. Down-type quarks: m_b/m_t ~ phi^(-4), m_s/m_b ~ phi^(-4), m_d/m_s ~ phi^(-3)
@@ -42,11 +44,13 @@ import math
 from typing import Dict, Any, List, Optional
 from dataclasses import dataclass
 
-# Import SSOT
+# Import SSOT - use get_registry() to get singleton instance
 try:
-    from core.FormulasRegistry import FormulasRegistry as _REG
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
 except ImportError:
-    from ...core.FormulasRegistry import FormulasRegistry as _REG
+    from ...core.FormulasRegistry import get_registry
+    _REG = get_registry()
 
 try:
     from simulations.base import (
@@ -98,15 +102,28 @@ class YukawaTexturesV20(SimulationBase):
     """
     v20 Yukawa Textures from Golden Ratio Scaling.
 
-    Derives all 9 fermion masses using phi = (1 + sqrt(5)) / 2 as the
-    universal scaling constant. The top quark mass serves as anchor,
-    and all other masses follow from powers of phi.
+    *** DISCLAIMER: PHENOMENOLOGICAL FIT ONLY ***
+    This is speculative numerology, NOT a rigorous derivation. The phi-scaling
+    has no established physical mechanism and errors of 7-25% are unacceptable
+    for fundamental physics. Retained for informational purposes only.
 
-    The Golden Ratio emerges from:
-    1. Octonionic structure in G2 holonomy
-    2. Fibonacci sequence in cycle intersections
-    3. Triality symmetry breaking patterns
+    Attempts to fit all 9 fermion masses using phi = (1 + sqrt(5)) / 2 as a
+    scaling constant. The top quark mass serves as anchor, and other masses
+    are fitted to powers of phi.
+
+    The claimed connection to G2 geometry is UNSUBSTANTIATED:
+    1. Octonionic structure in G2 holonomy (speculative link to phi)
+    2. Fibonacci sequence in cycle intersections (no proof)
+    3. Triality symmetry breaking patterns (hand-waving)
     """
+
+    DISCLAIMER = (
+        "WARNING: This module presents SPECULATIVE NUMEROLOGY that lacks rigorous "
+        "theoretical foundation. The golden ratio phi-scaling is purely empirical "
+        "and should not be interpreted as fundamental physics. Errors of 7-25% "
+        "between derived and observed masses indicate this is NOT a precision theory. "
+        "Included for informational purposes only per Gemini peer review 2026-01-11."
+    )
 
     # The Golden Ratio - FROM SSOT (FormulasRegistry)
     # NOTE: Using registry.phi to ensure SSOT consistency
@@ -158,8 +175,8 @@ class YukawaTexturesV20(SimulationBase):
                        "phi = (1 + sqrt(5))/2 using phi-power scaling with "
                        "top quark mass as anchor.",
             domain="yukawa",
-            section_id="4.5",
-            subsection_id="4.5.1"
+            section_id="B.1",
+            subsection_id="B.1.1"
         )
 
     @property
@@ -175,8 +192,7 @@ class YukawaTexturesV20(SimulationBase):
         This is a PHENOMENOLOGICAL FIT, not derived from G2 geometry.
         See docstring and Gemini peer review (2026-01-11) for details.
         """
-        reg = _REG()
-        return reg.phi
+        return _REG.phi
 
     @property
     def required_inputs(self) -> List[str]:
@@ -219,8 +235,11 @@ class YukawaTexturesV20(SimulationBase):
 
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure required topology inputs are available."""
+        # k_gimel = demiurgic_coupling in FormulasRegistry
+        k_gimel = _REG.demiurgic_coupling  # b3/2 + 1/pi = 12.318...
+
         defaults = {
-            "geometry.k_gimel": (_REG.k_gimel, "ESTABLISHED:FormulasRegistry"),
+            "geometry.k_gimel": (k_gimel, "ESTABLISHED:FormulasRegistry"),
             "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
         }
 
@@ -269,21 +288,28 @@ class YukawaTexturesV20(SimulationBase):
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
         """
-        Execute Yukawa textures derivation from Golden Ratio.
+        Execute Yukawa textures fitting from Golden Ratio.
 
-        The derivation chain:
-        1. Use phi = (1 + sqrt(5)) / 2 as universal scaling
+        NOTE: This is a phenomenological fit, NOT a derivation.
+
+        The fitting procedure:
+        1. Use phi = (1 + sqrt(5)) / 2 as scaling constant
         2. Top quark mass as anchor (172.69 GeV)
         3. Apply phi^n scaling for each fermion
         4. Validate against PDG 2024 values
 
         Returns:
-            Dictionary with all derived fermion masses
+            Dictionary with all fitted fermion masses
         """
+        # Print disclaimer at start of run
+        print("\n" + "=" * 70)
+        print(self.DISCLAIMER)
+        print("=" * 70 + "\n")
+
         self._ensure_inputs(registry)
 
-        # Get geometric correction
-        k_gimel = registry.get("geometry.k_gimel", default=_REG.k_gimel)
+        # Get geometric correction (k_gimel = demiurgic_coupling in FormulasRegistry)
+        k_gimel = registry.get("geometry.k_gimel", default=_REG.demiurgic_coupling)
 
         results = {
             "yukawa.phi": self.PHI,
@@ -590,9 +616,9 @@ class YukawaTexturesV20(SimulationBase):
     def get_section_content(self) -> Optional[SectionContent]:
         """Return paper section content for Yukawa textures."""
         return SectionContent(
-            section_id="4.5",
-            subsection_id="4.5.1",
-            title="Yukawa Textures from the Golden Ratio",
+            section_id="B.1",
+            subsection_id="B.1.1",
+            title="SPECULATIVE: Yukawa Textures from the Golden Ratio",
             abstract="In Principia Metaphysica v20, the fermion mass hierarchy is not "
                     "arbitrary but emerges from the universal scaling constant "
                     "phi = (1 + sqrt(5))/2 ~ 1.618. Using the top quark mass as anchor, "
@@ -603,15 +629,25 @@ class YukawaTexturesV20(SimulationBase):
                 ContentBlock(
                     type="heading",
                     level=2,
-                    content="4.5 Yukawa Textures from the Golden Ratio"
+                    content="B.1 SPECULATIVE: Yukawa Textures from the Golden Ratio"
+                ),
+                ContentBlock(
+                    type="paragraph",
+                    content="**DISCLAIMER**: This section presents SPECULATIVE NUMEROLOGY, "
+                           "not a rigorous physical derivation. The golden ratio phi-scaling "
+                           "of fermion masses is a purely empirical fit with NO established "
+                           "physical mechanism. Errors of 7-25% between derived and observed "
+                           "masses are unacceptable for fundamental physics. This material is "
+                           "retained for informational purposes only and should NOT be cited "
+                           "as evidence for phi-based mass generation."
                 ),
                 ContentBlock(
                     type="paragraph",
                     content="The Golden Ratio phi = (1 + sqrt(5))/2 ~ 1.618 appears "
-                           "throughout nature from spiral galaxies to DNA helices. In "
-                           "Principia Metaphysica, it emerges naturally from the octonionic "
-                           "structure of the G2 holonomy manifold through the golden angle "
-                           "theta_g = arctan(1/phi)."
+                           "throughout nature from spiral galaxies to DNA helices. The "
+                           "following attempts to fit fermion masses using phi-scaling, "
+                           "though the claimed connection to G2 holonomy remains unproven "
+                           "speculation."
                 ),
                 ContentBlock(
                     type="equation",

@@ -31,26 +31,29 @@ import numpy as np
 from typing import Dict, Any, Optional, List
 from dataclasses import dataclass, field
 
-# Import SSOT
+# Import SSOT - use get_registry() to get singleton instance
 try:
-    from core.FormulasRegistry import FormulasRegistry as _REG
+    from core.FormulasRegistry import get_registry
+    _REG = get_registry()
 except ImportError:
-    from ...core.FormulasRegistry import FormulasRegistry as _REG
+    from ...core.FormulasRegistry import get_registry
+    _REG = get_registry()
 
 try:
-    from simulations.base.simulation_base import (
-        SimulationBase, SimulationMetadata,
+    from simulations.base import (
+        SimulationBase, SimulationMetadata, PMRegistry,
         SectionContent, ContentBlock, Formula, Parameter
     )
-    from simulations.base.registry import PMRegistry
-    from simulations.base.precision import K_GIMEL, B3, PHI
 except ImportError:
-    from ..base.simulation_base import (
-        SimulationBase, SimulationMetadata,
+    from ..base import (
+        SimulationBase, SimulationMetadata, PMRegistry,
         SectionContent, ContentBlock, Formula, Parameter
     )
-    from ..base.registry import PMRegistry
-    from ..base.precision import K_GIMEL, B3, PHI
+
+# Constants from SSOT
+K_GIMEL = _REG.demiurgic_coupling  # b3/2 + 1/pi = 12.318...
+B3 = _REG.b3  # 24
+PHI = _REG.phi  # (1 + sqrt(5))/2
 
 
 @dataclass
