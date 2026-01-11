@@ -1415,7 +1415,11 @@ class Appendix72Gates(SimulationBase):
     of 12 gates each, aligned with the 24×3 torsion pin structure.
     """
 
-    FORMULA_REFS = [f"g{i:02d}-gate" for i in range(1, 73)]
+    # Generate formula refs from actual gate formula_ids
+    FORMULA_REFS = [
+        GateRegistry.GATES[i].formula_id or f"g{i:02d}-gate"
+        for i in range(1, 73)
+    ]
 
     PARAM_REFS = [
         "gates.total_passed",
