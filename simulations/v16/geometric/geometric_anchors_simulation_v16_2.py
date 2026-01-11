@@ -130,7 +130,7 @@ class GeometricAnchorsSimulation(SimulationBase):
                 "This is the 'Truth Source' for the Demon-Lock architecture."
             ),
             section_id="2",  # Foundations section
-            subsection_id=None
+            subsection_id="2.0"  # v19.0: Unique subsection (G2 Anchors)
         )
         self._anchors = GeometricAnchors(b3=24)
 

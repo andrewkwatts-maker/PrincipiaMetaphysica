@@ -55,7 +55,7 @@ class ResultsV16_2(SimulationBase):
             title="Cosmological Results and Alignment",
             description="The 0.48σ resolution, dark energy dynamics, and vacuum stability",
             section_id="3",
-            subsection_id=None
+            subsection_id="3.7"  # v19.0: Unique subsection (Cosmological Results) (3.1-3.4 used by gauge_unification)
         )
 
     @property
@@ -297,7 +297,7 @@ class ResultsV16_2(SimulationBase):
 
         return SectionContent(
             section_id="3",
-            subsection_id=None,
+            subsection_id="3.7",  # v19.0: Unique subsection (Cosmological Results)
             title="Cosmological Results and Alignment",
             abstract="The 0.48sigma resolution, dark energy dynamics, and vacuum stability.",
             content_blocks=content_blocks

@@ -1,7 +1,7 @@
 {
   "version": "17.2",
-  "generated": "2026-01-10T12:08:57.668809Z",
-  "total_scripts": 161,
+  "generated": "2026-01-11T00:32:45.012549Z",
+  "total_scripts": 167,
   "categories": {
     "v16/angles": {
       "title": "Angles",
@@ -390,6 +390,23 @@
       ],
       "count": 7
     },
+    "v16/corrections": {
+      "title": "Corrections",
+      "path": "simulations/v16/corrections",
+      "folderName": "corrections",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "gf_radiative_correction_v18.py",
+          "path": "simulations/v16/corrections/gf_radiative_correction_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
     "v16/cosmology": {
       "title": "Cosmology",
       "path": "simulations/v16/cosmology",
@@ -469,6 +486,14 @@
           "status": null
         },
         {
+          "file": "attractor_potential_v18.py",
+          "path": "simulations/v16/cosmology/attractor_potential_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        },
+        {
           "file": "baryon_asymmetry_v18.py",
           "path": "simulations/v16/cosmology/baryon_asymmetry_v18.py",
           "version": null,
@@ -533,7 +558,24 @@
           "status": null
         }
       ],
-      "count": 17
+      "count": 18
+    },
+    "v16/dark_matter": {
+      "title": "Dark Matter",
+      "path": "simulations/v16/dark_matter",
+      "folderName": "dark_matter",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "axion_dm_v18.py",
+          "path": "simulations/v16/dark_matter/axion_dm_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
     },
     "v16/dirac": {
       "title": "Dirac",
@@ -678,9 +720,17 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "yukawa_textures_v18.py",
+          "path": "simulations/v16/fermion/yukawa_textures_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 8
+      "count": 9
     },
     "v16/foundations": {
       "title": "Foundations",
@@ -812,6 +862,23 @@
         }
       ],
       "count": 10
+    },
+    "v16/gravity": {
+      "title": "Gravity",
+      "path": "simulations/v16/gravity",
+      "folderName": "gravity",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "f_r_t_tau_gravity_v18.py",
+          "path": "simulations/v16/gravity/f_r_t_tau_gravity_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
+        }
+      ],
+      "count": 1
     },
     "v16/higgs": {
       "title": "Higgs",
@@ -1245,6 +1312,23 @@
           "version": "16.2",
           "title": "Cosmological Results and Alignment",
           "description": "The 0.48σ resolution, dark energy dynamics, and vacuum stability",
+          "status": null
+        }
+      ],
+      "count": 1
+    },
+    "v16/spectral": {
+      "title": "Spectral",
+      "path": "simulations/v16/spectral",
+      "folderName": "spectral",
+      "isV16": true,
+      "scripts": [
+        {
+          "file": "complete_residue_registry_v18.py",
+          "path": "simulations/v16/spectral/complete_residue_registry_v18.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
           "status": null
         }
       ],

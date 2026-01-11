@@ -637,6 +637,92 @@ def get_git_metadata() -> Dict[str, str]:
         }
 
 
+def validate_section_assignments(simulations: List['SimulationBase'], verbose: bool = True) -> Dict[str, Any]:
+    """
+    v19.0: Validate that all simulations have unique section assignments.
+
+    This prevents duplicate sections from overwriting each other in the paper.
+
+    Args:
+        simulations: List of all simulation instances
+        verbose: Whether to print detailed output
+
+    Returns:
+        Dictionary with validation results:
+        - passed: True if no duplicates found
+        - duplicates: Dict mapping section_keys to list of simulation_ids claiming them
+        - total_sections: Number of unique sections
+        - warnings: List of warning messages
+    """
+    section_map: Dict[str, List[str]] = {}  # section_key -> [simulation_ids]
+    warnings: List[str] = []
+
+    for sim in simulations:
+        if not hasattr(sim, 'metadata'):
+            continue
+
+        sim_id = sim.metadata.id
+        section_id = getattr(sim.metadata, 'section_id', None)
+        subsection_id = getattr(sim.metadata, 'subsection_id', None)
+
+        if section_id is None:
+            continue
+
+        # Determine the section key (subsection_id takes precedence if present)
+        section_key = subsection_id if subsection_id else section_id
+
+        if section_key not in section_map:
+            section_map[section_key] = []
+        section_map[section_key].append(sim_id)
+
+        # Also check get_section_content if available
+        if hasattr(sim, 'get_section_content') and callable(sim.get_section_content):
+            try:
+                content = sim.get_section_content()
+                if content is not None:
+                    content_key = content.subsection_id or content.section_id
+                    if content_key != section_key:
+                        warnings.append(
+                            f"{sim_id}: metadata section_id '{section_key}' != "
+                            f"get_section_content() section_id '{content_key}'"
+                        )
+            except Exception:
+                pass  # Skip if content generation fails
+
+    # Find duplicates (sections claimed by multiple simulations)
+    duplicates = {k: v for k, v in section_map.items() if len(v) > 1}
+
+    passed = len(duplicates) == 0
+
+    if verbose:
+        print("\n[SECTION VALIDATION] Checking for duplicate section assignments...")
+        print("-" * 80)
+
+        if passed:
+            print(f"[OK] All {len(section_map)} sections have unique assignments")
+        else:
+            print(f"[WARNING] Found {len(duplicates)} duplicate section assignment(s):")
+            for section_key, sim_ids in duplicates.items():
+                print(f"  Section '{section_key}' claimed by:")
+                for sid in sim_ids:
+                    print(f"    - {sid}")
+
+        if warnings:
+            print(f"\n[WARNING] Found {len(warnings)} metadata inconsistencies:")
+            for w in warnings:
+                print(f"  - {w}")
+
+        print("-" * 80)
+
+    return {
+        'passed': passed,
+        'duplicates': duplicates,
+        'total_sections': len(section_map),
+        'section_map': section_map,
+        'warnings': warnings
+    }
+
+
 @dataclass
 class SimulationResult:
     """Result of running a single simulation."""
@@ -801,6 +887,15 @@ class SimulationRunner:
 
         # Step 1b: Load geometric anchors (v16.2 - derived from b3=24)
         self._load_geometric_anchors()
+
+        # Step 1c: v19.0 - Validate section assignments BEFORE running
+        all_simulations = []
+        for phase_sims in self.phases.values():
+            all_simulations.extend(phase_sims)
+        section_validation = validate_section_assignments(all_simulations, verbose=self.verbose)
+
+        # Store section validation results for the report
+        self._section_validation = section_validation
 
         # Step 2: Execute simulations in phases
         for phase_num in sorted(self.phases.keys()):
