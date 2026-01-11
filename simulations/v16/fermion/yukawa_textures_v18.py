@@ -133,7 +133,7 @@ class YukawaTexturesV18(SimulationBase):
         self.phi = (1 + np.sqrt(5)) / 2  # ~ 1.618
         self.k_gimel = 12 + 1/np.pi       # ~ 12.318
         self.b3 = 24
-        self.v_higgs = 246.22             # GeV
+        self.v_higgs = 246.22             # GeV [PDG2024: Higgs VEV]
 
         # v19.0: CP phase from G2 triality (same as baryon asymmetry)
         self.cp_phase = np.pi / 6  # 30 degrees
