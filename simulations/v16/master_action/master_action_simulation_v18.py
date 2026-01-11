@@ -102,7 +102,7 @@ class MasterActionSimulationV18(SimulationBase):
                 "Demonstrates gauge coupling and mass generation."
             ),
             section_id="3",  # Gauge theory section
-            subsection_id="3.1"
+            subsection_id="3.2"  # v19.0: Unique (3.1 used by alpha_rigor)
         )
         # Initialize gauge derivation classes
         self._kk_reduction = KKReductionGRGauge()
@@ -370,7 +370,7 @@ class MasterActionSimulationV18(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="3",
-            subsection_id="3.1",
+            subsection_id="3.2",  # v19.0: Unique
             title="Standard Model Gauge Sectors from Master Action",
             abstract=(
                 "Derivation of Standard Model gauge structure from higher-dimensional "
