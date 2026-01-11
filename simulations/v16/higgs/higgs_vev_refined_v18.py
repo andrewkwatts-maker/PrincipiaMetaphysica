@@ -122,9 +122,9 @@ class HiggsVEVRefinedV18(SimulationBase):
         self.alpha_em = 1 / 137.035999177  # CODATA 2022
 
         # v19.0: Heavy particle masses for Delta r calculation (PDG 2024)
-        self.m_top = 172.57     # GeV - top quark mass
-        self.m_z = 91.1876      # GeV - Z boson mass
-        self.m_w = 80.3692      # GeV - W boson mass
+        self.m_top = 172.57     # GeV [PDG2024: top quark mass]
+        self.m_z = 91.1876      # GeV [PDG2024: Z boson mass]
+        self.m_w = 80.3692      # GeV [PDG2024: W boson mass]
 
         # Experimental references (PDG 2024)
         self.v_experimental = 246.22    # GeV
