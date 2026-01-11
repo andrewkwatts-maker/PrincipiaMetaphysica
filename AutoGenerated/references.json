@@ -1,6 +1,6 @@
 {
   "version": "17.2",
-  "count": 69,
+  "count": 81,
   "references": {
     "maxwell_1865": {
       "id": "maxwell_1865",
@@ -656,6 +656,133 @@
       "volume": "10",
       "year": "1993",
       "source_simulation": "thermal_time_v17_2"
+    },
+    "degrassi-2012": {
+      "id": "degrassi-2012",
+      "authors": "Degrassi, G. et al.",
+      "title": "Higgs mass and vacuum stability in the Standard Model at NNLO",
+      "journal": "Journal of High Energy Physics",
+      "volume": "08",
+      "pages": "098",
+      "year": "2012",
+      "doi": "10.1007/JHEP08(2012)098",
+      "source_simulation": "appendix_r_vacuum_stability_v19"
+    },
+    "buttazzo-2013": {
+      "id": "buttazzo-2013",
+      "authors": "Buttazzo, D. et al.",
+      "title": "Investigating the near-criticality of the Higgs boson",
+      "journal": "Journal of High Energy Physics",
+      "volume": "12",
+      "pages": "089",
+      "year": "2013",
+      "doi": "10.1007/JHEP12(2013)089",
+      "source_simulation": "appendix_r_vacuum_stability_v19"
+    },
+    "coleman-1977": {
+      "id": "coleman-1977",
+      "authors": "Coleman, S.",
+      "title": "Fate of the false vacuum: Semiclassical theory",
+      "journal": "Physical Review D",
+      "volume": "15",
+      "pages": "2929-2936",
+      "year": "1977",
+      "doi": "10.1103/PhysRevD.15.2929",
+      "source_simulation": "appendix_r_vacuum_stability_v19"
+    },
+    "coleman-deluccia-1980": {
+      "id": "coleman-deluccia-1980",
+      "authors": "Coleman, S. & De Luccia, F.",
+      "title": "Gravitational effects on and of vacuum decay",
+      "journal": "Physical Review D",
+      "volume": "21",
+      "pages": "3305-3315",
+      "year": "1980",
+      "doi": "10.1103/PhysRevD.21.3305",
+      "source_simulation": "appendix_r_vacuum_stability_v19"
+    },
+    "coleman-weinberg-1973": {
+      "id": "coleman-weinberg-1973",
+      "authors": "Coleman, S. & Weinberg, E.",
+      "title": "Radiative Corrections as the Origin of Spontaneous Symmetry Breaking",
+      "journal": "Physical Review D",
+      "volume": "7",
+      "pages": "1888-1910",
+      "year": "1973",
+      "doi": "10.1103/PhysRevD.7.1888",
+      "source_simulation": "appendix_r_vacuum_stability_v19"
+    },
+    "isidori-2001": {
+      "id": "isidori-2001",
+      "authors": "Isidori, G. et al.",
+      "title": "On the metastability of the Standard Model vacuum",
+      "journal": "Nuclear Physics B",
+      "volume": "609",
+      "pages": "387-409",
+      "year": "2001",
+      "doi": "10.1016/S0550-3213(01)00302-9",
+      "source_simulation": "appendix_r_vacuum_stability_v19"
+    },
+    "minakshisundaram-pleijel-1949": {
+      "id": "minakshisundaram-pleijel-1949",
+      "authors": "Minakshisundaram, S. & Pleijel, A.",
+      "title": "Some properties of the eigenfunctions of the Laplace-operator on Riemannian manifolds",
+      "journal": "Canadian Journal of Mathematics",
+      "volume": "1",
+      "pages": "242-256",
+      "year": "1949",
+      "doi": "10.4153/CJM-1949-021-5",
+      "source_simulation": "appendix_s_spectral_residue_v19"
+    },
+    "seeley-1967": {
+      "id": "seeley-1967",
+      "authors": "Seeley, R.",
+      "title": "Complex powers of an elliptic operator",
+      "journal": "Proceedings of Symposia in Pure Mathematics",
+      "volume": "10",
+      "pages": "288-307",
+      "year": "1967",
+      "source_simulation": "appendix_s_spectral_residue_v19"
+    },
+    "gilkey-1984": {
+      "id": "gilkey-1984",
+      "authors": "Gilkey, P. B.",
+      "title": "Invariance Theory, the Heat Equation, and the Atiyah-Singer Index Theorem",
+      "journal": "Publish or Perish",
+      "year": "1984",
+      "source_simulation": "appendix_s_spectral_residue_v19"
+    },
+    "dowker-critchley-1976": {
+      "id": "dowker-critchley-1976",
+      "authors": "Dowker, J. S. & Critchley, R.",
+      "title": "Effective Lagrangian and energy-momentum tensor in de Sitter space",
+      "journal": "Physical Review D",
+      "volume": "13",
+      "pages": "3224-3232",
+      "year": "1976",
+      "doi": "10.1103/PhysRevD.13.3224",
+      "source_simulation": "appendix_s_spectral_residue_v19"
+    },
+    "ray-singer-1971": {
+      "id": "ray-singer-1971",
+      "authors": "Ray, D. B. & Singer, I. M.",
+      "title": "R-torsion and the Laplacian on Riemannian manifolds",
+      "journal": "Advances in Mathematics",
+      "volume": "7",
+      "pages": "145-210",
+      "year": "1971",
+      "doi": "10.1016/0001-8708(71)90045-4",
+      "source_simulation": "appendix_s_spectral_residue_v19"
+    },
+    "selberg-1956": {
+      "id": "selberg-1956",
+      "authors": "Selberg, A.",
+      "title": "Harmonic analysis and discontinuous groups in weakly symmetric Riemannian spaces with applications to Dirichlet series",
+      "journal": "Journal of the Indian Mathematical Society",
+      "volume": "20",
+      "pages": "47-87",
+      "year": "1956",
+      "source_simulation": "appendix_s_spectral_residue_v19"
     }
   }
 }

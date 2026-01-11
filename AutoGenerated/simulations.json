@@ -1,7 +1,7 @@
 {
   "version": "17.2",
-  "generated": "2026-01-11T05:20:07.282267Z",
-  "total_scripts": 172,
+  "generated": "2026-01-11T06:00:37.830266Z",
+  "total_scripts": 174,
   "categories": {
     "v16/angles": {
       "title": "Angles",
@@ -361,9 +361,25 @@
           "title": null,
           "description": "Physics simulation module",
           "status": null
+        },
+        {
+          "file": "appendix_r_vacuum_stability_v19.py",
+          "path": "simulations/v16/appendices/appendix_r_vacuum_stability_v19.py",
+          "version": null,
+          "title": "Appendix R: Vacuum Stability Analysis",
+          "description": "Proves vacuum stability of the Principia Metaphysica framework. Demonstrates that G2 portal coupling resolves the Standard Model metastability problem, yielding an absolutely stable electroweak vacuum with tunneling lifetime tau >> 10^100 years.",
+          "status": null
+        },
+        {
+          "file": "appendix_s_spectral_residue_v19.py",
+          "path": "simulations/v16/appendices/appendix_s_spectral_residue_v19.py",
+          "version": null,
+          "title": "Appendix S: Spectral Residue Methodology",
+          "description": "Documents the spectral methodology for extracting Standard Model parameters from the 125 eigenvalues of the V_7 manifold Laplacian. Covers spectral zeta functions, residue extraction, and trace formulas.",
+          "status": null
         }
       ],
-      "count": 38
+      "count": 40
     },
     "v16/constants": {
       "title": "Constants",
@@ -529,16 +545,16 @@
           "file": "attractor_potential_v18.py",
           "path": "simulations/v16/cosmology/attractor_potential_v18.py",
           "version": null,
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Dark Energy Attractor Potential",
+          "description": "Derives V(phi_M) from G2 modulus dynamics with Ricci flow. Predicts thawing quintessence with w_0 = -0.980, w_a ~ 0.1. Connects vacuum energy to G2 manifold curvature.",
           "status": null
         },
         {
           "file": "baryon_asymmetry_v18.py",
           "path": "simulations/v16/cosmology/baryon_asymmetry_v18.py",
           "version": null,
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Baryon Asymmetry from G2 Cycles + Jarlskog",
+          "description": "Derives baryon-to-photon ratio from cycle asymmetry in G2 manifold with CP violation from Jarlskog invariant. v19.0: k_bary derived from J, no calibration constants.",
           "status": null
         },
         {
@@ -765,8 +781,8 @@
           "file": "yukawa_textures_v18.py",
           "path": "simulations/v16/fermion/yukawa_textures_v18.py",
           "version": null,
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Yukawa Textures from G2 Geometry + Jarlskog",
+          "description": "Analyzes fermion mass hierarchy using phi^(-N) scaling. v19.0: Includes Jarlskog invariant from texture geometry.",
           "status": null
         }
       ],
@@ -913,8 +929,8 @@
           "file": "f_r_t_tau_gravity_v18.py",
           "path": "simulations/v16/gravity/f_r_t_tau_gravity_v18.py",
           "version": null,
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "f(R,T,tau) Modified Gravity from G2",
+          "description": "Derives modified gravity Lagrangian from G2 compactification. Coefficients emerge from b3=24 cycles and flux stabilization. Predicts dark energy w_0 = -0.980 from attractor dynamics.",
           "status": null
         }
       ],
@@ -962,8 +978,8 @@
           "file": "higgs_vev_refined_v18.py",
           "path": "simulations/v16/higgs/higgs_vev_refined_v18.py",
           "version": null,
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Geometric Higgs VEV from G2 Holonomy",
+          "description": "Derives Higgs VEV from holonomy warp factor k_gimel times non-trivial cycle count (b3-4). Achieves 0.06% accuracy without calibration - a genuine geometric prediction.",
           "status": null
         }
       ],
@@ -1367,8 +1383,8 @@
           "file": "complete_residue_registry_v18.py",
           "path": "simulations/v16/spectral/complete_residue_registry_v18.py",
           "version": null,
-          "title": null,
-          "description": "Physics simulation module",
+          "title": "Complete 125-Residue Registry",
+          "description": "Complete spectral decomposition of G2 manifold Laplacian. 125 eigenvalues encode particle masses, mixing angles, couplings, and cosmological parameters.",
           "status": null
         }
       ],

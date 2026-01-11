@@ -466,6 +466,119 @@ try:
 except ImportError:
     APPENDIX_Z_V16_2_AVAILABLE = False
 
+# v19.0 Complete Derivations (Wave 4 - Comprehensive sector derivations)
+try:
+    from simulations.derivations.lagrangian_master_derivation_v19 import LagrangianMasterDerivationV19
+    LAGRANGIAN_MASTER_V19_AVAILABLE = True
+except ImportError:
+    LAGRANGIAN_MASTER_V19_AVAILABLE = False
+
+try:
+    from simulations.derivations.gauge_sector_complete_v19 import GaugeSectorCompleteV19
+    GAUGE_SECTOR_V19_AVAILABLE = True
+except ImportError:
+    GAUGE_SECTOR_V19_AVAILABLE = False
+
+try:
+    from simulations.derivations.matter_sector_complete_v19 import MatterSectorCompleteV19
+    MATTER_SECTOR_V19_AVAILABLE = True
+except ImportError:
+    MATTER_SECTOR_V19_AVAILABLE = False
+
+try:
+    from simulations.derivations.cosmology_sector_complete_v19 import CosmologySectorCompleteV19
+    COSMOLOGY_SECTOR_V19_AVAILABLE = True
+except ImportError:
+    COSMOLOGY_SECTOR_V19_AVAILABLE = False
+
+try:
+    from simulations.derivations.gr_spacetime_derivations_v19 import GRSpacetimeDerivationsV19
+    GR_SPACETIME_V19_AVAILABLE = True
+except ImportError:
+    GR_SPACETIME_V19_AVAILABLE = False
+
+# v19.0 Eigenchris-style Mathematical Appendices
+try:
+    from simulations.v16.appendices.appendix_m_tensor_calc_v19 import AppendixMTensorCalcV19
+    APPENDIX_M_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_M_V19_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_n_vielbein_v19 import AppendixNVielbeinV19
+    APPENDIX_N_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_N_V19_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_o_kk_reduction_v19 import AppendixOKKReductionV19
+    APPENDIX_O_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_O_V19_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_p_g2_holonomy_v19 import AppendixPG2HolonomyV19
+    APPENDIX_P_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_P_V19_AVAILABLE = False
+
+try:
+    from simulations.v16.appendices.appendix_q_index_theorem_v19 import AppendixQIndexTheoremV19
+    APPENDIX_Q_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_Q_V19_AVAILABLE = False
+
+# v19.0 Appendix R: Vacuum Stability Analysis
+try:
+    from simulations.v16.appendices.appendix_r_vacuum_stability_v19 import AppendixRVacuumStabilityV19
+    APPENDIX_R_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_R_V19_AVAILABLE = False
+
+# v19.0 Appendix S: Spectral Residue Methodology
+try:
+    from simulations.v16.appendices.appendix_s_spectral_residue_v19 import AppendixSSpectralResidueV19
+    APPENDIX_S_V19_AVAILABLE = True
+except ImportError:
+    APPENDIX_S_V19_AVAILABLE = False
+
+# v18.0 Core Physics Simulations
+try:
+    from simulations.v16.fermion.yukawa_textures_v18 import YukawaTexturesV18
+    YUKAWA_V18_AVAILABLE = True
+except ImportError:
+    YUKAWA_V18_AVAILABLE = False
+
+try:
+    from simulations.v16.gravity.f_r_t_tau_gravity_v18 import FRTTauGravityV18
+    F_R_T_TAU_V18_AVAILABLE = True
+except ImportError:
+    F_R_T_TAU_V18_AVAILABLE = False
+
+try:
+    from simulations.v16.spectral.complete_residue_registry_v18 import CompleteResidueRegistryV18
+    RESIDUE_REGISTRY_V18_AVAILABLE = True
+except ImportError:
+    RESIDUE_REGISTRY_V18_AVAILABLE = False
+
+try:
+    from simulations.v16.cosmology.attractor_potential_v18 import AttractorPotentialV18
+    ATTRACTOR_V18_AVAILABLE = True
+except ImportError:
+    ATTRACTOR_V18_AVAILABLE = False
+
+try:
+    from simulations.v16.cosmology.baryon_asymmetry_v18 import BaryonAsymmetryV18
+    BARYON_V18_AVAILABLE = True
+except ImportError:
+    BARYON_V18_AVAILABLE = False
+
+try:
+    from simulations.v16.higgs.higgs_vev_refined_v18 import HiggsVEVRefinedV18
+    HIGGS_VEV_V18_AVAILABLE = True
+except ImportError:
+    HIGGS_VEV_V18_AVAILABLE = False
+
 
 # ============================================================================
 # V16.0 VALIDATION BOUNDS
@@ -788,7 +901,7 @@ class SimulationRunner:
                 ProtonDecaySimulation(),
                 HiggsMassSimulation(),
                 HiggsBranePartitionSimulation(),  # v16.2: Brane-partition local Higgs mass
-            ] + ([MassRatioSimulation()] if MASS_RATIO_AVAILABLE else []),
+            ] + ([YukawaTexturesV18()] if YUKAWA_V18_AVAILABLE else []) + ([HiggsVEVRefinedV18()] if HIGGS_VEV_V18_AVAILABLE else []) + ([MassRatioSimulation()] if MASS_RATIO_AVAILABLE else []),
             3: [
                 CosmologyIntroV16(),
                 DarkEnergyV16(),
@@ -873,6 +986,36 @@ class SimulationRunner:
                 ([AppendixLOmegaUnwinding()] if APPENDIX_L_V16_2_AVAILABLE else []) +
                 # Appendix Z: Terminal Constant Ledger (10 Formulas, ZERO Free Parameters)
                 ([AppendixZTerminalLedger()] if APPENDIX_Z_V16_2_AVAILABLE else [])
+            ),
+            # ================================================================
+            # v19.0 COMPLETE DERIVATIONS AND MATHEMATICAL APPENDICES
+            # ================================================================
+            # Phase 7: v19.0 Comprehensive derivation simulations
+            7: (
+                # Complete sector derivations with step-by-step mathematics
+                ([LagrangianMasterDerivationV19()] if LAGRANGIAN_MASTER_V19_AVAILABLE else []) +
+                ([GaugeSectorCompleteV19()] if GAUGE_SECTOR_V19_AVAILABLE else []) +
+                ([MatterSectorCompleteV19()] if MATTER_SECTOR_V19_AVAILABLE else []) +
+                ([CosmologySectorCompleteV19()] if COSMOLOGY_SECTOR_V19_AVAILABLE else []) +
+                ([GRSpacetimeDerivationsV19()] if GR_SPACETIME_V19_AVAILABLE else []) +
+                # Eigenchris-style mathematical appendices
+                ([AppendixMTensorCalcV19()] if APPENDIX_M_V19_AVAILABLE else []) +
+                ([AppendixNVielbeinV19()] if APPENDIX_N_V19_AVAILABLE else []) +
+                ([AppendixOKKReductionV19()] if APPENDIX_O_V19_AVAILABLE else []) +
+                ([AppendixPG2HolonomyV19()] if APPENDIX_P_V19_AVAILABLE else []) +
+                ([AppendixQIndexTheoremV19()] if APPENDIX_Q_V19_AVAILABLE else []) +
+                ([AppendixRVacuumStabilityV19()] if APPENDIX_R_V19_AVAILABLE else []) +
+                ([AppendixSSpectralResidueV19()] if APPENDIX_S_V19_AVAILABLE else [])
+            ),
+            # ================================================================
+            # v18.0 ADVANCED PHYSICS SIMULATIONS
+            # ================================================================
+            # Phase 8: v18.0 High-precision physics
+            8: (
+                ([FRTTauGravityV18()] if F_R_T_TAU_V18_AVAILABLE else []) +
+                ([CompleteResidueRegistryV18()] if RESIDUE_REGISTRY_V18_AVAILABLE else []) +
+                ([AttractorPotentialV18()] if ATTRACTOR_V18_AVAILABLE else []) +
+                ([BaryonAsymmetryV18()] if BARYON_V18_AVAILABLE else [])
             ),
         }
 
