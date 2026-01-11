@@ -379,21 +379,79 @@
         const mainList = document.createElement('ol');
         mainList.className = 'toc-list';
 
+        // Group sections by their major number (integer part)
+        // e.g., 1, 1.1, 1.2 all go under section 1
+        const sectionGroups = new Map();
+
         for (const section of mainSections) {
+            const sectionId = String(section.id);
+            // Get the major section number (integer part)
+            const majorNum = sectionId.includes('.') ? sectionId.split('.')[0] : sectionId;
+
+            // Skip non-numeric sections (like "validation", "thermal-time")
+            if (!/^\d+$/.test(majorNum)) {
+                // Create standalone entry for non-numeric sections
+                if (!sectionGroups.has(sectionId)) {
+                    sectionGroups.set(sectionId, { parent: section, subsections: [] });
+                }
+                continue;
+            }
+
+            if (!sectionGroups.has(majorNum)) {
+                sectionGroups.set(majorNum, { parent: null, subsections: [] });
+            }
+
+            const group = sectionGroups.get(majorNum);
+
+            // Check if this is the parent section (whole number or x.0)
+            if (sectionId === majorNum || sectionId === `${majorNum}.0`) {
+                group.parent = section;
+            } else {
+                // This is a subsection (e.g., 2.1, 2.2)
+                group.subsections.push(section);
+            }
+        }
+
+        // Sort groups by major number
+        const sortedGroups = [...sectionGroups.entries()].sort((a, b) => {
+            const numA = parseInt(a[0]) || 999;
+            const numB = parseInt(b[0]) || 999;
+            return numA - numB;
+        });
+
+        for (const [majorNum, group] of sortedGroups) {
             const li = document.createElement('li');
+
+            // Use parent section or create placeholder from first subsection
+            const parentSection = group.parent || group.subsections[0];
+            if (!parentSection) continue;
+
+            const displayNum = group.parent ? group.parent.id : majorNum;
+            const displayTitle = group.parent ? group.parent.title : `Section ${majorNum}`;
+
             li.innerHTML = `
-                <a href="#section-${section.id}" class="toc-link">
-                    <span class="toc-number">${section.id}</span>
-                    <span class="toc-title">${section.title}</span>
+                <a href="#section-${parentSection.id}" class="toc-link">
+                    <span class="toc-number">${displayNum}</span>
+                    <span class="toc-title">${displayTitle}</span>
                 </a>
             `;
             mainList.appendChild(li);
 
-            // Subsections (if any)
-            if (section.subsections && section.subsections.length > 0) {
+            // Render subsections (if any)
+            // Sort subsections by their full ID
+            const subsections = group.subsections.sort((a, b) => {
+                const idA = parseFloat(a.id) || 0;
+                const idB = parseFloat(b.id) || 0;
+                return idA - idB;
+            });
+
+            if (subsections.length > 0) {
                 const subList = document.createElement('ol');
                 subList.className = 'toc-sublist';
-                for (const subsection of section.subsections) {
+                for (const subsection of subsections) {
+                    // Skip if this was used as the parent placeholder
+                    if (!group.parent && subsection === parentSection) continue;
+
                     const subLi = document.createElement('li');
                     subLi.innerHTML = `
                         <a href="#section-${subsection.id}" class="toc-link">
@@ -403,7 +461,9 @@
                     `;
                     subList.appendChild(subLi);
                 }
-                li.appendChild(subList);
+                if (subList.children.length > 0) {
+                    li.appendChild(subList);
+                }
             }
         }
 
