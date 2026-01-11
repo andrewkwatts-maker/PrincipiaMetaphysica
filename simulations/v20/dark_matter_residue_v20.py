@@ -62,21 +62,15 @@ except ImportError:
     _REG = get_registry()
 
 try:
-    from simulations.base.simulation_base import SimulationBase, SimulationMetadata
-    from simulations.base.registry import PMRegistry
-    from simulations.base.formulas import Formula, FormulaDerivation
-    from simulations.base.section_content import SectionContent, ContentBlock
+    from simulations.base import (
+        SimulationBase, SimulationMetadata, PMRegistry,
+        Formula, Parameter, SectionContent, ContentBlock
+    )
 except ImportError:
-    from ..base.simulation_base import SimulationBase, SimulationMetadata
-    from ..base.registry import PMRegistry
-    from ..base.formulas import Formula, FormulaDerivation
-    from ..base.section_content import SectionContent, ContentBlock
-
-# Also import Parameter from simulation_base
-try:
-    from simulations.base.simulation_base import Parameter
-except ImportError:
-    from ..base.simulation_base import Parameter
+    from ..base import (
+        SimulationBase, SimulationMetadata, PMRegistry,
+        Formula, Parameter, SectionContent, ContentBlock
+    )
 
 
 @dataclass
