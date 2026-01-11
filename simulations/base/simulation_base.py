@@ -404,8 +404,13 @@ class SimulationBase(ABC):
         if section_content:
             registry.add_section_content(section_content.section_id, section_content)
 
-        # Also inject formulas
-        for formula in self.get_formulas():
+        # Also inject formulas with logging
+        formulas = self.get_formulas()
+        if formulas and getattr(self, 'verbose', False):
+            print(f"  [FORMULAS] Registering {len(formulas)} formula(s):")
+            for f in formulas:
+                print(f"    - {f.id}: {f.label}")
+        for formula in formulas:
             registry.add_formula(formula)
 
     @abstractmethod
@@ -449,6 +454,9 @@ class SimulationBase(ABC):
         Returns:
             Dictionary of computed results
         """
+        # Store verbose flag for use by inject_section()
+        self.verbose = verbose
+
         if verbose:
             print(f"\n[{self.metadata.id}] Starting {self.metadata.title}...")
 
@@ -491,6 +499,9 @@ class SimulationBase(ABC):
             SimulationResult instance (schema-compliant)
         """
         from .schema import SimulationResult, SchemaCompliantSimulation
+
+        # Store verbose flag for use by inject_section()
+        self.verbose = verbose
 
         if verbose:
             print(f"\n[{self.metadata.id}] Starting {self.metadata.title} (schema mode)...")
