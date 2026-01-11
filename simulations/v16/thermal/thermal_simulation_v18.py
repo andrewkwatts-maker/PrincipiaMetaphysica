@@ -84,7 +84,7 @@ class ThermalSimulationV18(SimulationBase):
         self._thermal_time = ThermalTimeV16()
 
         # Physical constants
-        self.k_B = 8.617e-5  # Boltzmann constant (eV/K)
+        self.k_B = getattr(_REG, "k_B", 8.617e-5)  # Boltzmann constant (eV/K)
 
         # Metadata for this wrapper
         self._metadata = SimulationMetadata(
@@ -183,7 +183,7 @@ class ThermalSimulationV18(SimulationBase):
         #   - Sp(2,R) gauge symmetry (two-time structure)
         #   - Pneuma field modular automorphisms
         #   - G2 holonomy structure
-        gamma_correction = 10.313240  # Calibrated to alpha_T = 2.7
+        gamma_correction = getattr(_REG, "gamma_thermal_correction", 10.313240)  # Calibrated to alpha_T = 2.7
         alpha_T = (2.0 * np.pi / b3) * gamma_correction
 
         results["thermal.alpha_T"] = float(alpha_T)
@@ -229,10 +229,10 @@ class ThermalSimulationV18(SimulationBase):
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure all required inputs are set in registry."""
         defaults = {
-            "constants.M_PLANCK": (2.435e18, "CODATA", "ESTABLISHED"),
+            "constants.M_PLANCK": (getattr(_REG, "M_PLANCK", 2.435e18), "CODATA", "ESTABLISHED"),
             "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry", "GEOMETRIC"),
-            "pneuma.vev": (1.833, "pneuma_mechanism_v16_0", "DERIVED"),
-            "pneuma.mass_scale": (2.03e17, "pneuma_mechanism_v16_0", "DERIVED"),
+            "pneuma.vev": (getattr(_REG, "pneuma_vev", 1.833), "pneuma_mechanism_v16_0", "DERIVED"),
+            "pneuma.mass_scale": (getattr(_REG, "pneuma_mass_scale", 2.03e17), "pneuma_mechanism_v16_0", "DERIVED"),
         }
 
         for path, (value, source, status) in defaults.items():

@@ -13,9 +13,26 @@ Dedicated To:
 """
 
 from dataclasses import dataclass, field
-from typing import Dict, Any, Optional, List
+from typing import Dict, Any, Optional, List, Callable
 from datetime import datetime
 import warnings
+
+# Import dependency resolver components
+try:
+    from core.dependency_resolver import (
+        DependencyGraph,
+        DependencyResolver,
+        CycleDetectedError,
+        MissingComputeFunctionError,
+        build_pm_dependency_graph,
+        build_seed_values,
+    )
+    DEPENDENCY_RESOLVER_AVAILABLE = True
+except ImportError:
+    # Graceful fallback if dependency_resolver not available
+    DEPENDENCY_RESOLVER_AVAILABLE = False
+    DependencyGraph = None
+    DependencyResolver = None
 
 
 @dataclass
@@ -142,6 +159,16 @@ class PMRegistry:
         # Mismatch log for debugging
         self._mismatches: List[Dict[str, Any]] = []
 
+        # Dependency resolution system (v20)
+        self._dependency_graph: Optional['DependencyGraph'] = None
+        self._dependency_resolver: Optional['DependencyResolver'] = None
+        self._auto_resolve: bool = False  # Enable auto-resolution on get()
+        self._seed_values: Dict[str, Any] = {}  # Base seed values
+
+        # Initialize dependency resolver if available
+        if DEPENDENCY_RESOLVER_AVAILABLE:
+            self._init_dependency_resolver()
+
     @classmethod
     def get_instance(cls) -> 'PMRegistry':
         """
@@ -193,22 +220,41 @@ class PMRegistry:
             raise KeyError(f"Parameter '{path}' not found in registry")
         return self._parameters[path].value
 
-    def get(self, path: str, default: Any = None) -> Any:
+    def get(self, path: str, default: Any = None, auto_resolve: bool = None) -> Any:
         """
-        Get a parameter value with optional default.
+        Get a parameter value with optional default and auto-resolution.
+
+        If auto_resolve is enabled and the parameter is not in the registry,
+        attempts to compute it using the dependency resolver.
 
         Args:
             path: Parameter path
             default: Value to return if parameter doesn't exist
+            auto_resolve: Override instance auto_resolve setting
 
         Returns:
             Parameter value or default if not found
         """
-        if path not in self._parameters:
-            if default is not None:
-                return default
-            raise KeyError(f"Parameter '{path}' not found in registry")
-        return self._parameters[path].value
+        # Check if parameter exists in registry
+        if path in self._parameters:
+            return self._parameters[path].value
+
+        # Determine if we should auto-resolve
+        should_resolve = auto_resolve if auto_resolve is not None else self._auto_resolve
+
+        # Try auto-resolution if enabled and resolver is available
+        if should_resolve and self._dependency_resolver is not None:
+            try:
+                value = self._resolve_dependency(path)
+                if value is not None:
+                    return value
+            except (KeyError, Exception):
+                pass  # Fall through to default handling
+
+        # Return default or raise error
+        if default is not None:
+            return default
+        raise KeyError(f"Parameter '{path}' not found in registry")
 
     def get_entry(self, path: str) -> Optional[RegistryEntry]:
         """
@@ -335,6 +381,301 @@ class PMRegistry:
         if path not in self._provenance:
             self._provenance[path] = []
         self._provenance[path].append(source)
+
+        # Invalidate dependent cached values if using dependency resolver
+        if self._dependency_resolver is not None:
+            self._dependency_resolver.invalidate(path)
+
+    # -------------------------------------------------------------------------
+    # Dependency Resolution (v20)
+    # -------------------------------------------------------------------------
+
+    def _init_dependency_resolver(self) -> None:
+        """
+        Initialize the dependency resolver with the PM dependency graph.
+
+        Called automatically during registry initialization if the
+        dependency_resolver module is available.
+        """
+        if not DEPENDENCY_RESOLVER_AVAILABLE:
+            warnings.warn("Dependency resolver not available - auto-resolution disabled")
+            return
+
+        try:
+            self._dependency_graph = build_pm_dependency_graph()
+            self._dependency_resolver = DependencyResolver(self._dependency_graph)
+            self._seed_values = build_seed_values()
+        except Exception as e:
+            warnings.warn(f"Failed to initialize dependency resolver: {e}")
+            self._dependency_graph = None
+            self._dependency_resolver = None
+
+    def enable_auto_resolve(self, enabled: bool = True) -> None:
+        """
+        Enable or disable automatic dependency resolution on get().
+
+        When enabled, calling get() for a parameter not in the registry
+        will attempt to compute it using the dependency resolver.
+
+        Args:
+            enabled: True to enable, False to disable
+        """
+        self._auto_resolve = enabled
+
+    def is_auto_resolve_enabled(self) -> bool:
+        """Check if auto-resolution is enabled."""
+        return self._auto_resolve
+
+    def set_seed_values(self, seeds: Dict[str, Any]) -> None:
+        """
+        Set base seed values for dependency resolution.
+
+        These values are used as the Level 0 inputs when computing
+        derived parameters.
+
+        Args:
+            seeds: Dictionary mapping seed parameter paths to values
+        """
+        self._seed_values.update(seeds)
+        # Invalidate resolver cache when seeds change
+        if self._dependency_resolver is not None:
+            self._dependency_resolver.clear_cache()
+
+    def get_seed_values(self) -> Dict[str, Any]:
+        """Get the current seed values."""
+        return dict(self._seed_values)
+
+    def register_dependency(
+        self,
+        param: str,
+        depends_on: List[str] = None,
+        compute_fn: Optional[Callable] = None,
+        metadata: Optional[Dict[str, Any]] = None
+    ) -> None:
+        """
+        Register a parameter dependency in the dependency graph.
+
+        This allows simulations to define how their output parameters
+        depend on input parameters, enabling automatic resolution.
+
+        Args:
+            param: Parameter path (e.g., "cosmology.H0_geometric")
+            depends_on: List of parameter paths this parameter depends on
+            compute_fn: Function to compute this parameter.
+                       Signature: fn(dep_values: Dict[str, Any]) -> Any
+            metadata: Optional metadata (level, description, etc.)
+
+        Raises:
+            RuntimeError: If dependency resolver not available
+            CycleDetectedError: If adding this parameter creates a cycle
+
+        Example:
+            registry.register_dependency(
+                "cosmology.H0_geometric",
+                depends_on=["geometry.k_gimel", "seeds.chi_eff"],
+                compute_fn=lambda deps: 71.55 * (deps["geometry.k_gimel"] * deps["seeds.chi_eff"]) ** 0.1
+            )
+        """
+        if self._dependency_graph is None:
+            raise RuntimeError("Dependency resolver not available")
+
+        self._dependency_graph.register(
+            param=param,
+            depends_on=depends_on or [],
+            compute_fn=compute_fn,
+            metadata=metadata
+        )
+
+    def unregister_dependency(self, param: str) -> None:
+        """
+        Remove a parameter from the dependency graph.
+
+        Args:
+            param: Parameter path to remove
+        """
+        if self._dependency_graph is not None:
+            self._dependency_graph.unregister(param)
+
+    def resolve(self, param: str, store_result: bool = True) -> Any:
+        """
+        Resolve a parameter using the dependency graph.
+
+        This computes the parameter value by first resolving all its
+        dependencies, then applying its compute function.
+
+        Args:
+            param: Parameter path to resolve
+            store_result: If True, store the resolved value in the registry
+
+        Returns:
+            Resolved parameter value
+
+        Raises:
+            RuntimeError: If dependency resolver not available
+            KeyError: If parameter not in dependency graph
+            CycleDetectedError: If circular dependency detected
+            MissingComputeFunctionError: If no compute function defined
+        """
+        if self._dependency_resolver is None:
+            raise RuntimeError("Dependency resolver not available")
+
+        value = self._dependency_resolver.resolve(param, self._seed_values)
+
+        if store_result:
+            self.set_param(
+                path=param,
+                value=value,
+                source="dependency_resolver",
+                status="DERIVED",
+                metadata={'resolved': True}
+            )
+
+        return value
+
+    def _resolve_dependency(self, path: str) -> Any:
+        """
+        Internal method to resolve a dependency.
+
+        Called by get() when auto_resolve is enabled.
+
+        Args:
+            path: Parameter path to resolve
+
+        Returns:
+            Resolved value or None if resolution fails
+        """
+        if self._dependency_resolver is None:
+            return None
+
+        if not self._dependency_graph.has_param(path):
+            return None
+
+        try:
+            value = self._dependency_resolver.resolve(path, self._seed_values)
+            # Store in registry for future access
+            self.set_param(
+                path=path,
+                value=value,
+                source="auto_resolved",
+                status="DERIVED",
+                metadata={'auto_resolved': True}
+            )
+            return value
+        except Exception:
+            return None
+
+    def resolve_all(self, params: List[str], store_results: bool = True) -> Dict[str, Any]:
+        """
+        Resolve multiple parameters at once.
+
+        Args:
+            params: List of parameter paths to resolve
+            store_results: If True, store resolved values in registry
+
+        Returns:
+            Dictionary mapping parameter paths to resolved values
+        """
+        if self._dependency_resolver is None:
+            raise RuntimeError("Dependency resolver not available")
+
+        results = self._dependency_resolver.resolve_all(params, self._seed_values)
+
+        if store_results:
+            for param, value in results.items():
+                self.set_param(
+                    path=param,
+                    value=value,
+                    source="dependency_resolver",
+                    status="DERIVED",
+                    metadata={'resolved': True}
+                )
+
+        return results
+
+    def get_dependency_graph(self) -> Optional['DependencyGraph']:
+        """
+        Get the dependency graph instance.
+
+        Returns:
+            DependencyGraph instance or None if not available
+        """
+        return self._dependency_graph
+
+    def get_dependency_resolver(self) -> Optional['DependencyResolver']:
+        """
+        Get the dependency resolver instance.
+
+        Returns:
+            DependencyResolver instance or None if not available
+        """
+        return self._dependency_resolver
+
+    def get_computation_order(self, param: str) -> List[str]:
+        """
+        Get the order in which parameters must be computed for a target.
+
+        Args:
+            param: Target parameter path
+
+        Returns:
+            List of parameters in computation order, ending with target
+        """
+        if self._dependency_graph is None:
+            return [param]
+        return self._dependency_graph.get_computation_order(param)
+
+    def get_dependency_level(self, param: str) -> int:
+        """
+        Get the dependency level of a parameter.
+
+        Level 0: Seeds (no dependencies)
+        Level 1: Direct derivations from seeds
+        Level 2+: Higher-order derivations
+
+        Args:
+            param: Parameter path
+
+        Returns:
+            Integer level (0 = seed)
+        """
+        if self._dependency_graph is None:
+            return 0
+        return self._dependency_graph.get_level(param)
+
+    def invalidate_cache(self, param: str = None) -> None:
+        """
+        Invalidate cached values in the dependency resolver.
+
+        If param is specified, invalidates that parameter and all dependents.
+        If param is None, clears the entire cache.
+
+        Args:
+            param: Optional parameter path to invalidate
+        """
+        if self._dependency_resolver is None:
+            return
+
+        if param is None:
+            self._dependency_resolver.clear_cache()
+        else:
+            self._dependency_resolver.invalidate(param)
+
+    def get_resolver_stats(self) -> Dict[str, Any]:
+        """
+        Get statistics about dependency resolution.
+
+        Returns:
+            Dictionary with cache stats and computation log
+        """
+        if self._dependency_resolver is None:
+            return {'available': False}
+
+        return {
+            'available': True,
+            'auto_resolve_enabled': self._auto_resolve,
+            'cache_stats': self._dependency_resolver.get_cache_stats(),
+            'registered_params': len(self._dependency_graph._dependencies) if self._dependency_graph else 0,
+        }
 
     # -------------------------------------------------------------------------
     # Formula Management

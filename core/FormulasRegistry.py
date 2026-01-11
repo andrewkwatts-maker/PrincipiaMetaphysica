@@ -68,8 +68,8 @@ class FormulasRegistry:
     Everything else is DERIVED through topological formulas.
     """
 
-    VERSION = "19.2-SOVEREIGN"
-    VERSION_SHORT = "19.2"
+    VERSION = "20.0-RECURSIVE"
+    VERSION_SHORT = "20.0"
     STATUS = "ABSOLUTE_SOVEREIGN"
 
     # ===========================================================================
