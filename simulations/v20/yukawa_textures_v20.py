@@ -11,11 +11,19 @@ mass as the anchor, all other masses follow from phi-scaling:
 
     m_i / m_j ~ phi^n for integer n
 
-Key Insight:
-    The Golden Ratio appears naturally in G2 holonomy through the octonionic
-    structure. The automorphism group G2 ~ Aut(O) contains triality, and the
-    golden angle theta_g = arctan(1/phi) governs mixing. The mass hierarchy
-    follows the same principle: each generation is suppressed by powers of phi.
+Key Insight (WORKING HYPOTHESIS per Gemini peer review 2026-01-11):
+    The Golden Ratio MAY appear in G2 holonomy through the octonionic structure.
+    The automorphism group G2 ~ Aut(O) contains triality, and the golden angle
+    theta_g = arctan(1/phi) governs mixing.
+
+    STATUS: The phi-scaling is a PHENOMENOLOGICAL FIT, not a proven derivation.
+    No rigorous proof exists showing phi must emerge from G2 geometry.
+    The connection to G2 is a working hypothesis based on:
+    - Octonionic structure in G2 holonomy
+    - Triality symmetry in octonions
+    - Fibonacci patterns in cycle intersections
+
+    FUTURE WORK: Derive phi from explicit G2 metric or Hodge dual structure.
 
 Derivation Strategy:
     1. Top quark mass m_t = 172.69 GeV (anchor, PDG 2024)
@@ -100,8 +108,9 @@ class YukawaTexturesV20(SimulationBase):
     3. Triality symmetry breaking patterns
     """
 
-    # The Golden Ratio - fundamental constant
-    PHI = (1 + math.sqrt(5)) / 2  # ~ 1.6180339887...
+    # The Golden Ratio - FROM SSOT (FormulasRegistry)
+    # NOTE: Using registry.phi to ensure SSOT consistency
+    # PHI is a property, so we'll get it in methods rather than class-level
 
     # Anchor mass: Top quark (PDG 2024)
     M_TOP_ANCHOR = 172.69  # GeV
@@ -157,6 +166,17 @@ class YukawaTexturesV20(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return simulation metadata."""
         return self._metadata
+
+    @property
+    def PHI(self) -> float:
+        """
+        Return Golden Ratio from SSOT (FormulasRegistry).
+
+        This is a PHENOMENOLOGICAL FIT, not derived from G2 geometry.
+        See docstring and Gemini peer review (2026-01-11) for details.
+        """
+        reg = _REG()
+        return reg.phi
 
     @property
     def required_inputs(self) -> List[str]:
@@ -647,13 +667,17 @@ if __name__ == "__main__":
     print("=" * 70)
     print("YUKAWA TEXTURES v20 - Test Run")
     print("=" * 70)
-    print(f"\nGolden Ratio phi = {YukawaTexturesV20.PHI:.10f}")
+
+    # Create instance to access SSOT phi
+    sim = YukawaTexturesV20()
+    phi = sim.PHI
+
+    print(f"\nGolden Ratio phi = {phi:.10f} (from SSOT FormulasRegistry)")
     print(f"Top quark anchor = {YukawaTexturesV20.M_TOP_ANCHOR} GeV")
     print()
 
     # Create registry and run simulation
     registry = PMRegistry.get_instance()
-    sim = YukawaTexturesV20()
     result = sim.run(registry)
 
     print("-" * 70)
@@ -666,7 +690,7 @@ if __name__ == "__main__":
         power = YukawaTexturesV20.PHI_POWERS[name]
         status = result.get(f'yukawa.{name}_status', 'N/A')
         print(f"  {name:12s}: {derived:12.6e} GeV (PDG: {pdg:.6e} +/- {unc:.2e})")
-        print(f"                phi^{power:+3d} = {YukawaTexturesV20.PHI**power:.6e}, "
+        print(f"                phi^{power:+3d} = {phi**power:.6e}, "
               f"sigma = {sigma:.2f}, status = {status}")
 
     print("-" * 70)
@@ -679,7 +703,7 @@ if __name__ == "__main__":
         power = YukawaTexturesV20.PHI_POWERS[name]
         status = result.get(f'yukawa.{name}_status', 'N/A')
         print(f"  {name:12s}: {derived:12.6e} GeV (PDG: {pdg:.6e} +/- {unc:.2e})")
-        print(f"                phi^{power:+3d} = {YukawaTexturesV20.PHI**power:.6e}, "
+        print(f"                phi^{power:+3d} = {phi**power:.6e}, "
               f"sigma = {sigma:.2f}, status = {status}")
 
     print("-" * 70)
@@ -692,7 +716,7 @@ if __name__ == "__main__":
         power = YukawaTexturesV20.PHI_POWERS[name]
         status = result.get(f'yukawa.{name}_status', 'N/A')
         print(f"  {name:12s}: {derived:12.6e} GeV (PDG: {pdg:.6e} +/- {unc:.2e})")
-        print(f"                phi^{power:+3d} = {YukawaTexturesV20.PHI**power:.6e}, "
+        print(f"                phi^{power:+3d} = {phi**power:.6e}, "
               f"sigma = {sigma:.2f}, status = {status}")
 
     print("-" * 70)
