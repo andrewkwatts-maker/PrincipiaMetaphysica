@@ -101,7 +101,7 @@ class PneumaMechanismV16(SimulationBase):
             title="Pneuma Field Mechanism",
             description="Compute Pneuma field dynamics, coupling constants, and Lagrangian validity from G2 geometry",
             section_id="2",
-            subsection_id=None
+            subsection_id="2.6"  # v19.0: Unique subsection (Pneuma Mechanism)
         )
 
     @property
@@ -778,7 +778,7 @@ class PneumaMechanismV16(SimulationBase):
 
         return SectionContent(
             section_id="2",
-            subsection_id="pneuma-lagrangian",
+            subsection_id="2.6",  # v19.0: Match metadata subsection_id
             title="The Pneuma Lagrangian",
             abstract="The fundamental fermionic field term that sources all of physics - from spacetime geometry to matter content.",
             content_blocks=content_blocks,

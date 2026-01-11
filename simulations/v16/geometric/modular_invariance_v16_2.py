@@ -86,7 +86,7 @@ class ModularInvarianceV16(SimulationBase):
                 "of the critical dimension."
             ),
             section_id="3",
-            subsection_id="3.5"
+            subsection_id="3.6"  # v19.0: Unique subsection (Modular Invariance)
         )
 
     @property
@@ -266,7 +266,7 @@ class ModularInvarianceV16(SimulationBase):
         """Return section content."""
         return SectionContent(
             section_id="3",
-            subsection_id="3.5",
+            subsection_id="3.6",  # v19.0: Unique subsection (Modular Invariance)
             title="Modular Invariance and Critical Dimension",
             abstract=(
                 "We prove that modular invariance of the partition function "

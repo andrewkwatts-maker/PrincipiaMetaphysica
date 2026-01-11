@@ -87,7 +87,7 @@ class RicciFlowH0V16(SimulationBase):
                 "H0_early=67.4 and H0_local=73.04 km/s/Mpc."
             ),
             section_id="5",
-            subsection_id="5.4"
+            subsection_id="5.9"  # v19.0: Unique subsection (5.4 used by s8_suppression)
         )
 
     @property
@@ -327,7 +327,7 @@ class RicciFlowH0V16(SimulationBase):
         """Return section content for the paper."""
         return SectionContent(
             section_id="5",
-            subsection_id="5.4",
+            subsection_id="5.9",  # v19.0: Unique subsection
             title="Ricci Flow Resolution of Hubble Tension",
             abstract=(
                 "We demonstrate that the G2 manifold's Ricci flow naturally resolves "

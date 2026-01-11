@@ -82,7 +82,7 @@ class FoundationsV16_2(SimulationBase):
             title="Foundations of Dimensional Descent",
             description="The 26D(24,2) → 4D sterile extraction path",
             section_id="1",
-            subsection_id=None
+            subsection_id="1.1"  # v19.0: Unique subsection (introduction_v16_0 owns section 1)
         )
 
     @property
@@ -493,7 +493,7 @@ class FoundationsV16_2(SimulationBase):
 
         return SectionContent(
             section_id="1",
-            subsection_id=None,
+            subsection_id="1.1",  # v19.0: Unique subsection
             title="Foundations of Dimensional Descent",
             abstract="The 26D(24,2) ancestral bulk, S_PR(2) gauge filter, G2 manifold, and 6D→4D projection.",
             content_blocks=content_blocks

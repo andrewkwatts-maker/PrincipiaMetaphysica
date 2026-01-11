@@ -77,7 +77,7 @@ class MethodologyV16_2(SimulationBase):
             title="The Sterile Extraction Methodology",
             description="Spectral geometry and the 125-residue port",
             section_id="2",
-            subsection_id=None
+            subsection_id="2.5"  # v19.0: Unique subsection (2.1-2.4 used by geometry simulations)
         )
 
     @property
@@ -395,7 +395,7 @@ class MethodologyV16_2(SimulationBase):
 
         return SectionContent(
             section_id="2",
-            subsection_id=None,
+            subsection_id="2.5",  # v19.0: Unique subsection
             title="The Sterile Extraction Methodology",
             abstract="Spectral geometry principles, the 125-residue port, and the global metric lock.",
             content_blocks=content_blocks

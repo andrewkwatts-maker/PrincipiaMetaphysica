@@ -89,7 +89,7 @@ class HiggsBranePartitionSimulation(SimulationBase):
                 "Shows that 414 GeV (bulk) projects to 125 GeV (local) via k_gimel/π scaling."
             ),
             section_id="4",
-            subsection_id="4.4"
+            subsection_id="4.9"  # v19.0: Unique subsection (4.4 used by higgs_mass_v16_0)
         )
 
     @property
@@ -205,10 +205,10 @@ class HiggsBranePartitionSimulation(SimulationBase):
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
-        """Return section content for Section 4.4."""
+        """Return section content for Section 4.9."""
         return SectionContent(
             section_id="4",
-            subsection_id="4.4",
+            subsection_id="4.9",  # v19.0: Unique subsection
             title="Higgs Mass from 4-Brane Partition",
             abstract=(
                 "We derive the observed Higgs mass (125 GeV) from the 26D bulk tension "

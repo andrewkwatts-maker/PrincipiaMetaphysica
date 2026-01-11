@@ -144,7 +144,7 @@ if SCHEMA_AVAILABLE:
                 title="Proton-Electron Mass Ratio Derivation",
                 description="Derives m_p/m_e ≈ 1836.15 from G2 manifold topology with zero free parameters",
                 section_id="4",
-                subsection_id="4.2"
+                subsection_id="4.8"  # v19.0: Unique subsection (4.2 used by fermion_generations)
             )
 
         @property
@@ -173,7 +173,7 @@ if SCHEMA_AVAILABLE:
             """Return section content for paper injection."""
             return SectionContent(
                 section_id="4",
-                subsection_id="4.2",
+                subsection_id="4.8",  # v19.0: Unique subsection
                 title="Fermion Mass Ratios from G2 Geometry",
                 abstract=(
                     "The proton-to-electron mass ratio is NOT a free parameter in PM. "
