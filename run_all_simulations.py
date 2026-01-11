@@ -249,6 +249,7 @@ from simulations.v16.introduction.abstract_v17_2 import AbstractV17_2
 # Phase 1 - Root simulations (no dependencies)
 from simulations.v16.geometric.g2_geometry_v16_0 import G2GeometryV16
 from simulations.v16.gauge.gauge_unification_v16_0 import GaugeUnificationSimulation
+from simulations.v16.master_action.master_action_simulation_v18 import MasterActionSimulationV18
 
 # v16.2 - Geometric Anchors (fundamental constants from b3=24)
 from simulations.v16.geometric.geometric_anchors_simulation_v16_2 import GeometricAnchorsSimulation
@@ -777,6 +778,7 @@ class SimulationRunner:
                 LeechPartitionV16(),       # v16.2 - Proves 24/8=3 generations
                 ModularInvarianceV16(),    # v16.2 - Proves b3=24 uniqueness
                 GaugeUnificationSimulation(),
+                MasterActionSimulationV18(),  # v18: SM gauge sectors from 26D master action
             ] + ([AlphaRigorSimulation()] if ALPHA_RIGOR_AVAILABLE else []),
             2: [
                 FermionGenerationsV16(),

@@ -1,6 +1,6 @@
 {
   "version": "17.2",
-  "count": 60,
+  "count": 61,
   "sections": {
     "0": {
       "id": "0",
@@ -68,7 +68,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.416041"
+      "timestamp": "2026-01-11T12:58:06.883872"
     },
     "1": {
       "id": "1",
@@ -576,7 +576,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455181"
+      "timestamp": "2026-01-11T12:58:06.925967"
     },
     "2.0": {
       "id": "2",
@@ -776,7 +776,7 @@
         "geometry.n_s",
         "geometry.unity_seal"
       ],
-      "timestamp": "2026-01-11T10:47:37.416519"
+      "timestamp": "2026-01-11T12:58:06.884375"
     },
     "2": {
       "id": "2",
@@ -1202,7 +1202,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455256"
+      "timestamp": "2026-01-11T12:58:06.926042"
     },
     "validation": {
       "id": "validation",
@@ -1324,7 +1324,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-11T10:47:37.417088"
+      "timestamp": "2026-01-11T12:58:06.884889"
     },
     "V.1": {
       "id": "validation",
@@ -1446,7 +1446,7 @@
         "unitary.central_charge",
         "unitary.is_ghost_free"
       ],
-      "timestamp": "2026-01-11T10:47:37.417116"
+      "timestamp": "2026-01-11T12:58:06.884917"
     },
     "3": {
       "id": "3",
@@ -1718,7 +1718,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455305"
+      "timestamp": "2026-01-11T12:58:06.926103"
     },
     "3.4": {
       "id": "3",
@@ -1882,7 +1882,7 @@
         "topology.leech_dim",
         "topology.octonion_dim"
       ],
-      "timestamp": "2026-01-11T10:47:37.417201"
+      "timestamp": "2026-01-11T12:58:06.885001"
     },
     "3.6": {
       "id": "3",
@@ -2054,7 +2054,193 @@
         "topology.vacuum_energy",
         "topology.critical_dim"
       ],
-      "timestamp": "2026-01-11T10:47:37.417323"
+      "timestamp": "2026-01-11T12:58:06.885168"
+    },
+    "3.2": {
+      "id": "3",
+      "appendix": false,
+      "subsection_id": "3.2",
+      "type": "section",
+      "section_type": null,
+      "title": "Standard Model Gauge Sectors from Master Action",
+      "shortTitle": "Standard Model Gauge Sectors from Master Action",
+      "order": 3,
+      "abstract": "Derivation of Standard Model gauge structure from higher-dimensional master action via Kaluza-Klein reduction over G2 manifolds. Gauge couplings locked by spectral residues without tuning.",
+      "contentBlocks": [
+        {
+          "type": "heading",
+          "content": "The 26D Pneuma Master Action",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The fundamental action begins in 26D spacetime with signature (24,2), unifying gravity and fermionic matter via the Pneuma spinor. The Sp(2,R) gauge fixing reduces to 13D, then Kaluza-Klein compactification over G2 yields the effective 4D theory with Standard Model gauge sectors."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "pneuma-master-action-v18"
+        },
+        {
+          "type": "heading",
+          "content": "Kaluza-Klein Mechanism",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The standard Kaluza-Klein mechanism demonstrates how gauge fields emerge from higher-dimensional gravity. The 5D -> 4D reduction yields 4D GR plus U(1) gauge kinetics with -1/4 F^2 normalization."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "kk-reduction-5d-v18"
+        },
+        {
+          "type": "heading",
+          "content": "Non-Abelian Gauge Sectors",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The full G2 reduction yields non-Abelian gauge groups from cycles: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative 4-cycles, and U(1)_Y from residual Abelian structure."
+        },
+        {
+          "type": "list",
+          "content": null,
+          "items": [
+            "SU(3)_C: 8 gluons, alpha_s(M_Z) ~ 0.117",
+            "SU(2)_L: 3 weak bosons (W+, W-, W^3)",
+            "U(1)_Y: Hypercharge gauge field B_mu"
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Electroweak Symmetry Breaking",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The Higgs mechanism mixes W^3 and B into the massless photon and massive Z boson. The Weinberg angle sin^2(theta_W) = 0.23129 is locked by the G2 cycle volume ratio, not fit to data."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "electroweak-mixing-v18"
+        }
+      ],
+      "content_blocks": [
+        {
+          "type": "heading",
+          "content": "The 26D Pneuma Master Action",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The fundamental action begins in 26D spacetime with signature (24,2), unifying gravity and fermionic matter via the Pneuma spinor. The Sp(2,R) gauge fixing reduces to 13D, then Kaluza-Klein compactification over G2 yields the effective 4D theory with Standard Model gauge sectors."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "pneuma-master-action-v18"
+        },
+        {
+          "type": "heading",
+          "content": "Kaluza-Klein Mechanism",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The standard Kaluza-Klein mechanism demonstrates how gauge fields emerge from higher-dimensional gravity. The 5D -> 4D reduction yields 4D GR plus U(1) gauge kinetics with -1/4 F^2 normalization."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "kk-reduction-5d-v18"
+        },
+        {
+          "type": "heading",
+          "content": "Non-Abelian Gauge Sectors",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The full G2 reduction yields non-Abelian gauge groups from cycles: SU(3)_C from associative 3-cycles, SU(2)_L from co-associative 4-cycles, and U(1)_Y from residual Abelian structure."
+        },
+        {
+          "type": "list",
+          "content": null,
+          "items": [
+            "SU(3)_C: 8 gluons, alpha_s(M_Z) ~ 0.117",
+            "SU(2)_L: 3 weak bosons (W+, W-, W^3)",
+            "U(1)_Y: Hypercharge gauge field B_mu"
+          ]
+        },
+        {
+          "type": "heading",
+          "content": "Electroweak Symmetry Breaking",
+          "level": 2
+        },
+        {
+          "type": "paragraph",
+          "content": "The Higgs mechanism mixes W^3 and B into the massless photon and massive Z boson. The Weinberg angle sin^2(theta_W) = 0.23129 is locked by the G2 cycle volume ratio, not fit to data."
+        },
+        {
+          "type": "formula",
+          "content": null,
+          "formula_id": "electroweak-mixing-v18"
+        }
+      ],
+      "formulaRefs": [
+        "pneuma-master-action-v18",
+        "kk-reduction-5d-v18",
+        "su3-qcd-lagrangian-v18",
+        "su2-weak-lagrangian-v18",
+        "u1-hypercharge-v18",
+        "electroweak-mixing-v18"
+      ],
+      "paramRefs": [
+        "gauge.kk_planck_factor",
+        "gauge.kk_gauge_kinetic_coeff",
+        "gauge.kk_canonical",
+        "gauge.qcd_gluon_count",
+        "gauge.qcd_alpha_s_mz",
+        "gauge.qcd_canonical",
+        "gauge.weak_boson_count",
+        "gauge.weak_coupling_g2",
+        "gauge.weak_canonical",
+        "gauge.hypercharge_coupling_gp",
+        "gauge.hypercharge_canonical",
+        "gauge.sin2_theta_w",
+        "gauge.m_z_gev",
+        "gauge.m_w_gev",
+        "gauge.rho_parameter"
+      ],
+      "formula_refs": [
+        "pneuma-master-action-v18",
+        "kk-reduction-5d-v18",
+        "su3-qcd-lagrangian-v18",
+        "su2-weak-lagrangian-v18",
+        "u1-hypercharge-v18",
+        "electroweak-mixing-v18"
+      ],
+      "param_refs": [
+        "gauge.kk_planck_factor",
+        "gauge.kk_gauge_kinetic_coeff",
+        "gauge.kk_canonical",
+        "gauge.qcd_gluon_count",
+        "gauge.qcd_alpha_s_mz",
+        "gauge.qcd_canonical",
+        "gauge.weak_boson_count",
+        "gauge.weak_coupling_g2",
+        "gauge.weak_canonical",
+        "gauge.hypercharge_coupling_gp",
+        "gauge.hypercharge_canonical",
+        "gauge.sin2_theta_w",
+        "gauge.m_z_gev",
+        "gauge.m_w_gev",
+        "gauge.rho_parameter"
+      ],
+      "timestamp": "2026-01-11T12:58:06.915862"
     },
     "3.1": {
       "id": "3",
@@ -2112,7 +2298,7 @@
       "param_refs": [
         "electromagnetic.alpha_inv"
       ],
-      "timestamp": "2026-01-11T10:47:37.447575"
+      "timestamp": "2026-01-11T12:58:06.915931"
     },
     "4": {
       "id": "4",
@@ -2420,7 +2606,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455390"
+      "timestamp": "2026-01-11T12:58:06.926171"
     },
     "4.2": {
       "id": "4",
@@ -2550,7 +2736,7 @@
         "fermion.yukawa_hierarchy",
         "fermion.chiral_filter_strength"
       ],
-      "timestamp": "2026-01-11T10:47:37.447834"
+      "timestamp": "2026-01-11T12:58:06.916011"
     },
     "4.1": {
       "id": "4",
@@ -2838,7 +3024,7 @@
         "chirality.chiral_index",
         "chirality.generation_count"
       ],
-      "timestamp": "2026-01-11T10:47:37.447976"
+      "timestamp": "2026-01-11T12:58:06.916149"
     },
     "4.3": {
       "id": "4",
@@ -3078,7 +3264,7 @@
         "ckm.rho_wolfenstein",
         "ckm.eta_wolfenstein"
       ],
-      "timestamp": "2026-01-11T10:47:37.448119"
+      "timestamp": "2026-01-11T12:58:06.916282"
     },
     "4.6": {
       "id": "4",
@@ -3258,7 +3444,7 @@
         "proton_decay.suppression_factor",
         "bounds.tau_proton_lower"
       ],
-      "timestamp": "2026-01-11T10:47:37.448192"
+      "timestamp": "2026-01-11T12:58:06.916354"
     },
     "4.4": {
       "id": "4",
@@ -3366,7 +3552,7 @@
         "moduli.re_t_phenomenological",
         "yukawa.y_top"
       ],
-      "timestamp": "2026-01-11T10:47:37.448276"
+      "timestamp": "2026-01-11T12:58:06.916436"
     },
     "4.9": {
       "id": "4",
@@ -3456,7 +3642,7 @@
         "higgs.brane_partition_ratio",
         "topology.k_gimel"
       ],
-      "timestamp": "2026-01-11T10:47:37.448341"
+      "timestamp": "2026-01-11T12:58:06.916497"
     },
     "4.8": {
       "id": "4",
@@ -3514,7 +3700,7 @@
       "param_refs": [
         "fermion.mass_ratio_proton_electron"
       ],
-      "timestamp": "2026-01-11T10:47:37.448386"
+      "timestamp": "2026-01-11T12:58:06.916542"
     },
     "5": {
       "id": "5",
@@ -3668,7 +3854,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-11T10:47:37.454528"
+      "timestamp": "2026-01-11T12:58:06.922718"
     },
     "5.1": {
       "id": "5",
@@ -3976,7 +4162,7 @@
         "cosmology.epsilon_KK",
         "cosmology.D_eff_shadow"
       ],
-      "timestamp": "2026-01-11T10:47:37.448485"
+      "timestamp": "2026-01-11T12:58:06.916652"
     },
     "5.2": {
       "id": "5",
@@ -4112,7 +4298,7 @@
         "cosmology.D_eff",
         "cosmology.alpha_shadow"
       ],
-      "timestamp": "2026-01-11T10:47:37.448646"
+      "timestamp": "2026-01-11T12:58:06.916796"
     },
     "5.6": {
       "id": "5",
@@ -4348,7 +4534,7 @@
         "cosmology.z_thaw",
         "cosmology.torsional_leakage"
       ],
-      "timestamp": "2026-01-11T10:47:37.448818"
+      "timestamp": "2026-01-11T12:58:06.916964"
     },
     "5.7": {
       "id": "5",
@@ -4492,7 +4678,7 @@
         "cosmology.H0_early_normalized",
         "cosmology.relaxation_z1100"
       ],
-      "timestamp": "2026-01-11T10:47:37.450761"
+      "timestamp": "2026-01-11T12:58:06.919026"
     },
     "5.4": {
       "id": "5",
@@ -4790,7 +4976,7 @@
         "cosmology.s8_tension_kids",
         "cosmology.s8_tension_des"
       ],
-      "timestamp": "2026-01-11T10:47:37.452149"
+      "timestamp": "2026-01-11T12:58:06.920411"
     },
     "5.9": {
       "id": "5",
@@ -4952,7 +5138,7 @@
         "cosmology.H0_early",
         "cosmology.z_transition"
       ],
-      "timestamp": "2026-01-11T10:47:37.453556"
+      "timestamp": "2026-01-11T12:58:06.921788"
     },
     "4.5": {
       "id": "4",
@@ -5114,7 +5300,7 @@
         "neutrino.theta_23_pred",
         "neutrino.delta_CP_pred"
       ],
-      "timestamp": "2026-01-11T10:47:37.453711"
+      "timestamp": "2026-01-11T12:58:06.921949"
     },
     "4.7": {
       "id": "4",
@@ -5358,7 +5544,7 @@
         "triality.theta_g",
         "triality.mixing_ratio"
       ],
-      "timestamp": "2026-01-11T10:47:37.453833"
+      "timestamp": "2026-01-11T12:58:06.922071"
     },
     "5.3": {
       "id": "5",
@@ -5472,7 +5658,7 @@
         "cosmology.T_mirror_ratio",
         "cosmology.modulation_width"
       ],
-      "timestamp": "2026-01-11T10:47:37.453959"
+      "timestamp": "2026-01-11T12:58:06.922206"
     },
     "5.8": {
       "id": "5",
@@ -5678,7 +5864,7 @@
         "cosmology.c_sigma_deviation",
         "cosmology.spatial_projection"
       ],
-      "timestamp": "2026-01-11T10:47:37.454067"
+      "timestamp": "2026-01-11T12:58:06.922315"
     },
     "6": {
       "id": "6",
@@ -7824,7 +8010,7 @@
         "topology.chi_eff",
         "topology.n_gen"
       ],
-      "timestamp": "2026-01-11T10:47:37.455138"
+      "timestamp": "2026-01-11T12:58:06.925928"
     },
     "6.1": {
       "id": "6",
@@ -7884,7 +8070,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454125"
+      "timestamp": "2026-01-11T12:58:06.922367"
     },
     "6.2": {
       "id": "6",
@@ -7924,7 +8110,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454196"
+      "timestamp": "2026-01-11T12:58:06.922425"
     },
     "6.3": {
       "id": "6",
@@ -7952,7 +8138,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454232"
+      "timestamp": "2026-01-11T12:58:06.922461"
     },
     "6.4": {
       "id": "6",
@@ -7980,7 +8166,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454264"
+      "timestamp": "2026-01-11T12:58:06.922494"
     },
     "6.5": {
       "id": "6",
@@ -8008,7 +8194,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454295"
+      "timestamp": "2026-01-11T12:58:06.922526"
     },
     "6.6": {
       "id": "6",
@@ -8036,7 +8222,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454327"
+      "timestamp": "2026-01-11T12:58:06.922559"
     },
     "6.7": {
       "id": "6",
@@ -8064,7 +8250,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454359"
+      "timestamp": "2026-01-11T12:58:06.922608"
     },
     "6.8": {
       "id": "6",
@@ -8100,7 +8286,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454388"
+      "timestamp": "2026-01-11T12:58:06.922637"
     },
     "6.9": {
       "id": "6",
@@ -8136,7 +8322,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.454479"
+      "timestamp": "2026-01-11T12:58:06.922670"
     },
     "5.5": {
       "id": "5",
@@ -8290,7 +8476,7 @@
         "cosmology.Lambda_derived",
         "cosmology.Lambda_ratio"
       ],
-      "timestamp": "2026-01-11T10:47:37.454553"
+      "timestamp": "2026-01-11T12:58:06.922745"
     },
     "2.6": {
       "id": "2",
@@ -9122,7 +9308,7 @@
         "pneuma.vev",
         "pneuma.mass_scale"
       ],
-      "timestamp": "2026-01-11T10:47:37.454695"
+      "timestamp": "2026-01-11T12:58:06.922894"
     },
     "thermal-time": {
       "id": "thermal-time",
@@ -9250,7 +9436,7 @@
         "thermal.entropy_gradient",
         "topology.b3"
       ],
-      "timestamp": "2026-01-11T10:47:37.454787"
+      "timestamp": "2026-01-11T12:58:06.922958"
     },
     "7": {
       "id": "7",
@@ -11684,7 +11870,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455009"
+      "timestamp": "2026-01-11T12:58:06.923192"
     },
     "7.2": {
       "id": "7",
@@ -11752,7 +11938,7 @@
         "quantum_bio.coherence_time_ms",
         "quantum_bio.topological_pitch"
       ],
-      "timestamp": "2026-01-11T10:47:37.454865"
+      "timestamp": "2026-01-11T12:58:06.923036"
     },
     "1.1": {
       "id": "1",
@@ -12260,7 +12446,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455228"
+      "timestamp": "2026-01-11T12:58:06.926018"
     },
     "2.5": {
       "id": "2",
@@ -12686,7 +12872,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455284"
+      "timestamp": "2026-01-11T12:58:06.926084"
     },
     "3.7": {
       "id": "3",
@@ -12958,7 +13144,7 @@
       "paramRefs": [],
       "formula_refs": [],
       "param_refs": [],
-      "timestamp": "2026-01-11T10:47:37.455344"
+      "timestamp": "2026-01-11T12:58:06.926126"
     },
     "A": {
       "id": "A",
@@ -13168,7 +13354,7 @@
         "particle.higgs_vev",
         "particle.alpha_s"
       ],
-      "timestamp": "2026-01-11T10:47:37.455450"
+      "timestamp": "2026-01-11T12:58:06.926228"
     },
     "B": {
       "id": "B",
@@ -13404,7 +13590,7 @@
         "validation.phi_g2",
         "validation.sum_rule_tolerance"
       ],
-      "timestamp": "2026-01-11T10:47:37.455517"
+      "timestamp": "2026-01-11T12:58:06.926291"
     },
     "C": {
       "id": "C",
@@ -13610,7 +13796,7 @@
         "dimensions.D_observable",
         "gauge.orthogonality_tolerance"
       ],
-      "timestamp": "2026-01-11T10:47:37.455570"
+      "timestamp": "2026-01-11T12:58:06.926339"
     },
     "D": {
       "id": "D",
@@ -13808,7 +13994,7 @@
         "observational.H0_shoes",
         "observational.w0_desi"
       ],
-      "timestamp": "2026-01-11T10:47:37.455626"
+      "timestamp": "2026-01-11T12:58:06.926393"
     },
     "E": {
       "id": "E",
@@ -14010,7 +14196,7 @@
         "registry.node_count",
         "geometry.min_separation"
       ],
-      "timestamp": "2026-01-11T10:47:37.455676"
+      "timestamp": "2026-01-11T12:58:06.926439"
     },
     "F": {
       "id": "F",
@@ -14220,7 +14406,7 @@
         "gates.omega_hash",
         "gates.status"
       ],
-      "timestamp": "2026-01-11T10:47:37.456166"
+      "timestamp": "2026-01-11T12:58:06.926937"
     },
     "G": {
       "id": "G",
@@ -14556,7 +14742,7 @@
         "topology.torsion_per_shadow",
         "seal.geometric_checksum"
       ],
-      "timestamp": "2026-01-11T10:47:37.458130"
+      "timestamp": "2026-01-11T12:58:06.927034"
     },
     "H": {
       "id": "H",
@@ -14842,7 +15028,7 @@
         "topology.hidden_supports",
         "registry.node_count"
       ],
-      "timestamp": "2026-01-11T10:47:37.458242"
+      "timestamp": "2026-01-11T12:58:06.927113"
     },
     "I": {
       "id": "I",
@@ -15196,7 +15382,7 @@
         "terminal.restoration_fraction",
         "terminal.entropy_threshold"
       ],
-      "timestamp": "2026-01-11T10:47:37.458325"
+      "timestamp": "2026-01-11T12:58:06.927191"
     },
     "J": {
       "id": "J",
@@ -15478,7 +15664,7 @@
         "funnel.survival_rate",
         "funnel.compression_ratio"
       ],
-      "timestamp": "2026-01-11T10:47:37.458417"
+      "timestamp": "2026-01-11T12:58:06.927322"
     },
     "K": {
       "id": "K",
@@ -15894,7 +16080,7 @@
         "sterile.h_origin",
         "sterile.w0_origin"
       ],
-      "timestamp": "2026-01-11T10:47:37.458492"
+      "timestamp": "2026-01-11T12:58:06.927397"
     },
     "L": {
       "id": "L",
@@ -16184,7 +16370,7 @@
         "terminal.epochs_remaining",
         "terminal.restoration_probability"
       ],
-      "timestamp": "2026-01-11T10:47:37.458576"
+      "timestamp": "2026-01-11T12:58:06.927473"
     },
     "Z": {
       "id": "Z",
@@ -16260,7 +16446,7 @@
         "terminal.closure_verified",
         "cosmology.h0_unwinding_scale"
       ],
-      "timestamp": "2026-01-11T10:47:37.458679"
+      "timestamp": "2026-01-11T12:58:06.927578"
     }
   }
 }
