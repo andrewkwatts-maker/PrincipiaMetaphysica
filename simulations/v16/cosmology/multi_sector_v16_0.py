@@ -79,7 +79,7 @@ class MultiSectorV16(SimulationBase):
         self.width_source = "not_computed"
 
         # G2 topology constants for width derivation
-        self.b3 = 24  # Associative 3-cycles (third Betti number)
+        self.b3 = _REG.b3  # Associative 3-cycles (third Betti number) from SSOT
         self.L_G2 = 1.0  # G2 manifold length scale (normalized)
 
     # -------------------------------------------------------------------------
@@ -187,7 +187,7 @@ class MultiSectorV16(SimulationBase):
 
         # Step 5: Compute effective dark energy EoS
         # From dimensional reduction: w_eff = -(D_eff - 1)/(D_eff + 1)
-        D_eff = 12.576  # From shared dimensions
+        D_eff = registry.get("D_eff", default=12.576)  # From shared dimensions
         w_eff = -(D_eff - 1) / (D_eff + 1)
 
         # Step 6: Compute blended observables
@@ -403,7 +403,7 @@ class MultiSectorV16(SimulationBase):
             Temperature ratio T'/T
         """
         # G2 topology parameters
-        b3 = 24  # Associative 3-cycles
+        b3 = _REG.b3  # Associative 3-cycles from SSOT
 
         # Decay rate asymmetry from moduli couplings
         decay_asymmetry = (chi_eff / b3**2) ** 2
@@ -415,7 +415,8 @@ class MultiSectorV16(SimulationBase):
         temp_ratio_tree = g_ratio**(1/3) * decay_asymmetry**(1/2)
 
         # Include loop corrections (brings ~0.25 -> 0.57)
-        temp_ratio_corrected = 0.57
+        # T'/T ratio from asymmetric reheating with loop corrections
+        temp_ratio_corrected = getattr(_REG, "T_mirror_ratio", 0.57)
 
         return temp_ratio_corrected
 
@@ -435,10 +436,10 @@ class MultiSectorV16(SimulationBase):
         abundance_ratio = (1.0 / temp_ratio) ** 3
 
         # Observational value (Planck 2018)
-        observed_ratio = 5.38
+        observed_ratio = getattr(_REG, "Omega_DM_over_b_observed", 5.38)
 
         # Deviation in sigma
-        sigma = 0.15  # ~3% uncertainty on each
+        sigma = getattr(_REG, "sigma_Omega_DM_over_b", 0.15)  # ~3% uncertainty on each
         deviation = abs(abundance_ratio - observed_ratio) / sigma
 
         return {

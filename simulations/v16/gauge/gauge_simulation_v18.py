@@ -230,12 +230,12 @@ class GaugeSimulationV18(SimulationBase):
         """Ensure all required inputs are set in registry."""
         defaults = {
             # EXPERIMENTAL: Fundamental constants (CODATA 2018)
-            "constants.M_PLANCK": (2.435e18, "CODATA 2018"),
-            "constants.alpha_em": (1.0 / 137.036, "CODATA 2018"),  # EXPERIMENTAL: CODATA
+            "constants.M_PLANCK": (getattr(_REG, "M_PLANCK", 2.435e18), "CODATA 2018"),
+            "constants.alpha_em": (getattr(_REG, "alpha_em", 1.0 / 137.036), "CODATA 2018"),  # EXPERIMENTAL: CODATA
             # EXPERIMENTAL: PDG 2024 values
-            "pdg.alpha_s_MZ": (0.1180, "PDG 2024"),  # EXPERIMENTAL: PDG 2024
-            "pdg.sin2_theta_W": (0.23121, "PDG 2024"),  # EXPERIMENTAL: PDG 2024
-            "pdg.m_Z": (91.1876, "PDG 2024"),  # EXPERIMENTAL: PDG 2024
+            "pdg.alpha_s_MZ": (getattr(_REG, "alpha_s_MZ", 0.1180), "PDG 2024"),  # EXPERIMENTAL: PDG 2024
+            "pdg.sin2_theta_W": (getattr(_REG, "sin2_theta_W", 0.23121), "PDG 2024"),  # EXPERIMENTAL: PDG 2024
+            "pdg.m_Z": (getattr(_REG, "m_Z", 91.1876), "PDG 2024"),  # EXPERIMENTAL: PDG 2024
             # Topology
             "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
             "topology.h11": (_REG.b3, "ESTABLISHED:FormulasRegistry"),

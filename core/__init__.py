@@ -23,12 +23,33 @@ Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
 from .FormulasRegistry import FormulasRegistry, get_registry
 from .demon_lock_guard import DemonLockGuard, require_demon_lock
+from .dependency_resolver import (
+    DependencyGraph,
+    DependencyResolver,
+    CycleDetectedError,
+    MissingComputeFunctionError,
+    build_pm_dependency_graph,
+    build_seed_values,
+    create_pm_resolver,
+    resolve_with_seeds,
+)
 
 __all__ = [
+    # FormulasRegistry
     'FormulasRegistry',
     'get_registry',
+    # DemonLockGuard
     'DemonLockGuard',
     'require_demon_lock',
+    # DependencyResolver (v20)
+    'DependencyGraph',
+    'DependencyResolver',
+    'CycleDetectedError',
+    'MissingComputeFunctionError',
+    'build_pm_dependency_graph',
+    'build_seed_values',
+    'create_pm_resolver',
+    'resolve_with_seeds',
 ]
 
 __version__ = "19.2"

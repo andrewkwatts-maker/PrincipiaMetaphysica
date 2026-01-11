@@ -224,8 +224,8 @@ class PneumaSimulationV18(SimulationBase):
         defaults = {
             "topology.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
             "topology.b3": (_REG.b3, "ESTABLISHED:FormulasRegistry"),
-            "constants.M_PLANCK": (1.22e19, "ESTABLISHED:CODATA"),
-            "pdg.m_higgs": (125.10, "ESTABLISHED:PDG2024"),  # EXPERIMENTAL: PDG2024
+            "constants.M_PLANCK": (getattr(_REG, "M_PLANCK", 1.22e19), "ESTABLISHED:CODATA"),
+            "pdg.m_higgs": (getattr(_REG, "m_higgs", 125.10), "ESTABLISHED:PDG2024"),  # EXPERIMENTAL: PDG2024
         }
 
         for path, (value, source) in defaults.items():

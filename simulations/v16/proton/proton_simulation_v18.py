@@ -71,8 +71,9 @@ class ProtonSimulationV18(SimulationBase):
     """
 
     # Physical constants and calibrations
-    C_PREFACTOR = 3.82e33  # years - GUT lifetime prefactor (calibrated to SU(5))
-    BR_E_PI0 = 0.25        # Branching ratio (12/24)^2 from geometric orientation
+    # Use SSOT values with defaults for backward compatibility
+    C_PREFACTOR = getattr(_REG, "C_proton_prefactor", 3.82e33)  # years - GUT lifetime prefactor (calibrated to SU(5))
+    BR_E_PI0 = getattr(_REG, "BR_e_pi0", 0.25)        # Branching ratio (12/24)^2 from geometric orientation
 
     def __init__(self):
         """Initialize v18 proton simulation wrapper."""
@@ -195,12 +196,12 @@ class ProtonSimulationV18(SimulationBase):
         b3 = _REG.b3  # 24 from SSOT
         # GUT parameters (geometric values)
         defaults = {
-            "gauge.M_GUT_GEOMETRIC": (2.1e16, "ESTABLISHED:torsion_moduli", "GeV"),
-            "gauge.ALPHA_GUT_GEOMETRIC": (1.0 / 23.54, "ESTABLISHED:geometric_coupling", "dimensionless"),
+            "gauge.M_GUT_GEOMETRIC": (getattr(_REG, "M_GUT_GEOMETRIC", 2.1e16), "ESTABLISHED:torsion_moduli", "GeV"),
+            "gauge.ALPHA_GUT_GEOMETRIC": (getattr(_REG, "ALPHA_GUT_GEOMETRIC", 1.0 / 23.54), "ESTABLISHED:geometric_coupling", "dimensionless"),
             "topology.K_MATCHING": (b3 // 6, "DERIVED:K=b3/6:FormulasRegistry", "dimensionless"),  # 4
-            "bounds.tau_proton_lower": (2.4e34, "EXPERIMENTAL:Super-K", "years"),
-            "constants.M_PLANCK": (1.22e19, "ESTABLISHED:CODATA", "GeV"),
-            "constants.m_proton": (0.938272, "ESTABLISHED:PDG2024", "GeV"),
+            "bounds.tau_proton_lower": (getattr(_REG, "tau_proton_lower", 2.4e34), "EXPERIMENTAL:Super-K", "years"),
+            "constants.M_PLANCK": (getattr(_REG, "M_PLANCK", 1.22e19), "ESTABLISHED:CODATA", "GeV"),
+            "constants.m_proton": (getattr(_REG, "m_proton", 0.938272), "ESTABLISHED:PDG2024", "GeV"),
         }
 
         for path, (value, source, units) in defaults.items():

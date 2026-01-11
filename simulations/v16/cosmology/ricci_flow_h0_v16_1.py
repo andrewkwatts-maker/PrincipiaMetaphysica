@@ -131,6 +131,16 @@ class RicciFlowH0V16(SimulationBase):
     # Core Computation
     # -------------------------------------------------------------------------
 
+    def _ensure_inputs(self, registry: PMRegistry) -> None:
+        """Ensure required inputs are available with defaults."""
+        defaults = {
+            "topology.b3": (24, "ESTABLISHED:G2_topology"),
+            "desi.Omega_m": (0.3111, "ESTABLISHED:DESI2025"),
+        }
+        for path, (value, source) in defaults.items():
+            if not registry.has_param(path):
+                registry.set_param(path, value, source=source, status="ESTABLISHED")
+
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
         """
         Execute the Ricci flow Hubble evolution.
@@ -139,6 +149,9 @@ class RicciFlowH0V16(SimulationBase):
         1. Ricci flow for effective curvature R(z)
         2. Modified Friedmann equation H(z) with curvature correction
         """
+        # Ensure inputs exist
+        self._ensure_inputs(registry)
+
         # Validate inputs
         self.validate_inputs(registry)
 
@@ -155,7 +168,7 @@ class RicciFlowH0V16(SimulationBase):
 
         # Step 2: Solve evolution ODEs
         z_array, H_array, R_array = self._solve_evolution_odes(
-            ricci_params, Omega_m, Omega_de
+            ricci_params, Omega_m, Omega_de, registry
         )
 
         self.z_array = z_array
@@ -171,10 +184,10 @@ class RicciFlowH0V16(SimulationBase):
         # Step 4: Compute Hubble tension diagnostic
         # SH0ES 2025: H0 = 73.04 +/- 1.04 km/s/Mpc
         # Planck 2018: H0 = 67.4 +/- 0.5 km/s/Mpc
-        H0_shoes = 73.04
-        H0_planck = 67.4
-        sigma_shoes = 1.04
-        sigma_planck = 0.5
+        H0_shoes = registry.get("observational.H0_shoes", default=73.04)
+        H0_planck = registry.get("observational.H0_planck", default=67.4)
+        sigma_shoes = registry.get("observational.sigma_H0_shoes", default=1.04)
+        sigma_planck = registry.get("observational.sigma_H0_planck", default=0.5)
 
         local_deviation = abs(self.H0_local - H0_shoes) / sigma_shoes
         early_deviation = abs(self.H0_early - H0_planck) / sigma_planck
@@ -221,7 +234,8 @@ class RicciFlowH0V16(SimulationBase):
         self,
         ricci_params: Dict[str, float],
         Omega_m: float,
-        Omega_de: float
+        Omega_de: float,
+        registry: PMRegistry
     ) -> Tuple[np.ndarray, np.ndarray, np.ndarray]:
         """
         Solve the coupled evolution equations for H(z) and R(z).
@@ -239,8 +253,8 @@ class RicciFlowH0V16(SimulationBase):
         # v16.2 GEOMETRIC FIX: Derive H0_local from mixing angle formula
         # H0_local = H0_CMB × (1 + sin²(θ)/2) where θ = 23.94° from 13D/26D volume ratio
         # See CERTIFICATES_v16_2.py derive_c1_hubble() for derivation
-        H0_planck = 67.4   # km/s/Mpc (early, Planck CMB value)
-        theta_mixing = 23.94 * np.pi / 180  # 13D/26D volume mixing angle in radians
+        H0_planck = registry.get("observational.H0_planck", default=67.4)   # km/s/Mpc (early, Planck CMB value)
+        theta_mixing = registry.get("geometry.theta_mixing_13D_26D", default=23.94) * np.pi / 180  # 13D/26D volume mixing angle in radians
         H0_geometric = H0_planck * (1 + np.sin(theta_mixing)**2 / 2)  # ≈ 72.96 km/s/Mpc
         H0_shoes = H0_geometric  # Use geometric derivation, not hardcoded 73.04
 
@@ -301,7 +315,7 @@ class RicciFlowH0V16(SimulationBase):
             # For high redshift (CMB era), return the early-universe H0
             # This is the BASE rate, not H(z) = H0 * E(z)
             # The 67.4 is what Planck CMB analysis infers for H0
-            return 67.4  # km/s/Mpc - Planck 2018 inferred value
+            return 67.4  # km/s/Mpc - Planck 2018 inferred value (early universe)
         return np.interp(z_target, z_array, H_array)
 
     def _find_transition_redshift(

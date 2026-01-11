@@ -269,7 +269,7 @@ class ModuliSimulationV18(SimulationBase):
         # Mass from second derivative of potential
         # m_modulus^2 ~ V'' / M_Pl^2 (in Planck units)
         # In GeV: m_modulus ~ sqrt(V'') * M_Pl
-        M_Pl_GeV = 2.435e18  # Reduced Planck mass in GeV
+        M_Pl_GeV = getattr(_REG, "M_PLANCK", 2.435e18)  # Reduced Planck mass in GeV
         mass_modulus = np.sqrt(hessian_eigenvalue) * M_Pl_GeV * 1e-15  # In TeV
 
         results["moduli.mass_modulus"] = mass_modulus
