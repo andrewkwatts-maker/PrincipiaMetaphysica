@@ -178,12 +178,15 @@ class ThermalSimulationV18(SimulationBase):
         # - Pneuma modular flow
         #
         # Derivation:
-        # alpha_T = (2*pi / b3) * gamma_correction
-        # where gamma_correction ~ 10.313 accounts for:
-        #   - Sp(2,R) gauge symmetry (two-time structure)
-        #   - Pneuma field modular automorphisms
-        #   - G2 holonomy structure
-        gamma_correction = getattr(_REG, "gamma_thermal_correction", 10.313240)  # Calibrated to alpha_T = 2.7
+        # alpha_T = (2*pi / b3) * gamma_phenomenological
+        # where gamma_phenomenological is a PHENOMENOLOGICAL FIT (see note below).
+        #
+        # TRANSPARENCY NOTE (per Gemini peer review 2026-01-11):
+        # gamma = 10.313 is NOT derived from first principles. It is calibrated
+        # to match observed thermal/entropic behavior (alpha_T ~ 2.7). The
+        # geometric base (2*pi/b3) is rigorous; the multiplier is empirical.
+        # Future work should derive gamma from G2 moduli or Sp(2,R) structure.
+        gamma_correction = getattr(_REG, "gamma_thermal_correction", 10.313240)  # PHENOMENOLOGICAL FIT
         alpha_T = (2.0 * np.pi / b3) * gamma_correction
 
         results["thermal.alpha_T"] = float(alpha_T)
