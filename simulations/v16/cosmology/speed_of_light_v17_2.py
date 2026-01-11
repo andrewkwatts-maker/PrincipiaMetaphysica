@@ -401,7 +401,7 @@ class SpeedOfLightV17(SimulationBase):
                     ],
                     "references": [
                         f"CODATA 2022: c = 299,792,458 m/s (exact by definition since 2019)",
-                        f"PM v17.2 prediction: c = {c_derived:,.2f} m/s ({sigma_equiv:.2f}σ equivalent deviation)"
+                        f"PM v20.0 prediction: c = {c_derived:,.2f} m/s ({sigma_equiv:.2f}σ equivalent deviation)"
                     ]
                 },
                 terms={
