@@ -119,10 +119,19 @@ class AppendixRVacuumStabilityV19(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths.
 
-        Note: Uses internal constants rather than registry values for
-        consistency with the stability analysis.
+        These parameters are fetched from the registry with fallbacks to
+        class constants for backward compatibility.
         """
-        return []
+        return [
+            "constants.M_PLANCK",      # Reduced Planck mass (GeV)
+            "gauge.M_GUT",             # GUT/compactification scale (GeV)
+            "pdg.m_Z",                 # Z boson mass (GeV)
+            "pdg.m_higgs",             # Higgs mass (GeV)
+            "pdg.m_top",               # Top quark mass (GeV)
+            "geometry.higgs_vev",      # Electroweak VEV (GeV)
+            "geometry.b3",             # Third Betti number
+            "geometry.chi_eff",        # Effective Euler characteristic
+        ]
 
     @property
     def output_params(self) -> List[str]:
@@ -163,11 +172,15 @@ class AppendixRVacuumStabilityV19(SimulationBase):
         Returns:
             Dictionary of computed vacuum stability results
         """
-        # Use internal constants for consistency
-        M_P = self.M_PLANCK
-        v_ew = self.V_EW
-        m_H = self.M_HIGGS
-        m_t = self.M_TOP
+        # Fetch from registry with fallbacks to class constants
+        M_P = registry.get("constants.M_PLANCK", default=self.M_PLANCK)
+        M_GUT = registry.get("gauge.M_GUT", default=self.M_GUT)
+        M_Z = registry.get("pdg.m_Z", default=self.M_Z)
+        m_H = registry.get("pdg.m_higgs", default=self.M_HIGGS)
+        m_t = registry.get("pdg.m_top", default=self.M_TOP)
+        v_ew = registry.get("geometry.higgs_vev", default=self.V_EW)
+        b3 = registry.get("geometry.b3", default=self.B3)
+        chi_eff = registry.get("geometry.chi_eff", default=self.CHI_EFF)
 
         # =========================================================
         # STEP 1: Compute quartic coupling at electroweak scale
@@ -186,8 +199,8 @@ class AppendixRVacuumStabilityV19(SimulationBase):
 
         # Simplified running (captures qualitative behavior)
         # d(lambda)/d(log mu) ~ -0.01 for SM
-        t_gut = np.log(self.M_GUT / self.M_Z)
-        t_planck = np.log(M_P / self.M_Z)
+        t_gut = np.log(M_GUT / M_Z)
+        t_planck = np.log(M_P / M_Z)
 
         # SM running (approximate)
         beta_coeff_sm = -0.01  # Net negative from top loop
@@ -200,7 +213,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
         # Scale where lambda(mu) = 0
         if beta_coeff_sm < 0:
             t_instability_sm = -lambda_ew / beta_coeff_sm
-            instability_scale_sm = self.M_Z * np.exp(t_instability_sm)
+            instability_scale_sm = M_Z * np.exp(t_instability_sm)
         else:
             instability_scale_sm = np.inf
 
@@ -219,10 +232,10 @@ class AppendixRVacuumStabilityV19(SimulationBase):
         # where N_moduli counts the relevant moduli (order chi_eff / 8)
 
         g_portal = 0.8  # Portal coupling (order 1)
-        N_moduli = self.CHI_EFF / 8  # Effective moduli count = 144/8 = 18
+        N_moduli = chi_eff / 8  # Effective moduli count = 144/8 = 18
 
         # The threshold correction at M_GC is substantial
-        delta_lambda_g2 = (g_portal**2 / (16 * np.pi**2)) * (N_moduli / self.B3)
+        delta_lambda_g2 = (g_portal**2 / (16 * np.pi**2)) * (N_moduli / b3)
         # This gives delta_lambda ~ 0.003 * 18/24 ~ 0.002 per modulus contribution
         # But total effect is larger due to collective enhancement
 
@@ -247,7 +260,7 @@ class AppendixRVacuumStabilityV19(SimulationBase):
         elif lambda_gut_pm > 0:
             # Lambda positive at GUT but becomes negative before Planck
             t_inst_pm = t_gut + (lambda_gut_pm / abs(beta_coeff_pm_above_gut))
-            instability_scale_pm = self.M_Z * np.exp(t_inst_pm)
+            instability_scale_pm = M_Z * np.exp(t_inst_pm)
         else:
             # Threshold correction insufficient (would indicate parameter issue)
             instability_scale_pm = instability_scale_sm

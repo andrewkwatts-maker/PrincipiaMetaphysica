@@ -1,23 +1,27 @@
 {
-  "audit_timestamp": "2026-01-11T14:32:53.000288",
+  "audit_timestamp": "2026-01-11T16:22:26.572706",
   "source_versions": {
     "formulas_version": "17.2",
     "sections_version": "17.2"
   },
   "summary": {
-    "total_formulas": 265,
-    "total_sections": 23,
-    "formulas_referenced_by_sections": 147,
-    "sections_with_formula_refs": 18,
-    "orphaned_formula_count": 191,
-    "sections_without_formulas_count": 5,
-    "invalid_reference_count": 73
+    "total_formulas": 320,
+    "total_sections": 25,
+    "formulas_referenced_by_sections": 172,
+    "sections_with_formula_refs": 21,
+    "orphaned_formula_count": 149,
+    "sections_without_formulas_count": 4,
+    "invalid_reference_count": 1
   },
-  "total_formulas": 265,
-  "total_sections": 23,
+  "total_formulas": 320,
+  "total_sections": 25,
   "orphaned_formulas": [
     {
       "formula_id": "26d-signature",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "alpha-f-derivation-v18",
       "reason": "Not referenced by any section"
     },
     {
@@ -33,11 +37,19 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "attractor-potential-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "avogadro-inverse-cubic",
       "reason": "Not referenced by any section"
     },
     {
       "formula_id": "b3-generations",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "baryon-asymmetry-cycle-v18",
       "reason": "Not referenced by any section"
     },
     {
@@ -85,6 +97,10 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "cp-phase-sterile-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "cpl-parametrization",
       "reason": "Not referenced by any section"
     },
@@ -118,6 +134,10 @@
     },
     {
       "formula_id": "decad3-projection",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "decay-constant-v18",
       "reason": "Not referenced by any section"
     },
     {
@@ -157,87 +177,23 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "f-r-t-tau-lagrangian-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "faraday-inverse-cubic",
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "fermi-constant-physical-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "fermi-constant-tree-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "flux-direct-expansion",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g01-root-parity",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g02-holonomy",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g03-ancestral",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g04-projection-tax",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g05-metric-continuity",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g06-shadow-parity",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g07-torsion-orthogonal",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g08-sterile-angle",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g09-pin-distribution",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g10-tension-floor",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g11-strong-force",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g12-electroweak",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g13-photon-mass",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g14-sun-approx",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g15-gauge-invariant",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g16-dirac-mapping",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g17-triality",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g18-mass-gap",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g19-neutrino",
       "reason": "Not referenced by any section"
     },
     {
@@ -250,218 +206,6 @@
     },
     {
       "formula_id": "g2-spinor-preservation",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g20-chiral-limit",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g21-color-neutral",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g22-string-tension",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g23-proton-stability",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g24-sea-quark",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g25-asymptotic",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g26-electron-ratio",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g27-pmns",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g28-lepton-number",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g29-hypercharge",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g30-lepton-gap",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g31-higgs-vev",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g32-wz-ratio",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g33-goldstone",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g34-gluon-octet",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g35-photon-z",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g36-ckm",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g37-cp-violation",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g38-gim",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g39-pmns-angles",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g40-sterile-mixing",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g41-gravity",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g42-equivalence",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g43-schwarzschild",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g44-frame-dragging",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g45-geodesic",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g46-lambda",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g47-hubble",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g48-w0",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g49-dark-matter",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g50-baryon-photon",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g51-unitary-time",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g52-entropy",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g53-causality",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g54-cpt",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g55-decoherence",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g56-compactification",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g57-calabi-yau",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g58-brane-boundary",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g59-moduli",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g60-desi",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g61-bit-parity",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g62-von-neumann",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g63-bell",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g64-holographic",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g65-landauer",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g66-chiral-ortho",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g67-phase-transition",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g68-omega-point",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g69-soliton",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g70-spectral-gap",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g71-recursive",
-      "reason": "Not referenced by any section"
-    },
-    {
-      "formula_id": "g72-omega-hash",
       "reason": "Not referenced by any section"
     },
     {
@@ -485,6 +229,66 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "gr-christoffel-symbols-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-einstein-field-equations-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-einstein-hilbert-4d-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-einstein-tensor-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-metric-from-vielbein-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-metricity-condition-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-newton-from-g2-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-planck-from-compactification-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-ricci-scalar-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-ricci-tensor-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-riemann-tensor-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-spin-connection-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-tetrad-postulate-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-torsion-free-condition-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-vielbein-determinant-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "growth-rate-equation",
       "reason": "Not referenced by any section"
     },
@@ -494,6 +298,10 @@
     },
     {
       "formula_id": "gut-scale",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gw-speed-modified-gravity-v18",
       "reason": "Not referenced by any section"
     },
     {
@@ -530,6 +338,10 @@
     },
     {
       "formula_id": "higgs-quartic-coupling",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-vev-geometric-v18",
       "reason": "Not referenced by any section"
     },
     {
@@ -729,6 +541,10 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "tensor-mode-dispersion-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "thawing-w0-derivation",
       "reason": "Not referenced by any section"
     },
@@ -765,7 +581,15 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "w0-attractor-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "w0-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "w0-from-modified-gravity-v18",
       "reason": "Not referenced by any section"
     },
     {
@@ -777,7 +601,15 @@
       "reason": "Not referenced by any section"
     },
     {
+      "formula_id": "yukawa-hierarchy-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
       "formula_id": "yukawa-texture",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "yukawa-texture-matrix-v18",
       "reason": "Not referenced by any section"
     }
   ],
@@ -786,438 +618,6 @@
       "section_id": "A",
       "section_title": "Appendix A: The 125-Residue Spectral Registry (The Master Table)",
       "invalid_formula_ref": "node-distribution-function",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g01-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g37-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g42-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g32-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g64-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g25-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g40-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g34-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g43-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g11-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g44-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g59-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g41-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g48-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g36-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g39-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g54-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g60-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g13-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g72-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g03-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g51-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g69-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g19-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g29-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g15-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g14-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g23-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g26-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g57-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g33-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g63-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g49-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g02-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g56-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g70-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g20-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g31-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g62-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g12-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g47-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g27-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g10-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g24-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g30-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g71-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g55-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g05-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g58-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g06-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g21-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g35-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g04-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g07-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g28-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g66-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g08-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g16-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g38-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g67-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g22-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g46-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g17-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g52-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g61-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g18-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g65-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g68-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g53-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g50-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g09-gate",
-      "reason": "Formula does not exist in formulas.json"
-    },
-    {
-      "section_id": "F",
-      "section_title": "Appendix F: The 72 Gates of Integrity",
-      "invalid_formula_ref": "g45-gate",
       "reason": "Formula does not exist in formulas.json"
     }
   ],
@@ -1232,12 +632,6 @@
       "section_id": "1",
       "title": "Foundations of Dimensional Descent",
       "subsection_id": "1.1",
-      "section_type": null
-    },
-    {
-      "section_id": "2",
-      "title": "The Sterile Extraction Methodology",
-      "subsection_id": "2.5",
       "section_type": null
     },
     {
@@ -1267,10 +661,18 @@
       "formulas": []
     },
     "2": {
-      "title": "The Sterile Extraction Methodology",
-      "subsection_id": "2.5",
-      "formula_count": 0,
-      "formulas": []
+      "title": "Complete Spectral Decomposition",
+      "subsection_id": "2.3",
+      "formula_count": 7,
+      "formulas": [
+        "gut-scale-g2-v18",
+        "laplacian-eigenvalue-v18",
+        "mass-spectrum-v18",
+        "neutrino-mass-seesaw-v18",
+        "neutrino-sum-prediction-v18",
+        "proton-decay-lifetime-v18",
+        "spectral-zeta-v18"
+      ]
     },
     "validation": {
       "title": "Ghost-Free Stability Check (The Guardian)",
@@ -1299,6 +701,12 @@
         "triality-split"
       ]
     },
+    "6": {
+      "title": "Weak Mixing Angle",
+      "subsection_id": "6.9",
+      "formula_count": 0,
+      "formulas": []
+    },
     "5": {
       "title": "Cosmological Constant from G2 Entropy with Instanton Suppression",
       "subsection_id": "5.5",
@@ -1308,12 +716,6 @@
         "g2-entropy-density",
         "lambda-hierarchy"
       ]
-    },
-    "6": {
-      "title": "Weak Mixing Angle",
-      "subsection_id": "6.9",
-      "formula_count": 0,
-      "formulas": []
     },
     "thermal-time": {
       "title": "The Thermal Time Hypothesis and Two-Time Framework",
@@ -1391,78 +793,78 @@
       "subsection_id": null,
       "formula_count": 72,
       "formulas": [
-        "g01-gate",
-        "g02-gate",
-        "g03-gate",
-        "g04-gate",
-        "g05-gate",
-        "g06-gate",
-        "g07-gate",
-        "g08-gate",
-        "g09-gate",
-        "g10-gate",
-        "g11-gate",
-        "g12-gate",
-        "g13-gate",
-        "g14-gate",
-        "g15-gate",
-        "g16-gate",
-        "g17-gate",
-        "g18-gate",
-        "g19-gate",
-        "g20-gate",
-        "g21-gate",
-        "g22-gate",
-        "g23-gate",
-        "g24-gate",
-        "g25-gate",
-        "g26-gate",
-        "g27-gate",
-        "g28-gate",
-        "g29-gate",
-        "g30-gate",
-        "g31-gate",
-        "g32-gate",
-        "g33-gate",
-        "g34-gate",
-        "g35-gate",
-        "g36-gate",
-        "g37-gate",
-        "g38-gate",
-        "g39-gate",
-        "g40-gate",
-        "g41-gate",
-        "g42-gate",
-        "g43-gate",
-        "g44-gate",
-        "g45-gate",
-        "g46-gate",
-        "g47-gate",
-        "g48-gate",
-        "g49-gate",
-        "g50-gate",
-        "g51-gate",
-        "g52-gate",
-        "g53-gate",
-        "g54-gate",
-        "g55-gate",
-        "g56-gate",
-        "g57-gate",
-        "g58-gate",
-        "g59-gate",
-        "g60-gate",
-        "g61-gate",
-        "g62-gate",
-        "g63-gate",
-        "g64-gate",
-        "g65-gate",
-        "g66-gate",
-        "g67-gate",
-        "g68-gate",
-        "g69-gate",
-        "g70-gate",
-        "g71-gate",
-        "g72-gate"
+        "g01-root-parity",
+        "g02-holonomy",
+        "g03-ancestral",
+        "g04-projection-tax",
+        "g05-metric-continuity",
+        "g06-shadow-parity",
+        "g07-torsion-orthogonal",
+        "g08-sterile-angle",
+        "g09-pin-distribution",
+        "g10-tension-floor",
+        "g11-strong-force",
+        "g12-electroweak",
+        "g13-photon-mass",
+        "g14-sun-approx",
+        "g15-gauge-invariant",
+        "g16-dirac-mapping",
+        "g17-triality",
+        "g18-mass-gap",
+        "g19-neutrino",
+        "g20-chiral-limit",
+        "g21-color-neutral",
+        "g22-string-tension",
+        "g23-proton-stability",
+        "g24-sea-quark",
+        "g25-asymptotic",
+        "g26-electron-ratio",
+        "g27-pmns",
+        "g28-lepton-number",
+        "g29-hypercharge",
+        "g30-lepton-gap",
+        "g31-higgs-vev",
+        "g32-wz-ratio",
+        "g33-goldstone",
+        "g34-gluon-octet",
+        "g35-photon-z",
+        "g36-ckm",
+        "g37-cp-violation",
+        "g38-gim",
+        "g39-pmns-angles",
+        "g40-sterile-mixing",
+        "g41-gravity",
+        "g42-equivalence",
+        "g43-schwarzschild",
+        "g44-frame-dragging",
+        "g45-geodesic",
+        "g46-lambda",
+        "g47-hubble",
+        "g48-w0",
+        "g49-dark-matter",
+        "g50-baryon-photon",
+        "g51-unitary-time",
+        "g52-entropy",
+        "g53-causality",
+        "g54-cpt",
+        "g55-decoherence",
+        "g56-compactification",
+        "g57-calabi-yau",
+        "g58-brane-boundary",
+        "g59-moduli",
+        "g60-desi",
+        "g61-bit-parity",
+        "g62-von-neumann",
+        "g63-bell",
+        "g64-holographic",
+        "g65-landauer",
+        "g66-chiral-ortho",
+        "g67-phase-transition",
+        "g68-omega-point",
+        "g69-soliton",
+        "g70-spectral-gap",
+        "g71-recursive",
+        "g72-omega-hash"
       ]
     },
     "G": {
@@ -1556,43 +958,96 @@
         "speed-of-light-geometric",
         "terminal-closure-equation"
       ]
+    },
+    "R": {
+      "title": "Appendix R: Vacuum Stability Analysis",
+      "subsection_id": "R.1",
+      "formula_count": 8,
+      "formulas": [
+        "bounce-action-v19",
+        "g2-portal-correction-v19",
+        "higgs-effective-potential-v19",
+        "instability-scale-v19",
+        "quartic-beta-function-v19",
+        "quartic-running-v19",
+        "tunneling-rate-v19",
+        "vacuum-lifetime-v19"
+      ]
+    },
+    "S": {
+      "title": "Appendix S: Spectral Residue Methodology",
+      "subsection_id": "S.1",
+      "formula_count": 10,
+      "formulas": [
+        "spectral-curvature-residue-v19",
+        "spectral-determinant-v19",
+        "spectral-euler-residue-v19",
+        "spectral-heat-kernel-v19",
+        "spectral-laplacian-eigenvalue-v19",
+        "spectral-mass-relation-v19",
+        "spectral-residue-general-v19",
+        "spectral-trace-formula-v19",
+        "spectral-volume-residue-v19",
+        "spectral-zeta-function-v19"
+      ]
     }
   },
   "formula_section_map": {
-    "weyl-anomaly-cancellation": [
-      "validation"
+    "proton-decay-lifetime-v18": [
+      "2"
+    ],
+    "mass-spectrum-v18": [
+      "2"
+    ],
+    "neutrino-sum-prediction-v18": [
+      "2"
+    ],
+    "laplacian-eigenvalue-v18": [
+      "2"
+    ],
+    "neutrino-mass-seesaw-v18": [
+      "2"
+    ],
+    "spectral-zeta-v18": [
+      "2"
+    ],
+    "gut-scale-g2-v18": [
+      "2"
     ],
     "central-charge-unitarity": [
       "validation"
     ],
-    "golden-angle": [
-      "4"
+    "weyl-anomaly-cancellation": [
+      "validation"
     ],
-    "ckm-from-theta-g": [
+    "triality-split": [
       "4"
     ],
     "mixing-dimension-ratio": [
       "4"
     ],
-    "triality-split": [
+    "ckm-from-theta-g": [
       "4"
     ],
     "pmns-from-triality": [
       "4"
     ],
-    "g2-entropy-density": [
-      "5"
+    "golden-angle": [
+      "4"
     ],
-    "cosmological-constant-geometric": [
+    "g2-entropy-density": [
       "5"
     ],
     "lambda-hierarchy": [
       "5"
     ],
-    "thermal-flow": [
-      "thermal-time"
+    "cosmological-constant-geometric": [
+      "5"
     ],
     "modular-hamiltonian": [
+      "thermal-time"
+    ],
+    "thermal-flow": [
       "thermal-time"
     ],
     "alpha-t-derivation": [
@@ -1604,10 +1059,10 @@
     "orch-or-coherence-time": [
       "7"
     ],
-    "node-distribution-function": [
+    "spectral-eigenvalue-extraction": [
       "A"
     ],
-    "spectral-eigenvalue-extraction": [
+    "node-distribution-function": [
       "A"
     ],
     "omega-hash-verification": [
@@ -1616,29 +1071,26 @@
     "log-harmonic-spacing": [
       "A"
     ],
-    "heat-kernel-partition": [
-      "B"
-    ],
     "global-sum-rule": [
-      "B"
-    ],
-    "trace-formula-closure": [
       "B"
     ],
     "hierarchy-spectral-gap": [
       "B"
     ],
-    "symmetry-shattering-rule": [
+    "trace-formula-closure": [
+      "B"
+    ],
+    "heat-kernel-partition": [
+      "B"
+    ],
+    "gauge-unitarity-condition": [
       "C"
     ],
     "dimensional-projection-matrix": [
       "C"
     ],
-    "gauge-unitarity-condition": [
+    "symmetry-shattering-rule": [
       "C"
-    ],
-    "hubble-tension-resolution": [
-      "D"
     ],
     "chi-squared-convergence": [
       "D"
@@ -1646,256 +1098,256 @@
     "bao-alignment": [
       "D"
     ],
-    "coordinate-uniqueness": [
+    "hubble-tension-resolution": [
+      "D"
+    ],
+    "node-coordinate-vector": [
       "E"
     ],
     "nodal-pinch-mass": [
       "E"
     ],
-    "node-coordinate-vector": [
+    "coordinate-uniqueness": [
       "E"
     ],
-    "g01-gate": [
+    "g49-dark-matter": [
       "F"
     ],
-    "g37-gate": [
+    "g71-recursive": [
       "F"
     ],
-    "g42-gate": [
+    "g32-wz-ratio": [
       "F"
     ],
-    "g32-gate": [
+    "g05-metric-continuity": [
       "F"
     ],
-    "g64-gate": [
+    "g62-von-neumann": [
       "F"
     ],
-    "g25-gate": [
+    "g11-strong-force": [
       "F"
     ],
-    "g40-gate": [
+    "g43-schwarzschild": [
       "F"
     ],
-    "g34-gate": [
+    "g30-lepton-gap": [
       "F"
     ],
-    "g43-gate": [
+    "g07-torsion-orthogonal": [
       "F"
     ],
-    "g11-gate": [
+    "g41-gravity": [
       "F"
     ],
-    "g44-gate": [
+    "g46-lambda": [
       "F"
     ],
-    "g59-gate": [
+    "g39-pmns-angles": [
       "F"
     ],
-    "g41-gate": [
+    "g67-phase-transition": [
       "F"
     ],
-    "g48-gate": [
+    "g55-decoherence": [
       "F"
     ],
-    "g36-gate": [
+    "g14-sun-approx": [
       "F"
     ],
-    "g39-gate": [
+    "g54-cpt": [
       "F"
     ],
-    "g54-gate": [
+    "g72-omega-hash": [
       "F"
     ],
-    "g60-gate": [
+    "g48-w0": [
       "F"
     ],
-    "g13-gate": [
+    "g20-chiral-limit": [
       "F"
     ],
-    "g72-gate": [
+    "g09-pin-distribution": [
       "F"
     ],
-    "g03-gate": [
+    "g40-sterile-mixing": [
       "F"
     ],
-    "g51-gate": [
+    "g36-ckm": [
       "F"
     ],
-    "g69-gate": [
+    "g59-moduli": [
       "F"
     ],
-    "g19-gate": [
+    "g61-bit-parity": [
       "F"
     ],
-    "g29-gate": [
+    "g66-chiral-ortho": [
       "F"
     ],
-    "g15-gate": [
+    "g18-mass-gap": [
       "F"
     ],
-    "g14-gate": [
+    "g02-holonomy": [
       "F"
     ],
-    "g23-gate": [
+    "g38-gim": [
       "F"
     ],
-    "g26-gate": [
+    "g06-shadow-parity": [
       "F"
     ],
-    "g57-gate": [
+    "g16-dirac-mapping": [
       "F"
     ],
-    "g33-gate": [
+    "g50-baryon-photon": [
       "F"
     ],
-    "g63-gate": [
+    "g35-photon-z": [
       "F"
     ],
-    "g49-gate": [
+    "g34-gluon-octet": [
       "F"
     ],
-    "g02-gate": [
+    "g51-unitary-time": [
       "F"
     ],
-    "g56-gate": [
+    "g65-landauer": [
       "F"
     ],
-    "g70-gate": [
+    "g19-neutrino": [
       "F"
     ],
-    "g20-gate": [
+    "g69-soliton": [
       "F"
     ],
-    "g31-gate": [
+    "g21-color-neutral": [
       "F"
     ],
-    "g62-gate": [
+    "g70-spectral-gap": [
       "F"
     ],
-    "g12-gate": [
+    "g33-goldstone": [
       "F"
     ],
-    "g47-gate": [
+    "g68-omega-point": [
       "F"
     ],
-    "g27-gate": [
+    "g63-bell": [
       "F"
     ],
-    "g10-gate": [
+    "g60-desi": [
       "F"
     ],
-    "g24-gate": [
+    "g12-electroweak": [
       "F"
     ],
-    "g30-gate": [
+    "g24-sea-quark": [
       "F"
     ],
-    "g71-gate": [
+    "g57-calabi-yau": [
       "F"
     ],
-    "g55-gate": [
+    "g13-photon-mass": [
       "F"
     ],
-    "g05-gate": [
+    "g45-geodesic": [
       "F"
     ],
-    "g58-gate": [
+    "g17-triality": [
       "F"
     ],
-    "g06-gate": [
+    "g37-cp-violation": [
       "F"
     ],
-    "g21-gate": [
+    "g23-proton-stability": [
       "F"
     ],
-    "g35-gate": [
+    "g42-equivalence": [
       "F"
     ],
-    "g04-gate": [
+    "g47-hubble": [
       "F"
     ],
-    "g07-gate": [
+    "g56-compactification": [
       "F"
     ],
-    "g28-gate": [
+    "g08-sterile-angle": [
       "F"
     ],
-    "g66-gate": [
+    "g64-holographic": [
       "F"
     ],
-    "g08-gate": [
+    "g10-tension-floor": [
       "F"
     ],
-    "g16-gate": [
+    "g03-ancestral": [
       "F"
     ],
-    "g38-gate": [
+    "g04-projection-tax": [
       "F"
     ],
-    "g67-gate": [
+    "g25-asymptotic": [
       "F"
     ],
-    "g22-gate": [
+    "g22-string-tension": [
       "F"
     ],
-    "g46-gate": [
+    "g52-entropy": [
       "F"
     ],
-    "g17-gate": [
+    "g27-pmns": [
       "F"
     ],
-    "g52-gate": [
+    "g28-lepton-number": [
       "F"
     ],
-    "g61-gate": [
+    "g44-frame-dragging": [
       "F"
     ],
-    "g18-gate": [
+    "g26-electron-ratio": [
       "F"
     ],
-    "g65-gate": [
+    "g01-root-parity": [
       "F"
     ],
-    "g68-gate": [
+    "g58-brane-boundary": [
       "F"
     ],
-    "g53-gate": [
+    "g31-higgs-vev": [
       "F"
     ],
-    "g50-gate": [
+    "g53-causality": [
       "F"
     ],
-    "g09-gate": [
+    "g15-gauge-invariant": [
       "F"
     ],
-    "g45-gate": [
+    "g29-hypercharge": [
       "F"
-    ],
-    "dead-mans-switch": [
-      "G"
-    ],
-    "4-fold-stabilizer-check": [
-      "G"
-    ],
-    "terminal-hash-generation": [
-      "G"
     ],
     "holonomy-checksum": [
+      "G"
+    ],
+    "dead-mans-switch": [
       "G"
     ],
     "sterile-rigidity-declaration": [
       "G"
     ],
+    "4-fold-stabilizer-check": [
+      "G"
+    ],
     "geometric-seal-288": [
       "G"
     ],
-    "sterile-projection-filter": [
-      "H"
-    ],
-    "hidden-support-count": [
-      "H"
+    "terminal-hash-generation": [
+      "G"
     ],
     "so24-generators": [
+      "H"
+    ],
+    "sterile-projection-filter": [
       "H"
     ],
     "ancestral-roots-derivation": [
@@ -1904,13 +1356,13 @@
     "shadow-torsion-sum": [
       "H"
     ],
-    "shadow-decoupling-rate": [
-      "I"
+    "hidden-support-count": [
+      "H"
     ],
     "spectral-trace-saturation": [
       "I"
     ],
-    "metric-null-potential": [
+    "gauge-ghost-potential": [
       "I"
     ],
     "ancestral-restoration": [
@@ -1919,8 +1371,17 @@
     "terminal-geodesic-curve": [
       "I"
     ],
-    "gauge-ghost-potential": [
+    "shadow-decoupling-rate": [
       "I"
+    ],
+    "metric-null-potential": [
+      "I"
+    ],
+    "torsion-funnel-bottleneck": [
+      "J"
+    ],
+    "survival-rate-formula": [
+      "J"
     ],
     "torsion-funnel-entry": [
       "J"
@@ -1931,26 +1392,29 @@
     "bottleneck-pressure": [
       "J"
     ],
-    "survival-rate-formula": [
-      "J"
-    ],
-    "torsion-funnel-bottleneck": [
-      "J"
+    "c-torsion-derivation": [
+      "K"
     ],
     "h-scale-factor": [
       "K"
     ],
-    "c-torsion-derivation": [
-      "K"
-    ],
-    "w0-betti-derivation": [
+    "alpha-sterile-angle": [
       "K"
     ],
     "G-metric-anchor": [
       "K"
     ],
-    "alpha-sterile-angle": [
+    "w0-betti-derivation": [
       "K"
+    ],
+    "metric-null-basin": [
+      "L"
+    ],
+    "gauge-ghost-basin": [
+      "L"
+    ],
+    "entropy-flow-equation": [
+      "L"
     ],
     "ancestral-restoration-basin": [
       "L"
@@ -1958,34 +1422,31 @@
     "basin-selection-threshold": [
       "L"
     ],
-    "entropy-flow-equation": [
-      "L"
+    "hierarchy-ratio-squared": [
+      "Z"
     ],
-    "gauge-ghost-basin": [
-      "L"
-    ],
-    "metric-null-basin": [
-      "L"
+    "h0-unwinding-scale": [
+      "Z"
     ],
     "c30s-shell-saturation": [
-      "Z"
-    ],
-    "cabibbo-angle-geometric": [
-      "Z"
-    ],
-    "gauge-unification-sum": [
-      "Z"
-    ],
-    "c42g-gravitational-anchor": [
       "Z"
     ],
     "c38v7-curvature-invariant": [
       "Z"
     ],
-    "c05m-manifold-tax": [
+    "c42g-gravitational-anchor": [
       "Z"
     ],
     "terminal-closure-equation": [
+      "Z"
+    ],
+    "cabibbo-angle-geometric": [
+      "Z"
+    ],
+    "c05m-manifold-tax": [
+      "Z"
+    ],
+    "gauge-unification-sum": [
       "Z"
     ],
     "speed-of-light-geometric": [
@@ -1994,11 +1455,59 @@
     "c37cp-strong-cp-lock": [
       "Z"
     ],
-    "hierarchy-ratio-squared": [
-      "Z"
+    "bounce-action-v19": [
+      "R"
     ],
-    "h0-unwinding-scale": [
-      "Z"
+    "quartic-running-v19": [
+      "R"
+    ],
+    "instability-scale-v19": [
+      "R"
+    ],
+    "vacuum-lifetime-v19": [
+      "R"
+    ],
+    "quartic-beta-function-v19": [
+      "R"
+    ],
+    "tunneling-rate-v19": [
+      "R"
+    ],
+    "g2-portal-correction-v19": [
+      "R"
+    ],
+    "higgs-effective-potential-v19": [
+      "R"
+    ],
+    "spectral-laplacian-eigenvalue-v19": [
+      "S"
+    ],
+    "spectral-curvature-residue-v19": [
+      "S"
+    ],
+    "spectral-residue-general-v19": [
+      "S"
+    ],
+    "spectral-determinant-v19": [
+      "S"
+    ],
+    "spectral-heat-kernel-v19": [
+      "S"
+    ],
+    "spectral-volume-residue-v19": [
+      "S"
+    ],
+    "spectral-mass-relation-v19": [
+      "S"
+    ],
+    "spectral-euler-residue-v19": [
+      "S"
+    ],
+    "spectral-zeta-function-v19": [
+      "S"
+    ],
+    "spectral-trace-formula-v19": [
+      "S"
     ]
   },
   "status": "NEEDS_ATTENTION"

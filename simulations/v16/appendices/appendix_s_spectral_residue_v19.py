@@ -114,10 +114,15 @@ class AppendixSSpectralResidueV19(SimulationBase):
     def required_inputs(self) -> List[str]:
         """Return list of required input parameter paths.
 
-        Note: Uses internal constants (chi_eff=144, b3=24) for consistency
-        with the spectral analysis methodology.
+        Uses registry parameters with fallback to class constants for
+        compatibility with standalone execution.
         """
-        return []
+        return [
+            "topology.chi_eff",      # Effective Euler characteristic (default: 144)
+            "topology.b3",           # Third Betti number (default: 24)
+            "constants.M_PLANCK",    # Reduced Planck mass in GeV (default: 2.435e18)
+            "topology.k_gimel",      # Fundamental scale (default: 12 + 1/pi)
+        ]
 
     @property
     def output_params(self) -> List[str]:
@@ -160,10 +165,11 @@ class AppendixSSpectralResidueV19(SimulationBase):
         Returns:
             Dictionary of spectral methodology results
         """
-        # Use internal constants for consistency
-        chi_eff = self.CHI_EFF
-        b3 = self.B3
-        M_PLANCK = self.M_PLANCK
+        # Fetch from registry with fallbacks to class constants
+        chi_eff = registry.get("topology.chi_eff", default=self.CHI_EFF)
+        b3 = registry.get("topology.b3", default=self.B3)
+        M_PLANCK = registry.get("constants.M_PLANCK", default=self.M_PLANCK)
+        k_gimel = registry.get("topology.k_gimel", default=self.K_GIMEL)
 
         # =========================================================
         # STEP 1: Number of eigenvalues
@@ -209,7 +215,7 @@ class AppendixSSpectralResidueV19(SimulationBase):
         # =========================================================
         # The spectral determinant requires regularization at mu
         # We choose mu = k_gimel * M_Planck for consistency
-        regularization_scale = self.K_GIMEL
+        regularization_scale = k_gimel
 
         return {
             "spectral.n_eigenvalues": n_eigenvalues,
@@ -222,7 +228,8 @@ class AppendixSSpectralResidueV19(SimulationBase):
             # Metadata
             "_chi_eff": chi_eff,
             "_b3": b3,
-            "_k_gimel": self.K_GIMEL,
+            "_k_gimel": k_gimel,
+            "_M_PLANCK": M_PLANCK,
         }
 
     def get_section_content(self) -> Optional[SectionContent]:
