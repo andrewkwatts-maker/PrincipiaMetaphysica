@@ -1041,13 +1041,16 @@ class LagrangianMasterDerivation(SimulationBase):
         Each step removes a specific geometric structure.
         """)
 
-        # Dimension at each stage
-        dims = [26, 13, 7, 4]
-        signatures = ["(24,2)", "(12,1)", "(6,1)", "(3,1)"]
+        # 5-level dimension chain (Gemini audit 2026-01-14)
+        # Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+        # CRITICAL: G2 manifolds are RIEMANNIAN - signature (7,0), NOT (6,1)
+        dims = [26, 13, 7, 6, 4]
+        signatures = ["(24,2)", "(12,1)", "(7,0)", "(5,1)", "(3,1)"]
+        names = ["ANCESTRAL", "SHADOW", "G2", "EXTERNAL", "VISIBLE"]
 
-        print("\nDimension chain:")
-        for i, (d, sig) in enumerate(zip(dims, signatures)):
-            print(f"  Stage {i}: {d}D with signature {sig}")
+        print("\n5-level dimension chain:")
+        for i, (d, sig, name) in enumerate(zip(dims, signatures, names)):
+            print(f"  Level {i} ({name}): {d}D with signature {sig}")
 
         results["reduction_chain"] = dims
 

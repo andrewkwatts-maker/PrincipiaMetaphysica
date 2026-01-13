@@ -36,20 +36,26 @@ except ImportError as e:
 class DimensionalSSOTValidator:
     """Validates dimensional reduction SSOT consistency."""
 
-    # Expected dimensional chain values
+    # Expected 5-level dimensional chain values
+    # Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
     DIMENSIONAL_CHAIN = {
-        # Level 0: ANCESTRAL (26D Bosonic)
+        # Level 0: ANCESTRAL (26D Bosonic) - Signature (24,2)
         "D_ancestral_total": 26,
         "D_ancestral_space": 24,
         "D_ancestral_time": 2,
-        # Level 1: BRANE (13D)
-        "D_brane_total": 13,
-        "D_brane_space": 12,
-        "D_brane_time": 1,
-        # Level 2: COMPACT (G2)
-        "D_compact_G2": 7,
-        "D_compact_external": 6,
-        # Level 3: VISIBLE (4D)
+        # Level 1: SHADOW (13D after Sp(2,R)) - Signature (12,1)
+        "D_shadow_total": 13,
+        "D_shadow_space": 12,
+        "D_shadow_time": 1,
+        # Level 2: G2 (7D G2 Holonomy) - Signature (7,0) RIEMANNIAN
+        "D_G2_total": 7,
+        "D_G2_space": 7,   # All spatial - G2 is Riemannian
+        "D_G2_time": 0,    # NO time dimension
+        # Level 3: EXTERNAL (6D Observable Bulk) - Signature (5,1)
+        "D_external_total": 6,
+        "D_external_space": 5,
+        "D_external_time": 1,
+        # Level 4: VISIBLE (4D Spacetime) - Signature (3,1)
         "D_visible_total": 4,
         "D_visible_space": 3,
         "D_visible_time": 1,
@@ -57,13 +63,23 @@ class DimensionalSSOTValidator:
 
     # Legacy aliases that must match semantic names
     LEGACY_ALIASES = {
+        # Level 0 aliases
         "D_total_26": "D_ancestral_total",
         "D_space_24": "D_ancestral_space",
         "D_time_2": "D_ancestral_time",
-        "D_total_13": "D_brane_total",
-        "D_space_12": "D_brane_space",
-        "D_G2": "D_compact_G2",
-        "D_external_6": "D_compact_external",
+        # Level 1 aliases (brane -> shadow)
+        "D_brane_total": "D_shadow_total",
+        "D_brane_space": "D_shadow_space",
+        "D_brane_time": "D_shadow_time",
+        "D_total_13": "D_shadow_total",
+        "D_space_12": "D_shadow_space",
+        # Level 2 aliases
+        "D_compact_G2": "D_G2_total",
+        "D_G2": "D_G2_total",
+        # Level 3 aliases
+        "D_compact_external": "D_external_total",
+        "D_external_6": "D_external_total",
+        # Level 4 aliases
         "D_total_4": "D_visible_total",
         "D_space_3": "D_visible_space",
         "D_time_1": "D_visible_time",
@@ -153,37 +169,56 @@ class DimensionalSSOTValidator:
         return success
 
     def validate_compactification_relations(self) -> bool:
-        """Validate dimensional compactification relations."""
-        print("\n[2] VALIDATING COMPACTIFICATION RELATIONS")
+        """Validate 5-level dimensional compactification relations."""
+        print("\n[2] VALIDATING 5-LEVEL COMPACTIFICATION RELATIONS")
         print("-" * 50)
 
         success = True
 
-        # D_ancestral_total = 2 * D_brane_total
+        # Level 0→1: D_ancestral(26) = 2 * D_shadow(13) [two shadow branes]
         D_anc = self.registry.D_ancestral_total
-        D_brane = self.registry.D_brane_total
-        if D_anc != 2 * D_brane:
-            self.errors.append(f"Brane relation failed: {D_anc} != 2 * {D_brane}")
+        D_shadow = self.registry.D_shadow_total
+        if D_anc != 2 * D_shadow:
+            self.errors.append(f"Shadow relation failed: {D_anc} != 2 * {D_shadow}")
             success = False
         else:
-            self.info.append(f"D_ancestral(26) = 2 * D_brane(13) [OK]")
+            self.info.append(f"D_ancestral(26) = 2 * D_shadow(13) [OK]")
 
-        # D_brane_total = D_compact_G2 + D_compact_external
-        D_G2 = self.registry.D_compact_G2
-        D_ext = self.registry.D_compact_external
-        if D_brane != D_G2 + D_ext:
-            self.errors.append(f"G2 relation failed: {D_brane} != {D_G2} + {D_ext}")
+        # Level 1→2,3: D_shadow(13) = D_G2(7) + D_external(6)
+        D_G2 = self.registry.D_G2_total
+        D_ext = self.registry.D_external_total
+        if D_shadow != D_G2 + D_ext:
+            self.errors.append(f"G2 split failed: {D_shadow} != {D_G2} + {D_ext}")
             success = False
         else:
-            self.info.append(f"D_brane(13) = D_G2(7) + D_external(6) [OK]")
+            self.info.append(f"D_shadow(13) = D_G2(7) + D_external(6) [OK]")
 
-        # D_compact_external = D_visible_total + 2
+        # G2 is RIEMANNIAN: signature (7,0) - no time dimension
+        D_G2_space = self.registry.D_G2_space
+        D_G2_time = self.registry.D_G2_time
+        if D_G2_space != 7 or D_G2_time != 0:
+            self.errors.append(f"G2 signature wrong: ({D_G2_space},{D_G2_time}) != (7,0)")
+            success = False
+        else:
+            self.info.append(f"G2 signature (7,0) RIEMANNIAN [OK]")
+
+        # Level 3→4: D_external(6) = D_visible(4) + 2 [KK reduction]
         D_vis = self.registry.D_visible_total
         if D_ext != D_vis + 2:
-            self.errors.append(f"Visible relation failed: {D_ext} != {D_vis} + 2")
+            self.errors.append(f"KK relation failed: {D_ext} != {D_vis} + 2")
             success = False
         else:
             self.info.append(f"D_external(6) = D_visible(4) + 2 [OK]")
+
+        # Verify signatures
+        # External: (5,1)
+        D_ext_space = self.registry.D_external_space
+        D_ext_time = self.registry.D_external_time
+        if D_ext_space != 5 or D_ext_time != 1:
+            self.errors.append(f"External signature wrong: ({D_ext_space},{D_ext_time}) != (5,1)")
+            success = False
+        else:
+            self.info.append(f"D_external signature (5,1) [OK]")
 
         # Chi_eff relations
         chi_sector = self.registry.chi_eff
