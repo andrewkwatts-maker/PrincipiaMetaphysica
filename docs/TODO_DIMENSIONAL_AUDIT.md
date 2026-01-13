@@ -154,6 +154,14 @@ Files with highest parameter usage (from grep count):
 - [x] Updated docstring with 5-level chain
 - [x] Created audit_dimensional_params.py script
 
+### COMPLETED (v20.5 - 2026-01-14)
+- [x] Added SSOT imports to gr_spacetime_derivations_v19.py
+- [x] Replaced hardcoded B3_G2, CHI_EFF, D_CRITICAL, D_INTERMEDIATE, D_G2, D_SPACETIME
+- [x] Added SSOT imports to g2_dynamical_flow_v16_2.py
+- [x] B3_DEFAULT and CHI_EFF_TOTAL now from FormulasRegistry
+- [x] All files include try/except fallback for standalone execution
+- [x] Validation passes: 63 checks OK
+
 ---
 
 ## VERSION HISTORY
@@ -163,3 +171,6 @@ Files with highest parameter usage (from grep count):
 | 2026-01-14 | Created audit checklist | - |
 | 2026-01-14 | Fixed chi_eff dual structure | 8ce2514 |
 | 2026-01-14 | Added dimensional chain | 1029889 |
+| 2026-01-14 | v20.3: 5-level chain | 3a2bb68 |
+| 2026-01-14 | v20.4: SSOT simulation imports | 682e4ed |
+| 2026-01-14 | v20.5: GR derivations + G2 flow SSOT | cba9fb4 |
