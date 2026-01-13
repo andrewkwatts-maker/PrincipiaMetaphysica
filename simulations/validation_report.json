@@ -1,19 +1,16 @@
 {
-  "timestamp": "2026-01-14T06:52:58.678225",
-  "duration_seconds": 5.727888,
-  "all_passed": false,
+  "timestamp": "2026-01-14T07:09:52.382655",
+  "duration_seconds": 8.435119,
+  "all_passed": true,
   "sections": {
     "Simulations": {
-      "passed": false,
+      "passed": true,
       "details": {
-        "exit_code": 72,
-        "stdout_lines": 124,
-        "stderr_lines": 64
+        "exit_code": 0,
+        "stdout_lines": 175,
+        "stderr_lines": 66
       },
-      "errors": [
-        "Simulations failed with exit code 72",
-        "stderr: H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:748: UserWarning: Overwriting section 0\n  warnings.warn(f\"Overwriting section {key}\")\nH:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:748: UserWarning: Overwriting section 1\n  warnings.warn(f\"Overwriting section {key}\")\nH:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:748: UserWarning: Overwriting section 2\n  warnings.warn(f\"Overwriting section {key}\")\nH:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:74"
-      ],
+      "errors": [],
       "warnings": []
     },
     "Pytest Tests": {
@@ -30,7 +27,7 @@
     "Theory Output Structure": {
       "passed": true,
       "details": {
-        "file_size_kb": 1570.357421875,
+        "file_size_kb": 1569.50390625,
         "parameters_count": 481,
         "formulas_count": 320,
         "sections_count": 65,
@@ -415,8 +412,8 @@
   },
   "summary": {
     "total_checks": 7,
-    "passed": 6,
-    "failed": 1,
+    "passed": 7,
+    "failed": 0,
     "warnings": 321
   }
 }

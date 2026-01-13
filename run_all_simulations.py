@@ -631,8 +631,8 @@ V16_VALIDATION_BOUNDS = {
     "neutrino.theta_13_pred": {
         "min": 7.5,
         "max": 9.5,
-        "target": 8.33,
-        "experimental": 8.54,
+        "target": 8.65,  # v20.9: Updated with chi_eff_total = 144
+        "experimental": 8.63,  # NuFIT 6.0 IO (not NO which is 8.58)
         "sigma": 0.11,
     },
     "neutrino.theta_23_pred": {
