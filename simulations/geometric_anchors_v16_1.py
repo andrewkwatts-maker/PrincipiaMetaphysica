@@ -81,8 +81,51 @@ class GeometricAnchors:
 
     @property
     def chi_eff(self) -> int:
-        """Effective Euler characteristic from TCS construction"""
+        """
+        Effective Euler characteristic from TCS construction.
+
+        v20.6 NOTE: This returns chi_eff_total = 144 for backward compatibility.
+        Per SSOT dual structure:
+        - chi_eff (per-sector) = 72
+        - chi_eff_total (full manifold) = 144 = 6 * b3 = 2 * chi_eff
+
+        Both yield n_gen = 3:
+        - n_gen = chi_eff/24 = 72/24 = 3
+        - n_gen = chi_eff_total/48 = 144/48 = 3
+        """
+        return 6 * self.b3  # = 144 (chi_eff_total for backward compatibility)
+
+    @property
+    def chi_eff_total(self) -> int:
+        """
+        Total manifold Euler characteristic (v20.6).
+        chi_eff_total = 2 * chi_eff_sector = 6 * b3 = 144
+        """
         return 6 * self.b3  # = 144
+
+    @property
+    def chi_eff_sector(self) -> int:
+        """
+        Per-sector Euler characteristic (v20.6).
+        chi_eff_sector = chi_eff_total / 2 = 72
+        """
+        return 3 * self.b3  # = 72
+
+    @property
+    def roots_total(self) -> int:
+        """
+        Total roots from E8xE8 = 288 (v20.6).
+        roots_total = b3 * D_shadow_space = 24 * 12 = 288
+        """
+        return self.b3 * D_SHADOW_SPACE  # 24 * 12 = 288
+
+    @property
+    def roots_per_sector(self) -> int:
+        """
+        Roots per sector = roots_total/2 = 144 (v20.6).
+        Connection: chi_eff_total = roots_per_sector = 144
+        """
+        return self.roots_total // 2  # 288/2 = 144
 
     # =========================================================================
     # Hodge Numbers for TCS #187 (Selected Topology)
@@ -1043,17 +1086,33 @@ class GeometricAnchors:
             "anomaly_correction": self.anomaly_correction,
             "g_newton_corrected": self.g_newton_corrected,
 
-            # Dimensional Structure (NEW)
-            "D_bulk": self.D_bulk,
-            "D_compact": self.D_compact,
-            "D_G2": self.D_G2,
-            "D_shadow": self.D_shadow,
-            "D_eff": self.D_eff,
+            # Dimensional Structure (v20.6: 5-level chain)
+            # Level 0: ANCESTRAL (26D)
+            "D_bulk": self.D_bulk,                    # 26 (alias for D_ancestral_total)
+            "D_ancestral_total": D_ANCESTRAL_TOTAL,   # 26
+            # Level 1: SHADOW (13D)
+            "D_shadow": self.D_shadow,                # 12 (D_shadow_space for Omega_Lambda)
+            "D_shadow_total": self.D_shadow_total,    # 13
+            "D_shadow_space": D_SHADOW_SPACE,         # 12
+            # Level 2: G2 (7D, Riemannian)
+            "D_G2": self.D_G2,                        # 7
+            "D_compact": self.D_compact,              # 7 (alias)
+            # Level 3: EXTERNAL (6D)
+            "D_external_total": D_EXTERNAL_TOTAL,     # 6
+            # Level 4: VISIBLE (4D)
+            "D_visible_total": D_VISIBLE_TOTAL,       # 4
+            "D_eff": self.D_eff,                      # 13.0 (= D_shadow_total)
+            # Spinor structure
             "spinor_26d": self.spinor_26d,
             "spinor_4d": self.spinor_4d,
             "spinor_reduction_factor": self.spinor_reduction_factor,
             "spinor_13d": self.spinor_13d,
             "flux_reduction": self.flux_reduction,
+            # v20.6: Dual chi_eff and roots structure
+            "chi_eff_total": self.chi_eff_total,      # 144 (full manifold)
+            "chi_eff_sector": self.chi_eff_sector,    # 72 (per sector)
+            "roots_total": self.roots_total,          # 288
+            "roots_per_sector": self.roots_per_sector,  # 144
 
             # Kaluza-Klein Mass Scale (v16.2)
             "m_KK": self.m_KK,
