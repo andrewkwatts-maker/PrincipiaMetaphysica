@@ -491,6 +491,19 @@ class FormulasRegistry:
         # =======================================================================
         # TOPOLOGICAL INVARIANTS (The Foundation)
         # =======================================================================
+        # b3 = 24: Third Betti number of G2 manifold (Joyce-Karigiannis TCS)
+        #
+        # NOTE ON b3 = D_space_24 = 24 COINCIDENCE (Gemini audit 2026-01-14):
+        # b3 (G2 Betti number) and D_space_24 (bosonic spatial dims) have the
+        # same numerical value (24) but represent DISTINCT concepts:
+        # - b3: Topological invariant from G2 cohomology (rank of H^3)
+        # - D_space_24: Spatial dimensions in 26D bosonic string (24,2) signature
+        #
+        # Currently considered COINCIDENTAL. No established physical connection
+        # between G2 Betti numbers and bosonic string critical dimension.
+        # Further investigation recommended.
+        #
+        # Reference: Joyce, D. (2000). Compact Manifolds with Special Holonomy
         self._b3 = 24                    # Third Betti number of G2 manifold
 
         # v20.1: DUAL CHI_EFF STRUCTURE (Gemini peer-reviewed 2026-01-14)
@@ -522,7 +535,24 @@ class FormulasRegistry:
 
         # v17.2-Absolute: roots_total is EMERGENT from Gate closure
         # This proves 288 is a sum, not an assumption
+        #
+        # DUAL INTERPRETATION OF 288 (Gemini audit 2026-01-14):
+        # 1. GNOSTIC: 288 = shadow_sector(135) + christ_constant(153)
+        #    - Sophia (135) + Christos (153) = Logic Closure (288)
+        # 2. GEOMETRIC: 288 = b3 * D_space_12 = 24 * 12
+        #    - Octonionic/24D structure (b3=24 times spinor rank 12)
+        #
+        # Both interpretations yield the same value. The Gnostic partition
+        # is used for the SSOT computation; the Geometric provides physical context.
+        #
+        # NOTE: This is NOT E8xE8 roots (480 = 240 + 240).
+        # WARNING: 486 hardcoded 288 values found in simulation files.
+        #          All should reference roots_total for SSOT compliance.
         self._roots_total = self._shadow_sector + self._christ_constant  # 135 + 153 = 288
+
+        # roots_per_sector = roots_total / 2 = 144 (analogous to chi_eff structure)
+        # Connection: chi_eff_total = roots_per_sector = 144
+        self._roots_per_sector = self._roots_total // 2  # 288/2 = 144
 
         self._visible_sector = 125       # 5^3 = SM parameters
 
@@ -532,45 +562,67 @@ class FormulasRegistry:
         # =======================================================================
         # DIMENSIONAL REDUCTION CHAIN (v20.1 - Gemini peer-reviewed 2026-01-14)
         # =======================================================================
-        # Explicit parameters for each level to avoid single-param ambiguity.
+        # SEMANTIC NAMING CONVENTION (Gemini audit 2026-01-14):
+        #   - ANCESTRAL: Original 26D bosonic frame (Level 0)
+        #   - BRANE:     13D brane after S_PR(2) gauge fixing (Level 1)
+        #   - COMPACT:   G2 holonomy compactification (Level 2)
+        #   - VISIBLE:   Observable 4D spacetime (Level 3)
+        #
         # Each level has: total dims, space dims, time dims, signature
         #
-        # LEVEL 0: BOSONIC STRING THEORY (starting point)
-        self._D_total_26 = 26         # Total dimensions
-        self._D_space_24 = 24         # Spatial dimensions
-        self._D_time_2 = 2            # Temporal dimensions (2T-physics)
+        # LEVEL 0: ANCESTRAL (Bosonic String Theory - starting point)
+        # The 26D ancestral frame from which all physics descends
+        self._D_ancestral_total = 26      # Total ancestral dimensions
+        self._D_ancestral_space = 24      # Ancestral spatial dimensions
+        self._D_ancestral_time = 2        # Ancestral temporal (2T-physics)
         # Signature: (24, 2) - Bars' 2T-physics framework
+        # Legacy aliases:
+        self._D_total_26 = self._D_ancestral_total
+        self._D_space_24 = self._D_ancestral_space
+        self._D_time_2 = self._D_ancestral_time
 
-        # LEVEL 1: S_PR(2) GAUGE FIXING (freeze one time dimension)
+        # LEVEL 1: BRANE (S_PR(2) Gauge Fixing - freeze one time dimension)
         # WARNING: This step requires theoretical justification (Gemini review)
         # The S_PR(2) projects 26D → 13D by fixing one temporal degree of freedom
-        self._D_total_13 = 13         # Total dimensions after gauge fixing
-        self._D_space_12 = 12         # Spatial dimensions
-        self._D_time_1_intermediate = 1  # Temporal dimensions (1 frozen)
+        self._D_brane_total = 13          # Total brane dimensions
+        self._D_brane_space = 12          # Brane spatial dimensions
+        self._D_brane_time = 1            # Brane temporal (1 frozen)
         # Signature: (12, 1)
+        # Legacy aliases:
+        self._D_total_13 = self._D_brane_total
+        self._D_space_12 = self._D_brane_space
+        self._D_time_1_intermediate = self._D_brane_time
 
-        # LEVEL 2: G2 HOLONOMY COMPACTIFICATION
-        # Compactify 7 of the 13 dimensions on a G2 manifold
-        self._D_G2 = 7                # G2 manifold dimensions (compact)
-        self._D_external_6 = 6        # External dimensions after G2
+        # LEVEL 2: COMPACT (G2 Holonomy Compactification)
+        # Compactify 7 of the 13 brane dimensions on a G2 manifold
+        self._D_compact_G2 = 7            # G2 manifold dimensions (compact)
+        self._D_compact_external = 6      # External dimensions after G2
         # b3 = 24 is the Betti number of the G2 manifold (defined above)
         # chi_eff relates to G2 topology (defined above)
+        # Legacy aliases:
+        self._D_G2 = self._D_compact_G2
+        self._D_external_6 = self._D_compact_external
 
-        # LEVEL 3: OBSERVABLE SPACETIME
-        self._D_total_4 = 4           # Observable spacetime dimensions
-        self._D_space_3 = 3           # Spatial dimensions
-        self._D_time_1 = 1            # Temporal dimension
+        # LEVEL 3: VISIBLE (Observable Spacetime)
+        # The 4D visible universe we observe
+        self._D_visible_total = 4         # Total visible dimensions
+        self._D_visible_space = 3         # Visible spatial dimensions
+        self._D_visible_time = 1          # Visible temporal dimension
         # Signature: (3, 1) - Minkowski
+        # Legacy aliases:
+        self._D_total_4 = self._D_visible_total
+        self._D_space_3 = self._D_visible_space
+        self._D_time_1 = self._D_visible_time
 
         # DERIVED QUANTITIES (connect dimensional levels)
         # n_gen = chi_eff_sector / b3 = 72/24 = 3 (fermion generations)
         # n_gen = chi_eff_total / (2*b3) = 144/48 = 3 (same result)
-        # roots_total = b3 * (D_space_12 / 1) = 24 * 12 = 288 (octonionic structure)
+        # roots_total = b3 * D_brane_space = 24 * 12 = 288 (octonionic structure)
 
         # COMPACTIFICATION RELATIONS
-        # D_total_26 = D_total_13 + D_total_13 (two 13D branes in 2T-physics)
-        # D_total_13 = D_G2 + D_external_6 = 7 + 6 = 13
-        # D_external_6 = D_total_4 + 2 (extra compact dimensions)
+        # D_ancestral_total = D_brane_total + D_brane_total (two 13D branes in 2T-physics)
+        # D_brane_total = D_compact_G2 + D_compact_external = 7 + 6 = 13
+        # D_compact_external = D_visible_total + 2 (extra compact dimensions)
 
         # =======================================================================
         # THE SACRED HEPTAGON (7 Intellectual Anchors)
@@ -688,39 +740,69 @@ class FormulasRegistry:
         """
         Logic Closure Total (288 = b3 * 12 = 24 * 12).
 
+        DUAL INTERPRETATION (Gemini audit 2026-01-14):
+        1. GNOSTIC: 288 = shadow_sector(135) + christ_constant(153)
+        2. GEOMETRIC: 288 = b3 * D_space_12 = 24 * 12
+
         This represents octonionic/24-dimensional structure counts, NOT E8xE8 roots
         (which would be 480 = 240 + 240). The 288 arises from b3=24 times the
         spinor connection rank 12, providing a 24D-dimensional basis for parameter projection.
-
-        Equivalently: 288 = VISIBLE_GATES(135) + JC_CONSTANT(153), showing the
-        Gate Closure interpretation is consistent with the octonionic structure.
         """
         return self._roots_total
 
     @property
+    def roots_per_sector(self) -> int:
+        """
+        Roots per sector: roots_total / 2 = 288/2 = 144.
+
+        Analogous to chi_eff dual structure:
+        - roots_total = 288 (full system)
+        - roots_per_sector = 144 (per sector)
+
+        Connection: chi_eff_total = roots_per_sector = 144
+        """
+        return self._roots_per_sector
+
+    @property
     def visible_sector(self) -> int:
         """
-        Effective Visible Sector Residues: 125 observable parameters (masses, couplings, angles)
-        from manifold spectrum projection.
+        Effective Visible Sector Residues: 125 phenomenological parameter slots.
 
-        NOTE: This is NOT gauge group dimension - no Lie group has 125 generators.
-        The 125 = 5^3 is a counting of effective degrees of freedom:
-        - Standard Model: 12 generators
-        - SU(5) GUT: 24 generators
-        - SO(10) GUT: 45 generators
-        - E6 GUT: 78 generators
-        The value 125 = 5^3 counts phenomenological parameters, not gauge algebra dimension.
+        WARNING (Gemini audit 2026-01-14): This is NUMEROLOGY, not rigorous physics.
+
+        WHAT 125 IS NOT:
+        - NOT gauge group dimension (no Lie group has 125 generators)
+        - NOT Standard Model free parameters (~19-26)
+        - SU(12) has 143 generators, SU(11) has 120 - nothing has exactly 125
+
+        WHAT 125 APPEARS TO BE:
+        - 125 = 5^3 where 5 represents spacetime dimensions (4D + 1 compact?)
+        - A phenomenological parameter count from manifold projection
+        - Part of the 288 = 125 + 163 partition (visible + sterile)
+
+        STATUS: Requires theoretical justification or explicit ANSATZ label.
+        The origin of '5' in 5^3 needs tracing within the framework.
         """
         return self._visible_sector
 
     @property
     def sterile_sector(self) -> int:
         """
-        Sterile sector: 288 - 125 = 163.
+        Sterile sector: roots_total - visible_sector = 288 - 125 = 163.
 
-        WARNING (per Gemini peer review): This is derived from arbitrary values.
-        Both roots_total(288) and visible_sector(125) are numerological choices
-        without rigorous mathematical basis (see their docstrings for details).
+        SAME VALUE AS: odowd_bulk_pressure = 163
+
+        WARNING (Gemini audit 2026-01-14):
+        This is DERIVED from two numerological values:
+        - roots_total = 288 (Gnostic/Geometric dual interpretation)
+        - visible_sector = 125 (5^3, origin unclear)
+
+        Therefore sterile_sector = 163 inherits the numerological status.
+        The value 163 is also a prime number and appears in:
+        - odowd_bulk_pressure (O'Dowd bulk parameter)
+        - Gnostic partition: barbelo = 163 (First Thought)
+
+        STATUS: Derived value, numerological. No independent justification.
         """
         return self._sterile_sector
 
@@ -794,56 +876,121 @@ class FormulasRegistry:
     # =========================================================================
     # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.1)
     # =========================================================================
+    # Semantic naming convention: ANCESTRAL → BRANE → COMPACT → VISIBLE
+    # Legacy numeric names (D_total_26, etc.) preserved for backward compatibility
+
+    # ----- LEVEL 0: ANCESTRAL (26D Bosonic) -----
+    @property
+    def D_ancestral_total(self) -> int:
+        """Level 0 (ANCESTRAL): Total 26D bosonic string dimensions."""
+        return self._D_ancestral_total
 
     @property
+    def D_ancestral_space(self) -> int:
+        """Level 0 (ANCESTRAL): 24 spatial dimensions in 2T-physics."""
+        return self._D_ancestral_space
+
+    @property
+    def D_ancestral_time(self) -> int:
+        """Level 0 (ANCESTRAL): 2 temporal dimensions in 2T-physics."""
+        return self._D_ancestral_time
+
+    # Legacy aliases for Level 0
+    @property
     def D_total_26(self) -> int:
-        """Level 0: Total dimensions in bosonic string theory."""
-        return self._D_total_26
+        """Level 0: Total dimensions in bosonic string theory (legacy alias)."""
+        return self._D_ancestral_total
 
     @property
     def D_space_24(self) -> int:
-        """Level 0: Spatial dimensions (24 in 2T-physics)."""
-        return self._D_space_24
+        """Level 0: Spatial dimensions - 24 in 2T-physics (legacy alias)."""
+        return self._D_ancestral_space
 
     @property
     def D_time_2(self) -> int:
-        """Level 0: Temporal dimensions (2 in 2T-physics)."""
-        return self._D_time_2
+        """Level 0: Temporal dimensions - 2 in 2T-physics (legacy alias)."""
+        return self._D_ancestral_time
+
+    # ----- LEVEL 1: BRANE (13D after S_PR(2)) -----
+    @property
+    def D_brane_total(self) -> int:
+        """Level 1 (BRANE): Total 13D after S_PR(2) gauge fixing."""
+        return self._D_brane_total
 
     @property
+    def D_brane_space(self) -> int:
+        """Level 1 (BRANE): 12 spatial dimensions on each brane."""
+        return self._D_brane_space
+
+    @property
+    def D_brane_time(self) -> int:
+        """Level 1 (BRANE): 1 temporal dimension (other frozen)."""
+        return self._D_brane_time
+
+    # Legacy aliases for Level 1
+    @property
     def D_total_13(self) -> int:
-        """Level 1: Dimensions after S_PR(2) gauge fixing."""
-        return self._D_total_13
+        """Level 1: Dimensions after S_PR(2) gauge fixing (legacy alias)."""
+        return self._D_brane_total
 
     @property
     def D_space_12(self) -> int:
-        """Level 1: Spatial dimensions after gauge fixing."""
-        return self._D_space_12
+        """Level 1: Spatial dimensions after gauge fixing (legacy alias)."""
+        return self._D_brane_space
+
+    # ----- LEVEL 2: COMPACT (G2 Holonomy) -----
+    @property
+    def D_compact_G2(self) -> int:
+        """Level 2 (COMPACT): 7D G2 holonomy manifold (compact)."""
+        return self._D_compact_G2
 
     @property
+    def D_compact_external(self) -> int:
+        """Level 2 (COMPACT): 6D external after G2 compactification."""
+        return self._D_compact_external
+
+    # Legacy aliases for Level 2
+    @property
     def D_G2(self) -> int:
-        """Level 2: G2 holonomy manifold dimensions (compact)."""
-        return self._D_G2
+        """Level 2: G2 holonomy manifold dimensions - compact (legacy alias)."""
+        return self._D_compact_G2
 
     @property
     def D_external_6(self) -> int:
-        """Level 2: External dimensions after G2 compactification."""
-        return self._D_external_6
+        """Level 2: External dimensions after G2 compactification (legacy alias)."""
+        return self._D_compact_external
+
+    # ----- LEVEL 3: VISIBLE (4D Observable) -----
+    @property
+    def D_visible_total(self) -> int:
+        """Level 3 (VISIBLE): 4D observable spacetime."""
+        return self._D_visible_total
 
     @property
+    def D_visible_space(self) -> int:
+        """Level 3 (VISIBLE): 3 observable spatial dimensions."""
+        return self._D_visible_space
+
+    @property
+    def D_visible_time(self) -> int:
+        """Level 3 (VISIBLE): 1 observable temporal dimension."""
+        return self._D_visible_time
+
+    # Legacy aliases for Level 3
+    @property
     def D_total_4(self) -> int:
-        """Level 3: Observable spacetime dimensions."""
-        return self._D_total_4
+        """Level 3: Observable spacetime dimensions (legacy alias)."""
+        return self._D_visible_total
 
     @property
     def D_space_3(self) -> int:
-        """Level 3: Observable spatial dimensions."""
-        return self._D_space_3
+        """Level 3: Observable spatial dimensions (legacy alias)."""
+        return self._D_visible_space
 
     @property
     def D_time_1(self) -> int:
-        """Level 3: Observable temporal dimension."""
-        return self._D_time_1
+        """Level 3: Observable temporal dimension (legacy alias)."""
+        return self._D_visible_time
 
     @property
     def n_gen(self) -> int:

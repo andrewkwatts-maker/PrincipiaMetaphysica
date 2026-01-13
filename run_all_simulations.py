@@ -1163,9 +1163,16 @@ class SimulationRunner:
             if not self.registry.has_param("topology.b3"):
                 self.registry.set_param("topology.b3", 24,
                                          source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
+
+            # Dual chi_eff structure (v20.1 - Gemini audit 2026-01-14)
+            # chi_eff = 72 (per-sector), chi_eff_total = 144 (full manifold)
+            # Both give n_gen = 3: 72/24 = 3 OR 144/48 = 3
             if not self.registry.has_param("topology.chi_eff"):
-                self.registry.set_param("topology.chi_eff", 144,
-                                         source="GEOMETRIC:TCS_G2_187", status="GEOMETRIC")
+                self.registry.set_param("topology.chi_eff", 72,
+                                         source="GEOMETRIC:TCS_G2_sector", status="GEOMETRIC")
+            if not self.registry.has_param("topology.chi_eff_total"):
+                self.registry.set_param("topology.chi_eff_total", 144,
+                                         source="GEOMETRIC:TCS_G2_manifold", status="GEOMETRIC")
 
             # Pre-compute k_gimel for early use
             k_gimel = 24 / 2 + 1 / np.pi
@@ -1176,7 +1183,8 @@ class SimulationRunner:
             if self.verbose:
                 print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")
                 print(f"  - topology.b3 = 24 (derived from G2 manifold)")
-                print(f"  - topology.chi_eff = 144 (n_gen = chi_eff/48 = 144/48 = 3)")
+                print(f"  - topology.chi_eff = 72 (per-sector: n_gen = 72/24 = 3)")
+                print(f"  - topology.chi_eff_total = 144 (full manifold: n_gen = 144/48 = 3)")
                 print(f"  - topology.k_gimel = {k_gimel:.6f} (derived: b3/2 + 1/pi)")
                 print(f"  Note: Full geometric anchors computed in Phase 1")
 
