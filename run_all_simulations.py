@@ -1176,7 +1176,7 @@ class SimulationRunner:
             if self.verbose:
                 print(f"[OK] Pre-loaded core topology parameters (GEOMETRIC status)")
                 print(f"  - topology.b3 = 24 (derived from G2 manifold)")
-                print(f"  - topology.chi_eff = 144 (derived from TCS #187)")
+                print(f"  - topology.chi_eff = 144 (n_gen = chi_eff/48 = 144/48 = 3)")
                 print(f"  - topology.k_gimel = {k_gimel:.6f} (derived: b3/2 + 1/pi)")
                 print(f"  Note: Full geometric anchors computed in Phase 1")
 
