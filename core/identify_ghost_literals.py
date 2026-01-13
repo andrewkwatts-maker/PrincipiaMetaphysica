@@ -5,7 +5,7 @@ Scans Python files for hardcoded numeric literals that should be derived
 from FormulasRegistry.
 
 TARGET_LITERALS are DERIVED values that MUST come from the registry:
-- 144 (chi_eff = B3^2/4)
+- 144 (chi_eff_total/pressure_divisor = B3^2/4)
 - 163 (sterile_sector = (7*B3)-5)
 - 288 (roots_total = shadow + christ)
 - 71.55 / 71.549 (h0_local from O'Dowd formula)
@@ -39,7 +39,7 @@ class GhostLiteralHunter(ast.NodeVisitor):
 
     # DERIVED values that MUST come from FormulasRegistry SSoT
     TARGET_LITERALS = {
-        144,      # chi_eff = B3^2/4
+        144,      # chi_eff_total/pressure_divisor = B3^2/4
         163,      # sterile_sector = (7*B3)-5
         288,      # roots_total = shadow + christ
         71.549,   # h0_local (partial match)
@@ -277,7 +277,7 @@ def print_report(findings: Dict[str, List[Dict[str, Any]]]) -> None:
 def _get_registry_name(value: Any) -> str:
     """Map a target value to its FormulasRegistry property name."""
     mapping = {
-        144: 'chi_eff',
+        144: 'chi_eff_total',  # Also: pressure_divisor, roots_per_sector
         163: 'sterile_sector',
         288: 'roots_total',
         71.55: 'h0_local',

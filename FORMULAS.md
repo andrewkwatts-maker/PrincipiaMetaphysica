@@ -1,10 +1,10 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** ABSOLUTE_SOVEREIGN | **Last Sync:** 2026-01-11 19:03:39
+**Status:** PEER_REVIEWED | **Last Sync:** 2026-01-12 08:23:37
 **Engine Version:** v20.0-RECURSIVE
-**Sovereign Hash:** `ac7d7ec47f2ab9ff80ddf5accad094f7...`
+**Sovereign Hash:** `7842742f98aaa6ed5a989f93cefbf29b...`
 
-<!-- SOVEREIGN_HASH_FULL: ac7d7ec47f2ab9ff80ddf5accad094f7858e2cff61bbc3a8a05b027202251a35 -->
+<!-- SOVEREIGN_HASH_FULL: 7842742f98aaa6ed5a989f93cefbf29b3905c6c82be6e414e711b22af9f0634f -->
 
 ---
 
@@ -29,7 +29,7 @@ All other values are derived from these constants.
 | Name | Symbol | Value | Description |
 | :--- | :--- | :--- | :--- |
 | Betti Three | B3 | `24` | Third Betti number of G2 manifold |
-| Chi Effective | chi_eff | `144` | Effective Euler characteristic (B3^2/4) |
+| Chi Effective | chi_eff | `72` | Effective Euler characteristic (B3^2/4) |
 | Total Roots | - | `288` | E8 x E8 root lattice |
 | Visible Sector | - | `125` | 5^3 = 125 (SM parameters) |
 | Sterile Sector | P_O | `163` | 288 - 125 = 163 (O'Dowd Bulk Pressure) |
