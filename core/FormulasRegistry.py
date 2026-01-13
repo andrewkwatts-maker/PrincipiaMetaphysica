@@ -530,6 +530,49 @@ class FormulasRegistry:
         self._sterile_sector = self._roots_total - self._visible_sector  # 288 - 125 = 163
 
         # =======================================================================
+        # DIMENSIONAL REDUCTION CHAIN (v20.1 - Gemini peer-reviewed 2026-01-14)
+        # =======================================================================
+        # Explicit parameters for each level to avoid single-param ambiguity.
+        # Each level has: total dims, space dims, time dims, signature
+        #
+        # LEVEL 0: BOSONIC STRING THEORY (starting point)
+        self._D_total_26 = 26         # Total dimensions
+        self._D_space_24 = 24         # Spatial dimensions
+        self._D_time_2 = 2            # Temporal dimensions (2T-physics)
+        # Signature: (24, 2) - Bars' 2T-physics framework
+
+        # LEVEL 1: S_PR(2) GAUGE FIXING (freeze one time dimension)
+        # WARNING: This step requires theoretical justification (Gemini review)
+        # The S_PR(2) projects 26D → 13D by fixing one temporal degree of freedom
+        self._D_total_13 = 13         # Total dimensions after gauge fixing
+        self._D_space_12 = 12         # Spatial dimensions
+        self._D_time_1_intermediate = 1  # Temporal dimensions (1 frozen)
+        # Signature: (12, 1)
+
+        # LEVEL 2: G2 HOLONOMY COMPACTIFICATION
+        # Compactify 7 of the 13 dimensions on a G2 manifold
+        self._D_G2 = 7                # G2 manifold dimensions (compact)
+        self._D_external_6 = 6        # External dimensions after G2
+        # b3 = 24 is the Betti number of the G2 manifold (defined above)
+        # chi_eff relates to G2 topology (defined above)
+
+        # LEVEL 3: OBSERVABLE SPACETIME
+        self._D_total_4 = 4           # Observable spacetime dimensions
+        self._D_space_3 = 3           # Spatial dimensions
+        self._D_time_1 = 1            # Temporal dimension
+        # Signature: (3, 1) - Minkowski
+
+        # DERIVED QUANTITIES (connect dimensional levels)
+        # n_gen = chi_eff_sector / b3 = 72/24 = 3 (fermion generations)
+        # n_gen = chi_eff_total / (2*b3) = 144/48 = 3 (same result)
+        # roots_total = b3 * (D_space_12 / 1) = 24 * 12 = 288 (octonionic structure)
+
+        # COMPACTIFICATION RELATIONS
+        # D_total_26 = D_total_13 + D_total_13 (two 13D branes in 2T-physics)
+        # D_total_13 = D_G2 + D_external_6 = 7 + 6 = 13
+        # D_external_6 = D_total_4 + 2 (extra compact dimensions)
+
+        # =======================================================================
         # THE SACRED HEPTAGON (7 Intellectual Anchors)
         # =======================================================================
 
@@ -746,7 +789,73 @@ class FormulasRegistry:
     @property
     def horos(self) -> int:
         """The Horos: Dimensional Boundary (26D action frame)."""
-        return 26  # D_bulk = 26
+        return self._D_total_26  # D_bulk = 26
+
+    # =========================================================================
+    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.1)
+    # =========================================================================
+
+    @property
+    def D_total_26(self) -> int:
+        """Level 0: Total dimensions in bosonic string theory."""
+        return self._D_total_26
+
+    @property
+    def D_space_24(self) -> int:
+        """Level 0: Spatial dimensions (24 in 2T-physics)."""
+        return self._D_space_24
+
+    @property
+    def D_time_2(self) -> int:
+        """Level 0: Temporal dimensions (2 in 2T-physics)."""
+        return self._D_time_2
+
+    @property
+    def D_total_13(self) -> int:
+        """Level 1: Dimensions after S_PR(2) gauge fixing."""
+        return self._D_total_13
+
+    @property
+    def D_space_12(self) -> int:
+        """Level 1: Spatial dimensions after gauge fixing."""
+        return self._D_space_12
+
+    @property
+    def D_G2(self) -> int:
+        """Level 2: G2 holonomy manifold dimensions (compact)."""
+        return self._D_G2
+
+    @property
+    def D_external_6(self) -> int:
+        """Level 2: External dimensions after G2 compactification."""
+        return self._D_external_6
+
+    @property
+    def D_total_4(self) -> int:
+        """Level 3: Observable spacetime dimensions."""
+        return self._D_total_4
+
+    @property
+    def D_space_3(self) -> int:
+        """Level 3: Observable spatial dimensions."""
+        return self._D_space_3
+
+    @property
+    def D_time_1(self) -> int:
+        """Level 3: Observable temporal dimension."""
+        return self._D_time_1
+
+    @property
+    def n_gen(self) -> int:
+        """
+        Number of fermion generations derived from topology.
+
+        n_gen = chi_eff_sector / b3 = 72/24 = 3
+
+        This connects dimensional reduction to particle physics:
+        The G2 topology (b3=24, chi_eff=72) determines generations.
+        """
+        return self._chi_eff // self._b3  # 72/24 = 3
 
     @property
     def decad(self) -> int:
