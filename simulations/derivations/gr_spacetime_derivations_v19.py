@@ -73,24 +73,42 @@ getcontext().prec = 50
 
 
 # =============================================================================
-# PHYSICAL AND GEOMETRIC CONSTANTS
+# PHYSICAL AND GEOMETRIC CONSTANTS - SSOT Compliant
 # =============================================================================
+# Import dimensional parameters from Single Source of Truth
+try:
+    from core.FormulasRegistry import FormulasRegistry
+    _SSOT = FormulasRegistry()
+
+    # G2 Topology (TCS #187) - from SSOT
+    B3_G2 = _SSOT.b3                    # Third Betti number = 24
+    B2_G2 = _SSOT.b2                    # Second Betti number = 4
+    CHI_EFF = _SSOT.chi_eff_total       # Full manifold Euler char = 144
+
+    # 5-Level Dimensional Chain - from SSOT
+    # Level 0: ANCESTRAL (26D, signature 24,2) - Bosonic string
+    D_CRITICAL = _SSOT.D_ancestral_total      # 26
+    # Level 1: SHADOW (13D, signature 12,1) - After Sp(2,R) gauge fixing
+    D_INTERMEDIATE = _SSOT.D_shadow_total     # 13
+    # Level 2: G2 (7D, signature 7,0) - G2 holonomy (RIEMANNIAN)
+    D_G2 = _SSOT.D_G2_total                   # 7
+    # Level 4: VISIBLE (4D, signature 3,1) - Observable spacetime
+    D_SPACETIME = _SSOT.D_visible_total       # 4
+
+except ImportError:
+    # Fallback values if SSOT not available (standalone execution)
+    B3_G2 = 24           # Third Betti number
+    B2_G2 = 4            # Second Betti number
+    CHI_EFF = 144        # Effective Euler characteristic
+    D_CRITICAL = 26      # Bosonic string critical dimension
+    D_INTERMEDIATE = 13  # After Sp(2,R) gauge fixing
+    D_G2 = 7             # G2 holonomy manifold
+    D_SPACETIME = 4      # Observable spacetime
 
 # Planck scale (PDG 2024)
 M_PLANCK_GEV = Decimal('1.220890e19')      # Reduced Planck mass in GeV
 L_PLANCK_M = Decimal('1.616255e-35')       # Planck length in meters
 G_NEWTON_M3_KG_S2 = Decimal('6.67430e-11') # Newton's constant in SI
-
-# G2 Topology (TCS #187)
-B3_G2 = 24           # Third Betti number
-B2_G2 = 4            # Second Betti number
-CHI_EFF = 144        # Effective Euler characteristic
-
-# Dimensional structure
-D_CRITICAL = 26      # Bosonic string critical dimension
-D_INTERMEDIATE = 13  # After Sp(2,R) gauge fixing
-D_G2 = 7             # G2 holonomy manifold
-D_SPACETIME = 4      # Observable spacetime
 
 
 # =============================================================================

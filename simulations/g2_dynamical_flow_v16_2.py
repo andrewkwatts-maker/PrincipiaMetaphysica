@@ -28,6 +28,25 @@ import numpy as np
 from scipy.integrate import solve_ivp, quad
 from typing import Dict, Any, Tuple, Optional
 from dataclasses import dataclass
+import sys
+import os
+
+# Add parent directories to path for imports
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
+
+# =============================================================================
+# SSOT IMPORTS - Single Source of Truth for G2 Topology
+# =============================================================================
+try:
+    from core.FormulasRegistry import FormulasRegistry
+    _SSOT = FormulasRegistry()
+    B3_DEFAULT = _SSOT.b3               # Third Betti number = 24
+    CHI_EFF_TOTAL = _SSOT.chi_eff_total # Full manifold Euler char = 144
+except ImportError:
+    # Fallback values if SSOT not available (standalone execution)
+    B3_DEFAULT = 24
+    CHI_EFF_TOTAL = 144
 
 
 @dataclass
@@ -51,19 +70,20 @@ class G2DynamicalFlow:
     Ricci flow, causing w(z) to transition from phantom to quintessence.
     """
 
-    def __init__(self, b3: int = 24):
+    def __init__(self, b3: int = B3_DEFAULT):
         """
         Initialize with topological invariant b₃.
 
         Args:
-            b3: Third Betti number (default: 24 for TCS G₂)
+            b3: Third Betti number (default: 24 from SSOT for TCS G₂)
         """
         self.b3 = b3
 
         # Static geometric anchors (boundary conditions for flow)
         self.k_gimel_static = (b3 / 2.0) + (1.0 / np.pi)  # 12.318
         self.c_kaf_static = b3 * (b3 - 7) / (b3 - 9)      # 27.2
-        self.chi_eff = 6 * b3                               # 144
+        # chi_eff from SSOT: chi_eff_total = 6 * b3 = 144 for full manifold
+        self.chi_eff = CHI_EFF_TOTAL if b3 == B3_DEFAULT else 6 * b3
 
         # DESI 2025 observations for calibration
         self.desi = DESIObservations()
