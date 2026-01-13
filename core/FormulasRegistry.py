@@ -560,15 +560,16 @@ class FormulasRegistry:
         self._sterile_sector = self._roots_total - self._visible_sector  # 288 - 125 = 163
 
         # =======================================================================
-        # DIMENSIONAL REDUCTION CHAIN (v20.1 - Gemini peer-reviewed 2026-01-14)
+        # DIMENSIONAL REDUCTION CHAIN (v20.2 - Gemini peer-reviewed 2026-01-14)
         # =======================================================================
-        # SEMANTIC NAMING CONVENTION (Gemini audit 2026-01-14):
-        #   - ANCESTRAL: Original 26D bosonic frame (Level 0)
-        #   - BRANE:     13D brane after S_PR(2) gauge fixing (Level 1)
-        #   - COMPACT:   G2 holonomy compactification (Level 2)
-        #   - VISIBLE:   Observable 4D spacetime (Level 3)
+        # 5-LEVEL SEMANTIC NAMING CONVENTION (Gemini scrum review):
+        #   - ANCESTRAL: Original 26D bosonic frame (Level 0) - Signature (24,2)
+        #   - SHADOW:    13D shadow spacetime after Sp(2,R) (Level 1) - Signature (12,1)
+        #   - G2:        7D G2 holonomy manifold (Level 2) - Signature (7,0) RIEMANNIAN
+        #   - EXTERNAL:  6D external/observable bulk (Level 3) - Signature (5,1)
+        #   - VISIBLE:   4D observable spacetime (Level 4) - Signature (3,1)
         #
-        # Each level has: total dims, space dims, time dims, signature
+        # Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
         #
         # LEVEL 0: ANCESTRAL (Bosonic String Theory - starting point)
         # The 26D ancestral frame from which all physics descends
@@ -581,30 +582,48 @@ class FormulasRegistry:
         self._D_space_24 = self._D_ancestral_space
         self._D_time_2 = self._D_ancestral_time
 
-        # LEVEL 1: BRANE (S_PR(2) Gauge Fixing - freeze one time dimension)
-        # WARNING: This step requires theoretical justification (Gemini review)
-        # The S_PR(2) projects 26D → 13D by fixing one temporal degree of freedom
-        self._D_brane_total = 13          # Total brane dimensions
-        self._D_brane_space = 12          # Brane spatial dimensions
-        self._D_brane_time = 1            # Brane temporal (1 frozen)
+        # LEVEL 1: SHADOW (Sp(2,R) Gauge Fixing - 2T → 1T physics)
+        # The Sp(2,R) gauge symmetry projects 26D → 13D shadow spacetime
+        # "Shadow" terminology from Bars' 2T-physics (not "brane" to avoid collision)
+        self._D_shadow_total = 13         # Total shadow spacetime dimensions
+        self._D_shadow_space = 12         # Shadow spatial dimensions
+        self._D_shadow_time = 1           # Shadow temporal (one gauge-fixed)
         # Signature: (12, 1)
-        # Legacy aliases:
-        self._D_total_13 = self._D_brane_total
-        self._D_space_12 = self._D_brane_space
-        self._D_time_1_intermediate = self._D_brane_time
+        # Legacy aliases (for backward compatibility):
+        self._D_brane_total = self._D_shadow_total
+        self._D_brane_space = self._D_shadow_space
+        self._D_brane_time = self._D_shadow_time
+        self._D_total_13 = self._D_shadow_total
+        self._D_space_12 = self._D_shadow_space
+        self._D_time_1_intermediate = self._D_shadow_time
 
-        # LEVEL 2: COMPACT (G2 Holonomy Compactification)
-        # Compactify 7 of the 13 brane dimensions on a G2 manifold
-        self._D_compact_G2 = 7            # G2 manifold dimensions (compact)
-        self._D_compact_external = 6      # External dimensions after G2
+        # LEVEL 2: G2 (G2 Holonomy Compactification)
+        # Compactify 7 of the 13 shadow dimensions on a G2 manifold
+        # CRITICAL: G2 manifolds are RIEMANNIAN - signature (7,0), NOT (6,1)
+        self._D_G2_total = 7              # G2 manifold total dimensions
+        self._D_G2_space = 7              # All G2 dimensions are spatial (Riemannian)
+        self._D_G2_time = 0               # NO temporal dimension - G2 is Euclidean
+        # Signature: (7, 0) - Riemannian (Joyce 2000, Kovalev 2003)
         # b3 = 24 is the Betti number of the G2 manifold (defined above)
         # chi_eff relates to G2 topology (defined above)
         # Legacy aliases:
-        self._D_G2 = self._D_compact_G2
-        self._D_external_6 = self._D_compact_external
+        self._D_compact_G2 = self._D_G2_total
+        self._D_G2 = self._D_G2_total
 
-        # LEVEL 3: VISIBLE (Observable Spacetime)
-        # The 4D visible universe we observe
+        # LEVEL 3: EXTERNAL (Observable Bulk after G2)
+        # The 6D external/observable bulk remaining after G2 compactification
+        # D_shadow(13) = D_G2(7) + D_external(6)
+        self._D_external_total = 6        # Total external dimensions
+        self._D_external_space = 5        # External spatial dimensions
+        self._D_external_time = 1         # External temporal dimension
+        # Signature: (5, 1)
+        # Legacy aliases:
+        self._D_compact_external = self._D_external_total
+        self._D_external_6 = self._D_external_total
+
+        # LEVEL 4: VISIBLE (Observable Spacetime)
+        # The 4D visible universe we observe after final KK reduction
+        # D_external(6) = D_visible(4) + 2 extra compact dimensions
         self._D_visible_total = 4         # Total visible dimensions
         self._D_visible_space = 3         # Visible spatial dimensions
         self._D_visible_time = 1          # Visible temporal dimension
@@ -617,12 +636,12 @@ class FormulasRegistry:
         # DERIVED QUANTITIES (connect dimensional levels)
         # n_gen = chi_eff_sector / b3 = 72/24 = 3 (fermion generations)
         # n_gen = chi_eff_total / (2*b3) = 144/48 = 3 (same result)
-        # roots_total = b3 * D_brane_space = 24 * 12 = 288 (octonionic structure)
+        # roots_total = b3 * D_shadow_space = 24 * 12 = 288 (octonionic structure)
 
-        # COMPACTIFICATION RELATIONS
-        # D_ancestral_total = D_brane_total + D_brane_total (two 13D branes in 2T-physics)
-        # D_brane_total = D_compact_G2 + D_compact_external = 7 + 6 = 13
-        # D_compact_external = D_visible_total + 2 (extra compact dimensions)
+        # COMPACTIFICATION RELATIONS (5-level chain)
+        # D_ancestral(26) = 2 * D_shadow(13) (two 13D shadow branes in 2T-physics)
+        # D_shadow(13) = D_G2(7) + D_external(6) (G2 holonomy split)
+        # D_external(6) = D_visible(4) + 2 (Kaluza-Klein reduction)
 
         # =======================================================================
         # THE SACRED HEPTAGON (7 Intellectual Anchors)
@@ -874,10 +893,11 @@ class FormulasRegistry:
         return self._D_total_26  # D_bulk = 26
 
     # =========================================================================
-    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.1)
+    # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.2)
     # =========================================================================
-    # Semantic naming convention: ANCESTRAL → BRANE → COMPACT → VISIBLE
-    # Legacy numeric names (D_total_26, etc.) preserved for backward compatibility
+    # 5-level chain: ANCESTRAL → SHADOW → G2 → EXTERNAL → VISIBLE
+    # Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # Legacy numeric names preserved for backward compatibility
 
     # ----- LEVEL 0: ANCESTRAL (26D Bosonic) -----
     @property
@@ -911,80 +931,127 @@ class FormulasRegistry:
         """Level 0: Temporal dimensions - 2 in 2T-physics (legacy alias)."""
         return self._D_ancestral_time
 
-    # ----- LEVEL 1: BRANE (13D after S_PR(2)) -----
+    # ----- LEVEL 1: SHADOW (13D after Sp(2,R)) -----
+    @property
+    def D_shadow_total(self) -> int:
+        """Level 1 (SHADOW): Total 13D shadow spacetime after Sp(2,R)."""
+        return self._D_shadow_total
+
+    @property
+    def D_shadow_space(self) -> int:
+        """Level 1 (SHADOW): 12 spatial dimensions in shadow spacetime."""
+        return self._D_shadow_space
+
+    @property
+    def D_shadow_time(self) -> int:
+        """Level 1 (SHADOW): 1 temporal dimension (other gauge-fixed)."""
+        return self._D_shadow_time
+
+    # Legacy aliases for Level 1 (brane -> shadow)
     @property
     def D_brane_total(self) -> int:
-        """Level 1 (BRANE): Total 13D after S_PR(2) gauge fixing."""
-        return self._D_brane_total
+        """Level 1: 13D dimensions (legacy alias for D_shadow_total)."""
+        return self._D_shadow_total
 
     @property
     def D_brane_space(self) -> int:
-        """Level 1 (BRANE): 12 spatial dimensions on each brane."""
-        return self._D_brane_space
+        """Level 1: 12 spatial (legacy alias for D_shadow_space)."""
+        return self._D_shadow_space
 
     @property
     def D_brane_time(self) -> int:
-        """Level 1 (BRANE): 1 temporal dimension (other frozen)."""
-        return self._D_brane_time
+        """Level 1: 1 temporal (legacy alias for D_shadow_time)."""
+        return self._D_shadow_time
 
-    # Legacy aliases for Level 1
     @property
     def D_total_13(self) -> int:
-        """Level 1: Dimensions after S_PR(2) gauge fixing (legacy alias)."""
-        return self._D_brane_total
+        """Level 1: Dimensions after Sp(2,R) gauge fixing (legacy alias)."""
+        return self._D_shadow_total
 
     @property
     def D_space_12(self) -> int:
         """Level 1: Spatial dimensions after gauge fixing (legacy alias)."""
-        return self._D_brane_space
+        return self._D_shadow_space
 
-    # ----- LEVEL 2: COMPACT (G2 Holonomy) -----
+    # ----- LEVEL 2: G2 (7D G2 Holonomy Manifold) -----
     @property
-    def D_compact_G2(self) -> int:
-        """Level 2 (COMPACT): 7D G2 holonomy manifold (compact)."""
-        return self._D_compact_G2
+    def D_G2_total(self) -> int:
+        """Level 2 (G2): 7D G2 holonomy manifold - RIEMANNIAN."""
+        return self._D_G2_total
 
     @property
-    def D_compact_external(self) -> int:
-        """Level 2 (COMPACT): 6D external after G2 compactification."""
-        return self._D_compact_external
+    def D_G2_space(self) -> int:
+        """Level 2 (G2): All 7 dimensions are spatial (Riemannian)."""
+        return self._D_G2_space
+
+    @property
+    def D_G2_time(self) -> int:
+        """Level 2 (G2): 0 temporal - G2 is Euclidean/Riemannian."""
+        return self._D_G2_time
 
     # Legacy aliases for Level 2
     @property
+    def D_compact_G2(self) -> int:
+        """Level 2: G2 manifold dimensions (legacy alias)."""
+        return self._D_G2_total
+
+    @property
     def D_G2(self) -> int:
-        """Level 2: G2 holonomy manifold dimensions - compact (legacy alias)."""
-        return self._D_compact_G2
+        """Level 2: G2 holonomy manifold - 7D Riemannian (legacy alias)."""
+        return self._D_G2_total
+
+    # ----- LEVEL 3: EXTERNAL (6D Observable Bulk) -----
+    @property
+    def D_external_total(self) -> int:
+        """Level 3 (EXTERNAL): 6D external bulk after G2 compactification."""
+        return self._D_external_total
+
+    @property
+    def D_external_space(self) -> int:
+        """Level 3 (EXTERNAL): 5 spatial dimensions in external bulk."""
+        return self._D_external_space
+
+    @property
+    def D_external_time(self) -> int:
+        """Level 3 (EXTERNAL): 1 temporal dimension in external bulk."""
+        return self._D_external_time
+
+    # Legacy aliases for Level 3
+    @property
+    def D_compact_external(self) -> int:
+        """Level 3: External dimensions after G2 (legacy alias)."""
+        return self._D_external_total
 
     @property
     def D_external_6(self) -> int:
-        """Level 2: External dimensions after G2 compactification (legacy alias)."""
-        return self._D_compact_external
+        """Level 3: 6D external after G2 compactification (legacy alias)."""
+        return self._D_external_total
 
-    # ----- LEVEL 3: VISIBLE (4D Observable) -----
+    # ----- LEVEL 4: VISIBLE (4D Observable Spacetime) -----
     @property
     def D_visible_total(self) -> int:
-        """Level 3 (VISIBLE): 4D observable spacetime."""
+        """Level 4 (VISIBLE): 4D observable spacetime."""
         return self._D_visible_total
 
     @property
     def D_visible_space(self) -> int:
-        """Level 3 (VISIBLE): 3 observable spatial dimensions."""
+        """Level 4 (VISIBLE): 3 observable spatial dimensions."""
         return self._D_visible_space
 
     @property
     def D_visible_time(self) -> int:
-        """Level 3 (VISIBLE): 1 observable temporal dimension."""
+        """Level 4 (VISIBLE): 1 observable temporal dimension."""
         return self._D_visible_time
 
-    # Legacy aliases for Level 3
+    # Legacy aliases for Level 4
     @property
     def D_total_4(self) -> int:
-        """Level 3: Observable spacetime dimensions (legacy alias)."""
+        """Level 4: Observable spacetime dimensions (legacy alias)."""
         return self._D_visible_total
 
     @property
     def D_space_3(self) -> int:
-        """Level 3: Observable spatial dimensions (legacy alias)."""
+        """Level 4: Observable spatial dimensions (legacy alias)."""
         return self._D_visible_space
 
     @property

@@ -137,6 +137,14 @@ Files with highest parameter usage (from grep count):
 - [ ] Item 9: k_gimel audit (alpha_em derivation rigor)
 - [ ] Item 10-12: Low priority items (reid_invariant, horos, decad)
 - [ ] Replace 486 hardcoded 288 values with roots_total (future sprint)
+- [ ] Review foundations/*.html Clifford algebra notation (Cl(6,1) vs Cl(5,1))
+
+### COMPLETED (v20.3 - 2026-01-14)
+- [x] Renamed D_brane_* → D_shadow_* (Level 1) per Gemini review
+- [x] Corrected G2 signature from (6,1) to (7,0) RIEMANNIAN
+- [x] Added D_external_* (Level 3) for 6D bulk with signature (5,1)
+- [x] Updated validation script for 5-level chain
+- [x] Fixed lagrangian_master_derivation_v19.py dimension chain
 
 ---
 
