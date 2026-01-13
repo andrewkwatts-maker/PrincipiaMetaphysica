@@ -1,14 +1,14 @@
 {
-  "timestamp": "2026-01-02T02:32:04.999446",
-  "duration_seconds": 7.140584,
+  "timestamp": "2026-01-12T08:23:43.486891",
+  "duration_seconds": 9.706112,
   "all_passed": false,
   "sections": {
     "Simulations": {
       "passed": true,
       "details": {
         "exit_code": 0,
-        "stdout_lines": 0,
-        "stderr_lines": 54
+        "stdout_lines": 175,
+        "stderr_lines": 66
       },
       "errors": [],
       "warnings": []
@@ -17,21 +17,23 @@
       "passed": false,
       "details": {
         "exit_code": 2,
-        "output_preview": "============================= test session starts =============================\nplatform win32 -- Python 3.13.9, pytest-8.4.1, pluggy-1.6.0 -- C:\\Users\\Andrew\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe\ncachedir: .pytest_cache\nrootdir: H:\\Github\\PrincipiaMetaphysica\nconfigfile: pyproject.toml\nplugins: anyio-4.9.0, cov-6.2.1\ncollecting ... collected 3 items / 1 error\n\n=================================== ERRORS ================================="
+        "output_preview": "============================= test session starts =============================\nplatform win32 -- Python 3.13.9, pytest-8.4.1, pluggy-1.6.0 -- C:\\Users\\Andrew\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe\ncachedir: .pytest_cache\nrootdir: h:\\Github\\PrincipiaMetaphysica\nconfigfile: pyproject.toml\nplugins: anyio-4.9.0, cov-6.2.1\ncollecting ... collected 23 items / 1 error\n\n=================================== ERRORS ================================"
       },
       "errors": [
         "Pytest failed with exit code 2"
       ],
-      "warnings": []
+      "warnings": [
+        "Pytest generated warnings (see output)"
+      ]
     },
     "Theory Output Structure": {
       "passed": true,
       "details": {
-        "file_size_kb": 1282.1845703125,
-        "parameters_count": 364,
-        "formulas_count": 245,
-        "sections_count": 42,
-        "provenance_entries": 364
+        "file_size_kb": 1561.1455078125,
+        "parameters_count": 471,
+        "formulas_count": 320,
+        "sections_count": 65,
+        "provenance_entries": 471
       },
       "errors": [],
       "warnings": []
@@ -60,9 +62,9 @@
     "Formula Metadata": {
       "passed": true,
       "details": {
-        "total_formulas": 245,
+        "total_formulas": 320,
         "formulas_with_errors": 0,
-        "formulas_with_warnings": 245
+        "formulas_with_warnings": 320
       },
       "errors": [],
       "warnings": [
@@ -88,6 +90,12 @@
         "gut-scale: Missing recommended fields: domain",
         "gauge-coupling-unification: Missing recommended fields: domain",
         "gauge-rg-evolution: Missing recommended fields: domain",
+        "pneuma-master-action-v18: Missing recommended fields: domain",
+        "kk-reduction-5d-v18: Missing recommended fields: domain",
+        "su3-qcd-lagrangian-v18: Missing recommended fields: domain",
+        "su2-weak-lagrangian-v18: Missing recommended fields: domain",
+        "u1-hypercharge-v18: Missing recommended fields: domain",
+        "electroweak-mixing-v18: Missing recommended fields: domain",
         "alpha-inverse-geometric: Missing recommended fields: domain",
         "generation-number: Missing recommended fields: domain",
         "yukawa-texture: Missing recommended fields: domain",
@@ -111,6 +119,11 @@
         "higgs-bulk-attractor: Missing recommended fields: domain",
         "higgs-brane-projection: Missing recommended fields: domain",
         "higgs-local-mass: Missing recommended fields: domain",
+        "yukawa-hierarchy-v18: Missing recommended fields: domain",
+        "yukawa-texture-matrix-v18: Missing recommended fields: domain",
+        "higgs-vev-geometric-v18: Missing recommended fields: domain",
+        "fermi-constant-tree-v18: Missing recommended fields: domain",
+        "fermi-constant-physical-v18: Missing recommended fields: domain",
         "mass-ratio-geometric: Missing recommended fields: domain",
         "metric-13D: Missing recommended fields: domain",
         "einstein-hilbert-14D: Missing recommended fields: domain",
@@ -154,6 +167,20 @@
         "moduli-potential: Missing recommended fields: domain",
         "sector-temperature-ratio: Missing recommended fields: domain",
         "dark-matter-abundance: Missing recommended fields: domain",
+        "speed-of-light-derivation: Missing recommended fields: domain",
+        "pneuma-tensioner-z6: Missing recommended fields: domain",
+        "decad3-projection: Missing recommended fields: domain",
+        "speed-of-light-chain: Missing recommended fields: domain",
+        "compton-bulk-derivation: Missing recommended fields: domain",
+        "compton-inverse-cubic-projection: Missing recommended fields: domain",
+        "stefan-quad-gate: Missing recommended fields: domain",
+        "hartree-inverse-double-gate: Missing recommended fields: domain",
+        "flux-direct-expansion: Missing recommended fields: domain",
+        "rk-direct-expansion: Missing recommended fields: domain",
+        "avogadro-inverse-cubic: Missing recommended fields: domain",
+        "faraday-inverse-cubic: Missing recommended fields: domain",
+        "molar-gas-neutral: Missing recommended fields: domain",
+        "weak-mixing-torsion: Missing recommended fields: domain",
         "g2-entropy-density: Missing recommended fields: domain",
         "cosmological-constant-geometric: Missing recommended fields: domain",
         "vacuum-energy-density: Missing recommended fields: domain",
@@ -310,14 +337,64 @@
         "speed-of-light-geometric: Missing recommended fields: domain",
         "cabibbo-angle-geometric: Missing recommended fields: domain",
         "terminal-closure-equation: Missing recommended fields: domain",
-        "h0-unwinding-scale: Missing recommended fields: domain"
+        "h0-unwinding-scale: Missing recommended fields: domain",
+        "gr-metric-from-vielbein-v19: Missing recommended fields: domain",
+        "gr-vielbein-determinant-v19: Missing recommended fields: domain",
+        "gr-tetrad-postulate-v19: Missing recommended fields: domain",
+        "gr-spin-connection-v19: Missing recommended fields: domain",
+        "gr-torsion-free-condition-v19: Missing recommended fields: domain",
+        "gr-metricity-condition-v19: Missing recommended fields: domain",
+        "gr-christoffel-symbols-v19: Missing recommended fields: domain",
+        "gr-riemann-tensor-v19: Missing recommended fields: domain",
+        "gr-ricci-tensor-v19: Missing recommended fields: domain",
+        "gr-ricci-scalar-v19: Missing recommended fields: domain",
+        "gr-einstein-hilbert-4d-v19: Missing recommended fields: domain",
+        "gr-einstein-tensor-v19: Missing recommended fields: domain",
+        "gr-einstein-field-equations-v19: Missing recommended fields: domain",
+        "gr-newton-from-g2-v19: Missing recommended fields: domain",
+        "gr-planck-from-compactification-v19: Missing recommended fields: domain",
+        "higgs-effective-potential-v19: Missing recommended fields: domain",
+        "quartic-beta-function-v19: Missing recommended fields: domain",
+        "quartic-running-v19: Missing recommended fields: domain",
+        "instability-scale-v19: Missing recommended fields: domain",
+        "bounce-action-v19: Missing recommended fields: domain",
+        "tunneling-rate-v19: Missing recommended fields: domain",
+        "vacuum-lifetime-v19: Missing recommended fields: domain",
+        "g2-portal-correction-v19: Missing recommended fields: domain",
+        "spectral-laplacian-eigenvalue-v19: Missing recommended fields: domain",
+        "spectral-zeta-function-v19: Missing recommended fields: domain",
+        "spectral-residue-general-v19: Missing recommended fields: domain",
+        "spectral-volume-residue-v19: Missing recommended fields: domain",
+        "spectral-curvature-residue-v19: Missing recommended fields: domain",
+        "spectral-euler-residue-v19: Missing recommended fields: domain",
+        "spectral-trace-formula-v19: Missing recommended fields: domain",
+        "spectral-determinant-v19: Missing recommended fields: domain",
+        "spectral-heat-kernel-v19: Missing recommended fields: domain",
+        "spectral-mass-relation-v19: Missing recommended fields: domain",
+        "f-r-t-tau-lagrangian-v18: Missing recommended fields: domain",
+        "alpha-f-derivation-v18: Missing recommended fields: domain",
+        "w0-from-modified-gravity-v18: Missing recommended fields: domain",
+        "gw-speed-modified-gravity-v18: Missing recommended fields: domain",
+        "tensor-mode-dispersion-v18: Missing recommended fields: domain",
+        "laplacian-eigenvalue-v18: Missing recommended fields: domain",
+        "mass-spectrum-v18: Missing recommended fields: domain",
+        "spectral-zeta-v18: Missing recommended fields: domain",
+        "neutrino-mass-seesaw-v18: Missing recommended fields: domain",
+        "neutrino-sum-prediction-v18: Missing recommended fields: domain",
+        "proton-decay-lifetime-v18: Missing recommended fields: domain",
+        "gut-scale-g2-v18: Missing recommended fields: domain",
+        "attractor-potential-v18: Missing recommended fields: domain",
+        "decay-constant-v18: Missing recommended fields: domain",
+        "w0-attractor-v18: Missing recommended fields: domain",
+        "baryon-asymmetry-cycle-v18: Missing recommended fields: domain",
+        "cp-phase-sterile-v18: Missing recommended fields: domain"
       ]
     },
     "Parameter Provenance": {
       "passed": true,
       "details": {
-        "total_parameters": 364,
-        "parameters_with_provenance": 364,
+        "total_parameters": 471,
+        "parameters_with_provenance": 471,
         "parameters_missing_fields": 0,
         "parameters_without_provenance": 0
       },
@@ -327,8 +404,8 @@
     "AutoGenerated JSON Files": {
       "passed": true,
       "details": {
-        "total_files": 70,
-        "valid_files": 70,
+        "total_files": 150,
+        "valid_files": 150,
         "invalid_files": 0
       },
       "errors": [],
@@ -339,6 +416,6 @@
     "total_checks": 7,
     "passed": 6,
     "failed": 1,
-    "warnings": 245
+    "warnings": 321
   }
 }
