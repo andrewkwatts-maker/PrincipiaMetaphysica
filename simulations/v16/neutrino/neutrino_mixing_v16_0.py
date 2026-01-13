@@ -188,7 +188,9 @@ class NeutrinoMixingSimulation(SimulationBase):
         # Load inputs from registry
         self._b2 = registry.get_param("topology.b2")
         self._b3 = registry.get_param("topology.b3")
-        self._chi_eff = registry.get_param("topology.chi_eff")  # uppercase
+        # v20.9: Use chi_eff_total (144) for orientation correction, not chi_eff (72)
+        # The formula 1 + S_orient/(2*chi_eff) was derived with full manifold chi_eff = 144
+        self._chi_eff = registry.get_param("topology.chi_eff_total")  # 144 (full manifold)
         self._n_gen = registry.get_param("topology.n_gen")
         self._orientation_sum = registry.get_param("topology.orientation_sum")
 

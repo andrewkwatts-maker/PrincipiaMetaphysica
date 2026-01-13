@@ -1,6 +1,6 @@
 # Principia Metaphysica: Formula Registry
 
-**Status:** PEER_REVIEWED | **Last Sync:** 2026-01-12 08:23:37
+**Status:** PEER_REVIEWED | **Last Sync:** 2026-01-14 07:11:19
 **Engine Version:** v20.0-RECURSIVE
 **Sovereign Hash:** `7842742f98aaa6ed5a989f93cefbf29b...`
 
@@ -118,9 +118,9 @@ The local Hubble constant is derived geometrically from the manifold base (B3=24
 $$H_0 = \frac{ROOTS}{4} - \frac{(7 \times B3) - 5}{B3^2 / 4} + \eta_S$$
 
 Where all values are DERIVED from B3=24:
-- ROOTS/4 = 288/4 = 72 (base from E8 x E8 roots)
+- ROOTS/4 = 288/4 = 72 (octonionic/24D structure: b3*12)
 - P_O = (7 * 24) - 5 = 163 (O'Dowd Bulk Pressure - derived from Heptagonal Scaling)
-- chi_eff = 24^2 / 4 = 144 (effective Euler characteristic - derived from manifold area)
+- pressure_divisor = 24^2 / 4 = 144 (Hexagonal Projection, distinct from chi_eff = 72)
 - eta_S = 0.6819 (Sophian Drag)
 
 **Result:** 72 - 1.1319 + 0.6819 = **71.5500 km/s/Mpc**
