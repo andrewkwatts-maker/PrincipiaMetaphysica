@@ -146,6 +146,14 @@ Files with highest parameter usage (from grep count):
 - [x] Updated validation script for 5-level chain
 - [x] Fixed lagrangian_master_derivation_v19.py dimension chain
 
+### COMPLETED (v20.4 - 2026-01-14)
+- [x] Added SSOT imports to geometric_anchors_v16_1.py
+- [x] Documented D_shadow (12) vs D_shadow_total (13) distinction
+- [x] Updated Omega_Lambda formula documentation
+- [x] Added SSOT imports to dimensional_reduction_derivations.py
+- [x] Updated docstring with 5-level chain
+- [x] Created audit_dimensional_params.py script
+
 ---
 
 ## VERSION HISTORY

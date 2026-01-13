@@ -1,17 +1,21 @@
 #!/usr/bin/env python3
 """
-Dimensional Reduction Derivations: 26D -> 13D -> 6D -> 4D
-==========================================================
+Dimensional Reduction Derivations: 5-Level SSOT Chain (v20.3)
+==============================================================
 
 This module documents the complete dimensional reduction chain in Principia
 Metaphysica, showing how the 26D master action descends through intermediate
 effective theories to the 4D Standard Model.
 
-The reduction chain consists of four tiers:
-    TIER 0: 26D Master Action (bosonic string critical dimension)
-    TIER 1: 26D -> 13D via Sp(2,R) gauge fixing (dilaton anchor)
-    TIER 2: 13D -> 7D via G2 holonomy (freezes b3=24)
-    TIER 3: 7D -> 4D via projective phase (conformal mapping)
+5-LEVEL SSOT CHAIN (Gemini peer-reviewed 2026-01-14):
+=====================================================
+    Level 0 (ANCESTRAL): 26D (24,2) - Bosonic string frame
+    Level 1 (SHADOW):    13D (12,1) - Shadow spacetime after Sp(2,R)
+    Level 2 (G2):         7D (7,0)  - G2 holonomy (RIEMANNIAN)
+    Level 3 (EXTERNAL):   6D (5,1)  - Observable bulk after G2
+    Level 4 (VISIBLE):    4D (3,1)  - Observable spacetime
+
+Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
 
 Each tier produces an effective Lagrangian that preserves the physics of the
 higher-dimensional theory while introducing new structure.
@@ -58,6 +62,34 @@ from datetime import datetime
 # Add parent directories to path for imports
 project_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.insert(0, project_root)
+
+# Import SSOT dimensional params (v20.3)
+try:
+    from core.FormulasRegistry import FormulasRegistry
+    _SSOT = FormulasRegistry()
+    # 5-level dimensional chain from SSOT
+    D_ANCESTRAL_TOTAL = _SSOT.D_ancestral_total   # 26
+    D_ANCESTRAL_SPACE = _SSOT.D_ancestral_space   # 24
+    D_ANCESTRAL_TIME = _SSOT.D_ancestral_time     # 2
+    D_SHADOW_TOTAL = _SSOT.D_shadow_total         # 13
+    D_SHADOW_SPACE = _SSOT.D_shadow_space         # 12
+    D_SHADOW_TIME = _SSOT.D_shadow_time           # 1
+    D_G2_TOTAL = _SSOT.D_G2_total                 # 7
+    D_G2_SPACE = _SSOT.D_G2_space                 # 7 (Riemannian)
+    D_G2_TIME = _SSOT.D_G2_time                   # 0 (Riemannian)
+    D_EXTERNAL_TOTAL = _SSOT.D_external_total     # 6
+    D_EXTERNAL_SPACE = _SSOT.D_external_space     # 5
+    D_EXTERNAL_TIME = _SSOT.D_external_time       # 1
+    D_VISIBLE_TOTAL = _SSOT.D_visible_total       # 4
+    D_VISIBLE_SPACE = _SSOT.D_visible_space       # 3
+    D_VISIBLE_TIME = _SSOT.D_visible_time         # 1
+except ImportError:
+    # Fallback values if FormulasRegistry not available
+    D_ANCESTRAL_TOTAL, D_ANCESTRAL_SPACE, D_ANCESTRAL_TIME = 26, 24, 2
+    D_SHADOW_TOTAL, D_SHADOW_SPACE, D_SHADOW_TIME = 13, 12, 1
+    D_G2_TOTAL, D_G2_SPACE, D_G2_TIME = 7, 7, 0
+    D_EXTERNAL_TOTAL, D_EXTERNAL_SPACE, D_EXTERNAL_TIME = 6, 5, 1
+    D_VISIBLE_TOTAL, D_VISIBLE_SPACE, D_VISIBLE_TIME = 4, 3, 1
 
 from simulations.base import (
     SimulationBase,
