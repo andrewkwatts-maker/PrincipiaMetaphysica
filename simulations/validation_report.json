@@ -1,27 +1,28 @@
 {
-  "timestamp": "2026-01-12T08:23:43.486891",
-  "duration_seconds": 9.706112,
+  "timestamp": "2026-01-14T06:52:58.678225",
+  "duration_seconds": 5.727888,
   "all_passed": false,
   "sections": {
     "Simulations": {
-      "passed": true,
+      "passed": false,
       "details": {
-        "exit_code": 0,
-        "stdout_lines": 175,
-        "stderr_lines": 66
+        "exit_code": 72,
+        "stdout_lines": 124,
+        "stderr_lines": 64
       },
-      "errors": [],
+      "errors": [
+        "Simulations failed with exit code 72",
+        "stderr: H:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:748: UserWarning: Overwriting section 0\n  warnings.warn(f\"Overwriting section {key}\")\nH:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:748: UserWarning: Overwriting section 1\n  warnings.warn(f\"Overwriting section {key}\")\nH:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:748: UserWarning: Overwriting section 2\n  warnings.warn(f\"Overwriting section {key}\")\nH:\\Github\\PrincipiaMetaphysica\\simulations\\base\\registry.py:74"
+      ],
       "warnings": []
     },
     "Pytest Tests": {
-      "passed": false,
+      "passed": true,
       "details": {
-        "exit_code": 2,
-        "output_preview": "============================= test session starts =============================\nplatform win32 -- Python 3.13.9, pytest-8.4.1, pluggy-1.6.0 -- C:\\Users\\Andrew\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe\ncachedir: .pytest_cache\nrootdir: h:\\Github\\PrincipiaMetaphysica\nconfigfile: pyproject.toml\nplugins: anyio-4.9.0, cov-6.2.1\ncollecting ... collected 23 items / 1 error\n\n=================================== ERRORS ================================"
+        "exit_code": 0,
+        "output_preview": "============================= test session starts =============================\nplatform win32 -- Python 3.13.9, pytest-8.4.1, pluggy-1.6.0 -- C:\\Users\\Andrew\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\\python.exe\ncachedir: .pytest_cache\nrootdir: H:\\Github\\PrincipiaMetaphysica\nconfigfile: pyproject.toml\nplugins: anyio-4.9.0, cov-6.2.1\ncollecting ... collected 23 items\n\ntests/test_physics_invariants.py::test_gauge_invariance PASSED           [  4%]\ntests"
       },
-      "errors": [
-        "Pytest failed with exit code 2"
-      ],
+      "errors": [],
       "warnings": [
         "Pytest generated warnings (see output)"
       ]
@@ -29,11 +30,11 @@
     "Theory Output Structure": {
       "passed": true,
       "details": {
-        "file_size_kb": 1561.1455078125,
-        "parameters_count": 471,
+        "file_size_kb": 1570.357421875,
+        "parameters_count": 481,
         "formulas_count": 320,
         "sections_count": 65,
-        "provenance_entries": 471
+        "provenance_entries": 481
       },
       "errors": [],
       "warnings": []
@@ -393,8 +394,8 @@
     "Parameter Provenance": {
       "passed": true,
       "details": {
-        "total_parameters": 471,
-        "parameters_with_provenance": 471,
+        "total_parameters": 481,
+        "parameters_with_provenance": 481,
         "parameters_missing_fields": 0,
         "parameters_without_provenance": 0
       },
