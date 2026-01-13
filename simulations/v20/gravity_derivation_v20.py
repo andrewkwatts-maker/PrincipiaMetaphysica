@@ -193,7 +193,7 @@ class GravityDerivationV20(SimulationBase):
             "geometry.k_gimel": (k_gimel, "ESTABLISHED:FormulasRegistry"),
             "geometry.V_G2": (V_G2, "DERIVED:1/chi_eff"),
             "geometry.chi_eff": (_REG.chi_eff, "ESTABLISHED:FormulasRegistry"),
-            "electroweak.v_higgs": (246.22, "ESTABLISHED:PDG2024"),  # GeV
+            "electroweak.v_higgs": (246.22, "ESTABLISHED:PDG2024"),  # PDG experimental GeV
         }
 
         for path, (value, source) in defaults.items():
@@ -224,7 +224,7 @@ class GravityDerivationV20(SimulationBase):
         k_gimel = registry.get("geometry.k_gimel", default=k_gimel_default)
         V_G2 = registry.get("geometry.V_G2", default=V_G2_default)
         chi_eff = registry.get("geometry.chi_eff", default=chi_eff_default)
-        v_higgs = registry.get("electroweak.v_higgs", default=246.22)
+        v_higgs = registry.get("electroweak.v_higgs", default=246.22)  # PDG experimental
 
         # Step 1: Compute effective G2 volume in natural units
         # The G2 volume scales with k_gimel^7 (7 dimensions)

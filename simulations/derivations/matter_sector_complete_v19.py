@@ -1182,7 +1182,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             status="DERIVED",
             description="Higgs VEV from potential minimization",
             derivation_formula="higgs-vev-minimization-v19",
-            experimental_bound=246.22,
+            experimental_bound=246.22,  # PDG 2024: Higgs VEV (experimental)
             bound_type="measured",
             bound_source="PDG2024",
             uncertainty=0.01
@@ -1195,7 +1195,7 @@ class MatterSectorCompleteDerivations(SimulationBase):
             status="DERIVED",
             description="Higgs mass from potential curvature",
             derivation_formula="higgs-mass-from-potential-v19",
-            experimental_bound=125.10,
+            experimental_bound=125.10,  # PDG 2024: Higgs mass (experimental)
             bound_type="measured",
             bound_source="PDG2024",
             uncertainty=0.14

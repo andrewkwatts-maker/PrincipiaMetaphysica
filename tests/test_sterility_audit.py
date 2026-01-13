@@ -455,7 +455,7 @@ class TestJSONConsistency(unittest.TestCase):
         if not json_path.exists():
             self.skipTest("named_constants.json not found")
 
-        with open(json_path, "r") as f:
+        with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         json_h0 = data.get("derived_values", {}).get("hubble_constant", {}).get("value")
@@ -477,7 +477,7 @@ class TestJSONConsistency(unittest.TestCase):
         if not json_path.exists():
             self.skipTest("named_constants.json not found")
 
-        with open(json_path, "r") as f:
+        with open(json_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         volatility = data.get("volatility")
