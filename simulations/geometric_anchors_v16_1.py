@@ -19,6 +19,28 @@ Dedicated To:
 import numpy as np
 from typing import Dict, Any
 
+# Import SSOT dimensional params (v20.3)
+try:
+    from core.FormulasRegistry import FormulasRegistry
+    _SSOT = FormulasRegistry()
+    # 5-level dimensional chain from SSOT
+    D_ANCESTRAL_TOTAL = _SSOT.D_ancestral_total   # 26
+    D_ANCESTRAL_SPACE = _SSOT.D_ancestral_space   # 24
+    D_SHADOW_TOTAL = _SSOT.D_shadow_total         # 13
+    D_SHADOW_SPACE = _SSOT.D_shadow_space         # 12
+    D_G2_TOTAL = _SSOT.D_G2_total                 # 7
+    D_EXTERNAL_TOTAL = _SSOT.D_external_total     # 6
+    D_VISIBLE_TOTAL = _SSOT.D_visible_total       # 4
+except ImportError:
+    # Fallback values if FormulasRegistry not available
+    D_ANCESTRAL_TOTAL = 26
+    D_ANCESTRAL_SPACE = 24
+    D_SHADOW_TOTAL = 13
+    D_SHADOW_SPACE = 12
+    D_G2_TOTAL = 7
+    D_EXTERNAL_TOTAL = 6
+    D_VISIBLE_TOTAL = 4
+
 
 class GeometricAnchors:
     """
@@ -159,61 +181,88 @@ class GeometricAnchors:
         return 0.01
 
     # =========================================================================
-    # DIMENSIONAL STRUCTURE (26D Bulk → 4D Observation)
+    # DIMENSIONAL STRUCTURE (5-Level SSOT Chain v20.3)
     # =========================================================================
+    # Chain: 26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
 
     @property
     def D_bulk(self) -> int:
         """
-        Bulk spacetime dimension from Virasoro anomaly cancellation.
-        c = D - 26 = 0 → D = 26
+        Level 0 (ANCESTRAL): Bulk spacetime from Virasoro anomaly cancellation.
+        c = D - 26 = 0 → D = 26 = D_ancestral_total
         """
-        return 26
+        return D_ANCESTRAL_TOTAL  # 26
 
     @property
     def D_compact(self) -> int:
         """
-        Compact internal dimensions: 26 - 4 = 22
-        G2 manifold: 7 dimensions, remaining 15 in Leech lattice.
+        Total compact internal dimensions: D_ancestral - D_visible = 26 - 4 = 22
+        Decomposition: D_G2(7) + D_external_compact(2) + D_Leech(15-2=13)
         """
-        return self.D_bulk - 4  # = 22
+        return D_ANCESTRAL_TOTAL - D_VISIBLE_TOTAL  # 26 - 4 = 22
 
     @property
     def D_G2(self) -> int:
-        """G2 holonomy manifold dimension."""
-        return 7
+        """
+        Level 2 (G2): G2 holonomy manifold dimension.
+        Signature: (7,0) RIEMANNIAN - no time dimension.
+        """
+        return D_G2_TOTAL  # 7
+
+    @property
+    def D_shadow_space(self) -> int:
+        """
+        Level 1 (SHADOW) spatial dimensions.
+        D_shadow_space = D_shadow_total - D_shadow_time = 13 - 1 = 12
+        Used in dark energy equation of state derivation.
+
+        NOTE: This is the SPATIAL component, not total shadow dims.
+        """
+        return D_SHADOW_SPACE  # 12
 
     @property
     def D_shadow(self) -> int:
         """
-        Shadow dimension from D_eff formula.
-        D_shadow = D_bulk / 2 - 1 = 13 - 1 = 12
-        Used in dark energy equation of state derivation.
+        Level 1 (SHADOW) spatial dimensions (alias for D_shadow_space).
+        Legacy name preserved for backward compatibility.
+        See D_shadow_space for documentation.
         """
-        return self.D_bulk // 2 - 1  # = 12
+        return D_SHADOW_SPACE  # 12
+
+    @property
+    def D_shadow_total(self) -> int:
+        """
+        Level 1 (SHADOW): Total shadow spacetime after Sp(2,R).
+        D_shadow_total = D_ancestral_total / 2 = 26 / 2 = 13
+        Signature: (12,1)
+        """
+        return D_SHADOW_TOTAL  # 13
 
     @property
     def D_eff(self) -> float:
         """
-        Effective dimension for dark energy.
-        D_eff = D_bulk / 2 = 13
+        Effective dimension for dark energy = D_shadow_total.
+        D_eff = D_ancestral / 2 = 26 / 2 = 13.0
         """
-        return self.D_bulk / 2.0  # = 13.0
+        return float(D_SHADOW_TOTAL)  # 13.0
 
     @property
     def spinor_26d(self) -> int:
         """
-        Spinor dimension in 26D from Clifford algebra Cl(24,2).
-        2^(D/2) = 2^13 = 8192
+        Spinor dimension in 26D from Clifford algebra Cl(D_ancestral_space, D_ancestral_time).
+        Cl(24,2) → 2^(D_ancestral_total/2) = 2^13 = 8192
 
         This is the 'full26D' value in JS files.
         """
-        return 2 ** (self.D_bulk // 2)  # = 8192
+        return 2 ** (D_ANCESTRAL_TOTAL // 2)  # = 8192
 
     @property
     def spinor_4d(self) -> int:
-        """Spinor dimension in 4D: 2^2 = 4 (Dirac spinor components)."""
-        return 4
+        """
+        Spinor dimension in 4D from Clifford algebra Cl(D_visible_space, D_visible_time).
+        Cl(3,1) → 2^(D_visible_total/2) = 2^2 = 4 (Dirac spinor components).
+        """
+        return 2 ** (D_VISIBLE_TOTAL // 2)  # = 4
 
     @property
     def spinor_reduction_factor(self) -> int:
@@ -223,12 +272,13 @@ class GeometricAnchors:
     @property
     def spinor_13d(self) -> int:
         """
-        Spinor dimension in 13D effective spacetime: 2^(13/2) = 64.
+        Spinor dimension in 13D shadow spacetime: 2^(D_shadow_total/2) ≈ 2^6.5 → 64.
 
-        After Sp(2,R) gauge fixing, the 26D → 13D reduction yields
-        64 effective spinor components (matches JS spinors.effective13D).
+        After Sp(2,R) gauge fixing (26D → 13D), the shadow spinor is:
+        Cl(D_shadow_space, D_shadow_time) = Cl(12,1)
+        Effective spinor dim = 2^6 = 64 (integer approximation).
         """
-        return 64  # = 2^6 (not 2^6.5, but the nearest integer representation)
+        return 2 ** (D_SHADOW_SPACE // 2)  # = 2^6 = 64
 
     @property
     def flux_reduction(self) -> int:
@@ -286,10 +336,13 @@ class GeometricAnchors:
 
         Ω_Λ = 1 - Ω_m - Ω_r ≈ 0.685
 
-        Geometric derivation:
-        Ω_Λ = (D_shadow / D_bulk) × (1 + 1/b₃)
+        Geometric derivation using SSOT params (v20.3):
+        Ω_Λ = (D_shadow_space / D_ancestral_total) × (1 + 1/b₃)
              = (12/26) × (1 + 1/24)
              = 0.4615 × 1.0417 = 0.481 (bare)
+
+        NOTE: Uses D_shadow_space (12) for spatial projection ratio,
+        NOT D_shadow_total (13). This is intentional for EoS derivation.
 
         With Leech lattice enhancement: 0.685
         """
