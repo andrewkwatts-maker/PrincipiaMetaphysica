@@ -60,10 +60,10 @@ _REG = get_registry()
 # EXPERIMENTAL COMPARISON VALUES (SSOT module-level constants)
 # =============================================================================
 
-# PDG 2024 Higgs measurements (ATLAS+CMS combined)
+# PDG 2024 Higgs measurements (ATLAS+CMS combined) - experimental values
 PDG_HIGGS = {
-    'M_H': (125.25, 0.17),          # Higgs mass ± error (GeV)
-    'V_EW': (246.22, 0.01),         # Electroweak VEV ± error (GeV)
+    'M_H': (125.25, 0.17),          # Higgs mass ± error (GeV) - PDG experimental
+    'V_EW': (246.22, 0.01),         # Electroweak VEV ± error (GeV) - PDG experimental
 }
 
 # PM framework bulk predictions

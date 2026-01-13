@@ -145,8 +145,9 @@ class ElectroweakPrecisionV20(SimulationBase):
 
     def _ensure_inputs(self, registry: PMRegistry) -> None:
         """Ensure required inputs are available with defaults."""
+        # PDG 2024 experimental values
         defaults = {
-            "electroweak.v_higgs": (246.22, "ESTABLISHED:PDG2024"),
+            "electroweak.v_higgs": (246.22, "ESTABLISHED:PDG2024"),  # PDG experimental
             "constants.alpha_em": (self.ALPHA_EM, "ESTABLISHED:CODATA2018"),
             "pdg.m_top": (self.M_TOP, "ESTABLISHED:PDG2024"),
             "pdg.m_W": (self.M_W, "ESTABLISHED:PDG2024"),
@@ -173,8 +174,8 @@ class ElectroweakPrecisionV20(SimulationBase):
         Returns:
             Dict with G_F, corrections, and convergence info
         """
-        # Get inputs
-        v_higgs = registry.get("electroweak.v_higgs", default=246.22)
+        # Get inputs (PDG experimental values)
+        v_higgs = registry.get("electroweak.v_higgs", default=246.22)  # PDG experimental
         alpha_em = registry.get("constants.alpha_em", default=self.ALPHA_EM)
         m_top = registry.get("pdg.m_top", default=self.M_TOP)
 

@@ -80,13 +80,13 @@ class AppendixRVacuumStabilityV19(SimulationBase):
     - Compute stability metrics (quantitative proof)
     """
 
-    # Physical constants
+    # Physical constants (PDG 2024 experimental values)
     M_PLANCK = 2.435e18         # Reduced Planck mass (GeV)
     M_GUT = 2.1e16              # GUT/compactification scale (GeV)
-    M_Z = 91.1876               # Z boson mass (GeV)
-    M_HIGGS = 125.1             # Higgs mass (GeV)
-    M_TOP = 172.69              # Top quark mass (GeV)
-    V_EW = 246.22               # Electroweak VEV (GeV)
+    M_Z = 91.1876               # Z boson mass (GeV) - PDG experimental
+    M_HIGGS = 125.1             # Higgs mass (GeV) - PDG experimental
+    M_TOP = 172.69              # Top quark mass (GeV) - PDG experimental
+    V_EW = 246.22               # Electroweak VEV (GeV) - PDG experimental
 
     # Stability thresholds
     B_CRIT = 400                # Critical bounce action for cosmological safety
@@ -1280,9 +1280,9 @@ def main():
     if not registry.has_param("constants.M_PLANCK"):
         registry.set_param("constants.M_PLANCK", 2.435e18, source="foundational")
     if not registry.has_param("constants.v_EW"):
-        registry.set_param("constants.v_EW", 246.22, source="foundational")
+        registry.set_param("constants.v_EW", 246.22, source="foundational")  # PDG experimental
     if not registry.has_param("higgs.mass_higgs"):
-        registry.set_param("higgs.mass_higgs", 125.1, source="PDG2024")
+        registry.set_param("higgs.mass_higgs", 125.1, source="PDG2024")  # PDG experimental
     if not registry.has_param("fermion.mass_top"):
         registry.set_param("fermion.mass_top", 172.69, source="PDG2024")
     if not registry.has_param("topology.b3"):
