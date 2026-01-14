@@ -348,5 +348,22 @@ The complete dimensional chain:
 
 ---
 
+## A.13 SSOT Constants Reference
+
+This derivation uses the following Single Source of Truth (SSOT) parameters from `config.py`:
+
+| Constant | Symbol | Value | Origin |
+|----------|--------|-------|--------|
+| Starting dimension | $D_{total}$ | 26 | Bosonic string critical dimension |
+| Starting signature | — | (24, 2) | Two-time physics |
+| Physical dimension | $D_{phys}$ | 13 | DERIVED: $26/2 = 13$ |
+| Physical signature | — | (12, 1) | DERIVED from Sp(2,R) gauge fixing |
+
+**Note**: The Sp(2,R) gauge group dimension (3) is a mathematical fact, not a tunable parameter.
+
+**Source Code**: `simulations/derivations/dimensional_reduction_derivations.py`
+
+---
+
 *Document generated: 2026-01-14*
 *Principia Metaphysica v20.11*

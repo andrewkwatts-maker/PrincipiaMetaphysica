@@ -101,19 +101,19 @@ $$\text{Vol}(X) = \frac{(2\pi)^7}{b_3^{7/2}} l_{Pl}^7 = \frac{(2\pi)^7}{24^{3.5}
 
 ### E.5.2 Numerical Evaluation
 
-$$(2\pi)^7 = 4.83 \times 10^6$$
-$$24^{3.5} = 24^3 \cdot 24^{0.5} = 13824 \cdot 4.899 = 67,725$$
+$$(2\pi)^7 = 6.283^7 = 4,835.7$$
+$$24^{3.5} = 24^3 \cdot 24^{0.5} = 13,824 \cdot 4.899 = 67,725$$
 
-$$\text{Vol}(X) = \frac{4.83 \times 10^6}{67,725} l_{Pl}^7 = 71.3 \, l_{Pl}^7$$ **(E.9)**
+$$\text{Vol}(X) = \frac{4,835.7}{67,725} l_{Pl}^7 = 0.0714 \, l_{Pl}^7$$ **(E.9)**
 
-### E.5.3 VEV Calculation
+### E.5.3 VEV Calculation Attempt
 
-$$v_H = \frac{\sqrt{71.3}}{2\pi} \times 2.435 \times 10^{18} \text{ GeV}$$
-$$= \frac{8.44}{6.28} \times 2.435 \times 10^{18} \text{ GeV}$$
-$$= 1.34 \times 2.435 \times 10^{18} \text{ GeV}$$
-$$= 3.3 \times 10^{18} \text{ GeV}$$
+$$v_H = \frac{\sqrt{0.0714}}{2\pi} \times 2.435 \times 10^{18} \text{ GeV}$$
+$$= \frac{0.267}{6.28} \times 2.435 \times 10^{18} \text{ GeV}$$
+$$= 0.0425 \times 2.435 \times 10^{18} \text{ GeV}$$
+$$= 1.0 \times 10^{17} \text{ GeV}$$
 
-**This is too large!** We need to refine the formula.
+**This is still too large by ~15 orders of magnitude!** The naive geometric formula does not reproduce the electroweak scale.
 
 ---
 
@@ -286,16 +286,27 @@ Verified: m_H^2 = 2λv^2
 
 ---
 
-## E.12 Conclusion
+## E.12 Conclusion and Honest Assessment
 
-The Higgs VEV v = 246 GeV can be derived from G2 geometry through:
+**What PM Claims**:
+The Higgs VEV v = 246 GeV emerges from G2 geometry through moduli identification and stabilization.
 
-1. **Moduli identification**: Higgs = specific 3-cycle volume modulus
-2. **Stabilization**: Non-perturbative effects fix the VEV
-3. **Hierarchy**: Warping or volume suppression gives $v << M_{Pl}$
-4. **Prediction**: v emerges from topological data ($b_3 = 24$)
+**What We Can Derive**:
+1. The Higgs can be identified with a G2 modulus field
+2. Moduli stabilization mechanisms exist in string/M-theory
+3. The qualitative idea of geometric hierarchy is sound
 
-The electroweak scale is not arbitrary but is determined by the geometry of the internal space.
+**What We Cannot Yet Derive**:
+1. The specific value v = 246 GeV from pure topology
+2. All naive formulas give values ~10^16-10^18 GeV (wrong by 15+ orders)
+3. The correct hierarchy requires additional input:
+   - Warped geometry with tuned kR parameter, OR
+   - Small flux numbers (fine-tuning), OR
+   - Anthropic selection from landscape
+
+**Status**: The Higgs VEV derivation from pure G2 geometry **remains an open problem**. The hierarchy between $M_{Pl}$ and $v$ is not explained by topology alone.
+
+**Scientific Honesty**: The formulas in sections E.5-E.7 demonstrate the failure of naive geometric approaches. The electroweak scale likely requires additional dynamical input beyond the topological data ($b_3 = 24$).
 
 ---
 
@@ -306,6 +317,24 @@ The electroweak scale is not arbitrary but is determined by the geometry of the 
 3. Acharya, B.S. et al. (2007). "Moduli Stabilisation and SUSY Breaking in M-Theory". arXiv:hep-th/0701034
 4. Arkani-Hamed, N. et al. (1998). "The Hierarchy Problem and New Dimensions at a Millimeter". Phys. Lett. B 429, 263
 5. Giudice, G.F. (2008). "Naturally Speaking: The Naturalness Criterion and Physics at the LHC". arXiv:0801.2562
+
+---
+
+## E.14 SSOT Constants Reference
+
+This derivation attempts to use the following Single Source of Truth (SSOT) parameters from `config.py`:
+
+| Constant | Symbol | Value | Origin |
+|----------|--------|-------|--------|
+| Third Betti number | $b_3$ | 24 | G2 manifold topology |
+| Reduced Planck mass | $M_{Pl}$ | 2.435×10¹⁸ GeV | INPUT (measured) |
+| Higgs VEV | $v$ | 246.22 GeV | INPUT (measured) |
+| Higgs mass | $m_H$ | 125.10 GeV | INPUT (measured) |
+| Higgs quartic | $\lambda$ | 0.1296 | DERIVED from $m_H$ and $v$ |
+
+**Honesty Note**: The naive geometric formulas in sections E.5-E.7 fail to reproduce the Higgs VEV from topology alone. The hierarchy ratio $M_{Pl}/v \approx 10^{16}$ remains an open problem requiring additional input beyond $b_3$.
+
+**Source Code**: `simulations/v16/higgs/higgs_vev_derivation_v16_1.py`
 
 ---
 

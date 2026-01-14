@@ -139,12 +139,25 @@ $$\alpha_{em} = \frac{e^2}{4\pi} = \frac{2G_4}{\pi R}$$ **(B.14)**
 
 ### B.6.3 In Principia Metaphysica Framework
 
-From the G2 manifold structure:
-$$\alpha_{em}^{-1} = \frac{4\pi^2 k_{gimel}}{b_3 - 2} = \frac{4\pi^2 \times 12.318...}{24 - 2} = 137.036...$$ **(B.15)**
+From the G2 manifold structure, the Geometric Anchors formula:
+
+$$\alpha_{em}^{-1} = k_{gimel}^2 - \frac{b_3}{\phi} + \frac{\phi}{4\pi} - \epsilon_{7D}$$ **(B.15)**
 
 Where:
 - $k_{gimel} = b_3/2 + 1/\pi = 12 + 0.318... = 12.318...$
 - $b_3 = 24$ (third Betti number of G2 manifold)
+- $\phi = (1+\sqrt{5})/2 = 1.618...$ (golden ratio)
+- $\epsilon_{7D} \approx 7 \times 10^{-4}$ (7D manifold suppression)
+
+**Numerical evaluation**:
+- $k_{gimel}^2 = 151.73$
+- $b_3/\phi = 24/1.618 = 14.83$
+- $\phi/(4\pi) = 0.129$
+- Base: $151.73 - 14.83 + 0.129 = 137.03$
+
+**Result**: $\alpha_{em}^{-1} \approx 137.03$ (vs CODATA: 137.035999)
+
+**IMPORTANT NOTE**: This formula is **numerologically close** to experiment but lacks a rigorous QED derivation from first principles. The combination of $b_3$, $\phi$, and $\pi$ may be coincidental. Status: EXPLORATORY
 
 ---
 
@@ -301,7 +314,22 @@ Verified: Standard Maxwell equations emerge
 
 ---
 
-## B.13 Connection to Next Steps
+## B.13 SSOT Constants Reference
+
+This derivation uses the following Single Source of Truth (SSOT) parameters from `config.py`:
+
+| Constant | Symbol | Value | Origin |
+|----------|--------|-------|--------|
+| Third Betti number | $b_3$ | 24 | G2 manifold topology |
+| Holonomy constant | $k_{gimel}$ | 12.318... | $b_3/2 + 1/\pi$ |
+| Golden ratio | $\phi$ | 1.618... | G2 moduli space |
+| 7D suppression | $\epsilon_{7D}$ | ~0.0007 | Cycle volume correction |
+
+**Source Code**: `simulations/v16/constants/fine_structure_v17.py`
+
+---
+
+## B.14 Connection to Next Steps
 
 This derivation establishes U(1)_em gauge theory. The next derivations show:
 - **GS-07**: QCD (SU(3)_C) from G2 associative 3-cycles
