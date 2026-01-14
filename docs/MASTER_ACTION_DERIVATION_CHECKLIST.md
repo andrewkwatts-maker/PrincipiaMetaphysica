@@ -74,7 +74,7 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 | HG-02 | Higgs Mass m_H | 125.10 GeV | 125.10 ± 0.14 GeV | INPUT |
 | HG-03 | Higgs Quartic λ | 0.1296 | ~0.13 (SM) | ✅ EXISTS |
 | HG-04 | Doublet-Triplet Splitting | M_T/M_D ~ 10¹³ | N/A | ✅ EXISTS |
-| HG-05 | Higgs from Geometry | v_H = √(Vol(X))M_Pl/(2π) | ~246 GeV | ✅ COMPLETE |
+| HG-05 | Higgs from Geometry | v_H = √(Vol(X))M_Pl/(2π) | ~246 GeV | ⚠️ PARTIAL |
 
 ---
 
@@ -181,13 +181,13 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 | Gauge Sector | 8 | 0 | 0 |
 | Gravity Sector | 3 | 1 | 0 |
 | Electroweak | 4 | 0 | 0 |
-| Higgs | 4 | 0 | 0 |
+| Higgs | 3 | 1 | 0 |
 | Fermion Structure | 9 | 4 | 0 |
 | Neutrino | 7 | 0 | 0 |
 | Cosmology | 6 | 1 | 0 |
 | Dark Matter | 6 | 0 | 0 |
 | Proton Decay | 3 | 0 | 0 |
-| **TOTAL** | **52** | **7** | **0** |
+| **TOTAL** | **51** | **8** | **0** |
 
 ---
 
@@ -213,10 +213,11 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 - **Key Result**: SU(2)_L × U(1)_Y with correct Weinberg angle
 - **Wolfram Verified**: Weinberg angle, W/Z masses, ρ parameter
 
-### 5. HG-05: Higgs VEV from Pure Geometry ✅
+### 5. HG-05: Higgs VEV from Pure Geometry ⚠️ PARTIAL
 - **Appendix**: [appendix_e_higgs_vev.md](appendices/appendix_e_higgs_vev.md)
-- **Key Result**: v = 246 GeV from moduli stabilization
-- **Wolfram Verified**: VEV relation, hierarchy ratio, Higgs quartic
+- **Key Result**: Naive geometric formulas fail by 15+ orders of magnitude
+- **Status**: Open problem - hierarchy not explained by topology alone
+- **Note**: v = 246 GeV matches experiment but requires additional input (warping, KKLT, etc.)
 
 ---
 

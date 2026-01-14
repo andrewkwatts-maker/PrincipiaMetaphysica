@@ -181,16 +181,23 @@ For $n_f < 16.5$ flavors, $\beta < 0$ → coupling decreases at high energy.
 
 ### C.7.3 PM Prediction for αs(MZ)
 
-At the Z-boson mass scale:
+At the Z-boson mass scale, the Geometric Anchors formula:
 
-$$\alpha_s(M_Z) = \frac{b_3}{(b_3 + \pi)^2} = \frac{24}{(24 + \pi)^2} = \frac{24}{735.9} = 0.0326...$$
+$$\alpha_s(M_Z) = \frac{k_{gimel}}{b_3(\pi + 1) + k_{gimel}/2} \times \left(1 + \frac{1}{b_3\pi}\right)$$ **(C.18)**
 
-**Wait** - this doesn't match! The experimental value is $\alpha_s(M_Z) \approx 0.118$.
+Where:
+- $k_{gimel} = b_3/2 + 1/\pi = 12.318$
+- $b_3 = 24$ (third Betti number)
 
-**Corrected formula** from simulations:
-$$\alpha_s(M_Z) = \frac{4\pi}{b_3 + \pi + b_3/\pi} = \frac{4\pi}{24 + 3.14 + 7.64} = \frac{12.57}{34.78} = 0.117$$ **(C.18)**
+**Numerical evaluation**:
+- Denominator: $24 \times (3.1416 + 1) + 6.159 = 99.4 + 6.16 = 105.56$
+- Base: $12.318 / 105.56 = 0.1167$
+- Lattice correction: $1 + 1/(24\pi) = 1.0133$
+- **Result**: $\alpha_s = 0.1167 \times 1.0133 = 0.1182$
 
 This matches the PDG value: $\alpha_s(M_Z) = 0.1179 \pm 0.0009$ ✓
+
+**IMPORTANT NOTE**: Like $\alpha_{em}$, this formula is **numerologically close** but the physical derivation from G2 cycles to this specific algebraic form is not rigorous. Status: EXPLORATORY
 
 ---
 
@@ -306,6 +313,20 @@ For n_f = 6 quarks, beta < 0 → asymptotic freedom confirmed
 3. Joyce, D. (2000). "Compact Manifolds with Special Holonomy". Oxford University Press
 4. Acharya, B.S. & Gukov, S. (2004). "M theory and singularities of exceptional holonomy manifolds". Phys. Rept. 392, 121
 5. Maldacena, J. (1997). "The Large N Limit of Superconformal Field Theories". arXiv:hep-th/9711200
+
+---
+
+## C.13 SSOT Constants Reference
+
+This derivation uses the following Single Source of Truth (SSOT) parameters from `config.py`:
+
+| Constant | Symbol | Value | Origin |
+|----------|--------|-------|--------|
+| Third Betti number | $b_3$ | 24 | G2 manifold topology |
+| Holonomy constant | $k_{gimel}$ | 12.318... | $b_3/2 + 1/\pi$ |
+| Active quark flavors | $n_f$ | 6 | SM fermion content |
+
+**Source Code**: `simulations/geometric_anchors_v16_1.py`
 
 ---
 

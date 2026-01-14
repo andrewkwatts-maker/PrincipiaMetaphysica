@@ -279,5 +279,22 @@ Result: 6460.5 / 6396.6 = 1.010
 
 ---
 
+## D.13 SSOT Constants Reference
+
+This derivation uses the following Single Source of Truth (SSOT) parameters from `config.py`:
+
+| Constant | Symbol | Value | Origin |
+|----------|--------|-------|--------|
+| Third Betti number | $b_3$ | 24 | G2 manifold topology |
+| Higgs VEV | $v$ | 246.22 GeV | INPUT (measured) |
+| Fine structure | $\alpha_{em}$ | 1/137.036 | INPUT (measured) |
+| Weinberg angle | $\sin^2\theta_W$ | 0.23121 | INPUT at $M_Z$ scale |
+
+**Note**: W and Z masses are DERIVED from inputs $v$, $\alpha_{em}$, $\sin^2\theta_W$.
+
+**Source Code**: `simulations/v16/gauge/gauge_unification_v16_0.py`
+
+---
+
 *Document generated: 2026-01-14*
 *Principia Metaphysica v20.11*
