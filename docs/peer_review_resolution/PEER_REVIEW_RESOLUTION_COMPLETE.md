@@ -257,10 +257,62 @@ where 48 = 8 (spinor DOF) x 6 (complex rep factor)
 
 ---
 
+## v20.17 Recursive Review (Debate Round)
+
+### Additional Issues Identified via Recursive Rigor Review
+
+**1. alpha_em formula may be FITTED (Issue 3 deeper audit)**
+- k_gimel = b3/2 + 1/pi lacks rigorous geometric derivation
+- The 1/pi term is unexplained - why 1/pi and not 1/(2*pi)?
+- Full formula alpha^-1 = k_gimel^2 - b3/phi + phi/(4*pi) may be reverse-engineered
+- Created ALPHA_EM_DERIVATION_AUDIT.md documenting concerns
+- **Status**: Mark as EXPLORATORY until derivation proven
+
+**2. Mass ordering is EXPLORATORY (Issue 10 deeper audit)**
+- "Even b3 -> IO" is a CONJECTURE, not a theorem
+- No rigorous proof that Betti number parity determines mass ordering
+- Updated neutrino-ordering-v18 formula category to EXPLORATORY
+- Added rigor_warning to derivation steps
+
+**3. Divisor 48 derivation improved (Issue 9 enhancement)**
+- Added full Atiyah-Singer index theory derivation to appendix_g
+- Broke down 48 = 16 (spinor representation) × 3 (SU(3) color)
+- Added proper references to Acharya-Witten (2001)
+
+### Updated Rigor Scores After Recursive Review
+
+| Issue | Before Review | After Review | Delta |
+|-------|---------------|--------------|-------|
+| 3. Circular | 6/10 | 5/10 | -1 (alpha_em concern) |
+| 7. CKM/PMNS | 4/10 | 4/10 | 0 |
+| 9. Formal | 6/10 | 7/10 | +1 (better derivation) |
+| 10. Neutrino | 5/10 | 5/10 | 0 |
+| **Average** | 5.25/10 | 5.25/10 | 0 |
+
+### Blocking Issues for 10/10 Rigor
+
+| Blocker | Required Action | Difficulty |
+|---------|-----------------|------------|
+| alpha_em derivation | Derive k_gimel = b3/2 + 1/pi from G2 geometry | HIGH |
+| Mass ordering | Prove b3 -> IO rigorously | HIGH |
+| CKM flux corrections | Derive or remove ad hoc factors | MEDIUM |
+| Hodge numbers | Derive (4, 0, 68) from first principles | MEDIUM |
+| m_base = 0.049 eV | Derive from geometry, not calibration | HIGH |
+
+### Honest Assessment
+
+The recursive review reveals that:
+1. Several "DERIVED" formulas may actually be FITTED
+2. Honest acknowledgment of this increases scientific integrity
+3. PM is more rigorous than typical numerology but less than formal mathematics
+4. ~60% of claims are genuinely derived, ~20% are EXPLORATORY, ~20% are FITTED
+
+---
+
 ## Next Steps
 
-1. Complete categorization of all certificates (DERIVED/INPUT/FITTED)
-2. Finalize b3 derivation appendix with references
-3. Create formal proof for n_gen = 3
-4. Investigate and fix neutrino mass prediction
-5. Submit key results to arXiv for community feedback
+1. ~~Complete categorization of all certificates~~ DONE (v20.16)
+2. ~~Create formal proof for n_gen = 3~~ DONE (v20.16)
+3. Derive k_gimel = b3/2 + 1/pi from G2 holonomy (HARD)
+4. Find rigorous mass ordering derivation or demote to CONJECTURE
+5. Submit to arXiv with honest rigor assessment
