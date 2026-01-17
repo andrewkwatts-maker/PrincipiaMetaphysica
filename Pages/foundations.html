@@ -589,7 +589,7 @@
                 const references = foundation.references || [];
 
                 html += `
-                    <div class="formula-card" data-category="${category}" data-id="${foundation.id}">
+                    <div class="formula-card" id="${foundation.id}" data-category="${category}" data-id="${foundation.id}">
                         <div class="formula-header">
                             <div>
                                 <div class="formula-label">${title}</div>
@@ -692,6 +692,48 @@
             populateCategoryFilter();
             setupFilters();
             renderFoundations(foundations);
+
+            // Handle URL parameters for navigation
+            handleURLParams();
+        }
+
+        // Handle URL parameters to navigate to specific foundation
+        function handleURLParams() {
+            const params = new URLSearchParams(window.location.search);
+            const pageId = params.get('page') || params.get('id');
+            const hash = window.location.hash.replace('#', '');
+
+            const targetId = pageId || hash;
+
+            if (targetId) {
+                console.log(`URL navigation: targeting "${targetId}"`);
+
+                // Find the element
+                const element = document.getElementById(targetId) ||
+                               document.querySelector(`[data-id="${targetId}"]`);
+
+                if (element) {
+                    // Scroll to it with a small delay to ensure render is complete
+                    setTimeout(() => {
+                        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Highlight briefly
+                        element.style.outline = '2px solid var(--accent-primary)';
+                        element.style.outlineOffset = '4px';
+                        setTimeout(() => {
+                            element.style.outline = '';
+                            element.style.outlineOffset = '';
+                        }, 3000);
+                    }, 200);
+                } else {
+                    // Try searching for it in the content
+                    const searchFilter = document.getElementById('search-filter');
+                    if (searchFilter) {
+                        searchFilter.value = targetId.replace(/-/g, ' ');
+                        searchFilter.dispatchEvent(new Event('input'));
+                    }
+                    console.warn(`Foundation "${targetId}" not found`);
+                }
+            }
         }
 
         // Initialize on page load
