@@ -45,6 +45,7 @@
     function toggleFormula(formula) {
         const isExpanded = formula.classList.contains('expanded');
         const expandBtn = formula.querySelector('.expand-btn');
+        const expandIndicator = formula.querySelector('.expand-indicator');
 
         if (isExpanded) {
             formula.classList.remove('expanded');
@@ -53,12 +54,18 @@
                 expandBtn.innerHTML = '&#x25BC;'; // Down arrow
                 expandBtn.title = 'Expand formula';
             }
+            if (expandIndicator) {
+                expandIndicator.innerHTML = '&#x25BC;'; // Down arrow
+            }
         } else {
             formula.classList.add('expanded');
             if (expandBtn) {
                 expandBtn.classList.add('expanded');
                 expandBtn.innerHTML = '&#x25B2;'; // Up arrow
                 expandBtn.title = 'Collapse formula';
+            }
+            if (expandIndicator) {
+                expandIndicator.innerHTML = '&#x25B2;'; // Up arrow
             }
         }
     }
