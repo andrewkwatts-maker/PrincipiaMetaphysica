@@ -1,7 +1,7 @@
 {
   "version": "20.0",
-  "generated": "2026-01-13T21:11:19.201277Z",
-  "total_scripts": 174,
+  "generated": "2026-01-17T04:35:53.652009Z",
+  "total_scripts": 175,
   "categories": {
     "v16/angles": {
       "title": "Angles",
@@ -981,9 +981,17 @@
           "title": "Geometric Higgs VEV from G2 Holonomy",
           "description": "Derives Higgs VEV from holonomy warp factor k_gimel times non-trivial cycle count (b3-4). Achieves 0.06% accuracy without calibration - a genuine geometric prediction.",
           "status": null
+        },
+        {
+          "file": "rs_warped_hierarchy_v20.py",
+          "path": "simulations/v16/higgs/rs_warped_hierarchy_v20.py",
+          "version": null,
+          "title": null,
+          "description": "Physics simulation module",
+          "status": null
         }
       ],
-      "count": 5
+      "count": 6
     },
     "v16/integrity": {
       "title": "Integrity",
