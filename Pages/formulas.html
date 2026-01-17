@@ -1879,6 +1879,9 @@
             updateStatistics();
             renderFormulas();
 
+            // Check for URL parameter to show specific formula
+            handleURLParams();
+
             // Show content, hide loading
             document.getElementById('loading-state').style.display = 'none';
             document.getElementById('formula-container').style.display = 'block';
@@ -2036,6 +2039,45 @@
         });
 
         renderFormulas();
+    }
+
+    // Handle URL parameters to navigate to specific formula
+    function handleURLParams() {
+        const params = new URLSearchParams(window.location.search);
+        const formulaId = params.get('formula') || params.get('id');
+
+        if (formulaId) {
+            console.log(`URL parameter: navigating to formula "${formulaId}"`);
+
+            // Find the formula
+            const formula = allFormulas.find(f => f.id === formulaId);
+            if (formula) {
+                // Set search filter to show this formula
+                const searchInput = document.getElementById('search-box');
+                if (searchInput) {
+                    searchInput.value = formulaId;
+                    currentFilters.search = formulaId.toLowerCase();
+                    applyFilters();
+                }
+
+                // Wait a bit for render then scroll to the formula card
+                setTimeout(() => {
+                    const formulaCard = document.getElementById(`formula-${formulaId}`);
+                    if (formulaCard) {
+                        formulaCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        // Highlight the card briefly
+                        formulaCard.style.outline = '2px solid var(--accent-primary)';
+                        formulaCard.style.outlineOffset = '4px';
+                        setTimeout(() => {
+                            formulaCard.style.outline = '';
+                            formulaCard.style.outlineOffset = '';
+                        }, 3000);
+                    }
+                }, 100);
+            } else {
+                console.warn(`Formula "${formulaId}" not found`);
+            }
+        }
     }
 
     // Update statistics display

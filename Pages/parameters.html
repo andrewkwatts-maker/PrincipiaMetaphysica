@@ -937,6 +937,7 @@
                         <th data-sort="category">Category</th>
                         <th data-sort="status">Status</th>
                         <th data-sort="sigma" class="sort-desc">σ Deviation</th>
+                        <th data-sort="pctdiff">% Diff</th>
                         <th data-sort="computed">Computed</th>
                         <th data-sort="experimental">Experimental</th>
                         <th data-sort="units">Units</th>
@@ -2384,6 +2385,17 @@
                 const computedDisplay = formatValue(computedValue);
                 const expDisplay = formatValue(param.experimental);
 
+                // Calculate % difference
+                let pctDiff = null;
+                let pctDiffDisplay = '—';
+                if (computedValue !== null && computedValue !== undefined &&
+                    param.experimental !== null && param.experimental !== undefined &&
+                    param.experimental !== 0) {
+                    pctDiff = Math.abs((computedValue - param.experimental) / param.experimental) * 100;
+                    pctDiffDisplay = pctDiff < 0.01 ? '<0.01%' : pctDiff.toFixed(2) + '%';
+                }
+                param.pctdiff = pctDiff; // Store for sorting
+
                 // Format units display
                 const unitsDisplay = param.units || '—';
 
@@ -2416,6 +2428,21 @@
                                       param.sigma < 2 ? 'Good agreement (&lt;2σ)' :
                                       param.sigma < 3 ? 'Moderate agreement (&lt;3σ)' :
                                       'Weak agreement (≥3σ)'}
+                                </span>
+                            </span>
+                        ` : ''}
+                    </td>
+                    <td class="pctdiff-cell ${pctDiff !== null && pctDiff < 1 ? 'sigma-good' : pctDiff !== null && pctDiff < 5 ? 'sigma-moderate' : ''} tooltip">
+                        ${pctDiffDisplay}
+                        ${pctDiff !== null ? `
+                            <span class="tooltip-content">
+                                <span class="tooltip-label">Percentage Difference</span>
+                                <span class="tooltip-value">
+                                    ${pctDiff.toFixed(4)}% from experiment<br>
+                                    ${pctDiff < 0.1 ? 'Excellent (&lt;0.1%)' :
+                                      pctDiff < 1 ? 'Good (&lt;1%)' :
+                                      pctDiff < 5 ? 'Moderate (&lt;5%)' :
+                                      'Large (≥5%)'}
                                 </span>
                             </span>
                         ` : ''}
@@ -2550,21 +2577,27 @@
                         valB = parseNumericValue(b.cells[3].textContent);
                         if (valB === 0 && b.cells[3].textContent.includes('—')) valB = -1;
                         break;
-                    case 'computed':
+                    case 'pctdiff':
                         valA = parseNumericValue(a.cells[4].textContent);
-                        if (a.cells[4].textContent.includes('—')) valA = -Infinity;
+                        if (a.cells[4].textContent.includes('—')) valA = -1;
                         valB = parseNumericValue(b.cells[4].textContent);
-                        if (b.cells[4].textContent.includes('—')) valB = -Infinity;
+                        if (b.cells[4].textContent.includes('—')) valB = -1;
                         break;
-                    case 'experimental':
+                    case 'computed':
                         valA = parseNumericValue(a.cells[5].textContent);
                         if (a.cells[5].textContent.includes('—')) valA = -Infinity;
                         valB = parseNumericValue(b.cells[5].textContent);
                         if (b.cells[5].textContent.includes('—')) valB = -Infinity;
                         break;
+                    case 'experimental':
+                        valA = parseNumericValue(a.cells[6].textContent);
+                        if (a.cells[6].textContent.includes('—')) valA = -Infinity;
+                        valB = parseNumericValue(b.cells[6].textContent);
+                        if (b.cells[6].textContent.includes('—')) valB = -Infinity;
+                        break;
                     default:
-                        valA = a.cells[6] ? a.cells[6].textContent.trim() : '';
-                        valB = b.cells[6] ? b.cells[6].textContent.trim() : '';
+                        valA = a.cells[7] ? a.cells[7].textContent.trim() : '';
+                        valB = b.cells[7] ? b.cells[7].textContent.trim() : '';
                 }
 
                 if (typeof valA === 'string') {

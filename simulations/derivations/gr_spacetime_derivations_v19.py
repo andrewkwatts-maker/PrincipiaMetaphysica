@@ -1191,10 +1191,10 @@ class GRSpacetimeDerivationsV19(SimulationBase):
             status="DERIVED",
             description="G_N = 1/M_Pl^2 from G2 compactification geometry",
             derivation_formula="gr-newton-from-g2-v19",
-            experimental_bound=6.67430e-11,
+            experimental_bound=6.70883e-39,  # Natural units (GeV^-2), converted from CODATA 2018
             bound_type="measured",
-            bound_source="CODATA 2018",
-            uncertainty=0.00015e-11
+            bound_source="CODATA 2018 (converted to natural units)",
+            uncertainty=1.5e-44  # Relative uncertainty ~2e-5 applied to 6.709e-39
         ))
 
         params.append(Parameter(
