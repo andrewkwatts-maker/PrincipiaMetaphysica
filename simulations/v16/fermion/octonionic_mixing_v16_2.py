@@ -63,10 +63,20 @@ THEORETICAL FOUNDATION:
     relating spinors to vectors in 8D, which descends to the mixing structure.
 
 References:
-- Joyce (2000): Compact Manifolds with Special Holonomy
-- Acharya-Witten (2001): Chiral fermions from G2 manifolds
-- Baez (2002): The Octonions
-- Harvey-Lawson (1982): Calibrated geometries
+- Joyce (2000): Compact Manifolds with Special Holonomy (Oxford Mathematical Monographs)
+- Acharya-Witten (2001): Chiral fermions from G2 manifolds, arXiv:hep-th/0109152
+- Baez (2002): The Octonions, Bull. Amer. Math. Soc. 39 (2002), 145-205, arXiv:math/0105155
+- Harvey-Lawson (1982): Calibrated geometries, Acta Math. 148: 47-157
+- Furey (2018): Standard model physics from an algebra? PhD thesis, arXiv:1611.09182
+- Furey (2016): Charge quantization from a number system, Physics Letters B 742, 195-199
+- Dixon (1994): Division Algebras: Octonions, Quaternions, Complex Numbers and the Algebraic Design of Physics
+- Todorov-Dubois-Violette (2018): Deducing the symmetry of the SM from the automorphisms of the division algebras
+
+NOTE ON RIGOR (Peer Review Issue 7):
+The connection between G2 holonomy, octonions, and flavor physics is SPECULATIVE but has growing precedent.
+Furey's work shows how one generation of SM fermions can be encoded in Cl(6) acting on C tensor O.
+PM extends this by connecting G2 manifold topology to mixing angles via the associative/co-associative split.
+This remains a conjecture requiring further mathematical development.
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 

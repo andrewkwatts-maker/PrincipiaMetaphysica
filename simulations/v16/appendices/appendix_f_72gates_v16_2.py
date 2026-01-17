@@ -61,6 +61,26 @@ class GateStatus(Enum):
     REFINED = "REFINED"
 
 
+class GateCategory(Enum):
+    """
+    Gate category for peer review rigor (Issue 3: Remove Circular Validation).
+
+    Categories:
+    - DERIVED: Genuinely derived from geometry with no experimental input
+    - TOPOLOGICAL: Pure topological constraint (subset of DERIVED)
+    - GEOMETRIC: Geometric identity (subset of DERIVED)
+    - INPUT: Uses experimental values as acknowledged input
+    - FITTED: Parameters tuned to match data (problematic, must be acknowledged)
+    - EXPLORATORY: Speculative, not rigorously derived
+    """
+    DERIVED = "DERIVED"
+    TOPOLOGICAL = "TOPOLOGICAL"
+    GEOMETRIC = "GEOMETRIC"
+    INPUT = "INPUT"
+    FITTED = "FITTED"
+    EXPLORATORY = "EXPLORATORY"
+
+
 @dataclass
 class Gate:
     """Represents a single gate in the 72-Gate architecture."""
@@ -72,6 +92,7 @@ class Gate:
     validation: str
     formula_id: Optional[str] = None
     status: GateStatus = GateStatus.OPEN
+    category: GateCategory = GateCategory.DERIVED  # Default to DERIVED, must be updated
 
     @property
     def gate_id(self) -> str:
