@@ -181,13 +181,13 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 | Gauge Sector | 8 | 0 | 0 |
 | Gravity Sector | 3 | 1 | 0 |
 | Electroweak | 4 | 0 | 0 |
-| Higgs | 3 | 1 | 0 |
+| Higgs | 4 | 1 | 0 |
 | Fermion Structure | 9 | 4 | 0 |
 | Neutrino | 7 | 0 | 0 |
 | Cosmology | 6 | 1 | 0 |
 | Dark Matter | 6 | 0 | 0 |
 | Proton Decay | 3 | 0 | 0 |
-| **TOTAL** | **51** | **8** | **0** |
+| **TOTAL** | **52** | **8** | **0** |
 
 ---
 
@@ -218,6 +218,13 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 - **Key Result**: Naive geometric formulas fail by 15+ orders of magnitude
 - **Status**: Open problem - hierarchy not explained by topology alone
 - **Note**: v = 246 GeV matches experiment but requires additional input (warping, KKLT, etc.)
+
+### 6. HG-06: RS Warped Hierarchy Solution ✅ NEW
+- **Appendix**: [appendix_f_rs_warped_hierarchy.md](appendices/appendix_f_rs_warped_hierarchy.md)
+- **Key Result**: v = v0 × e^(-pi*kRc) with kRc = 11.21 from PM constants
+- **Simulation**: `simulations/v16/higgs/rs_warped_hierarchy_v20.py`
+- **Wolfram Verified**: sqrt(24)=4.899, ln(5e-16)=-35.24, e^(-pi*11.22)=5e-16
+- **Predictions**: KK graviton ~0.9 TeV, Radion ~28 GeV
 
 ---
 
