@@ -453,7 +453,10 @@ class NeutrinoMixingSimulation(SimulationBase):
         """
         # Geometric Seesaw scale from k_gimel
         # k_gimel = chi_eff/(b2*b3) = 144/(4*24) = 1.5
-        m_base = 0.049  # eV - calibrated to atmospheric splitting
+        # WARNING: m_base is FITTED to atmospheric splitting, not derived from first principles
+        # This makes the mass sum prediction FITTED, not DERIVED
+        # STATUS: FALSIFICATION_RISK - IO requires sum >= 0.10 eV but DESI constrains sum < 0.072 eV
+        m_base = 0.049  # eV - FITTED to atmospheric splitting (sqrt(|dm2_32|) ~ 0.050 eV)
 
         # m2: Heaviest state (includes geometric perturbation)
         m2 = m_base * (1 + (self._k_gimel / 1000))

@@ -467,10 +467,12 @@ class NeutrinoSimulationV18(SimulationBase):
                 label="(4.18)",
                 latex=r"\Sigma m_\nu = m_1 + m_2 + m_3 \approx 0.10 \text{ eV}",
                 plain_text="Sum_m_nu = m1 + m2 + m3 ~ 0.10 eV",
-                category="PREDICTIONS",
+                category="FALSIFICATION_RISK",
                 description=(
                     "Sum of neutrino masses from geometric seesaw. Satisfies Planck 2018 bound "
-                    "(< 0.12 eV) but may have mild tension with DESI 2024 constraint (< 0.072 eV)."
+                    "(< 0.12 eV) but IN TENSION with DESI 2024 constraint (< 0.072 eV). "
+                    "NOTE: m_base = 0.049 eV is FITTED to atmospheric splitting, not derived. "
+                    "Inverted Ordering inherently requires sum >= 0.10 eV - FALSIFICATION RISK if DESI confirmed."
                 ),
                 inputParams=["topology.b2", "topology.b3", "topology.chi_eff"],
                 outputParams=["neutrino.mass_sum"],
@@ -725,21 +727,23 @@ class NeutrinoSimulationV18(SimulationBase):
                 path="neutrino.mass_sum",
                 name="Neutrino Mass Sum",
                 units="eV",
-                status="PREDICTED",
+                status="FALSIFICATION_RISK",
                 description=(
-                    "Sum of neutrino masses. PM: ~0.10 eV. "
-                    "Planck 2018: < 0.12 eV (PASS). DESI 2024: < 0.072 eV (mild tension)."
+                    "Sum of neutrino masses. PM: ~0.10 eV (IO requires >= 0.10 eV). "
+                    "Planck 2018: < 0.12 eV (PASS). DESI 2024: < 0.072 eV (TENSION). "
+                    "WARNING: If DESI constraint confirmed, IO would be ruled out, falsifying PM's b3=24 -> IO prediction."
                 ),
                 derivation_formula="neutrino-mass-sum-v18",
-                experimental_bound=0.12,
-                uncertainty=0.05,
+                experimental_bound=0.072,  # Updated to DESI 2024 constraint
+                uncertainty=0.02,
                 bound_type="upper",
-                bound_source="Planck2018+DESI2024",
+                bound_source="DESI2024+CMB",
                 validation={
-                    "experimental_value": 0.12,
+                    "experimental_value": 0.072,
                     "bound_type": "upper",
-                    "status": "PASS",
-                    "source": "Planck2018+DESI2024",
+                    "status": "TENSION",
+                    "source": "DESI2024+CMB",
+                    "notes": "CRITICAL: PM predicts IO which requires sum >= 0.10 eV. DESI 2024 constrains sum < 0.072 eV (95% CL). This is a genuine FALSIFICATION RISK."
                 }
             ),
             Parameter(
