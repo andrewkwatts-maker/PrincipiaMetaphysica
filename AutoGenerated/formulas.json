@@ -16,8 +16,26 @@
       ],
       "output_params": [],
       "derivation": null,
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.636263"
+      "terms": {
+        "Hol(g)": {
+          "description": "Holonomy group of the metric g",
+          "symbol": "Hol(g)"
+        },
+        "G2": {
+          "description": "Exceptional Lie group G2 (14-dimensional)",
+          "symbol": "G₂"
+        },
+        "eta": {
+          "description": "Covariantly constant 3-form defining G2 structure",
+          "symbol": "η"
+        },
+        "nabla": {
+          "description": "Levi-Civita connection (covariant derivative)",
+          "symbol": "∇"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.636263",
+      "html": "<span class=\"formula-var\" data-term=\"Hol\">Hol(g)<span class=\"var-tooltip\"><span class=\"var-name\">Hol(g)</span><span class=\"var-description\">Holonomy group of the metric g</span></span></span>\n<span class=\"formula-op\"> ⊆ </span>\n<span class=\"formula-var\" data-term=\"G2\">G₂<span class=\"var-tooltip\"><span class=\"var-name\">G₂</span><span class=\"var-description\">Exceptional Lie group G2 (14-dimensional)</span></span></span>\n<span class=\"formula-op\"> ⟺ ∃</span>\n<span class=\"formula-var\" data-term=\"eta\">η<span class=\"var-tooltip\"><span class=\"var-name\">η</span><span class=\"var-description\">Covariantly constant 3-form defining G2 structure</span></span></span>\n<span class=\"formula-op\">:</span>\n<span class=\"formula-var\" data-term=\"nabla\">∇η<span class=\"var-tooltip\"><span class=\"var-name\">∇η = 0</span><span class=\"var-description\">Parallel transport preserves the 3-form</span></span></span>\n<span class=\"formula-op\"> = 0</span>"
     },
     "euler-characteristic": {
       "id": "euler-characteristic",
@@ -278,7 +296,8 @@
       "terms": {
         "Λ₂₄": "Leech lattice"
       },
-      "timestamp": "2026-01-17T14:38:29.598343"
+      "timestamp": "2026-01-17T14:38:29.598343",
+      "html": "<span class=\"formula-op\">dim(</span>\n<span class=\"formula-var\" data-term=\"Leech\">Λ<sub>24</sub><span class=\"var-tooltip\"><span class=\"var-name\">Λ₂₄ - Leech Lattice</span><span class=\"var-description\">Unique 24-dimensional even unimodular lattice with no roots</span></span></span>\n<span class=\"formula-op\">) = 24</span>"
     },
     "g2-automorphism-relation": {
       "id": "g2-automorphism-relation",
@@ -370,8 +389,22 @@
         ],
         "references": []
       },
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.598346"
+      "terms": {
+        "24": {
+          "description": "Third Betti number b₃ of G2 manifold",
+          "symbol": "b₃"
+        },
+        "3": {
+          "description": "Number of fermion generations",
+          "symbol": "n_gen"
+        },
+        "8": {
+          "description": "Dimension of spinor representation",
+          "symbol": "dim(spinor)"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.598346",
+      "html": "<span class=\"formula-var\" data-term=\"b3\">24<span class=\"var-tooltip\"><span class=\"var-name\">b₃ = 24</span><span class=\"var-description\">Third Betti number of TCS G2 manifold #187</span></span></span>\n<span class=\"formula-op\"> = </span>\n<span class=\"formula-var\" data-term=\"ngen\">3<span class=\"var-tooltip\"><span class=\"var-name\">n_gen = 3</span><span class=\"var-description\">Number of fermion generations (quarks and leptons)</span></span></span>\n<span class=\"formula-op\"> × </span>\n<span class=\"formula-var\" data-term=\"spinor\">8<span class=\"var-tooltip\"><span class=\"var-name\">8</span><span class=\"var-description\">Dimension of spinor representation in each generation</span></span></span>"
     },
     "dedekind-eta-definition": {
       "id": "dedekind-eta-definition",
@@ -465,7 +498,8 @@
         "E₀": "Vacuum energy",
         "D": "Spacetime dimension"
       },
-      "timestamp": "2026-01-17T14:38:29.598446"
+      "timestamp": "2026-01-17T14:38:29.598446",
+      "html": "<span class=\"formula-var\" data-term=\"E0\">E<sub>0</sub><span class=\"var-tooltip\"><span class=\"var-name\">E₀</span><span class=\"var-description\">Vacuum zero-point energy</span></span></span>\n<span class=\"formula-op\"> = </span>\n<span class=\"formula-op\">-</span>\n<span class=\"formula-var\" data-term=\"b3\">b₃<span class=\"var-tooltip\"><span class=\"var-name\">b₃ = 24</span><span class=\"var-description\">Third Betti number of G2 manifold</span></span></span>\n<span class=\"formula-op\">/24 = -1</span>"
     },
     "modular-anomaly-condition": {
       "id": "modular-anomaly-condition",
@@ -498,8 +532,18 @@
           "Polchinski Vol. 1"
         ]
       },
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.598447"
+      "terms": {
+        "b3": {
+          "description": "Third Betti number",
+          "symbol": "b₃"
+        },
+        "24": {
+          "description": "Modular divisor from string theory consistency",
+          "symbol": "24"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.598447",
+      "html": "<span class=\"formula-var\" data-term=\"b3\">b₃<span class=\"var-tooltip\"><span class=\"var-name\">b₃</span><span class=\"var-description\">Third Betti number of G2 manifold</span></span></span>\n<span class=\"formula-op\"> ≡ 0 (mod </span>\n<span class=\"formula-var\" data-term=\"24\">24<span class=\"var-tooltip\"><span class=\"var-name\">24</span><span class=\"var-description\">Modular divisor from string theory anomaly cancellation</span></span></span>\n<span class=\"formula-op\">)</span>"
     },
     "critical-dimension": {
       "id": "critical-dimension",
@@ -2384,7 +2428,8 @@
         "D_observable": "Observable spacetime dimensions (4)",
         "alpha_shadow": "Shadow dimension contribution (0.576)"
       },
-      "timestamp": "2026-01-17T14:38:29.629810"
+      "timestamp": "2026-01-17T14:38:29.629810",
+      "html": "<span class=\"formula-var\" data-term=\"D_bosonic\">26D<span class=\"var-tooltip\"><span class=\"var-name\">D_bosonic</span><span class=\"var-description\">Bosonic string critical dimension (26)</span></span></span>\n<span class=\"formula-op\"> → </span>\n<span class=\"formula-var\" data-term=\"D_heterotic\">13D<span class=\"var-tooltip\"><span class=\"var-name\">D_heterotic</span><span class=\"var-description\">Effective heterotic dimension after Sp(2,R) gauge fixing</span></span></span>\n<span class=\"formula-op\"> → </span>\n<span class=\"formula-var\" data-term=\"D_observable\">4D<span class=\"var-tooltip\"><span class=\"var-name\">D_observable</span><span class=\"var-description\">Observable spacetime dimensions after G2 compactification</span></span></span>"
     },
     "effective-dimension": {
       "id": "effective-dimension",
@@ -2529,8 +2574,7 @@
         "w_a": "Evolution parameter = -1/√24 ≈ -0.2041",
         "z": "Redshift"
       },
-      "timestamp": "2026-01-17T14:38:29.629813",
-      "html": "<sp<span class=\"formula-var\" data-term=\"a\">a<span class=\"var-tooltip\"><span class=\"var-name\">a</span><span class=\"var-description\">Scale factor (a=1 today)</span></span></span>n class=\"formula-var\" data-term=\"w(a)\">w(a)<span class=\"var-tooltip\"><span class=\"var-name\">w(a)</span><span class=\"var-description\">Dark energy EoS as function of scale factor</span></span></span> = w_0 + <span class=\"formula-var\" data-term=\"w_a\">w_a<span class=\"var-tooltip\"><span class=\"var-name\">w_a</span><span class=\"var-description\">Evolution parameter = -1/√24 ≈ -0.2041</span></span></span>*(1 - a), w_a = -1/√24 ≈ -0.2041"
+      "timestamp": "2026-01-17T14:38:29.629813"
     },
     "thawing-w0-derivation": {
       "id": "thawing-w0-derivation",
@@ -2952,8 +2996,7 @@
         "H": "Hubble parameter",
         "Omega_m": "Matter density fraction"
       },
-      "timestamp": "2026-01-17T14:38:29.633278",
-      "html": "<sp<span class=\"formula-var\" data-term=\"a\">a<span class=\"var-tooltip\"><span class=\"var-name\">a</span><span class=\"var-description\">Scale factor a = 1/(1+z)</span></span></span>n class=\"formula-var\" data-term=\"D\">D<span class=\"var-tooltip\"><span class=\"var-name\">D</span><span class=\"var-description\">Linear growth factor (normalized to D(z=0) = 1)</span></span></span>'' + (2 + dln<span class=\"formula-var\" data-term=\"H\">H<span class=\"var-tooltip\"><span class=\"var-name\">H</span><span class=\"var-description\">Hubble parameter</span></span></span>/dlna) D' = (3/2) Ωm(a) D"
+      "timestamp": "2026-01-17T14:38:29.633278"
     },
     "pm-dark-energy-density": {
       "id": "pm-dark-energy-density",
@@ -3001,8 +3044,7 @@
         "wa": "Evolution parameter (PM: ~0.29)",
         "a": "Scale factor"
       },
-      "timestamp": "2026-01-17T14:38:29.633279",
-      "html": "<sp<span class=\"formula-var\" data-term=\"a\">a<span class=\"var-tooltip\"><span class=\"var-name\">a</span><span class=\"var-description\">Scale factor</span></span></span>n class=\"formula-var\" data-term=\"H\">H<span class=\"var-tooltip\"><span class=\"var-name\">H</span><span class=\"var-description\">Hubble parameter</span></span></span>²(z) = H0² [Ωm(1+z)³ + Ω_DE a^(-3(1+<span class=\"formula-var\" data-term=\"w0\">w0<span class=\"var-tooltip\"><span class=\"var-name\">w0</span><span class=\"var-description\">Dark energy EoS at z=0 (PM: -23/24)</span></span></span>+<span class=\"formula-var\" data-term=\"wa\">wa<span class=\"var-tooltip\"><span class=\"var-name\">wa</span><span class=\"var-description\">Evolution parameter (PM: ~0.29)</span></span></span>)) exp(3wa(a-1))]"
+      "timestamp": "2026-01-17T14:38:29.633279"
     },
     "growth-suppression-factor": {
       "id": "growth-suppression-factor",
@@ -3237,8 +3279,18 @@
         "cosmology.H0_geometric"
       ],
       "derivation": null,
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.636624"
+      "terms": {
+        "H0_geo": {
+          "description": "Geometric Hubble constant from G2 topology",
+          "symbol": "H₀_geo"
+        },
+        "70.42": {
+          "description": "Predicted value in km/s/Mpc",
+          "value": "70.42 km/s/Mpc"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.636624",
+      "html": "<span class=\"formula-var\" data-term=\"H0\">H₀<sup>geo</sup><span class=\"var-tooltip\"><span class=\"var-name\">H₀_geo</span><span class=\"var-description\">Geometric Hubble constant derived from G2 topology</span></span></span>\n<span class=\"formula-op\"> = </span>\n<span class=\"formula-var\" data-term=\"value\">70.42<span class=\"var-tooltip\"><span class=\"var-name\">70.42 km/s/Mpc</span><span class=\"var-description\">Resolves tension between early (67.4) and late (73.0) universe measurements</span></span></span>\n<span class=\"formula-op\"> km/s/Mpc</span>"
     },
     "pmns-theta-13": {
       "id": "pmns-theta-13",
@@ -3367,8 +3419,30 @@
           "Tri-bimaximal mixing from discrete symmetries"
         ]
       },
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.634837"
+      "terms": {
+        "theta_12": {
+          "description": "Solar neutrino mixing angle (θ₁₂)",
+          "symbol": "θ₁₂"
+        },
+        "b3": {
+          "description": "Third Betti number = 24",
+          "symbol": "b₃"
+        },
+        "b2": {
+          "description": "Second Betti number = 4",
+          "symbol": "b₂"
+        },
+        "n_gen": {
+          "description": "Number of generations = 3",
+          "symbol": "n_gen"
+        },
+        "chi_eff": {
+          "description": "Effective Euler characteristic = 144",
+          "symbol": "χ_eff"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.634837",
+      "html": "<span class=\"formula-op\">sin(</span>\n<span class=\"formula-var\" data-term=\"theta12\">θ₁₂<span class=\"var-tooltip\"><span class=\"var-name\">θ₁₂</span><span class=\"var-description\">Solar neutrino mixing angle</span></span></span>\n<span class=\"formula-op\">) = </span>\n<span class=\"formula-op\">1/√3 × (1 - (</span>\n<span class=\"formula-var\" data-term=\"b3\">b₃<span class=\"var-tooltip\"><span class=\"var-name\">b₃ = 24</span><span class=\"var-description\">Third Betti number of G2 manifold</span></span></span>\n<span class=\"formula-op\"> - </span>\n<span class=\"formula-var\" data-term=\"b2\">b₂<span class=\"var-tooltip\"><span class=\"var-name\">b₂ = 4</span><span class=\"var-description\">Second Betti number (Kahler moduli)</span></span></span>\n<span class=\"formula-op\">×</span>\n<span class=\"formula-var\" data-term=\"ngen\">n_gen<span class=\"var-tooltip\"><span class=\"var-name\">n_gen = 3</span><span class=\"var-description\">Number of fermion generations</span></span></span>\n<span class=\"formula-op\">)/(2×</span>\n<span class=\"formula-var\" data-term=\"chi\">χ_eff<span class=\"var-tooltip\"><span class=\"var-name\">χ_eff = 144</span><span class=\"var-description\">Effective Euler characteristic</span></span></span>\n<span class=\"formula-op\">))</span>"
     },
     "pmns-theta-23": {
       "id": "pmns-theta-23",
@@ -4463,7 +4537,8 @@
         "flow_parameter": "\\lambda = \\sqrt{2 V''(\\langle\\Psi_P\\rangle)}",
         "derivative": "\\frac{\\partial V}{\\partial \\Psi_P} = 2 \\frac{dW}{d\\Psi_P} \\frac{d^2W}{d\\Psi_P^2}"
       },
-      "timestamp": "2026-01-17T14:38:29.635780"
+      "timestamp": "2026-01-17T14:38:29.635780",
+      "html": "<span class=\"formula-var\" data-term=\"derivative\">dΨ<sub>P</sub>/dt<span class=\"var-tooltip\"><span class=\"var-name\">dΨ_P/dt</span><span class=\"var-description\">Time derivative of Pneuma field</span></span></span>\n<span class=\"formula-op\"> = </span>\n<span class=\"formula-op\">-</span>\n<span class=\"formula-var\" data-term=\"flow_parameter\">γ<span class=\"var-tooltip\"><span class=\"var-name\">γ - Flow Parameter</span><span class=\"var-description\">Pneuma flow coupling constant</span></span></span>\n<span class=\"formula-op\"> ∂V/∂Ψ<sub>P</sub></span>"
     },
     "modular-hamiltonian": {
       "id": "modular-hamiltonian",
@@ -4694,8 +4769,22 @@
       ],
       "output_params": [],
       "derivation": null,
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.636252"
+      "terms": {
+        "M26": {
+          "description": "26-dimensional ancestral bulk manifold",
+          "symbol": "M²⁶"
+        },
+        "24": {
+          "description": "24 spatial dimensions (from Leech lattice)",
+          "symbol": "24"
+        },
+        "2": {
+          "description": "2 temporal dimensions (for Sp(2,R) gauge)",
+          "symbol": "2"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.636252",
+      "html": "<span class=\"formula-op\">Signature(</span>\n<span class=\"formula-var\" data-term=\"M26\">M<sup>26</sup><span class=\"var-tooltip\"><span class=\"var-name\">M²⁶</span><span class=\"var-description\">26-dimensional ancestral bulk manifold</span></span></span>\n<span class=\"formula-op\">) = (</span>\n<span class=\"formula-var\" data-term=\"24\">24<span class=\"var-tooltip\"><span class=\"var-name\">24</span><span class=\"var-description\">24 spatial dimensions (from Leech lattice uniqueness)</span></span></span>\n<span class=\"formula-op\">,</span>\n<span class=\"formula-var\" data-term=\"2\">2<span class=\"var-tooltip\"><span class=\"var-name\">2</span><span class=\"var-description\">2 temporal dimensions (for Sp(2,R) gauge fixing)</span></span></span>\n<span class=\"formula-op\">)</span>"
     },
     "spr2-gauge": {
       "id": "spr2-gauge",
@@ -4712,8 +4801,22 @@
         "dimensions.D_after_sp2r"
       ],
       "derivation": null,
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.636253"
+      "terms": {
+        "t2": {
+          "description": "Second time dimension",
+          "symbol": "t₂"
+        },
+        "Lambda": {
+          "description": "Cosmological constant",
+          "symbol": "Λ"
+        },
+        "SPR2": {
+          "description": "Symplectic gauge group Sp(2,R)",
+          "symbol": "Sp(2,ℝ)"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.636253",
+      "html": "<span class=\"formula-var\" data-term=\"t2\">t₂<span class=\"var-tooltip\"><span class=\"var-name\">t₂</span><span class=\"var-description\">Second time dimension in (24,2) signature</span></span></span>\n<span class=\"formula-op\"> →<sup>Sp(2,ℝ)</sup> </span>\n<span class=\"formula-var\" data-term=\"Lambda\">Λ<span class=\"var-tooltip\"><span class=\"var-name\">Λ</span><span class=\"var-description\">Cosmological constant (vacuum energy from gauge freezing)</span></span></span>"
     },
     "b3-generations": {
       "id": "b3-generations",
@@ -4748,8 +4851,26 @@
         "dimensions.D_observable"
       ],
       "derivation": null,
-      "terms": {},
-      "timestamp": "2026-01-17T14:38:29.636266"
+      "terms": {
+        "V7": {
+          "description": "7-dimensional G2 manifold",
+          "symbol": "V₇"
+        },
+        "M4": {
+          "description": "4D Minkowski spacetime",
+          "symbol": "M⁴"
+        },
+        "K6": {
+          "description": "6D Calabi-Yau factor",
+          "symbol": "K⁶"
+        },
+        "CY3": {
+          "description": "Calabi-Yau 3-fold projection",
+          "symbol": "CY₃"
+        }
+      },
+      "timestamp": "2026-01-17T14:38:29.636266",
+      "html": "<span class=\"formula-var\" data-term=\"V7\">V₇<span class=\"var-tooltip\"><span class=\"var-name\">V₇</span><span class=\"var-description\">7-dimensional G2 holonomy manifold</span></span></span>\n<span class=\"formula-op\"> →<sup>CY₃</sup> </span>\n<span class=\"formula-var\" data-term=\"M4\">M⁴<span class=\"var-tooltip\"><span class=\"var-name\">M⁴</span><span class=\"var-description\">4-dimensional Minkowski spacetime (observable universe)</span></span></span>\n<span class=\"formula-op\"> × </span>\n<span class=\"formula-var\" data-term=\"K6\">K⁶<span class=\"var-tooltip\"><span class=\"var-name\">K⁶</span><span class=\"var-description\">6-dimensional compactified Calabi-Yau factor</span></span></span>"
     },
     "laplacian-eigenvalue": {
       "id": "laplacian-eigenvalue",
@@ -6468,7 +6589,8 @@
         "τ_A": "Torsion pins for Shadow Brane A (12)",
         "τ_B": "Torsion pins for Shadow Brane B (12)"
       },
-      "timestamp": "2026-01-17T14:38:29.637499"
+      "timestamp": "2026-01-17T14:38:29.637499",
+      "html": "<span class=\"formula-var\" data-term=\"tau_total\">τ<sub>total</sub><span class=\"var-tooltip\"><span class=\"var-name\">τ_total</span><span class=\"var-description\">Total shadow torsion from both 13D branes</span></span></span>\n<span class=\"formula-op\"> = </span>\n<span class=\"formula-var\" data-term=\"tau_A\">τ<sub>A</sub><span class=\"var-tooltip\"><span class=\"var-name\">τ_A</span><span class=\"var-description\">Torsion from first shadow brane (12 pins)</span></span></span>\n<span class=\"formula-op\"> + </span>\n<span class=\"formula-var\" data-term=\"tau_B\">τ<sub>B</sub><span class=\"var-tooltip\"><span class=\"var-name\">τ_B</span><span class=\"var-description\">Torsion from second shadow brane (12 pins)</span></span></span>\n<span class=\"formula-op\"> = 12 + 12 = 24</span>"
     },
     "ancestral-roots-derivation": {
       "id": "ancestral-roots-derivation",
@@ -8188,8 +8310,7 @@
         "s": "Complex parameter",
         "lambda_n": "Eigenvalue sequence"
       },
-      "timestamp": "2026-01-17T14:38:29.638670",
-      "html": "<<span class=\"formula-var\" data-term=\"s\">s<span class=\"var-tooltip\"><span class=\"var-name\">s</span><span class=\"var-description\">Complex parameter</span></span></span>pan class=\"formula-var\" data-term=\"zeta_V\">zeta_V<span class=\"var-tooltip\"><span class=\"var-name\">zeta_V</span><span class=\"var-description\">Spectral zeta function</span></span></span>(s) = sum_{n=1}^{inf} <span class=\"formula-var\" data-term=\"lambda_n\">lambda_n<span class=\"var-tooltip\"><span class=\"var-name\">lambda_n</span><span class=\"var-description\">Eigenvalue sequence</span></span></span>^{-s}"
+      "timestamp": "2026-01-17T14:38:29.638670"
     },
     "neutrino-mass-seesaw-v18": {
       "id": "neutrino-mass-seesaw-v18",
