@@ -2170,18 +2170,16 @@
 
     // Render interactive formula with hoverable terms
     function renderInteractiveFormula(formula) {
-        // If we have LaTeX, always prioritize it for MathJax rendering
-        if (formula.latex) {
-            return `$$${formula.latex}$$`;
+        // Priority 1: If we have interactive HTML (with pre-built tooltips), use it
+        // This provides the best user experience with hover tooltips
+        if (formula.html) {
+            // HTML already has formula-var spans with var-tooltip, just return it
+            return `<div class="formula-display interactive">${formula.html}</div>`;
         }
 
-        // If we have HTML with interactive terms support
-        if (formula.html) {
-            // Check if formula has terms definitions for tooltips
-            if (formula.terms && typeof formula.terms === 'object' && Object.keys(formula.terms).length > 0) {
-                return wrapFormulaTermsWithTooltips(formula.html, formula.terms);
-            }
-            return formula.html;
+        // Priority 2: If we have LaTeX, render with MathJax
+        if (formula.latex) {
+            return `$$${formula.latex}$$`;
         }
 
         // Fallback to plain text (support both plainText and plain_text)
