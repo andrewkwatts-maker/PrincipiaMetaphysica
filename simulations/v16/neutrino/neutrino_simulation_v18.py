@@ -507,10 +507,12 @@ class NeutrinoSimulationV18(SimulationBase):
                 label="(4.19)",
                 latex=r"\Delta m^2_{32} < 0 \Rightarrow \text{Inverted Ordering (IO)}",
                 plain_text="dm2_32 < 0 => Inverted Ordering (m3 lightest)",
-                category="PREDICTIONS",
+                category="EXPLORATORY",  # Changed from PREDICTIONS - see rigor note
                 description=(
-                    "Neutrino mass ordering prediction from b3=24 topology. The even Betti number "
-                    "naturally supports Inverted Ordering with dm2_32 < 0 (m3 is the lightest state)."
+                    "Neutrino mass ordering prediction from b3=24 topology. "
+                    "RIGOR NOTE: The connection 'even b3 -> IO' is a CONJECTURE, not a derived result. "
+                    "There is no rigorous proof that even Betti numbers favor inverted ordering. "
+                    "If DESI/JUNO confirm Normal Ordering, this prediction would be falsified."
                 ),
                 inputParams=["topology.b3"],
                 outputParams=["neutrino.ordering"],
@@ -519,24 +521,29 @@ class NeutrinoSimulationV18(SimulationBase):
                 derivation={
                     "steps": [
                         {
-                            "description": "b3 = 24 is even",
+                            "description": "b3 = 24 is even (topological fact)",
                             "formula": r"b_3 = 24 \equiv 0 \pmod{2}"
                         },
                         {
-                            "description": "Even b3 favors inverted hierarchy",
-                            "formula": r"\text{IO: } m_3 < m_1 < m_2"
+                            "description": "CONJECTURE: Even b3 correlates with inverted hierarchy",
+                            "formula": r"\text{IO: } m_3 < m_1 < m_2 \text{ (unproven connection)}"
                         },
                         {
-                            "description": "Atmospheric splitting sign",
+                            "description": "If conjecture holds, atmospheric splitting is negative",
                             "formula": r"\Delta m^2_{32} = m_3^2 - m_2^2 < 0"
                         }
                     ],
-                    "references": ["NuFIT 6.0: NO preferred at 2.7 sigma; JUNO/DUNE will confirm"]
+                    "rigor_warning": "This derivation is EXPLORATORY. The b3 -> ordering connection lacks rigorous justification.",
+                    "references": [
+                        "NuFIT 6.0: NO preferred at 2.7 sigma; JUNO/DUNE will settle this",
+                        "DESI 2024: sum < 0.072 eV would rule out IO"
+                    ]
                 },
                 terms={
                     "b3": "Third Betti number (associative 3-cycles)",
                     "IO": "Inverted Ordering",
-                    "dm2_32": "Atmospheric mass splitting"
+                    "dm2_32": "Atmospheric mass splitting",
+                    "CONJECTURE": "Unproven assertion requiring future justification"
                 }
             ),
         ]
