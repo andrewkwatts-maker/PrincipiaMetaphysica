@@ -527,7 +527,7 @@
      </a>
     </div>
     <!-- The Master 26D Action - Consolidated and Auto-expanded -->
-    <div class="expandable-formula expanded" id="26d-master-action" style="margin-top: 2rem; border: 2px solid rgba(139, 127, 255, 0.4); overflow: visible;">
+    <div class="expandable-formula expanded" id="26d-master-action" style="margin-top: 2rem; border: 2px solid rgba(139, 127, 255, 0.4);">
      <div class="formula-header" onclick="this.closest('.expandable-formula').classList.toggle('expanded'); this.querySelector('.expand-btn').innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '▲' : '▼';" style="cursor: pointer; background: rgba(139, 127, 255, 0.1);">
       <div class="formula-main">
        <span style="color: var(--accent-primary); font-weight: 600; font-size: 1.1rem;">
@@ -544,7 +544,7 @@
        </button>
       </div>
      </div>
-     <div class="formula-expansion" style="overflow: visible;">
+     <div class="formula-expansion">
       <div style="background: rgba(139, 127, 255, 0.08); padding: 1.5rem; border-radius: 12px; overflow: visible; position: relative;">
        <span class="formula-hint" style="font-size: 0.75rem; color: var(--text-muted); display: block; text-align: center; margin-bottom: 0.75rem;">Hover over terms for definitions</span>
        <div class="formula-display" style="font-family: 'Crimson Text', serif; font-size: 1.3rem; text-align: center; line-height: 2.2; position: relative; z-index: 1000; overflow: visible;">
@@ -575,12 +575,12 @@
       </div>
      </div>
     </div>
-    <!-- Expandable Formula Breakdown: <span class="pm-value" data-pm-value="dimensions.D_bulk"></span>D → 13D → 4D -->
+    <!-- Expandable Formula Breakdown: D_bulk → 13D → 4D -->
     <div class="expandable-formula" id="master-formula" style="margin-top: 1.5rem;">
-     <div class="formula-header" style="cursor: pointer;">
+     <div class="formula-header" onclick="this.closest('.expandable-formula').classList.toggle('expanded'); this.querySelector('.expand-btn').innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '▲' : '▼'; this.querySelector('.collapse-indicator').innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '▲' : '▼';" style="cursor: pointer;">
       <div class="formula-main">
-       <span style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">
-        ▼ Dimensional Reduction:
+       <span class="collapse-indicator" style="color: var(--text-muted); font-size: 0.85rem; margin-right: 0.5rem;">
+        ▼</span><span style="color: var(--text-muted); font-size: 0.85rem;"> Dimensional Reduction:
        </span>
        S
        <sub>
@@ -605,7 +605,7 @@
        <a class="link-btn" href="Pages/foundations.html">
         Foundations →
        </a>
-       <button class="expand-btn" onclick="this.closest('.expandable-formula').classList.toggle('expanded'); this.innerHTML = this.closest('.expandable-formula').classList.contains('expanded') ? '▲' : '▼';" title="Expand to see dimensional hierarchy">
+       <button class="expand-btn" onclick="event.stopPropagation(); var container = this.closest('.expandable-formula'); container.classList.toggle('expanded'); var isExpanded = container.classList.contains('expanded'); this.innerHTML = isExpanded ? '▲' : '▼'; container.querySelector('.collapse-indicator').innerHTML = isExpanded ? '▲' : '▼';" title="Expand to see dimensional hierarchy">
         ▼
        </button>
       </div>

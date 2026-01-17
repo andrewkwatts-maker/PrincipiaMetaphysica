@@ -1838,12 +1838,16 @@ ul li::marker {
 .hero,
 .interactive-formula,
 .expandable-formula,
-.expandable-formula .formula-expansion,
-.expandable-formula .formula-expansion > div,
 .dim-table,
 .detail-section,
 .abstract,
 .intro {
+    overflow: visible !important;
+}
+
+/* Only allow overflow visible on expanded formula sections for tooltips */
+.expandable-formula.expanded .formula-expansion,
+.expandable-formula.expanded .formula-expansion > div {
     overflow: visible !important;
 }
 
