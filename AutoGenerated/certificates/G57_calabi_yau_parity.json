@@ -6,13 +6,14 @@
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 5,
   "block": "F",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "h\u00b2\u00b9 = 3",
+  "formula": "h^21 = 3",
   "verification_status": "NOT_TESTABLE",
   "reason": "Calabi-Yau parity h^{2,1}=3 is a structural assumption about extra dimensions. Hodge numbers of compactified dimensions cannot be experimentally measured. PM derives 3 generations from b3=24, but the CY topology itself is a framework input. No experiment can measure the Hodge diamond of hidden dimensions.",
-  "note": "FOUNDATIONAL: Internal holes = 3 generations. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-18T16:49:56.259762Z",
+  "chi_eff_usage": "Implicit: n_gen = chi_eff/24 = 72/24 = 3 (per-shadow)",
+  "note": "FOUNDATIONAL: Internal holes = 3 generations. v22.0-12PAIR: The G2 manifold has chi_eff = 72 per shadow, giving n_gen = chi_eff/24 = 3 via index theorem. Alternative: n_gen = chi_eff_total/48 = 144/48 = 3. Both derivations yield 3 generations from the 12x(2,0) bridge architecture. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-19T10:30:00.000000Z",
   "hash": "575164bd437b24a5"
 }

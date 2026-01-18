@@ -6,13 +6,20 @@
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 5,
   "block": "F",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "I_final(125) \u2192 I_initial(163)",
+  "formula": "I_final(125) -> I_initial(163)",
   "verification_status": "NOT_TESTABLE",
-  "reason": "Omega point recovery is philosophical/teleological",
-  "note": "FOUNDATIONAL: All 125 info re-absorbable by 163. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-18T16:49:56.262326Z",
+  "reason": "Omega point recovery is philosophical/teleological. Represents ultimate information conservation: all observable (125) information flows back to hidden (163) sector at cosmological endpoint.",
+  "note": "FOUNDATIONAL: All 125 info re-absorbable by 163. This is a framework assumption, not an empirical prediction. v22: Information flow consistent with 12-pair bridge bidirectional structure.",
+  "v22_architecture": {
+    "chi_eff": 72,
+    "chi_eff_total": 144,
+    "n_pairs": 12,
+    "bridge_config": "(2,0)",
+    "seal_format": "v22-12PAIR-Bridge12x(2,0)"
+  },
+  "timestamp": "2026-01-19T00:00:00.000000Z",
   "hash": "cf577585a6dfc3c3"
 }

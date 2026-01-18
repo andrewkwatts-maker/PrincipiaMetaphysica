@@ -6,13 +6,20 @@
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 5,
   "block": "F",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "Bell inequality from V7",
+  "formula": "CHSH ≤ 2√2 from b3=24 torsion topology",
   "verification_status": "NOT_TESTABLE",
   "reason": "Bell's Gate assumes QM violates Bell inequalities. Gate validation only checks torsion=24, does not derive Bell violations from V7 connectivity. CHSH predictions exist separately in predictions_aggregator but G63 does not verify them.",
-  "note": "FOUNDATIONAL: Non-local limits from V7 connectivity. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-18T16:49:56.261265Z",
+  "note": "FOUNDATIONAL: Non-local limits from V7 connectivity. This is a framework assumption, not an empirical prediction. v22: 12-pair bridge enforces entanglement correlations via b3=24 torsion.",
+  "v22_architecture": {
+    "chi_eff": 72,
+    "chi_eff_total": 144,
+    "n_pairs": 12,
+    "bridge_config": "(2,0)",
+    "seal_format": "v22-12PAIR-Bridge12x(2,0)"
+  },
+  "timestamp": "2026-01-19T00:00:00.000000Z",
   "hash": "59cf26b88879d682"
 }

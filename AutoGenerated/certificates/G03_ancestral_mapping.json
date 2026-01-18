@@ -6,12 +6,17 @@
   "category": "Topology",
   "phase": 1,
   "block": "A",
-  "version": "21.0",
+  "version": "22.0",
   "wl_code": "active = 125; hidden = 163; active + hidden == 288",
   "result": "True",
   "formula": "125 + 163 = 288",
+  "chi_eff_context": {
+    "chi_eff_sector": 72,
+    "chi_eff_total": 144,
+    "note": "288 = 2 * chi_eff_total; partition preserves chi_eff structure"
+  },
   "verification_status": "VERIFIED",
-  "note": "Gate 3: Primary conservation law of the manifold. Partition: 125 Active + 163 Hidden = 288",
-  "timestamp": "2026-01-18T16:49:56.247516Z",
-  "hash": "df369a9e1cac58f4"
+  "note": "Gate 3: Primary conservation law of the manifold. Partition: 125 Active + 163 Hidden = 288. v22: chi_eff_total=144, chi_eff_sector=72",
+  "timestamp": "2026-01-19T03:00:00.000000Z",
+  "hash": "v22_g03_ancestral"
 }

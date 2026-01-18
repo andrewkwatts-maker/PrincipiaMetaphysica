@@ -6,12 +6,19 @@
   "category": "Phase Transitions",
   "phase": 5,
   "block": "F",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "renormalization_group_runner.py + higgs_derivations.py",
   "result": "Force separation verified via RG running",
-  "formula": "T_c from geometry",
+  "formula": "T_c from geometry; VEV = 246.37 GeV from G2",
   "verification_status": "VERIFIED",
-  "note": "Gate 67: Electroweak symmetry breaking derived from G2 geometry: (1) EWSB from Higgs potential minimization in higgs_derivations.py, (2) Force separation verified via 3-loop RG running from M_GUT to M_Z in renormalization_group_runner.py, (3) Higgs VEV v=246 GeV from G2 manifold. All three gauge couplings match PDG 2024 at M_Z.. Force freezing at geometric nodes",
-  "timestamp": "2026-01-18T16:49:56.262122Z",
+  "note": "Gate 67: Electroweak symmetry breaking derived from G2 geometry: (1) EWSB from Higgs potential minimization in higgs_derivations.py, (2) Force separation verified via 3-loop RG running from M_GUT to M_Z in renormalization_group_runner.py, (3) Higgs VEV v=246 GeV from G2 manifold. All three gauge couplings match PDG 2024 at M_Z. v22: chi_eff=72 per shadow in RG evolution.",
+  "v22_architecture": {
+    "chi_eff": 72,
+    "chi_eff_total": 144,
+    "n_pairs": 12,
+    "bridge_config": "(2,0)",
+    "seal_format": "v22-12PAIR-Bridge12x(2,0)"
+  },
+  "timestamp": "2026-01-19T00:00:00.000000Z",
   "hash": "b833ed79cb00875f"
 }

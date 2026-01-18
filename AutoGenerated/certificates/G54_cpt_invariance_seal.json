@@ -6,13 +6,14 @@
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 4,
   "block": "E",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "CPT|\u03c8\u27e9 = |\u03c8\u27e9",
+  "formula": "CPT|psi> = |psi>",
   "verification_status": "NOT_TESTABLE",
   "reason": "CPT invariance is fundamental symmetry assumption",
-  "note": "FOUNDATIONAL: C+P+T reversal = identical state. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-18T16:49:56.258992Z",
+  "chi_eff_usage": "None (foundational QFT axiom)",
+  "note": "FOUNDATIONAL: C+P+T reversal = identical state. v22.0-12PAIR: CPT theorem holds in each (11,1) Lorentzian shadow. The 12x(2,0) Euclidean bridges are CPT-even (signature (2,0) has no time). Global CPT emerges from local shadow CPT x bridge parity. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-19T10:30:00.000000Z",
   "hash": "98b10e216e039e39"
 }

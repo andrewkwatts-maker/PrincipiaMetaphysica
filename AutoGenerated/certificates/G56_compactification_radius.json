@@ -6,12 +6,13 @@
   "category": "Extra Dimensions",
   "phase": 5,
   "block": "F",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "R_c = 1/M_KK; M_KK = M_Pl/(b3 * k_gimel^2); N[M_KK/1000, 4]",
   "result": "M_KK ~ 5 TeV (R ~ 2e-4 GeV^-1)",
-  "formula": "R_7 \u223c l_P",
+  "formula": "R_7 ~ l_P",
   "verification_status": "VERIFIED",
-  "note": "Gate 56: Compactification radius derived from G2 manifold geometry: m_KK = M_Pl/(b3 * k_gimel^2) ~ 4.1-5.0 TeV. R_shared = 1/M_KK ~ 2e-4 GeV^-1 from TCS topology. LHC bound: > 3.5 TeV (ATLAS/CMS). See geometric_anchors_v16_1.py and config.py SharedDimensionsParameters.. 7 extra dimensions at Planck scale",
-  "timestamp": "2026-01-18T16:49:56.259469Z",
+  "chi_eff_usage": "None (uses b3 and k_gimel geometric factors)",
+  "note": "Gate 56: Compactification radius derived from G2 manifold geometry: m_KK = M_Pl/(b3 * k_gimel^2) ~ 4.1-5.0 TeV. R_shared = 1/M_KK ~ 2e-4 GeV^-1 from TCS topology. v22.0-12PAIR: The 12x(2,0) bridges have characteristic scale R_bridge ~ l_P * sqrt(b3) = l_P * sqrt(24). LHC bound: > 3.5 TeV (ATLAS/CMS). See geometric_anchors_v16_1.py and config.py SharedDimensionsParameters. 7 extra dimensions at Planck scale",
+  "timestamp": "2026-01-19T10:30:00.000000Z",
   "hash": "ec186e408d1f9995"
 }
