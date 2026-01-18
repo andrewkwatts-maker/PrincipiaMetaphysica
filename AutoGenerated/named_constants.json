@@ -1,9 +1,9 @@
 {
   "version": "22.0-12PAIR",
-  "timestamp": "2026-01-19T03:44:31.733028Z",
-  "session_id": "PM20260119034431",
+  "timestamp": "2026-01-19T08:42:21.611390Z",
+  "session_id": "PM20260119084221",
   "volatility": {
-    "generated_at": "2026-01-19T03:44:31.733028Z",
+    "generated_at": "2026-01-19T08:42:21.611390Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "22.0-12PAIR",
@@ -231,7 +231,7 @@
     "horos": {
       "symbol": "horos",
       "latex": "\\text{Horos}",
-      "value": 26,
+      "value": 25,
       "formula": "D_bulk = 26 (dimensional boundary)",
       "gnostic_name": "The Horos",
       "gnostic_role": "The Limit; boundary of 26D action frame",
@@ -1527,7 +1527,7 @@
     "c04_bulk_stability": {
       "formula": "R_s = LOGIC_CLOSURE / BULK_PRESSURE = 288/163",
       "description": "Integer-Lock Strategy: JC Constant (153) stabilizes Bulk Pressure (163)",
-      "bulk_stability_factor": "1.766871165644171779141104294478527607361963190184049079754601227",
+      "bulk_stability_factor": "1.7668711656441717791411042944785276073619631901840",
       "tensioning": {
         "logic_closure": 288,
         "bulk_pressure": 163,
