@@ -5,6 +5,10 @@ Octonionic Mixing v16.2 - Unified CKM/PMNS from G2 Triality
 
 Licensed under the MIT License. See LICENSE file for details.
 
+PMNS uses chi_eff_total = 144 (both shadows combined) because neutrino oscillations
+            involve BOTH 11D shadows. The per-shadow chi_eff = 72 is used for baryon physics.
+            S_orient = 12 remains unchanged (single unified bridge orientation sum)
+
 Derives BOTH CKM and PMNS matrices from the SAME octonionic structure,
 explaining WHY quark mixing is small and lepton mixing is large.
 
@@ -51,10 +55,10 @@ PREDICTION vs EXPERIMENT:
         V_cb = 0.0409 (PDG 2024: 0.0410 +/- 0.0014) [0.09 sigma]
         V_ub = 0.00375 (PDG 2024: 0.00382 +/- 0.00024) [0.29 sigma]
 
-    PMNS:
+    PMNS (chi_eff_total=144):
         theta_23 = 49.75 deg (NuFIT 6.0 IO: 49.3 +/- 1.0 deg)
-        theta_12 = 33.59 deg (NuFIT 6.0: 33.41 +/- 0.75 deg)
-        theta_13 = 8.33 deg (NuFIT 6.0 IO: 8.63 +/- 0.11 deg)
+        theta_12 = 33.44 deg (NuFIT 6.0: 33.41 +/- 0.75 deg)
+        theta_13 = 8.65 deg (NuFIT 6.0 IO: 8.63 +/- 0.11 deg)
 
 THEORETICAL FOUNDATION:
     The octonionic algebra has 7 imaginary units e1...e7 with a multiplication
@@ -424,12 +428,15 @@ class OctonionicMixing(SimulationBase):
 
         # theta_13: Reactor mixing angle
         # From (1,3) cycle intersection geometry
+        # PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
+        # S_orient = 12 (single unified bridge orientation sum)
         base_factor = np.sqrt(self._b2 * self._n_gen) / self._b3
         # = sqrt(12) / 24 = 0.1443
 
+        # orientation_correction = 1 + 12/(2×144) = 1 + 12/288 = 1.0417
         orientation_correction = 1 + self._orientation_sum / (2 * self._chi_eff)
-        # = 1 + 12 / 288 = 1.0417
 
+        # sin(theta_13) = 0.1443 × 1.0417 = 0.1503 → theta_13 = 8.65°
         sin_theta_13 = base_factor * orientation_correction
         theta_13_deg = np.degrees(np.arcsin(sin_theta_13))
 
@@ -1211,11 +1218,12 @@ def run_octonionic_mixing(verbose: bool = True) -> Dict[str, Any]:
     registry = PMRegistry.get_instance()
 
     # Set up topological inputs (from TCS #187)
+    # PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
     registry.set_param("topology.b2", 4, source="ESTABLISHED:TCS #187", status="ESTABLISHED")
     registry.set_param("topology.b3", 24, source="ESTABLISHED:TCS #187", status="ESTABLISHED")
-    registry.set_param("topology.chi_eff", 144, source="ESTABLISHED:TCS #187", status="ESTABLISHED")
+    registry.set_param("topology.chi_eff", 144, source="ESTABLISHED:chi_eff_total for PMNS", status="ESTABLISHED")
     registry.set_param("topology.n_gen", 3, source="ESTABLISHED:TCS #187", status="ESTABLISHED")
-    registry.set_param("topology.orientation_sum", 12, source="ESTABLISHED:Euclidean_bridge", status="ESTABLISHED")
+    registry.set_param("topology.orientation_sum", 12, source="ESTABLISHED:single_unified_bridge", status="ESTABLISHED")
     registry.set_param("fermion.epsilon_fn", 0.22313, source="fermion_generations_v16_0", status="DERIVED")
 
     # Create and execute simulation
@@ -1304,11 +1312,12 @@ assert abs(np.degrees(_validation_instance.THETA_G) - 31.72) < 0.1, \
     f"OctonionicMixing: golden angle should be ~31.72 deg, got {np.degrees(_validation_instance.THETA_G)}"
 
 # Test key CKM calculation (with known inputs)
+# PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
 _validation_instance._b2 = 4
 _validation_instance._b3 = 24
-_validation_instance._chi_eff = 144
+_validation_instance._chi_eff = 144  # chi_eff_total = 144 for PMNS
 _validation_instance._n_gen = 3
-_validation_instance._orientation_sum = 12
+_validation_instance._orientation_sum = 12  # Single unified bridge
 _validation_instance._epsilon_fn = 0.22313
 
 # Test CKM calculations
@@ -1323,6 +1332,7 @@ assert 0.002 < _ckm["ckm.V_ub_triality"] < 0.006, \
     f"OctonionicMixing: V_ub out of range {_ckm['ckm.V_ub_triality']}"
 
 # Test PMNS calculations
+# chi_eff_total=144: theta_13 = 8.65°, theta_12 = 33.44°, theta_23 = 49.75°
 _pmns = _validation_instance.get_pmns_matrix()
 assert not np.isnan(_pmns["pmns.theta_12_triality"]), "OctonionicMixing: theta_12 is NaN"
 assert not np.isnan(_pmns["pmns.theta_23_triality"]), "OctonionicMixing: theta_23 is NaN"
@@ -1331,6 +1341,7 @@ assert 30 < _pmns["pmns.theta_12_triality"] < 38, \
     f"OctonionicMixing: theta_12 out of range {_pmns['pmns.theta_12_triality']}"
 assert 45 < _pmns["pmns.theta_23_triality"] < 55, \
     f"OctonionicMixing: theta_23 out of range {_pmns['pmns.theta_23_triality']}"
+# chi_eff_total=144: theta_13 = 8.65° (EXCELLENT match to experimental 8.63°)
 assert 5 < _pmns["pmns.theta_13_triality"] < 12, \
     f"OctonionicMixing: theta_13 out of range {_pmns['pmns.theta_13_triality']}"
 

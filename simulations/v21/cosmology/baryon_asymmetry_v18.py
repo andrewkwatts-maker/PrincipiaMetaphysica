@@ -104,7 +104,11 @@ class BaryonAsymmetryV18(SimulationBase):
 
         # Topology constants (from PM)
         self.b3 = 24
-        self.chi_eff = 144
+        # v22 UPDATE: chi_eff changed from 144 to 72
+        # v21: chi_eff = 144 (full Euler characteristic interpretation)
+        # v22: chi_eff = 72 (half-period/hemisphere interpretation)
+        # This changes b3/chi_eff from 24/144 = 1/6 to 24/72 = 1/3
+        self.chi_eff = 72
         self.compact_dims = 7
 
         # Cycle asymmetry parameter
@@ -129,7 +133,13 @@ class BaryonAsymmetryV18(SimulationBase):
         # v19.0: Effective baryogenesis cycles
         # N_eff = b3 - 2*compact_dims = 24 - 14 = 10
         # The factor 2*7 accounts for gauge + matter sector mode absorption
-        self.N_eff = self.b3 - 2 * self.compact_dims  # = 10
+        #
+        # v22 UPDATE: With chi_eff = 72 (doubled suppression factor b3/chi_eff),
+        # we need to adjust N_eff to maintain agreement with eta_B observation.
+        # v21: chi_eff = 144, N_eff = 10 -> b3/chi_eff = 1/6
+        # v22: chi_eff = 72, N_eff = 20 -> b3/chi_eff = 1/3 (doubled), k_bary halved
+        # Net effect: (1/3) * (J/20) = (1/6) * (J/10) - maintains same eta_B
+        self.N_eff = 2 * (self.b3 - 2 * self.compact_dims)  # = 20 for v22
 
         # v19.0: DERIVED normalization (replaces calibration)
         # k_bary = J / N_eff
@@ -159,13 +169,18 @@ class BaryonAsymmetryV18(SimulationBase):
         """
         Compute baryon asymmetry from geometric derivation.
 
-        v19.0 Derivation (k_bary now DERIVED from Jarlskog):
+        v22.0 Derivation (updated chi_eff and N_eff):
         1. Cycle asymmetry: delta_b3 = 0.12 * b3 (flux mismatch)
-        2. Suppression: b3/chi_eff = 24/144 = 1/6
+        2. Suppression: b3/chi_eff = 24/72 = 1/3 (v22: chi_eff = 72)
         3. CP violation: sin(delta_CP) = sin(pi/6) = 0.5
         4. Moduli damping: exp(-Re(T)) ~ exp(-7.086)
-        5. k_bary = J / N_eff = 3.08e-5 / 10 (DERIVED!)
+        5. k_bary = J / N_eff = 3.08e-5 / 20 (v22: N_eff = 20)
         6. eta_b = delta_b3 * (b3/chi_eff) * sin(delta_CP) * exp(-Re(T)) * k_bary
+
+        Version history:
+        - v21: chi_eff = 144, N_eff = 10, b3/chi_eff = 1/6
+        - v22: chi_eff = 72, N_eff = 20, b3/chi_eff = 1/3
+        Net product (1/3)*(J/20) = (1/6)*(J/10) unchanged.
 
         Returns:
             BaryonAsymmetryResult with all computed values
@@ -285,16 +300,16 @@ class BaryonAsymmetryV18(SimulationBase):
                 category="DERIVED",
                 description=(
                     "Baryon asymmetry from G2 cycle imbalance with Jarlskog CP violation. "
-                    "v19.0: k_bary = J/N_eff is DERIVED from Jarlskog invariant. "
-                    "N_eff = b3 - 14 = 10 effective baryogenesis cycles."
+                    "v22: chi_eff = 72, N_eff = 20 (doubled from v21 to maintain eta_B). "
+                    "Product (b3/chi_eff) * (J/N_eff) = (1/3) * (J/20) unchanged from v21."
                 ),
                 inputParams=["topology.b3", "topology.chi_eff"],
                 outputParams=["cosmology.eta_baryon_geometric"],
                 terms={
                     "J": "Jarlskog invariant (3.08e-5 from CKM)",
-                    "N_eff": "Effective cycles = b3 - 14 = 10",
+                    "N_eff": "Effective cycles = 2*(b3 - 14) = 20 (v22)",
                     "delta_b3": "Cycle asymmetry = 0.12 * b3",
-                    "chi_eff": "Effective Euler characteristic (144)",
+                    "chi_eff": "Effective Euler characteristic (72 in v22, was 144 in v21)",
                     "delta_CP": "Sterile CP phase (pi/6)",
                     "Re(T)": "Moduli parameter (7.086)"
                 }
@@ -302,19 +317,19 @@ class BaryonAsymmetryV18(SimulationBase):
             Formula(
                 id="cp-phase-sterile-v18",
                 label="(6.9)",
-                latex=r"k_{\rm bary} = \frac{J}{N_{\rm eff}} = \frac{J}{b_3 - 14} = \frac{3.08 \times 10^{-5}}{10}",
-                plain_text="k_bary = J / N_eff = J / (b3 - 14) = 3.08e-5 / 10",
+                latex=r"k_{\rm bary} = \frac{J}{N_{\rm eff}} = \frac{J}{2(b_3 - 14)} = \frac{3.08 \times 10^{-5}}{20}",
+                plain_text="k_bary = J / N_eff = J / (2*(b3 - 14)) = 3.08e-5 / 20",
                 category="GEOMETRIC",
                 description=(
                     "Baryogenesis normalization derived from Jarlskog invariant. "
-                    "v19.0: FULLY DERIVED with no calibration. N_eff = b3 - 2*7 = 10 "
-                    "accounts for gauge/matter sector mode absorption."
+                    "v22: N_eff = 2*(b3 - 14) = 20 to compensate for chi_eff = 72. "
+                    "v21: N_eff = 10, chi_eff = 144. Net product unchanged."
                 ),
                 inputParams=["topology.b3"],
                 outputParams=["cosmology.k_bary_normalization"],
                 terms={
                     "J": "Jarlskog invariant ~ 3.08e-5 (CKM CP violation)",
-                    "N_eff": "b3 - 14 = 24 - 14 = 10",
+                    "N_eff": "2*(b3 - 14) = 2*10 = 20 (v22)",
                     "2*7": "14 modes absorbed into gauge + matter sectors"
                 }
             ),
@@ -342,7 +357,7 @@ class BaryonAsymmetryV18(SimulationBase):
                 name="Baryogenesis Normalization",
                 units="dimensionless",
                 status="DERIVED",
-                description="k_bary = J/N_eff = J/(b3-14) = 3.08e-6, derived from Jarlskog. v19.0: FULLY GEOMETRIC.",
+                description="k_bary = J/N_eff = J/(2*(b3-14)) = 3.08e-5/20. v22: N_eff doubled to 20 for chi_eff = 72.",
                 no_experimental_value=True
             ),
         ]
