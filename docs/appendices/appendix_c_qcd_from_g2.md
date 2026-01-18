@@ -126,7 +126,7 @@ The v21 framework introduces a dual-shadow structure with two 11D shadow univers
 
 1. **SU(3) per shadow**: Each shadow universe has its own G2 holonomy manifold, and the SU(3) gauge symmetry emerges independently from the associative 3-cycles in each shadow.
 
-2. **Topology preserved**: The G2 branching $14_{G2} \rightarrow 8_{SU(3)} + 3 + \bar{3}$ depends only on the G2 structure, not on whether the bulk has signature (24,2) or (24,1). The G2 manifold is always Riemannian.
+2. **Topology preserved**: The G2 branching $14_{G2} \rightarrow 8_{SU(3)} + 3 + \bar{3}$ depends only on the G2 structure, not on the bulk signature. The v21+ framework uses (24,1); the G2 manifold itself is always Riemannian.
 
 3. **8 gluons per shadow**: The number of gluons (8) comes from dim(adj SU(3)) = $n^2 - 1 = 8$, a purely group-theoretic result independent of bulk signature.
 

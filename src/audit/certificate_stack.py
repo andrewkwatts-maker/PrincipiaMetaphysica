@@ -29,7 +29,7 @@ v22.0 EXTENDED GATES:
     C-DIST-OR: Distributed OR verification (R_total = tensor R_perp_i)
 
 THE THREE VAULTS:
-    Vault I:   Ancestral (C01-C14) - 26D and SO(24) roots
+    Vault I:   Ancestral (C01-C14) - 25D and SO(24) roots
     Vault II:  Torsion (C15-C28) - 24 pins and 4-pattern
     Vault III: Residue (C29-C42) - 125 particles and Omega End
 

@@ -639,18 +639,18 @@ class FormulasRegistry:
         # DIMENSIONAL REDUCTION CHAIN (v20.2 - Gemini peer-reviewed 2026-01-14)
         # =======================================================================
         # 5-LEVEL SEMANTIC NAMING CONVENTION (v21.0 - Dual-Shadow with Euclidean Bridge):
-        #   - ANCESTRAL: Original 26D bosonic frame (Level 0) - Signature (24,1)
+        #   - ANCESTRAL: Original 25D bosonic frame (Level 0) - Signature (24,1)
         #   - SHADOW:    Dual 11D shadows + 2D bridge (Level 1) - 2×(11,1) + (2,0)
         #   - G2:        7D G2 holonomy manifold per shadow (Level 2) - Signature (7,0) RIEMANNIAN
         #   - EXTERNAL:  6D external/observable bulk (Level 3) - Signature (5,1)
         #   - VISIBLE:   4D observable spacetime (Level 4) - Signature (3,1)
         #
-        # v21 Chain: 26D(24,1) → [Dual Shadow] → 2×(11,1) + Bridge(2,0) → [G2] → 4D(3,1)
+        # v21 Chain: 25D(24,1) → [Dual Shadow] → 2×(11,1) + Bridge(2,0) → [G2] → 4D(3,1)
         # Note: Replaces Sp(2,R) two-time physics with Euclidean bridge mechanism
         #
         # LEVEL 0: ANCESTRAL (Bosonic String Theory - starting point)
-        # The 26D ancestral frame from which all physics descends
-        self._D_ancestral_total = 26      # Total ancestral dimensions
+        # The 25D ancestral frame from which all physics descends
+        self._D_ancestral_total = 25      # Total ancestral dimensions (24+1)
         self._D_ancestral_space = 24      # Ancestral spatial dimensions
         self._D_ancestral_time = 1        # v21: Unified time (eliminates ghosts/CTCs)
         # Signature: (24, 1) - v21 unified time framework (replaces Bars' 2T-physics)
@@ -661,7 +661,7 @@ class FormulasRegistry:
         self._D_time_1_unified = self._D_ancestral_time  # v21: Unified time
 
         # LEVEL 1: SHADOW (v21: Dual Shadow + Euclidean Bridge)
-        # v21: 26D descends into dual shadows connected by 2D Euclidean bridge
+        # v21: 25D descends into dual shadows connected by 2D Euclidean bridge
         # Each shadow has (11,1) signature; bridge has (2,0) positive-definite
         self._D_shadow_total = 13         # Total shadow spacetime dimensions (legacy)
         self._D_shadow_space = 12         # Shadow spatial dimensions (legacy)
@@ -726,7 +726,7 @@ class FormulasRegistry:
         # =======================================================================
         # v21 refactors from (24,2) two-time to (24,1) unified time:
         #
-        # NEW CHAIN: 26D(24,1) -> 2xShadow(11,1) + Bridge(2,0) -> 2xG2(7,0) -> 4D
+        # NEW CHAIN: 25D(24,1) -> 2xShadow(11,1) + Bridge(2,0) -> 2xG2(7,0) -> 4D
         #
         # Key differences from v16/v20 (24,2) framework:
         #   - Unified time (24,1): Eliminates ghosts/CTCs without Sp(2,R)
@@ -736,7 +736,7 @@ class FormulasRegistry:
         #   - Breathing DE: rho_breath = |T_normal - R_perp T_mirror|
         #
         # v21 Dimensional Structure:
-        self._D_v21_bulk_total = 26           # Total bulk dimensions
+        self._D_v21_bulk_total = 25           # Total bulk dimensions (24+1)
         self._D_v21_bulk_space = 24           # Bulk spacelike dimensions
         self._D_v21_bulk_time = 1             # Unified time (no ghosts/CTCs)
         self._D_v21_bridge_total = 2          # Euclidean bridge dimensions
@@ -1033,13 +1033,13 @@ class FormulasRegistry:
     # DIMENSIONAL REDUCTION CHAIN PROPERTIES (v20.2)
     # =========================================================================
     # 5-level chain: ANCESTRAL → SHADOW → G2 → EXTERNAL → VISIBLE
-    # v21 Chain: 26D(24,1) → [bridge] → 2×12D(11,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+    # v21 Chain: 25D(24,1) → [bridge] → 2×12D(11,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
     # Legacy numeric names preserved for backward compatibility
 
-    # ----- LEVEL 0: ANCESTRAL (26D Bosonic) -----
+    # ----- LEVEL 0: ANCESTRAL (25D Bosonic) -----
     @property
     def D_ancestral_total(self) -> int:
-        """Level 0 (ANCESTRAL): Total 26D bosonic string dimensions."""
+        """Level 0 (ANCESTRAL): Total 25D bosonic string dimensions (24+1)."""
         return self._D_ancestral_total
 
     @property

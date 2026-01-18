@@ -253,7 +253,7 @@ The formula (B.15) shows $\alpha_{em}$ is determined by:
 
 **Key Result**: QED emergence is identical in both v20 and v21 frameworks.
 
-The v21 dual-shadow structure changes the bulk signature from (24,2) to (24,1), but the QED Lagrangian derivation is **signature-independent** because:
+The v21+ dual-shadow structure uses bulk signature (24,1) (replacing the earlier (24,2)), but the QED Lagrangian derivation is **signature-independent** because:
 
 1. **U(1) gauge structure depends on G2 topology**: The emergence of the U(1) gauge field via Kaluza-Klein reduction depends on the G2 manifold structure, specifically the third Betti number $b_3 = 24$, not the bulk signature.
 

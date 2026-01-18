@@ -75,7 +75,7 @@ Result: Only left-handed fermions couple to SU(2)_L (parity violation).
 
 **Key Result**: Electroweak physics is signature-independent.
 
-The v21 dual-shadow structure changes the bulk from (24,2) to two shadow universes (11,1) connected by a Euclidean bridge (2,0). The electroweak sector is unaffected because:
+The v21+ dual-shadow structure uses bulk signature (24,1), with two shadow universes connected by a Euclidean bridge. The electroweak sector is unaffected because:
 
 1. **SU(2)_L from co-associative 4-cycles**: The weak isospin gauge symmetry emerges from the co-associative structure of the G2 manifold, which is purely 7-dimensional and Riemannian (signature 7,0).
 

@@ -126,17 +126,17 @@ def generate_interactive_html(formula: Dict[str, Any]) -> Optional[str]:
 
 def generate_master_action_html() -> str:
     """
-    Generate specific HTML for the 26D Pneuma Master Action.
+    Generate specific HTML for the 25D Pneuma Master Action.
     This is hand-crafted for optimal display.
     """
-    return '''<span class="formula-var" data-term="S">S<span class="var-tooltip"><span class="var-name">S - Action</span><span class="var-description">26D Pneuma master action functional</span></span></span>
+    return '''<span class="formula-var" data-term="S">S<span class="var-tooltip"><span class="var-name">S - Action</span><span class="var-description">25D Pneuma master action functional</span></span></span>
 <span class="formula-op"> = </span>
-<span class="formula-var" data-term="integral">&int;d<sup>26</sup>X<span class="var-tooltip"><span class="var-name">&int;d<sup>26</sup>X - Integration</span><span class="var-description">Integration over 26-dimensional spacetime with signature (24,2)</span></span></span>
+<span class="formula-var" data-term="integral">&int;d<sup>25</sup>X<span class="var-tooltip"><span class="var-name">&int;d<sup>25</sup>X - Integration</span><span class="var-description">Integration over 25-dimensional spacetime with signature (24,1)</span></span></span>
 <span class="formula-var" data-term="sqrt-G">&radic;(-G)<span class="var-tooltip"><span class="var-name">&radic;(-G) - Metric Determinant</span><span class="var-description">Square root of negative metric determinant for covariant volume element</span></span></span>
 <span class="formula-op">[</span>
-<span class="formula-var highlight" data-term="R">R<span class="var-tooltip"><span class="var-name">R - Ricci Scalar</span><span class="var-description">26D Einstein-Hilbert scalar curvature</span><span class="var-units">Length<sup>-2</sup></span></span></span>
+<span class="formula-var highlight" data-term="R">R<span class="var-tooltip"><span class="var-name">R - Ricci Scalar</span><span class="var-description">25D Einstein-Hilbert scalar curvature</span><span class="var-units">Length<sup>-2</sup></span></span></span>
 <span class="formula-op"> + </span>
-<span class="formula-var highlight" data-term="Psi_P"><span style="text-decoration:overline">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m)&Psi;<sub>P</sub><span class="var-tooltip"><span class="var-name">&Psi;<sub>P</sub> - Pneuma Spinor</span><span class="var-description">8192-component Pneuma spinor from Cl(24,2) Clifford algebra. Source of all matter.</span><span class="var-units">Mass<sup>13</sup></span></span></span>
+<span class="formula-var highlight" data-term="Psi_P"><span style="text-decoration:overline">&Psi;</span><sub>P</sub>(i&Gamma;<sup>M</sup>D<sub>M</sub> - m)&Psi;<sub>P</sub><span class="var-tooltip"><span class="var-name">&Psi;<sub>P</sub> - Pneuma Spinor</span><span class="var-description">4096-component Pneuma spinor from Cl(24,1) Clifford algebra. Source of all matter.</span><span class="var-units">Mass<sup>12.5</sup></span></span></span>
 <span class="formula-op"> + </span>
 <span class="formula-var" data-term="lambda">&lambda;(<span style="text-decoration:overline">&Psi;</span><sub>P</sub>&Psi;<sub>P</sub>)<sup>2</sup><span class="var-tooltip"><span class="var-name">&lambda; - Quartic Term</span><span class="var-description">Quartic self-interaction for fermion condensation and mass generation</span></span></span>
 <span class="formula-op"> + </span>

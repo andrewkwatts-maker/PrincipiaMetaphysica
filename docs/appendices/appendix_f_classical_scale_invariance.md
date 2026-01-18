@@ -147,17 +147,19 @@ The hierarchy is traded for coupling fine-tuning.
 
 ---
 
-## F.6 Does PM's 26D Action Have Scale Invariance?
+## F.6 Does PM's 25D Action Have Scale Invariance?
 
 ### F.6.1 The PM Master Action
 
-From Appendix A (appendix_a_sp2r_gauge_fixing.md), the 26D Pneuma action is:
+**Note**: The v21+ framework uses 25D/(24,1) signature with a Euclidean bridge model. The analysis below applies similarly; the key point is that the action contains explicit mass scales regardless of signature.
 
-$$S_{26} = \int d^{26}x \sqrt{-g_{26}} \left[ \frac{M_*^{24}}{2} R_{26} + \mathcal{L}_{gauge} + \mathcal{L}_{matter} + \mathcal{L}_{Sp(2,R)} \right]$$ **(F.11)**
+From the PM master action structure:
+
+$$S_{25} = \int d^{25}x \sqrt{-g_{25}} \left[ \frac{M_*^{23}}{2} R_{25} + \mathcal{L}_{gauge} + \mathcal{L}_{matter} + \mathcal{L}_{bridge} \right]$$ **(F.11)**
 
 ### F.6.2 Analysis of Scale Invariance
 
-**Einstein-Hilbert term**: M_*^24 R_26
+**Einstein-Hilbert term**: M_*^23 R_25
 - Contains explicit mass scale M_*
 - **Not scale-invariant**
 
@@ -168,12 +170,12 @@ $$S_{26} = \int d^{26}x \sqrt{-g_{26}} \left[ \frac{M_*^{24}}{2} R_{26} + \mathc
 
 **Gauge sector**:
 - Yang-Mills is classically scale-invariant
-- F_MN F^MN has dimension 4 in 4D, dimension 26 in 26D
-- Requires M_*^22 prefactor for correct dimensions
+- F_MN F^MN has dimension 4 in 4D, dimension 25 in 25D
+- Requires M_*^21 prefactor for correct dimensions
 
 ### F.6.3 Verdict
 
-**The PM 26D action is NOT classically scale-invariant.**
+**The PM 25D/(24,1) action is NOT classically scale-invariant.**
 
 Key reasons:
 1. Gravity requires Planck mass M_*
@@ -248,16 +250,16 @@ None of these are currently derived from G2 topology.
 In extra dimensions, the Planck mass is related to the fundamental scale:
 $$M_{Pl}^2 = M_*^{D-2} \cdot \text{Vol}(X_{extra})$$ **(F.19)**
 
-For PM with D = 26:
-$$M_{Pl}^2 = M_*^{24} \cdot \text{Vol}(X_{22})$$ **(F.20)**
+For PM with D = 25 (v21+ framework):
+$$M_{Pl}^2 = M_*^{23} \cdot \text{Vol}(X_{21})$$ **(F.20)**
 
 ### F.8.2 Large Extra Dimensions (ADD)
 
 If the extra dimension volume is large:
-$$\text{Vol}(X_{22}) \sim R^{22}$$ **(F.21)**
+$$\text{Vol}(X_{21}) \sim R^{21}$$ **(F.21)**
 
 Then M_* can be much lower than M_Pl:
-$$M_* = M_{Pl}^{2/24} \cdot \text{Vol}^{-1/24}$$ **(F.22)**
+$$M_* = M_{Pl}^{2/23} \cdot \text{Vol}^{-1/23}$$ **(F.22)**
 
 For M_* ~ TeV, we need R ~ mm (ADD scenario).
 

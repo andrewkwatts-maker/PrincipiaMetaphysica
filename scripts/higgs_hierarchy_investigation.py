@@ -41,13 +41,13 @@ PROJECT_ROOT = Path(__file__).parent.parent
 # PM Context for all investigations
 PM_CONTEXT = """
 PRINCIPIA METAPHYSICA CONTEXT:
-- 26D bosonic string with signature (24,2)
-- Sp(2,R) gauge fixing: 26D -> 13D(12,1)
+- 25D bosonic frame with signature (24,1) [Euclidean bridge model]
+- Sp(2,R) gauge fixing: 25D -> 13D(12,1)
 - G2 holonomy compactification on 7-manifold
 - Key constants: b3=24, chi_eff=144, k_gimel=12.318
 - N=1 SUSY from G2 holonomy
 - Shadow sector: 163 degrees of freedom (vs 135 visible)
-- Dimensional chain: 26D -> 13D -> 7D -> 4D
+- Dimensional chain: 25D -> 13D -> 7D -> 4D
 
 THE PROBLEM:
 Higgs VEV v = 246.22 GeV, but M_Pl = 2.435 x 10^18 GeV
@@ -182,7 +182,7 @@ Provide mathematical analysis of clockwork in PM context."""
 
 Key questions:
 1. How does dimensional transmutation generate mass scales?
-2. Could PM's 26D action be classically scale-free at tree level?
+2. Could PM's 25D action be classically scale-free at tree level?
 3. How would both M_Pl and v emerge from quantum effects?
 4. What role does the conformal anomaly play?
 5. Is CSI compatible with gravity (which has intrinsic scale M_Pl)?

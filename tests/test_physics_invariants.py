@@ -240,7 +240,7 @@ def test_tzimtzum_fraction():
     """
     Tests that Tzimtzum Pressure uses the FRACTION 23/24, not a decimal.
 
-    The Tzimtzum is the membrane separating the 26D Bulk from our 4D Void.
+    The Tzimtzum is the membrane separating the 25D Bulk from our 4D Void.
     In the Principia, the fraction represents the logic (23 gates open,
     1 gate for the observer), whereas the decimal is just a shadow.
     """
@@ -278,7 +278,7 @@ def test_watts_constant_guard_rail():
     Tests that Watts Constant (Ω_W) remains exactly 1.0.
 
     The Watts Constant is the Observer Unity - it MUST equal exactly 1.0.
-    This is the fundamental invariant that ensures the 26D derivation
+    This is the fundamental invariant that ensures the 25D derivation
     remains self-consistent. It cannot be adjusted or "tuned".
 
     This is a GUARD RAIL - any deviation breaks the entire framework.

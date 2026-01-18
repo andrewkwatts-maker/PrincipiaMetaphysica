@@ -27,7 +27,9 @@ Where:
 The raw manifold attractor mechanism yields **414.2 GeV** - a value that appears to fail against experiment.
 
 ### The Scaling
-When the Higgs field is equipartitioned across the 4 primary branes (from Cl(24,2) Clifford algebra), it undergoes torsional relaxation via the Mirror Brane overlap.
+When the Higgs field is equipartitioned across the 4 primary branes (from Cl(24,1) Clifford algebra in the v21+ framework), it undergoes torsional relaxation via the Mirror Brane overlap.
+
+**Note**: The v21+ framework uses signature (24,1) with a Euclidean bridge model. The Clifford algebra dimension changes accordingly, but the scaling physics remains valid.
 
 ### The Proof
 
