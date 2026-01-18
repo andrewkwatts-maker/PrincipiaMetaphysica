@@ -1,5 +1,5 @@
 """
-Principia Metaphysica - Kaluza-Klein Reduction: GR and Gauge v17.2
+Principia Metaphysica - Kaluza-Klein Reduction: GR and Gauge v22.0
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
@@ -8,16 +8,26 @@ kinetic term from higher-dimensional Einstein-Hilbert action. Illustrates the me
 in Principia Metaphysica (dimensional descent via compactification, here simplified to
 5D circle for computability).
 
-The full 26D/13D case follows analogously but involves more indices and G2-invariant
-forms - no explicit metric exists for TCS G2 manifolds, so this is the feasible explicit
-validation.
+v22 KEY DIMENSIONAL CASCADE:
+=============================
+    Level 0: 26D (24,1) Ancestral bulk - UNIFIED TIME
+    Level 1: M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0}) - 12 PAIRS
+             24 spatial dimensions decompose into 12 × 2D Euclidean pairs
+    Level 2: Each pair bridges normal/mirror shadow (11,0) + (11,0)
+    Level 3: 7D (7,0) per shadow - G2 HOLONOMY (Riemannian)
+    Level 4: 4D (3,1) observable - SPACETIME
+
+The full 26D case uses 12 paired bridges (consciousness channels) with distributed
+OR Reduction: R_total = ⊗ᵢ₌₁¹² R_⊥_i. This script demonstrates the 5D toy model
+that validates the KK mechanism.
 
 This script:
-- Defines the 5D metric ansatz
+- Defines the 5D metric ansatz (illustrates mechanism)
 - Computes the 5D Ricci scalar symbolically
 - Reduces to 4D terms
 - Extracts the normalized gauge kinetic term
 - Validates against known KK results (gauge coupling and Planck scale relation)
+- Documents extension to v22 12-pair bridge system
 """
 
 import numpy as np
@@ -54,7 +64,13 @@ class KKReductionGRGauge:
     Kaluza-Klein reduction from 5D Einstein-Hilbert to 4D GR + U(1) gauge.
 
     This illustrates the mechanism used in Principia Metaphysica for the full
-    26D -> 13D -> 7D -> 4D dimensional descent via G2 compactification.
+    26D -> 12-pair bridges -> 4D dimensional descent via G2 compactification.
+
+    v22 Extension (12-Pair Bridge System):
+    - 24 spatial dimensions = 12 × 2D Euclidean bridge pairs
+    - Each pair is a consciousness channel with R_⊥_i operator
+    - Distributed OR: R_total = ⊗ᵢ₌₁¹² R_⊥_i (tensor product)
+    - Aggregate breathing: ρ_breath = Σᵢ ρ_i
 
     Standard 5D circle compactification demonstrates:
     1. Gravity: From higher-D R, scaled by volume -> 4D Einstein-Hilbert
@@ -68,6 +84,10 @@ class KKReductionGRGauge:
 
         # Higher-D scale (in theory this comes from G2 spectral residues)
         self.fundamental_scale = Decimal('1.0')  # M_* in natural units
+
+        # v22 parameters
+        self.n_bridge_pairs = 12  # Number of consciousness channel pairs
+        self.d_per_pair = 2  # Dimensions per bridge pair (2,0)
 
     def compute_metric_ansatz(self) -> Dict[str, Any]:
         """
@@ -180,17 +200,36 @@ class KKReductionGRGauge:
 
         return validations
 
+    def get_v22_extension(self) -> Dict[str, Any]:
+        """
+        Return v22 12-pair bridge extension details.
+
+        The v22 framework generalizes the single 5D circle to 12 paired bridges,
+        each a (2,0) Euclidean torus acting as a consciousness channel.
+        """
+        return {
+            'structure': 'M^{24,1} = T^1 ×_fiber (⊕_{i=1}^{12} B_i^{2,0})',
+            'n_pairs': self.n_bridge_pairs,
+            'd_per_pair': self.d_per_pair,
+            'd_total_spatial': self.n_bridge_pairs * self.d_per_pair,  # 24
+            'distributed_or': 'R_total = ⊗ᵢ₌₁¹² R_⊥_i',
+            'per_pair_property': 'R_⊥_i² = -I (Mobius double-cover)',
+            'aggregate_breathing': 'ρ_breath = Σᵢ ρ_i',
+            'consciousness_channels': '12 paired bridges enable cross-shadow OR',
+            'dim_counting': '1 time + 12×2 spatial = 25 manifest coords (26D)',
+        }
+
     def run_demonstration(self) -> Dict[str, Any]:
         """
         Run full demonstration with output.
         """
         print("=" * 60)
-        print("Kaluza-Klein Reduction: 5D -> 4D GR + U(1)")
+        print("Kaluza-Klein Reduction: 5D -> 4D GR + U(1) (v22)")
         print("=" * 60)
 
         # Metric ansatz
         ansatz = self.compute_metric_ansatz()
-        print("\n1. Metric Ansatz:")
+        print("\n1. Metric Ansatz (5D toy model):")
         for key, value in ansatz.items():
             print(f"   {key}: {value}")
 
@@ -214,16 +253,25 @@ class KKReductionGRGauge:
         for name, val in validations.items():
             print(f"   {name}: validated = {val.get('validated', val.get('matches_literature', False))}")
 
+        # v22 Extension
+        v22_ext = self.get_v22_extension()
+        print("\n5. v22 12-Pair Bridge Extension:")
+        print(f"   Structure: {v22_ext['structure']}")
+        print(f"   Pairs: {v22_ext['n_pairs']} × (2,0) = {v22_ext['d_total_spatial']} spatial")
+        print(f"   Distributed OR: {v22_ext['distributed_or']}")
+        print(f"   Aggregate breathing: {v22_ext['aggregate_breathing']}")
+
         print("\n" + "=" * 60)
-        print("In Principia Metaphysica: Extend to G2 for non-Abelian SM groups")
-        print("Coefficients locked by spectral residues, yielding alpha, g_s, g_w")
+        print("v22 Principia Metaphysica: 12 bridge pairs as consciousness channels")
+        print("Distributed OR: R_total = ⊗₁₂ R_⊥_i, aggregate breathing ρ = Σᵢ ρ_i")
         print("=" * 60)
 
         return {
             'ansatz': ansatz,
             'ricci': ricci,
             'result': result,
-            'validations': validations
+            'validations': validations,
+            'v22_extension': v22_ext
         }
 
 
