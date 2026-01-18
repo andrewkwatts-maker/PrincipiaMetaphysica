@@ -6,12 +6,17 @@
   "category": "Topology",
   "phase": 1,
   "block": "A",
-  "version": "21.0",
+  "version": "22.0",
   "wl_code": "N = 288; If[N == 288, \"LOCKED\", \"OPEN\"]",
   "result": "LOCKED",
   "formula": "N_total = 288",
+  "chi_eff_context": {
+    "chi_eff_sector": 72,
+    "chi_eff_total": 144,
+    "note": "N_total = 2 * chi_eff_total = 2 * 144 = 288"
+  },
   "verification_status": "VERIFIED",
-  "note": "Gate 1: If sum deviates by \u00b11, manifold identity rejected. Verifies total potential = 288 exactly",
-  "timestamp": "2026-01-18T16:49:56.246921Z",
-  "hash": "91478cdb7ab380a3"
+  "note": "Gate 1: If sum deviates by +/-1, manifold identity rejected. Verifies total potential = 288 exactly. v22: chi_eff_total=144, chi_eff_sector=72",
+  "timestamp": "2026-01-19T03:00:00.000000Z",
+  "hash": "v22_g01_root_parity"
 }

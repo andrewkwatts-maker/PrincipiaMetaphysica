@@ -6,13 +6,14 @@
   "category": "FOUNDATIONAL_ASSUMPTION",
   "phase": 4,
   "block": "E",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N/A",
   "result": "N/A",
-  "formula": "v \u2264 c",
+  "formula": "v <= c",
   "verification_status": "NOT_TESTABLE",
   "reason": "Causality horizon is relativistic constraint",
-  "note": "FOUNDATIONAL: No interaction > pin vibration speed. This is a framework assumption, not an empirical prediction.",
-  "timestamp": "2026-01-18T16:49:56.258788Z",
+  "chi_eff_usage": "None (foundational relativistic axiom)",
+  "note": "FOUNDATIONAL: No interaction > pin vibration speed. v22.0-12PAIR: Causality preserved across dual shadows - 12x(2,0) Euclidean bridges allow information transfer without violating local Lorentzian causality. Bridge crossing time is subluminal. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-19T10:30:00.000000Z",
   "hash": "1759978f46787992"
 }

@@ -6,12 +6,12 @@
   "category": "Cosmology",
   "phase": 4,
   "block": "E",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N[(288/4) - (163/144) + 0.6819]",
   "result": "71.55",
   "formula": "H\u2080 = 71.55 km/s/Mpc",
   "verification_status": "VERIFIED",
-  "note": "Gate 47: H0 from O'Dowd formula: (288/4) - (P_O/chi_eff) + eta_S = 72 - 1.1319 + 0.6819 = 71.55 km/s/Mpc. Within 1.43 sigma of SH0ES 2025 (73.04 +/- 1.04). H0 = (288/4) - (163/144) + 0.6819 = 71.55 (O'Dowd formula)",
+  "note": "Gate 47: H0 from O'Dowd formula: (288/4) - (P_O/pressure_divisor) + eta_S = 72 - 1.1319 + 0.6819 = 71.55 km/s/Mpc. pressure_divisor=144 (=b3^2/4, global bulk correction). Within 1.43 sigma of SH0ES 2025 (73.04 +/- 1.04). H0 = (288/4) - (163/144) + 0.6819 = 71.55 (O'Dowd formula)",
   "timestamp": "2026-01-18T16:49:56.257469Z",
   "hash": "da6dd2a35ca81d73"
 }

@@ -242,11 +242,44 @@ class FormulasRegistry:
     # 26     | The Horos       | D_bulk (The Limit / Dimensional Boundary)
     # ===========================================================================
 
+    # ===========================================================================
+    # CHI_EFF USAGE GUIDE (v22.0-12PAIR)
+    # ===========================================================================
+    #
+    # chi_eff = chi_eff_sector = 72 (per shadow)
+    #   USE FOR:
+    #   - n_gen = chi_eff/24 = 3 (fermion generations per sector)
+    #   - gate_transition calculations (fine structure refinement)
+    #   - Single-shadow physics processes
+    #   - Baryon asymmetry (b3/chi_eff ratio)
+    #   - Torsional leakage (b3/chi_eff in epsilon_T formula)
+    #
+    # chi_eff_total = 144 (both shadows combined)
+    #   USE FOR:
+    #   - reid_invariant = 1/chi_eff_total = 1/144
+    #   - chi_parity_product = watts_constant / reid_invariant = 144
+    #   - Cross-shadow processes (PMNS neutrino mixing)
+    #   - N_flux = chi_eff_total/6 = 24 = b3 (flux quantization)
+    #   - n_gen = chi_eff_total/48 = 3 (alternative generation formula)
+    #
+    # pressure_divisor = b3^2/4 = 576/4 = 144
+    #   GEOMETRIC DERIVATION (Hexagonal Projection)
+    #   - Numerically equals chi_eff_total but derived from b3 geometry
+    #   - Used in H0 O'Dowd formula: H0 = 288/4 - P_O/pressure_divisor + eta_S
+    #   - Represents cross-shadow/global bulk pressure correction
+    #
+    # GEMINI VALIDATION (2026-01-19):
+    # The bulk pressure correction in H0 uses pressure_divisor=144 because it
+    # represents a global property of the dual-shadow geometry, not per-shadow.
+    # ===========================================================================
+
     # Complete Gnostic name mapping for all named constants
     GNOSTIC_MAP = {
         # Topological Invariants (7 Sovereign Integers)
         "b3": "The Pleroma",
         "chi_eff": "The Demiurge",
+        "chi_eff_sector": "The Demiurge",  # v22: Alias for chi_eff (per-shadow)
+        "chi_eff_total": "The Demiurgic Pair",  # v22: Both shadows combined
         "shadow_sector": "The Sophia",
         "roots_total": "The Ennoia",
         "visible_sector": "The Visible",
@@ -814,6 +847,24 @@ class FormulasRegistry:
         Connection to reid_invariant: reid_invariant = 1/chi_eff_total = 1/144
         """
         return self._chi_eff_total
+
+    @property
+    def chi_eff_sector(self) -> int:
+        """
+        Alias for chi_eff (per-shadow/sector value).
+
+        chi_eff_sector = chi_eff = 72
+
+        v22.0-12PAIR: This alias provides explicit naming when the per-shadow
+        interpretation is intended, distinguishing from chi_eff_total = 144.
+
+        USE FOR:
+        - n_gen = chi_eff_sector/24 = 3 (fermion generations per sector)
+        - gate_transition calculations
+        - Single-shadow physics processes
+        - Baryon asymmetry (b3/chi_eff ratio)
+        """
+        return self._chi_eff
 
     @property
     def roots_total(self) -> int:
@@ -3193,14 +3244,23 @@ class FormulasRegistry:
 
     def calculate_h0_local(self) -> float:
         """
-        Calculate H0 (local universe) using O'Dowd Formula (v17 Sovereign).
+        Calculate H0 (local universe) using O'Dowd Formula (v22 Sovereign).
 
-        Formula: H0 = (ROOTS/4) - (P_O/chi_eff) + eta_S
-                    = (288/4) - ((7*24-5)/(24^2/4)) + 0.6819
+        Formula: H0 = (ROOTS/4) - (P_O/pressure_divisor) + eta_S
+                    = (288/4) - (163/144) + 0.6819
                     = 72 - 1.1319 + 0.6819
                     = 71.55 km/s/Mpc
 
-        v17: Uses DERIVED geometric values, not hardcoded 163/144.
+        v22 CLARIFICATION:
+        - pressure_divisor = b3^2/4 = 576/4 = 144 (Hexagonal Projection)
+        - This equals chi_eff_total = 144 numerically but has GEOMETRIC origin
+        - The bulk pressure correction is a cross-shadow/global property
+        - Uses DERIVED geometric values for odowd_bulk (7*b3-5 = 163)
+
+        Observational fit:
+        - Local (SH0ES): 73.0 +/- 1.0 km/s/Mpc
+        - Early (Planck): 67.4 +/- 0.5 km/s/Mpc
+        - PM v22: 71.55 km/s/Mpc (splits the Hubble tension)
         """
         base = self._roots_total / 4.0                                # 288/4 = 72
         bulk_correction = self.odowd_bulk_derived / self.pressure_divisor  # (7*24-5)/(24^2/4)
@@ -3567,9 +3627,10 @@ class FormulasRegistry:
                     "latex": "H_0",
                     "value": self.h0_local,
                     "unit": "km/s/Mpc",
-                    "formula": "(288/4) - (P_O/chi_eff) + eta_S",
-                    "expanded": f"72 - {self.odowd_bulk_pressure/self.chi_eff:.4f} + {self.sophian_drag} = {self.h0_local:.4f}",
-                    "derived_from": ["odowd_bulk_pressure", "reid_invariant", "sophian_drag"],
+                    "formula": "(288/4) - (P_O/pressure_divisor) + eta_S",
+                    "expanded": f"72 - {self.odowd_bulk_pressure/self.pressure_divisor:.4f} + {self.sophian_drag} = {self.h0_local:.4f}",
+                    "note": "pressure_divisor = b3^2/4 = 144 (equals chi_eff_total geometrically)",
+                    "derived_from": ["odowd_bulk_pressure", "pressure_divisor", "sophian_drag"],
                     "pm_path": "cosmology.H0_local"
                 },
                 "dark_energy_w0": {

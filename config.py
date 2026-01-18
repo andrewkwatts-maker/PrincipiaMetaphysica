@@ -7,7 +7,7 @@
 #   MONAD (1.0)     = watts_constant    - The Singular Origin
 #   PLEROMA (24)    = B3                - The Dimensional Fullness
 #   SOPHIA (135)    = shadow_sector     - Wisdom / Visible Gates
-#   DEMIURGE (144)  = chi_eff           - The Craftsman / Pressure Divisor
+#   DEMIURGE (72/144) = chi_eff/chi_eff_total - The Craftsman / Per-Shadow (72) or Total (144)
 #   CHRISTOS (153)  = christ_constant   - The Redeemer / Joint Closure
 #   BARBELO (163)   = sterile_sector    - First Thought / Bulk Pressure
 #   ENNOIA (288)    = roots_total       - Universal Mind / Logic Closure
@@ -68,8 +68,8 @@ CHANGELOG v12.5:
 # VERSION & TRANSPARENCY
 # ==============================================================================
 
-VERSION = "21.0-DUAL-SHADOW"
-VERSION_SHORT = "21.0"
+VERSION = "v22.0"
+VERSION_SHORT = "22.0"
 TRANSPARENCY_LEVEL = "full"  # All fitted vs derived parameters clearly marked
 STERILE_STATUS = True  # v19.2: Zero-degree-of-freedom model - all constants derived
 

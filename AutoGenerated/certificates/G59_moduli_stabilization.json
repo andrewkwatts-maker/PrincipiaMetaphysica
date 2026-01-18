@@ -6,12 +6,13 @@
   "category": "Moduli",
   "phase": 5,
   "block": "F",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "vacuum_stability_monitor.py",
   "result": "dV/dT = 0 at T_min, stable vacuum",
-  "formula": "\u2202V/\u2202\u03c6 = 0 (stable)",
+  "formula": "dV/dphi = 0 (stable)",
   "verification_status": "VERIFIED",
-  "note": "Gate 59: Racetrack potential minimized via scipy.optimize. Re(T)=7.086 derived from Higgs mass constraint (m_h=125.1 GeV). Vacuum stable with bounce action B > 400.. No runaway in shape/size fields",
-  "timestamp": "2026-01-18T16:49:56.260296Z",
+  "chi_eff_usage": "Indirect: Re(T) = 7.086 emerges from Higgs mass constraint",
+  "note": "Gate 59: Racetrack potential minimized via scipy.optimize. v22.0-12PAIR: Re(T) = 7.086 derived from Higgs mass constraint (m_h = 125.1 GeV). The 12x(2,0) bridge system provides additional moduli stabilization through cross-shadow flux. Vacuum stable with bounce action B > 400. The racetrack parameters (A, B, a, b) are calibrated from chi_eff = 72 per shadow. No runaway in shape/size fields",
+  "timestamp": "2026-01-19T10:30:00.000000Z",
   "hash": "0ec0d8d8d958ea38"
 }

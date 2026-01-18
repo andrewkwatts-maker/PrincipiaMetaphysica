@@ -6,12 +6,13 @@
   "category": "Cosmology",
   "phase": 4,
   "block": "E",
-  "version": "21.0",
+  "version": "v22.0",
   "wl_code": "N[163/288, 6]",
   "result": "0.5660",
   "formula": "DM = 163/288 of total",
   "verification_status": "VERIFIED",
-  "note": "Gate 49: Dark matter bulk pressure from 163/288 hidden sector fraction. Same topological ratio as G40 (sterile-active mixing). The 163 hidden nodes of the 288-root system represent 'shadow gravity' providing dark matter effects. Wolfram-validated: 163/288 = 0.5659722.... 163 hidden = shadow gravity",
-  "timestamp": "2026-01-18T16:49:56.257877Z",
+  "chi_eff_usage": "None (uses topological ratio 163/288 directly)",
+  "note": "Gate 49: Dark matter bulk pressure from sterile_sector/roots_total = 163/288 hidden sector fraction. Same topological ratio as G40 (sterile-active mixing). The 163 hidden nodes of the 288-root system represent 'shadow gravity' providing dark matter effects. v22.0-12PAIR: Uses pure topology (Barbelo/Ennoia ratio), not chi_eff. Wolfram-validated: 163/288 = 0.5659722.... 163 hidden = shadow gravity",
+  "timestamp": "2026-01-19T10:30:00.000000Z",
   "hash": "831564b115667ad2"
 }

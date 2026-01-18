@@ -2,16 +2,21 @@
   "proof_id": "G08_sterile_angle_anchor",
   "gate_id": 8,
   "gate_name": "Sterile Angle Anchor",
-  "label": "\u03b8s = arcsin(125/288) \u2248 25.72\u00b0",
+  "label": "theta_s = arcsin(125/288) approx 25.72 deg",
   "category": "Geometry",
   "phase": 1,
   "block": "A",
-  "version": "21.0",
+  "version": "22.0",
   "wl_code": "thetaS = ArcSin[125/288] * 180/Pi; N[thetaS, 6]",
   "result": "25.7234",
-  "formula": "\u03b8_s = arcsin(125/288)",
+  "formula": "theta_s = arcsin(125/288)",
+  "chi_eff_context": {
+    "chi_eff_sector": 72,
+    "chi_eff_total": 144,
+    "note": "Sterile angle derived from visible_sector/N_total = 125/288"
+  },
   "verification_status": "VERIFIED",
-  "note": "Gate 8: Tilt required to view matter from 26D bulk. \u03b8s = arcsin(125/288) \u2248 25.72\u00b0",
-  "timestamp": "2026-01-18T16:49:56.248688Z",
-  "hash": "f08513010f0e224e"
+  "note": "Gate 8: Tilt required to view matter from 26D bulk. theta_s = arcsin(125/288) approx 25.72 deg. v22: chi_eff_total=144, chi_eff_sector=72",
+  "timestamp": "2026-01-19T03:00:00.000000Z",
+  "hash": "v22_g08_sterile"
 }

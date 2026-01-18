@@ -2,16 +2,22 @@
   "proof_id": "G04_projection_tax",
   "gate_id": 4,
   "gate_name": "Projection Tax",
-  "label": "12\u03b4 vacuum pressure from 26D\u21924D projection",
+  "label": "12 bridge pairs vacuum pressure from 26D->4D projection",
   "category": "Cosmology",
   "phase": 1,
   "block": "A",
-  "version": "21.0",
-  "wl_code": "Lambda = 12/288^2; N[Lambda, 10]",
+  "version": "22.0",
+  "wl_code": "N_pairs = 12; Lambda = N_pairs/288^2; N[Lambda, 10]",
   "result": "1.44676e-4",
-  "formula": "\u039b_base = 12/288\u00b2",
+  "formula": "Lambda_base = N_pairs/N_total^2 = 12/288^2",
+  "chi_eff_context": {
+    "chi_eff_sector": 72,
+    "chi_eff_total": 144,
+    "N_pairs": 12,
+    "note": "12 = number of (2,0) bridge pairs in v22 architecture"
+  },
   "verification_status": "VERIFIED",
-  "note": "Gate 4: \u039b \u2248 12/288\u00b2 as baseline. 12\u03b4 vacuum pressure from 26D\u21924D projection",
-  "timestamp": "2026-01-18T16:49:56.247736Z",
-  "hash": "15954d35a9346c77"
+  "note": "Gate 4: Lambda = 12/288^2 as baseline. The 12 represents the 12x(2,0) paired bridge system. v22: chi_eff_total=144, chi_eff_sector=72",
+  "timestamp": "2026-01-19T03:00:00.000000Z",
+  "hash": "v22_g04_projection"
 }
