@@ -1,9 +1,9 @@
 {
   "version": "22.0-12PAIR",
-  "timestamp": "2026-01-19T02:57:38.023139Z",
-  "session_id": "PM20260119025738",
+  "timestamp": "2026-01-19T03:44:31.733028Z",
+  "session_id": "PM20260119034431",
   "volatility": {
-    "generated_at": "2026-01-19T02:57:38.023139Z",
+    "generated_at": "2026-01-19T03:44:31.733028Z",
     "max_age_seconds": 300,
     "generator": "FormulasRegistry.py",
     "generator_version": "22.0-12PAIR",
@@ -166,11 +166,12 @@
       "latex": "H_0",
       "value": 71.54995555555556,
       "unit": "km/s/Mpc",
-      "formula": "(288/4) - (P_O/chi_eff) + eta_S",
-      "expanded": "72 - 2.2639 + 0.6819 = 71.5500",
+      "formula": "(288/4) - (P_O/pressure_divisor) + eta_S",
+      "expanded": "72 - 1.1319 + 0.6819 = 71.5500",
+      "note": "pressure_divisor = b3^2/4 = 144 (equals chi_eff_total geometrically)",
       "derived_from": [
         "odowd_bulk_pressure",
-        "reid_invariant",
+        "pressure_divisor",
         "sophian_drag"
       ],
       "pm_path": "cosmology.H0_local"
@@ -1526,7 +1527,7 @@
     "c04_bulk_stability": {
       "formula": "R_s = LOGIC_CLOSURE / BULK_PRESSURE = 288/163",
       "description": "Integer-Lock Strategy: JC Constant (153) stabilizes Bulk Pressure (163)",
-      "bulk_stability_factor": "1.7668711656441717791411042944785276073619631901840",
+      "bulk_stability_factor": "1.766871165644171779141104294478527607361963190184049079754601227",
       "tensioning": {
         "logic_closure": 288,
         "bulk_pressure": 163,

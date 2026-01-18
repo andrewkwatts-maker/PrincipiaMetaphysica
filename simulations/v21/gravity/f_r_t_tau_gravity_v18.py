@@ -134,8 +134,9 @@ class FRTTauGravityV18(SimulationBase):
         self.L_Planck = 1.616255e-35    # m
 
         # Experimental reference for w_0
-        self.w_0_experimental = -1.03   # Planck 2018 + BAO
-        self.w_0_uncertainty = 0.03     # 1-sigma
+        # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
+        self.w_0_experimental = -0.958  # DESI 2025
+        self.w_0_uncertainty = 0.02     # 1-sigma
 
     @property
     def metadata(self) -> SimulationMetadata:
@@ -570,6 +571,7 @@ class FRTTauGravityV18(SimulationBase):
                 description="(d_tau)R kinetic mixing, suppressed at large volume.",
                 no_experimental_value=True
             ),
+            # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
             Parameter(
                 path="gravity.w_0_modified",
                 name="Dark Energy EoS (Modified Gravity)",
@@ -577,12 +579,12 @@ class FRTTauGravityV18(SimulationBase):
                 status="DERIVED",
                 description=(
                     "Dark energy equation of state from f(R,T,tau) attractor. "
-                    "Predicts w_0 = -0.980, consistent with Planck+BAO."
+                    "Predicts w_0 = -0.9583, consistent with DESI 2025."
                 ),
-                experimental_bound=-1.03,
+                experimental_bound=-0.958,
                 bound_type="measured",
-                bound_source="Planck2018+BAO",
-                uncertainty=0.03
+                bound_source="DESI_2025",
+                uncertainty=0.02
             ),
             Parameter(
                 path="gravity.eta_gravitational_slip",

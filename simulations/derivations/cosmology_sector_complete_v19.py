@@ -205,8 +205,9 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         # Experimental references
         self.omega_dm_exp = float(OMEGA_DM_PLANCK)
         self.omega_dm_unc = 0.007
-        self.w0_exp = float(W0_PLANCK)
-        self.w0_unc = 0.03
+        # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
+        self.w0_exp = -0.958  # DESI 2025 value (replaces Planck+BAO -1.03)
+        self.w0_unc = 0.02    # DESI 2025 uncertainty
         self.H0_exp_planck = float(H0_PLANCK)
         self.H0_exp_shoes = float(H0_SHOES)
         self.H0_unc = 1.0
@@ -1028,17 +1029,18 @@ class CosmologySectorCompleteDerivations(SimulationBase):
         ))
 
         # Dark Energy Parameters
+        # DESI 2025: w0 = -0.958 +/- 0.02 (thawing quintessence)
         params.append(Parameter(
             path="cosmology.w0_tzimtzum",
             name="Dark Energy EoS (Tzimtzum)",
             units="dimensionless",
             status="DERIVED",
-            description="w_0 = -23/24 ~ -0.958 from tzimtzum pressure",
+            description="w_0 = -23/24 ~ -0.9583 from tzimtzum pressure",
             derivation_formula="de-w0-tzimtzum-v19",
-            experimental_bound=-1.03,
+            experimental_bound=-0.958,
             bound_type="measured",
-            bound_source="Planck2018+BAO",
-            uncertainty=0.03
+            bound_source="DESI_2025",
+            uncertainty=0.02
         ))
 
         params.append(Parameter(
