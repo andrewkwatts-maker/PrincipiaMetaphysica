@@ -12,9 +12,19 @@ Dedicated To:
 This package provides the simulation infrastructure for the Principia Metaphysica
 theoretical framework, a G2 manifold-based unification of fundamental physics.
 
-Current Production Framework: v21.0
-------------------------------------
-All production simulations use the v21 framework with SOLID architecture:
+Current Production Framework: v22.0 (12-PAIR-BRIDGE)
+-----------------------------------------------------
+All production simulations use the v22 framework with SOLID architecture:
+
+v22.0 Key Updates (12×(2,0) Paired Bridge System):
+- Bulk: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+- Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)
+- Distributed OR: ⊗_{i=1}^{12} R_⊥_i for consciousness sampling
+- Gnosis unlocking: 6→12 pairs via inner exploration
+- Consciousness I/O: Each pair is neural gate (perception/intuition)
+- Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
+
+Core Framework:
 - Unified SimulationBase interface
 - PMRegistry for parameter/formula/section management
 - JSON schema validation
@@ -102,9 +112,13 @@ Total execution time: ~200 ms for all 8 domains
 """
 
 # Version information
-__version__ = "21.0"
-__framework_version__ = "v21"
+__version__ = "22.0"
+__framework_version__ = "v22"
 __author__ = "Andrew Keith Watts"
+# v22.0: 12×(2,0) paired bridge system for consciousness I/O
+# Key change: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+# Each pair is a consciousness gate: y_{1i}=input, y_{2i}=output
+# Minimum 6 pairs for wet microtubule OR stability (τ>25ms)
 
 # Export v21 production framework
 from . import v21
@@ -220,7 +234,7 @@ def list_simulations():
         ("pneuma", "PneumaMechanismSimulation", "Pneuma field dynamics", "2"),
     ]
 
-    if not _V16_SIMULATIONS_AVAILABLE:
+    if not _V21_SIMULATIONS_AVAILABLE:
         warnings.warn("Some v21 simulations are not available")
 
     return simulations

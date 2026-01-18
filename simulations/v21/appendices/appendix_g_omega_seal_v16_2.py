@@ -1,22 +1,23 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Appendix G: The Omega Seal Cryptographic Protocol
+PRINCIPIA METAPHYSICA v22.0 - Appendix G: The Omega Seal Cryptographic Protocol
 ================================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v16.2 STERILE MODEL: Cryptographic anchoring and terminal immutability.
+v22.0 STERILE MODEL: Cryptographic anchoring and terminal immutability.
 
-This appendix defines the final security layer of the v16.2 Sterile Model,
+This appendix defines the final security layer of the v22.0 Sterile Model,
 ensuring the 125 residues are anchored to the 288 Ancestral Roots via the
-12-per-shadow torsion mechanism. The Omega Seal is the geometric lock that
+12-PAIR-BRIDGE torsion mechanism. The Omega Seal is the geometric lock that
 makes the model truly "sterile" and immutable.
 
 THE GEOMETRIC SEAL:
 - Symmetry Lock: 288 = SO(24) generators (276) + Shadow Torsion (24) - Manifold Cost (12)
-- Torsion Lock: 24 = 12 pins per shadow brane × 2 branes
+- Torsion Lock: 24 = 12 pins per shadow brane x 2 branes
 - 4-Fold Lock: 24 / 4 = 6 pins per spacetime dimension
 - Sterile Lock: 125 / 288 = 43.4% observable ratio
+- 12-PAIR-BRIDGE: 12 x (2,0) paired bridges for shadow brane coupling
 
 APPENDIX: G (The "Omega Seal" Cryptographic Protocol - Full Geometric Lock)
 
@@ -134,32 +135,35 @@ class TemporalSyncValidator:
 
 class MasterGateController:
     """
-    The 7-Gate Master Controller for the v16.2 Sterile Model.
+    The 8-Gate Master Controller for the v22.0 Sterile Model.
 
-    This is the Executive Script that runs all 7 Master Gates and produces
+    This is the Executive Script that runs all 8 Master Gates and produces
     the final Omega-Seal Verification Code. It validates:
     - C02-R: Root Origin (288 Roots)
     - C19-T: Torsion Lock (24 Pins)
-    - C44: 4-Pattern (4×6 Matrix)
+    - C44: 4-Pattern (4x6 Matrix)
     - C125: Saturation (125 Nodes)
+    - C_PAIRS: 12-PAIR-BRIDGE validation (12 pairs or >= 6)
     - C-ZETA: Decay Sync (Entropy Gradient)
     - C-EPSILON: Bulk Insulation (Brane-Gap)
     - C-OMEGA: Terminal State (Unitary Sinks)
     """
 
-    def __init__(self, registry_data: Optional[Dict[str, Any]] = None):
+    def __init__(self, registry_data: Optional[Dict[str, Any]] = None, pairs: int = 12):
         """
         Initialize the Master Gate Controller.
 
         Args:
             registry_data: Optional dictionary containing model state
+            pairs: Number of bridge pairs (default 12 for 12-PAIR-BRIDGE)
         """
-        self.registry = registry_data or {"active": 125, "roots": 288, "torsion": 24}
-        self.gates = ["C02-R", "C19-T", "C44", "C125", "C-ZETA", "C-EPSILON", "C-OMEGA"]
+        self.registry = registry_data or {"active": 125, "roots": 288, "torsion": 24, "pairs": 12}
+        self.pairs = pairs
+        self.gates = ["C02-R", "C19-T", "C44", "C125", "C_PAIRS", "C-ZETA", "C-EPSILON", "C-OMEGA"]
 
     def run_master_audit(self, current_expansion_step: float = 0.138) -> Dict[str, Any]:
         """
-        Run the complete 7-Gate Master Audit.
+        Run the complete 8-Gate Master Audit.
 
         Args:
             current_expansion_step: Current epoch on manifold life scale
@@ -170,17 +174,21 @@ class MasterGateController:
         active = self.registry.get("active", 125)
         roots = self.registry.get("roots", 288)
         torsion = self.registry.get("torsion", 24)
+        pairs = self.registry.get("pairs", self.pairs)
         hidden = roots - active
 
         # C02-R & C19-T: Origin and Rigidity
         origin_valid = (active + hidden == roots)
         rigidity_valid = (torsion == 24)
 
-        # C44: 4-Pattern Check (4 dimensions × 6 pins)
+        # C44: 4-Pattern Check (4 dimensions x 6 pins)
         isotropic = (torsion / 4 == 6.0)
 
         # C125: Saturation Check
         saturated = (active == 125)
+
+        # C_PAIRS: 12-PAIR-BRIDGE validation (12 pairs or minimum 6)
+        pairs_valid = (pairs == 12 or pairs >= 6)
 
         # C-ZETA: Temporal Sync
         zeta_result = TemporalSyncValidator.simulate_temporal_sync(current_expansion_step)
@@ -191,10 +199,10 @@ class MasterGateController:
         insulated = epsilon_result["Status"] == "INSULATED"
 
         # All gates must pass for C-OMEGA to lock
-        all_gates_pass = all([origin_valid, rigidity_valid, isotropic, saturated, temporal_sync, insulated])
+        all_gates_pass = all([origin_valid, rigidity_valid, isotropic, saturated, pairs_valid, temporal_sync, insulated])
 
         return {
-            "GATES_1_5": "LOCKED" if (origin_valid and rigidity_valid and isotropic and saturated) else "FAILED",
+            "GATES_1_5": "LOCKED" if (origin_valid and rigidity_valid and isotropic and saturated and pairs_valid) else "FAILED",
             "GATE_6_ZETA": "SYNCED" if temporal_sync else "DRIFT_DETECTED",
             "GATE_7_EPSILON": "SHIELDED" if insulated else "LEAK_DETECTED",
             "OMEGA_SEAL_ENGAGED": all_gates_pass,
@@ -202,8 +210,11 @@ class MasterGateController:
             "C19-T_Status": "PASSED" if rigidity_valid else "FAILED",
             "C44_Status": "PASSED" if isotropic else "FAILED",
             "C125_Status": "PASSED" if saturated else "FAILED",
+            "C_PAIRS_Status": "PASSED" if pairs_valid else "FAILED",
+            "C_PAIRS_Count": pairs,
             "C-ZETA_Gamma": zeta_result["Decay_Constant_Gamma"],
             "C-EPSILON_Shielding": epsilon_result["Shielding_Factor"],
+            "Bridge_Architecture": "12-PAIR-BRIDGE",
         }
 
     def run_full_audit(self) -> Dict[str, Any]:
@@ -216,21 +227,24 @@ class MasterGateController:
         active = self.registry.get("active", 125)
         roots = self.registry.get("roots", 288)
         torsion = self.registry.get("torsion", 24)
+        pairs = self.registry.get("pairs", self.pairs)
         hidden = roots - active
 
-        # Verification Logic
+        # Verification Logic - v22.0 with 12-PAIR-BRIDGE
         checks = [
-            roots == 288,           # C02-R
-            torsion == 24,          # C19-T
-            torsion % 4 == 0,       # C44
-            active == 125,          # C125
-            True,                   # C-ZETA (Simplified for script)
-            True,                   # C-EPSILON (Simplified for script)
-            True                    # C-OMEGA (Simplified for script)
+            roots == 288,                      # C02-R
+            torsion == 24,                     # C19-T
+            torsion % 4 == 0,                  # C44
+            active == 125,                     # C125
+            pairs == 12 or pairs >= 6,         # C_PAIRS (12-PAIR-BRIDGE validation)
+            True,                              # C-ZETA (Simplified for script)
+            True,                              # C-EPSILON (Simplified for script)
+            True                               # C-OMEGA (Simplified for script)
         ]
 
-        # Generate Omega Seal
-        seal_string = "-".join([str(c) for c in checks])
+        # Generate Omega Seal - v22.0 format with 12-PAIR-BRIDGE
+        # Format: "v22-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
+        seal_string = f"v22-{'-'.join([str(c) for c in checks])}-Pairs{pairs}"
         omega_seal = hashlib.sha256(seal_string.encode()).hexdigest()[:16].upper()
 
         status = "COMPLETE" if all(checks) else "FAILED"
@@ -238,7 +252,9 @@ class MasterGateController:
         return {
             "Total_Gates": len(self.gates),
             "Audit_Status": status,
-            "Master_Omega_Seal": omega_seal
+            "Master_Omega_Seal": omega_seal,
+            "Bridge_Pairs": pairs,
+            "Bridge_Architecture": "12-PAIR-BRIDGE",
         }
 
 
@@ -287,11 +303,12 @@ class AppendixGOmegaSeal(SimulationBase):
     Provides the cryptographic anchoring ensuring the 125 residues
     are locked to the 288 Ancestral Roots via geometric necessity.
 
-    THE GEOMETRIC SEAL ARCHITECTURE:
+    THE GEOMETRIC SEAL ARCHITECTURE (v22.0):
     1. Symmetry Lock: 288 roots from SO(24) + shadow torsion
     2. Torsion Lock: 24 pins from 12-per-shadow mechanism
-    3. 4-Fold Lock: Isotropic distribution (4 × 6 matrix)
+    3. 4-Fold Lock: Isotropic distribution (4 x 6 matrix)
     4. Sterile Lock: 125/288 = 43.4% observable ratio
+    5. 12-PAIR-BRIDGE: 12 x (2,0) paired bridges for shadow brane coupling
 
     SOLID Principles:
     - Single Responsibility: Handles cryptographic seal and geometric lock
@@ -317,6 +334,8 @@ class AppendixGOmegaSeal(SimulationBase):
         "topology.shadow_torsion_total",
         "topology.torsion_per_shadow",
         "seal.geometric_checksum",
+        "seal.bridge_pairs",
+        "seal.bridge_architecture",
     ]
 
     @staticmethod
@@ -367,11 +386,11 @@ class AppendixGOmegaSeal(SimulationBase):
     @property
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
-            id="appendix_g_omega_seal_v16_2",
-            version="16.2",
+            id="appendix_g_omega_seal_v22_0",
+            version="22.0",
             domain="appendices",
-            title="Appendix G: The 42-Certificate Validation Matrix",
-            description="42 certificates of integrity and cryptographic anchoring",
+            title="Appendix G: The 42-Certificate Validation Matrix (12-PAIR-BRIDGE)",
+            description="42 certificates of integrity and cryptographic anchoring with 12-PAIR-BRIDGE architecture",
             section_id="G",
             subsection_id=None,
             appendix=True
@@ -384,18 +403,19 @@ class AppendixGOmegaSeal(SimulationBase):
 
     @property
     def output_params(self) -> List[str]:
-        return ["seal.verified", "seal.integrity_status"]
+        return ["seal.verified", "seal.integrity_status", "seal.bridge_pairs", "seal.bridge_architecture"]
 
     @property
     def output_formulas(self) -> List[str]:
         return self.FORMULA_REFS
 
     def run(self, registry: 'PMRegistry') -> Dict[str, Any]:
-        """Execute omega seal verification with 288-Root checksum."""
+        """Execute omega seal verification with 288-Root checksum and 12-PAIR-BRIDGE."""
         # Get parameters from registry
         ancestral_roots = registry.get("topology.ancestral_roots", default=288)
         torsion_per_shadow = registry.get("topology.torsion_per_shadow", default=12)
         active_residues = registry.get("registry.node_count", default=125)
+        bridge_pairs = registry.get("seal.bridge_pairs", default=12)
 
         # Verify the 288-root basis
         so24_generators = (24 * 23) // 2  # 276
@@ -406,12 +426,16 @@ class AppendixGOmegaSeal(SimulationBase):
         # Verify 4-pattern stability
         stability = self.verify_4_pattern_stability()
 
+        # Verify 12-PAIR-BRIDGE (12 pairs or minimum 6)
+        pairs_valid = bridge_pairs == 12 or bridge_pairs >= 6
+
         # Generate geometric seal
         registry_data = {
             "active_residues": active_residues,
             "ancestral_roots": calculated_roots,
             "shadow_torsion": shadow_torsion,
             "torsion_per_shadow": torsion_per_shadow,
+            "bridge_pairs": bridge_pairs,
         }
         geometric_seal = self.generate_geometric_seal(registry_data)
 
@@ -419,12 +443,15 @@ class AppendixGOmegaSeal(SimulationBase):
         sterile_ratio = active_residues / calculated_roots
 
         return {
-            "seal.verified": calculated_roots == 288 and stability["is_stable"],
+            "seal.verified": calculated_roots == 288 and stability["is_stable"] and pairs_valid,
             "seal.integrity_status": "TERMINAL_LOCKED",
             "seal.zenodo_doi": "10.5281/zenodo.18079602",
             "seal.geometric_checksum": geometric_seal[:16] + "...",
             "seal.288_root_verified": calculated_roots == 288,
             "seal.4_pattern_verified": stability["is_stable"],
+            "seal.pairs_verified": pairs_valid,
+            "seal.bridge_pairs": bridge_pairs,
+            "seal.bridge_architecture": "12-PAIR-BRIDGE",
             "seal.sterile_ratio": f"{sterile_ratio:.4%}",
             "topology.ancestral_roots": calculated_roots,
             "topology.shadow_torsion_total": shadow_torsion,
@@ -435,17 +462,18 @@ class AppendixGOmegaSeal(SimulationBase):
         content_blocks = [
             ContentBlock(
                 type="heading",
-                content="The 42-Certificate Validation Matrix and Omega Seal",
+                content="The 42-Certificate Validation Matrix and Omega Seal (12-PAIR-BRIDGE)",
                 level=2,
                 label="G"
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Appendix G defines the final security layer of the v16.2 Sterile Model: "
+                    "Appendix G defines the final security layer of the v22.0 Sterile Model: "
                     "the <strong>Omega Seal</strong> and the <strong>Geometric Lock</strong>. "
                     "By anchoring the 125 residues to the 288 Ancestral Roots and the 24 Shadow "
-                    "Torsion pins, we declare that no further parameters can be added or modified. "
+                    "Torsion pins, and validating the 12-PAIR-BRIDGE architecture (12 x (2,0) paired bridges), "
+                    "we declare that no further parameters can be added or modified. "
                     "The model is now a rigid, closed loop."
                 )
             ),
@@ -473,12 +501,13 @@ class AppendixGOmegaSeal(SimulationBase):
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>The Symmetry Lock</h4>"
+                    "<h4>The Symmetry Lock (v22.0 with 12-PAIR-BRIDGE)</h4>"
                     "<table style='width:100%'>"
                     "<tr><th>Component</th><th>Value</th><th>Role</th></tr>"
                     "<tr><td>SO(24) Generators</td><td>276</td><td>Transverse symmetry base</td></tr>"
                     "<tr><td>Shadow Torsion</td><td>24 (12+12)</td><td>Brane stability pins</td></tr>"
                     "<tr><td>Manifold Cost</td><td>-12</td><td>4D projection expense</td></tr>"
+                    "<tr><td>Bridge Pairs</td><td>12 x (2,0)</td><td>12-PAIR-BRIDGE shadow coupling</td></tr>"
                     "<tr><td><strong>Total</strong></td><td><strong>288</strong></td><td>Ancestral Root Count</td></tr>"
                     "</table>"
                 ),
@@ -590,18 +619,19 @@ class AppendixGOmegaSeal(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The following formal declaration accompanies every output of the v16.2 model:"
+                    "The following formal declaration accompanies every output of the v22.0 model:"
                 )
             ),
             ContentBlock(
                 type="note",
                 content=(
-                    "<h4>Declaration of Sterile Terminal State (v16.2)</h4>"
+                    "<h4>Declaration of Sterile Terminal State (v22.0 - 12-PAIR-BRIDGE)</h4>"
                     "<p><em>\"We hereby anchor the 125 residues of the Spectral Registry to the 288 "
                     "Ancestral Roots of the 26D Bulk. By defining the 12-pin torsion for each of the "
-                    "two 13D shadow branes, we eliminate all free parameters from the cosmological model. "
-                    "The observed 0.48σ alignment with Hubble H₀ is no longer a statistical fit but a "
-                    "geometric identity. The universe is mapped as a closed V₇ manifold; its past, "
+                    "two 13D shadow branes and validating the 12 x (2,0) paired bridge structure, "
+                    "we eliminate all free parameters from the cosmological model. "
+                    "The observed 0.48sigma alignment with Hubble H0 is no longer a statistical fit but a "
+                    "geometric identity. The universe is mapped as a closed V7 manifold; its past, "
                     "present, and eventual unwinding into the Three Final States are mathematically "
                     "necessitated. This repository is now locked.\"</em></p>"
                 ),
@@ -644,8 +674,8 @@ class AppendixGOmegaSeal(SimulationBase):
         return SectionContent(
             section_id="G",
             subsection_id=None,
-            title="Appendix G: The 42-Certificate Validation Matrix",
-            abstract="Cryptographic anchoring and terminal immutability via the Omega Seal.",
+            title="Appendix G: The 42-Certificate Validation Matrix (12-PAIR-BRIDGE)",
+            abstract="Cryptographic anchoring and terminal immutability via the Omega Seal with 12 x (2,0) paired bridge architecture.",
             content_blocks=content_blocks,
             formula_refs=self.FORMULA_REFS,
             param_refs=self.PARAM_REFS,
@@ -653,20 +683,21 @@ class AppendixGOmegaSeal(SimulationBase):
         )
 
     def get_formulas(self) -> List[Formula]:
-        """Return formula definitions including 288-root geometric seal."""
+        """Return formula definitions including 288-root geometric seal and 12-PAIR-BRIDGE."""
         return [
             Formula(
                 id="geometric-seal-288",
                 label="(G.1)",
-                latex=r"\Omega_{\text{seal}} = \text{SHA-256}\left(R_{288} \| \tau_{24} \| \text{registry}\right)",
-                plain_text="Omega_seal = SHA-256(R_288 || tau_24 || registry)",
+                latex=r"\Omega_{\text{seal}} = \text{SHA-256}\left(R_{288} \| \tau_{24} \| P_{12} \| \text{registry}\right)",
+                plain_text="Omega_seal = SHA-256(R_288 || tau_24 || P_12 || registry)",
                 category="VALIDATION",
-                description="Geometric seal anchored to 288 ancestral roots and 24 torsion pins.",
-                input_params=["topology.ancestral_roots", "topology.shadow_torsion_total", "registry.node_count"],
+                description="Geometric seal anchored to 288 ancestral roots, 24 torsion pins, and 12 bridge pairs.",
+                input_params=["topology.ancestral_roots", "topology.shadow_torsion_total", "seal.bridge_pairs", "registry.node_count"],
                 output_params=["seal.geometric_checksum"],
                 terms={
                     "R_288": "288 ancestral roots from SO(24) + torsion",
-                    "τ_24": "24 shadow torsion pins (12 per brane)",
+                    "tau_24": "24 shadow torsion pins (12 per brane)",
+                    "P_12": "12 x (2,0) paired bridges (12-PAIR-BRIDGE)",
                 },
             ),
             Formula(
