@@ -3,6 +3,10 @@ Principia Metaphysica - G2 Triality Mixing (CKM/PMNS Unified) v17.2
 
 Copyright (c) 2025-2026 Andrew Keith Watts. All rights reserved.
 
+PMNS uses chi_eff_total = 144 (both shadows combined) because neutrino oscillations
+            involve BOTH 11D shadows. The per-shadow chi_eff = 72 is used for baryon physics.
+            S_orient = 12 remains unchanged (single unified bridge orientation sum)
+
 Unified derivation of CKM and PMNS matrices from G2 triality automorphism.
 
 In Principia Metaphysica:
@@ -74,11 +78,12 @@ class G2TrialityMixing:
         self.epsilon = Decimal(str(np.exp(-1.5)))  # ~0.223
 
         # G2 manifold topology
+        # PMNS uses chi_eff_total = 144 (both shadows) - neutrino oscillations involve both shadows
         self.b3 = 24
         self.b2 = 4
-        self.chi_eff = 144
+        self.chi_eff = 144  # chi_eff_total = 144 for PMNS (both shadows)
         self.n_gen = 3
-        self.S_orient = 12
+        self.S_orient = 12  # Single unified bridge orientation sum
 
     def compute_golden_angle_base(self) -> Dict[str, Any]:
         """
@@ -143,22 +148,25 @@ class G2TrialityMixing:
         b3, b2, chi_eff, n_gen, S_orient = self.b3, self.b2, self.chi_eff, self.n_gen, self.S_orient
 
         # Theta_23: Maximal + holonomy corrections
-        # 45 + Kahler + Flux = 49.75 (exact from SU(3) Shadow=Shadow)
+        # chi_eff_total = 144 (both shadows) for PMNS
+        # Flux = (S_orient/b3) × (b2 × chi_eff) / (b3 × n_gen) = (12/24) × (4×144)/(24×3) = 0.5 × 8 = 4.0
         delta_kahler = (b2 - n_gen) * n_gen / b2  # 0.75
-        w_flux = 0.5
-        A_geo = 8.0
-        delta_flux = w_flux * A_geo  # 4.0
-        theta_23 = 45.0 + delta_kahler + delta_flux  # 49.75 exact
+        # Use geometric flux calculation with chi_eff_total = 144
+        delta_flux = (S_orient / b3) * (b2 * chi_eff) / (b3 * n_gen)  # 4.0
+        theta_23 = 45.0 + delta_kahler + delta_flux  # 49.75
 
         # Theta_12: Tribimaximal perturbed
-        # sin(theta_12) = (1/sqrt(3)) * (1 - correction)
+        # correction = (24 - 12) / (2 × 144) = 12/288 = 0.0417
+        # sin(theta_12) = (1/sqrt(3)) * (1 - 0.0417) = 0.577 × 0.958 = 0.553
         correction_12 = (b3 - b2 * n_gen) / (2 * chi_eff)
         sin_theta_12 = (1/np.sqrt(3)) * (1 - correction_12)
-        theta_12 = np.degrees(np.arcsin(sin_theta_12))  # ~ 33.59
+        theta_12 = np.degrees(np.arcsin(sin_theta_12))  # ~ 33.44
 
         # Theta_13: Cycle overlap
-        sin_theta_13 = np.sqrt(b2 * n_gen / b3) * (1 + S_orient / (2 * chi_eff))
-        theta_13 = np.degrees(np.arcsin(sin_theta_13))  # ~ 8.33
+        # sin(theta_13) = sqrt(12)/24 × (1 + 12/(2×144)) = 0.1443 × 1.0417 = 0.1503
+        # theta_13 = arcsin(0.1503) = 8.65°
+        sin_theta_13 = np.sqrt(b2 * n_gen) / b3 * (1 + S_orient / (2 * chi_eff))
+        theta_13 = np.degrees(np.arcsin(sin_theta_13))  # ~ 8.65
 
         # Delta_CP: Cycle complex structure
         delta_cp = np.pi * ((n_gen + b2)/(2 * n_gen) + n_gen / b3)

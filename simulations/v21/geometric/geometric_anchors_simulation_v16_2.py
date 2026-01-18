@@ -87,6 +87,7 @@ _OUTPUT_PARAMS = [
     "geometry.m_planck_4d",
     "geometry.mu_pe",
     "geometry.G_F",
+    "geometry.G_F_matched",
     "geometry.T_CMB",
     "geometry.eta_baryon",
     "geometry.unity_seal",
@@ -411,14 +412,15 @@ class GeometricAnchorsSimulation(SimulationBase):
             # v18.0: Added missing certificate params with TRUE experimental uncertainties
             # High sigma values indicate where geometric derivations deviate from experiment
             # v18.3: Added theory_uncertainty showing PM precision limits
-            "G_F": {
+            # v22.0: G_F_matched (loop-corrected) now compared to PDG, not G_F (tree-level)
+            "G_F_matched": {
                 "experimental_value": 1.1663788e-5,  # PDG 2024 (GeV^-2)
                 "experimental_uncertainty": 6e-12,  # PDG 2024 precision
                 "experimental_source": "PDG2024",
-                # Theory uncertainty: ~0.12% from missing higher-order corrections
-                # Current derivation is tree-level with Schwinger correction
-                "theory_uncertainty": 1.4e-8,  # 0.12% of G_F value
-                "theory_uncertainty_source": "tree_level_schwinger_only"
+                # Theory uncertainty: ~0.01% from higher-order corrections beyond Schwinger
+                # G_F_matched = G_F_tree * (1 + alpha/2pi) includes 1-loop QED
+                "theory_uncertainty": 1.2e-9,  # 0.01% of G_F value (higher-loop residual)
+                "theory_uncertainty_source": "schwinger_matched_higher_loop_residual"
             },
             "T_CMB": {
                 "experimental_value": 2.7255,  # COBE/Planck 2018 (K)
