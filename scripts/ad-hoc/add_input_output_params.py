@@ -209,14 +209,14 @@ def process_file(filepath):
 def main():
     """Main function."""
     files = [
-        'simulations/v16/geometric/g2_geometry_v16_0.py',
-        'simulations/v16/gauge/gauge_unification_v16_0.py',
-        'simulations/v16/fermion/fermion_generations_v16_0.py',
-        'simulations/v16/proton/proton_decay_v16_0.py',
-        'simulations/v16/higgs/higgs_mass_v16_0.py',
-        'simulations/v16/neutrino/neutrino_mixing_v16_0.py',
-        'simulations/v16/cosmology/multi_sector_v16_0.py',
-        'simulations/v16/pneuma/pneuma_mechanism_v16_0.py',
+        'simulations/v21/geometric/g2_geometry_v16_0.py',
+        'simulations/v21/gauge/gauge_unification_v16_0.py',
+        'simulations/v21/fermion/fermion_generations_v16_0.py',
+        'simulations/v21/proton/proton_decay_v16_0.py',
+        'simulations/v21/higgs/higgs_mass_v16_0.py',
+        'simulations/v21/neutrino/neutrino_mixing_v16_0.py',
+        'simulations/v21/cosmology/multi_sector_v16_0.py',
+        'simulations/v21/pneuma/pneuma_mechanism_v16_0.py',
     ]
 
     for filepath in files:

@@ -1305,7 +1305,7 @@
         function getFolderFromPath(path) {
             if (!path) return '';
 
-            // Handle v16 structure: simulations/v16/gauge/...
+            // Handle v16 structure: simulations/v21/gauge/...
             let match = path.match(/simulations\/v16\/([^\/]+)/);
             if (match) return match[1];
 

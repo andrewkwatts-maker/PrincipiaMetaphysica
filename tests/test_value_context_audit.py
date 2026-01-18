@@ -315,7 +315,7 @@ class ValueContextAuditor:
 
         # Simulation files
         simulation_patterns = [
-            "simulation", "simulations/v16", "run_all",
+            "simulation", "simulations/v21", "run_all",
             "geometric", "cosmology", "gauge", "neutrino",
             "predictions", "appendix"
         ]
