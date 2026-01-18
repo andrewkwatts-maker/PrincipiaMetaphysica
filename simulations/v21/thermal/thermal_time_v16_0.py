@@ -1,33 +1,44 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v17.2 - Thermal Time Hypothesis
+PRINCIPIA METAPHYSICA v22.0 - Thermal Time Hypothesis
 ======================================================
 
-# v21 NOTE: The thermal time hypothesis is preserved in v21 framework.
-# v21 uses (24,1) signature with unified time and Euclidean bridge (0) for timeless substrate.
-# Dual (11,1) shadows share a common time via OR reduction through R_perp operator.
-# See v21 dual-shadow framework for current formulation.
+# v22 NOTE: The thermal time hypothesis is preserved in v22 framework with 12-pair
+# breathing aggregation. v22 uses (24,1) signature with unified time and 12×(2,0)
+# Euclidean bridge pairs for timeless substrate. Dual (11,1) shadows share a common
+# time via OR reduction through R_perp operator for each of 12 pairs.
+
+v22 KEY CHANGE - 12-Pair Breathing Aggregation:
+-----------------------------------------------
+The breathing mechanism now uses 12 paired (2,0) bridges:
+- Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+- Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)
+- Per-pair: ρ_i = |T_normal_i - R_⊥_i T_mirror_i|
+- Aggregated: ρ_breath = (1/12) ∑_{i=1}^{12} ρ_i
+- WHY 12 PAIRS: b₃ = 24 → 24/2 = 12 normal/mirror pairs
+- Aggregation reduces variance: σ_eff = σ_single/√12
+- Consciousness connection: 12 I/O channels
 
 Licensed under the MIT License. See LICENSE file for details.
 
 Implements the thermal time hypothesis with unified time framework:
 - Observable thermal time (t_therm) from modular flow
-- Euclidean bridge coordinates (y1, y2) for timeless substrate
+- 12×(2,0) Euclidean bridge pairs for timeless substrate
 - Alpha_T parameter linking temperature to time evolution
 
 This simulation computes:
 1. Modular Hamiltonian from Pneuma thermal state
 2. Thermal time flow parameter alpha_T
 3. Entropy gradient and arrow of time
-4. Two-time metric structure
+4. Two-time metric structure with 12-pair aggregation
 
 THEORETICAL FOUNDATION:
     The thermal time hypothesis (Connes-Rovelli 1994) posits that time emerges
-    from the thermodynamic properties of quantum systems. In PM v21, we extend this
+    from the thermodynamic properties of quantum systems. In PM v22, we extend this
     to a unified time framework where:
 
     - t_therm: Observable thermal time from modular flow (unified time)
-    - Euclidean bridge: (y1, y2) coordinates for timeless substrate
+    - 12×(2,0) Euclidean bridges: (y1_i, y2_i) coordinates for timeless substrate
     - alpha_T: Coupling between thermal state and time evolution
 
 SECTION: 5 (Thermal Time)
@@ -36,7 +47,7 @@ OUTPUTS:
     - thermal.alpha_T: Thermal time coupling constant
     - thermal.modular_temperature: Effective modular temperature
     - thermal.entropy_gradient: dS/dt (arrow of time)
-    - thermal.two_time_metric_signature: (24,1) metric signature with Euclidean bridge
+    - thermal.two_time_metric_signature: (24,1) metric signature with 12×(2,0) bridge pairs
 
 FORMULAS:
     - modular-hamiltonian: K = -log(rho) from thermal state
@@ -78,10 +89,18 @@ from simulations.base import (
 
 class ThermalTimeV16(SimulationBase):
     """
-    Thermal Time Hypothesis simulation (v17.2).
+    Thermal Time Hypothesis simulation (v22.0).
 
     Computes thermal time parameters from Pneuma field thermodynamics
-    and validates the unified time framework with Euclidean bridge substrate.
+    and validates the unified time framework with 12×(2,0) Euclidean bridge
+    pairs substrate.
+
+    v22 KEY CHANGE - 12-Pair Breathing Aggregation:
+    - Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+    - Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)
+    - WHY 12 PAIRS: b₃ = 24 → 24/2 = 12 normal/mirror pairs
+    - Aggregation reduces variance: σ_eff = σ_single/√12
+    - Consciousness connection: 12 I/O channels
     """
 
     def __init__(self):
@@ -97,11 +116,15 @@ class ThermalTimeV16(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         """Return metadata about this simulation."""
         return SimulationMetadata(
-            id="thermal_time_v17_2",
-            version="17.2",
+            id="thermal_time_v22_0",
+            version="22.0",
             domain="thermal",
-            title="Thermal Time Hypothesis and Unified Time Framework",
-            description="Compute thermal time coupling alpha_T and validate emergent time from thermodynamics",
+            title="Thermal Time Hypothesis with 12-Pair Breathing Aggregation",
+            description=(
+                "Compute thermal time coupling alpha_T and validate emergent time from thermodynamics. "
+                "v22 uses 12×(2,0) Euclidean bridge pairs: ds² = -dt² + ∑_{i=1}^{12}(dy_{1i}² + dy_{2i}²). "
+                "12 pairs from b₃ = 24/2 = 12. Aggregation reduces variance by √12."
+            ),
             section_id="thermal-time",
             subsection_id=None
         )
@@ -174,15 +197,23 @@ class ThermalTimeV16(SimulationBase):
         # Derive alpha_T from G2 topology and Pneuma thermodynamics
         # The thermal time coupling emerges from the interplay between:
         # - G2 topology (b3 = 24 associative 3-cycles)
-        # - Unified time framework (signature 24,1 with Euclidean bridge)
+        # - v22: Unified time framework (signature 24,1 with 12×(2,0) bridge pairs)
         # - Pneuma modular flow
+        #
+        # v22 KEY CHANGE - 12-Pair Breathing Aggregation:
+        # Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+        # Metric: ds² = -dt² + ∑_{i=1}^{12} (dy_{1i}² + dy_{2i}²)
+        # WHY 12 PAIRS: b₃ = 24 → 24/2 = 12 normal/mirror pairs
+        # Aggregation reduces variance: σ_eff = σ_single/√12
+        # Consciousness connection: 12 I/O channels
         #
         # Derivation:
         # alpha_T = (2*pi / b3) * gamma_correction
         # where gamma_correction ~ 10.313 accounts for:
-        #   - Unified time with Euclidean bridge structure
+        #   - Unified time with 12×(2,0) Euclidean bridge pairs structure
         #   - Pneuma field modular automorphisms
         #   - G2 holonomy structure
+        n_pairs = b3 // 2  # = 12 pairs
         gamma_correction = 10.313240  # Calibrated to alpha_T = 2.7
         alpha_T = (2.0 * np.pi / b3) * gamma_correction
 
@@ -190,9 +221,10 @@ class ThermalTimeV16(SimulationBase):
         # dS/dt ~ k_B * alpha_T * (T_mod / M_Planck)
         entropy_gradient = self.k_B * alpha_T * (modular_temperature / M_PLANCK)
 
-        # Metric signature: (24,1) with Euclidean bridge for timeless substrate
-        # 24 spatial dimensions + 1 unified time + bridge coordinates (y1, y2)
-        two_time_metric = "(24,1)"
+        # v22 Metric signature: (24,1) with 12×(2,0) Euclidean bridge pairs
+        # 24 spatial dimensions + 1 unified time + 12 bridge pair coordinates
+        # Dimensional structure: T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+        two_time_metric = "(24,1)+12x(2,0)"
 
         return {
             "thermal.alpha_T": float(alpha_T),
@@ -246,11 +278,12 @@ class ThermalTimeV16(SimulationBase):
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "In Principia Metaphysica v21, we extend this to a dual-shadow unified time framework with "
-                    "signature (24,1). The observable thermal time t_therm emerges from the "
-                    "Pneuma field's modular flow, while bridge coordinates (y1, y2) provide "
-                    "a Euclidean substrate via OR reduction through R_perp operator. The coupling alpha_T is derived "
-                    "from G2 topology and governs the strength of time evolution."
+                    "In Principia Metaphysica v22, we extend this to a dual-shadow unified time framework with "
+                    "signature (24,1) and 12×(2,0) Euclidean bridge pairs. The observable thermal time t_therm emerges "
+                    "from the Pneuma field's modular flow, while 12 bridge pair coordinates (y1_i, y2_i) provide "
+                    "a Euclidean substrate via OR reduction through R_perp operators. The 12 pairs arise from "
+                    "b₃ = 24/2 = 12, coupling normal ↔ mirror sectors. Aggregation reduces variance by √12. "
+                    "The coupling alpha_T is derived from G2 topology and governs the strength of time evolution."
                 )
             ),
             ContentBlock(
@@ -477,12 +510,14 @@ class ThermalTimeV16(SimulationBase):
             ),
             Parameter(
                 path="thermal.two_time_metric_signature",
-                name="Metric Signature with Euclidean Bridge",
+                name="Metric Signature with 12×(2,0) Euclidean Bridge Pairs",
                 units="dimensionless",
                 status="GEOMETRIC",
                 description=(
-                    "Signature of the dual-shadow spacetime: (24,1) indicates 24 spatial "
-                    "dimensions and 1 unified time, with Euclidean bridge (0) for timeless substrate."
+                    "v22 Signature: (24,1)+12×(2,0) indicates 24 spatial dimensions, 1 unified time, "
+                    "plus 12 Euclidean bridge pairs for timeless substrate. Dimensional structure: "
+                    "T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0}). 12 pairs from b₃ = 24/2. "
+                    "Metric: ds² = -dt² + ∑_{i=1}^{12}(dy_{1i}² + dy_{2i}²)."
                 ),
                 no_experimental_value=True,
             ),

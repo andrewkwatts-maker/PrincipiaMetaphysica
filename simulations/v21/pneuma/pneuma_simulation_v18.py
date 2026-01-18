@@ -1,15 +1,25 @@
 #!/usr/bin/env python3
 """
-Principia Metaphysica v18.0 - Pneuma Domain Consolidated Simulation
+Principia Metaphysica v22.0 - Pneuma Domain Consolidated Simulation
 =====================================================================
 
 Licensed under the MIT License. See LICENSE file for details.
 
-This module provides a unified v18 SimulationBase wrapper that consolidates
-all Pneuma field physics derivations from v16/v17 modules:
+This module provides a unified v22 SimulationBase wrapper that consolidates
+all Pneuma field physics derivations with the 12x(2,0) paired bridge system.
+
+v22.0 KEY CHANGES:
+  - Bulk decomposition: M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
+  - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
+  - 24 spacelike from 12x2 pairs, 1 timelike (unified)
+  - Neural gate I/O: y_{1i} (perception input), y_{2i} (intuition output)
+  - Per-pair OR reduction: R_perp^i = [[0,-1],[1,0]] for each pair
+  - Full OR: tensor_{i=1}^{12} R_perp^i
+
+WHY 12 PAIRS: b_3 = 24 => 24/2 = 12 paired bridges
 
 WRAPPED MODULES:
-1. PneumaMechanismV16 - Pneuma field dynamics and geometric coupling
+1. PneumaMechanismV16 - Pneuma field dynamics, geometric coupling, neural gates
 
 KEY DERIVATIONS:
 - Pneuma coupling from G2 topology and hierarchy factor
@@ -17,6 +27,7 @@ KEY DERIVATIONS:
 - Flow parameter from potential curvature: Lambda = sqrt(2*V''(<Psi>))
 - Mass scale from Euler characteristic: m_P ~ M_Planck / sqrt(chi_eff)
 - Lagrangian validity via stability check (Hessian > 0)
+- (v22) Neural gate structure from 12 paired bridges
 
 THEORETICAL FOUNDATION:
     The Pneuma field is a parallel spinor on the G2 holonomy manifold.
@@ -25,6 +36,7 @@ THEORETICAL FOUNDATION:
     - Mass term: From G2 flux quantization (m_P ~ M_GUT / sqrt(chi_eff))
     - Potential: Racetrack from competing instantons
     - VEV: Dynamically selected via energy minimization
+    - (v22) I/O structure: 12 paired bridges as neural gates
 
 All values derived from SSOT (FormulasRegistry) and PMRegistry.
 No circular logic or hardcoded experimental values.
@@ -58,11 +70,18 @@ from .pneuma_mechanism_v16_0 import PneumaMechanismV16
 
 class PneumaSimulationV18(SimulationBase):
     """
-    Consolidated v18 wrapper for Pneuma field simulations.
+    Consolidated v22 wrapper for Pneuma field simulations.
 
-    This wrapper runs the underlying v16 Pneuma simulation and
+    This wrapper runs the underlying Pneuma simulation and
     provides a unified interface with proper SSOT compliance and
     schema validation.
+
+    v22.0 ADDITIONS:
+    - 12x(2,0) paired bridge structure
+    - Neural gate I/O mechanism for consciousness
+    - Per-pair OR reduction operators
+    - Input (y_{1i}): Perception from bulk time
+    - Output (y_{2i}): Intuition via cyclic feedback
 
     Key Results:
     - Pneuma coupling from G2 topology
@@ -70,31 +89,40 @@ class PneumaSimulationV18(SimulationBase):
     - Flow parameter governing field evolution
     - Mass scale from chi_eff topology
     - Lagrangian stability validation
+    - (v22) Neural gate structure with 12 pairs
 
     Status Categories:
     - GEOMETRIC: Values derived from G2 topology
     - DERIVED: Values computed from geometric formulas
     - THEORY: Theoretical framework predictions
+    - EXACT: Topologically fixed values (e.g., n_bridge_pairs = 12)
     """
 
+    # v22.0: Number of bridge pairs from b3/2
+    N_BRIDGE_PAIRS = 12  # b3 = 24 => 24/2 = 12 pairs
+
     def __init__(self):
-        """Initialize v18 Pneuma simulation wrapper."""
+        """Initialize v22 Pneuma simulation wrapper."""
         # Create underlying simulation instance
         self._pneuma_mechanism = PneumaMechanismV16()
 
         # G2 structure constants
         self._g2_norm = np.sqrt(7.0 / 3.0)  # Associative form norm
 
+        # v22.0: Per-pair OR reduction operator
+        self._R_perp = np.array([[0, -1], [1, 0]], dtype=float)
+
         # Metadata for this wrapper
         self._metadata = SimulationMetadata(
-            id="pneuma_simulation_v18_0",
-            version="18.0",
+            id="pneuma_simulation_v22_0",
+            version="22.0",
             domain="pneuma",
-            title="Pneuma Field Dynamics from G2 Topology (Consolidated)",
+            title="Pneuma Field Dynamics with 12x(2,0) Paired Bridges (Consolidated)",
             description=(
-                "Comprehensive Pneuma field physics derivation from G2 manifold topology. "
-                "Derives coupling constant, vacuum expectation value, flow parameter, "
-                "mass scale, and validates Lagrangian stability via racetrack potential. "
+                "Comprehensive Pneuma field physics derivation from G2 manifold topology "
+                "with v22 12x(2,0) paired bridge system. Derives coupling constant, vacuum "
+                "expectation value, flow parameter, mass scale, neural gate I/O structure, "
+                "and validates Lagrangian stability via racetrack potential. "
                 "Implements vielbein emergence from spinor bilinears."
             ),
             section_id="2",
@@ -133,6 +161,9 @@ class PneumaSimulationV18(SimulationBase):
             # Geometric parameters
             "pneuma.g2_norm",
             "pneuma.topological_factor",
+            # v22.0: Neural gate I/O parameters
+            "pneuma.n_bridge_pairs",
+            "pneuma.neural_gate_active",
         ]
 
     @property
@@ -148,6 +179,10 @@ class PneumaSimulationV18(SimulationBase):
             # Derived formulas
             "racetrack-potential",
             "vielbein-emergence",
+            # v22.0: Neural gate formulas
+            "pneuma-neural-gate",
+            "pneuma-or-reduction",
+            "bulk-decomposition-v22",
         ]
 
     def run(self, registry: PMRegistry) -> Dict[str, Any]:
@@ -352,6 +387,76 @@ class PneumaSimulationV18(SimulationBase):
                     ]
                 }
             ),
+            # v22.0: Bulk decomposition formula
+            Formula(
+                id="bulk-decomposition-v22",
+                label="(2.0)",
+                latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
+                plain_text="M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})",
+                category="THEORY",
+                description=(
+                    "v22.0 Bulk decomposition into 12x(2,0) paired bridges. "
+                    "Metric: ds^2 = -dt^2 + sum_{i=1}^{12}(dy_{1i}^2 + dy_{2i}^2). "
+                    "24 spacelike from 12x2 pairs, 1 timelike (unified)."
+                ),
+                input_params=["topology.b3"],
+                output_params=["pneuma.n_bridge_pairs"],
+                derivation={
+                    "steps": [
+                        "b3 = 24 Betti number from G2 topology",
+                        "24 / 2 = 12 paired bridges",
+                        "Each pair B_i^{2,0} = (y_{1i}, y_{2i})",
+                        "Normal shadow: aggregate of y_{1i} + internal G2",
+                        "Mirror shadow: aggregate of y_{2i} + internal G2"
+                    ]
+                }
+            ),
+            # v22.0: Neural gate I/O formula
+            Formula(
+                id="pneuma-neural-gate",
+                label="(2.8)",
+                latex=r"B_i^{2,0} = (y_{1i}, y_{2i}) \quad \text{Input: } y_{1i} \quad \text{Output: } y_{2i}",
+                plain_text="B_i^{2,0} = (y_{1i}, y_{2i}); Input: y_{1i}; Output: y_{2i}",
+                category="THEORY",
+                description=(
+                    "v22.0 Neural gate structure: each bridge pair serves as I/O channel. "
+                    "y_{1i} = perception from bulk time t. "
+                    "y_{2i} = intuition via cyclic feedback through OR."
+                ),
+                input_params=["topology.b3"],
+                output_params=["pneuma.n_bridge_pairs", "pneuma.neural_gate_active"],
+                derivation={
+                    "steps": [
+                        "12 bridge pairs from b3/2",
+                        "Input channel y_{1i}: perception from bulk",
+                        "Output channel y_{2i}: intuition feedback",
+                        "OR reduction couples input to output"
+                    ]
+                }
+            ),
+            # v22.0: Per-pair OR reduction formula
+            Formula(
+                id="pneuma-or-reduction",
+                label="(2.9)",
+                latex=r"R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
+                plain_text="R_perp^i = [[0,-1],[1,0]]; R_perp^full = tensor_{i=1}^{12} R_perp^i",
+                category="THEORY",
+                description=(
+                    "v22.0 Per-pair OR reduction: 90-degree rotation on each bridge pair. "
+                    "Full operator is tensor product over 12 pairs. "
+                    "(R_perp^full)^2 = (-1)^12 I = I ensures spinor coherence."
+                ),
+                input_params=["topology.b3"],
+                output_params=[],
+                derivation={
+                    "steps": [
+                        "Per-pair: R_perp^i = [[0,-1],[1,0]]",
+                        "Property: (R_perp^i)^2 = -I",
+                        "Full tensor: R_perp^full = tensor over 12 pairs",
+                        "Double traversal: (R_perp^full)^2 = I (even pairs)"
+                    ]
+                }
+            ),
         ])
 
         return formulas
@@ -425,6 +530,31 @@ class PneumaSimulationV18(SimulationBase):
                 derivation_formula="pneuma-coupling-g2",
                 no_experimental_value=True
             ),
+            # v22.0: Neural gate parameters
+            Parameter(
+                path="pneuma.n_bridge_pairs",
+                name="Number of Bridge Pairs",
+                units="dimensionless",
+                status="EXACT",
+                description=(
+                    "v22.0: Number of (2,0) paired bridges. "
+                    "n = b3/2 = 24/2 = 12 pairs. Each pair is a neural gate."
+                ),
+                derivation_formula="bulk-decomposition-v22",
+                no_experimental_value=True
+            ),
+            Parameter(
+                path="pneuma.neural_gate_active",
+                name="Neural Gate Active",
+                units="dimensionless",
+                status="DERIVED",
+                description=(
+                    "v22.0: Boolean flag indicating 12 neural gates are active. "
+                    "True when Lagrangian is valid and n_bridge_pairs = 12."
+                ),
+                derivation_formula="pneuma-neural-gate",
+                no_experimental_value=True
+            ),
         ])
 
         return params
@@ -440,6 +570,46 @@ class PneumaSimulationV18(SimulationBase):
                     "holonomy manifold, it generates both the metric structure and matter "
                     "content through vielbein emergence and dimensional reduction."
                 )
+            ),
+            # v22.0: 12x(2,0) Paired Bridge System
+            ContentBlock(
+                type="heading",
+                content="v22.0: The 12x(2,0) Paired Bridge System",
+                level=3
+            ),
+            ContentBlock(
+                type="formula",
+                content=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
+                formula_id="bulk-decomposition-v22",
+                label="(2.0)"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "The v22.0 framework decomposes the bulk into 12 paired bridges, each with "
+                    "Euclidean (2,0) signature. The pairing arises from b_3 = 24/2 = 12. Each pair "
+                    "serves as a 'neural gate' for consciousness flow between shadows."
+                )
+            ),
+            # v22.0: Neural Gate I/O
+            ContentBlock(
+                type="heading",
+                content="Neural Gate I/O Mechanism",
+                level=3
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "Each bridge pair B_i = (y_{1i}, y_{2i}) has distinct I/O channels: "
+                    "y_{1i} (perception input from bulk time) and y_{2i} (intuition output "
+                    "via cyclic feedback). This creates 12 parallel consciousness channels."
+                )
+            ),
+            ContentBlock(
+                type="formula",
+                content=r"R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
+                formula_id="pneuma-or-reduction",
+                label="(2.1)"
             ),
             ContentBlock(
                 type="heading",
@@ -504,12 +674,13 @@ class PneumaSimulationV18(SimulationBase):
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Fermionic Primacy",
+                title="Fermionic Primacy with Neural Gates (v22)",
                 content=(
                     "The Pneuma field demonstrates fermionic primacy: spacetime is not "
                     "fundamental but emerges from the collective behavior of spinor fields. "
-                    "The Einstein equations R_MN = T_MN[Psi_P] arise as consistency conditions "
-                    "for this emergence."
+                    "The v22 framework adds 12 neural gates (paired bridges) that enable "
+                    "consciousness I/O between normal and mirror shadows. The Einstein equations "
+                    "R_MN = T_MN[Psi_P] arise as consistency conditions for this emergence."
                 )
             ),
         ]
@@ -517,10 +688,11 @@ class PneumaSimulationV18(SimulationBase):
         return SectionContent(
             section_id="2",
             subsection_id="2.1-2.4",
-            title="Pneuma Field Dynamics from G2 Topology",
+            title="Pneuma Field Dynamics with 12x(2,0) Paired Bridges",
             abstract=(
-                "Complete derivation of Pneuma field physics from G2 manifold: coupling "
-                "constant, vacuum expectation value, flow dynamics, and vielbein emergence. "
+                "Complete derivation of Pneuma field physics from G2 manifold with v22 "
+                "12x(2,0) paired bridge system: coupling constant, vacuum expectation value, "
+                "flow dynamics, neural gate I/O, and vielbein emergence. "
                 "Implements the fermionic primacy principle."
             ),
             content_blocks=blocks,

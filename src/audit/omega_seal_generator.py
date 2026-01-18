@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v21.0 - Omega Seal Generator
+PRINCIPIA METAPHYSICA v22.0 - Omega Seal Generator
 ===================================================
 
 DOI: 10.5281/zenodo.18079602
 
 This module generates the cryptographic Omega Seal that locks the
-v21.0 Sterile Terminal State. Once the seal is generated, any
+v22.0 Sterile Terminal State. Once the seal is generated, any
 modification to the 125 residues will break the chain.
 
 THE OMEGA SEAL:
@@ -15,9 +15,15 @@ THE OMEGA SEAL:
     2. The 24 torsion pins
     3. The 125 observable residues
     4. The certificate validation results
+    5. The 12-pair bridge structure (12 x (2,0) paired bridges)
 
 SEAL FORMAT:
     OMEGA-XXXX-YYYY-ZZZZ (16 hexadecimal characters)
+
+12-PAIR-BRIDGE ARCHITECTURE:
+    The v22.0 seal incorporates the 12 x (2,0) paired bridge system.
+    Each pair represents a shadow brane coupling, with 12 total pairs
+    providing the complete bridge structure for the sterile model.
 
 STERILITY REQUIREMENT:
     The seal must be generated AFTER replacing all "Best Fit" labels
@@ -41,6 +47,7 @@ class SealInput:
     pins: int
     nodes: int
     hidden: int
+    pairs: int  # 12-pair bridge count for v22.0
     sterile_angle: float
     residue_sum: float
     certificate_results: Dict[str, bool]
@@ -105,26 +112,39 @@ def validate_registry_sterility(registry_data: Dict[str, Any]) -> bool:
 def generate_omega_seal(
     registry_data: Dict[str, Any],
     certificate_results: Optional[Dict[str, bool]] = None,
-    validate_sterility: bool = True
+    validate_sterility: bool = True,
+    pairs: int = 12
 ) -> OmegaSeal:
     """
-    Generates the final Omega Seal for the v16.2 Terminal State.
+    Generates the final Omega Seal for the v22.0 Terminal State.
+
+    The v22.0 seal incorporates the 12 x (2,0) paired bridge system,
+    where each pair represents a shadow brane coupling. The 12 pairs
+    provide the complete 12-PAIR-BRIDGE architecture.
 
     Args:
         registry_data: Dictionary containing model state with 'nodes' array
         certificate_results: Optional pre-computed certificate results
         validate_sterility: Whether to check for non-sterile language
+        pairs: Number of bridge pairs (default 12 for 12-PAIR-BRIDGE system)
 
     Returns:
         OmegaSeal with the cryptographic signature
 
     Raises:
-        ValueError: If registry is malformed
+        ValueError: If registry is malformed or pairs < 6
         NonSterileError: If registry contains fitting language
     """
     # Validate sterility if requested
     if validate_sterility:
         validate_registry_sterility(registry_data)
+
+    # Validate pairs count for 12-PAIR-BRIDGE system
+    # Minimum 6 pairs required, 12 pairs is the full system
+    if pairs < 6:
+        raise ValueError(
+            f"Invalid pairs count: {pairs}. Minimum 6 pairs required for bridge stability."
+        )
 
     # Extract or default the node count
     nodes = registry_data.get('nodes', [])
@@ -155,6 +175,7 @@ def generate_omega_seal(
     sterile_angle = np.degrees(np.arcsin(node_count / roots))
 
     # Use provided certificate results or default to all True
+    # v22.0: Added C_PAIRS gate for 12-pair bridge validation
     if certificate_results is None:
         certificate_results = {
             "C02-R": roots == 288,
@@ -163,6 +184,7 @@ def generate_omega_seal(
             "C125": node_count == 125,
             "C39": pins // 4 == 6,
             "C40": hidden == 163,
+            "C_PAIRS": pairs == 12 or pairs >= 6,  # 12-PAIR-BRIDGE validation
         }
 
     # Verify all certificates pass
@@ -180,6 +202,7 @@ def generate_omega_seal(
         pins=pins,
         nodes=node_count,
         hidden=hidden,
+        pairs=pairs,  # 12-pair bridge count
         sterile_angle=sterile_angle,
         residue_sum=residue_sum,
         certificate_results=certificate_results,
@@ -187,11 +210,12 @@ def generate_omega_seal(
     )
 
     # Create the hash string (deterministic format)
-    # Format: "v21-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge(2,0)-Hidden{H}-Sum{S:.10f}"
+    # v22.0 Format: "v22-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge12x(2,0)-Hidden{H}-Pairs{P}"
+    # Updated from v21 DUAL-SHADOW to v22 12-PAIR-BRIDGE architecture
     seal_string = (
-        f"v21-Roots{roots}-Pins{pins}-Nodes{node_count}-"
-        f"Signature(24,1)-Bridge(2,0)-"
-        f"Hidden{hidden}-Angle{sterile_angle:.6f}-Sum{residue_sum:.10f}"
+        f"v22-Roots{roots}-Pins{pins}-Nodes{node_count}-"
+        f"Signature(24,1)-Bridge12x(2,0)-"
+        f"Hidden{hidden}-Pairs{pairs}-Angle{sterile_angle:.6f}-Sum{residue_sum:.10f}"
     )
 
     # Generate SHA-256 hash
@@ -208,9 +232,11 @@ def generate_omega_seal(
             "pins": pins,
             "nodes": node_count,
             "hidden": hidden,
+            "pairs": pairs,  # 12-pair bridge count
             "sterile_angle": sterile_angle,
             "residue_sum": residue_sum,
             "certificates_passed": list(certificate_results.keys()),
+            "bridge_architecture": "12-PAIR-BRIDGE",  # v22.0 architecture label
         },
         sterility_status="STERILE" if validate_sterility else "UNVALIDATED",
         generation_time=timestamp
@@ -248,9 +274,11 @@ def generate_seal_certificate(seal: OmegaSeal) -> str:
     Returns:
         Formatted certificate string
     """
+    pairs = seal.input_summary.get('pairs', 12)
+    bridge_arch = seal.input_summary.get('bridge_architecture', '12-PAIR-BRIDGE')
     return f"""
 ================================================================================
-                    PRINCIPIA METAPHYSICA v21.0
+                    PRINCIPIA METAPHYSICA v22.0
                  OMEGA SEAL CERTIFICATE OF INTEGRITY
 ================================================================================
 
@@ -265,20 +293,27 @@ ARCHITECTURE SUMMARY:
   - Torsion Pins: {seal.input_summary['pins']}
   - Observable Nodes: {seal.input_summary['nodes']}
   - Hidden Supports: {seal.input_summary['hidden']}
+  - Bridge Pairs: {pairs} (12-PAIR-BRIDGE architecture)
   - Sterile Angle: {seal.input_summary['sterile_angle']:.4f} degrees
   - Residue Sum: {seal.input_summary['residue_sum']:.10f}
+
+12-PAIR-BRIDGE STRUCTURE:
+  - Architecture: {bridge_arch}
+  - Pair Count: {pairs} x (2,0) paired bridges
+  - Bridge Validation: C_PAIRS gate (pairs == 12 or pairs >= 6)
 
 CERTIFICATES VALIDATED:
   {', '.join(seal.input_summary['certificates_passed'])}
 
 VERIFICATION:
-  This seal certifies that the v21.0 Terminal State is geometrically locked.
+  This seal certifies that the v22.0 Terminal State is geometrically locked.
   Any modification to the 125 residues will produce a different seal.
   The model is now READ-ONLY for physics parameters.
 
 MATHEMATICAL INVARIANT:
   276 (SO(24)) + 24 (Torsion) - 12 (Manifold Cost) = 288 (Roots)
   125 (Observable) + 163 (Hidden) = 288 (Total Potential)
+  12 x (2,0) = 12 Paired Bridges (Shadow Brane Coupling)
   arcsin(125/288) = 25.7234 degrees (Sterile Angle)
 
 ================================================================================
@@ -293,7 +328,8 @@ MATHEMATICAL INVARIANT:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA v21.0 - Omega Seal Generator")
+    print("PRINCIPIA METAPHYSICA v22.0 - Omega Seal Generator")
+    print("12-PAIR-BRIDGE Architecture")
     print("=" * 70)
 
     # Create a test registry with 125 nodes

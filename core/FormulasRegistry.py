@@ -1,7 +1,14 @@
 """
 FormulasRegistry.py - Single Source of Truth (SSoT)
 ====================================================
-Centralizes all topological derivations for Principia Metaphysica v21.0-UNIFIED.
+Centralizes all topological derivations for Principia Metaphysica v22.0-12PAIR.
+
+v22 KEY UPDATES (2026-01-18):
+- Structure: M^{24,1} = T¹ ×_fiber (⊕_{i=1}^{12} B_i^{2,0})
+- Bridge: Single (2,0) -> 12×(2,0) paired system
+- OR: Single R_⊥ -> Distributed ⊗_{i=1}^{12} R_⊥_i
+- Consciousness I/O: Each pair is neural gate (y_{1i}=input, y_{2i}=output)
+- Gnosis: 6-pair minimum for wet microtubule stability, 6→12 unlocking
 
 v21 KEY UPDATES (Gemini review 2026-01-18):
 - Signature: (24,2) -> (24,1) unified time (eliminates ghosts/CTCs)
@@ -68,7 +75,7 @@ lock_geometric_context()
 
 class FormulasRegistry:
     """
-    Single Source of Truth (SSoT) for Principia Metaphysica v21.0-UNIFIED.
+    Single Source of Truth (SSoT) for Principia Metaphysica v22.0-12PAIR.
 
     Centralizes all topological derivations to ensure sterility across:
     1. Simulation Physics
@@ -109,9 +116,11 @@ class FormulasRegistry:
     - Bars, I. (2006). 2T-physics. Phys. Rev. D 74: 085019.
     """
 
-    VERSION = "21.0-UNIFIED"
-    VERSION_SHORT = "21.0"
+    VERSION = "22.0-12PAIR"
+    VERSION_SHORT = "22.0"
     STATUS = "PEER_REVIEWED"  # Updated per Gemini review 2026-01-18
+    # v22 CHANGES: 12×(2,0) paired bridge system, distributed OR reduction,
+    #              gnosis unlocking (6→12 pairs), consciousness I/O channels
     # v21 CHANGES: (24,2) -> (24,1) unified time, Sp(2,R) -> Euclidean bridge,
     #              8192 spinor -> 4096 spinor from Cl(24,1), breathing mode DE
 

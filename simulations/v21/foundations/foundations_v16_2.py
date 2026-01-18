@@ -1,18 +1,28 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v21.0 - Section 1: Foundations of Dimensional Descent
+PRINCIPIA METAPHYSICA v22.0 - Section 1: Foundations of Dimensional Descent
 ============================================================================
 
 DOI: 10.5281/zenodo.18079602
 
-v21.0 STERILE MODEL: (24,1) signature with 2D Euclidean bridge and dual shadows.
+v22.0 STERILE MODEL: M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
+The 12x(2,0) paired bridge system with unified time.
 All 125 constants are geometric residues, not tuned.
 
+KEY v22 CHANGES:
+  - Bulk decomposition: M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
+  - Metric: ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
+  - 24 spacelike from 12x2 pairs, 1 timelike (unified)
+  - Shadow structure: y_{1i} aggregates (normal) + y_{2i} aggregates (mirror)
+  - OR reduction: bigotimes_{i=1}^{12} R_perp_i
+
+WHY 12 PAIRS: b_3 = 24 => 24/2 = 12 paired bridges
+
 This simulation generates the content for Section 1 of the paper:
-  1.1 The 26D(24,1) Ancestral Bulk with Euclidean Bridge
-  1.2 The Euclidean Bridge and OR Reduction
+  1.1 The 26D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+  1.2 The Paired Bridge System and OR Reduction
   1.3 The G2 Manifold (V7) per Shadow
-  1.4 The 6D→4D Projection
+  1.4 The 6D->4D Projection
 
 SECTION: 1 (Foundations of Dimensional Descent)
 
@@ -45,19 +55,30 @@ from simulations.base import (
 
 class FoundationsV16_2(SimulationBase):
     """
-    Section 1: Foundations of Dimensional Descent (v21.0).
+    Section 1: Foundations of Dimensional Descent (v22.0).
 
-    Provides the sterile derivation narrative for the (24,1)→4D descent path:
-    - 1.1: The 26D(24,1) Ancestral Bulk with Euclidean Bridge
-    - 1.2: The Euclidean Bridge and OR Reduction
+    Provides the sterile derivation narrative for the (24,1)->4D descent path
+    with 12x(2,0) paired bridge system:
+    - 1.1: The 26D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge
+    - 1.2: The Paired Bridge System and OR Reduction
     - 1.3: The G2 Manifold V7 per Shadow (7D Geometric Hard-Lock)
-    - 1.4: The 6D→4D Projection (Calabi-Yau Filtering)
+    - 1.4: The 6D->4D Projection (Calabi-Yau Filtering)
+
+    KEY v22 STRUCTURE:
+        M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})
+        ds^2 = -dt^2 + sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)
+
+    WHY 12 PAIRS:
+        b_3 = 24 (Betti number from G2 topology)
+        24 / 2 = 12 paired bridges
+        Each pair: (y_{1i}, y_{2i}) with Euclidean (2,0) signature
     """
 
     # Dynamic formula IDs referenced by this section
     FORMULA_REFS = [
         "26d-signature",
         "euclidean-bridge",
+        "or-reduction-tensor",
         "g2-holonomy",
         "b3-generations",
         "calabi-yau-projection",
@@ -78,10 +99,10 @@ class FoundationsV16_2(SimulationBase):
         """Return metadata about this simulation."""
         return SimulationMetadata(
             id="foundations_v16_2",
-            version="21.0",
+            version="22.0",
             domain="foundations",
             title="Foundations of Dimensional Descent",
-            description="The (24,1) bulk with Euclidean bridge, dual shadows, and G2 compactification",
+            description="The (24,1) bulk with 12x(2,0) paired bridge system, dual shadows, and G2 compactification",
             section_id="1",
             subsection_id="1.1"  # v19.0: Unique subsection (introduction_v16_0 owns section 1)
         )
@@ -117,11 +138,11 @@ class FoundationsV16_2(SimulationBase):
             # Section 1 should start directly with the foundational content
 
             # ================================================================
-            # 1.1 The 26D(24,1) Ancestral Bulk with Euclidean Bridge
+            # 1.1 The 26D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge
             # ================================================================
             ContentBlock(
                 type="heading",
-                content="The 26D(24,1) Ancestral Bulk with Euclidean Bridge",
+                content="The 26D(24,1) Ancestral Bulk with 12x(2,0) Paired Bridge",
                 level=2,
                 label="1.1"
             ),
@@ -132,8 +153,8 @@ class FoundationsV16_2(SimulationBase):
                     "is not an independent system, but a lower-dimensional <strong>residue</strong> "
                     "of a <strong>26D(24,1) Bosonic Ancestral Bulk</strong>. This high-dimensional "
                     "state represents the 'Total Potential' of the physical registry, with unified "
-                    "time (eliminating ghosts and closed timelike curves) and a 2D Euclidean shared "
-                    "bridge enabling dual-shadow coherence."
+                    "time (eliminating ghosts and closed timelike curves) and a <strong>12x(2,0) "
+                    "paired bridge system</strong> enabling dual-shadow coherence."
                 )
             ),
             ContentBlock(
@@ -154,28 +175,42 @@ class FoundationsV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="equation",
-                content=r"\text{Signature}(M^{26}) = (24, 1) \quad \Rightarrow \quad ds^2 = \sum_{i=1}^{24} dx_i^2 - dt^2",
+                content=r"\text{Signature}(M^{24,1}) = (24, 1) \quad \Rightarrow \quad ds^2 = -dt^2 + \sum_{i=1}^{12} (dy_{1i}^2 + dy_{2i}^2)",
                 label="26d-signature"
             ),
             ContentBlock(
                 type="heading",
-                content="1.1.2 The Dual-Shadow Structure",
+                content="1.1.2 The 12x(2,0) Paired Bridge Structure",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The 26D bulk descends into <strong>dual shadows</strong> connected by a "
-                    "<strong>2D Euclidean bridge</strong>. Each shadow contains (11,1) degrees of freedom, "
-                    "while the bridge dimensions (y₁, y₂) are purely spacelike (2,0):"
+                    "The 26D bulk decomposes into <strong>12 paired bridges</strong>, each with "
+                    "Euclidean (2,0) signature. The total bulk structure is:"
+                )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
+                label="bulk-decomposition"
+            ),
+            ContentBlock(
+                type="paragraph",
+                content=(
+                    "Each bridge pair B<sub>i</sub> = (y<sub>1i</sub>, y<sub>2i</sub>) contributes "
+                    "two spacelike dimensions. This gives 12 x 2 = 24 spacelike dimensions plus "
+                    "1 unified timelike dimension, matching the (24,1) signature. The pairing "
+                    "arises from the G₂ topology: <strong>b₃ = 24 / 2 = 12 pairs</strong>."
                 )
             ),
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>Bridge Metric:</strong> ds²<sub>bridge</sub> = dy₁² + dy₂² (positive-definite, timeless)",
-                    "<strong>Shadow Structure:</strong> 2 × [(5,1)<sub>bridge</sub> ⊕ ⊕<sub>k</sub>(3,1)<sub>k</sub>] per generation",
-                    "<strong>OR Reduction:</strong> 90° rotation operator R<sub>⊥</sub> enables cross-shadow coordinate sampling"
+                    "<strong>Bridge Pairs:</strong> B<sub>i</sub><sup>2,0</sup> = (y<sub>1i</sub>, y<sub>2i</sub>) for i = 1,...,12",
+                    "<strong>Normal Shadow:</strong> Aggregate of all y<sub>1i</sub> (normal halves) + internal G₂",
+                    "<strong>Mirror Shadow:</strong> Aggregate of all y<sub>2i</sub> (mirror halves) + internal G₂",
+                    "<strong>Per-pair OR:</strong> R<sub>⊥</sub><sup>i</sup> = [[0,-1],[1,0]] acts on each (y<sub>1i</sub>, y<sub>2i</sub>)"
                 ],
                 label="dual-shadow-structure"
             ),
@@ -207,61 +242,71 @@ class FoundationsV16_2(SimulationBase):
             ),
 
             # ================================================================
-            # 1.2 The Euclidean Bridge and OR Reduction
+            # 1.2 The Paired Bridge System and OR Reduction
             # ================================================================
             ContentBlock(
                 type="heading",
-                content="The Euclidean Bridge and OR Reduction",
+                content="The Paired Bridge System and OR Reduction",
                 level=2,
                 label="1.2"
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The connection between the dual (24,1) shadows is mediated by a "
-                    "<strong>2D Euclidean bridge</strong> with signature (2,0). This timeless substrate "
-                    "enables cross-shadow coordinate sampling via <strong>Orthogonal Reduction (OR)</strong>, "
-                    "providing the mechanism for coherent information flow between the normal and mirror sectors."
+                    "The connection between the dual shadows is mediated by the "
+                    "<strong>12x(2,0) paired bridge system</strong>. Each bridge pair B<sub>i</sub> "
+                    "provides a timeless Euclidean substrate enabling cross-shadow coordinate sampling "
+                    "via <strong>per-pair Orthogonal Reduction (OR)</strong>."
                 )
             ),
             ContentBlock(
                 type="heading",
-                content="1.2.1 The Bridge Metric",
+                content="1.2.1 The Paired Bridge Metric",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The bridge is purely Euclidean with positive-definite metric. This eliminates ghost "
-                    "modes and closed timelike curves that would arise from multi-time theories. The bridge "
-                    "provides a 'timeless' substrate for cross-shadow sampling, where conformal pressure "
-                    "from condensate flux gradients drives the breathing dark energy mechanism."
+                    "Each of the 12 bridge pairs has positive-definite (2,0) metric, eliminating ghost "
+                    "modes and closed timelike curves. The total bridge metric is the direct sum over all pairs:"
                 )
             ),
             ContentBlock(
                 type="equation",
-                content=r"ds^2_{\text{bridge}} = dy_1^2 + dy_2^2 \quad \text{(positive-definite, no ghosts)}",
+                content=r"ds^2_{\text{bridge}} = \sum_{i=1}^{12} \left(dy_{1i}^2 + dy_{2i}^2\right) \quad \text{(24D positive-definite)}",
                 label="bridge-metric"
             ),
             ContentBlock(
+                type="paragraph",
+                content=(
+                    "The pairing structure arises naturally from the b₃ = 24 Betti number: 24/2 = 12 pairs. "
+                    "Each pair serves as a 'neural gate' for consciousness flow between shadows."
+                )
+            ),
+            ContentBlock(
                 type="heading",
-                content="1.2.2 The OR Reduction Operator",
+                content="1.2.2 The Per-Pair OR Reduction Operator",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "Cross-shadow coordinate sampling uses the <strong>Orthogonal Reduction operator R<sub>⊥</sub></strong>, "
-                    "a 90° rotation that maps normal-shadow gradients to mirror-shadow coordinates. This operator "
-                    "satisfies R<sub>⊥</sub>² = −I, providing Möbius double-cover properties essential for spinor coherence:"
+                    "Cross-shadow coordinate sampling uses <strong>per-pair OR operators R<sub>⊥</sub><sup>i</sup></strong>. "
+                    "Each 2x2 operator acts on the corresponding bridge pair (y<sub>1i</sub>, y<sub>2i</sub>):"
                 )
+            ),
+            ContentBlock(
+                type="equation",
+                content=r"R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix} \quad \Rightarrow \quad R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i",
+                label="or-reduction-tensor"
             ),
             ContentBlock(
                 type="list",
                 items=[
-                    "<strong>Rotation Matrix:</strong> R<sub>⊥</sub> = [[0, −1], [1, 0]] (det = 1, orientation-preserving)",
-                    "<strong>External Sampling:</strong> z'<sub>mirror</sub> = R<sub>⊥</sub> z<sub>normal</sub> + Δy",
-                    "<strong>Möbius Property:</strong> R<sub>⊥</sub>² = −I enables spinor return after double traversal"
+                    "<strong>Per-Pair Operator:</strong> R<sub>⊥</sub><sup>i</sup> = [[0, -1], [1, 0]] (90 deg rotation on pair i)",
+                    "<strong>Full Tensor Product:</strong> R<sub>⊥</sub><sup>full</sup> = tensor product over all 12 pairs",
+                    "<strong>Mobius Property:</strong> (R<sub>⊥</sub><sup>i</sup>)² = -I per pair; (R<sub>⊥</sub><sup>full</sup>)² = (-1)^12 I = I",
+                    "<strong>Spinor Coherence:</strong> Full double-traversal returns to identity (even number of pairs)"
                 ],
                 label="or-reduction-operator"
             ),
@@ -476,22 +521,32 @@ class FoundationsV16_2(SimulationBase):
             Formula(
                 id="26d-signature",
                 label="(1.1)",
-                latex=r"\text{Signature}(M^{26}) = (24, 1)",
-                plain_text="Signature(M^26) = (24, 1)",
+                latex=r"\text{Signature}(M^{24,1}) = (24, 1) \quad ds^2 = -dt^2 + \sum_{i=1}^{12}(dy_{1i}^2 + dy_{2i}^2)",
+                plain_text="Signature(M^{24,1}) = (24, 1); ds^2 = -dt^2 + sum_i(dy_{1i}^2 + dy_{2i}^2)",
                 category="THEORY",
-                description="26D ancestral bulk signature with unified time (24 spatial, 1 temporal).",
-                input_params=["dimensions.D_bulk"],
+                description="26D ancestral bulk signature with unified time. 24 spacelike from 12x2 pairs, 1 timelike.",
+                input_params=["dimensions.D_bulk", "topology.b3"],
                 output_params=[],
             ),
             Formula(
                 id="euclidean-bridge",
                 label="(1.2)",
-                latex=r"M^{26} = T^1 \times_{\text{fiber}} (S_{\text{normal}}^{11} \oplus S_{\text{mirror}}^{11} \oplus B^2)",
-                plain_text="M^26 = T^1 ×_fiber (S_normal^11 ⊕ S_mirror^11 ⊕ B^2)",
+                latex=r"M^{24,1} = T^1 \times_{\text{fiber}} \left(\bigoplus_{i=1}^{12} B_i^{2,0}\right)",
+                plain_text="M^{24,1} = T^1 x_fiber (bigoplus_{i=1}^{12} B_i^{2,0})",
                 category="THEORY",
-                description="Fibered time structure with dual shadows and 2D Euclidean bridge via OR reduction.",
-                input_params=["dimensions.D_bulk"],
+                description="Fibered time structure with 12x(2,0) paired bridges. b_3=24 => 12 pairs.",
+                input_params=["dimensions.D_bulk", "topology.b3"],
                 output_params=["dimensions.D_shadow"],
+            ),
+            Formula(
+                id="or-reduction-tensor",
+                label="(1.2b)",
+                latex=r"R_\perp^{\text{full}} = \bigotimes_{i=1}^{12} R_\perp^i \quad \text{where} \quad R_\perp^i = \begin{pmatrix} 0 & -1 \\ 1 & 0 \end{pmatrix}",
+                plain_text="R_perp^full = tensor_{i=1}^{12} R_perp^i where R_perp^i = [[0,-1],[1,0]]",
+                category="THEORY",
+                description="Full OR reduction operator as tensor product of 12 per-pair 90-degree rotations.",
+                input_params=["topology.b3"],
+                output_params=[],
             ),
             Formula(
                 id="g2-holonomy",
