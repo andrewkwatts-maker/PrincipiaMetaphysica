@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
 """
-Higgs Brane-Partition Simulation v16.2 (Demon-Lock)
+Higgs Brane-Partition Simulation v21.0 (Demon-Lock)
 ====================================================
 
 Licensed under the MIT License. See LICENSE file for details.
+
+v22 COMPATIBILITY: Uses Cl(24,1) Clifford algebra with unified time signature.
+                   4-brane partition from (24,1) bulk symmetry structure.
+                   Euclidean bridge enables mirror brane overlap calculation.
 
 Derives the Higgs mass using the 4-Brane Partition mechanism from 26D bulk.
 
