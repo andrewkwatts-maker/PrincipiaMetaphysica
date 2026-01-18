@@ -471,7 +471,7 @@ class PneumaMechanismV16(SimulationBase):
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Dimensional Reduction: Cl(24,2) → Cl(12,1)",
+                title="Dimensional Reduction: Cl(24,1) → Cl(12,1)",
                 content="Full 26D: Spinor dimension = 2^12 = 4096 components from Cl(24,1). Effective dual shadows: After OR reduction, spinor reduces to 2^6 = 64 components. The OR reduction produces dual (11,1) shadows with unified time from (24,1) plus Euclidean bridge."
             ),
         ])
@@ -629,7 +629,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="A distinguishing feature of the 26D formulation is the explicit presence of two time dimensions in the signature (24,2). The term g*t_ortho in the Lagrangian couples the Pneuma field to the orthogonal time direction."
+                content="A distinguishing feature of the 25D formulation is the unified time structure in the signature (24,1). The term g*t_ortho in the Lagrangian couples the Pneuma field to the Euclidean bridge direction."
             ),
             ContentBlock(
                 type="heading",
@@ -793,13 +793,13 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,2): T_p = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
+                content="For supersymmetric branes (BPS states), the brane tension saturates a lower bound set by the central charges of the extended supersymmetry algebra SO(24,1): T_p = |Z|. The BPS condition ensures stability: branes cannot decay to lower-tension configurations because the central charge is topologically conserved. This is the origin of the stability of matter in the theory."
             ),
             ContentBlock(
                 type="callout",
                 callout_type="info",
-                title="Central Charges in SO(24,2)",
-                content="Observable 5-brane: Z_5 ∈ ∧^5(R^{24,2}) - rank-5 antisymmetric tensor charge. Shadow 3-branes: Z_3^(i) ∈ ∧^3(R^{24,2}), i=1,2,3 - three rank-3 antisymmetric tensor charges. These central charges commute with all supersymmetry generators and are topological invariants. The dimensions (5,2) and (3,2) are selected to maximize the allowed central charge structure while satisfying the total dimension constraint 26 = (5+1)+(3+1)+(3+1)+(3+1) + 8 (internal)."
+                title="Central Charges in SO(24,1)",
+                content="Observable 5-brane: Z_5 ∈ ∧^5(R^{24,1}) - rank-5 antisymmetric tensor charge. Shadow 3-branes: Z_3^(i) ∈ ∧^3(R^{24,1}), i=1,2,3 - three rank-3 antisymmetric tensor charges. These central charges commute with all supersymmetry generators and are topological invariants. The dimensions (5,1) and (3,1) are selected to maximize the allowed central charge structure while satisfying the total dimension constraint 25 = (5+1)+(3+1)+(3+1)+(3+1) + 7 (internal)."
             ),
         ])
 
@@ -850,7 +850,7 @@ class PneumaMechanismV16(SimulationBase):
             ),
             ContentBlock(
                 type="paragraph",
-                content="The fundamental action in full 26D spacetime with signature (24,2), emphasizing fermionic primacy:"
+                content="The fundamental action in full 25D spacetime with signature (24,1), emphasizing fermionic primacy:"
             ),
             ContentBlock(
                 type="callout",

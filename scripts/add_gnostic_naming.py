@@ -48,7 +48,7 @@ GNOSTIC_MAP = {
     "odowd_bulk_pressure": {
         "value": 163,
         "gnostic_name": "The Barbelo",
-        "gnostic_role": "The Bulk Pressure; the active force emanated into the 26D space"
+        "gnostic_role": "The Bulk Pressure; the active force emanated into the 25D space"
     },
     "roots_total": {
         "value": 288,
@@ -66,9 +66,9 @@ DERIVED_GNOSTIC = {
         "gnostic_role": "The divine pairing gap; the Pneumatic Breath between Sophia and Christos"
     },
     "horos": {
-        "value": 26,
+        "value": 25,
         "gnostic_name": "The Horos",
-        "gnostic_role": "The Limit; the boundary of the 26-dimensional action frame"
+        "gnostic_role": "The Limit; the boundary of the 25-dimensional action frame"
     }
 }
 
@@ -285,7 +285,7 @@ def create_gnostic_registry():
                 "mathematical_name": "odowd_bulk_pressure",
                 "gnostic_name": "The Barbelo",
                 "role": "The Bulk Pressure ((7 * B3) - 5 = 168 - 5)",
-                "meaning": "First Thought - the active force in 26D space"
+                "meaning": "First Thought - the active force in 25D space"
             },
             "ennoia": {
                 "value": 288,
@@ -305,10 +305,10 @@ def create_gnostic_registry():
                 "meaning": "The Pneumatic Breath - energy exchange constant"
             },
             "horos": {
-                "value": 26,
-                "formula": "D_bulk = 26",
+                "value": 25,
+                "formula": "D_bulk = 25",
                 "gnostic_name": "The Horos",
-                "role": "The 26-dimensional action boundary",
+                "role": "The 25-dimensional action boundary",
                 "meaning": "The Limit - contains the 24D manifold within"
             },
             "logos": {

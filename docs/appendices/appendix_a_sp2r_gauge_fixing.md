@@ -1,5 +1,8 @@
-> **[ARCHIVED v16]** This appendix describes the Sp(2,R) gauge-fixing formulation used in v16-v20.
-> The v21 framework replaces this with the Euclidean bridge mechanism. See Appendix G for current formulation.
+> **[HISTORICAL: v16-v20 Formulation]**
+> This appendix describes the Sp(2,R) gauge-fixing formulation used in v16-v20 with signature (24,2).
+> **The v21+ framework uses signature (24,1) with a Euclidean bridge mechanism instead.**
+> The 26D/(24,2) references below are preserved for historical context; the current framework uses 25D/(24,1).
+> See Appendix G for the current v21+ formulation.
 
 # Appendix A: Sp(2,R) Gauge Fixing Derivation
 

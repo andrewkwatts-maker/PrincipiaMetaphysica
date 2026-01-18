@@ -1551,34 +1551,34 @@ class CoreFormulas:
     )
 
     # =========================================================================
-    # SECTION 2: THE 26-DIMENSIONAL BULK
+    # SECTION 2: THE 25-DIMENSIONAL BULK (24,1) UNIFIED TIME
     # =========================================================================
 
-    MASTER_ACTION_26D = Formula(
-        id="master-action-26d",
+    MASTER_ACTION_25D = Formula(
+        id="master-action-25d",
         output_params=['dimensions.D_BULK'],
         label="(2.1) Master Action",
-        html="S<sub>26</sub> = ∫ d<sup>26</sup>x √|G| [M<sub>*</sub><sup>24</sup>R<sub>26</sub> + Ψ̄<sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub> + ℒ<sub>bridge</sub>]",
-        latex="S_{26} = \\int d^{26}x \\sqrt{|G_{(24,1)}|} \\left[ M_*^{24} R_{26} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{bridge}} \\right]",
-        plain_text="S_26 = ∫ d²⁶x √|G| [M*²⁴R₂₆ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_bridge]",
+        html="S<sub>25</sub> = ∫ d<sup>25</sup>x √|G| [M<sub>*</sub><sup>23</sup>R<sub>25</sub> + Ψ̄<sub>P</sub>(iΓ<sup>M</sup>D<sub>M</sub> - m)Ψ<sub>P</sub> + ℒ<sub>bridge</sub>]",
+        latex="S_{25} = \\int d^{25}x \\sqrt{|G_{(24,1)}|} \\left[ M_*^{23} R_{25} + \\bar{\\Psi}_P \\left( i\\Gamma^M D_M - m \\right) \\Psi_P + \\mathcal{L}_{\\text{bridge}} \\right]",
+        plain_text="S_25 = ∫ d²⁵x √|G| [M*²³R₂₅ + Ψ̄_P(iΓᴹD_M - m)Ψ_P + ℒ_bridge]",
         category=FormulaCategory.THEORY,
-        description="v21 Master action for 26D(24,1) bulk with Pneuma field and Euclidean bridge",
+        description="v21/v22 Master action for 25D(24,1) bulk with Pneuma field and Euclidean bridge",
         section="2",
         status="FOUNDATIONAL",
         terms={
-            "S_26": FormulaTerm("26D Action", "Full action in (24,1) unified time signature", "sections.html#2"),
-            "M_*": FormulaTerm("Fundamental Scale", "26D Planck scale ~10¹⁶ GeV"),
-            "R_26": FormulaTerm("Ricci Scalar", "26D curvature scalar"),
-            "Ψ_P": FormulaTerm("Pneuma Field", "v21: 4096-component spinor from Cl(24,1)"),
-            "ℒ_bridge": FormulaTerm("Bridge Lagrangian", "v21: Euclidean bridge dynamics"),
+            "S_25": FormulaTerm("25D Action", "Full action in (24,1) unified time signature", "sections.html#2"),
+            "M_*": FormulaTerm("Fundamental Scale", "25D Planck scale ~10¹⁶ GeV"),
+            "R_25": FormulaTerm("Ricci Scalar", "25D curvature scalar"),
+            "Ψ_P": FormulaTerm("Pneuma Field", "v21/v22: 4096-component spinor from Cl(24,1)"),
+            "ℒ_bridge": FormulaTerm("Bridge Lagrangian", "v21/v22: Euclidean bridge dynamics"),
         },
         derivation=FormulaDerivation(
             parent_formulas=[],
             established_physics=["virasoro-anomaly", "string-theory"],
             steps=[
-                "Start with bosonic string critical dimension D=26",
-                "Include Pneuma spinor field for fermionic DOF",
-                "v21: Add Euclidean bridge for dual-shadow structure (replaces Sp(2,R))"
+                "Start with 25D = (24,1) unified time signature",
+                "Include Pneuma spinor field for fermionic DOF (4096 components from Cl(24,1))",
+                "v21/v22: Add Euclidean bridge for dual-shadow structure (replaces Sp(2,R))"
             ],
             verification_page="sections.html#2"
         ),
@@ -1727,7 +1727,7 @@ class CoreFormulas:
             established_physics=["clifford-algebra", "spinor-geometry"],
             steps=[
                 "v21: Unified time (24,1) eliminates ghosts without gauge constraints",
-                "Dual shadows 2×(11,1) connected by 2D Euclidean bridge (2,0)",
+                "Dual shadows 2×13D(12,1) connected via 12×(2,0) bridge pairs with shared (0,1) time",
                 "OR reduction R_perp identifies physics across shadows",
                 "R_perp² = -I gives Möbius double-cover for spinor topology"
             ]
@@ -1889,18 +1889,18 @@ class CoreFormulas:
         id="reduction-cascade",
         input_params=['dimensions.D_BULK'],
         output_params=['dimensions.D_EFFECTIVE'],
-        label="(1.1) v21 Dimensional Cascade",
-        html="26D<sub>(24,1)</sub> →<sup>dual split</sup> 2×(11,1) + (2,0) →<sup>per-shadow G₂</sup> 2×4D<sub>(3,1)</sub> →<sup>R<sub>⊥</sub></sup> 4D<sub>(3,1)</sub>",
-        latex="\\text{26D}_{(24,1)} \\xrightarrow{\\text{dual}} 2\\times\\text{(11,1)} + \\text{(2,0)} \\xrightarrow{G_2} 2\\times\\text{4D}_{(3,1)} \\xrightarrow{R_\\perp} \\text{4D}_{(3,1)}",
-        plain_text="26D_(24,1) → [dual split] → 2×(11,1) + (2,0) → [per-shadow G₂] → 2×4D_(3,1) → [R_perp] → 4D_(3,1)",
+        label="(1.1) v21/v22 Dimensional Cascade",
+        html="25D<sub>(24,1)</sub> →<sup>12×(2,0) bridge</sup> 2×13D<sub>(12,1)</sub> →<sup>per-shadow G₂</sup> 2×4D<sub>(3,1)</sub> →<sup>R<sub>⊥</sub></sup> 4D<sub>(3,1)</sub>",
+        latex="\\text{25D}_{(24,1)} \\xrightarrow{12\\times(2,0)} 2\\times\\text{13D}_{(12,1)} \\xrightarrow{G_2} 2\\times\\text{4D}_{(3,1)} \\xrightarrow{R_\\perp} \\text{4D}_{(3,1)}",
+        plain_text="25D_(24,1) → [12×(2,0) bridge] → 2×13D_(12,1) → [per-shadow G₂] → 2×4D_(3,1) → [R_perp] → 4D_(3,1)",
         category=FormulaCategory.THEORY,
-        description="v21 Dimensional cascade from 26D(24,1) bulk via dual shadows to 4D observable",
+        description="v21/v22 Dimensional cascade from 25D(24,1) bulk via dual shadows to 4D observable",
         section="1",
         status="v21.0 FOUNDATIONAL",
         terms={
-            "26D_(24,1)": FormulaTerm("Bulk", "v21: 24 space + 1 unified time"),
-            "2×(11,1)": FormulaTerm("Dual Shadows", "v21: Normal + Mirror shadows"),
-            "(2,0)": FormulaTerm("Bridge", "v21: 2D Euclidean substrate"),
+            "25D_(24,1)": FormulaTerm("Bulk", "v21/v22: 24 space + 1 unified time = 12×(2,0) + (0,1)"),
+            "2×13D_(12,1)": FormulaTerm("Dual Shadows", "v21/v22: Normal + Mirror shadows, each 12 space + 1 shared time"),
+            "12×(2,0)": FormulaTerm("Bridge Pairs", "v22: 12 Euclidean bridge pairs connecting shadow dimensions"),
             "per-shadow G₂": FormulaTerm("Compactification", "G₂ on (7,0) per shadow"),
             "R_⊥": FormulaTerm("OR Reduction", "Identifies physics across shadows"),
             "4D_(3,1)": FormulaTerm("Observable", "Our spacetime"),
@@ -1938,16 +1938,16 @@ class CoreFormulas:
         id="primordial-spinor-13d",
         input_params=['dimensions.D_EFFECTIVE'],
         label="(3.2) v21 Per-Shadow Spinor",
-        html="Ψ<sub>64</sub> ∈ Spin(11,1), dim(Ψ) = 2<sup>[12/2]</sup> = 64 per shadow",
-        latex="\\Psi_{64} \\in \\text{Spin}(11,1), \\quad \\dim(\\Psi) = 2^{[12/2]} = 64 \\text{ per shadow}",
-        plain_text="Ψ_64 ∈ Spin(11,1), dim(Ψ) = 2^[12/2] = 64 per shadow",
+        html="Ψ<sub>64</sub> ∈ Spin(12,1), dim(Ψ) = 2<sup>[13/2]</sup> = 64 per shadow",
+        latex="\\Psi_{64} \\in \\text{Spin}(12,1), \\quad \\dim(\\Psi) = 2^{[13/2]} = 64 \\text{ per shadow}",
+        plain_text="Ψ_64 ∈ Spin(12,1), dim(Ψ) = 2^[13/2] = 64 per shadow",
         category=FormulaCategory.DERIVED,
-        description="v21: Per-shadow spinor in (11,1) dual-shadow structure",
+        description="v21/v22: Per-shadow spinor in 13D(12,1) dual-shadow structure",
         section="3",
         status="v21.0 EXACT MATCH",
         terms={
-            "Ψ_64": FormulaTerm("64-Component Spinor", "v21: Per-shadow spinor from Spin(11,1)"),
-            "Spin(11,1)": FormulaTerm("Spin Group", "v21: Per-shadow Lorentz spinor representation"),
+            "Ψ_64": FormulaTerm("64-Component Spinor", "v21/v22: Per-shadow spinor from Spin(12,1) in 13D"),
+            "Spin(12,1)": FormulaTerm("Spin Group", "v21/v22: Per-shadow 13D Lorentz spinor representation"),
         },
         computed_value=64,
         units="dimensionless",
@@ -1991,13 +1991,13 @@ class CoreFormulas:
         latex="\\mathcal{L}_{\\text{shadow}} = M_*^{10}R_{12} + \\bar{\\Psi}_{64}(i\\gamma^\\mu\\nabla_\\mu - m_{\\text{eff}})\\Psi_{64} + \\mathcal{L}_{\\text{flux}}",
         plain_text="L_shadow = M*^10 R_12 + Psi_64(i*gamma*nabla - m_eff)Psi_64 + L_flux",
         category=FormulaCategory.DERIVED,
-        description="v21: Per-shadow effective Lagrangian in (11,1) dual-shadow structure",
+        description="v21/v22: Per-shadow effective Lagrangian in 13D(12,1) dual-shadow structure",
         section="2.2",
         status="v21.0 DERIVED FROM DUAL-SHADOW",
         terms={
-            "M_*": FormulaTerm("Fundamental Scale", "26D Planck scale"),
-            "R_12": FormulaTerm("12D Ricci Scalar", "v21: Per-shadow spacetime curvature"),
-            "Psi_64": FormulaTerm("64-Component Spinor", "v21: Per-shadow from Spin(11,1)"),
+            "M_*": FormulaTerm("Fundamental Scale", "25D Planck scale"),
+            "R_12": FormulaTerm("13D Ricci Scalar", "v21/v22: Per-shadow spacetime curvature"),
+            "Psi_64": FormulaTerm("64-Component Spinor", "v21/v22: Per-shadow from Spin(12,1)"),
             "m_eff": FormulaTerm("Effective Mass", "Generated by bridge mechanism"),
             "L_flux": FormulaTerm("Flux Lagrangian", "G-form field strength contributions"),
         },
@@ -3804,27 +3804,30 @@ class FundamentalConstants:
     These should NOT be changed unless the underlying theory is modified.
     """
 
-    # Dimensional Structure (v21 Dual-Shadow Bridge Framework)
+    # Dimensional Structure (v21/v22 Dual-Shadow Bridge Framework)
     # =========================================================
-    # 26D(24,1) = 2×(11,1) shadows + (2,0) bridge → [Per-Shadow G₂] → 4D(3,1)
+    # 25D(24,1) = 12×(2,0) spatial + (0,1) time → 2×13D(12,1) shadows
     #
-    # v21.0: Unified time signature eliminates ghosts and CTCs without Sp(2,R)
-    # Dual shadows account for spinor double-cover via OR reduction R_perp² = -I
+    # Structure: 25D(24,1) bulk splits via 12×(2,0) bridge pairs into dual 13D(12,1) shadows
+    # The 12 bridge pairs connect corresponding spatial dimensions between Normal/Mirror shadows
+    # Both shadows share the single (0,1) temporal dimension
+    # v21.0/v22.0: Unified time eliminates ghosts and CTCs without Sp(2,R)
+    # OR reduction R_perp² = -I identifies physics across shadows
 
-    # Initial bosonic string
-    D_BULK = 26  # Source: Polchinski (1998) bosonic string critical dimension (Virasoro c=26)
-    SIGNATURE_BULK = (24, 1)  # v21: Unified time (24 space + 1 time + 1 Euclidean bridge)
+    # Initial bulk dimensions (v21/v22: 24 spatial + 1 unified time = 25D)
+    D_BULK = 25  # v21/v22: Unified time (24,1) = 25 total dimensions
+    SIGNATURE_BULK = (24, 1)  # v21/v22: 24 space + 1 time = 12×(2,0) + (0,1)
 
-    # v21 Dual-Shadow Structure (replaces Sp(2,R) gauge fixing)
+    # v21/v22 Dual-Shadow Structure (replaces Sp(2,R) gauge fixing)
     N_SHADOWS = 2             # Derived: Normal + Mirror shadows
-    D_PER_SHADOW = 12         # Derived: 26 = 2×12 + 2 (before G₂)
-    SIGNATURE_SHADOW = (11, 1)  # Per-shadow signature
-    D_BRIDGE = 2              # Derived: Euclidean bridge dimensions
-    SIGNATURE_BRIDGE = (2, 0)   # Positive-definite bridge metric
+    D_PER_SHADOW = 13         # v22: Each shadow is 13D = 12 space + 1 shared time
+    SIGNATURE_SHADOW = (12, 1)  # v22: Per-shadow signature (12 space + 1 time)
+    N_BRIDGE_PAIRS = 12       # v22: 12×(2,0) bridge pairs connect shadow dimensions
+    SIGNATURE_BRIDGE_PAIR = (2, 0)  # Each bridge pair is Euclidean (2,0)
 
     # Legacy (deprecated - kept for backward compatibility)
-    D_AFTER_SP2R = 12  # v21: Now points to D_PER_SHADOW (was 13 in v16-v20)
-    SIGNATURE_INITIAL = (24, 1)  # v21: Unified time (was (24,2) in v16-v20)
+    D_AFTER_SP2R = 13  # v22: Corrected to 13D per shadow (was 12 in v21.0)
+    SIGNATURE_INITIAL = (24, 1)  # v21/v22: Unified time (was (24,2) in v16-v20)
 
     # Internal compactification (G₂ manifold or CY3×S¹/Z₂)
     INTERNAL_MANIFOLD = "G2"  # 7D holonomy manifold
@@ -3902,8 +3905,8 @@ class FundamentalConstants:
 
     @staticmethod
     def pneuma_dimension_reduced():
-        """v21: Per-shadow spinor dimension after dual-shadow split"""
-        # In v21: Each shadow has Spin(11,1) spinors = 2^6 = 64 components
+        """v22: Per-shadow spinor dimension after dual-shadow split"""
+        # In v22: Each shadow has Spin(12,1) spinors = 2^[13/2] = 2^6 = 64 components
         # Combined via OR reduction: 64 effective (not 64×64)
         full = FundamentalConstants.pneuma_dimension_full()
         # v21: Divide by bridge DOFs and shadow factor
@@ -4497,30 +4500,33 @@ class V21BridgeParameters:
     Unified time signature (24,1) eliminates ghosts and CTCs through
     geometry rather than gauge constraints.
 
-    v21.1 FIBERED TIME STRUCTURE (Issue 4 Resolution):
-    -------------------------------------------------
+    v22.0 FIBERED TIME STRUCTURE (12×(2,0) Bridge Architecture):
+    -----------------------------------------------------------
     Time is NOT duplicated across shadows - it is the shared fiber base.
-    The notation "2×(11,1)" was misleading. Correct structure:
+    The 12×(2,0) bridge pairs connect corresponding spatial dimensions.
 
-        M^26 = T^1 ×_fiber (S_normal^11 ⊕ S_mirror^11 ⊕ B^2)
+        M^25 = T^1 ×_fiber (S_normal^12 ⊕ S_mirror^12)
 
-    where:
+    where 12×(2,0) bridge pairs connect S_normal^12 ↔ S_mirror^12:
     - T^1: Unified time (0,1) - shared fiber base
-    - S_normal^11: Normal shadow SPATIAL (11,0)
-    - S_mirror^11: Mirror shadow SPATIAL (11,0)
-    - B^2: Euclidean bridge (2,0)
+    - S_normal^12: Normal shadow SPATIAL (12,0)
+    - S_mirror^12: Mirror shadow SPATIAL (12,0)
+    - 12×(2,0): Bridge pairs connecting corresponding spatial dimensions
 
-    Dimensional check: 1 + 11 + 11 + 2 = 26 ✓
-    Signature check: (0,1) + (11,0) + (11,0) + (2,0) = (24,1) ✓
+    Dimensional check: 1 + 12 + 12 = 25 ✓ (with 12 connected pairs)
+    Signature check: (0,1) + (12,0) + (12,0) = (24,1) ✓
+
+    Each shadow sees: 12 spatial + 1 shared time = 13D(12,1)
 
     Key features:
     - Unified time (24,1): No negative-norm states, no causal paradoxes
-    - Dual shadows: 2×(11,0) SPATIAL manifolds sharing T^1 time fiber
-    - Euclidean bridge: 2D positive-definite substrate (2,0)
+    - Dual shadows: 2×13D(12,1) with shared time fiber
+    - 12×(2,0) bridge pairs: Connect corresponding spatial dimension pairs
     - OR reduction: R_perp² = -I implements Möbius topology
 
-    Decomposition: 26D(24,1) = T^1 ×_fiber [2×(11,0) + (2,0)]
-                 = 1D time + 2×11D spatial + 2D bridge = 26D ✓
+    Decomposition: 25D(24,1) = 12×(2,0) spatial + (0,1) time
+                 = 24D spatial (as 12 bridge pairs) + 1D time = 25D ✓
+    Per shadow: 12 spatial + 1 shared time = 13D(12,1)
 
     References:
     - PM v21.0 (2026): Dual-Shadow Bridge Framework
@@ -4528,13 +4534,13 @@ class V21BridgeParameters:
     - Appendix G: Euclidean Bridge Derivation
     """
 
-    # Bulk spacetime
-    D_BULK = 26  # Source: Polchinski (1998) bosonic string critical dimension
-    BULK_SIGNATURE = (24, 1)  # v21: Unified time signature
+    # Bulk spacetime (v21/v22: unified time)
+    D_BULK = 25  # v21/v22: Unified time (24,1) = 25 total dimensions
+    BULK_SIGNATURE = (24, 1)  # v21/v22: Unified time signature
 
     # Dual-shadow structure (replaces Sp(2,R) constraints)
     N_SHADOWS = 2             # Normal + Mirror shadows
-    D_PER_SHADOW = 12         # 26 = 2×12 + 2 (includes shared time)
+    D_PER_SHADOW = 12         # 25 = 2×11 + 2 + 1 (includes shared time)
     SHADOW_SIGNATURE_SPATIAL = (11, 0)  # v21.1: Shadows are SPATIAL only
 
     # v21.1 Fibered Time Structure (Issue 4 Resolution)
@@ -8119,38 +8125,43 @@ if __name__ == '__main__':
 
 class V21UnifiedTimePhysics:
     """
-    v21.0: Unified Time Physics Framework
+    v21.0/v22.0: Unified Time Physics Framework
 
     IMPORTANT: This class replaces TwoTimePhysics from v6.4-v20.
-    The v21 framework uses unified time (24,1) with a 2D Euclidean bridge
+    The v21/v22 framework uses unified time (24,1) with 12×(2,0) bridge pairs
     instead of the (24,2) two-time structure with Sp(2,R) gauge fixing.
 
-    Decomposition: 26D(24,1) = 2×(11,1) shadows + (2,0) bridge
+    Decomposition: 25D(24,1) = 12×(2,0) spatial + (0,1) time
+                   → 2×13D(12,1) shadows with shared time
+
+    The 12 bridge pairs connect 12 corresponding spatial dimension pairs between
+    Normal and Mirror shadows. Both shadows share the single temporal dimension.
 
     Historical reference (deprecated):
     - Bars, I. (2000). "Survey of two-time physics" - Inspired approach
     - PM v21.0 (2026): Dual-Shadow Bridge Framework
     """
 
-    # === v21 DIMENSIONAL STRUCTURE ===
-    D_SHADOW_NORMAL = 12     # Normal shadow: (11,1) signature
-    D_SHADOW_MIRROR = 12     # Mirror shadow: (11,1) signature
-    D_BRIDGE = 2             # Euclidean bridge: (2,0) positive-definite
+    # === v21/v22 DIMENSIONAL STRUCTURE ===
+    D_SHADOW_NORMAL = 13     # Normal shadow: 13D = (12,1) signature
+    D_SHADOW_MIRROR = 13     # Mirror shadow: 13D = (12,1) signature
+    N_BRIDGE_PAIRS = 12      # v22: 12×(2,0) bridge pairs
 
-    # Verification: 12 + 12 + 2 = 26 ✓
-    SPATIAL_NORMAL = 11      # Derived: D_SHADOW - 1 = 11 spacelike
-    SPATIAL_MIRROR = 11      # Derived: D_SHADOW - 1 = 11 spacelike
-    TEMPORAL_UNIFIED = 1     # v21: Unified time (no ghosts, no CTCs)
+    # Verification: 12 (Normal spatial) + 12 (Mirror spatial) + 1 (shared time) = 25 ✓
+    # Each shadow sees: 12 spatial + 1 time = 13D(12,1)
+    SPATIAL_NORMAL = 12      # Derived: D_SHADOW - 1 = 12 spacelike
+    SPATIAL_MIRROR = 12      # Derived: D_SHADOW - 1 = 12 spacelike
+    TEMPORAL_UNIFIED = 1     # v21/v22: Unified time (no ghosts, no CTCs)
     
     # === CFT ANOMALY CANCELLATION ===
-    C_MATTER = 26            # Matter: 24 spatial + 1 temporal + 1 bridge (v21)
-    C_GHOST = -26            # Virasoro ghost (b-c system)
+    C_MATTER = 25            # Matter: 24 spatial + 1 temporal (v21 unified time)
+    C_GHOST = -25            # Virasoro ghost (b-c system) - matches C_MATTER for cancellation
     DELTA_C_BRIDGE = 0       # v21: Bridge contributes no central charge anomaly
-    C_MATTER_EFFECTIVE = 25  # v21: C_MATTER - TEMPORAL_UNIFIED = 26 - 1 = 25
+    C_MATTER_EFFECTIVE = 24  # v21: C_MATTER - TEMPORAL_UNIFIED = 25 - 1 = 24
     C_TOTAL = 0              # v21: Anomaly cancellation preserved
 
     # Critical dimensions
-    D_CRITICAL_V21 = 26      # v21: Standard bosonic string critical dimension
+    D_CRITICAL_V21 = 25      # v21/v22: Unified time critical dimension (24+1)
 
     # === v21 OR REDUCTION ===
     OR_COUPLING = 0.1        # v21: OR reduction coupling
@@ -8161,10 +8172,12 @@ class V21UnifiedTimePhysics:
     BRST_ANOMALY = 0.0       # Derived: Q^2 = 0 (nilpotency verified)
 
     # === v21 DUAL-SHADOW CONFIGURATION ===
-    SHADOW_NORMAL = (10, 1)   # v21: After G₂ compactification (11-7+1 = 5)... wait
-    SHADOW_MIRROR = (10, 1)   # Actually: (11,1) pre-G2, (4,1) post-G2
-    # Before G2: (11,1) per shadow
-    # After G2: (4,1) per shadow = observable spacetime
+    SHADOW_NORMAL_PRE_G2 = (12, 1)   # v22: Before G₂ compactification = 13D(12,1)
+    SHADOW_MIRROR_PRE_G2 = (12, 1)   # v22: Before G₂ compactification = 13D(12,1)
+    SHADOW_NORMAL_POST_G2 = (5, 1)   # v22: After G₂ compactification = 6D(5,1)
+    SHADOW_MIRROR_POST_G2 = (5, 1)   # v22: After G₂ compactification = 6D(5,1)
+    # Before G2: (12,1) per shadow = 13D
+    # After G2: (5,1) per shadow = 6D (13D - 7D G2 = 6D)
 
     # === BPS STABILITY ===
     # C_2 = p(p + 22)/4 for SO(24,1)
@@ -8189,25 +8202,25 @@ TwoTimePhysics = V21UnifiedTimePhysics  # DEPRECATED: Use V21UnifiedTimePhysics
 
 class MasterActionParameters:
     """
-    v21.0: Master Action parameters for the 26D(24,1) theory.
+    v21.0/v22.0: Master Action parameters for the 25D(24,1) theory.
 
-    S_26D = ∫d²⁶X √G [M²⁴R + Ψ̄_P(iΓ·D - m)Ψ_P + L_bridge]
+    S_25D = ∫d²⁵X √G [M²³R + Ψ̄_P(iΓ·D - m)Ψ_P + L_bridge]
 
-    v21: The Pneuma field Ψ_P is a 26D spinor from Clifford algebra Cl(24,1).
+    v21/v22: The Pneuma field Ψ_P is a 25D spinor from Clifford algebra Cl(24,1).
     Note: 4096 components (was 8192 from Cl(24,2) in v16-v20).
     """
 
     # Bulk Planck mass power
-    BULK_PLANCK_POWER = 24  # Derived: D_BULK - 2 = 26 - 2 = 24 (graviton dim reduction)
+    BULK_PLANCK_POWER = 23  # Derived: D_BULK - 2 = 25 - 2 = 23 (graviton dim reduction)
 
-    # v21 Pneuma spinor dimension chain (26D → 12D per shadow → 4D)
-    PNEUMA_26D = 4096       # v21: 2^12 from Cl(24,1) Clifford algebra
-    PNEUMA_SHADOW_FULL = 64 # v21: 2^[12/2] = 2^6 = 64 from Spin(11,1)
+    # v21/v22 Pneuma spinor dimension chain (25D → 12D per shadow → 4D)
+    PNEUMA_25D = 4096       # v21/v22: 2^12 from Cl(24,1) Clifford algebra
+    PNEUMA_SHADOW_FULL = 64 # v22: 2^[13/2] = 2^6 = 64 from Spin(12,1)
     PNEUMA_SHADOW_CHIRAL = 32  # Derived: Weyl projection 64/2 = 32
     PNEUMA_4D = 4           # Derived: 4D Weyl spinor from dim reduction
 
-    # v21 Reduction factors
-    BRIDGE_REDUCTION = 64   # v21: PNEUMA_26D / PNEUMA_SHADOW = 4096/64 = 64
+    # v21/v22 Reduction factors
+    BRIDGE_REDUCTION = 64   # v21/v22: PNEUMA_25D / PNEUMA_SHADOW = 4096/64 = 64
     G2_REDUCTION = 8        # Derived: Per-shadow G₂ reduction factor
     Z2_REDUCTION = 2        # Derived: Chirality projection factor
 
@@ -8217,13 +8230,13 @@ class MasterActionParameters:
 
     @staticmethod
     def reduction_chain():
-        """v21: Returns the full spinor reduction chain"""
+        """v22: Returns the full spinor reduction chain"""
         return {
-            '26D_Cl(24,1)': 4096,     # v21: Unified time
-            '12D_Spin(11,1)': 64,     # v21: Per-shadow
-            '12D_chiral': 32,
+            '25D_Cl(24,1)': 4096,     # v22: Unified time bulk
+            '13D_Spin(12,1)': 64,     # v22: Per-shadow (12 space + 1 shared time)
+            '13D_chiral': 32,
             '4D_Weyl': 4,
-            'total_factor': 4096 / 4  # v21: = 1024
+            'total_factor': 4096 / 4  # v22: = 1024
         }
 
 
@@ -8517,38 +8530,43 @@ class FrameworkStatistics:
 
 
 class DimensionalStructure:
-    """v21 Dimensional Reduction Framework
+    """v22 Dimensional Reduction Framework
+
+    Structure:
+    25D(24,1) = 12×(2,0) spatial bridge pairs + (0,1) shared time
 
     Stages:
-    1. Bulk: 26D(24,1) unified time signature
-    2. Dual-Shadow Split: 26D → 2×(11,1) shadows + (2,0) bridge
-    3. Per-Shadow G₂ Compactification: (11,1) → (4,1) (7D compact per shadow)
-    4. OR Reduction: Dual 4D identified via R_perp
+    1. Bulk: 25D(24,1) = 24 space + 1 unified time
+    2. Dual-Shadow Split: 25D → 2×13D(12,1) via 12×(2,0) bridge pairs
+       - Each shadow: 13D = 12 spatial + 1 shared time
+       - 12 bridge pairs connect corresponding spatial dimensions between shadows
+    3. Per-Shadow G₂ Compactification: 13D(12,1) → 6D(5,1) (7D compact per shadow)
+    4. OR Reduction: Dual 6D → 4D identified via R_perp
 
-    Note: This class was updated in v21.0 from the v16-v20 Sp(2,R) framework.
+    Note: This class was updated in v22.0 from (11,1) to (12,1) shadow signatures.
     """
-    D_BULK = 26  # Source: Polchinski (1998) bosonic string critical dimension
-    SIGNATURE_BULK = (24, 1)  # v21: Unified time signature
+    D_BULK = 25  # v22: Unified time (24,1) = 25 total dimensions
+    SIGNATURE_BULK = (24, 1)  # v22: 24 space + 1 time = 12×(2,0) + (0,1)
 
-    # Stage 1: v21 Dual-shadow split (replaces Sp(2,R) gauge fixing)
-    D_PER_SHADOW = 12  # v21: Each shadow is 12D = (11,1)
-    SIGNATURE_SHADOW = (11, 1)  # v21: Per-shadow signature
-    D_BRIDGE = 2  # v21: 2D Euclidean bridge
+    # Stage 1: v22 Dual-shadow split via 12×(2,0) bridge pairs
+    D_PER_SHADOW = 13  # v22: Each shadow is 13D = 12 space + 1 shared time
+    SIGNATURE_SHADOW = (12, 1)  # v22: Per-shadow signature
+    N_BRIDGE_PAIRS = 12  # v22: 12×(2,0) bridge pairs connect shadow dimensions
 
-    # Stage 2: Per-shadow G₂ compactification 12D→5D
-    D_AFTER_G2 = 5  # v21: 12 - 7 = 5 dimensions per shadow
+    # Stage 2: Per-shadow G₂ compactification 13D→6D
+    D_AFTER_G2 = 6  # v22: 13 - 7 = 6 dimensions per shadow
     D_COMPACT_G2 = 7  # Source: Joyce (2000) G2 holonomy manifold dimension
 
     # Stage 3: Observable emergence 5D→4D
     D_OBSERVABLE = 4  # Derived: Observable spacetime
-    D_COMPACT_FINAL = 1  # v21: 1D final compactification per shadow
+    D_COMPACT_FINAL = 1  # v21/v22: 1D final compactification per shadow
 
     # Validation
     @staticmethod
     def validate():
-        """v21: Validate dimensional reduction stages"""
-        assert DimensionalStructure.D_BULK == 2 * DimensionalStructure.D_PER_SHADOW + DimensionalStructure.D_BRIDGE, \
-            "v21: 26D = 2×12D + 2D"
+        """v21/v22: Validate dimensional reduction stages"""
+        assert DimensionalStructure.D_BULK == 2 * DimensionalStructure.D_PER_SHADOW + DimensionalStructure.D_BRIDGE - 1, \
+            "v21/v22: 25D = 2×11D spatial + 2D bridge + 1D time"
         assert DimensionalStructure.D_AFTER_G2 == DimensionalStructure.D_PER_SHADOW - DimensionalStructure.D_COMPACT_G2, \
             "v21: G₂ compactification: 12D - 7D = 5D per shadow"
         assert DimensionalStructure.D_OBSERVABLE == DimensionalStructure.D_AFTER_G2 - DimensionalStructure.D_COMPACT_FINAL, \

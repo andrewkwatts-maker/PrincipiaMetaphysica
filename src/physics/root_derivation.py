@@ -7,7 +7,7 @@ DOI: 10.5281/zenodo.18079602
 
 This is the "Source of Truth" file for the 288 Ancestral Root architecture.
 It derives all 125 physical residues from the geometric structure of the
-26D(24,2) bosonic bulk via the G2 holonomy projection.
+25D(24,1) bosonic bulk via the G2 holonomy projection.
 
 THE 288-24-4 ARCHITECTURE:
     276 (SO(24) Generators) + 24 (Torsion Pins) - 12 (Manifold Cost) = 288 Net Roots

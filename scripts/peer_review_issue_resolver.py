@@ -48,7 +48,7 @@ PRINCIPIA METAPHYSICA FRAMEWORK CONTEXT
 GitHub: https://github.com/andrewkwatts-maker/PrincipiaMetaphysica
 
 DIMENSIONAL CHAIN:
-26D(24,2) -> [Sp(2,R)] -> 13D(12,1) -> [G2(7,0)] -> 6D(5,1) -> [KK] -> 4D(3,1)
+25D(24,1) -> [Sp(2,R)] -> 13D(12,1) -> [G2(7,0)] -> 6D(5,1) -> [KK] -> 4D(3,1)
 
 KEY CONSTANTS (SSOT):
 - b3 = 24 (Third Betti number of G2 manifold)
@@ -72,7 +72,7 @@ CURRENT STATUS:
 PEER REVIEW CRITIQUE SUMMARY:
 - "Ad hoc hardcoded constants" - b3, chi_eff not derived ab initio
 - "Circular validation" - sigma calculations may be self-referential
-- "Non-standard foundations" - Two-time (24,2) signature controversial
+- "Non-standard foundations" - Euclidean bridge (24,1) signature requires justification
 - "Lack of falsifiability" - Some predictions not testable
 - Rating: 6/10 backend engineering, 2/10 scientific rigor
 """
@@ -93,16 +93,16 @@ Show the topological calculation that gives b3=24."""
     },
     {
         "id": 2,
-        "title": "Justify Two-Time (24,2) Signature",
-        "critique": """The 26D spacetime with (24,2) signature (two timelike dimensions) is non-standard.
-Peer review says: "Multiple timelike dimensions lead to instabilities (ghosts, causality violations).
-Sp(2,R) as gauge symmetry for ghost removal is unconventional and lacks precedent.".""",
-        "current_approach": """PM starts from 26D bosonic string with (24,2) signature, uses Sp(2,R)
-gauge fixing to reduce to 13D(12,1) with single time. Based on Bars' two-time physics.""",
-        "task": """1. Provide rigorous justification for (24,2) signature
+        "title": "Justify Euclidean Bridge (24,1) Signature",
+        "critique": """The 25D spacetime with (24,1) signature requires careful justification.
+Peer review concerns about ghost removal and unitarity still apply.
+Sp(2,R) as gauge symmetry for the Euclidean bridge is unconventional.""",
+        "current_approach": """PM v22 uses 25D bosonic frame with (24,1) signature (Euclidean bridge model),
+with Sp(2,R) gauge fixing to reduce to 13D(12,1) with single time.""",
+        "task": """1. Provide rigorous justification for (24,1) signature (Euclidean bridge)
 2. Prove that Sp(2,R) gauge fixing removes ghosts and restores unitarity
-3. Address causality concerns (closed timelike curves)
-4. Reference Bars et al. papers and any peer-reviewed extensions"""
+3. Explain how the Euclidean bridge model resolves previous two-time concerns
+4. Reference relevant literature on Euclidean compactifications"""
     },
     {
         "id": 3,
@@ -146,7 +146,7 @@ wa comes from co-associative 4-form dynamics.""",
         "critique": """H0 is derived via an ad hoc "brane mixing angle" theta=23.94 degrees.
 Peer review: "theta is ad hoc, not derived from first principles; presented as a 'geometric correction'
 without justification. Dismissed as curve-fitting without mechanism.".""",
-        "current_approach": """H0 = H0_CMB * (1 + sin^2(theta)/2) where theta comes from 13D/26D volume ratio.""",
+        "current_approach": """H0 = H0_CMB * (1 + sin^2(theta)/2) where theta comes from 13D/25D volume ratio.""",
         "task": """1. Either derive theta rigorously from geometry, or
 2. Remove the ad hoc angle and provide an alternative mechanism
 3. What is the PHYSICAL mechanism for Hubble tension resolution in PM?

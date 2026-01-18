@@ -8,16 +8,18 @@
 
 ## MASTER ACTION STRUCTURE
 
-The Pneuma Action (26D) is:
+The Pneuma Action (25D with v21+ Euclidean bridge) is:
 
 ```
-S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_moduli + L_Sp(2,R)]
+S_Pneuma = ∫ d²⁵x √(-g₂₅) [M₂₅²R₂₅/2 + L_G2 + L_flux + L_moduli + L_bridge]
 ```
 
-**Dimensional Reduction Chain:**
+**Dimensional Reduction Chain (v21+):**
 ```
-26D(24,2) → [Sp(2,R)] → 13D(12,1) → [G2(7,0)] → 6D(5,1) → [KK] → 4D(3,1)
+25D(24,1) → [dual-shadow + bridge] → 2×(11,0) + T¹ + B²(2,0) → [G2(7,0)] → 4D(3,1)
 ```
+
+**Historical Note**: The v16-v20 framework used 26D(24,2) with Sp(2,R) gauge fixing. See Appendix A for historical reference.
 
 ---
 
@@ -191,13 +193,13 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 
 ---
 
-## v21 SIGNATURE VALIDATION CHECKLIST
+## v21+ SIGNATURE VALIDATION CHECKLIST
 
-The v21 framework changes the bulk signature from (24,2) to (24,1) with a dual-shadow structure. All gauge physics remains unchanged because it depends on G2 topology (b3=24), not bulk signature.
+The v21+ framework uses bulk signature (24,1) with a dual-shadow structure and Euclidean bridge. All gauge physics remains unchanged because it depends on G2 topology (b3=24), not bulk signature.
 
 | ID | Validation Item | Status | Notes |
 |----|-----------------|--------|-------|
-| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_26=(24,1), sig_shadow=(11,1), sig_bridge=(2,0) |
+| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_25=(24,1), sig_shadow=(11,0), sig_bridge=(2,0), T¹=(0,1) |
 | v21-02 | Fermion N_gen=3 preserved | ✅ COMPLETE | Topological: b3/8=24/8=3, spinor dim change irrelevant |
 | v21-03 | QED signature independence | ✅ COMPLETE | Section B.9.4 added to appendix_b |
 | v21-04 | QCD dual-shadow clarification | ✅ COMPLETE | Section C.5.4 added to appendix_c |
@@ -208,14 +210,16 @@ The v21 framework changes the bulk signature from (24,2) to (24,1) with a dual-s
 2. Coupling constants depend on b3=24 (topology), not bulk signature
 3. Each shadow universe has complete, identical gauge physics
 4. The Euclidean bridge (2,0) carries no gauge charges
+5. The v21+ 25D/(24,1) framework preserves all v20 predictions while eliminating ghost states
 
 ---
 
 ## COMPLETED DERIVATIONS (v20.11)
 
-### 1. MA-01: Sp(2,R) Gauge Fixing (26D → 13D) ✅
+### 1. MA-01: Sp(2,R) Gauge Fixing (26D → 13D) ✅ [HISTORICAL v16-v20]
 - **Appendix**: [appendix_a_sp2r_gauge_fixing.md](appendices/appendix_a_sp2r_gauge_fixing.md)
-- **Key Result**: 26D(24,2) → 13D(12,1) via first-class constraints
+- **Key Result**: 26D(24,2) → 13D(12,1) via first-class constraints (v16-v20 formulation)
+- **Note**: v21+ uses 25D(24,1) with Euclidean bridge model - see Appendix G
 - **Wolfram Verified**: DOF halving, signature reduction, Lie algebra structure
 
 ### 2. GS-06: QED Lagrangian Emergence ✅
