@@ -1,0 +1,10 @@
+{
+  "proof_id": "s8_viscosity",
+  "label": "S8 Bulk Viscosity",
+  "wl_code": "With[{chi = 144, roots = 288, b3 = 24}, s8base = Sqrt[chi]/(roots/b3); N[s8base * (roots/(roots + 115)), 3]]",
+  "result": "0.762",
+  "note": "S8 sterile viscosity: sqrt(144)/12 * (288/403) = 0.762 (KiDS-1000 compatible)",
+  "hash": "58c09690bbf93d80",
+  "timestamp": "2026-01-02T01:44:43.995257",
+  "verified": false
+}

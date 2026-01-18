@@ -1,3 +1,6 @@
+> **[ARCHIVED v16]** This appendix describes the Sp(2,R) gauge-fixing formulation used in v16-v20.
+> The v21 framework replaces this with the Euclidean bridge mechanism. See Appendix G for current formulation.
+
 # Appendix A: Sp(2,R) Gauge Fixing Derivation
 
 **MA-01: Complete Mathematical Derivation of 26D → 13D Reduction**

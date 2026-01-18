@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Omega Seal Generator
+PRINCIPIA METAPHYSICA v21.0 - Omega Seal Generator
 ===================================================
 
 DOI: 10.5281/zenodo.18079602
 
 This module generates the cryptographic Omega Seal that locks the
-v16.2 Sterile Terminal State. Once the seal is generated, any
+v21.0 Sterile Terminal State. Once the seal is generated, any
 modification to the 125 residues will break the chain.
 
 THE OMEGA SEAL:
@@ -187,9 +187,10 @@ def generate_omega_seal(
     )
 
     # Create the hash string (deterministic format)
-    # Format: "Roots{R}-Pins{P}-Nodes{N}-Hidden{H}-Sum{S:.10f}"
+    # Format: "v21-Roots{R}-Pins{P}-Nodes{N}-Signature(24,1)-Bridge(2,0)-Hidden{H}-Sum{S:.10f}"
     seal_string = (
-        f"Roots{roots}-Pins{pins}-Nodes{node_count}-"
+        f"v21-Roots{roots}-Pins{pins}-Nodes{node_count}-"
+        f"Signature(24,1)-Bridge(2,0)-"
         f"Hidden{hidden}-Angle{sterile_angle:.6f}-Sum{residue_sum:.10f}"
     )
 
@@ -249,7 +250,7 @@ def generate_seal_certificate(seal: OmegaSeal) -> str:
     """
     return f"""
 ================================================================================
-                    PRINCIPIA METAPHYSICA v16.2
+                    PRINCIPIA METAPHYSICA v21.0
                  OMEGA SEAL CERTIFICATE OF INTEGRITY
 ================================================================================
 
@@ -271,7 +272,7 @@ CERTIFICATES VALIDATED:
   {', '.join(seal.input_summary['certificates_passed'])}
 
 VERIFICATION:
-  This seal certifies that the v16.2 Terminal State is geometrically locked.
+  This seal certifies that the v21.0 Terminal State is geometrically locked.
   Any modification to the 125 residues will produce a different seal.
   The model is now READ-ONLY for physics parameters.
 
@@ -292,7 +293,7 @@ MATHEMATICAL INVARIANT:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA v16.2 - Omega Seal Generator")
+    print("PRINCIPIA METAPHYSICA v21.0 - Omega Seal Generator")
     print("=" * 70)
 
     # Create a test registry with 125 nodes

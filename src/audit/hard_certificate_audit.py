@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-PRINCIPIA METAPHYSICA v16.2 - Hard Certificate Audit
+PRINCIPIA METAPHYSICA v21.0 - Hard Certificate Audit
 =====================================================
 
 DOI: 10.5281/zenodo.18079602
@@ -50,7 +50,7 @@ class HardCertificateResult:
 
 def run_hard_audit(registry_data: Dict[str, Any] = None) -> Dict[str, Any]:
     """
-    Terminal 42-Certificate Audit for v16.2.
+    Terminal 42-Certificate Audit for v21.0.
 
     Args:
         registry_data: Optional registry data. If None, uses RootDerivation defaults.
@@ -265,7 +265,7 @@ def get_certificate_ledger() -> List[Dict[str, str]]:
 
 if __name__ == "__main__":
     print("=" * 70)
-    print("PRINCIPIA METAPHYSICA v16.2 - Hard Certificate Audit")
+    print("PRINCIPIA METAPHYSICA v21.0 - Hard Certificate Audit")
     print("=" * 70)
 
     result = run_hard_audit()

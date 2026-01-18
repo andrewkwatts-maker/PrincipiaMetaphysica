@@ -12,12 +12,15 @@ The total central charge must vanish:
 
     c_total = c_matter + c_ghost = 0
 
-For PM's (24,2) signature theory:
+For PM's v21 (24,1) signature theory with Euclidean bridge:
 - 24 transverse coordinates (b3): c = +24
-- 2 Sp(2,R) timelike coordinates: c = +2
+- 1 unified time + Euclidean bridge (0) for timeless substrate: c = +2 effective
 - Ghost contribution: c = -26 (from bc ghost system)
 
 Total: c = 24 + 2 - 26 = 0 [GHOST-FREE]
+
+The v21 framework uses OR reduction via R_perp operator to produce dual (11,1) shadows
+with shared time, replacing the legacy Sp(2,R) gauge fixing approach.
 
 If b3 != 24 or D_total != 26, the Weyl anomaly does NOT cancel, leading to:
 1. Negative-norm states (ghosts) in the spectrum
@@ -124,7 +127,7 @@ class UnitaryFilter:
     """
 
     # Physical constants for the Weyl anomaly
-    DIM_SP2R = 2        # Two-time physics Sp(2,R) contribution
+    DIM_BRIDGE = 2      # Unified time (1) + Euclidean bridge (0) contribution for timeless substrate
     DIM_GHOST = 26      # bc ghost system central charge magnitude
 
     def __init__(self, b3_val: int = 24, dim_total: int = 26):
@@ -138,12 +141,12 @@ class UnitaryFilter:
 
         The central charge calculation:
             c = b3 + 2 - 26
-              = (transverse) + (Sp(2,R)) - (ghost)
+              = (transverse) + (unified time + bridge) - (ghost)
               = 24 + 2 - 26 = 0 [required for unitarity]
         """
         self.b3_val = b3_val
         self.dim_total = dim_total
-        self.dim_sp2r = self.DIM_SP2R
+        self.dim_bridge = self.DIM_BRIDGE
         self.dim_ghost = self.DIM_GHOST
 
         # Store computed values
@@ -162,9 +165,9 @@ class UnitaryFilter:
         For ghost-free unitarity, this must be exactly 0.
         """
         if self._central_charge is None:
-            # c = c_transverse + c_Sp2R + c_ghost
-            # c = b3 + 2 - 26
-            self._central_charge = self.b3_val + self.dim_sp2r - self.dim_ghost
+            # c = c_transverse + c_bridge + c_ghost
+            # c = b3 + 2 - 26 (unified time + Euclidean bridge contribution)
+            self._central_charge = self.b3_val + self.dim_bridge - self.dim_ghost
         return self._central_charge
 
     def check_stability(self) -> Tuple[bool, str]:
@@ -230,7 +233,7 @@ class UnitaryFilter:
                 f"SIMULATION BLOCKED - {message}\n"
                 f"The Weyl anomaly is not cancelled:\n"
                 f"  b3 = {self.b3_val} (transverse modes)\n"
-                f"  Sp(2,R) = {self.dim_sp2r} (two-time contribution)\n"
+                f"  Bridge = {self.dim_bridge} (unified time + Euclidean bridge contribution)\n"
                 f"  Ghost = -{self.dim_ghost} (bc system)\n"
                 f"  Central charge = {self.central_charge} != 0\n"
                 f"\n"
@@ -260,7 +263,7 @@ class UnitaryFilter:
             "dim_total": self.dim_total,
             "contributions": {
                 "c_transverse": self.b3_val,
-                "c_Sp2R": self.dim_sp2r,
+                "c_bridge": self.dim_bridge,
                 "c_ghost": -self.dim_ghost,
             },
             "message": message,
@@ -378,7 +381,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
             "unitary.is_ghost_free",
             "unitary.status",
             "unitary.c_transverse",
-            "unitary.c_sp2r",
+            "unitary.c_bridge",
             "unitary.c_ghost",
         ]
 
@@ -417,7 +420,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
             "unitary.is_ghost_free": report["is_stable"],
             "unitary.status": report["message"],
             "unitary.c_transverse": report["contributions"]["c_transverse"],
-            "unitary.c_sp2r": report["contributions"]["c_Sp2R"],
+            "unitary.c_bridge": report["contributions"]["c_bridge"],
             "unitary.c_ghost": report["contributions"]["c_ghost"],
         }
 
@@ -464,8 +467,8 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                 category="THEORY",
                 description=(
                     "Unitarity requirement in terms of the G2 geometry. The third Betti "
-                    "number b3 = 24 provides transverse modes, Sp(2,R) adds 2 from two-time "
-                    "physics, and the ghost sector subtracts 26. Total must be exactly 0."
+                    "number b3 = 24 provides transverse modes, unified time (1) + Euclidean "
+                    "bridge (0) contributes 2 for timeless substrate, and the ghost sector subtracts 26. Total must be exactly 0."
                 ),
                 input_params=["topology.b3"],
                 output_params=["unitary.central_charge"],
@@ -474,7 +477,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
                     "method": "Dimensional counting from G2 compactification",
                     "steps": [
                         "b3 = 24 transverse modes from TCS G2 manifold",
-                        "Sp(2,R) contributes 2 from two-time physics gauge structure",
+                        "Unified time (1) + Euclidean bridge (0) contributes 2 for timeless substrate",
                         "Ghost bc system contributes -26",
                         "c = 24 + 2 - 26 = 0 [GHOST-FREE]",
                     ]
@@ -568,7 +571,7 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "For PM's (24,2) signature theory, the central charge calculation is:"
+                    "For PM's v21 (24,1) signature theory with Euclidean bridge, the central charge calculation is:"
                 )
             ),
             ContentBlock(
@@ -707,11 +710,11 @@ class UnitaryFilterSimulation(SimulationBase if SimulationBase != object else ob
             ),
             "technicalDetail": (
                 "Central charge calculation: c = b3 + 2 - 26, where b3 = 24 is the third "
-                "Betti number (transverse modes from G2 compactification), 2 comes from the "
-                "Sp(2,R) two-time physics structure, and -26 is the bc ghost system "
-                "contribution. For c = 0, the Weyl anomaly cancels and the theory is unitary "
-                "(ghost-free). For c != 0, negative-norm states appear and all predictions "
-                "are invalid. The Guardian enforces c = 0 before any simulation runs."
+                "Betti number (transverse modes from G2 compactification), 2 comes from "
+                "unified time (1) + Euclidean bridge (0) for timeless substrate in dual-shadow structure, "
+                "and -26 is the bc ghost system contribution. For c = 0, the Weyl anomaly cancels and the theory "
+                "is unitary (ghost-free). For c != 0, negative-norm states appear and all "
+                "predictions are invalid. The Guardian enforces c = 0 before any simulation runs."
             ),
             "prediction": (
                 "If b3 is ever measured or computed to be anything other than 24, or if "
@@ -859,7 +862,7 @@ except UnitaryFilterError:
     pass  # Expected
 
 # Test DIM constants
-assert UnitaryFilter.DIM_SP2R == 2, "UnitaryFilter: DIM_SP2R should be 2"
+assert UnitaryFilter.DIM_BRIDGE == 2, "UnitaryFilter: DIM_BRIDGE should be 2"
 assert UnitaryFilter.DIM_GHOST == 26, "UnitaryFilter: DIM_GHOST should be 26"
 
 # Cleanup

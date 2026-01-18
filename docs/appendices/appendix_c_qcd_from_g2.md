@@ -118,6 +118,22 @@ $$A = \sum_{a=1}^{8} A^a_\mu dx^\mu \otimes T^a$$ **(C.10)**
 
 Where $T^a$ are the 8 generators of SU(3) (Gell-Mann matrices).
 
+### C.5.4 v21 Dual-Shadow Structure Clarification
+
+**Key Result**: SU(3) color emerges independently in each shadow universe.
+
+The v21 framework introduces a dual-shadow structure with two 11D shadow universes connected by a 2D Euclidean bridge. This affects QCD as follows:
+
+1. **SU(3) per shadow**: Each shadow universe has its own G2 holonomy manifold, and the SU(3) gauge symmetry emerges independently from the associative 3-cycles in each shadow.
+
+2. **Topology preserved**: The G2 branching $14_{G2} \rightarrow 8_{SU(3)} + 3 + \bar{3}$ depends only on the G2 structure, not on whether the bulk has signature (24,2) or (24,1). The G2 manifold is always Riemannian.
+
+3. **8 gluons per shadow**: The number of gluons (8) comes from dim(adj SU(3)) = $n^2 - 1 = 8$, a purely group-theoretic result independent of bulk signature.
+
+4. **Confinement mechanism unchanged**: Color confinement via cycle shrinking is a property of G2 geometry, not bulk signature.
+
+**Physical interpretation**: In v21, each observable universe (shadow) has its own complete QCD sector. The Euclidean bridge does not carry color charge. This is consistent with the principle that gauge physics depends on G2 topology ($b_3 = 24$), not bulk signature.
+
 ---
 
 ## C.6 Derivation of QCD Lagrangian

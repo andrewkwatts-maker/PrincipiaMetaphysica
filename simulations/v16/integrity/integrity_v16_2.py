@@ -67,10 +67,10 @@ class IntegrityV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="integrity_v16_2",
-            version="17.2",
+            version="21.0",
             domain="integrity",
             title="System Integrity and Verification",
-            description="Hysteresis seal, 42 certificates, and data provenance",
+            description="Hysteresis seal, 42 certificates, and data provenance (v21 dual-shadow framework)",
             section_id="4",
             subsection_id=None
         )
@@ -143,17 +143,17 @@ class IntegrityV16_2(SimulationBase):
             ),
             ContentBlock(
                 type="heading",
-                content="4.1.2 The S<sub>PR</sub>(2) Lock Mechanism",
+                content="4.1.2 The Dual-Shadow Bridge Lock Mechanism",
                 level=3
             ),
             ContentBlock(
                 type="paragraph",
                 content=(
-                    "The Hysteresis Seal is enforced by the S<sub>PR</sub>(2) gauge. As detailed "
-                    "in Section 1.2, this gauge preserves the symmetry of the descent. In the "
-                    "final v16.2 build, the S<sub>PR</sub>(2) gauge acts as a 'one-way valve': "
-                    "Information flows from 26D potential to 4D residue. Once the 125-node "
-                    "registry is populated, the gauge 'locks,' preventing any back-propagation "
+                    "The Hysteresis Seal is enforced by the dual-shadow bridge structure. As detailed "
+                    "in Section 1.2, the OR reduction operator (R<sub>⊥</sub>) preserves the symmetry of the descent. In the "
+                    "v21 framework, the Euclidean bridge acts as a 'one-way valve': "
+                    "Information flows from 26D(24,1) potential to 4D residue. Once the 125-node "
+                    "registry is populated, the bridge 'locks,' preventing any back-propagation "
                     "of data. This makes the model <strong>non-recursive</strong>: the observed "
                     "data cannot be used to 're-tune' the starting geometry."
                 )
@@ -169,8 +169,8 @@ class IntegrityV16_2(SimulationBase):
                     "In traditional cosmology, parameters like the Fine Structure Constant (α) "
                     "are sometimes theorized to vary over billions of years. The Hysteresis Seal "
                     "renders such drift impossible. Because α is a residue of the static G₂ "
-                    "holonomy (Section 1.3), it is anchored to the manifold's volume. Since the "
-                    "second time-dimension (t₂) was frozen into the vacuum floor (Λ) during the "
+                    "holonomy (Section 1.3), it is anchored to the manifold's volume per shadow. Since the "
+                    "Euclidean bridge coordinates were fixed into the vacuum structure during the "
                     "descent, there is no 'causal pathway' for the constants to change over time."
                 )
             ),
@@ -236,8 +236,8 @@ class IntegrityV16_2(SimulationBase):
                     "the V₇ manifold. They check for 'Topological Crowding' and ensure the "
                     "manifold's Ricci-flatness is preserved.</p>"
                     "<h4>Tier II: Algebraic Parity (C15–C28)</h4>"
-                    "<p>These enforce the Symmetry Budget inherited from the 26D(24,2) bulk. "
-                    "They ensure that the S<sub>PR</sub>(2) gauge reduction is lossless and that "
+                    "<p>These enforce the Symmetry Budget inherited from the 26D(24,1) dual-shadow bulk. "
+                    "They ensure that the OR reduction operator preserves parity across shadows and that "
                     "the sum of all residues equals the manifold's volume invariant.</p>"
                     "<h4>Tier III: Observational Alignment (C29–C42)</h4>"
                     "<p>These compare the sterile outputs against the 'Gold Standard' datasets "

@@ -191,6 +191,26 @@ S_Pneuma = ∫ d²⁶x √(-g₂₆) [M₂₆²R₂₆/2 + L_G2 + L_flux + L_mod
 
 ---
 
+## v21 SIGNATURE VALIDATION CHECKLIST
+
+The v21 framework changes the bulk signature from (24,2) to (24,1) with a dual-shadow structure. All gauge physics remains unchanged because it depends on G2 topology (b3=24), not bulk signature.
+
+| ID | Validation Item | Status | Notes |
+|----|-----------------|--------|-------|
+| v21-01 | GR signature constants updated | ✅ COMPLETE | sig_26=(24,1), sig_shadow=(11,1), sig_bridge=(2,0) |
+| v21-02 | Fermion N_gen=3 preserved | ✅ COMPLETE | Topological: b3/8=24/8=3, spinor dim change irrelevant |
+| v21-03 | QED signature independence | ✅ COMPLETE | Section B.9.4 added to appendix_b |
+| v21-04 | QCD dual-shadow clarification | ✅ COMPLETE | Section C.5.4 added to appendix_c |
+| v21-05 | Electroweak shadow independence | ✅ COMPLETE | Section D.3.4 added to appendix_d |
+
+**Key Physics Point**: All gauge physics (QED, QCD, Electroweak) is signature-independent because:
+1. Gauge symmetries emerge from G2 holonomy structure (always Riemannian, sig 7,0)
+2. Coupling constants depend on b3=24 (topology), not bulk signature
+3. Each shadow universe has complete, identical gauge physics
+4. The Euclidean bridge (2,0) carries no gauge charges
+
+---
+
 ## COMPLETED DERIVATIONS (v20.11)
 
 ### 1. MA-01: Sp(2,R) Gauge Fixing (26D → 13D) ✅

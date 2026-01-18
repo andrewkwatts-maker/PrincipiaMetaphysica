@@ -1,0 +1,18 @@
+{
+  "proof_id": "G62_von_neumann_entropy_ceiling",
+  "gate_id": 62,
+  "gate_name": "Von Neumann Entropy Ceiling",
+  "label": "Max entanglement 125\u2194163 limited",
+  "category": "FOUNDATIONAL_ASSUMPTION",
+  "phase": 5,
+  "block": "F",
+  "version": "16.2",
+  "wl_code": "N/A",
+  "result": "N/A",
+  "formula": "S_vN \u2264 S_max",
+  "verification_status": "NOT_TESTABLE",
+  "reason": "Von Neumann entropy ceiling assumes QM entropy axioms. No derivation from 288-root structure - gate validation just returns True unconditionally. Entropy bounds are not computed from the framework.",
+  "note": "FOUNDATIONAL: Max entanglement 125\u2194163 limited. This is a framework assumption, not an empirical prediction.",
+  "timestamp": "2026-01-04T21:02:26.296966Z",
+  "hash": "9a2806603a27c14d"
+}

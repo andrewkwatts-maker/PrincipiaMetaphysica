@@ -1,0 +1,126 @@
+/**
+ * Formula Hover Styles - Principia Metaphysica
+ * Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+ *
+ * Centralized styling for interactive formula tooltips
+ */
+
+/* Formula hover elements */
+.formula-hover {
+    position: relative;
+    cursor: help;
+    border-bottom: 1px dotted rgba(139, 127, 255, 0.5);
+    transition: all 0.2s ease;
+}
+
+.formula-hover:hover {
+    color: var(--accent-primary, #8b7fff);
+    border-bottom-color: var(--accent-primary, #8b7fff);
+}
+
+/* Enhanced tooltip for formulas */
+[data-formula-id] {
+    position: relative;
+}
+
+[data-formula-id]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-8px);
+    background: rgba(var(--color-bg-card-rgb, 26, 31, 58), 0.98);
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    color: var(--text-primary, #f8f9fa);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    border: 1px solid rgba(139, 127, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    font-size: 0.9rem;
+    line-height: 1.4;
+    white-space: nowrap;
+    z-index: 1000;
+    pointer-events: none;
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+[data-formula-id]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-2px);
+    border: 6px solid transparent;
+    border-top-color: rgba(139, 127, 255, 0.4);
+    z-index: 999;
+    pointer-events: none;
+    animation: tooltipFadeIn 0.2s ease;
+}
+
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-8px);
+    }
+}
+
+/* Formula elements in equations */
+.equation-box .formula-hover {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+}
+
+/* Color variants for different formula categories */
+[data-formula-id][data-category="scales"]:hover {
+    color: #51cf66;
+    border-bottom-color: #51cf66;
+}
+
+[data-formula-id][data-category="cosmology"]:hover {
+    color: #4facfe;
+    border-bottom-color: #4facfe;
+}
+
+[data-formula-id][data-category="neutrinos"]:hover {
+    color: #ff7eb6;
+    border-bottom-color: #ff7eb6;
+}
+
+[data-formula-id][data-category="predictions"]:hover {
+    color: #ffd43b;
+    border-bottom-color: #ffd43b;
+}
+
+[data-formula-id][data-category="topology"]:hover {
+    color: #8b7fff;
+    border-bottom-color: #8b7fff;
+}
+
+/* Validated formulas get checkmark */
+[data-formula-id][data-validated="true"]::after {
+    content: attr(title) " ✓";
+}
+
+/* Exact matches get special styling */
+[data-formula-id][data-exact-match="true"] {
+    border-bottom-width: 2px;
+    font-weight: 600;
+}
+
+[data-formula-id][data-exact-match="true"]::after {
+    content: attr(title) " ✓ EXACT";
+    background: linear-gradient(135deg, rgba(81, 207, 102, 0.15), rgba(79, 172, 254, 0.1));
+    border-color: rgba(81, 207, 102, 0.6);
+}
+
+/* Predictions (not yet validated) */
+[data-formula-id][data-prediction="true"]::after {
+    content: attr(title) " [PREDICTION]";
+    background: linear-gradient(135deg, rgba(255, 212, 59, 0.15), rgba(255, 126, 182, 0.1));
+    border-color: rgba(255, 212, 59, 0.6);
+}

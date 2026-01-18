@@ -50,10 +50,10 @@ class ResultsV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="results_v16_2",
-            version="17.2",
+            version="21.0",
             domain="results",
             title="Cosmological Results and Alignment",
-            description="The 0.48σ resolution, dark energy dynamics, and vacuum stability",
+            description="The 0.48σ resolution, dark energy dynamics, and vacuum stability (v21 dual-shadow framework)",
             section_id="3",
             subsection_id="3.7"  # v19.0: Unique subsection (Cosmological Results) (3.1-3.4 used by gauge_unification)
         )
@@ -289,8 +289,8 @@ class ResultsV16_2(SimulationBase):
                     "By proving that the 10⁻⁵⁰ floor is the only stable residue of the 26D → 4D "
                     "descent, we eliminate the need for the 'Anthropic Principle.' We no longer "
                     "need to argue that we live in a 'lucky' universe among 10⁵⁰⁰ possibilities. "
-                    "The v16.2 model asserts that <strong>any universe descending from a 26D(24,2) "
-                    "bulk via a G₂ manifold must exhibit this specific vacuum floor</strong>."
+                    "The v21 model asserts that <strong>any universe descending from a 26D(24,1) "
+                    "dual-shadow bulk via per-shadow G₂ compactification must exhibit this specific vacuum floor</strong>."
                 )
             ),
         ]

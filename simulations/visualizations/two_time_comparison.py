@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
 """
+[HISTORICAL v16] Two-Time Comparison Visualization
+
+NOTE: This visualization was created for the v16-v20 (24,2) two-time framework.
+The v21 framework uses unified time (24,1) with Euclidean bridge.
+Retained for historical comparison and educational purposes.
+
 Two-Time Comparison Visualizations
 ===================================
 

@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<!--
+    Copyright (c) 2025 Andrew Keith Watts. All rights reserved.
+
+    This is the intellectual property of Andrew Keith Watts. Unauthorized
+    reproduction, distribution, or modification of this code, in whole or in part,
+    without the express written permission of Andrew Keith Watts is strictly prohibited.
+
+    For inquiries, please contact AndrewKWatts@Gmail.com
+-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Principia Metaphysica Simulation Code - Python implementations of the theoretical framework">
+    <title>Simulations - Principia Metaphysica</title>
+    <link rel="stylesheet" href="../css/styles.css">
+<!-- Prism.js for syntax highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet">
+
+    <style>
+        /* Simulation Page Specific Styles */
+        .sim-hero {
+            background: linear-gradient(135deg, rgba(81, 207, 102, 0.12), rgba(139, 127, 255, 0.08));
+            border: 1px solid rgba(81, 207, 102, 0.25);
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sim-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #51cf66, #8b7fff);
+        }
+
+        .sim-hero h1 {
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #51cf66, #8b7fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .sim-hero .lead {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 900px;
+        }
+
+        /* Index Section */
+        .sim-index {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .sim-index h2 {
+            background: linear-gradient(135deg, #51cf66, #8b7fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .index-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        /* Responsive: 2 columns on tablet, 1 on mobile */
+        @media (max-width: 1200px) {
+            .index-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .index-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .index-category {
+            background: rgba(139, 127, 255, 0.05);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+        }
+
+        .index-category:hover {
+            border-color: var(--border-accent);
+            background: rgba(139, 127, 255, 0.08);
+        }
+
+        .index-category h3 {
+            color: var(--accent-primary);
+            font-size: 1rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .index-category ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .index-category li {
+            margin: 0.5rem 0;
+        }
+
+        .index-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .index-link:hover {
+            color: var(--accent-primary);
+        }
+
+        .index-link::before {
+            content: '>';
+            color: #51cf66;
+            font-weight: bold;
+        }
+
+        /* Index Stats - hidden as per user request */
+        .index-stats {
+            display: none !important;
+        }
+
+        .index-stats span {
+            white-space: nowrap;
+        }
+
+        .index-stats .stat-separator {
+            color: var(--border-primary);
+        }
+
+        /* Search input styling */
+        .sim-search-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--border-primary);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .sim-search-input:focus {
+            outline: none;
+            border-color: var(--accent-primary);
+            background: rgba(139, 127, 255, 0.05);
+            box-shadow: 0 0 0 3px rgba(139, 127, 255, 0.1);
+        }
+
+        .sim-search-input::placeholder {
+            color: var(--text-muted);
+        }
+
+        /* Status badges in index */
+        .status-badge {
+            display: inline-block;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            background: rgba(139, 127, 255, 0.2);
+            color: var(--accent-primary);
+            border: 1px solid rgba(139, 127, 255, 0.3);
+        }
+
+        /* Validation status colors */
+        .status-badge.status-pass,
+        .status-badge[data-status="PASS"],
+        .status-badge[data-status="LOCKED"] {
+            background: rgba(81, 207, 102, 0.2);
+            color: #51cf66;
+            border-color: rgba(81, 207, 102, 0.4);
+        }
+
+        .status-badge.status-marginal,
+        .status-badge[data-status="MARGINAL"] {
+            background: rgba(255, 193, 7, 0.2);
+            color: #ffc107;
+            border-color: rgba(255, 193, 7, 0.4);
+        }
+
+        .status-badge.status-fail,
+        .status-badge[data-status="FAIL"],
+        .status-badge[data-status="TENSION"] {
+            background: rgba(255, 107, 107, 0.2);
+            color: #ff6b6b;
+            border-color: rgba(255, 107, 107, 0.4);
+        }
+
+        .status-badge.status-geometric,
+        .status-badge[data-status="GEOMETRIC"] {
+            background: rgba(139, 127, 255, 0.2);
+            color: #8b7fff;
+            border-color: rgba(139, 127, 255, 0.4);
+        }
+
+        .status-badge.status-prediction,
+        .status-badge[data-status="PREDICTION"] {
+            background: rgba(102, 178, 255, 0.2);
+            color: #66b2ff;
+            border-color: rgba(102, 178, 255, 0.4);
+        }
+
+        /* File Section */
+        .file-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 16px;
+            margin-bottom: 1.5rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .file-section:hover {
+            border-color: var(--border-accent);
+        }
+
+        .file-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.25rem 1.5rem;
+            background: rgba(139, 127, 255, 0.05);
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s ease;
+        }
+
+        .file-header:hover {
+            background: rgba(139, 127, 255, 0.1);
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .file-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #51cf66, #40c057);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+        }
+
+        .file-icon.json {
+            background: linear-gradient(135deg, #ffc107, #ff9800);
+        }
+
+        .file-icon.js {
+            background: linear-gradient(135deg, #f0db4f, #e6c200);
+        }
+
+        .file-name {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.1rem;
+        }
+
+        .file-path {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-family: 'Fira Code', monospace;
+        }
+
+        .expand-icon {
+            font-size: 1.5rem;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .file-section.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        .file-content {
+            display: none;
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .file-section.expanded .file-content {
+            display: block;
+        }
+
+        .file-loading {
+            padding: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        .file-loading .spinner {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(139, 127, 255, 0.2);
+            border-top-color: var(--accent-primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-right: 0.75rem;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .file-error {
+            padding: 1.5rem;
+            background: rgba(255, 107, 107, 0.1);
+            color: #ff6b6b;
+            border-radius: 8px;
+            margin: 1rem;
+        }
+
+        /* Code Display */
+        .code-wrapper {
+            max-height: 600px;
+            overflow: auto;
+            background: #1e1e1e;
+        }
+
+        .code-wrapper pre {
+            margin: 0;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .code-wrapper code {
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+        }
+
+        /* Stats Bar */
+        .file-stats {
+            display: flex;
+            gap: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .file-stats span {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        /* Category Headers */
+        .category-header {
+            background: linear-gradient(135deg, rgba(139, 127, 255, 0.1), rgba(81, 207, 102, 0.05));
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2.5rem 0 1.5rem;
+            border-left: 4px solid #51cf66;
+            scroll-margin-top: 100px;
+        }
+
+        .category-header h2 {
+            color: var(--text-primary);
+            margin: 0 0 0.5rem;
+            font-size: 1.4rem;
+        }
+
+        .category-header p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* Smooth scroll for anchor navigation */
+        .file-section {
+            scroll-margin-top: 100px;
+        }
+
+        /* Loading Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 15, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.hidden {
+            display: none;
+        }
+
+        .loading-text {
+            color: var(--text-primary);
+            margin-top: 1rem;
+            font-size: 1.1rem;
+        }
+
+        /* Architecture Diagram */
+        .architecture-box {
+            background: rgba(139, 127, 255, 0.08);
+            border: 1px solid var(--border-primary);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            overflow-x: auto;
+        }
+
+        .architecture-box .highlight {
+            color: #51cf66;
+        }
+
+        .architecture-box .accent {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .sim-hero {
+                padding: 2rem 1.5rem;
+            }
+
+            .sim-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .file-header {
+                padding: 1rem;
+            }
+
+            .file-info {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .file-stats {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+        }
+    </style>
+
+    <!-- Tooltip System CSS -->
+    <link rel="stylesheet" href="../css/pm-tooltip.css">
+    <link rel="stylesheet" href="../css/formula-hover.css">
+    <link rel="stylesheet" href="../css/pm-header.css">
+    <link rel="stylesheet" href="../css/pm-ux-consistency.css">
+    <link rel="stylesheet" href="../css/mobile-responsive.css">
+</head>
+<body>
+    <div id="main-content">
+        <!-- Header injected by pm-header.js -->
+
+        <main>
+            <!-- Hero Section -->
+            <section class="sim-hero">
+                <h1>Simulation Framework</h1>
+                <p class="lead">
+                    The Principia Metaphysica simulation suite provides rigorous numerical validation of the
+                    theoretical framework. Written in Python, these simulations compute observable predictions
+                    from first principles, validate consistency across all parameter derivations, and compare
+                    results against experimental data from PDG, NuFIT, DESI, and other sources.
+                </p>
+                <div class="architecture-box">
+<span class="highlight">SIMULATION ARCHITECTURE</span>
+
+<span class="accent">config.py</span>                  Single source of truth for all parameters
+    |
+    v
+<span class="accent">run_all_simulations.py</span>    Master orchestrator - runs all canonical simulations
+    |
+    +---> <span class="accent">simulations/*.py</span>      Individual physics modules (v13.0-v15.x)
+    |
+    v
+<span class="accent">theory_output.json</span>        Machine-readable results with validation status
+    |
+    v
+<span class="accent">AutoGenerated/*.json</span>      Split component files (parameters, simulations, formulas)
+    |
+    v
+<span class="accent">pm-constants-loader.js</span>    Website integration layer (loads from AutoGenerated/)
+
+<span class="highlight">DESIGN PRINCIPLES:</span>
+- Single Source of Truth: All parameters derive from config.py
+- No Duplicates: Each observable computed exactly once
+- Experimental Validation: All outputs checked against PDG/NuFIT/DESI
+- Geometric Derivation: Parameters emerge from G2 structure, not fitting
+                </div>
+            </section>
+
+            <!-- Dynamic Index -->
+            <section class="sim-index">
+                <div style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem;">
+                    <h2 style="margin-bottom: 0;">Simulation Index</h2>
+                    <div id="index-stats" class="index-stats" style="display: none;">
+                        <span class="stat-separator">|</span>
+                        <span id="total-scripts">0 scripts</span>
+                        <span class="stat-separator">|</span>
+                        <span id="total-categories">0 categories</span>
+                        <span class="stat-separator">|</span>
+                        <span id="latest-version">v0.0</span>
+                    </div>
+                </div>
+                <div class="controls-section" style="margin-bottom: 1.5rem;">
+                    <input type="text" id="sim-search" class="sim-search-input" placeholder="Search simulations by name, description, or version...">
+                </div>
+                <div id="index-container" class="index-grid">
+                    <div class="file-loading" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                        <span class="spinner"></span>Loading simulation index...
+                    </div>
+                </div>
+            </section>
+
+            <!-- Simulation Modules Section -->
+            <div id="simulation-categories-container">
+                <div class="file-loading" id="simulations-loading">
+                    <span class="spinner"></span>Loading simulation files from repository...
+                </div>
+            </div>
+
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Andrew Keith Watts. All rights reserved.</p>
+                <p>Principia Metaphysica - A Unified Geometric Theory</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Prism.js for syntax highlighting -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+
+    <!-- PM Simulation Loader Module -->
+    <script src="../js/pm-simulation-loader.js"></script>
+
+    <script>
+        // GitHub API configuration (kept for backwards compatibility)
+        const GITHUB_REPO = 'andrewkwatts-maker/PrincipiaMetaphysica';
+        const GITHUB_BRANCH = 'main';
+        const GITHUB_RAW_BASE = `https://raw.githubusercontent.com/${GITHUB_REPO}/${GITHUB_BRANCH}`;
+        const GITHUB_API_BASE = `https://api.github.com/repos/${GITHUB_REPO}/contents`;
+
+        // File cache for loaded content
+        const fileCache = new Map();
+
+        // GitHub folder structure cache
+        let githubFolderCache = null;
+
+        // Fetch folder structure from GitHub API
+        async function fetchGitHubFolderStructure() {
+            if (githubFolderCache) return githubFolderCache;
+
+            try {
+                console.log('[GITHUB API] ========================================');
+                console.log('[GITHUB API] Fetching folder structure from GitHub...');
+                console.log('[GITHUB API] API URL:', `${GITHUB_API_BASE}/simulations`);
+                console.log('[GITHUB API] ========================================');
+
+                // Fetch main simulations folder
+                const response = await fetch(`${GITHUB_API_BASE}/simulations`);
+                if (!response.ok) {
+                    // Check for rate limiting
+                    const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+                    const rateLimitReset = response.headers.get('X-RateLimit-Reset');
+
+                    if (response.status === 403) {
+                        if (rateLimitRemaining === '0' || rateLimitRemaining === null) {
+                            const resetTime = rateLimitReset
+                                ? new Date(parseInt(rateLimitReset) * 1000)
+                                : new Date(Date.now() + 3600000); // Assume 1 hour if not provided
+
+                            console.error('[GITHUB API] ========================================');
+                            console.error('[GITHUB API] RATE LIMITED!');
+                            console.error(`[GITHUB API] Reset time: ${resetTime.toLocaleTimeString()}`);
+                            console.error('[GITHUB API] GitHub API allows 60 requests/hour for unauthenticated users.');
+                            console.error('[GITHUB API] To avoid this: Deploy simulations-index.json to your site.');
+                            console.error('[GITHUB API] ========================================');
+
+                            // Show user-friendly error in UI
+                            const container = document.getElementById('index-container');
+                            if (container) {
+                                container.innerHTML = `
+                                    <div class="file-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                                        <strong>GitHub API Rate Limit Exceeded</strong><br>
+                                        <small>The GitHub API allows 60 requests/hour for anonymous users.</small><br>
+                                        <small>Rate limit resets at: ${resetTime.toLocaleTimeString()}</small><br>
+                                        <br>
+                                        <small style="color: var(--text-muted);">
+                                            This usually happens when loading from GitHub API instead of the local index file.
+                                            Please try again later or contact the site administrator.
+                                        </small>
+                                    </div>`;
+                            }
+                            return null;
+                        }
+                    } else if (response.status === 404) {
+                        console.error('[GITHUB API] Repository or path not found (404)');
+                    } else if (response.status === 500 || response.status === 502 || response.status === 503) {
+                        console.error(`[GITHUB API] GitHub server error (${response.status}). Try again later.`);
+                    }
+
+                    console.warn(`[GITHUB API] Could not fetch folder structure. Status: ${response.status}`);
+                    return null;
+                }
+
+                // Log rate limit info for debugging
+                const rateLimitRemaining = response.headers.get('X-RateLimit-Remaining');
+                const rateLimitLimit = response.headers.get('X-RateLimit-Limit');
+                if (rateLimitRemaining) {
+                    const remaining = parseInt(rateLimitRemaining);
+                    const limit = parseInt(rateLimitLimit) || 60;
+                    console.log(`[GITHUB API] Rate limit: ${remaining}/${limit} requests remaining`);
+
+                    // Warn if running low
+                    if (remaining < 10) {
+                        console.warn(`[GITHUB API] WARNING: Only ${remaining} API requests remaining!`);
+                    }
+                }
+
+                const mainItems = await response.json();
+                const folders = [];
+
+                // Process main level folders and files
+                for (const item of mainItems) {
+                    if (item.type === 'dir') {
+                        // For v16, we need to fetch subfolders
+                        if (item.name === 'v16') {
+                            try {
+                                const v16Response = await fetch(item.url);
+                                if (v16Response.ok) {
+                                    const v16Folders = await v16Response.json();
+                                    for (const subfolder of v16Folders.filter(f => f.type === 'dir')) {
+                                        folders.push({
+                                            name: subfolder.name,
+                                            displayName: `v16/${subfolder.name}`,
+                                            path: subfolder.path,
+                                            url: subfolder.url,
+                                            isV16: true
+                                        });
+                                    }
+                                }
+                            } catch (e) {
+                                console.warn(`Error fetching v16 subfolders:`, e);
+                            }
+                        } else {
+                            // Other folders (base, Constants, etc.)
+                            folders.push({
+                                name: item.name,
+                                displayName: item.name,
+                                path: item.path,
+                                url: item.url,
+                                isV16: false
+                            });
+                        }
+                    }
+                }
+
+                githubFolderCache = folders;
+                console.log(`Discovered ${githubFolderCache.length} folders from GitHub:`,
+                    folders.map(f => f.displayName).join(', '));
+                return githubFolderCache;
+            } catch (error) {
+                console.warn('Error fetching GitHub folder structure:', error);
+                return null;
+            }
+        }
+
+        // Fetch Python files from a GitHub folder
+        async function fetchFilesFromFolder(folderUrl) {
+            try {
+                const response = await fetch(folderUrl);
+                if (!response.ok) return [];
+
+                const items = await response.json();
+                return items
+                    .filter(item =>
+                        item.type === 'file' &&
+                        item.name.endsWith('.py') &&
+                        item.name !== '__init__.py' &&
+                        !item.name.startsWith('.')
+                    )
+                    .map(item => ({
+                        file: item.name,
+                        path: item.path,
+                        url: item.download_url
+                    }));
+            } catch (error) {
+                console.warn(`Error fetching files from folder:`, error);
+                return [];
+            }
+        }
+
+        // Toggle section expansion
+        function toggleSection(filename, filePath = null) {
+            const section = document.getElementById(`section-${filename}`);
+            if (!section) return;
+
+            const isExpanded = section.classList.contains('expanded');
+
+            if (isExpanded) {
+                section.classList.remove('expanded');
+            } else {
+                section.classList.add('expanded');
+                loadFileContent(filename, filePath);
+            }
+        }
+
+        // Scroll to section
+        function scrollToSection(filename) {
+            const section = document.getElementById(`section-${filename}`);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Expand after scrolling
+                setTimeout(() => {
+                    if (!section.classList.contains('expanded')) {
+                        toggleSection(filename);
+                    }
+                }, 300);
+            }
+        }
+
+        // Load file content from GitHub
+        async function loadFileContent(filename, filePath = null) {
+            const section = document.getElementById(`section-${filename}`);
+            if (!section) return;
+
+            const contentDiv = section.querySelector('.file-content');
+
+            // Check cache first
+            if (fileCache.has(filename)) {
+                displayFileContent(contentDiv, filename, fileCache.get(filename));
+                return;
+            }
+
+            // Show loading state
+            contentDiv.innerHTML = '<div class="file-loading"><span class="spinner"></span>Loading file content...</div>';
+
+            try {
+                // Determine file path
+                let resolvedPath = filePath;
+
+                // If no path provided, search in simulation index
+                if (!resolvedPath && simulationsIndex) {
+                    for (const [catName, catData] of Object.entries(simulationsIndex.categories)) {
+                        const script = catData.scripts.find(s => s.file === filename);
+                        if (script) {
+                            resolvedPath = script.path;
+                            break;
+                        }
+                    }
+                }
+
+                // Fallback to simulations directory
+                if (!resolvedPath) {
+                    resolvedPath = `simulations/${filename}`;
+                }
+
+                const response = await fetch(`${GITHUB_RAW_BASE}/${resolvedPath}`);
+                if (!response.ok) {
+                    throw new Error(`Failed to load file: ${response.status}`);
+                }
+
+                const content = await response.text();
+                fileCache.set(filename, content);
+                displayFileContent(contentDiv, filename, content);
+
+            } catch (error) {
+                contentDiv.innerHTML = `<div class="file-error">Error loading file: ${error.message}</div>`;
+            }
+        }
+
+        // Display file content with syntax highlighting
+        function displayFileContent(contentDiv, filename, content) {
+            // Determine language
+            let language = 'python';
+            if (filename.endsWith('.json')) language = 'json';
+            if (filename.endsWith('.js')) language = 'javascript';
+
+            // Count lines
+            const lines = content.split('\n').length;
+            const size = new Blob([content]).size;
+            const sizeStr = size > 1024 ? `${(size / 1024).toFixed(1)} KB` : `${size} bytes`;
+
+            contentDiv.innerHTML = `
+                <div class="code-wrapper">
+                    <pre class="line-numbers"><code class="language-${language}">${escapeHtml(content)}</code></pre>
+                </div>
+                <div class="file-stats">
+                    <span>Lines: ${lines}</span>
+                    <span>Size: ${sizeStr}</span>
+                    <span>Language: ${language}</span>
+                </div>
+            `;
+
+            // Apply Prism highlighting
+            Prism.highlightAllUnder(contentDiv);
+        }
+
+        // Escape HTML entities
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // State for simulation index
+        let simulationsIndex = null;
+        let filteredSimulations = [];
+
+        // Helper function to detect base URL for unicode domains and various hosting configurations
+        function getBaseUrl() {
+            const href = window.location.href;
+            const origin = window.location.origin;
+            const pathname = window.location.pathname;
+
+            // Check if we're in the Pages directory
+            const pagesIndex = pathname.toLowerCase().indexOf('/pages/');
+            if (pagesIndex !== -1) {
+                // Return origin + path up to (but not including) /Pages/
+                return origin + pathname.substring(0, pagesIndex);
+            }
+
+            // Fallback: try to extract from full URL
+            const hrefPagesIndex = href.toLowerCase().lastIndexOf('/pages/');
+            if (hrefPagesIndex !== -1) {
+                return href.substring(0, hrefPagesIndex);
+            }
+
+            // If not in Pages directory, use origin
+            return origin;
+        }
+
+        // Load simulations index from AutoGenerated/simulations-index.json or dynamically from GitHub
+        async function loadSimulationIndex() {
+            const container = document.getElementById('index-container');
+            const statsDiv = document.getElementById('index-stats');
+            const loadingDiv = document.getElementById('simulations-loading');
+
+            // Get base URL to handle unicode domains (e.g., metaphysicae.com) and different hosting configurations
+            const baseUrl = getBaseUrl();
+
+            // Try multiple paths for live site compatibility
+            // Order matters: most likely to work first
+            const paths = [
+                '../AutoGenerated/simulations-index.json',           // Relative to Pages/ (works locally)
+                baseUrl + '/AutoGenerated/simulations-index.json',   // Absolute from detected base URL
+                '/AutoGenerated/simulations-index.json',             // Absolute from site root
+                new URL('AutoGenerated/simulations-index.json', window.location.origin).href, // Full URL from origin
+                'AutoGenerated/simulations-index.json',              // Relative from current location
+                './simulations-index.json'                           // Local copy in Pages/ (fallback)
+            ];
+
+            console.log('[SIMULATIONS] ========================================');
+            console.log('[SIMULATIONS] Loading simulations index...');
+            console.log('[SIMULATIONS] Current URL:', window.location.href);
+            console.log('[SIMULATIONS] Origin:', window.location.origin);
+            console.log('[SIMULATIONS] Pathname:', window.location.pathname);
+            console.log('[SIMULATIONS] Detected base URL:', baseUrl);
+            console.log('[SIMULATIONS] Will try paths:', paths);
+            console.log('[SIMULATIONS] ========================================');
+
+            let response = null;
+            let successPath = null;
+
+            for (const path of paths) {
+                try {
+                    console.log(`[SIMULATIONS] Trying: ${path}`);
+                    const resp = await fetch(path, {
+                        method: 'GET',
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    if (resp.ok) {
+                        // Try to parse as JSON - this is the most reliable check
+                        // Don't rely on content-type as static servers often don't set it correctly
+                        try {
+                            const text = await resp.text();
+                            // Quick check: valid JSON starts with { or [
+                            if (text.trim().startsWith('{') || text.trim().startsWith('[')) {
+                                const data = JSON.parse(text);
+                                // Verify it looks like a simulation index
+                                if (data.categories || data.total_scripts !== undefined) {
+                                    simulationsIndex = data;
+                                    successPath = path;
+                                    console.log(`[SIMULATIONS] SUCCESS - Loaded from: ${path}`);
+                                    console.log(`[SIMULATIONS] Found ${data.total_scripts || 'unknown'} scripts`);
+                                    response = { ok: true, _alreadyParsed: true };
+                                    break;
+                                } else {
+                                    console.log(`[SIMULATIONS] Path ${path} returned JSON but not simulation index format`);
+                                }
+                            } else {
+                                console.log(`[SIMULATIONS] Path ${path} returned non-JSON content (HTML 404?)`);
+                            }
+                        } catch (parseError) {
+                            console.log(`[SIMULATIONS] Path ${path} returned invalid JSON: ${parseError.message}`);
+                        }
+                    } else {
+                        console.log(`[SIMULATIONS] Path ${path} returned HTTP ${resp.status}`);
+                    }
+                } catch (e) {
+                    console.log(`[SIMULATIONS] Path ${path} failed: ${e.message}`);
+                    continue;
+                }
+            }
+
+            try {
+                // If index file not found, build index dynamically from GitHub
+                if (!response) {
+                    console.warn('[SIMULATIONS] ========================================');
+                    console.warn('[SIMULATIONS] Index file not found at any path!');
+                    console.warn('[SIMULATIONS] Falling back to GitHub API...');
+                    console.warn('[SIMULATIONS] Note: GitHub API has 60 requests/hour limit for unauthenticated users');
+                    console.warn('[SIMULATIONS] To fix: Ensure AutoGenerated/simulations-index.json exists and is deployed');
+                    console.warn('[SIMULATIONS] ========================================');
+                    await buildIndexFromGitHub();
+                } else if (!response._alreadyParsed) {
+                    // Only parse if not already parsed in the loop above
+                    simulationsIndex = await response.json();
+                    console.log(`[SIMULATIONS] Successfully parsed index with ${simulationsIndex.total_scripts} scripts`);
+                }
+                // If _alreadyParsed, simulationsIndex was already set in the loop
+
+                filteredSimulations = getAllScripts();
+
+                // Update stats
+                document.getElementById('total-scripts').textContent = `${simulationsIndex.total_scripts} scripts`;
+                document.getElementById('total-categories').textContent = `${Object.keys(simulationsIndex.categories).length} categories`;
+                document.getElementById('latest-version').textContent = `v${simulationsIndex.version || '17.2'}`;
+                if (statsDiv) statsDiv.style.display = 'inline-flex';
+
+                // Render index
+                renderSimulationIndex();
+
+                // Render simulation sections
+                renderSimulationSections();
+
+                // Setup search
+                document.getElementById('sim-search').addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase();
+                    filterSimulations(query);
+                });
+
+            } catch (error) {
+                console.error('[SIMULATIONS] ========================================');
+                console.error('[SIMULATIONS] ERROR loading simulation index:', error);
+                console.error('[SIMULATIONS] Error message:', error.message);
+                console.error('[SIMULATIONS] Stack trace:', error.stack);
+                console.error('[SIMULATIONS] ========================================');
+
+                // Determine if this is a rate limit error or other issue
+                const isRateLimitError = error.message && error.message.toLowerCase().includes('rate');
+                const isNetworkError = error.message && (
+                    error.message.toLowerCase().includes('network') ||
+                    error.message.toLowerCase().includes('fetch') ||
+                    error.message.toLowerCase().includes('cors')
+                );
+
+                let errorTitle = 'Error Loading Simulations';
+                let errorDetails = error.message;
+                let errorSuggestion = 'Please check the browser console for more details.';
+
+                if (isRateLimitError) {
+                    errorTitle = 'GitHub API Rate Limit';
+                    errorSuggestion = 'The GitHub API rate limit has been exceeded. Please try again in about an hour.';
+                } else if (isNetworkError) {
+                    errorTitle = 'Network Error';
+                    errorSuggestion = 'Please check your internet connection and try refreshing the page.';
+                } else if (error.message.includes('folder structure')) {
+                    errorTitle = 'Could Not Load From GitHub';
+                    errorSuggestion = 'The simulations-index.json file may not be deployed. Contact the site administrator.';
+                }
+
+                if (container) {
+                    container.innerHTML = `
+                        <div class="file-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
+                            <strong>${errorTitle}</strong><br>
+                            <small style="display: block; margin: 0.5rem 0;">${errorDetails}</small>
+                            <small style="color: var(--text-muted);">${errorSuggestion}</small>
+                        </div>`;
+                }
+
+                // Also update simulations container
+                const simContainer = document.getElementById('simulation-categories-container');
+                if (simContainer) {
+                    simContainer.innerHTML = `
+                        <div class="file-error" style="padding: 1.5rem;">
+                            <strong>Could not load simulations</strong><br>
+                            <small>${errorDetails}</small>
+                        </div>`;
+                }
+                if (loadingDiv) loadingDiv.style.display = 'none';
+            }
+        }
+
+        // Build simulation index dynamically from GitHub API
+        async function buildIndexFromGitHub() {
+            console.log('Building simulation index from GitHub...');
+
+            // Fetch folder structure
+            const folders = await fetchGitHubFolderStructure();
+            if (!folders || folders.length === 0) {
+                throw new Error('Could not fetch folder structure from GitHub');
+            }
+
+            // Build index structure
+            simulationsIndex = {
+                version: '17.2',
+                generated: new Date().toISOString(),
+                total_scripts: 0,
+                categories: {}
+            };
+
+            // Category descriptions
+            const descriptions = {
+                'gauge': 'Gauge unification, breaking chains, asymptotic safety, and $Sp(2, \\mathbb{R})$ symmetry',
+                'geometric': 'G2 manifold geometry, Yukawa overlap integrals, CP phases, and torsion classes',
+                'fermion': 'Fermion mass matrices, Yukawa textures, CKM parameters, and chirality',
+                'neutrino': 'Neutrino masses, PMNS matrix, mass ordering, and mixing angles',
+                'higgs': 'Higgs mass, doublet-triplet splitting, and Yukawa couplings',
+                'proton': 'Proton lifetime, decay branching ratios, and geometric suppression',
+                'moduli': 'Moduli stabilization, racetrack potentials, and flux configurations',
+                'pneuma': 'Pneuma field dynamics, vacuum selection, vielbein emergence, and lattice dispersion',
+                'cosmology': 'Dark energy, gravitational waves, thermal time, and cosmological observables',
+                'quantum_bio': 'Microtubule quantum coherence, Orch-OR, and biological quantum thresholds',
+                'thermal': 'Thermal time formalism and emergent spacetime',
+                'introduction': 'Paper introduction and motivation',
+                'discussion': 'Paper discussion and conclusions',
+                'predictions': 'Testable predictions and experimental signatures',
+                'appendices': 'Mathematical appendices and derivations',
+                'statistics': 'Statistical analysis and covariance matrices',
+                'validation': 'Validation scripts and experimental comparison',
+                'base': 'Base classes and utilities',
+                'Constants': 'Physical constants and configuration',
+                'data': 'Data files and experimental values',
+                'derivations': 'Mathematical derivations',
+                'reports': 'Report generation utilities',
+                'tests': 'Test suite',
+                'ip': 'Intellectual property and citation management'
+            };
+
+            // Process root-level files in simulations directory
+            try {
+                const rootResponse = await fetch(`${GITHUB_API_BASE}/simulations`);
+                if (rootResponse.ok) {
+                    const rootItems = await rootResponse.json();
+                    const rootFiles = rootItems
+                        .filter(item =>
+                            item.type === 'file' &&
+                            item.name.endsWith('.py') &&
+                            item.name !== '__init__.py' &&
+                            !item.name.startsWith('.')
+                        )
+                        .map(item => ({
+                            file: item.name,
+                            path: item.path,
+                            url: item.download_url
+                        }));
+
+                    if (rootFiles.length > 0) {
+                        simulationsIndex.categories['root'] = {
+                            title: 'Core Simulations',
+                            path: 'simulations/',
+                            folderName: 'root',
+                            description: 'Core simulation scripts in main directory',
+                            isV16: false,
+                            order: 5,
+                            sectionId: null,
+                            scripts: rootFiles.map(f => ({
+                                file: f.file,
+                                path: f.path,
+                                version: null,
+                                title: null,
+                                description: f.file.replace('.py', '').replace(/_/g, ' '),
+                                status: null
+                            })),
+                            count: rootFiles.length
+                        };
+                        simulationsIndex.total_scripts += rootFiles.length;
+                    }
+                }
+            } catch (e) {
+                console.warn('Could not fetch root-level simulation files:', e);
+            }
+
+            // Process each folder
+            for (const folder of folders) {
+                const files = await fetchFilesFromFolder(folder.url);
+                if (files.length === 0) continue;
+
+                const categoryKey = folder.displayName;
+                const baseName = folder.name.charAt(0).toUpperCase() + folder.name.slice(1).replace(/_/g, ' ');
+                const categoryName = folder.isV16 ? `v16 / ${baseName}` : baseName;
+
+                simulationsIndex.categories[categoryKey] = {
+                    title: categoryName,
+                    path: folder.path,
+                    folderName: folder.name,
+                    description: descriptions[folder.name] || `${files.length} simulation files`,
+                    isV16: folder.isV16,
+                    order: folder.isV16 ? 0 : 50,
+                    sectionId: null,
+                    scripts: files.map(f => ({
+                        file: f.file,
+                        path: f.path,
+                        version: null,
+                        title: null,
+                        description: f.file.replace('.py', '').replace(/_/g, ' '),
+                        status: null
+                    })),
+                    count: files.length
+                };
+
+                simulationsIndex.total_scripts += files.length;
+            }
+
+            console.log(`Built index with ${simulationsIndex.total_scripts} scripts in ${Object.keys(simulationsIndex.categories).length} categories`);
+        }
+
+        // Get all scripts from index
+        function getAllScripts() {
+            if (!simulationsIndex) return [];
+            const scripts = [];
+            for (const [catName, catData] of Object.entries(simulationsIndex.categories)) {
+                catData.scripts.forEach(script => {
+                    scripts.push({ ...script, categoryName: catName });
+                });
+            }
+            return scripts;
+        }
+
+        // Filter simulations by search query
+        function filterSimulations(query) {
+            if (!query) {
+                filteredSimulations = getAllScripts();
+            } else {
+                filteredSimulations = getAllScripts().filter(script => {
+                    return (
+                        script.file.toLowerCase().includes(query) ||
+                        (script.description && script.description.toLowerCase().includes(query)) ||
+                        (script.title && script.title.toLowerCase().includes(query)) ||
+                        (script.version && script.version.includes(query)) ||
+                        (script.status && script.status.toLowerCase().includes(query))
+                    );
+                });
+            }
+            renderSimulationIndex();
+            renderSimulationSections();
+        }
+
+        // Render simulation index as category cards
+        function renderSimulationIndex() {
+            const container = document.getElementById('index-container');
+
+            if (filteredSimulations.length === 0) {
+                container.innerHTML = '<div class="file-error" style="grid-column: 1 / -1; text-align: center; padding: 2rem;">No simulations match your search.</div>';
+                return;
+            }
+
+            // Group filtered simulations by category (using index categories directly)
+            const categories = {};
+            filteredSimulations.forEach(script => {
+                const catName = script.categoryName;
+                if (!categories[catName]) {
+                    const catData = simulationsIndex.categories[catName] || {};
+                    categories[catName] = {
+                        title: catData.title || catName,
+                        description: catData.description || '',
+                        isV16: catData.isV16 || catName.startsWith('v16/'),
+                        folderName: catData.folderName || '',
+                        path: catData.path || '',
+                        scripts: []
+                    };
+                }
+                categories[catName].scripts.push(script);
+            });
+
+            // Custom sort order - v16 folders first in defined order
+            const v16Order = ['v16/gauge', 'v16/geometric', 'v16/fermion', 'v16/neutrino', 'v16/higgs', 'v16/proton',
+                              'v16/moduli', 'v16/pneuma', 'v16/cosmology', 'v16/quantum_bio', 'v16/thermal',
+                              'v16/introduction', 'v16/discussion', 'v16/predictions', 'v16/appendices',
+                              'v16/statistics', 'v16/validation'];
+
+            // Render categories
+            const html = Object.entries(categories)
+                .sort((a, b) => {
+                    const [keyA, dataA] = a;
+                    const [keyB, dataB] = b;
+
+                    const isV16A = dataA.isV16;
+                    const isV16B = dataB.isV16;
+
+                    // v16 categories come first
+                    if (isV16A && !isV16B) return -1;
+                    if (!isV16A && isV16B) return 1;
+
+                    // Within v16, use defined order
+                    if (isV16A && isV16B) {
+                        const orderA = v16Order.indexOf(keyA);
+                        const orderB = v16Order.indexOf(keyB);
+                        if (orderA !== -1 && orderB !== -1) return orderA - orderB;
+                        if (orderA !== -1) return -1;
+                        if (orderB !== -1) return 1;
+                        return keyA.localeCompare(keyB);
+                    }
+
+                    // Non-v16 categories ordered by type
+                    const orderMap = {
+                        'G2 Geometry': 10,
+                        'Neutrino Physics': 11,
+                        'Quantum Biology': 12,
+                        'Ad-Hoc / Experimental': 90,
+                        'Constants & Utilities': 91,
+                        'Validation': 92,
+                        'Deprecated': 99
+                    };
+
+                    const orderA = orderMap[keyA] || 50;
+                    const orderB = orderMap[keyB] || 50;
+                    if (orderA !== orderB) return orderA - orderB;
+                    return keyA.localeCompare(keyB);
+                })
+                .map(([catName, catData]) => {
+                    const displayTitle = escapeHtml(catData.title);
+                    const v16Badge = catData.isV16 ? '<span style="color: #51cf66; font-size: 0.7em; margin-left: 0.5rem;">v16</span>' : '';
+
+                    return `
+                    <div class="index-category" data-category="${catName}">
+                        <h3>${displayTitle}${v16Badge} <span style="color: var(--text-muted); font-size: 0.8em;">(${catData.scripts.length})</span></h3>
+                        ${catData.description ? `<p style="font-size: 0.8em; color: var(--text-muted); margin: 0.5rem 0;">${escapeHtml(catData.description)}</p>` : ''}
+                        <ul>
+                            ${catData.scripts.map(script => {
+                                const statusBadge = script.status ? `<span class="status-badge" data-status="${escapeHtml(script.status)}" style="font-size: 0.65rem; padding: 0.2rem 0.4rem; margin-left: 0.5rem;">${escapeHtml(script.status)}</span>` : '';
+                                const versionLabel = script.version ? `<span style="color: var(--text-muted); font-size: 0.8em;">v${script.version}</span>` : '';
+                                return `
+                                    <li>
+                                        <span class="index-link" onclick="scrollToSection('${script.file}')">
+                                            ${escapeHtml(script.file)} ${versionLabel}${statusBadge}
+                                        </span>
+                                    </li>
+                                `;
+                            }).join('')}
+                        </ul>
+                    </div>
+                `}).join('');
+
+            container.innerHTML = html;
+        }
+
+        // Get folder name from path
+        function getFolderFromPath(path) {
+            if (!path) return '';
+
+            // Handle v16 structure: simulations/v16/gauge/...
+            let match = path.match(/simulations\/v16\/([^\/]+)/);
+            if (match) return match[1];
+
+            // Handle older core structure: simulations/core/...
+            match = path.match(/simulations\/core\/([^\/]+)/);
+            if (match) return match[1];
+
+            // Handle direct subdirectories: simulations/Constants/...
+            match = path.match(/simulations\/([^\/]+)/);
+            if (match) return match[1];
+
+            return '';
+        }
+
+        // Get folder description
+        function getFolderDescription(folderName) {
+            const descriptions = {
+                'cosmology': 'Dark energy, gravitational waves, thermal time, and cosmological observables',
+                'fermion': 'Fermion mass matrices, Yukawa textures, CKM parameters, and chirality',
+                'foundations': 'Foundation data schemas and physics foundation metadata',
+                'gauge': 'Gauge unification, breaking chains, asymptotic safety, and $Sp(2, \\mathbb{R})$ symmetry',
+                'geometric': 'G2 manifold geometry, Yukawa overlap integrals, CP phases, and torsion classes',
+                'higgs': 'Higgs mass, doublet-triplet splitting, and Yukawa couplings',
+                'misc': 'KK spectrum, attractor scalars, threshold corrections, and utility modules',
+                'moduli': 'Moduli stabilization, racetrack potentials, and flux configurations',
+                'neutrino': 'Neutrino masses, PMNS matrix, mass ordering, and mixing angles',
+                'pneuma': 'Pneuma field dynamics, vacuum selection, vielbein emergence, and lattice dispersion',
+                'proton': 'Proton lifetime, decay branching ratios, and geometric suppression',
+                'quantum_bio': 'Microtubule quantum coherence, Orch-OR, and biological quantum thresholds',
+                'thermal': 'Thermal time formalism and emergent spacetime',
+                'introduction': 'Paper introduction and motivation',
+                'discussion': 'Paper discussion and conclusions',
+                'predictions': 'Testable predictions and experimental signatures',
+                'appendices': 'Mathematical appendices and derivations',
+                'statistics': 'Statistical analysis and covariance matrices',
+                'validation': 'Validation scripts and experimental comparison'
+            };
+            return descriptions[folderName] || '';
+        }
+
+        // Render simulation file sections dynamically
+        function renderSimulationSections() {
+            const container = document.getElementById('simulation-categories-container');
+
+            if (!filteredSimulations || filteredSimulations.length === 0) {
+                container.innerHTML = '<div class="file-error">No simulation files to display.</div>';
+                return;
+            }
+
+            // Group by category (using index categories directly)
+            const categories = {};
+            filteredSimulations.forEach(script => {
+                const catName = script.categoryName;
+                if (!categories[catName]) {
+                    const catData = simulationsIndex.categories[catName] || {};
+                    categories[catName] = {
+                        title: catData.title || catName,
+                        description: catData.description || '',
+                        isV16: catData.isV16 || catName.startsWith('v16/'),
+                        folderName: catData.folderName || '',
+                        path: catData.path || '',
+                        scripts: []
+                    };
+                }
+                categories[catName].scripts.push(script);
+            });
+
+            // Custom sort order - v16 folders first in defined order
+            const v16Order = ['v16/gauge', 'v16/geometric', 'v16/fermion', 'v16/neutrino', 'v16/higgs', 'v16/proton',
+                              'v16/moduli', 'v16/pneuma', 'v16/cosmology', 'v16/quantum_bio', 'v16/thermal',
+                              'v16/introduction', 'v16/discussion', 'v16/predictions', 'v16/appendices',
+                              'v16/statistics', 'v16/validation'];
+
+            // Render sections
+            const html = Object.entries(categories)
+                .sort((a, b) => {
+                    const [keyA, dataA] = a;
+                    const [keyB, dataB] = b;
+
+                    const isV16A = dataA.isV16;
+                    const isV16B = dataB.isV16;
+
+                    // v16 categories come first
+                    if (isV16A && !isV16B) return -1;
+                    if (!isV16A && isV16B) return 1;
+
+                    // Within v16, use defined order
+                    if (isV16A && isV16B) {
+                        const orderA = v16Order.indexOf(keyA);
+                        const orderB = v16Order.indexOf(keyB);
+                        if (orderA !== -1 && orderB !== -1) return orderA - orderB;
+                        if (orderA !== -1) return -1;
+                        if (orderB !== -1) return 1;
+                        return keyA.localeCompare(keyB);
+                    }
+
+                    // Non-v16 categories ordered by type
+                    const orderMap = {
+                        'G2 Geometry': 10,
+                        'Neutrino Physics': 11,
+                        'Quantum Biology': 12,
+                        'Ad-Hoc / Experimental': 90,
+                        'Constants & Utilities': 91,
+                        'Validation': 92,
+                        'Deprecated': 99
+                    };
+
+                    const orderA = orderMap[keyA] || 50;
+                    const orderB = orderMap[keyB] || 50;
+                    if (orderA !== orderB) return orderA - orderB;
+                    return keyA.localeCompare(keyB);
+                })
+                .map(([catName, catData]) => {
+                    const displayTitle = escapeHtml(catData.title);
+                    const v16Badge = catData.isV16 ? ' <span style="color: #51cf66; font-size: 0.8em;">v16</span>' : '';
+                    const description = catData.description || `${catData.scripts.length} simulation${catData.scripts.length !== 1 ? 's' : ''}`;
+
+                    return `
+                    <div class="category-header" id="category-${catName.replace(/\s+/g, '-').replace(/[:/]/g, '')}" data-category="${catName}">
+                        <h2>${displayTitle}${v16Badge}</h2>
+                        <p>${escapeHtml(description)}</p>
+                    </div>
+                    ${catData.scripts.map(script => `
+                        <div class="file-section" id="section-${script.file}">
+                            <div class="file-header" onclick="toggleSection('${script.file}', '${script.path}')">
+                                <div class="file-info">
+                                    <div class="file-icon">py</div>
+                                    <div>
+                                        <div class="file-name">
+                                            ${escapeHtml(script.file)}
+                                            ${script.version ? `<span style="color: var(--text-muted); font-size: 0.8em; margin-left: 0.5rem;">v${script.version}</span>` : ''}
+                                            ${script.status ? `<span class="status-badge" data-status="${escapeHtml(script.status)}" style="font-size: 0.7rem; padding: 0.3rem 0.6rem; margin-left: 0.75rem;">${escapeHtml(script.status)}</span>` : ''}
+                                        </div>
+                                        <div class="file-path">${escapeHtml(script.title || script.description || 'Physics simulation module')}</div>
+                                    </div>
+                                </div>
+                                <span class="expand-icon">&#x25BC;</span>
+                            </div>
+                            <div class="file-content">
+                                <div class="file-loading"><span class="spinner"></span>Loading file content...</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                `}).join('');
+
+            container.innerHTML = html;
+            const loadingEl = document.getElementById('simulations-loading');
+            if (loadingEl) loadingEl.style.display = 'none';
+        }
+
+        // Initialize index link clicks
+        function initIndexLinks() {
+            document.querySelectorAll('.index-link[data-file]').forEach(link => {
+                link.addEventListener('click', () => {
+                    scrollToSection(link.dataset.file);
+                });
+            });
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Try using PMSimLoader if available (new approach)
+            if (window.PMSimLoader) {
+                console.log('[Simulations] Using PMSimLoader module');
+
+                // Listen for simulations ready event
+                document.addEventListener('pm-simulations-ready', (e) => {
+                    console.log('[Simulations] Ready:', e.detail);
+                    const statsEl = document.getElementById('index-stats');
+                    if (statsEl) {
+                        statsEl.style.display = 'flex';
+                        document.getElementById('total-scripts').textContent = `${e.detail.scriptCount} scripts`;
+                        document.getElementById('total-categories').textContent = `${PMSimLoader.getSortedCategories().length} categories`;
+                        document.getElementById('latest-version').textContent = `v${e.detail.index.version}`;
+                    }
+                });
+
+                // Render using new loader
+                await PMSimLoader.render({
+                    indexContainer: 'index-container',
+                    categoriesContainer: 'simulation-categories-container',
+                    loadingIndicator: 'simulations-loading'
+                });
+
+                // Setup search
+                const searchInput = document.getElementById('sim-search');
+                if (searchInput) {
+                    searchInput.addEventListener('input', (e) => {
+                        const query = e.target.value.trim();
+                        if (query.length >= 2) {
+                            const results = PMSimLoader.searchScripts(query);
+                            console.log('[Simulations] Search results:', results.length);
+                            // Highlight matching scripts (future enhancement)
+                        }
+                    });
+                }
+            } else {
+                // Fallback to original inline implementation
+                console.log('[Simulations] Using fallback inline implementation');
+                loadSimulationIndex();
+                initIndexLinks();
+            }
+
+            // Show main content (auth system will handle this normally)
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                mainContent.style.display = 'block';
+                
+            }
+        });
+
+        // Listen for auth/data ready events
+        document.addEventListener('pm-data-ready', () => {
+            console.log('[Simulations] pm-data-ready event received');
+            const mainContent = document.getElementById('main-content');
+            if (mainContent && mainContent.style.display === 'none') {
+                mainContent.style.display = 'block';
+            }
+        });
+    </script>
+
+    <!-- Header and Auth system integration -->
+    <script type="module">
+        import { injectHeader } from '../js/pm-header.js';
+        
+
+        // Inject header first
+        document.addEventListener('DOMContentLoaded', () => {
+            injectHeader('simulations');
+        });
+
+        </script>
+
+    <!-- Tooltip System -->
+    <script src="../js/pm-constants-loader.js"></script>
+    <script src="../js/pm-tooltip-system.js"></script>
+    <script src="../js/pm-formula-loader.js"></script>
+</body>
+</html>

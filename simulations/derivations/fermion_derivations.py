@@ -7,6 +7,11 @@ This module provides comprehensive Wolfram Language derivation chains for all
 fermion sector predictions in Principia Metaphysica, formatted for validation
 via Wolfram Alpha and Mathematica.
 
+v21: Full spinor 8192->4096, but N_gen=3 preserved (topological)
+     The generation count N_gen = b3/8 = 3 is signature-independent because it
+     depends on G2 topology (b3=24), not bulk signature. The spinor dimension
+     reduction 8192->4096 from the signature change does not affect this count.
+
 Key Derivations:
 1. Number of generations: N_gen = b₃/8 = 24/8 = 3
 2. Yukawa texture from G₂ 3-cycle overlaps: Y_ij = A_f * ε^Q_f
@@ -110,6 +115,11 @@ Print["Spinor DOF in ", dim, "D: ", spinorDOF]
                 validation_query="2^Floor[7/2]",
                 notes="Spin(7) has 8-dimensional real spinor representation"
             ),
+            # v21 NOTE: The spinor dimension here (8) is for the G2 manifold dimension (7D),
+            # which is signature-independent (Riemannian). The bulk spinor dimension changes
+            # from 8192 (v20) to 4096 (v21) due to signature (24,2)->(24,1), but the G2
+            # spinor saturation formula N_gen = b3/spinorDOF = 24/8 = 3 remains unchanged
+            # because it depends on G2 topology, not bulk signature.
 
             WolframDerivation(
                 step_id="FG-04",

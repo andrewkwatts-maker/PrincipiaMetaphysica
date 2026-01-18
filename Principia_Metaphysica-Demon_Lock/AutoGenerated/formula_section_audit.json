@@ -1,0 +1,1514 @@
+{
+  "audit_timestamp": "2026-01-11T16:22:26.572706",
+  "source_versions": {
+    "formulas_version": "17.2",
+    "sections_version": "17.2"
+  },
+  "summary": {
+    "total_formulas": 320,
+    "total_sections": 25,
+    "formulas_referenced_by_sections": 172,
+    "sections_with_formula_refs": 21,
+    "orphaned_formula_count": 149,
+    "sections_without_formulas_count": 4,
+    "invalid_reference_count": 1
+  },
+  "total_formulas": 320,
+  "total_sections": 25,
+  "orphaned_formulas": [
+    {
+      "formula_id": "26d-signature",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "alpha-f-derivation-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "alpha-inverse-geometric",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "associative-chirality-projector",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "asymptotic-safety-fixed-point",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "attractor-potential-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "avogadro-inverse-cubic",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "b3-generations",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "baryon-asymmetry-cycle-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "betti-numbers",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "bps-bound",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "breathing-mode",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "calabi-yau-projection",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "certificate-validation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "chirality-index-theorem",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "ckm-hierarchy",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "ckm-overlap-integral",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "ckm-unitarity",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "compton-bulk-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "compton-inverse-cubic-projection",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "cp-phase-sterile-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "cpl-parametrization",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "critical-dimension",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "cycle-matching",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "cycle-separation-suppression",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dark-energy-eos",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dark-energy-eos-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dark-energy-time-evolution",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dark-matter-abundance",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "decad3-projection",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "decay-constant-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dedekind-eta-definition",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dimensional-reduction-cascade",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "dirac-zero-modes",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "doublet-triplet-splitting",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "effective-curvature-evolution",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "effective-dimension",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "einstein-hilbert-14D",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "electroweak-mixing-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "euler-characteristic",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "f-r-t-tau-lagrangian-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "faraday-inverse-cubic",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "fermi-constant-physical-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "fermi-constant-tree-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "flux-direct-expansion",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "g2-automorphism-relation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "g2-holonomy",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "g2-spinor-preservation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gauge-coupling-unification",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gauge-initial-conditions",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gauge-rg-evolution",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "generation-number",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "generation-theorem",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-christoffel-symbols-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-einstein-field-equations-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-einstein-hilbert-4d-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-einstein-tensor-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-metric-from-vielbein-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-metricity-condition-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-newton-from-g2-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-planck-from-compactification-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-ricci-scalar-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-ricci-tensor-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-riemann-tensor-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-spin-connection-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-tetrad-postulate-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-torsion-free-condition-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gr-vielbein-determinant-v19",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "growth-rate-equation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "growth-suppression-factor",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gut-scale",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "gw-speed-modified-gravity-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "h-evolution-log-scaling",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "h0-alignment",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "h0-topology-bridge",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "hartree-inverse-double-gate",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-brane-projection",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-bulk-attractor",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-local-mass",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-mass",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-quartic-coupling",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "higgs-vev-geometric-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "holonomy-volume-constraint",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "hubble-evolution-ode",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "hysteresis-lock",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "jarlskog-invariant",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "kk-reduction-5d-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "kk-threshold",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "laplacian-eigenvalue",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "leech-dimension-uniqueness",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "mass-ratio-geometric",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "metric-13D",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "modular-anomaly-condition",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "moduli-potential",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "molar-gas-neutral",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "neutrino-mass-spectrum",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "neutrino-mass-sum",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "octonionic-partition",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "omega-hash-72",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "omega-seal",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "partition-function-eta",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pm-dark-energy-density",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pmns-delta-cp",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pmns-theta-12",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pmns-theta-13",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pmns-theta-23",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pneuma-chiral-filter",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pneuma-flow",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pneuma-lagrangian",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pneuma-master-action-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pneuma-reduction",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "pneuma-tensioner-z6",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "proton-lifetime",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "racetrack-potential",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "relaxation-factor",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "ricci-flow-equation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "ricci-flow-evolution",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "ricci-thawing-mechanism",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "rk-direct-expansion",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "s8-definition",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "s8-prediction-pm",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "sector-temperature-ratio",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "sp2r-constraint",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "spectral-trace-sterile-proof",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "speed-of-light-chain",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "speed-of-light-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "spinor-saturation-generations",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "spr2-gauge",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "stefan-quad-gate",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "su2-weak-lagrangian-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "su3-qcd-lagrangian-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "tensor-mode-dispersion-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "thawing-w0-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "thawing-wa-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "three-generations",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "torsional-leakage-formula",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "trace-formula",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "u1-hypercharge-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "vacuum-energy-density",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "vacuum-energy-formula",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "vacuum-floor",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "w0-attractor-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "w0-derivation",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "w0-from-modified-gravity-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "weak-mixing-torsion",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "wolfenstein-parametrization",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "yukawa-hierarchy-v18",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "yukawa-texture",
+      "reason": "Not referenced by any section"
+    },
+    {
+      "formula_id": "yukawa-texture-matrix-v18",
+      "reason": "Not referenced by any section"
+    }
+  ],
+  "invalid_formula_references": [
+    {
+      "section_id": "A",
+      "section_title": "Appendix A: The 125-Residue Spectral Registry (The Master Table)",
+      "invalid_formula_ref": "node-distribution-function",
+      "reason": "Formula does not exist in formulas.json"
+    }
+  ],
+  "sections_without_formulas": [
+    {
+      "section_id": "0",
+      "title": "Abstract",
+      "subsection_id": null,
+      "section_type": "abstract"
+    },
+    {
+      "section_id": "1",
+      "title": "Foundations of Dimensional Descent",
+      "subsection_id": "1.1",
+      "section_type": null
+    },
+    {
+      "section_id": "3",
+      "title": "Cosmological Results and Alignment",
+      "subsection_id": "3.7",
+      "section_type": null
+    },
+    {
+      "section_id": "6",
+      "title": "Weak Mixing Angle",
+      "subsection_id": "6.9",
+      "section_type": null
+    }
+  ],
+  "section_formula_map": {
+    "0": {
+      "title": "Abstract",
+      "subsection_id": null,
+      "formula_count": 0,
+      "formulas": []
+    },
+    "1": {
+      "title": "Foundations of Dimensional Descent",
+      "subsection_id": "1.1",
+      "formula_count": 0,
+      "formulas": []
+    },
+    "2": {
+      "title": "Complete Spectral Decomposition",
+      "subsection_id": "2.3",
+      "formula_count": 7,
+      "formulas": [
+        "gut-scale-g2-v18",
+        "laplacian-eigenvalue-v18",
+        "mass-spectrum-v18",
+        "neutrino-mass-seesaw-v18",
+        "neutrino-sum-prediction-v18",
+        "proton-decay-lifetime-v18",
+        "spectral-zeta-v18"
+      ]
+    },
+    "validation": {
+      "title": "Ghost-Free Stability Check (The Guardian)",
+      "subsection_id": "V.1",
+      "formula_count": 2,
+      "formulas": [
+        "central-charge-unitarity",
+        "weyl-anomaly-cancellation"
+      ]
+    },
+    "3": {
+      "title": "Cosmological Results and Alignment",
+      "subsection_id": "3.7",
+      "formula_count": 0,
+      "formulas": []
+    },
+    "4": {
+      "title": "Unified CKM/PMNS from G2 Triality",
+      "subsection_id": "4.7",
+      "formula_count": 5,
+      "formulas": [
+        "ckm-from-theta-g",
+        "golden-angle",
+        "mixing-dimension-ratio",
+        "pmns-from-triality",
+        "triality-split"
+      ]
+    },
+    "6": {
+      "title": "Weak Mixing Angle",
+      "subsection_id": "6.9",
+      "formula_count": 0,
+      "formulas": []
+    },
+    "5": {
+      "title": "Cosmological Constant from G2 Entropy with Instanton Suppression",
+      "subsection_id": "5.5",
+      "formula_count": 3,
+      "formulas": [
+        "cosmological-constant-geometric",
+        "g2-entropy-density",
+        "lambda-hierarchy"
+      ]
+    },
+    "thermal-time": {
+      "title": "The Thermal Time Hypothesis and Two-Time Framework",
+      "subsection_id": null,
+      "formula_count": 4,
+      "formulas": [
+        "alpha-t-derivation",
+        "entropy-gradient",
+        "modular-hamiltonian",
+        "thermal-flow"
+      ]
+    },
+    "7": {
+      "title": "Orch-OR Quantum Consciousness Validation (v16.2)",
+      "subsection_id": "7.2",
+      "formula_count": 1,
+      "formulas": [
+        "orch-or-coherence-time"
+      ]
+    },
+    "A": {
+      "title": "Appendix A: The 125-Residue Spectral Registry (The Master Table)",
+      "subsection_id": null,
+      "formula_count": 4,
+      "formulas": [
+        "log-harmonic-spacing",
+        "node-distribution-function",
+        "omega-hash-verification",
+        "spectral-eigenvalue-extraction"
+      ]
+    },
+    "B": {
+      "title": "Appendix B: Algebraic Foundations of S_PR(2)",
+      "subsection_id": null,
+      "formula_count": 4,
+      "formulas": [
+        "global-sum-rule",
+        "heat-kernel-partition",
+        "hierarchy-spectral-gap",
+        "trace-formula-closure"
+      ]
+    },
+    "C": {
+      "title": "Appendix C: Laplacian Eigenvalue Derivations for the V_7 Manifold",
+      "subsection_id": null,
+      "formula_count": 3,
+      "formulas": [
+        "dimensional-projection-matrix",
+        "gauge-unitarity-condition",
+        "symmetry-shattering-rule"
+      ]
+    },
+    "D": {
+      "title": "Appendix D: Statistical Convergence Logs (DESI/Planck 2025)",
+      "subsection_id": null,
+      "formula_count": 3,
+      "formulas": [
+        "bao-alignment",
+        "chi-squared-convergence",
+        "hubble-tension-resolution"
+      ]
+    },
+    "E": {
+      "title": "Appendix E: Computational Requirements and Precision Protocols",
+      "subsection_id": null,
+      "formula_count": 3,
+      "formulas": [
+        "coordinate-uniqueness",
+        "nodal-pinch-mass",
+        "node-coordinate-vector"
+      ]
+    },
+    "F": {
+      "title": "Appendix F: The 72 Gates of Integrity",
+      "subsection_id": null,
+      "formula_count": 72,
+      "formulas": [
+        "g01-root-parity",
+        "g02-holonomy",
+        "g03-ancestral",
+        "g04-projection-tax",
+        "g05-metric-continuity",
+        "g06-shadow-parity",
+        "g07-torsion-orthogonal",
+        "g08-sterile-angle",
+        "g09-pin-distribution",
+        "g10-tension-floor",
+        "g11-strong-force",
+        "g12-electroweak",
+        "g13-photon-mass",
+        "g14-sun-approx",
+        "g15-gauge-invariant",
+        "g16-dirac-mapping",
+        "g17-triality",
+        "g18-mass-gap",
+        "g19-neutrino",
+        "g20-chiral-limit",
+        "g21-color-neutral",
+        "g22-string-tension",
+        "g23-proton-stability",
+        "g24-sea-quark",
+        "g25-asymptotic",
+        "g26-electron-ratio",
+        "g27-pmns",
+        "g28-lepton-number",
+        "g29-hypercharge",
+        "g30-lepton-gap",
+        "g31-higgs-vev",
+        "g32-wz-ratio",
+        "g33-goldstone",
+        "g34-gluon-octet",
+        "g35-photon-z",
+        "g36-ckm",
+        "g37-cp-violation",
+        "g38-gim",
+        "g39-pmns-angles",
+        "g40-sterile-mixing",
+        "g41-gravity",
+        "g42-equivalence",
+        "g43-schwarzschild",
+        "g44-frame-dragging",
+        "g45-geodesic",
+        "g46-lambda",
+        "g47-hubble",
+        "g48-w0",
+        "g49-dark-matter",
+        "g50-baryon-photon",
+        "g51-unitary-time",
+        "g52-entropy",
+        "g53-causality",
+        "g54-cpt",
+        "g55-decoherence",
+        "g56-compactification",
+        "g57-calabi-yau",
+        "g58-brane-boundary",
+        "g59-moduli",
+        "g60-desi",
+        "g61-bit-parity",
+        "g62-von-neumann",
+        "g63-bell",
+        "g64-holographic",
+        "g65-landauer",
+        "g66-chiral-ortho",
+        "g67-phase-transition",
+        "g68-omega-point",
+        "g69-soliton",
+        "g70-spectral-gap",
+        "g71-recursive",
+        "g72-omega-hash"
+      ]
+    },
+    "G": {
+      "title": "Appendix G: The 42-Certificate Validation Matrix",
+      "subsection_id": null,
+      "formula_count": 6,
+      "formulas": [
+        "4-fold-stabilizer-check",
+        "dead-mans-switch",
+        "geometric-seal-288",
+        "holonomy-checksum",
+        "sterile-rigidity-declaration",
+        "terminal-hash-generation"
+      ]
+    },
+    "H": {
+      "title": "Appendix H: The 288-Root Basis (Ancestral Symmetry Architecture)",
+      "subsection_id": null,
+      "formula_count": 5,
+      "formulas": [
+        "ancestral-roots-derivation",
+        "hidden-support-count",
+        "shadow-torsion-sum",
+        "so24-generators",
+        "sterile-projection-filter"
+      ]
+    },
+    "I": {
+      "title": "Appendix I: The Three Terminal States (Terminal Geodesics)",
+      "subsection_id": null,
+      "formula_count": 6,
+      "formulas": [
+        "ancestral-restoration",
+        "gauge-ghost-potential",
+        "metric-null-potential",
+        "shadow-decoupling-rate",
+        "spectral-trace-saturation",
+        "terminal-geodesic-curve"
+      ]
+    },
+    "J": {
+      "title": "Appendix J: The Torsion Funnel",
+      "subsection_id": null,
+      "formula_count": 5,
+      "formulas": [
+        "bottleneck-pressure",
+        "survival-rate-formula",
+        "torsion-funnel-bottleneck",
+        "torsion-funnel-entry",
+        "torsion-funnel-exit"
+      ]
+    },
+    "K": {
+      "title": "Appendix K: The Sterile Constant Table",
+      "subsection_id": null,
+      "formula_count": 5,
+      "formulas": [
+        "G-metric-anchor",
+        "alpha-sterile-angle",
+        "c-torsion-derivation",
+        "h-scale-factor",
+        "w0-betti-derivation"
+      ]
+    },
+    "L": {
+      "title": "Appendix L: The Omega Unwinding Map",
+      "subsection_id": null,
+      "formula_count": 5,
+      "formulas": [
+        "ancestral-restoration-basin",
+        "basin-selection-threshold",
+        "entropy-flow-equation",
+        "gauge-ghost-basin",
+        "metric-null-basin"
+      ]
+    },
+    "Z": {
+      "title": "Appendix Z: Terminal Constant Ledger",
+      "subsection_id": null,
+      "formula_count": 11,
+      "formulas": [
+        "c05m-manifold-tax",
+        "c30s-shell-saturation",
+        "c37cp-strong-cp-lock",
+        "c38v7-curvature-invariant",
+        "c42g-gravitational-anchor",
+        "cabibbo-angle-geometric",
+        "gauge-unification-sum",
+        "h0-unwinding-scale",
+        "hierarchy-ratio-squared",
+        "speed-of-light-geometric",
+        "terminal-closure-equation"
+      ]
+    },
+    "R": {
+      "title": "Appendix R: Vacuum Stability Analysis",
+      "subsection_id": "R.1",
+      "formula_count": 8,
+      "formulas": [
+        "bounce-action-v19",
+        "g2-portal-correction-v19",
+        "higgs-effective-potential-v19",
+        "instability-scale-v19",
+        "quartic-beta-function-v19",
+        "quartic-running-v19",
+        "tunneling-rate-v19",
+        "vacuum-lifetime-v19"
+      ]
+    },
+    "S": {
+      "title": "Appendix S: Spectral Residue Methodology",
+      "subsection_id": "S.1",
+      "formula_count": 10,
+      "formulas": [
+        "spectral-curvature-residue-v19",
+        "spectral-determinant-v19",
+        "spectral-euler-residue-v19",
+        "spectral-heat-kernel-v19",
+        "spectral-laplacian-eigenvalue-v19",
+        "spectral-mass-relation-v19",
+        "spectral-residue-general-v19",
+        "spectral-trace-formula-v19",
+        "spectral-volume-residue-v19",
+        "spectral-zeta-function-v19"
+      ]
+    }
+  },
+  "formula_section_map": {
+    "proton-decay-lifetime-v18": [
+      "2"
+    ],
+    "mass-spectrum-v18": [
+      "2"
+    ],
+    "neutrino-sum-prediction-v18": [
+      "2"
+    ],
+    "laplacian-eigenvalue-v18": [
+      "2"
+    ],
+    "neutrino-mass-seesaw-v18": [
+      "2"
+    ],
+    "spectral-zeta-v18": [
+      "2"
+    ],
+    "gut-scale-g2-v18": [
+      "2"
+    ],
+    "central-charge-unitarity": [
+      "validation"
+    ],
+    "weyl-anomaly-cancellation": [
+      "validation"
+    ],
+    "triality-split": [
+      "4"
+    ],
+    "mixing-dimension-ratio": [
+      "4"
+    ],
+    "ckm-from-theta-g": [
+      "4"
+    ],
+    "pmns-from-triality": [
+      "4"
+    ],
+    "golden-angle": [
+      "4"
+    ],
+    "g2-entropy-density": [
+      "5"
+    ],
+    "lambda-hierarchy": [
+      "5"
+    ],
+    "cosmological-constant-geometric": [
+      "5"
+    ],
+    "modular-hamiltonian": [
+      "thermal-time"
+    ],
+    "thermal-flow": [
+      "thermal-time"
+    ],
+    "alpha-t-derivation": [
+      "thermal-time"
+    ],
+    "entropy-gradient": [
+      "thermal-time"
+    ],
+    "orch-or-coherence-time": [
+      "7"
+    ],
+    "spectral-eigenvalue-extraction": [
+      "A"
+    ],
+    "node-distribution-function": [
+      "A"
+    ],
+    "omega-hash-verification": [
+      "A"
+    ],
+    "log-harmonic-spacing": [
+      "A"
+    ],
+    "global-sum-rule": [
+      "B"
+    ],
+    "hierarchy-spectral-gap": [
+      "B"
+    ],
+    "trace-formula-closure": [
+      "B"
+    ],
+    "heat-kernel-partition": [
+      "B"
+    ],
+    "gauge-unitarity-condition": [
+      "C"
+    ],
+    "dimensional-projection-matrix": [
+      "C"
+    ],
+    "symmetry-shattering-rule": [
+      "C"
+    ],
+    "chi-squared-convergence": [
+      "D"
+    ],
+    "bao-alignment": [
+      "D"
+    ],
+    "hubble-tension-resolution": [
+      "D"
+    ],
+    "node-coordinate-vector": [
+      "E"
+    ],
+    "nodal-pinch-mass": [
+      "E"
+    ],
+    "coordinate-uniqueness": [
+      "E"
+    ],
+    "g49-dark-matter": [
+      "F"
+    ],
+    "g71-recursive": [
+      "F"
+    ],
+    "g32-wz-ratio": [
+      "F"
+    ],
+    "g05-metric-continuity": [
+      "F"
+    ],
+    "g62-von-neumann": [
+      "F"
+    ],
+    "g11-strong-force": [
+      "F"
+    ],
+    "g43-schwarzschild": [
+      "F"
+    ],
+    "g30-lepton-gap": [
+      "F"
+    ],
+    "g07-torsion-orthogonal": [
+      "F"
+    ],
+    "g41-gravity": [
+      "F"
+    ],
+    "g46-lambda": [
+      "F"
+    ],
+    "g39-pmns-angles": [
+      "F"
+    ],
+    "g67-phase-transition": [
+      "F"
+    ],
+    "g55-decoherence": [
+      "F"
+    ],
+    "g14-sun-approx": [
+      "F"
+    ],
+    "g54-cpt": [
+      "F"
+    ],
+    "g72-omega-hash": [
+      "F"
+    ],
+    "g48-w0": [
+      "F"
+    ],
+    "g20-chiral-limit": [
+      "F"
+    ],
+    "g09-pin-distribution": [
+      "F"
+    ],
+    "g40-sterile-mixing": [
+      "F"
+    ],
+    "g36-ckm": [
+      "F"
+    ],
+    "g59-moduli": [
+      "F"
+    ],
+    "g61-bit-parity": [
+      "F"
+    ],
+    "g66-chiral-ortho": [
+      "F"
+    ],
+    "g18-mass-gap": [
+      "F"
+    ],
+    "g02-holonomy": [
+      "F"
+    ],
+    "g38-gim": [
+      "F"
+    ],
+    "g06-shadow-parity": [
+      "F"
+    ],
+    "g16-dirac-mapping": [
+      "F"
+    ],
+    "g50-baryon-photon": [
+      "F"
+    ],
+    "g35-photon-z": [
+      "F"
+    ],
+    "g34-gluon-octet": [
+      "F"
+    ],
+    "g51-unitary-time": [
+      "F"
+    ],
+    "g65-landauer": [
+      "F"
+    ],
+    "g19-neutrino": [
+      "F"
+    ],
+    "g69-soliton": [
+      "F"
+    ],
+    "g21-color-neutral": [
+      "F"
+    ],
+    "g70-spectral-gap": [
+      "F"
+    ],
+    "g33-goldstone": [
+      "F"
+    ],
+    "g68-omega-point": [
+      "F"
+    ],
+    "g63-bell": [
+      "F"
+    ],
+    "g60-desi": [
+      "F"
+    ],
+    "g12-electroweak": [
+      "F"
+    ],
+    "g24-sea-quark": [
+      "F"
+    ],
+    "g57-calabi-yau": [
+      "F"
+    ],
+    "g13-photon-mass": [
+      "F"
+    ],
+    "g45-geodesic": [
+      "F"
+    ],
+    "g17-triality": [
+      "F"
+    ],
+    "g37-cp-violation": [
+      "F"
+    ],
+    "g23-proton-stability": [
+      "F"
+    ],
+    "g42-equivalence": [
+      "F"
+    ],
+    "g47-hubble": [
+      "F"
+    ],
+    "g56-compactification": [
+      "F"
+    ],
+    "g08-sterile-angle": [
+      "F"
+    ],
+    "g64-holographic": [
+      "F"
+    ],
+    "g10-tension-floor": [
+      "F"
+    ],
+    "g03-ancestral": [
+      "F"
+    ],
+    "g04-projection-tax": [
+      "F"
+    ],
+    "g25-asymptotic": [
+      "F"
+    ],
+    "g22-string-tension": [
+      "F"
+    ],
+    "g52-entropy": [
+      "F"
+    ],
+    "g27-pmns": [
+      "F"
+    ],
+    "g28-lepton-number": [
+      "F"
+    ],
+    "g44-frame-dragging": [
+      "F"
+    ],
+    "g26-electron-ratio": [
+      "F"
+    ],
+    "g01-root-parity": [
+      "F"
+    ],
+    "g58-brane-boundary": [
+      "F"
+    ],
+    "g31-higgs-vev": [
+      "F"
+    ],
+    "g53-causality": [
+      "F"
+    ],
+    "g15-gauge-invariant": [
+      "F"
+    ],
+    "g29-hypercharge": [
+      "F"
+    ],
+    "holonomy-checksum": [
+      "G"
+    ],
+    "dead-mans-switch": [
+      "G"
+    ],
+    "sterile-rigidity-declaration": [
+      "G"
+    ],
+    "4-fold-stabilizer-check": [
+      "G"
+    ],
+    "geometric-seal-288": [
+      "G"
+    ],
+    "terminal-hash-generation": [
+      "G"
+    ],
+    "so24-generators": [
+      "H"
+    ],
+    "sterile-projection-filter": [
+      "H"
+    ],
+    "ancestral-roots-derivation": [
+      "H"
+    ],
+    "shadow-torsion-sum": [
+      "H"
+    ],
+    "hidden-support-count": [
+      "H"
+    ],
+    "spectral-trace-saturation": [
+      "I"
+    ],
+    "gauge-ghost-potential": [
+      "I"
+    ],
+    "ancestral-restoration": [
+      "I"
+    ],
+    "terminal-geodesic-curve": [
+      "I"
+    ],
+    "shadow-decoupling-rate": [
+      "I"
+    ],
+    "metric-null-potential": [
+      "I"
+    ],
+    "torsion-funnel-bottleneck": [
+      "J"
+    ],
+    "survival-rate-formula": [
+      "J"
+    ],
+    "torsion-funnel-entry": [
+      "J"
+    ],
+    "torsion-funnel-exit": [
+      "J"
+    ],
+    "bottleneck-pressure": [
+      "J"
+    ],
+    "c-torsion-derivation": [
+      "K"
+    ],
+    "h-scale-factor": [
+      "K"
+    ],
+    "alpha-sterile-angle": [
+      "K"
+    ],
+    "G-metric-anchor": [
+      "K"
+    ],
+    "w0-betti-derivation": [
+      "K"
+    ],
+    "metric-null-basin": [
+      "L"
+    ],
+    "gauge-ghost-basin": [
+      "L"
+    ],
+    "entropy-flow-equation": [
+      "L"
+    ],
+    "ancestral-restoration-basin": [
+      "L"
+    ],
+    "basin-selection-threshold": [
+      "L"
+    ],
+    "hierarchy-ratio-squared": [
+      "Z"
+    ],
+    "h0-unwinding-scale": [
+      "Z"
+    ],
+    "c30s-shell-saturation": [
+      "Z"
+    ],
+    "c38v7-curvature-invariant": [
+      "Z"
+    ],
+    "c42g-gravitational-anchor": [
+      "Z"
+    ],
+    "terminal-closure-equation": [
+      "Z"
+    ],
+    "cabibbo-angle-geometric": [
+      "Z"
+    ],
+    "c05m-manifold-tax": [
+      "Z"
+    ],
+    "gauge-unification-sum": [
+      "Z"
+    ],
+    "speed-of-light-geometric": [
+      "Z"
+    ],
+    "c37cp-strong-cp-lock": [
+      "Z"
+    ],
+    "bounce-action-v19": [
+      "R"
+    ],
+    "quartic-running-v19": [
+      "R"
+    ],
+    "instability-scale-v19": [
+      "R"
+    ],
+    "vacuum-lifetime-v19": [
+      "R"
+    ],
+    "quartic-beta-function-v19": [
+      "R"
+    ],
+    "tunneling-rate-v19": [
+      "R"
+    ],
+    "g2-portal-correction-v19": [
+      "R"
+    ],
+    "higgs-effective-potential-v19": [
+      "R"
+    ],
+    "spectral-laplacian-eigenvalue-v19": [
+      "S"
+    ],
+    "spectral-curvature-residue-v19": [
+      "S"
+    ],
+    "spectral-residue-general-v19": [
+      "S"
+    ],
+    "spectral-determinant-v19": [
+      "S"
+    ],
+    "spectral-heat-kernel-v19": [
+      "S"
+    ],
+    "spectral-volume-residue-v19": [
+      "S"
+    ],
+    "spectral-mass-relation-v19": [
+      "S"
+    ],
+    "spectral-euler-residue-v19": [
+      "S"
+    ],
+    "spectral-zeta-function-v19": [
+      "S"
+    ],
+    "spectral-trace-formula-v19": [
+      "S"
+    ]
+  },
+  "status": "NEEDS_ATTENTION"
+}

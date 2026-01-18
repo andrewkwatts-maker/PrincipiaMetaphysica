@@ -72,10 +72,10 @@ class MethodologyV16_2(SimulationBase):
     def metadata(self) -> SimulationMetadata:
         return SimulationMetadata(
             id="methodology_v16_2",
-            version="17.2",
+            version="21.0",
             domain="methodology",
             title="The Sterile Extraction Methodology",
-            description="Spectral geometry and the 125-residue port",
+            description="Spectral geometry and the 125-residue port (v21 dual-shadow framework)",
             section_id="2",
             subsection_id="2.5"  # v19.0: Unique subsection (2.1-2.4 used by geometry simulations)
         )
@@ -128,10 +128,10 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "Just as the physical dimensions and tension of a drumhead determine its specific "
-                    "acoustic modes, the topological constraints of the 26D(24,2) descent dictate the "
+                    "acoustic modes, the topological constraints of the 26D(24,1) dual-shadow descent dictate the "
                     "'vibrational' modes of the resulting 4D spacetime. In this framework, a "
                     "<strong>fundamental constant</strong> is simply a point of stationary resonance "
-                    "within the 7-dimensional G₂ structure."
+                    "within the 7-dimensional G₂ structure per shadow."
                 )
             ),
             ContentBlock(
@@ -259,7 +259,7 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "The 125 nodes are partitioned according to the symmetry-breaking path "
-                    "established by the S<sub>PR</sub>(2) gauge:"
+                    "established by the dual-shadow descent via the Euclidean bridge:"
                 )
             ),
             ContentBlock(
@@ -344,10 +344,11 @@ class MethodologyV16_2(SimulationBase):
                 type="paragraph",
                 content=(
                     "The Metric Lock is maintained through <strong>Topological Hysteresis</strong>. "
-                    "As the 26D bulk compactifies into the 4D world-sheet, the manifold undergoes "
-                    "a phase transition similar to crystallization. The S<sub>PR</sub>(2) gauge "
-                    "'memorizes' the geometric configuration, creating a 'Hysteresis Seal' that "
-                    "locks the 125 residues into a terminal, sterile state."
+                    "As the 26D(24,1) bulk splits into dual shadows connected by the Euclidean bridge "
+                    "and compactifies into 4D, the manifold undergoes a phase transition similar to "
+                    "crystallization. The OR reduction operator (R<sub>⊥</sub>) 'memorizes' the geometric "
+                    "configuration, creating a 'Hysteresis Seal' that locks the 125 residues into a "
+                    "terminal, sterile state."
                 )
             ),
             ContentBlock(

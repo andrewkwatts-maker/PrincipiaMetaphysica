@@ -249,6 +249,20 @@ The formula (B.15) shows $\alpha_{em}$ is determined by:
 2. The constant $k_{gimel}$ (geometry)
 3. No free parameters!
 
+### B.9.4 v21 Signature Independence Note
+
+**Key Result**: QED emergence is identical in both v20 and v21 frameworks.
+
+The v21 dual-shadow structure changes the bulk signature from (24,2) to (24,1), but the QED Lagrangian derivation is **signature-independent** because:
+
+1. **U(1) gauge structure depends on G2 topology**: The emergence of the U(1) gauge field via Kaluza-Klein reduction depends on the G2 manifold structure, specifically the third Betti number $b_3 = 24$, not the bulk signature.
+
+2. **The KK circle is within G2**: The compact $S^1$ direction that produces the U(1) gauge field is embedded in the G2 holonomy manifold, which is always Riemannian (signature 7,0).
+
+3. **Fine structure constant unchanged**: The formula $\alpha_{em}^{-1} = k_{gimel}^2 - b_3/\phi + \phi/(4\pi) - \epsilon_{7D}$ involves only topological constants ($b_3$, $\phi$, $\pi$) that are signature-independent.
+
+**Conclusion**: All QED predictions (charge quantization, Maxwell equations, fine structure constant) remain unchanged between v20 and v21. The dual-shadow structure affects only the bulk spacetime interpretation, not the 4D gauge physics.
+
 ---
 
 ## B.10 Wolfram Alpha Verification Certificates

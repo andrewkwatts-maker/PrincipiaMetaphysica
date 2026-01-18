@@ -71,6 +71,24 @@ $$\varphi \xrightarrow{P} -*\varphi$$ **(D.4)**
 
 Result: Only left-handed fermions couple to SU(2)_L (parity violation).
 
+### D.3.4 v21 Shadow Independence Note
+
+**Key Result**: Electroweak physics is signature-independent.
+
+The v21 dual-shadow structure changes the bulk from (24,2) to two shadow universes (11,1) connected by a Euclidean bridge (2,0). The electroweak sector is unaffected because:
+
+1. **SU(2)_L from co-associative 4-cycles**: The weak isospin gauge symmetry emerges from the co-associative structure of the G2 manifold, which is purely 7-dimensional and Riemannian (signature 7,0).
+
+2. **U(1)_Y from KK circle**: The hypercharge U(1) comes from Kaluza-Klein reduction on a circle within the G2 structure, independent of the bulk signature.
+
+3. **Parity violation preserved**: The G2 3-form $\varphi$ determines chirality. Since each shadow has its own G2 manifold with the same topology ($b_3 = 24$), parity violation is preserved identically in each shadow.
+
+4. **Weinberg angle unchanged**: The mixing angle $\sin^2\theta_W$ depends on the ratio of couplings, which emerge from G2 cycle volumes, not bulk signature.
+
+5. **W/Z masses unchanged**: The electroweak mass generation via Higgs VEV $v = 246$ GeV depends on the G2 moduli structure, not bulk signature.
+
+**Conclusion**: All electroweak predictions (Weinberg angle, W/Z masses, rho parameter) remain unchanged between v20 and v21. The dual-shadow architecture preserves complete electroweak physics in each shadow.
+
 ---
 
 ## D.4 Derivation of Weinberg Angle
